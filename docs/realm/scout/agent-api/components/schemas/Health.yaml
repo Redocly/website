@@ -1,0 +1,9 @@
+type: object
+properties:
+  scout:
+    type: string
+    const: ok
+    readOnly: true
+    description: Scout health status.
+required:
+  - scout

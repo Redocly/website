@@ -1,0 +1,19 @@
+- page: index.md
+  label: Documentation
+- page: what-is-scout.md
+  label: What is Scout?
+- page: use-cases.md
+  label: Use cases
+- group: Guides
+  items:
+    - page: guides/install.md
+      label: Install
+    - page: guides/api-inventory.md
+      label: API inventory
+    - page: guides/high-availability.md
+      label: High availability
+- group: API reference
+  items:
+    - page: api/filters.md
+    - page: agent-api/openapi.yaml
+    - page: api/openapi.yaml

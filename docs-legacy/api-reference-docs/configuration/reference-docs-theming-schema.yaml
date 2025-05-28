@@ -1,0 +1,876 @@
+type: object
+properties:
+  breakpoints:
+    description: 'Breakpoints for switching three/two and mobile view layouts. **Supported in Redoc CE.**'
+    type: object
+    properties:
+      large:
+        description: '**Supported in Redoc CE.**'
+        type: string
+      medium:
+        description: '**Supported in Redoc CE.**'
+        type: string
+      small:
+        description: '**Supported in Redoc CE.**'
+        type: string
+  codeBlock:
+    description: 'Controls the appearance of code snippets used in OpenAPI definition fields that support Markdown formatting, and in external Markdown files referenced in the API definition.'
+    type: object
+    properties:
+      backgroundColor:
+        description: 'Sets the background color for code snippets.'
+        type: string
+      borderRadius:
+        description: 'Sets the border radius for the code snippet block.'
+        type: string
+      maxHeight:
+        description: 'Sets the max height value for code block.'
+        type: string
+      tokens:
+        description: 'Controls the appearance of code highlighted with Prism.js. Supported tokens: `comment`, `prolog`, `doctype`, `cdata`, `punctuation`, `property`, `tag`, `number`, `constant`, `symbol`, `boolean`, `selector`, `string`, `char`, `builtin`, `inserted`, `operator`, `entity`, `url`, `variable`, `atrule`, `keyword`, `regex`, `important, `bold`, `italic`, `entity`, `deleted`.'
+        type: object
+        properties:
+          color:
+            description: 'Sets the text color for highlighted code matching the specified token.'
+            type: string
+          fontFamily:
+            description: 'Sets the font family for highlighted code matching the specified token.'
+            type: string
+          fontSize:
+            description: 'Sets the font size for highlighted code matching the specified token.'
+            type: string
+          lineHeight:
+            description: 'Sets the line height for highlighted code matching the specified token.'
+            type: string
+  colors:
+    description: '**Supported in Redoc CE.**'
+    type: object
+    properties:
+      accent:
+        type: object
+        description: 'Sets the accent color used throughout the Reference docs interface to highlight active items (for example, the selected tab in the code samples panel).'
+        properties:
+          main:
+            type: string
+            default: '#59C3FF'
+          light:
+            type: string
+            default: '#b3dcf3'
+          dark:
+            type: string
+            default: '#033B73'
+          contrastText:
+            type: string
+            default: '#ffffff'
+      border:
+        type: object
+        properties:
+          dark:
+            type: string
+            default: '#616E7C'
+          light:
+            type: string
+            default: '#E4E7EB'
+      error:
+        type: object
+        properties:
+          contrastText:
+            type: string
+            default: '#ffffff'
+          dark:
+            type: string
+          light:
+            type: string
+          main:
+            type: string
+            default: '#FF6161'
+      http:
+        type: object
+        properties:
+          basic:
+            type: string
+            default: '#707070'
+          delete:
+            type: string
+            default: '#C83637'
+          get:
+            type: string
+            default: '#3A9601'
+          head:
+            type: string
+            default: '#A23DAD'
+          link:
+            type: string
+            default: '#07818F'
+          options:
+            type: string
+            default: '#947014'
+          patch:
+            type: string
+            default: '#bf581d'
+          post:
+            type: string
+            default: '#0065FB'
+          put:
+            type: string
+            default: '#93527B'
+      primary:
+        type: object
+        properties:
+          contrastText:
+            type: string
+          dark:
+            type: string
+          light:
+            type: string
+          main:
+            type: string
+            default: '#0065FB'
+      responses:
+        type: object
+        properties:
+          error:
+            type: object
+            properties:
+              backgroundColor:
+                type: string
+                default: '#FFF4F4'
+              borderColor:
+                type: string
+                default: '#FFC9C9'
+              color:
+                type: string
+              tabTextColor:
+                type: string
+                default:
+          info:
+            type: object
+            properties:
+              backgroundColor:
+                type: string
+              borderColor:
+                type: string
+              color:
+                type: string
+              tabTextColor:
+                type: string
+          redirect:
+            type: object
+            properties:
+              backgroundColor:
+                type: string
+              borderColor:
+                type: string
+              color:
+                type: string
+              tabTextColor:
+                type: string
+          success:
+            type: object
+            properties:
+              backgroundColor:
+                type: string
+                default: '#F6FFF4'
+              borderColor:
+                type: string
+                default: '#B1E996'
+              color:
+                type: string
+              tabTextColor:
+                type: string
+      secondary:
+        type: object
+        properties:
+          main:
+            type: string
+            default: '#E4E7EB'
+          light:
+            type: string
+            default: '#F5F7FA'
+          contrastText:
+            type: string
+            default: '#3E4C59'
+      success:
+        type: object
+        properties:
+          contrastText:
+            type: string
+          dark:
+            type: string
+          light:
+            type: string
+          main:
+            type: string
+      text:
+        type: object
+        properties:
+          primary:
+            type: string
+            default: '#1F2933'
+          secondary:
+            type: string
+            default: '#7b8794'
+          light:
+            type: string
+            default: '#F5F7FA'
+      tonalOffset:
+        description: 'Sets the default tonal offset used in color computations. **Supported in Redoc CE.**'
+        type: number
+        default: 0.2
+      warning:
+        type: object
+        properties:
+          contrastText:
+            type: string
+          dark:
+            type: string
+          light:
+            type: string
+          main:
+            type: string
+  components:
+    type: object
+    properties:
+      buttons:
+        description: 'Controls the appearance of buttons in Reference docs.'
+        type: object
+        properties:
+          borderRadius:
+            type: string
+          hoverStyle:
+            type: string
+          fontWeight:
+            type: string
+          boxShadow:
+            type: string
+          hoverBoxShadow:
+            type: string
+          fontFamily:
+            type: string
+          sizes:
+            type: object
+            properties:
+              small:
+                type: object
+                properties:
+                  fontSize:
+                    type: string
+                  padding:
+                    type: string
+                  minWidth:
+                    type: string
+              medium:
+                type: object
+                properties:
+                  fontSize:
+                    type: string
+                  padding:
+                    type: string
+                  minWidth:
+                    type: string
+              large:
+                type: object
+                properties:
+                  fontSize:
+                    type: string
+                  padding:
+                    type: string
+                  minWidth:
+                    type: string
+              xlarge:
+                type: object
+                properties:
+                  fontSize:
+                    type: string
+                  padding:
+                    type: string
+                  minWidth:
+                    type: string
+      httpBadges:
+        description: 'Controls the appearance of HTTP method badges (GET, POST, PUT...) in Reference docs.'
+        type: object
+        properties:
+          borderRadius:
+            type: string
+            description: 'Sets the border radius for all HTTP badges. Can be used to achieve the rounded corner effect on the badge.'
+            default: '16px'
+          color:
+            type: string
+            description: 'Specifies the color of the text in all HTTP badges. If not configured, the `colors.text.light` value is used as the default.'
+          fontFamily:
+            type: string
+            description: 'Specifies the font family to use for the text in all HTTP badges. If not configured, the `typography.code.fontFamily` value is used as the default.'
+          fontWeight˙:
+            type: string
+            description: 'Specifies the font weight of the text in all HTTP badges. If not configured, the `typography.fontWeightBold` value is used as the default.'
+          sizes:
+            type: object
+            properties:
+              medium:
+                type: object
+                description: 'Controls the font size and line height for medium-sized HTTP badges. These values apply only to badges in middle and right panels of the API documentation.'
+                properties:
+                  fontSize:
+                    type: string
+                    default: '12px'
+                  lineHeight:
+                    type: string
+                    default: '20px'
+              small:
+                type: object
+                description: 'Controls the font size and line height for small-sized HTTP badges. These values apply only to badges in the navigation sidebar of the API documentation.'
+                properties:
+                  fontSize:
+                    type: string
+                    default: '8px'
+                  lineHeight:
+                    type: string
+                    default: '15px'
+      layoutControls:
+        description: 'Controls the appearance of buttons for layout switching in the top right corner of the Reference docs page.'
+        type: object
+        properties:
+          top:
+            description: 'Specifies the offset between the top of the page and **Hide Samples**/**Change View** buttons.'
+            type: string
+            default: '20px'
+          width:
+            description: 'Specifies width of **Hide Samples**/**Change View** buttons'
+            type: string
+            default: '36px'
+          height:
+            description: 'Specifies height of **Hide Samples**/**Change View** buttons'
+            type: string
+            default: '36px'
+      panels:
+        description: 'Controls the appearance of the operation+path section and request/response samples section in the right panel, and the schema section in the middle panel.'
+        type: object
+        properties:
+          borderRadius:
+            type: string
+            default: '8px'
+          backgroundColor:
+            type: string
+            default: '#fff'
+          title:
+            type: object
+            properties:
+              color:
+                type: string
+              fontFamily:
+                type: string
+              fontSize:
+                type: string
+              fontWeight:
+                type: string
+              lineHeight:
+                type: string
+              transform:
+                description: "Specifies how to capitalize a heading's text."
+                type: string
+                example: 'uppercase'
+          subTitle:
+            type: object
+            properties:
+              color:
+                type: string
+              fontFamily:
+                type: string
+              fontSize:
+                type: string
+              fontWeight:
+                type: string
+              lineHeight:
+                type: string
+              transform:
+                description: "Specifies how to capitalize a heading's text."
+                type: string
+                example: 'uppercase'
+          iconColor:
+            type: string
+      tryItButton:
+        description: 'Controls the appearance of the *Try it* button in the right panel that opens the console.'
+        type: object
+        properties:
+          fullWidth:
+            description: 'Specifies whether the width of the *Try it* button will be set to its maximum supported value.'
+            type: boolean
+            default: false
+      tryItSendButton:
+        description: 'Controls the appearance of the *Send* button in the *Try it* console that sends the request.'
+        type: object
+        properties:
+          fullWidth:
+            description: 'Specifies whether the width of the *Send* button will be set to its maximum supported value.'
+            type: boolean
+            default: false
+  layout:
+    description: 'Controls layout properties for Reference docs.'
+    type: object
+    properties:
+      showDarkRightPanel:
+        default: false
+        description: 'When set to `true`, changes the background color of the entire right panel to dark-mode color. By default, this option is disabled, and only the API console and code samples elements have a dark background, while the rest of the right panel matches the background color of the middle panel.'
+        type: boolean
+      stacked:
+        description: 'Controls the maximum width of the middle panel in stacked view (right panel contents inside the middle panel) depending on current screen size (small, medium, large). You can specify screen size values as percentages or pixels.'
+        type: object
+        properties:
+          maxWidth:
+            type: object
+            properties:
+              small:
+                type: string
+                default: '90%'
+              medium:
+                type: string
+                default: '75%'
+              large:
+                type: string
+                default: '1200px'
+      three-panel:
+        description: 'Controls the maximum width of the middle panel in three-panel view depending on current screen size (small, medium, large). You can specify screen size values as percentages or pixels.'
+        type: object
+        properties:
+          maxWidth:
+            type: object
+            description: 'Specifies the maximum width of the whole middle panel area.'
+            properties:
+              small:
+                type: string
+                default: '100%'
+              medium:
+                type: string
+                default: '100%'
+              large:
+                type: string
+                default: '1800px'
+          middlePanelMaxWidth:
+            type: object
+            description: 'Specifies the maximum width of the content in the middle panel area.'
+            properties:
+              small:
+                type: string
+              medium:
+                type: string
+              large:
+                type: string
+  logo:
+    description: '**Supported in Redoc CE.**'
+    type: object
+    properties:
+      gutter:
+        description: 'Logo image padding. **Supported in Redoc CE.**'
+        type: string
+        default: '2px'
+      maxHeight:
+        description: '**Supported in Redoc CE.**'
+        type: string
+      maxWidth:
+        description: '**Supported in Redoc CE.**'
+        type: string
+  fab:
+    description: '**Supported in Redoc CE.**'
+    type: object
+    properties:
+      backgroundColor:
+        description: 'Controls the background color of the floating action button (FAB), which is visible on the reference documentation page in the mobile view.'
+        type: string
+        default: '#f2f2f2'
+      color:
+        description: 'Controls the SVG icon color for the floating action button (FAB), which is visible on the reference documentation page in the mobile view.'
+        type: string
+        default: '#0065FB'
+  overrides:
+    description: 'Allows overriding default styling of specific elements with custom CSS.'
+    type: object
+    properties:
+      DownloadButton:
+        description: 'To override the default styling for the Download button, provide custom CSS as the value. The Download button must be enabled in the Reference docs settings.'
+        type: object
+        properties:
+          custom:
+            description: 'Custom CSS for styling the Download button.'
+            type: string
+      NextSectionButton:
+        description: 'To override the default styling for the Next button (navigates to the next section of the API documentation), provide custom CSS as the value. Pagination and the Next button must be enabled in the Reference docs settings.'
+        type: object
+        properties:
+          custom:
+            description: 'Custom CSS for styling the Next Section button.'
+            type: string
+  rightPanel:
+    description: '**Supported in Redoc CE.**'
+    type: object
+    properties:
+      backgroundColor:
+        description: '**Supported in Redoc CE.**'
+        type: string
+        default: '#1F2933'
+      panelBackgroundColor:
+        description:
+        type: string
+        default: '#52606D'
+      panelControlsBackgroundColor:
+        description:
+        type: string
+        default: '#323F4B'
+      showAtBreakpoint:
+        description:
+        type: string
+        default: 'medium'
+      textColor:
+        description: '**Supported in Redoc CE.**'
+        type: string
+        default: '#ffffff'
+      width:
+        description: '**Supported in Redoc CE.**'
+        type: string
+        default: '50%'
+  schema:
+    type: object
+    properties:
+      breakFieldNames:
+        type: boolean
+      caretColor:
+        type: string
+      caretSize:
+        type: string
+      constraints:
+        type: object
+        properties:
+          backgroundColor:
+            type: string
+          border:
+            type: string
+      defaultDetailsWidth:
+        type: string
+        default: '70%'
+      examples:
+        type: object
+        properties:
+          backgroundColor:
+            type: string
+          border:
+            type: string
+      labelsTextSize:
+        type: string
+        default: '0.9em'
+      linesColor:
+        type: string
+      nestedBackground:
+        type: string
+      nestedAlternativeBackground:
+        type: string
+      nestingSpacing:
+        type: string
+        default: '1em'
+      requireLabelColor:
+        type: string
+        default: '#FF0000'
+      typeNameColor:
+        type: string
+      typeTitleColor:
+        type: string
+  shape:
+    type: object
+    properties:
+      borderRadius:
+        type: string
+        description: 'Controls the border radius value to create the rounded corners effect on elements across whole Reference docs. Setting this value to 0 overrides all border radius values in the theme.'
+        default: '4px'
+  sidebar:
+    description: '**Some of the sidebar theming options are supported in Redoc CE.**'
+    type: object
+    properties:
+      activeBgColor:
+        description: 'Sets the background color for the active (selected) item in the sidebar.'
+        type: string
+        default: '#E4E7EB'
+      activeTextColor:
+        description: '**Supported in Redoc CE.**'
+        type: string
+      backgroundColor:
+        description: '**Supported in Redoc CE.**'
+        type: string
+        default: '#fff'
+      borderRadius:
+        type: string
+        default: '4px'
+      breakPath:
+        type: boolean
+      caretColor:
+        type: string
+      caretSize:
+        type: string
+      fontFamily:
+        type: string
+      fontSize:
+        type: string
+      groupItems:
+        description: '**Supported in Redoc CE.**'
+        type: object
+        properties:
+          subItemsColor:
+            description: 'Specifies the text color of subitems in a sidebar group.'
+            type: string
+            default: '#3E4C59'
+          textTransform:
+            description: '**Supported in Redoc CE.**'
+            type: string
+          fontWeight:
+            type: string
+      level1items:
+        description: '**Supported in Redoc CE.**'
+        type: object
+        properties:
+          textTransform:
+            description: '**Supported in Redoc CE.**'
+            type: string
+      rightLineColor:
+        description: 'Sets the color of the vertical divider line between the sidebar and the middle panel.'
+        type: string
+        default: '#CBD2D9'
+      separatorLabelColor:
+        type: string
+      showAtBreakpoint:
+        type: string
+        default: 'small'
+      spacing:
+        type: object
+        properties:
+          unit:
+            type: number
+            default: 8
+          paddingHorizontal:
+            type: string
+          paddingVertical:
+            type: string
+          offsetTop:
+            type: string
+          offsetLeft:
+            type: string
+          offsetNesting:
+            type: string
+      textColor:
+        description: '**Supported in Redoc CE.**'
+        type: string
+      width:
+        description: '**Supported in Redoc CE.**'
+        type: string
+        default: '285px'
+  spacing:
+    description: 'Controls the spacing of items and sections in the generated API documentation. The numbers set here are used to calculate the final positioning values. **Supported in Redoc CE.**'
+    type: object
+    properties:
+      sectionHorizontal:
+        description: 'Horizontal section padding. Calculated as `spacing.unit * 8`. **Supported in Redoc CE.**'
+        type: number
+      sectionVertical:
+        description: 'Vertical section padding. Calculated as `spacing.unit * 8`. **Supported in Redoc CE.**'
+        type: number
+      unit:
+        description: 'Main spacing unit used in auto-computed theme values. **Supported in Redoc CE.**'
+        type: number
+  typography:
+    description: '**Supported in Redoc CE.**'
+    type: object
+    properties:
+      code:
+        description: 'Controls inline code styling. **Supported in Redoc CE.**'
+        type: object
+        properties:
+          backgroundColor:
+            description: '**Supported in Redoc CE.**'
+            type: string
+            default: 'rgba(38, 50, 56, 0.05)'
+          color:
+            description: '**Supported in Redoc CE.**'
+            type: string
+            default: '#e53935'
+          fontFamily:
+            description: '**Supported in Redoc CE.**'
+            type: string
+            default: 'Source Code Pro, monospace'
+          fontSize:
+            description: '**Supported in Redoc CE.**'
+            type: string
+            default: '13px'
+          fontWeight:
+            description: '**Supported in Redoc CE.**'
+            type: string
+          lineHeight:
+            description: '**Supported in Redoc CE.**'
+            type: string
+          wordBreak:
+            description: 'Specifies how to break words in code blocks to make the content more responsive at different screen sizes (breakpoints).'
+            type: string
+            enum:
+              - 'break-all'
+              - 'break-word'
+              - 'keep-all'
+              - 'normal'
+              - 'revert'
+              - 'unset'
+              - 'inherit'
+              - 'initial'
+          wrap:
+            description: 'Specifies whether to break words in inline code elements to prevent content overflow. **Supported in Redoc CE.**'
+            type: boolean
+            default: false
+      fieldName:
+        type: object
+        properties:
+          fontFamily:
+            type: string
+            default: 'Source Code Pro, sans-serif'
+          fontSize:
+            type: string
+            default: '13px'
+          fontWeight:
+            type: string
+            default: '400'
+          lineHeight:
+            type: string
+      fontFamily:
+        description: '**Supported in Redoc CE.**'
+        type: string
+      fontSize:
+        description: '**Supported in Redoc CE.**'
+        type: string
+        default: '14px'
+      fontWeightBold:
+        description: '**Supported in Redoc CE.**'
+        type: string
+        default: '600'
+      fontWeightLight:
+        description: '**Supported in Redoc CE.**'
+        type: string
+        default: '300'
+      fontWeightRegular:
+        description: '**Supported in Redoc CE.**'
+        type: string
+        default: '400'
+      heading1:
+        type: object
+        properties:
+          color:
+            type: string
+          fontFamily:
+            type: string
+          fontSize:
+            type: string
+          fontWeight:
+            type: string
+          lineHeight:
+            type: string
+          transform:
+            description: "Specifies how to capitalize a heading's text."
+            type: string
+            example: 'uppercase'
+      heading2:
+        type: object
+        properties:
+          color:
+            type: string
+          fontFamily:
+            type: string
+          fontSize:
+            type: string
+          fontWeight:
+            type: string
+          lineHeight:
+            type: string
+          transform:
+            description: "Specifies how to capitalize a heading's text."
+            type: string
+            example: 'uppercase'
+      heading3:
+        type: object
+        properties:
+          color:
+            type: string
+          fontFamily:
+            type: string
+          fontSize:
+            type: string
+          fontWeight:
+            type: string
+          lineHeight:
+            type: string
+          transform:
+            description: "Specifies how to capitalize a heading's text."
+            type: string
+            example: 'uppercase'
+      headings:
+        description: '**Supported in Redoc CE.**'
+        type: object
+        properties:
+          fontFamily:
+            description: '**Supported in Redoc CE.**'
+            type: string
+            default: 'Source Sans Pro, sans-serif'
+          fontWeight:
+            description: '**Supported in Redoc CE.**'
+            type: string
+            default: '700'
+          lineHeight:
+            description: '**Supported in Redoc CE.**'
+            type: string
+            default: '1.6em'
+      lineHeight:
+        description: '**Supported in Redoc CE.**'
+        type: string
+        default: '1.5em'
+      links:
+        description: '**Supported in Redoc CE.**'
+        type: object
+        properties:
+          color:
+            description: '**Supported in Redoc CE.**'
+            type: string
+          hover:
+            description: '**Supported in Redoc CE.**'
+            type: string
+          textDecoration:
+            type: string
+            default: 'auto'
+            description: '**Supported in Redoc CE.**'
+          hoverTextDecoration:
+            type: string
+            default: 'auto'
+            description: '**Supported in Redoc CE.**'
+          visited:
+            description: '**Supported in Redoc CE.**'
+            type: string
+      optimizeSpeed:
+        description: '**Supported in Redoc CE.**'
+        type: boolean
+        default: true
+      rightPanelHeading:
+        type: object
+        properties:
+          color:
+            type: string
+          fontFamily:
+            type: string
+          fontSize:
+            type: string
+          fontWeight:
+            type: string
+          lineHeight:
+            type: string
+          transform:
+            description: "Specifies how to capitalize a heading's text."
+            type: string
+            example: 'uppercase'
+      smoothing:
+        description: 'Controls font optimization that applies when viewing documentation in browsers with support for font smoothing. **Supported in Redoc CE.**'
+        type: string
+        default: 'antialiased'
+        enum:
+          - 'auto'
+          - 'none'
+          - 'antialiased'
+          - 'subpixel-antialiased'
+          - 'grayscale'

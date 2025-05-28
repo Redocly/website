@@ -1,0 +1,52 @@
+description: Commit details.
+type: object
+required:
+  - id
+  - message
+  - title
+  - timestamp
+  - url
+  - author
+  - added
+  - modified
+  - removed
+properties:
+  id:
+    type: string
+    description: Commit sha.
+    example: b6568db1bc1dcd7f8b4d5a946b0b91f9dacd7327
+  message:
+    type: string
+    description: The commit message.
+    example: fixed readme
+  timestamp:
+    type: string
+    format: date-time
+    description: The ISO 8601 timestamp of the commit.
+  url:
+    type: string
+    format: uri
+    description: URL that points to the commit API resource.
+    example: http://example.com/mike/diaspora/commit/da1560886d4f094c3e6c9ef40349f7d38b5d27d7
+  author:
+    $ref: ./author.yaml
+  added:
+    type: array
+    items:
+      type: string
+    description: An array of files added in the commit.
+    example: ['CHANGELOG']
+  modified:
+    type: array
+    items:
+      type: string
+    description: An array of files modified by the commit.
+    example: ['app/controller/application.rb']
+  removed:
+    type: array
+    items:
+      type: string
+    description: An array of files removed in the commit.
+    example: ['app/controller/product.rb']
+additionalProperties: false
+title: Commit

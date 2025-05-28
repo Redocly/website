@@ -1,0 +1,433 @@
+- group: Get started
+  page: get-started/index.md
+  items:
+    - page: get-started/start-reunite-editor.md
+      label: Start with Reunite editor
+    - page: get-started/start-local-dev.md
+      label: Start with local development
+    - group: Migrate from legacy
+      items:
+        - page: get-started/migrate-api-reference.md
+          label: Migrate API reference
+        - page: get-started/migrate-from-legacy-portal.md
+          label: Migrate from legacy portal
+
+- group: Branding & navigation
+  items:
+    - separator: Branding
+    - page: style/concepts/styling.md
+      label: Styling concepts
+    - page: style/how-to/customize-styles.md
+      label: Styles
+    - page: style/how-to/customize-fonts.md
+      label: Fonts
+    - page: style/concepts/color-mode.md
+      label: Color modes
+    - page: style/how-to/customize-color-modes.md
+      label: Custom color modes
+    - page: style/how-to/custom-page-templates.md
+      label: Page templates
+    - page: style/how-to/customize-tables.md
+      label: Table styles
+    - group: CSS variables dictionary
+      page: style/reference/css-variables/index.md
+      items:
+        - page: style/reference/css-variables/common.md
+          label: Common
+        - page: style/reference/css-variables/component.md
+          label: Component
+        - page: style/reference/css-variables/api-docs.md
+          label: API docs
+    - separator: Navigation
+    - page: author/concepts/navigation.md
+      label: Navigation elements
+    - page: author/how-to/configure-nav/navbar.md
+      label: Navbar
+    - page: author/how-to/configure-nav/footer.md
+      label: Footer
+    - page: author/how-to/configure-nav/sidebar.md
+      label: Sidebar
+    - page: author/how-to/configure-nav/configure-sidebar-groups.md
+      label: Sidebar groups
+    - page: author/reference/sidebars.md
+      label: Sidebar reference
+    - page: author/how-to/configure-nav/toc.md
+      label: TOC
+    - page: author/how-to/configure-nav/navigation-buttons.md
+      label: Navigation buttons
+    - group: Search and discovery
+      items:
+        # - page: config/search.md
+        #   label: Search configuration
+        - page: setup/how-to/exclude-api-from-search.md
+          label: Exclude API from search
+        - page: extend/how-to/configure-search-facets.md
+          label: Configure search facets
+        - page: setup/how-to/add-sitemap.md
+          label: Add sitemap
+        - page: setup/how-to/add-robots-file.md
+          label: Add robots.txt
+        - page: setup/how-to/block-search-index.md
+          label: Block search indexing
+        - page: setup/how-to/verify-site-ownership.md
+          label: Verify site ownership
+    - page: setup/how-to/custom-domain.md
+      label: Custom domain
+    - group: Multi-product
+      page: author/concepts/multi-product.md
+      label: Multi-product
+      items:
+        - page: author/how-to/multiple-products.md
+          label: Add multiple products
+    - separator: Advanced customization
+    - page: extend/how-to/create-react-page.md
+    - page: extend/tutorials/build-markdoc-tags.md
+    - page: extend/tutorials/build-custom-function.md
+    - page: extend/tutorials/import-npm-library.md
+    - page: extend/tutorials/eject-root-layout.md
+    - page: extend/how-to/enable-source-maps.md
+    - page: extend/how-to/add-color-mode.md
+    - page: extend/how-to/color-mode-images.md
+    - group: Eject components
+      page: extend/how-to/eject-components/index.md
+      items:
+        - page: extend/how-to/eject-components/eject-components-in-reunite.md
+        - page: extend/how-to/eject-components/eject-components-using-cli.md
+        - page: extend/how-to/eject-components/eject-components-tutorial/index.md
+    - group: Built-in components and icons
+      page: extend/how-to/react-components/index.md
+      items:
+        - page: extend/how-to/react-components/use-in-react-page.md
+        - page: extend/how-to/react-components/wrap-components.md
+        - group: Components list
+          page: extend/how-to/react-components/list/index.md
+          items:
+            - page: extend/how-to/react-components/list/admonition.md
+            - page: extend/how-to/react-components/list/icons.md
+            - page: extend/how-to/react-components/list/button.md
+            - page: extend/how-to/react-components/list/link.md
+    - page: extend/how-to/set-path-prefix.md
+    - page: extend/how-to/theme-static-assets.md
+    - page: extend/how-to/configure-request-values.md
+
+- group: Content management
+  items:
+    - page: author/concepts/project-structure.md
+      label: Project structure
+    - page: author/concepts/reunite.md
+      label: Reunite
+    - page: author/how-to/use-editor.md
+      label: Use the editor
+    - page: author/reference/keyboard-shortcuts.md
+      label: Keyboard shortcuts
+    - page: author/how-to/links.md
+      label: Manage links
+    - group: Versioning
+      page: author/how-to/versions.md
+      items:      
+        - page: author/reference/versions-config.md
+          label: Versions reference
+    - page: author/how-to/reuse-content.md
+      label: Reuse content
+    - page: author/concepts/static-assets.md
+      label: Static assets
+    - page: author/how-to/configure-code-snippets.md
+      label: Configure code snippets
+    - page: author/how-to/add-diagram.md
+      label: Diagrams
+    - group: Markdoc functions
+      page: author/reference/functions/index.md
+      items:
+        - page: author/reference/functions/built-in.md
+          group: Built-in functions overview
+          items:
+            - page: author/reference/functions/includes.md
+              label: includes
+            - page: author/reference/functions/concat.md
+              label: concat
+    - group: Markdoc tags
+      page: author/reference/tags/tag-library.md
+      items:
+        - separator: Built-in tags
+        - page: author/reference/tags/partial.md
+          label: Partial
+        - page: author/reference/tags/table.md
+          label: Table
+        - separator: Redocly tags
+        - page: author/reference/tags/admonition.md
+          label: Admonition
+        - page: author/reference/tags/cards.md
+          label: Cards
+        - page: author/reference/tags/code-snippet.md
+          label: Code snippet
+        - group: Code walkthrough
+          page: author/reference/tags/code-walkthrough/index.md
+          items:
+            - page: author/reference/tags/code-walkthrough/step.md
+              label: Step
+            - page: author/reference/tags/code-walkthrough/toggle.md
+              label: Toggle
+            - page: author/reference/tags/code-walkthrough/input.md
+              label: Input
+            - page: author/reference/tags/code-walkthrough/create-code-walkthrough.md
+        - page: author/reference/tags/img.md
+          label: Image    
+        - page: author/reference/tags/inline-svg.md
+          label: Inline SVG
+        - page: author/reference/tags/json-schema.md
+          label: JSON schema
+        - page: author/reference/tags/markdoc-example.md
+          label: Markdoc example
+        - page: author/reference/tags/openapi-code-sample.md
+          label: OpenAPI code sample
+        - page: author/reference/tags/replay-openapi.md
+          label: Replay OpenAPI
+        - page: author/reference/tags/tabs.md
+          label: Tabs
+
+    - group: API docs
+      items:
+        - page: author/how-to/add-openapi-docs.md
+          label: OpenAPI
+        - group: OpenAPI extensions
+          page: author/reference/openapi-extensions/index.md
+          items:
+            - page: author/reference/openapi-extensions/x-tag-groups.md
+              label: x-tagGroups
+            - page: author/reference/openapi-extensions/x-badges.md
+              label: x-badges
+            - page: author/reference/openapi-extensions/x-display-name.md
+              label: x-displayName
+            - page: author/reference/openapi-extensions/x-webhooks.md
+              label: x-webhooks
+            - page: author/reference/openapi-extensions/x-use-pkce.md
+              label: x-usePkce
+            - page: author/reference/openapi-extensions/x-trait-tag.md
+              label: x-traitTag
+            - page: author/reference/openapi-extensions/x-code-samples.md
+              label: x-codeSamples
+            - page: author/reference/openapi-extensions/x-enum-descriptions.md
+              label: x-enumDescriptions
+            - page: author/reference/openapi-extensions/x-additional-properties-name.md
+              label: x-additionalPropertiesName
+            - page: author/reference/openapi-extensions/x-metadata.md
+              label: x-metadata
+            - page: author/reference/openapi-extensions/x-hide-replay.md
+              label: x-hideReplay
+            - page: author/reference/openapi-extensions/x-summary.md
+              label: x-summary
+            - page: author/reference/openapi-extensions/x-tags.md
+              label: x-tags
+            - page: author/reference/openapi-extensions/x-rbac.md
+              label: x-rbac
+            - page: author/reference/openapi-extensions/x-examples.md
+              label: x-examples
+            - page: author/reference/openapi-extensions/x-nullable.md
+              label: x-nullable
+            - page: author/reference/openapi-extensions/x-servers.md
+              label: x-servers
+            - page: author/reference/openapi-extensions/x-assertion-type.md
+              label: x-assertionType
+        - page: author/how-to/generate-asyncapi-docs.md
+          label: AsyncAPI
+        - page: author/how-to/add-graphql-docs.md
+          label: GraphQL
+        - page: author/how-to/add-soap-docs.md
+          label: SOAP
+        - page: author/how-to/add-catalog.md
+          label: Add catalog
+        - page: author/how-to/configure-mock-server.md
+          label: Configure mock server
+        - page: author/how-to/try-apis-with-mock-server.md
+          label: Try APIs with mock server
+        - page: author/reference/replay.md
+          label: Replay interface
+
+    - group: Localization
+      page: author/how-to/config-l10n/index.md
+      label: Localization
+      items:
+        - page: setup/concepts/concept-l10n.md
+          label: Localization concepts
+        - page: author/how-to/config-l10n/set-up-l10n-folder.md
+          label: Set up localization folder
+        - page: author/how-to/config-l10n/localize-content.md
+          label: Localize content
+        - page: author/how-to/config-l10n/localize-labels.md
+          label: Localize labels
+        - page: author/how-to/config-l10n/display-current-locale.md
+          label: Display current locale
+        - page: author/reference/translation-keys.md
+          label: Translation keys
+    - page: author/concepts/categories.md
+      label: Categories
+    - page: author/how-to/add-redirects.md
+      label: Add redirects
+    - page: setup/how-to/realm-version.md
+      label: Upgrade Realm version
+
+- group: Governance
+  items:
+    - separator: Pull requests
+    - page: author/how-to/open-pull-request.md
+      label: Open pull requests
+    - page: author/how-to/review-pull-request.md
+      label: Review pull requests
+    - page: author/how-to/manage-pull-requests.md
+      label: Manage pull requests
+    - separator: Quality
+    - group: Scorecards
+      page: setup/concepts/scorecard.md
+      items:
+        # - page: config/scorecard.md
+        #   label: Scorecards
+        - page: setup/how-to/configure-scorecard.md
+          label: Configuration guide
+    - page: setup/how-to/ignore-link-checker.md
+      label: Ignore link checker
+    - separator: Monitoring
+    - group: Respect Monitoring
+      page: setup/respect-monitoring/index.md
+      items:
+        - page: setup/respect-monitoring/configure-respect-monitoring.md
+        - page: setup/respect-monitoring/manage-respect-monitoring.md
+    - page: setup/reference/logs.md
+      label: Logs
+    - page: setup/reference/telemetry.md
+      label: Telemetry
+    - page: setup/how-to/access-compliance-reports.md
+      label: Access compliance reports
+
+- group: Collaboration
+  items:
+    - page: author/concepts/collaboration.md
+      label: Collaboration overview
+    - page: author/how-to/use-webview.md
+      label: Use webview
+    - page: author/how-to/use-previews.md
+      label: Use previews
+    - page: author/how-to/switch-between-projects.md
+      label: Switch between projects
+    - page: setup/how-to/feedback/extend-feedback.md
+      label: Extend feedback form
+    - page: setup/how-to/feedback/view-export-data.md
+      label: View feedback data
+
+- group: Integrations and automations
+  items:
+    - separator: Git providers
+    - group: Connect a Git provider
+      page: ./setup/how-to/git-providers/connect-git-provider.md
+      items:
+        - page: ./setup/how-to/git-providers/manage-self-hosted.md
+          label: Manage self-hosted Git providers
+        - page: ./setup/how-to/git-providers/github.md
+          label: GitHub
+        - page: ./setup/how-to/git-providers/self-hosted/github.md
+          label: GitHub Enterprise Server self-hosted
+        - page: ./setup/how-to/git-providers/gitlab.md
+          label: GitLab
+        - page: ./setup/how-to/git-providers/self-hosted/gitlab.md
+          label: GitLab self-hosted
+        - page: ./setup/how-to/git-providers/azure-devops.md
+          label: Azure DevOps
+        - page: ./setup/how-to/git-providers/bitbucket-cloud.md
+          label: Bitbucket Cloud 
+    - separator: Remote content
+    - group: Remote content automation
+      page: ./setup/concepts/remote-content.md
+      items:
+        - page: ./setup/how-to/remote-content/from-github.md
+          label: From GitHub
+        - page: ./setup/how-to/remote-content/from-gitlab.md
+          label: From GitLab
+        - page: ./setup/how-to/remote-content/from-azure-devops.md
+          label: From Azure DevOps
+        - page: ./setup/how-to/remote-content/from-bitbucket-cloud.md
+          label: From Bitbucket Cloud
+        - page: ./setup/how-to/remote-content/url.md
+          label: From URL
+        - page: ./setup/how-to/remote-content/push.md
+          label: From CICD
+        - page: ./setup/reference/reunite-push-action.md
+          label: From GitHub Actions
+        - page: ./setup/how-to/remote-content/manually-sync-remote-content.md
+          label: Manually sync
+        - page: ./setup/how-to/remote-content/edit-remote-content-folder.md
+          label: Edit content folder
+        - page: ./setup/reference/verify-remote-content.md
+          label: Verify remote content
+    - separator: API functions
+    - page: extend/api-functions/index.md
+      label: Use cases
+    - page: extend/api-functions/api-functions-reference.md
+      label: Reference
+    - page: extend/api-functions/create-api-functions.md
+      label: Tutorials
+    - separator: Third-party integrations
+    - page: /integrations/analytics
+      label: Analytics
+    - page: setup/reference/apigee-api-operations.md
+      label: Apigee API operations
+    - page: setup/reference/gravitee-api-reference.md
+      label: Gravitee API reference
+
+- group: Access management
+  items:
+    - separator: User management
+    - page: ./setup/how-to/manage-people.md
+      label: People
+    - page: setup/concepts/teams.md
+      group: Teams
+      items:
+        - page: ./setup/how-to/manage-teams.md
+          label: Manage teams
+  
+    - separator: Auth
+    - group: SSO
+      page: ./setup/concepts/sso.md
+      items:
+        - page: ./setup/how-to/add-idp.md
+          label: Add an identity provider
+        - page: ./setup/how-to/configure-sso.md
+          label: Configure SSO
+        - page: ./setup/how-to/configure-azure-ad.md
+          label: Azure AD
+    - group: Role-based access control (RBAC)
+      page: ./setup/how-to/rbac/index.md
+      items:
+        - page: setup/concepts/roles.md
+          label: Roles
+        - page: ./setup/concepts/rbac.md
+          label: RBAC concepts
+        - page: ./setup/how-to/rbac/projects.md
+          label: For projects
+        - page: ./setup/how-to/rbac/page-permissions.md
+          label: For pages
+        - page: ./setup/how-to/rbac/links-and-groups-permissions.md
+          label: For navigation
+        - page: ./setup/how-to/rbac/pattern-access.md
+          label: Pattern-based access
+        # - page: config/rbac.md
+        #   label: Role-based access control
+    - page: ./setup/how-to/api-keys.md
+      label: API keys
+    - separator: Organizations and projects
+    - page: ./setup/how-to/manage-orgs.md
+      label: Organizations
+    - page: ./setup/how-to/manage-projects.md
+      label: Projects
+    - group: Environment
+      items:
+        - page: setup/concepts/env-variables.md
+          label: Environment variables
+        - page: setup/how-to/env-variables.md
+          label: Configure environment variables
+
+
+# - $ref: author/sidebars.yaml
+# - $ref: style/sidebars.yaml
+# - $ref: extend/sidebars.yaml
+# - $ref: setup/sidebars.yaml
+# - $ref: config/sidebars.yaml
+

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redocly.com/v1/catalog-api-description-entity-metadata.json",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "description": "Metadata of the API description",
+      "properties": {
+        "specType": {
+          "type": "string",
+          "enum": [
+            "jsonschema",
+            "openapi",
+            "asyncapi",
+            "avro",
+            "zod",
+            "graphql",
+            "protobuf",
+            "arazzo"
+          ],
+          "description": "Type of the API description",
+          "example": "openapi"
+        },
+        "schema": {
+          "type": "string",
+          "description": "Inline schema of the API description",
+          "example": "{\"openapi\":\"3.0.0\",\"info\":{\"title\":\"Payments API\",\"version\":\"1.0.0\"}}"
+        },
+        "descriptionFile": {
+          "type": "string",
+          "description": "Path to the file containing the API description",
+          "example": "openapi.yaml"
+        }
+      },
+      "required": [
+        "specType",
+        "schema",
+        "descriptionFile"
+      ]
+    }
+  },
+  "required": [
+    "metadata"
+  ]
+}

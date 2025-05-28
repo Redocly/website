@@ -1,0 +1,274 @@
+required:
+  - url
+  - id
+  - node_id
+  - html_url
+  - diff_url
+  - patch_url
+  - issue_url
+  - number
+  - state
+  - locked
+  - title
+  - user
+  - body
+  - created_at
+  - updated_at
+  - closed_at
+  - merged_at
+  - merge_commit_sha
+  - assignee
+  - assignees
+  - requested_reviewers
+  - requested_teams
+  - labels
+  - milestone
+  - commits_url
+  - review_comments_url
+  - review_comment_url
+  - comments_url
+  - statuses_url
+  - head
+  - base
+  - _links
+  - author_association
+  - auto_merge
+  - active_lock_reason
+  - draft
+  - merged
+  - mergeable
+  - rebaseable
+  - mergeable_state
+  - merged_by
+  - comments
+  - review_comments
+  - maintainer_can_modify
+  - commits
+  - additions
+  - deletions
+  - changed_files
+type: object
+properties:
+  url:
+    type: string
+    format: uri
+  id:
+    type: integer
+  node_id:
+    type: string
+  html_url:
+    type: string
+    format: uri
+  diff_url:
+    type: string
+    format: uri
+  patch_url:
+    type: string
+    format: uri
+  issue_url:
+    type: string
+    format: uri
+  number:
+    type: integer
+    description: Number uniquely identifying the pull request within its repository.
+  state:
+    type: string
+    enum:
+      - open
+      - closed
+    description: State of this Pull Request. Either `open` or `closed`.
+  locked:
+    type: boolean
+  title:
+    type: string
+    description: The title of the pull request.
+  user:
+    $ref: ./user.yaml
+  body:
+    type:
+      - string
+      - 'null'
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+  closed_at:
+    type:
+      - string
+      - 'null'
+    format: date-time
+  merged_at:
+    type:
+      - string
+      - 'null'
+    format: date-time
+  merge_commit_sha:
+    type:
+      - string
+      - 'null'
+  assignee:
+    oneOf:
+      - $ref: ./user.yaml
+      - type: 'null'
+  assignees:
+    type: array
+    items:
+      $ref: ./user.yaml
+  requested_reviewers:
+    type: array
+    items:
+      oneOf:
+        - $ref: ./user.yaml
+        - $ref: ./team.yaml
+  requested_teams:
+    type: array
+    items:
+      $ref: ./team.yaml
+  labels:
+    type: array
+    items:
+      $ref: ./label.yaml
+  milestone:
+    oneOf:
+      - $ref: ./milestone.yaml
+      - type: 'null'
+  commits_url:
+    type: string
+    format: uri
+  review_comments_url:
+    type: string
+    format: uri
+  review_comment_url:
+    type: string
+    format: uri-template
+  comments_url:
+    type: string
+    format: uri
+  statuses_url:
+    type: string
+    format: uri
+  head:
+    type: object
+    required:
+      - label
+      - ref
+      - sha
+      - user
+      - repo
+    properties:
+      label:
+        type: string
+      ref:
+        type: string
+      sha:
+        type: string
+      user:
+        $ref: ./user.yaml
+      repo:
+        $ref: ./repository.yaml
+    additionalProperties: false
+  base:
+    type: object
+    required:
+      - label
+      - ref
+      - sha
+      - user
+      - repo
+    properties:
+      label:
+        type: string
+      ref:
+        type: string
+      sha:
+        type: string
+      user:
+        $ref: ./user.yaml
+      repo:
+        $ref: ./repository.yaml
+    additionalProperties: false
+  _links:
+    type: object
+    required:
+      - self
+      - html
+      - issue
+      - comments
+      - review_comments
+      - review_comment
+      - commits
+      - statuses
+    properties:
+      self:
+        $ref: ./link.yaml
+      html:
+        $ref: ./link.yaml
+      issue:
+        $ref: ./link.yaml
+      comments:
+        $ref: ./link.yaml
+      review_comments:
+        $ref: ./link.yaml
+      review_comment:
+        $ref: ./link.yaml
+      commits:
+        $ref: ./link.yaml
+      statuses:
+        $ref: ./link.yaml
+    additionalProperties: false
+  author_association:
+    $ref: ./author-association.yaml
+  auto_merge:
+    oneOf:
+      - $ref: ./auto-merge.yaml
+      - type: 'null'
+  active_lock_reason:
+    type:
+      - string
+      - 'null'
+    enum:
+      - resolved
+      - off-topic
+      - too heated
+      - spam
+      - null
+  draft:
+    type: boolean
+    description: Indicates whether or not the pull request is a draft.
+  merged:
+    type:
+      - boolean
+      - 'null'
+  mergeable:
+    type:
+      - boolean
+      - 'null'
+  rebaseable:
+    type:
+      - boolean
+      - 'null'
+  mergeable_state:
+    type: string
+  merged_by:
+    oneOf:
+      - $ref: ./user.yaml
+      - type: 'null'
+  comments:
+    type: integer
+  review_comments:
+    type: integer
+  maintainer_can_modify:
+    type: boolean
+    description: Indicates whether maintainers can modify the pull request.
+  commits:
+    type: integer
+  additions:
+    type: integer
+  deletions:
+    type: integer
+  changed_files:
+    type: integer
+additionalProperties: false
+title: Pull Request

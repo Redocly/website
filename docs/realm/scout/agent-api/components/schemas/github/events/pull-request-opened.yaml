@@ -1,0 +1,49 @@
+type: object
+required:
+  - action
+  - number
+  - pull_request
+  - repository
+  - sender
+properties:
+  action:
+    type: string
+    enum:
+      - opened
+  number:
+    type: integer
+    description: The pull request number.
+  pull_request:
+    allOf:
+      - $ref: ../pull-request.yaml
+      - type: object
+        required:
+          - state
+          - closed_at
+          - merged_at
+          - active_lock_reason
+          - merged_by
+        properties:
+          state:
+            type: string
+            enum:
+              - open
+          closed_at:
+            type: 'null'
+          merged_at:
+            type: 'null'
+          active_lock_reason:
+            type: 'null'
+          merged_by:
+            type: 'null'
+        additionalProperties: false
+  repository:
+    $ref: ../repository.yaml
+  installation:
+    $ref: ../installation-lite.yaml
+  organization:
+    $ref: ../organization.yaml
+  sender:
+    $ref: ../user.yaml
+additionalProperties: false
+title: pull_request opened event

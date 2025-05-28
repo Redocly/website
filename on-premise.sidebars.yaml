@@ -1,0 +1,8 @@
+- separator: On-premise Redocly Reference
+- label: How to use Reference on-premise
+  page: docs-legacy/api-reference-docs/guides/on-premise.md # this should be the new merged page
+- page: docs-legacy/api-reference-docs/guides/on-premise-html-element.md
+- page: docs-legacy/api-reference-docs/guides/on-premise-cli-build.md
+- label: Enable the version switcher
+  page: docs-legacy/api-reference-docs/guides/on-premise-version-selection.md
+# add any other pages that refer to Reference on-premise only

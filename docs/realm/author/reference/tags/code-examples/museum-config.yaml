@@ -1,0 +1,33 @@
+products:
+  tickets:
+    name: Museum Tickets
+    icon: images/ticket-logo.png
+    folder: products/tickets/
+  events:
+    name: Museum Events
+    icon: ./images/event-logo.svg
+    folder: ./products/events
+navbar:
+  items:
+    - page: about-the-museum.md
+      label: About
+    - page: sponsor-the-museum.md
+      label: Benefactors
+footer:
+  copyrightText: Redocly Museum API
+  items:
+    # Column 1
+    - page: policies/faq.md
+      label: Museum FAQ
+    # Column 2
+    - group: Resources
+      items:
+        - href: https://access.si.edu/museum-professionals
+          label: Smithsonian Resources
+        - href: https://www.aam-us.org/topic/resource-library/
+          label: American Alliance of Museums
+redirects:
+  '/tickets/annual-membership/':
+    to: '/tickets/benefactor'
+  '/events/dig-for-fossils-december/':
+    to: '/products/dig-for-fossils-january'

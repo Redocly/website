@@ -1,0 +1,55 @@
+---
+seo:
+  title: Update the portal
+excludeFromSearch: true
+
+---
+
+# Upgrade to a different version
+
+{% partial file="/docs-legacy/_snippets/banner-legacy-developer-portal.md" /%}
+
+Make sure you have committed any changes prior to attempting an upgrade.
+It's a good idea to isolate an upgrade to a single commit.
+
+## Update package.json
+
+Find the `@redocly/developer-portal` in the `@dependencies` section of the `package.json` file.
+
+```json
+  "dependencies": {
+    "@redocly/developer-portal": "^1.0.0-beta.46"
+  }
+```
+
+Update the version there (note, this may be the most current version already).
+
+Check the [published versions on NPM](https://www.npmjs.com/package/@redocly/developer-portal).
+
+```json
+  "dependencies": {
+    "@redocly/developer-portal": "^1.0.0-beta.51"
+  }
+```
+
+Save the file.
+
+## Run yarn install
+
+```shell
+yarn install
+```
+
+This command upgrades to the newer version of the developer portal.
+
+## Troubleshoot
+
+If you hit a problem with the installation, you may want to try to delete your `yarn.lock` file and then `yarn install` again.
+Some dependencies are pinned based on the underlying OS or node version.
+
+```bash
+rm yarn.lock
+yarn install
+```
+
+Still stuck? Contact us. We're happy to help.

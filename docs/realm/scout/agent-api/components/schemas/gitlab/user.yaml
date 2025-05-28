@@ -1,0 +1,20 @@
+type: object
+required:
+  - name
+  - username
+  - avatar_url
+properties:
+  name:
+    type: string
+    description: User name.
+    example: John
+  username:
+    type: string
+    description: User nickname.
+    example: johnDoe47
+  avatar_url:
+    type: string
+    description: User avatar url.
+    example: http://www.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61?s=40\u0026d=identicon
+additionalProperties: false
+title: User

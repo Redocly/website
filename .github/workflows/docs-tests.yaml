@@ -1,0 +1,27 @@
+name: Documentation tests
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  markdownlint:
+    name: markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DavidAnson/markdownlint-cli2-action@v15
+        with:
+          config: .markdownlint.yaml
+          globs: |
+            docs/**/*.md
+            !docs/realm/_partials/**
+            !docs-legacy/developer-portal/**
+            !docs/realm/spot/**
+            !docs/realm/spot-exp/**
+            !docs/realm/scout/**
+            !docs/realm/blue-harvest/**
+            !docs/realm/node_modules/**
+            !docs/realm/reference/format-image-tag.md
+            !docs/realm/extend/**
+            !docs/realm/portal-changelog.md
+            !docs/realm/.templates/*

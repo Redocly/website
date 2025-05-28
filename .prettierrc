@@ -1,0 +1,13 @@
+{
+  "singleQuote": true,
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": ["*.md"],
+      "options": {
+        "plugins": ["./local-plugin.js"],
+        "parser": "markdoc"
+      }
+    }
+  ]
+}

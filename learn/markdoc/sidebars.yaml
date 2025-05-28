@@ -1,0 +1,34 @@
+- page: index.md
+- page: write-with-markdoc.md
+  label: Write with Markdoc
+- page: evaluating-markdoc.md
+  label: Evaluating Markdoc
+- page: debug-markdoc-variables.md
+  label: Debug Markdoc Variables
+- group: Markdoc Tag Library
+  page: tags/tag-library.md
+  items:
+  - separator: Built-in tags
+  - page: tags/partial.md
+    label: Partial
+  - page: tags/table.md
+    label: Table
+  - separator: Redocly Tags
+  - page: tags/admonition.md
+    label: Admonition
+  - page: tags/cards.md
+    label: Cards
+  - page: tags/code-snippet.md
+    label: Code Snippet
+  - page: tags/img.md
+    label: Image 
+  - page: tags/inline-svg.md
+    label: Inline SVG
+  - page: tags/json-schema.md
+    label: JSON Schema
+  - page: tags/openapi-code-sample.md
+    label: OpenAPI Code Sample
+  - page: tags/replay-openapi.md
+    label: Replay OpenAPI
+  - page: tags/tabs.md
+    label: Tabs

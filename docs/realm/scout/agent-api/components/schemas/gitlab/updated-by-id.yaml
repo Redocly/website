@@ -1,0 +1,15 @@
+type: object
+required:
+  - previous
+  - current
+properties:
+  previous:
+    type: integer
+    description: Id of a user that previously updated merge request.
+    example: 0
+  current:
+    type: integer
+    description: Id of the most recent user that updated merge request.
+    example: 1
+additionalProperties: false
+title: Updated by id

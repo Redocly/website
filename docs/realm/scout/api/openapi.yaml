@@ -1,0 +1,1169 @@
+# This is extract of main API spec, only scout-related endpoints.
+openapi: 3.1.0
+info:
+  version: '1.0'
+  title: Redocly Scout
+  termsOfService: https://redocly.com/subscription-agreement
+  contact:
+    name: API Support
+    email: team@redocly.com
+  license:
+    name: Redocly
+    url: https://redocly.com/subscription-agreement
+servers:
+  - url: https://{host}/api
+    variables:
+      host:
+        default: app.cba.au.redocly.com
+        description: Server host.
+    description: Production main server.
+security:
+  - UserCookie: []
+tags:
+  - name: Remotes
+    description: Operations related to remotes.
+  - name: Metadata
+    description: Operations related to metadata.
+  - name: Todos
+    description: Operations related to todos.
+  - name: Tasks
+    description: Operations related to tasks.
+  - name: Status
+    description: Operations related to status.
+paths:
+  /orgs/{orgId}/projects/{projectId}/remotes:
+    parameters:
+      - $ref: '#/components/parameters/OrgId'
+      - $ref: '#/components/parameters/ProjectId'
+    post:
+      tags:
+        - Remotes
+      operationId: upsertRemote
+      summary: Upsert remote
+      security:
+        - ApiKey: []
+        - UserCookie: []
+      description: |-
+        Upsert remote.
+        If remote with the same `mountPath` and `type` already exists the remote object is returned.
+        If the `type` doesn't match the existing remote, a 409 error is returned.
+        Otherwise, a new remote is created.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRemote'
+      responses:
+        '201':
+          description: Remote created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Remote'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+  /orgs/{orgId}/projects/{projectId}/remotes/{remoteId}/push:
+    parameters:
+      - $ref: '#/components/parameters/OrgId'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/RemoteId'
+    post:
+      tags:
+        - Remotes
+      operationId: pushToRemote
+      summary: Push files to remote
+      security:
+        - ApiKey: []
+      description: |-
+        Push discovered files as a remote content.
+        Files should be sent as a multipart/form-data.
+        Commit details like commit message and author can be sent as a JSON object in the `commit` field.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RemotePush'
+      responses:
+        '200':
+          description: Content pushed.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/PullRequest'
+                  - type: object
+                    required:
+                      - branchName
+                      - hasChanges
+                    properties:
+                      branchName:
+                        type: string
+                      hasChanges:
+                        type: boolean
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+  /orgs/{orgId}/projects/{projectId}/scout/todos:
+    post:
+      tags:
+        - Todos
+      security:
+        - ApiKey: []
+      summary: Create a job todo
+      description: |-
+        Git provider webhook triggers Scout to create a job todo.
+        Similarly, a lint job started or completed triggers jobs todo.
+        Since Scout is stateless and distributed, this is the API for storing things to do.
+        It's also a way to communicate with Scout by making jobs for it to do too (such as communicating status back to Git).
+        Finally, it can be used to trigger Scout to update again in the case of a GitHub webhook outage.
+      operationId: createTodo
+      parameters:
+        - $ref: '#/components/parameters/X-Redocly-Scout-Version'
+        - $ref: '#/components/parameters/OrgId'
+        - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Job'
+      responses:
+        '201':
+          description: Created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+    get:
+      tags:
+        - Todos
+      security:
+        - ApiKey: []
+      summary: List all todos
+      operationId: getAllTodos
+      parameters:
+        - $ref: '#/components/parameters/X-Redocly-Scout-Version'
+        - $ref: '#/components/parameters/OrgId'
+        - $ref: '#/components/parameters/ProjectId'
+        - $ref: '#/components/parameters/After'
+        - $ref: '#/components/parameters/Before'
+        - $ref: '#/components/parameters/Sort'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobList'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+  /orgs/{orgId}/projects/{projectId}/scout/tasks:
+    post:
+      tags:
+        - Tasks
+      security:
+        - ApiKey: []
+      summary: Process next job
+      description: Retrieve and start the next available job.
+      operationId: startNextJob
+      parameters:
+        - $ref: '#/components/parameters/X-Redocly-Scout-Version'
+        - $ref: '#/components/parameters/OrgId'
+        - $ref: '#/components/parameters/ProjectId'
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '204':
+          description: No jobs available.
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+    get:
+      tags:
+        - Tasks
+      security:
+        - ApiKey: []
+      summary: List all tasks
+      operationId: getAllTasks
+      parameters:
+        - $ref: '#/components/parameters/X-Redocly-Scout-Version'
+        - $ref: '#/components/parameters/OrgId'
+        - $ref: '#/components/parameters/ProjectId'
+        - $ref: '#/components/parameters/After'
+        - $ref: '#/components/parameters/Before'
+        - $ref: '#/components/parameters/Sort'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobList'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+  /orgs/{orgId}/projects/{projectId}/scout/tasks/{jobId}:
+    get:
+      tags:
+        - Tasks
+      security:
+        - ApiKey: []
+      summary: Get task
+      description: Get task.
+      operationId: getJobById
+      parameters:
+        - $ref: '#/components/parameters/X-Redocly-Scout-Version'
+        - $ref: '#/components/parameters/OrgId'
+        - $ref: '#/components/parameters/ProjectId'
+        - name: jobId
+          description: Job ID.
+          required: true
+          in: path
+          schema:
+            type: string
+            format: ulid
+            example: sjob_01h2t9ksv7vmsvbhh5ty40zctw
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+    patch:
+      tags:
+        - Tasks
+      security:
+        - ApiKey: []
+      summary: Update job
+      description: |-
+        Scout sends this API request after completing a job.
+        Supports only `PROCESSING` -> `COMPLETED` and `PROCESSING` -> `FAILED` transitions.
+      operationId: updateJob
+      parameters:
+        - $ref: '#/components/parameters/X-Redocly-Scout-Version'
+        - $ref: '#/components/parameters/OrgId'
+        - $ref: '#/components/parameters/ProjectId'
+        - name: jobId
+          description: Job ID.
+          required: true
+          in: path
+          schema:
+            type: string
+            format: ulid
+            example: sjob_01h2t9ksv7vmsvbhh5ty40zctw
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchJob'
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+  /orgs/{orgId}/projects/{projectId}/scout/status:
+    post:
+      tags:
+        - Status
+      security:
+        - ApiKey: []
+      summary: Push status
+      description: Scout uses this to periodically report it's status back to main api.
+      operationId: reportStatus
+      parameters:
+        - $ref: '#/components/parameters/X-Redocly-Scout-Version'
+        - $ref: '#/components/parameters/OrgId'
+        - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Status'
+      responses:
+        '204':
+          description: No content.
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+  /orgs/{orgId}/projects/{projectId}/scout/metadata/validate:
+    post:
+      tags:
+        - Metadata
+      security:
+        - ApiKey: []
+      summary: Get metadata validation result
+      description: Validate api metadata against "metadataSchema" in project's config file.
+      operationId: validateMetadata
+      parameters:
+        - $ref: '#/components/parameters/X-Redocly-Scout-Version'
+        - $ref: '#/components/parameters/OrgId'
+        - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Metadata'
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetadataValidationResult'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+components:
+  schemas:
+    GitProviderType:
+      type: string
+      format: enum
+      description: Git provider type.
+      enum:
+        - GITHUB_CLOUD
+        - GITHUB_SERVER
+        - GITLAB_CLOUD
+        - GITLAB_SELF_MANAGED
+        - BITBUCKET_CLOUD
+        - BITBUCKET_DATACENTER
+        - AZURE
+    CreateRemote:
+      type: object
+      required:
+        - mountPath
+        - type
+      properties:
+        mountPath:
+          type: string
+          description: Remote target path.
+          example: apis/test/@v1
+        type:
+          type: string
+          description: 'Remote type. TODO: Add discriminator by type and add other fields for GIT and URL remote types.'
+          enum:
+            - CICD
+            - GIT
+            - URL
+          example: CICD
+        autoSync:
+          type: boolean
+          description: Auto sync changes to remote.
+        autoMerge:
+          type: boolean
+          description: Auto merge changes from remote.
+        createdAt:
+          type: string
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        updatedAt:
+          type: string
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        providerType:
+          $ref: '#/components/schemas/GitProviderType'
+        namespaceId:
+          type: string
+          readOnly: true
+        repositoryId:
+          type: string
+          readOnly: true
+        projectId:
+          readOnly: true
+          type:
+            - string
+            - 'null'
+        mountBranchName:
+          type: string
+          readOnly: true
+        contentPath:
+          type: string
+          readOnly: true
+        credentialId:
+          type: string
+          readOnly: true
+        branchName:
+          type: string
+          readOnly: true
+        contentType:
+          type: string
+          readOnly: true
+          enum:
+            - FOLDER
+            - FILE
+          example: FILE
+    Remote:
+      allOf:
+        - $ref: '#/components/schemas/CreateRemote'
+        - type: object
+          properties:
+            id:
+              type: string
+              description: Remote ID.
+              example: rem_01h2captefvs9bpg3v6twqqj9n
+              readOnly: true
+          required:
+            - id
+    Problem:
+      type: object
+      title: Problem
+      properties:
+        type:
+          type: string
+          format: uri-reference
+          description: |
+            URI reference that uniquely identifies the problem type only in the context of the provided API. Opposed to the specification in RFC 9457 (formerly RFC 7807), it is neither recommended to be dereferenceable and point to a human-readable documentation nor globally unique for the problem type.
+          default: about:blank
+          example: /some/uri-reference
+        title:
+          type: string
+          description: |
+            Short summary of the problem type. Written in English and readable for engineers, usually not suited for non technical stakeholders and not localized.
+          example: some title for the error situation
+        status:
+          type: integer
+          format: int32
+          description: |
+            HTTP status code generated by the origin server for this occurrence of the problem.
+          minimum: 100
+          exclusiveMaximum: 600
+          example: 400
+        detail:
+          type: string
+          description: |
+            Human readable explanation specific to this occurrence of the problem that is helpful to locate the problem and give advice on how to proceed. Written in English and readable for engineers, usually not suited for non technical stakeholders and not localized.
+          example: some description for the error situation
+        instance:
+          type: string
+          format: uri-reference
+          description: |
+            URI reference that identifies the specific occurrence of the problem, e.g. by adding a fragment identifier or sub-path to the problem type. May be used to locate the root of this problem in the source code.
+          example: /some/uri-reference#specific-occurrence-context
+        object:
+          type: string
+          const: problem
+      required:
+        - type
+        - title
+        - status
+        - object
+    RemotePush:
+      type: object
+      required:
+        - commit
+        - jobId
+      properties:
+        commit:
+          type: object
+          description: Commit details.
+          required:
+            - message
+            - author
+          properties:
+            namespace:
+              type: string
+              description: Git repo namespace (organization login for GitHub).
+              example: Redocly
+            repository:
+              type: string
+              description: Git repo name.
+              example: redoc
+            message:
+              type: string
+              description: Commit message.
+              example: 'chore: Add new API'
+            author:
+              type: object
+              required:
+                - email
+                - name
+              properties:
+                name:
+                  description: Commit author name.
+                  example: John Doe
+                email:
+                  type: string
+                  description: Commit author email.
+                  format: email
+                  example: johndoe@example.com
+                image:
+                  type: string
+                  description: |-
+                    Commit author image URL.
+                    If not provided, the default image is used.
+                    If the image may not accessible, [data url](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) can be used.
+        jobId:
+          type: string
+          format: ulid
+          description: ID of the `PROCESS_GIT_REPO` job, if any.
+          example: job_01f1q3q1q1q1q1q1q1q1q1q1q1
+        replace:
+          type: boolean
+          description: |-
+            Whether to replace the existing files.
+            If provided, all files from the remote are removed and the new files are added.
+            If not provided, the existing files are kept and the new files are added, overwriting the existing files where they overlap.
+          example: true
+          default: false
+        files:
+          type: object
+          description: Map of files to upload.
+          additionalProperties:
+            description: |-
+              Files to push.
+              Max file size is 10MB.
+              Maximum number of files is 100.
+            type: string
+            format: binary
+    PullRequest:
+      type: object
+      properties:
+        id:
+          type: string
+          format: ulid
+          example: pr_01h1s5z6vf2mm1mz3hevnn9va7
+          description: Pull request Id.
+          readOnly: true
+        number:
+          description: Pull request number.
+          type: integer
+          example: 1
+          readOnly: true
+        branchName:
+          description: Branch name.
+          type: string
+          example: main
+          maxLength: 512
+        title:
+          description: PR title.
+          type: string
+          maxLength: 512
+        description:
+          description: PR description.
+          type: string
+        status:
+          description: PR status.
+          type: string
+          default: OPEN
+          enum:
+            - OPEN
+            - CLOSED
+            - MERGED
+        isDraft: 
+          description: Indicates whether or not the pull request is a draft.
+          type: boolean
+        reviewers:
+          description: List of reviewers.
+          type: array
+          readOnly: true
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: ulid
+                example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+                description: User id.
+                readOnly: true
+              firstName:
+                description: User first name.
+                type: string
+                readOnly: true
+              lastName:
+                description: User last name.
+                type: string
+                readOnly: true
+            required:
+              - id
+              - firstName
+              - lastName
+          default: []
+        createdBy:
+          description: User who create PR.
+          type: object
+          readOnly: true
+          properties:
+            id:
+              type: string
+              format: ulid
+              example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+              description: User id.
+              readOnly: true
+            firstName:
+              description: User first name.
+              type: string
+              readOnly: true
+            lastName:
+              description: User last name.
+              type: string
+              readOnly: true
+          required:
+            - id
+            - firstName
+            - lastName
+        closedById:
+          type: string
+          format: ulid
+          example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+          description: User id who close PR.
+          readOnly: true
+        mergedById:
+          type: string
+          format: ulid
+          example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+          description: User id who merged PR.
+          readOnly: true
+        organizationId:
+          description: Organization ID.
+          type: string
+          readOnly: true
+        organization:
+          description: Organization.
+          properties:
+            name:
+              description: Organization name.
+              type: string
+        projectId:
+          description: Project ID.
+          type: string
+          readOnly: true
+        project:
+          description: Project.
+          type: object
+          properties:
+            name:
+              description: Project name.
+              type: string
+        reviews:
+          description: list of reviews.
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: ulid
+                example: rev_01h1s5z6vf2mm1mz3hevnn9va7
+              status:
+                type: string
+                enum:
+                  - APPROVED
+                  - REQUESTED_CHANGES
+                  - COMMENTED
+              userId:
+                type: string
+                format: ulid
+                example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+              user:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: ulid
+                    example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+                    description: User id.
+                  firstName:
+                    description: User first name.
+                    type: string
+                  lastName:
+                    description: User last name.
+                    type: string
+        createdAt:
+          description: Created date.
+          type: string
+          readOnly: true
+          format: date-time
+        updatedAt:
+          description: Updated date.
+          type: string
+          readOnly: true
+          format: date-time
+      required:
+        - id
+        - number
+        - branchName
+        - commitHash
+        - title
+        - status
+        - reviewers
+        - createdAt
+        - updatedAt
+        - createdBy
+        - organizationId
+        - projectId
+    Page:
+      type: object
+      properties:
+        endCursor:
+          type:
+            - string
+            - 'null'
+          description: |-
+            Use with the `after` query parameter to load the next page of data.
+            When `null`, there is no data.
+            The cursor is opaque and internal structure is subject to change.
+        startCursor:
+          type:
+            - string
+            - 'null'
+          description: |-
+            Use with the `before` query parameter to load the previous page of data.
+            When `null`, there is no data.
+            The cursor is opaque and internal structure is subject to change.
+        hasNextPage:
+          type: boolean
+          description: Indicates if there is a next page with items.
+        hasPrevPage:
+          type: boolean
+          description: Indicates if there is a previous page with items.
+        limit:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 10
+          description: Value showing how many items are in the page limit.
+        total:
+          type: integer
+          description: Count of items across all pages.
+          minimum: 0
+      required:
+        - endCursor
+        - startCursor
+        - hasNextPage
+        - hasPrevPage
+        - limit
+        - total
+    GitCommitCheck:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Check name.
+          example: Scorecard - Compliance API
+        status:
+          type: string
+          enum:
+            - IN_PROGRESS
+            - SUCCESS
+            - FAILED
+          description: Git commit status.
+        description:
+          type: string
+          description: Git commit status description.
+        targetUrl:
+          type: string
+          description: Git commit status target URL.
+      required:
+        - name
+        - status
+    JobMetadata:
+      type: object
+      description: Additional information about job.
+      properties:
+        scoutVersion:
+          type: string
+          description: Scout version.
+          example: 1.0.0
+          readOnly: true
+        errorMessage:
+          type: string
+          description: Error message, if any.
+        errorStack:
+          type: string
+          description: Error stack trace, if any.
+    Job:
+      type: object
+      properties:
+        id:
+          type: string
+          format: ulid
+          description: ID of the job.
+          readOnly: true
+          example: sjob_01h2t9ksv7vmsvbhh5ty40zctw
+        status:
+          readOnly: true
+          type: string
+          enum:
+            - PENDING
+            - PROCESSING
+            - COMPLETED
+            - FAILED
+          description: Job status.
+        type:
+          type: string
+          enum:
+            - PROCESS_GIT_REPO
+            - UPDATE_STATUS
+          description: Type of job.
+        organizationId:
+          description: Organization ID.
+          type: string
+          readOnly: true
+        projectId:
+          description: Project ID.
+          type: string
+          readOnly: true
+        providerId:
+          description: Git provider identifier (appId for GitHub).
+          type: string
+        providerType:
+          type: string
+          enum:
+            - GITHUB_CLOUD
+            - GITHUB_SERVER
+            - GITLAB_CLOUD
+            - GITLAB_SELF_MANAGED
+            - BITBUCKET_CLOUD
+            - BITBUCKET_DATACENTER
+            - AZURE
+          description: Git provider type.
+        namespaceId:
+          type: string
+          description: Git repo namespace id (organization login for GitHub).
+        repositoryId:
+          type: string
+          description: Git repo id.
+        branch:
+          type: string
+          description: Git branch name.
+        commitSha:
+          type: string
+          description: Git commit SHA.
+        isMainBranch:
+          type: boolean
+          default: false
+          description: True if branch is main.
+        prId:
+          type: string
+          description: Git pull request ID.
+        attempts:
+          type: integer
+          description: Number of attempts to process the job.
+          readOnly: true
+        parentJobId:
+          type: string
+          description: ID of the parent job, if any.
+          format: ulid
+          example: sjob_01h2t9ksv7vmsvbhh5ty40zctw
+        checks:
+          type: array
+          description: Commit status checks.
+          items:
+            $ref: '#/components/schemas/GitCommitCheck'
+        metadata:
+          $ref: '#/components/schemas/JobMetadata'
+        startedAt:
+          type: string
+          format: date-time
+          description: Job start date.
+          readOnly: true
+        createdAt:
+          type: string
+          format: date-time
+          description: Job creation date.
+          readOnly: true
+        updatedAt:
+          type: string
+          format: date-time
+          description: Job last update date.
+          readOnly: true
+      required:
+        - id
+        - status
+        - type
+        - organizationId
+        - projectId
+        - providerType
+        - namespaceId
+        - repositoryId
+        - branch
+        - commitSha
+        - attempts
+        - createdAt
+        - updatedAt
+    JobList:
+      type: object
+      properties:
+        object:
+          type: string
+          const: list
+        page:
+          $ref: '#/components/schemas/Page'
+        items:
+          type: array
+          minItems: 0
+          items:
+            $ref: '#/components/schemas/Job'
+      required:
+        - object
+        - page
+        - items
+    PatchJob:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - COMPLETED
+            - FAILED
+          description: Job status.
+        metadata:
+          $ref: '#/components/schemas/JobMetadata'
+      required:
+        - status
+    Status:
+      type: object
+      properties:
+        hostname:
+          type: string
+          description: Hostname of Scout instance.
+        pid:
+          type: integer
+          description: Process ID.
+        version:
+          type: string
+          description: Scout version.
+        disk:
+          type: object
+          description: Disk usage.
+          properties:
+            size:
+              type: integer
+              description: Total disk size.
+            used:
+              type: integer
+              description: Used disk size.
+            available:
+              type: integer
+              description: Available disk size.
+            unit:
+              type: string
+              description: Disk size unit.
+              enum:
+                - B
+                - KB
+                - MB
+                - GB
+                - TB
+              example: MB
+          required:
+            - size
+            - used
+            - available
+            - unit
+        jobs:
+          type: object
+          description: Scout jobs.
+          properties:
+            active:
+              type: integer
+              description: Number of active jobs.
+            max:
+              type: integer
+              description: Maximum number of jobs.
+          required:
+            - active
+            - max
+      required:
+        - hostname
+        - pid
+        - version
+        - disk
+        - jobs
+    Metadata:
+      type: object
+      description: Any object shape.
+      example:
+        department: IT
+    MetadataValidationResult:
+      type: object
+      properties:
+        isValid:
+          type: boolean
+          example: false
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              keyword:
+                type: string
+                description: Validation keyword.
+              instancePath:
+                type: string
+                description: JSON Pointer to the location in the data instance.
+                example: /prop/1/subProp
+              schemaPath:
+                type: string
+                description: JSON Pointer to the location of the failing keyword in the schema.
+              params:
+                type: object
+                description: Additional information about error.
+                example:
+                  missingProperty: owner
+              propertyName:
+                type: string
+                description: Set for errors in `propertyNames` keyword schema.
+              message:
+                type: string
+                description: Error message.
+              schema:
+                description: Value of the failing keyword in the schema.
+              parentSchema:
+                type: object
+                description: Schema containing the keyword.
+              data:
+                description: Data validated by the keyword.
+            required:
+              - keyword
+              - instancePath
+              - schemaPath
+              - params
+            example:
+              instancePath: ''
+              schemaPath: '#/required'
+              keyword: required
+              params:
+                missingProperty: owner
+              message: must have required property 'owner'
+          description: Array of metadata validation errors.
+      required:
+        - isValid
+  securitySchemes:
+    InternalAuth:
+      type: http
+      scheme: basic
+      description: Internal authentication scheme for interaction between services (e.g. Syncer to API).
+    UserCookie:
+      type: apiKey
+      in: cookie
+      name: accessToken
+      description: Default authentication scheme for interaction between browser and API.
+    ApiKey:
+      type: http
+      scheme: bearer
+      description: |-
+        API key is required to access the API.
+        You can get your API key from the [BlueHarvest dashboard](https://app.blueharvest.cloud).
+  parameters:
+    OrgId:
+      name: orgId
+      description: Organization ID.
+      required: true
+      in: path
+      schema:
+        type: string
+        example: acme-inc
+    ProjectId:
+      name: projectId
+      description: Project ID.
+      required: true
+      in: path
+      schema:
+        type: string
+        example: my-project
+    RemoteId:
+      name: remoteId
+      description: ID of the remote.
+      required: true
+      in: path
+      schema:
+        type: string
+        format: ulid
+        example: rem_01h1s5z6vf2mm1mz3hevnn9va7
+    X-Redocly-Scout-Version:
+      name: x-redocly-scout-version
+      description: Scout version.
+      required: false
+      in: header
+      schema:
+        type: string
+        example: 1.0.0
+    After:
+      name: after
+      in: query
+      required: false
+      schema:
+        type: string
+        description: Use the `endCursor` as a value for the `after` parameter to get the next page.
+        example: a25fgaksjf23la==
+    Before:
+      name: before
+      in: query
+      required: false
+      schema:
+        type: string
+        description: Use the `startCursor` as a value for the `before` parameter to get the next page.
+        example: bfg23aksjf23zb1==
+    Sort:
+      name: sort
+      in: query
+      required: false
+      schema:
+        description: |-
+          This list is currently not sortable by other properties.
+          It is sorted by the id descending (`-id`) by default.
+          To reverse the sort order, use `id` as the value.
+        type: string
+        default: '-id'
+    Filter:
+      name: filter
+      in: query
+      required: false
+      schema:
+        description: |-
+          Filters the collection items. This field requires a special format.
+
+          For more information, see
+          [Using filter with collections](#section/Using-filter-with-collections).
+        type: string
+        example: status:approved,pending updatedAt:2020-01-01..2022-01-01
+    Limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        description: |-
+          Use to return a number of results per page.
+          If there is more data, use in combination with `after` to page through the data.
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 10
+  responses:
+    BadRequestError:
+      description: Bad Request.
+      content:
+        application/problem+json:
+          schema:
+            description: Invalid credentials.
+            $ref: '#/components/schemas/Problem'
+    NotFoundError:
+      description: Resource not found.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+x-pagination: none

@@ -1,0 +1,13 @@
+description: Installation.
+type: object
+required:
+  - id
+  - node_id
+properties:
+  id:
+    type: integer
+    description: The ID of the installation.
+  node_id:
+    type: string
+additionalProperties: false
+title: InstallationLite

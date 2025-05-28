@@ -1,0 +1,15 @@
+required:
+  - name
+  - email
+type: object
+description: Author details.
+properties:
+  name:
+    type: string
+    description: Author name.
+    example: John
+  email:
+    type: string
+    description: Author email.
+    example: john.doe@email.com
+additionalProperties: false

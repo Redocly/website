@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redocly.com/v1/catalog-entity.json",
+  "title": "Catalog entity",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri",
+      "description": "Schema of the entity",
+      "example": "https://redocly.com/v1/catalog-entity.json"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of the entity",
+      "example": "service"
+    },
+    "key": {
+      "type": "string",
+      "description": "Globally unique identifier of the entity",
+      "example": "paymentsApi"
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable name of the entity",
+      "example": "Payments API"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Brief description of the entity",
+      "example": "Payments API"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Tags of the entity",
+        "example": "rest"
+      },
+      "examples": [["rest", "typescript"]]
+    },
+    "relations": {
+      "type": "array",
+      "description": "Connections to other entities",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of the relation",
+            "example": "dependsOn"
+          },
+          "key": {
+            "type": "string",
+            "description": "Key of the entity that is related to the entity",
+            "example": "userService"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Custom information about the entity"
+    },
+    "git": {
+      "type": "array",
+      "description": "Catalog entity source control details.",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "examples": [
+        ["https://github.com/acme/payments-api", "https://gitlab.com/acme/payments-api", "https://bitbucket.org/acme/payments-api"]
+      ]
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "slack": {
+          "type": "object",
+          "properties": {
+            "channels": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "url"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string",
+      "description": "Version of the entity",
+      "example": "1.0"
+    }
+  },
+  "required": ["type", "key", "title"]
+}

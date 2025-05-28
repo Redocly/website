@@ -1,0 +1,66 @@
+- page: index.md
+- page: openapi.md
+- group: info
+  page: info.md
+  items:
+    - page: contact.md
+    - page: license.md
+- group: servers
+  page: servers.md
+  items:
+    - page: server-variables.md
+- group: paths
+  page: paths.md
+  items:
+    - page: path-item.md
+    - page: operation.md
+    - page: media-type.md
+    - page: request-body.md
+    - page: responses.md
+    - page: response.md
+- page: webhooks.md
+  label: webhooks
+- group: components
+  page: components.md
+  items:
+    - group: schemas
+      page: schemas.md
+      items:
+        - page: boolean.md
+        - page: string.md
+        - page: number.md
+        - page: integer.md
+        - page: null.md
+        - page: array.md
+        - page: object.md
+        - page: discriminator.md
+    - page: named-responses.md
+      label: responses
+    - page: header.md
+      label: headers
+    - page: named-request-bodies.md
+      label: requestBodies
+    - group: examples
+      items:
+      - page: examples.md
+      - page: example.md
+    - page: callbacks.md
+      label: callbacks
+    - page: named-path-items.md
+      label: pathItems
+    - group: parameters
+      items:
+      - page: parameters.md
+      - page: parameter.md
+    - group: securitySchemes
+      page: security-schemes.md
+      items:
+        - page: oauth-flows.md
+    - page: links.md
+      label: links
+- page: security.md
+- page: tags.md
+- page: external-docs.md
+- page: reference.md
+- page: specification-extensions.md
+- page: openapi-node-types.md

@@ -1,0 +1,1 @@
+{% $person %}'s favorite food is {% $favFood %}.

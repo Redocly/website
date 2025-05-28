@@ -1,0 +1,318 @@
+- label: ← Back to Docs
+  href: /docs
+- separatorLine: true
+- group: Workflows
+  items:
+  - label: Changelog
+    page: docs-legacy/workflows/changelog.md
+
+  - group: API registry
+    selectFirstItemOnExpand: true
+    items:
+      - label: Quickstart
+        page: docs-legacy/api-registry/guides/api-registry-quickstart.md
+      - group: Basic concepts
+        page: docs-legacy/api-registry/resources/index.md
+        items:
+          - label: API registry overview # needs an update
+            page: docs-legacy/api-registry/overview.md
+          - label: Snapshots # needs an update
+            page: docs-legacy/api-registry/guides/snapshots.md
+          - label: Versioning strategies
+            page: docs-legacy/api-registry/resources/versioning-strategies.md
+          - label: API discovery
+            page: docs-legacy/api-registry/resources/discovering-apis.md
+      - group: Guides
+        page: docs-legacy/api-registry/guides/index.md
+        items:
+          - label: Add files # needs update, it's no longer Assets in the UI
+            page: docs-legacy/api-registry/guides/add-registry-assets.md
+          - label: Edit files
+            page: docs-legacy/api-registry/guides/edit-registry-files.md
+          - label: Enable mock servers
+            page: docs-legacy/api-registry/guides/mock-server-quickstart.md
+          - label: Manage API versions
+            page: docs-legacy/api-registry/guides/manage-versions.md
+          - label: Manage branches
+            page: docs-legacy/api-registry/settings/branches.md
+          - label: Manage files
+            page: docs-legacy/api-registry/guides/view-download-assets.md
+          - label: Restart preview branch builds
+            page: docs-legacy/api-registry/guides/restart-preview-branch-builds.md
+
+      - group: API docs
+        items:
+          - label: Changelog
+            page: docs-legacy/api-reference-docs/changelog.md
+          - label: Configure functionality
+            page: docs-legacy/api-reference-docs/configuration/functionality.md
+          - label: Customize theme
+            page: docs-legacy/api-reference-docs/configuration/theming.md
+          - separator: Content and styling
+          - label: Embed Markdown in API documentation
+            page: docs-legacy/api-reference-docs/guides/embedded-markdown.md
+          - label: Add video to API documentation
+            page: docs-legacy/api-reference-docs/guides/add-video.md
+          - label: Set up redirects
+            page: docs-legacy/api-reference-docs/guides/set-up-redirects.md
+          - label: Import custom fonts
+            page: docs-legacy/api-reference-docs/guides/use-custom-fonts.md
+          - separator: Code samples
+          - label: Configure the "Try it" API console
+            page: docs-legacy/api-reference-docs/guides/try-it-console.md
+          - label: Generate code samples automatically
+            page: docs-legacy/api-reference-docs/guides/generate-code-samples.md
+
+      - group: Settings
+        page: docs-legacy/api-registry/settings/index.md
+        items:
+          - label: API info
+            page: docs-legacy/api-registry/settings/api-info.md
+          - group: Source
+            page: docs-legacy/workflows/sources/index.md
+            items:
+              - label: GitHub
+                page: docs-legacy/workflows/sources/github.md
+              - label: GitLab.com
+                page: docs-legacy/workflows/sources/gitlab-com.md
+              - label: Bitbucket Cloud
+                page: docs-legacy/workflows/sources/bitbucket-cloud.md
+              - label: Upload OpenAPI definition
+                page: docs-legacy/workflows/sources/upload-files.md
+              - label: Upload from CI/CD
+                page: docs-legacy/workflows/sources/upload-cicd.md
+              - label: GitHub Enterprise
+                page: docs-legacy/workflows/sources/github-enterprise.md
+              - label: GitLab self-managed
+                page: docs-legacy/workflows/sources/gitlab-self-managed.md
+              - label: Bitbucket self-managed
+                page: docs-legacy/workflows/sources/bitbucket-self-managed.md
+              - label: Azure repos
+                page: docs-legacy/workflows/sources/azure.md
+              - label: URL
+                page: docs-legacy/workflows/sources/url-source.md
+          - label: Manage access
+            page: docs-legacy/api-registry/settings/manage-access.md # update
+          - label: Environment variables
+            page: docs-legacy/api-registry/settings/environment-variables.md
+          - label: Custom domain
+            page: docs-legacy/api-reference-docs/settings/custom-domain.md
+          - label: Features
+            page: docs-legacy/api-registry/settings/features.md
+          - label: Template
+            page: docs-legacy/api-registry/settings/template.md
+          - label: Mock servers
+            page: docs-legacy/api-registry/settings/mock-servers.md
+          - label: Delete
+            page: docs-legacy/api-registry/settings/delete-version.md
+
+  - group: Portals
+    page: docs-legacy/developer-portal/index.md
+    items:
+      - group: Quickstart # TODO phase 2 (real quickstart)
+        items:
+          - label: Install the Developer portal
+            page: docs-legacy/developer-portal/installation.md
+          - label: Connect a portal to Workflows
+            page: docs-legacy/developer-portal/connect-developer-portal.md
+      - label: Changelog
+        page: docs-legacy/developer-portal/changelog.md
+      - group: Guides
+        page: docs-legacy/developer-portal/guides/index.md
+        items:
+          - separator: Portal management
+          - label: Organize your portal content
+            page: docs-legacy/developer-portal/guides/organizing-files.md
+          - label: Upgrade the portal to the latest version
+            page: docs-legacy/developer-portal/guides/updates.md
+          - label: Integrate API docs
+            page: docs-legacy/developer-portal/guides/reference-docs-integration.md
+          - label: Use the API catalog
+            page: docs-legacy/developer-portal/guides/api-catalog.md
+          - label: Embed the portal into a website
+            page: docs-legacy/developer-portal/guides/embedding-portals.md
+          - label: Restart portal builds
+            page: docs-legacy/developer-portal/guides/restart-build.md
+          - separator: Portal content
+          - label: Supported Markdown features
+            page: docs-legacy/developer-portal/guides/markdown.md
+          - label: Reuse content with Markdown snippets
+            page: docs-legacy/developer-portal/guides/reusing-content.md
+          - label: Insert Mermaid diagrams
+            page: docs-legacy/developer-portal/guides/mermaid.md
+          - label: Create step-by-step guides
+            page: docs-legacy/developer-portal/guides/step-by-step.md
+          - label: Set up redirects
+            page: docs-legacy/developer-portal/guides/redirects.md
+          - label: Configure custom response headers
+            page: docs-legacy/developer-portal/guides/configure-custom-response-headers.md
+          - label: Document microservices
+            page: docs-legacy/developer-portal/guides/document-microservices.md
+          - separator: Customization
+          - label: Customize navbars and footers
+            page: docs-legacy/developer-portal/guides/navbars-footers.md
+          - label: Add custom fonts
+            page: docs-legacy/developer-portal/guides/custom-fonts.md
+          - label: Create a custom 404 page
+            page: docs-legacy/developer-portal/guides/custom-404-page.md
+          - group: Configure environment variables
+            page: docs-legacy/developer-portal/guides/environment-variables.md
+            items:
+              - label: Built-in environment variables
+                page: docs-legacy/developer-portal/guides/environment-variables-built-in.md
+              - label: Environment variable files
+                page: docs-legacy/developer-portal/guides/environment-files.md
+          - label: Add the table of contents to a page
+            page: docs-legacy/developer-portal/guides/page-toc.md
+          - label: Set up API docs hooks
+            page: docs-legacy/developer-portal/guides/reference-docs-hooks.md
+          - separator: On-premise
+          - label: Portal hosting
+            page: docs-legacy/developer-portal/guides/on-premise.md
+          - separator: Integration guides
+          - group: Integrate with Apigee
+            page: docs-legacy/developer-portal/guides/apigee-integration-portal/overview.md
+            items:
+              - label: Set up the Apigee proxy
+                page: docs-legacy/developer-portal/guides/apigee-integration-portal/setup-apigee-proxy.md
+              - label: Enable UI components
+                page: docs-legacy/developer-portal/guides/apigee-integration-portal/enable-ui-components.md
+              - label: Manage apps and API keys
+                page: docs-legacy/developer-portal/guides/apigee-integration-portal/manage-apps-keys.md
+      - group: Configuration
+        page: docs-legacy/developer-portal/configuration/index.md
+        items:
+          - label: Configuration files
+            page: docs-legacy/developer-portal/configuration/configuration-files.md
+          - group: Site config
+            page: docs-legacy/developer-portal/configuration/siteconfig/index.md
+            items:
+              - label: analytics
+                page: docs-legacy/developer-portal/configuration/siteconfig/analytics.md
+              - label: auth
+                page: docs-legacy/developer-portal/configuration/siteconfig/auth.md
+              - label: copyCodeSnippet
+                page: docs-legacy/developer-portal/configuration/siteconfig/copy-codesnippet.md
+              - label: disableImagesOptimization
+                page: docs-legacy/developer-portal/configuration/siteconfig/image-optimization.md
+              - label: disableLastModified
+                page: docs-legacy/developer-portal/configuration/siteconfig/last-modified.md
+              - label: editPage
+                page: docs-legacy/developer-portal/configuration/siteconfig/edit-page.md
+              - label: enableToc
+                page: docs-legacy/developer-portal/configuration/siteconfig/toc.md
+              - label: envVariablesAllowedClientSide
+                page: docs-legacy/developer-portal/configuration/siteconfig/env-variables.md
+              - label: footer
+                page: docs-legacy/developer-portal/configuration/siteconfig/footer.md
+              - label: licenseKey
+                page: docs-legacy/developer-portal/configuration/siteconfig/license-key.md
+              - label: linkChecker
+                page: docs-legacy/developer-portal/configuration/siteconfig/link-checker.md
+              - label: login
+                page: docs-legacy/developer-portal/configuration/siteconfig/login.md
+              - label: logo
+                page: docs-legacy/developer-portal/configuration/siteconfig/logo.md
+              - label: meta
+                page: docs-legacy/developer-portal/configuration/siteconfig/meta.md
+              - label: nav
+                page: docs-legacy/developer-portal/configuration/siteconfig/nav.md
+              - label: oasDefinitions
+                page: docs-legacy/developer-portal/configuration/siteconfig/oasdefinitions.md
+              - label: postBodyScripts
+                page: docs-legacy/developer-portal/configuration/siteconfig/postbody-scripts.md
+              - label: scripts
+                page: docs-legacy/developer-portal/configuration/siteconfig/scripts.md
+              - label: seo
+                page: docs-legacy/developer-portal/configuration/siteconfig/seo.md
+              - label: showNextButton
+                page: docs-legacy/developer-portal/configuration/siteconfig/next-button.md
+              - label: showPrevButton
+                page: docs-legacy/developer-portal/configuration/siteconfig/prev-button.md
+              - label: stylesheets
+                page: docs-legacy/developer-portal/configuration/siteconfig/stylesheets.md
+              - label: toc
+                page: docs-legacy/developer-portal/configuration/siteconfig/table-of-contents.md
+              - label: tocMaxDepth
+                page: docs-legacy/developer-portal/configuration/siteconfig/toc-depth.md
+          - label: Configure the sidebar
+            page: docs-legacy/developer-portal/configuration/sidebar-nav.md
+          - label: Customize the theme
+            page: docs-legacy/developer-portal/configuration/theme.md
+          - label: Set up role-based access control (RBAC)
+            page: docs-legacy/developer-portal/configuration/rbac.md
+      - group: Settings
+        page: docs-legacy/developer-portal/settings/index.md
+        items:
+          - label: Custom domain
+            page: docs-legacy/developer-portal/settings/custom-domain.md
+          - label: Manage access
+            page: docs-legacy/developer-portal/settings/manage-access.md
+          - label: Environment variables
+            page: docs-legacy/developer-portal/settings/environment-variables.md
+          - label: Notifications
+            page: docs-legacy/developer-portal/settings/notifications.md
+          - label: Delete portal
+            page: docs-legacy/developer-portal/settings/delete-portal.md
+
+  - group: People
+    page: docs-legacy/people/index.md
+    items:
+      - label: Invite a person
+        page: docs-legacy/people/invite-person.md
+      - label: Manage roles
+        page: docs-legacy/people/manage-roles.md
+      - label: Remove a person
+        page: docs-legacy/people/remove-person.md
+      - label: Roles and permissions
+        page: docs-legacy/people/roles-permissions.md
+
+  - group: Teams
+    page: docs-legacy/teams/index.md
+    items:
+      - label: Add new teams
+        page: docs-legacy/teams/add-new-team.md
+      - label: Delete teams
+        page: docs-legacy/teams/delete-team.md
+      - label: Manage team mapping
+        page: docs-legacy/teams/manage-team-mapping.md
+
+  - group: Settings
+    page: docs-legacy/settings/index.md
+    items:
+      - label: Organization
+        page: docs-legacy/settings/organization.md
+      - label: Billing
+        page: docs-legacy/settings/billing.md
+      - label: Labels
+        page: docs-legacy/settings/labels.md
+      - label: API keys
+        page: docs-legacy/settings/api-keys.md
+      - label: On-premise license keys
+        page: docs-legacy/settings/on-premise-license-keys.md
+      - label: Identity providers
+        page: docs-legacy/settings/identity-providers.md
+      - label: Access control
+        page: docs-legacy/settings/access-control.md
+      - label: Role privileges
+        page: docs-legacy/settings/role-privileges.md
+      - label: Source control providers
+        page: docs-legacy/settings/source-control-providers.md
+      - label: API style guide
+        page: docs-legacy/settings/api-styleguide.md
+      - label: Security
+        page: docs-legacy/settings/security.md
+      - label: Personal API keys
+        page: docs-legacy/settings/personal-api-keys.md
+
+  - group: Migration guides
+    items:
+      - label: Redocly configuration file
+        page: docs-legacy/api-registry/guides/migration-guide-config-file.md
+      - label: Developer portal sidebars
+        page: docs-legacy/developer-portal/guides/migration-guide-sidebars.md
+      - label: Developer portal 1.1.0
+        page: docs-legacy/developer-portal/guides/migration-guide-1-1-0.md
+      - label: Reference docs 2.0
+        page: docs-legacy/api-reference-docs/guides/migration-guide-2-0.md
+

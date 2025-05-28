@@ -1,0 +1,12 @@
+type: object
+description: Object specifying labels changes.
+required:
+  - previous
+  - current
+properties:
+  previous:
+    $ref: ./label.yaml
+  current:
+    $ref: ./label.yaml
+additionalProperties: false
+title: Labels

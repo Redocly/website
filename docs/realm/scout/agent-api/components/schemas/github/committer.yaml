@@ -1,0 +1,22 @@
+description: Metaproperties for Git author/committer information.
+required:
+  - email
+  - name
+type: object
+properties:
+  name:
+    type: string
+    description: The git author's name.
+  email:
+    description: The git author's email address.
+    oneOf:
+      - type: string
+        format: email
+      - type: 'null'
+  date:
+    type: string
+    format: date-time
+  username:
+    type: string
+additionalProperties: false
+title: Committer

@@ -1,0 +1,350 @@
+'/docs/cli/resources/rules/assertions/':
+  to: '/docs/cli/rules/configurable-rules/'
+'/docs/cli/rules/assertions/':
+  to: '/docs/cli/rules/configurable-rules/'
+'/docs/cli/rules/custom-rules/':
+  to: '/docs/cli/rules/configurable-rules/'
+'/docs-legacy/api-reference-docs/configuration/':
+  to: '/docs-legacy/api-reference-docs/configuration/functionality'
+'/docs-legacy/api-reference-docs/on-premise/customization/theming/':
+  to: '/docs-legacy/api-reference-docs/configuration/theming'
+'/docs-legacy/api-reference-docs/embedded-markdown/':
+  to: '/docs-legacy/api-reference-docs/guides/embedded-markdown'
+'/docs-legacy/api-reference-docs/on-premise/cli-usage/':
+  to: '/docs-legacy/api-reference-docs/guides/on-premise-cli-build'
+'/docs-legacy/api-reference-docs/on-premise/js-cdn/':
+  to: '/docs-legacy/api-reference-docs/guides/on-premise-html-element'
+'/docs-legacy/api-reference-docs/on-premise/':
+  to: '/docs-legacy/api-reference-docs/guides/on-premise'
+'/docs-legacy/api-reference-docs/on-premise/license-key/':
+  to: '/docs-legacy/api-reference-docs/guides/on-premise'
+'/docs-legacy/api-reference-docs/console-overview/':
+  to: '/docs-legacy/api-reference-docs/guides/try-it-console/'
+'/docs-legacy/api-reference-docs/console-usage/':
+  to: '/docs-legacy/api-reference-docs/guides/try-it-console/'
+'/docs-legacy/api-reference-docs/console-config/':
+  to: '/docs-legacy/api-reference-docs/guides/try-it-console/'
+'/docs-legacy/api-reference-docs/reference/code-samples-languages/':
+  to: '/docs-legacy/api-reference-docs/resources/code-samples-languages/'
+'/docs-legacy/api-reference-docs/':
+  to: 'docs-legacy/api-registry/'
+'/docs-legacy/workflows/api-registry/':
+  to: 'docs-legacy/api-registry/overview'
+'/docs-legacy/workflows/api-registry-quickstart/':
+  to: 'docs-legacy/api-registry/guides/api-registry-quickstart'
+'/docs-legacy/api-reference-docs/reference-docs-quickstart/':
+  to: 'docs-legacy/api-registry/guides/api-registry-quickstart'
+'/docs-legacy/workflows/api-registry/versions/':
+  to: 'docs-legacy/api-registry/guides/manage-versions'
+'docs-legacy/api-registry/guides/versions/':
+  to: 'docs-legacy/api-registry/guides/manage-versions'
+'/docs-legacy/workflows/api-registry/snapshots/':
+  to: 'docs-legacy/api-registry/guides/snapshots'
+'docs-legacy/api-registry/guides/versioning-strategies/':
+  to: 'docs-legacy/api-registry/resources/versioning-strategies'
+'/docs-legacy/workflows/api-registry/branches/':
+  to: 'docs-legacy/api-registry/settings/branches'
+'docs-legacy/api-registry/guides/branches/':
+  to: 'docs-legacy/api-registry/settings/branches'
+'/docs-legacy/api-reference-docs-legacy/settings/delete-reference/':
+  to: 'docs-legacy/api-registry/settings/delete-version/'
+'/docs-legacy/workflows/manage-api-version-access/':
+  to: 'docs-legacy/api-registry/settings/manage-access'
+'/docs/cli/resources/built-in-decorators/':
+  to: '/docs/cli/decorators'
+'/docs/cli/resources/':
+  to: '/docs/cli/'
+'/docs/cli/configuration/configuration-file/':
+  to: '/docs/cli/configuration/'
+'/docs/cli/guides/lint/':
+  to: '/docs/cli/configuration/'
+'/docs/cli/configuration/lint/':
+  to: '/docs/cli/configuration/'
+'/docs/cli/custom-rules/':
+  to: '/docs/cli/custom-plugins/'
+'/docs/cli/resources/custom-rules/':
+  to: '/docs/cli/custom-plugins/'
+'/docs/cli/resources/custom-plugins/':
+  to: '/docs/cli/custom-plugins/'
+'/docs/resources/change-token-url/':
+  to: '/docs/cli/guides/change-token-url'
+'/docs/resources/hide-apis/':
+  to: '/docs/cli/guides/hide-apis/'
+'/docs-legacy/workflows/guides/replace-server-url/':
+  to: '/docs/cli/guides/replace-servers-url/'
+'/docs/cli/guides/replace-server-url/':
+  to: '/docs/cli/guides/replace-servers-url/'
+'/docs/resources/response-contains-property/':
+  to: '/docs/cli/guides/response-contains-property/'
+'/docs/cli/update-cli/':
+  to: '/docs/cli/guides/update-cli'
+'/docs/cli/built-in-rules/':
+  to: '/docs/cli/rules/built-in-rules/'
+'/docs/cli/resources/built-in-rules/':
+  to: '/docs/cli/rules/built-in-rules/'
+'/docs/cli/rules/no-empty-enum-servers/':
+  to: '/docs/cli/rules/no-server-variables-empty-enum/'
+'/docs-legacy/workflows/docs/add-developer-portal/':
+  to: '/docs-legacy/developer-portal/connect-developer-portal/'
+'/docs-legacy/developer-portal/settings/connect-developer-portal/':
+  to: '/docs-legacy/developer-portal/connect-developer-portal/'
+'/docs-legacy/developer-portal/sidebar-nav/':
+  to: '/docs-legacy/developer-portal/configuration/sidebar-nav/'
+'/docs-legacy/workflows/guides/configure-custom-response-headers/':
+  to: '/docs-legacy/developer-portal/guides/configure-custom-response-headers/'
+'/docs-legacy/developer-portal/settings/configure-custom-response-headers/':
+  to: '/docs-legacy/developer-portal/guides/configure-custom-response-headers/'
+'/docs-legacy/workflows/proxy/':
+  to: '/docs-legacy/developer-portal/guides/embedding-portals'
+'/docs-legacy/developer-portal/environment-variables/':
+  to: '/docs-legacy/developer-portal/guides/environment-variables/'
+'/docs-legacy/developer-portal/markdown/':
+  to: '/docs-legacy/developer-portal/guides/markdown/'
+'/docs-legacy/developer-portal/mermaid/':
+  to: '/docs-legacy/developer-portal/guides/mermaid'
+'/docs-legacy/developer-portal/headers-footers/':
+  to: '/docs-legacy/developer-portal/guides/navbar-footers'
+'/docs-legacy/developer-portal/on-premise/':
+  to: '/docs-legacy/developer-portal/guides/on-premise'
+'/docs-legacy/developer-portal/organizing-files/':
+  to: '/docs-legacy/developer-portal/guides/organizing-files'
+'/docs-legacy/developer-portal/page-toc/':
+  to: '/docs-legacy/developer-portal/guides/page-toc'
+'/docs-legacy/developer-portal/redoc-integration/':
+  to: '/docs-legacy/developer-portal/guides/reference-docs-integration/'
+'/docs-legacy/developer-portal/updates/':
+  to: '/docs-legacy/developer-portal/guides/updates/'
+'/docs-legacy/developer-portal/apigee-integration-portal/overview/':
+  to: '/docs-legacy/developer-portal/guides/apigee-integration-portal/overview/'
+'/docs-legacy/workflows/manage-project-access/':
+  to: '/docs-legacy/developer-portal/settings/manage-access/'
+'/docs-legacy/workflows/_snippets/select-collaborator/':
+  to: '/docs-legacy/developer-portal/_snippets/selected-collaborator/'
+'/docs-legacy/workflows/admin/people/':
+  to: '/docs/people/'
+'/docs-legacy/workflows/admin/people/invite-person/':
+  to: '/docs/people/invite-person/'
+'/docs-legacy/workflows/admin/people/manage-roles/':
+  to: '/docs/people/manage-roles/'
+'/docs-legacy/workflows/admin/people/remove-person/':
+  to: '/docs/people/remove-person/'
+'/docs-legacy/workflows/roles-permissions/':
+  to: '/docs/people/roles-permissions/'
+'/docs/redoc/quickstart/cli/':
+  to: '/docs/redoc/deployment/cli/'
+'/docs/redoc/quickstart/docker/':
+  to: '/docs/redoc/deployment/docker/'
+'/docs/redoc/quickstart/html/':
+  to: '/docs/redoc/deployment/html/'
+'/docs/redoc/quickstart/':
+  to: '/docs/redoc/deployment/html/'
+'/docs/redoc/quickstart/intro/':
+  to: '/docs/redoc/deployment/intro/'
+'/docs-legacy/workflows/access-control/':
+  to: '/docs-legacy/settings/access-control/'
+'/docs-legacy/workflows/guides/set-up-idp/':
+  to: '/docs-legacy/settings/identity-provides/'
+'/docs-legacy/workflows/personal-api-keys/':
+  to: '/docs-legacy/settings/personal-api-keys/'
+'/docs-legacy/workflows/admin/teams/add-new-team/':
+  to: '/docs/terms/add-new-team/'
+'/docs-legacy/workflows/admin/teams/delete-team/':
+  to: '/docs-legacy/teams/delete-team/'
+'/docs-legacy/workflows/admin/teams/':
+  to: '/docs-legacy/teams/'
+'/docs-legacy/workflows/admin/teams/managing-team-mapping/':
+  to: '/docs-legacy/teams/manage-team-mapping/'
+'/docs-legacy/api-reference-docs-legacy/settings/source/':
+  to: '/docs-legacy/workflows/sources/'
+'/privacy-policy/':
+  to: '/privacy-notice/'
+'/api-onboarding-funnels/':
+  to: '/'
+'/better-apis/':
+  to: '/'
+'/mental-models/':
+  to: '/'
+'/api-launch-checklist/':
+  to: '/'
+'/api-catalog-quiz/':
+  to: '/'
+'/implement-design-scorecard/':
+  to: '/'
+'/introduce-governance/':
+  to: '/'
+'/api-wisdom/':
+  to: '/'
+'/api-personality-quiz/':
+  to: '/'
+'/dx/':
+  to: '/'
+'/developer-portal/':
+  to: '/portals/'
+'/why-enterprise/':
+  to: '/enterprise/'
+'/openapi-cli':
+  to: '/redocly-cli/'
+'/reference-docs/':
+  to: '/reference/'
+'/blog/tags-are-great/':
+  to: '/blog/add-openapi-tags-for-next-level-api-descriptions/'
+'/portals/':
+  to: '/realm/'
+'/redoc-vs-reference/':
+  to: '/redoc/'
+'/openapi/petstore/*':
+  to: '/docs/openapi/museum-api'
+'/docs/openapi/petstore/*':
+  to: 'docs/openapi/museum-api'
+# -- Redirect for moving old docs to docs-legacy folder
+'/docs/api-reference-docs/*':
+  to: '/docs-legacy/api-reference-docs/*'
+'/docs/api-registry/*':
+  to: '/docs-legacy/api-registry/*'
+'/docs/developer-portal/*':
+  to: '/docs-legacy/developer-portal/*'
+'/docs/people/*':
+  to: '/docs-legacy/people/*'
+'/docs/settings/*':
+  to: '/docs-legacy/settings/*'
+'/docs/teams/*':
+  to: '/docs-legacy/teams/*'
+'/docs/workflows/*':
+  to: '/docs-legacy/workflows/*'
+# -- Redirect for moving rules
+'/docs/cli/rules/array-parameter-serialization':
+  to: '/docs/cli/rules/oas/array-parameter-serialization'
+'/docs/cli/rules/boolean-parameter-prefixes':
+  to: '/docs/cli/rules/oas/boolean-parameter-prefix'
+'/docs/cli/rules/component-name-unique':
+  to: '/docs/cli/rules/oas/component-name-unique'
+'/docs/cli/rules/info-contact':
+  to: '/docs/cli/rules/oas/info-contact'
+'/docs/cli/rules/info-license-url':
+  to: '/docs/cli/rules/oas/info-license-url'
+'/docs/cli/rules/info-license':
+  to: '/docs/cli/rules/oas/info-license'
+'/docs/cli/rules/no-ambiguous-paths':
+  to: '/docs/cli/rules/oas/no-ambiguous-paths'
+'/docs/cli/rules/no-empty-servers':
+  to: '/docs/cli/rules/oas/no-empty-servers'
+'/docs/cli/rules/no-enum-type-mismatch':
+  to: '/docs/cli/rules/oas/no-enum-type-mismatch'
+'/docs/cli/rules/no-example-value-and-externalValue':
+  to: '/docs/cli/rules/oas/no-example-value-and-externalValue'
+'/docs/cli/rules/no-http-verbs-in-paths':
+  to: '/docs/cli/rules/oas/no-http-verbs-in-paths'
+'/docs/cli/rules/no-identical-paths':
+  to: '/docs/cli/rules/oas/no-identical-paths'
+'/docs/cli/rules/no-invalid-media-type-examples':
+  to: '/docs/cli/rules/oas/no-invalid-media-type-examples'
+'/docs/cli/rules/no-invalid-parameter-examples':
+  to: '/docs/cli/rules/oas/no-invalid-parameter-examples'
+'/docs/cli/rules/no-invalid-schema-examples':
+  to: '/docs/cli/rules/oas/no-invalid-schema-examples'
+'/docs/cli/rules/no-path-trailing-slash':
+  to: '/docs/cli/rules/oas/no-path-trailing-slash'
+'/docs/cli/rules/no-required-schema-properties-undefined':
+  to: '/docs/cli/rules/oas/no-required-schema-properties-undefined'
+'/docs/cli/rules/no-server-example-com':
+  to: '/docs/cli/rules/oas/no-server-example-com'
+'/docs/cli/rules/no-server-trailing-slash':
+  to: '/docs/cli/rules/oas/no-server-trailing-slash'
+'/docs/cli/rules/no-server-variables-empty-enum':
+  to: '/docs/cli/rules/oas/no-server-variables-empty-enum'
+'/docs/cli/rules/no-undefined-server-variable':
+  to: '/docs/cli/rules/oas/no-undefined-server-variable'
+'/docs/cli/rules/no-unresolved-refs':
+  to: '/docs/cli/rules/oas/no-unresolved-refs'
+'/docs/cli/rules/no-unused-components':
+  to: '/docs/cli/rules/oas/no-unused-components'
+'/docs/cli/rules/operation-2xx-response':
+  to: '/docs/cli/rules/oas/operation-2xx-response'
+'/docs/cli/rules/operation-4xx-problem-details-rfc7807':
+  to: '/docs/cli/rules/oas/operation-4xx-problem-details-rfc7807'
+'/docs/cli/rules/operation-4xx-response':
+  to: '/docs/cli/rules/oas/operation-4xx-response'
+'/docs/cli/rules/operation-description':
+  to: '/docs/cli/rules/oas/operation-description'
+'/docs/cli/rules/operation-operationId-unique':
+  to: '/docs/cli/rules/oas/operation-operationId-unique'
+'/docs/cli/rules/operation-operationId-url-safe':
+  to: '/docs/cli/rules/oas/operation-operationId-url-safe'
+'/docs/cli/rules/operation-operationId':
+  to: '/docs/cli/rules/oas/operation-operationId'
+'/docs/cli/rules/operation-parameters-unique':
+  to: '/docs/cli/rules/oas/operation-parameters-unique'
+'/docs/cli/rules/operation-singular-tag':
+  to: '/docs/cli/rules/oas/operation-singular-tag'
+'/docs/cli/rules/operation-summary':
+  to: '/docs/cli/rules/oas/operation-summary'
+'/docs/cli/rules/operation-tag-defined':
+  to: '/docs/cli/rules/oas/operation-tag-defined'
+'/docs/cli/rules/parameter-description':
+  to: '/docs/cli/rules/oas/parameter-description'
+'/docs/cli/rules/path-declaration-must-exist':
+  to: '/docs/cli/rules/oas/path-declaration-must-exist'
+'/docs/cli/rules/path-excludes-patterns':
+  to: '/docs/cli/rules/oas/path-excludes-patterns'
+'/docs/cli/rules/path-not-include-query':
+  to: '/docs/cli/rules/oas/path-not-include-query'
+'/docs/cli/rules/path-parameters-defined':
+  to: '/docs/cli/rules/oas/path-parameters-defined'
+'/docs/cli/rules/path-segment-plural':
+  to: '/docs/cli/rules/oas/path-segment-plural'
+'/docs/cli/rules/paths-kebab-case':
+  to: '/docs/cli/rules/oas/paths-kebab-case'
+'/docs/cli/rules/request-mine-type':
+  to: '/docs/cli/rules/oas/request-mine-type'
+'/docs/cli/rules/required-string-property-missing-min-length':
+  to: '/docs/cli/rules/oas/required-string-property-missing-min-length'
+'/docs/cli/rules/response-contains-header':
+  to: '/docs/cli/rules/oas/response-contains-header'
+'/docs/cli/rules/response-contains-property':
+  to: '/docs/cli/rules/oas/response-contains-property'
+'/docs/cli/rules/response-mime-type':
+  to: '/docs/cli/rules/oas/response-mime-type'
+'/docs/cli/rules/scalar-property-missing-example':
+  to: '/docs/cli/rules/oas/scalar-property-missing-example'
+'/docs/cli/rules/security-defined':
+  to: '/docs/cli/rules/oas/security-defined'
+'/docs/cli/rules/spec-components-invalid-map-name':
+  to: '/docs/cli/rules/oas/spec-components-invalid-map-name'
+'/docs/cli/rules/spec-strict-refs':
+  to: '/docs/cli/rules/oas/spec-strict-refs'
+'/docs/cli/rules/tag-description':
+  to: '/docs/cli/rules/oas/tag-description'
+'/docs/cli/rules/tags-alphabetical':
+  to: '/docs/cli/rules/oas/tags-alphabetical'
+# -- Redirect for renaming redocly-openapi to vscode
+'/docs/redocly-openapi/*':
+  to: '/docs/vscode/*'
+# -- Redirect for moving docs to learn folder
+'/docs/learn-markdoc/*':
+  to: '/learn/markdoc/*'
+'/docs/learn-openapi/*':
+  to: '/learn/openapi/*'
+'/docs/openapi-visual-reference/*':
+  to: '/learn/openapi/openapi-visual-reference/*'
+'/docs/yaml/*':
+  to: '/docs/yaml/*'
+'/docs/resources/all-of/':
+  to: '/learn/openapi/all-of/'
+'/docs/resources/discriminator/':
+  to: '/learn/openapi/discriminator/'
+'/docs/resources/learning-openapi/':
+  to: '/learn/openapi/learning-openapi/'
+'/docs/resources/multi-file-definitions/':
+  to: '/learn/openapi/multi-file-definitions/'
+'/docs/resources/openapi-decisions/':
+  to: '/learn/openapi/openapi-decisions/'
+'/docs/resources/ref-guide/':
+  to: '/learn/openapi/ref-guide/'
+'/docs/openapi/museum-api/':
+  to: '/demo/openapi/museum-api/'
+'/contact':
+  to: '/contact-us'
+'/docs/realm/author/reference/supported-file-types':
+  to: '/docs/realm/author/concepts/project-structure'
+'/docs/realm/get-started/api-reference-starter':
+  to: '/docs/realm/get-started'

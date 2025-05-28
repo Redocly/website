@@ -1,0 +1,1219 @@
+type: object
+properties:
+  breakpoints:
+    description: "Controls the breakpoints used for scaling the portal layout according to the screen size. The values defined here are interpreted as starting points for different screen sizes. In addition to `small`, `medium` and `large` which are required, you can set other breakpoints with custom names. The special character `_` is a reserved breakpoint name and you can't set it in this section of the theme, but you should use it in all breakpoints objects. It defines the value for the smallest screen sizes (0 to `small`). If you don't specify it in a breakpoints object, the default theme value will be used instead."
+    type: object
+    properties:
+      large:
+        description: 'Sets the breakpoint for the large screen size.'
+        type: string
+        default: '1200px'
+      medium:
+        description: 'Sets the breakpoint for the medium screen size.'
+        type: string
+        default: '900px'
+      small:
+        description: 'Sets the breakpoint for the small screen size.'
+        type: string
+        default: '550px'
+    additionalProperties:
+      type: string
+  codeBlock:
+    description: 'Controls the appearance of code block elements in MD(X) pages and in OpenAPI fields that support Markdown formatting.'
+    type: object
+    properties:
+      backgroundColor:
+        description: 'Sets the background color for all code block elements. The default value is calculated using `({ rightPanel }) => darken(0.1, rightPanel.backgroundColor)`.'
+        type: string
+      tokens:
+        description: 'Controls the appearance of code highlighted with Prism.js. The values set for `default` apply to all tokens. You can customize specific tokens using the same schema from the `default` object. Supported tokens: `comment`, `prolog`, `doctype`, `cdata`, `punctuation`, `property`, `tag`, `number`, `constant`, `symbol`, `boolean`, `selector`, `string`, `char`, `builtin`, `inserted`, `operator`, `entity`, `url`, `variable`, `atrule`, `keyword`, `regex`, `important`, `bold`, `italic`, `entity`, `deleted`.'
+        type: object
+        properties:
+          default:
+            description: 'Controls the appearance of syntax-highlighted code. To target specific tokens, replace `default` with the name of a supported token.'
+            type: object
+            properties:
+              color:
+                description: 'Sets the text color for syntax-highlighted code matching the specified token.'
+                type: string
+              fontFamily:
+                description: 'Sets the font family for syntax-highlighted code matching the specified token. The value can be a string or a breakpoints object.'
+                type: string
+              fontSize:
+                description: 'Sets the font size for syntax-highlighted code matching the specified token. The value can be a string or a breakpoints object, provided in any of the standard units (px, em, rem...).'
+                type: string
+              lineHeight:
+                description: 'Sets the line height for syntax-highlighted code matching the specified token. The value can be a string or a breakpoints object.'
+                type: string
+    additionalProperties:
+      oneOf:
+        - type: string
+        - type: object
+  colors:
+    description: 'Controls the color of elements in the portal and in integrated Reference docs.'
+    type: object
+    properties:
+      background:
+        description: 'Sets the main background color for the portal. This color is used as background on all MD(X) pages and in the middle panel of integrated Reference docs.'
+        type: string
+        default: '#ffffff'
+      border:
+        description: 'Sets the border color variations for elements with a border (e.g. tables, images...).'
+        type: object
+        properties:
+          dark:
+            description: 'Affects the color of horizontal lines (`<hr>` HTML elements) in text, the border around inline code, and the top border of table rows.'
+            type: string
+            default: 'rgba(0,0,0, 0.15)'
+          light:
+            description:
+            type: string
+            default: '#ffffff'
+      error:
+        description: 'Sets the default color variations for `danger` admonitions in MD(X) pages and error messages in Reference docs. You can override the values for admonitions in the `components.alert.variants` section of the portal theme.'
+        type: object
+        properties:
+          contrastText:
+            description: 'This value is used to calculate body text color and heading color in `danger` admonitions. The default is derived from `error.main` by applying the tonal offset value.'
+            type: string
+          dark:
+            description: 'The default is derived from `error.main` by applying the tonal offset value.'
+            type: string
+          light:
+            description: 'This value is used to calculate the background color of `danger` admonitions. The default is derived from `error.main` by applying the tonal offset value.'
+            type: string
+          main:
+            description: 'This value is used to calculate the icon color in `danger` admonitions and the default color of the `required` label in Reference docs. You can override both with custom values in relevant sections of the portal theme.'
+            type: string
+            default: '#e53935'
+      footer:
+        description: 'Sets the colors for the portal footer.'
+        type: object
+        properties:
+          contrastText:
+            description: 'Controls the text color in the footer. Also affects the color of links in the footer (default and hovered). If the links are in a column list, they inherit color from the `theme.colors.primary.contrastText` value.'
+            type: string
+          main:
+            description: 'Sets the background color for the footer. The default value is `({ colors }) => colors.primary.main`.'
+            type: string
+      http:
+        description: 'Sets the color of HTTP method badges in Reference docs. The values set here apply to badges in the Reference docs sidebar and in the middle/right panel (the badge next to the path).'
+        type: object
+        properties:
+          basic:
+            default: '#999'
+            type: string
+          delete:
+            default: '#e27a7a'
+            type: string
+          get:
+            default: '#6bbd5b'
+            type: string
+          head:
+            default: '#c167e4'
+            type: string
+          link:
+            default: '#31bbb6'
+            type: string
+          options:
+            default: '#d3ca12'
+            type: string
+          patch:
+            default: '#e09d43'
+            type: string
+          post:
+            default: '#248fb2'
+            type: string
+          put:
+            default: '#9b708b'
+            type: string
+      info:
+        description: 'Sets the default color variations for `attention` admonitions in MD(X) pages and info messages in Reference docs. You can override the values for admonitions in the `components.alert.variants` section of the portal theme.'
+        type: object
+        properties:
+          contrastText:
+            description: 'This value is used to calculate body text color and heading color in `attention` admonitions. The default is derived from `info.main` by applying the tonal offset value.'
+            type: string
+          dark:
+            description: 'The default is derived from `info.main` by applying the tonal offset value.'
+            type: string
+          light:
+            description: 'This value is used to calculate the background color of `attention` admonitions. The default is derived from `info.main` by applying the tonal offset value.'
+            type: string
+          main:
+            description: 'This value is used to calculate the icon color in `attention` admonitions and the color of `info` response schema headings in Reference docs. You can override both with custom values in relevant sections of the portal theme.'
+            type: string
+            default: '#4782cb'
+      navbar:
+        description: 'Sets the color variations for the navigation bar. Additional theming options can be set in the main `navbar` section of the portal theme.'
+        type: object
+        properties:
+          contrastText:
+            description: 'Sets the text color for navigation bar items. The default is derived from the `navbar.main` value, or if not set, from the `colors.primary.contrastText` value.'
+            type: string
+          gradient:
+            description: 'Sets the color that will be used to create a linear gradient effect for the navigation bar background. The default is derived from the `navbar.main` value by applying the tonal offset value.'
+            type: string
+          main:
+            description: 'Sets the background color of the navigation bar. The default is `({ colors }) => colors.primary.main`. The value set here is used as the main color of the gradient.'
+            type: string
+      primary:
+        description: 'Sets the primary color variations for the portal and integrated Reference docs. You can override these values for most of the elements.'
+        type: object
+        properties:
+          contrastText:
+            description: 'Sets the background/text color for a number of elements in the portal, such as the search results list, links in the page ToC, text color for Markdown table headers. The default is derived from `primary.main` by applying the tonal offset value.'
+            type: string
+          dark:
+            description: 'The default is derived from `primary.main` by applying the tonal offset value.'
+            type: string
+          light:
+            description: 'The default is derived from `primary.main` by applying the tonal offset value.'
+            type: string
+          main:
+            description: 'Sets the primary color for the portal. This value is inherited by a number of elements in the portal, or used to calculate their default color values. Those elements include: background and text color of search results items, links in the page ToC, Reference docs version switcher border and shadow color, text in the expandable summary/details HTML element, background color of Markdown table headers, text color of active code block tabs in MD(X) pages, text color in buttons, text color on the default 404 page.'
+            type: string
+            default: '#4b1fb8'
+      responses:
+        description: "Controls the appearance of expandable 'Responses' headers in the middle panel of integrated Reference docs."
+        type: object
+        properties:
+          error:
+            description: 'Sets the text and background color for the error response header in Reference docs.'
+            type: object
+            properties:
+              backgroundColor:
+                description: 'Sets the background color of the response header. The default value is derived from `colors.error.main`.'
+                type: string
+              borderColor:
+                description: 'Sets the border color for the response section.'
+                type: string
+              color:
+                description: 'Sets the text color of the response header. The default value is derived from `colors.error.main`.'
+                type: string
+          info:
+            description: 'Sets the text and background color for the info response header in Reference docs.'
+            type: object
+            properties:
+              backgroundColor:
+                description: 'Sets the background color of the response header. The default value is derived from `info.color`.'
+                type: string
+              borderColor:
+                description: 'Sets the border color for the response section.'
+                type: string
+              color:
+                description: 'Sets the text color of the response header. The default value is derived from `colors.info.main`.'
+                type: string
+          redirect:
+            description: 'Sets the text and background color for the redirect response header in Reference docs.'
+            type: object
+            properties:
+              backgroundColor:
+                description: 'Sets the background color of the response header. The default value is derived from `redirect.color`.'
+                type: string
+              borderColor:
+                description: 'Sets the border color for the response section.'
+                type: string
+              color:
+                description: 'Sets the text color of the response header. The default value is derived from `colors.warning.main`.'
+                type: string
+          success:
+            description: 'Sets the text and background color for the success response header in Reference docs.'
+            type: object
+            properties:
+              backgroundColor:
+                description: 'Sets the background color of the response header. The default value is derived from `colors.success.main`.'
+                type: string
+              borderColor:
+                description: 'Sets the border color for the response section.'
+                type: string
+              color:
+                description: 'Sets the text color of the response header. The default value is derived from `colors.success.main`.'
+                type: string
+      success:
+        description: 'Sets the default color variations for `success` admonitions in MD(X) pages and success messages in Reference docs. You can override the values for admonitions in the `components.alert.variants` section of the portal theme.'
+        type: object
+        properties:
+          contrastText:
+            description: 'This value is used to calculate body text color and heading color in `success` admonitions. The default is derived from `success.main` by applying the tonal offset value.'
+            type: string
+          dark:
+            description: 'The default is derived from `success.main` by applying the tonal offset value.'
+            type: string
+          light:
+            description: 'This value is used to calculate the background color of `success` admonitions. The default is derived from `success.main` by applying the tonal offset value.'
+            type: string
+          main:
+            description: 'This value is used to calculate the icon color in `success` admonitions and the default color of the `success` response schema headings in Reference docs. You can override both with custom values in relevant sections of the portal theme.'
+            type: string
+            default: '#00aa13'
+      text:
+        description: 'Sets the default colors for text in the portal and in Reference docs. You can override these values for most of the elements.'
+        type: object
+        properties:
+          primary:
+            description: 'Sets the primary text color. This value is used to calculate default color values for other elements, such as tab headers for code blocks in MD(X) pages, body and heading text in admonitions, body text in blockquotes, H2-H6 headings, links in the search results box.'
+            type: string
+            default: '#424242'
+          secondary:
+            description: 'Sets the secondary text color. This value is used to calculate default color values for other elements, such as the arrow to expand nested schemas in Reference docs, type names in Reference docs schemas, search results descriptions.'
+            type: string
+            default: '#4e566d'
+      tonalOffset:
+        description: 'The value used to calculate tonal offsets for all colors in the theme.'
+        type: number
+        default: 0.2
+      warning:
+        description: 'Sets the default color variations for `warning` admonitions in MD(X) pages and warning messages in Reference docs. You can override the values for admonitions in the `components.alert.variants` section of the portal theme.'
+        type: object
+        properties:
+          contrastText:
+            description: 'This value is used to calculate body text color and heading color in `warning` admonitions. The default is derived from `warning.main` by applying the tonal offset value.'
+            type: string
+          dark:
+            description: 'The default is derived from `warning.main` by applying the tonal offset value.'
+            type: string
+          light:
+            description: 'This value is used to calculate the background color of `danger` admonitions. The default is derived from `warning.main` by applying the tonal offset value.'
+            type: string
+          main:
+            description: 'This value is used to calculate the icon color in `warning` admonitions and the default color of the `redirect` response schema headings in Reference docs. You can override both with custom values in relevant sections of the portal theme.'
+            type: string
+            default: '#d4ad03'
+    additionalProperties:
+      oneOf:
+        - type: string
+        - type: object
+  components:
+    description: 'Controls the appearance of specific components in the portal: admonitions, buttons, the search bar, blockquotes, the login component and the main content wrapper.'
+    type: object
+    properties:
+      alert:
+        description: 'Controls the appearance of alert boxes (admonitions) in the portal.'
+        type: object
+        properties:
+          borderRadius:
+            description: 'Sets the border radius for all admonition types. Modify this value to add rounded corners to alert boxes.'
+            type: string
+            default: '8px'
+          fontFamily:
+            description: 'Sets the font family for text in all admonition types. By default, the font family in alert boxes is inherited from the theme. Use this option to override the inherited value.'
+            type: string
+          fontSize:
+            description: 'Sets the font size for text in all admonition types. Can be provided in any of the standard units (px, em, rem...).'
+            type: string
+            default: '16px'
+          fontWeight:
+            description: 'Sets the font weight for text in all admonition types. The value can be a string or a number.'
+            type: string
+            default: 'normal'
+          heading:
+            description: 'Controls the typography-related options in admonition titles. Values configured here apply to all admonition types.'
+            type: object
+            properties:
+              fontFamily:
+                description: 'Sets the font family for titles in all admonition types. By default, the font family in alert box titles is inherited from the theme. Use this option to override the inherited value.'
+                type: string
+              fontSize:
+                description: 'Sets the font size for titles in all admonition types. Can be provided in any of the standard units (px, em, rem...).'
+                type: string
+                default: '16px'
+              fontWeight:
+                description: 'Sets the font weight for titles in all admonition types. The value can be a string or a number.'
+                type: string
+                default: '600'
+              letterSpacing:
+                description: 'Controls the spacing between letters in titles for all admonition types. Can be provided in any of the standard units (px, em, rem...).'
+                type: string
+                default: '0.3px'
+              lineHeight:
+                description: 'Sets the line height value for titles in all admonition types.'
+                type: string
+                default: '1.5'
+              transform:
+                description: 'Controls the text transformation of titles in all admonition types. The value must match one of the supported text transformation options in CSS (uppercase, lowercase, capitalize, none...).'
+                type: string
+                default: 'uppercase'
+          iconSize:
+            description: 'Sets the size of the icon displayed on the left side of the alert box. Applies to all admonition types.'
+            type: string
+            default: '25px'
+          lineHeight:
+            description: 'Sets the line height value for text in all admonition types.'
+            type: string
+            default: '1.5'
+          marginHorizontal:
+            description: 'Sets the horizontal margin for the alert box. Applies to all admonition types.'
+            type: string
+            default: '0'
+          marginVertical:
+            description: 'Sets the vertical margin for the alert box. Applies to all admonition types. The default value is calculated from the theme spacing settings using `({ spacing }) => ${spacing.unit * 2}px`.'
+            type: number
+          paddingHorizontal:
+            description: 'Sets the horizontal padding for the alert box. Applies to all admonition types. The default value is calculated from the theme spacing settings using `({ spacing }) => ${spacing.unit * 4}px`.'
+            type: number
+          paddingVertical:
+            description: 'Sets the vertical padding for the alert box. Applies to all admonition types. The default value is calculated from the theme spacing settings using `({ spacing }) => ${spacing.unit * 4}px`.'
+            type: number
+          transform:
+            description: 'Controls the text transformation of body text in all admonition types. The value must match one of the supported text transformation options in CSS (uppercase, lowercase, capitalize, none...). By default, this value is inherited from the theme, and this option can be used to override the default value.'
+            type: string
+          variants:
+            description: 'Allows further customizing the appearance of each admonition type (attention, danger, info, success, warning).'
+            type: object
+            properties:
+              attention:
+                description: 'Controls the appearance of the `attention` admonition type.'
+                type: object
+                properties:
+                  backgroundColor:
+                    description: 'Sets the background color of the alert box. The default is calculated using `{ colors }) => colors.info.light`.'
+                    type: string
+                  headingColor:
+                    description: 'Sets the text color of the admonition title. The default is calculated using `({ colors }) => colors.info.contrastText`.'
+                    type: string
+                  icon:
+                    description: 'Lets you set a custom icon, overriding the default icon displayed in the alert box. Format the icon as a set of SVG properties inside `<svg> ... </svg>` tags.'
+                    type: string
+                  iconColor:
+                    description: 'Modifies the color of the admonition icon (either the default one, or your custom icon). The default is calculated using `({ colors }) => colors.info.main`.'
+                    type: string
+                  textColor:
+                    description: 'Sets the color of the admonition body text. The default is calculated using `({ colors }) => colors.info.contrastText`.'
+                    type: string
+              danger:
+                description: 'Controls the appearance of the `danger` admonition type.'
+                type: object
+                properties:
+                  backgroundColor:
+                    description: 'Sets the background color of the alert box. The default is calculated using `({ colors }) => colors.error.light`.'
+                    type: string
+                  headingColor:
+                    description: 'Sets the text color of the admonition title. The default is calculated using `({ colors }) => colors.error.contrastText`.'
+                    type: string
+                  icon:
+                    description: 'Lets you set a custom icon, overriding the default icon displayed in the alert box. Format the icon as a set of SVG properties inside `<svg> ... </svg>` tags.'
+                    type: string
+                  iconColor:
+                    description: 'Modifies the color of the admonition icon (either the default one, or your custom icon). The default is calculated using `({ colors }) => colors.error.main`.'
+                    type: string
+                  textColor:
+                    description: 'Sets the color of the admonition body text. The default is calculated using `({ colors }) => colors.error.contrastText`.'
+                    type: string
+              info:
+                description: 'Controls the appearance of the `info` admonition type.'
+                type: object
+                properties:
+                  backgroundColor:
+                    description: 'Sets the background color of the alert box.'
+                    type: string
+                    default: '#ebedf0'
+                  headingColor:
+                    description: 'Sets the text color of the admonition title. The default is calculated using `({ colors }) => colors.text.primary`.'
+                    type: string
+                  icon:
+                    description: 'Lets you set a custom icon, overriding the default icon displayed in the alert box. Format the icon as a set of SVG properties inside `<svg> ... </svg>` tags.'
+                    type: string
+                  iconColor:
+                    description: 'Modifies the color of the admonition icon (either the default one, or your custom icon). The default is calculatd using `({ colors }) => colors.text.primary`.'
+                    type: string
+                  textColor:
+                    description: 'Sets the color of the admonition body text. The default is calculated using `({ colors }) => colors.text.primary`.'
+                    type: string
+              success:
+                description: 'Controls the appearance of the `success` admonition type.'
+                type: object
+                properties:
+                  backgroundColor:
+                    description: 'Sets the background color of the alert box. The default is calculated using `({ colors }) => colors.success.light`.'
+                    type: string
+                  headingColor:
+                    description: 'Sets the text color of the admonition title. The default is calculated using `({ colors }) => colors.success.contrastText`.'
+                    type: string
+                  icon:
+                    description: 'Lets you set a custom icon, overriding the default icon displayed in the alert box. Format the icon as a set of SVG properties inside `<svg> ... </svg>` tags.'
+                    type: string
+                  iconColor:
+                    description: 'Modifies the color of the admonition icon (either the default one, or your custom icon). The default is calculated using `({ colors }) => colors.success.main`.'
+                    type: string
+                  textColor:
+                    description: 'Sets the color of the admonition body text. The default is calculated using `({ colors }) => colors.success.contrastText`.'
+                    type: string
+              warning:
+                description: 'Controls the appearance of the `warning` admonition type.'
+                type: object
+                properties:
+                  backgroundColor:
+                    description: 'Sets the background color of the alert box. The default is calculated using `({ colors }) => colors.warning.light`.'
+                    type: string
+                  headingColor:
+                    description: 'Sets the text color of the admonition title. The default is calculated using `({ colors }) => colors.warning.contrastText`.'
+                    type: string
+                  icon:
+                    description: 'Lets you set a custom icon, overriding the default icon displayed in the alert box. Format the icon as a set of SVG properties inside `<svg> ... </svg>` tags.'
+                    type: string
+                  iconColor:
+                    description: 'Modifies the color of the admonition icon (either the default one, or your custom icon). The default is calculated using `({ colors }) => colors.warning.main`.'
+                    type: string
+                  textColor:
+                    description: 'Sets the color of the admonition body text. The default is calculated using `({ colors }) => colors.warning.contrastText`.'
+                    type: string
+      blockquote:
+        description: 'Controls the appearance of blockquote elements in MD(X) pages in the portal.'
+        type: object
+        properties:
+          backgroundColor:
+            description: 'Sets the background color of the entire blockquote element.'
+            type: string
+            default: 'transparent'
+          borderLeft:
+            description: "Controls the styling of the left-side border in the blockquote element. The default is calculated using `({ colors }) => '4px solid ${colors.border.dark}'`."
+            type: string
+          borderRadius:
+            description: 'Sets the border radius for the blockquote element. Modify this value to add rounded corners to blockquotes.'
+            type: string
+            default: '0'
+          color:
+            description: 'Sets the color of the blockquote body text. The default is calculated using `({ colors }) => colors.text.primary`.'
+            type: string
+          fontFamily:
+            description: 'Sets the font family for all text in the blockquote element. By default, the font family in blockquotes is inherited from the theme. Use this option to override the inherited value.'
+            type: string
+          fontSize:
+            description: 'Sets the font size for all text in the blockquote element. By default, the font size in blockquotes is inherited from the theme. Use this option to override the inherited value.'
+            type: string
+          fontWeight:
+            description: 'Sets the font weight for all text in the blockquote element. By default, the font weight in blockquotes is inherited from the theme. Use this option to override the inherited value. The value can be a string or a number.'
+            type: string
+          lineHeight:
+            description: 'Sets the line height for all text in the blockquote element. By default, the line height in blockquotes is inherited from the theme. Use this option to override the inherited value.'
+            type: string
+          marginHorizontal:
+            description: 'Sets the horizontal margin for the blockquote element.'
+            type: string
+            default: '0'
+          marginVertical:
+            description: 'Sets the vertical margin for the blockquote element.'
+            type: string
+            default: '1.5em'
+          paddingHorizontal:
+            description: "Sets the horizontal padding for the blockquote element. The default is calculated using `({ spacing }) => '${spacing.unit * 4}px'`."
+            type: string
+          paddingVertical:
+            description: 'Sets the vertical padding for the blockquote element.'
+            type: string
+            default: '0'
+          transform:
+            description: 'Controls the text transformation of text in blockquotes. The value must match one of the supported text transformation options in CSS (uppercase, lowercase, capitalize, none...). By default, this value is inherited from the theme, and this option can be used to override the default value.'
+            type: string
+      buttons:
+        description: 'Controls the appearance of button components in MD(X) pages in the portal.'
+        type: object
+        properties:
+          borderRadius:
+            description: 'Sets the border radius and controls rounded corners for the button component.'
+            type: string
+            default: '5px'
+          hoverStyle:
+            description: "Controls what the button will look like when hovered over with the cursor. The value can be defined as a CSS string (e.g. 'border-color: red; color: blue;') or as a CSS object (e.g. { borderRadius: 'red', color: 'blue' })."
+            default: ''
+            oneOf:
+              - type: string
+              - type: object
+          fontWeight:
+            description: 'Sets the font weight for the button text.'
+            type: string
+            default: '({ typography }) => typography.fontWeightBold'
+          boxShadow:
+            description: "Adds the shadow effect around the button's frame. The value can be defined using standard CSS syntax supported by the [box-shadow property](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)."
+            type: string
+            default: 'none'
+          hoverBoxShadow:
+            description: 'Controls the shadow effect when the button is hovered over with the cursor. The value can be defined using standard CSS syntax supported by the [box-shadow property](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow).'
+            type: string
+            default: '0px 0px 12px 0px rgba(0, 0, 0, 0.2)'
+          fontFamily:
+            description: 'Sets the font family for the button text.'
+            type: string
+            default: 'inherit'
+      contentWrapper:
+        description: 'Controls the size and positioning of the main content area in relation to other elements of the portal page (sidebar, navbar...).'
+        type: object
+        properties:
+          maxWidth:
+            description: 'Sets the maximum allowed width of the main content area.'
+            type: string
+            default: '910px'
+          paddingHorizontal:
+            description: 'Sets the horizontal padding for the main content area.'
+            type: string
+            default: '0'
+          paddingVertical:
+            description: 'Sets the vertical padding for the main content area.'
+            type: string
+            default: '25px'
+      fab:
+        description: 'Controls the colors of floating action button (FAB)'
+        type: object
+        properties:
+          backgroundColor:
+            description: 'Sets the background color for floating action button (FAB). The default value is the primary color `({ colors }) => colors.primary.main`.'
+            type: string
+          color:
+            description: 'Sets the color for floating action button (FAB). The default value is the primary color `({ colors }) => colors.primary.contrastText`.'
+            type: string
+      login:
+        description: 'Controls the appearance of the login component in the top navigation bar. You must configure the login component in the `login` section of the `siteConfig.yaml` file for these theming options to apply.'
+        type: object
+        properties:
+          avatarBgColor:
+            description: 'Sets the background color for the user avatar image when `userAvatar` is configured in `siteConfig.yaml > login`. The value set here applies when the configured avatar image is transparent or when the configured fallback text is displayed instead of the image.'
+            type: string
+            default: 'rgb(80, 90, 111)'
+          avatarBorderRadius:
+            description: "Sets the border radius of the user avatar image when `userAvatar` is configured in `siteConfig.yaml > login`. Set it to '100%' if you want to transform the avatar image to a circle. By default, this option inherits the value set for `navbar.borderRadius` in the portal theme."
+            type: string
+      search:
+        description: 'Controls the appearance of the search bar. The search functionality must be enabled in the portal for the search bar to be visible.'
+        type: object
+        properties:
+          icon:
+            description: 'Lets you set a custom search icon, overriding the default icon displayed in the search bar. Format the icon as a set of SVG properties inside `<svg> ... </svg>` tags.'
+            type: string
+          iconColor:
+            description: 'Modifies the color of the search icon (either the default one, or your custom search icon). The default value is calculated from the navigation text color using `({ colors }) => colors.navbar.contrastText`.'
+            type: string
+    additionalProperties:
+      type: object
+  externalIconUrl:
+    type: string
+    description: URL to the image used as external icon. Supports data-url's too.
+  logo:
+    description: 'Controls the appearance of the logo image displayed in the top navigation bar in the portal. The logo image must be defined under `logo` in the `siteConfig.yaml` file.'
+    type: object
+    properties:
+      height:
+        description: 'Sets the height of the logo image within the navigation bar. Can be provided in any of the standard units (px, em, rem...).'
+        type: string
+        default: '2rem'
+      maxHeight:
+        description: 'Sets the maximum allowed height for scaling the logo image.'
+        type: string
+        default: '100%'
+      margin:
+        description: 'Sets the margin for the logo image. Can be provided as a negative value (for example, `-20px 0`) to make the logo image bigger.'
+        type: string
+      maxWidth:
+        description: 'Sets the maximum allowed width for scaling the logo image.'
+        type: string
+        default: '100%'
+    additionalProperties:
+      type: string
+  navbar:
+    description: 'Controls the appearance of the portal navbar. You must define the contents of the navigation bar in the `nav` section of the `siteConfig.yaml` file.'
+    type: object
+    properties:
+      activeBgColor:
+        description: 'Sets the background color of the currently selected navigation item. The default is calculated using `({ colors }) => transparentize(0.9, colors.navbar.contrastText)`.'
+        type: string
+      activeTextColor:
+        description: 'Sets the text color of the currently selected navigation item. The default is calculated using `({ colors }) => colors.navbar.contrastText`.'
+        type: string
+      activeTextDecoration:
+        description: 'Sets the text decoration for the currently selected navigation item (e.g. `underline`).'
+        type: string
+        default: 'none'
+      borderRadius:
+        description: 'Sets the border radius and controls rounded corners for all items in the navigation bar, including the search input field.'
+        type: string
+        default: '10px'
+      marginHorizontal:
+        description: 'Controls the spacing between items in the navigation bar. The value set here is used to calculate `margin-left` and `margin-right` for each of the navigation items.'
+        type: string
+        default: '0px'
+      marginVertical:
+        description: 'Controls the vertical positioning of items within the navigation bar.'
+        type: string
+        default: '0px'
+    additionalProperties:
+      type: string
+  rightPanel:
+    description: 'Controls the appearance of the right-side panel in integrated Reference docs (the panel containing code samples and the Try It console).'
+    type: object
+    properties:
+      backgroundColor:
+        description: 'Sets the background color of the entire right-side panel.'
+        type: string
+        default: '#263238'
+      showAtBreakpoint:
+        description: 'Defines the starting screen size at which the right panel will become visible in integrated Reference docs pages. The value must be a string, and it must match one of the breakpoints defined in the theme.'
+        type: string
+        default: 'large'
+      textColor:
+        description: 'Sets the color of all text in the right-side panel. Also affects the background color of the *Try it* button and the selected request/response sample tab.'
+        type: string
+        default: '#ffffff'
+      width:
+        description: "Sets the width of the right-side panel. The value can be a string ('40%'), a breakpoints object `{_: '10%', small: '40%', medium: '600px'}` or a `calc` CSS function. When set as a string, the same value is used on all screen sizes."
+        type: string
+        default: '40%'
+    additionalProperties:
+      oneOf:
+        - type: string
+        - type: object
+  schema:
+    description: 'Controls the appearance of elements in response and request schemas in integrated Reference docs.'
+    type: object
+    properties:
+      arrow:
+        description: 'Controls the appearance of the arrow used to expand nested elements in a schema.'
+        type: object
+        properties:
+          color:
+            description: 'Sets the arrow color. The default value is calculated using `theme => theme.colors.text.secondary`.'
+            type: string
+          size:
+            description: 'Sets the arrow size.'
+            type: string
+            default: '1.1em'
+      constraints:
+        description: 'Controls the appearance of constraints in schemas.'
+        type: object
+        properties:
+          fontFamily:
+            description: 'Sets the font family for constraints text. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          fontSize:
+            description: 'Sets the font size for constraints text. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          lineHeight:
+            description: 'Sets the line height for constraints text. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+      defaultDetailsWidth:
+        description: 'Sets the default width for the schema field descriptions.'
+        type: string
+        default: '75%'
+      examples:
+        description: 'Controls the appearance of `example`, `default` and `enum` values in schemas.'
+        type: object
+        properties:
+          fontFamily:
+            description: 'Sets the font family. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          fontSize:
+            description: 'Sets the font size. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          lineHeight:
+            description: 'Sets the line height. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+      labelsTextSize:
+        description: 'Sets the font size of labels in schemas (such as the `required` label). Can be provided in any of the standard units (px, em, rem...).'
+        type: string
+        default: '0.9em'
+      linesColor:
+        description: 'Sets the color of lines connecting the elements in schemas. The default value is calculated from `theme.colors.primary.main` by applying the tonal offset value.'
+        type: string
+      nestedBackground:
+        description: 'Sets the background color for nested elements in schemas. This setting also affects the background color of alternate rows in Markdown tables in MD(X) pages.'
+        type: string
+        default: '#fafafa'
+      nestingSpacing:
+        description: 'Sets the spacing between nested elements in schemas.'
+        type: string
+        default: '1em'
+      requireLabelColor:
+        description: 'Sets the color of the `required` label in schemas. The default value is calculated using `theme => theme.colors.error.main`.'
+        type: string
+      typeNameColor:
+        description: 'Sets the color of the data type (e.g. string, integer, array) in the details section of schemas. The default value is `theme => theme.colors.text.secondary`.'
+        type: string
+      typeTitleColor:
+        description: 'Sets the color of the data type title (e.g. Tag, Category) in the details section of schemas. The default value is `theme => theme.schema.typeNameColor`.'
+        type: string
+    additionalProperties:
+      oneOf:
+        - type: string
+        - type: object
+  sidebar:
+    description: 'Controls the appearance of the left-side navigation sidebar.'
+    type: object
+    properties:
+      activeBgColor:
+        description: 'Changes the background color of the active item (currently selected item) in the sidebar.'
+        type: string
+        default: '#E4E7EB'
+      activeTextColor:
+        description: 'Changes the text color of the active item (currently selected item) in the sidebar. The default is `({ sidebar }) => sidebar.textColor`.'
+        type: string
+      backgroundColor:
+        description: 'Changes the background color of the entire sidebar.'
+        type: string
+        default: '#fff'
+      borderRadius:
+        description: 'Controls the border radius of each item in the sidebar. Can be provided in any of the standard units (px, em, rem...).'
+        type: string
+        default: '4px'
+      caretColor:
+        description: 'Controls the color of the back button (<-) in drilldown style, and the V button for expanding groups. The default is `({ sidebar }) => sidebar.textColorSecondary`.'
+        type: string
+      fontFamily:
+        description: 'Changes the font family of all text in the sidebar. The value can be either a breakpoints object or string. The default value is inherited from `typography.fontFamily`.'
+        type: string
+      fontSize:
+        description: 'Changes the font size of all text in the sidebar. Can be provided in any of the standard units (px, em, rem...).'
+        type: string
+        default: '1rem'
+      rightLineColor:
+        description: 'Changes the color of the vertical line dividing the sidebar section from the main content area.'
+        type: string
+        default: '#DADADA'
+      separatorLabelColor:
+        description: 'When the separator is used as text, this option controls its color.'
+        type: string
+      separatorLineColor:
+        description: 'When the separator is used as a horizontal line, this option controls its color. The default is `({ sidebar }) => sidebar.textColor`.'
+        type: string
+      showAtBreakpoint:
+        description: 'Controls the starting screen size at which the sidebar will become visible in the portal. Its value must be a string, and it must match one of the breakpoints defined in the theme.'
+        type: string
+        default: 'medium'
+      spacing:
+        description: 'Controls the spacing of items in the sidebar. The numbers set here are used to calculate the final positioning value of each item (in px).'
+        type: object
+        properties:
+          offsetLeft:
+            description: 'Controls the value for left offset of items in the sidebar. The default value is `sidebar.spacing.unit * 2`.'
+            type: number
+          offsetNesting:
+            description: 'Controls the value for nesting offset of items in the sidebar. Each nested group will have this offset. The default value is `sidebar.spacing.unit * 2`.'
+            type: number
+          offsetTop:
+            description: 'Controls the value for top offset, which is the distance between the top of the sidebar and the first item. The default value is `sidebar.spacing.unit * 2`.'
+            type: number
+          paddingHorizontal:
+            description: 'Controls the value for horizontal spacing of items in the sidebar (textual separator padding; menu item padding-right and padding-left). The default value is `({ sidebar }) => sidebar.spacing.unit`.'
+            type: number
+          paddingVertical:
+            description: 'Controls the value for vertical spacing of items in the sidebar (textual separator padding; line separator margin; menu item padding-top and padding-bottom; back button margin-bottom). The default value is `({ sidebar }) => sidebar.spacing.unit`.'
+            type: number
+          unit:
+            description: 'Controls the value for: textual separator margin-left; menu item margin-left; back button margin-right; drilldown menu icon width, height, and margin-right; version switcher padding.'
+            type: number
+            default: 8
+      textColor:
+        description: 'Changes the text color of default-style sidebar items (page names, page labels, group names).'
+        type: string
+        default: '#1F2933'
+      textColorSecondary:
+        description: 'Changes the text color of drilldown-style sidebar items (group sublabels and scope links).'
+        type: string
+        default: '#3E4C59'
+      width:
+        description: 'Controls the width of the entire sidebar section.'
+        type: string
+        default: '320px'
+    additionalProperties:
+      oneOf:
+        - type: string
+        - type: object
+  spacing:
+    description: 'Controls the spacing of sections in the portal. The numbers set here are used to calculate the spacing value of each section.'
+    type: object
+    properties:
+      sectionHorizontal:
+        description: 'Horizontal spacing between sections in the portal. Calculated based on the value of `unit` using an arrow function expression. The default value is `({ spacing }) => spacing.unit * 8`.'
+        type: number
+      sectionVertical:
+        description: 'Vertical spacing between sections in the portal. Calculated based on the value of `unit` using an arrow function expression. The default value is `({ spacing }) => spacing.unit * 8`.'
+        type: number
+      unit:
+        description: 'The main spacing unit used for calculating all spacing values in the portal.'
+        type: number
+        default: 5
+    additionalProperties:
+      type: number
+  tocPanel:
+    description: 'Controls the appearance of the right-side table of contents in MD(X) pages. For these settings to take effect, the table of contents must be enabled either globally for the entire portal (in the `siteConfig.yaml` file) or on individual pages (by setting `enableToc: true` in the front matter).'
+    type: object
+    properties:
+      width:
+        description: 'Sets the width of the right-side table of contents element.'
+        type: string
+        default: '240px'
+    additionalProperties:
+      type: string
+  typography:
+    description: 'Controls the formatting of textual elements in the portal.'
+    type: object
+    properties:
+      code:
+        description: 'Controls the appearance of inline code in MD(X) pages.'
+        type: object
+        properties:
+          backgroundColor:
+            description: 'Sets the background color for inline code.'
+            type: string
+            default: 'rgba(38, 50, 56, 0.04)'
+          color:
+            description: 'Sets the text color for inline code.'
+            type: string
+            default: 'e53935'
+          fontFamily:
+            description: 'Sets the font family for inline code. The value can be a string or a breakpoints object.'
+            type: string
+            default: 'Courier, monospace'
+          fontSize:
+            description: 'Sets the font size for inline code. The value can be a string or a breakpoints object, provided in any of the standard units (px, em, rem...).'
+            type: string
+            default: '14px'
+          fontWeight:
+            description: 'Sets the font weight for inline code. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. The default value is calculated using `({ typography }) => typography.fontWeightRegular`.'
+            type: string
+          wrap:
+            description: 'Specifies whether inline code text should wrap automatically when it exceeds the width of its containing element.'
+            type: boolean
+            default: false
+      fieldName:
+        description: 'Controls the appearance of field names in schemas in integrated Reference docs.'
+        type: object
+        properties:
+          fontFamily:
+            description: 'Sets the font family for field names. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          fontSize:
+            description: 'Sets the font size for field names. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          lineHeight:
+            description: 'Sets the line height for field names. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+      fontFamily:
+        description: 'Sets the default font family for all body text in the portal. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+        type: string
+        default: 'Roboto, sans-serif'
+      fontSize:
+        description: 'Sets the default font size for all body text in the portal. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+        type: string
+        default: '14px'
+      fontWeightBold:
+        description: 'Sets the value for bold font weight. The value can be a string or a number.'
+        type: string
+        default: '600'
+      fontWeightLight:
+        description: 'Sets the value for light font weight. The value can be a string or a number. This value also controls the font weight of navbar links in mobile view.'
+        type: string
+        default: '300'
+      fontWeightRegular:
+        description: 'Sets the value for regular font weight. The value can be a string or a number.'
+        type: string
+        default: '400'
+      heading1:
+        description: 'Controls typography-related settings for heading level 1 (H1) in portal pages and in integrated Reference docs.'
+        type: object
+        properties:
+          capitalize:
+            description: 'Specifies whether to capitalize the text in the heading automatically.'
+            type: boolean
+            default: true
+          color:
+            description: 'Sets the text color for the heading level. The default value is calculated using `({ colors }) => colors.text.primary`.'
+            type: string
+          fontFamily:
+            description: 'Sets the font family for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. The default value is inherited from the `headings` object.'
+            type: string
+          fontSize:
+            description: 'Sets the font size for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+            default: '1.85714em'
+          fontWeight:
+            description: 'Sets the font weight for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+            default: '600'
+          lineHeight:
+            description: 'Sets the line height for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. The default value is inherited from `typography.lineHeight`.'
+            type: string
+          marginBottom:
+            description: 'Sets the bottom margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+            default: '0.9em'
+          marginHorizontal:
+            description: 'Sets the horizontal margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginLeft:
+            description: 'Sets the left margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginRight:
+            description: 'Sets the right margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginTop:
+            description: 'Sets the top margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+            default: '1.35em'
+          marginVertical:
+            description: 'Sets the vertical margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+      heading2:
+        description: 'Controls typography-related settings for heading level 2 (H2) in portal pages and in integrated Reference docs.'
+        type: object
+        properties:
+          capitalize:
+            description: 'Specifies whether to capitalize the text in the heading automatically.'
+            type: boolean
+            default: false
+          color:
+            description: 'Sets the text color for the heading level. The default value is calculated using `({ colors }) => colors.text.primary`.'
+            type: string
+          fontFamily:
+            description: 'Sets the font family for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. The default value is inherited from the `headings` object.'
+            type: string
+          fontSize:
+            description: 'Sets the font size for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+            default: '1.57143em'
+          fontWeight:
+            description: 'Sets the font weight for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+            default: '600'
+          lineHeight:
+            description: 'Sets the line height for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. The default value is inherited from `typography.lineHeight`.'
+            type: string
+          marginBottom:
+            description: 'Sets the bottom margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+            default: '0.8em'
+          marginHorizontal:
+            description: 'Sets the horizontal margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginLeft:
+            description: 'Sets the left margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginRight:
+            description: 'Sets the right margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginTop:
+            description: 'Sets the top margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+            default: '1.25em'
+          marginVertical:
+            description: 'Sets the vertical margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+      heading3:
+        description: 'Controls typography-related settings for heading level 3 (H3) in portal pages and in integrated Reference docs.'
+        type: object
+        properties:
+          capitalize:
+            description: 'Specifies whether to capitalize the text in the heading automatically.'
+            type: boolean
+            default: false
+          color:
+            description: 'Sets the text color for the heading level. The default value is calculated using `({ colors }) => colors.text.primary`.'
+            type: string
+          fontFamily:
+            description: 'Sets the font family for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. The default value is inherited from the `headings` object.'
+            type: string
+          fontSize:
+            description: 'Sets the font size for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+            default: '1.27em'
+          fontWeight:
+            description: 'Sets the font weight for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+            default: '600'
+          lineHeight:
+            description: 'Sets the line height for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. The default value is inherited from `typography.lineHeight`.'
+            type: string
+          marginBottom:
+            description: 'Sets the bottom margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+            default: '0.8em'
+          marginHorizontal:
+            description: 'Sets the horizontal margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginLeft:
+            description: 'Sets the left margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginRight:
+            description: 'Sets the right margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginTop:
+            description: 'Sets the top margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+            default: '1.25em'
+          marginVertical:
+            description: 'Sets the vertical margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+      heading4:
+        description: 'Controls typography-related settings for heading level 4 (H4) in portal pages and in integrated Reference docs.'
+        type: object
+        properties:
+          capitalize:
+            description: 'Specifies whether to capitalize the text in the heading automatically.'
+            type: boolean
+            default: false
+          color:
+            description: 'Sets the text color for the heading level. The default value is calculated using `({ colors }) => colors.text.primary`.'
+            type: string
+          fontFamily:
+            description: 'Sets the font family for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. The default value is inherited from the `headings` object.'
+            type: string
+          fontSize:
+            description: 'Sets the font size for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          fontWeight:
+            description: 'Sets the font weight for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          lineHeight:
+            description: 'Sets the line height for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. The default value is inherited from `typography.lineHeight`.'
+            type: string
+          marginBottom:
+            description: 'Sets the bottom margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginHorizontal:
+            description: 'Sets the horizontal margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginLeft:
+            description: 'Sets the left margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginRight:
+            description: 'Sets the right margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginTop:
+            description: 'Sets the top margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginVertical:
+            description: 'Sets the vertical margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+      heading5:
+        description: 'Controls typography-related settings for heading level 5 (H5) in portal pages and in integrated Reference docs.'
+        type: object
+        properties:
+          capitalize:
+            description: 'Specifies whether to capitalize the text in the heading automatically.'
+            type: boolean
+            default: false
+          color:
+            description: 'Sets the text color for the heading level. The default value is calculated using `({ colors }) => colors.text.primary`.'
+            type: string
+          fontFamily:
+            description: 'Sets the font family for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. The default value is inherited from the `headings` object.'
+            type: string
+          fontSize:
+            description: 'Sets the font size for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          fontWeight:
+            description: 'Sets the font weight for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          lineHeight:
+            description: 'Sets the line height for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. The default value is inherited from `typography.lineHeight`.'
+            type: string
+          marginBottom:
+            description: 'Sets the bottom margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginHorizontal:
+            description: 'Sets the horizontal margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginLeft:
+            description: 'Sets the left margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginRight:
+            description: 'Sets the right margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginTop:
+            description: 'Sets the top margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginVertical:
+            description: 'Sets the vertical margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+      heading6:
+        description: 'Controls typography-related settings for heading level 6 (H6) in portal pages and in integrated Reference docs.'
+        type: object
+        properties:
+          capitalize:
+            description: 'Specifies whether to capitalize the text in the heading automatically.'
+            type: boolean
+            default: false
+          color:
+            description: 'Sets the text color for the heading level. The default value is calculated using `({ colors }) => colors.text.primary`.'
+            type: string
+          fontFamily:
+            description: 'Sets the font family for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. The default value is inherited from the `headings` object.'
+            type: string
+          fontSize:
+            description: 'Sets the font size for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          fontWeight:
+            description: 'Sets the font weight for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          lineHeight:
+            description: 'Sets the line height for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. The default value is inherited from `typography.lineHeight`.'
+            type: string
+          marginBottom:
+            description: 'Sets the bottom margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginHorizontal:
+            description: 'Sets the horizontal margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginLeft:
+            description: 'Sets the left margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginRight:
+            description: 'Sets the right margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginTop:
+            description: 'Sets the top margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          marginVertical:
+            description: 'Sets the vertical margin for the heading level. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+      headings:
+        description: 'Unified settings that apply to all heading levels. You can override them by setting different values for specific heading levels.'
+        type: object
+        properties:
+          fontFamily:
+            description: 'Sets the font family for all headings. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes. All items in the navigation bar inherit this value by default.'
+            type: string
+            default: 'Roboto, sans-serif'
+          fontWeight:
+            description: 'Sets the font weight for all headings. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+            default: '600'
+          lineHeight:
+            description: 'Sets the line height for all headings. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+      lineHeight:
+        description: 'Sets the line height for all body text. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+        type: string
+        default: '1.5em'
+      links:
+        description: 'Controls the appearance of links in portal body text and in integrated Reference docs.'
+        type: object
+        properties:
+          color:
+            description: 'Sets the text color of links. The default value is calculated using `({ colors }) => colors.primary.main`.'
+            type: string
+          hover:
+            description: 'Sets the color of links when hovered over. The default value is calculated using `({ typography }) => lighten(0.2, typography.links.color)`.'
+            type: string
+          textDecoration:
+            description: 'Sets the text decoration for links (e.g. `underline`).'
+            type: string
+            default: 'none'
+          visited:
+            description: 'Sets the color of links when selected/visited. ˙The default value is `({ typography }) => typography.links.color`.'
+            type: string
+      rightPanelHeading:
+        description: 'Controls the section titles (e.g. Response samples, Request samples) in the right-side panel in integrated Reference docs.'
+        type: object
+        properties:
+          fontFamily:
+            description: 'Sets the font family for section titles. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          fontSize:
+            description: 'Sets the font size for section titles. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+          lineHeight:
+            description: 'Sets the line height for section titles. The value can be a string or a breakpoints object. When set as a string, the same value is used on all screen sizes.'
+            type: string
+    additionalProperties:
+      oneOf:
+        - type: string
+        - type: object
