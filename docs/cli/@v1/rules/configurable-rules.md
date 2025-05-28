@@ -210,7 +210,6 @@ Each function is called with the following parameters:
 problems | [`Problem`] | List of problems. An empty list means all checks are valid.
 
 `Problem`
-
 | Property | Type | Description |
 | -- | -- | -- |
 | message | `string` \| [`string`] | Problem message that is displayed in the [lint command](../commands/lint.md) output. |
