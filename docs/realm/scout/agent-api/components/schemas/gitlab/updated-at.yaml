@@ -1,0 +1,13 @@
+type: object
+required:
+  - previous
+  - current
+properties:
+  previous:
+    type: string
+    format: date-time
+  current:
+    type: string
+    format: date-time
+additionalProperties: false
+title: Updated at

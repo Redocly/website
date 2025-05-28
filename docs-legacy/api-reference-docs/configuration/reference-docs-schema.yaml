@@ -1,0 +1,772 @@
+type: object
+properties:
+  corsProxyUrl:
+    description: Controls whether the requests sent from the _Try it_ console should go through a CORS proxy. To use the Redocly CORS proxy, set `https://cors.redoc.ly` as the value. Alternatively, set the URL of your own CORS proxy server as the value. The `hideTryItPanel` option must be disabled for this feature to work.
+    default: 'https://cors.redoc.ly'
+    type: string
+  ctrlFHijack:
+    default: true
+    description: Brings focus to the search bar when Control-F is pressed.
+    type: boolean
+  defaultSampleLanguage:
+    description: "Specifies the code sample language tab that will be selected by default in all code samples panels. When configured, this selection is sticky, which means it's preserved between page reloads. The language specified here must match one of the values from `generateCodeSamples.language.lang` (for example, `defaultSampleLanguage: 'JavaScript'`)."
+    type: string
+  disableDeepLinks:
+    default: false
+    description: 'When set to `true`, disables the deep links functionality in Reference docs. Deep links are automatically created direct links to request parameters and request/response properties in all schemas in the middle panel, regardless of their nesting level. This functionality is enabled by default. To access a deep link, hover over a parameter or property in the middle panel and select the link icon to the left of the parameter/property name. Deep links are not supported in models and callbacks.'
+    type: boolean
+  disableSearch:
+    default: false
+    description: Disables search indexing and hides the search box from the API documentation page.
+    type: boolean
+  disableTryItRequestUrlEncoding:
+    default: false
+    description: Disables request url encoding in the _Try it_ console.
+    type: boolean
+  minCharacterLengthToInitSearch:
+    default: 3
+    minimum: 1
+    description: Sets the minimum amount of characters that need to be typed into the search dialog to initiate the search.
+    type: number
+  disableSidebar:
+    default: false
+    description: 'If set to `true`, hides the navigation sidebar (the left panel). Starting with version 2.1.23, setting this option to `false` does not disable the search feature.'
+    type: boolean
+  downloadDefinitionUrl:
+    description: If the 'Download' button is visible in the API reference documentation (`hideDownloadButton=false`), the URL configured here will open when that button is selected. Provide it as an absolute URL with the full URI scheme.
+    type: string
+  expandDefaultServerVariables:
+    default: false
+    description: Enables or disables expanding default server variables.
+    type: boolean
+  expandDefaultRequest:
+    default: true
+    description: Enables or disables expanding default request parameters panel.
+    type: boolean
+  expandDefaultResponse:
+    default: true
+    description: Enables or disables expanding default response content panel.
+    type: boolean
+  collapseRequestSamplePanel:
+    default: false
+    description: Enables or disables collapsing default request samples panel.
+    type: boolean
+  collapseResponseSamplePanel:
+    default: false
+    description: Enables or disables collapsing default response samples panel.
+    type: boolean
+  expandResponses:
+    description: "Controls which responses to expand by default. Specify one or more responses by providing their response codes as a comma-separated list without spaces, e.g. `expandResponses='200,201'`. Special value 'all' expands all responses by default. Be careful: this option can slow down documentation rendering time."
+    type: string
+  expandSingleSchemaField:
+    default: false
+    description: Automatically expands the single field in a schema.
+    type: boolean
+  generateCodeSamples:
+    description: Controls options for generating code samples, including code sample languages.
+    type: object
+    required:
+      - languages
+    properties:
+      languages:
+        type: array
+        description: Languages are rendered in the order they are declared.
+        items:
+          type: object
+          required:
+            - lang
+          properties:
+            lang:
+              description: Sets the language for the generated sample.
+              type: string
+              enum:
+                - curl
+                - C#
+                - Go
+                - Java
+                - Java8+Apache
+                - JavaScript
+                - Node.js
+                - PHP
+                - Python
+                - R
+                - Ruby
+            label:
+              description: Label for the generated code sample. Can be any string, e.g. 'JS' or 'Awesome Language'. When configured here, the label is displayed instead of the 'lang' value as the tab caption in the Request samples section of your reference docs.
+              type: string
+      skipOptionalParameters:
+        default: false
+        description: When set to `true`, optional parameters 'cookies', 'headers' and query params are not included in generated code samples.
+        type: boolean
+  generatedPayloadSamplesMaxDepth:
+    default: 8
+    description: 'Controls how many schema levels to display in automatically generated payload samples.'
+    type: number
+  hideDownloadButton:
+    default: false
+    description: Hides the 'Download' button for saving the API definition source file. **This does not make the API definition private**, it just hides the button.
+    type: boolean
+  hideHostname:
+    default: false
+    description: If set to `true`, the protocol and hostname are not shown in the operation definition.
+    type: boolean
+  hideInfoSection:
+    default: false
+    description: Hides the entire info section of the API definition when set to `true`.
+    type: boolean
+  hideLoading:
+    default: false
+    description: Hides the loading animation. Does not apply to CLI or Workflows-rendered docs.
+    type: boolean
+  hideLogo:
+    default: false
+    description: Hides the API logo defined in the x-logo specification extension.
+    type: boolean
+  hideFab:
+    default: false
+    description: Hides the floating action button (FAB) in mobile view.
+    type: boolean
+  hideRequestPayloadSample:
+    default: false
+    description: Hides request payload examples.
+    type: boolean
+  hideRightPanel:
+    default: false
+    description: Hides the entire right panel when set to `true`.
+    type: boolean
+  hideSchemaPattern:
+    default: false
+    description: If set to `true`, the pattern is not shown in the schema.
+    type: boolean
+  hideOneOfDescription:
+    default: false
+    description: If set to `true`, the description for `oneOf`/`anyOf` object is not shown in the schema.
+    type: boolean
+  hideSchemaTitles:
+    default: false
+    description: Hides the schema title next to to the type.
+    type: boolean
+  hideSingleRequestSampleTab:
+    default: false
+    description: Hides the request sample tab for requests with only one sample.
+    type: boolean
+  hideTryItPanel:
+    default: false
+    description: Disables the _Try it_ console in the right panel.
+    type: boolean
+  showObjectSchemaExamples:
+    default: false
+    description: Show object schema example in the properties, default false.
+    type: boolean
+  showAccessMode:
+    default: false
+    description: If set to `true', the schema component displays read-only and write-only flags.
+    type: boolean
+  htmlTemplate:
+    description: Sets the path to the optional HTML file used to modify the layout of the reference docs page.
+    type: string
+  jsonSampleExpandLevel:
+    default: 2
+    description: Sets the default expand level for JSON payload samples (response and request body). The default value is 2, and the maximum supported value is '+Infinity'. It can also be configured as a string with the special value `all` that expands all levels.
+    minimum: 1
+    oneOf:
+      - type: number
+      - type: string
+  labels:
+    description: Sets the text for various labels displayed in schemas.
+    type: object
+    properties:
+      enum:
+        type: string
+        default: 'Enum'
+      enumSingleValue:
+        type: string
+        default: 'Value'
+      enumArray:
+        type: string
+        default: 'Items'
+      default:
+        type: string
+        default: 'Default'
+      deprecated:
+        type: string
+        default: 'Deprecated'
+      example:
+        type: string
+        default: 'Example'
+      examples:
+        type: string
+        default: 'Examples'
+      nullable:
+        type: string
+        default: 'Nullable'
+      recursive:
+        type: string
+        default: 'Recursive'
+      arrayOf:
+        type: string
+        default: 'Array of '
+      webhook:
+        type: string
+        default: 'Event'
+      authorizations:
+        type: string
+        default: 'Authorizations'
+      tryItAuthBasicUsername:
+        description: 'Sets the text for the username label in the *Try it* auth section.'
+        type: string
+        default: 'Username'
+      tryItAuthBasicPassword:
+        description: 'Sets the text for the password label in the *Try it* auth section.'
+        type: string
+        default: 'Password'
+  layout:
+    description: >-
+      Controls the layout of the Reference docs page, affecting how the panels are displayed.
+      Set the value to `three-panel` to use the default layout with the sidebar, middle panel, and right panel with code samples.
+      Set the value to `stacked` to move the entire right panel into the middle panel.
+      The `stacked` layout is identical to the layout activated by selecting the **Change View** button on the Reference docs page.
+    type: string
+    default: three-panel
+    enum:
+      - stacked
+      - three-panel
+  maxDisplayedEnumValues:
+    description: >-
+      Displays only the specified number of enum values.
+      The remaining values are hidden in an expandable area.
+      If not set, all values are displayed.
+    type: number
+  maxResponseHeadersToShowInTryIt:
+    type: number
+    default: 0
+    minimum: 0
+    description: Specify the number of response headers that will be visible in the *Try it* console. If there are more headers than the specified number, they will be collapsed and accessible by selecting the *Show more* link. The default value is `0`, which displays all available headers.
+  menuToggle:
+    default: true
+    description: If set to `true`, selecting an expanded item in the sidebar twice will collapse it.
+    type: boolean
+  mockServer:
+    description: Allows to add mock server URL to the *Try it* console servers list.
+    type: object
+    required:
+      - url
+    properties:
+      url:
+        type: string
+        description: Mock server URL
+      description:
+        type: string
+        description: Display name
+      position:
+        default: 'first'
+        description: |
+          Defines position of mock server URL in the list of servers: first, last or the as the only item;
+          *off* means mock server won't be added to the list.
+        type: string
+        enum:
+          - first
+          - last
+          - replace
+          - off
+  nativeScrollbars:
+    default: false
+    description: If set to `true`, the sidebar will use the native scrollbar instead of perfect-scroll. This is a scrolling performance optimization for big API definitions.
+    type: boolean
+  noAutoAuth:
+    deprecated: true
+    description: '**Deprecated configuration option.**'
+    default: false
+    type: boolean
+  oAuth2RedirectURI:
+    description: Allows specifying the URI of the oAuth2 redirect page. If you're using Reference docs with Workflows, this value is automatically set and there is usually no need to modify it.
+    type: string
+  onDeepLinkClick:
+    description: 'Configures custom behavior that will execute when users select a deep link. As a prerequisite, deep links must be enabled in Reference docs (`disableDeepLinks` must be set to `false`). Supported only in Reference docs CDN and in the React component.'
+    type: function
+  onlyRequiredInSamples:
+    default: false
+    description: Shows only required fields in request samples.
+    type: boolean
+  pagination:
+    default: none
+    description: >-
+      Controls how the API documentation should be paginated.
+    type: string
+    enum:
+      - none
+      - section
+      - item
+    x-enumDescriptions:
+      none: pagination disabled, all content is rendered on a single long page; replaces deprecated `layout.scope=all, routingStrategy=hash`
+      section: each tag with a set of associated operations is rendered as a separate page; doesn't support operations without tags; replaces deprecated `layout.scope=section, routingStrategy=browser`
+      item: each tag and each operation are rendered on separate pages; replaces deprecated `layout.scope=item, routingStrategy=browser`
+  pathInMiddlePanel:
+    default: false
+    description: Shows the path link and HTTP verb in the middle panel instead of the right panel.
+    type: boolean
+  payloadSampleIdx:
+    default: 0
+    description: If set, the payload sample will be inserted at the specified index. If there are `N` payload samples and the value configured here is bigger than `N`, the payload sample will be inserted last. Indexes start from 0.
+    minimum: 0
+    type: number
+  requestInterceptor:
+    description: 'Configures the request interceptor for the *Try it* console. As a prerequisite, the *Try it* console must be enabled in Reference docs (`hideTryItPanel` must be set to `false`). When configured, the interceptor can capture the request object and modify it according to specified criteria. Async usage is supported.'
+    type: function
+  requiredPropsFirst:
+    default: false
+    description: Shows required properties in schemas first, ordered in the same order as in required array.
+    type: boolean
+  routingBasePath:
+    description: Specifies the base path when reference docs are hosted at something other than the root (`/`) of their domain.
+    type: string
+  routingStrategy:
+    deprecated: true
+    description: '**Deprecated configuration option.**'
+    type: string
+  markdownHeadingsAnchorLevel:
+    default: 2
+    description: 'Controls what level of headings are having anchors and renders as a section from markdown files or descriptions.'
+    type: number
+  samplesTabsMaxCount:
+    default: 5
+    description: "Controls how many code sample tabs are displayed in the right panel by default. If your API definition has code samples for more languages than configured here, their tabs are automatically grouped into a 'show more' menu at the end of the tab list."
+    type: number
+  schemaDefinitionsTagName:
+    type: string
+    description: >-
+      If value is set, it associates all of the schemas with the designated tag name.
+      The schemas then render and display in the sidebar navigation (with that associated tag name).
+      To display only specific schemas, use the [`x-tags` specification extension](https://redocly.com/docs-legacy/api-reference-docs/specification-extensions/x-tags/).
+  schemaExpansionLevel:
+    default: 0
+    description: 'Specifies whether to automatically expand schemas in Reference docs. Set it to `all` to expand all schemas regardless of their level, or set it to a number to expand schemas up to the specified level. For example, `schemaExpansionLevel: 3` expands schemas up to three levels deep. The default value is `0`, meaning no schemas are expanded automatically.'
+    oneOf:
+      - type: string
+      - type: number
+  scrollYOffset:
+    default: 0
+    description: |-
+      Specifies a vertical scroll-offset.
+      This is useful when there are fixed positioned elements at the top of the page, such as navbars, headers etc.
+      Note that you can specify the `scrollYOffset` value in any of the following ways:
+      - as a number - a fixed number of pixels to be used as the offset.
+      - as a CSS selector - the selector of the element to be used for specifying the offset. The distance from the top of the page to the element's bottom will be used as the offset.
+      - a function (advanced) - a getter function. Must return a number representing the offset (in pixels).
+    oneOf:
+      - type: string
+      - type: number
+  searchAutoExpand:
+    default: true
+    description: If set to `true`, all response schemas are automatically expanded when displaying the results for a search query. Phrases matching the search query are highlighted in expanded schemas.
+    type: boolean
+  searchFieldLevelBoost:
+    default: 0.95
+    description: Specifies the boost factor for search terms found in fields at a specific level. If this value is lower than 1, search results found on deeper levels will rank lower.
+    format: float
+    type: number
+  searchMaxDepth:
+    default: 1
+    description: "Controls the search indexing depth for your Reference docs. Set the value to a number from 1 to 10 to specify the maximum level of nested references that should be included in the search index. In this context, 'nested references' means content added to the API definition with $ref."
+    type: number
+  searchMode:
+    default: default
+    description: "Controls the search indexing mode. Supported values: 'default'; 'path-only' (will index and search only the operation paths)."
+    type: string
+    enum:
+      - default
+      - path-only
+  searchOperationTitleBoost:
+    default: 4
+    description: Specifies the boost factor for search terms found in operation titles. The bigger the value, the higher searches will rank.
+    type: number
+  searchTagTitleBoost:
+    default: 8
+    description: Specifies the boost factor for search terms found in tag titles.
+    type: number
+  sendXUserAgentInTryIt:
+    default: false
+    description: |
+      Enables adding header `X-User-Agent: Redocly Try it API console` to every request made from Try it console.
+
+      **NOTE:** make sure to add `X-User-Agent` to your [`Access-Control-Allow-Headers`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers) CORS header.
+  showWebhookVerb:
+    default: false
+    description: When set to `true`, shows the HTTP request method for webhooks in operations and in the sidebar.
+    type: boolean
+  showChangeLayoutButton:
+    default: true
+    description: 'When set to `true`, displays the **Change Layout** button in the upper right corner of the Reference docs page. Selecting this button moves the middle panel to the center of the page, and places the contents of the right panel (code samples and the API console) into the middle panel.'
+    type: boolean
+  showConsole:
+    default: true
+    deprecated: true
+    description: '**Deprecated configuration option.** Use `hideTryItPanel` instead.'
+    type: boolean
+  showExtensions:
+    default: false
+    description: Shows specification extensions ('x-' fields). Extensions used by Redoc are ignored. The value can be boolean or an array of strings with names of extensions to display. When used as boolean and set to `true`, all specification extensions are shown.
+    oneOf:
+      - type: boolean
+      - type: string
+  preserveOriginalExtensionsName:
+    default: false
+    type: boolean
+    description: Allows to preserve the original name of the schema extension ('x-' prefix).
+  showNextButton:
+    default: true
+    description: "Controls whether to show the 'Next to ...' button at the end of each section when pagination is enabled."
+    type: boolean
+  showRightPanelToggle:
+    description: 'When set to `true`, displays the **Hide Samples** button in the upper right corner of the Reference docs page. Selecting this button hides the entire right panel with code samples and the API console. When the **Change View** button is enabled and selected, the **Hide Samples** button is not visible on the page.'
+    type: boolean
+    default: true
+  showSecuritySchemeType:
+    default: false
+    description: Shows authorization type on the Security panel
+    type: boolean
+  hideSecuritySection:
+    default: false
+    description: 'Hides the Security panel section.'
+    type: boolean
+  sidebarLinks:
+    description: |
+      Configures custom links that will be added to the navigation sidebar at the top (before the info section) or at the end.
+      Link to any internal or external resource.
+      For each item in the array, define the label, link, and target.
+    type: object
+    properties:
+      beforeInfo:
+        type: array
+        items:
+          type: object
+          required:
+            - label
+            - link
+          properties:
+            label:
+              type: string
+              description: |
+                Specifies the label for your link.
+                This label is displayed as a sidebar entry (navigation item in the sidebar) instead of showing the full URL.
+            link:
+              description: Specifies the contents of your link (the resource you want to link to).
+              type: string
+            target:
+              description: |
+                Specifies how to open the link when users select it in the sidebar.
+                Setting the value to `_blank` opens the link in a new browser tab or window.
+              type: string
+      end:
+        type: array
+        items:
+          type: object
+          required:
+            - label
+            - link
+          properties:
+            label:
+              type: string
+              description: |
+                Specifies the label for your link.
+                This label is displayed as a sidebar entry (navigation item in the sidebar) instead of showing the full URL.
+            link:
+              description: Specifies the contents of your link (the resource you want to link to).
+              type: string
+            target:
+              description: |
+                Specifies how to open the link when users select it in the sidebar.
+                Setting the value to `_blank` opens the link in a new browser tab or window.
+              type: string
+  sideNavStyle:
+    default: summary-only
+    description: |
+      Defines the style of navigation sidebar items (in the left panel). The default style is 'summary-only'.
+      The 'path-first' style shows the path first with the summary underneath and the 'id-only' style shows the operation id if provided, otherwise path.
+      The 'path-only' style shows only the path. **Available only in Redoc CE**.
+    type: string
+    enum:
+      - summary-only
+      - path-first
+      - id-only
+      - path-only
+  simpleOneOfTypeLabel:
+    default: false
+    description: Shows only unique `oneOf` types in the label without titles.
+    type: boolean
+  sortEnumValuesAlphabetically:
+    description: 'When set to `true`, sorts all enum values in all schemas alphabetically.'
+    oneOf:
+      - type: boolean
+      - type: string
+  sortOperationsAlphabetically:
+    description: 'When set to `true`, sorts operations in the navigation sidebar and in the middle panel alphabetically.˙'
+    oneOf:
+      - type: boolean
+      - type: string
+  sortPropsAlphabetically:
+    default: false
+    description: 'When set to `true`, sorts properties in all schemas alphabetically.'
+    type: boolean
+  sortTagsAlphabetically:
+    default: false
+    description: 'When set to `true`, sorts tags in the navigation sidebar and in the middle panel alphabetically. Note that only tags will be sorted alphabetically in the middle panel, not the operations associated with each tag. To sort operations alphabetically as well, you must set `sortOperationsAlphabetically` to `true`.'
+    type: boolean
+  suppressWarnings:
+    deprecated: true
+    description: '**Deprecated configuration option.**'
+    type: boolean
+  theme:
+    description: 'Theming options that control the style of the generated API documentation. Consult the [full list of supported options](https://redocly.com/docs-legacy/api-reference-docs/configuration/theming/).'
+    type: object
+  unstable_externalDescription:
+    deprecated: true
+    description: '**Deprecated configuration option.**'
+    type: string
+  unstable_ignoreMimeParameters:
+    default: false
+    description: Applies a workaround to ignore `charset=utf` in mime-type.
+    type: boolean
+  untrustedDefinition:
+    default: false
+    description: If set to `true`, the API definition is considered untrusted and all HTML/Markdown is sanitized to prevent XSS.
+    type: boolean
+  hooks:
+    type: object
+    description: |
+      Extension hooks into Reference engine with custom JavaScript code.
+      Allows injecting UI elements into different points or overriding some core functionality.
+
+      **NOTE**: These options contain custom JavaScript, so they can't be used in `redocly.yaml`.
+      You can provide them when using Reference docs as [JavaScript library from CDN](https://redocly.com/docs-legacy/api-reference-docs/guides/on-premise-html-element/)
+    properties:
+      AfterApiTitle:
+        type: function
+        description: |
+          Allows to render custom HTML or React component after API title.
+
+          Accepts info model as input and should return either React component or object with `html` property.
+
+          ```typescript
+          AfterApiTitle: (args: {
+            info: ApiInfoModel
+          }) => JSX.Element | { html: string} | null;
+          ```
+      BeforeOperation:
+        type: function
+        description: |
+          Allows to render custom HTML or React component before each API operation (above Operation summary)
+
+          Accepts operation model as input and should return either React component or object with `html` property.
+
+          ```typescript
+          BeforeOperation: (args: {
+            operation: OperationModel
+          }) => JSX.Element | { html: string} | null;
+          ```
+        AfterOperation:
+          type: function
+          description: |
+            Allows to render custom HTML or React component after each API operation.
+
+            Accepts operation model as input and should return either React component or object with `html` property.
+
+            ```typescript
+            AfterOperation: (args: {
+              operation: OperationModel
+            }) => JSX.Element | { html: string} | null;
+            ```
+      BeforeOperationSummary:
+        type: function
+        description: |
+          Allows to render custom HTML or React component before operation summary inline.
+
+          Accepts operation model as input and should return either React component or object with `html` property.
+
+          ```typescript
+          BeforeOperationSummary: (args: {
+            operation: OperationModel
+            }) => JSX.Element | { html: string} | null;
+          ```
+      AfterOperationSummary:
+        type: function
+        description: |
+          Allows to render custom HTML or React component after operation summary inline.
+
+          Accepts operation model as input and should return either React component or object with `html` property.
+
+          ```typescript
+          AfterOperationSummary: (args: {
+            operation: OperationModel
+          }) => JSX.Element | { html: string} | null;
+          ```
+      ReplaceTryItSecurityPanel:
+        type: function
+        description: |
+          Allows to replace Try it authorization panel with custom component.
+
+          Accepts operation model, current `server`, OAuth2 helper and `onChange` callback as input and should return
+          either React component or object with `html` property.
+
+          See [example implementation guide](https://redocly.com/docs-legacy/developer-portal/guides/reference-docs-hooks/#example-3-override-the-try-it-console-security-panel)
+
+          ```typescript
+          ReplaceTryItSecurityPanel: (args: {
+            operation: OperationModel,
+            server: Server,
+            OAuth2: {
+              authorizeImplicit: Function,
+              authorizeAuthorizationCode: Function,
+              authorizeClientCredentials: Function,
+              clearRedirectData: Function
+            },
+            onChange: (securityDetails: unknown) => void
+          }) => JSX.Element | { html: string} | null;
+          ```
+      onInit:
+        type: function
+        description: |
+          Runs after Reference docs internal model is initialized.
+          Accepts Reference docs internal store.
+
+          ```typescript
+          onInit: (args { store: Store }) => void
+          ```
+      replaceSecurityLink:
+        type: function
+        description: |
+          Allows to link to security scheme from operations. Useful when you have an external page for security details.
+
+          Accepts security scheme ID and should return a link as string.
+
+          ```typescript
+          replaceSecurityLink: (args {
+            securityRequirementId: string
+          }) => string
+          ```
+      sanitize:
+        type: function
+        description: |
+          Allows to override HTML sanitization. By default Reference docs uses [DOMPurify](https://github.com/cure53/DOMPurify) if
+          `untrustedDefinition` is set to true.
+
+          Accepts raw HTML string and should return sanitized string:
+
+          ```typescript
+          sanitize: (raw: string) => string
+          ```
+  events:
+    type: object
+    description: |
+      Events hooks to get notified about various user events in Reference docs. Useful for analytics purposes.
+
+      Each event provides information about a specific event as well as some basic information:
+
+      ```typescript
+      eventType: string;
+      resource: string;
+      action: string;
+      operationId?: string;
+      operationPath: string;
+      operationHttpVerb: string;
+      operationSummary?: string;
+      ```
+
+      **NOTE**: These options contain custom JavaScript, so they can't be used in `redocly.yaml`.
+      You can provide them when using Reference docs as [JavaScript library from CDN](https://redocly.com/docs-legacy/api-reference-docs/guides/on-premise-html-element/)
+    properties:
+      codeSamplesLanguageSwitch:
+        type: function
+        description: |
+          Called when the user switches to a different language tab in the code samples section.
+
+          ```typescript
+          eventType: 'CodeSampleLanguageSwitched'
+          resource: 'Redocly_CodeSample'
+          action: 'LanguageSwitched'
+          ```
+
+          Provides the following additional information:
+
+          ```typescript
+          lang: string;
+          label: string;
+          exampleId?: string;
+          ```
+      tryItOpen:
+        type: function
+        description: |
+          Called when the user opens the Try it panel.
+
+          ```typescript
+          eventType: 'TryItOpen'
+          resource: 'Redocly_OperationTryIt'
+          action: 'Opened' | 'NavigatedOverrideLink'
+          ```
+      targetServerSwitch:
+        type: function
+        description: |
+          Called when the user changes the selection of the target server.
+
+          ```typescript
+          eventType: 'TargetServerSwitched'
+          resource: 'Redocly_OperationTryIt'
+          action: 'TargetServerSwitched'
+          ```
+
+          Provides the following additional information:
+
+          ```typescript
+          serverUrl: string;
+          ```
+      tryItSent:
+        type: function
+        description: |
+          Called when the Send button is clicked in the Try it panel.
+
+          ```typescript
+          eventType: 'TryItSent'
+          resource: 'Redocly_OperationTryIt'
+          action: 'Sent' | 'ValidationFailed'
+          ```
+
+          `action` can be either `Sent` (request was successfully sent) or `ValidationFailed` (form validation failed).
+      panelToggle:
+        type: function
+        description: |
+          Called when the user expands or collapses any panel across Reference docs UI.
+
+          ```typescript
+          eventType: 'PanelToggle'
+          resource: 'Redocly_Operation'
+          action: 'PanelToggled'
+          ```
+
+          Provides the following additional information:
+          ```typescript
+          panelType:
+            | 'request'
+            | 'responses'
+            | 'request-samples'
+            | 'response-samples';
+          state: 'expanded' | 'collapsed';
+          ```
+      codeSamplesCopy:
+        type: function
+        description: |
+          Called when the user copies request or response samples across Reference docs UI.
+
+          ```typescript
+          eventType: 'CodeSampleCopied'
+          resource: 'Redocly_CodeSample'
+          action: 'CodeSampleCopied'
+          ```
+
+          Provides the following additional information:
+          ```typescript
+          type: 'request' | 'responses'
+          exampleId?: string;
+          lang: string; // code sample id
+          label: string; // code sample label
+          exampleMimeType?: string;
+          ```

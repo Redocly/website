@@ -1,0 +1,30 @@
+- label: ← Back to Docs
+  href: /docs
+- separatorLine: true
+- page: index.md
+  label: Respect
+- page: use-cases.md
+  label: Use cases
+- page: get-started.md
+  label: Get started
+- group: Guides
+  items:
+    - page: guides/run-generated-tests.md
+      label: Generate and run tests
+    - page: guides/test-api-sequences.md
+      label: Test API sequences
+    - page: guides/mtls-cli.md
+      label: Use mTLS
+- group: Extensions
+  rbac:
+    corporate-sso: read
+  items:
+    - page: extensions/x-operation.md
+      label: x-operation extension
+    - page: extensions/x-server-url.md
+      label: x-serverUrl extension
+- group: Commands
+  page: commands/index.md
+  items:
+    - page: /docs/respect/commands/generate-arazzo
+    - page: /docs/respect/commands/respect

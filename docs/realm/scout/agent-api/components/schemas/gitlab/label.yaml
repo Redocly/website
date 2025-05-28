@@ -1,0 +1,52 @@
+description: GitLab label details.
+type: object
+required:
+  - id
+  - title
+  - color
+  - project_id
+  - created_at
+  - updated_at
+  - template
+  - description
+  - type
+  - group_id
+properties:
+  id:
+    type: integer
+    description: Label id.
+    example: 202
+  title:
+    type: string
+    description: Label title.
+    example: transport-label
+  color:
+    type: string
+    description: Label color specified using hexadecimal value.
+    example: '#ffffff'
+  project_id:
+    type: integer
+    description: Project id.
+    example: 43
+  created_at:
+    type: string
+    description: Label creation date.
+    format: date-time
+  updated_at:
+    type: string
+    description: Label last update date.
+    format: date-time
+  description:
+    type: string
+    description: Label description.
+    example: Transport related issues
+  type:
+    type: string
+    description: Label type.
+    example: ProjectLabel
+  group_id:
+    type: integer
+    description: Group id the label is created for.
+    example: 41
+additionalProperties: false
+title: Label

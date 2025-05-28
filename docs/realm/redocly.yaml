@@ -1,0 +1,333 @@
+
+logo:
+  srcSet: "./images/redocly-logo.svg light, ./images/redocly-logo-inverted.svg dark"
+  altText: Redocly logo
+  link: "/"
+
+navbar:
+  items:
+    - page: index.md
+      label: Realm
+    - page: config/index.md
+      label: Config
+
+scorecard:
+  ignoreNonCompliant: true
+
+analytics:
+  ga:
+    trackingId: G-3QYVYH31QX
+    head: true
+    anonymizeIp: true
+
+feedback:
+  type: sentiment
+  settings:
+    comment:
+      likeLabel: What was most helpful?
+      dislikeLabel: What can we improve?
+      
+userMenu:
+  hideLoginButton: true
+
+search:
+  engine: typesense 
+  shortcuts:
+    - ctrl+f
+    - cmd+k
+    - /
+
+apis:
+  redocly-museum:
+    root: './openapi-files/redocly-museum.yaml'
+    rules:
+      response-mime-type: off
+      rule/avoid-words-in-descriptions:
+        subject:
+          type: any
+          property: description
+        assertions:
+          notPattern: /(Redocly)/i
+        severity: off
+      rule/operation-summary:
+        subject:
+          type: Operation
+          property: summary
+        where:
+          - subject:
+              type: Paths
+            assertions:
+              defined: true
+        assertions:
+          pattern: /^(Create|Get|Update|List|Delete|Buy).*[^\.]$/
+  scout-api:
+    root: ./scout/api/openapi.yaml
+    rules:
+      rule/pagination-page-ref:
+        subject:
+          type: SchemaProperties
+          property: page
+        assertions:
+          ref: '/schemas/Page$/'
+
+  auth-api:
+    root: ./auth/openapi/openapi.yaml
+    rules:
+      operation-4xx-problem-details-rfc7807: off # kratos/hydra APIs don't follow this rule
+      rule/operation-summary:
+        subject:
+          type: Operation
+          property: summary
+        where:
+          - subject:
+              type: Paths
+            assertions:
+              defined: true
+        assertions:
+          pattern: /^(Create|Get|Update|Delete|Login|Send|Callback).*[^\.]$/
+  scout-agent:
+    root: ./scout/agent-api/openapi.yaml
+    rules:
+      rule/no-description-start-with-the-a-an:
+        subject:
+          type: any
+          property: description
+        assertions:
+          notPattern: /^(The\s|A\s|An\s)/
+        severity: off
+extends:
+  - recommended
+rules:
+  boolean-parameter-prefixes:
+    severity: error
+    prefixes:
+      - is
+      - can
+  info-license: error
+  info-license-url: error
+  no-ambiguous-paths: error
+  no-http-verbs-in-paths:
+    severity: error
+    splitIntoWords: true
+  no-invalid-media-type-examples: error
+  no-invalid-schema-examples: error
+  no-server-example.com: error
+  no-unused-components: error
+  operation-2xx-response: error
+  operation-4xx-problem-details-rfc7807: error
+  operation-4xx-response: error
+  operation-operationId: error
+  operation-singular-tag: error
+  operation-tag-defined: error
+  paths-kebab-case: error
+  request-mime-type:
+    severity: error
+    allowedValues:
+      - application/json
+      - application/problem+json
+      - multipart/form-data
+  response-mime-type:
+    severity: error
+    allowedValues:
+      - application/json
+      - application/problem+json
+      - text/plain
+      - text/csv
+      - application/zip
+  spec-strict-refs: error
+  tag-description: error
+
+  rule/avoid-insensitive-words:
+    subject:
+      type: any
+      property: description
+    assertions:
+      notPattern: /(\bblacklist|\bwhitelist|\bmaster\b|\bslave)/i
+  rule/avoid-words-in-descriptions:
+    subject:
+      type: any
+      property: description
+    assertions:
+      notPattern: /(Redocly)/i
+  rule/description-punctuation:
+    subject:
+      type: any
+      property: description
+    assertions:
+      pattern: /(\.|server|\n)$/
+  rule/headers-include-example:
+    subject:
+      type: Header
+    assertions:
+      requireAny:
+        - example
+        - examples
+  rule/no-british-english-descriptions:
+    subject:
+      type: any
+      property: description
+    assertions:
+      notPattern: /(colour|cancelled|catalogue|organisation|organise|licence|analyse|behaviour|categorise|categorising|defence|enquiry|enrol|enrolment|standardise)/i
+  rule/no-description-start-with-the-a-an:
+    subject:
+      type: any
+      property: description
+    assertions:
+      notPattern: /^(The\s|A\s|An\s)/
+  rule/no-future-tense-description:
+    subject:
+      type: any
+      property: description
+    assertions:
+      notPattern: /(won't\b|will\b|going to\b|'ll\b)/i
+  rule/no-future-tense-summary:
+    subject:
+      type: any
+      property: summary
+    assertions:
+      notPattern: /(won't\b|will\b|going to\b|'ll\b)/i
+  rule/no-gender-terms:
+    subject:
+      type: any
+      property: description
+    assertions:
+      notPattern: /(\bhe\b|\bshe\b|\bhis\b|\bher\b|\bhers\b|\bhers\b|\bhe\/she\b|\bs\/he\b)/i
+  rule/no-gerund-at-description-start:
+    subject:
+      type: any
+      property: description
+    assertions:
+      notPattern: '^\w*ing( |\.)'
+  rule/no-gerund-at-summary-start:
+    subject:
+      type: any
+      property: summary
+    assertions:
+      notPattern: '^\w*ing.*'
+  rule/no-past-tense:
+    subject:
+      type: any
+      property: description
+    assertions:
+      notPattern: /(was\b|were\b|did\b)/i
+  rule/no-server-localhost:
+    subject:
+      type: Server
+      property: url
+    assertions:
+      notPattern: /(localhost|127.0.0.1)
+  rule/omit-title-api:
+    subject:
+      type: Info
+      property: title
+    assertions:
+      notPattern: /.*API$/
+  rule/operation-summary:
+    subject:
+      type: Operation
+      property: summary
+    where:
+      - subject:
+          type: Paths
+        assertions:
+          defined: true
+    assertions:
+      pattern: /^(Create|Get|Update|Delete|Upsert|List|Push|Process).*[^\.]$/
+  rule/operation-summary-period:
+    subject:
+      type: Operation
+      property: summary
+    assertions:
+      pattern: /.*./
+  rule/operationId-casing:
+    subject:
+      type: Operation
+      property: operationId
+    assertions:
+      casing: camelCase
+  rule/oxford-comma:
+    subject:
+      type: any
+      property: description
+    assertions:
+      notPattern: /(?:[^\s,]+,){1,} \w+ (?:and|or) \w+[.?!]/i
+  rule/pagination-page-ref:
+    subject:
+      type: SchemaProperties
+      property: page
+    assertions:
+      ref: '/Page\.yaml$/'
+  rule/pagination-required-properties:
+    subject:
+      type: SchemaProperties
+    where:
+      - subject:
+          type: SchemaProperties
+          property: items
+        assertions:
+          defined: true
+    assertions:
+      mutuallyRequired:
+        - page
+        - items
+        - object
+  rule/parameter-casing:
+    subject:
+      type: Parameter
+    assertions:
+      casing: camelCase
+  rule/params-must-include-examples:
+    subject:
+      type: Parameter
+    assertions:
+      requireAny:
+        - example
+        - examples
+      mutuallyExclusive:
+        - example
+        - examples
+    severity: off
+  rule/put-200-and-201:
+    subject:
+      type: Responses
+    where:
+      - subject:
+          type: Operation
+          filterInParentKeys:
+            - put
+        assertions:
+          defined: true
+    message: Must mutually define 200 and 201 responses for PUT requests
+    severity: error
+    assertions:
+      mutuallyRequired:
+        - '200'
+        - '201'
+  rule/schema-properties-casing:
+    subject:
+      type: Schema
+      property: properties
+    assertions:
+      casing: camelCase
+  rule/terms-url:
+    subject:
+      type: Info
+      property: termsOfService
+    assertions:
+      defined: true
+ignore:
+  - '.templates/**'
+  - '**/code-walkthrough-files/**'
+
+responseHeaders: 
+  '**':
+    - name: X-Robots-Tag
+      value: noindex
+
+redirects:
+  '/author/reference/supported-file-types':
+    to: '/author/concepts/project-structure'
+  '/get-started/api-reference-starter':
+    to: '/get-started'
+
+telemetry: off

@@ -1,0 +1,194 @@
+seo:
+  title: Redocly
+  description: OpenAPI-generated documentation tool with 23k+ stars on Github - make APIs your company's superpower.
+  siteUrl: https://redocly.com
+  image: ./images/redocly-card.png
+  lang: en-US
+
+redirects:
+  $ref: redirects.yaml
+
+ignore:
+  - '.github'
+  - 'learn/arazzo/_filesets/**'
+  - '**/code-walkthrough-files/**'
+  - docs/realm/.templates
+
+
+markdown:
+  partialsFolders:
+    - 'docs-legacy/_snippets'
+    - 'docs/_partials'
+    - 'docs/realm/_partials'
+scripts:
+  head:
+    - src: '@theme/color-mode-hack.js'
+      inline: true
+analytics:
+  gtm:
+    trackingId: GTM-KVV53WR
+logo:
+  image: ./images/redocly-white-logo.svg
+  link: /
+  altText: Redocly logo
+userMenu:
+  hideLoginButton: true
+breadcrumbs:
+  hide: true
+feedback:
+  type: mood
+navigation:
+  previousButton:
+    hide: true
+navbar:
+  items:
+    - group: Products
+      menuStyle: drilldown
+      items:
+        - separator: Products
+        - label: Reunite
+          page: ./pages/reunite/reunite.page.tsx
+          icon: ./images/icons/reunite.svg
+        - label: Realm
+          page: ./pages/realm/realm.page.tsx
+          icon: ./images/icons/realm.svg
+        - label: Revel
+          page: ./pages/revel/revel.page.tsx
+          icon: ./images/icons/revel.svg
+        - label: Redoc
+          page: ./pages/redoc/redoc.page.tsx
+          icon: ./images/icons/redoc.svg
+        - label: Reef
+          page: ./pages/reef/reef.page.tsx
+          icon: ./images/icons/reef.svg
+        - label: Respect Monitoring
+          page: ./pages/respect/respect.page.tsx
+          icon: ./images/icons/respect.svg
+        - separator: Open Source
+        - label: Redoc
+          page: ./pages/redoc/redoc.page.tsx
+        - label: Redocly CLI
+          page: ./pages/redocly-cli/redocly-cli.page.tsx
+        - label: Respect
+          href: /respect-cli
+
+    - label: Docs
+      page: ./docs/index.md
+    - label: Learn
+      page: ./pages/learning-center/learn.page.tsx
+    - label: Customers
+      page: ./pages/customers/customers.page.tsx
+    - label: Pricing
+      page: ./pages/pricing/pricing.page.tsx
+footer:
+  copyrightText: © 2024 Redocly Inc. All rights reserved.
+  logo:
+    hide: true
+  items:
+    - group: Products
+      items:
+        - label: Redoc
+          page: ./pages/redoc/redoc.page.tsx
+        - label: Revel
+          page: ./pages/revel/revel.page.tsx
+        - label: Reef
+          page: ./pages/reef/reef.page.tsx
+        - label: Realm
+          page: ./pages/realm/realm.page.tsx
+        - label: Reunite
+          page: ./pages/reunite/reunite.page.tsx
+        - label: Respect Monitoring
+          page: ./pages/respect/respect.page.tsx
+        - label: Redocly CLI
+          page: ./pages/redocly-cli/redocly-cli.page.tsx
+        - label: Respect
+          href: /respect-cli
+    - group: Explore
+      items:
+        - label: Pricing
+          page: ./pages/pricing/pricing.page.tsx
+        - label: Pro
+          page: ./pages/pro/pro.page.tsx
+        - label: Enterprise
+          page: ./pages/enterprise/enterprise.page.tsx
+        - label: Enterprise Plus
+          page: ./pages/enterprise-plus/enterprise-plus.page.tsx
+        - label: Customers
+          page: ./pages/customers/customers.page.tsx
+        - label: About Us
+          page: ./pages/about/about.page.tsx
+        - label: Careers
+          page: ./pages/careers/careers.page.tsx
+        - label: Contact Sales
+          page: ./pages/contact-sales/contact-sales.page.tsx
+    - group: Resources
+      items:
+        - label: Docs
+          page: ./docs/index.md
+        - label: Blog
+          page: ./blog/index.page.tsx
+        - label: Webinars
+          page: ./pages/webinars/webinars.page.tsx
+        - label: Why Redocly
+          page: ./blog/favorite-new-features.md
+        - label: Docs-like-code
+          page: ./pages/docs-like-code/docsLikeCode.page.tsx
+    - group: Tech & legal
+      items:
+        - label: Security
+          page: ./pages/security/security.page.tsx
+        - label: Tech Stack
+          page: ./blog/tech-stack.md
+        - label: Status
+          href: https://status.redocly.com/
+        - label: Terms
+          page: ./pages/legal/subscription-agreement.md
+        - label: SLA
+          page: ./pages/legal/sla.md
+        - label: DPA
+          page: ./pages/legal/data-processing-addendum.md
+    - group: Contact us
+      items:
+        - label: Contact Us
+          page: ./pages/contact-us/contact-us.page.tsx
+
+env:
+  preview:
+    sso:
+      - REDOCLY
+      - CORPORATE
+
+responseHeaders:
+  '**':
+    - name: X-XSS-Protection
+      value: '1;mode=block;'
+    - name: X-Content-Type-Options
+      value: nosniff
+    - name: X-Frame-Options
+      value: deny
+    - name: Strict-Transport-Security
+      value: max-age=31536000; includeSubDomains; preload
+
+metadataGlobs:
+  'blog/**':
+    redocly_category: Blog
+  'learn/**':
+    redocly_category: Learn
+  'docs/realm/**':
+    redocly_category: Realm
+  'docs/cli/**':
+    redocly_category: Redocly CLI
+  'docs/redoc/**':
+    redocly_category: Redoc CE
+  'docs/vscode/**':
+    redocly_category: VS Code extension
+  'docs-legacy/workflows/**':
+    redocly_category: Workflows (Legacy)
+
+openapi:
+  excludeFromSearch: true
+
+search:
+  ai:
+    hide: false
+  engine: typesense

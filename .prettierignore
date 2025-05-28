@@ -1,0 +1,15 @@
+node_modules
+.vscode
+
+pages/legal/
+pages/gsod/
+
+# remote content
+docs/realm/
+docs/cli/
+docs-legacy/
+
+# markdoc table conflicts with markdownlint MD003/heading-style 
+learn/markdoc/tags/table.md
+# custom markdoc anchor conflicts with MD051/link-fragments
+learn/markdoc/write-with-markdoc.md

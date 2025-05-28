@@ -1,0 +1,755 @@
+@import url('../docs/realm/@theme/styles.css');
+
+@font-face {
+    font-family: 'Soehne';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./font/soehne-buch.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    font-style: italic;
+    font-weight: 400;
+    src: url('./font/soehne-buch-kursiv.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./font/soehne-kraftig.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    font-style: italic;
+    font-weight: 500;
+    src: url('./font/soehne-kraftig-kursiv.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./font/soehne-halbfett.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    font-style: italic;
+    font-weight: 600;
+    src: url('./font/soehne-halbfett-kursiv.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./font/soehne-dreiviertelfett.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    font-style: italic;
+    font-weight: 700;
+    src: url('./font/soehne-dreiviertelfett-kursiv.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./font/RedHatDisplay-Light.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./font/RedHatDisplay-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./font/RedHatDisplay-Medium.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./font/RedHatDisplay-SemiBold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./font/RedHatDisplay-Bold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 800;
+    src: url('./font/RedHatDisplay-ExtraBold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./font/Inter-Light.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./font/Inter-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./font/Inter-Medium.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./font/Inter-SemiBold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./font/Inter-Bold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    src: url('./font/Inter-ExtraBold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gemunu Libre';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./font/GemunuLibre-Light.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gemunu Libre';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./font/GemunuLibre-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gemunu Libre';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./font/GemunuLibre-Medium.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gemunu Libre';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./font/GemunuLibre-SemiBold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gemunu Libre';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./font/GemunuLibre-Bold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gemunu Libre';
+    font-style: normal;
+    font-weight: 800;
+    src: url('./font/GemunuLibre-ExtraBold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Mono';
+    src: url('./font/SFMono-Semibold.otf');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./font/RedHatDisplay-Light.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./font/RedHatDisplay-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./font/RedHatDisplay-Medium.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./font/RedHatDisplay-SemiBold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./font/RedHatDisplay-Bold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 800;
+    src: url('./font/RedHatDisplay-ExtraBold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./font/Inter-Light.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./font/Inter-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./font/Inter-Medium.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./font/Inter-SemiBold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./font/Inter-Bold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    src: url('./font/Inter-ExtraBold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gemunu Libre';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./font/GemunuLibre-Light.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gemunu Libre';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./font/GemunuLibre-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gemunu Libre';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./font/GemunuLibre-Medium.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gemunu Libre';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./font/GemunuLibre-SemiBold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gemunu Libre';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./font/GemunuLibre-Bold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gemunu Libre';
+    font-style: normal;
+    font-weight: 800;
+    src: url('./font/GemunuLibre-ExtraBold.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Mono';
+    src: url('./font/SFMono-Semibold.otf');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --secondary-color: #fff;
+    --color-primary-main: #0044d4;
+    --color-accent-main: #fe6d41;
+    --color-acme-brand-main: orange;
+    --color-text-primary-1: #555555;
+    --color-brand-success: #5776b7;
+    --color-brand-warning: #dfc726;
+    --color-brand-danger: #c0574f;
+    --color-brand-attention: #edf8f2;
+    --color-http-get: #6bbd5b;
+    --color-http-post: #248fb2;
+    --color-http-put: #9b708b;
+    --color-http-options: #d3ca12;
+    --color-http-patch: #e09d43;
+    --color-http-delete: #e27a7a;
+    --color-http-basic: #999;
+    --color-http-link: #31bbb6;
+    --color-http-head: #c167e4;
+    --color-footer-main: #003e99;
+    --color-text-link: #4444dd;
+    --color-text-dark: #25353e;
+    --color-text-primary: #f79548;
+    --color-text-accent: var(--color-primary-main);
+    --color-text-dimmed: #595959;
+    --color-text-light: #c3d7ff;
+    --color-text-disabled: rgba('black', 0.26);
+    --color-text-indigo: #516A78;
+    --color-text-white: var(--secondary-color);
+    --text-color: rgb(37, 53, 62);
+    --panel-controls-background-color: #263238;
+    --toc-item-font-size: 14px;
+    --tooltip-max-width: auto;
+
+    --navbar-bg-color-colorful: #ededf2b3;
+
+    --button-disabled-color: #adadad;
+
+    --search-trigger-text-color: var(--color-white);
+    --search-trigger-bg-color: rgba(255, 255, 255, 0.1);
+
+    /* New theme styles */
+    --color-ontonal: #fff;
+    --color-arrow: #555761;
+    --color-normal: #fff;
+    --color-greyscale-90: #222222;
+    --color-greyscale-opacity-90: rgb(33, 33, 33, 0.85);
+    --color-greyscale-50: #686773;
+    --color-greyscale-10: #f7f7f7;
+    --colors-greyscale-30: #C6C6CC;
+    --typography-header-color: #1C1C1C;
+    --color-caption: #929199;
+    --typography-text-color: var(--color-greyscale-90);
+    --text-color-normal: var(--color-normal);
+    --redoc-color: #247FFF;
+    --revel-color: #735CFF;
+    --reef-color: #A45CFF;
+    --color-focus: #6EABFA;
+    --navbar-text-color: var(--color-warm-grey-11);
+    --navbar-bg-color: rgba(251, 251, 252, 0.70);
+    --light-revel-color: #9685FF;
+    --light-reef-color: #BB85FF;
+    --light-redoc-color: #4D97FF;
+    --redoc-color-hover: #DEF2FF;
+    --reef-color-hover: #F9EAFF;
+    --revel-color-hover: #F1EDFF;
+    --realm-color-hover: linear-gradient(90deg, #E4F0FF 0%, #CDF8FD 100%);
+    --bg-open-source-tools: #FBFBFC;
+
+    --navbar-height: 64px;
+    --navbar-logo-width: 103px;
+    --navbar-logo-height: 32px;
+    --navbar-logo-margin: 0;
+    --navbar-font-size: var(--font-size-base);
+    --navbar-padding: 16px 40px;
+    --burger-button-margin: 16px;
+    --navbar-menu-items-gap: 0;
+    --navbar-font-size: 14px;
+    --navbar-item-line-height: 22px;
+    --navbar-item-bg-color-active: var(--bg-color-active);
+    --navbar-item-bg-color-hover: var(--color-hover-base);
+    --navbar-item-text-decoration-hover: transparent;
+    --navbar-item-padding: 5px 16px;
+    --navbar-item-border-radius: 6px;
+    --dropdown-border-radius: 8px;
+    --dropdown-list-min-width: 499px;
+    --dropdown-list-padding: 20px;
+    --dropdown-list-max-height: fit-content;
+    --dropdown-list-item-space-between: 8px 20px 8px;
+    --dropdown-content-color-default: var(--color-warm-grey-8);
+    --dropdown-font-size: 14px;
+    --navbar-border: none;
+    --dropdown-list-bg-color: var(--color-white);
+    --dropdown-list-border-radius: 8px;
+    --dropdown-list-border-color: var(--color-warm-grey-2);
+    --dropdown-list-box-shadow: 0px 8px 24px 8px #0000000A, 0px 4px 12px 0px #00000014;
+    --dropdown-list-item-separator-color: var(--color-warm-grey-2);
+    --dropdown-list-item-bg-color-hover: var(--color-warm-grey-2);
+    --dropdown-list-item-border-radius: 6px;
+    --navbar-container-max-width: 1504px;
+    --navbar-default-color: var(--color-white);
+
+    /* /////// */
+
+    --button-font-size-lg: 18px;
+    --button-font-weight: 400;
+    --button-background-color: var(--color-text-primary);
+    --button-border-color: var(--color-text-primary);
+    --button-secondary-color: var(--secondary-color);
+    --button-border-radius: 4px;
+
+    --link-font-weight: 400;
+    --link-font-size: 16px;
+
+    --button-bg: #1A1C21;
+    --button-large-min-width: 150px;
+    --button-large-padding: 12px 24px;
+    --button-large-font-size: 20px;
+    --button-medium-min-width: 120px;
+    --button-medium-padding: 8px 18px;
+    --button-medium-font-size: 18px;
+    --button-small-min-width: 90px;
+    --button-small-padding: 6px 10px;
+    --button-small-font-size: 14px;
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+    --font-family-base: var(--font-family);
+    --mobile-menu-wrapper-height: 100%;
+    --serach-wrapper-input-padding: 14px;
+    --search-input-height: 44px;
+    --footer-text-color: var(--typography-text-color);
+    --footer-title-text-color: var(--typography-header-color);
+    --footer-title-font-weight: 500;
+    --footer-link-hover-color: var(--typography-text-color);
+    --footer-title-margin-bottom: 30px;
+    --footer-link-text-color: var(--typography-text-color);
+    --mobile-footer-title-margin-bottom: 24px;
+
+    --border-dashed: 1px dashed #bccbf5;
+
+    --z-index-raised: 100;
+    --search-trigger-background-color: rgba(255, 255, 255, 0.1);
+    --search-trigger-padding: 10px 20px;
+    --search-trigger-text-color: var(--secondary-color);
+    --dropdown-text-color: var(--color-text-dark);
+    --mobile-menu-wrapper-width: 100%;
+    --mobile-menu-wrapper-top: 5px;
+    --mobile-menu-wrapper-height: 100%;
+    --mobile-menu-burger-button-margin: 0 20px 0 0;
+
+    --code-font-family: 'Source Code Pro', monospace;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --md-container-padding-vertical: 2rem;
+    --md-container-padding-horizontal: 2rem 0;
+
+    --link-text-color: var(--color-primary-main);
+
+    --code-block-font-size: 14px;
+    --md-table-cell-text-color: var(--code-block-text-color);
+    --code-block-tokens-default-color: var(--code-block-text-color);
+    --code-block-tokens-variable-color: var(--color-primary-main);
+    --code-block-tokens-operator-color: var(--color-primary-main);
+
+    scrollbar-color: transparent;
+    scrollbar-width: thin;
+
+    --card-icon-height: 34px;
+    --card-icon-width: 34px;
+
+    .smaller-inline-svg {
+        :is(svg) {
+            height: 28px;
+            width: auto;
+        }
+    }
+
+    --card-icon-color: var(--color-blue-7);
+    --hover-last-navbar-color: linear-gradient(125deg, #E0EDFF 7.23%, #F1EBFF 99.14%);
+}
+
+:root.dark {
+    --color-text-dimmed: #b1b1b1;
+    --navbar-default-color: var(--bg-color);
+    --dropdown-list-bg-color: var(--bg-color);
+    --navbar-item-bg-color-hover: #32343E;
+    --dropdown-list-item-bg-color-hover: #32343E;
+    --redoc-color-hover: #3B3C45;
+    --reef-color-hover: #3B3C45;
+    --revel-color-hover: #3B3C45;
+    --realm-color-hover: #3B3C45;
+    --bg-open-source-tools: #2A2B33;
+    --button-bg: #fff;
+    --color-ontonal: #2A2B33;
+    --color-arrow: #9B9CA8;
+    --hover-last-navbar-color: #3B3C45;
+}
+
+:root.dark nav img {
+    filter: invert(1);
+}
+
+:root.dark nav ul img {
+    filter: none;
+}
+
+:root.dark nav ul li svg path {
+    fill: #9B9CA8;
+}
+
+:root.dark footer img {
+    filter: invert(1);
+    background-color: var(--color-warm-grey-9);
+}
+
+:root.dark nav {
+    --search-trigger-color: var(--color-text-secondary);
+}
+
+
+:root .landing-button {
+    color: var(--text-color);
+    --button-background-color: var(--color-text-primary);
+    --button-border-color: var(--color-text-primary);
+    --button-font-family: 'Soehne';
+    --button-font-weight: 400;
+    font-size: 18px;
+    --button-hover-background-color: #f88d3b;
+}
+
+:root body::-webkit-scrollbar {
+    width: 0;
+}
+
+:root body::-webkit-scrollbar-thumb {
+    background-color: var(--color-warm-grey-8);
+    border-radius: 6px;
+}
+
+:root body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+:root .rec.rec-carousel {
+    touch-action: pan-y;
+    highlight-color: transparent;
+}
+
+:root .rec.rec-dot,
+.rec.rec-dot:focus {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #dce7fe;
+    box-shadow: none;
+    background-color: white;
+}
+
+:root .rec.rec-dot:hover {
+    background: white;
+    box-shadow: none;
+}
+
+:root .rec.rec-dot.rec-dot_active,
+.rec.rec-dot.rec-dot_active:hover {
+    width: 12px;
+    height: 12px;
+    background-color: #0044d4;
+}
+
+:root .rec.rec-dot_active:focus {
+    box-shadow: none;
+}
+
+:root .button-accent {
+    color: var(--color-primary-main);
+    border: 1px solid var(--color-primary-main);
+}
+
+:root .button-accent:hover {
+    background-color: #e3eaf6;
+}
+
+:root .fDzOtw p>img:only-child,
+.fDzOtw li>img:only-child {
+    display: flex;
+    justify-content: center;
+}
+
+:root table.md {
+    display: table !important;
+}
+
+.smaller-admonition-margins {
+    margin: 10px 0px;
+}
+
+#redocly-tag-badge {
+    scroll-margin-top: 5rem;
+}
+
+#built-in-tag-badge {
+    scroll-margin-top: 5rem;
+}
+
+.code-block-no-controls {
+    [class^=CodeBlockControls__ContainerWraper] {
+        display: none;
+        background-color: #f2f2f2;
+    }
+
+    [class^=CodeBlockContainer] {
+        border-top: 1px solid rgba(0, 0, 0, 0.13);
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+}
+
+@media only screen and (max-width: 1055px) {
+    .split-view-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .right-pane-wrapper {
+        margin-top: 8px;
+    }
+}
+
+.list-entry-example {
+    font-weight: bold;
+    color: green;
+}
+
+:root .evStXI {
+    line-height: 24px;
+}
+
+:root .evStXI ol {
+    padding-left: 40px;
+}
+
+/* workaround to support our legacy admonition style in docs: attention.*/
+[data-component-name="Admonition/Admonition"][type='attention'] {
+    background-color: rgb(230, 238, 248);
+    color: var(--admonition-warning-text-color);
+    border-left: var(--admonition-info-border-width) var(--admonition-info-border-style) #4f7db8;
+
+    :is(svg) {
+        background-image: url('data:image/svg+xml,<svg class="AlertIcon-sc-1uve1p1-0 BCvsg" xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 500.6 500.6" enable-background="new 0 0 500.6 500.6"><path fill="%234f7db8" d="M250.3 301.8c-8.3 0-15-6.7-15-15V181.9c0-8.3 6.7-15 15-15 8.3 0 15 6.7 15 15v104.9C265.3 295.1 258.6 301.8 250.3 301.8zM483.7 377L297.2 66.1c-21.2-35.3-72.6-35.4-93.8 0L16.9 377c-17.6 29.4 3.6 67.1 38 67.1h390.8C480.1 444.1 501.4 406.4 483.7 377L483.7 377zM445.7 414.1H54.9c-11.2 0-18-12.2-12.3-21.7L229.1 81.5c9.6-16 32.8-16 42.4 0L458 392.4C463.7 401.9 456.9 414.1 445.7 414.1z"></path><circle fill="%234f7db8" cx="250.3" cy="339.2" r="22.5"></circle></svg>');
+    }
+
+    :is(svg) path {
+        fill: none;
+    }
+}
+
+tr td:first-child code {
+    word-break: normal;
+}
+
+.example-svg-styles {
+    :is(svg) {
+        width: 80px;
+        height: auto;
+    }
+
+    :is(path) {
+        fill: blue;
+    }
+}
+
+[data-component-name="Navbar/NavbarLogo"] {
+    width: var(--logo-width);
+}
+
+
+/* Selects the element but no CSS vars are working
+  [class^=CardIcon] {
+    outline: 3px solid blue;
+    .path {
+        fill: red;
+    }
+    --card-icon-color: red;
+} */

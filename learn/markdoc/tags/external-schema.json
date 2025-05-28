@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "description": "Information about the Museum's object.",
+  "properties": {
+    "objectId": {
+      "type": "string",
+      "description": "Unique identifier for the object."
+    },
+    "objectName": {
+      "type": "string",
+      "description": "The object's name",
+      "example": "Mona Lisa"
+    },
+    "objectType": {
+      "type": "object",
+      "description": "The type of object at the museum.",
+      "enum": ["Painting", "Ceramics", "Sculpture", "Textiles", "Fossil", "Document"]
+    }
+  }
+}

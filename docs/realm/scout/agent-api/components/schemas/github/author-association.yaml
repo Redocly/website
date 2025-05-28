@@ -1,0 +1,12 @@
+type: string
+description: How the author is associated with the repository.
+enum:
+  - COLLABORATOR
+  - CONTRIBUTOR
+  - FIRST_TIMER
+  - FIRST_TIME_CONTRIBUTOR
+  - MANNEQUIN
+  - MEMBER
+  - NONE
+  - OWNER
+title: AuthorAssociation

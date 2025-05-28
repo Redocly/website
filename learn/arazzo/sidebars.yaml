@@ -1,0 +1,9 @@
+- page: ./what-is-arazzo.md
+- page: ./why-arazzo-matters.md
+- page: ./arazzo-basics.md
+- page: ./arazzo-walkthrough.md
+- page: ./understanding-workflows-and-steps.md
+- page: ./source-descriptions-and-refs.md
+- page: ./success-criteria-and-failure-handling.md
+- page: ./linting-arazzo-workflows.md
+- page: ./testing-arazzo-workflows.md

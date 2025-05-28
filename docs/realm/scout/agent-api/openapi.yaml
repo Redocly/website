@@ -1,0 +1,38 @@
+openapi: 3.1.0
+x-pagination: none
+servers:
+  - url: '{host}'
+    variables:
+      host:
+        default: http://localhost
+        description: Server host.
+info:
+  version: '1.0'
+  title: Redocly Scout agent
+  description: Scout Worker API.
+  termsOfService: https://redocly.com/subscription-agreement
+  contact:
+    name: Redocly Support
+    email: team@redocly.com
+    url: https://github.com/Redocly/redocly
+  license:
+    name: Redocly
+    url: https://redocly.com/subscription-agreement
+tags:
+  - name: Health
+    description: Operations related to health checks.
+  - name: Webhooks
+    description: Operations related to incoming git webhooks.
+paths:
+  /health:
+    $ref: ./paths/health.yaml
+  /webhooks/github:
+    $ref: ./paths/github.yaml
+  /webhooks/gitlab:
+    $ref: ./paths/gitlab.yaml
+components:
+  securitySchemes:
+    GithubApiKey:
+      $ref: './components/securitySchemes/GithubApiKey.yaml'
+    GitlabApiKey:
+      $ref: './components/securitySchemes/GitlabApiKey.yaml'

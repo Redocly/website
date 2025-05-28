@@ -1,0 +1,10 @@
+- page: learning-openapi.md
+- page: openapi-decisions.md
+- page: multi-file-definitions.md
+- page: all-of.md
+- page: discriminator.md
+- page: ref-guide.md
+- group: OpenAPI Visual Reference
+  selectFirstItemOnExpand: true
+  items:
+    - $ref: openapi-visual-reference/sidebars.yaml

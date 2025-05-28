@@ -1,0 +1,122 @@
+description: Merge request details.
+type: object
+required:
+  - id
+  - target_branch
+  - source_branch
+  - source_project_id
+  - author_id
+  - assignee_id
+  - title
+  - created_at
+  - updated_at
+  - milestone_id
+  - state
+  - merge_status
+  - target_project_id
+  - iid
+  - description
+  - source
+  - target
+  - last_commit
+  - work_in_progress
+  - url
+  - action
+  - assignee
+properties:
+  id:
+    type: integer
+    description: Merge request id.
+    example: 324
+  target_branch:
+    type: string
+    description: Target branch name.
+    example: main
+  source_branch:
+    type: string
+    description: Source branch name.
+    example: feat/gitlab-implementation
+  source_project_id:
+    type: integer
+    description: Source project id.
+    example: 32
+  author_id:
+    type: integer
+    description: Author id.
+    example: 2
+  assignee_id:
+    type: integer
+    description: Assignee id.
+    example: 4
+  title:
+    type: string
+    description: Merge request title.
+    example: gitlab implementation
+  created_at:
+    type: string
+    description: Merge request created date.
+    format: date-time
+  updated_at:
+    type: string
+    description: Merge request updated date.
+    format: date-time
+  milestone_id:
+    type: integer
+    description: Milestone id.
+    example: 12
+  state:
+    type: string
+    description: Merge request current state.
+    enum:
+      - opened
+      - closed
+      - locked
+      - merged
+  merge_status:
+    type: string
+    description: Merge status.
+    enum:
+      - unchecked
+      - can_be_merged
+      - cannot_be_merged
+  target_project_id:
+    type: integer
+    description: Target project id.
+    example: 456
+  iid:
+    type: integer
+    description: Merge request id unique only in scope of a single project.
+    example: 254
+  description:
+    type: string
+    description: Merge request description.
+    example: GitLab implementation
+  source:
+    $ref: ./source.yaml
+  target:
+    $ref: ./source.yaml
+  last_commit:
+    $ref: ./commit-flat.yaml
+  work_in_progress:
+    type: boolean
+    description: Work in progress flag.
+  url:
+    type: string
+    description: Merge request url.
+    example: http://example.com/diaspora/merge_requests/324
+  action:
+    type: string
+    enum:
+      - open
+      - close
+      - reopen
+      - update
+      - approved
+      - unapproved
+      - approval
+      - unapproval
+      - merge
+  assignee:
+    $ref: ./user.yaml
+additionalProperties: false
+title: Merge request details

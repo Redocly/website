@@ -1,0 +1,16 @@
+type: object
+properties:
+  message:
+    type: string
+    description: A human-readable message with more details.
+    example: Job created
+  event:
+    type: string
+    description: Type of incoming webhook event.
+    example: push
+  jobId:
+    type: string
+    description: Created Scout job ID.
+    example: sjob_01h4gev6h1j50ge5z3yn28ge5e
+required:
+  - detail

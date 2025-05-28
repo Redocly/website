@@ -1,0 +1,33 @@
+{
+  "name": "marketing-site",
+  "version": "1.0.0",
+  "description": "Redocly website",
+  "type": "module",
+  "scripts": {
+    "start": "npx @redocly/cli preview",
+    "lint:markdown": "markdownlint-cli2 '**/*.md'",
+    "lint:markdown:fix": "markdownlint-cli2 '**/*.md' --fix"
+  },
+  "author": "team@redocly.com",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@redocly/marketing-pages": ">=0.1.7",
+    "@redocly/realm": "0.122.0-next.6",
+    "polished": "^4.3.1",
+    "highlight-words-core": "^1.2.3"
+  },
+  "devDependencies": {
+    "@types/styled-components": "5.1.34",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "markdownlint-cli2": "^0.18.1",
+    "prettier": "^3.0.3"
+  },
+  "markdownlint-cli2": {
+    "gitignore": ".prettierignore"
+  },
+  "overrides": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  }
+}

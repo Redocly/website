@@ -1,0 +1,10 @@
+- label: ← Back to Docs
+  href: /docs
+- separatorLine: true
+- page: docs/realm/changelog.page.tsx
+  label: Changelog
+- separatorLine: true
+- page: docs/realm/index.md
+- $ref: docs/realm/sidebars.yaml
+- separatorLine: true
+- $ref: docs/realm/config/sidebars.yaml

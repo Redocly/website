@@ -1,0 +1,23 @@
+type: object
+required:
+  - key
+  - name
+  - spdx_id
+  - url
+  - node_id
+properties:
+  key:
+    type: string
+  name:
+    type: string
+  spdx_id:
+    type: string
+  url:
+    type:
+      - string
+      - 'null'
+    format: uri
+  node_id:
+    type: string
+additionalProperties: false
+title: License

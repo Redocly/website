@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'SF Mono';
+  src: url('./font/SFMono-Semibold.otf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root th[data-label="Favorite vegetable"] {
+  width: 80%;
+  background-color: lightyellow;
+}
+
+:root table:has(th[data-label="Favorite animal"]) {
+  --md-table-border-color: black;
+  --md-table-header-bg-color: gold;
+
+  & tr:nth-child(even) {
+    background-color: cornsilk;
+  }
+}
+
+:root.dark table:has(th[data-label="Favorite animal"]) {
+  --md-table-border-color: white;
+  --md-table-header-bg-color: indigo;
+
+  & tr:nth-child(even) {
+    background-color: mediumpurple;
+  }
+}
+
+:root .example-striped-table-rows {
+  --md-table-border-color: black;
+  --md-table-header-bg-color: royalblue;
+
+  & tr:nth-child(even) {
+    background-color: lightskyblue;
+  }
+}
+
+:root.dark .example-striped-table-rows {
+  --md-table-border-color: white;
+  --md-table-header-bg-color: darkgreen;
+
+  & tr:nth-child(even) {
+    background-color: mediumseagreen;
+  }
+}
+
+.highlight, p:has(.highlight) {
+  background-color: yellow;
+  color: red;
+ }
+
+/* Styling for the row highlight examples */
+/* Style all cells in rows containing the class */
+:root tr:has(.highclick) > * {
+  background-color: yellow;
+  --md-table-cell-text-color: black;
+}
+
+:root tr:has(.medclick) > * {
+  background-color: lightyellow;
+  --md-table-cell-text-color: black;
+}
+
+:root.dark tr:has(.highclick) > * {
+  background-color: gold;
+  --md-table-cell-text-color: black;
+}
+
+:root.dark tr:has(.medclick) > * {
+  background-color: khaki;
+  --md-table-cell-text-color: black;
+}

@@ -1,0 +1,151 @@
+- group: Configuration options
+  page: ./index.md
+  items:
+    - group: analytics
+      page: ./analytics/index.md
+      items:
+        - page: ./analytics/adobe.md
+          label: Adobe
+        - page: ./analytics/amplitude.md
+          label: Amplitude
+        - page: ./analytics/fullstory.md
+          label: Fullstory
+        - page: ./analytics/google.md
+          label: Google Analytics
+        - page: ./analytics/gtm.md
+          label: Google Tag Manager
+        - page: ./analytics/heap.md
+          label: Heap
+        - page: ./analytics/rudderstack.md
+          label: Rudderstack
+        - page: ./analytics/segment.md
+          label: Segment
+    - page: ./api-functions.md
+      label: apiFunctions
+    - page: ./asyncapi.md
+      label: asyncapi
+    - page: ./breadcrumbs.md
+      label: breadcrumbs
+    - page: ./catalog-classic.md
+      label: catalogClassic
+    - page: ./code-snippet.md
+      label: codeSnippet
+    - page: ./color-mode.md
+      label: colorMode
+    - page: ./developer-onboarding/index.md
+      label: developerOnboarding
+    - page: ./env.md
+      label: env
+    - page: ./feedback.md
+      label: feedback
+    - page: ./footer.md
+      label: footer
+    - group: graphql
+      page: ./graphql/index.md
+      items:
+        - page: ./graphql/menu.md
+          label: menu
+        - page: ./graphql/hide-pagination-buttons.md
+          label: hidePaginationButtons
+        - page: ./graphql/samples-max-inline-args.md
+          label: samplesMaxInlineArgs
+        - page: ./graphql/json-samples-depth.md
+          label: jsonSamplesDepth
+        - page: ./graphql/field-expand-level.md
+          label: fieldExpandLevel
+    - page: ./ignore.md
+      label: ignore
+    - page: ./l10n.md
+      label: l10n
+    - page: ./links.md
+      label: links
+    - page: ./logo.md
+      label: logo
+    - page: ./markdown.md
+      label: markdown
+    - page: ./metadata.md
+      label: metadata
+    - page: ./metadata-globs.md
+      label: metadataGlobs
+    - page: ./mock-server.md
+      label: mockServer
+    - page: ./navbar.md
+      label: navbar
+    - page: ./navigation.md
+      label: navigation
+    - group: openapi
+      page: ./openapi/index.md
+      items:
+        - page: ./openapi/code-samples.md
+          label: codeSamples
+        - page: ./openapi/cors-proxy-url.md
+          label: corsProxyUrl
+        - page: ./openapi/download-urls.md
+          label: downloadUrls
+        - page: ./openapi/events.md
+          label: events
+        - page: ./openapi/generated-samples-max-depth.md
+          label: generatedSamplesMaxDepth
+        - page: ./openapi/hide-download-buttons.md
+          label: hideDownloadButtons
+        - page: ./openapi/hide-info-metadata.md
+          label: hideInfoMetadata
+        - page: ./openapi/hide-properties-prefix.md
+          label: hidePropertiesPrefix
+        - page: ./openapi/hide-replay.md
+          label: hideReplay
+        - page: ./openapi/hide-schema-titles.md
+          label: hideSchemaTitles
+        - page: ./openapi/json-samples-expand-level.md
+          label: jsonSamplesExpandLevel
+        - page: ./openapi/layout.md
+          label: layout
+        - page: ./openapi/max-displayed-enum-values.md
+          label: maxDisplayedEnumValues
+        - page: ./openapi/only-required-in-samples.md
+          label: onlyRequiredInSamples
+        - page: ./openapi/sanitize.md
+          label: sanitize
+        - page: ./openapi/schema-definitions-tag-name.md
+          label: schemaDefinitionsTagName
+        - page: ./openapi/schemas-expansion-level.md
+          label: schemasExpansionLevel
+        - page: ./openapi/show-extensions.md
+          label: showExtensions
+        - page: ./openapi/sort-required-props-first.md
+          label: sortRequiredPropsFirst
+    - page: ./products.md
+      label: products
+    - page: ./rbac.md
+      label: rbac
+    - page: ./redirects.md
+      label: redirects
+    - page: ./remove-attribution.md
+      label: removeAttribution
+    - page: ./requires-login.md
+      label: requiresLogin
+    - page: ./residency.md
+      label: residency
+    - page: ./response-headers.md
+      label: responseHeaders
+    - page: ./reunite.md
+      label: reunite
+    - page: ./scorecard.md
+      label: scorecard
+    - page: ./scripts.md
+      label: scripts
+    - page: ./search.md
+      label: search
+    - page: ./seo.md
+      label: seo
+    - page: ./sidebar.md
+      label: sidebar
+    - page: ./sso.md
+      label: sso
+    - page: ./ssoDirect.md
+      label: ssoDirect
+    - page: ./user-menu.md
+    - page: ./version-picker.md
+      label: versionPicker
+    - separatorLine: true
+    - page: ./front-matter-config.md

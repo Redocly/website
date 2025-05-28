@@ -1,0 +1,446 @@
+openapi: 3.1.0
+info:
+  title: Warp API
+  description: API for managing and manipulating timelines with advanced time travel capabilities.
+  version: 1.0.0
+  contact:
+    name: Warp API Support
+    email: support@warpapi.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: https://api.warp.example.com/v1
+    description: Quantum server
+security:
+  - bearerAuth: []
+paths:
+  /timelines:
+    get:
+      summary: List all timelines
+      operationId: listTimelines
+      tags:
+        - Timelines
+      responses:
+        '200':
+          description: A list of all timelines
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Timeline'
+    post:
+      summary: Create a new timeline
+      operationId: createTimeline
+      tags:
+        - Timelines
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Timeline'
+      responses:
+        '201':
+          description: The timeline was created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Timeline'
+  /timeline/{timeline_id}:
+    delete:
+      summary: Delete a timeline
+      operationId: deleteTimeline
+      tags:
+        - Timelines
+      parameters:
+        - name: timeline_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The ID of the timeline to delete
+      responses:
+        '204':
+          description: Timeline deleted successfully
+
+  /travels:
+    post:
+      summary: Travel across time
+      operationId: timeTravel
+      description: Travel to a timeline or to a temporal anchor to return.
+      tags:
+        - Travel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TimeTravel'
+      responses:
+        '200':
+          description: Time travel successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeTravel'
+        '400':
+          description: Bad request - Animate objects transformed into cosmic vapor
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+
+  /items:
+    post:
+      summary: Register an item
+      operationId: registerItem
+      tags:
+        - Items
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+      responses:
+        '200':
+          description: Item registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '409':
+          description: Item already registered
+  /events:
+    post:
+      summary: Manipulate an event in a timeline
+      operationId: manipulateEvent
+      tags:
+        - Events
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManipulateEventRequest'
+      responses:
+        '200':
+          description: The event was manipulated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventManipulationResponse'
+        '400':
+          description: Event cannot be manipulated
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+
+  /anchors:
+    post:
+      summary: Set a temporal anchor
+      description: Temporal anchors are used to return to the present time at the end of time travel.
+      operationId: setAnchor
+      tags:
+        - Anchors
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Anchor'
+      responses:
+        '201':
+          description: The temporal anchor was set successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Anchor'
+        '409':
+          description: Anchor already exists
+  /paradox-checks:
+    post:
+      summary: Check for paradoxes in a timeline
+      operationId: checkParadox
+      tags:
+        - Paradoxes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ParadoxCheckRequest'
+      responses:
+        '200':
+          description: Paradox check completed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParadoxCheckResponse'
+        '400':
+          description: Unable to check for paradoxes
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+
+  /monitor-timeline:
+    get:
+      summary: Monitor a timeline for anomalies
+      operationId: monitorTimeline
+      tags:
+        - Monitoring
+      parameters:
+        - name: timeline_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: The ID of the timeline to monitor
+      responses:
+        '200':
+          description: Timeline monitored successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimelineMonitoringResponse'
+        '400':
+          description: Cannot monitor timeline
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+
+components:
+  schemas:
+    Timeline:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the timeline
+          example: tml_tesla_mission_1
+          readOnly: true
+        name:
+          type: string
+          description: The name of the timeline
+          example: Tesla blueprint retrieval
+        destination_time:
+          type: string
+          format: date-time
+          example: '1889-03-10T23:50:00Z'
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: The timestamp when the timeline was created
+
+        status:
+          type: string
+          description: The current status of the timeline (open or closed)
+          enum:
+            - open
+            - closed
+          readOnly: true
+        window:
+          type: string
+          description: How long the timeline window is open to warp into.
+          example: 12 minutes
+          readOnly: true
+
+    ManipulateEventRequest:
+      type: object
+      properties:
+        timeline_id:
+          type: string
+          description: The ID of the timeline where the event will be manipulated
+        event_id:
+          type: string
+          description: The ID of the event to manipulate
+        new_outcome:
+          type: object
+          description: The details of the new outcome for the event
+          properties:
+            description:
+              type: string
+              description: A description of the new event outcome
+            changes:
+              type: array
+              items:
+                type: object
+                properties:
+                  action:
+                    type: string
+                    description: The action to take for the event
+                  time:
+                    type: string
+                    format: date-time
+                    description: The new time for the event
+      required:
+        - timeline_id
+        - event_id
+        - new_outcome
+
+    EventManipulationResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          description: Status of the event manipulation operation
+        new_event_id:
+          type: string
+          description: The ID of the newly created event after manipulation
+
+    Item:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the item
+          example: itm_tsla_blueprint
+          readOnly: true
+        description:
+          type: string
+          description: Description of the item
+          example: Tesla's Blueprint
+
+    Anchor:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID that must be used to return to an anchor point.
+          example: anc_mel2c9ba
+          readOnly: true
+        timestamp:
+          type: string
+          format: date-time
+          description: The specific time for the anchor
+          example: 2024-09-16T05:04:00Z
+        description:
+          type: string
+          description: A description of the purpose of the anchor
+          example: Home Base - Start of Tesla Mission
+      required:
+        - timestamp
+
+    TimelineMonitoringResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          description: The status of the timeline monitoring operation
+        anomalies:
+          type: array
+          items:
+            type: object
+            properties:
+              anomaly_id:
+                type: string
+                description: Unique identifier for the detected anomaly
+              description:
+                type: string
+                description: Details of the anomaly detected in the timeline
+
+    Problem:
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri
+          description: A URI reference that identifies the problem type.
+          example: "https://api.warp.example.com/problems/invalid-request"
+        title:
+          type: string
+          description: A short, human-readable summary of the problem type.
+          example: "Invalid Request"
+        status:
+          type: integer
+          description: The HTTP status code.
+          example: 400
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence of the problem.
+          example: "The request payload is not valid according to the schema."
+        instance:
+          type: string
+          format: uri
+          description: A URI reference that identifies the specific occurrence of the problem.
+          example: "/problems/invalid-request/1234"
+
+    TimeTravel:
+      type: object
+      required:
+        - destination
+      properties:
+        destination:
+          type: string
+          description: The ID of the destination timeline or anchor
+          example: tml_tesla_mission_1
+        arrival_time:
+          type: string
+          format: date-time
+          readOnly: true
+          description: The exact time of arrival at the destination
+          example: "1889-03-10T23:50:00Z"
+        items_transported:
+          type: array
+          description: List of items successfully transported during time travel
+          items:
+            type: string
+          example: ["itm_tsla_blueprint"]
+
+    ParadoxCheckRequest:
+      type: object
+      properties:
+        timeline_id:
+          type: string
+          example: tml_tesla_mission_1
+        proposed_changes:
+          type: array
+          example:
+            - 'event': "Retrieve Tesla's Blueprint"
+              'time': '1889-03-10T23:50:00Z'
+            - 'item_id': 'itm_tsla_blueprint'
+          items:
+            oneOf:
+              - type: object
+                title: Events
+                required:
+                  - event
+                properties:
+                  event:
+                    type: string
+                    example: "Retrieve Tesla's Blueprint"
+                  time:
+                    type: string
+                    format: date-time
+                    example: '1889-03-10T23:50:00Z'
+              - type: object
+                required:
+                  - item_id
+                title: Items
+                properties:
+                  item_id:
+                    type: string
+                    example: itm_tsla_blueprint
+
+    ParadoxCheckResponse:
+      type: object
+      properties:
+        is_stable:
+          type: boolean
+          description: The stability status of the timeline
+          example: true
+
+    # ... other schemas ...
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: A Warp API token

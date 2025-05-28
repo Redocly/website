@@ -1,0 +1,434 @@
+description: A git repository.
+type: object
+required:
+  - id
+  - node_id
+  - name
+  - full_name
+  - private
+  - owner
+  - html_url
+  - description
+  - fork
+  - url
+  - forks_url
+  - keys_url
+  - collaborators_url
+  - teams_url
+  - hooks_url
+  - issue_events_url
+  - events_url
+  - assignees_url
+  - branches_url
+  - tags_url
+  - blobs_url
+  - git_tags_url
+  - git_refs_url
+  - trees_url
+  - statuses_url
+  - languages_url
+  - stargazers_url
+  - contributors_url
+  - subscribers_url
+  - subscription_url
+  - commits_url
+  - git_commits_url
+  - comments_url
+  - issue_comment_url
+  - contents_url
+  - compare_url
+  - merges_url
+  - archive_url
+  - downloads_url
+  - issues_url
+  - pulls_url
+  - milestones_url
+  - notifications_url
+  - labels_url
+  - releases_url
+  - deployments_url
+  - created_at
+  - updated_at
+  - pushed_at
+  - git_url
+  - ssh_url
+  - clone_url
+  - svn_url
+  - homepage
+  - size
+  - stargazers_count
+  - watchers_count
+  - language
+  - has_issues
+  - has_projects
+  - has_downloads
+  - has_wiki
+  - has_pages
+  - forks_count
+  - mirror_url
+  - archived
+  - open_issues_count
+  - license
+  - forks
+  - open_issues
+  - watchers
+  - default_branch
+  - is_template
+  - web_commit_signoff_required
+  - topics
+  - visibility
+properties:
+  id:
+    type: integer
+    description: Unique identifier of the repository.
+  node_id:
+    type: string
+    description: The GraphQL identifier of the repository.
+  name:
+    type: string
+    description: The name of the repository.
+  full_name:
+    type: string
+    description: The full, globally unique, name of the repository.
+  private:
+    type: boolean
+    description: Whether the repository is private or public.
+  owner:
+    $ref: ./user.yaml
+  html_url:
+    type: string
+    format: uri
+    description: The URL to view the repository on GitHub.com.
+  description:
+    type:
+      - string
+      - 'null'
+    description: The repository description.
+  fork:
+    type: boolean
+    description: Whether the repository is a fork.
+  url:
+    type: string
+    format: uri
+    description: The URL to get more information about the repository from the
+      GitHub API.
+  forks_url:
+    type: string
+    format: uri
+    description: The API URL to list the forks of the repository.
+  keys_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about deploy keys on
+      the repository.
+  collaborators_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about collaborators
+      of the repository.
+  teams_url:
+    type: string
+    format: uri
+    description: The API URL to list the teams on the repository.
+  hooks_url:
+    type: string
+    format: uri
+    description: The API URL to list the hooks on the repository.
+  issue_events_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about issue events on
+      the repository.
+  events_url:
+    type: string
+    format: uri
+    description: The API URL to list the events of the repository.
+  assignees_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to list the available assignees for
+      issues in the repository.
+  branches_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about branches in the
+      repository.
+  tags_url:
+    type: string
+    format: uri
+    description: The API URL to get information about tags on the repository.
+  blobs_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to create or retrieve a raw Git blob in
+      the repository.
+  git_tags_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about Git tags of the
+      repository.
+  git_refs_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about Git refs of the
+      repository.
+  trees_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to create or retrieve a raw Git tree of
+      the repository.
+  statuses_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about statuses of a
+      commit.
+  languages_url:
+    type: string
+    format: uri
+    description: The API URL to get information about the languages of the repository.
+  stargazers_url:
+    type: string
+    format: uri
+    description: The API URL to list the stargazers on the repository.
+  contributors_url:
+    type: string
+    format: uri
+    description: A template for the API URL to list the contributors to the
+      repository.
+  subscribers_url:
+    type: string
+    format: uri
+    description: The API URL to list the subscribers on the repository.
+  subscription_url:
+    type: string
+    format: uri
+    description: The API URL to subscribe to notifications for this repository.
+  commits_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about commits on the
+      repository.
+  git_commits_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about Git commits of
+      the repository.
+  comments_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about comments on the
+      repository.
+  issue_comment_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about issue comments
+      on the repository.
+  contents_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get the contents of the repository.
+  compare_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to compare two commits or refs.
+  merges_url:
+    type: string
+    format: uri
+    description: The API URL to merge branches in the repository.
+  archive_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to download the repository as an archive.
+  downloads_url:
+    type: string
+    format: uri
+    description: The API URL to list the downloads on the repository.
+  issues_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about issues on the
+      repository.
+  pulls_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about pull requests
+      on the repository.
+  milestones_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about milestones of
+      the repository.
+  notifications_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about notifications
+      on the repository.
+  labels_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about labels of the
+      repository.
+  releases_url:
+    type: string
+    format: uri-template
+    description: A template for the API URL to get information about releases on the
+      repository.
+  deployments_url:
+    type: string
+    format: uri
+    description: The API URL to list the deployments of the repository.
+  created_at:
+    oneOf:
+      - type: integer
+      - type: string
+        format: date-time
+  updated_at:
+    type: string
+    format: date-time
+  pushed_at:
+    oneOf:
+      - type: integer
+      - type: string
+        format: date-time
+      - type: 'null'
+  git_url:
+    type: string
+    format: uri
+  ssh_url:
+    type: string
+  clone_url:
+    type: string
+    format: uri
+  svn_url:
+    type: string
+    format: uri
+  homepage:
+    type:
+      - string
+      - 'null'
+  size:
+    type: integer
+  stargazers_count:
+    type: integer
+  watchers_count:
+    type: integer
+  language:
+    type:
+      - string
+      - 'null'
+  has_issues:
+    type: boolean
+    description: Whether issues are enabled.
+    default: true
+  has_projects:
+    type: boolean
+    description: Whether projects are enabled.
+    default: true
+  has_downloads:
+    type: boolean
+    description: Whether downloads are enabled.
+    default: true
+  has_wiki:
+    type: boolean
+    description: Whether the wiki is enabled.
+    default: true
+  has_pages:
+    type: boolean
+  forks_count:
+    type: integer
+  mirror_url:
+    type:
+      - string
+      - 'null'
+    format: uri
+  archived:
+    type: boolean
+    description: Whether the repository is archived.
+    default: false
+  disabled:
+    type: boolean
+    description: Returns whether or not this repository is disabled.
+  open_issues_count:
+    type: integer
+  license:
+    oneOf:
+      - $ref: ./license.yaml
+      - type: 'null'
+  forks:
+    type: integer
+  open_issues:
+    type: integer
+  watchers:
+    type: integer
+  stargazers:
+    type: integer
+  default_branch:
+    type: string
+    description: The default branch of the repository.
+  allow_squash_merge:
+    type: boolean
+    description: Whether to allow squash merges for pull requests.
+    default: true
+  allow_merge_commit:
+    type: boolean
+    description: Whether to allow merge commits for pull requests.
+    default: true
+  allow_rebase_merge:
+    type: boolean
+    description: Whether to allow rebase merges for pull requests.
+    default: true
+  allow_auto_merge:
+    type: boolean
+    description: Whether to allow auto-merge for pull requests.
+    default: false
+  allow_forking:
+    type: boolean
+    description: Whether to allow private forks.
+  allow_update_branch:
+    type: boolean
+  use_squash_pr_title_as_default:
+    type: boolean
+  is_template:
+    type: boolean
+  web_commit_signoff_required:
+    type: boolean
+  topics:
+    type: array
+    items:
+      type: string
+  visibility:
+    type: string
+    enum:
+      - public
+      - private
+      - internal
+  delete_branch_on_merge:
+    type: boolean
+    description: Whether to delete head branches when pull requests are merged.
+    default: false
+  master_branch:
+    type: string
+  permissions:
+    type: object
+    required:
+      - pull
+      - push
+      - admin
+    properties:
+      pull:
+        type: boolean
+      push:
+        type: boolean
+      admin:
+        type: boolean
+      maintain:
+        type: boolean
+      triage:
+        type: boolean
+    additionalProperties: false
+  public:
+    type: boolean
+  organization:
+    type: string
+additionalProperties: false
+title: Repository

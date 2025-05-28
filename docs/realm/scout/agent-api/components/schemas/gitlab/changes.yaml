@@ -1,0 +1,15 @@
+type: object
+description: Object containing merge request change details.
+required:
+  - updated_by_id
+  - updated_at
+  - labels
+properties:
+  updated_by_id:
+    $ref: ./updated-by-id.yaml
+  updated_at:
+    $ref: ./updated-at.yaml
+  labels:
+    $ref: ./labels.yaml
+additionalProperties: false
+title: Change

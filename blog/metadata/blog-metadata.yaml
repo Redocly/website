@@ -1,0 +1,66 @@
+authors:
+  - id: adam-altman
+    name: Adam Altman
+    authorBIO: CEO and Co-founder, Redocly
+    image: adam.png
+  - id: mada-namtla
+    name: Mada Namtla
+    image: mada.png
+  - id: roman-hotsiy
+    name: Roman Hotsiy
+    authorBIO: CTO and Co-founder, Redocly
+    image: roman.png
+  - id: namor-yistoh
+    name: Namor Yistoh
+    image: namor.png
+  - id: swapnil-ogale
+    name: Swapnil Ogale
+    image: swapnil.png
+  - id: ivana-devcic
+    name: Ivana Isadora Devcic
+    authorBIO: Technical Writer, Redocly
+    image: ivana.png
+  - id: jody-winter
+    name: Jody Winter
+    image: jody-winter.png
+  - id: lorna-mitchell
+    name: Lorna Mitchell
+    authorBIO: Redocly VP of Developer Experience, OpenAPI Technical Steering Committee member
+    image: lorna.png
+  - id: heather-cloward
+    name: Heather Cloward
+    authorBIO: Technical Writer, Redocly
+    image: heather.png
+  - id: taylor-krusen
+    name: Taylor Krusen
+    authorBIO: Developer Experience Engineer, Redocly
+    image: taylor-cartoon-headshot.png
+categories:
+  - id: api
+    label: API
+  - id: company-update
+    label: Company update
+  - id: openapi
+    label: OpenAPI
+  - id: api-design
+    label: API design
+  - id: api-first
+    label: API first
+  - id: api-marketing
+    label: API marketing
+  - id: dev-portal
+    label: Developer portal
+  - id: docs-as-code
+    label: Docs-as-code
+  - id: learning
+    label: Learning
+  - id: tech-writers
+    label: Technical writers
+  - id: developer-experience
+    label: Developer experience
+  - id: teamwork
+    label: Teamwork
+  - id: season-of-docs
+    label: Google Season of Docs
+  - id: open-source
+    label: Open source

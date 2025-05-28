@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Webhooks
+  security:
+    - GitlabApiKey: []
+  summary: Create GitLab webhook event
+  description: Register and start to process GitLab repository event. For now only push and create merge request events are supported.
+  operationId: processGitlabWebhook
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          oneOf:
+            - $ref: ../components/schemas/gitlab/events/push.yaml
+            - $ref: ../components/schemas/gitlab/events/merge-request-open.yaml
+            - $ref: ../components/schemas/gitlab/events/merge-request-reopen.yaml
+            - $ref: ../components/schemas/gitlab/events/merge-request-update.yaml
+  responses:
+    200:
+      description: OK.
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/WebhookResponse.yaml
+    401:
+      $ref: ../components/responses/Unauthorized.yaml
+    500:
+      $ref: ../components/responses/InternalServerError.yaml

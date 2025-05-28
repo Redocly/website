@@ -1,0 +1,4 @@
+- label: ← Back to Docs
+  href: /docs
+- separatorLine: true
+- $ref: docs/cli/@v1/sidebars.yaml

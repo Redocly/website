@@ -1,0 +1,33 @@
+type: object
+required:
+  - action
+  - number
+  - before
+  - after
+  - pull_request
+  - repository
+  - sender
+properties:
+  action:
+    type: string
+    enum:
+      - synchronize
+  number:
+    type: integer
+    description: The pull request number.
+  before:
+    type: string
+  after:
+    type: string
+  pull_request:
+    $ref: ../pull-request.yaml
+  repository:
+    $ref: ../repository.yaml
+  installation:
+    $ref: ../installation-lite.yaml
+  organization:
+    $ref: ../organization.yaml
+  sender:
+    $ref: ../user.yaml
+additionalProperties: false
+title: pull_request synchronize event

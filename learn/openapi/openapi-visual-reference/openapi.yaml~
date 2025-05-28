@@ -1,0 +1,331 @@
+# API for making screenshots
+openapi: 3.0.3
+info:
+  title: Example
+  version: ''
+  description: |
+    # My API description in Markdown
+
+    This is a sample of an info description.
+  termsOfService: https://redoc.ly/subscription-agreement/
+  contact:
+    name: API team
+    email: team@redocly.com
+    url: https://redocly.com/contact-us/
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  x-logo:
+    url: https://app.redoc.ly/logo-h.png
+    # backgroundColor: yellow
+    altText: Redocly API
+    href: https://redocly.com/docs/
+
+
+tags:
+  - name: Alpha
+    description: This is a **bold** description.
+  - name: Beta
+    description: |
+      This description is using the YAML block to make it easier to write Markdown.
+
+      ## This is an H2 heading
+
+      This is another paragraph with a **bold** word.
+  - name: Gamma
+    description: |
+      The extremely high energy of gamma rays allows them to penetrate just about anything.
+      They can even pass through bones and teeth.
+      This makes gamma rays very dangerous.
+      They can destroy living cells, produce gene mutations, and cause cancer.
+
+
+servers:
+
+  - url: https://{project}.redocly.com
+    description: Hosted docs
+    variables:
+      project:
+        default: app
+        description: The project name
+  - url: https://api.remockly.com
+    description: Hosted mocks
+
+
+paths:
+  /results:
+    post:
+      summary: Submit Chess Results
+      operationId: postChessResult
+      requestBody:
+        required: true
+        description: This is my test description.
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/ChessResult"
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChessResult"
+            examples:
+              winning:
+                summary: Winning a match
+                description: This is a **fictional** win.
+                value:
+                  opponent: hikaru
+                  result: won
+              losing:
+                summary: Losing a match
+                description: This is a **fictional** loss.
+                value:
+                  opponent: SenseiDanya
+                  result: lost
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChessResult"
+              examples:
+                winning:
+                  summary: Winning a match
+                  description: This is a **fictional** win.
+                  value:
+                    opponent: hikaru
+                    result: won
+                    id: abc123
+                losing:
+                  summary: Losing a match
+                  description: This is a **fictional** loss.
+                  value:
+                    opponent: SenseiDanya
+                    result: lost
+                    id: def456
+  /:
+    post:
+      summary: Sample API
+      description: Sample API description.
+      callbacks:
+        result:
+          $ref: "#/components/callbacks/resultCallback"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChessResult"
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChessResult"
+  /results/{resultId}:
+    get:
+      operationId: getResultsById
+      summary: Get results
+      parameters:
+        - name: resultId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The result ID
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChessResult"
+x-webhooks:
+  chessResultPosted:
+    post:
+      summary: Chess result posted
+      description: A webhook sent when a chess result is posted to webhook subscribers.
+
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChessResult"
+
+      responses:
+        '200':
+          description: OK
+          headers:
+            Pagination-Count:
+              description: The count of items in the collection.
+              schema:
+                type: integer
+
+        #         '100':
+        #   description: Continue
+        # '200':
+        #   description: OK
+        # 2XX:
+        #   description: Success
+        # '201':
+        #   description: Created
+        # '202':
+        #   description: Accepted
+        # default:
+        #   description: Default response
+        # '303':
+        #   description: See Other
+        # 3XX:
+        #   description: Redirect
+        # '400':
+        #   description: Bad Request
+        # '409':
+        #   description: Conflict
+        # '503':
+        #   description: Service Unavailable
+
+
+
+                # $ref: "#/components/schemas/age"
+security:
+  # - api_keys: []
+  #   jwt: []
+  - jwt: []
+components:
+  securitySchemes:
+    api_keys:
+      description: |
+        Generate your secret API key in the app settings.
+      name: secret-key
+      type: apiKey
+      in: header
+    jwt:
+      description: |
+        Generate your JWT when you log in.
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    ChessResult:
+      type: object
+      # example:
+      #   opponent: GothamChess
+      properties:
+        opponent:
+          type: string
+          description: The username of the opponent.
+          example: Hikaru
+        result:
+          type: string
+          description: The outcome of the game.
+          example: lost
+          enum:
+            - won
+            - lost
+            - draw
+        id:
+          type: string
+          format: uuid
+          description: The system ID of the game.
+          readOnly: true
+        # gameCode:
+        #   type: string
+        #   format: password
+        #   description: Secret code to verify the game authenticity.
+        #   writeOnly: true
+    age:
+      type: object
+      properties:
+        age:
+          type: integer
+          description: Years since birth
+          example: 16
+    string:
+      type: string
+      format: date-time
+      description: A date time format.
+    stringFormats:
+      type: object
+      properties:
+        date-time:
+          type: string
+          format: date-time
+          description: With format date-time
+        date:
+          type: string
+          format: date
+          description: With format date
+        email:
+          type: string
+          format: email
+          description: With format email
+        password:
+          type: string
+          format: password
+          description: With format password
+        uri:
+          type: string
+          format: uri
+          description: With format uri
+        ipv4:
+          type: string
+          format: ipv4
+          description: With format ipv4
+        ipv6:
+          type: string
+          format: ipv6
+          description: With format ipv6
+        uuid:
+          type: string
+          format: uuid
+          description: With format uuid
+    vehicles:
+      type: array
+      items:
+        $ref: "#/components/schemas/vehicle"
+    vehicle:
+      type: object
+      title: Vehicle
+      properties:
+        color:
+          type: object
+          title: Color
+          properties:
+            exterior:
+              type: string
+              description: The color of the vehicle exterior
+              example: red
+            trim:
+              type: string
+              description: The color of the vehicle trim
+              example: chrome
+            interior:
+              type: string
+              description: The color of the vehicle interior
+              example: tan
+        make:
+          type: string
+          description: The make of the vehicle
+          example: Toyota
+        model:
+          type: string
+          description: The model of the vehicle
+          example: MR2
+        year:
+          type: integer
+          description: The year of the vehicle
+          example: 1995
+  callbacks:
+    resultCallback:
+      '{$url}':
+        post:
+          summary: Sample callback
+          requestBody:
+            description: Callback payload
+            content:
+              'application/json':
+                schema:
+                  $ref: '#/components/schemas/ChessResult'
+          responses:
+            '200':
+              description: callback successfully processed

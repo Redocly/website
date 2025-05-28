@@ -1,0 +1,28 @@
+{
+  "name": "docs",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Redocly portal template repository",
+  "scripts": {
+    "start": "npm run start:docs",
+    "start:docs": "realm develop -p 3000"
+  },
+  "dependencies": {
+    "@redocly/realm": "next",
+    "styled-components": "^5.3.11",
+    "@markdoc/markdoc": "0.5.1",
+    "highlight-words-core": "1.2.2"
+  },
+  "devDependencies": {
+    "@redocly/theme": "next"
+  },
+  "nx": {
+    "targets": {
+      "start:docs": {
+        "dependsOn": [
+          "^build"
+        ]
+      }
+    }
+  }
+}

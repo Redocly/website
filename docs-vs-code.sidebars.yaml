@@ -1,0 +1,16 @@
+- label: ← Back to Docs
+  href: /docs
+- separatorLine: true
+- page: docs/vscode/index.md
+  label: VS Code extension
+- label: Installation
+  page: docs/vscode/installation.md
+- label: Configuration
+  page: docs/vscode/configuration.md
+- group: Usage
+  page: docs/vscode/using-redocly-vscode.md
+  items:
+    - label: Cursor context
+      page: docs/vscode/cursor-context.md
+    - label: Live documentation preview
+      page: docs/vscode/live-preview.md

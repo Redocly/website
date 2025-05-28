@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Webhooks
+  security:
+    - GithubApiKey: []
+  summary: Create GitHub webhook event
+  description: Registers and start process GitHub repository event. For now only push and create pull request events are supported.
+  operationId: processGithubWebhook
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          oneOf:
+            - $ref: ../components/schemas/github/events/push.yaml
+            - $ref: ../components/schemas/github/events/pull-request-opened.yaml
+            - $ref: ../components/schemas/github/events/pull-request-reopened.yaml
+            - $ref: ../components/schemas/github/events/pull-request-synchronize.yaml
+  responses:
+    200:
+      description: OK.
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/WebhookResponse.yaml
+    401:
+      $ref: ../components/responses/Unauthorized.yaml
+    500:
+      $ref: ../components/responses/InternalServerError.yaml

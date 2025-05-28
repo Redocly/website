@@ -1,0 +1,55 @@
+description: GitLab repository details.
+type: object
+required:
+  - name
+  - url
+  - description
+  - homepage
+  - git_http_url
+  - git_ssh_url
+  - visibility_level
+properties:
+  name:
+    type: string
+    description: The name of the project.
+    example: Awesome project
+  url:
+    type: string
+    description: Repository git url.
+    format: uri
+    example: http://example.com/gitlabhq/awesome-project.git
+  description:
+    type: string
+    description: The description of the project.
+    example: Awesome project description.
+  homepage:
+    type: string
+    description: Project homepage url.
+    format: uri
+    example: http://example.com/gitlabhq/awesome-project
+  git_http_url:
+    type: string
+    description: Git url of a project.
+    format: uri
+    example: http://example.com/gitlabhq/gitlab-test.git
+  git_ssh_url:
+    type: string
+    description: SSH url of a project.
+    format: uri
+    example: git@example.com:gitlabhq/awesome-project.git
+  web_url:
+    type: string
+    description: The URL to view the repository.
+    format: uri
+    example: http://example.com/gitlabhq/awesome-project
+  avatar_url:
+    type: string
+    description: Avatar url of the repository.
+    format: uri
+    example: http://www.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61?s=40\u0026d=identicon
+  visibility_level:
+    type: integer
+    description: Visibility level of a project.
+    example: 20
+additionalProperties: false
+title: Repository

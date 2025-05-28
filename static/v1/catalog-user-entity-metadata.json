@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redocly.com/v1/catalog-user-entity-metadata.json",
+  "title": "User entity metadata",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "description": "Metadata of the user",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "Email of the user",
+          "example": "john.doe@example.com"
+        }
+      }
+    }
+  }
+}

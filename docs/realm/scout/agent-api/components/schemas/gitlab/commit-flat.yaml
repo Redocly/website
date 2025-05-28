@@ -1,0 +1,34 @@
+description: Flattened commit details.
+type: object
+required:
+  - id
+  - message
+  - title
+  - timestamp
+  - url
+  - author
+properties:
+  id:
+    type: string
+    description: Commit SHA.
+    example: b6568db1bc1dcd7f8b4d5a946b0b91f9dacd7327
+  message:
+    type: string
+    description: The commit message.
+    example: fixed readme
+  title:
+    type: string
+    description: Commit title.
+    example: Update file README.md
+  timestamp:
+    type: string
+    format: date-time
+    description: The ISO 8601 timestamp of the commit.
+  url:
+    type: string
+    format: uri
+    description: URL that points to the commit API resource.
+  author:
+    $ref: ./author.yaml
+additionalProperties: false
+title: Commit

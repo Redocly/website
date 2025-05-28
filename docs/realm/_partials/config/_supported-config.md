@@ -1,0 +1,1 @@
+The <code>{% $optionName %}</code> option also supports page-level configuration using front matter.

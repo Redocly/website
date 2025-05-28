@@ -1,0 +1,32 @@
+type: object
+required:
+  - object_kind
+  - user
+  - project
+  - repository
+  - object_attributes
+  - labels
+  - changes
+properties:
+  object_kind:
+    type: string
+    enum:
+      - open
+    description: Type of webhook event data.
+  user:
+    description: Merge request creator details.
+    $ref: ../user.yaml
+  project:
+    $ref: ../project.yaml
+  repository:
+    $ref: ../repository.yaml
+  object_attributes:
+    $ref: ../merge-request-details.yaml
+  labels:
+    type: array
+    items:
+      $ref: ../label.yaml
+  changes:
+    $ref: ../changes.yaml
+additionalProperties: false
+title: Merge request open event

@@ -1,0 +1,9 @@
+required:
+  - href
+type: object
+properties:
+  href:
+    type: string
+    format: uri-template
+additionalProperties: false
+title: Link
