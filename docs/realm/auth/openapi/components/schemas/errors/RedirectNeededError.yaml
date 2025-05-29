@@ -1,0 +1,8 @@
+type: object
+required:
+  - redirectUrl
+properties:
+  redirectUrl:
+    description: URL the browser should redirect to.
+    type: string
+    example: https://auth.beta.redocly.com/login

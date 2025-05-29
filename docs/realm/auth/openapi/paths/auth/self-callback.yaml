@@ -1,0 +1,38 @@
+post:
+  tags:
+    - Auth
+  security: []
+  summary: Callback endpoint for internal identity provider
+  operationId: login
+  requestBody:
+    content:
+      'application/json':
+        schema:
+          description: Payload to login user.
+          $ref: '../../components/schemas/auth/LoginByPassword.yaml'
+  responses:
+    '200':
+      description: Redirect user with active session in internal identity provider to provided return url.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/errors/RedirectNeededError.yaml
+    '400':
+      description: Provided credentials for login are invalid.
+      content:
+        application/problem+json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                example: "about:blank" 
+              title:
+                type: string
+                example: "Credentials you provided for login are invalid."
+              status:
+                type: integer 
+                example: 400
+              detail:
+                type: string
+                example: "Bad Request"

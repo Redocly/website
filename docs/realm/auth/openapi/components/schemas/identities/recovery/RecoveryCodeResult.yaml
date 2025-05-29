@@ -1,0 +1,6 @@
+type: object
+properties:
+  identity:
+    description: Kratos identity token related to given recovery code.
+    type: string
+    example: c2FtcGxlS3JhdG9zSWRlbnRpdHk=

@@ -1,0 +1,35 @@
+post:
+  tags:
+    - Auth
+  security: []
+  summary: Get login initialization config
+  operationId: registerIdentity
+  requestBody:
+    content:
+      'application/json':
+        schema:
+          description: Payload to register identity.
+          $ref: '../../components/schemas/identities/RegisterIdentity.yaml'
+  responses:
+    '200':
+      description: Identity registered.
+    '400':
+      description: Provided credentials for registry are invalid.
+      content:
+        application/problem+json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                example: "about:blank" 
+              title:
+                type: string
+                example: "Credentials you provided for registry are invalid."
+              status:
+                type: integer 
+                example: 400
+              detail:
+                type: string
+                example: "Bad Request"
+

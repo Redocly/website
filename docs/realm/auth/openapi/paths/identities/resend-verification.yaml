@@ -1,0 +1,22 @@
+post:
+  tags:
+    - Auth
+  security: []
+  summary: Send email verification again
+  operationId: resendEmailVerification
+  requestBody:
+    content:
+      'application/json':
+        schema:
+          description: Payload to email verification
+          $ref: '../../components/schemas/identities/verification/ResendVerification.yaml'
+  responses:
+    '204':
+      description: Verification email resend.
+    '400':
+      description: Invalid email verification code provided.
+      content:
+        application/json:
+          schema:
+            description: Error containing a message about a recovery code validation error.
+            $ref: '../../components/schemas/errors/BadRequestApiError.yaml'

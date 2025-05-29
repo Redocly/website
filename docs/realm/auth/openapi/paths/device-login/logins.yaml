@@ -1,0 +1,31 @@
+post:
+  x-internal: true
+  tags:
+    - Device Login
+  security: []
+  summary: Create new login flow for device basing on user code
+  operationId: loginDeviceWithUserCode
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/device-login/Login.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/device-login/LoginResult.yaml
+    '400':
+      description: Invalid/expired user code provided.
+      content:
+        application/json:
+          schema:
+            description: Error containing message about reason of rejection
+            $ref: '../../components/schemas/errors/BadRequestApiError.yaml'
+    '404':
+      description: Invalid/non-existing user code provided.
+    '500':
+      description: Internal server error. 

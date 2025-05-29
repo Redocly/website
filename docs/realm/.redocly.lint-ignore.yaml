@@ -1,0 +1,22 @@
+# This file instructs Redocly's linter to ignore the rules contained for specific parts of your API.
+# See https://redoc.ly/docs/cli/ for more information.
+
+auth/openapi/paths/auth/saml-callback.yaml:
+  operation-2xx-response:
+    - '#/post/responses'
+  operation-4xx-response:
+    - '#/post/responses'
+auth/openapi/paths/auth/oidc.yaml:
+  operation-2xx-response:
+    - '#/get/responses'
+auth/openapi/paths/identities/link.yaml:
+  operation-2xx-response:
+    - '#/post/responses'
+scout/agent-api/paths/health.yaml:
+  operation-4xx-response:
+    - '#/get/responses'
+portal-internal/api.yaml:
+  paths-kebab-case:
+    - '#/paths/~1_events'
+  operation-4xx-problem-details-rfc7807:
+    - '#/paths/~1_events/post/responses/400'

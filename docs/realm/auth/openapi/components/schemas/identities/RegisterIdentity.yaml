@@ -1,0 +1,22 @@
+type: object
+required:
+  - email
+  - password
+properties:
+  email:
+    description: Identity email.
+    type: string
+    format: uuid
+    example: john.doe@example.com
+  password:
+    description: Identity password.
+    type: string
+  firstName:
+    description: Identity first name.
+    type: string
+  lastName:
+    description: Identity last name.
+    type: string
+  loginChallenge:
+    description: Identity login challenge.
+    type: string

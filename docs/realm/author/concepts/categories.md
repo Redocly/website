@@ -3,7 +3,7 @@
 A catalog is an important tool to make APIs more discoverable.
 At full potential, a catalog should include all of your APIs, and be filterable across a variety of categories that users would find useful.
 
-Redocly [catalog classic component](../../config/catalog-classic.md) can be configured to render a catalog of content based on metadata configurations.
+Redocly [catalog legacy component](../../config/catalog-legacy.md) can be configured to render a catalog of content based on metadata configurations.
 
 While composing catalogs manually may be a viable approach for small and definitive catalogs, a larger catalog requires some automation to list and classify APIs.
 

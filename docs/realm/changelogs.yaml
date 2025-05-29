@@ -1,34 +1,9 @@
 '@redocly/realm':
-  0.122.0-next.7:
-    timestamp: 1748514888000
-    changes:
-      minor:
-        - >-
-          Renamed configuration option `catalog` to `catalogClassic` and theme component `Catalog` to `CatalogClassic`. Deprecated the previous
-          properties and components for future compatibility.
-      patch:
-        - Fixed search indexing to include tag attributes and partials.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748015905`.
-        - Fixed property name conflict in frontmatter that caused UI issues, including broken logo images.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
-        - Removed access to headers through the `{% $headers %}` tag in Markdoc to prevent unauthorized modifications.
-        - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
-        - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
-        - Updated `@redocly/openapi-core` dependency to `0.0.0-snapshot.1747918074`.
-        - Fixed redirect handling for complex preview URLs.
-        - Removed duplicate teams from `$rbac` variable.
-        - Fixed an issue where the search dialog remained open after selecting a result on the current page.
-    dependencies:
-      '@redocly/theme': 0.54.0-next.6
-      '@redocly/openapi-docs': 3.10.0-next.7
-      '@redocly/asyncapi-docs': 0.3.0-next.7
-      '@redocly/graphql-docs': 0.11.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.7.0-next.7
   0.122.0-next.6:
     timestamp: 1747928230000
     changes:
       minor:
-        - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
+        - Upgraded React to `19.x`.
       patch:
         - Fixed `curl` logo visibility in the language panel on dark theme.
         - Fixed incorrect path in `Card` tag when using `REDOCLY_PREFIX_PATHS`.
@@ -71,7 +46,10 @@
   0.122.0-next.3:
     timestamp: 1747227545000
     changes:
-      minor: []
+      minor:
+        - >-
+          Deprecated `catalog` property; catalogs must be configured through `catalogLegacy`. Using `catalog` no longer breaks builds but triggers
+          warnings. Renamed theme catalog component to `CatalogLegacy`.
       patch:
         - Added a possibility to override icon colors for "Search with AI" stars.
         - Fixed `x-enumDescription` rendering.
@@ -3084,36 +3062,11 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.122.0-next.7:
-    timestamp: 1748514888000
-    changes:
-      minor:
-        - >-
-          Renamed configuration option `catalog` to `catalogClassic` and theme component `Catalog` to `CatalogClassic`. Deprecated the previous
-          properties and components for future compatibility.
-      patch:
-        - Fixed search indexing to include tag attributes and partials.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748015905`.
-        - Fixed property name conflict in frontmatter that caused UI issues, including broken logo images.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
-        - Removed access to headers through the `{% $headers %}` tag in Markdoc to prevent unauthorized modifications.
-        - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
-        - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
-        - Updated `@redocly/openapi-core` dependency to `0.0.0-snapshot.1747918074`.
-        - Fixed redirect handling for complex preview URLs.
-        - Removed duplicate teams from `$rbac` variable.
-        - Fixed an issue where the search dialog remained open after selecting a result on the current page.
-    dependencies:
-      '@redocly/theme': 0.54.0-next.6
-      '@redocly/openapi-docs': 3.10.0-next.7
-      '@redocly/asyncapi-docs': 0.3.0-next.7
-      '@redocly/graphql-docs': 0.11.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.7.0-next.7
   0.122.0-next.6:
     timestamp: 1747928230000
     changes:
       minor:
-        - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
+        - Upgraded React to `19.x`.
       patch:
         - Fixed incorrect path in `Card` tag when using `REDOCLY_PREFIX_PATHS`.
         - Added `llms.txt` file generation.
@@ -3148,7 +3101,10 @@
   0.122.0-next.3:
     timestamp: 1747227545000
     changes:
-      minor: []
+      minor:
+        - >-
+          Deprecated `catalog` property; catalogs must be configured through `catalogLegacy`. Using `catalog` no longer breaks builds but triggers
+          warnings. Renamed theme catalog component to `CatalogLegacy`.
       patch:
         - Added a possibility to override icon colors for "Search with AI" stars.
         - Fixed default redirect navigating to an unintended system route.
@@ -5509,33 +5465,11 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.122.0-next.7:
-    timestamp: 1748514888000
-    changes:
-      minor: []
-      patch:
-        - Fixed search indexing to include tag attributes and partials.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748015905`.
-        - Fixed property name conflict in frontmatter that caused UI issues, including broken logo images.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
-        - Removed access to headers through the `{% $headers %}` tag in Markdoc to prevent unauthorized modifications.
-        - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
-        - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
-        - Updated `@redocly/openapi-core` dependency to `0.0.0-snapshot.1747918074`.
-        - Fixed redirect handling for complex preview URLs.
-        - Removed duplicate teams from `$rbac` variable.
-        - Fixed an issue where the search dialog remained open after selecting a result on the current page.
-    dependencies:
-      '@redocly/theme': 0.54.0-next.6
-      '@redocly/openapi-docs': 3.10.0-next.7
-      '@redocly/asyncapi-docs': 0.3.0-next.7
-      '@redocly/graphql-docs': 0.11.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.7.0-next.7
   0.122.0-next.6:
     timestamp: 1747928230000
     changes:
       minor:
-        - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
+        - Upgraded React to `19.x`.
       patch:
         - Fixed incorrect path in `Card` tag when using `REDOCLY_PREFIX_PATHS`.
     dependencies:
@@ -7940,30 +7874,11 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.122.0-next.7:
-    timestamp: 1748514888000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748015905`.
-        - Fixed property name conflict in frontmatter that caused UI issues, including broken logo images.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
-        - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
-        - Updated `@redocly/openapi-core` dependency to `0.0.0-snapshot.1747918074`.
-        - Fixed redirect handling for complex preview URLs.
-        - Removed duplicate teams from `$rbac` variable.
-        - Fixed an issue where the search dialog remained open after selecting a result on the current page.
-    dependencies:
-      '@redocly/theme': 0.54.0-next.6
-      '@redocly/openapi-docs': 3.10.0-next.7
-      '@redocly/asyncapi-docs': 0.3.0-next.7
-      '@redocly/graphql-docs': 0.11.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.7.0-next.7
   0.122.0-next.6:
     timestamp: 1747928230000
     changes:
       minor:
-        - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
+        - Upgraded React to `19.x`.
       patch:
         - Fixed `curl` logo visibility in the language panel on dark theme.
         - Fixed incorrect path in `Card` tag when using `REDOCLY_PREFIX_PATHS`.
@@ -10356,18 +10271,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.54.0-next.6:
-    timestamp: 1748514888000
-    changes:
-      minor:
-        - >-
-          Renamed configuration option `catalog` to `catalogClassic` and theme component `Catalog` to `CatalogClassic`. Deprecated the previous
-          properties and components for future compatibility.
-      patch:
-        - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
-        - Fixed an accessibility issue in `ColorModeSwitcher` by adding an `aria-label`.
-        - Fixed an issue where the search dialog remained open after selecting a result on the current page.
-    dependencies: {}
   0.54.0-next.5:
     timestamp: 1747928230000
     changes:
@@ -10388,7 +10291,10 @@
   0.54.0-next.3:
     timestamp: 1747227545000
     changes:
-      minor: []
+      minor:
+        - >-
+          Deprecated `catalog` property; catalogs must be configured through `catalogLegacy`. Using `catalog` no longer breaks builds but triggers
+          warnings. Renamed theme catalog component to `CatalogLegacy`.
       patch:
         - Added a possibility to override icon colors for "Search with AI" stars.
         - Fixed TypeScript typings for the `useL10n` hook to expose the `lang` property correctly.
@@ -12128,18 +12034,11 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.10.0-next.7:
-    timestamp: 1748514888000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.13.0-next.6
   3.10.0-next.6:
     timestamp: 1747928230000
     changes:
       minor:
-        - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
+        - Upgraded React to `19.x`.
       patch:
         - Fixed `curl` logo visibility in the language panel on dark theme.
         - Fixed incorrect download links generated by `@redocly/openapi-docs` when `REDOCLY_PREFIX_PATHS` was set.
@@ -13783,14 +13682,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
-  0.25.0:
-    timestamp: 1748503879000
-    changes:
-      minor:
-        - Added `catalogClassic` property and deprecated `catalog` property.
-      patch:
-        - Added `llmstxt` option under `seo` to configure `llms.txt` file generation.
-    dependencies: {}
   0.24.1:
     timestamp: 1745314417000
     changes:
@@ -14753,15 +14644,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
-  0.2.14:
-    timestamp: 1748503879000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` dependency to pre-release v2.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748015905`.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1747918074`.
-    dependencies: {}
   0.2.13:
     timestamp: 1746198286000
     changes:
@@ -15029,17 +14911,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.5.0-next.7:
-    timestamp: 1748514888000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.122.0-next.7
-      '@redocly/redoc-reef': 0.122.0-next.7
-      '@redocly/redoc-revel': 0.122.0-next.7
-      '@redocly/redoc': 0.122.0-next.7
-      '@redocly/theme': 0.54.0-next.6
   1.5.0-next.6:
     timestamp: 1747928230000
     changes:
@@ -17976,13 +17847,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.7.0-next.7:
-    timestamp: 1748514888000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.10.0-next.7
   0.7.0-next.6:
     timestamp: 1747928230000
     changes:
@@ -18030,7 +17894,8 @@
     timestamp: 1746537907000
     changes:
       minor: []
-      patch: []
+      patch:
+        - Fixed an issue in the API functions plugin where route static data was resolved incorrectly, leading to failed requests.
     dependencies:
       '@redocly/openapi-docs': 3.10.0-next.1
   0.7.0-next.0:
@@ -19642,14 +19507,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.13.0-next.6:
-    timestamp: 1748514888000
-    changes:
-      minor:
-        - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.54.0-next.6
   0.13.0-next.5:
     timestamp: 1747928230000
     changes:
@@ -19699,6 +19556,7 @@
       minor: []
       patch:
         - Enter prerelease mode.
+        - Fixed `@codemirror/state` versions mismatch that caused embedded Replay to terminate.
     dependencies:
       '@redocly/theme': 0.54.0-next.0
   0.12.0:
@@ -20466,13 +20324,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.5.0-next.6:
-    timestamp: 1748514888000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.54.0-next.6
   0.5.0-next.5:
     timestamp: 1747928230000
     changes:
@@ -22550,25 +22401,4 @@ reunite:
       minor: []
       patch:
         - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1747918074`.
-    dependencies: {}
-  v2025-05-27.1:
-    timestamp: 1748340204000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748015905`.
-    dependencies: {}
-  v2025-05-29.1:
-    timestamp: 1748506744000
-    changes:
-      minor:
-        - Updated dark theme colors to improve readability and contrast.
-      patch: []
-    dependencies: {}
-  v2025-05-29.2:
-    timestamp: 1748520801000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
     dependencies: {}

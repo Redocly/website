@@ -1,0 +1,22 @@
+post:
+  tags:
+    - Auth
+  security: []
+  summary: Send (Resend) identities link code
+  operationId: resendLinkIdentities
+  requestBody:
+    content:
+      'application/json':
+        schema:
+          description: Payload for resending identity link
+          $ref: '../../components/schemas/identities/link-identity/LinkIdentityToken.yaml'
+  responses:
+    '204':
+      description: Email with identity link code successfully resent.
+    '400':
+      description: Invalid identity link code provided.
+      content:
+        application/json:
+          schema:
+            description: Error containing message about identity link token validation error.
+            $ref: '../../components/schemas/errors/BadRequestApiError.yaml'

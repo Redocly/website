@@ -267,7 +267,9 @@ rbac:
 ## Related options
 
 - [sso](./sso.md) is used to identify users.
+{% if includes($rbac.teams, "Employee") %}
 - [ssoDirect](./ssoDirect.md)
+{% /if %}
 - [requiresLogin](./requires-login.md) reference
 
 ## Resources

@@ -1,0 +1,13 @@
+type: object
+required:
+  - flowId
+  - email
+properties:
+  flowId:
+    description: Flow identifier.
+    type: string
+    example: 1fa2a4ce-4c14-4404-99a1-2662c03ac4e7
+  email:
+    description: Email address where we want to resend the verification email.
+    type: string
+    example: 'john.doe@example.com'

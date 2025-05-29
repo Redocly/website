@@ -1,0 +1,8 @@
+type: object
+required:
+  - code
+properties:
+  code:
+    description: Identity link code that is sent to user's email.
+    type: string
+    example: '123456'

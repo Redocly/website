@@ -165,4 +165,5 @@ The following example shows a Markdoc tag that accepts an `image` attribute:
 ## Resources
 
 - Add [custom styling](../../style/concepts/styling.md) to your documentation using CSS.
+- Explore the [default theme settings](./default-theme-settings.md) to see how projects are configured.
 - [Build a Markdoc tag](../tutorials/build-markdoc-tags.md) to create custom authoring tools.

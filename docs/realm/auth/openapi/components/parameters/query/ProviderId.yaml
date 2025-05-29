@@ -1,0 +1,7 @@
+name: providerId
+in: query
+required: true
+description: Identity Provider ID which is used to handle given SSO connection.
+schema:
+  type: string
+example: b1e792f4-97bb-41e5-ba85-e946e04fa29f

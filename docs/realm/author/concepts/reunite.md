@@ -103,6 +103,14 @@ API catalogs are an organized way to present many APIs that can be filtered and 
 You can [add an API catalog](../how-to/add-catalog.md) by organizing your API descriptions and adding a configuration to your `redocly.yaml` file.
 You can view the Scorecard status, metadata, custom fields, and logs for each API description included in your catalog on the **API registry** page.
 
+{% if includes($rbac.teams, "corporate-sso") %}
+## Analytics
+
+In addition to support for [configurable third-party analytics](../../config/analytics/index.md), Reunite provides a [built-in project Analytics page](../../setup/concepts/reunite-analytics.md).
+Reunite's Analytics page displays the visit and search query statistics for your project.
+You can use the collected data to gain insight on user behavior and improve information discovery in your documentation.
+{% /if %}
+
 ## Project settings
 
 Most aspects of your project are configured in your `redocly.yaml` configuration file, but a few things are configured in Reunite on the **Settings** page.

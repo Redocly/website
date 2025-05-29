@@ -1,0 +1,6 @@
+name: loginHint
+in: query
+required: false
+schema:
+  type: string
+example: john.doe@example.com

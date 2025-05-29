@@ -1,0 +1,6 @@
+type: object
+properties:
+  flowId:
+    description: ID of the recovery flow in Kratos.
+    example: 1fa2a4ce-4c14-4404-99a1-2662c03ac4e7
+    type: string

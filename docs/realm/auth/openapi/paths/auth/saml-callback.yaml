@@ -1,0 +1,21 @@
+post:
+  tags:
+    - Auth
+  security: []
+  summary: Callback endpoint for federated SAML identity provider
+  operationId: loginWithSaml
+  responses:
+    '302':
+      description: Redirect user from federated SAML identity provider to provided return url.
+      headers:
+        Location:
+          description: Redirect URL.
+          schema:
+            type: string
+          examples:
+            returnUrl:
+              value: https://app.beta.redocly.com/org/example
+              description: Redirect to passed in login flow initialization return url when federated identity provider saml response is valid.
+            loginUrl:
+              value: https://auth.beta.redocly.com/login
+              description: Redirect to login page when saml response is invalid.

@@ -1,0 +1,19 @@
+type: object
+properties:
+  type:
+    type: string
+    example: about:blank
+  title:
+    description: Error message.
+    type: string
+    example: The recovery code is invalid
+  status:
+    description: Error status.
+    type: string
+    example: '400'
+  detail:
+    type: string
+    example: Bad Request
+  object:
+    type: string
+    example: problem

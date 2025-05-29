@@ -36,25 +36,6 @@ A tab only works as a child of a tabs section.
 
 ## Attributes
 
-### Tabs
-
-{% table %}
-
-- Attribute
-- Type
-- Description
-
----
-
-- size
-- enum (`small` or `medium`)
-- Sets the size of the tab. Use `small` for compact layouts and `medium` for default spacing and padding.
-  **Default:** `medium`
-
-{% /table %}
-
-### Single tab
-
 {% table %}
 
 - Attribute
@@ -67,13 +48,6 @@ A tab only works as a child of a tabs section.
 - string
 - **REQUIRED.**
   Sets the name of the tab.
-
----
-
-- disable
-- boolean
-- When `true`, the tab is non-interactive and styled as disabled. It cannot be focused or selected.
-  **Default:** `false`
 
 {% /table %}
 

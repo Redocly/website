@@ -47,7 +47,7 @@ The user-defined UI elements that use translation keys are:
 * [breadcrumbs](../../../config/breadcrumbs.md)
 * [search bar](../../../config/search.md)
 * [footer](../../../config/footer.md)
-* [catalog classic](../../../config/catalog-classic.md)
+* [catalog legacy](../../../config/catalog-legacy.md)
 * [user menu](../../../config/user-menu.md)
 * [sidebars](../../reference/sidebars.md)
 

@@ -1,0 +1,43 @@
+get:
+  tags:
+    - Auth
+  summary: Get login initialization config
+  security: []
+  operationId: getConfig
+  parameters:
+    - $ref: '../../components/parameters/query/LoginHint.yaml'
+    - $ref: '../../components/parameters/query/LoginChallenge.yaml'
+    - name: Content-Type
+      description: Content Type.
+      required: false
+      in: header
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Login configuration.
+      content:
+        application/json:
+          schema:
+            description: Login configuration.
+            $ref: '../../components/schemas/auth/LoginConfiguration.yaml'
+    '302':
+      description: Redirects to identity provider so user can log in.
+      headers:
+        Location:
+          description: Redirect when content-type isn't "application/json" and user interaction is required.
+          schema:
+            type: string
+          examples:
+            signOnUrl:
+              value: https://external-identity-provider.com
+              description: Redirect to already known sigOnUrl if no other option is available.
+            loginUrl:
+              value: https://auth.beta.redocly.com/login
+              description: Redirect to login page when content-type isn't "application/json" and user interaction is required.
+    '422':
+      description: Return redirectUrl to already known signOnUrl if no other option is available.
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/errors/RedirectNeededError.yaml'

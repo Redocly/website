@@ -1,0 +1,8 @@
+type: object
+required:
+  - linkIdentityToken
+properties:
+  linkIdentityToken:
+    description: Identity link token basing to which proper email should be sent again to the user (used to avoid exposing user email).
+    type: string
+    example: '5657b832-4eae-4dcc-bcaa-4a0f1847342e'

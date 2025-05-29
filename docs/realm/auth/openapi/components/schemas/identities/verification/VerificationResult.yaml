@@ -1,0 +1,5 @@
+type: object
+properties:
+  loginChallenge:
+    description: Identity login challenge.
+    type: string

@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Auth
+  security: []
+  summary: Send identities link code to confirm linking flow
+  operationId: linkIdentities
+  requestBody:
+    content:
+      'application/json':
+        schema:
+          description: Payload for identities link
+          $ref: '../../components/schemas/identities/link-identity/LinkIdentityCode.yaml'
+  responses:
+    '200':
+      description: Valid identity link code provided. Identities linked successfully.
+      content:
+        application/json:
+          schema:
+            description: Url to continue authentication flow
+            $ref: '../../components/schemas/identities/link-identity/LinkIdentityResult.yaml'
+    '400':
+      description: Invalid identity link code provided.
+      content:
+        application/json:
+          schema:
+            description: Error containing message about identity link code validation error
+            $ref: '../../components/schemas/errors/BadRequestApiError.yaml'

@@ -1,0 +1,13 @@
+type: object
+required:
+  - flowId
+  - code
+properties:
+  flowId:
+    description: Kratos recovery flow ID.
+    type: string
+    example: 1fa2a4ce-4c14-4404-99a1-2662c03ac4e7
+  code:
+    description: Recovery code that is sent to user's email.
+    type: string
+    example: '123456'
