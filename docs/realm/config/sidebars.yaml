@@ -45,8 +45,6 @@
       items:
         - page: ./graphql/menu.md
           label: menu
-        - page: ./graphql/hide-pagination-buttons.md
-          label: hidePaginationButtons
         - page: ./graphql/samples-max-inline-args.md
           label: samplesMaxInlineArgs
         - page: ./graphql/json-samples-depth.md
