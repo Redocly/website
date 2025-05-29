@@ -22565,3 +22565,10 @@ reunite:
         - Updated dark theme colors to improve readability and contrast.
       patch: []
     dependencies: {}
+  v2025-05-29.2:
+    timestamp: 1748520801000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
+    dependencies: {}
