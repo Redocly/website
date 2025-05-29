@@ -22,10 +22,13 @@ Make sure you have the following:
 
 ## Localize base UI components
 
+Redocly provides default translations for the most popular languages.
+See [Supported default translations](../../../config/l10n.md#supported-default-translations) for a list of supported languages.
+
 Each label from the components that come bundled with the project has a predefined translation key assigned to it.
 See [l10n translation keys](../../reference/translation-keys.md) for a list of predefined translation keys available.
 
-To localize the base UI components:
+To customize default translations or add new translations for the base UI components:
 
 1. If you haven't already, add a `translations.yaml` file to each of your locale folders.
 1. Copy and paste the [l10n translation keys](../../reference/translation-keys.md) into each `translations.yaml` file in the locale folders.
