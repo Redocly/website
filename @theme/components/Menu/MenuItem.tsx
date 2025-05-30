@@ -31,6 +31,7 @@ export function MenuItem(props: React.PropsWithChildren<MenuItemProps>): JSX.Ele
   });
   const telemetry = useTelemetry();
   const isDrilldown = type === MenuItemType.DrillDown;
+  const isSeparator = type === MenuItemType.Separator;
   const isNested = type === MenuItemType.Group;
   const hasChevron = isNested && !isDrilldown;
   const isOperation = type === MenuItemType.Operation;
@@ -108,6 +109,7 @@ export function MenuItem(props: React.PropsWithChildren<MenuItemProps>): JSX.Ele
       deprecated={item.deprecated}
       depth={depth}
       withChevron={hasChevron}
+      isSeparator={isSeparator}
       onClick={handleOnClick}
       ref={labelRef}
       role={item.link ? 'none' : 'link'}
@@ -257,6 +259,7 @@ const MenuItemLabelWrapper = styled.li<{
   depth?: number;
   withChevron?: boolean;
   deprecated?: boolean;
+  isSeparator?: boolean;
 }>`
   display: flex;
   position: relative;
@@ -270,10 +273,11 @@ const MenuItemLabelWrapper = styled.li<{
   padding: var(--menu-item-label-padding);
   gap: var(--menu-item-label-gap);
 
-  padding-left: ${({ withChevron, depth }) =>
+  padding-left: ${({ withChevron, depth, isSeparator }) =>
     `calc(
       var(--menu-item-padding-horizontal) +
       ${!withChevron ? 'var(--menu-item-label-chevron-offset)' : '0px'} +
+      ${isSeparator ? 'var(--menu-item-separator-offest)' : '0px'} +
       ${depth ? 'var(--menu-item-nested-offset) * ' + depth : '0px'}
     )`};
 
