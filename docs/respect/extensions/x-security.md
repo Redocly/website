@@ -1,7 +1,7 @@
 # x-security extension
 
 Use the `x-security` extension to define authorization flows based on OpenAPI security schemes.
-[Respect](https://redocly.com/respect) automatically constructs the appropriate authorization headers, queries, or cookies based on your parameters.
+[Respect](https://redocly.com/respect) automatically constructs appropriate authorization headers, queries, or cookies based on your parameters.
 
 ## Configuration options
 
