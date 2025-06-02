@@ -94,4 +94,4 @@ Start testing your own APIs, or other APIs that you depend on, using Respect.
 
 **Remember that Respect sends real API requests**, so consider using a local development or staging version of an API for some types of testing.
 Use Respect to make sure that the real API has not drifted from the expected behavior described in its OpenAPI file.
-You can also override the server URL from the `sourceDescriptions` object with the `--server` flag.
+You can also override the server URL from the `sourceDescriptions` object with the `--server` option.
