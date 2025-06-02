@@ -184,7 +184,7 @@ workflows:
 
 - `schemeName`: Reference an existing OpenAPI security scheme.
   Use at the step level with `operationId` or `operationPath`.
-  Cannot be used with `x-operation`.
+  `schemeName` cannot be used with `x-operation`.
 - `scheme`: Define a security scheme inline.
   Use at any level without OpenAPI specification binding.
 
