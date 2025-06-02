@@ -19,8 +19,6 @@
   items:
     - page: extensions/x-operation.md
       label: x-operation extension
-    - page: extensions/x-server-url.md
-      label: x-serverUrl extension
     - page: extensions/x-security.md
       label: x-security extension
 - group: Commands
