@@ -22774,3 +22774,10 @@ reunite:
         - Added auto-merge failure reason on the Remote Content page.
       patch: []
     dependencies: {}
+  v2025-06-02.4:
+    timestamp: 1748874603000
+    changes:
+      minor: []
+      patch:
+        - Fixed issue preventing editing of `GitHub Remote Content`.
+    dependencies: {}
