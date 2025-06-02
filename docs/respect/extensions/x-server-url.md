@@ -51,6 +51,7 @@ Respect uses the specified `x-serverUrl` when calling API endpoints for that sou
 ## Resources
 
 - [x-operation](./x-operation.md) extension lets you describe one-off API calls.
+- [x-security](./x-security.md) extension lets you apply OpenAPI security schemes to a step request.
 - [Respect commands list](../commands/index.md).
 - Learn about [Arazzo](../../../learn/arazzo/what-is-arazzo.md).
 
