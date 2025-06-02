@@ -26,7 +26,7 @@ Adding a font link in the `<head>` element allows the font to download in parall
 This maintains good page performance because the download doesn't block the page's rendering.
 
 <details>
-  <summary>Learn more about the `<head>` tag</summary>
+  <summary>Learn more about the <code>&lt;head&gt;</code> tag</summary>
 
   The `<head>` tag contains metadata, links to
   scripts and stylesheets, and other information that is
