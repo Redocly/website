@@ -1,7 +1,3 @@
----
-rbac:
-  corporate-sso: read
----
 # x-operation extension
 
 `x-operation` enables you to specify a URL and HTTP method for an operation that is not described in the Arazzo `sourceDescriptions` section.
@@ -46,8 +42,6 @@ The `successCriteria` fields work in the same way as other operation types.
 
 ## Resources
 
-- [x-serverUrl](./x-server-url.md) extension sets the server to use for API calls to a source description.
 - [x-security](./x-security.md) extension lets you apply OpenAPI security schemes to a step request.
 - [Respect commands list](../commands/index.md).
 - Learn about [Arazzo](../../../learn/arazzo/what-is-arazzo.md).
-
