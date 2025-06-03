@@ -240,11 +240,12 @@ For conflicting headers (e.g., `Authorization`), the last processed scheme takes
 
 Store secrets in workflow inputs and reference them using `$inputs.<NAME>`:
 
-1. Define the secret input:
+1. Define an input parameter and use it inside values:
 
 ```yaml
 workflows:
   - workflowId: fetchProducts
+    # Define an input parameter used by this workflow.
     inputs:
       type: object
       properties:
@@ -258,6 +259,7 @@ workflows:
             type: http
             scheme: bearer
           values:
+            # Use the input parameter.
             token: $inputs.TOKEN
 ```
 
