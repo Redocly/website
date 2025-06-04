@@ -146,6 +146,19 @@ The following example shows how to fetch a token from an external API using an A
 ```ts
 import type { ApiFunctionsContext } from '@redocly/config';
 
+// to define type for process.env, you can use the following code:
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      API_KEY?: string;
+    }
+  }
+  
+  var process: {
+    env: NodeJS.ProcessEnv;
+  };
+}
+
 export default async function (request: Request, context: ApiFunctionsContext) {
   const apiKey = process.env.API_KEY; // [!code highlight]
   // get some token from the external API:
@@ -224,6 +237,14 @@ It includes user details, project configuration, and utilities for accessing req
 
 ---
 
+- `context.params`
+- object
+- Path parameters from the request, or `{}` if none exist.
+
+  For example, for path `/users/[userId]/projects/[projectId]` the params are: `{ userId: "123", projectId: "1" }`.
+
+---
+
 - `context.query`
 - object
 - Request query parameters, or `{}` if none exist.
@@ -237,14 +258,6 @@ It includes user details, project configuration, and utilities for accessing req
 - Cookies sent with the request, or `{}` if none are present.
 
   For example, `{ authToken: "secretToken" }`.
-
----
-
-- `context.params`
-- object
-- Path parameters from the request, or `{}` if none exist.
-
-  For example, for path `/users/[userId]/projects/[projectId]` the params are: `{ userId: "123", projectId: "1" }`.
 
 {% /table %}
 
