@@ -1,4 +1,62 @@
 '@redocly/realm':
+  0.122.0-next.10:
+    timestamp: 1748875273000
+    changes:
+      minor: []
+      patch:
+        - Fixed runtime crash in search plugin.
+        - Updated invitation handler to redirect users to the homepage if the invitation was already accepted.
+    dependencies: {}
+  0.122.0-next.9:
+    timestamp: 1748868422000
+    changes:
+      minor: []
+      patch:
+        - Improved AI Search and `llms.txt` chunk content.
+        - Fixed breadcrumbs appearing on pages not nested in the sidebar.
+    dependencies: {}
+  0.122.0-next.8:
+    timestamp: 1748617646000
+    changes:
+      minor: []
+      patch:
+        - Fixed performance issues when ejecting components.
+        - >-
+          Fixed usability of the `Security` chip by updating its appearance to improve clickability. Reduced visual clutter by grouping optional
+          scopes into a collapsed section.
+        - Fixed an issue where AI search failed to find information described in OpenAPI tags.
+        - Fixed 403 error when previewing RBAC-hidden pages in visual pull request review for projects using SSO.
+    dependencies:
+      '@redocly/theme': 0.54.0-next.7
+      '@redocly/openapi-docs': 3.10.0-next.8
+      '@redocly/asyncapi-docs': 0.3.0-next.8
+      '@redocly/graphql-docs': 0.11.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.7.0-next.8
+  0.122.0-next.7:
+    timestamp: 1748514888000
+    changes:
+      minor:
+        - >-
+          Renamed configuration option `catalog` to `catalogClassic` and theme component `Catalog` to `CatalogClassic`. Deprecated the previous
+          properties and components for future compatibility.
+      patch:
+        - Fixed search indexing to include tag attributes and partials.
+        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748015905`.
+        - Fixed property name conflict in frontmatter that caused UI issues, including broken logo images.
+        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
+        - Removed access to headers through the `{% $headers %}` tag in Markdoc to prevent unauthorized modifications.
+        - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
+        - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
+        - Updated `@redocly/openapi-core` dependency to `0.0.0-snapshot.1747918074`.
+        - Fixed redirect handling for complex preview URLs.
+        - Removed duplicate teams from `$rbac` variable.
+        - Fixed an issue where the search dialog remained open after selecting a result on the current page.
+    dependencies:
+      '@redocly/theme': 0.54.0-next.6
+      '@redocly/openapi-docs': 3.10.0-next.7
+      '@redocly/asyncapi-docs': 0.3.0-next.7
+      '@redocly/graphql-docs': 0.11.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.7.0-next.7
   0.122.0-next.6:
     timestamp: 1747928230000
     changes:
@@ -3059,6 +3117,61 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.122.0-next.10:
+    timestamp: 1748875273000
+    changes:
+      minor: []
+      patch:
+        - Fixed runtime crash in search plugin.
+        - Updated invitation handler to redirect users to the homepage if the invitation was already accepted.
+    dependencies: {}
+  0.122.0-next.9:
+    timestamp: 1748868422000
+    changes:
+      minor: []
+      patch:
+        - Improved AI Search and `llms.txt` chunk content.
+        - Fixed breadcrumbs appearing on pages not nested in the sidebar.
+    dependencies: {}
+  0.122.0-next.8:
+    timestamp: 1748617646000
+    changes:
+      minor: []
+      patch:
+        - Fixed performance issues when ejecting components.
+        - Fixed an issue where AI search failed to find information described in OpenAPI tags.
+        - Fixed 403 error when previewing RBAC-hidden pages in visual pull request review for projects using SSO.
+    dependencies:
+      '@redocly/theme': 0.54.0-next.7
+      '@redocly/openapi-docs': 3.10.0-next.8
+      '@redocly/asyncapi-docs': 0.3.0-next.8
+      '@redocly/graphql-docs': 0.11.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.7.0-next.8
+  0.122.0-next.7:
+    timestamp: 1748514888000
+    changes:
+      minor:
+        - >-
+          Renamed configuration option `catalog` to `catalogClassic` and theme component `Catalog` to `CatalogClassic`. Deprecated the previous
+          properties and components for future compatibility.
+      patch:
+        - Fixed search indexing to include tag attributes and partials.
+        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748015905`.
+        - Fixed property name conflict in frontmatter that caused UI issues, including broken logo images.
+        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
+        - Removed access to headers through the `{% $headers %}` tag in Markdoc to prevent unauthorized modifications.
+        - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
+        - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
+        - Updated `@redocly/openapi-core` dependency to `0.0.0-snapshot.1747918074`.
+        - Fixed redirect handling for complex preview URLs.
+        - Removed duplicate teams from `$rbac` variable.
+        - Fixed an issue where the search dialog remained open after selecting a result on the current page.
+    dependencies:
+      '@redocly/theme': 0.54.0-next.6
+      '@redocly/openapi-docs': 3.10.0-next.7
+      '@redocly/asyncapi-docs': 0.3.0-next.7
+      '@redocly/graphql-docs': 0.11.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.7.0-next.7
   0.122.0-next.6:
     timestamp: 1747928230000
     changes:
@@ -5459,6 +5572,57 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.122.0-next.10:
+    timestamp: 1748875273000
+    changes:
+      minor: []
+      patch:
+        - Updated invitation handler to redirect users to the homepage if the invitation was already accepted.
+    dependencies: {}
+  0.122.0-next.9:
+    timestamp: 1748868422000
+    changes:
+      minor: []
+      patch:
+        - Improved AI Search and `llms.txt` chunk content.
+        - Fixed breadcrumbs appearing on pages not nested in the sidebar.
+    dependencies: {}
+  0.122.0-next.8:
+    timestamp: 1748617646000
+    changes:
+      minor: []
+      patch:
+        - Fixed performance issues when ejecting components.
+        - Fixed an issue where AI search failed to find information described in OpenAPI tags.
+        - Fixed 403 error when previewing RBAC-hidden pages in visual pull request review for projects using SSO.
+    dependencies:
+      '@redocly/theme': 0.54.0-next.7
+      '@redocly/openapi-docs': 3.10.0-next.8
+      '@redocly/asyncapi-docs': 0.3.0-next.8
+      '@redocly/graphql-docs': 0.11.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.7.0-next.8
+  0.122.0-next.7:
+    timestamp: 1748514888000
+    changes:
+      minor: []
+      patch:
+        - Fixed search indexing to include tag attributes and partials.
+        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748015905`.
+        - Fixed property name conflict in frontmatter that caused UI issues, including broken logo images.
+        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
+        - Removed access to headers through the `{% $headers %}` tag in Markdoc to prevent unauthorized modifications.
+        - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
+        - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
+        - Updated `@redocly/openapi-core` dependency to `0.0.0-snapshot.1747918074`.
+        - Fixed redirect handling for complex preview URLs.
+        - Removed duplicate teams from `$rbac` variable.
+        - Fixed an issue where the search dialog remained open after selecting a result on the current page.
+    dependencies:
+      '@redocly/theme': 0.54.0-next.6
+      '@redocly/openapi-docs': 3.10.0-next.7
+      '@redocly/asyncapi-docs': 0.3.0-next.7
+      '@redocly/graphql-docs': 0.11.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.7.0-next.7
   0.122.0-next.6:
     timestamp: 1747928230000
     changes:
@@ -7868,6 +8032,56 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.122.0-next.10:
+    timestamp: 1748875273000
+    changes:
+      minor: []
+      patch:
+        - Fixed runtime crash in search plugin.
+        - Updated invitation handler to redirect users to the homepage if the invitation was already accepted.
+    dependencies: {}
+  0.122.0-next.9:
+    timestamp: 1748868422000
+    changes:
+      minor: []
+      patch:
+        - Improved AI Search and `llms.txt` chunk content.
+        - Fixed breadcrumbs appearing on pages not nested in the sidebar.
+    dependencies: {}
+  0.122.0-next.8:
+    timestamp: 1748617646000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed usability of the `Security` chip by updating its appearance to improve clickability. Reduced visual clutter by grouping optional
+          scopes into a collapsed section.
+        - Fixed 403 error when previewing RBAC-hidden pages in visual pull request review for projects using SSO.
+    dependencies:
+      '@redocly/theme': 0.54.0-next.7
+      '@redocly/openapi-docs': 3.10.0-next.8
+      '@redocly/asyncapi-docs': 0.3.0-next.8
+      '@redocly/graphql-docs': 0.11.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.7.0-next.8
+  0.122.0-next.7:
+    timestamp: 1748514888000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748015905`.
+        - Fixed property name conflict in frontmatter that caused UI issues, including broken logo images.
+        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
+        - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
+        - Updated `@redocly/openapi-core` dependency to `0.0.0-snapshot.1747918074`.
+        - Fixed redirect handling for complex preview URLs.
+        - Removed duplicate teams from `$rbac` variable.
+        - Fixed an issue where the search dialog remained open after selecting a result on the current page.
+    dependencies:
+      '@redocly/theme': 0.54.0-next.6
+      '@redocly/openapi-docs': 3.10.0-next.7
+      '@redocly/asyncapi-docs': 0.3.0-next.7
+      '@redocly/graphql-docs': 0.11.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.7.0-next.7
   0.122.0-next.6:
     timestamp: 1747928230000
     changes:
@@ -10265,6 +10479,28 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.54.0-next.7:
+    timestamp: 1748617646000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue with layout shift in the catalog.
+        - >-
+          Fixed usability of the `Security` chip by updating its appearance to improve clickability. Reduced visual clutter by grouping optional
+          scopes into a collapsed section.
+    dependencies: {}
+  0.54.0-next.6:
+    timestamp: 1748514888000
+    changes:
+      minor:
+        - >-
+          Renamed configuration option `catalog` to `catalogClassic` and theme component `Catalog` to `CatalogClassic`. Deprecated the previous
+          properties and components for future compatibility.
+      patch:
+        - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
+        - Fixed an accessibility issue in `ColorModeSwitcher` by adding an `aria-label`.
+        - Fixed an issue where the search dialog remained open after selecting a result on the current page.
+    dependencies: {}
   0.54.0-next.5:
     timestamp: 1747928230000
     changes:
@@ -12025,6 +12261,23 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.10.0-next.8:
+    timestamp: 1748617646000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed usability of the `Security` chip by updating its appearance to improve clickability. Reduced visual clutter by grouping optional
+          scopes into a collapsed section.
+    dependencies:
+      '@redocly/replay': 0.13.0-next.7
+  3.10.0-next.7:
+    timestamp: 1748514888000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.13.0-next.6
   3.10.0-next.6:
     timestamp: 1747928230000
     changes:
@@ -13673,6 +13926,21 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.26.0:
+    timestamp: 1749026344000
+    changes:
+      minor:
+        - Removed `headers` from `ApiFunctionsContext` type.
+      patch: []
+    dependencies: {}
+  0.25.0:
+    timestamp: 1748503879000
+    changes:
+      minor:
+        - Added `catalogClassic` property and deprecated `catalog` property.
+      patch:
+        - Added `llmstxt` option under `seo` to configure `llms.txt` file generation.
+    dependencies: {}
   0.24.1:
     timestamp: 1745314417000
     changes:
@@ -14635,6 +14903,22 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.2.15:
+    timestamp: 1749026344000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
+    dependencies: {}
+  0.2.14:
+    timestamp: 1748503879000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` dependency to pre-release v2.
+        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748015905`.
+        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1747918074`.
+    dependencies: {}
   0.2.13:
     timestamp: 1746198286000
     changes:
@@ -14902,6 +15186,48 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.5.0-next.10:
+    timestamp: 1748875273000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.122.0-next.10
+      '@redocly/redoc': 0.122.0-next.10
+      '@redocly/redoc-reef': 0.122.0-next.10
+      '@redocly/redoc-revel': 0.122.0-next.10
+  1.5.0-next.9:
+    timestamp: 1748868422000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.122.0-next.9
+      '@redocly/redoc': 0.122.0-next.9
+      '@redocly/redoc-reef': 0.122.0-next.9
+      '@redocly/redoc-revel': 0.122.0-next.9
+  1.5.0-next.8:
+    timestamp: 1748617646000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.122.0-next.8
+      '@redocly/redoc-reef': 0.122.0-next.8
+      '@redocly/redoc-revel': 0.122.0-next.8
+      '@redocly/theme': 0.54.0-next.7
+      '@redocly/redoc': 0.122.0-next.8
+  1.5.0-next.7:
+    timestamp: 1748514888000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.122.0-next.7
+      '@redocly/redoc-reef': 0.122.0-next.7
+      '@redocly/redoc-revel': 0.122.0-next.7
+      '@redocly/redoc': 0.122.0-next.7
+      '@redocly/theme': 0.54.0-next.6
   1.5.0-next.6:
     timestamp: 1747928230000
     changes:
@@ -17838,6 +18164,20 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.7.0-next.8:
+    timestamp: 1748617646000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.10.0-next.8
+  0.7.0-next.7:
+    timestamp: 1748514888000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.10.0-next.7
   0.7.0-next.6:
     timestamp: 1747928230000
     changes:
@@ -17881,6 +18221,13 @@
         - Fixed an issue in the API functions plugin where route static data was resolved incorrectly, leading to failed requests.
     dependencies:
       '@redocly/openapi-docs': 3.9.1
+  0.7.0-next.1:
+    timestamp: 1746537907000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.10.0-next.1
   0.7.0-next.0:
     timestamp: 1746516682000
     changes:
@@ -19490,6 +19837,21 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.13.0-next.7:
+    timestamp: 1748617646000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.54.0-next.7
+  0.13.0-next.6:
+    timestamp: 1748514888000
+    changes:
+      minor:
+        - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.54.0-next.6
   0.13.0-next.5:
     timestamp: 1747928230000
     changes:
@@ -20306,6 +20668,20 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.5.0-next.7:
+    timestamp: 1748617646000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.54.0-next.7
+  0.5.0-next.6:
+    timestamp: 1748514888000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.54.0-next.6
   0.5.0-next.5:
     timestamp: 1747928230000
     changes:
@@ -22390,4 +22766,32 @@ reunite:
       minor: []
       patch:
         - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748015905`.
+    dependencies: {}
+  v2025-05-29.1:
+    timestamp: 1748506744000
+    changes:
+      minor:
+        - Updated dark theme colors to improve readability and contrast.
+      patch: []
+    dependencies: {}
+  v2025-05-29.2:
+    timestamp: 1748520801000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
+    dependencies: {}
+  v2025-06-02.3:
+    timestamp: 1748868941000
+    changes:
+      minor:
+        - Added auto-merge failure reason on the Remote Content page.
+      patch: []
+    dependencies: {}
+  v2025-06-02.4:
+    timestamp: 1748874603000
+    changes:
+      minor: []
+      patch:
+        - Fixed issue preventing editing of `GitHub Remote Content`.
     dependencies: {}
