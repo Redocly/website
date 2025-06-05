@@ -318,3 +318,4 @@ export const frontmatter = {
 ## Resources
 
 - Use [front matter](./front-matter-config.md) to configure seo on individual pages.
+- Explore other [configuration options](./index.md) for your project.

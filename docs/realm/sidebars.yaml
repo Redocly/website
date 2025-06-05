@@ -81,6 +81,7 @@
           label: Add multiple products
     - separator: Advanced customization
     - page: extend/how-to/create-react-page.md
+    - page: author/reference/markdoc-variables.md
     - page: extend/tutorials/build-markdoc-tags.md
     - page: extend/tutorials/build-custom-function.md
     - page: extend/tutorials/import-npm-library.md
