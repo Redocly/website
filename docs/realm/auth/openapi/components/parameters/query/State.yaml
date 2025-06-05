@@ -1,0 +1,7 @@
+name: state
+in: query
+required: true
+description: State passed to SSO login flow.
+schema:
+  type: string
+example: eyBsb2dpbkNoYWxsZW5nZTogJ2YyNTAyY2I4LWU0NzMtNDhkZS05MmE1LTM0YTZlY2YzY2ExZCcgfQ==

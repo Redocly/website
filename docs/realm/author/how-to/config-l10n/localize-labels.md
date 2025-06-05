@@ -47,7 +47,7 @@ The user-defined UI elements that use translation keys are:
 * [breadcrumbs](../../../config/breadcrumbs.md)
 * [search bar](../../../config/search.md)
 * [footer](../../../config/footer.md)
-* [catalog classic](../../../config/catalog-classic.md)
+* [catalog legacy](../../../config/catalog-legacy.md)
 * [user menu](../../../config/user-menu.md)
 * [sidebars](../../reference/sidebars.md)
 
@@ -140,7 +140,7 @@ The following example is a sidebar with translation keys added to each `group`, 
       labelTranslationKey: sidebar.installation
 ```
 
-### Localize user-defined UI elements
+### Add translations for user-defined UI elements
 
 1. If you haven't already, add a `translations.yaml` file to each of your locale folders.
 1. Find the options that end with `TranslationKey` in your project's `redocly.yaml` and `sidebars.yaml` files, such as the following options: `groupTranslationKey`, `labelTranslationKey` `titleTranslationKey` and `descriptionTranslationKey`, `separatorTranslationKey` and `missingCategoryNameTranslationKey`.

@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Auth
+  security: []
+  summary: Callback email verification
+  operationId: completeEmailVerification
+  requestBody:
+    content:
+      'application/json':
+        schema:
+          description: Payload to email verification.
+          $ref: '../../components/schemas/identities/verification/CompleteVerification.yaml'
+  responses:
+    '200':
+      description: Identity email address verified.
+      content:
+        application/json:
+          schema:
+            description: Recovery code result with Kratos identity token.
+            $ref: '../../components/schemas/identities/verification/VerificationResult.yaml'
+    '400':
+      description: Invalid email verification code provided.
+      content:
+        application/json:
+          schema:
+            description: Error containing a message about a recovery code validation error.
+            $ref: '../../components/schemas/errors/BadRequestApiError.yaml'

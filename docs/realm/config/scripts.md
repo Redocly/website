@@ -152,8 +152,7 @@ The example above will produce following script tags:
 </body>
 ```
 
-## Related options
-
-- [links](links.md)
-
 ## Resources
+
+- [Configure links](links.md)
+- Explore other [configuration options](./index.md) for your project.

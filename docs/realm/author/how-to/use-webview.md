@@ -1,20 +1,16 @@
 # Use the Webview
 
-The Webview pane in the Editor displays a preview for each branch.
+The Webview preview pane in the Editor displays a preview for each branch.
 Any time you make a change in the Editor, the change is reflected in the Webview.
 You can disable auto-sync, view different screen sizes, reload the page or restart, navigate the pages, and close the Webview to expand the Editor.
 
 ![Webview buttons](./images/webview-buttons.png)
 
-  {% admonition type="info" %}
-    There is a difference between the **Webview** and the **[preview deployment](./use-previews.md)**. The Webview displays uncommited changes while the preview deployment triggers when you make a commit to a branch with an open pull request.
-  {% /admonition %}
-
 ## Before you begin
 
 Make sure you have the following before you begin:
 
-- At least a member role in your organization in Reunite.
+- at least a member role in your organization in Reunite
 - If you have RBAC configured, you need to log in to the interface.
   You do not need to use actual credentials.
 
@@ -30,7 +26,7 @@ You can select from the following preset sizes:
 - Desktop (1400x800)
 - Desktop HD (1920x1080)
 
-You can also enter specific length and width pixel sizes and click and drag the sides of the Webview to expand or contract the sides.
+You can also enter specific length and width pixel sizes and click and drag the sides of the preview to expand or contract the sides.
 
 To see a full screen version in a new tab, click the **Open in a new window** icon.
 
@@ -46,7 +42,7 @@ Click the **More actions** icon to either do a full restart or disable auto-sync
 
 To completely restart the server, click the **More actions** icon and select **Full Restart**.
 
-When you update the `package.json` file in the Editor, the Webview re-installs dependencies and restarts automatically.
+When you update the `package.json` file in the Editor, the Webview re-installs dependencies and restarts the preview automatically.
 
 ### Disable auto-sync
 
@@ -80,7 +76,7 @@ To open it, click the toggle again.
 ## Access build logs in the Webview tab
 
 You can monitor and manage Webview logs using the **Logs** panel at the bottom of the screen.
-Logs automatically appear when changes are made to the project or when the Webview generates new output.
+Logs automatically appear when changes are made to the project or when the preview generates new output.
 The **Logs** panel automatically scrolls to show the most recent logs.
 ![Logs Panel](./images/webview-logs-panel.png)
 
@@ -94,8 +90,3 @@ In the **Logs** panel you can:
 
 - **Copy logs**: copy all logs to clipboard
 ![Copy logs button](./images/webview-logs-copy-button.png)
-
-## Related how-tos
-
-* [Use the editor](./use-editor.md)
-* [Use previews](./use-previews.md)

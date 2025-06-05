@@ -234,7 +234,9 @@ navbar:
 
 ## Resources
 
-- [Footer](./footer.md) - Configuration reference for the footer.
-- [Logo](./logo.md) - Configuration reference for the logo that appears in the navbar.
-- [Use front matter](./front-matter-config.md) to show or hide the navbar on individual pages.
-- [Localization](./l10n.md) - Configure navbar labels for multiple languages.
+- [footer](./footer.md) - Configuration reference for the footer.
+- [logo](./logo.md) - Configuration reference for the logo that appears in the navbar.
+- [localization](./l10n.md) - Configure navbar labels for multiple languages.
+- Use [front matter](./front-matter-config.md) to show or hide the navbar on individual pages.
+- Explore other [configuration options](./index.md) for your project.
+

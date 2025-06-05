@@ -1,0 +1,69 @@
+openapi: 3.1.0
+x-pagination: none
+servers:
+  - url: https://{host}
+    variables:
+      host:
+        default: auth.blueharvest.cloud
+        description: Server host.
+    description: Production authorization server.
+info:
+  version: '1.0'
+  title: Redocly Auth
+  termsOfService: https://redocly.com/subscription-agreement
+  contact:
+    name: API Support
+    email: team@redocly.com
+    url: https://github.com/Redocly/redocly
+  license:
+    name: Redocly
+    url: https://redocly.com/subscription-agreement
+tags:
+  - name: health
+    description: Endpoint for checking service health.
+  - name: Auth
+    description: Operations related to authentication.
+  - name: Device Login
+    description: Operations related to device authentication UI.
+paths:
+  # sorted by tags
+  # ---------------------------
+  # Health
+  # TODO: Add health check after extracting auth to separate docker container
+  # /health:
+  #   $ref: './paths/health/health.yaml'
+  # /health/self:
+  #   $ref: './paths/health/health-self.yaml'
+  # ---------------------------
+  # Auth
+  /sso:
+    $ref: './paths/auth/login.yaml'
+  /sso/self/callback:
+    $ref: './paths/auth/self-callback.yaml'
+  /sso/saml/callback:
+    $ref: './paths/auth/saml-callback.yaml'
+  /sso/oidc:
+    $ref: './paths/auth/oidc.yaml'
+  /api/identities:
+    $ref: './paths/identities/identity.yaml'
+  /api/identities/recovery:
+    $ref: './paths/identities/recovery-email.yaml'
+  /api/identities/recovery/code:
+    $ref: './paths/identities/recovery-code.yaml'
+  /api/identities/recovery/password:
+    $ref: './paths/identities/recovery-password.yaml'
+  /api/identities/verify:
+    $ref: './paths/identities/resend-verification.yaml'
+  /api/identities/verify/code:
+    $ref: './paths/identities/complete-verification.yaml'
+  /api/identities/link:
+    $ref: './paths/identities/link.yaml'
+  /api/identities/resend-link:
+    $ref: './paths/identities/resend-link.yaml'
+  /api/device-logins:
+    $ref: './paths/device-login/logins.yaml'
+
+components:
+  schemas:
+    ConflictApiError: # this is not used anywhere, just in generated sdk code
+      $ref: ./components/schemas/errors/ConflictApiError.yaml

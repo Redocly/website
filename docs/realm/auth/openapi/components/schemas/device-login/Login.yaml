@@ -1,0 +1,9 @@
+type: object
+properties:
+  userCode:
+    type: string
+    description: User code provided when initializing device authentication flow.
+    example: userCode123
+
+required:
+  - userCode

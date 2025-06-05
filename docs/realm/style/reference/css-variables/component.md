@@ -397,55 +397,55 @@
 
 </details>
 
-## Catalog classic
+## Catalog
 
 <details>
-<summary>Catalog classic page</summary>
+<summary>Catalog page</summary>
 
 ```css
---catalog-classic-page-padding-vertical: var(--spacing-lg);
---catalog-classic-page-padding-horizontal: var(--spacing-xl);
---catalog-classic-page-padding: var(--catalog-classic-page-padding-vertical) var(--catalog-classic-page-padding-horizontal);
+--catalog-legacy-page-padding-vertical: var(--spacing-lg);
+--catalog-legacy-page-padding-horizontal: var(--spacing-xl);
+--catalog-legacy-page-padding: var(--catalog-legacy-page-padding-vertical) var(--catalog-legacy-page-padding-horizontal);
 
---catalog-classic-filter-padding-vertical-mobile: 0;
---catalog-classic-filter-padding-horizontal-mobile: var(--spacing-base);
+--catalog-legacy-filter-padding-vertical-mobile: 0;
+--catalog-legacy-filter-padding-horizontal-mobile: var(--spacing-base);
 
---catalog-classic-heading-margin: 0 0 var(--spacing-xl) 0;
+--catalog-legacy-heading-margin: 0 0 var(--spacing-xl) 0;
 
---catalog-classic-title-text-color: var(--text-color-primary);
---catalog-classic-title-font-weight: var(--font-weight-bold);
---catalog-classic-title-font-size: var(--font-size-heading-3);
---catalog-classic-title-margin: 0 0 var(--spacing-sm) 0;
+--catalog-legacy-title-text-color: var(--text-color-primary);
+--catalog-legacy-title-font-weight: var(--font-weight-bold);
+--catalog-legacy-title-font-size: var(--font-size-heading-3);
+--catalog-legacy-title-margin: 0 0 var(--spacing-sm) 0;
 
---catalog-classic-description-text-color: var(--text-color-secondary);
---catalog-classic-description-font-weight: var(--font-weight-regular);
---catalog-classic-description-font-size: var(--font-size-base);
---catalog-classic-description-margin: 0 0 var(--spacing-sm) 0;
+--catalog-legacy-description-text-color: var(--text-color-secondary);
+--catalog-legacy-description-font-weight: var(--font-weight-regular);
+--catalog-legacy-description-font-size: var(--font-size-base);
+--catalog-legacy-description-margin: 0 0 var(--spacing-sm) 0;
 
---catalog-classic-separator-color: var(--text-color-secondary);
---catalog-classic-separator-font-size: var(--font-size-base);
---catalog-classic-separator-font-weight: var(--font-weight-regular);
---catalog-classic-separator-border-color: var(--border-color-secondary);
---catalog-classic-separator-margin: 0 0 var(--spacing-base) 0;
---catalog-classic-separator-padding: var(--spacing-xxs) 0 0 0;
---catalog-classic-separator-label-margin: 0 var(--spacing-xs);
+--catalog-legacy-separator-color: var(--text-color-secondary);
+--catalog-legacy-separator-font-size: var(--font-size-base);
+--catalog-legacy-separator-font-weight: var(--font-weight-regular);
+--catalog-legacy-separator-border-color: var(--border-color-secondary);
+--catalog-legacy-separator-margin: 0 0 var(--spacing-base) 0;
+--catalog-legacy-separator-padding: var(--spacing-xxs) 0 0 0;
+--catalog-legacy-separator-label-margin: 0 var(--spacing-xs);
 
---catalog-classic-highlight-bg-color: none;
---catalog-classic-highlight-text-color: var(--color-info-base);
+--catalog-legacy-highlight-bg-color: none;
+--catalog-legacy-highlight-text-color: var(--color-info-base);
 
---catalog-classic-actions-gap: var(--spacing-xs);
---catalog-classic-actions-padding-vertical: var(--spacing-xs);
---catalog-classic-actions-padding-horizontal: 5%;
---catalog-classic-actions-min-height: 40px;
---catalog-classic-actions-bg-color: var(--bg-color-tonal);
+--catalog-legacy-actions-gap: var(--spacing-xs);
+--catalog-legacy-actions-padding-vertical: var(--spacing-xs);
+--catalog-legacy-actions-padding-horizontal: 5%;
+--catalog-legacy-actions-min-height: 40px;
+--catalog-legacy-actions-bg-color: var(--bg-color-tonal);
 
---catalog-classic-page-badge-border-radius: var(--border-radius);
---catalog-classic-page-badge-padding: 0 var(--spacing-xs);
---catalog-classic-page-badge-font-size: var(--font-size-base);
---catalog-classic-page-badge-line-height: var(--line-height-base);
+--catalog-legacy-page-badge-border-radius: var(--border-radius);
+--catalog-legacy-page-badge-padding: 0 var(--spacing-xs);
+--catalog-legacy-page-badge-font-size: var(--font-size-base);
+--catalog-legacy-page-badge-line-height: var(--line-height-base);
 
---catalog-classic-page-badge-dot-size: 6px;
---catalog-classic-page-badge-dot-border-color: #ffffff;
+--catalog-legacy-page-badge-dot-size: 6px;
+--catalog-legacy-page-badge-dot-border-color: #ffffff;
 ```
 
 </details>
@@ -453,40 +453,40 @@
 <summary>Catalog card</summary>
 
 ```css
---catalog-classic-card-min-height: 194px;
---catalog-classic-card-min-width: 260px;
---catalog-classic-card-padding-vertical: var(--spacing-base);
---catalog-classic-card-padding-horizontal: var(--spacing-md);
---catalog-classic-card-gap: var(--spacing-sm);
---catalog-classic-card-text-color: var(--text-color-secondary);
---catalog-classic-card-font-size: var(--font-size-base);
---catalog-classic-card-font-weight: var(--font-weight-regular);
---catalog-classic-card-bg-color: var(--layer-color);
---catalog-classic-card-border-color: var(--border-color-secondary);
---catalog-classic-card-border-width: var(--border-width);
---catalog-classic-card-border-style: var(--border-style);
---catalog-classic-card-border-color-hover: var(--border-color-primary);
---catalog-classic-card-border-radius: var(--border-radius-xxl);
---catalog-classic-cards-group-margin: 0 0 var(--spacing-base) 0;
---catalog-classic-cards-group-gap: var(--spacing-xl)
+--catalog-legacy-card-min-height: 194px;
+--catalog-legacy-card-min-width: 260px;
+--catalog-legacy-card-padding-vertical: var(--spacing-base);
+--catalog-legacy-card-padding-horizontal: var(--spacing-md);
+--catalog-legacy-card-gap: var(--spacing-sm);
+--catalog-legacy-card-text-color: var(--text-color-secondary);
+--catalog-legacy-card-font-size: var(--font-size-base);
+--catalog-legacy-card-font-weight: var(--font-weight-regular);
+--catalog-legacy-card-bg-color: var(--layer-color);
+--catalog-legacy-card-border-color: var(--border-color-secondary);
+--catalog-legacy-card-border-width: var(--border-width);
+--catalog-legacy-card-border-style: var(--border-style);
+--catalog-legacy-card-border-color-hover: var(--border-color-primary);
+--catalog-legacy-card-border-radius: var(--border-radius-xxl);
+--catalog-legacy-cards-group-margin: 0 0 var(--spacing-base) 0;
+--catalog-legacy-cards-group-gap: var(--spacing-xl)
 
---catalog-classic-card-title-color: var(--text-color-primary);
---catalog-classic-card-title-min-height: var(--spacing-xxl);
---catalog-classic-card-title-font-size: var(--font-size-lg);
---catalog-classic-card-title-font-weight: var(--font-weight-bold);
---catalog-classic-card-title-line-height: var(--line-height-lg);
---catalog-classic-card-title-line-clamp: 2;
+--catalog-legacy-card-title-color: var(--text-color-primary);
+--catalog-legacy-card-title-min-height: var(--spacing-xxl);
+--catalog-legacy-card-title-font-size: var(--font-size-lg);
+--catalog-legacy-card-title-font-weight: var(--font-weight-bold);
+--catalog-legacy-card-title-line-height: var(--line-height-lg);
+--catalog-legacy-card-title-line-clamp: 2;
 
---catalog-classic-card-description-line-clamp: 3;
---catalog-classic-card-description-color: var(--text-color-secondary);
---catalog-classic-card-description-font-size: var(--font-size-base);
---catalog-classic-card-description-line-height: var(--line-height-base);
---catalog-classic-card-description-font-weight: var(--font-weight-regular);
- --catalog-classic-card-description-height: 62px;
+--catalog-legacy-card-description-line-clamp: 3;
+--catalog-legacy-card-description-color: var(--text-color-secondary);
+--catalog-legacy-card-description-font-size: var(--font-size-base);
+--catalog-legacy-card-description-line-height: var(--line-height-base);
+--catalog-legacy-card-description-font-weight: var(--font-weight-regular);
+ --catalog-legacy-card-description-height: 62px;
 
---catalog-classic-card-content-gap: var(--spacing-xxs);
+--catalog-legacy-card-content-gap: var(--spacing-xxs);
 
---catalog-classic-card-tag-bg: transparent;
+--catalog-legacy-card-tag-bg: transparent;
 ```
 
 </details>
@@ -761,7 +761,7 @@
 
 ```css
 --filter-popover-bg-color: var(--bg-color);
---filter-popover-header-padding: var(--catalog-classic-filter-padding-vertical-mobile) var(--catalog-classic-filter-padding-horizontal-mobile);
+--filter-popover-header-padding: var(--catalog-legacy-filter-padding-vertical-mobile) var(--catalog-legacy-filter-padding-horizontal-mobile);
 --filter-popover-header-border-color: var(--border-color-secondary);
 --filter-popover-header-bg-color: var(--navbar-bg-color);
 --filter-popover-header-label-color: var(--navbar-text-color);

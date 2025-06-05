@@ -148,43 +148,6 @@ The following example file structure is for a Redocly project that includes thre
 ```
 {% /tab %}
 
-{% tab label="Multiple products" %}
-
-```treeview
-.
-├── @theme/                 # Theme customizations and custom components
-│   ├── layouts/
-│   ├── markdoc/            # Markdoc configuration
-│   │   ├── components.tsx  # Markdoc custom components
-│   │   └── schema.ts       # Markdoc custom schema
-│   └── styles.css          # Custom global CSS
-├── _partials/              # Reusable Markdoc partials
-├── products/               # Guides
-│   ├── product-1/          # Product 1
-|   |   ├── apis/           # The nested project structure can use any content structure
-|   |   ├── concepts/
-|   |   ├── how-tos/
-|   |   ├── tutorials/
-|   |   ├── index.md
-|   |   └── sidebars.yaml
-│   ├── product-2/          # Product 2
-|   |   ├── apis/
-│   │   ├── concepts/
-│   │   ├── how-tos/
-│   │   ├── tutorials/
-│   │   ├── index.md
-│   │   └── sidebars.yaml
-├── images/                 # Various shared images
-│   ├── favicon.png
-│   └── header-image.png
-├── static/                 # Static assets copied directly to build output
-│   └── robots.txt
-├── index.page.tsx          # Custom React component for the landing page
-├── package.json            # Node.js project manifest
-└── redocly.yaml            # Main Redocly configuration file
-```
-{% /tab %}
-
 {% tab label="Minimal" %}
 
 ```treeview
@@ -273,13 +236,6 @@ Redocly supports versioned content by using a special folder structure.
 
 Folders prefixed with `@` (e.g., `@v1`, `@v2`) are treated as separate content versions.
 For more information, see [Add versioned content](../how-to/versions.md) how-to.
-
-## Multi-product
-
-You can include multiple products in your project that users can switch between using a product picker in the navbar.
-A product can be any set of content you want to separate from other documentation.
-
-For more information, see [Multiple products](../how-to/multiple-products.md).
 
 ## Customization
 

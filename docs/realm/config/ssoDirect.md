@@ -1,4 +1,6 @@
 ---
+rbac:
+  Employee: read
 products:
   - Redoc
   - Revel
@@ -11,11 +13,6 @@ plans:
 # `ssoDirect`
 
 Control identity and access with the `ssoDirect` configuration option. Allows more customization than [sso](./sso.md).
-
-{% admonition type="warning" name="Enterprise+" %}
-Available with Enterprise+.
-[Contact us](https://redocly.com/contact-us) to upgrade or learn more.
-{% /admonition %}
 
 ## Options
 

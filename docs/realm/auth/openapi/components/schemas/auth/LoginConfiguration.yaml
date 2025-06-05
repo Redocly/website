@@ -1,0 +1,48 @@
+type: object
+properties:
+  loginChallenge:
+    description: Login flow identifier.
+    type: string
+    format: uuid
+    example: b1e792f4-97bb-41e5-ba85-e946e04fa29f
+  loginHint:
+    description: Hint for user email.
+    type: string
+    format: email
+  organizationId:
+    description: Organization identifier.
+    type: string
+    example: my-org
+  allowSelf:
+    description: Indicates whether user is allowed to use an internal identity provider.
+    type: boolean
+    example: true
+  federateLogins:
+    description: List of available federated logins for an organization.
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          description: External identity provider ID.
+          type: string
+          format: ulid
+          example: idp_01h79xgns385r1ng24gvcj4zv2
+        name:
+          description: External identity provider name.
+          type: string
+          example: SSO
+        redirectUrl:
+          description: Identity provider sign on URL.
+          type: string
+          format: url
+  invite:
+    type: object
+    description: Login/registration related invite if the login flow initiated using the invitation process.
+    $ref: './Invite.yaml'
+    
+
+required:
+  - loginChallenge
+  - allowSelf
+  - federateLogins

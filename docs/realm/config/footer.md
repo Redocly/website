@@ -68,7 +68,7 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
 - groupTranslationKey
 - string
-- Specifies the translation key for the column name used for [localization](../author/how-to/config-l10n/localize-labels.md#navbar-and-footer-labels).
+- Specifies the translation key for the column name used for [localization](../author/how-to/config-l10n/localize-labels.md#localize-user-defined-ui-elements).
 
 ---
 
@@ -202,7 +202,8 @@ By grouping the links, users can quickly locate the section and content they are
 
 ## Related resources
 
-- [Navbar](navbar.md) - Configuration reference for the navigation bar.
+- [Configure navbar](./navbar.md) - Configuration reference for the navigation bar.
 - [Sidebar configuration](../author/reference/sidebars.md) - Configuration reference for the sidebar.
 - [Add custom CSS styles](../style/how-to/customize-styles.md) - Add custom styling that can be applied to your footer.
 - Use [front matter](./front-matter-config.md) to show or hide the footer on individual pages.
+- Explore other [configuration options](./index.md) for your project.

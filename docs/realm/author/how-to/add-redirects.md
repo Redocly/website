@@ -4,8 +4,8 @@ Redocly supports two ways of configuring redirects:
 
 - In the `redocly.yaml` [config file](#configure-redirects-in-global-config-file), specifying source and destination.
   This approach is useful for maintaining lists of redirects after site or section migrations.
-- In the [front matter](#configure-redirects-in-front-matter) of an individual page.
-  Use the configuration in the front matter to preserve existing bookmarks by pointing multiple old URLs to the current location of the content.
+- In [a separate file](#manage-the-redirects-list-in-a-separate-file) of an individual page.
+  Place the redirects in a separate YAML file (for example, `redirects.yaml`) file to make long lists of redirects more manageable.
 
 Where redirects are configured in both locations, the front matter configuration takes priority.
 
@@ -24,22 +24,6 @@ redirects:
 
 The keys are the source absolute paths. Each one should begin with a `/`.
 Specify a `to` value for where to redirect to; you can optionally include a `type` field to set a custom status code.
-
-## Configure redirects in front matter
-
-Redirects to the current page can be configured in the front matter.
-The `to` field is assumed to be the current page, so you only need to specify the URLs that should point to the current page, with an empty object.
-An example of redirecting two other pages to the current page is as follows:
-
-```yaml
----
-redirects:
-  '/reference/settings-list/': {}
-  '/reference/advanced/settings/': {}
----
-```
-
-You can set a `type` field if you need a specific HTTP status code response, but the default is 301 and is usually the correct value to use.
 
 ## Redirect strategies
 
@@ -120,3 +104,7 @@ redirects:
 ```
 
 The redirects are now included in the project configuration.
+
+## Resources
+
+- [Add links](./links.md) on project pages.

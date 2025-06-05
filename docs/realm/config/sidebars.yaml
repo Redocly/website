@@ -26,8 +26,8 @@
       label: asyncapi
     - page: ./breadcrumbs.md
       label: breadcrumbs
-    - page: ./catalog-classic.md
-      label: catalogClassic
+    - page: ./catalog-legacy.md
+      label: catalogLegacy
     - page: ./code-snippet.md
       label: codeSnippet
     - page: ./color-mode.md

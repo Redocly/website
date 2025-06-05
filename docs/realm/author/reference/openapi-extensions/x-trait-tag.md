@@ -40,7 +40,7 @@ tags:
   - name: Collection
     description: |
       All collections are returned with the data in a field named `payload`, using JSON format.
-      Use the `page` query parameter to advance between pages (default value is 1).
+      Use the `page` query parameter to advance bewteen pages (default value is 1).
     x-traitTag: true 
 ```
 

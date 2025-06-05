@@ -1,0 +1,61 @@
+type: object
+properties:
+  code:
+    description: Invite code.
+    type: string
+    format: uuid
+    readOnly: true
+  email:
+    description: Email of invited user.
+    type: string
+    format: email
+    example: john.smith@example.com
+    readOnly: true
+  expiredAt:
+    description: Expiration date.
+    type: [string, 'null']
+    format: date-time
+    readOnly: true
+  organization:
+    type: object
+    description: Organization that user is invited to.
+    readOnly: true
+    properties:
+      logo:
+        description: Organization logo.
+        type: [string, 'null']
+        example: 'data:image/png;base64,...'
+      name:
+        description: Organization name.
+        type: string
+        example: Test organization
+    required:
+      - logo
+      - name
+  invitedBy:
+    type: object
+    description: User who created and sent the invite.
+    readOnly: true
+    properties:
+      firstName:
+        description: User first name.
+        type: [string, 'null']
+        example: John
+      lastName:
+        description: User last name.
+        type: [string, 'null']
+        example: Smith
+      name:
+        description: User display name.
+        type: string
+        example: john.smith
+    required:
+      - firstName
+      - lastName
+      - name
+required:
+  - code
+  - email
+  - expiredAt
+  - organization
+  - invitedBy

@@ -109,13 +109,12 @@ info:
 ```
 
 Alternatively, you can use the `metadataGlobs` property in the `redocly.yaml` configuration file to apply facets to files using a glob pattern, for example:
-```yaml {% title="redocly.yaml" %}
+``` {% title="redocly.yaml" %}
 metadataGlobs:
   'museum/**':
     redocly_category: Museum
   'payments/**':
     redocly_category: Payments
-```
 
 ## Group facet
 

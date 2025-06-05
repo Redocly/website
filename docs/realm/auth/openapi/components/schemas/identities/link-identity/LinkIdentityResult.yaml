@@ -1,0 +1,8 @@
+type: object
+required:
+  - continueWith
+properties:
+  continueWith:
+    description: Redirect url to continue authentication flow.
+    type: string
+    example: /session/accept?token=

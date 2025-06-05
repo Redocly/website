@@ -32,3 +32,12 @@ Set up the feedback options, deployment pipelines, and environment variables to 
 All Redocly products use a common configuration file.
 The full configuration documentation will help you get everything set up the way you want it.
 
+
+{% if includes($rbac.teams, "scout") %}
+## Products
+{% /if %}
+
+
+{% if includes($rbac.teams, "scout") %}
+  [Scout](scout/index.md) identifies APIs and brings them into your project.
+{% /if %}

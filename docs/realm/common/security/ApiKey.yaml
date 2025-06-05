@@ -1,0 +1,5 @@
+type: http
+scheme: bearer
+description: |-
+  API key is required to access the API.
+  You can get your API key from the [BlueHarvest dashboard](https://app.blueharvest.cloud).

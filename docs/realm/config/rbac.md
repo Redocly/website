@@ -81,6 +81,7 @@ All other configuration is done through team-role mapping.
 - Map of teams to project roles.
   The team names come from a possible list of `anonymous` (meaning all users who are not logged in), `authenticated` (meaning any user who is logged in), and team names that come from the identity provider through the [single-sign-on (SSO) configuration](./sso.md). In addition, the team name `*` represents the rest of the teams not defined in sibling properties including `anonymous` and `authenticated`.
   Possible values for project roles are: `none`, `read`, `write`, `triage`, `maintain`, or `admin`.
+  {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "rbac"} /%}
 
 {% /table %}
 
@@ -267,7 +268,9 @@ rbac:
 ## Related options
 
 - [sso](./sso.md) is used to identify users.
+{% if includes($rbac.teams, "Employee") %}
 - [ssoDirect](./ssoDirect.md)
+{% /if %}
 - [requiresLogin](./requires-login.md) reference
 
 ## Resources
@@ -275,3 +278,5 @@ rbac:
 - [Role-based access control (RBAC)](../setup/concepts/rbac.md) concept
 - [How to configure RBAC](../setup/how-to/rbac/index.md) with additional information and examples for projects, pages, and navigation.
 - [Pattern-based team access](../setup/how-to/rbac/pattern-access.md) guide and usage examples.
+- Use [front matter](./front-matter-config.md) to configure role-based access on individual pages.
+- Explore other [configuration options](./index.md) for your project.

@@ -1,0 +1,9 @@
+type: object
+properties:
+  redirectUri:
+    type: string
+    description: Redirect uri to which user should be redirected if provided user code is valid.
+    example: https://auth.cloud.redocly.com/device-login
+
+required:
+  - redirectUri

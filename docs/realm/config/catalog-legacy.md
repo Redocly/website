@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# `catalogClassic`
+# `catalogLegacy`
 
 Organize your content into a catalog that users can filter and search.
 You can configure multiple catalogs and set the link text, description, and filters.
@@ -24,8 +24,8 @@ You can configure multiple catalogs and set the link text, description, and filt
 
 ---
 
-- catalogClassic
-- Map of strings to [Catalog Classic](#catalog-object)
+- catalogLegacy
+- Map of strings to [Catalog](#catalog-object)
 - **REQUIRED.**
   Map of strings allows for the definition of multiple catalogs.
   Strings represent catalog only in configuration file - they do not appear in published project.

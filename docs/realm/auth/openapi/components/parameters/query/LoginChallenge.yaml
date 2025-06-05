@@ -1,0 +1,6 @@
+name: loginChallenge
+in: query
+required: false
+schema:
+  type: string
+example: b1e792f4-97bb-41e5-ba85-e946e04fa29f

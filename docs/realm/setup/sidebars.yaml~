@@ -128,6 +128,8 @@
       items:
         - page: ./reference/plugins/docs/asyncapi.md
           label: AsyncAPI docs
+        - page: ./reference/plugins/docs/gravitee-sso.md
+          label: Gravitee SSO provider
         - page: ./reference/plugins/docs/soap-api.md
           label: SOAP API docs
     - page: ./reference/apigee-api-operations.md

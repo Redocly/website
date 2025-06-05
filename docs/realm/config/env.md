@@ -102,3 +102,7 @@ navbar:
     - label: External docs
       href: https://redocly.com
 ```
+
+## Resources
+
+- Explore other [configuration options](./index.md) for your project.

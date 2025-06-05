@@ -18,7 +18,7 @@ These options let you define your APIs and control how API descriptions are proc
 - [extends](https://redocly.com/docs/cli/configuration/reference/extends/)
 - [rules](https://redocly.com/docs/cli/configuration/reference/rules/)
 - [scorecard](./scorecard.md)
-- [catalogClassic](./catalog-classic.md)
+- [catalogLegacy](./catalog-legacy.md)
 
 ## Navigation elements
 

@@ -53,5 +53,5 @@ The `file` attribute should include the file path to the file in the `_partials`
 
 ## Resources
 
-- Learn more about Markdoc and how you can use it to add interactive elements to your Markdown documents in the [Markdoc overview for technical writers](https://redocly.com/learn/markdoc).
+- Learn more about Markdoc and how you can use it to add interactive elements to your Markdown documents in the [Markdown overview for technical writers](https://redocly.com/docs/learn-markdoc/).
 - Explore the different configuration options available in the `redocly.yaml` file in the [Configure Redocly](../../config/index.md) reference documentation.

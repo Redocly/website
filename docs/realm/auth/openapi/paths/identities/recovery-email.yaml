@@ -1,0 +1,27 @@
+post:
+  tags:
+    - Auth
+  security: []
+  summary: Send email with recovery code
+  operationId: postRecoveryEmail
+  requestBody:
+    content:
+      'application/json':
+        schema:
+          description: Payload with recovery email data.
+          $ref: '../../components/schemas/identities/recovery/RecoveryEmailData.yaml'
+  responses:
+    '200':
+      description: Email has been successfully sent.
+      content:
+        application/json:
+          schema:
+            description: Recovery email result with Kratos flow information
+            $ref: '../../components/schemas/identities/recovery/RecoveryEmailResult.yaml'
+    '400':
+      description: Invalid email or flow ID provided.
+      content:
+        application/json:
+          schema:
+            description: Error containing message about email or flow error
+            $ref: '../../components/schemas/errors/BadRequestApiError.yaml'

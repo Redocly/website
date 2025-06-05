@@ -1,0 +1,23 @@
+get:
+  tags:
+    - Auth
+  summary: Get redirect to specific OIDC provider authorization endpoint
+  security: []
+  operationId: oidc
+  parameters:
+    - $ref: '../../components/parameters/query/ProviderId.yaml'
+    - $ref: '../../components/parameters/query/LoginHint.yaml'
+    - $ref: '../../components/parameters/query/State.yaml'
+  responses:
+    '302':
+      description: Target OIDC provider.
+      headers:
+        Location:
+          description: Redirect URL.
+          schema:
+            type: string
+          example: http://myoidcprovider.com/login
+    '400':
+      description: Invalid providerId.
+    '404':
+      description: ProviderId doesn't exist.

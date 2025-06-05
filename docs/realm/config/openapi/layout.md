@@ -61,4 +61,4 @@ openapi:
 ## Resources
 
 - [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)
+- [OpenAPI visual reference](https://redocly.com/docs/openapi-visual-reference/)

@@ -133,8 +133,6 @@
       label: Static assets
     - page: author/how-to/configure-code-snippets.md
       label: Configure code snippets
-    - page: author/how-to/add-diagram.md
-      label: Diagrams
     - group: Markdoc functions
       page: author/reference/functions/index.md
       items:
@@ -304,6 +302,8 @@
       label: Collaboration overview
     - page: author/how-to/use-webview.md
       label: Use webview
+    - page: author/how-to/add-diagram.md
+      label: Add diagrams
     - page: author/how-to/use-previews.md
       label: Use previews
     - page: author/how-to/switch-between-projects.md

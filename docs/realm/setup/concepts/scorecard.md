@@ -49,4 +49,4 @@ After you define scorecard levels and commit the changes, labels representing th
 ## Resources
 
 - Check out the [Scorecard reference](../../config/scorecard.md) page to see the different options you can configure.
-- Learn more about the different ways you can configure an API catalog, using the [Catalog classic reference](../../config/catalog-classic.md).
+- Learn more about the different ways you can configure an API catalog, using the [Catalog reference](../../config/catalog-legacy.md).

@@ -320,7 +320,7 @@ scorecard:
 ## Related options
 
 - Check out the different ways you can customize the behavior and appearance of integrated API documentation on the [OpenAPI reference](./openapi/index.md) page.
-- Learn more about the different ways you can configure an API catalog, using the [Catalog reference](./catalog-classic.md).
+- Learn more about the different ways you can configure an API catalog, using the [Catalog reference](./catalog-legacy.md).
 
 ## Resources
 
