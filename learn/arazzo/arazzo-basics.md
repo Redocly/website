@@ -47,6 +47,7 @@ Here's where the magic happens. The workflows section is an array of workflow ob
 - `description`: A detailed explanation of the workflow.
 - `steps`: The actual sequence of operations.
 - `dependsOn`: Which workflow(s) it relies on (optional).
+- `inputs`: Input parameters used by the workflow (optional). 
 
 Inside steps, each step has:
 
