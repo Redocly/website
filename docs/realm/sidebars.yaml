@@ -12,115 +12,96 @@
         - page: get-started/migrate-from-legacy-portal.md
           label: Migrate from legacy portal
 
-- group: Branding & navigation
+- group: Reunite
   items:
-    - separator: Branding
-    - page: style/concepts/styling.md
-      label: Styling concepts
-    - page: style/how-to/customize-styles.md
-      label: Styles
-    - page: style/how-to/customize-fonts.md
-      label: Fonts
-    - page: style/concepts/color-mode.md
-      label: Color modes
-    - page: style/how-to/customize-color-modes.md
-      label: Custom color modes
-    - page: style/how-to/custom-page-templates.md
-      label: Page templates
-    - page: style/how-to/customize-tables.md
-      label: Table styles
-    - group: CSS variables dictionary
-      page: style/reference/css-variables/index.md
+    # This page is not as good as the next one
+    # - page: author/concepts/collaboration.md
+    #   label: Reunite overview
+    - separator: Getting started
+    - page: author/concepts/reunite.md
+      label: Reunite overview
+
+    - separator: Organization & team settings
+    - page: ./setup/how-to/manage-orgs.md
+      label: Organizations
+    - page: ./setup/how-to/manage-people.md
+      label: People
+    - page: setup/concepts/teams.md # combine into single page
+      group: Teams
       items:
-        - page: style/reference/css-variables/common.md
-          label: Common
-        - page: style/reference/css-variables/component.md
-          label: Component
-        - page: style/reference/css-variables/api-docs.md
-          label: API docs
-    - separator: Navigation
-    - page: author/concepts/navigation.md
-      label: Navigation elements
-    - page: author/how-to/configure-nav/navbar.md
-      label: Navbar
-    - page: author/how-to/configure-nav/footer.md
-      label: Footer
-    - page: author/how-to/configure-nav/sidebar.md
-      label: Sidebar
-    - page: author/how-to/configure-nav/configure-sidebar-groups.md
-      label: Sidebar groups
-    - page: author/reference/sidebars.md
-      label: Sidebar reference
-    - page: author/how-to/configure-nav/toc.md
-      label: TOC
-    - page: author/how-to/configure-nav/navigation-buttons.md
-      label: Navigation buttons
-    - group: Search and discovery
+        - page: ./setup/how-to/manage-teams.md
+          label: Manage teams
+  
+    - group: SSO
+      page: ./setup/concepts/sso.md
       items:
-        # - page: config/search.md
-        #   label: Search configuration
-        - page: setup/how-to/exclude-api-from-search.md
-          label: Exclude API from search
-        - page: extend/how-to/configure-search-facets.md
-          label: Configure search facets
-        - page: setup/how-to/add-sitemap.md
-          label: Add sitemap
-        - page: setup/how-to/add-robots-file.md
-          label: Add robots.txt
-        - page: setup/how-to/block-search-index.md
-          label: Block search indexing
-        - page: setup/how-to/verify-site-ownership.md
-          label: Verify site ownership
-    - page: setup/how-to/custom-domain.md
-      label: Custom domain
-    - group: Multi-product
-      page: author/concepts/multi-product.md
-      label: Multi-product
+        - page: ./setup/how-to/add-idp.md
+          label: Add an identity provider
+        - page: ./setup/how-to/configure-sso.md
+          label: Configure SSO
+        - page: ./setup/how-to/configure-azure-ad.md
+          label: Azure AD
+    - page: setup/how-to/access-compliance-reports.md
+      label: Compliance reports
+
+    - page: ./setup/how-to/api-keys.md
+      label: API keys
+
+    - separator: Project workspace
+    - page: ./setup/how-to/manage-projects.md
+      label: Projects
+    - page: author/how-to/use-editor.md
+      label: Editor
+    - page: author/how-to/use-webview.md
+      label: Webviews
+    - page: author/how-to/use-previews.md
+      label: Previews
+    - group: Deploys # missing content about the "Deploys"
       items:
-        - page: author/how-to/multiple-products.md
-          label: Add multiple products
-    - separator: Advanced customization
-    - page: extend/how-to/create-react-page.md
-    - page: author/reference/markdoc-variables.md
-    - page: extend/tutorials/build-markdoc-tags.md
-    - page: extend/tutorials/build-custom-function.md
-    - page: extend/tutorials/import-npm-library.md
-    - page: extend/tutorials/eject-root-layout.md
-    - page: extend/how-to/enable-source-maps.md
-    - page: extend/how-to/add-color-mode.md
-    - page: extend/how-to/color-mode-images.md
-    - group: Eject components
-      page: extend/how-to/eject-components/index.md
-      items:
-        - page: extend/how-to/eject-components/eject-components-in-reunite.md
-        - page: extend/how-to/eject-components/eject-components-using-cli.md
-        - page: extend/how-to/eject-components/eject-components-tutorial/index.md
-    - group: Built-in components and icons
-      page: extend/how-to/react-components/index.md
-      items:
-        - page: extend/how-to/react-components/use-in-react-page.md
-        - page: extend/how-to/react-components/wrap-components.md
-        - group: Components list
-          page: extend/how-to/react-components/list/index.md
+        - group: Scorecards
+          page: setup/concepts/scorecard.md
           items:
-            - page: extend/how-to/react-components/list/admonition.md
-            - page: extend/how-to/react-components/list/icons.md
-            - page: extend/how-to/react-components/list/button.md
-            - page: extend/how-to/react-components/list/link.md
-    - page: extend/how-to/set-path-prefix.md
-    - page: extend/how-to/theme-static-assets.md
-    - page: extend/how-to/configure-request-values.md
+            - page: setup/how-to/configure-scorecard.md
+              label: Configuration guide
+        - page: setup/how-to/ignore-link-checker.md
+          label: Ignore link checker
+
+    - group: Pull requests
+      items:
+        - page: author/how-to/open-pull-request.md
+          label: Open pull requests
+        - page: author/how-to/review-pull-request.md
+          label: Review pull requests
+        - page: author/how-to/manage-pull-requests.md
+          label: Manage pull requests
+    # Missing content about the API registry
+    - group: Respect Monitoring
+      page: setup/respect-monitoring/index.md
+      items:
+        - page: setup/respect-monitoring/configure-respect-monitoring.md
+        - page: setup/respect-monitoring/manage-respect-monitoring.md
+    - page: author/reference/keyboard-shortcuts.md
+      label: Keyboard shortcuts
+    - page: author/how-to/switch-between-projects.md # consolidate into manage projects?
+      label: Switch between projects
+    - page: setup/how-to/feedback/view-export-data.md
+      label: Feedback
+    # consider moving or removing the page:
+    # - page: setup/how-to/feedback/extend-feedback.md
+    #   label: Extend feedback form
+    - group: Environments # combine into single page
+      items:
+        - page: setup/concepts/env-variables.md
+          label: Environment variables
+        - page: setup/how-to/env-variables.md
+          label: Configure environment variables
+    - page: setup/reference/telemetry.md
+      label: Telemetry
 
 - group: Content management
   items:
     - page: author/concepts/project-structure.md
       label: Project structure
-    - page: author/concepts/reunite.md
-      label: Reunite
-    - page: author/how-to/use-editor.md
-      label: Use the editor
-    - page: author/reference/keyboard-shortcuts.md
-      label: Keyboard shortcuts
     - page: author/how-to/links.md
       label: Manage links
     - group: Versioning
@@ -267,52 +248,106 @@
     - page: setup/how-to/realm-version.md
       label: Upgrade Realm version
 
-- group: Governance
-  items:
-    - separator: Pull requests
-    - page: author/how-to/open-pull-request.md
-      label: Open pull requests
-    - page: author/how-to/review-pull-request.md
-      label: Review pull requests
-    - page: author/how-to/manage-pull-requests.md
-      label: Manage pull requests
-    - separator: Quality
-    - group: Scorecards
-      page: setup/concepts/scorecard.md
-      items:
-        # - page: config/scorecard.md
-        #   label: Scorecards
-        - page: setup/how-to/configure-scorecard.md
-          label: Configuration guide
-    - page: setup/how-to/ignore-link-checker.md
-      label: Ignore link checker
-    - separator: Monitoring
-    - group: Respect Monitoring
-      page: setup/respect-monitoring/index.md
-      items:
-        - page: setup/respect-monitoring/configure-respect-monitoring.md
-        - page: setup/respect-monitoring/manage-respect-monitoring.md
-    - page: setup/reference/logs.md
-      label: Logs
-    - page: setup/reference/telemetry.md
-      label: Telemetry
-    - page: setup/how-to/access-compliance-reports.md
-      label: Access compliance reports
 
-- group: Collaboration
+- group: Branding & navigation
   items:
-    - page: author/concepts/collaboration.md
-      label: Collaboration overview
-    - page: author/how-to/use-webview.md
-      label: Use webview
-    - page: author/how-to/use-previews.md
-      label: Use previews
-    - page: author/how-to/switch-between-projects.md
-      label: Switch between projects
-    - page: setup/how-to/feedback/extend-feedback.md
-      label: Extend feedback form
-    - page: setup/how-to/feedback/view-export-data.md
-      label: View feedback data
+    - separator: Branding
+    - page: style/concepts/styling.md
+      label: Styling concepts
+    - page: style/how-to/customize-styles.md
+      label: Styles
+    - page: style/how-to/customize-fonts.md
+      label: Fonts
+    - page: style/concepts/color-mode.md
+      label: Color modes
+    - page: style/how-to/customize-color-modes.md
+      label: Custom color modes
+    - page: style/how-to/custom-page-templates.md
+      label: Page templates
+    - page: style/how-to/customize-tables.md
+      label: Table styles
+    - group: CSS variables dictionary
+      page: style/reference/css-variables/index.md
+      items:
+        - page: style/reference/css-variables/common.md
+          label: Common
+        - page: style/reference/css-variables/component.md
+          label: Component
+        - page: style/reference/css-variables/api-docs.md
+          label: API docs
+    - separator: Navigation
+    - page: author/concepts/navigation.md
+      label: Navigation elements
+    - page: author/how-to/configure-nav/navbar.md
+      label: Navbar
+    - page: author/how-to/configure-nav/footer.md
+      label: Footer
+    - page: author/how-to/configure-nav/sidebar.md
+      label: Sidebar
+    - page: author/how-to/configure-nav/configure-sidebar-groups.md
+      label: Sidebar groups
+    - page: author/reference/sidebars.md
+      label: Sidebar reference
+    - page: author/how-to/configure-nav/toc.md
+      label: TOC
+    - page: author/how-to/configure-nav/navigation-buttons.md
+      label: Navigation buttons
+    - group: Search and discovery
+      items:
+        # - page: config/search.md
+        #   label: Search configuration
+        - page: setup/how-to/exclude-api-from-search.md
+          label: Exclude API from search
+        - page: extend/how-to/configure-search-facets.md
+          label: Configure search facets
+        - page: setup/how-to/add-sitemap.md
+          label: Add sitemap
+        - page: setup/how-to/add-robots-file.md
+          label: Add robots.txt
+        - page: setup/how-to/block-search-index.md
+          label: Block search indexing
+        - page: setup/how-to/verify-site-ownership.md
+          label: Verify site ownership
+    - page: setup/how-to/custom-domain.md
+      label: Custom domain
+    - group: Multi-product
+      page: author/concepts/multi-product.md
+      label: Multi-product
+      items:
+        - page: author/how-to/multiple-products.md
+          label: Add multiple products
+    - separator: Advanced customization
+    - page: extend/how-to/create-react-page.md
+    - page: author/reference/markdoc-variables.md
+    - page: extend/tutorials/build-markdoc-tags.md
+    - page: extend/tutorials/build-custom-function.md
+    - page: extend/tutorials/import-npm-library.md
+    - page: extend/tutorials/eject-root-layout.md
+    - page: extend/how-to/enable-source-maps.md
+    - page: extend/how-to/add-color-mode.md
+    - page: extend/how-to/color-mode-images.md
+    - group: Eject components
+      page: extend/how-to/eject-components/index.md
+      items:
+        - page: extend/how-to/eject-components/eject-components-in-reunite.md
+        - page: extend/how-to/eject-components/eject-components-using-cli.md
+        - page: extend/how-to/eject-components/eject-components-tutorial/index.md
+    - group: Built-in components and icons
+      page: extend/how-to/react-components/index.md
+      items:
+        - page: extend/how-to/react-components/use-in-react-page.md
+        - page: extend/how-to/react-components/wrap-components.md
+        - group: Components list
+          page: extend/how-to/react-components/list/index.md
+          items:
+            - page: extend/how-to/react-components/list/admonition.md
+            - page: extend/how-to/react-components/list/icons.md
+            - page: extend/how-to/react-components/list/button.md
+            - page: extend/how-to/react-components/list/link.md
+    - page: extend/how-to/set-path-prefix.md
+    - page: extend/how-to/theme-static-assets.md
+    - page: extend/how-to/configure-request-values.md
+
 
 - group: Integrations and automations
   items:
@@ -375,25 +410,6 @@
 
 - group: Access management
   items:
-    - separator: User management
-    - page: ./setup/how-to/manage-people.md
-      label: People
-    - page: setup/concepts/teams.md
-      group: Teams
-      items:
-        - page: ./setup/how-to/manage-teams.md
-          label: Manage teams
-  
-    - separator: Auth
-    - group: SSO
-      page: ./setup/concepts/sso.md
-      items:
-        - page: ./setup/how-to/add-idp.md
-          label: Add an identity provider
-        - page: ./setup/how-to/configure-sso.md
-          label: Configure SSO
-        - page: ./setup/how-to/configure-azure-ad.md
-          label: Azure AD
     - group: Role-based access control (RBAC)
       page: ./setup/how-to/rbac/index.md
       items:
@@ -411,19 +427,6 @@
           label: Pattern-based access
         # - page: config/rbac.md
         #   label: Role-based access control
-    - page: ./setup/how-to/api-keys.md
-      label: API keys
-    - separator: Organizations and projects
-    - page: ./setup/how-to/manage-orgs.md
-      label: Organizations
-    - page: ./setup/how-to/manage-projects.md
-      label: Projects
-    - group: Environment
-      items:
-        - page: setup/concepts/env-variables.md
-          label: Environment variables
-        - page: setup/how-to/env-variables.md
-          label: Configure environment variables
 
 
 # - $ref: author/sidebars.yaml

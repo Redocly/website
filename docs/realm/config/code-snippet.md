@@ -133,7 +133,7 @@ When users click the report button or text, they are provided a comment feedback
 
 ### Expand object
 
-Use the expand button to show all the nested properties inside a JSON object that is included as a sample request or response in an OpenAPI definition.
+Users can use the expand button to show all the nested properties inside a JSON object that is included as a sample request or response in an OpenAPI definition.
 
 {% table %}
 
@@ -203,15 +203,18 @@ codeSnippet:
     hide: true
 ```
 
+
+## Related options
+
+- Redocly also has a [codeSnippet Markdoc tag](https://redocly.com/docs/learn-markdoc/tags/code-snippet) that can be used to display code snippets loaded from local files.
+- To configure the feedback mechanism that appears on all pages in your project by default, see the [`feedback`] reference documentation.
+
 ## Customizing labels and tooltips
 
 Translation keys provide customization options for code snippet control texts. For complete details, refer to the [Translation Keys Reference](../author/reference/translation-keys.md).
 
 ## Resources
 
-- Use the [codeSnippet Markdoc tag](https://redocly.com/docs/learn-markdoc/tags/code-snippet) to display code snippets loaded from local files.
-- To configure the feedback mechanism that appears on all pages in your project by default, see the [`feedback`](./feedback.md) reference documentation.
 - Follow step-by-step instructions for configuring code snippets in the [Configure code snippets](../author/how-to/configure-code-snippets.md) how-to documentation.
 - Learn more about the report feedback mechanism that is included in all code snippets by default, see the [Feedback](../setup/concepts/feedback.md) concept documentation.
 - Use [front matter](./front-matter-config.md) to configure code snippets on individual pages.
-- Explore other [configuration options](./index.md) for your project.

@@ -125,7 +125,3 @@ Users can import the link component in their React components using the followin
 ```javascript
 import { Link } from '@redocly/theme/components/Link/Link';
 ```
-
-## Resources
-
-- [Add redirects](./add-redirects.md) to pages in your project.

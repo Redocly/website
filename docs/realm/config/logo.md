@@ -95,6 +95,6 @@ logo:
 
 - [navbar](navbar.md)
 
-## Resources
+<!-- ## Resources -->
 
-- Explore other [configuration options](./index.md) for your project.
+<!-- - TODO -->
