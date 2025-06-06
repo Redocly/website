@@ -82,7 +82,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 ---
 
 - filters
-- [[Filter](#filter-object)]
+- \[[Filter](#filter-object)]
 - List of filter configurations which allows for quicker discovery.
   See [Categories](../author/concepts/categories.md) for more information on how to categorize content for filtering.
 
@@ -110,7 +110,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 ---
 
 - items
-- [[Item](#item-object)]
+- \[[Item](#item-object)]
 - List of item configurations which determines what content is included in the catalog.
 
 ---
@@ -183,7 +183,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 ---
 
 - options
-- [string]
+- \[string]
 - Static list of filter options to include for this filter.
   If not provided, the filter options are dynamically generated from the metadata values in the catalog.
 
@@ -243,7 +243,7 @@ See [rbac](./rbac.md) reference documentation for more options and examples.
 The following is an example of a catalog configuration.
 
 ```yaml
-catalog:
+catalogClassic:
   acme-catalog:
     title: Acme API catalog
     description: 'This is a description of the API Catalog'
@@ -276,6 +276,6 @@ To make the catalog accessible by link, you must add the catalog `slug` to the `
 
 ## Resources
 
-- Learn how to add a catalog in the [Add a catalog](../author/how-to/add-catalog.md) how-to documentation.
+- Learn how to add a classic version of the catalog in the [Add a classic catalog](../author/how-to/add-catalog.md) how-to documentation.
 - When an API description contains metadata, and you want to exclude the metadata from the API reference documentation, use the [hideInfoMetadata](./openapi/hide-info-metadata.md) configuration option.
 - Follow steps to [configure navigation on the navbar](../author/how-to/configure-nav/navbar.md) to include your catalog link.

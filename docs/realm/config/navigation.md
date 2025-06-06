@@ -11,9 +11,7 @@ plans:
 ---
 # `navigation`
 
-Control the **Previous** and **Next** navigation buttons on project pages.
-
-{% partial file="../_partials/config/_supported-config.md" variables={"optionName": "navigation"} /%}
+Control the previous and next navigation buttons.
 
 ## Options
 
@@ -66,7 +64,7 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 ```yaml
 navigation:
   nextButton:
-    text: "Next chapter"
+    text: → Next page"
   previousButton:
     hide:
     text:
@@ -82,7 +80,6 @@ navigation:
     hide: true
 ```
 
-## Resources
+## Related options
 
-- Use [front matter](./front-matter-config.md) to configure navigation button options on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+## Resources

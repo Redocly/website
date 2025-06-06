@@ -1,38 +1,4 @@
 '@redocly/realm':
-  0.122.0-next.12:
-    timestamp: 1749126205000
-    changes:
-      minor: []
-      patch:
-        - Fixed a bug where the link checker falsely reported slug links in partials as broken.
-        - Improved display of OpenAPI search results by cleaning up formatted text.
-    dependencies: {}
-  0.122.0-next.11:
-    timestamp: 1749030190000
-    changes:
-      minor:
-        - Added client IP address to feedback metadata.
-        - Removed header access from the API function context.
-      patch:
-        - Fixed an issue where search results were not being filtered correctly for product index pages in a multi-product setup.
-        - Fixed header display issue in files starting with a byte order mark (`BOM`).
-    dependencies: {}
-  0.122.0-next.10:
-    timestamp: 1748875273000
-    changes:
-      minor: []
-      patch:
-        - Fixed runtime crash in search plugin.
-        - Updated invitation handler to redirect users to the homepage if the invitation was already accepted.
-    dependencies: {}
-  0.122.0-next.9:
-    timestamp: 1748868422000
-    changes:
-      minor: []
-      patch:
-        - Improved AI Search and `llms.txt` chunk content.
-        - Fixed breadcrumbs appearing on pages not nested in the sidebar.
-    dependencies: {}
   0.122.0-next.8:
     timestamp: 1748617646000
     changes:
@@ -3135,38 +3101,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.122.0-next.12:
-    timestamp: 1749126205000
-    changes:
-      minor: []
-      patch:
-        - Fixed a bug where the link checker falsely reported slug links in partials as broken.
-        - Improved display of OpenAPI search results by cleaning up formatted text.
-    dependencies: {}
-  0.122.0-next.11:
-    timestamp: 1749030190000
-    changes:
-      minor:
-        - Removed header access from the API function context.
-      patch:
-        - Fixed header display issue in files starting with a byte order mark (`BOM`).
-    dependencies: {}
-  0.122.0-next.10:
-    timestamp: 1748875273000
-    changes:
-      minor: []
-      patch:
-        - Fixed runtime crash in search plugin.
-        - Updated invitation handler to redirect users to the homepage if the invitation was already accepted.
-    dependencies: {}
-  0.122.0-next.9:
-    timestamp: 1748868422000
-    changes:
-      minor: []
-      patch:
-        - Improved AI Search and `llms.txt` chunk content.
-        - Fixed breadcrumbs appearing on pages not nested in the sidebar.
-    dependencies: {}
   0.122.0-next.8:
     timestamp: 1748617646000
     changes:
@@ -5606,36 +5540,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.122.0-next.12:
-    timestamp: 1749126205000
-    changes:
-      minor: []
-      patch:
-        - Fixed a bug where the link checker falsely reported slug links in partials as broken.
-    dependencies: {}
-  0.122.0-next.11:
-    timestamp: 1749030190000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where search results were not being filtered correctly for product index pages in a multi-product setup.
-        - Fixed header display issue in files starting with a byte order mark (`BOM`).
-    dependencies: {}
-  0.122.0-next.10:
-    timestamp: 1748875273000
-    changes:
-      minor: []
-      patch:
-        - Updated invitation handler to redirect users to the homepage if the invitation was already accepted.
-    dependencies: {}
-  0.122.0-next.9:
-    timestamp: 1748868422000
-    changes:
-      minor: []
-      patch:
-        - Improved AI Search and `llms.txt` chunk content.
-        - Fixed breadcrumbs appearing on pages not nested in the sidebar.
-    dependencies: {}
   0.122.0-next.8:
     timestamp: 1748617646000
     changes:
@@ -8081,36 +7985,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.122.0-next.12:
-    timestamp: 1749126205000
-    changes:
-      minor: []
-      patch:
-        - Improved display of OpenAPI search results by cleaning up formatted text.
-    dependencies: {}
-  0.122.0-next.11:
-    timestamp: 1749030190000
-    changes:
-      minor: []
-      patch:
-        - Fixed header display issue in files starting with a byte order mark (`BOM`).
-    dependencies: {}
-  0.122.0-next.10:
-    timestamp: 1748875273000
-    changes:
-      minor: []
-      patch:
-        - Fixed runtime crash in search plugin.
-        - Updated invitation handler to redirect users to the homepage if the invitation was already accepted.
-    dependencies: {}
-  0.122.0-next.9:
-    timestamp: 1748868422000
-    changes:
-      minor: []
-      patch:
-        - Improved AI Search and `llms.txt` chunk content.
-        - Fixed breadcrumbs appearing on pages not nested in the sidebar.
-    dependencies: {}
   0.122.0-next.8:
     timestamp: 1748617646000
     changes:
@@ -13989,13 +13863,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
-  0.26.0:
-    timestamp: 1749026344000
-    changes:
-      minor:
-        - Removed `headers` from `ApiFunctionsContext` type.
-      patch: []
-    dependencies: {}
   0.25.0:
     timestamp: 1748503879000
     changes:
@@ -14966,13 +14833,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
-  0.2.15:
-    timestamp: 1749026344000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
-    dependencies: {}
   0.2.14:
     timestamp: 1748503879000
     changes:
@@ -15249,46 +15109,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.5.0-next.12:
-    timestamp: 1749126205000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.122.0-next.12
-      '@redocly/redoc-reef': 0.122.0-next.12
-      '@redocly/redoc-revel': 0.122.0-next.12
-      '@redocly/redoc': 0.122.0-next.12
-  1.5.0-next.11:
-    timestamp: 1749030190000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.122.0-next.11
-      '@redocly/redoc-revel': 0.122.0-next.11
-      '@redocly/redoc-reef': 0.122.0-next.11
-      '@redocly/redoc': 0.122.0-next.11
-  1.5.0-next.10:
-    timestamp: 1748875273000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.122.0-next.10
-      '@redocly/redoc': 0.122.0-next.10
-      '@redocly/redoc-reef': 0.122.0-next.10
-      '@redocly/redoc-revel': 0.122.0-next.10
-  1.5.0-next.9:
-    timestamp: 1748868422000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.122.0-next.9
-      '@redocly/redoc': 0.122.0-next.9
-      '@redocly/redoc-reef': 0.122.0-next.9
-      '@redocly/redoc-revel': 0.122.0-next.9
   1.5.0-next.8:
     timestamp: 1748617646000
     changes:
@@ -22863,25 +22683,4 @@ reunite:
       minor: []
       patch:
         - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748443305`.
-    dependencies: {}
-  v2025-06-02.3:
-    timestamp: 1748868941000
-    changes:
-      minor:
-        - Added auto-merge failure reason on the Remote Content page.
-      patch: []
-    dependencies: {}
-  v2025-06-02.4:
-    timestamp: 1748874603000
-    changes:
-      minor: []
-      patch:
-        - Fixed issue preventing editing of `GitHub Remote Content`.
-    dependencies: {}
-  v2025-06-04.3:
-    timestamp: 1749049121000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748969604`.
     dependencies: {}

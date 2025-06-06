@@ -1,79 +1,34 @@
 ---
 sidebar: sidebars.yaml
 ---
+# Realm documentation
 
-# Reunite + Realm system overview
+Locate all the documentation you need to succeed with the Realm platform, right here.
 
-Reunite and Realm work together to help you author, review, and publish world-class developer portals and API documentation.
+## Write
 
-This page provides an overview of how the system works — and how the different parts fit together.
+Creating content is kind of our thing!
+Write your content using Markdown and Markdoc, and configure the navigation structure that works for you.
+Add your API reference (OpenAPI, GraphQL or AsyncAPI) and integrate it alongside the other content.
 
-## How it works
+## Style
 
-At a high level:
+Make your project look and feel like your own.
+Customize the styles, change the templates, and adjust the color modes to fit the rest of your digital presence.
 
-```mermaid
-flowchart TD
-    remote["Content sources (Git + Remote content)"] --> reunite["Reunite (Collaboration Suite)"]
-    reunite --> realm["Realm (Project Engine)"]
-    realm --> consumer["Consumers (Developers, Partners, Customers)"]
-```
+## Extend
 
-- **Reunite** is where publishers work: writing content, reviewing changes, and deploying Projects.
-- **Realm** powers the runtime and delivery of the Project — the experience your developers, partners, and customers see.
+Extend the Realm platform by adding your own React pages and custom Markdoc tags and functions.
+You can also eject theme components to make them your own, enable source maps, set path prefixes and more.
 
-## Content flow
+## Setup
 
-```mermaid
-flowchart TD
-    remote["Remote Content Sources"] --> remote_automation["Remote Content Automation"]
-    remote_automation --> git["Project Git Repo"]
-    git --> editor["Reunite Content Editor"]
-    editor --> reviews["Pull Requests / Reviews"]
-    reviews --> deploys["Deploys"]
-    deploys --> project["Realm-powered Project"]
-    project --> consumer["Consumers"]
-```
+The admin tasks you need to get everything running smoothly.
+Configure authentication and authorization, set up integrations, and manage source control repositories.
+Set up the feedback options, deployment pipelines, and environment variables to use at deploy time.
 
-- Remote content and Git content are combined via **Reunite**.
-- **Reunite** manages pull requests, reviews, and deploys.
-- **Realm** builds the Project for your consumers.
+## Configure
 
-## Reunite workspace
+All Redocly products use a common configuration file.
+The full configuration documentation will help you get everything set up the way you want it.
 
-The **Reunite** collaboration suite includes:
-- Content editor
-- Pull requests & reviews
-- Deploys
-- Scorecards
-- Feedback
-- Respect Monitoring
-- Compliance reports
-- And more...
-
-## Integrations
-
-You can connect to external systems:
-- Git providers (GitHub, GitLab, Bitbucket, Azure DevOps)
-- CI/CD pipelines
-- Analytics and API operations platforms
-- Remote content sources (Git-based or URL-based)
-
-
-## Access management
-
-Role-based access control (RBAC) applies to:
-- Reunite workspace
-- Projects
-- Individual content pages
-- Navigation elements
-- API operations
-- Granular bits of content
-
-
-## Next steps
-
-- [Get started with Reunite](./get-started/start-reunite-editor.md)
-- [Structure your project](./author/concepts/project-structure.md)
-- [Customize your branding](./style/concepts/styling.md)
-- [Set up integrations](./setup/how-to/git-providers/connect-git-provider.md)

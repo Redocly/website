@@ -483,4 +483,3 @@ feedback:
 - Add options after users complete initial feedback in [Extend the feedback form](../setup/how-to/feedback/extend-feedback.md).
 - Find where collected feedback data is sent and how to view it in [View and export feedback data](../setup/how-to/feedback/view-export-data.md).
 - Use [front matter](./front-matter-config.md) to configure feedback on individual pages.
-- Explore other [configuration options](./index.md) for your project.

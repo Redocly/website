@@ -154,7 +154,7 @@ Use this preview to review the changes you make during migration.
 
 ### Migrate content
 
-Realm contains a major change to content creation: MDX is replaced with [Markdoc](https://redocly.com/docs/learn-markdoc).
+Realm contains a major change to content creation: MDX is replaced with [Markdoc](https://redocly.com/learn/markdoc).
 That means authors continue writing in Markdown, but, when they need to add a custom element or component, they use Markdoc syntax _instead of MDX_.
 
 With the exception of MDX, Realm supports the same types of content as the developer portal while adding support for new content, such as AsyncAPI, GraphQL, and React pages.
@@ -282,7 +282,7 @@ Realm and Reef users have access to the built-in API catalog feature, which is u
 - In the developer portal, the API catalog had to be _added as a custom component_ in an MDX page.
 - In Realm, the API catalog feature is already _built into the product_ and is enabled through configuration.
 
-Use the following guide to enable the API catalog during your migration: [Add a catalog](../author/how-to/add-catalog.md).
+Use the following guide to enable the API catalog during your migration: [Configure catalogs](../author/how-to/configure-catalog/catalog.md) or if you prefer the classic version, [configure a classic catalog in your project](../author/how-to/add-catalog.md).
 
 #### Update Markdown files
 
@@ -773,8 +773,8 @@ The following example shows the same sidebar configuration using old and new syn
 
 After your sidebar config works with Realm, explore the following new sidebar features:
 
-- Build sidebars using configuration from [multiple files](../author/how-to/configure-nav/sidebar.md#split-sidebar-configuration) using fragments.
-- Use [set sidebar](../author/how-to/configure-nav/sidebar.md#set-sidebar) to show the sidebar on a page without listing it on `sidebars.yaml`.
+- Build sidebars using configuration from [multiple files](../author/how-to/configure-nav/sidebar.md#compose-a-single-sidebar-from-multiple-sidebarsyaml-files) using fragments.
+- Use [the front matter](../author/how-to/configure-nav/sidebar.md#add-a-sidebar-to-a-single-page) to display the sidebar on a page without listing it on `sidebars.yaml`.
 - Control the visibility of [sidebar entries with RBAC](../setup/how-to/rbac/links-and-groups-permissions.md#in-the-sidebar).
 
 ### Migrate configuration

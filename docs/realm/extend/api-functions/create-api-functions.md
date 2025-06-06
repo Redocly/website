@@ -78,7 +78,7 @@ The function takes two parameters:
 {% /toggle %}
 
 {% step id="weather-params" heading="Handle query parameters" when={ "example": "Weather API" } %}
-Extract query parameters with `context.query` and validate them.
+Extract and validate query parameters from the request.
 The weather API requires a location parameter (`q`).
 {% /step %}
 
