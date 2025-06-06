@@ -22,7 +22,7 @@ Customize the behavior and appearance of integrated API documentation. Requires 
 ---
 
 * [codeSamples](./code-samples.md)
-* [[Language object](./code-samples.md#language-object)]
+* \[[Language object](./code-samples.md#language-object)]
 * Configure the generated code samples in your API documentation.
 
 ---
@@ -193,3 +193,4 @@ rules:
 
 - [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
 - [Migration guide between reference docs 2.x and newest Redoc configuration](./config-migration.md)
+- Explore other [configuration options](../index.md) for your project.

@@ -48,11 +48,9 @@ openapi:
   hideSchemaTitles: true
 ```
 
-## Related options
-
-- [openapi](./index.md) - Learn more about using `openapi` configuration.
-
 ## Resources
 
+- [openapi](./index.md) - Learn more about using `openapi` configuration.
 - [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [OpenAPI visual reference](https://redocly.com/docs/openapi-visual-reference/)
+- [OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)
+- Explore other [configuration options](../index.md) for your project.

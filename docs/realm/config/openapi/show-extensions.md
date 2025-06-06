@@ -37,11 +37,9 @@ openapi:
   showExtensions: true
 ```
 
-## Related options
-
-- [openapi](./index.md) - Learn more about using `openapi` configuration.
-
 ## Resources
 
+- [openapi](./index.md) - Learn more about using `openapi` configuration.
 - Refer to the full list of [specification extensions](../../author/reference/openapi-extensions/index.md) supported in Redoc.
 - [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- Explore other [configuration options](../index.md) for your project.

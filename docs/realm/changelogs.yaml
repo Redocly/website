@@ -1,18 +1,4 @@
 '@redocly/realm':
-  0.122.0-next.13:
-    timestamp: 1749215569000
-    changes:
-      minor: []
-      patch:
-        - Updated the `dompurify` library to patch the `CVE-2025-48050` security vulnerability.
-        - Improved Markdoc tag error reporting for missing quotation marks.
-        - >-
-          Fixed RBAC conditional content visibility in search by restricting `Markdoc` conditional tags based on team permissions to prevent
-          unauthorized access.
-    dependencies:
-      '@redocly/openapi-docs': 3.10.0-next.9
-      '@redocly/asyncapi-docs': 0.3.0-next.9
-      '@redocly/portal-plugin-mock-server': 0.7.0-next.9
   0.122.0-next.12:
     timestamp: 1749126205000
     changes:
@@ -3149,20 +3135,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.122.0-next.13:
-    timestamp: 1749215569000
-    changes:
-      minor: []
-      patch:
-        - Updated the `dompurify` library to patch the `CVE-2025-48050` security vulnerability.
-        - Improved Markdoc tag error reporting for missing quotation marks.
-        - >-
-          Fixed RBAC conditional content visibility in search by restricting `Markdoc` conditional tags based on team permissions to prevent
-          unauthorized access.
-    dependencies:
-      '@redocly/openapi-docs': 3.10.0-next.9
-      '@redocly/asyncapi-docs': 0.3.0-next.9
-      '@redocly/portal-plugin-mock-server': 0.7.0-next.9
   0.122.0-next.12:
     timestamp: 1749126205000
     changes:
@@ -5634,20 +5606,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.122.0-next.13:
-    timestamp: 1749215569000
-    changes:
-      minor: []
-      patch:
-        - Updated the `dompurify` library to patch the `CVE-2025-48050` security vulnerability.
-        - Improved Markdoc tag error reporting for missing quotation marks.
-        - >-
-          Fixed RBAC conditional content visibility in search by restricting `Markdoc` conditional tags based on team permissions to prevent
-          unauthorized access.
-    dependencies:
-      '@redocly/openapi-docs': 3.10.0-next.9
-      '@redocly/asyncapi-docs': 0.3.0-next.9
-      '@redocly/portal-plugin-mock-server': 0.7.0-next.9
   0.122.0-next.12:
     timestamp: 1749126205000
     changes:
@@ -8123,16 +8081,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.122.0-next.13:
-    timestamp: 1749215569000
-    changes:
-      minor: []
-      patch:
-        - Updated the `dompurify` library to patch the `CVE-2025-48050` security vulnerability.
-    dependencies:
-      '@redocly/openapi-docs': 3.10.0-next.9
-      '@redocly/asyncapi-docs': 0.3.0-next.9
-      '@redocly/portal-plugin-mock-server': 0.7.0-next.9
   0.122.0-next.12:
     timestamp: 1749126205000
     changes:
@@ -12376,13 +12324,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.10.0-next.9:
-    timestamp: 1749215569000
-    changes:
-      minor: []
-      patch:
-        - Updated the `dompurify` library to patch the `CVE-2025-48050` security vulnerability.
-    dependencies: {}
   3.10.0-next.8:
     timestamp: 1748617646000
     changes:
@@ -15308,16 +15249,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.5.0-next.13:
-    timestamp: 1749215569000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.122.0-next.13
-      '@redocly/redoc': 0.122.0-next.13
-      '@redocly/redoc-reef': 0.122.0-next.13
-      '@redocly/redoc-revel': 0.122.0-next.13
   1.5.0-next.12:
     timestamp: 1749126205000
     changes:
@@ -18316,13 +18247,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.7.0-next.9:
-    timestamp: 1749215569000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.10.0-next.9
   0.7.0-next.8:
     timestamp: 1748617646000
     changes:
