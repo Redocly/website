@@ -190,6 +190,11 @@ Use the `search` configuration to:
 
 {% /table %}
 
+**Data usage and privacy:** Curious how AI Search uses your data?
+Redocly AI Search runs in **inference-only mode** and does not train or fine-tune AI models on your content.
+For details, see the [AI Search data usage FAQ](../faq/ai-search-privacy.md).
+
+
 ## Examples
 
 Hide the search bar:
