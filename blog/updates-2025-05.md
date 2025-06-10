@@ -65,7 +65,7 @@ Example `llms.txt`:
 - [SEO Configuration](/docs/realm/config/seo.md)
 ```
 
-In addition, all of your Markdown pages can be linked to in Markdown format by adding a `.md` to the end of the path.
+In addition, all of your Markdown (and OpenAPI) pages can be linked to in Markdown format by adding a `.md` to the end of the path.
 
 You can configure `llms.txt` generation — see [SEO configuration docs](/docs/realm/config/seo.md#llmstxt-object).
 
