@@ -1,4 +1,17 @@
 '@redocly/realm':
+  0.122.1:
+    timestamp: 1749650348000
+    changes:
+      minor: []
+      patch:
+        - Fixed performance issue in the `Tabs` component.
+        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
+    dependencies:
+      '@redocly/theme': 0.54.1
+      '@redocly/asyncapi-docs': 0.3.1
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.1
+      '@redocly/portal-plugin-mock-server': 0.7.1
   0.123.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -16,7 +29,7 @@
       '@redocly/theme': 0.55.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
   0.122.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Allowed debugging of API functions using `console`.
@@ -83,7 +96,7 @@
           unauthorized access.
     dependencies: {}
   0.122.0-next.14:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Allowed debugging of API functions using `console`.
@@ -3244,6 +3257,19 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.122.1:
+    timestamp: 1749650348000
+    changes:
+      minor: []
+      patch:
+        - Fixed performance issue in the `Tabs` component.
+        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
+    dependencies:
+      '@redocly/theme': 0.54.1
+      '@redocly/asyncapi-docs': 0.3.1
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.1
+      '@redocly/portal-plugin-mock-server': 0.7.1
   0.123.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -3261,7 +3287,7 @@
       '@redocly/theme': 0.55.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
   0.122.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Allowed debugging of API functions using `console`.
@@ -3310,7 +3336,7 @@
           unauthorized access.
     dependencies: {}
   0.122.0-next.14:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Allowed debugging of API functions using `console`.
@@ -5806,6 +5832,19 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.122.1:
+    timestamp: 1749650348000
+    changes:
+      minor: []
+      patch:
+        - Fixed performance issue in the `Tabs` component.
+        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
+    dependencies:
+      '@redocly/theme': 0.54.1
+      '@redocly/asyncapi-docs': 0.3.1
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.1
+      '@redocly/portal-plugin-mock-server': 0.7.1
   0.123.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -5823,7 +5862,7 @@
       '@redocly/theme': 0.55.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
   0.122.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Added the `lightboxStyle` attribute that customizes the image lightbox styles.
@@ -5869,7 +5908,7 @@
           unauthorized access.
     dependencies: {}
   0.122.0-next.14:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
@@ -8368,6 +8407,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.122.1:
+    timestamp: 1749650348000
+    changes:
+      minor: []
+      patch:
+        - Fixed performance issue in the `Tabs` component.
+    dependencies:
+      '@redocly/theme': 0.54.1
+      '@redocly/asyncapi-docs': 0.3.1
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.1
+      '@redocly/portal-plugin-mock-server': 0.7.1
   0.123.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -8384,7 +8435,7 @@
       '@redocly/theme': 0.55.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
   0.122.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Added the `lightboxStyle` attribute that customizes the image lightbox styles.
@@ -8443,7 +8494,7 @@
           unauthorized access.
     dependencies: {}
   0.122.0-next.14:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
@@ -10924,6 +10975,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.54.1:
+    timestamp: 1749650348000
+    changes:
+      minor: []
+      patch:
+        - Fixed performance issue in the `Tabs` component.
+    dependencies: {}
   0.55.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -10935,7 +10993,7 @@
     dependencies:
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
   0.54.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
@@ -10969,7 +11027,7 @@
         - Fixed list formatting in code walkthroughs.
     dependencies: {}
   0.54.0-next.8:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch:
@@ -12757,6 +12815,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.10.1:
+    timestamp: 1749650348000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.13.1
   3.11.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -12767,7 +12832,7 @@
       '@redocly/replay': 0.14.0-next.0
       '@redocly/theme': 0.55.0-next.0
   3.10.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - >-
@@ -12790,7 +12855,7 @@
     dependencies:
       '@redocly/replay': 0.13.0
   3.10.0-next.10:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
@@ -15764,6 +15829,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.5.1:
+    timestamp: 1749650348000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.54.1
+      '@redocly/realm': 0.122.1
+      '@redocly/redoc': 0.122.1
+      '@redocly/redoc-reef': 0.122.1
+      '@redocly/redoc-revel': 0.122.1
   1.6.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -15777,7 +15853,7 @@
       '@redocly/redoc': 0.123.0-next.0
       '@redocly/theme': 0.55.0-next.0
   1.5.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Upgraded React to `19.x`.
@@ -15789,7 +15865,7 @@
       '@redocly/redoc-reef': 0.122.0
       '@redocly/redoc-revel': 0.122.0
   1.5.0-next.14:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
@@ -18807,6 +18883,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.7.1:
+    timestamp: 1749650348000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.10.1
   0.8.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -18816,14 +18899,14 @@
     dependencies:
       '@redocly/openapi-docs': 3.11.0-next.0
   0.7.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
     dependencies:
       '@redocly/openapi-docs': 3.10.0
   0.7.0-next.10:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
@@ -20509,6 +20592,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.13.1:
+    timestamp: 1749650348000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.54.1
   0.14.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -20520,7 +20610,7 @@
     dependencies:
       '@redocly/theme': 0.55.0-next.0
   0.13.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
@@ -20529,7 +20619,7 @@
     dependencies:
       '@redocly/theme': 0.54.0
   0.13.0-next.8:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
@@ -21366,6 +21456,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.5.1:
+    timestamp: 1749650348000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.54.1
   0.6.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -21375,7 +21472,7 @@
     dependencies:
       '@redocly/theme': 0.55.0-next.0
   0.5.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
@@ -21383,7 +21480,7 @@
     dependencies:
       '@redocly/theme': 0.54.0
   0.5.0-next.8:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
