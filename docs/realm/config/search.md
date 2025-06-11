@@ -51,7 +51,7 @@ Use the `search` configuration to:
 - shortcuts
 - [string]
 - Keyboard shortcuts that activate search (for example, `ctrl+f`).
-  Default: `/`.
+  Default: `⌘+k` or `ctrl+k`.
 
 ---
 
