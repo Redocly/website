@@ -56,9 +56,9 @@ their tool interface layer.
 
 Despite the appealing goals, some in the developer and API ecosystem remain cautious — and for good reason.
 
-### 1. Loose srructure with no formal governing body 
+### 1. Loose structure with no formal governing body 
 
-Well we first reviewed MCP, we noted that wasn't a formal protocol spec in the traditional sense. 
+When we first reviewed MCP, we noted that it wasn't a formal protocol specification in the expected sense.
 
 Many of the early discussions lived across example code and GitHub discussions, making it difficult to sort through. 
 
@@ -123,7 +123,7 @@ Before adopting it, we recommend developers:
 - **Read the full spec** ([modelcontextprotocol.io](https://modelcontextprotocol.io))  
 - **Review security boundaries carefully**  
 - **Don’t expose sensitive tools without strict permission controls**  
-- **Consider if direct integrations are more practicale**
+- **Consider if direct integrations are more practical**
 
 ## Final thoughts
 
