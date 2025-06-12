@@ -27,7 +27,7 @@ Configure the code samples generated from your OpenAPI description.
 
 * languages
 *
-  \[[language object](#language-object)]
+  [[language object](#language-object)]
 *
   **REQUIRED.**
   Array of [language](#language-object) objects, one per language.
@@ -112,9 +112,12 @@ openapi:
 
 With this configuration, each endpoint has code samples in these five languages generated and displayed in the documentation.
 
-## Resources
+
+## Related options
 
 - [openapi](./index.md) - Learn more about using `openapi` configuration.
+
+## Resources
+
 - [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)
-- Explore other [configuration options](../index.md) for your project.
+- [OpenAPI visual reference](https://redocly.com/docs/openapi-visual-reference/)
