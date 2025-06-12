@@ -45,7 +45,7 @@
           properties and components for future compatibility.
         - Added support for closing the image lightbox using the Escape key.
         - Added a possibility to override icon colors for "Search with AI" stars.
-        - Improved AI Search and `llms.txt` chunk content.
+        - Improved AI Search chunk content.
         - Added `llms.txt` file generation.
         - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
       patch:
@@ -81,7 +81,7 @@
         - Fixed an issue where an OpenAPI page would jump unexpectedly while scrolling.
         - Fixed an issue where AI search failed to find information described in OpenAPI tags.
         - Fixed header display issue in files starting with a byte order mark (`BOM`).
-        - Improved Markdoc tag error reporting for missing quotation marks.
+        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
         - Fixed redirect handling for complex preview URLs.
         - Removed duplicate teams from `$rbac` variable.
         - >-
@@ -113,7 +113,7 @@
       minor: []
       patch:
         - Updated the `dompurify` library to patch the `CVE-2025-48050` security vulnerability.
-        - Improved Markdoc tag error reporting for missing quotation marks.
+        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
         - >-
           Fixed RBAC conditional content visibility in search by restricting `Markdoc` conditional tags based on team permissions to prevent
           unauthorized access.
@@ -152,7 +152,7 @@
     changes:
       minor: []
       patch:
-        - Improved AI Search and `llms.txt` chunk content.
+        - Improved AI Search chunk content.
         - Fixed breadcrumbs appearing on pages not nested in the sidebar.
     dependencies: {}
   0.122.0-next.8:
@@ -3300,7 +3300,7 @@
           properties and components for future compatibility.
         - Added support for closing the image lightbox using the Escape key.
         - Added a possibility to override icon colors for "Search with AI" stars.
-        - Improved AI Search and `llms.txt` chunk content.
+        - Improved AI Search chunk content.
         - Added `llms.txt` file generation.
         - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
       patch:
@@ -3322,7 +3322,7 @@
         - Fixed search history behavior to prevent frequent or redundant query entries.
         - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
         - Fixed header display issue in files starting with a byte order mark (`BOM`).
-        - Improved Markdoc tag error reporting for missing quotation marks.
+        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
         - Fixed redirect handling for complex preview URLs.
         - Removed duplicate teams from `$rbac` variable.
         - >-
@@ -3353,7 +3353,7 @@
       minor: []
       patch:
         - Updated the `dompurify` library to patch the `CVE-2025-48050` security vulnerability.
-        - Improved Markdoc tag error reporting for missing quotation marks.
+        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
         - >-
           Fixed RBAC conditional content visibility in search by restricting `Markdoc` conditional tags based on team permissions to prevent
           unauthorized access.
@@ -3390,7 +3390,7 @@
     changes:
       minor: []
       patch:
-        - Improved AI Search and `llms.txt` chunk content.
+        - Improved AI Search chunk content.
         - Fixed breadcrumbs appearing on pages not nested in the sidebar.
     dependencies: {}
   0.122.0-next.8:
@@ -5870,7 +5870,7 @@
         - Upgraded React to `19.x`.
         - Added support for closing the image lightbox using the Escape key.
         - Added a possibility to override icon colors for "Search with AI" stars.
-        - Improved AI Search and `llms.txt` chunk content.
+        - Improved AI Search chunk content.
         - Added `llms.txt` file generation.
         - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
       patch:
@@ -5893,7 +5893,7 @@
         - Fixed search history behavior to prevent frequent or redundant query entries.
         - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
         - Fixed header display issue in files starting with a byte order mark (`BOM`).
-        - Improved Markdoc tag error reporting for missing quotation marks.
+        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
         - Fixed redirect handling for complex preview URLs.
         - Removed duplicate teams from `$rbac` variable.
         - >-
@@ -5924,7 +5924,7 @@
       minor: []
       patch:
         - Updated the `dompurify` library to patch the `CVE-2025-48050` security vulnerability.
-        - Improved Markdoc tag error reporting for missing quotation marks.
+        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
         - >-
           Fixed RBAC conditional content visibility in search by restricting `Markdoc` conditional tags based on team permissions to prevent
           unauthorized access.
@@ -5959,7 +5959,7 @@
     changes:
       minor: []
       patch:
-        - Improved AI Search and `llms.txt` chunk content.
+        - Improved AI Search chunk content.
         - Fixed breadcrumbs appearing on pages not nested in the sidebar.
     dependencies: {}
   0.122.0-next.8:
@@ -8446,7 +8446,7 @@
         - Upgraded React to `19.x`.
         - Added support for closing the image lightbox using the Escape key.
         - Added a possibility to override icon colors for "Search with AI" stars.
-        - Improved AI Search and `llms.txt` chunk content.
+        - Improved AI Search chunk content.
         - Added `llms.txt` file generation.
         - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
       patch:
@@ -8480,7 +8480,7 @@
         - Fixed an issue where an OpenAPI page would jump unexpectedly while scrolling.
         - Fixed an issue where AI search failed to find information described in OpenAPI tags.
         - Fixed header display issue in files starting with a byte order mark (`BOM`).
-        - Improved Markdoc tag error reporting for missing quotation marks.
+        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
         - Fixed redirect handling for complex preview URLs.
         - Removed duplicate teams from `$rbac` variable.
         - >-
@@ -8541,7 +8541,7 @@
     changes:
       minor: []
       patch:
-        - Improved AI Search and `llms.txt` chunk content.
+        - Improved AI Search chunk content.
         - Fixed breadcrumbs appearing on pages not nested in the sidebar.
     dependencies: {}
   0.122.0-next.8:
