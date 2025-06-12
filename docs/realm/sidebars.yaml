@@ -13,14 +13,8 @@
           label: Migrate from legacy portal
 
 - group: Reunite
+  page: author/concepts/reunite.md
   items:
-    # This page is not as good as the next one
-    # - page: author/concepts/collaboration.md
-    #   label: Reunite overview
-    - separator: Getting started
-    - page: author/concepts/reunite.md
-      label: Reunite overview
-
     - separator: Organization & team settings
     - page: ./setup/how-to/manage-orgs.md
       label: Organizations
@@ -52,6 +46,8 @@
       label: Projects
     - page: author/how-to/use-editor.md
       label: Editor
+    - page: author/reference/keyboard-shortcuts.md
+      label: Keyboard shortcuts
     - page: author/how-to/use-webview.md
       label: Webviews
     - page: author/how-to/use-previews.md
@@ -80,12 +76,51 @@
       items:
         - page: setup/respect-monitoring/configure-respect-monitoring.md
         - page: setup/respect-monitoring/manage-respect-monitoring.md
-    - page: author/reference/keyboard-shortcuts.md
-      label: Keyboard shortcuts
+    # Missing content about Analytics (add when released)
     - page: author/how-to/switch-between-projects.md # consolidate into manage projects?
       label: Switch between projects
     - page: setup/how-to/feedback/view-export-data.md
       label: Feedback
+    - group: Connect a Git provider
+      page: ./setup/how-to/git-providers/connect-git-provider.md
+      items:
+        - page: ./setup/how-to/git-providers/manage-self-hosted.md
+          label: Manage self-hosted Git providers
+        - page: ./setup/how-to/git-providers/github.md
+          label: GitHub
+        - page: ./setup/how-to/git-providers/self-hosted/github.md
+          label: GitHub Enterprise Server self-hosted
+        - page: ./setup/how-to/git-providers/gitlab.md
+          label: GitLab
+        - page: ./setup/how-to/git-providers/self-hosted/gitlab.md
+          label: GitLab self-hosted
+        - page: ./setup/how-to/git-providers/azure-devops.md
+          label: Azure DevOps
+        - page: ./setup/how-to/git-providers/bitbucket-cloud.md
+          label: Bitbucket Cloud 
+    - group: Remote content automation
+      page: ./setup/concepts/remote-content.md
+      items:
+        - page: ./setup/how-to/remote-content/from-github.md
+          label: From GitHub
+        - page: ./setup/how-to/remote-content/from-gitlab.md
+          label: From GitLab
+        - page: ./setup/how-to/remote-content/from-azure-devops.md
+          label: From Azure DevOps
+        - page: ./setup/how-to/remote-content/from-bitbucket-cloud.md
+          label: From Bitbucket Cloud
+        - page: ./setup/how-to/remote-content/url.md
+          label: From URL
+        - page: ./setup/how-to/remote-content/push.md
+          label: From CICD
+        - page: ./setup/reference/reunite-push-action.md
+          label: From GitHub Actions
+        - page: ./setup/how-to/remote-content/manually-sync-remote-content.md
+          label: Manually sync
+        - page: ./setup/how-to/remote-content/edit-remote-content-folder.md
+          label: Edit content folder
+        - page: ./setup/reference/verify-remote-content.md
+          label: Verify remote content
     # consider moving or removing the page:
     # - page: setup/how-to/feedback/extend-feedback.md
     #   label: Extend feedback form
@@ -98,7 +133,7 @@
     - page: setup/reference/telemetry.md
       label: Telemetry
 
-- group: Content management
+- group: Content
   items:
     - page: author/concepts/project-structure.md
       label: Project structure
@@ -249,9 +284,8 @@
       label: Upgrade Realm version
 
 
-- group: Branding & navigation
+- group: Branding
   items:
-    - separator: Branding
     - page: style/concepts/styling.md
       label: Styling concepts
     - page: style/how-to/customize-styles.md
@@ -275,7 +309,8 @@
           label: Component
         - page: style/reference/css-variables/api-docs.md
           label: API docs
-    - separator: Navigation
+- group: Navigation
+  items:
     - page: author/concepts/navigation.md
       label: Navigation elements
     - page: author/how-to/configure-nav/navbar.md
@@ -316,7 +351,22 @@
       items:
         - page: author/how-to/multiple-products.md
           label: Add multiple products
-    - separator: Advanced customization
+
+
+
+
+
+- group: Customization
+  items:
+
+    - group: API functions
+      items:
+        - page: extend/api-functions/index.md
+          label: Use cases
+        - page: extend/api-functions/api-functions-reference.md
+          label: Reference
+        - page: extend/api-functions/create-api-functions.md
+          label: Tutorials
     - page: extend/how-to/create-react-page.md
     - page: author/reference/markdoc-variables.md
     - page: extend/tutorials/build-markdoc-tags.md
@@ -349,66 +399,7 @@
     - page: extend/how-to/configure-request-values.md
 
 
-- group: Integrations and automations
-  items:
-    - separator: Git providers
-    - group: Connect a Git provider
-      page: ./setup/how-to/git-providers/connect-git-provider.md
-      items:
-        - page: ./setup/how-to/git-providers/manage-self-hosted.md
-          label: Manage self-hosted Git providers
-        - page: ./setup/how-to/git-providers/github.md
-          label: GitHub
-        - page: ./setup/how-to/git-providers/self-hosted/github.md
-          label: GitHub Enterprise Server self-hosted
-        - page: ./setup/how-to/git-providers/gitlab.md
-          label: GitLab
-        - page: ./setup/how-to/git-providers/self-hosted/gitlab.md
-          label: GitLab self-hosted
-        - page: ./setup/how-to/git-providers/azure-devops.md
-          label: Azure DevOps
-        - page: ./setup/how-to/git-providers/bitbucket-cloud.md
-          label: Bitbucket Cloud 
-    - separator: Remote content
-    - group: Remote content automation
-      page: ./setup/concepts/remote-content.md
-      items:
-        - page: ./setup/how-to/remote-content/from-github.md
-          label: From GitHub
-        - page: ./setup/how-to/remote-content/from-gitlab.md
-          label: From GitLab
-        - page: ./setup/how-to/remote-content/from-azure-devops.md
-          label: From Azure DevOps
-        - page: ./setup/how-to/remote-content/from-bitbucket-cloud.md
-          label: From Bitbucket Cloud
-        - page: ./setup/how-to/remote-content/url.md
-          label: From URL
-        - page: ./setup/how-to/remote-content/push.md
-          label: From CICD
-        - page: ./setup/reference/reunite-push-action.md
-          label: From GitHub Actions
-        - page: ./setup/how-to/remote-content/manually-sync-remote-content.md
-          label: Manually sync
-        - page: ./setup/how-to/remote-content/edit-remote-content-folder.md
-          label: Edit content folder
-        - page: ./setup/reference/verify-remote-content.md
-          label: Verify remote content
-    - separator: API functions
-    - page: extend/api-functions/index.md
-      label: Use cases
-    - page: extend/api-functions/api-functions-reference.md
-      label: Reference
-    - page: extend/api-functions/create-api-functions.md
-      label: Tutorials
-    - separator: Third-party integrations
-    - page: /integrations/analytics
-      label: Analytics
-    - page: setup/reference/apigee-api-operations.md
-      label: Apigee API operations
-    - page: setup/reference/gravitee-api-reference.md
-      label: Gravitee API reference
-
-- group: Access management
+- group: Access
   items:
     - group: Role-based access control (RBAC)
       page: ./setup/how-to/rbac/index.md
@@ -425,8 +416,6 @@
           label: For navigation
         - page: ./setup/how-to/rbac/pattern-access.md
           label: Pattern-based access
-        # - page: config/rbac.md
-        #   label: Role-based access control
 
 
 # - $ref: author/sidebars.yaml

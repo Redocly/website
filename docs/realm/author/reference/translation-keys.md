@@ -16,12 +16,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- asyncapi.download.description.title
-- Title for the download description section in AsyncAPI description
-- Download AsycAPI description
-
----
-
 - userMenu.login
 - Login button label
 - Login
@@ -574,12 +568,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- openapi.viewSecurityDetails
-- Label for the view security details button in OpenAPI description
-- View details
-
----
-
 - openapi.enum
 - Label for enum in OpenAPI description
 - Enum
@@ -820,18 +808,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- openapi.hideOptionalScopes
-- Label for hiding optional scopes in OpenAPI description
-- Hide optional scopes
-
----
-
-- openapi.showOptionalScopes
-- Label for showing optional scopes in OpenAPI description
-- Show optional scopes
-
----
-
 - openapi.showExample
 - Label for showing an example in OpenAPI description
 - Show example
@@ -895,6 +871,12 @@ This page contains the list of all predefined translation keys used in default U
 - openapi.refreshUrl
 - Label for the refresh URL in OpenAPI security schemes
 - Refresh URL
+
+---
+
+- openapi.scopes
+- Label for scopes in OpenAPI security schemes
+- Scopes
 
 ---
 
