@@ -57,8 +57,8 @@ A test description can be linked to an OpenAPI file.
 
 Respect supports two extensions to make it easier to run tests:
 
-- [x-serverUrl](./extensions/x-server-url.md) to indicate the URL to use for the tests.
 - [x-operation](./extensions/x-operation.md) for a freeform API call outside the described API endpoints.
+- [x-security](./extensions/x-security.md) extension lets you apply OpenAPI security schemes to a step request.
 
 {% /if %}
 
