@@ -23628,3 +23628,10 @@ reunite:
         - Implemented organization-specific branding on authentication screens.
         - Fixed fetching auto-merge errors on the Remote Content page.
     dependencies: {}
+  v2025-06-13.1:
+    timestamp: 1749812020000
+    changes:
+      minor: []
+      patch:
+        - Configured `AssertionConsumerServiceURL` for SAML to use the correct value instead of the default first entry.
+    dependencies: {}
