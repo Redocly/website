@@ -7,3 +7,4 @@
 - page: ./success-criteria-and-failure-handling.md
 - page: ./linting-arazzo-workflows.md
 - page: ./testing-arazzo-workflows.md
+- page: ./documenting-multiple-apis-using-arazzo.md
