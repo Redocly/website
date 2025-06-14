@@ -1,21 +1,4 @@
 '@redocly/realm':
-  0.123.0-next.1:
-    timestamp: 1749821473000
-    changes:
-      minor:
-        - Exposed `usePageVersions` and `usePageActiveVersion` hooks to access the current page version in React pages.
-      patch:
-        - Fixed detection of changes in partial folders.
-        - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
-        - Improved accessibility by adding descriptive `alt` text to footer icons.
-        - Fixed relative link issues in frontmatter for `Markdoc` tags.
-        - Fixed an issue where the Markdoc variable `$remoteAddr` returned incorrect values.
-    dependencies:
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/theme': 0.55.0-next.1
-      '@redocly/asyncapi-docs': 0.4.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.1
   0.122.1:
     timestamp: 1749653836000
     changes:
@@ -62,7 +45,7 @@
           properties and components for future compatibility.
         - Added support for closing the image lightbox using the Escape key.
         - Added a possibility to override icon colors for "Search with AI" stars.
-        - Improved AI Search chunk content.
+        - Improved AI Search and `llms.txt` chunk content.
         - Added `llms.txt` file generation.
         - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
       patch:
@@ -98,7 +81,7 @@
         - Fixed an issue where an OpenAPI page would jump unexpectedly while scrolling.
         - Fixed an issue where AI search failed to find information described in OpenAPI tags.
         - Fixed header display issue in files starting with a byte order mark (`BOM`).
-        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
+        - Improved Markdoc tag error reporting for missing quotation marks.
         - Fixed redirect handling for complex preview URLs.
         - Removed duplicate teams from `$rbac` variable.
         - >-
@@ -130,7 +113,7 @@
       minor: []
       patch:
         - Updated the `dompurify` library to patch the `CVE-2025-48050` security vulnerability.
-        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
+        - Improved Markdoc tag error reporting for missing quotation marks.
         - >-
           Fixed RBAC conditional content visibility in search by restricting `Markdoc` conditional tags based on team permissions to prevent
           unauthorized access.
@@ -169,7 +152,7 @@
     changes:
       minor: []
       patch:
-        - Improved AI Search chunk content.
+        - Improved AI Search and `llms.txt` chunk content.
         - Fixed breadcrumbs appearing on pages not nested in the sidebar.
     dependencies: {}
   0.122.0-next.8:
@@ -3274,23 +3257,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.123.0-next.1:
-    timestamp: 1749821473000
-    changes:
-      minor:
-        - Exposed `usePageVersions` and `usePageActiveVersion` hooks to access the current page version in React pages.
-      patch:
-        - Fixed detection of changes in partial folders.
-        - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
-        - Improved accessibility by adding descriptive `alt` text to footer icons.
-        - Fixed relative link issues in frontmatter for `Markdoc` tags.
-        - Fixed an issue where the Markdoc variable `$remoteAddr` returned incorrect values.
-    dependencies:
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/theme': 0.55.0-next.1
-      '@redocly/asyncapi-docs': 0.4.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.1
   0.122.1:
     timestamp: 1749653836000
     changes:
@@ -3334,7 +3300,7 @@
           properties and components for future compatibility.
         - Added support for closing the image lightbox using the Escape key.
         - Added a possibility to override icon colors for "Search with AI" stars.
-        - Improved AI Search chunk content.
+        - Improved AI Search and `llms.txt` chunk content.
         - Added `llms.txt` file generation.
         - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
       patch:
@@ -3356,7 +3322,7 @@
         - Fixed search history behavior to prevent frequent or redundant query entries.
         - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
         - Fixed header display issue in files starting with a byte order mark (`BOM`).
-        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
+        - Improved Markdoc tag error reporting for missing quotation marks.
         - Fixed redirect handling for complex preview URLs.
         - Removed duplicate teams from `$rbac` variable.
         - >-
@@ -3387,7 +3353,7 @@
       minor: []
       patch:
         - Updated the `dompurify` library to patch the `CVE-2025-48050` security vulnerability.
-        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
+        - Improved Markdoc tag error reporting for missing quotation marks.
         - >-
           Fixed RBAC conditional content visibility in search by restricting `Markdoc` conditional tags based on team permissions to prevent
           unauthorized access.
@@ -3424,7 +3390,7 @@
     changes:
       minor: []
       patch:
-        - Improved AI Search chunk content.
+        - Improved AI Search and `llms.txt` chunk content.
         - Fixed breadcrumbs appearing on pages not nested in the sidebar.
     dependencies: {}
   0.122.0-next.8:
@@ -5866,23 +5832,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.123.0-next.1:
-    timestamp: 1749821473000
-    changes:
-      minor:
-        - Exposed `usePageVersions` and `usePageActiveVersion` hooks to access the current page version in React pages.
-      patch:
-        - Fixed detection of changes in partial folders.
-        - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
-        - Improved accessibility by adding descriptive `alt` text to footer icons.
-        - Fixed relative link issues in frontmatter for `Markdoc` tags.
-        - Fixed an issue where the Markdoc variable `$remoteAddr` returned incorrect values.
-    dependencies:
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/theme': 0.55.0-next.1
-      '@redocly/asyncapi-docs': 0.4.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.1
   0.122.1:
     timestamp: 1749653836000
     changes:
@@ -5921,7 +5870,7 @@
         - Upgraded React to `19.x`.
         - Added support for closing the image lightbox using the Escape key.
         - Added a possibility to override icon colors for "Search with AI" stars.
-        - Improved AI Search chunk content.
+        - Improved AI Search and `llms.txt` chunk content.
         - Added `llms.txt` file generation.
         - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
       patch:
@@ -5944,7 +5893,7 @@
         - Fixed search history behavior to prevent frequent or redundant query entries.
         - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
         - Fixed header display issue in files starting with a byte order mark (`BOM`).
-        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
+        - Improved Markdoc tag error reporting for missing quotation marks.
         - Fixed redirect handling for complex preview URLs.
         - Removed duplicate teams from `$rbac` variable.
         - >-
@@ -5975,7 +5924,7 @@
       minor: []
       patch:
         - Updated the `dompurify` library to patch the `CVE-2025-48050` security vulnerability.
-        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
+        - Improved Markdoc tag error reporting for missing quotation marks.
         - >-
           Fixed RBAC conditional content visibility in search by restricting `Markdoc` conditional tags based on team permissions to prevent
           unauthorized access.
@@ -6010,7 +5959,7 @@
     changes:
       minor: []
       patch:
-        - Improved AI Search chunk content.
+        - Improved AI Search and `llms.txt` chunk content.
         - Fixed breadcrumbs appearing on pages not nested in the sidebar.
     dependencies: {}
   0.122.0-next.8:
@@ -8458,21 +8407,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.123.0-next.1:
-    timestamp: 1749821473000
-    changes:
-      minor: []
-      patch:
-        - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
-        - Improved accessibility by adding descriptive `alt` text to footer icons.
-        - Fixed relative link issues in frontmatter for `Markdoc` tags.
-        - Fixed an issue where the Markdoc variable `$remoteAddr` returned incorrect values.
-    dependencies:
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/theme': 0.55.0-next.1
-      '@redocly/asyncapi-docs': 0.4.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.1
   0.122.1:
     timestamp: 1749653836000
     changes:
@@ -8512,7 +8446,7 @@
         - Upgraded React to `19.x`.
         - Added support for closing the image lightbox using the Escape key.
         - Added a possibility to override icon colors for "Search with AI" stars.
-        - Improved AI Search chunk content.
+        - Improved AI Search and `llms.txt` chunk content.
         - Added `llms.txt` file generation.
         - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
       patch:
@@ -8546,7 +8480,7 @@
         - Fixed an issue where an OpenAPI page would jump unexpectedly while scrolling.
         - Fixed an issue where AI search failed to find information described in OpenAPI tags.
         - Fixed header display issue in files starting with a byte order mark (`BOM`).
-        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
+        - Improved Markdoc tag error reporting for missing quotation marks.
         - Fixed redirect handling for complex preview URLs.
         - Removed duplicate teams from `$rbac` variable.
         - >-
@@ -8607,7 +8541,7 @@
     changes:
       minor: []
       patch:
-        - Improved AI Search chunk content.
+        - Improved AI Search and `llms.txt` chunk content.
         - Fixed breadcrumbs appearing on pages not nested in the sidebar.
     dependencies: {}
   0.122.0-next.8:
@@ -11041,15 +10975,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.55.0-next.1:
-    timestamp: 1749821473000
-    changes:
-      minor:
-        - Exposed `usePageVersions` and `usePageActiveVersion` hooks to access the current page version in React pages.
-      patch:
-        - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
-        - Improved accessibility by adding descriptive `alt` text to footer icons.
-    dependencies: {}
   0.54.1:
     timestamp: 1749653836000
     changes:
@@ -12890,13 +12815,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.11.0-next.1:
-    timestamp: 1749821473000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.14.0-next.1
   3.10.1:
     timestamp: 1749653836000
     changes:
@@ -14985,13 +14903,6 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
-  0.12.0-next.1:
-    timestamp: 1749821473000
-    changes:
-      minor:
-        - Added support for displaying deprecated queries, mutations, and subscriptions in the GraphQL documentation.
-      patch: []
-    dependencies: {}
   0.12.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -15918,17 +15829,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.6.0-next.1:
-    timestamp: 1749821473000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.123.0-next.1
-      '@redocly/redoc-reef': 0.123.0-next.1
-      '@redocly/redoc-revel': 0.123.0-next.1
-      '@redocly/theme': 0.55.0-next.1
-      '@redocly/redoc': 0.123.0-next.1
   1.5.1:
     timestamp: 1749653836000
     changes:
@@ -18983,13 +18883,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.8.0-next.1:
-    timestamp: 1749821473000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0-next.1
   0.7.1:
     timestamp: 1749653836000
     changes:
@@ -20699,13 +20592,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.14.0-next.1:
-    timestamp: 1749821473000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.1
   0.13.1:
     timestamp: 1749653836000
     changes:
@@ -21570,13 +21456,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.6.0-next.1:
-    timestamp: 1749821473000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.1
   0.5.1:
     timestamp: 1749653836000
     changes:

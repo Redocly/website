@@ -1067,7 +1067,7 @@ This page contains the list of all predefined translation keys used in default U
 ---
 
 - graphql.deprecationReason
-- Label for the deprecation reason admonition in GraphQL content
+- Label for the deprecation reason in GraphQL content
 - Deprecation reason
 
 ---
