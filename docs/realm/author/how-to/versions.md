@@ -386,17 +386,17 @@ function VersionedPage() {
 }
 ```
 
-### usePageActiveVersion
+### useActivePageVersion
 
-The `usePageActiveVersion` hook returns the currently active version identifier as a string, or `undefined` if no version is active.
+The `useActivePageVersion` hook returns the currently active version identifier as a string, or `undefined` if no version is active.
 
 Example usage:
 
 ```tsx
-import { usePageActiveVersion } from '@redocly/theme/core/hooks';
+import { useActivePageVersion } from '@redocly/theme/core/hooks';
 
 function VersionedPage() {
-  const activeVersion = usePageActiveVersion();
+  const activeVersion = useActivePageVersion();
   
   return (
     <div>
