@@ -44,9 +44,11 @@ Using the Museum API as an example, all the schemas are shown in the section cal
 
 ![schemaDefinitionsTagName](../images/schema-definitions-tag-name.png)
 
-## Resources
+## Related options
 
 - [openapi](./index.md) - Learn more about using `openapi` configuration.
+
+## Resources
+
 - Use the [`x-tags` specification extension](../../author/reference/openapi-extensions/x-tags.md) to select which schemas to display in which sections for more fine-grained control of the output.
 - [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- Explore other [configuration options](../index.md) for your project.

@@ -54,9 +54,11 @@ openapi:
 
 ![three panel layout](../images/three-panel-layout.png)
 
-## Resources
+## Related options
 
 - [openapi](./index.md) - Learn more about using `openapi` configuration.
+
+## Resources
+
 - [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
 - [OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)
-- Explore other [configuration options](../index.md) for your project.

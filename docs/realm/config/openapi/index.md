@@ -193,4 +193,3 @@ rules:
 
 - [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
 - [Migration guide between reference docs 2.x and newest Redoc configuration](./config-migration.md)
-- Explore other [configuration options](../index.md) for your project.
