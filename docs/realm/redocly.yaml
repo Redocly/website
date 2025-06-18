@@ -1,4 +1,3 @@
-
 logo:
   srcSet: "./images/redocly-logo.svg light, ./images/redocly-logo-inverted.svg dark"
   altText: Redocly logo
@@ -6,10 +5,10 @@ logo:
 
 navbar:
   items:
-    - page: index.md
-      label: Realm
-    - page: config/index.md
-      label: Config
+  - page: index.md
+    label: Realm
+  - page: config/index.md
+    label: Config
 
 scorecard:
   ignoreNonCompliant: true
@@ -26,16 +25,16 @@ feedback:
     comment:
       likeLabel: What was most helpful?
       dislikeLabel: What can we improve?
-      
+
 userMenu:
   hideLoginButton: true
 
 search:
-  engine: typesense 
+  engine: typesense
   shortcuts:
-    - ctrl+f
-    - cmd+k
-    - /
+  - ctrl+f
+  - cmd+k
+  - /
 
 apis:
   redocly-museum:
@@ -54,10 +53,10 @@ apis:
           type: Operation
           property: summary
         where:
-          - subject:
-              type: Paths
-            assertions:
-              defined: true
+        - subject:
+            type: Paths
+          assertions:
+            defined: true
         assertions:
           pattern: /^(Create|Get|Update|List|Delete|Buy).*[^\.]$/
   scout-api:
@@ -79,10 +78,10 @@ apis:
           type: Operation
           property: summary
         where:
-          - subject:
-              type: Paths
-            assertions:
-              defined: true
+        - subject:
+            type: Paths
+          assertions:
+            defined: true
         assertions:
           pattern: /^(Create|Get|Update|Delete|Login|Send|Callback).*[^\.]$/
   scout-agent:
@@ -96,13 +95,13 @@ apis:
           notPattern: /^(The\s|A\s|An\s)/
         severity: off
 extends:
-  - recommended
+- recommended
 rules:
   boolean-parameter-prefixes:
     severity: error
     prefixes:
-      - is
-      - can
+    - is
+    - can
   info-license: error
   info-license-url: error
   no-ambiguous-paths: error
@@ -123,17 +122,17 @@ rules:
   request-mime-type:
     severity: error
     allowedValues:
-      - application/json
-      - application/problem+json
-      - multipart/form-data
+    - application/json
+    - application/problem+json
+    - multipart/form-data
   response-mime-type:
     severity: error
     allowedValues:
-      - application/json
-      - application/problem+json
-      - text/plain
-      - text/csv
-      - application/zip
+    - application/json
+    - application/problem+json
+    - text/plain
+    - text/csv
+    - application/zip
   spec-strict-refs: error
   tag-description: error
 
@@ -160,8 +159,8 @@ rules:
       type: Header
     assertions:
       requireAny:
-        - example
-        - examples
+      - example
+      - examples
   rule/no-british-english-descriptions:
     subject:
       type: any
@@ -227,10 +226,10 @@ rules:
       type: Operation
       property: summary
     where:
-      - subject:
-          type: Paths
-        assertions:
-          defined: true
+    - subject:
+        type: Paths
+      assertions:
+        defined: true
     assertions:
       pattern: /^(Create|Get|Update|Delete|Upsert|List|Push|Process).*[^\.]$/
   rule/operation-summary-period:
@@ -261,16 +260,16 @@ rules:
     subject:
       type: SchemaProperties
     where:
-      - subject:
-          type: SchemaProperties
-          property: items
-        assertions:
-          defined: true
+    - subject:
+        type: SchemaProperties
+        property: items
+      assertions:
+        defined: true
     assertions:
       mutuallyRequired:
-        - page
-        - items
-        - object
+      - page
+      - items
+      - object
   rule/parameter-casing:
     subject:
       type: Parameter
@@ -281,28 +280,28 @@ rules:
       type: Parameter
     assertions:
       requireAny:
-        - example
-        - examples
+      - example
+      - examples
       mutuallyExclusive:
-        - example
-        - examples
+      - example
+      - examples
     severity: off
   rule/put-200-and-201:
     subject:
       type: Responses
     where:
-      - subject:
-          type: Operation
-          filterInParentKeys:
-            - put
-        assertions:
-          defined: true
+    - subject:
+        type: Operation
+        filterInParentKeys:
+        - put
+      assertions:
+        defined: true
     message: Must mutually define 200 and 201 responses for PUT requests
     severity: error
     assertions:
       mutuallyRequired:
-        - '200'
-        - '201'
+      - '200'
+      - '201'
   rule/schema-properties-casing:
     subject:
       type: Schema
@@ -316,18 +315,20 @@ rules:
     assertions:
       defined: true
 ignore:
-  - '.templates/**'
-  - '**/code-walkthrough-files/**'
+- '.templates/**'
+- '**/code-walkthrough-files/**'
 
-responseHeaders: 
+responseHeaders:
   '**':
-    - name: X-Robots-Tag
-      value: noindex
+  - name: X-Robots-Tag
+    value: noindex
 
 redirects:
   '/author/reference/supported-file-types':
     to: '/author/concepts/project-structure'
   '/get-started/api-reference-starter':
     to: '/get-started'
+  '/author/how-to/add-catalog':
+    to: '/author/how-to/add-classic-catalog'
 
 telemetry: off

@@ -4,7 +4,7 @@ Reunite is Redocly's cloud platform for creating, editing, previewing, and deplo
 You can [use the editor](../how-to/use-editor.md) to add, edit, and delete content and files in your project using a Git-based workflow to track and manage changes.
 
 {% admonition type="info" name="Cloud meets docs-as-code" %}
-You can also use Reunite with a Git hosting provider of your choice and a docs-as-code workflow by [connecting a git content source](../../setup/how-to/git-providers/connect-git-provider.md). This article is about using the cloud platform.
+You can also use Reunite with a Git hosting provider of your choice and a docs-as-code workflow by [connecting a Git content source](../../setup/how-to/git-providers/connect-git-provider.md). This article is about using the cloud platform.
 {% /admonition %}
 
 ## Editor
@@ -100,7 +100,7 @@ These [feedback mechanisms can be configured in your `redocly.yaml` file](../../
 
 The API registry is a list of all the API descriptions you have included in an API catalog.
 API catalogs are an organized way to present many APIs that can be filtered and searched.
-You can [add an API catalog](../how-to/add-catalog.md) by organizing your API descriptions and adding a configuration to your `redocly.yaml` file.
+You can [add a classic API catalog](../how-to/add-classic-catalog.md) by organizing your API descriptions and adding a configuration to your `redocly.yaml` file.
 You can view the Scorecard status, metadata, custom fields, and logs for each API description included in your catalog on the **API registry** page.
 
 ## Project settings

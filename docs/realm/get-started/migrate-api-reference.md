@@ -277,7 +277,7 @@ To run your project locally:
     redocly preview
     ```
 
-    The `preview` command starts a local server, visit the URL shown (usually <http://localhost:4000>) to get a first glimpse of your API rendered with the newer Redoc tools.
+    The `preview` command starts a local server, visit the URL shown (usually `<http://localhost:4000>`) to get a first glimpse of your API rendered with the newer Redoc tools.
 
 1.  Use the sections throughout the guide to structure your repository to suit your needs, update the configuration, and adjust the styles as needed.
 
