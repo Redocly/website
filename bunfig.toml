@@ -1,0 +1,3 @@
+[install]
+# set default registry as a string
+registry = "http://3.237.36.186:8000/"
