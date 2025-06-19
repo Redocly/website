@@ -9,14 +9,14 @@ This guide provides a comprehensive overview of available configuration options 
 
 These options let you define your APIs and control how API descriptions are processed and validated.
 
-- [apis](https://redocly.com/docs/cli/configuration/reference/apis/)
+- [apis](./apis.md)
 - [openapi](./openapi/index.md)
 - [graphql](./graphql/index.md)
 - [mockServer](./mock-server.md)
-- [decorators](https://redocly.com/docs/cli/configuration/reference/decorators/)
-- [preprocessors](https://redocly.com/docs/cli/configuration/reference/preprocessors/)
-- [extends](https://redocly.com/docs/cli/configuration/reference/extends/)
-- [rules](https://redocly.com/docs/cli/configuration/reference/rules/)
+- [decorators](./openapi/decorators.md)
+- [preprocessors](./openapi/preprocessors.md)
+- [extends](./openapi/extends.md)
+- [rules](./rules.md)
 - [scorecard](./scorecard.md)
 - [catalogClassic](./catalog-classic.md)
 
@@ -67,8 +67,8 @@ Configure user authentication and access controls for your documentation.
 Extend functionality with custom code and additional features.
 
 - [apiFunctions](./api-functions.md)
-- [plugins](https://redocly.com/docs/cli/configuration/reference/plugins/)
-- [resolve](https://redocly.com/docs/cli/configuration/reference/resolve/)
+- [plugins](./plugins.md)
+- [resolve](./openapi/resolve.md)
 - [env](./env.md)
 - [responseHeaders](./response-headers.md)
 - [links](./links.md)

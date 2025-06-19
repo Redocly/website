@@ -95,5 +95,6 @@ The first `mode` from the `modes` list applies by default if `ignoreDetection` i
 
 ## Resources
 
-- [Custom color modes](../extend/how-to/add-color-mode.md)
+- Add [custom color modes](../extend/how-to/add-color-mode.md).
 - Use [front matter](./front-matter-config.md) to show or hide the color mode switcher on individual pages.
+- Explore other [configuration options](./index.md) for your project.

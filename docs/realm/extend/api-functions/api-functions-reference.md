@@ -182,6 +182,86 @@ export default async function (request: Request, context: ApiFunctionsContext) {
 }
 ```
 
+## Debug code with `console`
+
+To log messages to the console inside of an API function, use the `console.log | console.error | console.warn | console.info | console.debug | console.trace | console.dir | console.timeEnd | console.table` methods.
+
+```ts
+console.log(message: any);
+```
+
+```ts {% title="@api/simple.post.ts" %}
+import type { ApiFunctionsContext } from '@redocly/config';
+
+export default async function (request: Request, context: ApiFunctionsContext) {
+  console.log({ user: { name: 'John', age: 30 } });
+  console.log(['javascript', 'typescript', 'python']);
+
+  console.log(request); // logs the Request object
+  console.log(request.method); // logs the method of the Request object
+  console.log(request.url); // logs the URL of the Request object
+  console.log(request.headers); // logs the Headers object
+  console.log(request.headers.get('content-type')); // logs the value of a Content-Type header
+
+  const body = await request.json();
+  console.log(body); // logs the Request body
+
+  console.log(context.params); // logs parsed path parameters
+  console.log(context.query); // logs parsed query parameters
+  console.log(context.cookies); // logs parsed cookies
+  console.log(context.user); // logs user details
+
+  return context.status(200).text('API is working!');
+}
+```
+
+a request `POST https://api.acme.com/api/users?type=internal` with the JSON body `{"name": "David"}` to the API function outputs the following:
+
+```text {% title="Terminal" %}
+{ user: { name: 'John', age: 30 } }
+[ 'javascript', 'typescript', 'python' ]
+Request {
+  method: 'POST',
+  url: 'https://api.acme.com/api/users',
+  headers: Headers {
+    accept: '*/*',
+    'accept-encoding': 'gzip, deflate, br',
+    connection: 'keep-alive',
+    'content-length': '16',
+    'content-type': 'application/json',
+    host: 'api.acme.com'
+  },
+  destination: '',
+  referrer: 'about:client',
+  referrerPolicy: '',
+  mode: 'cors',
+  credentials: 'same-origin',
+  cache: 'default',
+  redirect: 'follow',
+  integrity: '',
+  keepalive: false,
+  isReloadNavigation: false,
+  isHistoryNavigation: false,
+  signal: AbortSignal { aborted: false }
+}
+POST
+https://api.acme.com/api/users
+Headers {
+  accept: '*/*',
+  'accept-encoding': 'gzip, deflate, br',
+  connection: 'keep-alive',
+  'content-length': '16',
+  'content-type': 'application/json',
+  host: 'api.acme.com'
+}
+application/json
+{ name: 'David' }
+{}
+{}
+{}
+{ teams: [ 'anonymous' ], claims: {}, isAuthenticated: false }
+```
+
 ## `context`
 
 The `context` object provides additional information and helper methods for API functions.

@@ -8,7 +8,7 @@ You have the option to override this default behavior by modifying the configura
 
 To publish production deploys with broken links, set the `ignoreLinkChecker` option to `true` in the `reunite` section of your `redocly.yaml` configuration file:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 reunite:
   ignoreLinkChecker: true
 ```

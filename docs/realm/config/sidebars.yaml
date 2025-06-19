@@ -22,6 +22,8 @@
           label: Segment
     - page: ./api-functions.md
       label: apiFunctions
+    - page: ./apis.md
+      label: apis
     - page: ./asyncapi.md
       label: asyncapi
     - page: ./breadcrumbs.md
@@ -43,16 +45,16 @@
     - group: graphql
       page: ./graphql/index.md
       items:
-        - page: ./graphql/menu.md
-          label: menu
-        - page: ./graphql/hide-pagination-buttons.md
-          label: hidePaginationButtons
-        - page: ./graphql/samples-max-inline-args.md
-          label: samplesMaxInlineArgs
-        - page: ./graphql/json-samples-depth.md
-          label: jsonSamplesDepth
         - page: ./graphql/field-expand-level.md
           label: fieldExpandLevel
+        - page: ./graphql/hide-pagination-buttons.md
+          label: hidePaginationButtons
+        - page: ./graphql/json-samples-depth.md
+          label: jsonSamplesDepth
+        - page: ./graphql/menu.md
+          label: menu
+        - page: ./graphql/samples-max-inline-args.md
+          label: samplesMaxInlineArgs
     - page: ./ignore.md
       label: ignore
     - page: ./l10n.md
@@ -80,6 +82,8 @@
           label: codeSamples
         - page: ./openapi/cors-proxy-url.md
           label: corsProxyUrl
+        - page: ./openapi/decorators.md
+          label: decorators
         - page: ./openapi/download-urls.md
           label: downloadUrls
         - page: ./openapi/events.md
@@ -104,6 +108,10 @@
           label: maxDisplayedEnumValues
         - page: ./openapi/only-required-in-samples.md
           label: onlyRequiredInSamples
+        - page: ./openapi/preprocessors.md
+          label: preprocessors
+        - page: ./openapi/resolve.md
+          label: resolve
         - page: ./openapi/sanitize.md
           label: sanitize
         - page: ./openapi/schema-definitions-tag-name.md
@@ -114,6 +122,8 @@
           label: showExtensions
         - page: ./openapi/sort-required-props-first.md
           label: sortRequiredPropsFirst
+    - page: ./plugins.md
+      label: plugins
     - page: ./products.md
       label: products
     - page: ./rbac.md
@@ -130,6 +140,8 @@
       label: responseHeaders
     - page: ./reunite.md
       label: reunite
+    - page: ./rules.md
+      label: rules
     - page: ./scorecard.md
       label: scorecard
     - page: ./scripts.md
@@ -145,6 +157,7 @@
     - page: ./ssoDirect.md
       label: ssoDirect
     - page: ./user-menu.md
+      label: userMenu
     - page: ./version-picker.md
       label: versionPicker
     - separatorLine: true

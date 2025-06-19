@@ -19,6 +19,8 @@ Use the `search` configuration to:
 - Add keyboard shortcuts for search activation
 - Add suggested pages to the search modal
 
+{% partial file="../_partials/config/_supported-config.md" variables={"optionName": "search"} /%}
+
 ## Options
 
 {% table %}
@@ -41,6 +43,7 @@ Use the `search` configuration to:
 - hide
 - boolean
 - Hides the search bar when set to `true`.
+  Search cannot be opened with keyboard shortcuts.
   Default: `false`.
 
 ---
@@ -48,7 +51,7 @@ Use the `search` configuration to:
 - shortcuts
 - [string]
 - Keyboard shortcuts that activate search (for example, `ctrl+f`).
-  Default: `/`.
+  Default: `⌘+k` or `ctrl+k`.
 
 ---
 
@@ -187,6 +190,11 @@ Use the `search` configuration to:
 
 {% /table %}
 
+**Data usage and privacy:** Curious how AI Search uses your data?
+Redocly AI Search runs in **inference-only mode** and does not train or fine-tune AI models on your content.
+For details, see the [AI Search data usage FAQ](../faq/ai-search-privacy.md).
+
+
 ## Examples
 
 Hide the search bar:
@@ -260,12 +268,12 @@ search:
         type: select
 ```
 
-## Related options
-- [Configure search facets](../extend/how-to/configure-search-facets.md)
-- [Configure localization](./l10n.md)
-- [Configure navigation bar](./navbar.md)
-
 ## Resources
 
-- [Configure navigation](../author/how-to/configure-nav/index.md)
+- [Configure search facets](../extend/how-to/configure-search-facets.md)
+- [Configure localization](./l10n.md)
+- [Configure navbar](./navbar.md)
+- [Configure navigation elements in your project](../author/how-to/configure-nav/index.md)
 - [Predefined translation keys](../author/reference/translation-keys.md)
+- Use [front matter](./front-matter-config.md) to configure the behavior of the Search dialog on individual pages.
+- Explore other [configuration options](./index.md) for your project.

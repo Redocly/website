@@ -176,4 +176,5 @@ Amazing markdown content...
 
 - Configure page [breadcrumbs](./breadcrumbs.md)
 - Configure [links](./links.md)
-- Use [front matter](./front-matter-config.md) to configure some of the markdown options on individual pages.
+- Use [front matter](./front-matter-config.md) to configure some of the Markdown options on individual pages.
+- Explore other [configuration options](./index.md) for your project.

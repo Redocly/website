@@ -326,6 +326,87 @@ versionPicker:
 
 For pages that do not have multiple version, the version picker is inactive and displays **All versions**.
 
+## Access versions in React pages
+
+To work with versioned content in your React pages, you can use Redocly's version management hooks `usePageVersions` and `usePageActiveVersion`. These hooks let you access the current version information and manage version-specific content in your components.
+
+### usePageVersions
+
+The `usePageVersions` hook returns an array of version objects with the following structure:
+
+{% table %}
+
+- Property
+- Type
+- Description
+
+---
+
+- active
+- boolean
+- Indicates if this version is currently active
+
+---
+
+- default
+- boolean
+- Indicates if this is the default version
+
+---
+
+- label
+- string
+- Display label for the version
+
+---
+
+- version
+- string
+- Version identifier
+
+{% /table %}
+
+Example usage:
+
+```tsx
+import { usePageVersions } from '@redocly/theme/core/hooks';
+
+function VersionedPage() {
+  const versions = usePageVersions();
+  
+  return (
+    <div>
+      {versions.map(version => (
+        <div key={version.version}>
+          {version.label} {version.active && '(Active)'}
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+
+### useActivePageVersion
+
+The `useActivePageVersion` hook returns the currently active version identifier as a string, or `undefined` if no version is active.
+
+Example usage:
+
+```tsx
+import { useActivePageVersion } from '@redocly/theme/core/hooks';
+
+function VersionedPage() {
+  const activeVersion = useActivePageVersion();
+  
+  return (
+    <div>
+      <h1>Current Version: {activeVersion}</h1>
+      {/* Version-specific content */}
+    </div>
+  );
+}
+```
+
 ## Resources
 
 - Reference the options for configuring which [versions](../reference/versions-config.md) appear in the version picker, in what order, and which version is the default.

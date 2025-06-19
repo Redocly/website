@@ -19,6 +19,19 @@ These options are available exclusively in front matter:
 
 ---
 
+- excludeFromSearch
+- boolean
+- Exclude the page from search results and from the `llms.txt` file when set to `true`.
+  Default: `false`
+
+---
+
+- sidebar
+- string
+- Path to the `sidebars.yaml` file to display as the sidebar for this page.
+
+---
+
 - slug
 - string or [string]
 - Custom URL path for this page, instead of the default path based on folder and file names.
@@ -33,19 +46,6 @@ These options are available exclusively in front matter:
   Omit file extensions.
   Use relative paths for local templates and absolute paths for templates from node modules.
   See [Override a page template](../style/how-to/custom-page-templates.md) for details.
-
----
-
-- sidebar
-- string
-- Path to the `sidebars.yaml` file to display as the sidebar for this page.
-
----
-
-- excludeFromSearch
-- boolean
-- Exclude the page from search results and from the `llms.txt` file when set to `true`.
-  Default: `false`
 
 {% /table %}
 
@@ -62,39 +62,15 @@ When defined in front matter, they override the global configuration:
 
 ---
 
-- [codeSnippet](./code-snippet.md)
-- object
-- Configure code snippet controls such as `copy`, `report`, `expand`, and `collapse`.
-
----
-
 - [breadcrumbs](./breadcrumbs.md)
 - object
 - Toggle breadcrumbs display or prefix them with custom links.
 
 ---
 
-- [markdown](./markdown.md)
+- [codeSnippet](./code-snippet.md)
 - object
-- Customize element behavior and appearance, including [last updated](./markdown.md#last-updated-object), [table of contents](./markdown.md#table-of-contents-object), and [edit page](./markdown.md#edit-page-object).
-
----
-
-- [seo](./seo.md)
-- object
-- Configure SEO information in the page's `<head>` element.
-
----
-
-- [navbar](./navbar.md)
-- object
-- Toggle navbar display with the `hide` option (the only navbar property available in front matter).
-
----
-
-- [footer](./footer.md)
-- object
-- Toggle footer display with the `hide` option (the only footer property available in front matter).
+- Configure code snippet controls such as `copy`, `report`, `expand`, and `collapse`.
 
 ---
 
@@ -107,6 +83,54 @@ When defined in front matter, they override the global configuration:
 - [feedback](./feedback.md)
 - object
 - Customize or hide the sentiment feedback form at the bottom of pages.
+
+---
+
+- [footer](./footer.md)
+- object
+- Toggle footer display with the `hide` option (the only footer property available in front matter).
+
+---
+
+- [markdown](./markdown.md)
+- object
+- Customize element behavior and appearance, including [last updated](./markdown.md#last-updated-object), [table of contents](./markdown.md#table-of-contents-object), and [edit page](./markdown.md#edit-page-object).
+
+---
+
+- [navigation](./navigation.md)
+- object
+- Customize the behavior and appearance of the **Next page** and **Previous page** navigation buttons.
+
+---
+
+- [navbar](./navbar.md)
+- object
+- Toggle navbar display with the `hide` option (the only navbar property available in front matter).
+
+---
+
+- rbac
+- [team to role map](./rbac.md#team-to-role-map)
+- Set access permissions for the page. This option can contain only the map of teams to roles.
+  
+---
+
+- [search](./search.md)
+- object
+- Customize the behavior and appearance of the **Search** dialog.
+
+---
+
+- [seo](./seo.md)
+- object
+- Configure SEO information in the page's `<head>` element.
+
+---
+
+- [versionPicker](./version-picker.md)
+- object
+- Set the visibility of the version picker.
 
 {% /table %}
 
@@ -165,4 +189,5 @@ Use `redocly.yaml` for most configuration settings and use front matter only for
 ## Resources
 
 - [Override a page template](../style/how-to/custom-page-templates.md)
-- [Configure Redocly](./index.md) using the `redocly.yaml` file
+- [Configure Redocly](./index.md) using the `redocly.yaml` file.
+- [Block search indexing](../setup/how-to/block-search-index.md) using the `noindex` rule.

@@ -8,9 +8,6 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-slug:
- - /config/analytics
- - /integrations/analytics
 ---
 # `analytics`
 

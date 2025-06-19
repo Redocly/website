@@ -32,45 +32,45 @@ Each event provides information about a specific event as well as some basic inf
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* codeSamplesLanguageSwitch
-* function
-* Called when the user switches to a different language tab in the code samples section. Provides information about the selected language (lang) and an optional example ID (exampleId).
+- codeSamplesLanguageSwitch
+- function
+- Called when the user switches to a different language tab in the code samples section. Provides information about the selected language (lang) and an optional example ID (exampleId).
 
 ---
 
-* tryItOpen
-* function
-* Triggered when the user opens the “Try it” panel. Captures actions like opening the panel or navigating using the override links.
+- tryItOpen
+- function
+- Triggered when the user opens the “Try it” panel. Captures actions like opening the panel or navigating using the override links.
 
 ---
 
-* targetServerSwitch
-* function
-* Invoked when the user changes the target server selection. Provides the updated server URL (serverUrl).
+- targetServerSwitch
+- function
+- Invoked when the user changes the target server selection. Provides the updated server URL (serverUrl).
 
 ---
 
-* tryItSent
-* function
-* Called when the user clicks the “Send” button in the “Try it” panel. Captures whether the request was successfully sent (Sent) or if there was a validation failure (ValidationFailed).
+- tryItSent
+- function
+- Called when the user clicks the “Send” button in the “Try it” panel. Captures whether the request was successfully sent (Sent) or if there was a validation failure (ValidationFailed).
 
 ---
 
-* panelToggle
-* function
-* Records when a user expands or collapses any panel in the Reference docs UI (for example, request, responses, request samples, or response samples). Includes details about the panel type (panelType) and its state (expanded or collapsed).
+- panelToggle
+- function
+- Records when a user expands or collapses any panel in the Reference docs UI (for example, request, responses, request samples, or response samples). Includes details about the panel type (panelType) and its state (expanded or collapsed).
 
 ---
 
-* codeSamplesCopy
-* function
-* Triggered when a user copies request or response samples within the Reference docs UI. Captures details such as the sample type (request or responses), example ID (if applicable), code sample language (`lang`), and label (`label`).
+- codeSamplesCopy
+- function
+- Triggered when a user copies request or response samples within the Reference docs UI. Captures details such as the sample type (request or responses), example ID (if applicable), code sample language (`lang`), and label (`label`).
 
 {% /table %}
 
@@ -92,11 +92,9 @@ openapi:
     }'
 ```
 
-## Related options
-
-* [openapi](./index.md) - Learn more about using `openapi` configuration.
-
 ## Resources
 
-* [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-* [OpenAPI visual reference](https://redocly.com/docs/openapi-visual-reference/)
+- [openapi](./index.md) - Learn more about using `openapi` configuration.
+- [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)
+- Explore other [configuration options](../index.md) for your project.

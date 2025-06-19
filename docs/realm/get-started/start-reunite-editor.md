@@ -332,3 +332,4 @@ Now that you have started using the editor, check out the other ways you can cus
 - Checkout [Configure sidebar groups](../author/how-to/configure-nav/configure-sidebar-groups.md) for details on configuring `sidebars.yaml` with nested items.
 - Find more CSS variables in the [CSS variables dictionary](../style/reference/css-variables/index.md) reference documentation.
 - Explore the different configuration options available in the `redocly.yaml` file in the [Configure Redocly](../config/index.md) reference documentation.
+- Adjust your Reunite notification settings, connect to Git providers, and change Reunite's color mode in [User profile menu](../author/how-to/user-profile-menu.md).

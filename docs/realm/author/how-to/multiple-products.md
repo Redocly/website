@@ -4,10 +4,10 @@ You can include multiple products in your project that users can switch between 
 A product can be any set of content you want to separate from other documentation.
 An example would be a set of related API description files, help content for a piece of software, or even a chapter of a book.
 
-From the point of view of a project, each product has its own file and subfolder structure, although it can have links and references to other files.
-Redocly enables you to customize each product, including custom navbars and footers.
+Each product has its own file and subfolder structure, although it can have links and references to other files.
+You can customize each product, including custom navbars and footers.
 
-When you select a product with the product picker and use the **Search** interface, Redocly by default applies a filter to the search.
+When you select a product with the product picker and use the **Search** interface, search results are filtered by product by default.
 This limits the results to files within the product structure.
 ![Screenshot of a search interface filtered by the Museum product](./images/search-filtered-by-product.png)
 You can remove this filter by clicking **x**.
@@ -27,9 +27,9 @@ Make sure you have the following before you begin:
 
 ## Create product folders
 
-The first step to configuring multiple products in your project is to add product folders with content:
+Configure multiple products by adding product folders with content:
 
-1. Create a separate folder for each product you want to include. \
+1. Create a separate folder for each product. \
    A product cannot be located in the subfolder of another product.
 2. Place your content in its respective folders. \
    This includes text files and API description files.
