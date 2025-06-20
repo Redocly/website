@@ -21,8 +21,10 @@ These options are available exclusively in front matter:
 
 - excludeFromSearch
 - boolean
-- Exclude the page from search results and from the `llms.txt` file when set to `true`.
-  Default: `false`
+- Exclude the page from search results and from `llms.txt` file when set to `true`.
+  Default: `false`.
+  
+  To exclude OpenAPI description files from search, see: [`openapi` configuration](./openapi/index.md).
 
 ---
 

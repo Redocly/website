@@ -15,128 +15,138 @@ Customize the behavior and appearance of integrated API documentation. Requires 
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* [codeSamples](./code-samples.md)
-* [[Language object](./code-samples.md#language-object)]
-* Configure the generated code samples in your API documentation.
+- [codeSamples](./code-samples.md)
+- [[Language object](./code-samples.md#language-object)]
+- Configure the generated code samples in your API documentation.
 
 ---
 
-* [corsProxyUrl](./cors-proxy-url.md)
-* string
-* Specifies custom CORS proxy server.
+- [corsProxyUrl](./cors-proxy-url.md)
+- string
+- Specifies custom CORS proxy server.
 
 ---
 
-* [downloadUrls](./download-urls.md)
-* [API description URL object](./download-urls.md#api-description-url-object)
-* Set the URLs used to download the API description in JSON or YAML format.
+- [downloadUrls](./download-urls.md)
+- [API description URL object](./download-urls.md#api-description-url-object)
+- Set the URLs used to download the API description in JSON or YAML format.
 
 ---
 
-* [events](./events.md)
-* object
-* Event hooks to get notified about various user events in API docs
+- [events](./events.md)
+- object
+- Event hooks to get notified about various user events in API docs
 
 ---
 
-* feedback
-* [Feedback object](../feedback.md#options)
-* Hide or customize the type of or text included in the feedback form that displays at the end of each endpoint.
+- excludeFromSearch
+- boolean
+- Excludes an OpenAPI description file from search results and `llms.txt` when set to `true`.
+  Default: `false`.
+  
+  You can [apply it to a specific files](#exclude-an-api-from-search), or to [all OpenAPI descriptions](#exclude-all-apis-from-search).
 
 ---
 
-* [generatedSamplesMaxDepth](./generated-samples-max-depth.md)
-* number
-* Sets the number of levels to display in generated payload samples.
+- feedback
+- [Feedback object](../feedback.md#options)
+- Hide or customize the type of or text included in the feedback form that displays at the end of each endpoint.
 
 ---
 
-* [hideDownloadButtons](./hide-download-buttons.md)
-* boolean
-* Toggle the appearance of a **Download OpenAPI description** section.
+- [generatedSamplesMaxDepth](./generated-samples-max-depth.md)
+- number
+- Sets the number of levels to display in generated payload samples.
 
 ---
 
-* [hideInfoMetadata](./hide-info-metadata.md)
-* boolean
-* Toggle the appearance of **OpenAPI info metadata** sections.
+- [hideDownloadButtons](./hide-download-buttons.md)
+- boolean
+- Toggle the appearance of a **Download OpenAPI description** section.
 
 ---
 
-* [hidePropertiesPrefix](./hide-properties-prefix.md)
-* boolean
-* Hides the parent name for nested properties.
+- [hideInfoMetadata](./hide-info-metadata.md)
+- boolean
+- Toggle the appearance of **OpenAPI info metadata** sections.
 
 ---
 
-* [hideReplay](./hide-replay.md)
-* boolean
-* Hides the Replay (Try it) functionality.
+- [hidePropertiesPrefix](./hide-properties-prefix.md)
+- boolean
+- Hides the parent name for nested properties.
 
 ---
 
-* [hideSchemaTitles](./hide-schema-titles.md)
-* boolean
-* Hides the schema field title next to the type.
+- [hideReplay](./hide-replay.md)
+- boolean
+- Hides the Replay (Try it) functionality.
 
 ---
 
-* [jsonSamplesExpandLevel](./json-samples-expand-level.md)
-* number | string | 'all'
-* Sets the default expand level for JSON payload samples.
+- [hideSchemaTitles](./hide-schema-titles.md)
+- boolean
+- Hides the schema field title next to the type.
 
 ---
 
-* [layout](./layout.md)
-* 'three-panel' | 'stacked'
-* Specifies layout options for OpenAPI documentation.
+- [jsonSamplesExpandLevel](./json-samples-expand-level.md)
+- number | string | 'all'
+- Sets the default expand level for JSON payload samples.
 
 ---
 
-* [maxDisplayedEnumValues](./max-displayed-enum-values.md)
-* number
-* Specifies number of enum values to display.
+- [layout](./layout.md)
+- 'three-panel' | 'stacked'
+- Specifies layout options for OpenAPI documentation.
 
 ---
 
-* [onlyRequiredInSamples](./only-required-in-samples.md)
-* boolean
-* Displays only required fields in request samples.
+- [maxDisplayedEnumValues](./max-displayed-enum-values.md)
+- number
+- Specifies number of enum values to display.
 
 ---
 
-* [sanitize](./sanitize.md)
-* boolean
-* Sanitize HTML/Markdown to prevent [cross-site scripting (XSS)](https://owasp.org/www-community/attacks/xss/) attacks.
+- [onlyRequiredInSamples](./only-required-in-samples.md)
+- boolean
+- Displays only required fields in request samples.
 
 ---
 
-* [schemaDefinitionsTagName](./schema-definitions-tag-name.md)
-* string
-* Sets a schema definitions tag name that is applied to all schemas and displayed in the sidebar navigation.
-
----
-* [schemasExpansionLevel](./schemas-expansion-level.md)
-* number | string | 'all'
-* Sets the default expand level for schemas.
+- [sanitize](./sanitize.md)
+- boolean
+- Sanitize HTML/Markdown to prevent [cross-site scripting (XSS)](https://owasp.org/www-community/attacks/xss/) attacks.
 
 ---
 
-* [showExtensions](./show-extensions.md)
-* string[] | boolean
-* Displays specification extensions ('x-' fields).
+- [schemaDefinitionsTagName](./schema-definitions-tag-name.md)
+- string
+- Sets a schema definitions tag name that is applied to all schemas and displayed in the sidebar navigation.
 
 ---
 
-* [sortRequiredPropsFirst](./sort-required-props-first.md)
-* boolean
-* Sorts schema properties to display required properties first.
+- [schemasExpansionLevel](./schemas-expansion-level.md)
+- number | string | 'all'
+- Sets the default expand level for schemas.
+
+---
+
+- [showExtensions](./show-extensions.md)
+- string[] | boolean
+- Displays specification extensions ('x-' fields).
+
+---
+
+- [sortRequiredPropsFirst](./sort-required-props-first.md)
+- boolean
+- Sorts schema properties to display required properties first.
 
 ---
 
@@ -159,7 +169,7 @@ In your config file, the openapi options can be defined in the root-level or per
 
 The following example shows separate configurations for multiple APIs:
 
-```yaml {% title="Redocly.yaml file" %}
+```yaml {% title="redocly.yaml" %}
 logo: images/awesome-logo.svg
 openapi:
   hideReplay: true
@@ -187,6 +197,27 @@ apis:
           - lang: 'go'
 rules:
   example-rule-name: error
+```
+
+## Exclude an API from search
+
+To exclude a specific API from the search results, locate the API in `redocly.yaml` and under the `openapi` key, set the `excludeFromSearch` option to `true`.
+
+```yaml {% title="redocly.yaml" %}
+apis:
+  museum@default:
+    root: 'openapi/redocly-museum.yaml'
+    openapi:
+      excludeFromSearch: true
+```
+
+### Exclude all APIs from search
+
+To exclude all APIs from the search results, under the `openapi` key, set the `excludeFromSearch` option to `true`.
+
+```yaml {% title="redocly.yaml" %}
+openapi:
+  excludeFromSearch: true
 ```
 
 ## Resources
