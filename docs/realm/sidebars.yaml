@@ -133,10 +133,6 @@
     - page: setup/reference/telemetry.md
       label: Telemetry
 
-    - separator: User account
-    - page: author/how-to/user-profile-menu.md
-      label: User profile menu
-      
 - group: Content
   items:
     - page: author/concepts/project-structure.md
@@ -287,6 +283,7 @@
     - page: setup/how-to/realm-version.md
       label: Upgrade Realm version
 
+
 - group: Branding
   items:
     - page: style/concepts/styling.md
@@ -354,6 +351,9 @@
       items:
         - page: author/how-to/multiple-products.md
           label: Add multiple products
+
+
+
 
 
 - group: Customization

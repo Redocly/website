@@ -33,7 +33,7 @@ These options are available exclusively in front matter:
 ---
 
 - slug
-- string or [string]
+- string or \[string]
 - Custom URL path for this page, instead of the default path based on folder and file names.
   Define multiple slugs to make content available at multiple URLs.
   Slugs can contain multiple segments (e.g., '/custom-pages/page-1').
@@ -47,6 +47,21 @@ These options are available exclusively in front matter:
   Use relative paths for local templates and absolute paths for templates from node modules.
   See [Override a page template](../style/how-to/custom-page-templates.md) for details.
 
+---
+
+- navigation.nextButton
+- object
+- Configure the next page button. Contains:
+  - `page`: path to markdown page or link
+  - `label`: text that appears on the button
+
+---
+
+- navigation.previousButton
+- object
+- Configure the previous page button. Contains:
+  - `page`: path to markdown page or link
+  - `label`: text that appears on the button
 {% /table %}
 
 ## Options that override global configuration
@@ -179,6 +194,22 @@ breadcrumbs:
     - page: index.page.tsx
       label: Home
       labelTranslationKey: home.title
+---
+```
+
+### Example 3: Custom navigation
+
+Override the default navigation to create a custom reading flow:
+
+```yaml
+---
+navigation:
+  nextButton:
+    page: ../advanced-topics.md
+    label: Advanced concepts
+  previousButton:
+    page: /docs/basics
+    label: Back to basics
 ---
 ```
 
