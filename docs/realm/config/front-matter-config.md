@@ -33,7 +33,7 @@ These options are available exclusively in front matter:
 ---
 
 - slug
-- string or [string]
+- string or \[string]
 - Custom URL path for this page, instead of the default path based on folder and file names.
   Define multiple slugs to make content available at multiple URLs.
   Slugs can contain multiple segments (e.g., '/custom-pages/page-1').

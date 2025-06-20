@@ -11,8 +11,6 @@ interface ProcessedChanges {
   fixes: string[];
 }
 
-const START_OF_NEXT_RELEASES = 1738913622000
-
 export function processChanges(record: ChangelogEntry): ProcessedChanges {
   const features = [...record.changes.minor];
   const fixes = [];
@@ -25,14 +23,7 @@ export function processChanges(record: ChangelogEntry): ProcessedChanges {
     ) {
       continue;
     }
-
-    // After we started next releases, categorization of changes is better, so each patch is a fix
-    if (record.timestamp > START_OF_NEXT_RELEASES) {
-      fixes.push(change);
-      continue;
-    }
     
-    // before next releases, the changes were not always correctly categorized, some fixes were marked as minor changes
     if (change.startsWith('Resolved') || change.startsWith('Fixed')) {
       fixes.push(change);
     } else {

@@ -22,7 +22,7 @@ Set the URLs used to download the OpenAPI description or other documentation rel
 ---
 
 - downloadUrls
-- [[downloadUrls object](#api-description-url-object)]
+- \[[downloadUrls object](#api-description-url-object)]
 - Set the URLs used to download the OpenAPI description or other related to documentation files from the API documentation.
 
 {% /table %}

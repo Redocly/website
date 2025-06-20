@@ -26,7 +26,8 @@ Configure the code samples generated from your OpenAPI description.
 ---
 
 * languages
-* [[language object](#language-object)]
+*
+  \[[language object](#language-object)]
 *
   **REQUIRED.**
   Array of [language](#language-object) objects, one per language.

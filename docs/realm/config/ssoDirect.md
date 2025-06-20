@@ -6,7 +6,6 @@ products:
   - Realm
 plans:
   - Enterprise+
-excludeFromSearch: true
 ---
 
 # `ssoDirect`

@@ -22,7 +22,7 @@ Customize the behavior and appearance of integrated API documentation. Requires 
 ---
 
 * [codeSamples](./code-samples.md)
-* [[Language object](./code-samples.md#language-object)]
+* \[[Language object](./code-samples.md#language-object)]
 * Configure the generated code samples in your API documentation.
 
 ---
