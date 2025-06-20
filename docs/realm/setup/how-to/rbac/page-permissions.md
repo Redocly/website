@@ -25,6 +25,8 @@ rbac:
 ---
 ```
 
+{% partial file="../../../../_partials/rbac-and-sidebars.md" /%}
+
 ## React pages
 
 To set permissions for specific React pages (`*.page.tsx`), you need to export a special constant, `frontmatter`, and add the `rbac` configuration to it, as illustrated in the following example:

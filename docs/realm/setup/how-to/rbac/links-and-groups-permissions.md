@@ -100,6 +100,9 @@ In the following `sidebars.yaml` RBAC configuration example, the link to `invisi
 
 {% admonition type="warning" name="Invisible is not private" %}
 Making the navigation links not visible does not protect the content if the user has a direct link to it.
+
+{% partial file="../../../../_partials/rbac-and-sidebars.md" /%}
+
 {% /admonition %}
 
 ## Resources
