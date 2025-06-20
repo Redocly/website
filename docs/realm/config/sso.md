@@ -67,6 +67,7 @@ sso:
 
 ## Resources
 
+* Follow the steps to [integrate Google Workspace SAML 2 SSO with Reunite](../setup/how-to/configure-google-sso.md).
 * Learn more about the different IdP types in Reunite and how they apply to projects in the [Single Sign-on](../setup/concepts/sso.md) concept.
 * Follow steps for how to [Add an identity provider](../setup/how-to/add-idp.md) in Reunite.
 * If you have already added multiple IdP types in Reunite, you can [Configure SSO](../setup/how-to/configure-sso.md) to allow your users to use multiple IdP types for a project,
