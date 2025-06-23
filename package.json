@@ -12,7 +12,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@redocly/marketing-pages": ">=0.1.7",
-    "@redocly/realm": "0.122.2",
+    "@redocly/realm": "0.123.0-next.9",
     "polished": "^4.3.1",
     "highlight-words-core": "^1.2.3"
   },
