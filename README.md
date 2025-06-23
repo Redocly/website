@@ -1,6 +1,6 @@
 # Redocly website
 
-This repo is the source of the Redocly website (https://redocly.com).
+This repo is the source of the Redocly website (https://redocly.com)..
 
 ## Development
 
