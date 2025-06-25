@@ -21,7 +21,7 @@ To customize the link titles and order of links in your sidebar:
    - `label`: This option is the link text that appears on the sidebar for the page.
      If you don't include it, the first heading of the Markdown page will be used for the `page` option, or the value for the `href` option will be used.
    - `labelTranslationKey`: This option is used if you are translating the link text into a different language.
-     See [Localize labels using translation keys](../../how-to/config-l10n/localize-labels.md#sidebars) for more information.
+     See [Localize labels using translation keys](../../how-to/config-l10n/localize-labels.md#localize-user-defined-ui-elements) for more information.
    - `external`: This option causes a new tab to open when the user clicks the item in the sidebar.
      This option is `false` by default.
      For example, the following configuration adds a sidebar with a link to the Markdown page `index.md` with "Introduction" link text and `sidebar.intro` translation key, and a link to the Markdown page `quickstart.md` with "Quickstart" link text that opens in a separate tab when selected:

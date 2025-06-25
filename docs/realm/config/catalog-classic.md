@@ -243,7 +243,7 @@ See [rbac](./rbac.md) reference documentation for more options and examples.
 The following is an example of a catalog configuration.
 
 ```yaml
-catalog:
+catalogClassic:
   acme-catalog:
     title: Acme API catalog
     description: 'This is a description of the API Catalog'
@@ -276,6 +276,6 @@ To make the catalog accessible by link, you must add the catalog `slug` to the `
 
 ## Resources
 
-- Learn how to add a catalog in the [Add a catalog](../author/how-to/add-catalog.md) how-to documentation.
+- Learn how to add a classic version of the catalog in the [Add a classic catalog](../author/how-to/add-classic-catalog.md) how-to documentation.
 - When an API description contains metadata, and you want to exclude the metadata from the API reference documentation, use the [hideInfoMetadata](./openapi/hide-info-metadata.md) configuration option.
 - Follow steps to [configure navigation on the navbar](../author/how-to/configure-nav/navbar.md) to include your catalog link.

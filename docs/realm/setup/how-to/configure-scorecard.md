@@ -225,8 +225,8 @@ After you publish the updated project, the listed API description files are excl
 
 ## Related how-tos
 
-- Follow the steps in [Add OpenAPI descriptions](../../author/how-to/add-openapi-docs.md) to add your OpenAPI descriptions to your project.
-- If you have a lot of API descriptions, [Add a catalog](../../author/how-to/add-catalog.md) for an organized way to display them in your project.
+- Follow the steps in [add OpenAPI descriptions](../../author/how-to/add-openapi-docs.md) to add your OpenAPI descriptions to your project.
+- If you have a lot of API descriptions, [add a classic version of the catalog](../../author/how-to/add-classic-catalog.md) for an organized way to display them in your project.
 
 ## Resources
 
