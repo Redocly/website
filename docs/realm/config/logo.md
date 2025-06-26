@@ -13,7 +13,10 @@ plans:
 
 Use the `logo` section to display a custom logo in the project navbar.
 
-You must provide the path to the logo image as the value of the `image` property in the logo object. The image file may be external or must exist in the project.
+Provide the path to the logo image as the value of the `image` property in the logo object.
+The image file may be external or must exist in the project.
+
+Alternatively, use `srcSet` to configure separate images for each color mode.
 
 ## Options
 
@@ -27,19 +30,24 @@ You must provide the path to the logo image as the value of the `image` property
 
 - image
 - string
-- **Conditionally required**. URL or path to the image file (png or svg) of the logo.
+- **Conditionally required**.
+  URL or path to the image file (png or svg) of the logo.
+  Mutually exclusive with `srcSet`.
 
 ---
 
 - srcSet
 - string
-- **Conditionally required**. Comma-separated list of logo file paths and corresponding color mode. When configured, the logo changes when the user switches between color modes.
+- **Conditionally required**.
+  Comma-separated list of logo file paths and corresponding color modes.
+  When configured, the logo changes when the user switches between color modes.
+  Mutually exclusive with `image`.
 
 ---
 
 - altText
 - string
-- Alternate text for the logo.
+- Alternative text for the logo.
 
 ---
 
@@ -54,8 +62,6 @@ You must provide the path to the logo image as the value of the `image` property
 - URL or path to the favicon (png or svg).
 
 {% /table %}
-
-\* Logo object must include either `image` or `srcSet` ("mutually exclusive").
 
 ## Examples
 
@@ -97,4 +103,6 @@ logo:
 
 ## Resources
 
+- Follow the steps to [add a logo to your project](../author/how-to/add-logo.md).
 - Explore other [configuration options](./index.md) for your project.
+- Add [custom color modes](../extend/how-to/add-color-mode.md).
