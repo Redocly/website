@@ -256,7 +256,11 @@
         - page: author/how-to/add-soap-docs.md
           label: SOAP
         - page: author/how-to/add-catalog.md
-          label: Add catalog
+          label: Add classic catalog
+        - page: author/how-to/configure-catalog.md
+          label: Customize catalog
+        - page: author/reference/catalog-entity.md
+          label: Configure catalog entities
         - page: author/how-to/configure-mock-server.md
           label: Configure mock server
         - page: author/how-to/try-apis-with-mock-server.md

@@ -1,99 +1,4 @@
 '@redocly/realm':
-  0.122.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies:
-      '@redocly/theme': 0.54.3
-      '@redocly/asyncapi-docs': 0.3.3
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.3
-      '@redocly/portal-plugin-mock-server': 0.7.3
-  0.123.0-next.9:
-    timestamp: 1750683741000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0-next.8
-      '@redocly/asyncapi-docs': 0.4.0-next.8
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.8
-  0.123.0-next.8:
-    timestamp: 1750666691000
-    changes:
-      minor: []
-      patch:
-        - Fixed missing content in markdown code blocks and `{% markdoc-example %}` tags in AI Search and `llms.txt` chunks.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750342295`.
-        - Fixed external links being incorrectly prefixed with `REDOCLY_PREFIX_PATHS`.
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.7
-      '@redocly/asyncapi-docs': 0.4.0-next.7
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.7
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.7
-  0.122.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies:
-      '@redocly/theme': 0.54.2
-      '@redocly/asyncapi-docs': 0.3.2
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.2
-      '@redocly/portal-plugin-mock-server': 0.7.2
-  0.123.0-next.7:
-    timestamp: 1750340065000
-    changes:
-      minor: []
-      patch:
-        - Fixed SSR style attribute issue in `img` tag string formatting.
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.6
-      '@redocly/asyncapi-docs': 0.4.0-next.6
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.6
-  0.123.0-next.6:
-    timestamp: 1750327265000
-    changes:
-      minor: []
-      patch:
-        - 'Fixes a bug that caused invite routes to be hidden behind the login screen when `requiresLogin: true`.'
-        - Improved keyboard accessibility and screen reader support for the `version picker` component.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750261968`.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.5
-      '@redocly/openapi-docs': 3.11.0-next.5
-      '@redocly/asyncapi-docs': 0.4.0-next.5
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.5
-  0.123.0-next.5:
-    timestamp: 1750237399000
-    changes:
-      minor: []
-      patch:
-        - Removed headers from page data to prevent exposing sensitive cookie information.
-        - Fixed `apiFunctions.folders` configuration to correctly handle custom folder paths with leading or trailing slashes.
-        - Fixed keyboard accessibility issues in sidebar elements that prevented focusing and clicking.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750178129`.
-        - Removed a warning about the React Router future flag from the browser console.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.4
-      '@redocly/asyncapi-docs': 0.4.0-next.4
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.4
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.4
   0.123.0-next.4:
     timestamp: 1750098674000
     changes:
@@ -3402,101 +3307,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.122.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies:
-      '@redocly/theme': 0.54.3
-      '@redocly/asyncapi-docs': 0.3.3
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.3
-      '@redocly/portal-plugin-mock-server': 0.7.3
-  0.123.0-next.9:
-    timestamp: 1750683741000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0-next.8
-      '@redocly/asyncapi-docs': 0.4.0-next.8
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.8
-  0.123.0-next.8:
-    timestamp: 1750666691000
-    changes:
-      minor: []
-      patch:
-        - Fixed missing content in markdown code blocks and `{% markdoc-example %}` tags in AI Search and `llms.txt` chunks.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750342295`.
-        - Fixed external links being incorrectly prefixed with `REDOCLY_PREFIX_PATHS`.
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.7
-      '@redocly/asyncapi-docs': 0.4.0-next.7
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.7
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.7
-  0.122.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies:
-      '@redocly/theme': 0.54.2
-      '@redocly/asyncapi-docs': 0.3.2
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.2
-      '@redocly/portal-plugin-mock-server': 0.7.2
-  0.123.0-next.7:
-    timestamp: 1750340065000
-    changes:
-      minor: []
-      patch:
-        - Fixed SSR style attribute issue in `img` tag string formatting.
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.6
-      '@redocly/asyncapi-docs': 0.4.0-next.6
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.6
-  0.123.0-next.6:
-    timestamp: 1750327265000
-    changes:
-      minor: []
-      patch:
-        - 'Fixes a bug that caused invite routes to be hidden behind the login screen when `requiresLogin: true`.'
-        - Improved keyboard accessibility and screen reader support for the `version picker` component.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750261968`.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.5
-      '@redocly/openapi-docs': 3.11.0-next.5
-      '@redocly/asyncapi-docs': 0.4.0-next.5
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.5
-  0.123.0-next.5:
-    timestamp: 1750237399000
-    changes:
-      minor: []
-      patch:
-        - Removed headers from page data to prevent exposing sensitive cookie information.
-        - Fixed `apiFunctions.folders` configuration to correctly handle custom folder paths with leading or trailing slashes.
-        - Fixed keyboard accessibility issues in sidebar elements that prevented focusing and clicking.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750178129`.
-        - Removed a warning about the React Router future flag from the browser console.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.4
-      '@redocly/asyncapi-docs': 0.4.0-next.4
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.4
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.4
   0.123.0-next.4:
     timestamp: 1750098674000
     changes:
@@ -6120,100 +5930,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.122.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies:
-      '@redocly/theme': 0.54.3
-      '@redocly/asyncapi-docs': 0.3.3
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.3
-      '@redocly/portal-plugin-mock-server': 0.7.3
-  0.123.0-next.9:
-    timestamp: 1750683741000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0-next.8
-      '@redocly/asyncapi-docs': 0.4.0-next.8
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.8
-  0.123.0-next.8:
-    timestamp: 1750666691000
-    changes:
-      minor: []
-      patch:
-        - Fixed missing content in markdown code blocks and `{% markdoc-example %}` tags in AI Search and `llms.txt` chunks.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750342295`.
-        - Fixed external links being incorrectly prefixed with `REDOCLY_PREFIX_PATHS`.
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.7
-      '@redocly/asyncapi-docs': 0.4.0-next.7
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.7
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.7
-  0.122.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies:
-      '@redocly/theme': 0.54.2
-      '@redocly/asyncapi-docs': 0.3.2
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.2
-      '@redocly/portal-plugin-mock-server': 0.7.2
-  0.123.0-next.7:
-    timestamp: 1750340065000
-    changes:
-      minor: []
-      patch:
-        - Fixed SSR style attribute issue in `img` tag string formatting.
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.6
-      '@redocly/asyncapi-docs': 0.4.0-next.6
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.6
-  0.123.0-next.6:
-    timestamp: 1750327265000
-    changes:
-      minor: []
-      patch:
-        - 'Fixes a bug that caused invite routes to be hidden behind the login screen when `requiresLogin: true`.'
-        - Improved keyboard accessibility and screen reader support for the `version picker` component.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750261968`.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.5
-      '@redocly/openapi-docs': 3.11.0-next.5
-      '@redocly/asyncapi-docs': 0.4.0-next.5
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.5
-  0.123.0-next.5:
-    timestamp: 1750237399000
-    changes:
-      minor: []
-      patch:
-        - Removed headers from page data to prevent exposing sensitive cookie information.
-        - Fixed keyboard accessibility issues in sidebar elements that prevented focusing and clicking.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750178129`.
-        - Removed a warning about the React Router future flag from the browser console.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.4
-      '@redocly/asyncapi-docs': 0.4.0-next.4
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.4
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.4
   0.123.0-next.4:
     timestamp: 1750098674000
     changes:
@@ -8838,97 +8554,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.122.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies:
-      '@redocly/theme': 0.54.3
-      '@redocly/asyncapi-docs': 0.3.3
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.3
-      '@redocly/portal-plugin-mock-server': 0.7.3
-  0.123.0-next.9:
-    timestamp: 1750683741000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0-next.8
-      '@redocly/asyncapi-docs': 0.4.0-next.8
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.8
-  0.123.0-next.8:
-    timestamp: 1750666691000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750342295`.
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.7
-      '@redocly/asyncapi-docs': 0.4.0-next.7
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.7
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.7
-  0.122.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies:
-      '@redocly/theme': 0.54.2
-      '@redocly/asyncapi-docs': 0.3.2
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.2
-      '@redocly/portal-plugin-mock-server': 0.7.2
-  0.123.0-next.7:
-    timestamp: 1750340065000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.6
-      '@redocly/asyncapi-docs': 0.4.0-next.6
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.6
-  0.123.0-next.6:
-    timestamp: 1750327265000
-    changes:
-      minor: []
-      patch:
-        - 'Fixes a bug that caused invite routes to be hidden behind the login screen when `requiresLogin: true`.'
-        - Improved keyboard accessibility and screen reader support for the `version picker` component.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750261968`.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.5
-      '@redocly/openapi-docs': 3.11.0-next.5
-      '@redocly/asyncapi-docs': 0.4.0-next.5
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.5
-  0.123.0-next.5:
-    timestamp: 1750237399000
-    changes:
-      minor: []
-      patch:
-        - Removed headers from page data to prevent exposing sensitive cookie information.
-        - Fixed keyboard accessibility issues in sidebar elements that prevented focusing and clicking.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750178129`.
-        - Removed a warning about the React Router future flag from the browser console.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.4
-      '@redocly/asyncapi-docs': 0.4.0-next.4
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.4
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.4
   0.123.0-next.4:
     timestamp: 1750098674000
     changes:
@@ -11543,54 +11168,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.54.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies: {}
-  0.55.0-next.7:
-    timestamp: 1750666691000
-    changes:
-      minor: []
-      patch:
-        - Fixed extra bottom padding in the `Admonition` component.
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies: {}
-  0.54.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies: {}
-  0.55.0-next.6:
-    timestamp: 1750340065000
-    changes:
-      minor: []
-      patch:
-        - Fixed SSR style attribute issue in `img` tag string formatting.
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies: {}
-  0.55.0-next.5:
-    timestamp: 1750327265000
-    changes:
-      minor: []
-      patch:
-        - Improved keyboard accessibility and screen reader support for the `version picker` component.
-    dependencies: {}
-  0.55.0-next.4:
-    timestamp: 1750237399000
-    changes:
-      minor: []
-      patch:
-        - Fixed keyboard accessibility issues in sidebar elements that prevented focusing and clicking.
-    dependencies: {}
   0.55.0-next.3:
     timestamp: 1750087903000
     changes:
@@ -13455,55 +13032,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.10.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.13.3
-  3.11.0-next.8:
-    timestamp: 1750683741000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.14.0-next.8
-  3.11.0-next.7:
-    timestamp: 1750666691000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.14.0-next.7
-  3.10.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.13.2
-  3.11.0-next.6:
-    timestamp: 1750340065000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.14.0-next.6
-  3.11.0-next.5:
-    timestamp: 1750327265000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.14.0-next.5
-  3.11.0-next.4:
-    timestamp: 1750237399000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.14.0-next.4
   3.11.0-next.3:
     timestamp: 1750087903000
     changes:
@@ -15244,13 +14772,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
-  0.26.2:
-    timestamp: 1750321133000
-    changes:
-      minor: []
-      patch:
-        - Enhanced scorecard configuration by adding support for additional rules properties in level definitions.
-    dependencies: {}
   0.26.1:
     timestamp: 1749646162000
     changes:
@@ -16257,13 +15778,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
-  0.2.16:
-    timestamp: 1750321133000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750178129`.
-    dependencies: {}
   0.2.15:
     timestamp: 1749026344000
     changes:
@@ -16561,82 +16075,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.5.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.54.3
-      '@redocly/realm': 0.122.3
-      '@redocly/redoc': 0.122.3
-      '@redocly/redoc-reef': 0.122.3
-      '@redocly/redoc-revel': 0.122.3
-  1.6.0-next.9:
-    timestamp: 1750683741000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.123.0-next.9
-      '@redocly/redoc': 0.123.0-next.9
-      '@redocly/redoc-reef': 0.123.0-next.9
-      '@redocly/redoc-revel': 0.123.0-next.9
-  1.6.0-next.8:
-    timestamp: 1750666691000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.123.0-next.8
-      '@redocly/redoc-reef': 0.123.0-next.8
-      '@redocly/redoc-revel': 0.123.0-next.8
-      '@redocly/redoc': 0.123.0-next.8
-      '@redocly/theme': 0.55.0-next.7
-  1.5.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.122.2
-      '@redocly/redoc': 0.122.2
-      '@redocly/redoc-reef': 0.122.2
-      '@redocly/redoc-revel': 0.122.2
-      '@redocly/theme': 0.54.2
-  1.6.0-next.7:
-    timestamp: 1750340065000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.6
-      '@redocly/realm': 0.123.0-next.7
-      '@redocly/redoc-reef': 0.123.0-next.7
-      '@redocly/redoc-revel': 0.123.0-next.7
-      '@redocly/redoc': 0.123.0-next.7
-  1.6.0-next.6:
-    timestamp: 1750327265000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.123.0-next.6
-      '@redocly/redoc': 0.123.0-next.6
-      '@redocly/redoc-reef': 0.123.0-next.6
-      '@redocly/redoc-revel': 0.123.0-next.6
-      '@redocly/theme': 0.55.0-next.5
-  1.6.0-next.5:
-    timestamp: 1750237399000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.123.0-next.5
-      '@redocly/redoc': 0.123.0-next.5
-      '@redocly/redoc-reef': 0.123.0-next.5
-      '@redocly/redoc-revel': 0.123.0-next.5
-      '@redocly/theme': 0.55.0-next.4
   1.6.0-next.4:
     timestamp: 1750098674000
     changes:
@@ -19734,55 +19172,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.7.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.10.3
-  0.8.0-next.8:
-    timestamp: 1750683741000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0-next.8
-  0.8.0-next.7:
-    timestamp: 1750666691000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0-next.7
-  0.7.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.10.2
-  0.8.0-next.6:
-    timestamp: 1750340065000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0-next.6
-  0.8.0-next.5:
-    timestamp: 1750327265000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0-next.5
-  0.8.0-next.4:
-    timestamp: 1750237399000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0-next.4
   0.8.0-next.3:
     timestamp: 1750087903000
     changes:
@@ -21513,56 +20902,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.13.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.54.3
-  0.14.0-next.8:
-    timestamp: 1750683741000
-    changes:
-      minor: []
-      patch:
-        - Fixed `Replay` crash when form-data example value was not a string.
-    dependencies: {}
-  0.14.0-next.7:
-    timestamp: 1750666691000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.7
-  0.13.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.54.2
-  0.14.0-next.6:
-    timestamp: 1750340065000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.6
-  0.14.0-next.5:
-    timestamp: 1750327265000
-    changes:
-      minor: []
-      patch:
-        - Improved keyboard accessibility and screen reader support for the `version picker` component.
-    dependencies:
-      '@redocly/theme': 0.55.0-next.5
-  0.14.0-next.4:
-    timestamp: 1750237399000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.4
   0.14.0-next.3:
     timestamp: 1750087903000
     changes:
@@ -22449,48 +21788,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.5.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.54.3
-  0.6.0-next.7:
-    timestamp: 1750666691000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.7
-  0.5.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.54.2
-  0.6.0-next.6:
-    timestamp: 1750340065000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.6
-  0.6.0-next.5:
-    timestamp: 1750327265000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.5
-  0.6.0-next.4:
-    timestamp: 1750237399000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.4
   0.6.0-next.3:
     timestamp: 1750087903000
     changes:
@@ -24697,25 +23994,4 @@ reunite:
       minor: []
       patch:
         - Fixed project build failure when `redocly.yaml` was missing.
-    dependencies: {}
-  v2025-06-17.2:
-    timestamp: 1750162356000
-    changes:
-      minor: []
-      patch:
-        - Fixed file path insertion in the editor for non-Markdown files by using plain paths instead of Markdown link format.
-    dependencies: {}
-  v2025-06-23.1:
-    timestamp: 1750658354000
-    changes:
-      minor: []
-      patch:
-        - Updated authentication email templates for clarity and consistency.
-    dependencies: {}
-  v2025-06-24.1:
-    timestamp: 1750761675000
-    changes:
-      minor: []
-      patch:
-        - Improved error handling for JavaScript heap out of memory during project build.
     dependencies: {}

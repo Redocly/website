@@ -32,6 +32,8 @@
       label: catalogClassic
     - page: ./code-snippet.md
       label: codeSnippet
+    - page: ./entities-catalog.md
+      label: entitiesCatalog
     - page: ./color-mode.md
       label: colorMode
     - page: ./developer-onboarding/index.md
