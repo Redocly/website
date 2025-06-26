@@ -106,6 +106,7 @@ rules:
   operation-singular-tag: off
   no-unresolved-refs: error
   no-enum-type-mismatch: warn
+  nullable-type-sibling: warn
   paths-kebab-case: off
   struct: error
   spec-strict-refs: off
@@ -234,6 +235,9 @@ rules:
   no-criteria-xpath: off
   no-actions-type-end: off
   criteria-unique: off
+  no-x-security-scheme-name-without-openapi: off
+  x-security-scheme-required-values: off
+  no-x-security-scheme-name-in-workflow: off
 ```
 
 ## Recommended rulesets
@@ -375,6 +379,7 @@ rules:
   operation-singular-tag: off
   no-unresolved-refs: error
   no-enum-type-mismatch: error
+  nullable-type-sibling: error
   paths-kebab-case: off
   struct: error
   spec-strict-refs: off
@@ -503,6 +508,9 @@ rules:
   no-criteria-xpath: off
   no-actions-type-end: warn
   criteria-unique: warn
+  no-x-security-scheme-name-without-openapi: off
+  x-security-scheme-required-values: off
+  no-x-security-scheme-name-in-workflow: 'off',
 ```
 
 ## Resources
