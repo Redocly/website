@@ -5,7 +5,8 @@
   "description": "Redocly portal template repository",
   "scripts": {
     "start": "npm run start:docs",
-    "start:docs": "realm develop -p 3000"
+    "start:docs": "realm develop -p 3000",
+    "lint": "oxlint --deny-warnings --config ../../.oxlintrc.json"
   },
   "dependencies": {
     "@redocly/realm": "next",
