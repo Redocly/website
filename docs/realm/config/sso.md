@@ -69,5 +69,5 @@ sso:
 
 * Learn more about the different IdP types in Reunite and how they apply to projects in the [Single Sign-on](../setup/concepts/sso.md) concept.
 * Follow steps for how to [Add an identity provider](../setup/how-to/add-idp.md) in Reunite.
-* If you have already added multiple IdP types in Reunite, you can [Configure SSO](../setup/how-to/configure-sso.md) to allow your users to use multiple IdP types for a project,
+* If you have already added multiple IdP types in Reunite, you can [Configure SSO](../setup/how-to/configure-sso.md) to allow your users to use multiple IdP types for a project.
 * For more complex scenarios where you need to grant access to specific content for specific users, you need [Role-based access control (RBAC)](../setup/concepts/rbac.md).

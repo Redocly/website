@@ -81,6 +81,7 @@ Requiring SSO authentication does not require users to log in to your project. T
 
 ## Resources
 
+* Follow the steps to [integrate Auth0 OIDC SSO with Reunite](./configure-auth0-oidc.md).
 * Discover all the options available for configuring SSO in the [`sso` reference documentation](../../config/sso.md)
 * Learn more about the different identity provider types you can add in Reunite or configure in your `redocly.yaml` file in the [Single sign-on (SSO) concept doc](../concepts/sso.md).
 * To understand more about the different components involved in Redocly's RBAC, read the [Role-based access control (RBAC) concept documentation](../concepts/rbac.md).

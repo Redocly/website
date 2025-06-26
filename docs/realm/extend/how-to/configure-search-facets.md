@@ -61,7 +61,7 @@ The following is an example of how to override the default `redocly_category` fa
 
 ```yaml {% title="redocly.yaml" %}
 search:
-  filters:
+  filter:
     facets:
       - name: Custom 
         field: redocly_category
@@ -74,7 +74,7 @@ The following is an example of how to create custom facet:
 
 ```yaml {% title="redocly.yaml" %}
 search:
-  filters:
+  filter:
     facets:
       - name: Owner
         field: owner

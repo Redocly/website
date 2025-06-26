@@ -219,9 +219,7 @@ export default function Changelog() {
         const normPackage = depPackage === '@redocly/portal' ? '@redocly/realm' : depPackage;
         const depEntry = changelogs[normPackage]?.[depVersion];
 
-        // If timestamp is different, it means the dependency was updated in a previous release, so no need to include it again
-        if (!depEntry || depEntry.timestamp !== entry.timestamp) continue;
-
+        if (!depEntry) continue;
         const resolvedDep = resolveDepsDeep(depEntry, [...seen, depPackage]);
 
         resolved.changes.minor = resolved.changes.minor.concat(resolvedDep.changes.minor);
