@@ -24727,10 +24727,3 @@ reunite:
       patch:
         - Improved error handling for JavaScript heap out of memory during project build.
     dependencies: {}
-  v2025-06-26.3:
-    timestamp: 1750942255000
-    changes:
-      minor: []
-      patch:
-        - Fixed API registry snapshot details not displaying in the UI.
-    dependencies: {}
