@@ -45,12 +45,6 @@ Customize the behavior and appearance of integrated GraphQL documentation. Requi
 
 ---
 
-- [hidePaginationButtons](./hide-pagination-buttons.md)
-- boolean
-- Control the pagination buttons visibility of the GraphQL documentation.
-
----
-
 - [feedback](../feedback.md)
 - [Feedback object](../feedback.md#options)
 - Hide or customize the type of or text included in the feedback form that displays at the end of each endpoint.
