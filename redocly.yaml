@@ -168,6 +168,8 @@ responseHeaders:
       value: deny
     - name: Strict-Transport-Security
       value: max-age=31536000; includeSubDomains; preload
+    - name: Content-Security-Policy
+      value: "object-src 'none'; base-uri 'self'; form-action 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:;"
 
 metadataGlobs:
   'blog/**':
