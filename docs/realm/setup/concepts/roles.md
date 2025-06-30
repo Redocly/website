@@ -39,6 +39,7 @@ Users with an `owner` organization role can also do the following from the Admin
 - view and update organization API keys
 - view and create teams
 - assign users to teams
+- assign managers to teams
 
 Most users in your organization should have the member role, giving them access to the project panel only.
 From the project panel members can select projects and their access to those projects is determined by their project roles.
@@ -66,4 +67,3 @@ When users become members of a team, they are granted access based on the roles 
 - [How to configure RBAC](../how-to/rbac/index.md) with additional information and examples for projects, pages, and navigation.
 - See full configuration details in the [`rbac` configuration reference](../../config/rbac.md).
 - You can [link duplicate users](../how-to/manage-people.md#link-duplicate-users) with the committer role to their Reunite user account so you don't have duplicate entries for a single user.
-
