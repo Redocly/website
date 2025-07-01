@@ -169,7 +169,7 @@ responseHeaders:
     - name: Strict-Transport-Security
       value: max-age=31536000; includeSubDomains; preload
     - name: Content-Security-Policy
-      value: "object-src 'none'; base-uri 'self'; form-action 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:;"
+      value: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.hsforms.net http://js.hsforms.net https://js.hs-scripts.com https://forms.hsforms.com https://www.google.com https://www.gstatic.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:;"
 
 metadataGlobs:
   'blog/**':
