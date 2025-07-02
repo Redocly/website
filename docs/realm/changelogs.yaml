@@ -1,17 +1,4 @@
 '@redocly/realm':
-  0.123.0-next.11:
-    timestamp: 1751381431000
-    changes:
-      minor:
-        - Added `Skip to content` button to enhance keyboard navigation.
-        - Fixed decoding errors in encoded content returned by API functions, for example, gzip-compressed data.
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.9
-      '@redocly/asyncapi-docs': 0.4.0-next.10
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.10
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.10
   0.123.0-next.10:
     timestamp: 1751283323000
     changes:
@@ -3435,19 +3422,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.123.0-next.11:
-    timestamp: 1751381431000
-    changes:
-      minor:
-        - Added `Skip to content` button to enhance keyboard navigation.
-        - Fixed decoding errors in encoded content returned by API functions, for example, gzip-compressed data.
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.9
-      '@redocly/asyncapi-docs': 0.4.0-next.10
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.10
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.10
   0.123.0-next.10:
     timestamp: 1751283323000
     changes:
@@ -6185,18 +6159,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.123.0-next.11:
-    timestamp: 1751381431000
-    changes:
-      minor:
-        - Added `Skip to content` button to enhance keyboard navigation.
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.9
-      '@redocly/asyncapi-docs': 0.4.0-next.10
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.10
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.10
   0.123.0-next.10:
     timestamp: 1751283323000
     changes:
@@ -8933,18 +8895,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.123.0-next.11:
-    timestamp: 1751381431000
-    changes:
-      minor:
-        - Added `Skip to content` button to enhance keyboard navigation.
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.9
-      '@redocly/asyncapi-docs': 0.4.0-next.10
-      '@redocly/graphql-docs': 0.12.0-next.1
-      '@redocly/openapi-docs': 3.11.0-next.10
-      '@redocly/portal-plugin-mock-server': 0.8.0-next.10
   0.123.0-next.10:
     timestamp: 1751283323000
     changes:
@@ -11663,13 +11613,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.55.0-next.9:
-    timestamp: 1751381431000
-    changes:
-      minor:
-        - Added `Skip to content` button to enhance keyboard navigation.
-      patch: []
-    dependencies: {}
   0.55.0-next.8:
     timestamp: 1751283323000
     changes:
@@ -13591,13 +13534,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.11.0-next.10:
-    timestamp: 1751381431000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.14.0-next.10
   3.11.0-next.9:
     timestamp: 1751283323000
     changes:
@@ -16719,17 +16655,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.6.0-next.11:
-    timestamp: 1751381431000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.9
-      '@redocly/realm': 0.123.0-next.11
-      '@redocly/redoc': 0.123.0-next.11
-      '@redocly/redoc-reef': 0.123.0-next.11
-      '@redocly/redoc-revel': 0.123.0-next.11
   1.6.0-next.10:
     timestamp: 1751283323000
     changes:
@@ -19914,13 +19839,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.8.0-next.10:
-    timestamp: 1751381431000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0-next.10
   0.8.0-next.9:
     timestamp: 1751283323000
     changes:
@@ -21707,13 +21625,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.14.0-next.10:
-    timestamp: 1751381431000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.9
   0.14.0-next.9:
     timestamp: 1751283323000
     changes:
@@ -22657,13 +22568,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.6.0-next.9:
-    timestamp: 1751381431000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0-next.9
   0.6.0-next.8:
     timestamp: 1751283323000
     changes:
@@ -24947,13 +24851,4 @@ reunite:
       minor: []
       patch:
         - Fixed API registry snapshot details not displaying in the UI.
-    dependencies: {}
-  v2025-07-01.2:
-    timestamp: 1751371660000
-    changes:
-      minor: []
-      patch:
-        - Resolved permissions conflict that restricted project administrators’ access with the `MEMBER` organization role.
-        - Fixed issue where user session omitted some teams after SSO login.
-        - Added email notifications for failed remote content auto-merges.
     dependencies: {}

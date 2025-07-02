@@ -59,7 +59,7 @@
     - page: ./how-to/add-soap-docs.md
       label: SOAP from WSDL
     - page: ./how-to/add-catalog.md
-      label: Add a Catalog
+      label: Add a Classic Catalog
     - page: ./how-to/configure-mock-server.md
       label: Configure mock server
     - page: ./how-to/try-apis-with-mock-server.md
