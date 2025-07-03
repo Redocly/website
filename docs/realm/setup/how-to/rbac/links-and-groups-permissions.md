@@ -100,6 +100,10 @@ In the following `sidebars.yaml` RBAC configuration example, the link to `invisi
 
 {% admonition type="warning" name="Invisible is not private" %}
 Making the navigation links not visible does not protect the content if the user has a direct link to it.
+
+Pages that are hidden by RBAC configuration do not generate sidebar links.
+If all pages in a group are hidden, the sidebar group is also hidden.
+
 {% /admonition %}
 
 ## Resources

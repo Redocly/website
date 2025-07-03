@@ -17,26 +17,24 @@ The `x-metadata` extension can be added to Info Object.
 
 {% table %}
 
-- Option
-- Type
-- Description
+* Option
+* Type
+* Description
 
 ---
 
-- x-metadata
-- Object
-- Custom metadata in key/value format.
+* x-metadata
+* Object
+* Custom metadata in key/value format.
 
 {% /table %}
 
 ## Examples
 
-### `x-metadata` example
-
 Metadata keys can be any string.
 The values can be any primitive type, or a list of strings.
 
-The following is an example of an `x-metadata` section of an OpenAPI description file:
+The following example shows an `x-metadata` section of an OpenAPI description:
 
 ```yaml
 info:
@@ -52,25 +50,6 @@ info:
 The data is presented as shown in the following screenshot:
 
 ![title "Metadata" and a table showing the metadata](../images/x-metadata.png)
-
-### `x-metadata` as filters in classic catalog
-
-The following snippets are examples of `x-metadata` sections with configured `tags` you can use to [filter APIs in classic catalog](../../../config/catalog-classic.md#x-metadata-filters-in-classic-catalog).
-
-```yaml {% title="books-api.yaml" %}
-info:
-  x-metadata:
-    tags:
-      - Books
-```
-
-```yaml {% title="magazines-api.yaml" %}
-info:
-  x-metadata:
-    tags: ["Magazines"]
-```
-
-To use `tags` as filters, the values must be a list.
 
 ## Resources
 
