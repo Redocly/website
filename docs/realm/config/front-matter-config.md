@@ -21,10 +21,8 @@ These options are available exclusively in front matter:
 
 - excludeFromSearch
 - boolean
-- Exclude the page from search results and from `llms.txt` file when set to `true`.
-  Default: `false`.
-  
-  To exclude OpenAPI description files from search, see: [`openapi` configuration](./openapi/index.md).
+- Exclude the page from search results and from the `llms.txt` file when set to `true`.
+  Default: `false`
 
 ---
 
@@ -48,13 +46,6 @@ These options are available exclusively in front matter:
   Omit file extensions.
   Use relative paths for local templates and absolute paths for templates from node modules.
   See [Override a page template](../style/how-to/custom-page-templates.md) for details.
-
----
-
-- navigation
-- [`page` and `label` options](./navigation.md#options-that-apply-to-front-matter-only)
-- Customize the links and button labels of `nextButton` and `previousButton`.
-  These options are available for front matter config only.
 
 {% /table %}
 
