@@ -1292,12 +1292,6 @@ This page contains the list of all predefined translation keys used in default U
 - "500 Internal server error" page header text
 - Internal server error
 
----
-
-- page.skipToContent.label
-- Label for the `skipContent` button.
-- Skip to content
-
 {% /table %}
 
 ## Dynamic values in translations
