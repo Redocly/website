@@ -25,15 +25,15 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 
 ---
 
-- nextButton
-- [PageLink object](#pagelink-object)
-- Controls the next page button.
-
----
-
 - previousButton
 - [PageLink object](#pagelink-object)
 - Controls the previous page button.
+
+---
+
+- nextButton
+- [PageLink object](#pagelink-object)
+- Controls the next page button.
 
 {% /table %}
 
@@ -55,76 +55,31 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 
 - text
 - string
-- Text that appears above the navigation buttons. Default value: `Next page` or `Previous page` respectively.
-
-{% /table %}
-
-#### Options that apply to front matter only
-
-{% table %}
-
-- Option
-- Type
-- Description
-
----
-
-- label
-- string
-- Text that appears on the button. The default value is the text of the first heading of the target page.
-
----
-
-- page
-- string
-- Path to a Markdown page in the project, or an URL.
+- Label text. Default value: `Next page` or `Previous page`.
 
 {% /table %}
 
 ## Examples
 
-### Change navigation buttons text globally
-
-The following example changes text labels of the navigation buttons to **Next chapter** and **Previous chapter** respectively.
-This configuration applies to all pages in the project.
-
-```yaml {% title="redocly.yaml" %}
-navigation:
-  nextButton:
-    text: "Next chapter"
-  previousButton:
-    text: "Previous chapter
-```
-
-### Hide navigation links globally
-
-The following example hides the navigation buttons on all pages of the project.
-
-```yaml {% title="redocly.yaml" %}
-navigation:
-  nextButton:
-    hide: true
-  previousButton:
-    hide: true
-```
-
-### Customize navigation buttons in the front matter
-
-The following example creates a custom reading flow.
-Instead of following the order of pages in the sidebar, navigation buttons direct the user to a page in a different section of the project.
+### Text example
 
 ```yaml
----
 navigation:
   nextButton:
-    page: ../advanced-topics.md
     text: "Next chapter"
-    label: Advanced concepts
   previousButton:
-    page: ./docs/basics.md
-    text: "Previous chapter"
-    label: About basics
----
+    hide:
+    text:
+```
+
+### Hide navigation links example
+
+```yaml
+navigation:
+  nextButton:
+    hide: true
+  previousButton:
+    hide: true
 ```
 
 ## Resources

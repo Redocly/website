@@ -34,9 +34,7 @@
         - page: ./setup/how-to/configure-sso.md
           label: Configure SSO
         - page: ./setup/how-to/configure-azure-ad.md
-          label: Microsoft Entra ID
-        - page: ./setup/how-to/configure-google-sso.md
-          label: Google Workspace
+          label: Azure AD
     - page: setup/how-to/access-compliance-reports.md
       label: Compliance reports
 
@@ -203,8 +201,6 @@
           label: Markdoc example
         - page: author/reference/tags/openapi-code-sample.md
           label: OpenAPI code sample
-        - page: author/reference/tags/openapi-response-sample.md
-          label: OpenAPI response sample
         - page: author/reference/tags/replay-openapi.md
           label: Replay OpenAPI
         - page: author/reference/tags/tabs.md
@@ -338,6 +334,8 @@
       items:
         # - page: config/search.md
         #   label: Search configuration
+        - page: setup/how-to/exclude-api-from-search.md
+          label: Exclude API from search
         - page: extend/how-to/configure-search-facets.md
           label: Configure search facets
         - page: setup/how-to/add-sitemap.md
