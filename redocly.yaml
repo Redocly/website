@@ -180,6 +180,12 @@ responseHeaders:
           https://www.google.com/recaptcha/ 
           https://www.gstatic.com/recaptcha/
           https://www.googletagmanager.com
+          https://cdn.rudderlabs.com
+          https://cdn.usefathom.com
+          https://www.clarity.ms
+          https://js.hscollectedforms.net
+          https://js.hs-analytics.net
+          https://js.hs-banner.com
           'sha256-M28mypAFwwpIwIF9e1/A6867PQiwVvOrdqFSTFSa8/U=' 
           'sha256-Tq4uREmlYInMCBRtudvmIOCc+VdyPNg3t18I9xtvdgs=' 
           'sha256-/mLWo7as1uoH7YxKP28RczpTaAJYtZFOdU0Okz4RWRo=' 
@@ -189,7 +195,17 @@ responseHeaders:
           'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no=';
         object-src 'none'; 
         base-uri 'self'; 
-        form-action 'self'; 
+        connect-src 
+          'self'
+          https://webhook.frontapp.com
+          https://api.rebilly.com
+          https://forms.hsforms.com
+          https://hubspot-forms-static-embed.s3.amazonaws.com;
+        form-action 
+          'self'
+          https://forms.hsforms.com 
+          https://webhook.frontapp.com
+          https:;
         style-src 'self' 'unsafe-inline'; 
         img-src 'self' data: https: blob:;"
 
