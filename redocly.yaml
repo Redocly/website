@@ -204,8 +204,7 @@ responseHeaders:
         form-action 
           'self'
           https://forms.hsforms.com 
-          https://webhook.frontapp.com
-          https:;
+          https://webhook.frontapp.com;
         style-src 'self' 'unsafe-inline'; 
         img-src 'self' data: https: blob:;"
 
