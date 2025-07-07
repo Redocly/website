@@ -172,18 +172,21 @@ responseHeaders:
       value: "
         script-src 
           'self' 
+          'report-sample'
           https://js.hsforms.net 
           http://js.hsforms.net 
           https://js.hs-scripts.com 
-          https://forms.hsforms.com 
-          https://www.google.com 
-          https://www.gstatic.com 
-          https://www.googletagmanager.com 
+          https://forms.hsforms.com  
+          https://www.google.com/recaptcha/ 
+          https://www.gstatic.com/recaptcha/
+          https://www.googletagmanager.com
           'sha256-M28mypAFwwpIwIF9e1/A6867PQiwVvOrdqFSTFSa8/U=' 
           'sha256-Tq4uREmlYInMCBRtudvmIOCc+VdyPNg3t18I9xtvdgs=' 
           'sha256-/mLWo7as1uoH7YxKP28RczpTaAJYtZFOdU0Okz4RWRo=' 
           'sha256-vHWNkFcRXsOiOWmmubySLtLeZ3xAubNJpC7UdmQgSQU=' 
-          'sha256-FHfozmosNdt5yUG9l8OmVM1S/oTxw2TNWHPejSjEr58=';
+          'sha256-FHfozmosNdt5yUG9l8OmVM1S/oTxw2TNWHPejSjEr58='
+          'sha256-2VNfiq6Um2ua9MLfzend4JESqZeD1VSgkWvUrPvrlZE='
+          'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no=';
         object-src 'none'; 
         base-uri 'self'; 
         form-action 'self'; 
