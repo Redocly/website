@@ -1,0 +1,7 @@
+- label: ← Back to Docs
+  href: /docs
+- separatorLine: true
+- page: docs/end-user/index.md
+  label: User interface overview
+- page: docs/end-user/navigate-project.md
+  label: Navigate a project
