@@ -124,28 +124,3 @@ When you first access a page, the page's latest or default version is displayed.
     The page's content changes to reflect the selected version.
   {% /tab %}
 {% /tabs %}
-
-## Change the language of your project
-
-Projects can have content in multiple languages.
-If available, the project loads in the same language as your browser.
-Otherwise, it uses its default language.
-
-{% tabs %}
-  {% tab label="Desktop" %}
-    To change the project's language on desktop devices:
-
-    1. In the top-right corner of the screen, click the globe icon.
-    2. From the drop-down list, select a language.
-    
-    The project now displays your chosen language.
-  {% /tab %}
-  {% tab label="Mobile" %}
-    To change the project's language on mobile devices:
-
-    1. Select the **Menu** icon in the top-right corner of the screen.
-    2. At the bottom of the menu, a language from the drop-down list.
-    
-    The project now displays your chosen language.
-  {% /tab %}
-{% /tabs %}
