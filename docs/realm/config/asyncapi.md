@@ -8,7 +8,7 @@ plans:
 ---
 # `asyncapi`
 
-Customize the behavior and appearance of AsyncAPI documentation. Requires an AsyncAPI definition.
+Customize the behavior and appearance of AsyncAPI documentation. Requires an AsyncAPI description file.
 
 ## Options
 
@@ -87,4 +87,5 @@ asyncapi:
 
 ## Resources
 
-- Learn more about the [AsyncAPI docs plugin](../setup/reference/plugins/docs/asyncapi.md).
+- Learn how to install and use the AsyncAPI docs plugin in the [Add AsyncAPI documents](../author/how-to/generate-asyncapi-docs.md) how-to guide.
+- Reference the [AsyncAPI docs plugin](../setup/reference/plugins/docs/asyncapi.md) information.
