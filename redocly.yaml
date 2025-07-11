@@ -192,7 +192,11 @@ responseHeaders:
           'sha256-vHWNkFcRXsOiOWmmubySLtLeZ3xAubNJpC7UdmQgSQU=' 
           'sha256-FHfozmosNdt5yUG9l8OmVM1S/oTxw2TNWHPejSjEr58='
           'sha256-2VNfiq6Um2ua9MLfzend4JESqZeD1VSgkWvUrPvrlZE='
-          'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no=';
+          'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no='
+          'sha256-uDN+KkW4ljf+D4DbsWP5KpxyfG/7h+LNmZxMzbz/+1E='
+          'sha256-9seBUu3uBabJT/26wJPQEjpi+FB2ayw9N8BnQJlh/ls='
+          'sha256-mqxawUgIH8vW3/GxWmOFDp5zt8IejNl5rNH2j9PXF88='
+          'sha256-wkSWDFufZapa7t3NvV+JhSRXHb/4CI3ZnaqCvg7byns=';
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 
@@ -200,7 +204,11 @@ responseHeaders:
           https://webhook.frontapp.com
           https://api.rebilly.com
           https://forms.hsforms.com
-          https://hubspot-forms-static-embed.s3.amazonaws.com;
+          https://hubspot-forms-static-embed.s3.amazonaws.com
+          https://forms.hscollectedforms.net
+          https://api.github.com
+          http://api.github.com
+          https://www.google-analytics.com;
         form-action 
           'self'
           https://forms.hsforms.com 
