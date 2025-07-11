@@ -1,151 +1,9 @@
 '@redocly/realm':
-  0.124.0-next.8:
-    timestamp: 1752167971000
-    changes:
-      minor: []
-      patch:
-        - Fixed accessibility issues with unlabeled buttons.
-    dependencies:
-      '@redocly/theme': 0.56.0-next.2
-      '@redocly/asyncapi-docs': 0.5.0-next.5
-      '@redocly/graphql-docs': 0.13.0-next.1
-      '@redocly/openapi-docs': 3.12.0-next.5
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.5
-  0.124.0-next.7:
-    timestamp: 1752154800000
-    changes:
-      minor: []
-      patch:
-        - Updated internal dependencies.
-    dependencies:
-      '@redocly/asyncapi-docs': 0.5.0-next.4
-      '@redocly/graphql-docs': 0.13.0-next.1
-      '@redocly/openapi-docs': 3.12.0-next.4
-      '@redocly/portal-legacy-ui': 0.7.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.4
-      '@redocly/realm-asyncapi-sdk': 0.2.0-next.1
-      '@redocly/theme': 0.56.0-next.1
-  0.124.0-next.6:
-    timestamp: 1752151894000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/config` package to fix an error during build.
-    dependencies: {}
-  0.124.0-next.5:
-    timestamp: 1752138689000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where a search query containing brackets caused a 500 error in the Flexsearch engine.
-        - Fixed `HEAD` requests returning 404 errors.
-        - Prevented hydration errors by placing Markdoc block tags on separate lines.
-        - Updated `@redocly/openapi-core` dependency to version `2.0.0-next.1`.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.3
-      '@redocly/asyncapi-docs': 0.5.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.3
-  0.124.0-next.4:
-    timestamp: 1752031708000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.2
-      '@redocly/asyncapi-docs': 0.5.0-next.2
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.2
-  0.124.0-next.3:
-    timestamp: 1751968958000
-    changes:
-      minor:
-        - Added built-in translations for multiple languages.
-      patch:
-        - Fixed `NextPage` and `PreviousPage` not displaying when `REDOCLY_PATH_PREFIX` was set.
-    dependencies: {}
-  0.124.0-next.2:
-    timestamp: 1751900204000
-    changes:
-      minor: []
-      patch:
-        - Fixed handling of missing SSO configuration in the invitation flow.
-    dependencies: {}
-  0.124.0-next.1:
-    timestamp: 1751888780000
-    changes:
-      minor: []
-      patch:
-        - Fixed `requestBody` and `parameters` being ignored in the `replay-openapi` Markdoc tag.
-        - Fixed RBAC behavior for folders with names prefixed by a dot.
-        - >-
-          Added `openapi-response-sample` tag to separate OpenAPI code sample functionality for requests and responses, enabling granular control of
-          response samples.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.1
-      '@redocly/asyncapi-docs': 0.5.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.1
-  0.124.0-next.0:
-    timestamp: 1751613974000
-    changes:
-      minor: []
-      patch:
-        - Fixed scopes display in the security modal.
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.0
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.0
-      '@redocly/realm-asyncapi-sdk': 0.2.0-next.0
-      '@redocly/portal-legacy-ui': 0.7.0-next.0
-      '@redocly/asyncapi-docs': 0.5.0-next.0
-      '@redocly/graphql-docs': 0.13.0-next.0
-      '@redocly/theme': 0.56.0-next.0
-  0.123.0:
-    timestamp: 1751536139000
-    changes:
-      minor:
-        - Exposed `usePageVersions` and `useActivePageVersion` hooks to access the current page version in React pages.
-        - Added `page` and `label` front matter properties to navigation buttons.
-        - Exposed `useUserTeams` hook to access teams assigned to the active user.
-        - Improved trigger points for `code-walkthrough` steps.
-        - Added **Skip to content** button to enhance keyboard navigation.
-      patch:
-        - Fixed decoding errors in encoded content returned by API functions, for example, gzip-compressed data.
-        - Fixed broken `openapi.events` configuration to ensure custom event hooks trigger as expected.
-        - Fixed an issue with `api` filter in scorecard that prevented details from displaying.
-        - Removed headers from page data to prevent exposing sensitive cookie information.
-        - Fixed `apiFunctions.folders` configuration to correctly handle custom folder paths with leading or trailing slashes.
-        - Fixed detection of changes in partial folders.
-        - Fixed search indexing to include `code-snippet` content.
-        - Fixed SSR style attribute issue in `img` tag string formatting.
-        - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
-        - Fixed keyboard accessibility issues in sidebar elements that prevented focusing and clicking.
-        - Fixed missing content in Markdown code blocks and `{% markdoc-example %}` tags in AI Search and `llms.txt` chunks.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750342295`.
-        - Improved accessibility by adding descriptive `alt` text to footer icons.
-        - Fixed relative link issues in front matter for Markdoc tags.
-        - Fixed external links being incorrectly prefixed with `REDOCLY_PREFIX_PATHS`.
-        - Fixed an issue where decorators were not used from the root `redocly.yaml`.
-        - 'Fixes a bug that caused invite routes to be hidden behind the login screen when `requiresLogin: true`.'
-        - Fixed an issue where the Markdoc variable `$remoteAddr` returned incorrect values.
-        - Improved validation of unclosed quotes in Markdoc tag attributes.
-        - Fixed occasional errors in long AI search conversations.
-        - Fixed incorrect auto-scrolling to anchor elements.
-        - Fixed malformed content handling in the Markdown parsing pipeline.
-        - Fixed incorrect values in the Rule status scorecard.
-        - Removed a warning about the React Router future flag from the browser console.
-        - Improved keyboard accessibility and screen reader support for the version picker component.
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0
-      '@redocly/theme': 0.55.0
-      '@redocly/portal-plugin-mock-server': 0.8.0
-      '@redocly/portal-legacy-ui': 0.6.0
-      '@redocly/asyncapi-docs': 0.4.0
-      '@redocly/graphql-docs': 0.12.0
-      '@redocly/realm-asyncapi-sdk': 0.1.0
   0.123.0-next.11:
     timestamp: 1751381431000
     changes:
       minor:
-        - Added **Skip to content** button to enhance keyboard navigation.
+        - Added `Skip to content` button to enhance keyboard navigation.
         - Fixed decoding errors in encoded content returned by API functions, for example, gzip-compressed data.
       patch: []
     dependencies:
@@ -158,7 +16,7 @@
     timestamp: 1751283323000
     changes:
       minor:
-        - Added `page` and `label` front matter properties to navigation buttons.
+        - Added `page` and `label` frontmatter properties to navigation buttons.
         - Exposed `useUserTeams` hook to access teams assigned to the active user.
       patch:
         - Fixed issue with `api` filter in scorecard that prevented details from displaying.
@@ -166,8 +24,8 @@
         - Fixed incorrect auto-scrolling to anchor elements.
         - Fixed occasional errors in long AI search conversations.
         - Fixed anchor links not scrolling to the correct position when navigating from another page.
-        - Fixed malformed content handling in the Markdown parsing pipeline.
-        - Fixed incorrect values in the Rule status scorecard.
+        - Fixed malformed content handling in the markdown parsing pipeline.
+        - Fixed incorrect values in the `Rule status` scorecard.
     dependencies:
       '@redocly/theme': 0.55.0-next.8
       '@redocly/asyncapi-docs': 0.4.0-next.9
@@ -245,7 +103,7 @@
       minor: []
       patch:
         - 'Fixes a bug that caused invite routes to be hidden behind the login screen when `requiresLogin: true`.'
-        - Improved keyboard accessibility and screen reader support for the version picker component.
+        - Improved keyboard accessibility and screen reader support for the `version picker` component.
         - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750261968`.
     dependencies:
       '@redocly/theme': 0.55.0-next.5
@@ -306,12 +164,12 @@
     timestamp: 1749821473000
     changes:
       minor:
-        - Exposed `usePageVersions` and `useActivePageVersion` hooks to access the current page version in React pages.
+        - Exposed `usePageVersions` and `usePageActiveVersion` hooks to access the current page version in React pages.
       patch:
         - Fixed detection of changes in partial folders.
         - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
         - Improved accessibility by adding descriptive `alt` text to footer icons.
-        - Fixed relative link issues in front matter for Markdoc tags.
+        - Fixed relative link issues in frontmatter for `Markdoc` tags.
         - Fixed an issue where the Markdoc variable `$remoteAddr` returned incorrect values.
     dependencies:
       '@redocly/graphql-docs': 0.12.0-next.1
@@ -339,7 +197,7 @@
       patch:
         - Enter prerelease mode.
         - Fixed performance issue in the `Tabs` component.
-        - Improved validation of unclosed quotes in Markdoc tag attributes.
+        - Improved validation of unclosed quotes in `markdoc` attributes.
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.8.0-next.0
       '@redocly/portal-legacy-ui': 0.6.0-next.0
@@ -3577,147 +3435,11 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.124.0-next.8:
-    timestamp: 1752167971000
-    changes:
-      minor: []
-      patch:
-        - Fixed accessibility issues with unlabeled buttons.
-    dependencies:
-      '@redocly/theme': 0.56.0-next.2
-      '@redocly/asyncapi-docs': 0.5.0-next.5
-      '@redocly/graphql-docs': 0.13.0-next.1
-      '@redocly/openapi-docs': 3.12.0-next.5
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.5
-  0.124.0-next.7:
-    timestamp: 1752154800000
-    changes:
-      minor: []
-      patch:
-        - Updated internal dependencies.
-    dependencies:
-      '@redocly/asyncapi-docs': 0.5.0-next.4
-      '@redocly/graphql-docs': 0.13.0-next.1
-      '@redocly/openapi-docs': 3.12.0-next.4
-      '@redocly/portal-legacy-ui': 0.7.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.4
-      '@redocly/realm-asyncapi-sdk': 0.2.0-next.1
-      '@redocly/theme': 0.56.0-next.1
-  0.124.0-next.6:
-    timestamp: 1752151894000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/config` package to fix an error during build.
-    dependencies: {}
-  0.124.0-next.5:
-    timestamp: 1752138689000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where a search query containing brackets caused a 500 error in the Flexsearch engine.
-        - Fixed `HEAD` requests returning 404 errors.
-        - Prevented hydration errors by placing Markdoc block tags on separate lines.
-        - Updated `@redocly/openapi-core` dependency to version `2.0.0-next.1`.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.3
-      '@redocly/asyncapi-docs': 0.5.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.3
-  0.124.0-next.4:
-    timestamp: 1752031708000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.2
-      '@redocly/asyncapi-docs': 0.5.0-next.2
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.2
-  0.124.0-next.3:
-    timestamp: 1751968958000
-    changes:
-      minor:
-        - Added built-in translations for multiple languages.
-      patch:
-        - Fixed `NextPage` and `PreviousPage` not displaying when `REDOCLY_PATH_PREFIX` was set.
-    dependencies: {}
-  0.124.0-next.2:
-    timestamp: 1751900204000
-    changes:
-      minor: []
-      patch: []
-    dependencies: {}
-  0.124.0-next.1:
-    timestamp: 1751888780000
-    changes:
-      minor: []
-      patch:
-        - Fixed RBAC behavior for folders with names prefixed by a dot.
-        - >-
-          Added `openapi-response-sample` tag to separate OpenAPI code sample functionality for requests and responses, enabling granular control of
-          response samples.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.1
-      '@redocly/asyncapi-docs': 0.5.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.1
-  0.124.0-next.0:
-    timestamp: 1751613974000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.0
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.0
-      '@redocly/realm-asyncapi-sdk': 0.2.0-next.0
-      '@redocly/portal-legacy-ui': 0.7.0-next.0
-      '@redocly/asyncapi-docs': 0.5.0-next.0
-      '@redocly/graphql-docs': 0.13.0-next.0
-      '@redocly/theme': 0.56.0-next.0
-  0.123.0:
-    timestamp: 1751536139000
-    changes:
-      minor:
-        - Exposed `usePageVersions` and `useActivePageVersion` hooks to access the current page version in React pages.
-        - Added `page` and `label` front matter properties to navigation buttons.
-        - Exposed `useUserTeams` hook to access teams assigned to the active user.
-        - Added **Skip to content** button to enhance keyboard navigation.
-      patch:
-        - Fixed decoding errors in encoded content returned by API functions, for example, gzip-compressed data.
-        - Fixed an issue with `api` filter in scorecard that prevented details from displaying.
-        - Removed headers from page data to prevent exposing sensitive cookie information.
-        - Fixed `apiFunctions.folders` configuration to correctly handle custom folder paths with leading or trailing slashes.
-        - Fixed detection of changes in partial folders.
-        - Fixed search indexing to include `code-snippet` content.
-        - Fixed SSR style attribute issue in `img` tag string formatting.
-        - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
-        - Fixed keyboard accessibility issues in sidebar elements that prevented focusing and clicking.
-        - Fixed missing content in Markdown code blocks and `{% markdoc-example %}` tags in AI Search and `llms.txt` chunks.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750342295`.
-        - Improved accessibility by adding descriptive `alt` text to footer icons.
-        - Fixed relative link issues in front matter for Markdoc tags.
-        - Fixed external links being incorrectly prefixed with `REDOCLY_PREFIX_PATHS`.
-        - 'Fixes a bug that caused invite routes to be hidden behind the login screen when `requiresLogin: true`.'
-        - Fixed an issue where the Markdoc variable `$remoteAddr` returned incorrect values.
-        - Improved validation of unclosed quotes in Markdoc tag attributes.
-        - Fixed occasional errors in long AI search conversations.
-        - Fixed incorrect auto-scrolling to anchor elements.
-        - Fixed malformed content handling in the Markdown parsing pipeline.
-        - Fixed incorrect values in the Rule status scorecard.
-        - Removed a warning about the React Router future flag from the browser console.
-        - Improved keyboard accessibility and screen reader support for the version picker component.
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0
-      '@redocly/theme': 0.55.0
-      '@redocly/portal-plugin-mock-server': 0.8.0
-      '@redocly/portal-legacy-ui': 0.6.0
-      '@redocly/asyncapi-docs': 0.4.0
-      '@redocly/graphql-docs': 0.12.0
-      '@redocly/realm-asyncapi-sdk': 0.1.0
   0.123.0-next.11:
     timestamp: 1751381431000
     changes:
       minor:
-        - Added **Skip to content** button to enhance keyboard navigation.
+        - Added `Skip to content` button to enhance keyboard navigation.
         - Fixed decoding errors in encoded content returned by API functions, for example, gzip-compressed data.
       patch: []
     dependencies:
@@ -3730,15 +3452,15 @@
     timestamp: 1751283323000
     changes:
       minor:
-        - Added `page` and `label` front matter properties to navigation buttons.
+        - Added `page` and `label` frontmatter properties to navigation buttons.
       patch:
         - Fixed issue with `api` filter in scorecard that prevented details from displaying.
         - Fixed search indexing to include `code-snippet` content.
         - Fixed incorrect auto-scrolling to anchor elements.
         - Fixed occasional errors in long AI search conversations.
         - Fixed anchor links not scrolling to the correct position when navigating from another page.
-        - Fixed malformed content handling in the Markdown parsing pipeline.
-        - Fixed incorrect values in the Rule status scorecard.
+        - Fixed malformed content handling in the markdown parsing pipeline.
+        - Fixed incorrect values in the `Rule status` scorecard.
     dependencies:
       '@redocly/theme': 0.55.0-next.8
       '@redocly/asyncapi-docs': 0.4.0-next.9
@@ -3816,7 +3538,7 @@
       minor: []
       patch:
         - 'Fixes a bug that caused invite routes to be hidden behind the login screen when `requiresLogin: true`.'
-        - Improved keyboard accessibility and screen reader support for the version picker component.
+        - Improved keyboard accessibility and screen reader support for the `version picker` component.
         - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750261968`.
     dependencies:
       '@redocly/theme': 0.55.0-next.5
@@ -3875,12 +3597,12 @@
     timestamp: 1749821473000
     changes:
       minor:
-        - Exposed `usePageVersions` and `useActivePageVersion` hooks to access the current page version in React pages.
+        - Exposed `usePageVersions` and `usePageActiveVersion` hooks to access the current page version in React pages.
       patch:
         - Fixed detection of changes in partial folders.
         - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
         - Improved accessibility by adding descriptive `alt` text to footer icons.
-        - Fixed relative link issues in front matter for Markdoc tags.
+        - Fixed relative link issues in frontmatter for `Markdoc` tags.
         - Fixed an issue where the Markdoc variable `$remoteAddr` returned incorrect values.
     dependencies:
       '@redocly/graphql-docs': 0.12.0-next.1
@@ -3908,7 +3630,7 @@
       patch:
         - Enter prerelease mode.
         - Fixed performance issue in the `Tabs` component.
-        - Improved validation of unclosed quotes in Markdoc tag attributes.
+        - Improved validation of unclosed quotes in `markdoc` attributes.
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.8.0-next.0
       '@redocly/portal-legacy-ui': 0.6.0-next.0
@@ -6463,144 +6185,11 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.124.0-next.8:
-    timestamp: 1752167971000
-    changes:
-      minor: []
-      patch:
-        - Fixed accessibility issues with unlabeled buttons.
-    dependencies:
-      '@redocly/theme': 0.56.0-next.2
-      '@redocly/asyncapi-docs': 0.5.0-next.5
-      '@redocly/graphql-docs': 0.13.0-next.1
-      '@redocly/openapi-docs': 3.12.0-next.5
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.5
-  0.124.0-next.7:
-    timestamp: 1752154800000
-    changes:
-      minor: []
-      patch:
-        - Updated internal dependencies.
-    dependencies:
-      '@redocly/asyncapi-docs': 0.5.0-next.4
-      '@redocly/graphql-docs': 0.13.0-next.1
-      '@redocly/openapi-docs': 3.12.0-next.4
-      '@redocly/portal-legacy-ui': 0.7.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.4
-      '@redocly/realm-asyncapi-sdk': 0.2.0-next.1
-      '@redocly/theme': 0.56.0-next.1
-  0.124.0-next.6:
-    timestamp: 1752151894000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/config` package to fix an error during build.
-    dependencies: {}
-  0.124.0-next.5:
-    timestamp: 1752138689000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where a search query containing brackets caused a 500 error in the Flexsearch engine.
-        - Fixed `HEAD` requests returning 404 errors.
-        - Prevented hydration errors by placing Markdoc block tags on separate lines.
-        - Updated `@redocly/openapi-core` dependency to version `2.0.0-next.1`.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.3
-      '@redocly/asyncapi-docs': 0.5.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.3
-  0.124.0-next.4:
-    timestamp: 1752031708000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.2
-      '@redocly/asyncapi-docs': 0.5.0-next.2
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.2
-  0.124.0-next.3:
-    timestamp: 1751968958000
-    changes:
-      minor:
-        - Added built-in translations for multiple languages.
-      patch:
-        - Fixed `NextPage` and `PreviousPage` not displaying when `REDOCLY_PATH_PREFIX` was set.
-    dependencies: {}
-  0.124.0-next.2:
-    timestamp: 1751900204000
-    changes:
-      minor: []
-      patch: []
-    dependencies: {}
-  0.124.0-next.1:
-    timestamp: 1751888780000
-    changes:
-      minor: []
-      patch:
-        - Fixed RBAC behavior for folders with names prefixed by a dot.
-        - >-
-          Added `openapi-response-sample` tag to separate OpenAPI code sample functionality for requests and responses, enabling granular control of
-          response samples.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.1
-      '@redocly/asyncapi-docs': 0.5.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.1
-  0.124.0-next.0:
-    timestamp: 1751613974000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.0
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.0
-      '@redocly/realm-asyncapi-sdk': 0.2.0-next.0
-      '@redocly/portal-legacy-ui': 0.7.0-next.0
-      '@redocly/asyncapi-docs': 0.5.0-next.0
-      '@redocly/graphql-docs': 0.13.0-next.0
-      '@redocly/theme': 0.56.0-next.0
-  0.123.0:
-    timestamp: 1751536139000
-    changes:
-      minor:
-        - Exposed `usePageVersions` and `useActivePageVersion` hooks to access the current page version in React pages.
-        - Added `page` and `label` front matter properties to navigation buttons.
-        - Exposed `useUserTeams` hook to access teams assigned to the active user.
-        - Improved trigger points for `code-walkthrough` steps.
-        - Added **Skip to content** button to enhance keyboard navigation.
-      patch:
-        - Removed headers from page data to prevent exposing sensitive cookie information.
-        - Fixed detection of changes in partial folders.
-        - Fixed search indexing to include `code-snippet` content.
-        - Fixed SSR style attribute issue in `img` tag string formatting.
-        - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
-        - Fixed keyboard accessibility issues in sidebar elements that prevented focusing and clicking.
-        - Fixed missing content in Markdown code blocks and `{% markdoc-example %}` tags in AI Search and `llms.txt` chunks.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750342295`.
-        - Improved accessibility by adding descriptive `alt` text to footer icons.
-        - Fixed relative link issues in front matter for Markdoc tags.
-        - Fixed external links being incorrectly prefixed with `REDOCLY_PREFIX_PATHS`.
-        - 'Fixes a bug that caused invite routes to be hidden behind the login screen when `requiresLogin: true`.'
-        - Fixed an issue where the Markdoc variable `$remoteAddr` returned incorrect values.
-        - Improved validation of unclosed quotes in Markdoc tag attributes.
-        - Fixed occasional errors in long AI search conversations.
-        - Fixed incorrect auto-scrolling to anchor elements.
-        - Fixed malformed content handling in the Markdown parsing pipeline.
-        - Removed a warning about the React Router future flag from the browser console.
-        - Improved keyboard accessibility and screen reader support for the version picker component.
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0
-      '@redocly/theme': 0.55.0
-      '@redocly/portal-plugin-mock-server': 0.8.0
-      '@redocly/portal-legacy-ui': 0.6.0
-      '@redocly/asyncapi-docs': 0.4.0
-      '@redocly/graphql-docs': 0.12.0
-      '@redocly/realm-asyncapi-sdk': 0.1.0
   0.123.0-next.11:
     timestamp: 1751381431000
     changes:
       minor:
-        - Added **Skip to content** button to enhance keyboard navigation.
+        - Added `Skip to content` button to enhance keyboard navigation.
       patch: []
     dependencies:
       '@redocly/theme': 0.55.0-next.9
@@ -6612,14 +6201,14 @@
     timestamp: 1751283323000
     changes:
       minor:
-        - Added `page` and `label` front matter properties to navigation buttons.
+        - Added `page` and `label` frontmatter properties to navigation buttons.
         - Exposed `useUserTeams` hook to access teams assigned to the active user.
       patch:
         - Fixed search indexing to include `code-snippet` content.
         - Fixed incorrect auto-scrolling to anchor elements.
         - Fixed occasional errors in long AI search conversations.
         - Fixed anchor links not scrolling to the correct position when navigating from another page.
-        - Fixed malformed content handling in the Markdown parsing pipeline.
+        - Fixed malformed content handling in the markdown parsing pipeline.
     dependencies:
       '@redocly/theme': 0.55.0-next.8
       '@redocly/asyncapi-docs': 0.4.0-next.9
@@ -6697,7 +6286,7 @@
       minor: []
       patch:
         - 'Fixes a bug that caused invite routes to be hidden behind the login screen when `requiresLogin: true`.'
-        - Improved keyboard accessibility and screen reader support for the version picker component.
+        - Improved keyboard accessibility and screen reader support for the `version picker` component.
         - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750261968`.
     dependencies:
       '@redocly/theme': 0.55.0-next.5
@@ -6756,12 +6345,12 @@
     timestamp: 1749821473000
     changes:
       minor:
-        - Exposed `usePageVersions` and `useActivePageVersion` hooks to access the current page version in React pages.
+        - Exposed `usePageVersions` and `usePageActiveVersion` hooks to access the current page version in React pages.
       patch:
         - Fixed detection of changes in partial folders.
         - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
         - Improved accessibility by adding descriptive `alt` text to footer icons.
-        - Fixed relative link issues in front matter for Markdoc tags.
+        - Fixed relative link issues in frontmatter for `Markdoc` tags.
         - Fixed an issue where the Markdoc variable `$remoteAddr` returned incorrect values.
     dependencies:
       '@redocly/graphql-docs': 0.12.0-next.1
@@ -6789,7 +6378,7 @@
       patch:
         - Enter prerelease mode.
         - Fixed performance issue in the `Tabs` component.
-        - Improved validation of unclosed quotes in Markdoc tag attributes.
+        - Improved validation of unclosed quotes in `markdoc` attributes.
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.8.0-next.0
       '@redocly/portal-legacy-ui': 0.6.0-next.0
@@ -9344,140 +8933,11 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.124.0-next.8:
-    timestamp: 1752167971000
-    changes:
-      minor: []
-      patch:
-        - Fixed accessibility issues with unlabeled buttons.
-    dependencies:
-      '@redocly/theme': 0.56.0-next.2
-      '@redocly/asyncapi-docs': 0.5.0-next.5
-      '@redocly/graphql-docs': 0.13.0-next.1
-      '@redocly/openapi-docs': 3.12.0-next.5
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.5
-  0.124.0-next.7:
-    timestamp: 1752154800000
-    changes:
-      minor: []
-      patch:
-        - Updated internal dependencies.
-    dependencies:
-      '@redocly/asyncapi-docs': 0.5.0-next.4
-      '@redocly/graphql-docs': 0.13.0-next.1
-      '@redocly/openapi-docs': 3.12.0-next.4
-      '@redocly/portal-legacy-ui': 0.7.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.4
-      '@redocly/realm-asyncapi-sdk': 0.2.0-next.1
-      '@redocly/theme': 0.56.0-next.1
-  0.124.0-next.6:
-    timestamp: 1752151894000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/config` package to fix an error during build.
-    dependencies: {}
-  0.124.0-next.5:
-    timestamp: 1752138689000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where a search query containing brackets caused a 500 error in the Flexsearch engine.
-        - Fixed `HEAD` requests returning 404 errors.
-        - Prevented hydration errors by placing Markdoc block tags on separate lines.
-        - Updated `@redocly/openapi-core` dependency to version `2.0.0-next.1`.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.3
-      '@redocly/asyncapi-docs': 0.5.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.3
-  0.124.0-next.4:
-    timestamp: 1752031708000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.2
-      '@redocly/asyncapi-docs': 0.5.0-next.2
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.2
-  0.124.0-next.3:
-    timestamp: 1751968958000
-    changes:
-      minor:
-        - Added built-in translations for multiple languages.
-      patch:
-        - Fixed `NextPage` and `PreviousPage` not displaying when `REDOCLY_PATH_PREFIX` was set.
-    dependencies: {}
-  0.124.0-next.2:
-    timestamp: 1751900204000
-    changes:
-      minor: []
-      patch: []
-    dependencies: {}
-  0.124.0-next.1:
-    timestamp: 1751888780000
-    changes:
-      minor: []
-      patch:
-        - Fixed `requestBody` and `parameters` being ignored in the `replay-openapi` Markdoc tag.
-        - Fixed RBAC behavior for folders with names prefixed by a dot.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.1
-      '@redocly/asyncapi-docs': 0.5.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.1
-  0.124.0-next.0:
-    timestamp: 1751613974000
-    changes:
-      minor: []
-      patch:
-        - Fixed scopes display in the security modal.
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.0
-      '@redocly/portal-plugin-mock-server': 0.9.0-next.0
-      '@redocly/realm-asyncapi-sdk': 0.2.0-next.0
-      '@redocly/portal-legacy-ui': 0.7.0-next.0
-      '@redocly/asyncapi-docs': 0.5.0-next.0
-      '@redocly/graphql-docs': 0.13.0-next.0
-      '@redocly/theme': 0.56.0-next.0
-  0.123.0:
-    timestamp: 1751536139000
-    changes:
-      minor:
-        - Added **Skip to content** button to enhance keyboard navigation.
-      patch:
-        - Fixed broken `openapi.events` configuration to ensure custom event hooks trigger as expected.
-        - Removed headers from page data to prevent exposing sensitive cookie information.
-        - Fixed detection of changes in partial folders.
-        - Fixed search indexing to include `code-snippet` content.
-        - Fixed SSR style attribute issue in `img` tag string formatting.
-        - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
-        - Fixed keyboard accessibility issues in sidebar elements that prevented focusing and clicking.
-        - Fixed missing content in Markdown code blocks and `{% markdoc-example %}` tags in AI Search and `llms.txt` chunks.
-        - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750342295`.
-        - Improved accessibility by adding descriptive `alt` text to footer icons.
-        - Fixed external links being incorrectly prefixed with `REDOCLY_PREFIX_PATHS`.
-        - Fixed an issue where decorators were not used from the root `redocly.yaml`.
-        - 'Fixes a bug that caused invite routes to be hidden behind the login screen when `requiresLogin: true`.'
-        - Fixed an issue where the Markdoc variable `$remoteAddr` returned incorrect values.
-        - Improved validation of unclosed quotes in Markdoc tag attributes.
-        - Fixed occasional errors in long AI search conversations.
-        - Fixed incorrect auto-scrolling to anchor elements.
-        - Fixed malformed content handling in the Markdown parsing pipeline.
-        - Removed a warning about the React Router future flag from the browser console.
-        - Improved keyboard accessibility and screen reader support for the version picker component.
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0
-      '@redocly/theme': 0.55.0
-      '@redocly/portal-plugin-mock-server': 0.8.0
-      '@redocly/portal-legacy-ui': 0.6.0
-      '@redocly/asyncapi-docs': 0.4.0
-      '@redocly/graphql-docs': 0.12.0
-      '@redocly/realm-asyncapi-sdk': 0.1.0
   0.123.0-next.11:
     timestamp: 1751381431000
     changes:
       minor:
-        - Added **Skip to content** button to enhance keyboard navigation.
+        - Added `Skip to content` button to enhance keyboard navigation.
       patch: []
     dependencies:
       '@redocly/theme': 0.55.0-next.9
@@ -9566,7 +9026,7 @@
       minor: []
       patch:
         - 'Fixes a bug that caused invite routes to be hidden behind the login screen when `requiresLogin: true`.'
-        - Improved keyboard accessibility and screen reader support for the version picker component.
+        - Improved keyboard accessibility and screen reader support for the `version picker` component.
         - Updated `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1750261968`.
     dependencies:
       '@redocly/theme': 0.55.0-next.5
@@ -9627,7 +9087,7 @@
       patch:
         - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
         - Improved accessibility by adding descriptive `alt` text to footer icons.
-        - Fixed relative link issues in front matter for Markdoc tags.
+        - Fixed relative link issues in frontmatter for `Markdoc` tags.
         - Fixed an issue where the Markdoc variable `$remoteAddr` returned incorrect values.
     dependencies:
       '@redocly/graphql-docs': 0.12.0-next.1
@@ -12203,62 +11663,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.56.0-next.2:
-    timestamp: 1752167971000
-    changes:
-      minor: []
-      patch:
-        - Fixed accessibility issues with unlabeled buttons.
-    dependencies: {}
-  0.56.0-next.1:
-    timestamp: 1752154800000
-    changes:
-      minor: []
-      patch:
-        - Updated internal dependencies.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.2.0-next.1
-  0.56.0-next.0:
-    timestamp: 1751613974000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.2.0-next.0
-  0.55.0:
-    timestamp: 1751536139000
-    changes:
-      minor:
-        - Exposed `usePageVersions` and `useActivePageVersion` hooks to access the current page version in React pages.
-        - Added `page` and `label` front matter properties to navigation buttons.
-        - Exposed `useUserTeams` hook to access teams assigned to the active user.
-        - Improved trigger points for `code-walkthrough` steps.
-        - Added **Skip to content** button to enhance keyboard navigation.
-      patch:
-        - Fixed broken `openapi.events` configuration to ensure custom event hooks trigger as expected.
-        - Fixed SSR style attribute issue in `img` tag string formatting.
-        - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
-        - Fixed keyboard accessibility issues in sidebar elements that prevented focusing and clicking.
-        - Added CSS variables to highlight path parameters in Replay.
-        - Improved accessibility by adding descriptive `alt` text to footer icons.
-        - Fixed extra bottom padding in the `Admonition` component.
-        - Fixed occasional errors in long AI search conversations.
-        - Improved keyboard accessibility and screen reader support for the version picker component.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.1.0
   0.55.0-next.9:
     timestamp: 1751381431000
     changes:
       minor:
-        - Added **Skip to content** button to enhance keyboard navigation.
+        - Added `Skip to content` button to enhance keyboard navigation.
       patch: []
     dependencies: {}
   0.55.0-next.8:
     timestamp: 1751283323000
     changes:
       minor:
-        - Added `page` and `label` front matter properties to navigation buttons.
+        - Added `page` and `label` frontmatter properties to navigation buttons.
         - Exposed `useUserTeams` hook to access teams assigned to the active user.
       patch:
         - Fixed occasional errors in long AI search conversations.
@@ -12302,7 +11718,7 @@
     changes:
       minor: []
       patch:
-        - Improved keyboard accessibility and screen reader support for the version picker component.
+        - Improved keyboard accessibility and screen reader support for the `version picker` component.
     dependencies: {}
   0.55.0-next.4:
     timestamp: 1750237399000
@@ -12330,7 +11746,7 @@
     timestamp: 1749821473000
     changes:
       minor:
-        - Exposed `usePageVersions` and `useActivePageVersion` hooks to access the current page version in React pages.
+        - Exposed `usePageVersions` and `usePageActiveVersion` hooks to access the current page version in React pages.
       patch:
         - Changed the default keyboard shortcut to open Search to `Cmd+K`/`Ctrl+K`.
         - Improved accessibility by adding descriptive `alt` text to footer icons.
@@ -12349,7 +11765,7 @@
       patch:
         - Enter prerelease mode.
         - Fixed performance issue in the `Tabs` component.
-        - Added CSS variables to highlight path parameters in Replay.
+        - Added CSS variables to highlight path parameters in `Replay`.
     dependencies:
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
   0.54.0:
@@ -14175,63 +13591,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.12.0-next.5:
-    timestamp: 1752167971000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.15.0-next.2
-  3.12.0-next.4:
-    timestamp: 1752154800000
-    changes:
-      minor: []
-      patch:
-        - Updated internal dependencies.
-    dependencies:
-      '@redocly/replay': 0.15.0-next.1
-  3.12.0-next.3:
-    timestamp: 1752138689000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` dependency to version `2.0.0-next.1`.
-    dependencies: {}
-  3.12.0-next.2:
-    timestamp: 1752031708000
-    changes:
-      minor: []
-      patch:
-        - Fixed scopes display in the security modal.
-    dependencies: {}
-  3.12.0-next.1:
-    timestamp: 1751888780000
-    changes:
-      minor: []
-      patch:
-        - Fixed `requestBody` and `parameters` being ignored in the `replay-openapi` Markdoc tag.
-        - >-
-          Added `openapi-response-sample` tag to separate OpenAPI code sample functionality for requests and responses, enabling granular control of
-          response samples.
-    dependencies: {}
-  3.12.0-next.0:
-    timestamp: 1751613974000
-    changes:
-      minor: []
-      patch:
-        - Fixed scopes display in the security modal.
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/replay': 0.15.0-next.0
-      '@redocly/theme': 0.56.0-next.0
-  3.11.0:
-    timestamp: 1751536139000
-    changes:
-      minor: []
-      patch:
-        - Fixed broken `openapi.events` configuration to ensure custom event hooks trigger as expected.
-    dependencies:
-      '@redocly/replay': 0.14.0
   3.11.0-next.10:
     timestamp: 1751381431000
     changes:
@@ -16035,13 +15394,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
-  0.26.3:
-    timestamp: 1752149929000
-    changes:
-      minor: []
-      patch:
-        - Fixed configuration schemas for `preprocessors` and `scorecard` options.
-    dependencies: {}
   0.26.2:
     timestamp: 1750321133000
     changes:
@@ -16419,28 +15771,6 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
-  0.13.0-next.1:
-    timestamp: 1752154800000
-    changes:
-      minor: []
-      patch:
-        - Updated internal dependencies.
-    dependencies: {}
-  0.13.0-next.0:
-    timestamp: 1751613974000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/theme': 0.56.0-next.0
-  0.12.0:
-    timestamp: 1751536139000
-    changes:
-      minor:
-        - Added support for displaying deprecated queries, mutations, and subscriptions in the GraphQL documentation.
-      patch: []
-    dependencies: {}
   0.12.0-next.1:
     timestamp: 1749821473000
     changes:
@@ -17077,13 +16407,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
-  0.2.18:
-    timestamp: 1752149929000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` dependency to version `2.0.0-next.1`.
-    dependencies: {}
   0.2.17:
     timestamp: 1750934732000
     changes:
@@ -17314,26 +16637,6 @@
         - Redocly Mock Server release
     dependencies: {}
 '@redocly/portal-legacy-ui':
-  0.7.0-next.1:
-    timestamp: 1752154800000
-    changes:
-      minor: []
-      patch:
-        - Updated internal dependencies.
-    dependencies: {}
-  0.7.0-next.0:
-    timestamp: 1751613974000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies: {}
-  0.6.0:
-    timestamp: 1751613974000
-    changes:
-      minor: []
-      patch: []
-    dependencies: {}
   0.6.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -17416,112 +16719,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.7.0-next.8:
-    timestamp: 1752167971000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.56.0-next.2
-      '@redocly/realm': 0.124.0-next.8
-      '@redocly/redoc': 0.124.0-next.8
-      '@redocly/redoc-reef': 0.124.0-next.8
-      '@redocly/redoc-revel': 0.124.0-next.8
-  1.7.0-next.7:
-    timestamp: 1752154800000
-    changes:
-      minor: []
-      patch:
-        - Updated internal dependencies.
-    dependencies:
-      '@redocly/realm': 0.124.0-next.7
-      '@redocly/redoc': 0.124.0-next.7
-      '@redocly/redoc-reef': 0.124.0-next.7
-      '@redocly/redoc-revel': 0.124.0-next.7
-      '@redocly/theme': 0.56.0-next.1
-  1.7.0-next.6:
-    timestamp: 1752151894000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.124.0-next.6
-      '@redocly/redoc': 0.124.0-next.6
-      '@redocly/redoc-reef': 0.124.0-next.6
-      '@redocly/redoc-revel': 0.124.0-next.6
-  1.7.0-next.5:
-    timestamp: 1752138689000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.124.0-next.5
-      '@redocly/redoc': 0.124.0-next.5
-      '@redocly/redoc-reef': 0.124.0-next.5
-      '@redocly/redoc-revel': 0.124.0-next.5
-  1.7.0-next.4:
-    timestamp: 1752031708000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.124.0-next.4
-      '@redocly/redoc': 0.124.0-next.4
-      '@redocly/redoc-reef': 0.124.0-next.4
-      '@redocly/redoc-revel': 0.124.0-next.4
-  1.7.0-next.3:
-    timestamp: 1751968958000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.124.0-next.3
-      '@redocly/redoc': 0.124.0-next.3
-      '@redocly/redoc-reef': 0.124.0-next.3
-      '@redocly/redoc-revel': 0.124.0-next.3
-  1.7.0-next.2:
-    timestamp: 1751900204000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.124.0-next.2
-      '@redocly/redoc': 0.124.0-next.2
-      '@redocly/redoc-revel': 0.124.0-next.2
-      '@redocly/redoc-reef': 0.124.0-next.2
-  1.7.0-next.1:
-    timestamp: 1751888780000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.124.0-next.1
-      '@redocly/redoc': 0.124.0-next.1
-      '@redocly/redoc-reef': 0.124.0-next.1
-      '@redocly/redoc-revel': 0.124.0-next.1
-  1.7.0-next.0:
-    timestamp: 1751613974000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/realm': 0.124.0-next.0
-      '@redocly/redoc': 0.124.0-next.0
-      '@redocly/redoc-reef': 0.124.0-next.0
-      '@redocly/redoc-revel': 0.124.0-next.0
-      '@redocly/theme': 0.56.0-next.0
-  1.6.0:
-    timestamp: 1751536139000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.55.0
-      '@redocly/realm': 0.123.0
-      '@redocly/redoc': 0.123.0
-      '@redocly/redoc-reef': 0.123.0
-      '@redocly/redoc-revel': 0.123.0
   1.6.0-next.11:
     timestamp: 1751381431000
     changes:
@@ -20717,57 +19914,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.9.0-next.5:
-    timestamp: 1752167971000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.5
-  0.9.0-next.4:
-    timestamp: 1752154800000
-    changes:
-      minor: []
-      patch:
-        - Updated internal dependencies.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.4
-  0.9.0-next.3:
-    timestamp: 1752138689000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.3
-  0.9.0-next.2:
-    timestamp: 1752031708000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.2
-  0.9.0-next.1:
-    timestamp: 1751888780000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.1
-  0.9.0-next.0:
-    timestamp: 1751613974000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/openapi-docs': 3.12.0-next.0
-  0.8.0:
-    timestamp: 1751536139000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.11.0
   0.8.0-next.10:
     timestamp: 1751381431000
     changes:
@@ -22561,41 +21707,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.15.0-next.2:
-    timestamp: 1752167971000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.56.0-next.2
-  0.15.0-next.1:
-    timestamp: 1752154800000
-    changes:
-      minor: []
-      patch:
-        - Updated internal dependencies.
-    dependencies:
-      '@redocly/theme': 0.56.0-next.1
-  0.15.0-next.0:
-    timestamp: 1751613974000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/theme': 0.56.0-next.0
-  0.14.0:
-    timestamp: 1751536139000
-    changes:
-      minor:
-        - Added highlighting for path parameters in request URLs.
-        - Replaced variables with servers and inputs for Arazzo format compatibility. Added `Path` tab to edit request path parameters.
-      patch:
-        - Fixed Replay crash when form-data example value was not a string.
-        - 'Fixed missing boundary in `content-type: multipart/form-data` header.'
-        - Improved keyboard accessibility and screen reader support for the version picker component.
-    dependencies:
-      '@redocly/theme': 0.55.0
   0.14.0-next.10:
     timestamp: 1751381431000
     changes:
@@ -22650,7 +21761,7 @@
     changes:
       minor: []
       patch:
-        - Improved keyboard accessibility and screen reader support for the version picker component.
+        - Improved keyboard accessibility and screen reader support for the `version picker` component.
     dependencies:
       '@redocly/theme': 0.55.0-next.5
   0.14.0-next.4:
@@ -23546,37 +22657,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.7.0-next.2:
-    timestamp: 1752167971000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.56.0-next.2
-  0.7.0-next.1:
-    timestamp: 1752154800000
-    changes:
-      minor: []
-      patch:
-        - Updated internal dependencies.
-    dependencies:
-      '@redocly/theme': 0.56.0-next.1
-  0.7.0-next.0:
-    timestamp: 1751613974000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/theme': 0.56.0-next.0
-  0.6.0:
-    timestamp: 1751536139000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/theme': 0.55.0
   0.6.0-next.9:
     timestamp: 1751381431000
     changes:
@@ -25876,19 +24956,4 @@ reunite:
         - Resolved permissions conflict that restricted project administrators’ access with the `MEMBER` organization role.
         - Fixed issue where user session omitted some teams after SSO login.
         - Added email notifications for failed remote content auto-merges.
-    dependencies: {}
-  v2025-07-04.2:
-    timestamp: 1751630250000
-    changes:
-      minor: []
-      patch:
-        - Fixed crash when deleting a remote subfolder.
-    dependencies: {}
-  v2025-07-10.3:
-    timestamp: 1752156024000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/cli` dependency to version `2.0.0-next.1`.
-        - Updated `@redocly/openapi-core` dependency to version `2.0.0-next.1`.
     dependencies: {}
