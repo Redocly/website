@@ -74,6 +74,7 @@ rules:
   response-contains-property: off
   response-mime-type: off
   array-parameter-serialization: off
+  no-duplicated-tag-names: off
 ```
 
 ### Minimal ruleset: OpenAPI 3.0
@@ -106,6 +107,7 @@ rules:
   operation-singular-tag: off
   no-unresolved-refs: error
   no-enum-type-mismatch: warn
+  nullable-type-sibling: warn
   paths-kebab-case: off
   struct: error
   spec-strict-refs: off
@@ -136,6 +138,7 @@ rules:
   response-contains-property: off
   response-mime-type: off
   array-parameter-serialization: off
+  no-duplicated-tag-names: off
 ```
 
 ### Minimal ruleset: OpenAPI 2.0
@@ -186,6 +189,7 @@ rules:
   request-mime-type: off
   response-contains-property: off
   response-mime-type: off
+  no-duplicated-tag-names: off
 ```
 
 ### Minimal ruleset: AsyncAPI 3.0
@@ -200,6 +204,7 @@ rules:
   tags-alphabetical: off
   channels-kebab-case: off
   no-channel-trailing-slash: off
+  no-duplicated-tag-names: off
 ```
 
 ### Minimal ruleset: AsyncAPI 2.6
@@ -214,6 +219,7 @@ rules:
   tags-alphabetical: off
   channels-kebab-case: off
   no-channel-trailing-slash: off
+  no-duplicated-tag-names: off
 ```
 
 ### Minimal ruleset: Arazzo 1.0
@@ -234,6 +240,9 @@ rules:
   no-criteria-xpath: off
   no-actions-type-end: off
   criteria-unique: off
+  no-x-security-scheme-name-without-openapi: off
+  x-security-scheme-required-values: off
+  no-x-security-scheme-name-in-workflow: off
 ```
 
 ## Recommended rulesets
@@ -343,6 +352,7 @@ oas3_1Rules:
   response-contains-property: off
   response-mime-type: off
   array-parameter-serialization: off
+  no-duplicated-tag-names: warn
 ```
 
 ### Recommended ruleset: OpenAPI 3.0
@@ -375,6 +385,7 @@ rules:
   operation-singular-tag: off
   no-unresolved-refs: error
   no-enum-type-mismatch: error
+  nullable-type-sibling: error
   paths-kebab-case: off
   struct: error
   spec-strict-refs: off
@@ -405,6 +416,7 @@ rules:
   response-contains-property: off
   response-mime-type: off
   array-parameter-serialization: off
+  no-duplicated-tag-names: warn
 ```
 
 ### Recommended ruleset: OpenAPI 2.0
@@ -455,6 +467,7 @@ rules:
   request-mime-type: off
   response-contains-property: off
   response-mime-type: off
+  no-duplicated-tag-names: warn
 ```
 
 ### Recommended ruleset: AsyncAPI 3.0
@@ -469,6 +482,7 @@ rules:
   tags-alphabetical: off
   channels-kebab-case: off
   no-channel-trailing-slash: off
+  no-duplicated-tag-names: warn
 ```
 
 ### Recommended ruleset: AsyncAPI 2.6
@@ -483,6 +497,7 @@ rules:
   tags-alphabetical: off
   channels-kebab-case: off
   no-channel-trailing-slash: off
+  no-duplicated-tag-names: warn
 ```
 
 ### Recommended ruleset: Arazzo 1.0
@@ -503,6 +518,9 @@ rules:
   no-criteria-xpath: off
   no-actions-type-end: warn
   criteria-unique: warn
+  no-x-security-scheme-name-without-openapi: off
+  x-security-scheme-required-values: off
+  no-x-security-scheme-name-in-workflow: 'off',
 ```
 
 ## Resources
