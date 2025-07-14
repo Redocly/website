@@ -203,6 +203,9 @@ responseHeaders:
         connect-src 
           'self'
           https://webhook.frontapp.com
+          https://api.rudderstack.com
+          https://j.clarity.ms
+          https://api.github.com
           https://api.rebilly.com
           https://forms.hsforms.com
           https://forms.hscollectedforms.net
