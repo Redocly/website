@@ -29,12 +29,14 @@ Depending on your device type (or screen size), the location and look of these e
 The navigation bar (navbar) contains links to major parts of the project.
 
 {% tabs %}
+
   {% tab label="Desktop" %}
     On desktop devices, the navbar is located at the top of the screen.
     Some navbar items may contain a drop-down list of links.
     This list expands when you hover your mouse over a navbar item.
     Some projects may have [multiple products](#switch-between-products) that are displayed when you hover over the **Products** item.
   {% /tab %}
+
   {% tab label="Mobile" %}
     To access the navbar on mobile devices:
     - Select the **Menu** icon in the top-right corner of the screen and then select **Main menu**.
@@ -45,6 +47,7 @@ The navigation bar (navbar) contains links to major parts of the project.
     To expand the list, select the arrow.
     Projects with [multiple products](#switch-between-products) list them under the **Products** heading.
   {% /tab %}
+
 {% /tabs %}
 
 ### Sidebar
