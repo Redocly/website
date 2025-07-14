@@ -210,6 +210,7 @@ responseHeaders:
           https://forms.hsforms.com
           https://forms.hscollectedforms.net
           https://www.google-analytics.com
+          https://redoclyrozwmb.dataplane.rudderstack.com
           https://hubspot-forms-static-embed.s3.amazonaws.com;
         form-action 
           'self'
