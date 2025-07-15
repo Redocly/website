@@ -7,7 +7,7 @@ seo:
   description: Explore the pros and cons of Model Context Protocol (MCP), an emerging standard for AI agent interaction.
 image: ./images/mcp-header.png
 author: adam-altman
-date: "2025-02-15"
+date: "2025-07-15"
 categories:
   - mcp
 ---
