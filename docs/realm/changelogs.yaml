@@ -1,4 +1,11 @@
 '@redocly/realm':
+  0.124.0-next.11:
+    timestamp: 1752652267000
+    changes:
+      minor: []
+      patch:
+        - Fixed regression that prevented OpenAPI decorators and plugins from applying from the root config when a nested config was present.
+    dependencies: {}
   0.124.0-next.10:
     timestamp: 1752503822000
     changes:
@@ -3595,6 +3602,12 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.124.0-next.11:
+    timestamp: 1752652267000
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   0.124.0-next.10:
     timestamp: 1752503822000
     changes:
@@ -6498,6 +6511,12 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.124.0-next.11:
+    timestamp: 1752652267000
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   0.124.0-next.10:
     timestamp: 1752503822000
     changes:
@@ -9396,6 +9415,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.124.0-next.11:
+    timestamp: 1752652267000
+    changes:
+      minor: []
+      patch:
+        - Fixed regression that prevented OpenAPI decorators and plugins from applying from the root config when a nested config was present.
+    dependencies: {}
   0.124.0-next.10:
     timestamp: 1752503822000
     changes:
@@ -17496,6 +17522,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.7.0-next.11:
+    timestamp: 1752652267000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.124.0-next.11
+      '@redocly/redoc': 0.124.0-next.11
+      '@redocly/redoc-reef': 0.124.0-next.11
+      '@redocly/redoc-revel': 0.124.0-next.11
   1.7.0-next.10:
     timestamp: 1752503822000
     changes:
