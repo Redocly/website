@@ -255,6 +255,19 @@
               label: x-assertionType
         - page: author/how-to/generate-asyncapi-docs.md
           label: AsyncAPI
+        - group: AsyncAPI extensions
+          page: author/reference/asyncapi-extensions/index.md
+          items:
+            - page: author/reference/asyncapi-extensions/x-tag-groups.md
+              label: x-tagGroups
+            - page: author/reference/asyncapi-extensions/x-badges.md
+              label: x-badges
+            - page: author/reference/asyncapi-extensions/x-enum-descriptions.md
+              label: x-enumDescriptions
+            - page: author/reference/asyncapi-extensions/x-additional-properties-name.md
+              label: x-additionalPropertiesName
+            - page: author/reference/asyncapi-extensions/x-rbac.md
+              label: x-rbac
         - page: author/how-to/add-graphql-docs.md
           label: GraphQL
         - page: author/how-to/add-soap-docs.md
@@ -267,6 +280,10 @@
           label: Try APIs with mock server
         - page: author/reference/replay.md
           label: Replay interface
+        - page: author/reference/asyncapi-docs.md
+          label: AsyncAPI documentation pages
+        - page: author/reference/kafka-asyncapi-docs.md
+          label: Kafka AsyncAPI documentation pages
 
     - group: Localization
       page: author/how-to/config-l10n/index.md

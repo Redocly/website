@@ -4,17 +4,19 @@
 
 - Markdown (and Markdoc)
 - YAML configurations
-- API definitions
+- API description files
   - OpenAPI
   - GraphQL
   - AsyncAPI
+    - Apache Kafka protocol
+- Arazzo workflow files
 - React components (TSX/JSX)
 - CSS (to style the project)
 - Static assets (like images, PDFs, and more)
 
-## Supported API definition file types
+## Supported API description file types
 
-{% $env.PUBLIC_PORTAL_NAME %} supports the following API definition files types:
+{% $env.PUBLIC_PORTAL_NAME %} supports the following API description files types:
 
 - OpenAPI
   - JSON
