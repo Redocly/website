@@ -62,8 +62,8 @@ Use the `search` configuration to:
 ---
 
 - filters
-- [[Filter item](#filter-item-object)]
-- Advanced filter configuration.
+- [[Filters item](#filters-item-object)]
+- Advanced filters configuration.
 
 ---
 
@@ -101,7 +101,7 @@ Use the `search` configuration to:
 
 {% /table %}
 
-### Filter item object
+### Filters item object
 
 {% table %}
 

@@ -22,11 +22,11 @@ Some rules support additional configuration options. The following example shows
 
 ```yaml
 rules:
-  path-excludes-patterns:
+  path-segment-plural:
     severity: error
-    patterns:
-      - ^\/fetch
-      - ^\/v[0-9]
+    ignoreLastPathSegment: true
+    exceptions:
+      - people
 ```
 
 Check the documentation for each rule to see if it supports additional configuration.
@@ -52,6 +52,18 @@ apis:
 ```
 
 Each API picks up the settings that relate to it and gets linted accordingly.
+
+## Per-API configuration with configurable rules
+
+You can use configurable rules for individual APIs.
+In the following example, `UserApi@1` has a configurable rule defined.
+This rule applies only to `UserApi@1`.
+
+{% code-snippet
+  file="../../_code-snippets/per-api-rules-example.yaml"
+  language="yaml"
+  title="redocly.yaml"
+/%}
 
 ## Resources
 

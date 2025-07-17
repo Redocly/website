@@ -1,4 +1,7 @@
+import * as React from 'react';
+
 import Page from '@redocly/marketing-pages/pages/learning-center/learn.page.js';
+import { cards } from './cards';
 
 export const frontmatter = {
   seo: {
@@ -7,4 +10,6 @@ export const frontmatter = {
   slug: '/learn',
 };
 
-export default Page;
+export default function() {
+  return <Page cards={cards} />
+}

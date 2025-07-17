@@ -10,6 +10,7 @@ In this guide, learn how to choose and adapt the rules built into Redocly for yo
 
 To get started, try one of the existing rulesets and see if it meets your needs.
 
+- The [`spec`](../rules/spec-ruleset.md) ruleset follows the OpenAPI specification.
 - The [`recommended`](../rules/recommended.md) ruleset has a good basic set of rules for a consistent, user-friendly API.
 - The [recommended-strict](../rules/recommended.md#recommended-strict-ruleset) ruleset is identical to the `recommended`, except it elevates all warnings to errors so that you don't miss the warnings, i.e. in a CI pipeline.
 - Or try the [`minimal`](../rules/minimal.md) ruleset which shows some warnings, but far fewer errors that would cause the lint to fail.
@@ -123,37 +124,11 @@ Whatever the reason, per-API configuration can be useful in these situations.
 You can configure linting differently for multiple APIs in a Redocly configuration file.
 Here's an example with three APIs defined, and different rules applied for each:
 
-```yaml
-extends:
-  - recommended
-
-apis:
-  partnerApi@1:
-    root: partners.yaml
-    rules:
-      no-server-trailing-slash: off
-      operation-operationId: off
-
-  newsletter@3:
-    root: /absolute/path/to/folder/openapi.yaml
-    extends:
-      - minimal
-    rules:
-      no-server-trailing-slash: off
-
-  UserApi@1:
-    root: users.yaml
-    rules:
-      no-server-trailing-slash: off
-      operation-operationId: warn
-      rule/version-semver:
-        subject:
-          type: Info
-          property: version
-        assertions:
-          pattern: /1.[0-9]\.[0-9]/
-        message: API version must be in SemVer format, no major version release
-```
+{% code-snippet
+  file="../../_code-snippets/per-api-rules-example.yaml"
+  language="yaml"
+  title="redocly.yaml"
+/%}
 
 There's a few things going on in the example, but let's look at each feature in turn:
 

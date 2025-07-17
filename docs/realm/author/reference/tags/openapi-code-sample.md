@@ -1,7 +1,6 @@
 # OpenAPI code sample tag
 
 The `openapi-code-sample` tag renders sample code snippets directly in your documentation, showing users how to interact with API operations defined in your OpenAPI description.
-By default, both request and response examples are displayed.
 
 ## Syntax and usage
 
@@ -66,7 +65,6 @@ With `pointer`:
 - string
 - Key specifying which example to use.
   Must match the key used for an operation's example in the OpenAPI description.
-  If it is specified, only the relevant example (request or response) is displayed.
 
 ---
 

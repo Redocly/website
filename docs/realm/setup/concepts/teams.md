@@ -80,6 +80,21 @@ rbac:
 
 As a result, users in both the `Developers` and `authenticated` teams have `write` role permissions for the other resources, but only `read` role permissions for the `docs/**/*.md` resources.
 
+## Team managers
+
+Users with the Owner organization role can assign users as team managers.
+Team managers help reduce the number of Owner roles needed in your organization.
+
+Only users with the Owner and Member organization roles can be team managers.
+Manager privileges are indicated by a tag on the team page.
+Managers are optional for teams and there is no limit to the number of managers in a team.
+
+Team managers can:
+
+- view the teams they manage
+- view, add, or remove users within their teams
+- update the team name
+
 ## Resources
 
 - To understand more about the different components involved in Redocly's RBAC, read the [Role-based access control (RBAC) concept documentation](./rbac.md).

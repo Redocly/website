@@ -203,6 +203,8 @@
           label: Markdoc example
         - page: author/reference/tags/openapi-code-sample.md
           label: OpenAPI code sample
+        - page: author/reference/tags/openapi-response-sample.md
+          label: OpenAPI response sample
         - page: author/reference/tags/replay-openapi.md
           label: Replay OpenAPI
         - page: author/reference/tags/tabs.md
