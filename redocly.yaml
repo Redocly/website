@@ -197,7 +197,8 @@ responseHeaders:
           'sha256-vHWNkFcRXsOiOWmmubySLtLeZ3xAubNJpC7UdmQgSQU=' 
           'sha256-FHfozmosNdt5yUG9l8OmVM1S/oTxw2TNWHPejSjEr58='
           'sha256-2VNfiq6Um2ua9MLfzend4JESqZeD1VSgkWvUrPvrlZE='
-          'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no=';
+          'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no='
+          'sha256-9qgU5FDrauEgF+e1iJWvsh46OwsIkNOLjkXggr/02jk=';
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 
@@ -211,7 +212,8 @@ responseHeaders:
           https://forms.hscollectedforms.net
           https://www.google-analytics.com
           https://redoclyrozwmb.dataplane.rudderstack.com
-          https://hubspot-forms-static-embed.s3.amazonaws.com;
+          https://hubspot-forms-static-embed.s3.amazonaws.com
+          https://v.clarity.ms/collect;
         form-action 
           'self'
           https://forms.hsforms.com 
