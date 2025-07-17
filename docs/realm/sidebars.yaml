@@ -168,6 +168,20 @@
               label: includes
             - page: author/reference/functions/concat.md
               label: concat
+        - page: extend/how-to/markdoc-attribute-resolvers/index.md
+          label: Custom markdoc attribute resolvers
+          items:
+            - page: extend/how-to/markdoc-attribute-resolvers/list/index.md
+              group: Available resolvers
+              items:
+                - page: extend/how-to/markdoc-attribute-resolvers/list/link.md
+                  label: link
+                - page: extend/how-to/markdoc-attribute-resolvers/list/raw-content.md
+                  label: rawContent
+            - page: extend/how-to/markdoc-attribute-resolvers/usage.md
+              label: Resolver usage
+            - page: extend/how-to/markdoc-attribute-resolvers/migrate-from-custom-types.md
+              label: Migrate from custom types
     - group: Markdoc tags
       page: author/reference/tags/tag-library.md
       items:
