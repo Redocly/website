@@ -50,3 +50,8 @@ You can hide your project's sidebar to make the pages better fit smaller screens
 To hide the sidebar:
 
 - In the bottom-right corner of the sidebar, click the **Hide sidebar** button.
+
+## Resources
+
+- [Navigate the project](./navigate-project.md)
+- Explore other ways you can interact with the [user interface](./index.md)
