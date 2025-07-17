@@ -23,13 +23,13 @@ For technical details on the implementation of types for each OAS version, consu
     - `ServerVariables` object
   - `Paths` object
     - `PathItem` object
-    - `Operation` object
-      - List of `Parameter` objects  (`ParameterList`)
-      - `MediaTypesMap` object is a map of media types and corresponding `MediaType` objects
-        - `RequestBody` object
-        - `Responses` object
-          - `Response` object
-      - `XCodeSample` list
+      - `Operation` object
+        - List of `Parameter` objects  (`ParameterList`)
+        - `MediaTypesMap` object is a map of media types and corresponding `MediaType` objects
+          - `RequestBody` object
+          - `Responses` object
+            - `Response` object
+        - `XCodeSample` list
   - `WebhooksMap` object
     - `PathItem` object
   - `Components` object
