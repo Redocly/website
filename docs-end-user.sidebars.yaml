@@ -5,3 +5,11 @@
   label: User interface overview
 - page: docs/end-user/navigate-project.md
   label: Navigate a project
+- page: docs/end-user/adjust-project.md
+  label: Adjust a project
+- page: docs/end-user/use-search.md
+  label: Search a project
+- page: docs/end-user/interact-with-pages.md
+  label: Interact with pages
+- page: docs/end-user/interact-with-api.md
+  label: Interact with API documentation
