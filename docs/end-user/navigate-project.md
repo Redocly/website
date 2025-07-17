@@ -127,3 +127,9 @@ When you first access a page, the page's latest or default version is displayed.
     The page's content changes to reflect the selected version.
   {% /tab %}
 {% /tabs %}
+
+## Resources
+
+- [Adjust the project](./adjust-project.md)
+- [Search the project](./use-search.md)
+- Explore other ways you can interact with the [user interface](./index.md)

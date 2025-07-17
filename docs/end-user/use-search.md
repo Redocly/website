@@ -72,3 +72,8 @@ Projects typically have the following filter options:
 - **API Version**: display only the results from the selected description file version.
 
 To clear all filters, in the top-right corner of **Advanced filters**, click **Reset filters**.
+
+## Resources
+
+- [Navigate the project](./navigate-project.md)
+- Explore other ways you can interact with the [user interface](./index.md)

@@ -4,6 +4,7 @@ Project pages have interactive elements you can use to provide feedback or copy 
 
 ## Provide feedback for a page
 
+You can give your feedback for each
 A project can have different types of feedback forms:
 
 - thumbs up or down icons
@@ -15,29 +16,36 @@ A project can have different types of feedback forms:
 After you interact with a form (except the comment form), a text field is displayed.
 In this field, you can add more details to your feedback.
 
-If you are logged in your project, your email address is automatically added to the feedback content.
+If you are logged in a project, your email address is automatically added to the feedback content.
 The owners of the project can use the address to follow-up with you on your comment.
 If are not logged in, or the project does not have login enabled, an optional **Email** field is displayed.
 
-## Copy code snippet
+After you click **Send**, your feedback is submitted.
 
-You can copy code snippets from the project page to use in your work.
+## Copy code sample
+
+You can one-click copy code samples from the project page to use in your work.
 This function is especially useful with long code fragments.
 
-To copy a code snippet:
+To copy a code sample:
 
-- In the top-right corner of the code snippet, click the copy icon.
+- In the top-right corner of the code sample, click the copy icon.
 
-You can now paste the code to another application.
+You can now paste the code into another application.
 
-## Report a problem with a code snippet
+## Report an issue in a code sample
 
-If you see an error or an inconsistency in a code snippet, you can report it to the project's owner.
+If you see an error or an inconsistency in a code sample, you can report it to the project's owner.
 
-To to report a problem with a code snippet:
+To to report a problem with a code sample:
 
-- In the top-right corner of the code snippet, click the exclamation mark icon.
+- In the top-right corner of the code sample, click the exclamation mark icon.
 - Describe the issue.
 - Click **Send**.
 
 Your message is sent to the organization that owns the project.
+
+## Resources
+
+- [Interact with API documentation](./interact-with-api.md)
+- Explore other ways you can interact with the [user interface](./index.md)
