@@ -81,11 +81,9 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 
 - title
 - string
-- Sets the default contents of the `<title>` HTML tag for all pages in your project.
-  Heading tags like `<h1>`, or a `seo.title` in front matter of a Markdown file, take priority over this default value.
-  Priority order: this global `seo.title` (lowest) < page headings < `seo.title` in front matter (highest).
+- Sets the default contents of the `<title>` tag.
   This title is used in search engine results pages, and when sharing links to your project on social media.
-  To change the preview of social networks, you can override using `og:description` or `twitter:description` in the specified `meta` option.
+  To change the preview of social networks, you can override using`og:description` or `twitter:description` in the specified `meta` option.
 
 ---
 
