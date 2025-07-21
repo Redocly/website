@@ -16460,6 +16460,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.26.4:
+    timestamp: 1753106227000
+    changes:
+      minor: []
+      patch:
+        - Fixed type inconsistencies in configuration by adding the `json-schema-to-ts` dependency.
+    dependencies: {}
   0.26.3:
     timestamp: 1752149929000
     changes:
