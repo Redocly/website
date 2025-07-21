@@ -1,6 +1,6 @@
 '@redocly/realm':
   0.123.1:
-    timestamp: 1752736713000
+    timestamp: 1753087153000
     changes:
       minor: []
       patch:
@@ -192,7 +192,7 @@
       '@redocly/graphql-docs': 0.13.0-next.0
       '@redocly/theme': 0.56.0-next.0
   0.123.0:
-    timestamp: 1751530510000
+    timestamp: 1751536139000
     changes:
       minor:
         - Exposed `usePageVersions` and `useActivePageVersion` hooks to access the current page version in React pages.
@@ -3671,7 +3671,7 @@
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
   0.123.1:
-    timestamp: 1752736713000
+    timestamp: 1753087153000
     changes:
       minor: []
       patch:
@@ -3855,7 +3855,7 @@
       '@redocly/graphql-docs': 0.13.0-next.0
       '@redocly/theme': 0.56.0-next.0
   0.123.0:
-    timestamp: 1751530510000
+    timestamp: 1751536139000
     changes:
       minor:
         - Exposed `usePageVersions` and `useActivePageVersion` hooks to access the current page version in React pages.
@@ -6645,7 +6645,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
   0.123.1:
-    timestamp: 1752736713000
+    timestamp: 1753087153000
     changes:
       minor: []
       patch:
@@ -6829,7 +6829,7 @@
       '@redocly/graphql-docs': 0.13.0-next.0
       '@redocly/theme': 0.56.0-next.0
   0.123.0:
-    timestamp: 1751530510000
+    timestamp: 1751536139000
     changes:
       minor:
         - Exposed `usePageVersions` and `useActivePageVersion` hooks to access the current page version in React pages.
@@ -9614,7 +9614,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
   0.123.1:
-    timestamp: 1752736713000
+    timestamp: 1753087153000
     changes:
       minor: []
       patch:
@@ -9802,7 +9802,7 @@
       '@redocly/graphql-docs': 0.13.0-next.0
       '@redocly/theme': 0.56.0-next.0
   0.123.0:
-    timestamp: 1751530510000
+    timestamp: 1751536139000
     changes:
       minor:
         - Added **Skip to content** button to enhance keyboard navigation.
@@ -16860,7 +16860,7 @@
     dependencies:
       '@redocly/theme': 0.56.0-next.0
   0.12.0:
-    timestamp: 1751530510000
+    timestamp: 1751536139000
     changes:
       minor:
         - Added support for displaying deprecated queries, mutations, and subscriptions in the GraphQL documentation.
@@ -17761,7 +17761,7 @@
         - Enter prerelease mode.
     dependencies: {}
   0.6.0:
-    timestamp: 1751530510000
+    timestamp: 1751613974000
     changes:
       minor: []
       patch: []
@@ -17849,7 +17849,7 @@
     dependencies: {}
 '@redocly/portal-plugin-async-api':
   1.6.1:
-    timestamp: 1752736713000
+    timestamp: 1753087153000
     changes:
       minor: []
       patch: []
@@ -18046,7 +18046,7 @@
       '@redocly/redoc-revel': 0.124.0-next.0
       '@redocly/theme': 0.56.0-next.0
   1.6.0:
-    timestamp: 1751530510000
+    timestamp: 1751536139000
     changes:
       minor: []
       patch: []
