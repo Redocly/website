@@ -104,7 +104,7 @@ rules:
       - is
       - can
   info-license: error
-  info-license-strict: error
+  info-license-url: error
   no-ambiguous-paths: error
   no-http-verbs-in-paths:
     severity: error
@@ -329,7 +329,5 @@ redirects:
     to: '/author/concepts/project-structure'
   '/get-started/api-reference-starter':
     to: '/get-started'
-  '/author/how-to/add-catalog':
-    to: '/author/how-to/add-classic-catalog'
 
 telemetry: off
