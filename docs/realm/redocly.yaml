@@ -331,5 +331,13 @@ redirects:
     to: '/get-started'
   '/author/how-to/add-catalog':
     to: '/author/how-to/add-classic-catalog'
+  '/docs/cli/rules/oas/info-license-url':
+    to: '/docs/cli/rules/oas/info-license-strict'
+  '/docs/cli/rules/oas/no-enum-type-mismatch':
+    to: '/docs/cli/rules/common/no-enum-type-mismatch'
+  '/docs/cli/rules/oas/no-required-schema-properties-undefined':
+    to: '/docs/cli/rules/common/no-required-schema-properties-undefined'
+  '/docs/cli/rules/oas/no-schema-type-mismatch':
+    to: '/docs/cli/rules/common/no-schema-type-mismatch'
 
 telemetry: off
