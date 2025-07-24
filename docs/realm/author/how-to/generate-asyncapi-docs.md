@@ -1,4 +1,12 @@
-# Add AsyncAPI documents
+# Add AsyncAPI documents using official AsyncAPI renderer
+
+{% admonition type="warning" name="Legacy plugin" %}
+This page refers to the legacy Redocly AsyncAPI plugin.
+
+AsyncAPI documentation is now supported natively in Realm and requires no configuration.
+For information on how to add AsyncAPI description files to your project, see: [Add AsyncAPI descriptions](../../author/how-to/add-asyncapi-docs.md).
+To migrate to native support for AsyncAPI documentation, see: [Migrate to built-in AsyncAPI docs](#migrate-to-built-in-asyncapi-docs).
+{% /admonition %}
 
 Transform your AsyncAPI document files into reference documentation by integrating them into your project.
 Give your users the tools they need to make the most of your Event-Driven APIs (EDAs) with comprehensive reference documentation.
@@ -18,7 +26,7 @@ Redocly projects can be previewed locally without installing dependencies, but t
 If you see the error `Theme "@redocly/portal-plugin-async-api" not found`, check that you have the `@redocly/realm` package listed in `package.json`.
 {% /admonition %}
 
-## Install the Redocly Async API plugin
+## Install the Redocly AsyncAPI plugin
 
 To generate reference documentation for AsyncAPI document files, you must have the Redocly AsyncAPI plugin installed in your project.
 If you are working locally, install the plugin using a package manager.
@@ -84,7 +92,7 @@ plugins:
   - '@redocly/portal-plugin-async-api/plugin.js'
 ```
 
-For a complete plugin settings reference see [AsyncAPI plugin reference](../../setup/reference/plugins/docs/asyncapi.md#configuration).
+For a complete plugin settings reference see [AsyncAPI plugin reference](../../setup/reference/plugins/docs/asyncapi.md).
 
 ## Add the AsyncAPI document file to your project
 
@@ -127,13 +135,25 @@ To add multiple AsyncAPI document files using `group` keys, update your `sidebar
       label: Sample product 2 API
 ```
 
-## Related how-tos
+## Migrate to built-in AsyncAPI docs
+
+Realm supports AsyncAPI documents without the need for further configuration.
+If you are using the official AsyncAPI renderer (AsyncAPI plugin), Redocly recommends migrating to the built-in docs tool.
+
+To migrate to built-in AsyncAPI docs:
+
+- In the `redocly.yaml` file at the root of your project, delete the following line:
+
+    ```yaml {% title="redocly.yaml" %}
+    plugins:
+      - '@redocly/portal-plugin-async-api/plugin.js'
+    ```
+Your AsyncAPI documentation is now rendered using the built-in tool.
+
+## Resources
 
 - Organize multiple API descriptions by [Adding a catalog](./add-catalog.md).
 - Help users find your content by [Configuring navigation in the sidebar](./configure-nav/sidebar.md).
 - Learn how to [add OpenAPI reference docs](./add-openapi-docs.md).
-
-## Resources
-
 - See the [Replay the API explorer](../../setup/concepts/replay.md) concept doc to learn more about making your API reference docs interactive.
-- For more detailed information about the plugin see the [AsyncAPI plugin](../../setup/reference/plugins/docs/asyncapi.md#configuration) reference documentation.
+- For more detailed information about the plugin see the [AsyncAPI plugin](../../setup/reference/plugins/docs/asyncapi.md) reference documentation.

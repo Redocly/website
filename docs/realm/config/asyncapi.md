@@ -8,6 +8,14 @@ plans:
 ---
 # `asyncapi`
 
+{% admonition type="warning" name="Legacy plugin" %}
+This page refers to the legacy Redocly AsyncAPI plugin.
+
+AsyncAPI documentation is now supported natively in Realm and requires no configuration.
+For information on how to add AsyncAPI description files to your project, see: [Add AsyncAPI descriptions](../author/how-to/add-asyncapi-docs.md).
+To migrate to native support for AsyncAPI documentation, see: [Migrate to built-in AsyncAPI docs](../author/how-to/generate-asyncapi-docs.md#migrate-to-built-in-asyncapi-docs).
+{% /admonition %}
+
 Customize the behavior and appearance of AsyncAPI documentation. Requires an AsyncAPI definition.
 
 ## Options
