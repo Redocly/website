@@ -1,10 +1,28 @@
 '@redocly/realm':
+  0.124.0-next.19:
+    timestamp: 1753349247000
+    changes:
+      minor:
+        - Removed deprecated `path-excludes-patterns` and `info-license-url` rules.
+        - Improved `graphql-docs` package by making its rendering behavior consistent across other proudcts.
+      patch:
+        - Improved performance of JSON responses by optimizing RBAC filtering logic.
+        - Improved performance and reduced data size for OpenAPI pages.
+        - Improved router performance to speed up page and resource loading, especially for sites with many pages.
+        - Updated `@redocly/openapi-core` to version `2.0.0-next.8`.
+        - Made the display of `x-` extensions independent from the description.
+    dependencies:
+      '@redocly/graphql-docs': 1.0.0
+      '@redocly/openapi-docs': 3.12.0-next.13
+      '@redocly/theme': 0.56.0-next.6
+      '@redocly/asyncapi-docs': 0.5.0-next.13
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.13
   0.124.0-next.18:
     timestamp: 1753256271000
     changes:
-      minor:
-        - Fixed an issue where API functions and mock server returned an "Internal server error" for empty response bodies.
+      minor: []
       patch:
+        - Fixed an issue where API functions and mock server returned an "Internal server error" for empty response bodies.
         - Updated `@redocly/openapi-core` dependency to `2.0.0-next.7`.
         - Reduced JavaScript size to improve page load speed and time to interactive.
     dependencies:
@@ -3684,12 +3702,27 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.124.0-next.19:
+    timestamp: 1753349247000
+    changes:
+      minor:
+        - Removed deprecated `path-excludes-patterns` and `info-license-url` rules.
+      patch:
+        - Improved performance of JSON responses by optimizing RBAC filtering logic.
+        - Improved router performance to speed up page and resource loading, especially for sites with many pages.
+        - Updated `@redocly/openapi-core` to version `2.0.0-next.8`.
+    dependencies:
+      '@redocly/graphql-docs': 1.0.0
+      '@redocly/openapi-docs': 3.12.0-next.13
+      '@redocly/theme': 0.56.0-next.6
+      '@redocly/asyncapi-docs': 0.5.0-next.13
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.13
   0.124.0-next.18:
     timestamp: 1753256271000
     changes:
-      minor:
-        - Fixed an issue where API functions and mock server returned an "Internal server error" for empty response bodies.
+      minor: []
       patch:
+        - Fixed an issue where API functions and mock server returned an "Internal server error" for empty response bodies.
         - Updated `@redocly/openapi-core` dependency to `2.0.0-next.7`.
         - Reduced JavaScript size to improve page load speed and time to interactive.
     dependencies:
@@ -6672,6 +6705,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.124.0-next.19:
+    timestamp: 1753349247000
+    changes:
+      minor:
+        - Removed deprecated `path-excludes-patterns` and `info-license-url` rules.
+      patch:
+        - Improved performance of JSON responses by optimizing RBAC filtering logic.
+        - Improved router performance to speed up page and resource loading, especially for sites with many pages.
+        - Updated `@redocly/openapi-core` to version `2.0.0-next.8`.
+    dependencies:
+      '@redocly/graphql-docs': 1.0.0
+      '@redocly/openapi-docs': 3.12.0-next.13
+      '@redocly/theme': 0.56.0-next.6
+      '@redocly/asyncapi-docs': 0.5.0-next.13
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.13
   0.124.0-next.18:
     timestamp: 1753256271000
     changes:
@@ -9654,6 +9702,24 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.124.0-next.19:
+    timestamp: 1753349247000
+    changes:
+      minor:
+        - Removed deprecated `path-excludes-patterns` and `info-license-url` rules.
+        - Improved `graphql-docs` package by making its rendering behavior consistent across other proudcts.
+      patch:
+        - Improved performance of JSON responses by optimizing RBAC filtering logic.
+        - Improved performance and reduced data size for OpenAPI pages.
+        - Improved router performance to speed up page and resource loading, especially for sites with many pages.
+        - Updated `@redocly/openapi-core` to version `2.0.0-next.8`.
+        - Made the display of `x-` extensions independent from the description.
+    dependencies:
+      '@redocly/graphql-docs': 1.0.0
+      '@redocly/openapi-docs': 3.12.0-next.13
+      '@redocly/theme': 0.56.0-next.6
+      '@redocly/asyncapi-docs': 0.5.0-next.13
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.13
   0.124.0-next.18:
     timestamp: 1753256271000
     changes:
@@ -12619,6 +12685,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.56.0-next.6:
+    timestamp: 1753349247000
+    changes:
+      minor:
+        - Improved `graphql-docs` package by making its rendering behavior consistent across other proudcts.
+      patch: []
+    dependencies: {}
   0.56.0-next.5:
     timestamp: 1753256271000
     changes:
@@ -14613,6 +14686,16 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.12.0-next.13:
+    timestamp: 1753349247000
+    changes:
+      minor:
+        - Improved `graphql-docs` package by making its rendering behavior consistent across other proudcts.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.0.0-next.8`.
+        - Made the display of `x-` extensions independent from the description.
+    dependencies:
+      '@redocly/replay': 0.15.0-next.9
   3.12.0-next.12:
     timestamp: 1753256271000
     changes:
@@ -16921,6 +17004,13 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.0.0:
+    timestamp: 1753349247000
+    changes:
+      minor:
+        - Improved `graphql-docs` package by making its rendering behavior consistent across other proudcts.
+      patch: []
+    dependencies: {}
   0.13.0-next.1:
     timestamp: 1752154800000
     changes:
@@ -17579,6 +17669,14 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.3.0:
+    timestamp: 1753349155000
+    changes:
+      minor:
+        - Removed support for default config file names other than `redocly.yaml`.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.0.0-next.7`.
+    dependencies: {}
   0.2.19:
     timestamp: 1752761939000
     changes:
@@ -17925,6 +18023,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.7.0-next.19:
+    timestamp: 1753349247000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.124.0-next.19
+      '@redocly/redoc': 0.124.0-next.19
+      '@redocly/redoc-reef': 0.124.0-next.19
+      '@redocly/redoc-revel': 0.124.0-next.19
+      '@redocly/theme': 0.56.0-next.6
   1.7.0-next.18:
     timestamp: 1753256271000
     changes:
@@ -21339,6 +21448,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.9.0-next.13:
+    timestamp: 1753349247000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.13
   0.9.0-next.12:
     timestamp: 1753256271000
     changes:
@@ -23232,6 +23348,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.15.0-next.9:
+    timestamp: 1753349247000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.0-next.6
   0.15.0-next.8:
     timestamp: 1753256271000
     changes:
@@ -24259,6 +24382,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.7.0-next.6:
+    timestamp: 1753349247000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.0-next.6
   0.7.0-next.5:
     timestamp: 1753256271000
     changes:
