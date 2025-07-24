@@ -181,7 +181,7 @@ yarn build
 ### Preview-docs
 
 If you subscribe to our commercial offering, generate an API key under **My profile**, and your previews will be using Redocly API docs (or it will fallback to Redoc community edition).
-Read more about [preview-docs](/docs/cli/commands/preview-docs).
+Read more about [preview-docs](/docs/cli/v1/commands/preview-docs).
 
 {% tabs %}
 {% tab label="npm" %}

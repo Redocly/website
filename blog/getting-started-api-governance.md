@@ -50,7 +50,7 @@ Instead, start smaller.
 
 ### Minimum Viable API linting
 
-A much better starting point is to enable the [`struct`](../docs/cli/rules/oas/struct) rule only, to simply check that the OpenAPI file is correct.
+A much better starting point is to enable the [`struct`](../docs/cli/rules/common/struct) rule only, to simply check that the OpenAPI file is correct.
 
 To do that, create a file named `redocly.yaml` and add the following content:
 

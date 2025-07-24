@@ -25,8 +25,8 @@ To work around this issue, you can:
 
 If you want to run the development server, you may do so with the Starter plan or greater as part of our `openapi-cli` tool with the `preview-docs` command (after you `login`). See more information here:
 
-- [`login` command](/docs/cli/commands/login)
-- [`preview-docs` command](/docs/cli/commands/preview-docs)
+- [`login` command](/docs/cli/v1/commands/login)
+- [`preview-docs` command](/docs/cli/v1/commands/preview-docs)
 
 ## On-premise license key
 
