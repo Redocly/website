@@ -28,6 +28,55 @@ To upload an organization profile picture:
 2. Click **Upload image**.
 3. Select an image from your computer's file system.
 
+## Configure custom branding
+
+You can replace the default Redocly branding in Reunite's interface with your own brand assets.
+Use these options to create a white-labeled experience for your users.
+
+### Enable custom branding
+
+You can display your organization's logo across authentication screens and emails, and add custom legal messaging throughout the user registration process.
+
+To enable custom branding:
+
+1. After logging in, select **General** in the navigation menu on the left side of the page.
+2. In the **Branding** section, select the **Enable custom branding** checkbox.
+
+Your organization's logo (uploaded in the **Logo** section) is also displayed on emails and login pages.
+
+### Hide Redocly branding
+
+You can hide the platform attribution to Redocly in the login forms and in your project's footer area.
+
+{% admonition type="info" name="Enterprise feature" %}
+Hiding Redocly branding is available for Enterprise and Enterprise+ plans only.
+{% /admonition %}
+
+To hide Redocly branding:
+
+1. After logging in, select **General** in the navigation menu on the left side of the page.
+2. In the **Branding** section, check **Hide Redocly branding**.
+
+Redocly branding is no longer displayed on the login screen and in the footer area.
+
+### Add custom legal notices
+
+You can add custom terms of service or other legal notices that users must accept to access your organization's projects.
+
+To add custom legal notices:
+
+1. After logging in, select **General** in the navigation menu on the left side of the page.
+2. In the **Custom Terms of Service** section, click the **Write** tab.
+3. Enter your custom terms text in the text area. You can use Markdown to format your text or include links.
+4. Click **Preview** to see how your terms appear to users.
+
+The terms are displayed to users on the registration page.
+
+{% admonition type="info" name="Terms acceptance" %}
+Users are required to accept your custom terms before they can access the project.
+If you do not specify custom terms, the default message "Acceptance of the terms of service is required to use the service" is displayed.
+{% /admonition %}
+
 ## Delete organization
 
 When you delete an organization, the action is permanent, so be sure to back up any pertinent data.

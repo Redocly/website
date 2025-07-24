@@ -30,6 +30,29 @@ To directly invite people to your organization:
 
 You can also give users single sign-on (SSO) access to your Reunite organization by [adding an identity provider](add-idp.md).
 
+## Invite viewers
+
+If your documentation requires login to view, you can invite viewers to your organization.
+Viewers have read-only access to projects and cannot access Reunite.
+Viewer accounts don't count as paid seats.
+
+{% admonition type="info" name="Viewer permissions" %}
+Viewers can only see your projects they have links to.
+
+After successful registration, users are redirected to the the homepage of the project selected in the invitation form.
+{% /admonition %}
+
+To invite viewers to your organization:
+
+1. Click **Send Invite**.
+2. Enter the **Email** address of the user you are inviting.
+3. (Optional) Select **Teams** you want the user to be a member of.
+4. Select **Viewer** as the organization **Role**.
+5. Select the **Project** you want to viewer to start with.
+6. (Optional) Add a *Custom Message* in plain text format to be shown in the invitation email.
+6. (Optional) Add a **Custom Message** in plain text format, that will be shown in the invitation email.
+7. Click **Send invite**.
+
 ### Manage pending invites
 
 Cancel or resend invitations to your Reunite organization. You can also view invitation details such as:
