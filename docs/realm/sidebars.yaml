@@ -33,6 +33,8 @@
           label: Add an identity provider
         - page: ./setup/how-to/configure-sso.md
           label: Configure SSO
+        - page: ./setup/how-to/configure-auth0-oidc.md
+          label: Auth0 OIDC 
         - page: ./setup/how-to/configure-azure-ad.md
           label: Microsoft Entra ID
         - page: ./setup/how-to/configure-google-sso.md
