@@ -10,8 +10,8 @@ plans:
 # `showExtensions`
 
 The `showExtensions` option displays specification extensions ('x-' fields).
-Extensions used by Redoc are ignored. 
-The value can be boolean or an array of strings with names of extensions to display. When used as boolean and set to `true`, all specification extensions are shown. 
+Extensions used by Redoc are ignored.
+The value can be boolean or an array of strings with names of extensions to display. When used as boolean and set to `true`, all specification extensions are shown.
 
 Custom extensions are rendered only in the request details section and in individual field details; they do not appear elsewhere in the UI.
 

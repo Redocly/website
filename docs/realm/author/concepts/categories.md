@@ -15,7 +15,7 @@ Redocly has a flexible system of type definition, so a user can define a type by
 Redocly automatically inspects files during a build process and determines its type based on the structure of the contents, the front matter, or an accompanying configuration file.
 
 ```yaml
-catalog:
+catalogClassic:
   catalogId:
     items:
       - directory: ./apis

@@ -2,7 +2,7 @@
 
 Transform your WSDL files into reference documentation by integrating them into your project.
 Give your users the tools they need to make the most of your SOAP APIs with comprehensive reference documentation.
-Either add individual schema files to your project alongside your other content, or use an [API catalog](./add-catalog.md) to showcase your SOAP APIs alongside OpenAPI and AsyncAPI APIs.
+Either add individual schema files to your project alongside your other content, or use a [classic version of the catalog](./add-classic-catalog.md) to showcase your SOAP APIs alongside OpenAPI and AsyncAPI APIs.
 
 ## Before you begin
 
@@ -131,8 +131,8 @@ To add multiple WSDL files using `group` keys, update your `sidebars.yaml` file 
 
 ## Related how-tos
 
-- Organize multiple API descriptions by [Adding a catalog](./add-catalog.md).
-- Help users find your content by [Configuring navigation in the sidebar](./configure-nav/sidebar.md).
+- Organize multiple API descriptions by [adding a classic catalog](./add-classic-catalog.md).
+- Help users find your content by [configuring navigation in the sidebar](./configure-nav/sidebar.md).
 
 ## Resources
 

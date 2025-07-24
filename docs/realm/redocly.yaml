@@ -329,5 +329,7 @@ redirects:
     to: '/author/concepts/project-structure'
   '/get-started/api-reference-starter':
     to: '/get-started'
+  '/author/how-to/add-catalog':
+    to: '/author/how-to/add-classic-catalog'
 
 telemetry: off

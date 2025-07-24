@@ -2,7 +2,7 @@
 
 Transform your AsyncAPI document files into reference documentation by integrating them into your project.
 Give your users the tools they need to make the most of your Event-Driven APIs (EDAs) with comprehensive reference documentation.
-Either add individual document files to your project alongside your other content, or use an [API catalog](./add-catalog.md) to showcase your EDAs alongside OpenAPI and AsyncAPI APIs.
+Either add individual document files to your project alongside your other content, or use a [classic version of the catalog](./add-classic-catalog.md) to showcase your EDAs alongside OpenAPI and AsyncAPI APIs.
 
 ## Before you begin
 
@@ -129,8 +129,8 @@ To add multiple AsyncAPI document files using `group` keys, update your `sidebar
 
 ## Related how-tos
 
-- Organize multiple API descriptions by [Adding a catalog](./add-catalog.md).
-- Help users find your content by [Configuring navigation in the sidebar](./configure-nav/sidebar.md).
+- Organize multiple API descriptions by [adding a classic version of the catalog](./add-classic-catalog.md).
+- Help users find your content by [configuring navigation in the sidebar](./configure-nav/sidebar.md).
 - Learn how to [add OpenAPI reference docs](./add-openapi-docs.md).
 
 ## Resources
