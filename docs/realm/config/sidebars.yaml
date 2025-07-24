@@ -47,8 +47,6 @@
       items:
         - page: ./graphql/field-expand-level.md
           label: fieldExpandLevel
-        - page: ./graphql/hide-pagination-buttons.md
-          label: hidePaginationButtons
         - page: ./graphql/json-samples-depth.md
           label: jsonSamplesDepth
         - page: ./graphql/menu.md

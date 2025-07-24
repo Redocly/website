@@ -7,6 +7,47 @@ toc:
 
 <!-- do-not-remove -->
 
+## 2.0.0-next.9 (2025-07-24)
+
+### Patch Changes
+
+- Refactored `@redocly/respect-core` to eliminate Node.js-specific dependencies, improving cross-platform compatibility.
+- Updated @redocly/openapi-core to v2.0.0-next.9.
+
+## 2.0.0-next.8 (2025-07-23)
+
+### Major Changes
+
+- Removed support for default config file names other than `redocly.yaml`.
+
+### Minor Changes
+
+- Enabled `no-required-schema-properties-undefined`, `no-schema-type-mismatch`, and `no-enum-type-mismatch` rules for **AsyncAPI** and **Arazzo** specifications.
+  Adjusted the rules' severities in the `recommended` and `minimal` rulesets. Refer to the following table:
+
+  | Rule \ Ruleset                          | recommended       | minimal         |
+  | --------------------------------------- | ----------------- | --------------- |
+  | no-required-schema-properties-undefined | `off` -> `warn`   | `off` -> `warn` |
+  | no-enum-type-mismatch                   | `error`           | `warn`          |
+  | no-schema-type-mismatch                 | `warn` -> `error` | `off` -> `warn` |
+
+### Patch Changes
+
+- Fixed plugins validation in config files referenced in the `extends` section.
+- Updated @redocly/openapi-core to v2.0.0-next.8.
+
+## 2.0.0-next.7 (2025-07-21)
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.0.0-next.7.
+
+## 2.0.0-next.6 (2025-07-21)
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.0.0-next.6.
+
 ## 2.0.0-next.5 (2025-07-17)
 
 ### Major Changes

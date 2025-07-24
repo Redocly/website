@@ -1,4 +1,37 @@
 '@redocly/realm':
+  0.124.0-next.18:
+    timestamp: 1753256271000
+    changes:
+      minor:
+        - Fixed an issue where API functions and mock server returned an "Internal server error" for empty response bodies.
+      patch:
+        - Updated `@redocly/openapi-core` dependency to `2.0.0-next.7`.
+        - Reduced JavaScript size to improve page load speed and time to interactive.
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.12
+      '@redocly/theme': 0.56.0-next.5
+      '@redocly/asyncapi-docs': 0.5.0-next.12
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.12
+      '@redocly/graphql-docs': 0.13.0-next.1
+  0.123.1:
+    timestamp: 1753087153000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where an RBAC match pattern starting with `**` did not override the global match pattern `**`.
+    dependencies: {}
+  0.124.0-next.17:
+    timestamp: 1752831787000
+    changes:
+      minor: []
+      patch:
+        - Fixed login button display issue in the sidebar on mobile devices.
+    dependencies:
+      '@redocly/theme': 0.56.0-next.4
+      '@redocly/asyncapi-docs': 0.5.0-next.11
+      '@redocly/graphql-docs': 0.13.0-next.1
+      '@redocly/openapi-docs': 3.12.0-next.11
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.11
   0.124.0-next.16:
     timestamp: 1752767477000
     changes:
@@ -3651,6 +3684,39 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.124.0-next.18:
+    timestamp: 1753256271000
+    changes:
+      minor:
+        - Fixed an issue where API functions and mock server returned an "Internal server error" for empty response bodies.
+      patch:
+        - Updated `@redocly/openapi-core` dependency to `2.0.0-next.7`.
+        - Reduced JavaScript size to improve page load speed and time to interactive.
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.12
+      '@redocly/theme': 0.56.0-next.5
+      '@redocly/asyncapi-docs': 0.5.0-next.12
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.12
+      '@redocly/graphql-docs': 0.13.0-next.1
+  0.123.1:
+    timestamp: 1753087153000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where an RBAC match pattern starting with `**` did not override the global match pattern `**`.
+    dependencies: {}
+  0.124.0-next.17:
+    timestamp: 1752831787000
+    changes:
+      minor: []
+      patch:
+        - Fixed login button display issue in the sidebar on mobile devices.
+    dependencies:
+      '@redocly/theme': 0.56.0-next.4
+      '@redocly/asyncapi-docs': 0.5.0-next.11
+      '@redocly/graphql-docs': 0.13.0-next.1
+      '@redocly/openapi-docs': 3.12.0-next.11
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.11
   0.124.0-next.16:
     timestamp: 1752767477000
     changes:
@@ -6606,6 +6672,38 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.124.0-next.18:
+    timestamp: 1753256271000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` dependency to `2.0.0-next.7`.
+        - Reduced JavaScript size to improve page load speed and time to interactive.
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.12
+      '@redocly/theme': 0.56.0-next.5
+      '@redocly/asyncapi-docs': 0.5.0-next.12
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.12
+      '@redocly/graphql-docs': 0.13.0-next.1
+  0.123.1:
+    timestamp: 1753087153000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where an RBAC match pattern starting with `**` did not override the global match pattern `**`.
+    dependencies: {}
+  0.124.0-next.17:
+    timestamp: 1752831787000
+    changes:
+      minor: []
+      patch:
+        - Fixed login button display issue in the sidebar on mobile devices.
+    dependencies:
+      '@redocly/theme': 0.56.0-next.4
+      '@redocly/asyncapi-docs': 0.5.0-next.11
+      '@redocly/graphql-docs': 0.13.0-next.1
+      '@redocly/openapi-docs': 3.12.0-next.11
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.11
   0.124.0-next.16:
     timestamp: 1752767477000
     changes:
@@ -9556,6 +9654,38 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.124.0-next.18:
+    timestamp: 1753256271000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` dependency to `2.0.0-next.7`.
+        - Reduced JavaScript size to improve page load speed and time to interactive.
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.12
+      '@redocly/theme': 0.56.0-next.5
+      '@redocly/asyncapi-docs': 0.5.0-next.12
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.12
+      '@redocly/graphql-docs': 0.13.0-next.1
+  0.123.1:
+    timestamp: 1753087153000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where an RBAC match pattern starting with `**` did not override the global match pattern `**`.
+    dependencies: {}
+  0.124.0-next.17:
+    timestamp: 1752831787000
+    changes:
+      minor: []
+      patch:
+        - Fixed login button display issue in the sidebar on mobile devices.
+    dependencies:
+      '@redocly/theme': 0.56.0-next.4
+      '@redocly/asyncapi-docs': 0.5.0-next.11
+      '@redocly/graphql-docs': 0.13.0-next.1
+      '@redocly/openapi-docs': 3.12.0-next.11
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.11
   0.124.0-next.16:
     timestamp: 1752767477000
     changes:
@@ -12489,6 +12619,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.56.0-next.5:
+    timestamp: 1753256271000
+    changes:
+      minor: []
+      patch:
+        - Reduced JavaScript size to improve page load speed and time to interactive.
+    dependencies: {}
+  0.56.0-next.4:
+    timestamp: 1752831787000
+    changes:
+      minor: []
+      patch:
+        - Fixed login button display issue in the sidebar on mobile devices.
+        - Fixed peer dependency warnings in `@redocly/theme`.
+    dependencies: {}
   0.56.0-next.3:
     timestamp: 1752767477000
     changes:
@@ -14468,6 +14613,22 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.12.0-next.12:
+    timestamp: 1753256271000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` dependency to `2.0.0-next.7`.
+        - Fixed navigation to anchors when using `partials`.
+    dependencies:
+      '@redocly/replay': 0.15.0-next.8
+  3.12.0-next.11:
+    timestamp: 1752831787000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.15.0-next.7
   3.12.0-next.10:
     timestamp: 1752767477000
     changes:
@@ -16369,6 +16530,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.26.4:
+    timestamp: 1753106227000
+    changes:
+      minor: []
+      patch:
+        - Fixed type inconsistencies in configuration by adding the `json-schema-to-ts` dependency.
+    dependencies: {}
   0.26.3:
     timestamp: 1752149929000
     changes:
@@ -17757,6 +17925,38 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.7.0-next.18:
+    timestamp: 1753256271000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.124.0-next.18
+      '@redocly/redoc-reef': 0.124.0-next.18
+      '@redocly/realm': 0.124.0-next.18
+      '@redocly/redoc': 0.124.0-next.18
+      '@redocly/theme': 0.56.0-next.5
+  1.6.1:
+    timestamp: 1753087153000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.123.1
+      '@redocly/redoc': 0.123.1
+      '@redocly/redoc-reef': 0.123.1
+      '@redocly/redoc-revel': 0.123.1
+  1.7.0-next.17:
+    timestamp: 1752831787000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.0-next.4
+      '@redocly/realm': 0.124.0-next.17
+      '@redocly/redoc': 0.124.0-next.17
+      '@redocly/redoc-reef': 0.124.0-next.17
+      '@redocly/redoc-revel': 0.124.0-next.17
   1.7.0-next.16:
     timestamp: 1752767477000
     changes:
@@ -21139,6 +21339,20 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.9.0-next.12:
+    timestamp: 1753256271000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.12
+  0.9.0-next.11:
+    timestamp: 1752831787000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.11
   0.9.0-next.10:
     timestamp: 1752767477000
     changes:
@@ -23018,6 +23232,20 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.15.0-next.8:
+    timestamp: 1753256271000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.0-next.5
+  0.15.0-next.7:
+    timestamp: 1752831787000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.0-next.4
   0.15.0-next.6:
     timestamp: 1752767477000
     changes:
@@ -24031,6 +24259,20 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.7.0-next.5:
+    timestamp: 1753256271000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.0-next.5
+  0.7.0-next.4:
+    timestamp: 1752831787000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.0-next.4
   0.7.0-next.3:
     timestamp: 1752767477000
     changes:
@@ -26383,4 +26625,18 @@ reunite:
       patch:
         - Updated `@redocly/cli` dependency to version `2.0.0-next.1`.
         - Updated `@redocly/openapi-core` dependency to version `2.0.0-next.1`.
+    dependencies: {}
+  v2025-07-18.1:
+    timestamp: 1752847303000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.0.0-next.4`.
+    dependencies: {}
+  v2025-07-23.1:
+    timestamp: 1753210162000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.0.0-next.7`.
     dependencies: {}

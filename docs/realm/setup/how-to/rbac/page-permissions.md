@@ -25,6 +25,9 @@ rbac:
 ---
 ```
 
+Pages that are hidden by RBAC configuration do not generate sidebar links.
+If all pages in a group are hidden, the sidebar group is also hidden.
+
 ## React pages
 
 To set permissions for specific React pages (`*.page.tsx`), you need to export a special constant, `frontmatter`, and add the `rbac` configuration to it, as illustrated in the following example:

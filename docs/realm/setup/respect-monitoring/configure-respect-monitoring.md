@@ -87,6 +87,15 @@ To view your Respect Monitoring results on a preview build:
 
 {% img alt="Screenshot of pull request checks with Respect Monitoring check" src="../images/respect-monitoring-pr-checks.png" withLightbox=true /%}
 
+### Ignore Respect Monitoring results
+
+You can ignore Respect Monitoring results for a specific build by adding the `ignoreRespectMonitoring` option to the `reunite` object in your `redocly.yaml` file. Setting this option to `true` sets the build's Respect Monitoring status to `warning` instead of `failed`.
+
+```yaml {% title="redocly.yaml" %}
+reunite:
+  ignoreRespectMonitoring: true
+```
+
 ### View Respect Monitoring result chart
 
 When you merge your pull request with your Respect Monitoring configuration and deploy a production build, Reunite's **Respect Monitoring** page displays the results of each workflow in a chart.
