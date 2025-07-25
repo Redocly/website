@@ -1,4 +1,18 @@
 '@redocly/realm':
+  0.124.0-next.20:
+    timestamp: 1753432941000
+    changes:
+      minor: []
+      patch:
+        - Improved `rbac` config validation by removing redundant rules.
+        - Disabled scrolling when viewing images in fullscreen mode.
+        - 'Reverted a commit: "Fixed incorrect rendering of Markdoc tags next to HTML tags or text.". The fix had unexpectedly caused Markdoc errors.'
+    dependencies:
+      '@redocly/theme': 0.56.0-next.7
+      '@redocly/asyncapi-docs': 0.5.0-next.14
+      '@redocly/graphql-docs': 1.0.0
+      '@redocly/openapi-docs': 3.12.0-next.14
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.14
   0.124.0-next.19:
     timestamp: 1753349247000
     changes:
@@ -3702,6 +3716,20 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.124.0-next.20:
+    timestamp: 1753432941000
+    changes:
+      minor: []
+      patch:
+        - Improved `rbac` config validation by removing redundant rules.
+        - Disabled scrolling when viewing images in fullscreen mode.
+        - 'Reverted a commit: "Fixed incorrect rendering of Markdoc tags next to HTML tags or text.". The fix had unexpectedly caused Markdoc errors.'
+    dependencies:
+      '@redocly/theme': 0.56.0-next.7
+      '@redocly/asyncapi-docs': 0.5.0-next.14
+      '@redocly/graphql-docs': 1.0.0
+      '@redocly/openapi-docs': 3.12.0-next.14
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.14
   0.124.0-next.19:
     timestamp: 1753349247000
     changes:
@@ -6705,6 +6733,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.124.0-next.20:
+    timestamp: 1753432941000
+    changes:
+      minor: []
+      patch:
+        - Improved `rbac` config validation by removing redundant rules.
+        - Disabled scrolling when viewing images in fullscreen mode.
+        - 'Reverted a commit: "Fixed incorrect rendering of Markdoc tags next to HTML tags or text.". The fix had unexpectedly caused Markdoc errors.'
+    dependencies:
+      '@redocly/theme': 0.56.0-next.7
+      '@redocly/asyncapi-docs': 0.5.0-next.14
+      '@redocly/graphql-docs': 1.0.0
+      '@redocly/openapi-docs': 3.12.0-next.14
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.14
   0.124.0-next.19:
     timestamp: 1753349247000
     changes:
@@ -9702,6 +9744,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.124.0-next.20:
+    timestamp: 1753432941000
+    changes:
+      minor: []
+      patch:
+        - Improved `rbac` config validation by removing redundant rules.
+        - Disabled scrolling when viewing images in fullscreen mode.
+        - 'Reverted a commit: "Fixed incorrect rendering of Markdoc tags next to HTML tags or text.". The fix had unexpectedly caused Markdoc errors.'
+    dependencies:
+      '@redocly/theme': 0.56.0-next.7
+      '@redocly/asyncapi-docs': 0.5.0-next.14
+      '@redocly/graphql-docs': 1.0.0
+      '@redocly/openapi-docs': 3.12.0-next.14
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.14
   0.124.0-next.19:
     timestamp: 1753349247000
     changes:
@@ -12685,6 +12741,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.56.0-next.7:
+    timestamp: 1753432941000
+    changes:
+      minor: []
+      patch:
+        - Disabled scrolling when viewing images in fullscreen mode.
+    dependencies: {}
   0.56.0-next.6:
     timestamp: 1753349247000
     changes:
@@ -14686,6 +14749,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.12.0-next.14:
+    timestamp: 1753432941000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.15.0-next.10
   3.12.0-next.13:
     timestamp: 1753349247000
     changes:
@@ -18023,6 +18093,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.7.0-next.20:
+    timestamp: 1753432941000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.124.0-next.20
+      '@redocly/redoc': 0.124.0-next.20
+      '@redocly/redoc-reef': 0.124.0-next.20
+      '@redocly/redoc-revel': 0.124.0-next.20
+      '@redocly/theme': 0.56.0-next.7
   1.7.0-next.19:
     timestamp: 1753349247000
     changes:
@@ -21448,6 +21529,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.9.0-next.14:
+    timestamp: 1753432941000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.14
   0.9.0-next.13:
     timestamp: 1753349247000
     changes:
@@ -23348,6 +23436,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.15.0-next.10:
+    timestamp: 1753432941000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.0-next.7
   0.15.0-next.9:
     timestamp: 1753349247000
     changes:
@@ -24382,6 +24477,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.7.0-next.7:
+    timestamp: 1753432941000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.0-next.7
   0.7.0-next.6:
     timestamp: 1753349247000
     changes:
