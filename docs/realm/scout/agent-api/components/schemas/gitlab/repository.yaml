@@ -36,7 +36,7 @@ properties:
     type: string
     description: SSH url of a project.
     format: uri
-    example: git@example.com:gitlabhq/awesome-project.git
+    example: ssh://git@example.com/gitlabhq/gitlab-test.git
   web_url:
     type: string
     description: The URL to view the repository.
@@ -46,7 +46,7 @@ properties:
     type: string
     description: Avatar url of the repository.
     format: uri
-    example: http://www.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61?s=40\u0026d=identicon
+    example: https://www.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61?s=40&d=identicon
   visibility_level:
     type: integer
     description: Visibility level of a project.

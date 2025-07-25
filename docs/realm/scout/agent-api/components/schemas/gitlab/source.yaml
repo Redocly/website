@@ -31,12 +31,12 @@ properties:
     type: string
     description: Avatar url of the repository.
     format: uri
-    example: http://www.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61?s=40\u0026d=identicon
+    example: https://www.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61?s=40&d=identicon
   git_ssh_url:
     type: string
     description: SSH url of a project.
     format: uri
-    example: git@example.com:gitlabhq/gitlab-test.git
+    example: ssh://git@example.com/gitlabhq/gitlab-test.git
   git_http_url:
     type: string
     description: Git url of a project.
@@ -72,7 +72,7 @@ properties:
     type: string
     description: SSH url of a project.
     format: uri
-    example: git@example.com:gitlabhq/gitlab-test.git
+    example: ssh://git@example.com/gitlabhq/gitlab-test.git
   http_url:
     type: string
     description: Url of a project.
