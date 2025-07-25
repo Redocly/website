@@ -63,6 +63,8 @@
               label: Configuration guide
         - page: setup/how-to/ignore-link-checker.md
           label: Ignore link checker
+        - page: setup/how-to/branches-and-deploys.md
+          label: Branches deploys
 
     - group: Pull requests
       items:
