@@ -30,4 +30,4 @@ ignore:
 
 ## Resources
 
-- [Ignore static folders and files](../author/concepts/static-assets.md#ignore-static-folders-and-files)
+- [Ignore static folders and files](../content/static-assets.md#ignore-static-folders-and-files)

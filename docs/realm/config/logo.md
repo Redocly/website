@@ -109,4 +109,4 @@ logo:
 ## Resources
 
 - Explore other [configuration options](./index.md) for your project.
-- Add [custom color modes](../extend/how-to/add-color-mode.md).
+- Add [custom color modes](../customization/add-color-mode.md).

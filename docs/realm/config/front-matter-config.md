@@ -47,7 +47,7 @@ These options are available exclusively in front matter:
 - Path to a custom template for the Markdown page.
   Omit file extensions.
   Use relative paths for local templates and absolute paths for templates from node modules.
-  See [Override a page template](../style/how-to/custom-page-templates.md) for details.
+  See [Override a page template](../branding/custom-page-templates.md) for details.
 
 ---
 
@@ -197,6 +197,6 @@ Use `redocly.yaml` for most configuration settings and use front matter only for
 
 ## Resources
 
-- [Override a page template](../style/how-to/custom-page-templates.md)
+- [Override a page template](../branding/custom-page-templates.md)
 - [Configure Redocly](./index.md) using the `redocly.yaml` file.
-- [Block search indexing](../setup/how-to/block-search-index.md) using the `noindex` rule.
+- [Block search indexing](../navigation/search/block-search-index.md) using the `noindex` rule.

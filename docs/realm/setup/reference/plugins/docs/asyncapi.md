@@ -2,7 +2,7 @@
 
 Render AsyncAPI documentation in a project. This plugin uses an official <a href="https://github.com/asyncapi/asyncapi-react" target="_blank">React component</a> to generate documentation for AsyncAPI 2.x and 3.x descriptions.
 
-This is a plugin reference page. A setup guide can be found in the [How-to section](../../../../author/how-to/generate-asyncapi-docs.md)
+This is a plugin reference page. A setup guide can be found in the [How-to section](../../../../content/api-docs/add-asyncapi-docs.md)
 
 ## NPM package
 
@@ -53,6 +53,6 @@ Each section can be hidden using configuration options.
 ## Resources
 
 * Check out the [AsyncAPI config reference](../../../../config/asyncapi.md) page to see the different options you can configure.
-* How to [generate AsyncAPI docs](../../../../author/how-to/generate-asyncapi-docs.md)
+* How to [generate AsyncAPI docs](../../../../content/api-docs/add-asyncapi-docs.md)
 * [AsyncAPI definition examples](https://github.com/asyncapi/spec/tree/master/examples)
 * [AsyncAPI docs](https://www.asyncapi.com/docs)

@@ -47,5 +47,5 @@ residency: https://app.cloud.eu.redocly.com
 
 ## Resources
 
-- Use [remote content](../setup/how-to/remote-content/index.md) in your projects.
+- Use [remote content](../reunite/project/remote-content/index.md) in your projects.
 - [Develop locally](../get-started/start-local-dev.md), deploy to the cloud.

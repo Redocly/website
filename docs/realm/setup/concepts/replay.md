@@ -7,7 +7,7 @@ Click "Try It" on any operation in your Redoc reference docs to open Replay for 
 
 Replay uses the API description and `mockServer` configuration in your `redocly.yaml` file to create an interactive interface for your API users.
 
-![Make an API request with Replay](../../author/how-to/images/use-replay-response-example.png)
+![Make an API request with Replay](../../content/images/use-replay-response-example.png)
 
 ## Interactive API client
 
@@ -42,9 +42,9 @@ Users can complete the following tasks with Replay the API explorer:
 
 ## Related how-tos
 
-- Generate reference documentation for your users by [Adding OpenAPI reference docs](../../author/how-to/add-openapi-docs.md)
-- See how to [Try APIs with the mock server](../../author/how-to/try-apis-with-mock-server.md) to get Replay set up how you like it
-- Learn how to [Configure the mock server](../../author/how-to/configure-mock-server.md) and optimize how users use Replay to interact with API descriptions
+- Generate reference documentation for your users by [Adding OpenAPI reference docs](../../content/api-docs/add-openapi-docs.md)
+- See how to [Try APIs with the mock server](../../content/api-docs/try-apis-with-mock-server.md) to get Replay set up how you like it
+- Learn how to [Configure the mock server](../../content/api-docs/configure-mock-server.md) and optimize how users use Replay to interact with API descriptions
 
 ## Resources
 

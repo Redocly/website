@@ -10,7 +10,7 @@ plans:
 ---
 # `rbac`
 
-Access control is done using [RBAC (role-based access control)](../setup/concepts/rbac.md).
+Access control is done using [RBAC (role-based access control)](../access/rbac.md).
 Use team-based access controls to assign permissions required to files and project access.
 By default, all authenticated users are assigned to the `authenticated` team, and unauthenticated users are automatically assigned to the `anonymous` team.
 All other configuration is done through team-role mapping.
@@ -273,8 +273,8 @@ rbac:
 
 ## Resources
 
-- [Role-based access control (RBAC)](../setup/concepts/rbac.md) concept
-- [How to configure RBAC](../setup/how-to/rbac/index.md) with additional information and examples for projects, pages, and navigation.
-- [Pattern-based team access](../setup/how-to/rbac/pattern-access.md) guide and usage examples.
+- [Role-based access control (RBAC)](../access/rbac.md) concept
+- [How to configure RBAC](../access/index.md) with additional information and examples for projects, pages, and navigation.
+- [Pattern-based team access](../access/pattern-access.md) guide and usage examples.
 - Use [front matter](./front-matter-config.md) to configure role-based access on individual pages.
 - Explore other [configuration options](./index.md) for your project.

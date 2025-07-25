@@ -20,7 +20,7 @@ Git uses specific terminology that we also use in our interface including the fo
 
 ## Git providers
 
-Redocly offers Git hosting for your projects, but if you already have your project files stored in a repository hosted by a Git provider, you can [connect either the entire repository or a folder in that repository](../how-to/git-providers/connect-git-provider.md).
+Redocly offers Git hosting for your projects, but if you already have your project files stored in a repository hosted by a Git provider, you can [connect either the entire repository or a folder in that repository](../../reunite/project/connect-git/connect-git-provider.md).
 
 Redocly integrates with the following Git repository hosting providers:
 
@@ -43,8 +43,8 @@ If you create a pull request or merge request in your Git provider, it is added 
 
 ## Related how-tos
 
-- Learn how to [connect a Git provider](../how-to/git-providers/connect-git-provider.md) to your Redocly project.
-- Follow step-by-step instructions for [opening a pull request in Reunite](../../author/how-to/open-pull-request.md).
+- Learn how to [connect a Git provider](../../reunite/project/connect-git/connect-git-provider.md) to your Redocly project.
+- Follow step-by-step instructions for [opening a pull request in Reunite](../../reunite/project/pull-request/open-pull-request.md).
 
 ## Resources
 

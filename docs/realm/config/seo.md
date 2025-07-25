@@ -10,7 +10,7 @@ plans:
 # `seo`
 
 Use the `seo` options to control the contents of your project's HTML `<head>` element and `llms.txt` file generation.
-You can override `seo` options, except `llmstxt`, in the [front matter](./front-matter-config) of Markdown and React pages.
+You can override `seo` options, except `llmstxt`, in the [front matter](./front-matter-config.md) of Markdown and React pages.
 
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "seo"} /%}
 
@@ -73,7 +73,7 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 - string
 - Sets the base URL for canonical links.
   When this option is configured, it automatically adds `rel="canonical"` to the head of all HTML pages.
-  This option is required to generate a sitemap, see more information about [how to add a sitemap](../setup/how-to/add-sitemap.md).
+  This option is required to generate a sitemap, see more information about [how to add a sitemap](../navigation/search/add-sitemap.md).
 
   This option should not be used in front matter.
 

@@ -86,6 +86,6 @@ products:
     folder: products/news-aggregator
 ```
 
-## Related guides
+## Resources
 
-- [Configure multiple products](../author/how-to/multiple-products.md)
+- [Configure multiple products](../navigation/multiple-products.md)

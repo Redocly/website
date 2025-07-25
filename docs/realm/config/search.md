@@ -270,10 +270,10 @@ search:
 
 ## Resources
 
-- [Configure search facets](../extend/how-to/configure-search-facets.md)
+- [Configure search facets](../navigation/search/configure-search-facets.md)
 - [Configure localization](./l10n.md)
 - [Configure navbar](./navbar.md)
-- [Configure navigation elements in your project](../author/how-to/configure-nav/index.md)
-- [Predefined translation keys](../author/reference/translation-keys.md)
+- [Configure navigation elements in your project](../navigation/index.md)
+- [Predefined translation keys](../content/localization/translation-keys.md)
 - Use [front matter](./front-matter-config.md) to configure the behavior of the Search dialog on individual pages.
 - Explore other [configuration options](./index.md) for your project.

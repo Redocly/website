@@ -50,7 +50,7 @@ One page isn't very exciting, so let's add a few more.
 
 {% admonition type="info" name="Supported formats" %}
 These examples use Markdown, but [Markdoc](https://markdoc.dev/) is also supported.
-If you're new to Markdoc, visit our [Markdoc learning hub](https://redocly.com/docs/learn-markdoc/) for more information and lots of examples.
+If you're new to Markdoc, visit our [Markdoc learning hub](https://redocly.com/learn/markdoc) for more information and lots of examples.
 {% /admonition %}
 
 Create files named `style-guide.md` and `about.md`.
@@ -83,7 +83,7 @@ For example, edit the file as shown in the following example to change the link 
 
 If you don't specify a label, the page title is used.
 Take some time to add a few more pages, and change the navigation bar by re-ordering pages and changing the page labels.
-There's more information and examples in the documentation pages for [working with sidebars](../author/how-to/configure-nav/sidebar.md) and [configuring sidebar groups](../author/how-to/configure-nav/configure-sidebar-groups.md).
+There's more information and examples in the documentation pages for [working with sidebars](../navigation/sidebar.md) and [configuring sidebar groups](../navigation/configure-sidebar-groups.md).
 
 ## Fine-tune your configuration
 
@@ -200,7 +200,7 @@ Your site looks a bit different to the default, as you can see in the following 
 
 ![Get started demo site with styles](./images/get-started-style.png)
 
-Explore the [CSS variables reference](../style/reference/css-variables/index.md) or inspect your site with web developer tools in your browser to identify the variables to change.
+Explore the [CSS variables reference](../branding/css-variables/index.md) or inspect your site with web developer tools in your browser to identify the variables to change.
 
 ## Publish to your site
 
@@ -211,6 +211,6 @@ The details will depend on the tools and platforms you use, but as a general ove
 
 1. Push the files to your chosen Git provider (we support GitHub, GitLab, Azure DevOps and others).
 
-1. Log in to Reunite and create a new project; [connect to your Git remote repository](../setup/how-to/git-providers/connect-git-provider.md).
+1. Log in to Reunite and create a new project; [connect to your Git remote repository](../reunite/project/connect-git/connect-git-provider.md).
 
 1. The project is created and your site is built - go and check it out!
