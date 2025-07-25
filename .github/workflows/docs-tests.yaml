@@ -25,3 +25,5 @@ jobs:
             !docs/realm/extend/**
             !docs/realm/portal-changelog.md
             !docs/realm/.templates/*
+            !docs/realm/customization/add-color-mode.md
+            !docs/realm/customization/eject-components/eject-components-tutorial/index.md
