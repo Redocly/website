@@ -1,19 +1,24 @@
-# Add a classic catalog to your project
+# Add a catalog
 
-If you have many API description files in your project, you can use the classic version of the catalog to display the APIs in a more organized way.
+If you have many API definitions, a catalog is a more organized way to display your API definitions in your project.
 
-![Screenshot of sample classic catalog](../concepts/images/catalog.png)
+![Screenshot of sample catalog](../concepts/images/catalog.png)
+
+Add a catalog to your project by completing the following steps:
+
+- **Organize files:** Organize your API definitions into one or more folders
+- **Configure redocly.yaml:** Add the `catalog` and `navbar` configurations to your `redocly.yaml` file
 
 ## Before you begin
 
 Make sure you have the following before you begin:
 
-- finalized versions of your API description files
+- finalized versions of your API definitions
 - a `redocly.yaml` file in the root of your project
 
 ## Organize files
 
-To add a classic catalog to your project, organize your API description files into one or more folders.
+To add a catalog to your project, first you must organize your API definition files into one or more folders.
 
 You can include however many folders you need and name your folder or folders anything you like.
 See [Names](../../setup/concepts/names.md) for advice on naming.
@@ -33,26 +38,26 @@ my_catalog/
 └── sidebars.yaml
 ```
 
-After organizing your API description files into folders, configure your catalog.
+After organizing your API definition files into folders, configure your catalog.
 
 ## Configure redocly.yaml
 
-Once you have organized your API description files into one or more folders,
-you must configure the `catalogClassic` and `navbar` options in your `redocly.yaml` file.
+Once you have organized your API definition files into one or more folders,
+you must configure the `catalog` and `navbar` options in your `redocly.yaml` file.
 
-### Configure classic catalog
+### Configure catalog
 
-To configure the `catalogClassic` object:
+To configure the `catalog` object:
 
-1. Add a name for your catalog under the `catalogClassic` object. It does not appear anywhere in your project.
+1. Add a name for your catalog under the `catalog` object. It does not appear anywhere in your project.
    ```yaml
-   catalogClassic:
+   catalog:
      acme-catalog:
    ```
-2. Add the following required options under your catalog name:
+1. Add the following required options under your catalog name:
    - `title`: This title is the main heading on the catalog page.
      ```yaml
-     catalogClassic:
+     catalog:
        acme-catalog:
          title: Acme API catalog
      ```
@@ -67,7 +72,7 @@ To configure the `catalogClassic` object:
      It can be anything as long as it matches the `page` or `href` option in the `navbar` object.
      Include a leading and trailing slash.
      ```yaml
-     catalogClassic:
+     catalog:
        acme-catalog:
          title: Acme API catalog
          description: Discover how our APIs can support your business.
@@ -75,13 +80,13 @@ To configure the `catalogClassic` object:
      ```
    - `items`: This object is a list of what files to include in the catalog. Add the following options:
      - `directory`: This required option is the path to the directory with files that should be included in the catalog.
-     - `flatten`: (Optional) If set to `true` all API description files, even those in subdirectories are included in the catalog.
-       If set to `false` only top-level API description files are included in the catalog as well as the first file from every subdirectory.
+     - `flatten`: (Optional) If set to `true` all API definition files, even those in subdirectories are included in the catalog.
+       If set to `false` only top-level API definition files are included in the catalog as well as the first file from every subdirectory.
        By default, this option is set to `false`.
      - `includeByMetadata`: (Optional) This is a map of metadata properties used to restrict what files are included in the catalog.
        See [Categories](../concepts/categories.md) for more information.
        ```yaml
-       catalogClassic:
+       catalog:
          acme-catalog:
          title: Acme API catalog
          description: Discover how our APIs can support your business.
@@ -92,7 +97,7 @@ To configure the `catalogClassic` object:
              includeByMetadata:
                type: [openapi]
        ```
-3. (Optional) Add the following options under your catalog name:
+2. (Optional) Add the following options under your catalog name:
    - `titleTranslationKey`: This option is the key you would use to translate the title for the catalog page.
      See [Localize labels using translation keys](../how-to/config-l10n/localize-labels.md) for more information.
    - `descriptionTranslationKey`: This option is the key you would use to translate the description for the catalog page.
@@ -106,13 +111,13 @@ To configure the `catalogClassic` object:
 
 ### Configure navbar
 
-For your classic catalog to appear in the navbar at the top of the page, you must include it in the `navbar` configuration in your `redocly.yaml` file.
+For your catalog to appear in the navbar at the top of the page, you must include it in the `navbar` configuration in your `redocly.yaml` file.
 
 To configure the `navbar` item to include your catalog:
 
 1. Add the `navbar` object.
    ```yaml
-   catalogClassic:
+   catalog:
      acme-catalog:
        title: Acme API catalog
        description: Discover how our APIs can support your business.
@@ -123,7 +128,7 @@ To configure the `navbar` item to include your catalog:
    ```
 2. Add the `items` object under the `navbar` object.
    ```yaml
-   catalogClassic:
+   catalog:
      acme-catalog:
        title: Acme API catalog
        description: Discover how our APIs can support your business.
@@ -140,7 +145,7 @@ To configure the `navbar` item to include your catalog:
    the text for the button on the navbar will match the `href` option's value.
    Otherwise, you can specify the text by using the `label` optional option.
    ```yaml
-   catalogClassic:
+   catalog:
      acme-catalog:
        title: Acme API catalog
        description: Discover how our APIs can support your business.
@@ -162,9 +167,9 @@ To configure the `navbar` item to include your catalog:
    - `linkedSidebars`: This option allows you to add this item to pages on a specified sidebar or multiple sidebars.
      It is an array of relative paths to these sidebar files.
 
-### Example classic catalog and navbar configuration
+### Example catalog and navbar configuration
 
-The following `catalog` and `navbar` configuration includes a single catalog, with two filters, pulling descriptions from the `catalog` folder in the root directory:
+The following `catalog` and `navbar` configuration includes a single catalog, with two filters, pulling definitions from the `catalog` folder in the root directory:
 
 ```yaml
 logo:
@@ -172,7 +177,7 @@ logo:
   altText: My logo
   link: https://example.com
   favicon: ./images/logo.svg
-catalogClassic:
+catalog:
   acme-catalog:
     title: Acme API catalog
     description: 'Discover how our APIs can support your business.'
@@ -205,5 +210,5 @@ catalogClassic:
 ## Resources
 
 - [Configure your scorecard](../../setup/how-to/configure-scorecard.md) so that each API is checked against appropriate standards.
-- Use [categories](../../author/concepts/categories.md) to filter APIs in the classic catalog.
+- Use [categories](../../author/concepts/categories.md) to filter APIs in the catalog.
 - Learn more about [API Governance](https://redocly.com/docs/cli/api-standards).
