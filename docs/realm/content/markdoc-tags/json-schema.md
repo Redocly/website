@@ -18,7 +18,7 @@ Render an existing schema from inside an OpenAPI description or other external f
   ```markdoc
   {% json-schema
   schema={
-    "$ref": "../../../openapi-files/redocly-museum.yaml#/components/schemas/GetMuseumHoursResponse"
+    "$ref": "../../openapi-files/redocly-museum.yaml#/components/schemas/GetMuseumHoursResponse"
   }
   /%}
   ```
@@ -79,7 +79,7 @@ The `options` attribute is used to modify the behavior and appearance of the ren
 ```markdoc
 {% json-schema
   schema={
-    "$ref": "../../../openapi-files/redocly-museum.yaml#/components/schemas/GetMuseumHoursResponse"
+    "$ref": "../../openapi-files/redocly-museum.yaml#/components/schemas/GetMuseumHoursResponse"
   }
   options={
     "hideSchemaTitles": true
@@ -136,7 +136,7 @@ The example below uses a reference to a JSON schema that is already defined with
 ```markdoc
 {% json-schema
   schema={
-    "$ref": "../../../openapi-files/redocly-museum.yaml#/components/schemas/GetMuseumHoursResponse"
+    "$ref": "../../openapi-files/redocly-museum.yaml#/components/schemas/GetMuseumHoursResponse"
   }
 /%}
 ```

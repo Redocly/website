@@ -37,7 +37,7 @@ To determine the component to eject using Google Chrome developer tools do the f
 
     {% img
       alt="Inspect component"
-      src="../../images/inspect-component.png"
+      src="../images/inspect-component.png"
       height=300
       withLightbox=true
     /%}
