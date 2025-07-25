@@ -316,6 +316,14 @@
   to: '/docs/cli/rules/oas/tag-description'
 '/docs/cli/rules/tags-alphabetical':
   to: '/docs/cli/rules/oas/tags-alphabetical'
+'/docs/cli/rules/oas/info-license-url':
+  to: '/docs/cli/rules/oas/info-license-strict'
+'/docs/cli/rules/oas/no-enum-type-mismatch':
+  to: '/docs/cli/rules/common/no-enum-type-mismatch'
+'/docs/cli/rules/oas/no-required-schema-properties-undefined':
+  to: '/docs/cli/rules/common/no-required-schema-properties-undefined'
+'/docs/cli/rules/oas/no-schema-type-mismatch':
+  to: '/docs/cli/rules/common/no-schema-type-mismatch'
 # -- Redirect for renaming redocly-openapi to vscode
 '/docs/redocly-openapi/*':
   to: '/docs/vscode/*'
@@ -348,3 +356,6 @@
   to: '/docs/realm/author/concepts/project-structure'
 '/docs/realm/get-started/api-reference-starter':
   to: '/docs/realm/get-started'
+# -- Redirect to the current changelog after making v2 the default one
+'/docs/cli/v2/changelog':
+  to: '/docs/cli/changelog'
