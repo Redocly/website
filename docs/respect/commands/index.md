@@ -2,8 +2,8 @@
 
 Redocly CLI commands related to Respect:
 
-* [`generate-arazzo`](/docs/respect/commands/generate-arazzo): Generate an Arazzo file based on an OpenAPI description.
-* [`respect`](/docs/respect/commands/respect): Run tests based on an Arazzo file.
+* [`generate-arazzo`](/docs/cli/commands/generate-arazzo): Generate an Arazzo file based on an OpenAPI description.
+* [`respect`](/docs/cli/commands/respect): Run tests based on an Arazzo file.
 
 ## Resources
 

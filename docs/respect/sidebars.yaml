@@ -26,5 +26,5 @@
 - group: Commands
   page: commands/index.md
   items:
-    - page: /docs/respect/commands/generate-arazzo
-    - page: /docs/respect/commands/respect
+    - page: /docs/cli/commands/generate-arazzo
+    - page: /docs/cli/commands/respect

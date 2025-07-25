@@ -83,7 +83,7 @@ A good addition to the changelog is a friendly email newsletter, showcasing some
 
 ## Learn more
 
-- Add linting to your API, the [struct rule](../docs/cli/rules/oas/struct) requires that the version be set. Remember you'll need to update it yourself.
+- Add linting to your API, the [struct rule](../docs/cli/rules/common/struct) requires that the version be set. Remember you'll need to update it yourself.
 - Adjust your linting standards as you improve your API version-by-version using the [per-API configuration](../docs/cli/configuration/apis).
 - New to API Governance? Read our post about [how to take your first steps in API Governance](./getting-started-api-governance.md).
 
