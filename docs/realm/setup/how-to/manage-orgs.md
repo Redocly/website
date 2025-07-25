@@ -49,7 +49,7 @@ Your organization's logo (uploaded in the **Logo** section) is also displayed on
 You can hide the platform attribution to Redocly in the login forms and in your project's footer area.
 
 {% admonition type="info" name="Enterprise feature" %}
-Hiding Redocly branding is available for Enterprise and Enterprise+ plans only.
+Hiding Redocly branding is available for Enterprise+ plans only.
 {% /admonition %}
 
 To hide Redocly branding:
