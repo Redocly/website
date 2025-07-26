@@ -90,7 +90,7 @@ The following examples illustrate using rich text in Markdoc tables:
   - This is the default feedback form and displays without configuration.
   - Users can express either a positive or negative reaction to the page.
 
-- ![Sentiment feedback form](/docs/realm/setup/images/sentiment-01.png)
+- ![Sentiment feedback form](/docs/realm/content/images/sentiment-01.png)
 
 ---
 
@@ -99,7 +99,7 @@ The following examples illustrate using rich text in Markdoc tables:
 - - Includes a question or statement with a smiling-face, neutral-face, and frowning-face icon.
   - Users can express a positive, negative, or neutral review of the page.
 
-- ![Mood feedback form](/docs/realm/setup/images/mood-01.png)
+- ![Mood feedback form](/docs/realm/config/images/mood-01.png)
 
 ---
 
@@ -108,7 +108,7 @@ The following examples illustrate using rich text in Markdoc tables:
 - - Includes a question or statement with five star icons.
   - Users can rate a page from one to five stars.
 
-- ![Rating feedback form](/docs/realm/setup/images/rating-01.png)
+- ![Rating feedback form](/docs/realm/config/images/rating-01.png)
 
 ---
 
@@ -117,7 +117,7 @@ The following examples illustrate using rich text in Markdoc tables:
 - - Includes a question or statement, left-hand side and right-hand side text labels, and buttons for numbers 1 - 10.
   - Users can rate a page from one to ten.
 
-- ![Scale feedback form](/docs/realm/setup/images/scale-01.png)
+- ![Scale feedback form](/docs/realm/config/images/scale-01.png)
 
 ---
 
@@ -126,7 +126,7 @@ The following examples illustrate using rich text in Markdoc tables:
 - - Includes a text label and text input.
   - Users can use the text field to express their thoughts about the page in a free-form way.
 
-- ![Comment feedback form](/docs/realm/setup/images/comment-01.png)
+- ![Comment feedback form](/docs/realm/config/images/comment-01.png)
 
 {% /table %}
 

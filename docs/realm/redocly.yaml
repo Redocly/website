@@ -325,11 +325,6 @@ responseHeaders:
       value: noindex
 
 redirects:
-  '/author/reference/supported-file-types':
-    to: '/author/concepts/project-structure'
-  '/get-started/api-reference-starter':
-    to: '/get-started'
-  '/author/how-to/add-catalog':
-    to: '/author/how-to/add-classic-catalog'
+  $ref: ./redirects.yaml
 
 telemetry: off

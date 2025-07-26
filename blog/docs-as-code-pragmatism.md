@@ -27,7 +27,7 @@ With modern tools, however, it's a smaller transition than it might seem.
 
 Look around for rich editors or plugins for your IDE that fit your platform and chosen markup language.
 Having a good tool setup with a live preview, perhaps autocomplete or a helpful formatting toolbar, or even a WYSIWYG interface can provide a great experience for writers of all kinds.
-Best of all, every team member can choose the tool that suits their workflow whether that's vim, the [Reunite editor](../docs/realm/author/how-to/use-editor.md), an IDE like VSCode, or anything in between.
+Best of all, every team member can choose the tool that suits their workflow whether that's vim, the [Reunite editor](../docs/realm/reunite/project/use-editor.md), an IDE like VSCode, or anything in between.
 
 By keeping the content in a markup format, docs-as-code means separating the styling or presentation details from the actual content.
 The content can more easily be re-used, repurposed, restyled, and generally magnified.  You can work on the design or styling without needing to edit the content files.

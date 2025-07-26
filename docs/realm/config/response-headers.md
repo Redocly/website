@@ -76,4 +76,4 @@ responseHeaders:
 
 ## Resources
 
-- See how `responseHeaders` is used to [block search indexing](../setup/how-to/block-search-index.md#set-noindex-response-header).
+- See how `responseHeaders` is used to [block search indexing](../navigation/search/block-search-index.md#set-noindex-response-header).

@@ -54,4 +54,4 @@ Customize the behavior and appearance of integrated GraphQL documentation. Requi
 ## Resources
 
 - [GraphQL](https://graphql.org/)
-- [Add GraphQL documentation to your project](../../author/how-to/add-graphql-docs.md)
+- [Add GraphQL documentation to your project](../../content/api-docs/add-graphql-docs.md)

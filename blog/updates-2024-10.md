@@ -78,7 +78,7 @@ It’s perfect for managing complex projects where different endpoints or featur
 
 You can now define role-based access control within your OpenAPI files using `x-rbac`.
 This update empowers teams to enforce specific access permissions directly in their API definitions, enhancing security and control.
-[Read more about implementing x-rbac in OpenAPI](../docs/realm/author/reference/openapi-extensions/x-rbac.md).
+[Read more about implementing x-rbac in OpenAPI](../docs/realm/content/api-docs/openapi-extensions/x-rbac.md).
 
 ---
 

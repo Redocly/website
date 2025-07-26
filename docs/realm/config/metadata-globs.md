@@ -55,6 +55,6 @@ These categories help organize content in search results.
 
 ## Resources
 
-- [Configure search facets](../extend/how-to/configure-search-facets.md)
+- [Configure search facets](../navigation/search/configure-search-facets.md)
 - [Catalog](./catalog-classic.md)
 - [Scorecard](./scorecard.md)

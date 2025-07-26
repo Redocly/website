@@ -5,10 +5,10 @@ All Markdown pages include a feedback form at the bottom of the page by default.
 All OpenAPI API reference documentation includes a feedback form at the bottom of each endpoint by default.
 
 Also, by default all sample code snippets include a report icon users can select to report an issue about the sample code snippet using a feedback form.
-The [report icon](../../author/how-to/configure-code-snippets.md) and [feedback forms](../../setup/how-to/feedback/index.md) can be hidden or customized.
+The [report icon](../../content/configure-code-snippets.md) and [feedback forms](../../setup/how-to/feedback/index.md) can be hidden or customized.
 
 Users can use these forms to send you information about their experience with that page's content.
-You can [view and export the collected feedback data](../how-to/feedback/view-export-data.md) by project on the **Feedback reports** page.
+You can [view and export the collected feedback data](../../reunite/project/view-export-data.md) by project on the **Feedback reports** page.
 
 ## Report icon
 
@@ -16,7 +16,7 @@ Every code snippet includes a report icon in the top right corner, next to the c
 ![Report icon](../images/report.png)
 Users can select this icon to display a modal with a feedback form they can submit.
 ![Report feedback form modal](../images/report-feedback-form.png)
-You can [hide or customize the report icon](../../author/how-to/configure-code-snippets.md#configure-codesnippet-icons) and the [feedback form modal it displays](../../author/how-to/configure-code-snippets.md#configure-report-options), globally in the `redocly.yaml` file or by page in the Markdown front matter.
+You can [hide or customize the report icon](../../content/configure-code-snippets.md#configure-code-snippet-icons) and the [feedback form modal it displays](../../content/configure-code-snippets.md#configure-report-options), globally in the `redocly.yaml` file or by page in the Markdown front matter.
 The specific code snippet and the message the user enters in the feedback form is collected and displayed on the **Feedback reports** page.
 See [Feedback data](#feedback-data) for more information.
 
@@ -41,7 +41,7 @@ The default theme includes the following feedback form types:
   - This is the default feedback form and displays without configuration.
   - Users can express either a positive or negative reaction to the page.
 
-- ![Sentiment feedback form](../images/sentiment-01.png)
+- ![Sentiment feedback form](../../content/images/sentiment-01.png)
 
 ---
 
@@ -60,7 +60,7 @@ The default theme includes the following feedback form types:
 
 - - Includes a question or statement with a smiling-face, neutral-face, and frowning-face icon.
   - Users can express a positive, negative, or neutral review of the page.
-- ![Mood feedback form](../images/mood-01.png)
+- ![Mood feedback form](../../content/images/mood-01.png)
 
 ---
 
@@ -79,7 +79,7 @@ The default theme includes the following feedback form types:
 
 - - Includes a question or statement with five star icons.
   - Users can rate a page from one to five stars.
-- ![Rating feedback form](../images/rating-01.png)
+- ![Rating feedback form](../../content/images/rating-01.png)
 
 ---
 
@@ -98,7 +98,7 @@ The default theme includes the following feedback form types:
 
 - - Includes a question or statement, left-hand side and right-hand side text labels, and buttons for numbers 1 - 10.
   - Users can rate a page from one to ten.
-- ![Scale feedback form](../images/scale-01.png)
+- ![Scale feedback form](../../content/images/scale-01.png)
 
 ---
 
@@ -117,7 +117,7 @@ The default theme includes the following feedback form types:
 
 - - Includes a text label and text input.
   - Users can use the text field to express their thoughts about the page in a free-form way.
-- ![Comment feedback form](../images/comment-01.png)
+- ![Comment feedback form](../../content/images/comment-01.png)
 
 ---
 
@@ -178,13 +178,10 @@ The **Feedback reports** table includes the following information:
 - The **Date** the user submitted the feedback form.
 - The **Status** of the feedback: new, archived, or spam.
 
-## Related how-tos
+## Resources
 
 - Learn how to customize how the feedback form displays in your documentation in [Configure and view feedback](../how-to/feedback/index.md)
 - Add additional options after users complete thier initial feedback selection by following the steps in [Extend the feedback form](../how-to/feedback/extend-feedback.md).
-- Find out where all the data that is collected from your users is being sent and how you can view it in [View and export feedback data](../how-to/feedback/view-export-data.md).
-
-## Resources
-
+- Find out where all the data that is collected from your users is being sent and how you can view it in [View and export feedback data](../../reunite/project/view-export-data.md).
 - Learn more about the different feedback forms available in the [Feedback reference](../../config/feedback.md).
 - Discover the different ways you can customize code samples in your documentation in the [Codesnippet reference](../../config/code-snippet.md).

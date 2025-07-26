@@ -2,7 +2,7 @@
 
 ## Before you begin
 
-### [Generate Redocly API key](../../setup/how-to/api-keys.md)
+### [Generate Redocly API key](../../reunite/organization/api-keys.md)
 
 ### Webhook setup
 
@@ -101,7 +101,7 @@ Scout is a source available tool and you could run it from source which could be
 ---
 
 - `REDOCLY_API_KEY`
-- Redocly organization [API token](../../setup/how-to/api-keys.md).
+- Redocly organization [API token](../../reunite/organization/api-keys.md).
 
 ---
 

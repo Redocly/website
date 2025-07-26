@@ -51,7 +51,7 @@ The [Markdoc tag library](https://redocly.com/docs/learn-markdoc/tags/tag-librar
 
 ### Customize your site: improved features and experience
 
-The CSS variables set was refactored to improve consistency and maintainability. New variables were added, and some existing variables were renamed or removed. The full list of CSS variables can be found in the [CSS variables documentation](./style/reference/css-variables/index.md).
+The CSS variables set was refactored to improve consistency and maintainability. New variables were added, and some existing variables were renamed or removed. The full list of CSS variables can be found in the [CSS variables documentation](./branding/css-variables/index.md).
 
 Many components were redesigned and refactored to provide a more consistent and user-friendly experience.
 A set of ejectable components is provided, and will be expanded in future releases.

@@ -26,10 +26,10 @@ To deploy your project, you still need to connect your Git provider account, but
 
 ## Related how-tos
 
-- Follow step-by-step instructions for [connecting a Git provider](../../setup/how-to/git-providers/connect-git-provider.md) in Reunite.
-- Learn more about how to [use the Reunite editor](../how-to/use-editor.md).
+- Follow step-by-step instructions for [connecting a Git provider](../../reunite/project/connect-git/connect-git-provider.md) in Reunite.
+- Learn more about how to [use the Reunite editor](../../reunite/project/use-editor.md).
 
 ## Resources
 
 - Find out more about how [source control](../../setup/concepts/git.md), or version control, works in Reunite.
-- If you have a single folder in a different repository you want to integrate into your project, learn more about [remote content](../../setup/concepts/remote-content.md).
+- If you have a single folder in a different repository you want to integrate into your project, learn more about [remote content](../../reunite/project/remote-content/remote-content.md).

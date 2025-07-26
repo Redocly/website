@@ -324,5 +324,5 @@ scorecard:
 
 ## Resources
 
-- Learn more about the [Scorecard](../setup/concepts/scorecard.md) feature including what it displays and where to find the reports.
-- Learn how to add either Redocly built-in rule sets or custom rule sets to the scorecard for your projects in [Configure scorecard](../setup/how-to/configure-scorecard.md).
+- Learn more about the [Scorecard](../reunite/project/scorecard.md) feature including what it displays and where to find the reports.
+- Learn how to add either Redocly built-in rule sets or custom rule sets to the scorecard for your projects in [Configure scorecard](../reunite/project/configure-scorecard.md).

@@ -90,7 +90,7 @@ breadcrumbs:
 
 ## Resources
 
-- Learn more about the different navigation elements included in your project in the [Navigation](../author/concepts/navigation.md) concept documentation.
-- Follow steps to customize your navigation elements including the sidebar, navbar, and footer, in the [Configure navigation elements](../author/how-to/configure-nav/index.md) how-to documentation.
+- Learn more about the different navigation elements included in your project in the [Navigation](../navigation/navigation.md) concept documentation.
+- Follow steps to customize your navigation elements including the sidebar, navbar, and footer, in the [Configure navigation elements](../navigation/index.md) how-to documentation.
 - Use [front matter](./front-matter-config.md) to configure breadcrumbs on individual pages.
 - Explore other [configuration options](./index.md) for your project.

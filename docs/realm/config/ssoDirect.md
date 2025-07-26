@@ -314,10 +314,7 @@ ssoDirect:
     teamsAttributeName: http://schemas.auth0.com/https://redocly.com/sso/teams
 ```
 
-## Related options
-
-* [rbac](../config/rbac.md) reference
-
 ## Resources
 
-- [Role-based access control (RBAC)](../setup/concepts/rbac.md) concept
+- [rbac](../config/rbac.md) reference
+- [Role-based access control (RBAC)](../access/rbac.md) concept
