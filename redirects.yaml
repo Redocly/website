@@ -359,3 +359,406 @@
 # -- Redirect to the current changelog after making v2 the default one
 '/docs/cli/v2/changelog':
   to: '/docs/cli/changelog'
+
+#### Redirects related to docs restructure
+
+'/docs/realm/author/how-to/user-profile-menu':
+  to: '/docs/realm/reunite/user-profile-menu'
+'/docs/realm/setup/concepts/scorecard':
+  to: '/docs/realm/reunite/project/scorecard'
+'/docs/realm/setup/how-to/configure-scorecard':
+  to: '/docs/realm/reunite/project/configure-scorecard'
+'/docs/realm/setup/how-to/ignore-link-checker':
+  to: '/docs/realm/reunite/project/ignore-link-checker'
+'/docs/realm/setup/reference/telemetry':
+  to: '/docs/realm/reunite/project/telemetry'
+# Author how-to redirects
+'/docs/realm/author/how-to/manage-pull-requests':
+  to: '/docs/realm/reunite/project/pull-request/manage-pull-requests'
+'/docs/realm/author/how-to/open-pull-request':
+  to: '/docs/realm/reunite/project/pull-request/open-pull-request'
+'/docs/realm/author/how-to/review-pull-request':
+  to: '/docs/realm/reunite/project/pull-request/review-pull-request'
+'/docs/realm/author/how-to/switch-between-projects':
+  to: '/docs/realm/reunite/project/switch-between-projects'
+'/docs/realm/author/how-to/use-editor':
+  to: '/docs/realm/reunite/project/use-editor'
+'/docs/realm/author/how-to/use-previews':
+  to: '/docs/realm/reunite/project/use-previews'
+'/docs/realm/author/how-to/use-webview':
+  to: '/docs/realm/reunite/project/use-webview'
+# Author reference redirects
+'/docs/realm/author/reference/keyboard-shortcuts':
+  to: '/docs/realm/reunite/project/reference/keyboard-shortcuts'
+# Setup concepts redirects
+'/docs/realm/setup/concepts/sso':
+  to: '/docs/realm/reunite/organization/sso/sso'
+'/docs/realm/setup/concepts/teams':
+  to: '/docs/realm/reunite/organization/teams'
+# Setup how-to redirects
+'/docs/realm/setup/how-to/access-compliance-reports':
+  to: '/docs/realm/reunite/organization/access-compliance-reports'
+'/docs/realm/setup/how-to/add-idp':
+  to: '/docs/realm/reunite/organization/sso/add-idp'
+'/docs/realm/setup/how-to/api-keys':
+  to: '/docs/realm/reunite/organization/api-keys'
+'/docs/realm/setup/how-to/configure-azure-ad':
+  to: '/docs/realm/reunite/organization/sso/configure-azure-ad'
+'/docs/realm/setup/how-to/configure-google-sso':
+  to: '/docs/realm/reunite/organization/sso/configure-google-sso'
+'/docs/realm/setup/how-to/configure-sso':
+  to: '/docs/realm/reunite/organization/sso/configure-sso'
+'/docs/realm/setup/how-to/manage-orgs':
+  to: '/docs/realm/reunite/organization/manage-orgs'
+'/docs/realm/setup/how-to/manage-people':
+  to: '/docs/realm/reunite/organization/manage-people'
+'/docs/realm/setup/how-to/manage-projects':
+  to: '/docs/realm/reunite/project/manage-projects'
+'/docs/realm/setup/how-to/manage-teams':
+  to: '/docs/realm/reunite/organization/manage-teams'
+# Setup feedback redirects
+'/docs/realm/setup/how-to/feedback/view-export-data':
+  to: '/docs/realm/reunite/project/view-export-data'
+# Setup git-providers redirects
+'/docs/realm/setup/how-to/git-providers/azure-devops':
+  to: '/docs/realm/reunite/project/connect-git/azure-devops'
+'/docs/realm/setup/how-to/git-providers/bitbucket-cloud':
+  to: '/docs/realm/reunite/project/connect-git/bitbucket-cloud'
+'/docs/realm/setup/how-to/git-providers/connect-git-provider':
+  to: '/docs/realm/reunite/project/connect-git/connect-git-provider'
+'/docs/realm/setup/how-to/git-providers/github':
+  to: '/docs/realm/reunite/project/connect-git/github'
+'/docs/realm/setup/how-to/git-providers/gitlab':
+  to: '/docs/realm/reunite/project/connect-git/gitlab'
+'/docs/realm/setup/how-to/git-providers/manage-self-hosted':
+  to: '/docs/realm/reunite/project/connect-git/manage-self-hosted'
+'/docs/realm/setup/how-to/git-providers/self-hosted/github':
+  to: '/docs/realm/reunite/project/connect-git/self-hosted/github'
+'/docs/realm/setup/how-to/git-providers/self-hosted/gitlab':
+  to: '/docs/realm/reunite/project/connect-git/self-hosted/gitlab'
+# Setup remote-content redirects
+'/docs/realm/setup/how-to/remote-content/edit-remote-content-folder':
+  to: '/docs/realm/reunite/project/remote-content/edit-remote-content-folder'
+'/docs/realm/setup/how-to/remote-content/from-azure-devops':
+  to: '/docs/realm/reunite/project/remote-content/from-azure-devops'
+'/docs/realm/setup/how-to/remote-content/from-bitbucket-cloud':
+  to: '/docs/realm/reunite/project/remote-content/from-bitbucket-cloud'
+'/docs/realm/setup/how-to/remote-content/from-github':
+  to: '/docs/realm/reunite/project/remote-content/from-github'
+'/docs/realm/setup/how-to/remote-content/from-gitlab':
+  to: '/docs/realm/reunite/project/remote-content/from-gitlab'
+'/docs/realm/setup/how-to/remote-content/index':
+  to: '/docs/realm/reunite/project/remote-content/index'
+'/docs/realm/setup/how-to/remote-content/manually-sync-remote-content':
+  to: '/docs/realm/reunite/project/remote-content/manually-sync-remote-content'
+'/docs/realm/setup/how-to/remote-content/push':
+  to: '/docs/realm/reunite/project/remote-content/push'
+'/docs/realm/setup/how-to/remote-content/url':
+  to: '/docs/realm/reunite/project/remote-content/url'
+# Setup respect-monitoring redirects
+'/docs/realm/setup/respect-monitoring/configure-respect-monitoring':
+  to: '/docs/realm/reunite/project/respect-monitoring/configure-respect-monitoring'
+'/docs/realm/setup/respect-monitoring/index':
+  to: '/docs/realm/reunite/project/respect-monitoring/index'
+'/docs/realm/setup/respect-monitoring/manage-respect-monitoring':
+  to: '/docs/realm/reunite/project/respect-monitoring/manage-respect-monitoring'
+
+# Content reorganization redirects - Files moved to /content/
+'/docs/realm/author/how-to/add-diagram':
+  to: '/docs/realm/content/add-diagram'
+'/docs/realm/author/how-to/add-redirects':
+  to: '/docs/realm/content/add-redirects'
+'/docs/realm/author/concepts/categories':
+  to: '/docs/realm/content/categories'
+'/docs/realm/author/how-to/configure-code-snippets':
+  to: '/docs/realm/content/configure-code-snippets'
+'/docs/realm/author/how-to/links':
+  to: '/docs/realm/content/links'
+'/docs/realm/author/concepts/project-structure':
+  to: '/docs/realm/content/project-structure'
+'/docs/realm/setup/how-to/realm-version':
+  to: '/docs/realm/content/realm-version'
+'/docs/realm/author/how-to/reuse-content':
+  to: '/docs/realm/content/reuse-content'
+'/docs/realm/author/concepts/static-assets':
+  to: '/docs/realm/content/static-assets'
+'/docs/realm/author/reference/versions-config':
+  to: '/docs/realm/content/versions-config'
+'/docs/realm/author/how-to/versions':
+  to: '/docs/realm/content/versions'
+
+# API documentation redirects - Files moved to /content/api-docs/
+'/docs/realm/author/how-to/generate-asyncapi-docs':
+  to: '/docs/realm/content/api-docs/add-asyncapi-docs'
+'/docs/realm/author/how-to/add-catalog':
+  to: '/docs/realm/content/api-docs/add-catalog'
+'/docs/realm/author/how-to/add-graphql-docs':
+  to: '/docs/realm/content/api-docs/add-graphql-docs'
+'/docs/realm/author/how-to/add-openapi-docs':
+  to: '/docs/realm/content/api-docs/add-openapi-docs'
+'/docs/realm/author/how-to/add-soap-docs':
+  to: '/docs/realm/content/api-docs/add-soap-docs'
+'/docs/realm/author/how-to/configure-mock-server':
+  to: '/docs/realm/content/api-docs/configure-mock-server'
+'/docs/realm/author/reference/replay':
+  to: '/docs/realm/content/api-docs/replay'
+'/docs/realm/author/how-to/try-apis-with-mock-server':
+  to: '/docs/realm/content/api-docs/try-apis-with-mock-server'
+
+# OpenAPI extensions redirects - Files moved to /content/api-docs/openapi-extensions/
+'/docs/realm/author/reference/openapi-extensions/index':
+  to: '/docs/realm/content/api-docs/openapi-extensions/index'
+'/docs/realm/author/reference/openapi-extensions/x-additional-properties-name':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-additional-properties-name'
+'/docs/realm/author/reference/openapi-extensions/x-assertion-type':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-assertion-type'
+'/docs/realm/author/reference/openapi-extensions/x-badges':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-badges'
+'/docs/realm/author/reference/openapi-extensions/x-code-samples':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-code-samples'
+'/docs/realm/author/reference/openapi-extensions/x-display-name':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-display-name'
+'/docs/realm/author/reference/openapi-extensions/x-enum-descriptions':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-enum-descriptions'
+'/docs/realm/author/reference/openapi-extensions/x-examples':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-examples'
+'/docs/realm/author/reference/openapi-extensions/x-hide-replay':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-hide-replay'
+'/docs/realm/author/reference/openapi-extensions/x-metadata':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-metadata'
+'/docs/realm/author/reference/openapi-extensions/x-nullable':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-nullable'
+'/docs/realm/author/reference/openapi-extensions/x-rbac':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-rbac'
+'/docs/realm/author/reference/openapi-extensions/x-servers':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-servers'
+'/docs/realm/author/reference/openapi-extensions/x-summary':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-summary'
+'/docs/realm/author/reference/openapi-extensions/x-tag-groups':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-tag-groups'
+'/docs/realm/author/reference/openapi-extensions/x-tags':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-tags'
+'/docs/realm/author/reference/openapi-extensions/x-trait-tag':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-trait-tag'
+'/docs/realm/author/reference/openapi-extensions/x-use-pkce':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-use-pkce'
+'/docs/realm/author/reference/openapi-extensions/x-webhooks':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-webhooks'
+
+# Localization redirects - Files moved to /content/localization/
+'/docs/realm/setup/concepts/concept-l10n':
+  to: '/docs/realm/content/localization/concept-l10n'
+'/docs/realm/author/how-to/config-l10n/customize-styles-for-locale':
+  to: '/docs/realm/content/localization/customize-styles-for-locale'
+'/docs/realm/author/how-to/config-l10n/display-current-locale':
+  to: '/docs/realm/content/localization/display-current-locale'
+'/docs/realm/author/how-to/config-l10n/index':
+  to: '/docs/realm/content/localization/index'
+'/docs/realm/author/how-to/config-l10n/localize-content':
+  to: '/docs/realm/content/localization/localize-content'
+'/docs/realm/author/how-to/config-l10n/localize-labels':
+  to: '/docs/realm/content/localization/localize-labels'
+'/docs/realm/author/how-to/config-l10n/set-up-l10n-folder':
+  to: '/docs/realm/content/localization/set-up-l10n-folder'
+'/docs/realm/author/reference/translation-keys':
+  to: '/docs/realm/content/localization/translation-keys'
+
+# Markdoc functions redirects - Files moved to /content/markdoc-functions/
+'/docs/realm/author/reference/functions/built-in':
+  to: '/docs/realm/content/markdoc-functions/built-in'
+'/docs/realm/author/reference/functions/concat':
+  to: '/docs/realm/content/markdoc-functions/concat'
+'/docs/realm/author/reference/functions/includes':
+  to: '/docs/realm/content/markdoc-functions/includes'
+'/docs/realm/author/reference/functions/index':
+  to: '/docs/realm/content/markdoc-functions/index'
+
+# Markdoc tags redirects - Files moved to /content/markdoc-tags/
+'/docs/realm/author/reference/tags/admonition':
+  to: '/docs/realm/content/markdoc-tags/admonition'
+'/docs/realm/author/reference/tags/cards':
+  to: '/docs/realm/content/markdoc-tags/cards'
+'/docs/realm/author/reference/tags/code-snippet':
+  to: '/docs/realm/content/markdoc-tags/code-snippet'
+'/docs/realm/author/reference/tags/img':
+  to: '/docs/realm/content/markdoc-tags/img'
+'/docs/realm/author/reference/tags/inline-svg':
+  to: '/docs/realm/content/markdoc-tags/inline-svg'
+'/docs/realm/author/reference/tags/json-schema':
+  to: '/docs/realm/content/markdoc-tags/json-schema'
+'/docs/realm/author/reference/tags/markdoc-example':
+  to: '/docs/realm/content/markdoc-tags/markdoc-example'
+'/docs/realm/author/reference/tags/openapi-code-sample':
+  to: '/docs/realm/content/markdoc-tags/openapi-code-sample'
+'/docs/realm/author/reference/tags/openapi-response-sample':
+  to: '/docs/realm/content/markdoc-tags/openapi-response-sample'
+'/docs/realm/author/reference/tags/partial':
+  to: '/docs/realm/content/markdoc-tags/partial'
+'/docs/realm/author/reference/tags/replay-openapi':
+  to: '/docs/realm/content/markdoc-tags/replay-openapi'
+'/docs/realm/author/reference/tags/table':
+  to: '/docs/realm/content/markdoc-tags/table'
+'/docs/realm/author/reference/tags/tabs':
+  to: '/docs/realm/content/markdoc-tags/tabs'
+'/docs/realm/author/reference/tags/tag-library':
+  to: '/docs/realm/content/markdoc-tags/tag-library'
+
+# Code walkthrough redirects - Files moved to /content/markdoc-tags/code-walkthrough/
+'/docs/realm/author/reference/tags/code-walkthrough/create-code-walkthrough':
+  to: '/docs/realm/content/markdoc-tags/code-walkthrough/create-code-walkthrough'
+'/docs/realm/author/reference/tags/code-walkthrough/index':
+  to: '/docs/realm/content/markdoc-tags/code-walkthrough/index'
+'/docs/realm/author/reference/tags/code-walkthrough/input':
+  to: '/docs/realm/content/markdoc-tags/code-walkthrough/input'
+'/docs/realm/author/reference/tags/code-walkthrough/step':
+  to: '/docs/realm/content/markdoc-tags/code-walkthrough/step'
+'/docs/realm/author/reference/tags/code-walkthrough/toggle':
+  to: '/docs/realm/content/markdoc-tags/code-walkthrough/toggle'
+
+# Branding redirects - Files moved to /content/branding/
+'/docs/realm/author/how-to/add-color-mode':
+  to: '/docs/realm/branding/add-color-mode'
+'/docs/realm/author/how-to/customize-styles':
+  to: '/docs/realm/branding/customize-styles'
+'/docs/realm/author/how-to/customize-color-modes':
+  to: '/docs/realm/branding/customize-color-modes'
+'/docs/realm/author/how-to/customize-fonts':
+  to: '/docs/realm/branding/customize-fonts'
+'/docs/realm/author/how-to/customize-tables':
+  to: '/docs/realm/branding/customize-tables'
+'/docs/realm/author/how-to/custom-page-templates':
+  to: '/docs/realm/branding/custom-page-templates'
+'/docs/realm/author/how-to/styling':
+  to: '/docs/realm/branding/styling'
+'/docs/realm/author/how-to/color-mode':
+  to: '/docs/realm/branding/color-mode'
+'/docs/realm/author/how-to/css-variables/common':
+  to: '/docs/realm/branding/css-variables/common'
+'/docs/realm/author/how-to/css-variables/component':
+  to: '/docs/realm/branding/css-variables/component'
+'/docs/realm/author/how-to/css-variables/api-docs':
+  to: '/docs/realm/branding/css-variables/api-docs'
+'/docs/realm/author/how-to/css-variables/index':
+  to: '/docs/realm/branding/css-variables/index'
+
+  # Navigation redirects - Files moved to /navigation/
+'/docs/realm/author/how-to/configure-nav/index':
+  to: '/docs/realm/navigation/index'
+'/docs/realm/author/how-to/configure-nav/navbar':
+  to: '/docs/realm/navigation/navbar'
+'/docs/realm/author/how-to/configure-nav/sidebar':
+  to: '/docs/realm/navigation/sidebar'
+'/docs/realm/author/how-to/configure-nav/configure-sidebar-groups':
+  to: '/docs/realm/navigation/configure-sidebar-groups'
+'/docs/realm/author/how-to/configure-nav/custom-domain':
+  to: '/docs/realm/navigation/custom-domain'
+'/docs/realm/author/how-to/configure-nav/search':
+  to: '/docs/realm/navigation/search'
+'/docs/realm/author/how-to/configure-nav/search/block-search-index':
+  to: '/docs/realm/navigation/search/block-search-index'
+'/docs/realm/author/how-to/configure-nav/search/configure-search-facets':
+  to: '/docs/realm/navigation/search/configure-search-facets'
+'/docs/realm/author/how-to/configure-nav/search/verify-site-ownership':
+  to: '/docs/realm/navigation/search/verify-site-ownership'
+'/docs/realm/author/how-to/configure-nav/multi-product':
+  to: '/docs/realm/navigation/multi-product'
+'/docs/realm/author/how-to/configure-nav/multiple-products':
+  to: '/docs/realm/navigation/multiple-products'
+'/docs/realm/author/how-to/configure-nav/navigation-buttons':
+  to: '/docs/realm/navigation/navigation-buttons'
+'/docs/realm/author/how-to/configure-nav/footer':
+  to: '/docs/realm/navigation/footer'
+'/docs/realm/author/how-to/configure-nav/toc':
+  to: '/docs/realm/navigation/toc'
+'/docs/realm/author/how-to/configure-nav/sidebars':
+  to: '/docs/realm/navigation/sidebars'
+'/docs/realm/extend/how-to/configure-search-facets':
+  to: '/docs/realm/navigation/search/configure-search-facets'
+
+# Extend redirects - Files moved from /extend/
+'/docs/realm/extend/how-to/eject-components':
+  to: '/docs/realm/customization/eject-components'
+'/docs/realm/extend/how-to/create-react-page':
+  to: '/docs/realm/customization/create-react-page'
+'/docs/realm/extend/how-to/markdoc-variables':
+  to: '/docs/realm/customization/markdoc-variables'
+'/docs/realm/extend/how-to/add-color-mode':
+  to: '/docs/realm/customization/add-color-mode'
+'/docs/realm/extend/how-to/color-mode-images':
+  to: '/docs/realm/customization/color-mode-images'
+'/docs/realm/extend/how-to/enable-source-maps':
+  to: '/docs/realm/customization/enable-source-maps'
+'/docs/realm/extend/how-to/theme-static-assets':
+  to: '/docs/realm/customization/theme-static-assets'
+'/docs/realm/extend/how-to/configure-request-values':
+  to: '/docs/realm/customization/configure-request-values'
+'/docs/realm/extend/how-to/set-path-prefix':
+  to: '/docs/realm/customization/set-path-prefix'
+'/docs/realm/extend/how-to/import-npm-library':
+  to: '/docs/realm/customization/import-npm-library'
+'/docs/realm/extend/how-to/eject-root-layout':
+  to: '/docs/realm/customization/eject-root-layout'
+'/docs/realm/extend/how-to/build-markdoc-tags':
+  to: '/docs/realm/customization/build-markdoc-tags'
+'/docs/realm/extend/how-to/build-custom-function':
+  to: '/docs/realm/customization/build-custom-function'
+'/docs/realm/extend/how-to/eject-components-tutorial':
+  to: '/docs/realm/customization/eject-components-tutorial'
+'/docs/realm/extend/how-to/eject-components-using-cli':
+  to: '/docs/realm/customization/eject-components-using-cli'
+'/docs/realm/extend/how-to/eject-components-in-reunite':
+  to: '/docs/realm/customization/eject-components-in-reunite'
+'/docs/realm/extend/how-to/react-components': 
+  to: '/docs/realm/customization/react-components'
+'/docs/realm/extend/how-to/use-in-react-page':
+  to: '/docs/realm/customization/react-components/use-in-react-page'
+'/docs/realm/extend/how-to/wrap-components':
+  to: '/docs/realm/customization/react-components/wrap-components'
+'/docs/realm/extend/how-to/list/admonition':
+  to: '/docs/realm/customization/react-components/list/admonition'
+'/docs/realm/extend/how-to/list/icons':
+  to: '/docs/realm/customization/react-components/list/icons'
+'/docs/realm/extend/how-to/list/button':
+  to: '/docs/realm/customization/react-components/list/button'
+'/docs/realm/extend/how-to/list/link':
+  to: '/docs/realm/customization/react-components/list/link'
+'/docs/realm/extend/how-to/api-functions':
+  to: '/docs/realm/customization/api-functions'
+'/docs/realm/extend/how-to/api-functions-reference':
+  to: '/docs/realm/customization/api-functions-reference'
+'/docs/realm/extend/how-to/create-api-functions':
+  to: '/docs/realm/customization/create-api-functions'
+'/docs/realm/extend/how-to/tutorials/build-markdoc-tags':
+  to: '/docs/realm/customization/tutorials/build-markdoc-tags'
+'/docs/realm/extend/how-to/tutorials/build-custom-function':
+  to: '/docs/realm/customization/tutorials/build-custom-function'
+'/docs/realm/extend/how-to/tutorials/import-npm-library':
+  to: '/docs/realm/customization/tutorials/import-npm-library'
+'/docs/realm/extend/how-to/tutorials/eject-root-layout':
+  to: '/docs/realm/customization/tutorials/eject-root-layout'
+'/docs/realm/extend/how-to/tutorials/enable-source-maps':
+  to: '/docs/realm/customization/enable-source-maps'
+'/docs/realm/extend/how-to/tutorials/theme-static-assets':
+  to: '/docs/realm/customization/theme-static-assets'
+'/docs/realm/extend/how-to/tutorials/configure-request-values':
+  to: '/docs/realm/customization/configure-request-values'
+'/docs/realm/extend/how-to/tutorials/set-path-prefix':
+  to: '/docs/realm/customization/set-path-prefix'
+
+# Setup RBAC redirects - Files moved from setup paths to /access/
+'/docs/realm/setup/how-to/rbac':
+  to: '/docs/realm/access/index'
+'/docs/realm/setup/how-to/rbac/index':
+  to: '/docs/realm/access/index'
+'/docs/realm/setup/how-to/rbac/links-and-groups-permissions':
+  to: '/docs/realm/access/links-and-groups-permissions'
+'/docs/realm/setup/how-to/rbac/page-permissions':
+  to: '/docs/realm/access/page-permissions'
+'/docs/realm/setup/how-to/rbac/pattern-access':
+  to: '/docs/realm/access/pattern-access'
+'/docs/realm/setup/how-to/rbac/projects':
+  to: '/docs/realm/access/projects'
+'/docs/realm/setup/concepts/rbac':
+  to: '/docs/realm/access/rbac'
+'/docs/realm/setup/concepts/roles':
+  to: '/docs/realm/access/roles'
