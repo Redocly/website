@@ -49,7 +49,7 @@ sidebar:
 
 For more information about sidebars:
 
-- learn more about [navigation in Redocly projects](../author/concepts/navigation.md)
-- read the article collection on [configuring navigation elements](..//author/how-to/configure-nav/index.md)
-- the [sidebars.yaml reference](../author/reference/sidebars.md) shows the sidebar configuration syntax and examples
+- learn more about [navigation in Redocly projects](../navigation/navigation.md)
+- read the article collection on [configuring navigation elements](../navigation/index.md)
+- the [sidebars.yaml reference](../navigation/sidebars.md) shows the sidebar configuration syntax and examples
 

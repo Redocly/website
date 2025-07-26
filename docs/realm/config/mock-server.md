@@ -45,7 +45,7 @@ By default, the mock server is enabled for each [API description](https://redocl
 - errorIfForcedExampleNotFound
 - boolean
 -
-  Controls the response behavior of the mock server when a [forced example](../author/how-to/configure-mock-server.md#force-specific-examples) is not found.  
+  Controls the response behavior of the mock server when a [forced example](../content/api-docs/configure-mock-server.md#understand-strict-examples) is not found.  
 
   If `true`, the mock server returns an error. If `false`, the mock server falls back to any other example defined for that operation.
 
@@ -87,6 +87,6 @@ mockServer:
 
 ## Resources
 
-- Learn to [Configure the mock server](../author/how-to/configure-mock-server.md) and modify the behavior or appearance.
+- Learn to [Configure the mock server](../content/api-docs/configure-mock-server.md) and modify the behavior or appearance.
 - Discover the [Replay API explorer](../setup/concepts/replay.md) used to call the mock server.
-- [Add OpenAPI descriptions](../author/how-to/add-openapi-docs.md) to enable a mock server on the corresponding API reference.
+- [Add OpenAPI descriptions](../content/api-docs/add-openapi-docs.md) to enable a mock server on the corresponding API reference.

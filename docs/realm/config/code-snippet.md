@@ -205,13 +205,13 @@ codeSnippet:
 
 ## Customizing labels and tooltips
 
-Translation keys provide customization options for code snippet control texts. For complete details, refer to the [Translation Keys Reference](../author/reference/translation-keys.md).
+Translation keys provide customization options for code snippet control texts. For complete details, refer to the [Translation Keys Reference](../content/localization/translation-keys.md).
 
 ## Resources
 
 - Use the [codeSnippet Markdoc tag](https://redocly.com/docs/learn-markdoc/tags/code-snippet) to display code snippets loaded from local files.
 - To configure the feedback mechanism that appears on all pages in your project by default, see the [`feedback`](./feedback.md) reference documentation.
-- Follow step-by-step instructions for configuring code snippets in the [Configure code snippets](../author/how-to/configure-code-snippets.md) how-to documentation.
+- Follow step-by-step instructions for configuring code snippets in the [Configure code snippets](../content/configure-code-snippets.md) how-to documentation.
 - Learn more about the report feedback mechanism that is included in all code snippets by default, see the [Feedback](../setup/concepts/feedback.md) concept documentation.
 - Use [front matter](./front-matter-config.md) to configure code snippets on individual pages.
 - Explore other [configuration options](./index.md) for your project.

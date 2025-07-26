@@ -1,0 +1,404 @@
+'/author/reference/supported-file-types':
+  to: '/author/concepts/project-structure'
+'/get-started/api-reference-starter':
+  to: '/get-started'
+'/author/how-to/user-profile-menu':
+  to: '/reunite/user-profile-menu'
+'/setup/concepts/scorecard':
+  to: '/reunite/project/scorecard'
+'/setup/how-to/configure-scorecard':
+  to: '/reunite/project/configure-scorecard'
+'/setup/how-to/ignore-link-checker':
+  to: '/reunite/project/ignore-link-checker'
+'/setup/reference/telemetry':
+  to: '/reunite/project/telemetry'
+# Author how-to redirects
+'/author/how-to/manage-pull-requests':
+  to: '/reunite/project/pull-request/manage-pull-requests'
+'/author/how-to/open-pull-request':
+  to: '/reunite/project/pull-request/open-pull-request'
+'/author/how-to/review-pull-request':
+  to: '/reunite/project/pull-request/review-pull-request'
+'/author/how-to/switch-between-projects':
+  to: '/reunite/project/switch-between-projects'
+'/author/how-to/use-editor':
+  to: '/reunite/project/use-editor'
+'/author/how-to/use-previews':
+  to: '/reunite/project/use-previews'
+'/author/how-to/use-webview':
+  to: '/reunite/project/use-webview'
+# Author reference redirects
+'/author/reference/keyboard-shortcuts':
+  to: '/reunite/project/reference/keyboard-shortcuts'
+# Setup concepts redirects
+'/setup/concepts/sso':
+  to: '/reunite/organization/sso/sso'
+'/setup/concepts/teams':
+  to: '/reunite/organization/teams'
+# Setup how-to redirects
+'/setup/how-to/access-compliance-reports':
+  to: '/reunite/organization/access-compliance-reports'
+'/setup/how-to/add-idp':
+  to: '/reunite/organization/sso/add-idp'
+'/setup/how-to/api-keys':
+  to: '/reunite/organization/api-keys'
+'/setup/how-to/configure-azure-ad':
+  to: '/reunite/organization/sso/configure-azure-ad'
+'/setup/how-to/configure-google-sso':
+  to: '/reunite/organization/sso/configure-google-sso'
+'/setup/how-to/configure-sso':
+  to: '/reunite/organization/sso/configure-sso'
+'/setup/how-to/manage-orgs':
+  to: '/reunite/organization/manage-orgs'
+'/setup/how-to/manage-people':
+  to: '/reunite/organization/manage-people'
+'/setup/how-to/manage-projects':
+  to: '/reunite/project/manage-projects'
+'/setup/how-to/manage-teams':
+  to: '/reunite/organization/manage-teams'
+# Setup feedback redirects
+'/setup/how-to/feedback/view-export-data':
+  to: '/reunite/project/view-export-data'
+# Setup git-providers redirects
+'/setup/how-to/git-providers/azure-devops':
+  to: '/reunite/project/connect-git/azure-devops'
+'/setup/how-to/git-providers/bitbucket-cloud':
+  to: '/reunite/project/connect-git/bitbucket-cloud'
+'/setup/how-to/git-providers/connect-git-provider':
+  to: '/reunite/project/connect-git/connect-git-provider'
+'/setup/how-to/git-providers/github':
+  to: '/reunite/project/connect-git/github'
+'/setup/how-to/git-providers/gitlab':
+  to: '/reunite/project/connect-git/gitlab'
+'/setup/how-to/git-providers/manage-self-hosted':
+  to: '/reunite/project/connect-git/manage-self-hosted'
+'/setup/how-to/git-providers/self-hosted/github':
+  to: '/reunite/project/connect-git/self-hosted/github'
+'/setup/how-to/git-providers/self-hosted/gitlab':
+  to: '/reunite/project/connect-git/self-hosted/gitlab'
+# Setup remote-content redirects
+'/setup/how-to/remote-content/edit-remote-content-folder':
+  to: '/reunite/project/remote-content/edit-remote-content-folder'
+'/setup/how-to/remote-content/from-azure-devops':
+  to: '/reunite/project/remote-content/from-azure-devops'
+'/setup/how-to/remote-content/from-bitbucket-cloud':
+  to: '/reunite/project/remote-content/from-bitbucket-cloud'
+'/setup/how-to/remote-content/from-github':
+  to: '/reunite/project/remote-content/from-github'
+'/setup/how-to/remote-content/from-gitlab':
+  to: '/reunite/project/remote-content/from-gitlab'
+'/setup/how-to/remote-content/index':
+  to: '/reunite/project/remote-content/index'
+'/setup/how-to/remote-content/manually-sync-remote-content':
+  to: '/reunite/project/remote-content/manually-sync-remote-content'
+'/setup/how-to/remote-content/push':
+  to: '/reunite/project/remote-content/push'
+'/setup/how-to/remote-content/url':
+  to: '/reunite/project/remote-content/url'
+# Setup respect-monitoring redirects
+'/setup/respect-monitoring/configure-respect-monitoring':
+  to: '/reunite/project/respect-monitoring/configure-respect-monitoring'
+'/setup/respect-monitoring/index':
+  to: '/reunite/project/respect-monitoring/index'
+'/setup/respect-monitoring/manage-respect-monitoring':
+  to: '/reunite/project/respect-monitoring/manage-respect-monitoring'
+
+# Content reorganization redirects - Files moved to /content/
+'/author/how-to/add-diagram':
+  to: '/content/add-diagram'
+'/author/how-to/add-redirects':
+  to: '/content/add-redirects'
+'/author/concepts/categories':
+  to: '/content/categories'
+'/author/how-to/configure-code-snippets':
+  to: '/content/configure-code-snippets'
+'/author/how-to/links':
+  to: '/content/links'
+'/author/concepts/project-structure':
+  to: '/content/project-structure'
+'/setup/how-to/realm-version':
+  to: '/content/realm-version'
+'/author/how-to/reuse-content':
+  to: '/content/reuse-content'
+'/author/concepts/static-assets':
+  to: '/content/static-assets'
+'/author/reference/versions-config':
+  to: '/content/versions-config'
+'/author/how-to/versions':
+  to: '/content/versions'
+
+# API documentation redirects - Files moved to /content/api-docs/
+'/author/how-to/generate-asyncapi-docs':
+  to: '/content/api-docs/add-asyncapi-docs'
+'/author/how-to/add-catalog':
+  to: '/content/api-docs/add-catalog'
+'/author/how-to/add-graphql-docs':
+  to: '/content/api-docs/add-graphql-docs'
+'/author/how-to/add-openapi-docs':
+  to: '/content/api-docs/add-openapi-docs'
+'/author/how-to/add-soap-docs':
+  to: '/content/api-docs/add-soap-docs'
+'/author/how-to/configure-mock-server':
+  to: '/content/api-docs/configure-mock-server'
+'/author/reference/replay':
+  to: '/content/api-docs/replay'
+'/author/how-to/try-apis-with-mock-server':
+  to: '/content/api-docs/try-apis-with-mock-server'
+
+# OpenAPI extensions redirects - Files moved to /content/api-docs/openapi-extensions/
+'/author/reference/openapi-extensions/index':
+  to: '/content/api-docs/openapi-extensions/index'
+'/author/reference/openapi-extensions/x-additional-properties-name':
+  to: '/content/api-docs/openapi-extensions/x-additional-properties-name'
+'/author/reference/openapi-extensions/x-assertion-type':
+  to: '/content/api-docs/openapi-extensions/x-assertion-type'
+'/author/reference/openapi-extensions/x-badges':
+  to: '/content/api-docs/openapi-extensions/x-badges'
+'/author/reference/openapi-extensions/x-code-samples':
+  to: '/content/api-docs/openapi-extensions/x-code-samples'
+'/author/reference/openapi-extensions/x-display-name':
+  to: '/content/api-docs/openapi-extensions/x-display-name'
+'/author/reference/openapi-extensions/x-enum-descriptions':
+  to: '/content/api-docs/openapi-extensions/x-enum-descriptions'
+'/author/reference/openapi-extensions/x-examples':
+  to: '/content/api-docs/openapi-extensions/x-examples'
+'/author/reference/openapi-extensions/x-hide-replay':
+  to: '/content/api-docs/openapi-extensions/x-hide-replay'
+'/author/reference/openapi-extensions/x-metadata':
+  to: '/content/api-docs/openapi-extensions/x-metadata'
+'/author/reference/openapi-extensions/x-nullable':
+  to: '/content/api-docs/openapi-extensions/x-nullable'
+'/author/reference/openapi-extensions/x-rbac':
+  to: '/content/api-docs/openapi-extensions/x-rbac'
+'/author/reference/openapi-extensions/x-servers':
+  to: '/content/api-docs/openapi-extensions/x-servers'
+'/author/reference/openapi-extensions/x-summary':
+  to: '/content/api-docs/openapi-extensions/x-summary'
+'/author/reference/openapi-extensions/x-tag-groups':
+  to: '/content/api-docs/openapi-extensions/x-tag-groups'
+'/author/reference/openapi-extensions/x-tags':
+  to: '/content/api-docs/openapi-extensions/x-tags'
+'/author/reference/openapi-extensions/x-trait-tag':
+  to: '/content/api-docs/openapi-extensions/x-trait-tag'
+'/author/reference/openapi-extensions/x-use-pkce':
+  to: '/content/api-docs/openapi-extensions/x-use-pkce'
+'/author/reference/openapi-extensions/x-webhooks':
+  to: '/content/api-docs/openapi-extensions/x-webhooks'
+
+# Localization redirects - Files moved to /content/localization/
+'/setup/concepts/concept-l10n':
+  to: '/content/localization/concept-l10n'
+'/author/how-to/config-l10n/customize-styles-for-locale':
+  to: '/content/localization/customize-styles-for-locale'
+'/author/how-to/config-l10n/display-current-locale':
+  to: '/content/localization/display-current-locale'
+'/author/how-to/config-l10n/index':
+  to: '/content/localization/index'
+'/author/how-to/config-l10n/localize-content':
+  to: '/content/localization/localize-content'
+'/author/how-to/config-l10n/localize-labels':
+  to: '/content/localization/localize-labels'
+'/author/how-to/config-l10n/set-up-l10n-folder':
+  to: '/content/localization/set-up-l10n-folder'
+'/author/reference/translation-keys':
+  to: '/content/localization/translation-keys'
+
+# Markdoc functions redirects - Files moved to /content/markdoc-functions/
+'/author/reference/functions/built-in':
+  to: '/content/markdoc-functions/built-in'
+'/author/reference/functions/concat':
+  to: '/content/markdoc-functions/concat'
+'/author/reference/functions/includes':
+  to: '/content/markdoc-functions/includes'
+'/author/reference/functions/index':
+  to: '/content/markdoc-functions/index'
+
+# Markdoc tags redirects - Files moved to /content/markdoc-tags/
+'/author/reference/tags/admonition':
+  to: '/content/markdoc-tags/admonition'
+'/author/reference/tags/cards':
+  to: '/content/markdoc-tags/cards'
+'/author/reference/tags/code-snippet':
+  to: '/content/markdoc-tags/code-snippet'
+'/author/reference/tags/img':
+  to: '/content/markdoc-tags/img'
+'/author/reference/tags/inline-svg':
+  to: '/content/markdoc-tags/inline-svg'
+'/author/reference/tags/json-schema':
+  to: '/content/markdoc-tags/json-schema'
+'/author/reference/tags/markdoc-example':
+  to: '/content/markdoc-tags/markdoc-example'
+'/author/reference/tags/openapi-code-sample':
+  to: '/content/markdoc-tags/openapi-code-sample'
+'/author/reference/tags/openapi-response-sample':
+  to: '/content/markdoc-tags/openapi-response-sample'
+'/author/reference/tags/partial':
+  to: '/content/markdoc-tags/partial'
+'/author/reference/tags/replay-openapi':
+  to: '/content/markdoc-tags/replay-openapi'
+'/author/reference/tags/table':
+  to: '/content/markdoc-tags/table'
+'/author/reference/tags/tabs':
+  to: '/content/markdoc-tags/tabs'
+'/author/reference/tags/tag-library':
+  to: '/content/markdoc-tags/tag-library'
+
+# Code walkthrough redirects - Files moved to /content/markdoc-tags/code-walkthrough/
+'/author/reference/tags/code-walkthrough/create-code-walkthrough':
+  to: '/content/markdoc-tags/code-walkthrough/create-code-walkthrough'
+'/author/reference/tags/code-walkthrough/index':
+  to: '/content/markdoc-tags/code-walkthrough/index'
+'/author/reference/tags/code-walkthrough/input':
+  to: '/content/markdoc-tags/code-walkthrough/input'
+'/author/reference/tags/code-walkthrough/step':
+  to: '/content/markdoc-tags/code-walkthrough/step'
+'/author/reference/tags/code-walkthrough/toggle':
+  to: '/content/markdoc-tags/code-walkthrough/toggle'
+
+# Branding redirects - Files moved to /content/branding/
+'/author/how-to/add-color-mode':
+  to: '/branding/add-color-mode'
+'/author/how-to/customize-styles':
+  to: '/branding/customize-styles'
+'/author/how-to/customize-color-modes':
+  to: '/branding/customize-color-modes'
+'/author/how-to/customize-fonts':
+  to: '/branding/customize-fonts'
+'/author/how-to/customize-tables':
+  to: '/branding/customize-tables'
+'/author/how-to/custom-page-templates':
+  to: '/branding/custom-page-templates'
+'/author/how-to/styling':
+  to: '/branding/styling'
+'/author/how-to/color-mode':
+  to: '/branding/color-mode'
+'/author/how-to/css-variables/common':
+  to: '/branding/css-variables/common'
+'/author/how-to/css-variables/component':
+  to: '/branding/css-variables/component'
+'/author/how-to/css-variables/api-docs':
+  to: '/branding/css-variables/api-docs'
+'/author/how-to/css-variables/index':
+  to: '/branding/css-variables/index'
+
+  # Navigation redirects - Files moved to /navigation/
+'/author/how-to/configure-nav/index':
+  to: '/navigation/index'
+'/author/how-to/configure-nav/navbar':
+  to: '/navigation/navbar'
+'/author/how-to/configure-nav/sidebar':
+  to: '/navigation/sidebar'
+'/author/how-to/configure-nav/configure-sidebar-groups':
+  to: '/navigation/configure-sidebar-groups'
+'/author/how-to/configure-nav/custom-domain':
+  to: '/navigation/custom-domain'
+'/author/how-to/configure-nav/search':
+  to: '/navigation/search'
+'/author/how-to/configure-nav/search/block-search-index':
+  to: '/navigation/search/block-search-index'
+'/author/how-to/configure-nav/search/configure-search-facets':
+  to: '/navigation/search/configure-search-facets'
+'/author/how-to/configure-nav/search/verify-site-ownership':
+  to: '/navigation/search/verify-site-ownership'
+'/author/how-to/configure-nav/multi-product':
+  to: '/navigation/multi-product'
+'/author/how-to/configure-nav/multiple-products':
+  to: '/navigation/multiple-products'
+'/author/how-to/configure-nav/navigation-buttons':
+  to: '/navigation/navigation-buttons'
+'/author/how-to/configure-nav/footer':
+  to: '/navigation/footer'
+'/author/how-to/configure-nav/toc':
+  to: '/navigation/toc'
+'/author/how-to/configure-nav/sidebars':
+  to: '/navigation/sidebars'
+'/extend/how-to/configure-search-facets':
+  to: '/navigation/search/configure-search-facets'
+
+# Extend redirects - Files moved from /extend/
+'/extend/how-to/eject-components':
+  to: '/customization/eject-components'
+'/extend/how-to/create-react-page':
+  to: '/customization/create-react-page'
+'/extend/how-to/markdoc-variables':
+  to: '/customization/markdoc-variables'
+'/extend/how-to/add-color-mode':
+  to: '/customization/add-color-mode'
+'/extend/how-to/color-mode-images':
+  to: '/customization/color-mode-images'
+'/extend/how-to/enable-source-maps':
+  to: '/customization/enable-source-maps'
+'/extend/how-to/theme-static-assets':
+  to: '/customization/theme-static-assets'
+'/extend/how-to/configure-request-values':
+  to: '/customization/configure-request-values'
+'/extend/how-to/set-path-prefix':
+  to: '/customization/set-path-prefix'
+'/extend/how-to/import-npm-library':
+  to: '/customization/import-npm-library'
+'/extend/how-to/eject-root-layout':
+  to: '/customization/eject-root-layout'
+'/extend/how-to/build-markdoc-tags':
+  to: '/customization/build-markdoc-tags'
+'/extend/how-to/build-custom-function':
+  to: '/customization/build-custom-function'
+'/extend/how-to/eject-components-tutorial':
+  to: '/customization/eject-components-tutorial'
+'/extend/how-to/eject-components-using-cli':
+  to: '/customization/eject-components-using-cli'
+'/extend/how-to/eject-components-in-reunite':
+  to: '/customization/eject-components-in-reunite'
+'/extend/how-to/react-components': 
+  to: '/customization/react-components'
+'/extend/how-to/use-in-react-page':
+  to: '/customization/react-components/use-in-react-page'
+'/extend/how-to/wrap-components':
+  to: '/customization/react-components/wrap-components'
+'/extend/how-to/list/admonition':
+  to: '/customization/react-components/list/admonition'
+'/extend/how-to/list/icons':
+  to: '/customization/react-components/list/icons'
+'/extend/how-to/list/button':
+  to: '/customization/react-components/list/button'
+'/extend/how-to/list/link':
+  to: '/customization/react-components/list/link'
+'/extend/how-to/api-functions':
+  to: '/customization/api-functions'
+'/extend/how-to/api-functions-reference':
+  to: '/customization/api-functions-reference'
+'/extend/how-to/create-api-functions':
+  to: '/customization/create-api-functions'
+'/extend/how-to/tutorials/build-markdoc-tags':
+  to: '/customization/tutorials/build-markdoc-tags'
+'/extend/how-to/tutorials/build-custom-function':
+  to: '/customization/tutorials/build-custom-function'
+'/extend/how-to/tutorials/import-npm-library':
+  to: '/customization/tutorials/import-npm-library'
+'/extend/how-to/tutorials/eject-root-layout':
+  to: '/customization/tutorials/eject-root-layout'
+'/extend/how-to/tutorials/enable-source-maps':
+  to: '/customization/enable-source-maps'
+'/extend/how-to/tutorials/theme-static-assets':
+  to: '/customization/theme-static-assets'
+'/extend/how-to/tutorials/configure-request-values':
+  to: '/customization/configure-request-values'
+'/extend/how-to/tutorials/set-path-prefix':
+  to: '/customization/set-path-prefix'
+
+# Setup RBAC redirects - Files moved from setup paths to /access/
+'/setup/how-to/rbac':
+  to: '/access/index'
+'/setup/how-to/rbac/index':
+  to: '/access/index'
+'/setup/how-to/rbac/links-and-groups-permissions':
+  to: '/access/links-and-groups-permissions'
+'/setup/how-to/rbac/page-permissions':
+  to: '/access/page-permissions'
+'/setup/how-to/rbac/pattern-access':
+  to: '/access/pattern-access'
+'/setup/how-to/rbac/projects':
+  to: '/access/projects'
+'/setup/concepts/rbac':
+  to: '/access/rbac'
+'/setup/concepts/roles':
+  to: '/access/roles'

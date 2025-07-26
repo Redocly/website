@@ -28,7 +28,7 @@ When you select this toggle, the page lists all preview deploys.
 Preview deploys trigger each time you commit content to a branch.
 Website previews are available until you merge the branch they were built from.
 
-For more information on previews, see: [Use previews: From the Deploys page](../../author/how-to/use-previews.md#from-the-deploys-page).
+For more information on previews, see: [Use previews: From the Deploys page](../../reunite/project/use-previews.md#from-the-deploys-page).
 
 ## Deploy status page
 
@@ -66,6 +66,6 @@ The CI/CD jobs run by the deploy process:
 
 ## Related links
 
-* [Projects](./projects.md)
-* [Connect a Git provider](../how-to/git-providers/connect-git-provider.md)
-* [Set a custom domain](../how-to/custom-domain.md)
+* [Projects](../../reunite/project/projects.md)
+* [Connect a Git provider](../../reunite/project/connect-git/connect-git-provider.md)
+* [Set a custom domain](../../navigation/custom-domain.md)

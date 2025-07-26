@@ -12,7 +12,7 @@ plans:
 # `redirects`
 
 Redirects allow you to change which resource a URL points to.
-Read about how to [manage redirects](../author/how-to/add-redirects.md) for more explanation and examples.
+Read about how to [manage redirects](../content/add-redirects.md) for more explanation and examples.
 The configuration options are detailed below.
 
 ## Options
@@ -83,4 +83,4 @@ redirects:
 
 ## Resources
 
-- Read more about [how to manage redirects](../author/how-to/add-redirects.md).
+- Read more about [how to manage redirects](../content/add-redirects.md).

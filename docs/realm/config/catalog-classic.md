@@ -12,7 +12,7 @@ plans:
 Organize your content into a catalog that users can filter and search.
 You can configure multiple catalogs and set the link text, description, and filters.
 
-![Screenshot of a catalog](../author/concepts/images/catalog.png)
+![Screenshot of a catalog](../content/images/catalog.png)
 
 ## Options
 
@@ -84,7 +84,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 - filters
 - [[Filter](#filter-object)]
 - List of filter configurations which allows for quicker discovery.
-  See [Categories](../author/concepts/categories.md) for more information on how to categorize content for filtering.
+  See [Categories](../content/categories.md) for more information on how to categorize content for filtering.
 
 ---
 
@@ -289,10 +289,10 @@ catalogClassic:
 
 - View the configuration options available for translating content in the [localization](./l10n.md) reference documentation.
 - See the [navbar](./navbar.md) configuration documentation to see the format for adding a link to your catalog to the navbar.
-- Use [x-metadata](../author/reference/openapi-extensions/x-metadata.md) to make your API descriptions filterable.
+- Use [x-metadata](../content/api-docs/openapi-extensions/x-metadata.md) to make your API descriptions filterable.
 
 ## Resources
 
-- Learn how to add a classic version of the catalog in the [Add a classic catalog](../author/how-to/add-classic-catalog.md) how-to documentation.
+- Learn how to add a classic version of the catalog in the [Add a classic catalog](../content/api-docs/add-classic-catalog.md) how-to documentation.
 - When an API description contains metadata, and you want to exclude the metadata from the API reference documentation, use the [hideInfoMetadata](./openapi/hide-info-metadata.md) configuration option.
-- Follow steps to [configure navigation on the navbar](../author/how-to/configure-nav/navbar.md) to include your catalog link.
+- Follow steps to [configure navigation on the navbar](../navigation/navbar.md) to include your catalog link.

@@ -2,7 +2,7 @@
 
 Render SOAP documentation in a project. This plugin uses a <a href="https://github.com/vpulim/node-soap" target="_blank">SOAP library</a> to generate documentation from your WSDL files.
 
-This is a plugin reference page. A setup guide can be found in the [How-to section](../../../../author/how-to/add-soap-docs.md)
+This is a plugin reference page. A setup guide can be found in the [How-to section](../../../../content/api-docs/add-soap-docs.md)
 
 ## NPM package
 
@@ -15,5 +15,5 @@ To be recognized, the specification files must have a `.wsdl` extension.
 
 ## Resources
 
-* Setup guide: Learn how to [generate SOAP documentation](../../../../author/how-to/add-soap-docs.md).
+* Setup guide: Learn how to [generate SOAP documentation](../../../../content/api-docs/add-soap-docs.md).
 * Example WSDL file: View a [SOAP WSDL example](https://www.tutorialspoint.com/wsdl/wsdl_example.htm).

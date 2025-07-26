@@ -168,14 +168,11 @@ To add a comment form:
 
             ![Mood feedback form with comment](../../images/mood-with-comment.png)
 
-## Related how-tos
-
-- Learn how to customize how code snippets display in your documentation in [Configure code snippets](../../../author/how-to/configure-code-snippets.md).
-- Learn how to customize how the feedback form displays in your documentation in [Configure and view feedback](index.md).
-- Find out where all the data that is collected from your users is being sent and how you can view it in [View and export feedback data](view-export-data.md).
-
 ## Resources
 
+- Learn how to customize how code snippets display in your documentation in [Configure code snippets](../../../content/configure-code-snippets.md).
+- Learn how to customize how the feedback form displays in your documentation in [Configure and view feedback](index.md).
+- Find out where all the data that is collected from your users is being sent and how you can view it in [View and export feedback data](../../../reunite/project/view-export-data.md).
 - Learn more about the different feedback forms available in the [Feedback concept](../../concepts/feedback.md).
 - See different configuration options and examples in the [Feedback reference](../../../config/feedback.md).
 - Discover the different ways you can customize code samples in your documentation in the [CodeSnippet reference](../../../config/code-snippet.md).
