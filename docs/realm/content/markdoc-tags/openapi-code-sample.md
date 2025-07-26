@@ -12,7 +12,7 @@ With `operationId`:
 {% markdoc-example %}
   ```markdoc {% process=false title="hello" %}
   {% openapi-code-sample
-    descriptionFile="../../../openapi-files/redocly-museum.yaml"
+    descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="getMuseumHours"
   /%}
   ```
@@ -23,7 +23,7 @@ With `pointer`:
 {% markdoc-example %}
   ```markdoc {% process=false %}
   {% openapi-code-sample
-    descriptionFile="../../../openapi-files/redocly-museum.yaml"
+    descriptionFile="../../openapi-files/redocly-museum.yaml"
     pointer="/paths/~1museum-hours/get"
   /%}
   ```
@@ -120,7 +120,7 @@ For example:
 {% markdoc-example %}
   ``` {% process=false %}
   {% openapi-code-sample
-    descriptionFile="../../../openapi-files/redocly-museum.yaml"
+    descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="createSpecialEvent"
     environment="https://api.fake-museum-example.com/v1"
     environments={
@@ -141,14 +141,14 @@ By default, the tag renders a code sample in multiple languages for a specific A
 {% markdoc-example %}
   ``` {% process=false %}
   {% openapi-code-sample
-    descriptionFile="../../../openapi-files/redocly-museum.yaml"
+    descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="createSpecialEvent"
   /%}
   ```
 {% /markdoc-example %}
 
 {% openapi-code-sample
-  descriptionFile="../../../openapi-files/redocly-museum.yaml"
+  descriptionFile="../../openapi-files/redocly-museum.yaml"
   operationId="createSpecialEvent"
 /%}
 
@@ -160,7 +160,7 @@ The following example limits the code sample to JavaScript:
 {% markdoc-example %}
   ``` {% process=false %}
   {% openapi-code-sample
-    descriptionFile="../../../openapi-files/redocly-museum.yaml"
+    descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="createSpecialEvent"
     language="JavaScript"
   /%}
@@ -168,7 +168,7 @@ The following example limits the code sample to JavaScript:
 {% /markdoc-example %}
 
 {% openapi-code-sample
-  descriptionFile="../../../openapi-files/redocly-museum.yaml"
+  descriptionFile="../../openapi-files/redocly-museum.yaml"
   operationId="createSpecialEvent"
   language="JavaScript"
 /%}
@@ -181,7 +181,7 @@ The following example includes pre-defined parameters and environment variables.
 {% markdoc-example %}
   ``` {% process=false %}
   {% openapi-code-sample
-    descriptionFile="../../../openapi-files/redocly-museum.yaml"
+    descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="deleteSpecialEvent"
     language="curl"
     parameters={
@@ -201,7 +201,7 @@ The following example includes pre-defined parameters and environment variables.
 {% /markdoc-example %}
 
 {% openapi-code-sample
-  descriptionFile="../../../openapi-files/redocly-museum.yaml"
+  descriptionFile="../../openapi-files/redocly-museum.yaml"
   operationId="deleteSpecialEvent"
   language="curl"
   parameters={

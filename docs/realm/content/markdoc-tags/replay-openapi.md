@@ -17,7 +17,7 @@ Using `operationId`:
 {% markdoc-example %}
   ```markdoc {% process=false %}
   {% replay-openapi
-    descriptionFile="../../../openapi-files/redocly-museum.yaml"
+    descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="getMuseumHours"
   /%}
   ```
@@ -28,7 +28,7 @@ Using `pointer`:
 {% markdoc-example %}
   ``` {% process=false %}
   {% replay-openapi
-    descriptionFile="../../../openapi-files/redocly-museum.yaml"
+    descriptionFile="../../openapi-files/redocly-museum.yaml"
     pointer="/paths/~1museum-hours/get"
   /%}
   ```
@@ -114,7 +114,7 @@ The Redocly OpenAPI tag can render example payloads defined in the OpenAPI descr
 {% markdoc-example %}
   ``` {% process=false %}
   {% replay-openapi
-    descriptionFile="../../../openapi-files/redocly-museum.yaml"
+    descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="buyMuseumTickets"
     exampleKey="event_entry"
   /%}
@@ -122,7 +122,7 @@ The Redocly OpenAPI tag can render example payloads defined in the OpenAPI descr
 {% /markdoc-example %}
 
 {% replay-openapi
-  descriptionFile="../../../openapi-files/redocly-museum.yaml"
+  descriptionFile="../../openapi-files/redocly-museum.yaml"
   operationId="buyMuseumTickets"
   exampleKey="event_entry"
 /%}
@@ -134,7 +134,7 @@ You can pre-fill parameter values in your query and request header, as in the fo
 {% markdoc-example %}
   ``` {% process=false %}
   {% replay-openapi
-    descriptionFile="../../../openapi-files/redocly-museum.yaml"
+    descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="listSpecialEvents"
     parameters={
       query: {
@@ -149,7 +149,7 @@ You can pre-fill parameter values in your query and request header, as in the fo
 {% /markdoc-example %}
 
 {% replay-openapi
-  descriptionFile="../../../openapi-files/redocly-museum.yaml"
+  descriptionFile="../../openapi-files/redocly-museum.yaml"
   operationId="listSpecialEvents"
   parameters={
     query: {
@@ -168,7 +168,7 @@ The `requestBody` attribute allows you to define example payloads directly in th
 {% markdoc-example %}
   ``` {% process=false %}
   {% replay-openapi
-    descriptionFile="../../../openapi-files/redocly-museum.yaml"
+    descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="createSpecialEvent"
     requestBody={
       name: "Find the museum curator's hat",
@@ -182,7 +182,7 @@ The `requestBody` attribute allows you to define example payloads directly in th
 {% /markdoc-example %}
 
 {% replay-openapi
-  descriptionFile="../../../openapi-files/redocly-museum.yaml"
+  descriptionFile="../../openapi-files/redocly-museum.yaml"
   operationId="createSpecialEvent"
   requestBody={
     name: "Find the museum curator's hat",
@@ -200,7 +200,7 @@ You can use environment variables to add values that resolve to the example payl
 {% markdoc-example %}
   ``` {% process=false %}
   {% replay-openapi
-    descriptionFile="../../../openapi-files/redocly-museum.yaml"
+    descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="updateSpecialEvent"
     environment="Mock server"
     environments={
@@ -218,7 +218,7 @@ You can use environment variables to add values that resolve to the example payl
 {% /markdoc-example %}
 
 {% replay-openapi
-  descriptionFile="../../../openapi-files/redocly-museum.yaml"
+  descriptionFile="../../openapi-files/redocly-museum.yaml"
   operationId="updateSpecialEvent"
   environment="Mock server"
   environments={

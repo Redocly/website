@@ -46,7 +46,7 @@ To determine the component to eject using Google Chrome developer tools do the f
 
     {% img
       alt="Find data component name"
-      src="../../images/find-data-component-name.png"
+      src="../images/find-data-component-name.png"
       height=400
       withLightbox=true
     /%}

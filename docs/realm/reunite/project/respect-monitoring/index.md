@@ -23,11 +23,11 @@ Respect Monitoring runs the following automatic checks against the provided Open
 
 You can preview a workflow's response in the pull request checks before you merge it with the main branch and deploy a production build.
 
-{% img alt="Screenshot of pull request checks with Respect Monitoring check" srcSet="../images/respect-monitoring-pr-checks.png light, ../images/respect-monitoring-pr-checks-dark.png dark" withLightbox=true /%}
+{% img alt="Screenshot of pull request checks with Respect Monitoring check" srcSet="./images/respect-monitoring-pr-checks.png light, ./images/respect-monitoring-pr-checks-dark.png dark" withLightbox=true /%}
 
 After you save your Arazzo Descriptions to your project, configure Respect Monitoring in your `redocly.yaml` file, and deploy a production build, Reunite's Respect Monitoring page displays the results of each Arazzo workflow in a chart.
 
-{% img alt="Respect Monitoring chart" srcSet="../images/respect-monitoring-chart.png light, ../images/respect-monitoring-chart-dark.png dark" withLightbox=true /%}
+{% img alt="Respect Monitoring chart" srcSet="./images/respect-monitoring-chart.png light, ./images/respect-monitoring-chart-dark.png dark" withLightbox=true /%}
 
 This chart continuously updates according to the frequency you set in the `interval` option for the `trigger` object in your `redocly.yaml` file.
 You can also subscribe to notifications to receive alerts in real-time when Respect Monitoring workflow jobs fail or succeed.

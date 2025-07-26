@@ -108,7 +108,7 @@ Additional information and syntax: [JSON Schema tag](./json-schema.md)
 
 {% json-schema
   schema={
-    "$ref": "../../../openapi-files/redocly-museum.yaml#/components/schemas/UpdateSpecialEventRequest"
+    "$ref": "../../openapi-files/redocly-museum.yaml#/components/schemas/UpdateSpecialEventRequest"
   }
 /%}
 
@@ -139,7 +139,7 @@ Use the OpenAPI code sample tag to render a code sample for an API operation fro
 Additional information and syntax: [OpenAPI code sample tag](./openapi-code-sample.md)
 
 {% openapi-code-sample
-  descriptionFile="../../../openapi-files/redocly-museum.yaml"
+  descriptionFile="../../openapi-files/redocly-museum.yaml"
   operationId="deleteSpecialEvent"
   language="curl"
   parameters={
@@ -175,7 +175,7 @@ Additional information and syntax: [Replay OpenAPI tag](replay-openapi.md)
 **Example Replay OpenAPI element:**
 
 {% replay-openapi
-  descriptionFile="../../../openapi-files/redocly-museum.yaml"
+  descriptionFile="../../openapi-files/redocly-museum.yaml"
   operationId="createSpecialEvent"
 /%}
 

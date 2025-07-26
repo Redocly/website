@@ -85,7 +85,7 @@ To view your Respect Monitoring results on a preview build:
 1. Click the **Details** link next to **Respect Monitoring**.
 1. Click the workflow.
 
-{% img alt="Screenshot of pull request checks with Respect Monitoring check" src="../images/respect-monitoring-pr-checks.png" withLightbox=true /%}
+{% img alt="Screenshot of pull request checks with Respect Monitoring check" src="./images/respect-monitoring-pr-checks.png" withLightbox=true /%}
 
 ### Ignore Respect Monitoring results
 
@@ -103,7 +103,7 @@ When you merge your pull request with your Respect Monitoring configuration and 
 To view your Respect Monitoring results on a production build, navigate to **Respect Monitoring** and click the workflow.
 You can filter the results by dates and status.
 
-{% img alt="Respect Monitoring chart" srcSet="../images/respect-monitoring-chart.png light, ../images/respect-monitoring-chart-dark.png dark" withLightbox=true /%}
+{% img alt="Respect Monitoring chart" srcSet="./images/respect-monitoring-chart.png light, ./images/respect-monitoring-chart-dark.png dark" withLightbox=true /%}
 
 ## Examples
 

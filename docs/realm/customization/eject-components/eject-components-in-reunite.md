@@ -34,7 +34,7 @@ The ejected component is added to the `@theme` folder, where you can modify it.
 
 {% img
   alt="Eject component"
-  src="../../images/find-and-eject-component.png"
+  src="../images/find-and-eject-component.png"
   height=400
   withLightbox=true
 /%}
@@ -56,7 +56,7 @@ You can also delete components from `@theme` folder manually.
 
 {% img
   alt="Delete ejected component"
-  src="../../images/delete-ejected-component.png"
+  src="../images/delete-ejected-component.png"
   height=400
   withLightbox=true
 /%}
