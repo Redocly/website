@@ -86,8 +86,6 @@
   to: '/docs/cli/rules/no-server-variables-empty-enum/'
 '/docs/cli/commands/preview-docs/':
   to: '/docs/cli/v1/commands/preview-docs/'
-'/docs/cli/rules/operation-operationId-unique/':
-  to: '/docs/cli/v1/rules/oas/operation-operationId-unique/'
 '/docs/cli/rules/oas/struct/':
   to: '/docs/cli/v1/rules/oas/struct/'
 '/docs-legacy/workflows/docs/add-developer-portal/':
@@ -272,8 +270,8 @@
   to: '/docs/cli/rules/oas/operation-4xx-response'
 '/docs/cli/rules/operation-description':
   to: '/docs/cli/rules/oas/operation-description'
-'/docs/cli/rules/operation-operationId-unique':
-  to: '/docs/cli/rules/oas/operation-operationId-unique'
+'/docs/cli/rules/operation-operationId-unique/':
+  to: '/docs/cli/rules/oas/operation-operationId-unique/'
 '/docs/cli/rules/operation-operationId-url-safe':
   to: '/docs/cli/rules/oas/operation-operationId-url-safe'
 '/docs/cli/rules/operation-operationId':
