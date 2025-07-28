@@ -271,7 +271,7 @@
 '/docs/cli/rules/operation-description':
   to: '/docs/cli/rules/oas/operation-description'
 '/docs/cli/rules/operation-operationId-unique/':
-  to: '/docs/cli/rules/oas/operation-operationId-unique/'
+  to: '/docs/cli/v1/rules/oas/operation-operationId-unique/'
 '/docs/cli/rules/operation-operationId-url-safe':
   to: '/docs/cli/rules/oas/operation-operationId-url-safe'
 '/docs/cli/rules/operation-operationId':
