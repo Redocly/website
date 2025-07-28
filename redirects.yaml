@@ -84,6 +84,12 @@
   to: '/docs/cli/rules/built-in-rules/'
 '/docs/cli/rules/no-empty-enum-servers/':
   to: '/docs/cli/rules/no-server-variables-empty-enum/'
+'/docs/cli/commands/preview-docs/':
+  to: '/docs/cli/v1/commands/preview-docs/'
+'/docs/cli/rules/operation-operationId-unique/':
+  to: '/docs/cli/v1/rules/oas/operation-operationId-unique/'
+'/docs/cli/rules/oas/struct/':
+  to: '/docs/cli/v1/rules/oas/struct/'
 '/docs-legacy/workflows/docs/add-developer-portal/':
   to: '/docs-legacy/developer-portal/connect-developer-portal/'
 '/docs-legacy/developer-portal/settings/connect-developer-portal/':
