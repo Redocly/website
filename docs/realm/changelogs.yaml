@@ -26884,6 +26884,5 @@ reunite:
     changes:
       minor:
         - Added syntax highlighting for `*.cjs` and `*.mjs` files in the editor.
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.0.1`.
+      patch: []
     dependencies: {}
