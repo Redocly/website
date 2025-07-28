@@ -4,6 +4,12 @@ Transform your WSDL files into reference documentation by integrating them into 
 Give your users the tools they need to make the most of your SOAP APIs with comprehensive reference documentation.
 Either add individual schema files to your project alongside your other content, or use a [classic version of the catalog](./add-classic-catalog.md) to showcase your SOAP APIs alongside OpenAPI and AsyncAPI APIs.
 
+## About the SOAP API plugin
+
+The SOAP API documentation plugin (`@redocly/portal-plugin-soap-api`) uses a <a href="https://github.com/vpulim/node-soap" target="_blank">SOAP library</a> to generate documentation from your WSDL files.
+When you add this plugin to your project, it automatically detects WSDL specification files and includes them as SOAP documentation pages.
+To be recognized, the specification files must have a `.wsdl` extension.
+
 ## Before you begin
 
 Make sure you have the following before you begin:
@@ -86,15 +92,10 @@ plugins:
   - '@redocly/portal-plugin-soap-api/plugin.js'
 ```
 
-For more information about this plugin, see the [SOAP plugin reference](../../setup/reference/plugins/docs/soap-api.md).
-
 ## Add the WSDL file to your project
 
 If you only have one or two WSDL files, and you do not have a `sidebars.yaml` file in your project, to add SOAP API documentation to your project, place the WSDL files in your project, either at the root or in a folder.
 Afterward, the SOAP reference documentation is automatically added to your sidebar when you run your project.
-
-You can use [this WSDL example](https://www.tutorialspoint.com/wsdl/wsdl_example.htm) to test out the feature if you don't have a WSDL file to use.
-Copy the example to a `<filename>.wsdl` file in your project.
 
 If you have a `sidebars.yaml` file in your project, you must add your WSDL file to your `sidebars.yaml` file for it to be included in your sidebar navigation menu.
 
@@ -133,6 +134,4 @@ To add multiple WSDL files using `group` keys, update your `sidebars.yaml` file 
 
 - Organize multiple API descriptions by [Adding a catalog](./add-classic-catalog.md).
 - Help users find your content by [Configuring navigation in the sidebar](../../navigation/sidebar.md).
-- For more detailed information about the plugin see the [SOAP plugin](../../setup/reference/plugins/docs/soap-api.md) reference documentation.
 - See the [Replay the API explorer](../../setup/concepts/replay.md) concept doc to learn more about making your API reference docs interactive.
-

@@ -255,6 +255,21 @@
               label: x-assertionType
         - page: content/api-docs/add-asyncapi-docs.md
           label: AsyncAPI
+        - group: AsyncAPI extensions
+          page: content/api-docs/asyncapi-extensions/index.md
+          items:
+          - page: content/api-docs/asyncapi-extensions/x-tag-groups.md
+            label: x-tagGroups
+          - page: content/api-docs/asyncapi-extensions/x-badges.md
+            label: x-badges
+          - page: content/api-docs/asyncapi-extensions/x-enum-descriptions.md
+            label: x-enumDescriptions
+          - page: content/api-docs/asyncapi-extensions/x-additional-properties-name.md
+            label: x-additionalPropertiesName
+          - page: content/api-docs/asyncapi-extensions/x-rbac.md
+            label: x-rbac
+        - page: content/api-docs/add-asyncapi-docs-deprecated-plugin.md
+          label: AsyncAPI (deprecated plugin)
         - page: content/api-docs/add-graphql-docs.md
           label: GraphQL
         - page: content/api-docs/add-soap-docs.md
