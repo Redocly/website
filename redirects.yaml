@@ -87,7 +87,7 @@
 '/docs/cli/commands/preview-docs/':
   to: '/docs/cli/v1/commands/preview-docs/'
 '/docs/cli/rules/operation-operationId-unique/':
-  to: '/docs/cli/v1/rules/oas/operation-operationId-unique'
+  to: '/docs/cli/v1/rules/oas/operation-operationId-unique/'
 '/docs/cli/rules/oas/struct/':
   to: '/docs/cli/v1/rules/oas/struct/'
 '/docs-legacy/workflows/docs/add-developer-portal/':
