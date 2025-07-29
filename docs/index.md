@@ -70,6 +70,7 @@ Ready to build something amazing?
     {% card
     title="End user docs"
     to="end-user/index.md"
+    icon="images/user-docs-icon.svg"
   %}
     Guide to the project's user interface.
   {% /card %}
