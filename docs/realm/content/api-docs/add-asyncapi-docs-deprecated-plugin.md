@@ -148,12 +148,25 @@ If you are using the official AsyncAPI renderer (AsyncAPI plugin), Redocly recom
 
 To migrate to built-in AsyncAPI docs:
 
-- In the `redocly.yaml` file at the root of your project, delete the following line:
+1. In the `redocly.yaml` file at the root of your project, delete the following line:
 
     ```yaml {% title="redocly.yaml" %}
     plugins:
       - '@redocly/portal-plugin-async-api/plugin.js'
     ```
+2. Remove the `@redocly/portal-plugin-async-api` dependency from your `package.json` file:
+
+    ```json {% title="package.json" %}
+    {
+      "name": "demo project",
+      "version": "1.0.0",
+      "description": "demo",
+      "dependencies": {
+        "@redocly/portal-plugin-async-api": "*" // [!code --]
+      }
+    }
+    ```
+
 Your AsyncAPI documentation is rendered using the built-in tool.
 
 ## Resources

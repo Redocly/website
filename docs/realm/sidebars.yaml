@@ -268,16 +268,14 @@
             label: x-additionalPropertiesName
           - page: content/api-docs/asyncapi-extensions/x-rbac.md
             label: x-rbac
-        - page: content/api-docs/add-asyncapi-docs-deprecated-plugin.md
-          label: AsyncAPI (deprecated plugin)
         - page: content/api-docs/add-graphql-docs.md
           label: GraphQL
         - page: content/api-docs/add-soap-docs.md
           label: SOAP
         - page: content/api-docs/add-classic-catalog.md
-          label: Add classic catalog
+          label: Classic catalog
         - page: content/api-docs/configure-mock-server.md
-          label: Configure mock server
+          label: Mock server
         - page: content/api-docs/try-apis-with-mock-server.md
           label: Try APIs with mock server
         - page: content/api-docs/replay.md

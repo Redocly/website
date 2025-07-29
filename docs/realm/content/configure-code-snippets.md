@@ -261,7 +261,7 @@ function test() {
 ```
 ````
 
-Use `[!code error]` and `[!code warning]` to mark a line with an error and warning levels:
+Use `// [!code error]` and `// [!code warning]` to mark a line with an error and warning levels:
 
 
 ````markdoc {% process=false %}
@@ -274,7 +274,7 @@ function test() {
 ```
 ````
 
-You can highlight lines as added or removed. To do that, use [!code ++] and [!code --] to mark added and removed lines:
+You can highlight lines as added or removed. To do that, use `// [!code ++]` and `// [!code --]` to mark added and removed lines:
 
 ````markdoc {% process=false %}
 ```js

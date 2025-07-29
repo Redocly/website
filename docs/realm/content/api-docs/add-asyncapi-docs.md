@@ -1,10 +1,5 @@
 # Add AsyncAPI descriptions
 
-{% admonition type="warning" name="Deprecated plugin" %}
-  The official AsyncAPI plugin is deprecated.
-  See [deprecated plugin documentation](./add-asyncapi-docs-deprecated-plugin.md).
-{% /admonition %}
-
 Transform your AsyncAPI description YAML or JSON file into interactive documentation by adding it to your project.
 Add one or multiple Event-Driven API (EDA) descriptions to your project.
 
@@ -62,6 +57,34 @@ To add multiple AsyncAPI descriptions using `group` keys, update your `sidebars.
     - page: apis/sample-product-2.yaml
       label: Sample product 2 API
 ```
+
+## Migrate from the deprecated AsyncAPI docs plugin
+
+Realm supports AsyncAPI documents without further configuration.
+If you are using the deprecated AsyncAPI plugin, Redocly recommends migrating to the built-in docs tool.
+
+To migrate to built-in AsyncAPI docs:
+
+1. In the `redocly.yaml` file at the root of your project, delete the following lines:
+
+    ```yaml {% title="redocly.yaml" %}
+    plugins:
+      - '@redocly/portal-plugin-async-api/plugin.js'
+    ```
+2. Remove the `@redocly/portal-plugin-async-api` dependency from your `package.json` file:
+
+    ```json {% title="package.json" %}
+    {
+      "name": "demo project",
+      "version": "1.0.0",
+      "description": "demo",
+      "dependencies": {
+        "@redocly/portal-plugin-async-api": "*" // [!code --]
+      }
+    }
+    ```
+
+Your AsyncAPI documentation is rendered using the built-in tool.
 
 ## Resources
 
