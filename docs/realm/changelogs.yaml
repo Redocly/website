@@ -1,4 +1,14 @@
 '@redocly/realm':
+  0.124.0-next.22:
+    timestamp: 1753774949000
+    changes:
+      minor: []
+      patch:
+        - Fixed horizontal padding disappearing during sidebar navigation in `openapi-docs`.
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.16
+      '@redocly/asyncapi-docs': 1.0.0
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.16
   0.124.0-next.21:
     timestamp: 1753707903000
     changes:
@@ -3728,6 +3738,15 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.124.0-next.22:
+    timestamp: 1753774949000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.16
+      '@redocly/asyncapi-docs': 1.0.0
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.16
   0.124.0-next.21:
     timestamp: 1753707903000
     changes:
@@ -6756,6 +6775,15 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.124.0-next.22:
+    timestamp: 1753774949000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.16
+      '@redocly/asyncapi-docs': 1.0.0
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.16
   0.124.0-next.21:
     timestamp: 1753707903000
     changes:
@@ -9779,6 +9807,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.124.0-next.22:
+    timestamp: 1753774949000
+    changes:
+      minor: []
+      patch:
+        - Fixed horizontal padding disappearing during sidebar navigation in `openapi-docs`.
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.16
+      '@redocly/asyncapi-docs': 1.0.0
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.16
   0.124.0-next.21:
     timestamp: 1753707903000
     changes:
@@ -14795,6 +14833,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.12.0-next.16:
+    timestamp: 1753774949000
+    changes:
+      minor: []
+      patch:
+        - Fixed horizontal padding disappearing during sidebar navigation in `openapi-docs`.
+    dependencies: {}
   3.12.0-next.15:
     timestamp: 1753707903000
     changes:
@@ -18146,6 +18191,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.7.0-next.22:
+    timestamp: 1753774949000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.124.0-next.22
+      '@redocly/redoc': 0.124.0-next.22
+      '@redocly/redoc-reef': 0.124.0-next.22
+      '@redocly/redoc-revel': 0.124.0-next.22
   1.7.0-next.21:
     timestamp: 1753707903000
     changes:
@@ -21592,6 +21647,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.9.0-next.16:
+    timestamp: 1753774949000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.16
   0.9.0-next.15:
     timestamp: 1753707903000
     changes:
