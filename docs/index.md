@@ -67,6 +67,13 @@ Ready to build something amazing?
     A tool to test API sequences described in Arazzo format.
   {% /card %}
 
+    {% card
+    title="End user docs"
+    to="end-user/index.md"
+    icon="images/user-docs-icon.svg"
+  %}
+    Guide to the project's user interface.
+  {% /card %}
 
 {% /cards %}
 
