@@ -387,6 +387,13 @@
     - page: customization/create-react-page.md
     - page: customization/markdoc-variables.md
     - page: customization/build-markdoc-tags.md
+    - group: Markdoc attribute resolvers
+      page: customization/markdoc-attribute-resolvers/index.md
+      items:
+        - page: customization/markdoc-attribute-resolvers/link.md
+          label: link
+        - page: customization/markdoc-attribute-resolvers/raw-content.md
+          label: rawContent
     - page: customization/build-custom-function.md
     - page: customization/import-npm-library.md
     - page: customization/eject-root-layout.md
