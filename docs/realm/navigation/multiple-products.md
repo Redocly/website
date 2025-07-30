@@ -85,7 +85,7 @@ To configure products:
     ```
     Products appear in the product picker in the order you set in the main `redocly.yaml` file.
 3. Inside each object representing your product, add the following:
-  
+
     - `name`: the name of your product in the product picker.
       ```yaml
       products:
@@ -116,7 +116,7 @@ To configure products:
           folder: products/redocly-museum/
           icon: images/redocly-logo.svg
       ```
-  
+
     For details on configuration options, see [products](../config/products.md).
 
 After you complete the configuration, Redocly adds a product picker to the navbar of the project
@@ -140,7 +140,7 @@ To override `redocly.yaml`:
     - [`navbar`](../config/navbar.md)
     - [`sidebar`](../config/sidebar.md)
     - [`search`](../config/search.md)
-  
+
     {% admonition type="info" %}
     All paths that you enter in `redocly.yaml` in the product folder are resolved relative to that file.
     {% /admonition %}

@@ -8,7 +8,7 @@ Ensure you have:
 
 - A [project](../projects.md) in Reunite
 - The [owner or member role](../../../access/roles.md#organization-roles) in your project's organization
-  
+
 You cannot review a pull request if you authored it.
 
 ## Review visual and code diff

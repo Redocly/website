@@ -182,6 +182,6 @@ Add line separators to groups, as in the following example:
 
 ## Resources
 
-* [Configure navigation on the sidebar](./sidebar.md)
-* Controlling group-level permissions using [RBAC in the sidebar](../access/links-and-groups-permissions.md#in-the-sidebar).
-* [Sidebar config reference](./sidebars.md)
+- [Configure navigation on the sidebar](./sidebar.md)
+- Controlling group-level permissions using [RBAC in the sidebar](../access/links-and-groups-permissions.md#in-the-sidebar).
+- [Sidebar config reference](./sidebars.md)

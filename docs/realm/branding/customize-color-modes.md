@@ -140,7 +140,7 @@ In the example above, the logo in the documentation navbar changes when the user
 
 ## Resources
 
-* [Customize styles](./customize-styles.md) - Customize the styling of your documentation using CSS.
-* [CSS variables](./css-variables/index.md) - Explore CSS variables you can use for styling.
-* [Concepts: Color mode](./color-mode.md) - Learn more about the color mode feature.
-* Expand beyond the default light and dark modes by adding a [new, custom color mode](../customization/add-color-mode.md).
+- [Customize styles](./customize-styles.md) - Customize the styling of your documentation using CSS.
+- [CSS variables](./css-variables/index.md) - Explore CSS variables you can use for styling.
+- [Concepts: Color mode](./color-mode.md) - Learn more about the color mode feature.
+- Expand beyond the default light and dark modes by adding a [new, custom color mode](../customization/add-color-mode.md).

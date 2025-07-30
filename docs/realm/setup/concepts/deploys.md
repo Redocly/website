@@ -18,8 +18,8 @@ Production deploys trigger automatically upon merging a pull request.
 
 The top-right corner of the production deploys page has two buttons:
 
-* **View Project**: displays the API website's published to to the project's URL.
-* **Trigger deploy**: manually starts the deploy process from the default branch. \
+- **View Project**: displays the API website's published to to the project's URL.
+- **Trigger deploy**: manually starts the deploy process from the default branch. \
 For more information, see: [Manually trigger a production deploy](../how-to/manually-trigger-deploy.md).
 
 ## Preview deploys
@@ -37,17 +37,17 @@ You can use the status page to monitor the status of the deploy and the progress
 
 On a production deploy status page you can use the buttons to:
 
-* **View**: opens the project's URL in a new window.
+- **View**: opens the project's URL in a new window.
 Appears only for the current published deploy.
-* **Publish**: starts the publishing process without restarting the deploy process.
+- **Publish**: starts the publishing process without restarting the deploy process.
 You can publish any past deploys.
-* **Restart**: restarts the production deploy process.
+- **Restart**: restarts the production deploy process.
 
 On a preview deploy status page you can use the buttons to:
 
-* **Preview**: launches a preview of your API website.
+- **Preview**: launches a preview of your API website.
 The URL of the preview contains the name of the branch from which the deploy was triggered.
-* **Restart**: restarts the preview deploy process.
+- **Restart**: restarts the preview deploy process.
 
 ### CI/CD jobs
 
@@ -57,15 +57,15 @@ To return to the overall status view, click the **Summary** field.
 
 The CI/CD jobs run by the deploy process:
 
-* **Checkout**: performs a Git checkout of your repository.
-* **Build**: displays the complete build log
-* **Link checker**: verifies the internal links of your website.
-* **Lint**: checks the API description files against the rules defined in the scorecard.
-* **Health checks**: verifies the built website. Applies to production builds.
-* **Publish**: publishes the website to the project's URL. Applies to production builds.
+- **Checkout**: performs a Git checkout of your repository.
+- **Build**: displays the complete build log
+- **Link checker**: verifies the internal links of your website.
+- **Lint**: checks the API description files against the rules defined in the scorecard.
+- **Health checks**: verifies the built website. Applies to production builds.
+- **Publish**: publishes the website to the project's URL. Applies to production builds.
 
 ## Related links
 
-* [Projects](../../reunite/project/projects.md)
-* [Connect a Git provider](../../reunite/project/connect-git/connect-git-provider.md)
-* [Set a custom domain](../../navigation/custom-domain.md)
+- [Projects](../../reunite/project/projects.md)
+- [Connect a Git provider](../../reunite/project/connect-git/connect-git-provider.md)
+- [Set a custom domain](../../navigation/custom-domain.md)

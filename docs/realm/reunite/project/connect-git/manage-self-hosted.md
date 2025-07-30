@@ -9,7 +9,7 @@ You can add one or more Git self-hosted providers, depending on your infrastruct
 
 Make sure you have the following before you begin:
 
-* You must have an OWNER role in your Reunite organization.
+- You must have an OWNER role in your Reunite organization.
 
 ## Add a self-hosted Git provider
 

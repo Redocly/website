@@ -21,17 +21,17 @@ The `layout` option is a string that sets the layout of the API documentation pa
 
 {% table %}
 
-* Option
-* Type
-* Enum
-* Description
+- Option
+- Type
+- Enum
+- Description
 
 ---
 
-* layout
-* string
-* `three-panel` | `stacked`.
-* Controls the layout of the API docs page. Default value is `three-panel`.
+- layout
+- string
+- `three-panel` | `stacked`.
+- Controls the layout of the API docs page. Default value is `three-panel`.
 
 
 {% /table %}

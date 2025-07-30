@@ -116,7 +116,7 @@ To customize a sidebar using the `directory` option:
     - page: index.md
       label: Main page
     - directory:
-    - directory: 
+    - directory:
     ```
 1. As the values for the `directory` keys, add paths to the folders containing versioned content, as in the following example:
    ```yaml {% title="sidebars.yaml" %}
@@ -162,7 +162,7 @@ To add a single sidebar for all version folders:
     - page: /customer_api/@legacy/payments.yaml
     - page: /customer_api/@legacy/readme.md
     - page: /customer_api/@latest/index.md
-    - page: /customer_api/@latest/payments.yaml 
+    - page: /customer_api/@latest/payments.yaml
     ```
 1. (Optional) You can arrange the `page` options into groups so that each group appears under a single label.
     ```yaml {% title="sidebars.yaml" %}
@@ -184,7 +184,7 @@ To add a single sidebar for all version folders:
         - page: /customer_api/@legacy/payments.yaml
         - page: /customer_api/@legacy/readme.md
         - page: /customer_api/@latest/index.md
-        - page: /customer_api/@latest/payments.yaml 
+        - page: /customer_api/@latest/payments.yaml
     ```
 
 This configuration modifies the sidebar by adding two groups, Museum API and Customer API. Within each group are multiple versions of files.
@@ -247,7 +247,7 @@ To add a dedicated `sidebars.yaml` for each version folder:
     - page: index.md
       label: Main page
     - $ref: /museum_api/sidebars.yaml
-    - $ref: /customer_api/sidebars.yaml 
+    - $ref: /customer_api/sidebars.yaml
     ```
 In the built project, the sidebar combines the referenced `sidebars.yaml` files and displays links to the default version of the content.
 

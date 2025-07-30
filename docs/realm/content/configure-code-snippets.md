@@ -191,7 +191,7 @@ You can also highlight multiple consecutive lines with a single comment:
 ````markdoc {% process=false %}
 ```js 
 // [!code highlight:3] // [!code highlight:3]
-function test() { 
+function test() {
   const hello = 'Hello';
   const world = 'World';
   console.log(hello + " " + world);

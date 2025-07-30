@@ -77,5 +77,5 @@ To localize content in partials:
 
 ## Resources
 
-* Find the next steps to add localization to your project in [Configure localization](./index.md).
-* Learn how to localize the UI labels in your project in [Localize labels using translation keys](./localize-labels.md).
+- Find the next steps to add localization to your project in [Configure localization](./index.md).
+- Learn how to localize the UI labels in your project in [Localize labels using translation keys](./localize-labels.md).

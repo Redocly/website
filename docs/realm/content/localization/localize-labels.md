@@ -46,13 +46,13 @@ Some UI elements in your project support customizable configurations and can con
 To be able to localize the text components of these elements, you must first create translation keys in their configuration files.
 
 The user-defined UI elements that use translation keys are:
-* [navbar](../../config/navbar.md)
-* [breadcrumbs](../../config/breadcrumbs.md)
-* [search bar](../../config/search.md)
-* [footer](../../config/footer.md)
-* [catalog classic](../../config/catalog-classic.md)
-* [user menu](../../config/user-menu.md)
-* [sidebars](../../config/sidebar.md)
+- [navbar](../../config/navbar.md)
+- [breadcrumbs](../../config/breadcrumbs.md)
+- [search bar](../../config/search.md)
+- [footer](../../config/footer.md)
+- [catalog classic](../../config/catalog-classic.md)
+- [user menu](../../config/user-menu.md)
+- [sidebars](../../config/sidebar.md)
 
 ### Add translation keys to user-defined UI elements
 
@@ -223,8 +223,8 @@ react-page.heading: ¡Este es un texto traducido!
 Redocly projects come with a set of built-in UI labels in US English.
 You can configure a `translations.yaml` file to override these labels, accomplishing the following goals:
 
-* Adjust the UI text to better suit your project (for example, change "Login" to "Sign in").
-* Change the language used in the UI, without adding a language picker.
+- Adjust the UI text to better suit your project (for example, change "Login" to "Sign in").
+- Change the language used in the UI, without adding a language picker.
 
 To change the built-in UI labels:
 

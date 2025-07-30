@@ -148,19 +148,19 @@ Example of a table customized with attributes:
 {% markdoc-example %}
   ```none {% process=false %}
   {% table %}
-    * Person
-    * Favorite food {% width="80%" %}
+    - Person
+    - Favorite food {% width="80%" %}
   ---
-    * Pizza {% colspan=2 align="center" %}
+    - Pizza {% colspan=2 align="center" %}
   ---
-    * Annabelle
-    * Bacon
+    - Annabelle
+    - Bacon
   ---
-    * Oliver
-    * Popsicle
+    - Oliver
+    - Popsicle
   ---
-    * Daisy {% align="right" %}
-    * Dog treats
+    - Daisy {% align="right" %}
+    - Dog treats
   {% /table %}
   ```
 {% /markdoc-example %}
@@ -218,20 +218,20 @@ For advanced styling, create CSS classes and add them to your Markdoc table tag:
 {% markdoc-example %}
   ```markdown {% process=false %}
   {% table .striped-table-rows .md %}
-    * Person
-    * Favorite activity
+    - Person
+    - Favorite activity
   ---
-    * Taylor
-    * Snowboarding
+    - Taylor
+    - Snowboarding
   ---
-    * Annabelle
-    * Roblox
+    - Annabelle
+    - Roblox
   ---
-    * Oliver
-    * Swings
+    - Oliver
+    - Swings
   ---
-    * Daisy
-    * Dog park
+    - Daisy
+    - Dog park
   {% /table %}
   ```
 {% /markdoc-example %}
@@ -299,48 +299,48 @@ Here's how to apply these classes to specific rows:
 {% markdoc-example %}
   ```markdown {% process=false %}
   {% table .md %}
-    * Task
-    * Clicks required
-    * Notes
+    - Task
+    - Clicks required
+    - Notes
   ---
-    * Change your logo {% .highclick %}
-    * 10
-    * Only found details on Getting started page
+    - Change your logo {% .highclick %}
+    - 10
+    - Only found details on Getting started page
   ---
-    * Change the color of a heading
-    * 2
+    - Change the color of a heading
+    - 2
     *
   ---
-    * Revert changes {% .medclick %}
-    * 8
-    * Could be highlighted more in the sidebar
+    - Revert changes {% .medclick %}
+    - 8
+    - Could be highlighted more in the sidebar
   ---
-    * Add admonition
-    * 3
+    - Add admonition
+    - 3
     *
   {% /table %}
   ```
 {% /markdoc-example %}
 
 {% table .md %}
-* Task
-* Clicks required
-* Notes
+- Task
+- Clicks required
+- Notes
 ---
-* Change your logo {% .highclick %}
-* 10
-* Only found details on Getting started page
+- Change your logo {% .highclick %}
+- 10
+- Only found details on Getting started page
 ---
-* Change the color of a heading
-* 2
+- Change the color of a heading
+- 2
 *
 ---
-* Revert changes {% .medclick %}
-* 8
-* Could be highlighted more in the sidebar
+- Revert changes {% .medclick %}
+- 8
+- Could be highlighted more in the sidebar
 ---
-* Add admonition
-* 3
+- Add admonition
+- 3
 *
 {% /table %}
 

@@ -44,7 +44,7 @@ To push changes to Redocly:
 
 ## Resources
 
-* See guides for [adding other types of remote content](./index.md)
-* Learn more about [remote content](./remote-content.md)
-* [Configuration options for the GitHub action](./reunite-push-action.md)
-* [CLI push command information](https://redocly.com/docs/cli/commands/push)
+- See guides for [adding other types of remote content](./index.md)
+- Learn more about [remote content](./remote-content.md)
+- [Configuration options for the GitHub action](./reunite-push-action.md)
+- [CLI push command information](https://redocly.com/docs/cli/commands/push)

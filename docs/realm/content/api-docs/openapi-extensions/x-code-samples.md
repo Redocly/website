@@ -22,15 +22,15 @@ Use environment variable placeholders like `{{VARIABLE_NAME}}` in code samples. 
 
 {% table %}
 
-* Field Name
-* Type
-* Description
+- Field Name
+- Type
+- Description
 
 ---
 
-* x-codeSamples
-* [ [Code Sample Object](#code-sample-object) ]
-* A list of code samples associated with an operation.
+- x-codeSamples
+- [ [Code Sample Object](#code-sample-object) ]
+- A list of code samples associated with an operation.
 
 {% /table %}
 
@@ -39,21 +39,21 @@ Use environment variable placeholders like `{{VARIABLE_NAME}}` in code samples. 
 
 {% table %}
 
-* Field Name
-* Type
-* Description
+- Field Name
+- Type
+- Description
 
 ---
 
-* lang
-* string
-* **REQUIRED** Code sample language. Can be one of the [automatically supported languages](../../../config/openapi/code-samples.md#language-object) or any other language identifier of your choice (for custom code samples).
+- lang
+- string
+- **REQUIRED** Code sample language. Can be one of the [automatically supported languages](../../../config/openapi/code-samples.md#language-object) or any other language identifier of your choice (for custom code samples).
 
 ---
 
-* source
-* string
-* **REQUIRED** Code sample source code, or a `$ref` to the file containing the code sample.
+- source
+- string
+- **REQUIRED** Code sample source code, or a `$ref` to the file containing the code sample.
 
 {% /table %}
 

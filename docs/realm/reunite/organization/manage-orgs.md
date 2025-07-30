@@ -104,7 +104,7 @@ If you are the sole user with the Owner in an organization, you must assign anot
 
 ## Resources
 
-* [Add an identity provider](./sso/add-idp.md)
-* [Manage organization-wide API keys](api-keys.md)
-* Learn more about [Teams and users](./teams.md)
-* Reference the [Single sign-on (SSO)](../../config/sso.md) configuration options
+- [Add an identity provider](./sso/add-idp.md)
+- [Manage organization-wide API keys](api-keys.md)
+- Learn more about [Teams and users](./teams.md)
+- Reference the [Single sign-on (SSO)](../../config/sso.md) configuration options

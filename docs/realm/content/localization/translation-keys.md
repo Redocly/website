@@ -1314,4 +1314,4 @@ When creating or modifying translations with dynamic values, always preserve the
 
 ## Resources
 
-* Configure language support for your project by following the steps in the [Configure localization](./index.md) how-to documentation.
+- Configure language support for your project by following the steps in the [Configure localization](./index.md) how-to documentation.

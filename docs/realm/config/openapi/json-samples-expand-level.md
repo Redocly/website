@@ -15,15 +15,15 @@ The `jsonSamplesExpandLevel` option sets the default expand level for JSON paylo
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* jsonSamplesExpandLevel
-* number | string | 'all'
-* Sets the default expand level for JSON payload samples. Default value is `2`.
+- jsonSamplesExpandLevel
+- number | string | 'all'
+- Sets the default expand level for JSON payload samples. Default value is `2`.
 
 
 {% /table %}

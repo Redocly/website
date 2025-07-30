@@ -64,11 +64,11 @@ If a nested remote content folder has the same name as a folder on the same leve
 
 Add remote content from a Git repository, a publicly-available URL, or push from your own platforms to Redocly in the following ways:
 
-* Use our [GitHub application](https://github.com/apps/redocly/) on the organization where the remote content is for the simplest setup.
-* For other Git integrations, use an access token to grant Redocly access to the remote content.
-* Remote file sources can be fetched by URL if the resource is publicly available.
+- Use our [GitHub application](https://github.com/apps/redocly/) on the organization where the remote content is for the simplest setup.
+- For other Git integrations, use an access token to grant Redocly access to the remote content.
+- Remote file sources can be fetched by URL if the resource is publicly available.
   Use this approach to include API descriptions that are already published in your documentation.
-* For projects where Redocly does not have access, use CI/CD integration to push changes to your project in Redocly.
+- For projects where Redocly does not have access, use CI/CD integration to push changes to your project in Redocly.
   This approach is also appropriate if the content is in a Git repository that Redocly doesn't have any access to.
 
 The following sections provide more information about each type of content source.
@@ -148,6 +148,6 @@ All subsequent remote content updates are applied in place to the same branch an
 
 ## Resources
 
-* [How to add remote content to your project](./index.md)
-* [Remote content verification processes](./verify-remote-content.md) are performed automatically
-* [Connect a Git remote](../connect-git/connect-git-provider.md) to source an entire project from an external repository while still using the editor and other Reunite features
+- [How to add remote content to your project](./index.md)
+- [Remote content verification processes](./verify-remote-content.md) are performed automatically
+- [Connect a Git remote](../connect-git/connect-git-provider.md) to source an entire project from an external repository while still using the editor and other Reunite features

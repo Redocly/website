@@ -4,22 +4,22 @@ Reunite enables you to work on multiple projects. Access to specific projects de
 
 You can switch between projects in a few different contexts:
 
-* **Organizations and projects menu:**
+- **Organizations and projects menu:**
 
   1. In the top-left corner of Reunite, click your organizations's icon.
   2. From the menu, click one of the project names.
 
-* **Organization Overview page:**
+- **Organization Overview page:**
 
   1. In your organization's **Overview** page find the tile with your project's name.
   2. Click the arrow button.
 
-* **Navigation bar:**
-  
+- **Navigation bar:**
+
   1. In a project's navigation bar, click the project name.
   2. From the menu, select one of the project names.
 
 ## Resources
 
-* [Projects](./projects.md)
-* [Manage projects](./manage-projects.md)
+- [Projects](./projects.md)
+- [Manage projects](./manage-projects.md)

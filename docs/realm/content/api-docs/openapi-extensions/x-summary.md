@@ -12,15 +12,15 @@ Use the `x-summary` extension in the Response object.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* x-summary
-* string
-* Short summary of the response.
+- x-summary
+- string
+- Short summary of the response.
 
 {% /table %}
 

@@ -18,15 +18,15 @@ Use the `x-nullable` extension in an Schema object.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* x-nullable
-* boolean
-* Marks schema as a nullable.
+- x-nullable
+- boolean
+- Marks schema as a nullable.
 
 {% /table %}
 

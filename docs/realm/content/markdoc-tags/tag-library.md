@@ -190,14 +190,14 @@ Additional information and syntax: [Table tag](./table.md)
 **Example table element:**
 
 {% table %}
-* Heading 1
-* Heading 2
+- Heading 1
+- Heading 2
 ---
-* Row 1 Cell 1
-* Row 1 Cell 2
+- Row 1 Cell 1
+- Row 1 Cell 2
 ---
-* Row 2 Cell 1
-* Row 2 cell 2
+- Row 2 Cell 1
+- Row 2 cell 2
 {% /table %}
 
 ---

@@ -36,6 +36,6 @@ l10n:
 
 ## Resources
 
-* Learn the steps to add localization to your project in [Configure localization](./index.md).
-* Learn how to localize your content files in [Add translated content](./localize-content.md).
-* Learn more about how to add custom styles to your project in [Add custom styles](../../branding/customize-styles.md).
+- Learn the steps to add localization to your project in [Configure localization](./index.md).
+- Learn how to localize your content files in [Add translated content](./localize-content.md).
+- Learn more about how to add custom styles to your project in [Add custom styles](../../branding/customize-styles.md).

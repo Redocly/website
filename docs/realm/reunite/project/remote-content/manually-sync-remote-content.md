@@ -21,9 +21,9 @@ To manually sync remote content folders:
    From the Remote content page, click the additional options menu on the far right side of the table on the remote content folder row, then click **Sync**. \
   ![Open options menu on Reunite's Remote content page](../../images/reunite-remote-content-options.png) \
     A window opens with the branch chosen during the remote folder setup, and the following information on the last commit to that branch:
-      * the commit message
-      * the user who made commit
-      * the Git hash linked to a commit on the remote source
+      - the commit message
+      - the user who made commit
+      - the Git hash linked to a commit on the remote source
 2. (Optional) You can choose a different remote branch to pull the remote content from.
     You can do this if there are issues syncing the original branch, or a different branch has the content you want to include.
 3. (Optional) You can check the changes from the last commit by clicking the commit hash.
@@ -33,6 +33,6 @@ To manually sync remote content folders:
 
 ## Resources
 
-* Learn about remote content in [Remote content](./remote-content.md).
-* Find out which remote content sources are supported and how to set them up in [Add remote files with one-way sync](./index.md).
-* Change the configuration of a remote content folder in [Edit remote content folder settings](./edit-remote-content-folder.md).
+- Learn about remote content in [Remote content](./remote-content.md).
+- Find out which remote content sources are supported and how to set them up in [Add remote files with one-way sync](./index.md).
+- Change the configuration of a remote content folder in [Edit remote content folder settings](./edit-remote-content-folder.md).

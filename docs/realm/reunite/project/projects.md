@@ -20,10 +20,10 @@ Projects have their features grouped into pages you can access in the left panel
 
 On this page you create, manage, and commit content. The Editor contains the following sections:
 
-* A file tree where you add and manage your website's files, use the search and replace function, and commit changes to the repository.
-* An editing pane where you can make changes to file content.
-* An editing toolbar for formatting text in files.
-* A [Webview pane](./use-webview.md) that displays a live preview of the opened file.
+- A file tree where you add and manage your website's files, use the search and replace function, and commit changes to the repository.
+- An editing pane where you can make changes to file content.
+- An editing toolbar for formatting text in files.
+- A [Webview pane](./use-webview.md) that displays a live preview of the opened file.
 
 ### Pull requests
 
@@ -53,8 +53,8 @@ The **Settings** page is available only to users with the Owner role in your org
 
 ## Resources
 
-* [Manage projects](./manage-projects.md)
-* [Manage people](../organization/manage-people.md)
-* [Remote content](./remote-content/index.md)
-* [Connect a Git provider](./connect-git/connect-git-provider.md)
-* [Switch between projects](./switch-between-projects.md)
+- [Manage projects](./manage-projects.md)
+- [Manage people](../organization/manage-people.md)
+- [Remote content](./remote-content/index.md)
+- [Connect a Git provider](./connect-git/connect-git-provider.md)
+- [Switch between projects](./switch-between-projects.md)

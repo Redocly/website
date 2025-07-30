@@ -5,7 +5,7 @@ This can help organize urls or make the separation of content more clear. For ex
 
 The path prefix is set using the `REDOCLY_PREFIX_PATHS` [environment variable](../reunite/project/env-variables.md).
 
-URL _without_ prefix: `https://example.com/page`  
+URL _without_ prefix: `https://example.com/page`
 URL _with_ `api-v2` prefix: `https://example.com/api-v2/page`
 
 ## Before you begin

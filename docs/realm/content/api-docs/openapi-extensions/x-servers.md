@@ -19,15 +19,15 @@ Use the `x-servers` extension in the root OpenAPI object.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* x-servers
-* [ [Server Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#serverObject) ]
-* A list of server objects used to add one or more target hosts for the API.
+- x-servers
+- [ [Server Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#serverObject) ]
+- A list of server objects used to add one or more target hosts for the API.
 
 {% /table %}
 

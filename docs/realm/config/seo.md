@@ -271,10 +271,10 @@ seo:
   llmstxt:
     hide: false
     title: Example Project title for llms.txt
-    description: Example Project description for llms.txt 
+    description: Example Project description for llms.txt
     details:
       content: Details of the Example Project
-    sections: 
+    sections:
       - title: Docs
         description: This is a description of the Docs section
         includeFiles:

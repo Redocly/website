@@ -11,15 +11,15 @@ Use the `x-hideReplay` extension in an Operation declaration.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* x-hideReplay
-* boolean
-* Hides the Replay for the operation on which it was set to `true`.
+- x-hideReplay
+- boolean
+- Hides the Replay for the operation on which it was set to `true`.
 
 {% /table %}
 

@@ -22,7 +22,7 @@ To use theme assets in CSS:
 
 3. Use the asset by overriding a CSS variable or adding it to a styling rule.
 
-The following example uses static assets to change a theme's font and define a class with a full-width image:  
+The following example uses static assets to change a theme's font and define a class with a full-width image:
 
 ```css {% title="@theme/styles.css" %}
 @import url('other-custom-styles.css');

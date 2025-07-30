@@ -43,9 +43,9 @@ While you can name the subfolders however you want, Redocly recommends using
 
 The most commonly used language tags consist of a language code and two optional subtags.
 
-* language code: two-letter lowercase language codes from [ISO 639-1](https://www.loc.gov/standards/iso639-2/php/English_list.php) standard: `en`, `uk`, `ar`, `es`, `ja`.
-* script subtag: four-letter script code from [ISO-15924](https://www.unicode.org/iso15924/codelists.html): `Latn`, `Cyrl`, `Arab`, `Hans`, `Hant`.
-* region subtag: two-letter uppercase country or region codes from [ISO 3166-1](https://www.iso.org/obp/ui/#search): `US`, `UA`, `ES`, `JP`.
+- language code: two-letter lowercase language codes from [ISO 639-1](https://www.loc.gov/standards/iso639-2/php/English_list.php) standard: `en`, `uk`, `ar`, `es`, `ja`.
+- script subtag: four-letter script code from [ISO-15924](https://www.unicode.org/iso15924/codelists.html): `Latn`, `Cyrl`, `Arab`, `Hans`, `Hant`.
+- region subtag: two-letter uppercase country or region codes from [ISO 3166-1](https://www.iso.org/obp/ui/#search): `US`, `UA`, `ES`, `JP`.
 
 The best practice is to use as few tags as necessary to differentiate between localization languages.
 
@@ -73,4 +73,4 @@ If a Markdown, OpenAPI, or GraphQL page is present in a language subfolder insid
 
 ## Resources
 
-* Configure language support for your project by following the steps in the [Configure localization](./index.md) how-to documentation.
+- Configure language support for your project by following the steps in the [Configure localization](./index.md) how-to documentation.

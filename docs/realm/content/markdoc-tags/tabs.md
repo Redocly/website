@@ -95,17 +95,17 @@ The following example uses tabs to group related information together:
   ```markdoc {% process=false %}
   {% tabs %}
     {% tab label="Web frameworks" %}
-      * Django
-      * Ruby on Rails
-      * Angular
-      * Vue
-      * React
+      - Django
+      - Ruby on Rails
+      - Angular
+      - Vue
+      - React
     {% /tab %}
     {% tab label="Cloud services" %}
-      * AWS
-      * Google Cloud
-      * Microsoft Azure
-      * Cloudflare
+      - AWS
+      - Google Cloud
+      - Microsoft Azure
+      - Cloudflare
     {% /tab %}
   {% /tabs %}
   ```
@@ -114,18 +114,18 @@ The following example uses tabs to group related information together:
 {% tabs %}
   {% tab label="Web frameworks" %}
 
-    * Django
-    * Ruby on Rails
-    * Angular
-    * Vue
-    * React
+    - Django
+    - Ruby on Rails
+    - Angular
+    - Vue
+    - React
   {% /tab %}
   {% tab label="Cloud services" %}
 
-    * AWS
-    * Google Cloud
-    * Microsoft Azure
-    * Cloudflare
+    - AWS
+    - Google Cloud
+    - Microsoft Azure
+    - Cloudflare
   {% /tab %}
 {% /tabs %}
 
@@ -138,17 +138,17 @@ The following example uses tabs to display a list view and table view of the sam
   ```markdoc {% process=false %}
   {% tabs %}
     {% tab label="List view " %}
-      * Web Frameworks
-        * Django
-        * Ruby on Rails
-        * Angular
-        * Vue
-        * React
-      * Cloud services
-        * AWS
-        * Google Cloud
-        * Microsoft Azure
-        * Cloudflare
+      - Web Frameworks
+        - Django
+        - Ruby on Rails
+        - Angular
+        - Vue
+        - React
+      - Cloud services
+        - AWS
+        - Google Cloud
+        - Microsoft Azure
+        - Cloudflare
     {% /tab %}
     {% tab label="Table view" %}
       {% table %}
@@ -169,17 +169,17 @@ The following example uses tabs to display a list view and table view of the sam
 {% tabs %}
   {% tab label="List view" %}
 
-    * Web Frameworks
-      * Django
-      * Ruby on Rails
-      * Angular
-      * Vue
-      * React
-    * Cloud services
-      * AWS
-      * Google Cloud
-      * Microsoft Azure
-      * Cloudflare
+    - Web Frameworks
+      - Django
+      - Ruby on Rails
+      - Angular
+      - Vue
+      - React
+    - Cloud services
+      - AWS
+      - Google Cloud
+      - Microsoft Azure
+      - Cloudflare
   {% /tab %}
   {% tab label="Table view" %}
     {% table %}
@@ -289,12 +289,12 @@ The following example uses tabs to group resources into beginner and advanced ca
   ```markdoc {% process=false %}
   {% tabs %}
     {% tab label="Beginner CLI resources" %}
-      * [Install Redocly CLI](/docs/cli/installation.md)
-      * [Redocly CLI quickstart guide](/docs/cli/quickstart.md)
+      - [Install Redocly CLI](/docs/cli/installation.md)
+      - [Redocly CLI quickstart guide](/docs/cli/quickstart.md)
     {% /tab %}
     {% tab label="Advanced CLI resources" %}
-      * [Hide internal APIs](/docs/cli/guides/hide-apis.md)
-      * [Enforce response contents](/docs/cli/guides/response-contains-property.md)
+      - [Hide internal APIs](/docs/cli/guides/hide-apis.md)
+      - [Enforce response contents](/docs/cli/guides/response-contains-property.md)
     {% /tab %}
   {% /tabs %}
   ```
@@ -303,13 +303,13 @@ The following example uses tabs to group resources into beginner and advanced ca
 {% tabs %}
   {% tab label="Beginner CLI resources" %}
 
-    * [Install Redocly CLI](#best-practices)
-    * [Redocly CLI quickstart guide](#best-practices)
+    - [Install Redocly CLI](#best-practices)
+    - [Redocly CLI quickstart guide](#best-practices)
   {% /tab %}
   {% tab label="Advanced CLI resources" %}
 
-    * [Hide internal APIs](#best-practices)
-    * [Enforce response contents](#best-practices)
+    - [Hide internal APIs](#best-practices)
+    - [Enforce response contents](#best-practices)
   {% /tab %}
 {% /tabs %}
 

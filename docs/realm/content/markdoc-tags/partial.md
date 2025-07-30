@@ -89,9 +89,9 @@ This example demonstrates using partials to add a Learning Resources section acr
 ```text {% title="/_partials/redocly-cli-resources.md" %}
 The following resources help you learn more about the Redocly CLI:
 
-* [Redocly CLI commands](/docs/cli/commands/index.md) - Learn the commands built into the CLI.
-* [Configure API linting](/docs/cli/guides/configure-rules.md) - Learn how to tailor the Redocly CLI linting for your own needs.
-* [Redocly CLI cookbook](https://github.com/Redocly/redocly-cli-cookbook) - Bite-sized example CLI customizations to inspire your own.
+- [Redocly CLI commands](/docs/cli/commands/index.md) - Learn the commands built into the CLI.
+- [Configure API linting](/docs/cli/guides/configure-rules.md) - Learn how to tailor the Redocly CLI linting for your own needs.
+- [Redocly CLI cookbook](https://github.com/Redocly/redocly-cli-cookbook) - Bite-sized example CLI customizations to inspire your own.
 ```
 
 **Example partial syntax:**

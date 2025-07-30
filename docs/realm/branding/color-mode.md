@@ -32,7 +32,7 @@ Each color mode draws from its own distinct set of styling rules. The documentat
 
 ## Resources
 
-* [Customize styles](./customize-styles.md) - Customize the styling of your documentation using CSS.
-* [Customize color modes](./customize-color-modes.md) - Customize the styling of specific color modes.
-* Expand beyond the default light and dark modes by adding a [new, custom color mode](../customization/add-color-mode.md).
-* [CSS variables](./css-variables/index.md) - Explore CSS variables you can use for styling.
+- [Customize styles](./customize-styles.md) - Customize the styling of your documentation using CSS.
+- [Customize color modes](./customize-color-modes.md) - Customize the styling of specific color modes.
+- Expand beyond the default light and dark modes by adding a [new, custom color mode](../customization/add-color-mode.md).
+- [CSS variables](./css-variables/index.md) - Explore CSS variables you can use for styling.

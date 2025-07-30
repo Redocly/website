@@ -16,10 +16,10 @@ To configure localization, complete the following tasks:
 
 Optionally you can:
 
-* [Display the current locale on a page](./display-current-locale.md)
-* [Customize styles for a locale](./customize-styles-for-locale.md)
+- [Display the current locale on a page](./display-current-locale.md)
+- [Customize styles for a locale](./customize-styles-for-locale.md)
 
 ## Resources
 
-* View the options for configuring how languages are displayed in the language picker in the [l10n configuration reference documentation](../../config/l10n.md).
-* Learn more about how localization works in a Redocly project in the [Localization](./concept-l10n.md) concept documentation.
+- View the options for configuring how languages are displayed in the language picker in the [l10n configuration reference documentation](../../config/l10n.md).
+- Learn more about how localization works in a Redocly project in the [Localization](./concept-l10n.md) concept documentation.

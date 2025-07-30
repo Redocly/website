@@ -23,7 +23,7 @@ These options are available exclusively in front matter:
 - boolean
 - Exclude the page from search results and from `llms.txt` file when set to `true`.
   Default: `false`.
-  
+
   To exclude OpenAPI description files from search, see: [`openapi` configuration](./openapi/index.md).
 
 ---
@@ -122,7 +122,7 @@ When defined in front matter, they override the global configuration:
 - rbac
 - [team to role map](./rbac.md#team-to-role-map)
 - Set access permissions for the page. This option can contain only the map of teams to roles.
-  
+
 ---
 
 - [search](./search.md)

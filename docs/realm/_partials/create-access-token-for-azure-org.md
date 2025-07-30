@@ -65,7 +65,7 @@ See [Scopes](https://learn.microsoft.com/en-us/azure/devops/organizations/accoun
 | [Profiles - Get](https://learn.microsoft.com/en-us/rest/api/azure/devops/profile/profiles/get?view=azure-devops-rest-7.1&tabs=HTTP)                                   | OAuth2    | `vso.profile`                       | To get user display name                                      |
 
 > Note:
-* Push and pull Git actions are performed using PAT.
-* Redocly uses `https://dev.azure.com/{organization}/_apis/connectionData` endpoint to verify if the user is authorized.
+- Push and pull Git actions are performed using PAT.
+- Redocly uses `https://dev.azure.com/{organization}/_apis/connectionData` endpoint to verify if the user is authorized.
 
 </details>

@@ -97,5 +97,5 @@ In the **Logs** panel you can:
 
 ## Resources
 
-* [Use the editor](./use-editor.md)
-* [Use previews](./use-previews.md)
+- [Use the editor](./use-editor.md)
+- [Use previews](./use-previews.md)

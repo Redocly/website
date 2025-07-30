@@ -1533,7 +1533,7 @@
   --search-ai-suggestions-title-font-size: var(--font-size-base);
   --search-ai-suggestions-title-line-height: var(--line-height-base);
   --search-ai-suggestions-title-font-weight: var(--font-weight-light);
-  
+
   --search-ai-suggestions-text-color: var(--text-color-description);
 
   --search-ai-conversation-input-send-button-bg-color: var(--button-bg-color-primary);

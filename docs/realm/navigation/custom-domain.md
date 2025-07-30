@@ -10,8 +10,8 @@ You can edit the subdomain name and configure a custom domain for your project o
 6. (Optional) Disable the default domain by unchecking the **Use proxy to URL** checkbox.
 7. Click **Save**.
 8. Log in to your DNS management provider and complete the following steps:
-   * Add a new TXT record with the **name/host** and **value** listed in the Domain verification admonition on the **Custom domain** section of the **Settings** page in your project.
-   * Point the domain CNAME record to `ssl.redocly.app`.
+   - Add a new TXT record with the **name/host** and **value** listed in the Domain verification admonition on the **Custom domain** section of the **Settings** page in your project.
+   - Point the domain CNAME record to `ssl.redocly.app`.
      If you have EU data residency, point the CNAME record to `ssl.eu.redocly.app`.
 9.  Click **Verify**.
     A **Pending** badge displays next to the domain, until it is verified.

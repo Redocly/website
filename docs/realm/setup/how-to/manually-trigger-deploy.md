@@ -14,4 +14,4 @@ The manual deploy feature uses the latest state of the project's default branch 
 
 ## Related links
 
-* [Deploys](../concepts/deploys.md)
+- [Deploys](../concepts/deploys.md)

@@ -73,6 +73,6 @@ Restart is not available for deleted/merged branches.
 
 ## Resources
 
-* [Connect a Git provider](./connect-git/connect-git-provider.md)
-* [Use the editor](./use-editor.md)
-* [Use the Webview](./use-webview.md)
+- [Connect a Git provider](./connect-git/connect-git-provider.md)
+- [Use the editor](./use-editor.md)
+- [Use the Webview](./use-webview.md)

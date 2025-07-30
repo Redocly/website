@@ -36,5 +36,5 @@ export default function () {
 
 ## Resources
 
-* Learn the steps to add localization to your project in [Configure localization](./index.md).
-* Learn how to localize your content files in [Add translated content](./localize-content.md).
+- Learn the steps to add localization to your project in [Configure localization](./index.md).
+- Learn how to localize your content files in [Add translated content](./localize-content.md).

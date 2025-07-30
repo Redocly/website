@@ -53,9 +53,9 @@ Disabling SSO removes the login page, but does not disable `rbac`.
 
 ## Resources
 
-* Learn how to [Add an identity provider](./add-idp.md) in Reunite that you can use for projects and Reunite login.
-* Discover how to [Configure RBAC](../../../access/index.md) to limit what users can see in your project.
-* View all the options available for configuring SSO in the [sso reference documentation](../../../config/sso.md).
-* Learn more about the different IdPs and ways they can be used in your projects in the [Single sign-on (SSO) concept documentation](./sso.md).
-* Discover how RBAC works in projects and Reunite in the [Role-based access control (RBAC) concept documentation](../../../access/rbac.md).
-* View all the options available for configuring RBAC in the [rbac reference documentation](../../../config/rbac.md).
+- Learn how to [Add an identity provider](./add-idp.md) in Reunite that you can use for projects and Reunite login.
+- Discover how to [Configure RBAC](../../../access/index.md) to limit what users can see in your project.
+- View all the options available for configuring SSO in the [sso reference documentation](../../../config/sso.md).
+- Learn more about the different IdPs and ways they can be used in your projects in the [Single sign-on (SSO) concept documentation](./sso.md).
+- Discover how RBAC works in projects and Reunite in the [Role-based access control (RBAC) concept documentation](../../../access/rbac.md).
+- View all the options available for configuring RBAC in the [rbac reference documentation](../../../config/rbac.md).

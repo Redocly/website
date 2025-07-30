@@ -15,9 +15,9 @@ Customize the behavior and appearance of integrated GraphQL documentation. Requi
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
@@ -33,9 +33,9 @@ Customize the behavior and appearance of integrated GraphQL documentation. Requi
 
 ---
 
-* [jsonSamplesDepth](./json-samples-depth.md)
-* number
-* Sets the default expand level for JSON payload samples.
+- [jsonSamplesDepth](./json-samples-depth.md)
+- number
+- Sets the default expand level for JSON payload samples.
 
 ---
 

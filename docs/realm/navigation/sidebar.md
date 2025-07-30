@@ -185,6 +185,6 @@ export const frontmatter = {
 
 ## Related how-tos
 
-* Hide the sidebar using the [sidebar configuration](../config/sidebar.md).
-* Check the [sidebar reference](./sidebars.md) for all configuration options and more examples.
-* Control group-level permissions using [RBAC in the sidebar](../access/links-and-groups-permissions.md#in-the-sidebar).
+- Hide the sidebar using the [sidebar configuration](../config/sidebar.md).
+- Check the [sidebar reference](./sidebars.md) for all configuration options and more examples.
+- Control group-level permissions using [RBAC in the sidebar](../access/links-and-groups-permissions.md#in-the-sidebar).

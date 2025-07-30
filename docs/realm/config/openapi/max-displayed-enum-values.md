@@ -15,15 +15,15 @@ The `maxDisplayedEnumValues` displays only the specified number of enum values. 
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* maxDisplayedEnumValues
-* number
-* Sets the number of enum values to display. The default behavior is that 10 values are displayed.
+- maxDisplayedEnumValues
+- number
+- Sets the number of enum values to display. The default behavior is that 10 values are displayed.
 
 {% /table %}
 

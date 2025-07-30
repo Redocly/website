@@ -1,317 +1,317 @@
 # Configuration options changes between reference docs 2.x and newest Redoc configuration
 
 {% table %}
-* Feature/Option
-* Old Interface (`Options`)
-* New Interface (`Options`)
-* Notes
+- Feature/Option
+- Old Interface (`Options`)
+- New Interface (`Options`)
+- Notes
 ---
-* **General**
+- **General**
 ---
-* `theme`
-* `ResolvedThemeInterface`
-* Removed
-* Deleted
+- `theme`
+- `ResolvedThemeInterface`
+- Removed
+- Deleted
 ---
-* `scrollYOffset`
-* `() => number`
-* `() => number`
-* Unchanged
+- `scrollYOffset`
+- `() => number`
+- `() => number`
+- Unchanged
 ---
-* `hideHostname`
-* `boolean`
-* Removed
-* Deleted
+- `hideHostname`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `hideInfoDescription`
-* `boolean`
-* Removed
-* Deleted
+- `hideInfoDescription`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `expandResponses`
-* `{ [code: string]: boolean } |'all'`
-* Removed
-* Deleted
+- `expandResponses`
+- `{ [code: string]: boolean } |'all'`
+- Removed
+- Deleted
 ---
-* `requiredPropsFirst`
-* `boolean`
-* `sortRequiredPropsFirst: boolean`
-* Renamed
+- `requiredPropsFirst`
+- `boolean`
+- `sortRequiredPropsFirst: boolean`
+- Renamed
 ---
-* `sortPropsAlphabetically`
-* `boolean`
-* Removed
-* Deleted
+- `sortPropsAlphabetically`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `sortEnumValuesAlphabetically`
-* `boolean`
-* Removed
-* Deleted
+- `sortEnumValuesAlphabetically`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `sortOperationsAlphabetically`
-* `boolean`
-* Removed
-* Deleted
+- `sortOperationsAlphabetically`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `sortTagsAlphabetically`
-* `boolean`
-* Removed
-* Deleted
+- `sortTagsAlphabetically`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `nativeScrollbars`
-* `boolean`
-* Removed
-* Deleted
+- `nativeScrollbars`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `pathInMiddlePanel`
-* `boolean`
-* Removed
-* Deleted
+- `pathInMiddlePanel`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `untrustedDefinition`
-* `boolean`
-* Removed
-* Deleted
+- `untrustedDefinition`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `hideDownloadButtons`
-* `boolean | null`
-* `boolean | null`
-* Unchanged
+- `hideDownloadButtons`
+- `boolean | null`
+- `boolean | null`
+- Unchanged
 ---
-* `downloadDefinitionUrl`
-* `string`
-* `downloadUrls?: DownloadUrlsConfig`
-* Renamed and type changed
+- `downloadDefinitionUrl`
+- `string`
+- `downloadUrls?: DownloadUrlsConfig`
+- Renamed and type changed
 ---
-* `disableSearch`
-* `boolean`
-* Removed
-* Deleted
+- `disableSearch`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `showChangeLayoutButton`
-* `boolean | string`
-* Removed
-* Deleted
+- `showChangeLayoutButton`
+- `boolean | string`
+- Removed
+- Deleted
 ---
-* `onlyRequiredInSamples`
-* `boolean`
-* `boolean`
-* Unchanged
+- `onlyRequiredInSamples`
+- `boolean`
+- `boolean`
+- Unchanged
 ---
-* `showConsole`
-* `boolean`
-* Removed
-* Deleted
+- `showConsole`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `sendXUserAgentInTryIt`
-* `boolean`
-* Removed
-* Deleted
+- `sendXUserAgentInTryIt`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `generatedPayloadSamplesMaxDepth`
-* `number`
-* `generatedSamplesMaxDepth: number`
-* Renamed
+- `generatedPayloadSamplesMaxDepth`
+- `number`
+- `generatedSamplesMaxDepth: number`
+- Renamed
 ---
-* `showExtensions`
-* `boolean | string[]`
-* `string | string[] | boolean`
-* Type changed
+- `showExtensions`
+- `boolean | string[]`
+- `string | string[] | boolean`
+- Type changed
 ---
-* `preserveOriginalExtensionsName`
-* `boolean`
-* Removed
-* Deleted
+- `preserveOriginalExtensionsName`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `hideSingleRequestSampleTab`
-* `boolean`
-* Removed
-* Deleted
+- `hideSingleRequestSampleTab`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `hideRequestPayloadSample`
-* `boolean`
-* Removed
-* Deleted
+- `hideRequestPayloadSample`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `menuToggle`
-* `boolean`
-* Removed
-* Deleted
+- `menuToggle`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `jsonSampleExpandLevel`
-* `number`
-* `jsonSamplesExpandLevel: number`
-* Renamed
+- `jsonSampleExpandLevel`
+- `number`
+- `jsonSamplesExpandLevel: number`
+- Renamed
 ---
-* `enumSkipQuotes`
-* `boolean`
-* Removed
-* Deleted
+- `enumSkipQuotes`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `hideSchemaTitles`
-* `boolean`
-* `boolean`
-* Unchanged
+- `hideSchemaTitles`
+- `boolean`
+- `boolean`
+- Unchanged
 ---
-* `hideSecuritySection`
-* `boolean`
-* Removed
-* Deleted
+- `hideSecuritySection`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `showSecuritySchemeType`
-* `boolean`
-* Removed
-* Deleted
+- `showSecuritySchemeType`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `simpleOneOfTypeLabel`
-* `boolean`
-* Removed
-* Deleted
+- `simpleOneOfTypeLabel`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `payloadSampleIdx`
-* `number`
-* Removed
-* Deleted
+- `payloadSampleIdx`
+- `number`
+- Removed
+- Deleted
 ---
-* `expandSingleSchemaField`
-* `boolean`
-* Removed
-* Deleted
+- `expandSingleSchemaField`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `schemaExpansionLevel`
-* `number`
-* `schemasExpansionLevel: number | undefined`
-* Renamed and type changed
+- `schemaExpansionLevel`
+- `number`
+- `schemasExpansionLevel: number | undefined`
+- Renamed and type changed
 ---
-* `samplesTabsMaxCount`
-* `number`
-* Removed
-* Deleted
+- `samplesTabsMaxCount`
+- `number`
+- Removed
+- Deleted
 ---
-* `mockServer`
-* `{ url: string; position: 'first' | 'last' | 'replace' | 'off'; description: string }`
-* `{ url: string; position: 'first' | 'last' | 'replace' | 'off'; description: string }`
-* Unchanged
+- `mockServer`
+- `{ url: string; position: 'first' | 'last' | 'replace' | 'off'; description: string }`
+- `{ url: string; position: 'first' | 'last' | 'replace' | 'off'; description: string }`
+- Unchanged
 ---
-* `unstable_tryItButtonOverride`
-* `{ label: string; link?: string; onClick?: () => void } | null`
-* Removed
-* Deleted
+- `unstable_tryItButtonOverride`
+- `{ label: string; link?: string; onClick?: () => void } | null`
+- Removed
+- Deleted
 ---
-* `allowedMdComponents`
-* `Record<string, MDXComponentMeta>`
-* Removed
-* Deleted
+- `allowedMdComponents`
+- `Record<string, MDXComponentMeta>`
+- Removed
+- Deleted
 ---
-* `expandDefaultServerVariables`
-* `boolean`
-* Removed
-* Deleted
+- `expandDefaultServerVariables`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `expandDefaultRequest`
-* `boolean`
-* Removed
-* Deleted
+- `expandDefaultRequest`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `expandDefaultResponse`
-* `boolean`
-* Removed
-* Deleted
+- `expandDefaultResponse`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `collapseRequestSamplePanel`
-* `boolean`
-* Removed
-* Deleted
+- `collapseRequestSamplePanel`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `collapseResponseSamplePanel`
-* `boolean`
-* Removed
-* Deleted
+- `collapseResponseSamplePanel`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `maxDisplayedEnumValues`
-* `number`
-* `number`
-* Unchanged
+- `maxDisplayedEnumValues`
+- `number`
+- `number`
+- Unchanged
 ---
-* `ignoreNamedSchemas`
-* `Set<string>`
-* `Set<string>`
-* Unchanged
+- `ignoreNamedSchemas`
+- `Set<string>`
+- `Set<string>`
+- Unchanged
 ---
-* `unstable_ignoreMimeParameters`
-* `boolean`
-* Removed
-* Deleted
+- `unstable_ignoreMimeParameters`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `unstable_externalCodeSamples`
-* `Unstable_ExternalCodeSample[]`
-* `Unstable_ExternalCodeSample[]`
-* Unchanged
+- `unstable_externalCodeSamples`
+- `Unstable_ExternalCodeSample[]`
+- `Unstable_ExternalCodeSample[]`
+- Unchanged
 ---
-* `hooks`
-* `HooksConfig`
-* `unstable_hooks: HooksConfig`
-* Renamed and required
+- `hooks`
+- `HooksConfig`
+- `unstable_hooks: HooksConfig`
+- Renamed and required
 ---
-* `hideSchemaPattern`
-* `boolean`
-* Removed
-* Deleted
+- `hideSchemaPattern`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `hideOneOfDescription`
-* `boolean`
-* Removed
-* Deleted
+- `hideOneOfDescription`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `hideFab`
-* `boolean`
-* Removed
-* Deleted
+- `hideFab`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `markdownHeadingsAnchorLevel`
-* `number`
-* Removed
-* Deleted
+- `markdownHeadingsAnchorLevel`
+- `number`
+- Removed
+- Deleted
 ---
-* `schemaDefinitionsTagName`
-* `string`
-* `string`
-* Unchanged
+- `schemaDefinitionsTagName`
+- `string`
+- `string`
+- Unchanged
 ---
-* `minCharacterLengthToInitSearch`
-* `number`
-* Removed
-* Deleted
+- `minCharacterLengthToInitSearch`
+- `number`
+- Removed
+- Deleted
 ---
-* `maxResponseHeadersToShowInTryIt`
-* `number`
-* Removed
-* Deleted
+- `maxResponseHeadersToShowInTryIt`
+- `number`
+- Removed
+- Deleted
 ---
-* `showWebhookVerb`
-* `boolean`
-* Removed
-* Deleted
+- `showWebhookVerb`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `showObjectSchemaExamples`
-* `boolean`
-* Removed
-* Deleted
+- `showObjectSchemaExamples`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `showAccessMode`
-* `boolean`
-* Removed
-* Deleted
+- `showAccessMode`
+- `boolean`
+- Removed
+- Deleted
 ---
-* `disableTryItRequestUrlEncoding`
-* `boolean`
-* Removed
-* Deleted
+- `disableTryItRequestUrlEncoding`
+- `boolean`
+- Removed
+- Deleted
 ---
-* **New Options**
-* Not available
-* Various (e.g., `feedback`, `events`, `routingBasePath`, etc.)
-* Several new options added
+- **New Options**
+- Not available
+- Various (e.g., `feedback`, `events`, `routingBasePath`, etc.)
+- Several new options added
 {% /table %}
 
 ## Summary of changes

@@ -25,7 +25,7 @@ To set up localization folders:
     your-awesome-project/
     ├── @l10n/
     │   ├── es-ES/
-    │   ├── es-419/ 
+    │   ├── es-419/
     │   ├── fr/
     │   ├── ja/
     │   ├── zh-Hans/
@@ -54,7 +54,7 @@ To add the `l10n` configuration to the `redocly.yaml` file:
         - code: en
         - code: zh-Hans
         - code: zh-Hant
-        - code: fr 
+        - code: fr
         - code: ja
         - code: es-419
         - code: es-ES
@@ -102,5 +102,5 @@ To add the `l10n` configuration to the `redocly.yaml` file:
 
 ## Resources
 
-* Find the next step to add localization to your project in [Configure localization](./index.md).
-* Learn how to localize the UI labels in your project in [Localize labels using translation keys](./localize-labels.md)
+- Find the next step to add localization to your project in [Configure localization](./index.md).
+- Learn how to localize the UI labels in your project in [Localize labels using translation keys](./localize-labels.md)
