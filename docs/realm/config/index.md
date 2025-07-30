@@ -18,6 +18,7 @@ These options let you define your APIs and control how API descriptions are proc
 - [extends](./openapi/extends.md)
 - [rules](./rules.md)
 - [scorecard](./scorecard.md)
+- [stats](./stats.md)
 - [catalogClassic](./catalog-classic.md)
 
 ## Navigation elements

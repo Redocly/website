@@ -255,27 +255,14 @@
               label: x-assertionType
         - page: content/api-docs/add-asyncapi-docs.md
           label: AsyncAPI
-        - group: AsyncAPI extensions
-          page: content/api-docs/asyncapi-extensions/index.md
-          items:
-          - page: content/api-docs/asyncapi-extensions/x-tag-groups.md
-            label: x-tagGroups
-          - page: content/api-docs/asyncapi-extensions/x-badges.md
-            label: x-badges
-          - page: content/api-docs/asyncapi-extensions/x-enum-descriptions.md
-            label: x-enumDescriptions
-          - page: content/api-docs/asyncapi-extensions/x-additional-properties-name.md
-            label: x-additionalPropertiesName
-          - page: content/api-docs/asyncapi-extensions/x-rbac.md
-            label: x-rbac
         - page: content/api-docs/add-graphql-docs.md
           label: GraphQL
         - page: content/api-docs/add-soap-docs.md
           label: SOAP
         - page: content/api-docs/add-classic-catalog.md
-          label: Classic catalog
+          label: Add classic catalog
         - page: content/api-docs/configure-mock-server.md
-          label: Mock server
+          label: Configure mock server
         - page: content/api-docs/try-apis-with-mock-server.md
           label: Try APIs with mock server
         - page: content/api-docs/replay.md
@@ -385,13 +372,6 @@
     - page: customization/create-react-page.md
     - page: customization/markdoc-variables.md
     - page: customization/build-markdoc-tags.md
-    - group: Markdoc attribute resolvers
-      page: customization/markdoc-attribute-resolvers/index.md
-      items:
-        - page: customization/markdoc-attribute-resolvers/link.md
-          label: link
-        - page: customization/markdoc-attribute-resolvers/raw-content.md
-          label: rawContent
     - page: customization/build-custom-function.md
     - page: customization/import-npm-library.md
     - page: customization/eject-root-layout.md

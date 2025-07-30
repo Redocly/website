@@ -1,53 +1,122 @@
-# Add AsyncAPI descriptions
+# Add AsyncAPI documents
 
-Transform your AsyncAPI description YAML or JSON file into interactive documentation by adding it to your project.
-Add one or multiple Event-Driven API (EDA) descriptions to your project.
-
-Add individual description files to your project alongside your other content, or use an [API catalog](./add-classic-catalog.md) to showcase your EDAs alongside REST APIs and GraphQL.
-
-If you use a `sidebars.yaml` file to organize your sidebar navigation, add your AsyncAPI descriptions to it for them to display in your navigation menu.
-
-## Protocol support
-
-Realm supports Apache Kafka protocol bindings and renders labels for RabbitMQ's Advanced Message Queuing Protocol (AMQP).
-When Realm detects an AsyncAPI file containing Kafka bindings, it generates project pages with components specific to that protocol.
-
-If your description file contains bindings from other protocols, the pages in your project may display some information as JSON code snippets instead of tables or forms.
+Transform your AsyncAPI document files into reference documentation by integrating them into your project.
+Give your users the tools they need to make the most of your Event-Driven APIs (EDAs) with comprehensive reference documentation.
+Either add individual document files to your project alongside your other content, or use a [classic version of the catalog](./add-classic-catalog.md) to showcase your EDAs alongside OpenAPI and AsyncAPI APIs.
 
 ## Before you begin
 
-Make sure you have the following:
+Make sure you have the following before you begin:
 
-- AsyncAPI description files in YAML or JSON format (3.0.0 version of AsyncAPI is supported)
+- a `redocly.yaml` file in the root of your project
+- a `package.json` file in the root of your project
+- the Redocly package for the product you use (such as `@redocly/realm`) listed as a dependency in the `package.json` file
 
-## Include AsyncAPI files in your project
+{% admonition type="warning" name="Local dependencies required" %}
+Redocly projects can be previewed locally without installing dependencies, but to add the Redocly AsyncAPI plugin, you must have both Realm and the Redocly AsyncAPI plugin installed as local dependencies.
 
-If you have one or two AsyncAPI description files and no `sidebars.yaml` file in your project, place the files in your project at the root or in a folder.
-The AsyncAPI reference documentation is automatically added to your sidebar when you run your project.
+If you see the error `Theme "@redocly/portal-plugin-async-api" not found`, check that you have the `@redocly/realm` package listed in `package.json`.
+{% /admonition %}
 
-If you have a `sidebars.yaml` file in your project, add your AsyncAPI description to your `sidebars.yaml` file for it to appear in your sidebar navigation.
+## Install the Redocly Async API plugin
+
+To generate reference documentation for AsyncAPI document files, you must have the Redocly AsyncAPI plugin installed in your project.
+If you are working locally, install the plugin using a package manager.
+If you are working in Reunite, add the plugin as a dependency to your `package.json` file.
+
+### Install in Reunite
+
+To generate Event-Driven API reference documentation from an AsyncAPI document file, add a `package.json` file with the Redocly AsyncAPI plugin listed as a dependency.
+
+Use the following example `package.json` file that includes the Redocly AsyncAPI plugin as a dependency, updating `*` with the [latest version](https://www.npmjs.com/package/@redocly/portal-plugin-async-api):
+
+```json {% title="package.json" %}
+{
+  "name": "demo project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "demo",
+  "dependencies": {
+    "@redocly/portal-plugin-async-api": "*"
+  }
+}
+```
+
+### Install using a package manager
+
+Redocly projects can be previewed locally without installing dependencies, but to add the Redocly AsyncAPI plugin, you must have both the Realm and the Redocly AsyncAPI plugin installed as local dependencies.
+
+To install the Redocly AsyncAPI plugin, use one of the following commands, depending on the package manager you are using:
+
+{% tabs %}
+
+{% tab label="npm" %}
+```sh {% title="npm" %}
+npm install @redocly/portal-plugin-async-api
+```
+{% /tab %}
+
+{% tab label="yarn" %}
+
+```sh {% title="yarn" %}
+yarn add @redocly/portal-plugin-async-api
+```
+
+{% /tab %}
+
+{% tab label="pnpm" %}
+
+```sh {% title="pnpm" %}
+pnpm add @redocly/portal-plugin-async-api
+```
+
+{% /tab %}
+{% /tabs %}
+
+### Enable plugin in redocly.yaml
+
+After you have installed the plugin in your project, you must also enable it in your `redocly.yaml` file by adding it to the `plugins` object.
+
+To enable the Redocly AsyncAPI plugin in your project, add the following configuration to your `redocly.yaml` file at the root of your project:
+
+```yaml {% title="redocly.yaml" %}
+plugins:
+  - '@redocly/portal-plugin-async-api/plugin.js'
+```
+
+For a complete plugin settings reference see [AsyncAPI plugin reference](../../setup/reference/plugins/docs/asyncapi.md).
+
+## Add the AsyncAPI document file to your project
+
+If you only have one or two AsyncAPI document files, and you do not have a `sidebars.yaml` file in your project, to add Event-Driven API (EDA) documentation to your project, place the files in your project, either at the root or in a folder.
+Afterwards, the EDA reference documentation is automatically added to your sidebar when you run your project.
+
+If you do not have one yet, you can use one of the example files from [AsyncAPI github repository](https://github.com/asyncapi/spec/tree/master/examples).
+
+If you have a `sidebars.yaml` file in your project, adding your AsyncAPI document file to your project does not add it to your sidebar automatically.
+You must add your AsyncAPI document file to your `sidebars.yaml` file.
 
 ## Use the sidebars.yaml file
 
-If you have a `sidebars.yaml` file in your project, add any files you want displayed in your sidebar navigation to it, including AsyncAPI descriptions.
+If you have a `sidebars.yaml` file in your project, you must add any files, including AsyncAPI document files, you want displayed in your sidebar to it.
 For more information on configuring a `sidebars.yaml` file for your project, see [Configure navigation on the sidebar](../../navigation/sidebar.md).
 
-To add an AsyncAPI file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the AsyncAPI description to your `sidebars.yaml` file:
+To add an AsyncAPI document file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the AsyncAPI document file to your `sidebars.yaml` file, as in the following example:
 
 ```yaml {% title="sidebars.yaml" %}
 - page: apis/sample-api.yaml
   label: Sample API
 ```
 
-If you have multiple API descriptions, group them to better organize your sidebar navigation.
+If you have multiple API documents, you can group them to better organize your sidebar navigation menu.
 
 ### Use the `group` key for multiple descriptions
 
-If you have multiple AsyncAPI descriptions, use a `group` key for each description so that the different endpoints are only revealed when selected.
+If you have multiple AsyncAPI document files, you can use a `group` key for each so that the different endpoints are only revealed when selected.
 
-To add multiple AsyncAPI descriptions using `group` keys, update your `sidebars.yaml` file:
+To add multiple AsyncAPI document files using `group` keys, update your `sidebars.yaml` file, as in the following example:
 
-```yaml {% title="sidebars.yaml" %}
+```yaml
 - group: Sample product 1 API
   items:
     - page: apis/sample-api-1.yaml
@@ -58,37 +127,10 @@ To add multiple AsyncAPI descriptions using `group` keys, update your `sidebars.
       label: Sample product 2 API
 ```
 
-## Migrate from the deprecated AsyncAPI docs plugin
-
-Realm supports AsyncAPI documents without further configuration.
-If you are using the deprecated AsyncAPI plugin, Redocly recommends migrating to the built-in docs tool.
-
-To migrate to built-in AsyncAPI docs:
-
-1. In the `redocly.yaml` file at the root of your project, delete the following lines:
-
-    ```yaml {% title="redocly.yaml" %}
-    plugins:
-      - '@redocly/portal-plugin-async-api/plugin.js'
-    ```
-2. Remove the `@redocly/portal-plugin-async-api` dependency from your `package.json` file:
-
-    ```json {% title="package.json" %}
-    {
-      "name": "demo project",
-      "version": "1.0.0",
-      "description": "demo",
-      "dependencies": {
-        "@redocly/portal-plugin-async-api": "*" // [!code --]
-      }
-    }
-    ```
-
-Your AsyncAPI documentation is rendered using the built-in tool.
-
 ## Resources
 
-- Organize multiple API descriptions by [adding a catalog](./add-classic-catalog.md).
-- Help users find your content by [configuring navigation in the sidebar](../../navigation/sidebar.md).
-- See the [Replay the API explorer](./replay.md) concept doc to learn more about making your API reference docs interactive.
-- Use [AsyncAPI extensions](./asyncapi-extensions/index.md) in your API description to produce richer documentation.
+- Organize multiple API descriptions by [Adding a catalog](./add-classic-catalog.md).
+- Help users find your content by [Configuring navigation in the sidebar](../../navigation/sidebar.md).
+- Learn how to [add OpenAPI reference docs](./add-openapi-docs.md).
+- See the [Replay the API explorer](../../setup/concepts/replay.md) concept doc to learn more about making your API reference docs interactive.
+- For more detailed information about the plugin see the [AsyncAPI plugin](../../setup/reference/plugins/docs/asyncapi.md) reference documentation.
