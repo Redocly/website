@@ -54,7 +54,7 @@
     changes:
       minor:
         - Removed deprecated `path-excludes-patterns` and `info-license-url` rules.
-        - Improved `graphql-docs` package by making its rendering behavior consistent across other proudcts.
+        - Improved `graphql-docs` package by making its rendering behavior consistent across other products.
       patch:
         - Improved performance of JSON responses by optimizing RBAC filtering logic.
         - Improved performance and reduced data size for OpenAPI pages.
@@ -9902,7 +9902,7 @@
     changes:
       minor:
         - Removed deprecated `path-excludes-patterns` and `info-license-url` rules.
-        - Improved `graphql-docs` package by making its rendering behavior consistent across other proudcts.
+        - Improved `graphql-docs` package by making its rendering behavior consistent across other products.
       patch:
         - Improved performance of JSON responses by optimizing RBAC filtering logic.
         - Improved performance and reduced data size for OpenAPI pages.
@@ -12900,7 +12900,7 @@
     timestamp: 1753349247000
     changes:
       minor:
-        - Improved `graphql-docs` package by making its rendering behavior consistent across other proudcts.
+        - Improved `graphql-docs` package by making its rendering behavior consistent across other products.
       patch: []
     dependencies: {}
   0.56.0-next.5:
@@ -14930,7 +14930,7 @@
     timestamp: 1753349247000
     changes:
       minor:
-        - Improved `graphql-docs` package by making its rendering behavior consistent across other proudcts.
+        - Improved `graphql-docs` package by making its rendering behavior consistent across other products.
       patch:
         - Updated `@redocly/openapi-core` to version `2.0.0-next.8`.
         - Made the display of `x-` extensions independent from the description.
@@ -17248,7 +17248,7 @@
     timestamp: 1753349247000
     changes:
       minor:
-        - Improved `graphql-docs` package by making its rendering behavior consistent across other proudcts.
+        - Improved `graphql-docs` package by making its rendering behavior consistent across other products.
       patch: []
     dependencies: {}
   0.13.0-next.1:
