@@ -16853,6 +16853,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.27.0:
+    timestamp: 1753867081000
+    changes:
+      minor:
+        - Added `ignoreRespectMonitoring` property to the Reunite config schema.
+      patch: []
+    dependencies: {}
   0.26.4:
     timestamp: 1753106227000
     changes:
@@ -17909,6 +17916,14 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.3.1:
+    timestamp: 1753867081000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.0.2`.
+        - Updated `@redocly/openapi-core` to version `2.0.1`.
+    dependencies: {}
   0.3.0:
     timestamp: 1753349155000
     changes:
