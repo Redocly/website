@@ -98,16 +98,13 @@ By default, the MCP server is enabled for your project.
 ```yaml
 # Global MCP settings
 hide: false
-
 # Catalog settings
 catalog:
   hide: false
   name: My Custom MCP Catalog
-
 # API settings
 api:
   hide: false
-
 # Ignored patterns
 ignore:
   - internal-api
