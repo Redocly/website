@@ -63,6 +63,8 @@
       label: logo
     - page: ./markdown.md
       label: markdown
+    - page: ./mcp.md
+      label: mcp
     - page: ./metadata.md
       label: metadata
     - page: ./metadata-globs.md
