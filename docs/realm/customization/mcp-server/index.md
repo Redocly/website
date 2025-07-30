@@ -18,8 +18,6 @@ With Realm you can setup your MCP Server and expose API Catalog directly to AI a
 
 ## Common use cases
 
-### Real-time querying of OpenAPI specification
-
 By exposing your OpenAPI spec via MCP server, AI can:
 
 - **Make Authenticated requests** - With proper authentication, AI can execute requests and gather data based on the access provided by OAuth2 Provider.
@@ -30,3 +28,4 @@ By exposing your OpenAPI spec via MCP server, AI can:
 To reference the documentation for MCP Server, see:
 - [MCP server usage](./mcp-server-usage.md) for MCP server methods and usage.
 - [MCP server authentication](./mcp-server-authentication.md) to get familiar with authentication.
+- View full configuration details in the `mcp` [configuration reference](../../config/mcp.md).

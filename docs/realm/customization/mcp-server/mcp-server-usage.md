@@ -8,7 +8,7 @@ plans:
   - Enterprise+
 ---
 
-# MCP Server Usage
+# MCP server usage
 
 Your MCP server exposes tools for AI applications to search your documentation and interact with your APIs.
 
@@ -26,7 +26,7 @@ Users can use their preffered AI tools and connect them to MCP server.
 
 ### Cursor
 
-#### MCP Settings
+#### MCP settings
 
 1. Open the command palette:
    - macOS: `Command + Shift + P`
@@ -37,7 +37,7 @@ Users can use their preffered AI tools and connect them to MCP server.
 3. Select "Add custom MCP"
    - This will open the `mcp.json` file
 
-#### Configuring MCP Server
+#### Configuring MCP server
 
 1. In the `mcp.json` file, add your server configuration:
 ```json
@@ -56,3 +56,9 @@ Users can use their preffered AI tools and connect them to MCP server.
 #### Testing connection
 
 Now in Cursor chat you can ask "What tools are available?" or "Give me a list of APIs?" (to retrieve list of APIs in your catalog). Cursor should have access to your catalog APIs.
+
+### MCP server monitoring
+
+You can view list of available MCP tools using any inspector or MCP client.
+
+{% img src="./images/monitoring.png" alt="monitoring.png" withLightbox=true width="" height="" /%}
