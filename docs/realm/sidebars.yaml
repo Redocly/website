@@ -382,6 +382,14 @@
           label: Reference
         - page: customization/api-functions/create-api-functions.md
           label: Tutorials
+    - group: MCP Server
+      items:
+        - page: customization/mcp-server/index.md
+          label: Use cases
+        - page: customization/mcp-server/mcp-server-usage.md
+          label: Usage
+        - page: customization/mcp-server/mcp-server-authentication.md
+          label: Authentication
     - page: customization/create-react-page.md
     - page: customization/markdoc-variables.md
     - page: customization/build-markdoc-tags.md
