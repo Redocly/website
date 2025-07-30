@@ -33,6 +33,8 @@
           label: Add an identity provider
         - page: reunite/organization/sso/configure-sso.md
           label: Configure SSO
+        - page: reunite/organization/sso/configure-auth0.md
+          label: Configure Auth0
         - page: reunite/organization/sso/configure-azure-ad.md
           label: Microsoft Entra ID
         - page: reunite/organization/sso/configure-google-sso.md
