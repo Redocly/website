@@ -316,6 +316,18 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- codeSnippet.expand.tooltipText
+- Code snippet expand all button tooltip
+- Expand all
+
+---
+
+- codeSnippet.collapse.tooltipText
+- Code snippet collapse all button tooltip
+- Collapse all
+
+---
+
 - codeSnippet.copy.buttonText
 - Code snippet copy button text
 - Copy
