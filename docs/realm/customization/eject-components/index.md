@@ -10,7 +10,11 @@ plans:
 
 # Eject components
 
-In some cases, it may be necessary to extend the functionality of existing components, such as the Search, Footer, or Markdoc Card components. The eject feature allows you to create a local copy of the component’s source code within your project. After that, you can customize the component's styles, structure, or behavior.
+In some cases, it may be necessary to extend the functionality of existing components, such as the Search, Footer, Markdoc Card, or `NotFound` components.
+The eject feature allows you to create a local copy of the component’s source code within your project.
+After that, you can customize the component's styles, structure, or behavior.
+
+For example, you can eject the `NotFound` component to customize your 404 error pages with custom styling, messaging, or additional functionality.
 
 {% admonition type="warning" name="Eject component warning" %}
   Once a component is ejected and customized, it's your responsibility to maintain the implementation moving forward. Make sure a component cannot be customized [in other ways](#before-you-begin) before ejecting.
