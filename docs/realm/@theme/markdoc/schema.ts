@@ -1,10 +1,6 @@
-import { FormatImageTag } from './components/FormatImage/FormatImage-markdoc';
-import { ColorModeExampleTag } from './components/ColorModeExample/ColorModeExample-markdoc';
 import { IconTag } from './components/Icon/Icon-markdoc';
 
 export const tags = {
-  'format-image': FormatImageTag,
-  'color-mode-image-example': ColorModeExampleTag,
   icon: IconTag,
 }
 

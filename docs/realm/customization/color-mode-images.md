@@ -81,7 +81,7 @@ To add an image that switches with color mode:
 
 In this example, the image changes when users toggle between color modes. You can see the working implementation below. Try changing the color mode.
 
-{% color-mode-image-example /%}
+{% img srcSet="./images/sun.png light, ./images/moon.png dark" alt="sun and moon" width="200" height="" /%}
 
 ## Resources
 
