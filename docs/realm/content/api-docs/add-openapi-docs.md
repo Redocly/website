@@ -2,7 +2,7 @@
 
 Transform your OpenAPI description YAML or JSON file into interactive documentation by adding it to your project. You can add one or multiple OpenAPI descriptions to your project.
 
-Either add individual description files to your project alongside your other content, or use a [classic version of the catalog](./add-classic-catalog.md) to showcase your REST APIs alongside GraphQL and AsyncAPI APIs.
+Either add individual description files to your project alongside your other content, or use a [classic catalog](../../config/catalog-classic.md) to showcase your REST APIs alongside GraphQL and AsyncAPI APIs.
 
 If you are using a `sidebars.yaml` file to organize your sidebar navigation menu, you must add your OpenAPI descriptions to it for them to display on your sidebar navigation menu.
 
@@ -52,7 +52,7 @@ To add multiple OpenAPI descriptions using `group` keys, update your `sidebars.y
 
 ## Resources
 
-- Organize multiple API descriptions by [Adding a catalog](./add-classic-catalog.md).
+- Organize multiple API descriptions by [Configuring a catalog](../../config/catalog-classic.md).
 - Help users find your content by [Configuring navigation in the sidebar](../../navigation/sidebar.md).
 - See the [Replay the API explorer](../../setup/concepts/replay.md) concept doc to learn more about making your API reference docs interactive.
 - Use [OpenAPI extensions](./openapi-extensions/index.md) in your API description to produce richer documentation.

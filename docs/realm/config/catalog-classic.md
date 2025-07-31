@@ -84,7 +84,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 - filters
 - [[Filter](#filter-object)]
 - List of filter configurations which allows for quicker discovery.
-  See [Categories](../content/categories.md) for more information on how to categorize content for filtering.
+  See [metadata](./metadata.md#catalog-categorization) for more information on how to categorize content for filtering.
 
 ---
 
@@ -240,33 +240,87 @@ See [rbac](./rbac.md) reference documentation for more options and examples.
 
 ## Examples
 
-The following is an example of a catalog configuration.
+### Complete catalog setup
+
+The following example shows a complete catalog configuration including the required `navbar` configuration to make the catalog accessible.
+
+First, organize your API description files into a logical folder structure:
+
+```treeview
+my_project/
+├── apis/
+│   ├── payments/
+│   │   ├── payments-api.yaml
+│   │   └── webhooks-api.yaml
+│   ├── users/
+│   │   └── users-api.yaml
+│   └── analytics/
+│       ├── analytics-api.yaml
+│       ├── index.md
+│       └── getting-started.md
+├── redocly.yaml
+└── sidebars.yaml
+```
+
+Then configure your catalog in `redocly.yaml`:
+
+```yaml {% title="redocly.yaml" %}
+logo:
+  image: ./images/logo.svg
+  altText: Acme Corp
+  link: https://example.com
+
+catalogClassic:
+  business:
+    title: API Catalog
+    description: 'Discover how our APIs can support your business'
+    slug: /apis/
+    items:
+      - directory: ./apis
+        flatten: true
+        includeByMetadata:
+          type: [openapi, graphql]
+    filters:
+      - title: Business Capability
+        property: capability
+        missingCategoryName: Other
+        type: select
+      - title: API Stage
+        property: tags
+        options: [beta, draft, stable]
+        type: checkboxes
+      - title: API Status
+        property: tags
+        options: [deprecated, active]
+        type: checkboxes
+
+navbar:
+  items:
+    - page: /apis/
+      icon: ./images/api-icon.png
+      linkedSidebars:
+        - ./sidebars.yaml
+    - label: Documentation
+      href: https://redocly.com/docs/
+      external: true
+```
+
+### Basic catalog configuration
+
+The following is a minimal catalog configuration:
 
 ```yaml {% title="redocly.yaml" %}
 catalogClassic:
-  acme-catalog:
-    title: Acme API catalog
-    description: 'This is a description of the API Catalog'
+  simple-catalog:
+    title: API catalog
+    description: 'Browse our available APIs'
     slug: /catalog/
-    filters:
-      - title: API Category
-        property: category
-        missingCategoryName: Other
-      - title: Team
-        property: team
-        missingCategoryName: No team
-    # separateVersions: true
-    groupByFirstFilter: true
     items:
       - directory: ./
         flatten: true
         includeByMetadata:
           type: [openapi]
 ```
-
-{% admonition type="info" %}
-To make the catalog accessible by link, you must add the catalog `slug` to the `sidebars.yaml` file or the `navbar` configuration in the `redocly.yaml` file.
-{% /admonition %}
 
 ### `x-metadata` filters in classic catalog
 
@@ -293,6 +347,7 @@ catalogClassic:
 
 ## Resources
 
-- Learn how to add a classic version of the catalog in the [Add a classic catalog](../content/api-docs/add-classic-catalog.md) how-to documentation.
 - When an API description contains metadata, and you want to exclude the metadata from the API reference documentation, use the [hideInfoMetadata](./openapi/hide-info-metadata.md) configuration option.
+- Learn about [API Governance](https://redocly.com/docs/cli/api-standards) and [configure your scorecard](../reunite/project/configure-scorecard.md) to check APIs against standards.
+- Use [metadata categorization](./metadata.md#catalog-categorization) to filter APIs in the classic catalog.
 - Follow steps to [configure navigation on the navbar](../navigation/navbar.md) to include your catalog link.

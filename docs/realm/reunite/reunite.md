@@ -100,7 +100,7 @@ These [feedback mechanisms can be configured in your `redocly.yaml` file](../con
 
 The API registry is a list of all the API descriptions you have included in an API catalog.
 API catalogs are an organized way to present many APIs that can be filtered and searched.
-You can [add an API catalog](../content/api-docs/add-classic-catalog.md) by organizing your API descriptions and adding a configuration to your `redocly.yaml` file.
+You can [configure an API catalog](../config/catalog-classic.md) by organizing your API descriptions and adding a configuration to your `redocly.yaml` file.
 You can view the Scorecard status, metadata, custom fields, and logs for each API description included in your catalog on the **API registry** page.
 
 ## Project settings

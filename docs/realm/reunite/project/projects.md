@@ -43,7 +43,8 @@ On this page you can view [customer feedback](../../setup/how-to/feedback/index.
 
 ### API registry
 
-This page lists the APIs descriptions from the [catalog you defined](../../content/api-docs/add-classic-catalog.md) in your project. You can view the details, like the scorecard status, the linter report, or the metadata of each API description and filter API descriptions by the assigned team.
+This page lists the APIs descriptions from the [catalog you configured](../../config/catalog-classic.md) in your project.
+You can view the details, like the scorecard status, the linter report, or the metadata of each API description and filter API descriptions by the assigned team.
 
 ### Settings
 

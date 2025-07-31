@@ -282,7 +282,7 @@ Realm and Reef users have access to the built-in API catalog feature, which is u
 - In the developer portal, the API catalog had to be _added as a custom component_ in an MDX page.
 - In Realm, the classic catalog feature is already _built into the product_ and is enabled through configuration.
 
-Use the following guide to enable the classic catalog during your migration: [configure a classic catalog in your project](../content/api-docs/add-classic-catalog.md).
+Use the following guide to enable the classic catalog during your migration: [configure a classic catalog in your project](../config/catalog-classic.md).
 
 #### Update Markdown files
 

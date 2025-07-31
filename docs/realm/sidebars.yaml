@@ -276,8 +276,6 @@
           label: GraphQL
         - page: content/api-docs/add-soap-docs.md
           label: SOAP
-        - page: content/api-docs/add-classic-catalog.md
-          label: Classic catalog
         - page: content/api-docs/configure-mock-server.md
           label: Mock server
         - page: content/api-docs/try-apis-with-mock-server.md
@@ -301,8 +299,6 @@
           label: Display current locale
         - page: content/localization/translation-keys.md
           label: Translation keys
-    - page: content/categories.md
-      label: Categories
     - page: content/add-redirects.md
       label: Add redirects
     - page: content/realm-version.md
