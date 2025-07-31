@@ -387,11 +387,19 @@
         - page: customization/mcp-server/index.md
           label: Use cases
         - page: customization/mcp-server/catalog-mcp/index.md
-          label: Catalog MCP
+          group: Catalog MCP
+          items:
+            - page: customization/mcp-server/catalog-mcp/tools.md
+              label: Tools
+            - page: customization/mcp-server/catalog-mcp/authentication.md
+              label: Authentication
         - page: customization/mcp-server/api-mcp/index.md
-          label: API MCP
+          group: API MCP
+          items:
+            - page: customization/mcp-server/api-mcp/tools.md
+              label: Tools
         - page: customization/mcp-server/usage.md
-          label: How to connect
+          label: Usage
           
     - page: customization/create-react-page.md
     - page: customization/markdoc-variables.md

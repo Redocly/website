@@ -20,9 +20,9 @@ Your MCP server is automatically generated and hosted at your documentation URL 
 
 Users can use their preferred AI tools that serve MCP client (Cursor, Claude Code, etc.) and connect them to MCP server.
 
-1. Make sure your mcp server and configuration is enabled.
+1. Make sure your MCP server is enabled in configuration.
 2. Users can copy your MCP server URL and add it to their tools.
-3. By connecting to your MCP server, user can have standardized access to your OpenAPI documentation.
+3. By connecting to your MCP server, users can have standardized access to your OpenAPI documentation.
 
 ### Cursor
 
@@ -76,6 +76,6 @@ Now in Cursor chat you can ask "What tools are available?" or "Give me a list of
 
 ### MCP server monitoring
 
-You can view list of available MCP tools using any inspector or MCP client.
+You can view list of available MCP tools using any MCP inspector.
 
 {% img src="./images/monitoring.png" alt="monitoring.png" withLightbox=true width="" height="" /%}

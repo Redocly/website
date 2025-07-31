@@ -132,6 +132,5 @@ The generated tool would look like:
 
 ## Next steps
 
-- Set up [MCP server authentication](../mcp-server-authentication.md)
 - View the [MCP configuration reference](../../../config/mcp.md)
 - Learn about the [Catalog MCP server](../catalog-mcp/index.md)

@@ -27,18 +27,15 @@ For authentication setup details, see [MCP server authentication](./authenticati
 
 ## Available tools
 
-The Catalog MCP server provides various tools for API exploration. These tools are organized into categories:
+The Catalog MCP server provides various tools for API exploration:
 
 - Authentication tools - Manage user authentication
 - API discovery tools - Browse and explore APIs
-- Definition tools - Access OpenAPI specifications
-- Schema tools - Examine data models
-- Path tools - Navigate API endpoints
 
 For a complete list of available tools and their usage, see [Catalog tools](./tools.md).
 
 ## Next steps
 
 - Learn how to [use the Catalog MCP tools](./tools.md)
-- Set up [MCP server authentication](../mcp-server-authentication.md)
+- Set up [Catalog MCP server authentication](./authentication.md)
 - View the [MCP configuration reference](../../../config/mcp.md)

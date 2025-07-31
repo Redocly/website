@@ -10,9 +10,9 @@ plans:
 
 # MCP Server Authentication
 
-The Catalog MCP server supports authenticated requests, ensuring that AI assistants can access only the APIs and operations permitted by the authenticated user's permissions. If authentication is not provided, all requests are processed as an anonymous user.
+MCP Server uses authentication to secure API access. This guide explains how to authenticate and use the MCP server securely and display APIs based on your permissions.
 
-## Authentication workflow
+## Authentication flow
 
 The following steps describe how an AI agent authenticates with the MCP server to act on behalf of a user.
 
@@ -31,16 +31,20 @@ Example of response:
 }
 ```
 
-### Step 2: Check authentication status
+### Step 2: Authentication
 
-After the user completes authentication in their browser, the AI agent will verify the session status by calling the `auth_check_status` tool. This confirms whether authentication was successful and the session is active.
+AI Agent will provide you an information about the url and the code. You will need to open that link in the browser and log in using your account.
 
-### Step 3: Make authenticated API requests
+### Step 3: Check authentication status
 
-When authentication is confirmed, AI Agent will use the returned `sessionId` to make authenticated requests to the MCP APIs. All actions and data access will be performed according to the authenticated user's permissions.
+After you've completed the authentication, AI Agent may check the status to confirm that the session is active using `auth_check_status` tool.
+
+### Step 4: Make an authenticated API call
+
+Once the authentication is successful, AI Agent will use the `sessionId` to make authenticated requests to the MCP APIs and retrieve information based on your permissions.
 
 ## Additional resources
 
 - Learn how to [configure project roles and permissions](../../../access/roles.md).
-- Understand [role-based access control](../../access/rbac.md).
-- Review the full `mcp` [configuration reference](../../../config/mcp.md).
+- Understand [Role-based access control](../../../access/rbac.md).
+- Review full `mcp` [configuration reference](../../../config/mcp.md).

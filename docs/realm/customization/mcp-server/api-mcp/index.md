@@ -23,7 +23,7 @@ The API MCP server enables AI assistants to interact with your APIs directly. It
 
 The API MCP server uses OAuth2 authentication to ensure secure API access. AI assistants can only execute operations that the authenticated user has permission to perform.
 
-For authentication setup details, see [MCP server authentication](../mcp-server-authentication.md).
+For authentication setup details, see **TBA**.
 
 ## Tool generation
 
@@ -34,5 +34,4 @@ For details about tool generation and usage, see [API tools](./tools.md).
 ## Next steps
 
 - Learn about [API tool generation](./tools.md)
-- Set up [MCP server authentication](../mcp-server-authentication.md)
 - View the [MCP configuration reference](../../../config/mcp.md)

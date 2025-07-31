@@ -125,5 +125,5 @@ ignore: []
 
 ## Resources
 
-- [Setup the MCP server](../customization/mcp-server/index.md)
-- [MCP server usage](../customization/mcp-server/mcp-server-usage.md)
+- [MCP servers overview](../customization/mcp-server/index.md)
+- [MCP servers usage](../customization/mcp-server/usage.md)
