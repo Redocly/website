@@ -18,7 +18,7 @@ Process for authenticating with the MCP server and making an authenticated API c
 
 ### Step 1: Initiate authentication
 
-Firstly, initiate the authentication process using `auth_initiate_login` tool. This provides a URL and a code for you to complete the login in your browser. 
+Firstly, initiate the authentication process using `auth_initiate_login` tool. This provides a URL and a code for you to complete the login in your browser.
 
 Example of response:
 
@@ -38,7 +38,7 @@ After you've completed the authentication in your browser, you check the status 
 
 ### Step 3: Make an authenticated API call
 
-Once the authentication is successful, you can use the `sessionId` to make authenticated requests to the MCP APIs. And retrieve information based on your permissions. 
+Once the authentication is successful, you can use the `sessionId` to make authenticated requests to the MCP APIs. And retrieve information based on your permissions.
 
 ## Resources
 

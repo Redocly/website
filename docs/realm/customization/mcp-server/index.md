@@ -8,25 +8,27 @@ plans:
   - Enterprise+
 ---
 
-# MCP Server
+# Model Context Protocol server
 
-Model Context Protocol is a standard to simplify how applications can provide context to large language models (LLMs).
+Model Context Protocol (MCP) is a standard that enables applications to provide context to large language models (LLMs). MCP servers expose your data to AI assistants, while MCP clients consume that data.
 
-It enables LLMs to use external tools & services, with MCP servers exposing your data to AI and MCP clients allowing access to that data.
+Realm provides built-in MCP server capabilities that expose your API catalog directly to AI assistants.
 
-With Realm you can setup your MCP Server and expose API Catalog directly to AI and MCP clients.
+## Benefits
 
-## Common use cases
+- **Secure API access** - AI assistants can make authenticated requests to act on your behalf.
+- **Real-time API guidance** - Users receive accurate, contextual help about API endpoints and operations
+- **Dynamic documentation** - AI assistants can extract and explain API reference content based on user needs
 
-By exposing your OpenAPI spec via MCP server, AI can:
+## Available MCP servers
 
-- **Make Authenticated requests** - With proper authentication, AI can execute requests and gather data based on the access provided by OAuth2 Provider.
-- **Real-time API guidance** - Users can ask AI on how to use specific endpoints, how to perform an action and even extract API reference based on your request.
+Realm includes two types of MCP servers:
 
-## Reference documentation
+- [Catalog MCP server](./catalog-mcp/index.md) - Provides API catalog exploration and discovery capabilities
+- [API MCP server](./api-mcp/index.md) - Exposes OpenAPI definitions and enables AI assistants to make authenticated API requests
 
-To reference the documentation for MCP Server, see:
-- [MCP server usage](./mcp-server-usage.md) for MCP server methods and usage.
-- [MCP server authentication](./mcp-server-authentication.md) to get familiar with authentication.
-- List of [avalable catalog tools](./catalog-tools.md).
-- View full configuration details in the `mcp` [configuration reference](../../config/mcp.md).
+## Next steps
+
+- Learn about [API MCP server](./api-mcp/index.md) capabilities
+- Explore [Catalog MCP server](./catalog-mcp/index.md) features
+- View the [MCP configuration reference](../../config/mcp.md)

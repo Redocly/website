@@ -18,11 +18,11 @@ Your MCP server is automatically generated and hosted at your documentation URL 
 
 ## Using your MCP server
 
-Users can use their preffered AI tools and connect them to MCP server.
+Users can use their preferred AI tools that serve MCP client (Cursor, Claude Code, etc.) and connect them to MCP server.
 
 1. Make sure your mcp server and configuration is enabled.
 2. Users can copy your MCP server URL and add it to their tools.
-3. By connecting to your MCP server, user can have standardized access to your openapi specifications.
+3. By connecting to your MCP server, user can have standardized access to your OpenAPI documentation.
 
 ### Cursor
 
@@ -50,6 +50,23 @@ Users can use their preffered AI tools and connect them to MCP server.
   }
 }
 ```
+
+You can also pass additional headers that will be sent with each request:
+
+```json
+{
+  "mcpServers": {
+    "example-mcp": {
+      "url": "https://example.com/mcp",
+      "transport": "http",
+      "headers": {
+        "Authorization": "Basic MTIzOjEyMw=="
+      }
+    }
+  }
+}
+```
+
 
 2. Save the `mcp.json` file
 
