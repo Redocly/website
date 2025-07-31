@@ -126,4 +126,4 @@ ignore: []
 ## Resources
 
 - [MCP servers overview](../customization/mcp-server/index.md)
-- [MCP servers usage](../customization/mcp-server/usage.md)
+- [How to connect to MCP servers](../customization/mcp-server/how-to-connect.md)

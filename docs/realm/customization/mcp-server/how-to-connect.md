@@ -8,15 +8,12 @@ plans:
   - Enterprise+
 ---
 
-# MCP server usage
+# How to connect your AI Agent to MCP Server
 
-Your MCP server exposes tools for AI applications to search your documentation and interact with your APIs.
+- Catalog MCP Server is registered and hosted at your root URL under the `/mcp` path.
+- API MCP Servers are registered for each API documentation and is available under the same URL as your API Reference + `/mcp` (F.e. `https://example.com/apis/museum-api/mcp`)
 
-## Accessing MCP
-
-Your MCP server is automatically generated and hosted at your documentation URL with the `/mcp` path.
-
-## Using your MCP server
+## Using MCP server
 
 Users can use their preferred AI tools that serve MCP client (Cursor, Claude Code, etc.) and connect them to MCP server.
 

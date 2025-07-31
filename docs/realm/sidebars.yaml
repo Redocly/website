@@ -402,8 +402,8 @@
           items:
             - page: customization/mcp-server/api-mcp/tools.md
               label: Tools
-        - page: customization/mcp-server/usage.md
-          label: Usage
+        - page: customization/mcp-server/how-to-connect.md
+          label: Connect to MCP server
           
     - page: customization/create-react-page.md
     - page: customization/markdoc-variables.md

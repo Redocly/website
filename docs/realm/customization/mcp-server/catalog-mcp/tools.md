@@ -93,6 +93,6 @@ Here you can find the full available list of MCP server catalog tools.
 ## References
 
 To reference the documentation for MCP Server, see:
-- [MCP server usage](../usage.md) for a guide on how to connect to MCP server.
-- [MCP server authentication](./authentication.md) to get familiar with authentication.
+- [How to connect](../how-to-connect.md) for a guide on how to integrate your AI Agent with MCP server.
+- [Catalog MCP server Authentication](./authentication.md) to get familiar with authentication.
 - View full configuration details in the `mcp` [configuration reference](../../../config/mcp.md).
