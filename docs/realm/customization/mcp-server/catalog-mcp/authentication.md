@@ -8,20 +8,19 @@ plans:
   - Enterprise+
 ---
 
-# MCP Server authentication
+# MCP Server Authentication
 
-MCP Server uses OAuth2 authentication to secure API access. This guide explains how to authenticate and use the MCP server securely and display APIs based on your permissions.
+The Catalog MCP server supports authenticated requests, ensuring that AI assistants can access only the APIs and operations permitted by the authenticated user's permissions. If authentication is not provided, all requests are processed as an anonymous user.
 
-## OAuth2
+## Authentication workflow
 
-Process for authenticating with the MCP server and making an authenticated API call.
+The following steps describe how an AI agent authenticates with the MCP server to act on behalf of a user.
 
 ### Step 1: Initiate authentication
 
-Firstly, initiate the authentication process using `auth_initiate_login` tool. This provides a URL and a code for you to complete the login in your browser.
+To start the authentication process, the AI agent calls the `auth_initiate_login` tool. The response contains a verification URL and a user code. The agent should present these to the user, instructing them to open the URL in their browser and enter the provided code to authorize access.
 
 Example of response:
-
 ```json
 {
   "sessionId": "sessionId",
@@ -34,14 +33,14 @@ Example of response:
 
 ### Step 2: Check authentication status
 
-After you've completed the authentication in your browser, you check the status to confirm that the session is active using `auth_check_status` tool.
+After the user completes authentication in their browser, the AI agent will verify the session status by calling the `auth_check_status` tool. This confirms whether authentication was successful and the session is active.
 
-### Step 3: Make an authenticated API call
+### Step 3: Make authenticated API requests
 
-Once the authentication is successful, you can use the `sessionId` to make authenticated requests to the MCP APIs. And retrieve information based on your permissions.
+When authentication is confirmed, AI Agent will use the returned `sessionId` to make authenticated requests to the MCP APIs. All actions and data access will be performed according to the authenticated user's permissions.
 
-## Resources
+## Additional resources
 
-- Configure [project roles and permissions](../../access/roles.md).
-- [Role-based access control](../../access/rbac.md).
-- View full configuration details in the `mcp` [configuration reference](../../config/mcp.md).
+- Learn how to [configure project roles and permissions](../../../access/roles.md).
+- Understand [role-based access control](../../access/rbac.md).
+- Review the full `mcp` [configuration reference](../../../config/mcp.md).

@@ -10,7 +10,7 @@ plans:
 
 # Catalog MCP server
 
-The Catalog MCP server enables AI assistants to explore and discover APIs in your API catalog. It provides tools for browsing API definitions, exploring endpoints, and understanding API schemas.
+The Catalog MCP server enables AI assistants to explore and discover APIs in your API catalog. It provides tools for browsing API definitions, exploring endpoints and understanding API schemas.
 
 ## Key features
 
@@ -21,9 +21,9 @@ The Catalog MCP server enables AI assistants to explore and discover APIs in you
 
 ## Authentication
 
-The Catalog MCP server supports OAuth2 authentication. This ensures that AI assistants can only access APIs and operations that the authenticated user has permission to view.
+The Catalog MCP server supports authenticated calls. This ensures that AI assistants can only access APIs and operations that the authenticated user has permission to view. Otherwise, all requests will be done on behalf of anonymous user.
 
-For authentication setup details, see [MCP server authentication](../mcp-server-authentication.md).
+For authentication setup details, see [MCP server authentication](./authentication.md).
 
 ## Available tools
 

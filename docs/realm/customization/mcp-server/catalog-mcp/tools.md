@@ -8,7 +8,7 @@ plans:
   - Enterprise+
 ---
 
-# Catalog MCP tools
+# Catalog tools
 
 Here you can find the full available list of MCP server catalog tools.
 
@@ -131,6 +131,6 @@ Here you can find the full available list of MCP server catalog tools.
 ## References
 
 To reference the documentation for MCP Server, see:
-- [MCP server usage](../mcp-server-usage.md) for MCP server methods and usage.
-- [MCP server authentication](../mcp-server-authentication.md) to get familiar with authentication.
-- View full configuration details in the `mcp` [configuration reference](../../../config/mcp.md).
+- [MCP server usage](./mcp-server-usage.md) for MCP server methods and usage.
+- [MCP server authentication](./mcp-server-authentication.md) to get familiar with authentication.
+- View full configuration details in the `mcp` [configuration reference](../../config/mcp.md).
