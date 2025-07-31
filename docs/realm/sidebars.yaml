@@ -34,11 +34,13 @@
         - page: reunite/organization/sso/configure-sso.md
           label: Configure SSO
         - page: reunite/organization/sso/configure-auth0.md
-          label: Configure Auth0
-        - page: reunite/organization/sso/configure-azure-ad.md
-          label: Microsoft Entra ID
+          label: Auth0
         - page: reunite/organization/sso/configure-google-sso.md
           label: Google Workspace
+        - page: reunite/organization/sso/configure-azure-ad.md
+          label: Microsoft Entra ID
+        - page: reunite/organization/sso/configure-okta.md
+          label: Okta
     - page: reunite/organization/access-compliance-reports.md
       label: Compliance reports
 
