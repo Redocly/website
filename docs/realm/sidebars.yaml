@@ -33,10 +33,14 @@
           label: Add an identity provider
         - page: reunite/organization/sso/configure-sso.md
           label: Configure SSO
-        - page: reunite/organization/sso/configure-azure-ad.md
-          label: Microsoft Entra ID
+        - page: reunite/organization/sso/configure-auth0.md
+          label: Auth0
         - page: reunite/organization/sso/configure-google-sso.md
           label: Google Workspace
+        - page: reunite/organization/sso/configure-azure-ad.md
+          label: Microsoft Entra ID
+        - page: reunite/organization/sso/configure-okta.md
+          label: Okta
     - page: reunite/organization/access-compliance-reports.md
       label: Compliance reports
 
@@ -63,6 +67,8 @@
               label: Configuration guide
         - page: reunite/project/ignore-link-checker.md
           label: Ignore link checker
+        - page: reunite/project/branches-and-deploys.md
+          label: Branches deploys
 
     - group: Pull requests
       items:
@@ -154,8 +160,6 @@
       label: Reuse content
     - page: content/static-assets.md
       label: Static assets
-    - page: content/configure-code-snippets.md
-      label: Configure code snippets
     - page: content/add-diagram.md
       label: Diagrams
     - group: Markdoc functions

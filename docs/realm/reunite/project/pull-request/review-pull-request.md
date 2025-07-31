@@ -58,6 +58,10 @@ After reviewing the pull request, click the **Review** button, add your final th
 - **Approve:** Indicate the pull request is ready to merge.
 - **Request changes:** Specify issues that require resolution before approval.
 
+{% admonition type="info" name="Connected Git providers" %}
+If your project uses a connected Git provider (such as GitHub or GitLab), approving a pull request in Reunite marks the "Visual Review" check as approved in your Git provider's check list. This approval does not automatically approve the actual pull request in the external Git provider - that still requires approval through your Git provider's interface.
+{% /admonition %}
+
 Format your review comment using the toolbar options, then click **Submit review**.
 
 ## Merge a pull request

@@ -112,7 +112,6 @@ graphql:
 
 ## Related how-tos
 
-- Learn how to customize how code snippets display in your documentation in [Configure code snippets](../../../content/configure-code-snippets.md).
 - Add additional options after users complete their initial feedback selection by following the steps in [Extend the feedback form](extend-feedback.md).
 - Find out where all the data that is collected from your users is being sent and how you can view it in [View and export feedback data](../../../reunite/project/view-export-data.md).
 
