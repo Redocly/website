@@ -67,6 +67,8 @@
               label: Configuration guide
         - page: reunite/project/ignore-link-checker.md
           label: Ignore link checker
+        - page: reunite/project/branches-and-deploys.md
+          label: Branches deploys
 
     - group: Pull requests
       items:
