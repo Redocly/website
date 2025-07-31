@@ -753,3 +753,11 @@ tr td:first-child code {
     }
     --card-icon-color: red;
 } */
+ 
+.mermaid-wrapper {
+    margin: 1em 0;
+}
+
+.mermaid {
+    text-align: center;
+}
