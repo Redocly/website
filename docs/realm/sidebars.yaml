@@ -386,6 +386,8 @@
       items:
         - page: customization/mcp-server/index.md
           label: Use cases
+        - page: customization/mcp-server/catalog-tools.md
+          label: Catalog tools
         - page: customization/mcp-server/mcp-server-usage.md
           label: Usage
         - page: customization/mcp-server/mcp-server-authentication.md

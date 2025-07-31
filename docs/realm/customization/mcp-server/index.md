@@ -28,4 +28,5 @@ By exposing your OpenAPI spec via MCP server, AI can:
 To reference the documentation for MCP Server, see:
 - [MCP server usage](./mcp-server-usage.md) for MCP server methods and usage.
 - [MCP server authentication](./mcp-server-authentication.md) to get familiar with authentication.
+- List of [avalable catalog tools](./catalog-tools.md).
 - View full configuration details in the `mcp` [configuration reference](../../config/mcp.md).
