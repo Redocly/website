@@ -158,8 +158,6 @@
       label: Reuse content
     - page: content/static-assets.md
       label: Static assets
-    - page: content/configure-code-snippets.md
-      label: Configure code snippets
     - page: content/add-diagram.md
       label: Diagrams
     - group: Markdoc functions

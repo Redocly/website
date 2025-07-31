@@ -479,7 +479,7 @@ feedback:
 ## Resources
 
 - Learn about different feedback forms available in the [Feedback concept](../setup/concepts/feedback.md).
-- Learn how to customize code snippets in your documentation in [Configure code snippets](../content/configure-code-snippets.md).
+- Learn how to customize code snippets in your documentation in [Configure code snippets](code-snippet.md).
 - Add options after users complete initial feedback in [Extend the feedback form](../setup/how-to/feedback/extend-feedback.md).
 - Find where collected feedback data is sent and how to view it in [View and export feedback data](../reunite/project/view-export-data.md).
 - Use [front matter](./front-matter-config.md) to configure feedback on individual pages.

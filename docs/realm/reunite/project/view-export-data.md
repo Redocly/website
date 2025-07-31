@@ -67,7 +67,6 @@ Afterward, when you select the status checkbox at the top of the table, the list
 
 ## Resources
 
-- Learn how to customize how code snippets display in your documentation in [Configure code snippets](../../content/configure-code-snippets.md).
 - Learn how to customize how the feedback form displays in your documentation in [Configure and view feedback](../../setup/how-to/feedback/index.md).
 - Add additional options after users complete their initial feedback selection by following the steps in [Extend the feedback form](../../setup/how-to/feedback/extend-feedback.md).
 - Learn more about the different feedback forms available in the [Feedback concept](../../setup/concepts/feedback.md).
