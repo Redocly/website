@@ -23,7 +23,7 @@ Here you can find the full available list of MCP server catalog tools.
 ---
 
 - `auth_initiate_login`
-- 
+- `-`
 - Initiates the authentication process
 
 ---
