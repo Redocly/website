@@ -44,4 +44,4 @@ Once the authentication is successful, you can use the sessionId to make authent
 
 - Configure [project roles and permissions](../../access/roles.md).
 - [Role-based access control](../../access/rbac.md).
-- 
+- View full configuration details in the `mcp` [configuration reference](../../config/mcp.md).
