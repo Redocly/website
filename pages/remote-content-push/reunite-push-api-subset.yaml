@@ -1,0 +1,779 @@
+openapi: 3.1.0
+servers:
+  - url: https://app.cloud.redocly.com/api
+    description: Production main server.
+info:
+  version: '1.0.1'
+  title: Redocly Main API - Subset
+  description: API subset containing upsertRemote, push, and getPush operations
+  termsOfService: https://redocly.com/subscription-agreement
+  license:
+    name: Redocly
+    url: https://redocly.com/subscription-agreement
+security:
+  - ApiKey: []
+tags:
+  - name: Remotes
+    description: Operations related to remotes.
+  - name: Pushes
+    description: Operations related to pushes.
+paths:
+  /orgs/{orgId}/projects/{projectId}/remotes:
+    parameters:
+      - name: orgId
+        description: Organization ID.
+        required: true
+        in: path
+        schema:
+          type: string
+          pattern: ^org_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          description: Unique identifier prefixed with `org_`.
+        example: org_01h1s5z6vf2mm1mz3hevnn9va7
+      - name: projectId
+        description: Project ID.
+        required: true
+        in: path
+        schema:
+          type: string
+          pattern: ^prj_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          description: Unique identifier prefixed with `prj_`.
+        example: prj_7z4i2f32U1HwYvcNmz9viX00mm
+    post:
+      operationId: upsertRemote
+      summary: Upsert remote
+      security:
+        - ApiKey: []
+      description: |-
+        Upsert remote.
+        If remote with the same `mountPath` and `type` already exists the remote object is returned.
+        If the `type` doesn't match the existing remote, a 409 error is returned.
+        Otherwise, a new remote is created.
+      tags:
+        - Remotes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Remote'
+      responses:
+        '201':
+          description: Remote created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Remote'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /orgs/{orgId}/projects/{projectId}/pushes:
+    parameters:
+      - name: orgId
+        description: Organization ID.
+        required: true
+        in: path
+        schema:
+          type: string
+          pattern: ^org_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          description: Unique identifier prefixed with `org_`.
+        example: org_01h1s5z6vf2mm1mz3hevnn9va7
+      - name: projectId
+        description: Project ID.
+        required: true
+        in: path
+        schema:
+          type: string
+          pattern: ^prj_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          description: Unique identifier prefixed with `prj_`.
+        example: prj_7z4i2f32U1HwYvcNmz9viX00mm
+    post:
+      operationId: push
+      summary: Push files to remote
+      security:
+        - ApiKey: []
+      description: |-
+        Push discovered files as a remote content.
+        Files should be sent as a multipart/form-data.
+        Commit details like commit message and author can be sent as a JSON object in the `commit` field.
+      tags:
+        - Pushes
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PushBody'
+      responses:
+        '201':
+          description: Content pushed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Push'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /orgs/{orgId}/projects/{projectId}/pushes/{pushId}:
+    parameters:
+      - name: orgId
+        description: Organization ID.
+        required: true
+        in: path
+        schema:
+          type: string
+          pattern: ^org_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          description: Unique identifier prefixed with `org_`.
+        example: org_01h1s5z6vf2mm1mz3hevnn9va7
+      - name: projectId
+        description: Project ID.
+        required: true
+        in: path
+        schema:
+          type: string
+          pattern: ^prj_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          description: Unique identifier prefixed with `prj_`.
+        example: prj_7z4i2f32U1HwYvcNmz9viX00mm
+      - name: pushId
+        description: Push ID.
+        required: true
+        in: path
+        schema:
+          type: string
+          pattern: ^push_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          description: Unique identifier prefixed with `push_`.
+        example: push_01hhh91dhc2kg9naf476y7qmas
+    get:
+      security:
+        - ApiKey: []
+      tags:
+        - Pushes
+      operationId: getPush
+      summary: Get Push by ID
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Push'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+components:
+  securitySchemes:
+    ApiKey:
+      type: http
+      scheme: bearer
+      description: |-
+        API key is required to access API.
+        You can create your API key by visiting [Reunite](https://app.cloud.redocly.com/) and clicking on the "API Keys" page.
+
+  schemas:
+    Remote:
+      $ref: '#/components/schemas/CicdRemote'
+
+    CicdRemote:
+      type: object
+      required:
+        - id
+        - type
+        - mountPath
+        - mountBranchName
+        - createdAt
+        - updatedAt
+        - editedAt
+        - createdById
+        - editedById
+        - organizationId
+        - projectId
+        - object
+      properties:
+        id:
+          description: Remote ID. Unique identifier prefixed with `rem_`.
+          type: string
+          pattern: ^rem_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: rem_01h1s5z6vf2mm1mz3hevnn9va7
+          readOnly: true
+        type:
+          type: string
+          const: CICD
+        mountPath:
+          type: string
+          description: Path to the folder in the local repository where remote content is mounted. Paths outside of the project's `contentPath` are not allowed.
+          example: apis/test/@v1
+        autoSync:
+          type: boolean
+          default: true
+          description: Auto sync changes to remote.
+        autoMerge:
+          type: boolean
+          default: false
+          description: Auto merge changes from remote.
+        createdAt:
+          type: string
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        updatedAt:
+          type: string
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        editedAt:
+          description: Date and time of upserting Remote by user.
+          type:
+            - string
+            - 'null'
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        createdById:
+          description: User ID who created Remote.
+          type:
+            - string
+            - 'null'
+          example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+          readOnly: true
+        editedById:
+          description: User who recently upserted Remote.
+          type:
+            - string
+            - 'null'
+          example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+          readOnly: true
+        lastSyncedAt:
+          type:
+            - string
+            - 'null'
+          format: date-time
+          description: |-
+            Last time remote processed the default branch update. `null` when the remote has never been synced.
+          example: 2021-08-25T10:00:00.000Z
+          readOnly: true
+        providerType:
+          type: 'null'
+          readOnly: true
+        namespaceId:
+          type: 'null'
+          readOnly: true
+        repositoryId:
+          type: 'null'
+          readOnly: true
+        mountBranchName:
+          type: string
+          description: Name of the branch to mount.
+          example: main
+        contentPath:
+          type: 'null'
+          readOnly: true
+        credentialId:
+          type: 'null'
+          readOnly: true
+        branchName:
+          type: 'null'
+          readOnly: true
+        contentType:
+          type: 'null'
+          readOnly: true
+        url:
+          type: 'null'
+          readOnly: true
+        interval:
+          type: 'null'
+          readOnly: true
+        organizationId:
+          description: Organization ID. Unique identifier prefixed with `org_`.
+          type: string
+          pattern: ^org_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: org_01hh1t9sa6gwfv5naz04gr7ehm
+          readOnly: true
+        projectId:
+          description: Project ID. Unique identifier prefixed with `prj_`.
+          type: string
+          pattern: ^prj_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: prj_01hh1t9sa6gwfv5naz04gr7ehm
+          readOnly: true
+        object:
+          description: Entity name.
+          type: string
+          enum: [remote]
+          readOnly: true
+
+    Push:
+      type: object
+      required:
+        - id
+        - remoteId
+        - commit
+        - uploadedFiles
+        - isOutdated
+        - hasChanges
+        - status
+      properties:
+        id:
+          description: Push ID. Unique identifier prefixed with `push_`.
+          type: string
+          pattern: ^push_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: push_01h2captefvs9bpg3v6twqqj9n
+          readOnly: true
+        object:
+          description: Entity name.
+          type: string
+          enum: [push]
+          readOnly: true
+        remoteId:
+          description: Remote ID. Unique identifier prefixed with `rem_`.
+          type: string
+          pattern: ^rem_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: rem_01h2captefvs9bpg3v6twqqj9n
+        commit:
+          type: object
+          required:
+            - message
+            - branchName
+            - author
+          description: Commit details.
+          properties:
+            message:
+              type: string
+              description: Commit message.
+              example: 'chore: Add new API'
+            branchName:
+              type: string
+              description: Branch name.
+              example: main
+            sha:
+              type: 
+                - string
+                - 'null'
+              description: SHA of the commit.
+              example: f64ae8ea9dd7cf28822c471ea56b6d6765971305
+            url:
+              type: 
+                - string
+                - 'null'
+              format: uri
+              description: Commit URL.
+              example: https://gitlab.com/example-user/example-project/-/commit/f64ae8ea9dd7cf28822c471ea56b6d6765971305
+            createdAt:
+              type: 
+                - string
+                - 'null'
+              format: date-time
+              description: Commit creation date.
+              example: '2020-01-01T00:00:00.000Z'
+            namespaceId:
+              type: 
+                - string
+                - 'null'
+              description: Git namespace ID. (organization login for GitHub).
+              example: Redocly
+            repositoryId:
+              type: 
+                - string
+                - 'null'
+              description: Git repository ID.
+              example: redoc
+            author:
+              description: Commit author details.
+              type: object
+              required:
+                - email
+                - name
+              properties:
+                name:
+                  description: Commit author name.
+                  example: John Doe
+                email:
+                  type: string
+                  description: Commit author email.
+                  format: email
+                  example: johndoe@example.com
+                image:
+                  type: 
+                    - string
+                    - 'null'
+                  description: |-
+                    Commit author image URL.
+                    If not provided, the default image is used.
+                    If the image may not accessible, [data url](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) can be used.
+            statuses:
+              type: array
+              readOnly: true
+              description: List of commit statuses set by Reunite to the commit that triggered push.
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: Commit status name.
+                    example: "Scorecard: Compliance API (org-slug/project-slug/remote-mount-path (remote))"
+                  status:
+                    type: string
+                    enum:
+                      - pending
+                      - running
+                      - success
+                      - failed
+                  description:
+                    type: string
+                    description: Commit status description.
+                  url:
+                    type: 
+                      - string
+                      - 'null'
+                    description: Commit status URL.
+                required:
+                  - name
+                  - status
+                  - description
+                  - url
+        replace:
+          type: boolean
+          description: |-
+            Whether to replace the existing files.
+            If provided, all files from the remote are removed and the new files are added.
+            If not provided, the existing files are kept and the new files are added, overwriting the existing files where they overlap.
+          example: true
+          default: false
+        files:
+          type: object
+          writeOnly: true
+          description: Map of files to upload.
+          additionalProperties:
+            description: |-
+              Files to push.
+              Max file size is 10MB.
+              Maximum number of files is 100.
+            type: string
+            format: binary
+        uploadedFiles:
+          type: array
+          readOnly: true
+          description: List of pushed files.
+          items:
+            type: object
+            description: Pushed file.
+            required: 
+              - path
+              - mimeType
+            properties:
+              path:
+                type: string
+                description: File path.
+                example: some-path/index.html
+              mimeType:
+                type: string
+                description: File MIME type.
+                example: text/html
+        isMainBranch:
+          type: boolean
+          example: true
+          description: Is push provided to the main branch.
+        isOutdated:
+          type: boolean
+          readOnly: true
+          description: |-
+            Indicates whether the push is discarded. 
+            In case several pushes are performed in a row, the one with most recent commit is applied only. 
+            Always `false` when commit's `createdAt` is omitted.
+          example: false
+        hasChanges:
+          type: boolean
+          readOnly: true
+          description: Indicates if pushed files have changes.
+          example: false
+        status:
+          type: object
+          readOnly: true
+          description: Status of the corresponding preview and production builds.
+          required: 
+            - preview
+            - production
+          properties:
+            preview:
+              $ref: '#/components/schemas/PushProjectBuildStatus'
+            production:
+              $ref: '#/components/schemas/PushProjectBuildStatus'
+
+    PushBody:
+      type: object
+      required:
+        - remoteId
+        - commit
+        - files
+        - isMainBranch
+      properties:
+        remoteId:
+          description: Remote ID. Unique identifier prefixed with `rem_`.
+          type: string
+          pattern: ^rem_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: rem_01h2captefvs9bpg3v6twqqj9n
+        commit:
+          type: object
+          required:
+            - message
+            - branchName
+            - author
+          description: Commit details.
+          properties:
+            message:
+              type: string
+              description: Commit message.
+              example: 'chore: Add new API'
+            branchName:
+              type: string
+              description: Branch name.
+              example: main
+            sha:
+              type: 
+                - string
+                - 'null'
+              description: SHA of the commit.
+              example: f64ae8ea9dd7cf28822c471ea56b6d6765971305
+            url:
+              type: 
+                - string
+                - 'null'
+              format: uri
+              description: Commit URL.
+              example: https://gitlab.com/example-user/example-project/-/commit/f64ae8ea9dd7cf28822c471ea56b6d6765971305
+            createdAt:
+              type: 
+                - string
+                - 'null'
+              format: date-time
+              description: Commit creation date.
+              example: '2020-01-01T00:00:00.000Z'
+            namespaceId:
+              type: 
+                - string
+                - 'null'
+              description: Git namespace ID. (organization login for GitHub).
+              example: Redocly
+            repositoryId:
+              type: 
+                - string
+                - 'null'
+              description: Git repository ID.
+              example: redoc
+            author:
+              description: Commit author details.
+              type: object
+              required:
+                - email
+                - name
+              properties:
+                name:
+                  description: Commit author name.
+                  example: John Doe
+                email:
+                  type: string
+                  description: Commit author email.
+                  format: email
+                  example: johndoe@example.com
+                image:
+                  type: 
+                    - string
+                    - 'null'
+                  description: |-
+                    Commit author image URL.
+                    If not provided, the default image is used.
+                    If the image may not accessible, [data url](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) can be used.
+        replace:
+          type: boolean
+          description: |-
+            Whether to replace the existing files.
+            If provided, all files from the remote are removed and the new files are added.
+            If not provided, the existing files are kept and the new files are added, overwriting the existing files where they overlap.
+          example: true
+          default: false
+        files:
+          type: object
+          writeOnly: true
+          description: Map of files to upload.
+          additionalProperties:
+            description: |-
+              Files to push.
+              Max file size is 10MB.
+              Maximum number of files is 100.
+            type: string
+            format: binary
+        isMainBranch:
+          type: boolean
+          example: true
+          description: Is push provided to the main branch.
+    PushProjectBuildStatus:
+      type: object
+      required: 
+        - deploy
+        - scorecard
+      properties:
+        deploy:
+          type: object
+          properties:
+            url:
+              type: 
+                - string
+                - 'null'
+              description: Deployment URL.
+            status:
+              type: string
+              description: Status of project deployment.
+              enum:
+                - pending
+                - running
+                - success
+                - failed
+                - skipped
+              example: running
+          required: 
+            - status
+            - url
+        scorecard:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: Scorecard name.
+                example: "Scorecard: Compliance API"
+              status:
+                type: string
+                enum:
+                  - pending
+                  - running
+                  - success
+                  - failed
+              description:
+                type: string
+                description: Scorecard status description.
+              url:
+                type: string
+                description: Scorecard URL.
+            required:
+              - name
+              - status
+              - description
+              - url
+
+    Problem:
+      type: object
+      title: Problem
+      properties:
+        type:
+          type: string
+          format: uri-reference
+          description: >
+            URI reference that uniquely identifies the problem type only in the
+            context of the provided API. Opposed to the specification in RFC 9457 (formerly RFC 7807),
+            it is neither recommended to be dereferenceable and point to a
+            human-readable documentation nor globally unique for the problem type.
+          default: 'about:blank'
+          example: '/some/uri-reference'
+        title:
+          type: string
+          description: >
+            Short summary of the problem type. Written in English and readable
+            for engineers, usually not suited for non technical stakeholders and
+            not localized.
+          example: some title for the error situation
+        status:
+          type: integer
+          format: int32
+          description: >
+            HTTP status code generated by the origin server for this occurrence
+            of the problem.
+          minimum: 100
+          exclusiveMaximum: 600
+          example: 400
+        detail:
+          type: string
+          description: >
+            Human readable explanation specific to this occurrence of the
+            problem that is helpful to locate the problem and give advice on how
+            to proceed. Written in English and readable for engineers, usually not
+            suited for non technical stakeholders and not localized.
+          example: some description for the error situation
+        instance:
+          type: string
+          format: uri-reference
+          description: >
+            URI reference that identifies the specific occurrence of the problem,
+            e.g. by adding a fragment identifier or sub-path to the problem type.
+            May be used to locate the root of this problem in the source code.
+          example: '/some/uri-reference#specific-occurrence-context'
+        object:
+          type: string
+          enum: [problem]
+        errors:
+          type: array
+          description: >
+            Additional information about the error situation. May be omitted if
+            no additional information is available.
+      required:
+        - type
+        - title
+        - status
+        - object
+
+  responses:
+    BadRequestError:
+      description: Bad Request.
+      content:
+        application/problem+json:
+          schema:
+            description: Invalid credentials.
+            $ref: '#/components/schemas/Problem'
+    
+    UnauthorizedError:
+      description: User is not authorized to access this resource.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    
+    ForbiddenError:
+      description: Forbidden.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    
+    NotFoundError:
+      description: Resource not found.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    
+    InternalServerError:
+      description: Internal Server Error.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem' 

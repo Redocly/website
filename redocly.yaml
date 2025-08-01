@@ -245,3 +245,9 @@ search:
   ai:
     hide: false
   engine: typesense
+
+rbac:
+  content: 
+    pages/remote-content-push/*:
+      Employee: admin
+      remoteContentPush: read
