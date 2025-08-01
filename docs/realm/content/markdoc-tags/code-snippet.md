@@ -1,10 +1,10 @@
 # Code snippet tag
 
-The `code snippet` tag displays code examples in your documentation that are loaded from local files.
+The `code-snippet` tag displays code examples in your documentation that are loaded from local files.
 
 ## Syntax and usage
 
-The `code snippet` tag is a self-closing tag, which means it has no child elements.
+The `code-snippet` tag is a self-closing tag, which means it has no child elements.
 Use attributes to pass the path to the local file and configure how the snippet is displayed.
 
 Example element:

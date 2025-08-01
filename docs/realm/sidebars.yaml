@@ -182,6 +182,8 @@
           label: Cards
         - page: content/markdoc-tags/code-snippet.md
           label: Code snippet
+        - page: content/markdoc-tags/code-group.md
+          label: Code group
         - group: Code walkthrough
           page: content/markdoc-tags/code-walkthrough/index.md
           items:
