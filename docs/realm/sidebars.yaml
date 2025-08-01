@@ -129,12 +129,8 @@
     # consider moving or removing the page:
     # - page: setup/how-to/feedback/extend-feedback.md
     #   label: Extend feedback form
-    - group: Environments # combine into single page
-      items:
-        - page: reunite/project/env-variables.md
-          label: Environment variables
-        - page: reunite/project/env-variables.md
-          label: Configure environment variables
+    - page: reunite/project/env-variables.md
+      label: Environment variables
     - page: reunite/project/telemetry.md
       label: Telemetry
     - page: reunite/project/custom-domain.md
@@ -390,7 +386,7 @@
             - page: customization/react-components/list/icons.md
             - page: customization/react-components/list/button.md
             - page: customization/react-components/list/link.md
-    - page: customization/set-path-prefix.md
+
     - page: customization/theme-static-assets.md
     - page: customization/configure-request-values.md
 

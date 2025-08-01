@@ -333,7 +333,7 @@
 '/extend/how-to/configure-request-values':
   to: '/customization/configure-request-values'
 '/extend/how-to/set-path-prefix':
-  to: '/customization/set-path-prefix'
+  to: '/reunite/project/custom-domain#serve-from-a-subdirectory'
 '/extend/how-to/import-npm-library':
   to: '/customization/import-npm-library'
 '/extend/how-to/eject-root-layout':
@@ -383,7 +383,7 @@
 '/extend/how-to/tutorials/configure-request-values':
   to: '/customization/configure-request-values'
 '/extend/how-to/tutorials/set-path-prefix':
-  to: '/customization/set-path-prefix'
+  to: '/reunite/project/custom-domain#serve-from-a-subdirectory'
 
 # Setup RBAC redirects - Files moved from setup paths to /access/
 '/setup/how-to/rbac':

@@ -107,7 +107,7 @@ You can view the Scorecard status, metadata, custom fields, and logs for each AP
 
 Most aspects of your project are configured in your `redocly.yaml` configuration file, but a few things are configured in Reunite on the **Settings** page.
 From the **Settings** page, you can view your Project ID, edit your Project name, and [delete a project](./project/manage-projects.md#delete-a-project).
-You can also [set a custom domain](./project/custom-domain.md), [add environment variables](./project/configure-env-variables.md), and [connect a Git repository](./project/connect-git/connect-git-provider.md) from a remote provider like GitHub, GitLab, or Azure DevOps.
+You can also [set a custom domain](./project/custom-domain.md), [add environment variables](./project/env-variables.md), and [connect a Git repository](./project/connect-git/connect-git-provider.md) from a remote provider like GitHub, GitLab, or Azure DevOps.
 
 ## Resources
 
