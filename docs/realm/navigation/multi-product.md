@@ -2,16 +2,7 @@
 
 Multi-product allows you to offer multiple sets of documentation in one project.
 By selecting a product, users can switch between documentation sets.
-Each documentation set can have its own `redocly.yaml` file, providing the ability to customize the documentation set's configuration, overriding the following options from the root `redocly.yaml` file:
-
-- breadcrumbs
-- codeSnippet
-- feedback
-- footer
-- logo
-- navbar
-- sidebar
-- search
+Each documentation set can have its own `redocly.yaml` file to customize its appearance and behavior independently.
 
 This feature helps authors maintain their own documentation set separate from other documentation sets in the same project.
 Using this feature helps users to find the content they need by separating it into easily identifiable sections.

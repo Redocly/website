@@ -73,7 +73,7 @@ You can customize the title of the TOC or hide the TOC in either the front matte
 
 The TOC is located on the upper-right side of the page on desktop devices.
 
-See [TOC configuration](./toc.md) for more information on configuring navigation on the TOC (table of contents).
+See [markdown configuration](../config/markdown.md#table-of-contents-object) for more information on configuring the TOC (table of contents).
 
 ## Navigation buttons
 

@@ -329,8 +329,7 @@
       label: Navigation elements overview
     - page: navigation/sidebars.md
       label: Sidebar reference
-    - page: navigation/toc.md
-      label: TOC
+
     - group: Search and discovery
       items:
         - page: navigation/search/configure-search-facets.md

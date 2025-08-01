@@ -16,7 +16,7 @@ Redocly offers comprehensive navigation customization to help users easily disco
 
 ### Page navigation
 - **[Navigation buttons](../config/navigation.md)** - Previous/Next page navigation
-- **[Table of Contents (TOC)](./toc.md)** - Page-level heading navigation
+- **[Table of Contents (TOC)](../config/markdown.md#table-of-contents-object)** - Page-level heading navigation
 - **[Breadcrumbs](../config/breadcrumbs.md)** - Page hierarchy trail
 
 ### Advanced navigation
