@@ -20,11 +20,8 @@
       label: Organizations
     - page: reunite/organization/manage-people.md
       label: People
-    - page: reunite/organization/teams.md # combine into single page
-      group: Teams
-      items:
-        - page: reunite/organization/manage-teams.md
-          label: Manage teams
+    - page: reunite/organization/teams.md
+      label: Teams
   
     - group: SSO
       page: reunite/organization/sso/sso.md
