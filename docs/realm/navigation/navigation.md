@@ -40,7 +40,7 @@ On smaller devices, a slide drawer navigation menu icon displays in the upper-ri
 
 Clicking this icon displays the sidebar.
 
-See [On the sidebar](./sidebar.md) for more information on how to configure navigation on the sidebar.
+See [sidebar configuration](./sidebars.md) for more information on how to configure navigation on the sidebar.
 
 ## Navbar menu
 
@@ -54,7 +54,7 @@ On smaller devices, a slide drawer navigation menu icon displays in the upper-ri
 
 Clicking this icon displays the sidebar with an option for the **Main Menu**, which is the navbar.
 
-See [On the navbar](./navbar.md) for more information on configuring navigation on the navbar.
+See [navbar configuration](../config/navbar.md) for more information on configuring navigation on the navbar.
 
 ## Footer links and copyright
 
@@ -64,7 +64,7 @@ You can also add icons to footer items as you can in the navbar.
 
 The footer is located at the bottom of the page on all device sizes.
 
-See [On the footer](./footer.md) for more information on configuring navigation on the footer.
+See [footer configuration](../config/footer.md) for more information on configuring navigation on the footer.
 
 ## TOC (table of contents)
 
@@ -73,7 +73,7 @@ You can customize the title of the TOC or hide the TOC in either the front matte
 
 The TOC is located on the upper-right side of the page on desktop devices.
 
-See [On the TOC](./toc.md) for more information on configuring navigation on the TOC (table of contents).
+See [TOC configuration](./toc.md) for more information on configuring navigation on the TOC (table of contents).
 
 ## Navigation buttons
 
@@ -86,4 +86,4 @@ You can configure the text on the navigation buttons in either the front matter 
 
 If you add the `external: true` option to a page in your sidebar, that page opens in a separate browser tab and does not have navigation buttons.
 
-See [Navigation buttons](./navigation-buttons.md) for more information on configuring your navigation buttons.
+See [navigation configuration](../config/navigation.md) for more information on configuring your navigation buttons.

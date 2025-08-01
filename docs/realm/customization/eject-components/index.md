@@ -66,7 +66,7 @@ After you have determined you need to alter a component by ejecting it and what 
 
 ## Related how-tos
 
-- Learn more about adding [Custom styles](../../branding/customize-styles.md) to your project.
+- Learn more about [custom styles](../../branding/customize-styles.md) for your project.
 
 ## Resources
 

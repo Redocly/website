@@ -2,116 +2,206 @@
 toc: hide
 ---
 
-# Configure navigation elements
+# Navigation elements
 
-{% $env.PUBLIC_PORTAL_NAME %} offers multiple ways to adapt your project's navigation to fit your needs.
+Redocly offers comprehensive navigation customization to help users easily discover and navigate through your documentation. From simple link organization to advanced multi-product sites, you can configure navigation elements to match your project's structure and branding needs.
 
-You can customize your project's navigation by configuring the following navigation elements:
+## Available navigation elements
 
-- [Sidebar](sidebar.md): You can configure the order and titles of items in your sidebar and add multiple sidebars.
-- [Navbar](navbar.md): You can add links, icons and, drop-down lists to the navbar.
-  You can also link to sidebars.
-- [TOC (table of contents)](toc.md): You can set the depth and alter the title text for the TOC.
-- [Footer](footer.md): You can add icons, copyright info, and links to the footer.
-- [Navigation buttons](navigation-buttons.md): You can customize the button text.
+### Core navigation
+- **[Navbar](../config/navbar.md)** - Top navigation bar with links, groups, and dropdowns
+- **[Sidebar](../config/sidebar.md)** - Left navigation panel (configure content with [sidebars.yaml](./sidebars.md))
+- **[Footer](../config/footer.md)** - Bottom page footer with links and copyright information
+- **[Search](../config/search.md)** - Site-wide search functionality with faceting capabilities
 
-{% admonition type="info" name="Navigation elements" %}
-See the [overview of navigation elements](./navigation.md) to learn more about each element.
-{% /admonition %}
+### Page navigation
+- **[Navigation buttons](../config/navigation.md)** - Previous/Next page navigation
+- **[Table of Contents (TOC)](./toc.md)** - Page-level heading navigation
+- **[Breadcrumbs](../config/breadcrumbs.md)** - Page hierarchy trail
 
+### Advanced navigation
+- **[Multi-product picker](../config/products.md)** - Switch between different product documentation
+- **[Version picker](../config/version-picker.md)** - Navigate between documentation versions
+- **[Locale picker](../config/l10n.md#locale-picker)** - Switch between localized content
 
-## Before you begin
+## Quick start examples
 
-Make sure you have the following before you begin:
+### Basic site navigation
+For a simple documentation site with standard navigation:
 
-- [latest version of Realm](../get-started/index.md)
-- a `redocly.yaml` file in the root of your project
-
-## Include entire directory
-
-If you don't want to list all the content in a directory in the `sidebars.yaml` or `redocly.yaml` file,
-but you want it all to be included in the sidebar, navbar, or footer,
-you can use a specific syntax to include it.
-
-The following is an example of a `sidebars.yaml` file that uses special syntax to include all the files in the current directory:
-
-```yaml
-- group: Build themes
+```yaml {% title="redocly.yaml" %}
+navbar:
   items:
-    - directory: ./
+    - page: index.md
+      label: Home
+    - page: docs/getting-started.md
+      label: Getting Started
+    - page: api-reference.md
+      label: API Reference
+
+footer:
+  copyrightText: "© 2024 Your Company. All rights reserved."
+  items:
+    - group: Documentation
+      items:
+        - page: docs/guides.md
+          label: Guides
+        - href: https://support.example.com
+          label: Support
+          external: true
+
+search:
+  engine: flexsearch
 ```
 
-This syntax is easier to configure, but offers less control over the order of pages which are ordered alphabetically by filename.
+### Multi-product site
+For documentation covering multiple products or services:
 
-## Configure by page
+```yaml {% title="redocly.yaml" %}
+products:
+  - id: product-a
+    name: Product A
+    slug: /product-a/
+  - id: product-b
+    name: Product B
+    slug: /product-b/
 
-You can configure the following navigation elements for individual pages in the front matter of Markdown files:
+navbar:
+  items:
+    - group: Products
+      items:
+        - page: product-a/index.md
+          label: Product A
+        - page: product-b/index.md
+          label: Product B
+    - page: support.md
+      label: Support
 
-- Navigation buttons
-  Sample configuration in front matter:
-  ```yaml
-  ---
-  navigation:
-    nextButton:
-      text: Go to
-    previousButton:
-      text: Go back to
-  ---
-  ```
-- TOC (table of contents)
-  Sample configuration in front matter:
-  ```yaml
-  ---
-  markdown:
-    toc:
-      header: Page headings
-      depth: 2
-  ---
-  ```
+# Hide sidebar on landing pages
+sidebar:
+  hide: true
+```
 
-## Hide nav elements
+### Enterprise search setup
+For advanced search with faceting (Enterprise+ plans):
 
-You can hide the footer, navbar, TOC (table of contents), sidebar, and navigation buttons for all or select pages of your project.
-To hide these navigation elements, add the configuration to either:
+```yaml {% title="redocly.yaml" %}
+search:
+  engine: typesense
+  facets:
+    - name: Category
+      field: redocly_category
+      type: multi-select
+    - name: Product
+      field: product
+      type: multi-select
+    - name: Version
+      field: version
+      type: tags
+```
 
-- your `redocly.yaml` file to hide the element for all pages
-- the front matter of select pages to hide the element for those pages
+## Navigation patterns
 
-Use the following configurations to hide navigation elements:
+### Landing page pattern
+For sites with a dedicated landing page, typically hide the sidebar:
 
-- Add the following configuration to hide the footer:
-  ```yaml
-  footer:
-    hide: true
-  ```
-- Add the following configuration to hide the navbar:
-  ```yaml
-  navbar:
-    hide: true
-  ```
-- Add the following configuration to hide the TOC (table of contents):
-  ```yaml
-  markdown:
-    toc:
-      header: Page headings
-      depth: 2
-  ```
-- Add the following configuration to hide the sidebar:
-  ```yaml
-  sidebar:
-    hide: true
-  ```
-- Add the following configuration to hide the navigation buttons:
-  ```yaml
-  navigation:
-    nextButton:
-      hide: true
-    previousButton:
-      hide: true
-  ```
+```yaml {% title="redocly.yaml" %}
+# Global config
+sidebar:
+  hide: true
 
-## Resources
+# Or in front matter of specific pages
+---
+sidebar:
+  hide: true
+---
+```
 
-- The [Overview of navigation elements](./navigation.md) has more information about each element.
-- Visit the [sidebar configuration reference](./sidebars.md) for details and examples on configuring sidebars.
+### Documentation section pattern
+For traditional documentation with hierarchical navigation:
 
+```treeview
+docs/
+├── index.md              # Landing page
+├── getting-started/
+│   ├── index.md
+│   ├── installation.md
+│   └── sidebars.yaml     # Section-specific navigation
+├── guides/
+│   ├── index.md
+│   ├── advanced.md
+│   └── sidebars.yaml
+└── sidebars.yaml         # Main navigation
+```
+
+### API documentation pattern
+For API-focused sites with reference and guides:
+
+```yaml {% title="redocly.yaml" %}
+navbar:
+  items:
+    - page: index.md
+      label: Overview
+    - page: guides/index.md
+      label: Guides
+    - group: API Reference
+      items:
+        - page: users-api.yaml
+          label: Users API
+        - page: orders-api.yaml
+          label: Orders API
+
+catalogClassic:
+  enabled: true
+  title: API Catalog
+  slug: /apis/
+```
+
+## Configuration tips
+
+### Responsive navigation
+All navigation elements are responsive by default. For mobile-optimized experiences:
+- Keep navbar items concise (5-7 top-level items max)
+- Use groups sparingly in navbar dropdowns
+- Consider shorter labels for mobile: `label: API Ref` instead of `label: API Reference`
+
+### Performance considerations
+- **Search facets**: More facets mean more processing - use only necessary facets
+- **Sidebar depth**: Deep nesting can impact performance and UX
+- **External links**: Use `external: true` for links opening in new tabs
+
+### Accessibility
+- Always provide meaningful `label` values for screen readers
+- Use descriptive link text instead of "click here" or "read more"
+- Maintain logical navigation hierarchy
+
+## Localization support
+
+All navigation elements support localization through translation keys:
+
+```yaml {% title="redocly.yaml" %}
+navbar:
+  items:
+    - page: index.md
+      label: Home
+      labelTranslationKey: nav.home
+
+footer:
+  items:
+    - group: Legal
+      groupTranslationKey: footer.legal
+```
+
+See the [localization configuration](../config/l10n.md) for complete setup details.
+
+## Related configuration
+
+- **[Front matter options](../config/front-matter-config.md)** - Page-specific navigation overrides
+- **[Sidebar file reference](./sidebars.md)** - Complete sidebars.yaml syntax
+- **[Branding and styling](../branding/index.md)** - Visual customization of navigation elements
+
+## Need help
+
+- **Getting Started**: Begin with the [navbar configuration](../config/navbar.md) and [sidebar setup](./sidebars.md)
+- **Advanced Features**: Explore [multi-product setup](../config/products.md) and [search configuration](../config/search.md)
+- **Custom Styling**: See [branding options](../branding/index.md) for visual customization

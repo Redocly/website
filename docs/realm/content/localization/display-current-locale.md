@@ -36,5 +36,5 @@ export default function () {
 
 ## Resources
 
-* Learn the steps to add localization to your project in [Configure localization](./index.md).
+* Learn how to configure localization in [l10n configuration](../../config/l10n.md).
 * Learn how to localize your content files in [Add translated content](./localize-content.md).

@@ -131,7 +131,7 @@ Front matter is used to set page metadata or configure page behavior, as in the 
 
 ## Add React page to navigation
 
-Add the page to your site's navigation elements, such as the [sidebar](../navigation/sidebar.md), [navbar](../navigation/navbar.md), or [footer](../navigation/footer.md), using the page's relative filepath.
+Add the page to your site's navigation elements, such as the [sidebar](../navigation/sidebars.md), [navbar](../config/navbar.md), or [footer](../config/footer.md), using the page's relative filepath.
 
 The following example shows a sidebar configuration that includes React pages:
 
@@ -145,7 +145,7 @@ The following example shows a sidebar configuration that includes React pages:
       - page: guides/example-guide.md
 ```
 
-If needed, you can use `frontmatter` to [add the sidebar to a single page](../navigation/sidebar.md#add-a-sidebar-to-a-single-page) without listing it in the sidebars configuration file.
+If needed, you can use `frontmatter` to [add the sidebar to a single page](../navigation/sidebars.md#add-a-sidebar-to-a-single-page) without listing it in the sidebars configuration file.
 
 ## Landing page examples
 
@@ -181,6 +181,6 @@ The following example pages are available in the gallery:
 ## Resources
 
 - Review examples in the [React landing page gallery](https://github.com/Redocly/landing-page-gallery).
-- React pages can be used as [custom page templates](../branding/custom-page-templates.md) for Markdown pages.
-- Change the look and feel of React pages using CSS to create [custom styling](../branding/styling.md).
+- React pages can be used as [custom page templates](./custom-page-templates.md) for Markdown pages.
+- Change the look and feel of React pages using CSS for [custom styling](../branding/index.md).
 - Implement page-level access control using [page permissions](../access/page-permissions.md).

@@ -92,6 +92,6 @@ You may need to do a hard refresh of the page to see these results.
 
 - Learn how to [Add a sitemap](./add-sitemap.md) to your project, to improve how search engines crawl your site.
 - [Exclude a specific API](../../config/openapi/index.md#exclude-an-api-from-search) or [all APIs from Realm's internal search](../../config/openapi/index.md#exclude-all-apis-from-search).
-- Check out how to [Add a custom domain](../custom-domain.md) to your project, personalizing your URL to reflect your brand.
+- Check out how to [Add a custom domain](../../reunite/project/custom-domain.md) to your project, personalizing your URL to reflect your brand.
 - See the [seo](../../config/seo.md) configuration reference for more metadata configuration options.
 - Check out the [Front matter configurations options](../../config/front-matter-config.md) reference for configuration options only available in Markdown front matter.

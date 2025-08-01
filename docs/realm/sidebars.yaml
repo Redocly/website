@@ -140,6 +140,8 @@
           label: Configure environment variables
     - page: reunite/project/telemetry.md
       label: Telemetry
+    - page: reunite/project/custom-domain.md
+      label: Custom domain
 
     - separator: User account
     - page: reunite/user-profile-menu.md
@@ -282,19 +284,13 @@
           label: Try APIs with mock server
         - page: content/api-docs/replay.md
           label: Replay interface
-
     - group: Localization
-      page: content/localization/index.md
-      label: Localization
+      selectFirstItemOnExpand: true
       items:
-        - page: content/localization/concept-l10n.md
-          label: Localization concepts
-        - page: content/localization/set-up-l10n-folder.md
-          label: Set up localization folder
         - page: content/localization/localize-content.md
           label: Localize content
         - page: content/localization/localize-labels.md
-          label: Localize labels
+          label: Localize labels  
         - page: content/localization/display-current-locale.md
           label: Display current locale
         - page: content/localization/translation-keys.md
@@ -305,22 +301,18 @@
       label: Upgrade Realm version
 
 - group: Branding
+  page: branding/index.md
+  label: Branding
   items:
-    - page: branding/styling.md
-      label: Styling concepts
     - page: branding/customize-styles.md
-      label: Styles
+      label: Custom styles
     - page: branding/customize-fonts.md
-      label: Fonts
-    - page: branding/color-mode.md
-      label: Color modes
+      label: Custom fonts
     - page: branding/customize-color-modes.md
-      label: Custom color modes
-    - page: branding/custom-page-templates.md
-      label: Page templates
+      label: Color mode styling
     - page: branding/customize-tables.md
-      label: Table styles
-    - group: CSS variables dictionary
+      label: Table styling
+    - group: CSS variables reference
       page: branding/css-variables/index.md
       items:
         - page: branding/css-variables/common.md
@@ -330,27 +322,17 @@
         - page: branding/css-variables/api-docs.md
           label: API docs
 - group: Navigation
+  page: navigation/index.md
+  label: Navigation elements
   items:
     - page: navigation/navigation.md
-      label: Navigation elements
-    - page: navigation/navbar.md
-      label: Navbar
-    - page: navigation/footer.md
-      label: Footer
-    - page: navigation/sidebar.md
-      label: Sidebar
-    - page: navigation/configure-sidebar-groups.md
-      label: Sidebar groups
+      label: Navigation elements overview
     - page: navigation/sidebars.md
       label: Sidebar reference
     - page: navigation/toc.md
       label: TOC
-    - page: navigation/navigation-buttons.md
-      label: Navigation buttons
     - group: Search and discovery
       items:
-        # - page: config/search.md
-        #   label: Search configuration
         - page: navigation/search/configure-search-facets.md
           label: Configure search facets
         - page: navigation/search/add-sitemap.md
@@ -361,14 +343,10 @@
           label: Block search indexing
         - page: navigation/search/verify-site-ownership.md
           label: Verify site ownership
-    - page: navigation/custom-domain.md
-      label: Custom domain
+
     - group: Multi-product
       page: navigation/multi-product.md
       label: Multi-product
-      items:
-        - page: navigation/multiple-products.md
-          label: Add multiple products
 
 
 - group: Customization
@@ -383,6 +361,7 @@
         - page: customization/api-functions/create-api-functions.md
           label: Tutorials
     - page: customization/create-react-page.md
+    - page: customization/custom-page-templates.md
     - page: customization/markdoc-variables.md
     - page: customization/build-markdoc-tags.md
     - group: Markdoc attribute resolvers
@@ -396,7 +375,6 @@
     - page: customization/import-npm-library.md
     - page: customization/eject-root-layout.md
     - page: customization/enable-source-maps.md
-    - page: customization/add-color-mode.md
     - page: customization/color-mode-images.md
     - group: Eject components
       page: customization/eject-components/index.md
@@ -430,14 +408,12 @@
           label: Roles
         - page: access/rbac.md
           label: RBAC concepts
-        - page: access/projects.md
-          label: For projects
+
         - page: access/page-permissions.md
           label: For pages
         - page: access/links-and-groups-permissions.md
           label: For navigation
-        - page: access/pattern-access.md
-          label: Pattern-based access
+
 
 
 # - $ref: author/sidebars.yaml

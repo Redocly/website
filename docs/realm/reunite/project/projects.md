@@ -48,7 +48,7 @@ You can view the details, like the scorecard status, the linter report, or the m
 
 ### Settings
 
-This page contains your project's settings, like the project ID, [custom domain](../../navigation/custom-domain.md) for your project, [environment variables](./env-variables.md), and [Git provider](./connect-git/connect-git-provider.md) setup.
+This page contains your project's settings, like the project ID, [custom domain](./custom-domain.md) for your project, [environment variables](./env-variables.md), and [Git provider](./connect-git/connect-git-provider.md) setup.
 You can also download project files stored in Redocly-hosted Git from this page.
 The **Settings** page is available only to users with the Owner role in your organization.
 

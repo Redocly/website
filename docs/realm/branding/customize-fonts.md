@@ -97,7 +97,7 @@ Afterward, view your change locally or in Reunite.
 
 ## Resources
 
-- See some excellent styling examples including "Full corporate", "Trendy startup", or "Personal wellness" in the [Add custom styles](customize-styles.md) styling guide.
+- See excellent styling examples in the [custom styles](customize-styles.md) guide.
 - Follow instructions for setting CSS styles by color mode (light/dark) in the [Customize color mode styles](customize-color-modes.md) styling guide.
 - See options for adding other links to the `<head>` HTML element of your project pages in the [`links`](../config/links.md) reference documentation.
-- Learn more about CSS variables and how you can update them to style your project in [Custom styling](./styling.md).
+- Learn more about CSS variables in the [CSS variables reference](./css-variables/index.md).

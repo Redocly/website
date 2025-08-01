@@ -30,7 +30,7 @@ If you have a `sidebars.yaml` file in your project, add your AsyncAPI descriptio
 ## Use the sidebars.yaml file
 
 If you have a `sidebars.yaml` file in your project, add any files you want displayed in your sidebar navigation to it, including AsyncAPI descriptions.
-For more information on configuring a `sidebars.yaml` file for your project, see [Configure navigation on the sidebar](../../navigation/sidebar.md).
+For more information on configuring a `sidebars.yaml` file for your project, see [Sidebar configuration](../../navigation/sidebars.md).
 
 To add an AsyncAPI file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the AsyncAPI description to your `sidebars.yaml` file:
 
@@ -89,6 +89,6 @@ Your AsyncAPI documentation is rendered using the built-in tool.
 ## Resources
 
 - Organize multiple API descriptions by [configuring a catalog](../../config/catalog-classic.md).
-- Help users find your content by [configuring navigation in the sidebar](../../navigation/sidebar.md).
+- Help users find your content by [configuring navigation in the sidebar](../../navigation/sidebars.md).
 - See the [Replay the API explorer](./replay.md) concept doc to learn more about making your API reference docs interactive.
 - Use [AsyncAPI extensions](./asyncapi-extensions/index.md) in your API description to produce richer documentation.

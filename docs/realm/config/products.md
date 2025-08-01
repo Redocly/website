@@ -68,24 +68,97 @@ This option configuration creates a product picker in the navbar and offers the 
 
 ## Examples
 
-The following is an example of setup for three products.
+### Basic multi-product setup
 
-```yaml
+The following example shows a simple multi-product configuration:
+
+```yaml {% title="redocly.yaml" %}
 products:
   acme:
     name: Acme
-    icon: images/acme-icon.svg
     folder: products/acme/
   museum:
     name: Museum
-    icon: ./images/redocly-icon.png
-    folder: ./products/redocly-museum
-  news:
-    name: News aggregator
-    icon: images/news-aggregator-icon.svg
-    folder: products/news-aggregator
+    folder: products/museum/
 ```
+
+### Complete multi-product configuration
+
+The following example shows a comprehensive multi-product setup with icons and proper folder structure:
+
+```yaml {% title="redocly.yaml" %}
+products:
+  platform:
+    name: Platform API
+    icon: images/platform-icon.svg
+    folder: products/platform/
+  mobile:
+    name: Mobile SDK
+    icon: images/mobile-icon.svg
+    folder: products/mobile/
+  integrations:
+    name: Integrations
+    icon: images/integrations-icon.svg
+    folder: products/integrations/
+```
+
+This configuration creates a product picker in the navbar and organizes content as follows:
+
+```treeview
+project/
+├── images/
+│   ├── platform-icon.svg
+│   ├── mobile-icon.svg
+│   └── integrations-icon.svg
+├── products/
+│   ├── platform/
+│   │   ├── index.md
+│   │   ├── api-reference.yaml
+│   │   └── redocly.yaml        # Optional product-specific config
+│   ├── mobile/
+│   │   ├── index.md
+│   │   ├── guides/
+│   │   └── sidebars.yaml       # Product-specific navigation
+│   └── integrations/
+│       ├── index.md
+│       └── webhooks.yaml
+├── index.md                    # Project landing page
+└── redocly.yaml               # Main configuration
+```
+
+### Product-specific configuration
+
+Each product folder can include its own `redocly.yaml` file to customize that product's documentation. Product-specific configurations override the root configuration for:
+
+- breadcrumbs
+- codeSnippet  
+- feedback
+- footer
+- logo
+- navbar
+- sidebar
+- search
+
+```yaml {% title="products/platform/redocly.yaml" %}
+# Platform-specific customization
+navbar:
+  items:
+    - page: index.md
+      label: Platform Overview
+    - page: api-reference.yaml
+      label: API Reference
+    - page: guides/index.md
+      label: Platform Guides
+
+footer:
+  copyrightText: "© 2024 Platform Team. All rights reserved."
+```
+
+### Search behavior in multi-product
+
+When users search from a product page, results are automatically filtered to that product. Users can remove the filter to search all content.
 
 ## Resources
 
-- [Configure multiple products](../navigation/multiple-products.md)
+- [Multi-product overview](../navigation/multi-product.md) - Conceptual guide to multi-product documentation
+- [Navigation elements](../navigation/index.md) - Configure navigation for multi-product sites

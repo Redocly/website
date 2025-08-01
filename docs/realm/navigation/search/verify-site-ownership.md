@@ -65,6 +65,6 @@ Go back to the third-party tool, provide the URL to the verification file, and c
 ## Resources
 
 - [Add a sitemap](./add-sitemap.md) to your project to improve how search engines crawl your site.
-- [Set a custom domain](../custom-domain.md) to personalize your URL to reflect your brand.
+- [Set a custom domain](../../reunite/project/custom-domain.md) to personalize your URL to reflect your brand.
 - Learn more about hosting [Static assets](../../content/static-assets.md) in Redocly projects.
 - Read the [Front matter reference](../../config/front-matter-config.md) to discover more ways to configure your docs using front matter.

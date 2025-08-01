@@ -99,7 +99,7 @@ After creating the structure for your versioned content, you can create a custom
 Depending on your preferences and the contents of your project, you can place `sidebars.yaml` in the root directory of your project, or in the same folder as versioned content folders.
 For example, if you have more than one collection of versioned content, you might want to create a separate sidebar for each collection.
 
-For more information about customizing sidebars, see: [Configure navigation on the sidebar](../navigation/sidebar.md).
+For more information about customizing sidebars, see: [Sidebar configuration](../navigation/sidebars.md).
 
 When you switch between versions, the sidebar updates according to the content of version subfolders, including sidebar item labels and the number of files in a version subfolder.
 
@@ -410,4 +410,4 @@ function VersionedPage() {
 ## Resources
 
 - Reference the options for configuring which [versions](./versions-config.md) appear in the version picker, in what order, and which version is the default.
-- Learn how to set up the sidebar in the [Configure navigation on the sidebar](../navigation/sidebar.md) how-to documentation.
+- Learn how to set up the sidebar in the [Sidebar configuration](../navigation/sidebars.md) documentation.

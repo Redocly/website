@@ -77,7 +77,7 @@ Once the content is migrated and you're ready to "go live" with the new project
 
 4. Review the production deployment of the site to ensure it's ready for release.
 
-5. In Reunite, [set a custom domain](../navigation/custom-domain.md) for your project.
+5. In Reunite, [set a custom domain](../reunite/project/custom-domain.md) for your project.
 
 6. Update your CNAME record to point to `ssl.cloud.redocly.com`.
    This change can take up to 8 hours to propagate depending on your provider.
@@ -733,7 +733,7 @@ The following example the same footer settings using the old and new syntax:
 
 #### Update sidebar
 
-New settings and features were added to the [sidebar](../navigation/sidebar.md).
+New settings and features were added to the [sidebar](../navigation/sidebars.md).
 
 During migration, update your sidebar configuration to reflect the following changes:
 
@@ -773,8 +773,8 @@ The following example shows the same sidebar configuration using old and new syn
 
 After your sidebar config works with Realm, explore the following new sidebar features:
 
-- Build sidebars using configuration from [multiple files](../navigation/sidebar.md#add-multiple-sidebars) using fragments.
-- [Add a sidebar to a single page](../navigation/sidebar.md#add-a-sidebar-to-a-single-page) to show the sidebar on a page without listing it on `sidebars.yaml`.
+- Build sidebars using configuration from [multiple files](../navigation/sidebars.md#add-multiple-sidebars) using fragments.
+- [Add a sidebar to a single page](../navigation/sidebars.md#add-a-sidebar-to-a-single-page) to show the sidebar on a page without listing it on `sidebars.yaml`.
 - Control the visibility of [sidebar entries with RBAC](../access/links-and-groups-permissions.md#in-the-sidebar).
 
 ### Migrate configuration
@@ -975,7 +975,7 @@ During migration, any theme customizations from your developer portal will need 
 
 #### Update project styles
 
-Realm adds support for [CSS variables](../branding/styling.md#css-variable-concepts), which are used to [customize the styles](../branding/customize-styles.md) of your project and create a theme.
+Realm adds support for [CSS variables](../branding/css-variables/index.md), which are used to [customize the styles](../branding/customize-styles.md) of your project and create a theme.
 
 During migration, follow the steps below to update your custom styling to work with Realm:
 
@@ -989,7 +989,7 @@ During migration, follow the steps below to update your custom styling to work w
 
 2. Open your `theme.ts` file.
 
-3. Recreate each styling rule using CSS variables. See [CSS variables in Realm](../branding/styling.md#css-variables-in-realm) if you need help identifying them.
+3. Recreate each styling rule using CSS variables. See the [CSS variables reference](../branding/css-variables/index.md) if you need help identifying them.
 
 The following example shows a set of style customizations from the developer portal updated to work with Realm:
 
@@ -1109,5 +1109,5 @@ That means you get a complete, working implementation of that component; ready t
 
 - [Create a React page](../customization/create-react-page.md) for full control over  all page elements.
 - Learn more about the [navigation elements](../navigation/navigation.md) in Realm.
-- Configure light and dark mode in your project using [color mode](../branding/color-mode.md).
+- Configure light and dark mode in your project using [color mode styling](../branding/customize-color-modes.md).
 - See which [front matter options](../config/front-matter-config.md) are available for page-level configuration.

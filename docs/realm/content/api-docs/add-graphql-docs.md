@@ -25,7 +25,7 @@ If you have a `sidebars.yaml` file in your project, you must add your GraphQL sc
 ## Add schema to sidebar
 
 If you have a `sidebars.yaml` file in your project, you must add any files, including GraphQL schema files, you want displayed in your sidebar to it.
-For more information on configuring a `sidebars.yaml` file for your project, see [Configure navigation on the sidebar](../../navigation/sidebar.md).
+For more information on configuring a `sidebars.yaml` file for your project, see [Sidebar configuration](../../navigation/sidebars.md).
 
 To add a GraphQL schema file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the GraphQL schema file to your `sidebars.yaml` file, as in the following example:
 
@@ -57,5 +57,5 @@ To add multiple GraphQL schemas using `group` keys, update your `sidebars.yaml` 
 ## Resources
 
 - Organize APIs by [configuring a classic catalog](../../config/catalog-classic.md).
-- [Configure navigation in the sidebar](../../navigation/sidebar.md).
+- [Configure navigation in the sidebar](../../navigation/sidebars.md).
 - Explore the [GraphQL configuration reference](../../config/graphql/index.md) for customization options.

@@ -172,32 +172,122 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 - $ref
 - string
-- Path to another sidebar file. Entries from the referenced sidebar expand into this sidebar. See [Compose a single sidebar from multiple `sidebars.yaml` files](./sidebar.md#compose-a-single-sidebar-from-multiple-sidebarsyaml-files) for more details.
+- Path to another sidebar file. Entries from the referenced sidebar expand into this sidebar.
 
 {% /table %}
 
-## Example
+## Examples
 
-The following example shows a `sidebars.yaml` file:
+### Basic sidebar structure
+
+The following example shows a simple `sidebars.yaml` file with pages and basic groups:
 
 ```yaml {% title="sidebars.yaml" %}
 - page: overview.md
 - page: installation.md
   label: Installation
-- group: Config
+- group: Getting started
+  items:
+    - page: quickstart.md
+    - page: tutorials/first-steps.md
+      label: First steps
+- group: API reference
+  items:
+    - page: users-api.yaml
+      label: Users API
+    - page: orders-api.yaml
+      label: Orders API
+```
+
+### Groups with landing pages
+
+Groups can navigate to a landing page when clicked by adding a `page` property:
+
+```yaml {% title="sidebars.yaml" %}
+- page: overview.md
+- group: User guides
+  page: guides/index.md
   selectFirstItemOnExpand: true
+  items:
+    - page: guides/getting-started.md
+      label: Getting started
+    - page: guides/advanced.md
+      label: Advanced usage
+- group: API reference
+  page: api/index.md
+  items:
+    - page: api/users.yaml
+      label: Users API
+    - page: api/orders.yaml
+      label: Orders API
+```
+
+### Nested groups and expand behavior
+
+Groups can contain other groups and have customizable expand behavior:
+
+```yaml {% title="sidebars.yaml" %}
+- page: overview.md
+- group: Documentation
+  expanded: true
+  items:
+    - page: docs/getting-started.md
+    - group: Guides
+      expanded: false
+      items:
+        - page: guides/authentication.md
+        - page: guides/rate-limiting.md
+    - group: Advanced topics
+      expanded: always
+      items:
+        - page: advanced/webhooks.md
+        - page: advanced/custom-domains.md
+```
+
+### Separators and organization
+
+Use separators to organize sidebar content into distinct sections:
+
+```yaml {% title="sidebars.yaml" %}
+- group: User documentation
+  items:
+    - separator: Getting started
+    - page: quickstart.md
+    - page: installation.md
+    - separator: Advanced features
+    - page: advanced/webhooks.md
+    - page: advanced/integrations.md
+    - separatorLine: true
+    - separator: API reference
+    - page: api/users.yaml
+    - page: api/orders.yaml
+```
+
+### Complete sidebar configuration
+
+The following example shows a comprehensive `sidebars.yaml` file with various options:
+
+```yaml {% title="sidebars.yaml" %}
+- page: overview.md
+- page: installation.md
+  label: Installation
+- group: Configuration
+  icon: ./images/config-icon.svg
+  selectFirstItemOnExpand: true
+  expanded: true
   items:
     - page: config/index.md
     - page: config/developer-onboarding.md
-      label: Developer Onboarding
+      label: Developer onboarding
     - group: Reference
       page: config/reference/index.md
+      separatorLine: true
       items:
-        page: config/reference/config-files.md
-        label: Config Files
+        - page: config/reference/config-files.md
+          label: Config files
 - group: Content
   menuStyle: drilldown
-  icon: ./images/custom-icon.png
+  icon: ./images/content-icon.png
   items:
     - directory: content
 - $ref: ./templates/sidebars.yaml
@@ -205,9 +295,11 @@ The following example shows a `sidebars.yaml` file:
   items:
     - directory: plugins
 - group: Resources
+  separatorLine: true
   items:
     - href: https://redocly.com/docs
-      label: Great docs
+      label: Documentation
+      external: true
     - href: /docs/cli/v1.3
       label: Legacy CLI docs
 ```

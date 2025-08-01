@@ -64,7 +64,7 @@ versionPicker:
 ## Resources
 
 - Learn how to configure your `versions.yaml` file to specify the default version to display in [Add multiple versions](../content/versions.md).
-- Find out how to organize your project if you have multiple products in [Add multiple projects](../navigation/multiple-products.md).
-- Add a language picker if you have your content translated into multiple languages by [localizing your project](../content/localization/index.md).
+- Find out how to organize your project if you have multiple products in [products configuration](./products.md).
+- Add a language picker if you have your content translated into multiple languages by [configuring localization](./l10n.md).
 - Use [front matter](./front-matter-config.md) to toggle the visibility of the version picker on individual pages.
 - Explore other [configuration options](./index.md) for your project.
