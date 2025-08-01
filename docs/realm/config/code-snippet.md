@@ -169,81 +169,31 @@ Users can use collapse button to hide all the nested properties inside a JSON ob
 
 {% /table %}
 
-## Configuration scope
-
-Configure code snippets globally in your `redocly.yaml` file or for individual pages using front matter.
-
-### Global configuration
-
-Configuration added to the `redocly.yaml` file applies to all Markdown and API reference pages:
-
-```yaml
-codeSnippet:
-  elementFormat: text
-  report:
-    label: Please tell us what is wrong with this code sample.
-    tooltipText: Send feedback about this code sample
-```
-
-### Page-level configuration
-
-Configure code snippets for individual pages in the front matter. Front matter configurations take precedence over global settings:
-
-```yaml
----
-codeSnippet:
-  report:
-    label: What is wrong with this code sample?
----
-```
-
 ## Examples
 
-### Hide or customize icons
+### Copy button
 
-Hide the copy button:
-
-```yaml
-codeSnippet:
-  copy:
-    hide: true
-```
-
-Display all icons as text instead of icons:
-
-```yaml
-codeSnippet:
-  elementFormat: text
-```
-
-Hide all icons:
+The following is an example configuration for hiding the copy button:
 
 ```yaml
 codeSnippet:
   copy:
     hide: true
-  report:
-    hide: true
-  expand:
-    hide: true
-  collapse:
-    hide: true
 ```
 
-### Configure report feedback
+### Report button
 
-Enable the report button with custom label and tooltip:
+The following is an example configuration for enabling the report button with specific settings:
 
 ```yaml
 codeSnippet:
   report:
-    label: Please tell us what is wrong with this code sample.
-    tooltipText: Send feedback about this code sample
+    label: Report wrong code
 ```
 
-### Hide expand and collapse buttons
+### Expand and collapse buttons
 
-Hide the expand and collapse buttons on JSON objects in OpenAPI reference documentation:
+The following is an example configuration for hiding the expand and collapse buttons on JSON objects that are included as a sample requests or responses in OpenAPI definitions:
 
 ```yaml
 codeSnippet:
@@ -251,245 +201,6 @@ codeSnippet:
     hide: true
   collapse:
     hide: true
-```
-
-### Add file names to code snippets
-
-Add a file name to display in the code snippet header using the `title` attribute:
-
-````markdoc {% process=false %}
-```js {% title="scripts.js" %}
-function test() {
-  console.log('Hello World!');
-}
-```
-````
-
-Result:
-
-```js {% title="scripts.js" %}
-function test() {
-  console.log('Hello World!');
-}
-```
-
-### Highlight lines and text
-
-Highlight a specific line using `[!code highlight]`:
-
-````markdoc {% process=false %}
-```js
-function test() {
-  console.log('Hello World!'); // [!code highlight] [!code highlight]
-}
-```
-````
-
-Result:
-
-```js
-function test() {
-  console.log('Hello World!'); // [!code highlight]
-}
-```
-
-Highlight multiple consecutive lines:
-
-````markdoc {% process=false %}
-```js 
-// [!code highlight:3] [!code highlight:3]
-function test() { 
-  const hello = 'Hello';
-  const world = 'World';
-  console.log(hello + " " + world);
-}
-```
-````
-
-Result:
-
-```js
-// [!code highlight:3]
-function test() { 
-  const hello = 'Hello';
-  const world = 'World';
-  console.log(hello + " " + world);
-}
-```
-
-Highlight non-consecutive lines using the `highlight` attribute:
-
-````markdoc {% process=false %}
-```js {% highlight="{1,3-4}" %}
-function test() {
-  const hello = 'Hello';
-  const world = 'World';
-  console.log(hello + " " + world);
-}
-```
-````
-
-Result:
-
-```js {% highlight="{1,3-4}" %}
-function test() {
-  const hello = 'Hello';
-  const world = 'World';
-  console.log(hello + " " + world);
-}
-```
-
-Highlight specific words or symbols:
-
-````markdoc {% process=false %}
-```js
-// [!code word:Hello] [!code word:Hello]
-function test() {
-  const hello = 'Hello';
-  const world = 'World';
-  console.log(hello + " " + world);  // prints "Hello World"
-}
-```
-````
-
-Result:
-
-```js
-// [!code word:Hello]
-function test() {
-  const hello = 'Hello';
-  const world = 'World';
-  console.log(hello + " " + world);  // prints "Hello World"
-}
-```
-
-Focus on specific lines by dimming others with a code comment:
-
-````markdoc {% process=false %}
-```js
-function test() {
-  const hello = 'Hello'; // [!code focus] [!code focus]
-  const world = 'World';
-  console.log(hello + " " + world);
-}
-```
-````
-
-Or with a Markdoc tag and a pattern.
-
-````markdoc {% process=false %}
-```js {% highlight="/Hello/" %}
-function test() {
-  const hello = 'Hello';
-  const world = 'World';
-  console.log(hello + " " + world);  // prints "Hello World"
-}
-```
-````
-
-
-Result:
-
-```js
-function test() {
-  const hello = 'Hello'; // [!code focus]
-  const world = 'World';
-  console.log(hello + " " + world);
-}
-```
-
-Mark lines with error and warning levels:
-
-````markdoc {% process=false %}
-```js
-function test() {
-  console.log('No errors or warnings');
-  console.error('Error'); // [!code error] [!code error]
-  console.warn('Warning'); // [!code warning] [!code warning]
-}
-```
-````
-
-Result:
-
-```js
-function test() {
-  console.log('No errors or warnings');
-  console.error('Error'); // [!code error]
-  console.warn('Warning'); // [!code warning]
-}
-```
-
-Show added and removed lines:
-
-````markdoc {% process=false %}
-```js
-function test() {
-  const hello = 'Hello';
-  const world = 'World';
-  console.log(hello + " " + world); // [!code --] [!code --]
-  console.log(`${hello} ${world}`); // [!code ++] [!code ++]
-}
-```
-````
-
-Result:
-
-```js
-function test() {
-  const hello = 'Hello';
-  const world = 'World';
-  console.log(hello + " " + world); // [!code --]
-  console.log(`${hello} ${world}`); // [!code ++]
-}
-```
-
-### Tree view
-
-Display file and directory structures using the `treeview` language:
-
-````markdown
-```treeview
-.
-├── guides/                 # Guides
-│   ├── guide-1.md
-│   └── guide-2.md
-├── images/                 # Various shared images
-│   ├── favicon.png
-│   └── header-image.png
-├── tutorials/              # Tutorials
-│   ├── tutorial-1.md
-│   ├── tutorial-2.md
-│   ├── index.md
-│   └── sidebars.yaml       # Sidebar specific to the 'tutorials' section
-├── static/                 # Static assets copied directly to build output
-│   └── robots.txt
-├── index.page.tsx          # Custom React component for the landing page
-├── package.json            # Node.js project manifest
-└── redocly.yaml            # Main Redocly configuration file
-```
-````
-
-Result:
-
-```treeview
-.
-├── guides/                 # Guides
-│   ├── guide-1.md
-│   └── guide-2.md
-├── images/                 # Various shared images
-│   ├── favicon.png
-│   └── header-image.png
-├── tutorials/              # Tutorials
-│   ├── tutorial-1.md
-│   ├── tutorial-2.md
-│   ├── index.md
-│   └── sidebars.yaml       # Sidebar specific to the 'tutorials' section
-├── static/                 # Static assets copied directly to build output
-│   └── robots.txt
-├── index.page.tsx          # Custom React component for the landing page
-├── package.json            # Node.js project manifest
-└── redocly.yaml            # Main Redocly configuration file
 ```
 
 ## Customizing labels and tooltips
@@ -498,8 +209,9 @@ Translation keys provide customization options for code snippet control texts. F
 
 ## Resources
 
-- Use the [code-snippet Markdoc tag](../content/markdoc-tags/code-snippet.md) to display code snippets loaded from local files.
+- Use the [codeSnippet Markdoc tag](https://redocly.com/docs/learn-markdoc/tags/code-snippet) to display code snippets loaded from local files.
 - To configure the feedback mechanism that appears on all pages in your project by default, see the [`feedback`](./feedback.md) reference documentation.
+- Follow step-by-step instructions for configuring code snippets in the [Configure code snippets](../content/configure-code-snippets.md) how-to documentation.
 - Learn more about the report feedback mechanism that is included in all code snippets by default, see the [Feedback](../setup/concepts/feedback.md) concept documentation.
 - Use [front matter](./front-matter-config.md) to configure code snippets on individual pages.
 - Explore other [configuration options](./index.md) for your project.

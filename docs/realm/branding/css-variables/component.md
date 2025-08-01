@@ -1325,6 +1325,91 @@
 
 </details>
 
+
+## Stats
+
+<details>
+<summary>Stats page</summary>
+
+```css
+--stats-page-max-width: 1040px;
+--stats-page-padding: var(--spacing-xl) 0;
+--stats-page-gap: var(--spacing-lg);
+```
+
+</details>
+
+<details>
+<summary>Stats title</summary>
+
+```css
+--stats-title-margin: 0 0 var(--spacing-sm) 0;
+--stats-title-font-size: var(--h3-font-size);
+--stats-title-font-weight: var(--h3-font-weight);
+--stats-title-line-height: var(--h3-line-height);
+--stats-title-text-color: var(--h3-text-color);
+```
+
+</details>
+
+<details>
+<summary>Stats description</summary>
+
+```css
+--stats-description-margin: 0 0 0 0;
+--stats-description-font-size: var(--font-size-base);
+--stats-description-font-weight: var(--font-weight-regular);
+--stats-description-line-height: var(--line-height-lg);
+--stats-description-text-color: var(--text-color-secondary);
+```
+
+</details>
+
+<details>
+<summary>Stats table</summary>
+
+```css
+--stats-table-border-width: 1px;
+--stats-table-border-color: var(--border-color-secondary);
+--stats-table-border-radius: var(--border-radius-lg);
+--stats-table-border: var(--stats-table-border-width) solid var(--stats-table-border-color);
+
+--stats-table-head-font-size: var(--font-size-base);
+--stats-table-head-font-weight: var(--font-weight-medium);
+--stats-table-head-line-height: var(--line-height-md);
+--stats-table-head-text-color: var(--text-color-primary);
+--stats-table-head-bg-color: transparent;
+--stats-table-head-padding: var(--spacing-sm) var(--spacing-base);
+
+--stats-table-cell-font-size: var(--font-size-base);
+--stats-table-cell-font-weight: var(--font-weight-regular);
+--stats-table-cell-line-height: var(--line-height-md);
+--stats-table-cell-padding: var(--spacing-sm) var(--spacing-base);
+--stats-table-cell-text-color: var(--text-color-primary);
+--stats-table-cell-bg-color: transparent;
+```
+
+</details>
+
+<details>
+<summary>Stats tabs</summary>
+
+```css
+--stats-tabs-gap: var(--spacing-xxs);
+--stats-tabs-margin-bottom: var(--spacing-sm);
+--stats-tabs-lebel-padding-vertical: var(--spacing-xxs);
+--stats-tabs-lebel-padding-horizontal: var(--spacing-sm);
+--stats-tabs-lebel-font-size: var(--font-size-base);
+--stats-tabs-lebel-font-weight: var(--font-weight-regular);
+--stats-tabs-lebel-line-height: var(--line-height-base);
+--stats-tabs-lebel-active-text-color: var(--text-color-primary);
+--stats-tabs-lebel-inactive-text-color: var(--text-color-secondary);
+--stats-tabs-label-active-border-color: var(--text-color-primary);
+--stats-tabs-label-inactive-border-color: transparent;
+```
+
+</details>
+
 ## Search
 
 <details>

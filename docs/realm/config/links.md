@@ -155,4 +155,4 @@ The example above will produce following link tags:
 
 ## Resources
 
-- [Custom CSS styles](../branding/customize-styles.md)
+- [Add custom CSS styles](../branding/customize-styles.md)

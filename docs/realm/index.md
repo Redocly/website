@@ -1,6 +1,5 @@
 ---
-sidebar:
-  path: sidebars.yaml
+sidebar: sidebars.yaml
 ---
 
 # Reunite + Realm system overview
@@ -76,5 +75,5 @@ Role-based access control (RBAC) applies to:
 
 - [Get started with Reunite](./get-started/start-reunite-editor.md)
 - [Structure your project](./content/project-structure.md)
-- [Customize your branding](./branding/index.md)
+- [Customize your branding](./branding/styling.md)
 - [Set up integrations](./reunite/project/connect-git/connect-git-provider.md)
