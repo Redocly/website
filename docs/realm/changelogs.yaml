@@ -27769,13 +27769,3 @@ reunite:
         - Added option to configure branch deployments.
       patch: []
     dependencies: {}
-  v2025-08-01.2:
-    timestamp: 1754052717000
-    changes:
-      minor:
-        - Added `Built-in functions` and `Custom functions` options to the `Markdoc tags` dropdown.
-        - >-
-          Updated Reunite build logs by refining emojis, fixing alignments for multiline logs and enabling colorful statuses for info and warning
-          realm logs.
-      patch: []
-    dependencies: {}
