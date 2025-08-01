@@ -99,7 +99,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 - directory
 - string
-- Path to a folder. Files in the folder automatically appear in the sidebar.
+- Path to a folder. Files in the folder automatically appear in the sidebar and are sorted in the **natural order**.
 
 ---
 
