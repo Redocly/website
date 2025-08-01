@@ -103,18 +103,24 @@ search:
 ## Navigation patterns
 
 ### Landing page pattern
-For sites with a dedicated landing page, typically hide the sidebar:
+For sites with a dedicated landing page, typically hide the sidebar on the landing page by not including it in a `sidebars.yaml` file.
+If you don't have a `sidebars.yaml` file, you can exclude it in front matter.
 
-```yaml {% title="redocly.yaml" %}
-# Global config
-sidebar:
-  hide: true
-
-# Or in front matter of specific pages
+In a Markdown file:
+```yaml {% title="index.md" %}
 ---
 sidebar:
   hide: true
 ---
+```
+
+In a TSX file:
+```tsx {% title="index.page.tsx" %}
+export const frontmatter = {
+  sidebar: {
+    hide: true
+  }
+};
 ```
 
 ### Documentation section pattern
