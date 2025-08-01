@@ -44,6 +44,6 @@ After you define scorecard levels and commit the changes, labels representing th
 ## Resources
 
 - Learn how to add either Redocly built-in rulesets or custom rulesets to the scorecard for your projects in [Configure scorecard](./configure-scorecard.md).
-- If you have a lot of API descriptions, [Add a catalog](../../content/api-docs/add-classic-catalog.md) for an organized way to display them in your project.
+- If you have a lot of API descriptions, [Configure a catalog](../../config/catalog-classic.md) for an organized way to display them in your project.
 - Check out the [Scorecard reference](../../config/scorecard.md) page to see the different options you can configure.
 - Learn more about the configuration option for the [classic version of the catalog](../../config/catalog-classic.md).

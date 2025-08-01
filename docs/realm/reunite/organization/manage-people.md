@@ -100,7 +100,7 @@ Add other users to teams in your Reunite organization.
 Teams is a way to organize users and if you are using [RBAC](../../access/rbac.md), you can grant permissions to the team that applies to all users included in the team.
 
 {% admonition type="warning" name="Add team first" %}
-You must add your team **before** you can complete these steps. See [Manage teams](./manage-teams.md#create-a-new-team) for more information.
+You must add your team **before** you can complete these steps. See [Teams](./teams.md#create-a-new-team) for more information.
 {% /admonition %}
 
 To add a person to a team:

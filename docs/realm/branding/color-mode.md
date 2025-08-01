@@ -4,7 +4,7 @@ Color mode is an interactive feature that allows users to change the visual them
 
 ## Types of color mode
 
-By clicking the color mode button in the top right of the navbar, users can switch between pre-defined color schemes according to their needs. Every Redocly project includes light and dark mode out-of-the-box. It's also possible to add [new, custom color modes](../customization/add-color-mode.md) using React code.
+By clicking the color mode button in the top right of the navbar, users can switch between pre-defined color schemes according to their needs. Every Redocly project includes light and dark mode out-of-the-box. It's also possible to add [new, custom color modes](./customize-color-modes.md#add-new-color-modes) using React code.
 
 ### Light mode ![light icon](./images/theme-light.svg)
 
@@ -34,5 +34,5 @@ Each color mode draws from its own distinct set of styling rules. The documentat
 
 * [Customize styles](./customize-styles.md) - Customize the styling of your documentation using CSS.
 * [Customize color modes](./customize-color-modes.md) - Customize the styling of specific color modes.
-* Expand beyond the default light and dark modes by adding a [new, custom color mode](../customization/add-color-mode.md).
+* Expand beyond the default light and dark modes by adding a [new, custom color mode](./customize-color-modes.md#add-new-color-modes).
 * [CSS variables](./css-variables/index.md) - Explore CSS variables you can use for styling.

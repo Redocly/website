@@ -4,8 +4,8 @@ In Reunite, [projects](./projects.md) are the place where you create, test, and 
 
 If you are logged in to Reunite and have an [Owner organization role](../../access/roles.md#organization-roles) you can manage projects in the following ways:
 
-* create projects
-* delete projects
+- create projects
+- delete projects
 
 ## Create a project
 
@@ -50,7 +50,7 @@ Reunite deletes the project and returns you to your organization's dashboard.
 
 ## Resources
 
-* [Switch between projects](./switch-between-projects.md)
-* [Configure RBAC for projects](../../access/projects.md)
-* [Connect a Git provider](./connect-git/connect-git-provider.md)
-* [Roles and permissions](../../access/roles.md)
+- [Switch between projects](./switch-between-projects.md)
+- [Configure RBAC](../../config/rbac.md) for project and content access
+- [Connect a Git provider](./connect-git/connect-git-provider.md)
+- [Roles and permissions](../../access/roles.md)

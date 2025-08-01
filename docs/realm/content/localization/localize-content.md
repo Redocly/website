@@ -7,7 +7,7 @@ After preparing the structure of your project for localization, add the translat
 Make sure you have the following:
 
 - The structure of your project prepared for localization.
-  See [Set up folder structure](./set-up-l10n-folder.md).
+  See [l10n configuration](../../config/l10n.md) for setup information.
 - Translated content files.
 
 ## Add translated content files
@@ -77,5 +77,5 @@ To localize content in partials:
 
 ## Resources
 
-* Find the next steps to add localization to your project in [Configure localization](./index.md).
+* Learn how to configure localization in [l10n configuration](../../config/l10n.md).
 * Learn how to localize the UI labels in your project in [Localize labels using translation keys](./localize-labels.md).

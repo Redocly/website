@@ -1,6 +1,6 @@
 # Customize styles
 
-You can apply [custom styling](./styling.md) to change the appearance of your project.
+You can apply custom styling to change the appearance of your project.
 For example, things like typography, colors, and spacing.
 
 The core theme is built using [CSS variables](./css-variables/index.md).
@@ -32,51 +32,74 @@ your-awesome-project/
 └── sidebars.yaml
 ```
 
-## Add CSS selectors
+## Override CSS variables
 
-Inside the `@theme/styles.css` file, add two selectors:`:root` and `:root.dark`.
-These selectors keep styling changes scoped to light and dark mode, respectively.
+Add custom styling to your project by overriding CSS variables in your `@theme/styles.css` file. The following example shows a complete custom styling setup:
 
 ```css {% title="@theme/styles.css" %}
+/* Light mode styling (default) */
 :root {
-   /* light mode styling */
+  /* Brand colors */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  
+  /* Layout colors */
+  --navbar-bg-color: #ffffff;
+  --sidebar-background-color: #f8fafc;
+  --content-background-color: #ffffff;
+  
+  /* Typography */
+  --h1-text-color: #1f2937;
+  --text-color: #374151;
+  --link-text-color: #2563eb;
+  
+  /* Spacing and borders */
+  --border-color: #e5e7eb;
+  --spacing-unit: 1rem;
 }
 
+/* Dark mode styling */
 :root.dark {
-   /* dark mode styling */
+  /* Brand colors for dark mode */
+  --color-primary: #60a5fa;
+  --color-primary-hover: #3b82f6;
+  
+  /* Layout colors */
+  --navbar-bg-color: #0f172a;
+  --sidebar-background-color: #1e293b;
+  --content-background-color: #0f172a;
+  
+  /* Typography */
+  --h1-text-color: #f1f5f9;
+  --text-color: #cbd5e1;
+  --link-text-color: #60a5fa;
+  
+  /* Spacing and borders */
+  --border-color: #374151;
+}
+
+/* Custom font configuration */
+@font-face {
+  font-family: 'CustomBrand';
+  src: url('../static/fonts/custom-brand.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --font-family-headings: 'CustomBrand', system-ui, sans-serif;
+  --font-family-body: 'Inter', system-ui, sans-serif;
 }
 ```
 
-For a more detailed look at color modes, please review the [Customize Color Modes](./customize-color-modes.md) guide.
+When you save this file and run your project in development mode, the styling changes will be visible immediately. Toggle between color modes to see the differences.
 
-## Override CSS variables
+**Steps for customizing your project styling:**
 
-Add custom styling to your project by overriding CSS variables.
-
-To override CSS variables:
-
-1. Run your Redocly project in development mode.
-1. Copy the following snippet into your `@theme/styles.css` file and save:
-
-      ```css {% title="@theme/styles.css" %}
-      :root {
-      --navbar-bg-color: #E7BE9E;
-      --h1-text-color: blue;
-      }
-
-      :root.dark {
-         --navbar-bg-color: #BDC3EE;
-         --h1-text-color: red;
-      }
-      ```
-1. The styling changes should be visible.
-   Toggle between color modes to check the difference.
-
-Generally speaking, these are the steps you'll follow when styling your project:
-
-1. Choose the elements you want to style.
-2. [Identify the CSS variables](./styling.md#css-variables-in-realm) for those elements.
-3. Override those variables with custom styling.
+1. **Choose elements to style** - Identify which components or sections you want to customize
+2. **Find the CSS variables** - Use browser developer tools or the [CSS variables reference](./css-variables/index.md) to identify the relevant variables
+3. **Override variables** - Add your custom values to the `@theme/styles.css` file
+4. **Test in both modes** - Ensure your styling works well in both light and dark modes
 
 ## Apply custom classes or IDs
 
@@ -316,6 +339,6 @@ The following screenshots show the styling rules applied:
 ## Resources
 
 - [Customize color modes](./customize-color-modes.md) - Learn to style your project for color modes that your users switch between (light and dark)
-- [Concepts - Custom styling](./styling.md) - The fundamentals of customization and styling in Realm.
+- [Branding overview](./index.md) - Overview of all branding and customization options.
 - [Concepts - Color mode](./color-mode.md) - Learn more about the color mode feature.
 - [CSS variables](./css-variables/index.md) - Explore CSS variables you can use for styling.

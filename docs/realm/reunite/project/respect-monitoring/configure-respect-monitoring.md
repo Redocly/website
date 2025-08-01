@@ -131,7 +131,7 @@ reunite:
 
 ### Job with secret value inputs
 
-The following example adds a configuration containing inputs with secret values by [adding a custom environment variable](../configure-env-variables.md#add-an-environment-variable):
+The following example adds a configuration containing inputs with secret values by [adding a custom environment variable](../env-variables.md#settings-page):
 
 ```yaml {% title="redocly.yaml" %}
 reunite:

@@ -50,7 +50,7 @@ Make sure you have the following before you begin:
 To configure project roles, assign project roles to teams scoped by resource identifiers.
 RBAC configurations are placed in different places in your project, depending on the following levels of granularity:
 
-- [For projects](projects.md): Globally in the `redocly.yaml` file in the `rbac` configuration.
+- [For projects](../config/rbac.md): Globally in the `redocly.yaml` file in the `rbac` configuration.
 - [For pages](page-permissions.md): In the content or front matter of Markdown documents, API definitions, or Typescript pages in the `rbac` configuration.
 - [For navigation](links-and-groups-permissions.md): In the navbar, footer, or sidebar navigation menu `rbac` configurations in the `redocly.yaml` or `sidebars.yaml` configuration files.
 
@@ -69,34 +69,17 @@ rbac:
 
 ## Assign roles to unspecified teams
 
-If you want to provide access to one team, and limit access to all other teams for a specific resource identifier, you can use the `*` symbol.
+You can use the `*` symbol to provide access to one team and limit access to all other teams for a specific resource identifier:
 
-To assign a role to unspecified teams for files access:
+```yaml {% title="redocly.yaml" %}
+rbac:
+  content:
+    '*.md':
+      Writers: write
+      '*': read  # All other teams get read access
+```
 
-1. In your `redocly.yaml` configuration file, add the glob pattern scope option in the `rbac` configuration under the `content` object.
-   For example, the following example configuration creates a scope that includes all Markdown files:
-   ```yaml
-   rbac:
-     content:
-       '*.md':
-   ```
-2. Add the team names with the value of the role you want to assign them.
-   For example, the following example configuration assigns the `write` role to the `Writers` team in the `*.md` scope:
-   ```yaml
-   rbac:
-     content:
-       '*.md':
-         Writers: write
-   ```
-3. Add the `*` symbol with the value of the role you want to assign to all other teams.
-   For example, the following example configuration assigns the `read` role to all teams except the `Writers` team for all Markdown pages:
-   ```yaml
-   rbac:
-     content:
-       '*.md':
-         Writers: write
-         '*': read
-   ```
+This configuration assigns `write` role to the `Writers` team and `read` role to all other teams for Markdown files.
 
 ## Resources
 

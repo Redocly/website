@@ -63,5 +63,4 @@ Most chart types are supported; sometimes there is a delay before adding the ver
 ## Resources
 
 * Visit the [Mermaid project documentation](https://mermaid.js.org/intro/#diagram-types) to learn how to create Mermaid diagrams.
-* How to [configure code snippets](./configure-code-snippets.md) in your content.
 * How to [configure navigation](../navigation/index.md) on your site.

@@ -68,4 +68,4 @@ The CI/CD jobs run by the deploy process:
 
 * [Projects](../../reunite/project/projects.md)
 * [Connect a Git provider](../../reunite/project/connect-git/connect-git-provider.md)
-* [Set a custom domain](../../navigation/custom-domain.md)
+* [Set a custom domain](../../reunite/project/custom-domain.md)

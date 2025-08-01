@@ -5,7 +5,7 @@ All Markdown pages include a feedback form at the bottom of the page by default.
 All OpenAPI API reference documentation includes a feedback form at the bottom of each endpoint by default.
 
 Also, by default all sample code snippets include a report icon users can select to report an issue about the sample code snippet using a feedback form.
-The [report icon](../../content/configure-code-snippets.md) and [feedback forms](../../setup/how-to/feedback/index.md) can be hidden or customized.
+The [report icon](../../config/code-snippet.md) and [feedback forms](../../setup/how-to/feedback/index.md) can be hidden or customized.
 
 Users can use these forms to send you information about their experience with that page's content.
 You can [view and export the collected feedback data](../../reunite/project/view-export-data.md) by project on the **Feedback reports** page.
@@ -16,7 +16,7 @@ Every code snippet includes a report icon in the top right corner, next to the c
 ![Report icon](../images/report.png)
 Users can select this icon to display a modal with a feedback form they can submit.
 ![Report feedback form modal](../images/report-feedback-form.png)
-You can [hide or customize the report icon](../../content/configure-code-snippets.md#configure-code-snippet-icons) and the [feedback form modal it displays](../../content/configure-code-snippets.md#configure-report-options), globally in the `redocly.yaml` file or by page in the Markdown front matter.
+You can [hide or customize the report icon](../../config/code-snippet.md#hide-or-customize-icons) and the feedback form modal it displays, globally in the `redocly.yaml` file or by page in the Markdown front matter.
 The specific code snippet and the message the user enters in the feedback form is collected and displayed on the **Feedback reports** page.
 See [Feedback data](#feedback-data) for more information.
 

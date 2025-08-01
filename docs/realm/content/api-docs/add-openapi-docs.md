@@ -2,7 +2,7 @@
 
 Transform your OpenAPI description YAML or JSON file into interactive documentation by adding it to your project. You can add one or multiple OpenAPI descriptions to your project.
 
-Either add individual description files to your project alongside your other content, or use a [classic version of the catalog](./add-classic-catalog.md) to showcase your REST APIs alongside GraphQL and AsyncAPI APIs.
+Either add individual description files to your project alongside your other content, or use a [classic catalog](../../config/catalog-classic.md) to showcase your REST APIs alongside GraphQL and AsyncAPI APIs.
 
 If you are using a `sidebars.yaml` file to organize your sidebar navigation menu, you must add your OpenAPI descriptions to it for them to display on your sidebar navigation menu.
 
@@ -22,7 +22,7 @@ If you have a `sidebars.yaml` file in your project, you must add your OpenAPI de
 ## Use the sidebars.yaml file
 
 If you have a `sidebars.yaml` file in your project, you must add any files, including OpenAPI descriptions, you want displayed in your sidebar navigation menu to it.
-For more information on configuring a `sidebars.yaml` file for your project, see [Configure navigation on the sidebar](../../navigation/sidebar.md).
+For more information on configuring a `sidebars.yaml` file for your project, see [Sidebar configuration](../../navigation/sidebars.md).
 
 To add an OpenAPI file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the OpenAPI description to your `sidebars.yaml` file, as in the following example:
 
@@ -52,8 +52,8 @@ To add multiple OpenAPI descriptions using `group` keys, update your `sidebars.y
 
 ## Resources
 
-- Organize multiple API descriptions by [Adding a catalog](./add-classic-catalog.md).
-- Help users find your content by [Configuring navigation in the sidebar](../../navigation/sidebar.md).
+- Organize multiple API descriptions by [Configuring a catalog](../../config/catalog-classic.md).
+- Help users find your content by [Configuring navigation in the sidebar](../../navigation/sidebars.md).
 - See the [Replay the API explorer](../../setup/concepts/replay.md) concept doc to learn more about making your API reference docs interactive.
 - Use [OpenAPI extensions](./openapi-extensions/index.md) in your API description to produce richer documentation.
 - Check out the [OpenAPI](../../config/openapi/index.md) configuration reference to learn more about the configuration options you can apply to customize your OpenAPI description reference docs.

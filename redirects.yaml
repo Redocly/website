@@ -455,8 +455,8 @@
   to: '/docs/realm/reunite/project/remote-content/from-github'
 '/docs/realm/setup/how-to/remote-content/from-gitlab':
   to: '/docs/realm/reunite/project/remote-content/from-gitlab'
-'/docs/realm/setup/how-to/remote-content/index':
-  to: '/docs/realm/reunite/project/remote-content/index'
+'/docs/realm/setup/how-to/remote-content':
+  to: '/docs/realm/reunite/project/remote-content'
 '/docs/realm/setup/how-to/remote-content/manually-sync-remote-content':
   to: '/docs/realm/reunite/project/remote-content/manually-sync-remote-content'
 '/docs/realm/setup/how-to/remote-content/push':
@@ -466,8 +466,8 @@
 # Setup respect-monitoring redirects
 '/docs/realm/setup/respect-monitoring/configure-respect-monitoring':
   to: '/docs/realm/reunite/project/respect-monitoring/configure-respect-monitoring'
-'/docs/realm/setup/respect-monitoring/index':
-  to: '/docs/realm/reunite/project/respect-monitoring/index'
+'/docs/realm/setup/respect-monitoring':
+  to: '/docs/realm/reunite/project/respect-monitoring'
 '/docs/realm/setup/respect-monitoring/manage-respect-monitoring':
   to: '/docs/realm/reunite/project/respect-monitoring/manage-respect-monitoring'
 
@@ -514,8 +514,8 @@
   to: '/docs/realm/content/api-docs/try-apis-with-mock-server'
 
 # OpenAPI extensions redirects - Files moved to /content/api-docs/openapi-extensions/
-'/docs/realm/author/reference/openapi-extensions/index':
-  to: '/docs/realm/content/api-docs/openapi-extensions/index'
+'/docs/realm/author/reference/openapi-extensions':
+  to: '/docs/realm/content/api-docs/openapi-extensions'
 '/docs/realm/author/reference/openapi-extensions/x-additional-properties-name':
   to: '/docs/realm/content/api-docs/openapi-extensions/x-additional-properties-name'
 '/docs/realm/author/reference/openapi-extensions/x-assertion-type':
@@ -560,8 +560,8 @@
   to: '/docs/realm/content/localization/customize-styles-for-locale'
 '/docs/realm/author/how-to/config-l10n/display-current-locale':
   to: '/docs/realm/content/localization/display-current-locale'
-'/docs/realm/author/how-to/config-l10n/index':
-  to: '/docs/realm/content/localization/index'
+'/docs/realm/author/how-to/config-l10n':
+  to: '/docs/realm/content/localization'
 '/docs/realm/author/how-to/config-l10n/localize-content':
   to: '/docs/realm/content/localization/localize-content'
 '/docs/realm/author/how-to/config-l10n/localize-labels':
@@ -578,8 +578,8 @@
   to: '/docs/realm/content/markdoc-functions/concat'
 '/docs/realm/author/reference/functions/includes':
   to: '/docs/realm/content/markdoc-functions/includes'
-'/docs/realm/author/reference/functions/index':
-  to: '/docs/realm/content/markdoc-functions/index'
+'/docs/realm/author/reference/functions':
+  to: '/docs/realm/content/markdoc-functions'
 
 # Markdoc tags redirects - Files moved to /content/markdoc-tags/
 '/docs/realm/author/reference/tags/admonition':
@@ -614,8 +614,8 @@
 # Code walkthrough redirects - Files moved to /content/markdoc-tags/code-walkthrough/
 '/docs/realm/author/reference/tags/code-walkthrough/create-code-walkthrough':
   to: '/docs/realm/content/markdoc-tags/code-walkthrough/create-code-walkthrough'
-'/docs/realm/author/reference/tags/code-walkthrough/index':
-  to: '/docs/realm/content/markdoc-tags/code-walkthrough/index'
+'/docs/realm/author/reference/tags/code-walkthrough':
+  to: '/docs/realm/content/markdoc-tags/code-walkthrough'
 '/docs/realm/author/reference/tags/code-walkthrough/input':
   to: '/docs/realm/content/markdoc-tags/code-walkthrough/input'
 '/docs/realm/author/reference/tags/code-walkthrough/step':
@@ -646,12 +646,12 @@
   to: '/docs/realm/branding/css-variables/component'
 '/docs/realm/author/how-to/css-variables/api-docs':
   to: '/docs/realm/branding/css-variables/api-docs'
-'/docs/realm/author/how-to/css-variables/index':
-  to: '/docs/realm/branding/css-variables/index'
+'/docs/realm/author/how-to/css-variables':
+  to: '/docs/realm/branding/css-variables'
 
   # Navigation redirects - Files moved to /navigation/
-'/docs/realm/author/how-to/configure-nav/index':
-  to: '/docs/realm/navigation/index'
+'/docs/realm/author/how-to/configure-nav':
+  to: '/docs/realm/navigation'
 '/docs/realm/author/how-to/configure-nav/navbar':
   to: '/docs/realm/navigation/navbar'
 '/docs/realm/author/how-to/configure-nav/sidebar':
@@ -755,9 +755,7 @@
 
 # Setup RBAC redirects - Files moved from setup paths to /access/
 '/docs/realm/setup/how-to/rbac':
-  to: '/docs/realm/access/index'
-'/docs/realm/setup/how-to/rbac/index':
-  to: '/docs/realm/access/index'
+  to: '/docs/realm/access'
 '/docs/realm/setup/how-to/rbac/links-and-groups-permissions':
   to: '/docs/realm/access/links-and-groups-permissions'
 '/docs/realm/setup/how-to/rbac/page-permissions':

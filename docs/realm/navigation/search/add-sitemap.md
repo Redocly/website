@@ -113,5 +113,5 @@ For best results with search engines, your project should also include a `robots
 ## Resources
 
 - Check the [seo reference page](../../config/seo.md) for more information and examples.
-- [Set a custom domain](../custom-domain.md) to personalize your URL to reflect your brand.
+- [Set a custom domain](../../reunite/project/custom-domain.md) to personalize your URL to reflect your brand.
 - Learn more about hosting [Static assets](../../content/static-assets.md) in Redocly projects.

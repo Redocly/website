@@ -80,7 +80,7 @@ colorMode:
 
 Specify the list of available `colorMode` options in the `modes` list.
 You must add a mode to reference it in the modes list.
-Learn how to add a mode by reading the [Custom color modes](../customization/add-color-mode.md) guide.
+Learn how to add a mode by reading the [Add new color modes](../branding/customize-color-modes.md#add-new-color-modes) section.
 
 ```yaml
 colorMode:
@@ -95,6 +95,6 @@ The first `mode` from the `modes` list applies by default if `ignoreDetection` i
 
 ## Resources
 
-- Add [custom color modes](../customization/add-color-mode.md).
+- Add [custom color modes](../branding/customize-color-modes.md#add-new-color-modes).
 - Use [front matter](./front-matter-config.md) to show or hide the color mode switcher on individual pages.
 - Explore other [configuration options](./index.md) for your project.
