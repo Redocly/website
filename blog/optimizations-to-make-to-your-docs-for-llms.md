@@ -182,8 +182,6 @@ When your documentation comes from OpenAPI specs, you get a solid foundation for
 
 The most effective documentation teams don't choose between automation and human oversight, they use automation to enhance human expertise. Redocly's approach automates repetitive tasks like structural validation, and formatting consistency, freeing your team to focus on what humans do best: ensuring clarity, accuracy, and developer experience.
 
-Redocly's platform reflects this balance. Automated linting catches structural issues, while human reviewers use visual diff tools and collaboration features to ensure content quality.
-
 ## Ready to make your API documentation work better with AI? 
 
 [Redocly](https://redocly.com/) automatically generates LLM-optimized documentation from your OpenAPI specs, ensuring consistent structure and formatting that both developers and AI systems can navigate effectively. It even [automates the creation  of an llms.txt file](https://redocly.com/blog/updates-2025-05) to help LLMs and agents navigate your docs more intelligently.
