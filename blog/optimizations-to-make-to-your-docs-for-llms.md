@@ -2,7 +2,7 @@
 
 Let's be honest: developers aren't reading your documentation the way they used to. They're asking AI agents instead of digging through your carefully crafted API reference. And if your docs aren't optimized for these AI tools, your developers are getting incomplete or wrong answers about your APIs.
 
-This isn't some distant future problem; it's happening right now. Your support team is probably already seeing tickets that could have been avoided if AI tools could properly understand your documentation. Your developer onboarding is taking longer because AI assistants can't parse your getting started guides effectively.
+You've probably already realized this isn't some distant future problem; it's happening right now. Your support team might be already seeing tickets that could have been avoided if AI tools could properly understand your documentation. Your developer onboarding could be taking longer because AI assistants can't parse your getting started guides effectively.
 
 The good news? Fixing this isn't as complicated as you might think. It just requires rethinking how you structure and format your documentation with AI consumption in mind.
 
@@ -26,7 +26,7 @@ Without proper formatting, the AI might split `api_key` into separate pieces, ma
 
 AI systems organize information into chunks, usually paragraph-sized sections. When you mix different topics in the same section (like putting rate limiting info in your authentication section), the AI can't separate the concepts. So when someone asks about authentication, they get rate limiting details mixed in, making the answer less useful.
 
-Redocly even automates the creation of your `lms.txt` file with a lightweight Markdown index that helps AI assistants navigate your docs more intelligently.
+Some tool can help - Redocly, for example, automates the creation of your `llms.txt` file with a lightweight Markdown index that may help AI assistants navigate your docs more intelligently.
 
 ### Similar sections lead to retrieval errors
 
@@ -64,7 +64,7 @@ AI systems use your headings like a roadmap. When you skip levels or use inconsi
 
 The predictable structure helps AI understand how concepts relate to each other. When developers ask about authentication, the AI knows exactly where to look and what context to include.
 
-If you're using modern API documentation platforms like Redocly, this structure gets generated automatically from your OpenAPI specs. Manual quality control is no longer required. 
+If you're using modern API documentation platforms (like Redocly), this structure gets generated automatically from your OpenAPI specs. Manual quality control is no longer required. 
 
 ### 2. Stick to one term for each concept
 
@@ -112,7 +112,7 @@ import { ApiClient } from '@company/api-client';
 Properly formatted code blocks ensure AI systems can provide accurate code examples when developers ask for them. 
 
 ### 4. Provide text alternatives for visual content
-AI can't see your diagrams, screenshots, or videos. If those elements contain important information, you need to describe them in text.
+The AI being used on your docs probably can't see your diagrams, screenshots, or videos. If those elements contain important information, you need to describe them in text.
 
 **AI can’t use this:**
 
@@ -172,9 +172,9 @@ Here's how to actually implement this without disrupting your entire documentati
 
 ## Why specification drives LLM-optimized documentation
 
-Here's what we've learned from working with enterprise teams: the most successful approach to AI-optimized documentation is generated  from structured specifications rather than manually written directions.
+Here's what we've learned from working with enterprise teams: the most successful approach to AI-optimized documentation is generated from structured specifications rather than manually written directions.
 
-Your developers are already using AI to understand your APIs.  Optimizing for AI doesn't mean sacrificing the human experience, it means creating documentation that works well for both. Clean structure, consistent terminology, and proper formatting benefit everyone who interacts with your docs.
+Your developers are already using AI to understand your APIs. Optimizing for AI doesn't mean sacrificing the human experience, it means creating documentation that works well for both. Clean structure, consistent terminology, and proper formatting benefit everyone who interacts with your docs.
 
 When your documentation comes from OpenAPI specs, you get AI-friendly formatting by default. Code examples are consistently formatted, terminology stays consistent across endpoints, and the structure remains predictable. Plus, as your API evolves, your documentation stays optimized without manual maintenance.
 
