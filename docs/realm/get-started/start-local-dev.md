@@ -83,7 +83,7 @@ For example, edit the file as shown in the following example to change the link 
 
 If you don't specify a label, the page title is used.
 Take some time to add a few more pages, and change the navigation bar by re-ordering pages and changing the page labels.
-There's more information and examples in the documentation pages for [working with sidebars](../navigation/sidebar.md) and [configuring sidebar groups](../navigation/configure-sidebar-groups.md).
+There's more information and examples in the documentation pages for [working with sidebars](../navigation/sidebars.md).
 
 ## Fine-tune your configuration
 

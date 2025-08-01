@@ -17,8 +17,8 @@ Base UI component labels include predefined keys; however, you must create keys 
 
 Make sure you have the following:
 
-- A Redocly project with a `l10n` folder containing your translated content organized into locales.
-  See [Set up folder structure](./set-up-l10n-folder.md) and [Add translated content](./localize-content.md) for more information.
+- A Redocly project with an `@l10n` folder containing your translated content organized into locales.
+  See [l10n configuration](../../config/l10n.md) for setup information and [Add translated content](./localize-content.md) for content localization.
 
 ## Localize base UI components
 
@@ -59,50 +59,9 @@ The user-defined UI elements that use translation keys are:
 Translation keys for most user-defined UI elements are included in the `redocly.yaml` configuration files.
 Sidebars are an exception and have their configuration in the `sidebars.yaml` files.
 
-To add translation keys to user-defined elements:
+To add translation keys to user-defined elements, add translation key options to elements in your `redocly.yaml` or `sidebars.yaml` files. For more information on the types of keys a UI element uses, see [Configure Redocly](../../config/index.md) and navigate to the relevant reference documentation.
 
-1. Access an element's configuration in the `redocly.yaml` or `sidebars.yaml` files.
-1. To each option that accepts translation keys, add a translation key option, as in the following example.
-    ```yaml {% title="redocly.yaml" %}
-    navbar:
-      items:
-        - label: Home
-          page: /
-        - group: Products
-          groupTranslationKey:
-          items:
-            - page: /redocly-museum/
-              label: Redocly Museum API
-    footer:
-      items:
-        - groupTranslationKey:
-          items:
-            - label: Terms of Use
-              labelTranslationKey: footer.legal.termsOfUse
-              href: '/terms-of-use/'
-    ```
-    For more information on the types of keys an UI element uses, see [Configure Redocly](../../config/index.md) and navigate to the relevant reference documentation.
-1. Add unique values to reference as translation keys to the translation key options, as in the following example:
-    ```yaml {% title="redocly.yaml" %}
-    navbar:
-      items:
-        - label: Home
-          page: /
-        - group: Products
-          groupTranslationKey: navbar.products.label
-          items:
-            - page: /redocly-museum/
-              label: Redocly Museum API
-    footer:
-      items:
-        - groupTranslationKey: footer.legal.label
-          items:
-            - label: Terms of Use
-              labelTranslationKey: footer.legal.termsOfUse
-              href: '/terms-of-use/'
-    ```
-
-The following is an example of `redocly.yaml` file that includes the `groupTranslationKey` and `labelTranslationKey` properties alongside the `group` and `label` properties for navbar and footer links:
+The following example shows a complete `redocly.yaml` file with translation keys configured for navbar and footer elements:
 
 ```yaml {% title="redocly.yaml" %}
 navbar:
@@ -145,39 +104,28 @@ The following example is a sidebar with translation keys added to each `group`, 
 
 ### Add translations for user-defined UI elements
 
-1. If you haven't already, add a `translations.yaml` file to each of your locale folders.
-1. Find the options that end with `TranslationKey` in your project's `redocly.yaml` and `sidebars.yaml` files, such as the following options: `groupTranslationKey`, `labelTranslationKey` `titleTranslationKey` and `descriptionTranslationKey`, `separatorTranslationKey` and `missingCategoryNameTranslationKey`.
-1. Copy the values of these options to each locale folder's `translations.yaml` file, as in the following example:
-    ```yaml {% title="translations.yaml" %}
-    navbar.home:
-    navbar.products.label:
-    navbar.products.redocly-museum:
-    footer.legal.label:
-    footer.legal.termsOfUse:
-    ```
-1. For each copied translation key value, add a translated text, as in the following example:
-     ```yaml {% title="/@l10n/es/translations.yaml" %}
-    navbar.home: página de inicio
-    navbar.products.label: productos
-    navbar.products.redocly-museum: Redocly Museo
-    footer.legal.label: Legal
-    footer.legal.termsOfUse: Condiciones de uso
-    ```
+To add translations for your configured translation keys:
 
-The following example is a `translations.yaml` file for the Spanish language with the key-value pairs for the navbar, footer, and sidebar elements:
+1. Add a `translations.yaml` file to each of your locale folders (if you haven't already)
+2. Find the options that end with `TranslationKey` in your project's `redocly.yaml` and `sidebars.yaml` files (such as `groupTranslationKey`, `labelTranslationKey`, `titleTranslationKey`, `descriptionTranslationKey`, `separatorTranslationKey`, and `missingCategoryNameTranslationKey`)
+3. Add the translation key values with their translated text to each locale's `translations.yaml` file
 
-```yaml {% title="/@l10n/es/translations.yaml" %}
+The following example shows a complete `translations.yaml` file for Spanish translations:
+
+```yaml {% title="@l10n/es-ES/translations.yaml" %}
 navbar.home: página de inicio
 navbar.products.label: productos
 navbar.products.redocly-museum: Redocly Museo
 footer.legal.label: Legal
 footer.legal.termsOfUse: Condiciones de uso
-sidebar.gettingStarted: Commencer
-sidebar.gettingStarted.separator: Mes séparateurs
-sidebar.gettingStarted.introduction: Introduction
-sidebar.gettingStarted.first-steps: Premiers pas
-sidebar.installation: Installation
+sidebar.gettingStarted: Empezando
+sidebar.gettingStarted.separator: Mis separadores
+sidebar.gettingStarted.introduction: Introducción
+sidebar.gettingStarted.first-steps: Primeros pasos
+sidebar.installation: Instalación
 ```
+
+
 
 ## Localize React pages
 
@@ -259,5 +207,5 @@ Now you can add the key to the `translations.yaml` file and use it to localize o
 
 ## Resources
 
-- Find the next steps to add localization to your project in [Configure localization](./index.md).
+- Learn how to configure localization in [l10n configuration](../../config/l10n.md).
 - Learn how to localize your content files in [Add translated content](./localize-content.md).

@@ -329,7 +329,7 @@ You can also commit your update to view it [in the preview build](#in-the-deploy
 Now that you have started using the editor, check out the other ways you can customize your project with new content, configurations, or styles.
 
 - Learn more about Markdoc and how you can use it to add interactive elements to your Markdown documents in the [Markdown overview for technical writers](https://redocly.com/learn/markdoc).
-- Checkout [Configure sidebar groups](../navigation/configure-sidebar-groups.md) for details on configuring `sidebars.yaml` with nested items.
+- Checkout [sidebars configuration](../navigation/sidebars.md) for details on configuring `sidebars.yaml` with nested items and groups.
 - Find more CSS variables in the [CSS variables dictionary](../branding/css-variables/index.md) reference documentation.
 - Explore the different configuration options available in the `redocly.yaml` file in the [Configure Redocly](../config/index.md) reference documentation.
 - Adjust your Reunite notification settings, connect to Git providers, and change Reunite's color mode in [User profile menu](../reunite/user-profile-menu.md).

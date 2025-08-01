@@ -4,7 +4,7 @@ Transform your GraphQL schema files into reference documentation by integrating 
 The resulting documentation shows both the high-level elements such as queries and mutations, and the details of all the individual data types.
 
 Give your users the tools they need to make the most of your GraphQL APIs with comprehensive reference documentation.
-Either add individual schema files to your project alongside your other content, or use a [classic version of the catalog](./add-classic-catalog.md) to showcase your GraphQL APIs alongside OpenAPI and AsyncAPI APIs.
+Either add individual schema files to your project alongside your other content, or use a [classic catalog](../../config/catalog-classic.md) to showcase your GraphQL APIs alongside OpenAPI and AsyncAPI APIs.
 
 If you are using a `sidebars.yaml` file to organize your sidebar navigation menu, you must add your GraphQL API descriptions to it for them to display on your sidebar navigation menu.
 
@@ -25,7 +25,7 @@ If you have a `sidebars.yaml` file in your project, you must add your GraphQL sc
 ## Add schema to sidebar
 
 If you have a `sidebars.yaml` file in your project, you must add any files, including GraphQL schema files, you want displayed in your sidebar to it.
-For more information on configuring a `sidebars.yaml` file for your project, see [Configure navigation on the sidebar](../../navigation/sidebar.md).
+For more information on configuring a `sidebars.yaml` file for your project, see [Sidebar configuration](../../navigation/sidebars.md).
 
 To add a GraphQL schema file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the GraphQL schema file to your `sidebars.yaml` file, as in the following example:
 
@@ -56,6 +56,6 @@ To add multiple GraphQL schemas using `group` keys, update your `sidebars.yaml` 
 
 ## Resources
 
-- Organize APIs by [adding a classic catalog](./add-classic-catalog.md).
-- [Configure navigation in the sidebar](../../navigation/sidebar.md).
+- Organize APIs by [configuring a classic catalog](../../config/catalog-classic.md).
+- [Configure navigation in the sidebar](../../navigation/sidebars.md).
 - Explore the [GraphQL configuration reference](../../config/graphql/index.md) for customization options.

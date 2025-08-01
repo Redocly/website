@@ -43,11 +43,12 @@ On this page you can view [customer feedback](../../setup/how-to/feedback/index.
 
 ### API registry
 
-This page lists the APIs descriptions from the [catalog you defined](../../content/api-docs/add-classic-catalog.md) in your project. You can view the details, like the scorecard status, the linter report, or the metadata of each API description and filter API descriptions by the assigned team.
+This page lists the APIs descriptions from the [catalog you configured](../../config/catalog-classic.md) in your project.
+You can view the details, like the scorecard status, the linter report, or the metadata of each API description and filter API descriptions by the assigned team.
 
 ### Settings
 
-This page contains your project's settings, like the project ID, [custom domain](../../navigation/custom-domain.md) for your project, [environment variables](./env-variables.md), and [Git provider](./connect-git/connect-git-provider.md) setup.
+This page contains your project's settings, like the project ID, [custom domain](./custom-domain.md) for your project, [environment variables](./env-variables.md), and [Git provider](./connect-git/connect-git-provider.md) setup.
 You can also download project files stored in Redocly-hosted Git from this page.
 The **Settings** page is available only to users with the Owner role in your organization.
 

@@ -1,10 +1,10 @@
 # Code snippet tag
 
-The `code snippet` tag displays code examples in your documentation that are loaded from local files.
+The `code-snippet` tag displays code examples in your documentation that are loaded from local files.
 
 ## Syntax and usage
 
-The `code snippet` tag is a self-closing tag, which means it has no child elements.
+The `code-snippet` tag is a self-closing tag, which means it has no child elements.
 Use attributes to pass the path to the local file and configure how the snippet is displayed.
 
 Example element:
@@ -218,3 +218,9 @@ Simplified code snippets are easier for your readers to understand and apply.
 **Centralize example files**
 
 Store your example code in a central directory to make them easier to manage, update, and reference from code snippet tags.
+
+## Related configuration
+
+- Configure code snippet appearance, icons, and behavior using the [`codeSnippet`](../../config/code-snippet.md) configuration option.
+- Learn how to [highlight lines, add file names, and use advanced features](../../config/code-snippet.md#examples) in code snippets.
+- Set up [global and page-level configuration](../../config/code-snippet.md#configuration-scope) for consistent code snippet styling.

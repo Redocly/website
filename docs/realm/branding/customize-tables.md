@@ -7,15 +7,15 @@ Redocly supports tables written in both Markdown and Markdoc syntax.
 ## Before you begin
 
 You'll need:
-- Basic [CSS knowledge](./styling.md)
+- Basic CSS knowledge
 - A Realm, Reef, or Revel project with a `@theme/styles.css` file
 
 ## Table styling basics
 
 In Redocly projects, you can create global styles for all tables or style individual tables. Most table styling requires custom CSS.
 
-- Define global table styles with [CSS variables](./styling.md#css-variable-concepts) in global [scopes](./styling.md#scope-and-inheritance).
-- Create individual table styles using CSS [selectors](./styling.md#selectors).
+- Define global table styles with [CSS variables](./css-variables/index.md).
+- Create individual table styles using CSS selectors.
 
 CSS variables handle many table styling needs. For more advanced styling, use CSS selectors to target specific table elements.
 
@@ -348,8 +348,8 @@ This example shows how to highlight high-click tasks in yellow and medium-click 
 
 ## Resources
 
-- [Customize styles](./customize-styles.md) - Learn to customize the styles of your Redocly projects.
+- [Custom styles](./customize-styles.md) - Learn to customize the styles of your Redocly projects.
 - [Customize color modes](./customize-color-modes.md) - Add unique styling for each color mode.
-- [Styling](./styling.md) - Learn how styling works in Realm.
+- [Branding overview](./index.md) - Overview of branding and customization options.
 - [Color mode](./color-mode.md) - Learn how color modes work in Realm.
 - [CSS variables dictionary](./css-variables/index.md) - See a list of available CSS variables.

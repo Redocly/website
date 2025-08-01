@@ -265,7 +265,7 @@ Each locale has its own folder, and within each locale folder, you can create su
 
 There is also an optional `translations.yaml` file that contains the list of UI labels for the locale.
 
-For more information, see [Localization](./localization/concept-l10n.md).
+For more information, see [l10n configuration](../config/l10n.md).
 
 ## Versioned content
 
@@ -279,7 +279,7 @@ For more information, see [Add versioned content](./versions.md) how-to.
 You can include multiple products in your project that users can switch between using a product picker in the navbar.
 A product can be any set of content you want to separate from other documentation.
 
-For more information, see [Multiple products](../navigation/multiple-products.md).
+For more information, see [Multi-product overview](../navigation/multi-product.md) and [products configuration](../config/products.md).
 
 ## Customization
 
@@ -313,6 +313,6 @@ Avoid placing regular images, CSS, or JavaScript that you author yourself here i
 
 ## Resources
 
-* Follow step-by-step instructions for configuring your project to include [multiple projects](../navigation/multiple-products.md) or [multiple languages](./localization/index.md).
+* Follow configuration instructions for [multiple products](../config/products.md) or [multiple languages](../config/l10n.md).
 * Learn more about configuring your project to use the same content in multiple places using the [partial markdoc tag](https://redocly.com/docs/learn-markdoc/tags/partial).
 * See the configuration options available for your `sidebars.yaml` file in the [sidebars reference documentation](../navigation/sidebars.md).

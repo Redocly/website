@@ -207,6 +207,71 @@ rbac:
     Developer: write
 ```
 
+### Complete RBAC setup
+
+The following example shows a comprehensive RBAC configuration with project access, content access, environment variables, and authentication requirements:
+
+```yaml {% title="redocly.yaml" %}
+rbac:
+  # Project administration access
+  reunite:
+    Developers: write
+    Writers: read
+    Admin: admin
+  
+  # File and content access
+  content:
+    # Default permissions for all files
+    '**':
+      Developers: maintain
+      Writers: write
+      authenticated: read
+    
+    # Specific permissions for sensitive files
+    'security/*.md':
+      Admin: admin
+      Developers: read
+    
+    # API documentation access
+    'apis/**':
+      Developers: write
+      Writers: read
+
+  # Feature access
+  features:
+    aiSearch:
+      authenticated: read
+```
+
+### Using environment variables
+
+Environment variables can be used for role assignments, useful for different deployment environments:
+
+```yaml {% title="redocly.yaml" %}
+rbac:
+  reunite:
+    Writers: '{{process.env.RBAC_WRITERS_ROLE}}'
+    Developers: '{{process.env.RBAC_DEVELOPERS_ROLE}}'
+  content:
+    '**':
+      Developers: '{{process.env.RBAC_DEFAULT_ROLE}}'
+      authenticated: read
+```
+
+### Require authentication
+
+To require users to log in before viewing any content:
+
+```yaml {% title="redocly.yaml" %}
+rbac:
+  content:
+    '**':
+      authenticated: read
+      anonymous: none
+```
+
+This configuration creates a login page where users authenticate using configured identity providers.
+
 ### Pattern-based access
 
 Define the folders and the patterns that the team names match.
@@ -275,6 +340,6 @@ rbac:
 
 - [Role-based access control (RBAC)](../access/rbac.md) concept
 - [How to configure RBAC](../access/index.md) with additional information and examples for projects, pages, and navigation.
-- [Pattern-based team access](../access/pattern-access.md) guide and usage examples.
+- Pattern-based team access examples and configuration options are shown above.
 - Use [front matter](./front-matter-config.md) to configure role-based access on individual pages.
 - Explore other [configuration options](./index.md) for your project.

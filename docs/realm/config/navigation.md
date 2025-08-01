@@ -93,7 +93,7 @@ navigation:
   nextButton:
     text: "Next chapter"
   previousButton:
-    text: "Previous chapter
+    text: "Previous chapter"
 ```
 
 ### Hide navigation links globally

@@ -7,9 +7,9 @@ This can be useful if you want to customize how certain UI elements look or chan
 Make sure you have the following:
 
 - A Redocly project with a `l10n` folder containing your translated content organized into locales.
-  See [Set up folder structure](./set-up-l10n-folder.md) and [Add translated content](./localize-content.md) for more information.
+  See [l10n configuration](../../config/l10n.md) and [Add translated content](./localize-content.md) for more information.
 - A `@theme/styles.css` file in your project.
-  See [Add custom styles](../../branding/customize-styles.md) for more information.
+  See [custom styles](../../branding/customize-styles.md) for more information.
 
 ## Add custom styles for a locale
 
@@ -36,6 +36,6 @@ l10n:
 
 ## Resources
 
-* Learn the steps to add localization to your project in [Configure localization](./index.md).
+* Learn how to configure localization in [l10n configuration](../../config/l10n.md).
 * Learn how to localize your content files in [Add translated content](./localize-content.md).
-* Learn more about how to add custom styles to your project in [Add custom styles](../../branding/customize-styles.md).
+* Learn more about how to add custom styles to your project in [custom styles](../../branding/customize-styles.md).

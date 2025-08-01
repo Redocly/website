@@ -100,14 +100,14 @@ These [feedback mechanisms can be configured in your `redocly.yaml` file](../con
 
 The API registry is a list of all the API descriptions you have included in an API catalog.
 API catalogs are an organized way to present many APIs that can be filtered and searched.
-You can [add an API catalog](../content/api-docs/add-classic-catalog.md) by organizing your API descriptions and adding a configuration to your `redocly.yaml` file.
+You can [configure an API catalog](../config/catalog-classic.md) by organizing your API descriptions and adding a configuration to your `redocly.yaml` file.
 You can view the Scorecard status, metadata, custom fields, and logs for each API description included in your catalog on the **API registry** page.
 
 ## Project settings
 
 Most aspects of your project are configured in your `redocly.yaml` configuration file, but a few things are configured in Reunite on the **Settings** page.
 From the **Settings** page, you can view your Project ID, edit your Project name, and [delete a project](./project/manage-projects.md#delete-a-project).
-You can also [set a custom domain](../navigation/custom-domain.md), [add environment variables](./project/configure-env-variables.md), and [connect a Git repository](./project/connect-git/connect-git-provider.md) from a remote provider like GitHub, GitLab, or Azure DevOps.
+You can also [set a custom domain](./project/custom-domain.md), [add environment variables](./project/env-variables.md), and [connect a Git repository](./project/connect-git/connect-git-provider.md) from a remote provider like GitHub, GitLab, or Azure DevOps.
 
 ## Resources
 

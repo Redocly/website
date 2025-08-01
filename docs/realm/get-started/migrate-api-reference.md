@@ -76,7 +76,7 @@ Add a `sidebars.yaml` file to the root of your project, and add each API to it a
 ```
 
 You can customize the order and display labels of the APIs, or group in another structure to suit your needs.
-Visit the [sidebars documentation](../navigation/sidebar.md) for more information and examples.
+Visit the [sidebars documentation](../navigation/sidebars.md) for more information and examples.
 
 ## Multiple API versions
 
@@ -260,7 +260,7 @@ To apply custom styles to your project:
 
 4.  Edit the `@theme/styles.css` file to reflect your own branding and preferences.
     Using "Inspect" in your browser developer tools shows the CSS class names that you can change.
-    The documentation includes some [styling guides](../branding/styling.md) to help you get started, and a full [CSS variables dictionary](../branding/css-variables/index.md) for your reference.
+    The documentation includes [branding and customization guides](../branding/index.md) to help you get started, and a full [CSS variables dictionary](../branding/css-variables/index.md) for your reference.
 
 ## Local development platform
 
@@ -288,4 +288,4 @@ Here are some suggestions for where to go next:
 
 - View the list of [supported OpenAPI extensions](../content/api-docs/openapi-extensions/index.md).
 - Check the [configuration options for OpenAPI documentation](../config/openapi/index.md), there are changes and additions in comparison to our older products.
-- Learn how to [set a custom domain](../navigation/custom-domain.md) for your project.
+- Learn how to [set a custom domain](../reunite/project/custom-domain.md) for your project.
