@@ -64,11 +64,11 @@ AI systems use your headings like a roadmap. When you skip levels or use inconsi
 
 The predictable structure helps AI understand how concepts relate to each other. When developers ask about authentication, the AI knows exactly where to look and what context to include.
 
-If you're using modern API documentation platforms (like Redocly), this structure gets generated automatically from your OpenAPI specs. Manual quality control is no longer required. 
+If you're using modern API documentation platforms (like Redocly), this structure gets generated automatically from your OpenAPI specs. This automation frees up your team to focus on higher-value quality control tasks like ensuring clarity, accuracy, and overall developer experience.
 
 ### 2. Stick to one term for each concept
 
-This might feel repetitive, but AI systems get confused when you use different words for the same thing. Pick one term and use it consistently throughout your docs.
+This might feel repetitive, but AI systems get confused when you use different words for the same thing. Pick one term and use it consistently throughout your docs. Modern documentation platforms (like Redocly) offer linting capabilities that can automatically detect and flag terminology inconsistencies, making this easier to maintain at scale.
 
 **Confusing for AI:**
 
@@ -176,7 +176,13 @@ Here's what we've learned from working with enterprise teams: the most successfu
 
 Your developers are already using AI to understand your APIs. Optimizing for AI doesn't mean sacrificing the human experience, it means creating documentation that works well for both. Clean structure, consistent terminology, and proper formatting benefit everyone who interacts with your docs.
 
-When your documentation comes from OpenAPI specs, you get AI-friendly formatting by default. Code examples are consistently formatted, terminology stays consistent across endpoints, and the structure remains predictable. Plus, as your API evolves, your documentation stays optimized without manual maintenance.
+When your documentation comes from OpenAPI specs, you get a solid foundation for AI-friendly formatting. Code examples are consistently formatted, terminology stays consistent across endpoints, and the structure remains predictable. However, achieving true LLM optimization requires explicit configuration of advanced features like llms.txt generation.
+
+## The automation-human partnership
+
+The most effective documentation teams don't choose between automation and human oversight, they use automation to enhance human expertise. Redocly's approach automates repetitive tasks like structural validation, and formatting consistency, freeing your team to focus on what humans do best: ensuring clarity, accuracy, and developer experience.
+
+Redocly's platform reflects this balance. Automated linting catches structural issues, while human reviewers use visual diff tools and collaboration features to ensure content quality.
 
 ## Ready to make your API documentation work better with AI? 
 
