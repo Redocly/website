@@ -81,7 +81,8 @@
       items:
         - page: reunite/project/respect-monitoring/configure-respect-monitoring.md
         - page: reunite/project/respect-monitoring/manage-respect-monitoring.md
-    # Missing content about Analytics (add when released)
+    - page: reunite/project/analytics.md
+      label: Analytics
     - page: reunite/project/switch-between-projects.md # consolidate into manage projects?
       label: Switch between projects
     - page: reunite/project/view-export-data.md
