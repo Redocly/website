@@ -176,7 +176,7 @@ Here's what we've learned from working with enterprise teams: the most successfu
 
 Your developers are already using AI to understand your APIs. Optimizing for AI doesn't mean sacrificing the human experience, it means creating documentation that works well for both. Clean structure, consistent terminology, and proper formatting benefit everyone who interacts with your docs.
 
-When your documentation comes from OpenAPI specs, you get a solid foundation for AI-friendly formatting. Code examples are consistently formatted, terminology stays consistent across endpoints, and the structure remains predictable. However, achieving true LLM optimization requires explicit configuration of advanced features like llms.txt generation.
+When your documentation comes from OpenAPI specs, you get a solid foundation for AI-friendly formatting. Code examples are consistently formatted, terminology stays consistent across endpoints, and the structure remains predictable. 
 
 ## The automation-human partnership
 
