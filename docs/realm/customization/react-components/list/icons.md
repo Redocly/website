@@ -20,9 +20,9 @@ import { iconName } from '@redocly/theme/icons/{iconName}/{iconName}';
 
 | Icon | Name |
 |------|------|
-| {% icon name="DocumentIcon" /%} | `DocumentIcon` |
-| {% icon name="DocumentBlankIcon" /%} | `DocumentBlankIcon` |
-| {% icon name="DocumentAddIcon" /%} | `DocumentAddIcon` |
+| {% themeIcon name="DocumentIcon" /%} | `DocumentIcon` |
+| {% themeIcon name="DocumentBlankIcon" /%} | `DocumentBlankIcon` |
+| {% themeIcon name="DocumentAddIcon" /%} | `DocumentAddIcon` |
 
 </details>
 
@@ -31,11 +31,11 @@ import { iconName } from '@redocly/theme/icons/{iconName}/{iconName}';
 
 | Icon | Name |
 |------|------|
-| {% icon name="FileIcon" /%} | `FileIcon` |
-| {% icon name="FileStorageIcon" /%} | `FileStorageIcon` |
-| {% icon name="FolderIcon" /%} | `FolderIcon` |
-| {% icon name="FolderAddIcon" /%} | `FolderAddIcon` |
-| {% icon name="FolderMoveToIcon" /%} | `FolderMoveToIcon` |
+| {% themeIcon name="FileIcon" /%} | `FileIcon` |
+| {% themeIcon name="FileStorageIcon" /%} | `FileStorageIcon` |
+| {% themeIcon name="FolderIcon" /%} | `FolderIcon` |
+| {% themeIcon name="FolderAddIcon" /%} | `FolderAddIcon` |
+| {% themeIcon name="FolderMoveToIcon" /%} | `FolderMoveToIcon` |
 
 </details>
 
@@ -44,24 +44,24 @@ import { iconName } from '@redocly/theme/icons/{iconName}/{iconName}';
 
 | Icon | Name |
 |------|------|
-| {% icon name="CheckboxFilledIcon" /%} | `CheckboxFilledIcon` |
-| {% icon name="CloseFilledIcon" /%} | `CloseFilledIcon` |
-| {% icon name="CloseOutlineIcon" /%} | `CloseOutlineIcon` |
-| {% icon name="DeselectIcon" /%} | `DeselectIcon` |
-| {% icon name="EditIcon" /%} | `EditIcon` |
-| {% icon name="FilterIcon" /%} | `FilterIcon` |
-| {% icon name="HorizontalViewIcon" /%} | `HorizontalViewIcon` |
-| {% icon name="MenuIcon" /%} | `MenuIcon` |
-| {% icon name="MobileSidebarIcon" /%} | `MobileSidebarIcon` |
-| {% icon name="OverflowMenuHorizontalIcon" /%} | `OverflowMenuHorizontalIcon` |
-| {% icon name="OverflowMenuVerticalIcon" /%} | `OverflowMenuVerticalIcon` |
-| {% icon name="SelectIcon" /%} | `SelectIcon` |
-| {% icon name="SidePanelCloseIcon" /%} | `SidePanelCloseIcon` |
-| {% icon name="SidePanelOpenIcon" /%} | `SidePanelOpenIcon` |
-| {% icon name="SpinnerIcon" /%} | `SpinnerIcon` |
-| {% icon name="VerticalViewIcon" /%} | `VerticalViewIcon` |
-| {% icon name="ViewIcon" /%} | `ViewIcon` |
-| {% icon name="ViewOffIcon" /%} | `ViewOffIcon` |
+| {% themeIcon name="CheckboxFilledIcon" /%} | `CheckboxFilledIcon` |
+| {% themeIcon name="CloseFilledIcon" /%} | `CloseFilledIcon` |
+| {% themeIcon name="CloseOutlineIcon" /%} | `CloseOutlineIcon` |
+| {% themeIcon name="DeselectIcon" /%} | `DeselectIcon` |
+| {% themeIcon name="EditIcon" /%} | `EditIcon` |
+| {% themeIcon name="FilterIcon" /%} | `FilterIcon` |
+| {% themeIcon name="HorizontalViewIcon" /%} | `HorizontalViewIcon` |
+| {% themeIcon name="MenuIcon" /%} | `MenuIcon` |
+| {% themeIcon name="MobileSidebarIcon" /%} | `MobileSidebarIcon` |
+| {% themeIcon name="OverflowMenuHorizontalIcon" /%} | `OverflowMenuHorizontalIcon` |
+| {% themeIcon name="OverflowMenuVerticalIcon" /%} | `OverflowMenuVerticalIcon` |
+| {% themeIcon name="SelectIcon" /%} | `SelectIcon` |
+| {% themeIcon name="SidePanelCloseIcon" /%} | `SidePanelCloseIcon` |
+| {% themeIcon name="SidePanelOpenIcon" /%} | `SidePanelOpenIcon` |
+| {% themeIcon name="SpinnerIcon" /%} | `SpinnerIcon` |
+| {% themeIcon name="VerticalViewIcon" /%} | `VerticalViewIcon` |
+| {% themeIcon name="ViewIcon" /%} | `ViewIcon` |
+| {% themeIcon name="ViewOffIcon" /%} | `ViewOffIcon` |
 
 </details>
 
@@ -70,22 +70,22 @@ import { iconName } from '@redocly/theme/icons/{iconName}/{iconName}';
 
 | Icon | Name |
 |------|------|
-| {% icon name="DownloadIcon" /%} | `DownloadIcon` |
-| {% icon name="ExportIcon" /%} | `ExportIcon` |
-| {% icon name="LaunchIcon" /%} | `LaunchIcon` |
-| {% icon name="LinkIcon" /%} | `LinkIcon` |
-| {% icon name="LogoutIcon" /%} | `LogoutIcon` |
-| {% icon name="MaximizeIcon" /%} | `MaximizeIcon` |
-| {% icon name="MinimizeIcon" /%} | `MinimizeIcon` |
-| {% icon name="PlusCustomIcon" /%} | `PlusCustomIcon` |
-| {% icon name="ResetIcon" /%} | `ResetIcon` |
-| {% icon name="RestartIcon" /%} | `RestartIcon` |
-| {% icon name="SaveIcon" /%} | `SaveIcon` |
-| {% icon name="SearchIcon" /%} | `SearchIcon` |
-| {% icon name="SettingsIcon" /%} | `SettingsIcon` |
-| {% icon name="SettingsCogIcon" /%} | `SettingsCogIcon` |
-| {% icon name="SubtractIcon" /%} | `SubtractIcon` |
-| {% icon name="TrashCanIcon" /%} | `TrashCanIcon` |
+| {% themeIcon name="DownloadIcon" /%} | `DownloadIcon` |
+| {% themeIcon name="ExportIcon" /%} | `ExportIcon` |
+| {% themeIcon name="LaunchIcon" /%} | `LaunchIcon` |
+| {% themeIcon name="LinkIcon" /%} | `LinkIcon` |
+| {% themeIcon name="LogoutIcon" /%} | `LogoutIcon` |
+| {% themeIcon name="MaximizeIcon" /%} | `MaximizeIcon` |
+| {% themeIcon name="MinimizeIcon" /%} | `MinimizeIcon` |
+| {% themeIcon name="PlusCustomIcon" /%} | `PlusCustomIcon` |
+| {% themeIcon name="ResetIcon" /%} | `ResetIcon` |
+| {% themeIcon name="RestartIcon" /%} | `RestartIcon` |
+| {% themeIcon name="SaveIcon" /%} | `SaveIcon` |
+| {% themeIcon name="SearchIcon" /%} | `SearchIcon` |
+| {% themeIcon name="SettingsIcon" /%} | `SettingsIcon` |
+| {% themeIcon name="SettingsCogIcon" /%} | `SettingsCogIcon` |
+| {% themeIcon name="SubtractIcon" /%} | `SubtractIcon` |
+| {% themeIcon name="TrashCanIcon" /%} | `TrashCanIcon` |
 
 </details>
 
@@ -94,16 +94,16 @@ import { iconName } from '@redocly/theme/icons/{iconName}/{iconName}';
 
 | Icon | Name |
 |------|------|
-| {% icon name="ErrorIcon" /%} | `ErrorIcon` |
-| {% icon name="ErrorFilledIcon" /%} | `ErrorFilledIcon` |
-| {% icon name="InformationIcon" /%} | `InformationIcon` |
-| {% icon name="InformationFilledIcon" /%} | `InformationFilledIcon` |
-| {% icon name="StarIcon" /%} | `StarIcon` |
-| {% icon name="StarFilledIcon" /%} | `StarFilledIcon` |
-| {% icon name="WarningAltIcon" /%} | `WarningAltIcon` |
-| {% icon name="WarningAltFilledIcon" /%} | `WarningAltFilledIcon` |
-| {% icon name="WarningFilledIcon" /%} | `WarningFilledIcon` |
-| {% icon name="WarningSquareIcon" /%} | `WarningSquareIcon` |
+| {% themeIcon name="ErrorIcon" /%} | `ErrorIcon` |
+| {% themeIcon name="ErrorFilledIcon" /%} | `ErrorFilledIcon` |
+| {% themeIcon name="InformationIcon" /%} | `InformationIcon` |
+| {% themeIcon name="InformationFilledIcon" /%} | `InformationFilledIcon` |
+| {% themeIcon name="StarIcon" /%} | `StarIcon` |
+| {% themeIcon name="StarFilledIcon" /%} | `StarFilledIcon` |
+| {% themeIcon name="WarningAltIcon" /%} | `WarningAltIcon` |
+| {% themeIcon name="WarningAltFilledIcon" /%} | `WarningAltFilledIcon` |
+| {% themeIcon name="WarningFilledIcon" /%} | `WarningFilledIcon` |
+| {% themeIcon name="WarningSquareIcon" /%} | `WarningSquareIcon` |
 
 </details>
 
@@ -112,13 +112,13 @@ import { iconName } from '@redocly/theme/icons/{iconName}/{iconName}';
 
 | Icon | Name |
 |------|------|
-| {% icon name="DataRefineryIcon" /%} | `DataRefineryIcon` |
-| {% icon name="DraggableIcon" /%} | `DraggableIcon` |
-| {% icon name="FlowIcon" /%} | `FlowIcon` |
-| {% icon name="PlaylistIcon" /%} | `PlaylistIcon` |
-| {% icon name="RocketIcon" /%} | `RocketIcon` |
-| {% icon name="TaskViewIcon" /%} | `TaskViewIcon` |
-| {% icon name="WorkflowAutomationIcon" /%} | `WorkflowAutomationIcon` |
+| {% themeIcon name="DataRefineryIcon" /%} | `DataRefineryIcon` |
+| {% themeIcon name="DraggableIcon" /%} | `DraggableIcon` |
+| {% themeIcon name="FlowIcon" /%} | `FlowIcon` |
+| {% themeIcon name="PlaylistIcon" /%} | `PlaylistIcon` |
+| {% themeIcon name="RocketIcon" /%} | `RocketIcon` |
+| {% themeIcon name="TaskViewIcon" /%} | `TaskViewIcon` |
+| {% themeIcon name="WorkflowAutomationIcon" /%} | `WorkflowAutomationIcon` |
 
 </details>
 
@@ -127,21 +127,21 @@ import { iconName } from '@redocly/theme/icons/{iconName}/{iconName}';
 
 | Icon | Name |
 |------|------|
-| {% icon name="EmailIcon" /%} | `EmailIcon` |
-| {% icon name="FaceDissatisfiedIcon" /%} | `FaceDissatisfiedIcon` |
-| {% icon name="FaceNeutralIcon" /%} | `FaceNeutralIcon` |
-| {% icon name="FaceSatisfiedIcon" /%} | `FaceSatisfiedIcon` |
-| {% icon name="GlobalOutlinedIcon" /%} | `GlobalOutlinedIcon` |
-| {% icon name="JsonIcon" /%} | `JsonIcon` |
-| {% icon name="MoonIcon" /%} | `MoonIcon` |
-| {% icon name="RecentlyViewedIcon" /%} | `RecentlyViewedIcon` |
-| {% icon name="RenewIcon" /%} | `RenewIcon` |
-| {% icon name="SecurityIcon" /%} | `SecurityIcon` |
-| {% icon name="SunIcon" /%} | `SunIcon` |
-| {% icon name="TableBuiltIcon" /%} | `TableBuiltIcon` |
-| {% icon name="TimeIcon" /%} | `TimeIcon` |
-| {% icon name="UserIcon" /%} | `UserIcon` |
-| {% icon name="ValueVariableIcon" /%} | `ValueVariableIcon` |
+| {% themeIcon name="EmailIcon" /%} | `EmailIcon` |
+| {% themeIcon name="FaceDissatisfiedIcon" /%} | `FaceDissatisfiedIcon` |
+| {% themeIcon name="FaceNeutralIcon" /%} | `FaceNeutralIcon` |
+| {% themeIcon name="FaceSatisfiedIcon" /%} | `FaceSatisfiedIcon` |
+| {% themeIcon name="GlobalOutlinedIcon" /%} | `GlobalOutlinedIcon` |
+| {% themeIcon name="JsonIcon" /%} | `JsonIcon` |
+| {% themeIcon name="MoonIcon" /%} | `MoonIcon` |
+| {% themeIcon name="RecentlyViewedIcon" /%} | `RecentlyViewedIcon` |
+| {% themeIcon name="RenewIcon" /%} | `RenewIcon` |
+| {% themeIcon name="SecurityIcon" /%} | `SecurityIcon` |
+| {% themeIcon name="SunIcon" /%} | `SunIcon` |
+| {% themeIcon name="TableBuiltIcon" /%} | `TableBuiltIcon` |
+| {% themeIcon name="TimeIcon" /%} | `TimeIcon` |
+| {% themeIcon name="UserIcon" /%} | `UserIcon` |
+| {% themeIcon name="ValueVariableIcon" /%} | `ValueVariableIcon` |
 
 </details>
 
@@ -150,8 +150,8 @@ import { iconName } from '@redocly/theme/icons/{iconName}/{iconName}';
 
 | Icon | Name |
 |------|------|
-| {% icon name="IBMCloudHyperProtectCryptoServicesIcon" /%} | `IBMCloudHyperProtectCryptoServicesIcon` |
-| {% icon name="CertificateIcon" /%} | `CertificateIcon` |
+| {% themeIcon name="IBMCloudHyperProtectCryptoServicesIcon" /%} | `IBMCloudHyperProtectCryptoServicesIcon` |
+| {% themeIcon name="CertificateIcon" /%} | `CertificateIcon` |
 
 </details>
 

@@ -64,8 +64,8 @@ import type { Schema } from '@markdoc/markdoc';
 
 export const tags: Record<string, Schema> = {
   // ... existing tags ...
-  icon: {
-    render: 'Icon',
+  reactIcon: {
+    render: 'ReactIcon',
     attributes: {
       name: {
         type: 'string',
@@ -90,7 +90,7 @@ You also need to export your components as in the following example:
 import * as React from 'react';
 import { FaHeart, FaThumbsUp } from 'react-icons/fa';
 
-export function Icon({ name, size = 24, color = 'currentColor' }) {
+export function ReactIcon({ name, size = 24, color = 'currentColor' }) {
   const icons = {
     heart: FaHeart,
     thumbsUp: FaThumbsUp,
@@ -104,10 +104,11 @@ export function Icon({ name, size = 24, color = 'currentColor' }) {
 You can use the icon component in your Markdoc files, as in the following example:
 
 ```markdoc {% process=false %}
-{% icon name="heart" color="red" /%}
-{% icon name="thumbsUp" color="blue" size=32 /%}
+{% reactIcon name="heart" color="red" /%}
+{% reactIcon name="thumbsUp" color="blue" size=32 /%}
 ```
 
 ## Resources
 
 - [Build markdoc tags](./build-markdoc-tags.md)
+- [Built-in icon tags](../content/markdoc-tags/icon.md)

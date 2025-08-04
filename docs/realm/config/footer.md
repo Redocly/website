@@ -124,7 +124,9 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
 - icon
 - string or [srcSet](#icon-object)
-- Path to icon image file. Shown on left side of the entry.
+- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
+  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
+  Example: `book`, `duotone book`, `./images/config-icon.svg`.
 
 {% /table %}
 
@@ -212,15 +214,15 @@ footer:
         - label: GitHub
           href: 'https://github.com/example'
           external: true
-          icon: ./images/github-icon.svg
+          icon: brands github
         - label: Twitter
           href: 'https://twitter.com/example'
           external: true
-          icon: ./images/twitter-icon.svg
+          icon: brands twitter
         - label: LinkedIn
           href: 'https://linkedin.com/company/example'
           external: true
-          icon: ./images/linkedin-icon.svg
+          icon: brands linkedin
 ```
 
 Each entry in the footer's `items` configures a distinct column. Using groups is a common approach for organizing related links.
