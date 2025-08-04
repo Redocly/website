@@ -1251,6 +1251,49 @@
 
 </details>
 
+## Page actions
+
+<details>
+<summary>Page actions button</summary>
+
+```css
+  --page-actions-padding-left: var(--spacing-sm);
+  --page-actions-button-text-color: var(--text-color-secondary);
+  --page-actions-processing-icon-color: var(--icon-color-interactive);
+  --page-actions-done-icon-color: var(--color-success-base);
+```
+
+</details>
+
+<details>
+<summary>Page actions menu</summary>
+
+```css
+  --page-actions-menu-item-padding: 3px 0;
+  --page-actions-menu-item-gap: var(--spacing-xs);
+  --page-actions-menu-item-icon-color: var(--icon-color-secondary);
+  --page-actions-menu-item-icon-border-color: var(--color-warm-grey-3);
+  --page-actions-menu-item-icon-border-radius: var(--border-radius);
+  --page-actions-menu-item-icon-wrapper-size: 28px;
+
+  --page-actions-menu-item-text-gap: 2px;
+
+  --page-actions-menu-item-title-font-weight: var(--font-weight-regular);
+  --page-actions-menu-item-title-font-size: var(--font-size-base);
+  --page-actions-menu-item-title-line-height: var(--line-height-base);
+  --page-actions-menu-item-title-color: var(--text-color-secondary);
+
+  --page-actions-menu-item-title-icon-gap: var(--spacing-xxs);
+  --page-actions-menu-item-title-icon-color: var(--icon-color-secondary);
+
+  --page-actions-menu-item-description-font-weight: var(--font-weight-regular);
+  --page-actions-menu-item-description-font-size: var(--font-size-sm);
+  --page-actions-menu-item-description-line-height: var(--line-height-sm);
+  --page-actions-menu-item-description-color: var(--text-color-description);
+```
+
+</details>
+
 ## Product
 
 <details>
