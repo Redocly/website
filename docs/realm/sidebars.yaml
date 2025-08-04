@@ -197,6 +197,8 @@
             - page: content/markdoc-tags/code-walkthrough/create-code-walkthrough.md
         - page: content/markdoc-tags/img.md
           label: Image    
+        - page: content/markdoc-tags/icon.md
+          label: Icon
         - page: content/markdoc-tags/inline-svg.md
           label: Inline SVG
         - page: content/markdoc-tags/json-schema.md
