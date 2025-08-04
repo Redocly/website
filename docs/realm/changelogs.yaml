@@ -17077,6 +17077,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.28.0:
+    timestamp: 1754317766000
+    changes:
+      minor:
+        - Added LLM-related page actions that allow to view/copy the page as markdown and ask ChatGPT and Claude about this page.
+      patch: []
+    dependencies: {}
   0.27.0:
     timestamp: 1753867081000
     changes:
@@ -27921,5 +27928,15 @@ reunite:
     changes:
       minor:
         - Added option to configure branch deployments.
+      patch: []
+    dependencies: {}
+  v2025-08-04.1:
+    timestamp: 1754312438000
+    changes:
+      minor:
+        - Added `Built-in functions` and `Custom functions` options to the `Markdoc tags` dropdown.
+        - >-
+          Updated Reunite build logs by refining emojis, fixing alignments for multiline logs and enabling colorful statuses for info and warning
+          realm logs.
       patch: []
     dependencies: {}
