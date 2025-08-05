@@ -1,5 +1,6 @@
 - group: Get started
   page: get-started/index.md
+  icon: rocket-launch
   items:
     - page: get-started/start-reunite-editor.md
       label: Start with Reunite editor
@@ -13,6 +14,7 @@
           label: Migrate from legacy portal
 
 - group: Reunite
+  icon: ./images/icons/reunite-gray.svg
   page: reunite/reunite.md
   items:
     - separator: Organization & team settings
@@ -142,6 +144,7 @@
       label: User profile menu
       
 - group: Content
+  icon: file-lines
   items:
     - page: content/project-structure.md
       label: Project structure
@@ -299,6 +302,7 @@
       label: Upgrade Realm version
 
 - group: Branding
+  icon: palette
   page: branding/index.md
   label: Branding
   items:
@@ -320,6 +324,7 @@
         - page: branding/css-variables/api-docs.md
           label: API docs
 - group: Navigation
+  icon: chart-tree-map
   page: navigation/index.md
   label: Navigation elements
   items:
@@ -347,6 +352,7 @@
 
 
 - group: Customization
+  icon: wrench
   items:
 
     - group: API functions
@@ -397,6 +403,7 @@
 
 
 - group: Access
+  icon: lock
   items:
     - group: Role-based access control (RBAC)
       page: access/index.md

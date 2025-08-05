@@ -10,9 +10,10 @@ import { ChevronDownIcon } from '@redocly/theme/icons/ChevronDownIcon/ChevronDow
 import { ChevronRightIcon } from '@redocly/theme/icons/ChevronRightIcon/ChevronRightIcon';
 import { HttpTag } from '@redocly/theme/components/Tags/HttpTag';
 import { MenuItemType } from '@redocly/theme/core/constants';
-import { getMenuItemType } from '@redocly/theme/core/utils';
+import { getMenuItemType, resolveIcon } from '@redocly/theme/core/utils';
 import { ArrowRightIcon } from '@redocly/theme/icons/ArrowRightIcon/ArrowRightIcon';
 import { Badge } from '@redocly/theme/components/Badge/Badge';
+import { CDNIcon } from '@redocly/theme/icons/CDNIcon/CDNIcon';
 
 import { ButtonWithArrow } from '@redocly/marketing-pages/components/Button/ButtonWithArrow.js';
 
@@ -60,6 +61,15 @@ export function MenuItem(props: React.PropsWithChildren<MenuItemProps>): JSX.Ele
   ) : null;
 
   const httpColor = item.deprecated ? 'http-deprecated' : item.httpVerb;
+  debugger;
+  const resolvedIcon = resolveIcon(item.icon);
+  const iconComponent =
+    resolvedIcon.type === 'link' ? (
+      <MenuItemIcon src={item.icon} />
+    ) : resolvedIcon.type === 'font-awesome' ? (
+      <MenuItemCDNIcon name={resolvedIcon.name} type={resolvedIcon.style} />
+    ) : null;
+    
   const reuniteLabel = isReuniteInProducts && (
     <MenuItemLabelWrapper
       active={item.active}
@@ -87,7 +97,7 @@ export function MenuItem(props: React.PropsWithChildren<MenuItemProps>): JSX.Ele
       ) : null}
       <MenuItemLabelTextWrapperReunite>
         <div style={{ flexDirection: 'row', gap: '8px', display: 'flex', alignItems: 'center' }}>
-          {item.icon ? <MenuItemIcon src={item.icon} /> : null}
+          {iconComponent}
           <MenuItemLabel>
             <span>{translate(item.labelTranslationKey, item.label)}</span>
             {item.badges?.map(({ name, color }) => (
@@ -115,7 +125,7 @@ export function MenuItem(props: React.PropsWithChildren<MenuItemProps>): JSX.Ele
       role={item.link ? 'none' : 'link'}
     >
       {hasChevron && chevron}
-      {item.icon ? <MenuItemIcon src={item.icon} /> : null}
+      {iconComponent}
       <MenuItemLabelTextWrapper>
         <MenuItemLabel>
           <span>{translate(item.labelTranslationKey, item.label)}</span>
@@ -368,6 +378,15 @@ const MenuItemIcon = styled.img`
   height: var(--menu-item-icon-size);
   margin: var(--menu-item-icon-margin);
   border-radius: var(--menu-item-icon-border-radius);
+  flex-shrink: 0;
+  overflow: hidden;
+`;
+
+
+const MenuItemCDNIcon = styled(CDNIcon)`
+  width: var(--menu-item-icon-size);
+  height: var(--menu-item-icon-size);
+  margin: var(--menu-item-icon-margin);
   flex-shrink: 0;
   overflow: hidden;
 `;
