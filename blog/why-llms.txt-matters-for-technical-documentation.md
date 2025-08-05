@@ -20,7 +20,7 @@ This isn't just a theoretical problem. Developers increasingly rely on AI assist
 
 There are two useful ways to think about `llms.txt`.
 
-One is as a kind of `robots.txt` for AI agents. While `robots.txt` tells search engines what to crawl or ignore, `llms.txt` speaks directly to large language models and their retrievers—guiding them to the right content.
+One is as a curated guide for AI agents. While `robots.txt` tells search engines what to crawl or ignore, `llms.txt` is supposed to speak directly to large language models and their retrievers—guiding them to the right content.
 
 The other is as a sitemap purpose-built for AI. Unlike traditional `sitemap.xml` files that focus on URL discovery for web crawlers, `llms.txt` adds context that helps LLMs understand how your docs are structured and how individual pages relate to one another.
 
@@ -74,9 +74,7 @@ Documentation teams implementing `llms.txt` often report several immediate benef
 
 ## How often are LLMs actually checking for this?
 
-Early data shows that major LLM providers are already crawling and respecting `llms.txt`, and some have even built dedicated retrievers around it. Adoption isn’t just theoretical, it’s happening. More models have been seen actively using these signals.
-
-This isn’t some “wait and see” standard. It’s live. And it's helping your docs get read the right way.
+Early data shows that `llms.txt` is being adopted by some forward-thinking companies and developers who are building custom AI retrieval systems. While major LLM providers haven't officially announced support yet, the standard is gaining traction as a community-driven approach to AI documentation discovery.
 
 Isn’t this just SEO all over again?
 
