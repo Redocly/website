@@ -84,22 +84,22 @@ export const cards = [
   //     { title: 'Best Practices for API Standards', link: '' },
   //   ],
   // },
-  // {
-  //   id: 6,
-  //   key: 'api-testing',
-  //   title: 'API Testing',
-  //   description:
-  //     'Discover essential resources for mastering API testing, including tools, techniques, and best practices for reliable integrations.',
-  //   thumbnail: apiTestingThumbnail,
-  //   moreItems: ' more topics',
-  //   landingPage: '/',
-  //   items: [
-  //     { title: 'Introduction to API Testing', link: '' },
-  //     { title: 'Tools for API Testing', link: '' },
-  //     { title: 'Creating Effective Test Cases', link: '' },
-  //     { title: 'API Testing Best Practices ', link: '' },
-  //   ],
-  // },
+  {
+    id: 5,
+    key: 'api-testing',
+    title: 'API Testing',
+    description:
+      'Master API testing fundamentals with tools, techniques, and best practices.',
+    thumbnail: apiTestingThumbnail,
+    moreItems: '7 more topics',
+    landingPage: '/learn/testing',
+    items: [
+      { title: 'Contract Testing 101', link: '/learn/testing/contract-testing-101' },
+      { title: 'What is Respect?', link: '/learn/testing/what-is-respect' },
+      { title: 'Getting Started with API Testing', link: '/learn/testing/getting-started' },
+      { title: 'API Testing Use Cases', link: '/learn/testing/use-cases' },
+    ],
+  },
   // {
   //   id: 7,
   //   key: 'api-security',
