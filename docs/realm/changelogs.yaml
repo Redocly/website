@@ -1,4 +1,11 @@
 '@redocly/realm':
+  0.124.0-next.31:
+    timestamp: 1754403083000
+    changes:
+      minor: []
+      patch:
+        - Fixed strict types warning during project build.
+    dependencies: {}
   0.124.0-next.30:
     timestamp: 1754392099000
     changes:
@@ -3830,6 +3837,13 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.124.0-next.31:
+    timestamp: 1754403083000
+    changes:
+      minor: []
+      patch:
+        - Fixed strict types warning during project build.
+    dependencies: {}
   0.124.0-next.30:
     timestamp: 1754392099000
     changes:
@@ -6956,6 +6970,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.124.0-next.31:
+    timestamp: 1754403083000
+    changes:
+      minor: []
+      patch:
+        - Fixed strict types warning during project build.
+    dependencies: {}
   0.124.0-next.30:
     timestamp: 1754392099000
     changes:
@@ -10076,6 +10097,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.124.0-next.31:
+    timestamp: 1754403083000
+    changes:
+      minor: []
+      patch:
+        - Fixed strict types warning during project build.
+    dependencies: {}
   0.124.0-next.30:
     timestamp: 1754392099000
     changes:
@@ -18683,6 +18711,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.7.0-next.31:
+    timestamp: 1754403083000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.124.0-next.31
+      '@redocly/redoc': 0.124.0-next.31
+      '@redocly/redoc-reef': 0.124.0-next.31
+      '@redocly/redoc-revel': 0.124.0-next.31
   1.7.0-next.30:
     timestamp: 1754392099000
     changes:

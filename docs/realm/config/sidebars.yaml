@@ -1,6 +1,6 @@
 - group: Configuration options
-  page: ./index.md
   icon: cog
+  page: ./index.md
   items:
     - group: analytics
       page: ./analytics/index.md
