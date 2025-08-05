@@ -87,7 +87,7 @@ Validating API contracts enables teams to confidently iterate on services, as th
 
 Modern applications are often composed of multiple microservices, each interacting through APIs. Contract testing can be implemented using two primary approaches:
 
-![Contract Testing Driver](images/defined-contract.webp)
+![Contract Testing Driver](images/defined-contract.png)
 
 * **Consumer-driven contract testing (CDCT)**: Consumers define the contracts, allowing providers to validate against consumer expectations. This approach ensures that providers understand exactly what consumers need.  
 * **Provider-driven contract testing**: Providers define the contracts, and consumers validate their integrations against these provider expectations. This approach gives providers more control over the API evolution.
