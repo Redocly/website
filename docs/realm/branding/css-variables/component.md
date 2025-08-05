@@ -1814,7 +1814,7 @@
 --menu-item-label-margin-vertical: 0;
 --menu-item-label-margin: var(--menu-item-label-margin-vertical) var(--menu-item-label-margin-horizontal);
 --menu-item-label-padding: var(--menu-item-padding-vertical) var(--menu-item-padding-horizontal);
---menu-item-label-gap: var(--spacing-xs);
+--menu-item-label-gap: var(--spacing-xxs);
 --menu-item-label-border-radius: 6px;
 --menu-item-label-chevron-size: 12px;
 --menu-item-label-chevron-offset: calc(var(--menu-item-label-gap) + var(--menu-item-label-chevron-size));
@@ -1826,7 +1826,7 @@
 --menu-item-sublabel-margin: 0 0 0 var(--spacing-base);
 
 --menu-item-icon-size: var(--spacing-base);
---menu-item-icon-margin: 0px;
+--menu-item-icon-margin: 0 var(--spacing-xxs) 0 0;
 --menu-item-icon-border-radius: 100%;
 
 --menu-item-external-icon-size: 10px;
