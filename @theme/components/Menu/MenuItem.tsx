@@ -61,7 +61,6 @@ export function MenuItem(props: React.PropsWithChildren<MenuItemProps>): JSX.Ele
   ) : null;
 
   const httpColor = item.deprecated ? 'http-deprecated' : item.httpVerb;
-  debugger;
   const resolvedIcon = resolveIcon(item.icon);
   const iconComponent =
     resolvedIcon.type === 'link' ? (
