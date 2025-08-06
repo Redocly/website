@@ -91,13 +91,10 @@ export const cards = [
     description:
       'Master API testing fundamentals with tools, techniques, and best practices.',
     thumbnail: apiTestingThumbnail,
-    moreItems: '7 more topics',
+    moreItems: '1 more topic',
     landingPage: '/learn/testing',
     items: [
       { title: 'Contract Testing 101', link: '/learn/testing/contract-testing-101' },
-      { title: 'What is Respect?', link: '/learn/testing/what-is-respect' },
-      { title: 'Getting Started with API Testing', link: '/learn/testing/getting-started' },
-      { title: 'API Testing Use Cases', link: '/learn/testing/use-cases' },
     ],
   },
   // {
