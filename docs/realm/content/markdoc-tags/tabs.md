@@ -74,6 +74,18 @@ A tab only works as a child of a tabs section.
 - boolean
 - When `true`, the tab is non-interactive and styled as disabled. It cannot be focused or selected.
   **Default:** `false`
+  
+---
+
+- icon
+- string
+- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
+  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
+  Example: `book`, `duotone book`, `./images/config-icon.svg`.
+
+
+---
+
 
 {% /table %}
 

@@ -833,8 +833,8 @@
 --footer-link-padding-vertical: var(--spacing-xs);
 --footer-link-padding-horizontal: 0;
 
---footer-item-icon-width: var(--spacing-lg);
---footer-item-icon-height: var(--spacing-lg);
+--footer-item-icon-width: var(--spacing-base);
+--footer-item-icon-height: var(--spacing-base);
 --footer-item-icon-margin-right: var(--spacing-sm);
 --footer-item-icon-border-color: var(--border-color-primary);
 --footer-item-icon-border-radius: 12px;
