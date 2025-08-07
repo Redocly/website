@@ -126,7 +126,7 @@ The default footer included in `@redocly/theme` can be configured using the opti
 - string or [srcSet](#icon-object)
 - A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
   Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
-  Example: `book`, `duotone book`, `./images/config-icon.svg`.
+  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
 
 {% /table %}
 

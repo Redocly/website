@@ -16,7 +16,7 @@ Icons can be used inline with text to provide additional visual context.
 - name
 - string
 - **REQUIRED.** The name of a [Font Awesome](https://fontawesome.com/icons) icon. Can be prefixed with a style: `duotone`, `solid`, `regular` or `brands`.
-  Example: `book`, `duotone book`.
+  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
 
 ---
 
