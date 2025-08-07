@@ -868,6 +868,18 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.discriminator.searchPlaceholder
+- Placeholder text for search input in dropdown components
+- Search items
+
+---
+
+- openapi.discriminator.searchNoResults
+- Message displayed when no search results are found in dropdown components
+- No items found
+
+---
+
 - openapi.noResponseContent
 - Message displayed when a response contains no content in an OpenAPI description
 - No content
