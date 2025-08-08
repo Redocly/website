@@ -1,5 +1,4 @@
 - group: Configuration options
-  icon: cog
   page: ./index.md
   items:
     - group: analytics

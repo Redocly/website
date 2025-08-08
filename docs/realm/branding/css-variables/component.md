@@ -628,44 +628,37 @@
 <summary>Dropdown</summary>
 
 ```css
-  --dropdown-menu-font-size: var(--font-size-base);
-  --dropdown-menu-font-weight: var(--font-weight-regular);
-  --dropdown-menu-line-height: var(--line-height-base);
-  --dropdown-menu-text-color: var(--text-color-secondary);
+  --dropdown-font-size: var(--font-size-base);
+  --dropdown-font-weight: var(--font-weight-regular);
+  --dropdown-line-height: var(--line-height-base);
+  --dropdown-content-color-default: var(--color-warm-grey-9);
+  --dropdown-border-radius: var(--border-radius);
+  --dropdown-border-color: var(--color-warm-grey-3);
+  --dropdown-border-color-disabled: var(--color-warm-grey-3);
 
-  --dropdown-menu-margin-top: var(--spacing-xxs);
-  --dropdown-menu-min-width: 100px;
-  --dropdown-menu-max-width: 424px;
-  --dropdown-menu-max-height: 300px;
-  --dropdown-menu-padding: var(--spacing-xxs);
-  --dropdown-menu-border-radius: var(--border-radius-lg);
-  --dropdown-menu-box-shadow: var(--bg-raised-shadow);
-  --dropdown-menu-border-color: var(--border-color-secondary);
-  --dropdown-menu-bg-color: var(--bg-color-raised);
+  --dropdown-bg-color: var(--color-warm-grey-1);
 
-  --dropdown-menu-item-gap: 0;
-  --dropdown-menu-item-padding-horizontal: var(--spacing-base);
-  --dropdown-menu-item-padding-vertical: 5px;
-  --dropdown-menu-item-separator-padding-top: var(--spacing-xs);
-  --dropdown-menu-item-separator-padding-bottom: var(--spacing-xxs);
-  --dropdown-menu-item-border-radius: var(--border-radius);
-  --dropdown-menu-item-bg-color: transparent;
-  --dropdown-menu-item-bg-color-active: var(--bg-color-hover);
-  --dropdown-menu-item-bg-color-hover: var(--bg-color-hover);
-  --dropdown-menu-item-bg-color-disabled: var(--dropdown-menu-item-bg-color);
-  --dropdown-menu-item-separator-border-color: var(--border-color-primary);
-  --dropdown-menu-item-separator-font-size: var(--font-size-sm);
-  --dropdown-menu-item-separator-line-height: var(--line-height-sm);
-  --dropdown-menu-item-separator-text-color: var(--text-color-disabled);
-  --dropdown-menu-item-justify-content: flex-start;
-  --dropdown-menu-item-color: var(--dropdown-menu-text-color);
-  --dropdown-menu-item-color-hover: var(--dropdown-menu-item-color);
-  --dropdown-menu-item-color-active: var(--dropdown-menu-item-color);
-  --dropdown-menu-item-color-disabled: var(--text-color-disabled);
+  --dropdown-list-min-width: 100px;
+  --dropdown-list-max-width: 424px;
+  --dropdown-list-max-height: 300px;
+  --dropdown-list-padding: var(--spacing-xxs);
+  --dropdown-list-border-radius: var(--border-radius-lg);
+  --dropdown-list-box-shadow: var(--bg-raised-shadow);
+  --dropdown-list-color-disabled: var(--color-warm-grey-6);
+  --dropdown-list-color-hover: var(--color-warm-grey-11);
+  --dropdown-list-border-color: var(--border-color-secondary);
 
-  --dropdown-menu-item-color-dangerous: var(--color-error-base);
+  --dropdown-list-item-padding-horizontal: var(--spacing-sm);
+  --dropdown-list-item-padding-vertical: 5px;
+  --dropdown-list-item-space-between: 2px;
+  --dropdown-list-item-separator-padding-top: var(--spacing-xs);
+  --dropdown-list-item-separator-padding-bottom: var(--spacing-xxs);
+  --dropdown-list-item-border-radius: var(--border-radius);
+  --dropdown-list-item-bg-color-active: var(--bg-color-hover);
+  --dropdown-list-item-bg-color-hover: var(--bg-color-hover);
+  --dropdown-list-item-separator-color: var(--border-color-primary);
 
-  --dropdown-menu-item-border-color-focused: var(--button-border-color-focused);
+  --dropdown-list-item-border-color-focused: var(--color-blue-4);
 ```
 
 </details>
@@ -833,8 +826,8 @@
 --footer-link-padding-vertical: var(--spacing-xs);
 --footer-link-padding-horizontal: 0;
 
---footer-item-icon-width: var(--spacing-base);
---footer-item-icon-height: var(--spacing-base);
+--footer-item-icon-width: var(--spacing-lg);
+--footer-item-icon-height: var(--spacing-lg);
 --footer-item-icon-margin-right: var(--spacing-sm);
 --footer-item-icon-border-color: var(--border-color-primary);
 --footer-item-icon-border-radius: 12px;
@@ -1821,7 +1814,7 @@
 --menu-item-label-margin-vertical: 0;
 --menu-item-label-margin: var(--menu-item-label-margin-vertical) var(--menu-item-label-margin-horizontal);
 --menu-item-label-padding: var(--menu-item-padding-vertical) var(--menu-item-padding-horizontal);
---menu-item-label-gap: var(--spacing-xxs);
+--menu-item-label-gap: var(--spacing-xs);
 --menu-item-label-border-radius: 6px;
 --menu-item-label-chevron-size: 12px;
 --menu-item-label-chevron-offset: calc(var(--menu-item-label-gap) + var(--menu-item-label-chevron-size));
@@ -1833,7 +1826,7 @@
 --menu-item-sublabel-margin: 0 0 0 var(--spacing-base);
 
 --menu-item-icon-size: var(--spacing-base);
---menu-item-icon-margin: 0 var(--spacing-xxs) 0 0;
+--menu-item-icon-margin: 0px;
 --menu-item-icon-border-radius: 100%;
 
 --menu-item-external-icon-size: 10px;

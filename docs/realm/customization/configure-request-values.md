@@ -61,7 +61,11 @@ return {
 
 The context parameter includes:
 
-- `userClaims`: Information about the authenticated user (optional)
+- `userClaims`: Information about the authenticated user and their original IdP tokens (optional)
+  - `email`: User email
+  - `name`: User name
+  - `federatedAccessToken`: Access token of the original identity provider. Requires `OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
+  - `federatedIdToken`: ID token of the original identity provider. Requires `OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
 - `operation`: Details about the current API operation
   - `name`: Operation name
   - `path`: API path
@@ -86,10 +90,10 @@ export function configure(context: {
 }) {
   const requestValues: ConfigureRequestValues = {
     headers: {
-      'API-Key': 'your-api-key',
+      'API-Key': userClaims.federatedAccessToken,
       // Use operation details to set custom headers
       'Operation-ID': context.operation.operationId || '',
-      'Request-Method': context.operation.method
+      'Request-Method': context.operation.method,
     },
     query: {
       // Set different limits based on the operation
