@@ -1,6 +1,6 @@
 '@redocly/realm':
   0.124.0:
-    timestamp: 1754575268000
+    timestamp: 1754636055000
     changes:
       minor:
         - Removed deprecated `path-excludes-patterns` and `info-license-url` rules.
@@ -3908,7 +3908,7 @@
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
   0.124.0:
-    timestamp: 1754575268000
+    timestamp: 1754636055000
     changes:
       minor:
         - Added LLM-related page actions to view or copy the page as Markdown and query ChatGPT or Claude about the page content.
@@ -7096,7 +7096,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
   0.124.0:
-    timestamp: 1754575268000
+    timestamp: 1754636055000
     changes:
       minor:
         - Added built-in translations for multiple languages.
@@ -10275,7 +10275,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
   0.124.0:
-    timestamp: 1754575268000
+    timestamp: 1754636055000
     changes:
       minor:
         - Removed deprecated `path-excludes-patterns` and `info-license-url` rules.
@@ -13454,7 +13454,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
   0.56.0:
-    timestamp: 1754575268000
+    timestamp: 1754636055000
     changes:
       minor:
         - Added LLM-related page actions to view or copy the page as Markdown and query ChatGPT or Claude about the page content.
@@ -15535,7 +15535,7 @@
     dependencies: {}
 '@redocly/openapi-docs':
   3.12.0:
-    timestamp: 1754575268000
+    timestamp: 1754636055000
     changes:
       minor:
         - Added LLM-related page actions to view or copy the page as Markdown and query ChatGPT or Claude about the page content.
@@ -17964,7 +17964,7 @@
     dependencies: {}
 '@redocly/graphql-docs':
   1.1.0:
-    timestamp: 1754575268000
+    timestamp: 1754636055000
     changes:
       minor: []
       patch:
@@ -18918,7 +18918,7 @@
     dependencies: {}
 '@redocly/portal-legacy-ui':
   0.7.0:
-    timestamp: 1754575268000
+    timestamp: 1754636055000
     changes:
       minor: []
       patch:
@@ -19027,7 +19027,7 @@
     dependencies: {}
 '@redocly/portal-plugin-async-api':
   1.7.0:
-    timestamp: 1754575268000
+    timestamp: 1754636055000
     changes:
       minor: []
       patch: []
@@ -22601,7 +22601,7 @@
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
   0.9.0:
-    timestamp: 1754575268000
+    timestamp: 1754636055000
     changes:
       minor: []
       patch:
@@ -24586,7 +24586,7 @@
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
   0.15.0:
-    timestamp: 1754575268000
+    timestamp: 1754636055000
     changes:
       minor: []
       patch:
@@ -25688,7 +25688,7 @@
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
   0.7.0:
-    timestamp: 1754575268000
+    timestamp: 1754636055000
     changes:
       minor: []
       patch: []
@@ -26792,7 +26792,7 @@
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
   1.1.0:
-    timestamp: 1754575268000
+    timestamp: 1754636055000
     changes:
       minor:
         - Added LLM-related page actions to view or copy the page as Markdown and query ChatGPT or Claude about the page content.
