@@ -633,7 +633,7 @@
   --dropdown-menu-line-height: var(--line-height-base);
   --dropdown-menu-text-color: var(--text-color-secondary);
 
-  --dropdown-menu-margin-top: var(--spacing-xxs);
+  --dropdown-menu-padding-top: var(--spacing-xxs);
   --dropdown-menu-min-width: 100px;
   --dropdown-menu-max-width: 424px;
   --dropdown-menu-max-height: 300px;
