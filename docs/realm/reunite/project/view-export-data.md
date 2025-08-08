@@ -13,19 +13,21 @@ On the **Page feedback** tab is a table with the data collected from the feedbac
 - **Value**: The feedback submitted depending on the feedback form.
 - **Message**: The message submitted, if a comment box was included.
 - **Date**: The day the feedback form was submitted relative to the current date.
-- **Status**: The status of the feedback, which can be **New**, **Archived** or **Spam**.
+- **Internal comment**: The beginning of the internal comment of the feedback, added by the user reviewing the feedback. You hover over the text to see the full comment.
+- **Status**: The status of the feedback, which can be **New**, **In Review**, **Resolved**, **Archived** or **Spam**.
+
+Select the share icon on the right-hand side of the feedback item, to save the link to the feedback report entry to your clipboard.
 
 More feedback metadata is collected and can be viewed by clicking on the feedback item on the table.
 
-To view detailed feedback data:
+## View detailed feedback data
 
-1. Select an item on the table, to view further information, including the following:
-   - A clickable HTTPS link to the **Page** where the feedback form was submitted.
-   - The **Location**, or the language-specific highlighted code snippet where the issue was reported.
-   - **Show additional metadata** in JSON format including the platform and user agent information.
-   - The reasons the user selected after the initial feedback form was submitted.
-1. Select the share icon on the top right-hand side of the page, to save the link to the feedback report entry to your clipboard.
-1. Select the expand icon in the top right-hand side of the page, to expand the feedback information to the width of the page.
+Select an item on the table, to view detailed feedback information, including the following additional data:
+- A clickable HTTPS link to the **Page** where the feedback form was submitted.
+- The **Location**, or the language-specific highlighted code snippet where the issue was reported.
+- Input to add/update an **Internal comment**.
+- **Additional metadata** in JSON format including the platform and user agent information.
+- The reasons the user selected after the initial feedback form was submitted.
 
 ## View code reports data
 
@@ -35,18 +37,20 @@ On the **Code reports** tab is a table with the data collected from the [code sn
 - **User**: The email address of the user who submitted the feedback form, if the user was logged in at the time. Otherwise, user is Anonymous.
 - **Message**: The message submitted, if a comment box was included.
 - **Date**: The day the feedback form was submitted relative to the current date.
-- **Status**: The status of the feedback, which can be **New**, **Archived** or **Spam**.
+- **Internal comment**: The beginning of the internal comment of the feedback, added by the user reviewing the feedback. You hover over the text to see the full comment.
+- **Status**: The status of the feedback, which can be **New**, **In Review**, **Resolved**, **Archived** or **Spam**.
+
+Select the share icon on the right-hand side of the feedback item, to save the link to the feedback report entry to your clipboard.
 
 More feedback metadata is collected and can be viewed by clicking on the feedback item on the table.
 
-To view detailed feedback data:
+## View detailed code reports data
 
-1. Select an item on the table, to view further information, including the following additional data:
-   - A clickable HTTPS link to the **Page** where the feedback form was submitted.
-   - The **Location**, or the language-specific highlighted code snippet where the issue was reported.
-   - **Show additional metadata** in JSON format including the platform and user agent information.
-1. Select the share icon on the top right-hand side of the page, to save the link to the feedback report entry to your clipboard.
-1. Select the expand icon in the top right-hand side of the page, to expand the feedback information to the width of the page.
+Select an item on the table, to view detailed code reports information, including the following additional data:
+- A clickable HTTPS link to the **Page** where the feedback form was submitted.
+- The **Location**, or the language-specific highlighted code snippet where the issue was reported.
+- Input to add/update an **Internal comment**.
+- **Additional metadata** in JSON format including the platform and user agent information.
 
 ## Export feedback data
 
@@ -62,7 +66,7 @@ To export a CSV of feedback data:
 ## Organize feedback
 
 All feedback form data's initial status is set to **New**.
-You can update each feedback entry's status to either **Archived** or **Spam** by clicking the current status and selecting the new status.
+You can update each feedback entry's status to either **In Review**, **Resolved**, **Archived** or **Spam** by clicking the current status and selecting the new status.
 Afterward, when you select the status checkbox at the top of the table, the list is limited to the feedback data with the selected status.
 
 ## Resources
