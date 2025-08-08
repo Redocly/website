@@ -79,10 +79,8 @@ A card only works as a child of `cards`.
 
 - icon
 - string
-- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
-  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
-  Example: `book`, `duotone book`, `./images/config-icon.svg`.
-
+- Path to an icon to display on the card.
+  Supports image files or SVGs.
 
 ---
 

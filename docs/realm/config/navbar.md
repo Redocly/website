@@ -80,7 +80,7 @@ The navbar is a good location for top-level category or frequently-used links.
 - string
 - A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
   Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
-  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
+  Example: `book`, `duotone book`, `./images/config-icon.svg`.
 
 ---
 
@@ -151,9 +151,7 @@ The navbar is a good location for top-level category or frequently-used links.
 
 - icon
 - string
-- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
-  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
-  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
+- Path to the icon file.
 
 ---
 
