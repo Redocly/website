@@ -114,7 +114,7 @@ Front matter is used to set page metadata or configure page behavior, as in the 
     };
     ```
 
-- [Block indexing](../navigation/search/block-search-index.md) by search engines:
+- [Block indexing](../config/seo.md#control-search-indexing) by search engines:
 
     ```javascript
     export const frontmatter = {

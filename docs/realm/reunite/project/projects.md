@@ -39,7 +39,7 @@ This page contains a history of deploys for Production and Preview environments.
 
 ### Feedback
 
-On this page you can view [customer feedback](../../setup/how-to/feedback/index.md) and code reports. You can filter the feedback by date and export it to CSV files.
+On this page you can view [customer feedback](../../config/feedback.md) and code reports. You can filter the feedback by date and export it to CSV files.
 
 ### API registry
 

@@ -15,8 +15,42 @@ Customize how users leave feedback about your documentation content with the `fe
 By default, the `feedback` sentiment form displays at the bottom of all Markdown and API reference pages, but you can customize or hide it.
 
 The default configuration includes an email field for anonymous users to provide their email with the feedback.
-
 The optional email input field is not displayed for logged-in users.
+
+## Feedback system overview
+
+Redocly's feedback system includes:
+- **Page feedback forms** at the bottom of Markdown and API reference pages
+- **Code snippet report icons** next to copy buttons in code examples
+- **Feedback data collection** viewable in your project dashboard
+
+### Form types
+
+Choose from five feedback form types:
+
+{% tabs %}
+
+{% tab label="sentiment" %}
+**Default form type** - Thumbs up/down icons for positive or negative reactions.
+{% /tab %}
+
+{% tab label="mood" %}
+Three emoji icons (satisfied, neutral, dissatisfied) for more nuanced feedback.
+{% /tab %}
+
+{% tab label="rating" %}
+Five-star rating system for numerical feedback (1-5 stars).
+{% /tab %}
+
+{% tab label="scale" %}
+Ten-point scale with customizable labels for detailed rating (1-10).
+{% /tab %}
+
+{% tab label="comment" %}
+Free-form text field for detailed written feedback.
+{% /tab %}
+
+{% /tabs %}
 
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "feedback"} /%}
 
@@ -339,13 +373,162 @@ The optional email input field is not displayed for logged-in users.
 
 {% /table %}
 
-## Configuration precedence
+## Configuration scope
 
-Configuration for the `feedback` option in the `redocly.yaml` file updates all pages globally.
-You can also configure the `feedback` option for individual pages in the front matter.
-Front matter configurations take precedence, but settings from the `redocly.yaml` file apply when not specified in front matter.
+Configure feedback globally in your `redocly.yaml` file or for individual pages using front matter.
 
-Add the `feedback` option under the `openapi` or `graphql` property for API reference documentation pages.
+### Global configuration
+
+Configure feedback for all pages in your project:
+
+```yaml {% title="redocly.yaml" %}
+feedback:
+  type: sentiment
+  settings:
+    label: Was this helpful?
+    submitText: Thanks for your feedback!
+```
+
+### API reference configuration
+
+Configure feedback specifically for API reference documentation:
+
+**OpenAPI:**
+```yaml {% title="redocly.yaml" %}
+openapi:
+  feedback:
+    type: rating
+    settings:
+      label: Rate this API endpoint
+```
+
+**GraphQL:**
+```yaml {% title="redocly.yaml" %}
+graphql:
+  feedback:
+    type: comment
+    settings:
+      label: Tell us about your experience with this schema
+```
+
+### Page-level configuration
+
+Override global settings for individual pages using front matter:
+
+```yaml {% title="example.md" %}
+---
+feedback:
+  type: scale
+  settings:
+    label: How useful was this guide?
+    leftScaleLabel: Not useful
+    rightScaleLabel: Very useful
+---
+```
+
+Front matter configurations take precedence over global settings, but inherit unspecified options from global configuration.
+
+## Hide feedback
+
+Hide feedback forms globally or for specific content types:
+
+**Hide on all pages:**
+```yaml {% title="redocly.yaml" %}
+feedback:
+  hide: true
+```
+
+**Hide on API reference only:**
+```yaml {% title="redocly.yaml" %}
+openapi:
+  feedback:
+    hide: true
+```
+
+## Extend feedback forms
+
+Add additional questions after users submit initial feedback using `reasons` and `comment` options.
+
+### Add reasons (checkboxes or radio buttons)
+
+Collect structured follow-up feedback:
+
+```yaml {% title="redocly.yaml" %}
+feedback:
+  settings:
+    reasons:
+      component: radio  # or "checkbox" for multiple selection
+      label: What made this helpful?
+      items:
+        - Clear explanations
+        - Good examples
+        - Comprehensive coverage
+```
+
+### Add comment field
+
+Collect free-form follow-up feedback:
+
+```yaml {% title="redocly.yaml" %}
+feedback:
+  settings:
+    comment:
+      label: Tell us more about your experience
+```
+
+### Reaction-specific extensions
+
+Configure different follow-up questions based on user's initial reaction (for `sentiment` and `mood` forms):
+
+```yaml {% title="redocly.yaml" %}
+feedback:
+  type: sentiment
+  settings:
+    reasons:
+      like:
+        label: What did you find most helpful?
+        items:
+          - Clear examples
+          - Step-by-step instructions
+      dislike:
+        label: What can we improve?
+        items:
+          - Add more examples
+          - Clarify instructions
+    comment:
+      likeLabel: What was most helpful?
+      dislikeLabel: What can we improve?
+```
+
+## View and manage feedback data
+
+Feedback data is collected and viewable in your project dashboard under the **Feedback** tab.
+
+### Page feedback data
+
+The **Page feedback** tab shows:
+- **Page**: File path where feedback was submitted
+- **User**: Email address (for logged-in users) or "Anonymous"
+- **Value**: The feedback rating/reaction submitted
+- **Message**: Any comment text provided
+- **Date**: When feedback was submitted
+- **Status**: New, Archived, or Spam
+
+### Code reports data
+
+The **Code reports** tab shows feedback from code snippet report buttons:
+- **Page**: File path containing the code snippet
+- **Location**: Specific code snippet where issue was reported
+- **User**: Email address or "Anonymous"
+- **Message**: Description of the reported issue
+- **Date**: When report was submitted
+
+### Export feedback data
+
+Download feedback data as CSV for analysis:
+1. Select **Export** in the feedback dashboard
+2. Choose date range
+3. Download CSV file with all feedback data
 
 ## Localization
 
@@ -353,13 +536,7 @@ Localize feedback form text with `translations.yaml` files. Don't set text value
 
 ## Examples
 
-### Sentiment
-
-The `sentiment` feedback form displays by default on Markdown and API reference documentation pages.
-No configuration is required.
-If you want to hide feedback on your pages, you can [configure it to be hidden](../setup/how-to/feedback/index.md#hide-feedback).
-
-Configuration:
+### Sentiment with extensions
 
 ```yaml {% title="redocly.yaml" %}
 feedback:
@@ -369,61 +546,50 @@ feedback:
     submitText: Thanks for your feedback!
     reasons:
       component: radio
-      items:
-        - The page is clear, but not very engaging.
       like:
         label: What made this page helpful?
         items:
           - The content has great examples.
+          - Clear step-by-step instructions
       dislike:
         label: What should we improve?
         items:
           - The content lacks practical examples.
+          - Instructions are unclear
     comment:
       likeLabel: What was most helpful?
       dislikeLabel: What can we improve?
 ```
 
-Screenshot of what users see after selecting the thumbs-up icon:
-
-![Sentiment feedback form with advanced options](./images/sentiment-02.png)
-
-### Mood
-
-Configuration:
+### Mood with specific reactions
 
 ```yaml {% title="redocly.yaml" %}
 feedback:
   type: mood
   settings:
-    label: Was this page helpful?
-    submitText: Thanks for your feedback
+    label: How did this page make you feel?
+    submitText: Thanks for your feedback!
     reasons:
-      component: radio
       satisfied:
-        label: Check all that apply.
+        label: What worked well?
         items:
-          - The content was accurate.
+          - The content was accurate
+          - Easy to follow instructions
       neutral:
-        hide: true
-        label: What can we improve?
+        label: What could be better?
         items:
-          - The content lacks practical examples.
+          - More examples needed
+          - Unclear in some places
       dissatisfied:
         label: What went wrong?
         items:
-          - The content was hard to find.
+          - Content was hard to find
+          - Instructions didn't work
 ```
 
-Screenshot of what users see after they select the neutral-face icon:
+### Scale (1-10 rating)
 
-![Mood](./images/mood-02.png)
-
-### Scale
-
-Configuration:
-
-```yaml
+```yaml {% title="redocly.yaml" %}
 feedback:
   type: scale
   settings:
@@ -433,15 +599,9 @@ feedback:
     rightScaleLabel: Very helpful
 ```
 
-Screenshot:
+### Star rating (1-5 stars)
 
-![Scale](./images/scale-02.png)
-
-### Star rating
-
-Configuration:
-
-```yaml
+```yaml {% title="redocly.yaml" %}
 feedback:
   type: rating
   settings:
@@ -449,21 +609,19 @@ feedback:
     submitText: Thank you for your rating!
 ```
 
-### Comment
+### Comment form
 
-Configuration:
-
-```yaml
+```yaml {% title="redocly.yaml" %}
 feedback:
   type: comment
   settings:
-    label: Share your experience with this page.
+    label: Share your experience with this page
     submitText: Your comment has been sent to our team!
 ```
 
-### Optional email
+### Optional email collection
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 feedback:
   settings:
     optionalEmail:
@@ -471,16 +629,9 @@ feedback:
       placeholder: yourname@example.com
 ```
 
-## Related options
-
-- Discover ways to customize code samples in your documentation in the [codeSnippet](./code-snippet.md#report-object).
-- Learn how to configure feedback for [GraphQL](graphql/index.md) reference documentation.
-
 ## Resources
 
-- Learn about different feedback forms available in the [Feedback concept](../setup/concepts/feedback.md).
-- Learn how to customize code snippets in your documentation in [Configure code snippets](code-snippet.md).
-- Add options after users complete initial feedback in [Extend the feedback form](../setup/how-to/feedback/extend-feedback.md).
-- Find where collected feedback data is sent and how to view it in [View and export feedback data](../reunite/project/view-export-data.md).
-- Use [front matter](./front-matter-config.md) to configure feedback on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- Customize code snippet report buttons using the [codeSnippet](./code-snippet.md#report-object) configuration
+- Configure feedback for [GraphQL](./graphql/index.md) reference documentation  
+- Use [front matter](./front-matter-config.md) to configure feedback on individual pages
+- Explore other [configuration options](./index.md) for your project

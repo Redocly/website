@@ -87,7 +87,7 @@
       label: Analytics
     - page: reunite/project/switch-between-projects.md # consolidate into manage projects?
       label: Switch between projects
-    - page: reunite/project/view-export-data.md
+    - page: reunite/project/feedback.md
       label: Feedback
     - group: Connect a Git provider
       page: reunite/project/connect-git/connect-git-provider.md
@@ -145,6 +145,7 @@
       
 - group: Content
   icon: file-lines
+  page: content/index.md
   items:
     - page: content/project-structure.md
       label: Project structure
@@ -332,27 +333,12 @@
       label: Navigation elements overview
     - page: navigation/sidebars.md
       label: Sidebar reference
-
-    - group: Search and discovery
-      items:
-        - page: navigation/search/configure-search-facets.md
-          label: Configure search facets
-        - page: navigation/search/add-sitemap.md
-          label: Add sitemap
-        - page: navigation/search/add-robots-file.md
-          label: Add robots.txt
-        - page: navigation/search/block-search-index.md
-          label: Block search indexing
-        - page: navigation/search/verify-site-ownership.md
-          label: Verify site ownership
-
-    - group: Multi-product
-      page: navigation/multi-product.md
+    - page: navigation/multi-product.md
       label: Multi-product
-
 
 - group: Customization
   icon: wrench
+  page: customization/index.md
   items:
 
     - group: API functions
@@ -404,19 +390,16 @@
 
 - group: Access
   icon: lock
+  page: access/index.md
   items:
-    - group: Role-based access control (RBAC)
-      page: access/index.md
-      items:
-        - page: access/roles.md
-          label: Roles
-        - page: access/rbac.md
-          label: RBAC concepts
-
-        - page: access/page-permissions.md
-          label: For pages
-        - page: access/links-and-groups-permissions.md
-          label: For navigation
+    - page: access/roles.md
+      label: Roles
+    - page: access/rbac.md
+      label: RBAC concepts
+    - page: access/page-permissions.md
+      label: For pages
+    - page: access/links-and-groups-permissions.md
+      label: For navigation
 
 
 
