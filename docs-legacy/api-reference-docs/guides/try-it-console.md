@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 seo:
   title: Configure the Try it console
 ---

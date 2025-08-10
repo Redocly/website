@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # On-premise reference docs
 
 If you want to deploy Reference docs on-premise due to specific security constraints, you can use one of these ways:

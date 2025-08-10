@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 seo:
   title: Enable the version switcher in on-premise Reference docs
 ---

@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # x-additionalPropertiesName
 
 {% admonition type="info" name="Compatibility warning" %}

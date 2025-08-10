@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Add files to your API registry
 
 The API registry serves as a single source of truth for your APIs, and allows you to reuse API definitions across your API versions, docs, and Developer portals.

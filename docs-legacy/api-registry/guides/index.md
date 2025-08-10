@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 seo:
   title: API registry guides
   description: Learn about the API registry.

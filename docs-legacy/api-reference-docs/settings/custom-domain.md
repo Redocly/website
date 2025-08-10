@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Custom domain
 
 You can edit the subdomain name and configure a custom domain for your API docs on the **Custom domain** page.

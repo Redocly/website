@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Migration guide: Redocly configuration file
 
 The Redocly configuration file is used by multiple Redocly apps to help you control their behavior.

@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # API info
 
 You can edit an API name and version using the API info page. The name/version is used to identify the API in the API registry in Workflows. It does not affect the name and version in your API definition files.

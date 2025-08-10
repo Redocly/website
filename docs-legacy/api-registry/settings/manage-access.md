@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Manage access
 
 Depending on your plan (and [role](../../people/roles-permissions.md), people with the `Owner` role (at the organization level) or `Admin` role (at the project level) can control access to API registry versions.

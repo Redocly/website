@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Mock server guide
 
 {% admonition type="info" name="About this feature" %}

@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Restart preview branch builds
 
 Follow this guide when you need to restart API registry preview branch builds to apply new configuration settings.

@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # x-webhooks
 
 {% admonition type="warning" name="Compatibility warning" %}
