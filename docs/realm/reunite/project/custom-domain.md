@@ -31,32 +31,33 @@ The path prefix is set using the `REDOCLY_PREFIX_PATHS` [environment variable](.
 URL _without_ prefix: `https://docs.example.com/page`  
 URL _with_ `api-v2` prefix: `https://docs.example.com/api-v2/page`
 
-### Set prefix with .env file
+### Set prefix in Reunite
 
-Add `REDOCLY_PREFIX_PATHS` to a `.env` file in the root of your project and assign a value. Create the file if one does not exist already.
+For projects deployed through Reunite, set the page prefix using environment variables in Reunite:
 
-The following example adds a "/api-v2/" page prefix to the URL when a page renders:
+1. Go to the project _Settings_ page.
+2. Select **Environment variables**.
+3. Click **Add environment variable** and add `REDOCLY_PREFIX_PATHS` with your desired prefix value (for example, `api-v2`).
+4. Click the **Deploys** hyperlink in the banner.
+5. Click the **Trigger deploy** button.
+
+{% admonition type="warning" name="Deployment considerations" %}
+Setting `REDOCLY_PREFIX_PATHS` only in your project's `.env` file can cause health checks and publish steps to fail during deployment. Use Reunite's environment variables feature for reliable deployments.
+{% /admonition %}
+
+### Set prefix for local development
+
+For local development, you can add `REDOCLY_PREFIX_PATHS` to a `.env` file in the root of your project:
 
 ```shell {% title=".env" %}
 REDOCLY_PREFIX_PATHS=api-v2
 ```
 
-This example adds a `/api-v2` prefix to all pages served from your project.
-Users trying to access the root URL, `/`, are automatically redirected to `/api-v2`.
+This approach is suitable for local testing but should not be used as the primary method for deployed projects.
 
 {% admonition type="info" name="Separate environment files" %}
 Use named environment files for more control, such as `.env.development`, `.env.preview`, and `.env.production`.
 {% /admonition %}
-
-### Set prefix in Reunite
-
-Set the page prefix using Reunite with the following steps:
-
-1. Go to the project _Settings_ page.
-2. Select **Environment variables**.
-3. Click **Add environment variable** and add `REDOCLY_PREFIX_PATHS`.
-4. Click the **Deploys** hyperlink in the banner.
-5. Click the **Trigger deploy** button.
 
 ### Prefixed links in Markdown
 
