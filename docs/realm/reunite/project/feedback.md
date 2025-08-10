@@ -67,5 +67,5 @@ Afterward, when you select the status checkbox at the top of the table, the list
 
 ## Resources
 
-- Configure and customize feedback forms in the [Feedback reference](../../config/feedback.md)
-- Customize code snippet report buttons using the [CodeSnippet reference](../../config/code-snippet.md)
+- **[Feedback configuration reference](../../config/feedback.md)** - Configure and customize feedback forms with various collection methods and styling options
+- **[CodeSnippet configuration reference](../../config/code-snippet.md)** - Customize code snippet report buttons and feedback collection for technical documentation

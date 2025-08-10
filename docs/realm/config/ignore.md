@@ -30,4 +30,4 @@ ignore:
 
 ## Resources
 
-- [Ignore static folders and files](../customization/static-assets.md#ignore-static-folders-and-files)
+- **[Ignore static folders and files](../customization/theme-static-assets.md#ignore-static-folders-and-files)** - Configure which static assets and folders to exclude from your documentation build process

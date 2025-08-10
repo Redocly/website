@@ -197,6 +197,6 @@ Use `redocly.yaml` for most configuration settings and use front matter only for
 
 ## Resources
 
-- [Override a page template](../customization/custom-page-templates.md)
-- [Configure Redocly](./index.md) using the `redocly.yaml` file.
-- [Block search indexing](./seo.md#control-search-indexing) using the `noindex` rule.
+- **[Override a page template](../customization/custom-page-templates.md)** - Create custom page templates to override default layouts and implement unique page designs
+- **[Configure Redocly](./index.md)** - Complete configuration reference for the redocly.yaml file and project settings
+- **[Block search indexing](./seo.md#control-search-indexing)** - Use the noindex rule in front matter to control search engine indexing on specific pages

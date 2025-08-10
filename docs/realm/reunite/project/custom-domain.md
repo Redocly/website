@@ -94,6 +94,6 @@ export default function ExampleComponent() {
 
 ## Resources
 
-- Learn more about [environment variables](./env-variables.md) for other project configuration options
-- When you [add links](../../content/links.md) to Markdown content, the page prefix is added automatically
-- If you [add an OpenAPI description](../../content/api-docs/add-openapi-docs.md), the url for the generated API reference pages will use the page prefix
+- **[Environment variables](./env-variables.md)** - Configure additional project settings using environment variables for dynamic content and customization
+- **[Add links](../../content/links.md)** - Understand how link prefixes are automatically handled when adding links to Markdown content
+- **[Add OpenAPI description](../../content/api-docs/add-openapi-docs.md)** - Add API documentation that automatically uses your custom domain's page prefix for generated reference pages

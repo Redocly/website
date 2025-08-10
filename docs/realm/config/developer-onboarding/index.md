@@ -297,4 +297,4 @@ developerOnboarding:
 
 ## Resources
 
-- [List of used Apigee API endpoints](./apigee-api-operations.md)
+- **[List of used Apigee API endpoints](./apigee-api-operations.md)** - Complete reference of Apigee API endpoints used by the developer onboarding feature for integration and troubleshooting

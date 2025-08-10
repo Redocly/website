@@ -111,9 +111,9 @@ You can also [set a custom domain](./project/custom-domain.md), [add environment
 
 ## Resources
 
-- Follow step-by-step instructions for [configuring the feedback mechanism](../config/feedback.md) in the `redocly.yaml` file and viewing the data in Reunite.
-- Learn more about the different ways you can [Manage projects](./project/manage-projects.md) in Reunite.
-- Discover more about pull requests, including how to [Open a pull request](./project/pull-request/open-pull-request.md), [Review a pull request](./project/pull-request/review-pull-request.md), and [Manage pull requests](./project/pull-request/manage-pull-requests.md).
-- Learn more about the [Remote content](./project/remote-content/remote-content.md) feature, including what the mount folder path is, and the difference between auto-sync and auto-merge.
-- To deploy regardless of link checker or Markdoc errors, see the [reunite](../config/reunite.md) configuration option reference page.
-- Discover the different kinds of [feedback](../config/feedback.md) mechanisms you can choose from and the different options that can be configured for each one in your `redocly.yaml` file.
+- **[Feedback mechanism configuration](../config/feedback.md)** - Configure user feedback collection in your redocly.yaml file and view feedback data within Reunite
+- **[Project management](./project/manage-projects.md)** - Explore different ways to organize, configure, and manage projects in Reunite for optimal workflow
+- **[Pull request workflow](./project/pull-request/open-pull-request.md)** - Complete guide to pull request creation, review, and management processes in Reunite
+- **[Remote content integration](./project/remote-content/remote-content.md)** - Learn about remote content features including mount folder paths, auto-sync, and auto-merge capabilities
+- **[Reunite configuration reference](../config/reunite.md)** - Configure Reunite deployment settings including options to deploy regardless of link checker or Markdoc errors
+- **[Feedback mechanisms guide](../config/feedback.md)** - Choose and configure different types of user feedback collection mechanisms for your documentation projects

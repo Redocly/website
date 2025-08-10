@@ -299,6 +299,6 @@ reunite:
 
 ## Resources
 
-- Learn more about [Reunite](../reunite/reunite.md), Redocly's cloud platform for creating, editing, previewing, and deploying your API documentation projects.
-- Learn how to use `reunite` configuration options to track the performance of your APIs in [Configure Respect Monitoring](../reunite/project/respect-monitoring/configure-respect-monitoring.md).
-- Subscribe to notifications for individual workflows using the [Manage Respect Monitoring](../reunite/project/respect-monitoring/manage-respect-monitoring.md) how-to documentation.
+- **[Reunite platform](../reunite/reunite.md)** - Explore Redocly's cloud platform for creating, editing, previewing, and deploying API documentation projects with collaborative features
+- **[Configure Respect Monitoring](../reunite/project/respect-monitoring/configure-respect-monitoring.md)** - Use reunite configuration options to track API performance and reliability with automated monitoring workflows
+- **[Manage Respect Monitoring](../reunite/project/respect-monitoring/manage-respect-monitoring.md)** - Subscribe to notifications and manage monitoring settings for individual workflows and API endpoints

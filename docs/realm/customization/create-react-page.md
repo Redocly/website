@@ -180,7 +180,7 @@ The following example pages are available in the gallery:
 
 ## Resources
 
-- Review examples in the [React landing page gallery](https://github.com/Redocly/landing-page-gallery).
-- React pages can be used as [custom page templates](./custom-page-templates.md) for Markdown pages.
-- Change the look and feel of React pages using CSS for [custom styling](../branding/index.md).
-- Implement page-level access control using [page permissions](../access/page-permissions.md).
+- **[React landing page gallery](https://github.com/Redocly/landing-page-gallery)** - Explore real-world examples and design patterns for creating compelling React-based documentation pages
+- **[Custom page templates](./custom-page-templates.md)** - Use React pages as reusable templates for Markdown content with consistent layouts and functionality
+- **[Custom styling guide](../branding/index.md)** - Customize the appearance of React pages using CSS variables, custom stylesheets, and component-specific styling
+- **[Page permissions](../access/page-permissions.md)** - Implement role-based access control to restrict React page visibility based on user roles and team membership

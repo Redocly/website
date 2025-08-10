@@ -193,5 +193,5 @@ navigation:
 
 ## Resources
 
-- Use [front matter](./front-matter-config.md) to configure navigation button options on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Front matter configuration](./front-matter-config.md)** - Configure navigation button options on individual pages using front matter for granular control
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

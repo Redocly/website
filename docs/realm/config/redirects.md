@@ -158,4 +158,4 @@ redirects:
 
 ## Resources
 
-- [Manage links](../content/links.md) on project pages
+- **[Manage links](../content/links.md)** - Manage and configure links on project pages for optimal navigation and redirect handling

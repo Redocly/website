@@ -64,5 +64,5 @@ Inspect each query to see the full question, AI-provided answer, and correspondi
 
 ## Resources
 
-- Discover other features Reunite offers in the [Reunite](../reunite.md) concept documentation
-- Learn how to configure third-party analytics tools for your project in the [Analytics](../../config/analytics/index.md) configuration reference
+- **[Reunite features overview](../reunite.md)** - Explore other collaborative content management and project workflow features available in Reunite
+- **[Analytics configuration reference](../../config/analytics/index.md)** - Configure third-party analytics tools like Google Analytics for comprehensive project usage tracking

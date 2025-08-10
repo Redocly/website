@@ -110,5 +110,5 @@ You can use the icon component in your Markdoc files, as in the following exampl
 
 ## Resources
 
-- [Build markdoc tags](./build-markdoc-tags.md)
-- [Built-in icon tags](../content/markdoc-tags/icon.md)
+- **[Build custom Markdoc tags](./build-markdoc-tags.md)** - Create reusable Markdoc components using imported NPM libraries for enhanced functionality
+- **[Built-in icon components](../content/markdoc-tags/icon.md)** - Use Redocly's built-in icon system and learn patterns for extending it with external icon libraries

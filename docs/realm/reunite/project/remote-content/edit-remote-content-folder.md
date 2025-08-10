@@ -45,6 +45,6 @@ To edit remote content folder settings:
 
 ## Resources
 
-* Learn about the remote content feature in [Remote content](./remote-content.md).
-* Find the how-to guides for different types of remote content in [Add remote files with one-way sync](./index.md).
-* If you have turned off Auto-sync, you can [manually sync remote content](./manually-sync-remote-content.md).
+- **[Remote content concepts](./remote-content.md)** - Understand the remote content feature including sync mechanisms, folder path management, and auto-merge capabilities
+- **[Add remote files with one-way sync](./index.md)** - Comprehensive how-to guides for setting up different types of remote content sources and integration methods
+- **[Manually sync remote content](./manually-sync-remote-content.md)** - Manually trigger remote content synchronization when auto-sync is disabled for precise control over updates

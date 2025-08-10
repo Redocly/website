@@ -631,7 +631,7 @@ feedback:
 
 ## Resources
 
-- Customize code snippet report buttons using the [codeSnippet](./code-snippet.md#report-object) configuration
-- Configure feedback for [GraphQL](./graphql/index.md) reference documentation  
-- Use [front matter](./front-matter-config.md) to configure feedback on individual pages
-- Explore other [configuration options](./index.md) for your project
+- **[CodeSnippet configuration](./code-snippet.md#report-object)** - Customize code snippet report buttons for collecting feedback on technical documentation and examples
+- **[GraphQL feedback](./graphql/index.md)** - Configure feedback collection specifically for GraphQL reference documentation and schema exploration
+- **[Front matter configuration](./front-matter-config.md)** - Configure feedback settings on individual pages using front matter for granular control
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation customization

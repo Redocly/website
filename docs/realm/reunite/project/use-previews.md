@@ -73,6 +73,6 @@ Restart is not available for deleted/merged branches.
 
 ## Resources
 
-* [Connect a Git provider](./connect-git/connect-git-provider.md)
-* [Use the editor](./use-editor.md)
-* [Use the Webview](./use-webview.md)
+- **[Connect a Git provider](./connect-git/connect-git-provider.md)** - Link your project to Git repositories for version control and automated deployment workflows
+- **[Use the editor](./use-editor.md)** - Edit content directly in Reunite with collaborative editing tools and real-time collaboration features
+- **[Use the Webview](./use-webview.md)** - View live previews of your content changes while editing for immediate visual feedback

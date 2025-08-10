@@ -58,10 +58,10 @@ Access control in Redocly operates on a role-based system where:
 
 ## Getting started
 
-1. **Set up roles** - Define the [user roles](./roles.md) needed for your organization
-2. **Understand RBAC** - Learn the [RBAC concepts](./rbac.md) and security model
-3. **Protect pages** - Apply [page permissions](./page-permissions.md) to sensitive content
-4. **Control navigation** - Configure [navigation permissions](./links-and-groups-permissions.md) for role-specific menus
+1. **Set up roles** - Define the [user roles](./roles.md) needed for your organization and understand the difference between organization and project roles
+2. **Understand RBAC** - Learn the [RBAC concepts](./rbac.md) and security model including how teams, roles, and resources work together
+3. **Protect pages** - Apply [page permissions](./page-permissions.md) to sensitive content using front matter or configuration-based access control
+4. **Control navigation** - Configure [navigation permissions](./links-and-groups-permissions.md) for role-specific menus in navbar, footer, and sidebar
 
 ## Use cases
 
@@ -83,7 +83,7 @@ Show basic content to all users while revealing advanced features and configurat
 
 ## Resources
 
-- Configure [roles and permissions](./roles.md) for your organization
-- Learn about [RBAC implementation](./rbac.md) and best practices
-- Set up [page-level access control](./page-permissions.md) for sensitive content
-- Manage [navigation permissions](./links-and-groups-permissions.md) for role-based menus
+- **[Roles and permissions](./roles.md)** - Configure user roles and permissions to control access levels across your documentation project
+- **[RBAC implementation](./rbac.md)** - Understand how role-based access control works and implement security best practices for your content
+- **[Page-level access control](./page-permissions.md)** - Control access to individual pages and content sections based on user roles and permissions
+- **[Navigation permissions](./links-and-groups-permissions.md)** - Manage visibility of navigation links and groups to create role-specific navigation experiences

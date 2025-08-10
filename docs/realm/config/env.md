@@ -105,4 +105,4 @@ navbar:
 
 ## Resources
 
-- Explore other [configuration options](./index.md) for your project.
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

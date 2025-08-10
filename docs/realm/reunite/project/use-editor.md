@@ -155,8 +155,8 @@ You can sync your branch, pulling in the changes from main since you created you
 
 ## Resources
 
-- Learn more about how you can access the deployment preview in [Use previews](./use-previews.md).
-- See [Use Webview](./use-webview.md) to learn more about adjusting the live preview of your updates as you are editing your content in the editor.
-- To include files in a remote location in your project, see [Add remote files](./remote-content/index.md).
-- Checkout the [Markdoc tag library](https://redocly.com/docs/learn-markdoc/tags/tag-library/) for more information on using Markdoc tags in your project.
-- See [Project structure](../../content/project-structure.md) to learn more about how to structure a project.
+- **[Use previews](./use-previews.md)** - Access deployment previews to see how your changes will appear before publishing to production
+- **[Use Webview](./use-webview.md)** - Adjust the live preview of your content updates while editing for real-time visual feedback
+- **[Add remote files](./remote-content/index.md)** - Include and synchronize files from remote locations and external repositories in your project
+- **[Markdoc tag library](https://redocly.com/docs/learn-markdoc/tags/tag-library/)** - Explore available Markdoc tags and components for enhanced content formatting and functionality
+- **[Project structure](../../content/project-structure.md)** - Learn best practices for organizing files and content structure in your documentation projects

@@ -320,4 +320,4 @@ Introduce tables with an explanatory sentence that describes the significance of
 
 ## Resources
 
-- [Customize table styles](../../branding/customize-tables.md)
+- **[Customize table styles](../../branding/customize-tables.md)** - Learn to style tables with CSS variables, custom classes, and mode-specific styling for enhanced visual presentation

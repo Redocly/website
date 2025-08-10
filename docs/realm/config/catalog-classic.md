@@ -347,7 +347,8 @@ catalogClassic:
 
 ## Resources
 
-- When an API description contains metadata, and you want to exclude the metadata from the API reference documentation, use the [hideInfoMetadata](./openapi/hide-info-metadata.md) configuration option.
-- Learn about [API Governance](https://redocly.com/docs/cli/api-standards) and [configure your scorecard](../reunite/project/configure-scorecard.md) to check APIs against standards.
-- Use [metadata categorization](./metadata.md#catalog-categorization) to filter APIs in the classic catalog.
-- Follow steps to [configure the navbar](./navbar.md) to include your catalog link.
+- **[Hide info metadata](./openapi/hide-info-metadata.md)** - Exclude metadata from API reference documentation when you want cleaner, focused documentation presentation
+- **[API Governance](https://redocly.com/docs/cli/api-standards)** - Learn about API standards and governance practices for maintaining quality and consistency
+- **[Configure scorecard](../reunite/project/configure-scorecard.md)** - Set up scorecards to check APIs against standards and maintain quality metrics
+- **[Metadata categorization](./metadata.md#catalog-categorization)** - Use metadata to filter and organize APIs in the classic catalog for better content discovery
+- **[Configure navbar](./navbar.md)** - Follow steps to include your catalog link in the navigation bar for easy access

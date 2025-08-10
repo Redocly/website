@@ -20,7 +20,7 @@ Below is an example configuration to remove the Redocly attribution from the bro
 removeAttribution: true
 ```
 
-## Related options
+## Resources
 
-[`redocly.yaml` config file](./index.md) reference documentation
+- **[Configuration options](./index.md)** - Complete redocly.yaml configuration file reference for all available project settings and customization options
 

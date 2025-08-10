@@ -21,5 +21,5 @@ You can switch between projects in a few different contexts:
 
 ## Resources
 
-* [Projects](./projects.md)
-* [Manage projects](./manage-projects.md)
+- **[Projects overview](./projects.md)** - Understand project structure, settings, and configuration options available in Reunite
+- **[Manage projects](./manage-projects.md)** - Create, configure, and organize projects for effective documentation workflow management

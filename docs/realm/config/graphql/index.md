@@ -53,5 +53,5 @@ Customize the behavior and appearance of integrated GraphQL documentation. Requi
 
 ## Resources
 
-- [GraphQL](https://graphql.org/)
-- [Add GraphQL documentation to your project](../../content/api-docs/add-graphql-docs.md)
+- **[GraphQL](https://graphql.org/)** - Official GraphQL specification and documentation for understanding query language fundamentals
+- **[Add GraphQL documentation to your project](../../content/api-docs/add-graphql-docs.md)** - Step-by-step guide to adding GraphQL API documentation to your Redocly project

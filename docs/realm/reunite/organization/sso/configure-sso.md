@@ -53,9 +53,9 @@ Disabling SSO removes the login page, but does not disable `rbac`.
 
 ## Resources
 
-* Learn how to [Add an identity provider](./add-idp.md) in Reunite that you can use for projects and Reunite login.
-* Discover how to [Configure RBAC](../../../access/index.md) to limit what users can see in your project.
-* View all the options available for configuring SSO in the [sso reference documentation](../../../config/sso.md).
-* Learn more about the different IdPs and ways they can be used in your projects in the [Single sign-on (SSO) concept documentation](./sso.md).
-* Discover how RBAC works in projects and Reunite in the [Role-based access control (RBAC) concept documentation](../../../access/rbac.md).
-* View all the options available for configuring RBAC in the [rbac reference documentation](../../../config/rbac.md).
+- **[Add an identity provider](./add-idp.md)** - Add identity providers in Reunite for unified authentication across projects and Reunite login
+- **[Configure RBAC](../../../access/index.md)** - Implement role-based access control to restrict user access to specific project content and features
+- **[SSO configuration reference](../../../config/sso.md)** - Complete reference documentation for all available SSO configuration options and settings
+- **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider types and implementation approaches for your project authentication needs
+- **[Role-based access control (RBAC) concepts](../../../access/rbac.md)** - Understand how RBAC works in projects and Reunite for comprehensive access management
+- **[RBAC configuration reference](../../../config/rbac.md)** - Complete reference for configuring RBAC options in your redocly.yaml file with examples and implementation details

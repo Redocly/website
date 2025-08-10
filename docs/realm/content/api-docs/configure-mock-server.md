@@ -92,7 +92,7 @@ The `position` property controls _where_ the mock server is located on the list 
 
 ## Resources
 
-- Learn about the [Replay API explorer](./replay.md) used in API reference.
-- Send requests to a mock server for your own API description by [adding it to a project](./add-openapi-docs.md).
-- [Configure a classic catalog](../../config/catalog-classic.md) to offer a better user experience for multiple API descriptions.
-- See [Mock server](../../config/mock-server.md) reference documentation for more detailed information about the parameters.
+- **[Replay API explorer](./replay.md)** - Learn about the interactive API testing features and capabilities used in API reference documentation
+- **[Add OpenAPI reference docs](./add-openapi-docs.md)** - Set up API documentation projects with mock server capabilities for testing and development
+- **[API catalog configuration](../../config/catalog-classic.md)** - Configure catalogs to organize multiple API descriptions with better user experience and navigation
+- **[Mock server configuration reference](../../config/mock-server.md)** - Complete configuration options and parameters for mock server setup and customization

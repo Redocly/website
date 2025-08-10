@@ -26,7 +26,7 @@ Customize your project's appearance using CSS variables and custom stylesheets. 
 
 ### Custom styling
 - **CSS variables** - Override [CSS variables](./css-variables/index.md) to customize colors, spacing, typography, and component appearance
-- **Custom stylesheets** - Add custom CSS rules in your `@theme/styles.css` file
+- **Custom stylesheets** - Add custom CSS rules in your `@theme/styles.css` file using the [custom styling guide](./styling.md)
 - **Color mode styling** - Create custom styling for light and dark modes
 
 ### Component styling

@@ -300,10 +300,10 @@ navbar:
 
 ## Resources
 
-- [Navigation elements](../navigation/index.md) - Overview of all navigation components and patterns.
-- [Footer configuration](./footer.md) - Configure the footer navigation.
-- [Logo configuration](./logo.md) - Configure the logo that appears in the navbar.
-- [Localization](./l10n.md) - Configure navbar labels for multiple languages.
-- Use [front matter](./front-matter-config.md) to show or hide the navbar on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Navigation elements](../navigation/index.md)** - Overview of all navigation components and patterns for creating comprehensive site navigation structures
+- **[Footer configuration](./footer.md)** - Configure the footer navigation with links, copyright information, and organizational elements
+- **[Logo configuration](./logo.md)** - Configure the logo that appears in the navbar with brand customization and display options
+- **[Localization](./l10n.md)** - Configure navbar labels and text for multiple languages to support international audiences
+- **[Front matter configuration](./front-matter-config.md)** - Use front matter to show or hide the navbar on individual pages for custom page layouts
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
 

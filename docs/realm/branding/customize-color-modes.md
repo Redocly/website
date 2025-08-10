@@ -205,8 +205,8 @@ The first mode in the list is the default. See the [colorMode configuration](../
 
 ## Resources
 
-* [Custom styles](./customize-styles.md) - Customize the styling of your documentation using CSS.
-* [CSS variables](./css-variables/index.md) - Explore CSS variables you can use for styling.
-* [Branding overview](./index.md) - Learn about all branding and customization options.
-* [Component ejection](../customization/eject-components/index.md) - Learn how to eject and customize components.
-* [Color mode configuration](../config/color-mode.md) - Configuration options for color modes.
+- **[Custom styles guide](./customize-styles.md)** - Learn to customize your documentation's appearance using CSS variables and custom stylesheets for precise brand control
+- **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of CSS variables available for color mode customization and styling
+- **[Branding overview](./index.md)** - Explore all available branding and customization approaches from basic configuration to advanced component ejection
+- **[Component ejection guide](../customization/eject-components/index.md)** - Technical guide to ejecting and customizing components like ColorModeIcon for advanced color mode features
+- **[Color mode configuration](../config/color-mode.md)** - Configuration reference for setting up color modes, default modes, and mode-specific options

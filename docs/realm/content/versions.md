@@ -482,4 +482,4 @@ versions:
 
 ## Resources
 
-- Learn how to set up the sidebar in the [Sidebar configuration](../navigation/sidebars.md) documentation.
+- **[Sidebar configuration](../navigation/sidebars.md)** - Configure navigation structures and sidebar organization for versioned content with detailed syntax and options reference

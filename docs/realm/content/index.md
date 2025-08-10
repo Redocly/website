@@ -71,13 +71,13 @@ Use built-in functions for dynamic content generation and manipulation.
 ## Getting started
 
 1. **Structure your project** - Set up your content organization with the [project structure guide](./project-structure.md)
-2. **Add your content** - Start with [Markdown pages](./markdown.md) or [API documentation](./api-docs/add-openapi-docs.md)
-3. **Enhance with components** - Use [Markdoc tags](./markdoc-tags/tag-library.md) to add interactive elements
-4. **Manage versions** - Set up [content versioning](./versions.md) if needed for your project
+2. **Add your content** - Start with [Markdown pages](./markdown.md) or [API documentation](./api-docs/add-openapi-docs.md) using our enhanced Markdown features
+3. **Enhance with components** - Use [Markdoc tags](./markdoc-tags/tag-library.md) to add interactive elements like cards, tabs, and code groups
+4. **Manage versions** - Set up [content versioning](./versions.md) if needed for your project, and configure [navigation](../navigation/sidebars.md) for version-specific content
 
 ## Resources
 
-- Browse the complete [Markdoc tag library](./markdoc-tags/tag-library.md) for available components
-- Learn about [API documentation features](./api-docs/add-openapi-docs.md) and extensions
-- Explore [localization options](./localization/localize-content.md) for multi-language projects
-- Configure [content versions](./versions.md#versions-configuration-options) for your documentation releases
+- **[Markdoc tag library](./markdoc-tags/tag-library.md)** - Complete reference of available interactive components like cards, tabs, admonitions, and code groups
+- **[API documentation features](./api-docs/add-openapi-docs.md)** - Add OpenAPI, AsyncAPI, GraphQL, and SOAP API documentation with interactive features and extensions
+- **[Localization guide](./localization/localize-content.md)** - Translate your content into multiple languages with built-in localization features and UI label management
+- **[Content versioning](./versions.md#versions-configuration-options)** - Create and manage multiple versions of your documentation with automatic navigation and version switching

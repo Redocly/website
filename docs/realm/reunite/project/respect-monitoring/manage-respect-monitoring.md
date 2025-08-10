@@ -77,5 +77,5 @@ To archive a workflow:
 
 ## Resources
 
-* Learn how to configure Reunite to monitor the performance of APIs in the [Configure Respect Monitoring](./configure-respect-monitoring.md) how-to documentation.
-* Explore the Respect Monitoring `job` configuration options in the [reunite](../../../config/reunite.md) reference documentation.
+- **[Configure Respect Monitoring](./configure-respect-monitoring.md)** - Set up comprehensive API performance monitoring and reliability tracking with automated workflow execution
+- **[Reunite configuration reference](../../../config/reunite.md)** - Complete Respect Monitoring job configuration options for customizing monitoring behavior and thresholds

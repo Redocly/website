@@ -35,7 +35,7 @@ graph LR
 
 ```
 
-RBAC is declared as configuration. Each configuration entry describes a [resource](#resource-identifiers), and a list of [teams](../reunite/organization/teams.md) with [role](./roles.md) assignments.
+RBAC is declared as configuration. Each configuration entry describes a [resource](#resource-identifiers), and a list of [teams](../reunite/organization/teams.md) with [role](./roles.md) assignments. You can apply these configurations to [individual pages](./page-permissions.md) or [navigation elements](./links-and-groups-permissions.md).
 
 User authentication is handled through [SSO (single sign-on)](../reunite/organization/sso/sso.md), and authorization is determined by the roles and team memberships provided by your identity provider.
 
@@ -105,7 +105,7 @@ In this example, the `Writers` team has a `write` project role and can contribut
 
 ## Resources
 
-- Learn more about the access that can be granted in [Roles and permissions](./roles.md).
-- Learn about [teams and users](../reunite/organization/teams.md), including adding users to multiple teams.
-- See full configuration details in the [`rbac` configuration reference](../config/rbac.md).
-- See the configuration options for the [x-rbac](../content/api-docs/openapi-extensions/x-rbac.md) extension to control access to parts of your OpenAPI description files.
+- **[Roles and permissions](./roles.md)** - Explore the different user roles and permissions available for controlling access to your organization and projects
+- **[Teams and users management](../reunite/organization/teams.md)** - Configure teams and manage user assignments, including adding users to multiple teams for flexible access control
+- **[RBAC configuration reference](../config/rbac.md)** - Complete configuration details and options for implementing role-based access control in your projects
+- **[OpenAPI RBAC extension](../content/api-docs/openapi-extensions/x-rbac.md)** - Apply RBAC permissions to specific objects and sections within your OpenAPI description files

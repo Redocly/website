@@ -88,7 +88,7 @@ function processData() {
 ```
 ````
 
-Learn more about [code snippet configuration](../config/code-snippet.md) for all highlighting and annotation options.
+Learn more about [code snippet configuration](../config/code-snippet.md) for all highlighting and annotation options, and explore [Markdoc code tags](./markdoc-tags/code-group.md) for multi-language examples.
 
 ### File trees
 
@@ -281,9 +281,9 @@ Learn more about [table formatting](./markdoc-tags/table.md) for structured data
 
 ## Resources
 
-- [Markdoc tags reference](./markdoc-tags/tag-library.md) - Complete list of available tags
-- [Content reuse with partials](./markdoc-tags/partial.md) - Share content across pages
-- [Project structure](./project-structure.md) - Organize your content files
-- [Add links](./links.md) - Link between pages and sections
-- [Static assets](../customization/static-assets.md) - Host files with predictable URLs
-- [Markdoc configuration](../config/markdown.md) - Customize Markdown processing
+- **[Markdoc tags reference](./markdoc-tags/tag-library.md)** - Complete library of interactive components like cards, tabs, admonitions, and code groups for enhanced content
+- **[Content reuse with partials](./markdoc-tags/partial.md)** - Share and reuse content across multiple pages to maintain consistency and reduce duplication
+- **[Project structure guide](./project-structure.md)** - Organize your content files and directories for optimal navigation and maintenance
+- **[Links and navigation](./links.md)** - Create internal and external links with automatic validation and cross-references between pages and sections
+- **[Static assets management](../customization/static-assets.md)** - Host images, files, and other static resources with predictable URLs and optimization
+- **[Markdown configuration](../config/markdown.md)** - Customize Markdown processing, syntax highlighting, and rendering behavior

@@ -65,6 +65,6 @@ To prevent Auth0 from changing users' roles to the default organization role spe
 
 ## Resources
 
-- Learn more about the different IdP types in Reunite and how they apply to projects in the [Single Sign-on](sso.md) concept.
-- Follow steps for how to [Add an identity provider](./add-idp.md) in Reunite.
-- If you have already added multiple IdP types in Reunite, you can [Configure SSO](./configure-sso.md) to allow your users to use multiple IdP types for a project.
+- **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider types in Reunite and how they integrate with your project authentication
+- **[Add an identity provider](./add-idp.md)** - Step-by-step guide for adding identity providers in Reunite for centralized authentication management
+- **[Configure SSO](./configure-sso.md)** - Enable multiple identity provider types to give users flexible authentication options for your projects

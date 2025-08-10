@@ -94,7 +94,7 @@ openapi:
 
 ## Resources
 
-- [openapi](./index.md) - Learn more about using `openapi` configuration.
-- [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)
-- Explore other [configuration options](../index.md) for your project.
+- **[OpenAPI configuration](./index.md)** - Complete guide to OpenAPI configuration options for customizing API reference documentation
+- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - Official OpenAPI Specification documentation for understanding API description standards
+- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - Visual guide to OpenAPI specification structure and event configuration principles
+- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization

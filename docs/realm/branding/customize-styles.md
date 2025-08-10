@@ -96,10 +96,10 @@ When you save this file and run your project in development mode, the styling ch
 
 **Steps for customizing your project styling:**
 
-1. **Choose elements to style** - Identify which components or sections you want to customize
+1. **Choose elements to style** - Identify which components or sections you want to customize (see [table styling](./customize-tables.md) or [font customization](./customize-fonts.md) for specific guides)
 2. **Find the CSS variables** - Use browser developer tools or the [CSS variables reference](./css-variables/index.md) to identify the relevant variables
 3. **Override variables** - Add your custom values to the `@theme/styles.css` file
-4. **Test in both modes** - Ensure your styling works well in both light and dark modes
+4. **Test in both modes** - Ensure your styling works well in both light and dark modes using [color mode customization](./customize-color-modes.md)
 
 ## Apply custom classes or IDs
 
@@ -338,7 +338,7 @@ The following screenshots show the styling rules applied:
 
 ## Resources
 
-- [Customize color modes](./customize-color-modes.md) - Learn to style your project for color modes that your users switch between (light and dark)
-- [Branding overview](./index.md) - Overview of all branding and customization options.
-- [Concepts - Color mode](./color-mode.md) - Learn more about the color mode feature.
-- [CSS variables](./css-variables/index.md) - Explore CSS variables you can use for styling.
+- **[Color mode customization](./customize-color-modes.md)** - Create custom styling for light and dark modes with mode-specific color schemes and advanced CSS rules
+- **[Branding overview](./index.md)** - Explore all available branding and customization approaches from basic configuration to advanced component ejection
+- **[Color mode concepts](./color-mode.md)** - Understand how the color mode feature works and its CSS variable-based implementation
+- **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of available CSS variables for comprehensive styling customization

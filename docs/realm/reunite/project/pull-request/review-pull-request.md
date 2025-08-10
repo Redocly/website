@@ -76,7 +76,7 @@ After merging, the updates appear in the main branch and trigger a deployment to
 
 ## Resources
 
-- Learn how to [use the editor](../use-editor.md) to create content in Markdown and Markdoc.
-- See [Switch between projects](../switch-between-projects.md) if you work with multiple projects.
-- Learn about [Reunite](../../reunite.md), Redocly's cloud platform.
-- Configure [reunite](../../../config/reunite.md) to allow publishing builds with broken links or broken Markdoc syntax.
+- **[Use the editor](../use-editor.md)** - Create and edit content in Markdown and Markdoc with collaborative editing features and real-time preview capabilities
+- **[Switch between projects](../switch-between-projects.md)** - Efficiently navigate between multiple projects when working across different documentation initiatives
+- **[Reunite platform](../../reunite.md)** - Understand Redocly's cloud platform features for collaborative content management and workflow automation
+- **[Reunite configuration reference](../../../config/reunite.md)** - Configure deployment settings to allow publishing builds despite broken links or Markdoc syntax issues

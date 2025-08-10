@@ -32,7 +32,7 @@ To connect an Azure DevOps repository, you must first create a new Personal Acce
 
 ## Resources
 
-- Follow steps to [include remote content](../remote-content/index.md) from a different repository in your project.
-- Check out all the ways you can [use the Editor](../use-editor.md) in Reunite to create content.
-- Learn more about where you can view feedback and deployment details for [projects](../projects.md) in Reunite.
-- View the different options for configuring your project in the `redocly.yaml` file in the [Configuration reference documentation](../../../config/index.md).
+- **[Include remote content](../remote-content/index.md)** - Integrate content from external Azure DevOps repositories into your Reunite projects for unified documentation management
+- **[Use the Editor](../use-editor.md)** - Explore Reunite's collaborative editing environment for creating content with Azure DevOps integration and version control
+- **[Projects overview](../projects.md)** - Access feedback, deployment details, and project settings for Azure DevOps-connected documentation projects
+- **[Configuration reference](../../../config/index.md)** - Complete redocly.yaml configuration options for Azure DevOps integration, deployment pipelines, and project customization

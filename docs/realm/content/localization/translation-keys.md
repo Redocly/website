@@ -1338,4 +1338,4 @@ When creating or modifying translations with dynamic values, always preserve the
 
 ## Resources
 
-* Configure language support for your project using [l10n configuration](../../config/l10n.md).
+- **[Localization configuration](../../config/l10n.md)** - Configure language support, default locales, and localization behavior for your multi-language project

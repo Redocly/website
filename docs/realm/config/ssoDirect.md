@@ -316,5 +316,5 @@ ssoDirect:
 
 ## Resources
 
-- [rbac](../config/rbac.md) reference
-- [Role-based access control (RBAC)](../access/rbac.md) concept
+- **[RBAC configuration reference](./rbac.md)** - Complete configuration options for role-based access control integration with direct SSO authentication
+- **[Role-based access control (RBAC) concepts](../access/rbac.md)** - Understand RBAC fundamentals and how they work with direct SSO for comprehensive access management

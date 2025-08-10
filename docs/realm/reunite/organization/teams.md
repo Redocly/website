@@ -214,8 +214,8 @@ Delete a team from the **Teams** page using the following steps:
 
 ## Resources
 
-- To understand more about the different components involved in Redocly's RBAC, read the [Role-based access control (RBAC) concept documentation](../../access/rbac.md)
-- [Roles and permissions](../../access/roles.md) describe the access that can be granted
-- [How to configure RBAC](../../access/index.md) with additional information and examples for projects, pages, and navigation
-- [Manage people](manage-people.md) to add users to your organization
-- See full configuration details in the [`rbac` configuration reference](../../config/rbac.md)
+- **[Role-based access control (RBAC)](../../access/rbac.md)** - Understand the components and concepts behind Redocly's role-based access control system
+- **[Roles and permissions](../../access/roles.md)** - Complete reference for user roles and the specific access permissions that can be granted to team members
+- **[RBAC configuration guide](../../access/index.md)** - Configure role-based access control with examples for projects, pages, and navigation settings
+- **[People management](manage-people.md)** - Add and manage users within your organization for effective team collaboration
+- **[RBAC configuration reference](../../config/rbac.md)** - Complete technical configuration details and options for implementing role-based access control

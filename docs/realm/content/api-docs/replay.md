@@ -126,9 +126,9 @@ Users can complete the following tasks with Replay the API explorer:
 
 ## Resources
 
-- Generate reference documentation for your users by [Adding OpenAPI reference docs](./add-openapi-docs.md)
-- See how to [Try APIs with the mock server](./try-apis-with-mock-server.md) to get Replay set up how you like it
-- Learn how to [Configure the mock server](./configure-mock-server.md) and optimize how users use Replay to interact with API descriptions
-- View the configuration options available for the Mock server used in Replay in the [`mockServer` reference documentation](../../config/mock-server.md)
-- Control your API reference with the settings in [OpenAPI config reference](../../config/openapi/index.md)
-- Check the [`x-usePkce` OpenAPI extension](./openapi-extensions/x-use-pkce.md) to enable Proof Key for Code Exchange (PKCE) by default in Replay
+- **[Add OpenAPI reference docs](./add-openapi-docs.md)** - Generate comprehensive API reference documentation with interactive features for your users
+- **[Try APIs with mock server](./try-apis-with-mock-server.md)** - Set up and configure Replay for API testing with automatically generated mock responses
+- **[Configure mock server](./configure-mock-server.md)** - Optimize mock server behavior and customize how users interact with API descriptions through Replay
+- **[Mock server configuration reference](../../config/mock-server.md)** - Complete configuration options for the mock server used in Replay API testing
+- **[OpenAPI configuration reference](../../config/openapi/index.md)** - Control your API reference documentation appearance and behavior with comprehensive configuration settings
+- **[x-usePkce OpenAPI extension](./openapi-extensions/x-use-pkce.md)** - Enable Proof Key for Code Exchange (PKCE) by default in Replay for enhanced OAuth security

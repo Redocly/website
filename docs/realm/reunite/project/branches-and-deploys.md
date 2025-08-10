@@ -48,7 +48,7 @@ This systematic approach ensures that all your APIs are consistently processed a
 
 ## Resources
 
-- [Redocly CLI rules documentation](https://redocly.com/docs/cli/rules) for configuring linting rules in your `redocly.yaml`
-- [Decorators configuration](https://redocly.com/docs/cli/decorators) for transforming your API descriptions
-- [Bundle command reference](https://redocly.com/docs/cli/commands/bundle) for understanding the bundling process
-- [Redocly CLI cookbook](https://github.com/Redocly/redocly-cli-cookbook) for examples of rules, decorators, and advanced configurations
+- **[Redocly CLI rules documentation](https://redocly.com/docs/cli/rules)** - Configure linting rules in your redocly.yaml file to maintain API description quality and consistency
+- **[Decorators configuration](https://redocly.com/docs/cli/decorators)** - Transform and enhance your API descriptions with custom decorators during the build process
+- **[Bundle command reference](https://redocly.com/docs/cli/commands/bundle)** - Understand the API description bundling process for optimized deployment and distribution
+- **[Redocly CLI cookbook](https://github.com/Redocly/redocly-cli-cookbook)** - Practical examples of rules, decorators, and advanced CLI configurations for your projects

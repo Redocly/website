@@ -80,8 +80,8 @@ When users become members of a team, they are granted access based on the roles 
 
 ## Resources
 
-- To understand more about the different components involved in Redocly's RBAC, read the [Role-based access control (RBAC) concept documentation](./rbac.md).
-- [Teams and users](../reunite/organization/teams.md) can be configured as needed, including adding users to multiple teams.
-- [How to configure RBAC](./index.md) with additional information and examples for projects, pages, and navigation.
-- See full configuration details in the [`rbac` configuration reference](../config/rbac.md).
-- You can [link duplicate users](../reunite/organization/manage-people.md#link-duplicate-users) with the committer role to their Reunite user account so you don't have duplicate entries for a single user.
+- **[RBAC concepts](./rbac.md)** - Understand the different components involved in Redocly's role-based access control system and how they work together
+- **[Teams and users management](../reunite/organization/teams.md)** - Configure teams and manage user assignments, including adding users to multiple teams for flexible access control
+- **[RBAC configuration guide](./index.md)** - Step-by-step instructions for implementing RBAC with examples for projects, pages, and navigation
+- **[RBAC configuration reference](../config/rbac.md)** - Complete configuration details and options for role-based access control implementation
+- **[Link duplicate users](../reunite/organization/manage-people.md#link-duplicate-users)** - Resolve duplicate user entries by linking committer accounts to their Reunite user accounts
