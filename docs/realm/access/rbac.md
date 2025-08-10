@@ -1,8 +1,17 @@
 # Role-based access control (RBAC)
 
-Role-based access control (RBAC) controls the access level granted by team membership on the files and projects in your organization.
-After configuring RBAC, users are granted access to resources based on the set of permissions included in the roles assigned to the teams they are members of.
-Resources are scoped using resource identifiers.
+Role-based access control (RBAC) controls the **authorization** (what you can access) based on your roles and team membership.
+
+## Authentication vs Authorization
+
+**Authentication** identifies who you are through your identity provider (SSO).
+
+**Authorization** determines what you can access based on:
+- **Organization roles** from identity provider claims/attributes (when using SSO) or manual assignment (when using Redocly login)
+- **Project roles** assigned to teams you belong to
+- **Team membership** managed through identity provider (SSO teams) or through Redocly's Teams page (Reunite-managed teams)
+
+After authentication, users are granted access to resources based on the permissions included in their assigned roles.
 
 There are many components to setting up RBAC, the diagram below gives an overview of these components and how they relate to one another.
 
@@ -26,8 +35,9 @@ graph LR
 
 ```
 
-In summary, RBAC is declared as configuration. Each configuration entry describes a [resource](#resource-identifiers), and a list of [teams](../reunite/organization/teams.md) with [role](./roles.md) assignments.
-User authentication is done with [SSO (single sign-on)](../reunite/organization/sso/sso.md).
+RBAC is declared as configuration. Each configuration entry describes a [resource](#resource-identifiers), and a list of [teams](../reunite/organization/teams.md) with [role](./roles.md) assignments.
+
+User authentication is handled through [SSO (single sign-on)](../reunite/organization/sso/sso.md), and authorization is determined by the roles and team memberships provided by your identity provider.
 
 ## Resource identifiers
 

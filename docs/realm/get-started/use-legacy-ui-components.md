@@ -48,7 +48,7 @@ import { ThinTile, TileHeader, TileText, WideTile, Box, Flex, Jumbotron } from '
 ```
 
 You can use `.tsx` files in your project in two ways:
-- [Creating a page with React](../../customization/create-react-page.md), for example: `example.page.tsx`.
+- [Creating a page with React](../customization/create-react-page.md), for example: `example.page.tsx`.
 - Creating a component to use in your theme or a [Markdoc tag](https://redocly.com/docs/learn-markdoc/tags/tag-library), for example `SomeComponent.tsx`.
 
 Remember that legacy ui components _will not_ receive future improvements.
@@ -169,6 +169,6 @@ export const HeroSubtext = styled.div`
 
 ## Resources
 
-- [Migrate from legacy Portal](../../get-started/migrate-from-legacy-portal.md) - provides instructions on migrating from the Portal product.
+- [Migrate from legacy Portal](./migrate-from-legacy-portal.md) - provides instructions on migrating from the Portal product.
 - [Learn Markdoc](https://redocly.com/docs/learn-markdoc/tags/tag-library) - learn how Markdoc is used in technical writing.
-- [Create page with React](../../customization/create-react-page.md) - publish a page using React code instead of markup.
+- [Create page with React](../customization/create-react-page.md) - publish a page using React code instead of markup.

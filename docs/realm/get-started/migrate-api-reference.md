@@ -173,7 +173,7 @@ The following table shows how to update some commonly used configuration options
 ---
 
 - `hideTryItPanel` or the older `hideConsole`
-- Replaced by `hideReplay` as the "Try It" functionality is provided by [Replay](../setup/concepts/replay.md).
+- Replaced by `hideReplay` as the "Try It" functionality is provided by [Replay](../content/api-docs/replay.md).
 
 ---
 

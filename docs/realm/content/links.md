@@ -128,4 +128,4 @@ import { Link } from '@redocly/theme/components/Link/Link';
 
 ## Resources
 
-- [Add redirects](./add-redirects.md) to pages in your project.
+- [Add redirects](../config/redirects.md) to pages in your project.

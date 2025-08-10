@@ -111,9 +111,9 @@ You can also [set a custom domain](./project/custom-domain.md), [add environment
 
 ## Resources
 
-- Follow step-by-step instructions for [configuring the feedback mechanism](../setup/how-to/feedback/index.md) in the `redocly.yaml` file and viewing the data in Reunite.
+- Follow step-by-step instructions for [configuring the feedback mechanism](../config/feedback.md) in the `redocly.yaml` file and viewing the data in Reunite.
 - Learn more about the different ways you can [Manage projects](./project/manage-projects.md) in Reunite.
 - Discover more about pull requests, including how to [Open a pull request](./project/pull-request/open-pull-request.md), [Review a pull request](./project/pull-request/review-pull-request.md), and [Manage pull requests](./project/pull-request/manage-pull-requests.md).
 - Learn more about the [Remote content](./project/remote-content/remote-content.md) feature, including what the mount folder path is, and the difference between auto-sync and auto-merge.
 - To deploy regardless of link checker or Markdoc errors, see the [reunite](../config/reunite.md) configuration option reference page.
-- Discover the different kinds of [feedback](../setup/concepts/feedback.md) mechanisms you can choose from and the different options that can be configured for each one in your `redocly.yaml` file.
+- Discover the different kinds of [feedback](../config/feedback.md) mechanisms you can choose from and the different options that can be configured for each one in your `redocly.yaml` file.

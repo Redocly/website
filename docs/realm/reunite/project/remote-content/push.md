@@ -9,7 +9,7 @@ However in the situation where Redocly cannot be configured to access the remote
 
 Make sure you have the following before you begin:
 
-- [latest version of Realm](../../../content/realm-version.md)
+- [latest version of Realm](../../../get-started/upgrade-realm-version.md)
 - an existing Redocly project to add remote content to
 
 ## Add a remote to push content to

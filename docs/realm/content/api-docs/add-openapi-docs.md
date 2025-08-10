@@ -54,6 +54,6 @@ To add multiple OpenAPI descriptions using `group` keys, update your `sidebars.y
 
 - Organize multiple API descriptions by [Configuring a catalog](../../config/catalog-classic.md).
 - Help users find your content by [Configuring navigation in the sidebar](../../navigation/sidebars.md).
-- See the [Replay the API explorer](../../setup/concepts/replay.md) concept doc to learn more about making your API reference docs interactive.
+- See the [Replay the API explorer](./replay.md) to learn more about making your API reference docs interactive.
 - Use [OpenAPI extensions](./openapi-extensions/index.md) in your API description to produce richer documentation.
 - Check out the [OpenAPI](../../config/openapi/index.md) configuration reference to learn more about the configuration options you can apply to customize your OpenAPI description reference docs.

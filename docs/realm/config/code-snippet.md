@@ -500,6 +500,6 @@ Translation keys provide customization options for code snippet control texts. F
 
 - Use the [code-snippet Markdoc tag](../content/markdoc-tags/code-snippet.md) to display code snippets loaded from local files.
 - To configure the feedback mechanism that appears on all pages in your project by default, see the [`feedback`](./feedback.md) reference documentation.
-- Learn more about the report feedback mechanism that is included in all code snippets by default, see the [Feedback](../setup/concepts/feedback.md) concept documentation.
+- Learn more about the report feedback mechanism that is included in all code snippets by default, see the [Feedback](./feedback.md) configuration documentation.
 - Use [front matter](./front-matter-config.md) to configure code snippets on individual pages.
 - Explore other [configuration options](./index.md) for your project.

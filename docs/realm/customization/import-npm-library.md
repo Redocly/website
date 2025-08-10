@@ -28,7 +28,7 @@ If you are working in Reunite, you can install the library by adding it to the `
 }
 ```
 
-Follow the steps in [Run a specific version in Reunite](../content/realm-version.md#run-a-specific-version-in-reunite)
+Follow the steps in [Run a specific version in Reunite](../get-started/upgrade-realm-version.md#run-a-specific-version-in-reunite)
 to create a `package.json` file if you don't have one already.
 
 ## Import and use components

@@ -14,15 +14,33 @@ A combination of organization and project roles defines a user's access.
 
 ## Organization roles
 
-When users are invited to an organization, they are assigned to one of the following organization roles:
+Organization roles control access to your Redocly organization and are provided by your identity provider through claims or attributes, similar to how teams are configured.
 
-- `viewer`: Has read-only permission and restricted access.
-- `billing`: Can manage billing of the organization.
-- `member`: Can see other members of the organization. Cannot change access controls, invite people, see feedback, or manage organization settings.
-- `committer`: Automatically assigned to users who commit content to the project through an integrated Git connection or remote content source.
-  You cannot assign the committer role; it can only be automatically assigned.
-  Users with the committer role cannot access Reunite.
-- `owner`: Has permission to everything, including the ability to invite people, change access controls, and review feedback. Has admin access to all organization projects by default.
+### Reserved organization role names
+
+Redocly recognizes these special role names from your identity provider:
+
+- **`redocly.owners`** (`owner`): Has permission to everything, including the ability to invite people, change access controls, and review feedback. Has admin access to all organization projects by default.
+- **`redocly.members`** (`member`): Can see other members of the organization. Cannot change access controls, invite people, see feedback, or manage organization settings.
+- **`redocly.billing`** (`billing`): Can manage billing of the organization.
+- **`redocly.viewers`** (`viewer`): Has read-only permission and restricted access.
+
+### How organization roles are assigned
+
+Organization roles are assigned differently depending on your authentication method:
+
+**With SSO/Identity Provider:**
+- Roles are **automatically assigned based on claims or attributes** from your identity provider
+- Configure your identity provider to send the appropriate role claims (like `redocly.owners` or `redocly.members`) for each user
+- Roles assigned through SSO **override** any roles manually set in Redocly
+
+**With Redocly's login system:**
+- Organization owners can **manually assign roles** from the [People page](../reunite/organization/manage-people.md#change-organization-role)
+- Roles are set and managed directly within Redocly's interface
+
+### Special roles
+
+- **`committer`**: Automatically assigned to users who commit content to the project through an integrated Git connection or remote content source. You cannot assign the committer role; it can only be automatically assigned. Users with the committer role cannot access Reunite.
 
 {% admonition type="warning" name="Duplicate users" %}
 Users who commit content to your project either through an integrated Git connection of remote content source are automatically assigned a committer role and are displayed on your **People** page.

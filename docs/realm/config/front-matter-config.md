@@ -199,4 +199,4 @@ Use `redocly.yaml` for most configuration settings and use front matter only for
 
 - [Override a page template](../customization/custom-page-templates.md)
 - [Configure Redocly](./index.md) using the `redocly.yaml` file.
-- [Block search indexing](../navigation/search/block-search-index.md) using the `noindex` rule.
+- [Block search indexing](./seo.md#control-search-indexing) using the `noindex` rule.

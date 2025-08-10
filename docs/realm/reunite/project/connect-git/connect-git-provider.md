@@ -16,8 +16,24 @@ You can connect your Redocly project to the following Git repository hosting pro
 - [Azure DevOps](azure-devops.md)
 - [Bitbucket Cloud](bitbucket-cloud.md)
 
-{% admonition type="info" %}
-If you have a self-hosted instance of GitLab, or are on GitHub Enterprise you may need to allow certain IP addresses to connect to Redocly. See [allow IP addresses](../../../how-to/allow-ip-addresses.md) for more information.
+{% admonition type="info" name="Self-hosted Git providers" %}
+If you have a self-hosted instance of GitLab, or are on GitHub Enterprise you may need to allow certain IP addresses to connect to Redocly.
+
+Allow these IP addresses to ensure that Redocly can deploy previews and production updates based on changes you and your contributors make:
+
+**US region:**
+```sh
+3.211.34.228
+44.206.14.241
+54.156.60.142
+```
+
+**EU region:**
+```sh
+3.78.112.49
+52.58.255.31
+3.66.111.193
+```
 {% /admonition %}
 
 ## Resources

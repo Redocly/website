@@ -36,5 +36,5 @@ Users can remove product filtering of the search by clicking the **x** on the pr
 
 - See [products configuration](../config/products.md) for setup instructions and examples.
 - Learn how to set up versioned content in your project in the [Add versioned content](../content/versions.md) how-to documentation.
-- View the [Version configuration options](../content/versions-config.md) reference documentation to find the option in a `versions.yaml` file that sets the default version to display.
+- View the [Version configuration options](../content/versions.md#versions-configuration-options) reference documentation to find the option in a `versions.yaml` file that sets the default version to display.
 - Find the correct format and options to use when configuring the [`products` configuration option](../config/products.md) in the `redocly.yaml` configuration reference documentation.

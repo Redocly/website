@@ -58,7 +58,7 @@
   to: '/reunite/organization/manage-teams'
 # Setup feedback redirects
 '/setup/how-to/feedback/view-export-data':
-  to: '/reunite/project/view-export-data'
+  to: '/reunite/project/feedback'
 # Setup git-providers redirects
 '/setup/how-to/git-providers/azure-devops':
   to: '/reunite/project/connect-git/azure-devops'
@@ -121,9 +121,9 @@
 '/author/how-to/reuse-content':
   to: '/content/reuse-content'
 '/author/concepts/static-assets':
-  to: '/content/static-assets'
+  to: '/customization/static-assets'
 '/author/reference/versions-config':
-  to: '/content/versions-config'
+  to: '/content/versions'
 '/author/how-to/versions':
   to: '/content/versions'
 
@@ -297,7 +297,7 @@
 '/author/how-to/configure-nav/search/block-search-index':
   to: '/navigation/search/block-search-index'
 '/author/how-to/configure-nav/search/configure-search-facets':
-  to: '/navigation/search/configure-search-facets'
+  to: '/config/search'
 '/author/how-to/configure-nav/search/verify-site-ownership':
   to: '/navigation/search/verify-site-ownership'
 '/author/how-to/configure-nav/multi-product':
@@ -313,7 +313,31 @@
 '/author/how-to/configure-nav/sidebars':
   to: '/navigation/sidebars'
 '/extend/how-to/configure-search-facets':
-  to: '/navigation/search/configure-search-facets'
+  to: '/config/search'
+'/navigation/search/configure-search-facets':
+  to: '/config/search'
+'/navigation/search/add-sitemap':
+  to: '/config/seo#sitemaps'
+'/navigation/search/add-robots-file':
+  to: '/config/seo#robotstxt-file'
+'/navigation/search/block-search-index':
+  to: '/config/seo#control-search-indexing'
+'/navigation/search/verify-site-ownership':
+  to: '/config/seo#site-ownership-verification'
+'/setup/how-to/feedback/index':
+  to: '/config/feedback'
+'/setup/how-to/feedback/extend-feedback':
+  to: '/config/feedback#extend-feedback-forms'
+'/setup/concepts/feedback':
+  to: '/config/feedback'
+'/content/add-redirects':
+  to: '/config/redirects'
+'/content/realm-version':
+  to: '/get-started/upgrade-realm-version'
+'/content/static-assets':
+  to: '/customization/static-assets'
+'/content/reuse-content':
+  to: '/content/markdoc-tags/partial'
 
 # Extend redirects - Files moved from /extend/
 '/extend/how-to/eject-components':
@@ -402,3 +426,5 @@
   to: '/access/rbac'
 '/setup/concepts/roles':
   to: '/access/roles'
+'/setup/concepts/replay':
+  to: '/content/api-docs/replay'

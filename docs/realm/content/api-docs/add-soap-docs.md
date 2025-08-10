@@ -134,4 +134,4 @@ To add multiple WSDL files using `group` keys, update your `sidebars.yaml` file 
 
 - Organize multiple API descriptions by [Configuring a catalog](../../config/catalog-classic.md).
 - Help users find your content by [Configuring navigation in the sidebar](../../navigation/sidebars.md).
-- See the [Replay the API explorer](../../setup/concepts/replay.md) concept doc to learn more about making your API reference docs interactive.
+- See the [Replay the API explorer](./replay.md) to learn more about making your API reference docs interactive.

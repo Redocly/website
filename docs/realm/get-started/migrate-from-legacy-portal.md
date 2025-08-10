@@ -319,7 +319,7 @@ The following example shows the old and new admonition syntax:
 
 ##### Change reusable snippets
 
-Realm adds a Markdoc tag for [partials](https://redocly.com/docs/learn-markdoc/tags/partial), which is a big upgrade for working with [reusable content](../content/reuse-content.md).
+Realm adds a Markdoc tag for [partials](https://redocly.com/docs/learn-markdoc/tags/partial), which is a big upgrade for working with [reusable content](../content/markdoc-tags/partial.md).
 The developer portal's approach to reusable content, which used Markdown snippets in an HTML `<embed>` tag, is no longer supported.
 
 During migration, replace any embedded Markdown snippets with the new partials tag, as in the following example:
@@ -534,7 +534,7 @@ For **MDX files that combine Markdown and JSX**, use the following steps to upda
 Converting the filetype to Markdown and removing the JSX will allows Realm to render the _Markdown_ content from the migrated MDX files.
 However, rendering the JSX element requires additional work.
 
-You can [use the legacy UI components](../author/how-to/use-legacy-ui-components.md) to help with migration, but we recommend replacing them.
+You can [use the legacy UI components](./use-legacy-ui-components.md) to help with migration, but we recommend replacing them.
 
 ##### Change OpenApiTryIt component
 

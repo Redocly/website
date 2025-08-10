@@ -149,7 +149,7 @@ This proxy should:
 
 - Validate the access token received from the OAuth2 proxy.
 - Validate if the specific API operation is allowed by your custom authorization logic.
-  See the list of [Apigee API operations](../../setup/reference/apigee-api-operations.md) used by the Redocly adapter.
+  See the list of [Apigee API operations](./apigee-api-operations.md) used by the Redocly adapter.
 - Authorize the request with Apigee (for example using service account).
 - Forward request to the Apigee management API.
 
@@ -287,5 +287,5 @@ developerOnboarding:
 
 ## Resources
 
-- [List of used Apigee API endpoints](../../setup/reference/apigee-api-operations.md)
+- [List of used Apigee API endpoints](./apigee-api-operations.md)
 <!-- - TODO: Developer onboarding guide -->
