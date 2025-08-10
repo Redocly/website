@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 seo:
   title: Understanding the API registry basics
 ---

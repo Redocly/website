@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 tocMaxDepth: 2
 ---
 

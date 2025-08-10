@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 seo:
   title: Use the Reference docs CLI tool
 ---

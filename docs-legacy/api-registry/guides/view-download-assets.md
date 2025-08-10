@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Manage files
 
 After adding files to the API registry, you and your collaborators can preview files or download them to the local storage from your browser.

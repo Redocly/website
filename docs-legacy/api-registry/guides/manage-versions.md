@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Manage API versions
 
 ## Add a version

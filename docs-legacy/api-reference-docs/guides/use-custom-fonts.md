@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 seo:
   title: Use custom fonts in your API docs
 ---

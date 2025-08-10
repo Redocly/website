@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 redirects:
   - '/docs-legacy/workflows/manage-docs-access/': {}
 ---
