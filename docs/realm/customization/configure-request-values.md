@@ -64,8 +64,8 @@ The context parameter includes:
 - `userClaims`: Information about the authenticated user and their original IdP tokens (optional)
   - `email`: User email
   - `name`: User name
-  - `federatedAccessToken`: Access token of the original identity provider. Requires `OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
-  - `federatedIdToken`: ID token of the original identity provider. Requires `OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
+  - `federatedAccessToken`: Access token of the original identity provider. Requires `REDOCLY_OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
+  - `federatedIdToken`: ID token of the original identity provider. Requires `REDOCLY_OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
 - `info`: OpenAPI info object
 - `operation`: Details about the current API operation
   - `name`: Operation name
