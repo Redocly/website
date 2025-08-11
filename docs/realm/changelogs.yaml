@@ -1,4 +1,19 @@
 '@redocly/realm':
+  0.125.0-next.1:
+    timestamp: 1754918687000
+    changes:
+      minor:
+        - Added `dynamic` function to `@redocly/theme` for lazy loading components.
+      patch:
+        - Renamed environment variable `OAUTH_USE_INTROSPECT` to `REDOCLY_OAUTH_USE_INTROSPECT`.
+        - Made redirect destinations case-insensitive.
+        - 'Fixed issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+    dependencies:
+      '@redocly/theme': 0.57.0-next.1
+      '@redocly/asyncapi-docs': 1.2.0-next.1
+      '@redocly/graphql-docs': 1.2.0-next.0
+      '@redocly/openapi-docs': 3.13.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.10.0-next.1
   0.125.0-next.0:
     timestamp: 1754900020000
     changes:
@@ -3922,6 +3937,21 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.125.0-next.1:
+    timestamp: 1754918687000
+    changes:
+      minor:
+        - Added `dynamic` function to `@redocly/theme` for lazy loading components.
+      patch:
+        - Renamed environment variable `OAUTH_USE_INTROSPECT` to `REDOCLY_OAUTH_USE_INTROSPECT`.
+        - Made redirect destinations case-insensitive.
+        - 'Fixed issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+    dependencies:
+      '@redocly/theme': 0.57.0-next.1
+      '@redocly/asyncapi-docs': 1.2.0-next.1
+      '@redocly/graphql-docs': 1.2.0-next.0
+      '@redocly/openapi-docs': 3.13.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.10.0-next.1
   0.125.0-next.0:
     timestamp: 1754900020000
     changes:
@@ -7125,6 +7155,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.125.0-next.1:
+    timestamp: 1754918687000
+    changes:
+      minor:
+        - Added `dynamic` function to `@redocly/theme` for lazy loading components.
+      patch:
+        - Renamed environment variable `OAUTH_USE_INTROSPECT` to `REDOCLY_OAUTH_USE_INTROSPECT`.
+        - Made redirect destinations case-insensitive.
+        - 'Fixed issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+    dependencies:
+      '@redocly/theme': 0.57.0-next.1
+      '@redocly/asyncapi-docs': 1.2.0-next.1
+      '@redocly/graphql-docs': 1.2.0-next.0
+      '@redocly/openapi-docs': 3.13.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.10.0-next.1
   0.125.0-next.0:
     timestamp: 1754900020000
     changes:
@@ -10319,6 +10364,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.125.0-next.1:
+    timestamp: 1754918687000
+    changes:
+      minor:
+        - Added `dynamic` function to `@redocly/theme` for lazy loading components.
+      patch:
+        - Renamed environment variable `OAUTH_USE_INTROSPECT` to `REDOCLY_OAUTH_USE_INTROSPECT`.
+        - 'Fixed issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+    dependencies:
+      '@redocly/theme': 0.57.0-next.1
+      '@redocly/asyncapi-docs': 1.2.0-next.1
+      '@redocly/graphql-docs': 1.2.0-next.0
+      '@redocly/openapi-docs': 3.13.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.10.0-next.1
   0.125.0-next.0:
     timestamp: 1754900020000
     changes:
@@ -13513,6 +13572,15 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.57.0-next.1:
+    timestamp: 1754918687000
+    changes:
+      minor:
+        - Added `dynamic` function to `@redocly/theme` for lazy loading components.
+      patch:
+        - Fixed size and alignment issues for image icons to ensure consistent display across the UI.
+        - 'Fixed issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+    dependencies: {}
   0.57.0-next.0:
     timestamp: 1754900020000
     changes:
@@ -15603,6 +15671,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.13.0-next.1:
+    timestamp: 1754918687000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.16.0-next.1
   3.13.0-next.0:
     timestamp: 1754900020000
     changes:
@@ -19120,6 +19195,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.8.0-next.1:
+    timestamp: 1754918687000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.125.0-next.1
+      '@redocly/redoc': 0.125.0-next.1
+      '@redocly/redoc-reef': 0.125.0-next.1
+      '@redocly/redoc-revel': 0.125.0-next.1
+      '@redocly/theme': 0.57.0-next.1
   1.8.0-next.0:
     timestamp: 1754900020000
     changes:
@@ -22706,6 +22792,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.10.0-next.1:
+    timestamp: 1754918687000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.13.0-next.1
   0.10.0-next.0:
     timestamp: 1754900020000
     changes:
@@ -24699,6 +24792,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.16.0-next.1:
+    timestamp: 1754918687000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.57.0-next.1
   0.16.0-next.0:
     timestamp: 1754900020000
     changes:
@@ -25809,6 +25909,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.8.0-next.1:
+    timestamp: 1754918687000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.57.0-next.1
   0.8.0-next.0:
     timestamp: 1754900020000
     changes:
@@ -26921,6 +27028,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.2.0-next.1:
+    timestamp: 1754918687000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.57.0-next.1
+      '@redocly/openapi-docs': 3.13.0-next.1
   1.2.0-next.0:
     timestamp: 1754900020000
     changes:
