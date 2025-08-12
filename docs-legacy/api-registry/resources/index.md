@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 seo:
   title: API registry essentials
   description: Basic concepts of the API registry

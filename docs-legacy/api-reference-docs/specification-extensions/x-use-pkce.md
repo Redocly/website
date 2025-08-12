@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # x-usePkce
 
 {% admonition type="warning" name="Compatibility warning" %}

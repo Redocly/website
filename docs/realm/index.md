@@ -1,8 +1,9 @@
 ---
-sidebar: sidebars.yaml
+sidebar:
+  path: sidebars.yaml
 ---
 
-# Reunite + Realm system overview
+# Reunite + Realm overview
 
 Reunite and Realm work together to help you author, review, and publish world-class developer portals and API documentation.
 
@@ -74,6 +75,6 @@ Role-based access control (RBAC) applies to:
 ## Next steps
 
 - [Get started with Reunite](./get-started/start-reunite-editor.md)
-- [Structure your project](./author/concepts/project-structure.md)
-- [Customize your branding](./style/concepts/styling.md)
-- [Set up integrations](./setup/how-to/git-providers/connect-git-provider.md)
+- [Structure your project](./content/project-structure.md)
+- [Customize your branding](./branding/index.md)
+- [Set up integrations](./reunite/project/connect-git/connect-git-provider.md)

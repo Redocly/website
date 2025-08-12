@@ -18,8 +18,52 @@ Use the `search` configuration to:
 - Hide the search bar
 - Add keyboard shortcuts for search activation
 - Add suggested pages to the search modal
+- Configure search facets for advanced filtering
 
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "search"} /%}
+
+## Search engines
+
+Redocly supports two types of search engines for your project:
+
+1. **FlexSearch**: The default search engine that supports limited facets configuration. You can only adjust the [group facet](#group-facets).
+2. **Typesense**: An advanced search engine with full facets configuration capabilities. Requires an Enterprise or Enterprise+ plan.
+
+## Default search configuration
+
+### Default categories
+
+The default search configuration applies to all documents and includes two predefined search categories:
+
+- **Documentation**: Includes all Markdown files present in the project.
+- **API Reference**: All OpenAPI, GraphQL, AsyncAPI, and SOAP API definitions.
+
+These categories are configured using the `redocly_category` facet field and are visible when you open the search dialog.
+
+### Default facets
+
+For search engines that support full facets configuration capabilities (Typesense), Redocly provides an additional filter panel featuring predefined facets:
+
+```yaml
+search:
+  filters:
+    facets:
+      - name: Category
+        field: redocly_category
+        type: multi-select
+      - name: HTTP Method
+        field: httpMethod
+        type: tags
+      - name: HTTP Path
+        field: httpPath
+        type: multi-select
+      - name: API Title
+        field: apiTitle
+        type: multi-select
+      - name: API Version
+        field: apiVersion
+        type: select
+```
 
 ## Options
 
@@ -195,7 +239,59 @@ Redocly AI Search runs in **inference-only mode** and does not train or fine-tun
 For details, see the [AI Search data usage FAQ](../faq/ai-search-privacy.md).
 
 
+## Apply facets to files
+
+To apply facets to files, use metadata properties. You can assign specific metadata to your files, such as custom facet fields for advanced filtering or predefined ones like `redocly_category` for grouping.
+
+### Markdown files
+
+Apply facets to Markdown files using frontmatter:
+
+```yaml
+---
+metadata: 
+  redocly_category: Custom 
+  owner: Redocly
+---
+```
+
+### OpenAPI definitions
+
+Apply facets to OpenAPI definitions using the `x-metadata` extension:
+
+```yaml
+openapi: 3.0.0
+info:
+  version: 1.3.3
+  title: Swagger Petstore
+  x-metadata:
+    redocly_category: Custom
+    owner: Redocly
+```
+
+### Using metadataGlobs
+
+Use the `metadataGlobs` property in your `redocly.yaml` configuration file to apply facets to files using glob patterns:
+
+```yaml
+metadataGlobs:
+  'museum/**':
+    redocly_category: Museum
+  'payments/**':
+    redocly_category: Payments
+```
+
+## Group facets
+
+The group facet categorizes search results and is displayed in the top panel of the search dialog for quick switching between categories.
+
+{% admonition type="info" %}
+Only `redocly_category` facet field is used as a group facet.
+{% /admonition %}
+
 ## Examples
+
+### Basic configuration
 
 Hide the search bar:
 
@@ -224,28 +320,31 @@ search:
     - page: /catalog/
 ```
 
-Display the AI search button with a custom prompt:
+### Search facets
+
+Override the default `redocly_category` facet:
 
 ```yaml
 search:
-  ai:
-    hide: false
-    prompt: Speak only in rhymes
+  filters:
+    facets:
+      - name: Custom 
+        field: redocly_category
+        type: select           
 ```
 
-Set AI search suggestions:
+Create a custom facet:
 
 ```yaml
 search:
-  ai:
-    hide: false
-    suggestions:
-      - How to create a new API?
-      - What is Redocly?
-      - How to manage an organization?
+  filters:
+    facets:
+      - name: Owner
+        field: owner
+        type: select            
 ```
 
-Override default search facets:
+Override all default search facets:
 
 ```yaml
 search:
@@ -268,12 +367,35 @@ search:
         type: select
 ```
 
+### AI search
+
+Display the AI search button with a custom prompt:
+
+```yaml
+search:
+  ai:
+    hide: false
+    prompt: Speak only in rhymes
+```
+
+Set AI search suggestions:
+
+```yaml
+search:
+  ai:
+    hide: false
+    suggestions:
+      - How to create a new API?
+      - What is Redocly?
+      - How to manage an organization?
+```
+
 ## Resources
 
-- [Configure search facets](../extend/how-to/configure-search-facets.md)
-- [Configure localization](./l10n.md)
-- [Configure navbar](./navbar.md)
-- [Configure navigation elements in your project](../author/how-to/configure-nav/index.md)
-- [Predefined translation keys](../author/reference/translation-keys.md)
-- Use [front matter](./front-matter-config.md) to configure the behavior of the Search dialog on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[MetadataGlobs configuration](./metadata-globs.md)** - Configure metadata extraction patterns for enhanced search functionality and content organization
+- **[Localization configuration](./l10n.md)** - Configure search functionality for multiple languages and international content support
+- **[Configure navbar](./navbar.md)** - Configure navigation bar settings including search integration and search button customization
+- **[Navigation elements](../navigation/index.md)** - Configure navigation elements in your project for comprehensive site structure and search integration
+- **[Predefined translation keys](../content/localization/translation-keys.md)** - Use predefined translation keys for search interface localization and internationalization
+- **[Front matter configuration](./front-matter-config.md)** - Configure search dialog behavior on individual pages using front matter for granular control
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

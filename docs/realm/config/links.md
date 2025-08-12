@@ -155,4 +155,4 @@ The example above will produce following link tags:
 
 ## Resources
 
-- [Add custom CSS styles](../style/how-to/customize-styles.md)
+- **[Custom CSS styles](../branding/customize-styles.md)** - Customize link appearance and styling using CSS variables and custom stylesheets for brand consistency

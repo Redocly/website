@@ -46,7 +46,7 @@ Using the Museum API as an example, all the schemas are shown in the section cal
 
 ## Resources
 
-- [openapi](./index.md) - Learn more about using `openapi` configuration.
-- Use the [`x-tags` specification extension](../../author/reference/openapi-extensions/x-tags.md) to select which schemas to display in which sections for more fine-grained control of the output.
-- [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- Explore other [configuration options](../index.md) for your project.
+- **[OpenAPI configuration](./index.md)** - Complete guide to OpenAPI configuration options for customizing API reference documentation
+- **[x-tags specification extension](../../content/api-docs/openapi-extensions/x-tags.md)** - Use x-tags extension to control which schemas display in specific sections for fine-grained output customization
+- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - Official OpenAPI Specification documentation for understanding API description standards
+- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization

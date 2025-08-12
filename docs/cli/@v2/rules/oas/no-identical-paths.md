@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/no-identical-paths
+slug: /docs/cli/rules/oas/no-identical-paths
 ---
 
 # no-identical-paths
@@ -77,7 +77,7 @@ paths:
 ## Related rules
 
 - [no-ambiguous-paths](./no-ambiguous-paths.md)
-- [struct](./struct.md)
+- [struct](../common/struct.md)
 
 ## Resources
 

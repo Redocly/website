@@ -24,8 +24,8 @@ Remember that you need to include plugins in the `plugins` section before you ca
 
 ## Resources
 
-- [apis](./apis.md) configuration options allow setting per-API configuration in `redocly.yaml`.
-- [rules](./rules.md) settings define the linting rules that are used.
-- [decorators](./openapi/decorators.md) offer some transformations for your OpenAPI documents.
-- The [Redocly CLI cookbook](https://redocly.com/blog/redocly-cli-cookbook/) has many examples of plugins.
-- Explore other [configuration options](./index.md) for your project.
+- **[APIs configuration](./apis.md)** - Set per-API configuration options in redocly.yaml for customized plugin behavior across different API specifications
+- **[Rules configuration](./rules.md)** - Define linting rules that work with plugins for comprehensive API validation and quality enforcement
+- **[Decorators](./openapi/decorators.md)** - Apply transformations to your OpenAPI documents for enhanced functionality when used with plugins
+- **[Redocly CLI cookbook](https://redocly.com/blog/redocly-cli-cookbook/)** - Find many practical examples of plugins and their implementation in real-world scenarios
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

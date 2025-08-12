@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/spec-strict-refs
+slug: /docs/cli/rules/oas/spec-strict-refs
 ---
 
 # spec-strict-refs
@@ -89,7 +89,7 @@ responses:
 ## Related rules
 
 - [configurable rules](../configurable-rules.md)
-- [struct](./struct.md)
+- [struct](../common/struct.md)
 
 ## Resources
 

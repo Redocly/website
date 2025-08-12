@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/no-unused-components
+slug: /docs/cli/rules/oas/no-unused-components
 ---
 
 # no-unused-components
@@ -82,7 +82,7 @@ components:
 
 ## Related rules
 
-- [no-undefined-refs](./no-unresolved-refs.md)
+- [no-undefined-refs](../common/no-unresolved-refs.md)
 
 ## Resources
 

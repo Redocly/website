@@ -63,8 +63,8 @@ versionPicker:
 
 ## Resources
 
-- Learn how to configure your `versions.yaml` file to specify the default version to display in [Add multiple versions](../author/how-to/versions.md).
-- Find out how to organize your project if you have multiple products in [Add multiple projects](../author/how-to/multiple-products.md).
-- Add a language picker if you have your content translated into multiple languages by [localizing your project](../author/how-to/config-l10n/index.md).
-- Use [front matter](./front-matter-config.md) to toggle the visibility of the version picker on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Add multiple versions](../content/versions.md)** - Configure your versions.yaml file to specify the default version and manage multiple documentation versions
+- **[Products configuration](./products.md)** - Organize your project with multiple products and version management for complex documentation structures
+- **[Configure localization](./l10n.md)** - Add a language picker for content translated into multiple languages alongside version management
+- **[Front matter configuration](./front-matter-config.md)** - Toggle version picker visibility on individual pages using front matter for custom layouts
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

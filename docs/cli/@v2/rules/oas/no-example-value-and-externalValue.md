@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/no-example-value-and-externalValue
+slug: /docs/cli/rules/oas/no-example-value-and-externalValue
 ---
 
 # no-example-value-and-externalValue
@@ -98,7 +98,7 @@ requestBody:
 ## Related rules
 
 - [configurable rules](../configurable-rules.md)
-- [struct](./struct.md)
+- [struct](../common/struct.md)
 
 ## Resources
 

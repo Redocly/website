@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/spec-components-invalid-map-name
+slug: /docs/cli/rules/oas/spec-components-invalid-map-name
 ---
 
 # spec-components-invalid-map-name
@@ -90,7 +90,7 @@ components:
 ## Related rules
 
 - [configurable rules](../configurable-rules.md)
-- [struct](./struct.md)
+- [struct](../common/struct.md)
 
 ## Resources
 

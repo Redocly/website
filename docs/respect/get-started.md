@@ -99,5 +99,5 @@ You are ready to start trying Respect out yourself or learning more about the to
 
 - [Learn about Arazzo](../../learn/arazzo/what-is-arazzo.md)
 - The official [Arazzo specification](https://spec.openapis.org/arazzo/v1.0.1.html) reference.
-- View the [Respect command reference](/docs/respect/commands/respect) to find out what else you can do.
+- View the [Respect command reference](/docs/cli/commands/respect) to find out what else you can do.
 - Try to edit and expand on the example you created in this guide, creating workflows for your own APIs.

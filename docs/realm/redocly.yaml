@@ -104,7 +104,7 @@ rules:
       - is
       - can
   info-license: error
-  info-license-url: error
+  info-license-strict: error
   no-ambiguous-paths: error
   no-http-verbs-in-paths:
     severity: error
@@ -325,9 +325,6 @@ responseHeaders:
       value: noindex
 
 redirects:
-  '/author/reference/supported-file-types':
-    to: '/author/concepts/project-structure'
-  '/get-started/api-reference-starter':
-    to: '/get-started'
+  $ref: ./redirects.yaml
 
 telemetry: off

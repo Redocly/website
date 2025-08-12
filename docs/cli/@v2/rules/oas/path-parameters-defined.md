@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/path-parameters-defined
+slug: /docs/cli/rules/oas/path-parameters-defined
 ---
 
 # path-parameters-defined
@@ -67,7 +67,6 @@ paths:
 ## Related rules
 
 - [path-declaration-must-exist](./path-declaration-must-exist.md)
-- [path-excludes-patterns](./path-excludes-patterns.md)
 - [configurable rules](../configurable-rules.md)
 
 ## Resources

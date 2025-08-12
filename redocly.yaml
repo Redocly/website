@@ -1,6 +1,6 @@
 seo:
   title: Redocly
-  description: OpenAPI-generated documentation tool with 23k+ stars on Github - make APIs your company's superpower.
+  description: OpenAPI-generated documentation tool with 24k+ stars on Github - make APIs your company's superpower.
   siteUrl: https://redocly.com
   image: ./images/redocly-card.png
   lang: en-US
@@ -187,24 +187,37 @@ responseHeaders:
           https://js.hs-analytics.net
           https://js.hs-banner.com
           'sha256-M28mypAFwwpIwIF9e1/A6867PQiwVvOrdqFSTFSa8/U=' 
+          'sha256-Ed6Lei7deBSXT1iYYw0V36YZXaA4v7OsRknNjmNl/9c='
+          'sha256-uDN+KkW4ljf+D4DbsWP5KpxyfG/7h+LNmZxMzbz/+1E='
+          'sha256-9seBUu3uBabJT/26wJPQEjpi+FB2ayw9N8BnQJlh/ls='
+          'sha256-mqxawUgIH8vW3/GxWmOFDp5zt8IejNl5rNH2j9PXF88='
+          'sha256-wkSWDFufZapa7t3NvV+JhSRXHb/4CI3ZnaqCvg7byns='
           'sha256-Tq4uREmlYInMCBRtudvmIOCc+VdyPNg3t18I9xtvdgs=' 
           'sha256-/mLWo7as1uoH7YxKP28RczpTaAJYtZFOdU0Okz4RWRo=' 
           'sha256-vHWNkFcRXsOiOWmmubySLtLeZ3xAubNJpC7UdmQgSQU=' 
           'sha256-FHfozmosNdt5yUG9l8OmVM1S/oTxw2TNWHPejSjEr58='
           'sha256-2VNfiq6Um2ua9MLfzend4JESqZeD1VSgkWvUrPvrlZE='
-          'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no=';
+          'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no='
+          'sha256-9qgU5FDrauEgF+e1iJWvsh46OwsIkNOLjkXggr/02jk=';
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 
           'self'
           https://webhook.frontapp.com
+          https://api.rudderstack.com
+          https://j.clarity.ms
+          https://api.github.com
           https://api.rebilly.com
           https://forms.hsforms.com
-          https://hubspot-forms-static-embed.s3.amazonaws.com;
+          https://forms.hscollectedforms.net
+          https://www.google-analytics.com
+          https://redoclyrozwmb.dataplane.rudderstack.com
+          https://hubspot-forms-static-embed.s3.amazonaws.com
+          https://v.clarity.ms/collect;
         form-action 
           'self'
           https://forms.hsforms.com 
-          https://webhook.frontapp.com;
+          https://webhook.frontapp.com
           https:;
         style-src 'self' 'unsafe-inline'; 
         img-src 'self' data: https: blob:;"

@@ -45,12 +45,6 @@ Customize the behavior and appearance of integrated GraphQL documentation. Requi
 
 ---
 
-- [hidePaginationButtons](./hide-pagination-buttons.md)
-- boolean
-- Control the pagination buttons visibility of the GraphQL documentation.
-
----
-
 - [feedback](../feedback.md)
 - [Feedback object](../feedback.md#options)
 - Hide or customize the type of or text included in the feedback form that displays at the end of each endpoint.
@@ -59,5 +53,5 @@ Customize the behavior and appearance of integrated GraphQL documentation. Requi
 
 ## Resources
 
-- [GraphQL](https://graphql.org/)
-- [Add GraphQL documentation to your project](../../author/how-to/add-graphql-docs.md)
+- **[GraphQL](https://graphql.org/)** - Official GraphQL specification and documentation for understanding query language fundamentals
+- **[Add GraphQL documentation to your project](../../content/api-docs/add-graphql-docs.md)** - Step-by-step guide to adding GraphQL API documentation to your Redocly project

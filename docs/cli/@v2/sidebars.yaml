@@ -67,6 +67,7 @@
         - page: guides/migrate-from-openapi-cli.md
         - page: guides/migrate-from-spectral.md
         - page: guides/migrate-from-swagger-cli.md
+        - page: guides/migrate-to-v2.md
     - page: api-docs.md
       label: API docs
     - group: API governance
@@ -75,23 +76,28 @@
         - page: rules.md
           group: Rules and rulesets
           items:
+            - page: rules/spec-ruleset.md
             - page: rules/recommended.md
             - page: rules/minimal.md
-            - page: rules/spec-ruleset.md
             - page: rules/ruleset-templates.md
         - group: Built-in rules
           page: rules/built-in-rules.md
           items:
+            - separator: Common
+            - page: rules/common/struct.md
+            - page: rules/common/no-unresolved-refs.md
+            - page: rules/common/no-enum-type-mismatch.md
+            - page: rules/common/no-schema-type-mismatch.md
+            - page: rules/common/no-required-schema-properties-undefined.md
             - separator: OpenAPI
             - page: rules/oas/array-parameter-serialization.md
             - page: rules/oas/boolean-parameter-prefixes.md
             - page: rules/oas/component-name-unique.md
             - page: rules/oas/info-contact.md
             - page: rules/oas/info-license.md
-            - page: rules/oas/info-license-url.md
+            - page: rules/oas/info-license-strict.md
             - page: rules/oas/no-ambiguous-paths.md
             - page: rules/oas/no-empty-servers.md
-            - page: rules/oas/no-enum-type-mismatch.md
             - page: rules/oas/no-example-value-and-externalValue.md
             - page: rules/oas/no-http-verbs-in-paths.md
             - page: rules/oas/no-identical-paths.md
@@ -99,14 +105,12 @@
             - page: rules/oas/no-invalid-parameter-examples.md
             - page: rules/oas/no-invalid-schema-examples.md
             - page: rules/oas/no-path-trailing-slash.md
-            - page: rules/oas/no-required-schema-properties-undefined.md
-            - page: rules/oas/no-schema-type-mismatch.md
             - page: rules/oas/no-server-example-com.md
             - page: rules/oas/no-server-trailing-slash.md
             - page: rules/oas/no-server-variables-empty-enum.md
             - page: rules/oas/no-undefined-server-variable.md
-            - page: rules/oas/no-unresolved-refs.md
             - page: rules/oas/no-unused-components.md
+            - page: rules/oas/nullable-type-sibling.md
             - page: rules/oas/operation-2xx-response.md
             - page: rules/oas/operation-4xx-problem-details-rfc7807.md
             - page: rules/oas/operation-4xx-response.md
@@ -120,7 +124,6 @@
             - page: rules/oas/operation-tag-defined.md
             - page: rules/oas/parameter-description.md
             - page: rules/oas/path-declaration-must-exist.md
-            - page: rules/oas/path-excludes-patterns.md
             - page: rules/oas/path-not-include-query.md
             - page: rules/oas/path-parameters-defined.md
             - page: rules/oas/path-segment-plural.md
@@ -133,7 +136,6 @@
             - page: rules/oas/scalar-property-missing-example.md
             - page: rules/oas/security-defined.md
             - page: rules/oas/spec-components-invalid-map-name.md
-            - page: rules/oas/struct.md
             - page: rules/oas/spec-strict-refs.md
             - page: rules/oas/tag-description.md
             - page: rules/oas/tags-alphabetical.md

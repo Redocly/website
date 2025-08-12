@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/paths-kebab-case
+slug: /docs/cli/rules/oas/paths-kebab-case
 ---
 
 # paths-kebab-case
@@ -73,7 +73,6 @@ paths:
 
 ## Related rules
 
-- [path-excludes-patterns](./path-excludes-patterns.md)
 - [paths-segment-plural](./path-segment-plural.md)
 - [configurable rules](../configurable-rules.md)
 

@@ -76,4 +76,4 @@ responseHeaders:
 
 ## Resources
 
-- See how `responseHeaders` is used to [block search indexing](../setup/how-to/block-search-index.md#set-noindex-response-header).
+- **[Block search indexing](./seo.md#block-indexing-with-response-headers)** - Use responseHeaders to control search engine indexing and SEO optimization strategies

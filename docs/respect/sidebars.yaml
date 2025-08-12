@@ -16,15 +16,13 @@
     - page: guides/mtls-cli.md
       label: Use mTLS
 - group: Extensions
-  rbac:
-    corporate-sso: read
   items:
     - page: extensions/x-operation.md
       label: x-operation extension
-    - page: extensions/x-server-url.md
-      label: x-serverUrl extension
+    - page: extensions/x-security.md
+      label: x-security extension
 - group: Commands
   page: commands/index.md
   items:
-    - page: /docs/respect/commands/generate-arazzo
-    - page: /docs/respect/commands/respect
+    - page: /docs/cli/commands/generate-arazzo
+    - page: /docs/cli/commands/respect

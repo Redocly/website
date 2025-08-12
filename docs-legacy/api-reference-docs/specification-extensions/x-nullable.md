@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # x-nullable
 
 {% admonition type="info" name="Compatibility warning" %}

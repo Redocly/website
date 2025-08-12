@@ -95,8 +95,8 @@ When running `redocly bundle` with this config, the bundled API descriptions are
 
 ## Resources
 
-- [extends](./openapi/extends.md) sets the base ruleset to use.
-- [rules](./rules.md) settings define the linting rules that are used.
-- [decorators](./openapi/decorators.md) offer some transformations for your OpenAPI documents.
-- More information and examples of [per-API configuration](https://redocly.com/docs/cli/configuration/apis).
-- Explore other [configuration options](./index.md) for your project.
+- **[Extends configuration](./openapi/extends.md)** - Set the base ruleset to use for consistent API validation and linting across your documentation
+- **[Rules configuration](./rules.md)** - Define the linting rules that are used for API validation and quality enforcement
+- **[Decorators](./openapi/decorators.md)** - Apply transformations to your OpenAPI documents for enhanced functionality and custom modifications
+- **[Per-API configuration examples](https://redocly.com/docs/cli/configuration/apis)** - Detailed information and examples for configuring individual APIs with specific settings
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

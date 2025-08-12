@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/info-contact
+slug: /docs/cli/rules/oas/info-contact
 ---
 
 # info-contact
@@ -72,8 +72,8 @@ info:
 ## Related rules
 
 - [info-license](./info-license.md)
-- [info-license-url](./info-license-url.md)
-- [struct](./struct.md)
+- [info-license-strict](./info-license-strict.md)
+- [struct](../common/struct.md)
 - [configurable rules](../configurable-rules.md)
 
 ## Resources

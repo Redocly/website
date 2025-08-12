@@ -126,9 +126,9 @@ The example includes an example of including the plugin in your configuration.
 
 ## Resources
 
-- [apis](./apis.md) configuration options allow setting per-API configuration in `redocly.yaml`.
-- [decorators](./openapi/decorators.md) offer some transformations for your OpenAPI documents.
-- The [Redocly CLI cookbook](https://github.com/Redocly/redocly-cli-cookbook) is a great resource for configurable rules, plugins, and other examples.
-- Learn more about [rules](https://redocly.com/docs/cli/rules) overall.
-- Read the [documentation for configurable rules](https://redocly.com/docs/cli/rules/configurable-rules).
-- Explore other [configuration options](./index.md) for your project.
+- **[APIs configuration](./apis.md)** - Set per-API configuration options in redocly.yaml for granular control over different API specifications
+- **[Decorators](./openapi/decorators.md)** - Apply transformations to your OpenAPI documents for enhanced functionality and customization
+- **[Redocly CLI cookbook](https://github.com/Redocly/redocly-cli-cookbook)** - Comprehensive resource for configurable rules, plugins, and practical implementation examples
+- **[Rules documentation](https://redocly.com/docs/cli/rules)** - Complete guide to understanding and implementing linting rules for API documentation quality
+- **[Configurable rules documentation](https://redocly.com/docs/cli/rules/configurable-rules)** - Detailed documentation for customizing and configuring rule behavior
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

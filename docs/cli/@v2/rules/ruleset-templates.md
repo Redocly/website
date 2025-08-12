@@ -20,7 +20,6 @@ The minimal rulesets are a decent baseline that you can use to selective enable 
 rules:
   info-contact: off
   info-license: off
-  info-license-url: off
   info-license-strict: off
   tag-description: warn
   tags-alphabetical: off
@@ -43,21 +42,18 @@ rules:
   operation-operationId-url-safe: warn
   operation-singular-tag: off
   no-unresolved-refs: error
-  no-enum-type-mismatch: warn
   paths-kebab-case: off
   struct: error
   spec-strict-refs: off
   no-http-verbs-in-paths: off
   no-invalid-parameter-examples: off
   no-invalid-schema-examples: off
-  path-excludes-patterns: off
   path-http-verbs-order: off
   path-params-defined: off
   required-string-property-missing-min-length: off
   response-contains-header: off
   path-segment-plural: off
   scalar-property-missing-example: off
-  no-required-schema-properties-undefined: off
   no-invalid-media-type-examples: warn
   no-server-example.com: warn
   no-server-trailing-slash: error
@@ -75,6 +71,9 @@ rules:
   response-mime-type: off
   array-parameter-serialization: off
   no-duplicated-tag-names: off
+  no-required-schema-properties-undefined: warn
+  no-schema-type-mismatch: warn
+  no-enum-type-mismatch: warn
 ```
 
 ### Minimal ruleset: OpenAPI 3.0
@@ -83,7 +82,6 @@ rules:
 rules:
   info-contact: off
   info-license: off
-  info-license-url: off
   info-license-strict: off
   tag-description: warn
   tags-alphabetical: off
@@ -106,7 +104,6 @@ rules:
   operation-operationId-url-safe: warn
   operation-singular-tag: off
   no-unresolved-refs: error
-  no-enum-type-mismatch: warn
   nullable-type-sibling: warn
   paths-kebab-case: off
   struct: error
@@ -114,14 +111,12 @@ rules:
   no-http-verbs-in-paths: off
   no-invalid-parameter-examples: off
   no-invalid-schema-examples: off
-  path-excludes-patterns: off
   path-http-verbs-order: off
   path-params-defined: off
   required-string-property-missing-min-length: off
   response-contains-header: off
   path-segment-plural: off
   scalar-property-missing-example: off
-  no-required-schema-properties-undefined: off
   no-invalid-media-type-examples: warn
   no-server-example.com: warn
   no-server-trailing-slash: error
@@ -139,6 +134,9 @@ rules:
   response-mime-type: off
   array-parameter-serialization: off
   no-duplicated-tag-names: off
+  no-required-schema-properties-undefined: warn
+  no-schema-type-mismatch: warn
+  no-enum-type-mismatch: warn
 ```
 
 ### Minimal ruleset: OpenAPI 2.0
@@ -147,7 +145,6 @@ rules:
 rules:
   info-contact: off
   info-license: off
-  info-license-url: off
   info-license-strict: off
   tag-description: warn
   tags-alphabetical: off
@@ -170,26 +167,26 @@ rules:
   operation-operationId-url-safe: warn
   operation-singular-tag: off
   no-unresolved-refs: error
-  no-enum-type-mismatch: warn
   paths-kebab-case: off
   struct: error
   spec-strict-refs: off
   no-http-verbs-in-paths: off
   no-invalid-parameter-examples: off
   no-invalid-schema-examples: off
-  path-excludes-patterns: off
   path-http-verbs-order: off
   path-params-defined: off
   required-string-property-missing-min-length: off
   response-contains-header: off
   path-segment-plural: off
   scalar-property-missing-example: off
-  no-required-schema-properties-undefined: off
   boolean-parameter-prefixes: off
   request-mime-type: off
   response-contains-property: off
   response-mime-type: off
   no-duplicated-tag-names: off
+  no-required-schema-properties-undefined: warn
+  no-schema-type-mismatch: warn
+  no-enum-type-mismatch: warn
 ```
 
 ### Minimal ruleset: AsyncAPI 3.0
@@ -205,6 +202,9 @@ rules:
   channels-kebab-case: off
   no-channel-trailing-slash: off
   no-duplicated-tag-names: off
+  no-required-schema-properties-undefined: warn
+  no-enum-type-mismatch: warn
+  no-schema-type-mismatch: warn
 ```
 
 ### Minimal ruleset: AsyncAPI 2.6
@@ -220,6 +220,9 @@ rules:
   channels-kebab-case: off
   no-channel-trailing-slash: off
   no-duplicated-tag-names: off
+  no-required-schema-properties-undefined: warn
+  no-enum-type-mismatch: warn
+  no-schema-type-mismatch: warn
 ```
 
 ### Minimal ruleset: Arazzo 1.0
@@ -243,6 +246,9 @@ rules:
   no-x-security-scheme-name-without-openapi: off
   x-security-scheme-required-values: off
   no-x-security-scheme-name-in-workflow: off
+  no-required-schema-properties-undefined: warn
+  no-enum-type-mismatch: warn
+  no-schema-type-mismatch: warn
 ```
 
 ## Recommended rulesets
@@ -257,7 +263,6 @@ There is also a "recommended-strict" ruleset which is identical but with all `wa
 rules:
   info-contact: off
   info-license: warn
-  info-license-url: off
   info-license-strict: warn
   tag-description: warn
   tags-alphabetical: off
@@ -280,79 +285,21 @@ rules:
   security-defined: error
   operation-singular-tag: off
   no-unresolved-refs: error
-  no-enum-type-mismatch: error
   paths-kebab-case: off
   struct: error
   spec-strict-refs: off
   no-http-verbs-in-paths: off
   no-invalid-parameter-examples: off
   no-invalid-schema-examples: off
-  path-excludes-patterns: off
   path-http-verbs-order: off
   path-params-defined: off
   path-segment-plural: off
   required-string-property-missing-min-length: off
   response-contains-header: off
   scalar-property-missing-example: off
-  no-required-schema-properties-undefined: off
-oas3_1Rules:
-  info-contact: off
-  info-license: warn
-  info-license-url: off
-  info-license-strict: warn
-  tag-description: warn
-  tags-alphabetical: off
-  parameter-description: off
-  no-path-trailing-slash: error
-  no-identical-paths: error
-  no-ambiguous-paths: warn
-  path-declaration-must-exist: error
-  path-not-include-query: error
-  path-parameters-defined: error
-  operation-description: off
-  operation-2xx-response: warn
-  operation-4xx-response: warn
-  operation-operationId: warn
-  operation-summary: error
-  operation-operationId-unique: error
-  operation-operationId-url-safe: error
-  operation-parameters-unique: error
-  operation-tag-defined: off
-  security-defined: error
-  operation-singular-tag: off
-  no-unresolved-refs: error
+  no-required-schema-properties-undefined: warn
+  no-schema-type-mismatch: error
   no-enum-type-mismatch: error
-  paths-kebab-case: off
-  struct: error
-  spec-strict-refs: off
-  no-http-verbs-in-paths: off
-  no-invalid-parameter-examples: off
-  no-invalid-schema-examples: off
-  path-excludes-patterns: off
-  path-http-verbs-order: off
-  path-params-defined: off
-  path-segment-plural: off
-  required-string-property-missing-min-length: off
-  response-contains-header: off
-  scalar-property-missing-example: off
-  no-required-schema-properties-undefined: off
-  no-invalid-media-type-examples: warn
-  no-server-example.com: warn
-  no-server-trailing-slash: error
-  no-empty-servers: error
-  no-example-value-and-externalValue: error
-  no-unused-components: warn
-  no-undefined-server-variable: error
-  no-server-variables-empty-enum: error
-  spec-components-invalid-map-name: error
-  boolean-parameter-prefixes: off
-  component-name-unique: off
-  operation-4xx-problem-details-rfc7807: off
-  request-mime-type: off
-  response-contains-property: off
-  response-mime-type: off
-  array-parameter-serialization: off
-  no-duplicated-tag-names: warn
 ```
 
 ### Recommended ruleset: OpenAPI 3.0
@@ -361,7 +308,6 @@ oas3_1Rules:
 rules:
   info-contact: off
   info-license: warn
-  info-license-url: off
   info-license-strict: warn
   tag-description: warn
   tags-alphabetical: off
@@ -384,7 +330,6 @@ rules:
   security-defined: error
   operation-singular-tag: off
   no-unresolved-refs: error
-  no-enum-type-mismatch: error
   nullable-type-sibling: error
   paths-kebab-case: off
   struct: error
@@ -392,14 +337,12 @@ rules:
   no-http-verbs-in-paths: off
   no-invalid-parameter-examples: off
   no-invalid-schema-examples: off
-  path-excludes-patterns: off
   path-http-verbs-order: off
   path-params-defined: off
   path-segment-plural: off
   required-string-property-missing-min-length: off
   response-contains-header: off
   scalar-property-missing-example: off
-  no-required-schema-properties-undefined: off
   no-invalid-media-type-examples: warn
   no-server-example.com: warn
   no-server-trailing-slash: error
@@ -417,6 +360,9 @@ rules:
   response-mime-type: off
   array-parameter-serialization: off
   no-duplicated-tag-names: warn
+  no-required-schema-properties-undefined: warn
+  no-schema-type-mismatch: error
+  no-enum-type-mismatch: error
 ```
 
 ### Recommended ruleset: OpenAPI 2.0
@@ -425,7 +371,6 @@ rules:
 rules:
   info-contact: off
   info-license: warn
-  info-license-url: off
   info-license-strict: warn
   tag-description: warn
   tags-alphabetical: off
@@ -448,26 +393,26 @@ rules:
   security-defined: error
   operation-singular-tag: off
   no-unresolved-refs: error
-  no-enum-type-mismatch: error
   paths-kebab-case: off
   struct: error
   spec-strict-refs: off
   no-http-verbs-in-paths: off
   no-invalid-parameter-examples: off
   no-invalid-schema-examples: off
-  path-excludes-patterns: off
   path-http-verbs-order: off
   path-params-defined: off
   path-segment-plural: off
   required-string-property-missing-min-length: off
   response-contains-header: off
   scalar-property-missing-example: off
-  no-required-schema-properties-undefined: off
   boolean-parameter-prefixes: off
   request-mime-type: off
   response-contains-property: off
   response-mime-type: off
   no-duplicated-tag-names: warn
+  no-required-schema-properties-undefined: warn
+  no-schema-type-mismatch: error
+  no-enum-type-mismatch: error
 ```
 
 ### Recommended ruleset: AsyncAPI 3.0
@@ -483,6 +428,9 @@ rules:
   channels-kebab-case: off
   no-channel-trailing-slash: off
   no-duplicated-tag-names: warn
+  no-required-schema-properties-undefined: warn
+  no-schema-type-mismatch: error
+  no-enum-type-mismatch: error
 ```
 
 ### Recommended ruleset: AsyncAPI 2.6
@@ -498,6 +446,9 @@ rules:
   channels-kebab-case: off
   no-channel-trailing-slash: off
   no-duplicated-tag-names: warn
+  no-required-schema-properties-undefined: warn
+  no-schema-type-mismatch: error
+  no-enum-type-mismatch: error
 ```
 
 ### Recommended ruleset: Arazzo 1.0
@@ -521,6 +472,9 @@ rules:
   no-x-security-scheme-name-without-openapi: off
   x-security-scheme-required-values: off
   no-x-security-scheme-name-in-workflow: 'off',
+  no-required-schema-properties-undefined: warn
+  no-schema-type-mismatch: error
+  no-enum-type-mismatch: error
 ```
 
 ## Resources

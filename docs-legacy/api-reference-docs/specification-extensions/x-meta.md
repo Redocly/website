@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # x-meta
 
 {% admonition type="info" name="Important" %}

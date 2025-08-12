@@ -86,5 +86,5 @@ When the OpenAPI description references a URL that matches these patterns, it is
 
 ## Resources
 
-- [How to use `$ref` in OpenAPI](https://redocly.com/docs/resources/ref-guide/).
-- Explore other [configuration options](../index.md) for your project.
+- **[How to use $ref in OpenAPI](https://redocly.com/docs/resources/ref-guide/)** - Complete guide to using references in OpenAPI specifications for better organization and reusability
+- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization

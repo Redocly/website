@@ -6,7 +6,7 @@ excludeFromSearch: true
 
 Generate a personal API key to use some of our products:
 
-- The [`@redocly/cli` `login` command](../../docs/cli/commands/login) (where you can subsequently use the [preview-docs](../../docs/cli/commands/preview-docs) or [push](../../docs/cli/commands/push) commands)
+- The [`@redocly/cli` `login` command](../../docs/cli/v1/commands/login) (where you can subsequently use the [preview-docs](../../docs/cli/v1/commands/preview-docs) or [push](../../docs/cli/v1/commands/push) commands)
 - Our [VS Code extension](https://marketplace.visualstudio.com/items?itemName=Redocly.openapi-vs-code)
 - Access-protected API snapshots
 

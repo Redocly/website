@@ -12,7 +12,7 @@ plans:
 # `requiresLogin`
 
 This configuration option makes all your content private.
-Only authenticated users, who are verified through either Redocly or an identity provider (IdP) you [added in Reunite](../setup/how-to/add-idp.md) can access your project.
+Only authenticated users, who are verified through either Redocly or an identity provider (IdP) you [added in Reunite](../reunite/organization/sso/add-idp.md) can access your project.
 
 {% admonition type="info" %}
 The **requiresLogin** option cannot be used in conjunction with the **rbac**.
@@ -27,7 +27,7 @@ Below is an example of how to protect your entire project by requiring login:
 requiresLogin: true
 ```
 
-## Related options
+## Resources
 
-- View all the options available for configuring RBAC in the [rbac reference documentation](../config/rbac.md).
-- Discover the options available for configuring SSO in the [sso reference documentation](../config/sso.md).
+- **[RBAC configuration](./rbac.md)** - Complete options for configuring role-based access control as an alternative to requiresLogin for granular permissions
+- **[SSO configuration](./sso.md)** - Discover options for configuring single sign-on to work with requiresLogin for streamlined user authentication

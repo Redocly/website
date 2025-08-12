@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Theming options for API docs
 
 {% admonition type="warning" name="Note" %}

@@ -66,4 +66,4 @@ The corresponding API endpoints are:
 
 ## Resources
 
-- Learn more in the [API functions reference](../extend/api-functions/api-functions-reference.md).
+- **[API functions reference](../customization/api-functions/api-functions-reference.md)** - Complete reference for available API functions and their implementation in your documentation projects

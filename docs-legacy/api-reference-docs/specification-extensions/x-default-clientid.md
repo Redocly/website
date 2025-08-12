@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # x-defaultClientId
 
 ## Usage

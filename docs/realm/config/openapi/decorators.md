@@ -81,9 +81,9 @@ The example includes adding the plugin, partly to remind you that this is also n
 
 ## Resources
 
-- [apis](../apis.md) configuration options allow setting per-API configuration in `redocly.yaml`.
-- [rules](../rules.md) settings define the linting rules that are used.
-- Learn more about [decorators](https://redocly.com/docs/cli/decorators).
+- **[APIs configuration](../apis.md)** - Set per-API configuration options in redocly.yaml for granular control over different API specifications
+- **[Rules configuration](../rules.md)** - Define linting rules that work with decorators for comprehensive API validation and transformation
+- **[Decorators documentation](https://redocly.com/docs/cli/decorators)** - Complete guide to decorators for transforming and modifying OpenAPI documents during processing
 - To build your own decorators, you can use [custom plugins](https://redocly.com/docs/cli/custom-plugins/custom-decorators).
 - The [Redocly CLI cookbook](https://github.com/Redocly/redocly-cli-cookbook) is a great resource for learning and sharing decorators and custom plugins.
 - Explore other [configuration options](../index.md) for your project.

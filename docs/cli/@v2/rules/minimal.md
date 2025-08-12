@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/minimal
+slug: /docs/cli/rules/minimal
 ---
 
 # Minimal ruleset
@@ -10,8 +10,8 @@ Errors:
 
 - [no-server-trailing-slash](./oas/no-server-trailing-slash.md)
 - [no-server-variables-empty-enum](./oas/no-server-variables-empty-enum.md)
-- [no-unresolved-refs](./oas/no-unresolved-refs.md)
-- [struct](./oas/struct.md)
+- [no-unresolved-refs](./common/no-unresolved-refs.md)
+- [struct](./common/struct.md)
 - [stepId-unique](./arazzo/stepId-unique.md)
 - [workflowId-unique](./arazzo/workflowId-unique.md)
 
@@ -20,7 +20,9 @@ Warnings:
 - [configurable rules](./configurable-rules.md)
 - [no-ambiguous-paths](./oas/no-ambiguous-paths.md)
 - [no-empty-servers](./oas/no-empty-servers.md)
-- [no-enum-type-mismatch](./oas/no-enum-type-mismatch.md)
+- [no-enum-type-mismatch](./common/no-enum-type-mismatch.md)
+- [no-required-schema-properties-undefined](./common/no-required-schema-properties-undefined.md)
+- [no-schema-type-mismatch](./common/no-schema-type-mismatch.md)
 - [no-example-value-and-externalValue](./oas/no-example-value-and-externalValue.md)
 - [no-identical-paths](./oas/no-identical-paths.md)
 - [no-invalid-media-type-examples](./oas/no-invalid-media-type-examples.md)

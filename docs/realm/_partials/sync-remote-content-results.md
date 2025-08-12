@@ -4,7 +4,7 @@ If Reunite detects changes between the remote content source and your project, i
 * Overwrites the files in your project's remote content folder with the remote source content.
 * Starts a preview build.
 
-If the remote content folder does not have [Auto-merge](../setup/concepts/remote-content.md#auto-sync-and-auto-merge) enabled in Reunite, you must review the pull request and merge the content manually.
+If the remote content folder does not have [Auto-merge](../reunite/project/remote-content/remote-content.md#auto-sync-and-auto-merge) enabled in Reunite, you must review the pull request and merge the content manually.
 
 If Auto-merge is enabled and CI checks pass, Reunite additionally performs these operations:
 

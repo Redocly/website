@@ -172,5 +172,5 @@ scripts:
 
 ## Resources
 
-- [Configure links](links.md)
-- Explore other [configuration options](./index.md) for your project.
+- **[Configure links](./links.md)** - Configure link behavior and styling to work seamlessly with custom scripts and interactive elements
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

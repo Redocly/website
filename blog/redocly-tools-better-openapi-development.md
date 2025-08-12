@@ -48,7 +48,7 @@ As your OpenAPI description grows in size and complexity, new challenges emerge 
 
 ### Previewing the docs
 
-The ability to [preview](https://redocly.com/docs/cli/commands/preview-docs/) the API reference docs the same way an end-user will experience them is essential. Great docs need to be reviewed for _more_ than just technical correctness. Previewing the API reference docs was especially useful when working with nested schemas and example payloads.
+The ability to [preview](https://redocly.com/docs/cli/commands/preview/) the API reference docs the same way an end-user will experience them is essential. Great docs need to be reviewed for _more_ than just technical correctness. Previewing the API reference docs was especially useful when working with nested schemas and example payloads.
 
 ![Console output from running the "redocly preview docs" command. The output contains a hyperlink to localhost, where the preview is running locally.](images/redocly-tools-better-openapi-development/preview-docs-console.png)
 ![The API reference docs preview for the Museum OpenAPI running on localhost.](images/redocly-tools-better-openapi-development/preview-docs.png )

@@ -10,7 +10,7 @@ plans:
 ---
 # `rbac`
 
-Access control is done using [RBAC (role-based access control)](../setup/concepts/rbac.md).
+Access control is done using [RBAC (role-based access control)](../access/rbac.md).
 Use team-based access controls to assign permissions required to files and project access.
 By default, all authenticated users are assigned to the `authenticated` team, and unauthenticated users are automatically assigned to the `anonymous` team.
 All other configuration is done through team-role mapping.
@@ -207,6 +207,71 @@ rbac:
     Developer: write
 ```
 
+### Complete RBAC setup
+
+The following example shows a comprehensive RBAC configuration with project access, content access, environment variables, and authentication requirements:
+
+```yaml {% title="redocly.yaml" %}
+rbac:
+  # Project administration access
+  reunite:
+    Developers: write
+    Writers: read
+    Admin: admin
+  
+  # File and content access
+  content:
+    # Default permissions for all files
+    '**':
+      Developers: maintain
+      Writers: write
+      authenticated: read
+    
+    # Specific permissions for sensitive files
+    'security/*.md':
+      Admin: admin
+      Developers: read
+    
+    # API documentation access
+    'apis/**':
+      Developers: write
+      Writers: read
+
+  # Feature access
+  features:
+    aiSearch:
+      authenticated: read
+```
+
+### Using environment variables
+
+Environment variables can be used for role assignments, useful for different deployment environments:
+
+```yaml {% title="redocly.yaml" %}
+rbac:
+  reunite:
+    Writers: '{{process.env.RBAC_WRITERS_ROLE}}'
+    Developers: '{{process.env.RBAC_DEVELOPERS_ROLE}}'
+  content:
+    '**':
+      Developers: '{{process.env.RBAC_DEFAULT_ROLE}}'
+      authenticated: read
+```
+
+### Require authentication
+
+To require users to log in before viewing any content:
+
+```yaml {% title="redocly.yaml" %}
+rbac:
+  content:
+    '**':
+      authenticated: read
+      anonymous: none
+```
+
+This configuration creates a login page where users authenticate using configured identity providers.
+
 ### Pattern-based access
 
 Define the folders and the patterns that the team names match.
@@ -273,8 +338,7 @@ rbac:
 
 ## Resources
 
-- [Role-based access control (RBAC)](../setup/concepts/rbac.md) concept
-- [How to configure RBAC](../setup/how-to/rbac/index.md) with additional information and examples for projects, pages, and navigation.
-- [Pattern-based team access](../setup/how-to/rbac/pattern-access.md) guide and usage examples.
-- Use [front matter](./front-matter-config.md) to configure role-based access on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Role-based access control (RBAC) concepts](../access/rbac.md)** - Understand the fundamentals and components of RBAC systems for comprehensive access management
+- **[RBAC configuration guide](../access/index.md)** - Complete implementation guide with examples for projects, pages, and navigation access control
+- **[Front matter configuration](./front-matter-config.md)** - Configure role-based access on individual pages using front matter for granular permission control
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

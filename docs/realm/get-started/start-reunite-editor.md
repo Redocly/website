@@ -7,9 +7,10 @@ This guide is to help you get started with a Redocly project using the Reunite e
 
 Make sure you have the following before you begin:
 
+- A [Redocly account with an organization](https://auth.cloud.redocly.com/registration).
 - A project using the **Starter** template in your Reunite organization.
 
-  See [Create a project](../setup/how-to/manage-projects.md#create-a-project) for instructions on creating a project.
+  See [Create a project](../reunite/project/manage-projects.md#create-a-project) for instructions on creating a project.
 
 ## Create a branch
 
@@ -47,7 +48,7 @@ The Reunite editor supports the following markup options:
 
 - [CommonMark Markdown](https://commonmark.org/)
 - [Markdoc tags](https://redocly.com/docs/learn-markdoc/tags/tag-library/)
-- [Mermaid diagrams](../author/how-to/add-diagram.md)
+- [Mermaid diagrams](../content/add-diagram.md)
 
 You can also use the editor toolbar to add the following items:
 
@@ -80,7 +81,7 @@ The Webview live preview pane allows you to view formatting updates to be sure t
 ![Screenshot of Webview preview pane](./images/webview-preview.png)
 
 Also, you can change the view to meet your needs. For instance, if you want to see how the main landing page renders on mobile screens.
-See [Use the Webview](../author/how-to/use-webview.md) to learn more about the options you have when using this Webview live preview pane.
+See [Use the Webview](../reunite/project/use-webview.md) to learn more about the options you have when using this Webview live preview pane.
 
 ### In the deployment preview
 
@@ -96,7 +97,7 @@ The deployment preview includes all changes you have committed to your branch.
   A _commit_ is a way of storing your changes to the branch in Git.
   You can continue to make updates to your branch and make additional commits.
 
-  After you have committed, you can [open a pull request](../author/how-to/open-pull-request.md) with your commits.
+  After you have committed, you can [open a pull request](../reunite/project/pull-request/open-pull-request.md) with your commits.
   _Pull requests_ show the differences between your branch and the default (main) branch, run checks to be sure you are not adding broken links to the production build, create a deployment preview build, and give other users an opportunity to comment on the changes before they are merged with the main branch.
 </details>
 
@@ -263,7 +264,7 @@ To add a `logo` configuration:
     If you used a different image or updated the logo name - update the file path in the configuration to reflect your changes.
    {% /admonition %}
 You should see the logo update immediately in the live preview pane.
-If you don't see your changes, try refreshing the live preview pane by clicking the [Reload](../author/how-to/use-webview.md#reload) button.
+If you don't see your changes, try refreshing the live preview pane by clicking the [Reload](../reunite/project/use-webview.md#reload) button.
 You can also commit your update to view it [in the preview build](#in-the-deployment-preview).
 
 The project is starting to look more like yours, but the colors could use some adjusting.
@@ -321,7 +322,7 @@ You can also use the color picker tool by hovering over the color square next to
 ![Screenshot of the color picker tool in the Reunite editor](./images/color-picker.png)
 
 You should see the headings' color update immediately in the live preview pane.
-If you don't see your changes, try restarting Webview by clicking the [Reload](../author/how-to/use-webview.md#reload) button.
+If you don't see your changes, try restarting Webview by clicking the [Reload](../reunite/project/use-webview.md#reload) button.
 You can also commit your update to view it [in the preview build](#in-the-deployment-preview).
 
 ## Next steps
@@ -329,7 +330,7 @@ You can also commit your update to view it [in the preview build](#in-the-deploy
 Now that you have started using the editor, check out the other ways you can customize your project with new content, configurations, or styles.
 
 - Learn more about Markdoc and how you can use it to add interactive elements to your Markdown documents in the [Markdown overview for technical writers](https://redocly.com/learn/markdoc).
-- Checkout [Configure sidebar groups](../author/how-to/configure-nav/configure-sidebar-groups.md) for details on configuring `sidebars.yaml` with nested items.
-- Find more CSS variables in the [CSS variables dictionary](../style/reference/css-variables/index.md) reference documentation.
+- Checkout [sidebars configuration](../navigation/sidebars.md) for details on configuring `sidebars.yaml` with nested items and groups.
+- Find more CSS variables in the [CSS variables dictionary](../branding/css-variables/index.md) reference documentation.
 - Explore the different configuration options available in the `redocly.yaml` file in the [Configure Redocly](../config/index.md) reference documentation.
-- Adjust your Reunite notification settings, connect to Git providers, and change Reunite's color mode in [User profile menu](../author/how-to/user-profile-menu.md).
+- Adjust your Reunite notification settings, connect to Git providers, and change Reunite's color mode in [User profile menu](../reunite/user-profile-menu.md).

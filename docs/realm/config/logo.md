@@ -13,7 +13,10 @@ plans:
 
 Use the `logo` section to display a custom logo in the project navbar.
 
-You must provide the path to the logo image as the value of the `image` property in the logo object. The image file may be external or must exist in the project.
+Provide the path to the logo image as the value of the `image` property in the logo object.
+The image file may be external or must exist in the project.
+
+Alternatively, use `srcSet` to configure separate images for each color mode.
 
 ## Options
 
@@ -27,19 +30,24 @@ You must provide the path to the logo image as the value of the `image` property
 
 - image
 - string
-- **Conditionally required**. URL or path to the image file (png or svg) of the logo.
+- **Conditionally required**.
+  URL or path to the image file (png or svg) of the logo.
+  Mutually exclusive with `srcSet`.
 
 ---
 
 - srcSet
 - string
-- **Conditionally required**. Comma-separated list of logo file paths and corresponding color mode. When configured, the logo changes when the user switches between color modes.
+- **Conditionally required**.
+  Comma-separated list of logo file paths and corresponding color modes.
+  When configured, the logo changes when the user switches between color modes.
+  Mutually exclusive with `image`.
 
 ---
 
 - altText
 - string
-- Alternate text for the logo.
+- Alternative text for the logo.
 
 ---
 
@@ -55,11 +63,11 @@ You must provide the path to the logo image as the value of the `image` property
 
 {% /table %}
 
-\* Logo object must include either `image` or `srcSet` ("mutually exclusive").
-
 ## Examples
 
-### Logo from local asset
+### Add a logo using a local file
+
+The following is an example of `logo` configuration with `image` and `favicon` from project's assets.
 
 ```yaml {% title="redocly.yaml" %}
 logo:
@@ -69,7 +77,10 @@ logo:
   favicon: ./images/logos/favicon-example.svg
 ```
 
-### Logo from URL
+### Add a logo using a remote file
+
+The following is an example of `logo` configuration with `image` and `favicon` from remote assets.
+
 
 ```yaml {% title="redocly.yaml" %}
 logo:
@@ -79,9 +90,9 @@ logo:
   favicon: "https://example.com/favicon.ico"
 ```
 
-### Logo from srcSet
+### Add separate logo images for color modes
 
-Used to configure logos for a specific color mode.
+The following is an example of `logo` configuration with separate logo images for the light and the dark color mode.
 
 ```yaml {% title="redocly.yaml" %}
 logo:
@@ -97,4 +108,5 @@ logo:
 
 ## Resources
 
-- Explore other [configuration options](./index.md) for your project.
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
+- **[Custom color modes](../branding/customize-color-modes.md#add-new-color-modes)** - Add custom color modes to support logo variations for different themes and branding needs

@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Template
 
 When generating API documentation from your OpenAPI definitions, Redocly uses the default HTML template for all API versions across all Workflows organizations.

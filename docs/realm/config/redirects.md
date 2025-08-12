@@ -11,9 +11,14 @@ plans:
 ---
 # `redirects`
 
-Redirects allow you to change which resource a URL points to.
-Read about how to [manage redirects](../author/how-to/add-redirects.md) for more explanation and examples.
-The configuration options are detailed below.
+Redirects allow you to change which resource a URL points to, enabling you to maintain working links when you move, rename, or restructure content.
+
+Redocly supports two ways of configuring redirects:
+
+- **In the `redocly.yaml` config file** - Useful for maintaining lists of redirects after site or section migrations
+- **In a separate YAML file** - Place redirects in a separate file (for example, `redirects.yaml`) to make long lists more manageable
+
+When redirects are configured in both locations, the `redocly.yaml` configuration takes priority.
 
 ## Options
 
@@ -66,7 +71,9 @@ The configuration options are detailed below.
 
 ## Examples
 
-The following is an example of redirects configured in `redocly.yaml`:
+### Basic redirect configuration
+
+Configure redirects in `redocly.yaml` by adding a `redirects` section:
 
 ```yaml
 redirects:
@@ -81,6 +88,74 @@ redirects:
     to: '/new-url/*'
 ```
 
+### Redirect one page to another
+
+Use paths to redirect individual pages, perhaps after restructuring site content:
+
+```yaml
+redirects:
+  '/concepts/static-assets/':
+    to: '/content/static-assets/'
+  '/howto/add-openapi-docs/':
+    to: '/content/api-docs/add-openapi-docs/'
+```
+
+Adding redirects means that anyone with the old URLs still reaches the expected content.
+
+### Redirect to an external URL
+
+When a page has moved to a separate site or domain, use a redirect to point to its new location:
+
+```yaml
+redirects:
+  '/roadmap':
+    to: 'https://example.com/awesome-roadmap'
+```
+
+### Redirect many paths to one page
+
+Redirects support use of wildcards to match the last parts of a path. For example, if you restructured content from many pages in a directory into a single page:
+
+```yaml
+redirects:
+  '/pages/*':
+    to: '/book-on-one-page/'
+```
+
+Use this approach when you consolidate content, or want to redirect many URLs to the same resource.
+
+### Redirect a group of paths to the same structure
+
+If you move a whole directory of content from one place to another, describe the first part of the path for the source and destination, and end both with a wildcard:
+
+```yaml
+redirects:
+  '/guides/*':
+    to: '/tutorials/*'
+```
+
+All pages, including nested pages, will be redirected. For example `/guides/add-linting/` redirects to `/tutorials/add-linting/` and `/guides/cli/previews/` redirects to `/tutorials/cli/previews/`.
+
+If there's a specific redirect for a page that also matches a wildcard, then the specific redirect wins.
+
+### Use a separate redirects file
+
+If you have many redirects, maintain them in a separate file using the `$ref` syntax. Create a `redirects.yaml` file:
+
+```yaml {% title="redirects.yaml" %}
+'/products/original-product/':
+  to: '/products/new-shiny'
+'/products/slightly-improved-product/':
+  to: '/products/new-shiny'
+```
+
+Then reference it in your main `redocly.yaml` configuration:
+
+```yaml {% title="redocly.yaml" %}
+redirects:
+  $ref: './redirects.yaml'
+```
+
 ## Resources
 
-- Read more about [how to manage redirects](../author/how-to/add-redirects.md).
+- **[Manage links](../content/links.md)** - Manage and configure links on project pages for optimal navigation and redirect handling

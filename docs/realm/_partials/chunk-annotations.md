@@ -70,7 +70,7 @@ The exact comment syntax varies between languages, but the chunk syntax remains 
 
 ### Chunk attributes
 
-Each chunk requires either a [step `id`](../author/reference/tags/code-walkthrough/step.md), or a `when` or `unless` condition with a [filter](../author/reference/tags/code-walkthrough/index.md#filter-object), [toggle](../author/reference/tags/code-walkthrough/toggle.md) or [input id](../author/reference/tags/code-walkthrough/input.md).
+Each chunk requires either a [step `id`](../content/markdoc-tags/code-walkthrough/step.md), or a `when` or `unless` condition with a [filter](../content/markdoc-tags/code-walkthrough/index.md#filter-object), [toggle](../content/markdoc-tags/code-walkthrough/toggle.md) or [input id](../content/markdoc-tags/code-walkthrough/input.md).
 The code that is wrapped within a set of chunk annotations is highlighted when the corresponding content in the `step` tags is selected or when the `input` or `toggle` tag condition is met in a code walkthrough.
 
 {% admonition type="warning" %}

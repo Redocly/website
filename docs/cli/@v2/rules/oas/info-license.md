@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/oas/info-license
+slug: /docs/cli/rules/oas/info-license
 ---
 
 # info-license
@@ -68,7 +68,7 @@ info:
 ## Related rules
 
 - [info-contact](./info-contact.md)
-- [info-license-url](./info-license-url.md)
+- [info-license-strict](./info-license-strict.md)
 
 ## Resources
 

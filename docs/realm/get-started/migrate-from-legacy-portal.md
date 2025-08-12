@@ -19,11 +19,11 @@ At the start of your migration, you'll need to create a project in Reunite and c
 
 1. Sign up or log in to your Reunite account.
 
-2. (Optional) [Add an identity provider](../setup/how-to/add-idp.md) and [configure SSO](../setup/how-to/configure-sso.md).
+2. (Optional) [Add an identity provider](../reunite/organization/sso/add-idp.md) and [configure SSO](../reunite/organization/sso/configure-sso.md).
 
-3. Go to your [Reunite dashboard](https://app.cloud.redocly.com) and [create a new project](../setup/how-to/manage-projects.md#create-a-project).
+3. Go to your [Reunite dashboard](https://app.cloud.redocly.com) and [create a new project](../reunite/project/manage-projects.md#create-a-project).
 
-4. Go to **Settings** --> **Git hosting** and [connect your existing repository](../setup/how-to/git-providers/connect-git-provider.md).
+4. Go to **Settings** --> **Git hosting** and [connect your existing repository](../reunite/project/connect-git/connect-git-provider.md).
 
 5. Go to **Editor** to verify that your project files are synced with Reunite.
 
@@ -57,9 +57,9 @@ Migrate your developer portal project to Realm using the content in this guide.
 
 4. Open a pull request in your repository to merge the `migrate-sidebar` branch into `portal-upgrade`.
 
-5. Review the code and the [branch preview build](../author/how-to/use-previews.md).
+5. Review the code and the [branch preview build](../reunite/project/use-previews.md).
 
-6. (Optional) Explore the other tools in Reunite, such as [visual review](../author/how-to/review-pull-request.md#review-visual-and-code-diff).
+6. (Optional) Explore the other tools in Reunite, such as [visual review](../reunite/project/pull-request/review-pull-request.md#review-visual-and-code-diff).
 
 7. Merge the pull request into the `portal-upgrade` branch to deploy it to the Reunite "production" build.
 
@@ -77,7 +77,7 @@ Once the content is migrated and you're ready to "go live" with the new project
 
 4. Review the production deployment of the site to ensure it's ready for release.
 
-5. In Reunite, [set a custom domain](../setup/how-to/custom-domain.md) for your project.
+5. In Reunite, [set a custom domain](../reunite/project/custom-domain.md) for your project.
 
 6. Update your CNAME record to point to `ssl.cloud.redocly.com`.
    This change can take up to 8 hours to propagate depending on your provider.
@@ -154,7 +154,7 @@ Use this preview to review the changes you make during migration.
 
 ### Migrate content
 
-Realm contains a major change to content creation: MDX is replaced with [Markdoc](https://redocly.com/docs/learn-markdoc).
+Realm contains a major change to content creation: MDX is replaced with [Markdoc](https://redocly.com/learn/markdoc).
 That means authors continue writing in Markdown, but, when they need to add a custom element or component, they use Markdoc syntax _instead of MDX_.
 
 With the exception of MDX, Realm supports the same types of content as the developer portal while adding support for new content, such as AsyncAPI, GraphQL, and React pages.
@@ -171,7 +171,7 @@ In Realm, the way _externally-managed_ API descriptions are used in your project
 - API descriptions (or copies of them) must be **stored in the project files**.
   - Using a remote URL or snapshot URL in the configuration file is no longer supported.
 
-During migration, set up [remote content](../setup/concepts/remote-content.md) connections for any externally-maintained API descriptions.
+During migration, set up [remote content](../reunite/project/remote-content/remote-content.md) connections for any externally-maintained API descriptions.
 
 The following example shows the old and new syntax for using remote API descriptions:
 
@@ -191,8 +191,8 @@ The following example shows the old and new syntax for using remote API descript
   
     In this example, both API definitions are set up as remote content sources and the `redocly.yaml` file uses relative file paths.
 
-    - The art-museum uses [remote content from GitHub](../setup/how-to/remote-content/from-github.md).
-    - The flight-museum uses [remote content from a URL](../setup/how-to/remote-content/url.md). 
+    - The art-museum uses [remote content from GitHub](../reunite/project/remote-content/from-github.md).
+    - The flight-museum uses [remote content from a URL](../reunite/project/remote-content/url.md). 
 
     ```yaml  {% title="redocly.yaml" %}
     apis:
@@ -275,14 +275,14 @@ The following example shows the old and new syntax for configuring multiple API 
 
 When multiple APIs are configured, Realm and Reef users can also use the API catalog feature.
 
-##### New API catalog format
+##### Migrate the API catalog
 
 Realm and Reef users have access to the built-in API catalog feature, which is used to organize and display multiple API definitions, making them more discoverable for users.
 
 - In the developer portal, the API catalog had to be _added as a custom component_ in an MDX page.
-- In Realm, the API catalog feature is already _built into the product_ and is enabled through configuration.
+- In Realm, the classic catalog feature is already _built into the product_ and is enabled through configuration.
 
-Use the following guide to enable the API catalog during your migration: [Add a catalog](../author/how-to/add-catalog.md).
+Use the following guide to enable the classic catalog during your migration: [configure a classic catalog in your project](../config/catalog-classic.md).
 
 #### Update Markdown files
 
@@ -319,7 +319,7 @@ The following example shows the old and new admonition syntax:
 
 ##### Change reusable snippets
 
-Realm adds a Markdoc tag for [partials](https://redocly.com/docs/learn-markdoc/tags/partial), which is a big upgrade for working with [reusable content](../author/how-to/reuse-content.md).
+Realm adds a Markdoc tag for [partials](https://redocly.com/docs/learn-markdoc/tags/partial), which is a big upgrade for working with [reusable content](../content/markdoc-tags/partial.md).
 The developer portal's approach to reusable content, which used Markdown snippets in an HTML `<embed>` tag, is no longer supported.
 
 During migration, replace any embedded Markdown snippets with the new partials tag, as in the following example:
@@ -510,7 +510,7 @@ MDX files _do not render in Realm_ because support for MDX was removed in favor 
 
 During migration, you need to update your MDX files for their content to render.
 
-For **MDX files without Markdown**, change their file extension to `.page.tsx` to [create a React page](../extend/how-to/create-react-page.md).
+For **MDX files without Markdown**, change their file extension to `.page.tsx` to [create a React page](../customization/create-react-page.md).
 As long as the imports are correct, those files can serve as pages in Realm.
 
 For **MDX files that combine Markdown and JSX**, use the following steps to update the file and make it compatible with Realm:
@@ -534,7 +534,7 @@ For **MDX files that combine Markdown and JSX**, use the following steps to upda
 Converting the filetype to Markdown and removing the JSX will allows Realm to render the _Markdown_ content from the migrated MDX files.
 However, rendering the JSX element requires additional work.
 
-You can [use the legacy UI components](../author/how-to/use-legacy-ui-components.md) to help with migration, but we recommend replacing them.
+You can [use the legacy UI components](./use-legacy-ui-components.md) to help with migration, but we recommend replacing them.
 
 ##### Change OpenApiTryIt component
 
@@ -621,7 +621,7 @@ Now authors can use the Markdoc tag to render the same element from the migrated
 
 {% admonition type="info" %}
   This section explains the process for migrating custom elements.
-  For more detailed guidance on creating tags, see See [Build a Markdoc tag](../extend/tutorials/build-markdoc-tags.md).
+  For more detailed guidance on creating tags, see See [Build a Markdoc tag](../customization/build-markdoc-tags.md).
 {% /admonition %}
 
 ### Migrate navigation
@@ -733,7 +733,7 @@ The following example the same footer settings using the old and new syntax:
 
 #### Update sidebar
 
-New settings and features were added to the [sidebar](../author/how-to/configure-nav/sidebar.md).
+New settings and features were added to the [sidebar](../navigation/sidebars.md).
 
 During migration, update your sidebar configuration to reflect the following changes:
 
@@ -773,9 +773,9 @@ The following example shows the same sidebar configuration using old and new syn
 
 After your sidebar config works with Realm, explore the following new sidebar features:
 
-- Build sidebars using configuration from [multiple files](../author/how-to/configure-nav/sidebar.md#split-sidebar-configuration) using fragments.
-- Use [set sidebar](../author/how-to/configure-nav/sidebar.md#set-sidebar) to show the sidebar on a page without listing it on `sidebars.yaml`.
-- Control the visibility of [sidebar entries with RBAC](../setup/how-to/rbac/links-and-groups-permissions.md#in-the-sidebar).
+- Build sidebars using configuration from [multiple files](../navigation/sidebars.md#add-multiple-sidebars) using fragments.
+- [Add a sidebar to a single page](../navigation/sidebars.md#add-a-sidebar-to-a-single-page) to show the sidebar on a page without listing it on `sidebars.yaml`.
+- Control the visibility of [sidebar entries with RBAC](../access/links-and-groups-permissions.md#in-the-sidebar).
 
 ### Migrate configuration
 
@@ -975,7 +975,7 @@ During migration, any theme customizations from your developer portal will need 
 
 #### Update project styles
 
-Realm adds support for [CSS variables](../style/concepts/styling.md#css-variable-concepts), which are used to [customize the styles](../style/how-to/customize-styles.md) of your project and create a theme.
+Realm adds support for [CSS variables](../branding/css-variables/index.md), which are used to [customize the styles](../branding/customize-styles.md) of your project and create a theme.
 
 During migration, follow the steps below to update your custom styling to work with Realm:
 
@@ -989,7 +989,7 @@ During migration, follow the steps below to update your custom styling to work w
 
 2. Open your `theme.ts` file.
 
-3. Recreate each styling rule using CSS variables. See [CSS variables in Realm](../style/concepts/styling.md#css-variables-in-realm) if you need help identifying them.
+3. Recreate each styling rule using CSS variables. See the [CSS variables reference](../branding/css-variables/index.md) if you need help identifying them.
 
 The following example shows a set of style customizations from the developer portal updated to work with Realm:
 
@@ -1102,12 +1102,12 @@ During migration, update your custom components to reflect the following changes
 - Custom components must be defined in the `@theme/components` folder, for example `@theme/components/Navbar/Navbar`.
 - Realm is a complete rebuild. The components in the core theme may have been removed or changed names.
 
-Realm adds support for an exciting new feature that allows you to [eject a component](../extend/how-to/eject-components) used in the core theme.
+Realm adds support for an exciting new feature that allows you to [eject a component](../customization/eject-components) used in the core theme.
 That means you get a complete, working implementation of that component; ready to be customized.
 
 ## Resources
 
-- [Create a React page](../extend/how-to/create-react-page.md) for full control over  all page elements.
-- Learn more about the [navigation elements](../author/concepts/navigation.md) in Realm.
-- Configure light and dark mode in your project using [color mode](../style/concepts/color-mode.md).
-- See which [front matter options](../config/front-matter-config.md) are available for page-level configuration.
+- **[Create React pages](../customization/create-react-page.md)** - Build custom pages using React components for full control over layout, styling, and interactive functionality
+- **[Navigation configuration](../navigation/navigation.md)** - Configure navigation elements, menus, and page organization for optimal user experience in Realm projects
+- **[Color mode customization](../branding/customize-color-modes.md)** - Configure light and dark mode styling with custom color schemes and mode-specific CSS variables
+- **[Front matter configuration](../config/front-matter-config.md)** - Complete reference for page-level configuration options available through front matter settings

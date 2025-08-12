@@ -1,7 +1,7 @@
 ---
 slug:
-  - /docs/cli/commands/generate-arazzo
-  - /docs/respect/commands/generate-arazzo
+  - /docs/cli/v1/commands/generate-arazzo
+  - /docs/respect/v1/commands/generate-arazzo
 ---
 
 # `generate-arazzo`
@@ -53,7 +53,7 @@ info:
   title: Warp API
   version: 1.0.0
 sourceDescriptions:
-  - name: index
+  - name: warp
     type: openapi
     url: https://warp-single-sidebar.redocly.app/_spec/apis/index.yaml
 workflows:

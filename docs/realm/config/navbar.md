@@ -78,7 +78,9 @@ The navbar is a good location for top-level category or frequently-used links.
 
 - icon
 - string
-- Path to the icon file.
+- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
+  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
+  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
 
 ---
 
@@ -149,7 +151,9 @@ The navbar is a good location for top-level category or frequently-used links.
 
 - icon
 - string
-- Path to the icon file.
+- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
+  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
+  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
 
 ---
 
@@ -167,19 +171,21 @@ The navbar is a good location for top-level category or frequently-used links.
 
 ## Examples
 
-### Simple menu
+### Simple navigation
 
 The following is an example configuration for a simple flat navbar.
 
 ```yaml {% title="redocly.yaml" %}
 navbar:
   items:
-    - page: introduction.md
-    - page: howto.md
-      label: How To
-    - page: api-definition.yaml
-    - label: Other docs
-      href: https://redoc.ly/docs/developer-portal/introduction/
+    - page: index.md
+      label: Home
+    - page: docs/getting-started.md
+      label: Getting Started
+    - page: api-reference.yaml
+      label: API Reference
+    - label: Support
+      href: https://support.example.com
       external: true
 ```
 
@@ -187,56 +193,117 @@ The following is a screenshot of that navbar.
 
 ![1 level Navbar](./images/1-level-navbar.png)
 
-### Dropdown Menu
+### Complete navigation setup
 
-The following is an example of a dropdown menu in a navbar config.
+The following example shows a comprehensive navbar configuration for a documentation site with multiple sections, localization support, and external links:
+
+```yaml {% title="redocly.yaml" %}
+navbar:
+  items:
+    - page: index.md
+      label: Home
+      labelTranslationKey: nav.home
+    - group: Documentation
+      groupTranslationKey: nav.docs
+      items:
+        - page: docs/getting-started.md
+          label: Getting Started
+          labelTranslationKey: nav.getting-started
+        - page: docs/guides/index.md
+          label: Guides
+          labelTranslationKey: nav.guides
+        - page: docs/tutorials/index.md
+          label: Tutorials
+    - group: API Reference
+      items:
+        - page: users-api.yaml
+          label: Users API
+        - page: orders-api.yaml
+          label: Orders API
+        - page: webhooks-api.yaml
+          label: Webhooks API
+    - page: changelog.md
+      label: Changelog
+    - label: Support
+      href: https://support.example.com
+      external: true
+      icon: ./images/support-icon.svg
+```
+
+### Multi-product navigation
+
+For sites with multiple products, organize content using groups and linked sidebars:
+
+```yaml {% title="redocly.yaml" %}
+navbar:
+  items:
+    - page: index.md
+      label: Home
+    - group: Products
+      items:
+        - page: product-a/index.md
+          label: Product A
+          linkedSidebars:
+            - product-a/sidebars.yaml
+        - page: product-b/index.md
+          label: Product B
+          linkedSidebars:
+            - product-b/sidebars.yaml
+    - page: support.md
+      label: Support
+```
+
+### Dropdown menu with separators
+
+The following is an example of a dropdown menu with visual separators for better organization:
 
 ```yaml {% title="redocly.yaml" %}
 navbar:
   items:
     - group: Products
       items:
-        - page: reference-docs.tsx
-          label: Reference Docs
-        - page: developer-portal.tsx
-          label: Developer Portal
-        - page: workflows.md
-          label: Workflows
-        - separator: Free API Tools
-        - page: redoc.md
-          label: Redoc
-        - page: redoc-vs-redocly.md
-          label: Redoc vs Redocly
-        - page: redocly-cli.md
-          label: Redocly CLI
-    - label: Docs
-      page: docs.md
+        - page: platform/index.md
+          label: Platform
+        - page: api-gateway/index.md
+          label: API Gateway
+        - separator: Developer Tools
+        - page: cli/index.md
+          label: CLI
+        - page: sdk/index.md
+          label: SDK
     - label: Pricing
       page: pricing.md
     - label: Enterprise
-      page: Enterprise.md
+      page: enterprise.md
 ```
 
 The following is the visual screenshot of the navbar.
 ![Dropdown menu](./images/dropdown-menu.png)
 
-### Navbar item linked to sidebar
+### Hide navbar
+
+To hide the navbar globally or on specific pages:
 
 ```yaml {% title="redocly.yaml" %}
+# Hide navbar on all pages
 navbar:
-  items:
-    - page: introduction.md
-      linkedSidebars:
-        - sidebars.yaml
-    - page: howto.md
-      label: How To
+  hide: true
+```
+
+Or in page front matter:
+```yaml
+---
+navbar:
+  hide: true
+---
 ```
 
 ## Resources
 
-- [footer](./footer.md) - Configuration reference for the footer.
-- [logo](./logo.md) - Configuration reference for the logo that appears in the navbar.
-- [localization](./l10n.md) - Configure navbar labels for multiple languages.
-- Use [front matter](./front-matter-config.md) to show or hide the navbar on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Navigation elements](../navigation/index.md)** - Overview of all navigation components and patterns for creating comprehensive site navigation structures
+- **[Footer configuration](./footer.md)** - Configure the footer navigation with links, copyright information, and organizational elements
+- **[Logo configuration](./logo.md)** - Configure the logo that appears in the navbar with brand customization and display options
+- **[Localization](./l10n.md)** - Configure navbar labels and text for multiple languages to support international audiences
+- **[Front matter configuration](./front-matter-config.md)** - Use front matter to show or hide the navbar on individual pages for custom page layouts
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
 

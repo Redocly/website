@@ -9,8 +9,8 @@ plans:
 ---
 # `seo`
 
-Use the `seo` options to control the contents of your project's HTML `<head>` element and `llms.txt` file generation.
-You can override `seo` options, except `llmstxt`, in the [front matter](./front-matter-config) of Markdown and React pages.
+Use the `seo` options to control the contents of your project's HTML `<head>` element, `llms.txt` file generation, and search engine optimization features like sitemaps and indexing control.
+You can override `seo` options, except `llmstxt`, in the [front matter](./front-matter-config.md) of Markdown and React pages.
 
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "seo"} /%}
 
@@ -73,7 +73,7 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 - string
 - Sets the base URL for canonical links.
   When this option is configured, it automatically adds `rel="canonical"` to the head of all HTML pages.
-  This option is required to generate a sitemap, see more information about [how to add a sitemap](../setup/how-to/add-sitemap.md).
+  This option is required to generate a sitemap, see more information in the [Sitemaps](#sitemaps) section below.
 
   This option should not be used in front matter.
 
@@ -242,6 +242,175 @@ Mutually exclusive with `path`.
 
 {% /table %}
 
+## Sitemaps
+
+A [sitemap](https://en.wikipedia.org/wiki/Site_map) is a resource that lists all the pages in your website to help search engines and other automation tools identify all the pages available.
+
+### Generate a sitemap
+
+When the `siteUrl` is set, Redocly automatically generates and hosts a sitemap file for your project at build time. The sitemap is accessible at `https://your-domain.com/sitemap.xml`.
+
+```yaml
+seo:
+  siteUrl: https://docs.example.com
+```
+
+{% admonition type="info" name="No protected content" %}
+The generated sitemap **does not** include any pages protected by [role based access controls](../access/index.md) or pages listed in the [ignore configuration](./ignore.md).
+{% /admonition %}
+
+The sitemap data is formatted to standard search engine expectations, using the `<loc>` tag:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://docs.example.com/</loc>
+  </url>
+  <url>
+    <loc>https://docs.example.com/reference/</loc>
+  </url>
+</urlset>
+```
+
+### Page priority
+
+Redocly sets the optional `priority` property for pages in the generated `sitemap.xml` file to `0.5`, unless the pages are non-default versioned content (set to `0.3`). This distinction tells search engines the default version of content is more important than non-default versions.
+
+You can override the priority for specific pages:
+
+**Markdown files:**
+```yaml
+---
+seo:
+  priority: 0.9
+---
+```
+
+**React/TSX files:**
+```tsx
+export const frontmatter = {
+  seo: {
+    priority: 0.9
+  }
+};
+```
+
+### Custom sitemap
+
+Add a custom sitemap by placing a `sitemap.xml` file into the `/static` folder in the root of your project:
+
+```treeview
+your-awesome-project/
+├── static/
+│   └── sitemap.xml
+├── guides/
+├── redocly.yaml
+└── ...
+```
+
+{% admonition type="warning" name="Validate your sitemap" %}
+Redocly serves the sitemap but doesn't validate the structure, so you should validate your sitemap before adding the file.
+{% /admonition %}
+
+## Control search indexing
+
+Use the `noindex` rule to block search indexing for your entire project or specific pages. The `noindex` rule tells search engines that pages shouldn't be indexed or included in searches.
+
+{% admonition type="info" %}
+The `noindex` rule only applies to external search engines. It does not block pages from in-site search (controlled by [excludeFromSearch](./front-matter-config.md)) or user access (controlled by [RBAC](../access/page-permissions.md)).
+{% /admonition %}
+
+### Block indexing with meta tags
+
+Add `<meta name="robots" content="noindex">` to page HTML headers.
+
+**For an entire project:**
+```yaml
+seo:
+  meta:
+    - name: robots
+      content: noindex
+```
+
+**For specific pages using front matter:**
+```yaml
+---
+seo:
+  meta:
+    - name: robots
+      content: noindex
+---
+```
+
+### Block indexing with response headers
+
+Add the `X-Robots-Tag: noindex` HTTP response header.
+
+**For an entire project:**
+```yaml
+responseHeaders: 
+  '**':
+    - name: X-Robots-Tag
+      value: noindex
+```
+
+**For specific pages:**
+```yaml
+responseHeaders: 
+  /blog/example-draft:
+    - name: X-Robots-Tag
+      value: noindex
+  '/internal-docs/**':
+    - name: X-Robots-Tag
+      value: noindex
+```
+
+## Static SEO files
+
+### Robots.txt file
+
+Add a `robots.txt` file to manage how search engines index your website by placing it in the `/static` folder:
+
+```treeview
+your-awesome-project/
+├── static/
+│   ├── robots.txt
+│   └── ...
+├── guides/
+├── redocly.yaml
+└── ...
+```
+
+Example `robots.txt` content:
+```text
+User-agent: *
+
+Allow: /
+Disallow: /internal-docs/
+
+sitemap: https://docs.example.com/sitemap.xml
+```
+
+### Site ownership verification
+
+Verify ownership of your website with third-party tools (like Google Search Console) by adding verification files to the `/static` folder:
+
+```treeview
+your-awesome-project/
+├── static/
+│   ├── google1234567890abcde.html
+│   └── .well-known/
+│       └── apple-developer-merchantid-domain-association.txt
+├── guides/
+├── redocly.yaml
+└── ...
+```
+
+The verification files will be accessible at:
+- `https://docs.example.com/google1234567890abcde.html`
+- `https://docs.example.com/.well-known/apple-developer-merchantid-domain-association.txt`
+
 ## Examples
 
 The following is an example of setting default values for all pages in the configuration file.
@@ -319,5 +488,8 @@ export const frontmatter = {
 
 ## Resources
 
-- Use [front matter](./front-matter-config.md) to configure seo on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Static assets](../customization/theme-static-assets.md)** - Host and manage static assets in Redocly projects for enhanced SEO performance and content delivery
+- **[Custom domain setup](../reunite/project/custom-domain.md)** - Personalize your URL to reflect your brand and improve SEO ranking with custom domain configuration
+- **[Front matter configuration](./front-matter-config.md)** - Configure SEO settings on individual pages using front matter for granular search optimization control
+- **[Response headers](./response-headers.md)** - Configure response headers for advanced search engine indexing control and optimization strategies
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

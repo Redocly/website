@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 seo:
   title: Redocly Reference docs 2.0 migration guide
 ---

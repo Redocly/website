@@ -1,5 +1,5 @@
 ---
-slug: /docs/cli/v2/rules/configurable-rules
+slug: /docs/cli/rules/configurable-rules
 ---
 
 # Configurable rules
@@ -242,7 +242,7 @@ rule/operation-summary-check:
 `plugin.js`
 
 ```js
-module.exports = function localPlugin() {
+export default function localPlugin() {
   return {
     id: 'local',
     assertions: {
@@ -272,7 +272,7 @@ module.exports = function localPlugin() {
       },
     },
   };
-};
+}
 ```
 
 ## Assertion examples
