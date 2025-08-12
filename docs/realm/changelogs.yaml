@@ -29258,3 +29258,10 @@ reunite:
           realm logs.
       patch: []
     dependencies: {}
+  v2025-08-12.2:
+    timestamp: 1755013697000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.0.3`.
+    dependencies: {}
