@@ -257,32 +257,27 @@ By default, the order of versions in the version picker is the same as the folde
 The version that opens when you navigate to versioned file, is by default the version last in the order. \
 You can customize which versions appear in the version picker, the order of the versions, and the version that opens by default.
 
-For more information on version picker configuration, see the [Versions configuration options](./versions-config.md) reference documentation.
+For more information on version picker configuration, see the [Versions configuration options](#versions-configuration-options) below.
 
-To specify the default version as well as choose which versions to display:
+To specify the default version and choose which versions to display, create a `versions.yaml` file on the same level as your version subfolders:
 
-1. Create a `versions.yaml` file on the same level as your version subfolders.
-2. In the file, set the default version to display by adding a `default` object with the default version subfolder's name, without the `@` sign, as the value, as in the following example:
-    ```yaml {% title="versions.yaml" %}
-    default: latest
-    ```
-3. Add a `versions` object, and inside it a map of `version` objects with version subfolder names as values, excluding the `@`, as in the following example:
-    ```yaml {% title="versions.yaml" %}
-    default: latest
-    versions:
-      - version: legacy
-      - version: latest
-    ```
-4. (Optional) Provide a `name` option for each `version`, as in the following example:
-   ```yaml {% title="versions.yaml" %}
-    default: latest
-    versions:
-      - version: legacy
-        name: Legacy version
-      - version: latest
-        name: Latest version
-    ```
-    If you do not provide a name for a version, the versioned folder's name is used instead.
+```yaml {% title="versions.yaml" %}
+default: latest
+versions:
+  - version: legacy
+    name: Legacy version
+  - version: latest
+    name: Latest version
+```
+
+### Configuration options
+
+- **`default`** - The version displayed first when the page loads. Must match a version folder name (without the `@` prefix)
+- **`versions`** - Array of version objects specifying which versions to include and their display names
+- **`version`** - Must match the version subfolder name (without the `@` prefix)  
+- **`name`** - Display name shown in the version picker. If not provided, uses the folder name
+
+If you don't provide a `name`, the version folder name (without `@`) is used instead.
 As an example, let's assume this file structure:
 
 ```treeview {% title="An example of file structure for multiple versions" %}
@@ -407,7 +402,84 @@ function VersionedPage() {
 }
 ```
 
+## Versions configuration options
+
+If you want to specify the default version and which versions to include in your project, create a `versions.yaml` file on the same level as your version folders.
+
+### Options
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- default
+- string
+- The version displayed first when the page is loaded. Must match the name of the version folder, excluding the `@` prefix. If not defined, it is the last `version` in the `versions` object. Without a `versions.yaml` file, the default version is the highest version in the alphanumeric ascending order.
+
+---
+
+- versions
+- Array of [Version object](#version-object)
+- This option specifies the version subfolders to include, their display names, and the order. If not used, all version subfolders in the same location are included in the version picker.
+
+{% /table %}
+
+#### Version object
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- version
+- string
+- This option is the name of the version. Must match the name of the version subfolder, excluding the `@` prefix.
+
+---
+
+- name
+- string
+- The name for a version displayed in the version picker. If not defined, uses the version subfolder name, excluding the `@` prefix.
+
+{% /table %}
+
+### Configuration examples
+
+The following are examples of `versions.yaml` files:
+
+The following example contains two versions: `v1.0`, and `v1.1`.
+The version picker displays **Version 1.0** and **Version 1.1** as the labels for these versions.
+As `v1.0` is the default version, when you navigate to your versioned content, your project displays files from `@v1.0` version subfolder.
+
+```yaml {% title="versions.yaml" %}
+default: v1.0
+versions:
+  - version: v1.0
+    name: Version 1.0
+  - version: v1.1
+    name: Version 1.1
+```
+
+The following example contains three versions: `1.0`, `2.0`, and `2.3`.
+Since the names contain only numbers, the names were placed inside single quotations to match the required `string` type for these values.
+The version picker displays **1.0**, **2.0**, and **2.3**.
+The default version is not defined in this file, so the project displays files from the version subfolder with the highest value.
+In this case, it is `@2.3`.
+
+```yaml {% title="versions.yaml" %}
+versions:
+  - version: '1.0'
+  - version: '2.0'
+  - version: '2.3'
+```
+
 ## Resources
 
-- Reference the options for configuring which [versions](./versions-config.md) appear in the version picker, in what order, and which version is the default.
-- Learn how to set up the sidebar in the [Sidebar configuration](../navigation/sidebars.md) documentation.
+- **[Sidebar configuration](../navigation/sidebars.md)** - Configure navigation structures and sidebar organization for versioned content with detailed syntax and options reference

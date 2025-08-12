@@ -7,6 +7,22 @@ toc:
 
 <!-- do-not-remove -->
 
+## 2.0.4 (2025-08-12)
+
+### Patch Changes
+
+- Fixed an issue where the `openapi` config options were ignored when running the `build-docs` command.
+- Ensure `externalRefResolver` option is correctly passed to nested workflow contexts.
+- Updated @redocly/respect-core to v2.0.4.
+
+## 2.0.3 (2025-08-11)
+
+### Patch Changes
+
+- Fixed type definitions for Respect `input` and `server` options to support both string and string[] values.
+- Fixed binary response data in `Respect` results by properly encoding it as base64.
+- Updated @redocly/respect-core to v2.0.3.
+
 ## 2.0.2 (2025-07-29)
 
 ### Patch Changes

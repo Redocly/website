@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # How to discover APIs in the registry
 
 The API registry serves as a single-source of truth for your APIs. You can use the API registry to store your API definitions and manage multiple versions of each API.

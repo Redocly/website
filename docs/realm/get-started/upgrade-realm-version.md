@@ -34,13 +34,13 @@ To verify the version your project is using:
 
 1. From the Reunite editor, open the preview or production build of your project in your browser, using the **View** drop-down in the top left corner of the page.
 
-   ![Screenshot of top right corner of Reunite editor with View drop-down](./images/view-project-dropdown.png)
+   ![Screenshot of top right corner of Reunite editor with View drop-down](../content/images/view-project-dropdown.png)
 
 2. Right-click anywhere on a page and select **Inspect** or **Inspect Element**.
 3. In the developer tools pane, select **Console**.
 4. You should see the version displayed as in the following screenshot:
 
-   ![Screenshot of the console in Chrome showing the Redocly Realm version](./images/console-version.png)
+   ![Screenshot of the console in Chrome showing the Redocly Realm version](../content/images/console-version.png)
 
 After you have determined what version your project is running, you can find the latest version to help you decide if you want to upgrade.
 
@@ -146,7 +146,7 @@ To run a specific version in Reunite:
 
 5. After the preview build has completed, open it using the **View** drop-down in the top right corner of the page.
 
-   ![Screenshot of top right corner of Reunite editor with View drop-down](./images/view-project-dropdown.png)
+   ![Screenshot of top right corner of Reunite editor with View drop-down](../content/images/view-project-dropdown.png)
 
 6. [Check the version](#check-version).
 7. To run this version in your production build, [open a pull request](../reunite/project/pull-request/open-pull-request.md), then review and [merge it](../reunite/project/pull-request/review-pull-request.md#merge-a-pull-request) with the new `package.json` file.

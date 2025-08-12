@@ -62,5 +62,5 @@ Most chart types are supported; sometimes there is a delay before adding the ver
 
 ## Resources
 
-* Visit the [Mermaid project documentation](https://mermaid.js.org/intro/#diagram-types) to learn how to create Mermaid diagrams.
-* How to [configure navigation](../navigation/index.md) on your site.
+- **[Mermaid documentation](https://mermaid.js.org/intro/#diagram-types)** - Complete guide to creating flowcharts, pie charts, sequence diagrams, and other visualizations with Mermaid syntax
+- **[Navigation configuration](../navigation/index.md)** - Configure site navigation, menus, and page organization to help users discover your diagram content

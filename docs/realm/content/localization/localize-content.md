@@ -77,5 +77,5 @@ To localize content in partials:
 
 ## Resources
 
-* Learn how to configure localization in [l10n configuration](../../config/l10n.md).
-* Learn how to localize the UI labels in your project in [Localize labels using translation keys](./localize-labels.md).
+- **[Localization configuration](../../config/l10n.md)** - Configure language support, default locales, and localization behavior for your multi-language project
+- **[Localize UI labels](./localize-labels.md)** - Translate interface labels and UI text using translation keys for consistent multi-language user experience

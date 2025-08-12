@@ -35,6 +35,15 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 - [PageLink object](#pagelink-object)
 - Controls the previous page button.
 
+---
+
+- actions
+- [PageAction object](#pageaction-object)
+- Controls the actions that appear on the page.
+  Requires the [`seo.llmstxt` option](./seo.md#llmstxt-object) to be enabled.
+
+---
+
 {% /table %}
 
 ### PageLink object
@@ -78,6 +87,37 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 - page
 - string
 - Path to a Markdown page in the project, or an URL.
+
+{% /table %}
+
+### PageAction object
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- hide
+- boolean
+- Specifies if the page actions are hidden. Default `false`.
+
+---
+
+- items
+- [string]
+- An array of items that appear on the page and their order. Allowed values: `copy`, `view`, `chatgpt`, `claude`
+  * `copy` - Copy the page content as markdown to the clipboard.
+  * `view` - View the page content as markdown in a new tab.
+  * `chatgpt` - Ask ChatGPT about this page. Only available on public pages.
+  * `claude` - Ask Claude about this page. Only available on public pages.
+
+  The first item in the list will be the default action.
+  By default, all items are shown in the following order: `copy`, `view`, `chatgpt`, `claude`.
+
+---
 
 {% /table %}
 
@@ -127,7 +167,31 @@ navigation:
 ---
 ```
 
+
+### Disable page actions
+
+The following example disables the page actions on all pages of the project.
+
+```yaml
+navigation:
+  actions:
+    hide: true
+```
+
+### Customize page actions
+
+The following example changes the default order of page actions and disables the `claude` action.
+
+```yaml
+navigation:
+  actions:
+    items:
+      - chatgpt
+      - copy
+      - view
+```
+
 ## Resources
 
-- Use [front matter](./front-matter-config.md) to configure navigation button options on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Front matter configuration](./front-matter-config.md)** - Configure navigation button options on individual pages using front matter for granular control
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

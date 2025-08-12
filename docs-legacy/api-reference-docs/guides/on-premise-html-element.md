@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 seo:
   title: HTML Element Javascript CDN Usage Redocly API Reference
 ---

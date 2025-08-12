@@ -85,6 +85,6 @@ In this example, the image changes when users toggle between color modes. You ca
 
 ## Resources
 
-* Expand beyond the default light and dark modes by adding a [new, custom color mode](../branding/customize-color-modes.md#add-new-color-modes).
-* [Theme static assets](./theme-static-assets.md) - Ensure you're referencing static assets from the theme correctly.
-* [Customize color modes](../branding/customize-color-modes.md) - Customize the styling of specific color modes.
+- **[Add custom color modes](../branding/customize-color-modes.md#add-new-color-modes)** - Expand beyond the default light and dark modes by creating completely new color modes with custom styling
+- **[Theme static assets](./theme-static-assets.md)** - Learn to properly reference and organize static assets within your theme for reliable image loading
+- **[Customize color modes](../branding/customize-color-modes.md)** - Apply custom styling and CSS variables for different color modes to create cohesive visual experiences

@@ -106,7 +106,7 @@ Change one thing at a time and check the preview as you go along.
 
     ```yaml {% title="redocly.yaml" %}
     logo:
-      image: ./images/redocly-logo.png
+      image: ./images/logo.png
    ```
 
 1. For bigger or more complex projects, the breadcrumbs feature displays above each page and helps users to understand where they are in the site structure.

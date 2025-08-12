@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 seo:
   title: API registry settings
   description: Manage your settings.

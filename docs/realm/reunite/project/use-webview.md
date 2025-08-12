@@ -97,5 +97,5 @@ In the **Logs** panel you can:
 
 ## Resources
 
-* [Use the editor](./use-editor.md)
-* [Use previews](./use-previews.md)
+- **[Use the editor](./use-editor.md)** - Learn to edit content in Reunite's integrated editor with syntax highlighting and collaborative features
+- **[Use previews](./use-previews.md)** - Access deployment previews to review changes before publishing to your live documentation site

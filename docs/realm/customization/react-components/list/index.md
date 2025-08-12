@@ -33,5 +33,5 @@ For more information, see [link component reference](./link.md).
 
 ## Resources
 
-- Learn how to [Customize theme components](../wrap-components.md)
-- Learn how to use the customized components[Components usage tutorial](../use-in-react-page.md).
+- **[Customize theme components](../wrap-components.md)** - Learn to wrap and customize built-in components to create reusable, branded versions for your project
+- **[Components usage tutorial](../use-in-react-page.md)** - Learn to use your customized components in React pages with practical examples and implementation patterns

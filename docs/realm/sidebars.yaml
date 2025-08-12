@@ -1,5 +1,6 @@
 - group: Get started
   page: get-started/index.md
+  icon: rocket-launch
   items:
     - page: get-started/start-reunite-editor.md
       label: Start with Reunite editor
@@ -11,8 +12,11 @@
           label: Migrate API reference
         - page: get-started/migrate-from-legacy-portal.md
           label: Migrate from legacy portal
+    - page: get-started/upgrade-realm-version.md
+      label: Upgrade Realm version
 
 - group: Reunite
+  icon: ./images/icons/reunite-gray.svg
   page: reunite/reunite.md
   items:
     - separator: Organization & team settings
@@ -85,7 +89,7 @@
       label: Analytics
     - page: reunite/project/switch-between-projects.md # consolidate into manage projects?
       label: Switch between projects
-    - page: reunite/project/view-export-data.md
+    - page: reunite/project/feedback.md
       label: Feedback
     - group: Connect a Git provider
       page: reunite/project/connect-git/connect-git-provider.md
@@ -142,20 +146,18 @@
       label: User profile menu
       
 - group: Content
+  icon: file-lines
+  page: content/index.md
   items:
     - page: content/project-structure.md
       label: Project structure
+    - page: content/markdown.md
+      label: Markdown guide
     - page: content/links.md
       label: Manage links
-    - group: Versioning
-      page: content/versions.md
-      items:      
-        - page: content/versions-config.md
-          label: Versions reference
-    - page: content/reuse-content.md
-      label: Reuse content
-    - page: content/static-assets.md
-      label: Static assets
+    - page: content/versions.md
+      label: Versioning
+
     - page: content/add-diagram.md
       label: Diagrams
     - group: Markdoc functions
@@ -197,6 +199,8 @@
             - page: content/markdoc-tags/code-walkthrough/create-code-walkthrough.md
         - page: content/markdoc-tags/img.md
           label: Image    
+        - page: content/markdoc-tags/icon.md
+          label: Icon
         - page: content/markdoc-tags/inline-svg.md
           label: Inline SVG
         - page: content/markdoc-tags/json-schema.md
@@ -291,12 +295,9 @@
           label: Display current locale
         - page: content/localization/translation-keys.md
           label: Translation keys
-    - page: content/add-redirects.md
-      label: Add redirects
-    - page: content/realm-version.md
-      label: Upgrade Realm version
 
 - group: Branding
+  icon: palette
   page: branding/index.md
   label: Branding
   items:
@@ -318,6 +319,7 @@
         - page: branding/css-variables/api-docs.md
           label: API docs
 - group: Navigation
+  icon: chart-tree-map
   page: navigation/index.md
   label: Navigation elements
   items:
@@ -325,40 +327,49 @@
       label: Navigation elements overview
     - page: navigation/sidebars.md
       label: Sidebar reference
-
-    - group: Search and discovery
-      items:
-        - page: navigation/search/configure-search-facets.md
-          label: Configure search facets
-        - page: navigation/search/add-sitemap.md
-          label: Add sitemap
-        - page: navigation/search/add-robots-file.md
-          label: Add robots.txt
-        - page: navigation/search/block-search-index.md
-          label: Block search indexing
-        - page: navigation/search/verify-site-ownership.md
-          label: Verify site ownership
-
-    - group: Multi-product
-      page: navigation/multi-product.md
+    - page: navigation/multi-product.md
       label: Multi-product
 
-
 - group: Customization
+  icon: wrench
+  page: customization/index.md
   items:
 
-    - group: API functions
-      items:
-        - page: customization/api-functions/index.md
-          label: Use cases
-        - page: customization/api-functions/api-functions-reference.md
-          label: Reference
-        - page: customization/api-functions/create-api-functions.md
-          label: Tutorials
+    - separator: Development & integration
     - page: customization/create-react-page.md
+      label: Create React pages
     - page: customization/custom-page-templates.md
-    - page: customization/markdoc-variables.md
+      label: Custom page templates
+    - page: customization/import-npm-library.md
+      label: Import npm libraries
+    - group: Built-in components and icons
+      page: customization/react-components/index.md
+      items:
+        - page: customization/react-components/use-in-react-page.md
+          label: Use in React pages
+        - page: customization/react-components/wrap-components.md
+          label: Wrap components
+        - group: Components list
+          page: customization/react-components/list/index.md
+          items:
+            - page: customization/react-components/list/admonition.md
+              label: Admonition
+            - page: customization/react-components/list/icons.md
+              label: Icons
+            - page: customization/react-components/list/button.md
+              label: Button
+            - page: customization/react-components/list/link.md
+              label: Link
+            - page: customization/react-components/list/dynamic.md
+              label: Dynamic
+    - page: customization/enable-source-maps.md
+      label: Enable source maps
+
+    - separator: Advanced components
     - page: customization/build-markdoc-tags.md
+      label: Build Markdoc tags
+    - page: customization/markdoc-variables.md
+      label: Markdoc variables
     - group: Markdoc attribute resolvers
       page: customization/markdoc-attribute-resolvers/index.md
       items:
@@ -367,47 +378,55 @@
         - page: customization/markdoc-attribute-resolvers/raw-content.md
           label: rawContent
     - page: customization/build-custom-function.md
-    - page: customization/import-npm-library.md
-    - page: customization/eject-root-layout.md
-    - page: customization/enable-source-maps.md
-    - page: customization/color-mode-images.md
+      label: Build custom functions
+
+    - separator: Component customization
     - group: Eject components
       page: customization/eject-components/index.md
       items:
         - page: customization/eject-components/eject-components-in-reunite.md
+          label: Eject in Reunite
         - page: customization/eject-components/eject-components-using-cli.md
+          label: Eject using CLI
         - page: customization/eject-components/eject-components-tutorial/index.md
-    - group: Built-in components and icons
-      page: customization/react-components/index.md
-      items:
-        - page: customization/react-components/use-in-react-page.md
-        - page: customization/react-components/wrap-components.md
-        - group: Components list
-          page: customization/react-components/list/index.md
-          items:
-            - page: customization/react-components/list/admonition.md
-            - page: customization/react-components/list/icons.md
-            - page: customization/react-components/list/button.md
-            - page: customization/react-components/list/link.md
+          label: Tutorial
+    - page: customization/eject-root-layout.md
+      label: Eject root layout
 
+    - separator: Configuration
+    - page: customization/static-assets.md
+      label: Static assets
     - page: customization/theme-static-assets.md
+      label: Theme static assets
+    - page: customization/color-mode-images.md
+      label: Color mode images
     - page: customization/configure-request-values.md
+      label: Configure request values
+
+    - separator: API integration
+    - group: API functions
+      selectFirstItemOnExpand: true
+      items:
+        - page: customization/api-functions/index.md
+          label: Use cases
+        - page: customization/api-functions/api-functions-reference.md
+          label: Reference
+        - page: customization/api-functions/create-api-functions.md
+          label: Tutorials
 
 
 - group: Access
+  icon: lock
+  page: access/index.md
   items:
-    - group: Role-based access control (RBAC)
-      page: access/index.md
-      items:
-        - page: access/roles.md
-          label: Roles
-        - page: access/rbac.md
-          label: RBAC concepts
-
-        - page: access/page-permissions.md
-          label: For pages
-        - page: access/links-and-groups-permissions.md
-          label: For navigation
+    - page: access/roles.md
+      label: Roles
+    - page: access/rbac.md
+      label: RBAC concepts
+    - page: access/page-permissions.md
+      label: For pages
+    - page: access/links-and-groups-permissions.md
+      label: For navigation
 
 
 

@@ -1,7 +1,7 @@
 import type { Schema } from '@markdoc/markdoc';
 
 export const IconTag: Schema = {
-  render: 'Icon',
+  render: 'ThemeIcon',
   selfClosing: true,
   attributes: {
     name: {

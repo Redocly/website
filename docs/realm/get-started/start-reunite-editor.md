@@ -7,6 +7,7 @@ This guide is to help you get started with a Redocly project using the Reunite e
 
 Make sure you have the following before you begin:
 
+- A [Redocly account with an organization](https://auth.cloud.redocly.com/registration).
 - A project using the **Starter** template in your Reunite organization.
 
   See [Create a project](../reunite/project/manage-projects.md#create-a-project) for instructions on creating a project.

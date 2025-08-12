@@ -180,8 +180,8 @@ While most metadata keys can be used for any purpose, some have special function
 
 ## Resources
 
-- [metadataGlobs](./metadata-globs.md) - Apply metadata using glob patterns
-- [x-metadata extension](../content/api-docs/openapi-extensions/x-metadata.md) - Add metadata to OpenAPI files
-- [catalog classic](./catalog-classic.md) - Configure catalogs that use metadata for filtering
-- [scorecard](./scorecard.md) - Configure scorecards that use metadata for targeting
-- [Configure search facets](../navigation/search/configure-search-facets.md) - Use metadata for search facets
+- **[MetadataGlobs](./metadata-globs.md)** - Apply metadata using glob patterns for automated content organization and categorization
+- **[x-metadata extension](../content/api-docs/openapi-extensions/x-metadata.md)** - Add metadata to OpenAPI files for enhanced documentation and search functionality
+- **[Catalog classic](./catalog-classic.md)** - Configure catalogs that use metadata for filtering and organization of API documentation
+- **[Scorecard](./scorecard.md)** - Configure scorecards that use metadata for targeting specific content and quality assessment
+- **[Configure search](./search.md#apply-facets-to-files)** - Use metadata for search facets to enable advanced content filtering and discovery

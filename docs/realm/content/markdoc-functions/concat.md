@@ -81,5 +81,5 @@ Full name: {% concat($frontmatter.data.firstName, " ", $frontmatter.data.lastNam
 
 ## Resources
 
-- Learn about using built-in and custom [Markdoc functions](./index.md).
-- Learn how to define and integrate your own custom functions in [Build a Markdoc function](../../customization/build-custom-function.md).
+- **[Markdoc functions overview](./index.md)** - Learn about using built-in and custom functions for dynamic content manipulation and processing
+- **[Build custom Markdoc functions](../../customization/build-custom-function.md)** - Define and integrate your own custom functions for advanced content processing and dynamic features

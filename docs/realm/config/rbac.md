@@ -338,8 +338,7 @@ rbac:
 
 ## Resources
 
-- [Role-based access control (RBAC)](../access/rbac.md) concept
-- [How to configure RBAC](../access/index.md) with additional information and examples for projects, pages, and navigation.
-- Pattern-based team access examples and configuration options are shown above.
-- Use [front matter](./front-matter-config.md) to configure role-based access on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Role-based access control (RBAC) concepts](../access/rbac.md)** - Understand the fundamentals and components of RBAC systems for comprehensive access management
+- **[RBAC configuration guide](../access/index.md)** - Complete implementation guide with examples for projects, pages, and navigation access control
+- **[Front matter configuration](./front-matter-config.md)** - Configure role-based access on individual pages using front matter for granular permission control
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

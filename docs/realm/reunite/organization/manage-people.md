@@ -140,6 +140,6 @@ To link duplicate users:
 
 ## Resources
 
-- [Add an identity provider](./sso/add-idp.md) to import users in bulk.
-- Learn more about assigning users to teams in the [Teams and users](./teams.md) conceptual documentation.
-- Reference the [Single sign-on (SSO)](../../config/sso.md) configuration options to see example SSO configurations.
+- **[Add an identity provider](./sso/add-idp.md)** - Set up identity providers to import and manage users in bulk for streamlined user onboarding
+- **[Teams and users](./teams.md)** - Learn about assigning users to teams and managing team-based access control within your organization
+- **[Single sign-on (SSO) configuration](../../config/sso.md)** - Complete configuration reference and examples for implementing SSO in your projects

@@ -70,5 +70,5 @@ After you have determined you need to alter a component by ejecting it and what 
 
 ## Resources
 
-- Discover more about the [Redocly CLI eject command](https://redocly.com/docs/cli/commands/eject).
-- Learn how to [Eject components](./eject-components-tutorial) in practice.
+- **[Redocly CLI eject command](https://redocly.com/docs/cli/commands/eject)** - Complete command reference and options for ejecting components using the command line interface
+- **[Component ejection tutorial](./eject-components-tutorial)** - Step-by-step practical guide to ejecting and customizing built-in components with real examples

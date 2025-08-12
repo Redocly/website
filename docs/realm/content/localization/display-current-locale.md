@@ -36,5 +36,5 @@ export default function () {
 
 ## Resources
 
-* Learn how to configure localization in [l10n configuration](../../config/l10n.md).
-* Learn how to localize your content files in [Add translated content](./localize-content.md).
+- **[Localization configuration](../../config/l10n.md)** - Configure language support, default locales, and localization behavior for your multi-language project
+- **[Localize content files](./localize-content.md)** - Translate your documentation content into multiple languages with proper file organization and structure

@@ -16,14 +16,30 @@ You can connect your Redocly project to the following Git repository hosting pro
 - [Azure DevOps](azure-devops.md)
 - [Bitbucket Cloud](bitbucket-cloud.md)
 
-{% admonition type="info" %}
-If you have a self-hosted instance of GitLab, or are on GitHub Enterprise you may need to allow certain IP addresses to connect to Redocly. See [allow IP addresses](../../../how-to/allow-ip-addresses.md) for more information.
+{% admonition type="info" name="Self-hosted Git providers" %}
+If you have a self-hosted instance of GitLab, or are on GitHub Enterprise you may need to allow certain IP addresses to connect to Redocly.
+
+Allow these IP addresses to ensure that Redocly can deploy previews and production updates based on changes you and your contributors make:
+
+**US region:**
+```sh
+3.211.34.228
+44.206.14.241
+54.156.60.142
+```
+
+**EU region:**
+```sh
+3.78.112.49
+52.58.255.31
+3.66.111.193
+```
 {% /admonition %}
 
 ## Resources
 
-- Follow the steps to [manage the self-hosted Git providers](./manage-self-hosted.md) in Reunite.
-- Follow the steps to [include remote content](../remote-content/index.md) from a different repository in your project.
-- Check out all the ways you can [use the Editor](../use-editor.md) in Reunite to create content.
-- Learn more about where you can view feedback and deployment details for [projects](../projects.md) in Reunite.
-- View the different options for configuring your project in the `redocly.yaml` file in the [Configuration reference documentation](../../../config/index.md).
+- **[Manage self-hosted Git providers](./manage-self-hosted.md)** - Set up and configure self-hosted Git repositories for enterprise environments and custom infrastructure
+- **[Include remote content](../remote-content/index.md)** - Integrate content from external repositories and sources into your Reunite projects for centralized documentation
+- **[Use the Editor](../use-editor.md)** - Explore Reunite's collaborative editing tools for creating and managing content with real-time collaboration features
+- **[Projects overview](../projects.md)** - View feedback, deployment details, and project settings for comprehensive project management in Reunite
+- **[Configuration reference](../../../config/index.md)** - Complete redocly.yaml configuration options for customizing project behavior, deployment, and integration settings

@@ -36,6 +36,6 @@ l10n:
 
 ## Resources
 
-* Learn how to configure localization in [l10n configuration](../../config/l10n.md).
-* Learn how to localize your content files in [Add translated content](./localize-content.md).
-* Learn more about how to add custom styles to your project in [custom styles](../../branding/customize-styles.md).
+- **[Localization configuration](../../config/l10n.md)** - Configure language support, default locales, and localization behavior for your multi-language project
+- **[Localize content files](./localize-content.md)** - Translate your documentation content into multiple languages with proper file organization and structure
+- **[Custom styles guide](../../branding/customize-styles.md)** - Learn to customize your project's appearance using CSS variables and locale-specific styling techniques

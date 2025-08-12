@@ -71,6 +71,6 @@ your-awesome-project/
 
 ## Resources
 
-- Learn more about when to [Eject components](./index.md).
-- Follow steps to [Eject components in Reunite](./eject-components-in-reunite.md).
+- **[Component ejection guide](./index.md)** - Learn when and why to eject built-in components for advanced customization and styling control
+- **[Eject components in Reunite](./eject-components-in-reunite.md)** - Alternative method for ejecting components using the Reunite web interface instead of CLI
 - Discover more about the [Redocly CLI eject command](https://redocly.com/docs/cli/commands/eject).

@@ -124,7 +124,9 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
 - icon
 - string or [srcSet](#icon-object)
-- Path to icon image file. Shown on left side of the entry.
+- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
+  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
+  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
 
 {% /table %}
 
@@ -212,15 +214,15 @@ footer:
         - label: GitHub
           href: 'https://github.com/example'
           external: true
-          icon: ./images/github-icon.svg
+          icon: brands github
         - label: Twitter
           href: 'https://twitter.com/example'
           external: true
-          icon: ./images/twitter-icon.svg
+          icon: brands twitter
         - label: LinkedIn
           href: 'https://linkedin.com/company/example'
           external: true
-          icon: ./images/linkedin-icon.svg
+          icon: brands linkedin
 ```
 
 Each entry in the footer's `items` configures a distinct column. Using groups is a common approach for organizing related links.
@@ -281,11 +283,11 @@ footer:
 
 By grouping the links, users can quickly locate the section and content they are looking for.
 
-## Related resources
+## Resources
 
-- [Navigation elements](../navigation/index.md) - Overview of all navigation components and patterns.
-- [Navbar configuration](./navbar.md) - Configure the top navigation bar.
-- [Sidebar configuration](../navigation/sidebars.md) - Configure the left navigation panel.
-- [Custom CSS styles](../branding/customize-styles.md) - Add custom styling that can be applied to your footer.
-- Use [front matter](./front-matter-config.md) to show or hide the footer on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Navigation elements](../navigation/index.md)** - Overview of all navigation components and patterns for comprehensive site navigation design
+- **[Navbar configuration](./navbar.md)** - Configure the top navigation bar to complement your footer design and provide consistent site navigation
+- **[Sidebar configuration](../navigation/sidebars.md)** - Configure the left navigation panel for comprehensive documentation navigation structure
+- **[Custom CSS styles](../branding/customize-styles.md)** - Add custom styling that can be applied to your footer for brand consistency and visual appeal
+- **[Front matter configuration](./front-matter-config.md)** - Use front matter to show or hide the footer on individual pages for flexible content presentation
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation customization

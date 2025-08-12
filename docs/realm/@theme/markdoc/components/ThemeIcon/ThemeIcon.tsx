@@ -7,7 +7,7 @@ export interface IconProps {
   color?: string;
 }
 
-export function Icon({ name, size = 24, color = 'currentColor' }: IconProps) {
+export function ThemeIcon({ name, size = 24, color = 'currentColor' }: IconProps) {
   const IconComponent = Icons[name];
   if (!IconComponent) {
     console.warn(`Icon "${name}" not found`);

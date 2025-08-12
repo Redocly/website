@@ -352,5 +352,5 @@ You can use this optional element to show users an image "preview" of what they 
 
 ## Resources
 
-- Learn how to use our custom `code-walkthrough` Markdoc tag to create interactive code guides in [Create code walkthrough](./create-code-walkthrough.md) how-to documentation.
-- Discover how to add a [`toggle` tag](toggle.md) to make your code walkthrough content even more interactive, by allowing users to toggle features or configurations to explore different scenarios.
+- **[Create code walkthrough](./create-code-walkthrough.md)** - Learn to use the custom code-walkthrough Markdoc tag to create interactive code guides with step-by-step explanations
+- **[Toggle tag](./toggle.md)** - Add interactive toggle functionality to your code walkthrough content, allowing users to explore different configurations and scenarios

@@ -348,8 +348,8 @@ This example shows how to highlight high-click tasks in yellow and medium-click 
 
 ## Resources
 
-- [Custom styles](./customize-styles.md) - Learn to customize the styles of your Redocly projects.
-- [Customize color modes](./customize-color-modes.md) - Add unique styling for each color mode.
-- [Branding overview](./index.md) - Overview of branding and customization options.
-- [Color mode](./color-mode.md) - Learn how color modes work in Realm.
-- [CSS variables dictionary](./css-variables/index.md) - See a list of available CSS variables.
+- **[Custom styles guide](./customize-styles.md)** - Learn to customize your project's appearance using CSS variables and custom stylesheets for comprehensive styling control
+- **[Color mode customization](./customize-color-modes.md)** - Apply different table styling for light and dark modes with mode-specific color schemes and CSS rules
+- **[Branding overview](./index.md)** - Explore all available branding and customization approaches from basic configuration to advanced component styling
+- **[Color mode concepts](./color-mode.md)** - Understand how the color mode feature works and its CSS variable-based implementation for table styling
+- **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of table-specific CSS variables and global styling variables for advanced customization

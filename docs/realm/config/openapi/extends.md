@@ -33,7 +33,7 @@ extends:
 
 ## Resources
 
-- [apis](../apis.md) configuration options allow setting per-API configuration in `redocly.yaml`.
-- [rules](../rules.md) settings define the linting rules that are used.
-- Detailed documentation and examples on [extending configuration](https://redocly.com/docs/cli/configuration/extends).
-- Explore other [configuration options](../index.md) for your project.
+- **[APIs configuration](../apis.md)** - Set per-API configuration options in redocly.yaml for granular control over different API specifications
+- **[Rules configuration](../rules.md)** - Define linting rules that work with extends configuration for comprehensive API validation
+- **[Extending configuration](https://redocly.com/docs/cli/configuration/extends)** - Detailed documentation and examples for extending configuration with base rulesets and inheritance
+- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization

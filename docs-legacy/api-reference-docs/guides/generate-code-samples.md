@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 seo:
   title: Generate code samples automatically
 ---

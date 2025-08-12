@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 exclude: true
 content:
   heroImg: ref-docs-hero

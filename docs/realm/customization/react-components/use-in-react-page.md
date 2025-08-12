@@ -118,6 +118,6 @@ export default function () {
 
 ## Resources
 
-- Learn how to [customize theme components](./wrap-components.md).
-- Discover components you can customize in [List of customizable components](./list/index.md).
-- Discover icons you can customize in [List of customizable icons](./list/icons.md).
+- **[Customize theme components](./wrap-components.md)** - Learn to wrap and customize built-in components to create reusable, branded versions for your project
+- **[List of customizable components](./list/index.md)** - Browse all available built-in React components that you can customize and extend in your projects
+- **[Customizable icons list](./list/icons.md)** - Explore available icon components that you can customize and extend with your own styling and functionality

@@ -119,6 +119,6 @@ userMenu:
 
 ## Resources
 
-- Learn more about how to [configure RBAC](../access/index.md) in the how-to documentation.
-- Follow steps for [configuring SSO](../reunite/organization/sso/configure-sso.md) in the how-to documentation.
-- Discover how RBAC works in Redocly products in the [RBAC](../access/rbac.md) conceptual documentation.
+- **[Configure RBAC](../access/index.md)** - Configure role-based access control to manage user permissions and access levels for user menu functionality
+- **[Configure SSO](../reunite/organization/sso/configure-sso.md)** - Set up single sign-on integration to enable seamless user authentication and menu personalization
+- **[RBAC concepts](../access/rbac.md)** - Understand how role-based access control works in Redocly products for comprehensive user menu and permission management

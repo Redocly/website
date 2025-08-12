@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Specification extensions
 
 While the OpenAPI specification tries to accommodate most use cases, additional data can be used to extend the specification and augment its functionality. These additional properties are known as specification extensions (previously called "vendor extensions"). The extension properties are implemented as patterned fields that start with the `x-` naming convention.

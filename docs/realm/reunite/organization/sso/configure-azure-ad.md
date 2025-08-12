@@ -141,5 +141,5 @@ rbac:
 
 ## Resources
 
-- [`sso` reference](../../../config/sso.md)
-- [`rbac` reference](../../../config/rbac.md)
+- **[SSO configuration reference](../../../config/sso.md)** - Complete technical reference for all SSO configuration options and settings in your redocly.yaml file
+- **[RBAC configuration reference](../../../config/rbac.md)** - Configure role-based access control options to manage user permissions and access levels

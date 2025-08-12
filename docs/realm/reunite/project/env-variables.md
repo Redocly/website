@@ -143,5 +143,5 @@ The `REDOCLY_` prefix is reserved for future use by Redocly.
 
 ## Resources
 
-- Learn more about [Markdoc variables syntax](https://markdoc.dev/docs/variables) for using environment variables in Markdown
-- See [Projects](./projects.md) for other project configuration options
+- **[Markdoc variables syntax](https://markdoc.dev/docs/variables)** - Learn the syntax for using environment variables within Markdown content and templates
+- **[Projects overview](./projects.md)** - Explore other project configuration options and settings available in Reunite

@@ -256,7 +256,7 @@ Content files named `index` (e.g., `index.md`, `index.page.tsx`, or even `index.
 ## Content reuse
 
 You can reuse content across your project by using the [partial markdoc tag](./markdoc-tags/partial.md).
-Reusable content should be stored in the `_partials` directory.
+Reusable content should be stored in the `_partials` directory. Learn more about [Markdoc tags](./markdoc-tags/tag-library.md) for other content enhancement options.
 
 ## @l10n
 
@@ -313,6 +313,7 @@ Avoid placing regular images, CSS, or JavaScript that you author yourself here i
 
 ## Resources
 
-* Follow configuration instructions for [multiple products](../config/products.md) or [multiple languages](../config/l10n.md).
-* Learn more about configuring your project to use the same content in multiple places using the [partial markdoc tag](https://redocly.com/docs/learn-markdoc/tags/partial).
-* See the configuration options available for your `sidebars.yaml` file in the [sidebars reference documentation](../navigation/sidebars.md).
+- **[Multiple products configuration](../config/products.md)** - Set up product switching and organize documentation for multiple products with separate navigation and branding
+- **[Multiple languages setup](../config/l10n.md)** - Configure localization and internationalization for multi-language documentation projects
+- **[Content reuse with partials](./markdoc-tags/partial.md)** - Share and reuse content across multiple pages and projects to maintain consistency and reduce duplication
+- **[Sidebars configuration](../navigation/sidebars.md)** - Configure navigation structures and sidebar organization with detailed syntax and options reference

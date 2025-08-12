@@ -122,7 +122,7 @@ If no match is found for the named example passed in the header, the mock server
 
 ## Resources
 
-- Modify the behavior of the mock server: [Configure mock server](./configure-mock-server.md).
-- Generate your own reference documentation by [Adding OpenAPI reference docs](./add-openapi-docs.md).
-- Learn the mock server settings in the [Mock server config reference](../../config/mock-server.md).
-- Control API reference docs using [OpenAPI config reference](../../config/openapi/index.md).
+- **[Configure mock server](./configure-mock-server.md)** - Customize mock server behavior and optimize how users interact with API descriptions through testing
+- **[Add OpenAPI reference docs](./add-openapi-docs.md)** - Generate comprehensive API reference documentation with interactive testing capabilities for your users
+- **[Mock server configuration reference](../../config/mock-server.md)** - Complete configuration options and parameters for mock server setup and customization
+- **[OpenAPI configuration reference](../../config/openapi/index.md)** - Control your API reference documentation appearance and behavior with comprehensive configuration settings

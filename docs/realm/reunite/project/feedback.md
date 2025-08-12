@@ -29,7 +29,7 @@ To view detailed feedback data:
 
 ## View code reports data
 
-On the **Code reports** tab is a table with the data collected from the [code snippet report option's feedback form](../../setup/concepts/feedback.md#report-icon) including the following data:
+On the **Code reports** tab is a table with the data collected from the [code snippet report option's feedback form](../../config/feedback.md#extend-feedback-forms) including the following data:
 
 - **Page**: The file path to the page where the data was collected.
 - **User**: The email address of the user who submitted the feedback form, if the user was logged in at the time. Otherwise, user is Anonymous.
@@ -67,8 +67,5 @@ Afterward, when you select the status checkbox at the top of the table, the list
 
 ## Resources
 
-- Learn how to customize how the feedback form displays in your documentation in [Configure and view feedback](../../setup/how-to/feedback/index.md).
-- Add additional options after users complete their initial feedback selection by following the steps in [Extend the feedback form](../../setup/how-to/feedback/extend-feedback.md).
-- Learn more about the different feedback forms available in the [Feedback concept](../../setup/concepts/feedback.md).
-- See different configuration options and examples in the [Feedback reference](../../config/feedback.md).
-- Discover the different ways you can customize code samples in your documentation in the [CodeSnippet reference](../../config/code-snippet.md).
+- **[Feedback configuration reference](../../config/feedback.md)** - Configure and customize feedback forms with various collection methods and styling options
+- **[CodeSnippet configuration reference](../../config/code-snippet.md)** - Customize code snippet report buttons and feedback collection for technical documentation

@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Environment variables
 
 Redocly sets environment variables when running API registry jobs. The API registry runs both the `lint` and `bundle` commands which can use environment variables.

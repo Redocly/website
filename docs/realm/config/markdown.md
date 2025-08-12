@@ -172,9 +172,9 @@ Amazing markdown content...
 
 ```
 
-## Related options
+## Resources
 
-- Configure page [breadcrumbs](./breadcrumbs.md)
-- Configure [links](./links.md)
-- Use [front matter](./front-matter-config.md) to configure some of the Markdown options on individual pages.
-- Explore other [configuration options](./index.md) for your project.
+- **[Breadcrumbs configuration](./breadcrumbs.md)** - Configure page breadcrumbs to improve navigation and user orientation within your documentation
+- **[Links configuration](./links.md)** - Configure link behavior and styling for consistent navigation and external link handling
+- **[Front matter configuration](./front-matter-config.md)** - Use front matter to configure Markdown options on individual pages for granular control
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation customization

@@ -108,4 +108,4 @@ import { Button } from '@redocly/theme/components/Button/Button';
 
 ## Resources
 
-- For a list of all components you can customize, see [List of customizable components](./index.md).
+- **[List of customizable components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects
