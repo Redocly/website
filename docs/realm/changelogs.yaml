@@ -1,4 +1,17 @@
 '@redocly/realm':
+  0.125.0-next.2:
+    timestamp: 1754995802000
+    changes:
+      minor: []
+      patch:
+        - Fixed broken feedback submission.
+        - Fixed crash during sidebar generation caused by long folder names.
+        - Skipped creating the search index when search is disabled in the configuration.
+        - Updated `@redocly/openapi-core` dependency to `2.0.3`.
+    dependencies:
+      '@redocly/openapi-docs': 3.13.0-next.2
+      '@redocly/asyncapi-docs': 1.2.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.10.0-next.2
   0.125.0-next.1:
     timestamp: 1754918687000
     changes:
@@ -3937,6 +3950,19 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.125.0-next.2:
+    timestamp: 1754995802000
+    changes:
+      minor: []
+      patch:
+        - Fixed broken feedback submission.
+        - Fixed crash during sidebar generation caused by long folder names.
+        - Skipped creating the search index when search is disabled in the configuration.
+        - Updated `@redocly/openapi-core` dependency to `2.0.3`.
+    dependencies:
+      '@redocly/openapi-docs': 3.13.0-next.2
+      '@redocly/asyncapi-docs': 1.2.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.10.0-next.2
   0.125.0-next.1:
     timestamp: 1754918687000
     changes:
@@ -7155,6 +7181,19 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.125.0-next.2:
+    timestamp: 1754995802000
+    changes:
+      minor: []
+      patch:
+        - Fixed broken feedback submission.
+        - Fixed crash during sidebar generation caused by long folder names.
+        - Skipped creating the search index when search is disabled in the configuration.
+        - Updated `@redocly/openapi-core` dependency to `2.0.3`.
+    dependencies:
+      '@redocly/openapi-docs': 3.13.0-next.2
+      '@redocly/asyncapi-docs': 1.2.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.10.0-next.2
   0.125.0-next.1:
     timestamp: 1754918687000
     changes:
@@ -10364,6 +10403,19 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.125.0-next.2:
+    timestamp: 1754995802000
+    changes:
+      minor: []
+      patch:
+        - Fixed broken feedback submission.
+        - Fixed crash during sidebar generation caused by long folder names.
+        - Skipped creating the search index when search is disabled in the configuration.
+        - Updated `@redocly/openapi-core` dependency to `2.0.3`.
+    dependencies:
+      '@redocly/openapi-docs': 3.13.0-next.2
+      '@redocly/asyncapi-docs': 1.2.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.10.0-next.2
   0.125.0-next.1:
     timestamp: 1754918687000
     changes:
@@ -15671,6 +15723,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.13.0-next.2:
+    timestamp: 1754995802000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` dependency to `2.0.3`.
+    dependencies: {}
   3.13.0-next.1:
     timestamp: 1754918687000
     changes:
@@ -19195,6 +19254,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.8.0-next.2:
+    timestamp: 1754995802000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.125.0-next.2
+      '@redocly/redoc': 0.125.0-next.2
+      '@redocly/redoc-reef': 0.125.0-next.2
+      '@redocly/redoc-revel': 0.125.0-next.2
   1.8.0-next.1:
     timestamp: 1754918687000
     changes:
@@ -22792,6 +22861,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.10.0-next.2:
+    timestamp: 1754995802000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.13.0-next.2
   0.10.0-next.1:
     timestamp: 1754918687000
     changes:
@@ -27028,6 +27104,13 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.2.0-next.2:
+    timestamp: 1754995802000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.13.0-next.2
   1.2.0-next.1:
     timestamp: 1754918687000
     changes:
