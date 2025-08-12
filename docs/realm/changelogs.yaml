@@ -1,4 +1,41 @@
 '@redocly/realm':
+  0.124.3:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue causing crashed during a build.
+    dependencies:
+      '@redocly/theme': 0.56.3
+      '@redocly/asyncapi-docs': 1.1.3
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.3
+      '@redocly/portal-plugin-mock-server': 0.9.3
+  0.124.2:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed invalid dependency version causing dependency install to fail.
+    dependencies:
+      '@redocly/theme': 0.56.2
+      '@redocly/asyncapi-docs': 1.1.2
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.2
+      '@redocly/portal-plugin-mock-server': 0.9.2
+  0.124.1:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed broken feedback submission.
+        - 'Fixed an issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+    dependencies:
+      '@redocly/theme': 0.56.1
+      '@redocly/asyncapi-docs': 1.1.1
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.1
+      '@redocly/portal-plugin-mock-server': 0.9.1
   0.125.0-next.2:
     timestamp: 1754995802000
     changes:
@@ -20,7 +57,7 @@
       patch:
         - Renamed environment variable `OAUTH_USE_INTROSPECT` to `REDOCLY_OAUTH_USE_INTROSPECT`.
         - Made redirect destinations case-insensitive.
-        - 'Fixed issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+        - 'Fixed an issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
     dependencies:
       '@redocly/theme': 0.57.0-next.1
       '@redocly/asyncapi-docs': 1.2.0-next.1
@@ -3950,6 +3987,43 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.124.3:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue causing crashed during a build.
+    dependencies:
+      '@redocly/theme': 0.56.3
+      '@redocly/asyncapi-docs': 1.1.3
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.3
+      '@redocly/portal-plugin-mock-server': 0.9.3
+  0.124.2:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed invalid dependency version causing dependency install to fail.
+    dependencies:
+      '@redocly/theme': 0.56.2
+      '@redocly/asyncapi-docs': 1.1.2
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.2
+      '@redocly/portal-plugin-mock-server': 0.9.2
+  0.124.1:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed broken feedback submission.
+        - 'Fixed an issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+    dependencies:
+      '@redocly/theme': 0.56.1
+      '@redocly/asyncapi-docs': 1.1.1
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.1
+      '@redocly/portal-plugin-mock-server': 0.9.1
   0.125.0-next.2:
     timestamp: 1754995802000
     changes:
@@ -3971,7 +4045,7 @@
       patch:
         - Renamed environment variable `OAUTH_USE_INTROSPECT` to `REDOCLY_OAUTH_USE_INTROSPECT`.
         - Made redirect destinations case-insensitive.
-        - 'Fixed issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+        - 'Fixed an issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
     dependencies:
       '@redocly/theme': 0.57.0-next.1
       '@redocly/asyncapi-docs': 1.2.0-next.1
@@ -7181,6 +7255,43 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.124.3:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue causing crashed during a build.
+    dependencies:
+      '@redocly/theme': 0.56.3
+      '@redocly/asyncapi-docs': 1.1.3
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.3
+      '@redocly/portal-plugin-mock-server': 0.9.3
+  0.124.2:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed invalid dependency version causing dependency install to fail.
+    dependencies:
+      '@redocly/theme': 0.56.2
+      '@redocly/asyncapi-docs': 1.1.2
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.2
+      '@redocly/portal-plugin-mock-server': 0.9.2
+  0.124.1:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed broken feedback submission.
+        - 'Fixed an issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+    dependencies:
+      '@redocly/theme': 0.56.1
+      '@redocly/asyncapi-docs': 1.1.1
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.1
+      '@redocly/portal-plugin-mock-server': 0.9.1
   0.125.0-next.2:
     timestamp: 1754995802000
     changes:
@@ -7202,7 +7313,7 @@
       patch:
         - Renamed environment variable `OAUTH_USE_INTROSPECT` to `REDOCLY_OAUTH_USE_INTROSPECT`.
         - Made redirect destinations case-insensitive.
-        - 'Fixed issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+        - 'Fixed an issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
     dependencies:
       '@redocly/theme': 0.57.0-next.1
       '@redocly/asyncapi-docs': 1.2.0-next.1
@@ -10403,6 +10514,43 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.124.3:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue causing crashed during a build.
+    dependencies:
+      '@redocly/theme': 0.56.3
+      '@redocly/asyncapi-docs': 1.1.3
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.3
+      '@redocly/portal-plugin-mock-server': 0.9.3
+  0.124.2:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed invalid dependency version causing dependency install to fail.
+    dependencies:
+      '@redocly/theme': 0.56.2
+      '@redocly/asyncapi-docs': 1.1.2
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.2
+      '@redocly/portal-plugin-mock-server': 0.9.2
+  0.124.1:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed broken feedback submission.
+        - 'Fixed an issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+    dependencies:
+      '@redocly/theme': 0.56.1
+      '@redocly/asyncapi-docs': 1.1.1
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.1
+      '@redocly/portal-plugin-mock-server': 0.9.1
   0.125.0-next.2:
     timestamp: 1754995802000
     changes:
@@ -10423,7 +10571,7 @@
         - Added `dynamic` function to `@redocly/theme` for lazy loading components.
       patch:
         - Renamed environment variable `OAUTH_USE_INTROSPECT` to `REDOCLY_OAUTH_USE_INTROSPECT`.
-        - 'Fixed issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+        - 'Fixed an issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
     dependencies:
       '@redocly/theme': 0.57.0-next.1
       '@redocly/asyncapi-docs': 1.2.0-next.1
@@ -13624,6 +13772,28 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.56.3:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue causing crashed during a build.
+    dependencies: {}
+  0.56.2:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed invalid dependency version causing dependency install to fail.
+    dependencies: {}
+  0.56.1:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch:
+        - Fixed size and alignment issues for image icons to ensure consistent display across the UI.
+        - 'Fixed an issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+    dependencies: {}
   0.57.0-next.1:
     timestamp: 1754918687000
     changes:
@@ -13631,7 +13801,7 @@
         - Added `dynamic` function to `@redocly/theme` for lazy loading components.
       patch:
         - Fixed size and alignment issues for image icons to ensure consistent display across the UI.
-        - 'Fixed issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
+        - 'Fixed an issue where LLM page actions appeared on pages with `excludeFromSearch: true` in the front matter.'
     dependencies: {}
   0.57.0-next.0:
     timestamp: 1754900020000
@@ -15723,6 +15893,27 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.12.3:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.15.3
+  3.12.2:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.15.2
+  3.12.1:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.15.1
   3.13.0-next.2:
     timestamp: 1754995802000
     changes:
@@ -19254,6 +19445,39 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.7.3:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.124.3
+      '@redocly/redoc-reef': 0.124.3
+      '@redocly/realm': 0.124.3
+      '@redocly/redoc': 0.124.3
+      '@redocly/theme': 0.56.3
+  1.7.2:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.124.2
+      '@redocly/redoc-reef': 0.124.2
+      '@redocly/realm': 0.124.2
+      '@redocly/redoc': 0.124.2
+      '@redocly/theme': 0.56.2
+  1.7.1:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.124.1
+      '@redocly/redoc': 0.124.1
+      '@redocly/redoc-reef': 0.124.1
+      '@redocly/redoc-revel': 0.124.1
+      '@redocly/theme': 0.56.1
   1.8.0-next.2:
     timestamp: 1754995802000
     changes:
@@ -22861,6 +23085,27 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.9.3:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.12.3
+  0.9.2:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.12.2
+  0.9.1:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.12.1
   0.10.0-next.2:
     timestamp: 1754995802000
     changes:
@@ -24868,6 +25113,27 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.15.3:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.3
+  0.15.2:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.2
+  0.15.1:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.1
   0.16.0-next.1:
     timestamp: 1754918687000
     changes:
@@ -27104,6 +27370,30 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.1.3:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.3
+      '@redocly/openapi-docs': 3.12.3
+  1.1.2:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.2
+      '@redocly/openapi-docs': 3.12.2
+  1.1.1:
+    timestamp: 1755013464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.56.1
+      '@redocly/openapi-docs': 3.12.1
   1.2.0-next.2:
     timestamp: 1754995802000
     changes:
@@ -28967,11 +29257,4 @@ reunite:
           Updated Reunite build logs by refining emojis, fixing alignments for multiline logs and enabling colorful statuses for info and warning
           realm logs.
       patch: []
-    dependencies: {}
-  v2025-08-12.1:
-    timestamp: 1755001387000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.0.3`.
     dependencies: {}
