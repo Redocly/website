@@ -87,8 +87,8 @@
   to: '/reunite/project/remote-content/from-github'
 '/setup/how-to/remote-content/from-gitlab':
   to: '/reunite/project/remote-content/from-gitlab'
-'/setup/how-to/remote-content/index':
-  to: '/reunite/project/remote-content/index'
+'/setup/how-to/remote-content':
+  to: '/reunite/project/remote-content'
 '/setup/how-to/remote-content/manually-sync-remote-content':
   to: '/reunite/project/remote-content/manually-sync-remote-content'
 '/setup/how-to/remote-content/push':
@@ -98,8 +98,8 @@
 # Setup respect-monitoring redirects
 '/setup/respect-monitoring/configure-respect-monitoring':
   to: '/reunite/project/respect-monitoring/configure-respect-monitoring'
-'/setup/respect-monitoring/index':
-  to: '/reunite/project/respect-monitoring/index'
+'/setup/respect-monitoring':
+  to: '/reunite/project/respect-monitoring'
 '/setup/respect-monitoring/manage-respect-monitoring':
   to: '/reunite/project/respect-monitoring/manage-respect-monitoring'
 
@@ -146,8 +146,8 @@
   to: '/content/api-docs/try-apis-with-mock-server'
 
 # OpenAPI extensions redirects - Files moved to /content/api-docs/openapi-extensions/
-'/author/reference/openapi-extensions/index':
-  to: '/content/api-docs/openapi-extensions/index'
+'/author/reference/openapi-extensions':
+  to: '/content/api-docs/openapi-extensions'
 '/author/reference/openapi-extensions/x-additional-properties-name':
   to: '/content/api-docs/openapi-extensions/x-additional-properties-name'
 '/author/reference/openapi-extensions/x-assertion-type':
@@ -192,8 +192,8 @@
   to: '/content/localization/customize-styles-for-locale'
 '/author/how-to/config-l10n/display-current-locale':
   to: '/content/localization/display-current-locale'
-'/author/how-to/config-l10n/index':
-  to: '/content/localization/index'
+'/author/how-to/config-l10n':
+  to: '/content/localization'
 '/author/how-to/config-l10n/localize-content':
   to: '/content/localization/localize-content'
 '/author/how-to/config-l10n/localize-labels':
@@ -210,8 +210,8 @@
   to: '/content/markdoc-functions/concat'
 '/author/reference/functions/includes':
   to: '/content/markdoc-functions/includes'
-'/author/reference/functions/index':
-  to: '/content/markdoc-functions/index'
+'/author/reference/functions':
+  to: '/content/markdoc-functions'
 
 # Markdoc tags redirects - Files moved to /content/markdoc-tags/
 '/author/reference/tags/admonition':
@@ -246,8 +246,8 @@
 # Code walkthrough redirects - Files moved to /content/markdoc-tags/code-walkthrough/
 '/author/reference/tags/code-walkthrough/create-code-walkthrough':
   to: '/content/markdoc-tags/code-walkthrough/create-code-walkthrough'
-'/author/reference/tags/code-walkthrough/index':
-  to: '/content/markdoc-tags/code-walkthrough/index'
+'/author/reference/tags/code-walkthrough':
+  to: '/content/markdoc-tags/code-walkthrough'
 '/author/reference/tags/code-walkthrough/input':
   to: '/content/markdoc-tags/code-walkthrough/input'
 '/author/reference/tags/code-walkthrough/step':
@@ -278,12 +278,12 @@
   to: '/branding/css-variables/component'
 '/author/how-to/css-variables/api-docs':
   to: '/branding/css-variables/api-docs'
-'/author/how-to/css-variables/index':
-  to: '/branding/css-variables/index'
+'/author/how-to/css-variables':
+  to: '/branding/css-variables'
 
   # Navigation redirects - Files moved to /navigation/
-'/author/how-to/configure-nav/index':
-  to: '/navigation/index'
+'/author/how-to/configure-nav':
+  to: '/navigation'
 '/author/how-to/configure-nav/navbar':
   to: '/navigation/navbar'
 '/author/how-to/configure-nav/sidebar':
@@ -411,9 +411,7 @@
 
 # Setup RBAC redirects - Files moved from setup paths to /access/
 '/setup/how-to/rbac':
-  to: '/access/index'
-'/setup/how-to/rbac/index':
-  to: '/access/index'
+  to: '/access'
 '/setup/how-to/rbac/links-and-groups-permissions':
   to: '/access/links-and-groups-permissions'
 '/setup/how-to/rbac/page-permissions':
