@@ -219,7 +219,7 @@ Update the configuration file and restart the server. If it fails, check the log
 Update the `config.yaml` file and restart the application server. If the application server fails to start, check the application server logs.
 ```
 
-> **Why this matters:** [Coreference resolution is challenging for LLMs](https://spotintelligence.com/2024/01/17/coreference-resolution-nlp/) when pronouns have unclear antecedents. Vague references like "it" force the AI to make probabilistic guesses about what entity is being referenced, often incorrectly.
+> **Why this matters:** [Coreference resolution is challenging for LLMs](https://spotintelligence.com/2024/01/17/coreference-resolution-nlp/). Vague references like "it" force the AI to make probabilistic guesses about what entity is being referenced, often incorrectly.
 
 ## Watch out for terminology drift
 
