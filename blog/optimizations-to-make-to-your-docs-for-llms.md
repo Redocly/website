@@ -261,7 +261,7 @@ If the AI gives you accurate, complete answers, your structure is working. If it
 Here's a suggested path to implementing this without disrupting your entire documentation workflow:
 
 - **Start with your highest-impact content.** Don't try to optimize everything at once. Focus on your authentication docs, key endpoints, and getting started guide. In other words, the context developers hit most often.
-- **Use your OpenAPI spec as the foundation.** If you're maintaining API documentation manually, you're making this harder than it needs to be. [Tools like Redocly can generate consistently structured documentation](https://redocly.com/) from your OpenAPI specification, automatically handling most of the formatting issues that confuse AI systems.
+- **Use your OpenAPI description as the foundation.** If you're maintaining API documentation manually, you're making this harder than it needs to be. [Tools like Redocly can generate consistently structured documentation](https://redocly.com/) from your OpenAPI description, automatically handling most of the formatting issues that confuse AI systems.
 - **Test incrementally.** As you make changes, test them with AI tools. This gives you immediate feedback on whether your optimizations are actually improving the experience.
 - **Track the impact.** Monitor your support tickets and developer onboarding metrics. As your documentation becomes more AI-friendly, you should see fewer basic questions and faster time-to-first-success for new developers.
 
