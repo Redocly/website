@@ -150,7 +150,9 @@ Yes, perhaps it reads a bit awkwardly to humans, but AI systems will give much m
 
 ### 3. Format code examples properly
 
-This is probably the biggest quick win. Inline code without proper formatting gets tokenized unpredictably, leading to broken examples in AI responses.
+This is probably the biggest quick win.
+Inline code without proper formatting can be parsed ambiguously by AI systems, causing commands to get merged or altered when they appear in AI-generated responses.
+
 
 **Bad for AI:**
 
