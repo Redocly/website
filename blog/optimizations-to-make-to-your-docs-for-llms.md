@@ -9,8 +9,8 @@ seo:
 author: adam-altman
 date: 2025-01-15
 categories:
-  - documentation
-  - ai
+  - tech-writers
+  - api
   - openapi
   - developer-experience
 image: llm_optimization_funnel_final.png
