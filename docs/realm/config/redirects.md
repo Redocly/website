@@ -40,6 +40,8 @@ When redirects are configured in both locations, the `redocly.yaml` configuratio
   Alternatively it may use a wildcard at the end of the absolute path; for example: `/sample/*`.
   The wildcard symbol (`*`) is only supported as the last path segment.
 
+  If you are redirecting from files named `index.*`, omit `index/` from the path.
+
 {% /table %}
 
 ### Destination object
@@ -59,6 +61,8 @@ When redirects are configured in both locations, the `redocly.yaml` configuratio
   Alternatively, it may be a URL to an external resource; for example: `https://redocly.com`.
   If the source uses a wildcard, the destination may also use a wildcard at the end of the path to indicate that the matched part of the path should be used; for example `/new-url/*`, `https://redocly.com/*`.
   This option is not available for redirects defined in front matter.
+
+  If you are redirecting to pages named `index.*`, omit `index/` from the path.
 
 ---
 
@@ -101,6 +105,18 @@ redirects:
 ```
 
 Adding redirects means that anyone with the old URLs still reaches the expected content.
+
+If you want to redirect to or from an index page, omit `index/` from paths:
+
+Previous location: `/config/openapi/index.md`
+
+New location: `/config/api/index.md`
+
+```yaml
+redirects:
+  '/config/openapi/':
+    to: '/config/api/'
+```
 
 ### Redirect to an external URL
 
