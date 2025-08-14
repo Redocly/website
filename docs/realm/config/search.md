@@ -238,6 +238,11 @@ search:
 Redocly AI Search runs in **inference-only mode** and does not train or fine-tune AI models on your content.
 For details, see the [AI Search data usage FAQ](../faq/ai-search-privacy.md).
 
+{% admonition type="info" %}
+AI search and Typesense search indexes are only built on the production branch.
+Changes to search configuration or content exclusions, like the `excludeFromSearch` front matter option, may not immediately appear in search results until the next production build.
+{% /admonition %}
+
 
 ## Apply facets to files
 
@@ -397,5 +402,5 @@ search:
 - **[Configure navbar](./navbar.md)** - Configure navigation bar settings including search integration and search button customization
 - **[Navigation elements](../navigation/index.md)** - Configure navigation elements in your project for comprehensive site structure and search integration
 - **[Predefined translation keys](../content/localization/translation-keys.md)** - Use predefined translation keys for search interface localization and internationalization
-- **[Front matter configuration](./front-matter-config.md)** - Configure search dialog behavior on individual pages using front matter for granular control
+- **[Front matter configuration](./front-matter-config.md)** - Configure search dialog behavior on individual pages using front matter, including `excludeFromSearch` option to exclude specific pages from search results
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

@@ -23,7 +23,12 @@ These options are available exclusively in front matter:
 - boolean
 - Exclude the page from search results and from `llms.txt` file when set to `true`.
   Default: `false`.
-  
+
+  {% admonition type="info" %}
+  Search indexes are only built on the production branch.
+  Changes to `excludeFromSearch` may not immediately appear in search results until the next production build.
+  {% /admonition %}
+
   To exclude OpenAPI description files from search, see: [`openapi` configuration](./openapi/index.md).
 
 ---
