@@ -95,4 +95,4 @@ asyncapi:
 
 ## Resources
 
-- Learn more about the [AsyncAPI docs plugin](../content/api-docs/add-asyncapi-docs-deprecated-plugin.md).
+- **[AsyncAPI docs plugin](../content/api-docs/add-asyncapi-docs-deprecated-plugin.md)** - Learn about the AsyncAPI documentation plugin for integrating event-driven API documentation

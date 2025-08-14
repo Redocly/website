@@ -76,9 +76,9 @@ Requiring SSO authentication does not require users to log in to your project. T
 
 ## Resources
 
-* If you want to specify which identity providers users can use to log in to your project with or if you want to disable SSO, follow the instructions in the [Configure SSO](./configure-sso.md) how-to documentation.
-* If you want to limit access to certain pages in your project or in Reunite, follow the instructions in the [Configure RBAC](../../../access/index.md) how-to documentation.
-* Discover all the options available for configuring SSO in the [`sso` reference documentation](../../../config/sso.md)
-* Learn more about the different identity provider types you can add in Reunite or configure in your `redocly.yaml` file in the [Single sign-on (SSO) concept doc](./sso.md).
-* To understand more about the different components involved in Redocly's RBAC, read the [Role-based access control (RBAC) concept documentation](../../../access/rbac.md).
-* View examples and options for configuring RBAC in your `redocly.yaml` file in the [RBAC reference documentation](../../../config/rbac.md).
+- **[Configure SSO](./configure-sso.md)** - Specify which identity providers users can access or disable SSO entirely for your project authentication settings
+- **[Configure RBAC](../../../access/index.md)** - Limit user access to specific pages and features in your project and Reunite using role-based access control
+- **[SSO configuration reference](../../../config/sso.md)** - Complete technical reference for all available SSO configuration options and implementation details
+- **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider types and their configuration options for both Reunite and redocly.yaml file setup
+- **[Role-based access control (RBAC) concepts](../../../access/rbac.md)** - Understand the components and architecture of Redocly's role-based access control system
+- **[RBAC configuration reference](../../../config/rbac.md)** - Examples and configuration options for implementing RBAC in your redocly.yaml file with detailed setup instructions

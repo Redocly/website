@@ -160,5 +160,5 @@ When users search from a product page, results are automatically filtered to tha
 
 ## Resources
 
-- [Multi-product overview](../navigation/multi-product.md) - Conceptual guide to multi-product documentation
-- [Navigation elements](../navigation/index.md) - Configure navigation for multi-product sites
+- **[Multi-product overview](../navigation/multi-product.md)** - Conceptual guide to multi-product documentation including product switching and organization strategies
+- **[Navigation elements](../navigation/index.md)** - Configure navigation elements and structures for multi-product sites with product-specific navigation

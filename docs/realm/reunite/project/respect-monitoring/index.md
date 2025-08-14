@@ -34,6 +34,6 @@ You can also subscribe to notifications to receive alerts in real-time when Resp
 
 ## Resources
 
-* Learn how to configure Reunite to monitor the performance of APIs in the [Configure Respect Monitoring](./configure-respect-monitoring.md) how-to documentation.
-* Explore the Arazzo workflow `jobs` configuration options in the [reunite](../../reunite.md) reference documentation.
-* Subscribe to notifications for individual workflows using the [Manage Respect Monitoring](./manage-respect-monitoring.md) how-to documentation.
+- **[Configure Respect Monitoring](./configure-respect-monitoring.md)** - Set up Reunite to monitor API performance and reliability with automated workflow execution and reporting
+- **[Reunite configuration reference](../../../config/reunite.md)** - Explore Arazzo workflow jobs configuration options for comprehensive API monitoring setup
+- **[Manage Respect Monitoring](./manage-respect-monitoring.md)** - Subscribe to notifications and manage monitoring settings for individual workflows and API endpoints

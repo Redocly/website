@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # x-example and x-examples
 
 {% admonition type="info" name="Compatibility warning" %}

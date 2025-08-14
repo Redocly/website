@@ -47,4 +47,5 @@ Using this setting, the samples will show up to five levels of nested payload da
 
 ## Resources
 
-- [GraphQL](https://graphql.org/)
+- **[GraphQL](https://graphql.org/)** - Official GraphQL specification and documentation for understanding query language fundamentals
+- **[GraphQL configuration](./index.md)** - Complete guide to GraphQL configuration options for customizing API reference documentation

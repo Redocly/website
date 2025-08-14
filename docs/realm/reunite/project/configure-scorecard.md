@@ -225,7 +225,7 @@ After you publish the updated project, the listed API description files are excl
 
 ## Resources
 
-- Follow the steps in [Add OpenAPI descriptions](../../content/api-docs/add-openapi-docs.md) to add your OpenAPI descriptions to your project.
-- If you have a lot of API descriptions, [Configure a catalog](../../config/catalog-classic.md) for an organized way to display them in your project.
-- Learn more about the [Scorecard](./scorecard.md) feature including what it displays and where to find the reports.
-- Check out the [Scorecard reference](../../config/scorecard.md) page to see the different options you can configure.
+- **[Add OpenAPI descriptions](../../content/api-docs/add-openapi-docs.md)** - Step-by-step guide to add OpenAPI descriptions to your project for scorecard evaluation and documentation
+- **[Configure a catalog](../../config/catalog-classic.md)** - Organize multiple API descriptions with structured catalogs for better navigation and user experience
+- **[Scorecard feature overview](./scorecard.md)** - Understand what scorecards display, how to access reports, and their role in API quality management
+- **[Scorecard configuration reference](../../config/scorecard.md)** - Complete reference for all scorecard configuration options, rulesets, and customization settings

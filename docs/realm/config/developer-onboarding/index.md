@@ -9,7 +9,17 @@ plans:
 ---
 # `developerOnboarding`
 
-Developer onboarding means allowing developers to register apps and manage credentials.
+Configure developer onboarding to enable external developers to self-register applications and manage API credentials through your developer portal.
+This feature integrates with API gateway management systems to automate app registration and credential lifecycle management.
+
+## When to use this
+
+Use developer onboarding when you want to:
+
+- Enable external developers to self-service app registration
+- Automate credential management for registered applications
+- Integrate your developer portal with API gateway systems like Apigee or Gravitee
+- Provide developers with a streamlined experience for accessing your APIs
 
 ## Options
 
@@ -61,7 +71,7 @@ Choose the appropriate adapter object based on the type.
 ---
 
 - auth
-- [Apigee Auth Object](#apigee-auth-object)
+- [Apigee auth object](#apigee-auth-object)
 - **REQUIRED.**
   Authentication object for the Apigee management API.
 
@@ -77,32 +87,32 @@ Choose the appropriate adapter object based on the type.
 - allowApiProductsOutsideCatalog
 - boolean
 - Allow developers to register apps with API products that are not in the catalog.
-  Default value: `false`.
+  Default: `false`.
 
 ---
 
 - stage
 - string
 - Mark the current Apigee instance as production or non-production to mark them in the UI.
-  Default value: `non-production`.
+  Default: `non-production`.
 
 ---
 
 - apiUrl
 - string
 - URL to send Apigee management console requests to, in case you wish to pass them through a proxy.
-  Default value: `https://apigee.googleapis.com/v1`.
+  Default: `https://apigee.googleapis.com/v1`.
 
 {% /table %}
 
-#### Apigee Auth Object
+#### Apigee auth object
 
 Choose your preferred method of authentication.
 
 - [Service Account](#apigee-service-account-auth-object)
 - [OAuth proxy](#apigee-oauth-proxy-auth-object)
 
-#### Apigee Service Account Auth Object
+#### Apigee service account auth object
 
 {% table %}
 
@@ -136,7 +146,7 @@ Choose your preferred method of authentication.
 
 {% /table %}
 
-#### Apigee OAuth Proxy Auth Object
+#### Apigee OAuth proxy auth object
 
 This auth object requires you to have an OAuth2 proxy in front of the Apigee management API.
 
@@ -149,7 +159,7 @@ This proxy should:
 
 - Validate the access token received from the OAuth2 proxy.
 - Validate if the specific API operation is allowed by your custom authorization logic.
-  See the list of [Apigee API operations](../../setup/reference/apigee-api-operations.md) used by the Redocly adapter.
+  See the list of [Apigee API operations](./apigee-api-operations.md) used by the Redocly adapter.
 - Authorize the request with Apigee (for example using service account).
 - Forward request to the Apigee management API.
 
@@ -228,21 +238,21 @@ Contact team@redocly.com before using this adapter.
 - string
 - **REQUIRED.**
   Name of the environment.
-  Default value: `DEFAULT`.
+  Default: `DEFAULT`.
 
 ---
 
 - stage
 - string
 - Mark the current Gravitee instance as production or non-production to mark them in the UI.
-  Default value: `non-production`.
+  Default: `non-production`.
 
 ---
 
 - allowApiProductsOutsideCatalog
 - boolean
 - Allow developers to register apps with API products that are not in the catalog.
-  Default value: `false`.
+  Default: `false`.
 
 {% /table %}
 
@@ -287,5 +297,4 @@ developerOnboarding:
 
 ## Resources
 
-- [List of used Apigee API endpoints](../../setup/reference/apigee-api-operations.md)
-<!-- - TODO: Developer onboarding guide -->
+- **[List of used Apigee API endpoints](./apigee-api-operations.md)** - Complete reference of Apigee API endpoints used by the developer onboarding feature for integration and troubleshooting

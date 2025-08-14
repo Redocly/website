@@ -98,7 +98,7 @@ In the example, the text the project renders between the div tags depends on if 
 
 ## Resources
 
-- Learn more about [RBAC (role-based access control)](./rbac.md) in the concept documentation.
-- Follow step-by-step instructions for [How to configure RBAC](./index.md).
-- View full configuration details in the [`rbac` configuration reference](../config/rbac.md).
-- Check out the [x-rbac OpenAPI extension documentation](../content/api-docs/openapi-extensions/x-rbac.md) to apply RBAC permissions to specific objects in OpenAPI reference documentation.
+- **[RBAC concepts](./rbac.md)** - Understand how role-based access control works and the relationship between roles, teams, and permissions
+- **[RBAC configuration guide](./index.md)** - Complete step-by-step instructions for implementing RBAC across your documentation project
+- **[RBAC configuration reference](../config/rbac.md)** - Detailed configuration options and syntax for setting up role-based access control
+- **[OpenAPI RBAC extension](../content/api-docs/openapi-extensions/x-rbac.md)** - Apply RBAC permissions to specific objects and sections within your OpenAPI reference documentation

@@ -28,7 +28,25 @@ The `file` attribute is used to pass a pointer to the source file.
 In Redocly, content is only exposed for reuse when a file is stored in a _designated partials folder_.
 
 By default, add partials by moving files into a `_partials` folder in the root of your project.
-To add custom folders for partials, register them using the `partialFolders` property in the [`markdown` section](../../config/markdown.md) of your Redocly configuration file.
+
+**Configure custom folder names**
+
+To use a different name for your reused content, add the following configuration to your `redocly.yaml` file:
+
+```yaml
+markdown:
+  partialsFolders:
+    - snippets
+    - shared-content
+```
+
+You can add multiple folder names if you have multiple folders for storing partials. After adding the `partialsFolders` configuration, the default `_partials` folder name will no longer work unless explicitly included in the configuration.
+
+**Folder requirements**
+
+- Partial files don't need special front matter or naming conventions
+- If you have images in partials, add an `images` folder to the partials folder
+- Content must be placed in a designated partials folder to be reusable
 
 #### The raw-partial tag
 

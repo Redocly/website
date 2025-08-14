@@ -97,7 +97,7 @@ Afterward, view your change locally or in Reunite.
 
 ## Resources
 
-- See excellent styling examples in the [custom styles](customize-styles.md) guide.
-- Follow instructions for setting CSS styles by color mode (light/dark) in the [Customize color mode styles](customize-color-modes.md) styling guide.
-- See options for adding other links to the `<head>` HTML element of your project pages in the [`links`](../config/links.md) reference documentation.
-- Learn more about CSS variables in the [CSS variables reference](./css-variables/index.md).
+- **[Custom styles guide](./customize-styles.md)** - Explore comprehensive styling examples and learn to customize your project's appearance using CSS variables
+- **[Color mode customization](./customize-color-modes.md)** - Apply different font styling for light and dark modes with mode-specific CSS rules
+- **[Links configuration](../config/links.md)** - Add additional links to the `<head>` HTML element for external font files and preconnect optimizations
+- **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of typography-related CSS variables for font customization

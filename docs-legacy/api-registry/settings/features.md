@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Features
 
 Redocly automatically builds API documentation for all API versions in the registry.

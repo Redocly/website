@@ -9,7 +9,7 @@ However in the situation where Redocly cannot be configured to access the remote
 
 Make sure you have the following before you begin:
 
-- [latest version of Realm](../../../content/realm-version.md)
+- [latest version of Realm](../../../get-started/upgrade-realm-version.md)
 - an existing Redocly project to add remote content to
 
 ## Add a remote to push content to
@@ -44,7 +44,7 @@ To push changes to Redocly:
 
 ## Resources
 
-* See guides for [adding other types of remote content](./index.md)
-* Learn more about [remote content](./remote-content.md)
-* [Configuration options for the GitHub action](./reunite-push-action.md)
-* [CLI push command information](https://redocly.com/docs/cli/commands/push)
+- **[Adding remote content types](./index.md)** - Explore different methods for integrating various external content sources into your Reunite projects
+- **[Remote content concepts](./remote-content.md)** - Understand remote content fundamentals including sync mechanisms, folder paths, and auto-merge capabilities
+- **[GitHub Action configuration](./reunite-push-action.md)** - Configure the Reunite push GitHub Action for automated content synchronization and deployment workflows
+- **[CLI push command](https://redocly.com/docs/cli/commands/push)** - Complete reference for the Redocly CLI push command with usage examples and configuration options

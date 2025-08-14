@@ -62,10 +62,10 @@ sso:
 
 ## Resources
 
-* View all options for configuring RBAC for a project in the [rbac](../config/rbac.md) reference documentation.
-* If you do not want to use RBAC, you can use the [requiresLogin](./requires-login.md) reference documentation to require login for all users to your project.
-* Follow the steps to [integrate Google Workspace SAML 2 SSO with Reunite](../reunite/organization/sso/configure-google-sso.md).
-* Learn more about the different IdP types in Reunite and how they apply to projects in the [Single Sign-on](../reunite/organization/sso/sso.md) concept.
-* Follow steps for how to [Add an identity provider](../reunite/organization/sso/add-idp.md) in Reunite.
-* If you have already added multiple IdP types in Reunite, you can [Configure SSO](../reunite/organization/sso/configure-sso.md) to allow your users to use multiple IdP types for a project.
-* For more complex scenarios where you need to grant access to specific content for specific users, you need [Role-based access control (RBAC)](../access/rbac.md).
+- **[RBAC configuration](./rbac.md)** - Complete options for configuring role-based access control for granular project permissions and user management
+- **[RequiresLogin configuration](./requires-login.md)** - Require login for all users to your project without implementing complex role-based access control
+- **[Google Workspace SAML 2 SSO](../reunite/organization/sso/configure-google-sso.md)** - Integrate Google Workspace SAML 2 SSO with Reunite for enterprise authentication workflows
+- **[Single Sign-on concepts](../reunite/organization/sso/sso.md)** - Understand different identity provider types in Reunite and how they apply to project authentication
+- **[Add an identity provider](../reunite/organization/sso/add-idp.md)** - Follow steps to add identity providers in Reunite for centralized authentication management
+- **[Configure SSO](../reunite/organization/sso/configure-sso.md)** - Enable multiple identity provider types to give users flexible authentication options for your projects
+- **[Role-based access control (RBAC)](../access/rbac.md)** - Implement advanced access control scenarios to grant specific users access to specific content and features

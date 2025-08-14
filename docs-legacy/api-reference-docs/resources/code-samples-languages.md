@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 ## Supported languages for auto-generated code samples
 
 | Language    | Version          | Notes                                                                                   |

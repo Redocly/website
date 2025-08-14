@@ -67,8 +67,8 @@ openapi:
 
 ## Resources
 
-- [openapi](./index.md) - Learn more about using `openapi` configuration.
-- [hideDownloadButtons](./hide-download-buttons.md) - Toggle the appearance of the buttons used to download your API description.
-- [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- **[OpenAPI configuration](./index.md)** - Complete guide to OpenAPI configuration options for customizing API reference documentation
+- **[Hide download buttons](./hide-download-buttons.md)** - Toggle the appearance of download buttons used to access your API description files
+- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - Official OpenAPI Specification documentation for understanding API description standards
 - [OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)
 - Explore other [configuration options](../index.md) for your project.

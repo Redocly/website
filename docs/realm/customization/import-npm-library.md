@@ -28,7 +28,7 @@ If you are working in Reunite, you can install the library by adding it to the `
 }
 ```
 
-Follow the steps in [Run a specific version in Reunite](../content/realm-version.md#run-a-specific-version-in-reunite)
+Follow the steps in [Run a specific version in Reunite](../get-started/upgrade-realm-version.md#run-a-specific-version-in-reunite)
 to create a `package.json` file if you don't have one already.
 
 ## Import and use components
@@ -64,8 +64,8 @@ import type { Schema } from '@markdoc/markdoc';
 
 export const tags: Record<string, Schema> = {
   // ... existing tags ...
-  icon: {
-    render: 'Icon',
+  reactIcon: {
+    render: 'ReactIcon',
     attributes: {
       name: {
         type: 'string',
@@ -90,7 +90,7 @@ You also need to export your components as in the following example:
 import * as React from 'react';
 import { FaHeart, FaThumbsUp } from 'react-icons/fa';
 
-export function Icon({ name, size = 24, color = 'currentColor' }) {
+export function ReactIcon({ name, size = 24, color = 'currentColor' }) {
   const icons = {
     heart: FaHeart,
     thumbsUp: FaThumbsUp,
@@ -104,10 +104,11 @@ export function Icon({ name, size = 24, color = 'currentColor' }) {
 You can use the icon component in your Markdoc files, as in the following example:
 
 ```markdoc {% process=false %}
-{% icon name="heart" color="red" /%}
-{% icon name="thumbsUp" color="blue" size=32 /%}
+{% reactIcon name="heart" color="red" /%}
+{% reactIcon name="thumbsUp" color="blue" size=32 /%}
 ```
 
 ## Resources
 
-- [Build markdoc tags](./build-markdoc-tags.md)
+- **[Build custom Markdoc tags](./build-markdoc-tags.md)** - Create reusable Markdoc components using imported NPM libraries for enhanced functionality
+- **[Built-in icon components](../content/markdoc-tags/icon.md)** - Use Redocly's built-in icon system and learn patterns for extending it with external icon libraries

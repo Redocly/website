@@ -44,7 +44,7 @@ openapi:
 
 ## Resources
 
-- [openapi](./index.md) - Learn more about using `openapi` configuration.
-- Refer to the full list of [specification extensions](../../content/api-docs/openapi-extensions/index.md) supported in Redoc.
-- [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- Explore other [configuration options](../index.md) for your project.
+- **[OpenAPI configuration](./index.md)** - Complete guide to OpenAPI configuration options for customizing API reference documentation
+- **[Specification extensions](../../content/api-docs/openapi-extensions/index.md)** - Complete list of OpenAPI specification extensions supported in Redoc for enhanced documentation
+- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - Official OpenAPI Specification documentation for understanding API description standards
+- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization

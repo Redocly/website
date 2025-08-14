@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # x-enumDescriptions
 
 {% admonition type="warning" name="Compatibility warning" %}

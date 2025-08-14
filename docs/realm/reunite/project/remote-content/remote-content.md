@@ -148,6 +148,6 @@ All subsequent remote content updates are applied in place to the same branch an
 
 ## Resources
 
-* [How to add remote content to your project](./index.md)
-* [Remote content verification processes](./verify-remote-content.md) are performed automatically
-* [Connect a Git remote](../connect-git/connect-git-provider.md) to source an entire project from an external repository while still using the editor and other Reunite features
+- **[How to add remote content](./index.md)** - Step-by-step guide to integrate external content sources into your Reunite projects for centralized documentation management
+- **[Remote content verification](./verify-remote-content.md)** - Understand automatic verification processes that ensure remote content integrity and compatibility with your project
+- **[Connect a Git provider](../connect-git/connect-git-provider.md)** - Source entire projects from external repositories while maintaining access to Reunite's collaborative editing and workflow features

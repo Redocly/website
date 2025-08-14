@@ -195,4 +195,4 @@ reunite:
 
 ## Resources
 
-- Learn about the Respect Monitoring configuration options in the [`reunite`](../../reunite.md) reference documentation.
+- **[Reunite configuration reference](../../../config/reunite.md)** - Complete configuration options for Respect Monitoring including workflow scheduling, notification settings, and performance thresholds

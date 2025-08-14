@@ -43,7 +43,7 @@ This operation will have complete documentation, but without interactive feature
 
 ## Resources
 
-- Learn more about [Replay the API Explorer](../../../setup/concepts/replay.md)
+- Learn more about [Replay the API Explorer](../replay.md)
 - Control which extensions are included in your API reference documentation with the [showExtensions configuration setting](../../../config/openapi/show-extensions.md).
 - Configure the [mock server](../../../config/mock-server.md) used in Replay.
 - See all [openapi configuration settings](../../../config/openapi/index.md).

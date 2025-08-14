@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Redocly API registry quickstart
 
 {% admonition type="warning" name="About this quickstart" %}

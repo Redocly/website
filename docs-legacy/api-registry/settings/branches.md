@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Manage branches
 
 An API version can have one or more branches. Apart from the primary branch, which is mandatory, you can have other active branches (preview branches) associated with the API version.

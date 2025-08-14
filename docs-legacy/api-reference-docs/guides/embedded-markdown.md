@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Embed Markdown in Redocly API reference docs
 
 Redocly enables you to embed external Markdown file contents into description fields by passing an object to a description with a `$ref` JSON reference.

@@ -324,5 +324,5 @@ scorecard:
 
 ## Resources
 
-- Learn more about the [Scorecard](../reunite/project/scorecard.md) feature including what it displays and where to find the reports.
-- Learn how to add either Redocly built-in rule sets or custom rule sets to the scorecard for your projects in [Configure scorecard](../reunite/project/configure-scorecard.md).
+- **[Scorecard feature overview](../reunite/project/scorecard.md)** - Understand what scorecards display, how to access reports, and their role in API quality management
+- **[Configure scorecard](../reunite/project/configure-scorecard.md)** - Add Redocly built-in or custom rulesets to scorecards for comprehensive API quality assessment and tracking

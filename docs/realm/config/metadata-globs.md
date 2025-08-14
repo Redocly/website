@@ -55,6 +55,6 @@ These categories help organize content in search results.
 
 ## Resources
 
-- [Configure search facets](../navigation/search/configure-search-facets.md)
-- [Catalog](./catalog-classic.md)
-- [Scorecard](./scorecard.md)
+- **[Configure search](./search.md#using-metadataglobs)** - Use metadataGlobs for enhanced search functionality and content organization
+- **[Catalog configuration](./catalog-classic.md)** - Configure catalogs that leverage metadata patterns for content filtering and organization
+- **[Scorecard configuration](./scorecard.md)** - Configure scorecards that use metadata patterns for targeted content assessment and quality tracking

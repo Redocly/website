@@ -149,4 +149,5 @@ With this configuration in place, the sidebar shows the cart, product, customer,
 
 ## Resources
 
-- [GraphQL](https://graphql.org/)
+- **[GraphQL](https://graphql.org/)** - Official GraphQL specification and documentation for understanding query language fundamentals
+- **[GraphQL configuration](./index.md)** - Complete guide to GraphQL configuration options for customizing API reference documentation

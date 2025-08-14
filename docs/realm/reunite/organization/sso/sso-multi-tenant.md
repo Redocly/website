@@ -58,7 +58,7 @@ By understanding and exploring these options, Redocly can support diverse routin
 
 ## Resources
 
-- Follow steps to [Add an identity provider](./add-idp.md) in Reunite that you can use for projects and Reunite.
-- Learn how to [Configure SSO](./configure-sso.md) to allow users to use multiple IdPs to log in to projects.
-- View all options for configuring SSO in the [`sso` reference documentation](../../../config/sso.md).
-- Read more about [SSO in Redocly](./sso.md).
+- **[Add an identity provider](./add-idp.md)** - Add identity providers in Reunite for seamless authentication across projects and Reunite login
+- **[Configure SSO](./configure-sso.md)** - Configure multiple identity providers to enable flexible user authentication options across your projects
+- **[SSO configuration reference](../../../config/sso.md)** - Complete technical reference for all SSO configuration options and implementation details
+- **[SSO in Redocly](./sso.md)** - Comprehensive overview of single sign-on concepts and identity provider integration options

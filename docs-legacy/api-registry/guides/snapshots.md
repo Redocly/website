@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 seo:
   title: Snapshots
 ---

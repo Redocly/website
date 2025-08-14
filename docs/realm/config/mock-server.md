@@ -87,6 +87,6 @@ mockServer:
 
 ## Resources
 
-- Learn to [Configure the mock server](../content/api-docs/configure-mock-server.md) and modify the behavior or appearance.
-- Discover the [Replay API explorer](../setup/concepts/replay.md) used to call the mock server.
-- [Add OpenAPI descriptions](../content/api-docs/add-openapi-docs.md) to enable a mock server on the corresponding API reference.
+- **[Configure the mock server](../content/api-docs/configure-mock-server.md)** - Learn to modify mock server behavior and appearance for enhanced API testing and development
+- **[Replay API explorer](../content/api-docs/replay.md)** - Discover the interactive API explorer used to call the mock server and test API endpoints
+- **[Add OpenAPI descriptions](../content/api-docs/add-openapi-docs.md)** - Add OpenAPI descriptions to enable mock server functionality on the corresponding API reference documentation

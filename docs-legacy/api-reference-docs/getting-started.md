@@ -1,4 +1,5 @@
 ---
+excludeFromSearch: true
 seo:
   title: Documentation - Redocly API Reference Docs
 ---

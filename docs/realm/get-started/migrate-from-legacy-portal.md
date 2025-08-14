@@ -319,7 +319,7 @@ The following example shows the old and new admonition syntax:
 
 ##### Change reusable snippets
 
-Realm adds a Markdoc tag for [partials](https://redocly.com/docs/learn-markdoc/tags/partial), which is a big upgrade for working with [reusable content](../content/reuse-content.md).
+Realm adds a Markdoc tag for [partials](https://redocly.com/docs/learn-markdoc/tags/partial), which is a big upgrade for working with [reusable content](../content/markdoc-tags/partial.md).
 The developer portal's approach to reusable content, which used Markdown snippets in an HTML `<embed>` tag, is no longer supported.
 
 During migration, replace any embedded Markdown snippets with the new partials tag, as in the following example:
@@ -534,7 +534,7 @@ For **MDX files that combine Markdown and JSX**, use the following steps to upda
 Converting the filetype to Markdown and removing the JSX will allows Realm to render the _Markdown_ content from the migrated MDX files.
 However, rendering the JSX element requires additional work.
 
-You can [use the legacy UI components](../author/how-to/use-legacy-ui-components.md) to help with migration, but we recommend replacing them.
+You can [use the legacy UI components](./use-legacy-ui-components.md) to help with migration, but we recommend replacing them.
 
 ##### Change OpenApiTryIt component
 
@@ -1107,7 +1107,7 @@ That means you get a complete, working implementation of that component; ready t
 
 ## Resources
 
-- [Create a React page](../customization/create-react-page.md) for full control over  all page elements.
-- Learn more about the [navigation elements](../navigation/navigation.md) in Realm.
-- Configure light and dark mode in your project using [color mode styling](../branding/customize-color-modes.md).
-- See which [front matter options](../config/front-matter-config.md) are available for page-level configuration.
+- **[Create React pages](../customization/create-react-page.md)** - Build custom pages using React components for full control over layout, styling, and interactive functionality
+- **[Navigation configuration](../navigation/navigation.md)** - Configure navigation elements, menus, and page organization for optimal user experience in Realm projects
+- **[Color mode customization](../branding/customize-color-modes.md)** - Configure light and dark mode styling with custom color schemes and mode-specific CSS variables
+- **[Front matter configuration](../config/front-matter-config.md)** - Complete reference for page-level configuration options available through front matter settings

@@ -46,4 +46,5 @@ For longer-named arguments, a lower setting may produce more readable samples.
 
 ## Resources
 
-- [GraphQL](https://graphql.org/)
+- **[GraphQL](https://graphql.org/)** - Official GraphQL specification and documentation for understanding query language fundamentals
+- **[GraphQL configuration](./index.md)** - Complete guide to GraphQL configuration options for customizing API reference documentation

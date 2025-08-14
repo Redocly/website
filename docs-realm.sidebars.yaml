@@ -1,10 +1,13 @@
-- label: ← Back to Docs
+- label: Back to Docs
+  icon: arrow-left
   href: /docs
 - separatorLine: true
 - page: docs/realm/changelog.page.tsx
   label: Changelog
+  icon: list-check
 - separatorLine: true
 - page: docs/realm/index.md
+  icon: ./images/icons/realm-gray.svg
 - $ref: docs/realm/sidebars.yaml
 - separatorLine: true
 - $ref: docs/realm/config/sidebars.yaml

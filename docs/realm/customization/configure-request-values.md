@@ -61,7 +61,12 @@ return {
 
 The context parameter includes:
 
-- `userClaims`: Information about the authenticated user (optional)
+- `userClaims`: Information about the authenticated user and their original IdP tokens (optional)
+  - `email`: User email
+  - `name`: User name
+  - `federatedAccessToken`: Access token of the original identity provider. Requires `REDOCLY_OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
+  - `federatedIdToken`: ID token of the original identity provider. Requires `REDOCLY_OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
+- `info`: OpenAPI info object
 - `operation`: Details about the current API operation
   - `name`: Operation name
   - `path`: API path
@@ -75,6 +80,11 @@ Here's an example showing how to use context to configure request values:
 ```typescript {% title="configure.ts" %}
 export function configure(context: {
   userClaims?: UserClaims;
+  info: {
+    title: string;
+    description: string;
+    // ... other OpenAPI info properties
+  };
   operation: {
     name: string;
     path: string;
@@ -86,10 +96,10 @@ export function configure(context: {
 }) {
   const requestValues: ConfigureRequestValues = {
     headers: {
-      'API-Key': 'your-api-key',
+      'API-Key': userClaims.federatedAccessToken,
       // Use operation details to set custom headers
       'Operation-ID': context.operation.operationId || '',
-      'Request-Method': context.operation.method
+      'Request-Method': context.operation.method,
     },
     query: {
       // Set different limits based on the operation
@@ -340,5 +350,5 @@ This allows you to provide different environment variable values based on the se
 
 ## Resources
 
-- Learn about using [x-codeSamples extension](../content/api-docs/openapi-extensions/x-code-samples.md) to add custom code samples to your OpenAPI description.
-- Learn how to [Eject components](./eject-components) of your Redocly project.
+- **[x-codeSamples extension](../content/api-docs/openapi-extensions/x-code-samples.md)** - Add custom code samples to your OpenAPI description that work with configured request values for enhanced API documentation
+- **[Component ejection guide](./eject-components/index.md)** - Learn to eject and customize built-in components for advanced request value handling and UI modifications

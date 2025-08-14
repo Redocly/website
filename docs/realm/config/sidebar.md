@@ -47,9 +47,9 @@ sidebar:
 
 ## Resources
 
-For more information about sidebars:
+- **[Sidebar configuration guide](../navigation/sidebars.md)** - Complete guide to configuring sidebar navigation structure and content organization for optimal user experience
 
-- Learn more about [navigation in Redocly projects](../navigation/navigation.md)
-- Read the [navigation elements overview](../navigation/index.md) for guidance on all navigation components
-- The [sidebars.yaml reference](../navigation/sidebars.md) shows the sidebar configuration syntax and examples
+- **[Navigation in Redocly projects](../navigation/navigation.md)** - Learn about navigation concepts and implementation strategies for effective site organization
+- **[Navigation elements overview](../navigation/index.md)** - Complete guidance on all navigation components and their configuration for optimal user experience
+- **[Sidebars.yaml reference](../navigation/sidebars.md)** - Detailed sidebar configuration syntax and practical examples for content organization
 

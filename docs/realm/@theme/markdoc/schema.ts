@@ -1,7 +1,7 @@
-import { IconTag } from './components/Icon/Icon-markdoc';
+import { IconTag } from './components/ThemeIcon/Icon-markdoc';
 
 export const tags = {
-  icon: IconTag,
+  themeIcon: IconTag,
 }
 
 export const functions = {

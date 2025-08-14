@@ -7,7 +7,7 @@ This approach is useful for including a single, publicly-available file as part 
 
 Make sure you have the following before you begin:
 
-- [latest version of Realm](../../../content/realm-version.md)
+- [latest version of Realm](../../../get-started/upgrade-realm-version.md)
 - an existing Redocly project to add remote content to
 
 ## Add a remote URL source
@@ -37,5 +37,5 @@ After you enter the connection details in Redocly, a pull request to merge your 
 
 ## Resources
 
-* See guides for [adding other types of remote content](./index.md)
-* Learn more about [remote content](./remote-content.md)
+- **[Adding remote content types](./index.md)** - Explore guides for integrating various remote content sources including Git repositories, URLs, and other external systems
+- **[Remote content concepts](./remote-content.md)** - Understand remote content fundamentals including URL-based sync, verification processes, and integration capabilities

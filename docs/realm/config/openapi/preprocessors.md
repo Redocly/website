@@ -8,7 +8,7 @@ Refer to the [`decorator` configuration options](./decorators.md) documentation 
 
 ## Resources
 
-- [decorators](./decorators.md) offer some transformations for your OpenAPI documents.
-- [plugins](../plugins.md) allow code extensions to extend the existing functionality.
-- [Custom plugins](https://redocly.com/docs/cli/custom-plugins) offer a way to extend the functionality of Redocly.
+- **[Decorators](./decorators.md)** - Built-in transformations for your OpenAPI documents to modify structure and content during processing
+- **[Plugins configuration](../plugins.md)** - Configure code extensions to extend existing functionality with custom behaviors and transformations
+- **[Custom plugins](https://redocly.com/docs/cli/custom-plugins)** - Create custom plugins to extend Redocly functionality with your own processing logic and transformations
 - Explore other [configuration options](../index.md) for your project.

@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # x-servers
 
 {% admonition type="info" name="Compatibility warning" %}

@@ -23,5 +23,5 @@ Arguments can be literal values (strings, numbers, booleans), variables (like `$
 
 ## Resources
 
-- Explore the standard Markdoc functions in [Built-in functions overview](./built-in.md).
-- Learn how to define and integrate your own custom functions in [Build a Markdoc function](../../customization/build-custom-function.md).
+- **[Built-in functions overview](./built-in.md)** - Explore standard Markdoc functions available for content manipulation and dynamic value generation
+- **[Build custom Markdoc functions](../../customization/build-custom-function.md)** - Learn to define and integrate your own custom functions for advanced content processing and dynamic features

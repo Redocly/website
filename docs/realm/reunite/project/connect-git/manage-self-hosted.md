@@ -18,5 +18,5 @@ Make sure you have the following before you begin:
 
 ## Resources
 
-- Now that you have added a self-hosted Git provider instance, you can follow step-by-step instructions for [connecting a Git provider](./connect-git-provider.md) to a project in your organization.
-- Learn more about how [remote content](../remote-content/remote-content.md) works in a Redocly project.
+- **[Connect a Git provider](./connect-git-provider.md)** - Follow step-by-step instructions for connecting your self-hosted Git provider instance to projects in your organization
+- **[Remote content](../remote-content/remote-content.md)** - Understand how remote content integration works with self-hosted Git repositories for flexible documentation workflows

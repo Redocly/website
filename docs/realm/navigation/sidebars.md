@@ -61,7 +61,9 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 - icon
 - string
-- Path to icon image file. Appears on left side of sidebar entry.
+- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file. Appears on left side of sidebar entry.
+  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
+  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
 
 ---
 
@@ -135,7 +137,9 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 - icon
 - string
-- Path to icon image file. Appears on left side of group.
+- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file. Appears on left side of group.
+  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
+  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
 
 ---
 
@@ -272,7 +276,7 @@ The following example shows a comprehensive `sidebars.yaml` file with various op
 - page: installation.md
   label: Installation
 - group: Configuration
-  icon: ./images/config-icon.svg
+  icon: duotone cog
   selectFirstItemOnExpand: true
   expanded: true
   items:

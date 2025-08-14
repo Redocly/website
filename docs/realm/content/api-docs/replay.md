@@ -1,7 +1,7 @@
-# Replay the API explorer reference
+# Replay the API explorer
 
 Replay the API explorer allows your users to make API calls directly from the API reference documentation in your project.
-It uses the API description document and `mockServer` configuration in your `redocly.yaml` file to create an interactive interface for your API users.
+By using the OpenAPI description, Replay presents users with an interactive API client to make requests to either your API, a sandbox, or the built-in mock server.
 
 Access Replay in your reference documentation by clicking the **Try it** button for a request.
 
@@ -88,17 +88,47 @@ The history and environment pane includes two tabs:
 
 - **History:** The history tab is a list of requests you make with the response status codes.
   You can search the history tab data to find specific requests or click the icon to the right side of the search bar to clear the history.
+  Replay keeps a history of your past requests, so you can go back to an earlier API call.
 
   ![Screenshot of Replay focusing on the history tab](../images/replay-history-tab.png)
 
 - **Environments:** The environments tab is a list of environments you have included in your OpenAPI description.
   The mock server is included in this list by default, but can be disabled in your `redocly.yaml` file.
   You can also add additional variables here that can be used in your requests.
+  Set up and use different environments with customizable variables for flexible API testing.
 
   ![Screenshot of Replay focusing on the environments tab](../images/replay-environments-tab.png)
 
+## Setup requirements
+
+For Replay the API explorer to send requests, you must have configured the following in your OpenAPI description:
+
+- Security schemas
+- Servers
+
+{% admonition type="info" name="Servers must support CORS" %}
+
+Your servers must support CORS (cross-origin resource sharing) requests, or you can configure a CORS proxy using the [openapi.cors-proxy-url](../../config/openapi/cors-proxy-url.md) configuration option in your `redocly.yaml` file.
+
+{% /admonition %}
+
+You can also use our `mockServer`, which can also be configured in the `redocly.yaml` file.
+
+## User capabilities
+
+Users can complete the following tasks with Replay the API explorer:
+
+- Edit any field in sample requests, unrestricted by API description schemas
+- Save requests and view request history
+- Set up and use different environments with customizable variables
+- Connect Replay to your live servers, the built-in mock server, or another environment
+- Use realistic mock responses for API development and integrations
+
 ## Resources
 
-- Learn more about the kinds of tasks users can accomplish with Replay in the [Replay concept documentation](../../setup/concepts/replay.md).
-- View the configuration options available for the Mock server used in Replay in the [`mockServer` reference documentation](../../config/mock-server.md).
-- Check the [`x-usePkce` OpenAPI extension](./openapi-extensions/x-use-pkce.md) to enable Proof Key for Code Exchange (PKCE) by default in Replay.
+- **[Add OpenAPI reference docs](./add-openapi-docs.md)** - Generate comprehensive API reference documentation with interactive features for your users
+- **[Try APIs with mock server](./try-apis-with-mock-server.md)** - Set up and configure Replay for API testing with automatically generated mock responses
+- **[Configure mock server](./configure-mock-server.md)** - Optimize mock server behavior and customize how users interact with API descriptions through Replay
+- **[Mock server configuration reference](../../config/mock-server.md)** - Complete configuration options for the mock server used in Replay API testing
+- **[OpenAPI configuration reference](../../config/openapi/index.md)** - Control your API reference documentation appearance and behavior with comprehensive configuration settings
+- **[x-usePkce OpenAPI extension](./openapi-extensions/x-use-pkce.md)** - Enable Proof Key for Code Exchange (PKCE) by default in Replay for enhanced OAuth security

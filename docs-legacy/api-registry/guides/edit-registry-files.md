@@ -1,3 +1,7 @@
+---
+excludeFromSearch: true
+---
+
 # Edit files
 
 After [adding your files](./add-registry-assets.md) to the API registry, you can modify their contents.

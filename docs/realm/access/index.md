@@ -1,88 +1,89 @@
-# Configure role-based access control (RBAC)
+# Access control
 
-With role-based access control (RBAC), you can configure user access to view, create, edit or remove content in your project.
+Secure your documentation with role-based access control (RBAC) to manage who can view and access different parts of your project.
 
-Once configured, RBAC permissions can apply to the following content in your project:
+## Overview
 
-- search results
-- navigation elements
-- entire Markdown, React, API document pages
-- part of Markdown or React pages
+Redocly's access control system lets you protect sensitive documentation, restrict access to specific user groups, and manage permissions at the page and navigation level. Perfect for internal documentation, API keys, or content that should only be visible to specific teams.
 
-RBAC permissions also apply to both organization and project settings.
+## Authentication vs Authorization
 
-## Assign organization roles
+Understanding the difference between authentication and authorization is crucial for setting up access control:
 
-When you invite users to an organization, you must assign them to one of the [organization roles](./roles.md#organization-roles): viewer, billing, member, or owner.
-If your users log in using an identity provider you have added in Reunite, they are assigned the default organization role you set when you added the IdP.
-Users with an Owner role can access the **Admin** panel and update the organization roles of other users from the **People** page.
+**Authentication** identifies **who you are** - handled by your identity provider (SSO) when users log in.
 
-{% admonition type="info" %}
+**Authorization** determines **what you can access** - controlled by your roles, which come from:
+- **Identity provider claims/attributes** for organization-wide roles (when using SSO)
+- **Manual role assignment** for organization-wide roles (when using Redocly's login system)
+- **Team assignments** for project-specific access (teams can be managed through identity provider or Redocly)
 
-The default role assigned when a user logs in with an IdP cannot be permanently updated in Reunite on the **People** page.
-If you want to assign users who log in with an IdP a different organization role or RBAC team role, you just set up [team mapping](../reunite/organization/sso/add-idp.md#team-mapping) in Reunite.
+The source of your role and team information depends on whether you're using SSO with an identity provider or Redocly's built-in authentication and team management systems.
 
-{% /admonition %}
+## Core concepts
 
-Only users with an owner role in the organization can assign organization roles to other users.
-Most users in your organization should have the member role, giving them access to the **Project** panel only.
-From the **Projects** panel on the **Overview** page, members can select only the projects they have access to.
-Access to projects is determined by the project roles assigned to the teams users are members of.
+{% cards columns=2 %}
 
-## Assign project roles
+{% card title="Roles" icon="users" to="./roles.md" %}
+Define user roles and permissions to control access levels across your documentation project.
+{% /card %}
 
-[Project roles](./roles.md#project-roles) determine user access to the individual projects in your organization.
-You add users to teams and then assign project roles to the teams.
-User access is determined by the project roles assigned to the teams users are members of.
-Project roles can be configured by users with a member or owner organization role, if they have been assigned to a team with the `write`, `maintain`, or `admin` project role for that project.
+{% card title="RBAC concepts" icon="shield" to="./rbac.md" %}
+Understand how role-based access control works and how to implement security for your content.
+{% /card %}
 
-## Before you begin
+{% /cards %}
 
-Make sure you have the following before you begin:
+## Access control types
 
-- a `redocly.yaml` file in the root of your project
-- [SSO configuration](../config/sso.md) in your `redocly.yaml` file
-- Owner or member organization role
-- `write`, `maintain`, or `admin` project role
+{% cards columns=2 %}
 
-## Configure project roles
+{% card title="Page permissions" icon="file-lock" to="./page-permissions.md" %}
+Control access to individual pages and content sections based on user roles and permissions.
+{% /card %}
 
-To configure project roles, assign project roles to teams scoped by resource identifiers.
-RBAC configurations are placed in different places in your project, depending on the following levels of granularity:
+{% card title="Navigation permissions" icon="chart-tree-map" to="./links-and-groups-permissions.md" %}
+Manage visibility of navigation links and groups to create role-specific navigation experiences.
+{% /card %}
 
-- [For projects](../config/rbac.md): Globally in the `redocly.yaml` file in the `rbac` configuration.
-- [For pages](page-permissions.md): In the content or front matter of Markdown documents, API definitions, or Typescript pages in the `rbac` configuration.
-- [For navigation](links-and-groups-permissions.md): In the navbar, footer, or sidebar navigation menu `rbac` configurations in the `redocly.yaml` or `sidebars.yaml` configuration files.
+{% /cards %}
 
-## Assign roles to specified teams
+## How access control works
 
-To assign a role to specified teams for project access:
+Access control in Redocly operates on a role-based system where:
 
-In your `redocly.yaml` configuration file, add the team names with the value of the role you want to assign them in the `rbac` configuration under the `reunite` object.
-For example, the following example configuration assigns the `write` role to the `Writers` team in the project:
+1. **Users are assigned roles** in your organization or project
+2. **Content is tagged with access requirements** using configuration or front matter
+3. **The system automatically filters** what each user can see based on their roles
+4. **Navigation adapts dynamically** to show only accessible content
 
-```yaml
-rbac:
-  reunite:
-    Writers: write
-```
+## Getting started
 
-## Assign roles to unspecified teams
+1. **Set up roles** - Define the [user roles](./roles.md) needed for your organization and understand the difference between organization and project roles
+2. **Understand RBAC** - Learn the [RBAC concepts](./rbac.md) and security model including how teams, roles, and resources work together
+3. **Protect pages** - Apply [page permissions](./page-permissions.md) to sensitive content using front matter or configuration-based access control
+4. **Control navigation** - Configure [navigation permissions](./links-and-groups-permissions.md) for role-specific menus in navbar, footer, and sidebar
 
-You can use the `*` symbol to provide access to one team and limit access to all other teams for a specific resource identifier:
+## Use cases
 
-```yaml {% title="redocly.yaml" %}
-rbac:
-  content:
-    '*.md':
-      Writers: write
-      '*': read  # All other teams get read access
-```
+**Internal documentation**
 
-This configuration assigns `write` role to the `Writers` team and `read` role to all other teams for Markdown files.
+Separate public and internal content, hiding sensitive information from external users while keeping it accessible to employees.
+
+**API documentation tiers**
+
+Show different API endpoints and features based on subscription levels or user permissions.
+
+**Team-specific content**
+
+Create content visible only to specific teams (engineering, sales, support) while maintaining a unified documentation site.
+
+**Progressive disclosure**
+
+Show basic content to all users while revealing advanced features and configurations to authorized personnel.
 
 ## Resources
 
-- [RBAC (role-based access control)](./rbac.md) overview.
-- See full configuration details in the [`rbac` configuration reference](../config/rbac.md).
-- Check out the [x-rbac OpenAPI extension documentation](../content/api-docs/openapi-extensions/x-rbac.md) to apply RBAC permissions to specific objects in OpenAPI reference documentation.
+- **[Roles and permissions](./roles.md)** - Configure user roles and permissions to control access levels across your documentation project
+- **[RBAC implementation](./rbac.md)** - Understand how role-based access control works and implement security best practices for your content
+- **[Page-level access control](./page-permissions.md)** - Control access to individual pages and content sections based on user roles and permissions
+- **[Navigation permissions](./links-and-groups-permissions.md)** - Manage visibility of navigation links and groups to create role-specific navigation experiences

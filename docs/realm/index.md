@@ -3,7 +3,7 @@ sidebar:
   path: sidebars.yaml
 ---
 
-# Reunite + Realm system overview
+# Reunite + Realm overview
 
 Reunite and Realm work together to help you author, review, and publish world-class developer portals and API documentation.
 

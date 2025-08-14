@@ -235,6 +235,8 @@ There are two ways to identify Realm's CSS variables:
 1. Looking at the [list of CSS variables](./css-variables/index.md) in our documentation.
 2. [Using browser developer tools](#find-variables-with-browser-dev-tools) to inspect elements.
 
+For practical examples of using CSS variables, see the [custom styles guide](./customize-styles.md) which demonstrates comprehensive styling setups.
+
 CSS variable overrides will typically go inside the `:root` or `:dark` selector (see Color mode), but some may be scoped to specific classes.
 
 The following example shows the format:
@@ -348,7 +350,7 @@ Overriding CSS variables in the correct scope allows you to preserve the relatio
 
 ## Resources
 
-* [Add custom styles](./customize-styles.md) - See how to customize styles using variables.
-* [Customize color mode styles](./customize-color-modes.md) - See how to customize the styles for each color mode.
-* [Color mode](./color-mode.md) - Learn how color modes work in Realm.
-* [CSS variables dictionary](./css-variables/index.md) - See a list of available CSS variables.
+- **[Custom styles guide](./customize-styles.md)** - Customize your project's appearance using CSS variables and custom stylesheets for precise brand control
+- **[Color mode customization](./customize-color-modes.md)** - Create custom styling for light and dark modes with mode-specific color schemes
+- **[Color mode concepts](./color-mode.md)** - Understand how the color mode feature works and its implementation using CSS variables
+- **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of available CSS variables for styling your documentation
