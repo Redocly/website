@@ -1,13 +1,12 @@
 ---
 template: '../@theme/templates/BlogPost'
 title: How to optimize your docs for LLMs
-description: Learn practical strategies to make your API documentation work better with AI tools, reducing support tickets and improving developer experience through LLM-friendly formatting and structure.
+description: Let's dig into a few practical strategies to make your API documentation work better with AI tools.
 seo:
   title: How to optimize your docs for LLMs
-  description: Learn practical strategies to make your API documentation work better with AI tools, reducing support tickets and improving developer experience through LLM-friendly formatting and structure.
-  image: ./images/llm_optimization_funnel_final.png
+  description: Let's dig into a few practical strategies to make your API documentation work better with AI tools.
 author: adam-altman
-date: 2025-01-15
+date: 2025-08-14
 categories:
   - tech-writers
   - api
@@ -22,7 +21,7 @@ Let's be honest: developers probably aren't reading your documentation the way t
 
 You've probably already realized this isn't some distant future problem; it's happening right now. Your support team might be already seeing tickets that could have been avoided if AI tools could properly understand your documentation. Your developer onboarding could be taking longer because AI assistants can't parse your getting started guides effectively. In fact, [24.6% of MLOps teams cite output reliability as a major concern](https://mlops.community/wp-content/uploads/2023/07/survey-report-MLOPS-v16-FINAL.pdf), making optimization critical for production use
 
-Just about every developer has experienced the frustration shown in the orange sections: asking an AI assistant for help, only to receive confusing or incorrect guidance. When documentation lacks consistent terminology and proper formatting, even sophisticated AI tools struggle to provide useful answers. 
+Just about every developer has experienced the frustration shown in the orange sections in the diagram below: asking an AI assistant for help, only to receive confusing or incorrect guidance. When documentation lacks consistent terminology and proper formatting, even sophisticated AI tools struggle to provide useful answers. 
 
 The blue sections represent the developer experience we should strive for: clear questions get clear answers, code examples actually work, and developers can focus on building rather than debugging documentation problems.
 
