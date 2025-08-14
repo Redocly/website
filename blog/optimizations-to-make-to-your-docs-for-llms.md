@@ -84,7 +84,6 @@ AI models don't read documentation like humans do. They can't look at your beaut
 
 AI systems organize information into chunks, usually paragraph-sized sections. When you mix different topics in the same section (like putting rate limiting info in your authentication section), the AI can't separate the concepts. So when someone asks about authentication, they get rate limiting details mixed in, making the answer less useful.
 
-Some tool can help - Redocly, for example, automates the creation of your `llms.txt` file with a lightweight Markdown index that may help AI assistants navigate your docs more intelligently.
 
 ### Similar sections lead to retrieval errors
 
