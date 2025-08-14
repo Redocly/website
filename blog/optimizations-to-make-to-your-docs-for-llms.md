@@ -19,7 +19,7 @@ image: llm_optimization_funnel_final.png
 
 Let's be honest: developers probably aren't reading your documentation the way they used to. They're asking AI agents instead of digging through your carefully crafted API reference. And if your docs aren't optimized for these AI tools, your developers are getting incomplete or wrong answers about your APIs.
 
-You've probably already realized this isn't some distant future problem; it's happening right now. Your support team might be already seeing tickets that could have been avoided if AI tools could properly understand your documentation. Your developer onboarding could be taking longer because AI assistants can't parse your getting started guides effectively. In fact, [24.6% of MLOps teams cite output reliability as a major concern](https://mlops.community/wp-content/uploads/2023/07/survey-report-MLOPS-v16-FINAL.pdf), making optimization critical for production use
+You've probably already realized this isn't some distant future problem; it's happening right now. Your support team might be already seeing tickets that could have been avoided if AI tools could properly understand your documentation. Your developer onboarding could be taking longer because AI assistants can't parse your getting started guides effectively. In fact, A new Stack Overflow Developer Survey (2025) shows that 84% of developers now use—or plan to use—AI tools in their workflows. Yet, trust is faltering: 46% say they don’t trust the accuracy of AI outputs—up from just 31% in 2024. Nearly half!
 
 Just about every developer has experienced the frustration shown in the orange sections in the diagram below: asking an AI assistant for help, only to receive confusing or incorrect guidance. When documentation lacks consistent terminology and proper formatting, even sophisticated AI tools struggle to provide useful answers. 
 
@@ -80,10 +80,7 @@ The good news? Improving how LLMs consume your docs isn't particularly complex. 
 
 AI models don't read documentation like humans do. They can't look at your beautiful layout, understand visual hierarchy, or fill in context gaps the way a developer can. Instead, they process text in a very specific way that documentarians may not have considered in the past.
 
-### Mixed topics confuse AI chunking
-
 AI systems organize information into chunks, usually paragraph-sized sections. When you mix different topics in the same section (like putting rate limiting info in your authentication section), the AI can't separate the concepts. So when someone asks about authentication, they get rate limiting details mixed in, making the answer less useful.
-
 
 ### Similar sections lead to retrieval errors
 
