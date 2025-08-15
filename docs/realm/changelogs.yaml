@@ -29380,10 +29380,3 @@ reunite:
           Added a retention policy for project previews that deletes previews older than 90 days and removes previews on the same branch older than 5
           days, keeping only the latest.
     dependencies: {}
-  v2025-08-15.1:
-    timestamp: 1755270421000
-    changes:
-      minor:
-        - Posted pull request reviews to connected Git providers.
-      patch: []
-    dependencies: {}
