@@ -360,8 +360,6 @@
               label: Button
             - page: customization/react-components/list/link.md
               label: Link
-            - page: customization/react-components/list/dynamic.md
-              label: Dynamic
     - page: customization/enable-source-maps.md
       label: Enable source maps
 
@@ -413,6 +411,15 @@
           label: Reference
         - page: customization/api-functions/create-api-functions.md
           label: Tutorials
+    - group: MCP servers
+      selectFirstItemOnExpand: true
+      items:
+        - page: customization/mcp-server/index.md
+          label: Overview
+        - page: customization/mcp-server/docs-mcp.md
+          label: Docs MCP
+        - page: customization/mcp-server/gateway-mcp.md
+          label: Gateway MCP
 
 
 - group: Access
