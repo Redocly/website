@@ -32,23 +32,26 @@ To add comments in the visual or code diff view:
 
     ![Screenshot of top right side of review tab in Reunite with arrow pointing to the comments icon](../../images/comment-icon.png)
 
-2. Enter your feedback.
-3. Click **Comment**.
+1. Enter your feedback.
+1. Click **Comment**.
 
 To add line-specific comments in code diff view:
 
 1. Hover over the line numbers.
-2. Click the plus icon.
+1. Click the plus icon.
 
     ![Screenshot of code diff view in Reunite with arrow pointing towards plus icon](../../images/plus-icon.png)
 
-3. Enter your feedback.
-4. Select one option:
+1. Enter your feedback.
+1. Select one option:
    - **Add a single comment**: For a standalone comment.
    - **Start a review**: For multiple comments in a complete review.
 
 Use the text field toolbar to format text, add links, or insert images.
 Mention people or teams with the `@` symbol followed by their name.
+
+Notes:
+- The Visual review check appears only for projects connected to an external Git provider (not for internal projects).
 
 ## Approve or request changes
 
@@ -58,11 +61,32 @@ After reviewing the pull request, click the **Review** button, add your final th
 - **Approve:** Indicate the pull request is ready to merge.
 - **Request changes:** Specify issues that require resolution before approval.
 
-{% admonition type="info" name="Connected Git providers" %}
-If your project uses a connected Git provider (such as GitHub or GitLab), approving a pull request in Reunite marks the "Visual Review" check as approved in your Git provider's check list. This approval does not automatically approve the actual pull request in the external Git provider - that still requires approval through your Git provider's interface.
+{% admonition type="info" name="Post your review to Git providers" %}
+- If your project uses a connected Git provider (GitHub, GitLab, Azure DevOps, or Bitbucket) and your credentials are valid, Reunite automatically posts your review to the provider when you submit the review to Reunite.
+- If your provider account is not connected, your review appears in Reunite only.
+The Visual Check(#add-a-visual-review-check-in-your-git-provider) is responsible to deliver review details to the provider.
+- If your account is connected but you do not have review permissions in the provider, your review appears in Reunite only and is never posted to the provider.
 {% /admonition %}
 
 Format your review comment using the toolbar options, then click **Submit review**.
+
+## Add a visual review check in your Git provider
+
+Reunite can add a Visual review check to your pull requests in GitHub, GitLab, Azure DevOps, or Bitbucket.
+The check links back to the **Visual review** tab in Reunite and displays a short status (for example, **Pending**, **Approved**, **Changes requested**, or **No changes**).
+
+Visual review check updates automatically when you add comments or change a review in Reunite.
+It uses the project connection, so it updates in your Git provider even if your personal account isn't connected.
+
+To add the Visual review check to your Git provider:
+
+1. Go to your project's **Settings** page and [connect the repository in your Git provider](../connect-git/connect-git-provider) as the project source.
+1. Ensure [preview builds](../use-previews.md) are working.
+1. Make sure the the Redocly app or credentials in your Git provider grant permission to create commit statuses or checks.
+1. Open or update a pull request against the connected repository.
+
+Reunite posts a commit status named "Visual review" on the PR's commit.
+The status links to the Visual review page in Reunite.
 
 ## Merge a pull request
 
