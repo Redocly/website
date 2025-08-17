@@ -23,9 +23,9 @@ Here's what's new:
 
 ## 🌍 Internationalization and accessibility
 - Built-in translations: Out-of-the-box translations for multiple languages without extra setup.
-- Skip to content button: Improves keyboard navigation and accessibility.
+- [Skip to content button](../docs/end-user/navigate-project.md#skip-to-content): Improves keyboard navigation and accessibility.
 - Page and label properties: Customize navigation buttons with front matter for a smoother reading experience.
-- Font Awesome icons: Add icons to your sidebar, navbar, footer, or Markdoc content to bring more clarity and personality to your docs — we even added them to ours.
+- {% icon name="solid icons" size="1.1em" color="currentColor" /%} Font Awesome icons: Add icons to your sidebar, navbar, footer, or Markdoc content to bring more clarity and personality to your docs — we even added them to ours.
 
 ## 🤖 Smarter docs with LLM actions
 
@@ -60,11 +60,11 @@ We've shipped a smoother AsyncAPI docs experience, making it easier to document 
     - Deprecated queries, mutations, and subscriptions are now displayed.
 - Arazzo compatibility: Variables replaced with servers and inputs, plus a new Path tab for editing request parameters.
 - Improved code walkthroughs: Smarter trigger points for step changes.
+- Syntax highlighting in Reunite editor for `.cjs` and `.mjs` files.
 
 ## 📖 Richer documentation formats
-- Tabbed code groups: Use the new [code-group Markdoc tag](../docs/realm/content/markdoc-tags/code-group.md) for side-by-side language examples.
+- Code groups: Use the new [code-group Markdoc tag](../docs/realm/content/markdoc-tags/code-group.md) for side-by-side tabbed language examples or a language dropdown menu.
 - Request/response samples: The new [openapi-response-sample tag](../docs/realm/content/markdoc-tags/openapi-response-sample.md) separates request and response snippets for more granular rendering.
-- Syntax highlighting in Reunite editor for `.cjs` and `.mjs` files.
 - Markdoc dropdown updates from the Reunite editor: Quickly insert built-in or custom functions.
 
 ## ⚡ Quality of life enhancements
@@ -110,7 +110,7 @@ Join our team and be part of something big.
 
 ---
 
-🔮 Roadmap sneak peek
+## 🔮 Roadmap sneak peek
 
 We're continuing to invest in features that make building and running with Redocly even more powerful:
 - **MCP servers** – deeper integration with external tools and workflows.
