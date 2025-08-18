@@ -148,8 +148,7 @@ Redocly's Respect offers an alternative, provider-driven approach where the Open
 
 #### Respect contract testing in action
 
-```yaml
-# users-test.arazzo.yaml
+```yaml {% title="users-test.arazzo.yaml" %}
 arazzo: 1.0.1
 info:
   title: Test Example API
