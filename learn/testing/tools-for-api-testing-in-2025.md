@@ -88,7 +88,7 @@ jobs:
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js LTS
 - Place `redocly.yaml` in your repository root
 - Local: run CLI commands from your repo root; CI: use the GitHub Actions workflow shown above
 
