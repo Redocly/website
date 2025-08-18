@@ -73,17 +73,31 @@ Use the same commands locally and in CI to validate both your API design and its
 
 ```yaml
 # .github/workflows/api-quality.yml
-name: API Quality Gates
-on: [pull_request]
+name: API quality gates
+on:
+  pull_request:
+    branches: [main]
+
 jobs:
   api-validation:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      API_URL: ${{ vars.API_URL }} # or: ${{ secrets.API_URL }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Lint API Spec
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Lint API description
         run: npx @redocly/cli lint openapi.yaml
-      - name: Workflow Testing
-        run: npx @redocly/cli respect api-tests.arazzo.yaml --server mainApi=${{ env.API_URL }}
+
+      - name: Workflow testing (Arazzo)
+        run: npx @redocly/cli respect api-tests.arazzo.yaml --server mainApi=$API_URL
 ```
 
 ### Prerequisites
