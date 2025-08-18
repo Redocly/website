@@ -112,7 +112,7 @@ The foundation of a modern, design-first API workflow is the OpenAPI definition.
 
 #### Core tool: API linters for contract and style conformance
 
-Start with a configurable API linter, with Spectral (via Redocly CLI) as the de facto open-source standard. See the built‑in rules and configurable rules in the CLI docs at [/docs/cli/rules/built-in-rules](/docs/cli/rules/built-in-rules) and the `lint` command at [/docs/cli/commands/lint](/docs/cli/commands/lint). Linting validates the OpenAPI definition against a ruleset that can enforce everything from security best practices to semantic naming conventions.
+Start with a configurable API linter (via Redocly CLI) as the de facto open-source standard. See the built‑in rules and configurable rules in the CLI docs at [/docs/cli/rules/built-in-rules](/docs/cli/rules/built-in-rules) and the `lint` command at [/docs/cli/commands/lint](/docs/cli/commands/lint). Linting validates the OpenAPI definition against a ruleset that can enforce everything from security best practices to semantic naming conventions.
 
 ```yaml
 # .redocly.yaml
