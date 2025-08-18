@@ -36,7 +36,7 @@ graph TB
     end
 
     subgraph AsyncAPI["Event-Driven APIs"]
-        C1[AsyncAPI Spec] --> C2[Message Validation]
+        C1[AsyncAPI Description] --> C2[Message Validation]
     end
 
     D[Modern API Testing Strategy] --> REST
