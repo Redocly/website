@@ -89,8 +89,7 @@ jobs:
 ### Prerequisites
 
 - Node.js 18+
-- Install Redocly CLI: `npm i -g @redocly/cli` (or run via `npx @redocly/cli <command>`)
-- Place `.redocly.yaml` in your repository root
+- Place `redocly.yaml` in your repository root
 - Local: run CLI commands from your repo root; CI: use the GitHub Actions workflow shown above
 
 ### Why your OpenAPI definition is your most important testing asset
