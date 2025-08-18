@@ -370,7 +370,7 @@ It's important to assemble a coherent, automated stack that provides the right f
 
 ### Next steps
 
-* Add a Spectral ruleset to your repo and integrate `npx @redocly/cli lint` in CI. See [/docs/cli/rules/built-in-rules](/docs/cli/rules/built-in-rules) and the `lint` command at [/docs/cli/commands/lint](/docs/cli/commands/lint).
+* Add a [ruleset](../docs/cli/@v2/rules.md) to your repo and integrate `npx @redocly/cli lint` in CI. See [/docs/cli/rules/built-in-rules](/docs/cli/rules/built-in-rules) and the `lint` command at [/docs/cli/commands/lint](/docs/cli/commands/lint).
 * Create a small Arazzo workflow and run it with `npx @redocly/cli respect`. See the command reference at [/docs/cli/commands/respect](/docs/cli/commands/respect) and the tutorial at [/learn/arazzo/testing-arazzo-workflows](/learn/arazzo/testing-arazzo-workflows).
 * Generate a starter Arazzo workflow with the CLI: see [`generate-arazzo`](/docs/cli/commands/generate-arazzo).
 * Learn the fundamentals: [/learn/testing/contract-testing-101](/learn/testing/contract-testing-101).
