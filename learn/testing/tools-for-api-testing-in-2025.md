@@ -254,14 +254,63 @@ An API that is functional but slow can be as problematic as one that is broken. 
 - Validate scalability and latency budgets? Use `k6` in CI.
 ### Comparison matrix: approaches at a glance
 
-| Approach | Setup effort | Drift risk | CI integration | Skill profile | Best fit | Not a fit |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Workflow testing (`respect`) | Medium (author Arazzo) | Low (tests tied to OpenAPI) | First‑class via CLI | Developer/Tech Writer comfortable with YAML | End‑to‑end contract validation and integrations | One‑off manual checks |
-| Test generation (collections) | Low initial, higher ongoing | Medium/High (generated artifact) | Via runners, extra plumbing | Mixed (GUI + scripts) | Bootstrapping quick checks or demos | Long‑term regression suites |
-| Validation proxy | Medium (operate proxy) | Low | Env‑specific | DevOps/Platform | In‑env validation where proxying is acceptable | Highly locked‑down networks |
-| Functional (code‑based) | Medium | Low | First‑class in CI | SDET/Developer | Complex business logic and data‑driven tests | Non‑technical teams |
-| GUI manual | Low | N/A | Limited | Any | Exploration and ad‑hoc validation | Scalable automation |
-| Performance (`k6`) | Medium | N/A | First‑class in CI | Developer/Perf Eng | Load, stress, and soak coverage | Unit‑level checks |
+{% table %}
+- Approach
+- Setup effort
+- Drift risk
+- CI integration
+- Skill profile
+- Best fit
+- Not a fit
+---
+- Workflow testing (`respect`)
+- Medium (author Arazzo)
+- Low (tests tied to OpenAPI)
+- First-class via CLI
+- Developer/Tech Writer comfortable with YAML
+- End-to-end contract validation and integrations
+- One-off manual checks
+---
+- Test generation (collections)
+- Low initial, higher ongoing
+- Medium/High (generated artifact)
+- Via runners, extra plumbing
+- Mixed (GUI + scripts)
+- Bootstrapping quick checks or demos
+- Long-term regression suites
+---
+- Validation proxy
+- Medium (operate proxy)
+- Low
+- Env-specific
+- DevOps/Platform
+- In-env validation where proxying is acceptable
+- Highly locked-down networks
+---
+- Functional (code-based)
+- Medium
+- Low
+- First-class in CI
+- SDET/Developer
+- Complex business logic and data-driven tests
+- Non-technical teams
+---
+- GUI manual
+- Low
+- N/A
+- Limited
+- Any
+- Exploration and ad-hoc validation
+- Scalable automation
+---
+- Performance (`k6`)
+- Medium
+- N/A
+- First-class in CI
+- Developer/Perf Eng
+- Load, stress, and soak coverage
+- Unit-level checks
+{% /table %}
 
 
 ## The architect's POV: choosing tools through a four‑pillar framework
