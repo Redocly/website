@@ -67,6 +67,7 @@ Configure user authentication and access controls for your documentation.
 Extend functionality with custom code and additional features.
 
 - [apiFunctions](./api-functions.md)
+- [mcp](./mcp.md)
 - [plugins](./plugins.md)
 - [resolve](./openapi/resolve.md)
 - [env](./env.md)

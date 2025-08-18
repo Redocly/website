@@ -61,12 +61,7 @@ return {
 
 The context parameter includes:
 
-- `userClaims`: Information about the authenticated user and their original IdP tokens (optional)
-  - `email`: User email
-  - `name`: User name
-  - `federatedAccessToken`: Access token of the original identity provider. Requires `REDOCLY_OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
-  - `federatedIdToken`: ID token of the original identity provider. Requires `REDOCLY_OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
-- `info`: OpenAPI info object
+- `userClaims`: Information about the authenticated user (optional)
 - `operation`: Details about the current API operation
   - `name`: Operation name
   - `path`: API path
@@ -80,11 +75,6 @@ Here's an example showing how to use context to configure request values:
 ```typescript {% title="configure.ts" %}
 export function configure(context: {
   userClaims?: UserClaims;
-  info: {
-    title: string;
-    description: string;
-    // ... other OpenAPI info properties
-  };
   operation: {
     name: string;
     path: string;
@@ -96,10 +86,10 @@ export function configure(context: {
 }) {
   const requestValues: ConfigureRequestValues = {
     headers: {
-      'API-Key': userClaims.federatedAccessToken,
+      'API-Key': 'your-api-key',
       // Use operation details to set custom headers
       'Operation-ID': context.operation.operationId || '',
-      'Request-Method': context.operation.method,
+      'Request-Method': context.operation.method
     },
     query: {
       // Set different limits based on the operation
