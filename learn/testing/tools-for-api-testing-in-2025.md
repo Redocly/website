@@ -28,7 +28,7 @@ This guide provides a path out of that chaos. Instead of just another flat list 
 ```mermaid
 graph TB
     subgraph REST["REST APIs"]
-        A1[OpenAPI Spec] --> A2[Contract Testing]
+        A1[OpenAPI Description] --> A2[Contract Testing]
     end
 
     subgraph GraphQL["GraphQL APIs"]
@@ -53,13 +53,13 @@ The most effective way to improve quality and reduce costs is to shift left—in
 ```mermaid
 sequenceDiagram
     participant Design as 📋 Design Phase<br/>$1 to fix
-    participant Dev as 💻 Development<br/>$10 to fix  
-    participant Test as 🔍 Testing<br/>$50 to fix
-    participant Prod as 🚀 Production<br/>$100+ to fix
+    participant Dev as 💻 Development<br/>$5–$25 to fix  
+    participant Test as 🔍 Testing<br/>$50–$150 to fix
+    participant Prod as 🚀 Production<br/>$1000+ to fix
     
     Design->>Dev: Defect flows downstream
-    Dev->>Test: Cost increases 5x
-    Test->>Prod: Cost doubles again
+    Dev->>Test: Cost increases dramatically
+    Test->>Prod: Cost increases exponentially
     
     Note over Design: Shift-left catches issues here
     Note over Prod: Emergency patches, downtime costs
@@ -106,13 +106,13 @@ jobs:
 - Place `redocly.yaml` in your repository root
 - Local: run CLI commands from your repo root; CI: use the GitHub Actions workflow shown above
 
-### Why your OpenAPI definition is your most important testing asset
+### Why your OpenAPI description is your most important testing asset
 
-The foundation of a modern, design-first API workflow is the OpenAPI definition. Treat it as the canonical, machine-readable single source of truth for your API. By treating the OpenAPI definition as an enforceable contract, you can automate quality checks at the earliest possible moment: the design phase.
+The foundation of a modern, design-first API workflow is the OpenAPI description. Treat it as the canonical, machine-readable single source of truth for your API. By treating the OpenAPI description as an enforceable contract, you can automate quality checks at the earliest possible moment: the design phase.
 
 #### Core tool: API linters for contract and style conformance
 
-Start with a configurable API linter (via Redocly CLI) as the de facto open-source standard. See the built‑in rules and configurable rules in the CLI docs at [/docs/cli/rules/built-in-rules](/docs/cli/rules/built-in-rules) and the `lint` command at [/docs/cli/commands/lint](/docs/cli/commands/lint). Linting validates the OpenAPI definition against a ruleset that can enforce everything from security best practices to semantic naming conventions.
+Start with a configurable API linter (via Redocly CLI) as the de facto open-source standard. See the built‑in rules and configurable rules in the CLI docs at [/docs/cli/rules/built-in-rules](/docs/cli/rules/built-in-rules) and the `lint` command at [/docs/cli/commands/lint](/docs/cli/commands/lint). Linting validates the OpenAPI description against a ruleset that can enforce everything from security best practices to semantic naming conventions.
 
 ```yaml
 # .redocly.yaml
@@ -127,10 +127,9 @@ rules:
       type: Path
       property: key
     assertions:
-      notPattern:
-        pattern: "/internal/|/_v1/"
-        message: "Path must not contain '/internal/' or '/_v1/' segments"
+      notPattern: "/internal/|/_v1/"
     severity: error
+    message: "Path must not contain '/internal/' or '/_v1/' segments"
   security-defined: error
 ```
 
@@ -144,9 +143,9 @@ In a microservices architecture, how do you ensure a change to one service doesn
 
 One common tool for consumer-driven contract testing is Pact. In this workflow, consumer-side tests generate a contract file (a pact). These contracts are then published to a central Pact Broker. The provider's CI pipeline fetches these contracts from the broker and verifies them against the provider codebase. The broker's key feature is providing the can-i-deploy status, which tells a team if they can safely deploy a service without breaking any of its known consumers, enabling true independent deployments.
 
-Redocly's Respect offers an alternative, provider-driven approach where the OpenAPI definition itself serves as the contract, ensuring that your implementation never deviates from your design. Learn how to run workflow tests with the `respect` command at [/docs/cli/commands/respect](/docs/cli/commands/respect).
+Redocly's Respect offers a complementary approach where the OpenAPI description itself serves as the contract, ensuring that your implementation never deviates from your design. Respect can be used for both provider-driven and consumer-driven contract testing workflows. Learn how to run workflow tests with the `respect` command at [/docs/cli/commands/respect](/docs/cli/commands/respect).
 
-#### Respect contract testing in action
+### Respect contract testing in action
 
 ```yaml {% title="users-test.arazzo.yaml" %}
 arazzo: 1.0.1
@@ -204,15 +203,15 @@ What changed: The team codified the contract and validated real integration flow
 
 | Approach | Example tool | How it works | Key trade-off |
 | :--- | :--- | :--- | :--- |
-| Workflow testing | Respect | Execute Arazzo workflows that reference OpenAPI specs for multi-step API validation | Tests real integration flows; requires Arazzo workflow creation |
+| Workflow testing | Respect | Execute Arazzo workflows that reference OpenAPI descriptions for multi-step API validation | Tests real integration flows; requires Arazzo workflow creation |
 | Test generation from spec | Postman Contract Test Generator | Generate collections that assert contract compliance | Separate artifact can drift without regeneration |
 | Validation proxy | Stoplight Prism | Proxy validates traffic matches the contract | Operational overhead to run/manage proxy |
 
-#### Choose this if…
+#### Choose contract testing approaches based on your needs
 
-- Respect workflow testing: You need end‑to‑end validation of real integration flows and want tests that always reflect the current OpenAPI.
-- Test generation from spec: You need a quick bootstrap for manual/GUI validation and accept managing a generated artifact.
-- Validation proxy: You need inline validation in a specific environment and can operate a proxy.
+- **Respect workflow testing**: You need end‑to‑end validation of real integration flows and want tests that always reflect the current OpenAPI.
+- **Test generation from spec**: You need a quick bootstrap for manual/GUI validation and accept managing a generated artifact.
+- **Validation proxy**: You need inline validation in a specific environment and can operate a proxy.
 
 ## Tools for functional and request/response testing
 
@@ -226,10 +225,10 @@ Great for API exploration and manual testing. GUIs lower the barrier to entry, a
 
 For automated testing, code-based frameworks like Karate provide comprehensive functionality. They support reusable code, data-driven testing, and parallel execution for reduced execution times—ideal for building maintainable suites at scale.
 
-#### Choose this if…
+#### Choose functional testing approaches based on your needs
 
-- GUI-based: You need exploratory testing, demos, or collaborative manual checks.
-- Code-based: You need repeatable, versioned tests in CI with code reuse and data‑driven scenarios.
+- **GUI-based**: You need exploratory testing, demos, or collaborative manual checks.
+- **Code-based**: You need repeatable, versioned tests in CI with code reuse and data‑driven scenarios.
 
 ## Tools for performance and load testing
 
@@ -239,7 +238,7 @@ An API that is functional but slow can be as problematic as one that is broken. 
 
 `k6` is developer‑focused and integrates into CI/CD pipelines. Define performance service‑level objectives (SLOs) directly in the test script to codify and automate performance requirements.
 
-#### Choose this if…
+#### Choose performance testing based on your needs
 
 - You need to validate scalability and latency budgets before production.
 - You maintain SLOs/SLIs and want automated gates for regressions.
@@ -326,14 +325,14 @@ Evaluate tooling across product overlap, workflow cohesion, total cost of owners
 ```mermaid
 sequenceDiagram
     participant Dev as Developer
-    participant Spec as OpenAPI Spec
+    participant Spec as OpenAPI Description
     participant Respect as Respect
     participant API as Live API
     
     Dev->>Spec: Update schema
     Respect->>API: Send real requests
     API-->>Respect: Live responses
-    Respect->>Respect: Validate vs updated spec
+    Respect->>Respect: Validate vs updated OpenAPI
     Note over Respect: ✓ Always current, no drift
 ```
 
@@ -378,5 +377,3 @@ It's important to assemble a coherent, automated stack that provides the right f
 ### Primary CTA
 
 Run your first workflow test with Respect: [/docs/cli/commands/respect](/docs/cli/commands/respect)
-
-
