@@ -143,6 +143,7 @@ One common tool for consumer-driven contract testing is Pact. In this workflow, 
 
 Redocly's Respect offers a complementary approach where the OpenAPI description itself serves as the contract, ensuring that your implementation never deviates from your design. Respect can be used for both provider-driven and consumer-driven contract testing workflows. Learn how to run workflow tests with the `respect` command at [/docs/cli/commands/respect](/docs/cli/commands/respect).
 
+
 ### Respect contract testing in action
 
 ```yaml {% title="users-test.arazzo.yaml" %}
@@ -197,33 +198,9 @@ Impact: The PR was blocked in under 5 minutes, avoiding a production incident an
 
 What changed: The team codified the contract and validated real integration flows automatically on every PR.
 
-#### Workflow testing vs. test generation vs. proxy: what's the difference?
-
-{% table %}
-- Approach
-- Example tool
-- How it works
-- Key trade-off
----
-- Workflow testing
-- Respect
-- Execute Arazzo workflows that reference OpenAPI descriptions for multi-step API validation
-- Tests real integration flows; requires Arazzo workflow creation
----
-- Test generation from spec
-- Postman Contract Test Generator
-- Generate collections that assert contract compliance
-- Separate artifact can drift without regeneration
----
-- Validation proxy
-- Stoplight Prism
-- Proxy validates traffic matches the contract
-- Operational overhead to run/manage proxy
-{% /table %}
-
 #### Choose contract testing approaches based on your needs
 
-- **Respect workflow testing**: You need end‑to‑end validation of real integration flows and want tests that always reflect the current OpenAPI.
+- **Workflow testing**: You need end‑to‑end validation of real integration flows and want tests that always reflect the current OpenAPI.
 - **Test generation from spec**: You need a quick bootstrap for manual/GUI validation and accept managing a generated artifact.
 - **Validation proxy**: You need inline validation in a specific environment and can operate a proxy.
 
@@ -324,7 +301,6 @@ An API that is functional but slow can be as problematic as one that is broken. 
 - Load, stress, and soak coverage
 - Unit-level checks
 {% /table %}
-
 
 ## The architect's POV: choosing tools through a four‑pillar framework
 
