@@ -274,6 +274,8 @@
             label: x-additionalPropertiesName
           - page: content/api-docs/asyncapi-extensions/x-rbac.md
             label: x-rbac
+          - page: content/api-docs/asyncapi-extensions/x-metadata.md
+            label: x-metadata
         - page: content/api-docs/add-graphql-docs.md
           label: GraphQL
         - page: content/api-docs/add-soap-docs.md
