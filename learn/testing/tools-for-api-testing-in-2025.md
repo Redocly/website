@@ -71,8 +71,7 @@ _Diagram: The cost of fixing defects increases across the lifecycle; shift-left 
 
 Use the same commands locally and in CI to validate both your API design and its implementation.
 
-```yaml
-# .github/workflows/api-quality.yml
+```yaml {% title=".github/workflows/api-quality.yml" %}
 name: API quality gates
 on:
   pull_request:
@@ -114,8 +113,7 @@ The foundation of a modern, design-first API workflow is the OpenAPI description
 
 Start with a configurable API linter (via Redocly CLI) as the de facto open-source standard. See the built‑in rules and configurable rules in the CLI docs at [/docs/cli/rules/built-in-rules](/docs/cli/rules/built-in-rules) and the `lint` command at [/docs/cli/commands/lint](/docs/cli/commands/lint). Linting validates the OpenAPI description against a ruleset that can enforce everything from security best practices to semantic naming conventions.
 
-```yaml {% title="redocly.yaml" %}
-# .redocly.yaml
+```yaml {% title=".redocly.yaml" %}
 apis:
   main: openapi.yaml
 rules:
@@ -201,11 +199,27 @@ What changed: The team codified the contract and validated real integration flow
 
 #### Workflow testing vs. test generation vs. proxy: what's the difference?
 
-| Approach | Example tool | How it works | Key trade-off |
-| :--- | :--- | :--- | :--- |
-| Workflow testing | Respect | Execute Arazzo workflows that reference OpenAPI descriptions for multi-step API validation | Tests real integration flows; requires Arazzo workflow creation |
-| Test generation from spec | Postman Contract Test Generator | Generate collections that assert contract compliance | Separate artifact can drift without regeneration |
-| Validation proxy | Stoplight Prism | Proxy validates traffic matches the contract | Operational overhead to run/manage proxy |
+{% table %}
+- Approach
+- Example tool
+- How it works
+- Key trade-off
+---
+- Workflow testing
+- Respect
+- Execute Arazzo workflows that reference OpenAPI descriptions for multi-step API validation
+- Tests real integration flows; requires Arazzo workflow creation
+---
+- Test generation from spec
+- Postman Contract Test Generator
+- Generate collections that assert contract compliance
+- Separate artifact can drift without regeneration
+---
+- Validation proxy
+- Stoplight Prism
+- Proxy validates traffic matches the contract
+- Operational overhead to run/manage proxy
+{% /table %}
 
 #### Choose contract testing approaches based on your needs
 
