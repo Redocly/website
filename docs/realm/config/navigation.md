@@ -108,13 +108,14 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 
 - items
 - [string]
-- An array of items that appear on the page and their order. Allowed values: `copy`, `view`, `chatgpt`, `claude`
-  * `copy` - Copy the page content as markdown to the clipboard.
-  * `view` - View the page content as markdown in a new tab.
-  * `chatgpt` - Ask ChatGPT about this page. Only available on public pages.
-  * `claude` - Ask Claude about this page. Only available on public pages.
+- A list of items that appear on the page and their order.
+  Allowed values:
+  - `copy`: copy the page content as Markdown to the clipboard.
+  - `view`: view the page content as Markdown in a new tab.
+  - `chatgpt`: ask ChatGPT about this page. Only available on public pages.
+  - `claude`: ask Claude about this page. Only available on public pages.
 
-  The first item in the list will be the default action.
+  The first item in the list is the default action.
   By default, all items are shown in the following order: `copy`, `view`, `chatgpt`, `claude`.
 
 ---
