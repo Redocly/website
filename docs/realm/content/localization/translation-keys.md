@@ -18,7 +18,7 @@ This page contains the list of all predefined translation keys used in default U
 
 - asyncapi.download.description.title
 - Title for the download description section in AsyncAPI description
-- Download AsycAPI description
+- Download AsyncAPI description
 
 ---
 

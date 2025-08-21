@@ -208,6 +208,196 @@ The examples below use the same source file with different selection attributes.
   ```
 {% /markdoc-example %}
 
+### Add file names to code snippets
+
+Add a file name to display in the code snippet header using the `title` attribute:
+
+````markdoc {% process=false %}
+```js {% title="scripts.js" %}
+function test() {
+  console.log('Hello World!');
+}
+```
+````
+
+Result:
+
+```js {% title="scripts.js" %}
+function test() {
+  console.log('Hello World!');
+}
+```
+
+### Highlight lines and text
+
+Highlight a specific line using `[!code highlight]`:
+
+````markdoc {% process=false %}
+```js
+function test() {
+  console.log('Hello World!'); // [!code highlight] [!code highlight]
+}
+```
+````
+
+Result:
+
+```js
+function test() {
+  console.log('Hello World!'); // [!code highlight]
+}
+```
+
+Highlight multiple consecutive lines:
+
+````markdoc {% process=false %}
+```js 
+// [!code highlight:3] [!code highlight:3]
+function test() { 
+  const hello = 'Hello';
+  const world = 'World';
+  console.log(hello + " " + world);
+}
+```
+````
+
+Result:
+
+```js
+// [!code highlight:3]
+function test() { 
+  const hello = 'Hello';
+  const world = 'World';
+  console.log(hello + " " + world);
+}
+```
+
+Highlight non-consecutive lines using the `highlight` attribute:
+
+````markdoc {% process=false %}
+```js {% highlight="{1,3-4}" %}
+function test() {
+  const hello = 'Hello';
+  const world = 'World';
+  console.log(hello + " " + world);
+}
+```
+````
+
+Result:
+
+```js {% highlight="{1,3-4}" %}
+function test() {
+  const hello = 'Hello';
+  const world = 'World';
+  console.log(hello + " " + world);
+}
+```
+
+Highlight specific words or symbols:
+
+````markdoc {% process=false %}
+```js
+// [!code word:Hello] [!code word:Hello]
+function test() {
+  const hello = 'Hello';
+  const world = 'World';
+  console.log(hello + " " + world);  // prints "Hello World"
+}
+```
+````
+
+Result:
+
+```js
+// [!code word:Hello]
+function test() {
+  const hello = 'Hello';
+  const world = 'World';
+  console.log(hello + " " + world);  // prints "Hello World"
+}
+```
+
+Focus on specific lines by dimming others with a code comment:
+
+````markdoc {% process=false %}
+```js
+function test() {
+  const hello = 'Hello'; // [!code focus] [!code focus]
+  const world = 'World';
+  console.log(hello + " " + world);
+}
+```
+````
+
+Or with a Markdoc tag and a pattern.
+
+````markdoc {% process=false %}
+```js {% highlight="/Hello/" %}
+function test() {
+  const hello = 'Hello';
+  const world = 'World';
+  console.log(hello + " " + world);  // prints "Hello World"
+}
+```
+````
+
+Result:
+
+```js
+function test() {
+  const hello = 'Hello'; // [!code focus]
+  const world = 'World';
+  console.log(hello + " " + world);
+}
+```
+
+Mark lines with error and warning levels:
+
+````markdoc {% process=false %}
+```js
+function test() {
+  console.log('No errors or warnings');
+  console.error('Error'); // [!code error] [!code error]
+  console.warn('Warning'); // [!code warning] [!code warning]
+}
+```
+````
+
+Result:
+
+```js
+function test() {
+  console.log('No errors or warnings');
+  console.error('Error'); // [!code error]
+  console.warn('Warning'); // [!code warning]
+}
+```
+
+Show added and removed lines:
+
+````markdoc {% process=false %}
+```js
+function test() {
+  const hello = 'Hello';
+  const world = 'World';
+  console.log(hello + " " + world); // [!code --] [!code --]
+  console.log(`${hello} ${world}`); // [!code ++] [!code ++]
+}
+```
+````
+
+Result:
+
+```js
+function test() {
+  const hello = 'Hello';
+  const world = 'World';
+  console.log(hello + " " + world); // [!code --]
+  console.log(`${hello} ${world}`); // [!code ++]
+}
+```
+
 ## Best practices
 
 **Minimize complexity**
@@ -219,8 +409,7 @@ Simplified code snippets are easier for your readers to understand and apply.
 
 Store your example code in a central directory to make them easier to manage, update, and reference from code snippet tags.
 
-## Related configuration
+## Resources
 
-- Configure code snippet appearance, icons, and behavior using the [`codeSnippet`](../../config/code-snippet.md) configuration option.
-- Learn how to [highlight lines, add file names, and use advanced features](../../config/code-snippet.md#examples) in code snippets.
-- Set up [global and page-level configuration](../../config/code-snippet.md#configuration-scope) for consistent code snippet styling.
+- **[Code snippet configuration](../../config/code-snippet.md)** - Complete reference for customizing code snippet appearance, icons, and behavior across your documentation
+- **[Global and page-level configuration](../../config/code-snippet.md#configuration-scope)** - Apply consistent code snippet styling and settings throughout your project

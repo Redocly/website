@@ -245,7 +245,7 @@ The file extension is automatically removed.
 * `get-started/installation.md` becomes `/get-started/installation`
 * `concepts/markdoc.md` becomes `/concepts/markdoc`
 * `changelog.page.tsx` becomes `/changelog`
-* `api/reference/petstore.yaml` becomes `/api/reference/petstore`
+* `api/reference/museum.yaml` becomes `/api/reference/museum`
 
 Content files named `index` (e.g., `index.md`, `index.page.tsx`, or even `index.yaml`) serve as the default page for their directory.
 

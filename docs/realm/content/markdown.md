@@ -88,24 +88,56 @@ function processData() {
 ```
 ````
 
-Learn more about [code snippet configuration](../config/code-snippet.md) for all highlighting and annotation options, and explore [Markdoc code tags](./markdoc-tags/code-group.md) for multi-language examples.
+Learn more about [code snippet configuration](../config/code-snippet.md).
+For all highlighting and annotation options see examples at [Markdoc code snippet tag](./markdoc-tags/code-snippet.md), and explore [Markdoc code groups](./markdoc-tags/code-group.md) for multi-language examples.
 
 ### File trees
 
-Display project structure with the `treeview` format:
+Display file and directory structures using the `treeview` syntax:
 
 ````markdown
 ```treeview
-project/
-├── docs/
-│   ├── api/
-│   │   └── openapi.yaml
-│   └── guides/
-│       └── getting-started.md
-├── images/
-└── redocly.yaml
+.
+├── guides/                 # Guides
+│   ├── guide-1.md
+│   └── guide-2.md
+├── images/                 # Various shared images
+│   ├── favicon.png
+│   └── header-image.png
+├── tutorials/              # Tutorials
+│   ├── tutorial-1.md
+│   ├── tutorial-2.md
+│   ├── index.md
+│   └── sidebars.yaml       # Sidebar specific to the 'tutorials' section
+├── static/                 # Static assets copied directly to build output
+│   └── robots.txt
+├── index.page.tsx          # Custom React component for the landing page
+├── package.json            # Node.js project manifest
+└── redocly.yaml            # Main Redocly configuration file
 ```
 ````
+
+Result:
+
+```treeview
+.
+├── guides/                 # Guides
+│   ├── guide-1.md
+│   └── guide-2.md
+├── images/                 # Various shared images
+│   ├── favicon.png
+│   └── header-image.png
+├── tutorials/              # Tutorials
+│   ├── tutorial-1.md
+│   ├── tutorial-2.md
+│   ├── index.md
+│   └── sidebars.yaml       # Sidebar specific to the 'tutorials' section
+├── static/                 # Static assets copied directly to build output
+│   └── robots.txt
+├── index.page.tsx          # Custom React component for the landing page
+├── package.json            # Node.js project manifest
+└── redocly.yaml            # Main Redocly configuration file
+```
 
 ### Diagrams
 

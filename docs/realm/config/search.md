@@ -265,10 +265,10 @@ metadata:
 Apply facets to OpenAPI definitions using the `x-metadata` extension:
 
 ```yaml
-openapi: 3.0.0
+openapi: 3.1.0
 info:
-  version: 1.3.3
-  title: Swagger Petstore
+  version: 2.3.3
+  title: Museum
   x-metadata:
     redocly_category: Custom
     owner: Redocly

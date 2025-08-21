@@ -687,7 +687,7 @@
 --feedback-border-radius: var(--border-radius-lg);
 --feedback-report-dialog-max-width: 500px;
 --feedback-report-dialog-max-height: 300px;
---feedback-vote-button-wigth: 28px;
+--feedback-vote-button-width: 28px;
 --feedback-vote-button-height: 28px;
 
 --feedback-header-text-color: var(--text-color-primary);
