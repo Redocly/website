@@ -62,7 +62,8 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
 - group
 - string
-- **REQUIRED.** Specifies the name of the column.
+- **REQUIRED.**
+  Specifies the name of the column.
 
 ---
 
@@ -74,7 +75,8 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
 - items
 - [Item](#item-object)
-- **REQUIRED.** List of items in the footer column.
+- **REQUIRED.**
+  List of items in the footer column.
 
 {% /table %}
 
@@ -91,14 +93,18 @@ The default footer included in `@redocly/theme` can be configured using the opti
 - page
 - string
 -
-  **CONDITIONALLY REQUIRED.**\* Path to the file (extension included) that represents the page to link to. If no `label` is provided, the link text matches _the page's level 1 heading_.
+  **CONDITIONALLY REQUIRED.**\*
+  Path to the file (extension included) that represents the page to link to.
+  If no `label` is provided, the link text matches _the page's level 1 heading_.
 
 ---
 
 - href
 - string
 -
-  **CONDITIONALLY REQUIRED.**\* URL to link to. Works with absolute and relative URLs. If no `label` is provided, the link text matches _the value used for href_.
+  **CONDITIONALLY REQUIRED.**\*
+  URL to link to. Works with absolute and relative URLs.
+  If no `label` is provided, the link text matches _the value used for href_.
 
 ---
 
@@ -110,7 +116,8 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
 - labelTranslationKey
 - string
-- Sets the translation key for an item's link text. Used for [localization](../content/localization/localize-labels.md#localize-user-defined-ui-elements).
+- Sets the translation key for an item's link text.
+  Used for [localization](../content/localization/localize-labels.md#localize-user-defined-ui-elements).
 
 ---
 
@@ -124,9 +131,20 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
 - icon
 - string or [srcSet](#icon-object)
-- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
-  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
-  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
+- Either:
+  - A [Font Awesome](https://fontawesome.com/icons) icon name.
+    Realm has the following icon packs built in: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
+    The icons automatically adjust their colors when users change the color mode.
+
+    To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
+    To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+
+    **Examples:** `book`, `duotone book`, `brands github`
+
+    Using other prefixes, including the `fa-` prefix, causes the icon to not render.
+  - Relative path to an icon image file.
+
+    **Example:** `./images/config-icon.svg`
 
 {% /table %}
 
@@ -142,7 +160,8 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
 - srcSet
 - string
-- Comma-separated list of icon file paths and corresponding color modes. When configured, the icon changes when the user switches between color modes.
+- Comma-separated list of icon file paths and corresponding color modes.
+  When configured, the icon changes when the user switches between color modes.
 
 {% /table %}
 
@@ -169,7 +188,8 @@ footer:
 
 ### Complete footer setup
 
-The columns of the footer are configured using the `items` property, where each entry is a [Group](#group-object) or [Item](#item-object) object. The following example shows a comprehensive footer with multiple sections, localization support, and various link types:
+The columns of the footer are configured using the `items` property, where each entry is a [Group](#group-object) or [Item](#item-object) object.
+The following example shows a comprehensive footer with multiple sections, localization support, and various link types:
 
 ```yaml {% title="redocly.yaml" %}
 footer:
@@ -225,7 +245,8 @@ footer:
           icon: brands linkedin
 ```
 
-Each entry in the footer's `items` configures a distinct column. Using groups is a common approach for organizing related links.
+Each entry in the footer's `items` configures a distinct column.
+Using groups is a common approach for organizing related links.
 
 ### Footer with icons and color modes
 

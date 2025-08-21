@@ -42,7 +42,8 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 - labelTranslationKey
 - string
-- Sets the translation key for an item's link text. Used for [localization](../content/localization/localize-labels.md#localize-base-ui-components).
+- Sets the translation key for an item's link text.
+  Used for [localization](../content/localization/localize-labels.md#localize-base-ui-components).
 
 ---
 
@@ -55,21 +56,34 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 - disconnect
 - boolean
-- Includes links in the sidebar without assigning the sidebar to that page. Defaults to `false`.
+- Includes links in the sidebar without assigning the sidebar to that page.
+  Defaults to `false`.
 
 ---
 
 - icon
 - string
-- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file. Appears on left side of sidebar entry.
-  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
-  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
+- Either:
+  - A [Font Awesome](https://fontawesome.com/icons) icon name.
+    Realm has the following icon packs built in: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
+    The icons automatically adjust their colors when users change the color mode.
+
+    To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
+    To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+
+    **Examples:** `book`, `duotone book`, `brands github`
+
+    Using other prefixes, including the `fa-` prefix, causes the icon to not render.
+  - Relative path to an icon image file.
+
+    **Example:** `./images/config-icon.svg`
 
 ---
 
 - rbac
 - object
-- Page-level access controls for sidebar links. See [Configure RBAC in sidebar](../access/links-and-groups-permissions.md#in-the-sidebar) for more information.
+- Page-level access controls for sidebar links.
+  See [Configure RBAC in sidebar](../access/links-and-groups-permissions.md#in-the-sidebar) for more information.
 
 {% /table %}
 
@@ -101,13 +115,15 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 - directory
 - string
-- Path to a folder. Files in the folder automatically appear in the sidebar and are sorted in the **natural order**.
+- Path to a folder.
+  Files in the folder automatically appear in the sidebar and are sorted in the **natural order**.
 
 ---
 
 - groupTranslationKey
 - string
-- Sets the translation key for a group. Used for [localization](../content/localization/localize-labels.md#localize-base-ui-components).
+- Sets the translation key for a group.
+  Used for [localization](../content/localization/localize-labels.md#localize-base-ui-components).
 
 ---
 
@@ -131,15 +147,27 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 - selectFirstItemOnExpand
 - boolean
-- Opens the first item in a group when the group is expanded. Defaults to `false`.
+- Opens the first item in a group when the group is expanded.
+  Defaults to `false`.
 
 ---
 
 - icon
 - string
-- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file. Appears on left side of group.
-  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
-  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
+- Either:
+  - A [Font Awesome](https://fontawesome.com/icons) icon name.
+    Realm has the following icon packs built in: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
+    The icons automatically adjust their colors when users change the color mode.
+
+    To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
+    To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+
+    **Examples:** `book`, `duotone book`, `brands github`
+
+    Using other prefixes, including the `fa-` prefix, causes the icon to not render.
+  - Relative path to an icon image file.
+
+    **Example:** `./images/config-icon.svg`
 
 ---
 
@@ -170,13 +198,15 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 - separatorLine
 - boolean
-- Horizontal bar that breaks the sidebar into sections. Works in sidebar root or inside a group.
+- Horizontal bar that breaks the sidebar into sections.
+  Works in sidebar root or inside a group.
 
 ---
 
 - $ref
 - string
-- Path to another sidebar file. Entries from the referenced sidebar expand into this sidebar.
+- Path to another sidebar file.
+  Entries from the referenced sidebar expand into this sidebar.
 
 {% /table %}
 
@@ -307,3 +337,10 @@ The following example shows a comprehensive `sidebars.yaml` file with various op
     - href: /docs/cli/v1.3
       label: Legacy CLI docs
 ```
+
+## Resources
+
+- **[Navigation elements](./index.md)** - Overview of all navigation components and patterns for creating comprehensive site navigation structures
+- **[Navbar configuration](../config/footer.md)** - Configure the navbar navigation with links
+- **[Footer configuration](../config/footer.md)** - Configure the footer navigation with links, copyright information, and organizational elements
+- **[Front matter configuration](../config/front-matter-config.md)** - Use front matter add a sidebar on individual pages for custom page layouts
