@@ -22,6 +22,25 @@ If are not logged in, or the project does not have login enabled, an optional **
 
 After you click **Send**, your feedback is submitted.
 
+## Use page actions
+
+Project pages may contain a page actions button.
+This button can have a single action or more page actions in a drop-down list, depending on your project.
+
+The possible page actions are:
+
+- **Copy** or **Copy for LLM**: copies the page content as Markdown to the clipboard.
+  You can use this content as context when working with Large Language Models (LLMs).
+- **View** or **View as Markdown**: - opens the page's content as Markdown in a new tab.
+- **ChatGPT** or **Open in ChatGPT**: - opens the ChatGPT website in a new tab with the page's URL in the prompt.
+  You can use this initial prompt to provide context for the conversation.
+  This action is available on publicly accessible pages only.
+  Requires a ChatGPT account.
+- **Claude**: - opens the Claude website in a new tab with the page's URL in the prompt.
+  You can use this initial prompt to provide context for the conversation.
+  This action is available on publicly accessible pages only.
+  Requires a Claude account.
+
 ## Copy code sample
 
 You can one-click copy code samples from the project page to use in your work.
