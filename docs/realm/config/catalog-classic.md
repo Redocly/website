@@ -25,7 +25,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 ---
 
 - catalogClassic
-- Map of strings to [Catalog Classic](#catalog-object)
+- Map of strings to [Catalog Classic](#catalog-classic-object)
 - **REQUIRED.**
   Map of strings allows for the definition of multiple catalogs.
   Strings represent catalog only in configuration file - they do not appear in published project.
@@ -33,7 +33,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 
 {% /table %}
 
-### Catalog object
+### Catalog classic object
 
 {% table %}
 
@@ -222,6 +222,18 @@ You can configure multiple catalogs and set the link text, description, and filt
 
 {% /table %}
 
+## Catalog classic routing behavior
+
+When users click an item in the catalog, the routing behavior depends on your sidebar configuration:
+
+- **With sidebars.yaml**: The catalog routes to the first item defined in the corresponding `sidebars.yaml` file for that directory
+- **Without sidebars.yaml**: A sidebar is generated automatically from the files in the directory, and routing goes to the first file
+
+This means clicking an OpenAPI document in the catalog may not navigate directly to the API reference documentation.
+Instead, it navigates to whatever appears first in your sidebar configuration, such as a home page or getting started guide.
+
+To ensure users reach specific content when clicking catalog items, organize your `sidebars.yaml` files so the most important content appears first, or create dedicated landing pages that introduce each API.
+
 {% admonition type="info" %}
 
 If you want to only show the catalog to users that are members of particular teams, configure
@@ -339,14 +351,10 @@ catalogClassic:
         type: select
 ```
 
-## Related options
-
-- View the configuration options available for translating content in the [localization](./l10n.md) reference documentation.
-- See the [navbar](./navbar.md) configuration documentation to see the format for adding a link to your catalog to the navbar.
-- Use [x-metadata](../content/api-docs/openapi-extensions/x-metadata.md) to make your API descriptions filterable.
-
 ## Resources
 
+- **[Sidebars configuration](../navigation/sidebars.md)** - Configure sidebar navigation structure to control how catalog items route when clicked by users
+- **[x-metadata extension](../content/api-docs/openapi-extensions/x-metadata.md)** - Add metadata to OpenAPI files that can be used as catalog filters and displayed in API documentation
 - **[Hide info metadata](./openapi/hide-info-metadata.md)** - Exclude metadata from API reference documentation when you want cleaner, focused documentation presentation
 - **[API Governance](https://redocly.com/docs/cli/api-standards)** - Learn about API standards and governance practices for maintaining quality and consistency
 - **[Configure scorecard](../reunite/project/configure-scorecard.md)** - Set up scorecards to check APIs against standards and maintain quality metrics
