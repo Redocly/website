@@ -1,3 +1,12 @@
+---
+products:
+  - Redoc
+plans:
+  - Community
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # `apis`
 
 ## Introduction

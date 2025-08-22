@@ -153,6 +153,135 @@ redirects:
 
 This example includes logo customization, navigation setup, feedback controls, API descriptions, rule configurations, access controls, and redirects.
 
+## Feature availability
+
+The following tables show which configuration options are available in different Redocly products and plans.
+
+### By product
+
+{% table %}
+- Feature
+- Description
+- Redoc
+- Revel
+- Reef
+- Realm
+---
+- [APIs](./apis.md)
+- Manage multiple API descriptions with individual settings
+- ✓ ¹
+- –
+- –
+- –
+---
+- [AsyncAPI](./asyncapi.md)
+- Configure AsyncAPI documentation display
+- ✓
+- –
+- –
+- –
+---
+- [Mock server](./mock-server.md)
+- Configure API mocking functionality
+- ✓
+- –
+- –
+- –
+---
+- [GraphQL](./graphql/index.md)
+- Configure GraphQL schema documentation
+- ✓
+- –
+- –
+- ✓
+---
+- [API functions](./api-functions.md)
+- Custom API functionality and operations
+- –
+- –
+- ✓
+- ✓
+---
+- [Catalog classic](./catalog-classic.md)
+- Legacy API catalog display options
+- –
+- –
+- ✓
+- ✓
+---
+- [Developer onboarding](./developer-onboarding/index.md)
+- Configure developer portal onboarding flows
+- –
+- –
+- ✓
+- ✓
+---
+- [Scorecard](./scorecard.md)
+- API quality scoring and assessment
+- –
+- –
+- ✓
+- ✓
+---
+- [Markdown processing](./markdown.md)
+- Custom Markdown rendering options
+- –
+- ✓
+- ✓
+- ✓
+---
+- [Localization](./l10n.md)
+- Multi-language content support
+- –
+- ✓
+- –
+- ✓
+---
+- [Products](./products.md)
+- Configure product organization and display
+- –
+- ✓
+- –
+- ✓
+---
+- [SEO](./seo.md)
+- Search engine optimization settings
+- –
+- ✓
+- –
+- ✓
+{% /table %}
+
+¹ Also includes Community plan support
+
+### By plan
+
+{% table %}
+- Plan level
+- Description
+- Available features
+---
+- Community
+- Free open source (self-hosted only)
+- APIs configuration only
+---
+- Pro
+- Professional features for growing teams
+- All features except Enterprise-specific ones
+---
+- Enterprise
+- Advanced features for large organizations
+- All Pro features plus: Role-based access control, Single sign-on
+---
+- Enterprise+
+- Premium features for enterprise deployments
+- All Enterprise features plus: Remove attribution, Data residency, Direct SSO
+{% /table %}
+
+{% admonition type="info" name="Universal features" %}
+Most configuration options (analytics, navigation, UI customization, and content management) are available across all products and plans unless specifically noted in the tables above.
+{% /admonition %}
+
 ## Configuration principles
 
 Redocly has a few important configuration philosophies:
@@ -164,7 +293,7 @@ Redocly has a few important configuration philosophies:
 Some options have multiple levels of nesting.
 Pay attention to the indentation and nesting when modifying the file.
 
-## Next steps
+## Check configuration file
 
 After configuring your `redocly.yaml` file, you can validate it using the Redocly CLI with `npx @redocly/cli check-config`.
 For more detailed information about specific configuration options, follow the links in each section.
