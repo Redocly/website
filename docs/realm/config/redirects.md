@@ -57,7 +57,8 @@ When redirects are configured in both locations, the `redocly.yaml` configuratio
 - to
 - string
 - **REQUIRED**.
-  Absolute path to the destination. It may be an exact path; for example: `/new-url/`.
+  Absolute path to the destination.
+  It may be an exact path; for example: `/new-url/`.
   Alternatively, it may be a URL to an external resource; for example: `https://redocly.com`.
   If the source uses a wildcard, the destination may also use a wildcard at the end of the path to indicate that the matched part of the path should be used; for example `/new-url/*`, `https://redocly.com/*`.
   This option is not available for redirects defined in front matter.
@@ -150,7 +151,8 @@ redirects:
     to: '/tutorials/*'
 ```
 
-All pages, including nested pages, will be redirected. For example `/guides/add-linting/` redirects to `/tutorials/add-linting/` and `/guides/cli/previews/` redirects to `/tutorials/cli/previews/`.
+All pages, including nested pages, will be redirected.
+For example `/guides/add-linting/` redirects to `/tutorials/add-linting/` and `/guides/cli/previews/` redirects to `/tutorials/cli/previews/`.
 
 If there's a specific redirect for a page that also matches a wildcard, then the specific redirect wins.
 

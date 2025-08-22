@@ -77,5 +77,6 @@ You can use them to tailor the response examples to the specific needs of your u
 
 **Document response examples**
 
-Pair response examples with comprehensive documentation. Explain the purpose of each example, the expected behavior, and any modifications that users might need to make.
+Pair response examples with comprehensive documentation.
+Explain the purpose of each example, the expected behavior, and any modifications that users might need to make.
 This way you can help your users to successfully build with your API.

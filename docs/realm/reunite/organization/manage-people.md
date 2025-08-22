@@ -74,7 +74,10 @@ To resend an invitation to people to your organization:
 1. Select **Resend**.
 
 {% admonition type="info" name="Invite expiration" %}
-Invite links automatically expire after **7 days**. You can see when an invite link expires by hovering over the creation time column to display a tooltip with the exact expiration date and time. Expired invites are marked with a warning icon (⚠️) next to the creation time, and their invite links can no longer be copied or shared. You can resend expired invites to generate a new invite link.
+Invite links automatically expire after **7 days**.
+You can see when an invite link expires by hovering over the creation time column to display a tooltip with the exact expiration date and time.
+Expired invites are marked with a warning icon (⚠️) next to the creation time, and their invite links can no longer be copied or shared.
+You can resend expired invites to generate a new invite link.
 {% /admonition %}
 
 ## Change organization role
@@ -100,7 +103,8 @@ Add other users to teams in your Reunite organization.
 Teams is a way to organize users and if you are using [RBAC](../../access/rbac.md), you can grant permissions to the team that applies to all users included in the team.
 
 {% admonition type="warning" name="Add team first" %}
-You must add your team **before** you can complete these steps. See [Teams](./teams.md#create-a-new-team) for more information.
+You must add your team **before** you can complete these steps.
+See [Teams](./teams.md#create-a-new-team) for more information.
 {% /admonition %}
 
 To add a person to a team:

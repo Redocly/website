@@ -52,7 +52,8 @@ The following example shows a schema with two short-named options, and the `x-en
 components:
   schemas:
     TicketType:
-      description: Type of ticket being purchased. Use `general` for regular museum entry and `event` for tickets to special events.
+      description: Type of ticket being purchased.
+      Use `general` for regular museum entry and `event` for tickets to special events.
       type: string
       enum:
         - event

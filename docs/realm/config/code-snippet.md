@@ -50,7 +50,9 @@ You can also configure the report element's tooltip and dialog label text.
 
 - elementFormat
 - string
-- A value that specifies the style for the control icons. Possible values: `icon`, `text`. Default: `icon`
+- A value that specifies the style for the control icons.
+  Possible values: `icon`, `text`.
+  Default: `icon`
 
 ---
 
@@ -121,13 +123,15 @@ When users click the report button or text, they are provided a comment feedback
 
 - label
 - string
-- Label inside the report dialog form. Default value: `What is wrong with the code?`.
+- Label inside the report dialog form.
+  Default value: `What is wrong with the code?`.
 
 ---
 
 - tooltipText
 - string
-- Text of the tooltip of the report button. Default value: `Report a problem`.
+- Text of the tooltip of the report button.
+  Default value: `Report a problem`.
 
 {% /table %}
 
@@ -253,9 +257,10 @@ codeSnippet:
     hide: true
 ```
 
-## Customizing labels and tooltips
+## Customize labels and tooltips
 
-Translation keys provide customization options for code snippet control texts. For complete details, refer to the [Translation Keys Reference](../content/localization/translation-keys.md).
+Translation keys provide customization options for code snippet control texts.
+For complete details, refer to the [Translation Keys Reference](../content/localization/translation-keys.md).
 
 ## Resources
 

@@ -1,6 +1,7 @@
 # Add OpenAPI descriptions
 
-Transform your OpenAPI description YAML or JSON file into interactive documentation by adding it to your project. You can add one or multiple OpenAPI descriptions to your project.
+Transform your OpenAPI description YAML or JSON file into interactive documentation by adding it to your project.
+You can add one or multiple OpenAPI descriptions to your project.
 
 Either add individual description files to your project alongside your other content, or use a [classic catalog](../../config/catalog-classic.md) to showcase your REST APIs alongside GraphQL and AsyncAPI APIs.
 

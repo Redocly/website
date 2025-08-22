@@ -20,8 +20,10 @@ Check the [migration notes](#migration-notes) for breaking changes if upgrading 
 
 ### Redoc: Better API reference documentation
 
-- API landing pages show the info section. This design has been updated for the new release to improve user experience.
-- Presentation of complex schemas is improved to make it easier to navigate both simple and complex APIs. Look for the color-coded indentation features, configurable dot notation options, and better user experience for APIs that have polymorphic objects.
+- API landing pages show the info section.
+  This design has been updated for the new release to improve user experience.
+- Presentation of complex schemas is improved to make it easier to navigate both simple and complex APIs.
+  Look for the color-coded indentation features, configurable dot notation options, and better user experience for APIs that have polymorphic objects.
 - Code samples are updated and enabled by default; configure the languages that suit your audience or disable this feature completely.
 - Pagination improvements include resource-efficient single page continuous scroll (to make developers happy) and instant access to individual routes (for better SEO and discoverability).
 
@@ -34,7 +36,8 @@ Check the [migration notes](#migration-notes) for breaking changes if upgrading 
 
 Improved tags:
 
-- The `openapi-code-sample` tag now supports language and server switchers as well as defining environments. The parameters were also simplified.
+- The `openapi-code-sample` tag now supports language and server switchers as well as defining environments.
+  The parameters were also simplified.
 - The `json-schema` tag is now more powerful and simple to use, using an inline schema with `$ref` support.
 
 Renamed tags:
@@ -51,7 +54,9 @@ The [Markdoc tag library](https://redocly.com/docs/learn-markdoc/tags/tag-librar
 
 ### Customize your site: improved features and experience
 
-The CSS variables set was refactored to improve consistency and maintainability. New variables were added, and some existing variables were renamed or removed. The full list of CSS variables can be found in the [CSS variables documentation](./branding/css-variables/index.md).
+The CSS variables set was refactored to improve consistency and maintainability.
+New variables were added, and some existing variables were renamed or removed.
+The full list of CSS variables can be found in the [CSS variables documentation](./branding/css-variables/index.md).
 
 Many components were redesigned and refactored to provide a more consistent and user-friendly experience.
 A set of ejectable components is provided, and will be expanded in future releases.
@@ -60,7 +65,8 @@ A set of ejectable components is provided, and will be expanded in future releas
 
 Along with the UI improvements, the release contains a number of breaking changes around styling and customization. If you are upgrading from an earlier version of the tool, these are some issues to be aware of:
 
-- Ejectable components are simplified by extracting low-level logic to Redocly-controlled code. This extraction of low-level logic streamlines customization and simplifies future upgrade processes.
+- Ejectable components are simplified by extracting low-level logic to Redocly-controlled code.
+  This extraction of low-level logic streamlines customization and simplifies future upgrade processes.
 - The list of ejectable components is reduced to an updated and well-maintained set of the actively used components.
 - A variety of CSS variable names have changed to improve consistency and maintainability.
 - Several Markdoc tag parameter signatures have changed to simplify usage.

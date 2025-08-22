@@ -9,15 +9,16 @@ plans:
 ---
 # `graphql`
 
-Customize the behavior and appearance of integrated GraphQL documentation. Requires a GraphQL schema.
+Customize the behavior and appearance of integrated GraphQL documentation.
+Requires a GraphQL schema.
 
 ## Options
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
@@ -33,9 +34,9 @@ Customize the behavior and appearance of integrated GraphQL documentation. Requi
 
 ---
 
-* [jsonSamplesDepth](./json-samples-depth.md)
-* number
-* Sets the default expand level for JSON payload samples.
+- [jsonSamplesDepth](./json-samples-depth.md)
+- number
+- Sets the default expand level for JSON payload samples.
 
 ---
 

@@ -103,7 +103,8 @@ The default footer included in `@redocly/theme` can be configured using the opti
 - string
 -
   **CONDITIONALLY REQUIRED.**\*
-  URL to link to. Works with absolute and relative URLs.
+  URL to link to.
+  Works with absolute and relative URLs.
   If no `label` is provided, the link text matches _the value used for href_.
 
 ---

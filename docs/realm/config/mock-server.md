@@ -13,7 +13,9 @@ Configure the mock server in your Redocly-powered API documentation using `mockS
 - Send requests to the Operations in your API description from Replay, cURL, or any other API client.
 - Receive a sample response using information from the API description and input data.
 
-By default, the mock server is enabled for each [API description](https://redocly.com/docs/resources/learning-openapi) in your project. The path is configured as `/_mock/<path-to-description>/`. For example, `/_mock/openapi/redocly-museum/`.
+By default, the mock server is enabled for each [API description](https://redocly.com/docs/resources/learning-openapi) in your project.
+The path is configured as `/_mock/<path-to-description>/`.
+For example, `/_mock/openapi/redocly-museum/`.
 
 ## Options
 
@@ -27,7 +29,8 @@ By default, the mock server is enabled for each [API description](https://redocl
 
 - off
 - boolean
-- Turn off ("disable") the mock server. Defaults to `false`.
+- Turn off ("disable") the mock server.
+  Defaults to `false`.
 
 ---
 
@@ -47,7 +50,8 @@ By default, the mock server is enabled for each [API description](https://redocl
 -
   Controls the response behavior of the mock server when a [forced example](../content/api-docs/configure-mock-server.md#understand-strict-examples) is not found.
 
-  If `true`, the mock server returns an error. If `false`, the mock server falls back to any other example defined for that operation.
+  If `true`, the mock server returns an error.
+  If `false`, the mock server falls back to any other example defined for that operation.
 
   Defaults to `false`.
 
@@ -66,7 +70,8 @@ By default, the mock server is enabled for each [API description](https://redocl
 
 - description
 - string
-- Set the description of the mock server in the servers dropdown in Redocly Replay. Defaults to `Mock Server`.
+- Set the description of the mock server in the servers dropdown in Redocly Replay.
+  Defaults to `Mock Server`.
 
 {% /table %}
 

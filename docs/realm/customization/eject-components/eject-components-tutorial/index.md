@@ -70,7 +70,9 @@ plans:
     Also, for initial mount, it gets the `activeTab` from `localStorage` to preserve the tabs state even after a page is reloaded.
 
     {% admonition type="info" %}
-      This tutorial does not provide step-by-step instructions for every customization. Each case is unique and requires a different approach. React, Markdoc and TypeScript knowledge is required to customize it.
+      This tutorial does not provide step-by-step instructions for every customization.
+      Each case is unique and requires a different approach.
+      React, Markdoc and TypeScript knowledge is required to customize it.
     {% /admonition %}
   {% /step %}
 
@@ -108,7 +110,8 @@ plans:
   {% /step %}
 
   {% step id="add-custom-schema" heading="Fix \"invalid attribute: 'syncId'\" warning" %}
-    To fix a warning, let's redefine our Markdoc schema. Create a new `schema.ts` inside the `@theme/markdoc` folder and copy the code from the example.
+    To fix a warning, let's redefine our Markdoc schema.
+    Create a new `schema.ts` inside the `@theme/markdoc` folder and copy the code from the example.
   {% /step %}
 
   ### Create a tutorial page
@@ -136,7 +139,8 @@ plans:
     Since we added `syncId` attributes to the `tabs` tags, we can sync the tabs state between those tabs with the same `syncId`.
   {% /step %}
 
-  Test it out. Do the tabs sync?
+  Test it out.
+  Do the tabs sync?
 
   ### 🎉 Congratulations
 

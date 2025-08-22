@@ -100,7 +100,8 @@ The navbar is a good location for top-level category or frequently-used links.
 
 - external
 - boolean
-- Open link in new browser tab. Default is `false`.
+- Open link in new browser tab.
+  Default is `false`.
 
 ---
 
@@ -184,13 +185,16 @@ The navbar is a good location for top-level category or frequently-used links.
 
 - external
 - boolean
-- Open link in new browser tab. Default is `false`.
+- Open link in new browser tab.
+  Default is `false`.
 
 ---
 
 - linkedSidebars
 - [string]
-- Array of relative paths to sidebar files. This option will add navbar item to sidebar's breadcrumbs. Only effective for top-level navbar items.
+- Array of relative paths to sidebar files.
+  This option will add navbar item to sidebar's breadcrumbs.
+  Only effective for top-level navbar items.
 
 {% /table %}
 

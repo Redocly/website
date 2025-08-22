@@ -1,8 +1,11 @@
 # OpenAPI extension: `x-assertionType`
 
-The assertion type specifies the token format used in OAuth flows. Use `x-assertionType` to define the assertion type for the operation’s security scheme, which currently only supports `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`.
+The assertion type specifies the token format used in OAuth flows.
+Use `x-assertionType` to define the assertion type for the operation’s security scheme, which currently only supports `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`.
 
-The token (such as a JWT) is used instead of a client secret for client authentication in OAuth 2.0. This client assertion is useful when storing a client secret securely is challenging or when stronger security mechanisms, like signed JWTs, are preferred. The client assertion, in this case, serves as proof of the client’s identity, replacing the need for a client secret.
+The token (such as a JWT) is used instead of a client secret for client authentication in OAuth 2.0.
+This client assertion is useful when storing a client secret securely is challenging or when stronger security mechanisms, like signed JWTs, are preferred.
+The client assertion, in this case, serves as proof of the client’s identity, replacing the need for a client secret.
 
 ## Location
 
@@ -20,7 +23,9 @@ Use the `x-assertionType` extension in an OAuth Flows Object declaration for the
 
 - x-assertionType
 - string
-- Assertion type for the operation security scheme. Possible values: `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`, `urn:ietf:params:oauth:client-assertion-type:saml2-bearer`. Redocly tooling only supports the JWT bearer assertion type.
+- Assertion type for the operation security scheme.
+  Possible values: `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`, `urn:ietf:params:oauth:client-assertion-type:saml2-bearer`.
+  Redocly tooling only supports the JWT bearer assertion type.
 
 {% /table %}
 

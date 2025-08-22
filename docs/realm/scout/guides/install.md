@@ -6,7 +6,8 @@
 
 ### Webhook setup
 
-Scout needs access to your Git source control. You need to provide the Scout webhook URL to your Git source control and pass credentials to the Scout via configuration.
+Scout needs access to your Git source control.
+You need to provide the Scout webhook URL to your Git source control and pass credentials to the Scout via configuration.
 
 Note: Webhook setup requires URL of the Scout instance from the next step.
 You can configure a temporary URL first and then update it later.
@@ -18,7 +19,8 @@ To run Scout in GitLab, create a new user on behalf of which Scout makes operati
 1. Create a new user with a `Maintainer` role by following these [instructions](https://docs.gitlab.com/ee/user/profile/account/create_accounts.html).
 2. Add newly created user as a member of projects or groups you want to sync with your main Redocly project.
 3. Sign in into newly created user account and [create personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#create-a-personal-access-token) (scopes: `api`) - save it for the configuration step.
-4. Go to `https://{gitlab-server-url}/api/v4/users?username={username}` where `{username}` is the user that Scout performs actions on behalf of. Copy the value of the user id for the configuration step.
+4. Go to `https://{gitlab-server-url}/api/v4/users?username={username}` where `{username}` is the user that Scout performs actions on behalf of.
+   Copy the value of the user id for the configuration step.
 5. [Configure a GitLab webhook](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#configure-a-webhook-in-gitlab) for every project or group (at least GitLab Premium is required) to sync:
    - URL: `https://{scout-url}/webhooks/gitlab`
    - Secret token is optional but if you provide one then save it for the configuration step.
@@ -45,7 +47,7 @@ It allows Scout to create comments and set statuses in your PRs.
 3. Scroll down to Private keys and generate a new private key
 4. Go to Optional features -> Activate optional features for Redocly Scout -> User-to-server token expiration -> toggle `Opt-in`
 
-## Running Scout in your infra
+## Run Scout in your infra
 
 You could run a Scout instance with Docker:
 
@@ -119,7 +121,8 @@ Scout is a source available tool and you could run it from source which could be
 
 - `REDOCLY_DEST_FOLDER_PATH`
 - The path where Scout pushes discovered API definitions.
-  You can use `{title}`, `{repoId}`, `{orgId}` and `{metadata}` variables here. Use dot notation to access metadata nested properties.
+  You can use `{title}`, `{repoId}`, `{orgId}` and `{metadata}` variables here.
+  Use dot notation to access metadata nested properties.
   Default value: `apis/{metadata.team}/{repoId}/{title}`.
 
 ---
@@ -180,8 +183,10 @@ Scout is a source available tool and you could run it from source which could be
 - `GITHUB_PROVIDERS`
 - JSON array of GitHub app configurations. Each configuration has the following fields:
 
-  - `url` - GitHub server url. Omit in case of GitHub cloud.
-  - `appId` - GitHub application ID. `https://{github-server-url}/organizations/{org}/settings/apps` -> Redocly Scout -> `App ID`.
+  - `url` - GitHub server url.
+    Omit in case of GitHub cloud.
+  - `appId` - GitHub application ID.
+    `https://{github-server-url}/organizations/{org}/settings/apps` -> Redocly Scout -> `App ID`.
   - `appUserId` - GitHub application user that leaves Scout-related comments. `https://{github-server-url}/users/{app slug name}[bot]`
   - `privateKey` - GitHub application private key created during application configuration.
   - `webhookSecret` - GitHub webhook secret, created during application configuration.
@@ -206,8 +211,10 @@ Scout is a source available tool and you could run it from source which could be
 - `GITLAB_PROVIDERS`
 - JSON array of GitLab instance configurations. Each configuration has the following fields:
 
-  - `url` - GitLab instance url. Omit if you use GitLab.com (GitLab Cloud).
-  - `userId` - Your GitLab user id. The instructions for how to obtain it are available in the [GitLab section](#gitlab).
+  - `url` - GitLab instance url.
+    Omit if you use GitLab.com (GitLab Cloud).
+  - `userId` - Your GitLab user id.
+    The instructions for how to obtain it are available in the [GitLab section](#gitlab).
   - `privateToken` - GitLab private token generated on the user's account.
   - `webhookSecret` - The secret used when creating a webhook on GitLab.
 
@@ -225,7 +232,9 @@ Scout is a source available tool and you could run it from source which could be
 ---
 
 - `REDOCLY_REMOTES`
-- JSON array of remote configurations for pushing additional files. Scout will push those files that match the rules declared here, in addition to pushing APIs. Each entry has the following fields:
+- JSON array of remote configurations for pushing additional files.
+  Scout will push those files that match the rules declared here, in addition to pushing APIs.
+  Each entry has the following fields:
 
   - `namespaceId` - ID of the namespace (organization slug) of the Git repository.
   - `repositoryId` - ID of the Git repository (repository slug for GitHub).

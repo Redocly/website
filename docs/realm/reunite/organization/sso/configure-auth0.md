@@ -15,7 +15,8 @@ Follow this guide to configure an SSO integration between Auth0 OpenID Connect p
 1. Enter a name for your identity provider.
 1. Select the default **Organization Role** for users who log in with the identity provider.
 1. (Optional) Enter the name of the **Default Team**.
-1. Copy the **Callback URL**. Keep this tab open and continue with the Auth0 configuration in a new tab.
+1. Copy the **Callback URL**.
+   Keep this tab open and continue with the Auth0 configuration in a new tab.
 
 ## Create an application in Auth0
 

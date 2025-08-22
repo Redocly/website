@@ -30,19 +30,22 @@ Color modes can be set to a default value, or with the user's operating system p
 
 - hide
 - boolean
-- Specifies if the color mode selector is hidden. Default `false`.
+- Specifies if the color mode selector is hidden.
+  Default `false`.
 
 ---
 
 - ignoreDetection
 - boolean
-- Specifies if the system color mode detection is ignored. Default `false`.
+- Specifies if the system color mode detection is ignored.
+  Default `false`.
 
 ---
 
 - modes
 - [string]
-- List of possible color mode values. Default to `light` and `dark`.
+- List of possible color mode values.
+  Default to `light` and `dark`.
 
 {% /table %}
 

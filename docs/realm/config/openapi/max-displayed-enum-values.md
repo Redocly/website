@@ -9,21 +9,24 @@ plans:
 ---
 # `maxDisplayedEnumValues`
 
-The `maxDisplayedEnumValues` displays only the specified number of enum values. The remaining values are hidden in an expandable area. By default 10 values are displayed which is ideal for usability.
+The `maxDisplayedEnumValues` displays only the specified number of enum values.
+The remaining values are hidden in an expandable area.
+By default 10 values are displayed which is ideal for usability.
 
 ## Options
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* maxDisplayedEnumValues
-* number
-* Sets the number of enum values to display. The default behavior is that 10 values are displayed.
+- maxDisplayedEnumValues
+- number
+- Sets the number of enum values to display.
+  The default behavior is that 10 values are displayed.
 
 {% /table %}
 

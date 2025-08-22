@@ -11,7 +11,8 @@ To connect an Azure DevOps repository, you must first create a new Personal Acce
 ## Enter the connection details in Reunite
 
 1. From your project, select **Settings > Git hosting > Azure DevOps**.
-1. Enter a **Credential name** that identifies this Azure DevOps connection. For example, *"PAT for my ACME organization"*.
+1. Enter a **Credential name** that identifies this Azure DevOps connection.
+   For example, *"PAT for my ACME organization"*.
 1. Enter the **Access token** you saved from the [Create a new access token in Azure DevOps](#create-a-new-access-token-in-azure-devops) step.
 2. Enter the **Organization name** of the Azure DevOps Services Organization and select **Next**.
 3. Select your **Organization > Repository > Branch**.

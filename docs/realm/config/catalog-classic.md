@@ -90,7 +90,8 @@ You can configure multiple catalogs and set the link text, description, and filt
 
 - filterValuesCasing
 - string
-- Transform casing of filter values. Possible values: `lowercase`, `uppercase`, `sentence`, `original`.
+- Transform casing of filter values.
+  Possible values: `lowercase`, `uppercase`, `sentence`, `original`.
   Default: `original`.
 
 ---
@@ -149,7 +150,8 @@ You can configure multiple catalogs and set the link text, description, and filt
 
 - valuesMapping
 - string
-- Map filter values to different values. Useful for mapping legacy metadata values to new values.
+- Map filter values to different values.
+  Useful for mapping legacy metadata values to new values.
   Default value: `{}`.
 
 ---

@@ -96,7 +96,7 @@ Build serverless functions to extend your project with custom APIs and data proc
 
 {% /cards %}
 
-## Getting started with customization
+## Get started with customization
 
 1. **Start simple** - Create your first [React page](./create-react-page.md) to understand the basics
 2. **Use built-in components** - Learn to use [built-in components](./react-components/index.md) in your pages

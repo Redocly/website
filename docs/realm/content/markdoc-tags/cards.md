@@ -53,7 +53,8 @@ A card only works as a child of `cards`.
 
 - to
 - string
-- URL or path for the card to link to. When set, the entire card behaves as a link.
+- URL or path for the card to link to.
+  When set, the entire card behaves as a link.
 
 ---
 

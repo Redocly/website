@@ -18,7 +18,8 @@ Specify the order and link text for side navigation items by creating a `sidebar
   **CONDITIONALLY REQUIRED.***
   Path to the file (extension included) that links to a page.
   If no `label` is provided, the link text matches _the page's level 1 heading_.
-  Use an absolute or relative path. For external links, use `href` instead.
+  Use an absolute or relative path.
+  For external links, use `href` instead.
   Examples: `./index.md`, `/docs/tutorial.md`, `../../glossary.md`.
 
 ---
@@ -27,7 +28,8 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - string
 -
   **CONDITIONALLY REQUIRED.***
-  URL to link to. Works with absolute and relative URLs.
+  URL to link to.
+  Works with absolute and relative URLs.
   If no `label` is provided, the link text matches _the href value_.
   The link checker does not follow `href` links.
   Use a URL, not a page path (✅ `https://redocly.com`; ❌ `./index.md`).
@@ -49,7 +51,8 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 - external
 - boolean
-- Opens item in a new tab and adds an external link symbol. Defaults to `false`.
+- Opens item in a new tab and adds an external link symbol.
+  Defaults to `false`.
   Does not apply to paths to version subfolders.
 
 ---
@@ -139,8 +142,11 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - string
 -
   Values:
-  `true` -- Items are expanded when page loads. Users can collapse the group.
-  `false` -- **Default**. Items are collapsed when page loads. Users can expand.
+  `true` -- Items are expanded when page loads.
+  Users can collapse the group.
+  `false` -- **Default**.
+  Items are collapsed when page loads.
+  Users can expand.
   `always` -- Items are expanded when page loads and cannot be collapsed.
 
 ---

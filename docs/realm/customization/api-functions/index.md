@@ -19,7 +19,8 @@ These endpoints can interact with other APIs, implement custom authentication, o
 
 Use API functions to:
 
-- Integrate with external APIs: fetch data from services like GitHub using secret tokens stored in environment variables. For example, retrieve pull requests, issues, or repository statistics to display within a Markdoc tag or generate dynamic documentation content.
+- Integrate with external APIs: fetch data from services like GitHub using secret tokens stored in environment variables.
+  For example, retrieve pull requests, issues, or repository statistics to display within a Markdoc tag or generate dynamic documentation content.
 - Add custom authentication: inject your app’s own API credential system into the project.
 - Integrate a payment gateway: securely process payments by integrating with external payment services, keeping API keys and sensitive data server-side.
 - Interact with databases: connect to databases like PostgreSQL or MongoDB to fetch, update, and serve data within your project.

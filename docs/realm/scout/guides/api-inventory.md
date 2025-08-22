@@ -5,7 +5,7 @@ API inventory keeps a record of the API along with corresponding classification.
 
 Scout is a near-stateless agent that interfaces with Git source control and Redocly to discovery new APIs, classify them, and add them to an API catalog.
 
-## Onboarding a new API
+## Onboard a new API
 
 Scout makes it easy to onboard a new API.
 

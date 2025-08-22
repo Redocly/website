@@ -15,7 +15,9 @@ It wraps content and steps inside the walkthrough and adds a toggle to the UI us
 
 - id
 - string
-- **REQUIRED.** Unique identifier for the toggle. Must be unique among all toggles, inputs, and filters. Used for controlling the visibility of child elements.
+- **REQUIRED.** Unique identifier for the toggle.
+  Must be unique among all toggles, inputs, and filters.
+  Used for controlling the visibility of child elements.
 
 ---
 

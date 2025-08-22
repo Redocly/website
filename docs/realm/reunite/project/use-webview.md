@@ -7,7 +7,8 @@ You can disable auto-sync, view different screen sizes, reload the page or resta
 ![Webview buttons](../images/webview-buttons.png)
 
   {% admonition type="info" %}
-    There is a difference between the **Webview** and the **[preview deployment](./use-previews.md)**. The Webview displays uncommitted changes while the preview deployment triggers when you make a commit to a branch with an open pull request.
+    There is a difference between the **Webview** and the **[preview deployment](./use-previews.md)**.
+    The Webview displays uncommitted changes while the preview deployment triggers when you make a commit to a branch with an open pull request.
   {% /admonition %}
 
 ## Before you begin

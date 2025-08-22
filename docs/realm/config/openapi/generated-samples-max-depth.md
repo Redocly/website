@@ -16,15 +16,16 @@ The default is 8 which works well for most APIs, but you can adjust it if necess
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* generatedSamplesMaxDepth
-* number
-* Set the number of levels to generate payload samples. Default value is `8`.
+- generatedSamplesMaxDepth
+- number
+- Set the number of levels to generate payload samples.
+  Default value is `8`.
 
 {% /table %}
 

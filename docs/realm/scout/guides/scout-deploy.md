@@ -1,6 +1,7 @@
 # Redocly Scout
 
-Redocly Scout is a discovery and publishing tool for APIs and documentation. It is designed to be deployed in a customer's infrastructure and to be used with Reunite.
+Redocly Scout is a discovery and publishing tool for APIs and documentation.
+It is designed to be deployed in a customer's infrastructure and to be used with Reunite.
 
 ## Before you begin
 
@@ -85,7 +86,8 @@ manager.
 
 - PORT - the port the application is run on (default `8080`).
 - MAX_CONCURRENT_JOBS - the number of jobs that can be executed in parallel (default `2`).
-- AUTO_MERGE - merge PRs when updates are pushed to the main branch. One of [`true`, `false`] (default `false`).
+- AUTO_MERGE - merge PRs when updates are pushed to the main branch.
+  One of [`true`, `false`] (default `false`).
 - API_FOLDER - the path in the repository where Scout looks for API definitions (default `/`).
 - DATA_FOLDER - the path to the folder where Scout stores temporary data.
 - REDOCLY_API_URL - Redocly API base URL.
@@ -125,8 +127,10 @@ manager.
 - LOG_FORMAT - one of [`pretty`, `json`] (default `json`).
 - LOG_LEVEL - one of [`trace`, `debug`, `info`, `warn`, `error`, `fatal`] (default `info`).
 - GITHUB_PROVIDERS - JSON array of GitHub app configurations. Each configuration has the following fields:
-  - `url` - GitHub server url. Omit in case of GitHub cloud.
-  - `appId` - GitHub application ID. `https://{github-server-url}/organizations/{org}/settings/apps` -> Redocly Scout -> `App ID`.
+  - `url` - GitHub server url.
+    Omit in case of GitHub cloud.
+  - `appId` - GitHub application ID.
+    `https://{github-server-url}/organizations/{org}/settings/apps` -> Redocly Scout -> `App ID`.
   - `appUserId` - GitHub application user that leaves Scout-related comments. `https://{github-server-url}/users/{app slug name}[bot]`
   - `privateKey` - GitHub application private key created during application configuration.
   - `webhookSecret` - GitHub webhook secret, created during application configuration.
@@ -145,7 +149,8 @@ manager.
     > MY_WH_SECRET='my-secret'
     > ```
 - `GITLAB_PROVIDERS` - JSON array of GitLab instance configurations. Each configuration has the following fields:
-  - `url` - GitLab instance url. Omit if you use GitLab.com (GitLab Cloud).
+  - `url` - GitLab instance url.
+    Omit if you use GitLab.com (GitLab Cloud).
   - `userId` - GitLab user ID; instructions for how to obtain it are available in [GitLab section](https://redocly.com/docs/realm/scout/guides/install/#gitlab).
   - `privateToken` - GitLab private token generated on the user's account.
   - `webhookSecret` - GitLab secret used when creating a webhook on GitLab.
@@ -198,7 +203,8 @@ manager.
 
 ### Assign domain name
 
-1. Copy load balancer domain name. "View load balancer" -> "DNS name".
+1. Copy load balancer domain name.
+   "View load balancer" -> "DNS name".
 2. Open [AWS Route 53](https://us-east-1.console.aws.amazon.com/route53/v2/home#Dashboard).
 3. Select hosted zone for selected SSL certificate.
 4. Click "Create record".

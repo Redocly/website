@@ -30,7 +30,9 @@ Icons can be used inline with text to provide additional visual context.
 
 - size
 - string
-- The size of the icon. Accepts any CSS value for size, like `px` or `em`. Defaults to `1em`.
+- The size of the icon.
+  Accepts any CSS value for size, like `px` or `em`.
+  Defaults to `1em`.
 
 ---
 

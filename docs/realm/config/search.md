@@ -11,7 +11,8 @@ plans:
 ---
 # `search`
 
-Customize search functionality in your project. By default, search appears in the top navigation bar in the far right corner.
+Customize search functionality in your project.
+By default, search appears in the top navigation bar in the far right corner.
 
 Use the `search` configuration to:
 
@@ -26,8 +27,10 @@ Use the `search` configuration to:
 
 Redocly supports two types of search engines for your project:
 
-1. **FlexSearch**: The default search engine that supports limited facets configuration. You can only adjust the [group facet](#group-facets).
-2. **Typesense**: An advanced search engine with full facets configuration capabilities. Requires an Enterprise or Enterprise+ plan.
+1. **FlexSearch**: The default search engine that supports limited facets configuration.
+   You can only adjust the [group facet](#group-facets).
+2. **Typesense**: An advanced search engine with full facets configuration capabilities.
+   Requires an Enterprise or Enterprise+ plan.
 
 ## Default search configuration
 
@@ -180,13 +183,15 @@ search:
 
 - name
 - string
-- **REQUIRED.** Name of the facet. Acts as a label for the filtering control in the search dialog.
+- **REQUIRED.** Name of the facet.
+  Acts as a label for the filtering control in the search dialog.
 
 ---
 
 - field
 - string
-- **REQUIRED.** Facet ID. Use this ID as a key in `metadata` section when adding facets to a page.
+- **REQUIRED.** Facet ID.
+  Use this ID as a key in `metadata` section when adding facets to a page.
 
 ---
 
@@ -246,7 +251,8 @@ Changes to search configuration or content exclusions, like the `excludeFromSear
 
 ## Apply facets to files
 
-To apply facets to files, use metadata properties. You can assign specific metadata to your files, such as custom facet fields for advanced filtering or predefined ones like `redocly_category` for grouping.
+To apply facets to files, use metadata properties.
+You can assign specific metadata to your files, such as custom facet fields for advanced filtering or predefined ones like `redocly_category` for grouping.
 
 ### Markdown files
 
@@ -274,7 +280,7 @@ info:
     owner: Redocly
 ```
 
-### Using metadataGlobs
+### Use `metadataGlobs`
 
 Use the `metadataGlobs` property in your `redocly.yaml` configuration file to apply facets to files using glob patterns:
 

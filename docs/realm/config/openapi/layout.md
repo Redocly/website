@@ -9,7 +9,10 @@ plans:
 ---
 # `layout`
 
-Controls the layout of the API docs page, affecting how the panels are displayed. The default value is `three-panel` which uses the default layout with the sidebar, middle panel, and right panel with code samples. Set the value to `stacked` to move the entire right panel into the middle panel. The `stacked` layout is identical to the layout activated by selecting the **Change View** button on the API documentation page.
+Controls the layout of the API docs page, affecting how the panels are displayed.
+The default value is `three-panel` which uses the default layout with the sidebar, middle panel, and right panel with code samples.
+Set the value to `stacked` to move the entire right panel into the middle panel.
+The `stacked` layout is identical to the layout activated by selecting the **Change View** button on the API documentation page.
 
 {% admonition type="info" %}
 {% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "layout"} /%}
@@ -21,17 +24,18 @@ The `layout` option is a string that sets the layout of the API documentation pa
 
 {% table %}
 
-* Option
-* Type
-* Enum
-* Description
+- Option
+- Type
+- Enum
+- Description
 
 ---
 
-* layout
-* string
-* `three-panel` | `stacked`.
-* Controls the layout of the API docs page. Default value is `three-panel`.
+- layout
+- string
+- `three-panel` | `stacked`.
+- Controls the layout of the API docs page.
+  Default value is `three-panel`.
 
 
 {% /table %}

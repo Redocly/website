@@ -11,7 +11,8 @@ plans:
 ---
 # `metadata`
 
-Configure metadata properties for your project, APIs, and documentation files. Metadata is used for content categorization, search facets, catalog filtering, and scorecard functionality.
+Configure metadata properties for your project, APIs, and documentation files.
+Metadata is used for content categorization, search facets, catalog filtering, and scorecard functionality.
 
 ## How it works
 
@@ -37,7 +38,8 @@ Metadata can be defined in several ways, with the following priority (highest to
 
 - metadata
 - object
-- An object of key-value pairs. Keys can be any string, and values can be any scalar value.
+- An object of key-value pairs.
+  Keys can be any string, and values can be any scalar value.
 
 {% /table %}
 
@@ -125,13 +127,16 @@ metadata:
 
 ## Catalog categorization
 
-Catalogs are important tools to make APIs more discoverable. At full potential, a catalog should include all of your APIs and be filterable across categories that users find useful.
+Catalogs are important tools to make APIs more discoverable.
+At full potential, a catalog should include all of your APIs and be filterable across categories that users find useful.
 
 ### Importance of categorization
 
-Despite its predominance in library systems, Amazon does not use the Dewey Decimal System to organize books. The Dewey Decimal System assigns numerical codes based on subject matter and works well for physical libraries where users locate books on shelves.
+Despite its predominance in library systems, Amazon does not use the Dewey Decimal System to organize books.
+The Dewey Decimal System assigns numerical codes based on subject matter and works well for physical libraries where users locate books on shelves.
 
-Amazon, as an online retailer, uses a hierarchical categorization system that sorts books into categories and subcategories based on genre, subject matter, and other criteria. This system allows users to easily browse and discover books by filtering through categories of interest or using search functions.
+Amazon, as an online retailer, uses a hierarchical categorization system that sorts books into categories and subcategories based on genre, subject matter, and other criteria.
+This system allows users to easily browse and discover books by filtering through categories of interest or using search functions.
 
 While the Dewey Decimal System serves physical libraries well, Amazon's categorization system is better suited for digital environments where users can search and navigate through vast collections.
 
@@ -139,9 +144,11 @@ Similarly, Redocly has a flexible categorization system that allows definition o
 
 ### Category governance
 
-Distributed category creation can lead to overlapping categories, or near-identical categories that result in confusing results. Instead, categories should be created sparingly, and category values should also be created sparingly.
+Distributed category creation can lead to overlapping categories, or near-identical categories that result in confusing results.
+Instead, categories should be created sparingly, and category values should also be created sparingly.
 
-Self-categorization of data is important for scalability and must happen in a distributed way across teams. You need a mechanism to enforce a limited number of categories and accepted values in a distributed fashion.
+Self-categorization of data is important for scalability and must happen in a distributed way across teams.
+You need a mechanism to enforce a limited number of categories and accepted values in a distributed fashion.
 
 Redocly lint rules can enforce `x-metadata` usage in APIs and `metadata` in configuration files using the `metadata-schema` rule.
 

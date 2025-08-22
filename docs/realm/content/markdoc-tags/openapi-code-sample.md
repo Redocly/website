@@ -227,5 +227,6 @@ You can use them to tailor the code samples to the specific needs of your users.
 
 **Document code samples**
 
-Pair code samples with comprehensive documentation. Explain the purpose of each sample, the expected behavior, and any modifications that users might need to make.
+Pair code samples with comprehensive documentation.
+Explain the purpose of each sample, the expected behavior, and any modifications that users might need to make.
 This way you can help your users to successfully build with your API.

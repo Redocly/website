@@ -5,7 +5,7 @@ With Reunite you can integrate GitHub Enterprise Server as your Git provider usi
 
 Make sure you have the following before you begin:
 
-* You must have an OWNER role in your GitHub organization.
+- You must have an OWNER role in your GitHub organization.
 
 ## Create a new GitHub App with a manifest flow
 
@@ -14,14 +14,15 @@ Redocly provides a possibility to create a new GitHub app via register app from 
 1. On the Overview page for your organization, click **Self-hosted Git providers**.
 2. Click **Add new provider**.
 3. In the **Add new provider** modal, complete the following:
-   * Choose a GitHub **Provider Type**.
-   * Enter a name for the Git provider.
-   * Enter the GitHub Enterprise Server server URL.
-   * Enter the GitHub Enterprise Server organization name where you want to create this app.
+   - Choose a GitHub **Provider Type**.
+   - Enter a name for the Git provider.
+   - Enter the GitHub Enterprise Server server URL.
+   - Enter the GitHub Enterprise Server organization name where you want to create this app.
   You are redirected to your GitHub Enterprise Server where you need to confirm the app creation with the name you added in the **Name** field.
 5. Click **Save**.
 
-  The self-hosted GitHub Enterprise Server provider displays on the list of Git providers. Users in your organization can select this provider to [add a repository as a project source](../connect-git-provider.md) to Reunite, or to [add content from a remote repository](../../remote-content/index.md).
+  The self-hosted GitHub Enterprise Server provider displays on the list of Git providers.
+  Users in your organization can select this provider to [add a repository as a project source](../connect-git-provider.md) to Reunite, or to [add content from a remote repository](../../remote-content/index.md).
 
 ## Add an existing GitHub App
 
@@ -76,18 +77,19 @@ To add a self-hosted GitHub Enterprise Server provider in Reunite for your organ
 1. On the Overview page for your organization, click **Self-hosted Git providers**.
 2. Click **Add new provider**.
 3. In the **Add new provider** modal, complete the following:
-   * Choose a GitHub **Provider Type**.
-   * Copy the **Redirect URI** and paste it into your provider's application settings.
-   * Enter a name for the Git provider.
-   * Enter the GitHub Enterprise Server URL.
-   * Enter the GitHub Enterprise App ID from your Git provider.
-   * Enter the GitHub Enterprise Client ID from your Git provider.
-   * Enter the GitHub Enterprise App name from your Git provider.
-   * Enter the GitHub Enterprise Client Secret from your Git provider.
-   * Enter the GitHub Enterprise Private key from your Git provider.
+   - Choose a GitHub **Provider Type**.
+   - Copy the **Redirect URI** and paste it into your provider's application settings.
+   - Enter a name for the Git provider.
+   - Enter the GitHub Enterprise Server URL.
+   - Enter the GitHub Enterprise App ID from your Git provider.
+   - Enter the GitHub Enterprise Client ID from your Git provider.
+   - Enter the GitHub Enterprise App name from your Git provider.
+   - Enter the GitHub Enterprise Client Secret from your Git provider.
+   - Enter the GitHub Enterprise Private key from your Git provider.
 4. Click **Save**.
 
-    The self-hosted GitHub Enterprise Server provider displays on the list of Git providers. Users in your organization can select this provider to [add a repository as a project source](../connect-git-provider.md) to Reunite, or to [add content from a remote repository](../../remote-content/index.md).
+    The self-hosted GitHub Enterprise Server provider displays on the list of Git providers.
+    Users in your organization can select this provider to [add a repository as a project source](../connect-git-provider.md) to Reunite, or to [add content from a remote repository](../../remote-content/index.md).
 
 ## Edit GitHub Enterprise Server provider properties
 

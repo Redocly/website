@@ -9,21 +9,24 @@ plans:
 ---
 # `jsonSamplesExpandLevel`
 
-The `jsonSamplesExpandLevel` option sets the default expand level for JSON payload samples (response and request body). The maximum supported value is '+Infinity'. It can also be configured as a string with the special value "all" that expands all levels.
+The `jsonSamplesExpandLevel` option sets the default expand level for JSON payload samples (response and request body).
+The maximum supported value is '+Infinity'.
+It can also be configured as a string with the special value "all" that expands all levels.
 
 ## Options
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* jsonSamplesExpandLevel
-* number | string | 'all'
-* Sets the default expand level for JSON payload samples. Default value is `2`.
+- jsonSamplesExpandLevel
+- number | string | 'all'
+- Sets the default expand level for JSON payload samples.
+  Default value is `2`.
 
 
 {% /table %}

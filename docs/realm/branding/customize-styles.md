@@ -92,7 +92,8 @@ Add custom styling to your project by overriding CSS variables in your `@theme/s
 }
 ```
 
-When you save this file and run your project in development mode, the styling changes will be visible immediately. Toggle between color modes to see the differences.
+When you save this file and run your project in development mode, the styling changes will be visible immediately.
+Toggle between color modes to see the differences.
 
 **Steps for customizing your project styling:**
 
@@ -157,7 +158,8 @@ You may need to restart the Webview or commit your changes to your branch to see
 Use the examples in this section as starter themes to quickly add styling to your project.
 
 {% admonition type="info" %}
-   Have a request for a styling example? Please use the feedback form at the bottom of the page and tell us.
+   Have a request for a styling example?
+   Please use the feedback form at the bottom of the page and tell us.
 {% /admonition %}
 
 ### Example theme - "Full corporate"
@@ -216,7 +218,9 @@ The following screenshots show the styling rules applied:
 
 ### Example theme - "Trendy startup"
 
-The styling for the "Trendy startup" example combines shocking pink and teeny tiny font sizes. Note the increased specificity used to style `.menu-item-type-separator` in dark mode. This approach can be used for styling elements that may not have a CSS variable defined yet.
+The styling for the "Trendy startup" example combines shocking pink and teeny tiny font sizes.
+Note the increased specificity used to style `.menu-item-type-separator` in dark mode.
+This approach can be used for styling elements that may not have a CSS variable defined yet.
 
 ```css {% title="@theme/styles.css" %}
 :root {

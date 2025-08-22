@@ -23,7 +23,8 @@ To set up a remote content folder for pushing:
 1. Add a list of files to be included when pushing.
 1. Complete the other fields for the platform you are using.
 1. Copy the provided code snippet.
-   For users of our GitHub application, a GitHub Actions workflow is provided; for other platforms or GitHub users not using the application, a CLI command is presented that you can run in your CI/CD process. In both cases, all the variables you need are pre-filled.
+   For users of our GitHub application, a GitHub Actions workflow is provided; for other platforms or GitHub users not using the application, a CLI command is presented that you can run in your CI/CD process.
+   In both cases, all the variables you need are pre-filled.
 
 ## Get your API key
 

@@ -8,7 +8,9 @@ In OpenAPI 3.1, use an array of types and include `null` in the list.
 
 {% /admonition %}
 
-Use `x-nullable` in your OpenAPI 2.0 documents to mark schemas with the label `Nullable` in the API documentation. This indicates that the value of a particular property may be `null`. Add it to the `schema` OpenAPI object.
+Use `x-nullable` in your OpenAPI 2.0 documents to mark schemas with the label `Nullable` in the API documentation.
+This indicates that the value of a particular property may be `null`.
+Add it to the `schema` OpenAPI object.
 
 ## Location
 
@@ -18,15 +20,15 @@ Use the `x-nullable` extension in an Schema object.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* x-nullable
-* boolean
-* Marks schema as a nullable.
+- x-nullable
+- boolean
+- Marks schema as a nullable.
 
 {% /table %}
 

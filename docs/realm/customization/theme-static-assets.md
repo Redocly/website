@@ -1,6 +1,7 @@
 # Theme static assets
 
-Static assets play an important role in your documentation theme. This guide shows you how to use static assets in a theme when you add the files directly or they come from a Markdoc tag.
+Static assets play an important role in your documentation theme.
+This guide shows you how to use static assets in a theme when you add the files directly or they come from a Markdoc tag.
 
 ## Before you begin
 

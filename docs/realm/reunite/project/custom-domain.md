@@ -1,6 +1,7 @@
 # Set a custom domain
 
-You can configure a custom domain for your project and optionally serve your documentation from a subdirectory path. This allows you to host your docs at URLs like `docs.example.com` or `docs.example.com/api/`.
+You can configure a custom domain for your project and optionally serve your documentation from a subdirectory path.
+This allows you to host your docs at URLs like `docs.example.com` or `docs.example.com/api/`.
 
 ## Set up a custom domain
 
@@ -10,12 +11,13 @@ Configure your custom domain on the **General** tab of the project's **Settings*
 2. Select your project.
 3. Select **Settings > Custom domain**.
 4. Click **Add domain**.
-5. Enter the **Custom Domain** without the protocol. For example, "docs.example.com".
+5. Enter the **Custom Domain** without the protocol.
+   For example, "docs.example.com".
 6. (Optional) Disable the default domain by unchecking the **Use proxy to URL** checkbox.
 7. Click **Save**.
 8. Log in to your DNS management provider and complete the following steps:
-   * Add a new TXT record with the **name/host** and **value** listed in the Domain verification admonition on the **Custom domain** section of the **Settings** page in your project.
-   * Point the domain CNAME record to `ssl.redocly.app`.
+   - Add a new TXT record with the **name/host** and **value** listed in the Domain verification admonition on the **Custom domain** section of the **Settings** page in your project.
+   - Point the domain CNAME record to `ssl.redocly.app`.
      If you have EU data residency, point the CNAME record to `ssl.eu.redocly.app`.
 9.  Click **Verify**.
     A **Pending** badge displays next to the domain, until it is verified.
@@ -24,7 +26,8 @@ Configure your custom domain on the **General** tab of the project's **Settings*
 ## Serve from a subdirectory
 
 Set a project's path prefix to serve pages from somewhere other than the root of a domain.
-This can help organize URLs or make the separation of content more clear. For example, a SaaS company serving their developer documentation from `/developers` or `/api/`.
+This can help organize URLs or make the separation of content more clear.
+For example, a SaaS company serving their developer documentation from `/developers` or `/api/`.
 
 The path prefix is set using the `REDOCLY_PREFIX_PATHS` [environment variable](./env-variables.md).
 
@@ -42,7 +45,8 @@ For projects deployed through Reunite, set the page prefix using environment var
 5. Click the **Trigger deploy** button.
 
 {% admonition type="warning" name="Deployment considerations" %}
-Setting `REDOCLY_PREFIX_PATHS` only in your project's `.env` file can cause health checks and publish steps to fail during deployment. Use Reunite's environment variables feature for reliable deployments.
+Setting `REDOCLY_PREFIX_PATHS` only in your project's `.env` file can cause health checks and publish steps to fail during deployment.
+Use Reunite's environment variables feature for reliable deployments.
 {% /admonition %}
 
 ### Set prefix for local development

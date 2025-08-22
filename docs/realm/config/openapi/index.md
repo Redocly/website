@@ -9,7 +9,8 @@ plans:
 ---
 # `openapi`
 
-Customize the behavior and appearance of integrated API documentation. Requires an OpenAPI description.
+Customize the behavior and appearance of integrated API documentation.
+Requires an OpenAPI description.
 
 ## Options
 

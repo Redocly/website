@@ -67,7 +67,8 @@ To add custom legal notices:
 
 1. After logging in, select **General** in the navigation menu on the left side of the page.
 2. In the **Custom Terms of Service** section, click the **Write** tab.
-3. Enter your custom terms text in the text area. You can use Markdown to format your text or include links.
+3. Enter your custom terms text in the text area.
+   You can use Markdown to format your text or include links.
 4. Click **Preview** to see how your terms appear to users.
 
 The terms are displayed to users on the registration page.

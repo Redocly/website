@@ -126,7 +126,8 @@ To customize a sidebar using the `directory` option:
     - directory: /customer_api
     ```
 
-This configuration modifies the sidebar to include links to all content files in the `museum_api` folder followed by files in `customer_api`. The titles or the first headings of the files are used for the sidebar labels.
+This configuration modifies the sidebar to include links to all content files in the `museum_api` folder followed by files in `customer_api`.
+The titles or the first headings of the files are used for the sidebar labels.
 
 ### Add a single sidebar for all version folders
 
@@ -187,9 +188,11 @@ To add a single sidebar for all version folders:
         - page: /customer_api/@latest/payments.yaml 
     ```
 
-This configuration modifies the sidebar by adding two groups, Museum API and Customer API. Within each group are multiple versions of files.
+This configuration modifies the sidebar by adding two groups, Museum API and Customer API.
+Within each group are multiple versions of files.
 When you first access your project, the sidebar displays only the links to files from the versions: `3.0` and `legacy` respectively.
-These versions are the default versions, as they are the lowest on the alphanumeric ascending order. To set custom default versions, see [Customize the version picker](#customize-the-version-picker).
+These versions are the default versions, as they are the lowest on the alphanumeric ascending order.
+To set custom default versions, see [Customize the version picker](#customize-the-version-picker).
 
 ### Add a dedicated sidebar for each version folder
 
@@ -323,7 +326,8 @@ For pages that do not have multiple version, the version picker is inactive and 
 
 ## Access versions in React pages
 
-To work with versioned content in your React pages, you can use Redocly's version management hooks `usePageVersions` and `usePageActiveVersion`. These hooks let you access the current version information and manage version-specific content in your components.
+To work with versioned content in your React pages, you can use Redocly's version management hooks `usePageVersions` and `usePageActiveVersion`.
+These hooks let you access the current version information and manage version-specific content in your components.
 
 ### usePageVersions
 
@@ -418,13 +422,17 @@ If you want to specify the default version and which versions to include in your
 
 - default
 - string
-- The version displayed first when the page is loaded. Must match the name of the version folder, excluding the `@` prefix. If not defined, it is the last `version` in the `versions` object. Without a `versions.yaml` file, the default version is the highest version in the alphanumeric ascending order.
+- The version displayed first when the page is loaded.
+  Must match the name of the version folder, excluding the `@` prefix.
+  If not defined, it is the last `version` in the `versions` object.
+  Without a `versions.yaml` file, the default version is the highest version in the alphanumeric ascending order.
 
 ---
 
 - versions
 - Array of [Version object](#version-object)
-- This option specifies the version subfolders to include, their display names, and the order. If not used, all version subfolders in the same location are included in the version picker.
+- This option specifies the version subfolders to include, their display names, and the order.
+  If not used, all version subfolders in the same location are included in the version picker.
 
 {% /table %}
 
@@ -440,13 +448,15 @@ If you want to specify the default version and which versions to include in your
 
 - version
 - string
-- This option is the name of the version. Must match the name of the version subfolder, excluding the `@` prefix.
+- This option is the name of the version.
+  Must match the name of the version subfolder, excluding the `@` prefix.
 
 ---
 
 - name
 - string
-- The name for a version displayed in the version picker. If not defined, uses the version subfolder name, excluding the `@` prefix.
+- The name for a version displayed in the version picker.
+  If not defined, uses the version subfolder name, excluding the `@` prefix.
 
 {% /table %}
 

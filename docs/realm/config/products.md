@@ -156,7 +156,8 @@ footer:
 
 ### Search behavior in multi-product
 
-When users search from a product page, results are automatically filtered to that product. Users can remove the filter to search all content.
+When users search from a product page, results are automatically filtered to that product.
+Users can remove the filter to search all content.
 
 ## Resources
 

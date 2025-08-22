@@ -58,13 +58,15 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 
 - hide
 - boolean
-- Specifies if the navigation link button is hidden. Default `false`.
+- Specifies if the navigation link button is hidden.
+  Default `false`.
 
 ---
 
 - text
 - string
-- Text that appears above the navigation buttons. Default value: `Next page` or `Previous page` respectively.
+- Text that appears above the navigation buttons.
+  Default value: `Next page` or `Previous page` respectively.
 
 {% /table %}
 
@@ -80,7 +82,8 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 
 - label
 - string
-- Text that appears on the button. The default value is the text of the first heading of the target page.
+- Text that appears on the button.
+  The default value is the text of the first heading of the target page.
 
 ---
 
@@ -102,7 +105,8 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 
 - hide
 - boolean
-- Specifies if the page actions are hidden. Default `false`.
+- Specifies if the page actions are hidden.
+  Default `false`.
 
 ---
 
@@ -112,8 +116,10 @@ Control the **Previous** and **Next** navigation buttons on project pages.
   Allowed values:
   - `copy`: copy the page content as Markdown to the clipboard.
   - `view`: view the page content as Markdown in a new tab.
-  - `chatgpt`: ask ChatGPT about this page. Only available on public pages.
-  - `claude`: ask Claude about this page. Only available on public pages.
+  - `chatgpt`: ask ChatGPT about this page.
+    Only available on public pages.
+  - `claude`: ask Claude about this page.
+    Only available on public pages.
 
   The first item in the list is the default action.
   By default, all items are shown in the following order: `copy`, `view`, `chatgpt`, `claude`.
