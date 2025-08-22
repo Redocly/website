@@ -57,7 +57,8 @@ export const tags: Record<string, Schema> = {
 };
 ```
 
-You've created your first Markdoc tag. The only thing left to do is use it.
+You've created your first Markdoc tag.
+The only thing left to do is use it.
 
 In any file that ends with `.md` add the following `{% br /%}`.
 
@@ -413,7 +414,7 @@ We'd show you a working quiz here, but we'd rather spend more time on it and mak
 ## Extra credit
 
 Make a custom tag of your own (it could be simple).
-Our philosophy is in line with Confucious:
+Our philosophy is in line with Confucius:
 
 > I hear and I forget, I see and I remember, I do and I understand.
 

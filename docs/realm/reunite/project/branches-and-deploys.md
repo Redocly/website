@@ -1,13 +1,15 @@
 # Branches deploys
 
-In the **Branches and deploys** configuration, you can control which branches Reunite deploys and how it handles preview deployments for your project. This configuration gives you precise control over your deployment strategy, allowing you to balance development workflow needs with resource management.
+In the **Branches and deploys** configuration, you can control which branches Reunite deploys and how it handles preview deployments for your project.
+This configuration gives you precise control over your deployment strategy, allowing you to balance development workflow needs with resource management.
 
 ![Branches deploys](../images/reunite-branches-deploys.png)
 
 
 ## Production branch
 
-The **Production branch** setting defines your main branch (typically `main`) that triggers production deployments when changes are merged. This is the branch that represents your live, published content.
+The **Production branch** setting defines your main branch (typically `main`) that triggers production deployments when changes are merged.
+This is the branch that represents your live, published content.
 
 ## Branch deployment options
 
@@ -37,7 +39,8 @@ When Reunite processes your project during a build, it performs several importan
    - Custom rules you've defined
    - Scorecard rules if configured
 
-4. **Decorator application**: Reunite applies any configured [decorators](https://redocly.com/docs/cli/decorators) to transform your API descriptions. Decorators can modify content, add information, or restructure your APIs before bundling.
+4. **Decorator application**: Reunite applies any configured [decorators](https://redocly.com/docs/cli/decorators) to transform your API descriptions.
+   Decorators can modify content, add information, or restructure your APIs before bundling.
 
 5. **Bundle generation**: Reunite runs bundle commands on all discovered APIs, creating optimized, self-contained API description files. The bundling process:
    - Resolves all `$ref` references

@@ -15,7 +15,8 @@ A code walkthrough primarily consists of a series of steps with their correspond
 
 -  id
 -  string
--  **REQUIRED.** Unique identifier for the code step. Controls the highlighting behavior in a chunk's `steps` field.
+-  **REQUIRED.** Unique identifier for the code step.
+  Controls the highlighting behavior in a chunk's `steps` field.
 
 ---
 

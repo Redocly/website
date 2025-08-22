@@ -20,15 +20,15 @@ Custom extensions are rendered only in the request details section and in indivi
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* showExtensions
-* string[] | boolean
-* Specify which specification extensions ('x-' fields) to display, or use `true` to show them all.
+- showExtensions
+- string[] | boolean
+- Specify which specification extensions ('x-' fields) to display, or use `true` to show them all.
   Default value is `false` which does not display any extensions.
 
 {% /table %}

@@ -18,15 +18,15 @@ Use the `x-example` in any location where `example` can be used in OpenAPI v3.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* x-examples
-* [Example Object](https://spec.openapis.org/oas/v3.1.0#example-object)
-* Object that contains examples for the request. Applies when `in` is `body` and MIME type is `application/json`
+- x-examples
+- [Example Object](https://spec.openapis.org/oas/v3.1.0#example-object)
+- Object that contains examples for the request. Applies when `in` is `body` and MIME type is `application/json`
 
 {% /table %}
 

@@ -5,7 +5,8 @@ seo:
 
 # Built-in Markdoc functions
 
-This page provides an overview and links to reference documentation for the built-in functions available for use in your Markdoc content. These include both standard Markdoc functions and additional functions provided by Redocly.
+This page provides an overview and links to reference documentation for the built-in functions available for use in your Markdoc content.
+These include both standard Markdoc functions and additional functions provided by Redocly.
 
 ## Standard Markdoc functions
 

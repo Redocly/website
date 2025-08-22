@@ -46,20 +46,21 @@ Some UI elements in your project support customizable configurations and can con
 To be able to localize the text components of these elements, you must first create translation keys in their configuration files.
 
 The user-defined UI elements that use translation keys are:
-* [navbar](../../config/navbar.md)
-* [breadcrumbs](../../config/breadcrumbs.md)
-* [search bar](../../config/search.md)
-* [footer](../../config/footer.md)
-* [catalog classic](../../config/catalog-classic.md)
-* [user menu](../../config/user-menu.md)
-* [sidebars](../../config/sidebar.md)
+- [navbar](../../config/navbar.md)
+- [breadcrumbs](../../config/breadcrumbs.md)
+- [search bar](../../config/search.md)
+- [footer](../../config/footer.md)
+- [catalog classic](../../config/catalog-classic.md)
+- [user menu](../../config/user-menu.md)
+- [sidebars](../../config/sidebar.md)
 
 ### Add translation keys to user-defined UI elements
 
 Translation keys for most user-defined UI elements are included in the `redocly.yaml` configuration files.
 Sidebars are an exception and have their configuration in the `sidebars.yaml` files.
 
-To add translation keys to user-defined elements, add translation key options to elements in your `redocly.yaml` or `sidebars.yaml` files. For more information on the types of keys a UI element uses, see [Configure Redocly](../../config/index.md) and navigate to the relevant reference documentation.
+To add translation keys to user-defined elements, add translation key options to elements in your `redocly.yaml` or `sidebars.yaml` files.
+For more information on the types of keys a UI element uses, see [Configure Redocly](../../config/index.md) and navigate to the relevant reference documentation.
 
 The following example shows a complete `redocly.yaml` file with translation keys configured for navbar and footer elements:
 
@@ -156,7 +157,8 @@ export default function () {
 ```
 
 {% admonition type="info" name="Note" %}
-The `react-page.heading` is an arbitrary name. You can name your translation keys however you want.
+The `react-page.heading` is an arbitrary name.
+You can name your translation keys however you want.
 {% /admonition %}
 
 The heading on the example React page includes the same text for all languages by default, "This is default fallback text!".
@@ -171,8 +173,8 @@ react-page.heading: ¡Este es un texto traducido!
 Redocly projects come with a set of built-in UI labels in US English.
 You can configure a `translations.yaml` file to override these labels, accomplishing the following goals:
 
-* Adjust the UI text to better suit your project (for example, change "Login" to "Sign in").
-* Change the language used in the UI, without adding a language picker.
+- Adjust the UI text to better suit your project (for example, change "Login" to "Sign in").
+- Change the language used in the UI, without adding a language picker.
 
 To change the built-in UI labels:
 

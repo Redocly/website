@@ -4,7 +4,8 @@ The `image` tag allows you to embed images into your content with various custom
 
 ## Syntax and usage
 
-Use the `image` tag to include images. Customize with attributes like `src`, `alt`, `width`, and `height`.
+Use the `image` tag to include images.
+Customize with attributes like `src`, `alt`, `width`, and `height`.
 
 {% markdoc-example renderDemo=true %}
 
@@ -71,7 +72,9 @@ Use the `image` tag to include images. Customize with attributes like `src`, `al
 
 - withLightbox
 - boolean
-- Opens the image in a lightbox when the image is clicked. The lightbox image is opened in its original size or is scaled down to fit the screen if its original size is larger than then screen size. Default: `false`.
+- Opens the image in a lightbox when the image is clicked.
+  The lightbox image is opened in its original size or is scaled down to fit the screen if its original size is larger than then screen size.
+  Default: `false`.
 
 ---
 
@@ -224,7 +227,8 @@ Descriptive alt text improves accessibility and helps users understand the image
 
 **Use images purposefully**
 
-Only include images that add value to your content. Avoid decorative images that don't contribute to understanding the subject matter.
+Only include images that add value to your content.
+Avoid decorative images that don't contribute to understanding the subject matter.
 
 **Maintain responsive design**
 

@@ -9,7 +9,8 @@ For OpenAPI 3.0 and later, use the `servers` section.
 
 Use `x-servers` in your OpenAPI 2.0 documents to define one or more target hosts for the API.
 
-This specification extension provides compatibility via backporting from the OpenAPI 3.0 [`servers`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#serverObject) object. It doesn't support templates.
+This specification extension provides compatibility via backporting from the OpenAPI 3.0 [`servers`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#serverObject) object.
+It doesn't support templates.
 
 ## Location
 
@@ -19,15 +20,15 @@ Use the `x-servers` extension in the root OpenAPI object.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* x-servers
-* [ [Server Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#serverObject) ]
-* A list of server objects used to add one or more target hosts for the API.
+- x-servers
+- [ [Server Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#serverObject) ]
+- A list of server objects used to add one or more target hosts for the API.
 
 {% /table %}
 

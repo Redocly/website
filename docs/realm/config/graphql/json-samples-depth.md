@@ -16,15 +16,16 @@ Use this option to set the depth to a comfortable default value for the data str
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* jsonSamplesDepth
-* number
-* Sets the default depth for rendering JSON payload samples. The default value is `1`.
+- jsonSamplesDepth
+- number
+- Sets the default depth for rendering JSON payload samples.
+  The default value is `1`.
 
 {% /table %}
 

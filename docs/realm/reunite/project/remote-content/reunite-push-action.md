@@ -25,31 +25,38 @@ When you add a new Remote from CI/CD, you'll be presented with a starter templat
 
 - organization
 - string
-- **REQUIRED**. Your Redocly organization slug.
+- **REQUIRED**.
+  Your Redocly organization slug.
 
 ---
 
 - project
 - string
-- **REQUIRED**. Your Redocly project slug.
+- **REQUIRED**.
+  Your Redocly project slug.
 
 ---
 
 - mountPath
 - string
-- **REQUIRED**. Path to folder where you files should be pushed. For example `src/docs/api`.
+- **REQUIRED**.
+  Path to folder where you files should be pushed.
+  For example `src/docs/api`.
 
 ---
 
 - files
 - string
-- **REQUIRED**. Files/folders list within your repo, separated by spaces. For example `openapi-files src/redocly-museum.yaml`.
+- **REQUIRED**.
+  Files/folders list within your repo, separated by spaces.
+  For example `openapi-files src/redocly-museum.yaml`.
 
 ---
 
 - githubToken
 - string
-- GitHub token for setting commit status. By default the existing `${{ github.token }}` is used.
+- GitHub token for setting commit status.
+  By default the existing `${{ github.token }}` is used.
 
 ---
 
@@ -86,7 +93,8 @@ This action requires:
 The following example shows a GitHub workflow that pushes a `src/redocly-museum.yaml` file from the remote content repo
 to the `src/docs/museum` folder inside an `example-project` in Reunite.
 
-The action will run for pushes to any branch. But Redocly API will detect pushes to main branch and non main branch and triggers corresponding preview or production deployments.
+The action will run for pushes to any branch.
+But Redocly API will detect pushes to main branch and non main branch and triggers corresponding preview or production deployments.
 
 
 ```yaml {% title=".github/workflows/redocly-push.yaml" %}

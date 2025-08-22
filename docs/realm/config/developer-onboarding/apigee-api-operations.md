@@ -93,4 +93,5 @@
 
 \*\* Needed for API credentials sync across organizations.
 
-\*\*\* Needed for API credentials sync across organizations. It's used to add associated products to the imported key.
+\*\*\* Needed for API credentials sync across organizations.
+It's used to add associated products to the imported key.

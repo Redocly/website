@@ -63,7 +63,8 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 
 - extends
 - [string]
-- Inherit configurations. In case of conflict, priority goes to configurations further down the list.
+- Inherit configurations.
+  In case of conflict, priority goes to configurations further down the list.
   Finally, explicit declarations inline takes precedence over configurations inherited through the extends feature.
   Built-in configurations include recommended and minimal.
 
@@ -71,7 +72,8 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 
 - rules
 - [Rule Object](https://redocly.com/docs/cli/configuration/rules)
-- Change the severity level of any rules in your extended configurations. Some rules may also receive additional configurations.
+- Change the severity level of any rules in your extended configurations.
+  Some rules may also receive additional configurations.
 
 {% /table %}
 
@@ -98,7 +100,8 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 ---
 - rules
 - [Rule Object](https://redocly.com/docs/cli/configuration/rules)
-- Customize rules for the target. Useful for disabling rules based on the metadata.
+- Customize rules for the target.
+  Useful for disabling rules based on the metadata.
 
 {% /table %}
 
@@ -130,7 +133,8 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 
 - _(name of metadata key)_
 - string
-- Specify the exact value of the metadata key to match against. Also supports ISO 8601 date range.
+- Specify the exact value of the metadata key to match against.
+  Also supports ISO 8601 date range.
   Specify a string with a leading and trailing slash to match against a regex.
 
 {% /table %}

@@ -9,7 +9,8 @@ plans:
 ---
 # `openapi`
 
-Customize the behavior and appearance of integrated API documentation. Requires an OpenAPI description.
+Customize the behavior and appearance of integrated API documentation.
+Requires an OpenAPI description.
 
 ## Options
 
@@ -49,7 +50,7 @@ Customize the behavior and appearance of integrated API documentation. Requires 
 - boolean
 - Excludes an OpenAPI description file from search results and `llms.txt` when set to `true`.
   Default: `false`.
-  
+
   You can [apply it to a specific files](#exclude-an-api-from-search), or to [all OpenAPI descriptions](#exclude-all-apis-from-search).
 
 ---

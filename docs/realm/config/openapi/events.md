@@ -40,37 +40,43 @@ Each event provides information about a specific event as well as some basic inf
 
 - codeSamplesLanguageSwitch
 - function
-- Called when the user switches to a different language tab in the code samples section. Provides information about the selected language (lang) and an optional example ID (exampleId).
+- Called when the user switches to a different language tab in the code samples section.
+  Provides information about the selected language (lang) and an optional example ID (exampleId).
 
 ---
 
 - tryItOpen
 - function
-- Triggered when the user opens the “Try it” panel. Captures actions like opening the panel or navigating using the override links.
+- Triggered when the user opens the “Try it” panel.
+  Captures actions like opening the panel or navigating using the override links.
 
 ---
 
 - targetServerSwitch
 - function
-- Invoked when the user changes the target server selection. Provides the updated server URL (serverUrl).
+- Invoked when the user changes the target server selection.
+  Provides the updated server URL (serverUrl).
 
 ---
 
 - tryItSent
 - function
-- Called when the user clicks the “Send” button in the “Try it” panel. Captures whether the request was successfully sent (Sent) or if there was a validation failure (ValidationFailed).
+- Called when the user clicks the “Send” button in the “Try it” panel.
+  Captures whether the request was successfully sent (Sent) or if there was a validation failure (ValidationFailed).
 
 ---
 
 - panelToggle
 - function
-- Records when a user expands or collapses any panel in the Reference docs UI (for example, request, responses, request samples, or response samples). Includes details about the panel type (panelType) and its state (expanded or collapsed).
+- Records when a user expands or collapses any panel in the Reference docs UI (for example, request, responses, request samples, or response samples).
+  Includes details about the panel type (panelType) and its state (expanded or collapsed).
 
 ---
 
 - codeSamplesCopy
 - function
-- Triggered when a user copies request or response samples within the Reference docs UI. Captures details such as the sample type (request or responses), example ID (if applicable), code sample language (`lang`), and label (`label`).
+- Triggered when a user copies request or response samples within the Reference docs UI.
+  Captures details such as the sample type (request or responses), example ID (if applicable), code sample language (`lang`), and label (`label`).
 
 {% /table %}
 

@@ -6,7 +6,8 @@ seo:
 
 # `includes` function
 
-The `includes` function checks if an array contains a specific value. It is commonly used within conditional logic (`{% if %}`) tags.
+The `includes` function checks if an array contains a specific value.
+It is commonly used within conditional logic (`{% if %}`) tags.
 
 ## Syntax
 
@@ -26,7 +27,8 @@ includes(array, value)
 
 - array
 - array
-- **Required.** The array to check. Often a variable like `$frontmatter.tags` or an array defined directly.
+- **Required.** The array to check.
+  Often a variable like `$frontmatter.tags` or an array defined directly.
 
 ---
 

@@ -131,7 +131,7 @@ project/
 Each product folder can include its own `redocly.yaml` file to customize that product's documentation. Product-specific configurations override the root configuration for:
 
 - breadcrumbs
-- codeSnippet  
+- codeSnippet
 - feedback
 - footer
 - logo
@@ -156,7 +156,8 @@ footer:
 
 ### Search behavior in multi-product
 
-When users search from a product page, results are automatically filtered to that product. Users can remove the filter to search all content.
+When users search from a product page, results are automatically filtered to that product.
+Users can remove the filter to search all content.
 
 ## Resources
 

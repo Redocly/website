@@ -83,7 +83,7 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 - **REQUIRED.** Configure events that start the job.
 
 ---
-  
+
 - inputs
 - Map [string, JSON Schema object]
 - Defines the JSON Schema object representing the input parameters used by the Arazzo Description.
@@ -92,7 +92,8 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 - servers
 - Map [string, Source Description object]
-- Define servers for the job. Used to override the server URL for a specific source description name in the Arazzo Description's `sourceDescriptions` object.
+- Define servers for the job.
+  Used to override the server URL for a specific source description name in the Arazzo Description's `sourceDescriptions` object.
 
 ---
 

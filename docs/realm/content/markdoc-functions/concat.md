@@ -30,7 +30,8 @@ concat(arg1, arg2, ..., argN)
 
 - arg1, ..., argN
 - scalar (string, number, boolean, null)
-- **Required.** One or more values to concatenate. Non-string values are converted to their string representation (e.g., `true` becomes `"true"`, `123` becomes `"123"`, `null` becomes `"null"`).
+- **Required.** One or more values to concatenate.
+  Non-string values are converted to their string representation (e.g., `true` becomes `"true"`, `123` becomes `"123"`, `null` becomes `"null"`).
 
 {% /table %}
 

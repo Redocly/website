@@ -1,6 +1,7 @@
 # Try APIs with Mock Server
 
-You have access to a built-in mock server anywhere that Redocly Replay is running, including your local preview. The mock server allows you to try APIs without the need for live data or backend services.
+You have access to a built-in mock server anywhere that Redocly Replay is running, including your local preview.
+The mock server allows you to try APIs without the need for live data or backend services.
 
 This guide shows you how to use the mock server _as an API consumer_ and send API requests to the mock server using Replay or cURL.
 

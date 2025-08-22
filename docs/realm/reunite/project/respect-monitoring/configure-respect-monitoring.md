@@ -15,8 +15,8 @@ The output of each workflow is displayed as a chart on the Respect Monitoring pa
 
 Make sure you have the following:
 
-* One or more Arazzo Descriptions that reference OpenAPI Descriptions in your project
-* A `redocly.yaml` configuration file at the root of your project
+- One or more Arazzo Descriptions that reference OpenAPI Descriptions in your project
+- A `redocly.yaml` configuration file at the root of your project
 
 ## Configure Respect Monitoring in `redocly.yaml`
 
@@ -32,7 +32,7 @@ To configure Respect Monitoring for your project:
         - path: 'arazzo-jobs/storefront-api/api-tests.yaml'
     ```
 1. For each item under the `jobs` object, in line with the `path` option add:
-    * An `agent` option with `respect` as its value, as in the following example:
+    - An `agent` option with `respect` as its value, as in the following example:
     ```yaml {% title="redocly.yaml" %}
     reunite:
       jobs:
@@ -41,11 +41,11 @@ To configure Respect Monitoring for your project:
         - path: 'arazzo-jobs/storefront-api/api-tests.yaml'
           agent: respect
     ```
-    * A `trigger` object with the following options:
-      * An `event` option with `schedule` or `build` as its value.
-        * Use `schedule` to run the job at regular intervals.
-        * Use `build` to run the job whenever the project is built.
-      * (Optional) An `interval` option with a [specified period](../../../config/reunite.md#trigger-object) as its value.
+    - A `trigger` object with the following options:
+      - An `event` option with `schedule` or `build` as its value.
+        - Use `schedule` to run the job at regular intervals.
+        - Use `build` to run the job whenever the project is built.
+      - (Optional) An `interval` option with a [specified period](../../../config/reunite.md#trigger-object) as its value.
         This is only required when `event` is set to `schedule`.
         If you don't define an interval for a scheduled job, the workflow runs every hour by default.
         As in the following example:
@@ -89,7 +89,8 @@ To view your Respect Monitoring results on a preview build:
 
 ### Ignore Respect Monitoring results
 
-You can ignore Respect Monitoring results for a specific build by adding the `ignoreRespectMonitoring` option to the `reunite` object in your `redocly.yaml` file. Setting this option to `true` sets the build's Respect Monitoring status to `warning` instead of `failed`.
+You can ignore Respect Monitoring results for a specific build by adding the `ignoreRespectMonitoring` option to the `reunite` object in your `redocly.yaml` file.
+Setting this option to `true` sets the build's Respect Monitoring status to `warning` instead of `failed`.
 
 ```yaml {% title="redocly.yaml" %}
 reunite:

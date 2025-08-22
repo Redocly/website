@@ -15,15 +15,16 @@ The `sanitize` option enables HTML/Markdown sanitization for the OpenAPI descrip
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* sanitize
-* boolean
-* Sanitize HTML/Markdown to prevent [cross-site scripting (XSS) attacks](https://owasp.org/www-community/attacks/xss/). Default value is `false`.
+- sanitize
+- boolean
+- Sanitize HTML/Markdown to prevent [cross-site scripting (XSS) attacks](https://owasp.org/www-community/attacks/xss/).
+  Default value is `false`.
 
 
 {% /table %}

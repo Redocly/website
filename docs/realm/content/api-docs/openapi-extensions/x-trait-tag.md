@@ -24,7 +24,8 @@ Apply the `x-traitTag` to any Tag item to indicate it is a trait tag rather than
 
 - x-traitTag
 - boolean
-- Set to `true` to indicate that this tag is not used for the purpose of navigation grouping. Default is `false`.
+- Set to `true` to indicate that this tag is not used for the purpose of navigation grouping.
+  Default is `false`.
 
 {% /table %}
 

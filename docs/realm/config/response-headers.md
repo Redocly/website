@@ -11,7 +11,8 @@ plans:
 ---
 # `responseHeaders`
 
-You can configure custom response headers for your project. Custom headers are added to the response header object if requested resource matches a configured pattern.
+You can configure custom response headers for your project.
+Custom headers are added to the response header object if requested resource matches a configured pattern.
 
 ## Options
 
@@ -27,7 +28,8 @@ You can configure custom response headers for your project. Custom headers are a
 
 - _{glob pattern}_
 - [[Header object](#header-object)]
-- **REQUIRED.** A glob pattern used to match requested resource. It can match any assets, routes, or both.
+- **REQUIRED.** A glob pattern used to match requested resource.
+  It can match any assets, routes, or both.
 
 {% /table %}
 

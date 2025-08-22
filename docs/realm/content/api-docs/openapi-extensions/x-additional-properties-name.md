@@ -22,7 +22,8 @@ Use `x-additionalPropertiesName` as a property of `additionaProperties` in an Op
 
 - x-additionalPropertiesName
 - string
-- Add a display name for an `additionalProperty`. By default it shows as `property name*`.
+- Add a display name for an `additionalProperty`.
+  By default it shows as `property name*`.
 
 {% /table %}
 

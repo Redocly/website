@@ -1,6 +1,6 @@
 # High availability
 
-Deploy Scout in your infrastructure using a high-availibilty topology.
+Deploy Scout in your infrastructure using a high-availability topology.
 
 ![scout deployment diagram](./images/scout-deployment.png)
 

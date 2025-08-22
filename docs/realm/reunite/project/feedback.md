@@ -32,7 +32,8 @@ To view detailed feedback data:
 On the **Code reports** tab is a table with the data collected from the [code snippet report option's feedback form](../../config/feedback.md#extend-feedback-forms) including the following data:
 
 - **Page**: The file path to the page where the data was collected.
-- **User**: The email address of the user who submitted the feedback form, if the user was logged in at the time. Otherwise, user is Anonymous.
+- **User**: The email address of the user who submitted the feedback form, if the user was logged in at the time.
+  Otherwise, user is Anonymous.
 - **Message**: The message submitted, if a comment box was included.
 - **Date**: The day the feedback form was submitted relative to the current date.
 - **Status**: The status of the feedback, which can be **New**, **Archived** or **Spam**.
