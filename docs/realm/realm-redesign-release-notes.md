@@ -9,7 +9,7 @@ With this milestone release, we're providing this overview of the changes as a s
 
 This release includes:
 
-- Redoc has beeen updated to the latest version, with a full redesign and overhaul of the API reference documentation.
+- Redoc has been updated to the latest version, with a full redesign and overhaul of the API reference documentation.
 - Interactive API documentation features are now provided by our new API explorer product Replay.
 - The existing theme and customization options have been overhauled and improved.
 

@@ -216,8 +216,8 @@ aws ecr create-repository --repository-name redocly-scout
 ### Build docker image and push to ECR repository
 
 ```shell
-docker tag redocly-scout:latest <ECR reposity ARN>:<image version>
-docker push <ECR reposity ARN>:<image version>
+docker tag redocly-scout:latest <ECR repository ARN>:<image version>
+docker push <ECR repository ARN>:<image version>
 ```
 
 ### Create task secrets

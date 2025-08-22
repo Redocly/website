@@ -121,7 +121,7 @@ An IDP object can be one of the following types:
 - pkce
 - boolean
 - Use [PKCE](https://oauth.net/2/pkce/) for the authorization code flow. If `true`, the `clientSecret` is not required.
-  Deafult value: `false`.
+  Default value: `false`.
 
 ---
 

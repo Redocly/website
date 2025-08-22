@@ -1971,7 +1971,7 @@
 --toc-item-nested-offset: calc(var(--toc-spacing-unit) * 2);
 --toc-item-padding-vertical: calc(var(--toc-spacing-unit) / 2);
 --toc-item-padding-horizontal: calc(var(--toc-spacing-unit) * 2);
---toc-item-border-color-active: var(--border-color-invers);
+--toc-item-border-color-active: var(--border-color-inverse);
 ```
 
 </details>

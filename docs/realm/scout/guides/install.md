@@ -6,7 +6,7 @@
 
 ### Webhook setup
 
-Scout needs access to your Git source contol. You need to provide the Scout webhook URL to your Git source control and pass credentials to the Scout via configuration.
+Scout needs access to your Git source control. You need to provide the Scout webhook URL to your Git source control and pass credentials to the Scout via configuration.
 
 Note: Webhook setup requires URL of the Scout instance from the next step.
 You can configure a temporary URL first and then update it later.
