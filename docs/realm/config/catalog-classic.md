@@ -226,7 +226,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 
 When users click an item in the catalog, the routing behavior depends on your sidebar configuration:
 
-- **With sidebars.yaml**: The catalog routes to the first item defined in the corresponding `sidebars.yaml` file for that directory
+- **With sidebars.yaml**: The catalog routes to the first item defined in the corresponding `sidebars.yaml` file that links to that catalog item
 - **Without sidebars.yaml**: A sidebar is generated automatically from the files in the directory, and routing goes to the first file
 
 This means clicking an OpenAPI document in the catalog may not navigate directly to the API reference documentation.
