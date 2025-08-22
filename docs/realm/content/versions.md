@@ -274,7 +274,7 @@ versions:
 
 - **`default`** - The version displayed first when the page loads. Must match a version folder name (without the `@` prefix)
 - **`versions`** - Array of version objects specifying which versions to include and their display names
-- **`version`** - Must match the version subfolder name (without the `@` prefix)  
+- **`version`** - Must match the version subfolder name (without the `@` prefix)
 - **`name`** - Display name shown in the version picker. If not provided, uses the folder name
 
 If you don't provide a `name`, the version folder name (without `@`) is used instead.

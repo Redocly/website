@@ -188,11 +188,11 @@ The following example shows the old and new syntax for using remote API descript
 
   {% /tab %}
   {% tab label="New remote descriptions"%}
-  
+
     In this example, both API definitions are set up as remote content sources and the `redocly.yaml` file uses relative file paths.
 
     - The art-museum uses [remote content from GitHub](../reunite/project/remote-content/from-github.md).
-    - The flight-museum uses [remote content from a URL](../reunite/project/remote-content/url.md). 
+    - The flight-museum uses [remote content from a URL](../reunite/project/remote-content/url.md).
 
     ```yaml  {% title="redocly.yaml" %}
     apis:
@@ -269,7 +269,7 @@ The following example shows the old and new syntax for configuring multiple API 
               - lang: 'JavaScript'
                 label: 'JS'
     ```
-  
+
   {% /tab %}
 {% /tabs %}
 
@@ -548,7 +548,7 @@ The following example shows the same operation and configuration implemented in 
 
 {% tabs %}
   {% tab label="Old Try it syntax"%}
-  
+
     ```javascript
     <OpenApiTryIt
       definitionId="museumApi"

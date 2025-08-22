@@ -119,7 +119,7 @@ The response from the example above returns the following JSON:
   "other": ["anything", "you", "want"]
 }
 ```
-  
+
 ## Authorization
 
 API functions follow the same RBAC rules as other Redocly resources, based on user roles and teams.

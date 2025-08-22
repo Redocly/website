@@ -15,8 +15,8 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - page
 - string
 -
-  **CONDITIONALLY REQUIRED.***  
-  Path to the file (extension included) that links to a page.  
+  **CONDITIONALLY REQUIRED.***
+  Path to the file (extension included) that links to a page.
   If no `label` is provided, the link text matches _the page's level 1 heading_.
   Use an absolute or relative path. For external links, use `href` instead.
   Examples: `./index.md`, `/docs/tutorial.md`, `../../glossary.md`.
@@ -26,8 +26,8 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - href
 - string
 -
-  **CONDITIONALLY REQUIRED.***  
-  URL to link to. Works with absolute and relative URLs.  
+  **CONDITIONALLY REQUIRED.***
+  URL to link to. Works with absolute and relative URLs.
   If no `label` is provided, the link text matches _the href value_.
   The link checker does not follow `href` links.
   Use a URL, not a page path (✅ `https://redocly.com`; ❌ `./index.md`).
@@ -102,7 +102,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - group
 - string
 -
-  **REQUIRED.**  
+  **REQUIRED.**
   Name of the group.
 
 ---
@@ -130,7 +130,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - menuStyle
 - string
 -
-  Values:  
+  Values:
   `drilldown` -- Shows only the selected group's items and hides other sidebar elements.
 
 ---
@@ -138,9 +138,9 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - expanded
 - string
 -
-  Values:  
-  `true` -- Items are expanded when page loads. Users can collapse the group.  
-  `false` -- **Default**. Items are collapsed when page loads. Users can expand.  
+  Values:
+  `true` -- Items are expanded when page loads. Users can collapse the group.
+  `false` -- **Default**. Items are collapsed when page loads. Users can expand.
   `always` -- Items are expanded when page loads and cannot be collapsed.
 
 ---
@@ -173,9 +173,9 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 - items
 -
-  object  
+  object
   ([Link](#link-options))
-- **REQUIRED.**  
+- **REQUIRED.**
   A list of items, configured using [link options](#link-options).
 
 {% /table %}

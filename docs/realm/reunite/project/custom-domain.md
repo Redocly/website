@@ -28,7 +28,7 @@ This can help organize URLs or make the separation of content more clear. For ex
 
 The path prefix is set using the `REDOCLY_PREFIX_PATHS` [environment variable](./env-variables.md).
 
-URL _without_ prefix: `https://docs.example.com/page`  
+URL _without_ prefix: `https://docs.example.com/page`
 URL _with_ `api-v2` prefix: `https://docs.example.com/api-v2/page`
 
 ### Set prefix in Reunite

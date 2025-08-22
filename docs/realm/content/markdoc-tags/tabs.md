@@ -75,7 +75,7 @@ A tab only works as a child of a tabs section.
 - When `true`, the tab is non-interactive and styled as disabled.
   It cannot be focused or selected.
   **Default:** `false`
-  
+
 ---
 
 - icon

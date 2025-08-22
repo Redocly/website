@@ -103,7 +103,7 @@ A card only works as a child of `cards`.
   Can be `ghost` or `filled`:
   - `ghost` displays the icon as is
   - `filled` adds a padded outline with rounded corners to the icon
-  
+
   Defaults to `ghost`.
 
 ---

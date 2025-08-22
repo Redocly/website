@@ -131,7 +131,7 @@ project/
 Each product folder can include its own `redocly.yaml` file to customize that product's documentation. Product-specific configurations override the root configuration for:
 
 - breadcrumbs
-- codeSnippet  
+- codeSnippet
 - feedback
 - footer
 - logo

@@ -15,7 +15,7 @@ You can switch between projects in a few different contexts:
   2. Click the arrow button.
 
 * **Navigation bar:**
-  
+
   1. In a project's navigation bar, click the project name.
   2. From the menu, select one of the project names.
 

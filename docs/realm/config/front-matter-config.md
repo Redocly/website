@@ -127,7 +127,7 @@ When defined in front matter, they override the global configuration:
 - rbac
 - [team to role map](./rbac.md#team-to-role-map)
 - Set access permissions for the page. This option can contain only the map of teams to roles.
-  
+
 ---
 
 - [search](./search.md)

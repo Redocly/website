@@ -27,7 +27,7 @@ Selectors are used to target the HTML elements you want to style. There's many t
 
 <details>
   <summary>See example: Selectors</summary>
-  
+
   Here are some of the most basic CSS selectors:
 
   ```css {% title="Selectors" %}
@@ -65,7 +65,7 @@ Some (but not all) property values set on parent elements are inherited by their
 
 <details>
   <summary>See example: Inheritance</summary>
-  
+
   The following example sets the text color to red inside the body tag selector:
 
   ```css {% title="@theme/styles.css" %}
@@ -94,7 +94,7 @@ CSS means Cascading Style Sheets. It's named that because the styles "cascade" d
 
 <details>
   <summary>See example: Cascading styles and specificity</summary>
-  
+
   Consider the following CSS, which changes text color:
 
   ```css {% title="@theme/styles.css" %}
@@ -346,7 +346,7 @@ When styling a theme, a better approach is to override the lower-level CSS varia
 }
 ```
 
-Overriding CSS variables in the correct scope allows you to preserve the relationships between variables and logic defined in the core theme.  
+Overriding CSS variables in the correct scope allows you to preserve the relationships between variables and logic defined in the core theme.
 
 ## Resources
 

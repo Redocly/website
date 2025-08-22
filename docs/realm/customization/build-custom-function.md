@@ -19,7 +19,7 @@ In this tutorial, we'll define a new, custom [Markdoc function](https://markdoc.
     {% /if %}
     ```
   {% /markdoc-example %}
-  
+
 </details>
 
 We're going to build `isAfterDate`, a custom function that checks whether a date has passed. Authors can use this function to dynamically display content based on dates. Below is a quick example of what we'll build.
@@ -46,7 +46,7 @@ Make sure you have the following before you begin:
 - A new project with the latest version of Redocly Realm installed.
 - A text editor for working with code (I'm using VS Code)
 
-## Test a built-in function  
+## Test a built-in function
 
 We'll start by creating a document and observing the behavior of the `{% if %}` tag combined with a built-in function. Later, we'll update the tag so we can test our custom function as we build it.
 
@@ -173,7 +173,7 @@ First, we'll create a placeholder function with basic logic we can test to ensur
 2. In _function-test.md_, modify the **Custom Function** section to test the new logic in the function. Follow the steps below to write with your function as an author would:
 
     - Run project: `npx @redocly/cli preview`
-  
+
     - Add the following snippet with a _past date_ as the parameter and save. Check the preview. Content should be **visible**.
 
         {% markdoc-example %}
@@ -237,7 +237,7 @@ The snippet above does the following:
 
 ## Resources and next steps
 
-In this tutorial, you built a custom Markdoc function into your Redocly project. Your authors can use that custom function in their Markdown to dynamically control content. Pretty cool!  
+In this tutorial, you built a custom Markdoc function into your Redocly project. Your authors can use that custom function in their Markdown to dynamically control content. Pretty cool!
 
 Use the following resources to build on the knowledge you gained from this tutorial:
 - [Get Started with Realm](https://redocly.com/docs/realm/get-started/)

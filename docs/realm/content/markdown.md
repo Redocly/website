@@ -75,11 +75,11 @@ Add titles, line highlighting, and annotations:
 ```javascript {% title="app.js" highlight="{2,4-6}" %}
 function processData() {
   const data = fetchData(); // [!code highlight]
-  
+
   if (!data) { // [!code error] // [!code error]
     throw new Error('No data'); // [!code error] // [!code error]
   } // [!code error] // [!code error]
-  
+
   return data.map(item => ({ // [!code ++] // [!code ++]
     id: item.id, // [!code ++] // [!code ++]
     name: item.name // [!code ++] // [!code ++]
