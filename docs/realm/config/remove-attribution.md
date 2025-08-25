@@ -10,7 +10,7 @@ plans:
 # `removeAttribution`
 
 Remove attribution allows developers to hide Redocly attribution information from the browser console.
-Only available for users with the `Enterprise` plan.
+Only available for users with the **Enterprise+** plan.
 
 ## Examples
 

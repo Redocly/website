@@ -31,7 +31,7 @@ The `hideDownloadButtons` option controls whether the **Download OpenAPI descrip
 
 - hideDownloadButtons
 - boolean
-*
+-
   Show or hide the **Download OpenAPI description** section of your API reference info page, which contains download buttons.
   Defaults to `false`.
 

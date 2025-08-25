@@ -31,7 +31,9 @@ Apply the `x-traitTag` to any Tag item to indicate it is a trait tag rather than
 
 ## Examples
 
-For an OpenAPI description where the operations that return collections are tagged "Collection" in addition to their section/navigation tags, the following example marks the Collection tag as a trait, so that its heading and description are still shown to the user, but endpoints are not repeated there:
+Consider an OpenAPI description where operations that return collections are tagged "Collection" in addition to their section tags.
+The following example marks the Collection tag as a trait.
+This displays the tag's heading and description without repeating the endpoints in that section:
 
 ```yaml
 openapi: 3.1.0
@@ -47,8 +49,8 @@ tags:
 
 ## Resources
 
-- Give the tags better display names using [x-displayNames](./x-display-name.md).
-- Group the tags into sections with [x-tagGroups](./x-tag-groups.md).
-- Control which extensions are included in your API reference documentation with the [showExtensions configuration setting](../../../config/openapi/show-extensions.md).
-- See all [openapi configuration settings](../../../config/openapi/index.md).
-- See a full [list of supported OpenAPI extensions](./index.md).
+- **[x-displayName extension](./x-display-name.md)** - Give tags better human-readable display names for improved navigation and user experience
+- **[x-tagGroups extension](./x-tag-groups.md)** - Group tags into logical sections for improved navigation structure and organization
+- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
+- **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
+- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation

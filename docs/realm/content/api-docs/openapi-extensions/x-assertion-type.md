@@ -47,7 +47,7 @@ securitySchemes:
 
 ## Resources
 
-- This specification defines the use of a JSON Web Token (JWT) Bearer Token as a means for requesting an OAuth 2.0: [RFC 7523](https://tools.ietf.org/html/rfc7523).
-- Control which extensions are included in your API reference documentation with the [showExtensions configuration setting](../../../config/openapi/show-extensions.md).
-- See all [openapi configuration settings](../../../config/openapi/index.md).
-- See a full [list of supported OpenAPI extensions](./index.md).
+- **[RFC 7523 - JWT Bearer Token](https://tools.ietf.org/html/rfc7523)** - Official specification defining the use of JSON Web Token Bearer Token for OAuth 2.0 client authentication
+- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
+- **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
+- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation

@@ -146,10 +146,6 @@ graphql:
 
 With this configuration in place, the sidebar shows the cart, product, customer, company and gift items under their own sections.
 
-## Related options
-
-- [graphql](./index.md) - Learn more about using `graphql` configuration.
-
 ## Resources
 
 - **[GraphQL](https://graphql.org/)** - Official GraphQL specification and documentation for understanding query language fundamentals

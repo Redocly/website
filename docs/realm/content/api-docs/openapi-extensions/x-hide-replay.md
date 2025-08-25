@@ -43,8 +43,8 @@ This operation will have complete documentation, but without interactive feature
 
 ## Resources
 
-- Learn more about [Replay the API Explorer](../replay.md)
-- Control which extensions are included in your API reference documentation with the [showExtensions configuration setting](../../../config/openapi/show-extensions.md).
-- Configure the [mock server](../../../config/mock-server.md) used in Replay.
-- See all [openapi configuration settings](../../../config/openapi/index.md).
-- See a full [list of supported OpenAPI extensions](./index.md).
+- **[Replay API Explorer](../replay.md)** - Learn about interactive API testing features and how to configure the Try It functionality
+- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
+- **[Mock server configuration](../../../config/mock-server.md)** - Configure mock server settings used by Replay for API testing and demonstration
+- **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
+- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation

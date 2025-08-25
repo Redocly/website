@@ -26,6 +26,7 @@ Required properties are expanded by default to a depth of `4` levels.
 - schemasExpansionLevel
 - number | string | 'all'
 - Sets the default expand level for schemas.
+  Use `all` to expand all levels.
   There is no default value, so if this option is not configured nothing is expanded except for required properties, which are expanded to a depth of `4` levels.
 
 

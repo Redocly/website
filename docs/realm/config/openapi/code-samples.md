@@ -27,11 +27,11 @@ Configure the code samples generated from your OpenAPI description.
 
 - languages
 - [[language object](#language-object)]
-*
+-
   **REQUIRED.**
-  Array of [language](#language-object) objects, one per language.
+  List of [language](#language-object) objects, one per language.
   The samples are displayed in the order that they are listed.
-  Default array value is:
+  Default value is:
   ```javascript
   [
     { lang: curl },
@@ -52,7 +52,7 @@ Configure the code samples generated from your OpenAPI description.
 
 - skipOptionalParameters
 - boolean
-*
+-
   Excludes optional parameters (cookies, headers, query params) from the generated code samples.
   Defaults to `false`.
 
@@ -70,7 +70,7 @@ Configure the code samples generated from your OpenAPI description.
 
 - lang
 - string
-*
+-
   **REQUIRED.**
   Sets the language to create code samples for.
   Supported values: `curl`, `C#`, `C#+Newtonsoft`, `Go`, `Java`, `Java8+Apache`, `JavaScript`, `Node.js`, `PHP`, `Python`, `R`, `Ruby`.
@@ -85,7 +85,7 @@ Configure the code samples generated from your OpenAPI description.
 
 - label
 - string
-*
+-
   Custom label to use for the generated code sample.
   In the _Request samples_ section of your reference docs, the code sample tab uses the custom label instead of the default `lang` value.
 

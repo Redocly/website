@@ -25,7 +25,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 ---
 
 - catalogClassic
-- Map of strings to [Catalog Classic](#catalog-classic-object)
+- Map[string, [Catalog Classic](#catalog-classic-object)]
 - **REQUIRED.**
   Map of strings allows for the definition of multiple catalogs.
   Strings represent catalog only in configuration file - they do not appear in published project.
@@ -218,8 +218,9 @@ You can configure multiple catalogs and set the link text, description, and filt
 ---
 
 - includeByMetadata
-- Map of metadata properties to list of string values
-- Restricts what to include in the catalog.
+- Map[string, [string]]
+- Map of metadata properties to list of string values.
+  Restricts what to include in the catalog.
   Example: `{"type": ["openapi"]}`.
 
 {% /table %}

@@ -30,38 +30,38 @@ Requires an AsyncAPI definition.
 ---
 
 - schemaId
-- String
+- string
 - Schema ID.
   Defaults to `asyncapi`.
 
 ---
 
 - hideInfo
-- Boolean
+- boolean
 - Set to `true` to hide info section including API title.
 
 ---
 
 - hideOperations
-- Boolean
+- boolean
 - Set to `true` to hide Operations section
 
 ---
 
 - hideServers
-- Boolean
+- boolean
 - Set to `true` to hide Servers section
 
 ---
 
 - hideMessages
-- Boolean
+- boolean
 - Set to `true` to hide Messages section
 
 ---
 
 - hideSchemas
-- Boolean
+- boolean
 - Set to `true` to hide Schemas section
 
 {% /table %}

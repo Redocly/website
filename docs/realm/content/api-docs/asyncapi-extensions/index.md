@@ -13,4 +13,4 @@ The list of extensions supported in AsyncAPI by Redoc is as follows:
 
 ## Resources
 
-- How to [add AsyncAPI description to your project](../add-asyncapi-docs.md).
+- **[Add AsyncAPI description to your project](../add-asyncapi-docs.md)** - Complete guide for integrating AsyncAPI documentation into your Redocly project with extensions support
