@@ -93,9 +93,7 @@ export default function () {
 ```
 
 {% admonition type="info" %}
-Environment variables always have `String` type.
-`PUBLIC_IS_PRODUCTION` and `PUBLIC_BUILD_NUMBER` from example above will become `"true"` and `"50"` when used in React components.
-To get them in desired type, you'll have to do manual conversion.
+Environment variables always have `String` type. `PUBLIC_IS_PRODUCTION` and `PUBLIC_BUILD_NUMBER` from example above will become `"true"` and `"50"` when used in React components. To get them in desired type, you'll have to do manual conversion.
 {% /admonition %}
 
 ### Markdown
@@ -116,7 +114,7 @@ The following environment variables are available by default:
 
 - `PUBLIC_REDOCLY_BRANCH_NAME`: The name of the branch that the project is built from
 
-## Manage environment variables
+## Managing environment variables
 
 You can manage environment variables through the **Settings** page in your project.
 
@@ -133,8 +131,7 @@ You can manage environment variables through the **Settings** page in your proje
 
 1. Once logged in to Redocly, select the project.
 2. Select **Settings** > **Environment variables**.
-3. Select the _Delete_ icon next to the variable you want to remove.
-   The variable is removed from the list immediately.
+3. Select the _Delete_ icon next to the variable you want to remove. The variable is removed from the list immediately.
 
 ## Restrictions
 

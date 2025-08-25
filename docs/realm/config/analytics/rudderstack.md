@@ -25,8 +25,7 @@ Integrate Rudderstack Analytics into Redocly project.
 
 - includeInDevelopment
 - boolean
-- Set this option to `true` to enable Rudderstack Analytics in development mode and preview builds.
-  Default is `false`.
+- Set this option to `true` to enable Rudderstack Analytics in development mode and preview builds. Default is `false`.
 
 ---
 
@@ -38,8 +37,7 @@ Integrate Rudderstack Analytics into Redocly project.
 
 - trackPage
 - boolean
-- Set this to `false` to disable page visits tracking.
-  Defaults to `true`.
+- Set this to `false` to disable page visits tracking. Defaults to `true`.
 
 ---
 

@@ -32,7 +32,7 @@ graph LR;
 
 Use the special code markup to indicate where in the content the diagram starts and ends.
 
-## Add a pie chart
+## Add a piechart
 
 Most of the chart types are supported, for example the following snippet shows a pie chart:
 

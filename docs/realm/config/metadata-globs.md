@@ -11,8 +11,7 @@ plans:
 ---
 # `metadataGlobs`
 
-Configure glob patterns to apply metadata to specific files or directories.
-This metadata is used by features like search, catalog, and scorecard for content categorization.
+Configure glob patterns to apply metadata to specific files or directories. This metadata is used by features like search, catalog, and scorecard for content categorization.
 
 ## How it works
 

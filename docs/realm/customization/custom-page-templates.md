@@ -19,8 +19,7 @@ Let's consider a blog post page as an example. On that page except the text of t
 - list of search tags
 - etc.
 
-Also you need to know how you want to display that additional information.
-Here's where you can use custom page templates.
+Also you need to know how you want to display that additional information. Here's where you can use custom page templates.
 
 ## About custom templates
 
@@ -48,8 +47,7 @@ export default function BlogPost({ pageProps, children }) {
 
 In your blog file use `template` property of frontmatter to apply custom template.
 
-**Note:** frontmatter can be used to pass any additional data to the template.
-Please check out the example of blog post page.
+**Note:** frontmatter can be used to pass any additional data to the template. Please check out the example of blog post page.
 
 ```md
 ---
@@ -65,11 +63,9 @@ sidebar: false
 
 ## Redocly rebrands as Remockly
 
-The Redocly brand is synonymous with quality API documentation.
-And we're so much more than that.
+The Redocly brand is synonymous with quality API documentation. And we're so much more than that.
 
-"Redocly does much more than API docs.
-We searched the world far and wide for marketing experts and determined the fastest way to communicate the breadth of our offering is to rename the company," said co-founder and CTO Roman Hotsiy.
+"Redocly does much more than API docs. We searched the world far and wide for marketing experts and determined the fastest way to communicate the breadth of our offering is to rename the company," said co-founder and CTO Roman Hotsiy.
 
 ...
 ```

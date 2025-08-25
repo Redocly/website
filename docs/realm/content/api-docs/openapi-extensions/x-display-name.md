@@ -23,8 +23,7 @@ Use the `x-displayName` extension in a Tag declaration.
 
 - x-displayName
 - string
-- The text to use when presenting this tag as a navigation item and section header.
-  Default is to use the tag name.
+- The text to use when presenting this tag as a navigation item and section header. Default is to use the tag name.
 
 {% /table %}
 

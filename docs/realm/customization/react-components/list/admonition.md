@@ -18,8 +18,7 @@ import { Admonition } from '@redocly/theme/components/Admonition/Admonition';
 
 - `type`
 - enum (`warning` | `success` | `danger` | `info`)
-- Sets the type of admonition.
-  By default `info`.
+- Sets the type of admonition. By default `info`.
 
 ---
 

@@ -29,23 +29,19 @@ All other configuration is done through team-role mapping.
 
 - reunite
 - [[Team to role map](#team-to-role-map)]
-- Describes project role for the given team.
-  Use this option when needs to manage project access to a specific team, like allowing the team to manage branches or builds.
+- Describes project role for the given team. Use this option when needs to manage project access to a specific team, like allowing the team to manage branches or builds.
 
 ---
 
 - content
 - [[Content configuration](#content-configuration)]
-- Describes file access for the given team.
-  Use this option when needs to manage file access to a specific team.
-  This option is used for page access as well.
+- Describes file access for the given team. Use this option when needs to manage file access to a specific team. This option is used for page access as well.
 
 ---
 
 - features
 - [[Features configuration](#features-configuration)]
-- Describes feature access by team.
-  Use this option when you need to manage access for specific features.
+- Describes feature access by team. Use this option when you need to manage access for specific features.
 
 ---
 
@@ -83,8 +79,7 @@ All other configuration is done through team-role mapping.
 - _team name_
 - `none`, `read`, `write`, `triage`, `maintain`, or `admin`
 - Map of teams to project roles.
-  The team names come from a possible list of `anonymous` (meaning all users who are not logged in), `authenticated` (meaning any user who is logged in), and team names that come from the identity provider through the [single-sign-on (SSO) configuration](./sso.md).
-  In addition, the team name `*` represents the rest of the teams not defined in sibling properties including `anonymous` and `authenticated`.
+  The team names come from a possible list of `anonymous` (meaning all users who are not logged in), `authenticated` (meaning any user who is logged in), and team names that come from the identity provider through the [single-sign-on (SSO) configuration](./sso.md). In addition, the team name `*` represents the rest of the teams not defined in sibling properties including `anonymous` and `authenticated`.
   Possible values for project roles are: `none`, `read`, `write`, `triage`, `maintain`, or `admin`.
   {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "rbac"} /%}
 
@@ -108,8 +103,7 @@ All other configuration is done through team-role mapping.
 
 {% admonition type="info" %}
 
-When describing team to project role relations, a special key `*` may be used.
-A project role assigned to that key will be applied to the rest of the teams that are not described for the given glob pattern.
+When describing team to project role relations, a special key `*` may be used. A project role assigned to that key will be applied to the rest of the teams that are not described for the given glob pattern.
 
 In the following example, only users assigned to the Admin team can view the content on the `secrets.md` file:
 
@@ -151,8 +145,7 @@ rbac:
 
 - /some/path/_{teamPathSegment}_
 - `string`
-- Team folder pattern.
-  The `{teamPathSegment}` segment is used as the path segment.
+- Team folder pattern. The `{teamPathSegment}` segment is used as the path segment.
 
 {% /table %}
 
@@ -171,8 +164,7 @@ rbac:
 - The format that the team name follows.
   The prefix is optional but can be useful if you have many teams.
   The `{teamPathSegment}` is used as the path segment where the role access is applied,
-  and the `{projectRole}` part sets the access level.
-  The `{teamPathSegment}` segments are transformed to lower case.
+  and the `{projectRole}` part sets the access level. The `{teamPathSegment}` segments are transformed to lower case.
 
 {% /table %}
 
@@ -251,7 +243,7 @@ rbac:
       authenticated: read
 ```
 
-### Use environment variables
+### Using environment variables
 
 Environment variables can be used for role assignments, useful for different deployment environments:
 

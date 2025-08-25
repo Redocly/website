@@ -68,16 +68,14 @@ Type `danger` creates a **Danger** admonition.
 ### Add relevant information
 
 {% admonition type="info" %}
-Admonitions can be _distracting_.
-Consider how they **help users** before adding them.
+Admonitions can be _distracting_. Consider how they **help users** before adding them.
 {% /admonition %}
 
 {% markdoc-example %}
 
 ```md {% process=false %}
   {% admonition type="info" %}
-    Admonitions can be _distracting_.
-    Consider how they **help users** before adding them.
+    Admonitions can be _distracting_. Consider how they **help users** before adding them.
   {% /admonition %}
 ```
 
@@ -86,16 +84,14 @@ Consider how they **help users** before adding them.
 ### Highlight something important
 
 {% admonition type="warning" name="Read this!" %}
-Users read admonitions _before_ content.
-They can communicate essential information.
+Users read admonitions _before_ content. They can communicate essential information.
 {% /admonition %}
 
 {% markdoc-example %}
 
 ```md {% process=false %}
   {% admonition type="warning" name="Read this!" %}
-    Users read admonitions _before_ content.
-    They can communicate essential information.
+    Users read admonitions _before_ content. They can communicate essential information.
   {% /admonition %}
 ```
 
@@ -122,16 +118,14 @@ You might need them to communicate something before a user makes an irreversible
 ### Celebrate wins
 
 {% admonition type="success" name="Success" %}
-You made it to the **last admonition example**.
-Hooray 🥳!
+You made it to the **last admonition example**. Hooray 🥳!
 {% /admonition %}
 
 {% markdoc-example %}
 
 ```md {% process=false %}
   {% admonition type="success" name="Success" %}
-    You made it to the **last admonition example**.
-    Hooray 🥳!
+    You made it to the **last admonition example**. Hooray 🥳!
   {% /admonition %}
 ```
 

@@ -16,9 +16,7 @@ If your project contains multiple APIs, you can use the `apis` configuration sec
 
 - `{name}@{version}`
 - [API object](#api-object)
-- **REQUIRED**.
-  Each API needs a name and optionally a version.
-  Supports alphanumeric characters and underscores.
+- **REQUIRED**. Each API needs a name and optionally a version. Supports alphanumeric characters and underscores.
 
 {% /table %}
 
@@ -34,8 +32,7 @@ If your project contains multiple APIs, you can use the `apis` configuration sec
 
 - root
 - string
-- **REQUIRED**.
-  Path to the root API description file.
+- **REQUIRED**. Path to the root API description file.
 
 ---
 
@@ -53,8 +50,7 @@ If your project contains multiple APIs, you can use the `apis` configuration sec
 
 - preprocessors
 - [Decorators object](./openapi/decorators.md)
-- Preprocessors run before linting, and follow the same structure as decorators.
-  We recommend the use of decorators over preprocessors in most cases.
+- Preprocessors run before linting, and follow the same structure as decorators. We recommend the use of decorators over preprocessors in most cases.
 
 ---
 

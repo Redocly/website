@@ -4,8 +4,7 @@ toc: hide
 
 # Navigation elements
 
-Redocly offers comprehensive navigation customization to help users easily discover and navigate through your documentation.
-From simple link organization to advanced multi-product sites, you can configure navigation elements to match your project's structure and branding needs.
+Redocly offers comprehensive navigation customization to help users easily discover and navigate through your documentation. From simple link organization to advanced multi-product sites, you can configure navigation elements to match your project's structure and branding needs.
 
 ## Available navigation elements
 

@@ -11,9 +11,7 @@ Control the list of language options by adjusting the [openapi.code-samples](../
 {% /admonition %}
 
 {% admonition type="info" name="Environment variables" %}
-Use environment variable placeholders like `{{VARIABLE_NAME}}` in code samples.
-Configure their values in the `envVariables` field of your request values configuration.
-[Learn more about environment variables](../../../customization/configure-request-values.md#configure-environment-variables-for-code-samples).
+Use environment variable placeholders like `{{VARIABLE_NAME}}` in code samples. Configure their values in the `envVariables` field of your request values configuration. [Learn more about environment variables](../../../customization/configure-request-values.md#configure-environment-variables-for-code-samples).
 {% /admonition %}
 
 ## Location
@@ -24,15 +22,15 @@ Configure their values in the `envVariables` field of your request values config
 
 {% table %}
 
-- Field Name
-- Type
-- Description
+* Field Name
+* Type
+* Description
 
 ---
 
-- x-codeSamples
-- [ [Code Sample Object](#code-sample-object) ]
-- A list of code samples associated with an operation.
+* x-codeSamples
+* [ [Code Sample Object](#code-sample-object) ]
+* A list of code samples associated with an operation.
 
 {% /table %}
 
@@ -41,22 +39,21 @@ Configure their values in the `envVariables` field of your request values config
 
 {% table %}
 
-- Field Name
-- Type
-- Description
+* Field Name
+* Type
+* Description
 
 ---
 
-- lang
-- string
-- **REQUIRED** Code sample language.
-  Can be one of the [automatically supported languages](../../../config/openapi/code-samples.md#language-object) or any other language identifier of your choice (for custom code samples).
+* lang
+* string
+* **REQUIRED** Code sample language. Can be one of the [automatically supported languages](../../../config/openapi/code-samples.md#language-object) or any other language identifier of your choice (for custom code samples).
 
 ---
 
-- source
-- string
-- **REQUIRED** Code sample source code, or a `$ref` to the file containing the code sample.
+* source
+* string
+* **REQUIRED** Code sample source code, or a `$ref` to the file containing the code sample.
 
 {% /table %}
 

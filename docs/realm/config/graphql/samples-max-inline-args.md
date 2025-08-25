@@ -24,8 +24,7 @@ When there are more arguments than the configured value, every argument will be 
 
 - samplesMaxInlineArgs
 - number
-- Sets the maximum number of inline arguments for samples.
-  Default value is `2`.
+- Sets the maximum number of inline arguments for samples. Default value is `2`.
 
 {% /table %}
 
