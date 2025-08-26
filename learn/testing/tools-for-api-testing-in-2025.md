@@ -360,10 +360,10 @@ It's important to assemble a coherent, automated stack that provides the right f
 
 ### Next steps
 
-* Create a small Arazzo workflow and run it with `npx @redocly/cli respect`. See the command reference at [/docs/cli/commands/respect](/docs/cli/commands/respect) and the tutorial at [/learn/arazzo/testing-arazzo-workflows](/learn/arazzo/testing-arazzo-workflows).
-* Generate a starter Arazzo workflow with the CLI: see [`generate-arazzo`](/docs/cli/commands/generate-arazzo).
-* Learn the fundamentals: [/learn/testing/contract-testing-101](/learn/testing/contract-testing-101).
+* Create a small Arazzo workflow and run it with `npx @redocly/cli respect`. See the command reference in ../../docs/cli/@v2/commands/respect.md and the getting‑started guide in ../../docs/respect/get-started.md.
+* Generate a starter Arazzo workflow with the CLI: see ../../docs/cli/@v2/commands/generate-arazzo.md.
+* Learn the fundamentals: ./contract-testing-101.md.
 
 ### Primary CTA
 
-Run your first workflow test with Respect: [/docs/cli/commands/respect](/docs/cli/commands/respect)
+[Run your first workflow test](../../docs/cli/@v2/commands/respect.md)
