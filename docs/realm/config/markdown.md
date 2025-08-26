@@ -24,14 +24,14 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 
 - frontMatterKeysToResolve
 - [string]
-- An array where each entry is a front matter key to resolve at build time.
+- A list where each entry is a front matter key to resolve at build time.
   By default, values for `image` and `links` are resolved.
 
 ---
 
 - partialsFolders
 - [string]
-- An array of directory paths to folders used for storing partials.
+- A list of directory paths to folders used for storing partials.
   The `_partials` folder works by default, but all other folders must be listed in `partialsFolder` in order to work with partials.
 
 ---

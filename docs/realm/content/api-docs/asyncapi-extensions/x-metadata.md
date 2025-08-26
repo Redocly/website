@@ -70,4 +70,4 @@ To use `tags` as filters, the values must be a list.
 
 ## Resources
 
-- See a full [list of supported AsyncAPI extensions](./index.md).
+- **[Supported AsyncAPI extensions](./index.md)** - Complete list of all AsyncAPI extensions supported by Redocly for enhanced API documentation

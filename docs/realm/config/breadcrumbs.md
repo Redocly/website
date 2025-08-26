@@ -83,14 +83,11 @@ breadcrumbs:
       labelTranslationKey: home.title
 ```
 
-## Related options
-
-- Customize other default items on Markdown pages, such as the last updated time stamp and the page headings table of contents on the left side of the page, using the [`markdown` configuration options](markdown.md).
-- Remove or update the label text for the previous and next navigation buttons using the [`navigation` configuration options](navigation.md).
-
 ## Resources
 
 - **[Navigation concepts](../navigation/navigation.md)** - Understand different navigation elements in your project including breadcrumbs and their role in user experience
 - **[Configure navigation elements](../navigation/index.md)** - Customize navigation elements including sidebar, navbar, footer, and breadcrumbs for optimal site organization
 - **[Front matter configuration](./front-matter-config.md)** - Configure breadcrumb behavior and appearance on individual pages using front matter for granular control
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
+- **[Markdown configuration options](markdown.md)** - Customize default items on Markdown pages including time stamps and table of contents for enhanced breadcrumb integration
+- **[Navigation configuration options](navigation.md)** - Configure previous and next navigation buttons and label text for seamless breadcrumb navigation flow

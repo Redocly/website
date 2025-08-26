@@ -15,7 +15,7 @@ Teams can be managed in two different ways depending on your authentication setu
 
 **Reunite Managed Teams:**
 - Teams are created and managed directly in Reunite
-- Team membership is controlled through the [Reunite Teams page](#managing-teams)
+- Team membership is controlled through the [Reunite Teams page](#manage-teams)
 - Full control over team composition, managers, and team names within Reunite
 
 {% admonition type="info" %}

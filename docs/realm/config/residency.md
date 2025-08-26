@@ -32,7 +32,7 @@ For new products, the `residency` configuration setting is used.
 ---
 
 - residency
-- URL
+- string
 - URL to the platform where your application resides, e.g. `https://app.cloud.eu.redocly.com` for EU-region deployments.
   The default value is the main hosting platform at `https://app.cloud.redocly.com`.
 

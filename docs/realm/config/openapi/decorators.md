@@ -17,7 +17,7 @@ You can use the `decorators` block at the root of a configuration file, or insid
 ---
 
 - {decorator name}
-- string _or_ [Decorator object](#decorator-object)
+- string | [Decorator object](#decorator-object)
 - **REQUIRED**.
   You can add as many decorators as you wish.
   The keys must be either built-in decorators (for example `info-description-override`), or a decorator from a plugin (for example `tags-plugin/no-unused-tags`).

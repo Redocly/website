@@ -93,4 +93,4 @@ The navigation in the API reference documentation using this `x-tagGroups` confi
 
 ## Resources
 
-- See a full [list of supported AsyncAPI extensions](./index.md).
+- **[Supported AsyncAPI extensions](./index.md)** - Complete list of all AsyncAPI extensions supported by Redocly for enhanced API documentation

@@ -26,7 +26,7 @@ By default 10 values are displayed which is ideal for usability.
 - maxDisplayedEnumValues
 - number
 - Sets the number of enum values to display.
-  The default behavior is that 10 values are displayed.
+  Default value: `10`.
 
 {% /table %}
 

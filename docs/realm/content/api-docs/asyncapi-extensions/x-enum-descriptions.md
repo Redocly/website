@@ -22,24 +22,8 @@ Check that all options are included to ensure the documentation is complete.
 ---
 
 - x-enumDescriptions
-- [ [Enum Description Object](#enum-description-object) ]
-- A list of the enum values and descriptions to include in the documentation.
-
-{% /table %}
-
-### Enum Description Object
-
-{% table %}
-
-- Option
-- Type
-- Description
-
----
-
-- _enum value_
-- string
-- More information or explanation about when to choose this value.
+- Map[string, string]
+- A map of the enum values and corresponding descriptions to include in the documentation.
 
 {% /table %}
 
@@ -63,4 +47,4 @@ components:
 
 ## Resources
 
-- See a full [list of supported AsyncAPI extensions](./index.md).
+- **[Supported AsyncAPI extensions](./index.md)** - Complete list of all AsyncAPI extensions supported by Redocly for enhanced API documentation

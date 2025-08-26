@@ -72,8 +72,8 @@ The navbar is a good location for top-level category or frequently-used links.
 
 - linkedSidebars
 - [string]
-- Array of relative paths to sidebar files.
-  This option will add the navbar item to a sidebar's breadcrumbs.
+- List of relative paths to sidebar files.
+  This option adds the navbar item to a sidebar's breadcrumbs.
   Only effective for top-level navbar items.
 
 ---
@@ -167,33 +167,33 @@ The navbar is a good location for top-level category or frequently-used links.
 - icon
 - string
 - Either:
-- A [Font Awesome](https://fontawesome.com/icons) icon name.
-    Realm has the following icon packs built in: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
-    The icons automatically adjust their colors when users change the color mode.
+  - A [Font Awesome](https://fontawesome.com/icons) icon name.
+      Realm has the following icon packs built in: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
+      The icons automatically adjust their colors when users change the color mode.
 
-    To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
-    To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+      To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
+      To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
 
-    **Examples:** `book`, `duotone book`, `brands github`
+      **Examples:** `book`, `duotone book`, `brands github`
 
-    Using other prefixes, including the `fa-` prefix, causes the icon to not render.
-  - Relative path to an icon image file.
+      Using other prefixes, including the `fa-` prefix, causes the icon to not render.
+    - Relative path to an icon image file.
 
-    **Example:** `./images/config-icon.svg`
+      **Example:** `./images/config-icon.svg`
 
 ---
 
 - external
 - boolean
 - Open link in new browser tab.
-  Default is `false`.
+  Default value: `false`.
 
 ---
 
 - linkedSidebars
 - [string]
-- Array of relative paths to sidebar files.
-  This option will add navbar item to sidebar's breadcrumbs.
+- List of relative paths to sidebar files.
+  This option adds navbar item to sidebar's breadcrumbs.
   Only effective for top-level navbar items.
 
 {% /table %}

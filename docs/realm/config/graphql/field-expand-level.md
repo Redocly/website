@@ -42,12 +42,8 @@ graphql:
 
 If you have fields with more than three levels of data structure within them, users will need to visit the data types documentation for that type rather than having it all displayed in the "Return type" section.
 
-## Related options
-
-- [jsonSamplesDepth](./json-samples-depth.md) - Sets the default expand level for JSON payload samples.
-- [graphql](./index.md) - Learn more about using `graphql` configuration.
-
 ## Resources
 
 - **[GraphQL](https://graphql.org/)** - Official GraphQL specification and documentation for understanding query language fundamentals
 - **[GraphQL configuration](./index.md)** - Complete guide to GraphQL configuration options for customizing API reference documentation
+- **[JSON samples depth](./json-samples-depth.md)** - Set the default expand level for JSON payload samples to work alongside field expand level settings

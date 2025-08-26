@@ -28,8 +28,8 @@ All other configuration is done through team-role mapping.
 ---
 
 - reunite
-- [[Team to role map](#team-to-role-map)]
-- Describes project role for the given team.
+- [Map[string, string]](#team-to-role-map)]
+- Map of teams to roles.
   Use this option when needs to manage project access to a specific team, like allowing the team to manage branches or builds.
 
 ---
@@ -101,8 +101,8 @@ All other configuration is done through team-role mapping.
 ---
 
 - _{glob pattern}\*_
-- [[Team to role map](#team-to-role-map)]
-- Use the glob pattern to define the team and role for specific page access, or using the unique key `**` to describe all pages.
+- [Map[string, string]](#team-to-role-map)
+- Use the glob pattern to define linked to a map of teams and role for specific page access, or using the unique key `**` to describe all pages.
 
 {% /table %}
 
@@ -134,8 +134,8 @@ rbac:
 ---
 
 - aiSearch
-- [[Team to role map](#team-to-role-map)]
-- Use a glob pattern to define the team and role for specific feature access.
+- Map[string, string](#team-to-role-map)
+- Map of teams to roles to define the team and role for AI search feature access.
 
 {% /table %}
 
@@ -149,10 +149,11 @@ rbac:
 
 ---
 
-- /some/path/_{teamPathSegment}_
-- `string`
+- teamPathSegment
+- string
 - Team folder pattern.
   The `{teamPathSegment}` segment is used as the path segment.
+  Example: `/some/path/_{teamPathSegment}_`
 
 {% /table %}
 
@@ -338,15 +339,12 @@ rbac:
       authenticated: read
 ```
 
-## Related options
-
-- [sso](./sso.md) is used to identify users.
-- [ssoDirect](./ssoDirect.md)
-- [requiresLogin](./requires-login.md) reference
-
 ## Resources
 
 - **[Role-based access control (RBAC) concepts](../access/rbac.md)** - Understand the fundamentals and components of RBAC systems for comprehensive access management
 - **[RBAC configuration guide](../access/index.md)** - Complete implementation guide with examples for projects, pages, and navigation access control
 - **[Front matter configuration](./front-matter-config.md)** - Configure role-based access on individual pages using front matter for granular permission control
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
+- **[SSO configuration](./sso.md)** - Configure single sign-on to identify users and integrate with RBAC for comprehensive authentication and authorization
+- **[SSO Direct configuration](./ssoDirect.md)** - Configure direct SSO integration for streamlined user identification and RBAC implementation
+- **[Requires login configuration](./requires-login.md)** - Set up login requirements to enforce authentication before accessing RBAC-protected content

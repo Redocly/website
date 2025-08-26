@@ -23,26 +23,11 @@ Check that all options are included to ensure the documentation is complete.
 ---
 
 - x-enumDescriptions
-- [ [Enum Description Object](#enum-description-object) ]
-- A list of the enum values and descriptions to include in the documentation.
+- Map[string, string]
+- A map of the enum values and corresponding descriptions to include in the documentation.
 
 {% /table %}
 
-### Enum Description Object
-
-{% table %}
-
-- Option
-- Type
-- Description
-
----
-
-- _enum value_
-- string
-- More information or explanation about when to choose this value.
-
-{% /table %}
 
 ## Examples
 
@@ -66,6 +51,6 @@ components:
 
 ## Resources
 
-- See all [openapi configuration settings](../../../config/openapi/index.md).
-- Control which extensions are included in your API reference documentation with the [showExtensions configuration setting](../../../config/openapi/show-extensions.md).
-- See a full [list of supported OpenAPI extensions](./index.md).
+- **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
+- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
+- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation

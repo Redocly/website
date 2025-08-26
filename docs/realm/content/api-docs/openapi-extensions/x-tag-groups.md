@@ -92,8 +92,8 @@ The navigation in the API reference documentation using this `x-tagGroups` confi
 
 ## Resources
 
-- Give the tags better display names using [x-displayNames](./x-display-name.md).
-- Mark tags as traits rather than navigation with [x-traitTag](./x-trait-tag.md).
-- Control which extensions are included in your API reference documentation with the [showExtensions configuration setting](../../../config/openapi/show-extensions.md).
-- See all [openapi configuration settings](../../../config/openapi/index.md).
-- See a full [list of supported OpenAPI extensions](./index.md).
+- **[x-displayName extension](./x-display-name.md)** - Give tags better human-readable display names for improved navigation and user experience
+- **[x-traitTag extension](./x-trait-tag.md)** - Mark tags as traits rather than navigation elements for specialized tagging functionality
+- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
+- **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
+- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation

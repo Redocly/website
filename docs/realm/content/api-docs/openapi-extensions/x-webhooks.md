@@ -92,7 +92,7 @@ The webhook is included alongside the other Operations with the same tag in the 
 
 ## Resources
 
-- Read [more about webhooks](https://redocly.com/blog/document-webhooks-with-openapi) on the Redocly blog.
-- Control which extensions are included in your API reference documentation with the [showExtensions configuration setting](../../../config/openapi/show-extensions.md).
-- See all [openapi configuration settings](../../../config/openapi/index.md).
-- See a full [list of supported OpenAPI extensions](./index.md).
+- **[Document webhooks with OpenAPI](https://redocly.com/blog/document-webhooks-with-openapi)** - Learn best practices for documenting webhooks in OpenAPI specifications and API reference documentation
+- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
+- **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
+- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation
