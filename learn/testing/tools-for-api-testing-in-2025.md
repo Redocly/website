@@ -111,7 +111,7 @@ The foundation of a modern, design-first API workflow is the OpenAPI description
 
 #### Core tool: API linters for contract and style conformance
 
-Start with a configurable API linter (via Redocly CLI) as the de facto open-source standard. See the built‑in rules and configurable rules in the CLI docs at [/docs/cli/rules/built-in-rules](/docs/cli/rules/built-in-rules) and the `lint` command at [/docs/cli/commands/lint](/docs/cli/commands/lint). Linting validates the OpenAPI description against a ruleset that can enforce everything from security best practices to semantic naming conventions.
+Start with a configurable API linter (via Redocly CLI) as the de facto open-source standard. See the built‑in rules and configurable rules in the CLI docs at [/docs/cli/rules/built-in-rules](/docs/cli/rules/built-in-rules) and the [Lint command reference](/docs/cli/commands/lint). Linting validates the OpenAPI description against a ruleset that can enforce everything from security best practices to semantic naming conventions.
 
 ```yaml {% title=".redocly.yaml" %}
 apis:
@@ -141,7 +141,7 @@ In a microservices architecture, how do you ensure a change to one service doesn
 
 One common tool for consumer-driven contract testing is Pact. In this workflow, consumer-side tests generate a contract file (a pact). These contracts are then published to a central Pact Broker. The provider's CI pipeline fetches these contracts from the broker and verifies them against the provider codebase. The broker's key feature is providing the can-i-deploy status, which tells a team if they can safely deploy a service without breaking any of its known consumers, enabling true independent deployments.
 
-Redocly's Respect offers a complementary approach where the OpenAPI description itself serves as the contract, ensuring that your implementation never deviates from your design. Respect can be used for both provider-driven and consumer-driven contract testing workflows. Learn how to run workflow tests with the `respect` command at [/docs/cli/commands/respect](/docs/cli/commands/respect).
+Redocly's Respect offers a complementary approach where the OpenAPI description itself serves as the contract, ensuring that your implementation never deviates from your design. Respect can be used for both provider-driven and consumer-driven contract testing workflows. Learn how to run workflow tests with the [Respect command reference](/docs/cli/commands/respect).
 
 
 ### Respect contract testing in action
@@ -360,10 +360,8 @@ It's important to assemble a coherent, automated stack that provides the right f
 
 ### Next steps
 
-* Create a small Arazzo workflow and run it with `npx @redocly/cli respect`. See the command reference in ../../docs/cli/@v2/commands/respect.md and the getting‑started guide in ../../docs/respect/get-started.md.
-* Generate a starter Arazzo workflow with the CLI: see ../../docs/cli/@v2/commands/generate-arazzo.md.
-* Learn the fundamentals: ./contract-testing-101.md.
+* Create a small Arazzo workflow and run it with `npx @redocly/cli respect`. See the [Respect command reference](/docs/cli/commands/respect) and the [Respect getting‑started guide](/docs/respect/get-started).
+* Generate a starter Arazzo workflow with the CLI: see the [Generate Arazzo command](/docs/cli/commands/generate-arazzo).
+* Learn the fundamentals: [API Contract Testing 101](contract-testing-101.md).
 
-### Primary CTA
 
-[Run your first workflow test](../../docs/cli/@v2/commands/respect.md)
