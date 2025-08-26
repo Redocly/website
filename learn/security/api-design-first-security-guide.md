@@ -4,7 +4,6 @@ _Build secure APIs from the ground up using OpenAPI security contracts and autom
 
 ---
 
-<a id="key-takeaways"></a>
 ## Key Takeaways
 
 Many teams discover security vulnerabilities after they're already in production, but it doesn't have to be that way!
@@ -19,7 +18,6 @@ In this guide, we'll walk though how to turn your OpenAPI specification into a s
 
 ---
 
-<a id="reactive-to-proactive"></a>
 ## From Reactive Patching to Proactive API Security
 
 High-profile data breaches frequently trace back to insecure APIs, exposing a fundamental flaw in traditional security approaches. The conventional method — identifying and patching vulnerabilities in production — is reactive, costly, and ultimately inadequate. In it's typical (and more common then we'd like) form, this paradigm treats security as more of an afterthought.
@@ -32,7 +30,6 @@ However, a contract, much like a law, is only as strong as its enforcement. This
 
 *OpenAPI specifications are validated by Redocly governance engine in CI/CD pipeline, failing builds for security violations and requiring fixes before deployment.*
 
-<a id="secure-api-foundation"></a>
 ## Building Secure API Infrastructure: The Technical Foundation
 
 Building secure APIs doesn't have to feel like playing whack-a-mole with vulnerabilities. Once you shift from reactive patching to proactive design, you'll wonder why you ever did it any other way. Let's explore how to make security an automatic part of your API development process.
@@ -72,7 +69,6 @@ graph TD
 
 *Architecture diagram showing the four essential areas of API security (TLS encryption, input validation, rate limiting, access control) supported by OpenAPI specifications and Redocly governance automation.*
 
-<a id="tls-encryption"></a>
 ## TLS Encryption: Protecting Data in Transit with OpenAPI
 
 When a client and an API exchange information, that data travels across the internet, a public network. Without protection, this data gets intercepted and read by malicious actors. This is where encryption comes in.
@@ -271,9 +267,57 @@ sequenceDiagram
 
 Why this matters: TLS is only as strong as its implementation. Monitoring and rapid patching for library CVEs are part of infrastructure security.
 
+### Mutual TLS (mTLS): Two-Way Authentication
+
+While standard TLS only authenticates the server to the client, **Mutual TLS (mTLS)** requires both parties to authenticate each other using certificates. This provides stronger security for high-trust scenarios like service-to-service communication.
+
+**mTLS Use Cases:**
+- Microservice communication in zero-trust architectures
+- API-to-API authentication between organizations
+- IoT device authentication
+- High-security financial and healthcare APIs
+
+**OpenAPI mTLS Configuration:**
+```yaml
+# openapi.yaml
+components:
+  securitySchemes:
+    mtlsAuth:
+      type: mutualTLS
+      description: "Client certificate authentication"
+
+# Apply to sensitive operations
+paths:
+  /internal/payments:
+    post:
+      security:
+        - mtlsAuth: []
+      summary: "Process payment (internal service only)"
+```
+
+**Implementation Example (Nginx):**
+```nginx
+server {
+    listen 443 ssl http2;
+    
+    # Server certificate
+    ssl_certificate /path/to/server.crt;
+    ssl_certificate_key /path/to/server.key;
+    
+    # Require client certificates
+    ssl_verify_client on;
+    ssl_client_certificate /path/to/ca.crt;
+    
+    # Pass client certificate info to backend
+    proxy_set_header X-Client-Cert $ssl_client_cert;
+    proxy_set_header X-Client-Verify $ssl_client_verify;
+}
+```
+
+> **mTLS Best Practice**: Use mTLS for service-to-service communication and regular TLS + JWT/OAuth2 for client-to-server communication.
+
 ---
 
-<a id="input-validation"></a>
 ## Input Validation: Preventing Injection Attacks with Schema-Based Security
 
 APIs are designed to accept data as input. However, an API should never blindly trust the data it receives from a client. The process of rigorously checking all incoming data is called data validation. NIST defines data validation as "The process of determining that data...is acceptable according to a predefined set of tests and the results of those tests."
@@ -415,26 +459,71 @@ This governance approach changes security reviews. Instead of manually checking 
 
 ### JSON Schema Security Keywords
 
-| Keyword | Purpose | Security Implication |
-|---------|---------|---------------------|
-| `type` | Constrains data type | Prevents type confusion attacks |
-| `pattern` | Enforces regex on strings | Fine-grained control against injection |
-| `maxLength/minLength` | Constrains string/array length | Mitigates DoS and buffer overflow |
-| `maximum/minimum` | Constrains numeric ranges | Prevents integer overflows |
-| `enum` | Restricts to predefined values | Blocks unexpected/malicious values |
-| `required` | Mandates property presence | Ensures critical data elements exist |
-| `additionalProperties: false` | Prohibits undeclared properties | Defense against mass assignment |
+{% table %}
+* Keyword
+* Purpose  
+* Security Implication
+---
+* `type`
+* Constrains data type
+* Prevents type confusion attacks
+---
+* `pattern`
+* Enforces regex on strings
+* Fine-grained control against injection
+---
+* `maxLength/minLength`
+* Constrains string/array length
+* Mitigates DoS and buffer overflow
+---
+* `maximum/minimum`
+* Constrains numeric ranges
+* Prevents integer overflows
+---
+* `enum`
+* Restricts to predefined values
+* Blocks unexpected/malicious values
+---
+* `required`
+* Mandates property presence
+* Ensures critical data elements exist
+---
+* `additionalProperties: false`
+* Prohibits undeclared properties
+* Defense against mass assignment
+{% /table %}
 
 ### Common Validation Patterns
 
-| Input Type | Validation Rules | Example |
-|------------|------------------|---------|
-| Email | RFC 5322 format | `user@example.com` |
-| Phone | E.164 format | `+1234567890` |
-| URL | Valid URL scheme | `https://example.com` |
-| UUID | Standard UUID format | `123e4567-e89b-12d3-a456-426614174000` |
-| Date | ISO 8601 format | `2025-01-20T10:30:00Z` |
-| Password | Minimum complexity | 8+ chars, mixed case, numbers, symbols |
+{% table %}
+* Input Type
+* Validation Rules
+* Example
+---
+* Email
+* RFC 5322 format
+* `user@example.com`
+---
+* Phone
+* E.164 format
+* `+1234567890`
+---
+* URL
+* Valid URL scheme
+* `https://example.com`
+---
+* UUID
+* Standard UUID format
+* `123e4567-e89b-12d3-a456-426614174000`
+---
+* Date
+* ISO 8601 format
+* `2025-01-20T10:30:00Z`
+---
+* Password
+* Minimum complexity
+* 8+ chars, mixed case, numbers, symbols
+{% /table %}
 
 #### Validation troubleshooting and common pitfalls
 
@@ -488,7 +577,6 @@ Why this matters: Strong schema validation, input allow-lists, and patch hygiene
 
 ---
 
-<a id="rate-limiting"></a>
 ## Rate Limiting: Preventing DoS and Abuse with API Policies
 
 A single client, whether intentionally malicious or simply due to a bug in its code, can send a massive number of requests to an API in a short period. This can overwhelm the server, degrading performance for all other users or even causing the service to crash. Rate limiting is the primary defense against this scenario.
@@ -503,8 +591,7 @@ A single client, whether intentionally malicious or simply due to a bug in its c
 
 While OpenAPI 3.1 doesn't include native rate-limiting objects, extension properties (prefixed with `x-`) provide a standard mechanism. The best practice is defining custom `x-rate-limit` extensions at the operation level:
 
-```yaml
-# openapi.yaml
+```yaml {% title="openapi.yaml" %}
 paths:
   /auth/login:
     post:
@@ -557,7 +644,7 @@ rules:
     severity: error
 ```
 
-This approach provides dual benefits: [Redocly's API Reference Docs](https://redocly.com/reference-docs) automatically displays the `x-rate-limit` object in generated documentation, making policies transparent to API consumers, while governance rules ensure sensitive endpoints never lack rate-limiting policies.
+This approach provides dual benefits: [Redocly's Redoc](https://redocly.com/redoc) automatically displays the `x-rate-limit` object in generated documentation, making policies transparent to API consumers, while governance rules ensure sensitive endpoints never lack rate-limiting policies.
 
 ### Why Rate Limiting Is Critical
 
@@ -793,7 +880,6 @@ hey -z 10s -q 50 -c 50 https://api.example.com/api/resource
 
 > Another insight: "Rate limiting on auth endpoints is non-negotiable. We set 5/min per IP and per account, and alert when bypass attempts appear."
 
-<a id="monitoring-observability"></a>
 ## Monitoring and Observability
 
 ### TLS Monitoring
@@ -862,7 +948,6 @@ class RateLimitMetrics:
         return (blocked / total) * 100 if total > 0 else 0
 ```
 
-<a id="faq"></a>
 ## Frequently Asked Questions
 
 ### What is design-first API security?
@@ -880,7 +965,6 @@ Yes, OpenAPI 3.1 supports all four security areas: TLS enforcement through serve
 ### What's the difference between authentication and authorization in APIs?
 Authentication verifies *who* the user is (like checking an ID card), while authorization determines *what* they can do (like checking permissions). Both are essential for API security, and OpenAPI provides security schemes to define and enforce both concepts through your specification.
 
-<a id="resources"></a>
 ## Resources
 
 - **[OWASP API Security Top 10](https://owasp.org/www-project-api-security/)** - Complete vulnerability guide including injection and resource consumption attacks
