@@ -1,6 +1,7 @@
 # Add color-mode-specific images
 
-If you're working in React, you can add an image with multiple, color-mode-specific versions that automatically changes with the color mode. This capability is only supported in React code.
+If you're working in React, you can add an image with multiple, color-mode-specific versions that automatically changes with the color mode.
+This capability is only supported in React code.
 
 ## Before you begin
 
@@ -13,9 +14,11 @@ Make sure you have the following before you begin:
 
 To get your project ready for testing color-mode-specific images:
 
-1. From the root of your project, create a new directory and React page. For example, `color-mode-images/index.page.tsx`.
+1. From the root of your project, create a new directory and React page.
+   For example, `color-mode-images/index.page.tsx`.
 
-2. Add your image files (at least two) to the directory you just created. Here's an example file structure:
+2. Add your image files (at least two) to the directory you just created.
+   Here's an example file structure:
     ```treeview
     your-awesome-project/
     ├── color-mode-images/
@@ -59,7 +62,8 @@ To add an image that switches with color mode:
     // ...
     ```
 
-2. Create a single, comma-separated string that contains the images and the color mode it corresponds with. It should follow this pattern: `<image> <color-mode>, <image> <color-mode>`.
+2. Create a single, comma-separated string that contains the images and the color mode it corresponds with.
+   It should follow this pattern: `<image> <color-mode>, <image> <color-mode>`.
 
 3. Pass the list of images and color-modes to the `Image` component using the `srcSet` property, as in the following completed example:
     ```javascript
@@ -79,7 +83,9 @@ To add an image that switches with color mode:
     }
     ```
 
-In this example, the image changes when users toggle between color modes. You can see the working implementation below. Try changing the color mode.
+In this example, the image changes when users toggle between color modes.
+You can see the working implementation below.
+Try changing the color mode.
 
 {% img srcSet="./images/sun.png light, ./images/moon.png dark" alt="sun and moon" width="200" height="" /%}
 

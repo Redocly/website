@@ -52,7 +52,8 @@ To verify that source maps are working:
 
 1. Click the **Sources** tab in the developer tools.
 
-1. Open the section named after your preview URL (default is `127.0.0.1:4000`). This is where your source files should appear.
+1. Open the section named after your preview URL (default is `127.0.0.1:4000`).
+   This is where your source files should appear.
 
 1. Open the `index.page.tsx` file and set a breakpoint by clicking the line with `return <Home />`.
 
@@ -72,7 +73,8 @@ The following list provides some examples of how you can use source maps for mor
 
 - **Follow console logs** - When using `console.log()`, the console output links back to the source code location.
 
-- **Edit and continue execution** - Some browsers support editing the source code inside hte developer tools. The changes are temporary, but can be useful for quick tests.
+- **Edit and continue execution** - Some browsers support editing the source code inside hte developer tools.
+  The changes are temporary, but can be useful for quick tests.
 
 Remember to disable source maps when you're done debugging to restore performance.
 

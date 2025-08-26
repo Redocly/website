@@ -83,16 +83,18 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 - **REQUIRED.** Configure events that start the job.
 
 ---
-  
+
 - inputs
-- Map [string, JSON Schema object]
-- Defines the JSON Schema object representing the input parameters used by the Arazzo Description.
+- Map[string, object]
+- Map of strings to JSON schema objects used to define the input parameters used by the Arazzo Description.
 
 ---
 
 - servers
-- Map [string, Source Description object]
-- Define servers for the job. Used to override the server URL for a specific source description name in the Arazzo Description's `sourceDescriptions` object.
+- Map [string, object]
+- Map of strings to source description objects.
+  Define servers for the job.
+  Used to override the server URL for a specific source description name in the Arazzo Description's `sourceDescriptions` object.
 
 ---
 
@@ -292,13 +294,10 @@ reunite:
         contentTypeCheck: error
 ```
 
-## Related options
-
-- You can set this option by environment (preview, development, production) using the [`env` option](env.md), to allow builds to continue for development or preview builds, but not for production builds.
-- Grant access to Reunite by teams using the [`rbac`](rbac.md) configuration reference documentation.
-
 ## Resources
 
 - **[Reunite platform](../reunite/reunite.md)** - Explore Redocly's cloud platform for creating, editing, previewing, and deploying API documentation projects with collaborative features
 - **[Configure Respect Monitoring](../reunite/project/respect-monitoring/configure-respect-monitoring.md)** - Use reunite configuration options to track API performance and reliability with automated monitoring workflows
 - **[Manage Respect Monitoring](../reunite/project/respect-monitoring/manage-respect-monitoring.md)** - Subscribe to notifications and manage monitoring settings for individual workflows and API endpoints
+- **[Environment configuration](env.md)** - Set configuration options by environment to allow builds for development or preview while maintaining strict production standards
+- **[RBAC configuration](rbac.md)** - Grant access to Reunite features and projects by teams using role-based access control for comprehensive permission management

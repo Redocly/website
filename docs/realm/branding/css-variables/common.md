@@ -414,7 +414,7 @@ List of CSS variables that are reused in other CSS variables.
 
 --border-color-primary: var(--color-warm-grey-3);
 --border-color-secondary: var(--color-warm-grey-2);
---border-color-invers: var(--color-warm-grey-10);
+--border-color-inverse: var(--color-warm-grey-10);
 ```
 
 </details>

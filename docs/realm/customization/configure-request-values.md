@@ -64,8 +64,10 @@ The context parameter includes:
 - `userClaims`: Information about the authenticated user and their original IdP tokens (optional)
   - `email`: User email
   - `name`: User name
-  - `federatedAccessToken`: Access token of the original identity provider. Requires `REDOCLY_OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
-  - `federatedIdToken`: ID token of the original identity provider. Requires `REDOCLY_OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
+  - `federatedAccessToken`: Access token of the original identity provider.
+    Requires `REDOCLY_OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
+  - `federatedIdToken`: ID token of the original identity provider.
+    Requires `REDOCLY_OAUTH_USE_INTROSPECT` to be set to `true` in the environment variables.
 - `info`: OpenAPI info object
 - `operation`: Details about the current API operation
   - `name`: Operation name
@@ -134,7 +136,8 @@ Here's how merging works:
 
 ### Parameters
 
-For headers, query parameters, path parameters, and cookies, configured values update the `example` field of matching parameters. The parameter must already exist in your OpenAPI description.
+For headers, query parameters, path parameters, and cookies, configured values update the `example` field of matching parameters.
+The parameter must already exist in your OpenAPI description.
 
 ### Request body
 
@@ -207,7 +210,8 @@ The resulting merged example would be:
 
 ## Configure server-specific request values
 
-You can configure different request values for different servers defined in your OpenAPI description. This allows you to set server-specific configurations (for development, staging, production, etc.) based on server URLs.
+You can configure different request values for different servers defined in your OpenAPI description.
+This allows you to set server-specific configurations (for development, staging, production, etc.) based on server URLs.
 
 The `configure.ts` file supports returning server-specific request values using the `ConfigureServerRequestValues` type, which maps server URLs to specific configurations.
 

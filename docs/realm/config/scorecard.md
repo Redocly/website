@@ -63,7 +63,8 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 
 - extends
 - [string]
-- Inherit configurations. In case of conflict, priority goes to configurations further down the list.
+- Inherit configurations.
+  In case of conflict, priority goes to configurations further down the list.
   Finally, explicit declarations inline takes precedence over configurations inherited through the extends feature.
   Built-in configurations include recommended and minimal.
 
@@ -71,7 +72,8 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 
 - rules
 - [Rule Object](https://redocly.com/docs/cli/configuration/rules)
-- Change the severity level of any rules in your extended configurations. Some rules may also receive additional configurations.
+- Change the severity level of any rules in your extended configurations.
+  Some rules may also receive additional configurations.
 
 {% /table %}
 
@@ -98,7 +100,8 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 ---
 - rules
 - [Rule Object](https://redocly.com/docs/cli/configuration/rules)
-- Customize rules for the target. Useful for disabling rules based on the metadata.
+- Customize rules for the target.
+  Useful for disabling rules based on the metadata.
 
 {% /table %}
 
@@ -130,7 +133,8 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 
 - _(name of metadata key)_
 - string
-- Specify the exact value of the metadata key to match against. Also supports ISO 8601 date range.
+- Specify the exact value of the metadata key to match against.
+  Also supports ISO 8601 date range.
   Specify a string with a leading and trailing slash to match against a regex.
 
 {% /table %}
@@ -317,12 +321,9 @@ scorecard:
     - "**/*.yaml"
 ```
 
-## Related options
-
-- Check out the different ways you can customize the behavior and appearance of integrated API documentation on the [OpenAPI reference](./openapi/index.md) page.
-- Learn more about the different ways you can configure an API catalog, using the [Catalog reference](./catalog-classic.md).
-
 ## Resources
 
 - **[Scorecard feature overview](../reunite/project/scorecard.md)** - Understand what scorecards display, how to access reports, and their role in API quality management
 - **[Configure scorecard](../reunite/project/configure-scorecard.md)** - Add Redocly built-in or custom rulesets to scorecards for comprehensive API quality assessment and tracking
+- **[OpenAPI reference](./openapi/index.md)** - Customize the behavior and appearance of integrated API documentation for comprehensive scorecard integration
+- **[Catalog reference](./catalog-classic.md)** - Configure an API catalog with different customization options for effective scorecard management

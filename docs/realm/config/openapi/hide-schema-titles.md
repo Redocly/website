@@ -27,15 +27,16 @@ The `hideSchemaTitles` option allows the schema field **title** to be hidden.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* hideSchemaTitles
-* boolean
-* Hides the schema title next to the type. Defaults to `false`.
+- hideSchemaTitles
+- boolean
+- Hides the schema title next to the type.
+  Defaults to `false`.
 
 {% /table %}
 

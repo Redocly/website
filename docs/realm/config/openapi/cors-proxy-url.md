@@ -15,15 +15,15 @@ The `corsProxyUrl` option allows using a custom CORS proxy server.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* corsProxyUrl
-* string
-* The value can be the Redocly CORS proxy URL (https://cors.redoc.ly) or the URL of a custom CORS proxy server.
+- corsProxyUrl
+- string
+- The value can be the Redocly CORS proxy URL (https://cors.redoc.ly) or the URL of a custom CORS proxy server.
 
 
 {% /table %}

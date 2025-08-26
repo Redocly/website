@@ -54,7 +54,8 @@ To insert custom scripts in the head or body of a page.
 
 - inline
 - boolean
-- Inlines the script content into the page. Improves performance for small scripts.
+- Inlines the script content into the page.
+  Improves performance for small scripts.
   Default value: `false`.
 
 ---

@@ -11,4 +11,8 @@ Source is available and limited for easy security analysis and review.
 
 ## API discovery
 
-Find APIs in your organization. Hundreds? Thousands? Tens of thousands of repositories? Find all of your organizations APIs.
+Find APIs in your organization.
+Hundreds?
+Thousands?
+Tens of thousands of repositories?
+Find all of your organizations APIs.

@@ -16,7 +16,8 @@ For information on how to add AsyncAPI description files to your project, see: [
 To migrate to native support for AsyncAPI documentation, see: [Migrate to built-in AsyncAPI docs](../content/api-docs/add-asyncapi-docs-deprecated-plugin.md#migrate-to-built-in-asyncapi-docs).
 {% /admonition %}
 
-Customize the behavior and appearance of AsyncAPI documentation. Requires an AsyncAPI definition.
+Customize the behavior and appearance of AsyncAPI documentation.
+Requires an AsyncAPI definition.
 
 ## Options
 
@@ -29,37 +30,38 @@ Customize the behavior and appearance of AsyncAPI documentation. Requires an Asy
 ---
 
 - schemaId
-- String
-- Schema ID. Defaults to `asyncapi`.
+- string
+- Schema ID.
+  Defaults to `asyncapi`.
 
 ---
 
 - hideInfo
-- Boolean
+- boolean
 - Set to `true` to hide info section including API title.
 
 ---
 
 - hideOperations
-- Boolean
+- boolean
 - Set to `true` to hide Operations section
 
 ---
 
 - hideServers
-- Boolean
+- boolean
 - Set to `true` to hide Servers section
 
 ---
 
 - hideMessages
-- Boolean
+- boolean
 - Set to `true` to hide Messages section
 
 ---
 
 - hideSchemas
-- Boolean
+- boolean
 - Set to `true` to hide Schemas section
 
 {% /table %}

@@ -72,21 +72,36 @@ The navbar is a good location for top-level category or frequently-used links.
 
 - linkedSidebars
 - [string]
-- Array of relative paths to sidebar files. This option will add the navbar item to a sidebar's breadcrumbs. Only effective for top-level navbar items.
+- List of relative paths to sidebar files.
+  This option adds the navbar item to a sidebar's breadcrumbs.
+  Only effective for top-level navbar items.
 
 ---
 
 - icon
 - string
-- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
-  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
-  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
+- Either:
+  - A [Font Awesome](https://fontawesome.com/icons) icon name.
+    Realm has the following icon packs built in: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
+    The icons automatically adjust their colors when users change the color mode.
+
+    To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
+    To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+
+    **Examples:** `book`, `duotone book`, `brands github`
+
+    Using other prefixes, including the `fa-` prefix, causes the icon to not render.
+  - Relative path to an icon image file.
+
+    **Example:** `./images/config-icon.svg`
+
 
 ---
 
 - external
 - boolean
-- Open link in new browser tab. Default is `false`.
+- Open link in new browser tab.
+  Default is `false`.
 
 ---
 
@@ -151,21 +166,35 @@ The navbar is a good location for top-level category or frequently-used links.
 
 - icon
 - string
-- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
-  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
-  Example: `book`, `duotone book`, `brands github`, `./images/config-icon.svg`.
+- Either:
+  - A [Font Awesome](https://fontawesome.com/icons) icon name.
+      Realm has the following icon packs built in: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
+      The icons automatically adjust their colors when users change the color mode.
+
+      To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
+      To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+
+      **Examples:** `book`, `duotone book`, `brands github`
+
+      Using other prefixes, including the `fa-` prefix, causes the icon to not render.
+    - Relative path to an icon image file.
+
+      **Example:** `./images/config-icon.svg`
 
 ---
 
 - external
 - boolean
-- Open link in new browser tab. Default is `false`.
+- Open link in new browser tab.
+  Default value: `false`.
 
 ---
 
 - linkedSidebars
 - [string]
-- Array of relative paths to sidebar files. This option will add navbar item to sidebar's breadcrumbs. Only effective for top-level navbar items.
+- List of relative paths to sidebar files.
+  This option adds navbar item to sidebar's breadcrumbs.
+  Only effective for top-level navbar items.
 
 {% /table %}
 
@@ -306,4 +335,3 @@ navbar:
 - **[Localization](./l10n.md)** - Configure navbar labels and text for multiple languages to support international audiences
 - **[Front matter configuration](./front-matter-config.md)** - Use front matter to show or hide the navbar on individual pages for custom page layouts
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
-

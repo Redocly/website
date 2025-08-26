@@ -20,8 +20,10 @@ Organization roles control access to your Redocly organization and are provided 
 
 Redocly recognizes these special role names from your identity provider:
 
-- **`redocly.owners`** (`owner`): Has permission to everything, including the ability to invite people, change access controls, and review feedback. Has admin access to all organization projects by default.
-- **`redocly.members`** (`member`): Can see other members of the organization. Cannot change access controls, invite people, see feedback, or manage organization settings.
+- **`redocly.owners`** (`owner`): Has permission to everything, including the ability to invite people, change access controls, and review feedback.
+  Has admin access to all organization projects by default.
+- **`redocly.members`** (`member`): Can see other members of the organization.
+  Cannot change access controls, invite people, see feedback, or manage organization settings.
 - **`redocly.billing`** (`billing`): Can manage billing of the organization.
 - **`redocly.viewers`** (`viewer`): Has read-only permission and restricted access.
 
@@ -40,7 +42,9 @@ Organization roles are assigned differently depending on your authentication met
 
 ### Special roles
 
-- **`committer`**: Automatically assigned to users who commit content to the project through an integrated Git connection or remote content source. You cannot assign the committer role; it can only be automatically assigned. Users with the committer role cannot access Reunite.
+- **`committer`**: Automatically assigned to users who commit content to the project through an integrated Git connection or remote content source.
+  You cannot assign the committer role; it can only be automatically assigned.
+  Users with the committer role cannot access Reunite.
 
 {% admonition type="warning" name="Duplicate users" %}
 Users who commit content to your project either through an integrated Git connection of remote content source are automatically assigned a committer role and are displayed on your **People** page.

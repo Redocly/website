@@ -1,31 +1,24 @@
 # Get started locally
 
-This guide gets you started with a Redocly project in local development mode.
+Create and preview a Redocly documentation project on your local machine.
+This guide shows you how to set up a project, add content, configure navigation, and customize styling.
 
 ## Before you begin
 
-To work locally with a Redocly project, you need to:
+Before you begin, you need:
 
-- make sure you have [NodeJS](https://nodejs.org/en), v22.12.0 or later (alternatively -- v20.19.0 or later).
-- [install Redocly CLI](https://redocly.com/docs/cli/installation/).
-
-{% admonition type="info" name="About Redocly CLI" %}
-Redocly CLI is an open source command-line tool for working with APIs.
-Visit the [Redocly CLI documentation](https://redocly.com/docs/cli/) to learn more about what it can do.
-{% /admonition %}
-
-Once the CLI is installed, it's time to create some content.
+- [Node.js](https://nodejs.org/en) LTS version or later.
 
 ## Start with an index page
 
 The landing page for each directory in your project is `index.md`.
 Create a fresh directory for your new project, and then add a file named `index.md`.
 
-Either create your own content, or you can use the following Markdown in your `index.md` file:
+Create your own content or use the following Markdown in your `index.md` file:
 
 {% partial file="../_partials/get-started/index-sample-content.md" /%}
 
-Content is created, let's see how it looks.
+Preview your content.
 
 {% admonition type="info" name="Use source control" %}
 Using a particular source control is outside of the scope of this guide, but it's recommended to add your files to a Git repository or equivalent, and commit your changes after each step as you go along.
@@ -38,7 +31,7 @@ Redocly has a local development server that you can use to preview your work on 
 Start the preview by running the following command in your terminal, in your project directory:
 
 ```bash
-redocly preview
+npx @redocly/cli preview
 ```
 
 You'll see some output while the project is building.
@@ -46,15 +39,15 @@ When it is ready, it will be available on <http://localhost:4000>.
 
 ## Add more pages, and a sidebar
 
-One page isn't very exciting, so let's add a few more.
+Add more pages to create a complete site.
 
 {% admonition type="info" name="Supported formats" %}
-These examples use Markdown, but [Markdoc](https://markdoc.dev/) is also supported.
-If you're new to Markdoc, visit our [Markdoc learning hub](https://redocly.com/learn/markdoc) for more information and lots of examples.
+These examples use Markdown, but Markdoc is also supported.
+Learn more about [Markdown in Redocly](../content/markdown.md) for all available formatting options and Markdoc features.
 {% /admonition %}
 
 Create files named `style-guide.md` and `about.md`.
-Then either create your own content there, or borrow the following examples:
+Add your own content or use the following examples:
 
 {% partial file="../_partials/get-started/style-guide-sample-content.md" /%}
 
@@ -82,23 +75,23 @@ For example, edit the file as shown in the following example to change the link 
 ```
 
 If you don't specify a label, the page title is used.
-Take some time to add a few more pages, and change the navigation bar by re-ordering pages and changing the page labels.
+Add more pages and customize navigation by reordering items and changing labels.
 There's more information and examples in the documentation pages for [working with sidebars](../navigation/sidebars.md).
 
 ## Fine-tune your configuration
 
-Things look pretty good already, but there are plenty more ways that you can adjust your project to meet your needs.
+Customize your project further with configuration options.
 All the configuration for Redocly projects is done using [configuration options](../config/index.md) in a file named `redocly.yaml`.
 By changing the settings in this file, you can adjust the project behavior to fit your use case.
 
 Create a file called `redocly.yaml`, then try the following examples (or pick some other configuration settings) to change how the site looks.
-Change one thing at a time and check the preview as you go along.
+Make changes incrementally and preview each update.
 
-1. When you publish a site, it will need to fit your company's brand.
+1. Published sites should match your company's brand.
    Styling is covered in a later section, but as a first step let's configure a logo file to use.
 
    Create an `images/` folder and add your logo there.
-   If you don't have a logo file handy, copy this one and put it in your new folder.
+   Use this sample logo if you don't have your own:
 
    ![Redocly logo](./images/logo.png)
 
@@ -110,7 +103,7 @@ Change one thing at a time and check the preview as you go along.
    ```
 
 1. For bigger or more complex projects, the breadcrumbs feature displays above each page and helps users to understand where they are in the site structure.
-   However this might be too much for our small getting started project, so let's turn them off.
+   Turn off breadcrumbs for simpler projects:
 
     ```yaml {% title="redocly.yaml" %}
     breadcrumbs:
@@ -163,9 +156,9 @@ Many aspects of the API documentation are configurable, visit the [openapi confi
 
 ## Style to suit
 
-Your company brand identity is an important part of anything you publish, so in this section you will learn how to style your new site.
-Realm uses CSS variables for most of the styling on the site.
-This enables you to set a few key variables and deliver a consistent experience throughout the project - then adjust the specific details as needed.
+Apply your company brand identity by customizing the site styling.
+Redocly uses [CSS variables](../branding/customize-styles.md) for most of the styling on the site.
+Set key variables to deliver consistent styling throughout the project.
 
 To customize the styles:
 
@@ -173,7 +166,7 @@ To customize the styles:
 - Add a `styles.css` file in the @theme folder.
 - Add entries to `style.css` to override any CSS variables you'd like to change.
 
-For example, if your company brand color is green, set that using something like the following example:
+For example, set your company brand color:
 
 ```css {% title="@theme/styles.css" %}
 :root {
@@ -181,9 +174,9 @@ For example, if your company brand color is green, set that using something like
 }
 ```
 
-Setting a CSS variable means that the change is used consistently through the site, for example, try setting `--font-size-base` to different values and see that all the text scales as a result.
-Another quick way to bring a brand identity to the site is to set the background color on the navbar and the footer you just created.
-The following example shows that in action:
+CSS variables apply changes consistently throughout the site.
+For example, changing `--font-size-base` scales all text proportionally.
+Set background colors on the navbar and footer to reinforce brand identity:
 
 ```css {% title="@theme/styles.css" %}
 :root {
@@ -202,15 +195,24 @@ Your site looks a bit different to the default, as you can see in the following 
 
 Explore the [CSS variables reference](../branding/css-variables/index.md) or inspect your site with web developer tools in your browser to identify the variables to change.
 
-## Publish to your site
+## Publish your site
 
-The preview feature is not designed (or, indeed, licensed) for production use, so once you're happy with how everything looks, go ahead and publish the content to Redocly.
-The details will depend on the tools and platforms you use, but as a general overview:
+The preview feature is not licensed for production use.
+Publish your content to Redocly when you're satisfied with the results:
 
-1. Add your files into a Git repository if you haven't already.
+1. Add your files to a Git repository if you haven't already.
 
-1. Push the files to your chosen Git provider (we support GitHub, GitLab, Azure DevOps and others).
+1. Push the files to your Git provider (we support GitHub, GitLab, Azure DevOps, and Bitbucket).
 
 1. Log in to Reunite and create a new project; [connect to your Git remote repository](../reunite/project/connect-git/connect-git-provider.md).
 
-1. The project is created and your site is built - go and check it out!
+1. Your project is created and your site is built automatically.
+
+## Resources
+
+- **[Multi-sidebar example project](https://github.com/Redocly/warp-multi-sidebars)** - Complete template project demonstrating API documentation with multiple sidebars, guides, tutorials, and advanced navigation
+- **[Configuration options](../config/index.md)** - Complete reference for all `redocly.yaml` configuration settings and customization options
+- **[Working with sidebars](../navigation/sidebars.md)** - Advanced sidebar configuration including nested navigation, groups, and custom labels
+- **[CSS variables reference](../branding/css-variables/index.md)** - Complete dictionary of available CSS variables for styling customization
+- **[OpenAPI configuration](../config/openapi/index.md)** - Configure API reference documentation rendering and behavior options
+- **[Connect Git provider](../reunite/project/connect-git/connect-git-provider.md)** - Set up automatic builds and deployment from your Git repository

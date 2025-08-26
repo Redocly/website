@@ -71,7 +71,8 @@ You can add images to to Markdown files in the following ways:
 
 - Drag an image file from the file tree and drop it into an open Markdown file.
 - Drag an image file directly from your computer and drop it into an open Markdown file. \
-  The image is automatically saved to the closest `images` folder if one exists. If there isn't an `images` folder in the same location as the Markdown file, one is created.
+  The image is automatically saved to the closest `images` folder if one exists.
+  If there isn't an `images` folder in the same location as the Markdown file, one is created.
 - Manually type the image link in the file.
 
 ## Commit updates

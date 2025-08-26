@@ -18,7 +18,9 @@ The `rules` block can be used at the root of a configuration file, or inside an 
 
 - {rule name}
 - [Rule object](#rule-object)
-- **REQUIRED**. Add as many rule entries as you like. These keys must be built-in rules (for example `security-defined`), configurable rules that you declare here (for example `rule/my-custom-rule`), or a rule from a plugin (for example `my-plugin/add-awesome`).
+- **REQUIRED**.
+  Add as many rule entries as you like.
+  These keys must be built-in rules (for example `security-defined`), configurable rules that you declare here (for example `rule/my-custom-rule`), or a rule from a plugin (for example `my-plugin/add-awesome`).
 
 {% /table %}
 
@@ -34,7 +36,8 @@ The `rules` block can be used at the root of a configuration file, or inside an 
 
 - severity
 - string
-- Severity level of this rule. Must be one of `error`, `warn`, or `off`.
+- Severity level of this rule.
+  Must be one of `error`, `warn`, or `off`.
 
 ---
 
@@ -42,13 +45,15 @@ The `rules` block can be used at the root of a configuration file, or inside an 
 - string
 - Optional custom message for this rule.
   Example: `My Error Description. {{message}}`.
-  The {{message}} placeholder renders with the default error message for the rule. Include the {{message}} placeholder if you want to provide the user with your custom message as well as the default error message for the rule.
+  The {{message}} placeholder renders with the default error message for the rule.
+  Include the {{message}} placeholder if you want to provide the user with your custom message as well as the default error message for the rule.
 
 ---
 
 - {additional properties}
 - any
-- Some rules allow additional configuration, check the details of each rule to find out the values that can be supplied here. For example the [`boolean-parameter-prefixes` rule](https://redocly.com/docs/cli/rules/oas/boolean-parameter-prefixes) supports an additional option of `prefixes` that accepts an array of strings.
+- Some rules allow additional configuration, check the details of each rule to find out the values that can be supplied here.
+  For example the [`boolean-parameter-prefixes` rule](https://redocly.com/docs/cli/rules/oas/boolean-parameter-prefixes) supports an additional option of `prefixes` that accepts an array of strings.
 
 {% /table %}
 

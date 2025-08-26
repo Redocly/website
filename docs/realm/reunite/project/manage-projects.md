@@ -12,8 +12,10 @@ If you are logged in to Reunite and have an [Owner organization role](../../acce
 1. In Reunite's top-left corner, click your organization's icon, then on the bottom of the list of projects, click **Create new project**.
 2. In the **Create project** modal, select **Choose template** for a template option.\
     You can preview a template by clicking the eye icon on a template card.
-3. Enter the name for your project. Reunite automatically fills the **Project domain** field and checks if the domain name is already in use.
-4. (Optional) Edit the project domain to your preferences. The **Project domain** must be unique within your organization.
+3. Enter the name for your project.
+   Reunite automatically fills the **Project domain** field and checks if the domain name is already in use.
+4. (Optional) Edit the project domain to your preferences.
+   The **Project domain** must be unique within your organization.
 5. Click **Create project**.
 
 Reunite creates your project and takes you to the project's **Editor** page.

@@ -19,15 +19,15 @@ The `schemaDefinitionsTagName` option is a string that sets the tag name for sch
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* schemaDefinitionsTagName
-* string
-* Schema definition tag name.
+- schemaDefinitionsTagName
+- string
+- Schema definition tag name.
 
 {% /table %}
 

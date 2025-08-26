@@ -71,7 +71,9 @@ You can require SSO authentication for all members of your organization by selec
 Selecting this checkbox means that if you have `rbac` configured, users must log in with SSO credentials and if they do not have SSO credentials, they will lose access to the organization.
 
 {% admonition type="info" name="attention" %}
-Requiring SSO authentication does not require users to log in to your project. To require login to your project, you must configure `rbac` or `requiresLogin`. See [Configure RBAC](../../../access/index.md) or [requiresLogin](../../../config/requires-login.md) for more information.
+Requiring SSO authentication does not require users to log in to your project.
+To require login to your project, you must configure `rbac` or `requiresLogin`.
+See [Configure RBAC](../../../access/index.md) or [requiresLogin](../../../config/requires-login.md) for more information.
 {% /admonition %}
 
 ## Resources

@@ -17,7 +17,7 @@ The following example embeds a Redocly logo from an SVG file:
 Before the SVG renders on the document, it's optimized using [SVGO](https://github.com/svg/svgo).
 The `id` attribute is also prefixed with the relative file path to avoid conflicts.
 
-### Styling the SVG
+### Style the SVG
 
 SVGs can be styled using CSS rules added to your project, but you need a way to reference the SVG.
 There's two ways to add an identifier to the SVG:

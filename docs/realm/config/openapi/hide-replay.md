@@ -18,15 +18,16 @@ For example, you might want to hide the `Try it` button in your public API docum
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* hideReplay
-* boolean
-* Hide the `Replay` component that allows users to interactively send requests to an API. Defaults to `false`.
+- hideReplay
+- boolean
+- Hide the `Replay` component that allows users to interactively send requests to an API.
+  Defaults to `false`.
 
 {% /table %}
 

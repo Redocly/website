@@ -15,15 +15,15 @@ Add an array of `x-badges` to any Channel or Operation object.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* x-badges
-* [ [Badge Object](#badge-object) ]
-* A list of badges.
+- x-badges
+- [ [Badge Object](#badge-object) ]
+- A list of badges.
 
 {% /table %}
 
@@ -31,27 +31,32 @@ Add an array of `x-badges` to any Channel or Operation object.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* name
-* string
-*  **REQUIRED**. The text that displays in the badge.
+- name
+- string
+-  **REQUIRED**.
+  The text that displays in the badge.
 
 ---
 
-* position
-* string
-* The position of the badge in relation to the header. Possible values: `before`, `after`. The default value is `after`.
+- position
+- string
+- The position of the badge in relation to the header.
+  Possible values: `before`, `after`.
+  The default value is `after`.
 
 ---
 
-* color
-* string
-* The color of the badge. It can be defined in various formats such as color keywords, RGB, RGBA, HSL, HSLA, and Hexadecimal. The default value is `#1f7cff`.
+- color
+- string
+- The color of the badge.
+  It can be defined in various formats such as color keywords, RGB, RGBA, HSL, HSLA, and Hexadecimal.
+  The default value is `#1f7cff`.
 
 {% /table %}
 
@@ -81,4 +86,4 @@ channels:
 
 ## Resources
 
-- See a full [list of supported AsyncAPI extensions](./index.md).
+- **[Supported AsyncAPI extensions](./index.md)** - Complete list of all AsyncAPI extensions supported by Redocly for enhanced API documentation

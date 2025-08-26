@@ -112,7 +112,7 @@ To configure scorecard rulesets in separate files:
 1. Create a YAML file for each scorecard levels you want to add.
 2. In each of the files, add a `rules` object and a map of rules for this scorecard level.
   You can use any combination of Redocly's [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) or create [configurable rules](https://redocly.com/docs/cli/rules/configurable-rules).
-  
+
     Example:
 
     ```yaml {% title="api-ruleset-baseline.yaml" %}

@@ -112,13 +112,12 @@ userMenu:
       label: Settings
 ```
 
-## Related options
-
-- View options for adding more links to the navbar in the [`navbar`](./navbar.md) configuration reference.
-- Configure [`sso`](./sso.md) and either [`rbac`](./rbac.md) or [`requiresLogin`](./requires-login.md) to display the user menu in your navbar.
-
 ## Resources
 
 - **[Configure RBAC](../access/index.md)** - Configure role-based access control to manage user permissions and access levels for user menu functionality
 - **[Configure SSO](../reunite/organization/sso/configure-sso.md)** - Set up single sign-on integration to enable seamless user authentication and menu personalization
 - **[RBAC concepts](../access/rbac.md)** - Understand how role-based access control works in Redocly products for comprehensive user menu and permission management
+- **[Navbar configuration](./navbar.md)** - Add additional links to the navbar and configure navbar appearance to complement the user menu
+- **[SSO configuration](./sso.md)** - Configure SSO authentication required for user menu display and functionality
+- **[RBAC configuration](./rbac.md)** - Set up role-based access control as an alternative to requiresLogin for user menu access management
+- **[Requires login configuration](./requires-login.md)** - Configure login requirements as an alternative to RBAC for enabling user menu functionality

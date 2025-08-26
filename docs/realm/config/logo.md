@@ -102,11 +102,8 @@ logo:
   favicon: ./images/logos/favicon-example.svg
 ```
 
-## Related options
-
-- [navbar](navbar.md)
-
 ## Resources
 
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
 - **[Custom color modes](../branding/customize-color-modes.md#add-new-color-modes)** - Add custom color modes to support logo variations for different themes and branding needs
+- **[Navbar configuration](navbar.md)** - Configure navbar settings and appearance to complement your custom logo design and branding

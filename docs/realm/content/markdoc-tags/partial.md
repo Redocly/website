@@ -40,7 +40,8 @@ markdown:
     - shared-content
 ```
 
-You can add multiple folder names if you have multiple folders for storing partials. After adding the `partialsFolders` configuration, the default `_partials` folder name will no longer work unless explicitly included in the configuration.
+You can add multiple folder names if you have multiple folders for storing partials.
+After adding the `partialsFolders` configuration, the default `_partials` folder name will no longer work unless explicitly included in the configuration.
 
 **Folder requirements**
 
@@ -70,7 +71,8 @@ The `raw-partial` tag allows the included content to be treated as if it were wr
 
 **Reference links**
 
-Don't use [reference-style Markdown links](https://www.markdownguide.org/basic-syntax/#reference-style-links) inside the partial because they resolve incorrectly upon page load. For links inside a partial, absolute links are the best approach.
+Don't use [reference-style Markdown links](https://www.markdownguide.org/basic-syntax/#reference-style-links) inside the partial because they resolve incorrectly upon page load.
+For links inside a partial, absolute links are the best approach.
 
 ## Attributes
 
@@ -107,9 +109,9 @@ This example demonstrates using partials to add a Learning Resources section acr
 ```text {% title="/_partials/redocly-cli-resources.md" %}
 The following resources help you learn more about the Redocly CLI:
 
-* [Redocly CLI commands](/docs/cli/commands/index.md) - Learn the commands built into the CLI.
-* [Configure API linting](/docs/cli/guides/configure-rules.md) - Learn how to tailor the Redocly CLI linting for your own needs.
-* [Redocly CLI cookbook](https://github.com/Redocly/redocly-cli-cookbook) - Bite-sized example CLI customizations to inspire your own.
+- [Redocly CLI commands](/docs/cli/commands/index.md) - Learn the commands built into the CLI.
+- [Configure API linting](/docs/cli/guides/configure-rules.md) - Learn how to tailor the Redocly CLI linting for your own needs.
+- [Redocly CLI cookbook](https://github.com/Redocly/redocly-cli-cookbook) - Bite-sized example CLI customizations to inspire your own.
 ```
 
 **Example partial syntax:**

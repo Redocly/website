@@ -8,7 +8,9 @@ In OpenAPI 3.1, use an array of types and include `null` in the list.
 
 {% /admonition %}
 
-Use `x-nullable` in your OpenAPI 2.0 documents to mark schemas with the label `Nullable` in the API documentation. This indicates that the value of a particular property may be `null`. Add it to the `schema` OpenAPI object.
+Use `x-nullable` in your OpenAPI 2.0 documents to mark schemas with the label `Nullable` in the API documentation.
+This indicates that the value of a particular property may be `null`.
+Add it to the `schema` OpenAPI object.
 
 ## Location
 
@@ -18,15 +20,15 @@ Use the `x-nullable` extension in an Schema object.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* x-nullable
-* boolean
-* Marks schema as a nullable.
+- x-nullable
+- boolean
+- Marks schema as a nullable.
 
 {% /table %}
 
@@ -45,7 +47,7 @@ schemas:
 
 ## Resources
 
-- Check out the [Migration notes from OpenAPI 3.0 to 3.1](https://www.openapis.org/blog/2021/02/16/migrating-from-openapi-3-0-to-3-1-0) to learn more about the nullable changes in those versions.
-- Control which extensions are included in your API reference documentation with the [showExtensions configuration setting](../../../config/openapi/show-extensions.md).
-- See all [openapi configuration settings](../../../config/openapi/index.md).
-- See a full [list of supported OpenAPI extensions](./index.md).
+- **[Migration notes from OpenAPI 3.0 to 3.1](https://www.openapis.org/blog/2021/02/16/migrating-from-openapi-3-0-to-3-1-0)** - Learn about nullable changes and migration considerations between OpenAPI versions
+- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
+- **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
+- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation

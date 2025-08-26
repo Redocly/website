@@ -18,7 +18,8 @@ The AsyncAPI documentation plugin (`@redocly/portal-plugin-async-api`) uses an o
 When added to your project, this plugin automatically detects AsyncAPI specifications and includes them in the project as pages.
 To be detected, the specification files must have `.yaml` or `.json` extensions.
 
-The generated documentation page includes multiple sections: info, servers, operations, messages, and schemas. Each section can be hidden using configuration options.
+The generated documentation page includes multiple sections: info, servers, operations, messages, and schemas.
+Each section can be hidden using configuration options.
 
 ## Before you begin
 

@@ -106,7 +106,9 @@ export default function () {
       <About justifyContent="center">
           <SectionHeader>About Us</SectionHeader>
           <Description>
-            Visit our delightful farm of cool creatures, where cows roam, frogs leap, and flamingos dance. Our team is dedicated to crafting moo-velous solutions that make life as fun as a sunny day at the pond. We're ready to tackle new challenges with cutting-edge lily pad technology.
+            Visit our delightful farm of cool creatures, where cows roam, frogs leap, and flamingos dance.
+            Our team is dedicated to crafting moo-velous solutions that make life as fun as a sunny day at the pond.
+            We're ready to tackle new challenges with cutting-edge lily pad technology.
           </Description>
         <Flex justifyContent="center">
           <WideTile>

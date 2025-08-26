@@ -26,10 +26,10 @@ The following screenshot shows a code walkthrough with filters, an input, a togg
 
 Code walkthroughs are created using the following Markdoc tags:
 
-* [**Code Walkthrough:**](#syntax-and-usage) This tag is the main tag that encompasses the other tags creating the code walkthrough interface.
-* [**Step:**](./step.md) This tag organizes individual steps of your walkthrough enabling you to bind them to `chunks` in code snippets, highlighting those sections in the code as the users selects the steps.
-* [**Toggle:**](./toggle.md) This tag adds toggles allowing users to control the visibility of the displayed content and code snippets.
-* [**Input:**](./input.md) This tag adds input fields to the code walkthrough allowing users to customize code samples to meet their use case.
+- [**Code Walkthrough:**](#syntax-and-usage) This tag is the main tag that encompasses the other tags creating the code walkthrough interface.
+- [**Step:**](./step.md) This tag organizes individual steps of your walkthrough enabling you to bind them to `chunks` in code snippets, highlighting those sections in the code as the users selects the steps.
+- [**Toggle:**](./toggle.md) This tag adds toggles allowing users to control the visibility of the displayed content and code snippets.
+- [**Input:**](./input.md) This tag adds input fields to the code walkthrough allowing users to customize code samples to meet their use case.
 
 Additionally, use [conditions](#conditions-object) to selectively display parts of a code walkthrough based on context, and [chunk annotations](#chunk-annotations) to control the highlighting behavior of code snippets.
 
@@ -226,7 +226,8 @@ Configure a filter object to organize content and provide users a UI element for
 
 - items
 - [[Value object]](#value-object)
-- A reserved list of objects, each consisting of a `"value"` key and its value. This list renders as the items users can select to filter the walkthrough content.
+- A reserved list of objects, each consisting of a `"value"` key and its value.
+  This list renders as the items users can select to filter the walkthrough content.
 
 ---
 
@@ -278,7 +279,8 @@ Configure a filter object to organize content and provide users a UI element for
 
 ## Value object
 
-A reserved list of objects, each consisting of a `"value"` key and its value. This list renders as the items users can select to filter the walkthrough content.
+A reserved list of objects, each consisting of a `"value"` key and its value.
+This list renders as the items users can select to filter the walkthrough content.
 
 
 {% table %}

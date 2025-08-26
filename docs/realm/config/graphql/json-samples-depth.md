@@ -16,15 +16,16 @@ Use this option to set the depth to a comfortable default value for the data str
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* jsonSamplesDepth
-* number
-* Sets the default depth for rendering JSON payload samples. The default value is `1`.
+- jsonSamplesDepth
+- number
+- Sets the default depth for rendering JSON payload samples.
+  The default value is `1`.
 
 {% /table %}
 
@@ -39,13 +40,9 @@ graphql:
 
 Using this setting, the samples will show up to five levels of nested payload data.
 
-## Related options
-
-- [samplesMaxInlineArgs](./samples-max-inline-args.md) - Maximum number of inline arguments for samples.
-- [fieldExpandLevel](./field-expand-level.md) - Maximum depth of the `Return type` in the middle panel.
-- [graphql](./index.md) - Learn more about using the `graphql` configuration.
-
 ## Resources
 
 - **[GraphQL](https://graphql.org/)** - Official GraphQL specification and documentation for understanding query language fundamentals
 - **[GraphQL configuration](./index.md)** - Complete guide to GraphQL configuration options for customizing API reference documentation
+- **[Samples max inline arguments](./samples-max-inline-args.md)** - Configure the maximum number of inline arguments for samples to complement JSON payload depth settings
+- **[Field expand level](./field-expand-level.md)** - Set the maximum depth of the Return type in the middle panel for comprehensive data structure display

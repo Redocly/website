@@ -27,7 +27,7 @@ Example syntax:
   ---
 
   - prefixItems
-  - [[Breadcrumb object](#breadcrumb-object)]
+  - [[Breadcrumb object](#)]
   - A list of breadcrumb links to always be displayed first.
 
   {% /table %}
@@ -188,13 +188,13 @@ The following examples illustrate using rich text in Markdoc tables:
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* languages
+- languages
 *
   [language object]
 *
@@ -220,8 +220,8 @@ The following examples illustrate using rich text in Markdoc tables:
 
 ---
 
-* skipOptionalParameters
-* boolean
+- skipOptionalParameters
+- boolean
 *
   Excludes optional parameters (cookies, headers, query params) from the generated code samples.
   Defaults to `false`.
@@ -234,15 +234,15 @@ The following examples illustrate using rich text in Markdoc tables:
   ````markdown {% process=false %}
   {% table %}
 
-  * Option
-  * Type
-  * Description
+  - Option
+  - Type
+  - Description
 
   ---
 
-  * languages
-  * [language object]
-  * **REQUIRED.**
+  - languages
+  - [language object]
+  - **REQUIRED.**
     Array of language objects, one per language.
     The samples are displayed in the order that they are listed.
     Default array value is:
@@ -263,9 +263,9 @@ The following examples illustrate using rich text in Markdoc tables:
     ```
   ---
 
-  * skipOptionalParameters
-  * boolean
-  * Excludes optional parameters (cookies, headers, query params) from the generated code samples.
+  - skipOptionalParameters
+  - boolean
+  - Excludes optional parameters (cookies, headers, query params) from the generated code samples.
     Defaults to `false`.
 
   {% /table %}
@@ -276,14 +276,14 @@ The following examples illustrate using rich text in Markdoc tables:
 ### Example table without headings
 
 {% table %}
-* Heading 1
-* Heading 2
+- Heading 1
+- Heading 2
 ---
-* Row 1 Cell 1
-* Row 1 Cell 2
+- Row 1 Cell 1
+- Row 1 Cell 2
 ---
-* Row 2 Cell 1
-* Row 2 Cell 2
+- Row 2 Cell 1
+- Row 2 Cell 2
 {% /table %}
 
 **Example table without headings syntax:**
@@ -292,11 +292,11 @@ The following examples illustrate using rich text in Markdoc tables:
   ```markdown {% process=false %}
   {% table %}
   ---
-  * Row 1 Cell 1
-  * Row 1 Cell 2
+  - Row 1 Cell 1
+  - Row 1 Cell 2
   ---
-  * Row 2 Cell 1
-  * Row 2 cell 2
+  - Row 2 Cell 1
+  - Row 2 cell 2
   {% /table %}
   ```
 {% /markdoc-example %}

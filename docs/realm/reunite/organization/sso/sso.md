@@ -10,8 +10,8 @@ When users log in with an IdP, the default team and organization role assigned i
 
 You can add an instance of one or both of the two types of identity providers in Reunite:
 
-* **Corporate:** used to authenticate internal users into Reunite and projects.
-* **Guest:** used to authenticate external users into projects.
+- **Corporate:** used to authenticate internal users into Reunite and projects.
+- **Guest:** used to authenticate external users into projects.
 
 For each Reunite type, you can connect to your identity provider using either the SAML 2 or OpenID Connect protocol.
 
@@ -19,9 +19,9 @@ For each Reunite type, you can connect to your identity provider using either th
 
 When configuring the `redocly.yaml` configuration file for individual projects, you can add one or all of the three possible identity provider types:
 
-* `REDOCLY`: This value represents credentials managed by Redocly and allows users to log in with their Redocly password or social login providers, like Google.
-* `CORPORATE`: This value represents credentials for the IdP you added as a Corporate identity provider in Reunite.
-* `GUEST`: This value represents credentials for the IdP you added as a Guest identity provider in Reunite.
+- `REDOCLY`: This value represents credentials managed by Redocly and allows users to log in with their Redocly password or social login providers, like Google.
+- `CORPORATE`: This value represents credentials for the IdP you added as a Corporate identity provider in Reunite.
+- `GUEST`: This value represents credentials for the IdP you added as a Guest identity provider in Reunite.
 
 The values listed are the identity providers (IdPs), if added in Reunite, users can use to log in to the project.
 To use or combine specific identity providers, configure `sso` in the `redocly.yaml` file of the project.

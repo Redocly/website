@@ -27,7 +27,7 @@ The options here allow you to hide it if your site design doesn't require a side
 - hide
 - boolean
 - Specifies if the sidebar should be hidden.
-  Default: `false`.
+  Default value: `false`.
 
 {% /table %}
 
@@ -40,16 +40,11 @@ sidebar:
   hide: true
 ```
 
-## Related options
-
-- Configure the [footer](./footer.md)
-- Configure the [navbar](./navbar.md)
-
 ## Resources
 
 - **[Sidebar configuration guide](../navigation/sidebars.md)** - Complete guide to configuring sidebar navigation structure and content organization for optimal user experience
-
 - **[Navigation in Redocly projects](../navigation/navigation.md)** - Learn about navigation concepts and implementation strategies for effective site organization
 - **[Navigation elements overview](../navigation/index.md)** - Complete guidance on all navigation components and their configuration for optimal user experience
-- **[Sidebars.yaml reference](../navigation/sidebars.md)** - Detailed sidebar configuration syntax and practical examples for content organization
+- **[Footer configuration](./footer.md)** - Configure footer settings and appearance to complement sidebar design and overall site navigation
+- **[Navbar configuration](./navbar.md)** - Configure navbar settings and navigation elements to work seamlessly with your sidebar configuration
 

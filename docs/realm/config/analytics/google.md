@@ -25,7 +25,8 @@ Integrate Google Analytics 4 into Redocly project using the Google tag (gtag.js)
 
 - includeInDevelopment
 - boolean
-- Set this option to `true` to enable Google Analytics in development mode and preview builds. Default is `false`.
+- Set this option to `true` to enable Google Analytics in development mode and preview builds.
+  Default is `false`.
 
 ---
 
@@ -49,13 +50,15 @@ Integrate Google Analytics 4 into Redocly project using the Google tag (gtag.js)
 
 - head
 - boolean
-- Put tracking scripts in the head tag instead of body. Only allowed in root `redocly.yaml`.
+- Put tracking scripts in the head tag instead of body.
+  Only allowed in root `redocly.yaml`.
 
 ---
 
 - anonymizeIp
 - boolean
-- When present, the IP address of the sender will be masked.  Only allowed in root `redocly.yaml`.
+- When present, the IP address of the sender will be masked.
+  Only allowed in root `redocly.yaml`.
 
 ---
 
@@ -73,13 +76,16 @@ Integrate Google Analytics 4 into Redocly project using the Google tag (gtag.js)
 
 - cookieExpires
 - number
-- Cookie expiration time in seconds. The default value is `63072000` (two years). Only allowed in root `redocly.yaml`.
+- Cookie expiration time in seconds.
+  The default value is `63072000` (two years).
+  Only allowed in root `redocly.yaml`.
 
 ---
 
 - respectDNT
 - boolean
-- When set to `true`, Google Analytics will not be loaded at all for visitors that have "Do Not Track" enabled in their browser. Only allowed in root `redocly.yaml`.
+- When set to `true`, Google Analytics will not be loaded at all for visitors that have "Do Not Track" enabled in their browser.
+  Only allowed in root `redocly.yaml`.
 
 {% /table %}
 

@@ -1,16 +1,18 @@
 # Branding and customization
 
-Redocly provides multiple approaches to customize your documentation's appearance and functionality. Choose the approach that best fits your technical requirements and team capabilities.
+Redocly provides multiple approaches to customize your documentation's appearance and functionality.
+Choose the approach that best fits your technical requirements and team capabilities.
 
 ## Easy customization (configuration-based)
 
-Customize your project's appearance using configuration options in your `redocly.yaml` file. No CSS knowledge required.
+Customize your project's appearance using configuration options in your `redocly.yaml` file.
+No CSS knowledge required.
 
 ### Logo and branding
 - **Logo configuration** - Set logos for different color modes using the [`logo`](../config/logo.md) configuration
 - **Favicon** - Configure your site's favicon and browser tab appearance
 
-### Colors and themes  
+### Colors and themes
 - **Color modes** - Enable light/dark mode switching using [`colorMode`](../config/color-mode.md) configuration
 - **Basic color customization** - Set brand colors using CSS variables
 
@@ -22,7 +24,8 @@ Customize your project's appearance using configuration options in your `redocly
 
 ## Intermediate customization (CSS-based)
 
-Customize your project's appearance using CSS variables and custom stylesheets. Requires basic to intermediate CSS knowledge.
+Customize your project's appearance using CSS variables and custom stylesheets.
+Requires basic to intermediate CSS knowledge.
 
 ### Custom styling
 - **CSS variables** - Override [CSS variables](./css-variables/index.md) to customize colors, spacing, typography, and component appearance
@@ -31,7 +34,7 @@ Customize your project's appearance using CSS variables and custom stylesheets. 
 
 ### Component styling
 - **Typography customization** - [Customize fonts](./customize-fonts.md) with web fonts, custom font stacks, and advanced typography
-- **Color mode customization** - [Customize color modes](./customize-color-modes.md) with custom color schemes and mode-specific styling  
+- **Color mode customization** - [Customize color modes](./customize-color-modes.md) with custom color schemes and mode-specific styling
 - **Table styling** - [Customize table appearance](./customize-tables.md) with custom borders, colors, and layouts
 
 **When to use:** When you need more control over appearance than configuration allows, want to match specific brand guidelines, or need custom styling for specific components.
@@ -95,7 +98,8 @@ Add custom styling in `@theme/styles.css`:
 
 ## Advanced/Technical customization
 
-For complex customization needs that go beyond CSS styling. Requires React and/or advanced web development knowledge.
+For complex customization needs that go beyond CSS styling.
+Requires React and/or advanced web development knowledge.
 
 ### Component customization
 - **Component ejection** - [Eject and customize components](../customization/eject-components/index.md) like navbar, footer, search, or 404 pages for extensive brand customization
@@ -111,7 +115,7 @@ For complex customization needs that go beyond CSS styling. Requires React and/o
 **Extensive navbar branding**
 Eject the navbar component to add custom logo animations, additional navigation elements, or complex brand-specific layouts.
 
-**Custom footer with brand elements**  
+**Custom footer with brand elements**
 Eject the footer component to include custom brand messaging, additional links, social media integration, or newsletter signups.
 
 **Interactive landing pages**
@@ -122,13 +126,14 @@ Build Markdoc tags for interactive elements like product demos, calculators, or 
 
 **When to use:** When you need functionality that can't be achieved with CSS alone, require custom interactive elements, or need to integrate with external brand systems.
 
-## Getting started
+## Get started
 
 1. **Start with easy customization** - Configure your logo, colors, and basic branding through `redocly.yaml`
-2. **Add intermediate customization** - Use CSS variables and custom styles for more precise brand control  
+2. **Add intermediate customization** - Use CSS variables and custom styles for more precise brand control
 3. **Consider technical approaches** - Only when you need functionality beyond what CSS can provide
 
-Choose the approach that best fits your technical requirements and team capabilities. You can always start simple and add more advanced customization as your needs grow.
+Choose the approach that best fits your technical requirements and team capabilities.
+You can always start simple and add more advanced customization as your needs grow.
 
 ## Resources
 

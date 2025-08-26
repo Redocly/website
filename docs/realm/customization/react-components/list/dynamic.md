@@ -1,12 +1,15 @@
 # Dynamic imports
 
-The `dynamic` utility from `@redocly/theme` allows to load React components on demand. It supports both server-side rendering and client-only rendering modes, with customizable loading states.
+The `dynamic` utility from `@redocly/theme` allows to load React components on demand.
+It supports both server-side rendering and client-only rendering modes, with customizable loading states.
 
 ## Overview
 
 The `dynamic` function uses `React.lazy()` and `React.Suspense` with additional features for Redocly applications, automatically handling various export patterns and providing flexible SSR configuration options.
 
-Lazy loading is a strategy to identify resources as non-blocking (non-critical) and load these only when needed. It shortens the critical rendering path, which translates into reduced page load times. For more information about lazy loading strategies, see the [Lazy Loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Lazy_loading).
+Lazy loading is a strategy to identify resources as non-blocking (non-critical) and load these only when needed.
+It shortens the critical rendering path, which translates into reduced page load times.
+For more information about lazy loading strategies, see the [Lazy Loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Lazy_loading).
 
 ## Properties
 
