@@ -467,7 +467,7 @@ const ArrowIcon = styled.svg`
 `;
 
 const NavbarMenuItemDropdown = styled(Dropdown)`
-  height: 32px;
+  height: 10qpx;
 
   li {
     padding: 5px 10px 5px 12px;
