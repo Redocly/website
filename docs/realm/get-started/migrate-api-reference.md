@@ -168,8 +168,7 @@ The following table shows how to update some commonly used configuration options
 ---
 
 - `pagination`
-- Not supported.
-  This version of Redoc has a modern style of pagination, operations are divided into sections by tags.
+- Not supported. This version of Redoc has a modern style of pagination, operations are divided into sections by tags.
 
 ---
 

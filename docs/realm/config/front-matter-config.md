@@ -40,7 +40,7 @@ These options are available exclusively in front matter:
 ---
 
 - slug
-- string | [string]
+- string or [string]
 - Custom URL path for this page, instead of the default path based on folder and file names.
   Define multiple slugs to make content available at multiple URLs.
   Slugs can contain multiple segments (e.g., '/custom-pages/page-1').
@@ -125,10 +125,9 @@ When defined in front matter, they override the global configuration:
 ---
 
 - rbac
-- [Map[string, string]](./rbac.md#team-to-role-map)
-- Map of teams to roles.
-  Set access permissions for the page.
-
+- [team to role map](./rbac.md#team-to-role-map)
+- Set access permissions for the page. This option can contain only the map of teams to roles.
+  
 ---
 
 - [search](./search.md)

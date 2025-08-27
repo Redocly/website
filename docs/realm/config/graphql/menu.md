@@ -24,8 +24,7 @@ Use this option to make a large or complex GraphQL description easier for users 
 
 - groups
 - [[Menu groups object](#menu-groups-object)]
-- Add top-level groups for different areas of your GraphQL API.
-  Useful for larger GraphQL APIs to add structure to the documentation.
+- Add top-level groups for different areas of your GraphQL API. Useful for larger GraphQL APIs to add structure to the documentation.
 
 ---
 
@@ -37,9 +36,7 @@ Use this option to make a large or complex GraphQL description easier for users 
 
 - requireExactGroups
 - boolean
-- Requires every group to be defined.
-  If not, it results in an error.
-  Default: `false`.
+- Requires every group to be defined. If not, it results in an error. Default: `false`.
 
 {% /table %}
 
@@ -145,6 +142,10 @@ graphql:
 ```
 
 With this configuration in place, the sidebar shows the cart, product, customer, company and gift items under their own sections.
+
+## Related options
+
+- [graphql](./index.md) - Learn more about using `graphql` configuration.
 
 ## Resources
 

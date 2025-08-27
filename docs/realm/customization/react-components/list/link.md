@@ -24,8 +24,7 @@ import { Link } from '@redocly/theme/components/Link/Link';
 
 - `target`
 - enum (`_self` | `_blank`)
-- Specifies where to open the linked document.
-  Defaults to `_self`.
+- Specifies where to open the linked document. Defaults to `_self`.
 
 ---
 

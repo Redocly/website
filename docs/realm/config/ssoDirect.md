@@ -11,8 +11,7 @@ excludeFromSearch: true
 
 # `ssoDirect`
 
-Control identity and access with the `ssoDirect` configuration option.
-Allows more customization than [sso](./sso.md).
+Control identity and access with the `ssoDirect` configuration option. Allows more customization than [sso](./sso.md).
 
 {% admonition type="warning" name="Enterprise+" %}
 Available with Enterprise+.
@@ -30,7 +29,7 @@ Available with Enterprise+.
 ---
 
 - ssoDirect
-- Map[string, [IDP objects](#idp-object)]
+- Map of Identity provider objects [IDP objects](#idp-object)
 - Map of IDPs which can be [OIDC object](#oidc-object), or [SAML2 object](#saml2-object)
 
 {% /table %}
@@ -64,8 +63,7 @@ An IDP object can be one of the following types:
 
 - _additionalProperties_
 - any
-- Depends on the type value.
-  See [OIDC object](#oidc-object) and [SAML2 object](#saml2-object) for details.
+- Depends on the type value. See [OIDC object](#oidc-object) and [SAML2 object](#saml2-object) for details.
 
 {% /table %}
 
@@ -100,8 +98,7 @@ An IDP object can be one of the following types:
 - configuration
 - [OIDC Metadata object](#oidc-metadata-object)
 - **REQUIRED if `configurationUrl` property is missing.**
-  OpenID configuration.
-  You can copy-paste the content of the configuration endpoint to `configuration` property if your OpenID configuration URL is protected by some header-based authorization.
+  OpenID configuration. You can copy-paste the content of the configuration endpoint to `configuration` property if your OpenID configuration URL is protected by some header-based authorization.
   Mutually exclusive with `configurationUrl`.
 
 ---
@@ -123,9 +120,8 @@ An IDP object can be one of the following types:
 
 - pkce
 - boolean
-- Use [PKCE](https://oauth.net/2/pkce/) for the authorization code flow.
-  If `true`, the `clientSecret` is not required.
-  Default value: `false`.
+- Use [PKCE](https://oauth.net/2/pkce/) for the authorization code flow. If `true`, the `clientSecret` is not required.
+  Deafult value: `false`.
 
 ---
 
@@ -147,8 +143,7 @@ An IDP object can be one of the following types:
 
 - teamsClaimMap
 - object
-- Map of team claim values to team names. to team names.
-  Useful when the IdP team attribute values are not the same as the team names.
+- Map of team claim values to team names. to team names. Useful when the IdP team attribute values are not the same as the team names.
   Default value: {}
 
 ---
@@ -181,9 +176,7 @@ An IDP object can be one of the following types:
 
 - audience
 - [string]
-- An array of allowed OIDC audience values.
-  Will be matched against `aud` claim in OIDC ID token.
-  If not specified or is an empty array, all of the audiences are allowed.
+- An array of allowed OIDC audience values. Will be matched against `aud` claim in OIDC ID token. If not specified or is an empty array, all of the audiences are allowed.
 
 {% /table %}
 
@@ -246,8 +239,7 @@ The OIDC metadata object as documented in [OIDC specification](https://openid.ne
 
 - teamsAttributeMap
 - object
-- Map of team attribute values to team names.
-  Useful when the IdP team attribute values are not the same as the team names.
+- Map of team attribute values to team names. Useful when the IdP team attribute values are not the same as the team names.
   Default value: {}
 
 ---

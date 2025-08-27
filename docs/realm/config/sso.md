@@ -26,9 +26,9 @@ To require login to a project, [`rbac`](./rbac.md) or [`requiresLogin`](./requir
 ---
 
 - sso
-- [string]
+- array
 - List of identity provider types from Reunite.
-  Possible values: `REDOCLY`, `CORPORATE`, `GUEST`, or `[]`.
+  Values can include: REDOCLY, CORPORATE, or GUEST or `[]`
 
   Default value: `AUTO` - when no `sso` is defined, this special value is used.
   It redirects users to `GUEST` IdP if it's defined in Reunite.

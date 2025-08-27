@@ -291,7 +291,10 @@ developerOnboarding:
       apiBaseUrl: https://apim-dev.acme-inc.com
 ```
 
+## Related options
+
+- [sso](../sso.md)
+
 ## Resources
 
 - **[List of used Apigee API endpoints](./apigee-api-operations.md)** - Complete reference of Apigee API endpoints used by the developer onboarding feature for integration and troubleshooting
-- **[SSO configuration](../sso.md)** - Configure single sign-on authentication required for developer onboarding and app registration workflows

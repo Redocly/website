@@ -4,8 +4,7 @@ Secure your documentation with role-based access control (RBAC) to manage who ca
 
 ## Overview
 
-Redocly's access control system lets you protect sensitive documentation, restrict access to specific user groups, and manage permissions at the page and navigation level.
-Perfect for internal documentation, API keys, or content that should only be visible to specific teams.
+Redocly's access control system lets you protect sensitive documentation, restrict access to specific user groups, and manage permissions at the page and navigation level. Perfect for internal documentation, API keys, or content that should only be visible to specific teams.
 
 ## Authentication vs Authorization
 
@@ -57,7 +56,7 @@ Access control in Redocly operates on a role-based system where:
 3. **The system automatically filters** what each user can see based on their roles
 4. **Navigation adapts dynamically** to show only accessible content
 
-## Get started
+## Getting started
 
 1. **Set up roles** - Define the [user roles](./roles.md) needed for your organization and understand the difference between organization and project roles
 2. **Understand RBAC** - Learn the [RBAC concepts](./rbac.md) and security model including how teams, roles, and resources work together
