@@ -26,7 +26,7 @@ The `sortRequiredPropsFirst` option changes the order to display required fields
 - sortRequiredPropsFirst
 - boolean
 - Sort the required schema properties before the optional ones.
-  Default value: `false`.
+  Default value is `false`.
 
 {% /table %}
 

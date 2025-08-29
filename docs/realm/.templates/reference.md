@@ -42,6 +42,12 @@ Include explanatory information describing the result of the configuration.-->
 
 ## Examples
 
+<!--Related options
+-------------------
+
+Include a bulleted list of related reference documentation links.-->
+
+## Related options
 
 <!--Resources
 -------------

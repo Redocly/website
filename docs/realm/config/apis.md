@@ -59,10 +59,8 @@ If your project contains multiple APIs, you can use the `apis` configuration sec
 ---
 
 - output
-- string
-- Output file path.
-  When running `bundle` without specifying an API, the bundled API description is saved to this location.
-  Example: `docs/api.yaml`.
+- Output file path
+- When running `bundle` without specifying an API, the bundled API description is saved to this location.
 
 {% /table %}
 

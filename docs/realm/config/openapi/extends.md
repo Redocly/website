@@ -18,9 +18,9 @@ If there is no `redocly.yaml` configuration file, the [recommended ruleset](http
 
 ## Options
 
-The `extends` configuration is a list of strings.
+The `extends` configuration is an array of strings.
 
-The list is parsed in the order it is defined, so the later entries in the list overwrite the earlier ones.
+The array is parsed in the order it is defined, so the later entries in the array overwrite the earlier ones.
 
 ## Examples
 
