@@ -29786,17 +29786,3 @@ reunite:
         - Fixed login and invite acceptance for projects with enabled path prefixes.
         - Fixed uploading organization logos in `svg` format.
     dependencies: {}
-  v2025-08-29.2:
-    timestamp: 1756455463000
-    changes:
-      minor:
-        - Added automatic spam detection for newly created `feedback` entries based on content.
-      patch: []
-    dependencies: {}
-  v2025-08-29.3:
-    timestamp: 1756466182000
-    changes:
-      minor: []
-      patch:
-        - Removed default 30-day date range filter from feedback list. Updated date range presets to span entire days.
-    dependencies: {}
