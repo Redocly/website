@@ -29777,3 +29777,19 @@ reunite:
         - Added `In Review` and `Resolved` feedback statuses. Added internal comments to feedback.
       patch: []
     dependencies: {}
+  v2025-08-28.2:
+    timestamp: 1756366360000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.0.7`.
+        - Fixed login and invite acceptance for projects with enabled path prefixes.
+        - Fixed uploading organization logos in `svg` format.
+    dependencies: {}
+  v2025-08-29.2:
+    timestamp: 1756455463000
+    changes:
+      minor:
+        - Added automatic spam detection for newly created `feedback` entries based on content.
+      patch: []
+    dependencies: {}

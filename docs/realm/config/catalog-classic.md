@@ -57,6 +57,14 @@ You can configure multiple catalogs and set the link text, description, and filt
 
 ---
 
+- icon
+- string
+- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
+  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
+  Example: `book`, `duotone book`, `./images/config-icon.svg`.
+  
+---
+
 - description
 - string
 - **REQUIRED.**

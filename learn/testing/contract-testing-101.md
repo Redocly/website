@@ -74,7 +74,7 @@ Let's dive into how contract testing works and how it can streamline your develo
 
 ## What is Contract Testing?
 
-API contract testing is a method of verifying that an API follows a predefined agreement, or "contract," between the API provider and API consumers. This contract defines how the API is expected to behave, including details like: 
+API contract testing is a method of verifying that an API follows a predefined agreement, or "contract," between the API provider and API consumers. This contract defines how the API is expected to behave, including details like:
 
 * API endpoints and HTTP methods  
 * Request and response payload structures  
@@ -89,7 +89,7 @@ Modern applications are often composed of multiple microservices, each interacti
 
 ![Contract Testing Driver](images/defined-contract.png)
 
-* **Consumer-driven contract testing (CDCT)**: Consumers define the contracts, allowing providers to validate against consumer expectations. This approach ensures that providers understand exactly what consumers need.  
+* **Consumer-driven contract testing (CDCT)**: Consumers define the contracts, allowing providers to validate against consumer expectations. This approach ensures that providers understand exactly what consumers need.
 * **Provider-driven contract testing**: Providers define the contracts, and consumers validate their integrations against these provider expectations. This approach gives providers more control over the API evolution.
 
 ## How Contract Testing Works in Practice
@@ -223,6 +223,8 @@ When evaluating contract testing tools, consider factors like:
 * Community support and documentation
 
 For teams working with OpenAPI specifications, Redocly Respect offers a particularly seamless experience, as it's built specifically to work with the OpenAPI ecosystem and provides comprehensive validation against your API descriptions.
+
+Looking for a strategic comparison of testing tools and approaches? See [Tools for API Testing in 2025](tools-for-api-testing-in-2025.md).
 
 ## Common Questions
 
