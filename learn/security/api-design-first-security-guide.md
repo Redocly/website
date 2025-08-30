@@ -20,13 +20,15 @@ In this guide, we'll walk though how to turn your OpenAPI specification into a s
 
 ## From Reactive Patching to Proactive API Security
 
-High-profile data breaches frequently trace back to insecure APIs, exposing a fundamental flaw in traditional security approaches. The conventional method — identifying and patching vulnerabilities in production — is reactive, costly, and ultimately inadequate. In it's typical (and more common then we'd like) form, this paradigm treats security as more of an afterthought.
+High-profile data breaches frequently trace back to insecure APIs, exposing a fundamental flaw in traditional security approaches. The conventional method—identifying and patching vulnerabilities in production—is reactive, costly, and ultimately inadequate. In its typical form, this paradigm treats security as an afterthought.
+
+Shifting security practices to the left in the development lifecycle, known as the "shift-left" imperative, addresses this by integrating security into the earliest stages of design and development. This proactive model prevents vulnerabilities from being introduced in the first place, rather than attempting to remediate them under pressure in production environments.
 
 ### OpenAPI as Your Security Contract
 
-The core of this strategy is treating your OpenAPI specification not as only documentation, but also as an executable security contract. This contract declaratively defines the complete set of security requirements, constraints, and policies before any application code is written. It becomes the single source of truth that dictates how an API must behave to be considered secure.
+The core of this strategy is treating your OpenAPI specification not merely as documentation, but as an executable security contract. This contract declaratively defines a set of security requirements, constraints, and policies before any application code is written. It becomes the single source of truth that dictates how an API must behave to be considered secure, effectively implementing a "policy-as-code" approach for APIs.
 
-However, a contract, much like a law, is only as strong as its enforcement. This is where [Redocly CLI](https://redocly.com/docs/cli/) governance and linting capabilities can provide value by making your contract into dynamic, automated guardrails that validate security requirements at every stage of development.
+However, a contract, much like a law, is only as strong as its enforcement. This is where [Redocly CLI](https://redocly.com/docs/cli/) governance and linting capabilities provide value by transforming your contract into dynamic, automated guardrails that validate security requirements at every stage of development. When integrated into a Continuous Integration/Continuous Deployment (CI/CD) pipeline, this automated governance acts as a gatekeeper, failing builds that violate the security contract and requiring fixes before deployment.
 
 *OpenAPI specifications are validated by Redocly governance engine in CI/CD pipeline, failing builds for security violations and requiring fixes before deployment.*
 
@@ -52,7 +54,7 @@ graph TD
     
     B --> F["• HTTPS Enforcement<br/>• Certificate Management<br/>• Strong Cipher Suites"]
     C --> G["• JSON Schema Rules<br/>• Type Validation<br/>• Length Constraints"]
-    D --> H["• x-rate-limit Extensions<br/>• 429 Response Headers<br/>• Multi-tier Limits"]
+    D --> H["• x-rateLimit Extensions<br/>• 429 Response Headers<br/>• Multi-tier Limits"]
     E --> I["• Security Schemes<br/>• JWT/OAuth2<br/>• Scope Management"]
     
     J["📄 OpenAPI 3.1<br/>Specification"] --> A
@@ -69,6 +71,126 @@ graph TD
 
 *Architecture diagram showing the four essential areas of API security (TLS encryption, input validation, rate limiting, access control) supported by OpenAPI specifications and Redocly governance automation.*
 
+## Complete Security Governance Configuration
+
+Before diving into each security area, here's the comprehensive `redocly.yaml` configuration that enforces all security best practices discussed in this guide:
+
+```yaml {% title="redocly.yaml" %}
+extends:
+  - recommended-strict
+
+rules:
+  # === Built-in Security Rules ===
+  no-server-example-com: error          # Prevent example.com in server URLs  
+  no-unused-components: error           # Remove unused components that could leak data
+
+  # === TLS and Transport Security ===
+  rule/enforce-production-tls:
+    subject:
+      type: Server
+      property: url
+    assertions:
+      pattern: "^https://api\\.(production|staging)\\.com"
+    message: "Server URLs must use https:// and point to approved domains."
+    severity: error
+
+  # === Input Validation Rules ===
+  # Rule 1: All strings must have length bounds
+  rule/string-must-have-maxLength:
+    subject:
+      type: Schema
+    where:
+      - subject:
+          property: type
+        assertions:
+          const: string
+    assertions:
+      required:
+        - maxLength
+    message: "All string properties must have 'maxLength' to prevent resource exhaustion."
+    severity: error
+
+  # Rule 2: All numbers must have ranges  
+  rule/number-must-have-range:
+    subject:
+      type: Schema
+    where:
+      - subject:
+          property: type
+        assertions:
+          enum: [number, integer]
+    assertions:
+      required: [minimum, maximum]
+    message: "Numeric properties must have 'minimum' and 'maximum' defined."
+    severity: error
+
+  # Rule 3: Prevent mass assignment vulnerabilities
+  rule/no-additional-properties:
+    subject:
+      type: Schema
+    where:
+      - subject:
+          property: type
+        assertions:
+          const: object
+    assertions:
+      property:
+        additionalProperties:
+          const: false
+    message: "Objects must set 'additionalProperties: false' to prevent mass assignment."
+    severity: error
+
+  # === Rate Limiting Rules ===
+  rule/require-rate-limit-on-auth:
+    subject:
+      type: Operation
+    where:
+      - subject:
+          property: tags
+        assertions:
+          contains: "Authentication"
+    assertions:
+      defined:
+        - x-rateLimit
+    message: "Authentication operations must have 'x-rateLimit' policy defined."
+    severity: error
+
+  # === Access Control Rules ===
+  rule/require-auth-on-mutations:
+    subject:
+      type: Operation
+    where:
+      - subject:
+          property: method
+        assertions:
+          enum: [post, put, patch, delete]
+    assertions:
+      defined: [security]
+    message: "All write operations must have security defined."
+    severity: error
+```
+
+This configuration provides comprehensive security governance automation. Each section below explains the principles behind these rules and shows implementation examples.
+
+## Understanding Design-Time vs Runtime Security
+
+It's important to understand that OpenAPI-based security governance operates at **design-time**, not runtime. This governance approach excels at preventing configuration errors, missing security controls, and specification inconsistencies before they reach production. That said, it cannot prevent runtime vulnerabilities in the underlying implementation.
+
+**Design-time security governance prevents:**
+- Accidentally public endpoints (missing security requirements)
+- Insecure server configurations (HTTP instead of HTTPS)
+- Missing input validation constraints
+- Inconsistent rate limiting policies
+- Data leakage through unused components
+
+**Runtime security still requires:**
+- Patch management for frameworks and libraries (like the Heartbleed OpenSSL vulnerability)
+- Secure coding practices and parameterized queries
+- Infrastructure security monitoring and alerting
+- Penetration testing and vulnerability scanning
+
+True "secure by design" requires both: design-time contracts enforced through OpenAPI governance *and* runtime security posture management as part of a comprehensive DevSecOps practice.
+
 ## TLS Encryption: Protecting Data in Transit with OpenAPI
 
 When a client and an API exchange information, that data travels across the internet, a public network. Without protection, this data gets intercepted and read by malicious actors. This is where encryption comes in.
@@ -79,7 +201,7 @@ When a client and an API exchange information, that data travels across the inte
 
 ### TLS 1.3: The Modern Standard
 
-This secure tunnel is primarily established using Transport Layer Security (TLS) version 1.3, as specified in IETF RFC 8446. Any modern API security guidance must unequivocally mandate TLS 1.3, as older protocols—including all versions of SSL, TLS 1.0, and TLS 1.1—are deprecated and considered insecure due to known vulnerabilities.
+This secure tunnel is primarily established using **Transport Layer Security (TLS) version 1.3**, as specified in [IETF RFC 8446](https://tools.ietf.org/html/rfc8446). [NIST SP 800-52 Rev. 2](https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final) guidelines for TLS implementations unequivocally mandate TLS 1.3 for modern systems, as older protocols—including all versions of SSL, TLS 1.0, and TLS 1.1—are deprecated and considered insecure due to known vulnerabilities.
 
 When a client connects to an API over `https://`, it initiates a "TLS handshake." During this handshake, the client and server perform crucial steps:
 
@@ -164,8 +286,7 @@ testssl.sh --fast https://api.example.com
 The security contract for encrypted transit begins within the `servers` object of your OpenAPI specification. Every URL defined here must use the `https://` scheme—this isn't just documentation, it's a formal declaration of your API's secure endpoints.
 
 **OpenAPI Servers Declaration:**
-```yaml
-# openapi.yaml
+```yaml {% title="openapi.yaml" %}
 servers:
   - url: https://api.production.com/v1
     description: Production Server
@@ -175,33 +296,15 @@ servers:
 
 **Redocly Governance Enforcement:**
 
-For complete configuration options, see the [Redocly CLI configuration guide](https://redocly.com/docs/cli/configuration/).
-
-```yaml
-# redocly.yaml - Advanced TLS enforcement
-extends:
-  - recommended
-
-rules:
-  # Built-in rule: Ensure HTTPS usage
-  no-http-verbs-in-paths: error
-  
-  # Custom rule: Enforce production domain patterns
-  rule/enforce-production-tls:
-    subject:
-      type: Server
-      property: url
-    assertions:
-      pattern: "^https://api\\.(production|staging)\\.com"
-    message: "Server URLs must use https:// and point to approved domains."
-    severity: error
-```
+The [Complete Security Governance Configuration](#complete-security-governance-configuration) section shows how to enforce HTTPS usage through the `rule/enforce-production-tls` custom rule, along with other security controls.
 
 When integrated into your CI/CD pipeline, this configuration creates an automated security gate. If a developer attempts to commit an OpenAPI file with `http://api.production.com` or `https://api.dev.internal`, the pipeline fails with a clear error message, preventing insecure configurations from ever reaching production.
 
 *Redocly governance fails a CI/CD build if an OpenAPI spec uses HTTP instead of HTTPS, requiring developers to fix security violations before deployment.*
 
 ### TLS Configuration Examples
+
+Authoritative sources like the [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/) provide excellent, up-to-date templates for secure server configurations across different platforms and security requirements.
 
 **Nginx Configuration:**
 ```nginx
@@ -250,7 +353,9 @@ https.createServer(options, app).listen(443);
 
 ### Attack Example: Heartbleed (TLS library vulnerability, 2014)
 
-These attacks are both real and can be problematic. Heartbleed (CVE-2014-0160) allowed attackers to read server memory via malformed TLS heartbeat messages. Real incidents, including the Canada Revenue Agency breach, demonstrated how secrets (keys, cookies) could be exfiltrated.
+The Heartbleed bug (CVE-2014-0160) was a critical vulnerability in the OpenSSL library, not the TLS protocol itself. It allowed attackers to read up to 64KB of a server's memory by sending a malformed TLS heartbeat request. The server would respond with not only the small payload sent by the attacker but also adjacent memory contents, which could include session cookies, user credentials, and even the server's private encryption keys.
+
+This incident demonstrates a crucial point: security is multi-layered. While an OpenAPI specification can enforce the *intent* of using secure transport (https://), it cannot prevent a runtime vulnerability in the underlying software stack. As mentioned earlier, true "secure by design" requires both design-time governance via OpenAPI linting and runtime security posture management, including diligent vulnerability scanning and patch management.
 
 ```mermaid
 sequenceDiagram
@@ -269,17 +374,16 @@ Why this matters: TLS is only as strong as its implementation. Monitoring and ra
 
 ### Mutual TLS (mTLS): Two-Way Authentication
 
-While standard TLS only authenticates the server to the client, **Mutual TLS (mTLS)** requires both parties to authenticate each other using certificates. This provides stronger security for high-trust scenarios like service-to-service communication.
+While standard TLS only authenticates the server to the client, **Mutual TLS (mTLS)** requires both parties to authenticate each other using certificates. This provides stronger security for high-trust scenarios and is essential for implementing zero-trust architecture principles.
 
 **mTLS Use Cases:**
-- Microservice communication in zero-trust architectures
-- API-to-API authentication between organizations
-- IoT device authentication
-- High-security financial and healthcare APIs
+- Microservice communication in zero-trust architectures where no network segment is inherently trusted
+- API-to-API authentication between organizations implementing defense-in-depth strategies
+- IoT device authentication in distributed systems
+- High-security financial and healthcare APIs requiring cryptographic identity verification
 
 **OpenAPI mTLS Configuration:**
-```yaml
-# openapi.yaml
+```yaml {% title="openapi.yaml" %}
 components:
   securitySchemes:
     mtlsAuth:
@@ -363,13 +467,12 @@ cursor.execute(query, (user_id,))
 OpenAPI 3.1 provides a comprehensive vocabulary for defining strict validation rules by leveraging JSON Schema Draft 2020-12. By codifying these rules directly in your API specification, validation becomes core to your API's design.
 
 **Secure Schema Example:**
-```yaml
-# openapi.yaml
+```yaml {% title="openapi.yaml" %}
 components:
   schemas:
     NewUser:
       type: object
-      additionalProperties: false  # Prevent mass assignment
+      additionalProperties: false  # Prevent mass assignment (OWASP API3:2023)
       required:
         - username
         - email
@@ -379,11 +482,11 @@ components:
         username:
           type: string
           minLength: 4
-          maxLength: 20
-          pattern: "^[a-zA-Z0-9]+$"  # Alphanumeric only
+          maxLength: 20             # Prevent resource exhaustion (OWASP API4:2023)
+          pattern: "^[a-zA-Z0-9]+$"  # Prevent injection attacks
         email:
           type: string
-          maxLength: 254
+          maxLength: 254            # Prevent resource exhaustion (OWASP API4:2023)
           format: email
         password:
           type: string
@@ -392,106 +495,29 @@ components:
         age:
           type: integer
           minimum: 18
-          maximum: 130
+          maximum: 130              # Prevent integer overflow attacks
         role:
           type: string
-          enum: ["user", "viewer"]
+          enum: ["user", "viewer"]   # Enforce allow-list approach
           default: "user"
 ```
 
 **Redocly Governance for Validation:**
 
-Detailed rule configuration is available in the [Redocly CLI rules documentation](https://redocly.com/docs/cli/rules/).
-
-```yaml
-# redocly.yaml - Enforce security validation standards
-extends:
-  - recommended-strict
-
-rules:
-  # Rule 1: All strings must have length bounds
-  rule/string-must-have-maxLength:
-    subject:
-      type: Schema
-    where:
-      - subject:
-          property: type
-        assertions:
-          const: string
-    assertions:
-      required:
-        - maxLength
-    message: "All string properties must have 'maxLength' to prevent resource exhaustion."
-    severity: error
-
-  # Rule 2: All numbers must have ranges  
-  rule/number-must-have-range:
-    subject:
-      type: Schema
-    where:
-      - subject:
-          property: type
-        assertions:
-          enum: [number, integer]
-    assertions:
-      required: [minimum, maximum]
-    message: "Numeric properties must have 'minimum' and 'maximum' defined."
-    severity: error
-
-  # Rule 3: Prevent mass assignment vulnerabilities
-  rule/no-additional-properties:
-    subject:
-      type: Schema
-    where:
-      - subject:
-          property: type
-        assertions:
-          const: object
-    assertions:
-      property:
-        additionalProperties:
-          const: false
-    message: "Objects must set 'additionalProperties: false' to prevent mass assignment."
-    severity: error
-```
+The [Complete Security Governance Configuration](#complete-security-governance-configuration) includes comprehensive input validation rules that automatically enforce string length bounds, numeric ranges, and prevent mass assignment vulnerabilities. See the Input Validation Rules section for the complete implementation.
 
 This governance approach changes security reviews. Instead of manually checking many properties for missing `maxLength` constraints, automated linting with [Redocly Workflows](https://redocly.com/workflows) handles baseline validation so security teams can focus on strategic concerns like business logic and context-dependent risks.
 
-### JSON Schema Security Keywords
+### Key Security Constraints
 
-{% table %}
-* Keyword
-* Purpose  
-* Security Implication
----
-* `type`
-* Constrains data type
-* Prevents type confusion attacks
----
-* `pattern`
-* Enforces regex on strings
-* Fine-grained control against injection
----
-* `maxLength/minLength`
-* Constrains string/array length
-* Mitigates DoS and buffer overflow
----
-* `maximum/minimum`
-* Constrains numeric ranges
-* Prevents integer overflows
----
-* `enum`
-* Restricts to predefined values
-* Blocks unexpected/malicious values
----
-* `required`
-* Mandates property presence
-* Ensures critical data elements exist
----
-* `additionalProperties: false`
-* Prohibits undeclared properties
-* Defense against mass assignment
-{% /table %}
+The most critical schema constraints for API security focus on preventing resource exhaustion and injection attacks:
+
+- **`maxLength`**: Required on all strings to prevent memory exhaustion attacks
+- **`maximum/minimum`**: Required on all numbers to prevent integer overflow vulnerabilities  
+- **`additionalProperties: false`**: Essential for preventing mass assignment attacks
+- **`pattern`**: Use restrictive regex patterns to block injection payloads
+
+These constraints are automatically enforced by the governance rules in our [Complete Security Governance Configuration](#complete-security-governance-configuration), ensuring no schema can bypass these fundamental protections.
 
 ### Common Validation Patterns
 
@@ -534,8 +560,7 @@ This governance approach changes security reviews. Instead of manually checking 
 
 Quick fixes:
 
-```yaml
-# JSON Schema example: tighten strings and numeric bounds
+```yaml {% title="JSON Schema example" %}
 type: object
 additionalProperties: false
 properties:
@@ -554,7 +579,9 @@ properties:
 
 ### Attack Example: Equifax (OGNL injection via Apache Struts, 2017)
 
-Here's another one. An input validation and deserialization flaw (CVE-2017-5638) in Apache Struts allowed attackers to inject OGNL expressions via the `Content-Type` header, leading to remote code execution and data exfiltration.
+The 2017 Equifax data breach was the result of a catastrophic input validation failure in the Apache Struts framework (CVE-2017-5638). The vulnerability allowed attackers to perform remote code execution by sending a specially crafted `Content-Type` header. The Struts framework failed to properly sanitize this header value, interpreting it as an Object-Graph Navigation Language (OGNL) expression and executing it. This gave attackers a direct shell on the server, which they used to access sensitive databases and exfiltrate the personal data of over 140 million people.
+
+This incident underscores the critical importance of validating all inputs, including HTTP headers, against a strict allow-list or pattern. A strong schema-based validation approach, enforced by governance, can block entire classes of injection attacks before they ever reach vulnerable application code.
 
 ```mermaid
 sequenceDiagram
@@ -589,7 +616,9 @@ A single client, whether intentionally malicious or simply due to a bug in its c
 
 ### Documenting Rate Limits in OpenAPI
 
-While OpenAPI 3.1 doesn't include native rate-limiting objects, extension properties (prefixed with `x-`) provide a standard mechanism. The best practice is defining custom `x-rate-limit` extensions at the operation level:
+While OpenAPI 3.1 doesn't include native rate-limiting objects, extension properties (prefixed with `x-`) provide a standard mechanism. The best practice is defining custom `x-rateLimit` extensions at the operation level.
+
+**Note:** Rate limits are typically dynamic in production environments, with different limits for different clients based on service tiers, contracts, or usage patterns. The OpenAPI specification documents the baseline policy, while implementation systems apply client-specific variations:
 
 ```yaml {% title="openapi.yaml" %}
 paths:
@@ -598,7 +627,7 @@ paths:
       summary: User Login
       tags: [Authentication]
       # Define rate-limiting policy for this sensitive endpoint
-      x-rate-limit:
+      x-rateLimit:
         limit: 5
         window: "1m"
         scope: "ip_address"
@@ -625,33 +654,18 @@ paths:
 ```
 
 **Redocly Governance for Rate Limiting:**
-```yaml
-# redocly.yaml
-rules:
-  # Require rate limits on authentication endpoints
-  rule/require-rate-limit-on-auth:
-    subject:
-      type: Operation
-    where:
-      - subject:
-          property: tags
-        assertions:
-          contains: "Authentication"
-    assertions:
-      defined:
-        - x-rate-limit
-    message: "Authentication operations must have 'x-rate-limit' policy defined."
-    severity: error
-```
 
-This approach provides dual benefits: [Redocly's Redoc](https://redocly.com/redoc) automatically displays the `x-rate-limit` object in generated documentation, making policies transparent to API consumers, while governance rules ensure sensitive endpoints never lack rate-limiting policies.
+The [Complete Security Governance Configuration](#complete-security-governance-configuration) includes the `rule/require-rate-limit-on-auth` rule that ensures authentication endpoints always have rate limiting policies defined.
+
+This approach provides dual benefits: [Redocly's Redoc](https://redocly.com/redoc) automatically displays the `x-rateLimit` object in generated documentation, making policies transparent to API consumers, while governance rules ensure sensitive endpoints never lack rate-limiting policies.
 
 ### Why Rate Limiting Is Critical
 
-Rate limiting serves two crucial purposes:
+Rate limiting is a critical control for both security and reliability, directly mitigating several OWASP API Security Top 10 risks:
 
-1. **Security:** It is a vital defense against automated attacks. It can thwart **Denial-of-Service (DoS)** attacks, where an attacker attempts to make a service unavailable by flooding it with traffic, which relates to **API4:2023 - Unrestricted Resource Consumption**. It also makes **brute-force** attacks against authentication endpoints (i.e., guessing passwords) much slower and less effective. Furthermore, it helps mitigate business logic abuse by preventing bots from, for example, scraping all product pricing data or buying up an entire inventory of limited-stock items, addressing **API6:2023 - Unrestricted Access to Sensitive Business Flows**.
-2. **Reliability and Fair Usage:** It ensures that the API remains stable and responsive for all users by preventing any single client from monopolizing server resources. This guarantees a better and more equitable quality of service for everyone.
+1. **Security:** It thwarts Denial-of-Service (DoS) attacks by preventing traffic floods, addressing OWASP API4:2023 - Unrestricted Resource Consumption. It also makes brute-force attacks against authentication endpoints much slower and less effective, reducing the risk of credential stuffing attacks.
+2. **Business Logic Abuse:** It helps mitigate abuse by preventing bots from scraping data or manipulating business flows, addressing OWASP API6:2023 - Unrestricted Access to Sensitive Business Flows.
+3. **Reliability and Fair Usage:** It ensures that the API remains stable and responsive for all users by preventing any single client from monopolizing server resources.
 
 ### Rate Limiting Implementation Approaches
 
@@ -661,8 +675,7 @@ Rate limiting serves two crucial purposes:
 - **Fixed Window**: Simple per-timeframe limits, prone to boundary conditions
 
 **Multi-tier Strategy:**
-```yaml
-# API Gateway configuration example
+```yaml {% title="API Gateway configuration" %}
 rate_limits:
   global:
     requests_per_minute: 1000
@@ -678,8 +691,7 @@ rate_limits:
 ### Advanced Rate Limiting Techniques
 
 **Multi-tier Rate Limiting:**
-```yaml
-# API Gateway configuration (Kong example)
+```yaml {% title="Kong configuration" %}
 plugins:
 - name: rate-limiting
   config:
@@ -731,7 +743,9 @@ As a complementary practice, the client-side responsibility of implementing expo
 
 ### Attack Example: Facebook phone number scraping (2019 dataset)
 
-How has rate limiting mistakes been exploted? Funny you should ask! Here's one that happened at Facebook. Attackers enumerated user data through contact import and related endpoints with insufficient rate limiting and anomaly detection, leading to the aggregation of hundreds of millions of records that later appeared publicly.
+In 2019, malicious actors exploited a vulnerability in Facebook's contact importer feature to scrape the personal data of over 530 million users. The API endpoint itself was not technically "broken"—it performed its intended function of matching phone numbers to user profiles. The vulnerability was the absence of adequate rate limiting and business rule enforcement. Attackers used automated scripts to submit massive lists of phone numbers, and the API dutifully returned the corresponding user profiles, allowing them to build a massive database of personal information.
+
+This incident highlights a different type of API attacks, moving from exploiting technical flaws to abusing business logic at scale. It elevates rate limiting from an infrastructure protection mechanism to a also being a tool for enforcing business rules. The `x-rateLimit` extension in OpenAPI is a form of declarative security policy.
 
 ```mermaid
 sequenceDiagram
@@ -759,8 +773,7 @@ OpenAPI 3.1 provides a robust framework for defining access control through two 
 2. **`security`**: Specifies *that* an endpoint is secured and by which mechanism(s)
 
 **JWT Bearer Token Example:**
-```yaml
-# openapi.yaml
+```yaml {% title="openapi.yaml" %}
 components:
   securitySchemes:
     bearerAuth:
@@ -775,8 +788,7 @@ security:
 ```
 
 **OAuth2 with Scopes Example:**
-```yaml
-# openapi.yaml
+```yaml {% title="openapi.yaml" %}
 components:
   securitySchemes:
     oauth2Auth:
@@ -800,31 +812,7 @@ paths:
 
 ### Redocly Governance for Access Control
 
-The most critical built-in security rule is `security-defined`, which ensures every operation is covered by a security requirement:
-
-```yaml
-# redocly.yaml
-extends:
-  - recommended
-
-rules:
-  # Ensure no endpoint is accidentally left unsecured
-  security-defined: error
-  
-  # Custom rule: Require security on sensitive operations
-  rule/require-auth-on-mutations:
-    subject:
-      type: Operation
-    where:
-      - subject:
-          property: method
-        assertions:
-          enum: [post, put, patch, delete]
-    assertions:
-      defined: [security]
-    message: "All write operations must have security defined."
-    severity: error
-```
+Access control enforcement is handled through the custom `rule/require-auth-on-mutations` rule shown in the [Complete Security Governance Configuration](#complete-security-governance-configuration), which ensures all write operations have security requirements defined.
 
 When `redocly lint` runs, any endpoint without a corresponding `security` block causes the build to fail, preventing the most common API vulnerability: the unintentionally public endpoint.
 
@@ -859,7 +847,7 @@ curl -H "Authorization: Bearer invalid" https://api.example.com/users/me
 curl -H "Authorization: Bearer readonly_token" -X POST https://api.example.com/users
 ```
 
-> Key insight: "The `security-defined` rule has prevented more breaches than any other single control. It's non-negotiable in our CI pipeline." Learn more about implementing this with [Redocly's API Governance solution](https://redocly.com/api-governance).
+> Key insight: "Requiring security definitions on all write operations has prevented more breaches than any other single control. The `rule/require-auth-on-mutations` is non-negotiable in our CI pipeline." Learn more about implementing this with [Redocly's API Governance solution](https://redocly.com/api-governance).
 
 #### Rate limiting troubleshooting and common pitfalls
 
@@ -883,8 +871,7 @@ hey -z 10s -q 50 -c 50 https://api.example.com/api/resource
 ## Monitoring and Observability
 
 ### TLS Monitoring
-```yaml
-# Prometheus alerts for TLS
+```yaml {% title="prometheus.yml" %}
 groups:
 - name: tls_alerts
   rules:
@@ -960,14 +947,23 @@ OpenAPI specifications define precise data schemas with type validation, format 
 Rate limiting prevents denial-of-service attacks, brute-force authentication attempts, and data scraping. It ensures fair resource usage among legitimate users while blocking malicious automation. Without rate limits, a single bad actor can overwhelm your API infrastructure.
 
 ### Can I implement all four security areas with just OpenAPI?
-Yes, OpenAPI 3.1 supports all four security areas: TLS enforcement through server URLs, input validation via JSON schemas, rate limiting through extensions like `x-rate-limit`, and access control via security schemes. Combined with governance automation, your specification becomes an executable security contract.
+Yes, OpenAPI 3.1 supports all four security areas: TLS enforcement through server URLs, input validation via JSON schemas, rate limiting through extensions like `x-rateLimit`, and access control via security schemes. Combined with governance automation, your specification becomes an executable security contract.
 
 ### What's the difference between authentication and authorization in APIs?
 Authentication verifies *who* the user is (like checking an ID card), while authorization determines *what* they can do (like checking permissions). Both are essential for API security, and OpenAPI provides security schemes to define and enforce both concepts through your specification.
 
 ## Resources
 
-- **[OWASP API Security Top 10](https://owasp.org/www-project-api-security/)** - Complete vulnerability guide including injection and resource consumption attacks
-- **[Mozilla TLS Configuration Generator](https://ssl-config.mozilla.org/)** - Generate secure TLS configurations for various web servers and applications
-- **[NIST Guidelines for TLS Implementations](https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final)** - Official guidelines for secure TLS implementation and configuration
-- **[Redocly Documentation](https://redocly.com/docs/)** - Complete guide to implementing API governance and automated security validation
+### Security Standards and Guidelines
+- [OWASP API Security Top 10](https://owasp.org/www-project-api-security/) - Comprehensive vulnerability guide including injection attacks (API3:2023), resource consumption (API4:2023), and business logic abuse (API6:2023)
+- [NIST SP 800-52 Rev. 2](https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final) - Official guidelines for secure TLS implementation and configuration requirements
+- [IETF RFC 8446](https://tools.ietf.org/html/rfc8446) - TLS 1.3 protocol specification and security requirements
+
+### Practical Implementation Tools
+- [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/) - Generate secure, up-to-date TLS configurations for various web servers and security levels
+- [Redocly CLI Documentation](https://redocly.com/docs/cli/) - Complete guide to implementing API governance, linting, and automated security validation
+- [OpenAPI Specification](https://spec.openapis.org/oas/v3.1.0) - Official OpenAPI 3.1 specification including security scheme definitions
+
+### DevSecOps and API Governance
+- [Redocly API Governance](https://redocly.com/api-governance) - Enterprise-grade API governance and security automation platform
+- [API Security Best Practices](https://redocly.com/docs/cli/rules/built-in-rules) - Built-in security rules and governance patterns for API specifications
