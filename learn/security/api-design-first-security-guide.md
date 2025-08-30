@@ -506,7 +506,7 @@ components:
 
 The [Complete Security Governance Configuration](#complete-security-governance-configuration) includes comprehensive input validation rules that automatically enforce string length bounds, numeric ranges, and prevent mass assignment vulnerabilities. See the Input Validation Rules section for the complete implementation.
 
-This governance approach changes security reviews. Instead of manually checking many properties for missing `maxLength` constraints, automated linting with [Redocly Workflows](https://redocly.com/workflows) handles baseline validation so security teams can focus on strategic concerns like business logic and context-dependent risks.
+This governance approach changes security reviews. Instead of manually checking many properties for missing `maxLength` constraints, automated linting with [Redocly CLI](https://redocly.com/docs/cli/) handles baseline validation so security teams can focus on strategic concerns like business logic and context-dependent risks.
 
 ### Key Security Constraints
 
