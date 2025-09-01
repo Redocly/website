@@ -1,4 +1,23 @@
 '@redocly/realm':
+  0.125.0-next.8:
+    timestamp: 1756711138000
+    changes:
+      minor:
+        - >-
+          Improved breadcrumb navigation by refining visual design, shortening long page names, adding dropdown menus for deep structures, suggesting
+          related pages, supporting icons, enabling multilingual translations, and fixing duplicate catalog entries.
+      patch:
+        - Fixed flashing of translation keys on initial page load caused by uninitialized translations.
+        - Added classic catalog card component to the list of ejectable components.
+        - Fixed an issue where LLM page actions appeared on OpenAPI pages excluded from search.
+        - Fixed logout for single SSO users.
+        - Fixed locale fallback in sidebar routing.
+    dependencies:
+      '@redocly/theme': 0.57.0-next.5
+      '@redocly/asyncapi-docs': 1.2.0-next.7
+      '@redocly/graphql-docs': 1.2.0-next.1
+      '@redocly/openapi-docs': 3.13.0-next.7
+      '@redocly/portal-plugin-mock-server': 0.10.0-next.7
   0.125.0-next.7:
     timestamp: 1756296058000
     changes:
@@ -4050,6 +4069,22 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.125.0-next.8:
+    timestamp: 1756711138000
+    changes:
+      minor:
+        - >-
+          Improved breadcrumb navigation by refining visual design, shortening long page names, adding dropdown menus for deep structures, suggesting
+          related pages, supporting icons, enabling multilingual translations, and fixing duplicate catalog entries.
+      patch:
+        - Fixed an issue where LLM page actions appeared on OpenAPI pages excluded from search.
+        - Fixed logout for single SSO users.
+    dependencies:
+      '@redocly/theme': 0.57.0-next.5
+      '@redocly/asyncapi-docs': 1.2.0-next.7
+      '@redocly/graphql-docs': 1.2.0-next.1
+      '@redocly/openapi-docs': 3.13.0-next.7
+      '@redocly/portal-plugin-mock-server': 0.10.0-next.7
   0.125.0-next.7:
     timestamp: 1756296058000
     changes:
@@ -7375,6 +7410,25 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.125.0-next.8:
+    timestamp: 1756711138000
+    changes:
+      minor:
+        - >-
+          Improved breadcrumb navigation by refining visual design, shortening long page names, adding dropdown menus for deep structures, suggesting
+          related pages, supporting icons, enabling multilingual translations, and fixing duplicate catalog entries.
+      patch:
+        - Fixed flashing of translation keys on initial page load caused by uninitialized translations.
+        - Added classic catalog card component to the list of ejectable components.
+        - Fixed an issue where LLM page actions appeared on OpenAPI pages excluded from search.
+        - Fixed logout for single SSO users.
+        - Fixed locale fallback in sidebar routing.
+    dependencies:
+      '@redocly/theme': 0.57.0-next.5
+      '@redocly/asyncapi-docs': 1.2.0-next.7
+      '@redocly/graphql-docs': 1.2.0-next.1
+      '@redocly/openapi-docs': 3.13.0-next.7
+      '@redocly/portal-plugin-mock-server': 0.10.0-next.7
   0.125.0-next.7:
     timestamp: 1756296058000
     changes:
@@ -10691,6 +10745,22 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.125.0-next.8:
+    timestamp: 1756711138000
+    changes:
+      minor:
+        - >-
+          Improved breadcrumb navigation by refining visual design, shortening long page names, adding dropdown menus for deep structures, suggesting
+          related pages, supporting icons, enabling multilingual translations, and fixing duplicate catalog entries.
+      patch:
+        - Fixed an issue where LLM page actions appeared on OpenAPI pages excluded from search.
+        - Fixed logout for single SSO users.
+    dependencies:
+      '@redocly/theme': 0.57.0-next.5
+      '@redocly/asyncapi-docs': 1.2.0-next.7
+      '@redocly/graphql-docs': 1.2.0-next.1
+      '@redocly/openapi-docs': 3.13.0-next.7
+      '@redocly/portal-plugin-mock-server': 0.10.0-next.7
   0.125.0-next.7:
     timestamp: 1756296058000
     changes:
@@ -14011,6 +14081,17 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.57.0-next.5:
+    timestamp: 1756711138000
+    changes:
+      minor:
+        - >-
+          Improved breadcrumb navigation by refining visual design, shortening long page names, adding dropdown menus for deep structures, suggesting
+          related pages, supporting icons, enabling multilingual translations, and fixing duplicate catalog entries.
+      patch:
+        - Fixed an issue where LLM page actions appeared on OpenAPI pages excluded from search.
+        - Fixed `img` Markdoc tag to be self-closing.
+    dependencies: {}
   0.57.0-next.4:
     timestamp: 1756285920000
     changes:
@@ -16155,6 +16236,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.13.0-next.7:
+    timestamp: 1756711138000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.16.0-next.6
   3.13.0-next.6:
     timestamp: 1756285920000
     changes:
@@ -19767,6 +19855,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.8.0-next.8:
+    timestamp: 1756711138000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.125.0-next.8
+      '@redocly/redoc-revel': 0.125.0-next.8
+      '@redocly/theme': 0.57.0-next.5
+      '@redocly/redoc': 0.125.0-next.8
+      '@redocly/redoc-reef': 0.125.0-next.8
   1.8.0-next.7:
     timestamp: 1756296058000
     changes:
@@ -23460,6 +23559,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.10.0-next.7:
+    timestamp: 1756711138000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.13.0-next.7
   0.10.0-next.6:
     timestamp: 1756285920000
     changes:
@@ -25516,6 +25622,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.16.0-next.6:
+    timestamp: 1756711138000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.57.0-next.5
   0.16.0-next.5:
     timestamp: 1756285920000
     changes:
@@ -26686,6 +26799,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.8.0-next.5:
+    timestamp: 1756711138000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.57.0-next.5
   0.8.0-next.4:
     timestamp: 1756285920000
     changes:
@@ -27826,6 +27946,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.2.0-next.7:
+    timestamp: 1756711138000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.57.0-next.5
+      '@redocly/openapi-docs': 3.13.0-next.7
   1.2.0-next.6:
     timestamp: 1756285920000
     changes:
