@@ -9,7 +9,8 @@ plans:
 ---
 # `openapi`
 
-Customize the behavior and appearance of integrated API documentation. Requires an OpenAPI description.
+Customize the behavior and appearance of integrated API documentation.
+Requires an OpenAPI description.
 
 ## Options
 
@@ -22,7 +23,7 @@ Customize the behavior and appearance of integrated API documentation. Requires 
 ---
 
 - [codeSamples](./code-samples.md)
-- [[Language object](./code-samples.md#language-object)]
+- [Code Samples object](./code-samples.md)
 - Configure the generated code samples in your API documentation.
 
 ---
@@ -34,8 +35,8 @@ Customize the behavior and appearance of integrated API documentation. Requires 
 ---
 
 - [downloadUrls](./download-urls.md)
-- [API description URL object](./download-urls.md#api-description-url-object)
-- Set the URLs used to download the API description in JSON or YAML format.
+- [[API description URL object](./download-urls.md#api-description-url-object)]
+- List the URLs used to download the API description in JSON or YAML format.
 
 ---
 
@@ -49,7 +50,7 @@ Customize the behavior and appearance of integrated API documentation. Requires 
 - boolean
 - Excludes an OpenAPI description file from search results and `llms.txt` when set to `true`.
   Default: `false`.
-  
+
   You can [apply it to a specific files](#exclude-an-api-from-search), or to [all OpenAPI descriptions](#exclude-all-apis-from-search).
 
 ---
@@ -97,14 +98,17 @@ Customize the behavior and appearance of integrated API documentation. Requires 
 ---
 
 - [jsonSamplesExpandLevel](./json-samples-expand-level.md)
-- number | string | 'all'
+- number | string
 - Sets the default expand level for JSON payload samples.
+  Use `all` to expand all levels.
 
 ---
 
 - [layout](./layout.md)
-- 'three-panel' | 'stacked'
+- string
 - Specifies layout options for OpenAPI documentation.
+  Possible values: `three-panel` | `stacked`.
+  Default value: `three-panel`.
 
 ---
 
@@ -133,26 +137,22 @@ Customize the behavior and appearance of integrated API documentation. Requires 
 ---
 
 - [schemasExpansionLevel](./schemas-expansion-level.md)
-- number | string | 'all'
+- number | string
 - Sets the default expand level for schemas.
+  Use `all` to expand all levels.
 
 ---
 
 - [showExtensions](./show-extensions.md)
-- string[] | boolean
+- [string] | boolean
 - Displays specification extensions ('x-' fields).
+  If a list is provided, only those specification extensions are displayed.
 
 ---
 
 - [sortRequiredPropsFirst](./sort-required-props-first.md)
 - boolean
 - Sorts schema properties to display required properties first.
-
----
-
-- [feedback](../feedback.md#options)
-- object
-- Feedback options.
 
 {% /table %}
 

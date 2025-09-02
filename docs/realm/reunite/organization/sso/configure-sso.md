@@ -7,7 +7,8 @@ You can configure `sso` in the `redocly.yaml` file of a project, to specify iden
 See the [Single sign-on (SSO) concept doc](./sso.md#default-priority-order) for more information on the default priority order.
 
 {% admonition type="info" name="attention" %}
-Configuring `sso` does not require users to log in to your project. To require login to a project, [`rbac`](../../../config/rbac.md) or [`requiresLogin`](../../../config/requires-login.md) must also be configured.
+Configuring `sso` does not require users to log in to your project.
+To require login to a project, [`rbac`](../../../config/rbac.md) or [`requiresLogin`](../../../config/requires-login.md) must also be configured.
 {% /admonition %}
 
 ## Before you begin

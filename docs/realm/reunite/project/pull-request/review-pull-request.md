@@ -8,7 +8,7 @@ Ensure you have:
 
 - A [project](../projects.md) in Reunite
 - The [owner or member role](../../../access/roles.md#organization-roles) in your project's organization
-  
+
 You cannot review a pull request if you authored it.
 
 ## Review visual and code diff
@@ -17,8 +17,6 @@ The **Review** tab opens with the **Visual** view by default, showing rendered p
 
 Click **Code** on the toggle to view the Markdown diff instead.
 For multi-page updates, select different pages from the sidebar navigation to review each one.
-
-Mark pages as reviewed by clicking the **Viewed** checkbox, or click **Review all** to mark all pages.
 
 Use the file tree filter on the left to find specific pages.
 
@@ -32,18 +30,18 @@ To add comments in the visual or code diff view:
 
     ![Screenshot of top right side of review tab in Reunite with arrow pointing to the comments icon](../../images/comment-icon.png)
 
-2. Enter your feedback.
-3. Click **Comment**.
+1. Enter your feedback.
+1. Click **Comment**.
 
 To add line-specific comments in code diff view:
 
 1. Hover over the line numbers.
-2. Click the plus icon.
+1. Click the plus icon.
 
     ![Screenshot of code diff view in Reunite with arrow pointing towards plus icon](../../images/plus-icon.png)
 
-3. Enter your feedback.
-4. Select one option:
+1. Enter your feedback.
+1. Select one option:
    - **Add a single comment**: For a standalone comment.
    - **Start a review**: For multiple comments in a complete review.
 
@@ -58,11 +56,19 @@ After reviewing the pull request, click the **Review** button, add your final th
 - **Approve:** Indicate the pull request is ready to merge.
 - **Request changes:** Specify issues that require resolution before approval.
 
-{% admonition type="info" name="Connected Git providers" %}
-If your project uses a connected Git provider (such as GitHub or GitLab), approving a pull request in Reunite marks the "Visual Review" check as approved in your Git provider's check list. This approval does not automatically approve the actual pull request in the external Git provider - that still requires approval through your Git provider's interface.
-{% /admonition %}
-
 Format your review comment using the toolbar options, then click **Submit review**.
+
+After the review is submitted, if your project uses a [connected Git provider](../../project/connect-git/connect-git-provider.md) (GitHub, GitLab, Azure DevOps, or Bitbucket), you will see a **Visual review** check on it.
+
+The check links back to the **Visual review** tab in Reunite and displays a short status (for example, **Pending**, **Approved**, **Changes requested**, or **No changes**).
+
+**Visual review** check updates automatically when you add comments or change a review in Reunite.
+
+If you also connected your Git provider and Reunite accounts before submitting your review, it will post a review to your Git repository.
+
+{% admonition type="warning" name="Review posting behavior" %}
+If your accounts are connected but you do not have review permissions in the provider, your review appears in Reunite only and is never posted to the provider.
+{% /admonition %}
 
 ## Merge a pull request
 

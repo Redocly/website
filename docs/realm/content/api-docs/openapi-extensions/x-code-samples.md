@@ -11,7 +11,9 @@ Control the list of language options by adjusting the [openapi.code-samples](../
 {% /admonition %}
 
 {% admonition type="info" name="Environment variables" %}
-Use environment variable placeholders like `{{VARIABLE_NAME}}` in code samples. Configure their values in the `envVariables` field of your request values configuration. [Learn more about environment variables](../../../customization/configure-request-values.md#configure-environment-variables-for-code-samples).
+Use environment variable placeholders like `{{VARIABLE_NAME}}` in code samples.
+Configure their values in the `envVariables` field of your request values configuration.
+[Learn more about environment variables](../../../customization/configure-request-values.md#configure-environment-variables-for-code-samples).
 {% /admonition %}
 
 ## Location
@@ -22,15 +24,15 @@ Use environment variable placeholders like `{{VARIABLE_NAME}}` in code samples. 
 
 {% table %}
 
-* Field Name
-* Type
-* Description
+- Field Name
+- Type
+- Description
 
 ---
 
-* x-codeSamples
-* [ [Code Sample Object](#code-sample-object) ]
-* A list of code samples associated with an operation.
+- x-codeSamples
+- [ [Code Sample Object](#code-sample-object) ]
+- A list of code samples associated with an operation.
 
 {% /table %}
 
@@ -39,21 +41,22 @@ Use environment variable placeholders like `{{VARIABLE_NAME}}` in code samples. 
 
 {% table %}
 
-* Field Name
-* Type
-* Description
+- Field Name
+- Type
+- Description
 
 ---
 
-* lang
-* string
-* **REQUIRED** Code sample language. Can be one of the [automatically supported languages](../../../config/openapi/code-samples.md#language-object) or any other language identifier of your choice (for custom code samples).
+- lang
+- string
+- **REQUIRED** Code sample language.
+  Can be one of the [automatically supported languages](../../../config/openapi/code-samples.md#language-object) or any other language identifier of your choice (for custom code samples).
 
 ---
 
-* source
-* string
-* **REQUIRED** Code sample source code, or a `$ref` to the file containing the code sample.
+- source
+- string
+- **REQUIRED** Code sample source code, or a `$ref` to the file containing the code sample.
 
 {% /table %}
 
@@ -87,8 +90,8 @@ paths:
 
 ## Resources
 
-- Control the list of language options by adjusting the [openapi.code-samples](../../../config/openapi/code-samples.md) configuration setting.
-- Control which extensions are included in your API reference documentation with the [showExtensions configuration setting](../../../config/openapi/show-extensions.md).
-- See all [openapi configuration settings](../../../config/openapi/index.md).
-- See a full [list of supported OpenAPI extensions](./index.md).
-- Learn how to [configure environment variables](../../../customization/configure-request-values.md) that can be used in your code samples.
+- **[OpenAPI code samples configuration](../../../config/openapi/code-samples.md)** - Control the list of available language options and customize code sample generation settings
+- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
+- **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
+- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation
+- **[Configure environment variables](../../../customization/configure-request-values.md)** - Set up environment variable placeholders for dynamic code samples and request customization

@@ -3,7 +3,7 @@
 If your content is stored in a repository on GitHub, you can connect that repository, so you can access and publish those files in Reunite.
 
 To connect a GitHub repository, you must first install the Redocly app in GitHub.
-Afterward, you must create a new branch, nter the connection details, and merge the open pull request in Reunite.
+Afterward, you must create a new branch, enter the connection details, and merge the open pull request in Reunite.
 
 ## Install the Redocly app in GitHub
 

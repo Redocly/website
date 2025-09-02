@@ -74,7 +74,7 @@ To use `tags` as filters, the values must be a list.
 
 ## Resources
 
-- When an API description contains metadata, but you don't want it included in the API reference documentation, use the [hideInfoMetadata configuration option](../../../config/openapi/hide-info-metadata.md) to hide it.
-- Control which extensions are included in your API reference documentation with the [showExtensions configuration setting](../../../config/openapi/show-extensions.md).
-- See all [openapi configuration settings](../../../config/openapi/index.md).
-- See a full [list of supported OpenAPI extensions](./index.md).
+- **[Hide info metadata configuration](../../../config/openapi/hide-info-metadata.md)** - Hide metadata from API reference documentation when you want it in descriptions but not displayed
+- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
+- **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
+- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation

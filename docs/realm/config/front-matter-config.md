@@ -23,7 +23,12 @@ These options are available exclusively in front matter:
 - boolean
 - Exclude the page from search results and from `llms.txt` file when set to `true`.
   Default: `false`.
-  
+
+  {% admonition type="info" %}
+  Search indexes are only built on the production branch.
+  Changes to `excludeFromSearch` may not immediately appear in search results until the next production build.
+  {% /admonition %}
+
   To exclude OpenAPI description files from search, see: [`openapi` configuration](./openapi/index.md).
 
 ---
@@ -35,7 +40,7 @@ These options are available exclusively in front matter:
 ---
 
 - slug
-- string or [string]
+- string | [string]
 - Custom URL path for this page, instead of the default path based on folder and file names.
   Define multiple slugs to make content available at multiple URLs.
   Slugs can contain multiple segments (e.g., '/custom-pages/page-1').
@@ -120,9 +125,10 @@ When defined in front matter, they override the global configuration:
 ---
 
 - rbac
-- [team to role map](./rbac.md#team-to-role-map)
-- Set access permissions for the page. This option can contain only the map of teams to roles.
-  
+- [Map[string, string]](./rbac.md#team-to-role-map)
+- Map of teams to roles.
+  Set access permissions for the page.
+
 ---
 
 - [search](./search.md)

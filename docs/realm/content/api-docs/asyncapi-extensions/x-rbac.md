@@ -53,5 +53,5 @@ channels:
 
 ## Resources
 
-- Learn more about [role-based access control](../../../access/rbac.md).
-- See a full [list of supported AsyncAPI extensions](./index.md).
+- **[Role-based access control concepts](../../../access/rbac.md)** - Learn about RBAC fundamentals and how it integrates with AsyncAPI documentation
+- **[Supported AsyncAPI extensions](./index.md)** - Complete list of all AsyncAPI extensions supported by Redocly for enhanced API documentation

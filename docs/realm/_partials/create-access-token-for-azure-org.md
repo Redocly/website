@@ -19,7 +19,8 @@ Redocly uses this access token to establish a connection to your repository.
 
 See [Create a PAT](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?#create-a-pat) in Microsoft Azure DevOps documentation for detailed instructions.
 
-You must select an Organization for this PAT. Do not select **All accessible organizations**.
+You must select an Organization for this PAT.
+Do not select **All accessible organizations**.
 
 Also, the PAT you use must have API scopes defined. You can choose the **Full access** option, or select **Custom defined** and enable the following specific scopes:
 
@@ -65,7 +66,7 @@ See [Scopes](https://learn.microsoft.com/en-us/azure/devops/organizations/accoun
 | [Profiles - Get](https://learn.microsoft.com/en-us/rest/api/azure/devops/profile/profiles/get?view=azure-devops-rest-7.1&tabs=HTTP)                                   | OAuth2    | `vso.profile`                       | To get user display name                                      |
 
 > Note:
-* Push and pull Git actions are performed using PAT.
-* Redocly uses `https://dev.azure.com/{organization}/_apis/connectionData` endpoint to verify if the user is authorized.
+- Push and pull Git actions are performed using PAT.
+- Redocly uses `https://dev.azure.com/{organization}/_apis/connectionData` endpoint to verify if the user is authorized.
 
 </details>

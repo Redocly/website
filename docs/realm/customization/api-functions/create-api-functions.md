@@ -70,7 +70,7 @@ The function takes two parameters:
   Add authentication validation to ensure only authenticated users can access the weather data.
   This helper function verifies the session token from cookies.
   {% /step %}
-  
+
   {% step id="weather-auth-implementation" heading="Implement authentication check" when={ "weather-auth": true } %}
   Add a check to verify the user's authentication status before processing the request.
   This code prevents unauthorized access to your API.

@@ -1,6 +1,7 @@
 # Telemetry
 
-Redocly includes a telemetry feature that collects anonymous usage information. This information is utilized to gain insights into the project's feature usage and enhance the Redocly project based on those insights.
+Redocly includes a telemetry feature that collects anonymous usage information.
+This information is utilized to gain insights into the project's feature usage and enhance the Redocly project based on those insights.
 
 ## Opt-out
 

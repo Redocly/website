@@ -24,15 +24,16 @@ To omit the metadata section from the API reference documentation, set the `hide
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* hideInfoMetadata
-* boolean
-* Optionally hide the **OpenAPI info metadata** section of the API reference page. Default value is `false`.
+- hideInfoMetadata
+- boolean
+- Optionally hide the **OpenAPI info metadata** section of the API reference page.
+  Default value is `false`.
 
 
 {% /table %}
@@ -50,7 +51,8 @@ openapi:
 openapi: 3.1.0
 info:
   title: Redocly Museum API
-  description: Imaginary, but delightful Museum API for interacting with museum services and information. Built with love by Redocly.
+  description: Imaginary, but delightful Museum API for interacting with museum services and information.
+  Built with love by Redocly.
   version: 1.1.0
   x-metadata:
     createdAt: '2016-11-15T00:53:45.524Z'

@@ -12,3 +12,4 @@ updates:
       interval: "daily"
     allow:
       - dependency-name: "@redocly/realm"
+      - dependency-name: "@redocly/marketing-pages"

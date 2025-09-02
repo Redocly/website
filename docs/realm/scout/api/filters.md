@@ -1,4 +1,4 @@
-## Using filter with collections
+## Use filter with collections
 
 Use `?filter=` parameter on collections to retrieve a subset of the collection based on the provided filter.
 Fields and values in the filter are separated with `:`.

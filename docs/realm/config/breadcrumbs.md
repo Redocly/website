@@ -70,6 +70,14 @@ You can also add links that you want to always appear on every page at the start
 - string
 - Translation key used for [localization](./l10n.md).
 
+---
+
+- icon
+- string
+- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
+  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
+  Example: `book`, `duotone book`, `./images/config-icon.svg`.
+
 {% /table %}
 
 ## Example
@@ -81,12 +89,8 @@ breadcrumbs:
     - page: index.page.tsx
       label: Home
       labelTranslationKey: home.title
+      icon: home
 ```
-
-## Related options
-
-- Customize other default items on Markdown pages, such as the last updated time stamp and the page headings table of contents on the left side of the page, using the [`markdown` configuration options](markdown.md).
-- Remove or update the label text for the previous and next navigation buttons using the [`navigation` configuration options](navigation.md).
 
 ## Resources
 
@@ -94,3 +98,5 @@ breadcrumbs:
 - **[Configure navigation elements](../navigation/index.md)** - Customize navigation elements including sidebar, navbar, footer, and breadcrumbs for optimal site organization
 - **[Front matter configuration](./front-matter-config.md)** - Configure breadcrumb behavior and appearance on individual pages using front matter for granular control
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
+- **[Markdown configuration options](markdown.md)** - Customize default items on Markdown pages including time stamps and table of contents for enhanced breadcrumb integration
+- **[Navigation configuration options](navigation.md)** - Configure previous and next navigation buttons and label text for seamless breadcrumb navigation flow

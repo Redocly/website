@@ -119,7 +119,7 @@ The response from the example above returns the following JSON:
   "other": ["anything", "you", "want"]
 }
 ```
-  
+
 ## Authorization
 
 API functions follow the same RBAC rules as other Redocly resources, based on user roles and teams.
@@ -368,7 +368,8 @@ Sends a response body serialized as [JSON](https://developer.mozilla.org/en-US/d
 context.redirect(url: string, code?: number) => Response
 ```
 
-Redirects to the specified URL. Defaults to a 302 status code unless otherwise specified.
+Redirects to the specified URL.
+Defaults to a 302 status code unless otherwise specified.
 
 #### context.setCookie
 
@@ -421,25 +422,30 @@ API functions have the following limits:
 
 - Execution timeout
 - 10 seconds
-- API functions must complete within 10 seconds. Otherwise, the function terminates and returns a `504 Gateway Timeout` error.
+- API functions must complete within 10 seconds.
+  Otherwise, the function terminates and returns a `504 Gateway Timeout` error.
 
 ---
 
 - Memory usage
 - 500MB
-- API functions are limited to 500MB of memory. If exceeded, the function is terminated with a `502 Internal Server Error`.
+- API functions are limited to 500MB of memory.
+  If exceeded, the function is terminated with a `502 Internal Server Error`.
 
 ---
 
 - Request size
 - 5MB
-- The maximum size of the request body is 5MB. The maximum allowed request body size is 5MB. Larger requests are rejected with a `413 Payload Too Large` error.
+- The maximum size of the request body is 5MB.
+  The maximum allowed request body size is 5MB.
+  Larger requests are rejected with a `413 Payload Too Large` error.
 
 ---
 
 - Response size
 - 5MB
-- The maximum allowed response body size is 5MB. Larger responses are rejected with a `500 Internal Server Error`.
+- The maximum allowed response body size is 5MB.
+  Larger responses are rejected with a `500 Internal Server Error`.
 
 {% /table %}
 

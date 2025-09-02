@@ -11,7 +11,8 @@ plans:
 ---
 # `search`
 
-Customize search functionality in your project. By default, search appears in the top navigation bar in the far right corner.
+Customize search functionality in your project.
+By default, search appears in the top navigation bar in the far right corner.
 
 Use the `search` configuration to:
 
@@ -26,8 +27,10 @@ Use the `search` configuration to:
 
 Redocly supports two types of search engines for your project:
 
-1. **FlexSearch**: The default search engine that supports limited facets configuration. You can only adjust the [group facet](#group-facets).
-2. **Typesense**: An advanced search engine with full facets configuration capabilities. Requires an Enterprise or Enterprise+ plan.
+1. **FlexSearch**: The default search engine that supports limited facets configuration.
+   You can only adjust the [group facet](#group-facets).
+2. **Typesense**: An advanced search engine with full facets configuration capabilities.
+   Requires an Enterprise or Enterprise+ plan.
 
 ## Default search configuration
 
@@ -180,13 +183,15 @@ search:
 
 - name
 - string
-- **REQUIRED.** Name of the facet. Acts as a label for the filtering control in the search dialog.
+- **REQUIRED.** Name of the facet.
+  Acts as a label for the filtering control in the search dialog.
 
 ---
 
 - field
 - string
-- **REQUIRED.** Facet ID. Use this ID as a key in `metadata` section when adding facets to a page.
+- **REQUIRED.** Facet ID.
+  Use this ID as a key in `metadata` section when adding facets to a page.
 
 ---
 
@@ -238,10 +243,16 @@ search:
 Redocly AI Search runs in **inference-only mode** and does not train or fine-tune AI models on your content.
 For details, see the [AI Search data usage FAQ](../faq/ai-search-privacy.md).
 
+{% admonition type="info" %}
+AI search and Typesense search indexes are only built on the production branch.
+Changes to search configuration or content exclusions, like the `excludeFromSearch` front matter option, may not immediately appear in search results until the next production build.
+{% /admonition %}
+
 
 ## Apply facets to files
 
-To apply facets to files, use metadata properties. You can assign specific metadata to your files, such as custom facet fields for advanced filtering or predefined ones like `redocly_category` for grouping.
+To apply facets to files, use metadata properties.
+You can assign specific metadata to your files, such as custom facet fields for advanced filtering or predefined ones like `redocly_category` for grouping.
 
 ### Markdown files
 
@@ -260,16 +271,16 @@ metadata:
 Apply facets to OpenAPI definitions using the `x-metadata` extension:
 
 ```yaml
-openapi: 3.0.0
+openapi: 3.1.0
 info:
-  version: 1.3.3
-  title: Swagger Petstore
+  version: 2.3.3
+  title: Museum
   x-metadata:
     redocly_category: Custom
     owner: Redocly
 ```
 
-### Using metadataGlobs
+### Use `metadataGlobs`
 
 Use the `metadataGlobs` property in your `redocly.yaml` configuration file to apply facets to files using glob patterns:
 
@@ -397,5 +408,5 @@ search:
 - **[Configure navbar](./navbar.md)** - Configure navigation bar settings including search integration and search button customization
 - **[Navigation elements](../navigation/index.md)** - Configure navigation elements in your project for comprehensive site structure and search integration
 - **[Predefined translation keys](../content/localization/translation-keys.md)** - Use predefined translation keys for search interface localization and internationalization
-- **[Front matter configuration](./front-matter-config.md)** - Configure search dialog behavior on individual pages using front matter for granular control
+- **[Front matter configuration](./front-matter-config.md)** - Configure search dialog behavior on individual pages using front matter, including `excludeFromSearch` option to exclude specific pages from search results
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

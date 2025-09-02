@@ -38,14 +38,31 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 - image
 - string
 - Sets the image with extended metadata (`og:image`, `twitter:image`) used when sharing links to your project on social
-  networks. You must specify the path to an existing image in your project project. In addition, you can replace the
+  networks.
+  You must specify the path to an existing image in your project project.
+  In addition, you can replace the
   image for Twitter or other social networks separately with `og:image` or `twitter:image` at is specified in the `meta` option.
 
 ---
 
 - jsonLd
-- JSON
-- Configures [JSON-LD](https://json-ld.org/) parameters.
+- object
+- JSON to configure [JSON-LD](https://json-ld.org/) parameters.
+  Example front matter:
+  ```yaml {% title="example-page.md" %}
+  ---
+  seo:
+    jsonLd:
+      '@context': 'https://schema.org'
+      '@type': 'Organization'
+      url: 'http://www.example.com'
+      name: My website
+      contactPoint:
+        '@type': 'ContactPoint'
+        telephone: '+1111111111111'
+        contactType: 'Customer service'
+  ---
+  ```
 
 ---
 
@@ -129,7 +146,8 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 
 - hide
 - boolean
-- Specifies if an `llms.txt` file and clean Markdown versions of pages included in the `llms.txt` file are generated. Defaults to `false`.
+- Specifies if an `llms.txt` file and clean Markdown versions of pages included in the `llms.txt` file are generated.
+  Defaults to `false`.
 
 ---
 
@@ -162,7 +180,8 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 
 - sections
 - [[llmstxt section object](#llmstxt-section-object)]
-- List of sections to include in the `llms.txt` file. See [llms.txt format documentation](https://llmstxt.org/#format) for details.
+- List of sections to include in the `llms.txt` file.
+  See [llms.txt format documentation](https://llmstxt.org/#format) for details.
 
 
 {% /table %}
@@ -217,7 +236,8 @@ Mutually exclusive with `path`.
 
 - title
 - string
-- **REQUIRED.** Section title. See [llms.txt format documentation](https://llmstxt.org/#format) for details.
+- **REQUIRED.** Section title.
+  See [llms.txt format documentation](https://llmstxt.org/#format) for details.
 
 ---
 
@@ -275,7 +295,8 @@ The sitemap data is formatted to standard search engine expectations, using the 
 
 ### Page priority
 
-Redocly sets the optional `priority` property for pages in the generated `sitemap.xml` file to `0.5`, unless the pages are non-default versioned content (set to `0.3`). This distinction tells search engines the default version of content is more important than non-default versions.
+Redocly sets the optional `priority` property for pages in the generated `sitemap.xml` file to `0.5`, unless the pages are non-default versioned content (set to `0.3`).
+This distinction tells search engines the default version of content is more important than non-default versions.
 
 You can override the priority for specific pages:
 
@@ -315,10 +336,12 @@ Redocly serves the sitemap but doesn't validate the structure, so you should val
 
 ## Control search indexing
 
-Use the `noindex` rule to block search indexing for your entire project or specific pages. The `noindex` rule tells search engines that pages shouldn't be indexed or included in searches.
+Use the `noindex` rule to block search indexing for your entire project or specific pages.
+The `noindex` rule tells search engines that pages shouldn't be indexed or included in searches.
 
 {% admonition type="info" %}
-The `noindex` rule only applies to external search engines. It does not block pages from in-site search (controlled by [excludeFromSearch](./front-matter-config.md)) or user access (controlled by [RBAC](../access/page-permissions.md)).
+The `noindex` rule only applies to external search engines.
+It does not block pages from in-site search (controlled by [excludeFromSearch](./front-matter-config.md)) or user access (controlled by [RBAC](../access/page-permissions.md)).
 {% /admonition %}
 
 ### Block indexing with meta tags

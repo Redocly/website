@@ -21,7 +21,8 @@ One HTTP header is supported for each URL resolved.
 
 - doNotResolveExamples
 - boolean
-- When running `lint`, set this option to `true` to avoid resolving `$ref` fields in examples. Resolving `$ref`s in other parts of the API is unaffected.
+- When running `lint`, set this option to `true` to avoid resolving `$ref` fields in examples.
+  Resolving `$ref`s in other parts of the API is unaffected.
 
 ---
 
@@ -49,19 +50,22 @@ One HTTP header is supported for each URL resolved.
 
 - name
 - string
-- **REQUIRED**. The header name, for example `Authorization`.
+- **REQUIRED**.
+  The header name, for example `Authorization`.
 
 ---
 
 - value
 - string
-- The value to send for the header. Only one of `value` or `envVariable` can be used; `envVariable` is recommended for any secrets.
+- The value to send for the header.
+  Only one of `value` or `envVariable` can be used; `envVariable` is recommended for any secrets.
 
 ---
 
 - envVariable
 - string
-- The name of the environment variable that contains the value to send for the header. Only one of `value` or `envVariable` can be used; `envVariable` is recommended for any secrets.
+- The name of the environment variable that contains the value to send for the header.
+  Only one of `value` or `envVariable` can be used; `envVariable` is recommended for any secrets.
 
 {% /table %}
 

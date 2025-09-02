@@ -97,7 +97,8 @@ Free-form text field for detailed written feedback.
 
 - label
 - string
-- Text displayed with the feedback form. Default depends on the feedback form type.
+- Text displayed with the feedback form.
+  Default depends on the feedback form type.
 
   Default for `sentiment`, `rating`, `mood`, and `scale` types: "Was this helpful?"
 
@@ -249,14 +250,16 @@ Free-form text field for detailed written feedback.
 - component
 - string
 - Sets the component type to multiple-choice checkboxes or single-choice radio buttons.
-  Possible values: `checkbox`, `radio`. Default: `checkbox`.
+  Possible values: `checkbox`, `radio`.
+  Default: `checkbox`.
   For `sentiment` and `mood`, this component applies to every reaction-specific configuration as the default.
 
 ---
 
 - items
 - [string]
-- List of choices in the feedback form. For example, "Content was accurate" or "Content was confusing".
+- List of choices in the feedback form.
+  For example, "Content was accurate" or "Content was confusing".
   For `sentiment` and `mood`, these items are included in every reaction-specific configuration as defaults.
 
 ---
@@ -308,7 +311,8 @@ Free-form text field for detailed written feedback.
 
 - hide
 - boolean
-- Hides the optional email input. Setting to true removes the input.
+- Hides the optional email input.
+  Setting to true removes the input.
   Default: `false`.
 
 ---
@@ -532,7 +536,8 @@ Download feedback data as CSV for analysis:
 
 ## Localization
 
-Localize feedback form text with `translations.yaml` files. Don't set text values in `redocly.yaml` when using translations, as `redocly.yaml` settings override translation files.
+Localize feedback form text with `translations.yaml` files.
+Don't set text values in `redocly.yaml` when using translations, as `redocly.yaml` settings override translation files.
 
 ## Examples
 

@@ -4,11 +4,13 @@ Utility functions for lazy loading React components.
 
 ## Dynamic imports
 
-The `dynamic` utility from `@redocly/theme` creates React components that load their dependencies on demand. It supports both server-side rendering and client-only rendering modes, with customizable loading states.
+The `dynamic` utility from `@redocly/theme` creates React components that load their dependencies on demand.
+It supports both server-side rendering and client-only rendering modes, with customizable loading states.
 
 ## Overview
 
-The `dynamic` function wraps React.lazy() with additional features for Redocly applications, automatically handling various export patterns and providing flexible SSR configuration options. It creates wrapper components that handle dynamic imports with configurable loading states.
+The `dynamic` function wraps React.lazy() with additional features for Redocly applications, automatically handling various export patterns and providing flexible SSR configuration options.
+It creates wrapper components that handle dynamic imports with configurable loading states.
 
 ## Syntax and usage
 
@@ -110,7 +112,8 @@ const DynamicComponent = dynamic(() =>
 
 ### With no SSR
 
-To dynamically load a component on the client side, use the `ssr` option to disable server-rendering. This is useful for components that rely on browser APIs like `window`.
+To dynamically load a component on the client side, use the `ssr` option to disable server-rendering.
+This is useful for components that rely on browser APIs like `window`.
 
 ```tsx
 import { dynamic } from '@redocly/theme';

@@ -4,7 +4,8 @@ Reunite is Redocly's cloud platform for creating, editing, previewing, and deplo
 You can [use the editor](./project/use-editor.md) to add, edit, and delete content and files in your project using a Git-based workflow to track and manage changes.
 
 {% admonition type="info" name="Cloud meets docs-as-code" %}
-You can also use Reunite with a Git hosting provider of your choice and a docs-as-code workflow by [connecting a git content source](./project/connect-git/connect-git-provider.md). This article is about using the cloud platform.
+You can also use Reunite with a Git hosting provider of your choice and a docs-as-code workflow by [connecting a git content source](./project/connect-git/connect-git-provider.md).
+This article is about using the cloud platform.
 {% /admonition %}
 
 ## Editor
@@ -76,7 +77,8 @@ In Reunite, you can access the following two types of deployments:
   the preview deployment is triggered when you make another commit to the development branch.
 
 When a deployment is successful, you can view the deployment build by clicking on the **Production** or **Preview** button
-in the top right corner of the page. When a deployment isn't finished, you are redirected to the deployment details page.
+in the top right corner of the page.
+When a deployment isn't finished, you are redirected to the deployment details page.
 Also, you can open a menu that displays all available deployments, shortcuts to those deployments,
 a direct link to the deployment, and a copy link button for the deployment.
 

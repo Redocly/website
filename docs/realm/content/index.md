@@ -68,7 +68,7 @@ Use built-in functions for dynamic content generation and manipulation.
 
 {% /cards %}
 
-## Getting started
+## Get started
 
 1. **Structure your project** - Set up your content organization with the [project structure guide](./project-structure.md)
 2. **Add your content** - Start with [Markdown pages](./markdown.md) or [API documentation](./api-docs/add-openapi-docs.md) using our enhanced Markdown features
