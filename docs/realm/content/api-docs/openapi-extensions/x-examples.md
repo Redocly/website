@@ -18,15 +18,15 @@ Use the `x-example` in any location where `example` can be used in OpenAPI v3.
 
 {% table %}
 
-* Option
-* Type
-* Description
+- Option
+- Type
+- Description
 
 ---
 
-* x-examples
-* [Example Object](https://spec.openapis.org/oas/v3.1.0#example-object)
-* Object that contains examples for the request. Applies when `in` is `body` and MIME type is `application/json`
+- x-examples
+- [Example Object](https://spec.openapis.org/oas/v3.1.0#example-object)
+- Object that contains examples for the request. Applies when `in` is `body` and MIME type is `application/json`
 
 {% /table %}
 
@@ -63,7 +63,7 @@ x-examples:
 
 ## Resources
 
-- Learn more about [examples in OpenAPI](https://learn.openapis.org/specification/docs.html).
-- Control which extensions are included in your API reference documentation with the [showExtensions configuration setting](../../../config/openapi/show-extensions.md).
-- See all [openapi configuration settings](../../../config/openapi/index.md).
-- See a full [list of supported OpenAPI extensions](./index.md).
+- **[Examples in OpenAPI specification](https://learn.openapis.org/specification/docs.html)** - Learn about OpenAPI example syntax, best practices, and implementation patterns
+- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
+- **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
+- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation

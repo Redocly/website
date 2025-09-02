@@ -14,17 +14,17 @@ Knowing the common conventions helps you navigate, contribute to, and customize 
 
 A typical Redocly project includes the following folders and files. Only one content file is strictly required — the rest are optional but help organize and extend your project:
 
-* **content files and folders**: Files that generate pages (see [Content Files](#content-files) below).
+- **content files and folders**: Files that generate pages (see [Content Files](#content-files) below).
   This is the only *required* element - you need at least one file of content.
-* `redocly.yaml`: The primary configuration file used to customize features, navigation, theming, and more.
+- `redocly.yaml`: The primary configuration file used to customize features, navigation, theming, and more.
   While optional for a basic start, it's essential for most customizations.
-* `package.json`: This is the project manifest for managing Node.js dependencies.
+- `package.json`: This is the project manifest for managing Node.js dependencies.
   It is not required unless you want to specify a particular version of Redocly packages or install any third-party dependencies.
-* `_partials/`: A directory for reusable Markdoc partials.
-* `@l10n/`: A directory for locale folders.
-* `@theme/`: A directory for customizing the look, feel, and components of your portal.
-* `static/`: Optional directory for assets that should be copied directly to the build output without processing.
-* `sidebars.yaml`: Optional file(s) that can define the structure of one or multiple navigation sidebars.
+- `_partials/`: A directory for reusable Markdoc partials.
+- `@l10n/`: A directory for locale folders.
+- `@theme/`: A directory for customizing the look, feel, and components of your portal.
+- `static/`: Optional directory for assets that should be copied directly to the build output without processing.
+- `sidebars.yaml`: Optional file(s) that can define the structure of one or multiple navigation sidebars.
 
 ### Example project tree
 
@@ -230,11 +230,11 @@ Redocly treats several file types as primary content sources, automatically gene
 
 Supported content file types include:
 
-* **Markdown (`.md`)**: The most common format for documentation pages.
+- **Markdown (`.md`)**: The most common format for documentation pages.
   Redocly uses [**Markdoc**](https://markdoc.io/), an extensible Markdown format, allowing for custom components, partials, and advanced content features.
-* **React pages (`.page.tsx`)**: React components used for pages requiring complex layouts, dynamic data fetching, or custom interactive elements.
+- **React pages (`.page.tsx`)**: React components used for pages requiring complex layouts, dynamic data fetching, or custom interactive elements.
   These allow full control over layout, interactivity, and data fetching.
-* **API descriptions (`.yaml`, `.json`, `.graphql`)**: API specification files (OpenAPI, AsyncAPI, GraphQL schemas).
+- **API descriptions (`.yaml`, `.json`, `.graphql`)**: API specification files (OpenAPI, AsyncAPI, GraphQL schemas).
 
 ## File-based routing
 
@@ -242,21 +242,22 @@ Realm uses a file-based routing system.
 The path and name of a content file within your project root directly determine the URL path for the generated page.
 The file extension is automatically removed.
 
-* `get-started/installation.md` becomes `/get-started/installation`
-* `concepts/markdoc.md` becomes `/concepts/markdoc`
-* `changelog.page.tsx` becomes `/changelog`
-* `api/reference/petstore.yaml` becomes `/api/reference/petstore`
+- `get-started/installation.md` becomes `/get-started/installation`
+- `concepts/markdoc.md` becomes `/concepts/markdoc`
+- `changelog.page.tsx` becomes `/changelog`
+- `api/reference/museum.yaml` becomes `/api/reference/museum`
 
 Content files named `index` (e.g., `index.md`, `index.page.tsx`, or even `index.yaml`) serve as the default page for their directory.
 
-* `/index.md` or `/index.page.tsx` at the root becomes the site's home page (`/`).
-* `concepts/index.md` becomes the page accessed at the `/concepts` URL path.
-* `api/reference/index.yaml` becomes `/api/reference`.
+- `/index.md` or `/index.page.tsx` at the root becomes the site's home page (`/`).
+- `concepts/index.md` becomes the page accessed at the `/concepts` URL path.
+- `api/reference/index.yaml` becomes `/api/reference`.
 
 ## Content reuse
 
 You can reuse content across your project by using the [partial markdoc tag](./markdoc-tags/partial.md).
-Reusable content should be stored in the `_partials` directory. Learn more about [Markdoc tags](./markdoc-tags/tag-library.md) for other content enhancement options.
+Reusable content should be stored in the `_partials` directory.
+Learn more about [Markdoc tags](./markdoc-tags/tag-library.md) for other content enhancement options.
 
 ## @l10n
 
@@ -288,12 +289,12 @@ For more information, see [Multi-product overview](../navigation/multi-product.m
 This special directory allows you to customize the default Redocly theme.
 You can override or add various elements:
 
-* **Components (Ejected/Overridden)**: Replace or extend default theme components (like headers, buttons, code blocks, layouts) by placing your custom React components in corresponding paths within `@theme/*`.
+- **Components (Ejected/Overridden)**: Replace or extend default theme components (like headers, buttons, code blocks, layouts) by placing your custom React components in corresponding paths within `@theme/*`.
   This process is often referred to as **"ejecting"**.
   Refer to the [Eject components](../customization/eject-components/index.md) for more information.
-* **Styles**: Add global custom CSS rules or modify [theme variables](../branding/css-variables/index.md) in the `@theme/styles.css` file.
+- **Styles**: Add global custom CSS rules or modify [theme variables](../branding/css-variables/index.md) in the `@theme/styles.css` file.
   This file serves as the main entry point for your custom global styles.
-* **Custom markdoc components**: Create completely [new Markdoc tags and functions](../customization/build-custom-function.md), within the `@theme/markdoc` directory to enhance your Markdoc.
+- **Custom markdoc components**: Create completely [new Markdoc tags and functions](../customization/build-custom-function.md), within the `@theme/markdoc` directory to enhance your Markdoc.
 
 ### Static files (`static/`)
 
@@ -303,10 +304,10 @@ The `static/` directory serves this purpose.
 Any files placed inside the `static/` folder will be copied verbatim to the root of your built site.
 
 Use `static/` for things like:
-* `robots.txt`
-* `favicon.ico` and other site icons/manifest files
-* Verification files for search engines or other services
-* Other assets that must exist at specific paths and shouldn't be processed (e.g., fonts referenced by external CSS, specific JS libraries).
+- `robots.txt`
+- `favicon.ico` and other site icons/manifest files
+- Verification files for search engines or other services
+- Other assets that must exist at specific paths and shouldn't be processed (e.g., fonts referenced by external CSS, specific JS libraries).
 
 **Important**: Files in `static/` are *not* processed or optimized by Realm's build system.
 Avoid placing regular images, CSS, or JavaScript that you author yourself here if you expect them to be bundled or optimized; those usually belong alongside your content files or within the `@theme` directory.

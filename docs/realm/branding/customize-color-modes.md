@@ -1,6 +1,7 @@
 # Customize color modes
 
-You can use CSS styling and configuration changes to customize the color modes in your project. When users switch between color modes, the documentation's appearance dynamically changes to the corresponding color mode.
+You can use CSS styling and configuration changes to customize the color modes in your project.
+When users switch between color modes, the documentation's appearance dynamically changes to the corresponding color mode.
 
 ## Before you begin
 
@@ -11,7 +12,8 @@ Make sure you have the following before you begin:
 
 ## Configure color mode styles
 
-The styling rules in this section are added to your project's `@theme/styles.css` file. Create that file if you don't have one already.
+The styling rules in this section are added to your project's `@theme/styles.css` file.
+Create that file if you don't have one already.
 
 ### Override CSS variables
 
@@ -56,16 +58,19 @@ In this example, the colors and backgrounds change when users switch between lig
 
 #### CSS variable composition
 
-Element-specific CSS variables are often built upon another set of [core CSS variables](./color-mode.md#css-variables-as-building-blocks). Consider the level of granularity you need before adding CSS variable overrides.
+Element-specific CSS variables are often built upon another set of [core CSS variables](./color-mode.md#css-variables-as-building-blocks).
+Consider the level of granularity you need before adding CSS variable overrides.
 
 Let's use the example from the section above to illustrate the point. The example added the following styling rules:
 
 - The `:root` selector set the `--bg-overlay` variable.
 - The `:root.dark` selector set the `--sidebar-active-background-color` variable.
 
-The `--bg-overlay` serves as a building block for more than 30 other CSS variables! So, while the example *did* successfully change the sidebar's active item background, it no longer matches any other elements built with `--bg-overlay`.
+The `--bg-overlay` serves as a building block for more than 30 other CSS variables!
+So, while the example *did* successfully change the sidebar's active item background, it no longer matches any other elements built with `--bg-overlay`.
 
-Generally speaking, we recommend overriding the foundational CSS variables when possible to maintain a more cohesive design. Then you can override an element-specific CSS variable only when needed.
+Generally speaking, we recommend overriding the foundational CSS variables when possible to maintain a more cohesive design.
+Then you can override an element-specific CSS variable only when needed.
 
 ### Annotate Markdown elements
 
@@ -98,7 +103,8 @@ To use annotation to apply styling for different color modes:
     }
     ```
 
-In the example above, the first entry in the list changes between blue and red text color when the user changes the color mode. Annotations can be used to add classes or ids.
+In the example above, the first entry in the list changes between blue and red text color when the user changes the color mode.
+Annotations can be used to add classes or ids.
 
 ## Set color mode logo
 
@@ -108,7 +114,8 @@ To set the logo per color mode:
 
 1. Add two versions of a logo to an `images` folder in the root of your project.
 
-2. Create a single, comma-separated string that contains the logo's filepath and color mode name it corresponds with. It should follow this pattern: `<logo-path> <color-mode-name>, <logo-path> <color-mode-name>` and contain an entry for each color mode.
+2. Create a single, comma-separated string that contains the logo's filepath and color mode name it corresponds with.
+   It should follow this pattern: `<logo-path> <color-mode-name>, <logo-path> <color-mode-name>` and contain an entry for each color mode.
 
 3. In your project's `redocly.yaml` file, use the `srcSet` property on the `logo` object to pass the list of logos, as in the following example:
 
@@ -123,7 +130,8 @@ In the example above, the logo in the documentation navbar changes when the user
 
 ## Add new color modes
 
-You can add custom color modes beyond the default light and dark modes. This creates new options in the color mode switcher and requires component ejection.
+You can add custom color modes beyond the default light and dark modes.
+This creates new options in the color mode switcher and requires component ejection.
 
 ### Before you begin
 
@@ -194,7 +202,8 @@ colorMode:
     - 'dark'
 ```
 
-The first mode in the list is the default. See the [colorMode configuration](../config/color-mode.md) for all available options.
+The first mode in the list is the default.
+See the [colorMode configuration](../config/color-mode.md) for all available options.
 
 ### Test your new color mode
 

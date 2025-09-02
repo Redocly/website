@@ -28,20 +28,24 @@ All other configuration is done through team-role mapping.
 ---
 
 - reunite
-- [[Team to role map](#team-to-role-map)]
-- Describes project role for the given team. Use this option when needs to manage project access to a specific team, like allowing the team to manage branches or builds.
+- [Map[string, string]](#team-to-role-map)]
+- Map of teams to roles.
+  Use this option when needs to manage project access to a specific team, like allowing the team to manage branches or builds.
 
 ---
 
 - content
 - [[Content configuration](#content-configuration)]
-- Describes file access for the given team. Use this option when needs to manage file access to a specific team. This option is used for page access as well.
+- Describes file access for the given team.
+  Use this option when needs to manage file access to a specific team.
+  This option is used for page access as well.
 
 ---
 
 - features
 - [[Features configuration](#features-configuration)]
-- Describes feature access by team. Use this option when you need to manage access for specific features.
+- Describes feature access by team.
+  Use this option when you need to manage access for specific features.
 
 ---
 
@@ -79,7 +83,8 @@ All other configuration is done through team-role mapping.
 - _team name_
 - `none`, `read`, `write`, `triage`, `maintain`, or `admin`
 - Map of teams to project roles.
-  The team names come from a possible list of `anonymous` (meaning all users who are not logged in), `authenticated` (meaning any user who is logged in), and team names that come from the identity provider through the [single-sign-on (SSO) configuration](./sso.md). In addition, the team name `*` represents the rest of the teams not defined in sibling properties including `anonymous` and `authenticated`.
+  The team names come from a possible list of `anonymous` (meaning all users who are not logged in), `authenticated` (meaning any user who is logged in), and team names that come from the identity provider through the [single-sign-on (SSO) configuration](./sso.md).
+  In addition, the team name `*` represents the rest of the teams not defined in sibling properties including `anonymous` and `authenticated`.
   Possible values for project roles are: `none`, `read`, `write`, `triage`, `maintain`, or `admin`.
   {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "rbac"} /%}
 
@@ -96,14 +101,15 @@ All other configuration is done through team-role mapping.
 ---
 
 - _{glob pattern}\*_
-- [[Team to role map](#team-to-role-map)]
-- Use the glob pattern to define the team and role for specific page access, or using the unique key `**` to describe all pages.
+- [Map[string, string]](#team-to-role-map)
+- Use the glob pattern to define linked to a map of teams and role for specific page access, or using the unique key `**` to describe all pages.
 
 {% /table %}
 
 {% admonition type="info" %}
 
-When describing team to project role relations, a special key `*` may be used. A project role assigned to that key will be applied to the rest of the teams that are not described for the given glob pattern.
+When describing team to project role relations, a special key `*` may be used.
+A project role assigned to that key will be applied to the rest of the teams that are not described for the given glob pattern.
 
 In the following example, only users assigned to the Admin team can view the content on the `secrets.md` file:
 
@@ -128,8 +134,8 @@ rbac:
 ---
 
 - aiSearch
-- [[Team to role map](#team-to-role-map)]
-- Use a glob pattern to define the team and role for specific feature access.
+- Map[string, string](#team-to-role-map)
+- Map of teams to roles to define the team and role for AI search feature access.
 
 {% /table %}
 
@@ -143,9 +149,11 @@ rbac:
 
 ---
 
-- /some/path/_{teamPathSegment}_
-- `string`
-- Team folder pattern. The `{teamPathSegment}` segment is used as the path segment.
+- teamPathSegment
+- string
+- Team folder pattern.
+  The `{teamPathSegment}` segment is used as the path segment.
+  Example: `/some/path/_{teamPathSegment}_`
 
 {% /table %}
 
@@ -164,7 +172,8 @@ rbac:
 - The format that the team name follows.
   The prefix is optional but can be useful if you have many teams.
   The `{teamPathSegment}` is used as the path segment where the role access is applied,
-  and the `{projectRole}` part sets the access level. The `{teamPathSegment}` segments are transformed to lower case.
+  and the `{projectRole}` part sets the access level.
+  The `{teamPathSegment}` segments are transformed to lower case.
 
 {% /table %}
 
@@ -243,7 +252,7 @@ rbac:
       authenticated: read
 ```
 
-### Using environment variables
+### Use environment variables
 
 Environment variables can be used for role assignments, useful for different deployment environments:
 
@@ -330,15 +339,12 @@ rbac:
       authenticated: read
 ```
 
-## Related options
-
-- [sso](./sso.md) is used to identify users.
-- [ssoDirect](./ssoDirect.md)
-- [requiresLogin](./requires-login.md) reference
-
 ## Resources
 
 - **[Role-based access control (RBAC) concepts](../access/rbac.md)** - Understand the fundamentals and components of RBAC systems for comprehensive access management
 - **[RBAC configuration guide](../access/index.md)** - Complete implementation guide with examples for projects, pages, and navigation access control
 - **[Front matter configuration](./front-matter-config.md)** - Configure role-based access on individual pages using front matter for granular permission control
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
+- **[SSO configuration](./sso.md)** - Configure single sign-on to identify users and integrate with RBAC for comprehensive authentication and authorization
+- **[SSO Direct configuration](./ssoDirect.md)** - Configure direct SSO integration for streamlined user identification and RBAC implementation
+- **[Requires login configuration](./requires-login.md)** - Set up login requirements to enforce authentication before accessing RBAC-protected content

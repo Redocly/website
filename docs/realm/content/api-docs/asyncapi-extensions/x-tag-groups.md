@@ -5,7 +5,8 @@ The `x-tagGroups` feature adds an additional layer of navigation above the tags,
 Declare each group with a name, and add the tags to the group.
 
 {% admonition type="warning" name="Group all tags" %}
-The `x-tagGroups` feature forms the top level navigation for the API documentation. Any tag that is not in a group will not be included in the output.
+The `x-tagGroups` feature forms the top level navigation for the API documentation.
+Any tag that is not in a group will not be included in the output.
 
 **Add all tags to a group in order to include them in the documentation.**
 {% /admonition %}
@@ -56,7 +57,8 @@ The `x-tagGroups` extension is used at the top level of an AsyncAPI description.
 
 ## Examples
 
-The following example shows how to organize tags into logical groups. The `x-tagGroups` extension is used to separate core ride operations from supporting services.
+The following example shows how to organize tags into logical groups.
+The `x-tagGroups` extension is used to separate core ride operations from supporting services.
 
 ```yaml
 asyncapi: 3.0.0
@@ -91,4 +93,4 @@ The navigation in the API reference documentation using this `x-tagGroups` confi
 
 ## Resources
 
-- See a full [list of supported AsyncAPI extensions](./index.md).
+- **[Supported AsyncAPI extensions](./index.md)** - Complete list of all AsyncAPI extensions supported by Redocly for enhanced API documentation

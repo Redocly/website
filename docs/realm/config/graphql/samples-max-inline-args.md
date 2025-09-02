@@ -24,7 +24,8 @@ When there are more arguments than the configured value, every argument will be 
 
 - samplesMaxInlineArgs
 - number
-- Sets the maximum number of inline arguments for samples. Default value is `2`.
+- Sets the maximum number of inline arguments for samples.
+  Default value is `2`.
 
 {% /table %}
 
@@ -39,12 +40,9 @@ graphql:
 
 For longer-named arguments, a lower setting may produce more readable samples.
 
-## Related options
-
-- [jsonSamplesDepth](./json-samples-depth.md) - Sets the default expand level for JSON payload samples.
-- [graphql](./index.md) - Learn more about using `graphql` configuration.
-
 ## Resources
 
 - **[GraphQL](https://graphql.org/)** - Official GraphQL specification and documentation for understanding query language fundamentals
 - **[GraphQL configuration](./index.md)** - Complete guide to GraphQL configuration options for customizing API reference documentation
+- **[JSON samples depth configuration](./json-samples-depth.md)** - Set the default expand level for JSON payload samples to complement inline argument display
+- **[GraphQL configuration](./index.md)** - Complete guide to GraphQL configuration options for comprehensive API reference documentation customization

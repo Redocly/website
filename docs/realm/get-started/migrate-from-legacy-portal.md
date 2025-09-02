@@ -5,9 +5,11 @@ markdown:
 ---
 # Migrate from legacy portal
 
-This guide was created for users of Redocly's developer portal product. It contains steps, information, and resources to help you migrate an existing developer portal project to use Realm.
+This guide was created for users of Redocly's developer portal product.
+It contains steps, information, and resources to help you migrate an existing developer portal project to use Realm.
 
-Realm is a flexible, powerful platform for building documentation that empowers authors and delights users. Realm combines all the features of Redoc, Revel, and Reef into a single offering, from API reference documentation to custom writing elements.
+Realm is a flexible, powerful platform for building documentation that empowers authors and delights users.
+Realm combines all the features of Redoc, Revel, and Reef into a single offering, from API reference documentation to custom writing elements.
 
 ## Migration overview
 
@@ -27,7 +29,8 @@ At the start of your migration, you'll need to create a project in Reunite and c
 
 5. Go to **Editor** to verify that your project files are synced with Reunite.
 
-Don't worry about errors at this stage. They'll resolve as you work through the content in this guide.
+Don't worry about errors at this stage.
+They'll resolve as you work through the content in this guide.
 
 ### Prepare for migration
 
@@ -51,7 +54,8 @@ Migrate your developer portal project to Realm using the content in this guide.
 
 1. From your migration branch (`portal-upgrade`), create a new branch to work from; for example, your new branch could be named `migrate-sidebar`.
 
-2. Use this guide to migrate each part of your project. In this example, that's the [Update sidebar](#update-sidebar) section.
+2. Use this guide to migrate each part of your project.
+   In this example, that's the [Update sidebar](#update-sidebar) section.
 
 3. Run the [local Realm preview](#run-local-realm-preview) to see the changes while you work.
 
@@ -84,7 +88,8 @@ Once the content is migrated and you're ready to "go live" with the new project
 
 7. (Optional) [Delete](https://docs.github.com/en/apps/maintaining-github-apps/deleting-a-github-app) or deactivate the Redocly Workflows app in your Git provider.
 
-Congratulations! Your documentation is migrated and deployed on Redocly's latest and greatest product.
+Congratulations!
+Your documentation is migrated and deployed on Redocly's latest and greatest product.
 
 ## Migration helper script
 
@@ -98,7 +103,8 @@ This script can save you time and reduce the likelihood of manual errors.
 
 ### Use migration script
 
-1. Open your project to the migration branch (i.e. `portal-upgrade`).
+1. Open your project to the migration branch (i.e.
+   `portal-upgrade`).
 
 2. Remove the `node_modules` folder.
 
@@ -161,7 +167,8 @@ With the exception of MDX, Realm supports the same types of content as the devel
 
 #### Update API reference
 
-Realm includes the redesigned version of Redoc, which powers the API reference documentation. There are changes to how API descriptions are integrated and configured in your project.
+Realm includes the redesigned version of Redoc, which powers the API reference documentation.
+There are changes to how API descriptions are integrated and configured in your project.
 
 ##### API descriptions as remote content
 
@@ -188,11 +195,11 @@ The following example shows the old and new syntax for using remote API descript
 
   {% /tab %}
   {% tab label="New remote descriptions"%}
-  
+
     In this example, both API definitions are set up as remote content sources and the `redocly.yaml` file uses relative file paths.
 
     - The art-museum uses [remote content from GitHub](../reunite/project/remote-content/from-github.md).
-    - The flight-museum uses [remote content from a URL](../reunite/project/remote-content/url.md). 
+    - The flight-museum uses [remote content from a URL](../reunite/project/remote-content/url.md).
 
     ```yaml  {% title="redocly.yaml" %}
     apis:
@@ -269,7 +276,7 @@ The following example shows the old and new syntax for configuring multiple API 
               - lang: 'JavaScript'
                 label: 'JS'
     ```
-  
+
   {% /tab %}
 {% /tabs %}
 
@@ -292,9 +299,11 @@ However, some specific features may require adjustments during migration.
 
 ##### Change admonition syntax
 
-Realm adds Markdoc tags for [admonitions](https://redocly.com/docs/learn-markdoc/tags/admonition). The Markdown syntax for admonitions, `:::`, is no longer supported.
+Realm adds Markdoc tags for [admonitions](https://redocly.com/docs/learn-markdoc/tags/admonition).
+The Markdown syntax for admonitions, `:::`, is no longer supported.
 
-During migration, replace all Markdown admonitions with Markdoc tags. Use this [gist for converting admonition syntax](https://gist.github.com/adamaltman/7eb066430369135ef2b96605fd0c7d85) if you'd like to update them all at once.
+During migration, replace all Markdown admonitions with Markdoc tags.
+Use this [gist for converting admonition syntax](https://gist.github.com/adamaltman/7eb066430369135ef2b96605fd0c7d85) if you'd like to update them all at once.
 
 The following example shows the old and new admonition syntax:
 
@@ -386,7 +395,8 @@ During migration, update all code fences with a title to use Markdown tag syntax
 Realm adds a Markdoc tag for [tabs](https://redocly.com/docs/learn-markdoc/tags/tabs) that supports all content types.
 Tabbed code sample syntax from the developer portal needs to be updated.
 
-During migration, update all tabbed code samples to use the `tabs` tag. If custom tab names are required, use the nested `tag` element.
+During migration, update all tabbed code samples to use the `tabs` tag.
+If custom tab names are required, use the nested `tag` element.
 
 The following example shows the old syntax, new syntax, and new syntax with custom labels:
 
@@ -415,7 +425,8 @@ The following example shows the old syntax, new syntax, and new syntax with cust
 
   {% tab label="New code tabs" %}
 
-    Note that 'custom tab name' will break because of the spaces. Use named tabs instead.
+    Note that 'custom tab name' will break because of the spaces.
+    Use named tabs instead.
 
     {% markdoc-example %}
 
@@ -517,7 +528,8 @@ For **MDX files that combine Markdown and JSX**, use the following steps to upda
 
 1. Change the filetype from `.mdx` to `.md`.
 
-2. Remove the JSX syntax from the file. Alternatively, you can comment it out and use it to [create a tag](#create-markdoc-tags-from-jsx) later.
+2. Remove the JSX syntax from the file.
+   Alternatively, you can comment it out and use it to [create a tag](#create-markdoc-tags-from-jsx) later.
 
     ```markdown {% title="product-guide.mdx" %}
     import { ProductGallery } from './components/ProductGallery.tsx'
@@ -540,15 +552,17 @@ You can [use the legacy UI components](./use-legacy-ui-components.md) to help wi
 
 Realm contains an upgraded replacement to the "Try it console" called Replay, which allows users to send API requests from your documentation.
 
-Realm adds a [Markdoc tag for Replay](https://redocly.com/docs/learn-markdoc/tags/replay-openapi) that can embed the Replay console in a Markdown file. The `OpenApiTryIt` component is no longer supported.
+Realm adds a [Markdoc tag for Replay](https://redocly.com/docs/learn-markdoc/tags/replay-openapi) that can embed the Replay console in a Markdown file.
+The `OpenApiTryIt` component is no longer supported.
 
-During migration, change all implementations of OpenApiTryIt to use the `replay-openapi` Markdoc tag. Use the same OpenAPI description as the source.
+During migration, change all implementations of OpenApiTryIt to use the `replay-openapi` Markdoc tag.
+Use the same OpenAPI description as the source.
 
 The following example shows the same operation and configuration implemented in the Try it (old) and Replay (new) syntax:
 
 {% tabs %}
   {% tab label="Old Try it syntax"%}
-  
+
     ```javascript
     <OpenApiTryIt
       definitionId="museumApi"
@@ -609,7 +623,8 @@ During migration, you can create Markdoc tags from JSX using the following steps
 
 1. Copy the JSX from the migrated file.
 
-2. Add it as a custom component. For example, `@theme/markdoc/components/YourComponent.tsx`.
+2. Add it as a custom component.
+   For example, `@theme/markdoc/components/YourComponent.tsx`.
 
 3. Export the component from `@theme/markdoc/components.tsx`.
 
@@ -804,12 +819,14 @@ The following table summarizes the changes to the configuration options for the 
 ---
 
 - `copyCodeSnippet`
-- Replaced by `codeSnippet`. New features added, see [codeSnippet](../config/code-snippet.md).
+- Replaced by `codeSnippet`.
+  New features added, see [codeSnippet](../config/code-snippet.md).
 
 ---
 
 - `disableLastModified`
-- Replaced by `markdown.lastUpdatedBlock`. New features added, see [last updated object](../config/markdown.md#last-updated-object).
+- Replaced by `markdown.lastUpdatedBlock`.
+  New features added, see [last updated object](../config/markdown.md#last-updated-object).
 
 ---
 
@@ -819,22 +836,26 @@ The following table summarizes the changes to the configuration options for the 
 ---
 
 - `footer`
-- Moved to `footer`. New syntax and features, see [footer](../config/footer.md).
+- Moved to `footer`.
+  New syntax and features, see [footer](../config/footer.md).
 
 ---
 
 - `logo`
-- Moved to `logo`. Now supports light mode / dark mode versions.
+- Moved to `logo`.
+  Now supports light mode / dark mode versions.
 
 ---
 
 - `nav`
-- Replaced by `navbar`. New syntax and features, see [navbar options](../config/navbar.md) or [update navbar](#update-navbar).
+- Replaced by `navbar`.
+  New syntax and features, see [navbar options](../config/navbar.md) or [update navbar](#update-navbar).
 
 ---
 
 - `oasDefinitions`
-- Replaced by `apis`. Syntax changes, see [apis](https://redocly.com/docs/cli/configuration/reference/apis).
+- Replaced by `apis`.
+  Syntax changes, see [apis](https://redocly.com/docs/cli/configuration/reference/apis).
 
 ---
 
@@ -859,7 +880,8 @@ The following table summarizes the changes to the configuration options for the 
 ---
 
 - `stylesheets`
-- Replaced by `links`. See [links](../config/links.md).
+- Replaced by `links`.
+  See [links](../config/links.md).
 
 ---
 
@@ -989,7 +1011,8 @@ During migration, follow the steps below to update your custom styling to work w
 
 2. Open your `theme.ts` file.
 
-3. Recreate each styling rule using CSS variables. See the [CSS variables reference](../branding/css-variables/index.md) if you need help identifying them.
+3. Recreate each styling rule using CSS variables.
+   See the [CSS variables reference](../branding/css-variables/index.md) if you need help identifying them.
 
 The following example shows a set of style customizations from the developer portal updated to work with Realm:
 
@@ -1100,7 +1123,8 @@ The core idea remains the same: replace the components used to build pages with 
 During migration, update your custom components to reflect the following changes:
 
 - Custom components must be defined in the `@theme/components` folder, for example `@theme/components/Navbar/Navbar`.
-- Realm is a complete rebuild. The components in the core theme may have been removed or changed names.
+- Realm is a complete rebuild.
+  The components in the core theme may have been removed or changed names.
 
 Realm adds support for an exciting new feature that allows you to [eject a component](../customization/eject-components) used in the core theme.
 That means you get a complete, working implementation of that component; ready to be customized.

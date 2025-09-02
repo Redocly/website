@@ -53,13 +53,15 @@ A card only works as a child of `cards`.
 
 - to
 - string
-- URL or path for the card to link to. When set, the entire card behaves as a link.
+- URL or path for the card to link to.
+  When set, the entire card behaves as a link.
 
 ---
 
 - variant
 - string
-- Visual style of the card. Can be `filled`, `outlined`, `elevated`, or `ghost`.
+- Visual style of the card.
+  Can be `filled`, `outlined`, `elevated`, or `ghost`.
   Defaults to `filled`.
 
 ---
@@ -79,17 +81,31 @@ A card only works as a child of `cards`.
 
 - icon
 - string
-- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
-  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
-  Example: `book`, `duotone book`, `./images/config-icon.svg`.
+- Either:
+  - A [Font Awesome](https://fontawesome.com/icons) icon name.
+    Realm has the following icon packs built in: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
+    The icons automatically adjust their colors when users change the color mode.
 
+    To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
+    To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+
+    **Examples:** `book`, `duotone book`, `brands github`
+
+    Using other prefixes, including the `fa-` prefix, causes the icon to not render.
+  - Relative path to an icon image file.
+
+    **Example:** `./images/config-icon.svg`
 
 ---
 
 - iconVariant
 - string
 - Style of the icon.
-  Can be `filled` or `ghost`.
+  Can be `ghost` or `filled`:
+  - `ghost` displays the icon as is
+  - `filled` adds a padded outline with rounded corners to the icon
+
+  Defaults to `ghost`.
 
 ---
 
@@ -103,7 +119,8 @@ Once exceeded, text cuts off at the first white space and "..." is appended.
 - layout
 - string
 - Layout of the card.
-  Can be `horizontal` or `vertical`. Defaults to `vertical`.
+  Can be `horizontal` or `vertical`.
+  Defaults to `vertical`.
 
 ---
 

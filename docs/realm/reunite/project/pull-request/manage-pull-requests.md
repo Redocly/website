@@ -46,14 +46,18 @@ You can also filter the pull requests list by the following attributes:
 - **Type:** You can filter by the following two types:
   - **Manual:** This type includes all pull requests created in Reunite and through a connected Git repository.
   - **Automatic:** This type includes all pull requests created by remote content updates.
-- **Number:** You can filter by the pull request number. Pull request numbers are assigned by order of creation.
+- **Number:** You can filter by the pull request number.
+  Pull request numbers are assigned by order of creation.
 - **State:** You can filter by the following two states:
-  - **Draft:** This state is when you have committed changes to a development branch and Reunite automatically creates a pull request for you. Draft pull requests can be closed, but not merged until you click **Ready for review**.
-  - **Ready for review:** This state is when you have clicked the **Ready for review** button on a draft pull request. Ready for review pull requests can be closed or merged.
+  - **Draft:** This state is when you have committed changes to a development branch and Reunite automatically creates a pull request for you.
+    Draft pull requests can be closed, but not merged until you click **Ready for review**.
+  - **Ready for review:** This state is when you have clicked the **Ready for review** button on a draft pull request.
+    Ready for review pull requests can be closed or merged.
 - **Checks:** You can filter by the following two checks statuses:
   - **Passed:** This check status is for when all of your checks that haven't been disabled have passed.
   - **Failed:** This check status is for when one or more of your enabled checks have failed.
-- **Creator:** You can filter by the user who created the pull request. If you have a long list of possible users, you can search for the user by entering their name in the search field.
+- **Creator:** You can filter by the user who created the pull request.
+  If you have a long list of possible users, you can search for the user by entering their name in the search field.
 
 You can add multiple filters at one time and remove them by clicking **Delete** in the filter drop down.
 You can also remove all filters by clicking **Clear all** and add additional filters by clicking **+ Add filter**.

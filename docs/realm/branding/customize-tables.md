@@ -1,6 +1,7 @@
 # Customize tables
 
-Styling tables in your technical documentation improves readability and aesthetics. This guide shows you how to customize Markdown and Markdoc tables using CSS.
+Styling tables in your technical documentation improves readability and aesthetics.
+This guide shows you how to customize Markdown and Markdoc tables using CSS.
 
 Redocly supports tables written in both Markdown and Markdoc syntax.
 
@@ -12,16 +13,19 @@ You'll need:
 
 ## Table styling basics
 
-In Redocly projects, you can create global styles for all tables or style individual tables. Most table styling requires custom CSS.
+In Redocly projects, you can create global styles for all tables or style individual tables.
+Most table styling requires custom CSS.
 
 - Define global table styles with [CSS variables](./css-variables/index.md).
 - Create individual table styles using CSS selectors.
 
-CSS variables handle many table styling needs. For more advanced styling, use CSS selectors to target specific table elements.
+CSS variables handle many table styling needs.
+For more advanced styling, use CSS selectors to target specific table elements.
 
 ### HTML table structure
 
-Markdown and Markdoc tables convert to HTML when displayed. Understanding HTML table structure helps you write more precise CSS selectors for targeted styling.
+Markdown and Markdoc tables convert to HTML when displayed.
+Understanding HTML table structure helps you write more precise CSS selectors for targeted styling.
 
 <details>
   <summary>See HTML table syntax</summary>
@@ -79,11 +83,13 @@ This example adds global table styles with color mode variants:
 
 ## Style Markdown tables
 
-Target specific tables and elements with CSS selectors based on table headers. Tables with matching headers will share styling.
+Target specific tables and elements with CSS selectors based on table headers.
+Tables with matching headers will share styling.
 
 ### Use the data-label
 
-Each header value automatically becomes a `data-label` attribute on `th` tags when rendered. Use this attribute to style specific columns or tables.
+Each header value automatically becomes a `data-label` attribute on `th` tags when rendered.
+Use this attribute to style specific columns or tables.
 
 This example sets the width and background color of the "Favorite veggie" column:
 
@@ -134,7 +140,8 @@ Create more advanced styles by combining `data-label` with other CSS selectors:
 
 ## Style Markdoc tables
 
-Control Markdoc table appearance with attributes or custom classes. Attributes provide quick layout control while classes offer complete styling flexibility.
+Control Markdoc table appearance with attributes or custom classes.
+Attributes provide quick layout control while classes offer complete styling flexibility.
 
 ### Use built-in attributes
 
@@ -148,19 +155,19 @@ Example of a table customized with attributes:
 {% markdoc-example %}
   ```none {% process=false %}
   {% table %}
-    * Person
-    * Favorite food {% width="80%" %}
+    - Person
+    - Favorite food {% width="80%" %}
   ---
-    * Pizza {% colspan=2 align="center" %}
+    - Pizza {% colspan=2 align="center" %}
   ---
-    * Annabelle
-    * Bacon
+    - Annabelle
+    - Bacon
   ---
-    * Oliver
-    * Popsicle
+    - Oliver
+    - Popsicle
   ---
-    * Daisy {% align="right" %}
-    * Dog treats
+    - Daisy {% align="right" %}
+    - Dog treats
   {% /table %}
   ```
 {% /markdoc-example %}
@@ -218,20 +225,20 @@ For advanced styling, create CSS classes and add them to your Markdoc table tag:
 {% markdoc-example %}
   ```markdown {% process=false %}
   {% table .striped-table-rows .md %}
-    * Person
-    * Favorite activity
+    - Person
+    - Favorite activity
   ---
-    * Taylor
-    * Snowboarding
+    - Taylor
+    - Snowboarding
   ---
-    * Annabelle
-    * Roblox
+    - Annabelle
+    - Roblox
   ---
-    * Oliver
-    * Swings
+    - Oliver
+    - Swings
   ---
-    * Daisy
-    * Dog park
+    - Daisy
+    - Dog park
   {% /table %}
   ```
 {% /markdoc-example %}
@@ -269,7 +276,8 @@ For advanced styling, create CSS classes and add them to your Markdoc table tag:
 
 ### Style specific rows
 
-Highlight important information by styling specific rows in your tables. Add a CSS class directly to a row in your Markdoc table, then target that class in your CSS.
+Highlight important information by styling specific rows in your tables.
+Add a CSS class directly to a row in your Markdoc table, then target that class in your CSS.
 
 ```css {% title="@theme/styles.css" %}
 /* Style all cells in rows containing the class */
@@ -299,48 +307,48 @@ Here's how to apply these classes to specific rows:
 {% markdoc-example %}
   ```markdown {% process=false %}
   {% table .md %}
-    * Task
-    * Clicks required
-    * Notes
+    - Task
+    - Clicks required
+    - Notes
   ---
-    * Change your logo {% .highclick %}
-    * 10
-    * Only found details on Getting started page
+    - Change your logo {% .highclick %}
+    - 10
+    - Only found details on Getting started page
   ---
-    * Change the color of a heading
-    * 2
+    - Change the color of a heading
+    - 2
     *
   ---
-    * Revert changes {% .medclick %}
-    * 8
-    * Could be highlighted more in the sidebar
+    - Revert changes {% .medclick %}
+    - 8
+    - Could be highlighted more in the sidebar
   ---
-    * Add admonition
-    * 3
+    - Add admonition
+    - 3
     *
   {% /table %}
   ```
 {% /markdoc-example %}
 
 {% table .md %}
-* Task
-* Clicks required
-* Notes
+- Task
+- Clicks required
+- Notes
 ---
-* Change your logo {% .highclick %}
-* 10
-* Only found details on Getting started page
+- Change your logo {% .highclick %}
+- 10
+- Only found details on Getting started page
 ---
-* Change the color of a heading
-* 2
+- Change the color of a heading
+- 2
 *
 ---
-* Revert changes {% .medclick %}
-* 8
-* Could be highlighted more in the sidebar
+- Revert changes {% .medclick %}
+- 8
+- Could be highlighted more in the sidebar
 ---
-* Add admonition
-* 3
+- Add admonition
+- 3
 *
 {% /table %}
 

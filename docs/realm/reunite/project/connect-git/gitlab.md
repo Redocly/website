@@ -11,7 +11,8 @@ To connect a GitLab repository, you must first create a new access token in GitL
 ## Enter the connection details in Redocly
 
 1. From your project, select **Settings > Git hosting**.
-2. From the list of Git providers, select **GitLab** or a self-managed GitLab instance. For more information, see [Manage self-hosted Git providers in Reunite](./self-hosted/gitlab.md)
+2. From the list of Git providers, select **GitLab** or a self-managed GitLab instance.
+   For more information, see [Manage self-hosted Git providers in Reunite](./self-hosted/gitlab.md)
 3. Enter a **Credential name** for the new GitLab credential.
 4. Enter the **Access token** you saved from the [Create new access token in GitLab](#create-a-new-access-token-in-gitlab) step and select **Next**.
 5. Select the **Namespace > Project > Branch**.

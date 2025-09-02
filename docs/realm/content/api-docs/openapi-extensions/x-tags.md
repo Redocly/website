@@ -46,8 +46,8 @@ You can use existing tags to show schemas alongside operations in your documenta
 
 ## Resources
 
-- Add all schemas to a single tag with [schemaDefinitionsTagName](../../../config/openapi/schema-definitions-tag-name.md)
-- Give the tags better display names using [x-displayNames](./x-display-name.md).
-- Control which extensions are included in your API reference documentation with the [showExtensions configuration setting](../../../config/openapi/show-extensions.md).
-- See all [openapi configuration settings](../../../config/openapi/index.md).
-- See a full [list of supported OpenAPI extensions](./index.md).
+- **[Schema definitions tag name configuration](../../../config/openapi/schema-definitions-tag-name.md)** - Add all schemas to a single tag for consolidated schema documentation organization
+- **[x-displayName extension](./x-display-name.md)** - Give tags better human-readable display names for improved navigation and user experience
+- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
+- **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
+- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation

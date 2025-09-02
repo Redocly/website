@@ -9,7 +9,8 @@ The list of extensions supported in AsyncAPI by Redoc is as follows:
 - [x-enumDescriptions](./x-enum-descriptions.md) - Readable labels for enum values.
 - [x-rbac](x-rbac.md) - Control access to AsyncAPI objects.
 - [x-tagGroups](./x-tag-groups.md) - Higher-level grouping for tags, used in the sidebar.
+- [x-metadata](./x-metadata.md) - Add custom metadata at the top of the info section.
 
 ## Resources
 
-- How to [add AsyncAPI description to your project](../add-asyncapi-docs.md).
+- **[Add AsyncAPI description to your project](../add-asyncapi-docs.md)** - Complete guide for integrating AsyncAPI documentation into your Redocly project with extensions support

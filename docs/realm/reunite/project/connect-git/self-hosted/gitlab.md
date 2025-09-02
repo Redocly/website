@@ -9,15 +9,16 @@ To add a self-hosted GitLab provider in Reunite for your organization:
 1. On the Overview page for your organization, click **Self-hosted Git providers**.
 2. Click **Add new provider**.
 3. In the **Add new provider** modal, complete the following:
-   * Choose a GitLab **Provider Type**.
-   * Copy the **Redirect URI** and paste it into your provider's application settings.
-   * Enter a name for the Git provider.
-   * Enter the self-managed Git server URL.
-   * Enter the application ID from your Git provider.
-   * Enter the application secret from your Git provider.
+   - Choose a GitLab **Provider Type**.
+   - Copy the **Redirect URI** and paste it into your provider's application settings.
+   - Enter a name for the Git provider.
+   - Enter the self-managed Git server URL.
+   - Enter the application ID from your Git provider.
+   - Enter the application secret from your Git provider.
 4. Click **Save**.
 
-  The self-hosted GitLab provider displays on the list of Git providers. Users in your organization can select this provider to [add a repository as a project source](../connect-git-provider.md) to Reunite, or to [add content from a remote repository](../../remote-content/index.md).
+  The self-hosted GitLab provider displays on the list of Git providers.
+  Users in your organization can select this provider to [add a repository as a project source](../connect-git-provider.md) to Reunite, or to [add content from a remote repository](../../remote-content/index.md).
 
 ## Edit self-hosted GitLab provider properties
 

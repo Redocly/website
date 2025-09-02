@@ -14,14 +14,16 @@ The `code-group` tag renders a set of code snippets in a tabbed view, allowing u
 
 - mode
 - string
-- The mode of the code group. Can be `tabs` or `dropdown`.
+- The mode of the code group.
+  Can be `tabs` or `dropdown`.
   Defaults to `tabs`.
 
 {% /table %}
 
 ## Syntax and usage
 
-To create a code group, use the `code-group` tag and nest code blocks or `code-snippet` tags within it. Each code block or `code-snippet` represents a tab in the group.
+To create a code group, use the `code-group` tag and nest code blocks or `code-snippet` tags within it.
+Each code block or `code-snippet` represents a tab in the group.
 
 Example syntax:
 

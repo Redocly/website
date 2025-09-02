@@ -31,7 +31,8 @@ Integrate Heap Analytics into Redocly project.
 
 - includeInDevelopment
 - boolean
-- Set this option to `true` to enable Heap Analytics in development mode and preview builds. Default is `false`.
+- Set this option to `true` to enable Heap Analytics in development mode and preview builds.
+  Default is `false`.
 
 {% /table %}
 

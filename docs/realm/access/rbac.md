@@ -35,7 +35,9 @@ graph LR
 
 ```
 
-RBAC is declared as configuration. Each configuration entry describes a [resource](#resource-identifiers), and a list of [teams](../reunite/organization/teams.md) with [role](./roles.md) assignments. You can apply these configurations to [individual pages](./page-permissions.md) or [navigation elements](./links-and-groups-permissions.md).
+RBAC is declared as configuration.
+Each configuration entry describes a [resource](#resource-identifiers), and a list of [teams](../reunite/organization/teams.md) with [role](./roles.md) assignments.
+You can apply these configurations to [individual pages](./page-permissions.md) or [navigation elements](./links-and-groups-permissions.md).
 
 User authentication is handled through [SSO (single sign-on)](../reunite/organization/sso/sso.md), and authorization is determined by the roles and team memberships provided by your identity provider.
 

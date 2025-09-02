@@ -30,7 +30,8 @@ To view previews on the Deploys page:
 
 1. Select the **Preview** toggle button.
 2. Select the preview build for the deploy number you want to see.
-   You can access previews for any existing pull request. Deploys are listed most recent to least, so the most recent deploy displays first.
+   You can access previews for any existing pull request.
+   Deploys are listed most recent to least, so the most recent deploy displays first.
 3. Click the **Preview** button.
 
 ## From the Editor page
@@ -38,7 +39,8 @@ To view previews on the Deploys page:
 To view previews on the Editor page:
 
 1. Switch to your branch
-2. Click **Preview** from the top right corner. If it's the default branch, you will see **Production** deployment link.
+2. Click **Preview** from the top right corner.
+   If it's the default branch, you will see **Production** deployment link.
 
 ### From the Pull requests page
 

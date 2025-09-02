@@ -1,6 +1,7 @@
 # Teams
 
-Teams are groups of users that form an important part of configuring [role-based access control (RBAC)](../../access/rbac.md) for your projects. You can assign users to more than one team and manage team composition to control project access.
+Teams are groups of users that form an important part of configuring [role-based access control (RBAC)](../../access/rbac.md) for your projects.
+You can assign users to more than one team and manage team composition to control project access.
 
 ## Team management modes
 
@@ -14,7 +15,7 @@ Teams can be managed in two different ways depending on your authentication setu
 
 **Reunite Managed Teams:**
 - Teams are created and managed directly in Reunite
-- Team membership is controlled through the [Reunite Teams page](#managing-teams)
+- Team membership is controlled through the [Reunite Teams page](#manage-teams)
 - Full control over team composition, managers, and team names within Reunite
 
 {% admonition type="info" %}
@@ -49,7 +50,8 @@ rbac:
 ```
 
 {% admonition type="warning" %}
-The `authenticated` and `anonymous` names are reserved team names. If you define a team with the same name in the `redocly.yaml` file, it won't work as expected.
+The `authenticated` and `anonymous` names are reserved team names.
+If you define a team with the same name in the `redocly.yaml` file, it won't work as expected.
 {% /admonition %}
 
 ### Organization role teams
@@ -106,7 +108,7 @@ Team managers can:
 - View, add, or remove users within their teams
 - Update the team name
 
-## Managing teams
+## Manage teams
 
 If you are logged in to Reunite and have an [Owner organization role](../../access/roles.md#organization-roles), you can view and manage **Reunite-managed teams** from the **Teams** page in the following ways:
 
@@ -119,7 +121,8 @@ If you are logged in to Reunite and have an [Owner organization role](../../acce
 - Delete a team from your organization
 
 {% admonition type="warning" %}
-**Identity provider managed teams cannot be edited** through the Teams page. If a team is imported from your identity provider, you must make changes to team membership and composition in your identity provider system (e.g., Active Directory, Okta, etc.).
+**Identity provider managed teams cannot be edited** through the Teams page.
+If a team is imported from your identity provider, you must make changes to team membership and composition in your identity provider system (e.g., Active Directory, Okta, etc.).
 {% /admonition %}
 
 Only users with an Owner organization role and members assigned as team managers can access the **Teams** page.

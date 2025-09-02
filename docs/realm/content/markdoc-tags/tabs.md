@@ -48,7 +48,8 @@ A tab only works as a child of a tabs section.
 
 - size
 - enum (`small` or `medium`)
-- Sets the size of the tab. Use `small` for compact layouts and `medium` for default spacing and padding.
+- Sets the size of the tab.
+  Use `small` for compact layouts and `medium` for default spacing and padding.
   **Default:** `medium`
 
 {% /table %}
@@ -72,17 +73,28 @@ A tab only works as a child of a tabs section.
 
 - disable
 - boolean
-- When `true`, the tab is non-interactive and styled as disabled. It cannot be focused or selected.
+- When `true`, the tab is non-interactive and styled as disabled.
+  It cannot be focused or selected.
   **Default:** `false`
-  
+
 ---
 
 - icon
 - string
-- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
-  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
-  Example: `book`, `duotone book`, `./images/config-icon.svg`.
+- Either:
+  - A [Font Awesome](https://fontawesome.com/icons) icon name.
+    Realm has the following icon packs built in: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
+    The icons automatically adjust their colors when users change the color mode.
 
+    To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
+    To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+
+    **Examples:** `book`, `duotone book`, `brands github`
+
+    Using other prefixes, including the `fa-` prefix, causes the icon to not render.
+  - Relative path to an icon image file.
+
+    **Example:** `./images/config-icon.svg`
 
 ---
 
@@ -107,17 +119,17 @@ The following example uses tabs to group related information together:
   ```markdoc {% process=false %}
   {% tabs %}
     {% tab label="Web frameworks" %}
-      * Django
-      * Ruby on Rails
-      * Angular
-      * Vue
-      * React
+      - Django
+      - Ruby on Rails
+      - Angular
+      - Vue
+      - React
     {% /tab %}
     {% tab label="Cloud services" %}
-      * AWS
-      * Google Cloud
-      * Microsoft Azure
-      * Cloudflare
+      - AWS
+      - Google Cloud
+      - Microsoft Azure
+      - Cloudflare
     {% /tab %}
   {% /tabs %}
   ```
@@ -126,18 +138,18 @@ The following example uses tabs to group related information together:
 {% tabs %}
   {% tab label="Web frameworks" %}
 
-    * Django
-    * Ruby on Rails
-    * Angular
-    * Vue
-    * React
+    - Django
+    - Ruby on Rails
+    - Angular
+    - Vue
+    - React
   {% /tab %}
   {% tab label="Cloud services" %}
 
-    * AWS
-    * Google Cloud
-    * Microsoft Azure
-    * Cloudflare
+    - AWS
+    - Google Cloud
+    - Microsoft Azure
+    - Cloudflare
   {% /tab %}
 {% /tabs %}
 
@@ -150,17 +162,17 @@ The following example uses tabs to display a list view and table view of the sam
   ```markdoc {% process=false %}
   {% tabs %}
     {% tab label="List view " %}
-      * Web Frameworks
-        * Django
-        * Ruby on Rails
-        * Angular
-        * Vue
-        * React
-      * Cloud services
-        * AWS
-        * Google Cloud
-        * Microsoft Azure
-        * Cloudflare
+      - Web Frameworks
+        - Django
+        - Ruby on Rails
+        - Angular
+        - Vue
+        - React
+      - Cloud services
+        - AWS
+        - Google Cloud
+        - Microsoft Azure
+        - Cloudflare
     {% /tab %}
     {% tab label="Table view" %}
       {% table %}
@@ -181,17 +193,17 @@ The following example uses tabs to display a list view and table view of the sam
 {% tabs %}
   {% tab label="List view" %}
 
-    * Web Frameworks
-      * Django
-      * Ruby on Rails
-      * Angular
-      * Vue
-      * React
-    * Cloud services
-      * AWS
-      * Google Cloud
-      * Microsoft Azure
-      * Cloudflare
+    - Web Frameworks
+      - Django
+      - Ruby on Rails
+      - Angular
+      - Vue
+      - React
+    - Cloud services
+      - AWS
+      - Google Cloud
+      - Microsoft Azure
+      - Cloudflare
   {% /tab %}
   {% tab label="Table view" %}
     {% table %}
@@ -301,12 +313,12 @@ The following example uses tabs to group resources into beginner and advanced ca
   ```markdoc {% process=false %}
   {% tabs %}
     {% tab label="Beginner CLI resources" %}
-      * [Install Redocly CLI](/docs/cli/installation.md)
-      * [Redocly CLI quickstart guide](/docs/cli/quickstart.md)
+      - [Install Redocly CLI](/docs/cli/installation.md)
+      - [Redocly CLI quickstart guide](/docs/cli/quickstart.md)
     {% /tab %}
     {% tab label="Advanced CLI resources" %}
-      * [Hide internal APIs](/docs/cli/guides/hide-apis.md)
-      * [Enforce response contents](/docs/cli/guides/response-contains-property.md)
+      - [Hide internal APIs](/docs/cli/guides/hide-apis.md)
+      - [Enforce response contents](/docs/cli/guides/response-contains-property.md)
     {% /tab %}
   {% /tabs %}
   ```
@@ -315,13 +327,13 @@ The following example uses tabs to group resources into beginner and advanced ca
 {% tabs %}
   {% tab label="Beginner CLI resources" %}
 
-    * [Install Redocly CLI](#best-practices)
-    * [Redocly CLI quickstart guide](#best-practices)
+    - [Install Redocly CLI](#best-practices)
+    - [Redocly CLI quickstart guide](#best-practices)
   {% /tab %}
   {% tab label="Advanced CLI resources" %}
 
-    * [Hide internal APIs](#best-practices)
-    * [Enforce response contents](#best-practices)
+    - [Hide internal APIs](#best-practices)
+    - [Enforce response contents](#best-practices)
   {% /tab %}
 {% /tabs %}
 

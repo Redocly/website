@@ -25,7 +25,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 ---
 
 - catalogClassic
-- Map of strings to [Catalog Classic](#catalog-object)
+- Map[string, [Catalog Classic](#catalog-classic-object)]
 - **REQUIRED.**
   Map of strings allows for the definition of multiple catalogs.
   Strings represent catalog only in configuration file - they do not appear in published project.
@@ -33,7 +33,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 
 {% /table %}
 
-### Catalog object
+### Catalog classic object
 
 {% table %}
 
@@ -55,6 +55,14 @@ You can configure multiple catalogs and set the link text, description, and filt
 - string
 - Page title key used for [localization](./l10n.md).
 
+---
+
+- icon
+- string
+- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
+  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
+  Example: `book`, `duotone book`, `./images/config-icon.svg`.
+  
 ---
 
 - description
@@ -90,7 +98,8 @@ You can configure multiple catalogs and set the link text, description, and filt
 
 - filterValuesCasing
 - string
-- Transform casing of filter values. Possible values: `lowercase`, `uppercase`, `sentence`, `original`.
+- Transform casing of filter values.
+  Possible values: `lowercase`, `uppercase`, `sentence`, `original`.
   Default: `original`.
 
 ---
@@ -149,7 +158,8 @@ You can configure multiple catalogs and set the link text, description, and filt
 
 - valuesMapping
 - string
-- Map filter values to different values. Useful for mapping legacy metadata values to new values.
+- Map filter values to different values.
+  Useful for mapping legacy metadata values to new values.
   Default value: `{}`.
 
 ---
@@ -216,11 +226,24 @@ You can configure multiple catalogs and set the link text, description, and filt
 ---
 
 - includeByMetadata
-- Map of metadata properties to list of string values
-- Restricts what to include in the catalog.
+- Map[string, [string]]
+- Map of metadata properties to list of string values.
+  Restricts what to include in the catalog.
   Example: `{"type": ["openapi"]}`.
 
 {% /table %}
+
+## Catalog classic routing behavior
+
+When users click an item in the catalog, the routing behavior depends on your sidebar configuration:
+
+- **With sidebars.yaml**: The catalog routes to the first item defined in the corresponding `sidebars.yaml` file that links to that catalog item
+- **Without sidebars.yaml**: A sidebar is generated automatically from the files in the directory, and routing goes to the first file
+
+This means clicking an OpenAPI document in the catalog may not navigate directly to the API reference documentation.
+Instead, it navigates to whatever appears first in your sidebar configuration, such as a home page or getting started guide.
+
+To ensure users reach specific content when clicking catalog items, organize your `sidebars.yaml` files so the most important content appears first, or create dedicated landing pages that introduce each API.
 
 {% admonition type="info" %}
 
@@ -339,14 +362,10 @@ catalogClassic:
         type: select
 ```
 
-## Related options
-
-- View the configuration options available for translating content in the [localization](./l10n.md) reference documentation.
-- See the [navbar](./navbar.md) configuration documentation to see the format for adding a link to your catalog to the navbar.
-- Use [x-metadata](../content/api-docs/openapi-extensions/x-metadata.md) to make your API descriptions filterable.
-
 ## Resources
 
+- **[Sidebars configuration](../navigation/sidebars.md)** - Configure sidebar navigation structure to control how catalog items route when clicked by users
+- **[x-metadata extension](../content/api-docs/openapi-extensions/x-metadata.md)** - Add metadata to OpenAPI files that can be used as catalog filters and displayed in API documentation
 - **[Hide info metadata](./openapi/hide-info-metadata.md)** - Exclude metadata from API reference documentation when you want cleaner, focused documentation presentation
 - **[API Governance](https://redocly.com/docs/cli/api-standards)** - Learn about API standards and governance practices for maintaining quality and consistency
 - **[Configure scorecard](../reunite/project/configure-scorecard.md)** - Set up scorecards to check APIs against standards and maintain quality metrics

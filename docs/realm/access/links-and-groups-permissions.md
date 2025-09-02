@@ -29,7 +29,8 @@ navbar:
 
 ```yaml
 footer:
-  copyrightText: Copyright © Redocly 2019-2020. All right reserved.
+  copyrightText: Copyright © Redocly 2019-2020.
+  All right reserved.
   items:
     - group: Support
       items:
@@ -60,7 +61,8 @@ navbar:
 
 ```yaml
 footer:
-  copyrightText: Copyright © Redocly 2019-2020. All right reserved.
+  copyrightText: Copyright © Redocly 2019-2020.
+  All right reserved.
   items:
     - group: Hidden Support Group
       rbac:

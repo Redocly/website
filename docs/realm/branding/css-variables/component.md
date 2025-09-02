@@ -120,13 +120,21 @@
 <summary>Breadcrumbs</summary>
 
 ```css
---breadcrumbs-text-color: var(--text-color-description);
+--breadcrumbs-text-color: var(--text-color-description); 
+--breadcrumbs-text-color-active: var(--text-color-primary); 
+--breadcrumbs-text-color-border-hover: var(--color-info-border-hover);
 --breadcrumbs-font-size: var(--font-size-base);
---breadcrumbs-text-color-active: var(--text-color-primary);
---breadcrumbs-text-decoration-hover: underline;
---breadcrumbs-padding: 0;
---breadcrumbs-gap: var(--spacing-xs);
+--breadcrumbs-icon-size: var(--font-size-base);
+--breadcrumbs-font-weight-active: var(--font-weight-medium); 
+--breadcrumbs-border-radius: var(--border-radius);
+--breadcrumbs-gap: var(--spacing-xxs);
+--breadcrumbs-padding: 2px var(--spacing-xs);
 --breadcrumbs-margin-bottom: var(--spacing-lg);
+--breadcrumbs-background-color-hover: var(--color-hover-base);
+--breadcrumbs-background-color-focus: var(--color-info-border-hover);
+--breadcrumbs-box-shadow-focus: 0 0 0 1px var(--breadcrumbs-background-color-focus);
+--breadcrumb-padding: var(--spacing-xxs);
+--breadcrumb-dropdown-active-icon-position: var(--spacing-xs);
 ```
 
 </details>
@@ -633,7 +641,7 @@
   --dropdown-menu-line-height: var(--line-height-base);
   --dropdown-menu-text-color: var(--text-color-secondary);
 
-  --dropdown-menu-margin-top: var(--spacing-xxs);
+  --dropdown-menu-padding-top: var(--spacing-xxs);
   --dropdown-menu-min-width: 100px;
   --dropdown-menu-max-width: 424px;
   --dropdown-menu-max-height: 300px;
@@ -687,7 +695,7 @@
 --feedback-border-radius: var(--border-radius-lg);
 --feedback-report-dialog-max-width: 500px;
 --feedback-report-dialog-max-height: 300px;
---feedback-vote-button-wigth: 28px;
+--feedback-vote-button-width: 28px;
 --feedback-vote-button-height: 28px;
 
 --feedback-header-text-color: var(--text-color-primary);
@@ -1971,7 +1979,7 @@
 --toc-item-nested-offset: calc(var(--toc-spacing-unit) * 2);
 --toc-item-padding-vertical: calc(var(--toc-spacing-unit) / 2);
 --toc-item-padding-horizontal: calc(var(--toc-spacing-unit) * 2);
---toc-item-border-color-active: var(--border-color-invers);
+--toc-item-border-color-active: var(--border-color-inverse);
 ```
 
 </details>

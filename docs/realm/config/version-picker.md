@@ -56,11 +56,6 @@ versionPicker:
   showForUnversioned: true
 ```
 
-## Related options
-
-- Configure a product picker for multiple products using the [products](./products.md) configuration reference documentation.
-- See the options for adding a language picker to your project in the [l10n](./l10n.md) configuration reference documentation.
-
 ## Resources
 
 - **[Add multiple versions](../content/versions.md)** - Configure your versions.yaml file to specify the default version and manage multiple documentation versions

@@ -22,7 +22,8 @@ Use `x-additionalPropertiesName` as a property of `additionaProperties` in an Op
 
 - x-additionalPropertiesName
 - string
-- Add a display name for an `additionalProperty`. By default it shows as `property name*`.
+- Add a display name for an `additionalProperty`.
+  By default it shows as `property name*`.
 
 {% /table %}
 
@@ -53,6 +54,6 @@ The additional properties appear in the documentation as `percentage*`.
 
 ## Resources
 
-- Control which extensions are included in your API reference documentation with the [showExtensions configuration setting](../../../config/openapi/show-extensions.md).
-- See all [openapi configuration settings](../../../config/openapi/index.md).
-- See a full [list of supported OpenAPI extensions](./index.md).
+- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
+- **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
+- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation

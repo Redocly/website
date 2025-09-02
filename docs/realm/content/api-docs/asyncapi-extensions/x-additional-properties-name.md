@@ -22,7 +22,8 @@ Use `x-additionalPropertiesName` as a property of `additionaProperties` in an As
 
 - x-additionalPropertiesName
 - string
-- Add a display name for an `additionalProperty`. By default it shows as `property name*`.
+- Add a display name for an `additionalProperty`.
+  By default it shows as `property name*`.
 
 {% /table %}
 
@@ -60,4 +61,4 @@ The additional properties appear in the documentation as `customRating*`.
 
 ## Resources
 
-- See a full [list of supported AsyncAPI extensions](./index.md).
+- **[Supported AsyncAPI extensions](./index.md)** - Complete list of all AsyncAPI extensions supported by Redocly for enhanced API documentation

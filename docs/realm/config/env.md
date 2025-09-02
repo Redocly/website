@@ -26,7 +26,7 @@ configuration file in the **root** directory and referencing it in the `env` opt
 ---
 
 - preview
-- [[Redocly config](./index.md) or [Reference object](#reference-object)]
+- [[Redocly config](./index.md) | [Reference object](#reference-object)]
 - Configuration for the preview environment.
 
 ---
@@ -34,7 +34,7 @@ configuration file in the **root** directory and referencing it in the `env` opt
 ---
 
 - development
-- [[Redocly config](./index.md) or [Reference object](#reference-object)]
+- [[Redocly config](./index.md) | [Reference object](#reference-object)]
 - Configuration for the development environment.
 
 ---
@@ -42,7 +42,7 @@ configuration file in the **root** directory and referencing it in the `env` opt
 ---
 
 - production
-- [[Redocly config](./index.md) or [Reference object](#reference-object)]
+- [[Redocly config](./index.md) | [Reference object](#reference-object)]
 - Configuration for the production environment.
 
 ---

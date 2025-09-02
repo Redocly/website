@@ -18,7 +18,7 @@ This page contains the list of all predefined translation keys used in default U
 
 - asyncapi.download.description.title
 - Title for the download description section in AsyncAPI description
-- Download AsycAPI description
+- Download AsyncAPI description
 
 ---
 
@@ -144,7 +144,8 @@ This page contains the list of all predefined translation keys used in default U
 
 - search.ai.disclaimer
 - Disclaimer text for AI search functionality
-- AI search might provide incomplete or incorrect results. Verify important information.
+- AI search might provide incomplete or incorrect results.
+  Verify important information.
 
 ---
 
@@ -210,7 +211,9 @@ This page contains the list of all predefined translation keys used in default U
 
 - search.ai.welcomeText
 - Welcome message displayed in the AI search interface
-- Welcome to AI search! Feel free to ask me anything. How can I help you?
+- Welcome to AI search!
+  Feel free to ask me anything.
+  How can I help you?
 
 ---
 
@@ -306,7 +309,8 @@ This page contains the list of all predefined translation keys used in default U
 
 - page.notFound.description
 - 404 Not Found page description text
-- The page you were trying to reach doesn't exist or may have been moved. You can go back to the previous page, return to the homepage, or use the search bar to find what you're looking for.
+- The page you were trying to reach doesn't exist or may have been moved.
+  You can go back to the previous page, return to the homepage, or use the search bar to find what you're looking for.
 
 ---
 
@@ -1308,7 +1312,8 @@ This page contains the list of all predefined translation keys used in default U
 
 - page.internalServerError.description
 - "500 Internal server error" page description text
-- Something went wrong on our end. Please try again later or contact support if the problem persists.
+- Something went wrong on our end.
+  Please try again later or contact support if the problem persists.
 
 ---
 
@@ -1326,7 +1331,8 @@ This page contains the list of all predefined translation keys used in default U
 
 ## Dynamic values in translations
 
-Translations use template syntax with placeholders like `{{value}}` to enable dynamic content generation. This templating mechanism allows the application to inject variable data at runtime, producing contextually appropriate text without requiring separate translation entries for each possible value.
+Translations use template syntax with placeholders like `{{value}}` to enable dynamic content generation.
+This templating mechanism allows the application to inject variable data at runtime, producing contextually appropriate text without requiring separate translation entries for each possible value.
 
 For example, the `time.past.seconds` translation key uses `{{value}}` to represent the number of seconds. Instead of creating separate translation keys for each possible number of seconds in a minute, the application automatically inserts the correct number at runtime:
 

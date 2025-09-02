@@ -7,7 +7,7 @@ Use plugins when you need to add rules beyond the [built-in](https://redocly.com
 
 ## Options
 
-The `plugins` configuration is an array of paths to plugin files, relative to the config file.
+The `plugins` configuration is a list of paths to plugin files, relative to the config file.
 You can include as many plugins as you need.
 
 ## Examples

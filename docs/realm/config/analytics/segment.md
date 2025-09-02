@@ -31,13 +31,15 @@ Integrate Segment Analytics into Redocly project.
 
 - includeInDevelopment
 - boolean
-- Set this option to `true` to enable Segment Analytics in development mode and preview builds. Default is `false`.
+- Set this option to `true` to enable Segment Analytics in development mode and preview builds.
+  Default is `false`.
 
 ---
 
 - trackPage
 - boolean
-- Set this to `false` to disable page visits tracking. Defaults to `true`.
+- Set this to `false` to disable page visits tracking.
+  Defaults to `true`.
 
 ---
 
