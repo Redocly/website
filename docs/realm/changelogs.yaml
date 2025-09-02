@@ -29921,3 +29921,10 @@ reunite:
         - Added automatic spam detection for newly created `feedback` entries based on content.
       patch: []
     dependencies: {}
+  v2025-09-02.1:
+    timestamp: 1756791235000
+    changes:
+      minor: []
+      patch:
+        - Removed default 30-day date range filter from feedback list. Updated date range presets to span entire days.
+    dependencies: {}
