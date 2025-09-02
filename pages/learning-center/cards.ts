@@ -98,22 +98,19 @@ export const cards = [
       { title: 'Tools for API Testing in 2025', link: '/learn/testing/tools-for-api-testing-in-2025' },
     ],
   },
-  // {
-  //   id: 7,
-  //   key: 'api-security',
-  //   title: 'API Security',
-  //   description:
-  //     'Gain insights into securing your APIs with essential resources, tools, and best practices to protect your applications.',
-  //   thumbnail: apiSecurityThumbnail,
-  //   moreItems: ' more topics',
-  //   landingPage: '/',
-  //   items: [
-  //     { title: 'Introduction to API Security', link: '' },
-  //     { title: 'Common API Vulnerabilities', link: '' },
-  //     { title: 'Implementing Authentication and Authorization examples', link: '' },
-  //     { title: 'Best Practices for Securing APIs', link: '' },
-  //   ],
-  // },
+  {
+    id: 6,
+    key: 'api-security',
+    title: 'API Security',
+    description:
+      'Gain insights into securing your APIs with essential resources, tools, and best practices to protect your applications.',
+    thumbnail: apiSecurityThumbnail,
+    moreItems: '1 more topic',
+    landingPage: '/learn/security',
+    items: [
+      { title: 'API Design-First Security Guide', link: '/learn/security/api-design-first-security-guide' },
+    ],
+  },
   // {
   //   id: 8,
   //   key: 'graphql',
