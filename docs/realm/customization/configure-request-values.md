@@ -356,3 +356,4 @@ This allows you to provide different environment variable values based on the se
 
 - **[x-codeSamples extension](../content/api-docs/openapi-extensions/x-code-samples.md)** - Add custom code samples to your OpenAPI description that work with configured request values for enhanced API documentation
 - **[Component ejection guide](./eject-components/index.md)** - Learn to eject and customize built-in components for advanced request value handling and UI modifications
+- **[Configure dynamic Replay values](./configure-dynamic-replay-values.md)** - Fetch request values from external APIs when the Replay is opened
