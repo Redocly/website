@@ -1,6 +1,6 @@
 '@redocly/realm':
   0.125.0:
-    timestamp: 1756977970125
+    timestamp: 1757073576000
     changes:
       minor:
         - Added LLM-related page actions to the GraphQL docs.
@@ -4135,7 +4135,7 @@
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
   0.125.0:
-    timestamp: 1756977970125
+    timestamp: 1757073576000
     changes:
       minor:
         - Added `dynamic` function to `@redocly/theme` for lazy loading components.
@@ -7528,7 +7528,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
   0.125.0:
-    timestamp: 1756977970125
+    timestamp: 1757073576000
     changes:
       minor:
         - Added `dynamic` function to `@redocly/theme` for lazy loading components.
@@ -10918,7 +10918,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
   0.125.0:
-    timestamp: 1756977970125
+    timestamp: 1757073576000
     changes:
       minor:
         - Added LLM-related page actions to the GraphQL docs.
@@ -14308,7 +14308,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
   0.57.0:
-    timestamp: 1756977970125
+    timestamp: 1757073576000
     changes:
       minor:
         - Added `dynamic` function to `@redocly/theme` for lazy loading components.
@@ -16491,7 +16491,7 @@
     dependencies: {}
 '@redocly/openapi-docs':
   3.13.0:
-    timestamp: 1756977970125
+    timestamp: 1757073576000
     changes:
       minor:
         - Made the `codeSamples->languages` parameter optional.
@@ -19033,7 +19033,7 @@
     dependencies: {}
 '@redocly/graphql-docs':
   1.2.0:
-    timestamp: 1756977970125
+    timestamp: 1757073576000
     changes:
       minor:
         - Added LLM-related page actions to the GraphQL docs.
@@ -20031,7 +20031,7 @@
     dependencies: {}
 '@redocly/portal-legacy-ui':
   0.8.0:
-    timestamp: 1756977970125
+    timestamp: 1757073576000
     changes:
       minor: []
       patch:
@@ -20154,7 +20154,7 @@
     dependencies: {}
 '@redocly/portal-plugin-async-api':
   1.8.0:
-    timestamp: 1756977970125
+    timestamp: 1757073576000
     changes:
       minor: []
       patch: []
@@ -23890,7 +23890,7 @@
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
   0.10.0:
-    timestamp: 1756977970125
+    timestamp: 1757073576000
     changes:
       minor: []
       patch: []
@@ -25967,7 +25967,7 @@
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
   0.16.0:
-    timestamp: 1756977970125
+    timestamp: 1757073576000
     changes:
       minor:
         - >-
@@ -27164,7 +27164,7 @@
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
   0.8.0:
-    timestamp: 1756977970125
+    timestamp: 1757073576000
     changes:
       minor: []
       patch: []
@@ -28325,7 +28325,7 @@
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
   1.2.0:
-    timestamp: 1756977970125
+    timestamp: 1757073576000
     changes:
       minor:
         - Added support for the `x-metadata` extension in AsyncAPI documentation.
