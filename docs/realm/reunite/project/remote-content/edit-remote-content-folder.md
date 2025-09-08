@@ -35,10 +35,10 @@ To edit remote content folder settings:
    From the Remote content page, click the additional options menu on the far right side of the table on the remote content folder row, then click **Edit**. \
   ![Open options menu on Reunite's Remote content page](../../images/reunite-remote-content-options.png)
 2. Modify the settings as needed, depending on the source of your content:
-    - For GitHub, see: [Add remote files from GitHub](./from-github.md#enter-the-connection-details-in-reunite)
+    - For GitHub, see: [Add remote files from GitHub](./from-github.md#enter-the-connection-details-in-reunite) or [Add a remote file from GitHub](./remote-content.md#remote-contents-repository-file),
     - For GitLab and GitLab self-managed repos, perform [Add remote files from GitLab](./from-gitlab.md#enter-the-connection-details-in-reunite)
     - For a CI/CD source, perform [Push remote content from an external source](./from-gitlab.md#enter-the-connection-details-in-reunite)
-    - For a URL source, perform [Add remote content from a URL](./from-gitlab.md#enter-the-connection-details-in-reunite)
+    - For a URL source, perform [Add remote content from a URL](./from-gitlab.md#remote-contents-repository-file)
 3. Click **Next**. \
    Reunite creates a pull request.
 4. Review and merge the pull request.
