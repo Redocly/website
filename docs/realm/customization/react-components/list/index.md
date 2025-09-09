@@ -32,6 +32,18 @@ It offers:
 
 For more information, see [link component reference](./link.md).
 
+## Font Awesome Icons
+
+The Font Awesome Icons component provides access to the complete FontAwesome icon library within your React components.
+It supports:
+- regular, solid, duotone, and brands FontAwesome icon styles
+- customizable size and color properties
+- CDN-based icon loading for optimal performance
+- automatic color mode adaptation
+- standard SVG properties and accessibility features
+
+For more information, see [Font Awesome icons component reference](./fontawesome-icons.md).
+
 ## Resources
 
 - **[Customize theme components](../wrap-components.md)** - Learn to wrap and customize built-in components to create reusable, branded versions for your project

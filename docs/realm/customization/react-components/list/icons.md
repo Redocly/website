@@ -155,6 +155,11 @@ import { iconName } from '@redocly/theme/icons/{iconName}/{iconName}';
 
 </details>
 
+## Font Awesome Icons
+
+For Font Awesome icons in React components, see the dedicated [Font Awesome Icons component documentation](./fontawesome-icons.md).
+
 ## Resources
 
 - **[List of customizable components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects
+- **[Font Awesome Icons component](./fontawesome-icons.md)** - Use Font Awesome icons in React components with full CDN support and customization options
