@@ -19,8 +19,8 @@ The extension works with OpenAPI 2.0 and 3.0 definitions, and has basic support 
 
 ## Requirements and limitations
 
-- If you provide a `redocly.yaml` configuration file, it must be located in the root directory of your workspace. 
-  If you don't have a custom configuration, the extension will automatically use the [recommended ruleset](https://redocly.com/docs/cli/rules/recommended). 
+- If you provide a `redocly.yaml` configuration file, it must be located in the root directory of your workspace.
+  If you don't have a custom configuration, the extension will automatically use the [recommended ruleset](https://redocly.com/docs/cli/rules/recommended).
   For setup instructions, see the [Configuration section](configuration.md).
 
 - Note that the extension only works with YAML files. Validation for JSON files is supported starting with version 0.2.0 of the extension.
@@ -39,7 +39,7 @@ To start using Redocly OpenAPI in your VS Code editor:
 
 1. [Install the extension](installation.md).
 
-2. Create a `redocly.yaml` [configuration file](configuration.md), or let the extension automatically generate one for you. 
+2. Create a `redocly.yaml` [configuration file](configuration.md), or let the extension automatically generate one for you.
   If you don't provide a custom configuration, the extension will use the default settings.
 
 3. Open an existing OpenAPI document in VS Code, or [create a new one from the template](using-redocly-vscode.md).
