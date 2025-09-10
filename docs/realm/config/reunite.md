@@ -49,6 +49,11 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 ---
 
+- ignoreReactRuntimeErrors
+- boolean
+- Publish a production project even if some React pages fail to render because of runtime errors.
+  Default value: `false`.
+
 - projectUrl
 - string
 - Specifies the URL of your project in Reunite.

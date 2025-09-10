@@ -1,45 +1,4 @@
 '@redocly/realm':
-  0.126.0-next.4:
-    timestamp: 1757513787000
-    changes:
-      minor: []
-      patch:
-        - Improved build logs by separating AI Search and `llms.txt` messages.
-        - Improved JavaScript compilation time on Windows.
-        - Updated `@redocly/openapi-core` to version `2.1.0`.
-    dependencies:
-      '@redocly/openapi-docs': 3.14.0-next.1
-      '@redocly/asyncapi-docs': 1.3.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.11.0-next.1
-  0.125.1:
-    timestamp: 1757502263000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where Markdoc tags did not render in preview mode.
-    dependencies: {}
-  0.126.0-next.3:
-    timestamp: 1757426798000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where markdoc tags did not render in preview mode.
-    dependencies: {}
-  0.126.0-next.2:
-    timestamp: 1757409756000
-    changes:
-      minor: []
-      patch:
-        - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
-        - Added path prefix support for HTML `href` attributes.
-    dependencies: {}
-  0.126.0-next.1:
-    timestamp: 1757334304000
-    changes:
-      minor: []
-      patch:
-        - Improved heading anchor ID generation by removing dots and slashes to create cleaner URL fragments.
-    dependencies: {}
   0.126.0-next.0:
     timestamp: 1757322240000
     changes:
@@ -4191,47 +4150,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.126.0-next.4:
-    timestamp: 1757513787000
-    changes:
-      minor: []
-      patch:
-        - Improved build logs by separating AI Search and `llms.txt` messages.
-        - Improved JavaScript compilation time on Windows.
-        - Updated `@redocly/openapi-core` to version `2.1.0`.
-    dependencies:
-      '@redocly/openapi-docs': 3.14.0-next.1
-      '@redocly/asyncapi-docs': 1.3.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.11.0-next.1
-  0.125.1:
-    timestamp: 1757502263000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where Markdoc tags did not render in preview mode.
-    dependencies: {}
-  0.126.0-next.3:
-    timestamp: 1757426798000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where markdoc tags did not render in preview mode.
-    dependencies: {}
-  0.126.0-next.2:
-    timestamp: 1757409756000
-    changes:
-      minor: []
-      patch:
-        - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
-        - Added path prefix support for HTML `href` attributes.
-    dependencies: {}
-  0.126.0-next.1:
-    timestamp: 1757334304000
-    changes:
-      minor: []
-      patch:
-        - Improved heading anchor ID generation by removing dots and slashes to create cleaner URL fragments.
-    dependencies: {}
   0.126.0-next.0:
     timestamp: 1757322240000
     changes:
@@ -7641,47 +7559,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.126.0-next.4:
-    timestamp: 1757513787000
-    changes:
-      minor: []
-      patch:
-        - Improved build logs by separating AI Search and `llms.txt` messages.
-        - Improved JavaScript compilation time on Windows.
-        - Updated `@redocly/openapi-core` to version `2.1.0`.
-    dependencies:
-      '@redocly/openapi-docs': 3.14.0-next.1
-      '@redocly/asyncapi-docs': 1.3.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.11.0-next.1
-  0.125.1:
-    timestamp: 1757502263000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where Markdoc tags did not render in preview mode.
-    dependencies: {}
-  0.126.0-next.3:
-    timestamp: 1757426798000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where markdoc tags did not render in preview mode.
-    dependencies: {}
-  0.126.0-next.2:
-    timestamp: 1757409756000
-    changes:
-      minor: []
-      patch:
-        - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
-        - Added path prefix support for HTML `href` attributes.
-    dependencies: {}
-  0.126.0-next.1:
-    timestamp: 1757334304000
-    changes:
-      minor: []
-      patch:
-        - Improved heading anchor ID generation by removing dots and slashes to create cleaner URL fragments.
-    dependencies: {}
   0.126.0-next.0:
     timestamp: 1757322240000
     changes:
@@ -11088,47 +10965,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.126.0-next.4:
-    timestamp: 1757513787000
-    changes:
-      minor: []
-      patch:
-        - Improved build logs by separating AI Search and `llms.txt` messages.
-        - Improved JavaScript compilation time on Windows.
-        - Updated `@redocly/openapi-core` to version `2.1.0`.
-    dependencies:
-      '@redocly/openapi-docs': 3.14.0-next.1
-      '@redocly/asyncapi-docs': 1.3.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.11.0-next.1
-  0.125.1:
-    timestamp: 1757502263000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where Markdoc tags did not render in preview mode.
-    dependencies: {}
-  0.126.0-next.3:
-    timestamp: 1757426798000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where markdoc tags did not render in preview mode.
-    dependencies: {}
-  0.126.0-next.2:
-    timestamp: 1757409756000
-    changes:
-      minor: []
-      patch:
-        - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
-        - Added path prefix support for HTML `href` attributes.
-    dependencies: {}
-  0.126.0-next.1:
-    timestamp: 1757334304000
-    changes:
-      minor: []
-      patch:
-        - Improved heading anchor ID generation by removing dots and slashes to create cleaner URL fragments.
-    dependencies: {}
   0.126.0-next.0:
     timestamp: 1757322240000
     changes:
@@ -16726,14 +16562,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.14.0-next.1:
-    timestamp: 1757513787000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.1.0`.
-    dependencies:
-      '@redocly/replay': 0.17.0-next.1
   3.14.0-next.0:
     timestamp: 1757322240000
     changes:
@@ -18873,13 +18701,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
-  0.29.1:
-    timestamp: 1757504087000
-    changes:
-      minor: []
-      patch:
-        - Added `icon` and `labelTranslationKey` options to `breadcrumbs`.
-    dependencies: {}
   0.29.0:
     timestamp: 1756297563000
     changes:
@@ -20428,56 +20249,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.9.0-next.4:
-    timestamp: 1757513787000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.126.0-next.4
-      '@redocly/redoc': 0.126.0-next.4
-      '@redocly/redoc-reef': 0.126.0-next.4
-      '@redocly/redoc-revel': 0.126.0-next.4
-  1.8.1:
-    timestamp: 1757502263000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.125.1
-      '@redocly/redoc': 0.125.1
-      '@redocly/redoc-reef': 0.125.1
-      '@redocly/redoc-revel': 0.125.1
-  1.9.0-next.3:
-    timestamp: 1757426798000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.126.0-next.3
-      '@redocly/redoc': 0.126.0-next.3
-      '@redocly/redoc-reef': 0.126.0-next.3
-      '@redocly/redoc-revel': 0.126.0-next.3
-  1.9.0-next.2:
-    timestamp: 1757409756000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/redoc-revel': 0.126.0-next.2
-      '@redocly/redoc-reef': 0.126.0-next.2
-      '@redocly/realm': 0.126.0-next.2
-      '@redocly/redoc': 0.126.0-next.2
-  1.9.0-next.1:
-    timestamp: 1757334304000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/redoc-revel': 0.126.0-next.1
-      '@redocly/redoc-reef': 0.126.0-next.1
-      '@redocly/realm': 0.126.0-next.1
-      '@redocly/redoc': 0.126.0-next.1
   1.9.0-next.0:
     timestamp: 1757322240000
     changes:
@@ -24226,13 +23997,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.11.0-next.1:
-    timestamp: 1757513787000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.14.0-next.1
   0.11.0-next.0:
     timestamp: 1757322240000
     changes:
@@ -26318,16 +26082,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.17.0-next.1:
-    timestamp: 1757513787000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.1.0`.
-        - ''
-        - Fixed processing of relative OAuth 2.0 authorization and token URLs during the OAuth flow.
-        - Parsed OAuth 2.0 scopes from the API definition and displayed them in the security tab.
-    dependencies: {}
   0.17.0-next.0:
     timestamp: 1757322240000
     changes:
@@ -28702,13 +28456,6 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
-  1.3.0-next.1:
-    timestamp: 1757513787000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.14.0-next.1
   1.3.0-next.0:
     timestamp: 1757322240000
     changes:
