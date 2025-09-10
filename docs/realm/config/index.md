@@ -103,7 +103,7 @@ logo:
 navbar:
   items:
     - page: index.md
-      label: '{{ process.env.HOME_LABEL }}' 
+      label: '{{ process.env.HOME_LABEL }}'
     - page: config/index.md
       label: Config
 feedback:
@@ -144,11 +144,21 @@ rbac:
     '**'
       authenticated: read
 
+stats:
+  fileExtensions: true
+  apis:
+    - name: 'Petstore API'
+      path: './petstore.json'
+    - name: 'OpenAPI Petstore'
+      path: 'openapi-files/petstore.yaml'
+
 redirects:
   '/concepts/categories/':
     to: 'author/concepts/categories/'
   '/concepts/navigation/':
     to: 'author/concepts/navigation/'
+
+
 ```
 
 This example includes logo customization, navigation setup, feedback controls, API descriptions, rule configurations, access controls, and redirects.
