@@ -186,7 +186,7 @@ to all pages that do not match any other glob patterns.
 Different permissions are assigned to the `developer-keys.md` page,
 the pages in the `/secret/chapter` folder, and any TypeScript (`.tsx`) pages:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 rbac:
   content:
     '**':
@@ -210,7 +210,7 @@ rbac:
 
 In the following example, only the Developer team can create a branch, create a pull request, or create a deploy.
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 rbac:
   reunite:
     Developer: write
@@ -303,7 +303,7 @@ Given the above configuration and the following list of team names:
 
 The effective access control settings would be like the following example configuration:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 rbac:
   reunite:
     REDOCLY-PEARL-triage: triage
@@ -337,6 +337,25 @@ rbac:
     aiSearch:
       anonymous: none
       authenticated: read
+```
+
+### Disallow access to one specific page
+
+In the following example, members of the Developers team can access Markdown files in the `/security` folder, with the exception of `top-secret.md` that has the `none` value for Developers in the front matter of the file.
+
+```yaml {% title="redocly.yaml" %}
+rbac:
+  content:
+    'security/*.md':
+        Admin: admin
+        Developers: read
+```
+
+```md {% title="security/top-secret.md" %}
+---
+rbac:
+  Developers: none
+---
 ```
 
 ## Resources
