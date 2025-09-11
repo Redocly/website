@@ -406,6 +406,8 @@
       label: Color mode images
     - page: customization/configure-request-values.md
       label: Configure request values
+    - page: customization/configure-dynamic-replay-values.md
+      label: Configure Replay with dynamic API data
 
     - separator: API integration
     - group: API functions
