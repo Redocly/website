@@ -2,7 +2,7 @@
 
 In the user profile menu you can view your information, adjust notifications you receive, switch the color mode, and add, remove or switch between connected Git provider accounts.
 
-To open the user profile menu, click your name at the bottom of Reunite's navigation menu on the left side of the page.
+To open the user profile menu, click your name at the bottom of Reunite's navigation pane on the left side of the page.
 Your profile settings apply only to the currently selected organization.
 
 ## Set email notification preferences

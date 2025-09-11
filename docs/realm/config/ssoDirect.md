@@ -30,7 +30,7 @@ Available with Enterprise+.
 ---
 
 - ssoDirect
-- Map[string, [IDP objects](#idp-object)]
+- Map of Identity provider objects [IDP objects](#idp-object)
 - Map of IDPs which can be [OIDC object](#oidc-object), or [SAML2 object](#saml2-object)
 
 {% /table %}

@@ -61,4 +61,4 @@ The additional properties appear in the documentation as `customRating*`.
 
 ## Resources
 
-- **[Supported AsyncAPI extensions](./index.md)** - Complete list of all AsyncAPI extensions supported by Redocly for enhanced API documentation
+- See a full [list of supported AsyncAPI extensions](./index.md).

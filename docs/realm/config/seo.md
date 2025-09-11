@@ -46,23 +46,8 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 ---
 
 - jsonLd
-- object
-- JSON to configure [JSON-LD](https://json-ld.org/) parameters.
-  Example front matter:
-  ```yaml {% title="example-page.md" %}
-  ---
-  seo:
-    jsonLd:
-      '@context': 'https://schema.org'
-      '@type': 'Organization'
-      url: 'http://www.example.com'
-      name: My website
-      contactPoint:
-        '@type': 'ContactPoint'
-        telephone: '+1111111111111'
-        contactType: 'Customer service'
-  ---
-  ```
+- JSON
+- Configures [JSON-LD](https://json-ld.org/) parameters.
 
 ---
 
