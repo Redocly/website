@@ -8,10 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Control the Previous and Next navigation buttons on project pages.
 ---
 # `navigation`
 
-Control the **Previous** and **Next** navigation buttons on project pages.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+Control the `Previous` and `Next` navigation buttons on project pages.
 
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "navigation"} /%}
 

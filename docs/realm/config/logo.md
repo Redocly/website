@@ -8,8 +8,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Configure a custom logo for the project navbar.
 ---
 # `logo`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use the `logo` section to display a custom logo in the project navbar.
 

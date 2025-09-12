@@ -8,10 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: The sidebar is the area on the left of your project that contains navigation.
 ---
 # `sidebar`
 
-The sidebar is the area on the left of your project that contains navigation.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 The options here allow you to hide it if your site design doesn't require a sidebar.
 
 ## Options

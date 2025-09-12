@@ -8,10 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Configure popular analytics providers for your documentation project.
 ---
 # `analytics`
 
-Configure popular analytics providers for your documentation project.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 
 This configuration adds analytics tracking to all pages, except those specifically excluded.
 

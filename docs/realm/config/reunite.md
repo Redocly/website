@@ -8,10 +8,14 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Allow builds to publish even if Reunite detects issues in you project.
 ---
 # `reunite`
 
-Allow builds to publish even if Reunite detects the following in your project:
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
+Those issues are:
 - Broken links
 - Noncompliant API descriptions
 - Markdoc syntax errors

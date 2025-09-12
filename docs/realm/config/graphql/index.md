@@ -6,11 +6,15 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: |-
+  Customize the behavior and appearance of integrated GraphQL documentation. 
+  Requires a GraphQL schema.
 ---
 # `graphql`
 
-Customize the behavior and appearance of integrated GraphQL documentation.
-Requires a GraphQL schema.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 
 ## Options
 

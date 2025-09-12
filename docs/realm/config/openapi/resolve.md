@@ -1,4 +1,20 @@
+---
+products:
+  - Realm
+  - Redoc
+  - Revel
+  - Reef
+  - Redocly CLI
+plans:
+  - Community
+  - Pro
+  - Enterprise
+  - Enterprise+
+description: Configure how to resolve URLs referenced from API descriptions.
+---
 # `resolve`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 ## Introduction
 

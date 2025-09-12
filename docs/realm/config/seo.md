@@ -6,8 +6,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Setup Search Engine Optimization(SEO) for your project.
 ---
 # `seo`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use the `seo` options to control the contents of your project's HTML `<head>` element, `llms.txt` file generation, and search engine optimization features like sitemaps and indexing control.
 You can override `seo` options, except `llmstxt`, in the [front matter](./front-matter-config.md) of Markdown and React pages.

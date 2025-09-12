@@ -6,8 +6,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Control where Redocly detects and hosts API functions.
 ---
 # `apiFunctions`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use the `apiFunctions` option to control the path where Redocly detects and hosts API functions.
 

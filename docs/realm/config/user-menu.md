@@ -8,10 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: The user menu is a navigation menu that displays in the far right side of the navbar.
 ---
 # `userMenu`
 
-The user menu is a navigation menu that displays in the far right side of the navbar.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 Users can click the user avatar and a dropdown menu displays with the avatar, the user's email address, links to pages you can configure, and a log out option.
 
 ![Screenshot of the user menu with the dropdown displayed](./images/user-menu.png)

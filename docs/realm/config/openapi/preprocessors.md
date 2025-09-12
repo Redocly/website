@@ -1,8 +1,24 @@
+---
+products:
+  - Realm
+  - Redoc
+  - Revel
+  - Reef
+  - Redocly CLI
+plans:
+  - Community
+  - Pro
+  - Enterprise
+  - Enterprise+
+description: Preprocessors are similar to decorators, but they run before linting rather than after.
+---
 # `preprocessors`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 ## Introduction
 
-Preprocessors are similar to decorators, but they run before linting rather than after.
+{% $frontmatter.description %}
 
 Refer to the [`decorator` configuration options](./decorators.md) documentation for details; the options available are the same in both the `decorators` and `preprocessor` sections of the configuration file.
 

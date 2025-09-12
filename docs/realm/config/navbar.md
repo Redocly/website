@@ -8,8 +8,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: The navbar appears across the top of the website.
 ---
 # `navbar`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `navbar` appears across the top of the website.
 You can configure the links and groups of links that appear on the navbar of your site, or hide the navbar altogether.

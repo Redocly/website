@@ -8,10 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Code snippets are small sections of code you can include in your Markdown and OpenAPI documents.
 ---
 # `codeSnippet`
 
-Code snippets are small sections of code you can include in your Markdown and OpenAPI documents.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 In Markdown code snippets are formatted by wrapping the text in two sets of three backticks, placed at the start and end of the text block.
 
 For example, the following is a code snippet with yaml:

@@ -6,8 +6,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Set up multiple product documentation sets in your project.
 ---
 # `products`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use the `products` section to set up multiple product documentation sets in your project.
 This option configuration creates a product picker in the navbar and offers the ability to customize the look of each product's documentation set.

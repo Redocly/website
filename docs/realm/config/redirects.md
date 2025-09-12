@@ -8,10 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Redirects allow you to change which resource a URL points to, enabling you to maintain working links when you move, rename, or restructure content.
 ---
 # `redirects`
 
-Redirects allow you to change which resource a URL points to, enabling you to maintain working links when you move, rename, or restructure content.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 
 Redocly supports two ways of configuring redirects:
 

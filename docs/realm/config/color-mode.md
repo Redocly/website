@@ -8,10 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Color mode controls the color mode in the project.
 ---
 # `colorMode`
 
-Color mode controls the color mode in the project.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 
 The default theme (`@redocly/theme`) includes two color modes: light mode and dark mode.
 Color modes can be set to a default value, or with the user's operating system preference.

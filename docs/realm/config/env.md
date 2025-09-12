@@ -8,8 +8,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Customize the redocly.yaml configuration for each environment.
 ---
 # `env`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `env` option allows you to customize the `redocly.yaml` configuration based on the current environment.
 You can override the configuration by adding the necessary nested options directly or by creating an environment

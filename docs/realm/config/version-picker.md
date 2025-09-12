@@ -8,10 +8,14 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: If you have multiple versions of content, you can organize that content into versioned folders
 ---
 # `versionPicker`
 
-If you have multiple versions of content, you can organize that content into versioned folders (folder names must start with `@`) and that content is displayed with a version picker UI element that users can use to select the version.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
+Those folders' names must start with `@` and that content is displayed with a version picker UI element that users can use to select the version.
 You can also add a `versions.yaml` file to set the default version and specify which versions should display.
 
 The `versionPicker` configuration option allows you to hide the version picker or include the version picker even on content that does not have multiple versions.

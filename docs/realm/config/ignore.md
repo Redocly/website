@@ -8,14 +8,17 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: This configuration option helps to exclude files and folders from the project build without removing the source files from your project.
 ---
 # `ignore`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 {% admonition type="warning" %}
 Changes to the **ignore** configuration in develop mode take effect only after restarting the server.
 {% /admonition %}
 
-This configuration option helps to exclude files and folders from the project build without removing the source files from your project.
+{% $frontmatter.description %}
 You can use **glob patterns** to specify which files and folders to ignore, and **negations** to exclude files or directories that would otherwise be ignored by a previous pattern.
 
 ## Examples

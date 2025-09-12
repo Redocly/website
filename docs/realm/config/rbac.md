@@ -7,11 +7,14 @@ products:
 plans:
   - Enterprise
   - Enterprise+
+description: Use team-based access controls to assign permissions required to files and project access.
 ---
 # `rbac`
 
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
 Access control is done using [RBAC (role-based access control)](../access/rbac.md).
-Use team-based access controls to assign permissions required to files and project access.
+{% $frontmatter.description %}
 By default, all authenticated users are assigned to the `authenticated` team, and unauthenticated users are automatically assigned to the `anonymous` team.
 All other configuration is done through team-role mapping.
 

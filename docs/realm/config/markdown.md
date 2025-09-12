@@ -7,8 +7,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Customize behavior and appearance of pages rendered from Markdown files.
 ---
 # `markdown`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `markdown` settings are used to customize the behavior and appearance of pages that render from Markdown files.
 

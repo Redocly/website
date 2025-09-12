@@ -8,10 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: The footer is a section at the bottom of your documentation that contains copyright information, links, or other elements you want available on every page.
 ---
 # `footer`
 
-The footer is a section at the bottom of your documentation that contains copyright information, links, or other elements you want available on every page.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 
 ## Options
 

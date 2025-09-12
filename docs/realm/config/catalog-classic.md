@@ -6,11 +6,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Organize your content into a catalog that users can filter and search. You can configure multiple catalogs and set the link text, description, and filters.
 ---
 # `catalogClassic`
 
-Organize your content into a catalog that users can filter and search.
-You can configure multiple catalogs and set the link text, description, and filters.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 
 ![Screenshot of a catalog](../content/images/catalog.png)
 
