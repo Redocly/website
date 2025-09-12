@@ -14,7 +14,7 @@ categories:
 
 # MCP: what is it, why it matters, and why caution is warranted in 2025
 
-In late 2024, [Anthropic introduced](https://www.anthropic.com/news/model-context-protocol) the **Model Context Protocol (MCP)** — 
+In late 2024, [Anthropic introduced](https://www.anthropic.com/news/model-context-protocol) the **Model Context Protocol (MCP)** —
 a new way for AI agents to interact with tools and data through standardized interfaces.
 
 MCP has generated excitement across developer communities, especially for its promise to streamline how agents connect to external services.
@@ -30,7 +30,7 @@ Today’s AI agents are limited by how they interact with APIs and external tool
 
 Most integrations require custom code, brittle scripts, or predefined workflows.
 
-MCP proposes a reusable approach for agent-tool interaction via a standard JSON 
+MCP proposes a reusable approach for agent-tool interaction via a standard JSON
 interface.
 
 MCP aims to make it easier to:
@@ -49,20 +49,20 @@ At its core, MCP follows a **client-server architecture**:
 - The **MCP server** exposes tools or APIs in a consistent, machine-readable way.  
 - Communication happens over **JSON-RPC 2.0**, with calls like `read_file`, `run_tool`, etc.
 
-MCP is **model-agnostic** and **open-source**, which makes it appealing to developers trying to standardize 
+MCP is **model-agnostic** and **open-source**, which makes it appealing to developers trying to standardize
 their tool interface layer.
 
 ## The real-world reality of MCP
 
 Despite the appealing goals, some in the developer and API ecosystem remain cautious — and for good reason.
 
-### 1. Loose structure with no formal governing body 
+### 1. Loose structure with no formal governing body
 
 When we first reviewed MCP, we noted that it wasn't a formal protocol specification in the expected sense.
 
-Many of the early discussions lived across example code and GitHub discussions, making it difficult to sort through. 
+Many of the early discussions lived across example code and GitHub discussions, making it difficult to sort through.
 
-Additionally, it's important to note MCP's governance structure and standardization process is still evolving under 
+Additionally, it's important to note MCP's governance structure and standardization process is still evolving under
 the leadership of Anthropic, and the future governance structure is uncertain.
 
 ### 2. Permissions and security risk
@@ -96,7 +96,7 @@ Here's what's most interesting to us today:
 - **Enterprise automation**, where internal tools are otherwise hard to expose via APIs  
 - **AI-assisted coding**, where context-aware tools can be dynamically invoked  
 - **AI agent frameworks and low-code agent builders**, like [Mastra](https://mastra.ai/blog/mastra-mcp)
- and [Gumloop](https://www.gumloop.com/blog/announcing-gumcp) where support of MCP is enabling faster, 
+ and [Gumloop](https://www.gumloop.com/blog/announcing-gumcp) where support of MCP is enabling faster,
 more dynamic agent-powered applications.
 - **Additional emerging protocols**, like CopilotKit's [AG-UI](https://github.com/ag-ui-protocol/ag-ui) for
 making user-agent interaction more accessible for the frontend, and
@@ -105,17 +105,17 @@ for agents interacting with other agents.
 
 ## Should you use MCP today?
 
-We're hopeful to see MCP and other emerging protocols continue to mature as they're more widely adopted. 
+We're hopeful to see MCP and other emerging protocols continue to mature as they're more widely adopted.
 
 All things considered, if you're a developer working on AI agent infrastructure, MCP is promising.
 
-As with any emerging technological development, it’s important to treat it with an **experimental** 
+As with any emerging technological development, it’s important to treat it with an **experimental**
 mindset.
 
 MCP is still evolving, security practices are immature, and real-world value is still being proven
 out at meaningful scale.
 
-In our view, MCP needs more of the rigor we've been applying to API specs and standards over the 
+In our view, MCP needs more of the rigor we've been applying to API specs and standards over the
 last two decades.
 
 Before adopting it, we recommend developers:
@@ -136,7 +136,7 @@ We encourage developers to test, share feedback, and improve the ecosystem - and
 ## FAQ
 
 **How is MCP different from OpenAPI?**  
-MCP is runtime-focused — agents call tools dynamically. OpenAPI is more declarative and often used to generate client libraries or documentation. 
+MCP is runtime-focused — agents call tools dynamically. OpenAPI is more declarative and often used to generate client libraries or documentation.
 The two can complement each other.
 
 **Is MCP secure?**  
