@@ -67,4 +67,3 @@ The **Settings** page is available only to users with the Owner role in your org
 - **[Manage people](../organization/manage-people.md)** - Add and manage users within your organization for collaborative project development
 - **[Remote content](./remote-content/index.md)** - Integrate and synchronize content from external repositories and sources into your Reunite projects
 - **[Connect a Git provider](./connect-git/connect-git-provider.md)** - Link your projects to Git repositories from GitHub, GitLab, Azure DevOps, and other providers
-- **[Switch between projects](./switch-between-projects.md)** - Navigate efficiently between multiple projects in your Reunite workspace for streamlined workflow management

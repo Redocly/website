@@ -36,6 +36,5 @@ If you change your mind about that pull request later, you can click the **Reope
 ## Resources
 
 - **[Using the editor](../use-editor.md)** - Create and edit content in Markdown and Markdoc with Reunite's collaborative editing tools and syntax highlighting
-- **[Switch between projects](../switch-between-projects.md)** - Navigate efficiently between multiple projects in your Reunite workspace for streamlined workflow management
 - **[Reunite platform overview](../../reunite.md)** - Explore the features and capabilities of Reunite, Redocly's collaborative content management platform
 - **[Reunite configuration reference](../../../config/reunite.md)** - Configure Reunite deployment settings including options to publish builds with broken links or syntax issues
