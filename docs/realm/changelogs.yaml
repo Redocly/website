@@ -19061,6 +19061,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.31.0:
+    timestamp: 1757950711000
+    changes:
+      minor:
+        - Removed deprecated `projectUrl` option from `reunite`.
+      patch: []
+    dependencies: {}
   0.30.0:
     timestamp: 1757770176000
     changes:
