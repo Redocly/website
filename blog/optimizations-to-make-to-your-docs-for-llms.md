@@ -21,7 +21,7 @@ Let's be honest: developers probably aren't reading your documentation the way t
 
 You've probably already realized this isn't some distant future problem; it's happening right now. Your support team might be already seeing tickets that could have been avoided if AI tools could properly understand your documentation. Your developer onboarding could be taking longer because AI assistants can't parse your getting started guides effectively. In fact, A new Stack Overflow Developer Survey (2025) shows that 84% of developers now use—or plan to use—AI tools in their workflows. Yet, trust is faltering: 46% say they don’t trust the accuracy of AI outputs—up from just 31% in 2024. Nearly half!
 
-Just about every developer has experienced the frustration shown in the orange sections in the diagram below: asking an AI assistant for help, only to receive confusing or incorrect guidance. When documentation lacks consistent terminology and proper formatting, even sophisticated AI tools struggle to provide useful answers. 
+Just about every developer has experienced the frustration shown in the orange sections in the diagram below: asking an AI assistant for help, only to receive confusing or incorrect guidance. When documentation lacks consistent terminology and proper formatting, even sophisticated AI tools struggle to provide useful answers.
 
 The blue sections represent the developer experience we should strive for: clear questions get clear answers, code examples actually work, and developers can focus on building rather than debugging documentation problems.
 
@@ -274,7 +274,7 @@ When your documentation comes from OpenAPI specs, you get a solid foundation for
 
 The most effective documentation teams don't choose between automation and human oversight, they use automation to enhance human expertise. Redocly's approach automates repetitive tasks like structural validation, and formatting consistency, freeing your team to focus on what humans do best: ensuring clarity, accuracy, and developer experience.
 
-## Ready to make your API documentation work better with AI? 
+## Ready to make your API documentation work better with AI?
 
 [Redocly](https://redocly.com/) automatically generates LLM-optimized documentation from your OpenAPI specs, ensuring consistent structure and formatting that both developers and AI systems can navigate effectively. It even [automates the creation  of an llms.txt file](https://redocly.com/blog/updates-2025-05) to help LLMs and agents navigate your docs more intelligently.
 

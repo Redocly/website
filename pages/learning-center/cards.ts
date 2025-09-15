@@ -95,6 +95,7 @@ export const cards = [
     landingPage: '/learn/testing',
     items: [
       { title: 'Contract Testing 101', link: '/learn/testing/contract-testing-101' },
+      { title: 'Tools for API Testing in 2025', link: '/learn/testing/tools-for-api-testing-in-2025' },
     ],
   },
   // {

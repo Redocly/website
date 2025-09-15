@@ -43,6 +43,13 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 - ignore
 - [string]
 - Provide a list of files or directories to skip when calculating scorecard.
+
+---
+
+- fromProjectUrl
+- [string]
+- **VS Code extension only.** Validates your local OpenAPI files against scorecard rules defined in your Reunite project.
+  You can get the URL by opening your project in Reunite and copying the full URL from the browser.
 {% /table %}
 
 ### Level Object
@@ -319,6 +326,13 @@ To ignore every file with a specific extension, for example `.yaml`:
 scorecard:
   ignore:
     - "**/*.yaml"
+```
+
+### fromProjectUrl example
+To enable the [Redocly OpenAPI VS Code extension](https://marketplace.visualstudio.com/items?itemName=Redocly.openapi-vs-code) to validate your local API descriptions against remote scorecard rules:
+```yaml
+scorecard:
+  fromProjectUrl: https://app.cloud.redocly.com/org/my-org/project/my-project
 ```
 
 ## Resources

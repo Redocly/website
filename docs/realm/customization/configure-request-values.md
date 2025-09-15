@@ -1,7 +1,7 @@
 # Configure request values
 
 You can programmatically configure request values for your OpenAPI descriptions by ejecting and modifying the `configure.ts` file.
-This feature enables you to set default values for headers, query parameters, path parameters, cookies, and security details that merge with existing examples in your OpenAPI description.
+This feature enables you to set default values for headers, query parameters, path parameters, cookies, security details, and server variables that merge with existing examples in your OpenAPI description.
 
 ## Before you begin
 
@@ -115,6 +115,11 @@ export function configure(context: {
     } : {
       name: 'John Doe',
       email: 'john@example.com'
+    },
+    // Configure server variables for server URLs
+    serverVariables: {
+      version: 'v1',
+      environment: 'production'
     }
   };
 
@@ -128,6 +133,7 @@ You can use the context to:
 - Customize security tokens based on the endpoint
 - Apply different configurations for different HTTP methods
 - Use server information to set environment-specific values
+- Configure server variables for server URL
 
 ## Merge values
 
@@ -154,6 +160,11 @@ Security values update the corresponding security scheme configurations:
 - OAuth2: updates access token
 - Basic Auth: updates username and password
 - API Key: updates the token value
+
+### Server variables
+
+Server variables update the corresponding server variable values in your OpenAPI description.
+These variables are used to resolve server URLs that contain placeholders like `{variableName}`.
 
 {% admonition type="info" %}
 The merging behavior ensures that configured values work within the constraints of your OpenAPI description while allowing dynamic updates.
@@ -356,3 +367,4 @@ This allows you to provide different environment variable values based on the se
 
 - **[x-codeSamples extension](../content/api-docs/openapi-extensions/x-code-samples.md)** - Add custom code samples to your OpenAPI description that work with configured request values for enhanced API documentation
 - **[Component ejection guide](./eject-components/index.md)** - Learn to eject and customize built-in components for advanced request value handling and UI modifications
+- **[Configure Replay with dynamic API data](./configure-dynamic-replay-values.md)** - Dynamically configure request values by fetching data from external APIs when Replay is opened

@@ -23,6 +23,14 @@ This changelog is divided into two tracks:
 
 ---
 
+## 1.1.0-beta.144 (2025-09-15)
+
+### Fixes
+
+- Ensured the `.cache` directory is automatically created if missing, improving reliability during builds.
+
+---
+
 ## 1.1.0-beta.143 (2025-05-15)
 
 ### Features

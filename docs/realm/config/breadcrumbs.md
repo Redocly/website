@@ -70,6 +70,14 @@ You can also add links that you want to always appear on every page at the start
 - string
 - Translation key used for [localization](./l10n.md).
 
+---
+
+- icon
+- string
+- A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
+  Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
+  Example: `book`, `duotone book`, `./images/config-icon.svg`.
+
 {% /table %}
 
 ## Example
@@ -81,6 +89,7 @@ breadcrumbs:
     - page: index.page.tsx
       label: Home
       labelTranslationKey: home.title
+      icon: home
 ```
 
 ## Resources

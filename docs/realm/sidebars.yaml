@@ -364,6 +364,8 @@
               label: Link
             - page: customization/react-components/list/dynamic.md
               label: Dynamic
+            - page: customization/react-components/list/fontawesome-icons.md
+              label: Font Awesome Icons
     - page: customization/enable-source-maps.md
       label: Enable source maps
 
@@ -404,6 +406,8 @@
       label: Color mode images
     - page: customization/configure-request-values.md
       label: Configure request values
+    - page: customization/configure-dynamic-replay-values.md
+      label: Configure Replay with dynamic API data
 
     - separator: API integration
     - group: API functions

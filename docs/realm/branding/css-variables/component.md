@@ -120,13 +120,21 @@
 <summary>Breadcrumbs</summary>
 
 ```css
---breadcrumbs-text-color: var(--text-color-description);
+--breadcrumbs-text-color: var(--text-color-description); 
+--breadcrumbs-text-color-active: var(--text-color-primary); 
+--breadcrumbs-text-color-border-hover: var(--color-info-border-hover);
 --breadcrumbs-font-size: var(--font-size-base);
---breadcrumbs-text-color-active: var(--text-color-primary);
---breadcrumbs-text-decoration-hover: underline;
---breadcrumbs-padding: 0;
---breadcrumbs-gap: var(--spacing-xs);
+--breadcrumbs-icon-size: var(--font-size-base);
+--breadcrumbs-font-weight-active: var(--font-weight-medium); 
+--breadcrumbs-border-radius: var(--border-radius);
+--breadcrumbs-gap: var(--spacing-xxs);
+--breadcrumbs-padding: 2px var(--spacing-xs);
 --breadcrumbs-margin-bottom: var(--spacing-lg);
+--breadcrumbs-background-color-hover: var(--color-hover-base);
+--breadcrumbs-background-color-focus: var(--color-info-border-hover);
+--breadcrumbs-box-shadow-focus: 0 0 0 1px var(--breadcrumbs-background-color-focus);
+--breadcrumb-padding: var(--spacing-xxs);
+--breadcrumb-dropdown-active-icon-position: var(--spacing-xs);
 ```
 
 </details>
