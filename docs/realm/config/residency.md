@@ -50,3 +50,4 @@ residency: https://app.cloud.eu.redocly.com
 
 - **[Remote content](../reunite/project/remote-content/index.md)** - Use remote content in your projects for flexible data residency and content management strategies
 - **[Develop locally](../get-started/start-local-dev.md)** - Set up local development environments while maintaining cloud deployment capabilities for data residency compliance
+- **[Reunite configuration](./reunite.md)** - Configure Reunite settings with `reunite.projectUrl` as an alternative to residency configuration

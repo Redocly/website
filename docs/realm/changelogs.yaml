@@ -18995,14 +18995,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
-  0.30.0:
-    timestamp: 1757770176000
-    changes:
-      minor:
-        - '- Removed `projectUrl` option from `reunite`.'
-        - Added `fromProjectUrl` option to `scorecard`.
-      patch: []
-    dependencies: {}
   0.29.1:
     timestamp: 1757504087000
     changes:
@@ -20147,13 +20139,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
-  0.3.5:
-    timestamp: 1757693324000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.1.0`.
-    dependencies: {}
   0.3.4:
     timestamp: 1756297563000
     changes:
