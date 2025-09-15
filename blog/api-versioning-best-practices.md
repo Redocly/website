@@ -5,7 +5,7 @@ description: Best practices for how to version your API and how to communicate i
 seo:
   title: Best practices for API versioning
   description: Best practices for how to version your API and how to communicate it.
-author: 
+author: adam-altman
 date: 2025-08-10
 categories:
   - openapi
