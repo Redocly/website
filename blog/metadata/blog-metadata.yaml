@@ -35,6 +35,10 @@ authors:
     name: Taylor Krusen
     authorBIO: Developer Experience Engineer, Redocly
     image: taylor-cartoon-headshot.png
+  - id: themattwilliams
+    name: Matt Williams
+    authorBIO: Technical Writer, Redocly
+    image: themattwilliams.png
 categories:
   - id: api
     label: API
