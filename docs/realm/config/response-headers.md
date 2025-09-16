@@ -8,10 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Configure custom response headers for your project.
 ---
 # `responseHeaders`
 
-You can configure custom response headers for your project.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 Custom headers are added to the response header object if requested resource matches a configured pattern.
 
 ## Options

@@ -1,4 +1,20 @@
+---
+products:
+  - Realm
+  - Redoc
+  - Revel
+  - Reef
+  - Redocly CLI
+plans:
+  - Community
+  - Pro
+  - Enterprise
+  - Enterprise+
+description: Configure rules and settings for individual APIs in multi-API projects.
+---
 # `apis`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 ## Introduction
 

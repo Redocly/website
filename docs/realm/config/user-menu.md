@@ -8,10 +8,14 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Set the visibility of the user menu in your project.
 ---
 # `userMenu`
 
-The user menu is a navigation menu that displays in the far right side of the navbar.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
+The user menu is displayed in the far right side of the navbar.
 Users can click the user avatar and a dropdown menu displays with the avatar, the user's email address, links to pages you can configure, and a log out option.
 
 ![Screenshot of the user menu with the dropdown displayed](./images/user-menu.png)

@@ -1,9 +1,25 @@
+---
+products:
+  - Realm
+  - Redoc
+  - Revel
+  - Reef
+  - Redocly CLI
+plans:
+  - Community
+  - Pro
+  - Enterprise
+  - Enterprise+
+description: Define preprocessor transformation steps for your API description files.
+---
 # `preprocessors`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 ## Introduction
 
+{% $frontmatter.description %}
 Preprocessors are similar to decorators, but they run before linting rather than after.
-
 Refer to the [`decorator` configuration options](./decorators.md) documentation for details; the options available are the same in both the `decorators` and `preprocessor` sections of the configuration file.
 
 ## Resources

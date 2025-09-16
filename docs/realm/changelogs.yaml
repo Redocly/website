@@ -1,4 +1,19 @@
 '@redocly/realm':
+  0.126.0-next.7:
+    timestamp: 1758032690000
+    changes:
+      minor:
+        - Improved memory efficiency when creating search indexes, reducing build failures due to out-of-memory errors on large projects.
+      patch:
+        - Fixed an issue that prevented focusing the first section of the API documentation when content was minimal.
+        - Fixed an issue where the AI search icon shrank with long queries; the icon maintains its size and the query text wraps correctly.
+        - Normalized trailing slash handling in SSR to prevent hydration mismatches.
+    dependencies:
+      '@redocly/theme': 0.58.0-next.3
+      '@redocly/openapi-docs': 3.14.0-next.4
+      '@redocly/asyncapi-docs': 1.3.0-next.4
+      '@redocly/graphql-docs': 1.3.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.4
   0.125.2:
     timestamp: 1757940167000
     changes:
@@ -4228,6 +4243,21 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.126.0-next.7:
+    timestamp: 1758032690000
+    changes:
+      minor:
+        - Improved memory efficiency when creating search indexes, reducing build failures due to out-of-memory errors on large projects.
+      patch:
+        - Fixed an issue that prevented focusing the first section of the API documentation when content was minimal.
+        - Fixed an issue where the AI search icon shrank with long queries; the icon maintains its size and the query text wraps correctly.
+        - Normalized trailing slash handling in SSR to prevent hydration mismatches.
+    dependencies:
+      '@redocly/theme': 0.58.0-next.3
+      '@redocly/openapi-docs': 3.14.0-next.4
+      '@redocly/asyncapi-docs': 1.3.0-next.4
+      '@redocly/graphql-docs': 1.3.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.4
   0.125.2:
     timestamp: 1757940167000
     changes:
@@ -7714,6 +7744,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.126.0-next.7:
+    timestamp: 1758032690000
+    changes:
+      minor:
+        - Improved memory efficiency when creating search indexes, reducing build failures due to out-of-memory errors on large projects.
+      patch:
+        - Fixed an issue that prevented focusing the first section of the API documentation when content was minimal.
+        - Fixed an issue where the AI search icon shrank with long queries; the icon maintains its size and the query text wraps correctly.
+        - Normalized trailing slash handling in SSR to prevent hydration mismatches.
+    dependencies:
+      '@redocly/theme': 0.58.0-next.3
+      '@redocly/openapi-docs': 3.14.0-next.4
+      '@redocly/asyncapi-docs': 1.3.0-next.4
+      '@redocly/graphql-docs': 1.3.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.4
   0.125.2:
     timestamp: 1757940167000
     changes:
@@ -11197,6 +11242,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.126.0-next.7:
+    timestamp: 1758032690000
+    changes:
+      minor:
+        - Improved memory efficiency when creating search indexes, reducing build failures due to out-of-memory errors on large projects.
+      patch:
+        - Fixed an issue that prevented focusing the first section of the API documentation when content was minimal.
+        - Fixed an issue where the AI search icon shrank with long queries; the icon maintains its size and the query text wraps correctly.
+        - Normalized trailing slash handling in SSR to prevent hydration mismatches.
+    dependencies:
+      '@redocly/theme': 0.58.0-next.3
+      '@redocly/openapi-docs': 3.14.0-next.4
+      '@redocly/asyncapi-docs': 1.3.0-next.4
+      '@redocly/graphql-docs': 1.3.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.4
   0.125.2:
     timestamp: 1757940167000
     changes:
@@ -14679,6 +14739,14 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.58.0-next.3:
+    timestamp: 1758032690000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue that prevented focusing the first section of the API documentation when content was minimal.
+        - Fixed an issue where the AI search icon shrank with long queries; the icon maintains its size and the query text wraps correctly.
+    dependencies: {}
   0.57.1:
     timestamp: 1757940167000
     changes:
@@ -16892,6 +16960,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.14.0-next.4:
+    timestamp: 1758032690000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.17.0-next.4
   3.13.1:
     timestamp: 1757940167000
     changes:
@@ -20638,6 +20713,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.9.0-next.7:
+    timestamp: 1758032690000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.3
+      '@redocly/realm': 0.126.0-next.7
+      '@redocly/redoc': 0.126.0-next.7
+      '@redocly/redoc-reef': 0.126.0-next.7
+      '@redocly/redoc-revel': 0.126.0-next.7
   1.8.2:
     timestamp: 1757940167000
     changes:
@@ -24469,6 +24555,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.11.0-next.4:
+    timestamp: 1758032690000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.4
   0.10.1:
     timestamp: 1757940167000
     changes:
@@ -26582,6 +26675,14 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.17.0-next.4:
+    timestamp: 1758032690000
+    changes:
+      minor: []
+      patch:
+        - Added persistence for user-created environments in `Try it` between page reloads.
+    dependencies:
+      '@redocly/theme': 0.58.0-next.3
   0.16.1:
     timestamp: 1757940167000
     changes:
@@ -27819,6 +27920,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.9.0-next.3:
+    timestamp: 1758032690000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.3
   0.8.1:
     timestamp: 1757940167000
     changes:
@@ -29009,6 +29117,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.3.0-next.4:
+    timestamp: 1758032690000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.3
+      '@redocly/openapi-docs': 3.14.0-next.4
   1.2.1:
     timestamp: 1757940167000
     changes:
