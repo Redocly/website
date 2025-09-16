@@ -389,7 +389,7 @@
   to: '/docs/realm/reunite/project/pull-request/review-pull-request'
 '/docs/realm/author/how-to/switch-between-projects':
   to: '/docs/realm/reunite/project/manage-projects#switch-between-projects'
-'/docs/realm/reunite/project/switch-between-projects'
+'/docs/realm/reunite/project/switch-between-projects':
   to: '/docs/realm/reunite/project/manage-projects#switch-between-projects'
 '/docs/realm/author/how-to/use-editor':
   to: '/docs/realm/reunite/project/use-editor'
