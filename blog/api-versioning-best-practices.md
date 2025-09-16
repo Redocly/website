@@ -6,7 +6,7 @@ seo:
   title: API versioning best practices
   description: Implementing API versioning strategies that protect existing integrations while enabling safe updates.
   image: ./images/api-versioning-best-practices.jpg
-author: themattwilliams
+author: matt-williams
 date: 2025-08-20
 categories:
   - developer-experience
