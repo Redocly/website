@@ -8,9 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Customize the footer for the pages in your project.
 ---
 # `footer`
 
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+Customize the footer for the pages in your project.
 The footer is a section at the bottom of your documentation that contains copyright information, links, or other elements you want available on every page.
 
 ## Options

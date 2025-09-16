@@ -8,10 +8,16 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Configure the visibility of the version picker in your project.
 ---
 # `versionPicker`
 
-If you have multiple versions of content, you can organize that content into versioned folders (folder names must start with `@`) and that content is displayed with a version picker UI element that users can use to select the version.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
+If you have multiple versions of content, you can organize that content into versioned folders.
+Versioned folders' names must start with `@`.
+Their content is displayed with a version picker UI element that enables users to switch between versions.
 You can also add a `versions.yaml` file to set the default version and specify which versions should display.
 
 The `versionPicker` configuration option allows you to hide the version picker or include the version picker even on content that does not have multiple versions.

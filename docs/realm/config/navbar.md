@@ -8,10 +8,14 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Configure a navbar for your project.
 ---
 # `navbar`
 
-The `navbar` appears across the top of the website.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+Configure a navbar for your project.
+The navbar appears across the top of the published project.
 You can configure the links and groups of links that appear on the navbar of your site, or hide the navbar altogether.
 The navbar is a good location for top-level category or frequently-used links.
 

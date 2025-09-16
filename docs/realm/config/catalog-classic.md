@@ -6,11 +6,15 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: |-
+  Organize your content into a catalog that users can filter and search.
+  You can configure multiple catalogs and set the link text, description, and filters.
 ---
 # `catalogClassic`
 
-Organize your content into a catalog that users can filter and search.
-You can configure multiple catalogs and set the link text, description, and filters.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 
 ![Screenshot of a catalog](../content/images/catalog.png)
 
@@ -62,7 +66,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 - A [Font Awesome](https://fontawesome.com/icons) or relative path to icon image file.
   Font Awesome icons can be prefixed with type: `duotone`, `solid`, `regular` or `brands`.
   Example: `book`, `duotone book`, `./images/config-icon.svg`.
-  
+
 ---
 
 - description
