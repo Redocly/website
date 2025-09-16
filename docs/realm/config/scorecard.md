@@ -6,10 +6,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Add and create sets of rules and test your API description files against them.
 ---
 # `scorecard`
 
-Reunite's scorecard feature enables you to add and create sets of rules and test your API description files against them.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 Using these rules you can maintain quality across your existing APIs and ensure that newly-added or updated APIs match your criteria.
 An API scorecard can include multiple sets of rules, corresponding to different quality levels.
 

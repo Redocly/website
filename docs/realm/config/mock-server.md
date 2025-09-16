@@ -5,10 +5,14 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Configure a mock server in your Redocly-powered API documentation.
 ---
 # `mockServer`
 
-Configure the mock server in your Redocly-powered API documentation using `mockServer`. The mock server allows users to:
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
+The mock server allows users to:
 
 - Send requests to the Operations in your API description from Replay, cURL, or any other API client.
 - Receive a sample response using information from the API description and input data.
