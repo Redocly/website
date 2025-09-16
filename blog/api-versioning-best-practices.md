@@ -46,7 +46,7 @@ Path versioning offers maximum visibility and caching compatibility but requires
 Header versioning aligns with REST principles but reduces discoverability.
 Query parameter versioning provides flexibility at the cost of caching complexity.
 
-### API Versioning Implementation Approaches
+### API versioning implementation approaches
 
 ```mermaid
 graph TB
