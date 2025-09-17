@@ -31178,3 +31178,10 @@ reunite:
         - Added batch file support to the `push` API and preserved backward compatibility with the legacy Scout `push` API.
       patch: []
     dependencies: {}
+  v2025-09-17.1:
+    timestamp: 1758096435000
+    changes:
+      minor:
+        - Added ability to fetch and search project branches on the Branch Deploy Strategy page.
+      patch: []
+    dependencies: {}
