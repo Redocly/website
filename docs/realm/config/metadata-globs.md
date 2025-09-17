@@ -8,13 +8,10 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-description: Configure glob patterns to apply metadata to specific files or directories.
 ---
 # `metadataGlobs`
 
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-{% $frontmatter.description %}
+Configure glob patterns to apply metadata to specific files or directories.
 This metadata is used by features like search, catalog, and scorecard for content categorization.
 
 ## How it works

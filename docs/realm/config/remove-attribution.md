@@ -6,13 +6,11 @@ products:
   - Realm
 plans:
   - Enterprise+
-description: Hide Redocly attribution information from the browser console.
 ---
 # `removeAttribution`
 
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-{% $frontmatter.description %}
+Remove attribution allows developers to hide Redocly attribution information from the browser console.
+Only available for users with the **Enterprise+** plan.
 
 ## Examples
 

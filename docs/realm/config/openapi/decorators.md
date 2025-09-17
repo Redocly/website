@@ -1,20 +1,4 @@
----
-products:
-  - Realm
-  - Redoc
-  - Revel
-  - Reef
-  - Redocly CLI
-plans:
-  - Community
-  - Pro
-  - Enterprise
-  - Enterprise+
-description: Define transformation steps applied to your API description when it is bundled.
----
 # `decorators`
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 ## Introduction
 
