@@ -8,10 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Customize the search functionality in your project.
 ---
 # `search`
 
-Customize search functionality in your project.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 By default, search appears in the top navigation bar in the far right corner.
 
 Use the `search` configuration to:

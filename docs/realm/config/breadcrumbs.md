@@ -8,8 +8,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Control breadcrumb links that indicate a page's location in navigation.
 ---
 # `breadcrumbs`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use the `breadcrumbs` option to control the links displayed at the top of the page to indicate a page's location in the navigation structure.
 

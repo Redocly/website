@@ -1,4 +1,18 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Realm
+plans:
+  - Community
+  - Pro
+  - Enterprise
+  - Enterprise+
+description: Configure linting rules and their severity.
+---
 # `rules`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 ## Introduction
 

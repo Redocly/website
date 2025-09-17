@@ -1,4 +1,20 @@
+---
+products:
+  - Realm
+  - Redoc
+  - Revel
+  - Reef
+  - Redocly CLI
+plans:
+  - Community
+  - Pro
+  - Enterprise
+  - Enterprise+
+description: Extend an existing configuration set.
+---
 # `extends`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 ## Introduction
 

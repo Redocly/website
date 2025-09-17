@@ -8,8 +8,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Customize how users leave feedback about your documentation content with this option.
 ---
 # `feedback`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Customize how users leave feedback about your documentation content with the `feedback` option.
 By default, the `feedback` sentiment form displays at the bottom of all Markdown and API reference pages, but you can customize or hide it.

@@ -8,8 +8,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Exclude files and folders from the project build without removing the source files from your project.
 ---
 # `ignore`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 {% admonition type="warning" %}
 Changes to the **ignore** configuration in develop mode take effect only after restarting the server.
