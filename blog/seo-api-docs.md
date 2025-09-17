@@ -148,7 +148,7 @@ In our experience, focusing on these areas will go a long way in improving your 
 5. Technical
 6. Promotion
 
-<a href="../../downloads/seo-checklist.pdf" download>Download the Redocly SEO checklist</a> to accompany this blog post.
+<a href="/downloads/seo-checklist.pdf" download>Download the Redocly SEO checklist</a> to accompany this blog post.
 
 **Measurement - one-time setup**
 

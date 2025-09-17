@@ -6,11 +6,15 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: |-
+  Customize the behavior and appearance of integrated API documentation.
+  Requires an OpenAPI description.
 ---
 # `openapi`
 
-Customize the behavior and appearance of integrated API documentation.
-Requires an OpenAPI description.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
 
 ## Options
 

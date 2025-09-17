@@ -8,10 +8,14 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Allow builds to publish even if Reunite detects issues in you project.
 ---
 # `reunite`
 
-Allow builds to publish even if Reunite detects the following in your project:
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+{% $frontmatter.description %}
+Those issues are:
 - Broken links
 - Noncompliant API descriptions
 - Markdoc syntax errors
@@ -49,14 +53,6 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 ---
 
-- projectUrl
-- string
-- Specifies the URL of your project in Reunite.
-  Used for the remote scorecard feature.
-  Must be a valid HTTPS URL with the format: `https://app.cloud.redocly.com/org/{orgSlug}/project/{projectSlug}`.
-  When you specify `projectUrl`, you can omit [residency](./residency.md) configuration, as the project URL already contains the residency information.
-
----
 
 - jobs
 - [[Jobs object](#jobs-object)]
@@ -210,15 +206,6 @@ reunite:
 ```
 
 The errors are still reported, but they do not prevent publishing.
-
-### Project URL example
-
-The following example configuration specifies the project URL for scorecard features and VS Code login:
-
-```yaml {% title="redocly.yaml" %}
-reunite:
-  projectUrl: https://app.cloud.redocly.com/org/my-org/project/my-project
-```
 
 ### Jobs configuration examples
 

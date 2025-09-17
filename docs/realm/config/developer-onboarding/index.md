@@ -6,8 +6,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: Configure developer onboarding to enable external developers to self-register applications and manage API credentials.
 ---
 # `developerOnboarding`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Configure developer onboarding to enable external developers to self-register applications and manage API credentials through your developer portal.
 This feature integrates with API gateway management systems to automate app registration and credential lifecycle management.
