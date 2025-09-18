@@ -88,7 +88,8 @@
   0.126.0-next.2:
     timestamp: 1757409756000
     changes:
-      minor: []
+      minor:
+        - Extended link checker to validate `href` attributes in HTML `a` tags within Markdown files.
       patch:
         - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
         - Added path prefix support for HTML `href` attributes.
@@ -4339,7 +4340,8 @@
   0.126.0-next.2:
     timestamp: 1757409756000
     changes:
-      minor: []
+      minor:
+        - Extended link checker to validate `href` attributes in HTML `a` tags within Markdown files.
       patch:
         - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
         - Added path prefix support for HTML `href` attributes.
@@ -7848,7 +7850,8 @@
   0.126.0-next.2:
     timestamp: 1757409756000
     changes:
-      minor: []
+      minor:
+        - Extended link checker to validate `href` attributes in HTML `a` tags within Markdown files.
       patch:
         - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
         - Added path prefix support for HTML `href` attributes.
@@ -11352,7 +11355,8 @@
   0.126.0-next.2:
     timestamp: 1757409756000
     changes:
-      minor: []
+      minor:
+        - Extended link checker to validate `href` attributes in HTML `a` tags within Markdown files.
       patch:
         - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
         - Added path prefix support for HTML `href` attributes.
