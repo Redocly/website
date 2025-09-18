@@ -105,10 +105,15 @@ export const cards = [
     description:
       'Gain insights into securing your APIs with essential resources, tools, and best practices to protect your applications.',
     thumbnail: apiSecurityThumbnail,
-    moreItems: '1 more topic',
+    moreItems: '2 more topics',
     landingPage: '/learn/security',
     items: [
-      { title: 'API Design-First Security Guide', link: '/learn/security/api-design-first-security-guide' },
+      { title: 'API Security by Design: Complete Guide', link: '/learn/security' },
+      { title: 'API TLS Encryption and HTTPS Best Practices', link: '/learn/security/api-tls-encryption-https-best-practices' },
+      { title: 'API Input Validation and Injection Prevention', link: '/learn/security/api-input-validation-injection-prevention' },
+      { title: 'API Rate Limiting and Abuse Prevention', link: '/learn/security/api-rate-limiting-abuse-prevention' },
+      { title: 'Authentication and Authorization with OpenAPI', link: '/learn/security/authentication-authorization-openapi' },
+      { title: 'API Design-First Security Governance and Automation', link: '/learn/security/api-design-first-security-governance' },
     ],
   },
   // {

@@ -1,2 +1,9 @@
 - page: ./index.md
-- page: ./api-design-first-security-guide.md
+- group: API Security Fundamentals
+  pages:
+    - page: ./api-tls-encryption-https-best-practices.md
+    - page: ./api-input-validation-injection-prevention.md  
+    - page: ./api-rate-limiting-abuse-prevention.md
+    - page: ./authentication-authorization-openapi.md
+    - page: ./api-design-first-security-governance.md
+    - page: ./api-design-first-security-guide.md

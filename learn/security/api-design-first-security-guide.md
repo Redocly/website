@@ -28,9 +28,9 @@ Shifting security practices to the left in the development lifecycle, known as t
 
 The core of this strategy is treating your OpenAPI specification not merely as documentation, but as an executable security contract. This contract declaratively defines a set of security requirements, constraints, and policies before any application code is written. It becomes the single source of truth that dictates how an API must behave to be considered secure, effectively implementing a "policy-as-code" approach for APIs.
 
-However, a contract, much like a law, is only as strong as its enforcement. This is where [Redocly CLI](https://redocly.com/docs/cli/) governance and linting capabilities provide value by transforming your contract into dynamic, automated guardrails that validate security requirements at every stage of development. When integrated into a Continuous Integration/Continuous Deployment (CI/CD) pipeline, this automated governance acts as a gatekeeper, failing builds that violate the security contract and requiring fixes before deployment.
+However, a contract, much like a law, is only as strong as its enforcement. This is where automated governance and linting tools provide value by transforming your contract into dynamic, automated guardrails that validate security requirements at every stage of development. When integrated into a Continuous Integration/Continuous Deployment (CI/CD) pipeline, this automated governance acts as a gatekeeper, failing builds that violate the security contract and requiring fixes before deployment.
 
-*OpenAPI specifications are validated by Redocly governance engine in CI/CD pipeline, failing builds for security violations and requiring fixes before deployment.*
+*OpenAPI specifications are validated by automated governance engines in CI/CD pipelines, failing builds for security violations and requiring fixes before deployment.*
 
 ## Building Secure API Infrastructure: The Technical Foundation
 
@@ -58,7 +58,7 @@ graph TD
     E --> I["• Security Schemes<br/>• JWT/OAuth2<br/>• Scope Management"]
     
     J["📄 OpenAPI 3.1<br/>Specification"] --> A
-    K["⚙️ Redocly<br/>Governance"] --> A
+    K["⚙️ Automated<br/>Governance"] --> A
     
     style A fill:#e8f5e8
     style B fill:#e3f2fd
@@ -69,112 +69,67 @@ graph TD
     style K fill:#f3e5f5
 ```
 
-*Architecture diagram showing the four essential areas of API security (TLS encryption, input validation, rate limiting, access control) supported by OpenAPI specifications and Redocly governance automation.*
+*Architecture diagram showing the four essential areas of API security (TLS encryption, input validation, rate limiting, access control) supported by OpenAPI specifications and automated governance tools.*
 
-## Complete Security Governance Configuration
+## Security Governance Principles
 
-Before diving into each security area, here's the comprehensive `redocly.yaml` configuration that enforces all security best practices discussed in this guide:
+Before diving into each security area, it's important to understand how automated governance can enforce security best practices. Modern API governance tools allow you to define custom rules that validate your OpenAPI specifications against security standards.
 
-```yaml {% title="redocly.yaml" %}
-extends:
-  - recommended-strict
+### Key Security Validation Areas
 
-rules:
-  # === Built-in Security Rules ===
-  no-server-example-com: error          # Prevent example.com in server URLs  
-  no-unused-components: error           # Remove unused components that could leak data
+**Transport Security:**
+- Enforce HTTPS-only server URLs
+- Prevent example.com or placeholder domains in production specs
+- Validate proper TLS configuration requirements
 
-  # === TLS and Transport Security ===
-  rule/enforce-production-tls:
-    subject:
-      type: Server
-      property: url
-    assertions:
-      pattern: "^https://api\\.(production|staging)\\.com"
-    message: "Server URLs must use https:// and point to approved domains."
-    severity: error
+**Input Validation:**
+- Require `maxLength` constraints on all string properties
+- Mandate `minimum` and `maximum` bounds for numeric fields  
+- Enforce `additionalProperties: false` to prevent mass assignment vulnerabilities
 
-  # === Input Validation Rules ===
-  # Rule 1: All strings must have length bounds
-  rule/string-must-have-maxLength:
-    subject:
-      type: Schema
-    where:
-      - subject:
-          property: type
-        assertions:
-          const: string
-    assertions:
-      required:
-        - maxLength
-    message: "All string properties must have 'maxLength' to prevent resource exhaustion."
-    severity: error
+**Rate Limiting:**
+- Require rate limiting policies on authentication endpoints
+- Validate that sensitive operations have documented throttling
+- Ensure consistent rate limiting standards across APIs
 
-  # Rule 2: All numbers must have ranges  
-  rule/number-must-have-range:
-    subject:
-      type: Schema
-    where:
-      - subject:
-          property: type
-        assertions:
-          enum: [number, integer]
-    assertions:
-      required: [minimum, maximum]
-    message: "Numeric properties must have 'minimum' and 'maximum' defined."
-    severity: error
+**Access Control:**
+- Mandate security definitions on all write operations (POST, PUT, PATCH, DELETE)
+- Validate that authentication schemes are properly documented
+- Prevent accidentally public endpoints
 
-  # Rule 3: Prevent mass assignment vulnerabilities
-  rule/no-additional-properties:
-    subject:
-      type: Schema
-    where:
-      - subject:
-          property: type
-        assertions:
-          const: object
-    assertions:
-      property:
-        additionalProperties:
-          const: false
-    message: "Objects must set 'additionalProperties: false' to prevent mass assignment."
-    severity: error
-
-  # === Rate Limiting Rules ===
-  rule/require-rate-limit-on-auth:
-    subject:
-      type: Operation
-    where:
-      - subject:
-          property: tags
-        assertions:
-          contains: "Authentication"
-    assertions:
-      defined:
-        - x-rateLimit
-    message: "Authentication operations must have 'x-rateLimit' policy defined."
-    severity: error
-
-  # === Access Control Rules ===
-  rule/require-auth-on-mutations:
-    subject:
-      type: Operation
-    where:
-      - subject:
-          property: method
-        assertions:
-          enum: [post, put, patch, delete]
-    assertions:
-      defined: [security]
-    message: "All write operations must have security defined."
-    severity: error
-```
-
-This configuration provides comprehensive security governance automation. Each section below explains the principles behind these rules and shows implementation examples.
+These governance principles can be implemented using various API linting and validation tools. Each section below explains the security concepts behind these requirements and shows implementation examples.
 
 ## Understanding Design-Time vs Runtime Security
 
 It's important to understand that OpenAPI-based security governance operates at **design-time**, not runtime. This governance approach excels at preventing configuration errors, missing security controls, and specification inconsistencies before they reach production. That said, it cannot prevent runtime vulnerabilities in the underlying implementation.
+
+### API Security Implementation Timeline
+
+```mermaid
+timeline
+    title API Security Implementation Timeline
+    
+    section Design Phase
+        OpenAPI Spec : Security schemes defined
+                    : Input validation rules
+                    : Rate limiting policies
+        
+    section Build Phase  
+        Code Generation : Security middleware
+                       : Validation logic
+        CI/CD Pipeline : Governance checks
+                      : Security linting
+                      
+    section Runtime Phase
+        Production : TLS termination
+                  : Authentication
+                  : Rate limiting
+                  : Input validation
+        Monitoring : Attack detection
+                  : Performance metrics
+```
+
+*Timeline showing how API security spans from design-time specification through build automation to runtime enforcement, with different security controls applied at each phase.*
 
 **Design-time security governance prevents:**
 - Accidentally public endpoints (missing security requirements)
@@ -294,13 +249,13 @@ servers:
     description: Staging Server
 ```
 
-**Redocly Governance Enforcement:**
+**Automated Governance Enforcement:**
 
-The [Complete Security Governance Configuration](#complete-security-governance-configuration) section shows how to enforce HTTPS usage through the `rule/enforce-production-tls` custom rule, along with other security controls.
+The [Security Governance Principles](#security-governance-principles) section shows how modern API governance tools can enforce HTTPS usage and other security controls through automated validation rules.
 
-When integrated into your CI/CD pipeline, this configuration creates an automated security gate. If a developer attempts to commit an OpenAPI file with `http://api.production.com` or `https://api.dev.internal`, the pipeline fails with a clear error message, preventing insecure configurations from ever reaching production.
+When integrated into your CI/CD pipeline, automated governance creates security gates. If a developer attempts to commit an OpenAPI file with insecure server URLs, the pipeline fails with a clear error message, preventing insecure configurations from ever reaching production.
 
-*Redocly governance fails a CI/CD build if an OpenAPI spec uses HTTP instead of HTTPS, requiring developers to fix security violations before deployment.*
+*Automated governance tools fail CI/CD builds when OpenAPI specifications use HTTP instead of HTTPS, requiring developers to fix security violations before deployment.*
 
 ### TLS Configuration Examples
 
@@ -502,11 +457,11 @@ components:
           default: "user"
 ```
 
-**Redocly Governance for Validation:**
+**Automated Governance for Validation:**
 
-The [Complete Security Governance Configuration](#complete-security-governance-configuration) includes comprehensive input validation rules that automatically enforce string length bounds, numeric ranges, and prevent mass assignment vulnerabilities. See the Input Validation Rules section for the complete implementation.
+The [Security Governance Principles](#security-governance-principles) section outlines how automated governance tools can enforce input validation rules that require string length bounds, numeric ranges, and prevent mass assignment vulnerabilities.
 
-This governance approach changes security reviews. Instead of manually checking many properties for missing `maxLength` constraints, automated linting with [Redocly CLI](https://redocly.com/docs/cli/) handles baseline validation so security teams can focus on strategic concerns like business logic and context-dependent risks.
+This governance approach transforms security reviews. Instead of manually checking many properties for missing `maxLength` constraints, automated linting tools handle baseline validation so security teams can focus on strategic concerns like business logic and context-dependent risks.
 
 ### Key Security Constraints
 
@@ -517,7 +472,7 @@ The most critical schema constraints for API security focus on preventing resour
 - **`additionalProperties: false`**: Essential for preventing mass assignment attacks
 - **`pattern`**: Use restrictive regex patterns to block injection payloads
 
-These constraints are automatically enforced by the governance rules in our [Complete Security Governance Configuration](#complete-security-governance-configuration), ensuring no schema can bypass these fundamental protections.
+These constraints can be automatically enforced by governance rules as outlined in the [Security Governance Principles](#security-governance-principles) section, ensuring no schema can bypass these fundamental protections.
 
 ### Common Validation Patterns
 
@@ -575,7 +530,7 @@ properties:
     maximum: 130
 ```
 
-> Redocly insight: "We block PRs that add new string fields without `maxLength`. It's the cheapest guardrail against abuse."
+> API Security Best Practice: "Blocking PRs that add new string fields without `maxLength` constraints is one of the most cost-effective security guardrails you can implement."
 
 ### Attack Example: Equifax (OGNL injection via Apache Struts, 2017)
 
@@ -653,11 +608,11 @@ paths:
               description: "Requests remaining in current window."
 ```
 
-**Redocly Governance for Rate Limiting:**
+**Automated Governance for Rate Limiting:**
 
-The [Complete Security Governance Configuration](#complete-security-governance-configuration) includes the `rule/require-rate-limit-on-auth` rule that ensures authentication endpoints always have rate limiting policies defined.
+API governance tools can enforce rules that ensure authentication endpoints always have rate limiting policies defined.
 
-This approach provides dual benefits: [Redocly's Redoc](https://redocly.com/redoc) automatically displays the `x-rateLimit` object in generated documentation, making policies transparent to API consumers, while governance rules ensure sensitive endpoints never lack rate-limiting policies.
+This approach provides dual benefits: modern API documentation tools automatically display rate limiting extensions in generated documentation, making policies transparent to API consumers, while governance rules ensure sensitive endpoints never lack rate-limiting policies.
 
 ### Why Rate Limiting Is Critical
 
@@ -772,6 +727,37 @@ OpenAPI 3.1 provides a robust framework for defining access control through two 
 1. **`components.securitySchemes`**: Defines *how* clients can authenticate (JWT Bearer, OAuth2, API Keys)
 2. **`security`**: Specifies *that* an endpoint is secured and by which mechanism(s)
 
+#### Authentication vs Authorization Flow
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant A as API Gateway
+    participant Auth as Auth Service
+    participant API as API Endpoint
+    
+    Note over U,API: Authentication Phase
+    U->>A: 1. Request with credentials
+    A->>Auth: 2. Verify identity
+    Auth->>A: 3. Identity confirmed + token
+    A->>U: 4. Return access token
+    
+    Note over U,API: Authorization Phase  
+    U->>A: 5. API request + token
+    A->>A: 6. Validate token
+    A->>A: 7. Check permissions/scopes
+    
+    alt Authorized
+        A->>API: 8. Forward request
+        API->>A: 9. Response
+        A->>U: 10. Return response
+    else Unauthorized
+        A->>U: 11. 403 Forbidden
+    end
+```
+
+*Sequence diagram showing the two-phase process: authentication verifies who the user is, while authorization determines what they can do. Both phases are essential for secure API access control.*
+
 **JWT Bearer Token Example:**
 ```yaml {% title="openapi.yaml" %}
 components:
@@ -810,11 +796,11 @@ paths:
         - oauth2Auth: ['users:write']  # Requires specific scope
 ```
 
-### Redocly Governance for Access Control
+### Automated Governance for Access Control
 
-Access control enforcement is handled through the custom `rule/require-auth-on-mutations` rule shown in the [Complete Security Governance Configuration](#complete-security-governance-configuration), which ensures all write operations have security requirements defined.
+Access control enforcement can be handled through custom governance rules that ensure all write operations have security requirements defined.
 
-When `redocly lint` runs, any endpoint without a corresponding `security` block causes the build to fail, preventing the most common API vulnerability: the unintentionally public endpoint.
+When automated linting runs, any endpoint without a corresponding `security` block causes the build to fail, preventing the most common API vulnerability: the unintentionally public endpoint.
 
 ### Security Definitions as Configuration
 
@@ -823,7 +809,7 @@ Defining security schemes in OpenAPI extends beyond documentation—it establish
 - **API Gateways** (Kong, Apigee) import OpenAPI files and automatically configure JWT validation based on `securitySchemes`
 - **Code generators** create boilerplate authentication handling
 - **Testing tools** automate authenticated requests
-- **Redocly's "Try it" console** renders appropriate UI for each scheme type
+- **API documentation tools** render appropriate interactive UI for each scheme type
 
 This unified approach ensures the security policy defined in design is the same policy implemented, documented, tested, and enforced in production.
 
@@ -847,7 +833,7 @@ curl -H "Authorization: Bearer invalid" https://api.example.com/users/me
 curl -H "Authorization: Bearer readonly_token" -X POST https://api.example.com/users
 ```
 
-> Key insight: "Requiring security definitions on all write operations has prevented more breaches than any other single control. The `rule/require-auth-on-mutations` is non-negotiable in our CI pipeline." Learn more about implementing this with [Redocly's API Governance solution](https://redocly.com/api-governance).
+> Key insight: "Requiring security definitions on all write operations has prevented more breaches than any other single control. Automated enforcement of authentication requirements on mutation operations should be non-negotiable in your CI pipeline."
 
 #### Rate limiting troubleshooting and common pitfalls
 
@@ -935,10 +921,57 @@ class RateLimitMetrics:
         return (blocked / total) * 100 if total > 0 else 0
 ```
 
+## API Security Maturity Model
+
+Implementing comprehensive API security is a journey. Organizations typically progress through distinct maturity levels as they build more sophisticated security practices:
+
+```mermaid
+graph TD
+    A[Level 0: Basic] --> B[Level 1: Structured] --> C[Level 2: Automated] --> D[Level 3: Proactive]
+    
+    A --> A1[Manual reviews<br/>Basic HTTPS<br/>Simple auth]
+    B --> B1[OpenAPI specs<br/>Schema validation<br/>Rate limiting]
+    C --> C1[Automated governance<br/>CI/CD integration<br/>Policy enforcement]
+    D --> D1[Threat modeling<br/>Zero-trust architecture<br/>Continuous monitoring]
+    
+    style A fill:#ffcdd2
+    style B fill:#fff59d
+    style C fill:#c8e6c9
+    style D fill:#a5d6a7
+```
+
+*API security maturity progression showing the evolution from basic manual practices to proactive, automated security governance with comprehensive threat detection and prevention.*
+
+**Level 0 - Basic Security:**
+- Manual code reviews for obvious security issues
+- HTTPS enabled but not enforced through specifications
+- Basic authentication (API keys or simple passwords)
+- Ad-hoc security practices without consistent standards
+
+**Level 1 - Structured Security:**
+- OpenAPI specifications document all APIs with security requirements
+- Schema-based input validation prevents basic injection attacks
+- Rate limiting implemented on authentication and sensitive endpoints
+- Consistent security patterns across API teams
+
+**Level 2 - Automated Security:**
+- Automated governance tools enforce security standards in CI/CD pipelines
+- Security policies defined as code and validated automatically
+- Breaking changes to security configurations fail builds
+- Security metrics tracked and monitored systematically
+
+**Level 3 - Proactive Security:**
+- Comprehensive threat modeling integrated into the design process
+- Zero-trust architecture with mutual TLS for service-to-service communication
+- Continuous security monitoring with behavioral analysis and anomaly detection
+- Security feedback loops drive iterative improvements to governance policies
+
+Most organizations find that advancing one level at a time provides the most sustainable improvement path. The techniques covered in this guide primarily support progression from Level 0 to Level 2, with Level 3 requiring additional infrastructure and organizational maturity.
+
 ## Frequently Asked Questions
 
 ### What is design-first API security?
-Design-first API security means defining security requirements in your OpenAPI specification before writing code, then using automated governance tools like Redocly to enforce those requirements throughout the development lifecycle. This prevents vulnerabilities from reaching production rather than patching them after discovery.
+Design-first API security means defining security requirements in your OpenAPI specification before writing code, then using automated governance tools to enforce those requirements throughout the development lifecycle. This prevents vulnerabilities from reaching production rather than patching them after discovery.
 
 ### How does OpenAPI prevent injection attacks?
 OpenAPI specifications define precise data schemas with type validation, format constraints, and length limits. When enforced by governance tools, these schemas automatically reject malformed inputs that could contain injection payloads, stopping attacks before they reach your application logic.
@@ -961,9 +994,9 @@ Authentication verifies *who* the user is (like checking an ID card), while auth
 
 ### Practical Implementation Tools
 - [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/) - Generate secure, up-to-date TLS configurations for various web servers and security levels
-- [Redocly CLI Documentation](https://redocly.com/docs/cli/) - Complete guide to implementing API governance, linting, and automated security validation
+- [OpenAPI Generator](https://openapi-generator.tech/) - Code generation tool for creating secure client SDKs and server stubs from OpenAPI specifications
 - [OpenAPI Specification](https://spec.openapis.org/oas/v3.1.0) - Official OpenAPI 3.1 specification including security scheme definitions
 
 ### DevSecOps and API Governance
-- [Redocly API Governance](https://redocly.com/api-governance) - Enterprise-grade API governance and security automation platform
-- [API Security Best Practices](https://redocly.com/docs/cli/rules/built-in-rules) - Built-in security rules and governance patterns for API specifications
+- [OWASP API Security Project](https://owasp.org/www-project-api-security/) - Community-driven API security best practices and threat modeling
+- [OpenAPI Security Schemes](https://spec.openapis.org/oas/v3.1.0#security-scheme-object) - Official specification for defining authentication and authorization in OpenAPI
