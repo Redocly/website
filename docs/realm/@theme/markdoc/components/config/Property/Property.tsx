@@ -129,11 +129,12 @@ export function ConfigProperty({ file }: ConfigPropertyProps): React.ReactElemen
 }
 
 const PropertyItem = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.2s ease;
-  margin: 0 0 16px 0;
+  gap: 4px;
 `;
 
 const PropertyTitleContainer = styled.div`
@@ -141,17 +142,16 @@ const PropertyTitleContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  margin: 0 0 8px 0;
 `;
 
 const PropertyTitle = styled.a`
-  font-weight: 400;
-  font-size: 18px;
+  font-size: var(--font-size-lg);
   color: var(--link-color-primary);
 `;
 
 const PropertyDescription = styled.p`
-  line-height: 1.4;
-  color: var(--text-color-secondary, #3b3c45);
-  margin: 0;
+  line-height: var(--line-height-base);
+  color: var(--text-color-secondary);
+  font-size: var(--font-size-base);
+  margin: 0 !important;
 `;
