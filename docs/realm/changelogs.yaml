@@ -1,12 +1,4 @@
 '@redocly/realm':
-  0.126.0-next.8:
-    timestamp: 1758108256000
-    changes:
-      minor: []
-      patch:
-        - Improved error message for broken sidebar links in front matter.
-        - Fixed `replay-openapi` Markdoc tag not updating until page refresh.
-    dependencies: {}
   0.126.0-next.7:
     timestamp: 1758032690000
     changes:
@@ -88,8 +80,7 @@
   0.126.0-next.2:
     timestamp: 1757409756000
     changes:
-      minor:
-        - Extended link checker to validate `href` attributes in HTML `a` tags within Markdown files.
+      minor: []
       patch:
         - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
         - Added path prefix support for HTML `href` attributes.
@@ -4252,14 +4243,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.126.0-next.8:
-    timestamp: 1758108256000
-    changes:
-      minor: []
-      patch:
-        - Improved error message for broken sidebar links in front matter.
-        - Fixed `replay-openapi` Markdoc tag not updating until page refresh.
-    dependencies: {}
   0.126.0-next.7:
     timestamp: 1758032690000
     changes:
@@ -4340,8 +4323,7 @@
   0.126.0-next.2:
     timestamp: 1757409756000
     changes:
-      minor:
-        - Extended link checker to validate `href` attributes in HTML `a` tags within Markdown files.
+      minor: []
       patch:
         - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
         - Added path prefix support for HTML `href` attributes.
@@ -7762,14 +7744,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.126.0-next.8:
-    timestamp: 1758108256000
-    changes:
-      minor: []
-      patch:
-        - Improved error message for broken sidebar links in front matter.
-        - Fixed `replay-openapi` Markdoc tag not updating until page refresh.
-    dependencies: {}
   0.126.0-next.7:
     timestamp: 1758032690000
     changes:
@@ -7850,8 +7824,7 @@
   0.126.0-next.2:
     timestamp: 1757409756000
     changes:
-      minor:
-        - Extended link checker to validate `href` attributes in HTML `a` tags within Markdown files.
+      minor: []
       patch:
         - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
         - Added path prefix support for HTML `href` attributes.
@@ -11269,12 +11242,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.126.0-next.8:
-    timestamp: 1758108256000
-    changes:
-      minor: []
-      patch: []
-    dependencies: {}
   0.126.0-next.7:
     timestamp: 1758032690000
     changes:
@@ -11355,8 +11322,7 @@
   0.126.0-next.2:
     timestamp: 1757409756000
     changes:
-      minor:
-        - Extended link checker to validate `href` attributes in HTML `a` tags within Markdown files.
+      minor: []
       patch:
         - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
         - Added path prefix support for HTML `href` attributes.
@@ -20747,16 +20713,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.9.0-next.8:
-    timestamp: 1758108256000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.126.0-next.8
-      '@redocly/redoc-reef': 0.126.0-next.8
-      '@redocly/redoc-revel': 0.126.0-next.8
-      '@redocly/redoc': 0.126.0-next.8
   1.9.0-next.7:
     timestamp: 1758032690000
     changes:
@@ -31220,12 +31176,5 @@ reunite:
     changes:
       minor:
         - Added batch file support to the `push` API and preserved backward compatibility with the legacy Scout `push` API.
-      patch: []
-    dependencies: {}
-  v2025-09-17.1:
-    timestamp: 1758096435000
-    changes:
-      minor:
-        - Added ability to fetch and search project branches on the Branch Deploy Strategy page.
       patch: []
     dependencies: {}

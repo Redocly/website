@@ -418,8 +418,15 @@
         - page: customization/api-functions/api-functions-reference.md
           label: Reference
         - page: customization/api-functions/create-api-functions.md
-          label: Tutorials
-
+          label: Tutorial
+          
+    - group: MCP servers
+      selectFirstItemOnExpand: true
+      items:
+        - page: customization/mcp-server/index.md
+          label: Overview
+        - page: customization/mcp-server/docs-mcp.md
+          label: Docs MCP
 
 - group: Access
   icon: lock

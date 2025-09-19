@@ -22,10 +22,14 @@ function normalizeFileKey(p: string): string {
 
 function fileToSlug(file: string): string {
   const key = normalizeFileKey(file);
+  // expect paths like 'config/x.md' or 'config/x/index.md'
   let p = key.replace(/\.md$/, '');
   p = p.replace(/\/index$/, '');
-  p = `${window.location.pathname.replace(/\/$/, '')}/${p}`;
-  return p;
+  if (!p.startsWith('config/')) {
+    // assume config root if omitted
+    p = 'config/' + p.replace(/^\/?/, '');
+  }
+  return '/' + p + '/';
 }
 
 async function loadFromPageData(file: string): Promise<PropertyManifestItem | null> {
