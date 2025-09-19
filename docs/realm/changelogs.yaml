@@ -88,8 +88,7 @@
   0.126.0-next.2:
     timestamp: 1757409756000
     changes:
-      minor:
-        - Extended link checker to validate `href` attributes in HTML `a` tags within Markdown files.
+      minor: []
       patch:
         - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
         - Added path prefix support for HTML `href` attributes.
@@ -4340,8 +4339,7 @@
   0.126.0-next.2:
     timestamp: 1757409756000
     changes:
-      minor:
-        - Extended link checker to validate `href` attributes in HTML `a` tags within Markdown files.
+      minor: []
       patch:
         - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
         - Added path prefix support for HTML `href` attributes.
@@ -7850,8 +7848,7 @@
   0.126.0-next.2:
     timestamp: 1757409756000
     changes:
-      minor:
-        - Extended link checker to validate `href` attributes in HTML `a` tags within Markdown files.
+      minor: []
       patch:
         - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
         - Added path prefix support for HTML `href` attributes.
@@ -11355,8 +11352,7 @@
   0.126.0-next.2:
     timestamp: 1757409756000
     changes:
-      minor:
-        - Extended link checker to validate `href` attributes in HTML `a` tags within Markdown files.
+      minor: []
       patch:
         - Improved heading anchor ID generation by preserving consecutive dashes instead of collapsing them to a single dash.
         - Added path prefix support for HTML `href` attributes.
@@ -31228,11 +31224,4 @@ reunite:
       minor:
         - Added ability to fetch and search project branches on the Branch Deploy Strategy page.
       patch: []
-    dependencies: {}
-  v2025-09-19.1:
-    timestamp: 1758272042000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.1.4`.
     dependencies: {}
