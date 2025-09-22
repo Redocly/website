@@ -1,4 +1,15 @@
 '@redocly/realm':
+  0.126.0-next.10:
+    timestamp: 1758531461000
+    changes:
+      minor:
+        - Added validation to ensure `residency` starts with `http://` or `https://`.
+      patch:
+        - Fixed an issue where the API Catalog displayed only one API from versioned subfolders.
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.6
+      '@redocly/asyncapi-docs': 1.3.0-next.6
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.6
   0.126.0-next.9:
     timestamp: 1758287388000
     changes:
@@ -4269,6 +4280,17 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.126.0-next.10:
+    timestamp: 1758531461000
+    changes:
+      minor:
+        - Added validation to ensure `residency` starts with `http://` or `https://`.
+      patch:
+        - Fixed an issue where the API Catalog displayed only one API from versioned subfolders.
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.6
+      '@redocly/asyncapi-docs': 1.3.0-next.6
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.6
   0.126.0-next.9:
     timestamp: 1758287388000
     changes:
@@ -7794,6 +7816,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.126.0-next.10:
+    timestamp: 1758531461000
+    changes:
+      minor:
+        - Added validation to ensure `residency` starts with `http://` or `https://`.
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.6
+      '@redocly/asyncapi-docs': 1.3.0-next.6
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.6
   0.126.0-next.9:
     timestamp: 1758287388000
     changes:
@@ -11316,6 +11348,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.126.0-next.10:
+    timestamp: 1758531461000
+    changes:
+      minor:
+        - Added validation to ensure `residency` starts with `http://` or `https://`.
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.6
+      '@redocly/asyncapi-docs': 1.3.0-next.6
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.6
   0.126.0-next.9:
     timestamp: 1758287388000
     changes:
@@ -17065,6 +17107,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.14.0-next.6:
+    timestamp: 1758531461000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.17.0-next.6
   3.14.0-next.5:
     timestamp: 1758287388000
     changes:
@@ -20829,6 +20878,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.9.0-next.10:
+    timestamp: 1758531461000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.0-next.10
+      '@redocly/redoc': 0.126.0-next.10
+      '@redocly/redoc-reef': 0.126.0-next.10
+      '@redocly/redoc-revel': 0.126.0-next.10
   1.9.0-next.9:
     timestamp: 1758287388000
     changes:
@@ -24692,6 +24751,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.11.0-next.6:
+    timestamp: 1758531461000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.6
   0.11.0-next.5:
     timestamp: 1758287388000
     changes:
@@ -26819,6 +26885,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.17.0-next.6:
+    timestamp: 1758531461000
+    changes:
+      minor: []
+      patch:
+        - Added handling for special characters in query strings.
+    dependencies: {}
   0.17.0-next.5:
     timestamp: 1758287388000
     changes:
@@ -29277,6 +29350,13 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.3.0-next.6:
+    timestamp: 1758531461000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.6
   1.3.0-next.5:
     timestamp: 1758287388000
     changes:
