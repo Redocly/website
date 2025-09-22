@@ -1,6 +1,6 @@
 '@redocly/realm':
   0.125.3:
-    timestamp: 1758547821000
+    timestamp: 1758555804000
     changes:
       minor: []
       patch:
@@ -58,7 +58,7 @@
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/portal-plugin-mock-server': 0.11.0-next.4
   0.125.2:
-    timestamp: 1757926971000
+    timestamp: 1757940167000
     changes:
       minor: []
       patch:
@@ -107,7 +107,7 @@
       '@redocly/asyncapi-docs': 1.3.0-next.1
       '@redocly/portal-plugin-mock-server': 0.11.0-next.1
   0.125.1:
-    timestamp: 1757492483000
+    timestamp: 1757502263000
     changes:
       minor: []
       patch:
@@ -153,7 +153,7 @@
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/openapi-docs': 3.14.0-next.0
   0.125.0:
-    timestamp: 1756978005000
+    timestamp: 1757073576000
     changes:
       minor:
         - Added LLM-related page actions to the GraphQL docs.
@@ -4288,7 +4288,7 @@
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
   0.125.3:
-    timestamp: 1758547821000
+    timestamp: 1758555804000
     changes:
       minor: []
       patch:
@@ -4344,7 +4344,7 @@
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/portal-plugin-mock-server': 0.11.0-next.4
   0.125.2:
-    timestamp: 1757926971000
+    timestamp: 1757940167000
     changes:
       minor: []
       patch:
@@ -4392,7 +4392,7 @@
       '@redocly/asyncapi-docs': 1.3.0-next.1
       '@redocly/portal-plugin-mock-server': 0.11.0-next.1
   0.125.1:
-    timestamp: 1757492483000
+    timestamp: 1757502263000
     changes:
       minor: []
       patch:
@@ -4438,7 +4438,7 @@
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/openapi-docs': 3.14.0-next.0
   0.125.0:
-    timestamp: 1756978005000
+    timestamp: 1757073576000
     changes:
       minor:
         - Added `dynamic` function to `@redocly/theme` for lazy loading components.
@@ -7831,7 +7831,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
   0.125.3:
-    timestamp: 1758547821000
+    timestamp: 1758555804000
     changes:
       minor: []
       patch:
@@ -7886,7 +7886,7 @@
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/portal-plugin-mock-server': 0.11.0-next.4
   0.125.2:
-    timestamp: 1757926971000
+    timestamp: 1757940167000
     changes:
       minor: []
       patch:
@@ -7934,7 +7934,7 @@
       '@redocly/asyncapi-docs': 1.3.0-next.1
       '@redocly/portal-plugin-mock-server': 0.11.0-next.1
   0.125.1:
-    timestamp: 1757492483000
+    timestamp: 1757502263000
     changes:
       minor: []
       patch:
@@ -7980,7 +7980,7 @@
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/openapi-docs': 3.14.0-next.0
   0.125.0:
-    timestamp: 1756978005000
+    timestamp: 1757073576000
     changes:
       minor:
         - Added `dynamic` function to `@redocly/theme` for lazy loading components.
@@ -11370,7 +11370,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
   0.125.3:
-    timestamp: 1758547821000
+    timestamp: 1758555804000
     changes:
       minor: []
       patch:
@@ -11425,7 +11425,7 @@
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/portal-plugin-mock-server': 0.11.0-next.4
   0.125.2:
-    timestamp: 1757926971000
+    timestamp: 1757940167000
     changes:
       minor: []
       patch:
@@ -11473,7 +11473,7 @@
       '@redocly/asyncapi-docs': 1.3.0-next.1
       '@redocly/portal-plugin-mock-server': 0.11.0-next.1
   0.125.1:
-    timestamp: 1757492483000
+    timestamp: 1757502263000
     changes:
       minor: []
       patch:
@@ -11518,7 +11518,7 @@
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/openapi-docs': 3.14.0-next.0
   0.125.0:
-    timestamp: 1756978005000
+    timestamp: 1757073576000
     changes:
       minor:
         - Added LLM-related page actions to the GraphQL docs.
@@ -20922,7 +20922,7 @@
     dependencies: {}
 '@redocly/portal-plugin-async-api':
   1.8.3:
-    timestamp: 1758547821000
+    timestamp: 1758555804000
     changes:
       minor: []
       patch: []
@@ -20974,7 +20974,7 @@
       '@redocly/redoc-reef': 0.126.0-next.7
       '@redocly/redoc-revel': 0.126.0-next.7
   1.8.2:
-    timestamp: 1757926971000
+    timestamp: 1757940167000
     changes:
       minor: []
       patch: []
@@ -21017,7 +21017,7 @@
       '@redocly/redoc-reef': 0.126.0-next.4
       '@redocly/redoc-revel': 0.126.0-next.4
   1.8.1:
-    timestamp: 1757492483000
+    timestamp: 1757502263000
     changes:
       minor: []
       patch: []
@@ -21069,7 +21069,7 @@
       '@redocly/redoc-reef': 0.126.0-next.0
       '@redocly/redoc-revel': 0.126.0-next.0
   1.8.0:
-    timestamp: 1756978005000
+    timestamp: 1757073576000
     changes:
       minor: []
       patch: []
