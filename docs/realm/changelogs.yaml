@@ -19329,6 +19329,16 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.33.0:
+    timestamp: 1758635872000
+    changes:
+      minor:
+        - >-
+          Added `openapi.showSchemaCatalogLinks` configuration option to display links to schemas and requests on an OpenAPI page. These links can be
+          used as `$ref` values in other OpenAPI files within the same project.
+      patch:
+        - Fixed regex for Respect Monitoring path parameter in `@redocly/config`.
+    dependencies: {}
   0.32.0:
     timestamp: 1758546703000
     changes:
