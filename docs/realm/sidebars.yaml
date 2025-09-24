@@ -87,6 +87,8 @@
         - page: reunite/project/respect-monitoring/manage-respect-monitoring.md
     - page: reunite/project/analytics.md
       label: Analytics
+    - page: reunite/project/switch-between-projects.md # consolidate into manage projects?
+      label: Switch between projects
     - page: reunite/project/feedback.md
       label: Feedback
     - group: Connect a Git provider
@@ -128,7 +130,7 @@
         - page: reunite/project/remote-content/edit-remote-content-folder.md
           label: Edit content folder
         - page: reunite/project/remote-content/verify-remote-content.md
-          label: Verify remote content
+          label: Remote content automation
     # consider moving or removing the page:
     # - page: setup/how-to/feedback/extend-feedback.md
     #   label: Extend feedback form
@@ -404,8 +406,6 @@
       label: Color mode images
     - page: customization/configure-request-values.md
       label: Configure request values
-    - page: customization/configure-dynamic-replay-values.md
-      label: Configure Replay with dynamic API data
 
     - separator: API integration
     - group: API functions

@@ -6,13 +6,8 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-description: |-
-  Customize the behavior and appearance of integrated GraphQL documentation.
-  Requires a GraphQL schema.
 ---
 # `graphql`
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Customize the behavior and appearance of integrated GraphQL documentation.
 Requires a GraphQL schema.
@@ -54,18 +49,6 @@ Requires a GraphQL schema.
 - [feedback](../feedback.md)
 - [Feedback object](../feedback.md#options)
 - Hide or customize the type of or text included in the feedback form that displays at the end of each endpoint.
-
----
-
-- [showBuiltInScalars](./show-built-in-scalars.md)
-- boolean
-- Show GraphQL built-in scalar types in the navigation and pages.
-
----
-
-- [showBuiltInDirectives](./show-built-in-directives.md)
-- boolean
-- Show GraphQL built-in directives in the navigation and pages.
 
 {% /table %}
 

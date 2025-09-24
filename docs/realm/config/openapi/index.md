@@ -6,15 +6,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-description: |-
-  Customize the behavior and appearance of integrated API documentation.
-  Requires an OpenAPI description.
 ---
 # `openapi`
 
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-{% $frontmatter.description %}
+Customize the behavior and appearance of integrated API documentation.
+Requires an OpenAPI description.
 
 ## Options
 
@@ -151,14 +147,6 @@ description: |-
 - [string] | boolean
 - Displays specification extensions ('x-' fields).
   If a list is provided, only those specification extensions are displayed.
-
----
-
-- [showSchemaCatalogLinks](./show-schema-catalog-links.md)
-- boolean
-- Displays links to schemas and requests on an OpenAPI page.
-  These links can be used as `$ref` value in other OpenAPI files within the same project.
-  Default value: `false`.
 
 ---
 

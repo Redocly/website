@@ -1,23 +1,9 @@
----
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
-description: Configure custom plugins to extend lint and decorator behavior.
----
 # `plugins`
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 ## Introduction
 
-{% $frontmatter.description %}
+Redocly supports [custom plugins](https://redocly.com/docs/cli/custom-plugins) for extending lint and decorator behavior.
 Use plugins when you need to add rules beyond the [built-in](https://redocly.com/docs/cli/rules/built-in-rules) and [configurable](https://redocly.com/docs/cli/rules/configurable-rules), or decorators beyond the [built-in decorators](https://redocly.com/docs/cli/decorators).
-For implementation guidance, see [custom plugins](https://redocly.com/docs/cli/custom-plugins).
 
 ## Options
 

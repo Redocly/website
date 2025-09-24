@@ -5,113 +5,91 @@ This configuration file allows you to customize your API documentation, develope
 
 This guide provides a comprehensive overview of available configuration options organized by functional areas.
 
-{% configIntroduction /%}
+## API management
 
-{% configSection title="API Management" description="These options let you define your APIs and control how API descriptions are processed and validated." %}
-  {% configProperty file="apis.md" /%}
+These options let you define your APIs and control how API descriptions are processed and validated.
 
-  {% configProperty file="openapi/index.md" /%}
+- [apis](./apis.md)
+- [openapi](./openapi/index.md)
+- [graphql](./graphql/index.md)
+- [mockServer](./mock-server.md)
+- [decorators](./openapi/decorators.md)
+- [preprocessors](./openapi/preprocessors.md)
+- [extends](./openapi/extends.md)
+- [rules](./rules.md)
+- [scorecard](./scorecard.md)
+- [catalogClassic](./catalog-classic.md)
 
-  {% configProperty file="graphql/index.md" /%}
+## Navigation elements
 
-  {% configProperty file="mock-server.md" /%}
+These settings control how users navigate through your documentation project.
 
-  {% configProperty file="openapi/decorators.md" /%}
+- [navbar](./navbar.md)
+- [sidebar](./sidebar.md)
+- [footer](./footer.md)
+- [navigation](./navigation.md)
+- [search](./search.md)
 
-  {% configProperty file="openapi/preprocessors.md" /%}
+## User interface
 
-  {% configProperty file="openapi/extends.md" /%}
+Customize the look and feel of your documentation project with these options.
 
-  {% configProperty file="rules.md" /%}
+- [codeSnippet](./code-snippet.md)
+- [breadcrumbs](./breadcrumbs.md)
+- [markdown](./markdown.md)
+- [removeAttribution](./remove-attribution.md)
+- [logo](./logo.md)
+- [colorMode](./color-mode.md)
+- [userMenu](./user-menu.md)
 
-  {% configProperty file="scorecard.md" /%}
+## Content management
 
-  {% configProperty file="catalog-classic.md" /%}
-{% /configSection %}
+Organize and control documentation content, versions, and localization.
 
-{% configSection title="Navigation elements" description="These settings control how users navigate through your documentation project." %}
-  {% configProperty file="navbar.md" /%}
+- [products](./products.md)
+- [versionPicker](./version-picker.md)
+- [l10n](./l10n.md)
+- [metadata](./metadata.md)
+- [metadataGlobs](./metadata-globs.md)
 
-  {% configProperty file="sidebar.md" /%}
 
-  {% configProperty file="footer.md" /%}
+## Security and access management
 
-  {% configProperty file="navigation.md" /%}
+Configure user authentication and access controls for your documentation.
 
-  {% configProperty file="search.md" /%}
-{% /configSection %}
+- [rbac](./rbac.md)
+- [requiresLogin](./requires-login.md)
+- [sso](./sso.md)
+- [residency](./residency.md)
 
-{% configSection title="User interface" description="Customize the look and feel of your documentation project with these options." %}
-  {% configProperty file="code-snippet.md" /%}
+## Customization
 
-  {% configProperty file="breadcrumbs.md" /%}
+Extend functionality with custom code and additional features.
 
-  {% configProperty file="markdown.md" /%}
+- [apiFunctions](./api-functions.md)
+- [plugins](./plugins.md)
+- [resolve](./openapi/resolve.md)
+- [env](./env.md)
+- [responseHeaders](./response-headers.md)
+- [links](./links.md)
+- [scripts](./scripts.md)
 
-  {% configProperty file="remove-attribution.md" /%}
+## Analytics and SEO
 
-  {% configProperty file="logo.md" /%}
+Improve discoverability and track usage of your documentation.
 
-  {% configProperty file="color-mode.md" /%}
+- [analytics](./analytics/index.md)
+- [seo](./seo.md)
+- [redirects](./redirects.md)
+- [ignore](./ignore.md)
 
-  {% configProperty file="user-menu.md" /%}
-{% /configSection %}
+## Developer experience
 
-{% configSection title="Content management" description="Organize and control documentation content, versions, and localization." %}
-  {% configProperty file="products.md" /%}
+Enhance the experience for developers using your APIs.
 
-  {% configProperty file="version-picker.md" /%}
-
-  {% configProperty file="l10n.md" /%}
-
-  {% configProperty file="metadata.md" /%}
-
-  {% configProperty file="metadata-globs.md" /%}
-{% /configSection %}
-
-{% configSection title="Security and access management" description="Configure user authentication and access controls for your documentation." %}
-  {% configProperty file="rbac.md" /%}
-
-  {% configProperty file="requires-login.md" /%}
-
-  {% configProperty file="sso.md" /%}
-
-  {% configProperty file="residency.md" /%}
-{% /configSection %}
-
-{% configSection title="Customization" description="Extend functionality with custom code and additional features." %}
-  {% configProperty file="api-functions.md" /%}
-
-  {% configProperty file="plugins.md" /%}
-
-  {% configProperty file="openapi/resolve.md" /%}
-
-  {% configProperty file="env.md" /%}
-
-  {% configProperty file="response-headers.md" /%}
-
-  {% configProperty file="links.md" /%}
-
-  {% configProperty file="scripts.md" /%}
-{% /configSection %}
-
-{% configSection title="Analytics and SEO" description="Improve discoverability and track usage of your documentation." %}
-  {% configProperty file="analytics/index.md" /%}
-
-  {% configProperty file="seo.md" /%}
-
-  {% configProperty file="redirects.md" /%}
-
-  {% configProperty file="ignore.md" /%}
-{% /configSection %}
-
-{% configSection title="Developer experience" description="Enhance the experience for developers using your APIs." %}
-  {% configProperty file="developer-onboarding/index.md" /%}
-
-  {% configProperty file="feedback.md" /%}
-
-  {% configProperty file="reunite.md" /%}
-{% /configSection %}
+- [developerOnboarding](./developer-onboarding/index.md)
+- [feedback](./feedback.md)
+- [reunite](./reunite.md)
 
 ## Example configuration
 

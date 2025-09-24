@@ -8,17 +8,14 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-description: Add custom fonts, stylesheets, and other links to pages.
 ---
 # `links`
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 {% admonition type="warning" %}
 Formerly known as the `stylesheets` option.
 {% /admonition %}
 
-{% $frontmatter.description %}
+Add custom fonts, stylesheets, and other links to pages.
 These links are added to the `<head>` HTML element of each page of your published project.
 The `@theme/styles.css` file is imported automatically.
 

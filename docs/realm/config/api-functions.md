@@ -6,13 +6,10 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-description: Control where Redocly detects and hosts API functions.
 ---
 # `apiFunctions`
 
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-Use the `apiFunctions` option to set paths where Redocly detects and hosts API functions.
+Use the `apiFunctions` option to control the path where Redocly detects and hosts API functions.
 
 By default, API functions are hosted at the `@api` folder and the path is served at `/api`.
 

@@ -7,13 +7,10 @@ products:
 plans:
   - Enterprise
   - Enterprise+
-description: Allow the usage of specific identity providers (IdPs) defined in Reunite.
 ---
 # `sso`
 
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-{% $frontmatter.description %}
+The single sign-on (SSO) configuration option is for allowing the usage of specific identity providers (IdPs) defined in Reunite.
 This configuration determines which IdPs are available for logging in to a project.
 Configuring SSO by itself does not require users to log in to access a project.
 To require login to a project, [`rbac`](./rbac.md) or [`requiresLogin`](./requires-login.md) must also be configured.

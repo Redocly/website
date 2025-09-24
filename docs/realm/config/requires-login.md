@@ -8,13 +8,10 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-description: This configuration option makes all your content private for non-authenticated users.
 ---
 # `requiresLogin`
 
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-{% $frontmatter.description %}
+This configuration option makes all your content private.
 Only authenticated users, who are verified through either Redocly or an identity provider (IdP) you [added in Reunite](../reunite/organization/sso/add-idp.md) can access your project.
 
 {% admonition type="info" %}

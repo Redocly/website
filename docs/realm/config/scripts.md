@@ -8,13 +8,10 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-description: Insert custom scripts in the head or body of a page.
 ---
 # `scripts`
 
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-{% $frontmatter.description %}
+To insert custom scripts in the head or body of a page.
 
 ## Options
 
