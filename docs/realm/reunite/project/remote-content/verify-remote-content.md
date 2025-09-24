@@ -13,7 +13,7 @@ Reunite verifies preview changes when remote files change on remote source's non
 
 The process has the following stages:
 
-1. A branch (for example `x-feature`) is created in the Redocly project's repository.
+1. A branch (for example `rem/git/rem_012345`) is created in the Redocly project's repository from the project's default branch.
 2. Changes from the remote source are applied on to that branch (for example `rem/git/rem_012345`).
 3. A preview build process runs for the `rem/git/rem_012345` branch to check for errors and to generate a preview of the site with the latest changes.
 
