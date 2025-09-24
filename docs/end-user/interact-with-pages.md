@@ -67,4 +67,5 @@ Your message is sent to the organization that owns the project.
 ## Resources
 
 - [Interact with API documentation](./interact-with-api.md)
+- [Use a classic catalog](./use-classic-catalog.md)
 - Explore other ways you can interact with the [user interface](./index.md)
