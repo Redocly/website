@@ -1,6 +1,12 @@
-# TLS Encryption and HTTPS Best Practices for APIs
+---
+title: TLS Encryption and HTTPS Best Practices for APIs
+description: Protect data in transit with proper TLS configuration, certificate management, and HTTPS enforcement using OpenAPI security contracts.
+seo:
+  title: TLS Encryption and HTTPS Best Practices for APIs
+  description: Protect data in transit with proper TLS configuration, certificate management, and HTTPS enforcement using OpenAPI security contracts.
+---
 
-_Protect data in transit with proper TLS configuration, certificate management, and HTTPS enforcement using OpenAPI security contracts._
+# TLS Encryption and HTTPS Best Practices for APIs
 
 ---
 
@@ -121,8 +127,6 @@ servers:
 
 Modern API governance tools can enforce HTTPS usage through automated validation rules. When integrated into your CI/CD pipeline, automated governance creates security gates. If a developer attempts to commit an OpenAPI file with insecure server URLs, the pipeline fails with a clear error message, preventing insecure configurations from ever reaching production.
 
-> Learn more about implementing comprehensive governance policies in our [API Design-First Security Governance and Automation](api-design-first-security-governance.md) guide.
-
 *Automated governance tools fail CI/CD builds when OpenAPI specifications use HTTP instead of HTTPS, requiring developers to fix security violations before deployment.*
 
 ## TLS Configuration Examples
@@ -178,7 +182,7 @@ https.createServer(options, app).listen(443);
 
 The Heartbleed bug (CVE-2014-0160) was a critical vulnerability in the OpenSSL library, not the TLS protocol itself. It allowed attackers to read up to 64KB of a server's memory by sending a malformed TLS heartbeat request. The server would respond with not only the small payload sent by the attacker but also adjacent memory contents, which could include session cookies, user credentials, and even the server's private encryption keys.
 
-This incident demonstrates a crucial point: security is multi-layered. While an OpenAPI specification can enforce the *intent* of using secure transport (https://), it cannot prevent a runtime vulnerability in the underlying software stack. True "secure by design" requires both [design-time governance](api-design-first-security-governance.md) via OpenAPI linting and runtime security posture management, including diligent vulnerability scanning and patch management.
+This incident demonstrates a crucial point: security is multi-layered. While an OpenAPI specification can enforce the *intent* of using secure transport (https://), it cannot prevent a runtime vulnerability in the underlying software stack. True "secure by design" requires both design-time governance via OpenAPI linting and runtime security posture management, including diligent vulnerability scanning and patch management.
 
 ```mermaid
 sequenceDiagram
@@ -241,7 +245,7 @@ server {
 }
 ```
 
-> **mTLS Best Practice**: Use mTLS for service-to-service communication and regular TLS + [JWT/OAuth2](authentication-authorization-openapi.md) for client-to-server communication.
+> **mTLS Best Practice**: Use mTLS for service-to-service communication and regular TLS + [JWT/OAuth2](authentication-authorization-openapi) for client-to-server communication.
 
 ## TLS Monitoring and Troubleshooting
 
@@ -317,11 +321,11 @@ Certificate pinning can improve security by preventing man-in-the-middle attacks
 - [SSL Labs Server Test](https://www.ssllabs.com/ssltest/) - Online tool for testing TLS configuration
 
 ### Related Security Topics
-- [API Input Validation and Injection Prevention](api-input-validation-injection-prevention.md) - Protect APIs from malicious data
-- [Authentication and Authorization with OpenAPI](authentication-authorization-openapi.md) - Implement secure access control
-- [API Rate Limiting and Abuse Prevention](api-rate-limiting-abuse-prevention.md) - Prevent DoS attacks and brute force attempts
-- [API Security by Design: Complete Guide](index.md) - Overview of all API security domains
+- [API Input Validation and Injection Prevention](api-input-validation-injection-prevention) - Protect APIs from malicious data
+- [Authentication and Authorization with OpenAPI](authentication-authorization-openapi) - Implement secure access control
+- [API Rate Limiting and Abuse Prevention](api-rate-limiting-abuse-prevention) - Prevent DoS attacks and brute force attempts
+- [API Security by Design: Complete Guide](/learn/security) - Overview of all API security domains
 
 ---
 
-**Next Steps:** Now that you have secure transport with TLS, learn about [API Input Validation and Injection Prevention](api-input-validation-injection-prevention.md) to protect your APIs from malicious data inputs.
+**Next Steps:** Now that you have secure transport with TLS, learn about [API Input Validation and Injection Prevention](api-input-validation-injection-prevention) to protect your APIs from malicious data inputs.

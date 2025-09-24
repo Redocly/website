@@ -1,6 +1,12 @@
-# Input Validation and Injection Prevention with OpenAPI
+---
+title: Input Validation and Injection Prevention
+description: Prevent API injection attacks and mass assignment vulnerabilities using OpenAPI schema validation and automated governance.
+seo:
+  title: Input Validation and Injection Prevention
+  description: Prevent API injection attacks and mass assignment vulnerabilities using OpenAPI schema validation and automated governance.
+---
 
-_Stop injection attacks using OpenAPI schema validation and automated governance rules that reject malicious data before it reaches your application._
+# Input Validation and Injection Prevention with OpenAPI
 
 ---
 
@@ -96,9 +102,11 @@ components:
 
 ### Automated Governance for Validation
 
-[Modern API governance tools](api-design-first-security-governance.md) can enforce input validation rules that require string length bounds, numeric ranges, and prevent mass assignment vulnerabilities.
+Modern API governance tools can enforce input validation rules that require string length bounds, numeric ranges, and prevent mass assignment vulnerabilities.
 
 This governance approach transforms security reviews. Instead of manually checking many properties for missing `maxLength` constraints, automated linting tools handle baseline validation so security teams can focus on strategic concerns like business logic and context-dependent risks.
+
+> **🚀 Interactive Implementation**: Learn to set up comprehensive input validation with our [Automated Security Validation Walkthrough](automated-security-validation-walkthrough), which includes production-ready rules for OWASP API Security Top 10 2023 compliance.
 
 ## Key Security Constraints
 
@@ -109,7 +117,7 @@ The most critical schema constraints for API security focus on preventing resour
 - **`additionalProperties: false`**: Essential for preventing mass assignment attacks
 - **`pattern`**: Use restrictive regex patterns to block injection payloads
 
-These constraints can be automatically enforced by [governance rules](api-design-first-security-governance.md), ensuring no schema can bypass these fundamental protections.
+These constraints can be automatically enforced by governance rules, ensuring no schema can bypass these fundamental protections.
 
 ## Common Validation Patterns
 
@@ -373,12 +381,11 @@ Modern validation libraries are highly optimized. The security benefit far outwe
 - [Burp Suite](https://portswigger.net/burp) - Web application security testing platform
 
 ### Related Security Topics
-- [API TLS Encryption and HTTPS Best Practices](api-tls-encryption-https-best-practices.md) - Secure data in transit
-- [API Rate Limiting and Abuse Prevention](api-rate-limiting-abuse-prevention.md) - Prevent DoS attacks and abuse
-- [Authentication and Authorization with OpenAPI](authentication-authorization-openapi.md) - Implement secure access control
-- [API Design-First Security Governance and Automation](api-design-first-security-governance.md) - Automate security validation
-- [API Security by Design: Complete Guide](index.md) - Overview of all API security domains
+- [API TLS Encryption and HTTPS Best Practices](api-tls-encryption-https-best-practices) - Secure data in transit
+- [API Rate Limiting and Abuse Prevention](api-rate-limiting-abuse-prevention) - Prevent DoS attacks and abuse
+- [Authentication and Authorization with OpenAPI](authentication-authorization-openapi) - Implement secure access control
+- [API Security by Design: Complete Guide](/learn/security) - Overview of all API security domains
 
 ---
 
-**Next Steps:** Now that you have input validation covered, learn about [API Rate Limiting and Abuse Prevention](api-rate-limiting-abuse-prevention.md) to protect your APIs from denial-of-service attacks and business logic abuse.
+**Next Steps:** Now that you have input validation covered, learn about [API Rate Limiting and Abuse Prevention](api-rate-limiting-abuse-prevention) to protect your APIs from denial-of-service attacks and business logic abuse.

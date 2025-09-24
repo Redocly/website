@@ -118,20 +118,6 @@ Each security domain requires specific knowledge and implementation techniques. 
 
 **Perfect for:** Identity and access management teams, full-stack developers, and security engineers
 
----
-
-### <a href="/learn/security/api-design-first-security-governance" target="_blank">API Design-First Security Governance and Automation</a>
-**What you'll learn:** Scale security practices through automated governance, policy-as-code, and organizational maturity.
-
-**Key topics:**
-- API security governance principles and automation
-- CI/CD integration for security validation
-- Security policy-as-code implementation
-- API security maturity model and progression strategies
-- Monitoring, observability, and continuous improvement
-
-**Perfect for:** API platform teams, security architects, and engineering leadership
-
 ## Understanding Design-Time vs Runtime Security
 
 It's important to understand that OpenAPI-based security governance operates at **design-time**, not runtime. This governance approach excels at preventing configuration errors, missing security controls, and specification inconsistencies before they reach production. That said, it cannot prevent runtime vulnerabilities in the underlying implementation.

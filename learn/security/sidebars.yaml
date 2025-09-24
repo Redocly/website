@@ -5,5 +5,5 @@
     - page: ./api-input-validation-injection-prevention.md  
     - page: ./api-rate-limiting-abuse-prevention.md
     - page: ./authentication-authorization-openapi.md
-    - page: ./api-design-first-security-governance.md
+    - page: ./automated-security-validation-walkthrough.md
     - page: ./api-design-first-security-guide.md

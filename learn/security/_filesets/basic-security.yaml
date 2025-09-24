@@ -1,0 +1,78 @@
+# @chunk {"steps": ["basic-setup"]}
+# Basic Redocly Security Ruleset
+# Starter configuration for API security validation
+# Based on OWASP API Security Top 10 2023 - Essential Rules Only
+
+rules:
+  # Built-in Redocly security rules
+  security-defined: error
+  operation-4xx-response: warn
+  operation-2xx-response: error
+  no-unresolved-refs: error
+
+  # Essential Security Rules - API2:2023 Authentication
+  
+  # Enforce HTTPS for all server URLs
+  rule/https-server-urls:
+    subject:
+      type: Server
+      property: url
+    assertions:
+      pattern: /^https:/
+    message: "Server URLs must use HTTPS protocol. HTTP is insecure."
+    severity: error
+
+  # Prevent HTTP Basic authentication
+  rule/no-http-basic-auth:
+    subject:
+      type: SecurityScheme
+      property: scheme
+    where:
+      - subject:
+          type: SecurityScheme
+          property: type
+        assertions:
+          const: http
+    assertions:
+      notPattern: /^basic$/i
+    message: "HTTP Basic authentication is insecure. Use OAuth 2.0 or API keys in headers."
+    severity: error
+
+  # API4:2023 - Resource Consumption Protection
+  
+  # String schemas must have length constraints
+  rule/string-length-limit:
+    subject:
+      type: Schema
+    where:
+      - subject:
+          type: Schema
+          property: type
+        assertions:
+          const: string
+    assertions:
+      requireAny:
+        - maxLength
+        - enum
+        - const
+        - pattern
+    message: "String schemas must specify maxLength, enum, const, or pattern to limit resource consumption."
+    severity: warn
+
+  # Array schemas must specify maxItems
+  rule/array-max-items:
+    subject:
+      type: Schema
+      property: maxItems
+    where:
+      - subject:
+          type: Schema
+          property: type
+        assertions:
+          const: array
+    assertions:
+      defined: true
+    message: "Array schemas must specify maxItems to prevent resource exhaustion attacks."
+    severity: warn
+
+# @chunk-end

@@ -1,6 +1,10 @@
-# Authentication and Authorization with OpenAPI
-
-_Implement secure access control using OpenAPI security schemes and modern authentication patterns._
+---
+title: Authentication and Authorization with OpenAPI
+description: Implement secure access control using OpenAPI security schemes and modern authentication patterns.
+seo:
+  title: Authentication and Authorization with OpenAPI
+  description: Implement secure access control using OpenAPI security schemes and modern authentication patterns.
+---
 
 ---
 
@@ -8,12 +12,12 @@ _Implement secure access control using OpenAPI security schemes and modern authe
 
 Authentication and authorization form the foundation of API access control. While often used interchangeably, these concepts serve distinct purposes: authentication verifies *who* the user is, while authorization determines *what* they can do. Modern APIs require both layers to prevent unauthorized access and enforce business rules.
 
-In this guide, we'll explore how to use OpenAPI 3.1 security schemes to define robust access control patterns that integrate seamlessly with [automated governance](api-design-first-security-governance.md) and modern authentication providers.
+In this guide, we'll explore how to use OpenAPI 3.1 security schemes to define robust access control patterns that integrate seamlessly with automated governance and modern authentication providers.
 
 **We'll cover how to:**
 - Define JWT Bearer token authentication in OpenAPI specifications
 - Implement OAuth2 with granular scope-based authorization
-- Enforce security requirements through [automated governance](api-design-first-security-governance.md)
+- Enforce security requirements through automated governance
 - Configure API gateways from OpenAPI security definitions
 - Monitor and troubleshoot authentication and authorization failures
 
@@ -210,7 +214,7 @@ paths:
 
 ### Mutual TLS (mTLS) for Service Authentication
 
-For high-security environments and service-to-service communication, [mutual TLS](api-tls-encryption-https-best-practices.md#mutual-tls-mtls-two-way-authentication) provides cryptographic identity verification.
+For high-security environments and service-to-service communication, [mutual TLS](api-tls-encryption-https-best-practices#mutual-tls-mtls-two-way-authentication) provides cryptographic identity verification.
 
 ```yaml {% title="openapi.yaml" %}
 components:
@@ -234,7 +238,7 @@ paths:
 
 ## Automated Governance for Access Control
 
-One of the most common API vulnerabilities is the accidentally public endpoint—an operation that should require authentication but doesn't have security requirements defined. [Automated governance](api-design-first-security-governance.md) prevents this by enforcing security rules during development.
+One of the most common API vulnerabilities is the accidentally public endpoint—an operation that should require authentication but doesn't have security requirements defined. Automated governance prevents this by enforcing security rules during development.
 
 ### Security Governance Rules
 
@@ -783,12 +787,11 @@ OpenAPI security schemes handle authentication and basic authorization (scopes/r
 - [OAuth2 Security Best Practices](https://tools.ietf.org/html/draft-ietf-oauth-security-topics) - Latest security recommendations for OAuth2 implementations
 
 ### Related Security Topics
-- [API TLS Encryption and HTTPS Best Practices](api-tls-encryption-https-best-practices.md) - Secure data in transit with mTLS
-- [API Input Validation and Injection Prevention](api-input-validation-injection-prevention.md) - Protect APIs from malicious data
-- [API Rate Limiting and Abuse Prevention](api-rate-limiting-abuse-prevention.md) - Prevent brute force attacks on auth endpoints
-- [API Design-First Security Governance and Automation](api-design-first-security-governance.md) - Automate auth requirement validation
-- [API Security by Design: Complete Guide](index.md) - Overview of all API security domains
+- [API TLS Encryption and HTTPS Best Practices](api-tls-encryption-https-best-practices) - Secure data in transit with mTLS
+- [API Input Validation and Injection Prevention](api-input-validation-injection-prevention) - Protect APIs from malicious data
+- [API Rate Limiting and Abuse Prevention](api-rate-limiting-abuse-prevention) - Prevent brute force attacks on auth endpoints
+- [API Security by Design: Complete Guide](/learn/security) - Overview of all API security domains
 
 ---
 
-**Next Steps:** Now that you have authentication and authorization in place, learn about [API Design-First Security Governance and Automation](api-design-first-security-governance.md) to automate the validation of security requirements across your entire API ecosystem.
+**Next Steps:** Now that you have authentication and authorization in place, explore the complete [API Security by Design guide](/learn/security) to learn about other essential security domains like TLS encryption, input validation, and rate limiting.

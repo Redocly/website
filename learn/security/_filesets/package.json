@@ -1,0 +1,45 @@
+{
+  "name": "redocly-security-validation",
+  "version": "1.0.0",
+  "description": "Custom security validation functions for Redocly CLI implementing OWASP API Security Top 10 2023",
+  "main": "security-functions.js",
+  "scripts": {
+    "lint": "redocly lint openapi.yaml --config=redocly.yaml",
+    "lint-basic": "redocly lint openapi.yaml --config=basic-security.yaml",
+    "test-security": "npm run lint && echo 'Security validation tests passed'",
+    "validate": "redocly build-docs openapi.yaml --config=redocly.yaml"
+  },
+  "keywords": [
+    "api-security",
+    "owasp",
+    "redocly",
+    "validation",
+    "openapi",
+    "security-validation",
+    "api-validation"
+  ],
+  "author": "API Security Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@redocly/cli": "^1.0.0"
+  },
+  "peerDependencies": {
+    "@redocly/cli": ">=1.0.0"
+  },
+  "files": [
+    "redocly.yaml",
+    "basic-security.yaml", 
+    "security-functions.js",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/api-security-validation"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/api-security-validation/issues"
+  }
+}

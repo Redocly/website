@@ -1,6 +1,12 @@
-# Rate Limiting and Abuse Prevention for APIs
+---
+title: Rate Limiting and Abuse Prevention
+description: Implement API rate limiting strategies to prevent DoS attacks, brute force attempts, and business logic abuse.
+seo:
+  title: Rate Limiting and Abuse Prevention
+  description: Implement API rate limiting strategies to prevent DoS attacks, brute force attempts, and business logic abuse.
+---
 
-_Prevent DoS attacks, brute force attempts, and business logic abuse through strategic rate limiting policies documented in OpenAPI specifications._
+# Rate Limiting and Abuse Prevention for APIs
 
 ---
 
@@ -28,7 +34,7 @@ A single client, whether intentionally malicious or simply due to a bug in its c
 
 Rate limiting is a critical control for both security and reliability, directly mitigating several OWASP API Security Top 10 risks:
 
-1. **Security:** It thwarts Denial-of-Service (DoS) attacks by preventing traffic floods, addressing OWASP API4:2023 - Unrestricted Resource Consumption. It also makes brute-force attacks against [authentication endpoints](authentication-authorization-openapi.md) much slower and less effective, reducing the risk of credential stuffing attacks.
+1. **Security:** It thwarts Denial-of-Service (DoS) attacks by preventing traffic floods, addressing OWASP API4:2023 - Unrestricted Resource Consumption. It also makes brute-force attacks against [authentication endpoints](authentication-authorization-openapi) much slower and less effective, reducing the risk of credential stuffing attacks.
 
 2. **Business Logic Abuse:** It helps mitigate abuse by preventing bots from scraping data or manipulating business flows, addressing OWASP API6:2023 - Unrestricted Access to Sensitive Business Flows.
 
@@ -75,9 +81,11 @@ paths:
 
 ### Automated Governance for Rate Limiting
 
-[API governance tools](api-design-first-security-governance.md) can enforce rules that ensure [authentication endpoints](authentication-authorization-openapi.md) always have rate limiting policies defined.
+API governance tools can enforce rules that ensure [authentication endpoints](authentication-authorization-openapi) always have rate limiting policies defined.
 
 This approach provides dual benefits: modern API documentation tools automatically display rate limiting extensions in generated documentation, making policies transparent to API consumers, while governance rules ensure sensitive endpoints never lack rate-limiting policies.
+
+> **🔧 Implementation Guide**: See our [Automated Security Validation Walkthrough](automated-security-validation-walkthrough) for step-by-step instructions on implementing rate limiting validation rules, including 429 response validation and header consistency checks.
 
 ## Rate Limiting Implementation Approaches
 
@@ -437,12 +445,11 @@ async def make_request(session, url):
 - [JMeter](https://jmeter.apache.org/) - Comprehensive performance testing with rate limiting scenarios
 
 ### Related Security Topics
-- [API Input Validation and Injection Prevention](api-input-validation-injection-prevention.md) - Protect APIs from malicious data
-- [Authentication and Authorization with OpenAPI](authentication-authorization-openapi.md) - Implement secure access control  
-- [API TLS Encryption and HTTPS Best Practices](api-tls-encryption-https-best-practices.md) - Secure data in transit
-- [API Design-First Security Governance and Automation](api-design-first-security-governance.md) - Automate security validation
-- [API Security by Design: Complete Guide](index.md) - Overview of all API security domains
+- [API Input Validation and Injection Prevention](api-input-validation-injection-prevention) - Protect APIs from malicious data
+- [Authentication and Authorization with OpenAPI](authentication-authorization-openapi) - Implement secure access control  
+- [API TLS Encryption and HTTPS Best Practices](api-tls-encryption-https-best-practices) - Secure data in transit
+- [API Security by Design: Complete Guide](/learn/security) - Overview of all API security domains
 
 ---
 
-**Next Steps:** Now that you have rate limiting protection in place, learn about [Authentication and Authorization with OpenAPI](authentication-authorization-openapi.md) to implement comprehensive access control for your APIs.
+**Next Steps:** Now that you have rate limiting protection in place, learn about [Authentication and Authorization with OpenAPI](authentication-authorization-openapi) to implement comprehensive access control for your APIs.
