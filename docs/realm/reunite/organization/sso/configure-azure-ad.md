@@ -137,7 +137,6 @@ Example configuration:
 rbac:
   content:
     '**':
-      anonymous: none
       authenticated: read
 
     apis/Team A/**:
