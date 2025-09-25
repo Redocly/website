@@ -13,3 +13,5 @@
   label: Interact with pages
 - page: docs/end-user/interact-with-api.md
   label: Interact with API documentation
+- page: docs/end-user/user-menu.md
+  label: User menu  
