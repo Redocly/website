@@ -4,10 +4,8 @@ To update your published project in Reunite, open a pull request to merge your d
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- a [project](../projects.md) in Reunite
-- the [member role](../../../access/roles.md#organization-roles) in the organization for your project
 - [a new branch](../use-editor.md#create-a-new-branch) with [commits or updates](../use-editor.md#commit-updates).
 
 ## Open a draft pull request

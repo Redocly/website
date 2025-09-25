@@ -3,12 +3,6 @@
 Redocly offers an online editor in Reunite where you can add, edit, or delete files and folders in your project.
 Since Redocly projects are saved using Git, any updates are saved by committing changes, and opening, reviewing, and merging pull requests.
 
-## Before you begin
-
-Make sure you have the following before you begin:
-
-- A project created in your organization in Reunite.
-
 ## Create a new branch
 
 {% partial file="../../_partials/create-branch.md" /%}

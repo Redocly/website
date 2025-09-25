@@ -6,6 +6,7 @@ This feature enables you to set default values for headers, query parameters, pa
 ## Before you begin
 
 Make sure you have the following:
+
 - a `redocly.yaml` file located in the root directory of your project
 - a basic understanding of TypeScript
 - OpenAPI description files with examples

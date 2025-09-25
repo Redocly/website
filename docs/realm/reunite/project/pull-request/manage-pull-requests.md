@@ -11,13 +11,6 @@ After selecting a specific pull request you can complete the following tasks:
 
 You can also [review a pull request](./review-pull-request.md), if you are not the pull request author.
 
-## Before you begin
-
-Make sure you have the following before you begin:
-
-- a [project](../projects.md) in Reunite
-- the [member or the owner role](../../../access/roles.md#organization-roles) in the organization for your project
-
 ## View a pull request
 
 To view a pull request you can either click the **View pull request** button next to the branch name in the editor, or navigate to the **Pull requests** page and select it from the open pull requests list, which displays by default.

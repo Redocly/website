@@ -4,11 +4,9 @@ If you disabled [Auto-sync](./remote-content.md#auto-sync-and-auto-merge) for yo
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- a project in your organization in Reunite
 - an existing remote content folder
-- at least the [member](../../../access/roles.md#organization-roles) role for the Organization your project has been created in
 
 ## Manually sync remote content folders
 

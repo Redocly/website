@@ -11,14 +11,6 @@ You can disable auto-sync, view different screen sizes, reload the page or resta
     The Webview displays uncommitted changes while the preview deployment triggers when you make a commit to a branch with an open pull request.
   {% /admonition %}
 
-## Before you begin
-
-Make sure you have the following before you begin:
-
-- At least a member role in your organization in Reunite.
-- If you have RBAC configured, you need to log in to the interface.
-  You do not need to use actual credentials.
-
 ## View different screen sizes
 
 If you want to see how a page renders on different screen sizes, click the **Toggle device view** icon.

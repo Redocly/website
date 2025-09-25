@@ -9,7 +9,7 @@ If you are using a `sidebars.yaml` file to organize your sidebar navigation menu
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
 - an OpenAPI description file or files in YAML or JSON format (all versions of OpenAPI are supported)
 

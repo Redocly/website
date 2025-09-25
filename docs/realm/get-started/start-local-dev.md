@@ -5,7 +5,7 @@ This guide shows you how to set up a project, add content, configure navigation,
 
 ## Before you begin
 
-Before you begin, you need:
+Make sure you have the following:
 
 - [Node.js](https://nodejs.org/en) LTS version or later.
 

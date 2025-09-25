@@ -7,9 +7,9 @@ This guide shows you how to use the mock server _as an API consumer_ and send AP
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- Access to API reference docs with Redocly's mock server enabled
+- access to API reference docs with Redocly's mock server enabled
 
 ## Use Replay to call mock server
 

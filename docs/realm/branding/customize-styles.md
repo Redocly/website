@@ -6,12 +6,6 @@ For example, things like typography, colors, and spacing.
 The core theme is built using [CSS variables](./css-variables/index.md).
 You can override those variables to add custom styling while benefiting from the theme's existing structure.
 
-## Before you begin
-
-Make sure you have the following before you begin:
-
-- A new Realm, Reef, or Revel project updated to the latest version
-
 ## Create a theme stylesheet
 
 You need a `@theme/styles.css` file to customize the styling of your project.

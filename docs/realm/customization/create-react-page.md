@@ -7,10 +7,10 @@ This guide shows you how to create a React page in your Redocly project (Realm o
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- A Revel or Realm project running locally
-- Basic knowledge of React
+- a Revel or Realm project running locally
+- basic knowledge of React
 
 ## Create a new React page
 
@@ -145,7 +145,7 @@ The following example shows a sidebar configuration that includes React pages:
       - page: guides/example-guide.md
 ```
 
-If needed, you can use `frontmatter` to [add the sidebar to a single page](../navigation/sidebars.md#add-a-sidebar-to-a-single-page) without listing it in the sidebars configuration file.
+If needed, you can use `frontmatter` to [add the sidebar to a single page](../config/front-matter-config.md#front-matter-only-options) without listing it in the sidebars configuration file.
 
 ## Landing page examples
 

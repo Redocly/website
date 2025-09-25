@@ -5,11 +5,9 @@ If you are working locally, you must update your `package.json` file to the vers
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- If working in Reunite, you need at least the Member role for the Organization your project has been created in.
-- If you are working locally, you need [NodeJS](https://nodejs.org/en), v22.12.0 or later (alternatively -- v20.19.0 or later).
-- A modern web browser such as Chrome, Safari, or Firefox.
+- for local development: [NodeJS](https://nodejs.org/en), v22.12.0 or later (alternatively -- v20.19.0 or later)
 
 {% admonition type="info" name="Product package names" %}
 This content applies to the following Redocly products and their corresponding package names:

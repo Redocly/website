@@ -3,13 +3,6 @@
 Use the [remote content](./remote-content.md) feature to include content from external sources in your project.
 This approach is useful for including a single, publicly-available file as part of your published project.
 
-## Before you begin
-
-Make sure you have the following before you begin:
-
-- [latest version of Realm](../../../get-started/upgrade-realm-version.md)
-- an existing Redocly project to add remote content to
-
 ## Add a remote URL source
 
 To add content from a remote file:

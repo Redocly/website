@@ -17,7 +17,7 @@ Base UI component labels include predefined keys; however, you must create keys 
 
 Make sure you have the following:
 
-- A Redocly project with an `@l10n` folder containing your translated content organized into locales.
+- a project with an `@l10n` folder containing your translated content organized into locales.
   See [l10n configuration](../../config/l10n.md) for setup information and [Add translated content](./localize-content.md) for content localization.
 
 ## Localize base UI components

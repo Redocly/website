@@ -5,9 +5,9 @@ You can add API keys to your organization and revoke them when you are finished 
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- `owner` role in your organization
+- an OWNER role in your organization
 
 ## Add API keys
 

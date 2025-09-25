@@ -18,11 +18,9 @@ You must add a new remote content folder and delete the previous one.
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- a project in your organization in Reunite
 - an existing remote content folder
-- at least the [member](../../../access/roles.md#organization-roles) role for the Organization your project has been created in
 
 ## Update existing settings
 
@@ -37,8 +35,8 @@ To edit remote content folder settings:
 2. Modify the settings as needed, depending on the source of your content:
     - For GitHub, see: [Add remote files from GitHub](./from-github.md#enter-the-connection-details-in-reunite) or [Add a remote file from GitHub](./remote-content.md#remote-contents-repository-file),
     - For GitLab and GitLab self-managed repos, perform [Add remote files from GitLab](./from-gitlab.md#enter-the-connection-details-in-reunite)
-    - For a CI/CD source, perform [Push remote content from an external source](./from-gitlab.md#enter-the-connection-details-in-reunite)
-    - For a URL source, perform [Add remote content from a URL](./from-gitlab.md#remote-contents-repository-file)
+    - For a CI/CD source, perform [Push remote content from an external source](./push.md)
+    - For a URL source, perform [Add remote content from a URL](./url.md)
 3. Click **Next**. \
    Reunite creates a pull request.
 4. Review and merge the pull request.
