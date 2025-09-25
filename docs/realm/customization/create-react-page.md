@@ -161,7 +161,11 @@ The following example pages are available in the gallery:
 
 ---
 
-- ![Screenshot of the Example SaaS landing page.](./images/example-saas-thumbnail.png)
+- {% img
+    src="./images/example-saas-thumbnail.png"
+    alt="Screenshot of the Example SaaS landing page."
+    withLightbox=true
+  /%}
 - This example shows a sleek, modern landing page for a SaaS product.
 
   **Tools:** React, styled-components
@@ -169,7 +173,11 @@ The following example pages are available in the gallery:
   [View source code](https://github.com/Redocly/landing-page-gallery/blob/main/example-saas/index.page.tsx)
 ---
 
-- ![Screenshot of the training project example landing page.](./images/training-portal-thumbnail.png)
+- {% img
+    src="./images/training-portal-thumbnail.png"
+    alt="Screenshot of the training project example landing page."
+    withLightbox=true
+  /%}
 - This example demonstrates a landing page built for training and onboarding purposes.
 
   **Tools:** React, styled-components

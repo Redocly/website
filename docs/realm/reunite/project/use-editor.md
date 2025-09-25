@@ -11,7 +11,11 @@ Since Redocly projects are saved using Git, any updates are saved by committing 
 
 If you need to change to a different branch from the branch you are working in, you can change the branch using the branch switcher at the top of the editor page.
 
-![Screenshot of the branch switcher](../../_partials/images/current-branch.png)
+{% img
+  src="../../_partials/images/current-branch.png"
+  alt="Screenshot of the branch switcher"
+  withLightbox=true
+/%}
 
 To switch branches, click the branch switcher and select the branch.
 If you don't see the branch, use the search field to find it.
@@ -103,7 +107,11 @@ Hover over any commit to see details including:
 - Commit message
 - Commit hash
 
-![Screenshot of the Commit icon](../images/editor-commits-history.png)
+{% img
+  src="../images/editor-commits-history.png"
+  alt="Screenshot of the Commit icon"
+  withLightbox=true
+/%}
 
 ## Revert changes
 
@@ -116,29 +124,49 @@ To revert changes:
 2. Select the checkboxes of files you want to revert, or select **All changes**.
 3. Click the **Revert** icon and confirm the action.
 
-![Screenshot of modified files with revert icon highlighted](../images/revert-single-file.png)
+{% img
+  src="../images/revert-single-file.png"
+  alt="Screenshot of modified files with revert icon highlighted"
+  withLightbox=true
+/%}
 
 ## Search in files
 
 You can search in the editor to find content or files or to find and replace content within the files of your project.
 To set search to files instead of content inside of files, click the Find a file icon above the search input field.
 
-![Screenshot of search files selector in UI](../images/search-files.png)
+{% img
+  src="../images/search-files.png"
+  alt="Screenshot of search files selector in UI"
+  withLightbox=true
+/%}
 
 By default, search does not include a replace option.
 You can add the replace option by selecting the replace toggle.
 
-![Screenshot of replace toggle](../images/replace-toggle.png)
+{% img
+  src="../images/replace-toggle.png"
+  alt="Screenshot of replace toggle"
+  withLightbox=true
+/%}
 
 Selecting the replace toggle again removes the option.
 
 By default, searches include all folders, but you can specify a folder using the folder selector.
 
-![Screenshot of the folder selector](../images/folder-selector.png)
+{% img
+  src="../images/folder-selector.png"
+  alt="Screenshot of the folder selector"
+  withLightbox=true
+/%}
 
 You can also specify whether search should match the case and whole word of your search query, and use regular expressions in your search query by clicking the icons in the search field.
 
-![Screenshot of search options](../images/search-options.png)
+{% img
+  src="../images/search-options.png"
+  alt="Screenshot of search options"
+  withLightbox=true
+/%}
 
 ## Sync with main
 
@@ -146,7 +174,11 @@ If you are working on a development branch, you may need to sync your branch wit
 
 You can sync your branch, pulling in the changes from main since you created your development branch, by clicking the **Sync** button at the bottom of the editor pane.
 
-![Screenshot of the Sync button at the bottom of the editor pane](../images/sync-button.png)
+{% img
+  src="../images/sync-button.png"
+  alt="Screenshot of the Sync button at the bottom of the editor pane"
+  withLightbox=true
+/%}
 
 ## Resources
 

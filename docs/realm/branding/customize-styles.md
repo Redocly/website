@@ -203,10 +203,18 @@ The following screenshots show the styling rules applied:
 
 {% tabs %}
   {% tab label="Light mode"%}
-   ![Screenshot of Redocly project with the full corporate styling example applied in light mode.](./images/full-corporate-light.jpeg)
+   {% img
+    src="./images/full-corporate-light.jpeg"
+    alt="Screenshot of Redocly project with the full corporate styling example applied in light mode."
+    withLightbox=true
+   /%}
   {% /tab %}
   {% tab label="Dark mode"%}
-   ![Screenshot of Redocly project with the full corporate styling example applied in dark mode.](./images/full-corporate-dark.jpeg)
+   {% img
+    src="./images/full-corporate-dark.jpeg"
+    alt="Screenshot of Redocly project with the full corporate styling example applied in dark mode."
+    withLightbox=true
+   /%}
   {% /tab %}
 {% /tabs %}
 
@@ -256,10 +264,18 @@ The following screenshots show the styling rules applied:
 
 {% tabs %}
   {% tab label="Light mode"%}
-   ![Screenshot of Redocly project with the trendy startup styling example applied in light mode.](./images/trendy-startup-light.jpeg)
+   {% img
+    src="./images/trendy-startup-light.jpeg"
+    alt="Screenshot of Redocly project with the trendy startup styling example applied in light mode."
+    withLightbox=true
+   /%}
   {% /tab %}
   {% tab label="Dark mode"%}
-   ![Screenshot of Redocly project with the trendy startup styling example applied in dark mode.](./images/trendy-startup-dark.jpeg)
+   {% img
+    src="./images/trendy-startup-dark.jpeg"
+    alt="Screenshot of Redocly project with the trendy startup styling example applied in dark mode."
+    withLightbox=true
+   /%}
   {% /tab %}
 {% /tabs %}
 
@@ -327,10 +343,18 @@ The following screenshots show the styling rules applied:
 
 {% tabs %}
   {% tab label="Light mode"%}
-   ![Screenshot of Redocly project with the personal wellness styling example applied in light mode.](./images/personal-wellness-light.jpeg)
+   {% img
+    src="./images/personal-wellness-light.jpeg"
+    alt="Screenshot of Redocly project with the personal wellness styling example applied in light mode."
+    withLightbox=true
+   /%}
   {% /tab %}
   {% tab label="Dark mode"%}
-   ![Screenshot of Redocly project with the personal wellness styling example applied in dark mode.](./images/personal-wellness-dark.jpeg)
+   {% img
+    src="./images/personal-wellness-dark.jpeg"
+    alt="Screenshot of Redocly project with the personal wellness styling example applied in dark mode."
+    withLightbox=true
+   /%}
   {% /tab %}
 {% /tabs %}
 

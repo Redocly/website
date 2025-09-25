@@ -84,7 +84,11 @@ a direct link to the deployment, and a copy link button for the deployment.
 
 To see more information about deployments, you can visit the **Deploys** page.
 
-![Deployments preview](./images/deployments-preview.png)
+{% img
+  src="./images/deployments-preview.png"
+  alt="Deployments preview"
+  withLightbox=true
+/%}
 
 ## Remote content
 

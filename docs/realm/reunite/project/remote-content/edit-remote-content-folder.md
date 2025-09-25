@@ -31,7 +31,11 @@ To edit remote content folder settings:
 1. From the file tree of the editor, right-click the folder with remote content (remote content folders have a cloud icon), then click **Edit**. \
    OR \
    From the Remote content page, click the additional options menu on the far right side of the table on the remote content folder row, then click **Edit**. \
-  ![Open options menu on Reunite's Remote content page](../../images/reunite-remote-content-options.png)
+  {% img
+    src="../../images/reunite-remote-content-options.png"
+    alt="Open options menu on Reunite's Remote content page"
+    withLightbox=true
+  /%}
 2. Modify the settings as needed, depending on the source of your content:
     - For GitHub, see: [Add remote files from GitHub](./from-github.md#enter-the-connection-details-in-reunite) or [Add a remote file from GitHub](./remote-content.md#remote-contents-repository-file),
     - For GitLab and GitLab self-managed repos, perform [Add remote files from GitLab](./from-gitlab.md#enter-the-connection-details-in-reunite)

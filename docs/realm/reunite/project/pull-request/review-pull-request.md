@@ -21,7 +21,11 @@ To add comments in the visual or code diff view:
 
 1. Click the comments icon on the right side.
 
-    ![Screenshot of top right side of review tab in Reunite with arrow pointing to the comments icon](../../images/comment-icon.png)
+    {% img
+      src="../../images/comment-icon.png"
+      alt="Screenshot of top right side of review tab in Reunite with arrow pointing to the comments icon"
+      withLightbox=true
+    /%}
 
 1. Enter your feedback.
 1. Click **Comment**.
@@ -31,7 +35,11 @@ To add line-specific comments in code diff view:
 1. Hover over the line numbers.
 1. Click the plus icon.
 
-    ![Screenshot of code diff view in Reunite with arrow pointing towards plus icon](../../images/plus-icon.png)
+    {% img
+      src="../../images/plus-icon.png"
+      alt="Screenshot of code diff view in Reunite with arrow pointing towards plus icon"
+      withLightbox=true
+    /%}
 
 1. Enter your feedback.
 1. Select one option:

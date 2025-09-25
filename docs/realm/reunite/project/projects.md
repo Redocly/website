@@ -8,7 +8,11 @@ Depending on the number of your API products and their complexity, you may choos
 
 ## Navigation bar
 
-![A partial view of the navigation bar as it appears on the Editor page.](../images/reunite-editor-navbar.png)
+{% img
+  src="../images/reunite-editor-navbar.png"
+  alt="A partial view of the navigation bar as it appears on the Editor page."
+  withLightbox=true
+/%}
 
 The navigation bar is displayed on all project pages.
 You can use it to switch between projects, and access the help dropdown.
