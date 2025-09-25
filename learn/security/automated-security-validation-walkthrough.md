@@ -39,7 +39,7 @@ This interactive walkthrough guides you through implementing **automated securit
         "approach": "complete"
       }
     }
-  ],
+  ]
   filters={
     "approach": {
       "label": "Implementation Approach",
