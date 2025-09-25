@@ -51,12 +51,14 @@
     - separator: Project workspace
     - page: reunite/project/manage-projects.md
       label: Projects
+    - page: reunite/project/project-ui.md
+      label: Project user interface
     - page: reunite/project/use-editor.md
       label: Editor
     - page: reunite/project/keyboard-shortcuts.md
       label: Keyboard shortcuts
     - page: reunite/project/use-webview.md
-      label: Webviews
+      label: Webview
     - page: reunite/project/use-previews.md
       label: Previews
     - group: Deploys # missing content about the "Deploys"

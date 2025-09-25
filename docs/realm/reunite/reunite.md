@@ -119,3 +119,4 @@ You can also [set a custom domain](./project/custom-domain.md), [add environment
 - **[Remote content integration](./project/remote-content/remote-content.md)** - Learn about remote content features including mount folder paths, auto-sync, and auto-merge capabilities
 - **[Reunite configuration reference](../config/reunite.md)** - Configure Reunite deployment settings including options to deploy regardless of link checker or Markdoc errors
 - **[Feedback mechanisms guide](../config/feedback.md)** - Choose and configure different types of user feedback collection mechanisms for your documentation projects
+- **[Project user interface](./project/project-ui.md)** - Reference the user interface elements in Reunite's project workspace
