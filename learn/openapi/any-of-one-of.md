@@ -151,7 +151,7 @@ Code generators, documentation tools, and API consumers can reliably determine t
 
 **Note on terminology:** We use "discriminator property" to mean any property that helps distinguish between schemas (like our `type` field with enum values). This is different from OpenAPI's formal `discriminator` object, which is optional tooling enhancement. You don't need the specification's `discriminator` feature - just well-designed properties that clearly differentiate your schemas.
 
-**Important:** OpenAPI schemas default to `additionalProperties: true`, meaning extra properties are allowed.
+**Important:** JSON schemas default to `additionalProperties: true`, meaning extra properties are allowed.
 Without proper discriminating properties or `additionalProperties: false`, seemingly different schemas can both match the same data, breaking `oneOf` validation.
 
 What about this JSON that could theoretically match both schemas?
@@ -476,12 +476,12 @@ properties:
     type: string
 ```
 
-### Conflicting property definitions
+### Conflicting property definitions (applies to `allOf`, not `oneOf`)
 
-The following `oneOf` creates an impossible situation:
+Note that having the same property with different types is **perfectly valid** for `oneOf`:
 
 ```yaml
-# ❌ Illogical - same property with conflicting types
+# ✅ Valid oneOf - value can be string OR number
 oneOf:
   - type: object
     properties:
@@ -493,11 +493,27 @@ oneOf:
         type: number
 ```
 
-If an object has a `value` property, it cannot be both a string and a number. This schema would reject all data.
+This works because `oneOf` requires exactly one match:
+- If `value` is a string, it matches the first schema only
+- If `value` is a number, it matches the second schema only
 
-**Better approach - use discriminator:**
+**This would be illogical for `allOf`:**
 ```yaml
-# ✅ Use discriminator to distinguish alternatives
+# ❌ Illogical for allOf - nothing can be both string AND number
+allOf:
+  - type: object
+    properties:
+      value:
+        type: string
+  - type: object  
+    properties:
+      value:
+        type: number
+```
+
+The `oneOf` version above is valid but could benefit from discriminating properties for better clarity:
+```yaml
+# ✅ Even clearer with discriminating properties
 oneOf:
   - type: object
     properties:
@@ -521,9 +537,9 @@ oneOf:
       - value
 ```
 
-### OpenAPI's `additionalProperties` creates unexpected collisions
+### JSON Schemas `additionalProperties` creates unexpected collisions
 
-**Critical OpenAPI gotcha:** By default, OpenAPI schemas allow additional properties (`additionalProperties: true`).
+**Critical OpenAPI gotcha:** By default, JSON Schema (and OpenAPI) schemas allow additional properties (`additionalProperties: true`).
 This means seemingly different schemas can both validate the same JSON, breaking `oneOf`.
 
 ```yaml
@@ -609,9 +625,59 @@ oneOf:
 
 **Always be explicit about `additionalProperties` when using `oneOf`.**
 
+### Overlapping schemas that break `oneOf`
+
+The following example shows a truly illogical `oneOf` where two schemas can both match the same data:
+
+```yaml
+# ❌ Illogical - both schemas could match the same object
+oneOf:
+  - type: object
+    properties:
+      name:
+        type: string
+      age:
+        type: number
+    required: [name]
+  - type: object
+    properties:
+      name:
+        type: string
+      email:
+        type: string  
+    required: [name]
+```
+
+This JSON would be **invalid** because it matches both schemas:
+```json
+{
+  "name": "John Smith",
+  "age": 30,
+  "email": "john@example.com"
+}
+```
+
+Both schemas match because:
+- First schema: has required `name` (✓) and `age` is allowed as additional property
+- Second schema: has required `name` (✓) and `email` is allowed as additional property
+
+**Even this simpler case is invalid (often missed by developers):**
+```json
+{
+  "name": "John Smith",
+  "email": "john@example.com"
+}
+```
+
+Developers often think "this clearly matches only the second schema because it has `email`", but it actually matches **both**:
+- First schema: has required `name` (✓) and `email` is allowed as additional property
+- Second schema: has required `name` (✓) and `email` property (✓)
+
+Both cases violate `oneOf`'s requirement of matching exactly one schema.
+
 ### Missing discriminators in `oneOf`
 
-When using `oneOf` with similar schemas, always include discriminator properties:
+When using `oneOf` with similar schemas, always include discriminating properties:
 
 ```yaml
 # ❌ Ambiguous - both schemas could match the same data
