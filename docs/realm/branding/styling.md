@@ -297,10 +297,18 @@ These tools allow you to inspect HTML elements and see which CSS variables are a
 You can also explore how the variable may be nested.
 
 1. Open developer tools - Right click the element you're interested in and select **Inspect** or press **F12**.
-    ![Screenshot of the right click menu in a browser page with documentation.](./images/inspect-element-dev-tools.png)
+    {% img
+      src="./images/inspect-element-dev-tools.png"
+      alt="Screenshot of the right click menu in a browser page with documentation."
+      withLightbox=true
+    /%}
 
 2. View styles - In the **Elements** panel, you'll see the styles applied to the selected element.
-    ![Screenshot of the browser dev tools with the style panel showing.](./images/styles-pane-dev-tools.png)
+    {% img
+      src="./images/styles-pane-dev-tools.png"
+      alt="Screenshot of the browser dev tools with the style panel showing."
+      withLightbox=true
+    /%}
 
 3. Identify variables - Find the CSS variable to override to apply your styling.
    You can also click the variable to explore it's relationship to other variables.

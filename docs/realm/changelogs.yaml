@@ -1,4 +1,46 @@
 '@redocly/realm':
+  0.126.0-next.13:
+    timestamp: 1758885593000
+    changes:
+      minor:
+        - Added support for `_partials` folders at any directory level.
+      patch:
+        - Fixed missing responses without parameters in `llms.txt`.
+        - Fixed security vulnerability CVE-2025-59139 in `bodyLimit` middleware by upgrading `hono` to v4.9.7.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.2
+      '@redocly/openapi-docs': 3.14.0-next.9
+      '@redocly/theme': 0.58.0-next.6
+      '@redocly/asyncapi-docs': 1.3.0-next.9
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.9
+      '@redocly/graphql-docs': 1.3.0-next.1
+  0.126.0-next.12:
+    timestamp: 1758714251000
+    changes:
+      minor:
+        - Added `showBuiltInScalars` and `showBuiltInDirectives` options to control visibility of built-in GraphQL scalars and directives.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.2.0`.
+        - Fixed an issue where plugins writing data to the files in project interfered with the processing causing link checker errors.
+    dependencies:
+      '@redocly/graphql-docs': 1.3.0-next.1
+      '@redocly/openapi-docs': 3.14.0-next.8
+      '@redocly/asyncapi-docs': 1.3.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.8
+  0.126.0-next.11:
+    timestamp: 1758638182000
+    changes:
+      minor:
+        - >-
+          Added `openapi.showSchemaCatalogLinks` configuration option to display links to schemas and requests on an OpenAPI page. These links can be
+          used as `$ref` values in other OpenAPI files within the same project.
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.7
+      '@redocly/theme': 0.58.0-next.5
+      '@redocly/asyncapi-docs': 1.3.0-next.7
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.7
+      '@redocly/graphql-docs': 1.3.0-next.0
   0.125.3:
     timestamp: 1758555804000
     changes:
@@ -4287,6 +4329,46 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.126.0-next.13:
+    timestamp: 1758885593000
+    changes:
+      minor:
+        - Added support for `_partials` folders at any directory level.
+      patch:
+        - Fixed security vulnerability CVE-2025-59139 in `bodyLimit` middleware by upgrading `hono` to v4.9.7.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.2
+      '@redocly/openapi-docs': 3.14.0-next.9
+      '@redocly/theme': 0.58.0-next.6
+      '@redocly/asyncapi-docs': 1.3.0-next.9
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.9
+      '@redocly/graphql-docs': 1.3.0-next.1
+  0.126.0-next.12:
+    timestamp: 1758714251000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.2.0`.
+        - Fixed an issue where plugins writing data to the files in project interfered with the processing causing link checker errors.
+    dependencies:
+      '@redocly/graphql-docs': 1.3.0-next.1
+      '@redocly/openapi-docs': 3.14.0-next.8
+      '@redocly/asyncapi-docs': 1.3.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.8
+  0.126.0-next.11:
+    timestamp: 1758638182000
+    changes:
+      minor:
+        - >-
+          Added `openapi.showSchemaCatalogLinks` configuration option to display links to schemas and requests on an OpenAPI page. These links can be
+          used as `$ref` values in other OpenAPI files within the same project.
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.7
+      '@redocly/theme': 0.58.0-next.5
+      '@redocly/asyncapi-docs': 1.3.0-next.7
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.7
+      '@redocly/graphql-docs': 1.3.0-next.0
   0.125.3:
     timestamp: 1758555804000
     changes:
@@ -7830,6 +7912,46 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.126.0-next.13:
+    timestamp: 1758885593000
+    changes:
+      minor:
+        - Added support for `_partials` folders at any directory level.
+      patch:
+        - Fixed security vulnerability CVE-2025-59139 in `bodyLimit` middleware by upgrading `hono` to v4.9.7.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.2
+      '@redocly/openapi-docs': 3.14.0-next.9
+      '@redocly/theme': 0.58.0-next.6
+      '@redocly/asyncapi-docs': 1.3.0-next.9
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.9
+      '@redocly/graphql-docs': 1.3.0-next.1
+  0.126.0-next.12:
+    timestamp: 1758714251000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.2.0`.
+        - Fixed an issue where plugins writing data to the files in project interfered with the processing causing link checker errors.
+    dependencies:
+      '@redocly/graphql-docs': 1.3.0-next.1
+      '@redocly/openapi-docs': 3.14.0-next.8
+      '@redocly/asyncapi-docs': 1.3.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.8
+  0.126.0-next.11:
+    timestamp: 1758638182000
+    changes:
+      minor:
+        - >-
+          Added `openapi.showSchemaCatalogLinks` configuration option to display links to schemas and requests on an OpenAPI page. These links can be
+          used as `$ref` values in other OpenAPI files within the same project.
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.7
+      '@redocly/theme': 0.58.0-next.5
+      '@redocly/asyncapi-docs': 1.3.0-next.7
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.7
+      '@redocly/graphql-docs': 1.3.0-next.0
   0.125.3:
     timestamp: 1758555804000
     changes:
@@ -11369,6 +11491,47 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.126.0-next.13:
+    timestamp: 1758885593000
+    changes:
+      minor: []
+      patch:
+        - Fixed missing responses without parameters in `llms.txt`.
+        - Fixed security vulnerability CVE-2025-59139 in `bodyLimit` middleware by upgrading `hono` to v4.9.7.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.2
+      '@redocly/openapi-docs': 3.14.0-next.9
+      '@redocly/theme': 0.58.0-next.6
+      '@redocly/asyncapi-docs': 1.3.0-next.9
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.9
+      '@redocly/graphql-docs': 1.3.0-next.1
+  0.126.0-next.12:
+    timestamp: 1758714251000
+    changes:
+      minor:
+        - Added `showBuiltInScalars` and `showBuiltInDirectives` options to control visibility of built-in GraphQL scalars and directives.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.2.0`.
+        - Fixed an issue where plugins writing data to the files in project interfered with the processing causing link checker errors.
+    dependencies:
+      '@redocly/graphql-docs': 1.3.0-next.1
+      '@redocly/openapi-docs': 3.14.0-next.8
+      '@redocly/asyncapi-docs': 1.3.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.8
+  0.126.0-next.11:
+    timestamp: 1758638182000
+    changes:
+      minor:
+        - >-
+          Added `openapi.showSchemaCatalogLinks` configuration option to display links to schemas and requests on an OpenAPI page. These links can be
+          used as `$ref` values in other OpenAPI files within the same project.
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.7
+      '@redocly/theme': 0.58.0-next.5
+      '@redocly/asyncapi-docs': 1.3.0-next.7
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.7
+      '@redocly/graphql-docs': 1.3.0-next.0
   0.125.3:
     timestamp: 1758555804000
     changes:
@@ -14907,6 +15070,22 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.58.0-next.6:
+    timestamp: 1758885593000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.2
+  0.58.0-next.5:
+    timestamp: 1758638182000
+    changes:
+      minor:
+        - >-
+          Added `openapi.showSchemaCatalogLinks` configuration option to display links to schemas and requests on an OpenAPI page. These links can be
+          used as `$ref` values in other OpenAPI files within the same project.
+      patch: []
+    dependencies: {}
   0.58.0-next.4:
     timestamp: 1758287388000
     changes:
@@ -17135,6 +17314,32 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.14.0-next.9:
+    timestamp: 1758885593000
+    changes:
+      minor: []
+      patch:
+        - Fixed missing responses without parameters in `llms.txt`.
+    dependencies:
+      '@redocly/replay': 0.17.0-next.9
+  3.14.0-next.8:
+    timestamp: 1758714251000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.2.0`.
+    dependencies:
+      '@redocly/replay': 0.17.0-next.8
+  3.14.0-next.7:
+    timestamp: 1758638182000
+    changes:
+      minor:
+        - >-
+          Added `openapi.showSchemaCatalogLinks` configuration option to display links to schemas and requests on an OpenAPI page. These links can be
+          used as `$ref` values in other OpenAPI files within the same project.
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.17.0-next.7
   3.14.0-next.6:
     timestamp: 1758531461000
     changes:
@@ -19329,6 +19534,24 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.34.0:
+    timestamp: 1758884326000
+    changes:
+      minor:
+        - Added `showBuiltInScalars` and `showBuiltInDirectives` options to control visibility of built-in GraphQL scalars and directives.
+      patch:
+        - Updated the default value of `partialsFolders` to `**/_partials/**` to include partial folders at any directory level.
+    dependencies: {}
+  0.33.0:
+    timestamp: 1758635872000
+    changes:
+      minor:
+        - >-
+          Added `openapi.showSchemaCatalogLinks` configuration option to display links to schemas and requests on an OpenAPI page. These links can be
+          used as `$ref` values in other OpenAPI files within the same project.
+      patch:
+        - Fixed regex for Respect Monitoring path parameter in `@redocly/config`.
+    dependencies: {}
   0.32.0:
     timestamp: 1758546703000
     changes:
@@ -19770,6 +19993,13 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.3.0-next.1:
+    timestamp: 1758714251000
+    changes:
+      minor:
+        - Added `showBuiltInScalars` and `showBuiltInDirectives` options to control visibility of built-in GraphQL scalars and directives.
+      patch: []
+    dependencies: {}
   1.3.0-next.0:
     timestamp: 1757322240000
     changes:
@@ -20495,6 +20725,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.3.7:
+    timestamp: 1758884326000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.2.0`.
+    dependencies: {}
   0.3.6:
     timestamp: 1758546703000
     changes:
@@ -20921,6 +21158,38 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.9.0-next.13:
+    timestamp: 1758885593000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.0-next.13
+      '@redocly/redoc': 0.126.0-next.13
+      '@redocly/redoc-reef': 0.126.0-next.13
+      '@redocly/redoc-revel': 0.126.0-next.13
+      '@redocly/theme': 0.58.0-next.6
+  1.9.0-next.12:
+    timestamp: 1758714251000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.0-next.12
+      '@redocly/redoc': 0.126.0-next.12
+      '@redocly/redoc-reef': 0.126.0-next.12
+      '@redocly/redoc-revel': 0.126.0-next.12
+  1.9.0-next.11:
+    timestamp: 1758638182000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.5
+      '@redocly/realm': 0.126.0-next.11
+      '@redocly/redoc': 0.126.0-next.11
+      '@redocly/redoc-reef': 0.126.0-next.11
+      '@redocly/redoc-revel': 0.126.0-next.11
   1.8.3:
     timestamp: 1758555804000
     changes:
@@ -24804,6 +25073,27 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.11.0-next.9:
+    timestamp: 1758885593000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.9
+  0.11.0-next.8:
+    timestamp: 1758714251000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.8
+  0.11.0-next.7:
+    timestamp: 1758638182000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.7
   0.11.0-next.6:
     timestamp: 1758531461000
     changes:
@@ -26938,6 +27228,27 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.17.0-next.9:
+    timestamp: 1758885593000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.6
+  0.17.0-next.8:
+    timestamp: 1758714251000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.2.0`.
+    dependencies: {}
+  0.17.0-next.7:
+    timestamp: 1758638182000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.5
   0.17.0-next.6:
     timestamp: 1758531461000
     changes:
@@ -28199,6 +28510,20 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.9.0-next.6:
+    timestamp: 1758885593000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.6
+  0.9.0-next.5:
+    timestamp: 1758638182000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.5
   0.9.0-next.4:
     timestamp: 1758287388000
     changes:
@@ -29403,6 +29728,29 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.3.0-next.9:
+    timestamp: 1758885593000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.9
+      '@redocly/theme': 0.58.0-next.6
+  1.3.0-next.8:
+    timestamp: 1758714251000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.8
+  1.3.0-next.7:
+    timestamp: 1758638182000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.7
+      '@redocly/theme': 0.58.0-next.5
   1.3.0-next.6:
     timestamp: 1758531461000
     changes:
@@ -31499,4 +31847,11 @@ reunite:
       minor: []
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.1.5`.
+    dependencies: {}
+  v2025-09-25.1:
+    timestamp: 1758738361000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.2.0`.
     dependencies: {}

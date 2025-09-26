@@ -54,6 +54,10 @@
           label: menu
         - page: ./graphql/samples-max-inline-args.md
           label: samplesMaxInlineArgs
+        - page: ./graphql/show-built-in-scalars.md
+          label: showBuiltInScalars
+        - page: ./graphql/show-built-in-directives.md
+          label: showBuiltInDirectives
     - page: ./ignore.md
       label: ignore
     - page: ./l10n.md
@@ -117,6 +121,8 @@
           label: schemaDefinitionsTagName
         - page: ./openapi/schemas-expansion-level.md
           label: schemasExpansionLevel
+        - page: ./openapi/show-schema-catalog-links.md
+          label: showSchemaCatalogLinks
         - page: ./openapi/show-extensions.md
           label: showExtensions
         - page: ./openapi/sort-required-props-first.md

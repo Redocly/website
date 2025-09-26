@@ -19,17 +19,19 @@ After you install the Redocly GitHub App on your organization in GitHub, and cre
 
 To enter the connection details in Reunite:
 
-1. In the file tree, select the folder (or click on the empty space to select the root directory) where you want to add the remote content folder.
-1. Select **+ > New remote folder > Add Git repository**.
-1. Enter a name for the new remote content folder and press the Enter or Return key.
+1. In the file tree, select the folder (or click on the empty space to select the root directory) where you want to add the remote content.
+1. Select **+ > New remote folder > Add Git repository** to add a remote content folder, or **+ > New remote file > Add Git repository** to add a remote content file.
+1. Enter a name for the new remote content (folder or file) and press the Enter or Return key.
 1. Select **GitHub > Next**.
 1. Authorize your Redocly organization to verify your GitHub identity.
 1. Select your GitHub **Organization > Repository > Branch**.
-2. (Optional) Select the [**Folder**](./remote-content.md#remote-contents-repository-folder), if you want to include only a specific folder from the repository.
-3. (Optional) Select the [**Auto-sync**](./remote-content.md#auto-sync-and-auto-merge) or [**Auto-merge**](./remote-content.md#auto-sync-and-auto-merge) toggles to turn off either option.
-4. Select **Add remote**.
+1. (Optional) Select the [**Folder**](./remote-content.md#remote-contents-repository-folder) or [**File**](./remote-content.md#remote-contents-repository-file), depending on whether you are adding a remote folder or a remote file.
+1. (Optional) Select the [**Auto-sync**](./remote-content.md#auto-sync-and-auto-merge) or [**Auto-merge**](./remote-content.md#auto-sync-and-auto-merge) toggles to turn off either option.
+1. Select **Add remote**.
    This action opens a pull request in Reunite automatically.
-   Click the **View Pull Request** button next to your new branch name to view the pull request.
+
+You can click the **View Pull Request** button next to your new branch name to view the pull request.
+
 
 ## Merge the open pull request in Reunite
 

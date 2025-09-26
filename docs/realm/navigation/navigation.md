@@ -5,9 +5,17 @@ These navigation elements include menus, both automatic and configured, and butt
 
 The following screenshot is an example project that includes the four main navigation elements:
 
-![Main project UI with navigation elements labeled](./images/navigation.png)
+{% img
+  src="./images/navigation.png"
+  alt="Main project UI with navigation elements labeled"
+  withLightbox=true
+/%}
 
-![Main project UI with footer labeled](./images/footer.png)
+{% img
+  src="./images/footer.png"
+  alt="Main project UI with footer labeled"
+  withLightbox=true
+/%}
 
 ## Sidebar menu
 
@@ -36,7 +44,11 @@ Some components, such as the `catalog` component also generate sidebars for each
 The sidebar is located on the left side of the page when on desktop devices.
 On smaller devices, a slide drawer navigation menu icon displays in the upper-right corner of the page.
 
-![Slide drawer navigation menu icon](./images/hamburger-icon.png)
+{% img
+  src="./images/hamburger-icon.png"
+  alt="Slide drawer navigation menu icon"
+  withLightbox=true
+/%}
 
 Clicking this icon displays the sidebar.
 
@@ -50,7 +62,11 @@ You can add links, icons to items in the navbar, and group items in the navbar t
 The navbar is located in the upper-left part of the page when on desktop devices.
 On smaller devices, a slide drawer navigation menu icon displays in the upper-right corner of the page.
 
-![Slide drawer navigation menu icon](./images/hamburger-icon.png)
+{% img
+  src="./images/hamburger-icon.png"
+  alt="Slide drawer navigation menu icon"
+  withLightbox=true
+/%}
 
 Clicking this icon displays the sidebar with an option for the **Main Menu**, which is the navbar.
 

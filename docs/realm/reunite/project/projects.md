@@ -8,7 +8,11 @@ Depending on the number of your API products and their complexity, you may choos
 
 ## Navigation bar
 
-![A partial view of the navigation bar as it appears on the Editor page.](../images/reunite-editor-navbar.png)
+{% img
+  src="../images/reunite-editor-navbar.png"
+  alt="A partial view of the navigation bar as it appears on the Editor page."
+  withLightbox=true
+/%}
 
 The navigation bar is displayed on all project pages.
 You can use it to switch between projects, and access the help dropdown.
@@ -67,4 +71,3 @@ The **Settings** page is available only to users with the Owner role in your org
 - **[Manage people](../organization/manage-people.md)** - Add and manage users within your organization for collaborative project development
 - **[Remote content](./remote-content/index.md)** - Integrate and synchronize content from external repositories and sources into your Reunite projects
 - **[Connect a Git provider](./connect-git/connect-git-provider.md)** - Link your projects to Git repositories from GitHub, GitLab, Azure DevOps, and other providers
-- **[Switch between projects](./switch-between-projects.md)** - Navigate efficiently between multiple projects in your Reunite workspace for streamlined workflow management

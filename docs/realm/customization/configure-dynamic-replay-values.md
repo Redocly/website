@@ -7,6 +7,7 @@ The `useConfigureReplay` hook fetches fresh configuration when the Replay is ope
 ## Before you begin
 
 Make sure you have the following:
+
 - a `redocly.yaml` file located in the root directory of your project
 - a basic understanding of TypeScript and React hooks
 - OpenAPI description files with examples

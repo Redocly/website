@@ -10,9 +10,9 @@ If you are using a `sidebars.yaml` file to organize your sidebar navigation menu
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- GraphQL schema file or files using the SDL format (`.graphql` or `.gql`)
+- one or more GraphQL schema files that use the SDL format (`.graphql` or `.gql`)
 
 ## Include GraphQL schema in your project
 

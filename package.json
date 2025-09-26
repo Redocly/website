@@ -12,7 +12,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@redocly/marketing-pages": "^0.1.17",
-    "@redocly/realm": "0.125.3",
+    "@redocly/realm": "^0.126.0-next.12",
     "highlight-words-core": "^1.2.3",
     "polished": "^4.3.1"
   },
@@ -28,6 +28,7 @@
   },
   "overrides": {
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "axios": "1.12.2"
   }
 }
