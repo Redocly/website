@@ -17,11 +17,38 @@ export function fromCurrentDir(moduleUrl, filePath) {
   return path.resolve(__dirname(moduleUrl), filePath);
 }
 
-export default function blogPlugin() {
+export default function themePlugin() {
   /** @type {import("@redocly/realm/dist/server/plugins/types").LifecyclePluginInstance } */
   const pluginInstance = {
     id: 'plugin',
+    async processContent(actions, context) {
+      // Register preview route for the editor iframe
+      const previewTemplateId = actions.createTemplate(
+        'preview-template',
+        fromCurrentDir(import.meta.url, './preview.route.tsx')
+      );
+      actions.addRoute({
+        excludeFromSidebar: true,
+        slug: '/preview',
+        fsPath: '/preview',
+        templateId: previewTemplateId,
+        hasClientRoutes: true,
+        getNavText: () => Promise.resolve('Preview'),
+        duplicateInAllLocales: false,
+        getStaticData: async () => {
+          return {
+            props: {
+              frontmatter: {
+                navbar: { hide: true },
+                footer: { hide: true },
+              },
+            },
+          };
+        },
+      });
+    },
     async afterRoutesCreated(actions, context) {
+      // Existing blog data processing
       const postRoutes = actions
         .getAllRoutes()
         .filter((route) => route.slug.startsWith(BLOG_SLUG) && route.slug !== BLOG_SLUG);

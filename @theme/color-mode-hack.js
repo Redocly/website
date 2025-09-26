@@ -1,6 +1,7 @@
 if (window && document.documentElement) {
   const pathname = window.location.pathname;
-  if (!pathname?.includes('/docs')) {
+  const allowDark = pathname?.includes('/docs') || pathname?.startsWith('/learn') || pathname === '/editor';
+  if (!allowDark) {
     document.documentElement.className = 'light'; // always light mode for landing pages
   }
 }

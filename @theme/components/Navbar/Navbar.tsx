@@ -55,9 +55,10 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
   const showVSCodeExtensionBanner = pathname?.startsWith('/redocly-cli');
 
   const isDocsOrLearnPage = pathname?.includes('/docs') || pathname?.startsWith('/learn/');
+  const isEditorPage = pathname === '/editor';
 
   React.useEffect(() => {
-    if (!isDocsOrLearnPage && !pathname?.startsWith('/learn')) {
+    if (!isDocsOrLearnPage && !pathname?.startsWith('/learn') && !isEditorPage) {
       document.documentElement.classList.replace('dark', 'light');
     } else {
       document.documentElement.classList.replace(
@@ -65,7 +66,7 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
         localStorage.getItem('colorSchema') || 'light',
       );
     }
-  }, [isDocsOrLearnPage, pathname?.startsWith('/learn')]);
+  }, [isDocsOrLearnPage, pathname?.startsWith('/learn'), isEditorPage]);
 
   const menu = themeConfig.navbar?.items;
 
@@ -119,7 +120,7 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
         <RightPanelWrapper>
           <LanguagePicker onChangeLanguage={changeLanguage} onlyIcon alignment="end" />
           <ColorModeSwitcherWrapper
-            isVisible={isDocsOrLearnPage || pathname?.startsWith('/learn')}
+            isVisible={isDocsOrLearnPage || pathname?.startsWith('/learn') || isEditorPage}
             isMobileOpen={isOpen}
           >
             <ColorModeSwitcher />
