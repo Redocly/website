@@ -2,6 +2,7 @@
 - page: openapi-decisions.md
 - page: multi-file-definitions.md
 - page: all-of.md
+- page: any-of-one-of.md
 - page: discriminator.md
 - page: ref-guide.md
 - group: OpenAPI Visual Reference
