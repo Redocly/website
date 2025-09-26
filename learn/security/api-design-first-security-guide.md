@@ -402,19 +402,19 @@ For interactions with a database, the gold standard for preventing SQL injection
 A parameterized query forces a separation between the SQL command (the code) and the user-supplied data, making it impossible for an attacker to alter the logic of the query.
 
 **Vulnerable Code (Never Do This):**
-```python
-# DANGEROUS: Directly interpolating user input
-user_id = request.get('user_id')
-query = f"SELECT * FROM users WHERE id = {user_id}"
-cursor.execute(query)
+```javascript
+// DANGEROUS: Directly interpolating user input  # [!code error]
+const userId = req.query.user_id;
+const query = `SELECT * FROM users WHERE id = ${userId}`;  // [!code --]
+const result = await db.query(query);  // [!code --]
 ```
 
 **Secure Code (Use Parameterized Queries):**
-```python
-# SAFE: Using parameterized queries
-user_id = request.get('user_id')
-query = "SELECT * FROM users WHERE id = ?"
-cursor.execute(query, (user_id,))
+```javascript
+// SAFE: Using parameterized queries  # [!code ++]
+const userId = req.query.user_id;
+const query = "SELECT * FROM users WHERE id = $1";  // [!code ++]
+const result = await db.query(query, [userId]);  // [!code ++]
 ```
 
 ### Schema-Based Validation as Security Contract
@@ -427,7 +427,7 @@ components:
   schemas:
     NewUser:
       type: object
-      additionalProperties: false  # Prevent mass assignment (OWASP API3:2023)
+      additionalProperties: false  # [!code highlight] Prevent mass assignment (OWASP API3:2023)
       required:
         - username
         - email
@@ -437,23 +437,23 @@ components:
         username:
           type: string
           minLength: 4
-          maxLength: 20             # Prevent resource exhaustion (OWASP API4:2023)
-          pattern: "^[a-zA-Z0-9]+$"  # Prevent injection attacks
+          maxLength: 20             # [!code highlight] Prevent resource exhaustion (OWASP API4:2023)
+          pattern: "^[a-zA-Z0-9]+$"  # [!code highlight] Prevent injection attacks
         email:
           type: string
-          maxLength: 254            # Prevent resource exhaustion (OWASP API4:2023)
-          format: email
+          maxLength: 254            # [!code highlight] Prevent resource exhaustion (OWASP API4:2023)
+          format: email             # [!code highlight] Built-in email validation
         password:
           type: string
-          minLength: 12
+          minLength: 12             # [!code highlight] Strong password requirement
           maxLength: 128
         age:
           type: integer
-          minimum: 18
-          maximum: 130              # Prevent integer overflow attacks
+          minimum: 18               # [!code highlight] Age verification
+          maximum: 130              # [!code highlight] Prevent integer overflow attacks
         role:
           type: string
-          enum: ["user", "viewer"]   # Enforce allow-list approach
+          enum: ["user", "viewer"]   # [!code highlight] Enforce allow-list approach
           default: "user"
 ```
 
@@ -900,25 +900,33 @@ app.use((req, res, next) => {
 ```
 
 ### Rate Limiting Monitoring
-```python
-# Track rate limiting metrics
-import time
-from collections import defaultdict
-
-class RateLimitMetrics:
-    def __init__(self):
-        self.blocked_requests = defaultdict(int)
-        self.total_requests = defaultdict(int)
+```javascript
+// Track rate limiting metrics
+class RateLimitMetrics {
+    constructor() {
+        this.blockedRequests = new Map();
+        this.totalRequests = new Map();
+    }
     
-    def record_request(self, client_id, blocked=False):
-        self.total_requests[client_id] += 1
-        if blocked:
-            self.blocked_requests[client_id] += 1
+    recordRequest(clientId, blocked = false) {
+        // Initialize counters if client is new
+        if (!this.totalRequests.has(clientId)) {
+            this.totalRequests.set(clientId, 0);
+            this.blockedRequests.set(clientId, 0);
+        }
+        
+        this.totalRequests.set(clientId, this.totalRequests.get(clientId) + 1);
+        if (blocked) {
+            this.blockedRequests.set(clientId, this.blockedRequests.get(clientId) + 1);
+        }
+    }
     
-    def get_block_rate(self, client_id):
-        total = self.total_requests[client_id]
-        blocked = self.blocked_requests[client_id]
-        return (blocked / total) * 100 if total > 0 else 0
+    getBlockRate(clientId) {
+        const total = this.totalRequests.get(clientId) || 0;
+        const blocked = this.blockedRequests.get(clientId) || 0;
+        return total > 0 ? (blocked / total) * 100 : 0;
+    }
+}
 ```
 
 ## API Security Maturity Model

@@ -64,7 +64,7 @@ graph TD
 
 Each security domain requires specific knowledge and implementation techniques. Choose the guide that matches your current focus:
 
-### <a href="/learn/security/api-tls-encryption-https-best-practices" target="_blank">API TLS Encryption and HTTPS Best Practices</a>
+### <a href="/learn/security/api-tls-encryption-https-best-practices">API TLS Encryption and HTTPS Best Practices</a>
 **What you'll learn:** Protect data in transit with proper TLS configuration, certificate management, and HTTPS enforcement.
 
 **Key topics:**
@@ -78,7 +78,7 @@ Each security domain requires specific knowledge and implementation techniques. 
 
 ---
 
-### <a href="/learn/security/api-input-validation-injection-prevention" target="_blank">API Input Validation and Injection Prevention</a>  
+### <a href="/learn/security/api-input-validation-injection-prevention">API Input Validation and Injection Prevention</a>  
 **What you'll learn:** Stop injection attacks using OpenAPI schema validation and automated governance rules.
 
 **Key topics:**
@@ -92,7 +92,7 @@ Each security domain requires specific knowledge and implementation techniques. 
 
 ---
 
-### <a href="/learn/security/api-rate-limiting-abuse-prevention" target="_blank">API Rate Limiting and Abuse Prevention</a>
+### <a href="/learn/security/api-rate-limiting-abuse-prevention">API Rate Limiting and Abuse Prevention</a>
 **What you'll learn:** Prevent DoS attacks, brute force attempts, and business logic abuse through strategic rate limiting.
 
 **Key topics:**
@@ -106,7 +106,7 @@ Each security domain requires specific knowledge and implementation techniques. 
 
 ---
 
-### <a href="/learn/security/authentication-authorization-openapi" target="_blank">Authentication and Authorization with OpenAPI</a>
+### <a href="/learn/security/authentication-authorization-openapi">Authentication and Authorization with OpenAPI</a>
 **What you'll learn:** Implement secure access control using OpenAPI security schemes and modern authentication patterns.
 
 **Key topics:**
@@ -232,15 +232,15 @@ Authentication verifies *who* the user is (like checking an ID card), while auth
 ## Resources
 
 ### Security Standards and Guidelines
-- [OWASP API Security Top 10](https://owasp.org/www-project-api-security/) - Comprehensive vulnerability guide including injection attacks (API3:2023), resource consumption (API4:2023), and business logic abuse (API6:2023)
-- [NIST SP 800-52 Rev. 2](https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final) - Official guidelines for secure TLS implementation and configuration requirements
-- [IETF RFC 8446](https://tools.ietf.org/html/rfc8446) - TLS 1.3 protocol specification and security requirements
+- <a href="https://owasp.org/www-project-api-security/" target="_blank">OWASP API Security Top 10</a> - Comprehensive vulnerability guide including injection attacks (API3:2023), resource consumption (API4:2023), and business logic abuse (API6:2023)
+- <a href="https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final" target="_blank">NIST SP 800-52 Rev. 2</a> - Official guidelines for secure TLS implementation and configuration requirements
+- <a href="https://tools.ietf.org/html/rfc8446" target="_blank">IETF RFC 8446</a> - TLS 1.3 protocol specification and security requirements
 
 ### Practical Implementation Tools
-- [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/) - Generate secure, up-to-date TLS configurations for various web servers and security levels
-- [OpenAPI Generator](https://openapi-generator.tech/) - Code generation tool for creating secure client SDKs and server stubs from OpenAPI specifications
-- [OpenAPI Specification](https://spec.openapis.org/oas/v3.1.0) - Official OpenAPI 3.1 specification including security scheme definitions
+- <a href="https://ssl-config.mozilla.org/" target="_blank">Mozilla SSL Configuration Generator</a> - Generate secure, up-to-date TLS configurations for various web servers and security levels
+- <a href="https://openapi-generator.tech/" target="_blank">OpenAPI Generator</a> - Code generation tool for creating secure client SDKs and server stubs from OpenAPI specifications
+- <a href="https://spec.openapis.org/oas/v3.1.0" target="_blank">OpenAPI Specification</a> - Official OpenAPI 3.1 specification including security scheme definitions
 
 ### DevSecOps and API Governance
-- [OWASP API Security Project](https://owasp.org/www-project-api-security/) - Community-driven API security best practices and threat modeling
-- [OpenAPI Security Schemes](https://spec.openapis.org/oas/v3.1.0#security-scheme-object) - Official specification for defining authentication and authorization in OpenAPI
+- <a href="https://owasp.org/www-project-api-security/" target="_blank">OWASP API Security Project</a> - Community-driven API security best practices and threat modeling
+- <a href="https://spec.openapis.org/oas/v3.1.0#security-scheme-object" target="_blank">OpenAPI Security Schemes</a> - Official specification for defining authentication and authorization in OpenAPI

@@ -15,12 +15,26 @@ seo:
 A single client, whether intentionally malicious or simply due to a bug in its code, can send a massive number of requests to an API in a short period. This can overwhelm the server, degrading performance for all other users or even causing the service to crash. Rate limiting is the primary defense against this scenario.
 
 **In this guide, you'll learn:**
-- How to implement rate limiting as a security and reliability control
-- OpenAPI x-rateLimit extensions and documentation strategies
-- Rate limiting algorithms and multi-tier implementation patterns
-- Client-side exponential backoff and error handling
-- Real-world lessons from the Facebook phone number scraping incident
-- Advanced rate limiting techniques and monitoring approaches
+- [How to implement rate limiting](#documenting-rate-limits-in-openapi) as a security and reliability control
+- [OpenAPI x-rateLimit extensions](#documenting-rate-limits-in-openapi) and documentation strategies
+- [Rate limiting algorithms and implementation patterns](#rate-limiting-implementation-approaches)
+- [Client-side exponential backoff](#client-side-exponential-backoff) and error handling
+- [Real-world lessons from the Facebook phone number scraping incident](#attack-example-facebook-phone-number-scraping-2019)
+- [Advanced techniques and monitoring approaches](#rate-limiting-monitoring-and-observability)
+
+---
+
+## Quick Start Guide
+
+Ready to implement effective rate limiting? Follow these steps:
+
+1. **Document rate limits:** Add [OpenAPI x-rateLimit extensions](#documenting-rate-limits-in-openapi) to your API specifications
+2. **Choose an algorithm:** Select from [Token Bucket, Sliding Window, or Fixed Window](#rate-limiting-implementation-approaches) based on your needs
+3. **Implement multi-tier limits:** Set up global, per-endpoint, and per-client [rate limiting configurations](#advanced-rate-limiting-techniques)  
+4. **Set up monitoring:** Implement [metrics collection and alerting](#rate-limiting-monitoring-and-observability) to detect attacks
+5. **Test and tune:** Use the [implementation strategy framework](#rate-limiting-strategy-framework) to prioritize critical endpoints and validate limits
+
+**Next Steps:** Now that you have rate limiting protection in place, learn about [Authentication and Authorization with OpenAPI](authentication-authorization-openapi) to implement comprehensive access control for your APIs.
 
 ---
 
@@ -52,28 +66,28 @@ paths:
     post:
       summary: User Login
       tags: [Authentication]
-      # Define rate-limiting policy for this sensitive endpoint
+      # Define rate-limiting policy for this sensitive endpoint  # [!code highlight]
       x-rateLimit:
-        limit: 5
-        window: "1m"
-        scope: "ip_address"
+        limit: 5                  # [!code highlight] Strict limit for auth endpoints
+        window: "1m"              # [!code highlight] Short time window
+        scope: "ip_address"       # [!code highlight] IP-based rate limiting
         description: "Limits login attempts to 5 per minute per IP to prevent brute-force attacks."
       responses:
         '200':
           description: "Successful login."
-        # Document the 429 response with proper headers
+        # Document the 429 response with proper headers  # [!code highlight]
         '429':
           description: "Too Many Requests. Rate limit exceeded."
           headers:
-            Retry-After:
+            Retry-After:              # [!code highlight] Required for proper client behavior
               schema:
                 type: integer
               description: "Seconds to wait before making a new request."
-            X-RateLimit-Limit:
+            X-RateLimit-Limit:       # [!code highlight] Inform clients of limits
               schema:
                 type: integer
               description: "Maximum requests permitted in the window."
-            X-RateLimit-Remaining:
+            X-RateLimit-Remaining:   # [!code highlight] Help clients pace requests
               schema:
                 type: integer
               description: "Requests remaining in current window."
@@ -89,41 +103,256 @@ This approach provides dual benefits: modern API documentation tools automatical
 
 ## Rate Limiting Implementation Approaches
 
-### Common Algorithm Types
+Choose the rate limiting algorithm that best fits your traffic patterns and precision requirements:
 
-**Token Bucket**: Allows burst traffic within limits, refills at steady rate
-- Best for: APIs that need to handle legitimate traffic spikes
-- Pros: Flexible, allows bursts, smooth long-term rate limiting
-- Cons: More complex to implement, requires state management
+{% tabs %}
+  {% tab label="Token Bucket" %}
 
-**Sliding Window**: Precise per-window enforcement with distributed request tracking
-- Best for: APIs requiring exact rate limiting precision
-- Pros: Most accurate, prevents boundary condition abuse
-- Cons: Memory intensive, complex distributed implementation
+### Token Bucket Algorithm
 
-**Fixed Window**: Simple per-timeframe limits, prone to boundary conditions
-- Best for: Simple use cases, easy implementation
-- Pros: Simple to implement and understand
-- Cons: Allows traffic spikes at window boundaries
+**Best for:** APIs that need to handle legitimate traffic spikes
 
-### Multi-tier Strategy Example
+**How it works:**
+- Tokens are added to a bucket at a steady rate (refill rate)
+- Each request consumes one token from the bucket
+- If bucket is empty, requests are rejected or queued
+- Allows burst traffic up to bucket capacity
 
-```yaml {% title="API Gateway configuration" %}
-rate_limits:
-  global:
-    requests_per_minute: 1000
-    requests_per_hour: 10000
-  by_endpoint:
-    "/auth/*":
-      requests_per_minute: 5
-      requests_per_hour: 20
-    "/api/data":
-      requests_per_minute: 100
-      requests_per_hour: 2000
-    "/api/search":
-      requests_per_minute: 50
-      requests_per_hour: 1000
+**Pros:**
+- **Flexible burst handling**: Accommodates legitimate traffic spikes
+- **Smooth long-term limiting**: Maintains steady average rate
+- **User-friendly**: Doesn't penalize users for occasional bursts
+
+**Cons:**
+- **Implementation complexity**: Requires token state management
+- **Memory overhead**: Need to track bucket state per client
+- **Distributed challenges**: Synchronizing token state across servers
+
+**Implementation example:**
+```javascript {% title="token-bucket.js - Secure Rate Limiting Algorithm" %}
+class TokenBucket {
+  constructor(capacity, refillRate) {
+    // STEP 1: Initialize bucket parameters
+    this.capacity = capacity;           // Max burst size (e.g., 100 requests)
+    this.tokens = capacity;             // Start with full bucket (allows immediate bursts)
+    this.refillRate = refillRate;       // Steady rate (e.g., 10 requests/second)
+    this.lastRefill = Date.now();       // Track when we last added tokens
+  }
+
+  // STEP 2: Process incoming request - the main security enforcement point
+  consume(tokens = 1) {
+    // First, add any tokens we've earned since last request
+    this.refill();                      // CRITICAL: Always refill before checking
+    
+    // STEP 3: Security decision - allow or block the request
+    if (this.tokens >= tokens) {
+      this.tokens -= tokens;            // Consume tokens for this request
+      return true;                      // ✅ REQUEST ALLOWED - user under limit
+    }
+    
+    // STEP 4: Rate limit exceeded - implement security response
+    console.warn(`Rate limit exceeded. Tokens available: ${this.tokens}, requested: ${tokens}`);
+    return false;                       // ❌ BLOCK REQUEST - user over limit
+  }
+
+  // STEP 5: Token refill logic - implements the "steady rate" behavior
+  refill() {
+    const now = Date.now();
+    const timePassed = (now - this.lastRefill) / 1000;  // Convert to seconds
+    
+    // Calculate tokens earned: time × rate
+    const tokensToAdd = Math.floor(timePassed * this.refillRate);  // Floor prevents fractional tokens
+    
+    if (tokensToAdd > 0) {
+      // Add tokens but never exceed capacity (prevents bucket overflow)
+      this.tokens = Math.min(this.capacity, this.tokens + tokensToAdd);
+      this.lastRefill = now;            // Update timestamp for next calculation
+      
+      console.debug(`Added ${tokensToAdd} tokens. Current: ${this.tokens}/${this.capacity}`);
+    }
+  }
+  
+  // STEP 6: Utility methods for monitoring and debugging
+  getStatus() {
+    this.refill(); // Ensure current state
+    return {
+      tokens: this.tokens,              // Available tokens right now
+      capacity: this.capacity,          // Maximum burst size
+      utilizationPercent: ((this.capacity - this.tokens) / this.capacity * 100).toFixed(1)
+    };
+  }
+}
+
+// EXAMPLE USAGE: Protect login endpoint from brute force
+const loginRateLimit = new TokenBucket(5, 0.1);  // 5 attempts, refill 1 every 10 seconds
+
+// In your API endpoint:
+app.post('/auth/login', (req, res) => {
+  const clientId = req.ip || req.headers['x-client-id'];  // Identify the client
+  
+  if (!loginRateLimit.consume()) {
+    return res.status(429).json({       // HTTP 429 = Too Many Requests
+      error: 'Rate limit exceeded',
+      retryAfter: Math.ceil((1 / loginRateLimit.refillRate)) // Tell client when to retry
+    });
+  }
+  
+  // Process login attempt...           // Only reached if under rate limit
+});
 ```
+
+  {% /tab %}
+  {% tab label="Sliding Window" %}
+
+### Sliding Window Algorithm
+
+**Best for:** APIs requiring exact rate limiting precision
+
+**How it works:**
+- Tracks exact timestamps of requests within a rolling time window
+- Continuously slides the window forward with each request
+- Provides most accurate rate limiting without boundary conditions
+
+**Pros:**
+- **Maximum accuracy**: No boundary condition exploits
+- **Precise enforcement**: Exact request counting within time windows
+- **Fair distribution**: Prevents gaming of window boundaries
+
+**Cons:**
+- **Memory intensive**: Stores timestamp for each request
+- **Complex implementation**: Requires efficient data structures
+- **Distributed complexity**: Hard to synchronize across multiple servers
+
+**Implementation example:**
+```javascript {% title="sliding-window.js" %}
+class SlidingWindowRateLimit {
+    constructor(maxRequests, windowSeconds) {
+        this.maxRequests = maxRequests;        // [!code highlight] Maximum requests allowed
+        this.windowSeconds = windowSeconds;    // [!code highlight] Time window in seconds
+        this.requests = [];                    // [!code highlight] Store request timestamps
+    }
+
+    isAllowed() {
+        const now = Date.now();
+        const windowMs = this.windowSeconds * 1000;
+        
+        // Remove requests outside current window          // [!code highlight]
+        while (this.requests.length > 0 && this.requests[0] <= now - windowMs) {
+            this.requests.shift();             // [!code highlight] Clean old timestamps
+        }
+        
+        // Check if we're under the limit
+        if (this.requests.length < this.maxRequests) {
+            this.requests.push(now);           // [!code highlight] Record this request
+            return true;                       // [!code highlight] Request allowed
+        }
+        
+        return false;                          // [!code error] Rate limit exceeded
+    }
+    
+    // Utility method to get current status
+    getStatus() {
+        const now = Date.now();
+        const windowMs = this.windowSeconds * 1000;
+        
+        // Clean old requests first
+        while (this.requests.length > 0 && this.requests[0] <= now - windowMs) {
+            this.requests.shift();
+        }
+        
+        return {
+            currentRequests: this.requests.length,
+            maxRequests: this.maxRequests,
+            remaining: this.maxRequests - this.requests.length,
+            windowSeconds: this.windowSeconds
+        };
+    }
+}
+```
+
+  {% /tab %}
+  {% tab label="Fixed Window" %}
+
+### Fixed Window Algorithm
+
+**Best for:** Simple use cases with easy implementation requirements
+
+**How it works:**
+- Divides time into fixed intervals (e.g., per minute, per hour)
+- Counts requests within each fixed window
+- Resets counter at the start of each new window
+
+**Pros:**
+- **Simple implementation**: Easy to understand and code
+- **Low memory usage**: Only need counter per time window
+- **Distributed-friendly**: Easy to implement with shared counters
+
+**Cons:**
+- **Boundary condition abuse**: 2x rate limit possible at window edges
+- **Traffic spikes**: All requests could arrive at start of window
+- **Less user-friendly**: Sudden cutoffs can impact user experience
+
+**Implementation example:**
+```javascript {% title="fixed-window.js" %}
+class FixedWindowRateLimit {
+    constructor(maxRequests, windowMs) {
+        this.maxRequests = maxRequests;             // [!code highlight] Maximum requests per window
+        this.windowMs = windowMs;                   // [!code highlight] Window duration in milliseconds
+        this.counter = new Map();                   // [!code highlight] Request counters by client
+        this.windowStart = new Map();               // [!code highlight] Window start times
+    }
+
+    isAllowed(clientId) {
+        const now = Date.now();
+        const windowStart = this.windowStart.get(clientId);
+        
+        // Check if we're in a new window                     // [!code highlight]
+        if (!windowStart || (now - windowStart) >= this.windowMs) {
+            this.windowStart.set(clientId, now);              // [!code highlight] Start new window
+            this.counter.set(clientId, 1);                    // [!code highlight] Reset counter
+            return true;                                       // [!code highlight] Request allowed
+        }
+        
+        // Check current window limit
+        const currentCount = this.counter.get(clientId) || 0;
+        if (currentCount < this.maxRequests) {
+            this.counter.set(clientId, currentCount + 1);     // [!code highlight] Increment counter
+            return true;                                       // [!code highlight] Request allowed
+        }
+        
+        return false;                                          // [!code error] Rate limit exceeded
+    }
+    
+    // Utility method to get window status for a client
+    getWindowStatus(clientId) {
+        const now = Date.now();
+        const windowStart = this.windowStart.get(clientId);
+        const currentCount = this.counter.get(clientId) || 0;
+        
+        if (!windowStart) {
+            return {
+                requests: 0,
+                maxRequests: this.maxRequests,
+                remaining: this.maxRequests,
+                timeUntilReset: this.windowMs
+            };
+        }
+        
+        const timeElapsed = now - windowStart;
+        const timeUntilReset = Math.max(0, this.windowMs - timeElapsed);
+        
+        return {
+            requests: currentCount,
+            maxRequests: this.maxRequests,
+            remaining: Math.max(0, this.maxRequests - currentCount),
+            timeUntilReset
+        };
+    }
+}
+```
+
+  {% /tab %}
+{% /tabs %}
 
 ## Advanced Rate Limiting Techniques
 
@@ -207,43 +436,71 @@ Why this matters: Rate limiting, velocity checks, and behavior analytics are cor
 
 ## Rate Limiting Monitoring and Observability
 
+Choose your monitoring approach based on your security operations needs:
+
+{% tabs %}
+  {% tab label="Metrics Collection (JavaScript)" %}
+
 ### Rate Limiting Metrics Collection
 
-```python
-# Track rate limiting metrics for security analysis
-import time
-from collections import defaultdict
-
-class RateLimitMetrics:
-    def __init__(self):
-        self.blocked_requests = defaultdict(int)
-        self.total_requests = defaultdict(int)
-        self.suspicious_patterns = defaultdict(list)
+```javascript
+// Track rate limiting metrics for security analysis
+class RateLimitMetrics {
+    constructor() {
+        this.blockedRequests = new Map();        // [!code highlight] Count blocked requests by client
+        this.totalRequests = new Map();          // [!code highlight] Count total requests by client
+        this.suspiciousPatterns = new Map();     // [!code highlight] Track attack patterns
+    }
     
-    def record_request(self, client_id, blocked=False, endpoint=None):
-        self.total_requests[client_id] += 1
-        if blocked:
-            self.blocked_requests[client_id] += 1
-            # Track suspicious patterns
-            self.suspicious_patterns[client_id].append({
-                'timestamp': time.time(),
-                'endpoint': endpoint,
-                'blocked': True
-            })
+    recordRequest(clientId, blocked = false, endpoint = null) {
+        // Initialize counters if client is new
+        if (!this.totalRequests.has(clientId)) {
+            this.totalRequests.set(clientId, 0);
+            this.blockedRequests.set(clientId, 0);
+            this.suspiciousPatterns.set(clientId, []);
+        }
+        
+        this.totalRequests.set(clientId, this.totalRequests.get(clientId) + 1);  // [!code highlight] Increment request counter
+        
+        if (blocked) {
+            this.blockedRequests.set(clientId, this.blockedRequests.get(clientId) + 1);  // [!code highlight] Track blocked request
+            
+            // Track suspicious patterns                           // [!code highlight]
+            const patterns = this.suspiciousPatterns.get(clientId);
+            patterns.push({
+                timestamp: Date.now(),                           // [!code highlight] When attack occurred
+                endpoint: endpoint,                              // [!code highlight] Which endpoint targeted
+                blocked: true                                    // [!code highlight] Request was blocked
+            });
+            this.suspiciousPatterns.set(clientId, patterns);
+        }
+    }
     
-    def get_block_rate(self, client_id):
-        total = self.total_requests[client_id]
-        blocked = self.blocked_requests[client_id]
-        return (blocked / total) * 100 if total > 0 else 0
+    getBlockRate(clientId) {
+        const total = this.totalRequests.get(clientId) || 0;
+        const blocked = this.blockedRequests.get(clientId) || 0;
+        return total > 0 ? (blocked / total) * 100 : 0;
+    }
     
-    def get_attack_indicators(self, client_id, window_minutes=5):
-        """Detect rapid repeated attempts that might indicate an attack"""
-        recent_blocks = [
-            event for event in self.suspicious_patterns[client_id]
-            if time.time() - event['timestamp'] < window_minutes * 60
-        ]
-        return len(recent_blocks)
+    getAttackIndicators(clientId, windowMinutes = 5) {
+        // Detect rapid repeated attempts that might indicate an attack
+        const patterns = this.suspiciousPatterns.get(clientId) || [];
+        const recentBlocks = patterns.filter(event =>        // [!code highlight] Filter recent blocked requests
+            Date.now() - event.timestamp < windowMinutes * 60 * 1000
+        );
+        return recentBlocks.length;                          // [!code highlight] Return attack indicator count
+    }
+}
 ```
+
+**How metrics collection works:**
+- **Request tracking**: Counts all requests and blocked requests per client
+- **Pattern detection**: Records timestamps and endpoints for blocked requests  
+- **Attack indicators**: Identifies rapid repeated attempts within time windows
+- **Block rate calculation**: Calculates percentage of requests blocked per client
+
+{% /tab %}
+{% tab label="Alerting Configuration (Prometheus)" %}
 
 ### Alerting Configuration
 
@@ -261,14 +518,23 @@ groups:
       description: "{{ $value }} requests per second being blocked"
 
   - alert: SuspiciousRateLimitPattern
-    expr: rate_limit_block_rate > 80
-    for: 1m
+    expr: rate_limit_block_rate > 80              # [!code highlight] 80% block rate threshold
+    for: 1m                                       # [!code highlight] Alert after 1 minute
     labels:
-      severity: critical
+      severity: critical                          # [!code error] Critical security alert
     annotations:
       summary: "Possible DDoS or brute force attack"
       description: "Client {{ $labels.client_id }} has {{ $value }}% blocked rate"
 ```
+
+**How alerting works:**
+- **HighRateLimitBlocks**: Monitors overall rate of blocked requests across system
+- **SuspiciousRateLimitPattern**: Detects clients with abnormally high block rates
+- **Threshold-based**: Configurable thresholds trigger security team notifications
+- **Context-aware**: Provides client IDs and block rates for investigation
+
+{% /tab %}
+{% /tabs %}
 
 ### Rate Limiting Troubleshooting
 
@@ -338,27 +604,26 @@ limit_req_zone $binary_remote_addr_internal zone=internal:10m rate=1000r/m;
 ## Frequently Asked Questions
 
 ### Why is rate limiting important for API security?
-Rate limiting prevents denial-of-service attacks, brute-force authentication attempts, and data scraping. It ensures fair resource usage among legitimate users while blocking malicious automation. Without rate limits, a single bad actor can overwhelm your API infrastructure.
+Rate limiting prevents denial-of-service attacks, brute-force authentication attempts, and data scraping. It ensures fair resource usage among legitimate users while blocking malicious automation. Without rate limits, a single bad actor can overwhelm your API infrastructure. See the [Facebook phone number scraping incident](#attack-example-facebook-phone-number-scraping-2019) for a real-world example.
 
 ### What's the difference between rate limiting and throttling?
 Rate limiting sets hard limits on request volume (e.g., 100 requests per minute), rejecting excess requests with 429 status codes. Throttling typically involves slowing down or queuing requests rather than rejecting them outright. Rate limiting is more common for APIs as it provides clearer client feedback.
 
 ### Should rate limits be per-IP, per-user, or both?
-Implement multiple layers: per-IP limits prevent DDoS attacks from single sources, per-user limits enforce fair usage policies, and per-API-key limits support tiered service levels. Combine all three for comprehensive protection against different attack patterns.
+Implement multiple layers: per-IP limits prevent DDoS attacks from single sources, per-user limits enforce fair usage policies, and per-API-key limits support tiered service levels. Combine all three for comprehensive protection against different attack patterns. See [advanced rate limiting patterns](#advanced-rate-limiting-patterns) for implementation guidance.
 
 ### How do I handle legitimate traffic spikes?
-Use token bucket algorithms that allow controlled bursts within overall rate limits. Consider implementing adaptive rate limiting that adjusts limits based on server health. For predictable spikes, provide rate limit increase APIs or temporary exemption mechanisms for verified clients.
+Use [token bucket algorithms](#rate-limiting-implementation-approaches) that allow controlled bursts within overall rate limits. Consider implementing adaptive rate limiting that adjusts limits based on server health. For predictable spikes, provide rate limit increase APIs or temporary exemption mechanisms for verified clients.
 
 ### What rate limiting algorithm should I choose?
-- **Token Bucket**: Best for APIs needing burst flexibility
-- **Sliding Window**: Most accurate but memory intensive  
-- **Fixed Window**: Simple but allows boundary condition abuse
-- **Sliding Window Log**: Precise but computationally expensive
+- **[Token Bucket](#rate-limiting-implementation-approaches)**: Best for APIs needing burst flexibility
+- **[Sliding Window](#rate-limiting-implementation-approaches)**: Most accurate but memory intensive  
+- **[Fixed Window](#rate-limiting-implementation-approaches)**: Simple but allows boundary condition abuse
 
-Choose based on your accuracy requirements, traffic patterns, and implementation complexity tolerance.
+Choose based on your accuracy requirements, traffic patterns, and implementation complexity tolerance. See our [implementation approaches](#rate-limiting-implementation-approaches) for detailed comparisons.
 
 ### How do I communicate rate limits to API consumers?
-Document limits in OpenAPI specifications using `x-rateLimit` extensions, include rate limit headers in responses (`X-RateLimit-Limit`, `X-RateLimit-Remaining`, `Retry-After`), provide clear error messages with 429 responses, and maintain public documentation about your rate limiting policies.
+Document limits in [OpenAPI specifications using x-rateLimit extensions](#documenting-rate-limits-in-openapi), include rate limit headers in responses (`X-RateLimit-Limit`, `X-RateLimit-Remaining`, `Retry-After`), provide clear error messages with 429 responses, and maintain public documentation about your rate limiting policies.
 
 ## Rate Limiting Strategy Framework
 
@@ -382,74 +647,80 @@ Document limits in OpenAPI specifications using `x-rateLimit` extensions, includ
 
 ### Rate Limit Testing Strategy
 
-```python
-# Rate limit testing framework
-import asyncio
-import aiohttp
-import time
-
-async def test_rate_limit(url, requests_count, window_seconds):
-    """Test rate limiting behavior"""
-    start_time = time.time()
-    successful_requests = 0
-    blocked_requests = 0
+```javascript
+// Rate limit testing framework
+async function testRateLimit(url, requestsCount, windowSeconds) {
+    /**
+     * Test rate limiting behavior
+     * @param {string} url - API endpoint to test
+     * @param {number} requestsCount - Number of concurrent requests to send  
+     * @param {number} windowSeconds - Expected rate limit window
+     */
+    const startTime = Date.now();
+    let successfulRequests = 0;
+    let blockedRequests = 0;
     
-    async with aiohttp.ClientSession() as session:
-        tasks = []
-        for i in range(requests_count):
-            tasks.append(make_request(session, url))
-        
-        responses = await asyncio.gather(*tasks, return_exceptions=True)
-        
-        for response in responses:
-            if isinstance(response, Exception):
-                continue
-            if response.status == 200:
-                successful_requests += 1
-            elif response.status == 429:
-                blocked_requests += 1
+    // Create array of request promises
+    const requests = Array.from({ length: requestsCount }, () => makeRequest(url));
     
-    elapsed = time.time() - start_time
-    print(f"Rate limit test results:")
-    print(f"Successful: {successful_requests}, Blocked: {blocked_requests}")
-    print(f"Effective rate: {successful_requests/elapsed:.2f} req/sec")
+    // Execute all requests concurrently
+    const responses = await Promise.allSettled(requests);
+    
+    // Analyze responses
+    for (const result of responses) {
+        if (result.status === 'rejected') {
+            console.warn('Request failed:', result.reason.message);
+            continue;
+        }
+        
+        const response = result.value;
+        if (response.status === 200) {
+            successfulRequests++;
+        } else if (response.status === 429) {
+            blockedRequests++;
+        }
+    }
+    
+    const elapsed = (Date.now() - startTime) / 1000; // Convert to seconds
+    console.log('Rate limit test results:');
+    console.log(`Successful: ${successfulRequests}, Blocked: ${blockedRequests}`);
+    console.log(`Effective rate: ${(successfulRequests / elapsed).toFixed(2)} req/sec`);
+    
+    return {
+        successful: successfulRequests,
+        blocked: blockedRequests,
+        total: requestsCount,
+        elapsedSeconds: elapsed,
+        effectiveRate: successfulRequests / elapsed
+    };
+}
 
-async def make_request(session, url):
-    try:
-        async with session.get(url) as response:
-            return response
-    except Exception as e:
-        return e
+async function makeRequest(url) {
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'User-Agent': 'rate-limit-tester/1.0'
+            }
+        });
+        return response;
+    } catch (error) {
+        throw new Error(`Request failed: ${error.message}`);
+    }
+}
+
+// Example usage:
+// await testRateLimit('https://api.example.com/users', 50, 60);
 ```
 
 ## Resources and Next Steps
 
-### Essential Reading
-- [OWASP API Security Top 10](https://owasp.org/www-project-api-security/) - Comprehensive guide including unrestricted resource consumption (API4:2023) and business logic abuse (API6:2023)
-- [RFC 6585](https://tools.ietf.org/html/rfc6585) - HTTP status code 429 (Too Many Requests) specification
-- [Rate Limiting Algorithms](https://en.wikipedia.org/wiki/Rate_limiting) - Technical overview of different rate limiting approaches
-
-### Implementation Tools  
-- [Redis](https://redis.io/) - In-memory data store commonly used for distributed rate limiting
-- [Kong Rate Limiting Plugin](https://docs.konghq.com/hub/kong-inc/rate-limiting/) - Enterprise-grade API gateway rate limiting
-- [nginx limit_req_zone](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html) - High-performance rate limiting at the reverse proxy level
-
-### Monitoring and Analytics
-- [Prometheus](https://prometheus.io/) - Metrics collection and alerting for rate limiting monitoring  
-- [Grafana](https://grafana.com/) - Visualization dashboards for rate limiting metrics
-- [Elastic Stack](https://www.elastic.co/elastic-stack/) - Log analysis and pattern detection for abuse identification
-
-### Load Testing Tools
-- [hey](https://github.com/rakyll/hey) - Simple load testing tool for rate limit verification
-- [Apache Bench (ab)](https://httpd.apache.org/docs/2.4/programs/ab.html) - Basic HTTP server benchmarking
-- [JMeter](https://jmeter.apache.org/) - Comprehensive performance testing with rate limiting scenarios
+### Essential Standards
+- <a href="https://owasp.org/www-project-api-security/" target="_blank">OWASP API Security Top 10</a> - Comprehensive guide including unrestricted resource consumption (API4:2023) and business logic abuse (API6:2023)
+- <a href="https://tools.ietf.org/html/rfc6585" target="_blank">RFC 6585</a> - HTTP status code 429 (Too Many Requests) specification
 
 ### Related Security Topics
 - [API Input Validation and Injection Prevention](api-input-validation-injection-prevention) - Protect APIs from malicious data
 - [Authentication and Authorization with OpenAPI](authentication-authorization-openapi) - Implement secure access control  
 - [API TLS Encryption and HTTPS Best Practices](api-tls-encryption-https-best-practices) - Secure data in transit
 - [API Security by Design: Complete Guide](/learn/security) - Overview of all API security domains
-
----
-
-**Next Steps:** Now that you have rate limiting protection in place, learn about [Authentication and Authorization with OpenAPI](authentication-authorization-openapi) to implement comprehensive access control for your APIs.
