@@ -23,7 +23,7 @@ markdown:
 scripts:
   head:
     - src: '@theme/color-mode-hack.js'
-      inline: true
+      inline: false
 analytics:
   gtm:
     trackingId: GTM-KVV53WR
@@ -133,6 +133,8 @@ footer:
           page: ./blog/favorite-new-features.md
         - label: Docs-like-code
           page: ./pages/docs-like-code/docsLikeCode.page.tsx
+        - label: Editor
+          page: ./pages/editor/editor.page.tsx
     - group: Tech & legal
       items:
         - label: Security
@@ -172,7 +174,8 @@ responseHeaders:
       value: "
         script-src 
           'self' 
-          'report-sample'
+          'report-sample' 
+          'unsafe-eval' 
           https://js.hsforms.net 
           http://js.hsforms.net 
           https://js.hs-scripts.com 
@@ -186,19 +189,7 @@ responseHeaders:
           https://js.hscollectedforms.net
           https://js.hs-analytics.net
           https://js.hs-banner.com
-          'sha256-M28mypAFwwpIwIF9e1/A6867PQiwVvOrdqFSTFSa8/U=' 
-          'sha256-Ed6Lei7deBSXT1iYYw0V36YZXaA4v7OsRknNjmNl/9c='
-          'sha256-uDN+KkW4ljf+D4DbsWP5KpxyfG/7h+LNmZxMzbz/+1E='
-          'sha256-9seBUu3uBabJT/26wJPQEjpi+FB2ayw9N8BnQJlh/ls='
-          'sha256-mqxawUgIH8vW3/GxWmOFDp5zt8IejNl5rNH2j9PXF88='
-          'sha256-wkSWDFufZapa7t3NvV+JhSRXHb/4CI3ZnaqCvg7byns='
-          'sha256-Tq4uREmlYInMCBRtudvmIOCc+VdyPNg3t18I9xtvdgs=' 
-          'sha256-/mLWo7as1uoH7YxKP28RczpTaAJYtZFOdU0Okz4RWRo=' 
-          'sha256-vHWNkFcRXsOiOWmmubySLtLeZ3xAubNJpC7UdmQgSQU=' 
-          'sha256-FHfozmosNdt5yUG9l8OmVM1S/oTxw2TNWHPejSjEr58='
-          'sha256-2VNfiq6Um2ua9MLfzend4JESqZeD1VSgkWvUrPvrlZE='
-          'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no='
-          'sha256-9qgU5FDrauEgF+e1iJWvsh46OwsIkNOLjkXggr/02jk=';
+          https://cdn.jsdelivr.net;
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 
@@ -213,14 +204,28 @@ responseHeaders:
           https://www.google-analytics.com
           https://redoclyrozwmb.dataplane.rudderstack.com
           https://hubspot-forms-static-embed.s3.amazonaws.com
-          https://v.clarity.ms/collect;
+          https://v.clarity.ms/collect
+          https://cdn.jsdelivr.net;
         form-action 
-          'self'
-          https://forms.hsforms.com 
-          https://webhook.frontapp.com
-          https:;
-        style-src 'self' 'unsafe-inline'; 
+          'self' 
+          https://forms.hsforms.com
+          https://webhook.frontapp.com 
+          https:; 
+        style-src 
+          'self' 
+          'unsafe-inline' 
+          https://cdn.jsdelivr.net; 
+        worker-src 
+          'self' 
+          blob:; 
+        child-src 
+          'self' 
+          blob:; 
         img-src 'self' data: https: blob:;"
+      
+  '/preview':
+    - name: X-Frame-Options
+      value: SAMEORIGIN
 
 metadataGlobs:
   'blog/**':
