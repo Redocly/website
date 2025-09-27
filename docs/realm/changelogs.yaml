@@ -31855,10 +31855,3 @@ reunite:
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.2.0`.
     dependencies: {}
-  v2025-09-26.2:
-    timestamp: 1758912300000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.2.2`.
-    dependencies: {}
