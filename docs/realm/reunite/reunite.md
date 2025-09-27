@@ -102,13 +102,6 @@ By default, every page of your published project includes a feedback mechanism t
 Also, all code snippets by default include a report icon that users can click to report an error or issue with the code sample.
 These [feedback mechanisms can be configured in your `redocly.yaml` file](../config/feedback.md) and the data they collect can be viewed and exported on the **Feedback** page.
 
-## API registry
-
-The API registry is a list of all the API descriptions you have included in an API catalog.
-API catalogs are an organized way to present many APIs that can be filtered and searched.
-You can [configure an API catalog](../config/catalog-classic.md) by organizing your API descriptions and adding a configuration to your `redocly.yaml` file.
-You can view the Scorecard status, metadata, custom fields, and logs for each API description included in your catalog on the **API registry** page.
-
 ## Project settings
 
 Most aspects of your project are configured in your `redocly.yaml` configuration file, but a few things are configured in Reunite on the **Settings** page.

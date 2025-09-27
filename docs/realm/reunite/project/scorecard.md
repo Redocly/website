@@ -43,12 +43,6 @@ If you have an open pull request, you can access the same report by opening the 
   withLightbox=true
 /%}
 
-### Scorecard status in API registry
-
-The API description details on the **API Registry** page contains a summarized version of the scorecard reports.
-You can find this information by clicking an API.
-The summarized scorecard report is on the **Details** tab.
-
 ## Scorecard labels
 
 After you define scorecard levels and commit the changes, labels representing the scorecard levels display next to the names of your API descriptions in Reunite and on your published project.
