@@ -81,7 +81,6 @@
           label: Review pull requests
         - page: reunite/project/pull-request/manage-pull-requests.md
           label: Manage pull requests
-    # Missing content about the API registry
     - group: Respect Monitoring
       page: reunite/project/respect-monitoring/index.md
       items:
