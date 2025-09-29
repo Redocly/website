@@ -11,6 +11,8 @@
   label: Search a project
 - page: docs/end-user/interact-with-pages.md
   label: Interact with pages
+- page: docs/end-user/interact-with-walkthroughs.md
+  label: Interact with walkthroughs
 - page: docs/end-user/interact-with-api.md
   label: Interact with API documentation
 - page: docs/end-user/user-menu.md
