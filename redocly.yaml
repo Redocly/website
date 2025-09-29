@@ -189,7 +189,20 @@ responseHeaders:
           https://js.hscollectedforms.net
           https://js.hs-analytics.net
           https://js.hs-banner.com
-          https://cdn.jsdelivr.net;
+          https://cdn.jsdelivr.net
+          'sha256-M28mypAFwwpIwIF9e1/A6867PQiwVvOrdqFSTFSa8/U=' 
+          'sha256-Ed6Lei7deBSXT1iYYw0V36YZXaA4v7OsRknNjmNl/9c='
+          'sha256-uDN+KkW4ljf+D4DbsWP5KpxyfG/7h+LNmZxMzbz/+1E='
+          'sha256-9seBUu3uBabJT/26wJPQEjpi+FB2ayw9N8BnQJlh/ls='
+          'sha256-mqxawUgIH8vW3/GxWmOFDp5zt8IejNl5rNH2j9PXF88='
+          'sha256-wkSWDFufZapa7t3NvV+JhSRXHb/4CI3ZnaqCvg7byns='
+          'sha256-Tq4uREmlYInMCBRtudvmIOCc+VdyPNg3t18I9xtvdgs=' 
+          'sha256-/mLWo7as1uoH7YxKP28RczpTaAJYtZFOdU0Okz4RWRo=' 
+          'sha256-vHWNkFcRXsOiOWmmubySLtLeZ3xAubNJpC7UdmQgSQU=' 
+          'sha256-FHfozmosNdt5yUG9l8OmVM1S/oTxw2TNWHPejSjEr58='
+          'sha256-2VNfiq6Um2ua9MLfzend4JESqZeD1VSgkWvUrPvrlZE='
+          'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no='
+          'sha256-9qgU5FDrauEgF+e1iJWvsh46OwsIkNOLjkXggr/02jk=';
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 
