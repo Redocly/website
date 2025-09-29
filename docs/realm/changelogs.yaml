@@ -1,4 +1,21 @@
 '@redocly/realm':
+  0.126.0-next.14:
+    timestamp: 1759154216000
+    changes:
+      minor: []
+      patch:
+        - Added `icon` option to sidebar `separator`.
+        - Updated `@redocly/openapi-core` to version `2.2.2`.
+        - Fixed double prefixes in image URLs.
+        - >-
+          Fixed an issue where the OpenAPI download URLs did not work with the `output` property if the output path was in the `/static/_spec/`
+          directory.
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.10
+      '@redocly/theme': 0.58.0-next.7
+      '@redocly/asyncapi-docs': 1.3.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.10
+      '@redocly/graphql-docs': 1.3.0-next.1
   0.126.0-next.13:
     timestamp: 1758885593000
     changes:
@@ -4329,6 +4346,20 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.126.0-next.14:
+    timestamp: 1759154216000
+    changes:
+      minor: []
+      patch:
+        - Added `icon` option to sidebar `separator`.
+        - Updated `@redocly/openapi-core` to version `2.2.2`.
+        - Fixed double prefixes in image URLs.
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.10
+      '@redocly/theme': 0.58.0-next.7
+      '@redocly/asyncapi-docs': 1.3.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.10
+      '@redocly/graphql-docs': 1.3.0-next.1
   0.126.0-next.13:
     timestamp: 1758885593000
     changes:
@@ -7912,6 +7943,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.126.0-next.14:
+    timestamp: 1759154216000
+    changes:
+      minor: []
+      patch:
+        - Added `icon` option to sidebar `separator`.
+        - Updated `@redocly/openapi-core` to version `2.2.2`.
+        - Fixed double prefixes in image URLs.
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.10
+      '@redocly/theme': 0.58.0-next.7
+      '@redocly/asyncapi-docs': 1.3.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.10
+      '@redocly/graphql-docs': 1.3.0-next.1
   0.126.0-next.13:
     timestamp: 1758885593000
     changes:
@@ -11491,6 +11536,23 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.126.0-next.14:
+    timestamp: 1759154216000
+    changes:
+      minor: []
+      patch:
+        - Added `icon` option to sidebar `separator`.
+        - Updated `@redocly/openapi-core` to version `2.2.2`.
+        - Fixed double prefixes in image URLs.
+        - >-
+          Fixed an issue where the OpenAPI download URLs did not work with the `output` property if the output path was in the `/static/_spec/`
+          directory.
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.10
+      '@redocly/theme': 0.58.0-next.7
+      '@redocly/asyncapi-docs': 1.3.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.10
+      '@redocly/graphql-docs': 1.3.0-next.1
   0.126.0-next.13:
     timestamp: 1758885593000
     changes:
@@ -15070,6 +15132,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.58.0-next.7:
+    timestamp: 1759154216000
+    changes:
+      minor: []
+      patch:
+        - Added the OpenAPI `info` object to the `useConfigureReplay` context.
+    dependencies: {}
   0.58.0-next.6:
     timestamp: 1758885593000
     changes:
@@ -17314,6 +17383,15 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.14.0-next.10:
+    timestamp: 1759154216000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.2.2`.
+        - Added the OpenAPI `info` object to the `useConfigureReplay` context.
+    dependencies:
+      '@redocly/replay': 0.17.0-next.10
   3.14.0-next.9:
     timestamp: 1758885593000
     changes:
@@ -21165,6 +21243,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.9.0-next.14:
+    timestamp: 1759154216000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.0-next.14
+      '@redocly/redoc': 0.126.0-next.14
+      '@redocly/redoc-reef': 0.126.0-next.14
+      '@redocly/redoc-revel': 0.126.0-next.14
+      '@redocly/theme': 0.58.0-next.7
   1.9.0-next.13:
     timestamp: 1758885593000
     changes:
@@ -25080,6 +25169,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.11.0-next.10:
+    timestamp: 1759154216000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.10
   0.11.0-next.9:
     timestamp: 1758885593000
     changes:
@@ -27235,6 +27331,14 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.17.0-next.10:
+    timestamp: 1759154216000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.2.2`.
+    dependencies:
+      '@redocly/theme': 0.58.0-next.7
   0.17.0-next.9:
     timestamp: 1758885593000
     changes:
@@ -28517,6 +28621,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.9.0-next.7:
+    timestamp: 1759154216000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.7
   0.9.0-next.6:
     timestamp: 1758885593000
     changes:
@@ -29735,6 +29846,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.3.0-next.10:
+    timestamp: 1759154216000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.10
+      '@redocly/theme': 0.58.0-next.7
   1.3.0-next.9:
     timestamp: 1758885593000
     changes:
@@ -31861,4 +31980,11 @@ reunite:
       minor: []
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.2.0`.
+    dependencies: {}
+  v2025-09-29.1:
+    timestamp: 1759152571000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.2.2`.
     dependencies: {}
