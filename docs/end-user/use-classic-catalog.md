@@ -27,7 +27,8 @@ The catalog displays only the APIs that contain your search phrase in the title 
 
 ### Filter APIs by tags
 
-The classic catalog uses tags defined in API description files to categorize APIs in your project.
+The classic catalog uses tags to categorize APIs in your project.
+These tags are defined in the project's metadata and API description files' `x-metadata` extension.
 In the **Filters** panel, these tags are grouped into categories and displayed as drop-down lists or checkboxes.
 
 To filter APIs using tags:
