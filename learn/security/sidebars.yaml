@@ -1,6 +1,6 @@
 - page: ./index.md
 - group: API Security Fundamentals
-  pages:
+  items:
     - page: ./api-tls-encryption-https-best-practices.md
     - page: ./api-input-validation-injection-prevention.md  
     - page: ./api-rate-limiting-abuse-prevention.md
