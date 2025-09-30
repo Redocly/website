@@ -6,6 +6,12 @@ For example, things like typography, colors, and spacing.
 The core theme is built using [CSS variables](./css-variables/index.md).
 You can override those variables to add custom styling while benefiting from the theme's existing structure.
 
+## Before you begin
+
+Make sure you have the following before you begin:
+
+- A new Realm, Reef, or Revel project updated to the latest version
+
 ## Create a theme stylesheet
 
 You need a `@theme/styles.css` file to customize the styling of your project.
@@ -203,18 +209,10 @@ The following screenshots show the styling rules applied:
 
 {% tabs %}
   {% tab label="Light mode"%}
-   {% img
-    src="./images/full-corporate-light.jpeg"
-    alt="Screenshot of Redocly project with the full corporate styling example applied in light mode."
-    withLightbox=true
-   /%}
+   ![Screenshot of Redocly project with the full corporate styling example applied in light mode.](./images/full-corporate-light.jpeg)
   {% /tab %}
   {% tab label="Dark mode"%}
-   {% img
-    src="./images/full-corporate-dark.jpeg"
-    alt="Screenshot of Redocly project with the full corporate styling example applied in dark mode."
-    withLightbox=true
-   /%}
+   ![Screenshot of Redocly project with the full corporate styling example applied in dark mode.](./images/full-corporate-dark.jpeg)
   {% /tab %}
 {% /tabs %}
 
@@ -264,18 +262,10 @@ The following screenshots show the styling rules applied:
 
 {% tabs %}
   {% tab label="Light mode"%}
-   {% img
-    src="./images/trendy-startup-light.jpeg"
-    alt="Screenshot of Redocly project with the trendy startup styling example applied in light mode."
-    withLightbox=true
-   /%}
+   ![Screenshot of Redocly project with the trendy startup styling example applied in light mode.](./images/trendy-startup-light.jpeg)
   {% /tab %}
   {% tab label="Dark mode"%}
-   {% img
-    src="./images/trendy-startup-dark.jpeg"
-    alt="Screenshot of Redocly project with the trendy startup styling example applied in dark mode."
-    withLightbox=true
-   /%}
+   ![Screenshot of Redocly project with the trendy startup styling example applied in dark mode.](./images/trendy-startup-dark.jpeg)
   {% /tab %}
 {% /tabs %}
 
@@ -343,18 +333,10 @@ The following screenshots show the styling rules applied:
 
 {% tabs %}
   {% tab label="Light mode"%}
-   {% img
-    src="./images/personal-wellness-light.jpeg"
-    alt="Screenshot of Redocly project with the personal wellness styling example applied in light mode."
-    withLightbox=true
-   /%}
+   ![Screenshot of Redocly project with the personal wellness styling example applied in light mode.](./images/personal-wellness-light.jpeg)
   {% /tab %}
   {% tab label="Dark mode"%}
-   {% img
-    src="./images/personal-wellness-dark.jpeg"
-    alt="Screenshot of Redocly project with the personal wellness styling example applied in dark mode."
-    withLightbox=true
-   /%}
+   ![Screenshot of Redocly project with the personal wellness styling example applied in dark mode.](./images/personal-wellness-dark.jpeg)
   {% /tab %}
 {% /tabs %}
 

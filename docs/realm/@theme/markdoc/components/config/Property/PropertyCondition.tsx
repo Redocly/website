@@ -33,6 +33,7 @@ const UpgradeBadge = styled(Badge)`
     display: flex;
     align-items: center;
     gap: 4px;
+    line-height: 1.5;
 
     svg {
         display: block;

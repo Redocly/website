@@ -47,22 +47,14 @@ openapi:
   layout: 'stacked'
 ```
 
-{% img
-  src="../images/stacked-layout.png"
-  alt="Screnshot of API documentation in stacked layout"
-  withLightbox=true
-/%}
+![stacked layout](../images/stacked-layout.png)
 
 ```yaml {% title="redocly.yaml" %}
 openapi:
   layout: 'three-panel'
 ```
 
-{% img
-  src="../images/three-panel-layout.png"
-  alt="Screenshot of API documentation in a three panel layout"
-  withLightbox=true
-/%}
+![three panel layout](../images/three-panel-layout.png)
 
 ## Resources
 

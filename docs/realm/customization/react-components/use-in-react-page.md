@@ -41,11 +41,7 @@ export default function () {
 
 ### Rendered output
 
-{% img
-  src="./images/directly-on-page.png"
-  alt="Screenshot of admonition used directly in a page"
-  withLightbox=true
-/%}
+![directly](./images/directly-on-page.png)
 
 ## Use components inside a custom wrapper
 
@@ -118,11 +114,7 @@ export default function () {
 
 ### Rendered output
 
-{% img
-  src="./images/custom-component.png"
-  alt="Screenshot of admonition used as a custom component"
-  withLightbox=true
-/%}
+![component](./images/custom-component.png)
 
 ## Resources
 

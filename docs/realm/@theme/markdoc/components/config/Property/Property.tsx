@@ -22,10 +22,14 @@ function normalizeFileKey(p: string): string {
 
 function fileToSlug(file: string): string {
   const key = normalizeFileKey(file);
+  // expect paths like 'config/x.md' or 'config/x/index.md'
   let p = key.replace(/\.md$/, '');
   p = p.replace(/\/index$/, '');
-  p = `${window.location.pathname.replace(/\/$/, '')}/${p}`;
-  return p;
+  if (!p.startsWith('config/')) {
+    // assume config root if omitted
+    p = 'config/' + p.replace(/^\/?/, '');
+  }
+  return '/' + p + '/';
 }
 
 async function loadFromPageData(file: string): Promise<PropertyManifestItem | null> {
@@ -129,12 +133,11 @@ export function ConfigProperty({ file }: ConfigPropertyProps): React.ReactElemen
 }
 
 const PropertyItem = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: block;
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.2s ease;
-  gap: 4px;
+  margin: 0 0 16px 0;
 `;
 
 const PropertyTitleContainer = styled.div`
@@ -142,16 +145,17 @@ const PropertyTitleContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+  margin: 0 0 8px 0;
 `;
 
 const PropertyTitle = styled.a`
-  font-size: var(--font-size-lg);
+  font-weight: 400;
+  font-size: 18px;
   color: var(--link-color-primary);
 `;
 
 const PropertyDescription = styled.p`
-  line-height: var(--line-height-base);
-  color: var(--text-color-secondary);
-  font-size: var(--font-size-base);
-  margin: 0 !important;
+  line-height: 1.4;
+  color: var(--text-color-secondary, #3b3c45);
+  margin: 0;
 `;

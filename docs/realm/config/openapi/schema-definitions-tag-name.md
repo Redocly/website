@@ -42,11 +42,7 @@ openapi:
 
 Using the Museum API as an example, all the schemas are shown in the section called "Schemas" at the bottom of the navigation menu:
 
-{% img
-  src="../images/schema-definitions-tag-name.png"
-  alt="Screenshot of API documentation with schemaDefinitionsTagName defined as \"Schemas\""
-  withLightbox=true
-/%}
+![schemaDefinitionsTagName](../images/schema-definitions-tag-name.png)
 
 ## Resources
 

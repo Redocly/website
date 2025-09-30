@@ -4,9 +4,11 @@ If you disabled [Auto-sync](./remote-content.md#auto-sync-and-auto-merge) for yo
 
 ## Before you begin
 
-Make sure you have the following:
+Make sure you have the following before you begin:
 
+- a project in your organization in Reunite
 - an existing remote content folder
+- at least the [member](../../../access/roles.md#organization-roles) role for the Organization your project has been created in
 
 ## Manually sync remote content folders
 
@@ -17,11 +19,7 @@ To manually sync remote content folders:
 1. From the file tree of the editor, right-click the folder with remote content (remote content folders have a cloud icon), then click **Sync**. \
    OR \
    From the Remote content page, click the additional options menu on the far right side of the table on the remote content folder row, then click **Sync**. \
-  {% img
-    src="../../images/reunite-remote-content-options.png"
-    alt="Open options menu on Reunite's Remote content page"
-    withLightbox=true
-  /%} \
+  ![Open options menu on Reunite's Remote content page](../../images/reunite-remote-content-options.png) \
     A window opens with the branch chosen during the remote folder setup, and the following information on the last commit to that branch:
       - the commit message
       - the user who made commit

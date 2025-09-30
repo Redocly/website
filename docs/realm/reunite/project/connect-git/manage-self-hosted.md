@@ -8,9 +8,9 @@ Currently Reunite supports 2 types of self-hosted providers: GitLab self-managed
 
 ## Before you begin
 
-Make sure you have the following:
+Make sure you have the following before you begin:
 
-- an OWNER role in your Reunite organization
+- You must have an OWNER role in your Reunite organization.
 
 ## Add a self-hosted Git provider
 

@@ -31,6 +31,7 @@ rbac:
       anonymous: read
       authenticated: read
     'static/**':
+      anonymous: none
       authenticated: read
 ```
 

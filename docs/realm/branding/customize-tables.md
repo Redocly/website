@@ -7,10 +7,9 @@ Redocly supports tables written in both Markdown and Markdoc syntax.
 
 ## Before you begin
 
-Make sure you have the following:
-
-- basic CSS knowledge
-- a `@theme/styles.css` file in your project
+You'll need:
+- Basic CSS knowledge
+- A Realm, Reef, or Revel project with a `@theme/styles.css` file
 
 ## Table styling basics
 

@@ -80,16 +80,8 @@ From this example the `Redocly as Remockly` blog post will use custom template l
 
 **One column template with metadata above main content**
 
-{% img
-  src="./images/one-column-blog-post-template.png"
-  alt="Screenshot of one column blog post template"
-  withLightbox=true
-/%}
+![one column blog post template](./images/one-column-blog-post-template.png)
 
 **Two columns template with metadata on the right**
 
-{% img
-  src="./images/two-columns-blog-post-template.png"
-  alt="Screenshot of two columns blog post template"
-  withLightbox=true
-/%}
+![two columns blog post template](./images/two-columns-blog-post-template.png)

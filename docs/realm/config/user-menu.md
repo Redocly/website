@@ -18,11 +18,7 @@ description: Set the visibility of the user menu in your project.
 The user menu is displayed in the far right side of the navbar.
 Users can click the user avatar and a dropdown menu displays with the avatar, the user's email address, links to pages you can configure, and a log out option.
 
-{% img
-  src="./images/user-menu.png"
-  alt="Screenshot of the user menu with the dropdown displayed"
-  withLightbox=true
-/%}
+![Screenshot of the user menu with the dropdown displayed](./images/user-menu.png)
 
 {% admonition type="info" %}
 
