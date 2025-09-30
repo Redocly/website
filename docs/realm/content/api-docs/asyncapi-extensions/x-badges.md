@@ -82,7 +82,11 @@ channels:
       driverRating:
         $ref: '#/components/messages/driverRating'
 ```
-![Image of sample AsyncAPI definition with badges displayed](./images/asyncapi-x-badges.png)
+{% img
+  src="./images/asyncapi-x-badges.png"
+  alt="Image of sample AsyncAPI definition with badges displayed"
+  withLightbox=true
+/%}
 
 ## Resources
 

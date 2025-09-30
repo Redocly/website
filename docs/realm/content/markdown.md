@@ -198,7 +198,7 @@ Learn more about [admonitions](./markdoc-tags/admonition.md) and [cards](./markd
 Enhanced image display with sizing, lightbox, and captions:
 
 ```markdoc {% process=false %}
-{% img src="./images/screenshot.png" alt="Application screenshot" width="400" lightbox=true %}
+{% img src="./images/screenshot.png" alt="Application screenshot" width="400" withLightbox=true %}
 A screenshot showing the main application interface.
 {% /img %}
 ```

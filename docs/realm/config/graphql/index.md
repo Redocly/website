@@ -55,6 +55,18 @@ Requires a GraphQL schema.
 - [Feedback object](../feedback.md#options)
 - Hide or customize the type of or text included in the feedback form that displays at the end of each endpoint.
 
+---
+
+- [showBuiltInScalars](./show-built-in-scalars.md)
+- boolean
+- Show GraphQL built-in scalar types in the navigation and pages.
+
+---
+
+- [showBuiltInDirectives](./show-built-in-directives.md)
+- boolean
+- Show GraphQL built-in directives in the navigation and pages.
+
 {% /table %}
 
 ## Resources

@@ -12,7 +12,7 @@ To be recognized, the specification files must have a `.wsdl` extension.
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
 - a `redocly.yaml` file in the root of your project
 - a `package.json` file in the root of your project

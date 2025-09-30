@@ -28,8 +28,6 @@ The parties agree as follows:
 
 "EU Data Protection Law" means (i) Regulation 2016/679 of the European Parliament and of the Council on the protection of natural persons with regard to the processing of Personal Data and on the free movement of such data (General Data Protection Regulation) ("EU GDPR"); (ii) the EU GDPR as it forms part of the law of England and Wales, Scotland and Northern Ireland by virtue of section 3 of the European Union (Withdrawal) Act 2018 (the “UK GDPR”);and (iii) Directive 2002/58/EC concerning the processing of Personal Data and the protection of privacy in the electronic communications sector; (iv) the UK Privacy and Electronic Communications (EC Directive) Regulations 2003, and their applicable national implementations (in each case, as may be amended, superseded or replaced).
 
-"EU Data Protection Law" means (i) Regulation 2016/679 of the European Parliament and of the Council on the protection of natural persons with regard to the processing of Personal Data and on the free movement of such data (General Data Protection Regulation) ("GDPR"); and (ii) Directive 2002/58/EC concerning the processing of Personal Data and the protection of privacy in the electronic communications sector, and applicable national implementations of (i) and (ii) (in each case, as may be amended, superseded or replaced).
-
 “EU SCCs” means the Standard Contractual Clauses approved with Commission Implementing Decision (EU) 2021/914 of June 4, 2021 on standard contractual clauses for the transfer of personal data to third countries pursuant to Regulation (EU) 2016/679 of the European Parliament and of the Council, as amended, supplemented, updated or replaced from time to time
 
 "Group" means any and all Affiliates that are part of an entity's corporate group.
@@ -319,5 +317,9 @@ Render data on electronic media unrecoverable so that data cannot be reconstruct
 #### Audit
 
 - Ensure that Redocly is compliant with any applicable regulations such as GDPR, CCPA, or other privacy regulations.
-- External audit for SOC 2 Type 2 annually.
-- Initiate regular ISO 27001 audit by Dec 1, 2023.
+- Redocly maintains the following security and privacy certifications:
+  - SOC 2 Type 2 (with annual audits)
+  - ISO 27001 (Information Security Management)
+  - ISO 27017 (Cloud Security)
+  - ISO 27018 (Protection of Personal Data in the Cloud)
+- Regular audit renewals and continuous compliance monitoring for all certifications.

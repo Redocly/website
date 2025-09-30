@@ -53,7 +53,6 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 ---
 
-
 - jobs
 - [[Jobs object](#jobs-object)]
 - Defines jobs based on Arazzo Descriptions in your project that can be used to monitor the performance of your APIs by referencing OpenAPI Descriptions in your project.

@@ -46,10 +46,10 @@ To prevent Okta from changing users' roles to the default organization role spec
 
 Group attributes enable role-based access control (RBAC) by passing Okta group memberships to Redocly.
 
-1. In the **Attribute Statements** section of your Okta SAML app:
-   - **Name**: Enter `redocly.com/sso/teams`
+1. In the **Group Attribute Statements** section of your Okta SAML app:
+   - **Name**: Enter `https://redocly.com/sso/teams`
    - **Name format**: Select **URI Reference**
-   - **Value**: Enter `getFilteredGroups(group.name, "redocly.", 40)`
+   - **Filter**: Enter `redocly.`
 1. This filter passes all groups that start with "redocly." to Redocly.
 1. Click **Next**.
 1. Select **This is an internal app that we have created**.

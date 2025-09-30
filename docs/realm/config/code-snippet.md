@@ -33,7 +33,11 @@ Markdown code snippets include a report and copy icon in the top right corner.
 In OpenAPI reference documentation, code snippets are generated based on the information in the description.
 The following is an example of a request and response code snippet in OpenAPI reference documentation:
 
-![Screenshot of a request and response in OpenAPI reference documentation](./images/openapi-code-snippet.png)
+{% img
+  src="./images/openapi-code-snippet.png"
+  alt="Screenshot of a request and response in OpenAPI reference documentation"
+  withLightbox=true
+/%}
 
 OpenAPI reference documentation code snippets include report, copy, and expand and collapse icons in the top right corner.
 
