@@ -5,6 +5,9 @@ export const frontmatter = {
     title: 'Redocly Editor',
   },
   slug: '/editor',
+  footer: {
+    hide: true,
+  },
 };
 
 export default Page;
