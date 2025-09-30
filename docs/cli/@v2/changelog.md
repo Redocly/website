@@ -7,6 +7,38 @@ toc:
 
 <!-- do-not-remove -->
 
+## 2.2.2 (2025-09-26)
+
+### Patch Changes
+
+- Resolved an issue with CLI dependencies to ensure proper package resolution.
+- Updated @redocly/openapi-core to v2.2.2.
+
+## 2.2.1 (2025-09-25)
+
+### Patch Changes
+
+- Fixed an issue where the `remove-unused-components` decorator was not functioning when configured at the API level.
+- Updated @redocly/openapi-core to v2.2.1.
+
+## 2.2.0 (2025-09-23)
+
+### Minor Changes
+
+- Adjusted the calculation of Respect's workflow-level `totalTimeMs` to sum the network request times of all steps.
+
+### Patch Changes
+
+- Updated @redocly/respect-core to v2.2.0.
+
+## 2.1.5 (2025-09-19)
+
+### Patch Changes
+
+- Improved the message format for Respect's `status code check`.
+- Fixed handling of input parameters when invoking step target workflows in Respect.
+- Updated @redocly/respect-core to v2.1.5.
+
 ## 2.1.4 (2025-09-17)
 
 ### Patch Changes

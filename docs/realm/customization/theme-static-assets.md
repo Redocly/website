@@ -5,11 +5,11 @@ This guide shows you how to use static assets in a theme when you add the files 
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- Check for `@theme` folder. Add one if missing
-- `@redocly/realm` installed in project
-- Familiarity with CSS and React
+- an `@theme` folder in your project
+- `@redocly/realm` installed in the project
+- familiarity with CSS and React
 
 ## Use theme assets in CSS
 

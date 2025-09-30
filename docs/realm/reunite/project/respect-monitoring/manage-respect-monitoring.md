@@ -16,11 +16,11 @@ You can also archive old workflows, so they do not clutter the Respect Monitorin
 Make sure you have the following before you begin:
 
 - Realm [owner organization role](../../../access/roles.md)
-- If you are configuring Slack notifications:
+- an [Arazzo description file](https://spec.openapis.org/arazzo/latest.html) in project
+- a [`job`](../../../config/reunite.md#jobs-object) configuration in your `redocly.yaml` file
+- if you are configuring Slack notifications:
   - Slack Workspace owner permissions
-  - The name of the public channel you plan to use
-- [Arazzo Description](https://spec.openapis.org/arazzo/latest.html) in project
-- A [`job`](../../../config/reunite.md#jobs-object) configuration in your `redocly.yaml` file
+  - the name of the public channel you plan to use
 
 ## Subscribe to notifications
 

@@ -76,4 +76,5 @@ To clear all filters, in the top-right corner of **Advanced filters**, click **R
 ## Resources
 
 - [Navigate the project](./navigate-project.md)
+- [User menu](./user-menu.md)
 - Explore other ways you can interact with the [user interface](./index.md)

@@ -6,7 +6,11 @@ To create a new branch:
 
 1. From the Reunite editor, click the name of the current branch at the top of the page.
 
-   ![Screenshot where current branch is on project page](./images/current-branch.png)
+   {% img
+    src="./images/current-branch.png"
+    alt="Screenshot where current branch is on project page"
+    withLightbox=true
+   /%}
 
 2. Enter the name for your new branch, for example `new-dev-branch`, and select **Create branch**.
 

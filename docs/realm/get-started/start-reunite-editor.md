@@ -5,12 +5,12 @@ This guide shows you how to create your first project, add content, customize na
 
 ## Before you begin
 
-Before you begin, you need:
+Make sure you have the following:
 
-- A [Redocly account with an organization](https://auth.cloud.redocly.com/registration).
-- A project using the **Starter** template in your Reunite organization.
+- a [Redocly account with an organization](https://auth.cloud.redocly.com/registration)
+- a project that uses the **Starter** template in your Reunite organization
 
-  See [Create a project](../reunite/project/manage-projects.md#create-a-project) for instructions on creating a project.
+  See: [Create a project](../reunite/project/manage-projects.md#create-a-project) for instructions on creating a project.
 
 ## Create a branch
 
@@ -61,7 +61,11 @@ Preview how your changes look in a sample build before publishing to production.
 
 The Webview pane shows formatting updates to ensure they render correctly before you publish.
 
-![Screenshot of Webview preview pane](./images/webview-preview.png)
+{% img
+  src="./images/webview-preview.png"
+  alt="Screenshot of Webview preview pane"
+  withLightbox=true
+/%}
 
 Change the view to meet your needs, such as seeing how the landing page renders on mobile screens.
 See [Use the Webview](../reunite/project/use-webview.md) to learn more about the options you have when using this webview pane.
@@ -104,7 +108,11 @@ To see a preview build of your project:<a id="commit-steps"></a>
 3. Click the **Preview** button in the top right corner of the page.
    You might need to wait until the deployment completes before you can access the preview deployment,
    otherwise you will be redirected to the deployment details page.
-   ![Screenshot of preview drop-down with Preview branch selected](./images/view-preview-branch.png)
+   {% img
+    src="./images/view-preview-branch.png"
+    alt="Screenshot of preview drop-down with Preview branch selected"
+    withLightbox=true
+   /%}
 
 A deployment preview of the project with your changes opens in a separate browser window.
 
@@ -124,7 +132,12 @@ To create a new Markdown file:
 
 1. Click the **+** icon in the top right corner of the file tree in your editor.
 
-   ![Screenshot of the plus icon selected and displaying the dropdown menu](./images/add-new-file.png)
+   {% img
+    src="./images/add-new-file.png"
+    alt="Screenshot of the plus icon selected and displaying the dropdown menu"
+    withLightbox=true
+   /%}
+
 2. Select **New file**.
 3. Enter the file name into the text field and press `return` or `enter` on your keyboard.
 
@@ -142,7 +155,11 @@ Add your own content to the Markdown files or use the following example content:
 
 {% admonition type="success" name="Tip" %}
 You can turn on word wrap in the editor by selecting the **More actions** menu in the top right corner of the editing pane and selecting **Word wrap**.
-![Screenshot showing word wrap option in the editor in Reunite](./images/word-wrap.png)
+{% img
+  src="./images/word-wrap.png"
+  alt="Screenshot showing word wrap option in the editor in Reunite"
+  withLightbox=true
+/%}
 {% /admonition %}
 
 ## Customize the sidebar navigation
@@ -153,7 +170,11 @@ This generated sidebar is based on the file structure of your project and requir
 {% admonition type="info" name="Where is the sidebar?" %}
 The sidebar navigation menu usually displays on the left side of the page in the Webview; however, when the Webview pane is a small width, it is hidden under a slide drawer menu icon that displays in the top right of the Webview pane.
 
-![Screenshot that shows the slide drawer icon in the top right corner of the Webview panel](./images/slide-drawer-icon.png)
+{% img
+  src="./images/slide-drawer-icon.png"
+  alt="Screenshot that shows the slide drawer icon in the top right corner of the Webview panel"
+  withLightbox=true
+/%}
 {% /admonition %}
 
 To customize the sidebar navigation for your project, you need to add and configure a new file named `sidebars.yaml` to the root of your project.
@@ -167,7 +188,11 @@ It must be named `sidebars.yaml`.
 To add a `sidebars.yaml` file to your project:
 
 1. Click the **+** icon in the top right corner of the file tree in your editor.\
-   ![Screenshot of the plus icon selected and displaying the dropdown menu](./images/add-new-file.png)
+   {% img
+    src="./images/add-new-file.png"
+    alt="Screenshot of the plus icon selected and displaying the dropdown menu"
+    withLightbox=true
+   /%}
 2. Select **New file**.
 3. Enter the `sidebars.yaml` as the file name into the text field and press `return` or `enter` on your keyboard.
 
@@ -223,7 +248,11 @@ For the following steps, you can use your own image or download the following sa
     4. Select where you want to save the image.
     5. Click **Save**.
 
-  ![Redocly logo](./images/logo.png)
+  {% img
+    src="./images/logo.png"
+    alt="Redocly logo"
+    withLightbox=true
+  /%}
 </details>
 
 To add an image file to your project, drag the logo image file from where it is located on your computer and drop it into your `index.md` file.
@@ -260,7 +289,11 @@ Create a `@theme/styles.css` file to override the default styling.
 
 1. Click the **+** icon in the top right corner of the file tree.
 
-   ![Screenshot of the plus icon selected and displaying the dropdown menu](./images/add-new-folder.png)
+   {% img
+    src="./images/add-new-folder.png"
+    alt="Screenshot of the plus icon selected and displaying the dropdown menu"
+    withLightbox=true
+   /%}
 2. Select **New folder**.
 3. Enter `@theme` and press `return`.
 
@@ -283,7 +316,11 @@ Add the following to your `styles.css` file to change the heading color:
 Use hexadecimal codes, rgba values, or HTML color names.
 The editor includes a color picker when you hover over color values.
 
-![Screenshot of the color picker tool in the Reunite editor](./images/color-picker.png)
+{% img
+  src="./images/color-picker.png"
+  alt="Screenshot of the color picker tool in the Reunite editor"
+  withLightbox=true
+/%}
 
 The headings' color updates immediately in the live webview pane.
 If you don't see your changes, try restarting Webview by clicking the [Reload](../reunite/project/use-webview.md#reload) button.
