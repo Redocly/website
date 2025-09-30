@@ -31,6 +31,57 @@ If you are working in Reunite, you can install the library by adding it to the `
 Follow the steps in [Run a specific version in Reunite](../get-started/upgrade-realm-version.md#run-a-specific-version-in-reunite)
 to create a `package.json` file if you don't have one already.
 
+## Configure private registries
+
+If you need to install libraries from private NPM registries (such as Artifactory, AWS CodeArtifact, or GitHub Packages), you can configure registry access using either `.npmrc` or `bunfig.toml` files.
+
+### Use `.npmrc`
+
+Create a `.npmrc` file in your project root:
+
+```text
+@myorg:registry=https://registry.myorg.com/
+//registry.myorg.com/:_authToken=${NPM_TOKEN}
+```
+
+### Use `bunfig.toml` (recommended)
+
+For enhanced flexibility, create a `bunfig.toml` file in your project root:
+
+```toml
+[install.scopes]
+# Using environment variables for credentials
+"@myorg" = { token = "$NPM_TOKEN", url = "https://registry.myorg.com/" }
+
+# Alternative with username/password
+"@mycompany" = {
+  username = "$NPM_USERNAME",
+  password = "$NPM_PASSWORD",
+  url = "https://registry.mycompany.com/"
+}
+```
+
+### Secure credential management
+
+{% admonition type="warning" %}
+Never commit registry credentials directly to your repository.
+Always use environment variables for sensitive information like tokens, usernames, and passwords.
+{% /admonition %}
+
+Store your registry credentials as environment variables:
+
+- For local development, add them to your `.env` file (do not commit secrets to Git):
+   ```text
+   NPM_TOKEN=your-private-token-here
+   NPM_USERNAME=your-username
+   NPM_PASSWORD=your-password
+   ```
+
+- For Reunite projects, add them through the **Settings** > **Environment variables** page and mark them as secrets.
+  Reunite supports environment variable names that start with `NPM_` for private package registries.
+
+For more information about managing environment variables, see **[Environment variables](../reunite/project/env-variables.md)**.
+
 ## Import and use components
 
 After installation, you can import components directly in your React files, as in the following example:
@@ -110,5 +161,6 @@ You can use the icon component in your Markdoc files, as in the following exampl
 
 ## Resources
 
+- **[Environment variables](../reunite/project/env-variables.md)** - Configure secure credentials for private registry access using environment variables
 - **[Build custom Markdoc tags](./build-markdoc-tags.md)** - Create reusable Markdoc components using imported NPM libraries for enhanced functionality
 - **[Built-in icon components](../content/markdoc-tags/icon.md)** - Use Redocly's built-in icon system and learn patterns for extending it with external icon libraries

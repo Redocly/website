@@ -92,7 +92,11 @@ paths:
                   $ref: '#/components/examples/GetSpecialEventResponseExample'
 ```
 
-![Image of sample OpenAPI definition with badges displayed](../../images/x-badges.png)
+{% img
+  src="../../images/x-badges.png"
+  alt="Image of sample OpenAPI definition with badges displayed"
+  withLightbox=true
+/%}
 
 ## Resources
 

@@ -11,28 +11,33 @@ After selecting a specific pull request you can complete the following tasks:
 
 You can also [review a pull request](./review-pull-request.md), if you are not the pull request author.
 
-## Before you begin
-
-Make sure you have the following before you begin:
-
-- a [project](../projects.md) in Reunite
-- the [member or the owner role](../../../access/roles.md#organization-roles) in the organization for your project
-
 ## View a pull request
 
 To view a pull request you can either click the **View pull request** button next to the branch name in the editor, or navigate to the **Pull requests** page and select it from the open pull requests list, which displays by default.
 
-![Screenshot of Reunite with arrow pointing to View pull request button](../../../get-started/images/view-pull-request.png)
+{% img
+  src="../../../get-started/images/view-pull-request.png"
+  alt="Screenshot of Reunite with arrow pointing to View pull request button"
+  withLightbox=true
+/%}
 
 To view closed pull requests, click the **Closed** side of the toggle.
 
-![Screenshot of Reunite with arrow pointing to Closed toggle](../../images/closed-toggle.png)
+{% img
+  src="../../images/closed-toggle.png"
+  alt="Screenshot of Reunite with arrow pointing to Closed toggle"
+  withLightbox=true
+/%}
 
 Selecting a pull request opens the **Activity** tab for that pull request.
 The **Activity** tab of the pull request includes the pull request's title, description, and all the commits with commit messages, hashes, and who made them and when.
 You can click on the commit hashes to see the changes introduced with that commit.
 
-![Screenshot of pull request in Reunite with arrows pointing to commit hash links](../../images/commit-hashes.png)
+{% img
+  src="../../images/commit-hashes.png"
+  alt="Screenshot of pull request in Reunite with arrows pointing to commit hash links"
+  withLightbox=true
+/%}
 
 After you create a pull request in Reunite, it is still in draft form.
 You need to edit the title and description, update the state, and assign reviewers.
@@ -72,7 +77,11 @@ After making your changes to the title, click **Save**.
 
 To edit the description of a pull request, click the more options dropdown menu and select **Edit**.
 
-![Screenshot of pull request in Reunite with an arrow pointing to the more options dropdown icon](../../images/edit-description.png)
+{% img
+  src="../../images/edit-description.png"
+  alt="Screenshot of pull request in Reunite with an arrow pointing to the more options dropdown icon"
+  withLightbox=true
+/%}
 
 You can use the toolbar at the top of the text field to format your description text, add links, or images.
 You can also copy a link to a pull request that you can share with a reviewer by selecting **Copy link** from the more options drop down menu.
@@ -86,7 +95,11 @@ By default, pull requests are opened in a draft state.
 Draft pull requests can be closed, but not merged until you click **Ready for review**.
 When you are ready for others to review your changes, click the **Ready for review** button and assign reviewers.
 
-![Screenshot of pull request in Reunite with an arrow pointing to the Ready for review button](../../images/ready-for-review.png)
+{% img
+  src="../../images/ready-for-review.png"
+  alt="Screenshot of pull request in Reunite with an arrow pointing to the Ready for review button"
+  withLightbox=true
+/%}
 
 ## Assign reviewers
 
@@ -95,13 +108,16 @@ When you assign reviewers to your pull request they are sent notification emails
 
 To assign reviewers to a pull request, click the pencil icon next to **Reviewers** on the right side of the page, and select from the list of reviewers, or enter the reviewer's name if the list is long and you can't see the reviewer you want to select.
 
-![Screenshot of pull request in Reunite with arrow pointing to the pencil icon next to Reviewers](../../images/assign-reviewers.png)
+{% img
+  src="../../images/assign-reviewers.png"
+  alt="Screenshot of pull request in Reunite with arrow pointing to the pencil icon next to Reviewers"
+  withLightbox=true
+/%}
 
 If the reviewer is not currently a member of the organization, you can select **Invite member** if you have the [permissions to invite users](../../../access/roles.md#organization-roles) to your organization.
 
 ## Resources
 
 - **[Using the editor](../use-editor.md)** - Create and edit content in Markdown and Markdoc with Reunite's integrated collaborative editing environment
-- **[Switch between projects](../switch-between-projects.md)** - Navigate between multiple projects efficiently when managing pull requests across different documentation sets
 - **[Reunite platform features](../../reunite.md)** - Explore Reunite's comprehensive collaborative content management and workflow automation capabilities
 - **[Reunite configuration reference](../../../config/reunite.md)** - Configure deployment options to publish builds even when they contain broken links or validation issues

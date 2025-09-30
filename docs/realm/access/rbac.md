@@ -63,14 +63,12 @@ The following is an example of a `rbac` configuration in a `redocly.yaml` file:
 ```yaml
 rbac:
   reunite:
-    anonymous: none
     authenticated: read
     Admins: admin
     Developers: maintain
     Writers: write
   content:
     '**':
-      anonymous: none
       authenticated: read
       Admins: admin
       Developers: maintain

@@ -154,6 +154,14 @@ description: |-
 
 ---
 
+- [showSchemaCatalogLinks](./show-schema-catalog-links.md)
+- boolean
+- Displays links to schemas and requests on an OpenAPI page.
+  These links can be used as `$ref` value in other OpenAPI files within the same project.
+  Default value: `false`.
+
+---
+
 - [sortRequiredPropsFirst](./sort-required-props-first.md)
 - boolean
 - Sorts schema properties to display required properties first.
