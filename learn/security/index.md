@@ -1,4 +1,12 @@
-# API Security by Design: Complete Guide
+---
+title: API Security by Design: Framework and Fundamentals
+description: Build secure APIs from the ground up using OpenAPI security contracts and automated governance.
+seo:
+  title: API Security by Design: Framework and Fundamentals
+  description: Build secure APIs from the ground up using OpenAPI security contracts and automated governance.
+---
+
+# API Security by Design: Framework and Fundamentals
 
 _Build secure APIs from the ground up using OpenAPI security contracts and automated governance._
 
