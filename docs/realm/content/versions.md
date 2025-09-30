@@ -8,7 +8,11 @@ When you access content inside a version subfolder, a version picker is displaye
 The version picker enables users to select which version of content to display.
 The sidebar reflects the changes in files and filenames when you switch between versions.
 
-![Screenshot of a version picker interface with Version 1 highlighted](./images/version-picker.png)
+{% img
+  src="./images/version-picker.png"
+  alt="Screenshot of a version picker interface with Version 1 highlighted"
+  withLightbox=true
+/%}
 
 You can use this feature to: keep past versions of API descriptions for backwards compatibility, document experimental versions of software, or maintain release notes separate for each version.
 

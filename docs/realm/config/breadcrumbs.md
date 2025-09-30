@@ -18,7 +18,11 @@ Use the `breadcrumbs` option to control the links displayed at the top of the pa
 
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "breadcrumbs"} /%}
 
-![Screenshot of page in project with breadcrumbs](./images/breadcrumbs.png)
+{% img
+  src="./images/breadcrumbs.png"
+  alt="Screenshot of page in project with breadcrumbs"
+  withLightbox=true
+/%}
 
 Breadcrumbs are enabled by default, but can be disabled to remove them from your published project.
 You can also add links that you want to always appear on every page at the start of the breadcrumbs links.

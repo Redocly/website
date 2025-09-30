@@ -15,7 +15,11 @@ When a user accesses the Redocly login screen, they enter their email address.
 At this point, Redocly relies on the IdP to determine the appropriate authentication path based on certain heuristics, such as the user’s email domain.
 Here’s how it works in practice:
 - **Initial login screen experience**: The user is presented with Redocly’s login screen, where they enter their email address.\
-  ![log-in-form.png](../../images/log-in-form.png)
+  {% img
+    src="../../images/log-in-form.png"
+    alt="Screenshot of Redocly login screen where users enter their email address"
+    withLightbox=true
+  /%}
 - **Redirect by IdP**:
   Using the email domain or other identifying attributes, the IdP applies its rules to route the user to the correct login page for their corporate IdP.
   If no external IdP is associated with the entered email, users are directed to a native Redocly password entry screen.

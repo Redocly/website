@@ -14,9 +14,11 @@ export function ConfigSection({
 }: ConfigSectionProps): React.ReactElement {
   return (
     <SectionContainer>
-      <SectionTitle>{title}</SectionTitle>
-      <SectionDescription>{description}</SectionDescription>
       <SectionContent>
+        <SectionHeader>
+          <SectionTitle>{title}</SectionTitle>
+          <SectionDescription>{description}</SectionDescription>
+        </SectionHeader>
         {children}
       </SectionContent>
     </SectionContainer>
@@ -25,30 +27,38 @@ export function ConfigSection({
 
 const SectionContainer = styled.div`
   background-color: transparent;
-  border: 1px solid var(--border-color-secondary);
+  border: 1px solid var(--border-color-primary);
   border-radius: 12px;
-  padding: 24px;
+  padding: 16px;
   margin: 0 0 16px 0;
   width: 100%;
   box-sizing: border-box;
 `;
 
+const SectionHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+`;
+
 const SectionTitle = styled.h2`
-  font-weight: 500;
-  font-size: 24px;
-  margin: 0 0 8px 0;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-xl);
   color: var(--text-color-primary);
+  margin-top: 0px;
+  margin-bottom: 0px;
 `;
 
 const SectionDescription = styled.p`
-  font-size: 16px;
-  line-height: 1.4;
-  margin: 0 0 16px 0;
   color: var(--text-color-secondary);
+  line-height: var(--line-height-base);
+  font-size: var(--font-size-base);
+  margin-bottom: 0 !important;
 `;
 
 const SectionContent = styled.div`
-  display: flex-column;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 `;

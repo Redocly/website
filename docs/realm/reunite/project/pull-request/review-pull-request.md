@@ -2,13 +2,6 @@
 
 Select a pull request from the list on the **Pull requests** page and click the **Review** tab to begin your review.
 
-## Before you begin
-
-Ensure you have:
-
-- A [project](../projects.md) in Reunite
-- The [owner or member role](../../../access/roles.md#organization-roles) in your project's organization
-
 You cannot review a pull request if you authored it.
 
 ## Review visual and code diff
@@ -28,7 +21,11 @@ To add comments in the visual or code diff view:
 
 1. Click the comments icon on the right side.
 
-    ![Screenshot of top right side of review tab in Reunite with arrow pointing to the comments icon](../../images/comment-icon.png)
+    {% img
+      src="../../images/comment-icon.png"
+      alt="Screenshot of top right side of review tab in Reunite with arrow pointing to the comments icon"
+      withLightbox=true
+    /%}
 
 1. Enter your feedback.
 1. Click **Comment**.
@@ -38,7 +35,11 @@ To add line-specific comments in code diff view:
 1. Hover over the line numbers.
 1. Click the plus icon.
 
-    ![Screenshot of code diff view in Reunite with arrow pointing towards plus icon](../../images/plus-icon.png)
+    {% img
+      src="../../images/plus-icon.png"
+      alt="Screenshot of code diff view in Reunite with arrow pointing towards plus icon"
+      withLightbox=true
+    /%}
 
 1. Enter your feedback.
 1. Select one option:
@@ -83,6 +84,5 @@ After merging, the updates appear in the main branch and trigger a deployment to
 ## Resources
 
 - **[Use the editor](../use-editor.md)** - Create and edit content in Markdown and Markdoc with collaborative editing features and real-time preview capabilities
-- **[Switch between projects](../switch-between-projects.md)** - Efficiently navigate between multiple projects when working across different documentation initiatives
 - **[Reunite platform](../../reunite.md)** - Understand Redocly's cloud platform features for collaborative content management and workflow automation
 - **[Reunite configuration reference](../../../config/reunite.md)** - Configure deployment settings to allow publishing builds despite broken links or Markdoc syntax issues

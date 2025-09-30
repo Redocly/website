@@ -5,10 +5,10 @@ When users switch between color modes, the documentation's appearance dynamicall
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- A Realm project with at least a few Markdown pages.
-- At least beginner-level CSS knowledge.
+- at least a few Markdown pages in your project
+- at least beginner-level CSS knowledge
 
 ## Configure color mode styles
 
@@ -136,9 +136,9 @@ This creates new options in the color mode switcher and requires component eject
 ### Before you begin
 
 Make sure you have:
-- A Redocly project set up and running locally
-- Moderate comfort with React and CSS
-- Familiarity with [component ejection](../customization/eject-components/index.md)
+- a Redocly project set up and running locally
+- moderate knowledge of React and CSS
+- familiarity with [component ejection](../customization/eject-components/index.md)
 
 ### Eject ColorModeIcon component
 
