@@ -3,4 +3,3 @@
 - page: ./api-input-validation-injection-prevention.md  
 - page: ./api-rate-limiting-abuse-prevention.md
 - page: ./authentication-authorization-openapi.md
-- page: ./automated-security-validation-walkthrough.md
