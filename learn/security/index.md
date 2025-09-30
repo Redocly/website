@@ -1,8 +1,8 @@
 ---
-title: API Security by Design: Framework and Fundamentals
+title: "API Security by Design: Framework and Fundamentals"
 description: Build secure APIs from the ground up using OpenAPI security contracts and automated governance.
 seo:
-  title: API Security by Design: Framework and Fundamentals
+  title: "API Security by Design: Framework and Fundamentals"
   description: Build secure APIs from the ground up using OpenAPI security contracts and automated governance.
 ---
 
