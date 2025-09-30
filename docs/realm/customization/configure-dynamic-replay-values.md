@@ -39,7 +39,7 @@ import type {
   ConfigureRequestValues,
   ConfigureServerRequestValues,
 } from '@redocly/theme/ext/configure';
-import type { UserClaims, OpenAPIServer } from '@redocly/theme/core/types';
+import type { UserClaims, OpenAPIServer, OpenAPIInfo } from '@redocly/theme/core/types';
 
 type ContextProps = {
   operation: {
@@ -49,6 +49,7 @@ type ContextProps = {
     href: string;
     method: string;
   };
+  info: OpenAPIInfo;
   servers: OpenAPIServer[];
   userClaims: UserClaims;
 };
@@ -122,7 +123,7 @@ import type {
   ConfigureRequestValues,
   ConfigureServerRequestValues,
 } from '@redocly/theme/ext/configure';
-import type { UserClaims, OpenAPIServer } from '@redocly/theme/core/types';
+import type { UserClaims, OpenAPIServer, OpenAPIInfo } from '@redocly/theme/core/types';
 
 type ContextProps = {
   operation: {
@@ -132,6 +133,7 @@ type ContextProps = {
     href: string;
     method: string;
   };
+  info: OpenAPIInfo;
   servers: OpenAPIServer[];
   userClaims: UserClaims;
 };
@@ -230,6 +232,7 @@ The context parameter includes:
   - `operationId`: operation ID
   - `href`: operation URL
   - `method`: HTTP method
+- `info`: OpenAPI info object
 - `servers`: server information from the OpenAPI description
 
 ## Return types
