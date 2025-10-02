@@ -35,7 +35,7 @@ tocMaxDepth: 2
 
 ### Fixes
 
-- Resolved an issue where authorization header was not used when sending requests from _Try it console_.
+- Resolved an issue where authorization header was not used when sending requests from **Try it** console.
 
 ---
 
@@ -43,7 +43,7 @@ tocMaxDepth: 2
 
 ### Fixes
 
-- Resolved an issue where multipart/form-data was selected in the Request samples panel and arrays were incorrectly displayed.
+- Resolved an issue where `multipart/form-data` was selected in the **Request samples** panel and arrays were incorrectly displayed.
 
 ---
 
@@ -51,7 +51,7 @@ tocMaxDepth: 2
 
 ### Fixes
 
-- Resolved an issue where a _Request samples_ panel incorrectly synced with _Response samples_ panel.
+- Resolved an issue where a **Request samples** panel incorrectly synced with **Response samples** panel.
 
 ---
 
@@ -101,7 +101,7 @@ tocMaxDepth: 2
 
 ### Features
 
-- Added the ability to provide multiple manually added x-codeSamples per operation.
+- Added the ability to provide multiple manually added `x-codeSamples` per operation.
 
 ---
 
@@ -109,7 +109,7 @@ tocMaxDepth: 2
 
 ### Fixes
 
-- Resolved an issue where the anonymous security option was not visible in the security section and the _Try-It_ panel.
+- Resolved an issue where the anonymous security option was not visible in the security section and the **Try it** panel.
 
 ---
 
@@ -117,8 +117,8 @@ tocMaxDepth: 2
 
 ### Fixes
 
-- Resolved an issue where path parameters with dot annotation did not work correctly in the _Try-It_ panel
-- Resolved an issue where query parameter names with square brackets at the end did not work in the _Try-It_ panel.
+- Resolved an issue where path parameters with dot annotation did not work correctly in the **Try it** panel
+- Resolved an issue where query parameter names with square brackets at the end did not work in the **Try it** panel.
 
 ---
 
@@ -126,7 +126,7 @@ tocMaxDepth: 2
 
 ### Fixes
 
-- Resolved an issue where Reference docs do not resolve deepLinks to the Response collapsed items with `item` pagination.
+- Resolved an issue where Reference docs do not resolve deep links to the Response collapsed items with `item` pagination.
 - Resolved an issue where `onLoaded` does not work when Reference docs are used as a React component.
 
 ---
@@ -169,7 +169,7 @@ tocMaxDepth: 2
 
 ### Fixes
 
-- Resolved an issue where encoded URL in the _Response Samples_ section of the _Try-It_ panel became double encoded when opened in a browser tab.
+- Resolved an issue where encoded URL in the **Response Samples** section of the **Try it** panel became double encoded when opened in a browser tab.
 
 ---
 
@@ -177,7 +177,7 @@ tocMaxDepth: 2
 
 ### Features
 
-- Added support for cookie-based authentication in the _Try it console_.
+- Added support for cookie-based authentication in the **Try it** console.
 
 ---
 
@@ -186,7 +186,7 @@ tocMaxDepth: 2
 ### Fixes
 
 - Set correct scroll position for deep links.
-- Resolved an issue where objects in the _Request samples_ panel were incorrectly shown as `[object Object]` when `multipart/form-data` was selected.
+- Resolved an issue where objects in the **Request samples** panel were incorrectly shown as `[object Object]` when `multipart/form-data` was selected.
 
 ---
 
@@ -195,7 +195,7 @@ tocMaxDepth: 2
 ### Fixes
 
 - Resolved an issue where deep links created from headings in tags weren't pointing to the correct heading.
-- Renamed the label in the enum description table from 'Enum:' to 'Enum Value'.
+- Renamed the label in the enum description table from **Enum:** to **Enum Value**.
 
 ---
 
@@ -203,7 +203,7 @@ tocMaxDepth: 2
 
 ### Fixes
 
-- Resolved an issue where query params with dot notation are not passed in the request URL.
+- Resolved an issue where query parameters with dot notation were not passed in the request URL.
 
 ---
 
