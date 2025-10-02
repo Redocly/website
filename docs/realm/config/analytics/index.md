@@ -63,12 +63,6 @@ This configuration adds analytics tracking to all pages, except those specifical
 
 ---
 
-- rudderstack
-- [Rudderstack config](./rudderstack.md)
-- Configures Rudderstack analytics
-
----
-
 - segment
 - [Segment config](./segment.md)
 - Configures Segment analytics

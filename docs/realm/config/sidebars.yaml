@@ -17,8 +17,6 @@
           label: Google Tag Manager
         - page: ./analytics/heap.md
           label: Heap
-        - page: ./analytics/rudderstack.md
-          label: Rudderstack
         - page: ./analytics/segment.md
           label: Segment
     - page: ./api-functions.md

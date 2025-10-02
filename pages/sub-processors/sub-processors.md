@@ -23,7 +23,6 @@ List of sub-processors for our support services:
 |Front|US|Support email and chat|
 |Google|US|Email|
 |Hubspot|US|CRM and email newsletters|
-|Rudderstack|US|Customer data platform|
 |Slack|US|Internal and optional enterprise support channel|
 |SorryApp Ltd|GB|Status page provider|
 |Spoke Phone|NZ|Telephone provider|

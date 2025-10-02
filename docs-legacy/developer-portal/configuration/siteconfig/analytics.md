@@ -21,7 +21,6 @@ Add it to the top level of the `siteConfig.yaml` file and configure supported an
 | `gtag` | Integrates Google Global Site Tag into your developer portal. When configured, this integration works only in production, not in local development mode. This integration is supported through the [Gatsby google-gtag plugin](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-google-gtag). Refer to the official plugin documentation for more details. |
 | `gtm`  | Integrates Google Tag Manager into your developer portal. This integration is supported through the [Gatsby Google Tag Manager plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-google-tagmanager/). Refer to the official plugin documentation for more details. |
 | `heap`  | Integrates Heap Analytics into your developer portal. This integration is supported through the [Gatsby Heap plugin](https://www.gatsbyjs.com/plugins/gatsby-plugin-heap/). Refer to the official plugin documentation for more details. |
-| `rudderstack`  | Integrates Rudderstack Analytics into your developer portal. This integration is supported through the [Gatsby Rudderstack plugin](https://www.gatsbyjs.com/plugins/gatsby-plugin-rudderstack/). Refer to the official plugin documentation for more details. |
 | `segment`  | Integrates Segment Analytics into your developer portal. This integration is supported through the [Gatsby SegmentJS plugin](https://www.gatsbyjs.com/plugins/gatsby-plugin-segment-js/). Refer to the official plugin documentation for more details. |
 | `Google Marketing Platform` | Integrates Google Optimize into your developer portal. This integration is supported through the [Gatsby Google Marketing Platform plugin](https://www.gatsbyjs.com/plugins/gatsby-plugin-google-marketing-platform/). Refer to the official plugin documentation for more details. |
 
@@ -113,17 +112,6 @@ analytics:
   heap:
     appId: your-app-id
     enableOnDevMode: true # set to false by default
-```
-
-### Rudderstack Analytics
-
-```yaml
-analytics:
-  rudderstack:
-    prodKey: your-prod-write-key
-    devKey: your-dev-write-key
-    dataPlaneUrl: your-data-plane-url
-    trackPage: true
 ```
 
 
