@@ -19661,6 +19661,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.35.0:
+    timestamp: 1759385012000
+    changes:
+      minor:
+        - Added `mcp` configuration for documentation.
+      patch: []
+    dependencies: {}
   0.34.0:
     timestamp: 1758884326000
     changes:
