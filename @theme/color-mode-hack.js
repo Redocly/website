@@ -6,6 +6,11 @@ if (typeof window !== 'undefined' && document.documentElement) {
     const root = document.documentElement;
     root.classList.remove('light', 'dark');
     root.classList.add(mode);
+    
+    // Add 'manual' class when on preview route
+    if (pathname === '/preview') {
+      root.classList.add('manual');
+    }
   };
 
   const applyTheme = () => {
