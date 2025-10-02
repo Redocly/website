@@ -1,10 +1,7 @@
 import openApiThumbnail from './images/open-api-thumbnail.svg';
 import markdocThumbnail from './images/markdoc-thumbnail.svg';
 import yamlThumbnail from './images/yaml-thumbnail.svg';
-import apiGovernanceThumbnail from './images/api-governance-thumbnail.svg';
 import apiTestingThumbnail from './images/api-testing-thumbnail.svg';
-import apiSecurityThumbnail from './images/api-security-thumbnail.svg';
-import graphqlThumbnail from './images/graphql-thumbnail.svg';
 import arazzoThumbnail from './images/arazzo-thumbnail.svg';
 
 export const cards = [
