@@ -20,7 +20,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
   If no `label` is provided, the link text matches _the page's level 1 heading_.
   Use an absolute or relative path.
   For external links, use `href` instead.
-  Examples: `./index.md`, `/docs/tutorial.md`, `../../glossary.md`.
+  Examples: `./index.md`, `/docs/tutorial.md`, `../../glossary.md`, `/info#admonition`, `./test.md#rename`.
 
 ---
 
@@ -354,6 +354,7 @@ The following example shows a comprehensive `sidebars.yaml` file with various op
 - group: Plugins
   items:
     - directory: plugins
+- page: /setup-links#config
 - group: Resources
   separatorLine: true
   items:
