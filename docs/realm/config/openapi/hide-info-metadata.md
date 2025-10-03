@@ -15,11 +15,7 @@ If you include metadata for your APIs, either using the `info.x-metadata` extens
 {% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "hideInfoMetadata"} /%}
 {% /admonition %}
 
-{% img
-  src="../images/metadata-show.png"
-  alt="Screenshot of API documentation where hideInfoMetadata option is set to false"
-  withLightbox=true
-/%}
+![hideInfoMetadata: false](../images/metadata-show.png)
 
 To omit the metadata section from the API reference documentation, set the `hideInfoMetadata` option.
 
@@ -64,11 +60,7 @@ info:
 ...
 ```
 
-{% img
-  src="../images/metadata-hide.png"
-  alt="Screenshot of API documentation where hideInfoMetadata is set to true"
-  withLightbox=true
-/%}
+![hideInfoMetadata: true](../images/metadata-hide.png)
 
 ## Resources
 

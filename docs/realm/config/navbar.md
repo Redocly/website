@@ -224,11 +224,7 @@ navbar:
 
 The following is a screenshot of that navbar.
 
-{% img
-  src="./images/1-level-navbar.png"
-  alt="1 level Navbar"
-  withLightbox=true
-/%}
+![1 level Navbar](./images/1-level-navbar.png)
 
 ### Complete navigation setup
 
@@ -314,13 +310,8 @@ navbar:
       page: enterprise.md
 ```
 
-The following is the screenshot of the navbar.
-
-{% img
-  src="./images/dropdown-menu.png"
-  alt="Dropdown menu"
-  withLightbox=true
-/%}
+The following is the visual screenshot of the navbar.
+![Dropdown menu](./images/dropdown-menu.png)
 
 ### Hide navbar
 

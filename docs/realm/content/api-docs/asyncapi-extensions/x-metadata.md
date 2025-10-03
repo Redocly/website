@@ -47,11 +47,7 @@ info:
 
 The data is presented as shown in the following screenshot:
 
-{% img
-  src="./images/asyncapi-x-metadata.png"
-  alt="title \"Metadata\" and a table showing the metadata"
-  withLightbox=true
-/%}
+![title "Metadata" and a table showing the metadata](./images/asyncapi-x-metadata.png)
 
 ### `x-metadata` as filters in classic catalog
 

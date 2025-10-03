@@ -16,11 +16,7 @@ description: |-
 
 {% $frontmatter.description %}
 
-{% img
-  src="../content/images/catalog.png"
-  alt="Screenshot of a catalog"
-  withLightbox=true
-/%}
+![Screenshot of a catalog](../content/images/catalog.png)
 
 ## Options
 

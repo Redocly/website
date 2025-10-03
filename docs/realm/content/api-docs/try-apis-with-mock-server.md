@@ -7,9 +7,9 @@ This guide shows you how to use the mock server _as an API consumer_ and send AP
 
 ## Before you begin
 
-Make sure you have the following:
+Make sure you have the following before you begin:
 
-- access to API reference docs with Redocly's mock server enabled
+- Access to API reference docs with Redocly's mock server enabled
 
 ## Use Replay to call mock server
 
@@ -17,37 +17,21 @@ To send an API call to the mock server using Replay:
 
 1. Open Replay by clicking the **Try it** button.
 
-    {% img
-      src="../images/replay-try-it-button.png"
-      alt="Screenshot of the Try it button for the List Special Events operation."
-      withLightbox=true
-    /%}
+    ![Screenshot of the Try it button for the List Special Events operation.](../images/replay-try-it-button.png)
 
 1. Click the **Environment** dropdown and select **Mock server**.
 
-    {% img
-      src="../images/mock-server-dropdown.png"
-      alt="Screenshot of the Mock server being selected from environments dropdown."
-      withLightbox=true
-    /%}
+    ![Screenshot of the Mock server being selected from environments dropdown.](../images/mock-server-dropdown.png)
 
 1. (Optional) Make changes to the API request using the different tabs.
 Some operations may automatically fill example data, like [List special events](https://redocly.com/demo/openapi/museum-api/events/listspecialevents) does in the following screenshot:
 
-    {% img
-      src="../images/replay-request-settings.png"
-      alt="Replay screenshot showcasing the tabs used to control the API request."
-      withLightbox=true
-    /%}
+    ![Replay screenshot showcasing the tabs used to control the API request.](../images/replay-request-settings.png)
 
 1. Click **Send** to send the API request to the mock server.
 Review the response payload in the **Response** panel at the bottom.
 
-    {% img
-      src="../images/use-replay-response-example.png"
-      alt="Screenshot of the Redocly Replay console after successfully sending a request to the mock server for the List Special Events operation."
-      withLightbox=true
-    /%}
+    ![Screenshot of the Redocly Replay console after successfully sending a request to the mock server for the List Special Events operation.](../images/use-replay-response-example.png)
 
 
 ## Use cURL to call mock server
@@ -60,11 +44,7 @@ To send an API request to the mock server using cURL:
 
     - If you need the mock server url, open Replay and check the **Environments** tab.
 
-        {% img
-          src="../images/replay-environments-tab.png"
-          alt="Screenshot of the Environments tab in Replay with server highlighted."
-          withLightbox=true
-        /%}
+        ![Screenshot of the Environments tab in Replay with server highlighted.](../images/replay-environments-tab.png)
 
 3. Update the values in the cURL command as needed.
 

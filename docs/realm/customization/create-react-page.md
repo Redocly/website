@@ -7,10 +7,10 @@ This guide shows you how to create a React page in your Redocly project (Realm o
 
 ## Before you begin
 
-Make sure you have the following:
+Make sure you have the following before you begin:
 
-- a Revel or Realm project running locally
-- basic knowledge of React
+- A Revel or Realm project running locally
+- Basic knowledge of React
 
 ## Create a new React page
 
@@ -145,7 +145,7 @@ The following example shows a sidebar configuration that includes React pages:
       - page: guides/example-guide.md
 ```
 
-If needed, you can use `frontmatter` to [add the sidebar to a single page](../config/front-matter-config.md#front-matter-only-options) without listing it in the sidebars configuration file.
+If needed, you can use `frontmatter` to [add the sidebar to a single page](../navigation/sidebars.md#add-a-sidebar-to-a-single-page) without listing it in the sidebars configuration file.
 
 ## Landing page examples
 
@@ -161,11 +161,7 @@ The following example pages are available in the gallery:
 
 ---
 
-- {% img
-    src="./images/example-saas-thumbnail.png"
-    alt="Screenshot of the Example SaaS landing page."
-    withLightbox=true
-  /%}
+- ![Screenshot of the Example SaaS landing page.](./images/example-saas-thumbnail.png)
 - This example shows a sleek, modern landing page for a SaaS product.
 
   **Tools:** React, styled-components
@@ -173,11 +169,7 @@ The following example pages are available in the gallery:
   [View source code](https://github.com/Redocly/landing-page-gallery/blob/main/example-saas/index.page.tsx)
 ---
 
-- {% img
-    src="./images/training-portal-thumbnail.png"
-    alt="Screenshot of the training project example landing page."
-    withLightbox=true
-  /%}
+- ![Screenshot of the training project example landing page.](./images/training-portal-thumbnail.png)
 - This example demonstrates a landing page built for training and onboarding purposes.
 
   **Tools:** React, styled-components

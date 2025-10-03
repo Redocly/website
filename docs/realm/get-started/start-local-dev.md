@@ -5,7 +5,7 @@ This guide shows you how to set up a project, add content, configure navigation,
 
 ## Before you begin
 
-Make sure you have the following:
+Before you begin, you need:
 
 - [Node.js](https://nodejs.org/en) LTS version or later.
 
@@ -93,11 +93,7 @@ Make changes incrementally and preview each update.
    Create an `images/` folder and add your logo there.
    Use this sample logo if you don't have your own:
 
-   {% img
-    src="./images/logo.png"
-    alt="Redocly logo"
-    withLightbox=true
-   /%}
+   ![Redocly logo](./images/logo.png)
 
    Use the following configuration to set the logo for your site:
 
@@ -154,11 +150,7 @@ The API reference adds sidebar entries for the user to navigate the various sect
 Explore the generated documentation and see how the API you picked is presented.
 API reference documentation is a vital part of API experience, and our Redoc rendering makes it a good experience.
 
-{% img
-  src="images/getting-started-redoc.png"
-  alt="Screenshot of Redoc rendering the Museum API"
-  withLightbox=true
-/%}
+![Screenshot of Redoc rendering the Museum API](images/getting-started-redoc.png)
 
 Many aspects of the API documentation are configurable, visit the [openapi configuration page](../config/openapi/index.md) for more information and ideas.
 
@@ -197,17 +189,9 @@ Set background colors on the navbar and footer to reinforce brand identity:
 
 Your site looks a bit different to the default, as you can see in the following pair of screenshots:
 
-{% img
-  src="./images/get-started-nostyle.png"
-  alt="Get started demo site without styles"
-  withLightbox=true
-/%}
+![Get started demo site without styles](./images/get-started-nostyle.png)
 
-{% img
-  src="./images/get-started-style.png"
-  alt="Get started demo site with styles"
-  withLightbox=true
-/%}
+![Get started demo site with styles](./images/get-started-style.png)
 
 Explore the [CSS variables reference](../branding/css-variables/index.md) or inspect your site with web developer tools in your browser to identify the variables to change.
 

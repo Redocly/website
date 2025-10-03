@@ -5,9 +5,10 @@ This capability is only supported in React code.
 
 ## Before you begin
 
-Make sure you have the following:
+Make sure you have the following before you begin:
 
-- two versions (light and dark) of an image stored locally
+- A Redocly Realm project running locally or in the Reunite web editor.
+- Two versions (light and dark) of an image stored locally.
 
 ## Prepare project for feature
 

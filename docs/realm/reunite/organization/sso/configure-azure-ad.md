@@ -16,11 +16,7 @@ Start configuring SSO in Redocly to get the values needed for the next steps.
 
 The following screenshot shows the SSO configuration screen.
 
-{% img
-  src="../../images/configure-saml-redocly-1.png"
-  alt="SSO configuration"
-  withLightbox=true
-/%}
+![SSO configuration](../../images/configure-saml-redocly-1.png)
 
 Keep this page open for reference, the values here are used in the next steps.
 After adding the required configuration in Microsoft Entra, return to this page to complete the final setup.
@@ -78,11 +74,7 @@ Get ready to use group information from Microsoft Entra with Redocly RBAC by con
 1. Select the type of groups to use.
 1. Select **Group ID** as the attribute.
 1. Select **Customize the name of the group claim** and use `https://redocly.com/sso/teams` as the **Name**, as illustrated in the following screenshot.
-   {% img
-    src="../../images/ad-group-claim.png"
-    alt="AD group claim"
-    withLightbox=true
-   /%}
+   ![AD group claim](../../images/ad-group-claim.png)
 
 ## Finish SSO configuration in Redocly
 
@@ -97,11 +89,7 @@ in order to use human-readable team names for RBAC.
 
 To do this, you need to Select **Configure team claim mapping** checkbox and add the mapping from the group ID to the team name.
 
-{% img
-  src="../../images/claim-mapping.png"
-  alt="Claim mapping"
-  withLightbox=true
-/%}
+![Claim mapping](../../images/claim-mapping.png)
 
 Select **Save** to finish the configuration.
 
@@ -137,6 +125,7 @@ Example configuration:
 rbac:
   content:
     '**':
+      anonymous: none
       authenticated: read
 
     apis/Team A/**:

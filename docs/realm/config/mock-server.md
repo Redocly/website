@@ -1,7 +1,6 @@
 ---
 products:
   - Redoc
-  - Realm
 plans:
   - Pro
   - Enterprise

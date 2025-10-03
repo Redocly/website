@@ -3,9 +3,9 @@ With Reunite you can integrate GitHub Enterprise Server as your Git provider usi
 
 ## Before you begin
 
-Make sure you have the following:
+Make sure you have the following before you begin:
 
--  an OWNER role in your GitHub organization
+- You must have an OWNER role in your GitHub organization.
 
 ## Create a new GitHub App with a manifest flow
 
