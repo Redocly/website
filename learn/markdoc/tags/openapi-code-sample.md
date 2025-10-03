@@ -76,7 +76,7 @@ With `pointer`:
 
 - `parameters`
 - Object
-- Custom parameters to use for the OpenAPI operation code sample. Accepts values for `header` and `query`.
+- Custom parameters to use for the OpenAPI operation code sample. Accepts values for `header` and `query`, and predefined path parameters.
 
 ---
 
