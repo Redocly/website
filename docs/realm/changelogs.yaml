@@ -1,4 +1,11 @@
 '@redocly/realm':
+  0.126.0-next.23:
+    timestamp: 1759856739000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/config` dependency.
+    dependencies: {}
   0.126.0-next.22:
     timestamp: 1759851094000
     changes:
@@ -4436,6 +4443,13 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.126.0-next.23:
+    timestamp: 1759856739000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/config` dependency.
+    dependencies: {}
   0.126.0-next.22:
     timestamp: 1759851094000
     changes:
@@ -8117,6 +8131,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.126.0-next.23:
+    timestamp: 1759856739000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/config` dependency.
+    dependencies: {}
   0.126.0-next.22:
     timestamp: 1759851094000
     changes:
@@ -11793,6 +11814,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.126.0-next.23:
+    timestamp: 1759856739000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/config` dependency.
+    dependencies: {}
   0.126.0-next.22:
     timestamp: 1759851094000
     changes:
@@ -21688,6 +21716,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.9.0-next.23:
+    timestamp: 1759856739000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.0-next.23
+      '@redocly/redoc': 0.126.0-next.23
+      '@redocly/redoc-reef': 0.126.0-next.23
+      '@redocly/redoc-revel': 0.126.0-next.23
   1.9.0-next.22:
     timestamp: 1759851094000
     changes:
