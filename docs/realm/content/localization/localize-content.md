@@ -6,9 +6,8 @@ After preparing the structure of your project for localization, add the translat
 
 Make sure you have the following:
 
-- The structure of your project prepared for localization.
-  See [l10n configuration](../../config/l10n.md) for setup information.
-- Translated content files.
+- the structure of your project prepared for localization
+- translated content files
 
 ## Add translated content files
 

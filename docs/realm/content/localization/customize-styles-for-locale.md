@@ -4,11 +4,12 @@ You can apply styles to a specific locale by using a `:root` selector in the `@t
 This can be useful if you want to customize how certain UI elements look or change the font for a certain locale.
 
 ## Before you begin
+
 Make sure you have the following:
 
-- A Redocly project with a `l10n` folder containing your translated content organized into locales.
+- a Redocly project with a `l10n` folder containing your translated content organized into locales.
   See [l10n configuration](../../config/l10n.md) and [Add translated content](./localize-content.md) for more information.
-- A `@theme/styles.css` file in your project.
+- a `@theme/styles.css` file in your project.
   See [custom styles](../../branding/customize-styles.md) for more information.
 
 ## Add custom styles for a locale

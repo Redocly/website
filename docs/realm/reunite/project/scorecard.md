@@ -21,21 +21,27 @@ You can view scorecard reports on Reunite's **Deploys** page.
 Choose a preview or production deploy and click it to open its status page.
 Under **Summary**, click **Lint** to display the report.
 
-![Scorecard information in Deploys](../images/reunite-deploy-scorecard.png)
+{% img
+  src="../images/reunite-deploy-scorecard.png"
+  alt="Scorecard information in Deploys"
+  withLightbox=true
+/%}
 
 You can expand each row of the table, switch between the scorecard levels and drill down the table to display warnings and errors.
 
-![Expanded scorecard report in Deploys](../images/reunite-deploy-scorecard-expanded.png)
+{% img
+  src="../images/reunite-deploy-scorecard-expanded.png"
+  alt="Expanded scorecard report in Deploys"
+  withLightbox=true
+/%}
 
 If you have an open pull request, you can access the same report by opening the pull request, selecting the **Checks** tab, and clicking **Lint**.
 
-![Scorecard report in a pull request](../images/reunite-pull-request-scorecard.png)
-
-### Scorecard status in API registry
-
-The API description details on the **API Registry** page contains a summarized version of the scorecard reports.
-You can find this information by clicking an API.
-The summarized scorecard report is on the **Details** tab.
+{% img
+  src="../images/reunite-pull-request-scorecard.png"
+  alt="Scorecard report in a pull request"
+  withLightbox=true
+/%}
 
 ## Scorecard labels
 

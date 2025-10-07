@@ -84,7 +84,11 @@ a direct link to the deployment, and a copy link button for the deployment.
 
 To see more information about deployments, you can visit the **Deploys** page.
 
-![Deployments preview](./images/deployments-preview.png)
+{% img
+  src="./images/deployments-preview.png"
+  alt="Deployments preview"
+  withLightbox=true
+/%}
 
 ## Remote content
 
@@ -97,13 +101,6 @@ You can view, edit, or sync the remote content in your project on the **Remote c
 By default, every page of your published project includes a feedback mechanism that can be used to collect data from your users.
 Also, all code snippets by default include a report icon that users can click to report an error or issue with the code sample.
 These [feedback mechanisms can be configured in your `redocly.yaml` file](../config/feedback.md) and the data they collect can be viewed and exported on the **Feedback** page.
-
-## API registry
-
-The API registry is a list of all the API descriptions you have included in an API catalog.
-API catalogs are an organized way to present many APIs that can be filtered and searched.
-You can [configure an API catalog](../config/catalog-classic.md) by organizing your API descriptions and adding a configuration to your `redocly.yaml` file.
-You can view the Scorecard status, metadata, custom fields, and logs for each API description included in your catalog on the **API registry** page.
 
 ## Project settings
 
@@ -119,3 +116,4 @@ You can also [set a custom domain](./project/custom-domain.md), [add environment
 - **[Remote content integration](./project/remote-content/remote-content.md)** - Learn about remote content features including mount folder paths, auto-sync, and auto-merge capabilities
 - **[Reunite configuration reference](../config/reunite.md)** - Configure Reunite deployment settings including options to deploy regardless of link checker or Markdoc errors
 - **[Feedback mechanisms guide](../config/feedback.md)** - Choose and configure different types of user feedback collection mechanisms for your documentation projects
+- **[Project user interface](./project/project-ui.md)** - Reference the user interface elements in Reunite's project workspace

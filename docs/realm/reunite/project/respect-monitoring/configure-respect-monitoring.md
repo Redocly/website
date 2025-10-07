@@ -15,8 +15,8 @@ The output of each workflow is displayed as a chart on the Respect Monitoring pa
 
 Make sure you have the following:
 
-- One or more Arazzo Descriptions that reference OpenAPI Descriptions in your project
-- A `redocly.yaml` configuration file at the root of your project
+- one or more Arazzo descriptions files that reference OpenAPI description files in your project
+- a `redocly.yaml` configuration file in the root of your project
 
 ## Configure Respect Monitoring in `redocly.yaml`
 

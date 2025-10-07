@@ -84,7 +84,11 @@ The following examples illustrate using rich text in Markdoc tables:
   - This is the default feedback form and displays without configuration.
   - Users can express either a positive or negative reaction to the page.
 
-- ![Sentiment feedback form](../images/sentiment-01.png)
+- {% img
+    src="../images/sentiment-01.png"
+    alt="Screenshot of the sentiment feedback form"
+    withLightbox=true
+  /%}
 
 ---
 
@@ -93,7 +97,11 @@ The following examples illustrate using rich text in Markdoc tables:
 - - Includes a question or statement with a smiling-face, neutral-face, and frowning-face icon.
   - Users can express a positive, negative, or neutral review of the page.
 
-- ![Mood feedback form](../images/mood-01.png)
+- {% img
+    src="../images/mood-01.png"
+    alt="Screenshot of the mood feedback form"
+    withLightbox=true
+  /%}
 
 ---
 
@@ -102,7 +110,11 @@ The following examples illustrate using rich text in Markdoc tables:
 - - Includes a question or statement with five star icons.
   - Users can rate a page from one to five stars.
 
-- ![Rating feedback form](../images/rating-01.png)
+- {% img
+    src="../images/rating-01.png"
+    alt="Screenshot of the rating feedback form"
+    withLightbox=true
+  /%}
 
 ---
 
@@ -111,7 +123,11 @@ The following examples illustrate using rich text in Markdoc tables:
 - - Includes a question or statement, left-hand side and right-hand side text labels, and buttons for numbers 1 - 10.
   - Users can rate a page from one to ten.
 
-- ![Scale feedback form](../images/scale-01.png)
+- {% img
+    src="../images/scale-01.png"
+    alt="Screenshot of the scale feedback form"
+    withLightbox=true
+  /%}
 
 ---
 
@@ -120,7 +136,11 @@ The following examples illustrate using rich text in Markdoc tables:
 - - Includes a text label and text input.
   - Users can use the text field to express their thoughts about the page in a free-form way.
 
-- ![Comment feedback form](../images/comment-01.png)
+- {% img
+    src="../images/comment-01.png"
+    alt="Screenshot of the comment feedback form"
+    withLightbox=true
+  /%}
 
 {% /table %}
 
@@ -142,7 +162,11 @@ The following examples illustrate using rich text in Markdoc tables:
     - This is the default feedback form and displays without configuration.
     - Users can express either a positive or negative reaction to the page.
 
-  - ![Sentiment feedback form](../images/sentiment-01.png)
+  - {% img
+      src="../images/sentiment-01.png"
+      alt="Screenshot of the sentiment feedback form"
+      withLightbox=true
+    /%}
 
   ---
 
@@ -151,7 +175,11 @@ The following examples illustrate using rich text in Markdoc tables:
   - - Includes a question or statement with a smiling-face, neutral-face, and frowning-face icon.
     - Users can express a positive, negative, or neutral review of the page.
 
-  - ![Mood feedback form](../images/mood-01.png)
+  - {% img
+      src="../images/mood-01.png"
+      alt="Screenshot of the mood feedback form"
+      withLightbox=true
+    /%}
 
   ---
 
@@ -160,7 +188,11 @@ The following examples illustrate using rich text in Markdoc tables:
   - - Includes a question or statement with five star icons.
     - Users can rate a page from one to five stars.
 
-  - ![Rating feedback form](../images/rating-01.png)
+  - {% img
+      src="../images/rating-01.png"
+      alt="Screenshot of the rating feedback form"
+      withLightbox=true
+    /%}
 
   ---
 
@@ -169,7 +201,11 @@ The following examples illustrate using rich text in Markdoc tables:
   - - Includes a question or statement, left-hand side and right-hand side text labels, and buttons for numbers 1 - 10.
     - Users can rate a page from one to ten.
 
-  - ![Scale feedback form](../images/scale-01.png)
+  - {% img
+      src="../images/scale-01.png"
+      alt="Screnshot of the scale feedback form"
+      withLightbox=true
+    /%}
 
   ---
 
@@ -178,7 +214,11 @@ The following examples illustrate using rich text in Markdoc tables:
   - - Includes a text label and text input.
     - Users can use the text field to express their thoughts about the page in a free-form way.
 
-  - ![Comment feedback form](../images/comment-01.png)
+  - {% img
+      src="../images/comment-01.png"
+      alt="Screenshot of the comment feedback form"
+      withLightbox=true
+    /%}
 
   {% /table %}
   ```
@@ -195,10 +235,8 @@ The following examples illustrate using rich text in Markdoc tables:
 ---
 
 - languages
-*
-  [language object]
-*
-  **REQUIRED.**
+- [language object]
+- **REQUIRED.**
   Array of language objects, one per language.
   The samples are displayed in the order that they are listed.
   Default array value is:
@@ -222,8 +260,7 @@ The following examples illustrate using rich text in Markdoc tables:
 
 - skipOptionalParameters
 - boolean
-*
-  Excludes optional parameters (cookies, headers, query params) from the generated code samples.
+- Excludes optional parameters (cookies, headers, query params) from the generated code samples.
   Defaults to `false`.
 
 {% /table %}

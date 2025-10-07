@@ -51,7 +51,11 @@ info:
 
 The data is presented as shown in the following screenshot:
 
-![title "Metadata" and a table showing the metadata](../../images/x-metadata.png)
+{% img
+  src="../../images/x-metadata.png"
+  alt="title \"Metadata\" and a table showing the metadata"
+  withLightbox=true
+/%}
 
 ### `x-metadata` as filters in classic catalog
 

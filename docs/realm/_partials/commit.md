@@ -1,13 +1,21 @@
 1. Click the **Commit** button, or the commit icon.
 
-   ![Screenshot with commit icon](./images/commit-icon.png)
+    {% img
+      alt="Screenshot with commit icon"
+      src="./images/commit-icon.png"
+      withLightbox=true
+    /%}
 
-2. Review the diff by clicking on the modified file.
+1. Review the diff by clicking on the modified file.
 
-   ![Screenshot with list of modified files under commit button](./images/modified-file.png)
+    {% img
+      alt="Screenshot with list of modified files under commit button"
+      src="./images/modified-file.png"
+      withLightbox=true
+    /%}
 
    When you are finished reviewing the diff, you can close the tab on the (changes) file.
-3. (Optional) you can deselect the files you want to exclude from the commit.
-4. Enter a commit message describing your updates.
+1. (Optional) you can deselect the files you want to exclude from the commit.
+1. Enter a commit message describing your updates.
    For example, "Update index.md"
-5. Click **Commit**.
+1. Click **Commit**.

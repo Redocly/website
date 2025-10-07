@@ -23,13 +23,11 @@ For example, you can eject the `NotFound` component to customize your 404 error 
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Check if it is possible to customize your component without ejecting:
 
-- A Redocly project in Reunite.
-- Check if your component can be customized without ejecting
-  - The [redocly.yaml config file](../../config/index.md) allows you to configure the component.
-  - The [styles.css file](../../branding/customize-styles.md) allows you to customize component styles using CSS variables.
-  - The [translations.yaml file](../../content/localization/translation-keys.md) allows you to customize component text and labels.
+- You can configure some components using the [redocly.yaml configuration file](../../config/index.md).
+- You can customize component styles using CSS variables in a [styles.css file](../../branding/customize-styles.md).
+- You can customize component text and labels using a [translations.yaml file](../../content/localization/translation-keys.md).
 
 ## Find components with browser dev tools
 

@@ -5,11 +5,9 @@ If you are working locally, you must update your `package.json` file to the vers
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- If working in Reunite, you need at least the Member role for the Organization your project has been created in.
-- If you are working locally, you need [NodeJS](https://nodejs.org/en), v22.12.0 or later (alternatively -- v20.19.0 or later).
-- A modern web browser such as Chrome, Safari, or Firefox.
+- for local development: [NodeJS](https://nodejs.org/en), v22.12.0 or later (alternatively -- v20.19.0 or later)
 
 {% admonition type="info" name="Product package names" %}
 This content applies to the following Redocly products and their corresponding package names:
@@ -34,13 +32,21 @@ To verify the version your project is using:
 
 1. From the Reunite editor, open the preview or production build of your project in your browser, using the **View** drop-down in the top left corner of the page.
 
-   ![Screenshot of top right corner of Reunite editor with View drop-down](../content/images/view-project-dropdown.png)
+   {% img
+    src="../content/images/view-project-dropdown.png"
+    alt="Screenshot of top right corner of Reunite editor with View drop-down"
+    withLightbox=true
+   /%}
 
 2. Right-click anywhere on a page and select **Inspect** or **Inspect Element**.
 3. In the developer tools pane, select **Console**.
 4. You should see the version displayed as in the following screenshot:
 
-   ![Screenshot of the console in Chrome showing the Redocly Realm version](../content/images/console-version.png)
+   {% img
+    src="../content/images/console-version.png"
+    alt="Screenshot of the console in Chrome showing the Redocly Realm version"
+    withLightbox=true
+   /%}
 
 After you have determined what version your project is running, you can find the latest version to help you decide if you want to upgrade.
 
@@ -146,7 +152,11 @@ To run a specific version in Reunite:
 
 5. After the preview build has completed, open it using the **View** drop-down in the top right corner of the page.
 
-   ![Screenshot of top right corner of Reunite editor with View drop-down](../content/images/view-project-dropdown.png)
+   {% img
+    src="../content/images/view-project-dropdown.png"
+    alt="Screenshot of top right corner of Reunite editor with View drop-down"
+    withLightbox=true
+   /%}
 
 6. [Check the version](#check-version).
 7. To run this version in your production build, [open a pull request](../reunite/project/pull-request/open-pull-request.md), then review and [merge it](../reunite/project/pull-request/review-pull-request.md#merge-a-pull-request) with the new `package.json` file.
