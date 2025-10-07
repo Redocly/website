@@ -10,7 +10,7 @@ seo:
 
 ---
 
-## Key Takeaways
+## Key takeaways
 
 When a client and an API exchange information, that data travels across the internet, a public network. Without protection, this data gets intercepted and read by malicious actors. This is where encryption comes in.
 
@@ -24,7 +24,7 @@ When a client and an API exchange information, that data travels across the inte
 
 ---
 
-## Quick Start Guide
+## Quick start guide
 
 Ready to implement secure TLS encryption? Follow these steps:
 
@@ -38,13 +38,13 @@ Ready to implement secure TLS encryption? Follow these steps:
 
 ---
 
-## The Banking Vault Principle
+## The banking vault principle
 
 > **The Banking Vault Principle**: When banks transfer large sums between branches, they don't send cash in regular envelopes. They use armored vehicles with multiple security layers. TLS encryption works similarly — it creates a secure transport layer that protects your API data during transit, even across untrusted networks.
 
 **Encryption in transit** works similarly, creating a secure, private tunnel for API data as it moves between the client and the server.
 
-## TLS 1.3: The Modern Standard
+## TLS 1.3: The modern standard
 
 This secure tunnel is primarily established using **Transport Layer Security (TLS) version 1.3**, as specified in [IETF RFC 8446](https://tools.ietf.org/html/rfc8446). [NIST SP 800-52 Rev. 2](https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final) guidelines for TLS implementations unequivocally mandate TLS 1.3 for modern systems, as older protocols—including all versions of SSL, TLS 1.0, and TLS 1.1—are deprecated and considered insecure due to known vulnerabilities.
 
@@ -54,7 +54,7 @@ When a client connects to an API over `https://`, it initiates a "TLS handshake.
 2. **Agreement on Encryption:** They agree on a set of cryptographic algorithms (a "cipher suite") to use for the session.  
 3. **Key Exchange:** They securely generate and exchange unique session keys that will be used to encrypt and decrypt all data for the remainder of the conversation.
 
-### TLS Handshake Process
+### TLS handshake process
 
 ```mermaid
 sequenceDiagram
@@ -87,7 +87,7 @@ sequenceDiagram
 
 *Sequence diagram illustrating the TLS handshake process between client and server, showing certificate validation, cipher suite selection, and secure key exchange that ensures encrypted API communication.*
 
-## TLS Security Guarantees
+## TLS security guarantees
 
 TLS, when done right, provides three essential security guarantees:
 
@@ -97,7 +97,7 @@ TLS, when done right, provides three essential security guarantees:
 
 This is why secure APIs always use URLs that start with `https://` instead of `http://`. The 's' stands for 'secure' and indicates that the connection is protected by TLS encryption.
 
-## TLS Implementation Best Practices
+## TLS implementation best practices
 
 In production environments, telling teams to "use HTTPS" without specifics sometimes leads to misconfigured TLS and a false sense of security. Proper TLS implementation requires:
 
@@ -124,7 +124,7 @@ testssl.sh --fast https://api.example.com
 
 > Expert insight: "Treat TLS as a product with owners and SLAs. We track TLS health on dashboards the same way we track latency and errors."
 
-## Enforcing HTTPS in Your API Specification
+## Enforcing HTTPS in your API specification
 
 The security contract for encrypted transit begins within the `servers` object of your OpenAPI specification. Every URL defined here must use the `https://` scheme—this isn't just documentation, it's a formal declaration of your API's secure endpoints.
 
@@ -147,20 +147,20 @@ servers:
 - **Enables modern web features** that require secure contexts (Service Workers, etc.)
 - **Improves SEO and user trust** with browser security indicators
 
-### Automated Governance Enforcement
+### Automated governance enforcement
 
 Modern API governance tools can enforce HTTPS usage through automated validation rules. When integrated into your CI/CD pipeline, automated governance creates security gates. If a developer attempts to commit an OpenAPI file with insecure server URLs, the pipeline fails with a clear error message, preventing insecure configurations from ever reaching production.
 
 *Automated governance tools fail CI/CD builds when OpenAPI specifications use HTTP instead of HTTPS, requiring developers to fix security violations before deployment.*
 
-## TLS Configuration Examples
+## TLS configuration examples
 
 Choose your server configuration based on your technology stack. Authoritative sources like the [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/) provide excellent, up-to-date templates for secure server configurations.
 
 {% tabs %}
   {% tab label="Nginx Configuration" %}
 
-### Production Nginx TLS Configuration
+### Production Nginx TLS configuration
 
 ```nginx {% title="nginx.conf - Production TLS Security Configuration" %}
 server {
@@ -222,7 +222,7 @@ server {
 {% /tab %}
 {% tab label="Express.js Configuration" %}
 
-### Express.js HTTPS Server with Security Headers
+### Express.js HTTPS server with security headers
 
 ```javascript {% title="secure-server.js" %}
 const https = require('https');
@@ -259,7 +259,7 @@ https.createServer(options, app).listen(443, () => {
 {% /tab %}
 {% /tabs %}
 
-## Attack Example: Heartbleed (TLS library vulnerability, 2014)
+## Attack example: Heartbleed (TLS library vulnerability, 2014)
 
 The Heartbleed bug (CVE-2014-0160) was a critical vulnerability in the OpenSSL library, not the TLS protocol itself. It allowed attackers to read up to 64KB of a server's memory by sending a malformed TLS heartbeat request. The server would respond with not only the small payload sent by the attacker but also adjacent memory contents, which could include session cookies, user credentials, and even the server's private encryption keys.
 
@@ -280,7 +280,7 @@ sequenceDiagram
 
 Why this matters: TLS is only as strong as its implementation. Monitoring and rapid patching for library CVEs are part of infrastructure security.
 
-## Mutual TLS (mTLS): Two-Way Authentication
+## Mutual TLS (mTLS): Two-way authentication
 
 While standard TLS only authenticates the server to the client, **Mutual TLS (mTLS)** requires both parties to authenticate each other using certificates. This provides stronger security for high-trust scenarios and is essential for implementing zero-trust architecture principles.
 
@@ -342,14 +342,14 @@ server {
 
 > **mTLS Best Practice**: Use mTLS for service-to-service communication and regular TLS + [JWT/OAuth2](authentication-authorization-openapi) for client-to-server communication.
 
-## TLS Monitoring and Troubleshooting
+## TLS monitoring and troubleshooting
 
 Choose your monitoring approach based on your infrastructure:
 
 {% tabs %}
   {% tab label="Certificate Monitoring (Prometheus)" %}
 
-### Certificate Monitoring
+### Certificate monitoring
 
 ```yaml {% title="prometheus.yml" %}
 groups:
@@ -379,7 +379,7 @@ groups:
 {% /tab %}
 {% tab label="Troubleshooting Steps" %}
 
-### Common TLS Troubleshooting Steps
+### Common TLS troubleshooting steps
 
 **Certificate Issues:**
 - Expired certificates — monitor expiry dates and automate renewal
@@ -412,7 +412,7 @@ openssl x509 -noout -dates
 {% /tab %}
 {% /tabs %}
 
-## Frequently Asked Questions
+## Frequently asked questions
 
 ### Why can't I use HTTP for internal APIs?
 Even internal networks can be compromised. Using HTTPS everywhere (zero-trust approach) protects against insider threats, lateral movement attacks, and accidental data exposure. The performance overhead of [TLS 1.3](#tls-13-the-modern-standard) is minimal with modern hardware and HTTP/2. See [OpenAPI HTTPS enforcement](#enforcing-https-in-your-api-specification) for implementation guidance.
@@ -426,7 +426,7 @@ SSL (Secure Sockets Layer) is the predecessor to TLS. SSL versions are deprecate
 ### Should I implement certificate pinning for API clients?
 Certificate pinning can improve security by preventing man-in-the-middle attacks, but it adds operational complexity. Consider it for high-security applications, but ensure you have a robust certificate rotation and backup pin management process.
 
-## Resources and Next Steps
+## Resources and next steps
 
 ### Essential Reading
 - [IETF RFC 8446](https://tools.ietf.org/html/rfc8446) - TLS 1.3 protocol specification and security requirements
