@@ -140,15 +140,16 @@ rules:
     severity: error
 
   # Advanced cross-operation security validation (requires custom functions)
-  rule/comprehensive-security-check:
-    subject:
-      type: Root
-    assertions:
-      security/checkOperationSecurity:
-        methods: [post, put, patch, delete]
-        nullable: false
-    message: "All write operations must have properly configured security schemes"
-    severity: error
+  # NOTE: Commented out - requires security plugin
+  # rule/comprehensive-security-check:
+  #   subject:
+  #     type: Root
+  #   assertions:
+  #     security/checkOperationSecurity:
+  #       methods: [post, put, patch, delete]
+  #       nullable: false
+  #   message: "All write operations must have properly configured security schemes"
+  #   severity: error
 
   # ==========================================
   # API3:2023 - Broken Object Property Level Authorization
@@ -303,14 +304,15 @@ rules:
     severity: warn
 
   # Advanced rate limiting consistency validation (requires custom functions)
-  rule/rate-limit-consistency:
-    subject:
-      type: Root
-    assertions:
-      security/validateRateLimitConsistency:
-        requiredHeaders: [RateLimit, X-RateLimit-Limit, X-Rate-Limit-Limit]
-    message: "Rate limiting configurations should be consistent across operations"
-    severity: warn
+  # NOTE: Commented out - requires security plugin
+  # rule/rate-limit-consistency:
+  #   subject:
+  #     type: Root
+  #   assertions:
+  #     security/validateRateLimitConsistency:
+  #       requiredHeaders: [RateLimit, X-RateLimit-Limit, X-Rate-Limit-Limit]
+  #   message: "Rate limiting configurations should be consistent across operations"
+  #   severity: warn
 
   # ==========================================
   # API5:2023 - Broken Function Level Authorization
@@ -333,26 +335,28 @@ rules:
     severity: error
 
   # Advanced admin security isolation validation (requires custom functions)
-  rule/admin-security-isolation:
-    subject:
-      type: Root
-    assertions:
-      security/validateAdminSecurity:
-        adminUrlPattern: "/admin"
-    message: "Administrative endpoints must use different security schemes than regular operations"
-    severity: error
+  # NOTE: Commented out - requires security plugin
+  # rule/admin-security-isolation:
+  #   subject:
+  #     type: Root
+  #   assertions:
+  #     security/validateAdminSecurity:
+  #       adminUrlPattern: "/admin"
+  #   message: "Administrative endpoints must use different security schemes than regular operations"
+  #   severity: error
 
   # Advanced OAuth scope validation (requires custom functions)
-  rule/oauth-scope-validation:
-    subject:
-      type: Root
-    assertions:
-      security/validateOAuthScopes:
-        adminOperations: [delete, post, put, patch]
-        requiredAdminScopes: [admin, write, manage]
-        adminPathPatterns: ["/admin", "/manage", "/config", "/system"]
-    message: "OAuth scopes must be appropriate for operation sensitivity"
-    severity: error
+  # NOTE: Commented out - requires security plugin
+  # rule/oauth-scope-validation:
+  #   subject:
+  #     type: Root
+  #   assertions:
+  #     security/validateOAuthScopes:
+  #       adminOperations: [delete, post, put, patch]
+  #       requiredAdminScopes: [admin, write, manage]
+  #       adminPathPatterns: ["/admin", "/manage", "/config", "/system"]
+  #   message: "OAuth scopes must be appropriate for operation sensitivity"
+  #   severity: error
 
   # ==========================================
   # API7:2023 - Server Side Request Forgery
