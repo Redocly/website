@@ -10,7 +10,7 @@ seo:
 
 ---
 
-## Key Takeaways
+## Key takeaways
 
 APIs are designed to accept data as input. However, an API should never blindly trust the data it receives from a client. The process of rigorously checking all incoming data is called data validation.
 
@@ -24,7 +24,7 @@ APIs are designed to accept data as input. However, an API should never blindly 
 
 ---
 
-## Quick Start Guide
+## Quick start guide
 
 Ready to implement secure input validation? Follow these steps:
 
@@ -38,11 +38,11 @@ Ready to implement secure input validation? Follow these steps:
 
 ---
 
-## The Restaurant Waiter Principle
+## The restaurant waiter principle
 
 > **The Restaurant Waiter**: The API is the waiter, and its documentation (or schema) is the menu. The menu explicitly states what can be ordered and in what format (e.g., "Steak - medium rare"). If a customer tries to order something not on the menu, like "a bicycle," or provides an invalid option, like "a million steaks," a competent waiter will immediately reject the order at the table before it ever reaches the kitchen. This is data validation.
 
-## Technical Implementation of Data Validation
+## Technical implementation of data validation
 
 In technical terms, data validation is the practice of checking all incoming data from a client to ensure it conforms to the expected format, type, range, and other constraints before it is processed by the application's business logic.
 
@@ -52,14 +52,14 @@ Proper data validation is a critical defense against a wide range of attacks, no
 
 If the API fails to validate the input and passes it directly to a database or the operating system, that malicious code could be executed. By strictly validating that all inputs are what they are supposed to be, an API can reject malicious payloads before they can do any harm.
 
-## Attack Prevention Strategies
+## Attack prevention strategies
 
 Choose the appropriate prevention strategy based on the attack vector you're protecting against:
 
 {% tabs %}
   {% tab label="SQL Injection Prevention" %}
 
-### SQL Injection Prevention
+### SQL injection prevention
 
 For interactions with a database, the gold standard for preventing SQL injection attacks is the use of parameterized queries, also known as prepared statements.
 
@@ -109,7 +109,7 @@ app.get('/users/:id', async (req, res) => {
 {% /tab %}
 {% tab label="Mass Assignment Prevention" %}
 
-### Mass Assignment Attack Prevention
+### Mass assignment attack prevention
 
 Mass assignment attacks occur when an application accepts more input parameters than expected, allowing attackers to modify fields they shouldn't have access to. The `additionalProperties: false` constraint is essential for preventing these attacks.
 
@@ -164,7 +164,7 @@ NewUser:
 {% /tab %}
 {% /tabs %}
 
-## Schema-Based Validation as Security Contract
+## Schema-based validation as security contract
 
 OpenAPI 3.1 provides a comprehensive vocabulary for defining strict validation rules by leveraging JSON Schema Draft 2020-12. By codifying these rules directly in your API specification, validation becomes core to your API's design.
 
@@ -296,7 +296,7 @@ ValidationPattern:
 - **Pattern validation** blocks injection attempts and malformed data
 - **Enum restrictions** enforce allow-lists instead of dangerous validation bypass
 
-### Automated Governance for Validation
+### Automated governance for validation
 
 Modern API governance tools can enforce input validation rules that require string length bounds, numeric ranges, and prevent mass assignment vulnerabilities.
 
@@ -304,7 +304,7 @@ This governance approach transforms security reviews. Instead of manually checki
 
 > **🚀 Interactive Implementation**: Learn to set up comprehensive input validation with our [Automated Security Validation Walkthrough](automated-security-validation-walkthrough), which includes production-ready rules for OWASP API Security Top 10 2023 compliance.
 
-## Key Security Constraints
+## Key security constraints
 
 The most critical schema constraints for API security focus on preventing resource exhaustion and injection attacks:
 
@@ -315,7 +315,7 @@ The most critical schema constraints for API security focus on preventing resour
 
 These constraints can be automatically enforced by governance rules, ensuring no schema can bypass these fundamental protections.
 
-## Common Validation Patterns
+## Common validation patterns
 
 {% table %}
 * Input Type
@@ -373,7 +373,7 @@ properties:
 
 > API Security Best Practice: "Blocking PRs that add new string fields without `maxLength` constraints is one of the most cost-effective security guardrails you can implement."
 
-## Attack Example: Equifax (OGNL injection via Apache Struts, 2017)
+## Attack example: Equifax (OGNL injection via Apache Struts, 2017)
 
 The 2017 Equifax data breach was the result of a catastrophic input validation failure in the Apache Struts framework (CVE-2017-5638). The vulnerability allowed attackers to perform remote code execution by sending a specially crafted `Content-Type` header. The Struts framework failed to properly sanitize this header value, interpreting it as an Object-Graph Navigation Language (OGNL) expression and executing it. This gave attackers a direct shell on the server, which they used to access sensitive databases and exfiltrate the personal data of over 140 million people.
 
@@ -400,14 +400,14 @@ Why this matters: Strong schema validation, input allow-lists, and patch hygiene
 
 **Security operations:** When schema validation and [attack prevention strategies](#attack-prevention-strategies) are in place, implement [monitoring](#input-validation-monitoring) to detect attempted breaches and [advanced validation techniques](#advanced-validation-techniques) for complex scenarios.
 
-## Input Validation Monitoring
+## Input validation monitoring
 
 Choose your monitoring approach based on your security operations needs:
 
 {% tabs %}
   {% tab label="Validation Logging (JavaScript)" %}
 
-### Validation Failure Logging
+### Validation failure logging
 
 **Express.js Middleware for Security Monitoring**
 
@@ -445,7 +445,7 @@ app.use((req, res, next) => {
 {% /tab %}
 {% tab label="Validation Metrics (JavaScript)" %}
 
-### Validation Metrics
+### Validation metrics
 
 ```javascript
 // Track validation patterns for security analysis
@@ -520,9 +520,9 @@ function trackValidationError(req, field, errorType) {
 {% /tab %}
 {% /tabs %}
 
-## Advanced Validation Techniques
+## Advanced validation techniques
 
-### Custom Format Validators
+### Custom format validators
 ```javascript
 // Custom OpenAPI format validators
 const customFormats = {
@@ -553,7 +553,7 @@ const schema = {
 };
 ```
 
-### Contextual Validation Rules
+### Contextual validation rules
 ```yaml {% title="openapi.yaml" %}
 # Different validation rules based on context
 components:
@@ -577,7 +577,7 @@ components:
           pattern: "^[\\w\\s._@-]+$"      # Less restrictive for internal use
 ```
 
-## Frequently Asked Questions
+## Frequently asked questions
 
 ### How does OpenAPI validation prevent injection attacks?
 OpenAPI specifications define precise data schemas with type validation, format constraints, and length limits. When enforced by [automated governance](#automated-governance-for-validation), these schemas automatically reject malformed inputs that could contain injection payloads, stopping attacks before they reach your application logic. See [Schema-Based Validation as Security Contract](#schema-based-validation-as-security-contract) for implementation details.
@@ -594,7 +594,7 @@ File uploads require special attention: validate file types using content inspec
 ### What's the performance impact of extensive validation?
 Modern validation libraries are highly optimized. The security benefit far outweighs the minimal performance cost. Consider caching compiled schemas and using efficient validation libraries like `ajv` for JavaScript or `jsonschema` for Python. Implement [validation monitoring](#input-validation-monitoring) to track performance impacts.
 
-## Resources and Next Steps
+## Resources and next steps
 
 ### Essential Reading
 - [OWASP API Security Top 10](https://owasp.org/www-project-api-security/) - Comprehensive vulnerability guide including injection attacks (API3:2023) and resource consumption (API4:2023)
