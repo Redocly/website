@@ -10,7 +10,7 @@ seo:
 
 ---
 
-## Key Takeaways
+## Key takeaways
 
 Authentication and authorization form the foundation of API access control. While often used interchangeably, these concepts serve distinct purposes: authentication verifies *who* the user is, while authorization determines *what* they can do. Modern APIs require both layers to prevent unauthorized access and enforce business rules.
 
@@ -25,7 +25,7 @@ In this guide, we'll explore how to use OpenAPI 3.1 security schemes to define r
 
 ---
 
-## Quick Start Guide
+## Quick start guide
 
 Ready to implement authentication and authorization? Start here:
 
@@ -39,11 +39,11 @@ Ready to implement authentication and authorization? Start here:
 
 ---
 
-## Understanding Authentication vs Authorization
+## Understanding authentication vs authorization
 
 The distinction between authentication and authorization is fundamental to API security design. Understanding this difference helps you implement the right controls at the right layers.
 
-### The Two-Phase Security Process
+### The two-phase security process
 
 ```mermaid
 sequenceDiagram
@@ -86,7 +86,7 @@ sequenceDiagram
 - Evaluated for each request to protected resources
 - Can be fine-grained (specific endpoints) or coarse-grained (broad permissions)
 
-### Common Authentication Patterns
+### Common authentication patterns
 
 **[API Keys](#authentication-methods):**
 - Simple, stateless authentication
@@ -105,21 +105,21 @@ sequenceDiagram
 - Built-in scope-based authorization
 - Recommended for user-facing applications
 
-## Defining Security Schemes in OpenAPI
+## Defining security schemes in OpenAPI
 
 OpenAPI 3.1 provides a robust framework for defining access control through two primary constructs:
 
 1. **`components.securitySchemes`**: Defines *how* clients can authenticate (JWT Bearer, OAuth2, API Keys)
 2. **`security`**: Specifies *that* an endpoint is secured and by which mechanism(s)
 
-## Authentication Methods
+## Authentication methods
 
 Choose the authentication method that best fits your use case:
 
 {% tabs %}
   {% tab label="JWT Bearer Token" %}
 
-### JWT Bearer Token Authentication
+### JWT bearer token authentication
 
 JWT (JSON Web Token) Bearer authentication is the most common pattern for modern APIs. The token contains encoded claims about the user and can be validated without database lookups.
 
@@ -209,7 +209,7 @@ RSASHA256(
 {% /tab %}
 {% tab label="OAuth2 with Scopes" %}
 
-### OAuth2 with Scope-Based Authorization
+### OAuth2 with scope-based authorization
 
 OAuth2 provides the most flexible authorization framework, supporting fine-grained permissions through scopes and multiple authentication flows.
 
@@ -358,7 +358,7 @@ This pattern allows fine-grained control: a user might have permission to read p
 {% /tab %}
 {% tab label="API Key" %}
 
-### API Key Authentication
+### API key authentication
 
 For service-to-service communication and simpler use cases, API keys provide straightforward authentication.
 
@@ -405,7 +405,7 @@ paths:
 {% /tab %}
 {% tab label="Mutual TLS (mTLS)" %}
 
-### Mutual TLS (mTLS) for Service Authentication
+### Mutual TLS (mTLS) for service authentication
 
 For high-security environments and service-to-service communication, [mutual TLS](api-tls-encryption-https-best-practices#mutual-tls-mtls-two-way-authentication) provides cryptographic identity verification.
 
@@ -439,11 +439,11 @@ paths:
 {% /tab %}
 {% /tabs %}
 
-## Automated Governance for Access Control
+## Automated governance for access control
 
 One of the most common API vulnerabilities is the accidentally public endpoint—an operation that should require authentication but doesn't have security requirements defined. Automated governance prevents this by enforcing security rules during development.
 
-### Security Governance Rules
+### Security governance rules
 
 **Mandatory Authentication on Write Operations:**
 ```yaml {% title="governance-rules.yaml" %}
@@ -474,7 +474,7 @@ rules:
 
 When these rules run in your CI/CD pipeline, any endpoint without proper security definitions causes the build to fail, preventing accidentally public endpoints from reaching production.
 
-### Implementation Example
+### Implementation example
 
 **Before Governance (Vulnerable):**
 ```yaml
@@ -507,11 +507,11 @@ paths:
 
 **Next steps:** Once you've implemented automated governance, consider setting up [comprehensive monitoring](#authentication-and-authorization-monitoring) to track security violations and [troubleshooting processes](#troubleshooting-common-issues) to handle authentication failures effectively.
 
-## Security Definitions as Configuration
+## Security definitions as configuration
 
 Defining security schemes in OpenAPI extends beyond documentation—it establishes configuration-as-code that drives consistency across your entire API ecosystem:
 
-### API Gateway Integration
+### API gateway integration
 
 Modern API gateways can import OpenAPI specifications and automatically configure authentication and authorization based on your security definitions.
 
@@ -552,7 +552,7 @@ functions:
               - users:read
 ```
 
-### Code Generation
+### Code generation
 
 OpenAPI security schemes enable automated generation of authentication handling in client SDKs and server stubs.
 
@@ -591,14 +591,14 @@ class APIClient {
 
 **Development workflow:** Generated client SDKs like the one above help catch authentication issues early. When problems occur in production, use [monitoring](#authentication-and-authorization-monitoring) and [troubleshooting](#troubleshooting-common-issues) to diagnose and resolve issues quickly.
 
-## Advanced Authorization Patterns
+## Advanced authorization patterns
 
 Choose the authorization pattern that fits your application's complexity:
 
 {% tabs %}
   {% tab label="Role-Based Access Control (RBAC)" %}
 
-### Role-Based Access Control (RBAC)
+### Role-based access control (RBAC)
 
 While OpenAPI doesn't have built-in RBAC support, you can model roles through scopes or custom extensions.
 
@@ -648,7 +648,7 @@ paths:
 {% /tab %}
 {% tab label="Context-Dependent Authorization" %}
 
-### Context-Dependent Authorization
+### Context-dependent authorization
 
 Some authorization decisions depend on request context, such as resource ownership or dynamic policies.
 
@@ -679,7 +679,7 @@ paths:
 {% /tab %}
 {% tab label="Fine-Grained Permissions" %}
 
-### Fine-Grained Permissions
+### Fine-grained permissions
 
 For complex applications, you might need very specific permissions that combine multiple factors.
 
@@ -719,14 +719,14 @@ paths:
 
 **Implementation tip:** Complex authorization patterns require robust [monitoring and troubleshooting](#troubleshooting-common-issues). The patterns above should be complemented with comprehensive logging and [best practices](#best-practices-summary) for production deployment.
 
-## Authentication and Authorization Monitoring
+## Authentication and authorization monitoring
 
 Choose your monitoring approach based on your technology stack:
 
 {% tabs %}
   {% tab label="Authentication Monitoring (JS)" %}
 
-### Token Validation Metrics
+### Token validation metrics
 
 Monitor authentication success and failure patterns to detect potential attacks and system issues.
 
@@ -802,7 +802,7 @@ app.use('/api', (req, res, next) => {
 {% /tab %}
 {% tab label="Authorization Monitoring (JavaScript)" %}
 
-### Authorization Failure Analysis
+### Authorization failure analysis
 
 Track authorization failures to identify potential privilege escalation attempts or misconfigured permissions.
 
@@ -897,7 +897,7 @@ This monitoring helps distinguish between legitimate access denials (user simply
 {% /tab %}
 {% /tabs %}
 
-### Security Event Logging
+### Security event logging
 
 Implement comprehensive logging for security events to support incident response and compliance requirements.
 
@@ -923,9 +923,9 @@ security_events:
 
 **Security operations:** When monitoring detects issues, use the structured logs above with the [troubleshooting guide below](#troubleshooting-common-issues) to quickly diagnose and resolve authentication and authorization problems.
 
-## Troubleshooting Common Issues
+## Troubleshooting common issues
 
-### Authentication Problems
+### Authentication problems
 
 {% tabs %}
 {% tab label="Missing or Invalid Bearer Token" %}
@@ -1011,7 +1011,7 @@ curl -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9..." \
 {% /tab %}
 {% /tabs %}
 
-### Authorization Problems
+### Authorization problems
 
 {% tabs %}
 {% tab label="Insufficient Scopes" %}
@@ -1104,7 +1104,7 @@ curl -H "Authorization: Bearer user_token" \
 {% /tab %}
 {% /tabs %}
 
-### Debugging Checklist
+### Debugging checklist
 
 1. **Verify token format and claims:**
    ```bash
@@ -1144,21 +1144,21 @@ curl -H "Authorization: Bearer user_token" \
         https://api.example.com/users/me
    ```
 
-## Best Practices Summary
+## Best practices summary
 
-### Security Scheme Design
+### Security scheme design
 - Use JWT Bearer tokens for stateless authentication
 - Implement OAuth2 with PKCE for user-facing applications
 - Define granular scopes that map to business operations
 - Use mTLS for high-trust service-to-service communication
 
-### Governance and Automation
+### Governance and automation
 - Require security definitions on all write operations
 - Validate that all security references have corresponding definitions
 - Fail builds when security requirements are missing
 - Generate gateway configurations from OpenAPI security schemes
 
-### Monitoring and Observability
+### Monitoring and observability
 - Track authentication success/failure rates
 - Monitor authorization violations by endpoint
 - Log security events with sufficient context for incident response
@@ -1170,7 +1170,7 @@ curl -H "Authorization: Bearer user_token" \
 - Implement proper error responses (401 vs 403)
 - Test authentication and authorization scenarios in CI/CD
 
-## Frequently Asked Questions
+## Frequently asked questions
 
 ### What's the difference between authentication and authorization?
 Authentication verifies *who* the user is (like checking an ID card), while authorization determines *what* they can do (like checking permissions). Authentication happens first and provides identity, while authorization uses that identity to make access decisions for each request.
