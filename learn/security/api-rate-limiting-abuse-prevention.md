@@ -10,7 +10,7 @@ seo:
 
 ---
 
-## Key Takeaways
+## Key takeaways
 
 A single client, whether intentionally malicious or simply due to a bug in its code, can send a massive number of requests to an API in a short period. This can overwhelm the server, degrading performance for all other users or even causing the service to crash. Rate limiting is the primary defense against this scenario.
 
@@ -24,7 +24,7 @@ A single client, whether intentionally malicious or simply due to a bug in its c
 
 ---
 
-## Quick Start Guide
+## Quick start guide
 
 Ready to implement effective rate limiting? Follow these steps:
 
@@ -38,13 +38,13 @@ Ready to implement effective rate limiting? Follow these steps:
 
 ---
 
-## The Library Card Principle
+## The library card principle
 
 > **The Library Card**: A library card allows a patron to check out a maximum of ten books per month. Once that limit is reached, the system will not allow any more checkouts until the next month begins, regardless of how many times the patron asks.
 
 **Rate limiting** applies this same principle to an API. It establishes a policy that restricts the number of requests a single client can make within a specific time window (e.g., 100 requests per minute).
 
-## Why Rate Limiting Is Critical for API Security
+## Why rate limiting is critical for API security
 
 Rate limiting is a critical control for both security and reliability, directly mitigating several OWASP API Security Top 10 risks:
 
@@ -54,7 +54,7 @@ Rate limiting is a critical control for both security and reliability, directly 
 
 3. **Reliability and Fair Usage:** It ensures that the API remains stable and responsive for all users by preventing any single client from monopolizing server resources.
 
-## Documenting Rate Limits in OpenAPI
+## Documenting rate limits in OpenAPI
 
 While OpenAPI 3.1 doesn't include native rate-limiting objects, extension properties (prefixed with `x-`) provide a standard mechanism. The best practice is defining custom `x-rateLimit` extensions at the operation level.
 
@@ -93,7 +93,7 @@ paths:
               description: "Requests remaining in current window."
 ```
 
-### Automated Governance for Rate Limiting
+### Automated governance for rate limiting
 
 API governance tools can enforce rules that ensure [authentication endpoints](authentication-authorization-openapi) always have rate limiting policies defined.
 
@@ -101,14 +101,14 @@ This approach provides dual benefits: modern API documentation tools automatical
 
 > **🔧 Implementation Guide**: See our [Automated Security Validation Walkthrough](automated-security-validation-walkthrough) for step-by-step instructions on implementing rate limiting validation rules, including 429 response validation and header consistency checks.
 
-## Rate Limiting Implementation Approaches
+## Rate limiting implementation approaches
 
 Choose the rate limiting algorithm that best fits your traffic patterns and precision requirements:
 
 {% tabs %}
   {% tab label="Token Bucket" %}
 
-### Token Bucket Algorithm
+### Token bucket algorithm
 
 **Best for:** APIs that need to handle legitimate traffic spikes
 
@@ -204,7 +204,7 @@ app.post('/auth/login', (req, res) => {
   {% /tab %}
   {% tab label="Sliding Window" %}
 
-### Sliding Window Algorithm
+### Sliding window algorithm
 
 **Best for:** APIs requiring exact rate limiting precision
 
@@ -273,7 +273,7 @@ class SlidingWindowRateLimit {
   {% /tab %}
   {% tab label="Fixed Window" %}
 
-### Fixed Window Algorithm
+### Fixed window algorithm
 
 **Best for:** Simple use cases with easy implementation requirements
 
@@ -354,9 +354,9 @@ class FixedWindowRateLimit {
   {% /tab %}
 {% /tabs %}
 
-## Advanced Rate Limiting Techniques
+## Advanced rate limiting techniques
 
-### Multi-tier Rate Limiting Configuration
+### Multi-tier rate limiting configuration
 
 ```yaml {% title="Kong configuration" %}
 plugins:
@@ -377,7 +377,7 @@ plugins:
     policy: redis
 ```
 
-### Client-side Exponential Backoff
+### Client-side exponential backoff
 
 ```javascript
 class APIClient {
@@ -410,7 +410,7 @@ As a complementary practice, the client-side responsibility of implementing expo
 
 > **Tip:** Combine per-IP and per-account quotas and require exponential backoff on clients.
 
-## Attack Example: Facebook Phone Number Scraping (2019)
+## Attack example: Facebook phone number scraping (2019)
 
 In 2019, malicious actors exploited a vulnerability in Facebook's contact importer feature to scrape the personal data of over 530 million users. The API endpoint itself was not technically "broken"—it performed its intended function of matching phone numbers to user profiles. The vulnerability was the absence of adequate rate limiting and business rule enforcement.
 
@@ -434,14 +434,14 @@ sequenceDiagram
 
 Why this matters: Rate limiting, velocity checks, and behavior analytics are core defenses against scraping and credential-stuffing at scale.
 
-## Rate Limiting Monitoring and Observability
+## Rate limiting monitoring and observability
 
 Choose your monitoring approach based on your security operations needs:
 
 {% tabs %}
   {% tab label="Metrics Collection (JavaScript)" %}
 
-### Rate Limiting Metrics Collection
+### Rate limiting metrics collection
 
 ```javascript
 // Track rate limiting metrics for security analysis
@@ -502,7 +502,7 @@ class RateLimitMetrics {
 {% /tab %}
 {% tab label="Alerting Configuration (Prometheus)" %}
 
-### Alerting Configuration
+### Alerting configuration
 
 ```yaml {% title="prometheus-alerts.yml" %}
 groups:
@@ -536,7 +536,7 @@ groups:
 {% /tab %}
 {% /tabs %}
 
-### Rate Limiting Troubleshooting
+### Rate limiting troubleshooting
 
 **Common Issues and Solutions:**
 
@@ -562,7 +562,7 @@ for i in {1..10}; do
 done
 ```
 
-### Advanced Rate Limiting Patterns
+### Advanced rate limiting patterns
 
 **Adaptive Rate Limiting:**
 ```javascript
@@ -601,7 +601,7 @@ limit_req_zone $binary_remote_addr_internal zone=internal:10m rate=1000r/m;
 
 > Rate Limiting Best Practice: "Rate limiting on auth endpoints is non-negotiable. We set 5/min per IP and per account, and alert when bypass attempts appear."
 
-## Frequently Asked Questions
+## Frequently asked questions
 
 ### Why is rate limiting important for API security?
 Rate limiting prevents denial-of-service attacks, brute-force authentication attempts, and data scraping. It ensures fair resource usage among legitimate users while blocking malicious automation. Without rate limits, a single bad actor can overwhelm your API infrastructure. See the [Facebook phone number scraping incident](#attack-example-facebook-phone-number-scraping-2019) for a real-world example.
@@ -625,9 +625,9 @@ Choose based on your accuracy requirements, traffic patterns, and implementation
 ### How do I communicate rate limits to API consumers?
 Document limits in [OpenAPI specifications using x-rateLimit extensions](#documenting-rate-limits-in-openapi), include rate limit headers in responses (`X-RateLimit-Limit`, `X-RateLimit-Remaining`, `Retry-After`), provide clear error messages with 429 responses, and maintain public documentation about your rate limiting policies.
 
-## Rate Limiting Strategy Framework
+## Rate limiting strategy framework
 
-### Implementation Priority
+### Implementation priority
 
 1. **Critical Endpoints First**
    - Authentication endpoints: 5-10 requests per minute per IP
@@ -645,7 +645,7 @@ Document limits in [OpenAPI specifications using x-rateLimit extensions](#docume
    - Write operations: More restrictive than reads
    - Administrative endpoints: Very restrictive with strong authentication
 
-### Rate Limit Testing Strategy
+### Rate limit testing strategy
 
 ```javascript
 // Rate limit testing framework
@@ -713,7 +713,7 @@ async function makeRequest(url) {
 // await testRateLimit('https://api.example.com/users', 50, 60);
 ```
 
-## Resources and Next Steps
+## Resources and next steps
 
 ### Essential Standards
 - <a href="https://owasp.org/www-project-api-security/" target="_blank">OWASP API Security Top 10</a> - Comprehensive guide including unrestricted resource consumption (API4:2023) and business logic abuse (API6:2023)
