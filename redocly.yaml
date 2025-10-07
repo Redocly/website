@@ -181,7 +181,6 @@ responseHeaders:
           https://www.google.com/recaptcha/ 
           https://www.gstatic.com/recaptcha/
           https://www.googletagmanager.com
-          https://cdn.rudderlabs.com
           https://cdn.usefathom.com
           https://www.clarity.ms
           https://js.hscollectedforms.net
@@ -205,14 +204,12 @@ responseHeaders:
         connect-src 
           'self'
           https://webhook.frontapp.com
-          https://api.rudderstack.com
           https://j.clarity.ms
           https://api.github.com
           https://api.rebilly.com
           https://forms.hsforms.com
           https://forms.hscollectedforms.net
-          https://www.google-analytics.com
-          https://redoclyrozwmb.dataplane.rudderstack.com
+          https://*.google-analytics.com
           https://hubspot-forms-static-embed.s3.amazonaws.com
           https://v.clarity.ms/collect;
         form-action 

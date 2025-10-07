@@ -11,8 +11,8 @@
   "author": "team@redocly.com",
   "license": "UNLICENSED",
   "dependencies": {
-    "@redocly/marketing-pages": "^0.1.16",
-    "@redocly/realm": "^0.126.0-next.12",
+    "@redocly/marketing-pages": "^0.1.26",
+    "@redocly/realm": "^0.126.0-next.21",
     "highlight-words-core": "^1.2.3",
     "polished": "^4.3.1"
   },
