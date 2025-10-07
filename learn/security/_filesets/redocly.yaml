@@ -2,8 +2,10 @@
 # Based on OWASP API Security Top 10 2023
 # https://owasp.org/www-project-api-security/
 
-plugins:
-  - './security-functions.js'
+# NOTE: This is a reference file for review purposes only
+# Plugin reference commented out to prevent build errors
+# plugins:
+#   - './security-functions.js'
 
   
 # Enable built-in security rules
