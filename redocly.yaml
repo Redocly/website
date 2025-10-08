@@ -174,8 +174,7 @@ responseHeaders:
       value: "
         script-src 
           'self' 
-          'report-sample' 
-          'unsafe-eval' 
+          'report-sample'
           https://js.hsforms.net 
           http://js.hsforms.net 
           https://js.hs-scripts.com 
