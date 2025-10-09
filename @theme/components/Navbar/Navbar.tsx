@@ -105,7 +105,7 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
       isTop={prevScrollPos === 0}
       isColorful={colorfulPagesList.includes(pathname)}
       isDefault={defaultPageList.includes(pathname)}
-      isDocs={isDocsOrLearnPage}
+      isDocs={isDocsOrLearnPage || isEditorPage}
       showVSCodeExtensionBanner={showVSCodeExtensionBanner}
       isMobile={isOpen}
       isRespect={pathname === '/respect'}
