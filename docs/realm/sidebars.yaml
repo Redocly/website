@@ -129,7 +129,7 @@
         - page: reunite/project/remote-content/edit-remote-content-folder.md
           label: Edit content folder
         - page: reunite/project/remote-content/verify-remote-content.md
-          label: Verify remote content
+          label: Remote content automation
     # consider moving or removing the page:
     # - page: setup/how-to/feedback/extend-feedback.md
     #   label: Extend feedback form
