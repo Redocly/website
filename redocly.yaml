@@ -134,6 +134,7 @@ footer:
           page: ./pages/docs-like-code/docsLikeCode.page.tsx
         - label: Editor
           page: ./pages/editor/editor.page.tsx
+          external: true
     - group: Tech & legal
       items:
         - label: Security
