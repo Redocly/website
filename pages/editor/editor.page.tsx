@@ -5,6 +5,7 @@ import { LanguageServerService } from './service/languageServerService';
 export const frontmatter = {
   seo: {
     title: 'Swagger Editor',
+    description: 'Edit and Preview Openapi/Swagger Documentation',
   },
   slug: '/editor',
   footer: {
