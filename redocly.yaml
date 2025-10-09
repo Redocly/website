@@ -23,7 +23,6 @@ markdown:
 scripts:
   head:
     - src: '@theme/color-mode-hack.js'
-      inline: false
 analytics:
   gtm:
     trackingId: GTM-KVV53WR
@@ -200,6 +199,7 @@ responseHeaders:
           'sha256-FHfozmosNdt5yUG9l8OmVM1S/oTxw2TNWHPejSjEr58='
           'sha256-2VNfiq6Um2ua9MLfzend4JESqZeD1VSgkWvUrPvrlZE='
           'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no='
+          'sha256-+Ozb/ItuZAdaQgJd2RebN2rKWj1XkBuXVaV6/lT4Juo='
           'sha256-9qgU5FDrauEgF+e1iJWvsh46OwsIkNOLjkXggr/02jk=';
         object-src 'none'; 
         base-uri 'self'; 
@@ -235,6 +235,27 @@ responseHeaders:
   '/preview':
     - name: X-Frame-Options
       value: SAMEORIGIN
+  
+  # Editor page requires 'unsafe-eval' for OpenAPI validation (AJV schema compilation)
+  '/editor':
+    - name: Content-Security-Policy
+      value: "
+        script-src 
+          'self' 
+          'unsafe-eval'
+          https://cdn.jsdelivr.net
+          https://www.googletagmanager.com
+          'sha256-M28mypAFwwpIwIF9e1/A6867PQiwVvOrdqFSTFSa8/U='
+          'sha256-Tq4uREmlYInMCBRtudvmIOCc+VdyPNg3t18I9xtvdgs='
+          'sha256-vHWNkFcRXsOiOWmmubySLtLeZ3xAubNJpC7UdmQgSQU='
+          'sha256-Ed6Lei7deBSXT1iYYw0V36YZXaA4v7OsRknNjmNl/9c=';
+        object-src 'none'; 
+        base-uri 'self'; 
+        connect-src 'self' https://cdn.jsdelivr.net;
+        style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; 
+        worker-src 'self' blob:; 
+        child-src 'self' blob:; 
+        img-src 'self' data: https: blob:;"
 
 metadataGlobs:
   'blog/**':
