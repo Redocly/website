@@ -34,13 +34,17 @@ Connect your API documentation to AI assistants:
 
 ## 🔌 OpenAPI 3.2.0 support
 
-We've added comprehensive support for the latest OpenAPI specification:
+We've added basic support for the latest OpenAPI specification:
 - **Security updates**: Support for the new `deprecated` and `oauth2MetadataUrl` fields, plus the `deviceAuthorization` flow.
 - **Device authorization**: Automatic code samples generation for device authorization flow.
 - **Server names**: Added support for the `servers.name` property.
-- **Schema catalog links**: New `openapi.showSchemaCatalogLinks` configuration option displays links to schemas and requests that can be used as `$ref` values in other OpenAPI files within the same project.
 
 More to come...
+
+## OpenAPI reuse 
+
+We've added a way to share components such as schemas in a convenient way to encourage reuse:
+- **Schema catalog links**: New `openapi.showSchemaCatalogLinks` configuration option displays links to schemas and requests that can be used as `$ref` values in other OpenAPI files within the same project.
 
 ## ⚙️ Configuration and flexibility
 
@@ -53,6 +57,7 @@ More control over your documentation:
 
 Better control over GraphQL documentation:
 - **Built-in visibility control**: New `showBuiltInScalars` and `showBuiltInDirectives` options let you control visibility of built-in GraphQL scalars and directives.
+  We don't show built-in scalars and directives by default any longer.
 
 ## 🧪 Try it improvements
 
