@@ -4,7 +4,7 @@ import { LanguageServerService } from './service/languageServerService';
 
 export const frontmatter = {
   seo: {
-    title: 'Redocly Editor',
+    title: 'Swagger Editor',
   },
   slug: '/editor',
   footer: {
