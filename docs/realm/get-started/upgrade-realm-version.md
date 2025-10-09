@@ -1,3 +1,9 @@
+---
+keywords:
+  includes:
+    - package.json
+---
+
 # Upgrade product version
 
 If you are working in Reunite, your project updates automatically when new versions are released and you trigger a new build.
@@ -7,7 +13,7 @@ If you are working locally, you must update your `package.json` file to the vers
 
 Make sure you have the following:
 
-- for local development: [NodeJS](https://nodejs.org/en), v22.12.0 or later (alternatively -- v20.19.0 or later)
+- for local development: [NodeJS LTS](https://nodejs.org/en), v22.12.0 or later (alternatively -- v20.19.5 or later)
 
 {% admonition type="info" name="Product package names" %}
 This content applies to the following Redocly products and their corresponding package names:

@@ -71,6 +71,19 @@ To configure Respect Monitoring for your project:
 3. (Optional) Add a `servers` object with a `sourceDescriptionName` option to override a target URL described in an OpenAPI Description.
 4. (Optional) Add a `severity` object with a check type (`statusCodeCheck` | `successCriteriaCheck` | `schemaCheck` | `contentTypeCheck`) to severity level (`error` | `warn` | `off`) mapping, to override the severity level of the check.
    The default severity level is `error`.
+5. (Optional) Add SLO (Service Level Objectives) monitoring with `slo` object to set performance thresholds in milliseconds:
+   ```yaml {% title="redocly.yaml" %}
+   reunite:
+     jobs:
+       - path: 'arazzo-jobs/api-health-check.yaml'
+         agent: respect
+         trigger:
+           event: schedule
+           interval: 1m
+         slo:
+           warn: 5000    # Warning threshold: 5 seconds
+           error: 10000  # Error threshold: 10 seconds
+   ```
 
 ## View Respect Monitoring preview results
 
@@ -192,6 +205,23 @@ reunite:
       agent: respect
       trigger:
         event: build
+```
+
+### Job with SLO monitoring
+
+The following example adds a job with SLO (Service Level Objectives) monitoring to track performance thresholds:
+
+```yaml {% title="redocly.yaml" %}
+reunite:
+  jobs:
+    - path: 'arazzo-jobs/api-performance-check.yaml'
+      agent: respect
+      trigger:
+        event: schedule
+        interval: 30s
+      slo:
+        warn: 2000 # Warning threshold: 2 seconds
+        error: 5000 # Error threshold: 5 seconds
 ```
 
 ## Resources
