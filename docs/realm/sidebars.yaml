@@ -367,6 +367,8 @@
               label: Dynamic
             - page: customization/react-components/list/fontawesome-icons.md
               label: Font Awesome Icons
+            - page: customization/react-components/list/tag.md
+              label: Tag
     - page: customization/enable-source-maps.md
       label: Enable source maps
 
