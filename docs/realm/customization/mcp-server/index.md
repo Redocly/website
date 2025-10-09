@@ -22,6 +22,21 @@ Realm provides built-in MCP server capabilities that expose your API Docs to AI 
 - **Secure API access** — AI assistants can make authenticated requests to act on behalf of a user.
 - **Dynamic documentation** — AI assistants can extract and explain API reference content based on user needs.
 
+## Available MCP servers
+
+Realm includes two types of MCP servers:
+
+- [Docs MCP server](./docs-mcp.md) — provides API exploration and discovery capabilities for APIs listed in your project.
+- [Gateway MCP servers](./gateway-mcp.md) — created separately for each OpenAPI definition and enables AI assistants to make API requests from a natural language query.
+
+
+By default, Docs MCP server is enabled for your project.
+You can configure it and enable Gateway MCP in your [configuration](../../config/mcp.md).
+
+## Connect an AI agent to the MCP server
+
+- The Docs MCP server is registered at your root URL under the `/mcp` path.
+- The Gateway MCP server is registered for each API and is available under the same URL as your API reference plus `/mcp` (for example, `https://example.com/apis/museum-api/mcp`).
 ## Docs MCP server
 
 Use the Docs MCP server to explore and discover APIs in your project.
@@ -206,10 +221,10 @@ In the Claude Code CLI, ask the AI agent to perform an instruction that uses an 
 1. In VS Code, open the command palette.
    - macOS: `Command + Shift + P`
    - Windows/Linux: `Ctrl + Shift + P`
-1. Type "MCP: Add Server" in the command palette.
-1. Select "HTTP" to connect to a remote MCP server.
-1. Enter the MCP server URL (for example, `https://example.com/mcp`).
-1. Enter a name for the connection.
+2. Type "MCP: Add Server" in the command palette.
+3. Select "HTTP" to connect to a remote MCP server.
+4. Enter the MCP server URL (for example, `https://example.com/mcp`).
+5. Enter a name for the connection.
 
 If the MCP server requires authentication, VS Code prompts you to open a sign‑in page.
 Complete the sign‑in flow with your credentials.
@@ -226,4 +241,6 @@ Ask the AI to perform a query that uses an MCP tool.
 
 ## Resources
 
+- **[Docs MCP server](./docs-mcp.md)** - Use the Docs MCP server to explore and discover APIs in your API Docs
+- **[Gateway MCP server](./gateway-mcp.md)** - Use the Gateway MCP server for direct interaction with your APIs
 - **[MCP configuration reference](../../config/mcp.md)** - Configure MCP for your project
