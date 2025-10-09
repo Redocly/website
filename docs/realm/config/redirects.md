@@ -1,6 +1,5 @@
 ---
 products:
-  - Redoc
   - Revel
   - Reef
   - Realm
