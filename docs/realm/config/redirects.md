@@ -1,7 +1,6 @@
 ---
 products:
   - Revel
-  - Reef
   - Realm
 plans:
   - Pro
