@@ -240,6 +240,8 @@
               label: x-enumDescriptions
             - page: content/api-docs/openapi-extensions/x-additional-properties-name.md
               label: x-additionalPropertiesName
+            - page: content/api-docs/openapi-extensions/x-mcp.md
+              label: x-mcp
             - page: content/api-docs/openapi-extensions/x-metadata.md
               label: x-metadata
             - page: content/api-docs/openapi-extensions/x-hide-replay.md
