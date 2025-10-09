@@ -13,13 +13,11 @@ import { validationConfig } from './validationConfig';
 
 // Initialize language server configuration
 languageServerConfig.registerConfigFinder(async uri => {
-  console.log('🔧 [LS Config] Config requested for URI:', uri);
   if (typeof globalThis.process === 'undefined') {
     globalThis.process = { cwd: () => '/' } as any;
   } else if (typeof globalThis.process.cwd === 'undefined') {
     (globalThis.process as any).cwd = () => '/';
   }
-  console.log('🔧 [LS Config] Returning config identifier: "config"');
   return 'config';
 });
 
@@ -40,15 +38,12 @@ export class LanguageServerService extends BaseLanguageService {
    */
   override initialize(editor: Monaco.editor.IStandaloneCodeEditor, monaco: typeof Monaco) {
     super.initialize(editor, monaco);
-    console.log('🎯 [OpenAPI LS] Initializing OpenAPI language server');
     
     this.registerDocumentsProvider();
     this.languageServer.onDidConfigChange('config');
 
     this.registerCompletionProvider();
     this.registerDefinitionProvider();
-    
-    console.log('✅ [OpenAPI LS] OpenAPI language server initialized');
   }
 
   /**
@@ -60,11 +55,8 @@ export class LanguageServerService extends BaseLanguageService {
         return [];
       },
       get: uri => {
-        console.log('📄 [LS Config] Document requested for URI:', uri);
-        
         // Match config URI
         if (uri === 'config' || uri === 'file:///config' || uri.endsWith('/config')) {
-          console.log('✅ [LS Config] Matched config URI, providing config document');
           return {
             getText: () => {
               return JSON.stringify(validationConfig, null, 2);
@@ -72,7 +64,6 @@ export class LanguageServerService extends BaseLanguageService {
           };
         }
 
-        console.log('📝 [LS Config] Not a config URI, returning document provider for editor content');
         return createDocumentProvider(this.editor);
       },
     });
@@ -169,9 +160,7 @@ export class LanguageServerService extends BaseLanguageService {
     };
 
     try {
-      console.log('🔎 [OpenAPI LS] Calling language server validateOpenAPI...');
       const validationResults = await this.languageServer.validateOpenAPI(textDocument as any);
-      console.log('✅ [OpenAPI LS] Language server returned results:', validationResults?.length || 0, 'result(s)');
       
       return validationResults.flatMap((result: any) =>
         result.diagnostics.map((diagnostic: any) => ({
@@ -185,7 +174,7 @@ export class LanguageServerService extends BaseLanguageService {
         }))
       );
     } catch (error) {
-      console.error('💥 [OpenAPI LS] Error during OpenAPI validation:', error);
+      console.error('Error during OpenAPI validation:', error);
       return [];
     }
   }
