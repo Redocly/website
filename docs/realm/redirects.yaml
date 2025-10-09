@@ -20,7 +20,9 @@
 '/author/how-to/review-pull-request':
   to: '/reunite/project/pull-request/review-pull-request'
 '/author/how-to/switch-between-projects':
-  to: '/reunite/project/switch-between-projects'
+  to: '/reunite/project/manage-projects#switch-between-projects'
+'/reunite/project/switch-between-projects':
+  to: '/reunite/project/manage-projects#switch-between-projects'
 '/author/how-to/use-editor':
   to: '/reunite/project/use-editor'
 '/author/how-to/use-previews':

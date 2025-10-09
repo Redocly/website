@@ -51,12 +51,14 @@
     - separator: Project workspace
     - page: reunite/project/manage-projects.md
       label: Projects
+    - page: reunite/project/project-ui.md
+      label: Project user interface
     - page: reunite/project/use-editor.md
       label: Editor
     - page: reunite/project/keyboard-shortcuts.md
       label: Keyboard shortcuts
     - page: reunite/project/use-webview.md
-      label: Webviews
+      label: Webview
     - page: reunite/project/use-previews.md
       label: Previews
     - group: Deploys # missing content about the "Deploys"
@@ -79,7 +81,6 @@
           label: Review pull requests
         - page: reunite/project/pull-request/manage-pull-requests.md
           label: Manage pull requests
-    # Missing content about the API registry
     - group: Respect Monitoring
       page: reunite/project/respect-monitoring/index.md
       items:
@@ -87,8 +88,6 @@
         - page: reunite/project/respect-monitoring/manage-respect-monitoring.md
     - page: reunite/project/analytics.md
       label: Analytics
-    - page: reunite/project/switch-between-projects.md # consolidate into manage projects?
-      label: Switch between projects
     - page: reunite/project/feedback.md
       label: Feedback
     - group: Connect a Git provider
@@ -241,6 +240,8 @@
               label: x-enumDescriptions
             - page: content/api-docs/openapi-extensions/x-additional-properties-name.md
               label: x-additionalPropertiesName
+            - page: content/api-docs/openapi-extensions/x-mcp.md
+              label: x-mcp
             - page: content/api-docs/openapi-extensions/x-metadata.md
               label: x-metadata
             - page: content/api-docs/openapi-extensions/x-hide-replay.md
@@ -366,6 +367,8 @@
               label: Dynamic
             - page: customization/react-components/list/fontawesome-icons.md
               label: Font Awesome Icons
+            - page: customization/react-components/list/tag.md
+              label: Tag
     - page: customization/enable-source-maps.md
       label: Enable source maps
 
@@ -418,8 +421,13 @@
         - page: customization/api-functions/api-functions-reference.md
           label: Reference
         - page: customization/api-functions/create-api-functions.md
-          label: Tutorials
-
+          label: Tutorial
+          
+    - group: MCP servers
+      selectFirstItemOnExpand: true
+      items:
+        - page: customization/mcp-server/index.md
+          label: Overview
 
 - group: Access
   icon: lock

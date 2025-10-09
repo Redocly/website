@@ -17,9 +17,9 @@ You can use these rulesets only, or extend them with custom rules according to y
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- a `redocly.yaml` configuration file
+- a `redocly.yaml` configuration file in the root of your project
 
 ## Add scorecard to your project with Redocly rulesets
 

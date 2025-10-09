@@ -4,6 +4,7 @@ import { ProductPicker } from './ProductPicker';
 import { Products, Plan } from '../utils/types';
 import { PlanPicker } from './PlanPicker';
 import { useUrlParams } from '../utils/useUrlParams';
+import { Button } from '@redocly/theme/components/Button/Button';
 
 export interface ConfigIntroductionProps {
   title?: string;
@@ -34,10 +35,14 @@ export function ConfigIntroduction({
     clearAll();
   };
 
+  const shouldDisableClearFilters = !selectedPlan && selectedProducts.length === 0;
+
   return (
     <CardContainer>
-      <CardTitle>{title}</CardTitle>
-      <CardDescription>{description}</CardDescription>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+      </CardHeader>
       <CardContent>
         <SelectContainer>
           <SelectLabel>Products</SelectLabel>
@@ -54,7 +59,12 @@ export function ConfigIntroduction({
           />
         </SelectContainer>
       </CardContent>
-      <ClearFiltersButton onClick={handleClearFilters}>
+      <ClearFiltersButton 
+        variant="text"
+        size="medium"
+        onClick={handleClearFilters} 
+        disabled={shouldDisableClearFilters}
+      >
         Clear Filters
       </ClearFiltersButton>
     </CardContainer>
@@ -75,13 +85,24 @@ const CardContainer = styled.div`
   margin-bottom: 32px;
 `;
 
+const CardHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+`;
+
+
 const CardTitle = styled.div`
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-lg);
+  color: var(--text-color-primary);
 `;
 
 const CardDescription = styled.div`
-  color: var(--text-color-secondary, #3b3c45);
+  color: var(--text-color-secondary);
+  line-height: var(--line-height-base);
+  font-size: var(--font-size-base);
 `;
 
 const CardContent = styled.div`
@@ -91,32 +112,19 @@ const CardContent = styled.div`
 `;
 
 const SelectLabel = styled.div`
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-color-secondary);
 `;
 
 const SelectContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   width: 100%;
 `;
 
-const ClearFiltersButton = styled.button`
-  background: none;
-  border-radius: 6px;
-  padding: 8px 16px;
-  color: var(--text-color-secondary, #6b7280);
-  cursor: pointer;
-  align-self: flex-start;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background-color: var(--bg-color-hover, #f9fafb);
-    color: var(--text-color-primary, #374151);
-    border-color: var(--border-color-secondary, #9ca3af);
-  }
-
-  &:active {
-    background-color: var(--bg-color-active, #f3f4f6);
-  }
+const ClearFiltersButton = styled(Button)`
+  width: fit-content;
 `;

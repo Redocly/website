@@ -3,26 +3,18 @@
 Use the [remote content](./remote-content.md) feature to include content from external sources in your project.
 This approach is useful for including a single, publicly-available file as part of your published project.
 
-## Before you begin
-
-Make sure you have the following before you begin:
-
-- [latest version of Realm](../../../get-started/upgrade-realm-version.md)
-- an existing Redocly project to add remote content to
-
 ## Add a remote URL source
 
 To add content from a remote file:
 
 1. In the file tree, select the folder (or click on the empty space to select the root directory) to which you want to add the remote content folder.
-1. Select **+ > New remote folder > Add URL link**.
-1. Enter name for the new remote content folder and press Enter or Return key.
-1. Enter the URL of the publicly-available file to include in the project.
-1. Enter the filename for this file in the Redocly project.
-1. Select the appropriate Sync frequency, between 15 minutes and 12 hours.
-   Files that update infrequently can be synced less often.
-2. Select the [**Auto-sync**](./remote-content.md#auto-sync-and-auto-merge) or [**Auto-merge**](./remote-content.md#auto-sync-and-auto-merge) toggles to turn off either option.
-3. Select **Add remote**.
+1. Select **+ > New remote file > Add URL link**.
+1. Enter a name for the new remote content folder and press **Enter** or **Return** key.
+1. Enter the URL of a publicly-available file to include in the project.
+1. Select a sync frequency, between 15 minutes and 12 hours.
+  Files that update infrequently can be synced less often.
+1. (Optional) Click the [**Auto-sync**](./remote-content.md#auto-sync-and-auto-merge) or [**Auto-merge**](./remote-content.md#auto-sync-and-auto-merge) toggles to turn off either option.
+1. Click **Add remote**.
    This action opens a pull request in Redocly automatically.
    After refreshing your browser, you should see a **View Pull Request** button next to your new branch name.
 

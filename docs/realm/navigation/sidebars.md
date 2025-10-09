@@ -20,7 +20,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
   If no `label` is provided, the link text matches _the page's level 1 heading_.
   Use an absolute or relative path.
   For external links, use `href` instead.
-  Examples: `./index.md`, `/docs/tutorial.md`, `../../glossary.md`.
+  Examples: `./index.md`, `/docs/tutorial.md`, `../../glossary.md`, `/info#admonition`, `./test.md#rename`.
 
 ---
 
@@ -202,6 +202,25 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 ---
 
+- icon
+- string
+- Either:
+  - A [Font Awesome](https://fontawesome.com/icons) icon name.
+    Realm has the following icon packs built in: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
+    The icons automatically adjust their colors when users change the color mode.
+
+    To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
+    To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+
+    **Examples:** `book`, `duotone book`, `brands github`
+
+    Using other prefixes, including the `fa-` prefix, causes the icon to not render.
+  - Relative path to an icon image file.
+
+    **Example:** `./images/config-icon.svg`
+
+---
+
 - separatorLine
 - boolean
 - Horizontal bar that breaks the sidebar into sections.
@@ -292,6 +311,7 @@ Use separators to organize sidebar content into distinct sections:
 - group: User documentation
   items:
     - separator: Getting started
+      icon: book
     - page: quickstart.md
     - page: installation.md
     - separator: Advanced features
@@ -334,6 +354,7 @@ The following example shows a comprehensive `sidebars.yaml` file with various op
 - group: Plugins
   items:
     - directory: plugins
+- page: /setup-links#config
 - group: Resources
   separatorLine: true
   items:

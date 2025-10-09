@@ -4,6 +4,7 @@ import { Dropdown } from '@redocly/theme/components/Dropdown/Dropdown';
 import { DropdownMenu } from '@redocly/theme/components/Dropdown/DropdownMenu';
 import { Button } from '@redocly/theme/components/Button/Button';
 import { CheckmarkIcon } from '@redocly/theme/icons/CheckmarkIcon/CheckmarkIcon';
+import { CloseIcon } from '@redocly/theme/icons/CloseIcon/CloseIcon';
 
 export interface SelectOption<T = string> {
   value: T;
@@ -83,13 +84,13 @@ export function SelectPicker<T = string>({
   };
 
   if (multiple && selectedOptions.length > 0) {
-    const maxVisibleItems = 3;
+    const maxVisibleItems = 2;
     const visibleItems = selectedOptions.slice(0, maxVisibleItems);
     const hasMoreItems = selectedOptions.length > maxVisibleItems;
     const remainingCount = selectedOptions.length - maxVisibleItems;
 
     return (
-      <SelectDropdown
+      <SelectDropdownMultiple
         className={className}
         withArrow={true}
         trigger={
@@ -115,7 +116,9 @@ export function SelectPicker<T = string>({
                       }
                     }}
                   >
-                    ×
+                    <IconWrapper>
+                      <CloseIcon />
+                    </IconWrapper>
                   </RemoveButton>
                 </SelectedItem>
               ))}
@@ -130,7 +133,7 @@ export function SelectPicker<T = string>({
         triggerEvent="click"
       >
         <DropdownMenu items={optionItems} />
-      </SelectDropdown>
+      </SelectDropdownMultiple>
     );
   }
 
@@ -141,7 +144,9 @@ export function SelectPicker<T = string>({
       trigger={
         <Button variant="outlined">
           <OptionItem>
-            <span>{getDisplayText()}</span>
+            <span className={selectedOptions.length === 0 ? 'placeholder-text' : ''}>
+              {getDisplayText()}
+            </span>
           </OptionItem>
         </Button>
       }
@@ -154,19 +159,30 @@ export function SelectPicker<T = string>({
 
 const SelectDropdown = styled(Dropdown)`
   width: 100%;
-  
-  --dropdown-menu-item-justify-content: space-between;
-  --dropdown-menu-item-bg-color: var(--bg-color-raised);
-  --dropdown-menu-item-bg-color-hover: var(--bg-color-hover);
-  --dropdown-menu-item-bg-color-active: var(--bg-color-hover);
-  --dropdown-menu-item-color: var(--text-color-primary);
-  --dropdown-menu-item-color-hover: var(--text-color-primary);
-  --dropdown-menu-item-color-active: var(--text-color-primary);
 
   > button {
     width: 100%;
+    height: 32px;
+    padding-right: 12px;
+    padding-left: 12px;
     justify-content: space-between;
     background-color: var(--input-bg-color);
+    display: flex;
+    align-items: center;
+
+    .placeholder-text {
+      color: var(--input-content-placeholder-color);
+    }
+  }
+
+  > div {
+    width: 100%;
+  }
+`;
+
+const SelectDropdownMultiple = styled(SelectDropdown)`
+  > button {
+    padding-left: 4px;
   }
 `;
 
@@ -177,17 +193,20 @@ const SelectedItemsContainer = styled.div`
   width: 100%;
   overflow: hidden;
   align-items: center;
+  padding-top: 4px;
+  padding-bottom: 4px;
 `;
 
 const SelectedItem = styled.div`
   display: flex;
   align-items: center;
-  gap: 4px;
-  background-color: var(--button-bg-color-secondary, #f3f4f6);
+  gap: 2px;
+  background-color: var(--button-bg-color-secondary);
   border-radius: 4px;
-  padding: 2px 6px;
-  font-size: 12px;
-  color: var(--text-color-primary, #374151);
+  padding-left: 8px;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--button-content-color);
   white-space: nowrap;
   flex-shrink: 0;
   
@@ -199,9 +218,10 @@ const SelectedItem = styled.div`
 const EllipsisItem = styled.div`
   display: flex;
   align-items: center;
-  color: var(--text-color-secondary, #6b7280);
-  font-size: 12px;
-  padding: 2px 4px;
+  color: var(--button-content-color);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  padding-left: 4px;
   flex-shrink: 0;
 `;
 
@@ -209,35 +229,32 @@ const RemoveButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 14px;
-  height: 14px;
+  padding: 5px 3px;
   border: none;
   background: none;
-  color: var(--text-color-secondary, #6b7280);
+  color: var(--text-color-secondary);
   cursor: pointer;
   border-radius: 50%;
-  font-size: 12px;
-  line-height: 1;
   flex-shrink: 0;
   
   &:hover {
-    background-color: var(--bg-color-active, #e5e7eb);
-    color: var(--text-color-primary, #374151);
+    background-color: var(--bg-color-active);
+    color: var(--text-color-primary);
   }
 `;
 
 const OptionItem = styled.div`
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs, 8px);
+  gap: var(--spacing-xs);
 `;
 
 const IconWrapper = styled.span`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   img, svg {
     width: 16px;
     height: 16px;
