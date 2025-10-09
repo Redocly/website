@@ -33231,3 +33231,10 @@ reunite:
         - Show user-friendly messages for credential validation failures, missing repositories, and branch errors when interacting with Git providers.
       patch: []
     dependencies: {}
+  v2025-10-09.1:
+    timestamp: 1760007370000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.3.1`.
+    dependencies: {}
