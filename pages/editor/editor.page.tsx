@@ -1,6 +1,5 @@
 import * as React from 'react';
 import EditorPage from '@redocly/marketing-pages/pages/editor/editor.page.js';
-import { LanguageServerService } from './service/languageServerService';
 
 export const frontmatter = {
   seo: {
@@ -14,6 +13,5 @@ export const frontmatter = {
 };
 
 export default function EditorPageWrapper() {
-  const languageService = React.useMemo(() => new LanguageServerService(), []);
-  return <EditorPage languageService={languageService} />;
+  return <EditorPage />;
 }

@@ -38,6 +38,7 @@ export default function themePlugin() {
         getStaticData: async () => {
           return {
             props: {
+              disableAutoScroll: true,
               frontmatter: {
                 navbar: { hide: true },
                 footer: { hide: true },

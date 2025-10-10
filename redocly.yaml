@@ -236,6 +236,9 @@ responseHeaders:
   '/preview':
     - name: X-Frame-Options
       value: SAMEORIGIN
+  '/preview/**':
+    - name: X-Frame-Options
+      value: SAMEORIGIN
   
   # Editor page requires 'unsafe-eval' for OpenAPI validation (AJV schema compilation)
   '/editor':
