@@ -132,7 +132,7 @@ footer:
           page: ./blog/favorite-new-features.md
         - label: Docs-like-code
           page: ./pages/docs-like-code/docsLikeCode.page.tsx
-        - label: OpenAPIEditor
+        - label: OpenAPI Editor
           page: ./pages/editor/editor.page.tsx
           external: true
     - group: Tech & legal
