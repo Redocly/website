@@ -151,6 +151,13 @@ The default footer included in `@redocly/theme` can be configured using the opti
 
     **Example:** `./images/config-icon.svg`
 
+---
+
+- additionalProps
+- object
+- Custom properties for the footer item.
+  Pass arbitrary data that can be accessed in custom theme components.
+
 {% /table %}
 
 ##### Icon object
@@ -308,6 +315,24 @@ footer:
 ```
 
 By grouping the links, users can quickly locate the section and content they are looking for.
+
+### Custom properties with additionalProps
+
+Use `additionalProps` to add custom data to footer items:
+
+```yaml {% title="redocly.yaml" %}
+footer:
+  copyrightText: "© 2024 Example Company. All rights reserved."
+  items:
+    - group: Documentation
+      items:
+        - page: docs/getting-started.md
+          label: Getting Started
+          additionalProps:
+            category: tutorial
+```
+
+Custom theme components can access these properties to display additional information or implement custom behavior.
 
 ## Resources
 
