@@ -20517,6 +20517,14 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.36.0:
+    timestamp: 1760108804000
+    changes:
+      minor:
+        - Deprecated `search.ai` config option and replaced it with `aiAssistant`.
+      patch:
+        - Exported constants and types for rules, decorators, and preprocessors.
+    dependencies: {}
   0.35.1:
     timestamp: 1759855634000
     changes:
@@ -21744,6 +21752,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.3.10:
+    timestamp: 1760108804000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.5.0`.
+    dependencies: {}
   0.3.9:
     timestamp: 1759855634000
     changes:
@@ -33359,6 +33374,5 @@ reunite:
     changes:
       minor: []
       patch:
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.5.0`.
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.3.1`.
     dependencies: {}
