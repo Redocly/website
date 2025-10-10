@@ -98,7 +98,7 @@ This requirement ensures that AI Agents can only access APIs and operations the 
 
 ---
 
-- `get-full-spec-document`
+- `get-full-definition`
 - `name: string`
 - Returns the complete OpenAPI definition for an API.
 {% /table %}

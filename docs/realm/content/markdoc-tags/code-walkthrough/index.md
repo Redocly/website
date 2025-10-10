@@ -1,9 +1,3 @@
----
-keywords:
-  includes:
-    - step-by-step
----
-
 # Code walkthrough tag
 
 Use code walkthroughs to interactively explain complex code examples to your users.

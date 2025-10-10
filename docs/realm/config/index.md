@@ -1,8 +1,3 @@
----
-keywords:
-  includes:
-    - redocly.yaml
----
 # Configure Redocly
 
 The `redocly.yaml` file is the single place to configure everything Redocly.
