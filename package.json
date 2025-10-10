@@ -12,7 +12,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
-    "@redocly/marketing-pages": "^0.1.27",
+    "@redocly/marketing-pages": "^0.1.28",
     "@redocly/realm": "^0.126.0-next.21",
     "buffer": "^6.0.3",
     "highlight-words-core": "^1.2.3",
