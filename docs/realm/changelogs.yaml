@@ -1,4 +1,16 @@
 '@redocly/realm':
+  0.127.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch:
+        - Fixed scorecard target configuration resolution.
+        - Updated `@redocly/openapi-core` to version `2.5.0`.
+        - Updated `@redocly/openapi-core` to version `2.5.1`.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.2
+      '@redocly/asyncapi-docs': 1.4.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.2
   0.127.0-next.1:
     timestamp: 1760083220000
     changes:
@@ -4550,6 +4562,18 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.127.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch:
+        - Fixed scorecard target configuration resolution.
+        - Updated `@redocly/openapi-core` to version `2.5.0`.
+        - Updated `@redocly/openapi-core` to version `2.5.1`.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.2
+      '@redocly/asyncapi-docs': 1.4.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.2
   0.127.0-next.1:
     timestamp: 1760083220000
     changes:
@@ -8321,6 +8345,17 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.127.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.5.0`.
+        - Updated `@redocly/openapi-core` to version `2.5.1`.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.2
+      '@redocly/asyncapi-docs': 1.4.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.2
   0.127.0-next.1:
     timestamp: 1760083220000
     changes:
@@ -12086,6 +12121,17 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.127.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.5.0`.
+        - Updated `@redocly/openapi-core` to version `2.5.1`.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.2
+      '@redocly/asyncapi-docs': 1.4.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.2
   0.127.0-next.1:
     timestamp: 1760083220000
     changes:
@@ -18202,6 +18248,15 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.15.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.5.0`.
+        - Updated `@redocly/openapi-core` to version `2.5.1`.
+    dependencies:
+      '@redocly/replay': 0.18.0-next.2
   3.15.0-next.1:
     timestamp: 1760083220000
     changes:
@@ -22226,6 +22281,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.10.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.127.0-next.2
+      '@redocly/redoc-reef': 0.127.0-next.2
+      '@redocly/redoc': 0.127.0-next.2
+      '@redocly/redoc-revel': 0.127.0-next.2
   1.10.0-next.1:
     timestamp: 1760083220000
     changes:
@@ -26291,6 +26356,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.12.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.2
   0.12.0-next.1:
     timestamp: 1760083220000
     changes:
@@ -28517,6 +28589,14 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.18.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.5.0`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.5.1`.
+    dependencies: {}
   0.18.0-next.1:
     timestamp: 1760083220000
     changes:
@@ -31155,6 +31235,13 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.4.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.2
   1.4.0-next.1:
     timestamp: 1760083220000
     changes:
