@@ -47,9 +47,10 @@ Below is a quick example of what we'll build.
 
 ## Before you begin
 
-Make sure you have the following before you begin:
-- A new project with the latest version of Redocly Realm installed.
-- A text editor for working with code (I'm using VS Code)
+Make sure you have the following:
+
+- a new project with the latest version of Redocly Realm installed.
+- a text editor or IDE for working with code (for example, VS Code)
 
 ## Test a built-in function
 

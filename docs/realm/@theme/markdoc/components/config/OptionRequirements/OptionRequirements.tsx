@@ -10,9 +10,8 @@ const Container = styled.div`
   gap: 8px;
   background-color: var(--layer-color);
   border: 1px solid var(--border-color-secondary);
-  border-radius: 8px;
-  margin: 0 0 16px 0;
-  padding: 12px;
+  border-radius: var(--border-radius-lg);
+  padding: 8px 16px;
 `;
 
 const Row = styled.div`
@@ -23,16 +22,13 @@ const Row = styled.div`
 `;
 
 const Label = styled.span`
-  margin: 0;
-  padding: 0;
   display: inline-flex;
   align-items: center;
-  height: 24px;
-  line-height: 24px;
-  font-weight: 500;
+  line-height: var(--line-height-base);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
   box-sizing: border-box;
-  background: transparent;
-  color: var(--text-color-secondary, #3b3c45);
+  color: var(--text-color-secondary);
 `;
 
 export interface OptionRequirementsProps {

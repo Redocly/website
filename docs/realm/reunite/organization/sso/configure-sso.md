@@ -13,7 +13,7 @@ To require login to a project, [`rbac`](../../../config/rbac.md) or [`requiresLo
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
 - a `redocly.yaml` configuration file with one of the following configured:
   -  `rbac` defined for the [`authenticated` default team](../teams.md#default-teams)

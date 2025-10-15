@@ -8,7 +8,11 @@ Depending on the number of your API products and their complexity, you may choos
 
 ## Navigation bar
 
-![A partial view of the navigation bar as it appears on the Editor page.](../images/reunite-editor-navbar.png)
+{% img
+  src="../images/reunite-editor-navbar.png"
+  alt="A partial view of the navigation bar as it appears on the Editor page."
+  withLightbox=true
+/%}
 
 The navigation bar is displayed on all project pages.
 You can use it to switch between projects, and access the help dropdown.
@@ -50,11 +54,6 @@ You can view the details of individual deploys, filter the results, view the dep
 On this page you can view [customer feedback](../../config/feedback.md) and code reports.
 You can filter the feedback by date and export it to CSV files.
 
-### API registry
-
-This page lists the APIs descriptions from the [catalog you configured](../../config/catalog-classic.md) in your project.
-You can view the details, like the scorecard status, the linter report, or the metadata of each API description and filter API descriptions by the assigned team.
-
 ### Settings
 
 This page contains your project's settings, like the project ID, [custom domain](./custom-domain.md) for your project, [environment variables](./env-variables.md), and [Git provider](./connect-git/connect-git-provider.md) setup.
@@ -67,4 +66,3 @@ The **Settings** page is available only to users with the Owner role in your org
 - **[Manage people](../organization/manage-people.md)** - Add and manage users within your organization for collaborative project development
 - **[Remote content](./remote-content/index.md)** - Integrate and synchronize content from external repositories and sources into your Reunite projects
 - **[Connect a Git provider](./connect-git/connect-git-provider.md)** - Link your projects to Git repositories from GitHub, GitLab, Azure DevOps, and other providers
-- **[Switch between projects](./switch-between-projects.md)** - Navigate efficiently between multiple projects in your Reunite workspace for streamlined workflow management

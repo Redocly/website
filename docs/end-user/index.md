@@ -10,3 +10,6 @@ Explore the following pages to learn more about the projects' user interface:
 - [Search a project](./use-search.md)
 - [Interact with pages](./interact-with-pages.md)
 - [Interact with API documentation](./interact-with-api.md)
+- [Use a classic catalog](./use-classic-catalog.md)
+- [Interact with walkthroughs](./interact-with-walkthroughs.md)
+- [User menu](./user-menu.md)

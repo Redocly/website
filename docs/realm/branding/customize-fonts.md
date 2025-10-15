@@ -14,7 +14,7 @@ When deciding which approach to take, consider which of the following factors ar
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
 - either the custom font file or link to your custom font
 - a `@theme` folder with a `styles.css` file
