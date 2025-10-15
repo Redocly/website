@@ -6,11 +6,11 @@ seo:
   description: Implement API rate limiting strategies to prevent DoS attacks, brute force attempts, and business logic abuse.
 ---
 
-# Rate Limiting and Abuse Prevention for APIs
+# Rate limiting and abuse prevention for APIs
 
 *This comprehensive guide is coming soon and will cover:*
 
-## What You'll Learn
+## What you'll learn
 
 - **Rate Limiting Algorithms**: Token bucket, sliding window, and fixed window approaches
 - **OpenAPI Documentation**: x-rateLimit extensions and client communication

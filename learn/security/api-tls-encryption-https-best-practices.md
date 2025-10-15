@@ -6,7 +6,7 @@ seo:
   description: Protect data in transit with proper TLS configuration, certificate management, and HTTPS enforcement using OpenAPI security contracts.
 ---
 
-# TLS Encryption and HTTPS Best Practices for APIs
+# TLS encryption and HTTPS best practices for APIs
 
 ---
 

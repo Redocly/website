@@ -6,11 +6,11 @@ seo:
   description: Implement secure access control using OpenAPI security schemes and modern authentication patterns.
 ---
 
-# Authentication and Authorization with OpenAPI
+# Authentication and authorization with OpenAPI
 
 *This comprehensive guide is coming soon and will cover:*
 
-## What You'll Learn
+## What you'll learn
 
 - **Authentication Methods**: JWT, OAuth2, API Keys, and Mutual TLS patterns
 - **Authorization Strategies**: RBAC, scope-based access, and fine-grained permissions
