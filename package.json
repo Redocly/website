@@ -12,7 +12,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@redocly/marketing-pages": "^0.1.29",
-    "@redocly/realm": "0.0.0-20251015115910",
+    "@redocly/realm": "0.0.0-20251015132305",
     "buffer": "^6.0.3",
     "highlight-words-core": "^1.2.3",
     "path": "^0.12.7",
@@ -31,9 +31,6 @@
   "overrides": {
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "axios": "1.12.2",
-    "@redocly/portal-plugin-mock-server": "0.0.0-20251015115910",
-    "@redocly/theme": "0.0.0-20251015115910",
-    "@redocly/graphql-docs": "0.0.0-20251015115910"
+    "axios": "1.12.2"
   }
 }
