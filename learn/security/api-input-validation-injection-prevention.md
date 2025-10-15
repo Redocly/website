@@ -6,7 +6,7 @@ seo:
   description: Prevent API injection attacks and mass assignment vulnerabilities using OpenAPI schema validation and automated governance.
 ---
 
-# Input Validation and Injection Prevention with OpenAPI
+# Input validation and injection prevention with OpenAPI
 
 ---
 
