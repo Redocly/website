@@ -6,11 +6,11 @@ seo:
   description: Prevent API injection attacks and mass assignment vulnerabilities using OpenAPI schema validation and automated governance.
 ---
 
-# Input Validation and Injection Prevention
+# Input validation and injection prevention
 
 *This comprehensive guide is coming soon and will cover:*
 
-## What You'll Learn
+## What you'll learn
 
 - **SQL Injection Prevention**: Parameterized queries and input sanitization
 - **Mass Assignment Protection**: Schema-based validation and field filtering

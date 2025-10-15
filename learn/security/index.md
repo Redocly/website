@@ -72,59 +72,55 @@ graph TD
 
 Each security domain requires specific knowledge and implementation techniques. Choose the guide that matches your current focus:
 
-### <a href="/learn/security/api-tls-encryption-https-best-practices">API TLS encryption and HTTPS best practices</a>
-**What you'll learn:** Protect data in transit with proper TLS configuration, certificate management, and HTTPS enforcement.
+{% cards %}
+{% card title="API TLS encryption and HTTPS best practices" to="/learn/security/api-tls-encryption-https-best-practices" %}
+Protect data in transit with proper TLS configuration, certificate management, and HTTPS enforcement.
 
 **Key topics:**
 - TLS 1.3 implementation and cipher suite selection
 - OpenAPI server URL security contracts
 - Mutual TLS (mTLS) for service-to-service communication
 - Real-world case study: Heartbleed vulnerability and lessons learned
-- Automated governance for transport security
 
 **Perfect for:** Infrastructure teams, DevOps engineers, and security architects
+{% /card %}
 
----
-
-### <a href="/learn/security/api-input-validation-injection-prevention">API input validation and injection prevention</a>  
-**What you'll learn:** Stop injection attacks using OpenAPI schema validation and automated governance rules.
+{% card title="API input validation and injection prevention" to="/learn/security/api-input-validation-injection-prevention" %}
+Stop injection attacks using OpenAPI schema validation and automated governance rules.
 
 **Key topics:**
 - JSON Schema security constraints and validation patterns
 - Mass assignment attack prevention
 - SQL injection and OGNL injection defense strategies
 - Real-world case study: Equifax breach analysis
-- Automated validation governance and linting
 
 **Perfect for:** Backend developers, security engineers, and API architects
+{% /card %}
 
----
-
-### <a href="/learn/security/api-rate-limiting-abuse-prevention">API rate limiting and abuse prevention</a>
-**What you'll learn:** Prevent DoS attacks, brute force attempts, and business logic abuse through strategic rate limiting.
+{% card title="API rate limiting and abuse prevention" to="/learn/security/api-rate-limiting-abuse-prevention" %}
+Prevent DoS attacks, brute force attempts, and business logic abuse through strategic rate limiting.
 
 **Key topics:**
 - Rate limiting algorithms and implementation patterns
 - OpenAPI x-rateLimit extensions and documentation
 - Multi-tier rate limiting strategies
 - Real-world case study: Facebook phone number scraping incident
-- Client-side backoff and error handling
 
 **Perfect for:** API product managers, DevOps teams, and security operations
+{% /card %}
 
----
-
-### <a href="/learn/security/authentication-authorization-openapi">Authentication and authorization with OpenAPI</a>
-**What you'll learn:** Implement secure access control using OpenAPI security schemes and modern authentication patterns.
+{% card title="Authentication and authorization with OpenAPI" to="/learn/security/authentication-authorization-openapi" %}
+Implement secure access control using OpenAPI security schemes and modern authentication patterns.
 
 **Key topics:**
 - OpenAPI security schemes (JWT, OAuth2, API Keys, mTLS)
 - Authentication vs authorization flow patterns
 - Scope-based access control and permission systems
 - Security scheme governance and automation
-- Token validation and session management
 
 **Perfect for:** Identity and access management teams, full-stack developers, and security engineers
+{% /card %}
+{% /cards %}
 
 ## Understanding design-time vs runtime security
 
@@ -247,8 +243,8 @@ Authentication verifies *who* the user is (like checking an ID card), while auth
 ### Practical implementation tools
 - <a href="https://ssl-config.mozilla.org/" target="_blank">Mozilla SSL Configuration Generator</a> - Generate secure, up-to-date TLS configurations for various web servers and security levels
 - <a href="https://openapi-generator.tech/" target="_blank">OpenAPI Generator</a> - Code generation tool for creating secure client SDKs and server stubs from OpenAPI specifications
-- <a href="https://spec.openapis.org/oas/v3.1.0" target="_blank">OpenAPI Specification</a> - Official OpenAPI 3.1 specification including security scheme definitions
+- <a href="https://spec.openapis.org/oas/latest.html" target="_blank">OpenAPI Specification</a> - Official OpenAPI 3.2 specification including security scheme definitions
 
 ### DevSecOps and API governance
 - <a href="https://owasp.org/www-project-api-security/" target="_blank">OWASP API Security Project</a> - Community-driven API security best practices and threat modeling
-- <a href="https://spec.openapis.org/oas/v3.1.0#security-scheme-object" target="_blank">OpenAPI Security Schemes</a> - Official specification for defining authentication and authorization in OpenAPI
+- <a href="https://spec.openapis.org/oas/latest.html#security-scheme-object" target="_blank">OpenAPI Security Schemes</a> - Official specification for defining authentication and authorization in OpenAPI
