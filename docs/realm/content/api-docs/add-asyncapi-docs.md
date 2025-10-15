@@ -1,3 +1,9 @@
+---
+keywords:
+  excludes:
+    - package.json
+---
+
 # Add AsyncAPI descriptions
 
 Transform your AsyncAPI description YAML or JSON file into interactive documentation by adding it to your project.

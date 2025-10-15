@@ -1,4 +1,222 @@
 '@redocly/realm':
+  0.127.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Fixed sidebar item activation during scroll.
+        - Fixed incorrect tab display when resizing the screen.
+    dependencies:
+      '@redocly/asyncapi-docs': 1.4.0-next.3
+      '@redocly/openapi-docs': 3.15.0-next.3
+      '@redocly/theme': 0.59.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.3
+      '@redocly/graphql-docs': 1.4.0-next.0
+  0.127.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch:
+        - Fixed scorecard target configuration resolution.
+        - Updated `@redocly/openapi-core` to version `2.5.0`.
+        - Updated `@redocly/openapi-core` to version `2.5.1`.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.2
+      '@redocly/asyncapi-docs': 1.4.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.2
+  0.127.0-next.1:
+    timestamp: 1760083220000
+    changes:
+      minor:
+        - Added `Ask AI` floating action button to trigger AI Search. Deprecated `search.ai` config option and replaced it with `aiAssistant`.
+      patch:
+        - Fixed an issue where the link checker incorrectly reported links with configured wildcard redirects as broken
+        - Fixed an issue where static assets were served without path prefix when it was enabled.
+        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
+        - Added missing color to improve visual consistency.
+        - Fixed false positive broken link reports for HTML `a` links when a path prefix is configured.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.1
+      '@redocly/asyncapi-docs': 1.4.0-next.1
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.1
+  0.126.1:
+    timestamp: 1760015971000
+    changes:
+      minor: []
+      patch:
+        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.1
+      '@redocly/theme': 0.58.1
+      '@redocly/openapi-docs': 3.14.1
+      '@redocly/asyncapi-docs': 1.3.1
+      '@redocly/graphql-docs': 1.3.0
+      '@redocly/portal-plugin-mock-server': 0.11.1
+  0.127.0-next.0:
+    timestamp: 1759997817000
+    changes:
+      minor:
+        - Added deep linking to the `tabs` component.
+        - Updated styles for `Tag` component.
+      patch:
+        - Enter prerelease mode.
+        - Fixed an issue where API output files listed in the `ignore` configuration were not excluded.
+        - Allowed CORS for the AI conversation endpoint.
+        - Fixed issue where layout pre-configured option was skipped.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.5.0-next.0
+      '@redocly/portal-legacy-ui': 0.10.0-next.0
+      '@redocly/asyncapi-docs': 1.4.0-next.0
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.0
+      '@redocly/theme': 0.59.0-next.0
+  0.126.0:
+    timestamp: 1759929177000
+    changes:
+      minor:
+        - Added front matter keywords configuration to boost or demote search rankings for Markdown pages through includes/excludes lists.
+        - Added validation for React pages to catch runtime errors during the build process.
+        - >-
+          Added `openapi.showSchemaCatalogLinks` configuration option to display links to schemas and requests on an OpenAPI page. These links can be
+          used as `$ref` values in other OpenAPI files within the same project.
+        - Added support for `_partials` folders at any directory level. Added glob pattern support for the `partialsFolders` configuration.
+        - Added `showBuiltInScalars` and `showBuiltInDirectives` options to control visibility of built-in GraphQL scalars and directives.
+        - Added validation to ensure `residency` starts with `http://` or `https://`.
+        - Added built-in MCP server to expose API docs to AI assistants.
+        - >-
+          Added support for OpenAPI 3.2.0 security updates: `deprecated` and `oauth2MetadataUrl` fields, `deviceAuthorization` flow, and code samples
+          generation for device authorization flow.
+        - Added support for the OpenAPI 3.2.0 `servers.name` property.
+        - Improved memory efficiency when creating search indexes, reducing build failures due to out-of-memory errors on large projects.
+        - Improved heading anchor ID generation by removing dots and slashes to create cleaner URL fragments.
+        - Added path prefix support for HTML `href` attributes.
+        - Added support to configure `Replay` with dynamic API data.
+      patch:
+        - Fixed an issue where environment variables were not resolved inside `redocly.yaml` when building OpenAPI documents.
+        - Fixed an issue where tooltips could obscure the parent UI element.
+        - Fixed responses without parameters not being included in `llms.txt`.
+        - Fixed search issue where queries with text enclosed in backticks in API descriptions returned no results.
+        - Fixed display of active element in `code-group` tag after page refresh.
+        - Fixed an issue with displaying multiple active elements in a `code-group` tag when they had the same names.
+        - Improved error message for broken sidebar links in front matter.
+        - Fixed search dialog results being unscrollable on small screens. Fixed advanced search filters overflowing the viewport on small screens.
+        - Fixed an issue where `x-rbac` and `markdoc` did not work in Swagger (Open API 2.0.x) descriptions.
+        - Improved build logs by separating AI Search and `llms.txt` messages.
+        - Fixed an issue where external links in the sidebar appeared as active.
+        - Added `icon` option to sidebar `separator`.
+        - Fixed an issue that prevented focusing the first section of the API documentation when content was minimal.
+        - Fixed an issue where following an anchor link did not cause the page to scroll to the target heading.
+        - Fixed duplicated descriptions in `oneOf` options.
+        - Fixed an issue where the AI search icon shrank with long queries; the icon maintains its size and the query text wraps correctly.
+        - Fixed missing `Expand All` button in requests using `oneOf`.
+        - Fixed an issue with the sidebar active item when using `REDOCLY_PREFIX_PATHS` and the OpenAPI document was in the root directory.
+        - Fixed partial tags not rendering correctly when containing schema components such as OpenAPI examples and code samples.
+        - Fixed security vulnerability CVE-2025-59139 in `bodyLimit` middleware by upgrading `hono` to v4.9.7.
+        - Fixed an issue where the API Catalog displayed only one API from versioned subfolders.
+        - Fixed `replay-openapi` Markdoc tag not updating until page refresh.
+        - Normalized trailing slash handling in SSR to prevent hydration mismatches.
+        - Fixed double prefixes in image URLs.
+        - >-
+          Fixed an issue where the OpenAPI download URLs did not work with the `output` property if the output path was in the `/static/_spec/`
+          directory.
+        - Fixed an issue where plugins writing data to the files in project interfered with the processing causing link checker errors.
+        - Removed empty catalog sidebar when no filters were configured.
+    dependencies:
+      '@redocly/theme': 0.58.0
+      '@redocly/openapi-docs': 3.14.0
+      '@redocly/realm-asyncapi-sdk': 0.4.0
+      '@redocly/graphql-docs': 1.3.0
+      '@redocly/portal-plugin-mock-server': 0.11.0
+      '@redocly/portal-legacy-ui': 0.9.0
+      '@redocly/asyncapi-docs': 1.3.0
+  0.126.0-next.23:
+    timestamp: 1759856739000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/config` dependency.
+    dependencies: {}
+  0.126.0-next.22:
+    timestamp: 1759851094000
+    changes:
+      minor: []
+      patch:
+        - Fixed partial tags not rendering correctly when containing schema components such as OpenAPI examples and code samples.
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.15
+      '@redocly/theme': 0.58.0-next.11
+      '@redocly/asyncapi-docs': 1.3.0-next.15
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.15
+      '@redocly/graphql-docs': 1.3.0-next.2
+  0.126.0-next.21:
+    timestamp: 1759753452000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/graphql-docs': 1.3.0-next.2
+  0.126.0-next.20:
+    timestamp: 1759738833000
+    changes:
+      minor:
+        - Added front matter keywords configuration to boost or demote search rankings for Markdown pages through includes/excludes lists.
+        - Added support for the OpenAPI 3.2.0 `servers.name` property.
+      patch:
+        - Fixed display of active element in `code-group` tag after page refresh.
+        - Fixed an issue with displaying multiple active elements in a `code-group` tag when they had the same names.
+    dependencies:
+      '@redocly/theme': 0.58.0-next.10
+      '@redocly/openapi-docs': 3.14.0-next.14
+      '@redocly/asyncapi-docs': 1.3.0-next.14
+      '@redocly/graphql-docs': 1.3.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.14
+  0.126.0-next.19:
+    timestamp: 1759499290000
+    changes:
+      minor:
+        - >-
+          Added support for OpenAPI 3.2.0 security updates: `deprecated` and `oauth2MetadataUrl` fields, `deviceAuthorization` flow, and code samples
+          generation for device authorization flow.
+      patch:
+        - Fixed an issue where `x-rbac` and `markdoc` did not work in Swagger (Open API 2.0.x) descriptions.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.4
+      '@redocly/openapi-docs': 3.14.0-next.13
+      '@redocly/theme': 0.58.0-next.9
+      '@redocly/asyncapi-docs': 1.3.0-next.13
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.13
+      '@redocly/graphql-docs': 1.3.0-next.1
+  0.126.0-next.18:
+    timestamp: 1759419881000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where external links in the sidebar appeared as active.
+        - Removed empty catalog sidebar when no filters were configured.
+    dependencies: {}
+  0.126.0-next.17:
+    timestamp: 1759402106000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.3
+      '@redocly/theme': 0.58.0-next.8
+      '@redocly/asyncapi-docs': 1.3.0-next.12
+      '@redocly/graphql-docs': 1.3.0-next.1
+      '@redocly/openapi-docs': 3.14.0-next.12
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.12
+  0.126.0-next.16:
+    timestamp: 1759397597000
+    changes:
+      minor:
+        - Added validation for React pages to catch runtime errors during the build process.
+        - Added built-in MCP server to expose API docs to AI assistants.
+      patch: []
+    dependencies: {}
   0.126.0-next.15:
     timestamp: 1759226665000
     changes:
@@ -31,9 +249,9 @@
     timestamp: 1758885593000
     changes:
       minor:
-        - Added support for `_partials` folders at any directory level.
+        - Added support for `_partials` folders at any directory level. Added glob pattern support for the `partialsFolders` configuration.
       patch:
-        - Fixed missing responses without parameters in `llms.txt`.
+        - Fixed responses without parameters not being included in `llms.txt`.
         - Fixed security vulnerability CVE-2025-59139 in `bodyLimit` middleware by upgrading `hono` to v4.9.7.
     dependencies:
       '@redocly/realm-asyncapi-sdk': 0.4.0-next.2
@@ -93,7 +311,7 @@
       minor: []
       patch:
         - Updated `@redocly/openapi-core` to version `2.1.4`.
-        - Fixed search dialog results being unscrollable on small screens.
+        - Fixed search dialog results being unscrollable on small screens. Fixed advanced search filters overflowing the viewport on small screens.
         - Fixed duplicated descriptions in `oneOf` options.
         - Fixed missing `Expand All` button in requests using `oneOf`.
         - Fixed an issue with the sidebar active item when using `REDOCLY_PREFIX_PATHS` and the OpenAPI document was in the root directory.
@@ -188,7 +406,7 @@
     changes:
       minor: []
       patch:
-        - Fixed an issue where markdoc tags did not render in preview mode.
+        - Fixed an issue where Markdoc tags did not render in preview mode.
     dependencies: {}
   0.126.0-next.2:
     timestamp: 1757409756000
@@ -4357,6 +4575,195 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.127.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Fixed sidebar item activation during scroll.
+        - Fixed incorrect tab display when resizing the screen.
+    dependencies:
+      '@redocly/asyncapi-docs': 1.4.0-next.3
+      '@redocly/openapi-docs': 3.15.0-next.3
+      '@redocly/theme': 0.59.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.3
+      '@redocly/graphql-docs': 1.4.0-next.0
+  0.127.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch:
+        - Fixed scorecard target configuration resolution.
+        - Updated `@redocly/openapi-core` to version `2.5.0`.
+        - Updated `@redocly/openapi-core` to version `2.5.1`.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.2
+      '@redocly/asyncapi-docs': 1.4.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.2
+  0.127.0-next.1:
+    timestamp: 1760083220000
+    changes:
+      minor:
+        - Added `Ask AI` floating action button to trigger AI Search. Deprecated `search.ai` config option and replaced it with `aiAssistant`.
+      patch:
+        - Fixed an issue where the link checker incorrectly reported links with configured wildcard redirects as broken
+        - Fixed an issue where static assets were served without path prefix when it was enabled.
+        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
+        - Added missing color to improve visual consistency.
+        - Fixed false positive broken link reports for HTML `a` links when a path prefix is configured.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.1
+      '@redocly/asyncapi-docs': 1.4.0-next.1
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.1
+  0.126.1:
+    timestamp: 1760015971000
+    changes:
+      minor: []
+      patch:
+        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.1
+      '@redocly/theme': 0.58.1
+      '@redocly/openapi-docs': 3.14.1
+      '@redocly/asyncapi-docs': 1.3.1
+      '@redocly/graphql-docs': 1.3.0
+      '@redocly/portal-plugin-mock-server': 0.11.1
+  0.127.0-next.0:
+    timestamp: 1759997817000
+    changes:
+      minor:
+        - Added deep linking to the `tabs` component.
+        - Updated styles for `Tag` component.
+      patch:
+        - Enter prerelease mode.
+        - Allowed CORS for the AI conversation endpoint.
+        - Fixed issue where layout pre-configured option was skipped.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.5.0-next.0
+      '@redocly/portal-legacy-ui': 0.10.0-next.0
+      '@redocly/asyncapi-docs': 1.4.0-next.0
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.0
+      '@redocly/theme': 0.59.0-next.0
+  0.126.0:
+    timestamp: 1759929177000
+    changes:
+      minor:
+        - Added front matter keywords configuration to boost or demote search rankings for Markdown pages through includes/excludes lists.
+        - Added support for `_partials` folders at any directory level. Added glob pattern support for the `partialsFolders` configuration.
+        - Added validation to ensure `residency` starts with `http://` or `https://`.
+        - Improved memory efficiency when creating search indexes, reducing build failures due to out-of-memory errors on large projects.
+        - Improved heading anchor ID generation by removing dots and slashes to create cleaner URL fragments.
+        - Added path prefix support for HTML `href` attributes.
+      patch:
+        - Fixed an issue where tooltips could obscure the parent UI element.
+        - Fixed display of active element in `code-group` tag after page refresh.
+        - Fixed an issue with displaying multiple active elements in a `code-group` tag when they had the same names.
+        - Improved error message for broken sidebar links in front matter.
+        - Fixed search dialog results being unscrollable on small screens. Fixed advanced search filters overflowing the viewport on small screens.
+        - Improved build logs by separating AI Search and `llms.txt` messages.
+        - Fixed an issue where external links in the sidebar appeared as active.
+        - Added `icon` option to sidebar `separator`.
+        - Fixed an issue where following an anchor link did not cause the page to scroll to the target heading.
+        - Fixed an issue where the AI search icon shrank with long queries; the icon maintains its size and the query text wraps correctly.
+        - Fixed an issue with the sidebar active item when using `REDOCLY_PREFIX_PATHS` and the OpenAPI document was in the root directory.
+        - Fixed security vulnerability CVE-2025-59139 in `bodyLimit` middleware by upgrading `hono` to v4.9.7.
+        - Fixed an issue where the API Catalog displayed only one API from versioned subfolders.
+        - Normalized trailing slash handling in SSR to prevent hydration mismatches.
+        - Fixed double prefixes in image URLs.
+        - Fixed an issue where plugins writing data to the files in project interfered with the processing causing link checker errors.
+        - Removed empty catalog sidebar when no filters were configured.
+    dependencies:
+      '@redocly/theme': 0.58.0
+      '@redocly/openapi-docs': 3.14.0
+      '@redocly/realm-asyncapi-sdk': 0.4.0
+      '@redocly/graphql-docs': 1.3.0
+      '@redocly/portal-plugin-mock-server': 0.11.0
+      '@redocly/portal-legacy-ui': 0.9.0
+      '@redocly/asyncapi-docs': 1.3.0
+  0.126.0-next.23:
+    timestamp: 1759856739000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/config` dependency.
+    dependencies: {}
+  0.126.0-next.22:
+    timestamp: 1759851094000
+    changes:
+      minor: []
+      patch:
+        - Fixed partial tags not rendering correctly when containing schema components such as OpenAPI examples and code samples.
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.15
+      '@redocly/theme': 0.58.0-next.11
+      '@redocly/asyncapi-docs': 1.3.0-next.15
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.15
+      '@redocly/graphql-docs': 1.3.0-next.2
+  0.126.0-next.21:
+    timestamp: 1759753452000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/graphql-docs': 1.3.0-next.2
+  0.126.0-next.20:
+    timestamp: 1759738833000
+    changes:
+      minor:
+        - Added front matter keywords configuration to boost or demote search rankings for Markdown pages through includes/excludes lists.
+      patch:
+        - Fixed display of active element in `code-group` tag after page refresh.
+        - Fixed an issue with displaying multiple active elements in a `code-group` tag when they had the same names.
+    dependencies:
+      '@redocly/theme': 0.58.0-next.10
+      '@redocly/openapi-docs': 3.14.0-next.14
+      '@redocly/asyncapi-docs': 1.3.0-next.14
+      '@redocly/graphql-docs': 1.3.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.14
+  0.126.0-next.19:
+    timestamp: 1759499290000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.4
+      '@redocly/openapi-docs': 3.14.0-next.13
+      '@redocly/theme': 0.58.0-next.9
+      '@redocly/asyncapi-docs': 1.3.0-next.13
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.13
+      '@redocly/graphql-docs': 1.3.0-next.1
+  0.126.0-next.18:
+    timestamp: 1759419881000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where external links in the sidebar appeared as active.
+        - Removed empty catalog sidebar when no filters were configured.
+    dependencies: {}
+  0.126.0-next.17:
+    timestamp: 1759402106000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.3
+      '@redocly/theme': 0.58.0-next.8
+      '@redocly/asyncapi-docs': 1.3.0-next.12
+      '@redocly/graphql-docs': 1.3.0-next.1
+      '@redocly/openapi-docs': 3.14.0-next.12
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.12
+  0.126.0-next.16:
+    timestamp: 1759397597000
+    changes:
+      minor:
+        - Added validation for React pages to catch runtime errors during the build process.
+        - Added built-in MCP server to expose API docs to AI assistants.
+      patch: []
+    dependencies: {}
   0.126.0-next.15:
     timestamp: 1759226665000
     changes:
@@ -4385,7 +4792,7 @@
     timestamp: 1758885593000
     changes:
       minor:
-        - Added support for `_partials` folders at any directory level.
+        - Added support for `_partials` folders at any directory level. Added glob pattern support for the `partialsFolders` configuration.
       patch:
         - Fixed security vulnerability CVE-2025-59139 in `bodyLimit` middleware by upgrading `hono` to v4.9.7.
     dependencies:
@@ -4445,7 +4852,7 @@
       minor: []
       patch:
         - Updated `@redocly/openapi-core` to version `2.1.4`.
-        - Fixed search dialog results being unscrollable on small screens.
+        - Fixed search dialog results being unscrollable on small screens. Fixed advanced search filters overflowing the viewport on small screens.
         - Fixed an issue with the sidebar active item when using `REDOCLY_PREFIX_PATHS` and the OpenAPI document was in the root directory.
         - Updated `@redocly/openapi-core` to version `2.1.5`.
     dependencies:
@@ -4537,7 +4944,7 @@
     changes:
       minor: []
       patch:
-        - Fixed an issue where markdoc tags did not render in preview mode.
+        - Fixed an issue where Markdoc tags did not render in preview mode.
     dependencies: {}
   0.126.0-next.2:
     timestamp: 1757409756000
@@ -7964,6 +8371,192 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.127.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Fixed sidebar item activation during scroll.
+        - Fixed incorrect tab display when resizing the screen.
+    dependencies:
+      '@redocly/asyncapi-docs': 1.4.0-next.3
+      '@redocly/openapi-docs': 3.15.0-next.3
+      '@redocly/theme': 0.59.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.3
+      '@redocly/graphql-docs': 1.4.0-next.0
+  0.127.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.5.0`.
+        - Updated `@redocly/openapi-core` to version `2.5.1`.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.2
+      '@redocly/asyncapi-docs': 1.4.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.2
+  0.127.0-next.1:
+    timestamp: 1760083220000
+    changes:
+      minor:
+        - Added `Ask AI` floating action button to trigger AI Search. Deprecated `search.ai` config option and replaced it with `aiAssistant`.
+      patch:
+        - Fixed an issue where the link checker incorrectly reported links with configured wildcard redirects as broken
+        - Fixed an issue where static assets were served without path prefix when it was enabled.
+        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
+        - Added missing color to improve visual consistency.
+        - Fixed false positive broken link reports for HTML `a` links when a path prefix is configured.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.1
+      '@redocly/asyncapi-docs': 1.4.0-next.1
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.1
+  0.126.1:
+    timestamp: 1760015971000
+    changes:
+      minor: []
+      patch:
+        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.1
+      '@redocly/theme': 0.58.1
+      '@redocly/openapi-docs': 3.14.1
+      '@redocly/asyncapi-docs': 1.3.1
+      '@redocly/graphql-docs': 1.3.0
+      '@redocly/portal-plugin-mock-server': 0.11.1
+  0.127.0-next.0:
+    timestamp: 1759997817000
+    changes:
+      minor:
+        - Added deep linking to the `tabs` component.
+        - Updated styles for `Tag` component.
+      patch:
+        - Enter prerelease mode.
+        - Allowed CORS for the AI conversation endpoint.
+        - Fixed issue where layout pre-configured option was skipped.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.5.0-next.0
+      '@redocly/portal-legacy-ui': 0.10.0-next.0
+      '@redocly/asyncapi-docs': 1.4.0-next.0
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.0
+      '@redocly/theme': 0.59.0-next.0
+  0.126.0:
+    timestamp: 1759929177000
+    changes:
+      minor:
+        - Added front matter keywords configuration to boost or demote search rankings for Markdown pages through includes/excludes lists.
+        - Added validation for React pages to catch runtime errors during the build process.
+        - Added support for `_partials` folders at any directory level. Added glob pattern support for the `partialsFolders` configuration.
+        - Added validation to ensure `residency` starts with `http://` or `https://`.
+        - Improved memory efficiency when creating search indexes, reducing build failures due to out-of-memory errors on large projects.
+        - Improved heading anchor ID generation by removing dots and slashes to create cleaner URL fragments.
+        - Added path prefix support for HTML `href` attributes.
+      patch:
+        - Fixed an issue where tooltips could obscure the parent UI element.
+        - Fixed display of active element in `code-group` tag after page refresh.
+        - Fixed an issue with displaying multiple active elements in a `code-group` tag when they had the same names.
+        - Improved error message for broken sidebar links in front matter.
+        - Fixed search dialog results being unscrollable on small screens. Fixed advanced search filters overflowing the viewport on small screens.
+        - Improved build logs by separating AI Search and `llms.txt` messages.
+        - Fixed an issue where external links in the sidebar appeared as active.
+        - Added `icon` option to sidebar `separator`.
+        - Fixed an issue where following an anchor link did not cause the page to scroll to the target heading.
+        - Fixed an issue where the AI search icon shrank with long queries; the icon maintains its size and the query text wraps correctly.
+        - Fixed an issue with the sidebar active item when using `REDOCLY_PREFIX_PATHS` and the OpenAPI document was in the root directory.
+        - Fixed security vulnerability CVE-2025-59139 in `bodyLimit` middleware by upgrading `hono` to v4.9.7.
+        - Normalized trailing slash handling in SSR to prevent hydration mismatches.
+        - Fixed double prefixes in image URLs.
+        - Fixed an issue where plugins writing data to the files in project interfered with the processing causing link checker errors.
+    dependencies:
+      '@redocly/theme': 0.58.0
+      '@redocly/openapi-docs': 3.14.0
+      '@redocly/realm-asyncapi-sdk': 0.4.0
+      '@redocly/graphql-docs': 1.3.0
+      '@redocly/portal-plugin-mock-server': 0.11.0
+      '@redocly/portal-legacy-ui': 0.9.0
+      '@redocly/asyncapi-docs': 1.3.0
+  0.126.0-next.23:
+    timestamp: 1759856739000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/config` dependency.
+    dependencies: {}
+  0.126.0-next.22:
+    timestamp: 1759851094000
+    changes:
+      minor: []
+      patch:
+        - Fixed partial tags not rendering correctly when containing schema components such as OpenAPI examples and code samples.
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.15
+      '@redocly/theme': 0.58.0-next.11
+      '@redocly/asyncapi-docs': 1.3.0-next.15
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.15
+      '@redocly/graphql-docs': 1.3.0-next.2
+  0.126.0-next.21:
+    timestamp: 1759753452000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/graphql-docs': 1.3.0-next.2
+  0.126.0-next.20:
+    timestamp: 1759738833000
+    changes:
+      minor:
+        - Added front matter keywords configuration to boost or demote search rankings for Markdown pages through includes/excludes lists.
+      patch:
+        - Fixed display of active element in `code-group` tag after page refresh.
+        - Fixed an issue with displaying multiple active elements in a `code-group` tag when they had the same names.
+    dependencies:
+      '@redocly/theme': 0.58.0-next.10
+      '@redocly/openapi-docs': 3.14.0-next.14
+      '@redocly/asyncapi-docs': 1.3.0-next.14
+      '@redocly/graphql-docs': 1.3.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.14
+  0.126.0-next.19:
+    timestamp: 1759499290000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.4
+      '@redocly/openapi-docs': 3.14.0-next.13
+      '@redocly/theme': 0.58.0-next.9
+      '@redocly/asyncapi-docs': 1.3.0-next.13
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.13
+      '@redocly/graphql-docs': 1.3.0-next.1
+  0.126.0-next.18:
+    timestamp: 1759419881000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where external links in the sidebar appeared as active.
+    dependencies: {}
+  0.126.0-next.17:
+    timestamp: 1759402106000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.3
+      '@redocly/theme': 0.58.0-next.8
+      '@redocly/asyncapi-docs': 1.3.0-next.12
+      '@redocly/graphql-docs': 1.3.0-next.1
+      '@redocly/openapi-docs': 3.14.0-next.12
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.12
+  0.126.0-next.16:
+    timestamp: 1759397597000
+    changes:
+      minor:
+        - Added validation for React pages to catch runtime errors during the build process.
+        - Added built-in MCP server to expose API docs to AI assistants.
+      patch: []
+    dependencies: {}
   0.126.0-next.15:
     timestamp: 1759226665000
     changes:
@@ -7992,7 +8585,7 @@
     timestamp: 1758885593000
     changes:
       minor:
-        - Added support for `_partials` folders at any directory level.
+        - Added support for `_partials` folders at any directory level. Added glob pattern support for the `partialsFolders` configuration.
       patch:
         - Fixed security vulnerability CVE-2025-59139 in `bodyLimit` middleware by upgrading `hono` to v4.9.7.
     dependencies:
@@ -8051,7 +8644,7 @@
       minor: []
       patch:
         - Updated `@redocly/openapi-core` to version `2.1.4`.
-        - Fixed search dialog results being unscrollable on small screens.
+        - Fixed search dialog results being unscrollable on small screens. Fixed advanced search filters overflowing the viewport on small screens.
         - Fixed an issue with the sidebar active item when using `REDOCLY_PREFIX_PATHS` and the OpenAPI document was in the root directory.
         - Updated `@redocly/openapi-core` to version `2.1.5`.
     dependencies:
@@ -8143,7 +8736,7 @@
     changes:
       minor: []
       patch:
-        - Fixed an issue where markdoc tags did not render in preview mode.
+        - Fixed an issue where Markdoc tags did not render in preview mode.
     dependencies: {}
   0.126.0-next.2:
     timestamp: 1757409756000
@@ -11567,6 +12160,209 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.127.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Fixed sidebar item activation during scroll.
+        - Fixed incorrect tab display when resizing the screen.
+    dependencies:
+      '@redocly/asyncapi-docs': 1.4.0-next.3
+      '@redocly/openapi-docs': 3.15.0-next.3
+      '@redocly/theme': 0.59.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.3
+      '@redocly/graphql-docs': 1.4.0-next.0
+  0.127.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.5.0`.
+        - Updated `@redocly/openapi-core` to version `2.5.1`.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.2
+      '@redocly/asyncapi-docs': 1.4.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.2
+  0.127.0-next.1:
+    timestamp: 1760083220000
+    changes:
+      minor:
+        - Added `Ask AI` floating action button to trigger AI Search. Deprecated `search.ai` config option and replaced it with `aiAssistant`.
+      patch:
+        - Fixed an issue where the link checker incorrectly reported links with configured wildcard redirects as broken
+        - Fixed an issue where static assets were served without path prefix when it was enabled.
+        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
+        - Added missing color to improve visual consistency.
+        - Fixed false positive broken link reports for HTML `a` links when a path prefix is configured.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.1
+      '@redocly/asyncapi-docs': 1.4.0-next.1
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.1
+  0.126.1:
+    timestamp: 1760015971000
+    changes:
+      minor: []
+      patch:
+        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.1
+      '@redocly/theme': 0.58.1
+      '@redocly/openapi-docs': 3.14.1
+      '@redocly/asyncapi-docs': 1.3.1
+      '@redocly/graphql-docs': 1.3.0
+      '@redocly/portal-plugin-mock-server': 0.11.1
+  0.127.0-next.0:
+    timestamp: 1759997817000
+    changes:
+      minor:
+        - Updated styles for `Tag` component.
+      patch:
+        - Enter prerelease mode.
+        - Allowed CORS for the AI conversation endpoint.
+        - Fixed issue where layout pre-configured option was skipped.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.5.0-next.0
+      '@redocly/portal-legacy-ui': 0.10.0-next.0
+      '@redocly/asyncapi-docs': 1.4.0-next.0
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.0
+      '@redocly/theme': 0.59.0-next.0
+  0.126.0:
+    timestamp: 1759929177000
+    changes:
+      minor:
+        - >-
+          Added `openapi.showSchemaCatalogLinks` configuration option to display links to schemas and requests on an OpenAPI page. These links can be
+          used as `$ref` values in other OpenAPI files within the same project.
+        - Added `showBuiltInScalars` and `showBuiltInDirectives` options to control visibility of built-in GraphQL scalars and directives.
+        - Added validation to ensure `residency` starts with `http://` or `https://`.
+        - Added built-in MCP server to expose API docs to AI assistants.
+        - >-
+          Added support for OpenAPI 3.2.0 security updates: `deprecated` and `oauth2MetadataUrl` fields, `deviceAuthorization` flow, and code samples
+          generation for device authorization flow.
+        - Added support for the OpenAPI 3.2.0 `servers.name` property.
+        - Improved memory efficiency when creating search indexes, reducing build failures due to out-of-memory errors on large projects.
+        - Improved heading anchor ID generation by removing dots and slashes to create cleaner URL fragments.
+        - Added path prefix support for HTML `href` attributes.
+      patch:
+        - Fixed an issue where environment variables were not resolved inside `redocly.yaml` when building OpenAPI documents.
+        - Fixed an issue where tooltips could obscure the parent UI element.
+        - Fixed responses without parameters not being included in `llms.txt`.
+        - Fixed search issue where queries with text enclosed in backticks in API descriptions returned no results.
+        - Fixed display of active element in `code-group` tag after page refresh.
+        - Fixed an issue with displaying multiple active elements in a `code-group` tag when they had the same names.
+        - Fixed search dialog results being unscrollable on small screens. Fixed advanced search filters overflowing the viewport on small screens.
+        - Fixed an issue where `x-rbac` and `markdoc` did not work in Swagger (Open API 2.0.x) descriptions.
+        - Improved build logs by separating AI Search and `llms.txt` messages.
+        - Fixed an issue where external links in the sidebar appeared as active.
+        - Added `icon` option to sidebar `separator`.
+        - Fixed an issue that prevented focusing the first section of the API documentation when content was minimal.
+        - Fixed duplicated descriptions in `oneOf` options.
+        - Fixed an issue where the AI search icon shrank with long queries; the icon maintains its size and the query text wraps correctly.
+        - Fixed missing `Expand All` button in requests using `oneOf`.
+        - Fixed an issue with the sidebar active item when using `REDOCLY_PREFIX_PATHS` and the OpenAPI document was in the root directory.
+        - Fixed security vulnerability CVE-2025-59139 in `bodyLimit` middleware by upgrading `hono` to v4.9.7.
+        - Normalized trailing slash handling in SSR to prevent hydration mismatches.
+        - Fixed double prefixes in image URLs.
+        - >-
+          Fixed an issue where the OpenAPI download URLs did not work with the `output` property if the output path was in the `/static/_spec/`
+          directory.
+        - Fixed an issue where plugins writing data to the files in project interfered with the processing causing link checker errors.
+    dependencies:
+      '@redocly/theme': 0.58.0
+      '@redocly/openapi-docs': 3.14.0
+      '@redocly/realm-asyncapi-sdk': 0.4.0
+      '@redocly/graphql-docs': 1.3.0
+      '@redocly/portal-plugin-mock-server': 0.11.0
+      '@redocly/portal-legacy-ui': 0.9.0
+      '@redocly/asyncapi-docs': 1.3.0
+  0.126.0-next.23:
+    timestamp: 1759856739000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/config` dependency.
+    dependencies: {}
+  0.126.0-next.22:
+    timestamp: 1759851094000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.15
+      '@redocly/theme': 0.58.0-next.11
+      '@redocly/asyncapi-docs': 1.3.0-next.15
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.15
+      '@redocly/graphql-docs': 1.3.0-next.2
+  0.126.0-next.21:
+    timestamp: 1759753452000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/graphql-docs': 1.3.0-next.2
+  0.126.0-next.20:
+    timestamp: 1759738833000
+    changes:
+      minor:
+        - Added front matter keywords configuration to boost or demote search rankings for Markdown pages through includes/excludes lists.
+        - Added support for the OpenAPI 3.2.0 `servers.name` property.
+      patch:
+        - Fixed display of active element in `code-group` tag after page refresh.
+        - Fixed an issue with displaying multiple active elements in a `code-group` tag when they had the same names.
+    dependencies:
+      '@redocly/theme': 0.58.0-next.10
+      '@redocly/openapi-docs': 3.14.0-next.14
+      '@redocly/asyncapi-docs': 1.3.0-next.14
+      '@redocly/graphql-docs': 1.3.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.14
+  0.126.0-next.19:
+    timestamp: 1759499290000
+    changes:
+      minor:
+        - >-
+          Added support for OpenAPI 3.2.0 security updates: `deprecated` and `oauth2MetadataUrl` fields, `deviceAuthorization` flow, and code samples
+          generation for device authorization flow.
+      patch:
+        - Fixed an issue where `x-rbac` and `markdoc` did not work in Swagger (Open API 2.0.x) descriptions.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.4
+      '@redocly/openapi-docs': 3.14.0-next.13
+      '@redocly/theme': 0.58.0-next.9
+      '@redocly/asyncapi-docs': 1.3.0-next.13
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.13
+      '@redocly/graphql-docs': 1.3.0-next.1
+  0.126.0-next.18:
+    timestamp: 1759419881000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where external links in the sidebar appeared as active.
+    dependencies: {}
+  0.126.0-next.17:
+    timestamp: 1759402106000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.3
+      '@redocly/theme': 0.58.0-next.8
+      '@redocly/asyncapi-docs': 1.3.0-next.12
+      '@redocly/graphql-docs': 1.3.0-next.1
+      '@redocly/openapi-docs': 3.14.0-next.12
+      '@redocly/portal-plugin-mock-server': 0.11.0-next.12
+  0.126.0-next.16:
+    timestamp: 1759397597000
+    changes:
+      minor:
+        - Added validation for React pages to catch runtime errors during the build process.
+        - Added built-in MCP server to expose API docs to AI assistants.
+      patch: []
+    dependencies: {}
   0.126.0-next.15:
     timestamp: 1759226665000
     changes:
@@ -11600,7 +12396,7 @@
     changes:
       minor: []
       patch:
-        - Fixed missing responses without parameters in `llms.txt`.
+        - Fixed responses without parameters not being included in `llms.txt`.
         - Fixed security vulnerability CVE-2025-59139 in `bodyLimit` middleware by upgrading `hono` to v4.9.7.
     dependencies:
       '@redocly/realm-asyncapi-sdk': 0.4.0-next.2
@@ -11659,7 +12455,7 @@
       minor: []
       patch:
         - Updated `@redocly/openapi-core` to version `2.1.4`.
-        - Fixed search dialog results being unscrollable on small screens.
+        - Fixed search dialog results being unscrollable on small screens. Fixed advanced search filters overflowing the viewport on small screens.
         - Fixed duplicated descriptions in `oneOf` options.
         - Fixed missing `Expand All` button in requests using `oneOf`.
         - Fixed an issue with the sidebar active item when using `REDOCLY_PREFIX_PATHS` and the OpenAPI document was in the root directory.
@@ -11751,7 +12547,7 @@
     changes:
       minor: []
       patch:
-        - Fixed an issue where markdoc tags did not render in preview mode.
+        - Fixed an issue where Markdoc tags did not render in preview mode.
     dependencies: {}
   0.126.0-next.2:
     timestamp: 1757409756000
@@ -15174,6 +15970,92 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.59.0-next.2:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Fixed incorrect tab display when resizing the screen.
+    dependencies: {}
+  0.59.0-next.1:
+    timestamp: 1760083220000
+    changes:
+      minor:
+        - Added `Ask AI` floating action button to trigger AI Search. Deprecated `search.ai` config option and replaced it with `aiAssistant`.
+      patch:
+        - Added missing color to improve visual consistency.
+    dependencies: {}
+  0.58.1:
+    timestamp: 1760015971000
+    changes:
+      minor: []
+      patch:
+        - Fixed visual issue in `x-mcp` overview section.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.1
+  0.59.0-next.0:
+    timestamp: 1759997817000
+    changes:
+      minor:
+        - Added deep linking to the `tabs` component.
+        - Updated styles for `Tag` component.
+      patch:
+        - Enter prerelease mode.
+        - Fixed visual issue in `x-mcp` overview section.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.5.0-next.0
+  0.58.0:
+    timestamp: 1759929177000
+    changes:
+      minor:
+        - Added support for the `x-mcp` vendor extension in OpenAPI to render MCP server documentation.
+        - >-
+          Added `openapi.showSchemaCatalogLinks` configuration option to display links to schemas and requests on an OpenAPI page. These links can be
+          used as `$ref` values in other OpenAPI files within the same project.
+        - Added support for the OpenAPI 3.2.0 `servers.name` property.
+        - Added support to configure `Replay` with dynamic API data.
+        - Added the OpenAPI `info` object to the `useConfigureReplay` context.
+      patch:
+        - Fixed an issue where tooltips could obscure the parent UI element.
+        - Fixed display of active element in `code-group` tag after page refresh.
+        - Enhanced `JsonViewer` with `controls` prop to manage `CodeBlock` headers; removed `hideHeader` prop.
+        - Fixed an issue with displaying multiple active elements in a `code-group` tag when they had the same names.
+        - Fixed search dialog results being unscrollable on small screens. Fixed advanced search filters overflowing the viewport on small screens.
+        - Fixed an issue that prevented focusing the first section of the API documentation when content was minimal.
+        - Fixed an issue where the AI search icon shrank with long queries; the icon maintains its size and the query text wraps correctly.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0
+  0.58.0-next.11:
+    timestamp: 1759851094000
+    changes:
+      minor:
+        - Added support for the `x-mcp` vendor extension in OpenAPI to render MCP server documentation.
+      patch:
+        - Enhanced `JsonViewer` with `controls` prop to manage `CodeBlock` headers; removed `hideHeader` prop.
+    dependencies: {}
+  0.58.0-next.10:
+    timestamp: 1759738833000
+    changes:
+      minor:
+        - Added support for the OpenAPI 3.2.0 `servers.name` property.
+      patch:
+        - Fixed display of active element in `code-group` tag after page refresh.
+        - Fixed an issue with displaying multiple active elements in a `code-group` tag when they had the same names.
+    dependencies: {}
+  0.58.0-next.9:
+    timestamp: 1759499290000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.4
+  0.58.0-next.8:
+    timestamp: 1759402106000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0-next.3
   0.58.0-next.7:
     timestamp: 1759154216000
     changes:
@@ -17425,6 +18307,102 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.15.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Updated `openapi-sampler` from version 1.6.1 to 1.6.2.
+    dependencies:
+      '@redocly/replay': 0.18.0-next.3
+  3.15.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.5.0`.
+        - Updated `@redocly/openapi-core` to version `2.5.1`.
+    dependencies:
+      '@redocly/replay': 0.18.0-next.2
+  3.15.0-next.1:
+    timestamp: 1760083220000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.18.0-next.1
+  3.14.1:
+    timestamp: 1760015971000
+    changes:
+      minor: []
+      patch:
+        - Fixed visual issue in `x-mcp` overview section.
+    dependencies:
+      '@redocly/replay': 0.17.1
+  3.15.0-next.0:
+    timestamp: 1759997817000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+        - Fixed an issue where `oneOf` titles were overridden by the parent schema's title.
+        - Fixed visual issue in `x-mcp` overview section.
+    dependencies:
+      '@redocly/replay': 0.18.0-next.0
+      '@redocly/theme': 0.59.0-next.0
+  3.14.0:
+    timestamp: 1759929177000
+    changes:
+      minor:
+        - Added support for the `x-mcp` vendor extension in OpenAPI to render MCP server documentation.
+        - >-
+          Added `openapi.showSchemaCatalogLinks` configuration option to display links to schemas and requests on an OpenAPI page. These links can be
+          used as `$ref` values in other OpenAPI files within the same project.
+        - >-
+          Added support for OpenAPI 3.2.0 security updates: `deprecated` and `oauth2MetadataUrl` fields, `deviceAuthorization` flow, and code samples
+          generation for device authorization flow.
+        - Added support for the OpenAPI 3.2.0 `servers.name` property.
+        - Added the OpenAPI `info` object to the `useConfigureReplay` context.
+        - Added support to configure `Replay` with dynamic API data.
+      patch:
+        - Fixed responses without parameters not being included in `llms.txt`.
+        - Fixed duplicated descriptions in `oneOf` options.
+        - Fixed missing `Expand All` button in requests using `oneOf`.
+    dependencies:
+      '@redocly/replay': 0.17.0
+  3.14.0-next.15:
+    timestamp: 1759851094000
+    changes:
+      minor:
+        - Added support for the `x-mcp` vendor extension in OpenAPI to render MCP server documentation.
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.17.0-next.14
+  3.14.0-next.14:
+    timestamp: 1759738833000
+    changes:
+      minor:
+        - Added support for the OpenAPI 3.2.0 `servers.name` property.
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.17.0-next.13
+  3.14.0-next.13:
+    timestamp: 1759499290000
+    changes:
+      minor:
+        - >-
+          Added support for OpenAPI 3.2.0 security updates: `deprecated` and `oauth2MetadataUrl` fields, `deviceAuthorization` flow, and code samples
+          generation for device authorization flow.
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.17.0-next.12
+  3.14.0-next.12:
+    timestamp: 1759402106000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.17.0-next.11
   3.14.0-next.11:
     timestamp: 1759226665000
     changes:
@@ -19661,6 +20639,28 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.36.0:
+    timestamp: 1760108804000
+    changes:
+      minor:
+        - Deprecated `search.ai` config option and replaced it with `aiAssistant`.
+      patch:
+        - Exported constants and types for rules, decorators, and preprocessors.
+    dependencies: {}
+  0.35.1:
+    timestamp: 1759855634000
+    changes:
+      minor: []
+      patch:
+        - Added types to support the `OpenAPI 3.2` specification.
+    dependencies: {}
+  0.35.0:
+    timestamp: 1759385012000
+    changes:
+      minor:
+        - Added `mcp` configuration for documentation.
+      patch: []
+    dependencies: {}
   0.34.0:
     timestamp: 1758884326000
     changes:
@@ -20120,6 +21120,28 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.4.0-next.0:
+    timestamp: 1759997817000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.0
+  1.3.0:
+    timestamp: 1759929177000
+    changes:
+      minor:
+        - Added `showBuiltInScalars` and `showBuiltInDirectives` options to control visibility of built-in GraphQL scalars and directives.
+      patch: []
+    dependencies: {}
+  1.3.0-next.2:
+    timestamp: 1759753452000
+    changes:
+      minor:
+        - Updated internal dependencies.
+      patch: []
+    dependencies: {}
   1.3.0-next.1:
     timestamp: 1758714251000
     changes:
@@ -20852,6 +21874,27 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.3.11:
+    timestamp: 1760370500000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.5.1`.
+    dependencies: {}
+  0.3.10:
+    timestamp: 1760108804000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.5.0`.
+    dependencies: {}
+  0.3.9:
+    timestamp: 1759855634000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.3.1`.
+    dependencies: {}
   0.3.8:
     timestamp: 1759137485000
     changes:
@@ -21162,6 +22205,19 @@
         - Redocly Mock Server release
     dependencies: {}
 '@redocly/portal-legacy-ui':
+  0.10.0-next.0:
+    timestamp: 1759997817000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies: {}
+  0.9.0:
+    timestamp: 1759929177000
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   0.9.0-next.0:
     timestamp: 1757322240000
     changes:
@@ -21292,6 +22348,156 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.10.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.127.0-next.3
+      '@redocly/redoc': 0.127.0-next.3
+      '@redocly/redoc-reef': 0.127.0-next.3
+      '@redocly/redoc-revel': 0.127.0-next.3
+      '@redocly/theme': 0.59.0-next.2
+  1.10.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.127.0-next.2
+      '@redocly/redoc-reef': 0.127.0-next.2
+      '@redocly/redoc': 0.127.0-next.2
+      '@redocly/redoc-revel': 0.127.0-next.2
+  1.10.0-next.1:
+    timestamp: 1760083220000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.1
+      '@redocly/realm': 0.127.0-next.1
+      '@redocly/redoc': 0.127.0-next.1
+      '@redocly/redoc-reef': 0.127.0-next.1
+      '@redocly/redoc-revel': 0.127.0-next.1
+  1.9.1:
+    timestamp: 1760015971000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.1
+      '@redocly/realm': 0.126.1
+      '@redocly/redoc': 0.126.1
+      '@redocly/redoc-reef': 0.126.1
+      '@redocly/redoc-revel': 0.126.1
+  1.10.0-next.0:
+    timestamp: 1759997817000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/redoc-revel': 0.127.0-next.0
+      '@redocly/redoc-reef': 0.127.0-next.0
+      '@redocly/realm': 0.127.0-next.0
+      '@redocly/redoc': 0.127.0-next.0
+      '@redocly/theme': 0.59.0-next.0
+  1.9.0:
+    timestamp: 1759929177000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.0
+      '@redocly/redoc': 0.126.0
+      '@redocly/redoc-revel': 0.126.0
+      '@redocly/redoc-reef': 0.126.0
+      '@redocly/theme': 0.58.0
+  1.9.0-next.23:
+    timestamp: 1759856739000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.0-next.23
+      '@redocly/redoc': 0.126.0-next.23
+      '@redocly/redoc-reef': 0.126.0-next.23
+      '@redocly/redoc-revel': 0.126.0-next.23
+  1.9.0-next.22:
+    timestamp: 1759851094000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.11
+      '@redocly/realm': 0.126.0-next.22
+      '@redocly/redoc-reef': 0.126.0-next.22
+      '@redocly/redoc-revel': 0.126.0-next.22
+      '@redocly/redoc': 0.126.0-next.22
+  1.9.0-next.21:
+    timestamp: 1759753452000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.0-next.21
+      '@redocly/redoc': 0.126.0-next.21
+      '@redocly/redoc-reef': 0.126.0-next.21
+      '@redocly/redoc-revel': 0.126.0-next.21
+  1.9.0-next.20:
+    timestamp: 1759738833000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.0-next.20
+      '@redocly/redoc': 0.126.0-next.20
+      '@redocly/redoc-reef': 0.126.0-next.20
+      '@redocly/redoc-revel': 0.126.0-next.20
+      '@redocly/theme': 0.58.0-next.10
+  1.9.0-next.19:
+    timestamp: 1759499290000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.0-next.19
+      '@redocly/redoc': 0.126.0-next.19
+      '@redocly/redoc-reef': 0.126.0-next.19
+      '@redocly/redoc-revel': 0.126.0-next.19
+      '@redocly/theme': 0.58.0-next.9
+  1.9.0-next.18:
+    timestamp: 1759419881000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.0-next.18
+      '@redocly/redoc': 0.126.0-next.18
+      '@redocly/redoc-reef': 0.126.0-next.18
+      '@redocly/redoc-revel': 0.126.0-next.18
+  1.9.0-next.17:
+    timestamp: 1759402106000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.0-next.17
+      '@redocly/redoc': 0.126.0-next.17
+      '@redocly/redoc-reef': 0.126.0-next.17
+      '@redocly/redoc-revel': 0.126.0-next.17
+      '@redocly/theme': 0.58.0-next.8
+  1.9.0-next.16:
+    timestamp: 1759397597000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.126.0-next.16
+      '@redocly/redoc-reef': 0.126.0-next.16
+      '@redocly/realm': 0.126.0-next.16
+      '@redocly/redoc': 0.126.0-next.16
   1.9.0-next.15:
     timestamp: 1759226665000
     changes:
@@ -25228,6 +26434,77 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.12.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.3
+  0.12.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.2
+  0.12.0-next.1:
+    timestamp: 1760083220000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.1
+  0.11.1:
+    timestamp: 1760015971000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.1
+  0.12.0-next.0:
+    timestamp: 1759997817000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.0
+  0.11.0:
+    timestamp: 1759929177000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0
+  0.11.0-next.15:
+    timestamp: 1759851094000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.15
+  0.11.0-next.14:
+    timestamp: 1759738833000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.14
+  0.11.0-next.13:
+    timestamp: 1759499290000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.13
+  0.11.0-next.12:
+    timestamp: 1759402106000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.12
   0.11.0-next.11:
     timestamp: 1759226665000
     changes:
@@ -27397,6 +28674,87 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.18.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.2
+  0.18.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.5.0`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.5.1`.
+    dependencies: {}
+  0.18.0-next.1:
+    timestamp: 1760083220000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.1
+  0.17.1:
+    timestamp: 1760015971000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.1
+  0.18.0-next.0:
+    timestamp: 1759997817000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.0
+  0.17.0:
+    timestamp: 1759929177000
+    changes:
+      minor:
+        - Added support for the OpenAPI 3.2.0 `servers.name` property.
+        - Added support to configure `Replay` with dynamic API data.
+        - Added persistence for user-created environments in `Try it` between page reloads.
+      patch:
+        - Added handling for special characters in query strings.
+        - >-
+          Fixed processing of relative OAuth 2.0 authorization and token URLs during the OAuth flow. Parsed OAuth 2.0 scopes from the API definition
+          and displayed them in the security tab.
+    dependencies:
+      '@redocly/theme': 0.58.0
+  0.17.0-next.14:
+    timestamp: 1759851094000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.3.1`.
+    dependencies:
+      '@redocly/theme': 0.58.0-next.11
+  0.17.0-next.13:
+    timestamp: 1759738833000
+    changes:
+      minor:
+        - Added support for the OpenAPI 3.2.0 `servers.name` property.
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.10
+  0.17.0-next.12:
+    timestamp: 1759499290000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.9
+  0.17.0-next.11:
+    timestamp: 1759402106000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.8
   0.17.0-next.10:
     timestamp: 1759154216000
     changes:
@@ -28687,6 +30045,70 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.10.0-next.2:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.2
+  0.10.0-next.1:
+    timestamp: 1760083220000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.1
+  0.9.1:
+    timestamp: 1760015971000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.1
+  0.10.0-next.0:
+    timestamp: 1759997817000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.0
+  0.9.0:
+    timestamp: 1759929177000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0
+  0.9.0-next.11:
+    timestamp: 1759851094000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.11
+  0.9.0-next.10:
+    timestamp: 1759738833000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.10
+  0.9.0-next.9:
+    timestamp: 1759499290000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.9
+  0.9.0-next.8:
+    timestamp: 1759402106000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.8
   0.9.0-next.7:
     timestamp: 1759154216000
     changes:
@@ -29912,6 +31334,87 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.4.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Updated `openapi-sampler` from version 1.6.1 to 1.6.2.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.3
+      '@redocly/theme': 0.59.0-next.2
+  1.4.0-next.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.2
+  1.4.0-next.1:
+    timestamp: 1760083220000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.1
+      '@redocly/openapi-docs': 3.15.0-next.1
+  1.3.1:
+    timestamp: 1760015971000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.1
+      '@redocly/openapi-docs': 3.14.1
+  1.4.0-next.0:
+    timestamp: 1759997817000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.0
+      '@redocly/theme': 0.59.0-next.0
+  1.3.0:
+    timestamp: 1759929177000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0
+      '@redocly/openapi-docs': 3.14.0
+  1.3.0-next.15:
+    timestamp: 1759851094000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.15
+      '@redocly/theme': 0.58.0-next.11
+  1.3.0-next.14:
+    timestamp: 1759738833000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.10
+      '@redocly/openapi-docs': 3.14.0-next.14
+  1.3.0-next.13:
+    timestamp: 1759499290000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.14.0-next.13
+      '@redocly/theme': 0.58.0-next.9
+  1.3.0-next.12:
+    timestamp: 1759402106000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.0-next.8
+      '@redocly/openapi-docs': 3.14.0-next.12
   1.3.0-next.11:
     timestamp: 1759226665000
     changes:
@@ -32067,4 +33570,25 @@ reunite:
       minor:
         - Show user-friendly messages for credential validation failures, missing repositories, and branch errors when interacting with Git providers.
       patch: []
+    dependencies: {}
+  v2025-10-10.1:
+    timestamp: 1760100871000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.3.1`.
+    dependencies: {}
+  v2025-10-13.1:
+    timestamp: 1760344220000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.5.0`.
+    dependencies: {}
+  v2025-10-14.2:
+    timestamp: 1760451662000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.5.1`.
     dependencies: {}

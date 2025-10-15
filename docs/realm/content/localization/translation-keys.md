@@ -980,6 +980,61 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+---
+- openapi.mcp.title
+- Label for MCP server in OpenAPI sidebar
+- MCP Server
+
+---
+
+- openapi.mcp.tools
+- Label for MCP tools group in OpenAPI sidebar
+- MCP Tools
+
+---
+
+- openapi.mcp.protocolVersion
+- Label for MCP protocol version in OpenAPI sidebar
+- Protocol Version
+
+---
+
+- openapi.mcp.capabilities
+- Label for MCP capabilities in OpenAPI sidebar
+- Capabilities
+
+---
+
+- openapi.mcp.experimentalCapabilities
+- Label for MCP experimental capabilities in OpenAPI sidebar
+- Experimental capabilities
+
+---
+
+- openapi.mcp.inputSchema
+- Label for MCP input schema in OpenAPI sidebar
+- Input schema
+
+---
+
+- openapi.mcp.inputExample
+- Label for MCP input example in OpenAPI sidebar
+- Input example
+
+---
+
+- openapi.mcp.outputSchema
+- Label for MCP output schema in OpenAPI sidebar
+- Output schema
+
+---
+
+- openapi.mcp.outputExample
+- Label for MCP output example in OpenAPI sidebar
+- Output example
+
+---
+
 - graphql.queries
 - Label for queries group in GraphQL sidebar
 - Queries

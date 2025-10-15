@@ -7,6 +7,51 @@ toc:
 
 <!-- do-not-remove -->
 
+## 2.5.0 (2025-10-09)
+
+### Minor Changes
+
+- Added response size to the `Respect` terminal and JSON file outputs.
+
+### Patch Changes
+
+- Updated @redocly/respect-core to v2.5.0.
+
+## 2.4.0 (2025-10-08)
+
+### Minor Changes
+
+- Added the `no-secrets-masking` option to the respect command, allowing raw (unmasked) output to be generated.
+
+### Patch Changes
+
+- Updated @redocly/respect-core to v2.4.0.
+
+## 2.3.1 (2025-10-06)
+
+### Patch Changes
+
+- Fixed an issue where JSONPath-based success criteria did not support property names with hyphens in `Respect`.
+- Updated @redocly/openapi-core to v2.3.1.
+
+## 2.3.0 (2025-10-03)
+
+### Minor Changes
+
+- Added basic support for **OpenAPI 3.2** specification.
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.3.0.
+
+## 2.2.3 (2025-10-02)
+
+### Patch Changes
+
+- Fixed an issue where the Respect workflow separator did not render correctly in GitHub CI environments.
+- Added support for the `verbose` option in the `login` command to provide additional output during authentication.
+- Updated @redocly/respect-core to v2.2.3.
+
 ## 2.2.2 (2025-09-26)
 
 ### Patch Changes

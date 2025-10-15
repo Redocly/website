@@ -1,3 +1,9 @@
+---
+keywords:
+  excludes:
+    - package.json
+---
+
 # Add SOAP documentation from a WSDL file
 
 Transform your WSDL files into reference documentation by integrating them into your project.
