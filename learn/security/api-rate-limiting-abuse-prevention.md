@@ -6,7 +6,7 @@ seo:
   description: Implement API rate limiting strategies to prevent DoS attacks, brute force attempts, and business logic abuse.
 ---
 
-# Rate Limiting and Abuse Prevention for APIs
+# Rate limiting and abuse prevention for APIs
 
 ---
 
