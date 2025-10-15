@@ -31,6 +31,9 @@
   "overrides": {
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "axios": "1.12.2"
+    "axios": "1.12.2",
+    "@redocly/portal-plugin-mock-server": "0.0.0-20251015115910",
+    "@redocly/theme": "0.0.0-20251015115910",
+    "@redocly/graphql-docs": "0.0.0-20251015115910"
   }
 }
