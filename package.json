@@ -22,7 +22,6 @@
     "@redocly/asyncapi-docs": "0.0.0-20251015141952",
     "@redocly/mock-server": "0.0.0-20251015141952",
     "@redocly/graphql-docs": "0.0.0-20251015141952",
-    "@redocly/openapi-sdk-codegen": "0.0.0-20251015141952",
     "@redocly/portal-plugin-mock-server": "0.0.0-20251015141952",
     "@redocly/portal-plugin-async-api": "0.0.0-20251015141952",
     "@redocly/replay": "0.0.0-20251015141952",
