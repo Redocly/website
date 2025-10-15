@@ -72,7 +72,7 @@ graph TD
 
 Each security domain requires specific knowledge and implementation techniques. Choose the guide that matches your current focus:
 
-### <a href="/learn/security/api-tls-encryption-https-best-practices">API TLS Encryption and HTTPS Best Practices</a>
+### <a href="/learn/security/api-tls-encryption-https-best-practices">API TLS encryption and HTTPS best practices</a>
 **What you'll learn:** Protect data in transit with proper TLS configuration, certificate management, and HTTPS enforcement.
 
 **Key topics:**
@@ -86,7 +86,7 @@ Each security domain requires specific knowledge and implementation techniques. 
 
 ---
 
-### <a href="/learn/security/api-input-validation-injection-prevention">API Input Validation and Injection Prevention</a>  
+### <a href="/learn/security/api-input-validation-injection-prevention">API input validation and injection prevention</a>  
 **What you'll learn:** Stop injection attacks using OpenAPI schema validation and automated governance rules.
 
 **Key topics:**
@@ -100,7 +100,7 @@ Each security domain requires specific knowledge and implementation techniques. 
 
 ---
 
-### <a href="/learn/security/api-rate-limiting-abuse-prevention">API Rate Limiting and Abuse Prevention</a>
+### <a href="/learn/security/api-rate-limiting-abuse-prevention">API rate limiting and abuse prevention</a>
 **What you'll learn:** Prevent DoS attacks, brute force attempts, and business logic abuse through strategic rate limiting.
 
 **Key topics:**
@@ -114,7 +114,7 @@ Each security domain requires specific knowledge and implementation techniques. 
 
 ---
 
-### <a href="/learn/security/authentication-authorization-openapi">Authentication and Authorization with OpenAPI</a>
+### <a href="/learn/security/authentication-authorization-openapi">Authentication and authorization with OpenAPI</a>
 **What you'll learn:** Implement secure access control using OpenAPI security schemes and modern authentication patterns.
 
 **Key topics:**
