@@ -110,7 +110,6 @@ export const cards = [
       { title: 'API Input Validation and Injection Prevention', link: '/learn/security/api-input-validation-injection-prevention' },
       { title: 'API Rate Limiting and Abuse Prevention', link: '/learn/security/api-rate-limiting-abuse-prevention' },
       { title: 'Authentication and Authorization with OpenAPI', link: '/learn/security/authentication-authorization-openapi' },
-      { title: 'Automated Security Validation - Interactive Walkthrough', link: '/learn/security/automated-security-validation-walkthrough' },
     ],
   },
   // {

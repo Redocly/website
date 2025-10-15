@@ -76,6 +76,7 @@ Each security domain requires specific knowledge and implementation techniques. 
 {% card title="API TLS encryption and HTTPS best practices" to="/learn/security/api-tls-encryption-https-best-practices" %}
 Protect data in transit with proper TLS configuration, certificate management, and HTTPS enforcement.
 
+
 **Key topics:**
 - TLS 1.3 implementation and cipher suite selection
 - OpenAPI server URL security contracts
@@ -87,6 +88,7 @@ Protect data in transit with proper TLS configuration, certificate management, a
 
 {% card title="API input validation and injection prevention" to="/learn/security/api-input-validation-injection-prevention" %}
 Stop injection attacks using OpenAPI schema validation and automated governance rules.
+
 
 **Key topics:**
 - JSON Schema security constraints and validation patterns
@@ -100,6 +102,7 @@ Stop injection attacks using OpenAPI schema validation and automated governance 
 {% card title="API rate limiting and abuse prevention" to="/learn/security/api-rate-limiting-abuse-prevention" %}
 Prevent DoS attacks, brute force attempts, and business logic abuse through strategic rate limiting.
 
+
 **Key topics:**
 - Rate limiting algorithms and implementation patterns
 - OpenAPI x-rateLimit extensions and documentation
@@ -111,6 +114,7 @@ Prevent DoS attacks, brute force attempts, and business logic abuse through stra
 
 {% card title="Authentication and authorization with OpenAPI" to="/learn/security/authentication-authorization-openapi" %}
 Implement secure access control using OpenAPI security schemes and modern authentication patterns.
+
 
 **Key topics:**
 - OpenAPI security schemes (JWT, OAuth2, API Keys, mTLS)
