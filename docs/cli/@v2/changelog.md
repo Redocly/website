@@ -7,6 +7,26 @@ toc:
 
 <!-- do-not-remove -->
 
+## 2.5.0 (2025-10-09)
+
+### Minor Changes
+
+- Added response size to the `Respect` terminal and JSON file outputs.
+
+### Patch Changes
+
+- Updated @redocly/respect-core to v2.5.0.
+
+## 2.4.0 (2025-10-08)
+
+### Minor Changes
+
+- Added the `no-secrets-masking` option to the respect command, allowing raw (unmasked) output to be generated.
+
+### Patch Changes
+
+- Updated @redocly/respect-core to v2.4.0.
+
 ## 2.3.1 (2025-10-06)
 
 ### Patch Changes
