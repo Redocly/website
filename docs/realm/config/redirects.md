@@ -1,8 +1,6 @@
 ---
 products:
-  - Redoc
   - Revel
-  - Reef
   - Realm
 plans:
   - Pro

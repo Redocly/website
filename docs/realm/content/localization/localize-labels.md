@@ -17,7 +17,7 @@ Base UI component labels include predefined keys; however, you must create keys 
 
 Make sure you have the following:
 
-- A Redocly project with an `@l10n` folder containing your translated content organized into locales.
+- a project with an `@l10n` folder containing your translated content organized into locales.
   See [l10n configuration](../../config/l10n.md) for setup information and [Add translated content](./localize-content.md) for content localization.
 
 ## Localize base UI components
@@ -203,7 +203,11 @@ To find translation keys using browser developer tools:
 1. In the code of the highlighted element, locate the `data-translation-key` property.
     The translation key is the value of the `data-translation-key` property.
     In some cases you might need to drill down the code nested in the selected element.
-    ![A screenshot of development tools Elements tab with the location of data-translation-key highlighted](../images/dev-tools-translation-key.png)
+    {% img
+      src="../images/dev-tools-translation-key.png"
+      alt="A screenshot of development tools Elements tab with the location of data-translation-key highlighted"
+      withLightbox=true
+    /%}
 
 Now you can add the key to the `translations.yaml` file and use it to localize or customize your project.
 

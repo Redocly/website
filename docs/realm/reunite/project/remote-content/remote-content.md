@@ -94,6 +94,11 @@ Read the [how-to guide for setting up remote content on your provider](../remote
 If you select to only include a specific folder from a repository, only files listed in the folder are included in your Redocly project.
 Project builds start only when a branch contains changes to the connected folder.
 
+#### Remote contents repository file
+
+If you choose to include only a specific file from a repository, only this file is included in your Redocly project.
+Project builds start when a branch contains changes to the connected file.
+
 #### Pull requests and remote branches
 
 When you open a pull/merge request against the branch that is a remote content source, Reunite fetches the proposed changes and performs the [_preview_ changes verification process](./verify-remote-content.md#preview-changes-verification) with the branch.

@@ -3,7 +3,11 @@
 In the **Branches and deploys** configuration, you can control which branches Reunite deploys and how it handles preview deployments for your project.
 This configuration gives you precise control over your deployment strategy, allowing you to balance development workflow needs with resource management.
 
-![Branches deploys](../images/reunite-branches-deploys.png)
+{% img
+  src="../images/reunite-branches-deploys.png"
+  alt="Screenshot of Reunite branches and deploys configuration interface"
+  withLightbox=true
+/%}
 
 
 ## Production branch

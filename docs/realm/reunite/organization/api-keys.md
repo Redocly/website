@@ -5,9 +5,9 @@ You can add API keys to your organization and revoke them when you are finished 
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- `owner` role in your organization
+- an OWNER role in your organization
 
 ## Add API keys
 
@@ -52,12 +52,20 @@ To add RBAC to API keys:
 1. In your organization dashboard's left panel, click the **API keys** option.
 1. In the row with the chosen API key, click **More options**  and then click **RBAC**.
 
-![API key RBAC menu](../images/api-key-rbac-menu.png)
+{% img
+  src="../images/api-key-rbac-menu.png"
+  alt="API key RBAC menu"
+  withLightbox=true
+/%}
 
 1. In the **Manage API Key RBAC settings** modal, select the **RBAC enabled** toggle button.
 1. In the **Teams** input field, specify which teams have access to this API key.
 
-![API key RBAC settings](../images/api-key-rbac-settings.png)
+{% img
+  src="../images/api-key-rbac-settings.png"
+  alt="API key RBAC settings"
+  withLightbox=true
+/%}
 
 1. Click **Save**.
 

@@ -30,6 +30,28 @@ Alternatively, you can use Redocly-hosted Git.
 
 If you use Redocly-hosted Git, you can download your project files at any time using the **Download ZIP** button on the **Git hosting** tab on the project's **Settings** page.
 
+## Switch between projects
+
+Reunite enables you to work on multiple projects.
+Access to specific projects depends on the [role](../../access/roles.md) you have in your organization and your [team membership](../organization/teams.md).
+
+You can switch between projects in a few different contexts:
+
+- **Organizations and projects menu:**
+
+  1. In the top-left corner of Reunite, click your organizations's icon.
+  2. From the menu, click one of the project names.
+
+- **Organization Overview page:**
+
+  1. In your organization's **Overview** page find the tile with your project's name.
+  2. Click the arrow button.
+
+- **Navigation bar:**
+
+  1. In a project's navigation bar, click the project name.
+  2. From the menu, select one of the project names.
+
 ## Delete a project
 
 When a project becomes obsolete, or you have a test project you no longer need, you may want to delete that project.
@@ -52,7 +74,6 @@ Reunite deletes the project and returns you to your organization's dashboard.
 
 ## Resources
 
-- **[Switch between projects](./switch-between-projects.md)** - Navigate efficiently between multiple projects in your Reunite workspace for streamlined workflow management
 - **[Configure RBAC](../../config/rbac.md)** - Set up role-based access control for granular project and content access permissions
 - **[Connect a Git provider](./connect-git/connect-git-provider.md)** - Integrate your projects with Git repositories from various providers for version control and collaboration
 - **[Roles and permissions](../../access/roles.md)** - Understand user roles and permission levels available for project access control and team collaboration

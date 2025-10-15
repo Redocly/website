@@ -5,6 +5,8 @@ export const Badge = styled.span`
   align-items: center;
   gap: 4px;
   height: 24px;
+  line-height: var(--line-height-base);
+  font-size: var(--font-size-base);
   padding: 0 8px;
   border: 1px solid var(--border-color-secondary);
   border-radius: 4px;

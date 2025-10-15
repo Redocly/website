@@ -105,5 +105,6 @@ After you click **Send**, your feedback is submitted.
 
 ## Resources
 
+- [Use a classic catalog](./use-classic-catalog.md)
 - [Interact with pages](./interact-with-pages.md)
 - Explore other ways you can interact with the [user interface](./index.md)

@@ -4,26 +4,26 @@ The Webview pane in the Editor displays a preview for each branch.
 Any time you make a change in the Editor, the change is reflected in the Webview.
 You can disable auto-sync, view different screen sizes, reload the page or restart, navigate the pages, and close the Webview to expand the Editor.
 
-![Webview buttons](../images/webview-buttons.png)
+{% img
+  src="../images/webview-buttons.png"
+  alt="Webview buttons"
+  withLightbox=true
+/%}
 
   {% admonition type="info" %}
     There is a difference between the **Webview** and the **[preview deployment](./use-previews.md)**.
     The Webview displays uncommitted changes while the preview deployment triggers when you make a commit to a branch with an open pull request.
   {% /admonition %}
 
-## Before you begin
-
-Make sure you have the following before you begin:
-
-- At least a member role in your organization in Reunite.
-- If you have RBAC configured, you need to log in to the interface.
-  You do not need to use actual credentials.
-
 ## View different screen sizes
 
 If you want to see how a page renders on different screen sizes, click the **Toggle device view** icon.
 
-![Toggle device view icon](../images/webview-mobile.png)
+{% img
+  src="../images/webview-mobile.png"
+  alt="Toggle device view icon"
+  withLightbox=true
+/%}
 
 You can select from the following preset sizes:
 - Mobile (320x675)
@@ -35,13 +35,21 @@ You can also enter specific length and width pixel sizes and click and drag the 
 
 To see a full screen version in a new tab, click the **Open in a new window** icon.
 
-![Open in a new window icon](../images/webview-open-in-new-window.png)
+{% img
+  src="../images/webview-open-in-new-window.png"
+  alt="Open in a new window icon"
+  withLightbox=true
+/%}
 
 ## More actions
 
 Click the **More actions** icon to either do a full restart or disable auto-sync.
 
-![More actions icon](../images/webview-more-actions.png)
+{% img
+  src="../images/webview-more-actions.png"
+  alt="More actions icon"
+  withLightbox=true
+/%}
 
 ### Full restart
 
@@ -60,13 +68,21 @@ To turn auto-sync back on, click the **More actions** icon and select **Enable a
 
 To reload the page you are on in the Editor, click the **Reload** icon.
 
-![Reload icon](../images/webview-reload.png)
+{% img
+  src="../images/webview-reload.png"
+  alt="Reload icon"
+  withLightbox=true
+/%}
 
 ## Navigate pages
 
 You can use the back and forward arrow icons to navigate pages in the Editor.
 
-![Back and forward icons](../images/webview-back-and-forward.png)
+{% img
+  src="../images/webview-back-and-forward.png"
+  alt="Back and forward icons"
+  withLightbox=true
+/%}
 
 The back and forward arrow icons consider page view history, which starts over when the Webview is reloaded or restarted.
 
@@ -74,7 +90,11 @@ The back and forward arrow icons consider page view history, which starts over w
 
 You can close the Webview by clicking the panel toggle, which changes direction after you click it.
 
-![Panel toggle icon](../images/webview-panel-toggle.png)
+{% img
+  src="../images/webview-panel-toggle.png"
+  alt="Panel toggle icon"
+  withLightbox=true
+/%}
 
 To open it, click the toggle again.
 
@@ -83,18 +103,34 @@ To open it, click the toggle again.
 You can monitor and manage Webview logs using the **Logs** panel at the bottom of the screen.
 Logs automatically appear when changes are made to the project or when the Webview generates new output.
 The **Logs** panel automatically scrolls to show the most recent logs.
-![Logs Panel](../images/webview-logs-panel.png)
+{% img
+  src="../images/webview-logs-panel.png"
+  alt="Logs Panel"
+  withLightbox=true
+/%}
 
 In the **Logs** panel you can:
 
 - Expand and collapse the panel
-![Logs expand button](../images/webview-logs-expand-panel.png)
+{% img
+  src="../images/webview-logs-expand-panel.png"
+  alt="Logs expand button"
+  withLightbox=true
+/%}
 
 - **Clear logs**: remove all current logs
-![Logs Clear button](../images/webview-logs-clear-button.png)
+{% img
+  src="../images/webview-logs-clear-button.png"
+  alt="Logs Clear button"
+  withLightbox=true
+/%}
 
 - **Copy logs**: copy all logs to clipboard
-![Copy logs button](../images/webview-logs-copy-button.png)
+{% img
+  src="../images/webview-logs-copy-button.png"
+  alt="Copy logs button"
+  withLightbox=true
+/%}
 
 ## Resources
 

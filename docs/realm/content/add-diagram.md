@@ -1,3 +1,8 @@
+---
+keywords:
+  includes:
+    - mermaid
+---
 # Add diagrams using Mermaid
 
 Redocly projects have built-in support for the [Mermaid](https://mermaid.js.org/) diagramming and charting tool.

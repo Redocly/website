@@ -5,21 +5,21 @@ After you have added an IdP in Reunite, the identity provider can then be config
 
 ## Before you begin
 
-Make sure you have the following before you begin:
+Make sure you have the following:
 
-- A SAML 2 or OpenID Connect-based identity provider
-- The following information about your identity provider:
+- a SAML 2 or OpenID Connect-based identity provider
+- the following information about your identity provider:
   - SAML 2
     - Single sign on URL
     - Issuer ID
     - x509 public certificate
     - NameID format set to email address
-    - The following standard SAML attributes (claims) are supported:
+    - the following standard SAML attributes (claims) are supported:
       - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`
       - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`
       - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`
   - OpenID Connect
-    - Either a configuration JSON or URL
+    - either a configuration JSON or URL
     - Client ID
     - Client Secret
 - `owner` role in your organization
