@@ -15,6 +15,8 @@
     "@redocly/realm": "0.0.0-20251015133037",
     "@redocly/theme": "0.0.0-20251015133037",
     "@redocly/config": "0.0.0-20251015133037",
+    "@redocly/portal-plugin-soap-api": "0.0.0-20251015133037",
+    "@redocly/realm-asyncapi-sdk": "0.0.0-20251015133037",
     "buffer": "^6.0.3",
     "highlight-words-core": "^1.2.3",
     "path": "^0.12.7",
