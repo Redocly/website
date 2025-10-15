@@ -44,6 +44,21 @@ It supports:
 
 For more information, see [Font Awesome icons component reference](./fontawesome-icons.md).
 
+## Tag
+
+The Tag component is a versatile UI element designed to display labels, categories, status indicators, and other short pieces of information.
+It offers:
+- multiple color schemes including semantic colors (success, error, warning), HTTP method colors, and custom colors
+- visual variants (filled and outline styles)
+- interactive features with optional close buttons and click handlers
+- status indicators with built-in status dots
+- text truncation with customizable maximum length
+- icon support for enhanced visual communication
+- full accessibility support with keyboard navigation
+- extensive CSS variable customization for theming
+
+For more information, see [tag component reference](./tag.md).
+
 ## Resources
 
 - **[Customize theme components](../wrap-components.md)** - Learn to wrap and customize built-in components to create reusable, branded versions for your project

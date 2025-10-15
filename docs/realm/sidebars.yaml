@@ -129,7 +129,7 @@
         - page: reunite/project/remote-content/edit-remote-content-folder.md
           label: Edit content folder
         - page: reunite/project/remote-content/verify-remote-content.md
-          label: Verify remote content
+          label: Remote content automation
     # consider moving or removing the page:
     # - page: setup/how-to/feedback/extend-feedback.md
     #   label: Extend feedback form
@@ -240,6 +240,8 @@
               label: x-enumDescriptions
             - page: content/api-docs/openapi-extensions/x-additional-properties-name.md
               label: x-additionalPropertiesName
+            - page: content/api-docs/openapi-extensions/x-mcp.md
+              label: x-mcp
             - page: content/api-docs/openapi-extensions/x-metadata.md
               label: x-metadata
             - page: content/api-docs/openapi-extensions/x-hide-replay.md
@@ -365,6 +367,8 @@
               label: Dynamic
             - page: customization/react-components/list/fontawesome-icons.md
               label: Font Awesome Icons
+            - page: customization/react-components/list/tag.md
+              label: Tag
     - page: customization/enable-source-maps.md
       label: Enable source maps
 
@@ -417,8 +421,13 @@
         - page: customization/api-functions/api-functions-reference.md
           label: Reference
         - page: customization/api-functions/create-api-functions.md
-          label: Tutorials
-
+          label: Tutorial
+          
+    - group: MCP servers
+      selectFirstItemOnExpand: true
+      items:
+        - page: customization/mcp-server/index.md
+          label: Overview
 
 - group: Access
   icon: lock

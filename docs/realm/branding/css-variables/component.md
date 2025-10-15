@@ -2014,24 +2014,26 @@
 --tag-border-style: solid;
 --tag-border-radius: var(--border-radius-xl);
 --tag-box-shadow: none;
+--tag-border-radius-focused: var(--border-radius);
 
 --tag-status-dot-color-default: var(--color-persian-green-7);
 --tag-badge-size: var(--spacing-xs);
---tag-badge-border-width: 1.5px;
---tag-badge-border-color: #ffffff;
+--tag-badge-border-width: 2px;
+--tag-badge-border-color: var(--border-color-secondary);
+--tag-border-color-focused: var(--color-blue-4);
 
 --tag-padding: 1px 8px;
 --tag-large-padding: 4px 16px;
 --tag-margin: 0 5px 0 0;
---tag-gap: 5px;
+--tag-gap: 4px;
 
 .tag-size-large {
   --tag-padding: var(--tag-large-padding);
   --tag-font-size: var(--font-size-base);
 }
 
---tag-icon-width: 1em;
---tag-icon-height: 1em;
+--tag-icon-width: 14px;
+--tag-icon-height: 14px;
 
 --tag-basic-content-color: var(--color-warm-grey-9);
 --tag-basic-bg-color: var(--color-warm-grey-2);
@@ -2049,72 +2051,152 @@
 .tag-draft,
 .tag-schema,
 .tag-default {
-  --tag-color: var(--text-color-primary);
+  --tag-color: var(--text-color-secondary);
   --tag-bg-color: var(--color-warm-grey-2);
   --tag-border-color: var(--border-color-primary);
+  --tag-bg-color-hover: var(--color-warm-grey-3);
+  --tag-close-button-bg-color-hover: var(--color-warm-grey-3);
+  --tag-border-color-hover: var(--color-warm-grey-5);
 }
 ```
 
 </details>
 <details>
-<summary>Tag green, success, approved, get</summary>
+<summary>Tag green</summary>
 
-> classes `'tag-green,','tag-success','tag-approved'`
+> classes `'tag-green'`
 
 ```css
-.tag-green,
+.tag-green {
+  --tag-color: var(--color-green-8);
+  --tag-bg-color: var(--color-green-1);
+  --tag-border-color: var(--color-green-5);
+  --tag-bg-color-hover: var(--color-green-2);
+  --tag-close-button-bg-color-hover: var(--color-green-2);
+  --tag-border-color-hover: var(--color-green-6);
+}
+```
+
+</details>
+<details>
+<summary>Tag success, approved</summary>
+
+> classes `'tag-success','tag-approved'`
+
+```css
 .tag-success,
 .tag-approved {
   --tag-color: var(--color-success-active);
   --tag-bg-color: var(--color-success-bg);
-  --tag-border-color: var(--color-success-active);
+  --tag-border-color: var(--color-success-border);
+  --tag-close-button-bg-color-hover: var(--color-success-bg-hover);
+  --tag-bg-color-hover: var(--color-success-bg-hover);
+  --tag-border-color-hover: var(--color-success-border-hover); 
 }
 ```
 
 </details>
 <details>
-<summary>Tag red, error, declined, delete</summary>
+<summary>Tag red</summary>
 
-> classes `'tag-red,','tag-error','tag-declined'`
+> classes `'tag-red,'`
 
 ```css
-.tag-red,
+.tag-red {
+  --tag-color: var(--color-red-7);
+  --tag-bg-color: var(--color-red-1);
+  --tag-border-color: var(--color-red-3);
+  --tag-close-button-bg-color-hover: var(--color-red-2);
+  --tag-bg-color-hover: var(--color-red-2);
+  --tag-border-color-hover: var(--color-red-5);
+}
+```
+
+</details>
+<details>
+<summary>Tag error, declined</summary>
+
+> classes `'tag-error','tag-declined'`
+
+```css
 .tag-error,
 .tag-declined {
   --tag-color: var(--color-error-active);
   --tag-bg-color: var(--color-error-bg);
-  --tag-border-color: var(--color-error-active);
+  --tag-border-color: var(--color-error-border);
+  --tag-close-button-bg-color-hover: var(--color-error-hover);
+  --tag-bg-color-hover: var(--color-error-bg-hover);
+  --tag-border-color-hover: var(--color-error-border-hover);
 }
 ```
 
 </details>
 <details>
-<summary>Tag gold, warning, deprecated, put</summary>
+<summary>Tag warning, deprecated</summary>
 
-> classes `'tag-gold,','tag-warning','tag-deprecated'`
+> classes `'tag-warning','tag-deprecated'`
 
 ```css
-.tag-gold,
 .tag-warning,
 .tag-deprecated {
   --tag-color: var(--color-warning-active);
   --tag-bg-color: var(--color-warning-bg);
-  --tag-border-color: var(--color-warning-active);
+  --tag-border-color: var(--color-warning-border);
+  --tag-close-button-bg-color-hover: var(--color-warning-hover);
+  --tag-bg-color-hover: var(--color-warning-bg-hover);
+  --tag-border-color-hover: var(--color-warning-border-hover);
 }
 ```
 
 </details>
 <details>
-<summary>Tag blue, processing, post</summary>
+<summary>Tag blue</summary>
 
-> classes `'tag-blue,','tag-processing'`
+> classes `'tag-blue'`
 
 ```css
-.tag-blue,
-.tag-processing {
+.tag-blue {
+  --tag-color: var(--color-blue-7);
+  --tag-bg-color: var(--color-blue-1);
+  --tag-border-color: var(--color-blue-4);
+  --tag-bg-color-hover: var(--color-blue-2);
+  --tag-close-button-bg-color-hover: var(--color-blue-2);
+  --tag-border-color-hover: var(--color-blue-6);
+}
+```
+
+</details>
+<details>
+<summary>Tag processing, info</summary>
+
+> classes `'tag-processing','tag-info'`
+
+```css
+.tag-processing,
+.tag-info {
   --tag-color: var(--color-info-active);
   --tag-bg-color: var(--color-info-bg);
-  --tag-border-color: var(--color-info-active);
+  --tag-border-color: var(--color-info-border);
+  --tag-close-button-bg-color-hover: var(--color-info-hover);
+  --tag-bg-color-hover: var(--color-info-bg-hover);
+  --tag-border-color-hover: var(--color-info-border-hover);
+}
+```
+
+</details>
+<details>
+<summary>Tag link</summary>
+
+> classes `'tag-link'`
+
+```css
+.tag-link {
+  --tag-color: var(--color-info-active);
+  --tag-bg-color: var(--color-info-bg);
+  --tag-border-color: var(--color-info-border);
+  --tag-close-button-bg-color-hover: var(--color-info-hover);
+  --tag-bg-color-hover: var(--color-info-bg-hover);
+  --tag-border-color-hover: var(--color-info-border-hover);
 }
 ```
 
@@ -2129,51 +2211,45 @@
 .tag-head {
   --tag-color: var(--color-purple-7);
   --tag-bg-color: var(--color-purple-1);
-  --tag-border-color: var(--color-purple-7);
+  --tag-border-color: var(--color-purple-4);
+  --tag-bg-color-hover: var(--color-purple-2);
+  --tag-close-button-bg-color-hover: var(--color-purple-2);
+  --tag-border-color-hover: var(--color-purple-6);
 }
 ```
 
 </details>
 <details>
-<summary>Tag cyan, option</summary>
+<summary>Tag turquoise, option</summary>
 
-> classes `'tag-cyan,','tag-option'`
-
-```css
-  .tag-cyan,
-  .tag-option {
-    --tag-color: var(--color-turquoise-7);
-    --tag-bg-color: var(--color-turquoise-1);
-    --tag-border-color: var(--color-turquoise-7);
-  }
-```
-
-</details>
-<details>
-<summary>Tag yellow</summary>
-
-> classes `'tag-yellow'`
+> classes `'tag-turquoise,','tag-option'`
 
 ```css
-.tag-yellow {
-  --tag-color: var(--color-carrot-7);
-  --tag-bg-color: var(--color-carrot-1);
-  --tag-border-color: var(--color-carrot-7);
-}
-```
-
-</details>
-<details>
-<summary>Tag geekblue, link</summary>
-
-> classes `'tag-geekblue,','tag-link'`
-
-```css
-.tag-geekblue,
-.tag-link {
-  --tag-color: var(--color-turquoise-7);
+.tag-turquoise,
+.tag-option {
+  --tag-color: var(--color-turquoise-8);
   --tag-bg-color: var(--color-turquoise-1);
-  --tag-border-color: var(--color-turquoise-7);
+  --tag-border-color: var(--color-turquoise-5);
+  --tag-bg-color-hover: var(--color-turquoise-2);
+  --tag-close-button-bg-color-hover: var(--color-turquoise-2);
+  --tag-border-color-hover: var(--color-turquoise-7);
+}
+```
+
+</details>
+<details>
+<summary>Tag carrot</summary>
+
+> classes `'tag-carrot'`
+
+```css
+.tag-carrot {
+  --tag-color: var(--color-carrot-8);
+  --tag-bg-color: var(--color-carrot-1);
+  --tag-border-color: var(--color-carrot-6);
+  --tag-bg-color-hover: var(--color-carrot-2);
+  --tag-close-button-bg-color-hover: var(--color-carrot-2);
+  --tag-border-color-hover: var(--color-carrot-7);
 }
 ```
 
@@ -2188,26 +2264,14 @@
 .tag-hook {
   --tag-color: var(--color-magenta-7);
   --tag-bg-color: var(--color-magenta-1);
-  --tag-border-color: var(--color-magenta-7);
+  --tag-border-color: var(--color-magenta-3);
+  --tag-bg-color-hover: var(--color-magenta-2);
+  --tag-close-button-bg-color-hover: var(--color-magenta-2);
+  --tag-border-color-hover: var(--color-magenta-5);
 }
 ```
 
 </details>
-<details>
-<summary>Tag lime</summary>
-
-> classes `'tag-lime'`
-
-```css
-.tag-lime {
-  --tag-color: var(--color-green-7);
-  --tag-bg-color: none;
-  --tag-border-color: var(--color-green-7);
-}
-```
-
-</details>
-
 <details>
 <summary>Tag product</summary>
 
@@ -2215,9 +2279,112 @@
 
 ```css
 .tag-product {
-  --tag-color: var(--color-green-7);
-  --tag-bg-color: none;
-  --tag-border-color: var(--color-green-7);
+  --tag-color: var(--color-warm-grey-7);
+  --tag-bg-color: transparent;
+  --tag-border-color: var(--color-warm-grey-4);
+  --tag-close-button-bg-color-hover: var(--color-warm-grey-3);
+}
+```
+
+</details>
+<details>
+<summary>Tag grass</summary>
+
+> classes `'tag-grass'`
+
+```css
+.tag-grass {
+  --tag-color: var(--color-grass-8);
+  --tag-bg-color: var(--color-grass-1);
+  --tag-border-color: var(--color-grass-4);
+  --tag-bg-color-hover: var(--color-grass-2);
+  --tag-close-button-bg-color-hover: var(--color-grass-2);
+  --tag-border-color-hover: var(--color-grass-6);
+}
+```
+
+</details>
+<details>
+<summary>Tag sky</summary>
+
+> classes `'tag-sky'`
+
+```css
+.tag-sky {
+  --tag-color: var(--color-sky-8);
+  --tag-bg-color: var(--color-sky-1);
+  --tag-border-color: var(--color-sky-5);
+  --tag-bg-color-hover: var(--color-sky-2);
+  --tag-close-button-bg-color-hover: var(--color-sky-2);
+  --tag-border-color-hover: var(--color-sky-7);
+}
+```
+
+</details>
+<details>
+<summary>Tag raspberry</summary>
+
+> classes `'tag-raspberry'`
+
+```css
+.tag-raspberry {
+  --tag-color: var(--color-raspberry-7);
+  --tag-bg-color: var(--color-raspberry-1);
+  --tag-border-color: var(--color-raspberry-3);
+  --tag-bg-color-hover: var(--color-raspberry-2);
+  --tag-close-button-bg-color-hover: var(--color-raspberry-2);
+  --tag-border-color-hover: var(--color-raspberry-5);
+}
+```
+
+</details>
+<details>
+<summary>Tag orange</summary>
+
+> classes `'tag-orange'`
+
+```css
+.tag-orange {
+  --tag-color: var(--color-orange-7);
+  --tag-bg-color: var(--color-orange-1);
+  --tag-border-color: var(--color-orange-4);
+  --tag-bg-color-hover: var(--color-orange-2);
+  --tag-close-button-bg-color-hover: var(--color-orange-2);
+  --tag-border-color-hover: var(--color-orange-5);
+}
+```
+
+</details>
+<details>
+<summary>Tag persian green</summary>
+
+> classes `'tag-persian-green'`
+
+```css
+.tag-persian-green {
+  --tag-color: var(--color-persian-green-8);
+  --tag-bg-color: var(--color-persian-green-1);
+  --tag-border-color: var(--color-persian-green-5);
+  --tag-bg-color-hover: var(--color-persian-green-2);
+  --tag-close-button-bg-color-hover: var(--color-persian-green-2);
+  --tag-border-color-hover: var(--color-persian-green-6);
+}
+```
+
+</details>
+<details>
+<summary>Tag blueberry</summary>
+
+> classes `'tag-blueberry'`
+
+```css
+.tag-blueberry {
+  --tag-color: var(--color-blueberry-7);
+  --tag-bg-color: var(--color-blueberry-1);
+  --tag-border-color: var(--color-blueberry-4);
+  --tag-bg-color-hover: var(--color-blueberry-2);
+  --tag-close-button-bg-color-hover: var(--color-blueberry-2);
+  --tag-border-color-hover: var(--color-blueberry-6);
 }
 ```
 
