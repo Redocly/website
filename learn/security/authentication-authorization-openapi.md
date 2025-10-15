@@ -6,7 +6,7 @@ seo:
   description: Implement secure access control using OpenAPI security schemes and modern authentication patterns.
 ---
 
-# Authentication and Authorization with OpenAPI
+# Authentication and authorization with OpenAPI
 
 ---
 
