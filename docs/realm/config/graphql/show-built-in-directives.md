@@ -28,7 +28,8 @@ Built-in directives:
 
 - showBuiltInDirectives
 - boolean
-- Display built-in GraphQL directives in the UI. Default: `false`.
+- Display built-in GraphQL directives in the UI.
+  Default: `false`.
 
 {% /table %}
 

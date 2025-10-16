@@ -145,7 +145,6 @@ Each product folder can include its own `redocly.yaml` file to customize that pr
 - navbar
 - sidebar
 - search
-- mockServer
 
 ```yaml {% title="products/platform/redocly.yaml" %}
 # Platform-specific customization
