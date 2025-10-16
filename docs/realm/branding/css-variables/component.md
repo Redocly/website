@@ -2021,6 +2021,7 @@
 --tag-badge-border-width: 2px;
 --tag-badge-border-color: var(--border-color-secondary);
 --tag-border-color-focused: var(--color-blue-4);
+--tag-close-button-bg-color-focus: var(--color-warm-grey-4);
 
 --tag-padding: 1px 8px;
 --tag-large-padding: 4px 16px;
@@ -2202,13 +2203,12 @@
 
 </details>
 <details>
-<summary>Tag purple, head</summary>
+<summary>Tag purple</summary>
 
-> classes `'tag-purple,','tag-head'`
+> classes `'tag-purple'`
 
 ```css
-.tag-purple,
-.tag-head {
+.tag-purple {
   --tag-color: var(--color-purple-7);
   --tag-bg-color: var(--color-purple-1);
   --tag-border-color: var(--color-purple-4);
@@ -2222,7 +2222,7 @@
 <details>
 <summary>Tag turquoise, option</summary>
 
-> classes `'tag-turquoise,','tag-option'`
+> classes `'tag-turquoise','tag-option'`
 
 ```css
 .tag-turquoise,
@@ -2257,7 +2257,7 @@
 <details>
 <summary>Tag magenta, hook</summary>
 
-> classes `'tag-magenta,','tag-hook'`
+> classes `'tag-magenta','tag-hook'`
 
 ```css
 .tag-magenta,
@@ -2390,6 +2390,147 @@
 
 </details>
 <details>
+<summary>Tag send</summary>
+
+> classes `'tag-send'`
+
+```css
+.tag-send {
+  --tag-color: #4144F6;
+  --tag-bg-color: #ECECFE;
+  --tag-bg-color-hover: #CFCFFC;
+}
+```
+
+</details>
+<details>
+<summary>Tag pub</summary>
+
+> classes `'tag-pub'`
+
+```css
+.tag-pub {
+  --tag-color: #4144F6;
+  --tag-bg-color: #ECECFE;
+  --tag-bg-color-hover: #CFCFFC;
+}
+```
+
+</details>
+<details>
+<summary>Tag publish</summary>
+
+> classes `'tag-publish'`
+
+```css
+.tag-publish {
+  --tag-color: #4144F6;
+  --tag-bg-color: #ECECFE;
+  --tag-bg-color-hover: #CFCFFC;
+}
+```
+
+</details>
+<details>
+<summary>Tag receive</summary>
+
+> classes `'tag-receive'`
+
+```css
+.tag-receive {
+  --tag-color: #4db144;
+  --tag-bg-color:  #E5FDE2;
+  --tag-bg-color-hover: #D4FCCF;
+}
+```
+
+</details>
+<details>
+<summary>Tag sub</summary>
+
+> classes `'tag-sub'`
+
+```css
+.tag-sub {
+  --tag-color: #4db144;
+  --tag-bg-color:  #E5FDE2;
+  --tag-bg-color-hover: #D4FCCF;
+}
+```
+
+</details>
+<details>
+<summary>Tag cons</summary>
+
+> classes `'tag-cons'`
+
+```css
+.tag-cons {
+  --tag-color: #4db144;
+  --tag-bg-color:  #E5FDE2;
+  --tag-bg-color-hover: #D4FCCF;
+}
+```
+
+</details>
+<details>
+<summary>Tag channel</summary>
+
+> classes `'tag-channel'`
+
+```css
+.tag-channel {
+  --tag-color: #F0870E;
+  --tag-bg-color: #FDF1E2;
+  --tag-bg-color-hover: #FBE1C1;
+}
+```
+
+</details>
+<details>
+<summary>Tag topic</summary>
+
+> classes `'tag-topic'`
+
+```css
+.tag-topic {
+  --tag-color: #F0870E;
+  --tag-bg-color: #FDF1E2;
+  --tag-bg-color-hover: #FBE1C1;
+}
+```
+
+</details>
+<details>
+<summary>Tag queue</summary>
+
+> classes `'tag-queue'`
+
+```css
+.tag-queue {
+  --tag-color: #D72E81;
+  --tag-bg-color: #FAE5F0;
+  --tag-bg-color-hover: #F7D4E6;
+}
+```
+
+</details>
+<details>
+<summary>Tag exchange or exch</summary>
+
+> classes `'tag-exchange', 'tag-exch'`
+
+```css
+.tag-exchange,
+.tag-exch {
+  --tag-color: #9B51E0;
+  --tag-bg-color: #F0E5FA;
+  --tag-bg-color-hover: #E6D4F7;
+}
+```
+
+</details>
+<details>
 <summary>Tag http</summary>
 
 ```css
@@ -2404,14 +2545,37 @@
 --http-tag-border: none;
 --http-tag-bg-color: none;
 
---http-tag-operation-color-delete: #E70B46;
---http-tag-operation-color-get: #25B869;
---http-tag-operation-color-post: #1E65F5;
---http-tag-operation-color-put: #F5901D;
---http-tag-operation-color-patch: #F5C31D;
+--tag-operation-color-delete: #e70b46;
+--tag-operation-bg-color-delete: #fee2e9;
+--tag-operation-bg-color-delete-hover: #fdd3dd;
+
+--tag-operation-color-get: #25b869;
+--tag-operation-bg-color-get: #e5faef;
+--tag-operation-bg-color-get-hover: #D4F7E5;
+
+--tag-operation-color-post: #1e65f5;
+--tag-operation-bg-color-post: #e2ebfe;
+--tag-operation-bg-color-post-hover: #CEDDFD;
+
+--tag-operation-color-put: #f5901d;
+--tag-operation-bg-color-put: #fef1e2;
+--tag-operation-bg-color-put-hover: #FDE2C4;
+
+--tag-operation-color-patch: #f5c31d;
+--tag-operation-bg-color-patch: #fdf6dd;
+--tag-operation-bg-color-patch-hover: #FCF0C5;
+
+--tag-operation-color-head: #6355CA;
+--tag-operation-bg-color-head: #ECEBFA;
+--tag-operation-bg-color-head-hover: #E0DEF7;
+
+--tag-operation-color-options: #1a1c21;
+--tag-operation-bg-color-options: #ededf2;
+
+--tag-operation-color-deprecated: var(--text-color-disabled);
 ```
 
-> classes `'tag-http','tag-get','tag-post','tag-put','tag-patch','tag-delete'`
+> classes `'tag-http','tag-get','tag-post','tag-put','tag-patch','tag-delete','tag-head'`
 
 ```css
 .tag-http {
@@ -2420,23 +2584,39 @@
 }
 
 .tag-get {
-  --tag-color: var(--http-tag-operation-color-get);
+  --tag-color: var(--tag-operation-color-get);
+  --tag-bg-color: var(--tag-operation-bg-color-get);
+  --tag-bg-color-hover: var(--tag-operation-bg-color-get-hover);
 }
 
 .tag-post {
-  --tag-color: var(--http-tag-operation-color-post);
+  --tag-color: var(--tag-operation-color-post);
+  --tag-bg-color: var(--tag-operation-bg-color-post);
+  --tag-bg-color-hover: var(--tag-operation-bg-color-post-hover);
 }
 
 .tag-put {
-  --tag-color: var(--http-tag-operation-color-put);
+  --tag-color: var(--tag-operation-color-put);
+  --tag-bg-color: var(--tag-operation-bg-color-put);
+  --tag-bg-color-hover: var(--tag-operation-bg-color-put-hover);
 }
 
 .tag-patch {
-  --tag-color: var(--http-tag-operation-color-patch);
+  --tag-color: var(--tag-operation-color-patch);
+  --tag-bg-color: var(--tag-operation-bg-color-patch);
+  --tag-bg-color-hover: var(--tag-operation-bg-color-patch-hover);
 }
 
 .tag-delete {
-  --tag-color: var(--http-tag-operation-color-delete);
+  --tag-color: var(--tag-operation-color-delete);
+  --tag-bg-color: var(--tag-operation-bg-color-delete);
+  --tag-bg-color-hover: var(--tag-operation-bg-color-delete-hover);
+}
+
+.tag-head {
+  --tag-color: var(--tag-operation-color-head);
+  --tag-bg-color: var(--tag-operation-bg-color-head);
+  --tag-bg-color-hover: var(--tag-operation-bg-color-head-hover);
 }
 ```
 
