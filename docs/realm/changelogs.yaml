@@ -1,10 +1,17 @@
 '@redocly/realm':
+  0.126.2:
+    timestamp: 1760600763000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
+    dependencies: {}
   0.127.0-next.3:
     timestamp: 1760539800000
     changes:
       minor: []
       patch:
-        - Fixed sidebar item activation during scroll.
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
         - Fixed incorrect tab display when resizing the screen.
     dependencies:
       '@redocly/asyncapi-docs': 1.4.0-next.3
@@ -42,7 +49,7 @@
       '@redocly/openapi-docs': 3.15.0-next.1
       '@redocly/portal-plugin-mock-server': 0.12.0-next.1
   0.126.1:
-    timestamp: 1760015971000
+    timestamp: 1760012902000
     changes:
       minor: []
       patch:
@@ -74,7 +81,7 @@
       '@redocly/openapi-docs': 3.15.0-next.0
       '@redocly/theme': 0.59.0-next.0
   0.126.0:
-    timestamp: 1759929177000
+    timestamp: 1759915292000
     changes:
       minor:
         - Added front matter keywords configuration to boost or demote search rankings for Markdown pages through includes/excludes lists.
@@ -4575,12 +4582,19 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.126.2:
+    timestamp: 1760600763000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
+    dependencies: {}
   0.127.0-next.3:
     timestamp: 1760539800000
     changes:
       minor: []
       patch:
-        - Fixed sidebar item activation during scroll.
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
         - Fixed incorrect tab display when resizing the screen.
     dependencies:
       '@redocly/asyncapi-docs': 1.4.0-next.3
@@ -4618,7 +4632,7 @@
       '@redocly/openapi-docs': 3.15.0-next.1
       '@redocly/portal-plugin-mock-server': 0.12.0-next.1
   0.126.1:
-    timestamp: 1760015971000
+    timestamp: 1760012902000
     changes:
       minor: []
       patch:
@@ -4649,7 +4663,7 @@
       '@redocly/openapi-docs': 3.15.0-next.0
       '@redocly/theme': 0.59.0-next.0
   0.126.0:
-    timestamp: 1759929177000
+    timestamp: 1759915292000
     changes:
       minor:
         - Added front matter keywords configuration to boost or demote search rankings for Markdown pages through includes/excludes lists.
@@ -8371,12 +8385,19 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.126.2:
+    timestamp: 1760600763000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
+    dependencies: {}
   0.127.0-next.3:
     timestamp: 1760539800000
     changes:
       minor: []
       patch:
-        - Fixed sidebar item activation during scroll.
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
         - Fixed incorrect tab display when resizing the screen.
     dependencies:
       '@redocly/asyncapi-docs': 1.4.0-next.3
@@ -8413,7 +8434,7 @@
       '@redocly/openapi-docs': 3.15.0-next.1
       '@redocly/portal-plugin-mock-server': 0.12.0-next.1
   0.126.1:
-    timestamp: 1760015971000
+    timestamp: 1760012902000
     changes:
       minor: []
       patch:
@@ -8444,7 +8465,7 @@
       '@redocly/openapi-docs': 3.15.0-next.0
       '@redocly/theme': 0.59.0-next.0
   0.126.0:
-    timestamp: 1759929177000
+    timestamp: 1759915292000
     changes:
       minor:
         - Added front matter keywords configuration to boost or demote search rankings for Markdown pages through includes/excludes lists.
@@ -12160,12 +12181,19 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.126.2:
+    timestamp: 1760600763000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
+    dependencies: {}
   0.127.0-next.3:
     timestamp: 1760539800000
     changes:
       minor: []
       patch:
-        - Fixed sidebar item activation during scroll.
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
         - Fixed incorrect tab display when resizing the screen.
     dependencies:
       '@redocly/asyncapi-docs': 1.4.0-next.3
@@ -12202,7 +12230,7 @@
       '@redocly/openapi-docs': 3.15.0-next.1
       '@redocly/portal-plugin-mock-server': 0.12.0-next.1
   0.126.1:
-    timestamp: 1760015971000
+    timestamp: 1760012902000
     changes:
       minor: []
       patch:
@@ -12232,7 +12260,7 @@
       '@redocly/openapi-docs': 3.15.0-next.0
       '@redocly/theme': 0.59.0-next.0
   0.126.0:
-    timestamp: 1759929177000
+    timestamp: 1759915292000
     changes:
       minor:
         - >-
@@ -22355,6 +22383,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.9.2:
+    timestamp: 1760600763000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.2
+      '@redocly/redoc': 0.126.2
+      '@redocly/redoc-reef': 0.126.2
+      '@redocly/redoc-revel': 0.126.2
   1.10.0-next.3:
     timestamp: 1760539800000
     changes:
@@ -22388,7 +22426,7 @@
       '@redocly/redoc-reef': 0.127.0-next.1
       '@redocly/redoc-revel': 0.127.0-next.1
   1.9.1:
-    timestamp: 1760015971000
+    timestamp: 1760012902000
     changes:
       minor: []
       patch: []
@@ -22411,7 +22449,7 @@
       '@redocly/redoc': 0.127.0-next.0
       '@redocly/theme': 0.59.0-next.0
   1.9.0:
-    timestamp: 1759929177000
+    timestamp: 1759915292000
     changes:
       minor: []
       patch: []
