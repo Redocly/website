@@ -32,6 +32,17 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "axios": "1.12.2",
-    "@redocly/theme": "0.0.0-20251015135744"
+    "@redocly/config": "0.0.0-20251015135744",
+    "@redocly/theme": "0.0.0-20251015135744",
+    "@redocly/ai-assistant": "0.0.0-20251015135744",
+    "@redocly/graphql-docs": "0.0.0-20251015135744",
+    "@redocly/replay": "0.0.0-20251015135744",
+    "@redocly/openapi-docs": "0.0.0-20251015135744",
+    "@redocly/portal-plugin-mock-server": "0.0.0-20251015135744",
+    "@redocly/asyncapi-docs": "0.0.0-20251015135744",
+    "@redocly/openapi-language-server": "0.0.0-20251015135744",
+    "@redocly/portal-plugin-async-api": "0.0.0-20251015135744",
+    "@redocly/portal-plugin-soap-api": "0.0.0-20251015135744",
+    "@redocly/theme-experimental": "0.0.0-20251015135744"
   }
 }
