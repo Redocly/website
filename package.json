@@ -13,7 +13,6 @@
   "dependencies": {
     "@redocly/marketing-pages": "^0.1.29",
     "@redocly/realm": "0.0.0-20251015135744",
-    "@redocly/theme": "0.0.0-20251015135744",
     "buffer": "^6.0.3",
     "highlight-words-core": "^1.2.3",
     "path": "^0.12.7",
@@ -32,6 +31,7 @@
   "overrides": {
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "axios": "1.12.2"
+    "axios": "1.12.2",
+    "@redocly/theme": "0.0.0-20251015135744"
   }
 }
