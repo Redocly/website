@@ -146,8 +146,6 @@
   to: '/content/api-docs/replay'
 '/author/how-to/try-apis-with-mock-server':
   to: '/content/api-docs/try-apis-with-mock-server'
-'/content/api-docs/add-asyncapi-docs-deprecated-plugin':
-  to: 'content/api-docs/add-asyncapi-docs'
 
 # OpenAPI extensions redirects - Files moved to /content/api-docs/openapi-extensions/
 '/author/reference/openapi-extensions':
