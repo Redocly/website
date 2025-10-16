@@ -125,14 +125,6 @@ import { Tag } from '@redocly/theme/components/Tag/Tag';
 
 ---
 
-- `selectable`
-- `boolean`
-- Makes selectable (interactive).
-  Enables hover and focus styles for better user interaction.
-  Defaults to `false`.
-
----
-
 - `tabIndex`
 - `number`
 - Tab order for keyboard navigation.

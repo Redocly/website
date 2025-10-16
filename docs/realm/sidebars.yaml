@@ -242,6 +242,8 @@
               label: x-additionalPropertiesName
             - page: content/api-docs/openapi-extensions/x-mcp.md
               label: x-mcp
+            - page: content/api-docs/openapi-extensions/x-mcp-config.md
+              label: x-mcpConfig
             - page: content/api-docs/openapi-extensions/x-metadata.md
               label: x-metadata
             - page: content/api-docs/openapi-extensions/x-hide-replay.md
@@ -428,6 +430,10 @@
       items:
         - page: customization/mcp-server/index.md
           label: Overview
+        - page: customization/mcp-server/docs-mcp.md
+          label: Docs MCP server
+        - page: customization/mcp-server/gateway-mcp.md
+          label: Gateway MCP server
 
 - group: Access
   icon: lock

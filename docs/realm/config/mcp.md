@@ -38,6 +38,10 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 
 ---
 
+- gateway
+- [Gateway object](#gateway-object)
+- Gateway MCP configuration options.
+
 {% /table %}
 
 ### Docs object
@@ -52,7 +56,7 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 
 - hide
 - boolean
-- Hide the Docs MCP server.
+- Hide Docs MCP while keeping other MCP features (Gateway MCP) accessible.
   Default: `false`.
 
 ---
@@ -66,7 +70,31 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 
 - ignore
 - [string]
-- List of patterns or identifiers to ignore in the MCP server.
+- List of patterns or identifiers to ignore in the Docs MCP server.
+  Default: `[]`.
+
+{% /table %}
+
+### Gateway object
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- hide
+- boolean
+- Hide Gateway MCP while keeping other MCP features (Docs MCP) accessible.
+  Default: `true`.
+
+---
+
+- ignore
+- [string]
+- List of patterns or identifiers to ignore in the Gateway MCP server.
   Default: `[]`.
 
 {% /table %}
@@ -81,17 +109,12 @@ mcp:
   docs:
     hide: false
     name: My Custom Docs MCP Server
-```
-
-Ignore specific files and filename patterns in the MCP server:
-
-```yaml
-# Global settings
-mcp:
-  hide: false
-  docs:
+    ignore:
+      - internal-api
+      - deprecated-endpoints
+  # Gateway MCP settings
+  gateway:
     hide: false
-    # Ignored patterns
     ignore:
       - openapi-files/**
       - test-endpoints
@@ -104,7 +127,11 @@ mcp:
   hide: false
   docs:
     hide: false
-    name: "Docs MCP server"
+    name: Docs MCP server
+    ignore: []
+  gateway:
+    hide: true
+    ignore: []
 ```
 
 ## Resources
