@@ -246,7 +246,8 @@ rules:
   criteria-unique: off
   no-x-security-scheme-name-without-openapi: off
   x-security-scheme-required-values: off
-  no-x-security-scheme-name-in-workflow: off
+  x-security-scheme-name-reference: off
+  no-x-security-both-scheme-and-scheme-name: off
   no-required-schema-properties-undefined: warn
   no-enum-type-mismatch: warn
   no-schema-type-mismatch: warn
@@ -474,7 +475,8 @@ rules:
   criteria-unique: warn
   no-x-security-scheme-name-without-openapi: off
   x-security-scheme-required-values: off
-  no-x-security-scheme-name-in-workflow: 'off',
+  x-security-scheme-name-reference: off
+  no-x-security-both-scheme-and-scheme-name: off
   no-required-schema-properties-undefined: warn
   no-schema-type-mismatch: error
   no-enum-type-mismatch: error
