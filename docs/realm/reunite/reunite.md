@@ -82,7 +82,7 @@ When a deployment isn't finished, you are redirected to the deployment details p
 Also, you can open a menu that displays all available deployments, shortcuts to those deployments,
 a direct link to the deployment, and a copy link button for the deployment.
 
-To see more information about deployments, you can visit the **Deploys** page.
+To see more information about deployments, you can visit the **Deployments** page.
 
 {% img
   src="./images/deployments-preview.png"

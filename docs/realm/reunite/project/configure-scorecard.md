@@ -42,7 +42,7 @@ To add a scorecard to your project using only the built-in rules:
 3. Commit and merge your changes.
 
 After you commit, the scorecard information displays in Reunite and the preview build.
-When you merge and the production deploy completes, the scorecard labels and reports also display on your production environment.
+When you merge and the production deployment completes, the scorecard labels and reports also display on your production environment.
 
 ## Configure custom scorecard rulesets
 
@@ -100,7 +100,7 @@ To configure custom rules in `redocly.yaml`:
 4. Commit and merge your changes.
 
 After you commit, the scorecard information displays in Reunite and the preview build.
-When you merge and the production deploy completes, the scorecard labels and reports also display on your production environment.
+When you merge and the production deployment completes, the scorecard labels and reports also display on your production environment.
 
 ### Configure scorecard rulesets in separate files
 
@@ -165,11 +165,11 @@ To configure scorecard rulesets in separate files:
 5. Commit and merge your changes.
 
 After you commit, the scorecard information displays in Reunite and the preview build.
-When you merge and the production deploy completes, the scorecard labels and reports also display on your production environment.
+When you merge and the production deployment completes, the scorecard labels and reports also display on your production environment.
 
 ## Publish project with non-compliant APIs
 
-By default, if one or more of your API description files does not comply with the rules in the lowest level ruleset, your project's build will be success, but the deploy will be blocked to published to production.
+By default, if one or more of your API description files does not comply with the rules in the lowest level ruleset, your project's build will be success, but the deployment will be blocked to published to production.
 In certain situations, you might want to bypass this behavior.
 
 To publish projects with non-compliant APIs:

@@ -40,10 +40,10 @@ On this page you create, manage, and commit content. The Editor contains the fol
 This page displays the history of open and closed pull requests in the project.
 You can view the details of each request, search for pull request by title, and filter the results.
 
-### Deploys
+### Deployments
 
-This page contains a history of deploys for Production and Preview environments.
-You can view the details of individual deploys, filter the results, view the deployed project, and re-deploy the project manually.
+This page contains a history of deployments for Production and Preview environments.
+You can view the details of individual deployments, filter the results, view the deployed project, and re-deploy the project manually.
 
 ### Remote content
 

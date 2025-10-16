@@ -31,13 +31,13 @@ flowchart TD
     remote_automation --> git["Project Git Repo"]
     git --> editor["Reunite Content Editor"]
     editor --> reviews["Pull Requests / Reviews"]
-    reviews --> deploys["Deploys"]
-    deploys --> project["Realm-powered Project"]
+    reviews --> deployments["Deployments"]
+    deployments --> project["Realm-powered Project"]
     project --> consumer["Consumers"]
 ```
 
 - Remote content and Git content are combined via **Reunite**.
-- **Reunite** manages pull requests, reviews, and deploys.
+- **Reunite** manages pull requests, reviews, and deployments.
 - **Realm** builds the Project for your consumers.
 
 ## Reunite workspace
@@ -45,7 +45,7 @@ flowchart TD
 The **Reunite** collaboration suite includes:
 - Content editor
 - Pull requests & reviews
-- Deploys
+- Deployments
 - Scorecards
 - Feedback
 - Respect Monitoring

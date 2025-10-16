@@ -209,7 +209,7 @@ rbac:
 
 ### Project access
 
-In the following example, only the Developer team can create a branch, create a pull request, or create a deploy.
+In the following example, only the Developer team can create a branch, create a pull request, or create a deployment.
 
 ```yaml {% title="redocly.yaml" %}
 rbac:

@@ -34,7 +34,7 @@ To push changes to Redocly:
 
 1. Make a change to the remote content source.
 1. Check that the CI/CD steps you set up earlier in this guide ran as expected.
-1. Visit Redocly to review the new deploy.
+1. Visit Redocly to review the new deployment.
 
 ## Resources
 

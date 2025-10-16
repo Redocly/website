@@ -15,7 +15,7 @@ To choose which email notifications you receive from Reunite:
 1. (Optional) Enable or disable notification categories to your preferences.
    Choose between:
      - Pull requests
-     - Deploys
+     - Deployments
      - Feedback
      - User
 1. (Optional) You can further refine your selection by choosing events that trigger notifications.

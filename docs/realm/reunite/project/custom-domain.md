@@ -41,8 +41,8 @@ For projects deployed through Reunite, set the page prefix using environment var
 1. Go to the project _Settings_ page.
 2. Select **Environment variables**.
 3. Click **Add environment variable** and add `REDOCLY_PREFIX_PATHS` with your desired prefix value (for example, `api-v2`).
-4. Click the **Deploys** hyperlink in the banner.
-5. Click the **Trigger deploy** button.
+4. Click the **Deployments** hyperlink in the banner.
+5. Click the **Trigger deployment** button.
 
 {% admonition type="warning" name="Deployment considerations" %}
 Setting `REDOCLY_PREFIX_PATHS` only in your project's `.env` file can cause health checks and publish steps to fail during deployment.
