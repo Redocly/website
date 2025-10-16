@@ -13,6 +13,7 @@
   "dependencies": {
     "@redocly/marketing-pages": "^0.1.29",
     "@redocly/realm": "0.0.0-20251015135744",
+    "@redocly/theme": "0.0.0-20251015135744",
     "buffer": "^6.0.3",
     "highlight-words-core": "^1.2.3",
     "path": "^0.12.7",
