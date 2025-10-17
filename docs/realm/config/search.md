@@ -441,6 +441,68 @@ keywords:
 ---
 ```
 
+#### OpenAPI description files
+
+Apply curation to OpenAPI definitions using the `x-keywords` extension.
+You can apply curation at three different levels:
+
+##### Description level
+
+Apply curation to the root document of the API description.
+The `includes` keywords boost the root document to the top of search results.
+The `excludes` keywords remove the entire definition from search results for those terms.
+
+```yaml
+openapi: 3.0.0
+x-keywords:
+  includes:
+    - payment api
+    - transaction
+  excludes:
+    - deprecated
+info:
+  version: 1.0.0
+  title: Payment API
+```
+
+##### Tag level
+
+Apply curation to a specific tag:
+
+```yaml
+tags:
+  - name: payments
+    description: Payment operations
+    x-keywords:
+      includes:
+        - wallet
+        - checkout
+      excludes:
+        - refund
+```
+
+##### Operation level
+
+Apply curation to individual operations:
+
+```yaml
+paths:
+  /payments:
+    post:
+      tags:
+        - payments
+      summary: Create a payment
+      description: Process a new payment transaction.
+      operationId: createPayment
+      x-keywords:
+        includes:
+          - apple pay
+          - credit card
+        excludes:
+          - google pay
+          - paypal
+```
+
 ### AI search
 
 Display the AI search button with a custom prompt:

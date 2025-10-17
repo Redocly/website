@@ -88,6 +88,14 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - Page-level access controls for sidebar links.
   See [Configure RBAC in sidebar](../access/links-and-groups-permissions.md#in-the-sidebar) for more information.
 
+---
+
+- additionalProps
+- object
+- Additional properties for the sidebar item.
+  Pass arbitrary data that can be accessed in custom theme components.
+  To learn how to customize theme components, see: [Eject components](../customization/eject-components/index.md).
+
 {% /table %}
 
 \* Sidebar links must use either the `page` or `href` option ("mutually exclusive").
@@ -364,6 +372,29 @@ The following example shows a comprehensive `sidebars.yaml` file with various op
     - href: /docs/cli/v1.3
       label: Legacy CLI docs
 ```
+
+### Additional properties
+
+Use `additionalProps` to add custom data to sidebar items:
+
+```yaml {% title="sidebars.yaml" %}
+- page: overview.md
+  label: Overview
+  additionalProps:
+    difficulty: beginner
+- group: Getting started
+  items:
+    - page: quickstart.md
+      label: Quick Start
+      additionalProps:
+        estimatedTime: 5 minutes
+    - page: installation.md
+      label: Installation
+      additionalProps:
+        difficulty: beginner
+```
+
+Custom theme components can access these properties to display additional information or implement custom behavior.
 
 ## Resources
 
