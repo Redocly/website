@@ -16,31 +16,31 @@ _Build secure APIs from the ground up using OpenAPI security contracts and autom
 
 Many teams discover security vulnerabilities after they're already in production, but it doesn't have to be that way!
 
-This comprehensive guide shows you how to turn your OpenAPI specification into a security contract that actually gets enforced. You'll learn to implement TLS encryption, input validation, rate limiting policies, and access control. By the time you're done, you'll know how to catch security issues during the design phase instead of scrambling to fix them once they're in production.
+This comprehensive guide shows you how to turn your OpenAPI description into a security contract that actually gets enforced. You'll learn to implement TLS encryption, input validation, rate limiting policies, and access control—catching security issues during the design phase instead of scrambling to fix them in production.
 
 **What you'll learn:**
-- Transform your OpenAPI specs into executable security policies
+- Transform your OpenAPI descriptions into executable security policies
 - Automate security enforcement in your CI/CD pipeline
-- Reduce vulnerability discovery time (from months to minutes in some cases)
-- Build APIs that are secure by design upfront
+- Catch vulnerabilities during design rather than in production
+- Implement the four pillars of API security with automated governance
 
 ---
 
 ## From reactive patching to proactive API security
 
-High-profile data breaches frequently trace back to insecure APIs, exposing a fundamental flaw in traditional security approaches. The conventional method—identifying and patching vulnerabilities in production—is reactive, costly, and ultimately inadequate. In its typical form, this paradigm treats security as an afterthought.
+Most high-profile data breaches stem from insecure APIs. In 2017, Equifax's API vulnerability exposed 147 million records because attackers exploited an unpatched Apache Struts framework. The conventional method—identifying and patching vulnerabilities in production—is reactive, costly, and ultimately inadequate. This paradigm treats security as an afterthought.
 
 Shifting security practices to the left in the development lifecycle, known as the "shift-left" imperative, addresses this by integrating security into the earliest stages of design and development. This proactive model prevents vulnerabilities from being introduced in the first place, rather than attempting to remediate them under pressure in production environments.
 
 ### OpenAPI as your security contract
 
-The core of this strategy is treating your OpenAPI specification not merely as documentation, but as an executable security contract. This contract declaratively defines a set of security requirements, constraints, and policies before any application code is written. It becomes the single source of truth that dictates how an API must behave to be considered secure, effectively implementing a "policy-as-code" approach for APIs.
+The core of this strategy is treating your OpenAPI description not merely as documentation, but as an executable security contract. This contract declaratively defines a set of security requirements, constraints, and policies before any application code is written. It becomes the single source of truth that dictates how an API must behave to be considered secure, effectively implementing a "policy-as-code" approach for APIs.
 
 However, a contract, much like a law, is only as strong as its enforcement. This is where automated governance and linting tools provide value by transforming your contract into dynamic, automated guardrails that validate security requirements at every stage of development. When integrated into a Continuous Integration/Continuous Deployment (CI/CD) pipeline, this automated governance acts as a gatekeeper, failing builds that violate the security contract and requiring fixes before deployment.
 
 ## The four pillars of API security
 
-Building secure APIs doesn't have to feel like playing whack-a-mole with vulnerabilities. Once you shift from reactive patching to proactive design, you'll wonder why you ever did it any other way. Let's explore how to make security an automatic part of your API development process.
+Building secure APIs requires shifting from reactive patching to proactive design. By making security an automatic part of your API development process, you can prevent vulnerabilities before they reach production.
 
 ```mermaid
 graph TD
@@ -66,7 +66,7 @@ graph TD
     style K fill:#f3e5f5
 ```
 
-*Architecture diagram showing the four essential areas of API security (TLS encryption, input validation, rate limiting, access control) supported by OpenAPI specifications and automated governance tools.*
+*Architecture diagram showing the four essential areas of API security (TLS encryption, input validation, rate limiting, access control) supported by OpenAPI descriptions and automated governance tools.*
 
 ## Deep dive guides
 
@@ -75,7 +75,6 @@ Each security domain requires specific knowledge and implementation techniques. 
 {% cards %}
 {% card title="API TLS encryption and HTTPS best practices" to="/learn/security/api-tls-encryption-https-best-practices" %}
 Protect data in transit with proper TLS configuration, certificate management, and HTTPS enforcement.
-
 
 **Key topics:**
 - TLS 1.3 implementation and cipher suite selection
@@ -89,7 +88,6 @@ Protect data in transit with proper TLS configuration, certificate management, a
 {% card title="API input validation and injection prevention" to="/learn/security/api-input-validation-injection-prevention" %}
 Stop injection attacks using OpenAPI schema validation and automated governance rules.
 
-
 **Key topics:**
 - JSON Schema security constraints and validation patterns
 - Mass assignment attack prevention
@@ -102,7 +100,6 @@ Stop injection attacks using OpenAPI schema validation and automated governance 
 {% card title="API rate limiting and abuse prevention" to="/learn/security/api-rate-limiting-abuse-prevention" %}
 Prevent DoS attacks, brute force attempts, and business logic abuse through strategic rate limiting.
 
-
 **Key topics:**
 - Rate limiting algorithms and implementation patterns
 - OpenAPI x-rateLimit extensions and documentation
@@ -114,7 +111,6 @@ Prevent DoS attacks, brute force attempts, and business logic abuse through stra
 
 {% card title="Authentication and authorization with OpenAPI" to="/learn/security/authentication-authorization-openapi" %}
 Implement secure access control using OpenAPI security schemes and modern authentication patterns.
-
 
 **Key topics:**
 - OpenAPI security schemes (JWT, OAuth2, API Keys, mTLS)
@@ -137,7 +133,7 @@ timeline
     title API Security Implementation Timeline
     
     section Design Phase
-        OpenAPI Spec : Security schemes defined
+        OpenAPI Description : Security schemes defined
                     : Input validation rules
                     : Rate limiting policies
         
@@ -171,7 +167,7 @@ timeline
 - Infrastructure security monitoring and alerting
 - Penetration testing and vulnerability scanning
 
-True "secure by design" requires both: design-time contracts enforced through OpenAPI governance *and* runtime security posture management as part of a comprehensive DevSecOps practice.
+True secure by design requires both: design-time contracts enforced through OpenAPI governance *and* runtime security posture management as part of a comprehensive DevSecOps practice.
 
 ## API security maturity model
 
@@ -182,7 +178,7 @@ graph TD
     A[Level 0: Basic] --> B[Level 1: Structured] --> C[Level 2: Automated] --> D[Level 3: Proactive]
     
     A --> A1[Manual reviews<br/>Basic HTTPS<br/>Simple auth]
-    B --> B1[OpenAPI specs<br/>Schema validation<br/>Rate limiting]
+    B --> B1[OpenAPI descriptions<br/>Schema validation<br/>Rate limiting]
     C --> C1[Automated governance<br/>CI/CD integration<br/>Policy enforcement]
     D --> D1[Threat modeling<br/>Zero-trust architecture<br/>Continuous monitoring]
     
@@ -201,7 +197,7 @@ graph TD
 - Ad-hoc security practices without consistent standards
 
 **Level 1 - Structured Security:**
-- OpenAPI specifications document all APIs with security requirements
+- OpenAPI descriptions document all APIs with security requirements
 - Schema-based input validation prevents basic injection attacks
 - Rate limiting implemented on authentication and sensitive endpoints
 - Consistent security patterns across API teams
@@ -223,19 +219,19 @@ Most organizations find that advancing one level at a time provides the most sus
 ## Frequently asked questions
 
 ### What is design-first API security?
-Design-first API security means defining security requirements in your OpenAPI specification before writing code, then using automated governance tools to enforce those requirements throughout the development lifecycle. This prevents vulnerabilities from reaching production rather than patching them after discovery.
+Design-first API security means defining security requirements in your OpenAPI description before writing code, then using automated governance tools to enforce those requirements throughout the development lifecycle. This prevents vulnerabilities from reaching production rather than patching them after discovery.
 
 ### How does OpenAPI prevent injection attacks?
-OpenAPI specifications define precise data schemas with type validation, format constraints, and length limits. When enforced by governance tools, these schemas automatically reject malformed inputs that could contain injection payloads, stopping attacks before they reach your application logic.
+OpenAPI descriptions define precise data schemas with type validation, format constraints, and length limits. When enforced by governance tools, these schemas automatically reject malformed inputs that could contain injection payloads, stopping attacks before they reach your application logic.
 
 ### Why is rate limiting important for API security?
 Rate limiting prevents denial-of-service attacks, brute-force authentication attempts, and data scraping. It ensures fair resource usage among legitimate users while blocking malicious automation. Without rate limits, a single bad actor can overwhelm your API infrastructure.
 
 ### Can I implement all four security areas with just OpenAPI?
-Yes, OpenAPI 3.1 supports all four security areas: TLS enforcement through server URLs, input validation via JSON schemas, rate limiting through extensions like `x-rateLimit`, and access control via security schemes. Combined with governance automation, your specification becomes an executable security contract.
+OpenAPI supports defining all four security areas: TLS enforcement through server URLs, input validation via JSON schemas, rate limiting through extensions like `x-rateLimit`, and access control via security schemes. However, your OpenAPI description is a contract, not the implementation itself. You'll need runtime enforcement through middleware, API gateways, or framework-level validation to actually apply these security policies. Combined with governance automation, your description becomes the single source of truth that guides and validates your implementation.
 
 ### What's the difference between authentication and authorization in APIs?
-Authentication verifies *who* the user is (like checking an ID card), while authorization determines *what* they can do (like checking permissions). Both are essential for API security, and OpenAPI provides security schemes to define and enforce both concepts through your specification.
+Authentication verifies *who* the user is (like checking an ID card), while authorization determines *what* they can do (like checking permissions). Both are essential for API security. OpenAPI provides security schemes to define these requirements in your description, which governance tools can then validate. The actual enforcement happens at runtime through your authentication middleware and authorization logic.
 
 ## Resources
 
@@ -246,9 +242,7 @@ Authentication verifies *who* the user is (like checking an ID card), while auth
 
 ### Practical implementation tools
 - <a href="https://ssl-config.mozilla.org/" target="_blank">Mozilla SSL Configuration Generator</a> - Generate secure, up-to-date TLS configurations for various web servers and security levels
-- <a href="https://openapi-generator.tech/" target="_blank">OpenAPI Generator</a> - Code generation tool for creating secure client SDKs and server stubs from OpenAPI specifications
 - <a href="https://spec.openapis.org/oas/latest.html" target="_blank">OpenAPI Specification</a> - Official OpenAPI 3.2 specification including security scheme definitions
 
 ### DevSecOps and API governance
-- <a href="https://owasp.org/www-project-api-security/" target="_blank">OWASP API Security Project</a> - Community-driven API security best practices and threat modeling
 - <a href="https://spec.openapis.org/oas/latest.html#security-scheme-object" target="_blank">OpenAPI Security Schemes</a> - Official specification for defining authentication and authorization in OpenAPI
