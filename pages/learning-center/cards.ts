@@ -2,6 +2,7 @@ import openApiThumbnail from './images/open-api-thumbnail.svg';
 import markdocThumbnail from './images/markdoc-thumbnail.svg';
 import yamlThumbnail from './images/yaml-thumbnail.svg';
 import apiTestingThumbnail from './images/api-testing-thumbnail.svg';
+import apiSecurityThumbnail from './images/api-security-thumbnail.svg';
 import arazzoThumbnail from './images/arazzo-thumbnail.svg';
 
 export const cards = [
@@ -95,22 +96,23 @@ export const cards = [
       { title: 'Tools for API Testing in 2025', link: '/learn/testing/tools-for-api-testing-in-2025' },
     ],
   },
-  // {
-  //   id: 7,
-  //   key: 'api-security',
-  //   title: 'API Security',
-  //   description:
-  //     'Gain insights into securing your APIs with essential resources, tools, and best practices to protect your applications.',
-  //   thumbnail: apiSecurityThumbnail,
-  //   moreItems: ' more topics',
-  //   landingPage: '/',
-  //   items: [
-  //     { title: 'Introduction to API Security', link: '' },
-  //     { title: 'Common API Vulnerabilities', link: '' },
-  //     { title: 'Implementing Authentication and Authorization examples', link: '' },
-  //     { title: 'Best Practices for Securing APIs', link: '' },
-  //   ],
-  // },
+  {
+    id: 6,
+    key: 'api-security',
+    title: 'API Security',
+    description:
+      'Gain insights into securing your APIs with essential resources, tools, and best practices to protect your applications.',
+    thumbnail: apiSecurityThumbnail,
+    moreItems: '2 more topics',
+    landingPage: '/learn/security',
+    items: [
+      { title: 'API Security by Design: Complete Guide', link: '/learn/security' },
+      { title: 'API TLS Encryption and HTTPS Best Practices', link: '/learn/security/api-tls-encryption-https-best-practices' },
+      { title: 'API Input Validation and Injection Prevention', link: '/learn/security/api-input-validation-injection-prevention' },
+      { title: 'API Rate Limiting and Abuse Prevention', link: '/learn/security/api-rate-limiting-abuse-prevention' },
+      { title: 'Authentication and Authorization with OpenAPI', link: '/learn/security/authentication-authorization-openapi' },
+    ],
+  },
   // {
   //   id: 8,
   //   key: 'graphql',
