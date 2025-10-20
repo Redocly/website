@@ -1,4 +1,59 @@
 '@redocly/realm':
+  0.127.0-next.6:
+    timestamp: 1760955491000
+    changes:
+      minor: []
+      patch:
+        - Added support for an environment variable to set the `Access-Control-Allow-Origin` header dynamically.
+        - Updated `@redocly/openapi-core` to version `2.7.0`.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.5
+      '@redocly/realm-asyncapi-sdk': 0.5.0-next.1
+      '@redocly/asyncapi-docs': 1.4.0-next.5
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.5
+      '@redocly/theme': 0.59.0-next.4
+      '@redocly/graphql-docs': 1.4.0-next.0
+  0.127.0-next.5:
+    timestamp: 1760627487000
+    changes:
+      minor:
+        - Added `additionalProps` to `navbar`, `sidebar`, and `footer` items to enable custom property injection.
+      patch:
+        - Fixed issue with the `/mcp` route and `mcp` file in the root directory.
+    dependencies: {}
+  0.127.0-next.4:
+    timestamp: 1760618345000
+    changes:
+      minor:
+        - Added x-keywords extension support for OpenAPI documents to boost or exclude search terms through keywords
+        - Added support for configuring mock server settings at the product level.
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.4
+      '@redocly/theme': 0.59.0-next.3
+      '@redocly/asyncapi-docs': 1.4.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.4
+      '@redocly/graphql-docs': 1.4.0-next.0
+  0.126.2:
+    timestamp: 1760605582000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
+    dependencies: {}
+  0.127.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Fixed sidebar item activation during scroll.
+        - Fixed incorrect tab display when resizing the screen.
+    dependencies:
+      '@redocly/asyncapi-docs': 1.4.0-next.3
+      '@redocly/openapi-docs': 3.15.0-next.3
+      '@redocly/theme': 0.59.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.3
+      '@redocly/graphql-docs': 1.4.0-next.0
   0.127.0-next.2:
     timestamp: 1760451662000
     changes:
@@ -4562,6 +4617,60 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.127.0-next.6:
+    timestamp: 1760955491000
+    changes:
+      minor: []
+      patch:
+        - Added support for an environment variable to set the `Access-Control-Allow-Origin` header dynamically.
+        - Updated `@redocly/openapi-core` to version `2.7.0`.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.5
+      '@redocly/realm-asyncapi-sdk': 0.5.0-next.1
+      '@redocly/asyncapi-docs': 1.4.0-next.5
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.5
+      '@redocly/theme': 0.59.0-next.4
+      '@redocly/graphql-docs': 1.4.0-next.0
+  0.127.0-next.5:
+    timestamp: 1760627487000
+    changes:
+      minor:
+        - Added `additionalProps` to `navbar`, `sidebar`, and `footer` items to enable custom property injection.
+      patch:
+        - Fixed issue with the `/mcp` route and `mcp` file in the root directory.
+    dependencies: {}
+  0.127.0-next.4:
+    timestamp: 1760618345000
+    changes:
+      minor:
+        - Added x-keywords extension support for OpenAPI documents to boost or exclude search terms through keywords
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.4
+      '@redocly/theme': 0.59.0-next.3
+      '@redocly/asyncapi-docs': 1.4.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.4
+      '@redocly/graphql-docs': 1.4.0-next.0
+  0.126.2:
+    timestamp: 1760605582000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
+    dependencies: {}
+  0.127.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Fixed sidebar item activation during scroll.
+        - Fixed incorrect tab display when resizing the screen.
+    dependencies:
+      '@redocly/asyncapi-docs': 1.4.0-next.3
+      '@redocly/openapi-docs': 3.15.0-next.3
+      '@redocly/theme': 0.59.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.3
+      '@redocly/graphql-docs': 1.4.0-next.0
   0.127.0-next.2:
     timestamp: 1760451662000
     changes:
@@ -8345,6 +8454,60 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.127.0-next.6:
+    timestamp: 1760955491000
+    changes:
+      minor: []
+      patch:
+        - Added support for an environment variable to set the `Access-Control-Allow-Origin` header dynamically.
+        - Updated `@redocly/openapi-core` to version `2.7.0`.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.5
+      '@redocly/realm-asyncapi-sdk': 0.5.0-next.1
+      '@redocly/asyncapi-docs': 1.4.0-next.5
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.5
+      '@redocly/theme': 0.59.0-next.4
+      '@redocly/graphql-docs': 1.4.0-next.0
+  0.127.0-next.5:
+    timestamp: 1760627487000
+    changes:
+      minor:
+        - Added `additionalProps` to `navbar`, `sidebar`, and `footer` items to enable custom property injection.
+      patch:
+        - Fixed issue with the `/mcp` route and `mcp` file in the root directory.
+    dependencies: {}
+  0.127.0-next.4:
+    timestamp: 1760618345000
+    changes:
+      minor:
+        - Added x-keywords extension support for OpenAPI documents to boost or exclude search terms through keywords
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.4
+      '@redocly/theme': 0.59.0-next.3
+      '@redocly/asyncapi-docs': 1.4.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.4
+      '@redocly/graphql-docs': 1.4.0-next.0
+  0.126.2:
+    timestamp: 1760605582000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
+    dependencies: {}
+  0.127.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Fixed sidebar item activation during scroll.
+        - Fixed incorrect tab display when resizing the screen.
+    dependencies:
+      '@redocly/asyncapi-docs': 1.4.0-next.3
+      '@redocly/openapi-docs': 3.15.0-next.3
+      '@redocly/theme': 0.59.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.3
+      '@redocly/graphql-docs': 1.4.0-next.0
   0.127.0-next.2:
     timestamp: 1760451662000
     changes:
@@ -12121,6 +12284,61 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.127.0-next.6:
+    timestamp: 1760955491000
+    changes:
+      minor: []
+      patch:
+        - Added support for an environment variable to set the `Access-Control-Allow-Origin` header dynamically.
+        - Updated `@redocly/openapi-core` to version `2.7.0`.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.5
+      '@redocly/realm-asyncapi-sdk': 0.5.0-next.1
+      '@redocly/asyncapi-docs': 1.4.0-next.5
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.5
+      '@redocly/theme': 0.59.0-next.4
+      '@redocly/graphql-docs': 1.4.0-next.0
+  0.127.0-next.5:
+    timestamp: 1760627487000
+    changes:
+      minor:
+        - Added `additionalProps` to `navbar`, `sidebar`, and `footer` items to enable custom property injection.
+      patch:
+        - Fixed issue with the `/mcp` route and `mcp` file in the root directory.
+    dependencies: {}
+  0.127.0-next.4:
+    timestamp: 1760618345000
+    changes:
+      minor:
+        - Added x-keywords extension support for OpenAPI documents to boost or exclude search terms through keywords
+        - Added support for configuring mock server settings at the product level.
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.4
+      '@redocly/theme': 0.59.0-next.3
+      '@redocly/asyncapi-docs': 1.4.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.4
+      '@redocly/graphql-docs': 1.4.0-next.0
+  0.126.2:
+    timestamp: 1760605582000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
+    dependencies: {}
+  0.127.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Fixed sidebar item activation during scroll.
+        - Fixed incorrect tab display when resizing the screen.
+    dependencies:
+      '@redocly/asyncapi-docs': 1.4.0-next.3
+      '@redocly/openapi-docs': 3.15.0-next.3
+      '@redocly/theme': 0.59.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.3
+      '@redocly/graphql-docs': 1.4.0-next.0
   0.127.0-next.2:
     timestamp: 1760451662000
     changes:
@@ -15918,6 +16136,27 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.59.0-next.4:
+    timestamp: 1760955491000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.5.0-next.1
+  0.59.0-next.3:
+    timestamp: 1760618345000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the navbar link to the root ("/") path in projects under path prefix was not active
+    dependencies: {}
+  0.59.0-next.2:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Fixed incorrect tab display when resizing the screen.
+    dependencies: {}
   0.59.0-next.1:
     timestamp: 1760083220000
     changes:
@@ -18248,6 +18487,30 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.15.0-next.5:
+    timestamp: 1760955491000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.7.0`.
+    dependencies:
+      '@redocly/replay': 0.18.0-next.5
+  3.15.0-next.4:
+    timestamp: 1760618345000
+    changes:
+      minor:
+        - Added x-keywords extension support for OpenAPI documents to boost or exclude search terms through keywords
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.18.0-next.4
+  3.15.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Updated `openapi-sampler` from version 1.6.1 to 1.6.2.
+    dependencies:
+      '@redocly/replay': 0.18.0-next.3
   3.15.0-next.2:
     timestamp: 1760451662000
     changes:
@@ -20572,6 +20835,14 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.36.1:
+    timestamp: 1760966377000
+    changes:
+      minor: []
+      patch:
+        - Added `additionalProps` to `navbar`, `sidebar`, and `footer` items to enable custom property injection.
+        - Updated `@redocly/config` package to the latest patch version.
+    dependencies: {}
   0.36.0:
     timestamp: 1760108804000
     changes:
@@ -21807,6 +22078,20 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.3.13:
+    timestamp: 1760966377000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.7.0`.
+    dependencies: {}
+  0.3.12:
+    timestamp: 1760542684000
+    changes:
+      minor: []
+      patch:
+        - Updated `openapi-sampler` package to version `1.6.2`.
+    dependencies: {}
   0.3.11:
     timestamp: 1760370500000
     changes:
@@ -22281,6 +22566,59 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.10.0-next.6:
+    timestamp: 1760955491000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.127.0-next.6
+      '@redocly/redoc-reef': 0.127.0-next.6
+      '@redocly/realm': 0.127.0-next.6
+      '@redocly/redoc': 0.127.0-next.6
+      '@redocly/theme': 0.59.0-next.4
+  1.10.0-next.5:
+    timestamp: 1760627487000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.127.0-next.5
+      '@redocly/redoc': 0.127.0-next.5
+      '@redocly/redoc-reef': 0.127.0-next.5
+      '@redocly/redoc-revel': 0.127.0-next.5
+  1.10.0-next.4:
+    timestamp: 1760618345000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.127.0-next.4
+      '@redocly/redoc': 0.127.0-next.4
+      '@redocly/redoc-reef': 0.127.0-next.4
+      '@redocly/redoc-revel': 0.127.0-next.4
+      '@redocly/theme': 0.59.0-next.3
+  1.9.2:
+    timestamp: 1760605582000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.2
+      '@redocly/redoc': 0.126.2
+      '@redocly/redoc-reef': 0.126.2
+      '@redocly/redoc-revel': 0.126.2
+  1.10.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.127.0-next.3
+      '@redocly/redoc': 0.127.0-next.3
+      '@redocly/redoc-reef': 0.127.0-next.3
+      '@redocly/redoc-revel': 0.127.0-next.3
+      '@redocly/theme': 0.59.0-next.2
   1.10.0-next.2:
     timestamp: 1760451662000
     changes:
@@ -26356,6 +26694,27 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.12.0-next.5:
+    timestamp: 1760955491000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.5
+  0.12.0-next.4:
+    timestamp: 1760618345000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.4
+  0.12.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.3
   0.12.0-next.2:
     timestamp: 1760451662000
     changes:
@@ -28589,6 +28948,28 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.18.0-next.5:
+    timestamp: 1760955491000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.7.0`.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.4
+  0.18.0-next.4:
+    timestamp: 1760618345000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.3
+  0.18.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.2
   0.18.0-next.2:
     timestamp: 1760451662000
     changes:
@@ -29953,6 +30334,27 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.10.0-next.4:
+    timestamp: 1760955491000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.4
+  0.10.0-next.3:
+    timestamp: 1760618345000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.3
+  0.10.0-next.2:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.2
   0.10.0-next.1:
     timestamp: 1760083220000
     changes:
@@ -31235,6 +31637,31 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.4.0-next.5:
+    timestamp: 1760955491000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.5
+      '@redocly/theme': 0.59.0-next.4
+  1.4.0-next.4:
+    timestamp: 1760618345000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.4
+      '@redocly/theme': 0.59.0-next.3
+  1.4.0-next.3:
+    timestamp: 1760539800000
+    changes:
+      minor: []
+      patch:
+        - Updated `openapi-sampler` from version 1.6.1 to 1.6.2.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.3
+      '@redocly/theme': 0.59.0-next.2
   1.4.0-next.2:
     timestamp: 1760451662000
     changes:
