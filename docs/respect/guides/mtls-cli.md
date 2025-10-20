@@ -13,10 +13,10 @@ This authentication method provides an additional layer of security beyond the s
 When running tests with Respect in Redocly CLI, provide the necessary certificates using the following command-line options:
 
 ```bash
-npx @redocly/cli respect FILE_PATH.yaml --mtls='{"<domain>":{"ca-cert":"<client-cert>","client-key":"<client-key>","client-cert":"<ca-cert>"}}'
+npx @redocly/cli respect FILE_PATH.yaml --mtls='{"DOMAIN":{"ca-cert":"CLIENT_CERT","client-key":"CLIENT_KEY","client-cert":"CA_CERT"}}'
 ```
 
-Replace `<domain>',`<client-cert>`,`<client-key>`, and`<ca-cert>` with the actual paths or valid stringified values to your client certificate, client key, and CA certificate files.
+Replace `DOMAIN`, `CLIENT_CERT`, `CLIENT_KEY`, and `CA_CERT` with the actual paths or valid stringified values to your client certificate, client key, and CA certificate files.
 
 ## Available options
 
