@@ -13,30 +13,48 @@ This authentication method provides an additional layer of security beyond the s
 When running tests with Respect in Redocly CLI, provide the necessary certificates using the following command-line options:
 
 ```bash
-npx @redocly/cli respect FILE_PATH.yaml --client-cert <client-cert> --client-key <client-key> --ca-cert <ca-cert>
+npx @redocly/cli respect FILE_PATH.yaml --mtls='{"<domain>":{"ca-cert":"<client-cert>","client-key":"<client-key>","client-cert":"<ca-cert>"}}'
 ```
 
-Replace `<client-cert>`, `<client-key>`, and `<ca-cert>` with the actual paths or valid stringified values to your client certificate, client key, and CA certificate files.
+Replace `<domain>',`<client-cert>`,`<client-key>`, and`<ca-cert>` with the actual paths or valid stringified values to your client certificate, client key, and CA certificate files.
 
 ## Available options
 
-- `client-cert`: Path to the client certificate file.
-- `client-key`: Path to the client key file.
-- `ca-cert`: Path to the CA certificate file (optional).
+- `--mtls`: JSON configuration for mTLS certificates per domain. The JSON should contain server URLs as keys, with certificate paths as values.
+  - `ca-cert`: Path to the CA certificate file (optional).
+  - `client-key`: Path to the client key file.
+  - `client-cert`: Path to the client certificate file.
 
 ## Example
 
 ```bash
-npx @redocly/cli respect api-tests.arazzo.yaml \
---client-cert ./certs/client-cert.pem \
---client-key ./certs/client-key.pem \
---ca-cert ./certs/ca-cert.pem
+npx @redocly/cli respect api-tests.arazzo.yaml --mtls='{"https://localhost:3443":{"ca-cert":"./certs/ca-cert.pem","client-key":"./certs/client-key.pem","client-cert":"./certs/client-cert.pem"}}'
 ```
 
 Or by using environment variables:
 
 ```bash
-REDOCLY_CLI_RESPECT_CLIENT_CERT="-----BEGIN PRIVATE KEY-----YOUR_CLIENT_CERT-----END PRIVATE KEY-----" REDOCLY_CLI_RESPECT_CLIENT_KEY="-----BEGIN PRIVATE KEY-----YOUR_CLIENT_KEY-----END PRIVATE KEY-----" REDOCLY_CLI_RESPECT_CA_CERT="-----BEGIN CERTIFICATE-----YOUR_CA_CERT-----END CERTIFICATE-----" npx @redocly/cli respect api-tests.arazzo.yaml
+export CLIENT_KEY="-----BEGIN PRIVATE KEY----- ... -----END PRIVATE KEY-----"
+export CLIENT_CERT="-----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----"
+export CA_CERT="-----BEGIN CERTIFICATE-----... -----END CERTIFICATE-----"
+
+MTLS_CONFIG=$(jq -n \
+  --arg clientKey "$CLIENT_KEY" \
+  --arg clientCert "$CLIENT_CERT" \
+  --arg caCert "$CA_CERT" \
+  '{"https://localhost:3443": {"client-key": $clientKey, "client-cert": $clientCert, "ca-cert": $caCert}}')
+
+
+npx @redocly/cli respect api-tests.arazzo.yaml --mtls="$MTLS_CONFIG"
+```
+
+## Multiple servers example
+
+You can configure mTLS for multiple servers in a single command:
+
+```bash
+npx @redocly/cli respect api-tests.arazzo.yaml \
+--mtls='{"https://localhost:3443":{"ca-cert":"./certs/ca-cert.pem","client-key":"./certs/client-key.pem","client-cert":"./certs/client-cert.pem"},"https://localhost:3543":{"ca-cert":"./certs-2/ca-cert.pem","client-key":"./certs-2/client-key.pem","client-cert":"./certs-2/client-cert.pem"}}'
 ```
 
 This command runs the API tests specified in `api-tests.arazzo.yaml` using the provided client certificate, client key, and CA certificate.
