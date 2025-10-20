@@ -20835,6 +20835,14 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.36.1:
+    timestamp: 1760966377000
+    changes:
+      minor: []
+      patch:
+        - Added `additionalProps` to `navbar`, `sidebar`, and `footer` items to enable custom property injection.
+        - Updated `@redocly/config` package to the latest patch version.
+    dependencies: {}
   0.36.0:
     timestamp: 1760108804000
     changes:
@@ -22070,6 +22078,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.3.13:
+    timestamp: 1760966377000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.7.0`.
+    dependencies: {}
   0.3.12:
     timestamp: 1760542684000
     changes:
