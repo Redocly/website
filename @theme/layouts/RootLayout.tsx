@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 import type { JSX } from 'react';
 
@@ -15,9 +16,9 @@ export type LayoutConfig = {
 export function RootLayout({ children }: LayoutConfig): JSX.Element {
   const { useSearch } = useThemeHooks();
   const { askAi } = useSearch();
-  
-  const path = window.location.pathname;
-  const isDocsPage = path.startsWith('/docs');
+  const { pathname } = useLocation();
+
+  const isDocsPage = pathname.startsWith('/docs');
 
   return (
     <div data-component-name="layouts/RootLayout">
