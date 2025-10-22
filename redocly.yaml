@@ -177,13 +177,17 @@ responseHeaders:
           'report-sample'
           https://js.hsforms.net 
           http://js.hsforms.net 
-          https://*.hs-scripts.com 
+          https://*.hs-scripts.com
+          https://*.hs-banner.com
+          https://*.hs-analytics.net
+          https://*.hscollectedforms.net
           https://forms.hsforms.com  
           https://www.google.com/recaptcha/ 
           https://www.gstatic.com/recaptcha/
           https://www.googletagmanager.com
           https://cdn.usefathom.com
           https://www.clarity.ms
+          https://scripts.clarity.ms
           https://js.hscollectedforms.net
           https://js.hs-analytics.net
           https://js.hs-banner.com
@@ -230,7 +234,8 @@ responseHeaders:
           blob:; 
         frame-src
           'self'
-          https://www.google.com;
+          https://www.google.com
+          https://www.youtube.com;
         child-src 
           'self' 
           blob:; 
