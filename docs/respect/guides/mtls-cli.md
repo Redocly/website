@@ -20,7 +20,7 @@ Replace `DOMAIN`, `CLIENT_CERT`, `CLIENT_KEY`, and `CA_CERT` with actual paths o
 
 ## Available options
 
-- `--mtls`: JSON configuration for mTLS certificates per domain. The JSON should contain server URLs as keys, with certificate paths as values.
+- `--mtls`: JSON configuration for mTLS certificates per domain. The option must contain valid JSON with server URLs as keys, and certificate paths as values.
   - `caCert`: Path to the CA certificate file (optional).
   - `clientKey`: Path to the client key file.
   - `clientCert`: Path to the client certificate file.
