@@ -281,6 +281,11 @@ openapi:
   excludeFromSearch: true
 
 search:
-  ai:
-    hide: false
   engine: typesense
+
+aiAssistant:
+  hide: false
+  trigger:
+    hide: false
+    inputType: button
+    inputIcon: redocly
