@@ -31,6 +31,8 @@ This guide provides a comprehensive overview of available configuration options 
 
   {% configProperty file="scorecard.md" /%}
 
+  {% configProperty file="project-statistics.md" /%}
+
   {% configProperty file="catalog-classic.md" /%}
 {% /configSection %}
 
@@ -130,7 +132,7 @@ logo:
 navbar:
   items:
     - page: index.md
-      label: '{{ process.env.HOME_LABEL }}' 
+      label: '{{ process.env.HOME_LABEL }}'
     - page: config/index.md
       label: Config
 feedback:
