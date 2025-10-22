@@ -1,3 +1,8 @@
+---
+keywords:
+  includes:
+    - markdown
+---
 # Markdown in Redocly
 
 Redocly projects support enhanced Markdown that combines standard Markdown syntax with powerful Markdoc extensions, giving you rich formatting options and interactive components for your documentation.

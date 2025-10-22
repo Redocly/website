@@ -14,7 +14,7 @@ More information and examples for individual rules can be found in the [built-in
 
 The minimal rulesets are a decent baseline that you can use to selective enable more rules or extend rulesets from.
 
-### Minimal ruleset: OpenAPI 3.1
+### Minimal ruleset: OpenAPI 3.1/3.2
 
 ```yaml
 rules:
@@ -74,6 +74,10 @@ rules:
   no-required-schema-properties-undefined: warn
   no-schema-type-mismatch: warn
   no-enum-type-mismatch: warn
+  spec-no-invalid-tag-parents: warn
+  spec-example-values: off
+  spec-discriminator-defaultMapping: off
+  spec-no-invalid-encoding-combinations: warn
 ```
 
 ### Minimal ruleset: OpenAPI 3.0
@@ -257,7 +261,7 @@ The default behavior is to use a recommended ruleset.
 The recommended rulesets for each format are listed below.
 There is also a "recommended-strict" ruleset which is identical but with all `warn` settings changed to `error`.
 
-### Recommended ruleset: OpenAPI 3.1
+### Recommended ruleset: OpenAPI 3.1/3.2
 
 ```yaml
 rules:
@@ -297,9 +301,14 @@ rules:
   required-string-property-missing-min-length: off
   response-contains-header: off
   scalar-property-missing-example: off
+  no-duplicated-tag-names: warn
   no-required-schema-properties-undefined: warn
   no-schema-type-mismatch: error
   no-enum-type-mismatch: error
+  spec-no-invalid-tag-parents: error
+  spec-example-values: error
+  spec-discriminator-defaultMapping: warn
+  spec-no-invalid-encoding-combinations: error
 ```
 
 ### Recommended ruleset: OpenAPI 3.0

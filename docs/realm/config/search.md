@@ -381,6 +381,128 @@ search:
         type: select
 ```
 
+## Curate search results
+
+Search curation allows you to influence the ranking of specific pages in search results for particular search terms.
+Use curation to boost important pages to the top in results or exclude pages from appearing for certain keywords.
+
+{% admonition type="info" %}
+Curation is only available for Typesense search engine, which requires an Enterprise or Enterprise+ plan.
+{% /admonition %}
+
+### Curation parameters
+
+Curation is configured using the `keywords` property:
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- includes
+- [string]
+- List of keywords or phrases that boost this page to the top of search results when those terms are searched.
+
+---
+
+- excludes
+- [string]
+- List of keywords or phrases that remove this page from results for those search terms.
+  Overrides `includes` for the same keyword.
+
+{% /table %}
+
+### Curation behavior
+
+- For each keyword in `includes`, the page is boosted to the top position in search results.
+- Multiple pages with the same keyword appear at the top in the order they were indexed.
+- Word order is preserved (searching "pay apple" won't trigger a keyword "apple pay").
+- The first matching keyword triggers curation and stops processing additional keywords.
+
+### Apply curation to files
+
+#### Markdown files
+
+Apply curation to Markdown files using frontmatter:
+
+```yaml
+---
+keywords:
+  includes:
+    - apple pay
+    - apple wallet
+    - digital wallet
+  excludes:
+    - google pay
+    - paypal
+---
+```
+
+#### OpenAPI description files
+
+Apply curation to OpenAPI definitions using the `x-keywords` extension.
+You can apply curation at three different levels:
+
+##### Description level
+
+Apply curation to the root document of the API description.
+The `includes` keywords boost the root document to the top of search results.
+The `excludes` keywords remove the entire definition from search results for those terms.
+
+```yaml
+openapi: 3.0.0
+x-keywords:
+  includes:
+    - payment api
+    - transaction
+  excludes:
+    - deprecated
+info:
+  version: 1.0.0
+  title: Payment API
+```
+
+##### Tag level
+
+Apply curation to a specific tag:
+
+```yaml
+tags:
+  - name: payments
+    description: Payment operations
+    x-keywords:
+      includes:
+        - wallet
+        - checkout
+      excludes:
+        - refund
+```
+
+##### Operation level
+
+Apply curation to individual operations:
+
+```yaml
+paths:
+  /payments:
+    post:
+      tags:
+        - payments
+      summary: Create a payment
+      description: Process a new payment transaction.
+      operationId: createPayment
+      x-keywords:
+        includes:
+          - apple pay
+          - credit card
+        excludes:
+          - google pay
+          - paypal
+```
+
 ### AI search
 
 Display the AI search button with a custom prompt:

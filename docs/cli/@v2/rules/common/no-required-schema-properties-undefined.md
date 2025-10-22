@@ -11,6 +11,7 @@ Ensures there are no required schema properties that are undefined.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 | AsyncAPI | Compatibility |
 | -------- | ------------- |
@@ -105,6 +106,26 @@ schemas:
         type: string
     required:
       - Name
+```
+
+The rule also accepts composed types as **correct**.
+
+```yaml
+schemas:
+  Pet:
+    type: object
+    anyOf:
+      - required:
+        - id
+      - required:
+        - name
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+        example: doggie
 ```
 
 ## Related rules

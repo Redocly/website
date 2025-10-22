@@ -11,11 +11,12 @@ Disallow server variables without enum list defined.
 | 2.0 | ❌            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ```mermaid
 flowchart TD
 
-root ==> ServersList --> Server --> ServerVariables
+Root ==> ServersList --> Server --> ServerVariables
 
 style ServerVariables fill:#codaf9,stroke:#0044d4,stroke-width:5px
 ```

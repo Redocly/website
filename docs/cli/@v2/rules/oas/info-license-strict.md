@@ -11,11 +11,12 @@ Requires either the license URL or identifier in your API descriptions.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ```mermaid
 flowchart TD
 
-root ==> Info --> License --> url
+Root ==> Info --> License --> url
                   License --> identifier
 
 style url fill:#codaf9,stroke:#0044d4,stroke-width:5px

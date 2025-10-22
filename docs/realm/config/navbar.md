@@ -200,6 +200,14 @@ The navbar is a good location for top-level category or frequently-used links.
   This option adds navbar item to sidebar's breadcrumbs.
   Only effective for top-level navbar items.
 
+---
+
+- additionalProps
+- object
+- Additional properties for the navbar item.
+  Pass arbitrary data that can be accessed in custom theme components.
+  To learn how to customize theme components, see: [Eject components](../customization/eject-components/index.md).
+
 {% /table %}
 
 ## Examples
@@ -339,6 +347,21 @@ navbar:
   hide: true
 ---
 ```
+
+### Additional properties
+
+Use `additionalProps` to add custom data to navbar items:
+
+```yaml {% title="redocly.yaml" %}
+navbar:
+  items:
+    - page: index.md
+      label: Home
+      additionalProps:
+        description: Main landing page
+```
+
+Custom theme components can access these properties to display additional information or implement custom behavior.
 
 ## Resources
 

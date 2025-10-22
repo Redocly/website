@@ -11,6 +11,7 @@ Disallow invalid schema examples.
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ```mermaid
 flowchart TD
@@ -21,18 +22,18 @@ Parameter --> Schema
 Operation --> MediaType --> Schema
 Root ==> components
 
-NamedSchema --> Parameter
+NamedSchemas --> Parameter
 
 Schema -.compares schema\nto example.- Example
 
 subgraph components
-NamedSchema
+NamedSchemas
 end
 
 
 style Example fill:#codaf9,stroke:#0044d4,stroke-width:5px
 style Schema fill:#codaf9,stroke:#0044d4,stroke-width:5px
-style NamedSchema fill:#codaf9,stroke:#0044d4,stroke-width:5px
+style NamedSchemas fill:#codaf9,stroke:#0044d4,stroke-width:5px
 ```
 
 ## API design principles
