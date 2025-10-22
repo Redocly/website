@@ -177,7 +177,7 @@ responseHeaders:
           'report-sample'
           https://js.hsforms.net 
           http://js.hsforms.net 
-          https://js.hs-scripts.com 
+          https://*.hs-scripts.com 
           https://forms.hsforms.com  
           https://www.google.com/recaptcha/ 
           https://www.gstatic.com/recaptcha/
@@ -228,6 +228,9 @@ responseHeaders:
         worker-src 
           'self' 
           blob:; 
+        frame-src
+          'self'
+          https://www.google.com;
         child-src 
           'self' 
           blob:; 
