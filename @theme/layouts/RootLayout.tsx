@@ -18,7 +18,8 @@ export function RootLayout({ children }: LayoutConfig): JSX.Element {
   const { askAi } = useSearch();
   const { pathname } = useLocation();
 
-  const isDocsPage = pathname.startsWith('/docs');
+  const isRootPage = pathname === '/';
+  const showAIAssistantButton = askAi && !isRootPage; // Hide on the landing page
 
   return (
     <div data-component-name="layouts/RootLayout">
@@ -26,7 +27,7 @@ export function RootLayout({ children }: LayoutConfig): JSX.Element {
       <Navbar />
       {children}
       <Footer />
-      {askAi && isDocsPage && <AIAssistantButton />}
+      {showAIAssistantButton && <AIAssistantButton />}
     </div>
   );
 }
