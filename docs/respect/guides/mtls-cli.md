@@ -16,7 +16,7 @@ When running tests with Respect in Redocly CLI, provide the necessary certificat
 npx @redocly/cli respect FILE_PATH.yaml --mtls='{"DOMAIN":{"caCert":"CLIENT_CERT","clientKey":"CLIENT_KEY","clientCert":"CA_CERT"}}'
 ```
 
-Replace `DOMAIN`, `CLIENT_CERT`, `CLIENT_KEY`, and `CA_CERT` with the actual paths or valid stringified values to your client certificate, client key, and CA certificate files.
+Replace `DOMAIN`, `CLIENT_CERT`, `CLIENT_KEY`, and `CA_CERT` with actual paths or valid stringified values to your client certificate, client key, and CA certificate files.
 
 ## Available options
 
