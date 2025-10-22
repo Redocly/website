@@ -34129,3 +34129,13 @@ reunite:
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.5.1`.
     dependencies: {}
+  v2025-10-22.2:
+    timestamp: 1761126103000
+    changes:
+      minor:
+        - Improved text color of disabled items in the file context menu.
+      patch:
+        - Fixed file upload for allowed folders with RBAC.
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.7.0`.
+        - Fixed issue that allowed deletion of protected files from the file tree using keyboard shortcuts.
+    dependencies: {}
