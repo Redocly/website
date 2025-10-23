@@ -14,15 +14,17 @@ description: Customize the search functionality in your project.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Customize the search functionality in your project.
 By default, search appears in the top navigation bar in the far right corner.
 
 Use the `search` configuration to:
 
-- Hide the search bar
-- Add keyboard shortcuts for search activation
-- Add suggested pages to the search modal
-- Configure search facets for advanced filtering
+- hide the search bar
+- add keyboard shortcuts for search activation
+- add suggested pages to the search modal
+- configure search facets for advanced filtering
+- boost the ranking of pages for specific search terms
+- prevent pages from appearing for specific search terms
 
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "search"} /%}
 
@@ -50,7 +52,7 @@ These categories are configured using the `redocly_category` facet field and are
 
 For search engines that support full facets configuration capabilities (Typesense), Redocly provides an additional filter panel featuring predefined facets:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 search:
   filters:
     facets:
@@ -259,9 +261,9 @@ You can assign specific metadata to your files, such as custom facet fields for 
 
 ### Markdown files
 
-Apply facets to Markdown files using frontmatter:
+Apply facets to Markdown files using front matter:
 
-```yaml
+```yaml {% title="index.md" %}
 ---
 metadata: 
   redocly_category: Custom 
@@ -273,7 +275,7 @@ metadata:
 
 Apply facets to OpenAPI definitions using the `x-metadata` extension:
 
-```yaml
+```yaml {% title="museum.yaml" %}
 openapi: 3.1.0
 info:
   version: 2.3.3
@@ -287,7 +289,7 @@ info:
 
 Use the `metadataGlobs` property in your `redocly.yaml` configuration file to apply facets to files using glob patterns:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 metadataGlobs:
   'museum/**':
     redocly_category: Museum
@@ -303,96 +305,26 @@ The group facet categorizes search results and is displayed in the top panel of 
 Only `redocly_category` facet field is used as a group facet.
 {% /admonition %}
 
-## Examples
-
-### Basic configuration
-
-Hide the search bar:
-
-```yaml
-search:
-  hide: true
-```
-
-Set keyboard shortcuts for search:
-
-```yaml
-search:
-  shortcuts:
-    - ctrl+f
-    - cmd+k
-    - /
-```
-
-Set suggested pages for the search modal:
-
-```yaml
-search:
-  suggestedPages:
-    - label: Home page
-      page: index.page.tsx
-    - page: /catalog/
-```
-
-### Search facets
-
-Override the default `redocly_category` facet:
-
-```yaml
-search:
-  filters:
-    facets:
-      - name: Custom 
-        field: redocly_category
-        type: select           
-```
-
-Create a custom facet:
-
-```yaml
-search:
-  filters:
-    facets:
-      - name: Owner
-        field: owner
-        type: select            
-```
-
-Override all default search facets:
-
-```yaml
-search:
-  filters:
-    facets:
-      - name: Category
-        field: redocly_category
-        type: multi-select
-      - name: HTTP Method
-        field: httpMethod
-        type: tags
-      - name: HTTP Path
-        field: httpPath
-        type: multi-select
-      - name: API Title
-        field: apiTitle
-        type: multi-select
-      - name: API Version
-        field: apiVersion
-        type: select
-```
-
 ## Curate search results
 
-Search curation allows you to influence the ranking of specific pages in search results for particular search terms.
-Use curation to boost important pages to the top in results or exclude pages from appearing for certain keywords.
+Influence the ranking of specific pages in search results for particular search terms.
+Use `keywords` option in the front matter of a page or `x-keywords` in an OpenAPI description file to boost the page to the top of search results or exclude the page from appearing for certain keywords.
 
 {% admonition type="info" %}
-Curation is only available for Typesense search engine, which requires an Enterprise or Enterprise+ plan.
+Curation is only available for the Typesense search engine, which requires an Enterprise or Enterprise+ plan.
 {% /admonition %}
+
+Behavior of pages with keywords:
+
+- For each keyword in `includes`, the page is promoted to the top position in search results.
+- If you use the same keyword in multiple pages, the pages appear at the top of search results in the order they were indexed by the search engine.
+- Keywords are not case-sensitive.
+- The word order in keywords is preserved: searching for "pay apple" won't trigger a keyword "apple pay".
+- The first matching keyword triggers curation and stops additional keywords from being processed for that search.
 
 ### Curation parameters
 
-Curation is configured using the `keywords` property:
+Configure curation using the `keywords` object:
 
 {% table %}
 
@@ -404,31 +336,24 @@ Curation is configured using the `keywords` property:
 
 - includes
 - [string]
-- List of keywords or phrases that boost this page to the top of search results when those terms are searched.
+- List of keywords or phrases that promote this page to the top of search results when these terms are used in the search query.
 
 ---
 
 - excludes
 - [string]
-- List of keywords or phrases that remove this page from results for those search terms.
+- List of keywords or phrases that prevent this page from appearing in search results when these terms are used in the search query.
   Overrides `includes` for the same keyword.
 
 {% /table %}
-
-### Curation behavior
-
-- For each keyword in `includes`, the page is boosted to the top position in search results.
-- Multiple pages with the same keyword appear at the top in the order they were indexed.
-- Word order is preserved (searching "pay apple" won't trigger a keyword "apple pay").
-- The first matching keyword triggers curation and stops processing additional keywords.
 
 ### Apply curation to files
 
 #### Markdown files
 
-Apply curation to Markdown files using frontmatter:
+Apply curation to Markdown files using front matter:
 
-```yaml
+```yaml {% title="payments.md" %}
 ---
 keywords:
   includes:
@@ -450,9 +375,9 @@ You can apply curation at three different levels:
 
 Apply curation to the root document of the API description.
 The `includes` keywords boost the root document to the top of search results.
-The `excludes` keywords remove the entire definition from search results for those terms.
+The `excludes` keywords remove the entire description file from search results for these terms.
 
-```yaml
+```yaml {% title="payments.yaml" %}
 openapi: 3.0.0
 x-keywords:
   includes:
@@ -469,7 +394,7 @@ info:
 
 Apply curation to a specific tag:
 
-```yaml
+```yaml {% title="payments.yaml" %}
 tags:
   - name: payments
     description: Payment operations
@@ -485,7 +410,7 @@ tags:
 
 Apply curation to individual operations:
 
-```yaml
+```yaml {% title="payments.yaml" %}
 paths:
   /payments:
     post:
@@ -503,11 +428,90 @@ paths:
           - paypal
 ```
 
+## Examples
+
+### Basic search configuration
+
+Hide the search bar:
+
+```yaml {% title="redocly.yaml" %}
+search:
+  hide: true
+```
+
+Set keyboard shortcuts for search:
+
+```yaml {% title="redocly.yaml" %}
+search:
+  shortcuts:
+    - ctrl+f
+    - cmd+k
+    - /
+```
+
+Set suggested pages for the search modal:
+
+```yaml {% title="redocly.yaml" %}
+search:
+  suggestedPages:
+    - label: Home page
+      page: index.page.tsx
+    - page: /catalog/
+```
+
+### Search facets
+
+Override the default `redocly_category` facet:
+
+```yaml {% title="redocly.yaml" %}
+search:
+  filters:
+    facets:
+      - name: Custom 
+        field: redocly_category
+        type: select           
+```
+
+Create a custom facet:
+
+```yaml {% title="redocly.yaml" %}
+search:
+  filters:
+    facets:
+      - name: Owner
+        field: owner
+        type: select            
+```
+
+Override all default search facets:
+
+```yaml {% title="redocly.yaml" %}
+search:
+  filters:
+    facets:
+      - name: Category
+        field: redocly_category
+        type: multi-select
+      - name: HTTP Method
+        field: httpMethod
+        type: tags
+      - name: HTTP Path
+        field: httpPath
+        type: multi-select
+      - name: API Title
+        field: apiTitle
+        type: multi-select
+      - name: API Version
+        field: apiVersion
+        type: select
+```
+
+
 ### AI search
 
 Display the AI search button with a custom prompt:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 search:
   ai:
     hide: false
@@ -516,7 +520,7 @@ search:
 
 Set AI search suggestions:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 search:
   ai:
     hide: false
