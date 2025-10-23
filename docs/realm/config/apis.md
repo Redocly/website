@@ -74,6 +74,12 @@ If your project contains multiple APIs, you can use the `apis` configuration sec
 
 ---
 
+- extends
+- [string]
+- Extend an existing configuration sets. Read more about [Extends](./openapi/extends.md).
+
+---
+
 - output
 - string
 - Output file path.
@@ -90,12 +96,16 @@ The following example shows a simple `redocly.yaml` configuration file with sett
 apis:
   orders@v3:
     root: orders/openapi.yaml
+    extends:
+      - minimal
     rules:
       tags-alphabetical: error
       operation-operationId-unique: error
       spec-strict-refs: error
   newsletter:
     root: newsletter/openapi.yaml
+    extends:
+      - minimal
     rules:
       info-contact: off
       operation-summary: off
