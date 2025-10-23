@@ -1,4 +1,18 @@
 '@redocly/realm':
+  0.127.0-next.9:
+    timestamp: 1761216874000
+    changes:
+      minor: []
+      patch:
+        - Fixed navigation issues in sidebar, product, and version pickers for projects using path prefixes.
+        - Fixed `sitemap` URLs omitting the path prefix.
+        - Fixed front matter configuration that hid navigation actions.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.7
+      '@redocly/asyncapi-docs': 1.4.0-next.8
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.8
   0.127.0-next.8:
     timestamp: 1761115910000
     changes:
@@ -4646,6 +4660,20 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.127.0-next.9:
+    timestamp: 1761216874000
+    changes:
+      minor: []
+      patch:
+        - Fixed navigation issues in sidebar, product, and version pickers for projects using path prefixes.
+        - Fixed `sitemap` URLs omitting the path prefix.
+        - Fixed front matter configuration that hid navigation actions.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.7
+      '@redocly/asyncapi-docs': 1.4.0-next.8
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.8
   0.127.0-next.8:
     timestamp: 1761115910000
     changes:
@@ -8508,6 +8536,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.127.0-next.9:
+    timestamp: 1761216874000
+    changes:
+      minor: []
+      patch:
+        - Fixed navigation issues in sidebar, product, and version pickers for projects using path prefixes.
+        - Fixed `sitemap` URLs omitting the path prefix.
+        - Fixed front matter configuration that hid navigation actions.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.7
+      '@redocly/asyncapi-docs': 1.4.0-next.8
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.8
   0.127.0-next.8:
     timestamp: 1761115910000
     changes:
@@ -12363,6 +12405,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.127.0-next.9:
+    timestamp: 1761216874000
+    changes:
+      minor: []
+      patch:
+        - Fixed navigation issues in sidebar, product, and version pickers for projects using path prefixes.
+        - Fixed `sitemap` URLs omitting the path prefix.
+        - Fixed front matter configuration that hid navigation actions.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.7
+      '@redocly/asyncapi-docs': 1.4.0-next.8
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.8
   0.127.0-next.8:
     timestamp: 1761115910000
     changes:
@@ -16244,6 +16300,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.59.0-next.7:
+    timestamp: 1761216874000
+    changes:
+      minor: []
+      patch:
+        - Fixed navigation issues in sidebar, product, and version pickers for projects using path prefixes.
+    dependencies: {}
   0.59.0-next.6:
     timestamp: 1761115910000
     changes:
@@ -18610,6 +18673,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.15.0-next.8:
+    timestamp: 1761216874000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.18.0-next.8
   3.15.0-next.7:
     timestamp: 1761115910000
     changes:
@@ -22703,6 +22773,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.10.0-next.9:
+    timestamp: 1761216874000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.7
+      '@redocly/realm': 0.127.0-next.9
+      '@redocly/redoc': 0.127.0-next.9
+      '@redocly/redoc-reef': 0.127.0-next.9
+      '@redocly/redoc-revel': 0.127.0-next.9
   1.10.0-next.8:
     timestamp: 1761115910000
     changes:
@@ -26853,6 +26934,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.12.0-next.8:
+    timestamp: 1761216874000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.8
   0.12.0-next.7:
     timestamp: 1761115910000
     changes:
@@ -29122,6 +29210,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.18.0-next.8:
+    timestamp: 1761216874000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.7
   0.18.0-next.7:
     timestamp: 1761115910000
     changes:
@@ -30522,6 +30617,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.10.0-next.7:
+    timestamp: 1761216874000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.7
   0.10.0-next.6:
     timestamp: 1761115910000
     changes:
@@ -31839,6 +31941,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.4.0-next.8:
+    timestamp: 1761216874000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.7
+      '@redocly/openapi-docs': 3.15.0-next.8
   1.4.0-next.7:
     timestamp: 1761115910000
     changes:
