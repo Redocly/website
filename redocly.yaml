@@ -289,6 +289,4 @@ openapi:
   excludeFromSearch: true
 
 search:
-  ai:
-    hide: false
   engine: typesense
