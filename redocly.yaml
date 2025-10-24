@@ -290,3 +290,10 @@ openapi:
 
 search:
   engine: typesense
+
+aiAssistant:
+  hide: false
+  trigger:
+    hide: false
+    inputType: button
+    inputIcon: redocly
