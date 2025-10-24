@@ -1529,172 +1529,142 @@
 </details>
 
 <details>
-<summary>Search AI common variables</summary>
+<summary>Search AI</summary>
 
 ```css
---search-ai-gradient: linear-gradient(to right, #715efe, #ff5cdc);
+  --search-ai-spinner-icon-color: var(--icon-color-interactive);
+  --search-ai-checkmark-icon-color: var(--icon-color-interactive);
+  --search-ai-response-padding: var(--spacing-lg);
+  --search-ai-response-gap: var(--spacing-sm);
 
---search-ai-response-padding: var(--spacing-lg);
---search-ai-response-gap: var(--spacing-sm);
---search-ai-response-header-gap: var(--spacing-md);
---search-ai-response-body-gap: var(--spacing-xl);
---search-ai-response-body-padding: 0 40px;
+  --search-ai-response-header-gap: var(--spacing-md);
 
---search-ai-spinner-icon-color: var(--icon-color-interactive);
---search-ai-checkmark-icon-color: var(--icon-color-interactive);
+  --search-ai-question-font-size: var(--font-size-xl);
+  --search-ai-question-font-weight: var(--font-weight-semibold);
+  --search-ai-question-line-height: var(--line-height-xl);
+  --search-ai-question-text-color: var(--text-color-primary);
 
---search-ai-button-icon-color: none;
+  --search-ai-response-body-gap: var(--spacing-xl);
+  --search-ai-response-body-padding: 0 40px;
 
---search-ai-welcome-margin: var(--spacing-md);
-```
+  --search-ai-text-color: var(--text-color-secondary);
+  --search-ai-text-font-size: var(--font-size-lg);
+  --search-ai-text-line-height: var(--line-height-lg);
 
-</details>
+  --search-ai-user-bg-color: var(--color-blue-6);
+  --search-ai-user-text-color: var(--color-static-white);
+  --search-ai-assistant-bg-color: var(--layer-color);
+  --search-ai-assistant-text-color: var(--text-color-primary);
+  --search-ai-assistant-border: 1px solid var(--border-color-primary);
 
-<details>
-<summary>Search AI typography</summary>
+  --search-ai-resources-gap: var(--spacing-base);
+  --search-ai-resources-title-font-weight: var(--font-weight-medium);
+  --search-ai-resources-title-font-size: var(--font-size-lg);
+  --search-ai-resources-title-line-height: var(--line-height-lg);
 
-```css
---search-ai-question-font-size: var(--font-size-xl);
---search-ai-question-font-weight: var(--font-weight-semibold);
---search-ai-question-line-height: var(--line-height-xl);
---search-ai-question-text-color: var(--text-color-primary);
+  --search-ai-resource-tags-gap: var(--spacing-base);
+  --search-ai-resource-tag-text-color: var(--text-color-secondary);
+  --search-ai-resource-tag-icon-color: var(--text-color-secondary);
+  --search-ai-resource-tag-icon-size: 16px;
 
---search-ai-text-color: var(--text-color-secondary);
---search-ai-text-font-size: var(--font-size-lg);
---search-ai-text-line-height: var(--line-height-lg);
---search-ai-thinking-text-margin: var(--md-pre-margin) 0;
+  --search-ai-icon-size: 32px;
+  --search-ai-icon-bg-color: var(--search-ai-gradient);
+  --search-ai-icon-color: var(--color-static-white);
 
---search-ai-disclaimer-font-size: var(--font-size-sm);
---search-ai-disclaimer-line-height: var(--line-height-sm);
---search-ai-disclaimer-text-color: var(--text-color-secondary);
-```
+  --search-ai-button-icon-color: none;
 
-</details>
+  --search-ai-thinking-dots-gap: 4px;
+  --search-ai-thinking-dots-padding: 4px 0;
+  --search-ai-thinking-dot-size: 6px;
+  --search-ai-thinking-dot-color: var(--search-ai-gradient);
 
-<details>
-<summary>Search AI messages</summary>
+  --search-ai-disclaimer-font-size: var(--font-size-sm);
+  --search-ai-disclaimer-line-height: var(--line-height-sm);
+  --search-ai-disclaimer-text-color: var(--text-color-secondary);
 
-```css
---search-ai-user-bg-color: var(--color-blue-6);
---search-ai-user-text-color: var(--color-static-white);
---search-ai-assistant-bg-color: var(--layer-color);
---search-ai-assistant-text-color: var(--text-color-primary);
---search-ai-assistant-border: 1px solid var(--border-color-primary);
---search-ai-assistant-message-max-width: 80%;
-```
+  --search-ai-gradient: linear-gradient(to right, #715efe, #ff5cdc);
 
-</details>
+  --search-ai-welcome-margin: var(--spacing-md);
+  --search-ai-icon-wrapper-padding: var(--spacing-xs);
 
-<details>
-<summary>Search AI icon</summary>
+  --search-ai-suggestions-title-text-color: var(--text-color-description);
+  --search-ai-suggestions-title-font-size: var(--font-size-base);
+  --search-ai-suggestions-title-line-height: var(--line-height-base);
+  --search-ai-suggestions-title-font-weight: var(--font-weight-light);
+  
+  --search-ai-suggestions-text-color: var(--text-color-description);
 
-```css
---search-ai-icon-size: 32px;
---search-ai-icon-bg-color: var(--search-ai-gradient);
---search-ai-icon-color: var(--color-static-white);
---search-ai-icon-wrapper-padding: var(--spacing-xs);
-```
+  --search-ai-conversation-input-send-button-bg-color: var(--button-bg-color-primary);
+  --search-ai-conversation-input-send-button-bg-color-hover: var(--button-bg-color-primary-hover);
+  --search-ai-conversation-input-send-button-bg-color-disabled: var(--button-bg-color-disabled);
+  --search-ai-conversation-input-send-button-border-color-disabled: var(--button-border-color-disabled);
+  --search-ai-conversation-input-send-button-icon-color: var(--color-static-white);
 
-</details>
+  --search-ai-dialog-bg-color: var(--bg-color);
+  --search-ai-dialog-header-border: var(--search-modal-border);
+  --search-ai-dialog-header-bg-color: var(--search-modal-header-bg-color);
+  --search-ai-dialog-header-padding: var(--search-modal-header-padding);
 
-<details>
-<summary>Search AI resources</summary>
+  --search-ai-dialog-body-padding: var(--search-ai-response-padding);
+  --search-ai-dialog-body-gap: var(--spacing-sm);
 
-```css
---search-ai-resources-gap: var(--spacing-xxs);
---search-ai-resources-title-font-weight: var(--font-weight-medium);
---search-ai-resources-title-font-size: var(--font-size-lg);
---search-ai-resources-title-line-height: var(--line-height-lg);
+  --search-ai-dialog-input-padding: var(--spacing-sm) var(--search-ai-response-padding);
+  --search-ai-dialog-input-border: 1px solid var(--border-color-secondary);
+  --search-ai-dialog-input-bg-color: var(--bg-color);
 
---search-ai-resource-tags-gap: var(--spacing-xxs);
---search-ai-resource-tag-text-color: var(--text-color-secondary);
---search-ai-resource-tag-icon-color: var(--text-color-secondary);
---search-ai-resource-tag-icon-size: 16px;
-```
+  --search-ai-conversation-input-bg-color: var(--bg-color);
+  --search-ai-conversation-input-padding: var(--spacing-sm) var(--spacing-md);
+  --search-ai-conversation-input-border: 1px solid var(--border-color-secondary);
+  --search-ai-conversation-input-border-radius: var(--border-radius-lg);
+  --search-ai-conversation-input-font-size: var(--font-size-base);
+  --search-ai-conversation-input-placeholder-color: var(--search-input-placeholder-color);
+  --search-ai-conversation-input-border-color-focus: var(--color-blue-6);
+  --search-ai-conversation-input-border-color-disabled: var(--border-color-secondary);
 
-</details>
+  --search-ai-conversation-input-send-button-right: 12px;
+  --search-ai-conversation-input-send-button-bg-color: var(--button-bg-color-primary);
+  --search-ai-conversation-input-send-button-bg-color-hover: var(--button-bg-color-primary-hover);
+  --search-ai-conversation-input-send-button-bg-color-disabled: var(--button-bg-color-disabled);
+  --search-ai-conversation-input-send-button-border-disabled: 1px solid var(--button-border-color-disabled);
 
-<details>
-<summary>Search AI suggestions</summary>
+  --search-ai-response-padding: var(--spacing-lg);
+  --search-ai-response-gap: var(--spacing-sm);
+  --search-ai-response-header-gap: var(--spacing-md);
+  --search-ai-response-body-gap: var(--spacing-xl);
+  --search-ai-response-body-padding: 0 40px;
 
-```css
---search-ai-suggestions-gap: var(--spacing-sm);
---search-ai-suggestions-margin-left: var(--spacing-xs);
---search-ai-suggestion-item-gap: var(--spacing-xxs);
---search-ai-suggestions-title-text-color: var(--text-color-description);
---search-ai-suggestions-title-font-size: var(--font-size-base);
---search-ai-suggestions-title-line-height: var(--line-height-base);
---search-ai-suggestions-title-font-weight: var(--font-weight-light);
---search-ai-suggestions-text-color: var(--text-color-description);
-```
+  --search-ai-text-color: var(--text-color-secondary);
+  --search-ai-text-font-size: var(--font-size-lg);
+  --search-ai-text-line-height: var(--line-height-lg);
 
-</details>
+  --search-ai-thinking-text-margin: var(--md-pre-margin) 0;
 
-<details>
-<summary>Search AI thinking animation</summary>
+  --search-ai-question-font-size: var(--font-size-xl);
+  --search-ai-question-font-weight: var(--font-weight-semibold);
+  --search-ai-question-line-height: var(--line-height-xl);
+  --search-ai-question-text-color: var(--text-color-primary);
 
-```css
---search-ai-thinking-dots-gap: 4px;
---search-ai-thinking-dots-padding: 4px 0;
---search-ai-thinking-dot-size: 6px;
---search-ai-thinking-dot-color: var(--search-ai-gradient);
-```
+  --search-ai-resources-gap: var(--spacing-base);
+  --search-ai-resources-title-font-weight: var(--font-weight-medium);
+  --search-ai-resources-title-font-size: var(--font-size-lg);
+  --search-ai-resources-title-line-height: var(--line-height-lg);
 
-</details>
+  --search-ai-resource-tags-gap: var(--spacing-base);
+  --search-ai-resource-tag-text-color: var(--text-color-secondary);
+  --search-ai-resource-tag-icon-color: var(--text-color-secondary);
 
-<details>
-<summary>Search AI feedback</summary>
+  --search-ai-suggestions-gap: var(--spacing-sm);
+  --search-ai-suggestions-margin-left: var(--spacing-xs);
+  --search-ai-suggestion-item-gap: var(--spacing-xs);
 
-```css
---search-ai-feedback-gap: var(--spacing-xxs);
---search-ai-feedback-form-bg-color: var(--background-color-secondary);
---search-ai-feedback-form-border-color: var(--border-color-primary);
-```
+  --search-ai-suggestions-title-text-color: var(--text-color-description);
+  --search-ai-suggestions-title-font-size: var(--font-size-base);
+  --search-ai-suggestions-title-line-height: var(--line-height-base);
+  --search-ai-suggestions-title-font-weight: var(--font-weight-light);
 
-</details>
+  --search-ai-spinner-icon-color: var(--icon-color-interactive);
+  --search-ai-checkmark-icon-color: var(--icon-color-interactive);
 
-<details>
-<summary>Search AI dialog</summary>
-
-```css
---search-ai-dialog-bg-color: var(--bg-color);
---search-ai-dialog-header-border: var(--search-modal-border);
---search-ai-dialog-header-bg-color: var(--search-modal-header-bg-color);
---search-ai-dialog-header-padding: var(--search-modal-header-padding);
-
---search-ai-dialog-body-padding: var(--search-ai-response-padding);
---search-ai-dialog-body-gap: var(--spacing-sm);
-
---search-ai-dialog-input-padding: var(--spacing-sm) var(--search-ai-response-padding);
---search-ai-dialog-input-border: 1px solid var(--border-color-secondary);
---search-ai-dialog-input-bg-color: var(--bg-color);
-```
-
-</details>
-
-<details>
-<summary>Search AI conversation input</summary>
-
-```css
---search-ai-conversation-input-bg-color: var(--bg-color);
---search-ai-conversation-input-bg-color-disabled: var(--color-warm-grey-1);
---search-ai-conversation-input-padding: var(--spacing-sm) var(--spacing-md);
---search-ai-conversation-input-border: 1px solid var(--border-color-secondary);
---search-ai-conversation-input-border-radius: var(--border-radius-lg);
---search-ai-conversation-input-font-size: var(--font-size-base);
---search-ai-conversation-input-placeholder-color: var(--search-input-placeholder-color);
---search-ai-conversation-input-border-color-focus: var(--color-blue-6);
---search-ai-conversation-input-border-color-disabled: var(--border-color-secondary);
-
---search-ai-conversation-input-send-button-right: 12px;
---search-ai-conversation-input-send-button-padding: 5px;
---search-ai-conversation-input-send-button-bg-color: var(--button-bg-color-primary);
---search-ai-conversation-input-send-button-bg-color-hover: var(--button-bg-color-primary-hover);
---search-ai-conversation-input-send-button-bg-color-disabled: var(--button-bg-color-disabled);
---search-ai-conversation-input-send-button-border-color-disabled: var(--button-border-color-disabled);
---search-ai-conversation-input-send-button-icon-color: var(--color-static-white);
---search-ai-conversation-input-send-button-border-radius: var(--border-radius);
---search-ai-conversation-input-send-button-border-disabled: 1px solid var(--button-border-color-disabled);
 ```
 
 </details>

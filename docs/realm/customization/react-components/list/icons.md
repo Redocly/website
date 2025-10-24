@@ -36,7 +36,6 @@ import { iconName } from '@redocly/theme/icons/{iconName}/{iconName}';
 | {% themeIcon name="FolderIcon" /%} | `FolderIcon` |
 | {% themeIcon name="FolderAddIcon" /%} | `FolderAddIcon` |
 | {% themeIcon name="FolderMoveToIcon" /%} | `FolderMoveToIcon` |
-| {% themeIcon name="ApiFilesReplayIcon" /%} | `ApiFilesReplayIcon` |
 
 </details>
 
@@ -143,7 +142,6 @@ import { iconName } from '@redocly/theme/icons/{iconName}/{iconName}';
 | {% themeIcon name="TimeIcon" /%} | `TimeIcon` |
 | {% themeIcon name="UserIcon" /%} | `UserIcon` |
 | {% themeIcon name="ValueVariableIcon" /%} | `ValueVariableIcon` |
-| {% themeIcon name="HashtagIcon" /%} | `HashtagIcon` |
 
 </details>
 
