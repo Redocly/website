@@ -79,7 +79,7 @@ Because the models are used in **inference-only mode** and your content is not u
 Yes.
 You can configure an **optional project prompt** to adjust the tone or style of responses — or you can choose to **disable AI Search entirely** if desired.
 
-See: [AI Search configuration](../config/search.md)
+See: [AI Search configuration](../config/ai-assistant.md)
 
 ---
 
