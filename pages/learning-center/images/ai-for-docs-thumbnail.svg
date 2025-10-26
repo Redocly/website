@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- subtle grid -->
+  <g opacity="0.06">
+    <defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#fff" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="1200" height="630" fill="url(#grid)"/>
+  </g>
+
+  <!-- decorative blobs -->
+  <circle cx="250" cy="120" r="160" fill="url(#accent)" opacity="0.25" filter="url(#softGlow)"/>
+  <circle cx="1020" cy="520" r="180" fill="url(#accent)" opacity="0.22" filter="url(#softGlow)"/>
+  <circle cx="920" cy="120" r="110" fill="url(#accent)" opacity="0.18" filter="url(#softGlow)"/>
+
+  <!-- pill label -->
+  <g transform="translate(120, 230)">
+    <rect rx="14" ry="14" width="210" height="40" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)"/>
+    <text x="105" y="26" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="18" fill="#cbd5e1" letter-spacing="0.5">learning center</text>
+  </g>
+
+  <!-- headline -->
+  <text x="120" y="330"
+        font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+        font-weight="700"
+        font-size="92"
+        fill="#F8FAFC"
+        letter-spacing="-1.2">AI for Docs</text>
+
+  <!-- subline -->
+  <text x="120" y="400"
+        font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+        font-size="28"
+        fill="#93C5FD"
+        opacity="0.9">practical ways AI accelerates writing, editing, and review</text>
+
+  <!-- accent underline -->
+  <rect x="120" y="355" width="360" height="6" fill="url(#accent)" rx="3"/>
+</svg>

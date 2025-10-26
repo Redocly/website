@@ -4,6 +4,7 @@ import yamlThumbnail from './images/yaml-thumbnail.svg';
 import apiTestingThumbnail from './images/api-testing-thumbnail.svg';
 import apiSecurityThumbnail from './images/api-security-thumbnail.svg';
 import arazzoThumbnail from './images/arazzo-thumbnail.svg';
+import aiForDocsThumbnail from './images/ai-for-docs-thumbnail.svg';
 
 export const cards = [
   {
@@ -111,6 +112,21 @@ export const cards = [
       { title: 'API Input Validation and Injection Prevention', link: '/learn/security/api-input-validation-injection-prevention' },
       { title: 'API Rate Limiting and Abuse Prevention', link: '/learn/security/api-rate-limiting-abuse-prevention' },
       { title: 'Authentication and Authorization with OpenAPI', link: '/learn/security/authentication-authorization-openapi' },
+    ],
+  },
+  {
+    id: 7,
+    key: 'ai-for-docs',
+    title: 'AI for Docs',
+    description:
+      'Learn how to use AI to improve your API documentation.',
+    thumbnail: aiForDocsThumbnail,
+    moreItems: 'more topics coming soon',
+    landingPage: '/learn/ai-for-docs/ai-modern-api-docs',
+    items: [
+      { title: 'AI for Modern Documentation', link: '/learn/ai-for-docs/ai-modern-api-docs' },
+      { title: 'AI for Reviews', link: '/learn/ai-for-docs/ai-reviews' },
+      { title: 'AI as a usability tester', link: '/learn/ai-for-docs/ai-usability-testing' },
     ],
   },
   // {
