@@ -1,4 +1,19 @@
 '@redocly/realm':
+  0.127.0-next.11:
+    timestamp: 1761577894000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where assets from the `static` directory would not include path prefix in its links.
+        - Fixed incorrect paths in anchor links when `REDOCLY_PREFIX_PATHS` was used.
+        - Fixed an issue that caused redirects to not work in locales.
+        - Fixed card links leading to incorrect locations in GraphQL and AsyncAPI docs.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.9
+      '@redocly/asyncapi-docs': 1.4.0-next.10
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.10
   0.127.0-next.10:
     timestamp: 1761293324000
     changes:
@@ -4675,6 +4690,21 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.127.0-next.11:
+    timestamp: 1761577894000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where assets from the `static` directory would not include path prefix in its links.
+        - Fixed incorrect paths in anchor links when `REDOCLY_PREFIX_PATHS` was used.
+        - Fixed an issue that caused redirects to not work in locales.
+        - Fixed card links leading to incorrect locations in GraphQL and AsyncAPI docs.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.9
+      '@redocly/asyncapi-docs': 1.4.0-next.10
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.10
   0.127.0-next.10:
     timestamp: 1761293324000
     changes:
@@ -8566,6 +8596,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.127.0-next.11:
+    timestamp: 1761577894000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where assets from the `static` directory would not include path prefix in its links.
+        - Fixed incorrect paths in anchor links when `REDOCLY_PREFIX_PATHS` was used.
+        - Fixed an issue that caused redirects to not work in locales.
+        - Fixed card links leading to incorrect locations in GraphQL and AsyncAPI docs.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.9
+      '@redocly/asyncapi-docs': 1.4.0-next.10
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.10
   0.127.0-next.10:
     timestamp: 1761293324000
     changes:
@@ -12450,6 +12495,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.127.0-next.11:
+    timestamp: 1761577894000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where assets from the `static` directory would not include path prefix in its links.
+        - Fixed incorrect paths in anchor links when `REDOCLY_PREFIX_PATHS` was used.
+        - Fixed card links leading to incorrect locations in GraphQL and AsyncAPI docs.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.9
+      '@redocly/asyncapi-docs': 1.4.0-next.10
+      '@redocly/graphql-docs': 1.4.0-next.0
+      '@redocly/openapi-docs': 3.15.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.12.0-next.10
   0.127.0-next.10:
     timestamp: 1761293324000
     changes:
@@ -16359,6 +16418,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.59.0-next.9:
+    timestamp: 1761577894000
+    changes:
+      minor: []
+      patch:
+        - Changed the **Ask AI** button's default icon from `redocly` to `sparkles`.
+    dependencies: {}
   0.59.0-next.8:
     timestamp: 1761293324000
     changes:
@@ -18741,6 +18807,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.15.0-next.10:
+    timestamp: 1761577894000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.18.0-next.10
   3.15.0-next.9:
     timestamp: 1761293324000
     changes:
@@ -22863,6 +22936,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.10.0-next.11:
+    timestamp: 1761577894000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.127.0-next.11
+      '@redocly/redoc': 0.127.0-next.11
+      '@redocly/redoc-reef': 0.127.0-next.11
+      '@redocly/redoc-revel': 0.127.0-next.11
+      '@redocly/theme': 0.59.0-next.9
   1.10.0-next.10:
     timestamp: 1761293324000
     changes:
@@ -27035,6 +27119,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.12.0-next.10:
+    timestamp: 1761577894000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0-next.10
   0.12.0-next.9:
     timestamp: 1761293324000
     changes:
@@ -29318,6 +29409,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.18.0-next.10:
+    timestamp: 1761577894000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.9
   0.18.0-next.9:
     timestamp: 1761293324000
     changes:
@@ -30733,6 +30831,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.10.0-next.9:
+    timestamp: 1761577894000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.9
   0.10.0-next.8:
     timestamp: 1761293324000
     changes:
@@ -32064,6 +32169,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.4.0-next.10:
+    timestamp: 1761577894000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0-next.9
+      '@redocly/openapi-docs': 3.15.0-next.10
   1.4.0-next.9:
     timestamp: 1761293324000
     changes:
