@@ -1,30 +1,26 @@
-To bring more value for the readers, here are a few key takeaways one can get by reading this article:
+This article covers the following key topics:
 
-- Learn about possible practical applications:
-  - Automate repetitive actions you perform with the APIs.
-  - Cover your API with integration tests and use it in your CI/CD routines.
-  - Keeping your API documentation always in sync with the real API behavior.
-  - Share described workflows with other people.
-- All heavy lifting will be done with the help of open source tool - [@redocly/cli](https://www.npmjs.com/package/@redocly/cli), the early Arazzo adopter. You can try it and see if it works for you.
+- Practical applications of Arazzo:
+  - Automating repetitive API actions.
+  - Covering APIs with integration tests for CI/CD routines.
+  - Keeping API documentation synchronized with actual API behavior.
+  - Sharing described workflows with team members.
+- Using the open-source tool [@redocly/cli](https://www.npmjs.com/package/@redocly/cli), an early Arazzo adopter, to execute workflows.
 
 ## Writing REST API integration tests with Arazzo
 
 ### The Problem
 
-During talks with my fellow QA engineers, I asked them how they usually test APIs, maybe there is some new thing I missed.
-That was not a random question, I was actually using in-house tool for testing our own APIs, very similar to future Arazzo standard.
+Many QA engineers test APIs using the same language in which the APIs are implemented. This approach can require significant effort to maintain, especially in complex systems with multiple products written in different languages.
 
-To my surprise, most integration tests they did were written on the same language as the actual APIs implemented. That can take a lot of effort to keep everything up and running when you have complex systems with a fusion of different products.
-
-Another problem relates to team collaboration when working with multiple APIs. Documentation gets out of sync surprisingly fast, as majority of developers apply changes to API but forget to synchronize documentation. Wish there were a way to track this discrepancy...
+Another common challenge relates to team collaboration when working with multiple APIs. Documentation often becomes outdated quickly when developers apply changes to APIs but forget to synchronize the documentation. A systematic way to track these discrepancies is needed.
 
 ### Prerequisites
 
-Lets dive deeper and learn by doing.
-As always you will need to have some pre-setup if you want to follow next steps:
+To follow the examples in this article, the following setup is required:
 
-- If you haven't already read, get yourself familiar with the [Arazzo](./what-is-arazzo.md).
-- Need to have described API. Maybe it is still not a popular practice in a smaller projects, but I would advise you to try and you will appreciate the benefits it brings. I will use some simplified version of the [public API](https://fakestoreapi.com/docs) I found on the internet.
+- Familiarity with [Arazzo](./what-is-arazzo.md).
+- A described API. The examples use a simplified version of a [public API](https://fakestoreapi.com/docs).
 
 ```yaml
 openapi: 3.1.0
@@ -182,32 +178,31 @@ components:
 
 ### Create simple local Json-server to simulate real API
 
-For the pure demonstration purpose we are going to simulate the API. In your daily usage it can be some API test instance or real production API.
+For demonstration purposes, this example simulates an API. In production use cases, this could be an API test instance or production API endpoint.
 
-Create `db.json` file, that will be our storage and define our empty `products` structure:
+Create a `db.json` file to serve as storage and define an empty `products` structure:
 ```json
   {
     "products": []
   }
 ```
 
-Spin out the json-server:
+Start the json-server:
 
 ```bash
   npx json-server --watch db.json --port 3000
 ```
 
-Json-server will constantly populate this file with some data, if you find that something is not working, please try to reset the
-content in `db.json` file.
+Note: The json-server will continuously populate this file with data. If issues arise, reset the content in the `db.json` file.
 
 ### Create Arazzo description
 
-As practical advice I can see like three ways you can go to make an Arazzo description:
-- Read the [Arazzo specification](https://spec.openapis.org/arazzo/latest.html) and write it from scratch. This is my favorite way as you have full control.
-- Use `redocly generate-arazzo docs-data.yaml` cli command. This is a good starting point that can give you the overview of Arazzo structure and shows how to describe all operations in docs. You can delete those you don't need or use generated file as a reference point.
-- Use AI help and ask to create Arazzo specification. This sometimes leads to hallucinations so make sure you lint the outcome.
+There are three approaches to creating an Arazzo description:
+- Read the [Arazzo specification](https://spec.openapis.org/arazzo/latest.html) and write it from scratch for full control.
+- Use the `npx @redocly/cli@latest generate-arazzo docs-data.yaml` CLI command as a starting point to understand the Arazzo structure and see how to describe all operations.
+- Use AI assistance to generate the Arazzo specification, ensuring to lint the output to catch any errors.
 
-I wrote one by hand, but regardless of your choice you can always check if it is correct by linting it with Redocly/CLI:
+Regardless of the approach chosen, validate the Arazzo file using Redocly CLI:
 ```bash
   npx @redocly/cli@latest lint products.arazzo.yaml
 ```
@@ -221,7 +216,7 @@ products.arazzo.yaml: validated in 6ms
 Woohoo! Your API description is valid. 🎉
 ```
 
-Here is an example of simple CRUD workflow.
+Here is an example of a simple CRUD workflow.
 
 ```yaml
 arazzo: 1.0.1
@@ -293,10 +288,10 @@ workflows:
 
 ```
 
-This is an example of a common CRUD operation that can be found in any REST API.
-Key parts:
+This example demonstrates a common CRUD operation found in REST APIs.
+Key components:
 
-- SourceDescriptions is the place where we describe the connection to OpenAPI description:
+- SourceDescriptions define the connection to the OpenAPI description:
 
 ``` yaml
 sourceDescriptions:
@@ -305,11 +300,11 @@ sourceDescriptions:
     url: docs-data.yaml
 ```
 
-- Each Step have operationId, this is the exact place where the bond with the OpenAPI made.
+- Each Step has an operationId that creates the connection to the OpenAPI specification:
 ```yaml
 operationId: $sourceDescriptions.docs-data.addProduct
 ```
-What it says is that this step will resolve the `addProduct` operation from the `docs-data` sourceDescription, that in fact a connection to this file `docs-data.yaml`:
+This step resolves the `addProduct` operation from the `docs-data` sourceDescription, which connects to the `docs-data.yaml` file:
 
 ```yaml
 post:
@@ -319,9 +314,9 @@ post:
   tags:
     - Products
 ```
-This also gives the power to verify expected response type.
+This connection also enables verification of the expected response type.
 
-- Step can have outputs, that can be used in other steps when referenced
+- Steps can have outputs that can be referenced in subsequent steps:
 ```yaml
 outputs:
   product-id: $response.body#/id
@@ -334,22 +329,22 @@ parameters:
     value: $steps.post-products-step.outputs.product-id
 ```
 
-- Step can have successCriteria section, where you describe your expectation.
+- Steps can include a successCriteria section to define expectations:
 ```yaml
 successCriteria:
   - condition: $statusCode == 200
 ```
 
-### Execute the workflow using Redocly/CLI
+### Execute the workflow using Redocly CLI
 
-[@redocly/cli](https://www.npmjs.com/package/@redocly/cli) is an open-source product that among others support Arazzo specs execution with `respect` command.
+[@redocly/cli](https://www.npmjs.com/package/@redocly/cli) is an open-source tool that supports Arazzo specification execution with the `respect` command.
 
 ```bash
 npx @redocly/cli@latest respect products.arazzo.yaml --server docs-data=http://localhost:3000
 ```
 
-We are going to use `server` override here to use our own target endpoint, you can read more about command options [here](https://redocly.com/docs/cli/commands/respect).
-After running this command you can see the result of execution:
+The `server` override targets a custom endpoint. Additional command options are available in the [documentation](https://redocly.com/docs/cli/commands/respect).
+The execution results display as follows:
 
 ```bash
   Running workflow products.arazzo.yaml / products-crud 
@@ -401,8 +396,8 @@ After running this command you can see the result of execution:
 
 ### What if something goes out of hand
 
-As you already have seen in previous example - all checks were successful. Lets pick up one particular step and analyze what is going on.
-Here is a `get-updated-product` step execution result:
+The previous example showed all checks passing successfully. Analyzing a particular step reveals the verification process.
+Here is the `get-updated-product` step execution result:
 
 ```bash
   ✓ GET /products/{id} - step get-updated-product 
@@ -413,7 +408,7 @@ Here is a `get-updated-product` step execution result:
     ✓ schema check
 ```
 
-You can see that beside the two `success criteria check` that we defined in Arazzo file, the 3 more checks were performed.
+Besides the two `success criteria check` conditions defined in the Arazzo file, three additional checks were performed automatically.
 
 ```yaml
 successCriteria:
@@ -421,10 +416,10 @@ successCriteria:
   - condition: $response.body#/category == 'physics'
 ```
 
-Knowing the fact that this step is connected to OpenAPI description, with the help of [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) we can for free check, that API return documented response, with expected content-type and status.
+Since this step connects to an OpenAPI description, [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) automatically verifies that the API returns the documented response with the expected content-type and status.
 
-Lets simulate some discrepancy, imagine a new `license` property were added by fellow developers in API, but they forgot to update the OpenAPI description.
-Update your `db.json` file to be:
+To simulate a discrepancy, consider a scenario where a new `license` property is added to the API but the OpenAPI description is not updated.
+Update the `db.json` file to include:
 
 ```json
 {
@@ -442,13 +437,14 @@ Update your `db.json` file to be:
 }
 ```
 
-By default json-server will return the first item with the "test-id", and it will be modified now.
-Execute your workflow with the respect command and see the output:
+By default, json-server will return the first item with "test-id", which now includes the modification.
+Execute the workflow with the respect command:
 
 ```bash
 npx @redocly/cli@latest respect products.arazzo.yaml --verbose --server docs-data=http://localhost:3000/
 ```
-You should see now the failed check:
+
+The output now shows a failed check:
 
 ```
     stepId - get-product 
@@ -476,9 +472,9 @@ You should see now the failed check:
          | ^^ 👈🏽  unevaluatedProperties must NOT have unevaluated properties: "license".
 ```
 
-This gives you the understanding that something is wrong. So it can be an API issue, or not updated documentation, in case change to API was made on purpose.
-What are the next steps? Fix API code or update the documentation.
-Imagine the change is expected and we now have new license property in Product. In this case we should go to our API document and add `license` property to the schema.
+This indicates a mismatch between the API and documentation. The next steps are to either fix the API code or update the documentation if the change was intentional.
+
+If the change is expected and the new license property should be part of the Product schema, update the API documentation to add the `license` property:
 
 ```yaml
 components:
@@ -493,14 +489,13 @@ components:
           type: string
 ```
 
-Thats how easy you can detect the unexpected API changes.
+This demonstrates how easily unexpected API changes can be detected.
 
 ### Practical Applications
 
-So you have this Arazzo workflow you described on your local machine and now can verify API is in sync.
-Were can you go from here:
+Once an Arazzo workflow has been created and verified locally, several paths forward are available:
 
-- One of the option is to include this into your CI/CD pipeline. This way you can make sure your API docs are in sync with the actual API.
+- Include the workflow in a CI/CD pipeline to ensure API documentation stays in sync with the actual API:
 
 ```bash
 # Spawn your API instance
@@ -508,12 +503,12 @@ npm install @redocly/cli@latest -g
 redocly respect products.arazzo.yaml --verbose
 ```
 
-- Set up any other routine automation you need in your daily work.
-- You can describe the desired application flow with Arazzo and share this file with a fellow teammates. Non-technical users can use other tools to get some visual representation. Like Replay
+- Set up routine automation for daily development tasks.
+- Describe desired application flows with Arazzo and share files with team members. Non-technical users can use visualization tools like Replay to understand the workflows.
 
 <!-- TODO: add link to Relay -->
 
 ### Summary
 
-Arazzo is a powerful new standard that gives you a way to declaratively describe different API workflows with a variety of practical applications.
-As tooling development progresses you can use Arazzo to keep your API covered with tests, documentation in sync and improves teams collaboration in complex projects.
+Arazzo is a powerful standard that enables declarative description of API workflows with various practical applications.
+As tooling development progresses, Arazzo can help maintain API test coverage, keep documentation synchronized, and improve team collaboration in complex projects.
