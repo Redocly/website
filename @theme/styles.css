@@ -768,3 +768,7 @@ tr td:first-child code {
 .mermaid {
     text-align: center;
 }
+
+.mermaid .label {
+    line-height: 1.6 !important;
+}
