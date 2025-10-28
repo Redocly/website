@@ -7,7 +7,7 @@ seo:
   description: Exploring resource-first and workflow-first approaches to API design, and why thinking about use cases early can lead to better APIs.
   image: ./images/api-design-approaches.png
 author: adam-altman
-date: 2025-10-31
+date: 2025-10-28
 categories:
  - api-first
 image: api-design-approaches.png
