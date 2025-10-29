@@ -196,6 +196,8 @@
             - page: content/markdoc-tags/code-walkthrough/input.md
               label: Input
             - page: content/markdoc-tags/code-walkthrough/create-code-walkthrough.md
+        - page: content/markdoc-tags/connect-mcp.md
+          label: Connect MCP
         - page: content/markdoc-tags/img.md
           label: Image    
         - page: content/markdoc-tags/icon.md
