@@ -1,0 +1,6 @@
+default: 'v3.x'
+versions:
+  - version: v2.x
+    name: 2.x
+  - version: v3.x
+    name: 3.x
