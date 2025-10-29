@@ -19,13 +19,11 @@ Then run the image with the following command:
 docker run -p 8080:80 redocly/redoc
 ```
 
-The preview starts on port 8080, based on the port used in the command,
-and can be accessed at `http://localhost:8080`.
+The preview starts on port 8080, based on the port used in the command, and can be accessed at `http://localhost:8080`.
 To exit the preview, use `control+C`.
 
-By default Redoc starts with a demo Swagger Petstore OpenAPI definition located at
-http://petstore.swagger.io/v2/swagger.json. You can update this URL using
-the environment variable `SPEC_URL`.
+By default Redoc starts with a demo Swagger Petstore OpenAPI definition located at http://petstore.swagger.io/v2/swagger.json.
+You can update this URL using the environment variable `SPEC_URL`.
 
 For example:
 
@@ -35,6 +33,5 @@ docker run -p 8080:80 -e SPEC_URL=https://api.example.com/openapi.json redocly/r
 
 ## Create a Dockerfile
 
-You can also create a Dockerfile with some predefined environment variables. Check out
-a sample [Dockerfile](https://github.com/Redocly/redoc/blob/main/config/docker/Dockerfile)
-in our code repo.
+You can also create a Dockerfile with some predefined environment variables.
+Check out a sample [Dockerfile](https://github.com/Redocly/redoc/blob/main/config/docker/Dockerfile) in our code repo.

@@ -76,7 +76,7 @@ If you are using the Redocly [HTML element](../docs-legacy/api-reference-docs/gu
 ```
 
 ### Redoc HTML element
-If you are using the [Redoc HTML element](../docs/redoc/deployment/html.md), you can include the `hideDownloadButton: false` in the options parameter.
+If you are using the [Redoc HTML element](../docs/redoc/@v2.x/deployment/html.md), you can include the `hideDownloadButton: false` in the options parameter.
 
 ```html
 <script>
