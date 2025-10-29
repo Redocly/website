@@ -185,7 +185,7 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 ### Ignore errors examples
 
-The following example configuration allows you to publish production project deploys even if Reunite detects broken links, an API description in the project that scores below the minimum standard, and Markdoc errors:
+The following example configuration allows you to publish production project deployments even if Reunite detects broken links, an API description in the project that scores below the minimum standard, and Markdoc errors:
 
 ```yaml {% title="redocly.yaml" %}
 reunite:

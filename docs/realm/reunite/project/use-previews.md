@@ -14,7 +14,7 @@ A preview deployment triggers automatically when the following events occur:
 
 ## View preview deployment
 
-You can access previews on the Deploys page, Editor, or Pull requests page in Reunite, after the preview build has passed all checks.
+You can access previews on the Deployments page, Editor, or Pull requests page in Reunite, after the preview build has passed all checks.
 
 If you use an external Git provider for your repository or remote content, after the build is finished, you can access the build status, preview URL, and visual review in the Git provider.
 
@@ -24,14 +24,14 @@ Preview deployments are available for all unmerged development branches with ope
 While you can view information of deployments or merged pull requests that had their branches deleted, you won't be able to access or generate their previews.
 {% /admonition %}
 
-### From the Deploys page
+### From the Deployments page
 
-To view previews on the Deploys page:
+To view previews on the Deployments page:
 
 1. Select the **Preview** toggle button.
-2. Select the preview build for the deploy number you want to see.
+2. Select the preview build for the deploy id you want to see.
    You can access previews for any existing pull request.
-   Deploys are listed most recent to least, so the most recent deploy displays first.
+   Deployments are listed most recent to least, so the most recent deployment displays first.
 3. Click the **Preview** button.
 
 ## From the Editor page
@@ -62,13 +62,13 @@ To see previews in a GitHub check:
 
 ## Restart previews
 
-You can restart a preview deployment from the Deploy page.
+You can restart a preview deployment from the Deployment page.
 
 To restart a preview build:
 
 1. Select the **Preview** toggle.
-2. Select the preview build for the deploy number you want to see.
-   Deploys are listed most recent to least, so the most recent deploy displays first.
+2. Select the preview build for the deployment id you want to see.
+   Deployments are listed most recent to least, so the most recent deployment displays first.
 3. Select the **Restart** button.
 
 Restart is not available for deleted/merged branches.
