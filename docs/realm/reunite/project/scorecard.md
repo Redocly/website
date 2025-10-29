@@ -17,13 +17,13 @@ Reports show if an API description file complies with the applied rulesets.
 
 ### Scorecard reports in the Lint CI job
 
-You can view scorecard reports on Reunite's **Deploys** page.
+You can view scorecard reports on Reunite's **Deployments** page.
 Choose a preview or production deploy and click it to open its status page.
 Under **Summary**, click **Lint** to display the report.
 
 {% img
   src="../images/reunite-deploy-scorecard.png"
-  alt="Scorecard information in Deploys"
+  alt="Scorecard information in Deployments"
   withLightbox=true
 /%}
 
@@ -31,7 +31,7 @@ You can expand each row of the table, switch between the scorecard levels and dr
 
 {% img
   src="../images/reunite-deploy-scorecard-expanded.png"
-  alt="Expanded scorecard report in Deploys"
+  alt="Expanded scorecard report in Deployments"
   withLightbox=true
 /%}
 
