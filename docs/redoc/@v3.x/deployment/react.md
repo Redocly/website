@@ -10,7 +10,7 @@ redirects:
 
 ## Before you start
 
-Install the following dependencies required by Redoc if you do not already have them installed:
+Install the following dependencies required by Redoc:
 
 - `react`
 - `react-dom`
@@ -34,8 +34,8 @@ import { RedocStandalone } from 'redoc';
 
 You can either link to your OpenAPI definition with a URL, using the following format:
 
-```react
-<RedocStandalone specUrl="url/to/your/spec"/>
+```js
+<RedocStandalone definitionUrl="url/to/your/spec"/>
 ```
 
 Or you can pass your OpenAPI definition as an object, using the following format:
@@ -46,37 +46,37 @@ Or you can pass your OpenAPI definition as an object, using the following format
 
 ## Optional - Pass options
 
-Options can be passed into the RedocStandalone component to alter how it renders.
+Options can be passed into the `RedocStandalone` component to alter how it renders.
 
 For example:
 
 ```js
 <RedocStandalone
-  specUrl="http://petstore.swagger.io/v2/swagger.json"
+  definitionUrl="https://redocly.github.io/redoc/museum.yaml"
   options={{
-    nativeScrollbars: true,
-    theme: { colors: { primary: { main: '#dd5522' } } },
+    hideLoading: true,
+    sanitize: true,
+    showExtensions: true,
   }}
 />
 ```
 
-For more information on configuration options, refer to the
-[Configuration options for Reference docs](https://redocly.com/docs/api-reference-docs/configuration/functionality/)
-section of the documentation. Options available for Redoc are noted,
-"Supported in Redoc CE".
+For more information on configuration options, refer to the [Configuration options for openapi](https://redocly.com/docs/realm/config/openapi) section of the documentation.
+Options that are available for Redoc CE are annotated with: "**Supported in Redoc CE.**".
 
-## Optional - Specify `onLoaded` callback
+<!-- TODO: Need to verify and uncomment if it works -->
+<!-- ## Optional - Specify `onLoaded` callback
 
 You can also specify the `onLoaded` callback, which is called each time Redoc
 is fully rendered or when an error occurs (with an error as the first argument).
 
 ```js
 <RedocStandalone
-  specUrl="http://petstore.swagger.io/v2/swagger.json"
+  definitionUrl="https://redocly.github.io/redoc/museum.yaml"
   onLoaded={(error) => {
     if (!error) {
       console.log('Yay!');
     }
   }}
 />
-```
+``` -->
