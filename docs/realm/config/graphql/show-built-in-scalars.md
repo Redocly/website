@@ -28,7 +28,8 @@ Built-in scalars:
 
 - showBuiltInScalars
 - boolean
-- Display built-in GraphQL scalar types in the UI. Default: `false`.
+- Display built-in GraphQL scalar types in the UI.
+  Default: `false`.
 
 {% /table %}
 
