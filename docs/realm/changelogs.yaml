@@ -34493,3 +34493,10 @@ reunite:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.7.0`.
         - Fixed issue that allowed deletion of protected files from the file tree using keyboard shortcuts.
     dependencies: {}
+  v2025-10-29.1:
+    timestamp: 1761636460000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.8.0`.
+    dependencies: {}
