@@ -549,6 +549,9 @@
 
     --card-icon-color: var(--color-blue-7);
     --hover-last-navbar-color: linear-gradient(125deg, #E0EDFF 7.23%, #F1EBFF 99.14%);
+
+    /* Ask AI Button */
+    --ai-assistant-button-z-index: 11; /* Above the footer */ 
 }
 
 :root.dark {
@@ -764,4 +767,8 @@ tr td:first-child code {
 
 .mermaid {
     text-align: center;
+}
+
+.mermaid .label {
+    line-height: 1.6 !important;
 }

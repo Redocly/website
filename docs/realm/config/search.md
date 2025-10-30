@@ -14,15 +14,17 @@ description: Customize the search functionality in your project.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Customize the search functionality in your project.
 By default, search appears in the top navigation bar in the far right corner.
 
 Use the `search` configuration to:
 
-- Hide the search bar
-- Add keyboard shortcuts for search activation
-- Add suggested pages to the search modal
-- Configure search facets for advanced filtering
+- hide the search bar
+- add keyboard shortcuts for search activation
+- add suggested pages to the search modal
+- configure search facets for advanced filtering
+- boost the ranking of pages for specific search terms
+- prevent pages from appearing for specific search terms
 
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "search"} /%}
 
@@ -50,7 +52,7 @@ These categories are configured using the `redocly_category` facet field and are
 
 For search engines that support full facets configuration capabilities (Typesense), Redocly provides an additional filter panel featuring predefined facets:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 search:
   filters:
     facets:
@@ -259,9 +261,9 @@ You can assign specific metadata to your files, such as custom facet fields for 
 
 ### Markdown files
 
-Apply facets to Markdown files using frontmatter:
+Apply facets to Markdown files using front matter:
 
-```yaml
+```yaml {% title="index.md" %}
 ---
 metadata: 
   redocly_category: Custom 
@@ -273,7 +275,7 @@ metadata:
 
 Apply facets to OpenAPI definitions using the `x-metadata` extension:
 
-```yaml
+```yaml {% title="museum.yaml" %}
 openapi: 3.1.0
 info:
   version: 2.3.3
@@ -287,7 +289,7 @@ info:
 
 Use the `metadataGlobs` property in your `redocly.yaml` configuration file to apply facets to files using glob patterns:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 metadataGlobs:
   'museum/**':
     redocly_category: Museum
@@ -303,20 +305,143 @@ The group facet categorizes search results and is displayed in the top panel of 
 Only `redocly_category` facet field is used as a group facet.
 {% /admonition %}
 
+## Curate search results
+
+Influence the ranking of specific pages in search results for particular search terms.
+Use `keywords` option in the front matter of a page or `x-keywords` in an OpenAPI description file to boost the page to the top of search results or exclude the page from appearing for certain keywords.
+
+{% admonition type="info" %}
+Curation is only available for the Typesense search engine, which requires an Enterprise or Enterprise+ plan.
+{% /admonition %}
+
+Behavior of pages with keywords:
+
+- For each keyword in `includes`, the page is promoted to the top position in search results.
+- If you use the same keyword in multiple pages, the pages appear at the top of search results in the order they were indexed by the search engine.
+- Keywords are not case-sensitive.
+- The word order in keywords is preserved: searching for "pay apple" won't trigger a keyword "apple pay".
+- The first matching keyword triggers curation and stops additional keywords from being processed for that search.
+
+### Curation parameters
+
+Configure curation using the `keywords` object:
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- includes
+- [string]
+- List of keywords or phrases that promote this page to the top of search results when these terms are used in the search query.
+
+---
+
+- excludes
+- [string]
+- List of keywords or phrases that prevent this page from appearing in search results when these terms are used in the search query.
+  Overrides `includes` for the same keyword.
+
+{% /table %}
+
+### Apply curation to files
+
+#### Markdown files
+
+Apply curation to Markdown files using front matter:
+
+```yaml {% title="payments.md" %}
+---
+keywords:
+  includes:
+    - apple pay
+    - apple wallet
+    - digital wallet
+  excludes:
+    - google pay
+    - paypal
+---
+```
+
+#### OpenAPI description files
+
+Apply curation to OpenAPI definitions using the `x-keywords` extension.
+You can apply curation at three different levels:
+
+##### Description level
+
+Apply curation to the root document of the API description.
+The `includes` keywords boost the root document to the top of search results.
+The `excludes` keywords remove the entire description file from search results for these terms.
+
+```yaml {% title="payments.yaml" %}
+openapi: 3.0.0
+x-keywords:
+  includes:
+    - payment api
+    - transaction
+  excludes:
+    - deprecated
+info:
+  version: 1.0.0
+  title: Payment API
+```
+
+##### Tag level
+
+Apply curation to a specific tag:
+
+```yaml {% title="payments.yaml" %}
+tags:
+  - name: payments
+    description: Payment operations
+    x-keywords:
+      includes:
+        - wallet
+        - checkout
+      excludes:
+        - refund
+```
+
+##### Operation level
+
+Apply curation to individual operations:
+
+```yaml {% title="payments.yaml" %}
+paths:
+  /payments:
+    post:
+      tags:
+        - payments
+      summary: Create a payment
+      description: Process a new payment transaction.
+      operationId: createPayment
+      x-keywords:
+        includes:
+          - apple pay
+          - credit card
+        excludes:
+          - google pay
+          - paypal
+```
+
 ## Examples
 
-### Basic configuration
+### Basic search configuration
 
 Hide the search bar:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 search:
   hide: true
 ```
 
 Set keyboard shortcuts for search:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 search:
   shortcuts:
     - ctrl+f
@@ -326,7 +451,7 @@ search:
 
 Set suggested pages for the search modal:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 search:
   suggestedPages:
     - label: Home page
@@ -338,7 +463,7 @@ search:
 
 Override the default `redocly_category` facet:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 search:
   filters:
     facets:
@@ -349,7 +474,7 @@ search:
 
 Create a custom facet:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 search:
   filters:
     facets:
@@ -360,7 +485,7 @@ search:
 
 Override all default search facets:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 search:
   filters:
     facets:
@@ -381,11 +506,12 @@ search:
         type: select
 ```
 
+
 ### AI search
 
 Display the AI search button with a custom prompt:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 search:
   ai:
     hide: false
@@ -394,7 +520,7 @@ search:
 
 Set AI search suggestions:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 search:
   ai:
     hide: false

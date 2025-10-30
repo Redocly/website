@@ -37,7 +37,7 @@ For most customers, your current product (including Workflows, API Reference, an
 
 Our open source projects are unchanged. Those products are:
 
-- [Redoc](../../docs/redoc/index.md), open source API reference documentation (separate from the commercial hosted Redoc product that also provides API reference documentation).
+- [Redoc](../../docs/redoc/@v2.x/index.md), open source API reference documentation (separate from the commercial hosted Redoc product that also provides API reference documentation).
   Expect to see updates to the open source project in the coming months.
 
 - [Redocly CLI](../../docs/cli), your open source multitool for all your API needs.

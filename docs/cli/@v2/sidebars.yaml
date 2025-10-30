@@ -104,6 +104,10 @@
             - page: rules/oas/no-invalid-media-type-examples.md
             - page: rules/oas/no-invalid-parameter-examples.md
             - page: rules/oas/no-invalid-schema-examples.md
+            - page: rules/oas/spec-no-invalid-tag-parents.md
+            - page: rules/oas/spec-example-values.md
+            - page: rules/oas/spec-discriminator-defaultMapping.md
+            - page: rules/oas/spec-no-invalid-encoding-combinations.md
             - page: rules/oas/no-path-trailing-slash.md
             - page: rules/oas/no-server-example-com.md
             - page: rules/oas/no-server-trailing-slash.md
@@ -145,9 +149,10 @@
             - separator: Arazzo
             - page: rules/respect/no-criteria-xpath.md
             - page: rules/respect/respect-supported-versions.md
+            - page: rules/respect/no-x-security-both-scheme-and-scheme-name.md
             - page: rules/respect/no-x-security-scheme-name-without-openapi.md
+            - page: rules/respect/x-security-scheme-name-reference.md
             - page: rules/respect/x-security-scheme-required-values.md
-            - page: rules/respect/no-x-security-scheme-name-in-workflow.md
             - page: rules/arazzo/criteria-unique.md
             - page: rules/arazzo/parameters-unique.md
             - page: rules/arazzo/requestBody-replacements-unique.md

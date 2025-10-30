@@ -11,21 +11,22 @@ Requires that the contents of every `enum` value in your API description conform
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ```mermaid
 flowchart TD
 
 Root ==> Paths --> PathItem --> Operation --> Parameter --> Schema
 PathItem --> Parameter
-NamedParameter --> Parameter
+NamedParameters --> Parameter
 Operation --> RequestBody --> MediaType --> Schema
 Operation --> Responses --> MediaType
-NamedSchema --> Schema
+NamedSchemas --> Schema
 Root ==> components
 
 subgraph components
-NamedParameter
-NamedSchema
+NamedParameters
+NamedSchemas
 end
 
 style Schema fill:#codaf9,stroke:#0044d4,stroke-width:5px

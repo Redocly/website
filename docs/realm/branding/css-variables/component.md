@@ -1529,142 +1529,172 @@
 </details>
 
 <details>
-<summary>Search AI</summary>
+<summary>Search AI common variables</summary>
 
 ```css
-  --search-ai-spinner-icon-color: var(--icon-color-interactive);
-  --search-ai-checkmark-icon-color: var(--icon-color-interactive);
-  --search-ai-response-padding: var(--spacing-lg);
-  --search-ai-response-gap: var(--spacing-sm);
+--search-ai-gradient: linear-gradient(to right, #715efe, #ff5cdc);
 
-  --search-ai-response-header-gap: var(--spacing-md);
+--search-ai-response-padding: var(--spacing-lg);
+--search-ai-response-gap: var(--spacing-sm);
+--search-ai-response-header-gap: var(--spacing-md);
+--search-ai-response-body-gap: var(--spacing-xl);
+--search-ai-response-body-padding: 0 40px;
 
-  --search-ai-question-font-size: var(--font-size-xl);
-  --search-ai-question-font-weight: var(--font-weight-semibold);
-  --search-ai-question-line-height: var(--line-height-xl);
-  --search-ai-question-text-color: var(--text-color-primary);
+--search-ai-spinner-icon-color: var(--icon-color-interactive);
+--search-ai-checkmark-icon-color: var(--icon-color-interactive);
 
-  --search-ai-response-body-gap: var(--spacing-xl);
-  --search-ai-response-body-padding: 0 40px;
+--search-ai-button-icon-color: none;
 
-  --search-ai-text-color: var(--text-color-secondary);
-  --search-ai-text-font-size: var(--font-size-lg);
-  --search-ai-text-line-height: var(--line-height-lg);
+--search-ai-welcome-margin: var(--spacing-md);
+```
 
-  --search-ai-user-bg-color: var(--color-blue-6);
-  --search-ai-user-text-color: var(--color-static-white);
-  --search-ai-assistant-bg-color: var(--layer-color);
-  --search-ai-assistant-text-color: var(--text-color-primary);
-  --search-ai-assistant-border: 1px solid var(--border-color-primary);
+</details>
 
-  --search-ai-resources-gap: var(--spacing-base);
-  --search-ai-resources-title-font-weight: var(--font-weight-medium);
-  --search-ai-resources-title-font-size: var(--font-size-lg);
-  --search-ai-resources-title-line-height: var(--line-height-lg);
+<details>
+<summary>Search AI typography</summary>
 
-  --search-ai-resource-tags-gap: var(--spacing-base);
-  --search-ai-resource-tag-text-color: var(--text-color-secondary);
-  --search-ai-resource-tag-icon-color: var(--text-color-secondary);
-  --search-ai-resource-tag-icon-size: 16px;
+```css
+--search-ai-question-font-size: var(--font-size-xl);
+--search-ai-question-font-weight: var(--font-weight-semibold);
+--search-ai-question-line-height: var(--line-height-xl);
+--search-ai-question-text-color: var(--text-color-primary);
 
-  --search-ai-icon-size: 32px;
-  --search-ai-icon-bg-color: var(--search-ai-gradient);
-  --search-ai-icon-color: var(--color-static-white);
+--search-ai-text-color: var(--text-color-secondary);
+--search-ai-text-font-size: var(--font-size-lg);
+--search-ai-text-line-height: var(--line-height-lg);
+--search-ai-thinking-text-margin: var(--md-pre-margin) 0;
 
-  --search-ai-button-icon-color: none;
+--search-ai-disclaimer-font-size: var(--font-size-sm);
+--search-ai-disclaimer-line-height: var(--line-height-sm);
+--search-ai-disclaimer-text-color: var(--text-color-secondary);
+```
 
-  --search-ai-thinking-dots-gap: 4px;
-  --search-ai-thinking-dots-padding: 4px 0;
-  --search-ai-thinking-dot-size: 6px;
-  --search-ai-thinking-dot-color: var(--search-ai-gradient);
+</details>
 
-  --search-ai-disclaimer-font-size: var(--font-size-sm);
-  --search-ai-disclaimer-line-height: var(--line-height-sm);
-  --search-ai-disclaimer-text-color: var(--text-color-secondary);
+<details>
+<summary>Search AI messages</summary>
 
-  --search-ai-gradient: linear-gradient(to right, #715efe, #ff5cdc);
+```css
+--search-ai-user-bg-color: var(--color-blue-6);
+--search-ai-user-text-color: var(--color-static-white);
+--search-ai-assistant-bg-color: var(--layer-color);
+--search-ai-assistant-text-color: var(--text-color-primary);
+--search-ai-assistant-border: 1px solid var(--border-color-primary);
+--search-ai-assistant-message-max-width: 80%;
+```
 
-  --search-ai-welcome-margin: var(--spacing-md);
-  --search-ai-icon-wrapper-padding: var(--spacing-xs);
+</details>
 
-  --search-ai-suggestions-title-text-color: var(--text-color-description);
-  --search-ai-suggestions-title-font-size: var(--font-size-base);
-  --search-ai-suggestions-title-line-height: var(--line-height-base);
-  --search-ai-suggestions-title-font-weight: var(--font-weight-light);
-  
-  --search-ai-suggestions-text-color: var(--text-color-description);
+<details>
+<summary>Search AI icon</summary>
 
-  --search-ai-conversation-input-send-button-bg-color: var(--button-bg-color-primary);
-  --search-ai-conversation-input-send-button-bg-color-hover: var(--button-bg-color-primary-hover);
-  --search-ai-conversation-input-send-button-bg-color-disabled: var(--button-bg-color-disabled);
-  --search-ai-conversation-input-send-button-border-color-disabled: var(--button-border-color-disabled);
-  --search-ai-conversation-input-send-button-icon-color: var(--color-static-white);
+```css
+--search-ai-icon-size: 32px;
+--search-ai-icon-bg-color: var(--search-ai-gradient);
+--search-ai-icon-color: var(--color-static-white);
+--search-ai-icon-wrapper-padding: var(--spacing-xs);
+```
 
-  --search-ai-dialog-bg-color: var(--bg-color);
-  --search-ai-dialog-header-border: var(--search-modal-border);
-  --search-ai-dialog-header-bg-color: var(--search-modal-header-bg-color);
-  --search-ai-dialog-header-padding: var(--search-modal-header-padding);
+</details>
 
-  --search-ai-dialog-body-padding: var(--search-ai-response-padding);
-  --search-ai-dialog-body-gap: var(--spacing-sm);
+<details>
+<summary>Search AI resources</summary>
 
-  --search-ai-dialog-input-padding: var(--spacing-sm) var(--search-ai-response-padding);
-  --search-ai-dialog-input-border: 1px solid var(--border-color-secondary);
-  --search-ai-dialog-input-bg-color: var(--bg-color);
+```css
+--search-ai-resources-gap: var(--spacing-xxs);
+--search-ai-resources-title-font-weight: var(--font-weight-medium);
+--search-ai-resources-title-font-size: var(--font-size-lg);
+--search-ai-resources-title-line-height: var(--line-height-lg);
 
-  --search-ai-conversation-input-bg-color: var(--bg-color);
-  --search-ai-conversation-input-padding: var(--spacing-sm) var(--spacing-md);
-  --search-ai-conversation-input-border: 1px solid var(--border-color-secondary);
-  --search-ai-conversation-input-border-radius: var(--border-radius-lg);
-  --search-ai-conversation-input-font-size: var(--font-size-base);
-  --search-ai-conversation-input-placeholder-color: var(--search-input-placeholder-color);
-  --search-ai-conversation-input-border-color-focus: var(--color-blue-6);
-  --search-ai-conversation-input-border-color-disabled: var(--border-color-secondary);
+--search-ai-resource-tags-gap: var(--spacing-xxs);
+--search-ai-resource-tag-text-color: var(--text-color-secondary);
+--search-ai-resource-tag-icon-color: var(--text-color-secondary);
+--search-ai-resource-tag-icon-size: 16px;
+```
 
-  --search-ai-conversation-input-send-button-right: 12px;
-  --search-ai-conversation-input-send-button-bg-color: var(--button-bg-color-primary);
-  --search-ai-conversation-input-send-button-bg-color-hover: var(--button-bg-color-primary-hover);
-  --search-ai-conversation-input-send-button-bg-color-disabled: var(--button-bg-color-disabled);
-  --search-ai-conversation-input-send-button-border-disabled: 1px solid var(--button-border-color-disabled);
+</details>
 
-  --search-ai-response-padding: var(--spacing-lg);
-  --search-ai-response-gap: var(--spacing-sm);
-  --search-ai-response-header-gap: var(--spacing-md);
-  --search-ai-response-body-gap: var(--spacing-xl);
-  --search-ai-response-body-padding: 0 40px;
+<details>
+<summary>Search AI suggestions</summary>
 
-  --search-ai-text-color: var(--text-color-secondary);
-  --search-ai-text-font-size: var(--font-size-lg);
-  --search-ai-text-line-height: var(--line-height-lg);
+```css
+--search-ai-suggestions-gap: var(--spacing-sm);
+--search-ai-suggestions-margin-left: var(--spacing-xs);
+--search-ai-suggestion-item-gap: var(--spacing-xxs);
+--search-ai-suggestions-title-text-color: var(--text-color-description);
+--search-ai-suggestions-title-font-size: var(--font-size-base);
+--search-ai-suggestions-title-line-height: var(--line-height-base);
+--search-ai-suggestions-title-font-weight: var(--font-weight-light);
+--search-ai-suggestions-text-color: var(--text-color-description);
+```
 
-  --search-ai-thinking-text-margin: var(--md-pre-margin) 0;
+</details>
 
-  --search-ai-question-font-size: var(--font-size-xl);
-  --search-ai-question-font-weight: var(--font-weight-semibold);
-  --search-ai-question-line-height: var(--line-height-xl);
-  --search-ai-question-text-color: var(--text-color-primary);
+<details>
+<summary>Search AI thinking animation</summary>
 
-  --search-ai-resources-gap: var(--spacing-base);
-  --search-ai-resources-title-font-weight: var(--font-weight-medium);
-  --search-ai-resources-title-font-size: var(--font-size-lg);
-  --search-ai-resources-title-line-height: var(--line-height-lg);
+```css
+--search-ai-thinking-dots-gap: 4px;
+--search-ai-thinking-dots-padding: 4px 0;
+--search-ai-thinking-dot-size: 6px;
+--search-ai-thinking-dot-color: var(--search-ai-gradient);
+```
 
-  --search-ai-resource-tags-gap: var(--spacing-base);
-  --search-ai-resource-tag-text-color: var(--text-color-secondary);
-  --search-ai-resource-tag-icon-color: var(--text-color-secondary);
+</details>
 
-  --search-ai-suggestions-gap: var(--spacing-sm);
-  --search-ai-suggestions-margin-left: var(--spacing-xs);
-  --search-ai-suggestion-item-gap: var(--spacing-xs);
+<details>
+<summary>Search AI feedback</summary>
 
-  --search-ai-suggestions-title-text-color: var(--text-color-description);
-  --search-ai-suggestions-title-font-size: var(--font-size-base);
-  --search-ai-suggestions-title-line-height: var(--line-height-base);
-  --search-ai-suggestions-title-font-weight: var(--font-weight-light);
+```css
+--search-ai-feedback-gap: var(--spacing-xxs);
+--search-ai-feedback-form-bg-color: var(--background-color-secondary);
+--search-ai-feedback-form-border-color: var(--border-color-primary);
+```
 
-  --search-ai-spinner-icon-color: var(--icon-color-interactive);
-  --search-ai-checkmark-icon-color: var(--icon-color-interactive);
+</details>
 
+<details>
+<summary>Search AI dialog</summary>
+
+```css
+--search-ai-dialog-bg-color: var(--bg-color);
+--search-ai-dialog-header-border: var(--search-modal-border);
+--search-ai-dialog-header-bg-color: var(--search-modal-header-bg-color);
+--search-ai-dialog-header-padding: var(--search-modal-header-padding);
+
+--search-ai-dialog-body-padding: var(--search-ai-response-padding);
+--search-ai-dialog-body-gap: var(--spacing-sm);
+
+--search-ai-dialog-input-padding: var(--spacing-sm) var(--search-ai-response-padding);
+--search-ai-dialog-input-border: 1px solid var(--border-color-secondary);
+--search-ai-dialog-input-bg-color: var(--bg-color);
+```
+
+</details>
+
+<details>
+<summary>Search AI conversation input</summary>
+
+```css
+--search-ai-conversation-input-bg-color: var(--bg-color);
+--search-ai-conversation-input-bg-color-disabled: var(--color-warm-grey-1);
+--search-ai-conversation-input-padding: var(--spacing-sm) var(--spacing-md);
+--search-ai-conversation-input-border: 1px solid var(--border-color-secondary);
+--search-ai-conversation-input-border-radius: var(--border-radius-lg);
+--search-ai-conversation-input-font-size: var(--font-size-base);
+--search-ai-conversation-input-placeholder-color: var(--search-input-placeholder-color);
+--search-ai-conversation-input-border-color-focus: var(--color-blue-6);
+--search-ai-conversation-input-border-color-disabled: var(--border-color-secondary);
+
+--search-ai-conversation-input-send-button-right: 12px;
+--search-ai-conversation-input-send-button-padding: 5px;
+--search-ai-conversation-input-send-button-bg-color: var(--button-bg-color-primary);
+--search-ai-conversation-input-send-button-bg-color-hover: var(--button-bg-color-primary-hover);
+--search-ai-conversation-input-send-button-bg-color-disabled: var(--button-bg-color-disabled);
+--search-ai-conversation-input-send-button-border-color-disabled: var(--button-border-color-disabled);
+--search-ai-conversation-input-send-button-icon-color: var(--color-static-white);
+--search-ai-conversation-input-send-button-border-radius: var(--border-radius);
+--search-ai-conversation-input-send-button-border-disabled: 1px solid var(--button-border-color-disabled);
 ```
 
 </details>
@@ -2014,24 +2044,27 @@
 --tag-border-style: solid;
 --tag-border-radius: var(--border-radius-xl);
 --tag-box-shadow: none;
+--tag-border-radius-focused: var(--border-radius);
 
 --tag-status-dot-color-default: var(--color-persian-green-7);
 --tag-badge-size: var(--spacing-xs);
---tag-badge-border-width: 1.5px;
---tag-badge-border-color: #ffffff;
+--tag-badge-border-width: 2px;
+--tag-badge-border-color: var(--border-color-secondary);
+--tag-border-color-focused: var(--color-blue-4);
+--tag-close-button-bg-color-focus: var(--color-warm-grey-4);
 
 --tag-padding: 1px 8px;
 --tag-large-padding: 4px 16px;
 --tag-margin: 0 5px 0 0;
---tag-gap: 5px;
+--tag-gap: 4px;
 
 .tag-size-large {
   --tag-padding: var(--tag-large-padding);
   --tag-font-size: var(--font-size-base);
 }
 
---tag-icon-width: 1em;
---tag-icon-height: 1em;
+--tag-icon-width: 14px;
+--tag-icon-height: 14px;
 
 --tag-basic-content-color: var(--color-warm-grey-9);
 --tag-basic-bg-color: var(--color-warm-grey-2);
@@ -2049,131 +2082,204 @@
 .tag-draft,
 .tag-schema,
 .tag-default {
-  --tag-color: var(--text-color-primary);
+  --tag-color: var(--text-color-secondary);
   --tag-bg-color: var(--color-warm-grey-2);
   --tag-border-color: var(--border-color-primary);
+  --tag-bg-color-hover: var(--color-warm-grey-3);
+  --tag-close-button-bg-color-hover: var(--color-warm-grey-3);
+  --tag-border-color-hover: var(--color-warm-grey-5);
 }
 ```
 
 </details>
 <details>
-<summary>Tag green, success, approved, get</summary>
+<summary>Tag green</summary>
 
-> classes `'tag-green,','tag-success','tag-approved'`
+> classes `'tag-green'`
 
 ```css
-.tag-green,
+.tag-green {
+  --tag-color: var(--color-green-8);
+  --tag-bg-color: var(--color-green-1);
+  --tag-border-color: var(--color-green-5);
+  --tag-bg-color-hover: var(--color-green-2);
+  --tag-close-button-bg-color-hover: var(--color-green-2);
+  --tag-border-color-hover: var(--color-green-6);
+}
+```
+
+</details>
+<details>
+<summary>Tag success, approved</summary>
+
+> classes `'tag-success','tag-approved'`
+
+```css
 .tag-success,
 .tag-approved {
   --tag-color: var(--color-success-active);
   --tag-bg-color: var(--color-success-bg);
-  --tag-border-color: var(--color-success-active);
+  --tag-border-color: var(--color-success-border);
+  --tag-close-button-bg-color-hover: var(--color-success-bg-hover);
+  --tag-bg-color-hover: var(--color-success-bg-hover);
+  --tag-border-color-hover: var(--color-success-border-hover); 
 }
 ```
 
 </details>
 <details>
-<summary>Tag red, error, declined, delete</summary>
+<summary>Tag red</summary>
 
-> classes `'tag-red,','tag-error','tag-declined'`
+> classes `'tag-red,'`
 
 ```css
-.tag-red,
+.tag-red {
+  --tag-color: var(--color-red-7);
+  --tag-bg-color: var(--color-red-1);
+  --tag-border-color: var(--color-red-3);
+  --tag-close-button-bg-color-hover: var(--color-red-2);
+  --tag-bg-color-hover: var(--color-red-2);
+  --tag-border-color-hover: var(--color-red-5);
+}
+```
+
+</details>
+<details>
+<summary>Tag error, declined</summary>
+
+> classes `'tag-error','tag-declined'`
+
+```css
 .tag-error,
 .tag-declined {
   --tag-color: var(--color-error-active);
   --tag-bg-color: var(--color-error-bg);
-  --tag-border-color: var(--color-error-active);
+  --tag-border-color: var(--color-error-border);
+  --tag-close-button-bg-color-hover: var(--color-error-hover);
+  --tag-bg-color-hover: var(--color-error-bg-hover);
+  --tag-border-color-hover: var(--color-error-border-hover);
 }
 ```
 
 </details>
 <details>
-<summary>Tag gold, warning, deprecated, put</summary>
+<summary>Tag warning, deprecated</summary>
 
-> classes `'tag-gold,','tag-warning','tag-deprecated'`
+> classes `'tag-warning','tag-deprecated'`
 
 ```css
-.tag-gold,
 .tag-warning,
 .tag-deprecated {
   --tag-color: var(--color-warning-active);
   --tag-bg-color: var(--color-warning-bg);
-  --tag-border-color: var(--color-warning-active);
+  --tag-border-color: var(--color-warning-border);
+  --tag-close-button-bg-color-hover: var(--color-warning-hover);
+  --tag-bg-color-hover: var(--color-warning-bg-hover);
+  --tag-border-color-hover: var(--color-warning-border-hover);
 }
 ```
 
 </details>
 <details>
-<summary>Tag blue, processing, post</summary>
+<summary>Tag blue</summary>
 
-> classes `'tag-blue,','tag-processing'`
+> classes `'tag-blue'`
 
 ```css
-.tag-blue,
-.tag-processing {
+.tag-blue {
+  --tag-color: var(--color-blue-7);
+  --tag-bg-color: var(--color-blue-1);
+  --tag-border-color: var(--color-blue-4);
+  --tag-bg-color-hover: var(--color-blue-2);
+  --tag-close-button-bg-color-hover: var(--color-blue-2);
+  --tag-border-color-hover: var(--color-blue-6);
+}
+```
+
+</details>
+<details>
+<summary>Tag processing, info</summary>
+
+> classes `'tag-processing','tag-info'`
+
+```css
+.tag-processing,
+.tag-info {
   --tag-color: var(--color-info-active);
   --tag-bg-color: var(--color-info-bg);
-  --tag-border-color: var(--color-info-active);
+  --tag-border-color: var(--color-info-border);
+  --tag-close-button-bg-color-hover: var(--color-info-hover);
+  --tag-bg-color-hover: var(--color-info-bg-hover);
+  --tag-border-color-hover: var(--color-info-border-hover);
 }
 ```
 
 </details>
 <details>
-<summary>Tag purple, head</summary>
+<summary>Tag link</summary>
 
-> classes `'tag-purple,','tag-head'`
+> classes `'tag-link'`
 
 ```css
-.tag-purple,
-.tag-head {
+.tag-link {
+  --tag-color: var(--color-info-active);
+  --tag-bg-color: var(--color-info-bg);
+  --tag-border-color: var(--color-info-border);
+  --tag-close-button-bg-color-hover: var(--color-info-hover);
+  --tag-bg-color-hover: var(--color-info-bg-hover);
+  --tag-border-color-hover: var(--color-info-border-hover);
+}
+```
+
+</details>
+<details>
+<summary>Tag purple</summary>
+
+> classes `'tag-purple'`
+
+```css
+.tag-purple {
   --tag-color: var(--color-purple-7);
   --tag-bg-color: var(--color-purple-1);
-  --tag-border-color: var(--color-purple-7);
+  --tag-border-color: var(--color-purple-4);
+  --tag-bg-color-hover: var(--color-purple-2);
+  --tag-close-button-bg-color-hover: var(--color-purple-2);
+  --tag-border-color-hover: var(--color-purple-6);
 }
 ```
 
 </details>
 <details>
-<summary>Tag cyan, option</summary>
+<summary>Tag turquoise, option</summary>
 
-> classes `'tag-cyan,','tag-option'`
-
-```css
-  .tag-cyan,
-  .tag-option {
-    --tag-color: var(--color-turquoise-7);
-    --tag-bg-color: var(--color-turquoise-1);
-    --tag-border-color: var(--color-turquoise-7);
-  }
-```
-
-</details>
-<details>
-<summary>Tag yellow</summary>
-
-> classes `'tag-yellow'`
+> classes `'tag-turquoise','tag-option'`
 
 ```css
-.tag-yellow {
-  --tag-color: var(--color-carrot-7);
-  --tag-bg-color: var(--color-carrot-1);
-  --tag-border-color: var(--color-carrot-7);
-}
-```
-
-</details>
-<details>
-<summary>Tag geekblue, link</summary>
-
-> classes `'tag-geekblue,','tag-link'`
-
-```css
-.tag-geekblue,
-.tag-link {
-  --tag-color: var(--color-turquoise-7);
+.tag-turquoise,
+.tag-option {
+  --tag-color: var(--color-turquoise-8);
   --tag-bg-color: var(--color-turquoise-1);
-  --tag-border-color: var(--color-turquoise-7);
+  --tag-border-color: var(--color-turquoise-5);
+  --tag-bg-color-hover: var(--color-turquoise-2);
+  --tag-close-button-bg-color-hover: var(--color-turquoise-2);
+  --tag-border-color-hover: var(--color-turquoise-7);
+}
+```
+
+</details>
+<details>
+<summary>Tag carrot</summary>
+
+> classes `'tag-carrot'`
+
+```css
+.tag-carrot {
+  --tag-color: var(--color-carrot-8);
+  --tag-bg-color: var(--color-carrot-1);
+  --tag-border-color: var(--color-carrot-6);
+  --tag-bg-color-hover: var(--color-carrot-2);
+  --tag-close-button-bg-color-hover: var(--color-carrot-2);
+  --tag-border-color-hover: var(--color-carrot-7);
 }
 ```
 
@@ -2181,33 +2287,21 @@
 <details>
 <summary>Tag magenta, hook</summary>
 
-> classes `'tag-magenta,','tag-hook'`
+> classes `'tag-magenta','tag-hook'`
 
 ```css
 .tag-magenta,
 .tag-hook {
   --tag-color: var(--color-magenta-7);
   --tag-bg-color: var(--color-magenta-1);
-  --tag-border-color: var(--color-magenta-7);
+  --tag-border-color: var(--color-magenta-3);
+  --tag-bg-color-hover: var(--color-magenta-2);
+  --tag-close-button-bg-color-hover: var(--color-magenta-2);
+  --tag-border-color-hover: var(--color-magenta-5);
 }
 ```
 
 </details>
-<details>
-<summary>Tag lime</summary>
-
-> classes `'tag-lime'`
-
-```css
-.tag-lime {
-  --tag-color: var(--color-green-7);
-  --tag-bg-color: none;
-  --tag-border-color: var(--color-green-7);
-}
-```
-
-</details>
-
 <details>
 <summary>Tag product</summary>
 
@@ -2215,9 +2309,253 @@
 
 ```css
 .tag-product {
-  --tag-color: var(--color-green-7);
-  --tag-bg-color: none;
-  --tag-border-color: var(--color-green-7);
+  --tag-color: var(--color-warm-grey-7);
+  --tag-bg-color: transparent;
+  --tag-border-color: var(--color-warm-grey-4);
+  --tag-close-button-bg-color-hover: var(--color-warm-grey-3);
+}
+```
+
+</details>
+<details>
+<summary>Tag grass</summary>
+
+> classes `'tag-grass'`
+
+```css
+.tag-grass {
+  --tag-color: var(--color-grass-8);
+  --tag-bg-color: var(--color-grass-1);
+  --tag-border-color: var(--color-grass-4);
+  --tag-bg-color-hover: var(--color-grass-2);
+  --tag-close-button-bg-color-hover: var(--color-grass-2);
+  --tag-border-color-hover: var(--color-grass-6);
+}
+```
+
+</details>
+<details>
+<summary>Tag sky</summary>
+
+> classes `'tag-sky'`
+
+```css
+.tag-sky {
+  --tag-color: var(--color-sky-8);
+  --tag-bg-color: var(--color-sky-1);
+  --tag-border-color: var(--color-sky-5);
+  --tag-bg-color-hover: var(--color-sky-2);
+  --tag-close-button-bg-color-hover: var(--color-sky-2);
+  --tag-border-color-hover: var(--color-sky-7);
+}
+```
+
+</details>
+<details>
+<summary>Tag raspberry</summary>
+
+> classes `'tag-raspberry'`
+
+```css
+.tag-raspberry {
+  --tag-color: var(--color-raspberry-7);
+  --tag-bg-color: var(--color-raspberry-1);
+  --tag-border-color: var(--color-raspberry-3);
+  --tag-bg-color-hover: var(--color-raspberry-2);
+  --tag-close-button-bg-color-hover: var(--color-raspberry-2);
+  --tag-border-color-hover: var(--color-raspberry-5);
+}
+```
+
+</details>
+<details>
+<summary>Tag orange</summary>
+
+> classes `'tag-orange'`
+
+```css
+.tag-orange {
+  --tag-color: var(--color-orange-7);
+  --tag-bg-color: var(--color-orange-1);
+  --tag-border-color: var(--color-orange-4);
+  --tag-bg-color-hover: var(--color-orange-2);
+  --tag-close-button-bg-color-hover: var(--color-orange-2);
+  --tag-border-color-hover: var(--color-orange-5);
+}
+```
+
+</details>
+<details>
+<summary>Tag persian green</summary>
+
+> classes `'tag-persian-green'`
+
+```css
+.tag-persian-green {
+  --tag-color: var(--color-persian-green-8);
+  --tag-bg-color: var(--color-persian-green-1);
+  --tag-border-color: var(--color-persian-green-5);
+  --tag-bg-color-hover: var(--color-persian-green-2);
+  --tag-close-button-bg-color-hover: var(--color-persian-green-2);
+  --tag-border-color-hover: var(--color-persian-green-6);
+}
+```
+
+</details>
+<details>
+<summary>Tag blueberry</summary>
+
+> classes `'tag-blueberry'`
+
+```css
+.tag-blueberry {
+  --tag-color: var(--color-blueberry-7);
+  --tag-bg-color: var(--color-blueberry-1);
+  --tag-border-color: var(--color-blueberry-4);
+  --tag-bg-color-hover: var(--color-blueberry-2);
+  --tag-close-button-bg-color-hover: var(--color-blueberry-2);
+  --tag-border-color-hover: var(--color-blueberry-6);
+}
+```
+
+</details>
+<details>
+<summary>Tag send</summary>
+
+> classes `'tag-send'`
+
+```css
+.tag-send {
+  --tag-color: #4144F6;
+  --tag-bg-color: #ECECFE;
+  --tag-bg-color-hover: #CFCFFC;
+}
+```
+
+</details>
+<details>
+<summary>Tag pub</summary>
+
+> classes `'tag-pub'`
+
+```css
+.tag-pub {
+  --tag-color: #4144F6;
+  --tag-bg-color: #ECECFE;
+  --tag-bg-color-hover: #CFCFFC;
+}
+```
+
+</details>
+<details>
+<summary>Tag publish</summary>
+
+> classes `'tag-publish'`
+
+```css
+.tag-publish {
+  --tag-color: #4144F6;
+  --tag-bg-color: #ECECFE;
+  --tag-bg-color-hover: #CFCFFC;
+}
+```
+
+</details>
+<details>
+<summary>Tag receive</summary>
+
+> classes `'tag-receive'`
+
+```css
+.tag-receive {
+  --tag-color: #4db144;
+  --tag-bg-color:  #E5FDE2;
+  --tag-bg-color-hover: #D4FCCF;
+}
+```
+
+</details>
+<details>
+<summary>Tag sub</summary>
+
+> classes `'tag-sub'`
+
+```css
+.tag-sub {
+  --tag-color: #4db144;
+  --tag-bg-color:  #E5FDE2;
+  --tag-bg-color-hover: #D4FCCF;
+}
+```
+
+</details>
+<details>
+<summary>Tag cons</summary>
+
+> classes `'tag-cons'`
+
+```css
+.tag-cons {
+  --tag-color: #4db144;
+  --tag-bg-color:  #E5FDE2;
+  --tag-bg-color-hover: #D4FCCF;
+}
+```
+
+</details>
+<details>
+<summary>Tag channel</summary>
+
+> classes `'tag-channel'`
+
+```css
+.tag-channel {
+  --tag-color: #F0870E;
+  --tag-bg-color: #FDF1E2;
+  --tag-bg-color-hover: #FBE1C1;
+}
+```
+
+</details>
+<details>
+<summary>Tag topic</summary>
+
+> classes `'tag-topic'`
+
+```css
+.tag-topic {
+  --tag-color: #F0870E;
+  --tag-bg-color: #FDF1E2;
+  --tag-bg-color-hover: #FBE1C1;
+}
+```
+
+</details>
+<details>
+<summary>Tag queue</summary>
+
+> classes `'tag-queue'`
+
+```css
+.tag-queue {
+  --tag-color: #D72E81;
+  --tag-bg-color: #FAE5F0;
+  --tag-bg-color-hover: #F7D4E6;
+}
+```
+
+</details>
+<details>
+<summary>Tag exchange or exch</summary>
+
+> classes `'tag-exchange', 'tag-exch'`
+
+```css
+.tag-exchange,
+.tag-exch {
+  --tag-color: #9B51E0;
+  --tag-bg-color: #F0E5FA;
+  --tag-bg-color-hover: #E6D4F7;
 }
 ```
 
@@ -2237,14 +2575,37 @@
 --http-tag-border: none;
 --http-tag-bg-color: none;
 
---http-tag-operation-color-delete: #E70B46;
---http-tag-operation-color-get: #25B869;
---http-tag-operation-color-post: #1E65F5;
---http-tag-operation-color-put: #F5901D;
---http-tag-operation-color-patch: #F5C31D;
+--tag-operation-color-delete: #e70b46;
+--tag-operation-bg-color-delete: #fee2e9;
+--tag-operation-bg-color-delete-hover: #fdd3dd;
+
+--tag-operation-color-get: #25b869;
+--tag-operation-bg-color-get: #e5faef;
+--tag-operation-bg-color-get-hover: #D4F7E5;
+
+--tag-operation-color-post: #1e65f5;
+--tag-operation-bg-color-post: #e2ebfe;
+--tag-operation-bg-color-post-hover: #CEDDFD;
+
+--tag-operation-color-put: #f5901d;
+--tag-operation-bg-color-put: #fef1e2;
+--tag-operation-bg-color-put-hover: #FDE2C4;
+
+--tag-operation-color-patch: #f5c31d;
+--tag-operation-bg-color-patch: #fdf6dd;
+--tag-operation-bg-color-patch-hover: #FCF0C5;
+
+--tag-operation-color-head: #6355CA;
+--tag-operation-bg-color-head: #ECEBFA;
+--tag-operation-bg-color-head-hover: #E0DEF7;
+
+--tag-operation-color-options: #1a1c21;
+--tag-operation-bg-color-options: #ededf2;
+
+--tag-operation-color-deprecated: var(--text-color-disabled);
 ```
 
-> classes `'tag-http','tag-get','tag-post','tag-put','tag-patch','tag-delete'`
+> classes `'tag-http','tag-get','tag-post','tag-put','tag-patch','tag-delete','tag-head'`
 
 ```css
 .tag-http {
@@ -2253,23 +2614,39 @@
 }
 
 .tag-get {
-  --tag-color: var(--http-tag-operation-color-get);
+  --tag-color: var(--tag-operation-color-get);
+  --tag-bg-color: var(--tag-operation-bg-color-get);
+  --tag-bg-color-hover: var(--tag-operation-bg-color-get-hover);
 }
 
 .tag-post {
-  --tag-color: var(--http-tag-operation-color-post);
+  --tag-color: var(--tag-operation-color-post);
+  --tag-bg-color: var(--tag-operation-bg-color-post);
+  --tag-bg-color-hover: var(--tag-operation-bg-color-post-hover);
 }
 
 .tag-put {
-  --tag-color: var(--http-tag-operation-color-put);
+  --tag-color: var(--tag-operation-color-put);
+  --tag-bg-color: var(--tag-operation-bg-color-put);
+  --tag-bg-color-hover: var(--tag-operation-bg-color-put-hover);
 }
 
 .tag-patch {
-  --tag-color: var(--http-tag-operation-color-patch);
+  --tag-color: var(--tag-operation-color-patch);
+  --tag-bg-color: var(--tag-operation-bg-color-patch);
+  --tag-bg-color-hover: var(--tag-operation-bg-color-patch-hover);
 }
 
 .tag-delete {
-  --tag-color: var(--http-tag-operation-color-delete);
+  --tag-color: var(--tag-operation-color-delete);
+  --tag-bg-color: var(--tag-operation-bg-color-delete);
+  --tag-bg-color-hover: var(--tag-operation-bg-color-delete-hover);
+}
+
+.tag-head {
+  --tag-color: var(--tag-operation-color-head);
+  --tag-bg-color: var(--tag-operation-bg-color-head);
+  --tag-bg-color-hover: var(--tag-operation-bg-color-head-hover);
 }
 ```
 

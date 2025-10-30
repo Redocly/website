@@ -15,22 +15,4 @@
 - label: ← Back to Docs
   href: /docs
 - separatorLine: true
-- page: docs/redoc/index.md
-  label: Redoc Community Edition
-- label: Quickstart
-  page: docs/redoc/quickstart.md
-- page: docs/redoc/config.md
-  label: Configuration
-- group: Deployment guides
-  page: docs/redoc/deployment/intro.md
-  items:
-    - label: HTML element
-      page: docs/redoc/deployment/html.md
-    - label: React component
-      page: docs/redoc/deployment/react.md
-    - label: Docker image
-      page: docs/redoc/deployment/docker.md
-    - label: Redocly CLI
-      page: docs/redoc/deployment/cli.md
-- page: docs/redoc/redoc-vendor-extensions.md
-  label: Vendor extensions
+- $ref: docs/redoc/@v2.x/sidebars.yaml

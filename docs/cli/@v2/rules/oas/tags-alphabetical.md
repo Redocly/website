@@ -13,6 +13,7 @@ The rule only produces a warning or an error, and expects you to modify your API
 | 2.0 | ✅            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ## API design principles
 
@@ -76,7 +77,6 @@ tags:
 ## Related rules
 
 - [tag-description](./tag-description.md)
-- [operation-description](./operation-description.md)
 - [configurable rules](../configurable-rules.md)
 
 ## Resources

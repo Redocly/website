@@ -11,23 +11,23 @@ Disallow invalid media type examples by ensuring they comply with the correspond
 | 2.0 | ❌            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ```mermaid
 flowchart TD
 
-root ==> Paths --> PathItem --> Operation --> MediaType --> Example
-MediaType --> Examples --> Example
+Root ==> Paths --> PathItem --> Operation --> MediaType --> Example
+                                              MediaType --> Examples --> Example
 
-root ==> components
-
-NamedExample --> Example
+Root ==> components
 
 subgraph components
-NamedExample
+NamedExamples
 end
 
+NamedExamples --> Example
+
 style Example fill:#codaf9,stroke:#0044d4,stroke-width:5px
-style NamedExample fill:#codaf9,stroke:#0044d4,stroke-width:5px
 ```
 
 ## API design principles

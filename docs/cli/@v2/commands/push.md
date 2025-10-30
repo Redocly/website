@@ -16,7 +16,8 @@ Have the following values ready to use with the `push` command:
 - An active organization [API key](https://redocly.com/docs/realm/setup/how-to/api-keys).
 - [Redocly CLI](../installation.md) installed.
 
-Use the `REDOCLY_AUTHORIZATION` environment variable to set the API key. See the [Manage API keys](https://redocly.com/docs/realm/setup/how-to/api-keys) page in the documentation for details on how to get your API key in Reunite.
+Use the `REDOCLY_AUTHORIZATION` environment variable to set the API key.
+See the [Manage API keys](https://redocly.com/docs/realm/setup/how-to/api-keys) page in the documentation for details on how to get your API key in Reunite.
 
 ## Command usage
 
@@ -32,7 +33,7 @@ REDOCLY_AUTHORIZATION=<api-key> redocly push <files> --organization <organizatio
 | files                 | [string] | **REQUIRED.** List of folders and/or files to upload.                                                                                                                                  |
 | --organization, -o    |  string  | **REQUIRED.** Organization slug.                                                                                                                                                       |
 | --project, -p         |  string  | **REQUIRED.** Project slug.                                                                                                                                                            |
-| --mount-path, -mp     |  string  | **REQUIRED.** The path where the files are mounted in the project.                                                                                                                     |
+| --mount-path, -mp     |  string  | **REQUIRED.** The path where the files are mounted in the project. Cannot be empty or identical to the project path.                                                                   |
 | --branch, -b          |  string  | **REQUIRED.** The branch files are pushed from.                                                                                                                                        |
 | --author, -a          |  string  | **REQUIRED.** The author of the push in the format: `'Author Name <author-email@example.com>'`.                                                                                        |
 | --message, -m         |  string  | **REQUIRED.** The commit message for the push.                                                                                                                                         |
@@ -115,7 +116,8 @@ npx @redocly/cli push docs/museum.yaml \
               --wait-for-deployment
 ```
 
-The `docs/museum.yaml` file from the repository the action is running on is added to the `/docs/remotes/cicd` folder. The change is made on behalf of the latest commit author and uses the most recent commit message.
+The `docs/museum.yaml` file from the repository the action is running on is added to the `/docs/remotes/cicd` folder.
+The change is made on behalf of the latest commit author and uses the most recent commit message.
 
 The `--commit-sha`, `--commit-url`, `--namespace`, `--repository` options are used to attach the details of the push to the deployment and are also shown on the Reunite "Deployments" page.
 This information is useful in case you have multiple sources for the pushes.

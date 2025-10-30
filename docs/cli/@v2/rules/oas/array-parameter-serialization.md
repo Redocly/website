@@ -11,18 +11,19 @@ Enforces the inclusion of `style` and `explode` fields for parameters with array
 | 2.0 | ❌            |
 | 3.0 | ✅            |
 | 3.1 | ✅            |
+| 3.2 | ✅            |
 
 ```mermaid
 flowchart TD
 
-root ==> Paths --> PathItem --> Operation --> Parameter --enforces style and explode fields for array types--> Schema
+Root ==> Paths --> PathItem --> Operation --> Parameter --enforces style and explode fields for array types--> Schema
 PathItem --> Parameter
-NamedParameter --> Parameter
+NamedParameters --> Parameter
 
-root ==> components
+Root ==> components
 
 subgraph components
-NamedParameter
+NamedParameters
 end
 
 style Parameter fill:#codaf9,stroke:#0044d4,stroke-width:5px
@@ -105,5 +106,5 @@ paths:
 
 ## Resources
 
-- [Rule source for OAS 3.0 and 3.1](https://github.com/Redocly/redocly-cli/blob/main/packages/core/src/rules/oas3/array-parameter-serialization.ts)
+- [Rule source for OAS 3.0, 3.1, and 3.2](https://github.com/Redocly/redocly-cli/blob/main/packages/core/src/rules/oas3/array-parameter-serialization.ts)
 - [OpenAPI Parameter](https://redocly.com/docs/openapi-visual-reference/parameter/) docs
