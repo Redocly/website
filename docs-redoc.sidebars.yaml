@@ -15,4 +15,4 @@
 - label: ← Back to Docs
   href: /docs
 - separatorLine: true
-- $ref: docs/redoc/@v2.x/sidebars.yaml
+- $ref: docs/redoc/sidebars.yaml
