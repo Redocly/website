@@ -751,13 +751,17 @@ tr td:first-child code {
     width: var(--logo-width);
 }
 
-
-[data-component-name="Buttons/AIAssistantButton"] {
-  background: url("https://cdn.vectorstock.com/i/500p/32/48/ai-chip-microprocessor-icon-vector-52583248.jpg");
+[data-component-name="Buttons/AIAssistantButton"]::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("https://cdn.vectorstock.com/i/500p/32/48/ai-chip-microprocessor-icon-vector-52583248.jpg");
+    background-size: contain;
 }
 
 [data-component-name="Buttons/AIAssistantButton"] svg {
-    visibility: hidden;
+    display: none;
 }
 
 
