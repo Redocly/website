@@ -752,6 +752,15 @@ tr td:first-child code {
 }
 
 
+[data-component-name="Buttons/AIAssistantButton"] {
+  background: url("https://cdn.vectorstock.com/i/500p/32/48/ai-chip-microprocessor-icon-vector-52583248.jpg");
+}
+
+[data-component-name="Buttons/AIAssistantButton"] svg {
+    visibility: hidden;
+}
+
+
 /* Selects the element but no CSS vars are working
   [class^=CardIcon] {
     outline: 3px solid blue;
