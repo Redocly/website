@@ -24,8 +24,7 @@ import { Tag } from '@redocly/theme/components/Tag/Tag';
 
 - `color`
 - `StatusColor` \| `Color` \| `string`
-- Color scheme or custom color value.
-  Accepts predefined color values or any valid CSS color string.
+- Color scheme or custom color value. Accepts predefined color values or any valid CSS color string.
 
   **Predefined Color values:**
   - `'red'`, `'green'`, `'blue'`, `'grey'`, `'turquoise'`, `'magenta'`, `'purple'`, `'carrot'`, `'raspberry'`, `'orange'`, `'grass'`, `'persian-green'`, `'sky'`, `'blueberry'`
@@ -50,10 +49,8 @@ import { Tag } from '@redocly/theme/components/Tag/Tag';
 
 - `size`
 - `string`
-- Size variant for the tag.
-  Available values: `'small'`, `'medium'`, `'large'`.
-  Defaults to standard size.
-  See [CSS variables documentation](../../../branding/css-variables/component.md#tags) for theming details.
+- Size variant for the tag. Available values: `'small'`, `'medium'`, `'large'`.
+  Defaults to standard size. See [CSS variables documentation](../../../branding/css-variables/component.md#tags) for theming details.
 
 ---
 
@@ -100,8 +97,7 @@ import { Tag } from '@redocly/theme/components/Tag/Tag';
 
 - `maxLength`
 - `number`
-- Maximum character length before truncation.
-  Text longer than this value will be truncated with ellipsis.
+- Maximum character length before truncation. Text longer than this value will be truncated with ellipsis.
 
 ---
 
@@ -125,8 +121,7 @@ import { Tag } from '@redocly/theme/components/Tag/Tag';
 
 - `onClose`
 - `(event: React.MouseEvent) => void`
-- Close button click handler.
-  Required when `closable` is `true`.
+- Close button click handler. Required when `closable` is `true`.
 
 ---
 

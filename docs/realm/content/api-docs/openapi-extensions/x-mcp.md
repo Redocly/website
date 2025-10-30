@@ -87,8 +87,7 @@ The root is the outer most level of the OpenAPI description.
 
 - logging
 - object
-- Logging capabilities configuration.
-  Empty object indicates basic logging support.
+- Logging capabilities configuration. Empty object indicates basic logging support.
 
 ---
 

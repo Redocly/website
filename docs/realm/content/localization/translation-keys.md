@@ -993,6 +993,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.additionalOperations
+- Label for Additional operations group in OpenAPI sidebar
+- Additional operations
+
+---
+
 - openapi.mcp.protocolVersion
 - Label for MCP protocol version in OpenAPI sidebar
 - Protocol Version
