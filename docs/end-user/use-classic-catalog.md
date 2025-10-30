@@ -41,4 +41,5 @@ The catalog updates to display APIs with selected tags.
 
 - [Interact with API documentation](./interact-with-api.md)
 - [Interact with pages](./interact-with-pages.md)
+- [Test APIs using Replay](./test-apis.md)
 - Explore other ways you can interact with the [user interface](./index.md)
