@@ -1,0 +1,13 @@
+- page: index.md
+  label: Redoc CE
+- page: quickstart.md
+  label: Quickstart
+- group: Deployment
+  items:
+    - page: deployment/intro.md
+    - page: deployment/html.md
+    - page: deployment/react.md
+    - page: deployment/docker.md
+- page: config-migration.md
+- page: telemetry.md
+  label: Telemetry

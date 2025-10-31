@@ -203,7 +203,7 @@ Read more about other fixes and enhancements by visiting the [OpenAPI CLI change
 
 The technical writing team has been busy adding new content and updating existing content to ensure we are constantly adding new content, and filling in the gaps between our product features and docs.
 - **Developer portal 1.1.0 migration guide**: We released v1.1.0 of the Developer portal to ensure we are in sync with Reference docs 2.0, and this [migration guide](../docs-legacy/developer-portal/guides/migration-guide-1-1-0.md) describes what you need to know before you start using v1.1.0.
-- Added a [Redoc](../docs/redoc/deployment/intro.md) section to our docs. This section will now house all topics related to our **Redoc** product, including installation, configuration, and guides.
+- Added a [Redoc](../docs/redoc/@v2.x/deployment/intro.md) section to our docs. This section will now house all topics related to our **Redoc** product, including installation, configuration, and guides.
 - A brand new **information architecture** across our [docs](../docs/index.md). We've given our docs a new look that closely mirrors our product UI, making it easier to search for relevant topics.
   - Docs are now broadly grouped by **Workflows** (and our premium products), **Open source**, and an **Education** section for learning about OpenAPI.
   - Within these groups, we have stuck to our information sub-grouping `Guides`, `Configuration`, `Settings`, and `Resources`.
@@ -217,7 +217,7 @@ Along with our core technical writing team, our Google Season of Docs technical 
 In the last month, we have:
 - Updated and improved the [introductory content](../docs/cli) and [installation instructions](../docs/cli/installation) for OpenAPI CLI.
 - A new [OpenAPI CLI quickstart guide](../docs/cli/quickstart) to get you up and running with using the open source product.
-- Added an [Redoc quickstart guide](../docs/redoc/deployment/intro.md), which includes step-by-step instructions on how to get started using Redoc to render your OpenAPI definition.
+- Added an [Redoc quickstart guide](../docs/redoc/@v2.x/deployment/intro.md), which includes step-by-step instructions on how to get started using Redoc to render your OpenAPI definition.
 
 ***
 

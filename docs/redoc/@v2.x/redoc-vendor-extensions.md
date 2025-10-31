@@ -51,7 +51,8 @@ You can use the following [vendor extensions](https://redocly.com/docs/openapi-v
 Extends the OpenAPI root [OpenAPI Object](https://redocly.com/docs/openapi-visual-reference/openapi)
 
 ### x-servers
-Backported from OpenAPI 3.0 [`servers`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#server-object). Currently doesn't support templates.
+Backported from OpenAPI 3.0 [`servers`](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#server-object).
+Currently doesn't support templates.
 
 ### x-tagGroups
 
@@ -114,7 +115,8 @@ Extends the OpenAPI [Info Object](https://redocly.com/docs/openapi-visual-refere
 | x-logo         | [Logo Object](#logo-object)  | The information about API logo |
 
 #### How to use with Redoc
-`x-logo` is used to specify API logo. The corresponding image is displayed just above the side-menu.
+`x-logo` is used to specify API logo.
+The corresponding image is displayed just above the side-menu.
 
 <a name="logoObject"></a>
 
@@ -125,7 +127,9 @@ The information about API logo
 
 | Field Name      | Type    | Description |
 | :-------------- | :------: | :---------- |
-| url             | string   | The URL pointing to the spec logo. MUST be in the format of a URL. It SHOULD be an absolute URL so your API definition is usable from any location |
+| url             | string   | The URL pointing to the spec logo.
+MUST be in the format of a URL.
+It SHOULD be an absolute URL so your API definition is usable from any location |
 | backgroundColor | string   | background color to be used. MUST be RGB color in [hexadecimal format] (https://en.wikipedia.org/wiki/Web_colors#Hex_triplet) |
 | altText        | string   | Text to use for alt tag on the logo. Defaults to 'logo' if nothing is provided. |
 | href        | string   | The URL pointing to the contact page. Default to 'info.contact.url' field of the OAS. |
@@ -167,7 +171,8 @@ Extends the OpenAPI [Tag Object](https://redocly.com/docs/openapi-visual-referen
 | x-traitTag     | boolean  | In Swagger two operations can have multiple tags. This property distinguishes between tags that are used to group operations (default) from tags that are used to mark operation with certain trait (`true` value) |
 
 #### How to use with Redoc
-Tags that have `x-traitTag` set to `true` are listed in the side-menu but don't have any subitems (operations). It also renders the `description` tag.
+Tags that have `x-traitTag` set to `true` are listed in the side-menu but don't have any subitems (operations).
+It also renders the `description` tag.
 This is useful for handling out common things like Pagination, Rate-Limits, etc.
 
 #### x-traitTag example
@@ -313,7 +318,8 @@ Extends the `discriminator` property of the schema object.
 
 #### How to use with Redoc
 Redoc uses this extension to filter the `discriminator` mappings shown in the selectpicker.
-When set to `true`, the selectpicker lists only the explicitly defined mappings. When `false`, the default behavior is kept, in other words, explicit and implicit mappings are shown.
+When set to `true`, the selectpicker lists only the explicitly defined mappings.
+When `false`, the default behavior is kept, in other words, explicit and implicit mappings are shown.
 
 #### x-explicitMappingOnly example
 
@@ -341,9 +347,11 @@ Shows in the selectpicker only the items `cat` and `bee`, even though the `Dog` 
 | x-enumDescriptions | [[Enum Description Object](https://redocly.com/docs/realm/author/reference/openapi-extensions/x-enum-descriptions#enum-description-object)] | A list of the enum values and descriptions to include in the documentation. |
 
 #### How to use with Redoc
-The enum (short for "enumeration") fields in OpenAPI allow you to restrict the value of a field to a list of allowed values. These values need to be short and machine-readable, but that can make them harder for humans to parse and work with.
+The enum (short for "enumeration") fields in OpenAPI allow you to restrict the value of a field to a list of allowed values.
+These values need to be short and machine-readable, but that can make them harder for humans to parse and work with.
 
-Add x-enumDescriptions to your OpenAPI description to show a helpful table of enum options and an explanation of what each one means. This field supports Markdown.
+Add x-enumDescriptions to your OpenAPI description to show a helpful table of enum options and an explanation of what each one means.
+This field supports Markdown.
 
 #### x-enumDescriptions example
 The following example shows a schema with two short-named options, and the x-enumDescriptions entry to list all enum entries and give additional context for each:
@@ -352,7 +360,8 @@ The following example shows a schema with two short-named options, and the x-enu
 components:
   schemas:
     TicketType:
-      description: Type of ticket being purchased. Use `general` for regular museum entry and `event` for tickets to special events.
+      description: Type of ticket being purchased.
+      Use `general` for regular museum entry and `event` for tickets to special events.
       type: string
       enum:
         - event

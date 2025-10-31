@@ -5,16 +5,17 @@ seo:
 
 # Redoc: Open source API documentation tool
 
-Redoc is a clean and easy way to produce web-ready documentation from an OpenAPI description (Swagger is also still supported). With one command, create your documentation, and customize it to meet the needs of your users.
+Redoc is a clean and easy way to produce web-ready documentation from an OpenAPI description (Swagger is also still supported).
+With one command, create your documentation, and customize it to meet the needs of your users.
 
 Redoc is based around a three panel layout, with clear sections for navigation, detailed documentation, and request/response examples.
 
 ## Headline features
 
-* Modern layout with extensive customization options.
-* Support for OpenAPI 3.1, 3.0 and older 2.0 and Swagger formats.
-* Embed or build standalone HTML documentation.
-* CLI tool for easy automation and local development.
+- Modern layout with extensive customization options.
+- Support for OpenAPI 3.1, 3.0 and older 2.0 and Swagger formats.
+- Embed or build standalone HTML documentation.
+- CLI tool for easy automation and local development.
 
 ## Demo
 
@@ -47,7 +48,8 @@ Create an HTML page, or edit an existing one, and add the following:
 
 Open the HTML file in your browser, and your API documentation is shown on the page.
 
-Add your own `spec-url` to the `<redoc>` tag; this attribute can also be a local file. The JavaScript library can also be installed locally using `npm` and served from your own server, see the [HTML deployment documentation](https://redocly.com/docs/redoc/deployment/html/) for more details.
+Add your own `spec-url` to the `<redoc>` tag; this attribute can also be a local file.
+The JavaScript library can also be installed locally using `npm` and served from your own server, see the [HTML deployment documentation](https://redocly.com/docs/redoc/deployment/html/) for more details.
 
 ### More usage options
 
@@ -55,10 +57,12 @@ Check out the [deployment documentation](./deployment/intro.md) for more options
 
 ## Configure Redoc
 
-Redoc is highly configurable. Each deployment option accepts configuration in a way that's appropriate to that platform, but the options are the same for each. For example:
+Redoc is highly configurable.
+Each deployment option accepts configuration in a way that's appropriate to that platform, but the options are the same for each.
+For example:
 
-* Using [Redocly CLI](../cli), configuration goes in the `redocly.yaml` file, or can be supplied as command line parameters, such as `--theme.openapi.disableSearch`.
-* Using HTML or React, configure by setting `option` in the tag.
+- Using [Redocly CLI](https://redocly.com/docs/cli), configuration goes in the `redocly.yaml` file, or can be supplied as command line parameters, such as `--theme.openapi.disableSearch`.
+- Using HTML or React, configure by setting `option` in the tag.
 
 Here's a sample `redocly.yaml` configuration file, showing a few common settings and tweaking some of the visual theme settings:
 
@@ -82,16 +86,19 @@ theme:
           fontWeight: bold
 ```
 
-Redocly CLI detects a file named `redocly.yaml` in the same directory as you run the command and uses it. See the documentation with a command like this:
+Redocly CLI detects a file named `redocly.yaml` in the same directory as you run the command and uses it.
+See the documentation with a command like this:
 
 ```sh
 redocly build-docs openapi.yaml
 ```
 
-There are many, many more options available. Visit the [configuration reference](./config.md) for a complete list.
+There are many, many more options available.
+Visit the [configuration reference](https://redocly.com/docs/realm/config/openapi) for a complete list.
 
-## Next steps
+## Resources
 
-* If you are new to OpenAPI, try the [OpenAPI starter project](../cli/openapi-starter) for a great introduction.
-* Ready to build documentation from an existing OpenAPI file? Go to the [Redoc quickstart](./quickstart.md) and get started.
-* Learn more about the project by visiting [Redoc on GitHub](https://github.com/Redocly/redoc).
+- If you are new to OpenAPI, try the [OpenAPI starter project](https://redocly.com/docs/cli/openapi-starter) for a great introduction.
+- Ready to build documentation from an existing OpenAPI file?
+  Go to the [Redoc quickstart](./quickstart.md) and get started.
+- Learn more about the project by visiting [Redoc on GitHub](https://github.com/Redocly/redoc).

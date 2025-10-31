@@ -12,8 +12,8 @@ The following options are supported:
 
 - **[Live demo](https://redocly.github.io/redoc/):**
   The live demo offers a fast way to see how your OpenAPI renders with Redoc.
-  A version of the Swagger Petstore API is displayed by default. To test it with your own OpenAPI definition, enter the URL for your
-  definition and select **TRY IT**.
+  A version of the Swagger Petstore API is displayed by default.
+  To test it with your own OpenAPI definition, enter the URL for your definition and select **Try it**.
 - **[HTML element](./html.md):**
   Using the HTML element works well for typical website deployments.
 - **[React component](./react.md):**
@@ -37,8 +37,7 @@ You need an OpenAPI definition. For testing purposes, you can use one of the fol
   - [Fitbit Plus OpenAPI Definition](https://raw.githubusercontent.com/TwineHealth/TwineDeveloperDocs/master/spec/swagger.yaml)
 
 {% admonition type="info" name="OpenAPI specification" %}
-For more information on the OpenAPI specification, refer to the [Learning OpenAPI 3](https://redocly.com/docs/resources/learning-openapi/)
-section in the documentation.
+For more information on the OpenAPI specification, refer to the [Learning OpenAPI 3](https://redocly.com/docs/resources/learning-openapi/) section in the documentation.
 {% /admonition %}
 
 ### How to run Redoc locally
@@ -47,15 +46,13 @@ If you want to view your Redoc output locally, you can simulate an HTTP server.
 
 #### Python
 
-If you have [Python 3](https://www.python.org/downloads/) installed, `cd` into your
-project directory and run the following command:
+If you have [Python 3](https://www.python.org/downloads/) installed, `cd` into your project directory and run the following command:
 
 ```python
 python3 -m http.server
 ```
 
-If you have [Python 2](https://www.python.org/downloads/) installed, `cd` into your
-project directory and run the following command:
+If you have [Python 2](https://www.python.org/downloads/) installed, `cd` into your project directory and run the following command:
 
 ```python
 python -m SimpleHTTPServer 8000
@@ -66,8 +63,7 @@ To exit the preview, use `control-C`.
 
 #### Node.js
 
-If you have [Node.js](https://nodejs.org/en/download/) installed, install `http-server`
-using the following npm command:
+If you have [Node.js](https://nodejs.org/en/download/) installed, install `http-server` using the following `npm` command:
 
 ```bash
 npm install -g http-server

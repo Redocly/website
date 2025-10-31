@@ -61,7 +61,7 @@
       label: Webview
     - page: reunite/project/use-previews.md
       label: Previews
-    - group: Deploys # missing content about the "Deploys"
+    - group: Deployments # missing content about the "Deployments"
       items:
         - group: Scorecards
           page: reunite/project/scorecard.md
@@ -70,8 +70,8 @@
               label: Configuration guide
         - page: reunite/project/ignore-link-checker.md
           label: Ignore link checker
-        - page: reunite/project/branches-and-deploys.md
-          label: Branches deploys
+        - page: reunite/project/branches-and-deployments.md
+          label: Branches deployments
 
     - group: Pull requests
       items:

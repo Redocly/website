@@ -5,7 +5,7 @@ Reunite performs a standard set of verification processes each time changes are 
 - Changes to remote content sources that support branching, trigger [verification of preview changes](#preview-changes-verification) for branches.
 - Changes to the default project branch (usually `main`) or source, trigger [verification of production changes](#production-changes-verification).
 
-Build logs, preview builds, and production builds are available on the **Deploys** page of your project's workspace.
+Build logs, preview builds, and production builds are available on the **Deployments** page of your project's workspace.
 
 ## Preview changes verification
 

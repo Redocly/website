@@ -8,7 +8,7 @@ seo:
 
 {% admonition type="info" name="Open source Redoc" %}
 
-Users of open source Redoc should refer to the [Redoc configuration documentation](/docs/redoc/config.md).
+Users of open source Redoc should refer to the [Redoc configuration documentation](/docs/redoc/@v2.x/config.md).
 
 {% /admonition %}
 
