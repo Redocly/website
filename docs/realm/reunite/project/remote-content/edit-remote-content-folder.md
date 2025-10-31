@@ -1,5 +1,8 @@
 # Edit remote content folder settings
 
+{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
+
+
 You can update the following remote content folder settings:
 
 - Git provider

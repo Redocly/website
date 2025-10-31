@@ -1,5 +1,7 @@
 # Remote content automation
 
+{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
+
 Reunite performs a standard set of verification processes each time changes are made to remote content in the project.
 
 - Changes to remote content sources that support branching, trigger [verification of preview changes](#preview-changes-verification) for branches.

@@ -1,5 +1,7 @@
 # Add remote files with one-way sync
 
+{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
+
 The [remote content](./remote-content.md) feature allows adding content from a variety of external sources.
 If you have files in a Git repository, you can include them in your project as a remote content folder or as a single remote file.
 Remote content folders and files are synced one way.

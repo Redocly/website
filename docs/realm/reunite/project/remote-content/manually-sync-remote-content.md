@@ -1,5 +1,7 @@
 # Manually sync remote content
 
+{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
+
 If you disabled [Auto-sync](./remote-content.md#auto-sync-and-auto-merge) for your remote content, you have to sync the content manually.
 
 ## Before you begin

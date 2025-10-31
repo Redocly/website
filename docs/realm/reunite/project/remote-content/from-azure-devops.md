@@ -1,5 +1,7 @@
 # Add remote files from Azure DevOps
 
+{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
+
 If your content is stored in a repository on Azure DevOps Services, you can connect that repository, so you can access and publish those files in Reunite.
 
 To connect an Azure DevOps repository, you must first create a new personal access token (PAT) token in Azure DevOps.

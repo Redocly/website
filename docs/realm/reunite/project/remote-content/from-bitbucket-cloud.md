@@ -1,5 +1,7 @@
 # Add remote files from Bitbucket Cloud
 
+{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
+
 If your project files are stored in a remote repository on Bitbucket Cloud, you can connect that repository, so you can access and publish those files in Redocly.
 
 To connect a Bitbucket Cloud repository, you must first create a new repository access token in Bitbucket Cloud.

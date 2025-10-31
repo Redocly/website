@@ -71,6 +71,15 @@ function CLILogo({ size = 16, title }: { size?: number; title?: string }): React
   );
 }
 
+function ReuniteLogo({ size = 16, title }: { size?: number; title?: string }): React.ReactElement {
+  return (<svg  width={size} height={size} viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" role="img" aria-label={title || 'Reunite'} fill="#2467F2">
+    <g>
+      <path d="M14.625 6.19973C14.625 8.69176 12.6173 10.712 10.1406 10.712H2.8125V10.2717C5.04753 10.2717 6.85938 8.44864 6.85938 6.19973C6.85938 3.95082 5.04753 2.12772 2.8125 2.12772V1.6875H10.1406C12.6173 1.6875 14.625 3.70769 14.625 6.19973Z" />
+      <path d="M14.625 16.875C14.625 14.383 12.6173 12.3628 10.1406 12.3628H2.8125V12.803C5.04753 12.803 6.85938 14.6261 6.85938 16.875H14.625Z" />
+    </g>
+  </svg>);
+}
+
 export function LogosIcons({ product, size = 16, className, title }: LogosIconsProps): React.ReactElement | null {
   const normalized = typeof product === 'string' ? product.toLowerCase() : String(product).toLowerCase();
 
@@ -88,6 +97,10 @@ export function LogosIcons({ product, size = 16, className, title }: LogosIconsP
   }
   if (normalized === Products.CLI.toLowerCase() || normalized === 'cli') {
     return <CLILogo size={size} title={title || 'Redocly CLI'} />;
+  }
+
+  if (normalized === Products.REUNITE.toLowerCase() || normalized === 'reunite') {
+    return <ReuniteLogo size={size} title={title || 'Reunite'} />;
   }
 
   return null;
