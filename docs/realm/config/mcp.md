@@ -73,8 +73,6 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 
 ## Examples
 
-### Basic configuration
-
 ```yaml
 # Global settings
 mcp:
@@ -84,8 +82,6 @@ mcp:
     hide: false
     name: My Custom Docs MCP Server
 ```
-
-### Ignore specific patterns
 
 Ignore specific files and filename patterns in the MCP server:
 
