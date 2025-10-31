@@ -217,6 +217,36 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- search.ai.back
+- Button text to go back from AI search results
+- Back
+
+---
+
+- search.ai.feedback.title
+- Title for AI search feedback dialog
+- What didn't you like about this response?
+
+---
+
+- search.ai.feedback.detailsPlaceholder
+- Placeholder text for AI search feedback details input
+- Add specific details
+
+---
+
+- search.ai.feedback.thanks
+- Thank you message after submitting AI search feedback
+- Thanks for your feedback!
+
+---
+
+- aiAssistant.trigger
+- Button text to trigger the AI assistant
+- Ask AI
+
+---
+
 - toc.header
 - Table of content header
 - On this page
@@ -253,9 +283,27 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- sidebar.actions.changeLayout
-- Tooltip of a button used to change the sidebar layout
-- Hide sidebar
+- sidebar.actions.singleColumn
+- Label for single column layout option
+- Single column
+
+---
+
+- sidebar.actions.changeToSingleColumn
+- Tooltip for button to switch to single column layout
+- Switch to single column
+
+---
+
+- sidebar.actions.twoColumns
+- Label for two columns layout option
+- Two columns
+
+---
+
+- sidebar.actions.changeToTwoColumns
+- Tooltip for button to switch to two columns layout
+- Switch to two columns
 
 ---
 
@@ -286,6 +334,120 @@ This page contains the list of all predefined translation keys used in default U
 - page.nextButton
 - Next button's label for page navigation
 - Next page
+
+---
+
+- page.actions.copyButtonText
+- Copy for LLM button text in page actions
+- Copy
+
+---
+
+- page.actions.copyTitle
+- Copy for LLM action title in page actions
+- Copy for LLM
+
+---
+
+- page.actions.copyDescription
+- Copy for LLM action description in page actions
+- Copy page as Markdown for LLMs
+
+---
+
+- page.actions.viewAsMdButtonText
+- View as Markdown button text in page actions
+- View as Markdown
+
+---
+
+- page.actions.viewAsMdTitle
+- View as Markdown action title in page actions
+- View as Markdown
+
+---
+
+- page.actions.viewAsMdDescription
+- View as Markdown action description in page actions
+- Open this page as Markdown
+
+---
+
+- page.actions.chatGptButtonText
+- Open in ChatGPT button text in page actions
+- Open in ChatGPT
+
+---
+
+- page.actions.chatGptTitle
+- Open in ChatGPT action title in page actions
+- Open in ChatGPT
+
+---
+
+- page.actions.chatGptDescription
+- Open in ChatGPT action description in page actions
+- Get insights from ChatGPT
+
+---
+
+- page.actions.claudeButtonText
+- Open in Claude button text in page actions
+- Open in Claude
+
+---
+
+- page.actions.claudeTitle
+- Open in Claude action title in page actions
+- Open in Claude
+
+---
+
+- page.actions.claudeDescription
+- Open in Claude action description in page actions
+- Get insights from Claude
+
+---
+
+- page.actions.connectMcp
+- Connect MCP button label
+- Connect MCP
+
+---
+
+- page.actions.connectMcp.cursor
+- Connect to Cursor option title in Connect MCP dropdown
+- Connect to Cursor
+
+---
+
+- page.actions.connectMcp.cursorDescription
+- Connect to Cursor option description in Connect MCP dropdown
+- Install MCP server on Cursor
+
+---
+
+- page.actions.connectMcp.vscode
+- Connect to VS Code option title in Connect MCP dropdown
+- Connect to VS Code
+
+---
+
+- page.actions.connectMcp.vscodeDescription
+- Connect to VS Code option description in Connect MCP dropdown
+- Install MCP server on VS Code
+
+---
+
+- page.actions.connectMcp.copyConfig
+- Copy MCP configuration option title in Connect MCP dropdown
+- Copy MCP Configuration
+
+---
+
+- page.actions.connectMcp.copyConfigDescription
+- Copy MCP configuration option description in Connect MCP dropdown
+- Copy MCP JSON Configuration
 
 ---
 
@@ -527,6 +689,168 @@ This page contains the list of all predefined translation keys used in default U
 - catalog.filters.done
 - Button text to confirm filter selection in catalog
 - Done
+
+---
+
+- catalog.backToAllLabel
+- Button label to go back to all catalog items
+- Catalog
+
+---
+
+- catalog.catalogs.all.title
+- Title for the "All" catalog view
+- All
+
+---
+
+- catalog.catalogs.all.description
+- Description for the "All" catalog view
+- All entities
+
+---
+
+- catalog.catalogs.all.switcherLabel
+- Switcher label for the "All" catalog view
+- All
+
+---
+
+- catalog.catalogs.service.title
+- Title for the "Services" catalog view
+- Services
+
+---
+
+- catalog.catalogs.service.description
+- Description for the "Services" catalog view
+- Service entities
+
+---
+
+- catalog.catalogs.service.switcherLabel
+- Switcher label for the "Services" catalog view
+- Services
+
+---
+
+- catalog.catalogs.domain.title
+- Title for the "Domains" catalog view
+- Domains
+
+---
+
+- catalog.catalogs.domain.description
+- Description for the "Domains" catalog view
+- Domain entities
+
+---
+
+- catalog.catalogs.domain.switcherLabel
+- Switcher label for the "Domains" catalog view
+- Domains
+
+---
+
+- catalog.catalogs.team.title
+- Title for the "Teams" catalog view
+- Teams
+
+---
+
+- catalog.catalogs.team.description
+- Description for the "Teams" catalog view
+- Team entities
+
+---
+
+- catalog.catalogs.team.switcherLabel
+- Switcher label for the "Teams" catalog view
+- Teams
+
+---
+
+- catalog.catalogs.user.title
+- Title for the "Users" catalog view
+- Users
+
+---
+
+- catalog.catalogs.user.description
+- Description for the "Users" catalog view
+- User entities
+
+---
+
+- catalog.catalogs.user.switcherLabel
+- Switcher label for the "Users" catalog view
+- Users
+
+---
+
+- catalog.catalogs.apiDescription.title
+- Title for the "API Descriptions" catalog view
+- API Descriptions
+
+---
+
+- catalog.catalogs.apiDescription.description
+- Description for the "API Descriptions" catalog view
+- API description entities
+
+---
+
+- catalog.catalogs.apiDescription.switcherLabel
+- Switcher label for the "API Descriptions" catalog view
+- API Descriptions
+
+---
+
+- catalog.catalogs.dataSchema.title
+- Title for the "Data Schemas" catalog view
+- Data Schemas
+
+---
+
+- catalog.catalogs.dataSchema.description
+- Description for the "Data Schemas" catalog view
+- Data schema entities
+
+---
+
+- catalog.catalogs.dataSchema.switcherLabel
+- Switcher label for the "Data Schemas" catalog view
+- Data Schemas
+
+---
+
+- catalog.catalogs.apiOperation.title
+- Title for the "API Operations" catalog view
+- API Operations
+
+---
+
+- catalog.catalogs.apiOperation.description
+- Description for the "API Operations" catalog view
+- API operation entities
+
+---
+
+- catalog.catalogs.apiOperation.switcherLabel
+- Switcher label for the "API Operations" catalog view
+- API Operations
+
+---
+
+- catalog.entity.metadata.title
+- Title for entity metadata section in catalog
+- Metadata
+
+---
+
+- catalog.entity.schema.title
+- Title for entity schema section in catalog
+- Schema
 
 ---
 
@@ -884,6 +1208,18 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.discriminator.defaultMapping
+- Label for the default mapping option in discriminator dropdown
+- Default mapping
+
+---
+
+- openapi.discriminator.defaultMappingTooltip
+- Tooltip text explaining the default mapping option for OpenAPI 3.2
+- OpenAPI 3.2: When other mappings don't match, use the default mapping.
+
+---
+
 - openapi.noResponseContent
 - Message displayed when a response contains no content in an OpenAPI description
 - No content
@@ -923,6 +1259,24 @@ This page contains the list of all predefined translation keys used in default U
 - openapi.refreshUrl
 - Label for the refresh URL in OpenAPI security schemes
 - Refresh URL
+
+---
+
+- openapi.deviceAuthorizationUrl
+- Label for the device authorization URL in OpenAPI security schemes
+- Device Authorization URL
+
+---
+
+- openapi.oauth2MetadataUrl
+- Label for the OAuth2 metadata URL in OpenAPI security schemes
+- OAuth2 Metadata URL
+
+---
+
+- openapi.schemas
+- Label for schemas section in OpenAPI
+- Schemas
 
 ---
 
@@ -974,16 +1328,39 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.schemaCatalogLink.title
+- Title for shared schema link in OpenAPI
+- Shared schema
+
+---
+
+- openapi.schemaCatalogLink.copyButtonTooltip
+- Tooltip for copy button in schema catalog link
+- Copy to clipboard
+
+---
+
+- openapi.schemaCatalogLink.copiedTooltip
+- Tooltip shown after successfully copying schema catalog link
+- Copied!
+
+---
+
 - openapi.failedToGenerateCodeSample
 - Message displayed when code sample generation fails
 - Failed to generate code sample.
 
 ---
 
----
 - openapi.mcp.title
 - Label for MCP server in OpenAPI sidebar
 - MCP Server
+
+---
+
+- openapi.mcp.endpoint
+- Label for MCP endpoint in OpenAPI sidebar
+- Endpoint
 
 ---
 
@@ -1176,6 +1553,66 @@ This page contains the list of all predefined translation keys used in default U
 - graphql.deprecated
 - Label for deprecated fields in GraphQL content
 - deprecated
+
+---
+
+- graphql.requiredScopes
+- Label for required scopes in GraphQL security
+- Required scopes
+
+---
+
+- graphql.viewSecurityDetails
+- Button text to view security details in GraphQL
+- View details
+
+---
+
+- graphql.objectScopes
+- Label for object scopes in GraphQL security
+- Object scopes
+
+---
+
+- graphql.fieldScopes
+- Label for field scopes in GraphQL security
+- Field scopes
+
+---
+
+- graphql.overview
+- Label for overview section in GraphQL
+- Overview
+
+---
+
+- graphql.metadata
+- Label for metadata section in GraphQL
+- Metadata
+
+---
+
+- graphql.key
+- Label for key in GraphQL metadata
+- Key
+
+---
+
+- graphql.value
+- Label for value in GraphQL metadata
+- Value
+
+---
+
+- graphql.download.description.title
+- Title for download description section in GraphQL
+- Download GraphQL description
+
+---
+
+- graphql.action.show
+- Text for show action in GraphQL
+- Show
 
 ---
 
