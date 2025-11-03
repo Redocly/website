@@ -48,3 +48,7 @@ Use Respect to monitor the response times of your real API calls, and notify you
 ### Detect data leaks
 
 Check for changes in payload sizes or properties and values that could indicate unexpected or undesirable activity.
+
+### Authentication
+
+Use the [x-security extension](./extensions/x-security) to define authorization flows based on OpenAPI security schemes.
