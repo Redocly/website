@@ -21259,6 +21259,14 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.37.0:
+    timestamp: 1762173163000
+    changes:
+      minor:
+        - Added `Connect to MCP` options to page actions.
+      patch:
+        - Changed Ask AI default icon from `redocly` to `sparkles`.
+    dependencies: {}
   0.36.2:
     timestamp: 1761301481000
     changes:
@@ -22509,6 +22517,14 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.3.15:
+    timestamp: 1762173163000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.10.0`.
+        - Updated `@redocly/openapi-core` to version `2.9.0`.
+    dependencies: {}
   0.3.14:
     timestamp: 1761301481000
     changes:
