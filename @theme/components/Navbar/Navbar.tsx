@@ -54,12 +54,14 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
   const { pathname } = useLocation();
   const showVSCodeExtensionBanner = pathname?.startsWith('/redocly-cli');
 
-  const isDocsOrLearnPage = pathname?.includes('/docs') || pathname?.startsWith('/learn/');
+  const isDocsPage = pathname?.includes('/docs') && pathname !== '/docs-like-code';
+  const isLearnPage = pathname?.startsWith('/learn/');
+  const isDocsOrLearnPage = isDocsPage || isLearnPage;
   const isEditorPage = pathname === '/editor';
   const isPreviewPage = pathname === '/preview';
 
   React.useEffect(() => {
-    if (!isDocsOrLearnPage && !pathname?.startsWith('/learn') && !isEditorPage && !isPreviewPage) {
+    if (!isDocsPage && !isLearnPage && !isEditorPage && !isPreviewPage) {
       document.documentElement.classList.replace('dark', 'light');
     } else {
       document.documentElement.classList.replace(
@@ -67,7 +69,7 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
         localStorage.getItem('colorSchema') || 'light',
       );
     }
-  }, [isDocsOrLearnPage, pathname?.startsWith('/learn'), isEditorPage, isPreviewPage]);
+  }, [isDocsPage, isLearnPage, isEditorPage, isPreviewPage]);
 
   const menu = themeConfig.navbar?.items;
 
@@ -398,9 +400,9 @@ const NavbarContainer = styled.nav<{
 
   @media screen and (min-width: ${breakpoints.medium}) {
     padding: ${({ showVSCodeExtensionBanner }) =>
-      showVSCodeExtensionBanner ? '0' : 'var(--navbar-padding)'};
+    showVSCodeExtensionBanner ? '0' : 'var(--navbar-padding)'};
     border-bottom: ${({ isTop, isDocs }) =>
-      (!isTop || isDocs) && '1px solid var(--color-warm-grey-3)'};
+    (!isTop || isDocs) && '1px solid var(--color-warm-grey-3)'};
     flex-direction: ${({ showVSCodeExtensionBanner }) => showVSCodeExtensionBanner && 'column'};
     height: ${({ showVSCodeExtensionBanner }) => showVSCodeExtensionBanner && 'auto'};
 
