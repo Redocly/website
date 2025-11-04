@@ -1,5 +1,7 @@
 # Add remote files from GitHub
 
+{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
+
 If your content is stored in a repository on GitHub, you can connect that repository, so you can access and publish those files in Reunite.
 
 To connect a GitHub repository, you must first install the Redocly app in GitHub.

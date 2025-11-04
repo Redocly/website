@@ -4,6 +4,7 @@ export enum Products {
     REVEL = 'Revel',
     REEF = 'Reef',
     CLI = 'Redocly CLI',
+    REUNITE = 'Reunite',
 }
 
 export enum Plan {
