@@ -68,5 +68,6 @@ Your message is sent to the organization that owns the project.
 
 - [Interact with walkthroughs](./interact-with-walkthroughs.md)
 - [Interact with API documentation](./interact-with-api.md)
+- [Test APIs using CLI](./test-apis-cli.md)
 - [Use a classic catalog](./use-classic-catalog.md)
 - Explore other ways you can interact with the [user interface](./index.md)

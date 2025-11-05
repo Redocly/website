@@ -1,9 +1,10 @@
 # Test APIs using Replay
 
-You can make API calls directly from the API reference documentation in your project.
-Projects that contain API documentation, typically have a tool you can used to try out (test) API requests.
+Make API calls directly from the API reference documentation in your project.
+Projects that contain API documentation, typically have Replay - the tool you can use to try out (test) API requests.
 
 Use Replay to:
+
 - edit any field in sample requests, unrestricted by API description schemas
 - save requests and view request history
 - set up and use different environments with customizable variables
@@ -19,15 +20,15 @@ Replay is split into two panels, **Request** and **History**.
 
 Alternatively, some documentation pages may have an embedded Replay console that is tied to a specific description file.
 
-## Use the Request panel
+## Use the Request pane
 
-The Request panel is located on the left side of Replay and includes everything needed to make a request for an endpoint from your API description.
+The Request pane is located on the left side of Replay and includes everything needed to make a request for an endpoint from your API description.
 
 ### Send a sample request
 
 To send a sample request, enter the required parameters and click the **Send** button.
 
-### Response panel
+### Response pane
 
 After you have sent a sample request, a sample response displays in the bottom of the Request pane.
 
@@ -38,7 +39,7 @@ The sample response is based on example responses included in your API descripti
 - response headers and values
 - response cookies
 
-Click the copy icon on the right side of the panel to copy the sample response.
+Click the **Copy** icon on the right side of the pane to copy the sample response.
 
 ## Work with environments
 
@@ -60,10 +61,10 @@ To switch to a different environment:
 1. In Replay's top-right corner, click the **Environments** icon.
 1. In the **Environments** window's bottom-left corner, click **New environment**.
 1. Enter a name for the environment and confirm.
-2. In the **Server** field, hover over **More options** and click **Edit**.
-3. Enter the server's URL and click **Save**.
-4. (Optional) Expand the **Server variable** field and enter values for server variables.
-5. (Optional) In the **Inputs** table you can:
+1. In the **Server** field, hover over **More options** and click **Edit**.
+1. Enter the server's URL and click **Save**.
+1. (Optional) Expand the **Server variable** field and enter values for server variables.
+1. (Optional) In the **Inputs** table you can:
    - Add new inputs and their values.
    - Edit values of existing inputs.
    - Set inputs values to secret.
@@ -78,10 +79,11 @@ You can edit user-created environments to better suit your needs:
 - To set values for server variables, expand the **Server variable** field and enter values for server variables.
 
 In the **Inputs** table you can:
-- Add new inputs and their values.
-- Edit values of existing inputs.
-- Set inputs values to secret.
-- Delete user-added inputs.
+
+- add new inputs and their values
+- edit values of existing inputs.
+- set input values to secret
+- delete user-added inputs
 
 ### Set an environment as active
 
@@ -125,11 +127,11 @@ To delete the search history:
 
 - In the **History** panel, on the left side of the **Search** field, click the broom icon.
 
-### Collapse the history panel
+### Collapse the History panel
 
-You can hide the history panel to make the pages better fit smaller screens.
+You can hide the History panel to make the pages better fit smaller screens.
 
-To collapse the history panel:
+To collapse the History panel:
 
 - In Replay's bottom-left corner, click the **Collapse panel** button.
 
@@ -142,5 +144,6 @@ Otherwise, if you want to see the reference documentation, you can close Replay 
 ## Resources
 
 - [Interact with API documentation](./interact-with-api.md)
+- [Test APIs using CLI](./test-apis-cli.md)
 - [Use a classic catalog](./use-classic-catalog.md)
 - Explore other ways you can interact with the [user interface](./index.md)

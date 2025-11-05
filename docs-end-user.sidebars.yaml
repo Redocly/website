@@ -15,5 +15,9 @@
   label: Interact with walkthroughs
 - page: docs/end-user/interact-with-api.md
   label: Interact with API documentation
+- page: docs/end-user/test-apis-replay.md
+  label: Test APIs using Replay
+- page: docs/end-user/test-apis-cli.md
+  label: Test APIs using CLI
 - page: docs/end-user/user-menu.md
   label: User menu  
