@@ -12,6 +12,7 @@ const Container = styled.div`
   border: 1px solid var(--border-color-secondary);
   border-radius: var(--border-radius-lg);
   padding: 8px 16px;
+  margin-bottom: 1em;
 `;
 
 const Row = styled.div`
