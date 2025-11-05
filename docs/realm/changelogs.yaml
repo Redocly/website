@@ -1,4 +1,11 @@
 '@redocly/realm':
+  0.127.0-next.15:
+    timestamp: 1762355323000
+    changes:
+      minor:
+        - Added `projectTitle` parameter to `seo` configuration to append project name to page titles.
+      patch: []
+    dependencies: {}
   0.127.0-next.14:
     timestamp: 1762266887000
     changes:
@@ -4735,6 +4742,13 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.127.0-next.15:
+    timestamp: 1762355323000
+    changes:
+      minor:
+        - Added `projectTitle` parameter to `seo` configuration to append project name to page titles.
+      patch: []
+    dependencies: {}
   0.127.0-next.14:
     timestamp: 1762266887000
     changes:
@@ -8684,6 +8698,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.127.0-next.15:
+    timestamp: 1762355323000
+    changes:
+      minor:
+        - Added `projectTitle` parameter to `seo` configuration to append project name to page titles.
+      patch: []
+    dependencies: {}
   0.127.0-next.14:
     timestamp: 1762266887000
     changes:
@@ -12627,6 +12648,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.127.0-next.15:
+    timestamp: 1762355323000
+    changes:
+      minor:
+        - Added `projectTitle` parameter to `seo` configuration to append project name to page titles.
+      patch: []
+    dependencies: {}
   0.127.0-next.14:
     timestamp: 1762266887000
     changes:
@@ -23182,6 +23210,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.10.0-next.15:
+    timestamp: 1762355323000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.127.0-next.15
+      '@redocly/redoc': 0.127.0-next.15
+      '@redocly/redoc-reef': 0.127.0-next.15
+      '@redocly/redoc-revel': 0.127.0-next.15
   1.10.0-next.14:
     timestamp: 1762266887000
     changes:
