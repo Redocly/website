@@ -122,6 +122,9 @@ search:
 - ai
 - [[AI search options](#ai-search-options)]
 - AI search options.
+  This property is  *deprecated*.
+  Use [AI Assistant](./ai-assistant.md) option instead.
+
 
 {% /table %}
 
@@ -508,6 +511,10 @@ search:
 
 
 ### AI search
+{% admonition type="warning" %}
+This option is deprecated.
+Use [AI Assistant](./ai-assistant.md) instead.
+{% /admonition %}
 
 Display the AI search button with a custom prompt:
 
