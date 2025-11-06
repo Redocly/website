@@ -1,6 +1,6 @@
 '@redocly/realm':
   0.127.0:
-    timestamp: 1762424146626
+    timestamp: 1762430435000
     changes:
       minor:
         - Added `x-keywords` extension support for OpenAPI documents to boost or exclude search terms through keywords.
@@ -38,7 +38,7 @@
         - Fixed card links leading to incorrect locations in GraphQL and AsyncAPI docs.
         - Fixed an issue where navigation actions could not be disabled for a page using front matter.
         - Fixed an issue where link checker reported HTML `a` tag valid links in project under path prefix.
-        - Improved the layout of the `tabs` component.
+        - Improved layout of the tabs component.
         - Improved AI assistant usability on mobile devices.
         - Content slugger no longer takes media assets and ignored files into account.
         - Fixed an issue where page actions appeared for each `partial` Markdoc tag on a page.
@@ -4794,7 +4794,7 @@
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
   0.127.0:
-    timestamp: 1762424146626
+    timestamp: 1762430435000
     changes:
       minor:
         - Added `x-keywords` extension support for OpenAPI documents to boost or exclude search terms through keywords.
@@ -4825,7 +4825,7 @@
         - Fixed card links leading to incorrect locations in GraphQL and AsyncAPI docs.
         - Fixed an issue where navigation actions could not be disabled for a page using front matter.
         - Fixed an issue where link checker reported HTML `a` tag valid links in project under path prefix.
-        - Improved the layout of the `tabs` component.
+        - Improved layout of the tabs component.
         - Improved AI assistant usability on mobile devices.
         - Content slugger no longer takes media assets and ignored files into account.
         - Fixed an issue where page actions appeared for each `partial` Markdoc tag on a page.
@@ -8794,7 +8794,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
   0.127.0:
-    timestamp: 1762424146626
+    timestamp: 1762430435000
     changes:
       minor:
         - Added `x-keywords` extension support for OpenAPI documents to boost or exclude search terms through keywords.
@@ -8824,7 +8824,7 @@
         - Fixed card links leading to incorrect locations in GraphQL and AsyncAPI docs.
         - Fixed an issue where navigation actions could not be disabled for a page using front matter.
         - Fixed an issue where link checker reported HTML `a` tag valid links in project under path prefix.
-        - Improved the layout of the `tabs` component.
+        - Improved layout of the tabs component.
         - Improved AI assistant usability on mobile devices.
         - Content slugger no longer takes media assets and ignored files into account.
         - Fixed an issue where page actions appeared for each `partial` Markdoc tag on a page.
@@ -12787,7 +12787,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
   0.127.0:
-    timestamp: 1762424146626
+    timestamp: 1762430435000
     changes:
       minor:
         - Added `x-keywords` extension support for OpenAPI documents to boost or exclude search terms through keywords.
@@ -12819,7 +12819,7 @@
         - Fixed card links leading to incorrect locations in GraphQL and AsyncAPI docs.
         - Fixed an issue where navigation actions could not be disabled for a page using front matter.
         - Fixed an issue where link checker reported HTML `a` tag valid links in project under path prefix.
-        - Improved the layout of the `tabs` component.
+        - Improved layout of the tabs component.
         - Improved AI assistant usability on mobile devices.
         - Content slugger no longer takes media assets and ignored files into account.
         - Fixed an issue where page actions appeared for each `partial` Markdoc tag on a page.
@@ -16805,7 +16805,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
   0.59.0:
-    timestamp: 1762424146626
+    timestamp: 1762430435000
     changes:
       minor:
         - Added `connect-mcp` Markdoc tag.
@@ -16822,7 +16822,7 @@
         - Fixed navigation issues in sidebar, product, and version pickers for projects using path prefixes.
         - Fixed an issue where the navbar link to the root ("/") path in projects under path prefix was not active.
         - Fixed the `Card` component missing list bullets and limited Markdown support.
-        - Improved the layout of the `tabs` component.
+        - Improved layout of the tabs component.
         - Improved AI assistant usability on mobile devices.
     dependencies:
       '@redocly/realm-asyncapi-sdk': 0.5.0
@@ -19239,7 +19239,7 @@
     dependencies: {}
 '@redocly/openapi-docs':
   3.15.0:
-    timestamp: 1762424146626
+    timestamp: 1762430435000
     changes:
       minor:
         - Added `x-keywords` extension support for OpenAPI documents to boost or exclude search terms through keywords.
@@ -22173,7 +22173,7 @@
     dependencies: {}
 '@redocly/graphql-docs':
   1.4.0:
-    timestamp: 1762424146626
+    timestamp: 1762430435000
     changes:
       minor: []
       patch:
@@ -23301,7 +23301,7 @@
     dependencies: {}
 '@redocly/portal-legacy-ui':
   0.10.0:
-    timestamp: 1762424146626
+    timestamp: 1762430435000
     changes:
       minor: []
       patch: []
@@ -23450,7 +23450,7 @@
     dependencies: {}
 '@redocly/portal-plugin-async-api':
   1.10.0:
-    timestamp: 1762424146626
+    timestamp: 1762430435000
     changes:
       minor: []
       patch: []
@@ -27687,7 +27687,7 @@
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
   0.12.0:
-    timestamp: 1762424146626
+    timestamp: 1762430435000
     changes:
       minor: []
       patch:
@@ -30006,7 +30006,7 @@
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
   0.18.0:
-    timestamp: 1762424146626
+    timestamp: 1762430435000
     changes:
       minor: []
       patch:
@@ -31459,7 +31459,7 @@
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
   0.10.0:
-    timestamp: 1762424146626
+    timestamp: 1762430435000
     changes:
       minor: []
       patch: []
@@ -32825,7 +32825,7 @@
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
   1.4.0:
-    timestamp: 1762424146626
+    timestamp: 1762430435000
     changes:
       minor: []
       patch:
