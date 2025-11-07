@@ -73,6 +73,30 @@ Projects typically have the following filter options:
 
 To clear all filters, in the top-right corner of **Advanced filters**, click **Reset filters**.
 
+### Provide feedback on AI responses
+
+You can help improve AI search by providing feedback on the responses you receive.
+Each AI response includes action buttons that allow you to rate the quality and usefulness of the answer.
+
+To provide feedback on an AI response:
+
+1. After receiving an AI response, locate the feedback buttons at the bottom of the response.
+2. Choose one of the following actions:
+   - Click the thumbs up icon to indicate the response was helpful.
+   - Click the thumbs down icon to indicate the response was not helpful.
+
+#### Provide detailed feedback
+
+When you indicate that a response was not helpful, you can optionally provide more specific feedback:
+
+1. After clicking the thumbs down icon, a feedback form appears.
+2. Select one of the predefined reasons:
+   - **Didn't answer my question**
+   - **Couldn't find what I was looking for**
+   - **Wrong topic**
+   - **Partially helpful, but missing details**
+3. Alternatively, click **More...** to provide custom feedback with specific details.
+   
 ## Resources
 
 - [Navigate the project](./navigate-project.md)
