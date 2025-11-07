@@ -1,4 +1,62 @@
 '@redocly/realm':
+  0.127.0:
+    timestamp: 1762430435000
+    changes:
+      minor:
+        - Added `x-keywords` extension support for OpenAPI documents to boost or exclude search terms through keywords.
+        - Added `connect-mcp` Markdoc tag.
+        - Added support for configuring mock server settings at the product level.
+        - Added **Ask AI** floating action button to trigger AI Search. Deprecated `search.ai` config option and replaced it with `aiAssistant`.
+        - Added a possibility to send feedback for AI Search responses.
+        - Added page actions that allow to connect to the MCP server via VSCode and Cursor.
+        - Added support for `discriminator.defaultMapping` in OpenAPI 3.2.0.
+        - Added `projectTitle` parameter to `seo` configuration to append project name to page titles.
+        - Added `frontmatterTranslate` utility to localize React front matter.
+        - Added `additionalProps` to `navbar`, `sidebar`, and `footer` items to enable adding custom properties.
+        - Added support for anchor links to the `tabs` Markdoc tag.
+        - Updated CSS styles for the `tag` component.
+      patch:
+        - Fixed a path prefix issue for static assets from `static` directory.
+        - Fixed an issue where disabling `mockServer` did not remove its paths.
+        - Fixed an issue where valid links caused link checker errors for API description file download links.
+        - Fixed incorrect paths in anchor links when `REDOCLY_PREFIX_PATHS` was used.
+        - Fixed an issue where scorecard level rules were not overridden with target rules.
+        - Fixed an issue where the link checker incorrectly reported links with configured wildcard redirects as broken.
+        - Fixed navigation issues in sidebar, product, and version pickers for projects using path prefixes.
+        - Fixed an issue where static assets were served without path prefix when it was enabled.
+        - Updated `@redocly/openapi-core` to version `2.10.0`.
+        - Fixed an issue where renaming route paths and changing API functions required full restart in the preview mode.
+        - Fixed security vulnerability `CVE-2025-62610`.
+        - Fixed a conflict in the router between MCP server and file with the same name in the root directory.
+        - Fixed an issue where API output files listed in the `ignore` configuration were not excluded.
+        - Fixed an issue in AsyncAPI docs where `schemaFormat` with `$ref` in message payloads caused crashes.
+        - Fixed an issue where the sidebar didn't preserve its state between reloads.
+        - Fixed an issue where component ejection failed with **npm** installations.
+        - Fixed an issue where search didn't parse Markdoc variables and partials.
+        - Fixed an issue where URLs in the sitemap didn't respect the path prefix.
+        - Fixed an issue that caused redirects to not work in locales.
+        - Fixed card links leading to incorrect locations in GraphQL and AsyncAPI docs.
+        - Fixed an issue where navigation actions could not be disabled for a page using front matter.
+        - Fixed an issue where link checker reported HTML `a` tag valid links in project under path prefix.
+        - Improved layout of the tabs component.
+        - Improved AI assistant usability on mobile devices.
+        - Content slugger no longer takes media assets and ignored files into account.
+        - Fixed an issue where page actions appeared for each `partial` Markdoc tag on a page.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0
+      '@redocly/theme': 0.59.0
+      '@redocly/realm-asyncapi-sdk': 0.5.0
+      '@redocly/portal-plugin-mock-server': 0.12.0
+      '@redocly/asyncapi-docs': 1.4.0
+      '@redocly/graphql-docs': 1.4.0
+      '@redocly/portal-legacy-ui': 0.10.0
+  0.127.0-next.15:
+    timestamp: 1762355323000
+    changes:
+      minor:
+        - Added `projectTitle` parameter to `seo` configuration to append project name to page titles.
+      patch: []
+    dependencies: {}
   0.127.0-next.14:
     timestamp: 1762266887000
     changes:
@@ -4735,6 +4793,57 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.127.0:
+    timestamp: 1762430435000
+    changes:
+      minor:
+        - Added `x-keywords` extension support for OpenAPI documents to boost or exclude search terms through keywords.
+        - Added `connect-mcp` Markdoc tag.
+        - Added **Ask AI** floating action button to trigger AI Search. Deprecated `search.ai` config option and replaced it with `aiAssistant`.
+        - Added a possibility to send feedback for AI Search responses.
+        - Added page actions that allow to connect to the MCP server via VSCode and Cursor.
+        - Added `projectTitle` parameter to `seo` configuration to append project name to page titles.
+        - Added `frontmatterTranslate` utility to localize React front matter.
+        - Added `additionalProps` to `navbar`, `sidebar`, and `footer` items to enable adding custom properties.
+        - Added support for anchor links to the `tabs` Markdoc tag.
+        - Updated CSS styles for the `tag` component.
+      patch:
+        - Fixed a path prefix issue for static assets from `static` directory.
+        - Fixed incorrect paths in anchor links when `REDOCLY_PREFIX_PATHS` was used.
+        - Fixed an issue where scorecard level rules were not overridden with target rules.
+        - Fixed an issue where the link checker incorrectly reported links with configured wildcard redirects as broken.
+        - Fixed navigation issues in sidebar, product, and version pickers for projects using path prefixes.
+        - Fixed an issue where static assets were served without path prefix when it was enabled.
+        - Updated `@redocly/openapi-core` to version `2.10.0`.
+        - Fixed security vulnerability `CVE-2025-62610`.
+        - Fixed a conflict in the router between MCP server and file with the same name in the root directory.
+        - Fixed an issue where the sidebar didn't preserve its state between reloads.
+        - Fixed an issue where component ejection failed with **npm** installations.
+        - Fixed an issue where search didn't parse Markdoc variables and partials.
+        - Fixed an issue where URLs in the sitemap didn't respect the path prefix.
+        - Fixed an issue that caused redirects to not work in locales.
+        - Fixed card links leading to incorrect locations in GraphQL and AsyncAPI docs.
+        - Fixed an issue where navigation actions could not be disabled for a page using front matter.
+        - Fixed an issue where link checker reported HTML `a` tag valid links in project under path prefix.
+        - Improved layout of the tabs component.
+        - Improved AI assistant usability on mobile devices.
+        - Content slugger no longer takes media assets and ignored files into account.
+        - Fixed an issue where page actions appeared for each `partial` Markdoc tag on a page.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0
+      '@redocly/theme': 0.59.0
+      '@redocly/realm-asyncapi-sdk': 0.5.0
+      '@redocly/portal-plugin-mock-server': 0.12.0
+      '@redocly/asyncapi-docs': 1.4.0
+      '@redocly/graphql-docs': 1.4.0
+      '@redocly/portal-legacy-ui': 0.10.0
+  0.127.0-next.15:
+    timestamp: 1762355323000
+    changes:
+      minor:
+        - Added `projectTitle` parameter to `seo` configuration to append project name to page titles.
+      patch: []
+    dependencies: {}
   0.127.0-next.14:
     timestamp: 1762266887000
     changes:
@@ -8684,6 +8793,56 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.127.0:
+    timestamp: 1762430435000
+    changes:
+      minor:
+        - Added `x-keywords` extension support for OpenAPI documents to boost or exclude search terms through keywords.
+        - Added `connect-mcp` Markdoc tag.
+        - Added **Ask AI** floating action button to trigger AI Search. Deprecated `search.ai` config option and replaced it with `aiAssistant`.
+        - Added a possibility to send feedback for AI Search responses.
+        - Added page actions that allow to connect to the MCP server via VSCode and Cursor.
+        - Added `projectTitle` parameter to `seo` configuration to append project name to page titles.
+        - Added `frontmatterTranslate` utility to localize React front matter.
+        - Added `additionalProps` to `navbar`, `sidebar`, and `footer` items to enable adding custom properties.
+        - Added support for anchor links to the `tabs` Markdoc tag.
+        - Updated CSS styles for the `tag` component.
+      patch:
+        - Fixed a path prefix issue for static assets from `static` directory.
+        - Fixed incorrect paths in anchor links when `REDOCLY_PREFIX_PATHS` was used.
+        - Fixed an issue where the link checker incorrectly reported links with configured wildcard redirects as broken.
+        - Fixed navigation issues in sidebar, product, and version pickers for projects using path prefixes.
+        - Fixed an issue where static assets were served without path prefix when it was enabled.
+        - Updated `@redocly/openapi-core` to version `2.10.0`.
+        - Fixed security vulnerability `CVE-2025-62610`.
+        - Fixed a conflict in the router between MCP server and file with the same name in the root directory.
+        - Fixed an issue where the sidebar didn't preserve its state between reloads.
+        - Fixed an issue where component ejection failed with **npm** installations.
+        - Fixed an issue where search didn't parse Markdoc variables and partials.
+        - Fixed an issue where URLs in the sitemap didn't respect the path prefix.
+        - Fixed an issue that caused redirects to not work in locales.
+        - Fixed card links leading to incorrect locations in GraphQL and AsyncAPI docs.
+        - Fixed an issue where navigation actions could not be disabled for a page using front matter.
+        - Fixed an issue where link checker reported HTML `a` tag valid links in project under path prefix.
+        - Improved layout of the tabs component.
+        - Improved AI assistant usability on mobile devices.
+        - Content slugger no longer takes media assets and ignored files into account.
+        - Fixed an issue where page actions appeared for each `partial` Markdoc tag on a page.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0
+      '@redocly/theme': 0.59.0
+      '@redocly/realm-asyncapi-sdk': 0.5.0
+      '@redocly/portal-plugin-mock-server': 0.12.0
+      '@redocly/asyncapi-docs': 1.4.0
+      '@redocly/graphql-docs': 1.4.0
+      '@redocly/portal-legacy-ui': 0.10.0
+  0.127.0-next.15:
+    timestamp: 1762355323000
+    changes:
+      minor:
+        - Added `projectTitle` parameter to `seo` configuration to append project name to page titles.
+      patch: []
+    dependencies: {}
   0.127.0-next.14:
     timestamp: 1762266887000
     changes:
@@ -12627,6 +12786,58 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.127.0:
+    timestamp: 1762430435000
+    changes:
+      minor:
+        - Added `x-keywords` extension support for OpenAPI documents to boost or exclude search terms through keywords.
+        - Added `connect-mcp` Markdoc tag.
+        - Added support for configuring mock server settings at the product level.
+        - Added **Ask AI** floating action button to trigger AI Search. Deprecated `search.ai` config option and replaced it with `aiAssistant`.
+        - Added a possibility to send feedback for AI Search responses.
+        - Added page actions that allow to connect to the MCP server via VSCode and Cursor.
+        - Added support for `discriminator.defaultMapping` in OpenAPI 3.2.0.
+        - Added `projectTitle` parameter to `seo` configuration to append project name to page titles.
+        - Added `additionalProps` to `navbar`, `sidebar`, and `footer` items to enable adding custom properties.
+        - Updated CSS styles for the `tag` component.
+      patch:
+        - Fixed a path prefix issue for static assets from `static` directory.
+        - Fixed an issue where disabling `mockServer` did not remove its paths.
+        - Fixed an issue where valid links caused link checker errors for API description file download links.
+        - Fixed incorrect paths in anchor links when `REDOCLY_PREFIX_PATHS` was used.
+        - Fixed an issue where the link checker incorrectly reported links with configured wildcard redirects as broken.
+        - Fixed navigation issues in sidebar, product, and version pickers for projects using path prefixes.
+        - Fixed an issue where static assets were served without path prefix when it was enabled.
+        - Updated `@redocly/openapi-core` to version `2.10.0`.
+        - Fixed an issue where renaming route paths and changing API functions required full restart in the preview mode.
+        - Fixed security vulnerability `CVE-2025-62610`.
+        - Fixed a conflict in the router between MCP server and file with the same name in the root directory.
+        - Fixed an issue in AsyncAPI docs where `schemaFormat` with `$ref` in message payloads caused crashes.
+        - Fixed an issue where the sidebar didn't preserve its state between reloads.
+        - Fixed an issue where search didn't parse Markdoc variables and partials.
+        - Fixed an issue where URLs in the sitemap didn't respect the path prefix.
+        - Fixed card links leading to incorrect locations in GraphQL and AsyncAPI docs.
+        - Fixed an issue where navigation actions could not be disabled for a page using front matter.
+        - Fixed an issue where link checker reported HTML `a` tag valid links in project under path prefix.
+        - Improved layout of the tabs component.
+        - Improved AI assistant usability on mobile devices.
+        - Content slugger no longer takes media assets and ignored files into account.
+        - Fixed an issue where page actions appeared for each `partial` Markdoc tag on a page.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0
+      '@redocly/theme': 0.59.0
+      '@redocly/realm-asyncapi-sdk': 0.5.0
+      '@redocly/portal-plugin-mock-server': 0.12.0
+      '@redocly/asyncapi-docs': 1.4.0
+      '@redocly/graphql-docs': 1.4.0
+      '@redocly/portal-legacy-ui': 0.10.0
+  0.127.0-next.15:
+    timestamp: 1762355323000
+    changes:
+      minor:
+        - Added `projectTitle` parameter to `seo` configuration to append project name to page titles.
+      patch: []
+    dependencies: {}
   0.127.0-next.14:
     timestamp: 1762266887000
     changes:
@@ -16593,6 +16804,28 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.59.0:
+    timestamp: 1762430435000
+    changes:
+      minor:
+        - Added `connect-mcp` Markdoc tag.
+        - Added **Ask AI** floating action button to trigger AI Search. Deprecated `search.ai` config option and replaced it with `aiAssistant`.
+        - Added a possibility to send feedback for AI Search responses.
+        - Added page actions that allow to connect to the MCP server via VSCode and Cursor.
+        - Added support for `discriminator.defaultMapping` in OpenAPI 3.2.0.
+        - Added `frontmatterTranslate` utility to localize React front matter.
+        - Added support for anchor links to the `tabs` Markdoc tag.
+        - Updated CSS styles for the `tag` component.
+      patch:
+        - Changed **Ask AI** button default icon from `redocly` to `sparkles`.
+        - Fixed an issue where servers in OpenAPI documentation pages were not inherited from the root server.
+        - Fixed navigation issues in sidebar, product, and version pickers for projects using path prefixes.
+        - Fixed an issue where the navbar link to the root ("/") path in projects under path prefix was not active.
+        - Fixed the `Card` component missing list bullets and limited Markdown support.
+        - Improved layout of the tabs component.
+        - Improved AI assistant usability on mobile devices.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.5.0
   0.59.0-next.12:
     timestamp: 1762266887000
     changes:
@@ -19005,6 +19238,20 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.15.0:
+    timestamp: 1762430435000
+    changes:
+      minor:
+        - Added `x-keywords` extension support for OpenAPI documents to boost or exclude search terms through keywords.
+        - Added support for `discriminator.defaultMapping` in OpenAPI 3.2.0.
+      patch:
+        - Fixed an issue where `oneOf` titles were overridden by the parent schema's title.
+        - Fixed an issue where servers in OpenAPI documentation pages were not inherited from the root server.
+        - Updated `@redocly/openapi-core` to version `2.10.0`.
+        - Fixed malformed operation link URL in Replay.
+        - Updated `openapi-sampler` from version 1.6.1 to 1.6.2.
+    dependencies:
+      '@redocly/replay': 0.18.0
   3.15.0-next.13:
     timestamp: 1762266887000
     changes:
@@ -21414,6 +21661,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.38.0:
+    timestamp: 1762416436000
+    changes:
+      minor:
+        - Added `projectTitle` parameter to the `seo` configuration to append the project name to page titles.
+      patch: []
+    dependencies: {}
   0.37.0:
     timestamp: 1762173163000
     changes:
@@ -21918,6 +22172,13 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.4.0:
+    timestamp: 1762430435000
+    changes:
+      minor: []
+      patch:
+        - Improved **Download** panel height to fit the content size for Graphql docs.
+    dependencies: {}
   1.4.0-next.1:
     timestamp: 1762260840000
     changes:
@@ -23039,6 +23300,12 @@
         - Redocly Mock Server release
     dependencies: {}
 '@redocly/portal-legacy-ui':
+  0.10.0:
+    timestamp: 1762430435000
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   0.10.0-next.0:
     timestamp: 1759997817000
     changes:
@@ -23182,6 +23449,27 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.10.0:
+    timestamp: 1762430435000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.127.0
+      '@redocly/redoc': 0.127.0
+      '@redocly/redoc-reef': 0.127.0
+      '@redocly/redoc-revel': 0.127.0
+      '@redocly/theme': 0.59.0
+  1.10.0-next.15:
+    timestamp: 1762355323000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.127.0-next.15
+      '@redocly/redoc': 0.127.0-next.15
+      '@redocly/redoc-reef': 0.127.0-next.15
+      '@redocly/redoc-revel': 0.127.0-next.15
   1.10.0-next.14:
     timestamp: 1762266887000
     changes:
@@ -27398,6 +27686,14 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.12.0:
+    timestamp: 1762430435000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where disabling `mockServer` did not remove its paths.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0
   0.12.0-next.13:
     timestamp: 1762266887000
     changes:
@@ -29709,6 +30005,14 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.18.0:
+    timestamp: 1762430435000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.10.0`.
+    dependencies:
+      '@redocly/theme': 0.59.0
   0.18.0-next.13:
     timestamp: 1762266887000
     changes:
@@ -31154,6 +31458,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.10.0:
+    timestamp: 1762430435000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.59.0
   0.10.0-next.12:
     timestamp: 1762266887000
     changes:
@@ -32513,6 +32824,16 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.4.0:
+    timestamp: 1762430435000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue in AsyncAPI docs where `schemaFormat` with `$ref` in message payloads caused crashes.
+        - Updated `openapi-sampler` from version 1.6.1 to 1.6.2.
+    dependencies:
+      '@redocly/openapi-docs': 3.15.0
+      '@redocly/theme': 0.59.0
   1.4.0-next.13:
     timestamp: 1762266887000
     changes:

@@ -2,6 +2,8 @@
   icon: cog
   page: ./index.md
   items:
+    - page: ./ai-assistant.md
+      label: aiAssistant
     - group: analytics
       page: ./analytics/index.md
       items:

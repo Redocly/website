@@ -109,6 +109,13 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 
 ---
 
+- projectTitle
+- string
+- Adds a site-wide suffix appended to the page's `<title>`.
+  The final browser title is formatted as `<title> | <projectTitle>`.
+
+---
+
 - llmstxt
 - [llmstxt object](#llmstxt-object)
 - `llms.txt` file generation options.
