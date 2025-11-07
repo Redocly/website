@@ -25,7 +25,6 @@ Some projects can have AI-powered search you can prompt to get information disti
 
 {% /tabs %}
 
-
 ## Use AI search
 
 Some projects have AI-powered search enabled.
@@ -96,7 +95,7 @@ When you indicate that a response was not helpful, you can optionally provide mo
    - **Wrong topic**
    - **Partially helpful, but missing details**
 3. Alternatively, click **More...** to provide custom feedback with specific details.
-   
+
 ## Resources
 
 - [Navigate the project](./navigate-project.md)
