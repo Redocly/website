@@ -51,5 +51,5 @@ After you define scorecard levels and commit the changes, labels representing th
 
 - **[Configure scorecard](./configure-scorecard.md)** - Add Redocly built-in or custom rulesets to scorecards for comprehensive API quality assessment and tracking
 - **[Configure a catalog](../../config/catalog-classic.md)** - Organize multiple API descriptions in your project with structured catalogs for better navigation and discovery
-- **[Scorecard configuration reference](../../config/scorecard.md)** - Complete reference for scorecard configuration options and customization settings
+- **[Scorecard configuration reference](../../config/scorecard.md)** - Complete reference for scorecardClassic configuration options and customization settings
 - **[Classic catalog configuration](../../config/catalog-classic.md)** - Advanced configuration options for the classic version of API catalogs and organization

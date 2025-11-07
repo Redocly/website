@@ -8,7 +8,13 @@ plans:
   - Enterprise+
 description: Add and create sets of rules and test your API description files against them.
 ---
-# `scorecard`
+# `scorecardClassic`
+
+{% admonition type="warning" %}
+The `scorecard` property is deprecated.
+Use `scorecardClassic` instead.
+The `scorecard` property continues to work with a deprecation warning.
+{% /admonition %}
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -192,7 +198,7 @@ where:
 The following example `redocly.yaml` file configuration adds three levels to the project's API scorecard: Baseline, Silver, and Gold:
 
 ```yaml {% title="redocly.yaml" %}
-scorecard:
+scorecardClassic:
   levels:
     - name: Baseline
       extends:
@@ -312,21 +318,21 @@ rules:
 ### Ignore example
 To ignore a specific file from the scorecard calculation, for example `openapi.yaml`, use `ignore` property:
 ```yaml
-scorecard:
+scorecardClassic:
   ignore:
     - openapi.yaml
 ```
 
 To ignore a directory, for example `catalog/`:
 ```yaml
-scorecard:
+scorecardClassic:
   ignore:
     - catalog/*
 ```
 
 To ignore every file with a specific extension, for example `.yaml`:
 ```yaml
-scorecard:
+scorecardClassic:
   ignore:
     - "**/*.yaml"
 ```
@@ -334,7 +340,7 @@ scorecard:
 ### fromProjectUrl example
 To enable the [Redocly OpenAPI VS Code extension](https://marketplace.visualstudio.com/items?itemName=Redocly.openapi-vs-code) to validate your local API descriptions against remote scorecard rules:
 ```yaml
-scorecard:
+scorecardClassic:
   fromProjectUrl: https://app.cloud.redocly.com/org/my-org/project/my-project
 ```
 
