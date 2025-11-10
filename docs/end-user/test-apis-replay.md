@@ -81,7 +81,7 @@ You can edit user-created environments to better suit your needs:
 In the **Inputs** table you can:
 
 - add new inputs and their values
-- edit values of existing inputs.
+- edit values of existing inputs
 - set input values to secret
 - delete user-added inputs
 
