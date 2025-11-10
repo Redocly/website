@@ -1,12 +1,12 @@
 # Test APIs using CLI
 
-Use the cURL app in a command-line interface (CLI) tool of your choice to make calls to APIs in your project.
+Use the (curl)[https://curl.se/] app in a command-line interface (CLI) tool of your choice to make calls to APIs in your project.
 
 You can send requests to servers listed on API documentation page, or to Redocly mock server.
 
-## Use cURL to call an API operation
+## Use curl to call an API operation
 
-To send an API request using cURL:
+To send an API request using curl:
 
 1. Go to the API documentation page for the operation you want to call.
 1. Copy the curl command from the code samples.
@@ -15,7 +15,7 @@ To send an API request using cURL:
 
   For example:
 
-  ```curl {% title="cURL command to call Update special event operation" %}
+  ```curl {% title="curl command to call Update special event operation" %}
   curl -i -X PATCH \
       -u : \
       'https://redocly.com/_mock/docs/openapi/museum-api/special-events/dad4bce8-f5cb-4078-a211-995864315e39' \
@@ -28,7 +28,7 @@ To send an API request using cURL:
 
 The CLI tool outputs a response from the server.
 
-```bash cURL mock server response
+```bash curl mock server response
 HTTP/2 200
 access-control-allow-credentials: true
 access-control-allow-headers: *
