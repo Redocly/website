@@ -1,6 +1,6 @@
 # Test APIs using CLI
 
-Use the (curl)[https://curl.se/] app in a command-line interface (CLI) tool of your choice to make calls to APIs in your project.
+Use the curl app in a command-line interface (CLI) tool of your choice to make calls to APIs in your project.
 
 You can send requests to servers listed on API documentation page, or to Redocly mock server.
 
@@ -28,7 +28,7 @@ To send an API request using curl:
 
 The CLI tool outputs a response from the server.
 
-```bash curl mock server response
+```bash curl {% title="mock server response" %}
 HTTP/2 200
 access-control-allow-credentials: true
 access-control-allow-headers: *
