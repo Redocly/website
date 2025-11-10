@@ -35203,3 +35203,10 @@ reunite:
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.10.0`.
     dependencies: {}
+  v2025-11-07.2:
+    timestamp: 1762521208000
+    changes:
+      minor: []
+      patch:
+        - Synchronized date range filters between feedback export modal and feedback list.
+    dependencies: {}
