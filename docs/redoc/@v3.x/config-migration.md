@@ -1,240 +1,279 @@
 ---
 seo:
-  title: Migration 2.x to 3.x
+  title: Migration from Redoc 2.x to 3.x
 ---
 
-# Migration 2.x to 3.x
+# Migration from Redoc 2.x to 3.x
 
-## Configuration options changes between Redoc 2.x and newest Redoc 3.x configuration
+## Configuration options changes
+
+The following tables show the changes in configuration options between Redoc 2.x and the newest Redoc 3.x configuration.
 
 {% table %}
+
 - Feature/Option
 - Old Interface (`Options`)
 - New Interface (`Options`)
-- Notes
+
 ---
-- **General**
----
+
 - `theme`
 - `ResolvedThemeInterface`
 - Removed
-- Deleted
+
 ---
+
 - `scrollYOffset`
 - `() => number`
 - `() => number`
-- Unchanged
+
 ---
+
 - `hideHostname`
 - `boolean`
 - Removed
-- Deleted
+
 ---
----
+
 - `expandResponses`
 - `{ [code: string]: boolean } |'all'`
 - Removed
-- Deleted
+
 ---
+
 - `requiredPropsFirst`
 - `boolean`
 - `sortRequiredPropsFirst: boolean`
-- Renamed
+
 ---
+
 - `sortPropsAlphabetically`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `sortEnumValuesAlphabetically`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `sortOperationsAlphabetically`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `sortTagsAlphabetically`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `nativeScrollbars`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `pathInMiddlePanel`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `hideDownloadButtons`
 - `boolean | null`
 - `boolean | null`
-- Unchanged
+
 ---
+
 - `downloadDefinitionUrl`
 - `string`
 - `downloadUrls?: DownloadUrlsConfig`
-- Renamed and type changed
+
 ---
+
 - `disableSearch`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `onlyRequiredInSamples`
 - `boolean`
 - `boolean`
-- Unchanged
+
 ---
+
 - `generatedPayloadSamplesMaxDepth`
 - `number`
 - `generatedSamplesMaxDepth: number`
-- Renamed
+
 ---
+
 - `showExtensions`
 - `boolean | string[]`
 - `string | string[] | boolean`
-- Type changed
+
 ---
+
 - `hideSingleRequestSampleTab`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `hideRequestPayloadSample`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `menuToggle`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `jsonSampleExpandLevel`
 - `number`
 - `jsonSamplesExpandLevel: number`
-- Renamed
+
 ---
+
 - `enumSkipQuotes`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `hideSchemaTitles`
 - `boolean`
 - `boolean`
-- Unchanged
+
 ---
+
 - `hideSecuritySection`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `showSecuritySchemeType`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `simpleOneOfTypeLabel`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `payloadSampleIdx`
 - `number`
 - Removed
-- Deleted
+
 ---
+
 - `expandSingleSchemaField`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `schemaExpansionLevel`
 - `number`
 - `schemasExpansionLevel: number | undefined`
-- Renamed and type changed
+
 ---
+
 - `allowedMdComponents`
 - `Record<string, MDXComponentMeta>`
 - Removed
-- Deleted
+
 ---
+
 - `expandDefaultServerVariables`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `maxDisplayedEnumValues`
 - `number`
 - `number`
-- Unchanged
+
 ---
+
 - `ignoreNamedSchemas`
 - `Set<string>`
 - `Set<string>`
-- Unchanged
+
 ---
+
 - `unstable_ignoreMimeParameters`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `hideSidebar`
 - `boolean`
 - `boolean`
-- Unchanged
+
 ---
+
 - `hideLoading`
 - `boolean`
 - `boolean`
-- Unchanged
+
 ---
+
 - `hidePropertiesPrefix`
 - `boolean`
 - `boolean`
-- Unchanged
+
 ---
+
 - `hideSchemaPattern`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `schemaDefinitionsTagName`
 - `string`
 - `string`
-- Unchanged
+
 ---
+
 - `minCharacterLengthToInitSearch`
 - `number`
 - Removed
-- Deleted
+
 ---
+
 - `showWebhookVerb`
 - `boolean`
 - Removed
-- Deleted
+
 ---
+
 - `showObjectSchemaExamples`
 - `boolean`
 - Removed
-- Deleted
+
 ---
-- **New Options**
-- Not available
-- Various (e.g., `layout`, `hidePropertiesPrefix`, `routingBasePath`, etc.)
-- Several new options added
+
 {% /table %}
 
 ## Summary of changes
 
-1. **Renamed Options**: Some options have been renamed for clarity or alignment with their functionalities, such as `generatedPayloadSamplesMaxDepth` to `generatedSamplesMaxDepth`.
-2. **Removed Features**: Several options related to UI customizations and response handling have been removed.
-3. **Unchanged Options**: Some options remain unchanged, indicating their continued relevance in the new configuration.
-4. **New Options**: The new interface introduces several options, suggesting new functionalities or approaches.
+- **Renamed Options**: Some options have been renamed for clarity or alignment with their functionalities, such as `generatedPayloadSamplesMaxDepth` to `generatedSamplesMaxDepth`.
+- **Removed Features**: Several options related to UI customizations and response handling have been removed.
+- **Unchanged Options**: Some options remain unchanged, indicating their continued relevance in the new configuration.
+- **New Options**: The new interface introduces several options, suggesting new functionalities or approaches.
