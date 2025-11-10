@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Page from '@redocly/marketing-pages/pages/editor-preview/editor-preview.page.js';
+import { safeSlugify, RedoclyOpenAPIDocs } from '@redocly/openapi-docs';
 
 export default function PreviewRoute() {
   const [isAllowed, setIsAllowed] = React.useState(false);
@@ -22,5 +23,10 @@ export default function PreviewRoute() {
 
   if (!isAllowed) return null;
 
-  return <Page />;
+  return (
+    <Page
+      RedoclyOpenAPIDocs={RedoclyOpenAPIDocs}
+      safeSlugify={safeSlugify}
+    />
+  );
 };
