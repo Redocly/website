@@ -9,9 +9,9 @@ You can send requests to servers listed on API documentation page, or to Redocly
 To send an API request using cURL:
 
 1. Go to the API documentation page for the operation you want to call.
-1. Copy the cURL command from the code samples and verify the request is being sent to the mock server.
+1. Copy the curl command from the code samples.
 1. (Optional) To change the server, scroll to the **Servers** section of the API documentation page, click the **Copy** icon next to a server URL, and paste the value into your command.
-1. Update the values in the cURL command as needed.
+1. Update the values in the curl command as needed.
 
   For example:
 
@@ -24,7 +24,7 @@ To send an API request using cURL:
           "location": "Under the sea."
       }'
   ```
-1. Run the cURL command in a CLI tool.
+1. Run the curl command in a CLI tool.
 
 The CLI tool outputs a response from the server.
 
@@ -48,7 +48,7 @@ x-xss-protection: 1;mode=block;
 
 ## Return a specific response example
 
-Force the mock server to respond with a specific example from the API description using the `x-redocly-response-body-example` header to pass the example's name.
+Force the Redocly mock server to respond with a specific example from the API description using the `x-redocly-response-body-example` header to pass the example's name.
 
 The following example forces a response for a `general_entry` ticket from the Museum API's mock server:
 
