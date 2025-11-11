@@ -136,6 +136,123 @@ You can use the context to:
 - Use server information to set environment-specific values
 - Configure server variables for server URL
 
+## Configure security values
+
+Use the `security` field to provide credentials for your security schemes.
+
+- Use `default` to apply the same credentials to all applicable security schemes.
+- Map keys to security scheme IDs from `components.securitySchemes`.
+
+{% tabs %}
+{% tab label="Default" %}
+```typescript {% title="configure.ts" %}
+export function configure() {
+  return {
+    requestValues: {
+      security: {
+        default: {
+          username: 'api_user',
+          password: 'secureP@ssword123'
+        }
+      }
+    }
+  };
+}
+```
+{% /tab %}
+
+{% tab label="Scheme-specific" %}
+```yaml {% title="openapi.yaml" %}
+components:
+  securitySchemes:
+    MuseumPlaceholderAuth:
+      type: http
+      scheme: basic
+```
+
+```typescript {% title="configure.ts" %}
+export function configure() {
+  return {
+    requestValues: {
+      security: {
+        MuseumPlaceholderAuth: {
+          username: 'api_user',
+          password: 'secureP@ssword123'
+        }
+      }
+    }
+  };
+}
+```
+{% /tab %}
+{% /tabs %}
+
+### Security scheme field mapping
+
+Different security schemes accept different fields from the `SecurityDetails` object.
+Use this table to determine which fields to provide for each security scheme type:
+
+{% table %}
+
+- Security Scheme Type
+- Fields
+
+---
+
+- **apiKey**
+- `token.access_token`, `token.token_type`
+
+---
+
+- **http** (basic)
+- `username`, `password`
+
+---
+
+- **http** (bearer)
+- `token.access_token`, `token.token_type`
+
+---
+
+- **http** (digest)
+- `username`, `password`
+
+---
+
+- **oauth2** (clientCredentials)
+- `client_id`, `client_secret`, `token.access_token`, `token.token_type`
+
+---
+
+- **oauth2** (authorizationCode)
+- `client_id`, `client_secret`, `token.access_token`, `token.token_type`
+
+---
+
+- **oauth2** (implicit)
+- `client_id`, `token.access_token`, `token.token_type`
+
+---
+
+- **oauth2** (password)
+- `username`, `password`, `client_id`, `client_secret`, `token.access_token`, `token.token_type`
+
+---
+
+- **openIdConnect**
+- `username`, `password`, `client_id`, `client_secret`, `token.access_token`, `token.token_type`
+
+{% /table %}
+
+**Field descriptions:**
+
+- `username`: username for authentication
+- `password`: password for authentication
+- `token.access_token`: access token, API key, or bearer token
+- `token.token_type`: token type (e.g., 'Bearer', 'JWT') - defaults to 'Bearer' if not specified
+- `client_id`: *OAuth2* / *OpenID Connect* client identifier
+- `client_secret`: *OAuth2* / *OpenID Connect* client secret
+
 ## Merge values
 
 When you configure request values, they merge with existing examples in your OpenAPI description, rather than replacing them entirely.
@@ -249,8 +366,10 @@ export function configure(context: {
       name: 'Development Product'
     },
     security: {
-      username: 'dev_user',
-      password: 'DevPassword123'
+      default: {
+        username: 'dev_user',
+        password: 'DevPassword123'
+      }
     }
   };
 
@@ -259,8 +378,10 @@ export function configure(context: {
       name: 'Production Product'
     },
     security: {
-      username: 'prod_user',
-      password: 'ProdPassword456'
+      default: {
+        username: 'prod_user',
+        password: 'ProdPassword456'
+      }
     }
   };
 
@@ -269,8 +390,10 @@ export function configure(context: {
       name: 'Default Product'
     },
     security: {
-      username: 'default_user',
-      password: 'DefaultPassword789'
+      default: {
+        username: 'default_user',
+        password: 'DefaultPassword789'
+      }
     }
   };
 
