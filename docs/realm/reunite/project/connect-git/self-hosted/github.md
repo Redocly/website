@@ -38,11 +38,9 @@ The GitHub App must have Repository permissions:
 - Contents: write
 - Metadata: read
 - Pull requests: read
-- Webhooks: write
 
 Organization permissions:
 - Members: read
-- Webhooks: write
 
 Account permissions:
 - Email addresses: read
