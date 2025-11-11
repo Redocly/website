@@ -28,7 +28,7 @@ To render API documentation in an HTML page, start with the template below and r
   </head>
   <body>
     <redoc spec-url='https://redocly.github.io/redoc/museum.yaml'></redoc>
-    <script type="module" src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+    <script type="module" src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
   </body>
 </html>
 ```
@@ -500,7 +500,7 @@ Below is an example of an HTML page with a `<div>` tag, and the JavaScript to ad
   <head />
   <body>
     <H1>Redoc in action</H1>
-    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+    <script src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
     <div id="redoc-container"></div>
 
     <script>
@@ -522,13 +522,13 @@ Using the CDN is the simplest option, but if you need to host in a closed enviro
 The main example shows using the CDN:
 
 ```html
-<script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+<script src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
 ```
 
 If you prefer to host the depdencies yourself, at first install `redoc` using `npm`:
 
 ```sh
-npm install redoc
+npm install redoc@next
 ```
 
 _(Yarn users can install the `redoc` package with `yarn`)_.

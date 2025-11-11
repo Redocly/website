@@ -12,16 +12,15 @@ redirects:
 
 Install the following dependencies required by Redoc:
 
+- `redoc`
 - `react`
 - `react-dom`
-- `mobx`
 - `styled-components`
-- `core-js`
 
 If you have npm installed, you can install these dependencies using the following command:
 
 ```js
-npm i react react-dom mobx styled-components core-js
+npm i redoc@next react react-dom styled-components
 ```
 
 ## Step 1 - Import the `RedocStandalone` component

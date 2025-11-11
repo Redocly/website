@@ -18,7 +18,7 @@ When using Redoc as an HTML element, add the `disable-telemetry="true"` attribut
 
 ```html
 <redoc spec-url="https://redocly.github.io/redoc/museum.yaml" disable-telemetry="true"></redoc>
-<script type="module" src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
+<script type="module" src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"></script>
 ```
 
 ### React component

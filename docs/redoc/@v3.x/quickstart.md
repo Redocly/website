@@ -34,7 +34,7 @@ To render your OpenAPI definition using Redoc, use the following HTML code sampl
     <!--
     Link to Redoc JavaScript on CDN for rendering standalone element
     -->
-    <script type="module" src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
+    <script type="module" src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"></script>
   </body>
 </html>
 ```

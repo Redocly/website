@@ -43,7 +43,7 @@ Create an HTML page, or edit an existing one, and add the following:
 
 ```html
     <redoc spec-url="https://redocly.github.io/redoc/museum.yaml"></redoc>
-    <script type="module" src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+    <script type="module" src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
 ```
 
 Open the HTML file in your browser, and your API documentation is shown on the page.
