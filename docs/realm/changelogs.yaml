@@ -1,4 +1,23 @@
 '@redocly/realm':
+  0.128.0-next.0:
+    timestamp: 1762810677000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where items from different versions appeared simultaneously in the sidebar when using `$ref` in `sidebars.yaml`.
+        - Fixed incorrect application of `rel="noreferrer"` on internal links.
+        - Removed `redoc` test execution when running `@redocly/openapi-docs` tests.
+        - Enter prerelease mode.
+        - Fixed path prefix issue in `scorecard`.
+        - Fixed an issue where switching versions at the project root redirected to the first sidebar page instead of the current one.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.6.0-next.0
+      '@redocly/openapi-docs': 3.16.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.13.0-next.0
+      '@redocly/portal-legacy-ui': 0.11.0-next.0
+      '@redocly/asyncapi-docs': 1.5.0-next.0
+      '@redocly/graphql-docs': 1.5.0-next.0
   0.127.0:
     timestamp: 1762430435000
     changes:
@@ -4793,6 +4812,24 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.128.0-next.0:
+    timestamp: 1762810677000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where items from different versions appeared simultaneously in the sidebar when using `$ref` in `sidebars.yaml`.
+        - Fixed incorrect application of `rel="noreferrer"` on internal links.
+        - Enter prerelease mode.
+        - Fixed path prefix issue in `scorecard`.
+        - Fixed an issue where switching versions at the project root redirected to the first sidebar page instead of the current one.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.6.0-next.0
+      '@redocly/openapi-docs': 3.16.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.13.0-next.0
+      '@redocly/portal-legacy-ui': 0.11.0-next.0
+      '@redocly/asyncapi-docs': 1.5.0-next.0
+      '@redocly/graphql-docs': 1.5.0-next.0
   0.127.0:
     timestamp: 1762430435000
     changes:
@@ -8793,6 +8830,23 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.128.0-next.0:
+    timestamp: 1762810677000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where items from different versions appeared simultaneously in the sidebar when using `$ref` in `sidebars.yaml`.
+        - Fixed incorrect application of `rel="noreferrer"` on internal links.
+        - Enter prerelease mode.
+        - Fixed an issue where switching versions at the project root redirected to the first sidebar page instead of the current one.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.6.0-next.0
+      '@redocly/openapi-docs': 3.16.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.13.0-next.0
+      '@redocly/portal-legacy-ui': 0.11.0-next.0
+      '@redocly/asyncapi-docs': 1.5.0-next.0
+      '@redocly/graphql-docs': 1.5.0-next.0
   0.127.0:
     timestamp: 1762430435000
     changes:
@@ -12786,6 +12840,24 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.128.0-next.0:
+    timestamp: 1762810677000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where items from different versions appeared simultaneously in the sidebar when using `$ref` in `sidebars.yaml`.
+        - Fixed incorrect application of `rel="noreferrer"` on internal links.
+        - Removed `redoc` test execution when running `@redocly/openapi-docs` tests.
+        - Enter prerelease mode.
+        - Fixed an issue where switching versions at the project root redirected to the first sidebar page instead of the current one.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.6.0-next.0
+      '@redocly/openapi-docs': 3.16.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.13.0-next.0
+      '@redocly/portal-legacy-ui': 0.11.0-next.0
+      '@redocly/asyncapi-docs': 1.5.0-next.0
+      '@redocly/graphql-docs': 1.5.0-next.0
   0.127.0:
     timestamp: 1762430435000
     changes:
@@ -16804,6 +16876,15 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.60.0-next.0:
+    timestamp: 1762810677000
+    changes:
+      minor: []
+      patch:
+        - Fixed incorrect application of `rel="noreferrer"` on internal links.
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.6.0-next.0
   0.59.0:
     timestamp: 1762430435000
     changes:
@@ -19238,6 +19319,16 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.16.0-next.0:
+    timestamp: 1762810677000
+    changes:
+      minor: []
+      patch:
+        - Removed `redoc` test execution when running `@redocly/openapi-docs` tests.
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/replay': 0.19.0-next.0
+      '@redocly/theme': 0.60.0-next.0
   3.15.0:
     timestamp: 1762430435000
     changes:
@@ -22172,6 +22263,14 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.5.0-next.0:
+    timestamp: 1762810677000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.0
   1.4.0:
     timestamp: 1762430435000
     changes:
@@ -23300,6 +23399,13 @@
         - Redocly Mock Server release
     dependencies: {}
 '@redocly/portal-legacy-ui':
+  0.11.0-next.0:
+    timestamp: 1762810677000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies: {}
   0.10.0:
     timestamp: 1762430435000
     changes:
@@ -23449,6 +23555,18 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.11.0-next.0:
+    timestamp: 1762810677000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/realm': 0.128.0-next.0
+      '@redocly/redoc': 0.128.0-next.0
+      '@redocly/redoc-reef': 0.128.0-next.0
+      '@redocly/redoc-revel': 0.128.0-next.0
+      '@redocly/theme': 0.60.0-next.0
   1.10.0:
     timestamp: 1762430435000
     changes:
@@ -27686,6 +27804,14 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.13.0-next.0:
+    timestamp: 1762810677000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/openapi-docs': 3.16.0-next.0
   0.12.0:
     timestamp: 1762430435000
     changes:
@@ -30005,6 +30131,15 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.19.0-next.0:
+    timestamp: 1762810677000
+    changes:
+      minor: []
+      patch:
+        - Fixed `Replay` application crash in development mode.
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.0
   0.18.0:
     timestamp: 1762430435000
     changes:
@@ -31458,6 +31593,14 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.11.0-next.0:
+    timestamp: 1762810677000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.0
   0.10.0:
     timestamp: 1762430435000
     changes:
@@ -32824,6 +32967,15 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.5.0-next.0:
+    timestamp: 1762810677000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.0
+      '@redocly/openapi-docs': 3.16.0-next.0
   1.4.0:
     timestamp: 1762430435000
     changes:
