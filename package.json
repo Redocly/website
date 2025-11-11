@@ -12,7 +12,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@redocly/marketing-pages": "0.1.37",
-    "@redocly/realm": "0.127.0-next.14",
+    "@redocly/realm": "0.128.0-next.0",
     "buffer": "^6.0.3",
     "highlight-words-core": "^1.2.3",
     "path": "^0.12.7",
@@ -32,6 +32,6 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "axios": "1.12.2",
-    "@redocly/theme": "0.59.0-next.12"
+    "@redocly/openapi-docs": "3.16.0-next.0"
   }
 }
