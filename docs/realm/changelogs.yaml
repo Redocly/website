@@ -35552,12 +35552,3 @@ reunite:
       patch:
         - Synchronized date range filters between feedback export modal and feedback list.
     dependencies: {}
-  v2025-11-11.2:
-    timestamp: 1762878127000
-    changes:
-      minor:
-        - Fixed an issue where filtering by values containing commas did not work correctly in API requests.
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.11.1`.
-        - Updated `@redocly/ajv` to version `8.11.4`.
-    dependencies: {}
