@@ -5,6 +5,7 @@ products:
   - Reef
   - Realm
 plans:
+  - Pro
   - Enterprise
   - Enterprise+
 description: Customize the AI assistant functionality in your project.
