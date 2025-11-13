@@ -103,6 +103,13 @@ Using `pointer`:
 - object
 - Predefined environment variables that resolve to the Replay console.
 
+---
+
+- hideOtherSecuritySchemes
+- boolean
+- Hides the **Other** security scheme group in the **Authorization type** dropdown, displaying only the documented security schemes from the OpenAPI description.
+Defaults to `false`.
+
 {% /table %}
 
 ## Examples
