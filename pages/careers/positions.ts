@@ -281,5 +281,172 @@ export const positions = [
                 text: `Redocly is a fun, supportive, and high-performing environment. We celebrate small victories, stay curious, and keep focused on progress. If you enjoy complex challenges, meaningful data, and building systems that empower others — you’ll feel right at home here.`
             }
         ]
-    }
+    },
+  {
+        id: 'senior-sales',
+        title: 'Senior Sales (Product-Led Growth)',
+        subtitle: 'Lviv',
+        description: [
+            {
+                text: `Redocly helps companies build better developer experiences. Our products (Reunite, Redoc, Revel, Reef, and Realm) empower teams to create, manage, and share APIs beautifully. We're looking for a senior sales professional who can help more developers and organizations discover that value — and convert trials into long-term customers.`,
+            },
+            {
+                title: `What you'll do`,
+                text: `You'll focus on helping teams move from trying Redocly to loving and buying it. You'll combine technical understanding, empathy for developers, and data-driven sales skills to grow conversions and revenue. You'll:`,
+                list: [
+                    'Engage with free-trial users to understand their goals and blockers.',
+                    'Create follow-up sequences and campaigns that feel helpful, not pushy.',
+                    'Use CRM and analytics tools to identify high-potential accounts.',
+                    'Work with our product and technical teams to clarify use cases, pricing, and ROI.',
+                    'Help improve onboarding flows and trial experiences based on user feedback.',
+                    'Write clear, authentic sales copy and outreach messages.',
+                ]
+            },  
+            {
+                text: `This is not a cold-calling role — it's a thoughtful, consultative position...`,   
+            },
+            {
+                title: `You'll love this role if you...`,
+                list: [
+                    'Understand technical products or developer-facing tools.',
+                    'Are comfortable using and interpreting data (CRM, analytics, funnels).',
+                    'Have strong written and verbal communication skills.',
+                    'Enjoy collaborating with marketing and product teams.',
+                    'Can balance empathy and persuasion — helping customers make confident decisions.',
+                ]
+            },
+            {
+                text: `Bonus points if you've worked in SaaS, API, or developer-tools sales before.`,   
+            },
+            {
+                title: `How you'll know you're doing a great job`,
+                list: [
+                    'Conversion rate from trial to paid increases.',
+                    'Absolute number of new paying customers grows steadily.',
+                    'Sales cycles shorten as you improve communication and clarity.',
+                    'Customer feedback improves, with users describing smoother onboarding and better support.',
+                ]
+            },
+                        {
+                title: '30-60-90 day plan',
+            },
+            {
+                title: 'First 30 days',
+                list: [
+                  'Learn Redocly’s product lineup, sales funnel, and customer segments.',
+                  'Review current trial process, analytics, and CRM data.',
+                  'Reach out to a small set of trial users to test messaging.',
+                ]
+            },
+           {
+                title: 'Next 30 days',
+                list: [
+                  'Design and implement an improved trial-to-conversion sequence.',
+                  'Begin A/B testing messages and tracking engagement.',
+                  'Collaborate with the developer marketer on shared campaigns.',
+                ]
+            },
+            {
+                title: 'Next 30 days',
+                list: [
+                  'Optimize the funnel with data insights.',
+                  'Build a repeatable playbook for engaging trials.',
+                  'Identify expansion or upsell opportunities among active customers.',
+                ]
+            },
+            {
+                title: 'About Redocly',
+                text: `Redocly builds tools that accelerate API ubiquity. Our platform helps teams create world-class developer experiences — from API documentation and catalogs to internal developer hubs and public showcases.
+                We’re a globally distributed team that values clarity, autonomy, and craftsmanship. You’ll work alongside engineers, designers, and writers who love building tools that make technical work simpler and more joyful.`,
+            },
+            {
+                title: 'Life at Redocly',
+                text: `Redocly is a fun, supportive, and high-performing environment. We celebrate small victories, stay curious, and keep focused on progress. If you enjoy complex challenges, meaningful data, and building systems that empower others — you’ll feel right at home here.`
+            }
+        ]
+  },
+  {
+        id: 'developer-marketer',
+        title: 'Developer Marketer (Video-Focused)',
+        subtitle: 'Lviv, office',
+        description: [
+            {
+                text: `Redocly helps companies build better developer experiences. Our products (Reunite, Redoc, Revel, Reef, and Realm) empower teams to create, manage, and share APIs beautifully. Now, we're looking for a developer marketer to show the world how it all comes together.`,
+            },
+             {
+                title: `What you'll do`,
+                text: `You'll make our products shine — through short, clear, engaging videos that help developers understand what a feature does, why to use it, and how to use it. You'll:`,
+                list: [
+                    'Identify features worth highlighting across our products.',
+                    'Create two videos for each:',
+                    'A short demo video showing what and why.',
+                    'A how-to video walking through setup and usage.',
+                    'Publish and promote them where developers are — in our app, on LinkedIn, YouTube, and X.',
+                    'Track engagement and suggest ways to make the next video even better.',
+                ]
+            },  
+            {
+                text: `You'll work closely with the product and docs teams. There's no big marketing department — this is a hands-on, high-impact role where you'll own the storytelling loop from idea to results.`,   
+            },
+            {
+                title: `You'll love this role if you...`,
+                list: [
+                    'Are fluent in developer tools and API concepts.',
+                    'Enjoy teaching through video and simplifying complex features.',
+                    'Can record, narrate, and edit short product videos.',
+                    'Have strong written and spoken English.',
+                    'Want autonomy and clear impact.',
+                ]
+            },
+            {
+                text: `Bonus points if you've worked with OpenAPI, documentation tooling, or Redocly products before.`,   
+            },
+            {
+                title: 'How you’ll know you’re doing a great job',
+                list: [
+                  'Feature adoption grows among existing customers.',
+                  'Trial activations accelerate as new customers find and adopt features faster.',
+                  'More new trials come in from developers discovering Redocly through your videos.',
+                  'Support hears praise from customers — people love your videos and ask for more.',
+                ]
+            },
+            {
+                title: '30-60-90 day plan',
+            },
+            {
+                title: 'First 30 days',
+                list: [
+                  'Learn our products and audience.',
+                  'Create your first video pair (demo + how-to).',
+                  'Define your workflow for production and publishing.',
+                ]
+            },
+           {
+                title: 'Next 30 days',
+                list: [
+                  'Produce 4 more video pairs.',
+                  'Add variation (subtitles, b-roll, improved structure).',
+                  'Experiment with clips and shorts for social media.',
+                ]
+            },
+            {
+                title: 'Next 30 days',
+                list: [
+                  'Continue to produce at least one video pair per week.',
+                  'Start measuring impact (views, completion rates, trials).',
+                  'Build a simple content calendar and feedback loop.',
+                  'Plan the next wave of features to highlight.',
+                ]
+            },
+             {
+                title: 'About Redocly',
+                text: `Redocly builds tools that accelerate API ubiquity. Our platform helps teams create world-class developer experiences — from API documentation and catalogs to internal developer hubs and public showcases.
+                We’re a globally distributed team that values clarity, autonomy, and craftsmanship. You’ll work alongside engineers, designers, and writers who love building tools that make technical work simpler and more joyful.`,
+            },
+            {
+                title: 'Life at Redocly',
+                text: `Redocly is a fun, supportive, and high-performing environment. We celebrate small victories, stay curious, and keep focused on progress. If you enjoy complex challenges, meaningful data, and building systems that empower others — you’ll feel right at home here.`
+            }
+        ]
+  }
 ];
