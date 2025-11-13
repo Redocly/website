@@ -1,0 +1,20 @@
+- group: Replay
+  page: index.md
+  items:
+    - page: requests.md
+      label: Send requests
+    - group: Collections
+      page: collections/index.md
+      items:
+        - page: collections/collection.md
+          label: Collection
+        - page: collections/workflow.md
+          label: Workflow
+        - page: collections/step.md
+          label: Step
+        - page: collections/run-workflow.md
+          label: Run a workflow
+    - page: apis.md
+      label: APIs
+    - page: environments.md
+      label: Environments
