@@ -1,22 +1,15 @@
 ---
 seo:
-  title: Use the Redoc CLI
+  title: Use Redocly CLI
 ---
 
-# How to use the Redocly CLI
+# Use Redocly CLI with Redoc
 
-With Redocly CLI, you can bundle your OpenAPI definition and API documentation (made with Redoc) into an HTML file and render it locally.
+With [Redocly CLI](https://redocly.com/docs/cli/installation), you can bundle your OpenAPI definition and API documentation (made with Redoc) into an HTML file and render it locally.
 
-## Install Redocly CLI
+## Build API documentation
 
-To install the `@redocly/cli` package, either:
-
-- Use `npm` to install it [globally](https://redocly.com/docs/cli/installation#install-globally).
-- Use npx or Docker to install it during [runtime](https://redocly.com/docs/cli/installation#use-npx-at-runtime).
-
-## Build the HTML file
-
-The Redocly CLI `build-docs` command builds Redoc into an HTML file.
+The Redocly CLI `build-docs` command uses Redoc to transform an API description file into a human-readable HTML file.
 
 To build an HTML file using Redocly CLI:
 
@@ -26,6 +19,9 @@ To build an HTML file using Redocly CLI:
 redocly build-docs apis/openapi.yaml
 ```
 
-See the [build-docs](https://redocly.com/docs/cli/commands/build-docs) documentation for more information on the different options and ways you can use the command.
+After the command finishes running, you can share the HTML file or host it on a platform of your choice.
 
-Also, check out [Redocly CLI commands](https://redocly.com/docs/cli/commands), for more information on the different things you can do with Redocly CLI including linting, splitting, and bundling your API definition file.
+## Resources
+
+- **[`build-docs`](https://redocly.com/docs/cli/commands/build-docs)** - Learn about the different options and ways you can use this Redocly CLI command
+- **[Redocly CLI commands](https://redocly.com/docs/cli/commands)** - Explore how you can use Redocly CLI's to maintain and transform your API description file
