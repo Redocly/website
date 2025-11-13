@@ -144,8 +144,6 @@
   to: '/content/api-docs/configure-mock-server'
 '/author/reference/replay':
   to: '/content/api-docs/replay'
-'/author/how-to/try-apis-with-mock-server':
-  to: '/content/api-docs/try-apis-with-mock-server'
 
 # OpenAPI extensions redirects - Files moved to /content/api-docs/openapi-extensions/
 '/author/reference/openapi-extensions':

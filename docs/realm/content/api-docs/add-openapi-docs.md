@@ -55,6 +55,6 @@ To add multiple OpenAPI descriptions using `group` keys, update your `sidebars.y
 
 - **[API catalog configuration](../../config/catalog-classic.md)** - Organize multiple API descriptions with catalogs for better user experience and navigation between different APIs
 - **[Sidebar navigation setup](../../navigation/sidebars.md)** - Configure navigation structures to help users discover and access your API documentation content
-- **[Replay API explorer](./replay.md)** - Add interactive API testing capabilities to your reference documentation with built-in mock servers and request builders
+- **[Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay)** - Learn about the interactive API testing features and capabilities used in API reference documentation
 - **[OpenAPI extensions](./openapi-extensions/index.md)** - Use custom extensions in your API descriptions to create richer, more detailed documentation with enhanced features
 - **[OpenAPI configuration reference](../../config/openapi/index.md)** - Complete configuration options for customizing OpenAPI description rendering, styling, and behavior in your reference documentation

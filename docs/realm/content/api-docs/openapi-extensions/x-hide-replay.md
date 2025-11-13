@@ -43,7 +43,6 @@ This operation will have complete documentation, but without interactive feature
 
 ## Resources
 
-- **[Replay API Explorer](../replay.md)** - Learn about interactive API testing features and how to configure the Try It functionality
 - **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
 - **[Mock server configuration](../../../config/mock-server.md)** - Configure mock server settings used by Replay for API testing and demonstration
 - **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings

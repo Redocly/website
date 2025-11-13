@@ -97,6 +97,7 @@ mockServer:
 
 ## Resources
 
+- **[Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay)** - Learn about the interactive API testing features and capabilities used in API reference documentation
+- **[Test APIs using CLI](https://redocly.com/docs/end-user/test-apis-cli)** - Learn about the interactive API testing features and capabilities used in API reference documentation
 - **[Configure the mock server](../content/api-docs/configure-mock-server.md)** - Learn to modify mock server behavior and appearance for enhanced API testing and development
-- **[Replay API explorer](../content/api-docs/replay.md)** - Discover the interactive API explorer used to call the mock server and test API endpoints
 - **[Add OpenAPI descriptions](../content/api-docs/add-openapi-docs.md)** - Add OpenAPI descriptions to enable mock server functionality on the corresponding API reference documentation

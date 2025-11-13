@@ -285,10 +285,7 @@
           label: SOAP
         - page: content/api-docs/configure-mock-server.md
           label: Mock server
-        - page: content/api-docs/try-apis-with-mock-server.md
-          label: Try APIs with mock server
-        - page: content/api-docs/replay.md
-          label: Replay interface
+
     - group: Localization
       selectFirstItemOnExpand: true
       items:

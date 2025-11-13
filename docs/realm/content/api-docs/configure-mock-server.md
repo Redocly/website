@@ -17,7 +17,7 @@ mockServer:
 
 This example changes the mock server behavior in two ways:
 
-- Instead of returning another example, requests with [specific examples](./try-apis-with-mock-server.md#return-a-specific-response-example) return an error.
+- Instead of returning another example, requests with [specific examples](https://redocly.com/docs/end-user/test-apis-cli#return-a-specific-response-example) return an error.
 - Requests to the mock server return examples exactly as they're defined in the OpenAPI description.
 
 ### Understand strict examples
@@ -92,7 +92,7 @@ The `position` property controls _where_ the mock server is located on the list 
 
 ## Resources
 
-- **[Replay API explorer](./replay.md)** - Learn about the interactive API testing features and capabilities used in API reference documentation
-- **[Add OpenAPI reference docs](./add-openapi-docs.md)** - Set up API documentation projects with mock server capabilities for testing and development
+- **[Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay)** - Learn about the interactive API testing features and capabilities used in API reference documentation
+- **[Add OpenAPI reference docs](./add-openapi-docs.md)** - Set up API documentation in your project
 - **[API catalog configuration](../../config/catalog-classic.md)** - Configure catalogs to organize multiple API descriptions with better user experience and navigation
 - **[Mock server configuration reference](../../config/mock-server.md)** - Complete configuration options and parameters for mock server setup and customization
