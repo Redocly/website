@@ -7,7 +7,7 @@ export const buildAndSortBlogPosts = async (postRoutes, context, outdir) => {
   const posts = [];
 
   const metadataContentRecord = await context.cache.load(BLOG_METADATA_PATH, 'yaml');
-  const metadata = transformMetadata(metadataContentRecord.data, context.fs.cwd, outdir);
+  const metadata = await transformMetadata(metadataContentRecord.data, context.fs.cwd, outdir);
 
   for (const route of postRoutes) {
     const {
@@ -27,7 +27,7 @@ export const buildAndSortBlogPosts = async (postRoutes, context, outdir) => {
         .filter(Boolean),
       image:
         frontmatter.image &&
-        copyStaticFile(context.fs.cwd, BLOG_IMAGES_DIR + frontmatter.image, outdir),
+        (await copyStaticFile(context.fs.cwd, BLOG_IMAGES_DIR + frontmatter.image, outdir)),
       //   content,
     });
   }
@@ -35,14 +35,14 @@ export const buildAndSortBlogPosts = async (postRoutes, context, outdir) => {
   return { posts: posts.sort(sortByDatePredicate), metadata: metadataContentRecord.data };
 };
 
-function transformMetadata(metadata, cwd, outdir) {
+async function transformMetadata(metadata, cwd, outdir) {
   const authors = new Map();
   const categories = new Map();
 
   for (const author of metadata.authors) {
     authors.set(author.id, {
       ...author,
-      image: copyStaticFile(cwd, BLOG_IMAGES_DIR + author.image, outdir),
+      image: await copyStaticFile(cwd, BLOG_IMAGES_DIR + author.image, outdir),
     });
   }
 
