@@ -46,6 +46,8 @@ categories:
     label: Company update
   - id: openapi
     label: OpenAPI
+  - id: api-catalog
+    label: API catalog
   - id: api-design
     label: API design
   - id: api-first
