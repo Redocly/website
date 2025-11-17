@@ -3,7 +3,7 @@ seo:
   title: Use the Redoc Docker image
 ---
 
-# How to use the Redoc Docker image
+# Use the Redoc Docker image
 
 Redoc is available as a pre-built Docker image in [Docker Hub](https://hub.docker.com/r/redocly/redoc/).
 
