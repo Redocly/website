@@ -30,6 +30,10 @@ The `corsProxyUrl` option allows using a custom CORS proxy server.
 
 ## Examples
 
+{% admonition type="info" %}
+{% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "codeSamples"} /%}
+{% /admonition %}
+
 Modify the value of the corsProxyUrl option in the Redocly configuration file.
 
 ```yaml {% title="redocly.yaml" %}
