@@ -35686,3 +35686,11 @@ reunite:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.11.1`.
         - Updated `@redocly/ajv` to version `8.11.4`.
     dependencies: {}
+  v2025-11-18.3:
+    timestamp: 1763490897000
+    changes:
+      minor: []
+      patch:
+        - Fixed editor reconnection failures caused by unexpected errors during connection.
+        - Fixed issue where new files were not backed up to browser storage.
+    dependencies: {}
