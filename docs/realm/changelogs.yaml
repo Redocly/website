@@ -1,4 +1,21 @@
 '@redocly/realm':
+  0.128.0-next.3:
+    timestamp: 1763454865000
+    changes:
+      minor: []
+      patch:
+        - Hide `Connect to MCP` page action options if the MCP server is not available.
+        - Renamed `theme` files and added missing translations.
+        - Fixed scrolling in the OpenAPI sidebar navigation for non-default layouts.
+        - Fixed incorrect recursive detection.
+        - Fixed duplicated versioned API descriptions in the catalog.
+        - Fixed security vulnerability in CORS middleware by upgrading `hono` to v4.10.6.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.2
+      '@redocly/openapi-docs': 3.16.0-next.3
+      '@redocly/asyncapi-docs': 1.5.0-next.3
+      '@redocly/graphql-docs': 1.5.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.13.0-next.3
   0.128.0-next.2:
     timestamp: 1762854923000
     changes:
@@ -4834,6 +4851,21 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.128.0-next.3:
+    timestamp: 1763454865000
+    changes:
+      minor: []
+      patch:
+        - Hide `Connect to MCP` page action options if the MCP server is not available.
+        - Renamed `theme` files and added missing translations.
+        - Fixed duplicated versioned API descriptions in the catalog.
+        - Fixed security vulnerability in CORS middleware by upgrading `hono` to v4.10.6.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.2
+      '@redocly/openapi-docs': 3.16.0-next.3
+      '@redocly/asyncapi-docs': 1.5.0-next.3
+      '@redocly/graphql-docs': 1.5.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.13.0-next.3
   0.128.0-next.2:
     timestamp: 1762854923000
     changes:
@@ -8874,6 +8906,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.128.0-next.3:
+    timestamp: 1763454865000
+    changes:
+      minor: []
+      patch:
+        - Hide `Connect to MCP` page action options if the MCP server is not available.
+        - Renamed `theme` files and added missing translations.
+        - Fixed security vulnerability in CORS middleware by upgrading `hono` to v4.10.6.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.2
+      '@redocly/openapi-docs': 3.16.0-next.3
+      '@redocly/asyncapi-docs': 1.5.0-next.3
+      '@redocly/graphql-docs': 1.5.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.13.0-next.3
   0.128.0-next.2:
     timestamp: 1762854923000
     changes:
@@ -12906,6 +12952,22 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.128.0-next.3:
+    timestamp: 1763454865000
+    changes:
+      minor: []
+      patch:
+        - Hide `Connect to MCP` page action options if the MCP server is not available.
+        - Renamed `theme` files and added missing translations.
+        - Fixed scrolling in the OpenAPI sidebar navigation for non-default layouts.
+        - Fixed incorrect recursive detection.
+        - Fixed security vulnerability in CORS middleware by upgrading `hono` to v4.10.6.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.2
+      '@redocly/openapi-docs': 3.16.0-next.3
+      '@redocly/asyncapi-docs': 1.5.0-next.3
+      '@redocly/graphql-docs': 1.5.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.13.0-next.3
   0.128.0-next.2:
     timestamp: 1762854923000
     changes:
@@ -16964,6 +17026,17 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.60.0-next.2:
+    timestamp: 1763454865000
+    changes:
+      minor: []
+      patch:
+        - Hide `Connect to MCP` page action options if the MCP server is not available.
+        - Renamed `theme` files and added missing translations.
+        - >-
+          Fixed negative AI Search feedback submission without a provided reason not appearing as selected after form closure, prevented incorrect
+          changes from negative to positive feedback, and displayed feedback buttons for messages without resources.
+    dependencies: {}
   0.60.0-next.1:
     timestamp: 1762854923000
     changes:
@@ -19414,6 +19487,15 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.16.0-next.3:
+    timestamp: 1763454865000
+    changes:
+      minor: []
+      patch:
+        - Fixed scrolling in the OpenAPI sidebar navigation for non-default layouts.
+        - Fixed incorrect recursive detection.
+    dependencies:
+      '@redocly/replay': 0.19.0-next.3
   3.16.0-next.2:
     timestamp: 1762854923000
     changes:
@@ -23673,6 +23755,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.11.0-next.3:
+    timestamp: 1763454865000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.60.0-next.2
+      '@redocly/realm': 0.128.0-next.3
+      '@redocly/redoc': 0.128.0-next.3
+      '@redocly/redoc-reef': 0.128.0-next.3
+      '@redocly/redoc-revel': 0.128.0-next.3
   1.11.0-next.2:
     timestamp: 1762854923000
     changes:
@@ -27943,6 +28036,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.13.0-next.3:
+    timestamp: 1763454865000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.16.0-next.3
   0.13.0-next.2:
     timestamp: 1762854923000
     changes:
@@ -30284,6 +30384,16 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.19.0-next.3:
+    timestamp: 1763454865000
+    changes:
+      minor:
+        - >-
+          Added `hideOtherSecuritySchemes` option to `@redocly/replay` to hide the **Other** security scheme group in the **Authorization type**
+          dropdown, displaying only the documented schemes from the OpenAPI description.
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.60.0-next.2
   0.19.0-next.2:
     timestamp: 1762854923000
     changes:
@@ -31761,6 +31871,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.11.0-next.2:
+    timestamp: 1763454865000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.60.0-next.2
   0.11.0-next.1:
     timestamp: 1762854923000
     changes:
@@ -33142,6 +33259,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.5.0-next.3:
+    timestamp: 1763454865000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.60.0-next.2
+      '@redocly/openapi-docs': 3.16.0-next.3
   1.5.0-next.2:
     timestamp: 1762854923000
     changes:
