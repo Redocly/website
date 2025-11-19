@@ -114,12 +114,36 @@ export default async function changelogRssHandler(
     
     const url = new URL(request.url);
     
+    // Parse query parameters
+    const productsParam = url.searchParams.get('products');
+    const includeRc = url.searchParams.get('include-rc') === 'true';
+    
+    // Map short names to package names
+    const shortNameToPackage: Record<string, string> = {
+      'Realm': '@redocly/realm',
+      'Reef': '@redocly/reef',
+      'Revel': '@redocly/revel',
+      'Redoc': '@redocly/redoc',
+      'Reunite': 'reunite',
+    };
+    
+    // Convert product short names to package names
+    // products is a comma-separated string like "Realm,Reunite"
+    const selectedPackages = productsParam
+      ? productsParam.split(',').map(p => shortNameToPackage[p.trim()] || p.trim()).filter(Boolean)
+      : Object.keys(changelogs); // Default to all packages if none specified
+    
     const changelogPath = url.pathname.replace(/\/api\/changelog-rss$/, '/docs/realm/changelog');
     const baseUrl = `${url.protocol}//${url.host}${changelogPath}`;
     
     const resolved: ChangelogWithDeps[] = [];
     
-    for (const packageName of Object.keys(changelogs)) {
+    // Filter by selected packages
+    const packagesToProcess = Object.keys(changelogs).filter(pkg => 
+      selectedPackages.includes(pkg)
+    );
+    
+    for (const packageName of packagesToProcess) {
       const records = Object.entries(changelogs[packageName]);
       const sortedRecords = records.sort((a, b) => b[1].timestamp - a[1].timestamp);
       
@@ -129,7 +153,12 @@ export default async function changelogRssHandler(
         
         if (!hasChanges(resolvedRecord)) continue;
         
-        if (!isNextVersionChangelog) {
+        // Include next versions if include-rc flag is set
+        if (isNextVersionChangelog && !includeRc) {
+          continue;
+        }
+        
+        if (!isNextVersionChangelog || includeRc) {
           resolved.push({
             record: resolvedRecord,
             packageName,
