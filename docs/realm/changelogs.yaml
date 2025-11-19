@@ -21944,6 +21944,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.39.0:
+    timestamp: 1763547856000
+    changes:
+      minor:
+        - Added support for `additionalOperations` in OpenAPI 3.2.0.
+      patch: []
+    dependencies: {}
   0.38.0:
     timestamp: 1762416436000
     changes:
@@ -23231,6 +23238,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.4.0:
+    timestamp: 1763547856000
+    changes:
+      minor:
+        - Added support for `additionalOperations` in OpenAPI 3.2.0.
+      patch: []
+    dependencies: {}
   0.3.16:
     timestamp: 1762872289000
     changes:
