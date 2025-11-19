@@ -35813,3 +35813,153 @@ reunite:
         - Fixed editor reconnection failures caused by unexpected errors during connection.
         - Fixed issue where new files were not backed up to browser storage.
     dependencies: {}
+replay:
+  0.0.1:
+    timestamp: 1720069800000
+    changes:
+      minor:
+        - >-
+          Added a new feature: multi-security. This feature adds support for the "AND" operator, allowing users to describe multiple security types
+          and use them simultaneously.
+        - 'Improved the Environments tab: when user switches to the tab, the environment currently selected in the picker expands automatically.'
+        - Added progress indicators to the Send button and the Response field in Replay.
+        - Implemented support for environment variables in the request body.
+        - Updated the product with a major UX and DX overhaul. Please, see the detailed [release notes](./realm-redesign-release-notes.md).
+      patch:
+        - Fixed an issue with processing the operations that have circular references.
+        - Fixed a failed OpenID Connect security issue that was causing Replay to crash when attempting to access it.
+        - Fixed an issue where the text in the Environments tab could overflow.
+        - >-
+          Improved the parameter behavior in Query, Headers, and Cookies tabs. An inactive parameter now becomes active if its value changes from
+          empty to to a different value.
+        - Fixed environment variable colors in dark mode.
+        - Improved cookies tooltip layout to make it more readable.
+        - Added the functionality to resize the API Response block, and added background on mouse hover.
+    dependencies:
+      '@redocly/theme': 0.37.0
+  0.0.2:
+    timestamp: 1744365678000
+    changes:
+      minor:
+        - Introduced Workflows. The new side panel tab enables users to create request sequences that can be exported as Arazzo files.
+        - Added a functionality that enables users to programatically setup request values.
+        - >-
+          Added support for API request tabs. You can now open API requests in separate tabs, enabling you to set up parameter values individually in
+          each tab.
+        - Added support for XML code samples in Redoc.
+        - Removed pagination configuration options for graphql-docs.
+        - Enhanced Reunite with responsive design, optimizing it for mobile-sized viewports.
+        - Introduced a new "Collections" tab that allows users to organize and manage their API requests more efficiently.
+        - >-
+          Users can now choose request body types that are defined in the API description file in addition to default request body types. The
+          additional types appear in the **Documented** section of the request body media type dropdown.
+        - Added support for mutual TLS to the Replay app.
+      patch:
+        - Enter prerelease mode.
+        - Resolved an issue where the `replay-openapi` tag generated `corsProxyUrl` links that could not be resolved by the Sandbox environment.
+        - Fixed token generation for OAuth2 and OIDC security types on Windows.
+        - Added 'Authorization Code with PKCE' grant type. You can now configure PKCE in OAuth 2.0 and OpenID Connect authorization types.
+        - Resolved an issue where Replay did not save edits to the request body.
+        - Fixed an issue where the URLs and references in `externalValue` in an OpenAPI description were not resolved in `redocly-cli`.
+        - Added support for mutual TLS to the Replay app.
+        - Fixed an issue where users couldn't save environment variables with empty values.
+        - >-
+          Added advanced search powered by Typesense for enterprise customers and FlexSearch as the base engine, featuring facet-based filtering and
+          result grouping.
+        - Fixed an issue that caused errors when adding values to server variables in Replay.
+        - Fixed an issue where an incorrect header could be saved in history if the user had changed the header value before the response arrived.
+        - Fixed input hotkeys (Ctrl+Z, Ctrl+A, etc.) not functioning on Windows in Replay.
+        - Fixed a bug where deleted text would reappear after subsequent input in Replay.
+        - If no `body` is provided in the request, Replay no longer sends the `Content-Type` header.
+        - Added failed requests to the Replay history list.
+        - Fixed an issue in Replay that occurred when an operation had no security defined.
+        - Updated CORS proxy handling so that it is not used when the request destination is localhost.
+        - Updated the user interface for adding secret variables to Replay requests.
+        - Fixed an issue where NPM installed multiple versions of packages related to React. This behavior caused errors when rendering pages.
+    dependencies:
+      '@redocly/theme': 0.40.1
+      '@redocly/openapi-docs': 3.5.18
+      '@redocly/replay': 0.5.0
+  0.0.3:
+    timestamp: 1755512588000
+    changes:
+      minor:
+        - Added highlighting for path parameters in request URLs.
+        - Replaced variables with servers and inputs for Arazzo format compatibility. Added `Path` tab to edit request path parameters.
+        - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
+        - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
+        - Ability to change working folder.
+        - Upgraded React to `19.x`.
+      patch:
+        - Enter prerelease mode.
+        - Fixed control buttons in code blocks and added tooltips to `Expand All` and `Collapse All` buttons.
+        - Fixed broken `pointer` parameter in `replay-openapi` Markdoc component.
+        - Normalized HTTP request method names to be in uppercase.
+        - Fixed incorrect dependency in `@redocly/replay` causing installation failures.
+        - Removed dependency causing build failures.
+        - Updated internal dependencies.
+        - Fixed Replay crash when form-data example value was not a string.
+        - 'Fixed missing boundary in `content-type: multipart/form-data` header.'
+        - Improved keyboard accessibility and screen reader support for the version picker component.
+        - Fixed `Replay` crash when form-data example value was not a string.
+        - Fixed `@codemirror/state` versions mismatch that caused embedded Replay to terminate.
+        - Updated version of the `@redocly/openapi-core` dependency to pre-release v2.
+    dependencies:
+      '@redocly/theme': 0.53.0-next.2
+      '@redocly/openapi-docs': 3.9.0-next.2
+      '@redocly/replay': 0.12.0-next.2
+  0.0.4:
+    timestamp: 1761043844000
+    changes:
+      minor:
+        - Added support for the OpenAPI 3.2.0 `servers.name` property.
+        - Added support to configure `Replay` with dynamic API data.
+        - Added persistence for user-created environments in `Try it` between page reloads.
+        - >-
+          Added ability to run workflows, inputs schema for workflows, Arazzo expression highlighting and completion, support for x-security, updated
+          collection tree UI.
+        - Used the `tokenUrl` value as the default in each security flow of `Try It`.
+        - >-
+          Added ability to run workflows, inputs schema for workflows, Arazzo expression highlighting and completion, support for x-security, updated
+          collection tree UI. Fixed binary, form-data file upload and digest auth flow.
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.7.0`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.5.0`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.5.1`.
+        - Enter prerelease mode.
+        - Added handling for special characters in query strings.
+        - >-
+          Fixed processing of relative OAuth 2.0 authorization and token URLs during the OAuth flow. Parsed OAuth 2.0 scopes from the API definition
+          and displayed them in the security tab.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.3.1`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.2.2`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.2.0`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.1.5`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.1.4`.
+        - Added persistence for user-created environments in `Try it` between page reloads.
+        - Added support to configure `Replay` with dynamic API data.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.1.0`.
+        - ''
+        - Fixed processing of relative OAuth 2.0 authorization and token URLs during the OAuth flow.
+        - Parsed OAuth 2.0 scopes from the API definition and displayed them in the security tab.
+        - Fixed binary, form-data file upload and digest auth flow.
+        - Fixed incorrect behavior of the `environment` parameter in the `replay-openapi` Markdoc component.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.0.7`.
+        - Changed the default project location to `Documents/replay-default-project`.
+    dependencies:
+      '@redocly/theme': 0.57.0-next.4
+      '@redocly/openapi-docs': 3.13.0-next.6
+      '@redocly/replay': 0.16.0-next.5
+  0.0.5:
+    timestamp: 1762276279000
+    changes:
+      minor:
+        - Updated application's user interface and added a dark theme.
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.10.0`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.9.0`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.8.0`.
+    dependencies:
+      '@redocly/theme': 0.59.0-next.8
+      '@redocly/openapi-docs': 3.15.0-next.9
+      '@redocly/replay': 0.18.0-next.9
