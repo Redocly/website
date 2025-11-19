@@ -16,6 +16,7 @@ import { HighlightContext } from './@theme/_components/Highlight';
 import { ChangelogSection, SectionHeader, matchesSearch } from './@theme/_components/ChangelogSection';
 import { NextReleases } from './@theme/_components/NextReleases';
 import { hasChanges, type ChangelogEntry } from './@theme/_utils/changelog';
+import { CDNIcon } from '@redocly/theme/icons/CDNIcon/CDNIcon';
 
 // @ts-ignore
 import changelogData from './changelogs.yaml';
@@ -148,8 +149,8 @@ export default function Changelog() {
           record: {
             ...item.record,
             changes: {
-              minor: [...new Set(allChanges.flatMap(i => i.record.changes.minor))],
-              patch: [...new Set(allChanges.flatMap(i => i.record.changes.patch))],
+              minor: Array.from(new Set(allChanges.flatMap(i => i.record.changes.minor))),
+              patch: Array.from(new Set(allChanges.flatMap(i => i.record.changes.patch))),
             }
           }
         };
@@ -178,6 +179,12 @@ export default function Changelog() {
   const [searchTerm, setSearchTerm] = React.useState('');
 
   const [itemsToRender, setItemsToRender] = React.useState(DEFAULT_ITEMS_TO_RENDER);
+  
+  const rssFeedUrl = React.useMemo(() => {
+    if (typeof window === 'undefined') return '/api/changelog-rss';
+    const baseUrl = window.location.origin;
+    return `${baseUrl}/api/changelog-rss`;
+  }, []);
 
   React.useEffect(() => {
     const hash = window.location.hash;
@@ -247,9 +254,20 @@ export default function Changelog() {
       <Wrapper>
         <DocumentationLayout tableOfContent={null} feedback={null}>
           <Markdown>
-            <Heading level={1} id="changelog">
-              Changelog
-            </Heading>
+            <HeaderSection>
+              <CustomHeading level={1} id="changelog">
+                Changelog
+              </CustomHeading>
+              <RssButton
+                variant="outlined"
+                to={rssFeedUrl}
+                title="Subscribe to changelog updates via RSS. You can add this feed to Slack or any RSS reader."
+                icon={<CDNIcon name="rss" size="1em" color="currentColor" />}
+                iconPosition="right"
+              >
+                Subscribe via RSS
+              </RssButton>
+            </HeaderSection>
             <ControlsWrap>
               <Dropdown
                 closeOnClick={false}
@@ -405,7 +423,7 @@ const ControlsWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 24px;
+  align-items: center;
   gap: 12px;
   flex-wrap: wrap;
 
@@ -419,6 +437,23 @@ const ControlsWrap = styled.div`
       background: transparent;
     }
   }
+`;
+
+const HeaderSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+`;
+
+const CustomHeading = styled(Heading)`
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+`;
+
+const RssButton = styled(Button)`
+  white-space: nowrap;
 `;
 
 const ShowMoreSection = styled.div`
