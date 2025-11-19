@@ -54,6 +54,8 @@
           label: jsonSamplesDepth
         - page: ./graphql/menu.md
           label: menu
+        - page: ./graphql/info.md
+          label: info
         - page: ./graphql/samples-max-inline-args.md
           label: samplesMaxInlineArgs
         - page: ./graphql/show-built-in-scalars.md

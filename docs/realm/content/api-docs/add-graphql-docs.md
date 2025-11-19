@@ -22,6 +22,8 @@ For example, add a GraphQL schema file as `apis/sample-schema.graphql`, and then
 
 If you have a `sidebars.yaml` file in your project, you must add your GraphQL schema to your `sidebars.yaml` file for it to be included in your sidebar navigation menu.
 
+To customize the API overview with title, description, and contact information, see [GraphQL info configuration](../../config/graphql/info.md).
+
 ## Add schema to sidebar
 
 If you have a `sidebars.yaml` file in your project, you must add any files, including GraphQL schema files, you want displayed in your sidebar to it.
