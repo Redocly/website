@@ -33,6 +33,12 @@ Requires a GraphQL schema.
 
 ---
 
+- [info](./info.md)
+- [Info object](./info.md#options)
+- API metadata including title, description, contact, and license information for the overview page.
+
+---
+
 - [samplesMaxInlineArgs](./samples-max-inline-args.md)
 - number
 - Maximum number of inline arguments for samples.
