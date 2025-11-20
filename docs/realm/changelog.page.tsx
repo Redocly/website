@@ -252,7 +252,7 @@ export default function Changelog() {
               <CustomHeading level={1} id="changelog">
                 Changelog
               </CustomHeading>
-              <RssSubscription />
+              <RssSubscription initialSelectedProducts={packages} />
             </HeaderSection>
             <ControlsWrap>
               <Dropdown
