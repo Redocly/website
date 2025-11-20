@@ -35813,6 +35813,13 @@ reunite:
         - Fixed editor reconnection failures caused by unexpected errors during connection.
         - Fixed issue where new files were not backed up to browser storage.
     dependencies: {}
+  v2025-11-20.1:
+    timestamp: 1763633193000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where merged pull requests appeared as open for PRO plan subscriptions.
+    dependencies: {}
 replay:
   0.0.1:
     timestamp: 1720069800000
