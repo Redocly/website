@@ -2,8 +2,8 @@ import type { ApiFunctionsContext } from '@redocly/config';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { promises as fs } from 'node:fs';
-import matter from 'gray-matter';
-import YAML from 'yaml';
+
+import { extractFrontmatter, parseSimpleYaml } from '../utils/frontmatter.js';
 
 const BLOG_SLUG = '/blog/';
 const BLOG_DIR = 'blog';
@@ -68,7 +68,7 @@ function buildRssItem(post: any, origin: string): string {
 export default async function blogRssHandler(request: Request, context: ApiFunctionsContext) {
   try {
     const metadataRaw = await fs.readFile(BLOG_METADATA_PATH, 'utf8');
-    const metadata = YAML.parse(metadataRaw) || {};
+    const metadata = parseSimpleYaml(metadataRaw) || {};
     const authorsMap = new Map<string, BlogAuthor>(
       (metadata.authors as RawAuthor[] | undefined)?.map((author) => [author.id, author]) ?? [],
     );
@@ -85,7 +85,7 @@ export default async function blogRssHandler(request: Request, context: ApiFunct
     for (const file of markdownPosts) {
       const filePath = path.join(blogDirPath, file.name);
       const fileContent = await fs.readFile(filePath, 'utf8');
-      const { data: frontmatter } = matter(fileContent);
+      const frontmatter = extractFrontmatter(fileContent);
 
       if (frontmatter?.ignore === true) continue;
 
