@@ -35878,8 +35878,8 @@ replay:
         - Fixed an issue where NPM installed multiple versions of packages related to React. This behavior caused errors when rendering pages.
     dependencies:
       '@redocly/theme': 0.40.1
-      '@redocly/openapi-docs': 3.5.18
       '@redocly/replay': 0.5.0
+      '@redocly/openapi-docs': 3.5.18
   0.0.3:
     timestamp: 1755512588000
     changes:
