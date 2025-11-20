@@ -35961,11 +35961,14 @@ replay:
     timestamp: 1762276279000
     changes:
       minor:
+        - Added `Hard restart` button.
         - Updated application's user interface and added a dark theme.
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.10.0`.
         - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.9.0`.
         - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.8.0`.
+        - Added user profile menu with logout option.
+        - Persist operation state after disconnect.
     dependencies:
       '@redocly/theme': 0.59.0-next.8
       '@redocly/openapi-docs': 3.15.0-next.9
