@@ -31,8 +31,6 @@ export const SHORT_NAMES = {
   '@redocly/revel': 'Revel',
   '@redocly/redoc': 'Redoc',
   reunite: 'Reunite',
-  // TODO: uncomment before first replay release
-  // replay: 'Replay',
 }
 
 type ShortNameValues = typeof SHORT_NAMES[keyof typeof SHORT_NAMES];
