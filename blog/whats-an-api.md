@@ -1,10 +1,10 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 author: adam-altman
-date: 2022-02-11
+date: "2022-02-11"
 categories:
-  - api
-  - api-marketing
+  - api-lifecycle:design
+  - api-documentation:api-seo
 image: redocly-mailbox-sq.png
 title: What's an API?
 description: API is an acronym for application programming interface.
@@ -13,7 +13,6 @@ seo:
   description: API is an acronym for application programming interface.
   image: ./images/redocly-mailbox-sq.png
 ---
-
 This is a tale of a laptop sticker, an envelope, and a postage stamp.
 
 And by the time we're finished, you'll understand APIs.

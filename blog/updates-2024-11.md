@@ -1,5 +1,5 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: November 2024 updates
 description: Round-up of product features and enhancements from November 2024
 seo:
@@ -7,12 +7,11 @@ seo:
   description: Round-up of product features and enhancements from November 2024
   image: ./images/november-feature-updates.png
 author: adam-altman
-date: 2024-12-02
+date: "2024-12-02"
 categories:
-  - company-update
+  - redocly:product-updates
 image: november-feature-updates.png
 ---
-
 In November, we’ve made key updates to enhance usability and flexibility, including word wrap in the editor, XML code sample support, and RBAC for API keys. Plus, we’re sharing a sneak peek of exciting features on the horizon.
 
 After a little rest and relaxation over Thanksgiving, we’re thankful for the feedback you’ve provided during your trials of our new product suite.

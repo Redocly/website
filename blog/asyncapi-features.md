@@ -1,18 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Redocly CLI for AsyncAPI descriptions
 description: Embrace multiple specification standards with one tool, Redocly CLI.
 seo:
   title: Redocly CLI for AsyncAPI descriptions
   description: Embrace multiple specification standards with one tool, Redocly CLI.
 author: lorna-mitchell
-date: 2024-09-05
+date: "2024-09-05"
 categories:
-  - openapi
-  - asyncapi
+  - api-specifications:asyncapi
 image: Redocly_blog_8.jpg
 ---
-
 OpenAPI is firmly in place as the best-practice way to describe HTTP APIs, but not all data requirements can be served by a request/response pattern.
 Those organizations looking to raise their data transfer game are increasingly turning to [AsyncAPI](https://www.asyncapi.com/) to expand beyond HTTP and into event-driven data technologies.
 

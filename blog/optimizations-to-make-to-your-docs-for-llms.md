@@ -1,20 +1,18 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: How to optimize your docs for LLMs
 description: Let's dig into a few practical strategies to make your API documentation work better with AI tools.
 seo:
   title: How to optimize your docs for LLMs
   description: Let's dig into a few practical strategies to make your API documentation work better with AI tools.
 author: adam-altman
-date: 2025-08-14
+date: "2025-08-14"
 categories:
-  - tech-writers
-  - api
-  - openapi
-  - developer-experience
+  - technical-documentation:ai-assisted-docs
+  - api-documentation:reference-docs
+  - api-specifications:openapi
 image: llm_optimization_funnel_final.png
 ---
-
 # How to optimize your docs for LLMs
 
 Let's be honest: developers probably aren't reading your documentation the way they used to. They're asking AI agents instead of digging through your carefully crafted API reference. And if your docs aren't optimized for these AI tools, your developers are getting incomplete or wrong answers about your APIs.

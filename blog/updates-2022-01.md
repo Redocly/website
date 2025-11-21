@@ -1,20 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: January 2022 updates
 description: Round up of product features and enhancements, plus documentation news from January 2022
 seo:
   title: January 2022 updates
   description: Round up of product features and enhancements, plus documentation news from January 2022
 author: swapnil-ogale
-date: 2022-02-02
+date: "2022-02-02"
 categories:
-  - dev-portal
-  - tech-writers
-  - developer-experience
-  - api
+  - redocly:product-updates
 image: blog-5.png
 ---
-
 In the blink of an eye, January is over!
 
 The holiday season didn't dampen the pace of enhancing our consumers' experience with our products. While we all enjoyed a well earned year-end break, there was still a lot of activity amongst the Redocly product teams.

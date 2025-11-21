@@ -1,5 +1,5 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: "Respect your API: Announcing Respect Monitoring"
 description: Respect Monitoring is an OpenAPI-aware API monitoring solution that ensures your APIs behave exactly as expected.
 seo:
@@ -7,12 +7,11 @@ seo:
   description: Respect Monitoring is an OpenAPI-aware API monitoring solution that ensures your APIs behave exactly as expected.
   image: ./images/respect-your-api-blog.png
 author: adam-altman
-date: 2025-02-25
+date: "2025-02-25"
 categories:
-  - company-update
+  - redocly:product-updates
 image: respect-your-api-blog.png
 ---
-
 APIs are the backbone of modern software,
 yet too often, API issues go unnoticed until they cause real problems.
 Unexpected status codes, incorrect content types, and schema mismatches can silently break integrations, degrade user experience, and even lead to security vulnerabilities.

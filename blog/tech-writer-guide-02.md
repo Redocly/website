@@ -1,14 +1,14 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: A tech writer's guide to the Redocly galaxy (part 2)
 description: What exactly are 'API Docs'?
 seo:
   title: A tech writer's guide to the Redocly galaxy (part 2)
   description: What exactly are 'API Docs'?
 author: jody-winter
-date: 2022-11-29
+date: "2022-11-29"
 categories:
-  - tech-writers
+  - technical-documentation:conceptual-documentation
 image: blog-6.png
 ---
 # A tech writer's guide to the Redocly galaxy: What exactly are 'API Docs'?

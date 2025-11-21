@@ -1,5 +1,5 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: October 2024 updates
 description: Round-up of product features and enhancements from October 2024
 seo:
@@ -7,12 +7,11 @@ seo:
   description: Round-up of product features and enhancements from October 2024
   image: ./images/october-feature-updates.png
 author: adam-altman
-date: 2024-11-04
+date: "2024-11-04"
 categories:
-  - company-update
+  - redocly:product-updates
 image: october-feature-updates.png
 ---
-
 October was an exciting month at Redocly.
 We launched a suite of products aimed at making API development and management faster, more flexible, and ultimately more accessible to teams of all sizes.
 If you haven’t signed up yet, you can [start a free trial](https://auth.cloud.redocly.com/registration) and explore these tools firsthand.

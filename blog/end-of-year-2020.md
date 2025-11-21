@@ -1,21 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: What Redocly brought to the API space in 2020
 description: Highlighting the most interesting/useful features Redocly delivered in 2020
 seo:
   title: What Redocly brought to the API space in 2020
   description: Highlighting the most interesting/useful features Redocly delivered in 2020
 author: swapnil-ogale
-date: 2020-12-30
+date: "2020-12-30"
 categories:
-  - dev-portal
-  - docs-as-code
-  - tech-writers
-  - developer-experience
-  - automation
+  - redocly:product-updates
 image: features.png
 ---
-
 2020. Enough said. No doubt, this year will go down as one of the most challenging years in recent times.
 
 We hope you are doing ok and have survived this brute of a pandemic. At Redocly, we have had a busy but exciting year with our mission of adding to our range of API products using these guiding principles:

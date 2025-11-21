@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Best practices for building and adopting an API governance strategy
 description: API governance is important. Learn how to do it well.
 seo:
   title: Best practices for building and adopting an API governance strategy
   description: API governance is important. Learn how to do it well.
 author: lorna-mitchell
-date: 2024-08-29
+date: "2024-08-29"
 categories:
-  - openapi
+  - api-governance
 image: Redocly_blog_2.jpg
 ---
-
 API governance is a vital part of any modern API strategy.
 By setting standards, and supporting the tools and processes to achieve them, you can continuously improve your organization's APIs.
 Supporting good API governance means wherever you take your API ambitions, the key pillars of consistency, quality, and security are ingrained in your API practices.

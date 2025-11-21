@@ -1,15 +1,14 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: OpenAPI 3
 seo:
   title: OpenAPI 3
 author: adam-altman
-date: 2019-01-09
+date: "2019-01-09"
 categories:
-  - openapi
+  - api-specifications:openapi
 image: blog-3.png
 ---
-
 A few weeks ago, we migrated three API definitions that I maintain and
 contribute to OpenAPI 3 from Swagger 2. It is relatively easy to transition
 from version 2 to 3. But just migrating the definition was one thing… being

@@ -1,20 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: November 2021 updates
 description: Round up of product features and enhancements, plus documentation news from November 2021
 seo:
   title: November 2021 updates
   description: Round up of product features and enhancements, plus documentation news from November 2021
 author: swapnil-ogale
-date: 2021-12-01
+date: "2021-12-01"
 categories:
-  - dev-portal
-  - tech-writers
-  - developer-experience
-  - api
+  - redocly:product-updates
 image: blog-6.png
 ---
-
 November felt like a wrap-up month at Redocly, in the sense that we wrapped up some really big projects and made some nifty UX improvements to our products such as the OpenAPI VS Code extension, Redoc and the Developer portal.
 
 Let's have a quick look at our new features, enhancements and documentation-related news from November 2021.

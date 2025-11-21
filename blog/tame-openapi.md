@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Tame your OpenAPI descriptions
 description: Use the best modern tools to make even the longest OpenAPI file a delight to work with
 seo:
   title: Tame your OpenAPI descriptions
   description: Use the best modern tools to make even the longest OpenAPI file a delight to work with
 author: lorna-mitchell
-date: 2023-09-06
+date: "2023-09-06"
 categories:
-  - openapi
-  - tech-writers
+  - api-specifications:openapi
+  - technical-documentation
 image: cli.png
 ---
-
 OpenAPI is a widely-used open format for describing HTTP APIs; you'll find most modern APIs use OpenAPI both as part of the development workflow and as part of the user experience. Every API and description will be different, but one challenge is that for non-trivial APIs, the description files can be many thousands of lines long.
 
 Working with extensive files presents logistical difficulties; some tools may not be able to handle them at all. Overall navigation becomes difficult at that size, which can mean it takes longer to make changes. Reviewing changes is also more complicated because the size of the file can make it easy to miss where a change is needed.

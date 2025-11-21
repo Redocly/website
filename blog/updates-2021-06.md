@@ -1,19 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: June 2021 updates
 description: Round up of the features and enhancements, plus some documentation news from June 2021
 seo:
   title: June 2021 updates
   description: Round up of the features and enhancements, plus some documentation news from June 2021
 author: swapnil-ogale
-date: 2021-07-02
+date: "2021-07-02"
 categories:
-  - dev-portal
-  - tech-writers
-  - developer-experience
+  - redocly:product-updates
 image: blog-6.png
 ---
-
 June is the month of solstices, both of the northern and southern variety for Redocly employees who are dispersed globally. The duality of celebrating both the longest day and the shortest day helped us push through some important updates to our products, along with adding enhancements and working on some bug fixes.
 
 This post is a round up of our product updates, enhancements and documentation-related news from June 2021.

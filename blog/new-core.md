@@ -1,14 +1,14 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Rebuilding Redocly's Core
 description: The extended journey which lead to new and exciting products.
 seo:
   title: Rebuilding Redocly's Core
   description: The extended journey which lead to new and exciting products.
 author: adam-altman
-date: 2024-08-07
+date: "2024-08-07"
 categories:
-  - company-update
+  - redocly:product-updates
 image: new-core.png
 ---
 ### The journey of rebuilding Redocly's core

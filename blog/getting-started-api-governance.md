@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Getting started with API governance
 description: Take your first steps to better APIs with our approachable guide to getting started with API governance.
 seo:
   title: Getting started with API governance
   description: Take your first steps to better APIs with our approachable guide to getting started with API governance.
 author: lorna-mitchell
-date: 2024-05-08
+date: "2024-05-08"
 categories:
-  - openapi
+  - api-governance
 image: Redocly_blog_2.jpg
 ---
-
 Many API governance resources dive in quickly to getting the right rulesets and linting.
 We have lots of [resources about API governance](../docs/cli/api-standards) and [linting rules](../docs/cli/rules), but if you're at the "but where do I put these things?" stage, then keep reading.
 This article gets you started with the simplest possible OpenAPI governance setup, and sends you on your journey of rulesets and standards.

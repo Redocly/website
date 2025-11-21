@@ -1,19 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: July 2022 updates
 description: Round-up of product features and enhancements from May, June, and July 2022
 seo:
   title: July 2022 updates
   description: Round-up of product features and enhancements from May, June, and July 2022
 author: adam-altman
-date: 2022-08-02
+date: "2022-08-02"
 categories:
-  - tech-writers
-  - developer-experience
-  - api
+  - redocly:product-updates
 image: blog-7.jpg
 ---
-
 If we had to describe our summer activities in a word, "vacation" would nail it.
 We've been missing from the blog.
 And it's my fault... you see, I went on a one-month vacation.

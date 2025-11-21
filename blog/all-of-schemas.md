@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: How to reuse schemas when required properties change across endpoints
 description: Answering real questions about how to use OpenAPI to design and describe APIs.
 seo:
   title: How to reuse schemas when required properties change across endpoints
   description: Answering real questions about how to use OpenAPI to design and describe APIs.
 author: adam-altman
-date: 2022-05-04
+date: "2022-05-04"
 categories:
-  - openapi
-  - api-design
+  - api-specifications:openapi
+  - api-lifecycle:design
 image: team.png
 ---
-
 # Extending schemas with `allOf`
 
 Question from C-3PO (yes, names and content are changed to protect the innocent):

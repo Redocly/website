@@ -1,19 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Meet the Museum OpenAPI description
 description: Learn about the Museum API, a modern OpenAPI example by Redocly designed to teach API enthusiasts about OpenAPI and developer experience.
 seo:
   title: Meet the Museum OpenAPI description
   description: Learn about the Museum API, a modern OpenAPI example by Redocly designed to teach API enthusiasts about OpenAPI and developer experience.
 author: taylor-krusen
-date: 2024-03-21
+date: "2024-03-21"
 categories:
-  - openapi
-  - tech-writers
-  - developers
+  - api-specifications:openapi
+  - technical-documentation:tutorials-onboarding
 image: blog-4.jpg
 ---
-
 We're thrilled to announce the [Museum API](https://github.com/Redocly/museum-openapi-example), a modern, example OpenAPI description built by Redocly to teach you about OpenAPI.
 
 The Museum API was created with OpenAPI learners in mind. The fun, light-hearted examples are designed to mirror real-world API use cases and challenges. For developers, writers, and anyone seeking to deepen their understanding of APIs, the Museum API serves as a useful resource for learning about OpenAPI and its role in delivering exceptional API experiences.

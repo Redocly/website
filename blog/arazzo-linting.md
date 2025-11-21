@@ -1,19 +1,18 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Lint Arazzo workflow files with Redocly CLI
 description: Adopting new standards requires great tools. Use Redocly CLI to lint your OpenAPI, AsyncAPI and Arazzo format descriptions.
 seo:
   title: Lint Arazzo workflow files with Redocly CLI
   description: Adopting new standards requires great tools. Use Redocly CLI to lint your OpenAPI, AsyncAPI and Arazzo format descriptions.
 author: lorna-mitchell
-date: 2024-07-24
+date: "2024-07-24"
 categories:
-  - openapi
-  - developer-experience
-  - open-source
+  - api-specifications:arazzo
+  - api-governance:linting-rulesets
+  - redocly:redocly-cli
 image: Redocly_blog_1.jpg
 ---
-
 When we started adopting the OpenAPI Workflows Specification before its [official release as Arazzo](https://www.openapis.org/announcement/2024/05/29/a-new-specification-from-openapi-arazzo), we saw great potential for building on the established OpenAPI standards already creating value for many organizations.
 
 ## About the Arazzo specification

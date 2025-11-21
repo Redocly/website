@@ -1,19 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: August 2022 updates
 description: Round-up of product features and enhancements from August 2022
 seo:
   title: August 2022 updates
   description: Round-up of product features and enhancements from August 2022
 author: adam-altman
-date: 2022-09-02
+date: "2022-09-02"
 categories:
-  - tech-writers
-  - developer-experience
-  - api
+  - redocly:product-updates
 image: blog-8.jpg
 ---
-
 My August in a word or two: "covid" and "rebound".
 I'm recovered, and had some beautiful visions of the future as well as time for reflection.
 
