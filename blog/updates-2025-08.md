@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: August 2025 updates
 description: Product features and enhancements from August 2025 include enhanced AI integration, improved navigation, workflow upgrades, and a robust feedback system.
 seo:
-  title: "August 2025 updates"
-  description: Product features and enhancements from August 2025 include enhanced AI integration, improved navigation, workflow upgrades, and a robust feedback system. 
+  title: August 2025 updates
+  description: Product features and enhancements from August 2025 include enhanced AI integration, improved navigation, workflow upgrades, and a robust feedback system.
   image: ./images/aug-blog-post.png
 author: adam-altman
-date: 2025-09-11
+date: "2025-09-11"
 categories:
- - company-update
+  - redocly:product-updates
 image: aug-blog-post.png
 ---
-
 # August 2025 updates ☀️
 
 August brought a wave of improvements across Redocly's product suite, with enhanced AI integration, better navigation, improved workflows, and a more robust feedback system.

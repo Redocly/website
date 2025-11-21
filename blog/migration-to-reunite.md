@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
-title: 'Redocly 2.0: From Workflows to Reunite'
+template: ../@theme/templates/BlogPost
+title: "Redocly 2.0: From Workflows to Reunite"
 description: A fresh start to boost your team's efficiency.
 seo:
-  title: 'Redocly 2.0: From Workflows to Reunite'
+  title: "Redocly 2.0: From Workflows to Reunite"
   description: A fresh start to boost your team's efficiency.
 author: adam-altman
-date: 2024-08-13
+date: "2024-08-13"
 categories:
-  - company-update
+  - redocly:product-updates
 image: product-mix.png
 ---
-
 In my last blog post, I explained what led to us [building a new core](./new-core.md).
 In a single sentence:
 > Workflows and the Developer portal beta weren't flexible enough for new tech and growing customer needs.

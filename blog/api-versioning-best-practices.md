@@ -1,5 +1,5 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: API versioning best practices
 description: Implementing API versioning strategies that protect existing integrations while enabling safe updates.
 seo:
@@ -7,15 +7,13 @@ seo:
   description: Implementing API versioning strategies that protect existing integrations while enabling safe updates.
   image: ./images/api-versioning-best-practices.jpg
 author: matt-williams
-date: 2025-08-20
+date: "2025-08-20"
 categories:
-  - developer-experience
-  - learning
-  - company-update
-  - dev-portal
+  - api-versioning
+  - redocly:product-updates
+  - api-documentation:versioning-comms
 image: api-versioning-best-practices.jpg
 ---
-
 Supporting multiple API versions simultaneously increases costs and operational overhead.
 Each version multiplies your support burden - bug reports, troubleshooting, and feature requests must be handled across all supported versions.
 This complexity extends beyond developer time to infrastructure requirements, as different versions may need separate deployment environments, database schemas, or monitoring systems.

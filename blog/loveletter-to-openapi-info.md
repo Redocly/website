@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Love letter to OpenAPI's info section
 description: How some humble metadata can multiply the impact of your API.
 seo:
   title: Love letter to OpenAPI's info section
   description: How some humble metadata can multiply the impact of your API.
 author: lorna-mitchell
-date: 2024-03-07
+date: "2024-03-07"
 categories:
-  - openapi
+  - api-specifications:openapi
 image: Redocly_blog_6.jpg
 ---
-
 To some, the `info` section of the OpenAPI description can seem like a small trivia, something to skip past to reach the main event.
 In truth however, the metadata unlocks many special aspects of an API that the `paths` section alone cannot achieve.
 By investing attention in this neglected area of API descriptions, we can bring each API to new audiences and enable smooth integrations.

@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: "API council: the wisdom of your API crowd"
 description: Invite the stakeholders inside your organization to the table and make your API the best it can be
 seo:
   title: "API council: the wisdom of your API crowd"
   description: Invite the stakeholders inside your organization to the table and make your API the best it can be
 author: lorna-mitchell
-date: 2024-04-17
+date: "2024-04-17"
 categories:
-  - openapi
+  - api-specifications:openapi
 image: Redocly_blog_8.jpg
 ---
-
 API governance is often focused on the creation of standards, and the implementing of those standards using appropriate tooling.
 At Redocly, we love API tools so much that that we've built a whole company around building them, but successful API practice is about more than tools.
 Like most technology problems, the best solutions lie with the people who are part of the process.

@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Add OpenAPI tags for next-level API descriptions
 description: Tag your OpenAPI endpoints and help your users navigate their own path to success.
 seo:
   title: Add OpenAPI tags for next-level API descriptions
   description: Tag your OpenAPI endpoints and help your users navigate their own path to success.
 author: lorna-mitchell
-date: 2024-03-13
+date: "2024-03-13"
 categories:
-  - openapi
-  - api-design
+  - api-specifications:openapi
+  - api-lifecycle:design
 image: Redocly_blog_7.jpg
 ---
-
 Getting to know a new API is always daunting, but for the larger APIs, the hardest part is knowing where to start.
 Help users find their way with your API by adding tags to your [OpenAPI](https://www.openapis.org/) [endpoints](https://blog.hubspot.com/website/api-endpoint).
 

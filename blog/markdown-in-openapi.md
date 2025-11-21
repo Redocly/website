@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Build rich developer experiences with Markdown in OpenAPI
 description: Make a good API experience a great one with rich descriptions in OpenAPI
 seo:
   title: Build rich developer experiences with Markdown in OpenAPI
   description: Make a good API experience a great one with rich descriptions in OpenAPI
 author: lorna-mitchell
-date: 2023-09-19
+date: "2023-09-19"
 categories:
-  - openapi
-  - tech-writers
+  - api-specifications:openapi
+  - technical-documentation
 image: Redocly_blog_3.jpg
 ---
-
 APIs need documentation, and most of them do have documentation. Sometimes it's
 pretty good documentation. But the very best documentation is a rich and
 polished experience, and that's not universal across the industry. One key

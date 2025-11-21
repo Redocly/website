@@ -1,12 +1,12 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Presenting multiple APIs for better discovery
 seo:
   title: Presenting multiple APIs for better discovery
 author: adam-altman
-date: 2021-01-26
+date: "2021-01-26"
 categories:
-  - dev-portal
+  - api-catalog:discovery
 image: blog-api-discovery.png
 ---
 Does your organization own documentation for multiple APIs?

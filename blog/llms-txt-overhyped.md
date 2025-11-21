@@ -1,19 +1,18 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: llms.txt is overhyped
 description: We built it, tested it, and checked the logs. llms.txt isn’t the “robots.txt for AI” — it’s mostly ignored. Here’s what actually matters.
 seo:
   title: llms.txt is overhyped
   description: Redocly experimented with llms.txt and found it mostly smoke, not fire. See the results, the logs, and what really matters for docs + AI.
   image: ./images/llms-txt.jpg
-
 author: adam-altman
-date: 2025-08-20
+date: "2025-08-20"
 categories:
-  - developer-experience
-  - learning
-  - company-update
-  - dev-portal
+  - api-documentation:api-seo
+  - technical-documentation:ai-assisted-docs
+  - redocly:product-updates
+  - developer-portal:search
 image: llms-txt.jpg
 ---
 # LLMS.txt is overhyped

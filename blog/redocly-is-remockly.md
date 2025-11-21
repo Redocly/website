@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Redocly is Remockly
 seo:
   title: Redocly is Remockly
 author: adam-altman
-date: 2022-04-01
+date: "2022-04-01"
 categories:
-  - openapi
-  - api
-  - company-update
+  - api-specifications:openapi
+  - api-lifecycle:design
+  - redocly:product-updates
 image: remockly-logo.png
 ---
-
 ## Redocly rebrands as Remockly
 
 The Redocly brand is synonymous with quality API documentation. And we're so much more than that.

@@ -1,5 +1,5 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: "MCP: what it is, why it matters, and why caution is warranted in 2025"
 description: Explore the pros and cons of Model Context Protocol (MCP), an emerging standard for AI agent interaction.
 seo:
@@ -9,9 +9,8 @@ image: mcp-header.png
 author: adam-altman
 date: "2025-07-15"
 categories:
-  - mcp
+  - api-specifications:contract-patterns
 ---
-
 # MCP: what is it, why it matters, and why caution is warranted in 2025
 
 In late 2024, [Anthropic introduced](https://www.anthropic.com/news/model-context-protocol) the **Model Context Protocol (MCP)** —

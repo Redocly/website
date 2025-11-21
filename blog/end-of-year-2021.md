@@ -1,21 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Upward and onward at Redocly
 description: Highlighting the most interesting and useful features Redocly delivered in 2021
 seo:
   title: Upward and onward at Redocly
   description: Highlighting the most interesting and useful features Redocly delivered in 2021
 author: swapnil-ogale
-date: 2021-12-25
+date: "2021-12-25"
 categories:
-  - dev-portal
-  - docs-as-code
-  - tech-writers
-  - developer-experience
-  - automation
+  - redocly:product-updates
 image: team.png
 ---
-
 2021 seemed like a natural extension of the previous year, but there were a lot more positives and forward movement.
 
 At Redocly, we have had a superb year. This year, our mission was to not only further improve the consumer experience, but also make steady progress on the producer experience by offering the right tools and knowledge to build outstanding products.

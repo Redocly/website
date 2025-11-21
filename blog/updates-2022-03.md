@@ -1,19 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: March 2022 updates
 description: Round up of product features and enhancements, plus documentation news from March 2022
 seo:
   title: March 2022 updates
   description: Round up of product features and enhancements, plus documentation news from March 2022
 author: swapnil-ogale
-date: 2022-04-04
+date: "2022-04-04"
 categories:
-  - tech-writers
-  - developer-experience
-  - api
+  - redocly:product-updates
 image: blog-8.jpg
 ---
-
 March was a super productive month at Redocly. Our developer teams delivered many cool features across the board and I am excited to share all of these with you.
 
 Looking back 12 months, we had a very similar [March in 2021](updates-2021-03.md), so maybe March has a touch of something special going for it.

@@ -1,16 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Where to store your OpenAPI definitions
 description: Part 1 of our series of posts around managing OpenAPI definitions with Redocly
 seo:
   title: Where to store your OpenAPI definitions
   description: Part 1 of our series of posts around managing OpenAPI definitions with Redocly
 author: swapnil-ogale
-date: 2021-01-07
+date: "2021-01-07"
 categories:
-  - openapi
-  - teamwork
-  - tech-writers
+  - api-specifications:openapi
+  - api-governance:review-workflows
+  - technical-documentation
 image: team.png
 ---
 _This post is the first of a series of posts we plan to publish around how organizations can leverage the best of OpenAPI definitions, source control repositories, documentation contributors, and Redocly products._

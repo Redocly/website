@@ -1,18 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Open-sourcing Redocly’s unique approach to dogfooding
 seo:
   title: Open-sourcing Redocly’s unique approach to dogfooding
   description: Phronesis is Redocly's unique approach to dogfooding resulting in 630% improvement in a key metric.
   image: ./images/dogfooding.png
-
 author: adam-altman
-date: 2025-02-11
+date: "2025-02-11"
 categories:
-  - company-update
+  - redocly:product-updates
 image: dogfooding.png
 ---
-
 APIs are what make the modern world go 'round, and Redocly sits at the heart of it all.
 Our mission is to make APIs easier to design, build, and use to advance technology even further. With such a future-oriented mission, you might be surprised to learn that when it comes to becoming experts in our own product and fostering a culture of transparency, ownership, and respectful disagreement, we look to the past. Like, the ancient past.
 

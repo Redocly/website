@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: API documentation essentials
 description: Discover how great API documentation helps developers succeed and sets your API apart. Learn the essentials of great API docs.
 seo:
   title: API documentation essentials
   description: Discover how great API documentation helps developers succeed and sets your API apart. Learn the essentials of great API docs.
 author: taylor-krusen
-date: 2024-12-15
+date: "2024-12-15"
 categories:
-  - api-docs
+  - api-documentation:reference-docs
 image: blog-2.png
 ---
-
 For companies that offer an API, providing great API documentation makes good business sense.
 Developers use API documentation to discover the capabilities of an API and learn to build with it successfully.
 

@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: "RFC 9457: Better information for bad situations"
 description: RFC 9457 evolves the standard for describing API errors by building on RFC 7807. Come learn what's new, what to expect, and how you can use it in your own APIs.
 seo:
   title: "RFC 9457: Better information for bad situations"
   description: RFC 9457 evolves the standard for describing API errors by building on RFC 7807. Come learn what's new, what to expect, and how you can use it in your own APIs.
 author: lorna-mitchell
-date: 2023-10-25
+date: "2023-10-25"
 categories:
-  - api-design
+  - api-lifecycle:design
 image: Redocly_blog_8.jpg
 ---
-
 Standards are great; they offer common language and approaches that we can transfer between projects and technologies. This congruity is especially valuable in the API space where the [principle of least surprise](https://en.wikipedia.org/wiki/Principle_of_least_astonishment) means that integration projects go swiftly and smoothly.
 
 One of the newest standards in APIs isn't new at all; it's an update on the existing (and excellent) [RFC 7807 Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc7807). The successor is [RFC 9457 Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc9457) and is a positive evolution on the existing well-established standard.

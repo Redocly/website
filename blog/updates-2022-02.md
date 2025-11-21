@@ -1,19 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: February 2022 updates
 description: Round up of product features and enhancements, plus documentation news from February 2022
 seo:
   title: February 2022 updates
   description: Round up of product features and enhancements, plus documentation news from February 2022
 author: swapnil-ogale
-date: 2022-03-01
+date: "2022-03-01"
 categories:
-  - tech-writers
-  - developer-experience
-  - api
+  - redocly:product-updates
 image: blog-6.png
 ---
-
 February hasn't been the most of inspiring of months at Redocly. We have some really wonderful teammates currently in Ukraine who are right now going through a range of emotions.
 
 Our CEO, Adam Altman, penned this [Ukraine war update](ukraine-war.md) with some news, and what you can do to help.

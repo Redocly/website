@@ -1,5 +1,5 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: June and July 2025 updates
 description: Product features and enhancements from June and July 2025 include analytics, icons, and AsyncAPI docs
 seo:
@@ -7,12 +7,11 @@ seo:
   description: Product features and enhancements from June and July 2025 include analytics, icons, and AsyncAPI docs
   image: ./images/june-july-updates.png
 author: adam-altman
-date: 2025-08-18
+date: "2025-08-18"
 categories:
- - company-update
+  - redocly:product-updates
 image: june-july-updates.png
 ---
-
 # June and July 2025 updates ☀️
 
 Summer has been a busy season at Redocly.

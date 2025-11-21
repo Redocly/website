@@ -1,19 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Content reuse
 description: Avoiding common pitfalls when implementing content reuse.
 seo:
   title: Content reuse
   description: Avoiding common pitfalls when implementing content reuse.
 author: heather-cloward
-date: 2023-08-30
+date: "2023-08-30"
 categories:
-  - technical-writing
-  - content
-  - best-practices
+  - docs-as-code:content-reuse
 image: blog-4.jpg
 ---
-
 # Content reuse done well
 
 Since product features often overlap, particularly when you have a SaaS tiered approach, it is very common for similar or even the exact same content to live in multiple places in the documentation.

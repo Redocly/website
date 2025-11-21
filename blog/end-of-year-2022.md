@@ -1,20 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: A challenging year
 description: A review of 2022 at Redocly
 seo:
   title: A challenging year
   description: A review of 2022 at Redocly
 author: adam-altman
-date: 2023-01-08
+date: "2023-01-08"
 categories:
-  - dev-portal
-  - docs-as-code
-  - tech-writers
-  - developer-experience
+  - redocly:product-updates
 image: team.png
 ---
-
 Let's start by setting the stage for 2022.
 It started as a natural extension of the previous year.
 Then, in February the [war in Ukraine](./ukraine-war.md) started.

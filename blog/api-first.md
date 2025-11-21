@@ -1,15 +1,14 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: API-first design
 seo:
   title: API-first design
 author: adam-altman
-date: 2018-05-06
+date: "2018-05-06"
 categories:
-  - api-first
+  - api-lifecycle:design
 image: blog-2.png
 ---
-
 ## The background…
 
 By the time ReDoc was released in 2015, I was more comfortable with the OpenAPI (fka Swagger)

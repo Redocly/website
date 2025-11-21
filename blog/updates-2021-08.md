@@ -1,20 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: August 2021 updates
 description: Round up of product features and enhancements, plus some documentation news from August 2021
 seo:
   title: August 2021 updates
   description: Round up of product features and enhancements, plus some documentation news from August 2021
 author: swapnil-ogale
-date: 2021-09-01
+date: "2021-09-01"
 categories:
-  - dev-portal
-  - tech-writers
-  - developer-experience
-  - api
+  - redocly:product-updates
 image: blog-8.jpg
 ---
-
 It has been another huge month at Redocly. Continuing on from our major update to Reference docs last month, we now have version 1.1 of our Developer portal that uses the revamped Reference docs.
 
 While our product team has been blazing through fortifying our products, our documentation team is busy keeping pace with our new features, and enhancing our documentation experience for our customers and their users as well.

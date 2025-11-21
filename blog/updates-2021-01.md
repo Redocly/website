@@ -1,20 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: January 2021 updates
 description: Quick round up of the features and enhancements Redocly delivered in January 2021
 seo:
   title: January 2021 updates
   description: Quick round up of the features and enhancements Redocly delivered in January 2021
 author: swapnil-ogale
-date: 2021-02-08
+date: "2021-02-08"
 categories:
-  - dev-portal
-  - docs-as-code
-  - tech-writers
-  - developer-experience
+  - redocly:product-updates
 image: built.png
 ---
-
 _Starting 2021, Redocly will periodically publish a list of new features and enhancements we have delivered across our API products during our development cycles._
 
 This post highlights some of our recent product updates, new features and enhancements from January 2021.

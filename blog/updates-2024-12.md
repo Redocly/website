@@ -1,5 +1,5 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: December 2024 updates
 description: Round-up of product features and enhancements from December 2024
 seo:
@@ -7,12 +7,11 @@ seo:
   description: Round-up of product features and enhancements from December 2024
   image: ./images/december-feature-updates.png
 author: adam-altman
-date: 2025-01-06
+date: "2025-01-06"
 categories:
-  - company-update
+  - redocly:product-updates
 image: december-feature-updates.png
 ---
-
 December was a productive month for Redocly as we closed out the year with significant progress. In addition to 37 bug fixes and minor enhancements, we’ve rolled out new features and continued refining our roadmap for 2025.
 
 Here’s a quick look at the highlights:

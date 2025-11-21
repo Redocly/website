@@ -1,16 +1,15 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: The top three reasons I love docs-as-code
 seo:
   title: The top three reasons I love docs-as-code
 author: adam-altman
-date: 2020-10-29
+date: "2020-10-29"
 categories:
   - docs-as-code
 image: blog-5.png
 excerpt: At Redocly, we embrace developer experience. We believe docs-as-code is the optimal developer experience for producers of APIs.
 ---
-
 # The top three reasons I love docs-as-code
 
 At Redocly, maximizing the developer experience is our core purpose.

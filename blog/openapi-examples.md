@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Better examples for better API experience
 description: Set API consumers up for success with good and meaningful OpenAPI examples.
 seo:
   title: Better examples for better API experience
   description: Set API consumers up for success with good and meaningful OpenAPI examples.
 author: lorna-mitchell
-date: 2024-02-28
+date: "2024-02-28"
 categories:
-  - openapi
-  - api-design
+  - api-specifications:openapi
+  - api-lifecycle:design
 image: Redocly_blog_3.jpg
 ---
-
 API descriptions can be rather dry and factual, producing reference documentation that is accurate but can still fail to bridge the gap between API interface and happy, productive API consumers. Adding examples to OpenAPI can go a long way to helping users understand what they can do, and how to do it. There's no replacement for quickstart guides, tutorials, and other documentation of course - but richer examples in the OpenAPI descriptions can feed documentation and other downstream tools to get users up and running fast.
 
 The first step is to include examples for as many aspects of your OpenAPI as you can. Headers, parameters, request bodies and responses all benefit from appropriate examples. This article shows how to add examples to your API descriptions, and how to get the examples to do a little more work along the way.

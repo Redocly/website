@@ -1,21 +1,19 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Redocly for technical writers
 description: How Redocly helps technical writers create superior documentation experiences
 seo:
   title: Redocly for technical writers
   description: How Redocly helps technical writers create superior documentation experiences
 author: swapnil-ogale
-date: 2022-08-05
+date: "2022-08-05"
 categories:
-  - dev-portal
+  - developer-portal
   - docs-as-code
-  - tech-writers
-  - developer-experience
-  - automation
+  - technical-documentation
+  - api-governance:review-workflows
 image: workflows.png
 ---
-
 Redocly helps companies make the most of their APIs by keeping documentation current, up to date, and ready for internal and external users.
 
 Using the suite of Redocly products, organizations can integrate their OpenAPI definitions, create crisp API reference documentation, and design a great looking developer portal that encompasses all this to build amazing developer experiences.

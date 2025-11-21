@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: November 2025 updates
 description: Product features and enhancements from November 2025 include AI assistant improvements, OpenAPI 3.2.0 support, enhanced MCP integration, and new CLI validation rules.
 seo:
-  title: "November 2025 updates"
+  title: November 2025 updates
   description: Product features and enhancements from November 2025 include AI assistant improvements, OpenAPI 3.2.0 support, enhanced MCP integration, and new CLI validation rules.
   image: ./images/november-feature-updates.png
 author: adam-altman
-date: 2025-11-06
+date: "2025-11-06"
 categories:
- - company-update
+  - redocly:product-updates
 image: november-feature-updates.png
 ---
-
 # November 2025 updates 🍂
 
 November brings exciting new features across Redocly's product suite, with AI assistant enhancements, OpenAPI 3.2.0 support, improved MCP integration, and powerful new CLI validation capabilities.
