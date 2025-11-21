@@ -35825,7 +35825,7 @@ reunite:
     changes:
       minor: []
       patch:
-        - Skipped visual review check for pull requests targeting non-default branches with external Git providers.
+        - Skipped visual review check on external Git providers for pull requests targeting non-default branches.
     dependencies: {}
 replay:
   0.0.1:
