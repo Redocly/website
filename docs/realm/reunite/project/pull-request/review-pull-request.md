@@ -65,10 +65,26 @@ The check links back to the **Visual review** tab in Reunite and displays a shor
 
 **Visual review** check updates automatically when you add comments or change a review in Reunite.
 
-If you also connected your Git provider and Reunite accounts before submitting your review, it will post a review to your Git repository.
+If you connect your Git provider and Reunite accounts before submitting your review, it will post a review to your Git repository.
+
+    {% img 
+      src="../../images/reunite-pull-request-external-connect.png" 
+      alt="Screenshot showing the Git provider connection banner in Reunite"
+      withLightbox=true 
+    /%}
+
+Comments synced to an external provider have a cloud icon next to them.
+Click this icon to view the comment on the provider’s platform.
+
+    {% img 
+      src="../../images/reunite-pull-request-review-external-comments.png" 
+      alt="Screenshot showing synchronized and unsynchronized comments in a pull request review"
+      withLightbox=true 
+    /%}
 
 {% admonition type="warning" name="Review posting behavior" %}
 If your accounts are connected but you do not have review permissions in the provider, your review appears in Reunite only and is never posted to the provider.
+
 {% /admonition %}
 
 ## Merge a pull request
