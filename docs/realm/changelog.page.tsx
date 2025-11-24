@@ -180,19 +180,6 @@ export default function Changelog() {
 
   const [itemsToRender, setItemsToRender] = React.useState(DEFAULT_ITEMS_TO_RENDER);
 
-  React.useEffect(() => {
-    const hash = window.location.hash;
-    if (!hash) return;
-    const recordIdx = filteredChangelogs.findIndex(({ packageName, version }) => {
-      return hash === `#${(SHORT_NAMES[packageName] || packageName) + '@' + version}`;
-    });
-
-    setItemsToRender(Math.max(DEFAULT_ITEMS_TO_RENDER, recordIdx + 5));
-    setTimeout(() => {
-      document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  }, []);
-
   const filteredChangelogs = React.useMemo(() => {
     return changelogsWithResolvedDeps.filter(({ packageName, version, record }) => {
       if (!packages.includes(SHORT_NAMES[packageName] || packageName)) {
@@ -206,6 +193,47 @@ export default function Changelog() {
       });
     });
   }, [packages, changelogsWithResolvedDeps, searchTerm]);
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const url = new URL(window.location.href);
+    const releaseParam = url.searchParams.get('release');
+    const hash = url.hash;
+
+    let targetId: string | null = null;
+    if (hash) {
+      targetId = hash.slice(1);
+    } else if (releaseParam) {
+      try {
+        targetId = decodeURIComponent(releaseParam);
+      } catch {
+        targetId = releaseParam;
+      }
+    }
+
+    if (!targetId) return;
+
+    const recordIdx = filteredChangelogs.findIndex(({ packageName, version }) => {
+      return targetId === `${(SHORT_NAMES[packageName] || packageName) + '@' + version}`;
+    });
+
+    if (recordIdx === -1) return;
+
+    setItemsToRender(Math.max(DEFAULT_ITEMS_TO_RENDER, recordIdx + 5));
+    setTimeout(() => {
+      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+
+    if (releaseParam && !hash) {
+      url.searchParams.delete('release');
+      const searchString = url.searchParams.toString();
+      const cleanedUrl = `${url.origin}${url.pathname}${searchString ? `?${searchString}` : ''}#${targetId}`;
+      window.history.replaceState({}, '', cleanedUrl);
+    }
+  }, []); 
 
   function resolveDepsDeep(entry: ChangelogEntry, seen: string[] = []): ChangelogEntry {
     const resolved = { ...entry };

@@ -71,34 +71,40 @@ function buildRssItem(item: ChangelogWithDeps, baseUrl: string): string {
   const { features, fixes } = processChanges(item.record);
   const packageName = SHORT_NAMES[item.packageName] || item.packageName;
   const title = `${packageName} ${item.version}`;
-  const link = `${baseUrl}#${packageName}@${item.version}`;
+  const releaseId = `${packageName}@${item.version}`;
+  const guidUrl = `${baseUrl}#${releaseId}`;
   const pubDate = formatRssDate(item.record.timestamp);
-  
-  let description = `<h3>${escapeXml(packageName)} ${escapeXml(item.version)}</h3>`;
-  description += `<p><strong>Release Date:</strong> ${new Date(item.record.timestamp).toISOString().split('T')[0]}</p>`;
-  
+  const isoReleaseDate = new Date(item.record.timestamp).toISOString().split('T')[0];
+  const featureCount = features.length;
+  const fixCount = fixes.length;
+  const summary = `New release: ${item.packageName}@${item.version} · Date: ${isoReleaseDate} · ${featureCount} ${featureCount === 1 ? 'feature' : 'features'} · ${fixCount} ${fixCount === 1 ? 'fix' : 'fixes'}`;
+
+  let description = '';
+  description += `<p style="margin:0 0 12px;"><strong>${escapeXml(summary)}</strong></p>`;
+
   if (features.length > 0) {
-    description += '<h4>Features:</h4><ul>';
-    features.forEach(feature => {
-      description += `<li>${escapeXml(feature)}</li>`;
+    description += `<p style="margin:0 0 6px;"><strong>Features:</strong></p>`;
+    description += '<ul style="margin:0 0 12px 18px; padding:0; list-style:disc;">';
+    features.forEach((feature) => {
+      description += `<li style="margin:0 0 4px; list-style-position:inside;">${escapeXml(feature)}</li>`;
     });
     description += '</ul>';
   }
-  
+
   if (fixes.length > 0) {
-    description += '<h4>Fixes:</h4><ul>';
-    fixes.forEach(fix => {
-      description += `<li>${escapeXml(fix)}</li>`;
+    description += `<p style="margin:0 0 6px;"><strong>Fixes:</strong></p>`;
+    description += '<ul style="margin:0 0 12px 18px; padding:0; list-style:disc;">';
+    fixes.forEach((fix) => {
+      description += `<li style="margin:0 0 4px; list-style-position:inside;">${escapeXml(fix)}</li>`;
     });
     description += '</ul>';
   }
-  
+
   // Use CDATA for description to allow HTML content
   return `
     <item>
       <title>${escapeXml(title)}</title>
-      <link>${escapeXml(link)}</link>
-      <guid isPermaLink="true">${escapeXml(link)}</guid>
+      <guid isPermaLink="false">${escapeXml(guidUrl)}</guid>
       <pubDate>${pubDate}</pubDate>
       <description><![CDATA[${description}]]></description>
     </item>
