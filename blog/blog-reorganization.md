@@ -5,12 +5,12 @@ description: How we restructured our blog with hierarchical categories and subca
 seo:
   title: Reorganizing our blog for better discovery and SEO | Redocly
   description: Learn how hierarchical categories and subcategories improve blog navigation, user experience, and SEO. See how we reorganized 200+ posts in just two days.
-  # image: ./images/blog-reorganization.png
+  image: ./images/blog-reorganization.png
 author: adam-altman
 date: 2025-11-25
 categories:
   - redocly:product-updates
-# image: blog-reorganization.png
+image: blog-reorganization.png
 ---
 
 # Reorganizing our blog for better discovery and SEO
