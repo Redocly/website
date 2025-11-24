@@ -40,33 +40,184 @@ authors:
     authorBIO: SVP of Marketing, Redocly
     image: matt-williams.png
 categories:
-  - id: api
-    label: API
-  - id: company-update
-    label: Company update
-  - id: openapi
-    label: OpenAPI
   - id: api-catalog
     label: API catalog
-  - id: api-design
-    label: API design
-  - id: api-first
-    label: API first
-  - id: api-marketing
-    label: API marketing
-  - id: dev-portal
+    subcategories:
+      - id: discovery
+        label: Discovery
+      - id: entity-automation
+        label: Entity automation
+      - id: scorecards
+        label: Scorecards
+      - id: service-ownership
+        label: Service ownership
+      - id: dependency-maps
+        label: Dependency maps
+
+  - id: api-documentation
+    label: API documentation
+    subcategories:
+      - id: api-seo
+        label: API SEO
+      - id: reference-docs
+        label: Reference docs
+      - id: tutorials-guides
+        label: Tutorials & guides
+      - id: versioning-comms
+        label: Versioning communication
+      - id: documentation-strategy
+        label: Documentation strategy
+
+  - id: api-governance
+    label: API governance
+    subcategories:
+      - id: linting-rulesets
+        label: Linting & rulesets
+      - id: breaking-changes
+        label: Breaking changes
+      - id: review-workflows
+        label: Review workflows
+      - id: lifecycle-gates
+        label: Lifecycle gates
+      - id: compliance-quality
+        label: Compliance & quality
+
+  - id: api-lifecycle
+    label: API lifecycle
+    subcategories:
+      - id: design
+        label: Design
+      - id: mocking
+        label: Mocking
+      - id: release-management
+        label: Release management
+      - id: deprecation-sunsetting
+        label: Deprecation & sunsetting
+
+  - id: api-monitoring
+    label: API monitoring
+    subcategories:
+      - id: synthetic-monitoring
+        label: Synthetic monitoring
+      - id: workflow-monitoring
+        label: Workflow monitoring
+      - id: performance-metrics
+        label: Performance metrics
+
+  - id: api-specifications
+    label: API specifications
+    subcategories:
+      - id: openapi
+        label: OpenAPI
+      - id: arazzo
+        label: Arazzo
+      - id: asyncapi
+        label: AsyncAPI
+      - id: json-schema
+        label: JSON Schema
+      - id: graphql-sdl
+        label: GraphQL SDL
+      - id: contract-patterns
+        label: Contract patterns
+      - id: modeling-best-practices
+        label: Modeling best practices
+
+  - id: api-testing
+    label: API testing
+    subcategories:
+      - id: contract-testing
+        label: Contract testing
+      - id: integration-testing
+        label: Integration testing
+      - id: mock-servers
+        label: Mock servers
+      - id: workflow-testing
+        label: Workflow testing
+
+  - id: api-versioning
+    label: API versioning
+    subcategories:
+      - id: semantic-versioning
+        label: Semantic versioning
+      - id: design-time-versioning
+        label: Design-time versioning
+      - id: runtime-compatibility
+        label: Runtime compatibility
+      - id: migrations
+        label: Migrations
+
+  - id: developer-portal
     label: Developer portal
+    subcategories:
+      - id: information-architecture
+        label: Information architecture
+      - id: navigation-patterns
+        label: Navigation patterns
+      - id: search
+        label: Search
+      - id: branding-theming
+        label: Branding & theming
+      - id: multi-product-experiences
+        label: Multi-product experiences
+
   - id: docs-as-code
     label: Docs-as-code
-  - id: learning
-    label: Learning
-  - id: tech-writers
-    label: Technical writers
-  - id: developer-experience
-    label: Developer experience
-  - id: teamwork
-    label: Teamwork
-  - id: season-of-docs
-    label: Google Season of Docs
-  - id: open-source
-    label: Open source
+    subcategories:
+      - id: content-reuse
+        label: Content reuse
+      - id: variables-includes
+        label: Variables & includes
+      - id: git-workflows
+        label: Git workflows
+      - id: preview-environments
+        label: Preview environments
+
+  - id: internal-developer-portal
+    label: Internal developer portal
+    subcategories:
+      - id: service-catalog
+        label: Service catalog
+      - id: golden-paths
+        label: Golden paths
+      - id: scorecards-idp
+        label: Scorecards
+      - id: governance-signals
+        label: Governance signals
+      - id: dependency-maps-idp
+        label: Dependency maps
+
+  - id: redocly
+    label: Redocly
+    subcategories:
+      - id: redoc
+        label: Redoc
+      - id: redocly-cli
+        label: Redocly CLI
+      - id: recheck
+        label: Recheck
+      - id: realm
+        label: Realm
+      - id: reef
+        label: Reef
+      - id: reunite
+        label: Reunite
+      - id: pricing-usage
+        label: Pricing & usage
+      - id: product-updates
+        label: Product updates
+
+  - id: technical-documentation
+    label: Technical documentation
+    subcategories:
+      - id: conceptual-documentation
+        label: Conceptual documentation
+      - id: tutorials-onboarding
+        label: Tutorials & onboarding
+      - id: information-architecture-td
+        label: Information architecture
+      - id: writing-style
+        label: Writing style
+      - id: docs-ux
+        label: Documentation UX
+      - id: ai-assisted-docs
+        label: AI-assisted documentation
