@@ -211,7 +211,14 @@ function buildRssItem(post: any, origin: string): string {
 
 async function tryReadFromPageData(rootDir: string): Promise<{ posts: BlogPost[]; metadata: any } | null> {
   // Try to read from page-data JSON files which are deployed
+  // The client directory likely contains the built files
+  const clientDir = path.join(rootDir, 'client');
+  
   const pageDataPaths = [
+    // Try in client directory first (most likely location)
+    path.join(clientDir, 'page-data/shared/blog-posts.json'),
+    path.join(rootDir, 'client/page-data/shared/blog-posts.json'),
+    // Try at root level
     path.join(rootDir, 'page-data/shared/blog-posts.json'),
     path.join(rootDir, '../page-data/shared/blog-posts.json'),
     path.join(rootDir, '../../page-data/shared/blog-posts.json'),
@@ -226,6 +233,43 @@ async function tryReadFromPageData(rootDir: string): Promise<{ posts: BlogPost[]
   ];
 
   console.log('[Blog RSS] Trying to read from page-data files...');
+  console.log('[Blog RSS] Client directory path:', clientDir);
+  
+  // First, try to explore what's in the client directory
+  try {
+    const clientEntries = await fs.readdir(clientDir, { withFileTypes: true });
+    console.log(`[Blog RSS] Client directory contents:`, clientEntries.map(e => `${e.isDirectory() ? '[DIR]' : '[FILE]'} ${e.name}`).slice(0, 30));
+    
+    // Look for page-data directory
+    const pageDataDir = clientEntries.find(e => e.isDirectory() && e.name === 'page-data');
+    if (pageDataDir) {
+      const pageDataPath = path.join(clientDir, 'page-data/shared/blog-posts.json');
+      console.log('[Blog RSS] Found page-data directory, trying:', pageDataPath);
+      pageDataPaths.unshift(pageDataPath); // Add to front of list
+      
+      // Also list what's in page-data
+      try {
+        const pageDataEntries = await fs.readdir(path.join(clientDir, 'page-data'), { withFileTypes: true });
+        console.log(`[Blog RSS] page-data directory contents:`, pageDataEntries.map(e => `${e.isDirectory() ? '[DIR]' : '[FILE]'} ${e.name}`).slice(0, 20));
+        
+        // Look for shared directory
+        const sharedDir = pageDataEntries.find(e => e.isDirectory() && e.name === 'shared');
+        if (sharedDir) {
+          try {
+            const sharedEntries = await fs.readdir(path.join(clientDir, 'page-data/shared'), { withFileTypes: true });
+            console.log(`[Blog RSS] page-data/shared directory contents:`, sharedEntries.map(e => `${e.isDirectory() ? '[DIR]' : '[FILE]'} ${e.name}`).slice(0, 20));
+          } catch (e) {
+            console.log('[Blog RSS] Could not list shared directory:', e instanceof Error ? e.message : String(e));
+          }
+        }
+      } catch (e) {
+        console.log('[Blog RSS] Could not list page-data directory:', e instanceof Error ? e.message : String(e));
+      }
+    }
+  } catch (error) {
+    console.log('[Blog RSS] Could not explore client directory:', error instanceof Error ? error.message : String(error));
+  }
+  
   for (const pageDataPath of pageDataPaths) {
     try {
       const blogPostsData = JSON.parse(await fs.readFile(pageDataPath, 'utf8'));
