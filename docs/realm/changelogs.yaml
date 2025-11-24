@@ -1,4 +1,16 @@
 '@redocly/realm':
+  99.99.102-test:
+    timestamp: 1764588609130
+    changes:
+      minor:
+        - Added automated snapshots for preview environments to speed up QA.
+        - Introduced optional audit logging for admin actions across all workspaces.
+      patch:
+        - Fixed an issue where webhook retries ignored custom HTTP headers.
+        - Resolved layout shifts when switching between light and `dark` themes.
+        - Fixed an issue where webhook retries ignored custom **HTTP** headers.
+    dependencies: {}
+'@redocly/realm':
   99.99.101-test:
     timestamp: 1764588609129
     changes:
