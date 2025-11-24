@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { CDNIcon } from '@redocly/theme/icons/CDNIcon/CDNIcon';
 
-const BLOG_RSS_PATH = '/api/blog-rss';
+const BLOG_RSS_PATH = '/api/feed.xml';
 
 interface BlogRssSubscriptionProps {
   className?: string;
@@ -11,6 +11,7 @@ interface BlogRssSubscriptionProps {
 export function BlogRssSubscription({ className }: BlogRssSubscriptionProps) {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isCopied, setIsCopied] = React.useState(false);
+  const urlDisplayRef = React.useRef<HTMLAnchorElement>(null);
 
   const rssFeedUrl = React.useMemo(() => {
     if (typeof window === 'undefined') return BLOG_RSS_PATH;
@@ -25,6 +26,17 @@ export function BlogRssSubscription({ className }: BlogRssSubscriptionProps) {
     );
   }, [isCopied]);
 
+  const selectUrlText = React.useCallback(() => {
+    const element = urlDisplayRef.current;
+    if (!element || typeof window === 'undefined') return;
+    const selection = window.getSelection();
+    if (!selection) return;
+    const range = document.createRange();
+    range.selectNodeContents(element);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }, []);
+
   const handleCopy = React.useCallback(() => {
     if (!navigator?.clipboard) return;
     navigator.clipboard
@@ -35,11 +47,9 @@ export function BlogRssSubscription({ className }: BlogRssSubscriptionProps) {
       })
       .catch((error) => {
         console.error('Failed to copy RSS URL', error);
-        const urlInput = document.querySelector<HTMLInputElement>('input[readonly][value*="rss"]');
-        urlInput?.select();
-        urlInput?.setSelectionRange(0, 99999);
+        selectUrlText();
       });
-  }, [rssFeedUrl]);
+  }, [rssFeedUrl, selectUrlText]);
 
   return (
     <>
@@ -72,7 +82,15 @@ export function BlogRssSubscription({ className }: BlogRssSubscriptionProps) {
               <Section>
                 <SectionTitle>Your blog RSS Feed URL</SectionTitle>
                 <UrlContainer>
-                  <UrlInput type="text" readOnly value={rssFeedUrl} aria-label="Blog RSS feed URL" />
+                  <UrlLink
+                    href={rssFeedUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Blog RSS feed URL"
+                    ref={urlDisplayRef}
+                  >
+                    {rssFeedUrl}
+                  </UrlLink>
                   <CopyButton type="button" onClick={handleCopy} disabled={isCopied}>
                     {copyButtonIcon}
                     {isCopied ? 'Copied' : 'Copy URL'}
@@ -195,7 +213,7 @@ const UrlContainer = styled.div`
   }
 `;
 
-const UrlInput = styled.input`
+const UrlLink = styled.a`
   flex: 1;
   border-radius: 12px;
   border: 1px solid rgba(10, 28, 43, 0.12);
@@ -204,10 +222,18 @@ const UrlInput = styled.input`
   font-family: var(--font-family-mono, 'IBM Plex Mono', monospace);
   color: #0a1c2b;
   background: #f8fafc;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  word-break: break-all;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
 
-  &:focus {
-    outline: none;
-    border-color: rgba(32, 125, 255, 0.6);
+  &:focus-visible {
+    outline: 2px solid rgba(32, 125, 255, 0.6);
+    outline-offset: 2px;
     background: #ffffff;
   }
 `;

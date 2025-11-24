@@ -296,3 +296,13 @@ openapi:
 
 search:
   engine: typesense
+
+links:
+  - href: ./@api/docs/changelog/feed.xml.get.ts
+    rel: alternate
+    type: application/rss+xml
+    title: Redocly Changelog RSS Feed
+  - href: ./@api/feed.xml.get.ts 
+    rel: alternate
+    type: application/rss+xml
+    title: Redocly Blog RSS Feed

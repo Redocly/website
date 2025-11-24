@@ -61,6 +61,7 @@ export function RssSubscription({ className, initialSelectedProducts }: RssSubsc
     sanitizeSelectedProducts(initialSelectedProducts),
   );
   const [includeRc, setIncludeRc] = React.useState(false);
+  const urlDisplayRef = React.useRef<HTMLAnchorElement>(null);
   
   React.useEffect(() => {
     if (!isRssModalOpen) {
@@ -69,9 +70,9 @@ export function RssSubscription({ className, initialSelectedProducts }: RssSubsc
   }, [initialSelectedProducts, isRssModalOpen]);
 
   const rssFeedUrl = React.useMemo(() => {
-    if (typeof window === 'undefined') return '/api/changelog-rss';
+    if (typeof window === 'undefined') return '/api/docs/changelog/feed.xml';
     const baseUrl = window.location.origin;
-    const url = new URL(`${baseUrl}/api/changelog-rss`);
+    const url = new URL(`${baseUrl}/api/docs/changelog/feed.xml`);
 
     // Add products as a single comma-separated array parameter
     if (selectedProducts.length > 0) {
@@ -88,6 +89,17 @@ export function RssSubscription({ className, initialSelectedProducts }: RssSubsc
 
   const [isCopied, setIsCopied] = React.useState(false);
 
+  const selectUrlText = React.useCallback(() => {
+    const element = urlDisplayRef.current;
+    if (!element || typeof window === 'undefined') return;
+    const selection = window.getSelection();
+    if (!selection) return;
+    const range = document.createRange();
+    range.selectNodeContents(element);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }, []);
+
   const handleCopyUrl = React.useCallback(() => {
     navigator.clipboard.writeText(rssFeedUrl).then(() => {
       setIsCopied(true);
@@ -96,14 +108,9 @@ export function RssSubscription({ className, initialSelectedProducts }: RssSubsc
       }, 2000);
     }).catch(err => {
       console.error('Failed to copy URL:', err);
-      // Fallback: select the text so user can copy manually
-      const urlInput = document.querySelector('input[readonly][value*="changelog-rss"]') as HTMLInputElement;
-      if (urlInput) {
-        urlInput.select();
-        urlInput.setSelectionRange(0, 99999);
-      }
+      selectUrlText();
     });
-  }, [rssFeedUrl]);
+  }, [rssFeedUrl, selectUrlText]);
 
   return (
     <>
@@ -122,6 +129,7 @@ export function RssSubscription({ className, initialSelectedProducts }: RssSubsc
           selectedProducts={selectedProducts}
           includeRc={includeRc}
           rssFeedUrl={rssFeedUrl}
+          urlDisplayRef={urlDisplayRef}
           onProductsChange={setSelectedProducts}
           onIncludeRcChange={setIncludeRc}
           onCopyUrl={handleCopyUrl}
@@ -137,6 +145,7 @@ interface RssModalProps {
   selectedProducts: ShortNameValues[];
   includeRc: boolean;
   rssFeedUrl: string;
+  urlDisplayRef: React.RefObject<HTMLAnchorElement>;
   onProductsChange: (products: ShortNameValues[]) => void;
   onIncludeRcChange: (include: boolean) => void;
   onCopyUrl: () => void;
@@ -148,6 +157,7 @@ function RssModal({
   selectedProducts,
   includeRc,
   rssFeedUrl,
+  urlDisplayRef,
   onProductsChange,
   onIncludeRcChange,
   onCopyUrl,
@@ -228,7 +238,15 @@ function RssModal({
           <Section>
             <SectionTitle>Your custom RSS Feed URL</SectionTitle>
             <UrlContainer>
-              <UrlInput type="text" value={rssFeedUrl} readOnly aria-label="RSS feed URL" />
+              <UrlLink
+                href={rssFeedUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="RSS feed URL"
+                ref={urlDisplayRef}
+              >
+                {rssFeedUrl}
+              </UrlLink>
               <CopyButton
                 onClick={onCopyUrl}
                 disabled={isCopied}
@@ -438,7 +456,7 @@ const UrlContainer = styled.div`
   }
 `;
 
-const UrlInput = styled.input`
+const UrlLink = styled.a`
   flex: 1;
   padding: 8px 12px;
   border: 1px solid var(--border-color-primary);
@@ -448,10 +466,18 @@ const UrlInput = styled.input`
   font-family: var(--font-family-monospaced, monospace);
   font-size: 14px;
   height: 32px;
-  
-  &:focus {
-    outline: none;
-    border-color: var(--color-primary-main);
+  line-height: 16px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  word-break: break-all;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary-main);
+    outline-offset: 2px;
   }
 `;
 
