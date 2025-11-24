@@ -11,7 +11,8 @@ const RSS_ITEMS_LIMIT = 50;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const rootDir = process.cwd();
+// Get project root by going up one level from @api/ directory
+const rootDir = path.resolve(__dirname, '..');
 
 const BLOG_METADATA_PATH = path.join(rootDir, 'blog/metadata/blog-metadata.yaml');
 
@@ -68,7 +69,9 @@ function buildRssItem(post: any, origin: string): string {
 export default async function blogRssHandler(request: Request, context: ApiFunctionsContext) {
   try {
     console.log('[Blog RSS] Starting RSS feed generation');
-    console.log('[Blog RSS] Root directory:', rootDir);
+    console.log('[Blog RSS] Calculated root directory (from __dirname):', rootDir);
+    console.log('[Blog RSS] process.cwd():', process.cwd());
+    console.log('[Blog RSS] __dirname:', __dirname);
     console.log('[Blog RSS] Blog metadata path:', BLOG_METADATA_PATH);
     console.log('[Blog RSS] Blog directory:', path.join(rootDir, BLOG_DIR));
 
