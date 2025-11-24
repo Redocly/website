@@ -72,38 +72,39 @@ function buildRssItem(item: ChangelogWithDeps, baseUrl: string): string {
   const packageName = SHORT_NAMES[item.packageName] || item.packageName;
   const title = `${packageName} ${item.version}`;
   const releaseId = `${packageName}@${item.version}`;
+  const releaseUrl = `${baseUrl}?release=${encodeURIComponent(releaseId)}`;
   const guidUrl = `${baseUrl}#${releaseId}`;
   const pubDate = formatRssDate(item.record.timestamp);
   const isoReleaseDate = new Date(item.record.timestamp).toISOString().split('T')[0];
   const featureCount = features.length;
   const fixCount = fixes.length;
-  const summary = `New release: ${item.packageName}@${item.version} · Date: ${isoReleaseDate} · ${featureCount} ${featureCount === 1 ? 'feature' : 'features'} · ${fixCount} ${fixCount === 1 ? 'fix' : 'fixes'}`;
 
-  let description = '';
-  description += `<p style="margin:0 0 12px;"><strong>${escapeXml(summary)}</strong></p>`;
+  const lines: string[] = [];
+  lines.push(
+    `New release: ${item.packageName}@${item.version} · Date: ${isoReleaseDate} · ${featureCount} ${
+      featureCount === 1 ? 'feature' : 'features'
+    } · ${fixCount} ${fixCount === 1 ? 'fix' : 'fixes'}`
+  );
 
-  if (features.length > 0) {
-    description += `<p style="margin:0 0 6px;"><strong>Features:</strong></p>`;
-    description += '<ul style="margin:0 0 12px 18px; padding:0; list-style:disc;">';
-    features.forEach((feature) => {
-      description += `<li style="margin:0 0 4px; list-style-position:inside;">${escapeXml(feature)}</li>`;
+  const appendSection = (titleText: string, entries: string[]) => {
+    if (!entries.length) return;
+    lines.push('');
+    lines.push(`${titleText}:`);
+    entries.forEach((entry) => {
+      lines.push(`• ${entry}`);
     });
-    description += '</ul>';
-  }
+  };
 
-  if (fixes.length > 0) {
-    description += `<p style="margin:0 0 6px;"><strong>Fixes:</strong></p>`;
-    description += '<ul style="margin:0 0 12px 18px; padding:0; list-style:disc;">';
-    fixes.forEach((fix) => {
-      description += `<li style="margin:0 0 4px; list-style-position:inside;">${escapeXml(fix)}</li>`;
-    });
-    description += '</ul>';
-  }
+  appendSection('Features', features.map(escapeXml));
+  appendSection('Fixes', fixes.map(escapeXml));
 
-  // Use CDATA for description to allow HTML content
+  const description = lines.join('\n').trim();
+
+  // Use CDATA for description to allow newlines without extra HTML
   return `
     <item>
       <title>${escapeXml(title)}</title>
+      <link>${escapeXml(releaseUrl)}</link>
       <guid isPermaLink="false">${escapeXml(guidUrl)}</guid>
       <pubDate>${pubDate}</pubDate>
       <description><![CDATA[${description}]]></description>
