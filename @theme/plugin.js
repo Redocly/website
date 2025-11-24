@@ -27,6 +27,10 @@ export default function themePlugin() {
         'preview-template',
         fromCurrentDir(import.meta.url, './preview.route.tsx')
       );
+      const blogTemplateId = actions.createTemplate(
+        'blog-template', 
+        fromCurrentDir(import.meta.url, './blog.page.tsx')
+      );
       actions.addRoute({
         excludeFromSidebar: true,
         slug: '/preview',
@@ -46,6 +50,12 @@ export default function themePlugin() {
             },
           };
         },
+      });
+      actions.addRoute({
+        slug: '/blog/',
+        fsPath: '/blog/',
+        templateId: blogTemplateId,
+        hasClientRoutes: true,
       });
     },
     async afterRoutesCreated(actions, context) {
