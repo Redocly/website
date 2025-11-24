@@ -1,5 +1,5 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: January 2025 updates
 description: Round-up of product features and enhancements from January 2025
 seo:
@@ -7,12 +7,11 @@ seo:
   description: Round-up of product features and enhancements from January 2025
   image: ./images/january-feature-updates.png
 author: adam-altman
-date: 2025-02-05
+publishedDate: "2025-02-05"
 categories:
-  - company-update
+  - redocly:product-updates
 image: january-feature-updates.png
 ---
-
 January kicked off with momentum from 2024, and while we focused on refining existing features, we also shipped enhancements that improve search, navigation, and usability.
 Bigger updates are coming in the next two quarters, but here’s what’s new right now.
 

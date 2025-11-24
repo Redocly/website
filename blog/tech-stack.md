@@ -1,18 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Tech stack
 description: (Don't) build your Redocly
 seo:
   title: Tech stack
   description: (Don't) build your Redocly
 author: adam-altman
-date: 2022-02-01
+publishedDate: "2022-02-01"
 categories:
-  - dev-portal
-  - developer-experience
+  - developer-portal
 image: intern-to-build.png
 ---
-
 # (Don't) build your Redocly
 
 **Here's what it would take to build Redocly-style docs and collaboration on your own.

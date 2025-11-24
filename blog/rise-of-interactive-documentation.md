@@ -1,20 +1,18 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: The rise of interactive documentation
 description: Learn how interactive documentation is revolutionizing technical writing, empowering developers with immersive learning experiences and dynamic content.
 seo:
   title: The rise of interactive documentation
   description: Learn how interactive documentation is revolutionizing technical writing, empowering developers with immersive learning experiences and dynamic content.
 author: taylor-krusen
-date: 2024-09-18
+publishedDate: "2024-09-18"
 categories:
-  - dev-portal
+  - developer-portal
   - docs-as-code
-  - tech-writers
-  - developer-experience
+  - technical-documentation:docs-ux
 image: blog-7.jpg
 ---
-
 When today's learners consume technical knowledge, they don't just read; they interact.
 
 In the fast-moving world of technical writing and software, static documentation is no longer enough.

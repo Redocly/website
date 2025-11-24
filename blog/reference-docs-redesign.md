@@ -1,20 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Announcing Reference docs 2.0
 description: Presenting the redesign and release of Reference docs 2.0
 seo:
   title: Announcing Reference docs 2.0
   description: Presenting the redesign and release of Reference docs 2.0
 author: ivana-devcic
-date: 2021-07-07
+publishedDate: "2021-07-07"
 categories:
-  - api
+  - api-documentation:reference-docs
   - docs-as-code
-  - tech-writers
-  - developer-experience
 image: refdocs.png
 ---
-
 **After many months of hard work, we're ecstatic to reveal the biggest update to our Reference docs product since its launch. Get ready to take your API documentation to the next level with Reference docs 2.0!**
 
 This announcement covers only selected highlights from the 2.0 release. Read our [migration guide](../docs-legacy/api-reference-docs/guides/migration-guide-2-0.md) for the full list of improvements, new features, and upgrade instructions.

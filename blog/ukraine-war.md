@@ -1,14 +1,14 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Ukraine war update
 description: Address current events and the impact to our team.
 seo:
   title: Ukraine war update
   description: Address current events and the impact to our team.
 author: adam-altman
-date: 2022-02-27
+publishedDate: "2022-02-27"
 categories:
-  - company-update
+  - redocly:product-updates
 image: ukraine-flag.svg
 ---
 I wanted to address our customers, prospects, investors, and employees about the current events.

@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Improve OpenAPI security with defensive linting rules
 description: Some simple rules to add to your OpenAPI linting setup as a quick way to catch some small but dangerous API mistakes.
 seo:
   title: Improve OpenAPI security with defensive linting rules
   description: Some simple rules to add to your OpenAPI linting setup as a quick way to catch some small but dangerous API mistakes.
 author: lorna-mitchell
-date: 2024-10-02
+publishedDate: "2024-10-02"
 categories:
-  - openapi
-  - api-design
+  - api-governance:linting-rulesets
+  - api-governance:compliance-quality
 image: Redocly_blog_7.jpg
 ---
-
 Security is a state of mind, a moving target, or a deep practice much more than it is a set of API standards.
 However, API standards, picked to fit a particular use case, and applied with rigor, can be a strong addition to the process of developing secure APIs.
 Some of the most common API security mistakes are surprisingly easy to avoid and to fix - but you have to spot them first!

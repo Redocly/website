@@ -1,15 +1,15 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Learn OpenAPI in a day
 description: Accelerated learning approach applied to OpenAPI.
 seo:
   title: Learn OpenAPI in a day
   description: Accelerated learning approach applied to OpenAPI.
 author: adam-altman
-date: 2023-02-21
+publishedDate: "2023-02-21"
 categories:
-  - openapi
-  - learning
+  - api-specifications:openapi
+  - technical-documentation:tutorials-onboarding
 image: team.png
 ---
 ## Catalyst

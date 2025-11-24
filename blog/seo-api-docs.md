@@ -1,11 +1,10 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 author: adam-altman
-date: 2021-11-30
+publishedDate: "2021-11-30"
 categories:
-  - dev-portal
-  - api-marketing
-  - tech-writers
+  - developer-portal
+  - api-documentation:api-seo
 image: seo-api-docs.jpg
 title: SEO the API docs
 description: SEO is an excellent API marketing technique.
@@ -14,10 +13,10 @@ seo:
   description: SEO is an excellent API marketing technique.
   image: ./images/seo-960x540-ratio16-9.jpg
   jsonLd:
-    '@context': https://schema.org
-    '@type': BlogPosting
+    "@context": https://schema.org
+    "@type": BlogPosting
     author:
-      - '@type': Person
+      - "@type": Person
         name: Adam Altman
         url: https://twitter.com/adamaltman
     headline: SEO the API docs

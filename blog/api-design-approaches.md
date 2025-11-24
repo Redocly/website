@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Two approaches to API design - Resources vs Workflows
 description: Exploring resource-first and workflow-first approaches to API design, and why thinking about use cases early can lead to better APIs.
 seo:
-  title: "Two approaches to API design - Resources vs Workflows"
+  title: Two approaches to API design - Resources vs Workflows
   description: Exploring resource-first and workflow-first approaches to API design, and why thinking about use cases early can lead to better APIs.
   image: ./images/api-design-approaches.png
 author: adam-altman
-date: 2025-10-28
+publishedDate: "2025-10-28"
 categories:
- - api-first
+  - api-lifecycle:design
 image: api-design-approaches.png
 ---
-
 When designing a new API, there's a fundamental choice that shapes everything that follows: where do you start?
 Do you begin by modeling your domain with resources and schemas, or do you start by mapping out the workflows and use cases your API needs to support?
 

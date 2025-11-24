@@ -1,19 +1,18 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Instant API docs with Redocly
 description: Use Redocly CLI to transform OpenAPI to friendly HTML
 seo:
   title: Instant API docs with Redocly
   description: Use Redocly CLI to transform OpenAPI to friendly HTML
 author: lorna-mitchell
-date: 2023-08-22
+publishedDate: "2023-08-22"
 categories:
   - docs-as-code
-  - tech-writers
-  - developers
+  - redocly:redocly-cli
+  - technical-documentation:tutorials-onboarding
 image: refdocs.png
 ---
-
 APIs are a perennially hot topic, providing integrations into and between all
 sorts of systems. Most APIs are described in
 [OpenAPI](https://www.openapis.org/) format, a single source of truth that can

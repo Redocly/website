@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Getting started with API versioning
 description: Take your first steps to better APIs with our approachable guide to getting started with API versioning.
 seo:
   title: Getting started with API versioning
   description: Take your first steps to better APIs with our approachable guide to getting started with API versioning.
 author: matt-williams
-date: 2025-09-15
+publishedDate: "2025-09-15"
 categories:
-  - openapi
+  - api-versioning
 image: getting-started-api-versioning.jpg
 ---
-
 Successfully implementing API versioning requires a systematic approach across five key areas:
 
 1. Define an API versioning strategy.

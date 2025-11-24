@@ -1,19 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Lint OpenAPI, lint Markdown. Now lint Markdown in OpenAPI.
 description: Use Redocly's API tooling to apply custom validation to your API descriptions, such as checking Markdown is valid.
 seo:
   title: Lint OpenAPI, lint Markdown. Now lint Markdown in OpenAPI.
   description: Use Redocly's API tooling to apply custom validation to your API descriptions, such as checking Markdown is valid.
 author: lorna-mitchell
-date: 2024-02-14
+publishedDate: "2024-02-14"
 categories:
-  - openapi
-  - api-design
-  - teamwork
+  - api-governance:linting-rulesets
+  - api-governance:review-workflows
 image: Redocly_blog_5.jpg
 ---
-
 Linting improves code quality in software projects by checking that all the code is valid and well laid out. It also improves API quality in API projects, and documentation quality in documentation projects, very much along the same quality lines. A good way to incorporate these tools into your project is to add them to the continuous integration (CI) setup.
 
 {% admonition type="info" name="Add linting to your CI" %}

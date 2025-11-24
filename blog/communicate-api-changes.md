@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: What to do when your API changes
 description: APIs change, that's reality. What matters is how you communicate that; get it right and create a winning API experience by adding a changelog and API description versions.
 seo:
   title: What to do when your API changes
   description: APIs change, that's reality. What matters is how you communicate that; get it right and create a winning API experience by adding a changelog and API description versions.
 author: lorna-mitchell
-date: 2024-05-22
+publishedDate: "2024-05-22"
 categories:
-  - openapi
-  - api-design
+  - api-specifications:openapi
+  - api-documentation:versioning-comms
 image: Redocly_blog_8.jpg
 ---
-
 APIs underpin so much of modern software development and deployment.
 But just like our applications, APIs must grow and evolve with the needs of the businesses that rely on them.
 API changes can be disruptive, difficult and painful, but they're a healthy part of the API lifecycle when they're well-managed and well-communicated.

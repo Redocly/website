@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Rethinking sub-resources in API design
 description: A lesson from the trenches
 seo:
   title: Rethinking sub-resources in API design
   description: Avoid sub-resources to minimize future rework.
 author: adam-altman
-date: 2024-01-24
+publishedDate: "2024-01-24"
 categories:
-  - openapi
-  - api-design
+  - api-specifications:openapi
+  - api-lifecycle:design
 image: refdocs.png
 ---
-
 Before founding Redocly, I founded [Rebilly](https://www.rebilly.com).
 Most of these lessons I learned at Rebilly.
 There is your context.

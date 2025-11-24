@@ -1,19 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: September 2022 updates
 description: Round-up of product features and enhancements from September 2022
 seo:
   title: September 2022 updates
   description: Round-up of product features and enhancements from September 2022
 author: adam-altman
-date: 2022-10-04
+publishedDate: "2022-10-04"
 categories:
-  - tech-writers
-  - developer-experience
-  - api
+  - redocly:product-updates
 image: blog-8.jpg
 ---
-
 My September in a short phrase: "G'day mate".
 My travels brought me to Australia and back to Austin.
 After a week of waking up at 1am, I'm happy to report I'm waking up at 4am. 🤔

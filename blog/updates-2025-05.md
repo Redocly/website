@@ -1,5 +1,5 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: May 2025 updates
 description: Round-up of product features and enhancements from March, April, and May 2025
 seo:
@@ -7,12 +7,11 @@ seo:
   description: Round-up of product features and enhancements from March, April, and May 2025
   image: ./images/past-quarter.png
 author: adam-altman
-date: 2025-06-09
+publishedDate: "2025-06-09"
 categories:
-  - company-update
+  - redocly:product-updates
 image: past-quarter.png
 ---
-
 # March, April, and May 2025 updates 🚀
 
 The past few months at Redocly have been packed with progress — from shipping **Code Walkthroughs** and **API Functions** to delivering **llms.txt automation**, performance improvements, and deeper AI capabilities.

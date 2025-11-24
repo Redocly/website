@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Hello world, our mission is to perfect the API Developer Portal
 description: ReDoc was born out of frustration with rendering my OpenAPI definitions for API reference docs.
 seo:
   title: Hello world, our mission is to perfect the API Developer Portal
   description: ReDoc was born out of frustration with rendering my OpenAPI definitions for API reference docs.
 author: adam-altman
-date: 2018-05-05
+publishedDate: "2018-05-05"
 categories:
-  - dev-portal
+  - developer-portal
 image: blog-1.png
 ---
-
 ReDoc was born out of frustration with rendering my OpenAPI definitions for API reference docs.
 
 Developer documentation is very important to a developer’s experience.

@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Docs-as-code is a tech writer productivity hack
 description: Go big on pragmatism and efficiency (and make your writers happy) by using docs-as-code workflows in your documentation projects.
 seo:
   title: Docs-as-code is a tech writer productivity hack
   description: Go big on pragmatism and efficiency (and make your writers happy) by using docs-as-code workflows in your documentation projects.
 author: lorna-mitchell
-date: 2024-10-16
+publishedDate: "2024-10-16"
 categories:
-  - tech-writers
+  - docs-as-code
 image: Redocly_blog_3.jpg
 ---
-
 Docs-as-code is a great way to manage large and complex documentation projects.
 At Redocly we build tools that support the docs-as-code approach, and we use it ourselves on both internal and external documentation projects.
 In this post we'll explore the benefits of docs-as-code, and why documentarians find this workflow lets them get more done.

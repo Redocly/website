@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Git branching strategies for documentation projects
 description: Docs-as-code workflows need solid branching strategies. This article helps you pick the right one.
 seo:
   title: Git branching strategies for documentation projects
   description: Docs-as-code workflows need solid branching strategies. This article helps you pick the right one.
 author: lorna-mitchell
-date: 2024-07-04
+publishedDate: "2024-07-04"
 categories:
-  - openapi
+  - docs-as-code:git-workflows
 image: Redocly_blog_7.jpg
 ---
-
 Docs-as-code is a popular and effective approach for creating and maintaining documentation, especially at scale.
 The basic idea is to take the best code productivity tools and processes, and apply them to documentation projects.
 

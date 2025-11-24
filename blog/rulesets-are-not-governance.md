@@ -1,17 +1,15 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Your linting rulesets are not your API governance
 description: Beyond the code, API style guides define the identity and values of your API
 author: lorna-mitchell
-date: 2023-12-14
+publishedDate: "2023-12-14"
 categories:
-  - openapi
-  - api-design
-  - teamwork
+  - api-governance:linting-rulesets
+  - api-governance:compliance-quality
+  - api-governance:review-workflows
 image: Redocly_blog_5.jpg
 ---
-
-
 Good, consistent API design is key to smooth integrations and an efficient development process. Achieving good design needs a mix of things; inspiration, knowledge, and the tools to deliver the vision.
 Most projects use API linting to ensure consistency, quality, and compliance, but this only tells part of the story.
 However, to think of these programmatic rules as API governance misses the essence of having a written style guide as the identity of your API.

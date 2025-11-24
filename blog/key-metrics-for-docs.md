@@ -1,5 +1,5 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Beyond the North Star
 description: "Moving beyond the North Star to Orion's Belt of key metrics for docs: Acquisition, Adoption, and Deflection."
 seo:
@@ -7,13 +7,11 @@ seo:
   description: "Moving beyond the North Star to Orion's Belt of key metrics for docs: Acquisition, Adoption, and Deflection."
   image: ./images/key-metrics-for-docs.png
 author: adam-altman
-date: 2025-11-04
+publishedDate: "2025-11-04"
 categories:
-  - tech-writers
-  - developer-experience
+  - technical-documentation:docs-ux
 image: key-metrics-for-docs.png
 ---
-
 Most documentation teams struggle to measure success.
 They track page views and bounce rates, but these metrics don't tell you whether your docs are actually driving business value.
 Are they helping developers discover your APIs?

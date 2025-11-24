@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Build your own API guidelines
 description: Build better APIs using API guidelines. Use our interactive quiz to define your API ruleset in collaboration with your team.
 seo:
   title: Build your own API guidelines
   description: Build better APIs using API guidelines. Use our interactive quiz to define your API ruleset in collaboration with your team.
 author: lorna-mitchell
-date: 2024-01-17
+publishedDate: "2024-01-17"
 categories:
-  - openapi
+  - api-governance:linting-rulesets
 image: Redocly_blog_2.jpg
 ---
-
 The hardest part of API design can be aligning your team on a set of rules and standards. If you're new to API linting, it can be especially difficult to know where to start, or which questions to ask - never mind what the good answers might be. Since every situation is different, it's impossible to generalize on a set of rules that will make sense for everyone (although the Redocly [recommended ruleset](https://redocly.com/docs/cli/rules/recommended/) aims to give a solid starting point).
 
 In an effort to provide support to anyone who might need it, we have created an [API guidelines builder](https://redocly.com/api-governance) to give you the structure you need to walk through the most common decisions, and produce a working ruleset that you can immediately use to lint your API descriptions.

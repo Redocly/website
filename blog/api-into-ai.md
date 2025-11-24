@@ -1,19 +1,18 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: API into AI
 description: Smooth management transition and new product announcement.
 seo:
   title: API into AI
   description: Smooth management transition and new product announcement.
 author: mada-namtla
-date: 2023-04-01
+publishedDate: "2023-04-01"
 categories:
-  - openapi
-  - api
-  - company-update
+  - api-specifications:openapi
+  - api-lifecycle:design
+  - redocly:product-updates
 image: p-remover.png
 ---
-
 ## Turn your API into AI
 
 At Redocly, we believe the future is tomorrow.

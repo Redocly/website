@@ -1,20 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: September 2021 updates
 description: Round up of product features and enhancements, plus documentation news from September 2021
 seo:
   title: September 2021 updates
   description: Round up of product features and enhancements, plus documentation news from September 2021
 author: swapnil-ogale
-date: 2021-10-01
+publishedDate: "2021-10-01"
 categories:
-  - dev-portal
-  - tech-writers
-  - developer-experience
-  - api
+  - redocly:product-updates
 image: blog-4.jpg
 ---
-
 September was a super busy month at Redocly, given the exciting amount of features we have been baking into our products. We are talking about API discovery, file uploads, portal customizations, and more.
 
 _There are also some really cool things we are working on in the background, and we can't wait to share them, but that will have to wait until end of October._
