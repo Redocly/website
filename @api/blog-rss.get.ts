@@ -44,10 +44,14 @@ async function findBlogMetadataPath(): Promise<string> {
     }
   }
   
-  // If not found, try to search in common parent directories
+  // If not found, try to search in common parent directories and explore what's available
   const searchDirs = [rootDir, process.cwd(), __dirname];
   for (const searchDir of searchDirs) {
     try {
+      // List what's in this directory to understand the structure
+      const entries = await fs.readdir(searchDir, { withFileTypes: true });
+      console.log(`[Blog RSS] Directory contents of ${searchDir}:`, entries.map(e => `${e.isDirectory() ? '[DIR]' : '[FILE]'} ${e.name}`).slice(0, 20));
+      
       // Try to find blog directory by searching up
       let currentDir = searchDir;
       for (let i = 0; i < 5; i++) {
@@ -59,11 +63,31 @@ async function findBlogMetadataPath(): Promise<string> {
         } catch {
           // Continue
         }
+        
+        // Also check if blog directory exists at this level
+        const blogDirPath = path.join(currentDir, 'blog');
+        try {
+          const stats = await fs.stat(blogDirPath);
+          if (stats.isDirectory()) {
+            console.log(`[Blog RSS] Found blog directory at: ${blogDirPath}`);
+            // List what's in the blog directory
+            try {
+              const blogEntries = await fs.readdir(blogDirPath, { withFileTypes: true });
+              console.log(`[Blog RSS] Blog directory contents:`, blogEntries.map(e => `${e.isDirectory() ? '[DIR]' : '[FILE]'} ${e.name}`).slice(0, 20));
+            } catch (e) {
+              console.log(`[Blog RSS] Could not list blog directory contents:`, e instanceof Error ? e.message : String(e));
+            }
+          }
+        } catch {
+          // Blog directory doesn't exist here
+        }
+        
         currentDir = path.resolve(currentDir, '..');
         // Stop if we've reached the filesystem root
         if (currentDir === path.resolve(currentDir, '..')) break;
       }
-    } catch {
+    } catch (error) {
+      console.log(`[Blog RSS] Could not explore directory ${searchDir}:`, error instanceof Error ? error.message : String(error));
       // Continue to next search directory
     }
   }
@@ -185,6 +209,55 @@ function buildRssItem(post: any, origin: string): string {
   `;
 }
 
+async function tryReadFromPageData(rootDir: string): Promise<{ posts: BlogPost[]; metadata: any } | null> {
+  // Try to read from page-data JSON files which are deployed
+  const pageDataPaths = [
+    path.join(rootDir, 'page-data/shared/blog-posts.json'),
+    path.join(rootDir, '../page-data/shared/blog-posts.json'),
+    path.join(rootDir, '../../page-data/shared/blog-posts.json'),
+    path.resolve(rootDir, 'page-data/shared/blog-posts.json'),
+    path.resolve(rootDir, '../page-data/shared/blog-posts.json'),
+    path.resolve(rootDir, '../../page-data/shared/blog-posts.json'),
+    // Also try from process.cwd()
+    path.join(process.cwd(), 'page-data/shared/blog-posts.json'),
+    path.resolve(process.cwd(), 'page-data/shared/blog-posts.json'),
+    path.resolve(process.cwd(), '../page-data/shared/blog-posts.json'),
+    path.resolve(process.cwd(), '../../page-data/shared/blog-posts.json'),
+  ];
+
+  console.log('[Blog RSS] Trying to read from page-data files...');
+  for (const pageDataPath of pageDataPaths) {
+    try {
+      const blogPostsData = JSON.parse(await fs.readFile(pageDataPath, 'utf8'));
+      console.log('[Blog RSS] Found blog posts in page-data:', pageDataPath);
+      
+      // Extract posts and metadata from the page-data structure
+      const postsData = blogPostsData.posts || [];
+      const metadata = blogPostsData.metadata || {};
+      
+      const posts: BlogPost[] = postsData.map((post: any) => ({
+        slug: post.slug || '',
+        title: post.title || '',
+        description: post.description || '',
+        date: post.date || '',
+        author: typeof post.author === 'object' ? post.author : { name: post.author?.name || 'Redocly Team' },
+        categories: post.categories || [],
+      }));
+
+      return { posts, metadata };
+    } catch (error) {
+      // Silently continue trying other paths
+      // Only log if it's an unexpected error (not just file not found)
+      if (error instanceof Error && !error.message.includes('ENOENT')) {
+        console.log('[Blog RSS] Error reading page-data path:', pageDataPath, error.message);
+      }
+    }
+  }
+
+  console.log('[Blog RSS] Could not find page-data files');
+  return null;
+}
+
 export default async function blogRssHandler(request: Request, context: ApiFunctionsContext) {
   try {
     console.log('[Blog RSS] Starting RSS feed generation');
@@ -192,85 +265,98 @@ export default async function blogRssHandler(request: Request, context: ApiFunct
     console.log('[Blog RSS] process.cwd():', process.cwd());
     console.log('[Blog RSS] __dirname:', __dirname);
 
-    // Dynamically find the blog metadata path
-    const blogMetadataPath = await findBlogMetadataPath();
-    console.log('[Blog RSS] Found blog metadata path:', blogMetadataPath);
+    // First, try to read from page-data JSON files (deployment-friendly)
+    const pageDataResult = await tryReadFromPageData(rootDir);
+    let posts: BlogPost[] = [];
+    let metadata: any = {};
 
-    let metadataRaw: string;
-    try {
-      metadataRaw = await fs.readFile(blogMetadataPath, 'utf8');
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : String(error);
-      const errorStack = error instanceof Error ? error.stack : 'No stack trace';
-      console.error('[Blog RSS] Failed to read metadata file:', {
-        path: blogMetadataPath,
-        error: errorMessage,
-        stack: errorStack,
-      });
-      throw new Error(`Failed to read blog metadata file at ${blogMetadataPath}: ${errorMessage}`);
-    }
+    if (pageDataResult) {
+      // Successfully read from page-data
+      posts = pageDataResult.posts;
+      metadata = pageDataResult.metadata;
+      console.log('[Blog RSS] Loaded posts from page-data:', posts.length);
+    } else {
+      // Fallback: try to read from source files
+      console.log('[Blog RSS] Page-data not found, trying source files...');
 
-    const metadata = parseSimpleYaml(metadataRaw) || {};
-    const authorsMap = new Map<string, BlogAuthor>(
-      (metadata.authors as RawAuthor[] | undefined)?.map((author) => [author.id, author]) ?? [],
-    );
-    const categoriesMap = new Map<string, BlogCategory>(
-      (metadata.categories as RawCategory[] | undefined)?.map((category) => [category.id, category]) ?? [],
-    );
+      // Dynamically find the blog metadata path
+      const blogMetadataPath = await findBlogMetadataPath();
+      console.log('[Blog RSS] Found blog metadata path:', blogMetadataPath);
 
-    // Dynamically find the blog directory
-    const blogDirPath = await findBlogDirectory();
-    console.log('[Blog RSS] Found blog directory:', blogDirPath);
-
-    let files: any[];
-    try {
-      files = await fs.readdir(blogDirPath, { withFileTypes: true });
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : String(error);
-      const errorStack = error instanceof Error ? error.stack : 'No stack trace';
-      console.error('[Blog RSS] Failed to read blog directory:', {
-        path: blogDirPath,
-        error: errorMessage,
-        stack: errorStack,
-      });
-      throw new Error(`Failed to read blog directory at ${blogDirPath}: ${errorMessage}`);
-    }
-
-    const markdownPosts = files.filter((entry) => entry.isFile() && entry.name.endsWith('.md'));
-    console.log('[Blog RSS] Found markdown files:', markdownPosts.length);
-
-    const posts: BlogPost[] = [];
-
-    for (const file of markdownPosts) {
-      const filePath = path.join(blogDirPath, file.name);
+      let metadataRaw: string;
       try {
-        const fileContent = await fs.readFile(filePath, 'utf8');
-        const frontmatter = extractFrontmatter(fileContent);
-
-        if (frontmatter?.ignore === true) continue;
-
-        const slug = `${BLOG_SLUG}${file.name.replace(/\.md$/, '')}`;
-
-        const categories = (frontmatter.categories || [])
-          .map((categoryId: string) => categoriesMap.get(categoryId))
-          .filter(Boolean);
-
-        posts.push({
-          slug,
-          title: frontmatter.title ?? slug,
-          description: frontmatter.description,
-          date: frontmatter.date,
-          author: authorsMap.get(frontmatter.author),
-          categories,
-        });
+        metadataRaw = await fs.readFile(blogMetadataPath, 'utf8');
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : String(error);
-        console.error('[Blog RSS] Failed to process blog post file:', {
-          file: file.name,
-          path: filePath,
+        const errorStack = error instanceof Error ? error.stack : 'No stack trace';
+        console.error('[Blog RSS] Failed to read metadata file:', {
+          path: blogMetadataPath,
           error: errorMessage,
+          stack: errorStack,
         });
-        // Continue processing other files even if one fails
+        throw new Error(`Failed to read blog metadata file at ${blogMetadataPath}: ${errorMessage}`);
+      }
+
+      metadata = parseSimpleYaml(metadataRaw) || {};
+      const authorsMap = new Map<string, BlogAuthor>(
+        (metadata.authors as RawAuthor[] | undefined)?.map((author) => [author.id, author]) ?? [],
+      );
+      const categoriesMap = new Map<string, BlogCategory>(
+        (metadata.categories as RawCategory[] | undefined)?.map((category) => [category.id, category]) ?? [],
+      );
+
+      // Dynamically find the blog directory
+      const blogDirPath = await findBlogDirectory();
+      console.log('[Blog RSS] Found blog directory:', blogDirPath);
+
+      let files: any[];
+      try {
+        files = await fs.readdir(blogDirPath, { withFileTypes: true });
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : String(error);
+        const errorStack = error instanceof Error ? error.stack : 'No stack trace';
+        console.error('[Blog RSS] Failed to read blog directory:', {
+          path: blogDirPath,
+          error: errorMessage,
+          stack: errorStack,
+        });
+        throw new Error(`Failed to read blog directory at ${blogDirPath}: ${errorMessage}`);
+      }
+
+      const markdownPosts = files.filter((entry) => entry.isFile() && entry.name.endsWith('.md'));
+      console.log('[Blog RSS] Found markdown files:', markdownPosts.length);
+
+      for (const file of markdownPosts) {
+        const filePath = path.join(blogDirPath, file.name);
+        try {
+          const fileContent = await fs.readFile(filePath, 'utf8');
+          const frontmatter = extractFrontmatter(fileContent);
+
+          if (frontmatter?.ignore === true) continue;
+
+          const slug = `${BLOG_SLUG}${file.name.replace(/\.md$/, '')}`;
+
+          const categories = (frontmatter.categories || [])
+            .map((categoryId: string) => categoriesMap.get(categoryId))
+            .filter(Boolean);
+
+          posts.push({
+            slug,
+            title: frontmatter.title ?? slug,
+            description: frontmatter.description,
+            date: frontmatter.date,
+            author: authorsMap.get(frontmatter.author),
+            categories,
+          });
+        } catch (error) {
+          const errorMessage = error instanceof Error ? error.message : String(error);
+          console.error('[Blog RSS] Failed to process blog post file:', {
+            file: file.name,
+            path: filePath,
+            error: errorMessage,
+          });
+          // Continue processing other files even if one fails
+        }
       }
     }
 
