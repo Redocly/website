@@ -6,7 +6,7 @@ seo:
   title: API into AI
   description: Smooth management transition and new product announcement.
 author: mada-namtla
-date: "2023-04-01"
+publishedDate: "2023-04-01"
 categories:
   - api-specifications:openapi
   - api-lifecycle:design

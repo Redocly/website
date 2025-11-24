@@ -87,8 +87,8 @@ async function transformMetadata(metadata, cwd, outdir) {
 }
 
 function sortByDatePredicate(a, b) {
-  const aDate = new Date(a.date);
-  const bDate = new Date(b.date);
+  const aDate = new Date(a.publishedDate);
+  const bDate = new Date(b.publishedDate);
 
   if (aDate.getTime() > bDate.getTime()) {
     return -1;

@@ -6,7 +6,7 @@ seo:
   title: Ensure consistent APIs with Redocly and GitHub Actions
   description: Put some magic API tools in your continuous integration and make a good API grow up to be a great API.
 author: lorna-mitchell
-date: "2024-05-15"
+publishedDate: "2024-05-15"
 categories:
   - api-governance:review-workflows
 image: Redocly_blog_7.jpg

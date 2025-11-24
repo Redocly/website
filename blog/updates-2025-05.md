@@ -7,7 +7,7 @@ seo:
   description: Round-up of product features and enhancements from March, April, and May 2025
   image: ./images/past-quarter.png
 author: adam-altman
-date: "2025-06-09"
+publishedDate: "2025-06-09"
 categories:
   - redocly:product-updates
 image: past-quarter.png

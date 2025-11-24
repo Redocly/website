@@ -2,7 +2,7 @@
 template: ../@theme/templates/BlogPost
 title: Redocly Premium vs Open Source Features
 author: adam-altman
-date: "2024-10-16"
+publishedDate: "2024-10-16"
 categories:
   - redocly:pricing-usage
 image: premium-vs-open-source.png

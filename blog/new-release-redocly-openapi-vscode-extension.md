@@ -6,7 +6,7 @@ seo:
   title: 5 reasons why you should install the Redocly VS Code extension
   description: Announcing the new release and presenting new features in the Redocly VS Code extension
 author: ivana-devcic
-date: "2021-11-16"
+publishedDate: "2021-11-16"
 categories:
   - redocly:redocly-cli
 image: cli.png

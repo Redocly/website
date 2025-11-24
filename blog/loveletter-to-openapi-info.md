@@ -6,7 +6,7 @@ seo:
   title: Love letter to OpenAPI's info section
   description: How some humble metadata can multiply the impact of your API.
 author: lorna-mitchell
-date: "2024-03-07"
+publishedDate: "2024-03-07"
 categories:
   - api-specifications:openapi
 image: Redocly_blog_6.jpg

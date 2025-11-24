@@ -7,7 +7,7 @@ seo:
   description: "Moving beyond the North Star to Orion's Belt of key metrics for docs: Acquisition, Adoption, and Deflection."
   image: ./images/key-metrics-for-docs.png
 author: adam-altman
-date: "2025-11-04"
+publishedDate: "2025-11-04"
 categories:
   - technical-documentation:docs-ux
 image: key-metrics-for-docs.png

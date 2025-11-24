@@ -7,7 +7,7 @@ seo:
   description: Metrics shouldn't only exist for quick error detection. They should exist to help you strive — to set goals, accelerate learning, and achieve meaningful improvement.
   image: ./images/beyond-anomaly-detection.png
 author: adam-altman
-date: "2025-11-11"
+publishedDate: "2025-11-11"
 categories:
   - api-monitoring:performance-metrics
 image: beyond-anomaly-detection.png

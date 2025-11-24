@@ -6,7 +6,7 @@ seo:
   title: API documentation essentials
   description: Discover how great API documentation helps developers succeed and sets your API apart. Learn the essentials of great API docs.
 author: taylor-krusen
-date: "2024-12-15"
+publishedDate: "2024-12-15"
 categories:
   - api-documentation:reference-docs
 image: blog-2.png

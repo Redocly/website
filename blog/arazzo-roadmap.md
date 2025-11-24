@@ -4,7 +4,7 @@ title: Redocly Arazzo product roadmap
 seo:
   title: Redocly Arazzo product roadmap
 author: adam-altman
-date: "2024-07-29"
+publishedDate: "2024-07-29"
 categories:
   - redocly:product-updates
 image: arazzo-roadmap.webp

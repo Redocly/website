@@ -6,7 +6,7 @@ seo:
   title: March 2021 updates
   description: Round up of the features and enhancements Redocly delivered in March 2021
 author: swapnil-ogale
-date: "2021-04-01"
+publishedDate: "2021-04-01"
 categories:
   - redocly:product-updates
 image: blog-4.jpg

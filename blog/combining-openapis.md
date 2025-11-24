@@ -6,7 +6,7 @@ seo:
   title: Combine OpenAPI Files
   description: Make one coherent API from split definitions or multiple API descriptions using Redocly CLI.
 author: lorna-mitchell
-date: "2024-02-02"
+publishedDate: "2024-02-02"
 categories:
   - api-specifications:openapi
 image: Redocly_blog_1.jpg

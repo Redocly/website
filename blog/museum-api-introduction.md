@@ -6,7 +6,7 @@ seo:
   title: Meet the Museum OpenAPI description
   description: Learn about the Museum API, a modern OpenAPI example by Redocly designed to teach API enthusiasts about OpenAPI and developer experience.
 author: taylor-krusen
-date: "2024-03-21"
+publishedDate: "2024-03-21"
 categories:
   - api-specifications:openapi
   - technical-documentation:tutorials-onboarding

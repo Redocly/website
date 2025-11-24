@@ -6,7 +6,7 @@ seo:
   title: Getting started with API versioning
   description: Take your first steps to better APIs with our approachable guide to getting started with API versioning.
 author: matt-williams
-date: "2025-09-15"
+publishedDate: "2025-09-15"
 categories:
   - api-versioning
 image: getting-started-api-versioning.jpg

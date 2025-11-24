@@ -1,7 +1,7 @@
 ---
 template: ../@theme/templates/BlogPost
 author: adam-altman
-date: "2021-11-30"
+publishedDate: "2021-11-30"
 categories:
   - developer-portal
   - api-documentation:api-seo

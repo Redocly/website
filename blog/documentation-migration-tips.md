@@ -6,7 +6,7 @@ seo:
   title: Tips for Documentation Migration
   description: Make your next documentation migration a huge success with these practical tips on planning, collaboration, and quality checks.
 author: taylor-krusen
-date: "2024-07-17"
+publishedDate: "2024-07-17"
 categories:
   - technical-documentation:writing-style
   - api-versioning:migrations

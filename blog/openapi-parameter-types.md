@@ -6,7 +6,7 @@ seo:
   title: OpenAPI parameter types for great API design
   description: Great API design makes for great API experience. Pick the parameter type that's going to make everything easier for your user.
 author: lorna-mitchell
-date: "2024-06-06"
+publishedDate: "2024-06-06"
 categories:
   - api-specifications:openapi
   - api-lifecycle:design

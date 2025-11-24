@@ -6,7 +6,7 @@ seo:
   title: A challenging year
   description: A review of 2022 at Redocly
 author: adam-altman
-date: "2023-01-08"
+publishedDate: "2023-01-08"
 categories:
   - redocly:product-updates
 image: team.png

@@ -6,7 +6,7 @@ seo:
   title: "Redocly 2.0: From Workflows to Reunite"
   description: A fresh start to boost your team's efficiency.
 author: adam-altman
-date: "2024-08-13"
+publishedDate: "2024-08-13"
 categories:
   - redocly:product-updates
 image: product-mix.png

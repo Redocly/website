@@ -6,7 +6,7 @@ seo:
   title: Getting started with API governance
   description: Take your first steps to better APIs with our approachable guide to getting started with API governance.
 author: lorna-mitchell
-date: "2024-05-08"
+publishedDate: "2024-05-08"
 categories:
   - api-governance
 image: Redocly_blog_2.jpg

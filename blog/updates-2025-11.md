@@ -7,7 +7,7 @@ seo:
   description: Product features and enhancements from November 2025 include AI assistant improvements, OpenAPI 3.2.0 support, enhanced MCP integration, and new CLI validation rules.
   image: ./images/november-feature-updates.png
 author: adam-altman
-date: "2025-11-06"
+publishedDate: "2025-11-06"
 categories:
   - redocly:product-updates
 image: november-feature-updates.png

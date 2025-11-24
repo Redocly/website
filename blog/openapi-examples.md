@@ -6,7 +6,7 @@ seo:
   title: Better examples for better API experience
   description: Set API consumers up for success with good and meaningful OpenAPI examples.
 author: lorna-mitchell
-date: "2024-02-28"
+publishedDate: "2024-02-28"
 categories:
   - api-specifications:openapi
   - api-lifecycle:design
@@ -31,7 +31,7 @@ Choosing meaningful data takes time and energy, but it produces results. There a
       type: number
       format: float
       example: 25
-    Date:
+    publishedDate:
       description: ISO-formatted date value.
       type: string
       format: date
@@ -103,16 +103,16 @@ The following example shows the Museum API returning two example payloads:
                 default:
                   summary: Museum opening hours
                   value:
-                    - date: "2023-09-11"
+                    - publishedDate: "2023-09-11"
                       timeOpen: "09:00"
                       timeClose: "18:00"
-                    - date: "2023-09-12"
+                    - publishedDate: "2023-09-12"
                       timeOpen: "09:00"
                       timeClose: "18:00"
-                    - date: "2023-09-13"
+                    - publishedDate: "2023-09-13"
                       timeOpen: "09:00"
                       timeClose: "18:00"
-                    - date: "2023-09-17"
+                    - publishedDate: "2023-09-17"
                       timeOpen: "09:00"
                       timeClose: "18:00"
                 closed:

@@ -4,7 +4,7 @@ title: API-first design
 seo:
   title: API-first design
 author: adam-altman
-date: "2018-05-06"
+publishedDate: "2018-05-06"
 categories:
   - api-lifecycle:design
 image: blog-2.png

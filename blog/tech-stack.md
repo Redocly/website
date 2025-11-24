@@ -6,7 +6,7 @@ seo:
   title: Tech stack
   description: (Don't) build your Redocly
 author: adam-altman
-date: "2022-02-01"
+publishedDate: "2022-02-01"
 categories:
   - developer-portal
 image: intern-to-build.png

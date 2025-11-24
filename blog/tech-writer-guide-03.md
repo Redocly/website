@@ -6,7 +6,7 @@ seo:
   title: A tech writer's guide to the Redocly galaxy (part 3)
   description: Introducting Redocly CLI and Redoc
 author: jody-winter
-date: "2022-12-12"
+publishedDate: "2022-12-12"
 categories:
   - redocly:redocly-cli
 image: blog-8.jpg

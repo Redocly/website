@@ -7,7 +7,7 @@ seo:
   description: Round-up of product features and enhancements from February 2025
   image: ./images/february-feature-updates.png
 author: adam-altman
-date: "2025-03-18"
+publishedDate: "2025-03-18"
 categories:
   - redocly:product-updates
 image: february-feature-updates.png

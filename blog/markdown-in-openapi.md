@@ -6,7 +6,7 @@ seo:
   title: Build rich developer experiences with Markdown in OpenAPI
   description: Make a good API experience a great one with rich descriptions in OpenAPI
 author: lorna-mitchell
-date: "2023-09-19"
+publishedDate: "2023-09-19"
 categories:
   - api-specifications:openapi
   - technical-documentation

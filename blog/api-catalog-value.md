@@ -7,7 +7,7 @@ seo:
   description: Discover how API catalogs deliver millions in ROI by eliminating search waste, preventing costly mistakes, and enabling faster development through automation and trust.
   image: ./images/Redocly_blog_8.jpg
 author: adam-altman
-date: "2025-11-17"
+publishedDate: "2025-11-17"
 categories:
   - api-catalog
 image: Redocly_blog_8.jpg

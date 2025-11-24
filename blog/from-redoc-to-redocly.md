@@ -4,7 +4,7 @@ title: From ReDoc to Redoc.ly
 seo:
   title: From ReDoc to Redoc.ly
 author: roman-hotsiy
-date: "2019-11-08"
+publishedDate: "2019-11-08"
 categories:
   - redocly:redoc
 image: blog-4.jpg

@@ -6,7 +6,7 @@ seo:
   title: Announcing Reference docs 2.0
   description: Presenting the redesign and release of Reference docs 2.0
 author: ivana-devcic
-date: "2021-07-07"
+publishedDate: "2021-07-07"
 categories:
   - api-documentation:reference-docs
   - docs-as-code

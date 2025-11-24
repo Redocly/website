@@ -7,7 +7,7 @@ seo:
   description: Round-up of product features and enhancements from November 2024
   image: ./images/november-feature-updates.png
 author: adam-altman
-date: "2024-12-02"
+publishedDate: "2024-12-02"
 categories:
   - redocly:product-updates
 image: november-feature-updates.png

@@ -6,7 +6,7 @@ seo:
   title: Build your own API guidelines
   description: Build better APIs using API guidelines. Use our interactive quiz to define your API ruleset in collaboration with your team.
 author: lorna-mitchell
-date: "2024-01-17"
+publishedDate: "2024-01-17"
 categories:
   - api-governance:linting-rulesets
 image: Redocly_blog_2.jpg

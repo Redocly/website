@@ -6,7 +6,7 @@ seo:
   title: Redocly CLI for AsyncAPI descriptions
   description: Embrace multiple specification standards with one tool, Redocly CLI.
 author: lorna-mitchell
-date: "2024-09-05"
+publishedDate: "2024-09-05"
 categories:
   - api-specifications:asyncapi
 image: Redocly_blog_8.jpg

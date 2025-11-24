@@ -6,7 +6,7 @@ seo:
   title: What to do when your API changes
   description: APIs change, that's reality. What matters is how you communicate that; get it right and create a winning API experience by adding a changelog and API description versions.
 author: lorna-mitchell
-date: "2024-05-22"
+publishedDate: "2024-05-22"
 categories:
   - api-specifications:openapi
   - api-documentation:versioning-comms

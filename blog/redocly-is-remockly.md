@@ -4,7 +4,7 @@ title: Redocly is Remockly
 seo:
   title: Redocly is Remockly
 author: adam-altman
-date: "2022-04-01"
+publishedDate: "2022-04-01"
 categories:
   - api-specifications:openapi
   - api-lifecycle:design

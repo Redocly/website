@@ -6,7 +6,7 @@ seo:
   title: August 2021 updates
   description: Round up of product features and enhancements, plus some documentation news from August 2021
 author: swapnil-ogale
-date: "2021-09-01"
+publishedDate: "2021-09-01"
 categories:
   - redocly:product-updates
 image: blog-8.jpg

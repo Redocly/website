@@ -6,7 +6,7 @@ seo:
   title: OpenAPI Operation IDs make good API design
   description: Use Operation IDs to write better, more valuable API descriptions and improve developer experience.
 author: lorna-mitchell
-date: "2023-11-29"
+publishedDate: "2023-11-29"
 categories:
   - api-lifecycle:design
   - api-specifications:openapi

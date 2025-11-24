@@ -6,7 +6,7 @@ seo:
   description: Phronesis is Redocly's unique approach to dogfooding resulting in 630% improvement in a key metric.
   image: ./images/dogfooding.png
 author: adam-altman
-date: "2025-02-11"
+publishedDate: "2025-02-11"
 categories:
   - redocly:product-updates
 image: dogfooding.png

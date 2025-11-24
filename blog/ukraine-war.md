@@ -6,7 +6,7 @@ seo:
   title: Ukraine war update
   description: Address current events and the impact to our team.
 author: adam-altman
-date: "2022-02-27"
+publishedDate: "2022-02-27"
 categories:
   - redocly:product-updates
 image: ukraine-flag.svg

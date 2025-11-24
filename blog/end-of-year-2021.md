@@ -6,7 +6,7 @@ seo:
   title: Upward and onward at Redocly
   description: Highlighting the most interesting and useful features Redocly delivered in 2021
 author: swapnil-ogale
-date: "2021-12-25"
+publishedDate: "2021-12-25"
 categories:
   - redocly:product-updates
 image: team.png

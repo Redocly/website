@@ -7,7 +7,7 @@ seo:
   description: Respect Monitoring is an OpenAPI-aware API monitoring solution that ensures your APIs behave exactly as expected.
   image: ./images/respect-your-api-blog.png
 author: adam-altman
-date: "2025-02-25"
+publishedDate: "2025-02-25"
 categories:
   - redocly:product-updates
 image: respect-your-api-blog.png

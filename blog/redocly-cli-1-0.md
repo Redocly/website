@@ -6,7 +6,7 @@ seo:
   title: Announcing Redocly CLI 1.0
   description: The OpenAPI CLI utility reaches a milestone stable release
 author: lorna-mitchell
-date: "2023-08-16"
+publishedDate: "2023-08-16"
 categories:
   - api-specifications:openapi
   - redocly:redocly-cli

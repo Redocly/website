@@ -6,7 +6,7 @@ seo:
   title: The rise of interactive documentation
   description: Learn how interactive documentation is revolutionizing technical writing, empowering developers with immersive learning experiences and dynamic content.
 author: taylor-krusen
-date: "2024-09-18"
+publishedDate: "2024-09-18"
 categories:
   - developer-portal
   - docs-as-code

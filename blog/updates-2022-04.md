@@ -6,7 +6,7 @@ seo:
   title: April 2022 updates
   description: Round-up of product features and enhancements from April 2022
 author: ivana-devcic
-date: "2022-05-02"
+publishedDate: "2022-05-02"
 categories:
   - redocly:product-updates
 image: blog-7.jpg

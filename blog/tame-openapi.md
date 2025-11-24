@@ -6,7 +6,7 @@ seo:
   title: Tame your OpenAPI descriptions
   description: Use the best modern tools to make even the longest OpenAPI file a delight to work with
 author: lorna-mitchell
-date: "2023-09-06"
+publishedDate: "2023-09-06"
 categories:
   - api-specifications:openapi
   - technical-documentation

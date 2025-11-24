@@ -7,7 +7,7 @@ seo:
   description: Product features and enhancements from June and July 2025 include analytics, icons, and AsyncAPI docs
   image: ./images/june-july-updates.png
 author: adam-altman
-date: "2025-08-18"
+publishedDate: "2025-08-18"
 categories:
   - redocly:product-updates
 image: june-july-updates.png

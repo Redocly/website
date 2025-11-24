@@ -6,7 +6,7 @@ seo:
   title: Improve OpenAPI security with defensive linting rules
   description: Some simple rules to add to your OpenAPI linting setup as a quick way to catch some small but dangerous API mistakes.
 author: lorna-mitchell
-date: "2024-10-02"
+publishedDate: "2024-10-02"
 categories:
   - api-governance:linting-rulesets
   - api-governance:compliance-quality

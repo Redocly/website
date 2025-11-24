@@ -7,7 +7,7 @@ seo:
   description: Round-up of product features and enhancements from October 2024
   image: ./images/october-feature-updates.png
 author: adam-altman
-date: "2024-11-04"
+publishedDate: "2024-11-04"
 categories:
   - redocly:product-updates
 image: october-feature-updates.png

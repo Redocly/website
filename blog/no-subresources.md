@@ -6,7 +6,7 @@ seo:
   title: Rethinking sub-resources in API design
   description: Avoid sub-resources to minimize future rework.
 author: adam-altman
-date: "2024-01-24"
+publishedDate: "2024-01-24"
 categories:
   - api-specifications:openapi
   - api-lifecycle:design

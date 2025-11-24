@@ -6,7 +6,7 @@ seo:
   title: January 2021 updates
   description: Quick round up of the features and enhancements Redocly delivered in January 2021
 author: swapnil-ogale
-date: "2021-02-08"
+publishedDate: "2021-02-08"
 categories:
   - redocly:product-updates
 image: built.png

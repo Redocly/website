@@ -6,7 +6,7 @@ seo:
   title: Using Redocly tools for better OpenAPI development
   description: Learn how Redocly's open source tools create a better developer experience when building an OpenAPI description.
 author: taylor-krusen
-date: "2023-11-08"
+publishedDate: "2023-11-08"
 categories:
   - api-specifications:openapi
   - redocly:redocly-cli

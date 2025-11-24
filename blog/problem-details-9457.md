@@ -6,7 +6,7 @@ seo:
   title: "RFC 9457: Better information for bad situations"
   description: RFC 9457 evolves the standard for describing API errors by building on RFC 7807. Come learn what's new, what to expect, and how you can use it in your own APIs.
 author: lorna-mitchell
-date: "2023-10-25"
+publishedDate: "2023-10-25"
 categories:
   - api-lifecycle:design
 image: Redocly_blog_8.jpg

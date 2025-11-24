@@ -4,7 +4,7 @@ title: The top three reasons I love docs-as-code
 seo:
   title: The top three reasons I love docs-as-code
 author: adam-altman
-date: "2020-10-29"
+publishedDate: "2020-10-29"
 categories:
   - docs-as-code
 image: blog-5.png
@@ -29,7 +29,7 @@ Even this blog post is written in Markdown. Here's what it looks like behind the
 ---
 title: Top three reasons I love docs-as-code
 author: adam-altman
-date: 2020-10-28
+publishedDate: 2020-10-28
 categories:
   - docs-as-code
 image: blog-3.png

@@ -7,7 +7,7 @@ seo:
   description: Product features and enhancements from August 2025 include enhanced AI integration, improved navigation, workflow upgrades, and a robust feedback system.
   image: ./images/aug-blog-post.png
 author: adam-altman
-date: "2025-09-11"
+publishedDate: "2025-09-11"
 categories:
   - redocly:product-updates
 image: aug-blog-post.png

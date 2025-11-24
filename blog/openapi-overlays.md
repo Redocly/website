@@ -6,7 +6,7 @@ seo:
   title: OpenAPI overlays
   description: The OpenAPI overlays proposal is flawed.
 author: adam-altman
-date: "2022-05-25"
+publishedDate: "2022-05-25"
 categories:
   - api-specifications:openapi
   - api-lifecycle:design

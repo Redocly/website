@@ -3,7 +3,7 @@ template: ../@theme/templates/BlogPost
 title: Your linting rulesets are not your API governance
 description: Beyond the code, API style guides define the identity and values of your API
 author: lorna-mitchell
-date: "2023-12-14"
+publishedDate: "2023-12-14"
 categories:
   - api-governance:linting-rulesets
   - api-governance:compliance-quality

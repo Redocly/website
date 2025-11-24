@@ -6,7 +6,7 @@ seo:
   title: Git branching strategies for documentation projects
   description: Docs-as-code workflows need solid branching strategies. This article helps you pick the right one.
 author: lorna-mitchell
-date: "2024-07-04"
+publishedDate: "2024-07-04"
 categories:
   - docs-as-code:git-workflows
 image: Redocly_blog_7.jpg

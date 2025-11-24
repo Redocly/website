@@ -7,7 +7,7 @@ seo:
   description: Product features and enhancements from September 2025 include built-in MCP server integration, OpenAPI 3.2.0 support, enhanced search capabilities, and improved build processes.
   image: ./images/september-updates.png
 author: adam-altman
-date: "2025-10-09"
+publishedDate: "2025-10-09"
 categories:
   - redocly:product-updates
 image: september-updates.png

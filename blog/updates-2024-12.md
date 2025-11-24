@@ -7,7 +7,7 @@ seo:
   description: Round-up of product features and enhancements from December 2024
   image: ./images/december-feature-updates.png
 author: adam-altman
-date: "2025-01-06"
+publishedDate: "2025-01-06"
 categories:
   - redocly:product-updates
 image: december-feature-updates.png

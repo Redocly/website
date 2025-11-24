@@ -6,7 +6,7 @@ seo:
   title: Redocly for technical writers
   description: How Redocly helps technical writers create superior documentation experiences
 author: swapnil-ogale
-date: "2022-08-05"
+publishedDate: "2022-08-05"
 categories:
   - developer-portal
   - docs-as-code

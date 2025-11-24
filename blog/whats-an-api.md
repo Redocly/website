@@ -1,7 +1,7 @@
 ---
 template: ../@theme/templates/BlogPost
 author: adam-altman
-date: "2022-02-11"
+publishedDate: "2022-02-11"
 categories:
   - api-lifecycle:design
   - api-documentation:api-seo

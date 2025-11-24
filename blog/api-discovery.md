@@ -4,7 +4,7 @@ title: Presenting multiple APIs for better discovery
 seo:
   title: Presenting multiple APIs for better discovery
 author: adam-altman
-date: "2021-01-26"
+publishedDate: "2021-01-26"
 categories:
   - api-catalog:discovery
 image: blog-api-discovery.png

@@ -6,7 +6,7 @@ seo:
   title: Instant API docs with Redocly
   description: Use Redocly CLI to transform OpenAPI to friendly HTML
 author: lorna-mitchell
-date: "2023-08-22"
+publishedDate: "2023-08-22"
 categories:
   - docs-as-code
   - redocly:redocly-cli

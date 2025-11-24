@@ -123,7 +123,7 @@ function CategoryPage() {
           to={`${post.slug}`}
           img={post.image}
           description={post.description}
-          date={post.date}
+          publishedDate={post.publishedDate}
             author={post.author}
           />
         ))}

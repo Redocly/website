@@ -4,7 +4,7 @@ title: OpenAPI 3
 seo:
   title: OpenAPI 3
 author: adam-altman
-date: "2019-01-09"
+publishedDate: "2019-01-09"
 categories:
   - api-specifications:openapi
 image: blog-3.png

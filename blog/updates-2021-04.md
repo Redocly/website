@@ -6,7 +6,7 @@ seo:
   title: April 2021 updates
   description: Round up of the features and enhancements, plus some documentation news from April 2021
 author: swapnil-ogale
-date: "2021-05-04"
+publishedDate: "2021-05-04"
 categories:
   - redocly:product-updates
 image: blog-1.png

@@ -7,7 +7,7 @@ seo:
   description: Redocly experimented with llms.txt and found it mostly smoke, not fire. See the results, the logs, and what really matters for docs + AI.
   image: ./images/llms-txt.jpg
 author: adam-altman
-date: "2025-08-20"
+publishedDate: "2025-08-20"
 categories:
   - api-documentation:api-seo
   - technical-documentation:ai-assisted-docs

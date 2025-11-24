@@ -6,7 +6,7 @@ seo:
   title: Add OpenAPI tags for next-level API descriptions
   description: Tag your OpenAPI endpoints and help your users navigate their own path to success.
 author: lorna-mitchell
-date: "2024-03-13"
+publishedDate: "2024-03-13"
 categories:
   - api-specifications:openapi
   - api-lifecycle:design

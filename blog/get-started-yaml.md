@@ -6,7 +6,7 @@ seo:
   title: YAML basics for Technical Writers
   description: YAML is a data format, used in many documentation tools. Learn all you need to work effectively with YAML.
 author: lorna-mitchell
-date: "2024-06-19"
+publishedDate: "2024-06-19"
 categories:
   - docs-as-code
   - technical-documentation:tutorials-onboarding

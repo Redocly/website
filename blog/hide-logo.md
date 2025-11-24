@@ -6,7 +6,7 @@ seo:
   title: How to hide the x-logo
   description: Answering real questions about how to use OpenAPI to design and describe APIs.
 author: adam-altman
-date: "2022-05-11"
+publishedDate: "2022-05-11"
 categories:
   - api-specifications:openapi
   - api-lifecycle:design

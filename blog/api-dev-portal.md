@@ -6,7 +6,7 @@ seo:
   title: Hello world, our mission is to perfect the API Developer Portal
   description: ReDoc was born out of frustration with rendering my OpenAPI definitions for API reference docs.
 author: adam-altman
-date: "2018-05-05"
+publishedDate: "2018-05-05"
 categories:
   - developer-portal
 image: blog-1.png

@@ -6,7 +6,7 @@ seo:
   title: July 2021 updates
   description: Round up of the features and enhancements, plus some documentation news from July 2021
 author: swapnil-ogale
-date: "2021-08-01"
+publishedDate: "2021-08-01"
 categories:
   - redocly:product-updates
 image: blog-7.jpg

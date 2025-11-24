@@ -6,7 +6,7 @@ seo:
   title: How to optimize your docs for LLMs
   description: Let's dig into a few practical strategies to make your API documentation work better with AI tools.
 author: adam-altman
-date: "2025-08-14"
+publishedDate: "2025-08-14"
 categories:
   - technical-documentation:ai-assisted-docs
   - api-documentation:reference-docs

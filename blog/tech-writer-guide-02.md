@@ -6,7 +6,7 @@ seo:
   title: A tech writer's guide to the Redocly galaxy (part 2)
   description: What exactly are 'API Docs'?
 author: jody-winter
-date: "2022-11-29"
+publishedDate: "2022-11-29"
 categories:
   - technical-documentation:conceptual-documentation
 image: blog-6.png

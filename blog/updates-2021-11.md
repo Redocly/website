@@ -6,7 +6,7 @@ seo:
   title: November 2021 updates
   description: Round up of product features and enhancements, plus documentation news from November 2021
 author: swapnil-ogale
-date: "2021-12-01"
+publishedDate: "2021-12-01"
 categories:
   - redocly:product-updates
 image: blog-6.png

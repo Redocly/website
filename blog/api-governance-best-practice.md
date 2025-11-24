@@ -6,7 +6,7 @@ seo:
   title: Best practices for building and adopting an API governance strategy
   description: API governance is important. Learn how to do it well.
 author: lorna-mitchell
-date: "2024-08-29"
+publishedDate: "2024-08-29"
 categories:
   - api-governance
 image: Redocly_blog_2.jpg

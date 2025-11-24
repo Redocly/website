@@ -6,7 +6,7 @@ seo:
   title: What Redocly brought to the API space in 2020
   description: Highlighting the most interesting/useful features Redocly delivered in 2020
 author: swapnil-ogale
-date: "2020-12-30"
+publishedDate: "2020-12-30"
 categories:
   - redocly:product-updates
 image: features.png

@@ -6,7 +6,7 @@ seo:
   title: February 2022 updates
   description: Round up of product features and enhancements, plus documentation news from February 2022
 author: swapnil-ogale
-date: "2022-03-01"
+publishedDate: "2022-03-01"
 categories:
   - redocly:product-updates
 image: blog-6.png

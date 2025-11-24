@@ -1,7 +1,7 @@
 ---
 template: ../@theme/templates/BlogPost
 author: adam-altman
-date: "2023-11-03"
+publishedDate: "2023-11-03"
 categories:
   - api-governance
   - api-governance:lifecycle-gates

@@ -6,7 +6,7 @@ seo:
   title: Lint OpenAPI, lint Markdown. Now lint Markdown in OpenAPI.
   description: Use Redocly's API tooling to apply custom validation to your API descriptions, such as checking Markdown is valid.
 author: lorna-mitchell
-date: "2024-02-14"
+publishedDate: "2024-02-14"
 categories:
   - api-governance:linting-rulesets
   - api-governance:review-workflows

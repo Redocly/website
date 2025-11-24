@@ -6,7 +6,7 @@ seo:
   title: "API council: the wisdom of your API crowd"
   description: Invite the stakeholders inside your organization to the table and make your API the best it can be
 author: lorna-mitchell
-date: "2024-04-17"
+publishedDate: "2024-04-17"
 categories:
   - api-specifications:openapi
 image: Redocly_blog_8.jpg

@@ -6,7 +6,7 @@ seo:
   title: How to reuse schemas when required properties change across endpoints
   description: Answering real questions about how to use OpenAPI to design and describe APIs.
 author: adam-altman
-date: "2022-05-04"
+publishedDate: "2022-05-04"
 categories:
   - api-specifications:openapi
   - api-lifecycle:design

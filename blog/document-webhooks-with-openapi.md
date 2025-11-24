@@ -6,7 +6,7 @@ seo:
   title: Document Webhooks with OpenAPI | Redocly
   description: Learn about webhooks, their impact on modern apps, and how to document them effectively using OpenAPI.
 author: lorna-mitchell
-date: "2023-09-27"
+publishedDate: "2023-09-27"
 categories:
   - api-lifecycle:design
   - api-specifications:openapi

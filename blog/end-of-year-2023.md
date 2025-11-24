@@ -6,7 +6,7 @@ seo:
   title: From survival to revival in 2023
   description: From survival to revival in 2023
 author: adam-altman
-date: "2024-01-09"
+publishedDate: "2024-01-09"
 categories:
   - redocly:product-updates
 image: team.png

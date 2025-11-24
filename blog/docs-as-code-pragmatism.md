@@ -6,7 +6,7 @@ seo:
   title: Docs-as-code is a tech writer productivity hack
   description: Go big on pragmatism and efficiency (and make your writers happy) by using docs-as-code workflows in your documentation projects.
 author: lorna-mitchell
-date: "2024-10-16"
+publishedDate: "2024-10-16"
 categories:
   - docs-as-code
 image: Redocly_blog_3.jpg

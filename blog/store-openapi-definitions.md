@@ -6,7 +6,7 @@ seo:
   title: Where to store your OpenAPI definitions
   description: Part 1 of our series of posts around managing OpenAPI definitions with Redocly
 author: swapnil-ogale
-date: "2021-01-07"
+publishedDate: "2021-01-07"
 categories:
   - api-specifications:openapi
   - api-governance:review-workflows

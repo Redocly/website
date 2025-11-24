@@ -6,7 +6,7 @@ seo:
   title: Content reuse
   description: Avoiding common pitfalls when implementing content reuse.
 author: heather-cloward
-date: "2023-08-30"
+publishedDate: "2023-08-30"
 categories:
   - docs-as-code:content-reuse
 image: blog-4.jpg

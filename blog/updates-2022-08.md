@@ -6,7 +6,7 @@ seo:
   title: August 2022 updates
   description: Round-up of product features and enhancements from August 2022
 author: adam-altman
-date: "2022-09-02"
+publishedDate: "2022-09-02"
 categories:
   - redocly:product-updates
 image: blog-8.jpg

@@ -6,7 +6,7 @@ seo:
   title: Cookbook for better Redocly CLI recipes
   description: Use recipes from the Redocly CLI Cookbook to level up your OpenAPI development and build better APIs.
 author: lorna-mitchell
-date: "2023-11-16"
+publishedDate: "2023-11-16"
 categories:
   - api-specifications:openapi
   - redocly:redocly-cli

@@ -6,7 +6,7 @@ seo:
   title: Redocly Launches New API Tools Suite – Start Your Free 30-Day Trial
   description: "Discover Redocly’s newly launched suite of API tools: Reunite, Realm, Redoc, Revel, and Reef. Build, manage, and scale APIs effortlessly. Start your free 30-day trial today!"
 author: adam-altman
-date: "2024-10-08"
+publishedDate: "2024-10-08"
 categories:
   - redocly:product-updates
 image: Redocly_blog_5.jpg

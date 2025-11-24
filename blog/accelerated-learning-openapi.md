@@ -6,7 +6,7 @@ seo:
   title: Learn OpenAPI in a day
   description: Accelerated learning approach applied to OpenAPI.
 author: adam-altman
-date: "2023-02-21"
+publishedDate: "2023-02-21"
 categories:
   - api-specifications:openapi
   - technical-documentation:tutorials-onboarding

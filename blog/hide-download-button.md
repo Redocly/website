@@ -6,7 +6,7 @@ seo:
   title: How to hide the download button
   description: Answering real questions about how to use OpenAPI to design and describe APIs.
 author: adam-altman
-date: "2022-08-10"
+publishedDate: "2022-08-10"
 categories:
   - api-specifications:openapi
   - api-lifecycle:design
