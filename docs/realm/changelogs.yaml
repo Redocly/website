@@ -1,4 +1,16 @@
 '@redocly/realm':
+  99.99.99-test:
+    timestamp: 1763984609128
+    changes:
+      minor:
+        - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        - Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        - Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+      patch:
+        - Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
+        - Excepteur sint occaecat cupidatat non proident, sunt in culpa.
+        - Nisi ut aliquip ex ea commodo consequat.
+    dependencies: {}
   0.128.0-next.4:
     timestamp: 1763549522000
     changes:
