@@ -5,6 +5,11 @@ seo:
   image: ./images/redocly-card.png
   lang: en-US
 
+apiFunctions:
+  folders:
+    - ./
+    - ./docs/realm/changelog
+
 redirects:
   $ref: redirects.yaml
 
