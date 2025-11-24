@@ -10,7 +10,6 @@
         - Resolved layout shifts when switching between light and `dark` themes.
         - Fixed an issue where webhook retries ignored custom **HTTP** headers.
     dependencies: {}
-'@redocly/realm':
   99.99.101-test:
     timestamp: 1764588609129
     changes:
