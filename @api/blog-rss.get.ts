@@ -40,11 +40,9 @@ function buildRssItem(post: any, origin: string): string {
   const categories = (post.categories || [])
     .map((category: { label: string }) => `<category>${escapeXml(category.label)}</category>`)
     .join('');
+  const author = escapeXml(post.author?.name || 'Redocly Team');
 
-  const description = `
-    <p>${escapeXml(post.description || '')}</p>
-    <p><strong>Author:</strong> ${escapeXml(post.author?.name || 'Redocly Team')}</p>
-  `;
+  const description = `<p>${escapeXml(post.description || '')}</p>`;
 
   return `
     <item>
@@ -54,6 +52,7 @@ function buildRssItem(post: any, origin: string): string {
       <pubDate>${pubDate}</pubDate>
       ${categories}
       <description><![CDATA[${description}]]></description>
+      <author>${author}</author>
     </item>
   `;
 }
