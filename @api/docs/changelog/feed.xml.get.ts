@@ -197,7 +197,7 @@ export default async function changelogRssHandler(
       status: 200,
       headers: {
         'Content-Type': 'application/rss+xml; charset=utf-8',
-        'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
+        'Cache-Control': 'public, max-age=600', // Cache for 10 minutes
       },
     });
   } catch (error) {

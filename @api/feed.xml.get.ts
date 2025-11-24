@@ -110,7 +110,7 @@ export default async function blogRssHandler(request: Request, context: ApiFunct
       status: 200,
       headers: {
         'Content-Type': 'application/rss+xml; charset=utf-8',
-        'Cache-Control': 'public, max-age=1800',
+        'Cache-Control': 'public, max-age=600',
       },
     });
   } catch (error) {
