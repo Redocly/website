@@ -14,7 +14,126 @@ const __dirname = path.dirname(__filename);
 // Get project root by going up one level from @api/ directory
 const rootDir = path.resolve(__dirname, '..');
 
-const BLOG_METADATA_PATH = path.join(rootDir, 'blog/metadata/blog-metadata.yaml');
+// Try to find the correct path for blog metadata
+// In deployment, files might be in a different location
+async function findBlogMetadataPath(): Promise<string> {
+  const possiblePaths = [
+    path.join(rootDir, 'blog/metadata/blog-metadata.yaml'),
+    path.join(process.cwd(), 'blog/metadata/blog-metadata.yaml'),
+    // Try relative to __dirname at different levels
+    path.resolve(__dirname, '../blog/metadata/blog-metadata.yaml'),
+    path.resolve(__dirname, '../../blog/metadata/blog-metadata.yaml'),
+    path.resolve(__dirname, '../../../blog/metadata/blog-metadata.yaml'),
+    path.resolve(__dirname, '../../../../blog/metadata/blog-metadata.yaml'),
+    // Try absolute paths (less common but possible)
+    path.resolve('/blog/metadata/blog-metadata.yaml'),
+    // Try from process.cwd() at different levels
+    path.resolve(process.cwd(), '../blog/metadata/blog-metadata.yaml'),
+    path.resolve(process.cwd(), '../../blog/metadata/blog-metadata.yaml'),
+  ];
+
+  console.log('[Blog RSS] Searching for blog metadata file...');
+  for (const possiblePath of possiblePaths) {
+    try {
+      await fs.access(possiblePath);
+      console.log('[Blog RSS] Found blog metadata at:', possiblePath);
+      return possiblePath;
+    } catch (error) {
+      // Log for debugging but continue searching
+      console.log('[Blog RSS] Path not found:', possiblePath);
+    }
+  }
+  
+  // If not found, try to search in common parent directories
+  const searchDirs = [rootDir, process.cwd(), __dirname];
+  for (const searchDir of searchDirs) {
+    try {
+      // Try to find blog directory by searching up
+      let currentDir = searchDir;
+      for (let i = 0; i < 5; i++) {
+        const testPath = path.join(currentDir, 'blog/metadata/blog-metadata.yaml');
+        try {
+          await fs.access(testPath);
+          console.log('[Blog RSS] Found blog metadata by searching:', testPath);
+          return testPath;
+        } catch {
+          // Continue
+        }
+        currentDir = path.resolve(currentDir, '..');
+        // Stop if we've reached the filesystem root
+        if (currentDir === path.resolve(currentDir, '..')) break;
+      }
+    } catch {
+      // Continue to next search directory
+    }
+  }
+  
+  // Return the default path if none found (will fail with a clear error)
+  const defaultPath = path.join(rootDir, 'blog/metadata/blog-metadata.yaml');
+  console.error('[Blog RSS] Could not find blog metadata file, using default:', defaultPath);
+  return defaultPath;
+}
+
+async function findBlogDirectory(): Promise<string> {
+  const possiblePaths = [
+    path.join(rootDir, 'blog'),
+    path.join(process.cwd(), 'blog'),
+    // Try relative to __dirname at different levels
+    path.resolve(__dirname, '../blog'),
+    path.resolve(__dirname, '../../blog'),
+    path.resolve(__dirname, '../../../blog'),
+    path.resolve(__dirname, '../../../../blog'),
+    // Try absolute paths
+    path.resolve('/blog'),
+    // Try from process.cwd() at different levels
+    path.resolve(process.cwd(), '../blog'),
+    path.resolve(process.cwd(), '../../blog'),
+  ];
+
+  console.log('[Blog RSS] Searching for blog directory...');
+  for (const possiblePath of possiblePaths) {
+    try {
+      const stats = await fs.stat(possiblePath);
+      if (stats.isDirectory()) {
+        console.log('[Blog RSS] Found blog directory at:', possiblePath);
+        return possiblePath;
+      }
+    } catch {
+      // Continue to next path
+    }
+  }
+  
+  // If not found, try to search in common parent directories
+  const searchDirs = [rootDir, process.cwd(), __dirname];
+  for (const searchDir of searchDirs) {
+    try {
+      // Try to find blog directory by searching up
+      let currentDir = searchDir;
+      for (let i = 0; i < 5; i++) {
+        const testPath = path.join(currentDir, 'blog');
+        try {
+          const stats = await fs.stat(testPath);
+          if (stats.isDirectory()) {
+            console.log('[Blog RSS] Found blog directory by searching:', testPath);
+            return testPath;
+          }
+        } catch {
+          // Continue
+        }
+        currentDir = path.resolve(currentDir, '..');
+        // Stop if we've reached the filesystem root
+        if (currentDir === path.resolve(currentDir, '..')) break;
+      }
+    } catch {
+      // Continue to next search directory
+    }
+  }
+  
+  // Return the default path if none found
+  const defaultPath = path.join(rootDir, 'blog');
+  console.error('[Blog RSS] Could not find blog directory, using default:', defaultPath);
+  return defaultPath;
+}
 
 type BlogCategory = { label: string };
 type RawCategory = BlogCategory & { id: string };
@@ -72,21 +191,23 @@ export default async function blogRssHandler(request: Request, context: ApiFunct
     console.log('[Blog RSS] Calculated root directory (from __dirname):', rootDir);
     console.log('[Blog RSS] process.cwd():', process.cwd());
     console.log('[Blog RSS] __dirname:', __dirname);
-    console.log('[Blog RSS] Blog metadata path:', BLOG_METADATA_PATH);
-    console.log('[Blog RSS] Blog directory:', path.join(rootDir, BLOG_DIR));
+
+    // Dynamically find the blog metadata path
+    const blogMetadataPath = await findBlogMetadataPath();
+    console.log('[Blog RSS] Found blog metadata path:', blogMetadataPath);
 
     let metadataRaw: string;
     try {
-      metadataRaw = await fs.readFile(BLOG_METADATA_PATH, 'utf8');
+      metadataRaw = await fs.readFile(blogMetadataPath, 'utf8');
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : String(error);
       const errorStack = error instanceof Error ? error.stack : 'No stack trace';
       console.error('[Blog RSS] Failed to read metadata file:', {
-        path: BLOG_METADATA_PATH,
+        path: blogMetadataPath,
         error: errorMessage,
         stack: errorStack,
       });
-      throw new Error(`Failed to read blog metadata file at ${BLOG_METADATA_PATH}: ${errorMessage}`);
+      throw new Error(`Failed to read blog metadata file at ${blogMetadataPath}: ${errorMessage}`);
     }
 
     const metadata = parseSimpleYaml(metadataRaw) || {};
@@ -97,8 +218,9 @@ export default async function blogRssHandler(request: Request, context: ApiFunct
       (metadata.categories as RawCategory[] | undefined)?.map((category) => [category.id, category]) ?? [],
     );
 
-    const blogDirPath = path.join(rootDir, BLOG_DIR);
-    console.log('[Blog RSS] Reading blog directory:', blogDirPath);
+    // Dynamically find the blog directory
+    const blogDirPath = await findBlogDirectory();
+    console.log('[Blog RSS] Found blog directory:', blogDirPath);
 
     let files: any[];
     try {
@@ -196,8 +318,9 @@ export default async function blogRssHandler(request: Request, context: ApiFunct
       message: errorMessage,
       stack: errorStack,
       rootDir,
-      metadataPath: BLOG_METADATA_PATH,
-      blogDir: path.join(rootDir, BLOG_DIR),
+      calculatedRootDir: rootDir,
+      processCwd: process.cwd(),
+      __dirname,
     });
 
     // Include error details in response for debugging in deployment
@@ -205,7 +328,8 @@ export default async function blogRssHandler(request: Request, context: ApiFunct
       error: 'Internal server error',
       message: 'Failed to generate blog RSS feed',
       details: errorMessage,
-      path: BLOG_METADATA_PATH,
+      rootDir,
+      processCwd: process.cwd(),
     });
   }
 }
