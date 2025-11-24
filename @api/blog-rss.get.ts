@@ -67,7 +67,25 @@ function buildRssItem(post: any, origin: string): string {
 
 export default async function blogRssHandler(request: Request, context: ApiFunctionsContext) {
   try {
-    const metadataRaw = await fs.readFile(BLOG_METADATA_PATH, 'utf8');
+    console.log('[Blog RSS] Starting RSS feed generation');
+    console.log('[Blog RSS] Root directory:', rootDir);
+    console.log('[Blog RSS] Blog metadata path:', BLOG_METADATA_PATH);
+    console.log('[Blog RSS] Blog directory:', path.join(rootDir, BLOG_DIR));
+
+    let metadataRaw: string;
+    try {
+      metadataRaw = await fs.readFile(BLOG_METADATA_PATH, 'utf8');
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      const errorStack = error instanceof Error ? error.stack : 'No stack trace';
+      console.error('[Blog RSS] Failed to read metadata file:', {
+        path: BLOG_METADATA_PATH,
+        error: errorMessage,
+        stack: errorStack,
+      });
+      throw new Error(`Failed to read blog metadata file at ${BLOG_METADATA_PATH}: ${errorMessage}`);
+    }
+
     const metadata = parseSimpleYaml(metadataRaw) || {};
     const authorsMap = new Map<string, BlogAuthor>(
       (metadata.authors as RawAuthor[] | undefined)?.map((author) => [author.id, author]) ?? [],
@@ -77,38 +95,68 @@ export default async function blogRssHandler(request: Request, context: ApiFunct
     );
 
     const blogDirPath = path.join(rootDir, BLOG_DIR);
-    const files = await fs.readdir(blogDirPath, { withFileTypes: true });
+    console.log('[Blog RSS] Reading blog directory:', blogDirPath);
+
+    let files: any[];
+    try {
+      files = await fs.readdir(blogDirPath, { withFileTypes: true });
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      const errorStack = error instanceof Error ? error.stack : 'No stack trace';
+      console.error('[Blog RSS] Failed to read blog directory:', {
+        path: blogDirPath,
+        error: errorMessage,
+        stack: errorStack,
+      });
+      throw new Error(`Failed to read blog directory at ${blogDirPath}: ${errorMessage}`);
+    }
+
     const markdownPosts = files.filter((entry) => entry.isFile() && entry.name.endsWith('.md'));
+    console.log('[Blog RSS] Found markdown files:', markdownPosts.length);
 
     const posts: BlogPost[] = [];
 
     for (const file of markdownPosts) {
       const filePath = path.join(blogDirPath, file.name);
-      const fileContent = await fs.readFile(filePath, 'utf8');
-      const frontmatter = extractFrontmatter(fileContent);
+      try {
+        const fileContent = await fs.readFile(filePath, 'utf8');
+        const frontmatter = extractFrontmatter(fileContent);
 
-      if (frontmatter?.ignore === true) continue;
+        if (frontmatter?.ignore === true) continue;
 
-      const slug = `${BLOG_SLUG}${file.name.replace(/\.md$/, '')}`;
+        const slug = `${BLOG_SLUG}${file.name.replace(/\.md$/, '')}`;
 
-      const categories = (frontmatter.categories || [])
-        .map((categoryId: string) => categoriesMap.get(categoryId))
-        .filter(Boolean);
+        const categories = (frontmatter.categories || [])
+          .map((categoryId: string) => categoriesMap.get(categoryId))
+          .filter(Boolean);
 
-      posts.push({
-        slug,
-        title: frontmatter.title ?? slug,
-        description: frontmatter.description,
-        date: frontmatter.date,
-        author: authorsMap.get(frontmatter.author),
-        categories,
-      });
+        posts.push({
+          slug,
+          title: frontmatter.title ?? slug,
+          description: frontmatter.description,
+          date: frontmatter.date,
+          author: authorsMap.get(frontmatter.author),
+          categories,
+        });
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : String(error);
+        console.error('[Blog RSS] Failed to process blog post file:', {
+          file: file.name,
+          path: filePath,
+          error: errorMessage,
+        });
+        // Continue processing other files even if one fails
+      }
     }
+
+    console.log('[Blog RSS] Processed posts:', posts.length);
 
     const sortedPosts = posts
       .filter((post) => Boolean(post.date))
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .slice(0, RSS_ITEMS_LIMIT);
+
+    console.log('[Blog RSS] Sorted and filtered posts:', sortedPosts.length);
 
     const url = new URL(request.url);
     const origin = `${url.protocol}//${url.host}`;
@@ -127,6 +175,7 @@ export default async function blogRssHandler(request: Request, context: ApiFunct
   </channel>
 </rss>`;
 
+    console.log('[Blog RSS] RSS feed generated successfully');
     return new Response(rssXml, {
       status: 200,
       headers: {
@@ -135,10 +184,25 @@ export default async function blogRssHandler(request: Request, context: ApiFunct
       },
     });
   } catch (error) {
-    console.error('[Blog RSS] Error generating RSS feed:', error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    const errorStack = error instanceof Error ? error.stack : 'No stack trace';
+    const errorName = error instanceof Error ? error.name : 'UnknownError';
+
+    console.error('[Blog RSS] Error generating RSS feed:', {
+      name: errorName,
+      message: errorMessage,
+      stack: errorStack,
+      rootDir,
+      metadataPath: BLOG_METADATA_PATH,
+      blogDir: path.join(rootDir, BLOG_DIR),
+    });
+
+    // Include error details in response for debugging in deployment
     return context.status(500).json({
       error: 'Internal server error',
       message: 'Failed to generate blog RSS feed',
+      details: errorMessage,
+      path: BLOG_METADATA_PATH,
     });
   }
 }
