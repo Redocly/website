@@ -67,7 +67,7 @@ info:
   contact:
     name: Redocly API Support
     url: https://www.redocly.com/support
-    email: team@redocly.com
+email: support@redocly.com
 ```
 
 ## Related rules
