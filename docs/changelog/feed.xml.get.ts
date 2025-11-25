@@ -1,7 +1,7 @@
 import type { ApiFunctionsContext } from '@redocly/config';
 // @ts-ignore
-import changelogData from '../../../docs/realm/changelogs.yaml';
-import { hasChanges, type ChangelogEntry, processChanges } from '../../../docs/realm/@theme/_utils/changelog';
+import changelogData from '../realm/changelogs.yaml';
+import { hasChanges, type ChangelogEntry, processChanges } from '../realm/@theme/_utils/changelog';
 
 type ChangelogData = Record<string, Record<string, ChangelogEntry>>;
 
