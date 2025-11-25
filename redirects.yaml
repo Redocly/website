@@ -140,8 +140,6 @@
   to: '/docs/redoc/deployment/docker/'
 '/docs/redoc/quickstart/html/':
   to: '/docs/redoc/deployment/html/'
-'/docs/redoc/quickstart/':
-  to: '/docs/redoc/deployment/html/'
 '/docs/redoc/quickstart/intro/':
   to: '/docs/redoc/deployment/intro/'
 '/docs-legacy/workflows/access-control/':
