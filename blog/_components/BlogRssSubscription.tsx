@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { Button } from '@redocly/theme/components/Button/Button';
 import { CDNIcon } from '@redocly/theme/icons/CDNIcon/CDNIcon';
 
 const BLOG_RSS_PATH = '/blog/feed.xml';
@@ -54,12 +55,13 @@ export function BlogRssSubscription({ className }: BlogRssSubscriptionProps) {
   return (
     <>
       <SubscribeButton
-        type="button"
         className={className}
+        variant="outlined"
+        icon={<CDNIcon name="rss" size="1em" color="currentColor" />}
+        iconPosition="right"
         onClick={() => setIsModalOpen(true)}
         aria-haspopup="dialog"
       >
-        <CDNIcon name="rss" size="1em" color="currentColor" />
         Subscribe via RSS
       </SubscribeButton>
       {isModalOpen && (
@@ -91,8 +93,7 @@ export function BlogRssSubscription({ className }: BlogRssSubscriptionProps) {
                   >
                     {rssFeedUrl}
                   </UrlLink>
-                  <CopyButton type="button" onClick={handleCopy} disabled={isCopied}>
-                    {copyButtonIcon}
+                  <CopyButton onClick={handleCopy} disabled={isCopied} icon={copyButtonIcon} iconPosition="left">
                     {isCopied ? 'Copied' : 'Copy URL'}
                   </CopyButton>
                 </UrlContainer>
@@ -105,23 +106,8 @@ export function BlogRssSubscription({ className }: BlogRssSubscriptionProps) {
   );
 }
 
-const SubscribeButton = styled.button`
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  border: 1px solid var(--border-color-primary, rgba(22, 119, 255, 0.4));
-  background: transparent;
-  color: var(--text-color-primary, #0a1c2b);
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-
-  &:hover {
-    background: rgba(22, 119, 255, 0.08);
-    color: var(--text-color-primary, #0a1c2b);
-  }
+const SubscribeButton = styled(Button)`
+  white-space: nowrap;
 `;
 
 const ModalOverlay = styled.div`
@@ -204,7 +190,7 @@ const SectionTitle = styled.h3`
 
 const UrlContainer = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
 
   @media (max-width: 480px) {
@@ -215,46 +201,32 @@ const UrlContainer = styled.div`
 
 const UrlLink = styled.a`
   flex: 1;
-  border-radius: 12px;
-  border: 1px solid rgba(10, 28, 43, 0.12);
-  padding: 12px 16px;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color-primary);
+  border-radius: 8px;
+  background: var(--bg-color);
+  color: var(--text-color-primary);
+  font-family: var(--font-family-monospaced, monospace);
   font-size: 14px;
-  font-family: var(--font-family-mono, 'IBM Plex Mono', monospace);
-  color: #0a1c2b;
-  background: #f8fafc;
-  min-height: 44px;
+  min-height: 32px;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
-  text-decoration: none;
   word-break: break-all;
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
 
   &:focus-visible {
-    outline: 2px solid rgba(32, 125, 255, 0.6);
+    outline: 2px solid var(--color-primary-main);
     outline-offset: 2px;
-    background: #ffffff;
   }
 `;
 
-const CopyButton = styled.button`
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(120deg, #207dff, #9461ff);
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
+const CopyButton = styled(Button)`
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 130px;
 `;
 
 export default BlogRssSubscription;
