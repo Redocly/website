@@ -12,7 +12,12 @@ import { BlogRssSubscription } from './_components/BlogRssSubscription';
 export default function Blog() {
   return (
     <PageWrapper>
-      <FirstThreePosts />
+      <FirstThreePostsWrapper>
+        <RssButtonContainer>
+          <BlogRssSubscription />
+        </RssButtonContainer>
+        <FirstThreePosts />
+      </FirstThreePostsWrapper>
 
       <FeaturedClassics />
 
@@ -46,6 +51,32 @@ export default function Blog() {
 const PageWrapper = styled.div`
   position: relative;
   overflow: hidden;
+`;
+
+const FirstThreePostsWrapper = styled.div`
+  position: relative;
+`;
+
+const RssButtonContainer = styled.div`
+  position: absolute;
+  top: -48px;
+  right: 0;
+  z-index: 10;
+
+  @media screen and (min-width: 1400px) {
+    right: calc((100% - 1240px) / 2);
+  }
+
+  @media screen and (max-width: 1399px) {
+    right: calc((100% - 90vw) / 2);
+  }
+
+  @media (max-width: 640px) {
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
 `;
 
 const SubscribeCardSection = styled.section`

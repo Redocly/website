@@ -34,23 +34,16 @@ const SubscribeButton = styled.a`
   gap: 8px;
   padding: 10px 20px;
   border-radius: 999px;
-  border: 1px solid var(--border-color-primary, rgba(22, 119, 255, 0.4));
-  background: rgba(22, 119, 255, 0.05);
-  color: var(--text-color-primary, #0a1c2b);
+  border: 1px solid var(--border-color-primary);
+  background: var(--bg-color-tonal);
+  color: var(--text-color-primary);
   font-weight: 600;
   text-decoration: none;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 
-  &:hover,
-  &:focus-visible {
-    background: rgba(22, 119, 255, 0.12);
-    border-color: rgba(22, 119, 255, 0.8);
-    color: var(--text-color-primary, #0a1c2b);
-  }
-
-  &:focus-visible {
-    outline: 2px solid rgba(22, 119, 255, 0.6);
-    outline-offset: 2px;
+  &:hover {
+    background: var(--bg-color-hover);
+    color: var(--text-color-primary);
   }
 `;
 
