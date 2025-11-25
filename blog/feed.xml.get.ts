@@ -23,6 +23,57 @@ type BlogPost = {
   categories: BlogCategory[];
 };
 
+/**
+ * Normalize a category to a string label, handling various input formats
+ */
+function normalizeCategoryToLabel(category: any): string | null {
+  if (!category) {
+    return null;
+  }
+  
+  if (typeof category === 'string') {
+    return category.trim() || null;
+  }
+  
+  if (typeof category === 'object') {
+    if (typeof category.label === 'string') {
+      return category.label.trim() || null;
+    }
+    
+    if (category.category && typeof category.category === 'object') {
+      const catLabel = typeof category.category.label === 'string' ? category.category.label : '';
+      const subcatLabel = category.subcategory && typeof category.subcategory.label === 'string' 
+        ? category.subcategory.label 
+        : '';
+      
+      if (catLabel) {
+        return subcatLabel ? `${catLabel} > ${subcatLabel}` : catLabel;
+      }
+    }
+    
+    for (const key in category) {
+      if (typeof category[key] === 'string' && key.includes('label')) {
+        return category[key].trim() || null;
+      }
+    }
+  }
+  
+  try {
+    const jsonStr = JSON.stringify(category);
+    if (jsonStr && jsonStr !== '{}' && jsonStr !== '[object Object]') {
+      return jsonStr;
+    }
+  } catch (e) {
+    // Ignore errors
+  }
+  
+  const str = String(category);
+  if (str === '[object Object]') {
+    return null;
+  }
+  return str.trim() || null;
+}
+
 function escapeXml(unsafe: string): string {
   return unsafe
     .replace(/&/g, '&amp;')
@@ -32,6 +83,12 @@ function escapeXml(unsafe: string): string {
     .replace(/'/g, '&apos;');
 }
 
+function escapeXmlForCategories(unsafe: string): string {
+  return unsafe
+    .replace(/&(?!(amp|lt|gt|quot|apos);)/g, '&amp;')
+    .replace(/</g, '&lt;');
+}
+
 function formatRssDate(timestamp: string): string {
   return new Date(timestamp).toUTCString();
 }
@@ -39,12 +96,18 @@ function formatRssDate(timestamp: string): string {
 function buildRssItem(post: any, origin: string): string {
   const link = `${origin}${post.slug}`;
   const pubDate = formatRssDate(post.date);
-  const categories = (post.categories || [])
-    .map((category: { label: string }) => `<category>${escapeXml(category.label)}</category>`)
+  
+  const categoriesArray = Array.isArray(post.categories) ? post.categories : [];
+  const categoryLabels = categoriesArray
+    .map((cat) => normalizeCategoryToLabel(cat))
+    .filter((label): label is string => Boolean(label));
+  
+  const categoriesXml = categoryLabels
+    .map(label => `<category>${escapeXmlForCategories(label)}</category>`)
     .join('');
+  
   const author = escapeXml(post.author?.name || 'Redocly Team');
-
-  const description = `<p>${escapeXml(post.description || '')}</p>`;
+  const description = `<p>${(post.description || '').replace(/]]>/g, ']]&gt;')}</p>`;
 
   return `
     <item>
@@ -52,7 +115,7 @@ function buildRssItem(post: any, origin: string): string {
       <link>${escapeXml(link)}</link>
       <guid isPermaLink="true">${escapeXml(link)}</guid>
       <pubDate>${pubDate}</pubDate>
-      ${categories}
+      ${categoriesXml}
       <description><![CDATA[${description}]]></description>
       <author>${author}</author>
     </item>
@@ -66,14 +129,27 @@ async function readBlogPostsFromPageData(rootDir: string): Promise<BlogPost[]> {
     const blogPostsData = JSON.parse(await fs.readFile(pageDataPath, 'utf8'));
     const postsData = blogPostsData.posts || [];
     
-    const posts: BlogPost[] = postsData.map((post: any) => ({
-      slug: post.slug || '',
-      title: post.title || '',
-      description: post.description || '',
-      date: post.date || '',
-      author: typeof post.author === 'object' ? post.author : { name: post.author?.name || 'Redocly Team' },
-      categories: post.categories || [],
-    }));
+    const posts: BlogPost[] = postsData.map((post: any) => {
+      const postDate = post.publishedDate || post.date || '';
+      const categoriesList = Array.isArray(post.categories) ? post.categories : [];
+      const categories: BlogCategory[] = categoriesList
+        .map((cat: any) => {
+          const label = normalizeCategoryToLabel(cat);
+          return label ? { label } : null;
+        })
+        .filter((cat): cat is BlogCategory => cat !== null);
+
+      return {
+        slug: post.slug || '',
+        title: post.title || '',
+        description: post.description || '',
+        date: postDate,
+        author: typeof post.author === 'object' && post.author?.name 
+          ? post.author 
+          : { name: post.author?.name || 'Redocly Team' },
+        categories,
+      };
+    });
 
     return posts;
   } catch (error) {
@@ -84,7 +160,11 @@ async function readBlogPostsFromPageData(rootDir: string): Promise<BlogPost[]> {
 
 type BlogMetadata = {
   authors?: Array<{ id: string; name?: string }>;
-  categories?: Array<{ id: string; label?: string }>;
+  categories?: Array<{ 
+    id: string; 
+    label?: string;
+    subcategories?: Array<{ id: string; label?: string }>;
+  }>;
 };
 
 async function readBlogMetadata(blogDir: string): Promise<BlogMetadata> {
@@ -152,8 +232,17 @@ async function readBlogPostsFromFilesystem(): Promise<BlogPost[]> {
   });
 
   metadata.categories?.forEach((category) => {
-    if (category?.id) {
-      categoryMap.set(category.id, category.label || category.id);
+    if (category?.id && category?.label) {
+      categoryMap.set(category.id, category.label);
+      
+      if (category.subcategories) {
+        category.subcategories.forEach((subcategory) => {
+          if (subcategory?.id && subcategory?.label) {
+            const fullId = `${category.id}:${subcategory.id}`;
+            categoryMap.set(fullId, `${category.label} > ${subcategory.label}`);
+          }
+        });
+      }
     }
   });
 
@@ -173,15 +262,51 @@ async function readBlogPostsFromFilesystem(): Promise<BlogPost[]> {
     const content = await fs.readFile(filePath, 'utf8');
     const frontmatter = extractFrontmatter(content) as Record<string, any>;
 
-    if (!frontmatter?.title || !frontmatter?.date) {
+    // Support both old (date) and new (publishedDate) field names
+    const postDate = frontmatter?.publishedDate || frontmatter?.date;
+    if (!frontmatter?.title || !postDate) {
       continue;
     }
 
     const slugName = entry.name.replace(/\.md$/, '');
     const categoriesInput = Array.isArray(frontmatter.categories) ? frontmatter.categories : [];
-    const categories = categoriesInput.map((categoryId: string) => ({
-      label: categoryMap.get(categoryId) || categoryId,
-    }));
+    
+    const categoryStrings = categoriesInput.map((cat: any) => {
+      if (typeof cat === 'string') {
+        return cat;
+      }
+      if (typeof cat === 'object' && cat !== null && !Array.isArray(cat)) {
+        const keys = Object.keys(cat);
+        if (keys.length === 1) {
+          return `${keys[0]}:${cat[keys[0]]}`;
+        }
+        if (cat.label) {
+          return String(cat.label);
+        }
+      }
+      return String(cat);
+    });
+    
+    const categories: BlogCategory[] = categoryStrings
+      .filter((catStr: any) => catStr != null && typeof catStr === 'string' && catStr.trim())
+      .map((categoryIdStr: string) => {
+        const label = categoryMap.get(categoryIdStr);
+        if (label) {
+          return { label };
+        }
+        if (categoryIdStr.includes(':')) {
+          const [catId, subcatId] = categoryIdStr.split(':');
+          const mainLabel = categoryMap.get(catId) || catId;
+          const category = metadata.categories?.find(c => c.id === catId);
+          const subcategory = category?.subcategories?.find(s => s.id === subcatId);
+          if (subcategory?.label) {
+            return { label: `${mainLabel} > ${subcategory.label}` };
+          }
+          return { label: mainLabel };
+        }
+        return { label: categoryIdStr };
+      })
+      .filter((cat): cat is BlogCategory => Boolean(cat && cat.label && cat.label !== '[object Object]'));
 
     const authorId = typeof frontmatter.author === 'string' ? frontmatter.author : '';
     const author = authorId ? { name: authorMap.get(authorId) || authorId } : undefined;
@@ -190,7 +315,7 @@ async function readBlogPostsFromFilesystem(): Promise<BlogPost[]> {
       slug: `${BLOG_SLUG}${slugName}`,
       title: frontmatter.title,
       description: frontmatter.description || '',
-      date: frontmatter.date,
+      date: postDate,
       author,
       categories,
     });
@@ -200,11 +325,16 @@ async function readBlogPostsFromFilesystem(): Promise<BlogPost[]> {
 }
 
 async function readBlogPosts(rootDir: string): Promise<BlogPost[]> {
+  const filesystemPosts = await readBlogPostsFromFilesystem();
+  if (filesystemPosts.length > 0) {
+    return filesystemPosts;
+  }
+  
   try {
     return await readBlogPostsFromPageData(rootDir);
   } catch (error) {
-    console.warn('[Blog RSS] Falling back to filesystem posts:', error);
-    return readBlogPostsFromFilesystem();
+    console.warn('[Blog RSS] Failed to read blog posts from both filesystem and page data:', error);
+    return [];
   }
 }
 

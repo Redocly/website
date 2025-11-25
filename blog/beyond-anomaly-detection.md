@@ -1,5 +1,5 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Beyond anomaly detection — striving with metrics
 description: Metrics shouldn't only exist for quick error detection. They should exist to help you strive — to set goals, accelerate learning, and achieve meaningful improvement.
 seo:
@@ -7,13 +7,11 @@ seo:
   description: Metrics shouldn't only exist for quick error detection. They should exist to help you strive — to set goals, accelerate learning, and achieve meaningful improvement.
   image: ./images/beyond-anomaly-detection.png
 author: adam-altman
-date: 2025-11-11
+publishedDate: "2025-11-11"
 categories:
-  - metrics
-  - goals
+  - api-monitoring:performance-metrics
 image: beyond-anomaly-detection.png
 ---
-
 # Beyond anomaly detection — striving with metrics
 
 Recently, I wrote about [**Orion’s Belt** — three guiding stars for measuring success: *Acquisition, Adoption,* and *Deflection*](./key-metrics-for-docs.md). Those metrics help you navigate.

@@ -1,20 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: From survival to revival in 2023
 description: From survival to revival in 2023
 seo:
   title: From survival to revival in 2023
   description: From survival to revival in 2023
 author: adam-altman
-date: 2024-01-09
+publishedDate: "2024-01-09"
 categories:
-  - dev-portal
-  - docs-as-code
-  - tech-writers
-  - developer-experience
+  - redocly:product-updates
 image: team.png
 ---
-
 ## Welcome back
 
 As I shake off the holiday mode, I find myself reflecting on 2023, a year of learning and growth at Redocly, contrasted starkly against the challenges of 2022.

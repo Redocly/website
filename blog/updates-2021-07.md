@@ -1,20 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: July 2021 updates
 description: Round up of the features and enhancements, plus some documentation news from July 2021
 seo:
   title: July 2021 updates
   description: Round up of the features and enhancements, plus some documentation news from July 2021
 author: swapnil-ogale
-date: 2021-08-01
+publishedDate: "2021-08-01"
 categories:
-  - dev-portal
-  - tech-writers
-  - developer-experience
-  - api
+  - redocly:product-updates
 image: blog-7.jpg
 ---
-
 There was so much to be excited about at Redocly and our superlative developer experience goal in the month of July. Not only did we give one of our most popular products a huge update, we also published a separate [blog post](reference-docs-redesign.md) about this!
 
 But, this wasn't all we worked on in July. While our developers were polishing our products, our documentation team was busy keeping pace with our new features, and enhancing our documentation experience for our customers and their users as well.

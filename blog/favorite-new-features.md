@@ -1,11 +1,11 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: My favorite new features
 description: Top 8 new features I’m most excited about.
 author: adam-altman
-date: 2024-08-21
+publishedDate: "2024-08-21"
 categories:
-  - company-update
+  - redocly:product-updates
 image: favorite-features.png
 ---
 ### Top 8 new features I’m most excited about

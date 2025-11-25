@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: How to hide the x-logo
 description: Answering real questions about how to use OpenAPI to design and describe APIs.
 seo:
   title: How to hide the x-logo
   description: Answering real questions about how to use OpenAPI to design and describe APIs.
 author: adam-altman
-date: 2022-05-11
+publishedDate: "2022-05-11"
 categories:
-  - openapi
-  - api-design
+  - api-specifications:openapi
+  - api-lifecycle:design
 image: refdocs.png
 ---
-
 # Hiding the logo in the API docs
 
 ## Question

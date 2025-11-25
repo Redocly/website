@@ -1,10 +1,10 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 author: adam-altman
-date: 2023-11-03
+publishedDate: "2023-11-03"
 categories:
-  - openapi
-  - api-design
+  - api-governance
+  - api-governance:lifecycle-gates
 image: design-build-run-governance.png
 title: "API Governance: Shift-Left to Save Money and Accelerate Velocity"
 description: I'll walk you through why when it comes to API governance shifting left is the way to go and how to actually do it.
@@ -13,17 +13,16 @@ seo:
   description: I'll walk you through why when it comes to API governance shifting left is the way to go and how to actually do it.
   image: ./images/design-build-run-governance.png
   jsonLd:
-    '@context': https://schema.org
-    '@type': BlogPosting
+    "@context": https://schema.org
+    "@type": BlogPosting
     author:
-      - '@type': Person
+      - "@type": Person
         name: Adam Altman
         url: https://twitter.com/adamaltman
     headline: "API Governance: Shift-Left to Save Money and Accelerate Velocity"
     image:
       - https://redocly.com/blog/images/design-build-run-governance.png
 ---
-
 APIs are the building blocks of the digital world.
 But like any construction project, you've got to have a good plan.
 A lot of people put most of their effort into the final stage—when the API is up and running.

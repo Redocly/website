@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: OpenAPI parameter types for great API design
 description: Great API design makes for great API experience. Pick the parameter type that's going to make everything easier for your user.
 seo:
   title: OpenAPI parameter types for great API design
   description: Great API design makes for great API experience. Pick the parameter type that's going to make everything easier for your user.
 author: lorna-mitchell
-date: 2024-06-06
+publishedDate: "2024-06-06"
 categories:
-  - openapi
-  - api-design
+  - api-specifications:openapi
+  - api-lifecycle:design
 image: Redocly_blog_7.jpg
 ---
-
 OpenAPI supports four types of parameters: path, query, header, and cookie.
 The names sound quite self-explanatory, but are you using each one correctly in your API designs?
 This article gives you everything you need to know about each parameter type and when to use it to the best effect in your own APIs.

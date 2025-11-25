@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Document webhooks with OpenAPI
 description: Great developer experiences for reactive API endpoints
 seo:
   title: Document Webhooks with OpenAPI | Redocly
   description: Learn about webhooks, their impact on modern apps, and how to document them effectively using OpenAPI.
 author: lorna-mitchell
-date: 2023-09-27
+publishedDate: "2023-09-27"
 categories:
-  - api-design
-  - openapi
+  - api-lifecycle:design
+  - api-specifications:openapi
 image: Redocly_blog_2.jpg
 ---
-
 Modern applications have requirements that go beyond the simple request/response model of HTTP data transfer. Thankfully, both the OpenAPI standard and the tools that support it are ready to grow with our applications. In this post we'll cover adding webhooks to an OpenAPI description to give developers a great API experience.
 
 ## What is a webhook?

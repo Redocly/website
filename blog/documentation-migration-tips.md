@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Tips for Documentation Migration
 description: Make your documentation migration a huge success with these practical tips on planning, collaboration, and quality checks.
 seo:
   title: Tips for Documentation Migration
   description: Make your next documentation migration a huge success with these practical tips on planning, collaboration, and quality checks.
 author: taylor-krusen
-date: 2024-07-17
+publishedDate: "2024-07-17"
 categories:
-  - tips
-  - migration
+  - technical-documentation:writing-style
+  - api-versioning:migrations
 image: blog-5.png
 ---
-
 # Tips for Documentation Migration
 
 A documentation migration is an exciting opportunity for growth and improvement; a step forward for both your writers and readers. It can also be challenging. However, with the right mindset and plan, you can make your migration a positive, unifying experience that builds internal momentum and enthusiasm for your documentation. The tips in this blog post are based on firsthand insight and meant to help you successfully navigate a documentation migration.

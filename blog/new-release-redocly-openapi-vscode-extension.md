@@ -1,22 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: 5 reasons why you should install the Redocly VS Code extension
 description: Announcing the new release and presenting new features in the Redocly VS Code extension
 seo:
   title: 5 reasons why you should install the Redocly VS Code extension
   description: Announcing the new release and presenting new features in the Redocly VS Code extension
 author: ivana-devcic
-date: 2021-11-16
+publishedDate: "2021-11-16"
 categories:
-  - api
-  - docs-as-code
-  - tech-writers
-  - developer-experience
+  - redocly:redocly-cli
 image: cli.png
 ---
-
-
-
 Earlier this year, we launched a new product: the **Redocly OpenAPI VS Code extension**. Knowing that many people use VS Code to create and maintain their API definitions, we wanted to support them in a familiar environment instead of having them use yet another third-party tool. Our extension brought the combined power of our API design and documentation tools to VS Code, all in one practical, free-to-use package. The feedback was great, and we were eager to implement it to make the extension even better.
 
 **After several months of incremental improvements, we're happy to announce a new major release of the Redocly OpenAPI extension for VS Code. For this new version, we focused on improving the usability of the extension, paying special attention to first-time OpenAPI authors and those who prefer a guided approach to writing API definitions.**

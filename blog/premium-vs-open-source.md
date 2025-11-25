@@ -1,28 +1,26 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Redocly Premium vs Open Source Features
 author: adam-altman
-date: 2024-10-16
+publishedDate: "2024-10-16"
 categories:
-  - company-update
-  - open-source
+  - redocly:pricing-usage
 image: premium-vs-open-source.png
 seo:
   title: Redocly Premium vs Open Source Features
   description: Redocly Premium vs Open Source Features explained in depth.
   image: ./images/premium-vs-open-source.png
   jsonLd:
-    '@context': https://schema.org
-    '@type': BlogPosting
+    "@context": https://schema.org
+    "@type": BlogPosting
     author:
-      - '@type': Person
+      - "@type": Person
         name: Adam Altman
         url: https://x.com/adamaltman
     headline: Redocly Premium vs Open Source Features
     image:
       - https://redocly.com/blog/images/premium-vs-open-source.png
 ---
-
 It's a good week when I don't have to answer the question about what makes our premium products different from our open source products.
 If you can sense a bit of annoyance, then you are perceptive and correct.
 So I thought, why not make a blog post so that I can answer with a link (and have only good weeks from here on out).

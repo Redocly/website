@@ -92,3 +92,33 @@ Redocly AI Search uses LLMs accessed through:
 
 We may periodically test and update model selections to optimize quality and performance.
 All models are used in inference-only mode and follow the same data usage principles.
+
+---
+
+## How does AI Search work in private projects?
+
+AI Search respects your project's access control settings.
+When a user searches in a private project, AI Search checks:
+
+- **User authentication** - The search uses the user's session credentials
+- **Team membership** - Results are filtered based on teams the user belongs to
+- **RBAC configuration** - Content is filtered according to role-based access control rules
+
+Users can only see search results from content they have permission to access based on their team membership and roles.
+
+---
+
+## Can AI Search access RBAC-protected content?
+
+Yes.
+AI Search indexes all content in your project, including pages protected by RBAC configuration.
+
+However, RBAC rules are enforced at search time.
+When content is indexed, it stores the team access information.
+When users search, results are filtered to show only content their teams have access to.
+
+This means:
+- Content protected by RBAC is indexed for fast retrieval
+- Users only see results from pages their teams can access
+- Anonymous users only see publicly accessible content
+

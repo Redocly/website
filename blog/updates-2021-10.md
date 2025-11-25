@@ -1,20 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: October 2021 updates
 description: Round up of product features and enhancements, plus documentation news from October 2021
 seo:
   title: October 2021 updates
   description: Round up of product features and enhancements, plus documentation news from October 2021
 author: swapnil-ogale
-date: 2021-11-01
+publishedDate: "2021-11-01"
 categories:
-  - dev-portal
-  - tech-writers
-  - developer-experience
-  - api
+  - redocly:product-updates
 image: blog-5.png
 ---
-
 Throughout the month of October, our focus has been troubleshooting and fortifying our products, but we didn't forget about new features and enhancements, either.
 
 Building on some great customer feedback and our own internal research on delivering a great user experience, we added some really good updates to our products.

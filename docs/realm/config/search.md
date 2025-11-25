@@ -431,6 +431,24 @@ paths:
           - paypal
 ```
 
+#### React pages
+
+Apply curation to React pages using front matter:
+
+```tsx {% title="index.page.tsx" %}
+export const frontmatter = {
+  search: {
+    title: 'React gitlab page',
+    description: 'Test description for search',
+    keywords: {
+      includes: ['github', 'swc', 'page'],
+      excludes: ['git', 'gitlab'],
+    },
+  }
+};
+```
+
+
 ## Examples
 
 ### Basic search configuration

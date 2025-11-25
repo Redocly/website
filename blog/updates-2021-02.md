@@ -1,20 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: February 2021 updates
 description: Quick round up of the features and enhancements Redocly delivered in February 2021
 seo:
   title: February 2021 updates
   description: Quick round up of the features and enhancements Redocly delivered in February 2021
 author: swapnil-ogale
-date: 2021-03-05
+publishedDate: "2021-03-05"
 categories:
-  - dev-portal
-  - docs-as-code
-  - tech-writers
-  - developer-experience
+  - redocly:product-updates
 image: features.png
 ---
-
 February may be a short month in the calendar, but it was certainly busy at Redocly!
 
 This post highlights some of our recent product updates, new features and enhancements from February 2021.

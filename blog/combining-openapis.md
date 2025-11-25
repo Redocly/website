@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Combine OpenAPI Files
 description: Make one coherent API from split definitions or multiple API descriptions using Redocly CLI.
 seo:
   title: Combine OpenAPI Files
   description: Make one coherent API from split definitions or multiple API descriptions using Redocly CLI.
 author: lorna-mitchell
-date: 2024-02-02
+publishedDate: "2024-02-02"
 categories:
-  - openapi
+  - api-specifications:openapi
 image: Redocly_blog_1.jpg
 ---
-
 Moving beyond single-file OpenAPI descriptions and into more complex pipelines is becoming more common, but often teams run into difficulty in turning their architectural ideals into reality. In this post, we'll look at two common use cases for combining OpenAPI files, and how to successfully achieve the task.
 
 ## Single OpenAPI file: split for development, bundle to publish

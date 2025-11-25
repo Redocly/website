@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Cookbook for better Redocly CLI recipes
 description: Use recipes from the Redocly CLI Cookbook to level up your OpenAPI development and build better APIs.
 seo:
   title: Cookbook for better Redocly CLI recipes
   description: Use recipes from the Redocly CLI Cookbook to level up your OpenAPI development and build better APIs.
 author: lorna-mitchell
-date: 2023-11-16
+publishedDate: "2023-11-16"
 categories:
-  - openapi
-  - open-source
+  - api-specifications:openapi
+  - redocly:redocly-cli
 image: Redocly_blog_7.jpg
 ---
-
 One of the best features of Redocly CLI is how extensible it is; you can configure it in so many different ways, and even write your own plugins if you want to. For our established expert users, this is brilliant, but how do you get started? Especially if you're not already a confident coder, or aren't familiar with the tool yet.
 
 Worry no more, help is at hand in the shape of the [Redocly CLI cookbook](https://github.com/Redocly/redocly-cli-cookbook). This is a public GitHub repository containing a collection of extensions and configurations for Redocly CLI, to inspire you and give you a solid basis for customizing your own API pipelines. Because who _doesn't_ see a recipe and adjust it a little as they go along? That's exactly the intention here.

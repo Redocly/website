@@ -1,5 +1,5 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: February 2025 updates
 description: Round-up of product features and enhancements from February 2025
 seo:
@@ -7,12 +7,11 @@ seo:
   description: Round-up of product features and enhancements from February 2025
   image: ./images/february-feature-updates.png
 author: adam-altman
-date: 2025-03-18
+publishedDate: "2025-03-18"
 categories:
-  - company-update
+  - redocly:product-updates
 image: february-feature-updates.png
 ---
-
 # February 2025 updates 🚀
 
 February was a **big month at Redocly** as we launched **two new products**: [**Respect**](/pages/respect-cli/respect-cli.page.tsx) and [**Respect Monitoring**](/pages/respect/respect.page.tsx).

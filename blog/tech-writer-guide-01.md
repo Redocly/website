@@ -1,14 +1,14 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: A tech writer's guide to the Redocly galaxy
 description: A new series for tech writers about docs-as-code
 seo:
   title: A tech writer's guide to the Redocly galaxy
   description: A new series for tech writers about docs-as-code
 author: jody-winter
-date: 2022-11-03
+publishedDate: "2022-11-03"
 categories:
-  - tech-writers
+  - technical-documentation:tutorials-onboarding
 image: cli.png
 ---
 # New series: A tech writer's guide to the Redocly galaxy

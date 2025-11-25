@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Announcing Redocly CLI 1.0
 description: The OpenAPI CLI utility reaches a milestone stable release
 seo:
   title: Announcing Redocly CLI 1.0
   description: The OpenAPI CLI utility reaches a milestone stable release
 author: lorna-mitchell
-date: 2023-08-16
+publishedDate: "2023-08-16"
 categories:
-  - openapi
-  - tech-writers
+  - api-specifications:openapi
+  - redocly:redocly-cli
 image: cli.png
 ---
-
 Redocly CLI is now available in a 1.0 stable version. This open source command-line tool with OpenAPI superpowers is an essential addition to any API project.
 
 In today's fast-paced digital landscape, robust API management is crucial for developers seeking to build scalable and efficient applications.

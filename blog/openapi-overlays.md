@@ -1,15 +1,15 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: OpenAPI overlays
 description: The OpenAPI overlays proposal is flawed.
 seo:
   title: OpenAPI overlays
   description: The OpenAPI overlays proposal is flawed.
 author: adam-altman
-date: 2022-05-25
+publishedDate: "2022-05-25"
 categories:
-  - openapi
-  - api-design
+  - api-specifications:openapi
+  - api-lifecycle:design
 image: refdocs.png
 ---
 # OpenAPI overlays are not the answer

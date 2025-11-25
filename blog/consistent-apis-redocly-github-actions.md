@@ -1,17 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Ensure consistent APIs with Redocly and GitHub Actions
 description: Put some magic API tools in your continuous integration and make a good API grow up to be a great API.
 seo:
   title: Ensure consistent APIs with Redocly and GitHub Actions
   description: Put some magic API tools in your continuous integration and make a good API grow up to be a great API.
 author: lorna-mitchell
-date: 2024-05-15
+publishedDate: "2024-05-15"
 categories:
-  - openapi
+  - api-governance:review-workflows
 image: Redocly_blog_7.jpg
 ---
-
 Having great tooling to support your API standards is really important.
 By making that tooling part of your development lifecycle, you can always be confident that every change meets the expected standard.
 To help you achieve this setup, today's article shows how to add linting to your project using GitHub Actions.

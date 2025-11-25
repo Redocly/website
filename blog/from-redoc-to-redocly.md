@@ -1,16 +1,15 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: From ReDoc to Redoc.ly
 seo:
   title: From ReDoc to Redoc.ly
 author: roman-hotsiy
-date: 2019-11-08
+publishedDate: "2019-11-08"
 categories:
-  - api
+  - redocly:redoc
 image: blog-4.jpg
 excerpt: As you probably know ReDoc was developed by Rebilly which is a payment/subscription company. Their main product is an API and it has a lot of endpoints and advanced payloads.
 ---
-
 Originally published at [medium.com/redoc-ly/from-redoc-to-redoc-ly](https://medium.com/redoc-ly/from-redoc-to-redoc-ly-42319f100ac0)
 on Apr 26, 2018
 

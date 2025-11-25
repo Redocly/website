@@ -1,20 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: April 2021 updates
 description: Round up of the features and enhancements, plus some documentation news from April 2021
 seo:
   title: April 2021 updates
   description: Round up of the features and enhancements, plus some documentation news from April 2021
 author: swapnil-ogale
-date: 2021-05-04
+publishedDate: "2021-05-04"
 categories:
-  - dev-portal
-  - docs-as-code
-  - tech-writers
-  - developer-experience
+  - redocly:product-updates
 image: blog-1.png
 ---
-
 At Redocly, in April, we have been akin the proverbial duck - calm on the surface, but paddling furiously underneath with our API suite of products.
 
 While our developers are working on some exciting new features and tweaking our products to perform optimally, our documentation team has been kicking a few goals too.

@@ -23,7 +23,21 @@ export const buildAndSortBlogPosts = async (postRoutes, context, outdir) => {
       slug: route.slug,
       author: metadata.authors.get(frontmatter.author),
       categories: (frontmatter.categories || [])
-        .map((categoryId) => metadata.categories.get(categoryId))
+        .map((categoryId) => {
+          const categoryData = metadata.categories.get(categoryId);
+          if (!categoryData) return null;
+          
+          if (categoryData.category && categoryData.subcategory) {
+            return categoryData; 
+          } else {
+            return { 
+              category: {
+                id: categoryData.id, 
+                label: categoryData.label 
+              }
+            };
+          }
+        })
         .filter(Boolean),
       image:
         frontmatter.image &&
@@ -46,16 +60,35 @@ async function transformMetadata(metadata, cwd, outdir) {
     });
   }
 
+  // Mapping category and subcategory
   for (const category of metadata.categories) {
+    // Store main category as-is (for posts with just main categories)
     categories.set(category.id, category);
+
+    // Store subcategories with both category and subcategory objects
+    if (category.subcategories) {
+      for (const subcategory of category.subcategories) {
+        const fullId = `${category.id}:${subcategory.id}`;
+        categories.set(fullId, {
+          category: {
+            id: category.id,
+            label: category.label
+          },
+          subcategory: {
+            id: subcategory.id,
+            label: subcategory.label
+          }
+        });
+      }
+    }
   }
 
   return { authors, categories };
 }
 
 function sortByDatePredicate(a, b) {
-  const aDate = new Date(a.date);
-  const bDate = new Date(b.date);
+  const aDate = new Date(a.publishedDate);
+  const bDate = new Date(b.publishedDate);
 
   if (aDate.getTime() > bDate.getTime()) {
     return -1;

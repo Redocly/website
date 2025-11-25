@@ -1,15 +1,14 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Redocly Arazzo product roadmap
 seo:
   title: Redocly Arazzo product roadmap
 author: adam-altman
-date: 2024-07-29
+publishedDate: "2024-07-29"
 categories:
-  - company-update
+  - redocly:product-updates
 image: arazzo-roadmap.webp
 ---
-
 I'm often asked about what Redocly is doing for Arazzo.
 Even more so, after Lorna's blog post about [Arazzo linting](./arazzo-linting.md).
 This blog post summarizes our current and future plans.

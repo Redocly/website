@@ -1,19 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: Using Redocly tools for better OpenAPI development
 description: Learn how Redocly's open source tools create a better developer experience when building an OpenAPI description.
 seo:
   title: Using Redocly tools for better OpenAPI development
   description: Learn how Redocly's open source tools create a better developer experience when building an OpenAPI description.
 author: taylor-krusen
-date: 2023-11-08
+publishedDate: "2023-11-08"
 categories:
-  - openapi
-  - cli
-  - vs-code
+  - api-specifications:openapi
+  - redocly:redocly-cli
 image: blog-8.jpg
 ---
-
 One of the hardest problems when building APIs is getting the API description started. Whether you're designing a brand new API or retrofitting an existing API into an OpenAPI description, staring at a blank canvas can feel daunting. Recently, when working on a greenfield OpenAPI project, I faced this exact problem. Thankfully, my experience has taught me to reach for tools to help me work with OpenAPI more effectively.
 
 In this blog post, I'll introduce the Museum API and examine the impact that best-in-class developer tools can have on your OpenAPI development process. I'll share my experience building the Museum API and how Redocly's open source tools were used along the way.

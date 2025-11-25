@@ -1,19 +1,16 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: April 2022 updates
 description: Round-up of product features and enhancements from April 2022
 seo:
   title: April 2022 updates
   description: Round-up of product features and enhancements from April 2022
 author: ivana-devcic
-date: 2022-05-02
+publishedDate: "2022-05-02"
 categories:
-  - tech-writers
-  - developer-experience
-  - api
+  - redocly:product-updates
 image: blog-7.jpg
 ---
-
 If we had to describe our April activities in two words, "spring cleaning" would nail it. Sometimes you just have to tackle that technical debt and focus on fixing bugs in order to make progress.
 
 At the same time, Redocly developers are working on several new features behind the scenes. Some of those features are mind-blowing...but you'll have to wait for the next monthly update to read about them.

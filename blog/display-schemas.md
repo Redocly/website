@@ -1,18 +1,17 @@
 ---
-template: '../@theme/templates/BlogPost'
+template: ../@theme/templates/BlogPost
 title: How to display schemas separately from operations in API docs?
 description: Answering real questions about how to use OpenAPI to design and describe APIs.
 seo:
   title: How to display schemas separately from operations in API docs?
   description: Answering real questions about how to use OpenAPI to design and describe APIs.
 author: adam-altman
-date: 2022-05-26
+publishedDate: "2022-05-26"
 categories:
-  - openapi
-  - api-design
+  - api-specifications:openapi
+  - api-lifecycle:design
 image: blog-5.png
 ---
-
 # Display schemas separately from operations
 
 ## Question

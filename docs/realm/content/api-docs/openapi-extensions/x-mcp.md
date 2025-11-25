@@ -2,8 +2,6 @@
 
 {% admonition type="warning" name="Beta feature" %}
 This feature is currently experimental and may be subject to changes.
-
-Currently, only the `tools` section is included in the generated documentation.
 {% /admonition %}
 
 Use `x-mcp` to document MCP (Model Context Protocol) servers for consumers.

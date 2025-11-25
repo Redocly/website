@@ -11,6 +11,7 @@ import { ReefIcon } from '../_icons/Reef';
 import { RevelIcon } from '../_icons/Revel';
 import { RedocIcon } from '../_icons/Redoc';
 import { ReuniteIcon } from '../_icons/Reunite';
+import { ReplayIcon } from '../_icons/Replay';
 import { processChanges, type ChangelogEntry } from '../_utils/changelog';
 
 const PRODUCT_ICONS = {
@@ -19,6 +20,7 @@ const PRODUCT_ICONS = {
   '@redocly/revel': RevelIcon,
   '@redocly/redoc': RedocIcon,
   'reunite': ReuniteIcon,
+  'replay': ReplayIcon,
 };
 
 type ChangelogSectionProps = {
