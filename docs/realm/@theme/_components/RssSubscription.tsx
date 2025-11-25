@@ -70,9 +70,9 @@ export function RssSubscription({ className, initialSelectedProducts }: RssSubsc
   }, [initialSelectedProducts, isRssModalOpen]);
 
   const rssFeedUrl = React.useMemo(() => {
-    if (typeof window === 'undefined') return '/api/docs/changelog/feed.xml';
+    if (typeof window === 'undefined') return '/docs/changelog/feed.xml';
     const baseUrl = window.location.origin;
-    const url = new URL(`${baseUrl}/api/docs/changelog/feed.xml`);
+    const url = new URL(`${baseUrl}/docs/changelog/feed.xml`);
 
     // Add products as a single comma-separated array parameter
     if (selectedProducts.length > 0) {

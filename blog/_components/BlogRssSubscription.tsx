@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { CDNIcon } from '@redocly/theme/icons/CDNIcon/CDNIcon';
 
-const BLOG_RSS_PATH = '/api/feed.xml';
+const BLOG_RSS_PATH = '/blog/feed.xml';
 
 interface BlogRssSubscriptionProps {
   className?: string;
