@@ -35827,16 +35827,6 @@ reunite:
       patch:
         - Skipped visual review check on external Git providers for pull requests targeting non-default branches.
     dependencies: {}
-  v2025-11-25.1:
-    timestamp: 1764065653000
-    changes:
-      minor:
-        - Removed `Theme components` panel from editor page for unsupported products `REDOC`, `REEF`, and `REDOC_REEF`.
-        - >-
-          Fixed product type and version resolution during component ejection in the `Theme components` panel when `package.json` specifies a product
-          below the organization’s subscription plan.
-      patch: []
-    dependencies: {}
 replay:
   0.0.1:
     timestamp: 1720069800000
