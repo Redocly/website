@@ -1,53 +1,37 @@
 import type { ApiFunctionsContext, PageStaticData } from '@redocly/config';
 import { readSharedData } from '@redocly/realm/dist/server/utils/shared-data.js';
+import { formatRssDate, escapeXml } from '../@theme/utils/rss';
 
 const BLOG_SLUG = '/blog/';
 const RSS_ITEMS_LIMIT = 50;
 const ALL_POSTS_SHARED_DATA_ID = 'blog-posts';
 
-type BlogCategory = { label: string };
+type BlogCategory = { category: { label: string }; subcategory?: { label: string } };
 type BlogAuthor = { name?: string };
 type BlogPost = {
   slug: string;
   title: string;
   description?: string;
-  date: string;
+  publishedDate: string;
   author?: BlogAuthor;
   categories: BlogCategory[];
 };
 
-function escapeXml(unsafe: string): string {
-  return unsafe
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;');
-}
 
 function escapeXmlForCategories(unsafe: string): string {
-  return unsafe
-    .replace(/&(?!(amp|lt|gt|quot|apos);)/g, '&amp;')
-    .replace(/</g, '&lt;');
+  return unsafe.replace(/&(?!(amp|lt|gt|quot|apos);)/g, '&amp;').replace(/</g, '&lt;');
 }
 
-function formatRssDate(timestamp: string): string {
-  return new Date(timestamp).toUTCString();
-}
 
 function buildRssItem(post: BlogPost, origin: string): string {
   const link = `${origin}${post.slug}`;
-  const pubDate = formatRssDate(post.date);
-  
-  const categoriesArray = Array.isArray(post.categories) ? post.categories : [];
-  const categoryLabels = categoriesArray
-    .map((cat) => (typeof cat?.label === 'string' ? cat.label : null))
-    .filter((label): label is string => Boolean(label));
-  
+  const pubDate = formatRssDate(post.publishedDate);
+
+  const categoryLabels = post.categories.map(formatCategory);
   const categoriesXml = categoryLabels
-    .map(label => `<category>${escapeXmlForCategories(label)}</category>`)
+    .map((label) => `<category>${escapeXmlForCategories(label)}</category>`)
     .join('');
-  
+
   const author = escapeXml(post.author?.name || 'Redocly Team');
   const description = `<p>${(post.description || '').replace(/]]>/g, ']]&gt;')}</p>`;
 
@@ -64,89 +48,21 @@ function buildRssItem(post: BlogPost, origin: string): string {
   `;
 }
 
-function mapCategory(category: any): BlogCategory | null {
-  if (!category || typeof category !== 'object') {
-    return null;
-  }
-
-  const mainLabel = typeof category.category?.label === 'string' ? category.category.label : '';
-  const subLabel = typeof category.subcategory?.label === 'string' ? category.subcategory.label : '';
-
-  if (mainLabel && subLabel) {
-    return { label: `${mainLabel} > ${subLabel}` };
-  }
-
-  if (mainLabel) {
-    return { label: mainLabel };
-  }
-
-  return null;
+function formatCategory(category: BlogCategory): string {
+  return category.category.label + (category.subcategory ? ` > ${category.subcategory.label}` : '');
 }
 
-function mapToBlogPost(post: any): BlogPost | null {
-  if (!post) {
-    return null;
-  }
-
-  const postDate = post.publishedDate || post.date;
-  const slug = typeof post.slug === 'string' ? post.slug : '';
-  const title = typeof post.title === 'string' ? post.title : '';
-
-  if (!slug || !title || !postDate) {
-    return null;
-  }
-
-  const categoriesList = Array.isArray(post.categories) ? post.categories : [];
-  const categories: BlogCategory[] = categoriesList
-    .map(mapCategory)
-    .filter((cat): cat is BlogCategory => cat !== null);
-
-  let authorName: string | undefined;
-  if (typeof post.author === 'object' && typeof post.author?.name === 'string') {
-    authorName = post.author.name;
-  } else if (typeof post.author === 'string') {
-    authorName = post.author;
-  }
-
-  const author: BlogAuthor = { name: authorName || 'Redocly Team' };
-
-  return {
-    slug,
-    title,
-    description: typeof post.description === 'string' ? post.description : '',
-    date: postDate,
-    author,
-    categories,
-  };
-}
-
-async function readBlogPosts(outdir?: string): Promise<BlogPost[]> {
-  if (!outdir) {
-    console.warn('[Blog RSS] Missing outdir. Cannot read shared blog posts data.');
-    return [];
-  }
-
+async function readBlogPosts(outdir: string): Promise<BlogPost[]> {
   try {
-    const sharedData = await readSharedData(ALL_POSTS_SHARED_DATA_ID, outdir);
+    const sharedData = (await readSharedData(ALL_POSTS_SHARED_DATA_ID, outdir)) as {
+      posts: BlogPost[];
+    };
     if (!sharedData) {
       console.warn('[Blog RSS] No shared data found for blog posts.');
       return [];
     }
 
-    const postsSource = Array.isArray((sharedData as any).posts)
-      ? (sharedData as any).posts
-      : Array.isArray(sharedData)
-        ? sharedData
-        : [];
-
-    if (!Array.isArray(postsSource)) {
-      console.warn('[Blog RSS] Shared data does not contain a posts array.');
-      return [];
-    }
-
-    return postsSource
-      .map(mapToBlogPost)
-      .filter((post): post is BlogPost => Boolean(post));
+    return sharedData.posts;
   } catch (error) {
     console.error('[Blog RSS] Failed to read shared blog posts data:', error);
     return [];
@@ -156,16 +72,15 @@ async function readBlogPosts(outdir?: string): Promise<BlogPost[]> {
 export default async function blogRssHandler(
   request: Request,
   context: ApiFunctionsContext,
-  staticData: PageStaticData
+  staticData: PageStaticData,
 ) {
   try {
-    const outdir =
-      typeof staticData?.props?.outdir === 'string' ? staticData.props.outdir : undefined;
+    const outdir = String(staticData.props?.outdir || '');
     const posts = await readBlogPosts(outdir);
 
     const sortedPosts = posts
-      .filter((post) => Boolean(post.date))
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .filter((post) => Boolean(post.publishedDate))
+      .sort((a, b) => new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime())
       .slice(0, RSS_ITEMS_LIMIT);
 
     const url = new URL(request.url);
@@ -179,7 +94,7 @@ export default async function blogRssHandler(
     <link>${escapeXml(origin + BLOG_SLUG)}</link>
     <description>Latest posts from the Redocly blog.</description>
     <language>en-us</language>
-    <lastBuildDate>${formatRssDate(new Date().toISOString())}</lastBuildDate>
+    <lastBuildDate>${formatRssDate(Date.now())}</lastBuildDate>
     <atom:link href="${escapeXml(request.url)}" rel="self" type="application/rss+xml"/>
     ${rssItems}
   </channel>
@@ -210,4 +125,3 @@ export default async function blogRssHandler(
     });
   }
 }
-

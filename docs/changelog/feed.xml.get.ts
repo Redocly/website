@@ -2,6 +2,7 @@ import type { ApiFunctionsContext } from '@redocly/config';
 // @ts-ignore
 import changelogData from '../realm/changelogs.yaml';
 import { hasChanges, type ChangelogEntry, processChanges } from '../realm/@theme/_utils/changelog';
+import { escapeXml, formatRssDate } from '../../@theme/utils/rss';
 
 type ChangelogData = Record<string, Record<string, ChangelogEntry>>;
 
@@ -52,19 +53,6 @@ function resolveDepsDeep(
   resolved.changes.minor = Array.from(new Set(resolved.changes.minor));
   resolved.changes.patch = Array.from(new Set(resolved.changes.patch));
   return resolved;
-}
-
-function escapeXml(unsafe: string): string {
-  return unsafe
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;');
-}
-
-function formatRssDate(timestamp: number): string {
-  return new Date(timestamp).toUTCString();
 }
 
 function buildRssItem(item: ChangelogWithDeps, baseUrl: string): string {
