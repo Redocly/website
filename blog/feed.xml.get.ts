@@ -1,16 +1,9 @@
-import type { ApiFunctionsContext } from '@redocly/config';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { promises as fs } from 'node:fs';
-
-import { extractFrontmatter, parseSimpleYaml } from '../utils/frontmatter';
+import type { ApiFunctionsContext, PageStaticData } from '@redocly/config';
+import { readSharedData } from '@redocly/realm/dist/server/utils/shared-data.js';
 
 const BLOG_SLUG = '/blog/';
 const RSS_ITEMS_LIMIT = 50;
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const rootDir = path.resolve(__dirname, '..');
+const ALL_POSTS_SHARED_DATA_ID = 'blog-posts';
 
 type BlogCategory = { label: string };
 type BlogAuthor = { name?: string };
@@ -22,57 +15,6 @@ type BlogPost = {
   author?: BlogAuthor;
   categories: BlogCategory[];
 };
-
-/**
- * Normalize a category to a string label, handling various input formats
- */
-function normalizeCategoryToLabel(category: any): string | null {
-  if (!category) {
-    return null;
-  }
-  
-  if (typeof category === 'string') {
-    return category.trim() || null;
-  }
-  
-  if (typeof category === 'object') {
-    if (typeof category.label === 'string') {
-      return category.label.trim() || null;
-    }
-    
-    if (category.category && typeof category.category === 'object') {
-      const catLabel = typeof category.category.label === 'string' ? category.category.label : '';
-      const subcatLabel = category.subcategory && typeof category.subcategory.label === 'string' 
-        ? category.subcategory.label 
-        : '';
-      
-      if (catLabel) {
-        return subcatLabel ? `${catLabel} > ${subcatLabel}` : catLabel;
-      }
-    }
-    
-    for (const key in category) {
-      if (typeof category[key] === 'string' && key.includes('label')) {
-        return category[key].trim() || null;
-      }
-    }
-  }
-  
-  try {
-    const jsonStr = JSON.stringify(category);
-    if (jsonStr && jsonStr !== '{}' && jsonStr !== '[object Object]') {
-      return jsonStr;
-    }
-  } catch (e) {
-    // Ignore errors
-  }
-  
-  const str = String(category);
-  if (str === '[object Object]') {
-    return null;
-  }
-  return str.trim() || null;
-}
 
 function escapeXml(unsafe: string): string {
   return unsafe
@@ -93,13 +35,13 @@ function formatRssDate(timestamp: string): string {
   return new Date(timestamp).toUTCString();
 }
 
-function buildRssItem(post: any, origin: string): string {
+function buildRssItem(post: BlogPost, origin: string): string {
   const link = `${origin}${post.slug}`;
   const pubDate = formatRssDate(post.date);
   
   const categoriesArray = Array.isArray(post.categories) ? post.categories : [];
   const categoryLabels = categoriesArray
-    .map((cat) => normalizeCategoryToLabel(cat))
+    .map((cat) => (typeof cat?.label === 'string' ? cat.label : null))
     .filter((label): label is string => Boolean(label));
   
   const categoriesXml = categoryLabels
@@ -122,225 +64,104 @@ function buildRssItem(post: any, origin: string): string {
   `;
 }
 
-async function readBlogPostsFromPageData(rootDir: string): Promise<BlogPost[]> {
-  const pageDataPath = path.join(rootDir, 'client/page-data/shared/blog-posts.json');
-  
-  try {
-    const blogPostsData = JSON.parse(await fs.readFile(pageDataPath, 'utf8'));
-    const postsData = blogPostsData.posts || [];
-    
-    const posts: BlogPost[] = postsData.map((post: any) => {
-      const postDate = post.publishedDate || post.date || '';
-      const categoriesList = Array.isArray(post.categories) ? post.categories : [];
-      const categories: BlogCategory[] = categoriesList
-        .map((cat: any) => {
-          const label = normalizeCategoryToLabel(cat);
-          return label ? { label } : null;
-        })
-        .filter((cat): cat is BlogCategory => cat !== null);
-
-      return {
-        slug: post.slug || '',
-        title: post.title || '',
-        description: post.description || '',
-        date: postDate,
-        author: typeof post.author === 'object' && post.author?.name 
-          ? post.author 
-          : { name: post.author?.name || 'Redocly Team' },
-        categories,
-      };
-    });
-
-    return posts;
-  } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : String(error);
-    throw new Error(`Failed to read blog posts from ${pageDataPath}: ${errorMessage}`);
-  }
-}
-
-type BlogMetadata = {
-  authors?: Array<{ id: string; name?: string }>;
-  categories?: Array<{ 
-    id: string; 
-    label?: string;
-    subcategories?: Array<{ id: string; label?: string }>;
-  }>;
-};
-
-async function readBlogMetadata(blogDir: string): Promise<BlogMetadata> {
-  const metadataPath = path.join(blogDir, 'metadata', 'blog-metadata.yaml');
-  try {
-    const metadataContent = await fs.readFile(metadataPath, 'utf8');
-    return parseSimpleYaml(metadataContent) as BlogMetadata;
-  } catch {
-    return {};
-  }
-}
-
-let cachedBlogDir: string | null | undefined;
-
-async function directoryExists(dirPath: string): Promise<boolean> {
-  try {
-    const stats = await fs.stat(dirPath);
-    return stats.isDirectory();
-  } catch {
-    return false;
-  }
-}
-
-async function resolveBlogDir(): Promise<string | null> {
-  if (cachedBlogDir !== undefined) {
-    return cachedBlogDir;
+function mapCategory(category: any): BlogCategory | null {
+  if (!category || typeof category !== 'object') {
+    return null;
   }
 
-  const candidates = new Set<string>();
-  candidates.add(path.join(rootDir, 'blog'));
-  candidates.add(path.join(process.cwd(), 'blog'));
+  const mainLabel = typeof category.category?.label === 'string' ? category.category.label : '';
+  const subLabel = typeof category.subcategory?.label === 'string' ? category.subcategory.label : '';
 
-  const traverseDepth = 6;
-  for (let depth = 0; depth < traverseDepth; depth += 1) {
-    const segments = Array(depth + 1).fill('..');
-    candidates.add(path.resolve(__dirname, ...segments, 'blog'));
+  if (mainLabel && subLabel) {
+    return { label: `${mainLabel} > ${subLabel}` };
   }
 
-  for (const candidate of Array.from(candidates)) {
-    if (await directoryExists(candidate)) {
-      cachedBlogDir = candidate;
-      return candidate;
-    }
+  if (mainLabel) {
+    return { label: mainLabel };
   }
 
-  cachedBlogDir = null;
   return null;
 }
 
-async function readBlogPostsFromFilesystem(): Promise<BlogPost[]> {
-  const blogDir = await resolveBlogDir();
-  if (!blogDir) {
-    console.warn('[Blog RSS] Blog directory not found for filesystem fallback.');
-    return [];
+function mapToBlogPost(post: any): BlogPost | null {
+  if (!post) {
+    return null;
   }
 
-  const metadata = await readBlogMetadata(blogDir);
-  const authorMap = new Map<string, string>();
-  const categoryMap = new Map<string, string>();
+  const postDate = post.publishedDate || post.date;
+  const slug = typeof post.slug === 'string' ? post.slug : '';
+  const title = typeof post.title === 'string' ? post.title : '';
 
-  metadata.authors?.forEach((author) => {
-    if (author?.id) {
-      authorMap.set(author.id, author.name || author.id);
-    }
-  });
-
-  metadata.categories?.forEach((category) => {
-    if (category?.id && category?.label) {
-      categoryMap.set(category.id, category.label);
-      
-      if (category.subcategories) {
-        category.subcategories.forEach((subcategory) => {
-          if (subcategory?.id && subcategory?.label) {
-            const fullId = `${category.id}:${subcategory.id}`;
-            categoryMap.set(fullId, `${category.label} > ${subcategory.label}`);
-          }
-        });
-      }
-    }
-  });
-
-  let entries: import('fs').Dirent[];
-  try {
-    entries = await fs.readdir(blogDir, { withFileTypes: true });
-  } catch (error) {
-    console.warn('[Blog RSS] Failed to read blog directory contents:', error);
-    return [];
-  }
-  const posts: BlogPost[] = [];
-
-  for (const entry of entries) {
-    if (!entry.isFile() || !entry.name.endsWith('.md')) continue;
-
-    const filePath = path.join(blogDir, entry.name);
-    const content = await fs.readFile(filePath, 'utf8');
-    const frontmatter = extractFrontmatter(content) as Record<string, any>;
-
-    // Support both old (date) and new (publishedDate) field names
-    const postDate = frontmatter?.publishedDate || frontmatter?.date;
-    if (!frontmatter?.title || !postDate) {
-      continue;
-    }
-
-    const slugName = entry.name.replace(/\.md$/, '');
-    const categoriesInput = Array.isArray(frontmatter.categories) ? frontmatter.categories : [];
-    
-    const categoryStrings = categoriesInput.map((cat: any) => {
-      if (typeof cat === 'string') {
-        return cat;
-      }
-      if (typeof cat === 'object' && cat !== null && !Array.isArray(cat)) {
-        const keys = Object.keys(cat);
-        if (keys.length === 1) {
-          return `${keys[0]}:${cat[keys[0]]}`;
-        }
-        if (cat.label) {
-          return String(cat.label);
-        }
-      }
-      return String(cat);
-    });
-    
-    const categories: BlogCategory[] = categoryStrings
-      .filter((catStr: any) => catStr != null && typeof catStr === 'string' && catStr.trim())
-      .map((categoryIdStr: string) => {
-        const label = categoryMap.get(categoryIdStr);
-        if (label) {
-          return { label };
-        }
-        if (categoryIdStr.includes(':')) {
-          const [catId, subcatId] = categoryIdStr.split(':');
-          const mainLabel = categoryMap.get(catId) || catId;
-          const category = metadata.categories?.find(c => c.id === catId);
-          const subcategory = category?.subcategories?.find(s => s.id === subcatId);
-          if (subcategory?.label) {
-            return { label: `${mainLabel} > ${subcategory.label}` };
-          }
-          return { label: mainLabel };
-        }
-        return { label: categoryIdStr };
-      })
-      .filter((cat): cat is BlogCategory => Boolean(cat && cat.label && cat.label !== '[object Object]'));
-
-    const authorId = typeof frontmatter.author === 'string' ? frontmatter.author : '';
-    const author = authorId ? { name: authorMap.get(authorId) || authorId } : undefined;
-
-    posts.push({
-      slug: `${BLOG_SLUG}${slugName}`,
-      title: frontmatter.title,
-      description: frontmatter.description || '',
-      date: postDate,
-      author,
-      categories,
-    });
+  if (!slug || !title || !postDate) {
+    return null;
   }
 
-  return posts;
+  const categoriesList = Array.isArray(post.categories) ? post.categories : [];
+  const categories: BlogCategory[] = categoriesList
+    .map(mapCategory)
+    .filter((cat): cat is BlogCategory => cat !== null);
+
+  let authorName: string | undefined;
+  if (typeof post.author === 'object' && typeof post.author?.name === 'string') {
+    authorName = post.author.name;
+  } else if (typeof post.author === 'string') {
+    authorName = post.author;
+  }
+
+  const author: BlogAuthor = { name: authorName || 'Redocly Team' };
+
+  return {
+    slug,
+    title,
+    description: typeof post.description === 'string' ? post.description : '',
+    date: postDate,
+    author,
+    categories,
+  };
 }
 
-async function readBlogPosts(rootDir: string): Promise<BlogPost[]> {
-  const filesystemPosts = await readBlogPostsFromFilesystem();
-  if (filesystemPosts.length > 0) {
-    return filesystemPosts;
+async function readBlogPosts(outdir?: string): Promise<BlogPost[]> {
+  if (!outdir) {
+    console.warn('[Blog RSS] Missing outdir. Cannot read shared blog posts data.');
+    return [];
   }
-  
+
   try {
-    return await readBlogPostsFromPageData(rootDir);
+    const sharedData = await readSharedData(ALL_POSTS_SHARED_DATA_ID, outdir);
+    if (!sharedData) {
+      console.warn('[Blog RSS] No shared data found for blog posts.');
+      return [];
+    }
+
+    const postsSource = Array.isArray((sharedData as any).posts)
+      ? (sharedData as any).posts
+      : Array.isArray(sharedData)
+        ? sharedData
+        : [];
+
+    if (!Array.isArray(postsSource)) {
+      console.warn('[Blog RSS] Shared data does not contain a posts array.');
+      return [];
+    }
+
+    return postsSource
+      .map(mapToBlogPost)
+      .filter((post): post is BlogPost => Boolean(post));
   } catch (error) {
-    console.warn('[Blog RSS] Failed to read blog posts from both filesystem and page data:', error);
+    console.error('[Blog RSS] Failed to read shared blog posts data:', error);
     return [];
   }
 }
 
-export default async function blogRssHandler(request: Request, context: ApiFunctionsContext) {
+export default async function blogRssHandler(
+  request: Request,
+  context: ApiFunctionsContext,
+  staticData: PageStaticData
+) {
   try {
-    const posts = await readBlogPosts(rootDir);
+    const outdir =
+      typeof staticData?.props?.outdir === 'string' ? staticData.props.outdir : undefined;
+    const posts = await readBlogPosts(outdir);
 
     const sortedPosts = posts
       .filter((post) => Boolean(post.date))
