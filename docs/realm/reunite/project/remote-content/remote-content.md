@@ -67,7 +67,28 @@ If a nested remote content folder has the same name as a folder on the same leve
 
 ## Content sources
 
-Add remote content from a Git repository, a publicly-available URL, or push from your own platforms to Redocly in the following ways:
+Remote content supports three types of sources:
+
+{% table %}
+- Source type
+- Description
+- Best for
+---
+- Git repository
+- Connect to GitHub, GitLab, Azure DevOps, or Bitbucket repositories.
+  Supports both folders and single files.
+- Content maintained in version control with automatic sync on changes.
+---
+- URL
+- Fetch from a publicly-available URL at configurable intervals (15 minutes to 12 hours).
+- Single files like API descriptions already published elsewhere.
+---
+- CI/CD push
+- Push content from external systems using GitHub Actions or CLI commands.
+- Content in repositories Redocly cannot access, or custom CI/CD pipelines.
+{% /table %}
+
+Add remote content from these sources in the following ways:
 
 - Use our [GitHub application](https://github.com/apps/redocly/) on the organization where the remote content is for the simplest setup.
 - For other Git integrations, use an access token to grant Redocly access to the remote content.
@@ -80,26 +101,52 @@ The following sections provide more information about each type of content sourc
 
 ### Use a Git integration
 
-Git as a remote content source connects to and continuously synchronizes either an entire repository or a specific sub-folder in that repository.
+Git as a remote content source connects to and continuously synchronizes content from a repository.
+You can include an entire repository, a specific folder, or a single file.
 
 To add remote content from Git, provide:
 
 - Repository organization (GitHub/Azure) or namespace (GitLab)
 - Repository (GitHub/Azure) or project (GitLab) name
 - Branch name
-- (Optional) Folder name if the content to use is in a single folder
+- (Optional) Folder or file path if syncing specific content rather than the entire repository
 
 Read the [how-to guide for setting up remote content on your provider](../remote-content/index.md).
 
+#### Content type options
+
+When adding Git-based remote content, choose one of the following content types:
+
+{% tabs %}
+{% tab label="Folder" %}
+To include all files from a repository or specific folder:
+
+1. In the file tree, click **+ > New remote folder**.
+1. Click **Add Git repository**.
+
+{% /tab %}
+
+{% tab label="File" %}
+
+To include a single file from a repository.
+
+1. In the file tree, click **+ > New remote file**.
+1. Click **Add Git repository**.
+
+{% /tab %}
+
+{% /tabs %}
+
 #### Remote contents repository folder
 
-If you select to only include a specific folder from a repository, only files listed in the folder are included in your Redocly project.
+If you select to include a specific folder from a repository, only files listed in the folder are included in your Redocly project.
 Project builds start only when a branch contains changes to the connected folder.
 
 #### Remote contents repository file
 
-If you choose to include only a specific file from a repository, only this file is included in your Redocly project.
+If you choose to include a single file from a repository, only this file is included in your Redocly project.
 Project builds start when a branch contains changes to the connected file.
+This option is useful for syncing individual API description files or configuration files.
 
 #### Pull requests and remote branches
 
@@ -164,5 +211,6 @@ If Auto-merge is enabled, it takes effect at this point.
 ## Resources
 
 - **[How to add remote content](./index.md)** - Step-by-step guide to integrate external content sources into your Reunite projects for centralized documentation management
+- **[Edit remote content settings](./edit-remote-content-folder.md)** - Update provider, repository, branch, or sync settings for existing remote content
 - **[Remote content verification](./verify-remote-content.md)** - Understand automatic verification processes that ensure remote content integrity and compatibility with your project
 - **[Connect a Git provider](../connect-git/connect-git-provider.md)** - Source entire projects from external repositories while maintaining access to Reunite's collaborative editing and workflow features

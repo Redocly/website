@@ -30,6 +30,24 @@ The **Deployments preview** setting determines whether Reunite generates preview
 - **Any pull request**: Enables previews for pull requests against your selected branches, allowing you to review changes before merging
 - **None**: Disables preview builds entirely to conserve resources
 
+### Preview deployments from forked repositories
+
+By default, Reunite does not generate preview deployments for pull requests from forked repositories.
+This security measure prevents external contributors from running potentially malicious code during the build process.
+
+To enable preview deployments for forked PRs:
+
+1. Navigate to **Settings > Branches and deployments** in your project.
+1. Select the **Enable previews for external pull requests (forks)** checkbox.
+1. Save your changes.
+
+{% admonition type="warning" name="Security consideration" %}
+Be cautious when enabling this setting.
+External pull requests can contain malicious code that runs during the build process.
+This could compromise your environment and expose sensitive data and secrets from your pipeline.
+Only enable this setting if you trust the contributors to your repository or have additional security measures in place.
+{% /admonition %}
+
 ## Build process and API bundling
 
 When Reunite processes your project during a build, it performs several important steps in a specific order to ensure your APIs are properly validated, transformed, and optimized:
@@ -55,6 +73,7 @@ This systematic approach ensures that all your APIs are consistently processed a
 
 ## Resources
 
+- **[Use previews](./use-previews.md)** - View and share preview deployments for branches with open pull requests
 - **[Redocly CLI rules documentation](https://redocly.com/docs/cli/rules)** - Configure linting rules in your redocly.yaml file to maintain API description quality and consistency
 - **[Decorators configuration](https://redocly.com/docs/cli/decorators)** - Transform and enhance your API descriptions with custom decorators during the build process
 - **[Bundle command reference](https://redocly.com/docs/cli/commands/bundle)** - Understand the API description bundling process for optimized deployment and distribution
