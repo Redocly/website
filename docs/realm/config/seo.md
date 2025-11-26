@@ -278,15 +278,21 @@ A [sitemap](https://en.wikipedia.org/wiki/Site_map) is a resource that lists all
 
 ### Generate a sitemap
 
-When the `siteUrl` is set, Redocly automatically generates and hosts a sitemap file for your project at build time. The sitemap is accessible at `https://your-domain.com/sitemap.xml`.
+When the `siteUrl` is set, Redocly automatically generates and hosts a sitemap file for your project at build time.
+The sitemap is accessible at `https://your-domain.com/sitemap.xml`.
 
 ```yaml
 seo:
   siteUrl: https://docs.example.com
 ```
 
-{% admonition type="info" name="No protected content" %}
-The generated sitemap **does not** include any pages protected by [role based access controls](../access/index.md) or pages listed in the [ignore configuration](./ignore.md).
+{% admonition type="info" name="What's excluded from sitemap" %}
+The generated sitemap **does not** include:
+- pages protected by [role-based access controls](../access/index.md) (non-public pages)
+- pages listed in the [ignore configuration](./ignore.md)
+
+The sitemap **does include** pages with [`excludeFromSearch: true`](./front-matter-config.md#front-matter-only-options) in their front matter.
+The `excludeFromSearch` option only affects search indexing, not sitemap generation.
 {% /admonition %}
 
 The sitemap data is formatted to standard search engine expectations, using the `<loc>` tag:

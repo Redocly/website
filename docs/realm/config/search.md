@@ -252,10 +252,15 @@ Redocly AI Search runs in **inference-only mode** and does not train or fine-tun
 For details, see the [AI Search data usage FAQ](../faq/ai-search-privacy.md).
 
 {% admonition type="info" %}
-AI search and Typesense search indexes are only built on the production branch.
-Changes to search configuration or content exclusions, like the `excludeFromSearch` front matter option, may not immediately appear in search results until the next production build.
+
+The `excludeFromSearch` option excludes content from search indexes only.
+It *does not** exclude pages from `sitemap.xml`.
+See [excludeFromSearch documentation](./front-matter-config.md#front-matter-only-options) for details.
+
 {% /admonition %}
 
+AI search and Typesense search indexes are only built on the production branch.
+Changes to search configuration or content exclusions, like the `excludeFromSearch` front matter option, may not immediately appear in search results until the next production build.
 
 ## Apply facets to files
 
