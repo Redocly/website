@@ -16,6 +16,7 @@ import { HighlightContext } from './@theme/_components/Highlight';
 import { ChangelogSection, SectionHeader, matchesSearch } from './@theme/_components/ChangelogSection';
 import { NextReleases } from './@theme/_components/NextReleases';
 import { hasChanges, type ChangelogEntry } from './@theme/_utils/changelog';
+import { RssSubscription } from './@theme/_components/RssSubscription';
 
 // @ts-ignore
 import changelogData from './changelogs.yaml';
@@ -150,8 +151,8 @@ export default function Changelog() {
           record: {
             ...item.record,
             changes: {
-              minor: [...new Set(allChanges.flatMap(i => i.record.changes.minor))],
-              patch: [...new Set(allChanges.flatMap(i => i.record.changes.patch))],
+              minor: Array.from(new Set(allChanges.flatMap(i => i.record.changes.minor))),
+              patch: Array.from(new Set(allChanges.flatMap(i => i.record.changes.patch))),
             }
           }
         };
@@ -181,19 +182,6 @@ export default function Changelog() {
 
   const [itemsToRender, setItemsToRender] = React.useState(DEFAULT_ITEMS_TO_RENDER);
 
-  React.useEffect(() => {
-    const hash = window.location.hash;
-    if (!hash) return;
-    const recordIdx = filteredChangelogs.findIndex(({ packageName, version }) => {
-      return hash === `#${(SHORT_NAMES[packageName] || packageName) + '@' + version}`;
-    });
-
-    setItemsToRender(Math.max(DEFAULT_ITEMS_TO_RENDER, recordIdx + 5));
-    setTimeout(() => {
-      document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  }, []);
-
   const filteredChangelogs = React.useMemo(() => {
     return changelogsWithResolvedDeps.filter(({ packageName, version, record }) => {
       if (!packages.includes(SHORT_NAMES[packageName] || packageName)) {
@@ -207,6 +195,47 @@ export default function Changelog() {
       });
     });
   }, [packages, changelogsWithResolvedDeps, searchTerm]);
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const url = new URL(window.location.href);
+    const releaseParam = url.searchParams.get('release');
+    const hash = url.hash;
+
+    let targetId: string | null = null;
+    if (hash) {
+      targetId = hash.slice(1);
+    } else if (releaseParam) {
+      try {
+        targetId = decodeURIComponent(releaseParam);
+      } catch {
+        targetId = releaseParam;
+      }
+    }
+
+    if (!targetId) return;
+
+    const recordIdx = filteredChangelogs.findIndex(({ packageName, version }) => {
+      return targetId === `${(SHORT_NAMES[packageName] || packageName) + '@' + version}`;
+    });
+
+    if (recordIdx === -1) return;
+
+    setItemsToRender(Math.max(DEFAULT_ITEMS_TO_RENDER, recordIdx + 5));
+    setTimeout(() => {
+      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+
+    if (releaseParam && !hash) {
+      url.searchParams.delete('release');
+      const searchString = url.searchParams.toString();
+      const cleanedUrl = `${url.origin}${url.pathname}${searchString ? `?${searchString}` : ''}#${targetId}`;
+      window.history.replaceState({}, '', cleanedUrl);
+    }
+  }, []); 
 
   function resolveDepsDeep(entry: ChangelogEntry, seen: string[] = []): ChangelogEntry {
     const resolved = { ...entry };
@@ -249,9 +278,12 @@ export default function Changelog() {
       <Wrapper>
         <DocumentationLayout tableOfContent={null} feedback={null}>
           <Markdown>
-            <Heading level={1} id="changelog">
-              Changelog
-            </Heading>
+            <HeaderSection>
+              <CustomHeading level={1} id="changelog">
+                Changelog
+              </CustomHeading>
+              <RssSubscription initialSelectedProducts={packages} />
+            </HeaderSection>
             <ControlsWrap>
               <Dropdown
                 closeOnClick={false}
@@ -407,7 +439,7 @@ const ControlsWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 24px;
+  align-items: center;
   gap: 12px;
   flex-wrap: wrap;
 
@@ -421,6 +453,19 @@ const ControlsWrap = styled.div`
       background: transparent;
     }
   }
+`;
+
+const HeaderSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+`;
+
+const CustomHeading = styled(Heading)`
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 `;
 
 const ShowMoreSection = styled.div`

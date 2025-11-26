@@ -20,7 +20,7 @@ type NextChangelogItem = {
   version: string;
 };
 
-type ShortNameValues = typeof SHORT_NAMES;
+type ShortNameValues = typeof SHORT_NAMES[keyof typeof SHORT_NAMES];
 
 type NextReleasesProps = {
   nextChangelogs: Record<string, NextChangelogItem[]>;
