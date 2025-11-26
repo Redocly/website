@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const BLOG_SLUG = '/blog/';
 const ABOUT_SLUG = '/about/';
+const BLOG_METADATA_PATH = 'blog/metadata/blog-metadata.yaml';
 
 const LATEST_POSTS_SHARED_DATA_ID = 'blog-latest-posts';
 const ALL_POSTS_SHARED_DATA_ID = 'blog-posts';
@@ -57,12 +58,42 @@ export default function themePlugin() {
         templateId: blogTemplateId,
         hasClientRoutes: true,
       });
+      
+      const metadataContentRecord = await context.cache.load(BLOG_METADATA_PATH, 'yaml');
+      const categories = metadataContentRecord.data.categories || [];
+
+      for (const category of categories) {
+        actions.addRoute({
+          slug: `/blog/category/${category.id}/`,
+          fsPath: `/blog/category/${category.id}/`,
+          templateId: blogTemplateId,
+        });
+
+        if (category.subcategories) {
+          for (const subcategory of category.subcategories) {
+            actions.addRoute({
+              slug: `/blog/category/${category.id}/${subcategory.id}/`,
+              fsPath: `/blog/category/${category.id}/${subcategory.id}/`,
+              templateId: blogTemplateId,
+            });
+          }
+        }
+      }
     },
     async afterRoutesCreated(actions, context) {
       // Existing blog data processing
       const postRoutes = actions
         .getAllRoutes()
-        .filter((route) => route.slug.startsWith(BLOG_SLUG) && route.slug !== BLOG_SLUG);
+        .filter((route) => 
+          route.slug.startsWith(BLOG_SLUG) && 
+          route.slug !== BLOG_SLUG && 
+          !route.slug.startsWith('/blog/category/')
+        );
+
+      const categoryRoutes = actions
+        .getAllRoutes()
+        .filter((route) => route.slug.startsWith('/blog/category/'));
+
       const postsData = await buildAndSortBlogPosts(postRoutes, context, actions.outdir);
 
       const latestPosts = postsData.posts.slice(0, 3);
@@ -83,6 +114,16 @@ export default function themePlugin() {
 
         postRoute.metadata = { ...postRoute.metadata, ...post };
       }
+    
+      // Add all posts shared data to category routes
+      for (const categoryRoute of categoryRoutes) {
+        actions.addRouteSharedData(
+          categoryRoute.slug,
+          ALL_POSTS_SHARED_DATA_ID,
+          ALL_POSTS_SHARED_DATA_ID,
+        );
+      }
+
       // Add latest posts shared data to the about page
       actions.addRouteSharedData(
         ABOUT_SLUG,
