@@ -35994,3 +35994,25 @@ replay:
       '@redocly/theme': 0.59.0-next.8
       '@redocly/openapi-docs': 3.15.0-next.9
       '@redocly/replay': 0.18.0-next.9
+  0.8.0:
+    timestamp: 1764237270000
+    changes:
+      minor:
+        - Added support for `additionalOperations` in OpenAPI 3.2.0.
+        - >-
+          Added `hideOtherSecuritySchemes` option to `@redocly/replay` to hide the **Other** security scheme group in the **Authorization type**
+          dropdown, displaying only the documented schemes from the OpenAPI description.
+        - Added `Hard restart` button.
+      patch:
+        - Fixed `@redocly/replay` package install failures caused by a missing dependency.
+        - Fixed path parameters separated by underscores being parsed as a single parameter.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.11.1`.
+        - Fixed saving Replay inputs for multiple security schemes from useConfigureReplay.
+        - Fixed `Replay` application crash in development mode.
+        - Enter prerelease mode.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.10.0`.
+        - Added user profile menu with logout option.
+        - Persist operation state after disconnect.
+        - Introduced Replay update system.
+    dependencies:
+      '@redocly/theme': 0.59.0
