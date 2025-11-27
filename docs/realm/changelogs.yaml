@@ -1,4 +1,20 @@
 '@redocly/realm':
+  0.128.0-next.5:
+    timestamp: 1764251275000
+    changes:
+      minor:
+        - Added GraphQL overview section customization with the `graphql.info` configuration option.
+        - Added search and curation support for `React` pages.
+      patch:
+        - Fixed overlapping of the `Ask AI` button with code examples
+        - Fixed an issue where an `index.yaml` OpenAPI file in the project root caused all pages to return a 500 error.
+        - Added support for downloading OpenAPI files up to 15MB.
+    dependencies:
+      '@redocly/asyncapi-docs': 1.5.0-next.5
+      '@redocly/openapi-docs': 3.16.0-next.5
+      '@redocly/theme': 0.60.0-next.4
+      '@redocly/graphql-docs': 1.5.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.13.0-next.5
   0.128.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -4863,6 +4879,20 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.128.0-next.5:
+    timestamp: 1764251275000
+    changes:
+      minor:
+        - Added search and curation support for `React` pages.
+      patch:
+        - Fixed overlapping of the `Ask AI` button with code examples
+        - Added support for downloading OpenAPI files up to 15MB.
+    dependencies:
+      '@redocly/asyncapi-docs': 1.5.0-next.5
+      '@redocly/openapi-docs': 3.16.0-next.5
+      '@redocly/theme': 0.60.0-next.4
+      '@redocly/graphql-docs': 1.5.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.13.0-next.5
   0.128.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -8929,6 +8959,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.128.0-next.5:
+    timestamp: 1764251275000
+    changes:
+      minor:
+        - Added search and curation support for `React` pages.
+      patch:
+        - Fixed overlapping of the `Ask AI` button with code examples
+        - Added support for downloading OpenAPI files up to 15MB.
+    dependencies:
+      '@redocly/asyncapi-docs': 1.5.0-next.5
+      '@redocly/openapi-docs': 3.16.0-next.5
+      '@redocly/theme': 0.60.0-next.4
+      '@redocly/graphql-docs': 1.5.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.13.0-next.5
   0.128.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -12986,6 +13030,22 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.128.0-next.5:
+    timestamp: 1764251275000
+    changes:
+      minor:
+        - Added GraphQL overview section customization with the `graphql.info` configuration option.
+        - Added search and curation support for `React` pages.
+      patch:
+        - Fixed overlapping of the `Ask AI` button with code examples
+        - Fixed an issue where an `index.yaml` OpenAPI file in the project root caused all pages to return a 500 error.
+        - Added support for downloading OpenAPI files up to 15MB.
+    dependencies:
+      '@redocly/asyncapi-docs': 1.5.0-next.5
+      '@redocly/openapi-docs': 3.16.0-next.5
+      '@redocly/theme': 0.60.0-next.4
+      '@redocly/graphql-docs': 1.5.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.13.0-next.5
   0.128.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -17072,6 +17132,14 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.60.0-next.4:
+    timestamp: 1764251275000
+    changes:
+      minor: []
+      patch:
+        - Fixed overlapping of the `Ask AI` button with code examples
+        - Added option to set the selected tab in the `Tabs` component.
+    dependencies: {}
   0.60.0-next.3:
     timestamp: 1763549522000
     changes:
@@ -19540,6 +19608,15 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.16.0-next.5:
+    timestamp: 1764251275000
+    changes:
+      minor: []
+      patch:
+        - Fixed incorrect detection of `Recursive` and `Complex` types and restored missing title and description display for `oneOf`.
+        - Finalized `x-mcp` support by adding resources and prompts.
+    dependencies:
+      '@redocly/replay': 0.19.0-next.5
   3.16.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -22530,6 +22607,13 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.5.0-next.1:
+    timestamp: 1764251275000
+    changes:
+      minor:
+        - Added GraphQL overview section customization with the `graphql.info` configuration option.
+      patch: []
+    dependencies: {}
   1.5.0-next.0:
     timestamp: 1762810677000
     changes:
@@ -23837,6 +23921,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.11.0-next.5:
+    timestamp: 1764251275000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.60.0-next.4
+      '@redocly/realm': 0.128.0-next.5
+      '@redocly/redoc': 0.128.0-next.5
+      '@redocly/redoc-reef': 0.128.0-next.5
+      '@redocly/redoc-revel': 0.128.0-next.5
   1.11.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -28129,6 +28224,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.13.0-next.5:
+    timestamp: 1764251275000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.16.0-next.5
   0.13.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -30485,6 +30587,20 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.19.0-next.5:
+    timestamp: 1764251275000
+    changes:
+      minor:
+        - Added code generation for requests in `Try It`.
+        - Updated layout of the response panel.
+      patch:
+        - Fixed tabs overlapping the drop-down list in Step view.
+        - Added `Preview` tab that closes automatically when inactive.
+        - Added search functionality to all editors in `Try it`.
+        - Fixed incorrect tab selection in the Step view after switching tabs.
+        - Improved stability in development mode.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.4
   0.19.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -31982,6 +32098,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.11.0-next.4:
+    timestamp: 1764251275000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.60.0-next.4
   0.11.0-next.3:
     timestamp: 1763549522000
     changes:
@@ -33377,6 +33500,15 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.5.0-next.5:
+    timestamp: 1764251275000
+    changes:
+      minor: []
+      patch:
+        - Fixed Avro schema support to correctly handle named schemas.
+    dependencies:
+      '@redocly/openapi-docs': 3.16.0-next.5
+      '@redocly/theme': 0.60.0-next.4
   1.5.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -36002,10 +36134,7 @@ replay:
         - >-
           Added `hideOtherSecuritySchemes` option to `@redocly/replay` to hide the **Other** security scheme group in the **Authorization type**
           dropdown, displaying only the documented schemes from the OpenAPI description.
-        - Added code generator for `steps`.
-        - Updated layout of the response panel.
         - Added `Hard restart` button.
-        - Added search functionality to all editors.
       patch:
         - Fixed `@redocly/replay` package install failures caused by a missing dependency.
         - Fixed path parameters separated by underscores being parsed as a single parameter.
@@ -36014,7 +36143,6 @@ replay:
         - Fixed `Replay` application crash in development mode.
         - Enter prerelease mode.
         - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.10.0`.
-        - Improved initialization to reduce startup time.
         - Added user profile menu with logout option.
         - Persist operation state after disconnect.
         - Introduced Replay update system.
