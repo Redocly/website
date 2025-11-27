@@ -36002,10 +36002,7 @@ replay:
         - >-
           Added `hideOtherSecuritySchemes` option to `@redocly/replay` to hide the **Other** security scheme group in the **Authorization type**
           dropdown, displaying only the documented schemes from the OpenAPI description.
-        - Added code generator for `steps`.
-        - Updated layout of the response panel.
         - Added `Hard restart` button.
-        - Added search functionality to all editors.
       patch:
         - Fixed `@redocly/replay` package install failures caused by a missing dependency.
         - Fixed path parameters separated by underscores being parsed as a single parameter.
@@ -36014,7 +36011,6 @@ replay:
         - Fixed `Replay` application crash in development mode.
         - Enter prerelease mode.
         - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.10.0`.
-        - Improved initialization to reduce startup time.
         - Added user profile menu with logout option.
         - Persist operation state after disconnect.
         - Introduced Replay update system.
