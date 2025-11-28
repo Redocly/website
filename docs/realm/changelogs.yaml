@@ -36256,6 +36256,7 @@ replay:
       minor:
         - Added code generation for requests in `Try It`.
         - Updated layout of the response panel.
+        - Added error handling and displayed error messages in tabs.
         - Added code generator for `steps`.
         - Added `Hard restart` button.
         - Added search functionality to all editors.
@@ -36265,6 +36266,7 @@ replay:
         - Added search functionality to all editors in `Try it`.
         - Fixed incorrect tab selection in the Step view after switching tabs.
         - Improved stability in development mode.
+        - Fixed issues with adding and removing collections and APIs.
         - Improved initialization to reduce startup time.
         - Added user profile menu with logout option.
         - Persist operation state after disconnect.
