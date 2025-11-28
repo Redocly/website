@@ -36250,3 +36250,23 @@ replay:
         - Introduced Replay update system.
     dependencies:
       '@redocly/theme': 0.59.0
+  0.9.0:
+    timestamp: 1764333732000
+    changes:
+      minor:
+        - Added code generation for requests in `Try It`.
+        - Updated layout of the response panel.
+        - Added code generator for `steps`.
+        - Added `Hard restart` button.
+        - Added search functionality to all editors.
+      patch:
+        - Fixed tabs overlapping the drop-down list in Step view.
+        - Added `Preview` tab that closes automatically when inactive.
+        - Added search functionality to all editors in `Try it`.
+        - Fixed incorrect tab selection in the Step view after switching tabs.
+        - Improved stability in development mode.
+        - Improved initialization to reduce startup time.
+        - Added user profile menu with logout option.
+        - Persist operation state after disconnect.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.4
