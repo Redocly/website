@@ -154,6 +154,8 @@ footer:
           page: ./pages/legal/sla.md
         - label: DPA
           page: ./pages/legal/data-processing-addendum.md
+        - label: Privacy Policy
+          page: ./pages/legal/privacy-notice.md
     - group: Contact us
       items:
         - label: Contact Us
