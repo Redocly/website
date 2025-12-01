@@ -36340,7 +36340,6 @@ replay:
       minor:
         - Added error handling and displayed error messages in tabs.
       patch:
-        - Fixed OAuth redirection in the `Generate token` flow of the desktop app.
         - Fixed issues with adding and removing collections and APIs.
         - Fixed application crash after removing connected to step OpenAPI operation in definition.
     dependencies: {}
