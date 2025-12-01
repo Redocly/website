@@ -374,7 +374,7 @@ const ProductGrid = styled.div`
 
 const ProductButton = styled.button<{ $active: boolean }>`
   border: 1px solid ${({ $active }) => ($active ? 'var(--border-color-primary)' : 'var(--border-color-secondary)')};
-  background: ${({ $active }) => ($active ? 'var(--bg-color-hover)' : 'var(--bg-color-tonal)')};
+  background: ${({ $active }) => ($active ? 'var(--bg-color-active)' : 'var(--bg-color-tonal)')};
   border-radius: 4px;
   padding: 12px 16px;
   display: flex;
@@ -391,7 +391,7 @@ const ProductButton = styled.button<{ $active: boolean }>`
   &:hover:not([aria-disabled='true']) {
     border-color: var(--border-color-primary);
     background: var(--bg-color-hover);
-    transform: translateY(-1px);
+    transform: none;
   }
 
   &[aria-disabled='true'] {

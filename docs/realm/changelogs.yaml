@@ -36324,7 +36324,6 @@ replay:
         - Added code generation for requests in `Try It`.
         - Updated layout of the response panel.
         - Added code generator for `steps`.
-        - Added `Hard restart` button.
         - Added search functionality to all editors.
       patch:
         - Fixed tabs overlapping the drop-down list in Step view.
@@ -36333,7 +36332,5 @@ replay:
         - Fixed incorrect tab selection in the Step view after switching tabs.
         - Improved stability in development mode.
         - Improved initialization to reduce startup time.
-        - Added user profile menu with logout option.
-        - Persist operation state after disconnect.
     dependencies:
       '@redocly/theme': 0.60.0-next.4
