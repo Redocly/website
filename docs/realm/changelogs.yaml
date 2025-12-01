@@ -36334,3 +36334,12 @@ replay:
         - Improved initialization to reduce startup time.
     dependencies:
       '@redocly/theme': 0.60.0-next.4
+  0.9.1:
+    timestamp: 1764604582000
+    changes:
+      minor:
+        - Added error handling and displayed error messages in tabs.
+      patch:
+        - Fixed issues with adding and removing collections and APIs.
+        - Fixed application crash after removing connected to step OpenAPI operation in definition.
+    dependencies: {}
