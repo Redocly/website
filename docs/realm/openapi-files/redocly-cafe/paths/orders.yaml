@@ -1,0 +1,103 @@
+get:
+  tags:
+    - Orders
+  summary: List orders
+  description: Retrieve a collection of orders with optional filtering and pagination.
+  operationId: listOrders
+  security:
+    - OAuth2:
+        - orders:read
+  parameters:
+    - $ref: ../components/parameters/Filter.yaml
+    - $ref: ../components/parameters/Sort.yaml
+    - $ref: ../components/parameters/Limit.yaml
+    - $ref: ../components/parameters/After.yaml
+    - $ref: ../components/parameters/Before.yaml
+    - $ref: ../components/parameters/Search.yaml
+  responses:
+    '200':
+      description: Successful operation.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OrderList.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '500':
+      $ref: ../components/responses/InternalServerError.yaml
+post:
+  tags:
+    - Orders
+  summary: Create order
+  description: >
+    Create a new order.
+
+    Order items cannot be changed - if they need to be updated, the order should
+    be canceled and a new one placed.
+
+    Orders cannot be deleted, only canceled.
+  operationId: createOrder
+  security:
+    - OAuth2:
+        - orders:write
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            customerName:
+              type: string
+              description: >
+                Name of the customer who placed the order.
+
+                Must start and end with a letter, and can contain letters,
+                spaces, hyphens, and apostrophes (e.g., "John Doe", "Mary-Jane",
+                "O'Brien").
+            orderItems:
+              type: array
+              description: List of items to include in the order.
+              minItems: 1
+              items:
+                type: object
+                properties:
+                  menuItemId:
+                    type: string
+                    description: ID of the menu item to add to the order.
+                  quantity:
+                    type: integer
+                    minimum: 1
+                    description: Quantity of the menu item.
+                  discount:
+                    type: integer
+                    minimum: 0
+                    description: Discount amount in cents (absolute value).
+                    default: 0
+                  comment:
+                    type: string
+                    maxLength: 500
+                    description: Optional comment for the order item (e.g., "No sugar").
+                required:
+                  - menuItemId
+                  - quantity
+          required:
+            - customerName
+            - orderItems
+  responses:
+    '201':
+      description: Order placed successfully.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Order.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '403':
+      $ref: ../components/responses/Forbidden.yaml
+    '500':
+      $ref: ../components/responses/InternalServerError.yaml

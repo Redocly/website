@@ -16,7 +16,6 @@ import { HighlightContext } from './@theme/_components/Highlight';
 import { ChangelogSection, SectionHeader, matchesSearch } from './@theme/_components/ChangelogSection';
 import { NextReleases } from './@theme/_components/NextReleases';
 import { hasChanges, type ChangelogEntry } from './@theme/_utils/changelog';
-import { RssSubscription } from './@theme/_components/RssSubscription';
 
 // @ts-ignore
 import changelogData from './changelogs.yaml';
@@ -250,12 +249,9 @@ export default function Changelog() {
       <Wrapper>
         <DocumentationLayout tableOfContent={null} feedback={null}>
           <Markdown>
-            <HeaderSection>
-              <CustomHeading level={1} id="changelog">
-                Changelog
-              </CustomHeading>
-              <RssSubscription initialSelectedProducts={packages} />
-            </HeaderSection>
+            <Heading level={1} id="changelog">
+              Changelog
+            </Heading>
             <ControlsWrap>
               <Dropdown
                 closeOnClick={false}
@@ -448,17 +444,4 @@ const PreviousReleasesSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
-`;
-
-const HeaderSection = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-`;
-
-const CustomHeading = styled(Heading)`
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
 `;

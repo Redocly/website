@@ -1,0 +1,100 @@
+get:
+  tags:
+    - Orders
+  summary: Get order by ID
+  description: Retrieve a single order by its ID.
+  operationId: getOrderById
+  security: []
+  parameters:
+    - $ref: ../components/parameters/OrderId.yaml
+  responses:
+    '200':
+      description: Successful operation.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Order.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '500':
+      $ref: ../components/responses/InternalServerError.yaml
+patch:
+  tags:
+    - Orders
+  summary: Update order
+  description: >
+    Update an existing order status.
+
+    Order items cannot be changed - if they need to be updated, the order should
+    be canceled and a new one placed.
+  operationId: updateOrder
+  security:
+    - OAuth2:
+        - orders:write
+  parameters:
+    - $ref: ../components/parameters/OrderId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          description: >-
+            Partial order update using JSON Merge Patch - only include fields to
+            update.
+          properties:
+            status:
+              type: string
+              enum:
+                - placed
+                - preparing
+                - completed
+                - canceled
+          required:
+            - status
+  responses:
+    '200':
+      description: Order updated successfully.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Order.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '403':
+      $ref: ../components/responses/Forbidden.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '500':
+      $ref: ../components/responses/InternalServerError.yaml
+delete:
+  tags:
+    - Orders
+  summary: Cancel order
+  description: |
+    Cancel the order.
+    Orders cannot be deleted, only canceled.
+  operationId: cancelOrder
+  security:
+    - OAuth2:
+        - orders:write
+  parameters:
+    - $ref: ../components/parameters/OrderId.yaml
+  responses:
+    '204':
+      description: Order status updated successfully.
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '403':
+      $ref: ../components/responses/Forbidden.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '500':
+      $ref: ../components/responses/InternalServerError.yaml

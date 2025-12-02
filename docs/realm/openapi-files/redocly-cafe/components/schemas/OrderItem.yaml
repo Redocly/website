@@ -1,0 +1,21 @@
+type: object
+properties:
+  menuItem:
+    $ref: ./MenuItem.yaml
+    description: Menu item that is part of the order.
+  quantity:
+    type: integer
+    minimum: 1
+    description: Quantity of the menu item.
+  discount:
+    type: integer
+    minimum: 0
+    description: Discount amount in cents (absolute value).
+    default: 0
+  comment:
+    type: string
+    maxLength: 500
+    description: Optional comment for the order item (e.g., "No sugar").
+required:
+  - menuItem
+  - quantity

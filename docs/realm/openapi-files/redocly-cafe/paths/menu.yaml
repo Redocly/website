@@ -1,0 +1,57 @@
+get:
+  tags:
+    - Products
+  summary: List menu items
+  description: Retrieve a collection of menu items with optional filtering and pagination.
+  operationId: listMenuItems
+  security: []
+  parameters:
+    - $ref: ../components/parameters/After.yaml
+    - $ref: ../components/parameters/Before.yaml
+    - $ref: ../components/parameters/Sort.yaml
+    - $ref: ../components/parameters/Filter.yaml
+    - $ref: ../components/parameters/Search.yaml
+    - $ref: ../components/parameters/Limit.yaml
+  responses:
+    '200':
+      description: Successful operation.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MenuItemList.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '500':
+      $ref: ../components/responses/InternalServerError.yaml
+post:
+  tags:
+    - Products
+  summary: Create menu item
+  description: Create a new menu item.
+  operationId: createMenuItem
+  security:
+    - OAuth2:
+        - menu:write
+  requestBody:
+    required: true
+    content:
+      multipart/form-data:
+        schema:
+          $ref: ../components/schemas/MenuItem.yaml
+  responses:
+    '201':
+      description: Menu item created successfully.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MenuItem.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '403':
+      $ref: ../components/responses/Forbidden.yaml
+    '409':
+      $ref: ../components/responses/Conflict.yaml
+    '500':
+      $ref: ../components/responses/InternalServerError.yaml

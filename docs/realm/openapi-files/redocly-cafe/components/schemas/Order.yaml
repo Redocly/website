@@ -1,0 +1,62 @@
+type: object
+title: Order
+properties:
+  id:
+    description: Order ID. Unique identifier prefixed with 'order_'.
+    type: string
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    const: order
+    readOnly: true
+  customerName:
+    description: >-
+      Name of the customer who placed the order. Must start and end with a
+      letter, and can contain letters, spaces, hyphens, and apostrophes.
+    type: string
+    pattern: ^[A-Za-z]+(?:[\s'-][A-Za-z]+)*$
+    minLength: 1
+    maxLength: 100
+    examples:
+      - John Doe
+      - Mary-Jane
+      - O'Brien
+      - Jean-Pierre
+  status:
+    description: Order status.
+    type: string
+    enum:
+      - placed
+      - preparing
+      - completed
+      - canceled
+  totalPrice:
+    description: Total order price in cents.
+    type: integer
+    minimum: 0
+    readOnly: true
+  createdAt:
+    description: Created date.
+    type: string
+    format: date-time
+    readOnly: true
+  updatedAt:
+    description: Updated date.
+    type: string
+    format: date-time
+    readOnly: true
+  orderItemIds:
+    description: List of order item IDs.
+    type: array
+    writeOnly: true
+    items:
+      type: string
+required:
+  - id
+  - status
+  - totalPrice
+  - createdAt
+  - updatedAt
+  - customerName
+  - object

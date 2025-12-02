@@ -1,0 +1,17 @@
+type: object
+properties:
+  object:
+    type: string
+    const: list
+    description: Entity name.
+  page:
+    $ref: ./Page.yaml
+  items:
+    type: array
+    minItems: 0
+    items:
+      $ref: ./Order.yaml
+required:
+  - object
+  - page
+  - items
