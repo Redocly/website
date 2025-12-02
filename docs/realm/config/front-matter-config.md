@@ -21,14 +21,8 @@ These options are available exclusively in front matter:
 
 - excludeFromSearch
 - boolean
-- Exclude the page from search results (both AI search and keyword search) and from `llms.txt` file when set to `true`.
+- Exclude the page from search results (both AI search and keyword search), `llms.txt`, and the sitemap when set to `true`.
   Default: `false`.
-
-  {% admonition type="warning" %}
-  The `excludeFromSearch` option **does not** exclude pages from `sitemap.xml`.
-  Pages with `excludeFromSearch: true` still appear in your sitemap.
-  To exclude pages from the sitemap, use [role-based access controls](../access/index.md) to make them non-public, or list them in the [ignore configuration](./ignore.md).
-  {% /admonition %}
 
   Search indexes are only built on the production branch.
   Changes to `excludeFromSearch` may not immediately appear in search results until the next production build.
