@@ -60,8 +60,9 @@ function buildRssItem(item: ChangelogWithDeps, baseUrl: string): string {
   const packageName = SHORT_NAMES[item.packageName] || item.packageName;
   const title = `${packageName} ${item.version}`;
   const releaseId = `${packageName}@${item.version}`;
-  const releaseUrl = `${baseUrl}?release=${encodeURIComponent(releaseId)}`;
-  const guidUrl = `${baseUrl}#${releaseId}`;
+
+  const releaseUrl = `${baseUrl}#${encodeURIComponent(releaseId)}`;
+  const guidUrl = releaseUrl;
   const pubDate = formatRssDate(item.record.timestamp);
   const isoReleaseDate = new Date(item.record.timestamp).toISOString().split('T')[0];
   const featureCount = features.length;
