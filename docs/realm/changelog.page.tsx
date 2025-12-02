@@ -151,8 +151,8 @@ export default function Changelog() {
           record: {
             ...item.record,
             changes: {
-              minor: [...new Set(allChanges.flatMap(i => i.record.changes.minor))],
-              patch: [...new Set(allChanges.flatMap(i => i.record.changes.patch))],
+              minor: Array.from(new Set(allChanges.flatMap(i => i.record.changes.minor))),
+              patch: Array.from(new Set(allChanges.flatMap(i => i.record.changes.patch))),
             }
           }
         };
@@ -182,18 +182,7 @@ export default function Changelog() {
 
   const [itemsToRender, setItemsToRender] = React.useState(DEFAULT_ITEMS_TO_RENDER);
 
-  React.useEffect(() => {
-    const hash = window.location.hash;
-    if (!hash) return;
-    const recordIdx = filteredChangelogs.findIndex(({ packageName, version }) => {
-      return hash === `#${(SHORT_NAMES[packageName] || packageName) + '@' + version}`;
-    });
-
-    setItemsToRender(Math.max(DEFAULT_ITEMS_TO_RENDER, recordIdx + 5));
-    setTimeout(() => {
-      document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  }, []);
+  const hasHandledHashRef = React.useRef(false);
 
   const filteredChangelogs = React.useMemo(() => {
     return changelogsWithResolvedDeps.filter(({ packageName, version, record }) => {
@@ -208,6 +197,53 @@ export default function Changelog() {
       });
     });
   }, [packages, changelogsWithResolvedDeps, searchTerm]);
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const hash = window.location.hash;
+    if (!hash || !hash.startsWith('#')) return;
+
+    const [productPart] = hash.slice(1).split('@');
+    if (!productPart) return;
+
+    const knownShortNames = Object.values(SHORT_NAMES) as ShortNameValues[];
+    if (!knownShortNames.includes(productPart as ShortNameValues)) return;
+
+    setPackages((prev) => {
+      if (prev.includes(productPart as ShortNameValues)) return prev;
+      return [...prev, productPart as ShortNameValues];
+    });
+  }, []);
+
+  React.useEffect(() => {
+    if (hasHandledHashRef.current) return;
+    if (typeof window === 'undefined') return;
+
+    const hash = window.location.hash;
+    if (!hash) {
+      hasHandledHashRef.current = true;
+      return;
+    }
+
+    const recordIdx = filteredChangelogs.findIndex(({ packageName, version }) => {
+      return hash === `#${(SHORT_NAMES[packageName] || packageName) + '@' + version}`;
+    });
+
+    if (recordIdx === -1) {
+      hasHandledHashRef.current = true;
+      return;
+    }
+
+    setItemsToRender((prev) =>
+      Math.max(prev, DEFAULT_ITEMS_TO_RENDER, recordIdx + 5)
+    );
+
+    setTimeout(() => {
+      document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+
+    hasHandledHashRef.current = true;
+  }, [filteredChangelogs]);
 
   function resolveDepsDeep(entry: ChangelogEntry, seen: string[] = []): ChangelogEntry {
     const resolved = { ...entry };
