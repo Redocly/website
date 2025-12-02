@@ -128,8 +128,7 @@ export default async function changelogRssHandler(
       ? productsParam.split(',').map(p => shortNameToPackage[p.trim()] || p.trim()).filter(Boolean)
       : Object.keys(changelogs); // Default to all packages if none specified
     
-    const changelogPath = url.pathname.replace(/\/api\/changelog-rss$/, '/docs/realm/changelog');
-    const baseUrl = `${url.protocol}//${url.host}${changelogPath}`;
+    const baseUrl = 'https://redocly.com/docs/realm/changelog';
     
     const resolved: ChangelogWithDeps[] = [];
     
