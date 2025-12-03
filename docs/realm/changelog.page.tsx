@@ -36,7 +36,7 @@ export const SHORT_NAMES = {
   // replay: 'Replay',
 }
 
-type ShortNameValues = typeof SHORT_NAMES[keyof typeof SHORT_NAMES];
+export type ShortNameValues = typeof SHORT_NAMES[keyof typeof SHORT_NAMES];
 
 const DEFAULT_FILTERS = ['Realm', 'Reunite'];
 const DEFAULT_ITEMS_TO_RENDER = 20;
@@ -151,8 +151,8 @@ export default function Changelog() {
           record: {
             ...item.record,
             changes: {
-              minor: [...new Set(allChanges.flatMap(i => i.record.changes.minor))],
-              patch: [...new Set(allChanges.flatMap(i => i.record.changes.patch))],
+              minor: Array.from(new Set(allChanges.flatMap(i => i.record.changes.minor))),
+              patch: Array.from(new Set(allChanges.flatMap(i => i.record.changes.patch))),
             }
           }
         };
@@ -182,18 +182,27 @@ export default function Changelog() {
 
   const [itemsToRender, setItemsToRender] = React.useState(DEFAULT_ITEMS_TO_RENDER);
 
-  React.useEffect(() => {
-    const hash = window.location.hash;
-    if (!hash) return;
-    const recordIdx = filteredChangelogs.findIndex(({ packageName, version }) => {
-      return hash === `#${(SHORT_NAMES[packageName] || packageName) + '@' + version}`;
-    });
+  const hasHandledHashRef = React.useRef(false);
+  const hasDeferredInitialHashCheckRef = React.useRef(false);
 
-    setItemsToRender(Math.max(DEFAULT_ITEMS_TO_RENDER, recordIdx + 5));
-    setTimeout(() => {
-      document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  }, []);
+  const scrollToHashTarget = (targetId: string): boolean => {
+    const element = document.getElementById(targetId);
+    if (!element) return false;
+
+    const rect = element.getBoundingClientRect();
+    const viewportHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+
+    const isComfortablyPositioned =
+      rect.top >= 0 && rect.top <= viewportHeight * 0.25;
+
+    if (!isComfortablyPositioned) {
+      element.scrollIntoView({ block: 'start' });
+    }
+
+    hasHandledHashRef.current = true;
+    return true;
+  };
 
   const filteredChangelogs = React.useMemo(() => {
     return changelogsWithResolvedDeps.filter(({ packageName, version, record }) => {
@@ -208,6 +217,49 @@ export default function Changelog() {
       });
     });
   }, [packages, changelogsWithResolvedDeps, searchTerm]);
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const hash = window.location.hash;
+    if (!hash || !hash.startsWith('#')) return;
+
+    const [productPart] = hash.slice(1).split('@');
+    if (!productPart) return;
+
+    const knownShortNames = Object.values(SHORT_NAMES) as ShortNameValues[];
+    if (!knownShortNames.includes(productPart as ShortNameValues)) return;
+
+    setPackages([productPart as ShortNameValues]);
+  }, []);
+
+  React.useEffect(() => {
+    if (hasHandledHashRef.current) return;
+    if (typeof window === 'undefined') return;
+
+    const hash = window.location.hash;
+    if (!hash) {
+      hasHandledHashRef.current = true;
+      return;
+    }
+
+    const targetId = hash.slice(1);
+    const hasScrolled = scrollToHashTarget(targetId);
+    if (hasScrolled) return;
+
+    if (!hasDeferredInitialHashCheckRef.current) {
+      hasDeferredInitialHashCheckRef.current = true;
+      window.requestAnimationFrame(() => {
+        scrollToHashTarget(targetId);
+      });
+      return;
+    }
+
+    if (filteredChangelogs.length > itemsToRender) {
+      setItemsToRender((prev) => prev + DEFAULT_ITEMS_TO_RENDER);
+    } else {
+      hasHandledHashRef.current = true;
+    }
+  }, [filteredChangelogs, itemsToRender]);
 
   function resolveDepsDeep(entry: ChangelogEntry, seen: string[] = []): ChangelogEntry {
     const resolved = { ...entry };
@@ -297,7 +349,7 @@ export default function Changelog() {
 
             <NextReleases 
               nextChangelogs={nextChangelogs}
-              packages={packages}
+              packages={packages as ShortNameValues[]}
             />
 
             {latestReleases.length > 0 && (

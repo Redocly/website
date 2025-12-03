@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Button } from '@redocly/theme/components/Button/Button';
 import { ChevronIcon } from '../_icons/Chevron';
 import { ChangelogSection, matchesSearch } from './ChangelogSection';
-import { SHORT_NAMES } from '../../changelog.page';
+import { SHORT_NAMES, type ShortNameValues } from '../../changelog.page';
 import { HighlightContext } from './Highlight';
 
 type NextChangelogItem = {
@@ -19,8 +19,6 @@ type NextChangelogItem = {
   };
   version: string;
 };
-
-type ShortNameValues = typeof SHORT_NAMES;
 
 type NextReleasesProps = {
   nextChangelogs: Record<string, NextChangelogItem[]>;
