@@ -23495,6 +23495,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.4.2:
+    timestamp: 1764768622000
+    changes:
+      minor: []
+      patch:
+        - Fixed parameter deserialization that caused incorrect parsing.
+    dependencies: {}
   0.4.1:
     timestamp: 1764682470000
     changes:
