@@ -62,7 +62,7 @@ export function RssSubscription({ className, initialSelectedProducts }: RssSubsc
   );
   const [includeRc, setIncludeRc] = React.useState(false);
   const urlDisplayRef = React.useRef<HTMLAnchorElement>(null);
-  
+
   React.useEffect(() => {
     if (!isRssModalOpen) {
       setSelectedProducts(sanitizeSelectedProducts(initialSelectedProducts));
@@ -177,9 +177,7 @@ function RssModal({
   }, [onClose]);
   const handleProductToggle = React.useCallback((product: ShortNameValues) => {
     if (selectedProducts.includes(product)) {
-      if (selectedProducts.length > 1) {
-        onProductsChange(selectedProducts.filter((p) => p !== product));
-      }
+      onProductsChange(selectedProducts.filter((p) => p !== product));
     } else {
       onProductsChange([...selectedProducts, product]);
     }
@@ -207,9 +205,8 @@ function RssModal({
             size="small"
             onClick={onClose}
             aria-label="Close RSS configuration modal"
-          >
-            ×
-          </CloseButton>
+            icon={<CDNIcon name="close" size="1em" color="currentColor" />}
+          />
         </ModalHeader>
         <ModalBody>
           <Section>
@@ -217,7 +214,6 @@ function RssModal({
             <ProductGrid role="group" aria-label="Select products to include in RSS feed">
               {PRODUCTS.map(({ label, Icon }) => {
                 const isActive = selectedProducts.includes(label);
-                const isLocked = isActive && selectedProducts.length === 1;
                 return (
                   <ProductButton
                     key={label}
@@ -225,7 +221,6 @@ function RssModal({
                     onClick={() => handleProductToggle(label)}
                     $active={isActive}
                     aria-pressed={isActive}
-                    aria-disabled={isLocked}
                   >
                     <ProductIcon aria-hidden="true">
                       <Icon width={32} height={32} />
@@ -245,8 +240,12 @@ function RssModal({
               <span>Include release candidates</span>
             </ReleaseCandidatesToggle>
           </Section>
-          <Section>
-            <SectionTitle>Your custom RSS Feed URL</SectionTitle>
+          <UrlSection>
+            <SectionTitle>
+              {selectedProducts.length === 0 ?
+                'All products RSS Feed URL' :
+                'Your custom RSS Feed URL'}
+            </SectionTitle>
             <UrlContainer>
               <UrlLink
                 href={rssFeedUrl}
@@ -259,15 +258,15 @@ function RssModal({
               </UrlLink>
               <CopyButton
                 onClick={onCopyUrl}
-                disabled={isCopied}
                 icon={copyButtonIcon}
+                disabled={isCopied}
                 iconPosition="left"
                 variant="primary"
               >
                 {isCopied ? 'Copied' : 'Copy URL'}
               </CopyButton>
             </UrlContainer>
-          </Section>
+          </UrlSection>
         </ModalBody>
       </ModalContent>
     </ModalOverlay>
@@ -334,6 +333,8 @@ const ModalDescription = styled.p`
 `;
 
 const CloseButton = styled(Button)`
+  width: 22px;
+  height: 22px;
 `;
 
 const ModalBody = styled.div`
@@ -346,6 +347,10 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
+`;
+
+const UrlSection = styled(Section)`
+  gap: 24px;
 `;
 
 const SectionTitle = styled.h3`
@@ -388,15 +393,10 @@ const ProductButton = styled.button<{ $active: boolean }>`
   color: var(--text-color-primary);
   font-weight: 600;
 
-  &:hover:not([aria-disabled='true']) {
+  &:hover {
     border-color: var(--border-color-primary);
     background: var(--bg-color-hover);
     transform: none;
-  }
-
-  &[aria-disabled='true'] {
-    cursor: not-allowed;
-    opacity: 0.6;
   }
 `;
 
