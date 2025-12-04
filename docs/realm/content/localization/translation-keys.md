@@ -842,6 +842,24 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- catalog.catalogs.repository.title
+- Title for the "Repositories" catalog view
+- Repositories
+
+---
+
+- catalog.catalogs.repository.description
+- Description for the "Repositories" catalog view
+- Repository entities
+
+---
+
+- catalog.catalogs.repository.switcherLabel
+- Switcher label for the "Repositories" catalog view
+- Repositories
+
+---
+
 - catalog.entity.metadata.title
 - Title for entity metadata section in catalog
 - Metadata

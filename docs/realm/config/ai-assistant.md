@@ -5,6 +5,7 @@ products:
   - Reef
   - Realm
 plans:
+  - Pro
   - Enterprise
   - Enterprise+
 description: Customize the AI assistant functionality in your project.
@@ -23,17 +24,6 @@ Use the `aiAssistant` configuration to:
 - add an **Ask AI** button
 
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "aiAssistant"} /%}
-
-## Supported content
-
-AI Search indexes and searches across all content in your project:
-
-- **API descriptions** - OpenAPI, GraphQL, AsyncAPI, and SOAP description files
-- **Documentation pages** - Markdown files
-- **API versions** - All versions of APIs are indexed and filtered based on the active version
-
-When you have multiple versions of an API, AI Search shows results from the active version by default.
-Results also include default versions from other APIs and non-versioned content.
 
 ## Options
 
@@ -104,11 +94,6 @@ Results also include default versions from other APIs and non-versioned content.
   Default: `sparkles`.
 
 {% /table %}
-
-## Usage limits
-
-AI Search is available on Enterprise and Enterprise Plus plans with a monthly limit of 3500 searches per organization.
-The limit resets at the beginning of each month.
 
 **Data usage and privacy:** Curious how AI Search uses your data?
 Redocly AI Search runs in **inference-only mode** and does not train or fine-tune AI models on your content.
