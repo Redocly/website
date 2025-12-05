@@ -36667,3 +36667,22 @@ replay:
         - Fixed issues with adding and removing collections and APIs.
         - Fixed application crash after removing connected to step OpenAPI operation in definition.
     dependencies: {}
+  0.10.0:
+    timestamp: 1764946655000
+    changes:
+      minor:
+        - Added support to close modals with the `ESC` key or by clicking outside.
+        - Added tree expansion state persistence for the APIs tab in the sidebar.
+        - Updated header design on Replay request page.
+        - Added search functionality to the API Select component.
+      patch:
+        - Fixed an issue with the close button on Replay tabs causing drag.
+        - Fixed error message in `Generate token` to display the correct reason.
+        - Fixed server URL resolution for relative OAuth token URLs in `Replay`.
+        - Fixed a rendering issue that prevented line numbers from appearing in the editor when the content size exceeded certain limits.
+        - Improved the UI of the search in the multi-line editor
+        - Enabled autocompletion in OAuth token generation fields.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.12.1`.
+        - Fixed OAuth redirection in the `Generate token` flow of the desktop app.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.6
