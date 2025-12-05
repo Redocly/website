@@ -16,7 +16,6 @@ import { HighlightContext } from './@theme/_components/Highlight';
 import { ChangelogSection, SectionHeader, matchesSearch } from './@theme/_components/ChangelogSection';
 import { NextReleases } from './@theme/_components/NextReleases';
 import { hasChanges, type ChangelogEntry } from './@theme/_utils/changelog';
-import { RssSubscription } from './@theme/_components/RssSubscription';
 
 // @ts-ignore
 import changelogData from './changelogs.yaml';
@@ -32,11 +31,9 @@ export const SHORT_NAMES = {
   '@redocly/revel': 'Revel',
   '@redocly/redoc': 'Redoc',
   reunite: 'Reunite',
-  // TODO: uncomment before first replay release
-  // replay: 'Replay',
 }
 
-export type ShortNameValues = typeof SHORT_NAMES[keyof typeof SHORT_NAMES];
+type ShortNameValues = typeof SHORT_NAMES[keyof typeof SHORT_NAMES];
 
 const DEFAULT_FILTERS = ['Realm', 'Reunite'];
 const DEFAULT_ITEMS_TO_RENDER = 20;
@@ -151,8 +148,8 @@ export default function Changelog() {
           record: {
             ...item.record,
             changes: {
-              minor: Array.from(new Set(allChanges.flatMap(i => i.record.changes.minor))),
-              patch: Array.from(new Set(allChanges.flatMap(i => i.record.changes.patch))),
+              minor: [...new Set(allChanges.flatMap(i => i.record.changes.minor))],
+              patch: [...new Set(allChanges.flatMap(i => i.record.changes.patch))],
             }
           }
         };
@@ -182,27 +179,18 @@ export default function Changelog() {
 
   const [itemsToRender, setItemsToRender] = React.useState(DEFAULT_ITEMS_TO_RENDER);
 
-  const hasHandledHashRef = React.useRef(false);
-  const hasDeferredInitialHashCheckRef = React.useRef(false);
+  React.useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash) return;
+    const recordIdx = filteredChangelogs.findIndex(({ packageName, version }) => {
+      return hash === `#${(SHORT_NAMES[packageName] || packageName) + '@' + version}`;
+    });
 
-  const scrollToHashTarget = (targetId: string): boolean => {
-    const element = document.getElementById(targetId);
-    if (!element) return false;
-
-    const rect = element.getBoundingClientRect();
-    const viewportHeight =
-      window.innerHeight || document.documentElement.clientHeight;
-
-    const isComfortablyPositioned =
-      rect.top >= 0 && rect.top <= viewportHeight * 0.25;
-
-    if (!isComfortablyPositioned) {
-      element.scrollIntoView({ block: 'start' });
-    }
-
-    hasHandledHashRef.current = true;
-    return true;
-  };
+    setItemsToRender(Math.max(DEFAULT_ITEMS_TO_RENDER, recordIdx + 5));
+    setTimeout(() => {
+      document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }, []);
 
   const filteredChangelogs = React.useMemo(() => {
     return changelogsWithResolvedDeps.filter(({ packageName, version, record }) => {
@@ -217,49 +205,6 @@ export default function Changelog() {
       });
     });
   }, [packages, changelogsWithResolvedDeps, searchTerm]);
-
-  React.useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const hash = window.location.hash;
-    if (!hash || !hash.startsWith('#')) return;
-
-    const [productPart] = hash.slice(1).split('@');
-    if (!productPart) return;
-
-    const knownShortNames = Object.values(SHORT_NAMES) as ShortNameValues[];
-    if (!knownShortNames.includes(productPart as ShortNameValues)) return;
-
-    setPackages([productPart as ShortNameValues]);
-  }, []);
-
-  React.useEffect(() => {
-    if (hasHandledHashRef.current) return;
-    if (typeof window === 'undefined') return;
-
-    const hash = window.location.hash;
-    if (!hash) {
-      hasHandledHashRef.current = true;
-      return;
-    }
-
-    const targetId = hash.slice(1);
-    const hasScrolled = scrollToHashTarget(targetId);
-    if (hasScrolled) return;
-
-    if (!hasDeferredInitialHashCheckRef.current) {
-      hasDeferredInitialHashCheckRef.current = true;
-      window.requestAnimationFrame(() => {
-        scrollToHashTarget(targetId);
-      });
-      return;
-    }
-
-    if (filteredChangelogs.length > itemsToRender) {
-      setItemsToRender((prev) => prev + DEFAULT_ITEMS_TO_RENDER);
-    } else {
-      hasHandledHashRef.current = true;
-    }
-  }, [filteredChangelogs, itemsToRender]);
 
   function resolveDepsDeep(entry: ChangelogEntry, seen: string[] = []): ChangelogEntry {
     const resolved = { ...entry };
@@ -302,12 +247,9 @@ export default function Changelog() {
       <Wrapper>
         <DocumentationLayout tableOfContent={null} feedback={null}>
           <Markdown>
-            <HeaderSection>
-              <CustomHeading level={1} id="changelog">
-                Changelog
-              </CustomHeading>
-              <RssSubscription initialSelectedProducts={packages} />
-            </HeaderSection>
+            <Heading level={1} id="changelog">
+              Changelog
+            </Heading>
             <ControlsWrap>
               <Dropdown
                 closeOnClick={false}
@@ -349,7 +291,7 @@ export default function Changelog() {
 
             <NextReleases 
               nextChangelogs={nextChangelogs}
-              packages={packages as ShortNameValues[]}
+              packages={packages}
             />
 
             {latestReleases.length > 0 && (
@@ -500,17 +442,4 @@ const PreviousReleasesSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
-`;
-
-const HeaderSection = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-`;
-
-const CustomHeading = styled(Heading)`
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
 `;

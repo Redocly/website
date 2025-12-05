@@ -45,12 +45,10 @@ This guide provides a comprehensive overview of available configuration options 
 
   {% configProperty file="search.md" /%}
 
-  {% configProperty file="ai-assistant.md" /%}
+  {% configProperty file="aiAssistant.md" /%}
 {% /configSection %}
 
 {% configSection title="User interface" description="Customize the look and feel of your documentation project with these options." %}
-  {% configProperty file="banner.md" /%}
-
   {% configProperty file="code-snippet.md" /%}
 
   {% configProperty file="breadcrumbs.md" /%}
