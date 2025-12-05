@@ -24,7 +24,20 @@ These configurations are mutually exclusive.
 
 ## Examples
 
-Below is an example of how to protect your entire project by requiring login:
+### Use the access object (recommended)
+
+The recommended way to configure `requiresLogin` is within the `access` object:
+
+```yaml {% title="redocly.yaml" %}
+access:
+  requiresLogin: true
+```
+
+### Root-level configuration (deprecated)
+
+{% admonition type="warning" %}
+**Deprecated:** Root-level `requiresLogin` is still supported for backward compatibility but will show deprecation warnings when used alongside the `access` object. Please migrate to the `access` object format.
+{% /admonition %}
 
 ```yaml {% title="redocly.yaml" %}
 requiresLogin: true
@@ -32,5 +45,6 @@ requiresLogin: true
 
 ## Resources
 
+- **[Access configuration](./access.md)** - Group authentication and access settings together using the `access` object
 - **[RBAC configuration](./rbac.md)** - Complete options for configuring role-based access control as an alternative to requiresLogin for granular permissions
 - **[SSO configuration](./sso.md)** - Discover options for configuring single sign-on to work with requiresLogin for streamlined user authentication
