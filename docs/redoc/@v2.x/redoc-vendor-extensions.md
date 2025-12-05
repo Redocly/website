@@ -2,31 +2,6 @@
 
 You can use the following [vendor extensions](https://redocly.com/docs/openapi-visual-reference/specification-extensions/) with Redoc.
 
-- [Redoc vendor extensions](#redoc-vendor-extensions)
-  - [Swagger Object](#swagger-object)
-    - [x-servers](#x-servers)
-    - [x-tagGroups](#x-taggroups)
-    - [Tag Group Object](#tag-group-object)
-  - [Info Object](#info-object)
-    - [x-logo](#x-logo)
-    - [Logo Object](#logo-object)
-  - [Tag Object](#tag-object)
-    - [x-traitTag](#x-traittag)
-    - [x-displayName](#x-displayname)
-  - [Operation Object vendor extensions](#operation-object-vendor-extensions)
-    - [x-codeSamples](#x-codesamples)
-    - [Code Sample Object](#code-sample-object)
-    - [x-badges](#x-badges)
-  - [Parameter Object](#parameter-object)
-    - [x-examples](#x-examples)
-  - [Response Object vendor extensions](#response-object-vendor-extensions)
-    - [x-summary](#x-summary)
-  - [Schema Object](#schema-object)
-    - [x-nullable](#x-nullable)
-    - [x-additionalPropertiesName](#x-additionalpropertiesname)
-    - [x-explicitMappingOnly](#x-explicitmappingonly)
-    - [x-enumDescriptions](#x-enumdescriptions)
-
 ## Swagger Object
 
 Extends the OpenAPI root [OpenAPI Object](https://redocly.com/docs/openapi-visual-reference/openapi)
@@ -556,3 +531,7 @@ components:
         general: General Admission
       example: event
 ```
+
+## Resources
+
+- **[Configure Redoc](./config.md)** - Explore Redoc's configuration options

@@ -5,7 +5,7 @@ seo:
 
 # Redoc quickstart guide
 
-To render your OpenAPI definition using Redoc, use the following HTML code sample and replace the `spec-url` attribute with the URL or local file address to your description file.
+To render your OpenAPI description using Redoc, use the following HTML code sample and replace the `spec-url` attribute with the URL or local file address to your description file.
 
 ```html
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ To render your OpenAPI definition using Redoc, use the following HTML code sampl
   </head>
   <body>
     <!--
-    Redoc element with link to your OpenAPI definition
+    Redoc element with link to your OpenAPI description
     -->
     <redoc spec-url="https://redocly.github.io/redoc/museum.yaml"></redoc>
     <!--
@@ -40,10 +40,14 @@ To render your OpenAPI definition using Redoc, use the following HTML code sampl
 ```
 
 {% admonition type="info" name="Redoc requires an HTTP server to run locally" %}
-Loading local OpenAPI definitions is impossible without running a web server because of issues with
-[same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and
+To load local OpenAPI descriptions you must run a web server.
+This requirement results from the [same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and
 other security reasons.
-Refer to [Running Redoc locally](./deployment/intro.md#how-to-run-redoc-locally) for more information.
+
+See [Local HTTP server](./deployment/intro.md#local-http-server) for detailed installation instructions.
 {% /admonition %}
 
-For detailed explanation with step-by-step instructions and additional options for using Redoc, refer to the [Redoc deployment guide](./deployment/intro.md).
+## Resources
+
+- **[Redoc deployment guide](./deployment/intro.md)** - Follow step-by-step instructions for setting up your Redoc project
+- **[Configure Redoc](./config.md)** - Explore Redoc's configuration options
