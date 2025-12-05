@@ -151,6 +151,14 @@ When defined in front matter, they override the global configuration:
 - object
 - Set the visibility of the version picker.
 
+---
+
+- [banner](./banner.md)
+- array
+- Configure page-specific announcement banners.
+  When defined in front matter, banners automatically target the page where they're configured and take priority over global banners.
+  The `target` option is not needed for front matter banners.
+
 {% /table %}
 
 ## Examples

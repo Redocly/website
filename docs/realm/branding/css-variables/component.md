@@ -114,6 +114,51 @@
 
 </details>
 
+## Banner
+
+<details>
+<summary>Banner</summary>
+
+```css
+  --banner-button-size: 22px;
+  --banner-button-padding: 3px;
+  --banner-button-font-size: var(--font-size-base);
+  --banner-button-border-radius: var(--border-radius);
+  --banner-button-padding-inline: 1px var(--spacing-sm);
+  --banner-button-line-height: var(--line-height-base);
+  --banner-button-icon-size: 14px;
+  --banner-button-icon-padding: 5px;
+  --banner-button-icon-left-padding: 1px var(--spacing-sm) 1px 10px;
+  --banner-button-icon-right-padding: 1px 10px 1px var(--spacing-sm);
+  --banner-button-margin: 0 var(--spacing-xs);
+  --banner-padding: var(--spacing-xs);
+  --banner-link-decoration: var(--link-decoration-hover);
+  --banner-min-height: 38px;
+  --banner-gap: var(--spacing-xxs);
+
+  --banner-info-bg-color: var(--color-info-base);
+  --banner-info-text-color: var(--color-static-white);
+  --banner-info-icon-color: var(--color-static-white);
+  --banner-info-link-color: var(--banner-info-text-color);
+
+  --banner-success-bg-color: var(--color-success-base);
+  --banner-success-text-color: var(--color-static-white);
+  --banner-success-icon-color: var(--color-static-white);
+  --banner-success-link-color: var(--banner-success-text-color);
+
+  --banner-warning-bg-color: var(--color-warning-base);
+  --banner-warning-text-color: var(--color-black);
+  --banner-warning-icon-color: var(--color-black);
+  --banner-warning-link-color: var(--banner-warning-text-color);
+
+  --banner-error-bg-color: var(--color-error-base);
+  --banner-error-text-color: var(--color-static-white);
+  --banner-error-icon-color: var(--color-static-white);
+  --banner-error-link-color: var(--banner-error-text-color);
+```
+
+</details>
+
 ## Breadcrumbs
 
 <details>
