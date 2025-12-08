@@ -22366,6 +22366,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.41.0:
+    timestamp: 1765205324000
+    changes:
+      minor:
+        - Added `banner` configuration option.
+      patch: []
+    dependencies: {}
   0.40.0:
     timestamp: 1764075697000
     changes:
@@ -23674,6 +23681,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.4.3:
+    timestamp: 1765205324000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.12.3`.
+    dependencies: {}
   0.4.2:
     timestamp: 1764768622000
     changes:
