@@ -36700,3 +36700,14 @@ replay:
         - Fixed OAuth redirection in the `Generate token` flow of the desktop app.
     dependencies:
       '@redocly/theme': 0.60.0-next.6
+  0.10.1:
+    timestamp: 1765208682000
+    changes:
+      minor:
+        - Updated header design on request page.
+      patch:
+        - Fixed issue with adding new workflow.
+        - Fixed minor UI issues.
+        - Changed color of `N/A` request method.
+        - Fixed workflow label in tab and sidebar.
+    dependencies: {}
