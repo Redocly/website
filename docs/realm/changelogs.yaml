@@ -36706,7 +36706,6 @@ replay:
       minor:
         - Updated header design on request page.
       patch:
-        - Fixed issue with adding new workflow.
         - Fixed minor UI issues.
         - Changed color of `N/A` request method.
         - Fixed workflow label in tab and sidebar.
