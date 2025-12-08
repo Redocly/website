@@ -36689,6 +36689,7 @@ replay:
         - Added tree expansion state persistence for the APIs tab in the sidebar.
         - Updated header design on Replay request page.
         - Added search functionality to the API Select component.
+        - Updated header design on request page.
       patch:
         - Fixed an issue with the close button on Replay tabs causing drag.
         - Fixed error message in `Generate token` to display the correct reason.
@@ -36697,6 +36698,9 @@ replay:
         - Improved the UI of the search in the multi-line editor
         - Enabled autocompletion in OAuth token generation fields.
         - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.12.1`.
+        - Fixed minor UI issues.
+        - Changed color of `N/A` request method.
+        - Fixed workflow label in tab and sidebar.
         - Fixed OAuth redirection in the `Generate token` flow of the desktop app.
     dependencies:
       '@redocly/theme': 0.60.0-next.6
