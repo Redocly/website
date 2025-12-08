@@ -12,14 +12,14 @@
     "styled-components": "^5.3.11",
     "@markdoc/markdoc": "0.5.1",
     "highlight-words-core": "1.2.2",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
     "react-router-dom": "^6.21.1"
   },
   "devDependencies": {
     "@redocly/theme": "next",
-    "@types/react": "^19.1.4",
-    "@types/react-dom": "^19.1.4"
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3"
   },
   "nx": {
     "targets": {
