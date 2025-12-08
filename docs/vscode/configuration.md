@@ -21,9 +21,6 @@ The `redocly.yaml` file defines the criteria for validating OpenAPI descriptions
 Add the following example to your `redocly.yaml` file:
 
 ```yaml
-apis:
-  main: path/to/your-openapi.yaml
-  test: path/to/another-openapi.yaml
 extends:
   - recommended
 rules:
