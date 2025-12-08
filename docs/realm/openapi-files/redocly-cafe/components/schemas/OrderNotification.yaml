@@ -1,0 +1,21 @@
+type: object
+required:
+  - orderId
+  - eventType
+  - timestamp
+properties:
+  orderId:
+    type: string
+    description: Unique order identifier.
+  eventType:
+    type: string
+    enum:
+      - order_placed
+      - order_preparing
+      - order_completed
+      - order_canceled
+    description: Type of order event.
+  timestamp:
+    type: string
+    format: date-time
+    description: When the event occurred.

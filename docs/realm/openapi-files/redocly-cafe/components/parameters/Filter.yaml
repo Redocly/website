@@ -1,0 +1,7 @@
+name: filter
+description: Filters the collection items. This field requires a special format.
+in: query
+required: false
+schema:
+  type: string
+example: orderId:order_1234567890

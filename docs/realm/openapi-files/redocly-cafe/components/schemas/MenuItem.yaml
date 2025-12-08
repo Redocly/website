@@ -1,0 +1,67 @@
+type: object
+properties:
+  createdAt:
+    description: Created date.
+    type: string
+    format: date-time
+    readOnly: true
+  updatedAt:
+    description: Updated date.
+    type: string
+    format: date-time
+    readOnly: true
+  id:
+    description: Menu item ID. Unique identifier prefixed with 'product_'.
+    type: string
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    const: menuItem
+    readOnly: true
+  name:
+    description: Menu item name. Must be lowercase letters, optionally hyphenated.
+    type: string
+    pattern: ^[a-z]+(-[a-z]+)*$
+    minLength: 1
+    maxLength: 50
+    examples:
+      - coffee
+      - tea
+      - cake
+      - ice-cream
+  price:
+    description: Price in cents.
+    type: integer
+    minimum: 0
+  photo:
+    writeOnly: true
+    type:
+      - string
+      - 'null'
+    format: binary
+    description: Photo of the menu item. Must be a PNG image and less than 1MB.
+  photoTextDescription:
+    writeOnly: true
+    type:
+      - string
+      - 'null'
+  category:
+    description: Menu item category.
+    type: string
+    enum:
+      - beverage
+      - dessert
+discriminator:
+  propertyName: category
+  mapping:
+    beverage: ./Beverage.yaml
+    dessert: ./Dessert.yaml
+required:
+  - id
+  - name
+  - category
+  - price
+  - createdAt
+  - updatedAt
+  - object

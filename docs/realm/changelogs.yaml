@@ -1,77 +1,4 @@
 '@redocly/realm':
-  0.128.0-next.10:
-    timestamp: 1764940777000
-    changes:
-      minor:
-        - Added a `banner` component to display announcements on project pages.
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.7
-      '@redocly/asyncapi-docs': 1.5.0-next.10
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/openapi-docs': 3.16.0-next.10
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.10
-  0.128.0-next.9:
-    timestamp: 1764934317000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the AI Search form submitted during mid-Japanese input.
-    dependencies:
-      '@redocly/theme': 0.60.0-next.6
-      '@redocly/openapi-docs': 3.16.0-next.9
-      '@redocly/asyncapi-docs': 1.5.0-next.9
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.9
-  0.128.0-next.8:
-    timestamp: 1764777906000
-    changes:
-      minor:
-        - Pages with the `excludeFromSearch` front matter option are also excluded from the sitemap.
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.12.1`.
-        - Fixed scorecard badge linking to a non-existent page when multiple catalogs were defined.
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.8
-      '@redocly/asyncapi-docs': 1.5.0-next.8
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.8
-  0.128.0-next.7:
-    timestamp: 1764584331000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.7
-      '@redocly/asyncapi-docs': 1.5.0-next.7
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.7
-  0.128.0-next.6:
-    timestamp: 1764259093000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.6.0-next.1
-      '@redocly/theme': 0.60.0-next.5
-      '@redocly/asyncapi-docs': 1.5.0-next.6
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/openapi-docs': 3.16.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.6
-  0.128.0-next.5:
-    timestamp: 1764251275000
-    changes:
-      minor:
-        - Added GraphQL overview section customization with the `graphql.info` configuration option.
-        - Added search and curation support for `React` pages.
-      patch:
-        - Fixed overlapping of the `Ask AI` button with code examples
-        - Fixed an issue where an `index.yaml` OpenAPI file in the project root caused all pages to return a 500 error.
-        - Added support for downloading OpenAPI files up to 15MB.
-    dependencies:
-      '@redocly/asyncapi-docs': 1.5.0-next.5
-      '@redocly/openapi-docs': 3.16.0-next.5
-      '@redocly/theme': 0.60.0-next.4
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.5
   0.128.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -4936,77 +4863,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.128.0-next.10:
-    timestamp: 1764940777000
-    changes:
-      minor:
-        - Added a `banner` component to display announcements on project pages.
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.7
-      '@redocly/asyncapi-docs': 1.5.0-next.10
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/openapi-docs': 3.16.0-next.10
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.10
-  0.128.0-next.9:
-    timestamp: 1764934317000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the AI Search form submitted during mid-Japanese input.
-    dependencies:
-      '@redocly/theme': 0.60.0-next.6
-      '@redocly/openapi-docs': 3.16.0-next.9
-      '@redocly/asyncapi-docs': 1.5.0-next.9
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.9
-  0.128.0-next.8:
-    timestamp: 1764777906000
-    changes:
-      minor:
-        - Pages with the `excludeFromSearch` front matter option are also excluded from the sitemap.
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.12.1`.
-        - Fixed scorecard badge linking to a non-existent page when multiple catalogs were defined.
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.8
-      '@redocly/asyncapi-docs': 1.5.0-next.8
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.8
-  0.128.0-next.7:
-    timestamp: 1764584331000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.7
-      '@redocly/asyncapi-docs': 1.5.0-next.7
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.7
-  0.128.0-next.6:
-    timestamp: 1764259093000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.6.0-next.1
-      '@redocly/theme': 0.60.0-next.5
-      '@redocly/asyncapi-docs': 1.5.0-next.6
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/openapi-docs': 3.16.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.6
-  0.128.0-next.5:
-    timestamp: 1764251275000
-    changes:
-      minor:
-        - Added search and curation support for `React` pages.
-      patch:
-        - Fixed overlapping of the `Ask AI` button with code examples
-        - Added support for downloading OpenAPI files up to 15MB.
-    dependencies:
-      '@redocly/asyncapi-docs': 1.5.0-next.5
-      '@redocly/openapi-docs': 3.16.0-next.5
-      '@redocly/theme': 0.60.0-next.4
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.5
   0.128.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -9073,76 +8929,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.128.0-next.10:
-    timestamp: 1764940777000
-    changes:
-      minor:
-        - Added a `banner` component to display announcements on project pages.
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.7
-      '@redocly/asyncapi-docs': 1.5.0-next.10
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/openapi-docs': 3.16.0-next.10
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.10
-  0.128.0-next.9:
-    timestamp: 1764934317000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the AI Search form submitted during mid-Japanese input.
-    dependencies:
-      '@redocly/theme': 0.60.0-next.6
-      '@redocly/openapi-docs': 3.16.0-next.9
-      '@redocly/asyncapi-docs': 1.5.0-next.9
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.9
-  0.128.0-next.8:
-    timestamp: 1764777906000
-    changes:
-      minor:
-        - Pages with the `excludeFromSearch` front matter option are also excluded from the sitemap.
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.12.1`.
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.8
-      '@redocly/asyncapi-docs': 1.5.0-next.8
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.8
-  0.128.0-next.7:
-    timestamp: 1764584331000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.7
-      '@redocly/asyncapi-docs': 1.5.0-next.7
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.7
-  0.128.0-next.6:
-    timestamp: 1764259093000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.6.0-next.1
-      '@redocly/theme': 0.60.0-next.5
-      '@redocly/asyncapi-docs': 1.5.0-next.6
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/openapi-docs': 3.16.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.6
-  0.128.0-next.5:
-    timestamp: 1764251275000
-    changes:
-      minor:
-        - Added search and curation support for `React` pages.
-      patch:
-        - Fixed overlapping of the `Ask AI` button with code examples
-        - Added support for downloading OpenAPI files up to 15MB.
-    dependencies:
-      '@redocly/asyncapi-docs': 1.5.0-next.5
-      '@redocly/openapi-docs': 3.16.0-next.5
-      '@redocly/theme': 0.60.0-next.4
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.5
   0.128.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -13200,78 +12986,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.128.0-next.10:
-    timestamp: 1764940777000
-    changes:
-      minor:
-        - Added a `banner` component to display announcements on project pages.
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.7
-      '@redocly/asyncapi-docs': 1.5.0-next.10
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/openapi-docs': 3.16.0-next.10
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.10
-  0.128.0-next.9:
-    timestamp: 1764934317000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the AI Search form submitted during mid-Japanese input.
-    dependencies:
-      '@redocly/theme': 0.60.0-next.6
-      '@redocly/openapi-docs': 3.16.0-next.9
-      '@redocly/asyncapi-docs': 1.5.0-next.9
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.9
-  0.128.0-next.8:
-    timestamp: 1764777906000
-    changes:
-      minor:
-        - Pages with the `excludeFromSearch` front matter option are also excluded from the sitemap.
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.12.1`.
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.8
-      '@redocly/asyncapi-docs': 1.5.0-next.8
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.8
-  0.128.0-next.7:
-    timestamp: 1764584331000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.7
-      '@redocly/asyncapi-docs': 1.5.0-next.7
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.7
-  0.128.0-next.6:
-    timestamp: 1764259093000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.6.0-next.1
-      '@redocly/theme': 0.60.0-next.5
-      '@redocly/asyncapi-docs': 1.5.0-next.6
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/openapi-docs': 3.16.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.6
-  0.128.0-next.5:
-    timestamp: 1764251275000
-    changes:
-      minor:
-        - Added GraphQL overview section customization with the `graphql.info` configuration option.
-        - Added search and curation support for `React` pages.
-      patch:
-        - Fixed overlapping of the `Ask AI` button with code examples
-        - Fixed an issue where an `index.yaml` OpenAPI file in the project root caused all pages to return a 500 error.
-        - Added support for downloading OpenAPI files up to 15MB.
-    dependencies:
-      '@redocly/asyncapi-docs': 1.5.0-next.5
-      '@redocly/openapi-docs': 3.16.0-next.5
-      '@redocly/theme': 0.60.0-next.4
-      '@redocly/graphql-docs': 1.5.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.13.0-next.5
   0.128.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -17358,35 +17072,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.60.0-next.7:
-    timestamp: 1764940777000
-    changes:
-      minor:
-        - Added a `banner` component to display announcements on project pages.
-      patch: []
-    dependencies: {}
-  0.60.0-next.6:
-    timestamp: 1764934317000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the AI Search form submitted during mid-Japanese input.
-    dependencies: {}
-  0.60.0-next.5:
-    timestamp: 1764259093000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.6.0-next.1
-  0.60.0-next.4:
-    timestamp: 1764251275000
-    changes:
-      minor: []
-      patch:
-        - Fixed overlapping of the `Ask AI` button with code examples
-        - Added option to set the selected tab in the `Tabs` component.
-    dependencies: {}
   0.60.0-next.3:
     timestamp: 1763549522000
     changes:
@@ -19855,52 +19540,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.16.0-next.10:
-    timestamp: 1764940777000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.19.0-next.9
-  3.16.0-next.9:
-    timestamp: 1764934317000
-    changes:
-      minor:
-        - Updated header design on Replay request page.
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.19.0-next.8
-  3.16.0-next.8:
-    timestamp: 1764777906000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.12.1`.
-    dependencies:
-      '@redocly/replay': 0.19.0-next.7
-  3.16.0-next.7:
-    timestamp: 1764584331000
-    changes:
-      minor: []
-      patch:
-        - Fixed code sample generation for `x-www-form-urlencoded` and `multipart/form-data` content types.
-    dependencies: {}
-  3.16.0-next.6:
-    timestamp: 1764259093000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.19.0-next.6
-  3.16.0-next.5:
-    timestamp: 1764251275000
-    changes:
-      minor: []
-      patch:
-        - Fixed incorrect detection of `Recursive` and `Complex` types and restored missing title and description display for `oneOf`.
-        - Finalized `x-mcp` support by adding resources and prompts.
-    dependencies:
-      '@redocly/replay': 0.19.0-next.5
   3.16.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -22366,20 +22005,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
-  0.41.0:
-    timestamp: 1765205324000
-    changes:
-      minor:
-        - Added `banner` configuration option.
-      patch: []
-    dependencies: {}
-  0.40.0:
-    timestamp: 1764075697000
-    changes:
-      minor:
-        - Added `graphql.info` configuration option to provide overview metadata for GraphQL APIs.
-      patch: []
-    dependencies: {}
   0.39.0:
     timestamp: 1763547856000
     changes:
@@ -22898,13 +22523,6 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
-  1.5.0-next.1:
-    timestamp: 1764251275000
-    changes:
-      minor:
-        - Added GraphQL overview section customization with the `graphql.info` configuration option.
-      patch: []
-    dependencies: {}
   1.5.0-next.0:
     timestamp: 1762810677000
     changes:
@@ -23681,28 +23299,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
-  0.4.3:
-    timestamp: 1765205324000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.12.3`.
-    dependencies: {}
-  0.4.2:
-    timestamp: 1764768622000
-    changes:
-      minor: []
-      patch:
-        - Fixed parameter deserialization that caused incorrect parsing.
-    dependencies: {}
-  0.4.1:
-    timestamp: 1764682470000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.12.1`.
-        - Updated `@redocly/ajv` to version `8.17.1` and `ajv-formats` to version `3.0.1`.
-    dependencies: {}
   0.4.0:
     timestamp: 1763547856000
     changes:
@@ -24234,70 +23830,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.11.0-next.10:
-    timestamp: 1764940777000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.7
-      '@redocly/realm': 0.128.0-next.10
-      '@redocly/redoc': 0.128.0-next.10
-      '@redocly/redoc-reef': 0.128.0-next.10
-      '@redocly/redoc-revel': 0.128.0-next.10
-  1.11.0-next.9:
-    timestamp: 1764934317000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.128.0-next.9
-      '@redocly/redoc': 0.128.0-next.9
-      '@redocly/redoc-reef': 0.128.0-next.9
-      '@redocly/redoc-revel': 0.128.0-next.9
-      '@redocly/theme': 0.60.0-next.6
-  1.11.0-next.8:
-    timestamp: 1764777906000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.128.0-next.8
-      '@redocly/redoc': 0.128.0-next.8
-      '@redocly/redoc-reef': 0.128.0-next.8
-      '@redocly/redoc-revel': 0.128.0-next.8
-  1.11.0-next.7:
-    timestamp: 1764584331000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.128.0-next.7
-      '@redocly/redoc': 0.128.0-next.7
-      '@redocly/redoc-reef': 0.128.0-next.7
-      '@redocly/redoc-revel': 0.128.0-next.7
-  1.11.0-next.6:
-    timestamp: 1764259093000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.128.0-next.6
-      '@redocly/redoc': 0.128.0-next.6
-      '@redocly/redoc-reef': 0.128.0-next.6
-      '@redocly/redoc-revel': 0.128.0-next.6
-      '@redocly/theme': 0.60.0-next.5
-  1.11.0-next.5:
-    timestamp: 1764251275000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.4
-      '@redocly/realm': 0.128.0-next.5
-      '@redocly/redoc': 0.128.0-next.5
-      '@redocly/redoc-reef': 0.128.0-next.5
-      '@redocly/redoc-revel': 0.128.0-next.5
   1.11.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -28590,48 +28122,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.13.0-next.10:
-    timestamp: 1764940777000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.10
-  0.13.0-next.9:
-    timestamp: 1764934317000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.9
-  0.13.0-next.8:
-    timestamp: 1764777906000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.8
-  0.13.0-next.7:
-    timestamp: 1764584331000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.7
-  0.13.0-next.6:
-    timestamp: 1764259093000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.6
-  0.13.0-next.5:
-    timestamp: 1764251275000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.5
   0.13.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -30988,58 +30478,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.19.0-next.9:
-    timestamp: 1764940777000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.7
-  0.19.0-next.8:
-    timestamp: 1764934317000
-    changes:
-      minor:
-        - Added support to close modals with the `ESC` key or by clicking outside.
-        - Added tree expansion state persistence for the APIs tab in the sidebar.
-        - Updated header design on Replay request page.
-      patch:
-        - Fixed an issue with the close button on Replay tabs causing drag.
-    dependencies:
-      '@redocly/theme': 0.60.0-next.6
-  0.19.0-next.7:
-    timestamp: 1764777906000
-    changes:
-      minor:
-        - Added search functionality to the API Select component.
-      patch:
-        - Fixed error message in `Generate token` to display the correct reason.
-        - Fixed server URL resolution for relative OAuth token URLs in `Replay`.
-        - Fixed a rendering issue that prevented line numbers from appearing in the editor when the content size exceeded certain limits.
-        - Improved the UI of the search in the multi-line editor
-        - Enabled autocompletion in OAuth token generation fields.
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.12.1`.
-    dependencies: {}
-  0.19.0-next.6:
-    timestamp: 1764259093000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.5
-  0.19.0-next.5:
-    timestamp: 1764251275000
-    changes:
-      minor:
-        - Added code generation for requests in `Try It`.
-        - Updated layout of the response panel.
-      patch:
-        - Fixed tabs overlapping the drop-down list in Step view.
-        - Added `Preview` tab that closes automatically when inactive.
-        - Added search functionality to all editors in `Try it`.
-        - Fixed incorrect tab selection in the Step view after switching tabs.
-        - Improved stability in development mode.
-    dependencies:
-      '@redocly/theme': 0.60.0-next.4
   0.19.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -32537,34 +31975,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.11.0-next.7:
-    timestamp: 1764940777000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.7
-  0.11.0-next.6:
-    timestamp: 1764934317000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.6
-  0.11.0-next.5:
-    timestamp: 1764259093000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.5
-  0.11.0-next.4:
-    timestamp: 1764251275000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.4
   0.11.0-next.3:
     timestamp: 1763549522000
     changes:
@@ -33960,53 +33370,6 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
-  1.5.0-next.10:
-    timestamp: 1764940777000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.7
-      '@redocly/openapi-docs': 3.16.0-next.10
-  1.5.0-next.9:
-    timestamp: 1764934317000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.6
-      '@redocly/openapi-docs': 3.16.0-next.9
-  1.5.0-next.8:
-    timestamp: 1764777906000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.8
-  1.5.0-next.7:
-    timestamp: 1764584331000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.7
-  1.5.0-next.6:
-    timestamp: 1764259093000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.0-next.5
-      '@redocly/openapi-docs': 3.16.0-next.6
-  1.5.0-next.5:
-    timestamp: 1764251275000
-    changes:
-      minor: []
-      patch:
-        - Fixed Avro schema support to correctly handle named schemas.
-    dependencies:
-      '@redocly/openapi-docs': 3.16.0-next.5
-      '@redocly/theme': 0.60.0-next.4
   1.5.0-next.4:
     timestamp: 1763549522000
     changes:
@@ -36462,26 +35825,7 @@ reunite:
     changes:
       minor: []
       patch:
-        - Skipped visual review check on external Git providers for pull requests targeting non-default branches.
-    dependencies: {}
-  v2025-11-25.2:
-    timestamp: 1764077903000
-    changes:
-      minor:
-        - Removed `Theme components` panel from editor page for unsupported products `REDOC`, `REEF`, and `REDOC_REEF`.
-        - >-
-          Fixed product type and version resolution during component ejection in the `Theme components` panel when `package.json` specifies a product
-          below the organization’s subscription plan.
-      patch: []
-    dependencies: {}
-  v2025-12-04.1:
-    timestamp: 1764852489000
-    changes:
-      minor:
-        - Added synchronization of reviews and comments from Reunite to external Git providers.
-      patch:
-        - Updated `@redocly/ajv` to version `8.17.1`.
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.12.1`.
+        - Skipped visual review check for pull requests targeting non-default branches with external Git providers.
     dependencies: {}
 replay:
   0.0.1:
@@ -36633,70 +35977,3 @@ replay:
       '@redocly/theme': 0.59.0-next.8
       '@redocly/openapi-docs': 3.15.0-next.9
       '@redocly/replay': 0.18.0-next.9
-  0.8.0:
-    timestamp: 1764237270000
-    changes:
-      minor:
-        - Added support for `additionalOperations` in OpenAPI 3.2.0.
-        - >-
-          Added `hideOtherSecuritySchemes` option to `@redocly/replay` to hide the **Other** security scheme group in the **Authorization type**
-          dropdown, displaying only the documented schemes from the OpenAPI description.
-        - Added `Hard restart` button.
-      patch:
-        - Fixed `@redocly/replay` package install failures caused by a missing dependency.
-        - Fixed path parameters separated by underscores being parsed as a single parameter.
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.11.1`.
-        - Fixed saving Replay inputs for multiple security schemes from useConfigureReplay.
-        - Fixed `Replay` application crash in development mode.
-        - Enter prerelease mode.
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.10.0`.
-        - Added user profile menu with logout option.
-        - Persist operation state after disconnect.
-        - Introduced Replay update system.
-    dependencies:
-      '@redocly/theme': 0.59.0
-  0.9.0:
-    timestamp: 1764333732000
-    changes:
-      minor:
-        - Added code generation for requests in `Try It`.
-        - Updated layout of the response panel.
-        - Added code generator for `steps`.
-        - Added search functionality to all editors.
-      patch:
-        - Fixed tabs overlapping the drop-down list in Step view.
-        - Added `Preview` tab that closes automatically when inactive.
-        - Added search functionality to all editors in `Try it`.
-        - Fixed incorrect tab selection in the Step view after switching tabs.
-        - Improved stability in development mode.
-        - Improved initialization to reduce startup time.
-    dependencies:
-      '@redocly/theme': 0.60.0-next.4
-  0.9.1:
-    timestamp: 1764604582000
-    changes:
-      minor:
-        - Added error handling and displayed error messages in tabs.
-      patch:
-        - Fixed issues with adding and removing collections and APIs.
-        - Fixed application crash after removing connected to step OpenAPI operation in definition.
-    dependencies: {}
-  0.10.0:
-    timestamp: 1764946655000
-    changes:
-      minor:
-        - Added support to close modals with the `ESC` key or by clicking outside.
-        - Added tree expansion state persistence for the APIs tab in the sidebar.
-        - Updated header design on Replay request page.
-        - Added search functionality to the API Select component.
-      patch:
-        - Fixed an issue with the close button on Replay tabs causing drag.
-        - Fixed error message in `Generate token` to display the correct reason.
-        - Fixed server URL resolution for relative OAuth token URLs in `Replay`.
-        - Fixed a rendering issue that prevented line numbers from appearing in the editor when the content size exceeded certain limits.
-        - Improved the UI of the search in the multi-line editor
-        - Enabled autocompletion in OAuth token generation fields.
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.12.1`.
-        - Fixed OAuth redirection in the `Generate token` flow of the desktop app.
-    dependencies:
-      '@redocly/theme': 0.60.0-next.6
