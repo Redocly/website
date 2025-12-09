@@ -531,10 +531,7 @@ components:
           type: object
           description: Map of files to upload.
           additionalProperties:
-            description: |-
-              Files to push.
-              Max file size is 10MB.
-              Maximum number of files is 100.
+            description: Files to push.
             type: string
             format: binary
     PullRequest:
