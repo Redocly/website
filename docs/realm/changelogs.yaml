@@ -1,6 +1,6 @@
 '@redocly/realm':
   0.128.0:
-    timestamp: 1765274274000
+    timestamp: 1765280601000
     changes:
       minor:
         - Excluded pages from sitemaps if they are excluded from search.
@@ -4992,7 +4992,7 @@
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
   0.128.0:
-    timestamp: 1765274274000
+    timestamp: 1765280601000
     changes:
       minor:
         - Excluded pages from sitemaps if they are excluded from search.
@@ -9179,7 +9179,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
   0.128.0:
-    timestamp: 1765274274000
+    timestamp: 1765280601000
     changes:
       minor:
         - Excluded pages from sitemaps if they are excluded from search.
@@ -13353,7 +13353,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
   0.128.0:
-    timestamp: 1765274274000
+    timestamp: 1765280601000
     changes:
       minor:
         - Excluded pages from sitemaps if they are excluded from search.
@@ -17563,7 +17563,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
   0.60.0:
-    timestamp: 1765274274000
+    timestamp: 1765280601000
     changes:
       minor:
         - Added support for `additionalOperations` in OpenAPI 3.2.0.
@@ -20084,7 +20084,7 @@
     dependencies: {}
 '@redocly/openapi-docs':
   3.16.0:
-    timestamp: 1765274274000
+    timestamp: 1765280601000
     changes:
       minor:
         - Added support for `additionalOperations` in OpenAPI 3.2.0.
@@ -23156,7 +23156,7 @@
     dependencies: {}
 '@redocly/graphql-docs':
   1.5.0:
-    timestamp: 1765274274000
+    timestamp: 1765280601000
     changes:
       minor:
         - Added GraphQL overview section customization with the `graphql.info` configuration option.
@@ -24343,7 +24343,7 @@
     dependencies: {}
 '@redocly/portal-legacy-ui':
   0.11.0:
-    timestamp: 1765274274000
+    timestamp: 1765280601000
     changes:
       minor: []
       patch: []
@@ -24505,7 +24505,7 @@
     dependencies: {}
 '@redocly/portal-plugin-async-api':
   1.11.0:
-    timestamp: 1765274274000
+    timestamp: 1765280601000
     changes:
       minor: []
       patch: []
@@ -28894,7 +28894,7 @@
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
   0.13.0:
-    timestamp: 1765274274000
+    timestamp: 1765280601000
     changes:
       minor:
         - Added support for `additionalOperations` in OpenAPI 3.2.0.
@@ -31314,7 +31314,7 @@
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
   0.19.0:
-    timestamp: 1765274274000
+    timestamp: 1765280601000
     changes:
       minor:
         - >-
@@ -32909,7 +32909,7 @@
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
   0.11.0:
-    timestamp: 1765274274000
+    timestamp: 1765280601000
     changes:
       minor: []
       patch: []
@@ -34346,7 +34346,7 @@
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
   1.5.0:
-    timestamp: 1765274274000
+    timestamp: 1765280601000
     changes:
       minor: []
       patch:
@@ -36892,6 +36892,13 @@ reunite:
       patch:
         - Updated `@redocly/ajv` to version `8.17.1`.
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.12.1`.
+    dependencies: {}
+  v2025-12-09.1:
+    timestamp: 1765275282000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.12.3`.
     dependencies: {}
 replay:
   0.0.1:

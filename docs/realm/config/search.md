@@ -253,8 +253,7 @@ For details, see the [AI Search data usage FAQ](../faq/ai-search-privacy.md).
 
 {% admonition type="info" %}
 
-The `excludeFromSearch` option excludes content from search indexes only.
-It *does not** exclude pages from `sitemap.xml`.
+The `excludeFromSearch` option excludes content from search (both AI search and keyword search), `llms.txt` and sitemap.
 See [excludeFromSearch documentation](./front-matter-config.md#front-matter-only-options) for details.
 
 {% /admonition %}
