@@ -1,5 +1,11 @@
 # Configure scorecard
 
+{% admonition type="warning" %}
+The `scorecard` property is deprecated.
+Use `scorecardClassic` instead.
+The `scorecard` property continues to work with a deprecation warning.
+{% /admonition %}
+
 In Reunite, you can configure the scorecard feature to evaluate your API description files against rules.
 Reunite includes the following three built-in rulesets:
 
@@ -28,7 +34,7 @@ To add a scorecard to your project using only the built-in rules:
 1. Add the following configuration to your `redocly.yaml` file:
 
    ```yaml {% title="redocly.yaml" %}
-   scorecard:
+   scorecardClassic:
      levels: # an ordered list of levels (from lowest to highest)
        - name: Baseline
          extends:
@@ -58,7 +64,7 @@ To configure custom rules in `redocly.yaml`:
 1. Add the following configuration to your `redocly.yaml` file:
 
     ```yaml {% title="redocly.yaml" %}
-    scorecard:
+    scorecardClassic:
       levels:
     ```
 
@@ -77,7 +83,7 @@ To configure custom rules in `redocly.yaml`:
     Example:
 
     ```yaml {% title="redocly.yaml" %}
-    scorecard:
+    scorecardClassic:
       levels:
       - name: Baseline
           rules: # The following rules are built-in rules with their severity set to error
@@ -137,7 +143,7 @@ To configure scorecard rulesets in separate files:
 3. Add the following configuration to your `redocly.yaml` file:
 
     ```yaml
-    scorecard:
+    scorecardClassic:
       levels:
     ```
 
@@ -146,7 +152,7 @@ To configure scorecard rulesets in separate files:
     Example:
 
     ```yaml {% title="redocly.yaml" %}
-    scorecard:
+    scorecardClassic:
       levels:
         - name: Baseline
           extends:
@@ -228,4 +234,4 @@ After you publish the updated project, the listed API description files are excl
 - **[Add OpenAPI descriptions](../../content/api-docs/add-openapi-docs.md)** - Step-by-step guide to add OpenAPI descriptions to your project for scorecard evaluation and documentation
 - **[Configure a catalog](../../config/catalog-classic.md)** - Organize multiple API descriptions with structured catalogs for better navigation and user experience
 - **[Scorecard feature overview](./scorecard.md)** - Understand what scorecards display, how to access reports, and their role in API quality management
-- **[Scorecard configuration reference](../../config/scorecard.md)** - Complete reference for all scorecard configuration options, rulesets, and customization settings
+- **[Scorecard configuration reference](../../config/scorecard.md)** - Complete reference for all scorecardClassic configuration options, rulesets, and customization settings
