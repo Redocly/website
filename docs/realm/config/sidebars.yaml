@@ -29,6 +29,8 @@
       label: apis
     - page: ./asyncapi.md
       label: asyncapi
+    - page: ./banner.md
+      label: banner
     - page: ./breadcrumbs.md
       label: breadcrumbs
     - page: ./catalog-classic.md
@@ -171,7 +173,5 @@
       label: userMenu
     - page: ./version-picker.md
       label: versionPicker
-    - page: ./banner.md
-      label: banner
     - separatorLine: true
     - page: ./front-matter-config.md
