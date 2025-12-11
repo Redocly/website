@@ -54,8 +54,6 @@
           label: jsonSamplesDepth
         - page: ./graphql/menu.md
           label: menu
-        - page: ./graphql/info.md
-          label: info
         - page: ./graphql/samples-max-inline-args.md
           label: samplesMaxInlineArgs
         - page: ./graphql/show-built-in-scalars.md
@@ -171,7 +169,5 @@
       label: userMenu
     - page: ./version-picker.md
       label: versionPicker
-    - page: ./banner.md
-      label: banner
     - separatorLine: true
     - page: ./front-matter-config.md
