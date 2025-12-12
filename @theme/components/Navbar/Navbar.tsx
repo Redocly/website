@@ -331,7 +331,7 @@ export const NavbarRow = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: var(--navbar-menu-items-gap);;
+  gap: var(--navbar-menu-items-gap);
   height: var(--navbar-height);
   max-width: var(--navbar-container-max-width);
   margin-top: var(--banner-height);
