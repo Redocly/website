@@ -37052,6 +37052,13 @@ reunite:
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.12.3`.
     dependencies: {}
+  v2025-12-12.2:
+    timestamp: 1765536539000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.12.5`.
+    dependencies: {}
 replay:
   0.0.1:
     timestamp: 1720069800000
@@ -37279,3 +37286,41 @@ replay:
         - Changed color of `N/A` request method.
         - Fixed workflow label in tab and sidebar.
     dependencies: {}
+  0.11.0:
+    timestamp: 1765536539000
+    changes:
+      minor:
+        - Adjusted side panel's minimum size to respond to screen size changes in `Try it`.
+        - Added helpful tooltip to disabled `Send request` button in `Try it`.
+        - >-
+          Added `hideOtherSecuritySchemes` option to `@redocly/replay` to hide the **Other** security scheme group in the **Authorization type**
+          dropdown, displaying only the documented schemes from the OpenAPI description.
+        - Added code generation for requests in `Try It`.
+        - Added support to close Replay modals with the `ESC` key or by clicking outside of them.
+        - Added search functionality to the API selection dropdown.
+        - Added support for `additionalOperations` in OpenAPI 3.2.0.
+        - Updated layout of the **Response** panel.
+        - Updated header UI on the Replay request page.
+        - Redesigned the **Select environments** dropdown in Replay.
+        - Added a `Preview` tab to Replay that closes automatically when inactive.
+        - Added search functionality to all editors in `Try it`.
+        - Enabled autocompletion in OAuth token generation fields.
+        - Double clicking a request preview tab in `Try it` keeps it open while previewing other tabs.
+      patch:
+        - Fixed an issue where the response type selection reset to the default when interacting with the app.
+        - Enter prerelease mode.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.12.5`.
+        - Fixed an issue where the close button on Replay tabs also caused tabs to drag.
+        - Fixed error message in `Generate token` to display the correct reason.
+        - Fixed tabs overlapping the drop-down list in **Step** view.
+        - Fixed server URL resolution for relative OAuth token URLs in `Replay`.
+        - Fixed a rendering issue that prevented line numbers from appearing in the editor when the content size exceeded certain limits.
+        - Fixed saving Replay inputs for multiple security schemes from `useConfigureReplay`.
+        - Fixed incorrect tab selection in the Replay **Step** view after switching tabs.
+        - Fixed path parameters separated by underscores being parsed as a single parameter.
+        - Redesigned the `Select environments` dropdown in Replay.
+        - Added tab activation on double click in tab header in `Try it`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.12.3`.
+        - Fixed issue with adding new workflow.
+    dependencies:
+      '@redocly/theme': 0.60.0-next.7
