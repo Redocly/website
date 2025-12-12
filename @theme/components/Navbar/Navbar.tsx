@@ -14,6 +14,7 @@ import { ProductPicker } from '@redocly/theme/components/Product/ProductPicker';
 import { Button } from '@redocly/theme/components/Button/Button';
 import { CloseIcon } from '@redocly/theme/icons/CloseIcon/CloseIcon';
 import { Search } from '@redocly/theme/components/Search/Search';
+import { Banner } from '@redocly/theme/components/Banner/Banner';
 
 import { MenuIcon } from '@redocly/marketing-pages/icons/MenuIcon.js';
 import { TextSmall } from '@redocly/marketing-pages/components/TypographyElements/TypographyElements.js';
@@ -112,6 +113,7 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
       isMobile={isOpen}
       isRespect={pathname === '/respect'}
     >
+      {!showVSCodeExtensionBanner && <Banner />}
       {showVSCodeExtensionBanner && <VSCodeExtensionBanner />}
       {isOpen && <MenuMobile />}
       <NavbarRow>
@@ -329,12 +331,17 @@ export const NavbarRow = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-
-  gap: var(--navbar-menu-items-gap);
+  gap: var(--navbar-menu-items-gap);;
+  height: var(--navbar-height);
   max-width: var(--navbar-container-max-width);
+  margin-top: var(--banner-height);
+  padding: 16px;
+  transition: margin-top 0.4s ease-out;
 
-  @media screen and (min-width: ${breakpoints.large}) {
-    margin: 0 auto;
+  @media screen and (min-width: ${breakpoints.max}) {
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 
@@ -351,29 +358,33 @@ const NavbarContainer = styled.nav<{
   transition:
     border-color 0.3s ease-in-out,
     background 0.3s ease-in-out,
-    transform 0.3s ease-in-out;
+    transform 0.3s ease-in-out,
+    height 0.4s ease-out;
 
   ${({ isDocs }) =>
     !isDocs &&
     css`
       transform: ${(isVisible) =>
-        isVisible ? 'translateY(0)' : 'translateY(calc(var(--navbar-height) * -1))'};
+        isVisible
+          ? 'translateY(0)'
+          : 'translateY(calc((var(--navbar-height) + var(--banner-height)) * -1))'};
     `};
   border-bottom: 1px solid transparent;
   width: 100vw;
   --text-color: var(--navbar-text-color);
   box-sizing: border-box;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   flex-shrink: 0;
-  height: var(--navbar-height);
+  height: calc(var(--navbar-height) + var(--banner-height));
   backdrop-filter: ${({ isTop, isDefault }) => isDefault && (isTop ? 'none' : 'blur(6px)')};
 
   font-size: var(--navbar-font-size);
   position: sticky;
   top: 0;
   z-index: var(--z-index-raised);
-  padding: 16px;
+  padding: 0;
   background: ${({ isTop, isColorful, isDefault, isMobile, isRespect }) =>
     isRespect
       ? 'var(--color-warm-grey-1)'
@@ -399,15 +410,13 @@ const NavbarContainer = styled.nav<{
   }
 
   @media screen and (min-width: ${breakpoints.medium}) {
-    padding: ${({ showVSCodeExtensionBanner }) =>
-    showVSCodeExtensionBanner ? '0' : 'var(--navbar-padding)'};
     border-bottom: ${({ isTop, isDocs }) =>
     (!isTop || isDocs) && '1px solid var(--color-warm-grey-3)'};
-    flex-direction: ${({ showVSCodeExtensionBanner }) => showVSCodeExtensionBanner && 'column'};
     height: ${({ showVSCodeExtensionBanner }) => showVSCodeExtensionBanner && 'auto'};
 
     ${NavbarRow} {
-      padding: ${({ showVSCodeExtensionBanner }) => showVSCodeExtensionBanner && '0 40px'};
+      padding: ${({ showVSCodeExtensionBanner }) =>
+        showVSCodeExtensionBanner ? '0 40px' : 'var(--navbar-padding)'};
     }
   }
 `;
