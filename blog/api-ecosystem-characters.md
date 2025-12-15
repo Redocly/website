@@ -58,7 +58,20 @@ That's **$1.74M–$3.48M** in value created by one well-designed API.
 
 But benefactors don't just save money—they accelerate everyone.
 Teams that would have spent 3 months building authentication can start building features in week one.
+
+**The velocity compounding:**
+
+When 20 teams reuse a benefactor's API instead of rebuilding, they each save 2–3 months.
+That's **40–60 months** of engineering time recovered across the organization.
+But more importantly, it's **40–60 months** of faster time-to-value.
+
+Those teams ship features 2–3 months earlier.
+They capture market opportunity faster.
+They learn from users faster.
+They iterate faster.
+
 The velocity multiplier compounds across the organization.
+One well-designed API doesn't just save millions—it accelerates the entire company.
 
 ## The Amplifier: The cost-saver and opportunity multiplier
 
@@ -87,9 +100,38 @@ The difference: **10 weeks of engineering time saved**.
 At $150/hour fully loaded cost, that's **$60,000** saved on a single feature.
 Multiply that across hundreds of features per year, and amplifiers are saving millions.
 
+But the real value goes beyond cost savings—it's about velocity compounding.
+
+**Time-to-value acceleration:**
+
+When amplifiers reuse instead of rebuild, they ship **2–3 months faster**.
+For a revenue-generating feature, that's **2–3 months of additional revenue**.
+If a feature generates $1M per year, shipping 3 months earlier means **$250,000 in additional revenue**—on top of the $60,000 in avoided build costs.
+
+**Feature velocity compounding:**
+
+Amplifiers don't just save time—they create more time.
+A team that saves 2 months per feature can build **50% more features per year**.
+That's not just more output.
+It's more opportunities to capture market share, learn from users, and create competitive advantage.
+
+**The learning loop:**
+
+Faster shipping means faster learning.
+Amplifiers get months more of user feedback, usage data, and iteration cycles.
+This creates a compounding learning advantage that compounds over time.
+
+**Organizational multiplier:**
+
+When amplifiers become the norm, the entire organization accelerates.
+Teams spend less time on infrastructure and more time on differentiation.
+They spend less time rebuilding and more time innovating.
+The velocity multiplier compounds across the organization.
+
 But it's not just about time—it's about focus.
 Amplifiers spend their time on differentiation, not duplication.
 They build new capabilities instead of rebuilding existing ones.
+And they create velocity that compounds into competitive advantage.
 
 ## The Redundancer: The unintentional value destroyer
 
