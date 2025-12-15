@@ -419,6 +419,8 @@
           label: Use cases
         - page: customization/api-functions/api-functions-reference.md
           label: Reference
+        - page: customization/api-functions/kv-storage.md
+          label: KV storage
         - page: customization/api-functions/create-api-functions.md
           label: Tutorial
           

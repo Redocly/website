@@ -29,8 +29,6 @@
       label: apis
     - page: ./asyncapi.md
       label: asyncapi
-    - page: ./banner.md
-      label: banner
     - page: ./breadcrumbs.md
       label: breadcrumbs
     - page: ./catalog-classic.md
