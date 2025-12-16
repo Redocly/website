@@ -37324,3 +37324,12 @@ replay:
         - Fixed issue with adding new workflow.
     dependencies:
       '@redocly/theme': 0.60.0-next.7
+  0.12.0:
+    timestamp: 1765868593000
+    changes:
+      minor:
+        - Redesigned collection tree operation badges to open the change operation modal directly from the badge.
+        - Improved overflow handling for operation names and badges in the Replay request header.
+        - Added **Reveal in folder** button to collection and API node controls in Replay's sidebar.
+      patch: []
+    dependencies: {}
