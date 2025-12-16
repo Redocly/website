@@ -37331,3 +37331,11 @@ replay:
         - Added **Reveal in folder** button to collection and API node controls in Replay's sidebar.
       patch: []
     dependencies: {}
+  0.12.1:
+    timestamp: 1765884212000
+    changes:
+      minor:
+        - Redesigned collection tree operation badges to open the change operation modal directly from the badge.
+        - Improved overflow handling for operation names and badges in the Replay request header.
+      patch: []
+    dependencies: {}
