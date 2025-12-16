@@ -36821,6 +36821,7 @@ reunite:
     timestamp: 1754312438000
     changes:
       minor:
+        - Added Project Analytics for Enterprise and Enterprise+ plan users.
         - Added `Built-in functions` and `Custom functions` options to the `Markdoc tags` dropdown.
         - >-
           Updated Reunite build logs by refining emojis, fixing alignments for multiline logs and enabling colorful statuses for info and warning
