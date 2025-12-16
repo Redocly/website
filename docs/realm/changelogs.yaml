@@ -37337,6 +37337,5 @@ replay:
       minor:
         - Redesigned collection tree operation badges to open the change operation modal directly from the badge.
         - Improved overflow handling for operation names and badges in the Replay request header.
-      patch:
-        - Fixed step opening behavior after saving to a collection.
+      patch: []
     dependencies: {}
