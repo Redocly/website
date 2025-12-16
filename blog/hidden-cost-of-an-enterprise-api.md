@@ -232,6 +232,69 @@ Even if only 10% of reuse cases prevent a full rebuild (100 cases), that's **$6M
 And that's conservative.
 Many organizations see thousands of reuse cases per year with a focused API catalog strategy.
 
+## The compounding velocity multiplier
+
+But the cost savings are only part of the story.
+The real value comes from velocity—and velocity compounds.
+
+When teams reuse APIs instead of rebuilding, they don't just save money.
+They save time.
+And time savings create compounding effects that go far beyond the initial cost avoidance.
+
+**Time-to-value acceleration:**
+
+A team that reuses an existing API ships **2–3 months faster** than a team that rebuilds.
+For a feature that generates revenue, shipping 3 months earlier means **3 months of additional revenue**.
+If that feature generates $1M per year, that's **$250,000 in additional revenue**—on top of the $60,000–$120,000 in avoided build costs.
+
+But it's not just about revenue.
+It's about competitive advantage.
+The team that ships first captures market opportunity.
+The team that ships first learns from users faster.
+The team that ships first can iterate and improve while competitors are still building.
+
+**Feature velocity compounding:**
+
+When teams reuse instead of rebuild, they can build **more features per year**.
+
+Consider a team that builds 4 features per year, each taking 3 months.
+If they reuse APIs and save 2 months per feature, they can now build **6 features per year**—a **50% increase in feature velocity**.
+
+That's not just 2 more features.
+It's 2 more opportunities to:
+- Capture market share
+- Learn from users
+- Iterate and improve
+- Create competitive advantage
+
+**The learning loop acceleration:**
+
+Faster shipping means faster learning.
+Teams that ship 3 months earlier get 3 months more of:
+- User feedback
+- Usage data
+- Market signals
+- Iteration cycles
+
+This creates a compounding learning advantage.
+Teams that learn faster build better products.
+Teams that build better products win markets.
+
+**Organizational velocity:**
+
+When reuse becomes the norm, the entire organization moves faster.
+
+Teams spend less time on infrastructure and more time on differentiation.
+They spend less time rebuilding and more time innovating.
+They spend less time searching and more time shipping.
+
+In an organization with 200 APIs and 1,000 reuse cases per year:
+- **2,000–3,000 months** of engineering time recovered
+- **50–100 additional features** shipped per year
+- **Months or years** of competitive advantage gained
+
+The velocity multiplier doesn't just save costs—it creates value that compounds over time.
+
 ## The organizational shift: From chaos to reuse
 
 The shift from rebuild to reuse doesn't happen organically in chaotic environments.
@@ -265,10 +328,11 @@ But the ROI is clear:
 - Rebuilds prevented: $8M–$17M per year (reuse cases)
 - Meeting time saved: $500K–$1M per year (fewer coordination meetings)
 - Incident prevention: $300K–$1M per year (fewer stale doc issues)
+- Velocity gains: $2M–$5M per year (faster time-to-value, additional features shipped, competitive advantage)
 
-**Total annual ROI: $10M–$21M**
+**Total annual ROI: $12M–$26M**
 
-**ROI ratio: 20:1 to 42:1**
+**ROI ratio: 24:1 to 52:1** (including velocity gains)
 
 And that's just the first year.
 As the catalog becomes more comprehensive and teams build the habit of checking it first, the ROI compounds.
