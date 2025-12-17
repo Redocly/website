@@ -11,7 +11,7 @@ navbar:
     - page: config/index.md
       label: Config
 
-scorecard:
+scorecardClassic:
   ignoreNonCompliant: true
 
 analytics:

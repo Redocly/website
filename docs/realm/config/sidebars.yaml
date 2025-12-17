@@ -155,8 +155,8 @@
       label: reunite
     - page: ./rules.md
       label: rules
-    - page: ./scorecard.md
-      label: scorecard
+    - page: ./scorecard-classic.md
+      label: scorecardClassic
     - page: ./scripts.md
       label: scripts
     - page: ./search.md

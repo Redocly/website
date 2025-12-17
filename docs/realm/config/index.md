@@ -29,7 +29,7 @@ This guide provides a comprehensive overview of available configuration options 
 
   {% configProperty file="rules.md" /%}
 
-  {% configProperty file="scorecard.md" /%}
+  {% configProperty file="scorecard-classic.md" /%}
 
   {% configProperty file="catalog-classic.md" /%}
 {% /configSection %}

@@ -41,7 +41,7 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 - ignoreLint
 - boolean | object
-- Publish a production project, even if Reunite detects an API description in the project that scores below the minimum standard set either by the `scorecard` or `api` options in the `redocly.yaml` file.
+- Publish a production project, even if Reunite detects an API description in the project that scores below the minimum standard set either by the `scorecardClassic` or `api` options in the `redocly.yaml` file.
   Default value: `false`.
 
 ---

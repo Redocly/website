@@ -452,7 +452,6 @@ export const frontmatter = {
 };
 ```
 
-
 ## Examples
 
 ### Basic search configuration
@@ -531,8 +530,8 @@ search:
         type: select
 ```
 
-
 ### AI search
+
 {% admonition type="warning" %}
 This option is deprecated.
 Use [AI Assistant](./ai-assistant.md) instead.
