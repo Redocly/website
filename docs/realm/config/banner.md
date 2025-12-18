@@ -91,11 +91,11 @@ To update the ejected navbar:
 
 ---
 
-- tone
+- color
 - string
 - The visual style tone of the banner.
   Controls the color scheme of the banner.
-  **Available tones:**
+  **Available colors:**
   - `info` - Blue background (default)
   - `success` - Green background
   - `warning` - Yellow background
