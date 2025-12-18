@@ -6,7 +6,9 @@
   "scripts": {
     "start": "npx @redocly/cli preview",
     "lint:markdown": "markdownlint-cli2 '**/*.md'",
-    "lint:markdown:fix": "markdownlint-cli2 '**/*.md' --fix"
+    "lint:markdown:fix": "markdownlint-cli2 '**/*.md' --fix",
+    "recheck": "npx @redocly/recheck run --stats",
+    "recheck:fix": "npx @redocly/recheck run --stats --fix"
   },
   "author": "team@redocly.com",
   "license": "UNLICENSED",

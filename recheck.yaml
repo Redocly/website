@@ -1,0 +1,267 @@
+recheck/us-spelling:
+  scope: all # default
+  severity: error
+  message: 'Use the US spelling "%s" instead of British "%s".'
+  link: https://docs.microsoft.com/en-us/style-guide/word-choice/use-us-spelling-avoid-non-english-words
+  assertions:
+    swap:
+      ignoreCase: true
+      wordBoundary: true
+      pairs:
+        aeon: eon
+        aeroplane: airplane
+        ageing: aging
+        aluminium: aluminum
+        anaemia: anemia
+        anaesthesia: anesthesia
+        analyse: analyze
+        annexe: annex
+        apologise: apologize
+        behaviour: behavior
+        busses: buses
+        calibre: caliber
+        cancelled: canceled
+        cancellation: cancelation
+        catalogue: catalog
+        categorise: categorize
+        categorised: categorized
+        categorises: categorizes
+        categorising: categorizing
+        centre: center
+        cheque: check
+        civilisation: civilization
+        civilise: civilize
+        colour: color
+        cosy: cozy
+        cypher: cipher
+        dependant: dependent
+        defence: defense
+        distil: distill
+        draught: draft
+        encyclopaedia: encyclopedia
+        enquiry: inquiry
+        enrol: enroll
+        enrolment: enrollment
+        enthral: enthrall
+        expiry: expiration
+        favourite: favorite
+        fibre: fiber
+        fillet: filet
+        flavour: flavor
+        furore: furor
+        fulfil: fulfill
+        gaol: jail
+        grey: gray
+        humour: humor
+        honour: honor
+        initialled: initialed
+        initialling: initialing
+        instil: instill
+        jewellery: jewelry
+        labelling: labeling
+        labelled: labeled
+        labour: labor
+        libellous: libelous
+        licence: license
+        likeable: likable
+        liveable: livable
+        lustre: luster
+        manoeuvre: maneuver
+        marvellous: marvelous
+        matt: matte
+        meagre: meager
+        metre: meter
+        modelling: modeling
+        moustache: mustache
+        neighbour: neighbor
+        normalise: normalize
+        offence: offense
+        organise: organize
+        organisation: organization
+        orientated: oriented
+        paralyse: paralyze
+        plough: plow
+        pretence: pretense
+        programme: program
+        pyjamas: pajamas
+        rateable: ratable
+        realise: realize
+        recognise: recognize
+        reconnoitre: reconnoiter
+        rumour: rumor
+        sabre: saber
+        saleable: salable
+        saltpetre: saltpeter
+        sceptic: skeptic
+        sepulchre: sepulcher
+        signalling: signaling
+        sizeable: sizable
+        skilful: skillful
+        sombre: somber
+        smoulder: smolder
+        speciality: specialty
+        spectre: specter
+        splendour: splendor
+        standardise: standardize
+        standardised: standardized
+        sulphur: sulfur
+        theatre: theater
+        travelled: traveled
+        traveller: traveler
+        travelling: traveling
+        unshakeable: unshakable
+        wilful: willful
+        yoghurt: yogurt
+
+  exceptions:
+    files:
+      - docs/public/branding/**
+      - docs/redoc-ce/@v3.x/deployment/html.md
+      - docs/public/customization/react-components/list/tag.md
+    # lines:
+    #   - "test this functionality"
+
+recheck/inclusion-gender-culture:
+  severity: error
+  message: 'Use inclusive language. Consider "%s" instead of "%s".'
+  assertions:
+    swap:
+      he: they
+      his: their
+      she: they
+      hers: their
+      blacklist(?:ed|ing|s)?: blocklist
+      whitelist(?:ed|ing|s)?: allowlist
+      master: primary, main
+      slave: replica
+      he/she: they
+      s/he: they
+
+recheck/no-gerund-headings:
+  severity: error
+  scope: heading
+  message: 'Do not start headings with a gerund.'
+  assertions:
+    pattern:
+      ignoreCase: true
+      tokens:
+        - "^#+ \\w*ing\\b"
+  exceptions:
+    lines:
+      - According
+      - Betting
+      - Billing
+      - Branding
+      - Breaking
+      - Dogfooding
+      - Engineering
+      - Hiring
+      - Hosting
+      - Landing
+      - Marketing
+      - Monitoring
+      - Naming
+      - Onboarding
+      - Packaging
+      - Pricing
+      - Reasoning
+      - Recruiting
+      - Reporting
+      - Settings
+      - Training
+      - Troubleshooting
+      - Testing
+      - Writing
+      - hideLoading
+      - Routing
+      - Naming
+    # files:
+      # - todo
+
+recheck/oxford-comma:
+  severity: error
+  scope: sentence
+  message: "Use the Oxford comma in '%s'."
+  assertions:
+    pattern:
+      tokens:
+        - '(?:[^\s,]+,){1,} \w+ (?:and|or) \w+[.?!]'
+
+recheck/readable-line-length:
+  severity: warn
+  message: 'Keep lines under %s characters.'
+  assertions:
+    max-line-length:
+      maxLength: 400
+      ignoreCodeBlocks: true
+      ignoreTables: true
+      ignoreHtmlTags: true
+      ignoreMarkdownLinkUrls: true
+
+recheck/no-trailing-spaces:
+  severity: error
+  message: 'Remove trailing spaces.'
+  autoFixable: true
+  assertions:
+    no-trailing-spaces:
+      skipCodeBlocks: true
+      skipBlankLines: false
+
+recheck/bullet-style-dash:
+  severity: error
+  message: "Use '-' for unordered list bullets."
+  autoFixable: true
+  assertions:
+    bullet-style:
+      style: '-'
+      normalizeNested: true
+
+recheck/semantic-line-breaks:
+  severity: error
+  message: 'Use semantic line breaks (%s mode).'
+  autoFixable: true # Thoroughly tested
+  assertions:
+    semantic-line-breaks:
+      mode: sentence
+      ignoreCodeBlocks: true
+      ignoreTables: true
+
+recheck/no-hard-tabs:
+  severity: error
+  message: 'Use spaces instead of tabs.'
+  autoFixable: true
+  assertions:
+    no-hard-tabs:
+      skipCodeBlocks: true
+      spacesPerTab: 2
+
+recheck/no-duplicate-headings:
+  severity: warn
+  message: 'Duplicate heading "%s" (first used on line %d).'
+  assertions:
+    no-duplicate-headings:
+      caseSensitive: false
+      ignoreCommonHeadings: false
+      respectSections: true # Default: don't flag duplicates in different sections
+
+recheck/no-broken-fragment-links:
+  severity: error
+  message: 'Broken link fragment: %s'
+  assertions:
+    no-broken-fragment-links:
+      checkExternalFiles: true
+  exceptions:
+    lines:
+      - '#stage-3.-offer'
+      - '#3.-hr-interview'
+      - '#input/output-types'
+    files:
+      - '**/_partials/**'
+
+recheck/optimize-images:
+  severity: error
+  message: 'Image too large: %s'
+  assertions:
+    max-image-size:
+      maxSizeKB: 100
+      extensions: ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg']
