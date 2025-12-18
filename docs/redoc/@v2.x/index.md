@@ -5,7 +5,7 @@ seo:
 
 # Redoc: Open source API documentation tool
 
-Redoc is a clean and easy way to produce web-ready documentation from an OpenAPI description (Swagger is also still supported).
+Redoc is a clean and easy way to produce web-ready documentation from an OpenAPI description (Swagger is also supported).
 With one command, create your documentation, and customize it to meet the needs of your users.
 
 Redoc is based around a three panel layout, with clear sections for navigation, detailed documentation, and request/response examples.
@@ -27,7 +27,7 @@ Redoc is provided as a CLI tool (also distributed as a Docker image), HTML tag, 
 
 ### Generate documentation from the CLI
 
-If you have Node installed, quickly generate documentation using `npx`:
+If you have Node installed, you can generate documentation using `npx`:
 
 ```sh
 npx @redocly/cli build-docs openapi.yaml
@@ -93,12 +93,10 @@ See the documentation with a command like this:
 redocly build-docs openapi.yaml
 ```
 
-There are many, many more options available.
-Visit the [configuration reference](https://redocly.com/docs/realm/config/openapi) for a complete list.
+For a complete list of configuration options, visit the [configuration reference](https://redocly.com/docs/realm/config/openapi).
 
 ## Resources
 
-- If you are new to OpenAPI, try the [OpenAPI starter project](https://redocly.com/docs/cli/openapi-starter) for a great introduction.
-- Ready to build documentation from an existing OpenAPI file?
-  Go to the [Redoc quickstart](./quickstart.md) and get started.
-- Learn more about the project by visiting [Redoc on GitHub](https://github.com/Redocly/redoc).
+- **[OpenAPI starter project](https://redocly.com/docs/cli/openapi-starter)** - Get introduced to OpenAPI
+- **[Redoc quickstart](./quickstart.md)** - Build documentation from an existing OpenAPI file
+- **[Redoc on GitHub](https://github.com/Redocly/redoc)** Learn more about the Redoc project
