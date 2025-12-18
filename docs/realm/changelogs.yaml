@@ -1,20 +1,4 @@
 '@redocly/realm':
-  0.129.0-next.0:
-    timestamp: 1765451304000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.12.5`.
-        - Enter prerelease mode.
-        - Fixed an issue where Docs MCP required authentication for publicly available docs with no RBAC configuration provided.
-    dependencies:
-      '@redocly/openapi-docs': 3.17.0-next.0
-      '@redocly/portal-plugin-mock-server': 0.14.0-next.0
-      '@redocly/realm-asyncapi-sdk': 0.7.0-next.0
-      '@redocly/portal-legacy-ui': 0.12.0-next.0
-      '@redocly/asyncapi-docs': 1.6.0-next.0
-      '@redocly/graphql-docs': 1.6.0-next.0
-      '@redocly/theme': 0.61.0-next.0
   0.128.0:
     timestamp: 1765280601000
     changes:
@@ -5007,22 +4991,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.129.0-next.0:
-    timestamp: 1765451304000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.12.5`.
-        - Enter prerelease mode.
-        - Fixed an issue where Docs MCP required authentication for publicly available docs with no RBAC configuration provided.
-    dependencies:
-      '@redocly/openapi-docs': 3.17.0-next.0
-      '@redocly/portal-plugin-mock-server': 0.14.0-next.0
-      '@redocly/realm-asyncapi-sdk': 0.7.0-next.0
-      '@redocly/portal-legacy-ui': 0.12.0-next.0
-      '@redocly/asyncapi-docs': 1.6.0-next.0
-      '@redocly/graphql-docs': 1.6.0-next.0
-      '@redocly/theme': 0.61.0-next.0
   0.128.0:
     timestamp: 1765280601000
     changes:
@@ -9210,22 +9178,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.129.0-next.0:
-    timestamp: 1765451304000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.12.5`.
-        - Enter prerelease mode.
-        - Fixed an issue where Docs MCP required authentication for publicly available docs with no RBAC configuration provided.
-    dependencies:
-      '@redocly/openapi-docs': 3.17.0-next.0
-      '@redocly/portal-plugin-mock-server': 0.14.0-next.0
-      '@redocly/realm-asyncapi-sdk': 0.7.0-next.0
-      '@redocly/portal-legacy-ui': 0.12.0-next.0
-      '@redocly/asyncapi-docs': 1.6.0-next.0
-      '@redocly/graphql-docs': 1.6.0-next.0
-      '@redocly/theme': 0.61.0-next.0
   0.128.0:
     timestamp: 1765280601000
     changes:
@@ -13400,22 +13352,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.129.0-next.0:
-    timestamp: 1765451304000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.12.5`.
-        - Enter prerelease mode.
-        - Fixed an issue where Docs MCP required authentication for publicly available docs with no RBAC configuration provided.
-    dependencies:
-      '@redocly/openapi-docs': 3.17.0-next.0
-      '@redocly/portal-plugin-mock-server': 0.14.0-next.0
-      '@redocly/realm-asyncapi-sdk': 0.7.0-next.0
-      '@redocly/portal-legacy-ui': 0.12.0-next.0
-      '@redocly/asyncapi-docs': 1.6.0-next.0
-      '@redocly/graphql-docs': 1.6.0-next.0
-      '@redocly/theme': 0.61.0-next.0
   0.128.0:
     timestamp: 1765280601000
     changes:
@@ -17626,13 +17562,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.61.0-next.0:
-    timestamp: 1765451304000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies: {}
   0.60.0:
     timestamp: 1765280601000
     changes:
@@ -20154,16 +20083,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.17.0-next.0:
-    timestamp: 1765451304000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.12.5`.
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/replay': 0.20.0-next.0
-      '@redocly/theme': 0.61.0-next.0
   3.16.0:
     timestamp: 1765280601000
     changes:
@@ -23236,14 +23155,6 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
-  1.6.0-next.0:
-    timestamp: 1765451304000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/theme': 0.61.0-next.0
   1.5.0:
     timestamp: 1765280601000
     changes:
@@ -24034,13 +23945,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
-  0.4.4:
-    timestamp: 1765453929000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.12.5`.
-    dependencies: {}
   0.4.3:
     timestamp: 1765205324000
     changes:
@@ -24438,13 +24342,6 @@
         - Redocly Mock Server release
     dependencies: {}
 '@redocly/portal-legacy-ui':
-  0.12.0-next.0:
-    timestamp: 1765451304000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies: {}
   0.11.0:
     timestamp: 1765280601000
     changes:
@@ -24607,18 +24504,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.12.0-next.0:
-    timestamp: 1765451304000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/realm': 0.129.0-next.0
-      '@redocly/redoc': 0.129.0-next.0
-      '@redocly/redoc-reef': 0.129.0-next.0
-      '@redocly/redoc-revel': 0.129.0-next.0
-      '@redocly/theme': 0.61.0-next.0
   1.11.0:
     timestamp: 1765280601000
     changes:
@@ -29008,14 +28893,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.14.0-next.0:
-    timestamp: 1765451304000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/openapi-docs': 3.17.0-next.0
   0.13.0:
     timestamp: 1765280601000
     changes:
@@ -31436,18 +31313,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.20.0-next.0:
-    timestamp: 1765451304000
-    changes:
-      minor:
-        - Adjusted side panel's minimum size to respond to screen size changes in `Try it`.
-        - Added helpful tooltip to disabled `Send request` button in `Try it`.
-      patch:
-        - Fixed an issue where the response type selection reset to the default when interacting with the app.
-        - Enter prerelease mode.
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.12.5`.
-    dependencies:
-      '@redocly/theme': 0.61.0-next.0
   0.19.0:
     timestamp: 1765280601000
     changes:
@@ -33043,14 +32908,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.12.0-next.0:
-    timestamp: 1765451304000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/theme': 0.61.0-next.0
   0.11.0:
     timestamp: 1765280601000
     changes:
@@ -34488,15 +34345,6 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
-  1.6.0-next.0:
-    timestamp: 1765451304000
-    changes:
-      minor: []
-      patch:
-        - Enter prerelease mode.
-    dependencies:
-      '@redocly/openapi-docs': 3.17.0-next.0
-      '@redocly/theme': 0.61.0-next.0
   1.5.0:
     timestamp: 1765280601000
     changes:
@@ -36821,7 +36669,6 @@ reunite:
     timestamp: 1754312438000
     changes:
       minor:
-        - Added Project Analytics for Enterprise and Enterprise+ plan users.
         - Added `Built-in functions` and `Custom functions` options to the `Markdoc tags` dropdown.
         - >-
           Updated Reunite build logs by refining emojis, fixing alignments for multiline logs and enabling colorful statuses for info and warning
@@ -37053,13 +36900,6 @@ reunite:
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.12.3`.
     dependencies: {}
-  v2025-12-12.2:
-    timestamp: 1765536539000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.12.5`.
-    dependencies: {}
 replay:
   0.0.1:
     timestamp: 1720069800000
@@ -37286,57 +37126,4 @@ replay:
         - Fixed minor UI issues.
         - Changed color of `N/A` request method.
         - Fixed workflow label in tab and sidebar.
-    dependencies: {}
-  0.11.0:
-    timestamp: 1765536539000
-    changes:
-      minor:
-        - Adjusted side panel's minimum size to respond to screen size changes in `Try it`.
-        - Added helpful tooltip to disabled `Send request` button in `Try it`.
-        - >-
-          Added `hideOtherSecuritySchemes` option to `@redocly/replay` to hide the **Other** security scheme group in the **Authorization type**
-          dropdown, displaying only the documented schemes from the OpenAPI description.
-        - Added code generation for requests in `Try It`.
-        - Added support to close Replay modals with the `ESC` key or by clicking outside of them.
-        - Added search functionality to the API selection dropdown.
-        - Added support for `additionalOperations` in OpenAPI 3.2.0.
-        - Updated layout of the **Response** panel.
-        - Updated header UI on the Replay request page.
-        - Redesigned the **Select environments** dropdown in Replay.
-        - Added a `Preview` tab to Replay that closes automatically when inactive.
-        - Added search functionality to all editors in `Try it`.
-        - Enabled autocompletion in OAuth token generation fields.
-        - Double clicking a request preview tab in `Try it` keeps it open while previewing other tabs.
-      patch:
-        - Fixed an issue where the response type selection reset to the default when interacting with the app.
-        - Enter prerelease mode.
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.12.5`.
-        - Fixed an issue where the close button on Replay tabs also caused tabs to drag.
-        - Fixed error message in `Generate token` to display the correct reason.
-        - Fixed tabs overlapping the drop-down list in **Step** view.
-        - Fixed server URL resolution for relative OAuth token URLs in `Replay`.
-        - Fixed a rendering issue that prevented line numbers from appearing in the editor when the content size exceeded certain limits.
-        - Fixed saving Replay inputs for multiple security schemes from `useConfigureReplay`.
-        - Fixed incorrect tab selection in the Replay **Step** view after switching tabs.
-        - Fixed path parameters separated by underscores being parsed as a single parameter.
-        - Redesigned the `Select environments` dropdown in Replay.
-        - Added tab activation on double click in tab header in `Try it`.
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.12.3`.
-        - Fixed issue with adding new workflow.
-    dependencies:
-      '@redocly/theme': 0.60.0-next.7
-  0.12.0:
-    timestamp: 1765868593000
-    changes:
-      minor:
-        - Added **Reveal in folder** button to collection and API node controls in Replay's sidebar.
-      patch: []
-    dependencies: {}
-  0.12.1:
-    timestamp: 1765884212000
-    changes:
-      minor:
-        - Redesigned collection tree operation badges to open the change operation modal directly from the badge.
-        - Improved overflow handling for operation names and badges in the Replay request header.
-      patch: []
     dependencies: {}
