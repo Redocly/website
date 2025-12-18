@@ -21,11 +21,13 @@ These options are available exclusively in front matter:
 
 - excludeFromSearch
 - boolean
-- Exclude the page from search results (both AI search and keyword search), `llms.txt`, and the sitemap when set to `true`.
+- Exclude the page from search results and from `llms.txt` file when set to `true`.
   Default: `false`.
 
+  {% admonition type="info" %}
   Search indexes are only built on the production branch.
   Changes to `excludeFromSearch` may not immediately appear in search results until the next production build.
+  {% /admonition %}
 
   To exclude OpenAPI description files from search, see: [`openapi` configuration](./openapi/index.md).
 
@@ -144,14 +146,6 @@ When defined in front matter, they override the global configuration:
 - [versionPicker](./version-picker.md)
 - object
 - Set the visibility of the version picker.
-
----
-
-- [banner](./banner.md)
-- array
-- Configure page-specific announcement banners.
-  When defined in front matter, banners automatically target the page where they're configured and take priority over global banners.
-  The `target` option is not needed for front matter banners.
 
 {% /table %}
 
