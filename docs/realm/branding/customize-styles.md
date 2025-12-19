@@ -96,6 +96,61 @@ Toggle between color modes to see the differences.
 3. **Override variables** - Add your custom values to the `@theme/styles.css` file
 4. **Test in both modes** - Ensure your styling works well in both light and dark modes using [color mode customization](./customize-color-modes.md)
 
+## Style products individually
+
+When your project has multiple products configured, a product-specific CSS class is automatically added to the root element (`<html>`) based on the current product.
+You can use this class to apply different styling to each product within the same project.
+
+The product class follows the format `product-{product-name}`, where the product name is converted to kebab-case (lowercase with hyphens).
+
+For example:
+- Product name "Example One" becomes the class `product-example-one`.
+- Product name "API Documentation" becomes the class `product-api-documentation`.
+
+To style a specific product, use the product class selector in your `@theme/styles.css` file:
+
+```css {% title="@theme/styles.css" %}
+/* Default styling for all products */
+:root {
+  --navbar-bg-color: #ffffff;
+  --navbar-text-color: #1f2937;
+}
+
+/* Product-specific styling for "Example One" */
+:root.product-example-one {
+  --navbar-bg-color: #e3f2fd;
+  --navbar-border-color: #2196f3;
+  --navbar-text-color: #1976d2;
+}
+
+/* Product-specific styling for "Example Two" */
+:root.product-example-two {
+  --navbar-bg-color: #f3e5f5;
+  --navbar-border-color: #9c27b0;
+  --navbar-text-color: #7b1fa2;
+}
+
+/* Combine product classes with dark mode */
+:root.dark.product-example-one {
+  --navbar-bg-color: #0d47a1;
+  --navbar-border-color: #42a5f5;
+  --navbar-text-color: #90caf9;
+}
+
+:root.dark.product-example-two {
+  --navbar-bg-color: #4a148c;
+  --navbar-border-color: #ba68c8;
+  --navbar-text-color: #ce93d8;
+}
+```
+
+**Tips for product-specific styling:**
+
+- **Find the product class name** - use browser developer tools to inspect the `<html>` element and see which product class is currently applied.
+- **Combine with color modes** - use `:root.dark.product-{product-name}` to style products differently in dark mode.
+- **Override CSS variables** - product-specific styles work best when overriding CSS variables, allowing the theme to handle the rest.
+- **Test all products** - make sure to test your styling across all products in your project to ensure consistency.
+
 ## Apply custom classes or IDs
 
 You can apply custom CSS classes or IDs included in your `styles.css` file to many Markdown or Markdoc block level elements such as table cells, list items, quotes, and headers using Markdoc annotation syntax.
