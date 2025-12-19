@@ -95,6 +95,7 @@ When an API catalog provides a unified substrate, AI and humans can collaborate 
 - Check compliance before integration
 - Detect breaking changes automatically
 - Generate integration code from schemas
+- Create Arazzo workflows that orchestrate multiple APIs into business processes
 - Orchestrate workflows across multiple APIs
 
 **Humans can:**
@@ -112,6 +113,53 @@ When an API catalog provides a unified substrate, AI and humans can collaborate 
 - Build on a foundation of trust and accuracy
 
 But this only works if the catalog is comprehensive, accurate, and trusted.
+
+## The AI-catalog feedback loop
+
+Here's where it gets even more interesting.
+
+AI agents don't just consume the catalog—they can also extend it.
+
+**AI agents can:**
+- Generate new API descriptions based on requirements
+- Create API workflows described with Arazzo (orchestrating multiple APIs into business processes)
+- Create service definitions from code analysis
+- Build catalog entities from infrastructure discovery
+- Extend existing APIs with new endpoints
+- Propose new workflows and integrations
+
+But here's the critical part: **Scorecards check their governance**.
+
+When AI agents create or extend catalog entities, scorecards automatically evaluate:
+- **Compliance** — Do the APIs meet organizational standards?
+- **Quality** — Are the schemas well-designed and documented?
+- **Security** — Are security best practices followed?
+- **Consistency** — Do the APIs follow naming conventions and patterns?
+- **Completeness** — Is all required metadata present?
+- **Workflow correctness** — Do Arazzo workflows correctly orchestrate APIs and handle errors?
+
+This creates a feedback loop:
+
+1. **AI builds** — AI agents create or extend catalog entities (APIs, services, workflows)
+2. **Scorecards evaluate** — Governance scorecards automatically check what AI created
+3. **Catalog improves** — Issues are flagged, quality is measured, compliance is verified
+4. **AI learns** — AI agents learn from scorecard feedback and improve future outputs
+
+The result: AI agents become better contributors to the catalog over time, and the catalog maintains quality even as AI accelerates creation.
+
+**Without scorecards:**
+- AI agents create APIs that don't meet standards
+- Quality degrades as AI generates more content
+- Compliance issues multiply
+- Technical debt accumulates faster
+
+**With scorecards:**
+- AI agents create APIs that meet governance standards
+- Quality is maintained automatically
+- Compliance is checked before deployment
+- Technical debt is prevented, not just tracked
+
+The scorecard becomes the quality gate that ensures AI acceleration doesn't become AI chaos.
 
 ## Beyond APIs: The extended catalog
 
@@ -154,6 +202,8 @@ It's happening now.
 
 Organizations are already deploying AI agents that:
 - Generate API integration code
+- Create new API descriptions and catalog entities
+- Generate Arazzo workflows that orchestrate multiple APIs into business processes
 - Suggest API designs based on requirements
 - Automate API testing and validation
 - Orchestrate workflows across multiple APIs
@@ -196,6 +246,7 @@ Building an API catalog that serves as the AI substrate requires:
 - Ownership and responsibility are clear
 - Lifecycle stages are reliable
 - Governance policies are enforced
+- Scorecards evaluate quality and compliance automatically
 
 **Extensibility:**
 - New entity types can be added (services, people, AI agents)
