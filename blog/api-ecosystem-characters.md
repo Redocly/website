@@ -7,7 +7,7 @@ seo:
   description: Discover the three behavioral archetypes in enterprise API ecosystems—the Benefactor, the Amplifier, and the Redundancer—and how they impact cost, velocity, and architectural health.
   image: ./images/api-ecosystem-characters.png
 author: adam-altman
-publishedDate: 2025-12-18
+publishedDate: 2025-12-17
 categories:
   - api-catalog
 image: api-ecosystem-characters.png
