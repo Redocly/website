@@ -212,6 +212,53 @@ See the [colorMode configuration](../config/color-mode.md) for all available opt
 3. Verify the new icon appears and styles are applied correctly
 4. Refine the styles in `@theme/styles.css` as needed
 
+## Use the `useColorSwitcher` hook
+
+Use the `useColorSwitcher` React hook to access the current color mode and switch modes from your custom components.
+This is useful for adapting component behavior or visuals based on the active color mode, or for adding custom color mode controls.
+
+### Usage
+
+```tsx
+import { useColorSwitcher } from '@redocly/theme';
+
+export function ThemeToggleButton() {
+  const { activeColorMode, switchColorMode, isSwitcherHidden } = useColorSwitcher();
+
+  if (isSwitcherHidden) return null;
+
+  const nextLabel = activeColorMode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+
+  return (
+    <button type="button" onClick={() => switchColorMode()}>
+      {nextLabel}
+    </button>
+  );
+}
+```
+
+#### Set a specific mode
+
+You can also set an explicit mode if it exists in your configured modes.
+If an invalid mode is passed, the call is ignored.
+
+```tsx
+const { switchColorMode } = useColorSwitcher();
+switchColorMode('dark'); // sets dark mode if supported
+```
+
+### API
+
+- **activeColorMode**: `string` — The current color mode (for example, `light` or `dark`).
+- **switchColorMode**: `(mode?: string) => void` — Call with no argument to cycle through configured modes.
+  Call with a `string` to set a specific supported mode.
+
+### Notes
+
+- The hook reads the current document color mode and updates the `<html>` element classes when switching modes.
+- The list of supported modes comes from configuration.
+  If no modes are configured, the default is `light` and `dark`.
+
 ## Resources
 
 - **[Custom styles guide](./customize-styles.md)** - Learn to customize your documentation's appearance using CSS variables and custom stylesheets for precise brand control
