@@ -1,0 +1,21 @@
+allOf:
+  - $ref: ./MenuItem.yaml
+  - type: object
+    properties:
+      size:
+        type: number
+        minimum: 0
+        description: Size of the beverage.
+        exclusiveMinimum: 0
+      sizeType:
+        type: string
+        default: ml
+        enum:
+          - ml
+          - oz
+      containsCaffeine:
+        type: boolean
+        description: Indicates if the beverage contains caffeine.
+    required:
+      - size
+      - containsCaffeine

@@ -1,0 +1,7 @@
+name: search
+in: query
+description: Search.
+required: false
+schema:
+  type: string
+example: text-to-search

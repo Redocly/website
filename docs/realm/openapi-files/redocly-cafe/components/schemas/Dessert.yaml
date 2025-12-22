@@ -1,0 +1,11 @@
+allOf:
+  - $ref: ./MenuItem.yaml
+  - type: object
+    properties:
+      calories:
+        type: number
+        minimum: 0
+        exclusiveMinimum: 0
+        description: Amount of calories.
+    required:
+      - calories

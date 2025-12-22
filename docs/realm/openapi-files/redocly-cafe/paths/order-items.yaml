@@ -1,0 +1,37 @@
+get:
+  tags:
+    - Orders
+  summary: List order items
+  description: |
+    Returns an array of order items for a specific order.
+    Use the `filter` parameter to filter by order ID.
+  operationId: listOrderItems
+  security:
+    - OAuth2:
+        - orders:read
+  parameters:
+    - name: filter
+      description: Filters the collection items. This field requires a special format.
+      in: query
+      required: true
+      schema:
+        type: string
+      example: orderId:ord_01h1s5z6vf2mm1mz3hevnn9va7
+  responses:
+    '200':
+      description: Successful operation.
+      content:
+        application/json:
+          schema:
+            type: array
+            description: List of menu items that are part of the order.
+            items:
+              $ref: ../components/schemas/OrderItem.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '500':
+      $ref: ../components/responses/InternalServerError.yaml

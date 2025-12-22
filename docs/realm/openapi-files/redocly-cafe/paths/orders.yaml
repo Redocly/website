@@ -1,0 +1,65 @@
+get:
+  tags:
+    - Orders
+  summary: List orders
+  description: Retrieve a collection of orders with optional filtering and pagination.
+  operationId: listOrders
+  security:
+    - OAuth2:
+        - orders:read
+  parameters:
+    - $ref: ../components/parameters/Filter.yaml
+    - $ref: ../components/parameters/Sort.yaml
+    - $ref: ../components/parameters/Limit.yaml
+    - $ref: ../components/parameters/After.yaml
+    - $ref: ../components/parameters/Before.yaml
+    - $ref: ../components/parameters/Search.yaml
+  responses:
+    '200':
+      description: Successful operation.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OrderList.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '500':
+      $ref: ../components/responses/InternalServerError.yaml
+post:
+  tags:
+    - Orders
+  summary: Create order
+  description: >
+    Create a new order.
+
+    Order items cannot be changed - if they need to be updated, the order should
+    be canceled and a new one placed.
+
+    Orders cannot be deleted, only canceled.
+  operationId: createOrder
+  security:
+    - OAuth2:
+        - orders:write
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Order.yaml
+  responses:
+    '201':
+      description: Order placed successfully.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Order.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '403':
+      $ref: ../components/responses/Forbidden.yaml
+    '500':
+      $ref: ../components/responses/InternalServerError.yaml
