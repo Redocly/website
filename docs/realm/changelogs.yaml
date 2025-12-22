@@ -1,4 +1,17 @@
 '@redocly/realm':
+  0.128.1:
+    timestamp: 1766405352000
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where scorecard custom targets did not match.
+        - Fixed an issue where the product picker was not properly aligned in the navbar.
+    dependencies:
+      '@redocly/theme': 0.60.1
+      '@redocly/asyncapi-docs': 1.5.1
+      '@redocly/graphql-docs': 1.5.0
+      '@redocly/openapi-docs': 3.16.1
+      '@redocly/portal-plugin-mock-server': 0.13.1
   0.129.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -49,7 +62,7 @@
       '@redocly/graphql-docs': 1.6.0-next.0
       '@redocly/theme': 0.61.0-next.0
   0.128.0:
-    timestamp: 1765280601000
+    timestamp: 1765274274000
     changes:
       minor:
         - Excluded pages from sitemaps if they are excluded from search.
@@ -5040,6 +5053,18 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.128.1:
+    timestamp: 1766405352000
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where scorecard custom targets did not match.
+    dependencies:
+      '@redocly/theme': 0.60.1
+      '@redocly/asyncapi-docs': 1.5.1
+      '@redocly/graphql-docs': 1.5.0
+      '@redocly/openapi-docs': 3.16.1
+      '@redocly/portal-plugin-mock-server': 0.13.1
   0.129.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -5085,7 +5110,7 @@
       '@redocly/graphql-docs': 1.6.0-next.0
       '@redocly/theme': 0.61.0-next.0
   0.128.0:
-    timestamp: 1765280601000
+    timestamp: 1765274274000
     changes:
       minor:
         - Excluded pages from sitemaps if they are excluded from search.
@@ -9271,6 +9296,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.128.1:
+    timestamp: 1766405352000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the product picker was not properly aligned in the navbar.
+    dependencies:
+      '@redocly/theme': 0.60.1
+      '@redocly/asyncapi-docs': 1.5.1
+      '@redocly/graphql-docs': 1.5.0
+      '@redocly/openapi-docs': 3.16.1
+      '@redocly/portal-plugin-mock-server': 0.13.1
   0.129.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -9319,7 +9356,7 @@
       '@redocly/graphql-docs': 1.6.0-next.0
       '@redocly/theme': 0.61.0-next.0
   0.128.0:
-    timestamp: 1765280601000
+    timestamp: 1765274274000
     changes:
       minor:
         - Excluded pages from sitemaps if they are excluded from search.
@@ -13492,6 +13529,17 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.128.1:
+    timestamp: 1766405352000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.60.1
+      '@redocly/asyncapi-docs': 1.5.1
+      '@redocly/graphql-docs': 1.5.0
+      '@redocly/openapi-docs': 3.16.1
+      '@redocly/portal-plugin-mock-server': 0.13.1
   0.129.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -13535,7 +13583,7 @@
       '@redocly/graphql-docs': 1.6.0-next.0
       '@redocly/theme': 0.61.0-next.0
   0.128.0:
-    timestamp: 1765280601000
+    timestamp: 1765274274000
     changes:
       minor:
         - Excluded pages from sitemaps if they are excluded from search.
@@ -17744,6 +17792,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.60.1:
+    timestamp: 1766405352000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the product picker was not properly aligned in the navbar.
+    dependencies: {}
   0.61.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -17770,7 +17825,7 @@
         - Enter prerelease mode.
     dependencies: {}
   0.60.0:
-    timestamp: 1765280601000
+    timestamp: 1765274274000
     changes:
       minor:
         - Added support for `additionalOperations` in OpenAPI 3.2.0.
@@ -20290,6 +20345,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.16.1:
+    timestamp: 1766405352000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.19.1
   3.17.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -20317,7 +20379,7 @@
       '@redocly/replay': 0.20.0-next.0
       '@redocly/theme': 0.61.0-next.0
   3.16.0:
-    timestamp: 1765280601000
+    timestamp: 1765274274000
     changes:
       minor:
         - Added support for `additionalOperations` in OpenAPI 3.2.0.
@@ -24773,6 +24835,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.11.1:
+    timestamp: 1766405352000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.128.1
+      '@redocly/redoc-reef': 0.128.1
+      '@redocly/redoc-revel': 0.128.1
+      '@redocly/theme': 0.60.1
+      '@redocly/redoc': 0.128.1
   1.12.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -24808,7 +24881,7 @@
       '@redocly/redoc-revel': 0.129.0-next.0
       '@redocly/theme': 0.61.0-next.0
   1.11.0:
-    timestamp: 1765280601000
+    timestamp: 1765274274000
     changes:
       minor: []
       patch: []
@@ -29196,6 +29269,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.13.1:
+    timestamp: 1766405352000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.16.1
   0.14.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -29220,7 +29300,7 @@
     dependencies:
       '@redocly/openapi-docs': 3.17.0-next.0
   0.13.0:
-    timestamp: 1765280601000
+    timestamp: 1765274274000
     changes:
       minor:
         - Added support for `additionalOperations` in OpenAPI 3.2.0.
@@ -31639,6 +31719,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.19.1:
+    timestamp: 1766405352000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.60.1
   0.20.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -31678,7 +31765,7 @@
     dependencies:
       '@redocly/theme': 0.61.0-next.0
   0.19.0:
-    timestamp: 1765280601000
+    timestamp: 1765274274000
     changes:
       minor:
         - >-
@@ -33272,6 +33359,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.11.1:
+    timestamp: 1766405352000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.60.1
   0.12.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -33295,7 +33389,7 @@
     dependencies:
       '@redocly/theme': 0.61.0-next.0
   0.11.0:
-    timestamp: 1765280601000
+    timestamp: 1765274274000
     changes:
       minor: []
       patch: []
@@ -34731,6 +34825,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.5.1:
+    timestamp: 1766405352000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.60.1
+      '@redocly/openapi-docs': 3.16.1
   1.6.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -34757,7 +34859,7 @@
       '@redocly/openapi-docs': 3.17.0-next.0
       '@redocly/theme': 0.61.0-next.0
   1.5.0:
-    timestamp: 1765280601000
+    timestamp: 1765274274000
     changes:
       minor: []
       patch:
