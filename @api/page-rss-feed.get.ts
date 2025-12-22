@@ -17,6 +17,7 @@ interface PageData {
       [key: string]: unknown;
     };
     ast?: unknown;
+    lastModified?: number | string;
     [key: string]: unknown;
   };
   [key: string]: unknown;
@@ -70,13 +71,16 @@ async function fetchPageData(baseUrl: string, pageSlug: string): Promise<PageDat
   try {
     const pageDataResponse = await fetch(pageDataUrl);
 
-    if (pageDataResponse.ok) {
-      return await pageDataResponse.json();
+    if (!pageDataResponse.ok) {
+      throw new Error(`Page not found: ${pageDataResponse.status} ${pageDataResponse.statusText} at ${pageDataUrl}`);
     }
 
-    throw new Error(`Failed to fetch page data: ${pageDataResponse.status} ${pageDataResponse.statusText}`);
+    return await pageDataResponse.json();
   } catch (error) {
-    throw new Error(`Failed to fetch page data: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    if (error instanceof Error && error.message.includes('Page not found')) {
+      throw error;
+    }
+    throw new Error(`Failed to fetch page data from ${pageDataUrl}: ${error instanceof Error ? error.message : 'Unknown error'}`);
   }
 }
 
@@ -85,20 +89,40 @@ async function updatePageChanges(
   pageDataPath: string,
   currentHash: string,
   pageTitle: string,
-  pageUrl: string
+  pageUrl: string,
+  pageLastModified?: number | string
 ): Promise<void> {
   const lastHashKey = ['pageRss', 'pages', pageDataPath, 'lastHash'];
   const lastHashRecord = await kv.get(lastHashKey);
   const lastHash = lastHashRecord?.value;
 
-  if (lastHash !== currentHash) {
-    const now = Date.now();
+  if (lastHash === currentHash) {
+    return;
+  }
 
-    await kv.set(lastHashKey, currentHash);
+  const changesPrefix = ['pageRss', 'changes', pageDataPath];
+  const existingChanges = await kv.list(
+    { prefix: changesPrefix },
+    { limit: 100 }
+  ) as { items: Array<{ value: PageChangeRecord }> };
+
+  const hashAlreadyExists = existingChanges.items.some(
+    (item) => item.value?.hash === currentHash
+  );
+
+  if (!hashAlreadyExists) {
+    let timestamp: number;
+    if (pageLastModified) {
+      timestamp = typeof pageLastModified === 'string' 
+        ? new Date(pageLastModified).getTime() 
+        : pageLastModified;
+    } else {
+      timestamp = Date.now();
+    }
 
     const changeRecord: PageChangeRecord = {
       hash: currentHash,
-      timestamp: now,
+      timestamp,
       pageTitle,
       pageUrl,
     };
@@ -107,12 +131,14 @@ async function updatePageChanges(
       'pageRss',
       'changes',
       pageDataPath,
-      now.toString().padStart(20, '0'),
+      timestamp.toString().padStart(20, '0'),
       currentHash,
     ];
 
     await kv.set(recordKey, changeRecord);
   }
+
+  await kv.set(lastHashKey, currentHash);
 }
 
 async function getChangeRecords(
@@ -180,8 +206,9 @@ export default async function pageRssFeedHandler(
 
     const currentHash = await calculateHash(pageData);
     const pageTitle = getPageTitle(pageData, TARGET_PAGE_SLUG);
+    const pageLastModified = pageData?.props?.lastModified;
 
-    await updatePageChanges(kv, pageDataPath, currentHash, pageTitle, TARGET_PAGE_SLUG);
+    await updatePageChanges(kv, pageDataPath, currentHash, pageTitle, TARGET_PAGE_SLUG, pageLastModified);
     const records = await getChangeRecords(kv, pageDataPath, currentHash, pageTitle, TARGET_PAGE_SLUG);
 
     const rssXml = buildRssFeed(pageTitle, TARGET_PAGE_SLUG, baseUrl, request.url, records);
@@ -196,16 +223,16 @@ export default async function pageRssFeedHandler(
       },
     });
   } catch (error: any) {
-    if (error?.message.includes('Failed to fetch page data')) {
+    if (error?.message?.includes('Page not found') || error?.message?.includes('404')) {
       return context.status(404).json({
         error: 'Page not found',
-        message: error.message,
+        message: error.message || 'Could not fetch page data',
       });
     }
 
     return context.status(500).json({
       error: 'Internal server error',
-      message: 'Failed to generate RSS feed',
+      message: error?.message || 'Failed to generate RSS feed',
     });
   }
 }
