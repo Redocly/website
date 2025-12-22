@@ -1,5 +1,6 @@
 import type { ApiFunctionsContext } from '@redocly/config';
 import { escapeXml, formatRssDate } from '../@theme/utils/rss';
+import crypto from 'crypto';
 
 const TARGET_PAGE_SLUG = '/docs/end-user/interact-with-pages';
 
@@ -32,26 +33,7 @@ async function calculateHash(pageData: PageData): Promise<string> {
   const dataToHash = pageData?.props?.ast || pageData?.props || pageData;
   const dataString = JSON.stringify(dataToHash);
 
-  if (typeof crypto !== 'undefined' && crypto.subtle) {
-    try {
-      const encoder = new TextEncoder();
-      const data = encoder.encode(dataString);
-      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').substring(0, 16);
-    } catch (error) {
-      // Continue to fallback hash
-    }
-  }
-
-  let hash = 0;
-  for (let i = 0; i < dataString.length; i++) {
-    const char = dataString.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
-    hash = hash & hash;
-  }
-
-  return hash.toString(36);
+  return crypto.createHash('sha1').update(dataString).digest('base64').substring(0, 16);
 }
 
 function getPageTitle(pageData: PageData, slug: string): string {
