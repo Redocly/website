@@ -37541,3 +37541,10 @@ replay:
         - Improved overflow handling for operation names and badges in the Replay request header.
       patch: []
     dependencies: {}
+  0.13.0:
+    timestamp: 1766422871000
+    changes:
+      minor: []
+      patch:
+        - Fixed step opening behavior after saving to a collection.
+    dependencies: {}
