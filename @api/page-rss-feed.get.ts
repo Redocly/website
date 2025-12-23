@@ -1,8 +1,17 @@
 import type { ApiFunctionsContext } from '@redocly/config';
 import { escapeXml, formatRssDate } from '../@theme/utils/rss';
 import crypto from 'crypto';
+// @ts-ignore
+import pagesConfig from './page-rss-pages.yaml';
 
-const TARGET_PAGE_SLUG = '/docs/end-user/interact-with-pages';
+interface PageConfig {
+  slug: string;
+  title?: string;
+}
+
+interface PagesConfig {
+  pages: PageConfig[];
+}
 
 interface PageData {
   props?: {
@@ -172,10 +181,13 @@ function buildRssFeed(
   pageTitle: string,
   pageUrl: string,
   baseUrl: string,
-  feedUrl: string,
+  apiPath: string,
+  pageSlug: string,
   records: PageChangeRecord[]
 ): string {
   const rssItems = records.map((record) => buildRssItem(record, baseUrl)).join('');
+
+  const feedUrl = `${baseUrl}${apiPath}?page=${encodeURIComponent(pageSlug)}`;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -191,27 +203,49 @@ function buildRssFeed(
 </rss>`;
 }
 
+function getPageSlug(context: ApiFunctionsContext, config: PagesConfig): string {
+  const pageSlug = context.query.page as string | undefined;
+  
+  if (pageSlug) {
+    const isValidPage = config.pages.some((p) => p.slug === pageSlug);
+    if (!isValidPage) {
+      throw new Error(`Page '${pageSlug}' is not in the allowed pages list`);
+    }
+    return pageSlug;
+  }
+
+  if (config.pages.length === 0) {
+    throw new Error('No pages configured in page-rss-pages.yaml');
+  }
+
+  return config.pages[0].slug;
+}
+
 export default async function pageRssFeedHandler(
   request: Request,
   context: ApiFunctionsContext
 ) {
   try {
+    const config = pagesConfig as PagesConfig;
+    const pageSlug = getPageSlug(context, config);
+    
     // @ts-ignore - getKv may not be in type definitions yet but exists at runtime
     const kv = await context.getKv();
     const url = new URL(request.url);
     const baseUrl = `${url.protocol}//${url.host}`;
+    const apiPath = url.pathname;
 
-    const pageData = await fetchPageData(baseUrl, TARGET_PAGE_SLUG);
-    const pageDataPath = TARGET_PAGE_SLUG.replace(/^\//, '').replace(/\/$/, '');
+    const pageData = await fetchPageData(baseUrl, pageSlug);
+    const pageDataPath = pageSlug.replace(/^\//, '').replace(/\/$/, '');
 
     const currentHash = await calculateHash(pageData);
-    const pageTitle = getPageTitle(pageData, TARGET_PAGE_SLUG);
+    const pageTitle = getPageTitle(pageData, pageSlug);
     const pageLastModified = pageData?.props?.lastModified;
 
-    await updatePageChanges(kv, pageDataPath, currentHash, pageTitle, TARGET_PAGE_SLUG, pageLastModified);
-    const records = await getChangeRecords(kv, pageDataPath, currentHash, pageTitle, TARGET_PAGE_SLUG);
+    await updatePageChanges(kv, pageDataPath, currentHash, pageTitle, pageSlug, pageLastModified);
+    const records = await getChangeRecords(kv, pageDataPath, currentHash, pageTitle, pageSlug);
 
-    const rssXml = buildRssFeed(pageTitle, TARGET_PAGE_SLUG, baseUrl, request.url, records);
+    const rssXml = buildRssFeed(pageTitle, pageSlug, baseUrl, apiPath, pageSlug, records);
 
     return new Response(rssXml, {
       status: 200,
@@ -227,6 +261,14 @@ export default async function pageRssFeedHandler(
       return context.status(404).json({
         error: 'Page not found',
         message: error.message || 'Could not fetch page data',
+      });
+    }
+
+    if (error?.message?.includes('not in the allowed pages list')) {
+      return context.status(400).json({
+        error: 'Invalid page',
+        message: error.message,
+        availablePages: (pagesConfig as PagesConfig).pages.map((p) => p.slug),
       });
     }
 
