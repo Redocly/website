@@ -1,8 +1,7 @@
-
 logo:
-  srcSet: "./images/redocly-logo.svg light, ./images/redocly-logo-inverted.svg dark"
+  srcSet: './images/redocly-logo.svg light, ./images/redocly-logo-inverted.svg dark'
   altText: Redocly logo
-  link: "/"
+  link: '/'
 
 navbar:
   items:
@@ -26,12 +25,12 @@ feedback:
     comment:
       likeLabel: What was most helpful?
       dislikeLabel: What can we improve?
-      
+
 userMenu:
   hideLoginButton: true
 
 search:
-  engine: typesense 
+  engine: typesense
   shortcuts:
     - ctrl+f
     - cmd+k
@@ -319,7 +318,7 @@ ignore:
   - '.templates/**'
   - '**/code-walkthrough-files/**'
 
-responseHeaders: 
+responseHeaders:
   '**':
     - name: X-Robots-Tag
       value: noindex

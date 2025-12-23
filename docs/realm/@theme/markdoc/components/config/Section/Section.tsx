@@ -10,7 +10,7 @@ export interface ConfigSectionProps {
 export function ConfigSection({
   title,
   description,
-  children
+  children,
 }: ConfigSectionProps): React.ReactElement {
   return (
     <SectionContainer>

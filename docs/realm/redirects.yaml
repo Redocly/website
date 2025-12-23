@@ -372,7 +372,7 @@
   to: '/customization/eject-components-using-cli'
 '/extend/how-to/eject-components-in-reunite':
   to: '/customization/eject-components-in-reunite'
-'/extend/how-to/react-components': 
+'/extend/how-to/react-components':
   to: '/customization/react-components'
 '/extend/how-to/use-in-react-page':
   to: '/customization/react-components/use-in-react-page'

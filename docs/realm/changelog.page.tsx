@@ -13,7 +13,11 @@ import { CheckboxIcon } from '@redocly/theme/icons/CheckboxIcon/CheckboxIcon';
 import { Button } from '@redocly/theme/components/Button/Button';
 
 import { HighlightContext } from './@theme/_components/Highlight';
-import { ChangelogSection, SectionHeader, matchesSearch } from './@theme/_components/ChangelogSection';
+import {
+  ChangelogSection,
+  SectionHeader,
+  matchesSearch,
+} from './@theme/_components/ChangelogSection';
 import { NextReleases } from './@theme/_components/NextReleases';
 import { hasChanges, type ChangelogEntry } from './@theme/_utils/changelog';
 import { RssSubscription } from './@theme/_components/RssSubscription';
@@ -34,9 +38,9 @@ export const SHORT_NAMES = {
   reunite: 'Reunite',
   // TODO: uncomment before first replay release
   // replay: 'Replay',
-}
+};
 
-export type ShortNameValues = typeof SHORT_NAMES[keyof typeof SHORT_NAMES];
+export type ShortNameValues = (typeof SHORT_NAMES)[keyof typeof SHORT_NAMES];
 
 const DEFAULT_FILTERS = ['Realm', 'Reunite'];
 const DEFAULT_ITEMS_TO_RENDER = 20;
@@ -68,112 +72,119 @@ export default function Changelog() {
   const changelogs = changelogData as Record<string, Record<string, ChangelogEntry>>;
 
   // Process changelogs and next changelogs
-  const { changelogsWithResolvedDeps, nextChangelogs, latestReleases }: ProcessedChangelogs = React.useMemo<ProcessedChangelogs>(() => {
-    const resolved: ChangelogWithDeps[] = [];
-    const latest: ChangelogWithDeps[] = [];
-    
-    const nextChangelogs: Record<string, NextChangelogItem[]> = {
-      '@redocly/realm': [],
-      '@redocly/reef': [],
-      '@redocly/revel': [],
-      '@redocly/redoc': [],
-    };
+  const { changelogsWithResolvedDeps, nextChangelogs, latestReleases }: ProcessedChangelogs =
+    React.useMemo<ProcessedChangelogs>(() => {
+      const resolved: ChangelogWithDeps[] = [];
+      const latest: ChangelogWithDeps[] = [];
 
-    for (const packageName of Object.keys(changelogs)) {
-      const records = Object.entries(changelogs[packageName])
-      const sortedRecords = records.sort((a, b) => b[1].timestamp - a[1].timestamp);
-      
-      let latestRelease: string | null = null;
+      const nextChangelogs: Record<string, NextChangelogItem[]> = {
+        '@redocly/realm': [],
+        '@redocly/reef': [],
+        '@redocly/revel': [],
+        '@redocly/redoc': [],
+      };
 
-      for (const [version, record] of sortedRecords) {
-        const isNextVersionChangelog = isNextVersion(version);
-        const resolvedRecord = resolveDepsDeep(record);
+      for (const packageName of Object.keys(changelogs)) {
+        const records = Object.entries(changelogs[packageName]);
+        const sortedRecords = records.sort((a, b) => b[1].timestamp - a[1].timestamp);
 
-        if (!hasChanges(resolvedRecord)) continue; // Skip if resolved record has no changes
+        let latestRelease: string | null = null;
 
-        if (!isNextVersionChangelog) {
-          if (!latestRelease) {
-            latestRelease = version;
-            latest.push({
+        for (const [version, record] of sortedRecords) {
+          const isNextVersionChangelog = isNextVersion(version);
+          const resolvedRecord = resolveDepsDeep(record);
+
+          if (!hasChanges(resolvedRecord)) continue; // Skip if resolved record has no changes
+
+          if (!isNextVersionChangelog) {
+            if (!latestRelease) {
+              latestRelease = version;
+              latest.push({
+                record: resolvedRecord,
+                packageName,
+                version,
+              });
+            }
+          } else {
+            // Skip next versions that are less than or equal to latest stable release
+            if (latestRelease && compareVersions(version, latestRelease) <= 0) {
+              continue;
+            }
+            nextChangelogs[packageName]?.push({
+              record: resolvedRecord,
+              version,
+            });
+          }
+
+          if (!isNextVersionChangelog) {
+            resolved.push({
               record: resolvedRecord,
               packageName,
               version,
             });
           }
-        } else {
-          // Skip next versions that are less than or equal to latest stable release
-          if (latestRelease && compareVersions(version, latestRelease) <= 0) {
-            continue;
-          }
-          nextChangelogs[packageName]?.push({
-            record: resolvedRecord,
-            version,
-          });
-        }
-
-        if (!isNextVersionChangelog) {
-          resolved.push({
-            record: resolvedRecord,
-            packageName,
-            version,
-          });
         }
       }
-    }
-    
-    /**
-     * Processes next release changelogs by:
-     * 1. Sorting items by their next version number
-     * 2. For each item, accumulates all changes from previous next versions
-     * 3. Combines current item changes with all previous changes to show full changelog
-     * 
-     * Example:
-     * next.1: [Change A]
-     * next.2: [Change B]
-     * next.3: [Change C]
-     * 
-     * Will display as:
-     * next.1: [Change A]
-     * next.2: [Change B, Change A]
-     * next.3: [Change C, Change B, Change A]
-     */
-    const accumulateNextVersionChanges = (items: NextChangelogItem[]): NextChangelogItem[] => {
-      const sortedItems = [...items].sort((a, b) => 
-        parseInt(a.version.split('next.')[1]) - parseInt(b.version.split('next.')[1])
-      );
 
-      return items.map(item => {
-        const itemIndex = sortedItems.findIndex(i => i.version === item.version);
-        const allChanges = [item, ...sortedItems.slice(0, itemIndex).reverse()];
-        
-        return {
-          ...item,
-          record: {
-            ...item.record,
-            changes: {
-              minor: Array.from(new Set(allChanges.flatMap(i => i.record.changes.minor))),
-              patch: Array.from(new Set(allChanges.flatMap(i => i.record.changes.patch))),
-            }
-          }
-        };
-      });
-    };
+      /**
+       * Processes next release changelogs by:
+       * 1. Sorting items by their next version number
+       * 2. For each item, accumulates all changes from previous next versions
+       * 3. Combines current item changes with all previous changes to show full changelog
+       *
+       * Example:
+       * next.1: [Change A]
+       * next.2: [Change B]
+       * next.3: [Change C]
+       *
+       * Will display as:
+       * next.1: [Change A]
+       * next.2: [Change B, Change A]
+       * next.3: [Change C, Change B, Change A]
+       */
+      const accumulateNextVersionChanges = (items: NextChangelogItem[]): NextChangelogItem[] => {
+        const sortedItems = [...items].sort(
+          (a, b) => parseInt(a.version.split('next.')[1]) - parseInt(b.version.split('next.')[1]),
+        );
 
-    return {
-      changelogsWithResolvedDeps: resolved,
-      nextChangelogs: Object.fromEntries(
-        Object.entries(nextChangelogs).map(([pkg, items]) => [pkg, accumulateNextVersionChanges(items)])
-      ),
-      latestReleases: latest,
-    };
-  }, [changelogs]);
+        return items.map((item) => {
+          const itemIndex = sortedItems.findIndex((i) => i.version === item.version);
+          const allChanges = [item, ...sortedItems.slice(0, itemIndex).reverse()];
+
+          return {
+            ...item,
+            record: {
+              ...item.record,
+              changes: {
+                minor: Array.from(new Set(allChanges.flatMap((i) => i.record.changes.minor))),
+                patch: Array.from(new Set(allChanges.flatMap((i) => i.record.changes.patch))),
+              },
+            },
+          };
+        });
+      };
+
+      return {
+        changelogsWithResolvedDeps: resolved,
+        nextChangelogs: Object.fromEntries(
+          Object.entries(nextChangelogs).map(([pkg, items]) => [
+            pkg,
+            accumulateNextVersionChanges(items),
+          ]),
+        ),
+        latestReleases: latest,
+      };
+    }, [changelogs]);
 
   // Filter out latest releases from previous releases list
   const previousReleases = React.useMemo(() => {
     return changelogsWithResolvedDeps
-      .filter(item => !latestReleases.some(
-        latest => latest.packageName === item.packageName && latest.version === item.version
-      ))
+      .filter(
+        (item) =>
+          !latestReleases.some(
+            (latest) => latest.packageName === item.packageName && latest.version === item.version,
+          ),
+      )
       .sort((a, b) => b.record.timestamp - a.record.timestamp);
   }, [changelogsWithResolvedDeps, latestReleases]);
 
@@ -190,11 +201,9 @@ export default function Changelog() {
     if (!element) return false;
 
     const rect = element.getBoundingClientRect();
-    const viewportHeight =
-      window.innerHeight || document.documentElement.clientHeight;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
-    const isComfortablyPositioned =
-      rect.top >= 0 && rect.top <= viewportHeight * 0.25;
+    const isComfortablyPositioned = rect.top >= 0 && rect.top <= viewportHeight * 0.25;
 
     if (!isComfortablyPositioned) {
       element.scrollIntoView({ block: 'start' });
@@ -209,11 +218,11 @@ export default function Changelog() {
       if (!packages.includes(SHORT_NAMES[packageName] || packageName)) {
         return false;
       }
-      return matchesSearch(searchTerm, { 
-        packageName, 
-        version, 
+      return matchesSearch(searchTerm, {
+        packageName,
+        version,
         record,
-        isNext: isNextVersion(version)
+        isNext: isNextVersion(version),
       });
     });
   }, [packages, changelogsWithResolvedDeps, searchTerm]);
@@ -347,47 +356,45 @@ export default function Changelog() {
               />
             </ControlsWrap>
 
-            <NextReleases 
+            <NextReleases
               nextChangelogs={nextChangelogs}
               packages={packages as ShortNameValues[]}
             />
 
             {latestReleases.length > 0 && (
-              <ChangelogSection 
-                items={latestReleases} 
-                packages={packages} 
-                isLatestRelease={true}
-              >
-                {(filteredItems) => filteredItems.length > 0 && (
-                  <LatestReleaseSection>
-                    <SectionHeader>Latest release</SectionHeader>
-                    {filteredItems}
-                  </LatestReleaseSection>
-                )}
+              <ChangelogSection items={latestReleases} packages={packages} isLatestRelease={true}>
+                {(filteredItems) =>
+                  filteredItems.length > 0 && (
+                    <LatestReleaseSection>
+                      <SectionHeader>Latest release</SectionHeader>
+                      {filteredItems}
+                    </LatestReleaseSection>
+                  )
+                }
               </ChangelogSection>
             )}
 
             {previousReleases.length > 0 && (
-              <ChangelogSection 
-                items={previousReleases} 
-                packages={packages} 
+              <ChangelogSection
+                items={previousReleases}
+                packages={packages}
                 itemsToRender={itemsToRender}
                 isPreviousRelease={true}
               >
-                {(filteredItems) => filteredItems.length > 0 && (
-                  <PreviousReleasesSection>
-                    <SectionHeader>Previous releases</SectionHeader>
-                    {filteredItems}
-                  </PreviousReleasesSection>
-                )}
+                {(filteredItems) =>
+                  filteredItems.length > 0 && (
+                    <PreviousReleasesSection>
+                      <SectionHeader>Previous releases</SectionHeader>
+                      {filteredItems}
+                    </PreviousReleasesSection>
+                  )
+                }
               </ChangelogSection>
             )}
 
             {filteredChangelogs.length > itemsToRender && (
               <ShowMoreSection>
-                <Button onClick={() => setItemsToRender((prev) => prev + 20)}>
-                  Load more
-                </Button>
+                <Button onClick={() => setItemsToRender((prev) => prev + 20)}>Load more</Button>
               </ShowMoreSection>
             )}
           </Markdown>
@@ -483,7 +490,7 @@ const ShowMoreSection = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 24px;
-  
+
   button {
     font-size: var(--font-size-base);
     line-height: 22px;

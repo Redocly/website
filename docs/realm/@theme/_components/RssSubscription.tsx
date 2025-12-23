@@ -19,7 +19,7 @@ const SHORT_NAMES = {
   reunite: 'Reunite',
 } as const;
 
-type ShortNameValues = typeof SHORT_NAMES[keyof typeof SHORT_NAMES];
+type ShortNameValues = (typeof SHORT_NAMES)[keyof typeof SHORT_NAMES];
 
 const PRODUCTS = [
   { key: '@redocly/realm', label: SHORT_NAMES['@redocly/realm'], Icon: RealmIcon },
@@ -38,9 +38,7 @@ interface RssSubscriptionProps {
 const isValidProductLabel = (label: string): label is ShortNameValues =>
   PRODUCTS.some((product) => product.label === label);
 
-const sanitizeSelectedProducts = (
-  products?: readonly string[],
-): ShortNameValues[] => {
+const sanitizeSelectedProducts = (products?: readonly string[]): ShortNameValues[] => {
   const allProductLabels = PRODUCTS.map((product) => product.label);
 
   if (!products?.length) {
@@ -100,15 +98,18 @@ export function RssSubscription({ className, initialSelectedProducts }: RssSubsc
   }, []);
 
   const handleCopyUrl = React.useCallback(() => {
-    navigator.clipboard.writeText(rssFeedUrl).then(() => {
-      setIsCopied(true);
-      setTimeout(() => {
-        setIsCopied(false);
-      }, 2000);
-    }).catch(err => {
-      console.error('Failed to copy URL:', err);
-      selectUrlText();
-    });
+    navigator.clipboard
+      .writeText(rssFeedUrl)
+      .then(() => {
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 2000);
+      })
+      .catch((err) => {
+        console.error('Failed to copy URL:', err);
+        selectUrlText();
+      });
   }, [rssFeedUrl, selectUrlText]);
 
   return (
@@ -175,16 +176,23 @@ function RssModal({
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [onClose]);
-  const handleProductToggle = React.useCallback((product: ShortNameValues) => {
-    if (selectedProducts.includes(product)) {
-      onProductsChange(selectedProducts.filter((p) => p !== product));
-    } else {
-      onProductsChange([...selectedProducts, product]);
-    }
-  }, [onProductsChange, selectedProducts]);
+  const handleProductToggle = React.useCallback(
+    (product: ShortNameValues) => {
+      if (selectedProducts.includes(product)) {
+        onProductsChange(selectedProducts.filter((p) => p !== product));
+      } else {
+        onProductsChange([...selectedProducts, product]);
+      }
+    },
+    [onProductsChange, selectedProducts],
+  );
 
   const copyButtonIcon = React.useMemo(() => {
-    return isCopied ? <CDNIcon name="check" size="1em" color="currentColor" /> : <CDNIcon name="link" size="1em" color="currentColor" />;
+    return isCopied ? (
+      <CDNIcon name="check" size="1em" color="currentColor" />
+    ) : (
+      <CDNIcon name="link" size="1em" color="currentColor" />
+    );
   }, [isCopied]);
 
   return (
@@ -242,9 +250,9 @@ function RssModal({
           </Section>
           <UrlSection>
             <SectionTitle>
-              {selectedProducts.length === 0 ?
-                'All products RSS Feed URL' :
-                'Your custom RSS Feed URL'}
+              {selectedProducts.length === 0
+                ? 'All products RSS Feed URL'
+                : 'Your custom RSS Feed URL'}
             </SectionTitle>
             <UrlContainer>
               <UrlLink
@@ -378,7 +386,8 @@ const ProductGrid = styled.div`
 `;
 
 const ProductButton = styled.button<{ $active: boolean }>`
-  border: 1px solid ${({ $active }) => ($active ? 'var(--border-color-primary)' : 'var(--border-color-secondary)')};
+  border: 1px solid
+    ${({ $active }) => ($active ? 'var(--border-color-primary)' : 'var(--border-color-secondary)')};
   background: ${({ $active }) => ($active ? 'var(--bg-color-active)' : 'var(--bg-color-tonal)')};
   border-radius: 4px;
   padding: 12px 16px;
@@ -389,7 +398,10 @@ const ProductButton = styled.button<{ $active: boolean }>`
   align-items: flex-start;
   text-align: left;
   cursor: pointer;
-  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
   color: var(--text-color-primary);
   font-weight: 600;
 
@@ -403,7 +415,7 @@ const ProductButton = styled.button<{ $active: boolean }>`
 const ProductIcon = styled.div`
   width: 20px;
   height: 20px;
-  
+
   svg {
     width: 20px;
     height: 20px;
@@ -445,7 +457,8 @@ const ReleaseCandidatesToggle = styled.label`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) scale(0);
-    mask: url("data:image/svg+xml,%3Csvg width='8' height='7' viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 3.5L3 6L7.5 0.5' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg width='8' height='7' viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 3.5L3 6L7.5 0.5' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / contain no-repeat;
     background: var(--text-color-primary);
     transition: transform 0.15s ease;
   }
@@ -496,4 +509,3 @@ const CopyButton = styled(Button)`
   flex-shrink: 0;
   min-width: 130px;
 `;
-

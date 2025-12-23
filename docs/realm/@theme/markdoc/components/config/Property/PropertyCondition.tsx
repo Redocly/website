@@ -14,31 +14,29 @@ interface PropertyConditionProps {
 }
 
 const Container = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
 `;
 
 const MoreBadge = styled(Badge)`
-    border-color: var(--border-color-secondary);
-    cursor: help;
+  border-color: var(--border-color-secondary);
+  cursor: help;
 `;
-
 
 const UpgradeBadge = styled(Badge)`
-    border-color: var(--border-color-secondary);
-    background-color: var(--button-bg-color-secondary);
-    cursor: help;
-    display: flex;
-    align-items: center;
-    gap: 4px;
+  border-color: var(--border-color-secondary);
+  background-color: var(--button-bg-color-secondary);
+  cursor: help;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 
-    svg {
-        display: block;
-    }
+  svg {
+    display: block;
+  }
 `;
-
 
 type UseCurrentContextResult = {
   currentPlan: Plan | undefined;
@@ -47,7 +45,7 @@ type UseCurrentContextResult = {
 
 const useCurrentContext = (): UseCurrentContextResult => {
   const { currentPlan, currentProducts } = useUrlParams();
-  
+
   return { currentPlan, currentProducts };
 };
 
@@ -73,16 +71,20 @@ const computeVisibility = (
   const hasCurrentProducts: boolean = Array.isArray(currentProducts) && currentProducts.length > 0;
 
   // Upgrade logic
-  const isPlanMismatched: boolean = hasCurrentPlan && plansProvided && !plans.includes(currentPlan as Plan);
-  const doProductsOverlap: boolean = productsProvided && hasCurrentProducts
-    ? currentProducts.some((selected) => products.includes(selected))
-    : false;
-  const isProductsMismatched: boolean = productsProvided && hasCurrentProducts && !doProductsOverlap;
+  const isPlanMismatched: boolean =
+    hasCurrentPlan && plansProvided && !plans.includes(currentPlan as Plan);
+  const doProductsOverlap: boolean =
+    productsProvided && hasCurrentProducts
+      ? currentProducts.some((selected) => products.includes(selected))
+      : false;
+  const isProductsMismatched: boolean =
+    productsProvided && hasCurrentProducts && !doProductsOverlap;
 
   const showUpgradeBadge: boolean = isPlanMismatched || isProductsMismatched;
 
   // Badge display logic: only show descriptive badges when the user hasn't filtered/selected
-  const shouldShowProductBadges: boolean = !hasCurrentProducts && productsProvided && !showUpgradeBadge;
+  const shouldShowProductBadges: boolean =
+    !hasCurrentProducts && productsProvided && !showUpgradeBadge;
   const shouldShowPlanBadges: boolean = !hasCurrentPlan && plansProvided && !showUpgradeBadge;
 
   const allItems: Array<Plan | Products> = [
@@ -100,32 +102,33 @@ const isProductsEnumValue = (value: Plan | Products): value is Products => {
   return Object.values(Products).includes(value as Products);
 };
 
-const PropertyCondition = ({ plans = [], products = [] }: PropertyConditionProps): React.ReactElement => {
+const PropertyCondition = ({
+  plans = [],
+  products = [],
+}: PropertyConditionProps): React.ReactElement => {
   const { currentPlan, currentProducts } = useCurrentContext();
 
-  const { allItems, visibleItems, remainingCount, showUpgradeBadge } = React.useMemo<ComputedVisibility>((): ComputedVisibility => (
-    computeVisibility(plans, products, currentPlan, currentProducts)
-  ), [plans, products, currentPlan, currentProducts]);
+  const { allItems, visibleItems, remainingCount, showUpgradeBadge } =
+    React.useMemo<ComputedVisibility>(
+      (): ComputedVisibility => computeVisibility(plans, products, currentPlan, currentProducts),
+      [plans, products, currentPlan, currentProducts],
+    );
 
   return (
     <Container>
       {visibleItems.map((item) => (
         <Badge key={`${isProductsEnumValue(item) ? 'product' : 'plan'}-${String(item)}`}>
-          {isProductsEnumValue(item) && (
-            <LogosIcons product={item} size={14} />
-          )}
+          {isProductsEnumValue(item) && <LogosIcons product={item} size={14} />}
           {item}
         </Badge>
       ))}
       {showUpgradeBadge && (
         <Tooltip
-          tip={
-            'This configuration is available for different products or higher plans.'
-          }
+          tip={'This configuration is available for different products or higher plans.'}
           children={
             <UpgradeBadge>
               Upgrade
-              <ArrowUpRightIcon size={"14px"} />
+              <ArrowUpRightIcon size={'14px'} />
             </UpgradeBadge>
           }
         />
@@ -133,11 +136,7 @@ const PropertyCondition = ({ plans = [], products = [] }: PropertyConditionProps
       {remainingCount > 0 && (
         <Tooltip
           tip={allItems.join(', ')}
-          children={
-            <MoreBadge>
-              +{remainingCount} more
-            </MoreBadge>
-          }
+          children={<MoreBadge>+{remainingCount} more</MoreBadge>}
         />
       )}
     </Container>

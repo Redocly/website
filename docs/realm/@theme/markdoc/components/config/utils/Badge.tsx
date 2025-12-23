@@ -16,5 +16,3 @@ export const Badge = styled.span`
 `;
 
 export default Badge;
-
-

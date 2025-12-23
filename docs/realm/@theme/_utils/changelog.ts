@@ -11,7 +11,7 @@ interface ProcessedChanges {
   fixes: string[];
 }
 
-const START_OF_NEXT_RELEASES = 1738913622000
+const START_OF_NEXT_RELEASES = 1738913622000;
 
 export function processChanges(record: ChangelogEntry): ProcessedChanges {
   const features = [...record.changes.minor];
@@ -19,7 +19,7 @@ export function processChanges(record: ChangelogEntry): ProcessedChanges {
 
   for (const change of record.changes.patch) {
     if (
-      change.startsWith('Enter prerelease mode') || 
+      change.startsWith('Enter prerelease mode') ||
       change.startsWith('Updated version of the') ||
       change.startsWith('Bump')
     ) {
@@ -31,7 +31,7 @@ export function processChanges(record: ChangelogEntry): ProcessedChanges {
       fixes.push(change);
       continue;
     }
-    
+
     // before next releases, the changes were not always correctly categorized, some fixes were marked as minor changes
     if (change.startsWith('Resolved') || change.startsWith('Fixed')) {
       fixes.push(change);
@@ -49,4 +49,4 @@ export function processChanges(record: ChangelogEntry): ProcessedChanges {
 export function hasChanges(record: ChangelogEntry): boolean {
   const { features, fixes } = processChanges(record);
   return features.length > 0 || fixes.length > 0;
-} 
+}

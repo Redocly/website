@@ -568,7 +568,7 @@ components:
             - OPEN
             - CLOSED
             - MERGED
-        isDraft: 
+        isDraft:
           description: Indicates whether or not the pull request is a draft.
           type: boolean
         reviewers:

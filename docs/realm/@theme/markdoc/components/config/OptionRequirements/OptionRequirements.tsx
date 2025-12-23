@@ -37,7 +37,10 @@ export interface OptionRequirementsProps {
   plans?: Plan[];
 }
 
-const ConfigOptionRequirements = ({ products = [], plans = [] }: OptionRequirementsProps): React.ReactElement => {
+const ConfigOptionRequirements = ({
+  products = [],
+  plans = [],
+}: OptionRequirementsProps): React.ReactElement => {
   const renderProducts = Array.isArray(products) && products.length > 0;
   const renderPlans = Array.isArray(plans) && plans.length > 0;
 

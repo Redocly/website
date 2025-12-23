@@ -21,40 +21,36 @@ export interface SelectPickerProps<T = string> {
   multiple?: boolean;
 }
 
-export function SelectPicker<T = string>({ 
+export function SelectPicker<T = string>({
   options = [],
   value,
   placeholder = 'Select an option',
   onValueChange,
   className,
-  multiple = false
+  multiple = false,
 }: SelectPickerProps<T>): React.ReactElement | null {
   if (options.length === 0) {
     return null;
   }
 
-  const selectedValues = Array.isArray(value) ? value : (value ? [value] : []);
-  const selectedOptions = options.filter(option => selectedValues.includes(option.value));
+  const selectedValues = Array.isArray(value) ? value : value ? [value] : [];
+  const selectedOptions = options.filter((option) => selectedValues.includes(option.value));
 
   const optionItems = options.map((option) => {
     const isSelected = selectedValues.includes(option.value);
-    
+
     return {
       content: (
         <OptionItem>
-          {option.icon && (
-            <IconWrapper>
-              {option.icon}
-            </IconWrapper>
-          )}
+          {option.icon && <IconWrapper>{option.icon}</IconWrapper>}
           <span>{option.label}</span>
         </OptionItem>
       ),
       suffix: isSelected && <CheckmarkIcon />,
       onAction: () => {
         if (multiple) {
-          const newValues = isSelected 
-            ? selectedValues.filter(v => v !== option.value)
+          const newValues = isSelected
+            ? selectedValues.filter((v) => v !== option.value)
             : [...selectedValues, option.value];
           onValueChange?.(newValues);
         } else {
@@ -78,7 +74,7 @@ export function SelectPicker<T = string>({
   const handleRemoveItem = (valueToRemove: T, event: React.MouseEvent | React.KeyboardEvent) => {
     event.stopPropagation();
     if (multiple) {
-      const newValues = selectedValues.filter(v => v !== valueToRemove);
+      const newValues = selectedValues.filter((v) => v !== valueToRemove);
       onValueChange?.(newValues);
     }
   };
@@ -98,13 +94,9 @@ export function SelectPicker<T = string>({
             <SelectedItemsContainer>
               {visibleItems.map((option) => (
                 <SelectedItem key={String(option.value)}>
-                  {option.icon && (
-                    <IconWrapper>
-                      {option.icon}
-                    </IconWrapper>
-                  )}
+                  {option.icon && <IconWrapper>{option.icon}</IconWrapper>}
                   <span>{option.label}</span>
-                  <RemoveButton 
+                  <RemoveButton
                     as="span"
                     role="button"
                     tabIndex={0}
@@ -209,7 +201,7 @@ const SelectedItem = styled.div`
   color: var(--button-content-color);
   white-space: nowrap;
   flex-shrink: 0;
-  
+
   span {
     flex: 1;
   }
@@ -236,7 +228,7 @@ const RemoveButton = styled.button`
   cursor: pointer;
   border-radius: 50%;
   flex-shrink: 0;
-  
+
   &:hover {
     background-color: var(--bg-color-active);
     color: var(--text-color-primary);
@@ -255,7 +247,8 @@ const IconWrapper = styled.span`
   justify-content: center;
   width: 14px;
   height: 14px;
-  img, svg {
+  img,
+  svg {
     width: 16px;
     height: 16px;
     display: block;

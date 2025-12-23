@@ -26,7 +26,7 @@
       label: People
     - page: reunite/organization/teams.md
       label: Teams
-  
+
     - group: SSO
       page: reunite/organization/sso/sso.md
       items:
@@ -106,7 +106,7 @@
         - page: reunite/project/connect-git/azure-devops.md
           label: Azure DevOps
         - page: reunite/project/connect-git/bitbucket-cloud.md
-          label: Bitbucket Cloud 
+          label: Bitbucket Cloud
     - group: Remote content automation
       page: reunite/project/remote-content/remote-content.md
       items:
@@ -143,7 +143,7 @@
     - separator: User account
     - page: reunite/user-profile-menu.md
       label: User profile menu
-      
+
 - group: Content
   icon: file-lines
   page: content/index.md
@@ -199,7 +199,7 @@
         - page: content/markdoc-tags/connect-mcp.md
           label: Connect MCP
         - page: content/markdoc-tags/img.md
-          label: Image    
+          label: Image
         - page: content/markdoc-tags/icon.md
           label: Icon
         - page: content/markdoc-tags/inline-svg.md
@@ -267,18 +267,18 @@
         - group: AsyncAPI extensions
           page: content/api-docs/asyncapi-extensions/index.md
           items:
-          - page: content/api-docs/asyncapi-extensions/x-tag-groups.md
-            label: x-tagGroups
-          - page: content/api-docs/asyncapi-extensions/x-badges.md
-            label: x-badges
-          - page: content/api-docs/asyncapi-extensions/x-enum-descriptions.md
-            label: x-enumDescriptions
-          - page: content/api-docs/asyncapi-extensions/x-additional-properties-name.md
-            label: x-additionalPropertiesName
-          - page: content/api-docs/asyncapi-extensions/x-rbac.md
-            label: x-rbac
-          - page: content/api-docs/asyncapi-extensions/x-metadata.md
-            label: x-metadata
+            - page: content/api-docs/asyncapi-extensions/x-tag-groups.md
+              label: x-tagGroups
+            - page: content/api-docs/asyncapi-extensions/x-badges.md
+              label: x-badges
+            - page: content/api-docs/asyncapi-extensions/x-enum-descriptions.md
+              label: x-enumDescriptions
+            - page: content/api-docs/asyncapi-extensions/x-additional-properties-name.md
+              label: x-additionalPropertiesName
+            - page: content/api-docs/asyncapi-extensions/x-rbac.md
+              label: x-rbac
+            - page: content/api-docs/asyncapi-extensions/x-metadata.md
+              label: x-metadata
         - page: content/api-docs/add-graphql-docs.md
           label: GraphQL
         - page: content/api-docs/add-soap-docs.md
@@ -292,7 +292,7 @@
         - page: content/localization/localize-content.md
           label: Localize content
         - page: content/localization/localize-labels.md
-          label: Localize labels  
+          label: Localize labels
         - page: content/localization/display-current-locale.md
           label: Display current locale
         - page: content/localization/translation-keys.md
@@ -336,7 +336,6 @@
   icon: wrench
   page: customization/index.md
   items:
-
     - separator: Development & integration
     - page: customization/create-react-page.md
       label: Create React pages
@@ -421,7 +420,7 @@
           label: Reference
         - page: customization/api-functions/create-api-functions.md
           label: Tutorial
-          
+
     - group: MCP servers
       selectFirstItemOnExpand: true
       items:
@@ -440,9 +439,6 @@
       label: For pages
     - page: access/links-and-groups-permissions.md
       label: For navigation
-
-
-
 # - $ref: author/sidebars.yaml
 # - $ref: style/sidebars.yaml
 # - $ref: extend/sidebars.yaml

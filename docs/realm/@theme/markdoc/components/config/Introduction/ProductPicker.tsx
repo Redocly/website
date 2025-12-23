@@ -9,10 +9,10 @@ export interface ProductPickerProps {
   className?: string;
 }
 
-export function ProductPicker({ 
-  value, 
-  onProductChange, 
-  className 
+export function ProductPicker({
+  value,
+  onProductChange,
+  className,
 }: ProductPickerProps): React.ReactElement {
   const productOptions: SelectOption<Products>[] = [
     { value: Products.REALM, label: Products.REALM, icon: <LogosIcons product={Products.REALM} /> },

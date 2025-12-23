@@ -17,7 +17,7 @@ type TabsProps = React.PropsWithChildren<{
 
 // @chunk {"steps": ["add-syncId-prop"]}
 export function Tabs({ children, className, syncId }: TabsProps): JSX.Element {
-// @chunk-end
+  // @chunk-end
   const childrenArray = React.Children.toArray(children) as React.ReactElement[];
 
   const initialTab = childrenArray[0]?.props.label ?? '';
@@ -25,7 +25,7 @@ export function Tabs({ children, className, syncId }: TabsProps): JSX.Element {
   const { activeTab, setTabRef, onTabClick, handleKeyboard, getTabId } = useTabs({
     initialTab,
     totalTabs: childrenArray.length,
-    syncId
+    syncId,
   });
   // @chunk-end
 

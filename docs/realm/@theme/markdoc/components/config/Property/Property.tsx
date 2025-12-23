@@ -16,7 +16,7 @@ function normalizeFileKey(p: string): string {
   let r = p.trim();
   if (r.startsWith('./')) r = r.slice(2);
   if (r.startsWith('/')) r = r.slice(1);
-  if (r.startsWith('docs/public/')) r = r.slice('docs/public/'.length);
+  if (r.startsWith('docs/realm/')) r = r.slice('docs/realm/'.length);
   return r;
 }
 
@@ -90,13 +90,9 @@ export function ConfigProperty({ file }: ConfigPropertyProps): React.ReactElemen
     return (
       <PropertyItem>
         <PropertyTitleContainer>
-          <PropertyTitle as={"span"}>
-            {fileToFallbackTitle(file)}
-          </PropertyTitle>
+          <PropertyTitle as={'span'}>{fileToFallbackTitle(file)}</PropertyTitle>
         </PropertyTitleContainer>
-        <PropertyDescription>
-          Loading description and requirements…
-        </PropertyDescription>
+        <PropertyDescription>Loading description and requirements…</PropertyDescription>
       </PropertyItem>
     );
   }
@@ -105,22 +101,16 @@ export function ConfigProperty({ file }: ConfigPropertyProps): React.ReactElemen
     return (
       <PropertyItem>
         <PropertyTitleContainer>
-          <PropertyTitle as={"span"}>
-            Unknown config property
-          </PropertyTitle>
+          <PropertyTitle as={'span'}>Unknown config property</PropertyTitle>
         </PropertyTitleContainer>
-        <PropertyDescription>
-          No metadata found for: {file}
-        </PropertyDescription>
+        <PropertyDescription>No metadata found for: {file}</PropertyDescription>
       </PropertyItem>
     );
   }
   return (
     <PropertyItem>
       <PropertyTitleContainer>
-        <PropertyTitle href={meta.route}>
-          {meta.title}
-        </PropertyTitle>
+        <PropertyTitle href={meta.route}>{meta.title}</PropertyTitle>
         <PropertyCondition plans={meta.plans} products={meta.products} />
       </PropertyTitleContainer>
       <PropertyDescription>{meta.description}</PropertyDescription>

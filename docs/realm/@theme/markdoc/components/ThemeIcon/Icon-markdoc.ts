@@ -6,15 +6,15 @@ export const IconTag: Schema = {
   attributes: {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     size: {
       type: Number,
-      default: 24
+      default: 24,
     },
     color: {
       type: String,
-      default: 'currentColor'
-    }
-  }
+      default: 'currentColor',
+    },
+  },
 };

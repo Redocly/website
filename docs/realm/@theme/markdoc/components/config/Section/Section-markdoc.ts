@@ -7,11 +7,11 @@ export const ConfigSectionTag: Schema = {
   attributes: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     description: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };

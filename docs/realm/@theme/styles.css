@@ -6,12 +6,12 @@
   font-display: swap;
 }
 
-:root th[data-label="Favorite vegetable"] {
+:root th[data-label='Favorite vegetable'] {
   width: 80%;
   background-color: lightyellow;
 }
 
-:root table:has(th[data-label="Favorite animal"]) {
+:root table:has(th[data-label='Favorite animal']) {
   --md-table-border-color: black;
   --md-table-header-bg-color: gold;
 
@@ -20,7 +20,7 @@
   }
 }
 
-:root.dark table:has(th[data-label="Favorite animal"]) {
+:root.dark table:has(th[data-label='Favorite animal']) {
   --md-table-border-color: white;
   --md-table-header-bg-color: indigo;
 
@@ -47,10 +47,11 @@
   }
 }
 
-.highlight, p:has(.highlight) {
+.highlight,
+p:has(.highlight) {
   background-color: yellow;
   color: red;
- }
+}
 
 /* Styling for the row highlight examples */
 /* Style all cells in rows containing the class */

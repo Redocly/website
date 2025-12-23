@@ -6,15 +6,16 @@ export const ConfigIntroductionTag: Schema = {
   attributes: {
     title: {
       type: String,
-      default: 'Filter configuration options'
+      default: 'Filter configuration options',
     },
     description: {
       type: String,
-      default: 'Choose your Redocly products and plan to see only the configuration options available to you. Select filters below to get started.'
+      default:
+        'Choose your Redocly products and plan to see only the configuration options available to you. Select filters below to get started.',
     },
     passedPlan: {
       type: String,
-      default: undefined
-    }
-  }
+      default: undefined,
+    },
+  },
 };

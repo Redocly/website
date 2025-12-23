@@ -19,8 +19,8 @@ const PRODUCT_ICONS = {
   '@redocly/reef': ReefIcon,
   '@redocly/revel': RevelIcon,
   '@redocly/redoc': RedocIcon,
-  'reunite': ReuniteIcon,
-  'replay': ReplayIcon,
+  reunite: ReuniteIcon,
+  replay: ReplayIcon,
 };
 
 type ChangelogSectionProps = {
@@ -35,35 +35,34 @@ type ChangelogSectionProps = {
   isLatestRelease?: boolean;
   isPreviousRelease?: boolean;
   children?: (filteredItems: React.ReactNode[]) => React.ReactNode;
-}
+};
 
-export const matchesSearch = (searchTerm: string, item: { 
-  packageName: string, 
-  version: string, 
-  record: { 
-    changes: { 
-      minor: string[], 
-      patch: string[] 
-    },
-    timestamp: number 
+export const matchesSearch = (
+  searchTerm: string,
+  item: {
+    packageName: string;
+    version: string;
+    record: {
+      changes: {
+        minor: string[];
+        patch: string[];
+      };
+      timestamp: number;
+    };
+    isLatest?: boolean;
+    isNext?: boolean;
   },
-  isLatest?: boolean,
-  isNext?: boolean
-}) => {
+) => {
   if (!searchTerm) return true;
-  
+
   const searchTermLower = searchTerm.toLowerCase();
   const dateStr = new Date(item.record.timestamp).toISOString().split('T')[0]; // YYYY-MM-DD
-  
+
   return (
     item.packageName.toLowerCase().includes(searchTermLower) ||
     item.version.toLowerCase().includes(searchTermLower) ||
-    item.record.changes.minor.some(change => 
-      change.toLowerCase().includes(searchTermLower)
-    ) ||
-    item.record.changes.patch.some(change => 
-      change.toLowerCase().includes(searchTermLower)
-    ) ||
+    item.record.changes.minor.some((change) => change.toLowerCase().includes(searchTermLower)) ||
+    item.record.changes.patch.some((change) => change.toLowerCase().includes(searchTermLower)) ||
     (item.isLatest && 'latest'.includes(searchTermLower)) ||
     (item.isNext && 'next'.includes(searchTermLower)) ||
     dateStr.includes(searchTermLower)
@@ -77,29 +76,37 @@ export const ChangelogSection: React.FC<ChangelogSectionProps> = ({
   isNextRelease = false,
   isLatestRelease = false,
   isPreviousRelease = false,
-  children
+  children,
 }) => {
   const [searchTerm] = React.useContext(HighlightContext);
-  
+
   const filteredItems = React.useMemo(() => {
     const filtered = items
       .filter(({ packageName }) => packages.includes(SHORT_NAMES[packageName] || packageName))
-      .filter(item => matchesSearch(searchTerm, { 
-        ...item, 
-        isNext: isNextRelease,
-        isLatest: isLatestRelease
-      }))
+      .filter((item) =>
+        matchesSearch(searchTerm, {
+          ...item,
+          isNext: isNextRelease,
+          isLatest: isLatestRelease,
+        }),
+      )
       .slice(0, itemsToRender);
 
     return filtered.map((item, index) => (
-      <Record key={`${item.packageName}-${item.version}`} isNextRelease={isNextRelease} isPreviousRelease={isPreviousRelease}>
-        <RecordTitle 
-          packageName={item.packageName} 
-          version={item.version} 
-          isLatest={isLatestRelease} 
+      <Record
+        key={`${item.packageName}-${item.version}`}
+        isNextRelease={isNextRelease}
+        isPreviousRelease={isPreviousRelease}
+      >
+        <RecordTitle
+          packageName={item.packageName}
+          version={item.version}
+          isLatest={isLatestRelease}
           /* Only show "next" tag once per package to avoid duplicate labels when multiple versions exist */
-          isNext={isNextRelease && filtered.findIndex(i => i.packageName === item.packageName) === index}
-          timestamp={item.record.timestamp} 
+          isNext={
+            isNextRelease && filtered.findIndex((i) => i.packageName === item.packageName) === index
+          }
+          timestamp={item.record.timestamp}
         />
         <ChangelogContent record={item.record} />
       </Record>
@@ -109,48 +116,58 @@ export const ChangelogSection: React.FC<ChangelogSectionProps> = ({
   return children ? children(filteredItems) : <>{filteredItems}</>;
 };
 
-const RecordTitle = ({ 
-  packageName, 
-  version, 
-  isLatest = false, 
-  isNext = false, 
-  timestamp = null 
+const RecordTitle = ({
+  packageName,
+  version,
+  isLatest = false,
+  isNext = false,
+  timestamp = null,
 }) => {
   const id = SHORT_NAMES[packageName] + '@' + version;
-  
+
   return (
-      <StyledHeading level={2} id={id}>
-        <RecordHeader>
-          <TagsGroup>
-            <ProductTag>
-              {React.createElement(PRODUCT_ICONS[packageName])}
-              <span><Highlight>{SHORT_NAMES[packageName]}</Highlight></span>
-            </ProductTag>
-            <VersionTag>
-              <span><Highlight>{version}</Highlight></span>
-            </VersionTag>
-            {isLatest && (
-              <MonoTag>
-                <span><Highlight>latest</Highlight></span>
-              </MonoTag>
-            )}
-            {isNext && (
-              <MonoTag>
-                <span><Highlight>next</Highlight></span>
-              </MonoTag>
-            )}
-          </TagsGroup>
-          {timestamp && (
-            <DateTag><Highlight>{new Date(timestamp).toISOString().split('T')[0]}</Highlight></DateTag>
+    <StyledHeading level={2} id={id}>
+      <RecordHeader>
+        <TagsGroup>
+          <ProductTag>
+            {React.createElement(PRODUCT_ICONS[packageName])}
+            <span>
+              <Highlight>{SHORT_NAMES[packageName]}</Highlight>
+            </span>
+          </ProductTag>
+          <VersionTag>
+            <span>
+              <Highlight>{version}</Highlight>
+            </span>
+          </VersionTag>
+          {isLatest && (
+            <MonoTag>
+              <span>
+                <Highlight>latest</Highlight>
+              </span>
+            </MonoTag>
           )}
-        </RecordHeader>
-      </StyledHeading>
+          {isNext && (
+            <MonoTag>
+              <span>
+                <Highlight>next</Highlight>
+              </span>
+            </MonoTag>
+          )}
+        </TagsGroup>
+        {timestamp && (
+          <DateTag>
+            <Highlight>{new Date(timestamp).toISOString().split('T')[0]}</Highlight>
+          </DateTag>
+        )}
+      </RecordHeader>
+    </StyledHeading>
   );
 };
 
 const ChangelogContent = ({ record }: { record: ChangelogEntry }) => {
   const { features, fixes } = processChanges(record);
-  
+
   return (
     <ContentWrapper>
       {features.length > 0 && (
@@ -165,7 +182,7 @@ const ChangelogContent = ({ record }: { record: ChangelogEntry }) => {
           </List>
         </>
       )}
-      
+
       {fixes.length > 0 && (
         <>
           <SectionTitle>Fixes</SectionTitle>
@@ -202,29 +219,33 @@ const RecordHeader = styled.div`
 `;
 
 const StyledHeading = styled(Heading)`
-  margin: 0!important;
+  margin: 0 !important;
   a {
     display: flex;
     height: 100%;
 
     svg {
-      margin: auto 0!important;
+      margin: auto 0 !important;
       visibility: visible;
     }
   }
 `;
 
-const Record = styled.div<{ isPreviousRelease?: boolean, isNextRelease?: boolean }>`
+const Record = styled.div<{ isPreviousRelease?: boolean; isNextRelease?: boolean }>`
   display: flex;
   flex-direction: column;
   padding: 16px 20px;
   gap: 16px;
 
-  ${props => props.isNextRelease && `
+  ${(props) =>
+    props.isNextRelease &&
+    `
     padding: 16px 26px 16px 26px;
   `}
-  
-  ${props => props.isPreviousRelease && `
+
+  ${(props) =>
+    props.isPreviousRelease &&
+    `
     border-bottom: 1px solid var(--border-color-primary);
   `}
 `;
@@ -252,15 +273,15 @@ const BaseTag = styled.div`
   }
 `;
 
-const ProductTag = styled(BaseTag)`  
+const ProductTag = styled(BaseTag)`
   gap: 4px;
 
   svg {
     height: 14px;
     width: 14px;
-    visibility: visible!important;
+    visibility: visible !important;
   }
-  
+
   span {
     font-weight: 400;
   }
@@ -269,7 +290,7 @@ const ProductTag = styled(BaseTag)`
 const VersionTag = styled(BaseTag)`
   span {
     font-weight: 500;
-  } 
+  }
 `;
 
 // Combined NextTag and LatestTag into a single MonoTag component since they share the same styles
@@ -280,7 +301,7 @@ const MonoTag = styled(BaseTag)`
   }
 `;
 
-const ContentWrapper = styled.div` 
+const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -303,8 +324,8 @@ const SectionTitle = styled.h3`
 
 const List = styled.ul`
   list-style: none;
-  padding: 0!important;
-  margin: 0!important;
+  padding: 0 !important;
+  margin: 0 !important;
 `;
 
 const ListItem = styled.li`
@@ -316,7 +337,7 @@ const ListItem = styled.li`
   color: var(--text-color-secondary);
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     left: 8px;
     top: 8px;
@@ -337,4 +358,4 @@ export const SectionHeader = styled.h2`
   line-height: 28px;
   color: var(--text-color-primary);
   margin: 0;
-`; 
+`;

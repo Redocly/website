@@ -15,10 +15,10 @@ export interface ConfigIntroductionProps {
 export function ConfigIntroduction({
   title = 'Filter configuration options',
   description = 'Choose your Redocly products and plan to see only the configuration options available to you. Select filters below to get started.',
-  passedPlan
+  passedPlan,
 }: ConfigIntroductionProps): React.ReactElement {
   const { currentPlan, currentProducts, updateBoth, clearAll } = useUrlParams();
-  
+
   const selectedPlan = currentPlan || passedPlan;
   const selectedProducts = currentProducts;
 
@@ -46,23 +46,17 @@ export function ConfigIntroduction({
       <CardContent>
         <SelectContainer>
           <SelectLabel>Products</SelectLabel>
-          <ProductPicker 
-            value={selectedProducts}
-            onProductChange={handleProductChange} 
-          />
+          <ProductPicker value={selectedProducts} onProductChange={handleProductChange} />
         </SelectContainer>
         <SelectContainer>
           <SelectLabel>Plan</SelectLabel>
-          <PlanPicker 
-            value={selectedPlan}
-            onPlanChange={handlePlanChange} 
-          />
+          <PlanPicker value={selectedPlan} onPlanChange={handlePlanChange} />
         </SelectContainer>
       </CardContent>
-      <ClearFiltersButton 
+      <ClearFiltersButton
         variant="text"
         size="medium"
-        onClick={handleClearFilters} 
+        onClick={handleClearFilters}
         disabled={shouldDisableClearFilters}
       >
         Clear Filters
@@ -90,7 +84,6 @@ const CardHeader = styled.div`
   flex-direction: column;
   gap: 2px;
 `;
-
 
 const CardTitle = styled.div`
   font-weight: var(--font-weight-semibold);

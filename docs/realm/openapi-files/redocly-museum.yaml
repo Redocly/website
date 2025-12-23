@@ -6,12 +6,12 @@ info:
   termsOfService: 'https://redocly.com/subscription-agreement/'
   contact:
     email: team@redocly.com
-    url: "https://redocly.com/docs/cli/"
+    url: 'https://redocly.com/docs/cli/'
   license:
     name: MIT
-    url: "https://opensource.org/license/mit/ "
+    url: 'https://opensource.org/license/mit/ '
 servers:
-  - url: "https://api.fake-museum-example.com/v1"
+  - url: 'https://api.fake-museum-example.com/v1'
 paths:
   /museum-hours:
     get:
@@ -21,22 +21,22 @@ paths:
       tags:
         - Operations
       parameters:
-        - $ref: "#/components/parameters/StartDate"
-        - $ref: "#/components/parameters/PaginationPage"
-        - $ref: "#/components/parameters/PaginationLimit"
+        - $ref: '#/components/parameters/StartDate'
+        - $ref: '#/components/parameters/PaginationPage'
+        - $ref: '#/components/parameters/PaginationLimit'
       responses:
-        "200":
+        '200':
           description: Success.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/GetMuseumHoursResponse"
+                $ref: '#/components/schemas/GetMuseumHoursResponse'
               examples:
                 default_example:
-                  $ref: "#/components/examples/GetMuseumHoursResponseExample"
-        "400":
+                  $ref: '#/components/examples/GetMuseumHoursResponseExample'
+        '400':
           $ref: '#/components/responses/BadRequest'
-        "404":
+        '404':
           $ref: '#/components/responses/NotFound'
   /special-events:
     post:
@@ -50,23 +50,23 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/CreateSpecialEventRequest"
+              $ref: '#/components/schemas/CreateSpecialEventRequest'
             examples:
               default_example:
-                $ref: "#/components/examples/CreateSpecialEventRequestExample"
+                $ref: '#/components/examples/CreateSpecialEventRequestExample'
       responses:
-        "200":
+        '200':
           description: Success.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SpecialEventResponse"
+                $ref: '#/components/schemas/SpecialEventResponse'
               examples:
                 default_example:
-                  $ref: "#/components/examples/CreateSpecialEventResponseExample"
-        "400":
+                  $ref: '#/components/examples/CreateSpecialEventResponseExample'
+        '400':
           $ref: '#/components/responses/BadRequest'
-        "404":
+        '404':
           $ref: '#/components/responses/NotFound'
     get:
       summary: List special events
@@ -75,23 +75,23 @@ paths:
       tags:
         - Events
       parameters:
-        - $ref: "#/components/parameters/StartDate"
-        - $ref: "#/components/parameters/EndDate"
-        - $ref: "#/components/parameters/PaginationPage"
-        - $ref: "#/components/parameters/PaginationLimit"
+        - $ref: '#/components/parameters/StartDate'
+        - $ref: '#/components/parameters/EndDate'
+        - $ref: '#/components/parameters/PaginationPage'
+        - $ref: '#/components/parameters/PaginationLimit'
       responses:
-        "200":
+        '200':
           description: Success.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ListSpecialEventsResponse"
+                $ref: '#/components/schemas/ListSpecialEventsResponse'
               examples:
                 default_example:
-                  $ref: "#/components/examples/ListSpecialEventsResponseExample"
-        "400":
+                  $ref: '#/components/examples/ListSpecialEventsResponseExample'
+        '400':
           $ref: '#/components/responses/BadRequest'
-        "404":
+        '404':
           $ref: '#/components/responses/NotFound'
   /special-events/{eventId}:
     get:
@@ -101,20 +101,20 @@ paths:
       tags:
         - Events
       parameters:
-        - $ref: "#/components/parameters/EventId"
+        - $ref: '#/components/parameters/EventId'
       responses:
-        "200":
+        '200':
           description: Success.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SpecialEventResponse"
+                $ref: '#/components/schemas/SpecialEventResponse'
               examples:
                 default_example:
-                  $ref: "#/components/examples/GetSpecialEventResponseExample"
-        "400":
+                  $ref: '#/components/examples/GetSpecialEventResponseExample'
+        '400':
           $ref: '#/components/responses/BadRequest'
-        "404":
+        '404':
           $ref: '#/components/responses/NotFound'
     patch:
       summary: Update special event
@@ -123,29 +123,29 @@ paths:
       tags:
         - Events
       parameters:
-        - $ref: "#/components/parameters/EventId"
+        - $ref: '#/components/parameters/EventId'
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/UpdateSpecialEventRequest"
+              $ref: '#/components/schemas/UpdateSpecialEventRequest'
             examples:
               default_example:
-                $ref: "#/components/examples/UpdateSpecialEventRequestExample"
+                $ref: '#/components/examples/UpdateSpecialEventRequestExample'
       responses:
-        "200":
+        '200':
           description: Success.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SpecialEventResponse"
+                $ref: '#/components/schemas/SpecialEventResponse'
               examples:
                 default_example:
-                  $ref: "#/components/examples/UpdateSpecialEventResponseExample"
-        "400":
+                  $ref: '#/components/examples/UpdateSpecialEventResponseExample'
+        '400':
           $ref: '#/components/responses/BadRequest'
-        "404":
+        '404':
           $ref: '#/components/responses/NotFound'
     delete:
       summary: Delete special event
@@ -154,16 +154,16 @@ paths:
       tags:
         - Events
       parameters:
-        - $ref: "#/components/parameters/EventId"
+        - $ref: '#/components/parameters/EventId'
       responses:
-        "204":
+        '204':
           description: Success - no content.
-        "400":
+        '400':
           $ref: '#/components/responses/BadRequest'
-        "401":
+        '401':
           $ref: '#/components/responses/Unauthorized'
-        "404":
-           $ref: "#/components/responses/NotFound"
+        '404':
+          $ref: '#/components/responses/NotFound'
   /tickets:
     post:
       summary: Buy museum tickets
@@ -176,27 +176,27 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/BuyMuseumTicketsRequest"
+              $ref: '#/components/schemas/BuyMuseumTicketsRequest'
             examples:
               general_entry:
-                $ref: "#/components/examples/BuyGeneralTicketsRequestExample"
+                $ref: '#/components/examples/BuyGeneralTicketsRequestExample'
               event_entry:
-                $ref: "#/components/examples/BuyEventTicketsRequestExample"
+                $ref: '#/components/examples/BuyEventTicketsRequestExample'
       responses:
-        "200":
+        '200':
           description: Success.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/BuyMuseumTicketsResponse"
+                $ref: '#/components/schemas/BuyMuseumTicketsResponse'
               examples:
                 general_entry:
-                  $ref: "#/components/examples/BuyGeneralTicketsResponseExample"
+                  $ref: '#/components/examples/BuyGeneralTicketsResponseExample'
                 event_entry:
-                  $ref: "#/components/examples/BuyEventTicketsResponseExample"
-        "400":
+                  $ref: '#/components/examples/BuyEventTicketsResponseExample'
+        '400':
           $ref: '#/components/responses/BadRequest'
-        "404":
+        '404':
           $ref: '#/components/responses/NotFound'
   /tickets/{ticketId}/qr:
     get:
@@ -206,17 +206,17 @@ paths:
       tags:
         - Tickets
       parameters:
-        - $ref: "#/components/parameters/TicketId"
+        - $ref: '#/components/parameters/TicketId'
       responses:
-        "200":
+        '200':
           description: Scannable event ticket in image format.
           content:
             image/png:
               schema:
-                $ref: "#/components/schemas/GetTicketCodeResponse"
-        "400":
+                $ref: '#/components/schemas/GetTicketCodeResponse'
+        '400':
           $ref: '#/components/responses/BadRequest'
-        "404":
+        '404':
           $ref: '#/components/responses/NotFound'
 components:
   schemas:
@@ -245,17 +245,17 @@ components:
       type: object
       properties:
         ticketType:
-          $ref: "#/components/schemas/TicketType"
+          $ref: '#/components/schemas/TicketType'
         eventId:
           description: Unique identifier for a special event. Required if purchasing tickets for the museum's special events.
-          $ref: "#/components/schemas/EventId"
+          $ref: '#/components/schemas/EventId'
         ticketDate:
           description: Date that the ticket is valid for.
-          $ref: "#/components/schemas/Date"
+          $ref: '#/components/schemas/Date'
         email:
-          $ref: "#/components/schemas/Email"
+          $ref: '#/components/schemas/Email'
         phone:
-          $ref: "#/components/schemas/Phone"
+          $ref: '#/components/schemas/Phone'
       required:
         - ticketType
         - ticketDate
@@ -278,18 +278,18 @@ components:
       type: object
       properties:
         message:
-          $ref: "#/components/schemas/TicketMessage"
+          $ref: '#/components/schemas/TicketMessage'
         eventName:
-          $ref: "#/components/schemas/EventName"
+          $ref: '#/components/schemas/EventName'
         ticketId:
-          $ref: "#/components/schemas/TicketId"
+          $ref: '#/components/schemas/TicketId'
         ticketType:
-          $ref: "#/components/schemas/TicketType"
+          $ref: '#/components/schemas/TicketType'
         ticketDate:
           description: Date the ticket is valid for.
-          $ref: "#/components/schemas/Date"
+          $ref: '#/components/schemas/Date'
         confirmationCode:
-          $ref: "#/components/schemas/TicketConfirmation"
+          $ref: '#/components/schemas/TicketConfirmation'
       required:
         - message
         - ticketId
@@ -304,14 +304,14 @@ components:
       description: List of museum operating hours for consecutive days.
       type: array
       items:
-        $ref: "#/components/schemas/MuseumDailyHours"
+        $ref: '#/components/schemas/MuseumDailyHours'
     MuseumDailyHours:
       description: Daily operating hours for the museum.
       type: object
       properties:
         date:
           description: Date the operating hours apply to.
-          $ref: "#/components/schemas/Date"
+          $ref: '#/components/schemas/Date'
           example: '2024-12-31'
         timeOpen:
           type: string
@@ -347,7 +347,7 @@ components:
     EventDates:
       type: array
       items:
-        $ref: "#/components/schemas/Date"
+        $ref: '#/components/schemas/Date'
       description: List of planned dates for the special event.
     EventPrice:
       description: Price of a ticket for the special event.
@@ -358,15 +358,15 @@ components:
       description: Request payload for creating new special events at the museum.
       properties:
         name:
-          $ref: "#/components/schemas/EventName"
+          $ref: '#/components/schemas/EventName'
         location:
-          $ref: "#/components/schemas/EventLocation"
+          $ref: '#/components/schemas/EventLocation'
         eventDescription:
-          $ref: "#/components/schemas/EventDescription"
+          $ref: '#/components/schemas/EventDescription'
         dates:
-          $ref: "#/components/schemas/EventDates"
+          $ref: '#/components/schemas/EventDates'
         price:
-          $ref: "#/components/schemas/EventPrice"
+          $ref: '#/components/schemas/EventPrice'
       required:
         - name
         - location
@@ -377,35 +377,35 @@ components:
       description: Request payload for updating an existing special event. Only included fields are updated in the event.
       properties:
         name:
-          $ref: "#/components/schemas/EventName"
+          $ref: '#/components/schemas/EventName'
         location:
-          $ref: "#/components/schemas/EventLocation"
+          $ref: '#/components/schemas/EventLocation'
         eventDescription:
-          $ref: "#/components/schemas/EventDescription"
+          $ref: '#/components/schemas/EventDescription'
         dates:
-          $ref: "#/components/schemas/EventDates"
+          $ref: '#/components/schemas/EventDates'
         price:
-          $ref: "#/components/schemas/EventPrice"
+          $ref: '#/components/schemas/EventPrice'
     ListSpecialEventsResponse:
       description: List of upcoming special events.
       type: array
       items:
-        $ref: "#/components/schemas/SpecialEventResponse"
+        $ref: '#/components/schemas/SpecialEventResponse'
     SpecialEventResponse:
       description: Information about a special event.
       properties:
         eventId:
-          $ref: "#/components/schemas/EventId"
+          $ref: '#/components/schemas/EventId'
         name:
-          $ref: "#/components/schemas/EventName"
+          $ref: '#/components/schemas/EventName'
         location:
-          $ref: "#/components/schemas/EventLocation"
+          $ref: '#/components/schemas/EventLocation'
         eventDescription:
-          $ref: "#/components/schemas/EventDescription"
+          $ref: '#/components/schemas/EventDescription'
         dates:
-          $ref: "#/components/schemas/EventDates"
+          $ref: '#/components/schemas/EventDates'
         price:
-          $ref: "#/components/schemas/EventPrice"
+          $ref: '#/components/schemas/EventPrice'
       required:
         - eventId
         - name
@@ -415,21 +415,21 @@ components:
         - price
     BadRequest:
       type: object
-      properties: 
+      properties:
         type:
           type: string
         title:
           type: string
     NotFound:
       type: object
-      properties: 
+      properties:
         type:
           type: string
         title:
           type: string
     Unauthorized:
       type: object
-      properties: 
+      properties:
         type:
           type: string
         title:
@@ -610,36 +610,36 @@ components:
     GetMuseumHoursResponseExample:
       summary: Get hours response
       value:
-        - date: "2023-09-11"
-          timeOpen: "09:00"
-          timeClose: "18:00"
-        - date: "2023-09-12"
-          timeOpen: "09:00"
-          timeClose: "18:00"
-        - date: "2023-09-13"
-          timeOpen: "09:00"
-          timeClose: "18:00"
-        - date: "2023-09-14"
-          timeOpen: "09:00"
-          timeClose: "18:00"
-        - date: "2023-09-15"
-          timeOpen: "10:00"
-          timeClose: "16:00"
-        - date: "2023-09-18"
-          timeOpen: "09:00"
-          timeClose: "18:00"
-        - date: "2023-09-19"
-          timeOpen: "09:00"
-          timeClose: "18:00"
-        - date: "2023-09-20"
-          timeOpen: "09:00"
-          timeClose: "18:00"
-        - date: "2023-09-21"
-          timeOpen: "09:00"
-          timeClose: "18:00"
-        - date: "2023-09-22"
-          timeOpen: "10:00"
-          timeClose: "16:00"
+        - date: '2023-09-11'
+          timeOpen: '09:00'
+          timeClose: '18:00'
+        - date: '2023-09-12'
+          timeOpen: '09:00'
+          timeClose: '18:00'
+        - date: '2023-09-13'
+          timeOpen: '09:00'
+          timeClose: '18:00'
+        - date: '2023-09-14'
+          timeOpen: '09:00'
+          timeClose: '18:00'
+        - date: '2023-09-15'
+          timeOpen: '10:00'
+          timeClose: '16:00'
+        - date: '2023-09-18'
+          timeOpen: '09:00'
+          timeClose: '18:00'
+        - date: '2023-09-19'
+          timeOpen: '09:00'
+          timeClose: '18:00'
+        - date: '2023-09-20'
+          timeOpen: '09:00'
+          timeClose: '18:00'
+        - date: '2023-09-21'
+          timeOpen: '09:00'
+          timeClose: '18:00'
+        - date: '2023-09-22'
+          timeOpen: '10:00'
+          timeClose: '16:00'
   parameters:
     PaginationPage:
       name: page
@@ -692,24 +692,24 @@ components:
         type: string
         format: uuid
         example: a54a57ca-36f8-421b-a6b4-2e8f26858a4c
-  responses: 
+  responses:
     BadRequest:
       description: Bad request.
       content:
         application/problem+json:
-          schema: 
+          schema:
             $ref: '#/components/schemas/BadRequest'
     NotFound:
       description: Not found.
       content:
         application/problem+json:
-          schema: 
+          schema:
             $ref: '#/components/schemas/NotFound'
     Unauthorized:
       description: Unauthorized.
       content:
         application/problem+json:
-          schema: 
+          schema:
             $ref: '#/components/schemas/Unauthorized'
 tags:
   - name: Operations

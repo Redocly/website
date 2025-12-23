@@ -8,10 +8,10 @@ export interface PlanPickerProps {
   className?: string;
 }
 
-export function PlanPicker({ 
-  value, 
-  onPlanChange, 
-  className 
+export function PlanPicker({
+  value,
+  onPlanChange,
+  className,
 }: PlanPickerProps): React.ReactElement {
   const planOptions: SelectOption<Plan>[] = [
     { value: Plan.COMMUNITY, label: Plan.COMMUNITY },
