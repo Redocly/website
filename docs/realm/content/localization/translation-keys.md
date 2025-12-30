@@ -842,6 +842,60 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- catalog.catalogs.repository.title
+- Title for the "Repositories" catalog view
+- Repositories
+
+---
+
+- catalog.catalogs.repository.description
+- Description for the "Repositories" catalog view
+- Repository entities
+
+---
+
+- catalog.catalogs.repository.switcherLabel
+- Switcher label for the "Repositories" catalog view
+- Repositories
+
+---
+
+- catalog.catalogs.lambda.title
+- Title for the "Lambdas" catalog view
+- Lambdas
+
+---
+
+- catalog.catalogs.lambda.description
+- Description for the "Lambdas" catalog view
+- Lambda entities
+
+---
+
+- catalog.catalogs.lambda.switcherLabel
+- Switcher label for the "Lambdas" catalog view
+- Lambdas
+
+---
+
+- catalog.catalogs.s3Bucket.title
+- Title for the "S3 Buckets" catalog view
+- S3 Buckets
+
+---
+
+- catalog.catalogs.s3Bucket.description
+- Description for the "S3 Buckets" catalog view
+- S3 bucket entities
+
+---
+
+- catalog.catalogs.s3Bucket.switcherLabel
+- Switcher label for the "S3 Buckets" catalog view
+- S3 Buckets
+
+---
+
 - catalog.entity.metadata.title
 - Title for entity metadata section in catalog
 - Metadata
