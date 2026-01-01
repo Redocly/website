@@ -346,7 +346,7 @@ scorecardClassic:
 
 ## Resources
 
-- **[Scorecard feature overview](../reunite/project/scorecard.md)** - Understand what scorecards display, how to access reports, and their role in API quality management
-- **[Configure scorecard](../reunite/project/configure-scorecard.md)** - Add Redocly built-in or custom rulesets to scorecards for comprehensive API quality assessment and tracking
+- **[Lint](../reunite/project/lint.md)** - Understand the Lint deployment step, what the scorecard displays, how to access reports, and the scorecard's role in API quality management
+- **[Configure classic scorecard](../reunite/project/configure-classic-scorecard.md)** - Add Redocly built-in or custom rulesets to the classic scorecard for comprehensive API quality assessment and tracking
 - **[OpenAPI reference](./openapi/index.md)** - Customize the behavior and appearance of integrated API documentation for comprehensive scorecard integration
-- **[Catalog reference](./catalog-classic.md)** - Configure an API catalog with different customization options for effective scorecard management
+- **[Catalog reference](./catalog-classic.md)** - Configure a classic version of the API catalog with different customization options for effective scorecard management

@@ -63,11 +63,11 @@
       label: Previews
     - group: Deployments # missing content about the "Deployments"
       items:
-        - group: Scorecards
-          page: reunite/project/scorecard.md
+        - group: Lint
+          page: reunite/project/lint.md
           items:
-            - page: reunite/project/configure-scorecard.md
-              label: Configuration guide
+            - page: reunite/project/configure-classic-scorecard.md
+              label: Configure classic scorecard
         - page: reunite/project/ignore-link-checker.md
           label: Ignore link checker
         - page: reunite/project/branches-and-deployments.md

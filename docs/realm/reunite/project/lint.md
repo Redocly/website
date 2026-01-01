@@ -1,8 +1,11 @@
-# API Scorecard
+# API linting
 
-Reunite's scorecard feature enables you to add and create sets of rules and test your API description files against them.
-Using these rules you can maintain quality across your existing APIs and ensure that newly-added or updated APIs match your criteria.
-An API scorecard can include multiple sets of rules, corresponding to different quality levels.
+Reunite's deployment process has a Lint step that performs scorecard tests and validation of API description files in your project.
+This step relies on the [`scorecardClassic` configuration](../../config/scorecard-classic.md).
+
+Scorecard tests API description files against built-in or custom rulesets.
+These rulesets help maintaining quality across your existing APIs and ensure that newly-added or updated APIs match your criteria.
+Your project can include multiple sets of rules, corresponding to different quality levels.
 
 When new quality criteria arise, you can add more levels to reflect the evolving standards.
 There is no limit to the number of levels you can have.
@@ -23,7 +26,7 @@ Under **Summary**, click **Lint** to display the report.
 
 {% img
   src="../images/reunite-deploy-scorecard.png"
-  alt="Scorecard information in Deployments"
+  alt="Classic scorecard information in Deployments"
   withLightbox=true
 /%}
 
@@ -31,7 +34,7 @@ You can expand each row of the table, switch between the scorecard levels and dr
 
 {% img
   src="../images/reunite-deploy-scorecard-expanded.png"
-  alt="Expanded scorecard report in Deployments"
+  alt="Expanded classic scorecard report in Deployments"
   withLightbox=true
 /%}
 
@@ -39,7 +42,7 @@ If you have an open pull request, you can access the same report by opening the 
 
 {% img
   src="../images/reunite-pull-request-scorecard.png"
-  alt="Scorecard report in a pull request"
+  alt="Classic scorecard report in a pull request"
   withLightbox=true
 /%}
 
@@ -49,7 +52,6 @@ After you define scorecard levels and commit the changes, labels representing th
 
 ## Resources
 
-- **[Configure scorecard](./configure-scorecard.md)** - Add Redocly built-in or custom rulesets to scorecards for comprehensive API quality assessment and tracking
-- **[Configure a catalog](../../config/catalog-classic.md)** - Organize multiple API descriptions in your project with structured catalogs for better navigation and discovery
-- **[Scorecard configuration reference](../../config/scorecard.md)** - Complete reference for scorecardClassic configuration options and customization settings
-- **[Classic catalog configuration](../../config/catalog-classic.md)** - Advanced configuration options for the classic version of API catalogs and organization
+- **[Configure classic scorecard](./configure-classic-scorecard.md)** - Add Redocly built-in or custom rulesets to classic scorecards for comprehensive API quality assessment and tracking
+- **[Classic scorecard configuration reference](../../config/scorecard-classic.md)** - Complete reference for `scorecardClassic` configuration options and customization settings
+- **[Classic catalog configuration reference](../../config/catalog-classic.md)** - Complete reference for  `catatlogClassic` configuration options and customization settings

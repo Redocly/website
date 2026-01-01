@@ -1,4 +1,4 @@
-# Configure scorecard
+# Configure classic scorecard
 
 {% admonition type="warning" %}
 The `scorecard` property is deprecated.
@@ -6,7 +6,7 @@ Use `scorecardClassic` instead.
 The `scorecard` property continues to work with a deprecation warning.
 {% /admonition %}
 
-In Reunite, you can configure the scorecard feature to evaluate your API description files against rules.
+In Reunite, you can configure the classic scorecard feature to evaluate your API description files against rules.
 Reunite includes the following three built-in rulesets:
 
 - [`minimal`](https://redocly.com/docs/cli/rules/minimal):
@@ -27,9 +27,9 @@ Make sure you have the following:
 
 - a `redocly.yaml` configuration file in the root of your project
 
-## Add scorecard to your project with Redocly rulesets
+## Add classic scorecard to your project with Redocly rulesets
 
-To add a scorecard to your project using only the built-in rules:
+To add a classic version of the scorecard to your project using only the built-in rules:
 
 1. Add the following configuration to your `redocly.yaml` file:
 
@@ -44,8 +44,8 @@ To add a scorecard to your project using only the built-in rules:
            - recommended
    ```
 
-2. (Optional) You can change the level `name` values to suit your project.
-3. Commit and merge your changes.
+1. (Optional) You can change the level `name` values to suit your project.
+1. Commit and merge your changes.
 
 After you commit, the scorecard information displays in Reunite and the preview build.
 When you merge and the production deployment completes, the scorecard labels and reports also display on your production environment.
@@ -55,7 +55,7 @@ When you merge and the production deployment completes, the scorecard labels and
 Instead of using Redocly's built-in rulesets, you can define your own scorecard levels and build rulesets with your criteria.
 Building rules in Reunite is very similar to [building API standard rulesets in Redocly CLI](https://redocly.com/docs/cli/api-standards).
 
-### Configure scorecard rulesets in `redocly.yaml`
+### Configure rulesets in `redocly.yaml` for classic scorecard
 
 If you have a small amount of custom rules and you want to include them all in the `redocly.yaml` file you can add your rules directly.
 
@@ -68,16 +68,16 @@ To configure custom rules in `redocly.yaml`:
       levels:
     ```
 
-2. For each level you want to add, add the following configuration:
+1. For each level you want to add, add the following configuration:
 
     ```yaml {% title="redocly.yaml" %}
         - name: # provide a name for the ruleset
           rules:
     ```
 
-    The levels should be listed in order from the lowest to the highest.
+    The levels are listed in order from the lowest to the highest.
 
-3. In the `rules` object, add a map of rules.
+1. In the `rules` object, add a map of rules.
    You can use any combination of Redocly's [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) or create [configurable rules](https://redocly.com/docs/cli/rules/configurable-rules).
 
     Example:
@@ -103,20 +103,20 @@ To configure custom rules in `redocly.yaml`:
                 minLength: 20
     ```
 
-4. Commit and merge your changes.
+1. Commit and merge your changes.
 
 After you commit, the scorecard information displays in Reunite and the preview build.
 When you merge and the production deployment completes, the scorecard labels and reports also display on your production environment.
 
-### Configure scorecard rulesets in separate files
+### Configure rulesets for classic scorecard in separate files
 
 If you have many rulesets or your rulesets are complex, you can put them into separate YAML files.
 Putting your rulesets in different files means you can have one file per scorecard level, making it easier to maintain rule sets and your `redocly.yaml` file.
 
-To configure scorecard rulesets in separate files:
+To configure rulesets for classic scorecard in separate files:
 
-1. Create a YAML file for each scorecard levels you want to add.
-2. In each of the files, add a `rules` object and a map of rules for this scorecard level.
+1. Create a YAML file for each scorecard level you want to add.
+1. In each of the files, add a `rules` object and a map of rules for this scorecard level.
   You can use any combination of Redocly's [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) or create [configurable rules](https://redocly.com/docs/cli/rules/configurable-rules).
 
     Example:
@@ -140,14 +140,14 @@ To configure scorecard rulesets in separate files:
         info-license-url: error # This built-in rule enforces a url be included in the license section of the info OpenAPI node type
     ```
 
-3. Add the following configuration to your `redocly.yaml` file:
+1. Add the following configuration to your `redocly.yaml` file:
 
     ```yaml
     scorecardClassic:
       levels:
     ```
 
-4. For each level, add a `name` object and an `extends` object with a path to the ruleset file.
+1. For each level, add a `name` object and an `extends` object with a path to the ruleset file.
 
     Example:
 
@@ -168,7 +168,7 @@ To configure scorecard rulesets in separate files:
             - ./api-ruleset-gold.yaml
     ```
 
-5. Commit and merge your changes.
+1. Commit and merge your changes.
 
 After you commit, the scorecard information displays in Reunite and the preview build.
 When you merge and the production deployment completes, the scorecard labels and reports also display on your production environment.
@@ -195,13 +195,13 @@ To publish projects with non-compliant APIs:
         docs/travel.yaml: true
     ```
 
-2. Commit and merge your changes.
+1. Commit and merge your changes.
 
 After the production build finishes, the APIs that do not meet the lowest level criteria are marked with a "Non-compliant" label in Reunite and on your published project.
 
-## Exclude APIs from scorecard
+## Exclude APIs from the classic scorecard
 
-The scorecard feature evaluates all API description files in your project, regardless of their location in the file tree.
+The classic scorecard feature evaluates all API description files in your project, regardless of their location in the file tree.
 You might want to exclude APIs that are still being developed, or sample APIs you use for training or testing.
 
 If you have APIs you want to exclude from evaluation, list the API description files' locations in the `ignore` object in `redocly.yaml`.
@@ -214,7 +214,7 @@ To avoid broken links, make sure you remove any links to that file from your pro
 To exclude API description files from scorecard and publishing:
 
 1. In your `redocly.yaml` file, add an `ignore` object.
-2. Inside the object, add an array of paths to the API description files to exclude.
+1. Inside the object, add an array of paths to the API description files to exclude.
 
     For example:
 
@@ -225,13 +225,13 @@ To exclude API description files from scorecard and publishing:
       - ./internal/projects/user-management.yaml
     ```
 
-3. Commit and merge your changes.
+1. Commit and merge your changes.
 
 After you publish the updated project, the listed API description files are excluded from the scorecard reports in Reunite and on your published project.
 
 ## Resources
 
 - **[Add OpenAPI descriptions](../../content/api-docs/add-openapi-docs.md)** - Step-by-step guide to add OpenAPI descriptions to your project for scorecard evaluation and documentation
-- **[Configure a catalog](../../config/catalog-classic.md)** - Organize multiple API descriptions with structured catalogs for better navigation and user experience
-- **[Scorecard feature overview](./scorecard.md)** - Understand what scorecards display, how to access reports, and their role in API quality management
-- **[Scorecard configuration reference](../../config/scorecard.md)** - Complete reference for all scorecardClassic configuration options, rulesets, and customization settings
+- **[Classic catalog configuration reference](../../config/catalog-classic.md)** - Organize multiple API descriptions with structured catalogs for better navigation and user experience
+- **[Lint APIs](./lint.md)** - Understand the Lint deployment step, what scorecards display, how to access reports, and their role in API quality management
+- **[Classic scorecard configuration reference](../../config/scorecard-classic.md)** - Complete reference for all `scorecardClassic` configuration options, rulesets, and customization settings
