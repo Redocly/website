@@ -206,6 +206,8 @@
           label: Inline SVG
         - page: content/markdoc-tags/json-schema.md
           label: JSON schema
+        - page: content/markdoc-tags/json-example.md
+          label: JSON example
         - page: content/markdoc-tags/markdoc-example.md
           label: Markdoc example
         - page: content/markdoc-tags/openapi-code-sample.md

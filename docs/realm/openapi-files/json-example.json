@@ -1,0 +1,11 @@
+{
+  "summary": "Example of a Standard User Object",
+  "description": "This demonstrates a typical structure for a User resource, suitable for both request and response bodies.",
+  "value": {
+    "id": 42,
+    "username": "jdoe",
+    "email": "jdoe@example.com",
+    "isActive": true,
+    "roles": ["admin", "editor"]
+  }
+}
