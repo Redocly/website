@@ -55,6 +55,15 @@ When you add a new Remote from CI/CD, you'll be presented with a starter templat
 
 ---
 
+- defaultBranch
+- string
+- The name of the default branch.
+  If not provided, the action uses the repository's default branch.
+  This is useful if you want to use a production branch with a different name than the repository's default (e.g., `main`).
+  For example: `main`.
+
+---
+
 - githubToken
 - string
 - GitHub token for setting commit status.
