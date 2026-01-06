@@ -1,4 +1,15 @@
 '@redocly/realm':
+  0.129.0-next.4:
+    timestamp: 1767697037000
+    changes:
+      minor: []
+      patch:
+        - Fixed layout shift in `x-tags` with `schemaDefinition`.
+        - Updated `@redocly/openapi-core` to version `2.14.3`.
+    dependencies:
+      '@redocly/openapi-docs': 3.17.0-next.4
+      '@redocly/asyncapi-docs': 1.6.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.14.0-next.4
   0.129.0-next.3:
     timestamp: 1767615118000
     changes:
@@ -5073,6 +5084,16 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.129.0-next.4:
+    timestamp: 1767697037000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.14.3`.
+    dependencies:
+      '@redocly/openapi-docs': 3.17.0-next.4
+      '@redocly/asyncapi-docs': 1.6.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.14.0-next.4
   0.129.0-next.3:
     timestamp: 1767615118000
     changes:
@@ -9331,6 +9352,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.129.0-next.4:
+    timestamp: 1767697037000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.14.3`.
+    dependencies:
+      '@redocly/openapi-docs': 3.17.0-next.4
+      '@redocly/asyncapi-docs': 1.6.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.14.0-next.4
   0.129.0-next.3:
     timestamp: 1767615118000
     changes:
@@ -13579,6 +13610,17 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.129.0-next.4:
+    timestamp: 1767697037000
+    changes:
+      minor: []
+      patch:
+        - Fixed layout shift in `x-tags` with `schemaDefinition`.
+        - Updated `@redocly/openapi-core` to version `2.14.3`.
+    dependencies:
+      '@redocly/openapi-docs': 3.17.0-next.4
+      '@redocly/asyncapi-docs': 1.6.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.14.0-next.4
   0.129.0-next.3:
     timestamp: 1767615118000
     changes:
@@ -20423,6 +20465,15 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.17.0-next.4:
+    timestamp: 1767697037000
+    changes:
+      minor: []
+      patch:
+        - Fixed layout shift in `x-tags` with `schemaDefinition`.
+        - Updated `@redocly/openapi-core` to version `2.14.3`.
+    dependencies:
+      '@redocly/replay': 0.20.0-next.4
   3.17.0-next.3:
     timestamp: 1767615118000
     changes:
@@ -24939,6 +24990,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.12.0-next.4:
+    timestamp: 1767697037000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.129.0-next.4
+      '@redocly/redoc-reef': 0.129.0-next.4
+      '@redocly/realm': 0.129.0-next.4
+      '@redocly/redoc': 0.129.0-next.4
   1.12.0-next.3:
     timestamp: 1767615118000
     changes:
@@ -29384,6 +29445,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.14.0-next.4:
+    timestamp: 1767697037000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.17.0-next.4
   0.14.0-next.3:
     timestamp: 1767615118000
     changes:
@@ -31841,6 +31909,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.20.0-next.4:
+    timestamp: 1767697037000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.14.3`.
+    dependencies: {}
   0.20.0-next.3:
     timestamp: 1767615118000
     changes:
@@ -34966,6 +35041,13 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.6.0-next.4:
+    timestamp: 1767697037000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.17.0-next.4
   1.6.0-next.3:
     timestamp: 1767615118000
     changes:
