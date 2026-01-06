@@ -24344,6 +24344,14 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.5.0:
+    timestamp: 1767694589000
+    changes:
+      minor:
+        - Added support for OpenAPI 3.2 `dataValue` and `serializedValue`.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.14.3`.
+    dependencies: {}
   0.4.6:
     timestamp: 1767025057000
     changes:
@@ -37575,13 +37583,6 @@ reunite:
       minor: []
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.14.1`.
-    dependencies: {}
-  v2026-01-05.1:
-    timestamp: 1767628252000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.14.3`.
     dependencies: {}
 replay:
   0.0.2:
