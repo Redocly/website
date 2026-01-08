@@ -121,4 +121,8 @@ Telemetry data is associated with a secure random telemetry ID and does not incl
 
 ## Concerns and questions
 
-If you have concerns about telemetry, please feel free to [open an issue on GitHub](https://github.com/Redocly/redoc/issues/new/choose).
+If you have concerns about telemetry, feel free to [open an issue on GitHub](https://github.com/Redocly/redoc/issues/new/choose).
+
+## Resources
+
+- **[Configure Redoc](./config.md)** - Explore Redoc's configuration options
