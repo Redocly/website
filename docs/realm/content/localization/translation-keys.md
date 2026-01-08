@@ -1196,13 +1196,13 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- openapi.discriminator.searchPlaceholder
+- openapi.searchPlaceholder
 - Placeholder text for search input in dropdown components
 - Search items
 
 ---
 
-- openapi.discriminator.searchNoResults
+- openapi.searchNoResults
 - Message displayed when no search results are found in dropdown components
 - No items found
 
