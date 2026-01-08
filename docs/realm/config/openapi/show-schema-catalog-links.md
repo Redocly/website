@@ -13,6 +13,10 @@ plans:
 Display links with a reference to a specific schema in an OpenAPI file which can be used as `$ref` value in other OpenAPI files within the same project.
 These links are always displayed for OpenAPI requests and are shown for schemas when the [`schemaDefinitionsTagName`](./schema-definitions-tag-name.md) option is configured.
 
+{% admonition type="info" %}
+{% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "showSchemaCatalogLinks"} /%}
+{% /admonition %}
+
 ## Options
 
 {% table %}

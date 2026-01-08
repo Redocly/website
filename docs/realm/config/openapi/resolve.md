@@ -25,6 +25,10 @@ If an URL is not publicly accessible, use these configuration settings to add th
 One HTTP header is supported for each URL resolved.
 {% /admonition %}
 
+{% admonition type="info" %}
+{% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "resolve"} /%}
+{% /admonition %}
+
 ## Options
 
 {% table %}
