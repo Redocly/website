@@ -182,6 +182,24 @@ rbac:
 
 ## Examples
 
+### Use the access object (recommended)
+
+The recommended way to configure `rbac` is within the `access` object:
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    content:
+      '**':
+        authenticated: read
+```
+
+### Root-level configuration (deprecated)
+
+{% admonition type="warning" %}
+**Deprecated:** Root-level `rbac` is still supported for backward compatibility but will show deprecation warnings when used alongside the `access` object. Please migrate to the `access` object format.
+{% /admonition %}
+
 ### File access
 
 In the following example, default team permissions are assigned
@@ -190,21 +208,22 @@ Different permissions are assigned to the `developer-keys.md` page,
 the pages in the `/secret/chapter` folder, and any TypeScript (`.tsx`) pages:
 
 ```yaml {% title="redocly.yaml" %}
-rbac:
-  content:
-    '**':
-      Admin: admin
-      Developer: maintain
-      Employee: read
-      authenticated: read
-    developer-keys.md:
-      Developer: read
-    '/secret/chapter':
-      Admin: write
-      Developer: read
-      Employee: read
-    '**/*.tsx':
-      Developer: write
+access:
+  rbac:
+    content:
+      '**':
+        Admin: admin
+        Developer: maintain
+        Employee: read
+        authenticated: read
+      developer-keys.md:
+        Developer: read
+      '/secret/chapter':
+        Admin: write
+        Developer: read
+        Employee: read
+      '**/*.tsx':
+        Developer: write
 ```
 
 ### Project access
@@ -212,9 +231,10 @@ rbac:
 In the following example, only the Developer team can create a branch, create a pull request, or create a deployment.
 
 ```yaml {% title="redocly.yaml" %}
-rbac:
-  reunite:
-    Developer: write
+access:
+  rbac:
+    reunite:
+      Developer: write
 ```
 
 ### Complete RBAC setup
@@ -222,15 +242,16 @@ rbac:
 The following example shows a comprehensive RBAC configuration with project access, content access, environment variables, and authentication requirements:
 
 ```yaml {% title="redocly.yaml" %}
-rbac:
-  # Project administration access
-  reunite:
-    Developers: write
-    Writers: read
-    Admin: admin
-  
-  # File and content access
-  content:
+access:
+  rbac:
+    # Project administration access
+    reunite:
+      Developers: write
+      Writers: read
+      Admin: admin
+    
+    # File and content access
+    content:
     # Default permissions for all files
     '**':
       Developers: maintain
@@ -258,14 +279,15 @@ rbac:
 Environment variables can be used for role assignments, useful for different deployment environments:
 
 ```yaml {% title="redocly.yaml" %}
-rbac:
-  reunite:
-    Writers: '{{process.env.RBAC_WRITERS_ROLE}}'
-    Developers: '{{process.env.RBAC_DEVELOPERS_ROLE}}'
-  content:
-    '**':
-      Developers: '{{process.env.RBAC_DEFAULT_ROLE}}'
-      authenticated: read
+access:
+  rbac:
+    reunite:
+      Writers: '{{process.env.RBAC_WRITERS_ROLE}}'
+      Developers: '{{process.env.RBAC_DEVELOPERS_ROLE}}'
+    content:
+      '**':
+        Developers: '{{process.env.RBAC_DEFAULT_ROLE}}'
+        authenticated: read
 ```
 
 ### Require authentication
@@ -273,10 +295,12 @@ rbac:
 To require users to log in before viewing any content:
 
 ```yaml {% title="redocly.yaml" %}
-rbac:
-  content:
-    '**':
-      authenticated: read
+access:
+  requiresLogin: true
+  rbac:
+    content:
+      '**':
+        authenticated: read
 ```
 
 This configuration creates a login page where users authenticate using configured identity providers.
@@ -304,26 +328,27 @@ Given the above configuration and the following list of team names:
 The effective access control settings would be like the following example configuration:
 
 ```yaml {% title="redocly.yaml" %}
-rbac:
-  reunite:
-    REDOCLY-PEARL-triage: triage
-    REDOCLY-PEARL-admin: admin
-    BUSINESS-AMETHYST-maintain: maintain
-  content:
-    '/docs/pearl/**':
+access:
+  rbac:
+    reunite:
       REDOCLY-PEARL-triage: triage
       REDOCLY-PEARL-admin: admin
-      authenticated: read
-    '/apis/pearl/**':
-      REDOCLY-PEARL-triage: triage
-      REDOCLY-PEARL-admin: admin
-      authenticated: read
-    '/docs/amethyst/**':
       BUSINESS-AMETHYST-maintain: maintain
-      authenticated: read
-    '/apis/amethyst/**':
-      BUSINESS-AMETHYST-maintain: maintain
-      authenticated: read
+    content:
+      '/docs/pearl/**':
+        REDOCLY-PEARL-triage: triage
+        REDOCLY-PEARL-admin: admin
+        authenticated: read
+      '/apis/pearl/**':
+        REDOCLY-PEARL-triage: triage
+        REDOCLY-PEARL-admin: admin
+        authenticated: read
+      '/docs/amethyst/**':
+        BUSINESS-AMETHYST-maintain: maintain
+        authenticated: read
+      '/apis/amethyst/**':
+        BUSINESS-AMETHYST-maintain: maintain
+        authenticated: read
 ```
 
 ### Feature access
@@ -331,11 +356,12 @@ rbac:
 In the following example, anonymous users have no access to the AI search feature,
 while authenticated users can access the AI search feature.
 
-```yaml
-rbac:
-  features:
-    aiSearch:
-      authenticated: read
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    features:
+      aiSearch:
+        authenticated: read
 ```
 
 ### Disallow access to one specific page
@@ -343,10 +369,11 @@ rbac:
 In the following example, members of the Developers team can access Markdown files in the `/security` folder, with the exception of `top-secret.md` that has the `none` value for Developers in the front matter of the file.
 
 ```yaml {% title="redocly.yaml" %}
-rbac:
-  content:
-    'security/*.md':
-        Admin: admin
+access:
+  rbac:
+    content:
+      'security/*.md':
+          Admin: admin
         Developers: read
 ```
 
