@@ -1,4 +1,13 @@
 '@redocly/realm':
+  0.129.0-next.6:
+    timestamp: 1768202367000
+    changes:
+      minor:
+        - >-
+          Added `access` configuration object to group authentication settings (`requiresLogin`, `logoutReturnUrl`, `residency`, `sso`, `rbac`) and
+          `logoutReturnUrl` option to customize post-logout redirect URL.
+      patch: []
+    dependencies: {}
   0.129.0-next.5:
     timestamp: 1767871544000
     changes:
@@ -5095,6 +5104,15 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.129.0-next.6:
+    timestamp: 1768202367000
+    changes:
+      minor:
+        - >-
+          Added `access` configuration object to group authentication settings (`requiresLogin`, `logoutReturnUrl`, `residency`, `sso`, `rbac`) and
+          `logoutReturnUrl` option to customize post-logout redirect URL.
+      patch: []
+    dependencies: {}
   0.129.0-next.5:
     timestamp: 1767871544000
     changes:
@@ -9373,6 +9391,15 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.129.0-next.6:
+    timestamp: 1768202367000
+    changes:
+      minor:
+        - >-
+          Added `access` configuration object to group authentication settings (`requiresLogin`, `logoutReturnUrl`, `residency`, `sso`, `rbac`) and
+          `logoutReturnUrl` option to customize post-logout redirect URL.
+      patch: []
+    dependencies: {}
   0.129.0-next.5:
     timestamp: 1767871544000
     changes:
@@ -13640,6 +13667,15 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.129.0-next.6:
+    timestamp: 1768202367000
+    changes:
+      minor:
+        - >-
+          Added `access` configuration object to group authentication settings (`requiresLogin`, `logoutReturnUrl`, `residency`, `sso`, `rbac`) and
+          `logoutReturnUrl` option to customize post-logout redirect URL.
+      patch: []
+    dependencies: {}
   0.129.0-next.5:
     timestamp: 1767871544000
     changes:
@@ -25047,6 +25083,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.12.0-next.6:
+    timestamp: 1768202367000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.129.0-next.6
+      '@redocly/redoc': 0.129.0-next.6
+      '@redocly/redoc-reef': 0.129.0-next.6
+      '@redocly/redoc-revel': 0.129.0-next.6
   1.12.0-next.5:
     timestamp: 1767871544000
     changes:
