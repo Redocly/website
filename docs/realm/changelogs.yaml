@@ -1,4 +1,37 @@
 '@redocly/realm':
+  0.129.0:
+    timestamp: 1768209859662
+    changes:
+      minor:
+        - >-
+          Added `access` configuration object to group authentication settings (`requiresLogin`, `logoutReturnUrl`, `residency`, `sso`, `rbac`) and
+          `logoutReturnUrl` option to customize post-logout redirect URL.
+        - Added tooltips to items in the API docs overview section.
+        - Added support for OpenAPI 3.2 `dataValue` and `serializedValue`.
+        - Added support for OpenAPI 3.2 Sequential and Streaming Data.
+        - Added `useColorSwitcher` React hook to receive color mode updates in components.
+        - Added support for the `json-example` Markdoc tag to embed JSON snippets in documentation.
+        - Added product-specific CSS class to the root element for targeted styling by product name.
+      patch:
+        - Fixed a bug where scorecard custom targets did not match.
+        - Fixed an issue where a trailing slash was automatically added to URLs in the **Servers** section of API docs.
+        - Fixed an issue where breadcrumbs appeared on non-nested pages in projects with a path prefix.
+        - Fixed layout shift in `x-tags` with `schemaDefinition`.
+        - Fixed an issue where image assets were incorrectly flagged as broken links in OpenAPI description.
+        - Improved loading of description files for the MCP Docs server.
+        - Fixed an issue where the path prefix was added twice to the login page.
+        - Fixed an issue where Docs MCP required authentication for publicly available docs.
+        - Fixed a bug that prevented `scorecard` configurations from applying in development mode.
+        - Fixed Y-axis scroll position when deep linking to pages with banners.
+        - Updated `@redocly/openapi-core` to version `2.14.3`.
+    dependencies:
+      '@redocly/openapi-docs': 3.17.0
+      '@redocly/theme': 0.61.0
+      '@redocly/portal-plugin-mock-server': 0.14.0
+      '@redocly/realm-asyncapi-sdk': 0.7.0
+      '@redocly/asyncapi-docs': 1.6.0
+      '@redocly/graphql-docs': 1.6.0
+      '@redocly/portal-legacy-ui': 0.12.0
   0.129.0-next.6:
     timestamp: 1768202367000
     changes:
@@ -72,7 +105,7 @@
       patch:
         - Updated `@redocly/openapi-core` to version `2.13.0`.
         - Fixed a bug where scorecard custom targets did not match.
-        - Fixed dismissed banner briefly appearing after page refresh.
+        - Fixed an issue where the dismissed banner briefly appeared back after page refresh.
         - Added product-specific CSS class to the root element for targeted styling by product name.
         - Fixed Y-axis scroll position when deep linking to pages with banners.
     dependencies:
@@ -5104,6 +5137,31 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.129.0:
+    timestamp: 1768209859662
+    changes:
+      minor:
+        - >-
+          Added `access` configuration object to group authentication settings (`requiresLogin`, `logoutReturnUrl`, `residency`, `sso`, `rbac`) and
+          `logoutReturnUrl` option to customize post-logout redirect URL.
+        - Added `useColorSwitcher` React hook to receive color mode updates in components.
+        - Added support for the `json-example` Markdoc tag to embed JSON snippets in documentation.
+      patch:
+        - Fixed a bug where scorecard custom targets did not match.
+        - Fixed an issue where breadcrumbs appeared on non-nested pages in projects with a path prefix.
+        - Improved loading of description files for the MCP Docs server.
+        - Fixed an issue where the path prefix was added twice to the login page.
+        - Fixed an issue where Docs MCP required authentication for publicly available docs.
+        - Fixed a bug that prevented `scorecard` configurations from applying in development mode.
+        - Updated `@redocly/openapi-core` to version `2.14.3`.
+    dependencies:
+      '@redocly/openapi-docs': 3.17.0
+      '@redocly/theme': 0.61.0
+      '@redocly/portal-plugin-mock-server': 0.14.0
+      '@redocly/realm-asyncapi-sdk': 0.7.0
+      '@redocly/asyncapi-docs': 1.6.0
+      '@redocly/graphql-docs': 1.6.0
+      '@redocly/portal-legacy-ui': 0.12.0
   0.129.0-next.6:
     timestamp: 1768202367000
     changes:
@@ -9391,6 +9449,31 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.129.0:
+    timestamp: 1768209859662
+    changes:
+      minor:
+        - >-
+          Added `access` configuration object to group authentication settings (`requiresLogin`, `logoutReturnUrl`, `residency`, `sso`, `rbac`) and
+          `logoutReturnUrl` option to customize post-logout redirect URL.
+        - Added `useColorSwitcher` React hook to receive color mode updates in components.
+        - Added support for the `json-example` Markdoc tag to embed JSON snippets in documentation.
+        - Added product-specific CSS class to the root element for targeted styling by product name.
+      patch:
+        - Fixed an issue where breadcrumbs appeared on non-nested pages in projects with a path prefix.
+        - Improved loading of description files for the MCP Docs server.
+        - Fixed an issue where the path prefix was added twice to the login page.
+        - Fixed an issue where Docs MCP required authentication for publicly available docs.
+        - Fixed Y-axis scroll position when deep linking to pages with banners.
+        - Updated `@redocly/openapi-core` to version `2.14.3`.
+    dependencies:
+      '@redocly/openapi-docs': 3.17.0
+      '@redocly/theme': 0.61.0
+      '@redocly/portal-plugin-mock-server': 0.14.0
+      '@redocly/realm-asyncapi-sdk': 0.7.0
+      '@redocly/asyncapi-docs': 1.6.0
+      '@redocly/graphql-docs': 1.6.0
+      '@redocly/portal-legacy-ui': 0.12.0
   0.129.0-next.6:
     timestamp: 1768202367000
     changes:
@@ -9454,7 +9537,7 @@
         - Added support for the `json-example` Markdoc tag to embed JSON snippets in documentation.
       patch:
         - Updated `@redocly/openapi-core` to version `2.13.0`.
-        - Fixed dismissed banner briefly appearing after page refresh.
+        - Fixed an issue where the dismissed banner briefly appeared back after page refresh.
         - Added product-specific CSS class to the root element for targeted styling by product name.
         - Fixed Y-axis scroll position when deep linking to pages with banners.
     dependencies:
@@ -13667,6 +13750,33 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.129.0:
+    timestamp: 1768209859662
+    changes:
+      minor:
+        - >-
+          Added `access` configuration object to group authentication settings (`requiresLogin`, `logoutReturnUrl`, `residency`, `sso`, `rbac`) and
+          `logoutReturnUrl` option to customize post-logout redirect URL.
+        - Added tooltips to items in the API docs overview section.
+        - Added support for OpenAPI 3.2 `dataValue` and `serializedValue`.
+        - Added support for OpenAPI 3.2 Sequential and Streaming Data.
+      patch:
+        - Fixed an issue where a trailing slash was automatically added to URLs in the **Servers** section of API docs.
+        - Fixed an issue where breadcrumbs appeared on non-nested pages in projects with a path prefix.
+        - Fixed layout shift in `x-tags` with `schemaDefinition`.
+        - Fixed an issue where image assets were incorrectly flagged as broken links in OpenAPI description.
+        - Improved loading of description files for the MCP Docs server.
+        - Fixed an issue where the path prefix was added twice to the login page.
+        - Fixed an issue where Docs MCP required authentication for publicly available docs.
+        - Updated `@redocly/openapi-core` to version `2.14.3`.
+    dependencies:
+      '@redocly/openapi-docs': 3.17.0
+      '@redocly/theme': 0.61.0
+      '@redocly/portal-plugin-mock-server': 0.14.0
+      '@redocly/realm-asyncapi-sdk': 0.7.0
+      '@redocly/asyncapi-docs': 1.6.0
+      '@redocly/graphql-docs': 1.6.0
+      '@redocly/portal-legacy-ui': 0.12.0
   0.129.0-next.6:
     timestamp: 1768202367000
     changes:
@@ -17980,6 +18090,17 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.61.0:
+    timestamp: 1768209859662
+    changes:
+      minor:
+        - Added tooltips to items in the API docs overview section.
+        - Added `useColorSwitcher` React hook to receive color mode updates in components.
+        - Added product-specific CSS class to the root element for targeted styling by product name.
+      patch:
+        - Fixed an issue where breadcrumbs appeared on non-nested pages in projects with a path prefix.
+        - Fixed Y-axis scroll position when deep linking to pages with banners.
+    dependencies: {}
   0.61.0-next.3:
     timestamp: 1767615118000
     changes:
@@ -18001,7 +18122,7 @@
       minor:
         - Added `useColorSwitcher` React hook to receive color mode updates in components.
       patch:
-        - Fixed dismissed banner briefly appearing after page refresh.
+        - Fixed an issue where the dismissed banner briefly appeared back after page refresh.
         - Added product-specific CSS class to the root element for targeted styling by product name.
         - Fixed Y-axis scroll position when deep linking to pages with banners.
     dependencies: {}
@@ -20541,6 +20662,20 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.17.0:
+    timestamp: 1768209859662
+    changes:
+      minor:
+        - Added tooltips to items in the API docs overview section.
+        - Added support for OpenAPI 3.2 `dataValue` and `serializedValue`.
+        - Added support for OpenAPI 3.2 Sequential and Streaming Data.
+      patch:
+        - Fixed an issue where a trailing slash was automatically added to URLs in the **Servers** section of API docs.
+        - Fixed layout shift in `x-tags` with `schemaDefinition`.
+        - Fixed an issue where body parameters were not pre-filled when the operation had a `oneOf` schema in the request body in Replay.
+        - Updated `@redocly/openapi-core` to version `2.14.3`.
+    dependencies:
+      '@redocly/replay': 0.20.0
   3.17.0-next.5:
     timestamp: 1767871544000
     changes:
@@ -23690,6 +23825,12 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.6.0:
+    timestamp: 1768209859662
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   1.6.0-next.0:
     timestamp: 1765451304000
     changes:
@@ -24914,6 +25055,12 @@
         - Redocly Mock Server release
     dependencies: {}
 '@redocly/portal-legacy-ui':
+  0.12.0:
+    timestamp: 1768209859662
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   0.12.0-next.0:
     timestamp: 1765451304000
     changes:
@@ -25083,6 +25230,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.12.0:
+    timestamp: 1768209859662
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.129.0
+      '@redocly/redoc-reef': 0.129.0
+      '@redocly/redoc': 0.129.0
+      '@redocly/redoc-revel': 0.129.0
+      '@redocly/theme': 0.61.0
   1.12.0-next.6:
     timestamp: 1768202367000
     changes:
@@ -29558,6 +29716,14 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.14.0:
+    timestamp: 1768209859662
+    changes:
+      minor:
+        - Added support for OpenAPI 3.2 Sequential and Streaming Data.
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.17.0
   0.14.0-next.5:
     timestamp: 1767871544000
     changes:
@@ -32029,6 +32195,33 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.20.0:
+    timestamp: 1768209859662
+    changes:
+      minor:
+        - Reduced Replay's side panel's minimum size to respond to screen size changes in `Try it`.
+        - Added support for enumerated values for server variables in Replay, improving the editing experience.
+        - Updated the design of the History tab in Replay.
+        - Added operation name to the request header and to the tab name in Replay.
+        - Added support for OpenAPI 3.2 `dataValue` and `serializedValue`.
+        - Updated disabled state styling for the **URL** input field in Replay.
+        - Added support for OpenAPI 3.2 Sequential and Streaming Data.
+        - Added support for importing HTTP requests from `curl` commands using the paste modal in Replay.
+        - Improved security by masking secret environment variable values in Replay's environment variables editor.
+        - Added a tooltip to a **Send request** button when it's in a disabled state in Replay.
+      patch:
+        - Fixed an issue where closing a tab in Replay in development mode caused the application to crash.
+        - Fixed the alignment of **Connected Operation** badge in open step in Replay.
+        - Fixed an issue where the response type selection reset to the default when interacting with Replay.
+        - Fixed overflow of step and API titles in Replay tabs.
+        - Fixed UI issues with inputs in the **Security** tab of Replay.
+        - Fixed an issue where body parameters were not pre-filled when the operation had a `oneOf` schema in the request body in Replay.
+        - Fixed an issue where opening a history item failed in some cases in Replay.
+        - Fixed an issue where URLs without protocols caused malformed code samples to generate in Replay.
+        - Updated `@redocly/openapi-core` to version `2.14.3`.
+        - Updated `@redocly/respect-core` to version `2.14.3`.
+    dependencies:
+      '@redocly/theme': 0.61.0
   0.20.0-next.5:
     timestamp: 1767871544000
     changes:
@@ -33695,6 +33888,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.12.0:
+    timestamp: 1768209859662
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.61.0
   0.12.0-next.3:
     timestamp: 1767615118000
     changes:
@@ -35168,6 +35368,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.6.0:
+    timestamp: 1768209859662
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.17.0
+      '@redocly/theme': 0.61.0
   1.6.0-next.5:
     timestamp: 1767871544000
     changes:
