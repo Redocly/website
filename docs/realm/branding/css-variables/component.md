@@ -9,20 +9,22 @@
 --admonition-font-size: var(--font-size-base);
 --admonition-font-weight: var(--font-weight-regular);
 --admonition-line-height: var(--line-height-base);
---admonition-heading-font-size: var(--font-size-lg);
---admonition-heading-font-weight: var(--font-weight-regular);
---admonition-heading-line-height: var(--line-height-lg);
---admonition-heading-letter-spacing: 0.3px;
+--admonition-heading-font-size: var(--font-size-base);
+--admonition-heading-font-weight: var(--font-weight-semibold);
+--admonition-heading-line-height: var(--line-height-base);
+--admonition-heading-letter-spacing: 0;
 --admonition-heading-transform: none;
---admonition-margin-horizontal: 0;
---admonition-margin-vertical: var(--spacing-lg);
---admonition-padding-horizontal: var(--spacing-base);
---admonition-padding-vertical-xs: var(--spacing-xs);
---admonition-padding-vertical-md: var(--spacing-md);
---admonition-icon-size: 24px;
+--admonition-heading-text-color: var(--color-warm-grey-11);
+--admonition-gap: var(--spacing-sm);
+--admonition-text-gap: var(--spacing-xxs);
+--admonition-margin: var(--spacing-base) 0 var(--spacing-md) 0;
+--admonition-padding: var(--spacing-sm) var(--spacing-base);
+--admonition-icon-margin: calc(var(--spacing-unit) / 2) 0;
+--admonition-icon-size: 18px;
 --admonition-border-radius: var(--border-radius-lg);
 --admonition-border-style: var(--border-style);
---admonition-border-width: calc(var(--border-width) * 4);
+--admonition-border-width: 1px;
+
 ```
 
 </details>
@@ -31,14 +33,13 @@
 
 ```css
 --admonition-info-bg-color: var(--color-info-bg);
---admonition-info-heading-text-color: var(--text-color-primary);
---admonition-info-text-color: var(--text-color-secondary);
---admonition-info-icon-color: var(--color-info-base);
+--admonition-info-heading-text-color: var(--admonition-heading-text-color);
+--admonition-info-text-color: var(--admonition-heading-text-color);
+--admonition-info-icon-color: var(--color-info-active);
 --admonition-info-border-color: var(--color-info-border);
 --admonition-info-border-style: var(--admonition-border-style);
 --admonition-info-border-width: var(--admonition-border-width);
 --admonition-info-border: var(--admonition-info-border-width) var(--admonition-info-border-style) var(--admonition-info-border-color);
---admonition-info-icon: none;
 ```
 
 </details>
@@ -47,14 +48,13 @@
 
 ```css
 --admonition-warning-bg-color: var(--color-warning-bg);
---admonition-warning-text-color: var(--text-color-secondary);
---admonition-warning-heading-text-color: var(--text-color-primary);
---admonition-warning-icon-color: var(--color-warning-base);
+--admonition-warning-text-color: var(--admonition-heading-text-color);
+--admonition-warning-heading-text-color: var(--admonition-heading-text-color);
+--admonition-warning-icon-color: var(--color-warning-active);
 --admonition-warning-border-color: var(--color-warning-border);
 --admonition-warning-border-style: var(--admonition-border-style);
 --admonition-warning-border-width: var(--admonition-border-width);
 --admonition-warning-border: var(--admonition-warning-border-width) var(--admonition-warning-border-style) var(--admonition-warning-border-color);
---admonition-warning-icon: none;
 ```
 
 </details>
@@ -62,15 +62,14 @@
 <summary>Admonition type danger</summary>
 
 ```css
-  --admonition-danger-bg-color: var(--color-error-bg);
-  --admonition-danger-text-color: var(--text-color-secondary);
-  --admonition-danger-heading-text-color: var(--text-color-primary);
-  --admonition-danger-icon-color: var(--color-error-base);
-  --admonition-danger-border-color: var(--color-error-border);
-  --admonition-danger-border-style: var(--admonition-border-style);
-  --admonition-danger-border-width: var(--admonition-border-width);
-  --admonition-danger-border: var(--admonition-danger-border-width) var(--admonition-danger-border-style) var(--admonition-danger-border-color);
-  --admonition-danger-icon: none;
+--admonition-danger-bg-color: var(--color-error-bg);
+--admonition-danger-text-color: var(--admonition-heading-text-color);
+--admonition-danger-heading-text-color: var(--admonition-heading-text-color);
+--admonition-danger-icon-color: var(--color-error-active);
+--admonition-danger-border-color: var(--color-error-border);
+--admonition-danger-border-style: var(--admonition-border-style);
+--admonition-danger-border-width: var(--admonition-border-width);
+--admonition-danger-border: var(--admonition-danger-border-width) var(--admonition-danger-border-style) var(--admonition-danger-border-color);
 ```
 
 </details>
@@ -79,14 +78,14 @@
 
 ```css
 --admonition-success-bg-color: var(--color-success-bg);
---admonition-success-text-color: var(--text-color-secondary);
---admonition-success-heading-text-color: var(--text-color-primary);
---admonition-success-icon-color: var(--color-success-base);
+--admonition-success-text-color: var(--admonition-heading-text-color);
+--admonition-success-heading-text-color: var(--admonition-heading-text-color);
+--admonition-success-icon-color: var(--color-success-active);
 --admonition-success-border-color: var(--color-success-border);
 --admonition-success-border-style: var(--admonition-border-style);
 --admonition-success-border-width: var(--admonition-border-width);
 --admonition-success-border: var(--admonition-success-border-width) var(--admonition-success-border-style) var(--admonition-success-border-color);
---admonition-success-icon: none;
+
 ```
 
 </details>
