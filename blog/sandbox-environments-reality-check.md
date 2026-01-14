@@ -212,7 +212,7 @@ Here are the patterns that actually work at scale:
 - Good observability
 - Clear "no PII" policy
 
-### 2. "Sandbox is just prod, but restricted"
+### 2. "Sandbox is just prod, but limited side effects"
 
 **The pattern:**
 - Prod codepaths, but no side effects (or side effects go to a sink)
