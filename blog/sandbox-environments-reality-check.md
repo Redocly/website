@@ -1,8 +1,7 @@
 ---
 template: '../@theme/templates/BlogPost'
 title: The sandbox reality check
-description: Organizations want org-level sandbox environments for thousands of APIs.
-Here are the proven patterns that work at scale—and why they require platform building blocks, not just automation.
+description: Organizations want org-level sandbox environments for thousands of APIs. Here are the proven patterns that work at scale—and why they require platform building blocks, not just automation.
 seo:
   title: Sandbox environments reality check | Redocly
   description: Learn about proven org-level sandbox patterns that work at scale, what makes a real sandbox different from mock servers, and why platform building blocks matter more than automation.
