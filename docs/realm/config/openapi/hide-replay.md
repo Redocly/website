@@ -14,6 +14,10 @@ The `hideReplay` configuration option allows you to control the visibility of th
 
 For example, you might want to hide the `Try it` button in your public API documentation, and make it visible only on your internal website.
 
+{% admonition type="info" %}
+{% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "hideReplay"} /%}
+{% /admonition %}
+
 ## Options
 
 {% table %}
