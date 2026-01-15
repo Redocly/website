@@ -43,27 +43,13 @@ For new products, the `residency` configuration setting is used.
 
 ## Examples
 
-### Use the access object (recommended)
+The following configuration entry is used for projects that have EU residency:
 
-The recommended way to configure `residency` is within the `access` object:
-
-```yaml {% title="redocly.yaml" %}
-access:
-  residency: https://app.cloud.eu.redocly.com
-```
-
-### Root-level configuration (deprecated)
-
-{% admonition type="warning" %}
-**Deprecated:** Root-level `residency` is still supported for backward compatibility but will show deprecation warnings when used alongside the `access` object. Please migrate to the `access` object format.
-{% /admonition %}
-
-```yaml {% title="redocly.yaml" %}
+```yaml
 residency: https://app.cloud.eu.redocly.com
 ```
 
 ## Resources
 
-- **[Access configuration](./access.md)** - Group authentication and access settings together using the `access` object
 - **[Remote content](../reunite/project/remote-content/index.md)** - Use remote content in your projects for flexible data residency and content management strategies
 - **[Develop locally](../get-started/start-local-dev.md)** - Set up local development environments while maintaining cloud deployment capabilities for data residency compliance

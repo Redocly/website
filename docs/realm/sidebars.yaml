@@ -61,14 +61,13 @@
       label: Webview
     - page: reunite/project/use-previews.md
       label: Previews
-    - group: Deployments
-      page: reunite/project/deployments.md
+    - group: Deployments # missing content about the "Deployments"
       items:
-        - group: Lint
-          page: reunite/project/lint.md
+        - group: Scorecards
+          page: reunite/project/scorecard.md
           items:
-            - page: reunite/project/configure-classic-scorecard.md
-              label: Configure classic scorecard
+            - page: reunite/project/configure-scorecard.md
+              label: Configuration guide
         - page: reunite/project/ignore-link-checker.md
           label: Ignore link checker
         - page: reunite/project/branches-and-deployments.md
@@ -207,8 +206,6 @@
           label: Inline SVG
         - page: content/markdoc-tags/json-schema.md
           label: JSON schema
-        - page: content/markdoc-tags/json-example.md
-          label: JSON example
         - page: content/markdoc-tags/markdoc-example.md
           label: Markdoc example
         - page: content/markdoc-tags/openapi-code-sample.md
@@ -421,6 +418,8 @@
           label: Use cases
         - page: customization/api-functions/api-functions-reference.md
           label: Reference
+        - page: customization/api-functions/kv-storage.md
+          label: KV storage
         - page: customization/api-functions/create-api-functions.md
           label: Tutorial
 

@@ -341,6 +341,16 @@ It includes user details, project configuration, and utilities for accessing req
 
 {% /table %}
 
+#### context.getStorage
+
+```ts
+context.getStorage(): Promise<KvService>
+```
+
+Returns the [KV storage](./kv-storage.md) service for data persistence.
+KV storage provides key-value database operations for caching, session management, and lightweight data storage.
+
+
 ### Context methods
 
 The context object includes the following methods for sending a standard Web Handler [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response):
@@ -550,4 +560,6 @@ export default async function (request: Request, context: ApiFunctionsContext) {
 
 ## Resources
 
-- Review examples of API functions in the [Create API functions](./create-api-functions.md) how-to guide.
+- **[Create API functions](./create-api-functions.md)** - Review examples of API functions
+- **[Create API functions](./create-api-functions.md)** - Step-by-step guide to building API functions with examples
+- **[KV storage](./kv-storage.md)** - Built-in key-value database for data persistence in API functions

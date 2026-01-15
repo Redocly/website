@@ -139,8 +139,6 @@
       label: plugins
     - page: ./products.md
       label: products
-    - page: ./access.md
-      label: access
     - page: ./rbac.md
       label: rbac
     - page: ./redirects.md
@@ -149,8 +147,6 @@
       label: removeAttribution
     - page: ./requires-login.md
       label: requiresLogin
-    - page: ./logout-return-url.md
-      label: logoutReturnUrl
     - page: ./residency.md
       label: residency
     - page: ./response-headers.md
@@ -159,8 +155,8 @@
       label: reunite
     - page: ./rules.md
       label: rules
-    - page: ./scorecard-classic.md
-      label: scorecardClassic
+    - page: ./scorecard.md
+      label: scorecard
     - page: ./scripts.md
       label: scripts
     - page: ./search.md

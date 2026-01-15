@@ -376,6 +376,6 @@ catalogClassic:
 - **[x-metadata extension](../content/api-docs/openapi-extensions/x-metadata.md)** - Add metadata to OpenAPI files that can be used as catalog filters and displayed in API documentation
 - **[Hide info metadata](./openapi/hide-info-metadata.md)** - Exclude metadata from API reference documentation when you want cleaner, focused documentation presentation
 - **[API Governance](https://redocly.com/docs/cli/api-standards)** - Learn about API standards and governance practices for maintaining quality and consistency
-- **[Configure classic scorecard](../reunite/project/configure-classic-scorecard.md)** - Set up scorecards to check APIs against standards and maintain quality metrics
+- **[Configure scorecard](../reunite/project/configure-scorecard.md)** - Set up scorecards to check APIs against standards and maintain quality metrics
 - **[Metadata categorization](./metadata.md#catalog-categorization)** - Use metadata to filter and organize APIs in the classic catalog for better content discovery
 - **[Configure navbar](./navbar.md)** - Follow steps to include your catalog link in the navigation bar for easy access

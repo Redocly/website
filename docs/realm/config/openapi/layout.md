@@ -14,6 +14,10 @@ The default value is `three-panel` which uses the default layout with the sideba
 Set the value to `stacked` to move the entire right panel into the middle panel.
 The `stacked` layout is identical to the layout activated by selecting the **Change View** button on the API documentation page.
 
+{% admonition type="info" %}
+{% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "layout"} /%}
+{% /admonition %}
+
 The `layout` option is a string that sets the layout of the API documentation page.
 
 ## Options

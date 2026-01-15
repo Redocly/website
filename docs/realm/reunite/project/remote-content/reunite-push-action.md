@@ -6,10 +6,7 @@ Use a GitHub Action for pushing remote content to the Redocly Reunite project.
 Users with their projects hosted in their own GitHub accounts, but without the Redocly GitHub application installed can use this action in the repository that holds the remote content to push their changes to the Reunite platform.
 This action has some advantages over using the push command because it also sets corresponding commit statuses for project deployments and scorecards.
 
-{% admonition type="info" %}
 The best way to get started with the GitHub action is to copy the code snippet presented to you when you add a remote content source to your project.
-{% /admonition %}
-
 When you add a new Remote from CI/CD, you'll be presented with a starter template for the action that you can use.
 
 ## Options
@@ -19,6 +16,12 @@ When you add a new Remote from CI/CD, you'll be presented with a starter templat
 - Option
 - Type
 - Description
+
+---
+
+- replace
+- replace
+- replace
 
 ---
 
@@ -52,15 +55,6 @@ When you add a new Remote from CI/CD, you'll be presented with a starter templat
 
 ---
 
-- defaultBranch
-- string
-- The name of the default branch.
-  If not provided, the action uses the repository's default branch.
-  This is useful if you want to use a production branch with a different name than the repository's default (e.g., `main`).
-  For example: `main`.
-
----
-
 - githubToken
 - string
 - GitHub token for setting commit status.
@@ -89,14 +83,6 @@ See [Manage organization-wide API keys](../../organization/api-keys.md) to obtai
 
 Store the API key as an environment variable called `REDOCLY_AUTHORIZATION`.
 The action will read this secret value from the environment when it executes.
-
-{% admonition type="info"%}
-To use this in workflow, add the API key as a Secret in your GitHub repository:
-
-1. Navigate to your repository on GitHub.
-2. Go to Settings > Secrets and variables > Actions.
-3. Create a New repository secret named `REDOCLY_AUTHORIZATION`.
-{% /admonition %}
 
 ## Permissions
 
@@ -138,7 +124,7 @@ jobs:
           mountPath: 'src/docs/museum'
           files: 'src/redocly-museum.yaml'
         env:
-          REDOCLY_AUTHORIZATION: ${{ secrets.REDOCLY_AUTHORIZATION }}
+          REDOCLY_AUTHORIZATION: ${{ secrets.REDOCLY_API_KEY }}
 ```
 
 When the action runs, it updates with the build statuses of any scorecards and the project itself.

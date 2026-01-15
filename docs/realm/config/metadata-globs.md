@@ -59,6 +59,6 @@ These categories help organize content in search results.
 
 ## Resources
 
-- **[Configure search](./search.md#use-metadataglobs)** - Use metadataGlobs for enhanced search functionality and content organization
-- **[Classic catalog configuration](./catalog-classic.md)** - Configure the classic version of API catalog that leverages metadata patterns for content filtering and organization
-- **[Scorecard configuration](./scorecard-classic.md)** - Configure the classic version of scorecard that uses metadata patterns for targeted content assessment and quality tracking
+- **[Configure search](./search.md#using-metadataglobs)** - Use metadataGlobs for enhanced search functionality and content organization
+- **[Catalog configuration](./catalog-classic.md)** - Configure catalogs that leverage metadata patterns for content filtering and organization
+- **[Scorecard configuration](./scorecard.md)** - Configure scorecards that use metadata patterns for targeted content assessment and quality tracking

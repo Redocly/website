@@ -42,34 +42,20 @@ To require login to a project, [`rbac`](./rbac.md) or [`requiresLogin`](./requir
 
 ## Examples
 
-### Use the access object (recommended)
-
-The recommended way to configure `sso` is within the `access` object:
-
-```yaml {% title="redocly.yaml" %}
-access:
-  sso:
-    - GUEST
-    - REDOCLY
-```
-
 ### Disable SSO
 
-The following example disables SSO using the `access` object:
+The following example is a `sso` configuration that disables SSO:
 
 ```yaml {% title="redocly.yaml" %}
-access:
-  sso: []
+sso: []
 ```
 
 After applying this configuration, if you have `rbac` configured for the same project, and there are pages assigned to the `authenticated` default team, those pages are not accessible to anyone.
 Otherwise, if you do not have `rbac` configured, or you have all pages assigned to the `anonymous` default team, all pages are accessible.
 
-### Root-level configuration (deprecated)
+### Allow Guest and Redocly IdP
 
-{% admonition type="warning" %}
-**Deprecated:** Root-level `sso` is still supported for backward compatibility but will show deprecation warnings when used alongside the `access` object. Please migrate to the `access` object format.
-{% /admonition %}
+The following example allows users to use the `GUEST` and `REDOCLY` identity providers (IdPs):
 
 ```yaml {% title="redocly.yaml" %}
 sso:
@@ -79,7 +65,6 @@ sso:
 
 ## Resources
 
-- **[Access configuration](./access.md)** - Group authentication and access settings together using the `access` object
 - **[RBAC configuration](./rbac.md)** - Complete options for configuring role-based access control for granular project permissions and user management
 - **[RequiresLogin configuration](./requires-login.md)** - Require login for all users to your project without implementing complex role-based access control
 - **[Google Workspace SAML 2 SSO](../reunite/organization/sso/configure-google-sso.md)** - Integrate Google Workspace SAML 2 SSO with Reunite for enterprise authentication workflows
