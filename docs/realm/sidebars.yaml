@@ -61,7 +61,8 @@
       label: Webview
     - page: reunite/project/use-previews.md
       label: Previews
-    - group: Deployments # missing content about the "Deployments"
+    - group: Deployments
+      page: reunite/project/deployments.md
       items:
         - group: Lint
           page: reunite/project/lint.md
