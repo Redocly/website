@@ -1,64 +1,71 @@
 ---
 seo:
-  title: Use the Redoc HTML element
+  title: Use the Redoc CE HTML element
 ---
 
-# Use Redoc in HTML
+# Use Redoc CE in HTML
 
-To render API documentation in an HTML page, start with the template below and replace the `spec-url` value with the local file path or URL of your API description.
+To render API documentation in an HTML page:
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Redoc</title>
-    <!-- needed for adaptive design -->
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+1. Paste the following template into an HTML file.
 
-    <!--
-    Redoc doesn't change outer page styles
-    -->
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <redoc spec-url='http://petstore.swagger.io/v2/swagger.json'></redoc>
-    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
-  </body>
-</html>
-```
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Redoc CE</title>
+      <!-- needed for adaptive design -->
+      <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
 
-{% admonition type="success" name="URL or local file" %}
-Set `spec-url` to a relative path if the file is local, e.g. `spec-url=my-api.yaml`.
-Use a full URL like the example above if it's hosted elsewhere.
-{% /admonition %}
+      <!--
+      Redoc CE doesn't change outer page styles
+      -->
+      <style>
+        body {
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+    </head>
+    <body>
+      <redoc spec-url='http://petstore.swagger.io/v2/swagger.json'></redoc>
+      <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+    </body>
+  </html>
+  ```
 
-Open the HTML file in your browser to see the HTML documentation rendering.
-You may want to read the next section and add some configuration to make your documentation your own.
+1. Replace the value of `spec-url` with either:
+   - a relative path to a local OpenAPI description file, for example: `spec-url=my-api.yaml`
+   - a full URL, for example: `http://petstore.swagger.io/v2/swagger.json`
+  If you use a relative path, Redoc CE requires an HTTP server to run API documentation locally.
 
-## Configure Redoc
+To test the HTML file, open it in your browser.
+If you use a relative path, to run the API documentation locally, you need to [simulate an HTTP server](./intro.md#local-http-server).
 
-Redoc is highly configurable, find a [full list of configuration options](../config.md) on the dedicated page.
+## Configure Redoc CE
 
-To configure Redoc in HTML, add the property names to the HTML tag.
-Here's an example that makes all the required properties display first in the list:
+Redoc CE is highly configurable - see the [full list of configuration options](../config.md).
 
-```html
-    <redoc spec-url='http://petstore.swagger.io/v2/swagger.json' required-props-first=true></redoc>
-```
+To configure Redoc CE in HTML:
 
-Any of the individual properties can be added to the tag, as many as you need to get your API docs set up as you like them.
+- Add the property names to the HTML tag.
+
+  The following example makes all the required properties display at the top of the list:
+
+  ```html
+      <redoc spec-url='http://petstore.swagger.io/v2/swagger.json' required-props-first=true></redoc>
+  ```
+
+You can add as many Redoc CE configuration properties as you need.
 
 ### Theme configuration
 
-The `theme` configuration setting is more complex since it represents many nested options, you can supply these as a JSON string to the `theme` attribute.
-For example, to change the sidebar color you would use a tag like this:
+The `theme` configuration setting represents many nested options.
+You can supply these options as a JSON string to the `theme` attribute.
+
+For example, to change the sidebar color:
 
 ```html
     <redoc spec-url='http://petstore.swagger.io/v2/swagger.json'
@@ -71,36 +78,43 @@ For example, to change the sidebar color you would use a tag like this:
     ></redoc>
 ```
 
-Check out the [list of options for theme configuration](../config.md#theme-settings) and build up the configuration that suits your API needs.
+Check out the [list of options for theme configuration](../config.md#theme-settings) and create the configuration that suits your API needs.
 
 ## Advanced options
 
-### The Redoc object
+### The Redoc CE object
 
-As an alternative to the HTML tag, you can also initialise Redoc in a web page using the Redoc object and invoking it from JavaScript.
-This is useful for situations where you want to create dynamic content in a page, and also provides a simple way to attach the Redoc element to an existing container.
+As an alternative to the HTML tag, you can also initialise Redoc CE in a web page using the Redoc CE object and invoking it from JavaScript.
+Use this method to create dynamic content in a page.
+It is also a way to attach the Redoc CE element to an existing container.
 
-The Redoc object offers an `init` function:
+The Redoc CE object offers an `init` function:
 
 ```js
 Redoc.init(specOrSpecUrl, options, element, callback)
 ```
-- `specOrSpecUrl`: Either a JSON object with the OpenAPI definition or a file name/URL to the
-  definition in JSON or YAML format.
-- `options`: See the [configuration reference](../config.md).
-- `element`: DOM element Redoc is inserted into.
-- `callback`(optional): Callback to be called after Redoc has been fully rendered.
-  It is also called on errors with `error` as the first argument.
 
-Call `Redoc.init()` from the JavaScript on a web page to add the element to the named container.
-Below is an example of an HTML page with a `<div>` tag, and the JavaScript to add the Redoc object to it.
+Where:
+
+- `specOrSpecUrl`: either a JSON object with the OpenAPI description, or a file name or URL to the
+  description in JSON or YAML format
+- `options`: Redoc CE [configuration options](../config.md)
+- `element`: DOM element Redoc CE is inserted into
+- `callback`(optional): callback to be called after Redoc CE has been fully rendered, also called on errors with `error` as the first argument
+
+To use the Redoc object:
+
+- Call `Redoc.init()` from the JavaScript on a web page to add the element to a named container.
+
+The following example is an HTML page with a `<div>` tag, and the script to add the Redoc object to it.
+This example also sets the configuration for `expandResponses` so all 200 and 400 status responses are displayed with their details visible when the page loads.
 
 ```html
 <!DOCTYPE html>
 <html>
   <head />
   <body>
-    <H1>Redoc in action</H1>
+    <H1>Redoc CE in action</H1>
     <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
     <div id="redoc-container"></div>
 
@@ -113,30 +127,44 @@ Below is an example of an HTML page with a `<div>` tag, and the JavaScript to ad
 </html>
 ```
 
-This example also sets the configuration for `expandResponses` so all 200 and 400 status responses are shown unfolded and with their details visible when the page loads.
-
 ### Self-host dependencies
 
-You can reference the Redoc script using either a link to the files hosted on a CDN or install to your `node-modules` folder.
-Using the CDN is the simplest option, but if you need to host in a closed environment or have requirements around external dependencies, it may be useful to self-host.
+You can reference the Redoc CE script, either using a link to the files hosted on a CDN or installing Redoc CE in your `node-modules` folder.
+Self-hosting may be useful when you need to host in a closed environment or have requirements around external dependencies.
 
-The main example shows using the CDN:
 
-```html
-<script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
-```
+{% tabs %}
+  {% tab label="Use CDN" %}
 
-If you would instead prefer to host the depdencies yourself, first install `redoc` using `npm`:
+    To reference Redoc CE hosted on a CDN:
 
-```sh
-npm install redoc
-```
+    - In the `<script>` tag, add an `src` attribute with the URL to the Redoc CE script.
 
-_(Yarn users can install the `redoc` package with `yarn`)_.
+    ```html
+    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+    ```
 
-You can then reference the Redoc script with a node modules link:
+  {% /tab %}
 
-```html
-<script src="node_modules/redoc/bundles/redoc.standalone.js"> </script>
-```
+  {% tab label="Self-host dependencies" %}
 
+    To host the dependencies yourself:
+
+    1. Install `redoc` using `npm` or `yarn`.
+
+    ```sh
+    npm install redoc
+    ```
+
+    1. Reference the Redoc CE script with a node modules link.
+
+    ```html
+    <script src="node_modules/redoc/bundles/redoc.standalone.js"> </script>
+    ```
+
+  {% /tab %}
+{% /tabs %}
+
+## Resources
+
+- **[Redoc CE deployment guide](./intro.md)** - Follow step-by-step instructions for setting up your Redoc CE project

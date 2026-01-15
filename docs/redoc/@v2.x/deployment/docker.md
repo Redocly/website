@@ -1,29 +1,42 @@
 ---
 seo:
-  title: Use the Redoc Docker image
+  title: Use the Redoc CE Docker image
 ---
 
-# How to use the Redoc Docker image
+# Use Redoc CE Docker image
 
-Redoc is available as a pre-built Docker image in [Docker Hub](https://hub.docker.com/r/redocly/redoc/).
+Redoc CE is available as a pre-built Docker image in [Docker Hub](https://hub.docker.com/r/redocly/redoc/).
 
-If you have [Docker](https://docs.docker.com/get-docker/) installed, pull the image with the following command:
+## Before you begin
 
-```docker
+Make sure you have [Docker](https://docs.docker.com/get-docker/) installed.
+
+## Build API documentation
+
+1. Pull the image with the following command:
+
+```bash
 docker pull redocly/redoc
 ```
 
-Then run the image with the following command:
+1. Run the image:
 
-```docker
+```bash
 docker run -p 8080:80 redocly/redoc
 ```
 
-The preview starts on port 8080, based on the port used in the command, and can be accessed at `http://localhost:8080`.
-To exit the preview, use `control+C`.
+The preview starts on port 8080, based on the port used in the command.
+You can access the preview at `http://localhost:8080`.
 
-By default Redoc starts with a demo Swagger Petstore OpenAPI definition located at http://petstore.swagger.io/v2/swagger.json.
-You can update this URL using the environment variable `SPEC_URL`.
+To exit the preview, press <kbd>control</kbd>+<kbd>C</kbd>.
+
+## Change the OpenAPI description URL
+
+By default, Redoc CE starts with a demo Swagger Petstore OpenAPI description file located at http://petstore.swagger.io/v2/swagger.json.
+
+To change the description URL:
+
+- Pass the URL to your description in the `SPEC_URL` environment variable.
 
 For example:
 
@@ -33,5 +46,9 @@ docker run -p 8080:80 -e SPEC_URL=https://api.example.com/openapi.json redocly/r
 
 ## Create a Dockerfile
 
-You can also create a Dockerfile with some predefined environment variables.
+You can also create a Dockerfile with predefined environment variables.
 Check out a sample [Dockerfile](https://github.com/Redocly/redoc/blob/main/config/docker/Dockerfile) in our code repo.
+
+## Resources
+
+- **[Redoc CE deployment guide](./intro.md)** - Follow step-by-step instructions for setting up your Redoc CE project

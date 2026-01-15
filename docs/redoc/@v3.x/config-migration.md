@@ -1,13 +1,11 @@
 ---
 seo:
-  title: Migration from Redoc 2.x to 3.x
+  title: Migration from Redoc CE 2.x to 3.x
 ---
 
-# Migration from Redoc 2.x to 3.x
+# Migration from Redoc CE 2.x to 3.x
 
-## Configuration options changes
-
-The following tables show the changes in configuration options between Redoc 2.x and the newest Redoc 3.x configuration.
+The following table contains the changes in configuration options between Redoc CE 2.x and the newest Redoc CE 3.x configuration.
 
 {% table %}
 
@@ -20,12 +18,6 @@ The following tables show the changes in configuration options between Redoc 2.x
 - `theme`
 - `ResolvedThemeInterface`
 - Removed
-
----
-
-- `scrollYOffset`
-- `() => number`
-- `() => number`
 
 ---
 
@@ -83,12 +75,6 @@ The following tables show the changes in configuration options between Redoc 2.x
 
 ---
 
-- `hideDownloadButtons`
-- `boolean | null`
-- `boolean | null`
-
----
-
 - `downloadDefinitionUrl`
 - `string`
 - `downloadUrls?: DownloadUrlsConfig`
@@ -98,12 +84,6 @@ The following tables show the changes in configuration options between Redoc 2.x
 - `disableSearch`
 - `boolean`
 - Removed
-
----
-
-- `onlyRequiredInSamples`
-- `boolean`
-- `boolean`
 
 ---
 
@@ -146,12 +126,6 @@ The following tables show the changes in configuration options between Redoc 2.x
 - `enumSkipQuotes`
 - `boolean`
 - Removed
-
----
-
-- `hideSchemaTitles`
-- `boolean`
-- `boolean`
 
 ---
 
@@ -203,51 +177,15 @@ The following tables show the changes in configuration options between Redoc 2.x
 
 ---
 
-- `maxDisplayedEnumValues`
-- `number`
-- `number`
-
----
-
-- `ignoreNamedSchemas`
-- `Set<string>`
-- `Set<string>`
-
----
-
 - `unstable_ignoreMimeParameters`
 - `boolean`
 - Removed
 
 ---
 
-- `hideSidebar`
-- `boolean`
-- `boolean`
-
----
-
-- `hideLoading`
-- `boolean`
-- `boolean`
-
----
-
-- `hidePropertiesPrefix`
-- `boolean`
-- `boolean`
-
----
-
 - `hideSchemaPattern`
 - `boolean`
 - Removed
-
----
-
-- `schemaDefinitionsTagName`
-- `string`
-- `string`
 
 ---
 
@@ -271,9 +209,6 @@ The following tables show the changes in configuration options between Redoc 2.x
 
 {% /table %}
 
-## Summary of changes
+## Resources
 
-- **Renamed Options**: Some options have been renamed for clarity or alignment with their functionalities, such as `generatedPayloadSamplesMaxDepth` to `generatedSamplesMaxDepth`.
-- **Removed Features**: Several options related to UI customizations and response handling have been removed.
-- **Unchanged Options**: Some options remain unchanged, indicating their continued relevance in the new configuration.
-- **New Options**: The new interface introduces several options, suggesting new functionalities or approaches.
+- **[Configure Redoc CE](./config.md)** - See configuration options for Redoc 3.x

@@ -1,31 +1,6 @@
-# Redoc vendor extensions
+# Redoc CE vendor extensions
 
-You can use the following [vendor extensions](https://redocly.com/docs/openapi-visual-reference/specification-extensions/) with Redoc.
-
-- [Redoc vendor extensions](#redoc-vendor-extensions)
-  - [Swagger Object](#swagger-object)
-    - [x-servers](#x-servers)
-    - [x-tagGroups](#x-taggroups)
-    - [Tag Group Object](#tag-group-object)
-  - [Info Object](#info-object)
-    - [x-logo](#x-logo)
-    - [Logo Object](#logo-object)
-  - [Tag Object](#tag-object)
-    - [x-traitTag](#x-traittag)
-    - [x-displayName](#x-displayname)
-  - [Operation Object vendor extensions](#operation-object-vendor-extensions)
-    - [x-codeSamples](#x-codesamples)
-    - [Code Sample Object](#code-sample-object)
-    - [x-badges](#x-badges)
-  - [Parameter Object](#parameter-object)
-    - [x-examples](#x-examples)
-  - [Response Object vendor extensions](#response-object-vendor-extensions)
-    - [x-summary](#x-summary)
-  - [Schema Object](#schema-object)
-    - [x-nullable](#x-nullable)
-    - [x-additionalPropertiesName](#x-additionalpropertiesname)
-    - [x-explicitMappingOnly](#x-explicitmappingonly)
-    - [x-enumDescriptions](#x-enumdescriptions)
+You can use the following [vendor extensions](https://redocly.com/docs/openapi-visual-reference/specification-extensions/) with Redoc CE.
 
 ## Swagger Object
 
@@ -52,7 +27,7 @@ Currently doesn't support templates.
 
 {% /table %}
 
-#### How to use with Redoc
+#### Use x-tagGroups with Redoc CE
 
 `x-tagGroups` is used to group tags in the side menu.
 Before you use `x-tagGroups`, make sure you **add all tags to a group**, since a tag that is not in a group, **is not displayed** at all!
@@ -137,7 +112,7 @@ Extends the OpenAPI [Info Object](https://redocly.com/docs/openapi-visual-refere
 
 {% /table %}
 
-#### How to use with Redoc
+#### Use x-logo with Redoc CE
 
 `x-logo` is used to specify API logo.
 The corresponding image is displayed just above the side-menu.
@@ -232,7 +207,7 @@ Extends the OpenAPI [Tag Object](https://redocly.com/docs/openapi-visual-referen
 
 {% /table %}
 
-#### How to use with Redoc
+#### Use x-traitTag with Redoc CE
 
 Tags that have `x-traitTag` set to `true` are listed in the side-menu but don't have any subitems (operations).
 It also renders the `description` tag.
@@ -286,9 +261,9 @@ Extends the OpenAPI [Operation Object](https://redocly.com/docs/openapi-visual-r
 - A list of code samples associated with operation
 {% /table %}
 
-#### How to use with Redoc
+#### Use x-codeSamples with Redoc CE
 
-`x-codeSamples` are rendered on the right panel in Redoc.
+`x-codeSamples` are rendered on the right panel in Redoc CE.
 
 <a name="codeSampleObject"></a>
 
@@ -376,9 +351,9 @@ Extends the OpenAPI [Parameter Object](https://redocly.com/docs/openapi-visual-r
 
 {% /table %}
 
-#### How to use with Redoc
+#### Use x-examples with Redoc CE
 
-`x-examples` are rendered in the JSON tab on the right panel in Redoc.
+`x-examples` are rendered in the JSON tab on the right panel in Redoc CE.
 
 ## Response Object vendor extensions
 
@@ -400,7 +375,7 @@ Extends the OpenAPI [Response Object](https://redocly.com/docs/openapi-visual-re
 
 {% /table %}
 
-#### How to use with Redoc
+#### Use x-summary with Redoc CE
 
 If specified, you can use `x-summary` as the response button text, with description rendered under the button.
 
@@ -424,13 +399,15 @@ Extends the OpenAPI [Schema Object](https://redocly.com/docs/openapi-visual-refe
 
 {% /table %}
 
-#### How to use with Redoc
+#### Use x-nullable with Redoc CE
 
-Schemas marked as `x-nullable` are marked in Redoc with the label Nullable.
+Schemas marked as `x-nullable` are marked in Redoc CE with the label Nullable.
 
 ### x-additionalPropertiesName
 
-**Attention**: This is a Redoc-specific vendor extension, and is not supported by other tools.
+{% admonition type="warning" %}
+`x-additionalPropertiesName` is a Redoc CE-specific vendor extension, and is not supported by other tools.
+{% /admonition %}
 
 Extends the `additionalProperties` property of the schema object.
 
@@ -448,9 +425,9 @@ Extends the `additionalProperties` property of the schema object.
 
 {% /table %}
 
-#### How to use with Redoc
+#### Use x-additionalPropertiesName with Redoc CE
 
-Redoc uses this extension to display a more descriptive property name in objects with `additionalProperties` when viewing the property list with an `object`.
+Redoc CE uses this extension to display a more descriptive property name in objects with `additionalProperties` when viewing the property list with an `object`.
 
 #### x-additionalPropertiesName example
 
@@ -470,7 +447,9 @@ Player:
 
 ### x-explicitMappingOnly
 
-**Attention**: This is Redoc-specific vendor extension, and is not supported by other tools.
+{% admonition type="warning" %}
+`x-explicitMappingOnly` is a Redoc CE-specific vendor extension, and is not supported by other tools.
+{% /admonition %}
 
 Extends the `discriminator` property of the schema object.
 
@@ -488,9 +467,9 @@ Extends the `discriminator` property of the schema object.
 
 {% /table %}
 
-#### How to use with Redoc
+#### Use x-explicitMappingOnly with Redoc CE
 
-Redoc uses this extension to filter the `discriminator` mappings shown in the selectpicker.
+Redoc CE uses this extension to filter the `discriminator` mappings shown in the selectpicker.
 When set to `true`, the selectpicker lists only the explicitly defined mappings.
 When `false`, the default behavior is kept, in other words, explicit and implicit mappings are shown.
 
@@ -529,17 +508,17 @@ Shows in the selectpicker only the items `cat` and `bee`, even though the `Dog` 
 
 {% /table %}
 
-#### How to use with Redoc
+#### Use x-enumDescriptions with Redoc CE
 
 The enum (short for "enumeration") fields in OpenAPI allow you to restrict the value of a field to a list of allowed values.
 These values need to be short and machine-readable, but that can make them harder for humans to parse and work with.
 
-Add x-enumDescriptions to your OpenAPI description to show a helpful table of enum options and an explanation of what each one means.
+Add `x-enumDescriptions` to your OpenAPI description to show a helpful table of enum options and an explanation of what each one means.
 This field supports Markdown.
 
 #### x-enumDescriptions example
 
-The following example shows a schema with two short-named options, and the x-enumDescriptions entry to list all enum entries and give additional context for each:
+The following example shows a schema with two short-named options, and the `x-enumDescriptions` entry to list all enum entries and give additional context for each:
 
 ```yaml
 components:
@@ -556,3 +535,7 @@ components:
         general: General Admission
       example: event
 ```
+
+## Resources
+
+- **[Configure Redoc CE](./config.md)** - Explore Redoc CE's configuration options

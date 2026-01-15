@@ -1,65 +1,69 @@
 ---
 seo:
-  title: Use the Redoc HTML element
+  title: Use the Redoc CE HTML element
 ---
 
-# Use Redoc in HTML
+# Use Redoc CE in HTML
 
-To render API documentation in an HTML page, start with the template below and replace the `spec-url` value with the local file path or URL of your API description.
+To render API documentation in an HTML page:
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Redoc</title>
-    <!-- needed for adaptive design -->
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+1. Paste the following template into an HTML file.
 
-    <!--
-    Redoc doesn't change outer page styles
-    -->
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <redoc spec-url='https://redocly.github.io/redoc/museum.yaml'></redoc>
-    <script type="module" src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
-  </body>
-</html>
-```
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Redoc CE</title>
+      <!-- needed for adaptive design -->
+      <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% admonition type="success" name="URL or local file" %}
-Set `spec-url` to a full URL like the example above if it's hosted elsewhere.
-Use a relative path if the file is local, e.g. `spec-url="my-api.yaml"`.
-In case of relative path Redoc requires an HTTP server to run API documentation locally.
-{% /admonition %}
+      <!--
+      Redoc CE doesn't change outer page styles
+      -->
+      <style>
+        body {
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+    </head>
+    <body>
+      <redoc spec-url='https://redocly.github.io/redoc/museum.yaml'></redoc>
+      <script type="module" src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
+    </body>
+  </html>
+  ```
 
-Open the HTML file in your browser to see the HTML documentation rendering.
-See the next section to configure and personalize your documentation.
+1. Replace the value of `spec-url` with either:
+   - a relative path to a local OpenAPI description file, for example: `spec-url=my-api.yaml`
+   - a full URL, for example: `http://petstore.swagger.io/v2/swagger.json`
 
-## Configure Redoc
+To test the HTML file, open it in your browser.
+If you use a relative path, to run the API documentation locally, you need to [simulate an HTTP server](./intro.md#local-http-server).
 
-Redoc is highly configurable, find a [full list of configuration options](https://redocly.com/docs/realm/config/openapi) on the dedicated page.
+## Configure Redoc CE
 
-To configure Redoc in HTML, add the property names to the HTML tag.
-Here's an example that makes all the required properties display first in the list:
+Redoc CE is highly configurable - see the [full list of configuration options](https://redocly.com/docs/realm/config/openapi).
 
-```html
-    <redoc spec-url='https://redocly.github.io/redoc/museum.yaml' required-props-first=true></redoc>
-```
+To configure Redoc CE in HTML:
 
-Any of the individual properties can be added to the tag, as many as you need to get your API docs set up as you like them.
+- Add the property names to the HTML tag.
+
+  The following example makes all the required properties display at the top of the list:
+
+  ```html
+      <redoc spec-url='http://petstore.swagger.io/v2/swagger.json' required-props-first=true></redoc>
+  ```
+
+You can add as many Redoc CE configuration properties as you need.
 
 ### Theme configuration
 
-Redoc uses [CSS variables](https://redocly.com/docs/realm/branding/css-variables) under the hood, that means its appearance is customizable by overriding those variables.
+Redoc CE uses [CSS variables](https://redocly.com/docs/realm/branding/css-variables) under the hood.
+To customize your API documentation's appearance, override these variables.
 
-Here an example of raw CSS code that transforms Redoc CE default styling to be like an old one:
+The following example transforms Redoc CE default styling to be like the previous versions of Redoc CE:
 
 ```css {% title="old-styling.css" %}
 :root {
@@ -427,17 +431,23 @@ Here an example of raw CSS code that transforms Redoc CE default styling to be l
 }
 ```
 
-You can put that CSS code into your `<style>...</style>` tag or make a file and attach it: `<link rel="stylesheet" href="old-styling.css">`
+To use this code, either:
+
+- Put the CSS code inside the `<style>` tag.
+- Create a new CSS file and link it on your page: `<link rel="stylesheet" href="old-styling.css">`.
 
 ### Color modes
 
-Redoc has two color modes - light and dark.
-You can use CSS styling to customize those color modes.
+Redoc CE has two color modes - light and dark.
+You can use CSS styling to customize these color modes.
 When users switch between color modes, the documentation's appearance dynamically changes to the corresponding color mode.
+You can customize color mode styling, by overriding the [CSS variables](https://redocly.com/docs/realm/branding/css-variables) in your docs.
 
-A good approach to customizing color mode styling is to override the [CSS variables](https://redocly.com/docs/realm/branding/css-variables) used throughout your docs.
+To override CSS variables, either:
 
-Add color mode customization to your `<style>...</style>` tag or `styles.css` file using CSS variables.
+- Put the CSS code inside the `<style>` tag.
+- Create a new CSS file and link it on your page: `<link rel="stylesheet" href="old-styling.css">`.
+
 The following example shows a complete color mode configuration:
 
 ```css
@@ -476,30 +486,37 @@ In this example, the colors and backgrounds change when users switch between lig
 
 ### The Redoc object
 
-As an alternative to the HTML tag, you can also initialise Redoc in a web page using the Redoc object and invoking it from JavaScript.
-This is useful for situations where you want to create dynamic content in a page, and also provides a simple way to attach the Redoc element to an existing container.
+As an alternative to the HTML tag, you can also initialize Redoc CE in a web page using the Redoc object and invoking it from JavaScript.
+Use this method to create dynamic content in a page.
+It is also a way to attach the Redoc element to an existing container.
 
 The Redoc object offers an `init` function:
 
 ```js
 Redoc.init(specOrSpecUrl, options, element, callback)
 ```
-- `specOrSpecUrl`: Either a JSON object with the OpenAPI definition or a file name/URL to the
-  definition in JSON or YAML format.
-- `options`: See the [configuration reference](https://redocly.com/docs/realm/config/openapi).
-- `element`: DOM element Redoc is inserted into.
-- `callback`(optional): Callback to be called after Redoc has been fully rendered.
-  It is also called on errors with `error` as the first argument.
 
-Call `Redoc.init()` from the JavaScript on a web page to add the element to the named container.
-Below is an example of an HTML page with a `<div>` tag, and the JavaScript to add the Redoc object to it.
+Where:
+
+- `specOrSpecUrl`: either a JSON object with the OpenAPI description, or a file name or URL to the
+  description in JSON or YAML format
+- `options`: OpenAPI [configuration options](https://redocly.com/docs/realm/config/openapi)
+- `element`: DOM element Redoc is inserted into
+- `callback`(optional): callback to be called after Redoc has been fully rendered, also called on errors with `error` as the first argument
+
+To use the Redoc object:
+
+- Call `Redoc.init()` from the JavaScript on a web page to add the element to a named container.
+
+The following example is an HTML page with a `<div>` tag, and the script to add the Redoc object to it.
+This example also sets the configuration for `showExtensions` so it displays all specification extensions.
 
 ```html
 <!DOCTYPE html>
 <html>
   <head />
   <body>
-    <H1>Redoc in action</H1>
+    <H1>Redoc CE in action</H1>
     <script src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
     <div id="redoc-container"></div>
 
@@ -512,30 +529,43 @@ Below is an example of an HTML page with a `<div>` tag, and the JavaScript to ad
 </html>
 ```
 
-This example also sets the configuration for `showExtensions` so it shows all specification extensions.
-
 ### Self-host dependencies
 
-You can reference the Redoc script using either a link to the files hosted on a CDN or install to your `node-modules` folder.
-Using the CDN is the simplest option, but if you need to host in a closed environment or have requirements around external dependencies, it may be useful to self-host.
+You can reference the Redoc CE script, either using a link to the files hosted on a CDN or installing Redoc CE in your `node-modules` folder.
+Self-hosting may be useful when you need to host in a closed environment or have requirements around external dependencies.
 
-The main example shows using the CDN:
+{% tabs %}
+  {% tab label="Use CDN" %}
 
-```html
-<script src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
-```
+    To reference Redoc CE hosted on a CDN:
 
-If you prefer to host the depdencies yourself, at first install `redoc` using `npm`:
+    - In the `<script>` tag, add an `src` attribute with the URL to the Redoc CE script.
 
-```sh
-npm install redoc@next
-```
+      ```html
+      <script src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
+      ```
 
-_(Yarn users can install the `redoc` package with `yarn`)_.
+  {% /tab %}
 
-Then reference the Redoc script with a node modules link:
+  {% tab label="Self-host dependencies" %}
 
-```html
-<script src="node_modules/redoc/bundles/redoc.standalone.js"> </script>
-```
+    To host the dependencies yourself:
 
+    1. Install `redoc` using `npm` or `yarn`.
+
+      ```sh
+      npm install redoc@next
+      ```
+
+    1. Reference the Redoc CE script with a node modules link.
+
+      ```html
+      <script src="node_modules/redoc/bundles/redoc.standalone.js"> </script>
+      ```
+
+  {% /tab %}
+{% /tabs %}
+
+## Resources
+
+- **[Redoc CE deployment guide](./intro.md)** - Follow step-by-step instructions for setting up your Redoc CE project

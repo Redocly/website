@@ -12,10 +12,14 @@ Some description
 ...
 ```
 
-The inject instruction is wrapped in an HTML comment, so it is **visible only in Redoc** and not visible, for instance, in the SwaggerUI.
+The inject instruction is wrapped in an HTML comment, so it is **visible only in Redoc CE** and not visible, for instance, in the SwaggerUI.
 
 ## Default behavior
 
 If the injection tag is not found in the description, it is appended to the end of description under the `Authentication` header.
 
 If the `Authentication` header is already present in the description, Security Definitions are not inserted or rendered.
+
+## Resources
+
+- **[Configure Redoc CE](./config.md)** - Explore Redoc CE's configuration options
