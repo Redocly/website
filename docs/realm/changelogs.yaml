@@ -1,4 +1,11 @@
 '@redocly/realm':
+  0.129.2:
+    timestamp: 1768570402000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
+    dependencies: {}
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
@@ -40,7 +47,7 @@
       '@redocly/openapi-docs': 3.18.0-next.0
       '@redocly/theme': 0.62.0-next.0
   0.129.1:
-    timestamp: 1768295056000
+    timestamp: 1768566274000
     changes:
       minor: []
       patch:
@@ -56,7 +63,7 @@
       '@redocly/openapi-docs': 3.17.1
       '@redocly/portal-plugin-mock-server': 0.14.1
   0.129.0:
-    timestamp: 1768214606000
+    timestamp: 1768209998000
     changes:
       minor:
         - >-
@@ -5193,6 +5200,13 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.129.2:
+    timestamp: 1768570402000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
+    dependencies: {}
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
@@ -5230,7 +5244,7 @@
       '@redocly/openapi-docs': 3.18.0-next.0
       '@redocly/theme': 0.62.0-next.0
   0.129.1:
-    timestamp: 1768295056000
+    timestamp: 1768566274000
     changes:
       minor: []
       patch:
@@ -5246,7 +5260,7 @@
       '@redocly/openapi-docs': 3.17.1
       '@redocly/portal-plugin-mock-server': 0.14.1
   0.129.0:
-    timestamp: 1768214606000
+    timestamp: 1768209998000
     changes:
       minor:
         - >-
@@ -9557,6 +9571,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.129.2:
+    timestamp: 1768570402000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
+    dependencies: {}
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
@@ -9594,7 +9615,7 @@
       '@redocly/openapi-docs': 3.18.0-next.0
       '@redocly/theme': 0.62.0-next.0
   0.129.1:
-    timestamp: 1768295056000
+    timestamp: 1768566274000
     changes:
       minor: []
       patch:
@@ -9610,7 +9631,7 @@
       '@redocly/openapi-docs': 3.17.1
       '@redocly/portal-plugin-mock-server': 0.14.1
   0.129.0:
-    timestamp: 1768214606000
+    timestamp: 1768209998000
     changes:
       minor:
         - >-
@@ -13910,6 +13931,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.129.2:
+    timestamp: 1768570402000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
+    dependencies: {}
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
@@ -13950,7 +13978,7 @@
       '@redocly/openapi-docs': 3.18.0-next.0
       '@redocly/theme': 0.62.0-next.0
   0.129.1:
-    timestamp: 1768295056000
+    timestamp: 1768566274000
     changes:
       minor: []
       patch:
@@ -13966,7 +13994,7 @@
       '@redocly/openapi-docs': 3.17.1
       '@redocly/portal-plugin-mock-server': 0.14.1
   0.129.0:
-    timestamp: 1768214606000
+    timestamp: 1768209998000
     changes:
       minor:
         - >-
@@ -25508,6 +25536,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.12.2:
+    timestamp: 1768570402000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.129.2
+      '@redocly/redoc': 0.129.2
+      '@redocly/redoc-reef': 0.129.2
+      '@redocly/redoc-revel': 0.129.2
   1.13.0-next.2:
     timestamp: 1768558364000
     changes:
@@ -25542,7 +25580,7 @@
       '@redocly/redoc-revel': 0.130.0-next.0
       '@redocly/theme': 0.62.0-next.0
   1.12.1:
-    timestamp: 1768295056000
+    timestamp: 1768566274000
     changes:
       minor: []
       patch: []
@@ -25553,7 +25591,7 @@
       '@redocly/redoc-revel': 0.129.1
       '@redocly/theme': 0.61.1
   1.12.0:
-    timestamp: 1768214606000
+    timestamp: 1768209998000
     changes:
       minor: []
       patch: []
