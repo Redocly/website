@@ -13,7 +13,25 @@ A developer adds an API spec file with corresponding classification metadata int
 When the developer opens a pull request, Scout receives a webhook and discovers it.
 Scout validates the metadata to classify it, and adds it to the API catalog.
 
-![api discovery flow diagram](./images/api-discovery-flow.png)
+```mermaid
+flowchart TD
+    A["Developer"] -->|"PR with API metadata"| B["Team repo"]
+    B --> C{"PR checks"}
+    C -->|"Pass"| D["Redocly Scout"]
+    C -->|"Fail"| Cx["PR rejected"]
+
+    D --> E{"Metadata valid?"}
+    E -->|"Yes"| F["Redocly cloud"]
+    E -->|"No"| Ex["Submission rejected"]
+
+    P["Realm repo
+(validation config)"]
+    P -.->|"Pulls config"| D
+
+    M["Optional:
+Repo-to-team mapping"]
+    M -.-> E
+```
 
 The process of adding a new API is seamless to a developer.
 
