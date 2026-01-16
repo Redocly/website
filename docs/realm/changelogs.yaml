@@ -1,6 +1,6 @@
 '@redocly/realm':
   0.129.2:
-    timestamp: 1768570402000
+    timestamp: 1768573727000
     changes:
       minor: []
       patch:
@@ -47,7 +47,7 @@
       '@redocly/openapi-docs': 3.18.0-next.0
       '@redocly/theme': 0.62.0-next.0
   0.129.1:
-    timestamp: 1768566274000
+    timestamp: 1768295056000
     changes:
       minor: []
       patch:
@@ -63,7 +63,7 @@
       '@redocly/openapi-docs': 3.17.1
       '@redocly/portal-plugin-mock-server': 0.14.1
   0.129.0:
-    timestamp: 1768209998000
+    timestamp: 1768214606000
     changes:
       minor:
         - >-
@@ -5201,7 +5201,7 @@
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
   0.129.2:
-    timestamp: 1768570402000
+    timestamp: 1768573727000
     changes:
       minor: []
       patch:
@@ -5244,7 +5244,7 @@
       '@redocly/openapi-docs': 3.18.0-next.0
       '@redocly/theme': 0.62.0-next.0
   0.129.1:
-    timestamp: 1768566274000
+    timestamp: 1768295056000
     changes:
       minor: []
       patch:
@@ -5260,7 +5260,7 @@
       '@redocly/openapi-docs': 3.17.1
       '@redocly/portal-plugin-mock-server': 0.14.1
   0.129.0:
-    timestamp: 1768209998000
+    timestamp: 1768214606000
     changes:
       minor:
         - >-
@@ -9572,7 +9572,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
   0.129.2:
-    timestamp: 1768570402000
+    timestamp: 1768573727000
     changes:
       minor: []
       patch:
@@ -9615,7 +9615,7 @@
       '@redocly/openapi-docs': 3.18.0-next.0
       '@redocly/theme': 0.62.0-next.0
   0.129.1:
-    timestamp: 1768566274000
+    timestamp: 1768295056000
     changes:
       minor: []
       patch:
@@ -9631,7 +9631,7 @@
       '@redocly/openapi-docs': 3.17.1
       '@redocly/portal-plugin-mock-server': 0.14.1
   0.129.0:
-    timestamp: 1768209998000
+    timestamp: 1768214606000
     changes:
       minor:
         - >-
@@ -13932,7 +13932,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
   0.129.2:
-    timestamp: 1768570402000
+    timestamp: 1768573727000
     changes:
       minor: []
       patch:
@@ -13978,7 +13978,7 @@
       '@redocly/openapi-docs': 3.18.0-next.0
       '@redocly/theme': 0.62.0-next.0
   0.129.1:
-    timestamp: 1768566274000
+    timestamp: 1768295056000
     changes:
       minor: []
       patch:
@@ -13994,7 +13994,7 @@
       '@redocly/openapi-docs': 3.17.1
       '@redocly/portal-plugin-mock-server': 0.14.1
   0.129.0:
-    timestamp: 1768209998000
+    timestamp: 1768214606000
     changes:
       minor:
         - >-
@@ -25537,7 +25537,7 @@
     dependencies: {}
 '@redocly/portal-plugin-async-api':
   1.12.2:
-    timestamp: 1768570402000
+    timestamp: 1768573727000
     changes:
       minor: []
       patch: []
@@ -25580,7 +25580,7 @@
       '@redocly/redoc-revel': 0.130.0-next.0
       '@redocly/theme': 0.62.0-next.0
   1.12.1:
-    timestamp: 1768566274000
+    timestamp: 1768295056000
     changes:
       minor: []
       patch: []
@@ -25591,7 +25591,7 @@
       '@redocly/redoc-revel': 0.129.1
       '@redocly/theme': 0.61.1
   1.12.0:
-    timestamp: 1768209998000
+    timestamp: 1768214606000
     changes:
       minor: []
       patch: []
