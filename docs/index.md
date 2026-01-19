@@ -11,7 +11,7 @@ Ready to build something amazing?
 {% cards %}
   {% card
     title="Get started guide"
-    layout="horizontal" 
+    layout="horizontal"
     align="start"
     to="/docs/realm/get-started/index.md"
     icon="./images/rocket-icon.svg"
