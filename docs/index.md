@@ -8,6 +8,18 @@ seo:
 Welcome to the official Redocly Documentation.
 Ready to build something amazing?
 
+{% cards %}
+  {% card
+    title="Get started guide"
+    layout="horizontal" 
+    align="start"
+    to="/docs/realm/get-started/index.md"
+    icon="./images/rocket-icon.svg"
+  %}
+    Go live with your docs in minutes using our guided setup
+  {% /card %}
+{% /cards %}
+
 ## Products
 
 {% cards columns=2 cardMinWidth=300 %}

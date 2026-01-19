@@ -5,10 +5,26 @@ import apiTestingThumbnail from './images/api-testing-thumbnail.svg';
 import apiSecurityThumbnail from './images/api-security-thumbnail.svg';
 import arazzoThumbnail from './images/arazzo-thumbnail.svg';
 import aiForDocsThumbnail from './images/ai-for-docs-thumbnail.svg';
+import getStartedThumbnail from './images/get-started-thumbnail.svg';
 
 export const cards = [
   {
     id: 1,
+    key: 'get-started',
+    title: 'Get started',
+    description: 'Everything you need to build, validate, and ship great API documentation.',
+    thumbnail: getStartedThumbnail,
+    moreItems: '',
+    landingPage: '/learn/openapi/learning-openapi',
+    items: [
+      { title: 'Get started with the Reunite editor', link: '/docs/realm/get-started/start-reunite-editor' },
+      { title: 'Start with local development', link: '/docs/realm/get-started/start-local-dev' },
+      { title: 'Migrate from legacy', link: '/docs/realm/get-started/migrate-api-reference' },
+      { title: 'Upgrade product version', link: '/docs/realm/get-started/upgrade-realm-version' },
+    ],
+  },
+  {
+    id: 2,
     key: 'open-api',
     title: 'OpenAPI',
     description: 'Resources for learning more about OpenAPI and how to use it.',
@@ -23,7 +39,7 @@ export const cards = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     key: 'arazzo',
     title: 'Arazzo',
     description:
@@ -39,7 +55,7 @@ export const cards = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     key: 'markdoc',
     title: 'Markdoc',
     description: 'Next-generation markup resources and detailed tag library.',
@@ -54,7 +70,7 @@ export const cards = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     key: 'yaml',
     title: 'YAML',
     description: 'Learn how to use YAML in your API documentation and configuration.',
@@ -69,7 +85,7 @@ export const cards = [
     ],
   },
   // {
-  //   id: 5,
+  //   id: 6,
   //   key: 'api-governance',
   //   title: 'API governance',
   //   description: 'Use our interactive tool to build linting rules for your API.',
@@ -84,7 +100,7 @@ export const cards = [
   //   ],
   // },
   {
-    id: 5,
+    id: 6,
     key: 'api-testing',
     title: 'API Testing',
     description:
@@ -98,7 +114,7 @@ export const cards = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     key: 'api-security',
     title: 'API Security',
     description:
@@ -115,7 +131,7 @@ export const cards = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     key: 'ai-for-docs',
     title: 'AI for Docs',
     description:
@@ -130,7 +146,7 @@ export const cards = [
     ],
   },
   // {
-  //   id: 8,
+  //   id: 9,
   //   key: 'graphql',
   //   title: 'GraphQL',
   //   description:
