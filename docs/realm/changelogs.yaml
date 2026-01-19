@@ -38467,13 +38467,6 @@ reunite:
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.14.5`.
     dependencies: {}
-  v2026-01-19.3:
-    timestamp: 1768824853000
-    changes:
-      minor: []
-      patch:
-        - Fixed support for `PUBLIC_REDOCLY_BRANCH_NAME` in project builds.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
