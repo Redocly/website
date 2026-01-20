@@ -732,6 +732,18 @@
     }
 }
 
+[className="rocket-icon"] {
+    path {
+        fill: #1A1C21;
+    }
+}
+
+.dark [className="rocket-icon"] {
+    path {
+        fill: #FBFBFC;
+    }
+}
+
 tr td:first-child code {
     word-break: normal;
 }
