@@ -15,6 +15,7 @@ Ready to build something amazing?
     align="start"
     to="/docs/realm/get-started/index.md"
     icon="./images/rocket-icon.svg"
+    iconVariant="filled"
   %}
     Go live with your docs in minutes using our guided setup
   {% /card %}

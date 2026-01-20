@@ -26,7 +26,7 @@ export const cards = [
   {
     id: 2,
     key: 'open-api',
-    title: 'OpenAPI',
+    title: 'Learn OpenAPI',
     description: 'Resources for learning more about OpenAPI and how to use it.',
     thumbnail: openApiThumbnail,
     moreItems: '40 more topics',
@@ -41,7 +41,7 @@ export const cards = [
   {
     id: 3,
     key: 'arazzo',
-    title: 'Arazzo',
+    title: 'Learn Arazzo',
     description:
       'Learn how to use Arazzo to describe practical API workflows.',
     thumbnail: arazzoThumbnail,
@@ -57,7 +57,7 @@ export const cards = [
   {
     id: 4,
     key: 'markdoc',
-    title: 'Markdoc',
+    title: 'Learn Markdoc',
     description: 'Next-generation markup resources and detailed tag library.',
     thumbnail: markdocThumbnail,
     moreItems: '11 more topics',
@@ -72,7 +72,7 @@ export const cards = [
   {
     id: 5,
     key: 'yaml',
-    title: 'YAML',
+    title: 'Learn YAML',
     description: 'Learn how to use YAML in your API documentation and configuration.',
     thumbnail: yamlThumbnail,
     moreItems: '4 more topics',
@@ -102,7 +102,7 @@ export const cards = [
   {
     id: 6,
     key: 'api-testing',
-    title: 'API Testing',
+    title: 'Learn API Testing',
     description:
       'Master API testing fundamentals with tools, techniques, and best practices.',
     thumbnail: apiTestingThumbnail,
@@ -116,7 +116,7 @@ export const cards = [
   {
     id: 7,
     key: 'api-security',
-    title: 'API Security',
+    title: 'Learn API Security',
     description:
       'Gain insights into securing your APIs with essential resources, tools, and best practices to protect your applications.',
     thumbnail: apiSecurityThumbnail,
@@ -133,7 +133,7 @@ export const cards = [
   {
     id: 8,
     key: 'ai-for-docs',
-    title: 'AI for Docs',
+    title: 'Learn AI for Docs',
     description:
       'Learn how to use AI to improve your API documentation.',
     thumbnail: aiForDocsThumbnail,
