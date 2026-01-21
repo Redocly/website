@@ -11,10 +11,6 @@ plans:
 
 The `corsProxyUrl` option allows using a custom CORS proxy server.
 
-{% admonition type="info" %}
-{% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "corsProxyUrl"} /%}
-{% /admonition %}
-
 ## Options
 
 {% table %}

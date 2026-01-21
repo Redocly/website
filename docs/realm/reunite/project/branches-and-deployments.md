@@ -1,4 +1,4 @@
-# Branches and deployments
+# Branches deployments
 
 In the **Branches and deployments** configuration, you can control which branches Reunite deploys and how it handles preview deployments for your project.
 This configuration gives you precise control over your deployment strategy, allowing you to balance development workflow needs with resource management.
@@ -8,6 +8,7 @@ This configuration gives you precise control over your deployment strategy, allo
   alt="Screenshot of Reunite branches and deployments configuration interface"
   withLightbox=true
 /%}
+
 
 ## Production branch
 
@@ -72,7 +73,6 @@ This systematic approach ensures that all your APIs are consistently processed a
 
 ## Resources
 
-- **[Deployments](./deployments.md) - Use Reunite's Deployments page to manage, monitor, and troubleshoot project deployments
 - **[Use previews](./use-previews.md)** - View and share preview deployments for branches with open pull requests
 - **[Redocly CLI rules documentation](https://redocly.com/docs/cli/rules)** - Configure linting rules in your redocly.yaml file to maintain API description quality and consistency
 - **[Decorators configuration](https://redocly.com/docs/cli/decorators)** - Transform and enhance your API descriptions with custom decorators during the build process
