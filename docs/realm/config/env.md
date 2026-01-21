@@ -50,6 +50,20 @@ configuration file in the **root** directory and referencing it in the `env` opt
 
 ---
 
+- branch.\<branch-name>
+- [[Redocly config](./index.md) | [Reference object](#reference-object)]
+- Configuration for a specific branch.
+  Replace `<branch-name>` with the actual branch name.
+  For branches containing `/` (e.g., `feature/my-branch`), replace `/` with `-` (e.g., `branch.feature-my-branch`).
+
+  This relies on the `PUBLIC_REDOCLY_BRANCH_NAME` environment variable, or the current git branch in local development.
+
+  See [Default environment variables](../reunite/project/env-variables.md#default-environment-variables).
+
+  If the current environment (`development`, `preview`, or `production`) and a branch configuration both match, the configuration is applied in the following order: general -> branch -> environment (environment configuration takes precedence).
+
+---
+
 {% /table %}
 
 ### Reference object
@@ -81,6 +95,9 @@ env:
       hide: true
     logo:
       image: ./images/custom-logo.png
+  branch.feature-new-look:
+    navbar:
+      hide: true
 ```
 
 Or how to set the environment configuration for the `preview` environment by referencing an external file:
