@@ -21,9 +21,11 @@ Add an opening and closing `tabs` tag to declare a tabs section.
 Wrap your content within a `tab` tag and provide a name using the `label` attribute.
 A tab only works as a child of a tabs section.
 
+Optionally, you can add a unique `id` attribute to the tabs section to enable [linking to a specific tab](../links.md#add-links-to-specific-tabs).
+
 {% markdoc-example %}
   ```markdoc {% process=false %}
-  {% tabs %}
+  {% tabs id="Tab group 1" %}
     {% tab label="Tab 1" %}
       Content for Tab 1
     {% /tab %}
@@ -50,6 +52,7 @@ A tab only works as a child of a tabs section.
 - string
 - A unique identifier assigned to the component.
   This value is used as the query parameter key for deep linking.
+  To learn how to add links to tabs, see [Link to a specific tab](../links.md#add-links-to-specific-tabs)
 
 ---
 
@@ -104,7 +107,6 @@ A tab only works as a child of a tabs section.
     **Example:** `./images/config-icon.svg`
 
 ---
-
 
 {% /table %}
 

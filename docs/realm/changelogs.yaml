@@ -1,30 +1,4 @@
 '@redocly/realm':
-  0.130.0-next.4:
-    timestamp: 1768987809000
-    changes:
-      minor: []
-      patch:
-        - Added backward compatibility for legacy UI telemetry.
-    dependencies:
-      '@redocly/theme': 0.62.0-next.2
-      '@redocly/asyncapi-docs': 1.7.0-next.3
-      '@redocly/graphql-docs': 1.7.0-next.0
-      '@redocly/openapi-docs': 3.18.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.15.0-next.3
-  0.130.0-next.3:
-    timestamp: 1768917364000
-    changes:
-      minor:
-        - Added ejectable `DocumentationLayoutTop` and `DocumentationLayoutBottom` to customize component positions in `DocumentationLayout`.
-      patch:
-        - Fixed language icon rendering issues in API docs.
-        - Fixed an issue where URLs of OpenAPI docs pages could automatically receive `-1` suffixes.
-    dependencies:
-      '@redocly/openapi-docs': 3.18.0-next.2
-      '@redocly/theme': 0.62.0-next.1
-      '@redocly/asyncapi-docs': 1.7.0-next.2
-      '@redocly/portal-plugin-mock-server': 0.15.0-next.2
-      '@redocly/graphql-docs': 1.7.0-next.0
   0.129.2:
     timestamp: 1768573727000
     changes:
@@ -5226,32 +5200,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.130.0-next.4:
-    timestamp: 1768987809000
-    changes:
-      minor: []
-      patch:
-        - Added backward compatibility for legacy UI telemetry.
-    dependencies:
-      '@redocly/theme': 0.62.0-next.2
-      '@redocly/asyncapi-docs': 1.7.0-next.3
-      '@redocly/graphql-docs': 1.7.0-next.0
-      '@redocly/openapi-docs': 3.18.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.15.0-next.3
-  0.130.0-next.3:
-    timestamp: 1768917364000
-    changes:
-      minor:
-        - Added ejectable `DocumentationLayoutTop` and `DocumentationLayoutBottom` to customize component positions in `DocumentationLayout`.
-      patch:
-        - Fixed language icon rendering issues in API docs.
-        - Fixed an issue where URLs of OpenAPI docs pages could automatically receive `-1` suffixes.
-    dependencies:
-      '@redocly/openapi-docs': 3.18.0-next.2
-      '@redocly/theme': 0.62.0-next.1
-      '@redocly/asyncapi-docs': 1.7.0-next.2
-      '@redocly/portal-plugin-mock-server': 0.15.0-next.2
-      '@redocly/graphql-docs': 1.7.0-next.0
   0.129.2:
     timestamp: 1768573727000
     changes:
@@ -9623,32 +9571,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.130.0-next.4:
-    timestamp: 1768987809000
-    changes:
-      minor: []
-      patch:
-        - Added backward compatibility for legacy UI telemetry.
-    dependencies:
-      '@redocly/theme': 0.62.0-next.2
-      '@redocly/asyncapi-docs': 1.7.0-next.3
-      '@redocly/graphql-docs': 1.7.0-next.0
-      '@redocly/openapi-docs': 3.18.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.15.0-next.3
-  0.130.0-next.3:
-    timestamp: 1768917364000
-    changes:
-      minor:
-        - Added ejectable `DocumentationLayoutTop` and `DocumentationLayoutBottom` to customize component positions in `DocumentationLayout`.
-      patch:
-        - Fixed language icon rendering issues in API docs.
-        - Fixed an issue where URLs of OpenAPI docs pages could automatically receive `-1` suffixes.
-    dependencies:
-      '@redocly/openapi-docs': 3.18.0-next.2
-      '@redocly/theme': 0.62.0-next.1
-      '@redocly/asyncapi-docs': 1.7.0-next.2
-      '@redocly/portal-plugin-mock-server': 0.15.0-next.2
-      '@redocly/graphql-docs': 1.7.0-next.0
   0.129.2:
     timestamp: 1768573727000
     changes:
@@ -14009,31 +13931,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.130.0-next.4:
-    timestamp: 1768987809000
-    changes:
-      minor: []
-      patch:
-        - Added backward compatibility for legacy UI telemetry.
-    dependencies:
-      '@redocly/theme': 0.62.0-next.2
-      '@redocly/asyncapi-docs': 1.7.0-next.3
-      '@redocly/graphql-docs': 1.7.0-next.0
-      '@redocly/openapi-docs': 3.18.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.15.0-next.3
-  0.130.0-next.3:
-    timestamp: 1768917364000
-    changes:
-      minor: []
-      patch:
-        - Fixed language icon rendering issues in API docs.
-        - Fixed an issue where URLs of OpenAPI docs pages could automatically receive `-1` suffixes.
-    dependencies:
-      '@redocly/openapi-docs': 3.18.0-next.2
-      '@redocly/theme': 0.62.0-next.1
-      '@redocly/asyncapi-docs': 1.7.0-next.2
-      '@redocly/portal-plugin-mock-server': 0.15.0-next.2
-      '@redocly/graphql-docs': 1.7.0-next.0
   0.129.2:
     timestamp: 1768573727000
     changes:
@@ -18436,22 +18333,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.62.0-next.2:
-    timestamp: 1768987809000
-    changes:
-      minor: []
-      patch:
-        - Added backward compatibility for legacy UI telemetry.
-    dependencies: {}
-  0.62.0-next.1:
-    timestamp: 1768917364000
-    changes:
-      minor:
-        - Added ejectable `DocumentationLayoutTop` and `DocumentationLayoutBottom` to customize component positions in `DocumentationLayout`.
-      patch:
-        - Added search to the dropdown in examples panel for OpenAPI docs.
-        - Fixed language icon rendering issues in API docs.
-    dependencies: {}
   0.62.0-next.0:
     timestamp: 1768390370000
     changes:
@@ -21041,22 +20922,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.18.0-next.3:
-    timestamp: 1768987809000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.21.0-next.3
-  3.18.0-next.2:
-    timestamp: 1768917364000
-    changes:
-      minor: []
-      patch:
-        - Added search to the dropdown in examples panel for OpenAPI docs.
-        - Fixed language icon rendering issues in API docs.
-    dependencies:
-      '@redocly/replay': 0.21.0-next.2
   3.18.0-next.1:
     timestamp: 1768558364000
     changes:
@@ -25671,28 +25536,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.13.0-next.4:
-    timestamp: 1768987809000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.62.0-next.2
-      '@redocly/realm': 0.130.0-next.4
-      '@redocly/redoc': 0.130.0-next.4
-      '@redocly/redoc-reef': 0.130.0-next.4
-      '@redocly/redoc-revel': 0.130.0-next.4
-  1.13.0-next.3:
-    timestamp: 1768917364000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.62.0-next.1
-      '@redocly/realm': 0.130.0-next.3
-      '@redocly/redoc': 0.130.0-next.3
-      '@redocly/redoc-reef': 0.130.0-next.3
-      '@redocly/redoc-revel': 0.130.0-next.3
   1.12.2:
     timestamp: 1768573727000
     changes:
@@ -30233,20 +30076,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.15.0-next.3:
-    timestamp: 1768987809000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.18.0-next.3
-  0.15.0-next.2:
-    timestamp: 1768917364000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.18.0-next.2
   0.15.0-next.1:
     timestamp: 1768558364000
     changes:
@@ -32748,20 +32577,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.21.0-next.3:
-    timestamp: 1768987809000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.62.0-next.2
-  0.21.0-next.2:
-    timestamp: 1768917364000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.62.0-next.1
   0.21.0-next.1:
     timestamp: 1768558364000
     changes:
@@ -34478,20 +34293,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.13.0-next.2:
-    timestamp: 1768987809000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.62.0-next.2
-  0.13.0-next.1:
-    timestamp: 1768917364000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.62.0-next.1
   0.13.0-next.0:
     timestamp: 1768390370000
     changes:
@@ -35987,22 +35788,6 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
-  1.7.0-next.3:
-    timestamp: 1768987809000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.62.0-next.2
-      '@redocly/openapi-docs': 3.18.0-next.3
-  1.7.0-next.2:
-    timestamp: 1768917364000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.18.0-next.2
-      '@redocly/theme': 0.62.0-next.1
   1.7.0-next.1:
     timestamp: 1768558364000
     changes:
@@ -38681,13 +38466,6 @@ reunite:
       minor: []
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.14.5`.
-    dependencies: {}
-  v2026-01-19.4:
-    timestamp: 1768832216000
-    changes:
-      minor: []
-      patch:
-        - Fixed support for `PUBLIC_REDOCLY_BRANCH_NAME` in project builds.
     dependencies: {}
 replay:
   0.0.2:

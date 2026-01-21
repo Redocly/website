@@ -116,6 +116,47 @@ To reference pages in `sidebars.yaml`, specify relative path to the file.
 - page: index.md
 ```
 
+## Add links to specific tabs
+
+You can create direct links to [Markdoc tabs](./markdoc-tags/tabs.md) that have an `id` attribute defined in the `tabs` tag.
+
+To create a link to a specific tab:
+
+1. Combine the value of the `id` attribute of the `tabs` tag and the value of the specific tab's `label` attribute into `<id>=<label>`.
+   For example: `supported-tech=Cloud services`.
+2. Apply URL encoding to the string you created.
+   You can use DevTools or [URLEncoder](https://www.urlencoder.io/).
+   For example: `supported-tech%3DCloud%20services`.
+3. Append the encoded string to URL of the page that contains the tab: `https://<your project slug>/<page with tab>?<encoded string>`.
+   For example: `https://myproject.com/features?supported-tech%3DCloud%20services`
+
+**Example:**
+
+With the following tab structure:
+
+{% markdoc-example %}
+  ```markdoc {% process=false %}
+  {% tabs id="supported-tech" %}
+    {% tab label="Web frameworks" %}
+      - Django
+      - Ruby on Rails
+      - Angular
+      - Vue
+      - React
+    {% /tab %}
+    {% tab label="Cloud services" %}
+      - AWS
+      - Google Cloud
+      - Microsoft Azure
+      - Cloudflare
+    {% /tab %}
+  {% /tabs %}
+  ```
+{% /markdoc-example %}
+
+The link to the Web frameworks tab is: `https://myproject.com/features?supported-tech%3DWeb%20frameworks`.\
+The link to the Cloud services tab is `https://myproject.com/features?supported-tech%3DCloud%20services`.
+
 ## Add links in a React component
 
 If you are including a link in a custom React component, use the Link component.
