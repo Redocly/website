@@ -105,6 +105,11 @@ export const positions = [
                 text: `
                 Redocly is a fun, supportive, and high performing environment. We celebrate the little victories, don't take ourselves too seriously, all while focused and making progress on our mission.
                 If you are looking for an interesting product and enjoy being challenged — this is the place for you!`
+            },
+            {
+               title: 'Trying our products while applying?',
+               text:`
+               Add RECR- to your name during trial registration, so we can spot candidates among trial users. Thanks!`
             }
         ]
     },
@@ -279,6 +284,11 @@ export const positions = [
             {
                 title: 'Life at Redocly',
                 text: `Redocly is a fun, supportive, and high-performing environment. We celebrate small victories, stay curious, and keep focused on progress. If you enjoy complex challenges, meaningful data, and building systems that empower others — you’ll feel right at home here.`
+            },
+            {
+               title: 'Trying our products while applying?',
+               text:`
+               Add RECR- to your name during trial registration, so we can spot candidates among trial users. Thanks!`
             }
         ]
     },
@@ -362,6 +372,11 @@ export const positions = [
             {
                 title: 'Life at Redocly',
                 text: `Redocly is a fun, supportive, and high-performing environment. We celebrate small victories, stay curious, and keep focused on progress. If you enjoy complex challenges, meaningful data, and building systems that empower others — you’ll feel right at home here.`
+            },
+            {
+               title: 'Trying our products while applying?',
+               text:`
+               Add RECR- to your name during trial registration, so we can spot candidates among trial users. Thanks!`
             }
         ]
   },
@@ -446,6 +461,11 @@ export const positions = [
             {
                 title: 'Life at Redocly',
                 text: `Redocly is a fun, supportive, and high-performing environment. We celebrate small victories, stay curious, and keep focused on progress. If you enjoy complex challenges, meaningful data, and building systems that empower others — you’ll feel right at home here.`
+            },
+            {
+               title: 'Trying our products while applying?',
+               text:`
+               Add RECR- to your name during trial registration, so we can spot candidates among trial users. Thanks!`
             }
         ]
   }
