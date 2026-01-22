@@ -9,20 +9,20 @@ This page lists all the options you can use with Redoc CE.
 
 Redoc CE 3.x supports the following configuration options:
 
-- [`downloadUrls`](https://redocly.com/docs/realm/config/openapi/download-urls)
-- [`generatedSamplesMaxDepth`](https://redocly.com/docs/realm/config/openapi/generated-samples-max-depth.md)
-- [`hideDownloadButtons`](https://redocly.com/docs/realm/config/openapi/hide-download-buttons.md)
-- [`hidePropertiesPrefix`](https://redocly.com/docs/realm/config/openapi/hide-properties-prefix.md)
-- [`hideSchemaTitles`](https://redocly.com/docs/realm/config/openapi/hide-schema-titles.md)
-- [`jsonSamplesExpandLevel`](https://redocly.com/docs/realm/config/openapi/json-samples-expand-level.md)
-- [`layout`](https://redocly.com/docs/realm/config/openapi/layout.md)
-- [`maxDisplayedEnumValues`](https://redocly.com/docs/realm/config/openapi/max-displayed-enum-values.md)
-- [`onlyRequiredInSamples`](https://redocly.com/docs/realm/config/openapi/only-required-in-samples.md)
-- [`sanitize`](https://redocly.com/docs/realm/config/openapi/sanitize.md)
-- [`schemaDefinitionsTagName`](https://redocly.com/docs/realm/config/openapi/schema-definitions-tag-name.md)
-- [`schemasExpansionLevel`](https://redocly.com/docs/realm/config/openapi/schemas-expansion-level.md)
-- [`showExtensions`](https://redocly.com/docs/realm/config/openapi/show-extensions.md)
-- [`sortRequiredPropsFirst`](https://redocly.com/docs/realm/config/openapi/sort-required-props-first.md)
+- [downloadUrls](../../realm/config/openapi/download-urls.md)
+- [generatedSamplesMaxDepth](../../realm/config/openapi/generated-samples-max-depth.md)
+- [hideDownloadButtons](../../realm/config/openapi/hide-download-buttons.md)
+- [hidePropertiesPrefix](../../realm/config/openapi/hide-properties-prefix.md)
+- [hideSchemaTitles](../../realm/config/openapi/hide-schema-titles.md)
+- [jsonSamplesExpandLevel](../../realm/config/openapi/json-samples-expand-level.md)
+- [layout](../../realm/config/openapi/layout.md)
+- [maxDisplayedEnumValues](../../realm/config/openapi/max-displayed-enum-values.md)
+- [onlyRequiredInSamples](../../realm/config/openapi/only-required-in-samples.md)
+- [sanitize](../../realm/config/openapi/sanitize.md)
+- [schemaDefinitionsTagName](../../realm/config/openapi/schema-definitions-tag-name.md)
+- [schemasExpansionLevel](../../realm/config/openapi/schemas-expansion-level.md)
+- [showExtensions](../../realm/config/openapi/show-extensions.md)
+- [sortRequiredPropsFirst](../../realm/config/openapi/sort-required-props-first.md)
 
 Additionally, the following options are available from the previous versions of Redoc CE:
 

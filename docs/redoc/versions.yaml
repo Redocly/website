@@ -1,6 +1,6 @@
-default: 'v3.x'
+default: 'v2.x'
 versions:
   - version: v2.x
-    name: 2.x
+    name: 2.x (current)
   - version: v3.x
-    name: 3.x
+    name: 3.x (next)
