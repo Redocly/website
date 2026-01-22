@@ -205,6 +205,8 @@
           label: Icon
         - page: content/markdoc-tags/inline-svg.md
           label: Inline SVG
+        - page: content/markdoc-tags/login-button.md
+          label: Login button
         - page: content/markdoc-tags/json-schema.md
           label: JSON schema
         - page: content/markdoc-tags/json-example.md
