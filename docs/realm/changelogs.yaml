@@ -1,4 +1,19 @@
 '@redocly/realm':
+  0.130.0-next.5:
+    timestamp: 1769175773000
+    changes:
+      minor:
+        - Added `login-button` Markdoc tag to render a login button on project pages.
+      patch:
+        - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
+        - Added support for branch-specific configuration in `redocly.yaml`.
+        - Updated `@redocly/openapi-core` to version `2.14.7`.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.4
+      '@redocly/theme': 0.62.0-next.3
+      '@redocly/asyncapi-docs': 1.7.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.15.0-next.4
+      '@redocly/graphql-docs': 1.7.0-next.0
   0.130.0-next.4:
     timestamp: 1768987809000
     changes:
@@ -5226,6 +5241,21 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.130.0-next.5:
+    timestamp: 1769175773000
+    changes:
+      minor:
+        - Added `login-button` Markdoc tag to render a login button on project pages.
+      patch:
+        - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
+        - Added support for branch-specific configuration in `redocly.yaml`.
+        - Updated `@redocly/openapi-core` to version `2.14.7`.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.4
+      '@redocly/theme': 0.62.0-next.3
+      '@redocly/asyncapi-docs': 1.7.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.15.0-next.4
+      '@redocly/graphql-docs': 1.7.0-next.0
   0.130.0-next.4:
     timestamp: 1768987809000
     changes:
@@ -9623,6 +9653,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.130.0-next.5:
+    timestamp: 1769175773000
+    changes:
+      minor:
+        - Added `login-button` Markdoc tag to render a login button on project pages.
+      patch:
+        - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
+        - Added support for branch-specific configuration in `redocly.yaml`.
+        - Updated `@redocly/openapi-core` to version `2.14.7`.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.4
+      '@redocly/theme': 0.62.0-next.3
+      '@redocly/asyncapi-docs': 1.7.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.15.0-next.4
+      '@redocly/graphql-docs': 1.7.0-next.0
   0.130.0-next.4:
     timestamp: 1768987809000
     changes:
@@ -14009,6 +14054,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.130.0-next.5:
+    timestamp: 1769175773000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
+        - Added support for branch-specific configuration in `redocly.yaml`.
+        - Updated `@redocly/openapi-core` to version `2.14.7`.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.4
+      '@redocly/theme': 0.62.0-next.3
+      '@redocly/asyncapi-docs': 1.7.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.15.0-next.4
+      '@redocly/graphql-docs': 1.7.0-next.0
   0.130.0-next.4:
     timestamp: 1768987809000
     changes:
@@ -18436,6 +18495,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.62.0-next.3:
+    timestamp: 1769175773000
+    changes:
+      minor:
+        - Added `login-button` Markdoc tag to render a login button on project pages.
+      patch: []
+    dependencies: {}
   0.62.0-next.2:
     timestamp: 1768987809000
     changes:
@@ -21041,6 +21107,14 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.18.0-next.4:
+    timestamp: 1769175773000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.14.7`.
+    dependencies:
+      '@redocly/replay': 0.21.0-next.4
   3.18.0-next.3:
     timestamp: 1768987809000
     changes:
@@ -25679,6 +25753,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.13.0-next.5:
+    timestamp: 1769175773000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.130.0-next.5
+      '@redocly/redoc': 0.130.0-next.5
+      '@redocly/redoc-reef': 0.130.0-next.5
+      '@redocly/redoc-revel': 0.130.0-next.5
+      '@redocly/theme': 0.62.0-next.3
   1.13.0-next.4:
     timestamp: 1768987809000
     changes:
@@ -30241,6 +30326,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.15.0-next.4:
+    timestamp: 1769175773000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.4
   0.15.0-next.3:
     timestamp: 1768987809000
     changes:
@@ -32756,6 +32848,14 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.21.0-next.4:
+    timestamp: 1769175773000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.14.7`.
+    dependencies:
+      '@redocly/theme': 0.62.0-next.3
   0.21.0-next.3:
     timestamp: 1768987809000
     changes:
@@ -34486,6 +34586,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.13.0-next.3:
+    timestamp: 1769175773000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.62.0-next.3
   0.13.0-next.2:
     timestamp: 1768987809000
     changes:
@@ -35995,6 +36102,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.7.0-next.4:
+    timestamp: 1769175773000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.4
+      '@redocly/theme': 0.62.0-next.3
   1.7.0-next.3:
     timestamp: 1768987809000
     changes:
