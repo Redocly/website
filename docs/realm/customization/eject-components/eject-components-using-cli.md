@@ -69,6 +69,15 @@ your-awesome-project/
 └── ...
 ```
 
+## Update ejected component
+
+To update an ejected component:
+
+1. Rename the component's folder in the file tree to make a backup.
+2. Eject the component again.
+3. Using your backup, re-apply the customization.
+4. Delete the backup folder.
+
 ## Resources
 
 - **[Component ejection guide](./index.md)** - Learn when and why to eject built-in components for advanced customization and styling control

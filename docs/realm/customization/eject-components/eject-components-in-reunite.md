@@ -39,6 +39,15 @@ The ejected component is added to the `@theme` folder, where you can modify it.
   withLightbox=true
 /%}
 
+## Update ejected component
+
+To update an ejected component:
+
+1. Rename the component's folder in the file tree to make a backup.
+2. Eject the component again.
+3. Using your backup, re-apply the customization.
+4. Delete the backup folder.
+
 ## Delete ejected component
 
 If you change your mind and no longer want an ejected component in your project, you can delete the component and it is replaced with the default component.

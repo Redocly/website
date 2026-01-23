@@ -27,14 +27,7 @@ Configure banners as an array of banner objects in your `redocly.yaml` file or i
 
 {% admonition type="info" %}
 
-If you ejected the `navbar` component before version `0.128.0`, update it to have the component's full functionality.
-
-To update the ejected navbar:
-
-1. Make a backup copy of your customization.
-1. Delete the ejected `navbar` folder.
-1. Eject the component again.
-1. Using your backup, re-apply the customization.
+If you ejected the `navbar` component before version `0.128.0`, [update it](../customization/eject-components/eject-components-in-reunite.md#update-ejected-component) to have the component's full functionality.
 
 {% /admonition %}
 
