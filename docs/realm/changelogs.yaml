@@ -38697,6 +38697,16 @@ reunite:
       patch:
         - Fixed support for `PUBLIC_REDOCLY_BRANCH_NAME` in project builds.
     dependencies: {}
+  v2026-01-23.1:
+    timestamp: 1769159487000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.14.7`.
+        - Updated `@redocly/ajv` to version `8.17.2`.
+        - Synchronized color mode in visual PR review preview with Reunite's appearance settings.
+        - Fixed an issue where the first modified page did not open automatically in Visual Review.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
