@@ -223,6 +223,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- search.ai.assistant
+- Title text displayed in the AI search dialog header
+- Assistant
+
+---
+
 - search.ai.feedback.title
 - Title for AI search feedback dialog
 - What didn't you like about this response?
