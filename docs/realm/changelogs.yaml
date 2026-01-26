@@ -1,4 +1,19 @@
 '@redocly/realm':
+  0.130.0-next.6:
+    timestamp: 1769425990000
+    changes:
+      minor: []
+      patch:
+        - Fixed downloading large AsyncAPI files.
+        - Updated `@redocly/openapi-core` to version `2.14.9`.
+        - Fixed an issue where the **Back to Search** button was displayed when AI Assistant was opened using the **Ask AI** button.
+        - Updated `@redocly/openapi-core` to version `0.0.0-snapshot.1769415576`.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.5
+      '@redocly/theme': 0.62.0-next.4
+      '@redocly/asyncapi-docs': 1.7.0-next.5
+      '@redocly/portal-plugin-mock-server': 0.15.0-next.5
+      '@redocly/graphql-docs': 1.7.0-next.0
   0.130.0-next.5:
     timestamp: 1769175773000
     changes:
@@ -5241,6 +5256,20 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.130.0-next.6:
+    timestamp: 1769425990000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.14.9`.
+        - Fixed an issue where the **Back to Search** button was displayed when AI Assistant was opened using the **Ask AI** button.
+        - Updated `@redocly/openapi-core` to version `0.0.0-snapshot.1769415576`.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.5
+      '@redocly/theme': 0.62.0-next.4
+      '@redocly/asyncapi-docs': 1.7.0-next.5
+      '@redocly/portal-plugin-mock-server': 0.15.0-next.5
+      '@redocly/graphql-docs': 1.7.0-next.0
   0.130.0-next.5:
     timestamp: 1769175773000
     changes:
@@ -9653,6 +9682,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.130.0-next.6:
+    timestamp: 1769425990000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.14.9`.
+        - Fixed an issue where the **Back to Search** button was displayed when AI Assistant was opened using the **Ask AI** button.
+        - Updated `@redocly/openapi-core` to version `0.0.0-snapshot.1769415576`.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.5
+      '@redocly/theme': 0.62.0-next.4
+      '@redocly/asyncapi-docs': 1.7.0-next.5
+      '@redocly/portal-plugin-mock-server': 0.15.0-next.5
+      '@redocly/graphql-docs': 1.7.0-next.0
   0.130.0-next.5:
     timestamp: 1769175773000
     changes:
@@ -14054,6 +14097,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.130.0-next.6:
+    timestamp: 1769425990000
+    changes:
+      minor: []
+      patch:
+        - Fixed downloading large AsyncAPI files.
+        - Updated `@redocly/openapi-core` to version `2.14.9`.
+        - Fixed an issue where the **Back to Search** button was displayed when AI Assistant was opened using the **Ask AI** button.
+        - Updated `@redocly/openapi-core` to version `0.0.0-snapshot.1769415576`.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.5
+      '@redocly/theme': 0.62.0-next.4
+      '@redocly/asyncapi-docs': 1.7.0-next.5
+      '@redocly/portal-plugin-mock-server': 0.15.0-next.5
+      '@redocly/graphql-docs': 1.7.0-next.0
   0.130.0-next.5:
     timestamp: 1769175773000
     changes:
@@ -18495,6 +18553,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.62.0-next.4:
+    timestamp: 1769425990000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the **Back to Search** button was displayed when AI Assistant was opened using the **Ask AI** button.
+    dependencies: {}
   0.62.0-next.3:
     timestamp: 1769175773000
     changes:
@@ -21107,6 +21172,15 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.18.0-next.5:
+    timestamp: 1769425990000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.14.9`.
+        - Updated `@redocly/openapi-core` to version `0.0.0-snapshot.1769415576`.
+    dependencies:
+      '@redocly/replay': 0.21.0-next.5
   3.18.0-next.4:
     timestamp: 1769175773000
     changes:
@@ -25753,6 +25827,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.13.0-next.6:
+    timestamp: 1769425990000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.130.0-next.6
+      '@redocly/redoc': 0.130.0-next.6
+      '@redocly/redoc-reef': 0.130.0-next.6
+      '@redocly/redoc-revel': 0.130.0-next.6
+      '@redocly/theme': 0.62.0-next.4
   1.13.0-next.5:
     timestamp: 1769175773000
     changes:
@@ -30326,6 +30411,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.15.0-next.5:
+    timestamp: 1769425990000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.5
   0.15.0-next.4:
     timestamp: 1769175773000
     changes:
@@ -32848,6 +32940,15 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.21.0-next.5:
+    timestamp: 1769425990000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `0.0.0-snapshot.1769415576`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.14.9`.
+    dependencies:
+      '@redocly/theme': 0.62.0-next.4
   0.21.0-next.4:
     timestamp: 1769175773000
     changes:
@@ -34586,6 +34687,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.13.0-next.4:
+    timestamp: 1769425990000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.62.0-next.4
   0.13.0-next.3:
     timestamp: 1769175773000
     changes:
@@ -36102,6 +36210,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.7.0-next.5:
+    timestamp: 1769425990000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.5
+      '@redocly/theme': 0.62.0-next.4
   1.7.0-next.4:
     timestamp: 1769175773000
     changes:
