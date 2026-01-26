@@ -38938,6 +38938,16 @@ reunite:
         - Synchronized color mode in visual PR review preview with Reunite's appearance settings.
         - Fixed an issue where the first modified page did not open automatically in Visual Review.
     dependencies: {}
+  v2026-01-26.2:
+    timestamp: 1769426658000
+    changes:
+      minor:
+        - Enabled `word wrap` by default in the editor for `Markdown` files.
+        - Added type hints on hover in the Reunite editor.
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `0.0.0-snapshot.1769415576`.
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.14.9`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
