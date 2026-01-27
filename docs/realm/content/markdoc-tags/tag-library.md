@@ -98,28 +98,6 @@ Additional information and syntax: [Inline SVG tag](./inline-svg.md)
 
 ---
 
-## Login button
-
-Use the Login button tag to render a login button that links to the login URL.
-The button is only visible to unauthenticated users and automatically hides when a user is logged in.
-
-Additional information and syntax: [Login button tag](./login-button.md)
-
-**Example usage with RBAC:**
-
-````markdoc {% process=false %}
-{% if includes($rbac.teams, "anonymous") %}
-{% admonition type="info" name="Log in" %}
-Some content is available only for authenticated users. Log in to get full access to our documentation.
-
-{% login-button /%}
-
-{% /admonition %}
-{% /if %}
-````
-
----
-
 ## JSON Schema
 
 Use the JSON Schema tag to render an existing or inline schema in a configurable, readable layout.
