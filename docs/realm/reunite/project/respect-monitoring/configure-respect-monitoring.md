@@ -227,3 +227,4 @@ reunite:
 ## Resources
 
 - **[Reunite configuration reference](../../../config/reunite.md)** - Complete configuration options for Respect Monitoring including workflow scheduling, notification settings, and performance thresholds
+- **[Manage Respect Monitoring](./manage-respect-monitoring.md)** - Configure SLA monitoring, subscribe to notifications, and manage workflows including archiving old workflows

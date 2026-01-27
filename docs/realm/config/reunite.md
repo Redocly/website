@@ -19,6 +19,7 @@ Those issues are:
 - Broken links
 - Noncompliant API descriptions
 - Markdoc syntax errors
+- Respect Monitoring failures
 
 Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
@@ -49,6 +50,14 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 - ignoreMarkdocErrors
 - boolean
 - Publish a production project, even if Reunite detects Markdoc syntax errors.
+  Default value: `false`.
+
+---
+
+- ignoreRespectMonitoring
+- boolean
+- Publish a production project, even if Reunite detects Respect Monitoring issues.
+  If `true`, sets the build's Respect Monitoring status to `warning` instead of `failed`.
   Default value: `false`.
 
 ---
@@ -185,13 +194,14 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 ### Ignore errors examples
 
-The following example configuration allows you to publish production project deployments even if Reunite detects broken links, an API description in the project that scores below the minimum standard, and Markdoc errors:
+The following example configuration allows you to publish production project deployments even if Reunite detects broken links, an API description in the project that scores below the minimum standard, Markdoc errors, and Respect Monitoring issues:
 
 ```yaml {% title="redocly.yaml" %}
 reunite:
   ignoreLinkChecker: true
   ignoreLint: true
   ignoreMarkdocErrors: true
+  ignoreRespectMonitoring: true
 ```
 
 You can also ignore specific API description files by making the `ignoreLint` option an object, as in the following example configuration:
