@@ -16,7 +16,7 @@ Use `x-operation` as part of a [Step object](https://spec.openapis.org/arazzo/v1
 ---
 * <a name="url"></a>url
 * `string`
-* **REQUIRED.** A valid url including the protocol (such as `http://localhost:4000/my-api` or `https://example.com/api/my-api`).
+* **REQUIRED.** A valid URL including the protocol (such as `http://localhost:4000/my-api` or `https://example.com/api/my-api`) or a [Runtime Expression](https://spec.openapis.org/arazzo/latest.html#runtime-expressions) (e.g., $steps.<STEP_ID>.outputs.<OUTPUT_NAME>) .
 ---
 * <a name="method"></a>method
 * `string`
@@ -39,6 +39,22 @@ steps:
 ```
 
 The `successCriteria` fields work in the same way as other operation types.
+
+---
+
+Use the output from the previous step response to define your request `url`:
+
+```yaml
+steps:
+  - stepId: file-upload
+    operationId: $sourceDescriptions.openapi.FileUpload
+    outputs:
+      upload_file_url: $response.body#/uploaded_file_url
+  - stepId: get-uploaded-file-by-url
+    x-operation:
+      url: $steps.file-upload.outputs.upload_file_url
+      method: get
+```
 
 ## Resources
 
