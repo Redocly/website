@@ -30,9 +30,9 @@
     changes:
       minor:
         - Added `login-button` Markdoc tag to render a login button on project pages.
+        - Added support for branch-specific configuration in `redocly.yaml`.
       patch:
         - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
-        - Added support for branch-specific configuration in `redocly.yaml`.
         - Updated `@redocly/openapi-core` to version `2.14.7`.
     dependencies:
       '@redocly/openapi-docs': 3.18.0-next.4
@@ -76,14 +76,14 @@
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
-      minor:
-        - Fixed sidebar header layout issue.
+      minor: []
       patch:
         - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
         - Updated `@redocly/openapi-core` to version `2.14.5`.
         - >-
           Fixed an issue where the **Copy** and **Copy for LLM** buttons were not hidden on OpenAPI endpoint pages that had `excludeFromSearch` option
           configured.
+        - Fixed sidebar header layout issue.
     dependencies:
       '@redocly/openapi-docs': 3.18.0-next.1
       '@redocly/realm-asyncapi-sdk': 0.8.0-next.1
@@ -5297,9 +5297,9 @@
     changes:
       minor:
         - Added `login-button` Markdoc tag to render a login button on project pages.
+        - Added support for branch-specific configuration in `redocly.yaml`.
       patch:
         - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
-        - Added support for branch-specific configuration in `redocly.yaml`.
         - Updated `@redocly/openapi-core` to version `2.14.7`.
     dependencies:
       '@redocly/openapi-docs': 3.18.0-next.4
@@ -5343,9 +5343,9 @@
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
-      minor:
-        - Fixed sidebar header layout issue.
+      minor: []
       patch:
+        - Fixed sidebar header layout issue.
         - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
         - Updated `@redocly/openapi-core` to version `2.14.5`.
     dependencies:
@@ -9734,9 +9734,9 @@
     changes:
       minor:
         - Added `login-button` Markdoc tag to render a login button on project pages.
+        - Added support for branch-specific configuration in `redocly.yaml`.
       patch:
         - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
-        - Added support for branch-specific configuration in `redocly.yaml`.
         - Updated `@redocly/openapi-core` to version `2.14.7`.
     dependencies:
       '@redocly/openapi-docs': 3.18.0-next.4
@@ -9780,9 +9780,9 @@
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
-      minor:
-        - Fixed sidebar header layout issue.
+      minor: []
       patch:
+        - Fixed sidebar header layout issue.
         - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
         - Updated `@redocly/openapi-core` to version `2.14.5`.
     dependencies:
@@ -14159,10 +14159,10 @@
   0.130.0-next.5:
     timestamp: 1769175773000
     changes:
-      minor: []
+      minor:
+        - Added support for branch-specific configuration in `redocly.yaml`.
       patch:
         - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
-        - Added support for branch-specific configuration in `redocly.yaml`.
         - Updated `@redocly/openapi-core` to version `2.14.7`.
     dependencies:
       '@redocly/openapi-docs': 3.18.0-next.4
@@ -14205,9 +14205,9 @@
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
-      minor:
-        - Fixed sidebar header layout issue.
+      minor: []
       patch:
+        - Fixed sidebar header layout issue.
         - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
         - Updated `@redocly/openapi-core` to version `2.14.5`.
         - >-
@@ -37566,6 +37566,7 @@ reunite:
         - Enabled OAuth2 flow for GitLab.
         - Added the ability to close and reopen external pull requests.
         - Added OAuth2 flow for Azure DevOps to manage external PRs.
+        - Added support for branch renaming.
         - Added a remotes page.
         - Added infinite scrolling for the branch list.
         - Added a changes tab on the create pull request page.
@@ -37573,7 +37574,6 @@ reunite:
         - Updated file uploading experience by adding an upload option to the drop-down menu and a banner to prompt users.
         - Improved scalability support for the editor, giving a smoother user experience.
       patch:
-        - Added support for branch renaming.
         - refactor reunite seats endpoints to avoid use of subresources
         - Fixed the issue with visual changes detection being unavailable until build completes.
         - Resolved the issue with some users not receiving in-editor updates when another user commits a change.
@@ -37589,6 +37589,7 @@ reunite:
         - Added support for creating GitHub pull requests on behalf of the user.
         - Resolved an issue when APIs removed from the Portal were not removed from the registry.
         - Improved button accessibility.
+        - Added support for branch renaming.
         - Improved styling on authorization cards.
         - Fixed copy/paste operations on folders with files.
         - Reinstated the context menu for the editor in the root folder.
