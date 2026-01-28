@@ -1,15 +1,4 @@
 '@redocly/realm':
-  0.130.0-next.7:
-    timestamp: 1769599839000
-    changes:
-      minor: []
-      patch:
-        - Fixed support for `.redocly.lint-ignore.yaml` in the scorecard and `openapi-language-server`.
-        - Updated `@redocly/openapi-core` to version `0.0.0-snapshot.1769511679`.
-    dependencies:
-      '@redocly/openapi-docs': 3.18.0-next.6
-      '@redocly/asyncapi-docs': 1.7.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.15.0-next.6
   0.130.0-next.6:
     timestamp: 1769425990000
     changes:
@@ -30,9 +19,9 @@
     changes:
       minor:
         - Added `login-button` Markdoc tag to render a login button on project pages.
-        - Added support for branch-specific configuration in `redocly.yaml`.
       patch:
         - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
+        - Added support for branch-specific configuration in `redocly.yaml`.
         - Updated `@redocly/openapi-core` to version `2.14.7`.
     dependencies:
       '@redocly/openapi-docs': 3.18.0-next.4
@@ -76,14 +65,14 @@
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
-      minor: []
+      minor:
+        - Fixed sidebar header layout issue.
       patch:
         - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
         - Updated `@redocly/openapi-core` to version `2.14.5`.
         - >-
           Fixed an issue where the **Copy** and **Copy for LLM** buttons were not hidden on OpenAPI endpoint pages that had `excludeFromSearch` option
           configured.
-        - Fixed sidebar header layout issue.
     dependencies:
       '@redocly/openapi-docs': 3.18.0-next.1
       '@redocly/realm-asyncapi-sdk': 0.8.0-next.1
@@ -5267,17 +5256,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.130.0-next.7:
-    timestamp: 1769599839000
-    changes:
-      minor: []
-      patch:
-        - Fixed support for `.redocly.lint-ignore.yaml` in the scorecard and `openapi-language-server`.
-        - Updated `@redocly/openapi-core` to version `0.0.0-snapshot.1769511679`.
-    dependencies:
-      '@redocly/openapi-docs': 3.18.0-next.6
-      '@redocly/asyncapi-docs': 1.7.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.15.0-next.6
   0.130.0-next.6:
     timestamp: 1769425990000
     changes:
@@ -5297,9 +5275,9 @@
     changes:
       minor:
         - Added `login-button` Markdoc tag to render a login button on project pages.
-        - Added support for branch-specific configuration in `redocly.yaml`.
       patch:
         - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
+        - Added support for branch-specific configuration in `redocly.yaml`.
         - Updated `@redocly/openapi-core` to version `2.14.7`.
     dependencies:
       '@redocly/openapi-docs': 3.18.0-next.4
@@ -5343,9 +5321,9 @@
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
-      minor: []
-      patch:
+      minor:
         - Fixed sidebar header layout issue.
+      patch:
         - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
         - Updated `@redocly/openapi-core` to version `2.14.5`.
     dependencies:
@@ -9704,17 +9682,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.130.0-next.7:
-    timestamp: 1769599839000
-    changes:
-      minor: []
-      patch:
-        - Fixed support for `.redocly.lint-ignore.yaml` in the scorecard and `openapi-language-server`.
-        - Updated `@redocly/openapi-core` to version `0.0.0-snapshot.1769511679`.
-    dependencies:
-      '@redocly/openapi-docs': 3.18.0-next.6
-      '@redocly/asyncapi-docs': 1.7.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.15.0-next.6
   0.130.0-next.6:
     timestamp: 1769425990000
     changes:
@@ -9734,9 +9701,9 @@
     changes:
       minor:
         - Added `login-button` Markdoc tag to render a login button on project pages.
-        - Added support for branch-specific configuration in `redocly.yaml`.
       patch:
         - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
+        - Added support for branch-specific configuration in `redocly.yaml`.
         - Updated `@redocly/openapi-core` to version `2.14.7`.
     dependencies:
       '@redocly/openapi-docs': 3.18.0-next.4
@@ -9780,9 +9747,9 @@
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
-      minor: []
-      patch:
+      minor:
         - Fixed sidebar header layout issue.
+      patch:
         - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
         - Updated `@redocly/openapi-core` to version `2.14.5`.
     dependencies:
@@ -14130,17 +14097,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.130.0-next.7:
-    timestamp: 1769599839000
-    changes:
-      minor: []
-      patch:
-        - Fixed support for `.redocly.lint-ignore.yaml` in the scorecard and `openapi-language-server`.
-        - Updated `@redocly/openapi-core` to version `0.0.0-snapshot.1769511679`.
-    dependencies:
-      '@redocly/openapi-docs': 3.18.0-next.6
-      '@redocly/asyncapi-docs': 1.7.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.15.0-next.6
   0.130.0-next.6:
     timestamp: 1769425990000
     changes:
@@ -14159,10 +14115,10 @@
   0.130.0-next.5:
     timestamp: 1769175773000
     changes:
-      minor:
-        - Added support for branch-specific configuration in `redocly.yaml`.
+      minor: []
       patch:
         - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
+        - Added support for branch-specific configuration in `redocly.yaml`.
         - Updated `@redocly/openapi-core` to version `2.14.7`.
     dependencies:
       '@redocly/openapi-docs': 3.18.0-next.4
@@ -14205,9 +14161,9 @@
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
-      minor: []
-      patch:
+      minor:
         - Fixed sidebar header layout issue.
+      patch:
         - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
         - Updated `@redocly/openapi-core` to version `2.14.5`.
         - >-
@@ -21216,14 +21172,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.18.0-next.6:
-    timestamp: 1769599839000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `0.0.0-snapshot.1769511679`.
-    dependencies:
-      '@redocly/replay': 0.21.0-next.6
   3.18.0-next.5:
     timestamp: 1769425990000
     changes:
@@ -25256,13 +25204,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
-  0.5.4:
-    timestamp: 1769615183000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `0.0.0-snapshot.1769511679`.
-    dependencies: {}
   0.5.3:
     timestamp: 1769432065000
     changes:
@@ -25894,16 +25835,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.13.0-next.7:
-    timestamp: 1769599839000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/redoc-revel': 0.130.0-next.7
-      '@redocly/redoc-reef': 0.130.0-next.7
-      '@redocly/realm': 0.130.0-next.7
-      '@redocly/redoc': 0.130.0-next.7
   1.13.0-next.6:
     timestamp: 1769425990000
     changes:
@@ -30488,13 +30419,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.15.0-next.6:
-    timestamp: 1769599839000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.18.0-next.6
   0.15.0-next.5:
     timestamp: 1769425990000
     changes:
@@ -33024,15 +32948,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.21.0-next.6:
-    timestamp: 1769599839000
-    changes:
-      minor:
-        - Added support for downloading files from the response body in Replay.
-        - Improved editing experience for Replay's input fields.
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `0.0.0-snapshot.1769511679`.
-    dependencies: {}
   0.21.0-next.5:
     timestamp: 1769425990000
     changes:
@@ -36303,13 +36218,6 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
-  1.7.0-next.6:
-    timestamp: 1769599839000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.18.0-next.6
   1.7.0-next.5:
     timestamp: 1769425990000
     changes:
@@ -37573,7 +37481,6 @@ reunite:
         - Enabled OAuth2 flow for GitLab.
         - Added the ability to close and reopen external pull requests.
         - Added OAuth2 flow for Azure DevOps to manage external PRs.
-        - Added support for branch renaming.
         - Added a remotes page.
         - Added infinite scrolling for the branch list.
         - Added a changes tab on the create pull request page.
@@ -37581,6 +37488,7 @@ reunite:
         - Updated file uploading experience by adding an upload option to the drop-down menu and a banner to prompt users.
         - Improved scalability support for the editor, giving a smoother user experience.
       patch:
+        - Added support for branch renaming.
         - refactor reunite seats endpoints to avoid use of subresources
         - Fixed the issue with visual changes detection being unavailable until build completes.
         - Resolved the issue with some users not receiving in-editor updates when another user commits a change.
@@ -37596,7 +37504,6 @@ reunite:
         - Added support for creating GitHub pull requests on behalf of the user.
         - Resolved an issue when APIs removed from the Portal were not removed from the registry.
         - Improved button accessibility.
-        - Added support for branch renaming.
         - Improved styling on authorization cards.
         - Fixed copy/paste operations on folders with files.
         - Reinstated the context menu for the editor in the root folder.
@@ -39048,14 +38955,6 @@ reunite:
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `0.0.0-snapshot.1769415576`.
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.14.9`.
-    dependencies: {}
-  v2026-01-28.2:
-    timestamp: 1769609945000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `0.0.0-snapshot.1769511679`.
-        - Fixed an issue where Reunite did not process `.redocly.lint-ignore.yaml`.
     dependencies: {}
 replay:
   0.0.2:

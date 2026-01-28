@@ -33,7 +33,26 @@ export default async function (
 ## File-system and method routing
 
 To define an API endpoint, use file-system routing.
-Create API endpoints by adding files inside the designated `@api` folder.
+API endpoints are created by adding files inside the designated `@api` folder.
+
+### Change API functions location
+
+By default, API functions are located in the `@api` folder.
+
+To customize the location, add an `apiFunctions` section to your `redocly.yaml` file at the root of your project.
+[Learn more about configuring `apiFunctions`](../../config/api-functions.md).
+
+For example:
+
+```yaml {% title="redocly.yaml" %}
+apiFunctions:
+  folders:
+    - /my/api/folder/path/
+    - /my/second/api/folder/path/
+```
+
+This configuration means that API functions are located in `/my/api/folder/path/`, `/my/second/api/folder/path/` and `/@api/`.
+Endpoints from these folders are available at `/my/api/folder/path/...`, `/my/second/api/folder/path/...`, and `/api/...`, respectively.
 
 ### Define an API endpoint
 
@@ -388,25 +407,6 @@ context.text(body: string) => Response
 ```
 
 Sends a plain text response body.
-
-## Change API functions location
-
-By default, API functions are located in the `@api` folder.
-
-To customize the location, add an `apiFunctions` section to your `redocly.yaml` file at the root of your project.
-To learn how to configure API functions in your project, see: [`apiFunctions`](../../config/api-functions.md).
-
-For example:
-
-```yaml {% title="redocly.yaml" %}
-apiFunctions:
-  folders:
-    - /my/api/folder/path/
-    - /my/second/api/folder/path/
-```
-
-This configuration means that API functions are located in `/my/api/folder/path/`, `/my/second/api/folder/path/` and `/@api/`.
-Endpoints from these folders are available at `/my/api/folder/path/...`, `/my/second/api/folder/path/...`, and `/api/...`, respectively.
 
 ## Limitations
 
