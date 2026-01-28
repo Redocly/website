@@ -1831,6 +1831,42 @@ This page contains the list of all predefined translation keys used in default U
 - Label for the `skipContent` button.
 - Skip to content
 
+---
+
+- mermaid.openFullscreen
+- Accessible label for Mermaid diagram click to open in fullscreen
+- Click to open diagram in fullscreen
+
+---
+
+- mermaid.zoomIn
+- Tooltip for zoom in button in Mermaid diagram viewer
+- Zoom in
+
+---
+
+- mermaid.zoomOut
+- Tooltip for zoom out button in Mermaid diagram viewer
+- Zoom out
+
+---
+
+- mermaid.reset
+- Tooltip for fit to view button in Mermaid diagram viewer
+- Fit to view
+
+---
+
+- mermaid.close
+- Tooltip for close button in Mermaid diagram viewer
+- Close
+
+---
+
+- mermaid.viewer
+- Accessible label for Mermaid diagram viewer dialog
+- Mermaid diagram viewer
+
 {% /table %}
 
 ## Dynamic values in translations

@@ -1310,6 +1310,22 @@
 
 </details>
 
+## SVG Viewer
+
+<details>
+<summary>SVG Viewer component</summary>
+
+The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams (like Mermaid) with zoom and pan controls.
+
+```css
+--svg-viewer-overlay-bg-color: var(--bg-color-modal-overlay);
+--svg-viewer-bg-color: var(--bg-color);
+--svg-viewer-border-radius: var(--border-radius-xl);
+--svg-viewer-box-shadow: var(--bg-raised-shadow);
+```
+
+</details>
+
 ## Page actions
 
 <details>
