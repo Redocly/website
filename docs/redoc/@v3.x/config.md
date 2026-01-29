@@ -38,12 +38,14 @@ Additionally, the following options are available from the previous versions of 
 - boolean
 - When `true`, skips the bundle step when building API docs.
   Use when the description files are provided directly and do not require re-bundling.
+  Default: `false`.
 
 ---
 
 - ignoreNamedSchemas
 - [string]
 - Provide a list of schema names to ignore when building docs.
+  Default: `['java.io.ObjectStreamField'],`.
 
 ---
 
@@ -51,6 +53,7 @@ Additionally, the following options are available from the previous versions of 
 - string
 - Specifies a vertical scroll-offset in pixels.
   Use when your docs have fixed positioned elements at the top of the page, such as navbars, headers, etc.
+  Default: `0`.
 
 ---
 
@@ -58,13 +61,14 @@ Additionally, the following options are available from the previous versions of 
 - boolean
 - When `true`, hides the loading animation.
   Does not apply to CLI-rendered docs.
+  Default: `false`.
 
 ---
 
 - hideSidebar
 - boolean
 - When `true`, hides the left sidebar.
-
+  Default: `false`.
 
 {% /table %}
 
@@ -85,7 +89,6 @@ hideLoading: true
 hideSchemaTitles: false
 maxDisplayedEnumValues: 3
 onlyRequiredInSamples: true
-routingBasePath: docs/api
 schemasExpansionLevel: 3
 sortRequiredPropsFirst: true
 showExtensions: true
