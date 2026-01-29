@@ -23896,6 +23896,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.41.3:
+    timestamp: 1769706920000
+    changes:
+      minor: []
+      patch:
+        - Added `nodeTypeName` property to catalog entity schemas to support assertions.
+    dependencies: {}
   0.41.2:
     timestamp: 1768200857000
     changes:
