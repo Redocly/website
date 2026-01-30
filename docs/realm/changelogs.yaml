@@ -39064,13 +39064,6 @@ reunite:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `0.0.0-snapshot.1769511679`.
         - Fixed an issue where Reunite did not process `.redocly.lint-ignore.yaml`.
     dependencies: {}
-  v2026-01-29.2:
-    timestamp: 1769722410000
-    changes:
-      minor: []
-      patch:
-        - Fixed project deletion permissions at the project level.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
