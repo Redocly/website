@@ -23896,6 +23896,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.41.4:
+    timestamp: 1769783750000
+    changes:
+      minor: []
+      patch:
+        - Added `modifier` to scorecards condition schema to support negotiation in logical operators.
+    dependencies: {}
   0.41.3:
     timestamp: 1769706920000
     changes:
