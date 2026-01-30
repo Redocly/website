@@ -133,6 +133,9 @@ Implement error handling to manage authentication failures and provide error res
 
 ## Reference documentation
 
-To learn more about API functions, see the [API functions reference](./api-functions-reference.md) for available helper methods and properties.
+To learn more about API functions, see:
+
+- [API functions reference](./api-functions-reference.md) for available helper methods and properties
+- [Render weather data in a Markdoc tag (using API functions)](../markdoc-tags-with-api-functions-weather.md) for an end-to-end example that consumes an API function from a Markdoc component
 
 {% /code-walkthrough %}
