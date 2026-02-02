@@ -293,9 +293,9 @@ export const positions = [
         ]
     },
   {
-        id: 'senior-sales',
-        title: 'Senior Sales (Product-Led Growth)',
-        subtitle: 'Lviv',
+        id: 'product-led-growth',
+        title: 'Product-Led Growth Manager',
+        subtitle: 'Lviv and rest of Ukraine',
         description: [
             {
                 text: `Redocly helps companies build better developer experiences. Our products (Reunite, Redoc, Revel, Reef, and Realm) empower teams to create, manage, and share APIs beautifully. We're looking for a senior sales professional who can help more developers and organizations discover that value — and convert trials into long-term customers.`,
