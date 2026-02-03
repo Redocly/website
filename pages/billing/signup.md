@@ -99,6 +99,20 @@ Yes, annual plans are priced at a discount compared to monthly plans. Check our 
 
 If you encounter any issues during signup, please [contact our support team](/contact-us) and we'll help you get started.
 
+### I'm migrating from Workflows. What do I need to know?
+
+Redocly Workflows is being sunset on February 28, 2026. If you're currently using Workflows, you'll need to migrate to Reunite (which includes Realm, Redoc, Revel, and Reef). Here's the migration process:
+
+1. **[Sign up](https://auth.cloud.redocly.com/registration)** using the same email address you used in Workflows. This will help ensure a smooth transition.
+2. **Create your organization** - This will automatically start your free 30-day trial.
+3. **Complete the migration** - Follow our [technical migration guides](/docs/realm/get-started/migrate-api-reference) to migrate your content and configuration from Workflows to Reunite.
+4. **Subscribe and set up billing** - Billing for Reunite is separate from Workflows, so you'll need to set up a new subscription.
+5. **Cancel your Workflows subscription** - Once your migration is complete and verified, you can cancel your Workflows subscription.
+
+{% admonition type="info" %}
+Your Workflows subscription and Reunite subscription are separate. You can run both in parallel during your migration period to ensure a smooth transition.
+{% /admonition %}
+
 ### What's a seat/user?
 
 A user is someone with a Redocly account, whether they log in through the Redocly login provider or your own identity provider with single-sign-on (SSO).
