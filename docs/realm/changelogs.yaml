@@ -1,4 +1,19 @@
 '@redocly/realm':
+  0.130.0-next.9:
+    timestamp: 1770118825000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.15.1`.
+        - Fixed `id_token` audience validation to support organization ID alongside slug, preventing auth failures after slug changes.
+        - Fixed an issue where deep links would open pages in an incorrect position if a banner was present.
+        - Fixed an issue where a schema wouldn't be displayed when it was an only item in a `oneOf`.
+        - Fixed an issue where `KV.set` would fail when not provided with a third argument in transactions.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.8
+      '@redocly/asyncapi-docs': 1.7.0-next.8
+      '@redocly/graphql-docs': 1.7.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.15.0-next.8
   0.130.0-next.8:
     timestamp: 1769788502000
     changes:
@@ -5282,6 +5297,20 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.130.0-next.9:
+    timestamp: 1770118825000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.15.1`.
+        - Fixed `id_token` audience validation to support organization ID alongside slug, preventing auth failures after slug changes.
+        - Fixed an issue where deep links would open pages in an incorrect position if a banner was present.
+        - Fixed an issue where `KV.set` would fail when not provided with a third argument in transactions.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.8
+      '@redocly/asyncapi-docs': 1.7.0-next.8
+      '@redocly/graphql-docs': 1.7.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.15.0-next.8
   0.130.0-next.8:
     timestamp: 1769788502000
     changes:
@@ -9733,6 +9762,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.130.0-next.9:
+    timestamp: 1770118825000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.15.1`.
+        - Fixed `id_token` audience validation to support organization ID alongside slug, preventing auth failures after slug changes.
+        - Fixed an issue where deep links would open pages in an incorrect position if a banner was present.
+        - Fixed an issue where `KV.set` would fail when not provided with a third argument in transactions.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.8
+      '@redocly/asyncapi-docs': 1.7.0-next.8
+      '@redocly/graphql-docs': 1.7.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.15.0-next.8
   0.130.0-next.8:
     timestamp: 1769788502000
     changes:
@@ -14173,6 +14216,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.130.0-next.9:
+    timestamp: 1770118825000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.15.1`.
+        - Fixed `id_token` audience validation to support organization ID alongside slug, preventing auth failures after slug changes.
+        - Fixed an issue where deep links would open pages in an incorrect position if a banner was present.
+        - Fixed an issue where a schema wouldn't be displayed when it was an only item in a `oneOf`.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.8
+      '@redocly/asyncapi-docs': 1.7.0-next.8
+      '@redocly/graphql-docs': 1.7.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.15.0-next.8
   0.130.0-next.8:
     timestamp: 1769788502000
     changes:
@@ -21280,6 +21337,15 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.18.0-next.8:
+    timestamp: 1770118825000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.15.1`.
+        - Fixed an issue where a schema wouldn't be displayed when it was an only item in a `oneOf`.
+    dependencies:
+      '@redocly/replay': 0.21.0-next.8
   3.18.0-next.7:
     timestamp: 1769788502000
     changes:
@@ -24533,6 +24599,13 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.7.0-next.1:
+    timestamp: 1770118825000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where deep links would open pages in an incorrect position if a banner was present.
+    dependencies: {}
   1.7.0-next.0:
     timestamp: 1768390370000
     changes:
@@ -25990,6 +26063,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.13.0-next.9:
+    timestamp: 1770118825000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.130.0-next.9
+      '@redocly/redoc': 0.130.0-next.9
+      '@redocly/redoc-reef': 0.130.0-next.9
+      '@redocly/redoc-revel': 0.130.0-next.9
   1.13.0-next.8:
     timestamp: 1769788502000
     changes:
@@ -30595,6 +30678,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.15.0-next.8:
+    timestamp: 1770118825000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.8
   0.15.0-next.7:
     timestamp: 1769788502000
     changes:
@@ -33138,6 +33228,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.21.0-next.8:
+    timestamp: 1770118825000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.15.1`.
+    dependencies: {}
   0.21.0-next.7:
     timestamp: 1769788502000
     changes:
@@ -36432,6 +36529,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.7.0-next.8:
+    timestamp: 1770118825000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where deep links would open pages in an incorrect position if a banner was present.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0-next.8
   1.7.0-next.7:
     timestamp: 1769788502000
     changes:
