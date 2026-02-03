@@ -97,7 +97,6 @@ A common pattern is to show the login button only to anonymous users along with 
 Some content is available only for authenticated users. Log in to get full access to our documentation.
 
 {% login-button /%}
-
 {% /admonition %}
 {% /if %}
 ````
