@@ -39441,6 +39441,13 @@ reunite:
       patch:
         - Fixed an issue causing the pull request author to load indefinitely in some cases.
     dependencies: {}
+  v2026-02-05.2:
+    timestamp: 1770297061000
+    changes:
+      minor:
+        - Fixed double scrollbar issue in project breadcrumbs navigation.
+      patch: []
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
