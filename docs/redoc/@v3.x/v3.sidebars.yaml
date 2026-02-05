@@ -8,9 +8,9 @@
     - page: deployment/html.md
     - page: deployment/react.md
     - page: deployment/docker.md
-    - group: Configure Redoc CE
-      items:
-        - page: config.md
-        - page: config-migration.md
+- group: Configure Redoc CE
+  items:
+    - page: config.md
+    - page: config-migration.md
 - page: telemetry.md
   label: Telemetry
