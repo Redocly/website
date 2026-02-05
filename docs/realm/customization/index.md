@@ -36,6 +36,10 @@ Enable source maps for easier debugging of custom components and functions.
 Build reusable Markdoc components to extend your content authoring capabilities.
 {% /card %}
 
+{% card title="Markdoc + API functions" icon="cloud" to="./markdoc-tags-with-api-functions-weather.md" %}
+Render dynamic data inside Markdoc tags by fetching from your own API functions (weather example).
+{% /card %}
+
 {% card title="Markdoc variables" icon="square-root-variable" to="./markdoc-variables.md" %}
 Use variables to create dynamic, configurable content across your project.
 {% /card %}

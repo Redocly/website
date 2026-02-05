@@ -378,6 +378,8 @@
     - separator: Advanced components
     - page: customization/build-markdoc-tags.md
       label: Build Markdoc tags
+    - page: customization/markdoc-tags-with-api-functions-weather.md
+      label: Integrate Markdoc tag with API functions
     - page: customization/markdoc-variables.md
       label: Markdoc variables
     - group: Markdoc attribute resolvers
