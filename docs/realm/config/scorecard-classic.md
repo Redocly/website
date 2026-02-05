@@ -195,7 +195,7 @@ where:
 
 ## Examples
 
-The following example `redocly.yaml` file configuration adds three levels to the project's API scorecard: Baseline, Silver, and Gold:
+The following example `redocly.yaml` file configuration adds three levels to the project's API scorecardClassic: Baseline, Silver, and Gold:
 
 ```yaml {% title="redocly.yaml" %}
 scorecardClassic:
