@@ -1,0 +1,11 @@
+name: filter
+description: |-
+  Filters the collection items. This field requires a special format.
+
+  For more information, see
+  [Using filter with collections](#section/Using-filter-with-collections).
+in: query
+required: false
+schema:
+  type: string
+example: status:approved createdAt:30d

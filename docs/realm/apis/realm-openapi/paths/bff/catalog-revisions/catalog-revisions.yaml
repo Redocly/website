@@ -1,0 +1,37 @@
+get:
+  tags:
+    - BFF Entities
+  security: []
+  summary: Get catalog entity revisions for frontend
+  x-internal: true
+  x-catalog-relations:
+    - type: ownedBy
+      key: to-the-moon
+  description: Retrieve a list of revisions for a specific catalog entity by key.
+  operationId: listBffCatalogEntityRevisions
+  parameters:
+    - $ref: ../../../components/parameters/path/CatalogEntityKey.yaml
+    - name: version
+      in: query
+      required: false
+      description: Optional version filter to retrieve revisions for a specific version only.
+      schema:
+        type: string
+      example: '1.0'
+  responses:
+    '200':
+      description: Successfully retrieved list of catalog entity revisions for frontend.
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/schemas/bff/catalog-entity/BffCatalogEntityRevisionList.yaml
+    '400':
+      $ref: '../../../../common/responses/BadRequestError.yaml'
+    '401':
+      $ref: '../../../../common/responses/UnauthorizedError.yaml'
+    '403':
+      $ref: '../../../../common/responses/ForbiddenError.yaml'
+    '404':
+      $ref: '../../../../common/responses/NotFoundError.yaml'
+    '500':
+      $ref: '../../../../common/responses/InternalServerError.yaml'

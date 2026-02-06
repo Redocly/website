@@ -71,6 +71,13 @@ All other configuration is done through team-role mapping.
 - Team name pattern for giving pattern-based access to the folders in `teamFolders`.
   This option is used in combination with the `teamFolders` option.
 
+---
+
+- entitiesCatalog
+- [[Entities catalog configuration](#entities-catalog-configuration)]
+- Control access to catalog resources including catalogs, entity types, and individual entities.
+  Use this option to manage who can view and modify catalog content.
+
 {% /table %}
 
 ### Team to role map
@@ -177,6 +184,70 @@ rbac:
   The `{teamPathSegment}` is used as the path segment where the role access is applied,
   and the `{projectRole}` part sets the access level.
   The `{teamPathSegment}` segments are transformed to lower case.
+
+{% /table %}
+
+### Entities catalog configuration
+
+Control access to the catalog feature including catalogs, entity types, entity groups, and individual entities.
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- catalogs
+- Map[string, [Team to role map](#team-to-role-map)]
+- Control access to specific catalog views.
+  Keys are catalog slugs (`all`, `services`, `domains`, `teams`, `users`, `apiDescriptions`, `dataSchemas`, `apiOperations`, or custom catalog names).
+  Users without read access to a catalog won't see it in the catalog switcher.
+
+---
+
+- entitiesTypes
+- Map[string, [Team to role map](#team-to-role-map)]
+- Control access by entity type.
+  Keys are entity types (`service`, `domain`, `team`, `user`, `api-description`, `api-operation`, `data-schema`, or custom types).
+  Users need READ access to view entities and WRITE access to modify them via API.
+
+---
+
+- entitiesGroups
+- [[Entity groups](#entity-groups-configuration)]
+- Control access to groups of related entities.
+  Apply the same access rules to multiple entities at once.
+
+---
+
+- entities
+- Map[string, [Team to role map](#team-to-role-map)]
+- Control access to individual entities by key.
+  Use `*` to set default access for all entities not explicitly configured.
+
+{% /table %}
+
+### Entity groups configuration
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- entities
+- [string]
+- **REQUIRED.** Array of entity keys to include in this group.
+
+---
+
+- config
+- [Team to role map](#team-to-role-map)
+- **REQUIRED.** Access configuration for entities in this group.
 
 {% /table %}
 
@@ -385,10 +456,61 @@ rbac:
 ---
 ```
 
+### Catalog access control
+
+Control who can view and modify catalog entities:
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    entitiesCatalog:
+      # Control access to catalog views
+      catalogs:
+        services:
+          developers: read
+          platform-team: admin
+        internal:
+          platform-team: read
+          '*': none
+
+      # Control access by entity type
+      entitiesTypes:
+        service:
+          platform-team: write
+          developers: read
+        user:
+          hr-team: write
+          authenticated: read
+
+      # Control access to groups of entities
+      entitiesGroups:
+        - entities:
+            - payment-service
+            - billing-service
+          config:
+            finance-team: write
+            '*': read
+
+      # Control access to individual entities
+      entities:
+        '**':
+          authenticated: read
+        secret-api:
+          security-team: read
+          '*': none
+```
+
+In this example:
+- The `internal` catalog is only visible to `platform-team`
+- Only `platform-team` can modify service entities
+- Payment and billing services have restricted write access to `finance-team`
+- The `secret-api` entity is only visible to `security-team`
+
 ## Resources
 
 - **[Role-based access control (RBAC) concepts](../access/rbac.md)** - Understand the fundamentals and components of RBAC systems for comprehensive access management
 - **[RBAC configuration guide](../access/index.md)** - Complete implementation guide with examples for projects, pages, and navigation access control
+- **[Catalog access control](../content/catalog/catalog-rbac.md)** - Detailed guide for configuring catalog-specific access control with examples
 - **[Front matter configuration](./front-matter-config.md)** - Configure role-based access on individual pages using front matter for granular permission control
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
 - **[SSO configuration](./sso.md)** - Configure single sign-on to identify users and integrate with RBAC for comprehensive authentication and authorization

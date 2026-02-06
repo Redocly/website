@@ -1,0 +1,104 @@
+get:
+  tags:
+    - Entity relations
+  security:
+    - ApiKey: []
+  summary: Get list of catalog entities relations
+  x-internal: true
+  x-catalog-relations:
+    - type: ownedBy
+      key: to-the-moon
+  description: Retrieve a list of catalog entities relations.
+  operationId: listEntitiesRelations
+  parameters:
+    - $ref: ../../../common/components/parameters/query/After.yaml
+    - $ref: ../../../common/components/parameters/query/Before.yaml
+    - $ref: ../../../common/components/parameters/query/Sort.yaml
+    - $ref: ../../../common/components/parameters/query/Filter.yaml
+    - $ref: ../../../common/components/parameters/query/Limit.yaml
+    - $ref: ../../../common/components/parameters/query/Search.yaml
+  responses:
+    '200':
+      description: List of catalog entities relations successfully retrieved.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/catalog-entity-relation/CatalogEntityRelationList.yaml
+    '400':
+      $ref: '../../../common/responses/BadRequestError.yaml'
+    '401':
+      $ref: '../../../common/responses/UnauthorizedError.yaml'
+    '403':
+      $ref: '../../../common/responses/ForbiddenError.yaml'
+    '500':
+      $ref: ../../../common/responses/InternalServerError.yaml
+
+post:
+  tags:
+    - Entity relations
+  security:
+    - ApiKey: []
+  summary: Create catalog entity relation
+  x-internal: true
+  x-catalog-relations:
+    - type: ownedBy
+      key: to-the-moon
+  description: Create a new catalog entity relation.
+  operationId: createEntityRelation
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/catalog-entity-relation/CatalogEntityRelationCreate.yaml
+  responses:
+    '201':
+      description: Catalog entity relation successfully created.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/catalog-entity-relation/CatalogEntityRelation.yaml
+    '400':
+      $ref: '../../../common/responses/BadRequestError.yaml'
+    '401':
+      $ref: '../../../common/responses/UnauthorizedError.yaml'
+    '403':
+      $ref: '../../../common/responses/ForbiddenError.yaml'
+    '409':
+      $ref: '../../../common/responses/ConflictError.yaml'
+    '500':
+      $ref: ../../../common/responses/InternalServerError.yaml
+
+put:
+  tags:
+    - Entity relations
+  security:
+    - ApiKey: []
+  summary: Upsert catalog entity relations
+  x-internal: true
+  x-catalog-relations:
+    - type: ownedBy
+      key: to-the-moon
+  description: Bulk upsert catalog entities relations.
+  operationId: bulkUpsertEntitiesRelations
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/catalog-entity-relation/CatalogEntityRelationBulkItems.yaml
+  responses:
+    '207':
+      description: Multi Status.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/catalog-entity-relation/CatalogEntityRelationBulkResponse.yaml
+    '400':
+      $ref: '../../../common/responses/BadRequestError.yaml'
+    '401':
+      $ref: '../../../common/responses/UnauthorizedError.yaml'
+    '403':
+      $ref: '../../../common/responses/ForbiddenError.yaml'
+    '500':
+      $ref: ../../../common/responses/InternalServerError.yaml

@@ -1,0 +1,95 @@
+get:
+  tags:
+    - Entities
+  security:
+    - ApiKey: []
+  summary: Get entity
+  x-internal: true
+  x-catalog-relations:
+    - type: ownedBy
+      key: to-the-moon
+  description: Retrieve a specific catalog entity by ID.
+  operationId: getEntity
+  parameters:
+    - $ref: ../../components/parameters/path/CatalogEntityId.yaml
+  responses:
+    '200':
+      description: Successfully retrieved catalog entity.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/catalog-entity/CatalogEntity.yaml
+    '401':
+      $ref: '../../../common/responses/UnauthorizedError.yaml'
+    '403':
+      $ref: '../../../common/responses/ForbiddenError.yaml'
+    '404':
+      $ref: '../../../common/responses/NotFoundError.yaml'
+    '500':
+      $ref: ../../../common/responses/InternalServerError.yaml
+
+patch:
+  tags:
+    - Entities
+  security:
+    - ApiKey: []
+  summary: Update catalog entity
+  x-internal: true
+  x-catalog-relations:
+    - type: ownedBy
+      key: to-the-moon
+  description: Update an existing catalog entity.
+  operationId: updateEntity
+  parameters:
+    - $ref: ../../components/parameters/path/CatalogEntityId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/catalog-entity/CatalogEntityCreate.yaml
+  responses:
+    '200':
+      description: Successfully updated catalog entity.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/catalog-entity/CatalogEntity.yaml
+    '400':
+      $ref: '../../../common/responses/BadRequestError.yaml'
+    '401':
+      $ref: '../../../common/responses/UnauthorizedError.yaml'
+    '403':
+      $ref: '../../../common/responses/ForbiddenError.yaml'
+    '404':
+      $ref: '../../../common/responses/NotFoundError.yaml'
+    '409':
+      $ref: '../../../common/responses/ConflictError.yaml'
+    '500':
+      $ref: ../../../common/responses/InternalServerError.yaml
+
+delete:
+  tags:
+    - Entities
+  security:
+    - ApiKey: []
+  summary: Delete catalog entity
+  x-internal: true
+  x-catalog-relations:
+    - type: ownedBy
+      key: to-the-moon
+  description: Delete a specific catalog entity.
+  operationId: deleteEntity
+  parameters:
+    - $ref: ../../components/parameters/path/CatalogEntityId.yaml
+  responses:
+    '204':
+      description: Successfully deleted catalog entity.
+    '401':
+      $ref: '../../../common/responses/UnauthorizedError.yaml'
+    '403':
+      $ref: '../../../common/responses/ForbiddenError.yaml'
+    '404':
+      $ref: '../../../common/responses/NotFoundError.yaml'
+    '500':
+      $ref: ../../../common/responses/InternalServerError.yaml

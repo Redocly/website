@@ -1,0 +1,75 @@
+type: object
+description: Related catalog entity for frontend (simplified version without git, contact, links, metadata, and tags).
+required:
+  - id
+  - type
+  - key
+  - title
+  - summary
+  - source
+  - sourceFile
+  - metadata
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    type: string
+    pattern: ^ce_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    description: Catalog entity ID in ULID format.
+    example: ce_01hh1t9sa6gwfv5naz04gr7ehm
+    readOnly: true
+  type:
+    type: string
+    description: Type of the entity.
+    example: service
+    readOnly: true
+  key:
+    type: string
+    description: Unique key for the entity.
+    example: my-service-1
+    readOnly: true
+  title:
+    type: string
+    description: Title of the entity.
+    example: My Service
+    readOnly: true
+  summary:
+    type:
+      - string
+      - 'null'
+    description: Summary of the entity.
+    example: This is a sample service description
+    readOnly: true
+  source:
+    description: Source of the entity.
+    type: string
+    enum: [api, file]
+    example: api
+    readOnly: true
+  sourceFile:
+    description: Path to the file that the entity view is created from. Files must follow the naming convention `*.entity.yaml` or `*.entities.yaml`.
+    type:
+      - string
+      - 'null'
+    example: entities/my-service.entity.yaml
+    readOnly: true
+  metadata:
+    type: object
+    description: Metadata of the entity view.
+    readOnly: true
+  createdAt:
+    type:
+      - string
+      - 'null'
+    format: date-time
+    description: Entity created date and time.
+    example: '2023-01-01T12:00:00Z'
+    readOnly: true
+  updatedAt:
+    type:
+      - string
+      - 'null'
+    format: date-time
+    description: Entity update date and time.
+    example: '2023-01-01T12:00:00Z'
+    readOnly: true

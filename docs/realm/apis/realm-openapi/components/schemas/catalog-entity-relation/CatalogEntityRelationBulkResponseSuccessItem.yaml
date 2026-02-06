@@ -1,0 +1,13 @@
+type: object
+properties:
+  status:
+    description: Status of single operation.
+    type: string
+    const: 'ok'
+    example: 'ok'
+    readOnly: true
+  resource:
+    $ref: CatalogEntityRelation.yaml
+required:
+  - status
+  - resource

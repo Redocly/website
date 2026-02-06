@@ -432,6 +432,25 @@
         - page: customization/mcp-server/index.md
           label: Overview
 
+- group: Catalog
+  icon: grid-2
+  page: content/catalog/index.md
+  items:
+    - page: content/catalog/quickstart.md
+      label: Quickstart
+    - page: content/catalog/entity-types.md
+      label: Entity types
+    - page: content/catalog/entity-files.md
+      label: Entity definition files
+    - page: content/catalog/entity-relations.md
+      label: Entity relations
+    - page: content/catalog/api-management.md
+      label: Manage via API
+    - page: content/catalog/versions-and-revisions.md
+      label: Versions and revisions
+    - page: content/catalog/catalog-rbac.md
+      label: Access control
+
 - group: Access
   icon: lock
   page: access/index.md

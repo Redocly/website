@@ -1,0 +1,89 @@
+type: object
+description: DTO used to create or update a catalog entity.
+required:
+  - key
+  - type
+  - title
+properties:
+  key:
+    type: string
+    description: Unique key for the entity.
+    example: my-service-1
+  type:
+    type: string
+    description: Type of the entity.
+    example: service
+  title:
+    type: string
+    description: Title of the entity.
+    example: My Service
+  summary:
+    type: string
+    description: Summary of the entity.
+    example: This is a sample service description
+  tags:
+    type: array
+    items:
+      type: string
+    description: Tags of the entity.
+    example: [tag1, tag2]
+  metadata:
+    type: object
+    description: Metadata of the entity.
+    example:
+      integration: redocly-members-teams
+      email: john@example.com
+  git:
+    type: array
+    description: Catalog entity source control details.
+    items:
+      type: string
+      format: uri
+      example: https://github.com/acme/payments-api
+    example:
+      - https://github.com/acme/payments-api
+      - https://gitlab.com/acme/payments-api
+      - https://bitbucket.org/acme/payments-api
+      - https://dev.azure.com/acme/payments-api
+  contact:
+    type: object
+    description: Catalog entity contact details.
+    properties:
+      slack:
+        type: object
+        description: Slack contact details.
+        properties:
+          channels:
+            type: array
+            items:
+              type: object
+              description: Slack channel details.
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+  links:
+    type: array
+    items:
+      type: object
+      description: Link of the entity.
+      properties:
+        label:
+          type: string
+          example: API Documentation
+        url:
+          type: string
+          format: url
+          example: https://docs.example.com/payments-api
+      required:
+        - label
+        - url
+  relations:
+    type: array
+    description: Array of relations to other entities.
+    items:
+      $ref: ../catalog-entity-relation/CatalogEntityRelationCreate.yaml
+    example:
+      - type: memberOf
+        key: team_engineering

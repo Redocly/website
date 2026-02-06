@@ -1,0 +1,5 @@
+description: Conflict.
+content:
+  application/problem+json:
+    schema:
+      $ref: ../errors/Problem.yaml

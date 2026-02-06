@@ -1,0 +1,10 @@
+type: array
+items:
+  oneOf:
+    - $ref: ./CatalogEntityBulkResponseSuccessItem.yaml
+    - $ref: ../common/BulkResponseErrorItem.yaml
+  discriminator:
+    propertyName: status
+    mapping:
+      ok: ./CatalogEntityBulkResponseSuccessItem.yaml
+      error: ../common/BulkResponseErrorItem.yaml

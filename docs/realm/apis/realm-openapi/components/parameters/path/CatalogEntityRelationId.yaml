@@ -1,0 +1,9 @@
+name: catalogEntityRelationId
+description: ID of the catalog entity relation.
+required: true
+in: path
+schema:
+  type: string
+  pattern: ^cer_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  description: Unique identifier prefixed with `cer_`.
+example: cer_01h1s5z6vf2mm1mz3hevnn9va7

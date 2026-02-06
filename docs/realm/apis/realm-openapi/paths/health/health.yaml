@@ -1,0 +1,15 @@
+get:
+  security: []
+  summary: Get health
+  x-internal: true
+  x-catalog-relations:
+    - type: ownedBy
+      key: lightsabers
+  tags:
+    - health
+  operationId: getHealth
+  responses:
+    '200':
+      description: OK.
+    '500':
+      $ref: ../../../common/responses/InternalServerError.yaml

@@ -1,0 +1,54 @@
+type: object
+description: Catalog entity revision summary for frontend.
+required:
+  - version
+  - revision
+  - isCurrent
+  - isDefaultVersion
+  - createdAt
+  - updatedAt
+properties:
+  version:
+    type:
+      - string
+      - 'null'
+    description: Version of the entity.
+    example: '1.0'
+    readOnly: true
+  revision:
+    type:
+      - string
+      - 'null'
+    description: Revision identifier of the entity.
+    example: '20251120T12:00:00Z'
+    readOnly: true
+  isCurrent:
+    type:
+      - boolean
+      - 'null'
+    description: Whether this revision is the current one.
+    example: true
+    readOnly: true
+  isDefaultVersion:
+    type:
+      - boolean
+      - 'null'
+    description: Whether this is the default version.
+    example: false
+    readOnly: true
+  createdAt:
+    type:
+      - string
+      - 'null'
+    format: date-time
+    description: Revision created date and time.
+    example: '2023-01-01T12:00:00Z'
+    readOnly: true
+  updatedAt:
+    type:
+      - string
+      - 'null'
+    format: date-time
+    description: Revision update date and time.
+    example: '2023-01-01T12:00:00Z'
+    readOnly: true

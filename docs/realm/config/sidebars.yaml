@@ -35,6 +35,8 @@
       label: breadcrumbs
     - page: ./catalog-classic.md
       label: catalogClassic
+    - page: ./catalog.md
+      label: entitiesCatalog
     - page: ./code-snippet.md
       label: codeSnippet
     - page: ./color-mode.md

@@ -1,0 +1,16 @@
+type: object
+properties:
+  object:
+    type: string
+    enum: [list]
+  page:
+    $ref: ../../Page.yaml
+  items:
+    type: array
+    minItems: 0
+    items:
+      $ref: ./BffCatalogRelatedEntity.yaml
+required:
+  - object
+  - page
+  - items

@@ -1,0 +1,5 @@
+type: http
+scheme: bearer
+description: |-
+  API key is required to access API.
+  You can create your API key by visiting [Reunite](https://app.cloud.redocly.com/) and clicking on the "API Keys" page.
