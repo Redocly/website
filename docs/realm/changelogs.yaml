@@ -39582,6 +39582,16 @@ reunite:
         - Fixed double scrollbar issue in project breadcrumbs navigation.
       patch: []
     dependencies: {}
+  v2026-02-06.2:
+    timestamp: 1770392433000
+    changes:
+      minor:
+        - >-
+          Consolidated sidebar navigation by grouping `Feedback` and `Analytics` under a `Reports` menu and moving project settings into a collapsible
+          `Settings` submenu.
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.15.2`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
