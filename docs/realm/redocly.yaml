@@ -68,7 +68,6 @@ apis:
           property: page
         assertions:
           ref: '/schemas/Page$/'
-
   auth-api:
     root: ./auth/openapi/openapi.yaml
     rules:
