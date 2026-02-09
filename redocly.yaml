@@ -212,13 +212,14 @@ responseHeaders:
           'sha256-2VNfiq6Um2ua9MLfzend4JESqZeD1VSgkWvUrPvrlZE='
           'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no='
           'sha256-+Ozb/ItuZAdaQgJd2RebN2rKWj1XkBuXVaV6/lT4Juo='
-          'sha256-9qgU5FDrauEgF+e1iJWvsh46OwsIkNOLjkXggr/02jk=';
+          'sha256-9qgU5FDrauEgF+e1iJWvsh46OwsIkNOLjkXggr/02jk='
+          'sha256-v7ddZtWCUr5oF3kgrlEot4fG861CKDXUt0aTaNaIk6Q=';
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 
           'self'
           https://webhook.frontapp.com
-          https://j.clarity.ms
+          https://j.clarity.ms/*
           https://api.github.com
           https://api.rebilly.com
           https://forms.hsforms.com
@@ -226,7 +227,9 @@ responseHeaders:
           https://*.google-analytics.com
           https://hubspot-forms-static-embed.s3.amazonaws.com
           https://v.clarity.ms/collect
-          https://cdn.jsdelivr.net;
+          https://cdn.jsdelivr.net
+          https://forms-na2.hscollectedforms.net/*
+          https://forms-na2.hsforms.com/*;
         form-action 
           'self' 
           https://forms.hsforms.com
