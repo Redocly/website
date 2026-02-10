@@ -1,6 +1,6 @@
 '@redocly/realm':
   0.130.0:
-    timestamp: 1770718488000
+    timestamp: 1770734421000
     changes:
       minor:
         - Added an interactive lightbox viewer for Mermaid diagrams with zoom, pan, and keyboard navigation.
@@ -5392,7 +5392,7 @@
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
   0.130.0:
-    timestamp: 1770718488000
+    timestamp: 1770734421000
     changes:
       minor:
         - Added an interactive lightbox viewer for Mermaid diagrams with zoom, pan, and keyboard navigation.
@@ -9934,7 +9934,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
   0.130.0:
-    timestamp: 1770718488000
+    timestamp: 1770734421000
     changes:
       minor:
         - Added an interactive lightbox viewer for Mermaid diagrams with zoom, pan, and keyboard navigation.
@@ -14467,7 +14467,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
   0.130.0:
-    timestamp: 1770718488000
+    timestamp: 1770734421000
     changes:
       minor:
         - Added bundling support for OpenAPI 3.2 `components/mediaTypes` references used in request and response content.
@@ -19049,7 +19049,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
   0.62.0:
-    timestamp: 1770718488000
+    timestamp: 1770734421000
     changes:
       minor:
         - Added an interactive lightbox viewer for Mermaid diagrams with zoom, pan, and keyboard navigation.
@@ -21720,7 +21720,7 @@
     dependencies: {}
 '@redocly/openapi-docs':
   3.18.0:
-    timestamp: 1770718488000
+    timestamp: 1770734421000
     changes:
       minor:
         - Added search to the dropdown in the examples panel for OpenAPI docs.
@@ -25028,7 +25028,7 @@
     dependencies: {}
 '@redocly/graphql-docs':
   1.7.0:
-    timestamp: 1770718488000
+    timestamp: 1770734421000
     changes:
       minor: []
       patch:
@@ -26339,7 +26339,7 @@
     dependencies: {}
 '@redocly/portal-legacy-ui':
   0.13.0:
-    timestamp: 1770718488000
+    timestamp: 1770734421000
     changes:
       minor: []
       patch: []
@@ -26527,7 +26527,7 @@
     dependencies: {}
 '@redocly/portal-plugin-async-api':
   1.13.0:
-    timestamp: 1770718488000
+    timestamp: 1770734421000
     changes:
       minor: []
       patch: []
@@ -31186,7 +31186,7 @@
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
   0.15.0:
-    timestamp: 1770718488000
+    timestamp: 1770734421000
     changes:
       minor: []
       patch:
@@ -33770,7 +33770,7 @@
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
   0.21.0:
-    timestamp: 1770718488000
+    timestamp: 1770734421000
     changes:
       minor:
         - Improved editing experience for Replay's URL input.
@@ -35575,7 +35575,7 @@
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
   0.13.0:
-    timestamp: 1770718488000
+    timestamp: 1770734421000
     changes:
       minor: []
       patch: []
@@ -37133,7 +37133,7 @@
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
   1.7.0:
-    timestamp: 1770718488000
+    timestamp: 1770734421000
     changes:
       minor: []
       patch:
