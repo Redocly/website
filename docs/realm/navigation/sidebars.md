@@ -96,6 +96,13 @@ Specify the order and link text for side navigation items by creating a `sidebar
   Pass arbitrary data that can be accessed in custom theme components.
   To learn how to customize theme components, see: [Eject components](../customization/eject-components/index.md).
 
+---
+
+- badges
+- [[Badge object](#badge-object)]
+- List of badges to display next to the sidebar item label.
+  Each badge has a `name` (required) and optional `color`.
+
 {% /table %}
 
 \* Sidebar links must use either the `page` or `href` option ("mutually exclusive").
@@ -240,6 +247,52 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - string
 - Path to another sidebar file.
   Entries from the referenced sidebar expand into this sidebar.
+
+{% /table %}
+
+## Badge object
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- name
+- string
+- **REQUIRED**.
+  The text that displays in the badge.
+
+---
+
+- color
+- string
+- The color of the badge.
+  Supports predefined color names for consistent styling or direct color values for custom backgrounds.
+
+  **Supported color names:**
+  `red`, `green`, `blue`, `grey`, `turquoise`, `magenta`, `purple`, `carrot`, `raspberry`, `orange`, `grass`, `persian-green`, `sky`, `blueberry`.
+
+  **Supported status colors:**
+  `success`, `processing`, `error`, `warning`, `default`, `approved`, `declined`, `pending`, `active`, `draft`, `deprecated`, `product`.
+
+  Defaults to `grey`.
+---
+
+- position
+- string
+- The position of the badge relative to the label text.
+  Possible values: `before`, `after`.
+  Defaults to `after`.
+
+---
+
+- icon
+- string
+- Icon to display inside the badge.
+  Accepts a [Font Awesome](https://fontawesome.com/icons) icon name or a relative path to an icon image file.
 
 {% /table %}
 
@@ -395,6 +448,36 @@ Use `additionalProps` to add custom data to sidebar items:
 ```
 
 Custom theme components can access these properties to display additional information or implement custom behavior.
+
+### Badges
+
+Use `badges` to add visual indicators to sidebar items:
+
+```yaml {% title="sidebars.yaml" %}
+- page: overview.md
+  label: Overview
+- page: new-feature.md
+  label: New Feature
+  badges:
+    - name: New
+      color: green
+      icon: solid star
+- page: experimental-api.md
+  label: Experimental API
+  badges:
+    - name: Beta
+      color: '#ff9800'
+      position: before
+    - name: Unstable
+      color: var(--color-danger-base)
+- group: Deprecated APIs
+  items:
+    - page: legacy-api.md
+      label: Legacy API
+      badges:
+        - name: Deprecated
+          color: var(--color-warning-base)
+```
 
 ## Resources
 

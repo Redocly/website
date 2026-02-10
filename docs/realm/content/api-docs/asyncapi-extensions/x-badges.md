@@ -39,24 +39,30 @@ Add an array of `x-badges` to any Channel or Operation object.
 
 - name
 - string
--  **REQUIRED**.
+- **REQUIRED**.
   The text that displays in the badge.
-
----
-
-- position
-- string
-- The position of the badge in relation to the header.
-  Possible values: `before`, `after`.
-  The default value is `after`.
 
 ---
 
 - color
 - string
 - The color of the badge.
-  It can be defined in various formats such as color keywords, RGB, RGBA, HSL, HSLA, and Hexadecimal.
-  The default value is `#1f7cff`.
+  Supports predefined color names for consistent styling or direct color values for custom backgrounds.
+
+  **Supported color names:**
+  `red`, `green`, `blue`, `grey`, `turquoise`, `magenta`, `purple`, `carrot`, `raspberry`, `orange`, `grass`, `persian-green`, `sky`, `blueberry`.
+
+  **Supported status colors:**
+  `success`, `processing`, `error`, `warning`, `default`, `approved`, `declined`, `pending`, `active`, `draft`, `deprecated`, `product`.
+
+  Defaults to `grey`.
+---
+
+- position
+- string
+- The position of the badge relative to the label text.
+  Possible values: `before`, `after`.
+  Defaults to `after`.
 
 {% /table %}
 

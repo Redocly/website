@@ -1,4 +1,51 @@
 '@redocly/realm':
+  0.130.0:
+    timestamp: 1770718488000
+    changes:
+      minor:
+        - Added an interactive lightbox viewer for Mermaid diagrams with zoom, pan, and keyboard navigation.
+        - Added bundling support for OpenAPI 3.2 `components/mediaTypes` references used in request and response content.
+        - Added support for branch-specific configuration in `redocly.yaml`.
+        - Transitioned AI Search to agent mode, now featuring expanded search capabilities and direct integration with the Docs MCP.
+        - Made the **403 Forbidden** error page layout ejectable and improved its styling.
+        - Added `login-button` Markdoc tag to render a login button on project pages.
+        - Added `rbac` support for banners to allow conditional visibility based on user team membership.
+        - Added ejectable `DocumentationLayoutTop` and `DocumentationLayoutBottom` to customize component positions in `DocumentationLayout`.
+        - Improved tooltip positioning and performance.
+      patch:
+        - Fixed an issue where project processing could halt indefinitely.
+        - Fixed an issue where downloading large AsyncAPI files would fail.
+        - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
+        - Fixed support for `.redocly.lint-ignore.yaml` in the scorecard.
+        - Fixed an issue where RBAC access control did not apply to schema properties that used `$ref` references.
+        - Updated `@redocly/openapi-core` to version `2.15.2`.
+        - Fixed `id_token` audience validation to support organization ID alongside slug, preventing auth failures after slug changes.
+        - Fixed an issue where extra space in mobile menu and navbar was displayed together with the banner.
+        - Fixed an issue where deep links would open pages in an incorrect position if a banner was present.
+        - Fixed an issue where the **Back to Search** button was displayed when AI Assistant was opened using the **Ask AI** button.
+        - Fixed image alignment in headers.
+        - Fixed language icon rendering issues in API docs.
+        - Fixed an issue where URLs of OpenAPI docs pages could automatically receive `-1` suffixes.
+        - >-
+          Fixed an issue where the mock server returned a 404 error when enabled at the product level but disabled at the root level in
+          `redocly.yaml`.
+        - Fixed an issue in API docs where the discriminators displayed incorrect names.
+        - Fixed an issue where a schema wouldn't be displayed in OpenAPI docs when it was an only item in a `oneOf`.
+        - Added support for `query` in OpenAPI 3.2 and `x-query` in OpenAPI versions earlier than 3.2.
+        - Improved misleading warning for expired plan gates token.
+        - Fixed API docs performance issues in projects that use Markdoc partial tags.
+        - >-
+          Fixed an issue where the **Copy** and **Copy for LLM** buttons were not hidden on OpenAPI endpoint pages that had `excludeFromSearch` option
+          configured.
+        - Fixed an issue where the `llms.txt` page ignored path prefix in links.
+    dependencies:
+      '@redocly/theme': 0.62.0
+      '@redocly/openapi-docs': 3.18.0
+      '@redocly/realm-asyncapi-sdk': 0.8.0
+      '@redocly/asyncapi-docs': 1.7.0
+      '@redocly/graphql-docs': 1.7.0
+      '@redocly/portal-plugin-mock-server': 0.15.0
+      '@redocly/portal-legacy-ui': 0.13.0
   0.130.0-next.12:
     timestamp: 1770708833000
     changes:
@@ -5344,6 +5391,41 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.130.0:
+    timestamp: 1770718488000
+    changes:
+      minor:
+        - Added an interactive lightbox viewer for Mermaid diagrams with zoom, pan, and keyboard navigation.
+        - Added support for branch-specific configuration in `redocly.yaml`.
+        - Transitioned AI Search to agent mode, now featuring expanded search capabilities and direct integration with the Docs MCP.
+        - Made the **403 Forbidden** error page layout ejectable and improved its styling.
+        - Added `login-button` Markdoc tag to render a login button on project pages.
+        - Added `rbac` support for banners to allow conditional visibility based on user team membership.
+        - Added ejectable `DocumentationLayoutTop` and `DocumentationLayoutBottom` to customize component positions in `DocumentationLayout`.
+        - Improved tooltip positioning and performance.
+      patch:
+        - Fixed an issue where project processing could halt indefinitely.
+        - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
+        - Fixed support for `.redocly.lint-ignore.yaml` in the scorecard.
+        - Updated `@redocly/openapi-core` to version `2.15.2`.
+        - Fixed `id_token` audience validation to support organization ID alongside slug, preventing auth failures after slug changes.
+        - Fixed an issue where deep links would open pages in an incorrect position if a banner was present.
+        - Fixed an issue where the **Back to Search** button was displayed when AI Assistant was opened using the **Ask AI** button.
+        - Fixed image alignment in headers.
+        - Fixed language icon rendering issues in API docs.
+        - Fixed an issue where URLs of OpenAPI docs pages could automatically receive `-1` suffixes.
+        - Added support for `query` in OpenAPI 3.2 and `x-query` in OpenAPI versions earlier than 3.2.
+        - Improved misleading warning for expired plan gates token.
+        - Fixed API docs performance issues in projects that use Markdoc partial tags.
+        - Fixed an issue where the `llms.txt` page ignored path prefix in links.
+    dependencies:
+      '@redocly/theme': 0.62.0
+      '@redocly/openapi-docs': 3.18.0
+      '@redocly/realm-asyncapi-sdk': 0.8.0
+      '@redocly/asyncapi-docs': 1.7.0
+      '@redocly/graphql-docs': 1.7.0
+      '@redocly/portal-plugin-mock-server': 0.15.0
+      '@redocly/portal-legacy-ui': 0.13.0
   0.130.0-next.12:
     timestamp: 1770708833000
     changes:
@@ -9851,6 +9933,42 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.130.0:
+    timestamp: 1770718488000
+    changes:
+      minor:
+        - Added an interactive lightbox viewer for Mermaid diagrams with zoom, pan, and keyboard navigation.
+        - Added support for branch-specific configuration in `redocly.yaml`.
+        - Transitioned AI Search to agent mode, now featuring expanded search capabilities and direct integration with the Docs MCP.
+        - Made the **403 Forbidden** error page layout ejectable and improved its styling.
+        - Added `login-button` Markdoc tag to render a login button on project pages.
+        - Added `rbac` support for banners to allow conditional visibility based on user team membership.
+        - Added ejectable `DocumentationLayoutTop` and `DocumentationLayoutBottom` to customize component positions in `DocumentationLayout`.
+        - Improved tooltip positioning and performance.
+      patch:
+        - Fixed an issue where project processing could halt indefinitely.
+        - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
+        - Fixed support for `.redocly.lint-ignore.yaml` in the scorecard.
+        - Updated `@redocly/openapi-core` to version `2.15.2`.
+        - Fixed `id_token` audience validation to support organization ID alongside slug, preventing auth failures after slug changes.
+        - Fixed an issue where extra space in mobile menu and navbar was displayed together with the banner.
+        - Fixed an issue where deep links would open pages in an incorrect position if a banner was present.
+        - Fixed an issue where the **Back to Search** button was displayed when AI Assistant was opened using the **Ask AI** button.
+        - Fixed image alignment in headers.
+        - Fixed language icon rendering issues in API docs.
+        - Fixed an issue where URLs of OpenAPI docs pages could automatically receive `-1` suffixes.
+        - Added support for `query` in OpenAPI 3.2 and `x-query` in OpenAPI versions earlier than 3.2.
+        - Improved misleading warning for expired plan gates token.
+        - Fixed API docs performance issues in projects that use Markdoc partial tags.
+        - Fixed an issue where the `llms.txt` page ignored path prefix in links.
+    dependencies:
+      '@redocly/theme': 0.62.0
+      '@redocly/openapi-docs': 3.18.0
+      '@redocly/realm-asyncapi-sdk': 0.8.0
+      '@redocly/asyncapi-docs': 1.7.0
+      '@redocly/graphql-docs': 1.7.0
+      '@redocly/portal-plugin-mock-server': 0.15.0
+      '@redocly/portal-legacy-ui': 0.13.0
   0.130.0-next.12:
     timestamp: 1770708833000
     changes:
@@ -14348,6 +14466,48 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.130.0:
+    timestamp: 1770718488000
+    changes:
+      minor:
+        - Added bundling support for OpenAPI 3.2 `components/mediaTypes` references used in request and response content.
+        - Added support for branch-specific configuration in `redocly.yaml`.
+        - Transitioned AI Search to agent mode, now featuring expanded search capabilities and direct integration with the Docs MCP.
+        - Improved tooltip positioning and performance.
+        - Added `rbac` support for banners to allow conditional visibility based on user team membership.
+      patch:
+        - Fixed an issue where project processing could halt indefinitely.
+        - Fixed an issue where downloading large AsyncAPI files would fail.
+        - Fixed an issue where project builds could fail due to unset environment variables, despite the variables existing in the cloud environment.
+        - Fixed support for `.redocly.lint-ignore.yaml` in the scorecard.
+        - Fixed an issue where RBAC access control did not apply to schema properties that used `$ref` references.
+        - Updated `@redocly/openapi-core` to version `2.15.2`.
+        - Fixed `id_token` audience validation to support organization ID alongside slug, preventing auth failures after slug changes.
+        - Fixed an issue where deep links would open pages in an incorrect position if a banner was present.
+        - Fixed an issue where the **Back to Search** button was displayed when AI Assistant was opened using the **Ask AI** button.
+        - Fixed image alignment in headers.
+        - Fixed language icon rendering issues in API docs.
+        - Fixed an issue where URLs of OpenAPI docs pages could automatically receive `-1` suffixes.
+        - >-
+          Fixed an issue where the mock server returned a 404 error when enabled at the product level but disabled at the root level in
+          `redocly.yaml`.
+        - Fixed an issue in API docs where the discriminators displayed incorrect names.
+        - Fixed an issue where a schema wouldn't be displayed in OpenAPI docs when it was an only item in a `oneOf`.
+        - Added support for `query` in OpenAPI 3.2 and `x-query` in OpenAPI versions earlier than 3.2.
+        - Improved misleading warning for expired plan gates token.
+        - Fixed API docs performance issues in projects that use Markdoc partial tags.
+        - >-
+          Fixed an issue where the **Copy** and **Copy for LLM** buttons were not hidden on OpenAPI endpoint pages that had `excludeFromSearch` option
+          configured.
+        - Fixed an issue where the `llms.txt` page ignored path prefix in links.
+    dependencies:
+      '@redocly/theme': 0.62.0
+      '@redocly/openapi-docs': 3.18.0
+      '@redocly/realm-asyncapi-sdk': 0.8.0
+      '@redocly/asyncapi-docs': 1.7.0
+      '@redocly/graphql-docs': 1.7.0
+      '@redocly/portal-plugin-mock-server': 0.15.0
+      '@redocly/portal-legacy-ui': 0.13.0
   0.130.0-next.12:
     timestamp: 1770708833000
     changes:
@@ -18888,6 +19048,26 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.62.0:
+    timestamp: 1770718488000
+    changes:
+      minor:
+        - Added an interactive lightbox viewer for Mermaid diagrams with zoom, pan, and keyboard navigation.
+        - Added search to the dropdown in the examples panel for OpenAPI docs.
+        - Transitioned AI Search to agent mode, now featuring expanded search capabilities and direct integration with the Docs MCP.
+        - Made the **403 Forbidden** error page layout ejectable and improved its styling.
+        - Added `login-button` Markdoc tag to render a login button on project pages.
+        - Added `rbac` support for banners to allow conditional visibility based on user team membership.
+        - Added ejectable `DocumentationLayoutTop` and `DocumentationLayoutBottom` to customize component positions in `DocumentationLayout`.
+        - Improved tooltip positioning and performance.
+      patch:
+        - Fixed an issue where extra space in mobile menu and navbar was displayed together with the banner.
+        - Fixed an issue where the **Back to Search** button was displayed when AI Assistant was opened using the **Ask AI** button.
+        - Fixed image alignment in headers.
+        - Fixed language icon rendering issues in API docs.
+        - Fixed an issue where the Card component displayed unintended text underlines when used in React pages.
+        - Added support for `query` in OpenAPI 3.2 and `x-query` in OpenAPI versions earlier than 3.2.
+    dependencies: {}
   0.62.0-next.8:
     timestamp: 1770708833000
     changes:
@@ -21539,6 +21719,22 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.18.0:
+    timestamp: 1770718488000
+    changes:
+      minor:
+        - Added search to the dropdown in the examples panel for OpenAPI docs.
+        - Added bundling support for OpenAPI 3.2 `components/mediaTypes` references used in request and response content.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.15.2`.
+        - Updated the **Security** panel in API docs to display required scopes in line.
+        - Fixed an issue where the **Security** modal in API docs displayed combined information for multiple flows.
+        - Fixed language icon rendering issues in API docs.
+        - Fixed an issue in API docs where the discriminators displayed incorrect names.
+        - Fixed an issue where a schema wouldn't be displayed in OpenAPI docs when it was an only item in a `oneOf`.
+        - Added support for `query` in OpenAPI 3.2 and `x-query` in OpenAPI versions earlier than 3.2.
+    dependencies:
+      '@redocly/replay': 0.21.0
   3.18.0-next.11:
     timestamp: 1770708833000
     changes:
@@ -24831,6 +25027,14 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.7.0:
+    timestamp: 1770718488000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where deep links would open pages in an incorrect position if a banner was present.
+    dependencies:
+      '@redocly/theme': 0.62.0
   1.7.0-next.3:
     timestamp: 1770708833000
     changes:
@@ -26134,6 +26338,12 @@
         - Redocly Mock Server release
     dependencies: {}
 '@redocly/portal-legacy-ui':
+  0.13.0:
+    timestamp: 1770718488000
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   0.13.0-next.0:
     timestamp: 1768390370000
     changes:
@@ -26316,6 +26526,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.13.0:
+    timestamp: 1770718488000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.130.0
+      '@redocly/redoc': 0.130.0
+      '@redocly/redoc-reef': 0.130.0
+      '@redocly/redoc-revel': 0.130.0
+      '@redocly/theme': 0.62.0
   1.13.0-next.12:
     timestamp: 1770708833000
     changes:
@@ -30964,6 +31185,16 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.15.0:
+    timestamp: 1770718488000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where the mock server returned a 404 error when enabled at the product level but disabled at the root level in
+          `redocly.yaml`.
+    dependencies:
+      '@redocly/openapi-docs': 3.18.0
   0.15.0-next.11:
     timestamp: 1770708833000
     changes:
@@ -33538,6 +33769,17 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.21.0:
+    timestamp: 1770718488000
+    changes:
+      minor:
+        - Improved editing experience for Replay's URL input.
+        - Added support for downloading files from the response body in Replay.
+        - Improved editing experience for Replay's input fields.
+      patch:
+        - Added support for `query` in OpenAPI 3.2 and `x-query` in OpenAPI versions earlier than 3.2.
+    dependencies:
+      '@redocly/theme': 0.62.0
   0.21.0-next.11:
     timestamp: 1770708833000
     changes:
@@ -35332,6 +35574,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.13.0:
+    timestamp: 1770718488000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.62.0
   0.13.0-next.8:
     timestamp: 1770708833000
     changes:
@@ -36883,6 +37132,15 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.7.0:
+    timestamp: 1770718488000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where deep links would open pages in an incorrect position if a banner was present.
+    dependencies:
+      '@redocly/theme': 0.62.0
+      '@redocly/openapi-docs': 3.18.0
   1.7.0-next.11:
     timestamp: 1770708833000
     changes:
