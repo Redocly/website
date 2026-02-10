@@ -24188,6 +24188,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.42.0:
+    timestamp: 1770706337000
+    changes:
+      minor:
+        - Added `rbac` support for banners to allow conditional visibility based on user team membership.
+      patch: []
+    dependencies: {}
   0.41.4:
     timestamp: 1769783750000
     changes:
