@@ -1,0 +1,10 @@
+# @chunk {"steps": ["team-entity"]}
+type: team
+key: commerce-team
+title: Commerce Team
+summary: Team responsible for all commerce-related services.
+# @chunk-end
+# @chunk {"steps": ["team-entity"]}
+metadata:
+  department: Engineering
+# @chunk-end

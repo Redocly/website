@@ -1,0 +1,4 @@
+type: array
+maxItems: 100
+items:
+  $ref: ./CatalogEntityCreate.yaml

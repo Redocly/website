@@ -1,0 +1,22 @@
+type: object
+properties:
+  status:
+    description: Status of single operation.
+    type: string
+    enum: ['error']
+    example: 'error'
+    readOnly: true
+  error:
+    description: Error message.
+    type: string
+    example: Internal server error
+    readOnly: true
+  key:
+    description: Key of the entity that failed.
+    type: string
+    example: 'entity1'
+    readOnly: true
+required:
+  - status
+  - error
+  - key

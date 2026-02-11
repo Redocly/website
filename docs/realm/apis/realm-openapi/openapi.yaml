@@ -1,0 +1,51 @@
+openapi: 3.1.0
+servers:
+  - url: https://{host}
+    variables:
+      host:
+        default: realm.redocly.com
+        description: Server host.
+    description: Production main server.
+info:
+  title: Realm
+  version: 1.0.0
+  description: API for Realm service.
+  termsOfService: https://redocly.com/subscription-agreement
+  license:
+    name: Redocly
+    url: https://redocly.com/subscription-agreement
+
+security:
+  - ApiKey: []
+tags:
+  - name: health
+    description: Health check operations.
+  - name: Entities
+    description: Catalog entities operations.
+  - name: BFF Entities
+    description: Catalog entities for frontend operations.
+  - name: Entity relations
+    description: Catalog entities relations operations.
+
+paths:
+  /catalog-entities:
+    $ref: ./paths/catalog-entities/catalog-entities.yaml
+  /catalog-entities/{catalogEntityId}:
+    $ref: ./paths/catalog-entities/catalog-entity.yaml
+  /bff/catalog-entities:
+    $ref: ./paths/bff/catalog-entities/catalog-entities.yaml
+  /bff/catalog-entities/{catalogEntityKey}:
+    $ref: ./paths/bff/catalog-entities/catalog-entity.yaml
+  /bff/catalog-related-entities/{catalogEntityKey}:
+    $ref: ./paths/bff/catalog-related-entities/catalog-related-entities.yaml
+  /bff/catalog-revisions/{catalogEntityKey}:
+    $ref: ./paths/bff/catalog-revisions/catalog-revisions.yaml
+  /catalog-entities-relations:
+    $ref: ./paths/catalog-entities-relations/catalog-entities-relations.yaml
+  /catalog-entities-relations/{catalogEntityRelationId}:
+    $ref: ./paths/catalog-entities-relations/catalog-entity-relation.yaml
+
+components:
+  securitySchemes:
+    ApiKey:
+      $ref: ./security/ApiKey.yaml

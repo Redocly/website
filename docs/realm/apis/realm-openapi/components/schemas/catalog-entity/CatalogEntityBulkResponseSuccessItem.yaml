@@ -1,0 +1,13 @@
+type: object
+properties:
+  status:
+    description: Status of single operation.
+    type: string
+    enum: ['ok']
+    example: 'ok'
+    readOnly: true
+  resource:
+    $ref: CatalogEntity.yaml
+required:
+  - status
+  - resource

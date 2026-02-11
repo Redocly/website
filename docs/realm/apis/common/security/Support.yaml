@@ -1,0 +1,4 @@
+type: apiKey
+in: cookie
+name: accessToken
+description: Custom check for allowed emails based on the user's email stored in the session.

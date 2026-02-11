@@ -1,0 +1,8 @@
+name: catalogEntityKey
+description: Key of the catalog entity.
+required: true
+in: path
+schema:
+  type: string
+  description: Unique key for the entity.
+example: my-service-1

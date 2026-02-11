@@ -1,0 +1,17 @@
+# @chunk {"steps": ["multiple-entities"]}
+- type: service
+  key: payment-service
+  title: Payment Service
+  summary: Processes payments and refunds.
+  tags:
+    - payments
+    - billing
+
+- type: service
+  key: inventory-service
+  title: Inventory Service
+  summary: Manages product inventory and stock levels.
+  tags:
+    - inventory
+    - warehouse
+# @chunk-end

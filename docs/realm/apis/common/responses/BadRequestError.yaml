@@ -1,0 +1,6 @@
+description: Bad Request.
+content:
+  application/problem+json:
+    schema:
+      description: Invalid credentials.
+      $ref: ../errors/Problem.yaml

@@ -1,0 +1,95 @@
+get:
+  tags:
+    - Entity relations
+  security:
+    - ApiKey: []
+  summary: Get entity relation
+  x-internal: true
+  x-catalog-relations:
+    - type: ownedBy
+      key: to-the-moon
+  description: Retrieve a specific catalog entity relation by ID.
+  operationId: getEntityRelation
+  parameters:
+    - $ref: ../../components/parameters/path/CatalogEntityRelationId.yaml
+  responses:
+    '200':
+      description: Successfully retrieved catalog entity.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/catalog-entity-relation/CatalogEntityRelation.yaml
+    '401':
+      $ref: '../../../common/responses/UnauthorizedError.yaml'
+    '403':
+      $ref: '../../../common/responses/ForbiddenError.yaml'
+    '404':
+      $ref: '../../../common/responses/NotFoundError.yaml'
+    '500':
+      $ref: ../../../common/responses/InternalServerError.yaml
+
+patch:
+  tags:
+    - Entity relations
+  security:
+    - ApiKey: []
+  summary: Update catalog entity relation
+  x-internal: true
+  x-catalog-relations:
+    - type: ownedBy
+      key: to-the-moon
+  description: Update an existing catalog entity relation.
+  operationId: updateEntityRelation
+  parameters:
+    - $ref: ../../components/parameters/path/CatalogEntityRelationId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/catalog-entity-relation/CatalogEntityRelation.yaml
+  responses:
+    '200':
+      description: Successfully updated catalog entity relation.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/catalog-entity-relation/CatalogEntityRelation.yaml
+    '400':
+      $ref: '../../../common/responses/BadRequestError.yaml'
+    '401':
+      $ref: '../../../common/responses/UnauthorizedError.yaml'
+    '403':
+      $ref: '../../../common/responses/ForbiddenError.yaml'
+    '404':
+      $ref: '../../../common/responses/NotFoundError.yaml'
+    '409':
+      $ref: '../../../common/responses/ConflictError.yaml'
+    '500':
+      $ref: ../../../common/responses/InternalServerError.yaml
+
+delete:
+  tags:
+    - Entity relations
+  security:
+    - ApiKey: []
+  summary: Delete catalog entity relation
+  x-internal: true
+  x-catalog-relations:
+    - type: ownedBy
+      key: to-the-moon
+  description: Delete a specific catalog entity relation.
+  operationId: deleteEntityRelation
+  parameters:
+    - $ref: ../../components/parameters/path/CatalogEntityRelationId.yaml
+  responses:
+    '204':
+      description: Successfully deleted catalog entity relation.
+    '401':
+      $ref: '../../../common/responses/UnauthorizedError.yaml'
+    '403':
+      $ref: '../../../common/responses/ForbiddenError.yaml'
+    '404':
+      $ref: '../../../common/responses/NotFoundError.yaml'
+    '500':
+      $ref: ../../../common/responses/InternalServerError.yaml

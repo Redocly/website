@@ -1,0 +1,8 @@
+name: after
+in: query
+required: false
+schema:
+  type: string
+  description: |-
+    Use the `endCursor` as a value for the `after` parameter to get the next page.
+example: a25fgaksjf23la==

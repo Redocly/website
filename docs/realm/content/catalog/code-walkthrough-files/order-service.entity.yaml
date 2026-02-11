@@ -1,0 +1,41 @@
+# @chunk {"steps": ["basic-info"]}
+type: service
+key: order-service
+title: Order Service
+# @chunk-end
+# @chunk {"steps": ["summary-tags"]}
+summary: Handles order processing, payments, and fulfillment.
+tags:
+  - commerce
+  - payments
+# @chunk-end
+# @chunk {"steps": ["version"]}
+version: '1.0.0'
+# @chunk-end
+# @chunk {"steps": ["metadata"]}
+metadata:
+  repository: https://github.com/example/order-service
+  language: Go
+  status: production
+# @chunk-end
+# @chunk {"steps": ["contact"]}
+contact:
+  slack:
+    channels:
+      - name: order-support
+        url: https://slack.com/channels/order-support
+# @chunk-end
+# @chunk {"steps": ["links"]}
+links:
+  - label: API Reference
+    url: /api-docs/orders.yaml
+  - label: Documentation
+    url: /docs/order-service/
+# @chunk-end
+# @chunk {"steps": ["relations"]}
+relations:
+  - type: dependsOn
+    key: payment-service
+  - type: ownedBy
+    key: commerce-team
+# @chunk-end

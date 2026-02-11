@@ -1,0 +1,14 @@
+type: object
+description: DTO used to create a catalog entity relation.
+required:
+  - type
+  - key
+properties:
+  type:
+    type: string
+    description: Relation type from source to target.
+    example: memberOf
+  key:
+    type: string
+    description: Key of the second entity.
+    example: my-team

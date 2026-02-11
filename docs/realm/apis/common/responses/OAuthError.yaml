@@ -1,0 +1,15 @@
+description: OAuth2 RFC compliant error response.
+content:
+  application/problem+json:
+    schema:
+      type: object
+      title: OAuth error
+      description: OAuth2 RFC compliant error.
+      properties:
+        error:
+          type: string
+          format: uri-reference
+          description: Error code.
+          example: 'invalid_client'
+      required:
+        - error

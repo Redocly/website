@@ -1,0 +1,6 @@
+type: apiKey
+description: |-
+  API key is required to access API.
+  You can create your API key by visiting Reunite and clicking on the "API Keys" page.
+in: header
+name: apiKey

@@ -1,0 +1,36 @@
+get:
+  tags:
+    - BFF Entities
+  security: []
+  summary: Get entity for frontend
+  x-internal: true
+  x-catalog-relations:
+    - type: ownedBy
+      key: to-the-moon
+  description: Retrieve a specific catalog entity for frontend by entity key. When the revision query parameter is provided, returns that specific revision of the entity; otherwise returns the current revision.
+  operationId: getBffCatalogEntity
+  parameters:
+    - $ref: ../../../components/parameters/path/CatalogEntityKey.yaml
+    - name: revision
+      in: query
+      required: false
+      description: Optional revision identifier (ISO 8601 date-time string) to retrieve a specific revision of the entity.
+      schema:
+        type: string
+        format: date-time
+      example: '2023-01-01T12:00:00Z'
+  responses:
+    '200':
+      description: Successfully retrieved catalog entity for frontend.
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/schemas/bff/catalog-entity/BffCatalogEntity.yaml
+    '401':
+      $ref: '../../../../common/responses/UnauthorizedError.yaml'
+    '403':
+      $ref: '../../../../common/responses/ForbiddenError.yaml'
+    '404':
+      $ref: '../../../../common/responses/NotFoundError.yaml'
+    '500':
+      $ref: '../../../../common/responses/InternalServerError.yaml'
