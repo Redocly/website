@@ -1,0 +1,1076 @@
+openapi: 3.2.0
+info:
+  title: Redocly Cafe
+  description: |
+    REST API for managing cafe operations.
+  version: 1.0.0
+  contact:
+    email: team@redocly.com
+    url: https://redocly.com/contact-us/
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  termsOfService: https://redocly.com/subscription-agreement
+
+servers:
+  - url: http://localhost:4096
+    description: Local server
+  - url: https://api.coffeeshop.com/v1
+    description: Production server
+  - url: https://staging-api.cafe.com/v1
+    description: Stage server
+
+
+tags:
+  - name: Products
+    description: Operations related to products.
+  - name: Orders
+    description: Order management operations.
+  - name: Auth
+    description: Authentication operations.
+  - name: Stats
+    description: Statistics operations.
+
+paths:
+  /menu:
+    get:
+      tags:
+        - Products
+      summary: List menu items
+      description: Retrieve a collection of menu items with optional filtering and pagination.
+      operationId: listMenuItems
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/After'
+        - $ref: '#/components/parameters/Before'
+        - $ref: '#/components/parameters/Sort'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/Search'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MenuItemList'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+    post:
+      tags:
+        - Products
+      summary: Create menu item
+      description: Create a new menu item.
+      operationId: createMenuItem
+      security:
+        - OAuth2: ['menu:write']
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MenuItem'
+      responses:
+        '201':
+          description: Menu item created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MenuItem'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /menu/{menuItemId}:
+    parameters:
+      - $ref: '#/components/parameters/MenuItemId'
+
+    delete:
+      tags:
+        - Products
+      summary: Delete menu item
+      description: Delete an existing menu item.
+      operationId: deleteMenuItem
+      security:
+        - OAuth2: ['menu:write']
+      responses:
+        '204':
+          description: Menu item deleted successfully.
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /menu-item-images/{menuItemId}:
+    parameters:
+      - $ref: '#/components/parameters/MenuItemId'
+
+    get:
+      operationId: getMenuItemPhoto
+      summary: Get menu item photo
+      description: Retrieve the product photo image for a specific menu item.
+      security: []
+      tags:
+        - Products
+      parameters:
+        - $ref: '#/components/parameters/PhotoSize'
+      responses:
+        '200':
+          description: Menu item photo retrieved successfully.
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+            text/plain:
+              schema: 
+                description: Alternative image text.
+                type: string
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /orders:
+    get:
+      tags:
+        - Orders
+      summary: List orders
+      description: Retrieve a collection of orders with optional filtering and pagination.
+      operationId: listOrders
+      security:
+        - OAuth2: ['orders:read']
+      parameters:
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/Sort'
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/After'
+        - $ref: '#/components/parameters/Before'
+        - $ref: '#/components/parameters/Search'
+        
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderList'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+    post:
+      tags:
+        - Orders
+      summary: Create order
+      description: |
+        Create a new order.
+        Order items cannot be changed - if they need to be updated, the order should be canceled and a new one placed.
+        Orders cannot be deleted, only canceled.
+      operationId: createOrder
+      security:
+        - OAuth2: ['orders:write']
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerName:
+                  type: string
+                  description: |
+                    Name of the customer who placed the order.
+                    Must start and end with a letter, and can contain letters, spaces, hyphens, and apostrophes (e.g., "John Doe", "Mary-Jane", "O'Brien").
+                orderItems:
+                  type: array
+                  description: List of items to include in the order.
+                  minItems: 1
+                  items:
+                    type: object
+                    properties:
+                      menuItemId:
+                        type: string
+                        description: ID of the menu item to add to the order.
+                      quantity:
+                        type: integer
+                        minimum: 1
+                        description: Quantity of the menu item.
+                      discount:
+                        type: integer
+                        minimum: 0
+                        description: Discount amount in cents (absolute value).
+                        default: 0
+                      comment:
+                        type: string
+                        maxLength: 500
+                        description: Optional comment for the order item (e.g., "No sugar").
+                    required:
+                      - menuItemId
+                      - quantity
+              required:
+                - customerName
+                - orderItems
+      responses:
+        '201':
+          description: Order placed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /orders/{orderId}:
+    get:
+      tags:
+        - Orders
+      summary: Get order by ID
+      description: Retrieve a single order by its ID.
+      operationId: getOrderById
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/OrderId'
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+    patch:
+      tags:
+        - Orders
+      summary: Update order
+      description: |
+        Update an existing order status.
+        Order items cannot be changed - if they need to be updated, the order should be canceled and a new one placed.
+      operationId: updateOrder
+      security:
+        - OAuth2: ['orders:write']
+      parameters:
+        - $ref: '#/components/parameters/OrderId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Partial order update using JSON Merge Patch - only include fields to update.
+              properties:
+                status:
+                  type: string
+                  enum: [placed, preparing, completed, canceled]
+              required:
+                - status
+      responses:
+        '200':
+          description: Order updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+    delete:
+      tags:
+        - Orders
+      summary: Cancel order
+      description: |
+        Cancel the order.
+        Orders cannot be deleted, only canceled.
+      operationId: cancelOrder
+      security:
+        - OAuth2: ['orders:write']
+      parameters:
+        - $ref: '#/components/parameters/OrderId'
+      responses:
+        '204':
+          description: Order status updated successfully.
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':  
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /order-items:
+    get:
+      tags:
+        - Orders
+      summary: List order items
+      description: |
+        Returns an array of order items for a specific order.
+        Use the `filter` parameter to filter by order ID.
+      operationId: listOrderItems
+      security:
+        - OAuth2: ['orders:read']
+      parameters:
+        - name: filter
+          description: |-
+            Filters the collection items. This field requires a special format.
+          in: query
+          required: true
+          schema:
+            type: string
+          example: orderId:order_1234567890
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                type: array
+                description: List of menu items that are part of the order.
+                items:
+                  $ref: '#/components/schemas/OrderItem'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /revenue:
+    get:
+      tags:
+        - Stats
+      summary: Get revenue statistics
+      description: |
+        Retrieve revenue statistics for a configurable date range.
+        Returns revenue, order counts, average order amount, and other useful statistics.
+      operationId: getRevenue
+      security:
+        - ApiKey: []
+      parameters:
+        - name: startDate
+          in: query
+          required: false
+          description: Start date for the revenue calculation period (ISO 8601 datetime format). Defaults to 30 days ago if not provided.
+          schema:
+            type: string
+            format: date-time
+          example: '2024-01-01T00:00:00Z'
+        - name: endDate
+          in: query
+          required: false
+          description: End date for the revenue calculation period (ISO 8601 datetime format). Defaults to current time if not provided.
+          schema:
+            type: string
+            format: date-time
+          example: '2024-01-31T23:59:59Z'
+      responses:
+        '200':
+          description: Revenue statistics retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RevenueStatistics'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  
+  /oauth2/register:
+    post:
+      tags:
+        - Auth
+      summary: Create OAuth2 client
+      description: |
+        Register a new OAuth2 client for dynamic client registration. 
+        This endpoint implements the Dynamic Client Registration Protocol (RFC 7591), 
+        using camelCase field names instead of the RFC's snake_case convention 
+        (e.g., `redirectUris` instead of `redirect_uris`, `grantTypes` instead of `grant_types`).
+        
+        The `name` field is required. Other fields are optional. If not provided:
+        - `redirectUris` defaults to an empty array. Note: When using the `authorization_code` grant type, 
+          `redirectUris` must be provided (per RFC 7591 Section 2).
+        - `scopes` defaults to all available scopes (menu:read, menu:write, orders:read, orders:write)
+        - `grantTypes` defaults to both supported grant types (authorization_code, client_credentials)
+        
+        Returns the registered client information per RFC 7591, including:
+        - `clientId` and `clientSecret` (must be stored securely)
+        - `clientIdIssuedAt` and `clientSecretExpiresAt` timestamps
+        - All registered client metadata (name, redirectUris, scopes, grantTypes)
+      operationId: registerOAuth2Client
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterClientObject'
+      responses:
+        '201':
+          description: OAuth2 client registered successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OAuth2Client'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+          
+webhooks:
+  order-notification:
+    post:
+      tags:
+        - Orders
+      operationId: orderNotificationWebhook
+      security: []
+      summary: Order notification webhook
+      description: Webhook triggered when a new order is placed.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderNotification'
+      responses:
+        '200':
+          description: Webhook received successfully.
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: OAuth2 authentication for API access.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://auth.cafe.com/oauth2/authorize
+          tokenUrl: https://auth.cafe.com/oauth2/token
+          scopes:
+            menu:read: Read access to menu items and images
+            menu:write: Write access to menu items (create, delete)
+            orders:read: Read access to orders
+            orders:write: Write access to orders (create, update, delete)
+        clientCredentials:
+          tokenUrl: https://auth.cafe.com/oauth2/token
+          scopes:
+            menu:read: Read access to menu items and images
+            menu:write: Write access to menu items (create, delete)
+            orders:read: Read access to orders
+            orders:write: Write access to orders (create, update, delete)
+    ApiKey:
+      type: apiKey
+      name: X-API-Key
+      in: header
+      description: API key for internal operations.
+
+  parameters:
+    OrderId:
+      name: orderId
+      in: path
+      description: ID of the order to retrieve.
+      required: true
+      schema:
+        type: string
+        pattern: '^order_[0-9abcdefghjkmnpqrstvwxyz]{26}$'
+    PhotoSize:
+      name: photoSize
+      in: query
+      description: Photo size to retrieve.
+      required: false
+      schema:
+        type: string
+        enum: [thumbnail, medium, large]
+        default: medium
+    MenuItemId:
+      name: menuItemId
+      in: path
+      description: ID of the menu item to retrieve.
+      required: true
+      schema:
+        type: string
+        pattern: '^product_[0-9abcdefghjkmnpqrstvwxyz]{26}$'
+    Filter:
+      name: filter
+      description: |-
+        Filters the collection items. This field requires a special format.
+      in: query
+      required: false
+      schema:
+        type: string
+      example: orderId:order_1234567890
+    Sort:
+      name: sort
+      description: |-
+        To sort by id in descending order use `-id`.
+        To sort by id in ascending order use `id`.
+      in: query
+      required: false
+      schema:
+        type: string
+      example: -name
+    Limit:
+      name: limit
+      description: |-
+        Use to return a number of results per page.
+        If there is more data, use in combination with `after` to page through the data.
+      in: query
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 10
+      example: 10
+    After:
+      name: after
+      in: query
+      required: false
+      description: |-
+        Use the `endCursor` as a value for the `after` parameter to get the next page.
+      schema:
+        type: string
+      example: a25fgaksjf23la==
+    Before:
+      name: before
+      in: query
+      required: false
+      description: |-
+        Use the `startCursor` as a value for the `before` parameter to get the next page.
+      schema:
+        type: string
+      example: bfg23aksjf23zb1==
+    Search:
+      name: search
+      in: query
+      description: Search.
+      required: false
+      schema:
+        type: string
+      example: text-to-search
+
+  schemas:
+    MenuItem:
+      type: object
+      properties:
+        createdAt:
+          description: Created date.
+          type: string
+          format: date-time
+          readOnly: true
+        updatedAt:
+          description: Updated date.
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          description: Menu item ID. Unique identifier prefixed with 'product_'.
+          type: string
+          readOnly: true
+        object:
+          description: Entity name.
+          type: string
+          const: menuItem
+          readOnly: true
+        name:
+          description: Menu item name. Must be lowercase letters, optionally hyphenated.
+          type: string
+          pattern: '^[a-z]+(-[a-z]+)*$'
+          minLength: 1
+          maxLength: 50
+          examples:
+            - coffee
+            - tea
+            - cake
+            - ice-cream
+        price:
+          description: Price in cents.
+          type: integer
+          minimum: 0
+        photo:
+          writeOnly: true
+          type: [string, 'null']
+          format: binary
+          description: Photo of the menu item. Must be a PNG image and less than 1MB.
+        photoTextDescription:
+          writeOnly: true
+          type: [string, 'null']
+        category:
+          description: Menu item category.
+          type: string
+          enum: [beverage, dessert]
+      discriminator:
+        propertyName: category
+        mapping:
+          beverage: '#/components/schemas/Beverage'
+          dessert: '#/components/schemas/Dessert'
+      required:
+        - id
+        - name
+        - category
+        - price
+        - createdAt
+        - updatedAt
+        - object
+
+    Beverage:
+      allOf:
+        - $ref: '#/components/schemas/MenuItem'
+        - type: object
+          properties:
+            size:
+              type: number
+              minimum: 0
+              description: Size in milliliters.
+              exclusiveMinimum: 0
+            containsCaffeine:
+              type: boolean
+              description: Indicates if the beverage contains caffeine.
+          required:
+            - size
+            - containsCaffeine
+
+    Dessert:
+      allOf:
+        - $ref: '#/components/schemas/MenuItem'
+        - type: object
+          properties:
+            calories:
+              type: number
+              minimum: 0
+              exclusiveMinimum: 0
+              description: Amount of calories.
+          required:
+            - calories
+
+    MenuItemList:
+      type: object
+      properties:
+        object:
+          type: string
+          const: list
+          description: Entity name.
+        page:
+          $ref: '#/components/schemas/Page.yaml'
+        items:
+          type: array
+          minItems: 0
+          items:
+            $ref: '#/components/schemas/MenuItem'
+      required:
+        - object
+        - page
+        - items
+
+    OrderItem:
+      type: object
+      properties:
+        menuItem:
+          $ref: '#/components/schemas/MenuItem'
+          description: Menu item that is part of the order.
+        quantity:
+          type: integer
+          minimum: 1
+          description: Quantity of the menu item.
+        discount:
+          type: integer
+          minimum: 0
+          description: Discount amount in cents (absolute value).
+          default: 0
+        comment:
+          type: string
+          maxLength: 500
+          description: Optional comment for the order item (e.g., "No sugar").
+      required:
+        - menuItem
+        - quantity
+
+    Order:
+      type: object
+      title: Order
+      properties:
+          id:
+            description: Order ID. Unique identifier prefixed with 'order_'.
+            type: string
+            readOnly: true
+          object:
+            description: Entity name.
+            type: string
+            const: order
+            readOnly: true
+          customerName:
+            description: Name of the customer who placed the order. Must start and end with a letter, and can contain letters, spaces, hyphens, and apostrophes.
+            type: string
+            pattern: '^[A-Za-z]+(?:[\s''-][A-Za-z]+)*$'
+            minLength: 1
+            maxLength: 100
+            examples:
+              - John Doe
+              - Mary-Jane
+              - O'Brien
+              - Jean-Pierre
+          status:
+            description: Order status.
+            type: string
+            enum: [placed, preparing, completed, canceled]
+          totalPrice:
+            description: Total order price in cents.
+            type: integer
+            minimum: 0
+            readOnly: true
+          createdAt:
+            description: Created date.
+            type: string
+            format: date-time
+            readOnly: true
+          updatedAt:
+            description: Updated date.
+            type: string
+            format: date-time
+            readOnly: true
+          orderItemIds:
+            description: List of order item IDs.
+            type: array
+            writeOnly: true
+            items:
+              type: string
+      required:
+          - id
+          - status
+          - totalPrice
+          - createdAt
+          - updatedAt
+          - customerName
+          - object
+
+    OrderList:
+      type: object
+      properties:
+        object:
+          type: string
+          const: list
+          description: Entity name.
+        page:
+          $ref: '#/components/schemas/Page.yaml'
+        items:
+          type: array
+          minItems: 0
+          items:
+            $ref: '#/components/schemas/Order'
+      required:
+        - object
+        - page
+        - items
+
+    OrderNotification:
+      type: object
+      required:
+        - orderId
+        - eventType
+        - timestamp
+      properties:
+        orderId:
+          type: string
+          description: Unique order identifier.
+        eventType:
+          type: string
+          enum: [order_placed, order_preparing, order_completed, order_canceled]
+          description: Type of order event.
+        timestamp:
+          type: string
+          format: date-time
+          description: When the event occurred.
+
+    Page.yaml:
+      type: object
+      properties:
+        endCursor:
+          type:
+            - string
+            - 'null'
+          description: |-
+            Use with the `after` query parameter to load the next page of data.
+            When `null`, there is no data.
+            The cursor is opaque and internal structure is subject to change.
+        startCursor:
+          type:
+            - string
+            - 'null'
+          description: |-
+            Use with the `before` query parameter to load the previous page of data.
+            When `null`, there is no data.
+            The cursor is opaque and internal structure is subject to change.
+        hasNextPage:
+          type: boolean
+          description: Indicates if there is a next page with items.
+        hasPrevPage:
+          type: boolean
+          description: Indicates if there is a previous page with items.
+        limit:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 10
+          description: Value showing how many items are in the page limit.
+        total:
+          type: integer
+          description: Count of items across all pages.
+          minimum: 0
+      required:
+        - endCursor
+        - startCursor
+        - hasNextPage
+        - hasPrevPage
+        - limit
+        - total
+
+    RevenueStatistics:
+      type: object
+      description: Revenue statistics for a given date range.
+      properties:
+        revenue:
+          type: number
+          format: float
+          description: Total revenue in cents from completed orders.
+          minimum: 0
+        averageOrderAmount:
+          type: number
+          format: float
+          description: Average order amount in cents (calculated from completed orders only).
+          minimum: 0
+        totalOrders:
+          type: integer
+          description: Total number of orders (all statuses) in the date range.
+          minimum: 0
+        placedOrders:
+          type: integer
+          description: Number of placed orders.
+          minimum: 0
+        preparingOrders:
+          type: integer
+          description: Number of preparing orders.
+          minimum: 0
+        completedOrders:
+          type: integer
+          description: Number of completed orders.
+          minimum: 0
+        canceledOrders:
+          type: integer
+          description: Number of canceled orders.
+          minimum: 0
+        startDate:
+          type: string
+          format: date-time
+          description: Start date of the revenue calculation period.
+        endDate:
+          type: string
+          format: date-time
+          description: End date of the revenue calculation period.
+      required:
+        - revenue
+        - averageOrderAmount
+        - totalOrders
+        - placedOrders
+        - preparingOrders
+        - completedOrders
+        - canceledOrders
+        - startDate
+        - endDate
+
+    Error:
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri-reference
+          description: URI reference that identifies the problem type.
+          default: 'about:blank'
+        title:
+          type: string
+          description: Short summary of the problem type.
+        status:
+          type: integer
+          format: int32
+          description: HTTP status code generated by the origin server for this occurrence of the problem.
+          minimum: 100
+          exclusiveMaximum: 600
+        code:
+          description: Error code.
+          type: string
+        message:
+          description: Human-readable error message.
+          type: string
+        details:
+          description: Additional error details.
+          type: object
+          additionalProperties: true
+      required:
+        - type
+        - title
+        - status
+        - code
+        - message
+
+    RegisterClientObject:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Client name.
+        redirectUris:
+          type: array
+          items:
+            type: string
+            format: uri
+          description: List of redirect URIs (optional, defaults to empty array).
+        scopes:
+          type: array
+          items:
+            type: string
+            enum: [menu:read, menu:write, orders:read, orders:write]
+          description: List of scopes.
+        grantTypes:
+          type: array
+          items:
+            type: string
+            enum: [authorization_code, client_credentials]
+          description: List of grant types.
+      required:
+        - name
+ 
+    OAuth2Client:
+      type: object
+      description: |
+        OAuth2 client registration response. Per RFC 7591, includes the client identifier, 
+        secret, timestamps, and all registered client metadata.
+      properties:
+        clientId:
+          type: string
+          description: Client identifier issued by the authorization server.
+        clientSecret:
+          type: string
+          description: Client secret issued by the authorization server.
+        clientIdIssuedAt:
+          type: integer
+          format: int64
+          description: Time when the client_id is issued, represented as seconds since epoch (RFC 7591).
+        clientSecretExpiresAt:
+          type: integer
+          format: int64
+          description: Time at which the client_secret expires, represented as seconds since epoch. 0 indicates the secret does not expire (RFC 7591).
+        registrationClientUri:
+          type: string
+          format: uri
+          description: URL of the client configuration endpoint for managing this client registration (RFC 7592).
+        registrationAccessToken:
+          type: string
+          description: Access token to be used at the client configuration endpoint for managing this client registration (RFC 7592).
+        name:
+          type: string
+          description: Client name (registered metadata).
+        redirectUris:
+          type: array
+          items:
+            type: string
+            format: uri
+          description: List of redirect URIs (registered metadata).
+        scopes:
+          type: array
+          items:
+            type: string
+            enum: [menu:read, menu:write, orders:read, orders:write]
+          description: List of scopes (registered metadata).
+        grantTypes:
+          type: array
+          items:
+            type: string
+            enum: [authorization_code, client_credentials]
+          description: List of grant types (registered metadata).
+      required:
+        - clientId
+        - clientSecret
+        - clientIdIssuedAt
+        - clientSecretExpiresAt
+  responses:
+    BadRequest:
+      description: Bad request - invalid input parameters.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized - authentication required.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: Forbidden - insufficient permissions.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    InternalServerError:
+      description: Internal server error.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Conflict:
+      description: Conflict - entity already exists.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Error'
