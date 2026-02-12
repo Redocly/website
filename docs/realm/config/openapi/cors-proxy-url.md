@@ -9,7 +9,7 @@ plans:
 ---
 # `corsProxyUrl`
 
-The `corsProxyUrl` option controls which proxy Replay uses for cross-origin requests.
+The `corsProxyUrl` option allows using a custom CORS proxy server.
 
 {% admonition type="info" %}
 {% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "corsProxyUrl"} /%}
@@ -27,19 +27,18 @@ The `corsProxyUrl` option controls which proxy Replay uses for cross-origin requ
 
 - corsProxyUrl
 - string
-- Optional. By default, Realm uses its internal proxy endpoint (`/_api/cors/`).
-  Set this option to override the proxy URL (for example, to use your own external proxy service).
+- The value can be the Redocly CORS proxy URL (https://cors.redoc.ly) or the URL of a custom CORS proxy server.
 
 
 {% /table %}
 
 ## Examples
 
-Override the default proxy URL in your Redocly configuration file.
+Modify the value of the corsProxyUrl option in the Redocly configuration file.
 
 ```yaml {% title="redocly.yaml" %}
 openapi:
-  corsProxyUrl: https://proxy.example.com/
+  corsProxyUrl: https://cors.redoc.ly
 ```
 
 ## Resources

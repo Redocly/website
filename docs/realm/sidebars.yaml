@@ -432,6 +432,9 @@
         - page: customization/mcp-server/index.md
           label: Overview
 
+    - page: customization/search-api.md
+      label: Search API
+
 - group: Access
   icon: lock
   page: access/index.md
