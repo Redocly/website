@@ -40351,3 +40351,28 @@ replay:
       patch:
         - Fixed step opening behavior after saving to a collection.
     dependencies: {}
+  0.14.0:
+    timestamp: 1770830040000
+    changes:
+      minor:
+        - Adjusted side panel's minimum size to respond to screen size changes in `Try it`.
+        - Updated the design of the History tab in `Replay`.
+        - Added operation name to the request header and to the tab name in Replay.
+        - Updated disabled state styling for the URL input field in Replay.
+        - Added support for OpenAPI 3.2 Sequential and Streaming Data.
+        - Added support for importing HTTP requests from `curl` commands using the paste modal in Replay.
+        - Added helpful tooltip to disabled `Send request` button in `Try it`.
+      patch:
+        - Fixed an issue where closing a tab in Replay in development mode causes the application to crash.
+        - Fixed the alignment of Connected Operation badge in open step in `Replay`.
+        - Fixed an issue where the response type selection reset to the default when interacting with the app.
+        - Fixed overflow of step and API titles in `Replay` tabs.
+        - Fixed UI issues with inputs in the Security tab of `Replay`.
+        - Fixed an issue where opening a history item failed in some cases in **Try it**.
+        - Enter prerelease mode.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.13.0`.
+        - Fixed unintended deletion of tree items when pressing `Backspace`.
+        - Fixed an issue where URLs without protocols caused malformed code samples to generate.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.12.5`.
+    dependencies:
+      '@redocly/theme': 0.61.0
