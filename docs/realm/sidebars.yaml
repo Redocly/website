@@ -16,7 +16,8 @@
       label: Upgrade Realm version
 
 - group: Reunite
-  icon: ./images/icons/reunite-gray.svg
+  icon:
+    srcSet: './images/icons/reunite-gray.svg light, ./images/icons/reunite-dark.svg dark'
   page: reunite/reunite.md
   items:
     - separator: Organization & team settings
