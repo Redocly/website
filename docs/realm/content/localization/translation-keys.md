@@ -247,24 +247,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- search.ai.toolCall.searching
-- Message shown while AI is searching for relevant documentation
-- Searching...
-
----
-
-- search.ai.toolResult.found
-- First part of a message that is shown when AI finished searching
-- Found
-
----
-
-- search.ai.toolResult.found.documents
-- Last part of a message that is shown when AI finished searching
-- documents
-
----
-
 - aiAssistant.trigger
 - Button text to trigger the AI assistant
 - Ask AI

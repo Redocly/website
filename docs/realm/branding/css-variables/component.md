@@ -684,7 +684,6 @@
   --dropdown-menu-font-weight: var(--font-weight-regular);
   --dropdown-menu-line-height: var(--line-height-base);
   --dropdown-menu-text-color: var(--text-color-secondary);
-  --dropdown-menu-z-index: var(--z-index-raised);
 
   --dropdown-menu-padding-top: var(--spacing-xxs);
   --dropdown-menu-min-width: 100px;
@@ -1440,6 +1439,184 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 
 --scorecard-level-color-2-1: var(--color-error-base);
 --scorecard-level-color-2-2: var(--color-persian-green-5);
+
+--scorecard-level-gold-color: var(--score-level-gold-color);
+--scorecard-level-silver-color: var(--score-level-silver-color);
+--scorecard-level-bronze-color: var(--score-level-bronze-color);
+
+--scorecard-rules-warning-bg: var(--color-carrot-1);
+--scorecard-rules-warning-text: var(--text-color-primary);
+```
+
+**Dark mode:**
+
+```css
+--scorecard-level-color-5-2: var(--color-persian-green-7);
+--scorecard-level-color-5-3: var(--color-persian-green-6);
+--scorecard-level-color-5-4: var(--color-persian-green-5);
+--scorecard-level-color-5-5: var(--color-persian-green-4);
+
+--scorecard-level-color-4-2: var(--color-persian-green-7);
+--scorecard-level-color-4-3: var(--color-persian-green-6);
+--scorecard-level-color-4-4: var(--color-persian-green-5);
+
+--scorecard-level-color-3-2: var(--color-persian-green-6);
+--scorecard-level-color-3-3: var(--color-persian-green-5);
+
+--scorecard-level-color-2-2: var(--color-persian-green-6);
+
+--scorecard-level-gold-color: var(--score-level-gold-color);
+--scorecard-level-silver-color: var(--score-level-silver-color);
+--scorecard-level-bronze-color: var(--score-level-bronze-color);
+
+--scorecard-rules-warning-bg: var(--color-carrot-11);
+--scorecard-rules-warning-text: var(--color-white);
+```
+
+</details>
+
+## DataTable
+
+<details>
+<summary>DataTable common variables</summary>
+
+```css
+--data-table-border-color: var(--border-color-primary);
+--data-table-header-bg-color: var(--layer-color);
+--data-table-header-font-weight: var(--font-weight-medium);
+--data-table-header-cell-padding: var(--spacing-xxs) var(--spacing-xs);
+--data-table-cell-padding: var(--spacing-xxs) var(--spacing-xs);
+--data-table-row-hover-bg-color: var(--bg-color-hover, var(--table-row-hover-fallback-bg-color));
+--data-table-row-height: 52px;
+--data-table-page-wrapper-text-color: var(--text-color-secondary);
+
+--data-table-header-sort-icon-size: 9px;
+--data-table-header-sort-icon-color-active: var(--text-color-primary);
+--data-table-header-sort-icon-color-inactive: var(--text-color-helper);
+--data-table-header-sort-indicator-color: var(--icon-color-primary);
+--data-table-header-sort-arrow-border-radius: calc(var(--border-radius) / 2);
+--data-table-header-sort-arrow-bg-active: var(--bg-color-active);
+--data-table-header-title-line-height: var(--line-height-base);
+
+--data-table-score-icon-size: 16px;
+
+--data-table-title-cell-gap: var(--spacing-sm);
+--data-table-title-content-offset: 42px;
+--data-table-title-font-size: var(--font-size-lg);
+--data-table-title-line-height: var(--line-height-lg);
+--data-table-title-font-weight: var(--font-weight-medium);
+--data-table-summary-font-size: var(--font-size-sm);
+--data-table-summary-line-height: var(--line-height-sm);
+--data-table-description-color: var(--text-color-description);
+```
+
+</details>
+
+## SortIndicator
+
+<details>
+<summary>SortIndicator common variables</summary>
+
+```css
+--data-table-header-sort-icon-size: 9px;
+--data-table-header-sort-icon-color-active: var(--text-color-primary);
+--data-table-header-sort-icon-color-inactive: var(--text-color-helper);
+--data-table-header-sort-indicator-color: var(--icon-color-primary);
+--data-table-header-sort-arrow-border-radius: calc(var(--border-radius) / 2);
+--data-table-header-sort-arrow-bg-active: var(--bg-color-active);
+```
+
+</details>
+
+## Entity
+
+<details>
+<summary>Entity common variables</summary>
+
+```css
+--entity-table-title-cell-gap: var(--spacing-xs);
+--entity-table-entity-title-font-size: var(--font-size-lg);
+--entity-table-entity-title-line-height: var(--line-height-lg);
+--entity-table-entity-title-font-weight: var(--font-weight-medium);
+--entity-table-entity-summary-font-size: var(--font-size-sm);
+--entity-table-entity-summary-line-height: var(--line-height-sm);
+--entity-table-description-color: var(--text-color-description);
+
+--entity-table-icon-width: 32px;
+--entity-table-icon-height: 32px;
+--entity-table-icon-border-radius: var(--border-radius);
+
+--entity-icon-color: var(--catalog-entity-icon-color);
+--entity-bg-color: var(--catalog-entity-bg-color);
+--entity-border-color: var(--catalog-entity-border-color);
+```
+
+</details>
+
+## Score
+
+<details>
+<summary>Score common variables</summary>
+
+```css
+--score-level-gold-color: var(--tag-level-gold-bg-color);
+--score-level-silver-color: var(--tag-level-silver-bg-color);
+--score-level-bronze-color: var(--tag-level-bronze-bg-color);
+
+--score-rules-warning-bg: var(--color-carrot-1);
+--score-rules-warning-text: var(--text-color-primary);
+
+--score-rules-success-border-color: var(--color-success-base);
+--score-rules-success-bg-color: var(--color-success-bg);
+
+--score-rules-warning-border-color: var(--color-warning-base);
+--score-rules-warning-bg-color: var(--color-warning-bg);
+
+--score-rules-error-border-color: var(--color-error-base);
+--score-rules-error-bg-color: var(--color-error-bg);
+
+--score-table-score-icon-size: 16px;
+```
+
+</details>
+
+## CatalogPageHeader
+
+<details>
+<summary>CatalogPageHeader common variables</summary>
+
+```css
+--page-description-heading-margin: 0 0 var(--spacing-sm) 0;
+--page-description-display-mobile: none;
+--page-description-display-desktop: block;
+--page-description-title-text-color: var(--text-color-primary);
+--page-description-title-font-weight: var(--font-weight-bold);
+--page-description-title-font-size: var(--h3-font-size);
+--page-description-title-margin: var(--spacing-sm) 0 var(--spacing-sm) 0;
+--page-description-title-spacing-right: var(--spacing-xs);
+--page-description-description-text-color: var(--text-color-secondary);
+--page-description-description-font-weight: var(--font-weight-regular);
+--page-description-description-font-size: var(--font-size-lg);
+--page-description-description-margin: 0 0 var(--spacing-base) 0;
+--page-description-description-line-height: var(--line-height-lg);
+```
+
+</details>
+
+## SortButton
+
+<details>
+<summary>SortButton common variables</summary>
+
+```css
+--sort-button-trigger-gap: var(--spacing-xs);
+--sort-button-trigger-padding: 6px var(--spacing-xs);
+--sort-button-trigger-border-radius: var(--border-radius-md);
+--sort-button-trigger-hover-bg-color: var(--button-bg-color-secondary-hover);
+--sort-button-icon-color: var(--text-color-secondary);
+--sort-button-text-font-size: var(--font-size-sm);
+--sort-button-text-color: var(--text-color-secondary);
+--sort-button-text-font-weight: var(--font-weight-medium);
 ```
 
 </details>
@@ -2719,6 +2896,24 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --counter-tag-padding: 0px var(--spacing-xxs);
 --counter-tag-border-radius: var(--border-radius);
 --counter-tag-min-width: var(--spacing-md);
+```
+
+</details>
+<details>
+<summary>Tag level background colors</summary>
+
+```css
+--tag-level-gold-bg-color: #C79D00;
+--tag-level-silver-bg-color: #97999C;
+--tag-level-bronze-bg-color: #CF8348;
+```
+
+**Dark mode:**
+
+```css
+--tag-level-gold-bg-color: #D4A500;
+--tag-level-silver-bg-color: #A8ACB0;
+--tag-level-bronze-bg-color: #C8966A;
 ```
 
 </details>
