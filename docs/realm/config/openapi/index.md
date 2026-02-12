@@ -34,7 +34,8 @@ description: |-
 
 - [corsProxyUrl](./cors-proxy-url.md)
 - string
-- Specifies custom CORS proxy server.
+- Overrides the CORS proxy URL used by Replay.
+  Default: built-in CORS proxy URL: `/_api/cors/`.
 
 ---
 
