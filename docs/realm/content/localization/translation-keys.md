@@ -674,6 +674,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- feedback.settings.comment.maxLength
+- Message displayed when feedback comment reaches maximum character limit (interpolates `maxLength` variable)
+- Maximum content length of {{maxLength}} characters reached
+
+---
+
 - feedback.sentiment.thumbUp
 - Feedback "thumb up" aria-label in sentiment section
 - Like
