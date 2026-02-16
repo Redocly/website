@@ -29,6 +29,10 @@
   }
 }
 
+:root.dark [data-component-name='Menu/MenuItem'] img {
+  filter: invert(1); /* Invert icon color for dark mode */
+}
+
 :root .example-striped-table-rows {
   --md-table-border-color: black;
   --md-table-header-bg-color: royalblue;
