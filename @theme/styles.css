@@ -569,10 +569,6 @@
     --color-ontonal: #2A2B33;
     --color-arrow: #9B9CA8;
     --hover-last-navbar-color: #3B3C45;
-    
-    [data-component-name="Menu/MenuItem"] img  {
-        filter: invert(1); /* invert the color of the icon not to mess with srcSet */
-    }
 }
 
 :root.dark nav img {
