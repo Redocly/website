@@ -41,7 +41,8 @@ To edit remote content settings:
     withLightbox=true
   /%}
 
-1. Modify the settings as needed. The available settings depend on your content source type:
+1. Modify the settings as needed.
+   The available settings depend on your content source type:
     - **Git sources**: Change provider, repository, branch, folder/file path, auto-sync, or auto-merge settings.
     - **URL sources**: Change the source URL, sync interval, auto-sync, or auto-merge settings.
     - **CI/CD sources**: Change auto-merge settings.

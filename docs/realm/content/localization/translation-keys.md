@@ -508,7 +508,8 @@ This page contains the list of all predefined translation keys used in default U
 
 - page.forbidden.description
 - 403 Forbidden description text
-- You don't have permission to access this page. If you believe this is an error, contact your administrator or return to the homepage.
+- You don't have permission to access this page.
+  If you believe this is an error, contact your administrator or return to the homepage.
 
 ---
 

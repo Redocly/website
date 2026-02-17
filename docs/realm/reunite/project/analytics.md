@@ -24,7 +24,9 @@ All data is collected on behalf of your organization and used only to provide ag
 We do not use analytics data for advertising or tracking users across sites, and we do not attempt to identify individual visitors.
 
 The Analytics page contains collected data with charts for visualization.
-Access to the Analytics page is limited to project admins. By default, all organization owners and members are project admins and have access. If a project role is lowered, organization owners keep access while members lose access.
+Access to the Analytics page is limited to project admins.
+By default, all organization owners and members are project admins and have access.
+If a project role is lowered, organization owners keep access while members lose access.
 
 The dashboard includes graphs and tables for each category:
 - Page views

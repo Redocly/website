@@ -18,7 +18,8 @@ description: Configure authentication and access-related settings in a single ob
 The `access` object groups authentication and access-related configuration options together for better organization and maintainability.
 
 {% admonition type="info" %}
-**New format:** The `access` object is the recommended way to configure authentication and access settings. Root-level properties (`requiresLogin`, `residency`, `sso`, `rbac`) are still supported for backward compatibility but will show deprecation warnings when used alongside the `access` object.
+**New format:** The `access` object is the recommended way to configure authentication and access settings.
+Root-level properties (`requiresLogin`, `residency`, `sso`, `rbac`) are still supported for backward compatibility but will show deprecation warnings when used alongside the `access` object.
 {% /admonition %}
 
 ## Options
@@ -44,7 +45,9 @@ The `access` object groups authentication and access-related configuration optio
   - `residency` (string) - Geographical location URL for hosting your project.
     Available on **Enterprise+**.
     See [Residency configuration](./residency.md).
-  - `sso` (string | [string]) - List of identity provider types from Reunite. Available on **Enterprise, Enterprise+**. See [SSO configuration](./sso.md).
+  - `sso` (string | [string]) - List of identity provider types from Reunite.
+    Available on **Enterprise, Enterprise+**.
+    See [SSO configuration](./sso.md).
   - `rbac` (object) - Role-based access control configuration.
     Available on **Enterprise, Enterprise+**.
     See [RBAC configuration](./rbac.md).
@@ -146,11 +149,14 @@ access:
 ```
 
 {% admonition type="info" %}
-**Note:** `logoutReturnUrl` is a new feature and is only available in the `access` object format. It was not previously available as a root-level property.
+**Note:** `logoutReturnUrl` is a new feature and is only available in the `access` object format.
+It was not previously available as a root-level property.
 {% /admonition %}
 
 {% admonition type="warning" %}
-**Important:** Do not define the same property both at root level and in the `access` object. If both are defined, the configuration will throw an error. Use only the `access` object format for new configurations.
+**Important:** Do not define the same property both at root level and in the `access` object.
+If both are defined, the configuration will throw an error.
+Use only the `access` object format for new configurations.
 {% /admonition %}
 
 ## Resources

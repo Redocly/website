@@ -110,7 +110,8 @@ Additional information and syntax: [Login button tag](./login-button.md)
 ````markdoc {% process=false %}
 {% if includes($rbac.teams, "anonymous") %}
 {% admonition type="info" name="Log in" %}
-Some content is available only for authenticated users. Log in to get full access to our documentation.
+Some content is available only for authenticated users.
+Log in to get full access to our documentation.
 
 {% login-button /%}
 
