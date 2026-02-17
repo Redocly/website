@@ -40595,3 +40595,21 @@ replay:
         - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.12.5`.
     dependencies:
       '@redocly/theme': 0.61.0
+  0.15.0:
+    timestamp: 1771319884000
+    changes:
+      minor:
+        - Added a toggle to hide or display sensitive data in generated step code samples in Replay.
+        - Added ability to duplicate a step.
+        - Added a **Generate CLI command** button to Replay. This button generates the Respect `workflows` command you can use in Redocly CLI.
+        - >-
+          Added automatic file system synchronization to reflect API and collection file changes in the Replay interface without requiring manual
+          refresh.
+        - Improved Replay's history side panel to display workflow runs.
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.18.0`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.17.0`.
+        - Enter prerelease mode.
+        - Added code folding support for JSON editors in Replay.
+    dependencies:
+      '@redocly/theme': 0.63.0
