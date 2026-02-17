@@ -25,24 +25,10 @@ PUBLIC_BUILD_NUMBER=50
 
 Using the `REDOCLY_ENV` variable, you can set up different environments and use separate `.env` files like `.env.production`, `.env.development`, and `.env.preview` based on your needs.
 
-You can also create branch-specific `.env` files using the format `.env.branch.<branch-name>`.
-For example, `.env.branch.feature-new-look` would be loaded when working on the `feature-new-look` branch.
-For branches containing `/` (e.g., `feature/my-branch`), replace `/` with `-` in the filename (e.g., `.env.branch.feature-my-branch`).
-In local development, the branch name is automatically detected from git.
-On Redocly, it uses the `PUBLIC_REDOCLY_BRANCH_NAME` environment variable.
-
-The loading order is: `.env` -> `.env.branch.<branch-name>` -> `.env.<environment>`.
-Environment-specific files (like `.env.development`) take precedence over branch-specific files.
-
 When hosting your project at Redocly, we will automatically set the proper `REDOCLY_ENV` variable:
 
 - For production builds, the `REDOCLY_ENV` variable will be set to `"production"`
 - For previews, the `REDOCLY_ENV` variable will be set to `"preview"`
-
-{% admonition type="warning" %}
-When the same variable is defined both in Reunite (in the project **Settings** > **Environment variables** section) and in your base `.env` file, the value from Reunite is used.
-Environment-specific `.env` files (such as `.env.production`, `.env.preview`, `.env.development`) and branch-specific `.env.branch.<branch-name>` files still take precedence over both.
-{% /admonition %}
 
 ### Settings page
 
@@ -129,7 +115,6 @@ In Markdown files, access environment variables using [Markdoc variables syntax]
 The following environment variables are available by default:
 
 - `PUBLIC_REDOCLY_BRANCH_NAME`: The name of the branch that the project is built from
-  Useful for configuring [branch-specific settings](../../config/env.md) in `redocly.yaml`.
 
 ## Manage environment variables
 

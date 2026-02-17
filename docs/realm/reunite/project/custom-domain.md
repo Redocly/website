@@ -29,9 +29,6 @@ Set a project's path prefix to serve pages from somewhere other than the root of
 This can help organize URLs or make the separation of content more clear.
 For example, a SaaS company serving their developer documentation from `/developers` or `/api/`.
 
-To serve from a subdirectory, you also need to proxy requests to the website.
-Any proxy should be capable of doing that; we are not responsible for supporting third-party products.
-
 The path prefix is set using the `REDOCLY_PREFIX_PATHS` [environment variable](./env-variables.md).
 
 URL _without_ prefix: `https://docs.example.com/page`

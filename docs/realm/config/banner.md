@@ -27,7 +27,14 @@ Configure banners as an array of banner objects in your `redocly.yaml` file or i
 
 {% admonition type="info" %}
 
-If you ejected the `navbar` component before version `0.128.0`, [update it](../customization/eject-components/eject-components-in-reunite.md#update-ejected-component) to have the component's full functionality.
+If you ejected the `navbar` component before version `0.128.0`, update it to have the component's full functionality.
+
+To update the ejected navbar:
+
+1. Make a backup copy of your customization.
+1. Delete the ejected `navbar` folder.
+1. Eject the component again.
+1. Using your backup, re-apply the customization.
 
 {% /admonition %}
 
@@ -95,14 +102,6 @@ If you ejected the `navbar` component before version `0.128.0`, [update it](../c
   - `error` - Red background
   Default: `info`
 
----
-
-- rbac
-- object
-- Map of teams to permission levels that determines who can see the banner.
-  Controls the visibility of the banner based on the user's team membership.
-  If specified, only users belonging to teams with at least `read` access will see the banner.
-  For more information, see [RBAC configuration](./rbac.md).
 {% /table %}
 
 ## Configuration
@@ -134,22 +133,6 @@ banner:
     dismissible: true
     target: '**'
 ```
-
-### Role-based visibility
-
-Control banner visibility based on team membership:
-
-```yaml {% title="redocly.yaml" %}
-banner:
-  - content: "🔒 Please log in to see all content!"
-    color: warning
-    rbac:
-      anonymous: read
-      authenticated: none
-```
-
-In this example, the banner is only visible to unauthenticated visitors (`anonymous` team).
-
 Configure a banner in the front matter of a specific page:
 ```md {% title="example.md" %}
 ---

@@ -684,7 +684,6 @@
   --dropdown-menu-font-weight: var(--font-weight-regular);
   --dropdown-menu-line-height: var(--line-height-base);
   --dropdown-menu-text-color: var(--text-color-secondary);
-  --dropdown-menu-z-index: var(--z-index-raised);
 
   --dropdown-menu-padding-top: var(--spacing-xxs);
   --dropdown-menu-min-width: 100px;
@@ -1307,22 +1306,6 @@
 --mermaid-bg-color: var(--bg-color-raised);
 --mermaid-border-radius: var(--border-radius-lg);
 --mermaid-font-family: var(--font-family-base);
-```
-
-</details>
-
-## SVG Viewer
-
-<details>
-<summary>SVG Viewer component</summary>
-
-The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams (like Mermaid) with zoom and pan controls.
-
-```css
---svg-viewer-overlay-bg-color: var(--bg-color-modal-overlay);
---svg-viewer-bg-color: var(--bg-color);
---svg-viewer-border-radius: var(--border-radius-xl);
---svg-viewer-box-shadow: var(--bg-raised-shadow);
 ```
 
 </details>

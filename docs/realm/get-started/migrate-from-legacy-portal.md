@@ -83,7 +83,7 @@ Once the content is migrated and you're ready to "go live" with the new project
 
 5. In Reunite, [set a custom domain](../reunite/project/custom-domain.md) for your project.
 
-6. Update your CNAME record to point to `ssl.redocly.app`.
+6. Update your CNAME record to point to `ssl.cloud.redocly.com`.
    This change can take up to 8 hours to propagate depending on your provider.
 
 7. (Optional) [Delete](https://docs.github.com/en/apps/maintaining-github-apps/deleting-a-github-app) or deactivate the Redocly Workflows app in your Git provider.

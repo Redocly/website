@@ -16,7 +16,7 @@
       label: Upgrade Realm version
 
 - group: Reunite
-  icon: './images/icons/reunite-gray.svg'
+  icon: ./images/icons/reunite-gray.svg
   page: reunite/reunite.md
   items:
     - separator: Organization & team settings
@@ -73,6 +73,8 @@
           label: Ignore link checker
         - page: reunite/project/branches-and-deployments.md
           label: Branches deployments
+        - page: reunite/project/runtime-logs.md
+          label: Runtime logs
 
     - group: Pull requests
       items:
@@ -205,8 +207,6 @@
           label: Icon
         - page: content/markdoc-tags/inline-svg.md
           label: Inline SVG
-        - page: content/markdoc-tags/login-button.md
-          label: Login button
         - page: content/markdoc-tags/json-schema.md
           label: JSON schema
         - page: content/markdoc-tags/json-example.md
