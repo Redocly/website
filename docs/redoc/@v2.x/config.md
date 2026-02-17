@@ -39,7 +39,7 @@ For example, `scrollYOffset` becomes `scroll-y-offset`, and `expandResponses` be
     url: string
   }
   ```
-  
+
 ---
 
 - generatedSamplesMaxDepth
