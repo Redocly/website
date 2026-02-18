@@ -1,4 +1,37 @@
 '@redocly/realm':
+  0.131.0-next.5:
+    timestamp: 1771404156000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the **Copy for LLM** and **View as Markdown** page actions ignored the respective path prefix for the root page.
+    dependencies:
+      '@redocly/theme': 0.63.0-next.3
+      '@redocly/asyncapi-docs': 1.8.0-next.3
+      '@redocly/graphql-docs': 1.8.0-next.3
+      '@redocly/openapi-docs': 3.19.0-next.3
+      '@redocly/portal-plugin-mock-server': 0.16.0-next.3
+  0.131.0-next.4:
+    timestamp: 1771341494000
+    changes:
+      minor:
+        - >-
+          Replaces the separate right-side development mode controls in Realm docs UI with a single bottom floating status bar to improve user
+          experience.
+        - Added support for OpenAPI 3.2 `tags` object.
+        - Added support for OpenAPI 3.2 `querystring` parameters to handle structured query parameters with nested objects and arrays.
+        - Added support for the `nodeType` field in the OpenAPI 3.2 XML Object.
+        - Enabled semantic search for Docs MCP.
+      patch:
+        - Added stricter validation to feedback forms.
+        - Added `code-snippet` Markdoc tag support for `llms.txt`.
+        - Updated `@redocly/openapi-core` to version `2.18.2`.
+    dependencies:
+      '@redocly/theme': 0.63.0-next.2
+      '@redocly/openapi-docs': 3.19.0-next.2
+      '@redocly/asyncapi-docs': 1.8.0-next.2
+      '@redocly/graphql-docs': 1.8.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.16.0-next.2
   0.130.2:
     timestamp: 1770997425000
     changes:
@@ -5457,6 +5490,36 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.131.0-next.5:
+    timestamp: 1771404156000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the **Copy for LLM** and **View as Markdown** page actions ignored the respective path prefix for the root page.
+    dependencies:
+      '@redocly/theme': 0.63.0-next.3
+      '@redocly/asyncapi-docs': 1.8.0-next.3
+      '@redocly/graphql-docs': 1.8.0-next.3
+      '@redocly/openapi-docs': 3.19.0-next.3
+      '@redocly/portal-plugin-mock-server': 0.16.0-next.3
+  0.131.0-next.4:
+    timestamp: 1771341494000
+    changes:
+      minor:
+        - >-
+          Replaces the separate right-side development mode controls in Realm docs UI with a single bottom floating status bar to improve user
+          experience.
+        - Enabled semantic search for Docs MCP.
+      patch:
+        - Added stricter validation to feedback forms.
+        - Added `code-snippet` Markdoc tag support for `llms.txt`.
+        - Updated `@redocly/openapi-core` to version `2.18.2`.
+    dependencies:
+      '@redocly/theme': 0.63.0-next.2
+      '@redocly/openapi-docs': 3.19.0-next.2
+      '@redocly/asyncapi-docs': 1.8.0-next.2
+      '@redocly/graphql-docs': 1.8.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.16.0-next.2
   0.130.2:
     timestamp: 1770997425000
     changes:
@@ -10065,6 +10128,36 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.131.0-next.5:
+    timestamp: 1771404156000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the **Copy for LLM** and **View as Markdown** page actions ignored the respective path prefix for the root page.
+    dependencies:
+      '@redocly/theme': 0.63.0-next.3
+      '@redocly/asyncapi-docs': 1.8.0-next.3
+      '@redocly/graphql-docs': 1.8.0-next.3
+      '@redocly/openapi-docs': 3.19.0-next.3
+      '@redocly/portal-plugin-mock-server': 0.16.0-next.3
+  0.131.0-next.4:
+    timestamp: 1771341494000
+    changes:
+      minor:
+        - >-
+          Replaces the separate right-side development mode controls in Realm docs UI with a single bottom floating status bar to improve user
+          experience.
+        - Enabled semantic search for Docs MCP.
+      patch:
+        - Added stricter validation to feedback forms.
+        - Added `code-snippet` Markdoc tag support for `llms.txt`.
+        - Updated `@redocly/openapi-core` to version `2.18.2`.
+    dependencies:
+      '@redocly/theme': 0.63.0-next.2
+      '@redocly/openapi-docs': 3.19.0-next.2
+      '@redocly/asyncapi-docs': 1.8.0-next.2
+      '@redocly/graphql-docs': 1.8.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.16.0-next.2
   0.130.2:
     timestamp: 1770997425000
     changes:
@@ -14664,6 +14757,39 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.131.0-next.5:
+    timestamp: 1771404156000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the **Copy for LLM** and **View as Markdown** page actions ignored the respective path prefix for the root page.
+    dependencies:
+      '@redocly/theme': 0.63.0-next.3
+      '@redocly/asyncapi-docs': 1.8.0-next.3
+      '@redocly/graphql-docs': 1.8.0-next.3
+      '@redocly/openapi-docs': 3.19.0-next.3
+      '@redocly/portal-plugin-mock-server': 0.16.0-next.3
+  0.131.0-next.4:
+    timestamp: 1771341494000
+    changes:
+      minor:
+        - >-
+          Replaces the separate right-side development mode controls in Realm docs UI with a single bottom floating status bar to improve user
+          experience.
+        - Added support for OpenAPI 3.2 `tags` object.
+        - Added support for OpenAPI 3.2 `querystring` parameters to handle structured query parameters with nested objects and arrays.
+        - Added support for the `nodeType` field in the OpenAPI 3.2 XML Object.
+        - Enabled semantic search for Docs MCP.
+      patch:
+        - Added stricter validation to feedback forms.
+        - Added `code-snippet` Markdoc tag support for `llms.txt`.
+        - Updated `@redocly/openapi-core` to version `2.18.2`.
+    dependencies:
+      '@redocly/theme': 0.63.0-next.2
+      '@redocly/openapi-docs': 3.19.0-next.2
+      '@redocly/asyncapi-docs': 1.8.0-next.2
+      '@redocly/graphql-docs': 1.8.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.16.0-next.2
   0.130.2:
     timestamp: 1770997425000
     changes:
@@ -19312,6 +19438,22 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.63.0-next.3:
+    timestamp: 1771404156000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the **Copy for LLM** and **View as Markdown** page actions ignored the respective path prefix for the root page.
+    dependencies: {}
+  0.63.0-next.2:
+    timestamp: 1771341494000
+    changes:
+      minor:
+        - Added support for OpenAPI 3.2 `tags` object.
+      patch:
+        - Added stricter validation to feedback forms.
+        - Added `code-snippet` Markdoc tag support for `llms.txt`.
+    dependencies: {}
   0.63.0-next.1:
     timestamp: 1770909910000
     changes:
@@ -22000,6 +22142,24 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.19.0-next.3:
+    timestamp: 1771404156000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.22.0-next.3
+  3.19.0-next.2:
+    timestamp: 1771341494000
+    changes:
+      minor:
+        - Added support for OpenAPI 3.2 `tags` object.
+        - Added support for OpenAPI 3.2 `querystring` parameters to handle structured query parameters with nested objects and arrays.
+        - Added support for the `nodeType` field in the OpenAPI 3.2 XML Object.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.18.2`.
+    dependencies:
+      '@redocly/replay': 0.22.0-next.2
   3.19.0-next.1:
     timestamp: 1770909910000
     changes:
@@ -25333,6 +25493,20 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.8.0-next.3:
+    timestamp: 1771404156000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.63.0-next.3
+  1.8.0-next.2:
+    timestamp: 1771341494000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.63.0-next.2
   1.8.0-next.1:
     timestamp: 1770909910000
     changes:
@@ -26876,6 +27050,28 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.14.0-next.5:
+    timestamp: 1771404156000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.63.0-next.3
+      '@redocly/realm': 0.131.0-next.5
+      '@redocly/redoc': 0.131.0-next.5
+      '@redocly/redoc-reef': 0.131.0-next.5
+      '@redocly/redoc-revel': 0.131.0-next.5
+  1.14.0-next.4:
+    timestamp: 1771341494000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.131.0-next.4
+      '@redocly/redoc': 0.131.0-next.4
+      '@redocly/redoc-reef': 0.131.0-next.4
+      '@redocly/redoc-revel': 0.131.0-next.4
+      '@redocly/theme': 0.63.0-next.2
   1.13.2:
     timestamp: 1770997425000
     changes:
@@ -31599,6 +31795,20 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.16.0-next.3:
+    timestamp: 1771404156000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.19.0-next.3
+  0.16.0-next.2:
+    timestamp: 1771341494000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.19.0-next.2
   0.16.0-next.1:
     timestamp: 1770909910000
     changes:
@@ -34198,6 +34408,22 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.22.0-next.3:
+    timestamp: 1771404156000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.63.0-next.3
+  0.22.0-next.2:
+    timestamp: 1771341494000
+    changes:
+      minor:
+        - Added support for OpenAPI 3.2 `querystring` parameters to handle structured query parameters with nested objects and arrays.
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.18.2`.
+    dependencies:
+      '@redocly/theme': 0.63.0-next.2
   0.22.0-next.1:
     timestamp: 1770909910000
     changes:
@@ -36022,6 +36248,20 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.14.0-next.3:
+    timestamp: 1771404156000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.63.0-next.3
+  0.14.0-next.2:
+    timestamp: 1771341494000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.63.0-next.2
   0.14.0-next.1:
     timestamp: 1770909910000
     changes:
@@ -37595,6 +37835,22 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.8.0-next.3:
+    timestamp: 1771404156000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.63.0-next.3
+      '@redocly/openapi-docs': 3.19.0-next.3
+  1.8.0-next.2:
+    timestamp: 1771341494000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.63.0-next.2
+      '@redocly/openapi-docs': 3.19.0-next.2
   1.8.0-next.1:
     timestamp: 1770909910000
     changes:
