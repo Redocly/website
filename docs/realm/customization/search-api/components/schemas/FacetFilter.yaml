@@ -1,0 +1,14 @@
+type: object
+required:
+  - field
+  - values
+properties:
+  field:
+    type: string
+    description: |
+      Facet field name (for example: `redocly_category`, `redocly_version`).
+  values:
+    type: array
+    items:
+      type: string
+    description: Selected facet values.

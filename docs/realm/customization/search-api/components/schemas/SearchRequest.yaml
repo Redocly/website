@@ -1,0 +1,28 @@
+type: object
+required:
+  - query
+  - locale
+properties:
+  query:
+    type: string
+    description: Full-text search query.
+  locale:
+    type: string
+    description: |
+      Locale code for the content to search (for example, `en`, `default_locale`).
+      Must match a locale configured in your project. Locales are set in `redocly.yaml` under the [l10n](../../../../config/l10n.md) option.
+  filter:
+    type: array
+    description: List of facet filters. Omit or use [] for no filters.
+    items:
+      $ref: ./FacetFilter.yaml
+  loadMore:
+    type: object
+    description: For pagination within a result group.
+    properties:
+      groupKey:
+        type: string
+        description: Category key to load more results for.
+      offset:
+        type: integer
+        description: Offset for pagination within the group.

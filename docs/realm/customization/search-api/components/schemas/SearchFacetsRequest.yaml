@@ -1,0 +1,21 @@
+type: object
+required:
+  - locale
+properties:
+  locale:
+    type: string
+    description: Locale code (same as search).
+  field:
+    type: string
+    description: If set, returns only the facet for this field (with values and counts). If omitted, returns all configured facets.
+  query:
+    type: string
+    description: Search query; facet counts are computed in the context of this query.
+  filter:
+    type: array
+    items:
+      $ref: ./FacetFilter.yaml
+    description: Counts are computed with these filters applied.
+  facetQuery:
+    type: string
+    description: Filter facet values using this string (for type-ahead in facet controls).

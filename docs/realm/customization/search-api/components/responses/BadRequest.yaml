@@ -1,0 +1,25 @@
+description: |
+  Facet field name (for example: `redocly_category`, `redocly_version`).
+content:
+  application/problem+json:
+    schema:
+      type: object
+      properties:
+        type:
+          type: string
+          description: URI reference that identifies the problem type.
+          example: about:blank
+        title:
+          type: string
+          description: Error title.
+          example: Bad Request
+        status:
+          type: integer
+          description: HTTP status code.
+          example: 400
+        detail:
+          type: string
+          description: Human-readable message with additional error details.
+          example: Invalid or missing required body fields.
+      required:
+        - detail

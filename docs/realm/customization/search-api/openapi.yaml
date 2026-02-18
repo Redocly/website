@@ -1,0 +1,46 @@
+openapi: 3.1.0
+info:
+  title: Search
+  version: 1.0.0
+  termsOfService: https://redocly.com/subscription-agreement
+  license:
+    name: Redocly
+    url: https://redocly.com/subscription-agreement
+  description: |
+    Query your project's documentation and API reference content from external tools, scripts, or integrations (for example, MCP servers or custom search UIs).
+
+    **Path prefix:** If your project is deployed with a path prefix (for example, `https://docs.example.com/docs/`), prepend that prefix to the API paths (for example, `/docs/_search`).
+
+    {% admonition type="info" %}
+    For path prefix configuration, see [custom domain configuration](../../reunite/project/custom-domain.md#serve-from-a-subdirectory).
+    {% /admonition %}
+
+    ## Authentication
+
+    This API uses the same authentication as the project. Public projects (when `access.requiresLogin` is not set or is `false`), don't require authentication when you call the API. 
+    If the project is protected, (`access.requiresLogin: true` or has [RBAC](../../access/rbac.md) configuration), you must send the same cookie-based session that the browser uses after users logs in. 
+
+    The API does not support API keys or bearer tokens; authentication is session (cookie) only. For unauthenticated requests to protected projects, both endpoints return empty results instead of errors.
+    {% admonition type="info" %}
+    To learn more about access and authentication options, see [Access control](../../access/index.md).
+    {% /admonition %}
+
+    ## CORS and credentials
+
+    When calling from a browser (for example, a custom search UI on another origin), the project must allow your origin in CORS. Send credentials (cookies) with `fetch(..., { credentials: 'include' })` so that session cookies are sent for protected projects.
+
+servers:
+  - url: /
+    description: Portal base URL (prepend your path prefix if applicable).
+
+security: []
+
+tags:
+  - name: Search
+    description: Full-text search and facet operations.
+
+paths:
+  /_search:
+    $ref: ./paths/search.yaml
+  /_search-facets:
+    $ref: ./paths/search-facets.yaml

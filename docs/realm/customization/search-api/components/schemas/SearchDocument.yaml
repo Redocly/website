@@ -1,0 +1,54 @@
+description: Indexed document returned in search results.
+properties:
+  id:
+    type: string
+    description: Unique identifier of the indexed document.
+  url:
+    type: string
+    description: URL of the document or API operation.
+  title:
+    type: string
+    description: Document or page title.
+  text:
+    type: string
+    description: Indexed text content used for search matching.
+  path:
+    type: array
+    description: |
+      Breadcrumb path (for example: section titles) leading to this document.
+    items:
+      type: string
+  redocly_category:
+    type: string
+    description: |
+      Documentation category (for example: Documentation, API Reference).
+  redocly_product:
+    type: string
+    description: Product name when content is scoped by product.
+  redocly_teams:
+    type: array
+    description: Team names when content is scoped by team.
+    items:
+      type: string
+  redocly_version:
+    oneOf:
+      - type: object
+        properties:
+          isDefault:
+            type: boolean
+            description: Whether this is the default version.
+      - type: string
+    description: Version label or version object for versioned content.
+  httpMethod:
+    type: string
+    description: |
+      HTTP method (for example: GET, POST) for API reference items.
+  httpPath:
+    type: string
+    description: HTTP path pattern for API reference items.
+  apiTitle:
+    type: string
+    description: Title of the API for API reference items.
+  apiVersion:
+    type: string
+    description: API version for API reference items.

@@ -432,6 +432,12 @@
         - page: customization/mcp-server/index.md
           label: Overview
 
+    - group: Search API
+      selectFirstItemOnExpand: true
+      items:
+        - page: customization/search-api/openapi.yaml
+          label: Overview
+
 - group: Access
   icon: lock
   page: access/index.md

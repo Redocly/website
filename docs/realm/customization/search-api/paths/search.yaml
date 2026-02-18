@@ -1,0 +1,61 @@
+post:
+  tags:
+    - Search
+  summary: Get search results
+  description: |
+    Run a full-text search and get results grouped by category (for example, Documentation, API Reference).
+  operationId: search
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SearchRequest.yaml
+        example:
+          query: getting started
+          filter: []
+          locale: default_locale
+  responses:
+    '200':
+      description: Search results grouped by category.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SearchResponse.yaml
+          example:
+            facets:
+              redocly_category:
+                - value: Documentation
+                  count: 2
+                - value: API Reference
+                  count: 0
+              redocly_product: []
+              redocly_version: []
+              redocly_teams: []
+              httpMethod: []
+              httpPath: []
+              apiTitle: []
+              apiVersion: []
+            documents:
+              Documentation:
+                - document:
+                    id: doc-1
+                    url: /guides/getting-started
+                    title: Getting started
+                    text: This guide walks you through the initial setup.
+                    path: []
+                    redocly_category: Documentation
+                    redocly_product: ''
+                    redocly_teams: []
+                    redocly_version:
+                      isDefault: true
+                  highlight:
+                    id: doc-1
+                    title: Getting started
+                    url: /guides/getting-started
+                    text: 'This guide walks you through the <mark>getting</mark> <mark>started</mark> setup.'
+                    redocly_category: Documentation
+                    redocly_product: ''
+                    parameters: []
+    '400':
+      $ref: ../components/responses/BadRequest.yaml

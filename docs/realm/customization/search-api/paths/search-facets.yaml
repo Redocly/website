@@ -1,0 +1,36 @@
+post:
+  operationId: searchFacets
+  tags:
+    - Search
+  summary: Get search facets
+  description: |
+    Get facet definitions and counts for building filter UIs or refining search. Facet counts are optionally computed in the context of a search query and applied filters. Facet `type` can be: `multi-select`, `select`, `tags`, and so on, as configured in search filters.
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/SearchFacetsRequest.yaml
+        examples:
+          allFacets:
+            summary: All facets
+            value:
+              locale: en
+          singleFacetWithQuery:
+            summary: One facet with query and filter
+            value:
+              locale: en
+              field: redocly_category
+              query: api
+              filter:
+                - field: redocly_version
+                  values: [v1]
+  responses:
+    '200':
+      description: Facet definitions with values and counts. If `field` is set in the request, returns an array with a single facet object; otherwise returns all configured facets.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SearchFacetsResponse.yaml
+    '400':
+      $ref: ../components/responses/BadRequest.yaml

@@ -1,0 +1,17 @@
+type: object
+properties:
+  facets:
+    type: object
+    additionalProperties:
+      type: array
+      items:
+        $ref: ./FacetValueCount.yaml
+    description: |
+      Facet field names to arrays of value and count. Keys may include: `redocly_category`, `redocly_product`, `redocly_version`, `redocly_teams`, `httpMethod`, `httpPath`, `apiTitle`, `apiVersion`, and any custom facet fields.
+  documents:
+    type: object
+    additionalProperties:
+      type: array
+      items:
+        $ref: ./SearchItem.yaml
+    description: Category names (e.g. Documentation, API Reference) to arrays of search items.

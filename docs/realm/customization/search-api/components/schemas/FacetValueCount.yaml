@@ -1,0 +1,9 @@
+type: object
+properties:
+  value:
+    type: string
+    description: |
+      Facet value (for example: a category or product name).
+  count:
+    type: integer
+    description: Number of search results that match this facet value.

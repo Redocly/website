@@ -1,0 +1,24 @@
+description: Highlighted snippets; matched terms are wrapped in `<mark>` tags.
+properties:
+  id:
+    type: string
+    description: Document ID matching the result document.
+  title:
+    type: string
+    description: Highlighted title snippet with matched terms in `<mark>` tags.
+  url:
+    type: string
+    description: URL of the result (no highlighting).
+  text:
+    type: string
+    description: Highlighted content snippet with matched terms in `<mark>` tags.
+  redocly_category:
+    type: string
+    description: |
+      Category value for this result (for example: Documentation, API Reference).
+  redocly_product:
+    type: string
+    description: Product value for this result when applicable.
+  parameters:
+    type: array
+    description: Present in API reference items.

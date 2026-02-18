@@ -1,0 +1,18 @@
+type: object
+properties:
+  name:
+    type: string
+    description: Display name of the facet as shown in the UI.
+  field:
+    type: string
+    description: |
+      Facet field name (for example: `redocly_category`, `redocly_product`).
+  type:
+    type: string
+    description: |
+      Facet type (for example: multi-select, select, tags) as configured in search filters.
+  values:
+    type: array
+    description: Available facet values with their result counts.
+    items:
+      $ref: ./FacetValueCount.yaml

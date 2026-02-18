@@ -83,6 +83,17 @@ apis:
               defined: true
         assertions:
           pattern: /^(Create|Get|Update|Delete|Login|Send|Callback).*[^\.]$/
+  search-api:
+    root: ./customization/search-api/openapi.yaml
+    rules:
+      paths-kebab-case: off
+      rule/avoid-words-in-descriptions:
+        subject:
+          type: any
+          property: description
+        assertions:
+          notPattern: /(Redocly)/i
+        severity: off
   scout-agent:
     root: ./scout/agent-api/openapi.yaml
     rules:

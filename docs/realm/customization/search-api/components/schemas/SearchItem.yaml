@@ -1,0 +1,10 @@
+type: object
+properties:
+  document:
+    type: object
+    description: The indexed document (metadata and content fields).
+    $ref: ./SearchDocument.yaml
+  highlight:
+    type: object
+    description: Highlighted snippets for this result.
+    $ref: ./SearchHighlight.yaml

@@ -26,6 +26,8 @@ Use the `search` configuration to:
 - boost the ranking of pages for specific search terms
 - prevent pages from appearing for specific search terms
 
+To query search programmatically (for example, with scripts or Model Context Protocol), use the [Search API](../customization/search-api/openapi.yaml) which contains authentication, request parameters, and response format.
+
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "search"} /%}
 
 ## Search engines
