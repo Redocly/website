@@ -30,8 +30,12 @@ info:
     When calling from a browser (for example, a custom search UI on another origin), the project must allow your origin in CORS. Send credentials (cookies) with `fetch(..., { credentials: 'include' })` so that session cookies are sent for protected projects.
 
 servers:
-  - url: /
-    description: Portal base URL (prepend your path prefix if applicable).
+  - url: https://{projectUrl}
+    description: Project server
+    variables:
+      projectUrl:
+        default: redocly.com
+        description: Project URL (prepend your path prefix if applicable).
 
 security: []
 
