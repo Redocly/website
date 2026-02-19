@@ -1,14 +1,18 @@
 ---
-template: ../@theme/templates/BlogPost
-title: SEO best practices for documentation
+template: '../@theme/templates/BlogPost'
+title: "SEO best practices for documentation"
+description: "Learn technical SEO best practices specifically for documentation. Master canonicals, versioning strategy, and crawlability to improve discoverability."
 seo:
-  title: SEO best practices for documentation
+  title: "SEO best practices for documentation | Redocly"
+  description: "Master technical SEO for documentation sites: canonicals, versioning strategy, crawlability, Core Web Vitals, and information architecture patterns."
+  image: ./images/seo-best-practices.png
 author: adam-altman
-publishedDate: "2025-02-19"
+publishedDate: 2026-02-19
 categories:
-  - SEO
-image: blog-6.png
-excerpt: Learn technical SEO best practices specifically for documentation. Master canonicals, versioning strategy, and crawlability to improve discoverability.
+  - api-documentation:api-seo
+  - technical-documentation:information-architecture-td
+  - developer-portal:information-architecture
+image: seo-best-practices.png
 ---
 
 # SEO best practices for documentation
