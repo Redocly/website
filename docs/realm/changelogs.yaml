@@ -1,4 +1,23 @@
 '@redocly/realm':
+  0.131.0-next.6:
+    timestamp: 1771509130000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed **View as Markdown** and **Copy for LLM** page actions incorrectly omitting schema properties that share a name with a property at a
+          different nesting level.
+        - Fixed an issue in OpenAPI docs where example keys were used instead of summary text in example drop-downs.
+        - Updated `@redocly/openapi-core` to version `2.19.0`.
+        - Fixed an issue in OpenAPI docs where nested Markdoc partial tags prevented partial content from rendering.
+        - >-
+          Fixed an issue where scorecard displayed a "Lint completed without rules" message when rules were configured in the `apis` section of
+          `redocly.yaml` rather than at the root level.
+        - Fixed security vulnerability `CVE-2026-26278` in `fast-xml-parser` by upgrading to version `5.3.6`.
+    dependencies:
+      '@redocly/openapi-docs': 3.19.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.16.0-next.4
+      '@redocly/asyncapi-docs': 1.8.0-next.4
   0.131.0-next.5:
     timestamp: 1771404156000
     changes:
@@ -5490,6 +5509,23 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.131.0-next.6:
+    timestamp: 1771509130000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed **View as Markdown** and **Copy for LLM** page actions incorrectly omitting schema properties that share a name with a property at a
+          different nesting level.
+        - Updated `@redocly/openapi-core` to version `2.19.0`.
+        - >-
+          Fixed an issue where scorecard displayed a "Lint completed without rules" message when rules were configured in the `apis` section of
+          `redocly.yaml` rather than at the root level.
+        - Fixed security vulnerability `CVE-2026-26278` in `fast-xml-parser` by upgrading to version `5.3.6`.
+    dependencies:
+      '@redocly/openapi-docs': 3.19.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.16.0-next.4
+      '@redocly/asyncapi-docs': 1.8.0-next.4
   0.131.0-next.5:
     timestamp: 1771404156000
     changes:
@@ -10128,6 +10164,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.131.0-next.6:
+    timestamp: 1771509130000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed **View as Markdown** and **Copy for LLM** page actions incorrectly omitting schema properties that share a name with a property at a
+          different nesting level.
+        - Updated `@redocly/openapi-core` to version `2.19.0`.
+        - Fixed security vulnerability `CVE-2026-26278` in `fast-xml-parser` by upgrading to version `5.3.6`.
+    dependencies:
+      '@redocly/openapi-docs': 3.19.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.16.0-next.4
+      '@redocly/asyncapi-docs': 1.8.0-next.4
   0.131.0-next.5:
     timestamp: 1771404156000
     changes:
@@ -14757,6 +14807,22 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.131.0-next.6:
+    timestamp: 1771509130000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed **View as Markdown** and **Copy for LLM** page actions incorrectly omitting schema properties that share a name with a property at a
+          different nesting level.
+        - Fixed an issue in OpenAPI docs where example keys were used instead of summary text in example drop-downs.
+        - Updated `@redocly/openapi-core` to version `2.19.0`.
+        - Fixed an issue in OpenAPI docs where nested Markdoc partial tags prevented partial content from rendering.
+        - Fixed security vulnerability `CVE-2026-26278` in `fast-xml-parser` by upgrading to version `5.3.6`.
+    dependencies:
+      '@redocly/openapi-docs': 3.19.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.16.0-next.4
+      '@redocly/asyncapi-docs': 1.8.0-next.4
   0.131.0-next.5:
     timestamp: 1771404156000
     changes:
@@ -22142,6 +22208,16 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.19.0-next.4:
+    timestamp: 1771509130000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue in OpenAPI docs where example keys were used instead of summary text in example drop-downs.
+        - Updated `@redocly/openapi-core` to version `2.19.0`.
+        - Fixed security vulnerability `CVE-2026-26278` in `fast-xml-parser` by upgrading to version `5.3.6`.
+    dependencies:
+      '@redocly/replay': 0.22.0-next.4
   3.19.0-next.3:
     timestamp: 1771404156000
     changes:
@@ -27065,6 +27141,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.14.0-next.6:
+    timestamp: 1771509130000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.131.0-next.6
+      '@redocly/redoc': 0.131.0-next.6
+      '@redocly/redoc-reef': 0.131.0-next.6
+      '@redocly/redoc-revel': 0.131.0-next.6
   1.14.0-next.5:
     timestamp: 1771404156000
     changes:
@@ -31810,6 +31896,15 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.16.0-next.4:
+    timestamp: 1771509130000
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability `CVE-2025-69873` in `ajv` by upgrading to version `8.18.0`.
+        - Fixed security vulnerability `CVE-2026-26278` in `fast-xml-parser` by upgrading to version `5.3.6`.
+    dependencies:
+      '@redocly/openapi-docs': 3.19.0-next.4
   0.16.0-next.3:
     timestamp: 1771404156000
     changes:
@@ -34423,6 +34518,14 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.22.0-next.4:
+    timestamp: 1771509130000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.19.0`.
+        - Fixed security vulnerability `CVE-2026-26278` in `fast-xml-parser` by upgrading to version `5.3.6`.
+    dependencies: {}
   0.22.0-next.3:
     timestamp: 1771404156000
     changes:
@@ -37850,6 +37953,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.8.0-next.4:
+    timestamp: 1771509130000
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability `CVE-2026-26278` in `fast-xml-parser` by upgrading to version `5.3.6`.
+    dependencies:
+      '@redocly/openapi-docs': 3.19.0-next.4
   1.8.0-next.3:
     timestamp: 1771404156000
     changes:
