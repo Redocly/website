@@ -1,4 +1,14 @@
 '@redocly/realm':
+  0.130.3:
+    timestamp: 1771571447000
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where AI search events were not tracked for project analytics.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.1
+      '@redocly/asyncapi-docs': 1.7.1
+      '@redocly/openapi-docs': 3.18.1
   0.131.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -5509,6 +5519,16 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.130.3:
+    timestamp: 1771571447000
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where AI search events were not tracked for project analytics.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.1
+      '@redocly/asyncapi-docs': 1.7.1
+      '@redocly/openapi-docs': 3.18.1
   0.131.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -10164,6 +10184,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.130.3:
+    timestamp: 1771571447000
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where AI search events were not tracked for project analytics.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.1
+      '@redocly/asyncapi-docs': 1.7.1
+      '@redocly/openapi-docs': 3.18.1
   0.131.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -14807,6 +14837,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.130.3:
+    timestamp: 1771571447000
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where AI search events were not tracked for project analytics.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.1
+      '@redocly/asyncapi-docs': 1.7.1
+      '@redocly/openapi-docs': 3.18.1
   0.131.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -22208,6 +22248,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.18.1:
+    timestamp: 1771571447000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.21.1
   3.19.0-next.4:
     timestamp: 1771509130000
     changes:
@@ -27141,6 +27188,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.13.3:
+    timestamp: 1771571447000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.130.3
+      '@redocly/redoc-reef': 0.130.3
+      '@redocly/realm': 0.130.3
+      '@redocly/redoc': 0.130.3
   1.14.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -31896,6 +31953,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.15.1:
+    timestamp: 1771571447000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.18.1
   0.16.0-next.4:
     timestamp: 1771509130000
     changes:
@@ -34518,6 +34582,12 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.21.1:
+    timestamp: 1771571447000
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   0.22.0-next.4:
     timestamp: 1771509130000
     changes:
@@ -37953,6 +38023,13 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.7.1:
+    timestamp: 1771571447000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.18.1
   1.8.0-next.4:
     timestamp: 1771509130000
     changes:
