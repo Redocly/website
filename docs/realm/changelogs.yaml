@@ -1,4 +1,14 @@
 '@redocly/realm':
+  0.130.3:
+    timestamp: 1771511408000
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where AI search events were not tracked for project analytics.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.1
+      '@redocly/asyncapi-docs': 1.7.1
+      '@redocly/openapi-docs': 3.18.1
   0.131.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -52,7 +62,7 @@
       '@redocly/graphql-docs': 1.8.0-next.2
       '@redocly/portal-plugin-mock-server': 0.16.0-next.2
   0.130.2:
-    timestamp: 1770997425000
+    timestamp: 1770991196000
     changes:
       minor: []
       patch:
@@ -92,7 +102,7 @@
         - Fixed an issue where the login button was not displayed when a default identity provider was configured.
     dependencies: {}
   0.130.1:
-    timestamp: 1770828808000
+    timestamp: 1770827846000
     changes:
       minor: []
       patch:
@@ -118,7 +128,7 @@
       '@redocly/graphql-docs': 1.8.0-next.0
       '@redocly/openapi-docs': 3.19.0-next.0
   0.130.0:
-    timestamp: 1770734421000
+    timestamp: 1770718488000
     changes:
       minor:
         - Added an interactive lightbox viewer for Mermaid diagrams with zoom, pan, and keyboard navigation.
@@ -5509,6 +5519,16 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.130.3:
+    timestamp: 1771511408000
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where AI search events were not tracked for project analytics.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.1
+      '@redocly/asyncapi-docs': 1.7.1
+      '@redocly/openapi-docs': 3.18.1
   0.131.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -5557,7 +5577,7 @@
       '@redocly/graphql-docs': 1.8.0-next.2
       '@redocly/portal-plugin-mock-server': 0.16.0-next.2
   0.130.2:
-    timestamp: 1770997425000
+    timestamp: 1770991196000
     changes:
       minor: []
       patch:
@@ -5597,7 +5617,7 @@
         - Fixed an issue where the login button was not displayed when a default identity provider was configured.
     dependencies: {}
   0.130.1:
-    timestamp: 1770828808000
+    timestamp: 1770827846000
     changes:
       minor: []
       patch:
@@ -5623,7 +5643,7 @@
       '@redocly/graphql-docs': 1.8.0-next.0
       '@redocly/openapi-docs': 3.19.0-next.0
   0.130.0:
-    timestamp: 1770734421000
+    timestamp: 1770718488000
     changes:
       minor:
         - Added an interactive lightbox viewer for Mermaid diagrams with zoom, pan, and keyboard navigation.
@@ -10164,6 +10184,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.130.3:
+    timestamp: 1771511408000
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where AI search events were not tracked for project analytics.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.1
+      '@redocly/asyncapi-docs': 1.7.1
+      '@redocly/openapi-docs': 3.18.1
   0.131.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -10209,7 +10239,7 @@
       '@redocly/graphql-docs': 1.8.0-next.2
       '@redocly/portal-plugin-mock-server': 0.16.0-next.2
   0.130.2:
-    timestamp: 1770997425000
+    timestamp: 1770991196000
     changes:
       minor: []
       patch:
@@ -10249,7 +10279,7 @@
         - Fixed an issue where the login button was not displayed when a default identity provider was configured.
     dependencies: {}
   0.130.1:
-    timestamp: 1770828808000
+    timestamp: 1770827846000
     changes:
       minor: []
       patch:
@@ -10275,7 +10305,7 @@
       '@redocly/graphql-docs': 1.8.0-next.0
       '@redocly/openapi-docs': 3.19.0-next.0
   0.130.0:
-    timestamp: 1770734421000
+    timestamp: 1770718488000
     changes:
       minor:
         - Added an interactive lightbox viewer for Mermaid diagrams with zoom, pan, and keyboard navigation.
@@ -14807,6 +14837,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.130.3:
+    timestamp: 1771511408000
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where AI search events were not tracked for project analytics.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.1
+      '@redocly/asyncapi-docs': 1.7.1
+      '@redocly/openapi-docs': 3.18.1
   0.131.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -14857,7 +14897,7 @@
       '@redocly/graphql-docs': 1.8.0-next.2
       '@redocly/portal-plugin-mock-server': 0.16.0-next.2
   0.130.2:
-    timestamp: 1770997425000
+    timestamp: 1770991196000
     changes:
       minor: []
       patch:
@@ -14897,7 +14937,7 @@
         - Fixed an issue where the login button was not displayed when a default identity provider was configured.
     dependencies: {}
   0.130.1:
-    timestamp: 1770828808000
+    timestamp: 1770827846000
     changes:
       minor: []
       patch:
@@ -14923,7 +14963,7 @@
       '@redocly/graphql-docs': 1.8.0-next.0
       '@redocly/openapi-docs': 3.19.0-next.0
   0.130.0:
-    timestamp: 1770734421000
+    timestamp: 1770718488000
     changes:
       minor:
         - Added bundling support for OpenAPI 3.2 `components/mediaTypes` references used in request and response content.
@@ -22208,6 +22248,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.18.1:
+    timestamp: 1771511408000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.21.1
   3.19.0-next.4:
     timestamp: 1771509130000
     changes:
@@ -22255,7 +22302,7 @@
       '@redocly/theme': 0.63.0-next.0
       '@redocly/replay': 0.22.0-next.0
   3.18.0:
-    timestamp: 1770734421000
+    timestamp: 1770718488000
     changes:
       minor:
         - Added search to the dropdown in the examples panel for OpenAPI docs.
@@ -27141,6 +27188,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.13.3:
+    timestamp: 1771511408000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.130.3
+      '@redocly/redoc-reef': 0.130.3
+      '@redocly/realm': 0.130.3
+      '@redocly/redoc': 0.130.3
   1.14.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -27174,7 +27231,7 @@
       '@redocly/redoc-revel': 0.131.0-next.4
       '@redocly/theme': 0.63.0-next.2
   1.13.2:
-    timestamp: 1770997425000
+    timestamp: 1770991196000
     changes:
       minor: []
       patch: []
@@ -27216,7 +27273,7 @@
       '@redocly/redoc-reef': 0.131.0-next.1
       '@redocly/redoc-revel': 0.131.0-next.1
   1.13.1:
-    timestamp: 1770828808000
+    timestamp: 1770827846000
     changes:
       minor: []
       patch: []
@@ -27238,7 +27295,7 @@
       '@redocly/redoc-reef': 0.131.0-next.0
       '@redocly/redoc-revel': 0.131.0-next.0
   1.13.0:
-    timestamp: 1770734421000
+    timestamp: 1770718488000
     changes:
       minor: []
       patch: []
@@ -31896,6 +31953,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.15.1:
+    timestamp: 1771511408000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.18.1
   0.16.0-next.4:
     timestamp: 1771509130000
     changes:
@@ -31935,7 +31999,7 @@
     dependencies:
       '@redocly/openapi-docs': 3.19.0-next.0
   0.15.0:
-    timestamp: 1770734421000
+    timestamp: 1770718488000
     changes:
       minor: []
       patch:
@@ -34518,6 +34582,12 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.21.1:
+    timestamp: 1771511408000
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   0.22.0-next.4:
     timestamp: 1771509130000
     changes:
@@ -34562,7 +34632,7 @@
     dependencies:
       '@redocly/theme': 0.63.0-next.0
   0.21.0:
-    timestamp: 1770734421000
+    timestamp: 1770718488000
     changes:
       minor:
         - Improved editing experience for Replay's URL input.
@@ -37953,6 +38023,13 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.7.1:
+    timestamp: 1771511408000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.18.1
   1.8.0-next.4:
     timestamp: 1771509130000
     changes:
@@ -37995,7 +38072,7 @@
       '@redocly/theme': 0.63.0-next.0
       '@redocly/openapi-docs': 3.19.0-next.0
   1.7.0:
-    timestamp: 1770734421000
+    timestamp: 1770718488000
     changes:
       minor: []
       patch:
