@@ -1,6 +1,6 @@
 '@redocly/realm':
   0.130.4:
-    timestamp: 1771594134743
+    timestamp: 1771595112000
     changes:
       minor: []
       patch:
@@ -5532,7 +5532,7 @@
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
   0.130.4:
-    timestamp: 1771594134743
+    timestamp: 1771595112000
     changes:
       minor: []
       patch:
@@ -10209,7 +10209,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
   0.130.4:
-    timestamp: 1771594134743
+    timestamp: 1771595112000
     changes:
       minor: []
       patch:
@@ -14874,7 +14874,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
   0.130.4:
-    timestamp: 1771594134743
+    timestamp: 1771595112000
     changes:
       minor: []
       patch:
@@ -19593,7 +19593,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
   0.62.1:
-    timestamp: 1771594134743
+    timestamp: 1771595112000
     changes:
       minor: []
       patch:
@@ -22304,7 +22304,7 @@
     dependencies: {}
 '@redocly/openapi-docs':
   3.18.2:
-    timestamp: 1771594134743
+    timestamp: 1771595112000
     changes:
       minor: []
       patch:
@@ -25680,7 +25680,7 @@
     dependencies: {}
 '@redocly/graphql-docs':
   1.7.1:
-    timestamp: 1771594134743
+    timestamp: 1771595112000
     changes:
       minor: []
       patch: []
@@ -27259,7 +27259,7 @@
     dependencies: {}
 '@redocly/portal-plugin-async-api':
   1.13.4:
-    timestamp: 1771594134743
+    timestamp: 1771595112000
     changes:
       minor: []
       patch: []
@@ -32035,7 +32035,7 @@
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
   0.15.2:
-    timestamp: 1771594134743
+    timestamp: 1771595112000
     changes:
       minor: []
       patch:
@@ -34672,7 +34672,7 @@
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
   0.21.2:
-    timestamp: 1771594134743
+    timestamp: 1771595112000
     changes:
       minor: []
       patch: []
@@ -36533,7 +36533,7 @@
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
   0.13.1:
-    timestamp: 1771594134743
+    timestamp: 1771595112000
     changes:
       minor: []
       patch: []
@@ -38127,7 +38127,7 @@
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
   1.7.2:
-    timestamp: 1771594134743
+    timestamp: 1771595112000
     changes:
       minor: []
       patch:
