@@ -106,3 +106,4 @@ To delete self-hosted Git provider instances:
 - **[Use the Editor](../../use-editor.md)** - Explore Reunite's collaborative editing environment with self-hosted GitHub Enterprise Server integration and secure version control
 - **[Projects overview](../../projects.md)** - Access feedback, deployment details, and project settings for self-hosted GitHub-connected documentation projects
 - **[Configuration reference](../../../../config/index.md)** - Complete redocly.yaml configuration options for GitHub Enterprise Server integration and enterprise deployment settings
+- **[GitHub Enterprise Server connection to Reunite](./github-enterprise-flow.md)** - Explore how Reunite stores GitHub App credentials and uses them to communicate with your GitHub Enterprise Server instance
