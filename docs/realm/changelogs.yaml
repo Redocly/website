@@ -26654,6 +26654,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/mock-server':
+  0.5.12:
+    timestamp: 1772108494000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.19.2`.
+    dependencies: {}
   0.5.11:
     timestamp: 1771508248000
     changes:
