@@ -31,7 +31,7 @@ To keep "in the loop" with all our updates, [subscribe to our product updates ne
 
 ## Key dates
 
-For most customers, your current product (including Workflows, API Reference, and Developer Portal projects) is supported until February 28th, 2026.
+For most customers, your current product (including Workflows, API Reference, and Developer Portal projects) is supported until [TBD](../../blog/workflows-migration-timeline-update.md).
 
 ## Open source
 
