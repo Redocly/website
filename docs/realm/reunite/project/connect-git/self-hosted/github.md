@@ -7,6 +7,23 @@ Make sure you have the following:
 
 -  an OWNER role in your GitHub organization
 
+## Create a new GitHub App with a manifest flow
+
+Redocly provides a possibility to create a new GitHub app via register app from a [manifest](https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest).
+
+1. On the Overview page for your organization, click **Self-hosted Git providers**.
+2. Click **Add new provider**.
+3. In the **Add new provider** modal, complete the following:
+   - Choose a GitHub **Provider Type**.
+   - Enter a name for the Git provider.
+   - Enter the GitHub Enterprise Server server URL.
+   - Enter the GitHub Enterprise Server organization name where you want to create this app.
+  You are redirected to your GitHub Enterprise Server where you need to confirm the app creation with the name you added in the **Name** field.
+5. Click **Save**.
+
+  The self-hosted GitHub Enterprise Server provider displays on the list of Git providers.
+  Users in your organization can select this provider to [add a repository as a project source](../connect-git-provider.md) to Reunite, or to [add content from a remote repository](../../remote-content/index.md).
+
 ## Add an existing GitHub App
 
 If you already have an existing GitHub App or want to create it on your own, you can select the **Add existing app** option.
@@ -106,4 +123,3 @@ To delete self-hosted Git provider instances:
 - **[Use the Editor](../../use-editor.md)** - Explore Reunite's collaborative editing environment with self-hosted GitHub Enterprise Server integration and secure version control
 - **[Projects overview](../../projects.md)** - Access feedback, deployment details, and project settings for self-hosted GitHub-connected documentation projects
 - **[Configuration reference](../../../../config/index.md)** - Complete redocly.yaml configuration options for GitHub Enterprise Server integration and enterprise deployment settings
-- **[GitHub Enterprise Server connection to Reunite](./github-enterprise-flow.md)** - Explore how Reunite stores GitHub App credentials and uses them to communicate with your GitHub Enterprise Server instance
