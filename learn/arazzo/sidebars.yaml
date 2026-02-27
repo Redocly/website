@@ -8,3 +8,4 @@
 - page: ./linting-arazzo-workflows.md
 - page: ./testing-arazzo-workflows.md
 - page: ./documenting-multiple-apis-using-arazzo.md
+- page: ./arazzo-crud-practical-example.md
