@@ -25194,6 +25194,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.44.0:
+    timestamp: 1772454550000
+    changes:
+      minor:
+        - Enhanced the config schema to propagate custom `nodeTypeName` values to `@redocly/openapi-core`.
+      patch: []
+    dependencies: {}
   0.43.0:
     timestamp: 1770808609000
     changes:
