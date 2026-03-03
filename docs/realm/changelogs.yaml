@@ -1,29 +1,4 @@
 '@redocly/realm':
-  0.131.0-next.9:
-    timestamp: 1772531492000
-    changes:
-      minor:
-        - Added support for the product filter on Project Analytics page.
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.19.2`.
-        - Fixed tooltip visibility in browsers without anchor positioning support.
-        - Fixed an issue where page actions remained visible even though `search` was disabled.
-        - Improved the accessibility of AsyncAPI docs.
-        - Fixed an issue where `rbac` configuration ignored versioned content folder paths with leading slashes.
-        - Added support for OpenAPI `allowReserved` query parameters in Replay.
-        - Fixed padding in schema definition and MCP tool views.
-        - Fixed an issue in API docs where the schema description in the **Schema definition** section was duplicated.
-        - Fixed an issue where the terminal output retained artefacts from previous commands.
-        - Updated `@redocly/openapi-core` to version `2.20.1`.
-        - Fixed a bug where segment analytics ignored `trackPage=false` in configuration when a custom script was used to send page view events.
-        - Fixed an issue with mock server where the response sample included `writeOnly` fields.
-    dependencies:
-      '@redocly/openapi-docs': 3.19.0-next.6
-      '@redocly/realm-asyncapi-sdk': 0.9.0-next.3
-      '@redocly/asyncapi-docs': 1.8.0-next.6
-      '@redocly/graphql-docs': 1.8.0-next.5
-      '@redocly/theme': 0.63.0-next.4
-      '@redocly/portal-plugin-mock-server': 0.16.0-next.6
   0.131.0-next.8:
     timestamp: 1771942764000
     changes:
@@ -5578,26 +5553,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.131.0-next.9:
-    timestamp: 1772531492000
-    changes:
-      minor:
-        - Added support for the product filter on Project Analytics page.
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.19.2`.
-        - Fixed tooltip visibility in browsers without anchor positioning support.
-        - Fixed an issue where page actions remained visible even though `search` was disabled.
-        - Fixed an issue where `rbac` configuration ignored versioned content folder paths with leading slashes.
-        - Fixed an issue where the terminal output retained artefacts from previous commands.
-        - Updated `@redocly/openapi-core` to version `2.20.1`.
-        - Fixed a bug where segment analytics ignored `trackPage=false` in configuration when a custom script was used to send page view events.
-    dependencies:
-      '@redocly/openapi-docs': 3.19.0-next.6
-      '@redocly/realm-asyncapi-sdk': 0.9.0-next.3
-      '@redocly/asyncapi-docs': 1.8.0-next.6
-      '@redocly/graphql-docs': 1.8.0-next.5
-      '@redocly/theme': 0.63.0-next.4
-      '@redocly/portal-plugin-mock-server': 0.16.0-next.6
   0.131.0-next.8:
     timestamp: 1771942764000
     changes:
@@ -10295,26 +10250,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.131.0-next.9:
-    timestamp: 1772531492000
-    changes:
-      minor:
-        - Added support for the product filter on Project Analytics page.
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.19.2`.
-        - Fixed tooltip visibility in browsers without anchor positioning support.
-        - Fixed an issue where page actions remained visible even though `search` was disabled.
-        - Fixed an issue where `rbac` configuration ignored versioned content folder paths with leading slashes.
-        - Fixed an issue where the terminal output retained artefacts from previous commands.
-        - Updated `@redocly/openapi-core` to version `2.20.1`.
-        - Fixed a bug where segment analytics ignored `trackPage=false` in configuration when a custom script was used to send page view events.
-    dependencies:
-      '@redocly/openapi-docs': 3.19.0-next.6
-      '@redocly/realm-asyncapi-sdk': 0.9.0-next.3
-      '@redocly/asyncapi-docs': 1.8.0-next.6
-      '@redocly/graphql-docs': 1.8.0-next.5
-      '@redocly/theme': 0.63.0-next.4
-      '@redocly/portal-plugin-mock-server': 0.16.0-next.6
   0.131.0-next.8:
     timestamp: 1771942764000
     changes:
@@ -15000,30 +14935,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.131.0-next.9:
-    timestamp: 1772531492000
-    changes:
-      minor:
-        - Added support for the product filter on Project Analytics page.
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.19.2`.
-        - Fixed tooltip visibility in browsers without anchor positioning support.
-        - Fixed an issue where page actions remained visible even though `search` was disabled.
-        - Improved the accessibility of AsyncAPI docs.
-        - Fixed an issue where `rbac` configuration ignored versioned content folder paths with leading slashes.
-        - Added support for OpenAPI `allowReserved` query parameters in Replay.
-        - Fixed padding in schema definition and MCP tool views.
-        - Fixed an issue in API docs where the schema description in the **Schema definition** section was duplicated.
-        - Fixed an issue where the terminal output retained artefacts from previous commands.
-        - Updated `@redocly/openapi-core` to version `2.20.1`.
-        - Fixed a bug where segment analytics ignored `trackPage=false` in configuration when a custom script was used to send page view events.
-    dependencies:
-      '@redocly/openapi-docs': 3.19.0-next.6
-      '@redocly/realm-asyncapi-sdk': 0.9.0-next.3
-      '@redocly/asyncapi-docs': 1.8.0-next.6
-      '@redocly/graphql-docs': 1.8.0-next.5
-      '@redocly/theme': 0.63.0-next.4
-      '@redocly/portal-plugin-mock-server': 0.16.0-next.6
   0.131.0-next.8:
     timestamp: 1771942764000
     changes:
@@ -19765,15 +19676,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.63.0-next.4:
-    timestamp: 1772531492000
-    changes:
-      minor: []
-      patch:
-        - Fixed tooltip visibility in browsers without anchor positioning support.
-        - Fixed an issue where page actions remained visible even though `search` was disabled.
-        - Improved the accessibility of AsyncAPI docs.
-    dependencies: {}
   0.62.1:
     timestamp: 1771595112000
     changes:
@@ -22485,20 +22387,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.19.0-next.6:
-    timestamp: 1772531492000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.19.2`.
-        - Fixed tooltip visibility in browsers without anchor positioning support.
-        - Added support for OpenAPI `allowReserved` query parameters in Replay.
-        - Fixed padding in schema definition and MCP tool views.
-        - Fixed an issue in API docs where the schema description in the **Schema definition** section was duplicated.
-        - Updated `@redocly/openapi-core` to version `2.20.1`.
-        - Fixed an issue with mock server where the response sample included `writeOnly` fields.
-    dependencies:
-      '@redocly/replay': 0.22.0-next.5
   3.19.0-next.5:
     timestamp: 1771942764000
     changes:
@@ -25889,14 +25777,6 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
-  1.8.0-next.5:
-    timestamp: 1772531492000
-    changes:
-      minor: []
-      patch:
-        - Fixed tooltip visibility in browsers without anchor positioning support.
-    dependencies:
-      '@redocly/theme': 0.63.0-next.4
   1.8.0-next.4:
     timestamp: 1771942764000
     changes:
@@ -27490,17 +27370,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.14.0-next.9:
-    timestamp: 1772531492000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.131.0-next.9
-      '@redocly/redoc': 0.131.0-next.9
-      '@redocly/redoc-reef': 0.131.0-next.9
-      '@redocly/redoc-revel': 0.131.0-next.9
-      '@redocly/theme': 0.63.0-next.4
   1.14.0-next.8:
     timestamp: 1771942764000
     changes:
@@ -32298,13 +32167,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.16.0-next.6:
-    timestamp: 1772531492000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.19.0-next.6
   0.16.0-next.5:
     timestamp: 1771942764000
     changes:
@@ -34949,18 +34811,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.22.0-next.5:
-    timestamp: 1772531492000
-    changes:
-      minor: []
-      patch:
-        - Fixed tooltip visibility in browsers without anchor positioning support.
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.19.2`.
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.20.1`.
-        - Added support for OpenAPI `allowReserved` query parameters in Replay.
-        - Fixed an issue with mock server where the response sample included `writeOnly` fields.
-    dependencies:
-      '@redocly/theme': 0.63.0-next.4
   0.21.2:
     timestamp: 1771595112000
     changes:
@@ -36822,13 +36672,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.14.0-next.4:
-    timestamp: 1772531492000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.63.0-next.4
   0.13.1:
     timestamp: 1771595112000
     changes:
@@ -38423,16 +38266,6 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
-  1.8.0-next.6:
-    timestamp: 1772531492000
-    changes:
-      minor: []
-      patch:
-        - Fixed tooltip visibility in browsers without anchor positioning support.
-        - Improved the accessibility of AsyncAPI docs.
-    dependencies:
-      '@redocly/openapi-docs': 3.19.0-next.6
-      '@redocly/theme': 0.63.0-next.4
   1.8.0-next.5:
     timestamp: 1771942764000
     changes:
