@@ -500,6 +500,18 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- page.mcpNotAllowed.title
+- 405 Method Not Allowed page header text
+- Method not allowed
+
+---
+
+- page.mcpNotAllowed.description
+- 405 Method Not Allowed page description text
+- To use this MCP server, register it in your MCP Client (for example: VS Code, Cursor, or Claude Code).
+
+---
+
 - page.forbidden.title
 - 403 Forbidden header text
 - Access forbidden
