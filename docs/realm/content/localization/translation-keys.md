@@ -1028,6 +1028,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.languages.moreButton.tooltipText
+- Tooltip for `View more languages` button in OpenAPI description
+- View more languages
+
+---
+
 - openapi.servers.title
 - Title for the servers section in OpenAPI description
 - Servers
@@ -1715,6 +1721,30 @@ This page contains the list of all predefined translation keys used in default U
 - graphql.content.fragment
 - Label for a fragment in GraphQL content
 - Fragment
+
+---
+
+- button.copy.tooltipText
+- Tooltip for copy button
+- Copy to clipboard
+
+---
+
+- button.download.tooltipText
+- Tooltip for download button
+- Download description
+
+---
+
+- button.externalLink.tooltipText
+- Tooltip for external link button
+- Open in new tab
+
+---
+
+- button.email.tooltipText
+- Tooltip for email button
+- Send email
 
 ---
 
