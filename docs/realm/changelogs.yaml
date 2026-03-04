@@ -1,4 +1,14 @@
 '@redocly/realm':
+  0.131.0-next.11:
+    timestamp: 1772555499000
+    changes:
+      minor: []
+      patch:
+        - Fixed canonical URLs on versioned pages to use the default version.
+        - Fixed an issue where `sidebars.yaml` files in folders added to `ignore` configuration weren't excluded from link checking.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.9.0-next.4
+      '@redocly/theme': 0.63.0-next.4
   0.131.0-next.10:
     timestamp: 1772547563000
     changes:
@@ -5592,6 +5602,16 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.131.0-next.11:
+    timestamp: 1772555499000
+    changes:
+      minor: []
+      patch:
+        - Fixed canonical URLs on versioned pages to use the default version.
+        - Fixed an issue where `sidebars.yaml` files in folders added to `ignore` configuration weren't excluded from link checking.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.9.0-next.4
+      '@redocly/theme': 0.63.0-next.4
   0.131.0-next.10:
     timestamp: 1772547563000
     changes:
@@ -10322,6 +10342,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.131.0-next.11:
+    timestamp: 1772555499000
+    changes:
+      minor: []
+      patch:
+        - Fixed canonical URLs on versioned pages to use the default version.
+        - Fixed an issue where `sidebars.yaml` files in folders added to `ignore` configuration weren't excluded from link checking.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.9.0-next.4
+      '@redocly/theme': 0.63.0-next.4
   0.131.0-next.10:
     timestamp: 1772547563000
     changes:
@@ -15040,6 +15070,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.131.0-next.11:
+    timestamp: 1772555499000
+    changes:
+      minor: []
+      patch:
+        - Fixed canonical URLs on versioned pages to use the default version.
+        - Fixed an issue where `sidebars.yaml` files in folders added to `ignore` configuration weren't excluded from link checking.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.9.0-next.4
+      '@redocly/theme': 0.63.0-next.4
   0.131.0-next.10:
     timestamp: 1772547563000
     changes:
@@ -26843,7 +26883,17 @@
       patch: []
     dependencies:
       '@redocly/theme': 0.6.0
+'@redocly/api-docs': {}
 '@redocly/mock-server':
+  0.5.13:
+    timestamp: 1772608772000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.20.3`.
+        - Updated `@redocly/openapi-core` to version `2.20.1`.
+        - Updated `@redocly/ajv` to version `8.18.0`.
+    dependencies: {}
   0.5.12:
     timestamp: 1772108494000
     changes:
@@ -27553,6 +27603,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.14.0-next.11:
+    timestamp: 1772555499000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.131.0-next.11
+      '@redocly/redoc': 0.131.0-next.11
+      '@redocly/redoc-reef': 0.131.0-next.11
+      '@redocly/redoc-revel': 0.131.0-next.11
+      '@redocly/theme': 0.63.0-next.4
   1.14.0-next.10:
     timestamp: 1772547563000
     changes:
