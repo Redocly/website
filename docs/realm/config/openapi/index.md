@@ -34,14 +34,14 @@ description: |-
 
 - [corsProxyUrl](./cors-proxy-url.md)
 - string
-- Overrides the CORS proxy URL used by Replay.
-  Default: built-in CORS proxy URL: `/_api/cors/`.
+- Specifies custom CORS proxy server.
 
 ---
 
 - [downloadUrls](./download-urls.md)
 - [[API description URL object](./download-urls.md#api-description-url-object)]
 - List the URLs used to download the API description in JSON or YAML format.
+**Supported in Redoc CE.**
 
 ---
 
@@ -69,12 +69,14 @@ description: |-
 - [generatedSamplesMaxDepth](./generated-samples-max-depth.md)
 - number
 - Sets the number of levels to display in generated payload samples.
+**Supported in Redoc CE.**
 
 ---
 
 - [hideDownloadButtons](./hide-download-buttons.md)
 - boolean
 - Toggle the appearance of a **Download OpenAPI description** section.
+  **Supported in Redoc CE.**
 
 ---
 
@@ -87,6 +89,7 @@ description: |-
 - [hidePropertiesPrefix](./hide-properties-prefix.md)
 - boolean
 - Hides the parent name for nested properties.
+  **Supported in Redoc CE.**
 
 ---
 
@@ -99,6 +102,7 @@ description: |-
 - [hideSchemaTitles](./hide-schema-titles.md)
 - boolean
 - Hides the schema field title next to the type.
+  **Supported in Redoc CE.**
 
 ---
 
@@ -106,6 +110,7 @@ description: |-
 - number | string
 - Sets the default expand level for JSON payload samples.
   Use `all` to expand all levels.
+  **Supported in Redoc CE.**
 
 ---
 
@@ -114,30 +119,35 @@ description: |-
 - Specifies layout options for OpenAPI documentation.
   Possible values: `three-panel` | `stacked`.
   Default value: `three-panel`.
+  **Supported in Redoc CE.**
 
 ---
 
 - [maxDisplayedEnumValues](./max-displayed-enum-values.md)
 - number
-- Specifies the number of enum values to display.
+- Specifies number of enum values to display.
+  **Supported in Redoc CE.**
 
 ---
 
 - [onlyRequiredInSamples](./only-required-in-samples.md)
 - boolean
 - Displays only required fields in request samples.
+  **Supported in Redoc CE.**
 
 ---
 
 - [sanitize](./sanitize.md)
 - boolean
 - Sanitize HTML/Markdown to prevent [cross-site scripting (XSS)](https://owasp.org/www-community/attacks/xss/) attacks.
+  **Supported in Redoc CE.**
 
 ---
 
 - [schemaDefinitionsTagName](./schema-definitions-tag-name.md)
 - string
 - Sets a schema definitions tag name that is applied to all schemas and displayed in the sidebar navigation.
+  **Supported in Redoc CE.**
 
 ---
 
@@ -145,6 +155,7 @@ description: |-
 - number | string
 - Sets the default expand level for schemas.
   Use `all` to expand all levels.
+  **Supported in Redoc CE.**
 
 ---
 
@@ -152,6 +163,7 @@ description: |-
 - [string] | boolean
 - Displays specification extensions ('x-' fields).
   If a list is provided, only those specification extensions are displayed.
+  **Supported in Redoc CE.**
 
 ---
 
@@ -166,6 +178,7 @@ description: |-
 - [sortRequiredPropsFirst](./sort-required-props-first.md)
 - boolean
 - Sorts schema properties to display required properties first.
+  **Supported in Redoc CE.**
 
 {% /table %}
 

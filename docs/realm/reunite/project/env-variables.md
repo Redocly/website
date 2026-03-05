@@ -39,11 +39,6 @@ When hosting your project at Redocly, we will automatically set the proper `REDO
 - For production builds, the `REDOCLY_ENV` variable will be set to `"production"`
 - For previews, the `REDOCLY_ENV` variable will be set to `"preview"`
 
-{% admonition type="warning" %}
-When the same variable is defined both in Reunite (in the project **Settings** > **Environment variables** section) and in your base `.env` file, the value from Reunite is used.
-Environment-specific `.env` files (such as `.env.production`, `.env.preview`, `.env.development`) and branch-specific `.env.branch.<branch-name>` files still take precedence over both.
-{% /admonition %}
-
 ### Settings page
 
 You can also add environment variables individually through the Redocly interface:

@@ -13,7 +13,7 @@ description: Configure redirects to resources within your project.
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 {% $frontmatter.description %}
-Use redirects to change which resource a URL points to, maintaining working links when you move, rename, or restructure content.
+Redirects allow you to change which resource a URL points to, enabling you to maintain working links when you move, rename, or restructure content.
 
 Redocly supports two ways of configuring redirects:
 

@@ -44,30 +44,11 @@ This reference documents the available variables and their usage.
 
 ## Usage examples
 
-### Display the user email
+You can use these variables within your Markdoc content:
 
-Use variables within your Markdoc content:
-
-```md {% process=false %}
-Welcome, {% default($user.email, "Redocker") %}!
+```md
+Welcome, {% $user.email %}!
 ```
-
-Result:
-
-> Welcome, {% default($user.email, "Redocker") %}!
-
-
-### Dump the RBAC details
-
-Dump the `$rbac` contents to troubleshoot RBAC issues:
-
-```md {% process=false %}
-{% $rbac %}
-```
-
-Result:
-
-{% $rbac %}
 
 ## Data structure examples
 

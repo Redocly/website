@@ -247,24 +247,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- search.ai.toolCall.searching
-- Message shown while AI is searching for relevant documentation
-- Searching...
-
----
-
-- search.ai.toolResult.found
-- First part of a message that is shown when AI finished searching
-- Found
-
----
-
-- search.ai.toolResult.found.documents
-- Last part of a message that is shown when AI finished searching
-- documents
-
----
-
 - aiAssistant.trigger
 - Button text to trigger the AI assistant
 - Ask AI
@@ -500,18 +482,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- page.mcpNotAllowed.title
-- 405 Method Not Allowed page header text
-- Method not allowed
-
----
-
-- page.mcpNotAllowed.description
-- 405 Method Not Allowed page description text
-- To use this MCP server, register it in your MCP Client (for example: VS Code, Cursor, or Claude Code).
-
----
-
 - page.forbidden.title
 - 403 Forbidden header text
 - Access forbidden
@@ -683,12 +653,6 @@ This page contains the list of all predefined translation keys used in default U
 - feedback.settings.comment.cancel
 - Send comment feedback cancel button text
 - Cancel
-
----
-
-- feedback.settings.comment.maxLength
-- Message displayed when feedback comment reaches maximum character limit (interpolates `maxLength` variable)
-- Maximum content length of {{maxLength}} characters reached
 
 ---
 
@@ -1025,12 +989,6 @@ This page contains the list of all predefined translation keys used in default U
 - openapi.languages.title
 - Title for the languages section in OpenAPI description
 - Languages
-
----
-
-- openapi.languages.moreButton.tooltipText
-- Tooltip for `View more languages` button in OpenAPI description
-- View more languages
 
 ---
 
@@ -1721,30 +1679,6 @@ This page contains the list of all predefined translation keys used in default U
 - graphql.content.fragment
 - Label for a fragment in GraphQL content
 - Fragment
-
----
-
-- button.copy.tooltipText
-- Tooltip for copy button
-- Copy to clipboard
-
----
-
-- button.download.tooltipText
-- Tooltip for download button
-- Download description
-
----
-
-- button.externalLink.tooltipText
-- Tooltip for external link button
-- Open in new tab
-
----
-
-- button.email.tooltipText
-- Tooltip for email button
-- Send email
 
 ---
 

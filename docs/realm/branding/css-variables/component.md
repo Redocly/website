@@ -684,7 +684,6 @@
   --dropdown-menu-font-weight: var(--font-weight-regular);
   --dropdown-menu-line-height: var(--line-height-base);
   --dropdown-menu-text-color: var(--text-color-secondary);
-  --dropdown-menu-z-index: var(--z-index-raised);
 
   --dropdown-menu-padding-top: var(--spacing-xxs);
   --dropdown-menu-min-width: 100px;

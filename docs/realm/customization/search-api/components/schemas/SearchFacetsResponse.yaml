@@ -1,5 +1,0 @@
-type: array
-items:
-  $ref: ./FacetObject.yaml
-description: |
-  If the request includes `field`: array with a single facet. Otherwise all facet objects with their values.
