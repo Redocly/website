@@ -112,5 +112,5 @@ If all pages in a group are hidden, the sidebar group is also hidden.
 
 - **[RBAC concepts](./rbac.md)** - Understand how role-based access control works and the relationship between roles, teams, and navigation permissions
 - **[RBAC configuration guide](./index.md)** - Complete step-by-step instructions for implementing RBAC across your documentation project, including navigation setup
-- **[RBAC configuration reference](../config/rbac.md)** - Detailed configuration options and syntax for setting up role-based access control in navigation files
+- **[RBAC configuration reference](../config/access/rbac.md)** - Detailed configuration options and syntax for setting up role-based access control in navigation files
 - **[OpenAPI RBAC extension](../content/api-docs/openapi-extensions/x-rbac.md)** - Apply RBAC permissions to specific objects and sections within your OpenAPI reference documentation

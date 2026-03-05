@@ -79,11 +79,11 @@ sso:
 
 ## Resources
 
-- **[Access configuration](./access.md)** - Group authentication and access settings together using the `access` object
+- **[Access configuration](./index.md)** - Group authentication and access settings together using the `access` object
 - **[RBAC configuration](./rbac.md)** - Complete options for configuring role-based access control for granular project permissions and user management
 - **[RequiresLogin configuration](./requires-login.md)** - Require login for all users to your project without implementing complex role-based access control
-- **[Google Workspace SAML 2 SSO](../reunite/organization/sso/configure-google-sso.md)** - Integrate Google Workspace SAML 2 SSO with Reunite for enterprise authentication workflows
-- **[Single Sign-on concepts](../reunite/organization/sso/sso.md)** - Understand different identity provider types in Reunite and how they apply to project authentication
-- **[Add an identity provider](../reunite/organization/sso/add-idp.md)** - Follow steps to add identity providers in Reunite for centralized authentication management
-- **[Configure SSO](../reunite/organization/sso/configure-sso.md)** - Enable multiple identity provider types to give users flexible authentication options for your projects
-- **[Role-based access control (RBAC)](../access/rbac.md)** - Implement advanced access control scenarios to grant specific users access to specific content and features
+- **[Google Workspace SAML 2 SSO](../../reunite/organization/sso/configure-google-sso.md)** - Integrate Google Workspace SAML 2 SSO with Reunite for enterprise authentication workflows
+- **[Single Sign-on concepts](../../reunite/organization/sso/sso.md)** - Understand different identity provider types in Reunite and how they apply to project authentication
+- **[Add an identity provider](../../reunite/organization/sso/add-idp.md)** - Follow steps to add identity providers in Reunite for centralized authentication management
+- **[Configure SSO](../../reunite/organization/sso/configure-sso.md)** - Enable multiple identity provider types to give users flexible authentication options for your projects
+- **[Role-based access control (RBAC)](./rbac.md)** - Implement advanced access control scenarios to grant specific users access to specific content and features

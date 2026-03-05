@@ -74,6 +74,6 @@ Reunite deletes the project and returns you to your organization's dashboard.
 
 ## Resources
 
-- **[Configure RBAC](../../config/rbac.md)** - Set up role-based access control for granular project and content access permissions
+- **[Configure RBAC](../../config/access/rbac.md)** - Set up role-based access control for granular project and content access permissions
 - **[Connect a Git provider](./connect-git/connect-git-provider.md)** - Integrate your projects with Git repositories from various providers for version control and collaboration
 - **[Roles and permissions](../../access/roles.md)** - Understand user roles and permission levels available for project access control and team collaboration

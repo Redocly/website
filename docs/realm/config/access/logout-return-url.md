@@ -70,7 +70,7 @@ Common use cases for `logoutReturnUrl`:
 
 ## Resources
 
-- **[Access configuration](./access.md)** - Group authentication and access settings together using the `access` object
+- **[Access configuration](./index.md)** - Group authentication and access settings together using the `access` object
 - **[RequiresLogin configuration](./requires-login.md)** - Require login for your project
 - **[SSO configuration](./sso.md)** - Configure single sign-on for your project
 

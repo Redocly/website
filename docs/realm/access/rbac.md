@@ -107,5 +107,5 @@ In this example, the `Writers` team has a `write` project role and can contribut
 
 - **[Roles and permissions](./roles.md)** - Explore the different user roles and permissions available for controlling access to your organization and projects
 - **[Teams and users management](../reunite/organization/teams.md)** - Configure teams and manage user assignments, including adding users to multiple teams for flexible access control
-- **[RBAC configuration reference](../config/rbac.md)** - Complete configuration details and options for implementing role-based access control in your projects
+- **[RBAC configuration reference](../config/access/rbac.md)** - Complete configuration details and options for implementing role-based access control in your projects
 - **[OpenAPI RBAC extension](../content/api-docs/openapi-extensions/x-rbac.md)** - Apply RBAC permissions to specific objects and sections within your OpenAPI description files

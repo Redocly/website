@@ -76,7 +76,7 @@ If you ejected the `navbar` component before version `0.128.0`, [update it](../c
   - `docs/api/**` - matches all pages under `docs/api/`
   - `**` - matches all pages (catch-all)
   - `getting-started.md` - matches a specific page
-  
+
   **Matching rules:**
   - more specific patterns take priority over less specific ones
   - exact matches take priority over wildcard patterns
@@ -108,7 +108,7 @@ If you ejected the `navbar` component before version `0.128.0`, [update it](../c
   Controls the visibility of the banner based on the user's team membership.
   If specified, only users belonging to teams with at least `read` access will see the banner.
 
-  See [RBAC configuration](./rbac.md) for details.
+  See [RBAC configuration](./access/rbac.md) for details.
 
 {% /table %}
 

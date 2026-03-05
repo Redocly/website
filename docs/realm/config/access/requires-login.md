@@ -15,7 +15,7 @@ description: This configuration option makes all your content private for non-au
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 {% $frontmatter.description %}
-Only authenticated users, who are verified through either Redocly or an identity provider (IdP) you [added in Reunite](../reunite/organization/sso/add-idp.md) can access your project.
+Only authenticated users, who are verified through either Redocly or an identity provider (IdP) you [added in Reunite](../../reunite/organization/sso/add-idp.md) can access your project.
 
 {% admonition type="info" %}
 The **requiresLogin** option cannot be used in conjunction with the **rbac**.
@@ -45,6 +45,6 @@ requiresLogin: true
 
 ## Resources
 
-- **[Access configuration](./access.md)** - Group authentication and access settings together using the `access` object
+- **[Access configuration](./index.md)** - Group authentication and access settings together using the `access` object
 - **[RBAC configuration](./rbac.md)** - Complete options for configuring role-based access control as an alternative to requiresLogin for granular permissions
 - **[SSO configuration](./sso.md)** - Discover options for configuring single sign-on to work with requiresLogin for streamlined user authentication

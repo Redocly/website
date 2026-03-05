@@ -79,17 +79,17 @@ This guide provides a comprehensive overview of available configuration options 
 {% /configSection %}
 
 {% configSection title="Security and access management" description="Configure user authentication and access controls for your documentation." %}
-  {% configProperty file="access.md" /%}
+  {% configProperty file="access/index.md" /%}
 
-  {% configProperty file="rbac.md" /%}
+  {% configProperty file="access/rbac.md" /%}
 
-  {% configProperty file="requires-login.md" /%}
+  {% configProperty file="access/requires-login.md" /%}
 
-  {% configProperty file="logout-return-url.md" /%}
+  {% configProperty file="access/logout-return-url.md" /%}
 
-  {% configProperty file="sso.md" /%}
+  {% configProperty file="access/sso.md" /%}
 
-  {% configProperty file="residency.md" /%}
+  {% configProperty file="access/residency.md" /%}
 {% /configSection %}
 
 {% configSection title="Customization" description="Extend functionality with custom code and additional features." %}

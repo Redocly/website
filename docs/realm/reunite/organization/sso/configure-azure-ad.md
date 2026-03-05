@@ -27,7 +27,7 @@ After adding the required configuration in Microsoft Entra, return to this page 
 
 ## Install Redocly Enterprise in Microsoft Entra
 
-Install the [Redocly Enterprise application](https://azuremarketplace.microsoft.com/en-US/marketplace/apps/aad.redocly?tab=Overview) from the Microsoft Entra gallery.
+Install the [Redocly Enterprise application](https://marketplace.microsoft.com/en-US/product/entra-id-apps/aad.redocly?tab=Overview) from the Microsoft Entra gallery.
 
 Assign some users and/or groups to the application:
 
@@ -125,7 +125,7 @@ sso:
 
 This change must be committed to the `main` branch to take effect.
 
-See the [sso reference](../../../config/sso.md) for more details.
+See the [sso reference](../../../config/access/sso.md) for more details.
 
 ### Configure RBAC
 
@@ -152,5 +152,5 @@ rbac:
 
 ## Resources
 
-- **[SSO configuration reference](../../../config/sso.md)** - Complete technical reference for all SSO configuration options and settings in your redocly.yaml file
-- **[RBAC configuration reference](../../../config/rbac.md)** - Configure role-based access control options to manage user permissions and access levels
+- **[SSO configuration reference](../../../config/access/sso.md)** - Complete technical reference for all SSO configuration options and settings in your redocly.yaml file
+- **[RBAC configuration reference](../../../config/access/rbac.md)** - Configure role-based access control options to manage user permissions and access levels

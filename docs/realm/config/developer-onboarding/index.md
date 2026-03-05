@@ -297,4 +297,4 @@ developerOnboarding:
 ## Resources
 
 - **[List of used Apigee API endpoints](./apigee-api-operations.md)** - Complete reference of Apigee API endpoints used by the developer onboarding feature for integration and troubleshooting
-- **[SSO configuration](../sso.md)** - Configure single sign-on authentication required for developer onboarding and app registration workflows
+- **[SSO configuration](../access/sso.md)** - Configure single sign-on authentication required for developer onboarding and app registration workflows

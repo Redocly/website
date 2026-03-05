@@ -146,4 +146,4 @@ To link duplicate users:
 
 - **[Add an identity provider](./sso/add-idp.md)** - Set up identity providers to import and manage users in bulk for streamlined user onboarding
 - **[Teams and users](./teams.md)** - Learn about assigning users to teams and managing team-based access control within your organization
-- **[Single sign-on (SSO) configuration](../../config/sso.md)** - Complete configuration reference and examples for implementing SSO in your projects
+- **[Single sign-on (SSO) configuration](../../config/access/sso.md)** - Complete configuration reference and examples for implementing SSO in your projects
