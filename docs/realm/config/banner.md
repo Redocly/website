@@ -7,6 +7,9 @@ plans:
   - Enterprise
   - Enterprise+
 description: Display announcement banners at the top of your documentation pages.
+banner:
+  - content: This is how a banner displays on project pages.
+    dismissible: false
 keywords:
   includes:
     - banner
@@ -26,9 +29,7 @@ Banners support Markdown content, can be configured to appear on specific pages 
 Configure banners as an array of banner objects in your `redocly.yaml` file or in page front matter.
 
 {% admonition type="info" %}
-
 If you ejected the `navbar` component before version `0.128.0`, [update it](../customization/eject-components/eject-components-in-reunite.md#update-ejected-component) to have the component's full functionality.
-
 {% /admonition %}
 
 {% table %}
@@ -44,6 +45,7 @@ If you ejected the `navbar` component before version `0.128.0`, [update it](../c
 - **REQUIRED.**
   The banner content text.
   Supports Markdown syntax for formatting, links, tags and emphasis.
+
   Example: `This is **a great announcement.** [Button](https://redocly.com)`
 
 ---
@@ -53,6 +55,7 @@ If you ejected the `navbar` component before version `0.128.0`, [update it](../c
 - Configure whether users can dismiss the banner.
   When `true`, a close button appears on the banner.
   Dismissed banners are stored in browser's `localStorage` and won't appear again for that user.
+
   Default: `false`
 
 ---
@@ -63,19 +66,18 @@ If you ejected the `navbar` component before version `0.128.0`, [update it](../c
   Uses glob pattern matching to target specific pages or sections.
   If not specified, matches all pages.
 
-  **Note:** When configuring banners in front matter, the `target` option is not needed.
+  {% admonition type="info" %}
+  When configuring banners in front matter, the `target` option is not needed.
   Front matter banners automatically target the page where they're configured.
+  {% /admonition %}
 
   **Pattern examples:**
-
   - `blog/**` - matches all pages under the `blog/` path
   - `docs/api/**` - matches all pages under `docs/api/`
   - `**` - matches all pages (catch-all)
   - `getting-started.md` - matches a specific page
-  If not specified, the banner appears on all pages.
-
+  
   **Matching rules:**
-
   - more specific patterns take priority over less specific ones
   - exact matches take priority over wildcard patterns
   - when multiple banners match a page, only the most specific one is displayed
@@ -88,11 +90,14 @@ If you ejected the `navbar` component before version `0.128.0`, [update it](../c
 - string
 - The visual style tone of the banner.
   Controls the color scheme of the banner.
+
   **Available colors:**
-  - `info` - Blue background (default)
-  - `success` - Green background
-  - `warning` - Yellow background
-  - `error` - Red background
+
+  - `info` - blue background
+  - `success` - green background
+  - `warning` - yellow background
+  - `error` - red background
+
   Default: `info`
 
 ---
@@ -102,7 +107,9 @@ If you ejected the `navbar` component before version `0.128.0`, [update it](../c
 - Map of teams to permission levels that determines who can see the banner.
   Controls the visibility of the banner based on the user's team membership.
   If specified, only users belonging to teams with at least `read` access will see the banner.
-  For more information, see [RBAC configuration](./rbac.md).
+
+  See [RBAC configuration](./rbac.md) for details.
+
 {% /table %}
 
 ## Configuration
@@ -137,28 +144,32 @@ banner:
 
 ### Role-based visibility
 
-Control banner visibility based on team membership:
+Control banner visibility based on team membership.
+In the following example, the banner is only visible to unauthenticated visitors (`anonymous` team).
 
 ```yaml {% title="redocly.yaml" %}
 banner:
-  - content: "🔒 Please log in to see all content!"
+  - content: "🔒 Log in to see all content!"
     color: warning
     rbac:
       anonymous: read
       authenticated: none
 ```
 
-In this example, the banner is only visible to unauthenticated visitors (`anonymous` team).
-
 Configure a banner in the front matter of a specific page:
+
 ```md {% title="example.md" %}
 ---
 banner:
   - content: Introducing the miracle of documentation
 ---
+
 # Example page
 
-  This is an example page.  
+This is an example page.
+
+```
+
 ## Resources
 
 - **[Navigation elements](../navigation/index.md)** - Overview of navigation components and patterns
