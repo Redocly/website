@@ -7,7 +7,7 @@ seo:
   description: "Master technical SEO for documentation sites: canonicals, versioning strategy, crawlability, Core Web Vitals, and information architecture patterns."
   image: ./images/seo-best-practices.png
 author: adam-altman
-publishedDate: 2026-02-19
+publishedDate: 2026-03-05
 categories:
   - api-documentation:api-seo
   - technical-documentation:information-architecture-td
