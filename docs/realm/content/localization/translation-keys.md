@@ -22,12 +22,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- userMenu.login
-- Login button label
-- Login
-
----
-
 - userMenu.logout
 - Logout button label
 - Log out
@@ -64,6 +58,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- search.groups.all
+- Label for the "All" search result group
+- All
+
+---
+
 - search.loading
 - Label displayed when search is loading
 - Loading...
@@ -73,6 +73,12 @@ This page contains the list of all predefined translation keys used in default U
 - search.noResults.title
 - Label displayed when search gives no results
 - No results
+
+---
+
+- search.searchItem.deprecated
+- Badge label for deprecated items in search results
+- Deprecated
 
 ---
 
@@ -115,6 +121,12 @@ This page contains the list of all predefined translation keys used in default U
 - search.filter.field.reset
 - Button text to reset a specific search filter field
 - Reset
+
+---
+
+- search.filter.field.footer
+- Footer text in search filter fields suggesting additional search
+- Search to show more items...
 
 ---
 
@@ -244,6 +256,12 @@ This page contains the list of all predefined translation keys used in default U
 - search.ai.feedback.thanks
 - Thank you message after submitting AI search feedback
 - Thanks for your feedback!
+
+---
+
+- search.ai.feedback.more
+- Option text to provide additional feedback details in AI search feedback form
+- More...
 
 ---
 
@@ -728,9 +746,171 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- filter.dateRange.from
+- Label for start date in date range filter
+- From:
+
+---
+
+- filter.dateRange.to
+- Label for end date in date range filter
+- To:
+
+---
+
 - catalog.backToAllLabel
 - Button label to go back to all catalog items
 - Catalog
+
+---
+
+- catalog.catalogs.label
+- Label for catalog selector
+- Catalogs
+
+---
+
+- catalog.sort
+- Label for sort button in catalog view
+- Sort
+
+---
+
+- catalog.tags.more
+- Label for additional tags indicator in catalog cards
+- more
+
+---
+
+- catalog.tags.label
+- Label for tags in catalog entity properties
+- Tags
+
+---
+
+- catalog.owners.label
+- Label for owners in catalog entity properties
+- Owners
+
+---
+
+- catalog.repositories.label
+- Label for repositories in catalog entity properties
+- Repositories
+
+---
+
+- catalog.email.label
+- Label for email in catalog entity properties
+- Email
+
+---
+
+- catalog.format.label
+- Label for format in catalog entity properties
+- Format
+
+---
+
+- catalog.entityType.label
+- Label for entity type in catalog entity properties
+- Entity type
+
+---
+
+- catalog.domains.label
+- Label for domains in catalog entity properties
+- Domains
+
+---
+
+- catalog.contact.label
+- Label for contact channels in catalog entity properties
+- Slack channels
+
+---
+
+- catalog.methodAndPath.label
+- Label for method and path in catalog entity properties
+- Method & Path
+
+---
+
+- catalog.links.label
+- Title for links section in catalog entity view
+- Links
+
+---
+
+- catalog.metadata.domains
+- Label for domains metadata in catalog cards
+- Domains:
+
+---
+
+- catalog.metadata.owners
+- Label for owners metadata in catalog cards
+- Owners:
+
+---
+
+- catalog.history.button.label
+- Label for catalog entity version history button
+- Version history
+
+---
+
+- catalog.history.sidebar.title
+- Title for catalog entity version history sidebar
+- Version history
+
+---
+
+- catalog.history.sidebar.close
+- Accessible label for closing catalog entity version history sidebar
+- Close version history
+
+---
+
+- catalog.history.version.label
+- Label for version in catalog entity history
+- Version
+
+---
+
+- catalog.history.version.notSpecified
+- Label for unspecified version in catalog entity history
+- not specified
+
+---
+
+- catalog.history.version.default
+- Label for default version in catalog entity history
+- Default
+
+---
+
+- catalog.history.revisions.limitMessage
+- Message shown when older revisions are not available in catalog entity history
+- Older revisions are not stored.
+
+---
+
+- catalog.history.revision.current
+- Label for current revision in catalog entity history
+- Current
+
+---
+
+- catalog.history.revisions.showLess
+- Button text to collapse catalog entity revisions list
+- Show less
+
+---
+
+- catalog.history.revisions.showMore
+- Button text to expand catalog entity revisions list (interpolates `count` variable)
+- Show {{count}} more
 
 ---
 
@@ -887,6 +1067,18 @@ This page contains the list of all predefined translation keys used in default U
 - catalog.entity.schema.title
 - Title for entity schema section in catalog
 - Schema
+
+---
+
+- select.noResults
+- Message shown when no options are available in select components
+- No results
+
+---
+
+- loaders.loading
+- Text shown by generic loading indicators
+- Loading...
 
 ---
 
@@ -1082,6 +1274,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.querystring
+- Label for query string parameter section in OpenAPI description
+- Query String
+
+---
+
 - openapi.cookie
 - Label for the cookie parameter in OpenAPI description
 - Cookies
@@ -1211,6 +1409,12 @@ This page contains the list of all predefined translation keys used in default U
 - openapi.showOptionalScopes
 - Label for showing optional scopes in OpenAPI description
 - Show optional scopes
+
+---
+
+- openapi.showMoreScopes
+- Label for showing additional scopes in OpenAPI security (interpolates `hiddenCount` variable)
+- Show {{hiddenCount}} more scopes
 
 ---
 
@@ -1412,6 +1616,24 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.mcp.toolName
+- Label for tool name in MCP tool details
+- Tool name
+
+---
+
+- openapi.mcp.resources
+- Label for MCP resources group in OpenAPI sidebar
+- MCP Resources
+
+---
+
+- openapi.mcp.prompts
+- Label for MCP prompts group in OpenAPI sidebar
+- MCP Prompts
+
+---
+
 - openapi.mcp.protocolVersion
 - Label for MCP protocol version in OpenAPI sidebar
 - Protocol Version
@@ -1451,6 +1673,24 @@ This page contains the list of all predefined translation keys used in default U
 - openapi.mcp.outputExample
 - Label for MCP output example in OpenAPI sidebar
 - Output example
+
+---
+
+- openapi.mcp.uriTitle
+- Label for resource URI in MCP resource details
+- Resource URI
+
+---
+
+- openapi.mcp.mimeTypeTitle
+- Label for resource MIME type in MCP resource details
+- Resource MIME type
+
+---
+
+- openapi.mcp.exampleTitle
+- Label for resource content in MCP resource details
+- Resource content
 
 ---
 
@@ -1649,6 +1889,36 @@ This page contains the list of all predefined translation keys used in default U
 - graphql.download.description.title
 - Title for download description section in GraphQL
 - Download GraphQL description
+
+---
+
+- graphql.info.title
+- Title for info section in GraphQL description
+- Overview
+
+---
+
+- graphql.info.contact.url
+- Label for the contact URL in GraphQL info section
+- URL
+
+---
+
+- graphql.info.contact.name
+- Label for the contact name in GraphQL info section
+- E-mail
+
+---
+
+- graphql.info.license
+- Label for the license in GraphQL info section
+- License
+
+---
+
+- graphql.info.termsOfService
+- Label for the terms of service in GraphQL info section
+- Terms of Service
 
 ---
 
