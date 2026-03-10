@@ -36,7 +36,7 @@ The following command generates a test description to use with the example API t
 npx @redocly/cli generate-arazzo demo.yaml
 ```
 
-You'll find the output in a file named `auto-generated.yaml`. Take a moment to examine the test description and you will notice that each operation from the OpenAPI file now has a workflow entry like the following example:
+You'll find the output in a file named `auto-generated.arazzo.yaml`. Take a moment to examine the test description and you will notice that each operation from the OpenAPI file now has a workflow entry like the following example:
 
 ```yaml
   - workflowId: get-workflow
@@ -52,7 +52,7 @@ You can use these starter tests as a basic validation step for an API to check t
 Using the generated test file, the following command checks the live API against the behavior described by OpenAPI:
 
 ```sh
-npx @redocly/cli respect auto-generated.yaml --verbose
+npx @redocly/cli respect auto-generated.arazzo.yaml --verbose
 ```
 
 The tests complete successfully but if you look closely you may notice that all the requests we sent were unauthenticated.
@@ -71,7 +71,7 @@ The next step is to add authentication information and run the tests again with 
 To test the behavior of the API when authentication is supplied, it must be added to the workflow file.
 Since it's not good practice to add secrets directly to a file that is stored in source control, this example uses an environment variable.
 
-Open the `auto-generated.yaml` file in your IDE or text editor.
+Open the `auto-generated.arazzo.yaml` file in your IDE or text editor.
 Add the following lines to the file to each workflow (at the same level as `workflowId` and `steps`) to set the authentication header to use, and to describe that the value comes from the `IMFKEY` environment variable:
 
 ```yaml
@@ -93,7 +93,7 @@ inputs:
 Run the tests again and supply the input value to the CLI, as shown in the following example:
 
 ```sh
-npx @redocly/cli respect auto-generated.yaml --input IMFKEY=abc
+npx @redocly/cli respect auto-generated.arazzo.yaml --input IMFKEY=abc
 ```
 
 You can use this exact command, including the value of the environment variable, because the demo API accepts these credentials.
@@ -112,7 +112,7 @@ This ability to focus is very useful when you need more context to understand a 
 The following command runs the tests in `--verbose` mode for only that specific failed flow using the `--workflow` parameter:
 
 ```sh
-npx @redocly/cli respect auto-generated.yaml --verbose \
+npx @redocly/cli respect auto-generated.arazzo.yaml --verbose \
    --workflow get-users-{id}-workflow
 ```
 
