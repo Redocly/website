@@ -118,7 +118,7 @@ examples:
 
 ## Other changes worth knowing about
 
-A few more additions round out the release:
+Some more features added in this release:
 
 - **`queryString`** — a new parameter location that lets you describe the entire query string as a single schema, rather than individual parameters.
 - **XML `nodeType`** — explicit mapping of schemas to XML elements, attributes, text, or CDATA nodes.
