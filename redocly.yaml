@@ -7,6 +7,7 @@ seo:
 
 apiFunctions:
   folders:
+    - /@api
     - /blog
     - /docs/changelog
 
@@ -213,7 +214,8 @@ responseHeaders:
           'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no='
           'sha256-+Ozb/ItuZAdaQgJd2RebN2rKWj1XkBuXVaV6/lT4Juo='
           'sha256-9qgU5FDrauEgF+e1iJWvsh46OwsIkNOLjkXggr/02jk='
-          'sha256-v7ddZtWCUr5oF3kgrlEot4fG861CKDXUt0aTaNaIk6Q=';
+          'sha256-v7ddZtWCUr5oF3kgrlEot4fG861CKDXUt0aTaNaIk6Q='
+          'sha256-+t5Z3fJi7uJxARWEzFEVaSRgtaAn0r97XkxpJNbQiK0=';
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 
