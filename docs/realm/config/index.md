@@ -31,6 +31,8 @@ This guide provides a comprehensive overview of available configuration options 
 
   {% configProperty file="scorecard-classic.md" /%}
 
+  {% configProperty file="stats.md" /%}
+
   {% configProperty file="catalog-classic.md" /%}
 {% /configSection %}
 
