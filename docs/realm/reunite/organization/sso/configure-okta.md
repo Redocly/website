@@ -42,18 +42,33 @@ To prevent Okta from changing users' roles to the default organization role spec
    - **App logo**: Upload your company logo (optional)
 1. Copy the **Single sign-on URL** and **Audience URI** from your Reunite SSO page and paste them into the corresponding fields in Okta.
 
-## Configure group attribute statements
+## Configure attribute statements
 
-Group attributes enable role-based access control (RBAC) by passing Okta group memberships to Redocly.
+Attributes enable role-based access control (RBAC) by passing Okta group memberships to Redocly.
 
-1. In the **Group Attribute Statements** section of your Okta SAML app:
-   - **Name**: Enter `https://redocly.com/sso/teams`
-   - **Name format**: Select **URI Reference**
-   - **Filter**: Enter `redocly.`
-1. This filter passes all groups that start with "redocly." to Redocly.
-1. Click **Next**.
-1. Select **This is an internal app that we have created**.
-1. Click **Finish**.
+{% tabs %}
+  {% tab label="Attribute statements" %}
+    1. Navigate to the **Attribute statements** section of your Okta SAML app.
+    1. Click **Add expression** and enter the following:
+        - **Name**: https://redocly.com/sso/teams
+        - **Expression**: `user.getGroups({'group.profile.name': 'redocly.*'}).![profile.name]`
+    1. Click **Next**.
+    1. Select **This is an internal app that we have created**.
+    1. Click **Finish**.
+  {% /tab %}
+  {% tab label="Group attribute statements (legacy)" %}
+    1. Navigate to the Attribute statements section of your Okta SAML app.
+    1. Expand **Show legacy configuration** and click **Edit**.
+    1. In the **Group Attribute Statements** section:
+       - **Name**: Enter `https://redocly.com/sso/teams`
+       - **Name format**: Select **URI Reference**
+       - **Filter**: Enter `redocly.`
+         This filter passes all groups that start with "redocly." to Redocly.
+    1. Click **Next**.
+    1. Select **This is an internal app that we have created**.
+    1. Click **Finish**.
+  {% /tab %}
+{% /tabs %}
 
 ## Get SAML setup information
 
