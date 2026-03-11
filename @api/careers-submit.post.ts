@@ -1,6 +1,6 @@
 import type { ApiFunctionsContext } from '@redocly/config';
 
-const GOOGLE_APPS_SCRIPT_URL = process.env.CAREERS_SUBMIT_SCRIPT_URL;
+const GOOGLE_APPS_SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL;
 
 export default async function (request: Request, context: ApiFunctionsContext) {
   if (!GOOGLE_APPS_SCRIPT_URL || GOOGLE_APPS_SCRIPT_URL === 'undefined') {
