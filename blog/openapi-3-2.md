@@ -1,10 +1,10 @@
 ---
 template: ../@theme/templates/BlogPost
 title: "OpenAPI 3.2 is here: what's new and how Redocly supports it"
-description: A practical overview of OpenAPI 3.2 features (streaming APIs, hierarchical tags, the QUERY method) and how to start using them with Redocly today.
+description: An overview of OpenAPI 3.2 features and how to start using them with Redocly.
 seo:
   title: "OpenAPI 3.2 is here: what's new and how Redocly supports it"
-  description: A practical overview of OpenAPI 3.2 features (streaming APIs, hierarchical tags, the QUERY method) and how to start using them with Redocly today.
+  description: An overview of OpenAPI 3.2 features and how to start using them with Redocly.
 author: adam-altman
 publishedDate: "2026-03-11"
 categories:
