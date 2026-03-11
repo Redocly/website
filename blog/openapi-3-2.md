@@ -5,7 +5,7 @@ description: An overview of OpenAPI 3.2 features and how to start using them wit
 seo:
   title: "OpenAPI 3.2 is here: what's new and how Redocly supports it"
   description: An overview of OpenAPI 3.2 features and how to start using them with Redocly.
-author: adam-altman
+author: ivan-kropyvnytskyi
 publishedDate: "2026-03-11"
 categories:
   - api-specifications:openapi
@@ -126,7 +126,7 @@ Some more features added in this release:
 
 ## Get started with OpenAPI 3.2 in Redocly
 
-Redocly fully supports OpenAPI 3.2 — linting, rendering, code samples, and all the features described in this post. To upgrade, change `openapi: 3.1.0` to `openapi: 3.2.0` in your description and start adopting new features as you need them. Since 3.2 is backward-compatible, nothing breaks.
+Redocly fully supports OpenAPI 3.2 - linting, rendering, code samples, mock server, Respect, and all the features described in this post. To upgrade, change `openapi: 3.1.0` to `openapi: 3.2.0` in your description and start adopting new features as you need them. Since 3.2 is backward-compatible, nothing breaks.
 
 Useful links:
 
