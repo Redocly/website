@@ -1,15 +1,4 @@
----
-products:
-  - Redoc
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # AsyncAPI extension: `x-rbac`
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `x-rbac` option allows you to control access to various AsyncAPI objects based on the [teams](../../../reunite/organization/teams.md) in your organization.
 

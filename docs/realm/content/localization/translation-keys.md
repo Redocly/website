@@ -1,15 +1,4 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Predefined translation keys
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 This page contains the list of all predefined translation keys used in default UI components.
 

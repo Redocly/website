@@ -1,12 +1,4 @@
 ---
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
 title: concat function
 seo:
   description: Reference for the Redocly Markdoc built-in function "concat".
@@ -17,8 +9,6 @@ data:
 ---
 
 # `concat` function
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `concat` function joins multiple arguments together into a single string.
 

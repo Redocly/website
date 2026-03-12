@@ -1,15 +1,4 @@
----
-products:
-  - Redoc
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # AsyncAPI extensions
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 AsyncAPI supports [extensions to the specification](https://www.asyncapi.com/docs/concepts/asyncapi-document/extending-specification).
 

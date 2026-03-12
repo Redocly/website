@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Connect a GitHub repo
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 If your project files are stored in a repository on GitHub, you can connect that repository, so you can access, edit, and publish those files in Reunite.
 To connect a GitHub repository, you must first install the Redocly app in GitHub, then enter the connection details in Reunite.

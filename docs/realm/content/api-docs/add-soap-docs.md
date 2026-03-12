@@ -1,19 +1,10 @@
 ---
-products:
-  - Redoc
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
 keywords:
   excludes:
     - package.json
 ---
 
 # Add SOAP documentation from a WSDL file
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Transform your WSDL files into reference documentation by integrating them into your project.
 Give your users the tools they need to make the most of your SOAP APIs with comprehensive reference documentation.

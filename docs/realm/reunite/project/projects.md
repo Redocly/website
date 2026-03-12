@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Projects
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 In Reunite, projects are spaces within an organization where the members of the organization create and manage the content of your API documentation website.
 There is one project for each published site.

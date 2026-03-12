@@ -1,15 +1,4 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Add color-mode-specific images
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 If you're working in React, you can add an image with multiple, color-mode-specific versions that automatically changes with the color mode.
 This capability is only supported in React code.

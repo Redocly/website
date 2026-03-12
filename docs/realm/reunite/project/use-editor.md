@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Use the editor
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Redocly offers an online editor in Reunite where you can add, edit, or delete files and folders in your project.
 Since Redocly projects are saved using Git, any updates are saved by committing changes, and opening, reviewing, and merging pull requests.

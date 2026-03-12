@@ -1,15 +1,4 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Customize styles for a locale
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 You can apply styles to a specific locale by using a `:root` selector in the `@themes/styles.css` file.
 This can be useful if you want to customize how certain UI elements look or change the font for a certain locale.

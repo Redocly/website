@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Environment variables
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 You can define environment variables and use them in `redocly.yaml`, and Markdown and React pages in the project.
 Environment variables are used during both build and run time for the project.

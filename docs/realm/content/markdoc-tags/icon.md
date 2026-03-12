@@ -1,16 +1,4 @@
----
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Icon tag
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `icon` tag renders a [Font Awesome](https://fontawesome.com/icons) icon.
 Icons can be used inline with text to provide additional visual context.

@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Reunite project interface
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use this document as a reference for the user interface (UI) of pages in Reunite's project workspace.
 Learn about the various ways you can utilize the interface controls.

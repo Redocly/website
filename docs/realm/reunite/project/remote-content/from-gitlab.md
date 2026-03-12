@@ -1,16 +1,6 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise
-  - Enterprise+
----
 # Add remote files from GitLab
 
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
 
 If your project files are stored in a remote repository on GitLab, you can connect that repository, so you can access and publish those files in Redocly.
 

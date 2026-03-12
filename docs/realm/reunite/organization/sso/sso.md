@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise
-  - Enterprise+
----
-
 # Single sign-on (SSO)
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Single sign-on (SSO) is an authentication method that allows users to log in with a single identity to several related, but independent, software systems.
 You can add SSO identity providers (IdPs) to Reunite to allow users to use them for logging into Reunite as well as individual projects.

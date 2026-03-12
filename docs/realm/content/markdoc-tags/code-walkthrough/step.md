@@ -1,16 +1,4 @@
----
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Step tag
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use the `step` tag to define and organize the individual procedures of a walkthrough.
 A code walkthrough primarily consists of a series of steps with their corresponding code snippets that may be further refined into [chunks](./index.md#chunk-annotations).

@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Manage people
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The **People** page is where you can manage users.
 If you are logged in to Reunite and have an [Owner organization role](../../access/roles.md#organization-roles), you can view and manage users from the **People** page in the following ways:

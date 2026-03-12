@@ -1,16 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise
-  - Enterprise+
----
 # Configure SSO and RBAC with Microsoft Entra ID
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 This guide explains how to configure Microsoft Entra ID (formerly known as Azure Active Directory or Azure AD) with Redocly SSO and role-based access controls.
 

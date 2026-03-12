@@ -1,20 +1,10 @@
 ---
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
 keywords:
   includes:
     - step-by-step
 ---
 
 # Code walkthrough tag
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use code walkthroughs to interactively explain complex code examples to your users.
 Code walkthroughs combine steps with explanatory text and interactive code highlighting on downloadable code samples.

@@ -1,16 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise
-  - Enterprise+
----
 # Configure Google Workspace as a SAML SSO
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Follow the steps to configure Google Workspace SAML SSO integration with Reunite.
 

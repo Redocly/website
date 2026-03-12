@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Set a custom domain
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 You can configure a custom domain for your project and optionally serve your documentation from a subdirectory path.
 This allows you to host your docs at URLs like `docs.example.com` or `docs.example.com/api/`.

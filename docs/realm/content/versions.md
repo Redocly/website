@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Add versioned content
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 You can set up your project to maintain multiple concurrent versions of documents or API description files.
 It is possible to apply versioning to single files or sets of files in the same location.

@@ -1,16 +1,6 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise
-  - Enterprise+
----
 # Add remote content from a URL
 
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
 
 Use the [remote content](./remote-content.md) feature to include content from external sources in your project.
 This approach is useful for including a single, publicly-available file as part of your published project.

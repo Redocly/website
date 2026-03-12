@@ -1,15 +1,4 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Dynamic imports
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Utility functions for lazy loading React components.
 

@@ -1,16 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise
-  - Enterprise+
----
 # Configure SSO
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 After you have [added an identity provider (IdP)](add-idp.md) in Reunite, the IdP can then be configured in the `redocly.yaml` configuration file for individual projects.
 Adding an IdP to the configuration file for a project is not required for users to be able to use it to log in.

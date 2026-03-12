@@ -1,15 +1,4 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Link
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 ## Import
 

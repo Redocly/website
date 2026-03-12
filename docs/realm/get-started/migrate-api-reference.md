@@ -1,15 +1,4 @@
----
-products:
-  - Redoc
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Migrate from Workflows
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 This guide is for users of Redocly's earlier Workflows API Docs product.
 The steps in this guide cover how to migrate from your existing setup to using Redoc.

@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Content
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Create and manage all types of content in your Redocly project, from Markdown pages to API documentation and interactive components.
 

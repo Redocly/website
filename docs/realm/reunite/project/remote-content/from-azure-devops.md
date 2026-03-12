@@ -1,16 +1,6 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise
-  - Enterprise+
----
 # Add remote files from Azure DevOps
 
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
 
 If your content is stored in a repository on Azure DevOps Services, you can connect that repository, so you can access and publish those files in Reunite.
 

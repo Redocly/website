@@ -1,16 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise
-  - Enterprise+
----
 # Role-based access control (RBAC)
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Role-based access control (RBAC) controls the **authorization** (what you can access) based on your roles and team membership.
 

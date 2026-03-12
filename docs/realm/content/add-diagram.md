@@ -1,20 +1,9 @@
 ---
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
 keywords:
   includes:
     - mermaid
 ---
 # Add diagrams using Mermaid
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Redocly projects have built-in support for the [Mermaid](https://mermaid.js.org/) diagramming and charting tool.
 Use Mermaid to add diagrams, charts and other visualizations to your pages.

@@ -1,16 +1,4 @@
----
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Toggle tag
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `toggle` tag makes walkthrough content interactive, allowing users to toggle features or configurations to explore different scenarios.
 It wraps content and steps inside the walkthrough and adds a toggle to the UI used to display or hide the content within.

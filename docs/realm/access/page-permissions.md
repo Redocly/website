@@ -1,16 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise
-  - Enterprise+
----
 # Configure RBAC for pages and content
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 By default, all pages of your project are public and do not require authorization to be accessed.
 However, you can configure RBAC to limit access based on team assignment.

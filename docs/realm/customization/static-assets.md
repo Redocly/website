@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Static assets
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 You may want to host file types other than Markdown, YAML or `.tsx` in your project.
 For example, images, PDF documents, or scripts - and reference them as additional resources in your project pages.

@@ -1,15 +1,4 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Import an external NPM library
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 This topic explains how to incorporate external React component libraries from NPM into your project.
 You'll learn how to install and import UI components from popular React libraries.

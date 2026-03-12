@@ -1,15 +1,4 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Components usage tutorial
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 There are several ways to use theme components.
 Below are some of the most common approaches.

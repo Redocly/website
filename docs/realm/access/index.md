@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Access control
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Secure your documentation with role-based access control (RBAC) to manage who can view and access different parts of your project.
 

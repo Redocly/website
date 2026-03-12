@@ -1,16 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise
-  - Enterprise+
----
 # Roles and permissions
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Roles and permissions are used to configure [role-based access control (RBAC)](./rbac.md) for your projects.
 

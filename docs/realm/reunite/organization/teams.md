@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Teams
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Teams are groups of users that form an important part of configuring [role-based access control (RBAC)](../../access/rbac.md) for your projects.
 You can assign users to more than one team and manage team composition to control project access.

@@ -1,19 +1,10 @@
 ---
-products:
-  - Redoc
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
 keywords:
   excludes:
     - package.json
 ---
 
 # Add AsyncAPI descriptions
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Transform your AsyncAPI description YAML or JSON file into interactive documentation by adding it to your project.
 Add one or multiple Event-Driven API (EDA) descriptions to your project.
