@@ -33,7 +33,7 @@ AI search saves the history of your conversations.
 To use AI-powered search, you can either:
 
 - Open the Search dialog and click the **Search with AI** button.
-- In the bottom-left corner, click the floating **Ask AI** button.
+- In the bottom-right corner, click the floating **Ask AI** button.
 
 ## Filter search results
 
