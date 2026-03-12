@@ -1,4 +1,16 @@
+---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Markdoc tag library
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 This page contains a comprehensive list of Markdoc tags with links to deeper resources where you can see how to use them.
 

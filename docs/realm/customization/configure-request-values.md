@@ -1,4 +1,16 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Configure request values
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 You can programmatically configure request values for your OpenAPI descriptions by ejecting and modifying the `configure.ts` file.
 This feature enables you to set default values for headers, query parameters, path parameters, cookies, security details, and server variables that merge with existing examples in your OpenAPI description.

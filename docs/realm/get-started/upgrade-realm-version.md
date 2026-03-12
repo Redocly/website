@@ -1,10 +1,22 @@
 ---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Community
+  - Pro
+  - Enterprise
+  - Enterprise+
 keywords:
   includes:
     - package.json
 ---
 
 # Upgrade product version
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 If you are working in Reunite, your project updates automatically when new versions are released and you trigger a new build.
 If you are working locally, you must update your `package.json` file to the version you want your project to use.

@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # GitHub Enterprise Server connection to Reunite
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 When you [connect a GitHub Enterprise Server](./github.md) to Reunite, a GitHub App is created and its credentials (App ID, Client ID, Client secret, and Private key) are securely stored within Reunite.
 Reunite uses these stored credentials exclusively to make API calls to your GitHub Enterprise Server instance.

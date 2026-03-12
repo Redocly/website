@@ -1,4 +1,15 @@
+---
+products:
+  - Revel
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Add custom React providers to the Root Layout
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 This topic explains how to add your own React providers to the `RootLayout`.
 This is useful if you want to add a custom context provider to your app, for example, to provide a theme, query client, or other providers.

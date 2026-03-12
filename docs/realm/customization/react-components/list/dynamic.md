@@ -1,4 +1,15 @@
+---
+products:
+  - Revel
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Dynamic imports
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `dynamic` utility from `@redocly/theme` allows to load React components on demand.
 It supports both server-side rendering and client-only rendering modes, with customizable loading states.

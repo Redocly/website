@@ -1,10 +1,20 @@
 ---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
 title: includes function
 seo:
   description: Reference for the Redocly Markdoc built-in function "includes".
 ---
 
 # `includes` function
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `includes` function checks if an array contains a specific value.
 It is commonly used within conditional logic (`{% if %}`) tags.

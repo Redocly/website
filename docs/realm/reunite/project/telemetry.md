@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Telemetry
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Redocly includes a telemetry feature that collects anonymous usage information.
 This information is utilized to gain insights into the project's feature usage and enhance the Redocly project based on those insights.

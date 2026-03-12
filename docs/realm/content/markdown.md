@@ -1,9 +1,20 @@
 ---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
 keywords:
   includes:
     - markdown
 ---
 # Markdown in Redocly
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Redocly projects support enhanced Markdown that combines standard Markdown syntax with powerful Markdoc extensions, giving you rich formatting options and interactive components for your documentation.
 

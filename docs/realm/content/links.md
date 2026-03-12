@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Add links
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 When adding links in the project, use paths relative to the page with the link.
 This rule applies to links in menus like the navbar, sidebar, and footer.

@@ -72,7 +72,7 @@
         - page: reunite/project/ignore-link-checker.md
           label: Ignore link checker
         - page: reunite/project/branches-and-deployments.md
-          label: Branches deployments
+          label: Branches and deployments
 
     - group: Pull requests
       items:

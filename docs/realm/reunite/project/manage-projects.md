@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Manage projects
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 In Reunite, [projects](./projects.md) are the place where you create, test, and deploy API documentation websites.
 

@@ -1,9 +1,20 @@
 ---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
 title: Project structure
 description: An introduction to the file structure of a Redocly project.
 ---
 
 # Project structure
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Redocly follows a **zero-config** philosophy.
 While it provides an opinionated structure for clarity, the only hard requirement is **at least one content file** to generate a documentation site.

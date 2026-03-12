@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Reunite user profile menu
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 In the user profile menu you can view your information, adjust notifications you receive, switch the color mode, and add, remove or switch between connected Git provider accounts.
 

@@ -1,4 +1,16 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Enterprise
+  - Enterprise+
+---
 # Multi-tenant SSO: Federated identity management
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 In multi-tenant applications, single sign-on (SSO) setups need to accommodate various identity providers (IdPs) to let tenants “bring their own” corporate SSO configurations.
 Redocly supports a flexible way to enable multi-tenant SSO by allowing federated connections to multiple IdPs.

@@ -1,4 +1,16 @@
+---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Markdoc variables
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Markdoc variables allow you to access dynamic data in your Markdoc content.
 This reference documents the available variables and their usage.

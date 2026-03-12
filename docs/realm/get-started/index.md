@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Get started with Realm
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Redocly projects are managed and deployed on Reunite, the Redocly cloud platform.
 For development, you can use the built-in Reunite editor, or work locally using your favorite editor.

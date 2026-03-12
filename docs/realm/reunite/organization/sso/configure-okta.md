@@ -1,4 +1,16 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Enterprise
+  - Enterprise+
+---
 # Configure SSO with Okta and SAML2
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 In this video, we integrate Okta with Redocly to set up Single Sign-On (SSO) using SAML2.
 

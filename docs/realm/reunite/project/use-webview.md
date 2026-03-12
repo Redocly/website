@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Use the Webview
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The Webview pane in the Editor displays a preview for each branch.
 Any time you make a change in the Editor, the change is reflected in the Webview.

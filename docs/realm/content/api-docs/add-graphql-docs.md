@@ -1,4 +1,15 @@
+---
+products:
+  - Redoc
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Add GraphQL API descriptions
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Transform your GraphQL schema files into reference documentation by integrating them into your project.
 The resulting documentation shows both the high-level elements such as queries and mutations, and the details of all the individual data types.

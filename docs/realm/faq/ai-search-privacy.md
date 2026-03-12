@@ -1,9 +1,19 @@
 ---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Enterprise
+  - Enterprise+
 title: AI Search data usage FAQ
 description: How AI Search in Redocly uses your data and complies with enterprise privacy requirements
 ---
 
 # AI Search data usage FAQ
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 This FAQ explains how Redocly AI Search uses your data, which models are used, and how the feature complies with enterprise privacy requirements.
 

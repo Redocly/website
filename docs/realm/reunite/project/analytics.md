@@ -1,4 +1,16 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Enterprise
+  - Enterprise+
+---
 # Analytics
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Reunite offers built-in analytics for your projects as an alternative to third-party solutions.
 Track page views, identify popular content, and analyze search queries including AI-powered search.

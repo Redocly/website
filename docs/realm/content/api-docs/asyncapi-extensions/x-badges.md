@@ -1,4 +1,15 @@
+---
+products:
+  - Redoc
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # AsyncAPI extension: `x-badges`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `x-badges` option allows you to add badges to an channel or operation, to use as an indicator in documentation.
 The badges are displayed in API reference documentation in the following locations:

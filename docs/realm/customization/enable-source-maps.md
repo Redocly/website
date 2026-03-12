@@ -1,4 +1,15 @@
+---
+products:
+  - Revel
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Enable source maps
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Enable source maps to improve the in-browser debugging experience for your Redocly project, especially for custom React pages and Markdoc tags.
 

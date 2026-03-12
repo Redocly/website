@@ -1,4 +1,15 @@
+---
+products:
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # API linting
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Reunite's deployment process has a Lint step that performs scorecard tests and validation of API description files in your project.
 This step relies on the [`scorecardClassic` configuration](../../config/scorecard-classic.md).

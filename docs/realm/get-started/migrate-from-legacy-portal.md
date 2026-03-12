@@ -1,9 +1,20 @@
 ---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
 markdown:
   toc:
     depth: 4
 ---
 # Migrate from legacy portal
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 This guide was created for users of Redocly's developer portal product.
 It contains steps, information, and resources to help you migrate an existing developer portal project to use Realm.

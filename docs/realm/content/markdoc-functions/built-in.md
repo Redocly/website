@@ -1,9 +1,19 @@
 ---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
 seo:
   description: Overview of standard built-in Markdoc functions and custom functions provided by Redocly.
 ---
 
 # Built-in Markdoc functions
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 This page provides an overview and links to reference documentation for the built-in functions available for use in your Markdoc content.
 These include both standard Markdoc functions and additional functions provided by Redocly.

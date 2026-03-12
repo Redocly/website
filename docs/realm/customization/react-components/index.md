@@ -1,4 +1,15 @@
+---
+products:
+  - Revel
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Customize theme components
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 You can customize theme components instead of ejecting them completely.
 

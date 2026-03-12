@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Manage self-hosted Git providers
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Connect your self-hosted source control to offer continuous validation and delivery of your APIs, reference documentation, and developer projects.
 Define self-hosted Git providers on the organization level in Reunite.

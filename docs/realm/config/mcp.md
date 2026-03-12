@@ -7,9 +7,12 @@ products:
 plans:
   - Enterprise
   - Enterprise+
+description: Make your content accessible to AI tools.
 ---
 
 # `mcp`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Redocly automatically generates Model Context Protocol (MCP) servers from your documentation and OpenAPI descriptions.
 MCP servers make your content accessible to AI tools in the MCP ecosystem (such as ChatGPT, Claude, Cursor, Goose).

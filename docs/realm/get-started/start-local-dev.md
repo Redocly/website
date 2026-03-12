@@ -1,4 +1,18 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Community
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Get started locally
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Create and preview a Redocly documentation project on your local machine.
 This guide shows you how to set up a project, add content, configure navigation, and customize styling.

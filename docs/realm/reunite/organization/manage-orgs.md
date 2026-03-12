@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Manage organizations
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Organizations are the top-level structure in Reunite where users with the [Owner role](../../access/roles.md#organization-roles) can view and manage global settings for your projects.
 Users are added to organizations either through an identity provider or by invitation.

@@ -1,4 +1,16 @@
+---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # JSON Schema tag
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `json-schema` tag renders schemas inside a pre-styled element optimized for readability and layout.
 The tag can reference existing schemas, like OpenAPI descriptions or external files, but also accepts inline schemas.

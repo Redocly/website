@@ -1,4 +1,16 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Enterprise
+  - Enterprise+
+---
 # Configure RBAC for navigation
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 If you have a page in your project that you only want certain teams to be able to access, you can also limit access to any links to that page in navigation menus.
 Navigation menus include links as items that can be part of groups.
