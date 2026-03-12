@@ -30,14 +30,14 @@ Some projects can have AI-powered search you can prompt to get information disti
 Some projects have AI-powered search enabled.
 AI search saves the history of your conversations.
 
-To use AI-powered search:
+To use AI-powered search, you can either:
 
-1. Open the Search dialog.
-2. Click the **Search with AI** button.
+- Open the Search dialog and click the **Search with AI** button.
+- In the bottom-right corner, click the floating **Ask AI** button.
 
 ## Filter search results
 
-You can filter the results of your search to find the required information quicker.
+You can filter the results of your search to find the required information more quickly.
 
 ### Use filter categories
 
