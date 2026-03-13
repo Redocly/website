@@ -20,7 +20,7 @@ Make sure you have the following before you begin:
 To get a sense of the API, preview it by running the following command, and then clicking on the link generated to your localhost.
 
 ```shell
-npx @redocly/cli preview demo.yaml
+npx @redocly/cli preview
 ```
 
 After you review the docs, press <kbd>`Control`</kbd> + <kbd>`C`</kbd>` in your terminal to stop the preview.
