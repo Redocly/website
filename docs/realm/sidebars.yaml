@@ -153,6 +153,8 @@
       label: Project structure
     - page: content/markdown.md
       label: Markdown guide
+    - page: content/asciidoc.md
+      label: AsciiDoc (experimental)
     - page: content/links.md
       label: Manage links
     - page: content/versions.md

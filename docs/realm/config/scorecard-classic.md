@@ -59,7 +59,6 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 - [string]
 - **VS Code extension only.** Validates your local OpenAPI files against scorecard rules defined in your Reunite project.
   You can get the URL by opening your project in Reunite and copying the full URL from the browser.
-  The URL must use HTTPS and must be from a `redocly.com` domain.
 {% /table %}
 
 ### Level Object
