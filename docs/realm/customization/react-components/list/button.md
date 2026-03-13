@@ -11,6 +11,9 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
+Customize the `button` component to influence its variant, size, and states.
+
+
 ## Import
 
 ```tsx
