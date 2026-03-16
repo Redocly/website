@@ -14,7 +14,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@redocly/marketing-pages": "0.1.47",
-    "@redocly/realm": "0.130.4",
+    "@redocly/realm": "0.131.0",
     "buffer": "^6.0.3",
     "highlight-words-core": "^1.2.3",
     "path": "^0.12.7",
@@ -24,7 +24,7 @@
     "@types/styled-components": "5.1.34",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
-    "markdownlint-cli2": "^0.20.0",
+    "markdownlint-cli2": "^0.21.0",
     "prettier": "^3.0.3"
   },
   "markdownlint-cli2": {
@@ -32,7 +32,6 @@
   },
   "overrides": {
     "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "axios": "1.12.2"
+    "react-dom": "19.2.4"
   }
 }
