@@ -7,6 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
+
 # List of customizable icons
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
@@ -29,23 +30,23 @@ import { IconName } from '@redocly/theme/icons/{IconName}/{IconName}';
 <details>
 <summary>Document Icons</summary>
 
-| Icon | Name |
-|------|------|
-| {% themeIcon name="DocumentIcon" /%} | `DocumentIcon` |
+| Icon                                      | Name                |
+| ----------------------------------------- | ------------------- |
+| {% themeIcon name="DocumentIcon" /%}      | `DocumentIcon`      |
 | {% themeIcon name="DocumentBlankIcon" /%} | `DocumentBlankIcon` |
-| {% themeIcon name="DocumentAddIcon" /%} | `DocumentAddIcon` |
+| {% themeIcon name="DocumentAddIcon" /%}   | `DocumentAddIcon`   |
 
 </details>
 
 <details>
 <summary>File System Icons</summary>
 
-| Icon | Name |
-|------|------|
-| {% themeIcon name="FileIcon" /%} | `FileIcon` |
-| {% themeIcon name="FileStorageIcon" /%} | `FileStorageIcon` |
-| {% themeIcon name="FolderIcon" /%} | `FolderIcon` |
-| {% themeIcon name="FolderAddIcon" /%} | `FolderAddIcon` |
+| Icon                                     | Name               |
+| ---------------------------------------- | ------------------ |
+| {% themeIcon name="FileIcon" /%}         | `FileIcon`         |
+| {% themeIcon name="FileStorageIcon" /%}  | `FileStorageIcon`  |
+| {% themeIcon name="FolderIcon" /%}       | `FolderIcon`       |
+| {% themeIcon name="FolderAddIcon" /%}    | `FolderAddIcon`    |
 | {% themeIcon name="FolderMoveToIcon" /%} | `FolderMoveToIcon` |
 
 </details>
@@ -53,82 +54,82 @@ import { IconName } from '@redocly/theme/icons/{IconName}/{IconName}';
 <details>
 <summary>UI Control Icons</summary>
 
-| Icon | Name |
-|------|------|
-| {% themeIcon name="CheckboxFilledIcon" /%} | `CheckboxFilledIcon` |
-| {% themeIcon name="CloseFilledIcon" /%} | `CloseFilledIcon` |
-| {% themeIcon name="CloseOutlineIcon" /%} | `CloseOutlineIcon` |
-| {% themeIcon name="DeselectIcon" /%} | `DeselectIcon` |
-| {% themeIcon name="EditIcon" /%} | `EditIcon` |
-| {% themeIcon name="FilterIcon" /%} | `FilterIcon` |
-| {% themeIcon name="HorizontalViewIcon" /%} | `HorizontalViewIcon` |
-| {% themeIcon name="MenuIcon" /%} | `MenuIcon` |
-| {% themeIcon name="MobileSidebarIcon" /%} | `MobileSidebarIcon` |
+| Icon                                               | Name                         |
+| -------------------------------------------------- | ---------------------------- |
+| {% themeIcon name="CheckboxFilledIcon" /%}         | `CheckboxFilledIcon`         |
+| {% themeIcon name="CloseFilledIcon" /%}            | `CloseFilledIcon`            |
+| {% themeIcon name="CloseOutlineIcon" /%}           | `CloseOutlineIcon`           |
+| {% themeIcon name="DeselectIcon" /%}               | `DeselectIcon`               |
+| {% themeIcon name="EditIcon" /%}                   | `EditIcon`                   |
+| {% themeIcon name="FilterIcon" /%}                 | `FilterIcon`                 |
+| {% themeIcon name="HorizontalViewIcon" /%}         | `HorizontalViewIcon`         |
+| {% themeIcon name="MenuIcon" /%}                   | `MenuIcon`                   |
+| {% themeIcon name="MobileSidebarIcon" /%}          | `MobileSidebarIcon`          |
 | {% themeIcon name="OverflowMenuHorizontalIcon" /%} | `OverflowMenuHorizontalIcon` |
-| {% themeIcon name="OverflowMenuVerticalIcon" /%} | `OverflowMenuVerticalIcon` |
-| {% themeIcon name="SelectIcon" /%} | `SelectIcon` |
-| {% themeIcon name="SidePanelCloseIcon" /%} | `SidePanelCloseIcon` |
-| {% themeIcon name="SidePanelOpenIcon" /%} | `SidePanelOpenIcon` |
-| {% themeIcon name="SpinnerIcon" /%} | `SpinnerIcon` |
-| {% themeIcon name="VerticalViewIcon" /%} | `VerticalViewIcon` |
-| {% themeIcon name="ViewIcon" /%} | `ViewIcon` |
-| {% themeIcon name="ViewOffIcon" /%} | `ViewOffIcon` |
+| {% themeIcon name="OverflowMenuVerticalIcon" /%}   | `OverflowMenuVerticalIcon`   |
+| {% themeIcon name="SelectIcon" /%}                 | `SelectIcon`                 |
+| {% themeIcon name="SidePanelCloseIcon" /%}         | `SidePanelCloseIcon`         |
+| {% themeIcon name="SidePanelOpenIcon" /%}          | `SidePanelOpenIcon`          |
+| {% themeIcon name="SpinnerIcon" /%}                | `SpinnerIcon`                |
+| {% themeIcon name="VerticalViewIcon" /%}           | `VerticalViewIcon`           |
+| {% themeIcon name="ViewIcon" /%}                   | `ViewIcon`                   |
+| {% themeIcon name="ViewOffIcon" /%}                | `ViewOffIcon`                |
 
 </details>
 
 <details>
 <summary>Action Icons</summary>
 
-| Icon | Name |
-|------|------|
-| {% themeIcon name="DownloadIcon" /%} | `DownloadIcon` |
-| {% themeIcon name="ExportIcon" /%} | `ExportIcon` |
-| {% themeIcon name="LaunchIcon" /%} | `LaunchIcon` |
-| {% themeIcon name="LinkIcon" /%} | `LinkIcon` |
-| {% themeIcon name="LogoutIcon" /%} | `LogoutIcon` |
-| {% themeIcon name="MaximizeIcon" /%} | `MaximizeIcon` |
-| {% themeIcon name="MinimizeIcon" /%} | `MinimizeIcon` |
-| {% themeIcon name="PlusCustomIcon" /%} | `PlusCustomIcon` |
-| {% themeIcon name="ResetIcon" /%} | `ResetIcon` |
-| {% themeIcon name="RestartIcon" /%} | `RestartIcon` |
-| {% themeIcon name="SaveIcon" /%} | `SaveIcon` |
-| {% themeIcon name="SearchIcon" /%} | `SearchIcon` |
-| {% themeIcon name="SettingsIcon" /%} | `SettingsIcon` |
+| Icon                                    | Name              |
+| --------------------------------------- | ----------------- |
+| {% themeIcon name="DownloadIcon" /%}    | `DownloadIcon`    |
+| {% themeIcon name="ExportIcon" /%}      | `ExportIcon`      |
+| {% themeIcon name="LaunchIcon" /%}      | `LaunchIcon`      |
+| {% themeIcon name="LinkIcon" /%}        | `LinkIcon`        |
+| {% themeIcon name="LogoutIcon" /%}      | `LogoutIcon`      |
+| {% themeIcon name="MaximizeIcon" /%}    | `MaximizeIcon`    |
+| {% themeIcon name="MinimizeIcon" /%}    | `MinimizeIcon`    |
+| {% themeIcon name="PlusCustomIcon" /%}  | `PlusCustomIcon`  |
+| {% themeIcon name="ResetIcon" /%}       | `ResetIcon`       |
+| {% themeIcon name="RestartIcon" /%}     | `RestartIcon`     |
+| {% themeIcon name="SaveIcon" /%}        | `SaveIcon`        |
+| {% themeIcon name="SearchIcon" /%}      | `SearchIcon`      |
+| {% themeIcon name="SettingsIcon" /%}    | `SettingsIcon`    |
 | {% themeIcon name="SettingsCogIcon" /%} | `SettingsCogIcon` |
-| {% themeIcon name="SubtractIcon" /%} | `SubtractIcon` |
-| {% themeIcon name="TrashCanIcon" /%} | `TrashCanIcon` |
+| {% themeIcon name="SubtractIcon" /%}    | `SubtractIcon`    |
+| {% themeIcon name="TrashCanIcon" /%}    | `TrashCanIcon`    |
 
 </details>
 
 <details>
 <summary>Status Icons</summary>
 
-| Icon | Name |
-|------|------|
-| {% themeIcon name="ErrorIcon" /%} | `ErrorIcon` |
-| {% themeIcon name="ErrorFilledIcon" /%} | `ErrorFilledIcon` |
-| {% themeIcon name="InformationIcon" /%} | `InformationIcon` |
+| Icon                                          | Name                    |
+| --------------------------------------------- | ----------------------- |
+| {% themeIcon name="ErrorIcon" /%}             | `ErrorIcon`             |
+| {% themeIcon name="ErrorFilledIcon" /%}       | `ErrorFilledIcon`       |
+| {% themeIcon name="InformationIcon" /%}       | `InformationIcon`       |
 | {% themeIcon name="InformationFilledIcon" /%} | `InformationFilledIcon` |
-| {% themeIcon name="StarIcon" /%} | `StarIcon` |
-| {% themeIcon name="StarFilledIcon" /%} | `StarFilledIcon` |
-| {% themeIcon name="WarningAltIcon" /%} | `WarningAltIcon` |
-| {% themeIcon name="WarningAltFilledIcon" /%} | `WarningAltFilledIcon` |
-| {% themeIcon name="WarningFilledIcon" /%} | `WarningFilledIcon` |
-| {% themeIcon name="WarningSquareIcon" /%} | `WarningSquareIcon` |
+| {% themeIcon name="StarIcon" /%}              | `StarIcon`              |
+| {% themeIcon name="StarFilledIcon" /%}        | `StarFilledIcon`        |
+| {% themeIcon name="WarningAltIcon" /%}        | `WarningAltIcon`        |
+| {% themeIcon name="WarningAltFilledIcon" /%}  | `WarningAltFilledIcon`  |
+| {% themeIcon name="WarningFilledIcon" /%}     | `WarningFilledIcon`     |
+| {% themeIcon name="WarningSquareIcon" /%}     | `WarningSquareIcon`     |
 
 </details>
 
 <details>
 <summary>Feature Icons</summary>
 
-| Icon | Name |
-|------|------|
-| {% themeIcon name="DataRefineryIcon" /%} | `DataRefineryIcon` |
-| {% themeIcon name="DraggableIcon" /%} | `DraggableIcon` |
-| {% themeIcon name="FlowIcon" /%} | `FlowIcon` |
-| {% themeIcon name="PlaylistIcon" /%} | `PlaylistIcon` |
-| {% themeIcon name="RocketIcon" /%} | `RocketIcon` |
-| {% themeIcon name="TaskViewIcon" /%} | `TaskViewIcon` |
+| Icon                                           | Name                     |
+| ---------------------------------------------- | ------------------------ |
+| {% themeIcon name="DataRefineryIcon" /%}       | `DataRefineryIcon`       |
+| {% themeIcon name="DraggableIcon" /%}          | `DraggableIcon`          |
+| {% themeIcon name="FlowIcon" /%}               | `FlowIcon`               |
+| {% themeIcon name="PlaylistIcon" /%}           | `PlaylistIcon`           |
+| {% themeIcon name="RocketIcon" /%}             | `RocketIcon`             |
+| {% themeIcon name="TaskViewIcon" /%}           | `TaskViewIcon`           |
 | {% themeIcon name="WorkflowAutomationIcon" /%} | `WorkflowAutomationIcon` |
 
 </details>
@@ -136,34 +137,35 @@ import { IconName } from '@redocly/theme/icons/{IconName}/{IconName}';
 <details>
 <summary>User Interface Icons</summary>
 
-| Icon | Name |
-|------|------|
-| {% themeIcon name="EmailIcon" /%} | `EmailIcon` |
+| Icon                                         | Name                   |
+| -------------------------------------------- | ---------------------- |
+| {% themeIcon name="EmailIcon" /%}            | `EmailIcon`            |
 | {% themeIcon name="FaceDissatisfiedIcon" /%} | `FaceDissatisfiedIcon` |
-| {% themeIcon name="FaceNeutralIcon" /%} | `FaceNeutralIcon` |
-| {% themeIcon name="FaceSatisfiedIcon" /%} | `FaceSatisfiedIcon` |
-| {% themeIcon name="GlobalOutlinedIcon" /%} | `GlobalOutlinedIcon` |
-| {% themeIcon name="JsonIcon" /%} | `JsonIcon` |
-| {% themeIcon name="MoonIcon" /%} | `MoonIcon` |
-| {% themeIcon name="RecentlyViewedIcon" /%} | `RecentlyViewedIcon` |
-| {% themeIcon name="RenewIcon" /%} | `RenewIcon` |
-| {% themeIcon name="SecurityIcon" /%} | `SecurityIcon` |
-| {% themeIcon name="SunIcon" /%} | `SunIcon` |
-| {% themeIcon name="TableBuiltIcon" /%} | `TableBuiltIcon` |
-| {% themeIcon name="TimeIcon" /%} | `TimeIcon` |
-| {% themeIcon name="UserIcon" /%} | `UserIcon` |
-| {% themeIcon name="ValueVariableIcon" /%} | `ValueVariableIcon` |
-| {% themeIcon name="HashtagIcon" /%} | `HashtagIcon` |
+| {% themeIcon name="FaceNeutralIcon" /%}      | `FaceNeutralIcon`      |
+| {% themeIcon name="FaceSatisfiedIcon" /%}    | `FaceSatisfiedIcon`    |
+| {% themeIcon name="GlobalOutlinedIcon" /%}   | `GlobalOutlinedIcon`   |
+| {% themeIcon name="JsonIcon" /%}             | `JsonIcon`             |
+| {% themeIcon name="MoonIcon" /%}             | `MoonIcon`             |
+| {% themeIcon name="RecentlyViewedIcon" /%}   | `RecentlyViewedIcon`   |
+| {% themeIcon name="RenewIcon" /%}            | `RenewIcon`            |
+| {% themeIcon name="SecurityIcon" /%}         | `SecurityIcon`         |
+| {% themeIcon name="SunIcon" /%}              | `SunIcon`              |
+| {% themeIcon name="TableBuiltIcon" /%}       | `TableBuiltIcon`       |
+| {% themeIcon name="TimeIcon" /%}             | `TimeIcon`             |
+| {% themeIcon name="UserIcon" /%}             | `UserIcon`             |
+| {% themeIcon name="ValueVariableIcon" /%}    | `ValueVariableIcon`    |
+| {% themeIcon name="HashtagIcon" /%}          | `HashtagIcon`          |
+| {% themeIcon name="ColorPaletteIcon" /%}     | `ColorPaletteIcon`     |
 
 </details>
 
 <details>
 <summary>Special Icons</summary>
 
-| Icon | Name |
-|------|------|
+| Icon                                                           | Name                                     |
+| -------------------------------------------------------------- | ---------------------------------------- |
 | {% themeIcon name="IBMCloudHyperProtectCryptoServicesIcon" /%} | `IBMCloudHyperProtectCryptoServicesIcon` |
-| {% themeIcon name="CertificateIcon" /%} | `CertificateIcon` |
+| {% themeIcon name="CertificateIcon" /%}                        | `CertificateIcon`                        |
 
 </details>
 
