@@ -360,18 +360,18 @@
           items:
             - page: customization/react-components/list/admonition.md
               label: Admonition
-            - page: customization/react-components/list/icons.md
-              label: Icons
             - page: customization/react-components/list/button.md
               label: Button
             - page: customization/react-components/list/link.md
               label: Link
-            - page: customization/react-components/list/dynamic.md
-              label: Dynamic
+            - page: customization/react-components/list/icons.md
+              label: Redocly Icons
             - page: customization/react-components/list/fontawesome-icons.md
               label: Font Awesome Icons
             - page: customization/react-components/list/tag.md
               label: Tag
+            - page: customization/react-components/list/dynamic.md
+              label: Dynamic
     - page: customization/enable-source-maps.md
       label: Enable source maps
 

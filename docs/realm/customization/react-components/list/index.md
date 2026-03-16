@@ -43,6 +43,17 @@ It offers:
 
 For more information, see [link component reference](./link.md).
 
+## Redocly Icons
+
+Redocly's built-in SVG icons can be used in your React components.
+The component supports:
+
+- standard SVG properties and accessibility features
+- customizable size and color properties
+- `className` property for additional styling
+
+For more information, see [Redocly icons component reference](./icons.md).
+
 ## Font Awesome Icons
 
 The Font Awesome Icons component provides access to the complete FontAwesome icon library within your React components.
@@ -69,6 +80,13 @@ It offers:
 - extensive CSS variable customization for theming
 
 For more information, see [tag component reference](./tag.md).
+
+## Dynamic import utility
+
+The `dynamic` utility from `@redocly/theme` allows to load React components on demand.
+It supports both server-side rendering and client-only rendering modes, with customizable loading states.
+
+For more information, see [dynamic import utility reference](./dynamic.md).
 
 ## Resources
 

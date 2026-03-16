@@ -23,7 +23,7 @@ All icons in the theme package share these common properties:
 ## Import
 
 ```tsx
-import { iconName } from '@redocly/theme/icons/{iconName}/{iconName}';
+import { IconName } from '@redocly/theme/icons/{IconName}/{IconName}';
 ```
 
 <details>
@@ -47,7 +47,6 @@ import { iconName } from '@redocly/theme/icons/{iconName}/{iconName}';
 | {% themeIcon name="FolderIcon" /%} | `FolderIcon` |
 | {% themeIcon name="FolderAddIcon" /%} | `FolderAddIcon` |
 | {% themeIcon name="FolderMoveToIcon" /%} | `FolderMoveToIcon` |
-| {% themeIcon name="ApiFilesReplayIcon" /%} | `ApiFilesReplayIcon` |
 
 </details>
 
