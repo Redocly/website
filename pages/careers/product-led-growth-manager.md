@@ -57,4 +57,4 @@ Redocly builds tools that accelerate API ubiquity. Our platform helps teams crea
 Redocly is a fun, supportive, and high-performing environment. We celebrate small victories, stay curious, and keep focused on progress. If you enjoy complex challenges, meaningful data, and building systems that empower others — you’ll feel right at home here.
 
 #### Trying our products while applying?
-Add RECR- to your name during trial registration, so we can spot candidates among trial users. Thanks!
+Add `RECR-` to your name during trial registration, so we can spot candidates among trial users. Thanks!
