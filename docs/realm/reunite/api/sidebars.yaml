@@ -1,0 +1,13 @@
+- separator: Reunite API
+- page: introduction.md
+  label: Introduction
+- page: authentication.md
+  label: Authentication
+- page: pagination.md
+  label: Pagination
+- page: errors.md
+  label: Errors
+- page: rate-limits.md
+  label: Rate limits
+- page: openapi.yaml
+  label: API reference
