@@ -159,7 +159,9 @@
       label: Versioning
 
     - page: content/add-diagram.md
-      label: Diagrams
+      label: Mermaid diagrams
+    - page: content/add-excalidraw-diagram.md
+      label: Excalidraw diagrams
     - group: Markdoc functions
       page: content/markdoc-functions/index.md
       items:
