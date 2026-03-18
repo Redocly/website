@@ -59,6 +59,8 @@
       label: Keyboard shortcuts
     - page: reunite/project/use-webview.md
       label: Webview
+    - page: reunite/project/test-api-functions.md
+      label: Test API functions
     - page: reunite/project/use-previews.md
       label: Previews
     - group: Deployments
@@ -159,9 +161,7 @@
       label: Versioning
 
     - page: content/add-diagram.md
-      label: Mermaid diagrams
-    - page: content/add-excalidraw-diagram.md
-      label: Excalidraw diagrams
+      label: Diagrams
     - group: Markdoc functions
       page: content/markdoc-functions/index.md
       items:

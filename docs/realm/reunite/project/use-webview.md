@@ -148,4 +148,5 @@ In the **Logs** panel you can:
 ## Resources
 
 - **[Use the editor](./use-editor.md)** - Learn to edit content in Reunite's integrated editor with syntax highlighting and collaborative features
+- **[Test API functions](./test-api-functions.md)** - Send requests to API functions from Replay while you work in the editor
 - **[Use previews](./use-previews.md)** - Access deployment previews to review changes before publishing to your live documentation site
