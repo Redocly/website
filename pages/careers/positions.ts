@@ -6,10 +6,10 @@ export const positions = [
     slug: 'product-led-growth-manager',
   },
   {
-    title: 'Data Scientist',
-    locations: ['Data Scientist'],
-    employmentType: 'Remote',
-    slug: 'data-scientist',
+    title: 'Data Engineer',
+    locations: ['Remote'],
+    employmentType: 'Full time',
+    slug: 'data-engineer',
   },
   {
     title: 'Software Engineer',
