@@ -1,10 +1,10 @@
 ---
 template: ../../@theme/templates/OpenPosition
-title: Data Scientist
+title: Data Engineer
 locations:
   - Remote
 employmentType: Full time
-slug: /careers/data-scientist
+slug: /careers/data-engineer
 ---
 
 #### About the role
@@ -24,15 +24,15 @@ We’re looking for a data scientist who bridges technical depth with curiosity.
 - Champion experimentation, measurement, and data-driven decision-making across teams.
 
 #### What we’re looking for
-- 5+ years of software engineering experience, with 3+ years focused on data science or analytics
-- Strong SQL skills and experience with data modeling (dbt preferred)
-- Solid understanding of statistics, hypothesis testing, and experimental design
-- Proven experience in data governance, analytics, and backend systems
-- Familiarity with columnar databases or analytics engines (ClickHouse, Postgres, etc.)
-- Experience with modern data visualization tools
-- Strong analytical mindset, attention to detail, and clear communication
-- Passionate about clarity, simplicity, and quality in both data and code
-- English proficiency: Upper-Intermediate or higher
+- 5+ years of software engineering experience, with 3+ years focused on data science or analytics.
+- Strong SQL skills and experience with data modeling (dbt preferred).
+- Solid understanding of statistics, hypothesis testing, and experimental design.
+- Proven experience in data governance, analytics, and backend systems.
+- Familiarity with columnar databases or analytics engines (ClickHouse, Postgres, etc.).
+- Experience with modern data visualization tools.
+- Strong analytical mindset, attention to detail, and clear communication.
+- Passionate about clarity, simplicity, and quality in both data and code.
+- English proficiency: Upper-Intermediate or higher.
 
 #### Nice to have
 - Understanding of product analytics and behavioral data.
