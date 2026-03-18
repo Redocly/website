@@ -1,18 +1,20 @@
 # x-allowReserved extension
 
-Respect supports the `x-allowReserved` extension on **step parameters** in Arazzo descriptions.
-Use it when a step passes a **query parameter** whose value must keep RFC 3986 reserved characters unencoded in the request URL.
+Respect supports the `x-allowReserved` extension on step parameters in Arazzo descriptions.
+Use it when a step passes a query parameter whose value must keep RFC 3986 reserved characters unencoded in the request URL.
 
 ## When to use it
 
 Use `x-allowReserved` when:
 
-- A query parameter value contains reserved characters: `: / ? # [ ] @ ! $ & ' ( ) * + , ; =`
-- You need that value sent as-is in the query string (for example, a full URL or a value that already uses reserved characters).
-- Without `x-allowReserved`, Respect encodes those characters (for example, `:` → `%3A`).
+- A query parameter value contains reserved characters: `: / ? # [ ] @ ! $ & ' ( ) * + , ; =`.
+- You need the query string value sent "as-is". 
+  For example, the value is a full URL or a value that already uses reserved characters.
+- Without `x-allowReserved`, Respect encodes reseved characters (for example, `:` → `%3A`).
 
-This matches the OpenAPI 3 [Parameter.allowReserved](https://spec.openapis.org/oas/v3.0.3#parameter-object) behavior.
-When a step uses an OpenAPI operation, Respect also honors `allowReserved` from the operation's parameters; for step parameters you define in the Arazzo description, use the `x-allowReserved` extension.
+This matches the OpenAPI 3.x [Parameter.allowReserved](https://spec.openapis.org/oas/v3.0.3#parameter-object) behavior.
+When a step uses an OpenAPI operation, Respect also honors `allowReserved` from the operation's parameters.
+For step parameters you define in the Arazzo description, use the `x-allowReserved` extension.
 
 ## Configuration
 
