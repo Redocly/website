@@ -18,7 +18,7 @@ When a step uses an OpenAPI operation, Respect also honors `allowReserved` from 
 
 {% table %}
 
-- Field name {% width="20%" %}
+- Field name {% width="25%" %}
 - Type {% width="25%" %}
 - Description
 
