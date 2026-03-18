@@ -42315,49 +42315,6 @@ reunite:
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.15.2`.
     dependencies: {}
-  v2026-03-18.1:
-    timestamp: 1773826880000
-    changes:
-      minor:
-        - Improved system stability by moving authentication into a separate service.
-        - Added access to Project Analytics for project maintainers.
-        - Added mapping of common OAuth2 errors to human-friendly messages.
-        - Fixed sidebar UI inconsistencies and bugs.
-        - Added a filter by product to **Search queries** and **AI Search queries** on Project Analytics page.
-        - Enhanced the autocomplete suggestions and added type validation for TypeScript in Reunite's editor.
-        - Removed an outline on menu items in collapsed sidebar mode.
-        - Fixed the positioning of the `Preview Template` button, on the `Create Project` page.
-        - Changed all tables to use infinite scroll on window with sticky header
-        - Added window-level infinite scroll and sticky header support to the DataGrid, and enabled them for the feedback page.
-        - Added an intent step to the organization creation form.
-        - Moved "Create project" from the sticky footer to the main menu for organizations without projects.
-      patch:
-        - Updated `@redocly/ajv` to version `8.17.4`.
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.19.0`.
-        - Updated `@redocly/ajv` to version `8.18.0`.
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.20.4`.
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.20.5`.
-        - Improved performance of scout push.
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.18.2`.
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.18.0`.
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.17.0`.
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.20.1`.
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.20.3`.
-        - Fixed OAuth2 IdP error handling to display messages correctly.
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.19.2`.
-        - Fixed rename of unopened files so the commit tab shows deleted and added files correctly.
-        - Added helper text under the Production branch in Branches & Deployments with a direct link to Git hosting settings.
-        - Removed extra spacing in expanded scorecard details.
-        - Fixed cursor position update in the editor status bar.
-        - Removed white flash on page load in dark mode.
-        - Added upload folder feature to Reunite Editor.
-        - Fixed visibility of Runtime Logs sidebar menu icon for light theme.
-        - Fixed display issues in processed and skipped scorecard APIs.
-        - Fixed layout issues on team management pages.
-        - Added a remote content banner for OpenAPI files that are part of remote content.
-        - Fixed an issue where images uploaded into `.md` files sometimes did not appear in the file tree.
-        - Removed collapse icon from the Reunite Editor Commit sidebar for the default branch.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
