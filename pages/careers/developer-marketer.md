@@ -34,11 +34,11 @@ Bonus points if you've worked in SaaS, API, or developer-tools sales before.
 - Customer feedback improves, with users describing smoother onboarding and better support.
 
 #### How you’ll know you’re doing a great job
-- Teams make better product decisions, faster, because of your insights
-- Data pipelines are trusted, observable, and performant
-- Experiments drive measurable product and business outcomes
-- Metrics and dashboards are used across teams — not just built once
-- You’re the go-to person for clarity when questions arise about “what the data says.”
+- Teams make better product decisions, faster, because of your insights.
+- Data pipelines are trusted, observable, and performant.
+- Experiments drive measurable product and business outcomes.
+- Metrics and dashboards are used across teams — not just built once.
+- You’re the go-to person for clarity when questions arise about “what the data says.”.
 
 ### 30-60-90 day plan
 
