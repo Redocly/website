@@ -8,7 +8,7 @@ Use it when a step passes a query parameter whose value must keep RFC 3986 reser
 Use `x-allowReserved` when:
 
 - A query parameter value contains reserved characters: `: / ? # [ ] @ ! $ & ' ( ) * + , ; =`.
-- You need the query string value sent "as-is". 
+- You need the query string value sent "as-is".
   For example, the value is a full URL or a value that already uses reserved characters.
 - Without `x-allowReserved`, Respect encodes reseved characters (for example, `:` → `%3A`).
 
