@@ -19,33 +19,32 @@ Publish Redoc projects to the Redocly Reunite platform (this version of Redoc is
 
 ## Create a new project
 
-A [project](../reunite/project/projects.md) is one website and everything that goes with it.
+A [project](../../reunite/project/projects.md) is one website and everything that goes with it.
 The project consists of files and folders; your project comes with a Redocly-hosted repository or you can connect your own Git repository.
 
 1. Sign up or log in to your Reunite account.
 
-2. Go to your [Reunite dashboard](https://app.cloud.redocly.com) and [create a new project](../reunite/project/manage-projects.md#create-a-project).
+2. Go to your [Reunite dashboard](https://app.cloud.redocly.com) and [create a new project](../../reunite/project/manage-projects.md#create-a-project).
 
 Every project is different, so there are multiple ways to add content to your project:
 
 - [Connect an existing Git repository](#connect-an-existing-git-repository) if you already use a repository source.
 - [Upload an API description](#upload-an-api-description) to get started quickly.
 - Use an [API description from an external URL](#add-an-api-from-an-external-url).
-- If you prefer to use CI/CD to "push" content to a project, check the documentation for [pushing content from an external source](../reunite/project/remote-content/push.md).
+- If you prefer to use CI/CD to "push" content to a project, check the documentation for [pushing content from an external source](../../reunite/project/remote-content/push.md).
 
 ### Connect an existing Git repository
 
 If you have your API descriptions stored in a Git repository, this repository becomes the source for your Redoc project.
 
 To make your existing Git repository the source for your Redoc project:
-
-1. [Connect your repository](../reunite/project/connect-git/connect-git-provider.md) to get the existing content connected to the new project.
+(../../reunite/project/connect-git/connect-git-provider.md) to get the existing content connected to the new project.
 
 2. Don't worry if the Workflows project content doesn't build successfully when you first connect it to Reunite.
    The other sections in this guide cover the updates that may apply to your project.
 
 {% admonition type="info" name="Use remote content for multiple repositories"%}
-If you have API descriptions in multiple repositories, the [remote content](../reunite/project/remote-content/remote-content.md) feature supports connecting another repository (or more than one) as a source for the project.
+If you have API descriptions in multiple repositories, the [remote content](../../reunite/project/remote-content/remote-content.md) feature supports connecting another repository (or more than one) as a source for the project.
 {% /admonition %}
 
 ### Upload an API description
@@ -55,7 +54,7 @@ If you were using configuration in your Workflows project, add it to a file name
 
 ### Add an API from an external URL
 
-If your API files are in a separate project than your Redocly setup, add them using the [remote content](../reunite/project/remote-content/remote-content.md) feature.
+If your API files are in a separate project than your Redocly setup, add them using the [remote content](../../reunite/project/remote-content/remote-content.md) feature.
 
 To add content using the remote content feature:
 
@@ -87,7 +86,7 @@ Add a `sidebars.yaml` file to the root of your project, and add each API to it a
 ```
 
 You can customize the order and display labels of the APIs, or group in another structure to suit your needs.
-Visit the [sidebars documentation](../navigation/sidebars.md) for more information and examples.
+Visit the [sidebars documentation](../../navigation/sidebars.md) for more information and examples.
 
 ## Multiple API versions
 
@@ -105,7 +104,7 @@ To create a structure for versioned APIs:
 
 1.  In the project (or preview), use the dropdown to switch between versions; it retains the user's position in the API reference documentation for any entries which exist in both versions.
 
-1.  (Optional) For additional control, [configure a `versions.yaml` file](../content/versions.md) to specify which versions should be displayed or not, and which is the default version.
+1.  (Optional) For additional control, [configure a `versions.yaml` file](../../content/versions.md) to specify which versions should be displayed or not, and which is the default version.
 
 ## Update existing configuration options
 
@@ -150,13 +149,13 @@ The following table shows how to update some commonly used configuration options
     showExtensions: true
   ```
 
-  Check the [openapi configuration documentation](../config/openapi/index.md) for all the options for configuring reference documentation.
+  Check the [openapi configuration documentation](../../config/openapi/index.md) for all the options for configuring reference documentation.
 
 ---
 
 - `htmlTemplate`
 - Instead of supplying a template, use the configuration options for the navbar, sidebar, and footer sections.
-  The [navigation documentation](../navigation/navigation.md) is a good starting point to find out more about each element.
+  The [navigation documentation](../../navigation/navigation.md) is a good starting point to find out more about each element.
 
 ---
 
@@ -191,13 +190,13 @@ The following table shows how to update some commonly used configuration options
 
 - `hideDownloadButton`
 - Now named `hideDownloadButtons` since we support multiple downloads.
-  Visit the [documentation for hiding download buttons](../config/openapi/hide-download-buttons.md) for more information.
+  Visit the [documentation for hiding download buttons](../../config/openapi/hide-download-buttons.md) for more information.
 
 ---
 
 - `requiredPropsFirst`
 - Renamed to `sortRequiredPropsFirst`.
-  View the [detailed documentation for sortRequiredPropsFirst](../config/openapi/sort-required-props-first.md) for more information.
+  View the [detailed documentation for sortRequiredPropsFirst](../../config/openapi/sort-required-props-first.md) for more information.
 
   For more sorting options, try the [sorting plugin](https://github.com/Redocly/redocly-cli-cookbook/tree/main/custom-plugins/sorting) from the Redocly CLI cookbook.
   The plugin also includes a `property-sort` rule to check property ordering.
@@ -224,19 +223,19 @@ The following table shows how to update some commonly used configuration options
 
 - `generatedPayloadSamplesMaxDepth`
 - Renamed to `generatedSamplesMaxDepth`.
-  The [documentation for generatedSamplesMaxDepth](../config/openapi/generated-samples-max-depth.md) includes more information and examples.
+  The [documentation for generatedSamplesMaxDepth](../../config/openapi/generated-samples-max-depth.md) includes more information and examples.
 
 ---
 
 - `jsonSampleExpandLevel`
 - Renamed to `jsonSamplesExpandLevel`.
-  The [documentation for jsonSamplesExpandLevel](../config/openapi/json-samples-expand-level.md) includes more information and examples.
+  The [documentation for jsonSamplesExpandLevel](../../config/openapi/json-samples-expand-level.md) includes more information and examples.
 
 ---
 
 - `schemaExpansionLevel`
 - Renamed to `schemasExpansionLevel`.
-  The [documentation for schemasExpansionLevel](../config/openapi/schemas-expansion-level.md) includes more information and examples.
+  The [documentation for schemasExpansionLevel](../../config/openapi/schemas-expansion-level.md) includes more information and examples.
 
 {% /table %}
 
@@ -272,7 +271,7 @@ To apply custom styles to your project:
 
 4.  Edit the `@theme/styles.css` file to reflect your own branding and preferences.
     Using "Inspect" in your browser developer tools shows the CSS class names that you can change.
-    The documentation includes [branding and customization guides](../branding/index.md) to help you get started, and a full [CSS variables dictionary](../branding/css-variables/index.md) for your reference.
+    The documentation includes [branding and customization guides](../../branding/index.md) to help you get started, and a full [CSS variables dictionary](../../branding/css-variables/index.md) for your reference.
 
 ## Local development platform
 
@@ -298,6 +297,6 @@ To run your project locally:
 There are many more aspects to Redoc that you might like to explore.
 Here are some suggestions for where to go next:
 
-- View the list of [supported OpenAPI extensions](../content/api-docs/openapi-extensions/index.md).
-- Check the [configuration options for OpenAPI documentation](../config/openapi/index.md), there are changes and additions in comparison to our older products.
-- Learn how to [set a custom domain](../reunite/project/custom-domain.md) for your project.
+- View the list of [supported OpenAPI extensions](../../content/api-docs/openapi-extensions/index.md).
+- Check the [configuration options for OpenAPI documentation](../../config/openapi/index.md), there are changes and additions in comparison to our older products.
+- Learn how to [set a custom domain](../../reunite/project/custom-domain.md) for your project.

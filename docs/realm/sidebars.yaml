@@ -7,10 +7,11 @@
     - page: get-started/start-local-dev.md
       label: Start with local development
     - group: Migrate from legacy
+      page: get-started/migrate/index.md
       items:
-        - page: get-started/migrate-api-reference.md
+        - page: get-started/migrate/migrate-api-reference.md
           label: Migrate API reference
-        - page: get-started/migrate-from-legacy-portal.md
+        - page: get-started/migrate/migrate-from-legacy-portal.md
           label: Migrate from legacy portal
     - page: get-started/upgrade-realm-version.md
       label: Upgrade Realm version
@@ -173,8 +174,9 @@
             - page: content/markdoc-functions/concat.md
               label: concat
     - group: Markdoc tags
-      page: content/markdoc-tags/tag-library.md
+      page: content/markdoc-tags/index.md
       items:
+        - page: content/markdoc-tags/tag-library.md
         - separator: Built-in tags
         - page: content/markdoc-tags/partial.md
           label: Partial
@@ -225,6 +227,7 @@
           label: Tabs
 
     - group: API docs
+      page: content/api-docs/index.md
       items:
         - page: content/api-docs/add-openapi-docs.md
           label: OpenAPI

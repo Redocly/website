@@ -11,8 +11,6 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-The following is the list of React components you can customize to influence the look and behavior of your project.
-
 ## Admonition
 
 The Admonition component creates banners to highlight important information on your documentation pages.
@@ -23,14 +21,12 @@ For more information, see [admonition component reference](./admonition.md).
 
 ## Button
 
-The Button component is a versatile interactive element that supports multiple variants, sizes, and states.
-It can be used for actions, navigation, and form submissions with features like:
-
-- multiple visual styles (primary, secondary, outlined, text, link, ghost)
-- different sizes (small, medium, large)
-- support for icons with customizable positioning
-- various states (disabled, blinking)
-- tone variations (default, danger) for different contexts
+The Button component is a versatile interactive element that supports multiple variants, sizes, and states. It can be used for actions, navigation, and form submissions with features like:
+- Multiple visual styles (primary, secondary, outlined, text, link, ghost)
+- Different sizes (small, medium, large)
+- Support for icons with customizable positioning
+- Various states (disabled, blinking)
+- Tone variations (default, danger) for different contexts
 
 For more information, see [button component reference](./button.md).
 
@@ -38,13 +34,12 @@ For more information, see [button component reference](./button.md).
 
 The Link component provides consistent navigation functionality throughout your application.
 It offers:
-
-- internal and external link handling
-- customizable styling and behavior
-- target control (`_self`, `_blank`)
-- language-sensitive routing support
-- accessibility features
-- event handling capabilities
+- Internal and external link handling
+- Customizable styling and behavior
+- Target control (`_self`, `_blank`)
+- Language-sensitive routing support
+- Accessibility features
+- Event handling capabilities
 
 For more information, see [link component reference](./link.md).
 
@@ -63,7 +58,6 @@ For more information, see [Redocly icons component reference](./icons.md).
 
 The Font Awesome Icons component provides access to the complete FontAwesome icon library within your React components.
 It supports:
-
 - regular, solid, duotone, and brands FontAwesome icon styles
 - customizable size and color properties
 - CDN-based icon loading for optimal performance
@@ -76,7 +70,6 @@ For more information, see [Font Awesome icons component reference](./fontawesome
 
 The Tag component is a versatile UI element designed to display labels, categories, status indicators, and other short pieces of information.
 It offers:
-
 - multiple color schemes including semantic colors (success, error, warning), HTTP method colors, and custom colors
 - visual variants (filled and outline styles)
 - interactive features with optional close buttons and click handlers
