@@ -99,6 +99,26 @@ You can use the back and forward arrow icons to navigate pages in the Editor.
 
 The back and forward arrow icons consider page view history, which starts over when the Webview is reloaded or restarted.
 
+## View project page count
+
+The Webview pane displays includes a tab that displays the total number of pages in your project.
+This number refreshes as you add or remove content.
+
+On the left edge of your screen, click the **Pages** tab to display the current number of pages.
+
+## View errors
+
+If your project contains errors like broken links, Webview displays a tab with the number of errors.
+The number of errors and the contents of the pane update as you make changes to the project.
+
+On the left edge of your screen, click the tab with a number to expand a pane with the descriptions and locations of errors in your project files.
+
+{% img
+  src="../images/webview-errors.png"
+  alt="Expanded errors pane"
+  withLightbox=true
+/%}
+
 ## Close or open
 
 You can close the Webview by clicking the panel toggle, which changes direction after you click it.

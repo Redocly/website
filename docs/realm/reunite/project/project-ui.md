@@ -161,8 +161,8 @@ The **Webview** live preview tab renders the currently open Markdown or API desc
 - (6) use the **More actions** menu to:
   - [fully restart webview](./use-webview.md#full-restart)
   - [disable automatic syncing of changes to files with webview live preview](./use-webview.md#disable-auto-sync)
-- (7) display webview build validation errors
-- (8) display the number of pages in the project
+- (7) [display webview build validation errors](./use-webview.md#view-errors)
+- (8) [display the number of pages in the project](./use-webview.md#view-project-page-count)
 - (9) [view webview build logs](./use-webview.md#access-build-logs-in-the-webview-tab)
 
 ### Docs tab
