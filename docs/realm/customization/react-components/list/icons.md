@@ -12,6 +12,8 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
+Customize the `icon` component to influence styling of icons in your project.
+
 ## Icon Properties
 
 All icons in the theme package share these common properties:
