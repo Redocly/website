@@ -45,6 +45,7 @@ If you ejected the `navbar` component before version `0.128.0`, [update it](../c
 - **REQUIRED.**
   The banner content text.
   Supports Markdown syntax for formatting, links, tags and emphasis.
+  Partials and variables are not supported.
 
   Example: `This is **a great announcement.** [Button](https://redocly.com)`
 
