@@ -34,6 +34,8 @@ This guide provides a comprehensive overview of available configuration options 
   {% configProperty file="rules.md" /%}
 
   {% configProperty file="scorecard-classic.md" /%}
+
+  {% configProperty file="stats.md" /%}
 {% /configSection %}
 
 {% configSection title="Navigation elements" description="These settings control how users navigate through your documentation project." %}
