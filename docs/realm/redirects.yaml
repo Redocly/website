@@ -391,7 +391,7 @@
 '/extend/how-to/api-functions-reference':
   to: '/customization/api-functions-reference'
 '/extend/how-to/create-api-functions':
-  to: '/customization/api-functions/create-api-functions'
+  to: '/customization/create-api-functions'
 '/extend/how-to/tutorials/build-markdoc-tags':
   to: '/customization/tutorials/build-markdoc-tags'
 '/extend/how-to/tutorials/build-custom-function':
