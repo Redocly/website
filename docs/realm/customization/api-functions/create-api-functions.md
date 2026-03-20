@@ -12,154 +12,127 @@ plans:
   filesets=[
     {
       "files": [
-        "./code-walkthrough-files/weather-markdoc/weather.ts",
-        "./code-walkthrough-files/weather-markdoc/CurrentWeather.tsx",
-        "./code-walkthrough-files/weather-markdoc/schema.ts",
-        "./code-walkthrough-files/weather-markdoc/components.tsx"
+        "./code-walkthrough-files/weather/current-weather.ts"
       ],
-      "downloadAssociatedFiles": [
-        "./code-walkthrough-files/weather-markdoc/*"
-      ]
+      "when": { "example": "Weather API", "weather-auth": true }
+    },
+    {
+      "files": [
+        "./code-walkthrough-files/weather/current-weather-without-auth.ts"
+      ],
+      "when": { "example": "Weather API", "weather-auth": false }
+    },
+    {
+      "files": [
+        "./code-walkthrough-files/auth/login.post.ts"
+      ],
+      "when": { "example": "Authentication" }
     }
   ]
+  filters={
+    "example": {
+      "label": "Example Type",
+      "items": [
+        { "value": "Weather API" },
+        { "value": "Authentication" }
+      ]
+    }
+  }
 %}
-# Render weather data from API function in a Markdoc tag
 
-Build a custom Markdoc tag that renders live weather data by calling an API function.
+# Create API functions
 
-This tutorial explains how to create:
+Here are two examples of API functions:
+- weather service
+- authentication system
 
-- an API function endpoint at `/api/weather`
-- a React component that fetches from that endpoint
-- a Markdoc tag that authors can use in Markdown files
+To select an example, click either the **Weather API** or **Authentication** filter at the top of the page.
 
-## Key concepts
-
-**API functions** are server-side endpoints defined by adding TypeScript files inside the `@api` folder.
-The filename determines the URL path and, optionally, the HTTP method: `<name>.<method>.ts` (for example, `weather.get.ts` maps to `GET /api/weather`).
-Omit the method segment to handle all HTTP methods with a single file.
-See [File-system and method routing](./api-functions-reference.md#file-system-and-method-routing) for the full naming reference.
-
-**Markdoc tags** are custom components registered in the `@theme/markdoc` folder.
-You create a React component in `@theme/markdoc/components/`, export it from `@theme/markdoc/components.tsx`, and register its tag schema in `@theme/markdoc/schema.ts`.
-See [Build a Markdoc tag](../build-markdoc-tags.md) for full details.
-
-In the following solution:
-
-- The **API key stays server-side** in the API function (`process.env.WEATHER_API_KEY`).
-- The Markdoc component renders live data by calling your own endpoint.
-- You can apply role-based access control to the API function.
-  See [API functions reference](./api-functions-reference.md).
-
-## Before you begin
-
-{% step id="prereqs" heading="Prerequisites" %}
-Make sure you have the following:
-
-- familiarity with [building Markdoc tags](../build-markdoc-tags.md)
-- understanding of [API function basics](./api-functions-reference.md)
-- a free API key from <a href="https://www.weatherapi.com/" target="_blank" rel="noopener noreferrer">weatherapi.com</a> exposed as `WEATHER_API_KEY` in your environment variables
+{% step id="weather-heading" heading="Before you begin" when={ "example": "Weather API" } %}
+To use this example, generate a free API key from <a href="https://www.weatherapi.com/" target="_blank" rel="noopener noreferrer">weatherapi.com</a>.
 {% /step %}
 
-## Create the Weather API function
-
-Create the file `@api/weather.ts`.
-This file defines an endpoint at `/api/weather` that accepts an optional query parameter `q` (the location).
-When `q` is omitted, the function falls back to the client's IP address for geolocation.
-
-{% step id="api-imports" heading="Import types" %}
-Import the `ApiFunctionsContext` type from `@redocly/config`.
-This type provides TypeScript definitions for the context object passed to every API function.
+{% step id="weather-imports" heading="Import required types" when={ "example": "Weather API" } %}
+Import the necessary types from the Redocly configuration.
+These types provide TypeScript definitions for the request and context objects.
 {% /step %}
 
-{% step id="api-types" heading="Define response types" %}
-Define types for the external weather API responses.
-Typed responses improve editor support and catch integration errors early.
+{% step id="weather-function" heading="Define the main function" when={ "example": "Weather API" } %}
+Define the main API function that handles the request.
+The function takes two parameters:
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request" target="_blank" rel="noopener noreferrer">request</a>
+- <a href="./api-functions-reference#context" target="_blank" rel="noopener noreferrer">context</a>
 {% /step %}
 
-{% step id="api-function" heading="Export the handler" %}
-Export a default async function that receives a standard Web API <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request" target="_blank" rel="noopener noreferrer">Request</a> and the Redocly <a href="./api-functions-reference#context" target="_blank" rel="noopener noreferrer">context</a>.
+{% toggle id="weather-auth" label="Add custom authentication (optional)" when={ "example": "Weather API" } %}
+
+  {% step id="weather-auth-check" heading="Define authentication validator" when={ "weather-auth": true } %}
+  Add authentication validation to ensure only authenticated users can access the weather data.
+  This helper function verifies the session token from cookies.
+  {% /step %}
+
+  {% step id="weather-auth-implementation" heading="Implement authentication check" when={ "weather-auth": true } %}
+  Add a check to verify the user's authentication status before processing the request.
+  This code prevents unauthorized access to your API.
+  {% /step %}
+{% /toggle %}
+
+{% step id="weather-params" heading="Handle query parameters" when={ "example": "Weather API" } %}
+Extract query parameters with `context.query` and validate them.
+The weather API requires a location parameter (`q`).
 {% /step %}
 
-{% step id="api-env" heading="Read the API key" %}
+{% step id="weather-env-vars" heading="Access environment variables" when={ "example": "Weather API" } %}
 Access the API key from environment variables using `process.env`.
-Return a `500` error early if the key is missing so the caller gets a clear message instead of a cryptic upstream failure.
+Environment variables are a secure way to store sensitive information like API keys.
 {% /step %}
 
-{% step id="api-params" heading="Resolve the location" %}
-Use the `q` query parameter if the caller provides one.
-Otherwise, fall back to the client IP address from `x-forwarded-for` (or `auto:ip` as a last resort) so the weather API geolocates the visitor automatically.
+{% step id="weather-api-call" heading="Make the API request" when={ "example": "Weather API" } %}
+Make a call to the external weather API using `fetch` API, and validate the response.
 {% /step %}
 
-{% step id="api-fetch" heading="Fetch weather data" %}
-Call the external weather API with `fetch`, forwarding the location and API key.
-Handle non-OK responses by returning the upstream error details.
+{% step id="weather-response" heading="Return formatted response" when={ "example": "Weather API" } %}
+Format and return the weather data in a structured JSON response.
 {% /step %}
 
-{% step id="api-response" heading="Return the response" %}
-Return the relevant subset of the weather data as JSON.
-The Markdoc component will consume this shape.
+{% step id="weather-error-handling" heading="Handle errors" when={ "example": "Weather API" } %}
+Implement error handling for API requests to manage failures and provide useful error messages to clients.
 {% /step %}
 
-## Create the Markdoc component
-
-Create the file `@theme/markdoc/components/CurrentWeather.tsx`.
-This React component fetches from your API function and renders the result.
-
-{% step id="component-import" heading="Import React" %}
-Import React so you can use hooks and JSX.
+{% step id="auth-imports" heading="Import required types" when={ "example": "Authentication" } %}
+Import the necessary types for authentication.
 {% /step %}
 
-{% step id="component-types" heading="Define component types" %}
-Define the expected API response shape and component props.
-The optional `q` prop lets authors specify a city; `units` chooses Celsius or Fahrenheit.
+{% step id="auth-function" heading="Define the main function" when={ "example": "Authentication" } %}
+Define the main API function that handles the request.
+The function takes two parameters:
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request" target="_blank" rel="noopener noreferrer">request</a>
+- <a href="./api-functions-reference#context" target="_blank" rel="noopener noreferrer">context</a>
 {% /step %}
 
-{% step id="component-function" heading="Create the component" %}
-Declare the `CurrentWeather` function component with a state machine that tracks loading, error, and success states.
+{% step id="auth-credentials" heading="Validate credentials" when={ "example": "Authentication" } %}
+Extract and validate the username and password from the request body.
 {% /step %}
 
-{% step id="component-fetch" heading="Fetch from the API function" %}
-Use `useEffect` to call `/api/weather` when the component mounts.
-If `q` is provided, pass it as a query parameter; otherwise omit it and let the API function resolve the location from the client IP.
-An `AbortController` cancels the request if the component unmounts before the response arrives.
+{% step id="auth-session" heading="Create session token" when={ "example": "Authentication" } %}
+Generate a session token for authenticated users.
+In a production application, you would use a proper JWT library.
 {% /step %}
 
-{% step id="component-render" heading="Render weather data" %}
-Render loading and error states first, then display the location, temperature, humidity, and wind speed.
+{% step id="auth-cookie" heading="Set cookie" when={ "example": "Authentication" } %}
+Set a secure cookie with the session token to maintain the user's authenticated state.
 {% /step %}
 
-## Register the Markdoc tag
-
-{% step id="tag-schema" heading="Add the tag schema" %}
-Update `@theme/markdoc/schema.ts` to register a `weather` tag.
-The `render` value must match the exported component name (`CurrentWeather`), and `selfClosing` means the tag has no children.
-Both `q` and `units` are optional -- when `q` is omitted the API function geolocates the visitor by IP address.
+{% step id="auth-response" heading="Return success response" when={ "example": "Authentication" } %}
+Return a success response with user information.
 {% /step %}
 
-{% step id="tag-export" heading="Export the component" %}
-Export `CurrentWeather` from `@theme/markdoc/components.tsx` so the Markdoc runtime can resolve the `render` value.
+{% step id="auth-error-handling" heading="Handle errors" when={ "example": "Authentication" } %}
+Implement error handling to manage authentication failures and provide error responses.
 {% /step %}
 
-## Use the tag in Markdown
+## Reference documentation
 
-Authors can embed the `weather` tag in any `.md` file.
-
-Geolocate the visitor by IP address:
-
-```markdoc {% process=false %}
-{% weather /%}
-```
-
-Or specify a city explicitly:
-
-```markdoc {% process=false %}
-{% weather q="London" units="c" /%}
-```
-
-## Resources
-
-- **[Build a Markdoc tag](../build-markdoc-tags.md)** - Create custom Markdoc tags with React components
-- **[API functions reference](./api-functions-reference.md)** - Function signature, routing, context helpers, and access control
+To learn more about API functions, see the [API functions reference](./api-functions-reference.md) for available helper methods and properties.
 
 {% /code-walkthrough %}

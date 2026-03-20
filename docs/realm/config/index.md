@@ -115,6 +115,8 @@ This guide provides a comprehensive overview of available configuration options 
 {% configSection title="Analytics and SEO" description="Improve discoverability and track usage of your documentation." %}
   {% configProperty file="analytics/index.md" /%}
 
+  {% configProperty file="stats.md" /%}
+
   {% configProperty file="ignore.md" /%}
 
   {% configProperty file="redirects.md" /%}
@@ -156,6 +158,9 @@ apis:
   redocly-museum:
     root: './openapi-files/redocly-museum.yaml'
 
+stats:
+  fileExtensions: true
+
 extends:
   - recommended
 
@@ -190,7 +195,7 @@ redirects:
     to: 'author/concepts/navigation/'
 ```
 
-This example includes logo customization, navigation setup, feedback controls, API descriptions, rule configurations, access controls, and redirects.
+This example includes logo customization, navigation setup, feedback controls, API descriptions, optional build statistics (`stats`), rule configurations, access controls, and redirects.
 
 ## Configuration principles
 
