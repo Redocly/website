@@ -60,9 +60,11 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
   const isDocsOrLearnPage = isDocsPage || isLearnPage;
   const isEditorPage = pathname === '/editor';
   const isPreviewPage = pathname === '/preview';
+  const isCareersJobPage =
+    typeof pathname === 'string' && /^\/careers\/.+/.test(pathname);
 
   React.useEffect(() => {
-    if (!isDocsPage && !isLearnPage && !isEditorPage && !isPreviewPage) {
+    if (!isDocsPage && !isLearnPage && !isEditorPage && !isPreviewPage && !isCareersJobPage) {
       document.documentElement.classList.replace('dark', 'light');
     } else {
       document.documentElement.classList.replace(
@@ -70,7 +72,7 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
         localStorage.getItem('colorSchema') || 'light',
       );
     }
-  }, [isDocsPage, isLearnPage, isEditorPage, isPreviewPage]);
+  }, [isDocsPage, isLearnPage, isEditorPage, isPreviewPage, isCareersJobPage]);
 
   const menu = themeConfig.navbar?.items;
 
@@ -125,7 +127,13 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
         <RightPanelWrapper>
           <LanguagePicker onChangeLanguage={changeLanguage} onlyIcon alignment="end" />
           <ColorModeSwitcherWrapper
-            isVisible={isDocsOrLearnPage || pathname?.startsWith('/learn') || isEditorPage || isPreviewPage}
+            isVisible={
+              isDocsOrLearnPage ||
+              pathname?.startsWith('/learn') ||
+              isEditorPage ||
+              isPreviewPage ||
+              isCareersJobPage
+            }
             isMobileOpen={isOpen}
           >
             <ColorModeSwitcher />
