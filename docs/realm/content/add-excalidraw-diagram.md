@@ -15,9 +15,30 @@ keywords:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Redocly projects have built-in support for [Excalidraw](https://excalidraw.com/) diagrams.
-Use Excalidraw to add hand-drawn style diagrams to your pages.
+Use the Excalidraw plugin to add hand-drawn style diagrams to your pages.
 Diagrams are rendered as SVG and automatically adapt to dark mode.
+
+## About the plugin
+
+The Excalidraw plugin package is `@redocly/realm-plugin-excalidraw`.
+It adds both the `excalidraw` fenced code block renderer and the `{% excalidraw /%}` Markdoc tag.
+
+## Install the plugin
+
+Install the package in your project:
+
+```sh
+pnpm add @redocly/realm-plugin-excalidraw
+```
+
+## Enable in redocly.yaml
+
+Add the plugin to the `plugins` list in your `redocly.yaml`:
+
+```yaml {% title="redocly.yaml" %}
+plugins:
+  - '@redocly/realm-plugin-excalidraw/plugin.js'
+```
 
 ## Add an inline diagram
 

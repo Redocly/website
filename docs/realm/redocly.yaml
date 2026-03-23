@@ -106,6 +106,8 @@ apis:
         severity: off
 extends:
   - recommended
+plugins:
+  - '@redocly/realm-plugin-excalidraw/plugin.js'
 rules:
   boolean-parameter-prefixes:
     severity: error
