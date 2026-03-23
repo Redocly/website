@@ -23,24 +23,24 @@ Our team is growing, and we are looking for a talented software engineer. You wi
 - Bring fresh ideas to the team and suggest new technologies.
 
 #### Who you are
-- Strong proficiency with NodeJS, JavaScript, TypeScript.
-- Experience with React or similar frontend frameworks.
-- Experience with FE & BE performance optimizations.
-- Experience with Jest Testing Framework.
-- Experience with Postgres.
-- Experience with NestJS.
-- Passionate about technology enjoys solving complex problems and learning new technologies.
-- Communication (are you sharing your thought process and asking questions where appropriate?).
-- Teamwork (are you a team player putting the mission before self-interest?).
-- Beauty and simplicity (of your code).
+- Strong proficiency with NodeJS, JavaScript, TypeScript
+- Experience with React or similar frontend frameworks
+- Experience with FE & BE performance optimizations
+- Experience with Jest Testing Framework
+- Experience with Postgres
+- Experience with NestJS
+- You are passionate about technology and enjoy solving complex problems and learning new technologies
+- Communication (are you sharing your thought process and asking questions where appropriate?)
+- Teamwork (are you a team player putting the mission before self-interest?)
+- Beauty and simplicity (of your code)
 
 #### Nice to have
-- Cloud experience (AWS).
-- Manage infrastructure as code (Terraform, HashiCorp).
-- AI agents.
+- Cloud experience (AWS)
+- Manage infrastructure as code (Terraform, HashiCorp)
+- AI agents
 
 #### About us
-Our mission is to accelerate API ubiquity.The primary way we do that is to improve our developer experiences. We're a team of about 40 people. Mostly everyone focused on making the best products we can for our customers. We have strong product-market fit. The products you work on are used by millions of people. We use Shape Up methodology.
+Our mission is to accelerate API ubiquity. The primary way we do that is to improve our developer experiences. We're a team of about 40 people. Mostly everyone focused on making the best products we can for our customers. We have strong product-market fit. The products you work on are used by millions of people. We use Shape Up methodology.
 
 #### Working at Redocly
 Redocly is a fun, supportive, and high performing environment. We celebrate the little victories, don't take ourselves too seriously, all while focused and making progress on our mission. If you are looking for an interesting product and enjoy being challenged — this is the place for you!
