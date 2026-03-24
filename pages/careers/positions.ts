@@ -17,10 +17,4 @@ export const positions = [
     employmentType: 'Full time',
     slug: 'software-engineer',
   },
-  {
-    title: 'Developer Marketer',
-    locations: ['Ukraine, Office'],
-    employmentType: 'Full time',
-    slug: 'developer-marketer',
-  },
 ];
