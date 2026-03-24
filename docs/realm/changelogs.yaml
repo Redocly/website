@@ -62,7 +62,7 @@
       '@redocly/openapi-docs': 3.20.0-next.0
       '@redocly/theme': 0.64.0-next.0
   0.131.2:
-    timestamp: 1774370307000
+    timestamp: 1774371637000
     changes:
       minor: []
       patch:
@@ -5851,7 +5851,7 @@
       '@redocly/openapi-docs': 3.20.0-next.0
       '@redocly/theme': 0.64.0-next.0
   0.131.2:
-    timestamp: 1774370307000
+    timestamp: 1774371637000
     changes:
       minor: []
       patch:
@@ -10759,7 +10759,7 @@
       '@redocly/openapi-docs': 3.20.0-next.0
       '@redocly/theme': 0.64.0-next.0
   0.131.2:
-    timestamp: 1774370307000
+    timestamp: 1774371637000
     changes:
       minor: []
       patch:
@@ -15649,7 +15649,7 @@
       '@redocly/openapi-docs': 3.20.0-next.0
       '@redocly/theme': 0.64.0-next.0
   0.131.2:
-    timestamp: 1774370307000
+    timestamp: 1774371637000
     changes:
       minor: []
       patch:
@@ -28573,7 +28573,7 @@
       '@redocly/redoc-revel': 0.132.0-next.0
       '@redocly/theme': 0.64.0-next.0
   1.14.2:
-    timestamp: 1774370307000
+    timestamp: 1774371637000
     changes:
       minor: []
       patch: []
