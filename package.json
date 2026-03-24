@@ -14,7 +14,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@redocly/marketing-pages": "0.1.51",
-    "@redocly/realm": "0.132.0-next.0",
+    "@redocly/realm": "0.132.0-next.1",
     "buffer": "^6.0.3",
     "highlight-words-core": "^1.2.3",
     "path": "^0.12.7",
@@ -22,9 +22,9 @@
   },
   "devDependencies": {
     "@types/styled-components": "5.1.34",
-    "eslint": "^8.53.0",
+    "eslint": "^10.1.0",
     "eslint-config-prettier": "^9.0.0",
-    "markdownlint-cli2": "^0.20.0",
+    "markdownlint-cli2": "^0.22.0",
     "prettier": "^3.0.3"
   },
   "markdownlint-cli2": {
