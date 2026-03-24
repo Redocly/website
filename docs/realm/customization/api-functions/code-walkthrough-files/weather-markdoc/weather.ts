@@ -36,7 +36,7 @@ type WeatherApiResponse = {
 // @chunk-end
 
 // @chunk {"steps": ["api-function"]}
-export default async function (request: Request, context: ApiFunctionsContext) {
+export default async function (request: Request, context: ApiFunctionsContext): Promise<Response> {
   // @chunk-end
 
   // @chunk {"steps": ["api-env"]}
@@ -50,8 +50,8 @@ export default async function (request: Request, context: ApiFunctionsContext) {
   // @chunk-end
 
   // @chunk {"steps": ["api-params"]}
-  const rawQ = context.query.q;
-  if (rawQ && typeof rawQ !== 'string') {
+  const queryLocation = context.query.location;
+  if (queryLocation && typeof queryLocation !== 'string') {
     return context.status(400).json({
       error: 'Invalid location parameter',
       message: 'Please provide a single location',
@@ -59,14 +59,17 @@ export default async function (request: Request, context: ApiFunctionsContext) {
   }
 
   const location =
-    rawQ || request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'auto:ip';
+    queryLocation || request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'auto:ip';
   // @chunk-end
 
   // @chunk {"steps": ["api-fetch"]}
   try {
-    const weatherResponse = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${encodeURIComponent(location)}&aqi=no`,
-    );
+    const url = new URL('https://api.weatherapi.com/v1/current.json');
+    url.searchParams.set('key', apiKey);
+    url.searchParams.set('q', location);
+    url.searchParams.set('aqi', 'no');
+
+    const weatherResponse = await fetch(url.toString());
 
     if (!weatherResponse.ok) {
       const errorData: WeatherApiError = await weatherResponse.json();
@@ -87,7 +90,8 @@ export default async function (request: Request, context: ApiFunctionsContext) {
     });
     // @chunk-end
     // @chunk {"steps": ["api-fetch"]}
-  } catch {
+  } catch (error: unknown) {
+    console.error('Weather API error:', error);
     return context.status(500).json({ error: 'Internal server error' });
   }
   // @chunk-end
