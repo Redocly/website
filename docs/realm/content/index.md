@@ -27,10 +27,6 @@ Organize your content with files, folders, and configuration for optimal navigat
 Write rich documentation using Markdown syntax, Markdoc tags, code blocks, and interactive elements.
 {% /card %}
 
-{% card title="AsciiDoc content (experimental)" icon="file-lines" to="./asciidoc.md" %}
-Use `.adoc` files as content pages with search and AI indexing support.
-{% /card %}
-
 {% card title="API documentation" icon="code" to="./api-docs/add-openapi-docs.md" %}
 Add OpenAPI, AsyncAPI, GraphQL, and SOAP API documentation with interactive features and extensions.
 {% /card %}

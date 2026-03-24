@@ -101,7 +101,3 @@ import { dynamic } from '@redocly/theme';
 
 const PackageComponent = dynamic(() => import('some-package').then(mod => mod.default));
 ```
-
-## Resources
-
-- **[List of customizable components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects
