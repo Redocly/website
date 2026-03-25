@@ -1,4 +1,11 @@
 '@redocly/realm':
+  0.132.0-next.3:
+    timestamp: 1774442618000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where `Typesense` search ignored OpenAPI paths.
+    dependencies: {}
   0.132.0-next.2:
     timestamp: 1774366282000
     changes:
@@ -5792,6 +5799,13 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.132.0-next.3:
+    timestamp: 1774442618000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where `Typesense` search ignored OpenAPI paths.
+    dependencies: {}
   0.132.0-next.2:
     timestamp: 1774366282000
     changes:
@@ -10700,6 +10714,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.132.0-next.3:
+    timestamp: 1774442618000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where `Typesense` search ignored OpenAPI paths.
+    dependencies: {}
   0.132.0-next.2:
     timestamp: 1774366282000
     changes:
@@ -15593,6 +15614,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.132.0-next.3:
+    timestamp: 1774442618000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where `Typesense` search ignored OpenAPI paths.
+    dependencies: {}
   0.132.0-next.2:
     timestamp: 1774366282000
     changes:
@@ -28538,6 +28566,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.15.0-next.3:
+    timestamp: 1774442618000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.132.0-next.3
+      '@redocly/redoc': 0.132.0-next.3
+      '@redocly/redoc-reef': 0.132.0-next.3
+      '@redocly/redoc-revel': 0.132.0-next.3
   1.15.0-next.2:
     timestamp: 1774366282000
     changes:
