@@ -17,6 +17,7 @@ redirects:
 ignore:
   - '.github'
   - 'learn/arazzo/_filesets/**'
+  - 'learn/security/_filesets/**'
   - '**/code-walkthrough-files/**'
   - docs/realm/.templates
 
