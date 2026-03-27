@@ -30,8 +30,8 @@ To require login to a project, [`rbac`](./rbac.md) or [`requiresLogin`](./requir
 
 - sso
 - [string]
-- List of identity provider types from Reunite.
-  Possible values: `REDOCLY`, `CORPORATE`, `GUEST`, or `[]`.
+- List of identity provider types or slugs from Reunite.
+  Possible values: `REDOCLY`, `CORPORATE`, `GUEST`, the **slug** of a specific identity provider (as configured in Reunite), or `[]`.
 
   Default value: `AUTO` - when no `sso` is defined, this special value is used.
   It redirects users to `GUEST` IdP if it's defined in Reunite.
@@ -51,6 +51,15 @@ access:
   sso:
     - GUEST
     - REDOCLY
+```
+
+You can also use the slug of a specific identity provider (defined in Reunite) to show only that provider at project login:
+
+```yaml {% title="redocly.yaml" %}
+access:
+  sso:
+    - my-corp-idp
+    - GUEST
 ```
 
 ### Disable SSO
