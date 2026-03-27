@@ -90,6 +90,23 @@
 
 </details>
 
+<details>
+<summary>Admonition type default</summary>
+
+```css
+--admonition-default-bg-color: var(--color-primary-bg, var(--admonition-default-bg-color-legacy));
+--admonition-default-text-color: var(--admonition-heading-text-color);
+--admonition-default-heading-text-color: var(--admonition-heading-text-color);
+--admonition-default-icon-color: var(--color-primary-base, var(--admonition-primary-icon-color-legacy));
+--admonition-default-border-color: var(--color-primary-border, var(--admonition-default-border-color-legacy));
+--admonition-default-border-style: var(--admonition-border-style);
+--admonition-default-border-width: var(--admonition-border-width);
+--admonition-default-border: var(--admonition-primary-border-width) var(--admonition-default-border-style) var(--admonition-pridefaultmary-border-color);
+
+```
+
+</details>
+
 ## Badge
 
 <details>
@@ -208,9 +225,9 @@
 --button-content-color-primary-hover: var(--color-blue-7);
 --button-content-color-primary-pressed: var(--color-blue-8);
 
---button-bg-color-primary: var(--color-blue-6);
---button-bg-color-primary-hover: var(--color-blue-7);
---button-bg-color-primary-pressed: var(--color-blue-8);
+--button-bg-color-primary: var(--color-primary-base, var(--button-bg-color-primary-legacy));
+--button-bg-color-primary-hover: var(--color-primary-hover, var(--button-bg-color-primary-hover-legacy));
+--button-bg-color-primary-pressed: var(--color-primary-active, var(--button-bg-color-primary-pressed-legacy));
 
 --button-bg-color-primary-danger: var(--color-raspberry-6);
 --button-bg-color-primary-danger-hover: var(--color-raspberry-7);
@@ -772,7 +789,7 @@
 --filter-option-margin: 0;
 
 --filter-option-label-font-size: var(--font-size-base);
---filter-option-label-color: var(--text-color-secondary);
+--filter-option-label-color: var(--text-color-primary);
 
 --filter-option-checkbox-padding-left: var(--spacing-xs);
 
@@ -1198,14 +1215,14 @@
 --md-tabs-tab-border-width: 0;
 --md-tabs-tab-border-radius: 0;
 
---md-tabs-active-tab-text-color: var(--text-color-primary);
+--md-tabs-active-tab-text-color: var(--color-primary-text, var(--md-tabs-active-tab-text-color-legacy));
 --md-tabs-active-tab-font-size: var(--md-tabs-tab-font-size);
 --md-tabs-active-tab-font-family: var(--md-tabs-tab-font-family);
 --md-tabs-active-tab-font-style: normal;
 --md-tabs-active-tab-font-weight: var(--md-tabs-tab-font-weight);
---md-tabs-active-tab-bg-color: var(--bg-color);
+--md-tabs-active-tab-bg-color: var(--color-primary-bg, var(--md-tabs-active-tab-bg-color-legacy));
 --md-tabs-active-tab-padding: var(--md-tabs-tab-padding);
---md-tabs-active-tab-border-color: var(--text-color-primary);
+--md-tabs-active-tab-border-color: var(--color-primary-active, var(--md-tabs-active-tab-border-color-legacy));
 --md-tabs-active-tab-border-width: 0 0 2px 0;
 --md-tabs-active-tab-border-radius: var(--md-tabs-tab-border-radius);
 
@@ -1899,15 +1916,16 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --menu-item-font-family: var(--sidebar-font-family);
 --menu-item-font-size: var(--sidebar-font-size);
 --menu-item-font-weight: var(--font-weight-regular);
+--menu-item-font-weight-active: var(--font-weight-medium); 
 --menu-item-line-height: var(--line-height-base);
 
 --menu-item-text-color: var(--sidebar-text-color);
 --menu-item-bg-color: transparent;
 --menu-item-bg-color-hover: var(--color-hover-base);
---menu-item-bg-color-active: var(--tree-bg-color-active);
+--menu-item-bg-color-active: var(--color-primary-bg, var(--menu-item-bg-color-active-legacy));
 
 --menu-item-color-hover: var(--tree-content-color-hover);
---menu-item-color-active: var(--tree-content-color-default);
+--menu-item-color-active: var(--color-primary-text, var(--menu-item-color-active-legacy));
 
 --menu-item-padding-vertical: var(--spacing-unit);
 --menu-item-padding-horizontal: var(--spacing-xxs);
@@ -2022,8 +2040,9 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 
 ```css
 --switch-bg-color: var(--color-warm-grey-4);
---switch-bg-color-selected: var(--color-warm-grey-9);
+--switch-bg-color-selected: var(--color-primary-base, var(--switch-bg-color-selected-legacy));
 --switch-bg-color-hover: var(--color-warm-grey-5);
+--switch-border-color-selected: var(--color-primary-base, var(--switch-border-color-selected-legacy));
 --switch-bg-color-pressed: var(--color-warm-grey-6);
 --switch-bg-color-disabled: var(--color-warm-grey-3);
 --switch-knob-bg-color: var(--color-white);
@@ -2064,13 +2083,14 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --toc-item-font-size: var(--font-size-base);
 --toc-item-line-height: var(--line-height-base);
 --toc-item-font-weight: var(--font-weight-regular);
+--toc-item-font-weight-active: var(--font-weight-medium);
 --toc-item-text-color: var(--text-color-description);
---toc-item-text-color-active: var(--text-color-primary);
+--toc-item-text-color-active: var(--color-primary-text, var(--toc-item-text-color-active-legacy)); 
 --toc-item-bg-color: transparent;
 --toc-item-nested-offset: calc(var(--toc-spacing-unit) * 2);
 --toc-item-padding-vertical: calc(var(--toc-spacing-unit) / 2);
 --toc-item-padding-horizontal: calc(var(--toc-spacing-unit) * 2);
---toc-item-border-color-active: var(--border-color-inverse);
+--toc-item-border-color-active: var(--color-primary-base, var(--toc-item-border-color-active-legacy));
 ```
 
 </details>
