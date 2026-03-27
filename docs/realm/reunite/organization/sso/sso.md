@@ -70,3 +70,4 @@ Disabling SSO removes the login page, but does not disable `rbac`.
 - **[Okta SAML integration video](https://youtu.be/NMayl8FTZ7c)** - Watch a step-by-step tutorial for integrating Okta with Redocly using SAML for single sign-on
 - **[SSO configuration reference](../../../config/access/sso.md)** - Complete technical reference for all SSO configuration options and settings in your redocly.yaml file
 - **[Multi-tenant SSO: Federated identity management](./sso-multi-tenant.md)** - Implement federated identity management for organizations with multiple tenants and complex authentication requirements
+- **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 directory provisioning for an identity provider (beta, access by request)
