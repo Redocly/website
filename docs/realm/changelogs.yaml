@@ -26384,6 +26384,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.45.0:
+    timestamp: 1774617947000
+    changes:
+      minor:
+        - Added `palette` config schema to support different brand colors.
+      patch: []
+    dependencies: {}
   0.44.2:
     timestamp: 1774253024000
     changes:
