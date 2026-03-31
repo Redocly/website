@@ -43036,6 +43036,15 @@ reunite:
         - Added granular permissions to API keys.
       patch: []
     dependencies: {}
+  v2026-03-31.1:
+    timestamp: 1774939319000
+    changes:
+      minor:
+        - Added OAuth2 client management in organization settings with access scope configuration and client revocation.
+      patch:
+        - Fixed an issue where manually triggered deployments showed incorrect commit messages on the deployment details page.
+        - Changed the `add tab` button in the preview panel to always open a blank tab instead of opening a missing tab.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
