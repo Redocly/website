@@ -43045,6 +43045,16 @@ reunite:
         - Fixed an issue where manually triggered deployments showed incorrect commit messages on the deployment details page.
         - Changed the `add tab` button in the preview panel to always open a blank tab instead of opening a missing tab.
     dependencies: {}
+  v2026-03-31.3:
+    timestamp: 1774968268000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.25.2`.
+        - >-
+          Fixed an issue where saving remote Git content after editing replaced the selected repository folder with the repository root. The selected
+          folder is retained when saving without changes.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
