@@ -26384,6 +26384,15 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.46.0:
+    timestamp: 1775053046000
+    changes:
+      minor:
+        - Updated `palette` options in configuration.
+      patch:
+        - Updated the `rbac` property schema for `apis` configuration.
+        - Removed `legacy` palette option.
+    dependencies: {}
   0.45.0:
     timestamp: 1774617947000
     changes:
@@ -27944,6 +27953,14 @@
       '@redocly/theme': 0.6.0
 '@redocly/api-docs': {}
 '@redocly/mock-server':
+  0.5.17:
+    timestamp: 1775053046000
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability `CVE-2026-33036` by upgrading `fast-xml-parser` to version `5.5.9`.
+        - Updated `@redocly/openapi-core` to version `2.25.2`.
+    dependencies: {}
   0.5.16:
     timestamp: 1774253024000
     changes:
