@@ -43209,6 +43209,13 @@ reunite:
           Fixed an issue where saving remote Git content after editing replaced the selected repository folder with the repository root. The selected
           folder is retained when saving without changes.
     dependencies: {}
+  v2026-04-02.1:
+    timestamp: 1775125852000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue that prevented RBAC API keys from reading project source details and listing remotes in Reunite CLI workflows.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
