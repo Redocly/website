@@ -13,7 +13,7 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Use this document as a reference for the user interface (UI) of pages in Reunite's project workspace.
+Reference the user interface (UI) of pages in Reunite's project workspace.
 Learn about the various ways you can utilize the interface controls.
 
 ## General interface
@@ -40,7 +40,8 @@ Use the navigation pane to:
 - (1) access the [organizations and projects menu](#organization-and-projects-menu)
 - (2) collapse the navigation pane
 - (3) switch between [Reunite workspace pages](../reunite.md)
-- (4) [access the user profile menu](../user-profile-menu.md)
+- (4) view the latest product announcements
+- (5) [access the user profile menu](../user-profile-menu.md)
 
 #### Organization and projects menu
 
