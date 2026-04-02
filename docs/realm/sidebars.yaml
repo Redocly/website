@@ -59,6 +59,8 @@
       label: Keyboard shortcuts
     - page: reunite/project/use-webview.md
       label: Webview
+    - page: reunite/project/test-api-functions.md
+      label: Test API functions
     - page: reunite/project/use-previews.md
       label: Previews
     - group: Deployments

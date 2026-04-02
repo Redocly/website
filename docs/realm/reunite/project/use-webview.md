@@ -46,7 +46,9 @@ You can select from the following preset sizes:
 
 You can also enter specific length and width pixel sizes and click and drag the sides of the Webview to expand or contract the sides.
 
-To see a full screen version in a new tab, click the **Open in a new window** icon.
+## Open Webview in a new window or tab
+
+To see a full screen version of Webview in a new tab or a new window, click the **Open in a new window** icon.
 
 {% img
   src="../images/webview-open-in-new-window.png"
@@ -54,9 +56,9 @@ To see a full screen version in a new tab, click the **Open in a new window** ic
   withLightbox=true
 /%}
 
-## More actions
+## Webview: additional commands
 
-Click the **More actions** icon to either do a full restart or disable auto-sync.
+Click the **More actions** icon to either do a full restart of Webview or disable auto-sync.
 
 {% img
   src="../images/webview-more-actions.png"
@@ -99,7 +101,43 @@ You can use the back and forward arrow icons to navigate pages in the Editor.
 
 The back and forward arrow icons consider page view history, which starts over when the Webview is reloaded or restarted.
 
-## Close or open
+## Project status bar
+
+The Webview pane and its [full screen version](#open-webview-in-a-new-window-or-tab) include a status bar at the bottom edge of the screen.
+This status bar displays the number of pages in your project and project build errors.
+
+You can drag the status bar along the bottom edge of the Webview to move it out of the way.
+
+{% img
+  src="../images/webview-status-bar.png"
+  alt="Expanded errors pane"
+  withLightbox=true
+/%}
+
+
+### View project page count
+
+The project status bar in the Webview pane displays the current number of pages in your project.
+This number counts towards your page budget.
+
+The page count refreshes as you add or remove content.
+
+### View project build errors
+
+The project status bar displays the number of errors found during Webview builds.
+When there are no errors detected in your project, the left side of the status bar displays a tick icon and the number 0.
+If your project contains issues like broken links, the left side of the status bar displays a crossed circle icon and the number or errors.
+
+Click the left side of the status bar to expand a pane with the descriptions and locations of errors in your project files.
+The number of errors and the content of the errors pane updates as you make changes to the project.
+
+{% img
+  src="../images/webview-errors.png"
+  alt="Expanded errors pane"
+  withLightbox=true
+/%}
+
+## Close or open Webview
 
 You can close the Webview by clicking the panel toggle, which changes direction after you click it.
 
@@ -148,4 +186,5 @@ In the **Logs** panel you can:
 ## Resources
 
 - **[Use the editor](./use-editor.md)** - Learn to edit content in Reunite's integrated editor with syntax highlighting and collaborative features
+- **[Test API functions](./test-api-functions.md)** - Send requests to API functions from Replay while you work in the editor
 - **[Use previews](./use-previews.md)** - Access deployment previews to review changes before publishing to your live documentation site
