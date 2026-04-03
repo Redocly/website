@@ -43212,8 +43212,7 @@ reunite:
   v2026-04-03.1:
     timestamp: 1775212891000
     changes:
-      minor:
-        - Refactored `credentials`, `project sources`, and `remotes` APIs to align with public exposure standards.
+      minor: []
       patch:
         - Fixed an issue that prevented RBAC API keys from reading project source details and listing remotes in Reunite CLI workflows.
     dependencies: {}
