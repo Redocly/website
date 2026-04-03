@@ -13,7 +13,7 @@ This page provides an overview of how the system works — and how the different
 
 At a high level:
 
-```mermaid
+```mermaid {% align="center" %}
 flowchart TD
     remote["Content sources (Git + Remote content)"] --> reunite["Reunite (Collaboration Suite)"]
     reunite --> realm["Realm (Project Engine)"]
@@ -25,7 +25,7 @@ flowchart TD
 
 ## Content flow
 
-```mermaid
+```mermaid {% align="center" %}
 flowchart TD
     remote["Remote Content Sources"] --> remote_automation["Remote Content Automation"]
     remote_automation --> git["Project Git Repo"]
