@@ -23,11 +23,16 @@ Follow along and simplify your Redocly access with Okta!
 
 ## Preserve the Owner organization role
 
-{% admonition type="danger" %}
-**Critical step:** Complete this step before clicking **Save** in Reunite to prevent getting locked out of your organization.
+{% admonition type="info" %}
+Reunite does not **lower** an existing stored organization role when someone signs in with SSO and Okta sends a lower role than Reunite already has for that user.
+You should still map owners correctly in Okta so **new** users and **promotions** match your intended access, and so support and auditing stay aligned with your IdP.
 {% /admonition %}
 
-To prevent Okta from changing users' roles to the default organization role specified in the SSO settings:
+{% admonition type="warning" %}
+**Recommended before broad rollout:** Ensure owner accounts are in the `redocly.owners` group (below) so their claims match administrative access in Reunite, especially for new members and when you rely on IdP groups for access reviews.
+{% /admonition %}
+
+To map organization owners in Okta to the Owner role in Reunite:
 
 1. In Okta, navigate to **Directory** > **Groups**.
 1. Create a group named `redocly.owners`.
@@ -97,7 +102,7 @@ Attributes enable role-based access control (RBAC) by passing Okta group members
    - **Single sign-on URL**: Paste the URL from Okta
    - **Issuer ID**: Paste the issuer URL from Okta
    - **X.509 Certificate**: Paste the certificate from Okta
-1. Set the **Default organization role** to **Owner** initially to ensure you don't lose administrative access.
+1. Set the **Default organization role** to **Owner** initially so the first SSO users receive administrative access until group claims are fully configured.
 1. Click **Save** to create the identity provider.
 
 ## Create and assign Okta groups

@@ -42,7 +42,8 @@ Follow the steps to configure Google Workspace SAML SSO integration with Reunite
 
 1. In the Google Workspace, in your app's configuration, in **App attribute**, enter: `https://redocly.com/sso/teams`.
 1. (Optional) Select groups to transmit to Reunite.
-1. (Optional) To preserve the Owner organization role for assigned users, create a group named `redocly.owners` and add users that have this organization role.
+1. (Optional) To send the Owner organization role in claims for assigned users, create a group named `redocly.owners` and add users that have this organization role.
+   Reunite does not lower an existing stored organization role on SSO login when Google sends a lower role, but correct groups keep IdP and Reunite aligned for new users and promotions.
 
 ## Resources
 

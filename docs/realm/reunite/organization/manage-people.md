@@ -104,10 +104,11 @@ To change the organization role of a person in your organization:
 1. Click the current organization role listed in the **Role** column for the person.
 2. Select the new role from the list.
 
-{% admonition type="warning" name="SSO overrides roles assigned on People page" %}
-Organization roles assigned when [adding an identity provider](./sso/add-idp.md) override roles assigned in Reunite on the **People** page.
-So if you change a user's role on the **People** page in Reunite, this role is only applied for the current session.
-As soon as the user logs out and logs back in to Reunite, their role assigned by SSO is reassigned, overriding the role assigned on the **People** page.
+{% admonition type="info" name="SSO and organization roles" %}
+For **corporate** SSO, Reunite merges the organization role from your identity provider with the stored role using the strength order in [Organization role priority with SSO](../../access/roles.md#organization-role-priority-with-sso).
+Sign-in can **promote** a member when claims map to a stronger role; it does **not** automatically **lower** the stored role when claims map to a weaker role.
+If you set a lower role on **People** but the IdP still sends a stronger role, corporate SSO sign-in can promote again—update IdP groups first when you intend to reduce access.
+For SSO concepts, see [Single sign-on (SSO)](./sso/sso.md).
 {% /admonition %}
 
 ## Add people to teams

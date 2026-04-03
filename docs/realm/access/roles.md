@@ -26,7 +26,8 @@ A combination of organization and project roles defines a user's access.
 
 ## Organization roles
 
-Organization roles control access to your Redocly organization and are provided by your identity provider through claims or attributes, similar to how teams are configured.
+Organization roles control access to your Redocly organization.
+With SSO, role information usually comes from your identity provider through claims or attributes, similar to how teams are configured.
 
 ### Reserved organization role names
 
@@ -39,14 +40,40 @@ Redocly recognizes these special role names from your identity provider:
 - **`redocly.billing`** (`billing`): Can manage billing of the organization.
 - **`redocly.viewers`** (`viewer`): Has read-only permission and restricted access.
 
+### Organization role priority with SSO
+
+For **corporate** identity providers in Reunite, each SSO sign-in compares:
+
+- The **IdP-derived role** from the teams claim (reserved `redocly.*` groups), or the **default organization role** on the IdP when no reserved group matches.
+- The **stored role** Reunite already saves for that member.
+
+Reunite keeps the **stronger** of the two.
+A stronger IdP-derived role **promotes** the member.
+A weaker IdP-derived role does **not** lower the stored role on that sign-in.
+
+**Guest** identity providers do not use this merge. They follow IdP mapping only.
+
+**Strength** from highest to lowest:
+
+1. Owner (`redocly.owners`)
+2. Member (`redocly.members`)
+3. Committer (see [Special roles](#special-roles))
+4. Billing (`redocly.billing`)
+5. Viewer (`redocly.viewers`, `redocly.participants`)
+
+When the teams claim includes **more than one** reserved group for a user, Reunite evaluates them in this **order** and uses the **first** match: `redocly.owners`, `redocly.members`, `redocly.billing`, `redocly.viewers`, `redocly.participants`.
+For example, a user in both `redocly.owners` and `redocly.members` receives an IdP-derived role of **Owner**.
+
+To reduce access, update the identity provider so claims no longer map to a stronger role than you intend, then use the **People** page if you still need to change the stored role.
+If claims still map to a stronger role, the next corporate SSO sign-in can **promote** the member again.
+
 ### How organization roles are assigned
 
 Organization roles are assigned differently depending on your authentication method:
 
 **With SSO/Identity Provider:**
-- Roles are **automatically assigned based on claims or attributes** from your identity provider
-- Configure your identity provider to send the appropriate role claims (like `redocly.owners` or `redocly.members`) for each user
-- Roles assigned through SSO **override** any roles manually set in Redocly
+- Configure your identity provider to send the correct groups and default organization role for each user.
+- For **corporate** IdP, Reunite merges IdP data with the stored role as described in [Organization role priority with SSO](#organization-role-priority-with-sso).
 
 **With Redocly's login system:**
 - Organization owners can **manually assign roles** from the [People page](../reunite/organization/manage-people.md#change-organization-role)
@@ -96,6 +123,7 @@ When users become members of a team, they are granted access based on the roles 
 
 ## Resources
 
+- **[Single sign-on (SSO)](../reunite/organization/sso/sso.md)** - Add corporate and guest IdPs, team mapping, and how SSO relates to organization roles
 - **[RBAC concepts](./rbac.md)** - Understand the different components involved in Redocly's role-based access control system and how they work together
 - **[Teams and users management](../reunite/organization/teams.md)** - Configure teams and manage user assignments, including adding users to multiple teams for flexible access control
 - **[RBAC configuration guide](./index.md)** - Step-by-step instructions for implementing RBAC with examples for projects, pages, and navigation

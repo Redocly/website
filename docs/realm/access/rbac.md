@@ -19,7 +19,7 @@ Role-based access control (RBAC) controls the **authorization** (what you can ac
 **Authentication** identifies who you are through your identity provider (SSO).
 
 **Authorization** determines what you can access based on:
-- **Organization roles** from identity provider claims/attributes (when using SSO) or manual assignment (when using Redocly login)
+- **Organization roles** from identity provider claims combined with the stored role for **corporate** SSO (see [Organization role priority with SSO](./roles.md#organization-role-priority-with-sso)), or manual assignment when using Redocly login
 - **Project roles** assigned to teams you belong to
 - **Team membership** managed through identity provider (SSO teams) or through Redocly's Teams page (Reunite-managed teams)
 

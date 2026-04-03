@@ -1,23 +1,4 @@
 '@redocly/realm':
-  0.132.0-next.6:
-    timestamp: 1775057134000
-    changes:
-      minor:
-        - Added validation for the `redirects` configuration option to detect dead and circular redirects.
-        - Added RBAC filtering for Apigee API products in developer onboarding app creation.
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
-      patch:
-        - Updated legacy palette styles.
-        - Updated `@redocly/openapi-core` to version `2.25.2`.
-        - Fixed an issue where `json-schema` Markdoc tags produced empty output in LLM content by rendering resolved JSON examples as code blocks.
-        - Fixed an issue where the build crashed during the search preparation step.
-        - Improved keyboard navigation across Replay's input components for more consistent and predictable focus behavior.
-    dependencies:
-      '@redocly/theme': 0.64.0-next.3
-      '@redocly/openapi-docs': 3.20.0-next.5
-      '@redocly/asyncapi-docs': 1.9.0-next.5
-      '@redocly/graphql-docs': 1.9.0-next.5
-      '@redocly/portal-plugin-mock-server': 0.17.0-next.5
   0.132.0-next.5:
     timestamp: 1774532222000
     changes:
@@ -5842,22 +5823,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.132.0-next.6:
-    timestamp: 1775057134000
-    changes:
-      minor:
-        - Added RBAC filtering for Apigee API products in developer onboarding app creation.
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
-      patch:
-        - Updated legacy palette styles.
-        - Updated `@redocly/openapi-core` to version `2.25.2`.
-        - Fixed an issue where `json-schema` Markdoc tags produced empty output in LLM content by rendering resolved JSON examples as code blocks.
-    dependencies:
-      '@redocly/theme': 0.64.0-next.3
-      '@redocly/openapi-docs': 3.20.0-next.5
-      '@redocly/asyncapi-docs': 1.9.0-next.5
-      '@redocly/graphql-docs': 1.9.0-next.5
-      '@redocly/portal-plugin-mock-server': 0.17.0-next.5
   0.132.0-next.5:
     timestamp: 1774532222000
     changes:
@@ -10796,22 +10761,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.132.0-next.6:
-    timestamp: 1775057134000
-    changes:
-      minor:
-        - Added validation for the `redirects` configuration option to detect dead and circular redirects.
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
-      patch:
-        - Updated legacy palette styles.
-        - Updated `@redocly/openapi-core` to version `2.25.2`.
-        - Fixed an issue where `json-schema` Markdoc tags produced empty output in LLM content by rendering resolved JSON examples as code blocks.
-    dependencies:
-      '@redocly/theme': 0.64.0-next.3
-      '@redocly/openapi-docs': 3.20.0-next.5
-      '@redocly/asyncapi-docs': 1.9.0-next.5
-      '@redocly/graphql-docs': 1.9.0-next.5
-      '@redocly/portal-plugin-mock-server': 0.17.0-next.5
   0.132.0-next.5:
     timestamp: 1774532222000
     changes:
@@ -15735,22 +15684,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.132.0-next.6:
-    timestamp: 1775057134000
-    changes:
-      minor:
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
-      patch:
-        - Updated legacy palette styles.
-        - Updated `@redocly/openapi-core` to version `2.25.2`.
-        - Fixed an issue where the build crashed during the search preparation step.
-        - Improved keyboard navigation across Replay's input components for more consistent and predictable focus behavior.
-    dependencies:
-      '@redocly/theme': 0.64.0-next.3
-      '@redocly/openapi-docs': 3.20.0-next.5
-      '@redocly/asyncapi-docs': 1.9.0-next.5
-      '@redocly/graphql-docs': 1.9.0-next.5
-      '@redocly/portal-plugin-mock-server': 0.17.0-next.5
   0.132.0-next.5:
     timestamp: 1774532222000
     changes:
@@ -20750,16 +20683,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.64.0-next.3:
-    timestamp: 1775057134000
-    changes:
-      minor:
-        - Added a Toast notification system to the theme package.
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
-      patch:
-        - Updated legacy palette styles.
-        - Adjusted tooltip text to remain on a single line when possible.
-    dependencies: {}
   0.64.0-next.2:
     timestamp: 1774366282000
     changes:
@@ -23540,15 +23463,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.20.0-next.5:
-    timestamp: 1775057134000
-    changes:
-      minor: []
-      patch:
-        - Fixed security vulnerability `CVE-2026-33036` by upgrading `fast-xml-parser` to version `5.5.9`.
-        - Updated `@redocly/openapi-core` to version `2.25.2`.
-    dependencies:
-      '@redocly/replay': 0.23.0-next.3
   3.20.0-next.4:
     timestamp: 1774532222000
     changes:
@@ -26470,15 +26384,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
-  0.46.0:
-    timestamp: 1775053046000
-    changes:
-      minor:
-        - Updated `palette` options in configuration.
-      patch:
-        - Updated the `rbac` property schema for `apis` configuration.
-        - Removed `legacy` palette option.
-    dependencies: {}
   0.45.0:
     timestamp: 1774617947000
     changes:
@@ -27083,14 +26988,6 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
-  1.9.0-next.5:
-    timestamp: 1775057134000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.64.0-next.3
-      '@redocly/openapi-docs': 3.20.0-next.5
   1.9.0-next.4:
     timestamp: 1774532222000
     changes:
@@ -28047,14 +27944,6 @@
       '@redocly/theme': 0.6.0
 '@redocly/api-docs': {}
 '@redocly/mock-server':
-  0.5.17:
-    timestamp: 1775053046000
-    changes:
-      minor: []
-      patch:
-        - Fixed security vulnerability `CVE-2026-33036` by upgrading `fast-xml-parser` to version `5.5.9`.
-        - Updated `@redocly/openapi-core` to version `2.25.2`.
-    dependencies: {}
   0.5.16:
     timestamp: 1774253024000
     changes:
@@ -28808,17 +28697,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.15.0-next.6:
-    timestamp: 1775057134000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.132.0-next.6
-      '@redocly/redoc-revel': 0.132.0-next.6
-      '@redocly/theme': 0.64.0-next.3
-      '@redocly/redoc': 0.132.0-next.6
-      '@redocly/redoc-reef': 0.132.0-next.6
   1.15.0-next.5:
     timestamp: 1774532222000
     changes:
@@ -33775,13 +33653,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.17.0-next.5:
-    timestamp: 1775057134000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.20.0-next.5
   0.17.0-next.4:
     timestamp: 1774532222000
     changes:
@@ -36506,16 +36377,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.23.0-next.3:
-    timestamp: 1775057134000
-    changes:
-      minor: []
-      patch:
-        - Fixed security vulnerability `CVE-2026-33036` by upgrading `fast-xml-parser` to version `5.5.9`.
-        - Improved keyboard navigation across Replay's input components for more consistent and predictable focus behavior.
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.25.2`.
-    dependencies:
-      '@redocly/theme': 0.64.0-next.3
   0.23.0-next.2:
     timestamp: 1774366282000
     changes:
@@ -38460,13 +38321,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.15.0-next.3:
-    timestamp: 1775057134000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.64.0-next.3
   0.15.0-next.2:
     timestamp: 1774366282000
     changes:
@@ -40111,14 +39965,6 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
-  1.9.0-next.5:
-    timestamp: 1775057134000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.64.0-next.3
-      '@redocly/openapi-docs': 3.20.0-next.5
   1.9.0-next.4:
     timestamp: 1774532222000
     changes:
