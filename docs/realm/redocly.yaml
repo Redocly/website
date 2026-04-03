@@ -296,6 +296,22 @@ rules:
         - example
         - examples
     severity: off
+  rule/put-200-and-201:
+    subject:
+      type: Responses
+    where:
+      - subject:
+          type: Operation
+          filterInParentKeys:
+            - put
+        assertions:
+          defined: true
+    message: Must mutually define 200 and 201 responses for PUT requests
+    severity: error
+    assertions:
+      mutuallyRequired:
+        - '200'
+        - '201'
   rule/schema-properties-casing:
     subject:
       type: Schema
@@ -316,5 +332,8 @@ responseHeaders:
   '**':
     - name: X-Robots-Tag
       value: noindex
+
+redirects:
+  $ref: ./redirects.yaml
 
 telemetry: off

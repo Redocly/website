@@ -29,7 +29,6 @@ To choose which email notifications you receive from Reunite:
    Choose between:
      - Pull requests
      - Deployments
-     - Remote content
      - Feedback
      - User
 1. (Optional) You can further refine your selection by choosing events that trigger notifications.
@@ -58,19 +57,15 @@ To connect your Git provider account:
 
 ## Switch between your Git provider accounts
 
-If you have multiple accounts with a single Git provider, you can choose which account to use with Redocly.
-
 To switch between Git provider accounts:
 
 1. Log out of your Git provider's account.
 1. Open the user profile menu.
 1. Click the **Connections** tab.
-1. Click the **Switch login method** button.
-1. Log in to your Git provider with a different account.
 
 ## Remove your Git provider account connection
 
-To disconnect your Redocly account from a Git provider:
+To disconnect
 
 1. Open the user profile menu.
 1. Click the **Connections** tab.

@@ -6,12 +6,6 @@
       label: Start with Reunite editor
     - page: get-started/start-local-dev.md
       label: Start with local development
-    - group: Migrate from legacy
-      items:
-        - page: get-started/migrate-api-reference.md
-          label: Migrate API reference
-        - page: get-started/migrate-from-legacy-portal.md
-          label: Migrate from legacy portal
     - page: get-started/upgrade-realm-version.md
       label: Upgrade Realm version
 
@@ -34,8 +28,6 @@
           label: Add an identity provider
         - page: reunite/organization/sso/configure-sso.md
           label: Configure SSO
-        - page: reunite/organization/sso/configure-scim.md
-          label: Configure SCIM
         - page: reunite/organization/sso/configure-auth0.md
           label: Auth0
         - page: reunite/organization/sso/configure-google-sso.md
@@ -61,8 +53,6 @@
       label: Keyboard shortcuts
     - page: reunite/project/use-webview.md
       label: Webview
-    - page: reunite/project/test-api-functions.md
-      label: Test API functions
     - page: reunite/project/use-previews.md
       label: Previews
     - group: Deployments
@@ -157,15 +147,15 @@
       label: Project structure
     - page: content/markdown.md
       label: Markdown guide
-    - page: content/asciidoc.md
-      label: AsciiDoc (experimental)
     - page: content/links.md
       label: Manage links
     - page: content/versions.md
       label: Versioning
 
     - page: content/add-diagram.md
-      label: Diagrams
+      label: Mermaid diagrams
+    - page: content/add-excalidraw-diagram.md
+      label: Excalidraw diagrams
     - group: Markdoc functions
       page: content/markdoc-functions/index.md
       items:
@@ -177,8 +167,9 @@
             - page: content/markdoc-functions/concat.md
               label: concat
     - group: Markdoc tags
-      page: content/markdoc-tags/tag-library.md
+      page: content/markdoc-tags/index.md
       items:
+        - page: content/markdoc-tags/tag-library.md
         - separator: Built-in tags
         - page: content/markdoc-tags/partial.md
           label: Partial
@@ -229,6 +220,7 @@
           label: Tabs
 
     - group: API docs
+      page: content/api-docs/index.md
       items:
         - page: content/api-docs/add-openapi-docs.md
           label: OpenAPI
