@@ -6,6 +6,10 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+banner:
+  - content: "This feature is currently available in early access only."
+    color: info
+    dismissible: false
 ---
 # Test API functions
 
