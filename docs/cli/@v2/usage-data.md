@@ -13,13 +13,11 @@ When a command is run, the following data is collected:
 
 - the command being run
 - command exit code
-- whether the user is logged into Redocly
-- values from `REDOCLY_ENVIRONMENT`, `REDOCLY_CLI_TELEMETRY_METADATA`, and `CI` environment variables
+- values from `REDOCLY_ENVIRONMENT` and `REDOCLY_CLI_TELEMETRY_METADATA`
 - CLI version
 - Node.js and NPM versions
 - whether the `redocly.yaml` configuration file exists
-- API specification type and version
-- Arazzo x-security authentication types
+- API specification version
 - Platform (Linux, macOS, Windows)
 - Anonymous ID (a randomly generated identifier that doesn't contain personal information)
 - Command execution time
