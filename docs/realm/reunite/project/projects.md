@@ -41,7 +41,8 @@ You can do many things in projects depending on which of the following project p
 
 ### Editor
 
-On this page you create, manage, and commit content. The Editor contains the following sections:
+On the [Editor](./use-editor.md) page you create, manage, and commit content.
+The editor contains the following sections:
 
 - A file tree where you add and manage your website's files, use the search and replace function, and commit changes to the repository.
 - An editing pane where you can make changes to file content.
@@ -50,27 +51,43 @@ On this page you create, manage, and commit content. The Editor contains the fol
 
 ### Pull requests
 
-This page displays the history of open and closed pull requests in the project.
+The [Pull requests](./pull-request/manage-pull-requests.md) page displays the history of open and closed pull requests in the project.
 You can view the details of each request, search for pull request by title, and filter the results.
 
 ### Deployments
 
-This page contains a history of deployments for Production and Preview environments.
+The [Deployments](./deployments.md) page contains a history of deployments for Production and Preview environments.
 You can view the details of individual deployments, filter the results, view the deployed project, and re-deploy the project manually.
 
 ### Remote content
 
-[Remote content](./remote-content/index.md) sources bring content from external sources into your project to be published alongside the project content.
+The [Remote content](./remote-content/index.md) page lists files and folders that are pulled into your project from external sources and published alongside the project content.
 
-### Feedback
+### Reports
 
-On this page you can view [customer feedback](../../config/feedback.md) and code reports.
-You can filter the feedback by date and export it to CSV files.
+Reports group together pages that provide insights about your project's performance: feedback from your users, and the statistics for page views and user search queries.
+
+#### Feedback
+
+The Feedback page lists [customer feedback](./feedback.md) and code reports.
+You can filter the feedback by date and status, and export it to CSV files.
+
+#### Analytics
+
+The [Analytics](./analytics.md) page displays data on the page views and search queries for your deployed project.
+You can filter the page views and queries by date and export it to CSV files.
 
 ### Settings
 
-This page contains your project's settings, like the project ID, [custom domain](./custom-domain.md) for your project, [environment variables](./env-variables.md), and [Git provider](./connect-git/connect-git-provider.md) setup.
-You can also download project files stored in Redocly-hosted Git from this page.
+Your project settings are split into the following pages:
+
+- **General**: use this page to [manage your project](./manage-projects.md) name, domain, or delete the project.
+- [Custom domain](./custom-domain.md): host your project at your chosen URL.
+- [Environment variables](./env-variables.md): add and manage environment variables in your project.
+- [Git hosting](./connect-git/connect-git-provider.md): configure where your project files are hosted.
+    If you're using Redocly-hosted Git, you can also download your project files.
+- [Branches & deployments](./branches-and-deployments.md): select which branches to deploy nad how Reunite generates previews.
+
 The **Settings** page is available only to users with the Owner role in your organization.
 
 ## Resources

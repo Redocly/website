@@ -317,7 +317,4 @@ responseHeaders:
     - name: X-Robots-Tag
       value: noindex
 
-redirects:
-  $ref: ./redirects.yaml
-
 telemetry: off

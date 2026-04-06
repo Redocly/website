@@ -7,6 +7,13 @@ toc:
 
 <!-- do-not-remove -->
 
+## 2.25.4 (2026-04-02)
+
+### Patch Changes
+
+- Updated handlebars to v4.7.9.
+- Updated @redocly/openapi-core to v2.25.4.
+
 ## 2.25.3 (2026-03-30)
 
 ### Patch Changes
@@ -582,7 +589,8 @@ toc:
 
 - Fixed an issue where the root config was not properly merged with the `apis` config.
 - Resolved an issue that caused configuration parsing to fail when the config value was set to `null`.
-- Improved join command server handling for specifications with differing servers.
+- Improved `join` command server handling for specifications with differing servers.
+  **Warning**: this change may break workflows that relied on root-level server inheritance.
 - Updated @redocly/respect-core to v2.0.5.
 
 ## 2.0.4 (2025-08-12)
