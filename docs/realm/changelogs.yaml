@@ -43216,13 +43216,6 @@ reunite:
       patch:
         - Fixed an issue that prevented RBAC API keys from reading project source details and listing remotes in Reunite CLI workflows.
     dependencies: {}
-  v2026-04-03.2:
-    timestamp: 1775222921000
-    changes:
-      minor:
-        - Refactored `credentials`, `project sources`, and `remotes` APIs to align with public exposure standards.
-      patch: []
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
