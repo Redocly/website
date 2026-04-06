@@ -43216,8 +43216,8 @@ reunite:
       patch:
         - Fixed an issue that prevented RBAC API keys from reading project source details and listing remotes in Reunite CLI workflows.
     dependencies: {}
-  v2026-04-06.1:
-    timestamp: 1775481600000
+  v2026-04-06.2:
+    timestamp: 1775483343000
     changes:
       minor:
         - Added AI-generated PR summaries to provide high-level change overviews and risk assessments for reviewers.
