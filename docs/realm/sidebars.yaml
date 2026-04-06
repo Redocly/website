@@ -437,6 +437,8 @@
       items:
         - page: customization/mcp-server/index.md
           label: Overview
+        - page: customization/mcp-server/openapi.yaml
+          label: Docs MCP reference
 
     - group: Search API
       selectFirstItemOnExpand: true
