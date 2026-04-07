@@ -757,6 +757,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- catalog.filters.close
+- Button text to close the mobile catalog filters panel
+- Close
+
+---
+
 - filter.dateRange.from
 - Label for start date in date range filter
 - From:
@@ -778,6 +784,12 @@ This page contains the list of all predefined translation keys used in default U
 - catalog.catalogs.label
 - Label for catalog selector
 - Catalogs
+
+---
+
+- catalog.notConnected
+- Placeholder label shown when a catalog item has no connected values
+- Not connected
 
 ---
 
