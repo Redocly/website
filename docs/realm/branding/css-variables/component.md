@@ -1319,15 +1319,14 @@
 
 </details>
 
-## Mermaid
+## Diagram
 
 <details>
-<summary>Mermaid component</summary>
+<summary>Diagram component</summary>
 
 ```css
---mermaid-bg-color: var(--bg-color-raised);
---mermaid-border-radius: var(--border-radius-lg);
---mermaid-font-family: var(--font-family-base);
+--diagram-bg-color: var(--bg-color-raised);
+--diagram-border-radius: var(--border-radius-lg);
 ```
 
 </details>
