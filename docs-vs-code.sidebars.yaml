@@ -12,5 +12,9 @@
   items:
     - label: Cursor context
       page: docs/vscode/cursor-context.md
+    - label: Type hints
+      page: docs/vscode/type-hints.md
+    - label: Migration from Cursor context
+      page: docs/vscode/type-hints-migration.md
     - label: Live documentation preview
       page: docs/vscode/live-preview.md
