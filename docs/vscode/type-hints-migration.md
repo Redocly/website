@@ -42,4 +42,4 @@ rules:
 
 ## Summary
 
-Type hints provide a lighter and faster way to identify the node you need to target in your rule -- just hover instead of opening a separate panel.
+Type hints provide a lighter and faster way to identify the node you need to target in your rule - just hover instead of opening a separate panel.
