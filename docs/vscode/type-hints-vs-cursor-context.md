@@ -1,4 +1,4 @@
-# Type hints Cursor context
+# Type hints vs Cursor context
 
 The Redocly OpenAPI VS Code extension now includes [Type hints](./type-hints.md), a lightweight alternative to [Cursor context](./cursor-context.md) for identifying node types.
 With type hints you can find the `subject` and `property` values you need for [configurable rules](../cli/rules/configurable-rules#configurable-rules) by hovering over any node in your API description (OpenAPI, AsyncAPI, Arazzo, and others).
