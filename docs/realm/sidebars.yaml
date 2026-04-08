@@ -458,6 +458,10 @@
       label: For pages
     - page: access/links-and-groups-permissions.md
       label: For navigation
+- group: FAQ
+  icon: circle-question
+  items:
+    - directory: faq
 # - $ref: author/sidebars.yaml
 # - $ref: style/sidebars.yaml
 # - $ref: extend/sidebars.yaml
