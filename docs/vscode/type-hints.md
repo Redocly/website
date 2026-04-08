@@ -8,7 +8,6 @@ When you hover over a node in your API description, a tooltip displays the node 
 
 ![type-hints](../../static/images/vscode/openapi-vscode-type-hints.png)
 
-
 ## Type hints structure
 
 ```md
@@ -20,4 +19,3 @@ paths › [node tree path]
 
 [description]
 ```
-
