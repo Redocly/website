@@ -199,7 +199,6 @@ rules:
   no-invalid-media-type-examples: warn
   no-invalid-parameter-examples: warn
   no-invalid-schema-examples: warn
-  no-mixed-number-range-constraints: warn
   no-path-trailing-slash: error
   no-required-schema-properties-undefined: warn
   no-schema-type-mismatch: error
@@ -245,7 +244,6 @@ rules:
   no-invalid-media-type-examples: warn
   no-invalid-parameter-examples: warn
   no-invalid-schema-examples: warn
-  no-mixed-number-range-constraints: warn
   no-path-trailing-slash: error
   no-required-schema-properties-undefined: warn
   no-schema-type-mismatch: error
@@ -353,7 +351,6 @@ rules:
   info-license-strict: warn
   no-duplicated-tag-names: warn
   no-enum-type-mismatch: error
-  no-mixed-number-range-constraints: warn
   no-required-schema-properties-undefined: warn
   no-schema-type-mismatch: error
   operation-operationId: warn
@@ -368,7 +365,6 @@ rules:
   info-license-strict: warn
   no-duplicated-tag-names: warn
   no-enum-type-mismatch: error
-  no-mixed-number-range-constraints: warn
   no-required-schema-properties-undefined: warn
   no-schema-type-mismatch: error
   operation-operationId: warn
@@ -382,7 +378,6 @@ rules:
 rules:
   criteria-unique: warn
   no-enum-type-mismatch: error
-  no-mixed-number-range-constraints: warn
   no-required-schema-properties-undefined: warn
   no-schema-type-mismatch: error
   outputs-defined: error

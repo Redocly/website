@@ -352,8 +352,7 @@ This option is useful when you have an API design standard, but have some except
 It allows for highly granular control.
 
 {% admonition type="warning" %}
-This command updates ignore entries only for the API descriptions passed to the command.
-Existing entries for other API descriptions are preserved.
+This command overwrites an existing ignore file.
 {% /admonition %}
 
 The following command runs `lint` and adds all the errors to an ignore file:
@@ -369,15 +368,6 @@ Generated ignore file with 3 problems.
 </pre>
 
 The errors in the ignore file `.redocly.lint-ignore.yaml` are ignored when the `lint` command is run.
-
-If you run:
-
-```bash
-redocly lint api1.yaml --generate-ignore-file
-```
-
-Only the ignore entries related to api1.yaml are updated.
-Ignore entries for other API descriptions remain unchanged.
 
 To generate an ignore file for multiple API descriptions, pass them as arguments:
 
