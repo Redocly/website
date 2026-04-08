@@ -15,7 +15,7 @@
     - label: Cursor context
       page: docs/vscode/cursor-context.md
     - label: Type hints vs Cursor context
-      page: docs/vscode/type-hints-migration.md
+      page: docs/vscode/type-hints-vs-cursor-context.md
     - label: Live documentation preview
       page: docs/vscode/live-preview.md
 
