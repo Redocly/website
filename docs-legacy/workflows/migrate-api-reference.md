@@ -27,9 +27,9 @@ Every project is different, so there are multiple ways to add content to your pr
 If you have your API descriptions stored in a Git repository, this repository becomes the source for your Redoc project.
 
 To make your existing Git repository the source for your Redoc project:
-(../../reunite/project/connect-git/connect-git-provider.md) to get the existing content connected to the new project.
+(https://www.redocly.com/docs/realm/reunite/project/connect-git/connect-git-provider.md) to get the existing content connected to the new project.
 
-2. Don't worry if the Workflows project content doesn't build successfully when you first connect it to Reunite.
+1. Don't worry if the Workflows project content doesn't build successfully when you first connect it to Reunite.
    The other sections in this guide cover the updates that may apply to your project.
 
 {% admonition type="info" name="Use remote content for multiple repositories"%}

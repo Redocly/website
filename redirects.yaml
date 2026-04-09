@@ -775,4 +775,6 @@
   to: '/docs-legacy/developer-portal/migrate-from-legacy-portal'
 '/docs/realm/get-started/migrate-api-reference':
   to: '/docs-legacy/workflows/migrate-api-reference'
+'docs/realm/get-started/use-legacy-ui-components':
+  to: '/docs-legacy/developer-portal/use-legacy-ui-components'
 
