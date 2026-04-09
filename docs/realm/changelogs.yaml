@@ -43695,6 +43695,16 @@ reunite:
         - Updated Remote content in Reunite so the path next to a Git remote opens the correct branch and folder or file on the provider.
         - Fixed issue where the environment variables modal closed on save failure due to validation errors, blocking corrections to invalid fields.
     dependencies: {}
+  v2026-04-09.2:
+    timestamp: 1775744892000
+    changes:
+      minor:
+        - Added optional expiration date to organization API keys to disable authentication after the specified UTC date.
+      patch:
+        - Updated public API permission labels for OAuth2 clients and API keys.
+        - Updated `project cards` UI on the organization overview with improved visual styling and interaction states.
+        - Fixed scrolling in the API key modal after adding an allowed IP address to keep new fields and actions visible in long forms.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
