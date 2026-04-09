@@ -193,8 +193,8 @@ The following example shows the old and new syntax for using remote API descript
 
     In this example, both API definitions are set up as remote content sources and the `redocly.yaml` file uses relative file paths.
 
-    - The art-museum uses [remote content from GitHub](../../reunite/project/remote-content/from-github.md).
-    - The flight-museum uses [remote content from a URL](../../reunite/project/remote-content/url.md).
+    - The art-museum uses [remote content from GitHub](https://www.redocly.com/docs/realm/reunite/project/remote-content/from-github.md).
+    - The flight-museum uses [remote content from a URL](https://www.redocly.com/docs/realm/reunite/project/remote-content/url.md).
 
     ```yaml  {% title="redocly.yaml" %}
     apis:
