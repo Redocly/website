@@ -92,6 +92,7 @@ The **Settings** page is available only to users with the Owner role in your org
 
 ## Resources
 
+- **[Draft projects](./draft-projects.md)** - Learn how draft mode changes deployment access, scaling, and the Go Live flow
 - **[Manage projects](./manage-projects.md)** - Create, configure, and organize projects in Reunite for effective documentation workflow management
 - **[Manage people](../organization/manage-people.md)** - Add and manage users within your organization for collaborative project development
 - **[Remote content](./remote-content/index.md)** - Integrate and synchronize content from external repositories and sources into your Reunite projects

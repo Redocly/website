@@ -81,8 +81,6 @@ This guide provides a comprehensive overview of available configuration options 
 {% /configSection %}
 
 {% configSection title="Security and access management" description="Configure user authentication and access controls for your documentation." %}
-  {% configProperty file="cors-proxy.md" /%}
-
   {% configProperty file="access/index.md" /%}
 
   {% configProperty file="access/logout-return-url.md" /%}
