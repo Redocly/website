@@ -35,7 +35,7 @@ This tutorial explains how to create:
 
 ## Key concepts
 
-**API functions** are server-side endpoints defined by adding TypeScript files inside the `@api` folder.
+**API functions** are server-side endpoints defined by adding TypeScript or JavaScript files inside the `@api` folder.
 The filename determines the URL path and, optionally, the HTTP method: `<name>.<method>.ts` (for example, `weather.get.ts` maps to `GET /api/weather`).
 Omit the method segment to handle all HTTP methods with a single file.
 See [File-system and method routing](./api-functions-reference.md#file-system-and-method-routing) for the full naming reference.
@@ -64,15 +64,15 @@ Make sure you have the following:
 ## Create the Weather API function
 
 Create the file `@api/weather.ts`.
-This file defines an endpoint at `/api/weather` that accepts an optional query parameter `q` (the location).
-When `q` is omitted, the function falls back to the client's IP address for geolocation.
+This file defines an endpoint at `/api/weather` that accepts an optional query parameter `location`.
+When `location` is omitted, the function falls back to the client's IP address for geolocation.
 
 {% step id="api-imports" heading="Import types" %}
 Import the `ApiFunctionsContext` type from `@redocly/config`.
 This type provides TypeScript definitions for the context object passed to every API function.
 {% /step %}
 
-{% step id="api-types" heading="Define response types" %}
+{% step id="api-types" heading="Define response types (optional)" %}
 Define types for the external weather API responses.
 Typed responses improve editor support and catch integration errors early.
 {% /step %}
@@ -87,13 +87,13 @@ Return a `500` error early if the key is missing so the caller gets a clear mess
 {% /step %}
 
 {% step id="api-params" heading="Resolve the location" %}
-Use the `q` query parameter if the caller provides one.
+Use the `location` query parameter if the caller provides one.
 Otherwise, fall back to the client IP address from `x-forwarded-for` (or `auto:ip` as a last resort) so the weather API geolocates the visitor automatically.
 {% /step %}
 
 {% step id="api-fetch" heading="Fetch weather data" %}
-Call the external weather API with `fetch`, forwarding the location and API key.
-Handle non-OK responses by returning the upstream error details.
+Construct the URL for the external weather API and map your variables to the parameters required by the provider (e.g., mapping your `location` variable to their `q` parameter, and setting `aqi` to `no` to exclude Air Quality Index data).
+Call the external weather API with `fetch`, and handle non-OK responses by returning the upstream error details.
 {% /step %}
 
 {% step id="api-response" heading="Return the response" %}
@@ -112,7 +112,7 @@ Import React so you can use hooks and JSX.
 
 {% step id="component-types" heading="Define component types" %}
 Define the expected API response shape and component props.
-The optional `q` prop lets authors specify a city; `units` chooses Celsius or Fahrenheit.
+The optional `location` prop lets authors specify a city; `units` chooses Celsius or Fahrenheit.
 {% /step %}
 
 {% step id="component-function" heading="Create the component" %}
@@ -121,7 +121,7 @@ Declare the `CurrentWeather` function component with a state machine that tracks
 
 {% step id="component-fetch" heading="Fetch from the API function" %}
 Use `useEffect` to call `/api/weather` when the component mounts.
-If `q` is provided, pass it as a query parameter; otherwise omit it and let the API function resolve the location from the client IP.
+If `location` is provided, pass it as a query parameter; otherwise omit it and let the API function resolve the location from the client IP.
 An `AbortController` cancels the request if the component unmounts before the response arrives.
 {% /step %}
 
@@ -134,7 +134,7 @@ Render loading and error states first, then display the location, temperature, h
 {% step id="tag-schema" heading="Add the tag schema" %}
 Update `@theme/markdoc/schema.ts` to register a `weather` tag.
 The `render` value must match the exported component name (`CurrentWeather`), and `selfClosing` means the tag has no children.
-Both `q` and `units` are optional -- when `q` is omitted the API function geolocates the visitor by IP address.
+Both `location` and `units` are optional -- when `location` is omitted the API function geolocates the visitor by IP address.
 {% /step %}
 
 {% step id="tag-export" heading="Export the component" %}
@@ -154,7 +154,7 @@ Geolocate the visitor by IP address:
 Or specify a city explicitly:
 
 ```markdoc {% process=false %}
-{% weather q="London" units="c" /%}
+{% weather location="London" units="celsius" /%}
 ```
 
 ## Resources

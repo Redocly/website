@@ -6,8 +6,16 @@ export const tags: Record<string, Schema> = {
     render: 'CurrentWeather',
     selfClosing: true,
     attributes: {
-      q: { type: String },
-      units: { type: String, default: 'c' },
+      location: {
+        type: String,
+        description: 'City to display weather for',
+      },
+      units: {
+        type: String,
+        default: 'celsius',
+        matches: ['celsius', 'fahrenheit'],
+        description: 'Temperature units',
+      },
     },
   },
 };

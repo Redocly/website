@@ -34,6 +34,8 @@
           label: Add an identity provider
         - page: reunite/organization/sso/configure-sso.md
           label: Configure SSO
+        - page: reunite/organization/sso/configure-scim.md
+          label: Configure SCIM
         - page: reunite/organization/sso/configure-auth0.md
           label: Auth0
         - page: reunite/organization/sso/configure-google-sso.md
@@ -59,6 +61,8 @@
       label: Keyboard shortcuts
     - page: reunite/project/use-webview.md
       label: Webview
+    - page: reunite/project/test-api-functions.md
+      label: Test API functions
     - page: reunite/project/use-previews.md
       label: Previews
     - group: Deployments
@@ -153,15 +157,15 @@
       label: Project structure
     - page: content/markdown.md
       label: Markdown guide
+    - page: content/asciidoc.md
+      label: AsciiDoc (experimental)
     - page: content/links.md
       label: Manage links
     - page: content/versions.md
       label: Versioning
 
     - page: content/add-diagram.md
-      label: Mermaid diagrams
-    - page: content/add-excalidraw-diagram.md
-      label: Excalidraw diagrams
+      label: Diagrams
     - group: Markdoc functions
       page: content/markdoc-functions/index.md
       items:
@@ -433,6 +437,8 @@
       items:
         - page: customization/mcp-server/index.md
           label: Overview
+        - page: customization/mcp-server/openapi.yaml
+          label: Docs MCP reference
 
     - group: Search API
       selectFirstItemOnExpand: true
@@ -452,6 +458,10 @@
       label: For pages
     - page: access/links-and-groups-permissions.md
       label: For navigation
+- group: FAQ
+  icon: circle-question
+  items:
+    - directory: faq
 # - $ref: author/sidebars.yaml
 # - $ref: style/sidebars.yaml
 # - $ref: extend/sidebars.yaml

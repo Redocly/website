@@ -107,7 +107,7 @@
 '/docs-legacy/developer-portal/mermaid/':
   to: '/docs-legacy/developer-portal/guides/mermaid'
 '/docs-legacy/developer-portal/headers-footers/':
-  to: '/docs-legacy/developer-portal/guides/navbar-footers'
+  to: '/docs-legacy/developer-portal/guides/navbars-footers'
 '/docs-legacy/developer-portal/on-premise/':
   to: '/docs-legacy/developer-portal/guides/on-premise'
 '/docs-legacy/developer-portal/organizing-files/':
@@ -123,7 +123,7 @@
 '/docs-legacy/workflows/manage-project-access/':
   to: '/docs-legacy/developer-portal/settings/manage-access/'
 '/docs-legacy/workflows/_snippets/select-collaborator/':
-  to: '/docs-legacy/developer-portal/_snippets/selected-collaborator/'
+  to: '/docs-legacy/api-registry/settings/manage-access'
 '/docs-legacy/workflows/admin/people/':
   to: '/docs/people/'
 '/docs-legacy/workflows/admin/people/invite-person/':
@@ -145,11 +145,11 @@
 '/docs-legacy/workflows/access-control/':
   to: '/docs-legacy/settings/access-control/'
 '/docs-legacy/workflows/guides/set-up-idp/':
-  to: '/docs-legacy/settings/identity-provides/'
+  to: '/docs-legacy/settings/identity-providers'
 '/docs-legacy/workflows/personal-api-keys/':
   to: '/docs-legacy/settings/personal-api-keys/'
 '/docs-legacy/workflows/admin/teams/add-new-team/':
-  to: '/docs/terms/add-new-team/'
+  to: '/docs-legacy/teams/add-new-team'
 '/docs-legacy/workflows/admin/teams/delete-team/':
   to: '/docs-legacy/teams/delete-team/'
 '/docs-legacy/workflows/admin/teams/':
@@ -217,7 +217,7 @@
 '/docs/cli/rules/array-parameter-serialization':
   to: '/docs/cli/rules/oas/array-parameter-serialization'
 '/docs/cli/rules/boolean-parameter-prefixes':
-  to: '/docs/cli/rules/oas/boolean-parameter-prefix'
+  to: '/docs/cli/rules/oas/boolean-parameter-prefixes'
 '/docs/cli/rules/component-name-unique':
   to: '/docs/cli/rules/oas/component-name-unique'
 '/docs/cli/rules/info-contact':
@@ -232,8 +232,8 @@
   to: '/docs/cli/rules/oas/no-empty-servers'
 '/docs/cli/rules/no-enum-type-mismatch':
   to: '/docs/cli/rules/oas/no-enum-type-mismatch'
-'/docs/cli/rules/no-example-value-and-externalValue':
-  to: '/docs/cli/rules/oas/no-example-value-and-externalValue'
+# '/docs/cli/rules/no-example-value-and-externalValue':
+#   to: '/docs/cli/rules/oas/no-example-value-and-externalValue'
 '/docs/cli/rules/no-http-verbs-in-paths':
   to: '/docs/cli/rules/oas/no-http-verbs-in-paths'
 '/docs/cli/rules/no-identical-paths':
@@ -268,14 +268,14 @@
   to: '/docs/cli/rules/oas/operation-4xx-response'
 '/docs/cli/rules/operation-description':
   to: '/docs/cli/rules/oas/operation-description'
-'/docs/cli/rules/operation-operationId-unique/':
-  to: '/docs/cli/v1/rules/oas/operation-operationId-unique/'
-'/docs/cli/rules/operation-operationid-unique/':
-  to: '/docs/cli/v1/rules/oas/operation-operationId-unique/'
-'/docs/cli/rules/operation-operationId-url-safe':
-  to: '/docs/cli/rules/oas/operation-operationId-url-safe'
-'/docs/cli/rules/operation-operationId':
-  to: '/docs/cli/rules/oas/operation-operationId'
+# '/docs/cli/rules/operation-operationId-unique/':
+#   to: '/docs/cli/rules/oas/operation-operationId-unique'
+# '/docs/cli/rules/operation-operationid-unique/':
+#   to: '/docs/cli/rules/oas/operation-operationId-unique'
+# '/docs/cli/rules/operation-operationId-url-safe':
+#   to: '/docs/cli/rules/oas/operation-operationId-url-safe'
+# '/docs/cli/rules/operation-operationId':
+#   to: '/docs/cli/rules/oas/operation-operationId'
 '/docs/cli/rules/operation-parameters-unique':
   to: '/docs/cli/rules/oas/operation-parameters-unique'
 '/docs/cli/rules/operation-singular-tag':
@@ -289,7 +289,7 @@
 '/docs/cli/rules/path-declaration-must-exist':
   to: '/docs/cli/rules/oas/path-declaration-must-exist'
 '/docs/cli/rules/path-excludes-patterns':
-  to: '/docs/cli/rules/oas/path-excludes-patterns'
+  to: '/docs/cli/v1/rules/oas/path-excludes-patterns'
 '/docs/cli/rules/path-not-include-query':
   to: '/docs/cli/rules/oas/path-not-include-query'
 '/docs/cli/rules/path-parameters-defined':
@@ -369,9 +369,9 @@
 '/docs/realm/author/how-to/user-profile-menu':
   to: '/docs/realm/reunite/user-profile-menu'
 '/docs/realm/setup/concepts/scorecard':
-  to: '/docs/realm/reunite/project/scorecard'
+  to: '/docs/realm/config/scorecard-classic'
 '/docs/realm/setup/how-to/configure-scorecard':
-  to: '/docs/realm/reunite/project/configure-scorecard'
+  to: '/docs/realm/reunite/project/configure-classic-scorecard'
 '/docs/realm/setup/how-to/ignore-link-checker':
   to: '/docs/realm/reunite/project/ignore-link-checker'
 '/docs/realm/setup/reference/telemetry':
@@ -397,7 +397,7 @@
   to: '/docs/realm/reunite/project/use-webview'
 # Author reference redirects
 '/docs/realm/author/reference/keyboard-shortcuts':
-  to: '/docs/realm/reunite/project/reference/keyboard-shortcuts'
+  to: '/docs/realm/reunite/project/keyboard-shortcuts'
 # Setup concepts redirects
 '/docs/realm/setup/concepts/sso':
   to: '/docs/realm/reunite/organization/sso/sso'
@@ -423,10 +423,10 @@
 '/docs/realm/setup/how-to/manage-projects':
   to: '/docs/realm/reunite/project/manage-projects'
 '/docs/realm/setup/how-to/manage-teams':
-  to: '/docs/realm/reunite/organization/manage-teams'
+  to: '/docs/realm/reunite/organization/teams'
 # Setup feedback redirects
 '/docs/realm/setup/how-to/feedback/view-export-data':
-  to: '/docs/realm/reunite/project/view-export-data'
+  to: '/docs/realm/reunite/project/feedback'
 # Setup git-providers redirects
 '/docs/realm/setup/how-to/git-providers/azure-devops':
   to: '/docs/realm/reunite/project/connect-git/azure-devops'
@@ -475,23 +475,23 @@
 '/docs/realm/author/how-to/add-diagram':
   to: '/docs/realm/content/add-diagram'
 '/docs/realm/author/how-to/add-redirects':
-  to: '/docs/realm/content/add-redirects'
+  to: '/docs/realm/config/redirects'
 '/docs/realm/author/concepts/categories':
-  to: '/docs/realm/content/categories'
+  to: '/docs/realm/config/metadata'
 '/docs/realm/author/how-to/configure-code-snippets':
-  to: '/docs/realm/content/configure-code-snippets'
+  to: '/docs/realm/config/code-snippet'
 '/docs/realm/author/how-to/links':
   to: '/docs/realm/content/links'
 '/docs/realm/author/concepts/project-structure':
   to: '/docs/realm/content/project-structure'
 '/docs/realm/setup/how-to/realm-version':
-  to: '/docs/realm/content/realm-version'
+  to: '/docs/realm/get-started/upgrade-realm-version'
 '/docs/realm/author/how-to/reuse-content':
-  to: '/docs/realm/content/reuse-content'
+  to: '/docs/realm/content/markdoc-tags/partial'
 '/docs/realm/author/concepts/static-assets':
-  to: '/docs/realm/content/static-assets'
+  to: '/docs/realm/customization/static-assets'
 '/docs/realm/author/reference/versions-config':
-  to: '/docs/realm/content/versions-config'
+  to: '/docs/realm/content/versions'
 '/docs/realm/author/how-to/versions':
   to: '/docs/realm/content/versions'
 
@@ -499,7 +499,7 @@
 '/docs/realm/author/how-to/generate-asyncapi-docs':
   to: '/docs/realm/content/api-docs/add-asyncapi-docs'
 '/docs/realm/author/how-to/add-catalog':
-  to: '/docs/realm/content/api-docs/add-catalog'
+  to: '/docs/realm/config/catalog-classic'
 '/docs/realm/author/how-to/add-graphql-docs':
   to: '/docs/realm/content/api-docs/add-graphql-docs'
 '/docs/realm/author/how-to/add-openapi-docs':
@@ -509,9 +509,9 @@
 '/docs/realm/author/how-to/configure-mock-server':
   to: '/docs/realm/content/api-docs/configure-mock-server'
 '/docs/realm/author/reference/replay':
-  to: '/docs/realm/content/api-docs/replay'
+  to: '/docs/realm/content/markdoc-tags/replay-openapi'
 '/docs/realm/author/how-to/try-apis-with-mock-server':
-  to: '/docs/realm/content/api-docs/try-apis-with-mock-server'
+  to: '/docs/realm/content/api-docs/configure-mock-server'
 
 # OpenAPI extensions redirects - Files moved to /content/api-docs/openapi-extensions/
 '/docs/realm/author/reference/openapi-extensions':
@@ -555,19 +555,19 @@
 
 # Localization redirects - Files moved to /content/localization/
 '/docs/realm/setup/concepts/concept-l10n':
-  to: '/docs/realm/content/localization/concept-l10n'
+  to: '/docs/realm/config/l10n'
 '/docs/realm/author/how-to/config-l10n/customize-styles-for-locale':
   to: '/docs/realm/content/localization/customize-styles-for-locale'
 '/docs/realm/author/how-to/config-l10n/display-current-locale':
   to: '/docs/realm/content/localization/display-current-locale'
 '/docs/realm/author/how-to/config-l10n':
-  to: '/docs/realm/content/localization'
+  to: '/docs/realm/config/l10n'
 '/docs/realm/author/how-to/config-l10n/localize-content':
   to: '/docs/realm/content/localization/localize-content'
 '/docs/realm/author/how-to/config-l10n/localize-labels':
   to: '/docs/realm/content/localization/localize-labels'
 '/docs/realm/author/how-to/config-l10n/set-up-l10n-folder':
-  to: '/docs/realm/content/localization/set-up-l10n-folder'
+  to: '/docs/realm/config/l10n'
 '/docs/realm/author/reference/translation-keys':
   to: '/docs/realm/content/localization/translation-keys'
 
@@ -625,7 +625,7 @@
 
 # Branding redirects - Files moved to /content/branding/
 '/docs/realm/author/how-to/add-color-mode':
-  to: '/docs/realm/branding/add-color-mode'
+  to: '/docs/realm/branding/customize-color-modes'
 '/docs/realm/author/how-to/customize-styles':
   to: '/docs/realm/branding/customize-styles'
 '/docs/realm/author/how-to/customize-color-modes':
@@ -635,7 +635,7 @@
 '/docs/realm/author/how-to/customize-tables':
   to: '/docs/realm/branding/customize-tables'
 '/docs/realm/author/how-to/custom-page-templates':
-  to: '/docs/realm/branding/custom-page-templates'
+  to: '/docs/realm/customization/custom-page-templates'
 '/docs/realm/author/how-to/styling':
   to: '/docs/realm/branding/styling'
 '/docs/realm/author/how-to/color-mode':
@@ -651,37 +651,37 @@
 
   # Navigation redirects - Files moved to /navigation/
 '/docs/realm/author/how-to/configure-nav':
-  to: '/docs/realm/navigation'
+  to: '/docs/realm/navigation/navigation'
 '/docs/realm/author/how-to/configure-nav/navbar':
-  to: '/docs/realm/navigation/navbar'
+  to: '/docs/realm/config/navbar'
 '/docs/realm/author/how-to/configure-nav/sidebar':
-  to: '/docs/realm/navigation/sidebar'
+  to: '/docs/realm/config/sidebar'
 '/docs/realm/author/how-to/configure-nav/configure-sidebar-groups':
-  to: '/docs/realm/navigation/configure-sidebar-groups'
+  to: '/docs/realm/config/sidebar'
 '/docs/realm/author/how-to/configure-nav/custom-domain':
-  to: '/docs/realm/navigation/custom-domain'
+  to: '/docs/realm/reunite/project/custom-domain'
 '/docs/realm/author/how-to/configure-nav/search':
-  to: '/docs/realm/navigation/search'
+  to: '/docs/realm/config/search'
 '/docs/realm/author/how-to/configure-nav/search/block-search-index':
-  to: '/docs/realm/navigation/search/block-search-index'
+  to: '/docs/realm/config/seo'
 '/docs/realm/author/how-to/configure-nav/search/configure-search-facets':
-  to: '/docs/realm/navigation/search/configure-search-facets'
+  to: '/docs/realm/config/search'
 '/docs/realm/author/how-to/configure-nav/search/verify-site-ownership':
-  to: '/docs/realm/navigation/search/verify-site-ownership'
+  to: '/docs/realm/config/seo'
 '/docs/realm/author/how-to/configure-nav/multi-product':
   to: '/docs/realm/navigation/multi-product'
 '/docs/realm/author/how-to/configure-nav/multiple-products':
-  to: '/docs/realm/navigation/multiple-products'
+  to: '/docs/realm/navigation/multi-product'
 '/docs/realm/author/how-to/configure-nav/navigation-buttons':
-  to: '/docs/realm/navigation/navigation-buttons'
+  to: '/docs/realm/navigation/navigation'
 '/docs/realm/author/how-to/configure-nav/footer':
-  to: '/docs/realm/navigation/footer'
+  to: '/docs/realm/config/footer'
 '/docs/realm/author/how-to/configure-nav/toc':
-  to: '/docs/realm/navigation/toc'
+  to: '/docs/realm/config/navigation'
 '/docs/realm/author/how-to/configure-nav/sidebars':
   to: '/docs/realm/navigation/sidebars'
 '/docs/realm/extend/how-to/configure-search-facets':
-  to: '/docs/realm/navigation/search/configure-search-facets'
+  to: '/docs/realm/config/search'
 
 # Extend redirects - Files moved from /extend/
 '/docs/realm/extend/how-to/eject-components':
@@ -691,7 +691,7 @@
 '/docs/realm/extend/how-to/markdoc-variables':
   to: '/docs/realm/customization/markdoc-variables'
 '/docs/realm/extend/how-to/add-color-mode':
-  to: '/docs/realm/customization/add-color-mode'
+  to: '/docs/realm/branding/customize-color-modes'
 '/docs/realm/extend/how-to/color-mode-images':
   to: '/docs/realm/customization/color-mode-images'
 '/docs/realm/extend/how-to/enable-source-maps':
@@ -701,7 +701,7 @@
 '/docs/realm/extend/how-to/configure-request-values':
   to: '/docs/realm/customization/configure-request-values'
 '/docs/realm/extend/how-to/set-path-prefix':
-  to: '/docs/realm/customization/set-path-prefix'
+  to: '/docs/realm/reunite/project/custom-domain'
 '/docs/realm/extend/how-to/import-npm-library':
   to: '/docs/realm/customization/import-npm-library'
 '/docs/realm/extend/how-to/eject-root-layout':
@@ -711,11 +711,11 @@
 '/docs/realm/extend/how-to/build-custom-function':
   to: '/docs/realm/customization/build-custom-function'
 '/docs/realm/extend/how-to/eject-components-tutorial':
-  to: '/docs/realm/customization/eject-components-tutorial'
+  to: '/docs/realm/customization/eject-components/eject-components-tutorial'
 '/docs/realm/extend/how-to/eject-components-using-cli':
-  to: '/docs/realm/customization/eject-components-using-cli'
+  to: '/docs/realm/customization/eject-components/eject-components-using-cli'
 '/docs/realm/extend/how-to/eject-components-in-reunite':
-  to: '/docs/realm/customization/eject-components-in-reunite'
+  to: '/docs/realm/customization/eject-components/eject-components-in-reunite'
 '/docs/realm/extend/how-to/react-components': 
   to: '/docs/realm/customization/react-components'
 '/docs/realm/extend/how-to/use-in-react-page':
@@ -733,17 +733,17 @@
 '/docs/realm/extend/how-to/api-functions':
   to: '/docs/realm/customization/api-functions'
 '/docs/realm/extend/how-to/api-functions-reference':
-  to: '/docs/realm/customization/api-functions-reference'
+  to: '/docs/realm/customization/api-functions/api-functions-reference'
 '/docs/realm/extend/how-to/create-api-functions':
-  to: '/docs/realm/customization/create-api-functions'
+  to: '/docs/realm/customization/api-functions/create-api-functions'
 '/docs/realm/extend/how-to/tutorials/build-markdoc-tags':
-  to: '/docs/realm/customization/tutorials/build-markdoc-tags'
+  to: '/docs/realm/customization/build-markdoc-tags'
 '/docs/realm/extend/how-to/tutorials/build-custom-function':
-  to: '/docs/realm/customization/tutorials/build-custom-function'
+  to: '/docs/realm/customization/build-custom-function'
 '/docs/realm/extend/how-to/tutorials/import-npm-library':
-  to: '/docs/realm/customization/tutorials/import-npm-library'
+  to: '/docs/realm/customization/import-npm-library'
 '/docs/realm/extend/how-to/tutorials/eject-root-layout':
-  to: '/docs/realm/customization/tutorials/eject-root-layout'
+  to: '/docs/realm/customization/eject-root-layout'
 '/docs/realm/extend/how-to/tutorials/enable-source-maps':
   to: '/docs/realm/customization/enable-source-maps'
 '/docs/realm/extend/how-to/tutorials/theme-static-assets':
@@ -751,7 +751,7 @@
 '/docs/realm/extend/how-to/tutorials/configure-request-values':
   to: '/docs/realm/customization/configure-request-values'
 '/docs/realm/extend/how-to/tutorials/set-path-prefix':
-  to: '/docs/realm/customization/set-path-prefix'
+  to: '/docs/realm/reunite/project/custom-domain'
 
 # Setup RBAC redirects - Files moved from setup paths to /access/
 '/docs/realm/setup/how-to/rbac':
@@ -761,9 +761,9 @@
 '/docs/realm/setup/how-to/rbac/page-permissions':
   to: '/docs/realm/access/page-permissions'
 '/docs/realm/setup/how-to/rbac/pattern-access':
-  to: '/docs/realm/access/pattern-access'
+  to: '/docs/realm/config/access/rbac'
 '/docs/realm/setup/how-to/rbac/projects':
-  to: '/docs/realm/access/projects'
+  to: '/docs/realm/config/access/rbac'
 '/docs/realm/setup/concepts/rbac':
   to: '/docs/realm/access/rbac'
 '/docs/realm/setup/concepts/roles':

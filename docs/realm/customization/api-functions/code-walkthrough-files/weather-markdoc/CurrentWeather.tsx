@@ -1,5 +1,5 @@
 // @chunk {"steps": ["component-import"]}
-import * as React from 'react';
+import React, { useEffect, useState, ReactElement } from 'react';
 // @chunk-end
 
 // @chunk {"steps": ["component-types"]}
@@ -24,32 +24,36 @@ type WeatherResponse = {
   };
 };
 
+type CurrentWeatherProps = {
+  location?: string;
+  units?: 'celsius' | 'fahrenheit';
+};
+
 type WeatherState =
   | { status: 'loading' }
   | { status: 'error'; error: string }
   | { status: 'success'; weather: WeatherResponse };
-
-type CurrentWeatherProps = {
-  q?: string;
-  units?: 'c' | 'f';
-};
 // @chunk-end
 
 // @chunk {"steps": ["component-function"]}
-export function CurrentWeather({ q, units = 'c' }: CurrentWeatherProps): React.ReactElement {
-  const [state, setState] = React.useState<WeatherState>({ status: 'loading' });
+export function CurrentWeather({ location, units = 'celsius' }: CurrentWeatherProps): ReactElement {
+  const [state, setState] = useState<WeatherState>({ status: 'loading' });
   // @chunk-end
 
   // @chunk {"steps": ["component-fetch"]}
-  React.useEffect(() => {
+  useEffect(() => {
     const abortController = new AbortController();
-    const params = q ? `?q=${encodeURIComponent(q)}` : '';
+    const params = new URLSearchParams();
+    if (location) {
+      params.set('location', location);
+    }
+    const url = `/api/weather${params.toString() ? `?${params.toString()}` : ''}`;
 
     async function getCurrentWeather(): Promise<void> {
       setState({ status: 'loading' });
 
       try {
-        const response = await fetch(`/api/weather${params}`, {
+        const response = await fetch(url, {
           signal: abortController.signal,
         });
 
@@ -60,16 +64,17 @@ export function CurrentWeather({ q, units = 'c' }: CurrentWeatherProps): React.R
 
         const weatherResponse: WeatherResponse = await response.json();
         setState({ status: 'success', weather: weatherResponse });
-      } catch (e) {
-        if (!(e instanceof DOMException && e.name === 'AbortError')) {
-          setState({ status: 'error', error: 'Request failed' });
+      } catch (e: unknown) {
+        if (e instanceof DOMException && e.name === 'AbortError') {
+          return;
         }
+        setState({ status: 'error', error: e instanceof Error ? e.message : 'Request failed' });
       }
     }
 
     getCurrentWeather();
     return () => abortController.abort();
-  }, [q]);
+  }, [location]);
   // @chunk-end
 
   // @chunk {"steps": ["component-render"]}
@@ -77,11 +82,11 @@ export function CurrentWeather({ q, units = 'c' }: CurrentWeatherProps): React.R
   if (state.status === 'error') return <div>Weather unavailable: {state.error}</div>;
 
   const { weather } = state;
-  const temperature =
-    units === 'f'
-      ? { temp: `${weather.current.temp_f}°F`, feelsLike: `${weather.current.feelslike_f}°F` }
-      : { temp: `${weather.current.temp_c}°C`, feelsLike: `${weather.current.feelslike_c}°C` };
-  const { temp, feelsLike } = temperature;
+  const isFahrenheit = units === 'fahrenheit';
+  const temperature = isFahrenheit ? `${weather.current.temp_f}°F` : `${weather.current.temp_c}°C`;
+  const feelsLikeTemperature = isFahrenheit
+    ? `${weather.current.feelslike_f}°F`
+    : `${weather.current.feelslike_c}°C`;
 
   return (
     <div>
@@ -89,7 +94,7 @@ export function CurrentWeather({ q, units = 'c' }: CurrentWeatherProps): React.R
         {weather.location.name}, {weather.location.country}
       </strong>
       <div>
-        {weather.current.condition.text} · {temp} (feels like {feelsLike})
+        {weather.current.condition.text} · {temperature} (feels like {feelsLikeTemperature})
       </div>
       <div>
         Humidity: {weather.current.humidity}% · Wind: {weather.current.wind_kph} kph

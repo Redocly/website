@@ -7,6 +7,67 @@ toc:
 
 <!-- do-not-remove -->
 
+## 2.26.0 (2026-04-08)
+
+### Minor Changes
+
+- Added support for AsyncAPI v2 and v3 in the split command.
+- Added `excludedPaths` option to the `no-http-verbs-in-paths` rule, allowing specific paths to be excluded from evaluation.
+
+### Patch Changes
+
+- Fixed the `no-required-schema-properties-undefined` rule to report when a required property is not defined in every `oneOf`/`anyOf` branch.
+- Updated @redocly/openapi-core to v2.26.0.
+
+## 2.25.4 (2026-04-02)
+
+### Patch Changes
+
+- Updated handlebars to v4.7.9.
+- Updated @redocly/openapi-core to v2.25.4.
+
+## 2.25.3 (2026-03-30)
+
+### Patch Changes
+
+- Fixed multiple issues in the `spec-discriminator-defaultMapping` rule that could cause crashes or incorrect validation results.
+  The rule now correctly resolves existing schema names, traverses composite schemas (`allOf`, `anyOf`, `oneOf`) to find required properties, treats `defaultMapping` values as `$ref`s to schemas, resolves `$ref`s correctly across files, and handles cyclic schema dependencies.
+- Updated @redocly/respect-core to v2.25.3.
+
+## 2.25.2 (2026-03-27)
+
+### Patch Changes
+
+- Updated `picomatch` dependency to `^4.0.4`.
+- Updated @redocly/openapi-core to v2.25.2.
+
+## 2.25.1 (2026-03-24)
+
+### Patch Changes
+
+- Fixed an issue where a message about a missing configuration was shown even though the `--extends` option was provided.
+- Updated @redocly/openapi-core to v2.25.1.
+
+## 2.25.0 (2026-03-24)
+
+### Minor Changes
+
+- Added `no-mixed-number-range-constraints` rule for OpenAPI `3.1+`, as well as for AsyncAPI and Arazzo.
+  This rule warns when schemas use both `maximum` and `exclusiveMaximum` or both `minimum` and `exclusiveMinimum` keywords.
+
+### Patch Changes
+
+- Fixed an issue where invalid discriminator mapping values could cause linting to fail.
+- Resolved high severity audit vulnerabilities by updating dependency versions.
+- Updated @redocly/openapi-core to v2.25.0.
+
+## 2.24.1 (2026-03-20)
+
+### Patch Changes
+
+- Downgraded `undici` to resolve an issue where `formData` was being submitted empty.
+- Updated @redocly/openapi-core to v2.24.1.
+
 ## 2.24.0 (2026-03-18)
 
 ### Patch Changes
@@ -540,7 +601,8 @@ toc:
 
 - Fixed an issue where the root config was not properly merged with the `apis` config.
 - Resolved an issue that caused configuration parsing to fail when the config value was set to `null`.
-- Improved join command server handling for specifications with differing servers.
+- Improved `join` command server handling for specifications with differing servers.
+  **Warning**: this change may break workflows that relied on root-level server inheritance.
 - Updated @redocly/respect-core to v2.0.5.
 
 ## 2.0.4 (2025-08-12)

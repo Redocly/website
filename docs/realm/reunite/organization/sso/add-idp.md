@@ -90,6 +90,7 @@ See [Configure RBAC](../../../access/index.md) or [requiresLogin](../../../confi
 
 ## Resources
 
+- **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 provisioning and deprovisioning for an identity provider (beta, access by request)
 - **[Configure SSO](./configure-sso.md)** - Specify which identity providers users can access or disable SSO entirely for your project authentication settings
 - **[Configure RBAC](../../../access/index.md)** - Limit user access to specific pages and features in your project and Reunite using role-based access control
 - **[SSO configuration reference](../../../config/access/sso.md)** - Complete technical reference for all available SSO configuration options and implementation details
