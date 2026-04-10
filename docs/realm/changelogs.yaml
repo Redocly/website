@@ -26777,6 +26777,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.48.0:
+    timestamp: 1775818501000
+    changes:
+      minor:
+        - Added `trackingId` option to banners for analytics tracking.
+      patch: []
+    dependencies: {}
   0.47.0:
     timestamp: 1775663347000
     changes:
