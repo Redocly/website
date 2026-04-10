@@ -19,8 +19,12 @@ For users of the beta version of the Developer Portal, consider Revel with Redoc
 ### How to migrate
 
 We’ve prepared detailed migration guides for our two major products. These guides are technical and designed to help you transition smoothly:
-- [API docs Migration Guide](../../docs/realm/get-started/index.md)
-- [Developer Portal (Gatsby Portal) Migration Guide](../../docs/realm/get-started/index.md)
+- [API docs Migration Guide](../../docs-legacy/workflows/migrate-api-reference.md)
+- [Developer Portal (Gatsby Portal) Migration Guide](../../docs-legacy/developer-portal/migrate-from-legacy-portal.md)
+
+We also have two guides to help you get started with our new products:
+- [Start working with Reunite](../../docs/realm/get-started/start-reunite-editor.md)
+- [Start with local development](../../docs/realm/get-started/start-local-dev.md)
 
 ### Future products
 
