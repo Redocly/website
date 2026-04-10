@@ -1,16 +1,4 @@
----
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Create code walkthrough
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The code walkthrough feature is an authoring tool for creating dynamic, interactive guides that manage user's focus as they scroll.
 

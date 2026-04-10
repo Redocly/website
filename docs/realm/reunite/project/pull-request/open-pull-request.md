@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Open a pull request in Reunite
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 To update your published project in Reunite, open a pull request to merge your development branch with the main branch.
 

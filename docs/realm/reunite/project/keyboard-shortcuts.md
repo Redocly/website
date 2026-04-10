@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Keyboard shortcuts
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 When you are working in Reunite, you can use the following keyboard shortcuts:
 

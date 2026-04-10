@@ -1,15 +1,4 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Create page in React
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Markdown is the primary format for creating content in Redocly projects, but React pages offer additional flexibility.
 Use React pages for dynamic content, complex layouts, or advanced interactivity.

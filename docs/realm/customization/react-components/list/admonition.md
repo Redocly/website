@@ -1,17 +1,4 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Admonition
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-Customize the `admonition` component to influence the types, styling and content of admonitions in your project.
 
 ## Import
 

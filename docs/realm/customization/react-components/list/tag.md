@@ -1,17 +1,4 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Tag
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-Customize the `tag` component to change how your project displays labels, categories, status indicators, and other short pieces of information.
 
 ## Import
 

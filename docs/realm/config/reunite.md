@@ -314,4 +314,4 @@ reunite:
 - **[Configure Respect Monitoring](../reunite/project/respect-monitoring/configure-respect-monitoring.md)** - Use reunite configuration options to track API performance and reliability with automated monitoring workflows
 - **[Manage Respect Monitoring](../reunite/project/respect-monitoring/manage-respect-monitoring.md)** - Subscribe to notifications and manage monitoring settings for individual workflows and API endpoints
 - **[Environment configuration](env.md)** - Set configuration options by environment to allow builds for development or preview while maintaining strict production standards
-- **[RBAC configuration](./access/rbac.md)** - Grant access to Reunite features and projects by teams using role-based access control for comprehensive permission management
+- **[RBAC configuration](rbac.md)** - Grant access to Reunite features and projects by teams using role-based access control for comprehensive permission management

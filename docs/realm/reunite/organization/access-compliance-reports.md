@@ -1,15 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise+
----
 # Access compliance reports
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 From the **Compliance** page in Reunite, view Redocly's SOC 2, Type 2 and Penetration test reports and results on the Consensus Assessments Initiative Questionnaire (CAIQ).
 

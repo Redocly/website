@@ -1,15 +1,4 @@
----
-products:
-  - Redoc
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # AsyncAPI extension: `x-metadata`
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use `x-metadata` to add a table of additional data to the top of your API reference documentation.
 You can add any keys or values that you want users to easily find at the top level of the documentation.

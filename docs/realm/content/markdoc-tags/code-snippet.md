@@ -1,16 +1,4 @@
----
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Code snippet tag
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `code-snippet` tag displays code examples in your documentation that are loaded from local files.
 

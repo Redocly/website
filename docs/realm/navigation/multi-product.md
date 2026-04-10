@@ -1,15 +1,4 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Multi-product
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Multi-product allows you to offer multiple sets of documentation in one project.
 By selecting a product, users can switch between documentation sets.

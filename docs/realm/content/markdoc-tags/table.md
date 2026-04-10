@@ -1,16 +1,4 @@
----
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Table tag
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `table` tag enables you to create tables using a list-based syntax that allows for injection of rich content, like bulleted lists and code samples.
 You can also add tables using HTML syntax, but the `table` tag allows for richer content and is easier to format.

@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Review a pull request in Reunite
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Select a pull request from the list on the **Pull requests** page and click the **Review** tab to begin your review.
 
@@ -80,19 +67,19 @@ The check links back to the **Visual review** tab in Reunite and displays a shor
 
 If you connect your Git provider and Reunite accounts before submitting your review, it will post a review to your Git repository.
 
-    {% img
-      src="../../images/reunite-pull-request-external-connect.png"
+    {% img 
+      src="../../images/reunite-pull-request-external-connect.png" 
       alt="Screenshot showing the Git provider connection banner in Reunite"
-      withLightbox=true
+      withLightbox=true 
     /%}
 
 Comments synced to an external provider have a cloud icon next to them.
 Click this icon to view the comment on the provider’s platform.
 
-    {% img
-      src="../../images/reunite-pull-request-review-external-comments.png"
+    {% img 
+      src="../../images/reunite-pull-request-review-external-comments.png" 
       alt="Screenshot showing synchronized and unsynchronized comments in a pull request review"
-      withLightbox=true
+      withLightbox=true 
     /%}
 
 {% admonition type="warning" name="Review posting behavior" %}

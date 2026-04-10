@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Add an Azure DevOps repo
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 If your project files are stored in a remote repository on Azure DevOps Services, you can connect that repository, so you can access, edit, and publish those files in Reunite.
 

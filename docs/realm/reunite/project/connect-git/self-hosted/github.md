@@ -1,18 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
-# Connect a GitHub Enterprise Server
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
+## Connect a GitHub Enterprise Server
 With Reunite you can integrate GitHub Enterprise Server as your Git provider using [GitHub Apps](https://docs.github.com/en/apps/using-github-apps/about-using-github-apps).
 
 ## Before you begin

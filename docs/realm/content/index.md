@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Content
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Create and manage all types of content in your Redocly project, from Markdown pages to API documentation and interactive components.
 
@@ -25,10 +12,6 @@ Organize your content with files, folders, and configuration for optimal navigat
 
 {% card title="Markdown content" icon="brands markdown" to="./markdown.md" %}
 Write rich documentation using Markdown syntax, Markdoc tags, code blocks, and interactive elements.
-{% /card %}
-
-{% card title="AsciiDoc content (experimental)" icon="file-lines" to="./asciidoc.md" %}
-Use `.adoc` files as content pages with search and AI indexing support.
 {% /card %}
 
 {% card title="API documentation" icon="code" to="./api-docs/add-openapi-docs.md" %}

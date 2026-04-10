@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Connect a Git provider
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Connecting a Git provider establishes a connection between your Redocly project and a Git repository hosting provider.
 Git is a widely used distributed version control system that allows multiple developers to collaborate on a project by managing changes to source code and other files.

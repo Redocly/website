@@ -1,16 +1,6 @@
 ---
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
 title: Custom page templates
 ---
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 # Override a page template
 

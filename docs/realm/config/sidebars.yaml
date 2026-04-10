@@ -2,19 +2,6 @@
   icon: cog
   page: ./index.md
   items:
-    - group: access
-      page: ./access/index.md
-      items:
-        - page: ./access/rbac.md
-          label: rbac
-        - page: ./access/requires-login.md
-          label: requiresLogin
-        - page: ./access/logout-return-url.md
-          label: logoutReturnUrl
-        - page: ./access/residency.md
-          label: residency
-        - page: ./access/sso.md
-          label: sso
     - page: ./ai-assistant.md
       label: aiAssistant
     - group: analytics
@@ -152,10 +139,20 @@
       label: plugins
     - page: ./products.md
       label: products
+    - page: ./access.md
+      label: access
+    - page: ./rbac.md
+      label: rbac
     - page: ./redirects.md
       label: redirects
     - page: ./remove-attribution.md
       label: removeAttribution
+    - page: ./requires-login.md
+      label: requiresLogin
+    - page: ./logout-return-url.md
+      label: logoutReturnUrl
+    - page: ./residency.md
+      label: residency
     - page: ./response-headers.md
       label: responseHeaders
     - page: ./reunite.md
@@ -172,6 +169,8 @@
       label: seo
     - page: ./sidebar.md
       label: sidebar
+    - page: ./sso.md
+      label: sso
     - page: ./ssoDirect.md
       label: ssoDirect
     - page: ./user-menu.md

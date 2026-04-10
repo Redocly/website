@@ -1,15 +1,4 @@
----
-products:
-  - Redoc
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Configure mock server
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The mock server allows users to send calls to your API operations and see sample responses without the need for backend services.
 The mock server is enabled by serving Replay from your API documentation (or a preview) and can be configured to change the experience users have interacting with it.

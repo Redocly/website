@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Get started with the Reunite editor
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use the Reunite editor to create, edit, and manage content in your Redocly project directly from your browser.
 This guide shows you how to create your first project, add content, customize navigation, and publish changes.

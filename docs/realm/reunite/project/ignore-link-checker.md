@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Ignore link checker
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 In the deployment process of every project, there is a link checker step to detect internal broken links.
 By default, production deployments containing broken links are not published.

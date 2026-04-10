@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise
-  - Enterprise+
----
-
 # Single sign-on (SSO)
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Single sign-on (SSO) is an authentication method that allows users to log in with a single identity to several related, but independent, software systems.
 You can add SSO identity providers (IdPs) to Reunite to allow users to use them for logging into Reunite as well as individual projects.
@@ -68,6 +55,5 @@ Disabling SSO removes the login page, but does not disable `rbac`.
 - **[Add an identity provider](./add-idp.md)** - Step-by-step guide to add identity providers in Reunite for seamless user authentication across projects
 - **[Configure SSO](./configure-sso.md)** - Set up single sign-on to allow users to authenticate using multiple identity providers for flexible access control
 - **[Okta SAML integration video](https://youtu.be/NMayl8FTZ7c)** - Watch a step-by-step tutorial for integrating Okta with Redocly using SAML for single sign-on
-- **[SSO configuration reference](../../../config/access/sso.md)** - Complete technical reference for all SSO configuration options and settings in your redocly.yaml file
+- **[SSO configuration reference](../../../config/sso.md)** - Complete technical reference for all SSO configuration options and settings in your redocly.yaml file
 - **[Multi-tenant SSO: Federated identity management](./sso-multi-tenant.md)** - Implement federated identity management for organizations with multiple tenants and complex authentication requirements
-- **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 directory provisioning for an identity provider (beta, access by request)

@@ -123,7 +123,7 @@ When defined in front matter, they override the global configuration:
 ---
 
 - rbac
-- [Map[string, string]](./access/rbac.md#team-to-role-map)
+- [Map[string, string]](./rbac.md#team-to-role-map)
 - Map of teams to roles.
   Set access permissions for the page.
 

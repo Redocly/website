@@ -1,15 +1,4 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # `link` resolver
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `link` resolver transforms file paths into proper route slugs or static asset URLs.
 Use it for handling navigation links, image sources, and other file references.

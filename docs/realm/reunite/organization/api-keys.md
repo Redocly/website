@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Manage API keys
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 An API key is a unique identifier used to authenticate a user, developer, or an application to an API.
 You can add API keys to your organization and revoke them when you are finished using them.

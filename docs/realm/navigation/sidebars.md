@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Sidebars configuration options
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Specify the order and link text for side navigation items by creating a `sidebars.yaml` file.
 

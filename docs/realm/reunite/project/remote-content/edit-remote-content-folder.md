@@ -1,16 +1,6 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise
-  - Enterprise+
----
 # Edit remote content settings
 
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
 
 You can edit settings for remote content folders and files after creation.
 

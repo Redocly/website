@@ -1,17 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Use previews
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The previews feature shows the updates to a branch, as they would look when applied to the production deployment.
 It's like having a staging server for every branch.

@@ -1,16 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Configure Replay with dynamic API data
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 You can dynamically configure request values for Replay by ejecting and customizing the `use-configure-replay.ts` file.
 This lets you fetch configuration from external APIs at runtime, updating based on the current operation.

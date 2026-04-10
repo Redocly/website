@@ -64,6 +64,6 @@ residency: https://app.cloud.eu.redocly.com
 
 ## Resources
 
-- **[Access configuration](./index.md)** - Group authentication and access settings together using the `access` object
-- **[Remote content](../../reunite/project/remote-content/index.md)** - Use remote content in your projects for flexible data residency and content management strategies
-- **[Develop locally](../../get-started/start-local-dev.md)** - Set up local development environments while maintaining cloud deployment capabilities for data residency compliance
+- **[Access configuration](./access.md)** - Group authentication and access settings together using the `access` object
+- **[Remote content](../reunite/project/remote-content/index.md)** - Use remote content in your projects for flexible data residency and content management strategies
+- **[Develop locally](../get-started/start-local-dev.md)** - Set up local development environments while maintaining cloud deployment capabilities for data residency compliance

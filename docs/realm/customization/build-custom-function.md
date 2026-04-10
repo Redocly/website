@@ -1,19 +1,9 @@
 ---
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
 seo:
   description: Empower your technical writers with more powerful tools to control content by adding custom Markdoc functions to your Redocly project.
 ---
 
 # Build a Markdoc function
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 In this tutorial, we'll define a new, custom [Markdoc function](https://markdoc.dev/docs/functions) in a Redocly project.
 You'll learn to build your own custom functions that empower your writers to control content.

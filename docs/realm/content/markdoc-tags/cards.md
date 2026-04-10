@@ -1,16 +1,4 @@
----
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Card and Cards tags
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `card` and `cards` tags work together to create visually appealing, structured content elements ("cards") in your documentation.
 

@@ -1,16 +1,4 @@
----
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Enterprise
-  - Enterprise+
----
 # Configure SSO
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 After you have [added an identity provider (IdP)](add-idp.md) in Reunite, the IdP can then be configured in the `redocly.yaml` configuration file for individual projects.
 Adding an IdP to the configuration file for a project is not required for users to be able to use it to log in.
@@ -20,7 +8,7 @@ See the [Single sign-on (SSO) concept doc](./sso.md#default-priority-order) for 
 
 {% admonition type="info" name="attention" %}
 Configuring `sso` does not require users to log in to your project.
-To require login to a project, [`rbac`](../../../config/access/rbac.md) or [`requiresLogin`](../../../config/access/requires-login.md) must also be configured.
+To require login to a project, [`rbac`](../../../config/rbac.md) or [`requiresLogin`](../../../config/requires-login.md) must also be configured.
 {% /admonition %}
 
 ## Before you begin
@@ -29,7 +17,7 @@ Make sure you have the following:
 
 - a `redocly.yaml` configuration file with one of the following configured:
   -  `rbac` defined for the [`authenticated` default team](../teams.md#default-teams)
-  -  [`requiresLogin`](../../../config/access/requires-login.md)
+  -  [`requiresLogin`](../../../config/requires-login.md)
 - [identity provider (IdP) information added in Reunite](./add-idp.md)
 
 ## Specify IdPs for a project
@@ -68,8 +56,7 @@ Disabling SSO removes the login page, but does not disable `rbac`.
 
 - **[Add an identity provider](./add-idp.md)** - Add identity providers in Reunite for unified authentication across projects and Reunite login
 - **[Configure RBAC](../../../access/index.md)** - Implement role-based access control to restrict user access to specific project content and features
-- **[SSO configuration reference](../../../config/access/sso.md)** - Complete reference documentation for all available SSO configuration options and settings
+- **[SSO configuration reference](../../../config/sso.md)** - Complete reference documentation for all available SSO configuration options and settings
 - **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider types and implementation approaches for your project authentication needs
 - **[Role-based access control (RBAC) concepts](../../../access/rbac.md)** - Understand how RBAC works in projects and Reunite for comprehensive access management
-- **[RBAC configuration reference](../../../config/access/rbac.md)** - Complete reference for configuring RBAC options in your redocly.yaml file with examples and implementation details
-- **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 user provisioning for your SSO identity provider (beta, access by request)
+- **[RBAC configuration reference](../../../config/rbac.md)** - Complete reference for configuring RBAC options in your redocly.yaml file with examples and implementation details

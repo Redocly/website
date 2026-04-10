@@ -1,20 +1,10 @@
 ---
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
 title: Markdoc functions
 seo:
   description: Learn about using built-in and custom Markdoc functions in Redocly.
 ---
 
 # Markdoc functions
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Markdoc functions add powerful capabilities to your Markdown content, enabling conditional logic and data manipulation.
 

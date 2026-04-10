@@ -1,17 +1,4 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Link
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-Customize the `link` component to influence the styling and behavior of links in your project.
 
 ## Import
 

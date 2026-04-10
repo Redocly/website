@@ -1,16 +1,4 @@
----
-products:
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Partial tag
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `partial` tag enables you to reuse content across your documentation, bringing the concept of single-source publishing to your technical writing.
 

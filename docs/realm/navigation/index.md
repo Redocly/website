@@ -1,19 +1,8 @@
 ---
-products:
-  - Redoc
-  - Revel
-  - Reef
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
 toc: hide
 ---
 
 # Navigation elements
-
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Redocly offers comprehensive navigation customization to help users easily discover and navigate through your documentation.
 From simple link organization to advanced multi-product sites, you can configure navigation elements to match your project's structure and branding needs.
@@ -34,7 +23,7 @@ From simple link organization to advanced multi-product sites, you can configure
 ### Advanced navigation
 - **[Multi-product picker](../config/products.md)** - Switch between different product documentation
 - **[Version picker](../config/version-picker.md)** - Navigate between documentation versions
-- **[Locale picker](../config/l10n.md)** - Switch between localized content
+- **[Locale picker](../config/l10n.md#locale-picker)** - Switch between localized content
 
 ## Quick start examples
 

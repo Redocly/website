@@ -1,26 +1,15 @@
----
-products:
-  - Revel
-  - Realm
-plans:
-  - Pro
-  - Enterprise
-  - Enterprise+
----
 # Dynamic imports
 
-{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+The `dynamic` utility from `@redocly/theme` allows to load React components on demand.
+It supports both server-side rendering and client-only rendering modes, with customizable loading states.
 
-Use the `dynamic` utility from `@redocly/theme` load React components on demand.
-This utility supports both server-side rendering (SSR) and client-only rendering modes, with customizable loading states.
-
-## Lazy loading with the `dynamic` function
+## Overview
 
 The `dynamic` function uses `React.lazy()` and `React.Suspense` with additional features for Redocly applications, automatically handling various export patterns and providing flexible SSR configuration options.
 
 Lazy loading is a strategy to identify resources as non-blocking (non-critical) and load these only when needed.
 It shortens the critical rendering path, which translates into reduced page load times.
-For more information about lazy loading strategies, see the guide to [Lazy Loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Lazy_loading).
+For more information about lazy loading strategies, see the [Lazy Loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Lazy_loading).
 
 ## Properties
 
@@ -40,23 +29,19 @@ For more information about lazy loading strategies, see the guide to [Lazy Loadi
 
 - `ssr`
 - `boolean`
-- Enable server-side rendering.
-  Default: `true`
+- Enable server-side rendering. Default: `true`
 
 ---
 
 - `loading`
 - `React.ComponentType<Record<string, unknown>>`
-- Custom loading component to display while the dynamic component loads.
-  Default: `null`
+- Custom loading component to display while the dynamic component loads. Default: `null`
 
 {% /table %}
 
 ## Examples
 
-The following are the examples of how you can use the `dynamic` React component in your project.
-
-### Add `dynamic` function to a page
+### Basic usage
 
 ```tsx
 import { dynamic } from '@redocly/theme';
@@ -68,7 +53,7 @@ function App() {
 }
 ```
 
-### Load components
+### With loading component
 
 ```tsx
 import { dynamic } from '@redocly/theme';
@@ -82,27 +67,7 @@ export default function Home() {
 }
 ```
 
-### Load heavy components
-
-```tsx
-import { dynamic } from '@redocly/theme';
-
-const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
-  loading: () => <div>Loading component...</div>,
-  ssr: false,
-});
-
-function App() {
-  return (
-    <div>
-      <h1>Application</h1>
-      <HeavyComponent />
-    </div>
-  );
-}
-```
-
-### Load named exports
+### With named exports
 
 ```tsx
 // components/MyComponent.js
@@ -118,27 +83,10 @@ const DynamicComponent = dynamic(() =>
 );
 ```
 
-### Load components without server-side rendering
-
-To dynamically load a component on the client side, use the `ssr` option to disable server-rendering.
-This is useful for components that rely on browser APIs like `window`.
-
-```tsx
-import { dynamic } from '@redocly/theme';
-
-const ClientOnlyComponent = dynamic(() => import('../components/ClientComponent'), {
-  ssr: false,
-});
-```
-
-### Import packages
+### Package imports
 
 ```tsx
 import { dynamic } from '@redocly/theme';
 
 const PackageComponent = dynamic(() => import('some-package').then(mod => mod.default));
 ```
-
-## Resources
-
-- **[List of customizable components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects
