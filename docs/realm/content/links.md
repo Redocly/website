@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Add links
+# Manage links
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -132,7 +132,7 @@ To reference pages in `sidebars.yaml`, specify relative path to the file.
 ## Add links in a React component
 
 If you are including a link in a custom React component, use the Link component.
-The Link component will automatically update the path prefix and [localization](./localization/localize-labels.md#localize-react-pages).
+The Link component automatically updates the path prefix and [localization](./localization/localize-labels.md#localize-react-pages).
 Users can import the link component in their React components using the following syntax:
 
 ```javascript
@@ -142,3 +142,4 @@ import { Link } from '@redocly/theme/components/Link/Link';
 ## Resources
 
 - **[Redirects configuration](../config/redirects.md)** - Manage URL redirects to maintain links when restructuring your content and preserve SEO rankings
+- **[Project structure](./project-structure.md#file-based-routing)** - Learn how your project structure is converted into URL paths
