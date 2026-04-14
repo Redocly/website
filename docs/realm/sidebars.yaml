@@ -26,7 +26,6 @@
       label: People
     - page: reunite/organization/teams.md
       label: Teams
-
     - group: SSO
       page: reunite/organization/sso/sso.md
       items:
@@ -46,7 +45,6 @@
           label: Okta
     - page: reunite/organization/access-compliance-reports.md
       label: Compliance reports
-
     - page: reunite/organization/api-keys.md
       label: API keys
 
@@ -77,7 +75,6 @@
           label: Ignore link checker
         - page: reunite/project/branches-and-deployments.md
           label: Branches and deployments
-
     - group: Pull requests
       items:
         - page: reunite/project/pull-request/open-pull-request.md
@@ -148,7 +145,6 @@
     - separator: User account
     - page: reunite/user-profile-menu.md
       label: User profile menu
-
 - group: Content
   icon: file-lines
   page: content/index.md
@@ -163,7 +159,6 @@
       label: Manage links
     - page: content/versions.md
       label: Versioning
-
     - page: content/add-diagram.md
       label: Diagrams
     - group: Markdoc functions
@@ -439,6 +434,12 @@
           label: Overview
         - page: customization/mcp-server/openapi.yaml
           label: Docs MCP reference
+
+    - group: Reunite API
+      selectFirstItemOnExpand: true
+      items:
+        - page: customization/reunite-api/openapi.yaml
+          label: Overview
 
     - group: Search API
       selectFirstItemOnExpand: true

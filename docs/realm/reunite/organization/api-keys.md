@@ -29,7 +29,7 @@ You can add API keys to your organization if you need to access the Redocly API 
 To add an API key to your organization:
 
 1. Log in to your Redocly instance.
-2. Select **API keys** in the navigation menu on the left side of the page.
+2. Select **Access** > **API keys** in the navigation menu on the left side of the page.
 3. Click **New key**.
 4. Enter a name for your key.
 5. (Optional) Enter allowed IP addresses.
@@ -42,7 +42,7 @@ To add an API key to your organization:
 When you are finished using an API key, you can revoke the key, making it an invalid authentication method.
 
 1. Log in to your Redocly instance.
-2. Select **API keys** in the navigation menu on the left side of the page.
+2. Select **Access** > **API keys** in the navigation menu on the left side of the page.
 3. Click **Revoke** next to the API key you want to revoke.
 4. Click **OK**.
 
@@ -62,7 +62,7 @@ To configure RBAC restrictions for an API key:
 
 To add RBAC to API keys:
 
-1. In your organization dashboard's left panel, click the **API keys** option.
+1. In your organization dashboard's left panel, click the **Access** > **API keys** option.
 1. In the row with the chosen API key, click **More options**  and then click **RBAC**.
 
 {% img
