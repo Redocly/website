@@ -1,4 +1,60 @@
 '@redocly/realm':
+  0.132.0:
+    timestamp: 1776169588000
+    changes:
+      minor:
+        - Added validation for the `redirects` configuration option to detect dead and circular redirects.
+        - Added RBAC filtering for Apigee API products in developer onboarding app creation.
+        - Added support for Excalidraw and PlantUML diagrams.
+        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
+        - Added support for `x-badges` in OpenAPI and AsyncAPI parameters and schema properties.
+        - Added support for `or` functions in RBAC conditions within Markdoc content.
+      patch:
+        - Fixed an issue where `Typesense` search ignored OpenAPI paths.
+        - Fixed a bug where Markdoc content wrapped in an RBAC condition did not appear in search results for users with access.
+        - Fixed an issue where an API path remained visible when all its endpoints were hidden by `x-rbac` access control.
+        - Fixed an issue where the "Last updated" date displayed incorrect values on project pages.
+        - Fixed a bug where dismissing any banner on the page prevented all banners from being displayed on that page again.
+        - Fixed a bug that caused search result highlighting to break in Flexsearch when the query contained duplicate words.
+        - Fixed an issue where pressing the `Q` key in the terminal in preview mode would not stop the preview.
+        - >-
+          Fixed an issue where images referenced by the `img` Markdoc tag appeared broken after changing `src` and moving the file, requiring a manual
+          page reload.
+        - >-
+          Fixed an issue where URLs starting with the same characters as API reference, AsyncAPI, Scorecards, Catalog, or Developer Onboarding page
+          slugs served data for those pages instead of showing a 404.
+        - >-
+          Fixed an issue where files with identical names but different extensions in the same folder resolved to a single URL, causing pages to be
+          missing from the deployed project.
+        - Fixed out-of-memory error in the search indexer that occurred when indexing deeply nested schemas.
+        - Fixed an issue in `scorecardClassic` where the `minimumLevel` calculation in `targets` resulted in incorrect values.
+        - Updated `@redocly/openapi-core` to version `2.25.2`.
+        - Fixed an issue where the catalog tile descriptions displayed Markdown syntax as raw text.
+        - Fixed an issue where banners didn't support all Markdoc features.
+        - Fixed banner target priority to ensure that the most specific matching banner is displayed on a page.
+        - Fixed an issue where badges in `sidebars.yaml` were not rendering on API reference pages.
+        - Fixed an issue where `json-schema` Markdoc tags produced empty output in LLM content.
+        - Improved keyboard navigation across Replay's input components for more consistent and predictable focus behavior.
+        - Fixed incorrect RBAC validation that caused authenticated MCP tool calls to be handled improperly.
+        - Fixed an issue where rules in `targets` were not applied correctly to `scorecardClassic` levels.
+        - Fixed an issue where complex AI search queries might have resulted with an error.
+        - Fixed an issue where the sidebar scrolled together with the rest of the page when an announcement banner was present.
+        - Fixed an issue where the process did not terminate after certain short-lived CLI commands were executed.
+        - Fixed an issue where clicking asset download links redirected to a 404 page.
+        - Fixed an issue where filters on code walkthrough pages overlapped the **Search** dialog.
+        - Improved performance when building AI search documents for Markdown.
+        - >-
+          Fixed an issue where `partial` Markdoc tags in OpenAPI and AsyncAPI `description` fields did not resolve when Windows-style path separators
+          were used.
+        - Fixed an issue where navigating to a page through an anchor link from another page occasionally failed to scroll to the anchor.
+    dependencies:
+      '@redocly/openapi-docs': 3.20.0
+      '@redocly/realm-asyncapi-sdk': 0.10.0
+      '@redocly/theme': 0.64.0
+      '@redocly/asyncapi-docs': 1.9.0
+      '@redocly/graphql-docs': 1.9.0
+      '@redocly/portal-plugin-mock-server': 0.17.0
+      '@redocly/portal-legacy-ui': 0.15.0
   0.132.0-next.11:
     timestamp: 1775827945000
     changes:
@@ -5929,6 +5985,54 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.132.0:
+    timestamp: 1776169588000
+    changes:
+      minor:
+        - Added RBAC filtering for Apigee API products in developer onboarding app creation.
+        - Added support for Excalidraw and PlantUML diagrams.
+        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
+        - Added support for `x-badges` in OpenAPI and AsyncAPI parameters and schema properties.
+        - Added support for `or` functions in RBAC conditions within Markdoc content.
+      patch:
+        - Fixed an issue where `Typesense` search ignored OpenAPI paths.
+        - Fixed a bug where Markdoc content wrapped in an RBAC condition did not appear in search results for users with access.
+        - Fixed an issue where the "Last updated" date displayed incorrect values on project pages.
+        - Fixed a bug that caused search result highlighting to break in Flexsearch when the query contained duplicate words.
+        - Fixed an issue where pressing the `Q` key in the terminal in preview mode would not stop the preview.
+        - >-
+          Fixed an issue where images referenced by the `img` Markdoc tag appeared broken after changing `src` and moving the file, requiring a manual
+          page reload.
+        - >-
+          Fixed an issue where URLs starting with the same characters as API reference, AsyncAPI, Scorecards, Catalog, or Developer Onboarding page
+          slugs served data for those pages instead of showing a 404.
+        - >-
+          Fixed an issue where files with identical names but different extensions in the same folder resolved to a single URL, causing pages to be
+          missing from the deployed project.
+        - Fixed an issue in `scorecardClassic` where the `minimumLevel` calculation in `targets` resulted in incorrect values.
+        - Updated `@redocly/openapi-core` to version `2.25.2`.
+        - Fixed an issue where the catalog tile descriptions displayed Markdown syntax as raw text.
+        - Fixed an issue where badges in `sidebars.yaml` were not rendering on API reference pages.
+        - Fixed an issue where `json-schema` Markdoc tags produced empty output in LLM content.
+        - Fixed incorrect RBAC validation that caused authenticated MCP tool calls to be handled improperly.
+        - Fixed an issue where rules in `targets` were not applied correctly to `scorecardClassic` levels.
+        - Fixed an issue where complex AI search queries might have resulted with an error.
+        - Fixed an issue where the process did not terminate after certain short-lived CLI commands were executed.
+        - Fixed an issue where clicking asset download links redirected to a 404 page.
+        - Fixed an issue where filters on code walkthrough pages overlapped the **Search** dialog.
+        - Improved performance when building AI search documents for Markdown.
+        - >-
+          Fixed an issue where `partial` Markdoc tags in OpenAPI and AsyncAPI `description` fields did not resolve when Windows-style path separators
+          were used.
+        - Fixed an issue where navigating to a page through an anchor link from another page occasionally failed to scroll to the anchor.
+    dependencies:
+      '@redocly/openapi-docs': 3.20.0
+      '@redocly/realm-asyncapi-sdk': 0.10.0
+      '@redocly/theme': 0.64.0
+      '@redocly/asyncapi-docs': 1.9.0
+      '@redocly/graphql-docs': 1.9.0
+      '@redocly/portal-plugin-mock-server': 0.17.0
+      '@redocly/portal-legacy-ui': 0.15.0
   0.132.0-next.11:
     timestamp: 1775827945000
     changes:
@@ -10966,6 +11070,56 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.132.0:
+    timestamp: 1776169588000
+    changes:
+      minor:
+        - Added validation for the `redirects` configuration option to detect dead and circular redirects.
+        - Added support for Excalidraw and PlantUML diagrams.
+        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
+        - Added support for `x-badges` in OpenAPI and AsyncAPI parameters and schema properties.
+        - Added support for `or` functions in RBAC conditions within Markdoc content.
+      patch:
+        - Fixed an issue where `Typesense` search ignored OpenAPI paths.
+        - Fixed a bug where Markdoc content wrapped in an RBAC condition did not appear in search results for users with access.
+        - Fixed an issue where an API path remained visible when all its endpoints were hidden by `x-rbac` access control.
+        - Fixed an issue where the "Last updated" date displayed incorrect values on project pages.
+        - Fixed a bug where dismissing any banner on the page prevented all banners from being displayed on that page again.
+        - Fixed a bug that caused search result highlighting to break in Flexsearch when the query contained duplicate words.
+        - Fixed an issue where pressing the `Q` key in the terminal in preview mode would not stop the preview.
+        - >-
+          Fixed an issue where images referenced by the `img` Markdoc tag appeared broken after changing `src` and moving the file, requiring a manual
+          page reload.
+        - >-
+          Fixed an issue where URLs starting with the same characters as API reference, AsyncAPI, Scorecards, Catalog, or Developer Onboarding page
+          slugs served data for those pages instead of showing a 404.
+        - >-
+          Fixed an issue where files with identical names but different extensions in the same folder resolved to a single URL, causing pages to be
+          missing from the deployed project.
+        - Updated `@redocly/openapi-core` to version `2.25.2`.
+        - Fixed an issue where banners didn't support all Markdoc features.
+        - Fixed banner target priority to ensure that the most specific matching banner is displayed on a page.
+        - Fixed an issue where badges in `sidebars.yaml` were not rendering on API reference pages.
+        - Fixed an issue where `json-schema` Markdoc tags produced empty output in LLM content.
+        - Fixed incorrect RBAC validation that caused authenticated MCP tool calls to be handled improperly.
+        - Fixed an issue where complex AI search queries might have resulted with an error.
+        - Fixed an issue where the sidebar scrolled together with the rest of the page when an announcement banner was present.
+        - Fixed an issue where the process did not terminate after certain short-lived CLI commands were executed.
+        - Fixed an issue where clicking asset download links redirected to a 404 page.
+        - Fixed an issue where filters on code walkthrough pages overlapped the **Search** dialog.
+        - Improved performance when building AI search documents for Markdown.
+        - >-
+          Fixed an issue where `partial` Markdoc tags in OpenAPI and AsyncAPI `description` fields did not resolve when Windows-style path separators
+          were used.
+        - Fixed an issue where navigating to a page through an anchor link from another page occasionally failed to scroll to the anchor.
+    dependencies:
+      '@redocly/openapi-docs': 3.20.0
+      '@redocly/realm-asyncapi-sdk': 0.10.0
+      '@redocly/theme': 0.64.0
+      '@redocly/asyncapi-docs': 1.9.0
+      '@redocly/graphql-docs': 1.9.0
+      '@redocly/portal-plugin-mock-server': 0.17.0
+      '@redocly/portal-legacy-ui': 0.15.0
   0.132.0-next.11:
     timestamp: 1775827945000
     changes:
@@ -15992,6 +16146,49 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.132.0:
+    timestamp: 1776169588000
+    changes:
+      minor:
+        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
+        - Added support for `x-badges` in OpenAPI and AsyncAPI parameters and schema properties.
+        - Added support for `or` functions in RBAC conditions within Markdoc content.
+      patch:
+        - Fixed an issue where `Typesense` search ignored OpenAPI paths.
+        - Fixed a bug where Markdoc content wrapped in an RBAC condition did not appear in search results for users with access.
+        - Fixed a bug that caused search result highlighting to break in Flexsearch when the query contained duplicate words.
+        - Fixed an issue where pressing the `Q` key in the terminal in preview mode would not stop the preview.
+        - >-
+          Fixed an issue where images referenced by the `img` Markdoc tag appeared broken after changing `src` and moving the file, requiring a manual
+          page reload.
+        - >-
+          Fixed an issue where URLs starting with the same characters as API reference, AsyncAPI, Scorecards, Catalog, or Developer Onboarding page
+          slugs served data for those pages instead of showing a 404.
+        - >-
+          Fixed an issue where files with identical names but different extensions in the same folder resolved to a single URL, causing pages to be
+          missing from the deployed project.
+        - Fixed out-of-memory error in the search indexer that occurred when indexing deeply nested schemas.
+        - Updated `@redocly/openapi-core` to version `2.25.2`.
+        - Fixed an issue where badges in `sidebars.yaml` were not rendering on API reference pages.
+        - Improved keyboard navigation across Replay's input components for more consistent and predictable focus behavior.
+        - Fixed incorrect RBAC validation that caused authenticated MCP tool calls to be handled improperly.
+        - Fixed an issue where complex AI search queries might have resulted with an error.
+        - Fixed an issue where the process did not terminate after certain short-lived CLI commands were executed.
+        - Fixed an issue where clicking asset download links redirected to a 404 page.
+        - Fixed an issue where filters on code walkthrough pages overlapped the **Search** dialog.
+        - Improved performance when building AI search documents for Markdown.
+        - >-
+          Fixed an issue where `partial` Markdoc tags in OpenAPI and AsyncAPI `description` fields did not resolve when Windows-style path separators
+          were used.
+        - Fixed an issue where navigating to a page through an anchor link from another page occasionally failed to scroll to the anchor.
+    dependencies:
+      '@redocly/openapi-docs': 3.20.0
+      '@redocly/realm-asyncapi-sdk': 0.10.0
+      '@redocly/theme': 0.64.0
+      '@redocly/asyncapi-docs': 1.9.0
+      '@redocly/graphql-docs': 1.9.0
+      '@redocly/portal-plugin-mock-server': 0.17.0
+      '@redocly/portal-legacy-ui': 0.15.0
   0.132.0-next.11:
     timestamp: 1775827945000
     changes:
@@ -21086,6 +21283,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.64.0:
+    timestamp: 1776169588000
+    changes:
+      minor:
+        - Added support for Excalidraw and PlantUML diagrams.
+        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
+        - Added a new `ColorPaletteIcon` icon component.
+      patch:
+        - Fixed a bug where dismissing any banner on the page prevented all banners from being displayed on that page again.
+        - Fixed an issue where banners didn't support all Markdoc features.
+        - Adjusted tooltip text to remain on a single line when possible.
+        - Fixed an issue where complex AI search queries might have resulted with an error.
+        - Fixed an issue where the sidebar scrolled together with the rest of the page when an announcement banner was present.
+        - Fixed an issue where filters on code walkthrough pages overlapped the **Search** dialog.
+    dependencies: {}
   0.64.0-next.6:
     timestamp: 1775827945000
     changes:
@@ -23898,6 +24110,21 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.20.0:
+    timestamp: 1776169588000
+    changes:
+      minor:
+        - Added support for `x-badges` in OpenAPI and AsyncAPI parameters and schema properties.
+      patch:
+        - Fixed an issue where OpenAPI 3.1 discriminated unions broke when `allOf` merged `$ref` siblings.
+        - Fixed MCP URL variables resolution.
+        - Fixed security vulnerability `CVE-2026-33036` by upgrading `fast-xml-parser` to version `5.5.9`.
+        - Updated `@redocly/openapi-core` to version `2.25.2`.
+        - >-
+          Fixed an issue where `partial` Markdoc tags in OpenAPI and AsyncAPI `description` fields did not resolve when Windows-style path separators
+          were used.
+    dependencies:
+      '@redocly/replay': 0.23.0
   3.20.0-next.8:
     timestamp: 1775827945000
     changes:
@@ -27485,6 +27712,14 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.9.0:
+    timestamp: 1776169588000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.20.0
+      '@redocly/theme': 0.64.0
   1.9.0-next.8:
     timestamp: 1775827945000
     changes:
@@ -29033,6 +29268,12 @@
         - Redocly Mock Server release
     dependencies: {}
 '@redocly/portal-legacy-ui':
+  0.15.0:
+    timestamp: 1776169588000
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   0.15.0-next.0:
     timestamp: 1773412531000
     changes:
@@ -29241,6 +29482,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.15.0:
+    timestamp: 1776169588000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.132.0
+      '@redocly/redoc': 0.132.0
+      '@redocly/redoc-reef': 0.132.0
+      '@redocly/redoc-revel': 0.132.0
+      '@redocly/theme': 0.64.0
   1.15.0-next.11:
     timestamp: 1775827945000
     changes:
@@ -34281,6 +34533,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.17.0:
+    timestamp: 1776169588000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.20.0
   0.17.0-next.8:
     timestamp: 1775827945000
     changes:
@@ -37033,6 +37292,16 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.23.0:
+    timestamp: 1776169588000
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability `CVE-2026-33036` by upgrading `fast-xml-parser` to version `5.5.9`.
+        - Fixed an issue where Replay's **Authorization type** dropdown menu was hidden, preventing interaction.
+        - Improved keyboard navigation across Replay's input components for more consistent and predictable focus behavior.
+    dependencies:
+      '@redocly/theme': 0.64.0
   0.23.0-next.6:
     timestamp: 1775827945000
     changes:
@@ -39008,6 +39277,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.15.0:
+    timestamp: 1776169588000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.64.0
   0.15.0-next.6:
     timestamp: 1775827945000
     changes:
@@ -40680,6 +40956,18 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.9.0:
+    timestamp: 1776169588000
+    changes:
+      minor:
+        - Added support for `x-badges` in OpenAPI and AsyncAPI parameters and schema properties.
+      patch:
+        - >-
+          Fixed an issue where `partial` Markdoc tags in OpenAPI and AsyncAPI `description` fields did not resolve when Windows-style path separators
+          were used.
+    dependencies:
+      '@redocly/openapi-docs': 3.20.0
+      '@redocly/theme': 0.64.0
   1.9.0-next.8:
     timestamp: 1775827945000
     changes:
