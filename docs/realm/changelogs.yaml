@@ -43834,6 +43834,16 @@ reunite:
         - Updated `project cards` UI on the organization overview with improved visual styling and interaction states.
         - Fixed scrolling in the API key modal after adding an allowed IP address to keep new fields and actions visible in long forms.
     dependencies: {}
+  v2026-04-14.1:
+    timestamp: 1776165675000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed authentication to reject API keys on endpoints configured for session sign-in and clarified error messages to indicate the
+          authentication method used.
+        - Fixed capitalization of "Runtime logs" in sidebar menu, page title, and documentation.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
