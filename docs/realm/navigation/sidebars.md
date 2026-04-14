@@ -8,6 +8,10 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+keywords:
+  includes:
+    - sidebar
+    - sidebars
 ---
 # Sidebars configuration options
 
