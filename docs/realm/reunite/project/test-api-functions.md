@@ -6,15 +6,14 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+banner:
+  - content: "This feature is currently available in early access only."
+    color: info
+    dismissible: false
 ---
 # Test API functions
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-{% admonition type="warning" name="Early access" %}
-This is an experimental, early-access capability.
-It may not be available for your organization yet, and its behavior may change before general availability.
-{% /admonition %}
 
 You can use Replay in Reunite to send requests to your API functions while you work in the editor.
 This helps you verify routing, request data, and responses without leaving your project workspace.
