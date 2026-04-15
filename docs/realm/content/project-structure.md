@@ -264,6 +264,19 @@ Content files named `index` (e.g., `index.md`, `index.page.tsx`, or even `index.
 - `concepts/index.md` becomes the page accessed at the `/concepts` URL path.
 - `api/reference/index.yaml` becomes `/api/reference`.
 
+When content is versioned, the URL path includes the version subfolder.
+The default version subfolder is the exception: that segment is omitted from the path.
+
+- `/config/@v1/guide.md` becomes `/config/v1/guide`.
+- `/config/@v2/guide.md` (default version) becomes `/config/guide`.
+- `/config/@v3/guide.md` becomes `/config/v3/guide`.
+
+When the default version changes to `v3`, the paths also change:
+
+- `/config/@v1/guide.md` becomes `/config/v1/guide`.
+- `/config/@v2/guide.md` becomes `/config/v2/guide`.
+- `/config/@v3/guide.md` (default version) becomes `/config/guide`.
+
 ## Content reuse
 
 You can reuse content across your project by using the [partial markdoc tag](./markdoc-tags/partial.md).
