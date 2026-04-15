@@ -38,6 +38,6 @@ All security patches include a changeset entry in the [changelog](../changelog.p
 - **Local development users** — update the version in your `package.json` and reinstall dependencies.
     See [Upgrade product version](../get-started/upgrade-realm-version.md) for detailed instructions.
 
-## Reporting a vulnerability
+## Report a vulnerability
 
 If you discover a security vulnerability in a Redocly product, please contact us at [security@redocly.com](mailto:security@redocly.com).

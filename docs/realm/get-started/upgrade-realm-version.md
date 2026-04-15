@@ -21,6 +21,9 @@ keywords:
 If you are working in Reunite, your project updates automatically when new versions are released and you trigger a new build.
 If you are working locally, you must update your `package.json` file to the version you want your project to use.
 
+Keep Realm up to date to prevent exposing your systems to security risks.
+To learn about Redocly's release schedule for patching known security vulnerabilities, see [Security vulnerability fixes](../faq/security-fixes.md).
+
 ## Before you begin
 
 Make sure you have the following:
