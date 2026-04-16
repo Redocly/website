@@ -78,3 +78,7 @@ p:has(.highlight) {
   background-color: khaki;
   --md-table-cell-text-color: black;
 }
+
+[data-component-name='Product/ProductPicker'] {
+  display: none;
+}

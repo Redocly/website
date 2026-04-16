@@ -142,10 +142,11 @@ Each product folder can include its own `redocly.yaml` file to customize that pr
 - feedback
 - footer
 - logo
+- mockServer
 - navbar
+- palette
 - sidebar
 - search
-- mockServer
 
 ```yaml {% title="products/platform/redocly.yaml" %}
 # Platform-specific customization
@@ -171,3 +172,4 @@ Users can remove the filter to search all content.
 
 - **[Multi-product overview](../navigation/multi-product.md)** - Conceptual guide to multi-product documentation including product switching and organization strategies
 - **[Navigation elements](../navigation/index.md)** - Configure navigation elements and structures for multi-product sites with product-specific navigation
+- **[Style products individually](../branding/customize-styles.md#style-products-individually)** - Customize the style of individual products in your project

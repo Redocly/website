@@ -1,0 +1,9 @@
+- label: ← Back to Docs
+  href: /docs/realm/config/palette
+- separatorLine: true
+- group: Get started
+  items:
+    - page: index.md
+    - page: start-reunite-editor.md
+    - page: start-local-dev.md
+    - page: museum-api.yaml

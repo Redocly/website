@@ -324,3 +324,32 @@ responseHeaders:
       value: noindex
 
 telemetry: off
+
+products:
+  amber:
+    name: Amber
+    folder: products/amber/
+  coral:
+    name: Coral
+    folder: products/coral/
+  cyan:
+    name: Cyan
+    folder: products/cyan/
+  indigo:
+    name: Indigo
+    folder: products/indigo/
+  iris:
+    name: Iris
+    folder: products/iris/
+  jade:
+    name: Jade
+    folder: products/jade/
+  ocean:
+    name: Ocean
+    folder: products/ocean/
+  pink:
+    name: Pink
+    folder: products/pink/
+  slate:
+    name: Slate
+    folder: products/slate/
