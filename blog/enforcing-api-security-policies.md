@@ -6,7 +6,7 @@ seo:
   title: Enforcing API security policies | Redocly
   description: Learn how to implement API security policies across design-time and runtime enforcement, covering authentication, authorization, traffic management, and data governance.
 author: adam-altman
-publishedDate: 2026-02-20
+publishedDate: 2026-04-16
 categories:
   - api-governance
   - api-lifecycle
