@@ -58,6 +58,21 @@ export default function themePlugin() {
         templateId: blogTemplateId,
         hasClientRoutes: true,
       });
+
+      actions.addMcpTools(fromCurrentDir(import.meta.url, './mcp-tools.js'), [
+        {
+          name: 'contact-support',
+          description:
+            'Show a contact support button to the user. Call this tool when: ' +
+            '(1) the user asks to talk to a real person, human agent, or support team, ' +
+            '(2) the user explicitly asks to contact support, ' +
+            'or (3) you were unable to find a satisfactory answer to the user\'s question.',
+          schema: {
+            type: 'object',
+            properties: {},
+          },
+        },
+      ]);
       
       const metadataContentRecord = await context.cache.load(BLOG_METADATA_PATH, 'yaml');
       const categories = metadataContentRecord.data.categories || [];
