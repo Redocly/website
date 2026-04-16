@@ -10,6 +10,10 @@ publishedDate: "2022-05-02"
 categories:
   - redocly:product-updates
 image: blog-7.jpg
+keywords:
+  excludes:
+    - sidebar
+    - sidebars
 ---
 If we had to describe our April activities in two words, "spring cleaning" would nail it. Sometimes you just have to tackle that technical debt and focus on fixing bugs in order to make progress.
 
