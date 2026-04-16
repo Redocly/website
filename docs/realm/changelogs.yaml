@@ -44127,6 +44127,7 @@ reunite:
     changes:
       minor: []
       patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.27.1`.
         - >-
           Fixed authentication to reject API keys on endpoints configured for session sign-in and clarified error messages to indicate the
           authentication method used.
