@@ -148,8 +148,6 @@
           label: showExtensions
         - page: ./openapi/sort-required-props-first.md
           label: sortRequiredPropsFirst
-    - page: ./palette.md
-      label: palette
     - page: ./plugins.md
       label: plugins
     - page: ./products.md
