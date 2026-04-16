@@ -69,7 +69,8 @@ Redocly reads these SCIM User attributes:
 - **userName** or **emails** (email address in Redocly): If **userName** is a valid email, it is used.
   Otherwise Redocly uses the **emails** list.
   Prefer the entry marked **primary**, or the first email in the list.
-- **externalId** (IdP user id): Required for create and update. Links the directory user to SSO for this identity provider.
+- **externalId** (IdP user id): Required for create and update.
+  Links the directory user to SSO for this identity provider.
 - **name.givenName** and **name.familyName** (first and last name): Optional.
 - **active** (organization membership): **true** provisions the user into your Redocly organization. **false** removes them from the organization (deprovisioning).
 
