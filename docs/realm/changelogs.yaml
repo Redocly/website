@@ -6,7 +6,6 @@
         - Added validation for the `redirects` configuration option to detect dead and circular redirects.
         - Added RBAC filtering for Apigee API products in developer onboarding app creation.
         - Added support for Excalidraw and PlantUML diagrams.
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
         - Added support for `x-badges` in OpenAPI and AsyncAPI parameters and schema properties.
         - Added support for `or` functions in RBAC conditions within Markdoc content.
       patch:
@@ -118,7 +117,6 @@
           Fixed an issue where files with identical names but different extensions in the same folder resolved to a single URL, causing pages to be
           missing from the deployed project.
         - Fixed banner target priority to ensure that the most specific matching banner is displayed on a page.
-        - Added `palette` option to `products` configuration.
     dependencies:
       '@redocly/openapi-docs': 3.20.0-next.6
       '@redocly/realm-asyncapi-sdk': 0.10.0-next.1
@@ -132,9 +130,7 @@
       minor:
         - Added validation for the `redirects` configuration option to detect dead and circular redirects.
         - Added RBAC filtering for Apigee API products in developer onboarding app creation.
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
       patch:
-        - Updated legacy palette styles.
         - Updated `@redocly/openapi-core` to version `2.25.2`.
         - Fixed an issue where `json-schema` Markdoc tags produced empty output in LLM content by rendering resolved JSON examples as code blocks.
         - Fixed an issue where the build crashed during the search preparation step.
@@ -5991,7 +5987,6 @@
       minor:
         - Added RBAC filtering for Apigee API products in developer onboarding app creation.
         - Added support for Excalidraw and PlantUML diagrams.
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
         - Added support for `x-badges` in OpenAPI and AsyncAPI parameters and schema properties.
         - Added support for `or` functions in RBAC conditions within Markdoc content.
       patch:
@@ -6105,9 +6100,7 @@
     changes:
       minor:
         - Added RBAC filtering for Apigee API products in developer onboarding app creation.
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
       patch:
-        - Updated legacy palette styles.
         - Updated `@redocly/openapi-core` to version `2.25.2`.
         - Fixed an issue where `json-schema` Markdoc tags produced empty output in LLM content by rendering resolved JSON examples as code blocks.
     dependencies:
@@ -11076,7 +11069,6 @@
       minor:
         - Added validation for the `redirects` configuration option to detect dead and circular redirects.
         - Added support for Excalidraw and PlantUML diagrams.
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
         - Added support for `x-badges` in OpenAPI and AsyncAPI parameters and schema properties.
         - Added support for `or` functions in RBAC conditions within Markdoc content.
       patch:
@@ -11183,7 +11175,6 @@
           Fixed an issue where files with identical names but different extensions in the same folder resolved to a single URL, causing pages to be
           missing from the deployed project.
         - Fixed banner target priority to ensure that the most specific matching banner is displayed on a page.
-        - Added `palette` option to `products` configuration.
     dependencies:
       '@redocly/openapi-docs': 3.20.0-next.6
       '@redocly/realm-asyncapi-sdk': 0.10.0-next.1
@@ -11196,9 +11187,7 @@
     changes:
       minor:
         - Added validation for the `redirects` configuration option to detect dead and circular redirects.
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
       patch:
-        - Updated legacy palette styles.
         - Updated `@redocly/openapi-core` to version `2.25.2`.
         - Fixed an issue where `json-schema` Markdoc tags produced empty output in LLM content by rendering resolved JSON examples as code blocks.
     dependencies:
@@ -16150,7 +16139,6 @@
     timestamp: 1776169588000
     changes:
       minor:
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
         - Added support for `x-badges` in OpenAPI and AsyncAPI parameters and schema properties.
         - Added support for `or` functions in RBAC conditions within Markdoc content.
       patch:
@@ -16255,10 +16243,8 @@
   0.132.0-next.6:
     timestamp: 1775057134000
     changes:
-      minor:
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
+      minor: []
       patch:
-        - Updated legacy palette styles.
         - Updated `@redocly/openapi-core` to version `2.25.2`.
         - Fixed an issue where the build crashed during the search preparation step.
         - Improved keyboard navigation across Replay's input components for more consistent and predictable focus behavior.
@@ -21288,7 +21274,6 @@
     changes:
       minor:
         - Added support for Excalidraw and PlantUML diagrams.
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
         - Added a new `ColorPaletteIcon` icon component.
       patch:
         - Fixed a bug where dismissing any banner on the page prevented all banners from being displayed on that page again.
@@ -21325,9 +21310,7 @@
     changes:
       minor:
         - Added a Toast notification system to the theme package.
-        - Added a `palette` configuration option that applies one of built-in color palettes to the project.
       patch:
-        - Updated legacy palette styles.
         - Adjusted tooltip text to remain on a single line when possible.
     dependencies: {}
   0.64.0-next.2:
