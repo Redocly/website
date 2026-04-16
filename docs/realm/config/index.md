@@ -59,8 +59,6 @@ This guide provides a comprehensive overview of available configuration options 
 
   {% configProperty file="color-mode.md" /%}
 
-  {% configProperty file="palette.md" /%}
-
   {% configProperty file="logo.md" /%}
 
   {% configProperty file="markdown.md" /%}

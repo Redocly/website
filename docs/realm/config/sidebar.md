@@ -8,10 +8,6 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-keywords:
-  includes:
-    - sidebar
-    - sidebars
 description: Set the visibility of the sidebar in your project.
 ---
 # `sidebar`
