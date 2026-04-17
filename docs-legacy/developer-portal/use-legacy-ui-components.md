@@ -171,6 +171,6 @@ export const HeroSubtext = styled.div`
 
 ## Resources
 
-- **[Migrate from legacy Portal](./migrate-from-legacy-portal)** - Complete migration guide with step-by-step instructions for moving from the Portal product to modern Realm projects
+- **[Migrate from legacy Portal](./migrate-from-legacy-portal.md)** - Complete migration guide with step-by-step instructions for moving from the Portal product to modern Realm projects
 - **[Learn Markdoc](https://redocly.com/docs/learn-markdoc/tags/tag-library)** - Comprehensive guide to Markdoc syntax and interactive components for enhanced technical writing and content creation
 - **[Create React pages](/docs/realm/customization/create-react-page)** - Build custom pages using React components for full control over layout, styling, and interactive functionality
