@@ -43,6 +43,10 @@ authors:
     name: Ivan Kropyvnytskyi
     authorBIO: Software Engineer, Redocly
     image: ivan.png
+  - id: roman-marshevskyi
+    name: Roman Marshevskyi
+    authorBIO: Director of Engineering, Redocly
+    image: marshevskyi.png
 categories:
   - id: api-catalog
     label: API catalog
