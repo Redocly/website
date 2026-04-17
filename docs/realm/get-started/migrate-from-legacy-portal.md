@@ -1146,3 +1146,4 @@ That means you get a complete, working implementation of that component; ready t
 - **[Navigation configuration](../navigation/navigation.md)** - Configure navigation elements, menus, and page organization for optimal user experience in Realm projects
 - **[Color mode customization](../branding/customize-color-modes.md)** - Configure light and dark mode styling with custom color schemes and mode-specific CSS variables
 - **[Front matter configuration](../config/front-matter-config.md)** - Complete reference for page-level configuration options available through front matter settings
+tings
