@@ -305,6 +305,9 @@ openapi:
 search:
   engine: typesense
 
+plugins: 
+  - 'ai-widget-plugins/mcp-plugin.js'
+
 links:
   - href: https://redocly.com/docs/changelog/feed.xml
     rel: alternate
