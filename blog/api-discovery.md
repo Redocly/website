@@ -8,6 +8,10 @@ publishedDate: "2021-01-26"
 categories:
   - api-catalog:discovery
 image: blog-api-discovery.png
+keywords:
+  excludes:
+    - sidebar
+    - sidebars
 ---
 Does your organization own documentation for multiple APIs?
 
