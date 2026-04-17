@@ -27,8 +27,7 @@ The `corsProxyUrl` option controls which proxy Replay uses for cross-origin requ
 
 - corsProxyUrl
 - string
-- Optional.
-  By default, Realm uses its internal proxy endpoint (`/_api/cors/`).
+- Optional. By default, Realm uses its internal proxy endpoint (`/_api/cors/`).
   Set this option to override the proxy URL (for example, to use your own external proxy service).
 
   You can set it to empty string to disable the proxy to send requests directly from user browser to the target API.

@@ -21,14 +21,15 @@ This helps you verify routing, request data, and responses without leaving your 
 
 ## Open Replay
 
-Replay is available in the preview area of the editor.
-If the Replay tab is already open, select it.
-If it is closed, open a new preview tab and select **Replay**.
+The **Replay** tab opens in the [editor pane](./project-ui.md#editor-dock) alongside your file tabs.
+If the tab is already open, click it to select it.
+If it is closed, open it in any of the following ways:
 
-You can also use the keyboard shortcut to open Replay:
-
-- macOS: <kbd>`⌃ Ctrl`</kbd> + <kbd>`⌥ Opt`</kbd> + <kbd>`Y`</kbd>
-- Windows: <kbd>`Ctrl`</kbd> + <kbd>`Alt`</kbd> + <kbd>`Y`</kbd>
+- Click the **More actions** icon on the right side of the tabs header and select **Open Replay**.
+- Use the keyboard shortcut:
+    - macOS: <kbd>`⌃ Ctrl`</kbd> + <kbd>`⌥ Opt`</kbd> + <kbd>`Y`</kbd>
+    - Windows: <kbd>`Ctrl`</kbd> + <kbd>`Alt`</kbd> + <kbd>`Y`</kbd>
+- When a tab group is empty, click the **Replay** shortcut shown under **Dev tools**.
 
 ## Test an API function
 

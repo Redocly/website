@@ -66,22 +66,22 @@ The Reunite editor automatically saves your changes as you make edits to your fi
 
 ## Preview your changes
 
-Reunite includes a webview pane where you can view your changes as you make them in the editor.
+Reunite includes a **Webview** tab where you can view your changes as you make them in the editor.
 
 Preview how your changes look in a sample build before publishing to production.
 
-### In the live webview pane
+### In the live Webview tab
 
-The Webview pane shows formatting updates to ensure they render correctly before you publish.
+The **Webview** tab shows formatting updates to ensure they render correctly before you publish.
 
 {% img
   src="./images/webview-preview.png"
-  alt="Screenshot of Webview preview pane"
+  alt="Screenshot of the Webview tab in the editor"
   withLightbox=true
 /%}
 
 Change the view to meet your needs, such as seeing how the landing page renders on mobile screens.
-See [Use the Webview](../reunite/project/use-webview.md) to learn more about the options you have when using this webview pane.
+See [Use the Webview](../reunite/project/use-webview.md) to learn more about the options available in the **Webview** tab.
 
 ### In the deployment preview
 
@@ -181,11 +181,11 @@ When you add more files to your project, a link to those files is automatically 
 This generated sidebar is based on the file structure of your project and requires an `index.md` file at the root of your project, in other words, not in a folder.
 
 {% admonition type="info" name="Where is the sidebar?" %}
-The sidebar navigation menu usually displays on the left side of the page in the Webview; however, when the Webview pane is a small width, it is hidden under a slide drawer menu icon that displays in the top right of the Webview pane.
+The sidebar navigation menu usually displays on the left side of the page in the Webview; however, when the **Webview** tab is a small width, it is hidden under a slide drawer menu icon that displays in the top right of the tab.
 
 {% img
   src="./images/slide-drawer-icon.png"
-  alt="Screenshot that shows the slide drawer icon in the top right corner of the Webview panel"
+  alt="Screenshot that shows the slide drawer icon in the top right corner of the Webview tab"
   withLightbox=true
 /%}
 {% /admonition %}
@@ -289,8 +289,8 @@ To add a `logo` configuration:
    {% admonition type="info" %}
     If you used a different image or updated the logo name - update the file path in the configuration to reflect your changes.
    {% /admonition %}
-The logo updates immediately in the webview pane.
-If you don't see your changes, try refreshing the webview pane by clicking the [Reload](../reunite/project/use-webview.md#reload) button.
+The logo updates immediately in the **Webview** tab.
+If you don't see your changes, try refreshing the **Webview** tab by clicking the [Reload](../reunite/project/use-webview.md#reload) button.
 You can also commit your update to view it [in the preview build](#in-the-deployment-preview).
 
 ## Update styles
@@ -335,7 +335,7 @@ The editor includes a color picker when you hover over color values.
   withLightbox=true
 /%}
 
-The headings' color updates immediately in the live webview pane.
+The headings' color updates immediately in the **Webview** tab.
 If you don't see your changes, try restarting Webview by clicking the [Reload](../reunite/project/use-webview.md#reload) button.
 You can also commit your update to view it [in the preview build](#in-the-deployment-preview).
 

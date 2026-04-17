@@ -55,8 +55,7 @@ access:
 ### Root-level configuration (deprecated)
 
 {% admonition type="warning" %}
-**Deprecated:** Root-level `residency` is still supported for backward compatibility but will show deprecation warnings when used alongside the `access` object.
-Please migrate to the `access` object format.
+**Deprecated:** Root-level `residency` is still supported for backward compatibility but will show deprecation warnings when used alongside the `access` object. Please migrate to the `access` object format.
 {% /admonition %}
 
 ```yaml {% title="redocly.yaml" %}

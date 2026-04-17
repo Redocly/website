@@ -57,8 +57,7 @@ access:
 ```
 
 {% admonition type="info" %}
-**Note:** `logoutReturnUrl` is a new feature and is only available within the `access` object.
-It cannot be configured at the root level.
+**Note:** `logoutReturnUrl` is a new feature and is only available within the `access` object. It cannot be configured at the root level.
 {% /admonition %}
 
 ## Use cases
