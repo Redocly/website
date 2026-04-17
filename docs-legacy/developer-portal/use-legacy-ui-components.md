@@ -8,7 +8,7 @@ seo:
 
 # Use legacy portal UI components
 
-The "UI components" from the legacy [Portal](https://redocly.com/docs-legacy/developer-portal) product are supported in Redocly's new suite of products.
+The "UI components" from the legacy [Portal](./index.md) product are supported in Redocly's new suite of products.
 However, they should only be used to help with migration.
 We recommend replacing them as soon as possible.
 
@@ -48,7 +48,7 @@ import { ThinTile, TileHeader, TileText, WideTile, Box, Flex, Jumbotron } from '
 ```
 
 You can use `.tsx` files in your project in two ways:
-- [Creating a page with React](https://www.redocly.com/docs/realm/customization/create-react-page.md), for example: `example.page.tsx`.
+- [Creating a page with React](docs/realm/customization/create-react-page), for example: `example.page.tsx`.
 - Creating a component to use in your theme or a [Markdoc tag](https://redocly.com/docs/learn-markdoc/tags/tag-library), for example `SomeComponent.tsx`.
 
 Remember that legacy ui components _will not_ receive future improvements.
@@ -171,6 +171,6 @@ export const HeroSubtext = styled.div`
 
 ## Resources
 
-- **[Migrate from legacy Portal](./migrate-from-legacy-portal.md)** - Complete migration guide with step-by-step instructions for moving from the Portal product to modern Realm projects
+- **[Migrate from legacy Portal](./migrate-from-legacy-portal)** - Complete migration guide with step-by-step instructions for moving from the Portal product to modern Realm projects
 - **[Learn Markdoc](https://redocly.com/docs/learn-markdoc/tags/tag-library)** - Comprehensive guide to Markdoc syntax and interactive components for enhanced technical writing and content creation
-- **[Create React pages](https://www.redocly.com/docs/realm/customization/create-react-page.md)** - Build custom pages using React components for full control over layout, styling, and interactive functionality
+- **[Create React pages](/docs/realm/customization/create-react-page)** - Build custom pages using React components for full control over layout, styling, and interactive functionality
