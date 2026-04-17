@@ -16,11 +16,11 @@ At the start of your migration, you'll need to create a project in Reunite and c
 
 1. Sign up or log in to your Reunite account.
 
-2. (Optional) [Add an identity provider](https://www.redocly.com/docs/realm/reunite/organization/sso/add-idp.md) and [configure SSO](https://www.redocly.com/docs/realm/reunite/organization/sso/configure-sso.md).
+2. (Optional) [Add an identity provider](/docs/realm/reunite/organization/sso/add-idp) and [configure SSO](/docs/realm/reunite/organization/sso/configure-sso).
 
-3. Go to your [Reunite dashboard](https://app.cloud.redocly.com) and [create a new project](https://www.redocly.com/docs/realm/reunite/project/manage-projects.md#create-a-project).
+3. Go to your [Reunite dashboard](https://app.cloud.redocly.com) and [create a new project](/docs/realm/reunite/project/manage-projects#create-a-project).
 
-4. Go to **Settings** --> **Git hosting** and [connect your existing repository](https://www.redocly.com/docs/realm/reunite/project/connect-git/connect-git-provider.md).
+4. Go to **Settings** --> **Git hosting** and [connect your existing repository](/docs/realm/reunite/project/connect-git/connect-git-provider).
 
 5. Go to **Editor** to verify that your project files are synced with Reunite.
 
@@ -56,9 +56,9 @@ Migrate your developer portal project to Realm using the content in this guide.
 
 4. Open a pull request in your repository to merge the `migrate-sidebar` branch into `portal-upgrade`.
 
-5. Review the code and the [branch preview build](https://www.redocly.com/docs/realm/reunite/project/use-previews.md).
+5. Review the code and the [branch preview build](/docs/realm/reunite/project/use-previews).
 
-6. (Optional) Explore the other tools in Reunite, such as [visual review](https://www.redocly.com/docs/realm/reunite/project/pull-request/review-pull-request.md#review-visual-and-code-diff).
+6. (Optional) Explore the other tools in Reunite, such as [visual review](/docs/realm/reunite/project/pull-request/review-pull-request#review-visual-and-code-diff).
 
 7. Merge the pull request into the `portal-upgrade` branch to deploy it to the Reunite "production" build.
 
@@ -76,7 +76,7 @@ Once the content is migrated and you're ready to "go live" with the new project
 
 4. Review the production deployment of the site to ensure it's ready for release.
 
-5. In Reunite, [set a custom domain](https://www.redocly.com/docs/realm//reunite/project/custom-domain.md) for your project.
+5. In Reunite, [set a custom domain](/docs/realm/reunite/project/custom-domain) for your project.
 
 6. Update your CNAME record to point to `ssl.redocly.app`.
    This change can take up to 8 hours to propagate depending on your provider.
@@ -173,7 +173,7 @@ In Realm, the way _externally-managed_ API descriptions are used in your project
 - API descriptions (or copies of them) must be **stored in the project files**.
   - Using a remote URL or snapshot URL in the configuration file is no longer supported.
 
-During migration, set up [remote content](https://www.redocly.com/docs/realm/reunite/project/remote-content/remote-content.md) connections for any externally-maintained API descriptions.
+During migration, set up [remote content](/docs/realm/reunite/project/remote-content/remote-content) connections for any externally-maintained API descriptions.
 
 The following example shows the old and new syntax for using remote API descriptions:
 
@@ -193,8 +193,8 @@ The following example shows the old and new syntax for using remote API descript
 
     In this example, both API definitions are set up as remote content sources and the `redocly.yaml` file uses relative file paths.
 
-    - The art-museum uses [remote content from GitHub](https://www.redocly.com/docs/realm/reunite/project/remote-content/from-github.md).
-    - The flight-museum uses [remote content from a URL](https://www.redocly.com/docs/realm/reunite/project/remote-content/url.md).
+    - The art-museum uses [remote content from GitHub](/docs/realm/reunite/project/remote-content/from-github).
+    - The flight-museum uses [remote content from a URL](/docs/realm/reunite/project/remote-content/url).
 
     ```yaml  {% title="redocly.yaml" %}
     apis:
@@ -284,7 +284,7 @@ Realm and Reef users have access to the built-in API catalog feature, which is u
 - In the developer portal, the API catalog had to be _added as a custom component_ in an MDX page.
 - In Realm, the classic catalog feature is already _built into the product_ and is enabled through configuration.
 
-Use the following guide to enable the classic catalog during your migration: [configure a classic catalog in your project](https://www.redocly.com/docs/realm/config/catalog-classic.md).
+Use the following guide to enable the classic catalog during your migration: [configure a classic catalog in your project](/docs/realm/config/catalog-classic).
 
 #### Update Markdown files
 
@@ -294,7 +294,7 @@ However, some specific features may require adjustments during migration.
 
 ##### Change admonition syntax
 
-Realm adds Markdoc tags for [admonitions](https://redocly.com/docs/learn-markdoc/tags/admonition).
+Realm adds Markdoc tags for [admonitions](/docs/learn-markdoc/tags/admonition).
 The Markdown syntax for admonitions, `:::`, is no longer supported.
 
 During migration, replace all Markdown admonitions with Markdoc tags.
@@ -323,7 +323,7 @@ The following example shows the old and new admonition syntax:
 
 ##### Change reusable snippets
 
-Realm adds a Markdoc tag for [partials](https://redocly.com/docs/learn-markdoc/tags/partial), which is a big upgrade for working with [reusable content](https://www.redocly.com/docs/realm/content/markdoc-tags/partial.md).
+Realm adds a Markdoc tag for [partials](/docs/learn-markdoc/tags/partial), which is a big upgrade for working with [reusable content](/docs/realm/content/markdoc-tags/partial).
 The developer portal's approach to reusable content, which used Markdown snippets in an HTML `<embed>` tag, is no longer supported.
 
 During migration, replace any embedded Markdown snippets with the new partials tag, as in the following example:
@@ -387,7 +387,7 @@ During migration, update all code fences with a title to use Markdown tag syntax
 
 ##### Change tabbed code samples
 
-Realm adds a Markdoc tag for [tabs](https://redocly.com/docs/learn-markdoc/tags/tabs) that supports all content types.
+Realm adds a Markdoc tag for [tabs](/docs/learn-markdoc/tags/tabs) that supports all content types.
 Tabbed code sample syntax from the developer portal needs to be updated.
 
 During migration, update all tabbed code samples to use the `tabs` tag.
@@ -516,7 +516,7 @@ MDX files _do not render in Realm_ because support for MDX was removed in favor 
 
 During migration, you need to update your MDX files for their content to render.
 
-For **MDX files without Markdown**, change their file extension to `.page.tsx` to [create a React page](https://www.redocly.com/docs/realm/customization/create-react-page.md).
+For **MDX files without Markdown**, change their file extension to `.page.tsx` to [create a React page](/docs/realm/customization/create-react-page).
 As long as the imports are correct, those files can serve as pages in Realm.
 
 For **MDX files that combine Markdown and JSX**, use the following steps to update the file and make it compatible with Realm:
@@ -541,13 +541,13 @@ For **MDX files that combine Markdown and JSX**, use the following steps to upda
 Converting the filetype to Markdown and removing the JSX will allows Realm to render the _Markdown_ content from the migrated MDX files.
 However, rendering the JSX element requires additional work.
 
-You can [use the legacy UI components](./use-legacy-ui-components.md) to help with migration, but we recommend replacing them.
+You can [use the legacy UI components](./use-legacy-ui-components) to help with migration, but we recommend replacing them.
 
 ##### Change OpenApiTryIt component
 
 Realm contains an upgraded replacement to the "Try it console" called Replay, which allows users to send API requests from your documentation.
 
-Realm adds a [Markdoc tag for Replay](https://redocly.com/docs/learn-markdoc/tags/replay-openapi) that can embed the Replay console in a Markdown file.
+Realm adds a [Markdoc tag for Replay](/docs/learn-markdoc/tags/replay-openapi) that can embed the Replay console in a Markdown file.
 The `OpenApiTryIt` component is no longer supported.
 
 During migration, change all implementations of OpenApiTryIt to use the `replay-openapi` Markdoc tag.
@@ -631,7 +631,7 @@ Now authors can use the Markdoc tag to render the same element from the migrated
 
 {% admonition type="info" %}
   This section explains the process for migrating custom elements.
-  For more detailed guidance on creating tags, see See [Build a Markdoc tag](https://www.redocly.com/docs/realm/customization/build-markdoc-tags.md).
+  For more detailed guidance on creating tags, see See [Build a Markdoc tag](/docs/realm/customization/build-markdoc-tags).
 {% /admonition %}
 
 ### Migrate navigation
@@ -641,13 +641,13 @@ Use the sections below to migrate your navigation configuration and its compatib
 
 #### Update navbar
 
-Settings for the [navigation bar](https://www.redocly.com/docs/realm/config/navbar.md) have changed.
+Settings for the [navigation bar](/docs/realm/config/navbar) have changed.
 
 During migration, update your navbar configuration to reflect the following changes:
 
 - The `nav` property was renamed and moved to `navbar`.
 - Navbar entries must be listed in an `items` property.
-- The `search` property was removed from navbar config and added as a [search option](https://www.redocly.com/docs/realm/config/search.md).
+- The `search` property was removed from navbar config and added as a [search option](/docs/realm/config/search).
 - A new option called `linkedSidebar` can add a navbar item to the breadcrumbs of top-level sidebar entries.
 
 The following example shows a navbar configuration updated to work with Realm:
@@ -685,7 +685,7 @@ The following example shows a navbar configuration updated to work with Realm:
 
 #### Update footer
 
-Settings for the [footer](https://www.redocly.com/docs/realm/config/footer.md) have some small but structural changes.
+Settings for the [footer](/docs/realm/config/footer) have some small but structural changes.
 
 During migration, update your footer configuration to reflect the following changes:
 
@@ -743,7 +743,7 @@ The following example the same footer settings using the old and new syntax:
 
 #### Update sidebar
 
-New settings and features were added to the [sidebar](https://www.redocly.com/docs/realm/navigation/sidebars.md).
+New settings and features were added to the [sidebar](/docs/realm/navigation/sidebars).
 
 During migration, update your sidebar configuration to reflect the following changes:
 
@@ -783,9 +783,9 @@ The following example shows the same sidebar configuration using old and new syn
 
 After your sidebar config works with Realm, explore the following new sidebar features:
 
-- Build sidebars using configuration from [multiple files](https://www.redocly.com/docs/realm/navigation/sidebars.md#add-multiple-sidebars) using fragments.
-- [Add a sidebar to a single page](https://www.redocly.com/docs/realm/navigation/sidebars.md#add-a-sidebar-to-a-single-page) to show the sidebar on a page without listing it on `sidebars.yaml`.
-- Control the visibility of [sidebar entries with RBAC](https://www.redocly.com/docs/realm/access/links-and-groups-permissions.md#in-the-sidebar).
+- Build sidebars using configuration from [multiple files](/docs/realm/navigation/sidebars#add-multiple-sidebars) using fragments.
+- [Add a sidebar to a single page](/docs/realm/navigation/sidebars#add-a-sidebar-to-a-single-page) to show the sidebar on a page without listing it on `sidebars.yaml`.
+- Control the visibility of [sidebar entries with RBAC](/docs/realm/access/links-and-groups-permissions#in-the-sidebar).
 
 ### Migrate configuration
 
@@ -797,7 +797,7 @@ During migration, follow the steps below to migrate your project configuration:
 1. Rename the `siteConfig.yaml` file to `redocly.yaml`.
 2. Update your configuration to reflect the changes in the table below.
 3. Test the configuration in Realm and work through any errors.
-4. After migration, explore and add [new configuration options](https://www.redocly.com/docs/realm/config).
+4. After migration, explore and add [new configuration options](/docs/realm/config).
 
 The following table summarizes the changes to the configuration options for the developer portal:
 
@@ -815,13 +815,13 @@ The following table summarizes the changes to the configuration options for the 
 
 - `copyCodeSnippet`
 - Replaced by `codeSnippet`.
-  New features added, see [codeSnippet](https://www.redocly.com/docs/realm/config/code-snippet.md).
+  New features added, see [codeSnippet](/docs/realm/config/code-snippet).
 
 ---
 
 - `disableLastModified`
 - Replaced by `markdown.lastUpdatedBlock`.
-  New features added, see [last updated object](https://www.redocly.com/docs/realm/config/markdown.md#last-updated-object).
+  New features added, see [last updated object](/docs/realm/config/markdown#last-updated-object).
 
 ---
 
@@ -832,7 +832,7 @@ The following table summarizes the changes to the configuration options for the 
 
 - `footer`
 - Moved to `footer`.
-  New syntax and features, see [footer](https://www.redocly.com/docs/realm/config/footer.md).
+  New syntax and features, see [footer](/docs/realm/config/footer).
 
 ---
 
@@ -844,13 +844,13 @@ The following table summarizes the changes to the configuration options for the 
 
 - `nav`
 - Replaced by `navbar`.
-  New syntax and features, see [navbar options](https://www.redocly.com/docs/realm/config/navbar.md) or [update navbar](#update-navbar).
+  New syntax and features, see [navbar options](/docs/realm/config/navbar) or [update navbar](#update-navbar).
 
 ---
 
 - `oasDefinitions`
 - Replaced by `apis`.
-  Syntax changes, see [apis](https://redocly.com/docs/cli/configuration/reference/apis).
+  Syntax changes, see [apis](/docs/cli/configuration/reference/apis).
 
 ---
 
@@ -876,7 +876,7 @@ The following table summarizes the changes to the configuration options for the 
 
 - `stylesheets`
 - Replaced by `links`.
-  See [links](https://www.redocly.com/docs/realm/config/links.md).
+  See [links](/docs/realm/config/links).
 
 ---
 
@@ -992,7 +992,7 @@ During migration, any theme customizations from your developer portal will need 
 
 #### Update project styles
 
-Realm adds support for [CSS variables](https://www.redocly.com/docs/realm/branding/css-variables), which are used to [customize the styles](https://www.redocly.com/docs/realm/branding/customize-styles.md) of your project and create a theme.
+Realm adds support for [CSS variables](/docs/realm/branding/css-variables), which are used to [customize the styles](/docs/realm/branding/customize-styles) of your project and create a theme.
 
 During migration, follow the steps below to update your custom styling to work with Realm:
 
@@ -1007,7 +1007,7 @@ During migration, follow the steps below to update your custom styling to work w
 2. Open your `theme.ts` file.
 
 3. Recreate each styling rule using CSS variables.
-   See the [CSS variables reference](https://www.redocly.com/docs/realm/branding/css-variables) if you need help identifying them.
+   See the [CSS variables reference](/docs/realm/branding/css-variables) if you need help identifying them.
 
 The following example shows a set of style customizations from the developer portal updated to work with Realm:
 
@@ -1121,12 +1121,12 @@ During migration, update your custom components to reflect the following changes
 - Realm is a complete rebuild.
   The components in the core theme may have been removed or changed names.
 
-Realm adds support for an exciting new feature that allows you to [eject a component](https://www.redocly.com/docs/realm/customization/eject-components) used in the core theme.
+Realm adds support for an exciting new feature that allows you to [eject a component](/docs/realm/customization/eject-components) used in the core theme.
 That means you get a complete, working implementation of that component; ready to be customized.
 
 ## Resources
 
-- **[Create React pages](https://www.redocly.com/docs/realm/customization/create-react-page.md)** - Build custom pages using React components for full control over layout, styling, and interactive functionality
-- **[Navigation configuration](https://www.redocly.com/docs/realm/navigation/navigation.md)** - Configure navigation elements, menus, and page organization for optimal user experience in Realm projects
-- **[Color mode customization](https://www.redocly.com/docs/realm/branding/customize-color-modes.md)** - Configure light and dark mode styling with custom color schemes and mode-specific CSS variables
-- **[Front matter configuration](https://www.redocly.com/docs/realm/config/front-matter-config.md)** - Complete reference for page-level configuration options available through front matter settings
+- **[Create React pages](/docs/realm/customization/create-react-page)** - Build custom pages using React components for full control over layout, styling, and interactive functionality
+- **[Navigation configuration](/docs/realm/navigation/navigation)** - Configure navigation elements, menus, and page organization for optimal user experience in Realm projects
+- **[Color mode customization](/docs/realm/branding/customize-color-modes)** - Configure light and dark mode styling with custom color schemes and mode-specific CSS variables
+- **[Front matter configuration](/docs/realm/config/front-matter-config)** - Complete reference for page-level configuration options available through front matter settings
