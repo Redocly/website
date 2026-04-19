@@ -1137,7 +1137,7 @@ During migration, update your custom components to reflect the following changes
 - Realm is a complete rebuild.
   The components in the core theme may have been removed or changed names.
 
-Realm adds support for an exciting new feature that allows you to [eject a component](../customization/eject-components/index.md) used in the core theme.
+Realm adds support for an exciting new feature that allows you to [eject a component](../customization/eject-components) used in the core theme.
 That means you get a complete, working implementation of that component; ready to be customized.
 
 ## Resources
@@ -1146,4 +1146,3 @@ That means you get a complete, working implementation of that component; ready t
 - **[Navigation configuration](../navigation/navigation.md)** - Configure navigation elements, menus, and page organization for optimal user experience in Realm projects
 - **[Color mode customization](../branding/customize-color-modes.md)** - Configure light and dark mode styling with custom color schemes and mode-specific CSS variables
 - **[Front matter configuration](../config/front-matter-config.md)** - Complete reference for page-level configuration options available through front matter settings
-tings

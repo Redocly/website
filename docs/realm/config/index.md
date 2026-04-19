@@ -130,6 +130,8 @@ This guide provides a comprehensive overview of available configuration options 
   {% configProperty file="feedback.md" /%}
 
   {% configProperty file="reunite.md" /%}
+
+  {% configProperty file="stats.md" /%}
 {% /configSection %}
 
 ## Example configuration
