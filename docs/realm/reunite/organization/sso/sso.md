@@ -17,7 +17,11 @@ Single sign-on (SSO) is an authentication method that allows users to log in wit
 You can add SSO identity providers (IdPs) to Reunite to allow users to use them for logging into Reunite as well as individual projects.
 After you [add an IdP to Reunite](./add-idp.md), the IdP can then be [configured in the `redocly.yaml` configuration file for individual projects](./configure-sso.md).
 
-When users log in with an IdP, the default team and organization role assigned in the IdP override the organization role assigned on the **People** page in Reunite.
+When users log in with an IdP, team membership from the IdP replaces Reunite-managed team assignments for SSO-sourced teams, as described in [Team mapping](#team-mapping).
+
+For **organization roles** with a **corporate** IdP, Reunite updates the stored role from the IdP-derived role on every SSO sign-in, including when that role is lower than before.
+For a **guest** IdP, Reunite keeps the stronger of the stored role and the IdP-derived role so a weaker claim does not lower access.
+See [Organization role priority with SSO](../../../access/roles.md#organization-role-priority-with-sso) for the strength order (Owner through Viewer), how Reunite picks a role when several `redocly.*` groups appear in one claim, and how **guest** promotions differ from downgrades.
 
 ## Identity provider types in Reunite
 
@@ -65,9 +69,9 @@ Disabling SSO removes the login page, but does not disable `rbac`.
 
 ## Resources
 
+- **[Roles and permissions](../../../access/roles.md)** - Reserved `redocly.*` groups, organization role behavior for corporate vs guest SSO on sign-in
 - **[Add an identity provider](./add-idp.md)** - Step-by-step guide to add identity providers in Reunite for seamless user authentication across projects
 - **[Configure SSO](./configure-sso.md)** - Set up single sign-on to allow users to authenticate using multiple identity providers for flexible access control
 - **[Okta SAML integration video](https://youtu.be/NMayl8FTZ7c)** - Watch a step-by-step tutorial for integrating Okta with Redocly using SAML for single sign-on
 - **[SSO configuration reference](../../../config/access/sso.md)** - Complete technical reference for all SSO configuration options and settings in your redocly.yaml file
 - **[Multi-tenant SSO: Federated identity management](./sso-multi-tenant.md)** - Implement federated identity management for organizations with multiple tenants and complex authentication requirements
-- **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 directory provisioning for an identity provider (beta, access by request)

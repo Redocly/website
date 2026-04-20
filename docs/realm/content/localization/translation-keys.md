@@ -276,21 +276,21 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- search.ai.toolCall.executed
-- Prefix shown after an AI tool call finishes
-- Executed
+- search.ai.toolCall.searching
+- Message shown while AI is searching for relevant documentation
+- Searching...
 
 ---
 
-- search.ai.toolCall.executing
-- Prefix shown while an AI tool call is still running
-- Executing
+- search.ai.toolResult.found
+- First part of a message that is shown when AI finished searching
+- Found
 
 ---
 
-- search.ai.toolCall.withArgs
-- Connector text shown before serialized tool call arguments
-- with args
+- search.ai.toolResult.found.documents
+- Last part of a message that is shown when AI finished searching
+- documents
 
 ---
 
@@ -537,8 +537,7 @@ This page contains the list of all predefined translation keys used in default U
 
 - page.forbidden.description
 - 403 Forbidden description text
-- You don't have permission to access this page.
-  If you believe this is an error, contact your administrator or return to the homepage.
+- You don't have permission to access this page. If you believe this is an error, contact your administrator or return to the homepage.
 
 ---
 
@@ -758,12 +757,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- catalog.filters.close
-- Button text to close the mobile catalog filters panel
-- Close
-
----
-
 - filter.dateRange.from
 - Label for start date in date range filter
 - From:
@@ -788,15 +781,15 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- catalog.notConnected
-- Placeholder label shown when a catalog item has no connected values
-- Not connected
-
----
-
 - catalog.sort
 - Label for sort button in catalog view
 - Sort
+
+---
+
+- catalog.tags.more
+- Label for additional tags indicator in catalog cards
+- more
 
 ---
 
@@ -2175,39 +2168,39 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- diagram.openFullscreen
-- Accessible label for diagram click to open in fullscreen
+- mermaid.openFullscreen
+- Accessible label for Mermaid diagram click to open in fullscreen
 - Click to open diagram in fullscreen
 
 ---
 
-- diagram.zoomIn
-- Tooltip for zoom in button in diagram viewer
+- mermaid.zoomIn
+- Tooltip for zoom in button in Mermaid diagram viewer
 - Zoom in
 
 ---
 
-- diagram.zoomOut
-- Tooltip for zoom out button in diagram viewer
+- mermaid.zoomOut
+- Tooltip for zoom out button in Mermaid diagram viewer
 - Zoom out
 
 ---
 
-- diagram.reset
-- Tooltip for fit to view button in diagram viewer
+- mermaid.reset
+- Tooltip for fit to view button in Mermaid diagram viewer
 - Fit to view
 
 ---
 
-- diagram.close
-- Tooltip for close button in diagram viewer
+- mermaid.close
+- Tooltip for close button in Mermaid diagram viewer
 - Close
 
 ---
 
-- diagram.viewer
-- Accessible label for diagram viewer dialog
-- Diagram viewer
+- mermaid.viewer
+- Accessible label for Mermaid diagram viewer dialog
+- Mermaid diagram viewer
 
 {% /table %}
 

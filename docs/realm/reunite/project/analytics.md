@@ -27,11 +27,10 @@ Redocly Analytics helps you understand how your documentation is used by trackin
 - Page views – counted each time a documentation page is requested
 - Search queries – recorded when users perform a search, including searches that return no results
 
-This data is collected server-side, directly from web requests.
-We log:
-- page paths or search terms
-- timestamps of the event
-- requests' IP addresses, used for operational purposes such as deduplicating traffic, filtering bots, and ensuring accurate reporting
+This data is collected server-side, directly from web requests. We log:
+- The page path or search term
+- A timestamp of the event
+- The IP address from the request, used for operational purposes such as deduplicating traffic, filtering bots, and ensuring accurate reporting
 
 All data is collected on behalf of your organization and used only to provide aggregated insights in your Analytics dashboard.
 We do not use analytics data for advertising or tracking users across sites, and we do not attempt to identify individual visitors.

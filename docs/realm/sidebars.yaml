@@ -6,6 +6,12 @@
       label: Start with Reunite editor
     - page: get-started/start-local-dev.md
       label: Start with local development
+    - group: Migrate from legacy
+      items:
+        - page: get-started/migrate-api-reference.md
+          label: Migrate API reference
+        - page: get-started/migrate-from-legacy-portal.md
+          label: Migrate from legacy portal
     - page: get-started/upgrade-realm-version.md
       label: Upgrade Realm version
 
@@ -28,8 +34,6 @@
           label: Add an identity provider
         - page: reunite/organization/sso/configure-sso.md
           label: Configure SSO
-        - page: reunite/organization/sso/configure-scim.md
-          label: Configure SCIM
         - page: reunite/organization/sso/configure-auth0.md
           label: Auth0
         - page: reunite/organization/sso/configure-google-sso.md
@@ -55,8 +59,6 @@
       label: Keyboard shortcuts
     - page: reunite/project/use-webview.md
       label: Webview
-    - page: reunite/project/test-api-functions.md
-      label: Test API functions
     - page: reunite/project/use-previews.md
       label: Previews
     - group: Deployments
@@ -171,9 +173,8 @@
             - page: content/markdoc-functions/concat.md
               label: concat
     - group: Markdoc tags
-      page: content/markdoc-tags/index.md
+      page: content/markdoc-tags/tag-library.md
       items:
-        - page: content/markdoc-tags/tag-library.md
         - separator: Built-in tags
         - page: content/markdoc-tags/partial.md
           label: Partial
@@ -224,7 +225,6 @@
           label: Tabs
 
     - group: API docs
-      page: content/api-docs/index.md
       items:
         - page: content/api-docs/add-openapi-docs.md
           label: OpenAPI
@@ -433,8 +433,6 @@
       items:
         - page: customization/mcp-server/index.md
           label: Overview
-        - page: customization/mcp-server/openapi.yaml
-          label: Docs MCP reference
 
     - group: Search API
       selectFirstItemOnExpand: true
@@ -454,3 +452,8 @@
       label: For pages
     - page: access/links-and-groups-permissions.md
       label: For navigation
+# - $ref: author/sidebars.yaml
+# - $ref: style/sidebars.yaml
+# - $ref: extend/sidebars.yaml
+# - $ref: setup/sidebars.yaml
+# - $ref: config/sidebars.yaml

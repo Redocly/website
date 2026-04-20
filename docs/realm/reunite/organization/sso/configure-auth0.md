@@ -15,7 +15,7 @@ plans:
 Follow this guide to configure an SSO integration between Auth0 OpenID Connect protocol and Reunite.
 
 {% admonition type="warning" %}
-**Important:** Before completing the Reunite setup, ensure you preserve the Owner organization role (see "Preserve the Owner organization role" section) to avoid getting locked out of your organization.
+**Important:** Before completing the Reunite setup, configure Owner mapping in Auth0 (see "Preserve the Owner organization role" section) so owner accounts receive the correct claims, especially for new users and promotions.
 {% /admonition %}
 
 ## Add Auth0 as a corporate identity provider in Reunite
@@ -46,11 +46,17 @@ Follow this guide to configure an SSO integration between Auth0 OpenID Connect p
 
 ## Preserve the Owner organization role
 
-{% admonition type="danger" %}
-**Critical step:** Complete this step before clicking **Save** in Reunite to prevent getting locked out of your organization.
+{% admonition type="info" %}
+When you use Auth0 as a **corporate** identity provider, each SSO sign-in updates the stored organization role to match Auth0 (claims and default role), including when that role is **lower** than before.
+When you use Auth0 as a **guest** identity provider, Reunite does not **lower** the stored role if Auth0 sends a weaker mapped role than Reunite already has.
+Map owners correctly in Auth0 so **new** users and access reviews match your intended access.
 {% /admonition %}
 
-To prevent Auth0 from changing users' roles to the default organization role specified in the SSO settings:
+{% admonition type="warning" %}
+**Recommended before broad rollout:** Ensure owner accounts receive the `redocly.owners` role in Auth0 (below) so claims match administrative access in Reunite.
+{% /admonition %}
+
+To map organization owners in Auth0 to the Owner role in Reunite:
 
 1. In Auth0, navigate to **User Management** > **Roles**.
 1. Create a role named `redocly.owners`.

@@ -26,7 +26,8 @@ A combination of organization and project roles defines a user's access.
 
 ## Organization roles
 
-Organization roles control access to your Redocly organization and are provided by your identity provider through claims or attributes, similar to how teams are configured.
+Organization roles control access to your Redocly organization.
+With SSO, role information usually comes from your identity provider through claims or attributes, similar to how teams are configured.
 
 ### Reserved organization role names
 
@@ -39,14 +40,40 @@ Redocly recognizes these special role names from your identity provider:
 - **`redocly.billing`** (`billing`): Can manage billing of the organization.
 - **`redocly.viewers`** (`viewer`): Has read-only permission and restricted access.
 
+### Organization role priority with SSO
+
+For **corporate** identity providers in Reunite, each SSO sign-in sets the member’s organization role from the **IdP-derived role** (reserved `redocly.*` groups in the teams claim, evaluated in the order below), or from the **default organization role** on the IdP when no reserved group matches.
+That value replaces the stored role for that sign-in, including when it is **lower** than the role Reunite already had for the user.
+
+For **guest** identity providers, each SSO sign-in compares that same **IdP-derived role** with the **stored role** Reunite already saves for the member.
+Reunite keeps the **stronger** of the two.
+A stronger IdP-derived role **promotes** the member.
+A weaker IdP-derived role does **not** lower the stored role on that sign-in.
+
+**Strength** from highest to lowest:
+
+1. Owner (`redocly.owners`)
+2. Member (`redocly.members`)
+3. Committer (see [Special roles](#special-roles))
+4. Billing (`redocly.billing`)
+5. Viewer (`redocly.viewers`, `redocly.participants`)
+
+When the teams claim includes **more than one** reserved group for a user, Reunite evaluates them in this **order** and uses the **first** match: `redocly.owners`, `redocly.members`, `redocly.billing`, `redocly.viewers`, `redocly.participants`.
+For example, a user in both `redocly.owners` and `redocly.members` receives an IdP-derived role of **Owner**.
+
+To reduce access for **corporate** SSO, update the identity provider so claims map to the role you intend—the next sign-in updates the stored role to match, including when that is lower than before.
+For **guest** SSO, a weaker claim does not lower the stored role, so use the **People** page if you need to reduce access after changing IdP groups.
+
+If claims still map to a stronger role than you intend, the next **corporate** SSO sign-in can **promote** the member again.
+
 ### How organization roles are assigned
 
 Organization roles are assigned differently depending on your authentication method:
 
 **With SSO/Identity Provider:**
-- Roles are **automatically assigned based on claims or attributes** from your identity provider
-- Configure your identity provider to send the appropriate role claims (like `redocly.owners` or `redocly.members`) for each user
-- Roles assigned through SSO **override** any roles manually set in Redocly
+- Configure your identity provider to send the correct groups and default organization role for each user.
+- For **corporate** IdP, Reunite applies the IdP-derived role on each sign-in as described in [Organization role priority with SSO](#organization-role-priority-with-sso).
+- For **guest** IdP, Reunite keeps the stronger of the IdP-derived role and the stored role as described in the same section.
 
 **With Redocly's login system:**
 - Organization owners can **manually assign roles** from the [People page](../reunite/organization/manage-people.md#change-organization-role)
@@ -96,6 +123,7 @@ When users become members of a team, they are granted access based on the roles 
 
 ## Resources
 
+- **[Single sign-on (SSO)](../reunite/organization/sso/sso.md)** - Add corporate and guest IdPs, team mapping, and how SSO relates to organization roles
 - **[RBAC concepts](./rbac.md)** - Understand the different components involved in Redocly's role-based access control system and how they work together
 - **[Teams and users management](../reunite/organization/teams.md)** - Configure teams and manage user assignments, including adding users to multiple teams for flexible access control
 - **[RBAC configuration guide](./index.md)** - Step-by-step instructions for implementing RBAC with examples for projects, pages, and navigation

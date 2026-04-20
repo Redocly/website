@@ -49,29 +49,25 @@ graphql:
 
 - title
 - string
-- The name of your GraphQL API.
-  Appears in the page header and sidebar.
+- The name of your GraphQL API. Appears in the page header and sidebar.
 
 ---
 
 - version
 - string
-- The version of your API.
-  Displays next to the title as `Title (version)`.
+- The version of your API. Displays next to the title as `Title (version)`.
 
 ---
 
 - description
 - string
-- Markdown-formatted description of your API.
-  Supports headings, lists, code blocks, and links.
+- Markdown-formatted description of your API. Supports headings, lists, code blocks, and links.
 
 ---
 
 - termsOfService
 - string
-- URL to your API's terms of service.
-  Displays as a link in the overview panel.
+- URL to your API's terms of service. Displays as a link in the overview panel.
 
 ---
 
@@ -127,8 +123,7 @@ graphql:
 
 - name
 - string
-- License name (e.g., MIT, Apache 2.0).
-  Used as link text when `identifier` is not provided.
+- License name (e.g., MIT, Apache 2.0). Used as link text when `identifier` is not provided.
 
 ---
 
@@ -140,8 +135,7 @@ graphql:
 
 - identifier
 - string
-- SPDX license identifier.
-  When provided, displays instead of the license name.
+- SPDX license identifier. When provided, displays instead of the license name.
 
 {% /table %}
 
