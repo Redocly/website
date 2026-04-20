@@ -156,7 +156,8 @@ The information about API logo
 
 - href
 - string
-- The URL pointing to the contact page. Default to 'info.contact.url' field of the OAS.
+- The URL pointing to the contact page.
+  Default to 'info.contact.url' field of the OAS.
 
 {% /table %}
 
