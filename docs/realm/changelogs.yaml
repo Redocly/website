@@ -44337,3 +44337,12 @@ replay:
         - Fixed replay app freezing when tab state was corrupted.
     dependencies:
       '@redocly/theme': 0.63.0
+  0.17.1:
+    timestamp: 1776695328000
+    changes:
+      minor:
+        - Increased the default `Replay` app window size. Fixed user info display in the app UI.
+      patch:
+        - Fixed UI styling issues.
+        - Fixed security vulnerability `CVE-2026-39356` by upgrading `drizzle-orm` to version `0.45.2`.
+    dependencies: {}
