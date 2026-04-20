@@ -259,3 +259,7 @@ Additional information and syntax: [Tabs tag](./tabs.md)
     - Asparagus
   {% /tab %}
 {% /tabs %}
+
+## Resources
+
+- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

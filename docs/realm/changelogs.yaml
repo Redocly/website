@@ -44296,3 +44296,44 @@ replay:
           leaving a broken state.
     dependencies:
       '@redocly/theme': 0.63.0
+  0.17.0:
+    timestamp: 1776671199000
+    changes:
+      minor:
+        - Added support for OpenAPI 3.2 `querystring` parameters to handle structured query parameters with nested objects and arrays.
+        - Added a toggle to hide or display sensitive data in generated step code samples in Replay.
+        - Added code collapsing support for JSON editors in Replay.
+        - Added support for OpenAPI `allowReserved` query parameters in Replay.
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.27.1`.
+        - Enter prerelease mode.
+        - Fixed security vulnerability `CVE-2026-33036` by upgrading `fast-xml-parser` to version `5.5.9`.
+        - Fixed an issue where Replay's **Authorization type** dropdown menu was hidden, preventing interaction.
+        - Improved keyboard navigation across Replay's input components for more consistent and predictable focus behavior.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.25.2`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.24.0`.
+        - Fixed tooltip visibility in browsers without anchor positioning support.
+        - Fixed an issue where the Mock Server appeared twice in the environments list.
+        - Fixed an issue with the Authorization Code with PKCE flow in Replay resulting in token request failures.
+        - Fixed an issue where response information was missing in Replay's mobile layout.
+        - Fixed an issue where Replay crashed when used in an iframe.
+        - Fixed an issue with Mock Server where the response sample included `writeOnly` fields.
+        - Fixed security vulnerability `CVE-2026-26278` by upgrading `fast-xml-parser` to version `5.3.6`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.20.5`.
+        - >-
+          Fixed an issue with the Authorization Code with PKCE flow in Replay that caused the generated code verifier to exceed the maximum allowed
+          length of 128 characters, resulting in token request failures.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.20.4`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.20.3`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.19.2`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.20.1`.
+        - Added support for OpenAPI `allowReserved` query parameters in Replay.
+        - Fixed an issue with mock server where the response sample included `writeOnly` fields.
+        - Enabled dragging the window by the logo area.
+        - Fixed an issue where tooltips were not visible in some browsers.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.19.0`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.18.2`.
+        - Fixed security vulnerability `CVE-2026-26278` in `fast-xml-parser` by upgrading to version `5.3.6`.
+        - Fixed replay app freezing when tab state was corrupted.
+    dependencies:
+      '@redocly/theme': 0.63.0
