@@ -235,10 +235,24 @@ properties:
   totalPrice:
     type: integer
     minimum: 0
-required: [customerName, orderItems]
+  orderItems:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      properties:
+        menuItemId:
+          type: string
+        quantity:
+          type: integer
+          minimum: 1
+      required: [menuItemId, quantity]
+      additionalProperties: false
+required: [id, customerName, status, totalPrice, orderItems]
+additionalProperties: false
 ```
 
-But after a deploy, the API returns:
+But after a deploy, `GET /orders/{orderId}` returns:
 
 ```json {% title="Actual response -- spot the problems" %}
 {
@@ -246,6 +260,9 @@ But after a deploy, the API returns:
   "customerName": "Mary Ann",
   "status": "fulfilled",
   "totalPrice": 200,
+  "orderItems": [
+    { "menuItemId": "itm_01h1s5z6vf2mm1mz3hevnn9va7", "quantity": 2 }
+  ],
   "internalCostCents": 45
 }
 ```
