@@ -7,7 +7,7 @@ seo:
   description: Your OpenAPI spec is a contract. Learn how to enforce it automatically with API contract testing using the Arazzo standard and Redocly's Respect CLI.
   image: ./images/api-contract-testing-arazzo.png
 author: roman-marshevskyi
-publishedDate: "2026-04-17"
+publishedDate: "2026-04-22"
 categories:
   - api-governance:compliance-quality
   - redocly:product-updates
