@@ -44308,6 +44308,16 @@ reunite:
       patch:
         - Fixed styling issues in project overview cards and dark mode border colors.
     dependencies: {}
+  v2026-04-21.2:
+    timestamp: 1776769358000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.29.0`.
+        - >-
+          Fixed SAML SP metadata Assertion Consumer Service URL when the auth host is configured with a full URL, and aligned SAML AuthnRequest NameID
+          policy with the email format advertised in metadata.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
