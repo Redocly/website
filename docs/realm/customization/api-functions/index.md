@@ -27,6 +27,8 @@ Use API functions to:
 
 ## Reference documentation
 
-To reference the documentation for API functions, see:
 - [API functions reference](./api-functions-reference.md) for API functions helper methods and properties.
-- [Create API functions](./create-api-functions.md) to learn how to build API functions.
+
+## Tutorials
+
+- [Render weather data in a Markdoc tag](./create-api-functions.md) - Build an API function and a custom Markdoc tag that displays live weather data.

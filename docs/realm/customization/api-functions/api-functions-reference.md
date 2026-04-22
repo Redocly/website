@@ -550,4 +550,4 @@ export default async function (request: Request, context: ApiFunctionsContext) {
 
 ## Resources
 
-- Review examples of API functions in the [Create API functions](./create-api-functions.md) how-to guide.
+- [Render weather data in a Markdoc tag](./create-api-functions.md) - End-to-end tutorial that builds an API function and a custom Markdoc tag.

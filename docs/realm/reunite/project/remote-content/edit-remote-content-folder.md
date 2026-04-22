@@ -1,6 +1,16 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Enterprise
+  - Enterprise+
+---
 # Edit remote content settings
 
-{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 You can edit settings for remote content folders and files after creation.
 
@@ -41,7 +51,8 @@ To edit remote content settings:
     withLightbox=true
   /%}
 
-1. Modify the settings as needed. The available settings depend on your content source type:
+1. Modify the settings as needed.
+   The available settings depend on your content source type:
     - **Git sources**: Change provider, repository, branch, folder/file path, auto-sync, or auto-merge settings.
     - **URL sources**: Change the source URL, sync interval, auto-sync, or auto-merge settings.
     - **CI/CD sources**: Change auto-merge settings.

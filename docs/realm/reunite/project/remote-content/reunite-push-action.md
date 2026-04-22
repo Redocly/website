@@ -1,6 +1,16 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Enterprise
+  - Enterprise+
+---
 # Redocly Reunite CI/CD push GitHub Action
 
-{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use a GitHub Action for pushing remote content to the Redocly Reunite project.
 Users with their projects hosted in their own GitHub accounts, but without the Redocly GitHub application installed can use this action in the repository that holds the remote content to push their changes to the Reunite platform.

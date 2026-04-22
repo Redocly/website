@@ -1,6 +1,16 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Enterprise
+  - Enterprise+
+---
 # Manually sync remote content
 
-{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 If you disabled [Auto-sync](./remote-content.md#auto-sync-and-auto-merge) for your remote content, you have to sync the content manually.
 

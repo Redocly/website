@@ -1,4 +1,16 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Enterprise
+  - Enterprise+
+---
 # Add an identity provider (IdP)
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Add SSO identity providers in Reunite, so users can use them for logging into Reunite as well as individual projects.
 After you have added an IdP in Reunite, the identity provider can then be configured in the `redocly.yaml` configuration file for individual projects.
@@ -73,14 +85,15 @@ Selecting this checkbox means that if you have `rbac` configured, users must log
 {% admonition type="info" name="attention" %}
 Requiring SSO authentication does not require users to log in to your project.
 To require login to your project, you must configure `rbac` or `requiresLogin`.
-See [Configure RBAC](../../../access/index.md) or [requiresLogin](../../../config/requires-login.md) for more information.
+See [Configure RBAC](../../../access/index.md) or [requiresLogin](../../../config/access/requires-login.md) for more information.
 {% /admonition %}
 
 ## Resources
 
+- **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 provisioning and deprovisioning for an identity provider (beta, access by request)
 - **[Configure SSO](./configure-sso.md)** - Specify which identity providers users can access or disable SSO entirely for your project authentication settings
 - **[Configure RBAC](../../../access/index.md)** - Limit user access to specific pages and features in your project and Reunite using role-based access control
-- **[SSO configuration reference](../../../config/sso.md)** - Complete technical reference for all available SSO configuration options and implementation details
+- **[SSO configuration reference](../../../config/access/sso.md)** - Complete technical reference for all available SSO configuration options and implementation details
 - **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider types and their configuration options for both Reunite and redocly.yaml file setup
 - **[Role-based access control (RBAC) concepts](../../../access/rbac.md)** - Understand the components and architecture of Redocly's role-based access control system
-- **[RBAC configuration reference](../../../config/rbac.md)** - Examples and configuration options for implementing RBAC in your redocly.yaml file with detailed setup instructions
+- **[RBAC configuration reference](../../../config/access/rbac.md)** - Examples and configuration options for implementing RBAC in your redocly.yaml file with detailed setup instructions

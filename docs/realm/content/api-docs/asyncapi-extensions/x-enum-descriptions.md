@@ -1,4 +1,15 @@
+---
+products:
+  - Redoc
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # AsyncAPI extension: `x-enumDescriptions`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The enum (short for "enumeration") fields in AsyncAPI allow you to restrict the value of a field to a list of allowed values.
 These values need to be short and machine-readable, but that can make them harder for humans to parse and work with.

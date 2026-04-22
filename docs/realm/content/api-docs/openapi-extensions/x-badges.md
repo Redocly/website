@@ -1,15 +1,25 @@
 # OpenAPI extension: `x-badges`
 
-The `x-badges` option allows you to add badges to an operation, to use as an indicator in documentation.
+Use the `x-badges` option to add badges to channels, operations, and schema fields as indicators in API documentation.
+
 The badges are displayed in API reference documentation in the following locations:
+
+**Operations:**
 - the title of an operation in the header of the page
 - the operation item when it displays in a navigation list
 
-Each operation can have multiple badges, and the displayed color is also configurable.
+**Parameters:** next to the parameter name in the parameters list and in the parameter details.
+
+**Schema properties:** next to the property name in request/response body schemas and in the property details.
+
+Each object can have multiple badges, and the displayed color is also configurable.
 
 ## Location
 
-Add an array of `x-badges` to any Operation object.
+Add an array of `x-badges` to any of the following:
+- Operation object (under `paths.<path>.<method>`)
+- Parameter object (operation parameters or `components/parameters`)
+- Schema object (including properties under `schema.properties` in components or inline)
 
 ## Options
 
@@ -103,6 +113,49 @@ paths:
   alt="Image of sample OpenAPI definition with badges displayed"
   withLightbox=true
 /%}
+
+### Parameter with badges
+
+You can add `x-badges` to a parameter (inline or in `components/parameters`):
+
+```yaml
+components:
+  parameters:
+    ExperimentalFlag:
+      name: experimentalFlag
+      in: query
+      schema:
+        type: boolean
+      x-badges:
+        - name: 'Experimental'
+          position: after
+        - name: 'Beta'
+          position: before
+          color: blue
+```
+
+### Schema property with badges
+
+You can add `x-badges` to any schema object, including properties within a schema:
+
+```yaml
+components:
+  schemas:
+    OrderResponse:
+      type: object
+      properties:
+        quantityFilled:
+          type: integer
+          description: Filled quantity (experimental).
+          x-badges:
+            - name: 'Experimental'
+        status:
+          type: string
+          x-badges:
+            - name: 'New'
+              position: before
+              color: green
+```
 
 ## Resources
 

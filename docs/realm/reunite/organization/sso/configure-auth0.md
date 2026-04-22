@@ -1,4 +1,16 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Enterprise
+  - Enterprise+
+---
 # Configure SSO with Auth0 OIDC
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Follow this guide to configure an SSO integration between Auth0 OpenID Connect protocol and Reunite.
 

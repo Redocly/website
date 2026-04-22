@@ -1,15 +1,21 @@
 ---
 products:
   - Redoc
+  - Realm
 plans:
   - Pro
   - Enterprise
   - Enterprise+
+description: |-
+  Customize the behavior and appearance of AsyncAPI documentation.
+  Requires an AsyncAPI description file.
 ---
 # `asyncapi`
 
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
 Customize the behavior and appearance of AsyncAPI documentation.
-Requires an AsyncAPI definition.
+  Requires an AsyncAPI description file.
 
 ## Options
 
@@ -30,31 +36,31 @@ Requires an AsyncAPI definition.
 
 - hideInfo
 - boolean
-- Set to `true` to hide info section including API title.
+- Set to `true` to hide the `info` section including API title.
 
 ---
 
 - hideOperations
 - boolean
-- Set to `true` to hide Operations section
+- Set to `true` to hide the **Operations** section.
 
 ---
 
 - hideServers
 - boolean
-- Set to `true` to hide Servers section
+- Set to `true` to hide the **Servers** section.
 
 ---
 
 - hideMessages
 - boolean
-- Set to `true` to hide Messages section
+- Set to `true` to hide the **Messages** section.
 
 ---
 
 - hideSchemas
 - boolean
-- Set to `true` to hide Schemas section
+- Set to `true` to hide the **Schemas** section.
 
 {% /table %}
 

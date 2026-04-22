@@ -1,4 +1,16 @@
+---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Input tag
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use the `input` element to create an input field in the walkthrough.
 The input value can be used in the code examples using double curly brace placeholders, such as `{{buttons-color}}`.

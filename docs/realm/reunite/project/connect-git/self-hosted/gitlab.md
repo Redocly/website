@@ -1,4 +1,17 @@
-## Create an application in your GitLab self-managed
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
+# Create an application in your GitLab self-managed
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 {% partial file="../../../../_partials/create-application-gl-sm.md" /%}
 

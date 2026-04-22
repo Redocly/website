@@ -1,4 +1,15 @@
+---
+products:
+  - Redoc
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # AsyncAPI extension: `x-additionalPropertiesName`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 AsyncAPI allows description of "additionalProperties" that may be included in a schema.
 Their names are unknown, but the field types can be added to the API description so that producers and consumers understand whether additional fields are permitted and any additional rules that apply.

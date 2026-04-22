@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Reunite user profile menu
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 In the user profile menu you can view your information, adjust notifications you receive, switch the color mode, and add, remove or switch between connected Git provider accounts.
 
@@ -16,6 +29,7 @@ To choose which email notifications you receive from Reunite:
    Choose between:
      - Pull requests
      - Deployments
+     - Remote content
      - Feedback
      - User
 1. (Optional) You can further refine your selection by choosing events that trigger notifications.
@@ -44,15 +58,19 @@ To connect your Git provider account:
 
 ## Switch between your Git provider accounts
 
+If you have multiple accounts with a single Git provider, you can choose which account to use with Redocly.
+
 To switch between Git provider accounts:
 
 1. Log out of your Git provider's account.
 1. Open the user profile menu.
 1. Click the **Connections** tab.
+1. Click the **Switch login method** button.
+1. Log in to your Git provider with a different account.
 
 ## Remove your Git provider account connection
 
-To disconnect
+To disconnect your Redocly account from a Git provider:
 
 1. Open the user profile menu.
 1. Click the **Connections** tab.

@@ -1,4 +1,16 @@
+---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # OpenAPI code sample tag
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `openapi-code-sample` tag renders sample code snippets directly in your documentation, showing users how to interact with API operations defined in your OpenAPI description.
 

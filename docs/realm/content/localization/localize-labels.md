@@ -1,4 +1,15 @@
+---
+products:
+  - Revel
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Localize UI labels using translation keys
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Redocly projects include user interface (UI) elements with text labels.
 These labels can either be the default generated labels or configured labels added by users when defining elements such as the sidebars or the footer.

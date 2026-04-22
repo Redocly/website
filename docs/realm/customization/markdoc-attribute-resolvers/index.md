@@ -1,4 +1,15 @@
+---
+products:
+  - Revel
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Built-in Markdoc attribute resolvers
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Custom Markdoc attribute resolvers define special attributes that resolve during build time.
 Use this functionality to transform file paths into proper slugs and load file content.

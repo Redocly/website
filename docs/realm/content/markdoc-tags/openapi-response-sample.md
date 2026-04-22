@@ -1,4 +1,16 @@
+---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # OpenAPI response sample tag
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `openapi-response-sample` tag renders response examples directly in your documentation, showing users the expected responses from API operations defined in your OpenAPI description.
 

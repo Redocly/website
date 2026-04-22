@@ -1,4 +1,16 @@
+---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Markdoc example tag
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `markdoc-example` tag enables you to display Markdoc syntax simultaneously with the rendered output, separated by introductory text that can be removed or customized.
 

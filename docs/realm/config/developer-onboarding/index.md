@@ -108,6 +108,13 @@ Choose the appropriate adapter object based on the type.
 
 {% /table %}
 
+#### Callback URLs
+
+For adapters with `type: APIGEE_X` or `type: APIGEE_EDGE`, the developer portal exposes **Callback URLs** when developers create an application and on the application detail page (API keys tab), so they can set or change redirect URLs without using the Apigee UI.
+
+Redocly maps this to the Apigee developer app [`callbackUrl`](https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.developers.apps#DeveloperApp) field on create, read, and update.
+**Apigee X** supports multiple redirect URLs in that field by entering them separated with a comma.
+
 #### Apigee auth object
 
 Choose your preferred method of authentication.
@@ -297,4 +304,4 @@ developerOnboarding:
 ## Resources
 
 - **[List of used Apigee API endpoints](./apigee-api-operations.md)** - Complete reference of Apigee API endpoints used by the developer onboarding feature for integration and troubleshooting
-- **[SSO configuration](../sso.md)** - Configure single sign-on authentication required for developer onboarding and app registration workflows
+- **[SSO configuration](../access/sso.md)** - Configure single sign-on authentication required for developer onboarding and app registration workflows

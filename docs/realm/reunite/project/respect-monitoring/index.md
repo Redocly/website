@@ -8,7 +8,9 @@ plans:
 ---
 # Respect Monitoring
 
-With Respect Monitoring you can leverage your [Arazzo](https://www.openapis.org/arazzo) Descriptions with Redocly's Respect command to keep track of your APIs' health and quality.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+With Respect Monitoring you can leverage your [Arazzo](https://www.openapis.org/arazzo-specification) Descriptions with Redocly's Respect command to keep track of your APIs' health and quality.
 
 Use your [Arazzo workflows](https://spec.openapis.org/arazzo/latest.html#workflow-object) to create test cases for your APIs.
 Then the Respect command can send requests to a server you choose and chain together data from previous requests.

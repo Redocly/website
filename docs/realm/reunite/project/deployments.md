@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Deployments
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Reunite's **Deployments** page displays the history of deployments in your project.
 Use this page to view the details of individual deployments, search and filter deployments, view the deployed project, and re-deploy the project manually.

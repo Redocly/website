@@ -19,7 +19,7 @@ The `scorecard` property continues to work with a deprecation warning.
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 {% $frontmatter.description %}
-Using these rules you can maintain quality across your existing APIs and ensure that newly-added or updated APIs match your criteria.
+With these rules you can maintain quality across your existing APIs and ensure that newly-added or updated APIs match your criteria.
 An API scorecard can include multiple sets of rules, corresponding to different quality levels.
 
 ## Options
@@ -59,6 +59,7 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 - [string]
 - **VS Code extension only.** Validates your local OpenAPI files against scorecard rules defined in your Reunite project.
   You can get the URL by opening your project in Reunite and copying the full URL from the browser.
+  The URL must use HTTPS and must be from a `redocly.com` domain.
 {% /table %}
 
 ### Level Object

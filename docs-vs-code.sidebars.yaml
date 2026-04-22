@@ -10,7 +10,12 @@
 - group: Usage
   page: docs/vscode/using-redocly-vscode.md
   items:
+    - label: Type hints
+      page: docs/vscode/type-hints.md
     - label: Cursor context
       page: docs/vscode/cursor-context.md
+    - label: Type hints vs Cursor context
+      page: docs/vscode/type-hints-vs-cursor-context.md
     - label: Live documentation preview
       page: docs/vscode/live-preview.md
+

@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Reunite
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Reunite is Redocly's cloud platform for creating, editing, previewing, and deploying API documentation projects using a Git-based version control system.
 You can [use the editor](./project/use-editor.md) to add, edit, and delete content and files in your project using a Git-based workflow to track and manage changes.

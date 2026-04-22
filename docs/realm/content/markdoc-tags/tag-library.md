@@ -1,4 +1,16 @@
+---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Markdoc tag library
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 This page contains a comprehensive list of Markdoc tags with links to deeper resources where you can see how to use them.
 
@@ -110,7 +122,8 @@ Additional information and syntax: [Login button tag](./login-button.md)
 ````markdoc {% process=false %}
 {% if includes($rbac.teams, "anonymous") %}
 {% admonition type="info" name="Log in" %}
-Some content is available only for authenticated users. Log in to get full access to our documentation.
+Some content is available only for authenticated users.
+Log in to get full access to our documentation.
 
 {% login-button /%}
 
@@ -246,3 +259,7 @@ Additional information and syntax: [Tabs tag](./tabs.md)
     - Asparagus
   {% /tab %}
 {% /tabs %}
+
+## Resources
+
+- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

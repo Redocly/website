@@ -12,7 +12,7 @@ excludeFromSearch: true
 # `ssoDirect`
 
 Control identity and access with the `ssoDirect` configuration option.
-Allows more customization than [sso](./sso.md).
+Allows more customization than [sso](./access/sso.md).
 
 {% admonition type="warning" name="Enterprise+" %}
 Available with Enterprise+.
@@ -324,5 +324,5 @@ ssoDirect:
 
 ## Resources
 
-- **[RBAC configuration reference](./rbac.md)** - Complete configuration options for role-based access control integration with direct SSO authentication
+- **[RBAC configuration reference](./access/rbac.md)** - Complete configuration options for role-based access control integration with direct SSO authentication
 - **[Role-based access control (RBAC) concepts](../access/rbac.md)** - Understand RBAC fundamentals and how they work with direct SSO for comprehensive access management
