@@ -102,7 +102,7 @@ When the catalog enforces these standards, it effectively "cleans the data" befo
 
 The transition to agentic development requires a foundational shift in how organizations view their API inventory. It is no longer acceptable to have scattered Swagger files and Confluence pages serving as the system of record. A centralized, governed, and automated API catalog provides the necessary structure for AI agents to operate safely. It bridges the gap between raw code and semantic intent to allow agents to discover capabilities without exposing the organization to operational risk. Platform teams using tools like Redocly Reef position their catalogs not just as developer portals but as the source of truth for both human and machine actors. By treating the catalog as a managed product with strict governance and automated ingestion using standards like MCP, you ensure that as your AI ambitions scale, your infrastructure remains stable and your agents remain secure.
 
-## FAQs about api catalogs
+## FAQs about API catalogs
 
 ### What is the difference between an API portal and an API catalog?
 
