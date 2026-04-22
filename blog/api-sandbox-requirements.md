@@ -6,7 +6,7 @@ seo:
   title: What you really need to build an API sandbox | Redocly
   description: Discover the critical requirements for building API sandboxes that support complex workflows, from environmental isolation to webhook simulation and deterministic testing.
 author: adam-altman
-publishedDate: 2026-02-15
+publishedDate: 2026-04-24
 categories:
   - api-testing
   - api-lifecycle
