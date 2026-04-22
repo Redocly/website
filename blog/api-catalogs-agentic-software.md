@@ -6,7 +6,7 @@ seo:
   title: Why API catalogs are critical for agentic software development | Redocly
   description: Learn how API catalogs transform from static documentation into active systems of record for AI agents, enabling safe discovery and execution of tools in software development workflows.
 author: adam-altman
-publishedDate: 2026-02-25
+publishedDate: 2026-04-23
 categories:
   - api-catalog
   - internal-developer-portal
