@@ -27,6 +27,14 @@ Use the `breadcrumbs` option to control the links displayed at the top of the pa
 Breadcrumbs are enabled by default, but can be disabled to remove them from your published project.
 You can also add links that you want to always appear on every page at the start of the breadcrumbs links.
 
+Breadcrumb links are generated based on the data from the sidebar.
+Breadcrumbs do not appear when:
+
+- the project or a specific page has breadcrumbs hidden
+- a page is not added to a sidebar
+- a page is at the top level of a sidebar
+
+
 ## Options
 
 {% table %}

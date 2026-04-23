@@ -158,9 +158,43 @@ For example `/guides/add-linting/` redirects to `/tutorials/add-linting/` and `/
 
 If there's a specific redirect for a page that also matches a wildcard, then the specific redirect wins.
 
+### Add redirects to versioned content
+
+Versioned content files create a specific path structure:
+
+- Links to non-default versions contain the version subfolder (without the `@`): `docs/installation/v2/install`.
+- Links to the default version omit the segment that contains the name of the version sub-folder: `docs/installation/install`.
+
+After you change the default version of your content and publish the project, the links update automatically:
+
+- The links to the new default version inherit the links from the previous default version.
+- The links from the previous default version now include the segment with the version subfolder.
+
+You do not need to create redirects to the default version of your content, as the same links now point to new content.
+To learn more about how Realm manages URLs to your content pages, see [File-based routing](../content/project-structure.md#file-based-routing).
+
+However, there are cases where you may need to create redirects to versioned content.
+
+To redirect a non-versioned page to a default version of a page:
+
+```yaml
+redirects:
+  '/guides/install/':
+    to: '/versioned-installation/guide/'
+```
+
+To redirect a page to a non-default version of a page:
+
+```yaml
+redirects:
+  '/guides/install/':
+    to: '/versioned-installation/v1/guide/'
+```
+
 ### Use a separate redirects file
 
-If you have many redirects, maintain them in a separate file using the `$ref` syntax. Create a `redirects.yaml` file:
+If you have many redirects, maintain them in a separate file using the `$ref` syntax.
+Create a `redirects.yaml` file:
 
 ```yaml {% title="redirects.yaml" %}
 '/products/original-product/':
