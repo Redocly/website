@@ -1,4 +1,16 @@
+---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # JSON Example tag
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `json-example` tag renders JSON examples directly in your documentation, showing users sample data structures.
 The tag can display a literal value, reference existing examples from OpenAPI descriptions, or generate examples from JSON schemas.

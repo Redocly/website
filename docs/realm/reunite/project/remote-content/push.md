@@ -1,6 +1,16 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Enterprise
+  - Enterprise+
+---
 # Push remote content from an external source
 
-{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Using [remote content](./remote-content.md), you can use content from an external source in your Redocly project.
 Typically, users fetch content from a public URL, or integrate their Git repository with Redocly.

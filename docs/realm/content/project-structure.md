@@ -1,9 +1,20 @@
 ---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
 title: Project structure
 description: An introduction to the file structure of a Redocly project.
 ---
 
 # Project structure
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Redocly follows a **zero-config** philosophy.
 While it provides an opinionated structure for clarity, the only hard requirement is **at least one content file** to generate a documentation site.
@@ -14,17 +25,18 @@ Knowing the common conventions helps you navigate, contribute to, and customize 
 
 A typical Redocly project includes the following folders and files. Only one content file is strictly required — the rest are optional but help organize and extend your project:
 
-- **content files and folders**: Files that generate pages (see [Content Files](#content-files) below).
+- content files and folders: the files that generate pages (see [Content Files](#content-files) below).
   This is the only *required* element - you need at least one file of content.
-- `redocly.yaml`: The primary configuration file used to customize features, navigation, theming, and more.
+- `redocly.yaml`: the primary configuration file used to customize features, navigation, theming, and more.
   While optional for a basic start, it's essential for most customizations.
-- `package.json`: This is the project manifest for managing Node.js dependencies.
+- `package.json`: the project manifest for managing Node.js dependencies.
   It is not required unless you want to specify a particular version of Redocly packages or install any third-party dependencies.
-- `_partials/`: A directory for reusable Markdoc partials.
-- `@l10n/`: A directory for locale folders.
-- `@theme/`: A directory for customizing the look, feel, and components of your portal.
-- `static/`: Optional directory for assets that should be copied directly to the build output without processing.
-- `sidebars.yaml`: Optional file(s) that can define the structure of one or multiple navigation sidebars.
+- `_partials/`: a directory for reusable Markdoc partials
+- `@l10n/`: a directory for locale folders
+- `@api`: a directory for API functions
+- `@theme/`: a directory for customizing the look, feel, and components of your portal
+- `static/`: optional directory for assets that should be copied directly to the build output without processing
+- `sidebars.yaml`: optional file(s) that define the structure of one or multiple navigation sidebars
 
 ### Example project tree
 
@@ -253,6 +265,25 @@ Content files named `index` (e.g., `index.md`, `index.page.tsx`, or even `index.
 - `concepts/index.md` becomes the page accessed at the `/concepts` URL path.
 - `api/reference/index.yaml` becomes `/api/reference`.
 
+Some of your content files in the same location may share a name, but have different extensions, or be an index file in a folder with the same name as files in the parent folder:
+
+```treeview {% title="Example of files with identical names in the same folder" %}
+...
+├── payments/
+│   └── index.md
+├── payments.md
+├── payments.page.tsx
+└── payments.yaml
+
+After building the project, all four files would generate the same route: `/payments`.
+To avoid having the same route leading to different resources, the build process appends a number (`-n`) to each path.
+In this case, paths to the files would be:
+
+- `/payments`
+- `/payments-1`
+- `/payments-2`
+- `/payments-3`
+
 ## Content reuse
 
 You can reuse content across your project by using the [partial markdoc tag](./markdoc-tags/partial.md).
@@ -268,12 +299,17 @@ There is also an optional `translations.yaml` file that contains the list of UI 
 
 For more information, see [l10n configuration](../config/l10n.md).
 
+## @api
+
+The `@api` directory is the default location for [API functions](../customization/api-functions/index.md) in your project.
+You can change the name of this directory in the [`apiFunctions` config](../config/api-functions.md).
+
 ## Versioned content
 
 Redocly supports versioned content by using a special folder structure.
 
 Folders prefixed with `@` (e.g., `@v1`, `@v2`) are treated as separate content versions.
-For more information, see [Add versioned content](./versions.md) how-to.
+For information how to set up versioned content in your project, see [Add versioned content](./versions.md).
 
 ## Multi-product
 
@@ -306,11 +342,16 @@ Any files placed inside the `static/` folder will be copied verbatim to the root
 Use `static/` for things like:
 - `robots.txt`
 - `favicon.ico` and other site icons/manifest files
-- Verification files for search engines or other services
-- Other assets that must exist at specific paths and shouldn't be processed (e.g., fonts referenced by external CSS, specific JS libraries).
+- verification files for search engines or other services
+- other assets that must exist at specific paths and shouldn't be processed (e.g., fonts referenced by external CSS, specific JS libraries).
 
-**Important**: Files in `static/` are *not* processed or optimized by Realm's build system.
-Avoid placing regular images, CSS, or JavaScript that you author yourself here if you expect them to be bundled or optimized; those usually belong alongside your content files or within the `@theme` directory.
+{% admonition type="info" name="Static files impact on your project" %}
+
+Files in `static/` are *not* processed or optimized by Realm's build system.
+Avoid placing regular images, CSS, or JavaScript that you author yourself in the `static/` directory if you expect them to be bundled or optimized.
+These files usually belong alongside your content files or within the `@theme` directory.
+
+{% /admonition %}
 
 ## Resources
 

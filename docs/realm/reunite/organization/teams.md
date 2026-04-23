@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Teams
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Teams are groups of users that form an important part of configuring [role-based access control (RBAC)](../../access/rbac.md) for your projects.
 You can assign users to more than one team and manage team composition to control project access.
@@ -221,4 +234,4 @@ Delete a team from the **Teams** page using the following steps:
 - **[Roles and permissions](../../access/roles.md)** - Complete reference for user roles and the specific access permissions that can be granted to team members
 - **[RBAC configuration guide](../../access/index.md)** - Configure role-based access control with examples for projects, pages, and navigation settings
 - **[People management](manage-people.md)** - Add and manage users within your organization for effective team collaboration
-- **[RBAC configuration reference](../../config/rbac.md)** - Complete technical configuration details and options for implementing role-based access control
+- **[RBAC configuration reference](../../config/access/rbac.md)** - Complete technical configuration details and options for implementing role-based access control

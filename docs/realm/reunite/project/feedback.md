@@ -1,6 +1,19 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # View and export feedback data
 
-Feedback form data is saved by project on the **Feedback** page.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
+
+Feedback form data is saved by project on the **Reports**>**Feedback** page.
 The **Feedback** page includes two tabs: one for **Page feedback** and one for **Code reports**.
 You can search feedback data using words from page paths or from messages.
 

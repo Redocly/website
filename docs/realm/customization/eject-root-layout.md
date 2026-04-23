@@ -1,25 +1,43 @@
+---
+products:
+  - Revel
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Add custom React providers to the Root Layout
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 This topic explains how to add your own React providers to the `RootLayout`.
 This is useful if you want to add a custom context provider to your app, for example, to provide a theme, query client, or other providers.
 
 ## Eject the `RootLayout`
 
-### Eject the `RootLayout` locally
+{% tabs %}
 
-To eject the `RootLayout` run the following command:
+  {% tab label="Reunite" %}
+  To eject the `RootLayout` in Reunite:
 
-```bash
-npx @redocly/cli eject component 'layouts/RootLayout.tsx'
-```
+  1. in the `Theme components` panel, navigate to the `layouts` folder.
+  1. Click the eject icon next to the `RootLayout.tsx`.
 
-<!-- This is not available yet for everyone.
+  {% /tab %}
 
-### Eject the `RootLayout` in Reunite
+  {% tab label="CLI" %}
 
-In Reunite, you can eject the `RootLayout` by using the new beta `Theme components` panel.
-Navigate to the `layouts` folder and select eject icon next to the `RootLayout.tsx`.
--->
+  To eject the `RootLayout` locally:
+
+    - Run the following command:
+
+  ```bash
+  npx @redocly/cli eject component 'layouts/RootLayout.tsx'
+  ```
+  {% /tab %}
+
+{% /tabs %}
 
 ## Edit the ejected component
 

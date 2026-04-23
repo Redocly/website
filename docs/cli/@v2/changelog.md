@@ -7,6 +7,240 @@ toc:
 
 <!-- do-not-remove -->
 
+## 2.29.2 (2026-04-23)
+
+### Patch Changes
+
+- Resolved `GHSA-xq3m-2v4x-88gg` vulnerabilitiy by updating dependency versions.
+- Updated @redocly/openapi-core to v2.29.2.
+
+## 2.29.1 (2026-04-22)
+
+### Patch Changes
+
+- Made Respect's JSONPath criteria compliant with RFC 9535.
+  **Warning:** This update may affect existing workflows. Please review your usage for compatibility.
+- Fixed an issue where discriminator's `mapping` values written as bare local file names were not resolved during build.
+- Updated @redocly/openapi-core to v2.29.1.
+
+## 2.29.0 (2026-04-20)
+
+### Minor Changes
+
+- Added new `score` command that analyzes OpenAPI 3.x descriptions and produces an AI Agent Readiness score (0-100).
+  Reports normalized subscores, raw per-operation metrics, and top hotspot operations with human-readable explanations. Supports `--format=stylish` (default) and `--format=json` output.
+
+### Patch Changes
+
+- Improved the stability of the `push` command.
+- Updated @redocly/openapi-core to v2.29.0.
+
+## 2.28.1 (2026-04-16)
+
+### Patch Changes
+
+- Ordered top-level keys in AsyncAPI documents during bundling for improved consistency and readability.
+- Updated @redocly/openapi-core to v2.28.1.
+
+## 2.28.0 (2026-04-15)
+
+### Minor Changes
+
+- Moved the `remove-unused-components` decorator to the post-bundle phase so that components that become unused only after `$ref` resolution are correctly removed.
+
+### Patch Changes
+
+- Fixed an issue where the discriminator's `defaultMapping` property was not resolved when bundling.
+- Updated @redocly/openapi-core to v2.28.0.
+
+## 2.27.1 (2026-04-14)
+
+### Patch Changes
+
+- Fixed an issue where `--component-renaming-conflicts-severity` ignored conflicts when different files had components with the same name but different content.
+
+  **Warning:** Autogenrated component names and `$ref` paths in bundled documents may differ from older releases.
+
+- Updated @redocly/openapi-core to v2.27.1.
+
+## 2.27.0 (2026-04-14)
+
+### Minor Changes
+
+- Added support for `junit` output in the `scorecard-classic` command.
+- Changed `lint` behavior with the `--generate-ignore-file` option.
+  Now `lint` updates only the entries related to the file being linted.
+  Other files' entries are unchanged.
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.27.0.
+
+## 2.26.0 (2026-04-08)
+
+### Minor Changes
+
+- Added support for AsyncAPI v2 and v3 in the split command.
+- Added `excludedPaths` option to the `no-http-verbs-in-paths` rule, allowing specific paths to be excluded from evaluation.
+
+### Patch Changes
+
+- Fixed the `no-required-schema-properties-undefined` rule to report when a required property is not defined in every `oneOf`/`anyOf` branch.
+- Updated @redocly/openapi-core to v2.26.0.
+
+## 2.25.4 (2026-04-02)
+
+### Patch Changes
+
+- Updated handlebars to v4.7.9.
+- Updated @redocly/openapi-core to v2.25.4.
+
+## 2.25.3 (2026-03-30)
+
+### Patch Changes
+
+- Fixed multiple issues in the `spec-discriminator-defaultMapping` rule that could cause crashes or incorrect validation results.
+  The rule now correctly resolves existing schema names, traverses composite schemas (`allOf`, `anyOf`, `oneOf`) to find required properties, treats `defaultMapping` values as `$ref`s to schemas, resolves `$ref`s correctly across files, and handles cyclic schema dependencies.
+- Updated @redocly/respect-core to v2.25.3.
+
+## 2.25.2 (2026-03-27)
+
+### Patch Changes
+
+- Updated `picomatch` dependency to `^4.0.4`.
+- Updated @redocly/openapi-core to v2.25.2.
+
+## 2.25.1 (2026-03-24)
+
+### Patch Changes
+
+- Fixed an issue where a message about a missing configuration was shown even though the `--extends` option was provided.
+- Updated @redocly/openapi-core to v2.25.1.
+
+## 2.25.0 (2026-03-24)
+
+### Minor Changes
+
+- Added `no-mixed-number-range-constraints` rule for OpenAPI `3.1+`, as well as for AsyncAPI and Arazzo.
+  This rule warns when schemas use both `maximum` and `exclusiveMaximum` or both `minimum` and `exclusiveMinimum` keywords.
+
+### Patch Changes
+
+- Fixed an issue where invalid discriminator mapping values could cause linting to fail.
+- Resolved high severity audit vulnerabilities by updating dependency versions.
+- Updated @redocly/openapi-core to v2.25.0.
+
+## 2.24.1 (2026-03-20)
+
+### Patch Changes
+
+- Downgraded `undici` to resolve an issue where `formData` was being submitted empty.
+- Updated @redocly/openapi-core to v2.24.1.
+
+## 2.24.0 (2026-03-18)
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.24.0.
+
+## 2.23.0 (2026-03-18)
+
+### Minor Changes
+
+- Added support of `targets` property in `scorecardClassic`.
+  Use this property to override `scorecardClassic` rules for a specific API.
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.23.0.
+
+## 2.22.1 (2026-03-16)
+
+### Patch Changes
+
+- Updated `undici` to the `6.24.1` version to ensure improved performance, security, and compatibility.
+- Updated @redocly/openapi-core to v2.22.1.
+
+## 2.22.0 (2026-03-16)
+
+### Minor Changes
+
+- Added support of `checkstyle` format for `scorecard-classic` command.
+
+### Patch Changes
+
+- Extended the `nonEmpty` assertion to support arrays.
+  An empty array is now treated as empty during linting.
+- Updated @redocly/openapi-core to v2.22.0.
+
+## 2.21.1 (2026-03-12)
+
+### Patch Changes
+
+- Restricted scorecard-classic project URL to the `.redocly.com` domain only.
+- Fixed an issue where `join --prefix-components-with-info-prop` would incorrectly rewrite discriminator mapping refs.
+  This issue occurred when schema names contained the same substring as the prefix.
+- Updated @redocly/openapi-core to v2.21.1.
+
+## 2.21.0 (2026-03-11)
+
+### Minor Changes
+
+- Added a new option to the `filter-in` decorator, allowing to filter through specific target nodes (`PathItem` or `Operation`).
+- Added a new option to the `filter-out` decorator, allowing to filter through specific target nodes (`PathItem` or `Operation`).
+- Added support for the `NO_PROXY` environment variable.
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.21.0.
+
+## 2.20.5 (2026-03-11)
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.20.5.
+
+## 2.20.4 (2026-03-04)
+
+### Patch Changes
+
+- Improved error messaging when a path parameter referenced via `$ref` is not used in the path.
+- Updated @redocly/openapi-core to v2.20.4.
+
+## 2.20.3 (2026-03-03)
+
+### Patch Changes
+
+- Updated @redocly/respect-core to v2.20.3.
+
+## 2.20.2 (2026-03-02)
+
+### Patch Changes
+
+- Add support for data: URLs (RFC 2397) in references.
+  The resolver now handles inline base64-encoded and URL-encoded data in $ref fields, allowing schemas and other content to be embedded directly as data URLs.
+- Updated @redocly/openapi-core to v2.20.2.
+
+## 2.20.1 (2026-03-02)
+
+### Patch Changes
+
+- Updated `@redocly/ajv` to `v8.18.0`
+- Updated @redocly/respect-core to v2.20.1.
+
+## 2.20.0 (2026-02-27)
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.20.0.
+
+## 2.19.2 (2026-02-24)
+
+### Patch Changes
+
+- Fixed an issue where `scorecardClassic` configurations were not resolved.
+- Updated @redocly/openapi-core to v2.19.2.
+
 ## 2.19.1 (2026-02-19)
 
 ### Patch Changes
@@ -436,7 +670,8 @@ toc:
 
 - Fixed an issue where the root config was not properly merged with the `apis` config.
 - Resolved an issue that caused configuration parsing to fail when the config value was set to `null`.
-- Improved join command server handling for specifications with differing servers.
+- Improved `join` command server handling for specifications with differing servers.
+  **Warning**: this change may break workflows that relied on root-level server inheritance.
 - Updated @redocly/respect-core to v2.0.5.
 
 ## 2.0.4 (2025-08-12)

@@ -1,4 +1,15 @@
+---
+products:
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Configure classic scorecard
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 {% admonition type="warning" %}
 The `scorecard` property is deprecated.

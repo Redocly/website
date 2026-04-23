@@ -1,4 +1,16 @@
+---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Connect MCP tag
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `connect-mcp` tag renders a button that allows users to connect to the MCP (Model Context Protocol) server through various MCP clients.
 When clicked or hovered, it displays a dropdown menu with options to connect via Cursor, VS Code, or copy the MCP configuration.

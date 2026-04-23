@@ -1,6 +1,16 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Enterprise
+  - Enterprise+
+---
 # Remote content
 
-{% configOptionRequirements plans=["Enterprise", "Enterprise+"] products=["Reunite"] /%}
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Remote content is a feature that copies content from other file sources into your Redocly project.
 Remote content enables single-source content management by allowing you to maintain content in its original location while automatically syncing it to your documentation.

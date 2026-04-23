@@ -265,7 +265,7 @@ rbac:
       Developers: read
 ```
 
-See [rbac](./rbac.md) reference documentation for more options and examples.
+See [rbac](./access/rbac.md) reference documentation for more options and examples.
 
 {% /admonition %}
 

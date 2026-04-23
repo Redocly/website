@@ -13,8 +13,8 @@
   "author": "team@redocly.com",
   "license": "UNLICENSED",
   "dependencies": {
-    "@redocly/marketing-pages": "0.1.47",
-    "@redocly/realm": "0.130.3",
+    "@redocly/marketing-pages": "0.1.54",
+    "@redocly/realm": "0.132.0-next.11",
     "buffer": "^6.0.3",
     "highlight-words-core": "^1.2.3",
     "path": "^0.12.7",
@@ -31,9 +31,7 @@
     "gitignore": ".prettierignore"
   },
   "overrides": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "axios": "1.12.2",
-    "@redocly/openapi-docs": "3.17.0-next.2"
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   }
 }

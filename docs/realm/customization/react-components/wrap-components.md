@@ -1,4 +1,15 @@
+---
+products:
+  - Revel
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Customize theme components
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 To customize an existing theme component, you can override the component by mirroring the original import path.
 Overriding a component ensures that the updated version is used consistently across the entire site.

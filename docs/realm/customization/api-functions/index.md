@@ -25,8 +25,7 @@ Use API functions to:
 - Integrate a payment gateway: securely process payments by integrating with external payment services, keeping API keys and sensitive data server-side.
 - Interact with databases: connect to databases like PostgreSQL or MongoDB to fetch, update, and serve data within your project.
 
-## Reference documentation
+## Resources
 
-To reference the documentation for API functions, see:
 - [API functions reference](./api-functions-reference.md) for API functions helper methods and properties.
-- [Create API functions](./create-api-functions.md) to learn how to build API functions.
+- [Render weather data in a Markdoc tag](./create-api-functions.md) - Build an API function and a custom Markdoc tag that displays live weather data.

@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Customization
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Extend and customize your Redocly project with React components, API functions, custom styling, and advanced integrations.
 

@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Navigation elements
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 You can customize or hide multiple navigation elements for your projects.
 These navigation elements include menus, both automatic and configured, and buttons.

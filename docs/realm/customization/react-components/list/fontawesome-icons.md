@@ -1,4 +1,15 @@
+---
+products:
+  - Revel
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Font Awesome Icons
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The Font Awesome Icons component provides access to the complete Font Awesome icon library within your React components.
 It uses CDN-based loading for optimal performance and supports all Font Awesome icon styles.

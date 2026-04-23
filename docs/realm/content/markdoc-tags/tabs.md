@@ -1,4 +1,16 @@
+---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Tab and tabs tag
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `tabs` tag places content into a series of tabs, providing a structure for you to organize multiple pieces of content within a confined space.
 Users switch between tabs to access different sections of information within the same interface.

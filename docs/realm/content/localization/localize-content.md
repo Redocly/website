@@ -1,4 +1,15 @@
+---
+products:
+  - Revel
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Add translated content
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 After preparing the structure of your project for localization, add the translated content files to your locale folders.
 

@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Connect a Bitbucket Cloud repo
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 If your project files are stored in a remote repository on Bitbucket Cloud, you can connect that repository, so you can access, edit, and publish those files in Reunite.
 

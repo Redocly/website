@@ -1,4 +1,15 @@
+---
+products:
+  - Redoc
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # AsyncAPI extension: `x-tagGroups`
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Redoc uses tags as navigation groupings, so channels with the same tag are shown in the same section of the API reference documentation.
 The `x-tagGroups` feature adds an additional layer of navigation above the tags, allowing more granularity.

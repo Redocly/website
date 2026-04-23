@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Manage people
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The **People** page is where you can manage users.
 If you are logged in to Reunite and have an [Owner organization role](../../access/roles.md#organization-roles), you can view and manage users from the **People** page in the following ways:
@@ -146,4 +159,4 @@ To link duplicate users:
 
 - **[Add an identity provider](./sso/add-idp.md)** - Set up identity providers to import and manage users in bulk for streamlined user onboarding
 - **[Teams and users](./teams.md)** - Learn about assigning users to teams and managing team-based access control within your organization
-- **[Single sign-on (SSO) configuration](../../config/sso.md)** - Complete configuration reference and examples for implementing SSO in your projects
+- **[Single sign-on (SSO) configuration](../../config/access/sso.md)** - Complete configuration reference and examples for implementing SSO in your projects

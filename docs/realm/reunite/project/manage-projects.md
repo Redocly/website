@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Manage projects
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 In Reunite, [projects](./projects.md) are the place where you create, test, and deploy API documentation websites.
 
@@ -10,13 +23,13 @@ If you are logged in to Reunite and have an [Owner organization role](../../acce
 ## Create a project
 
 1. In Reunite's top-left corner, click your organization's icon, then on the bottom of the list of projects, click **Create new project**.
-2. In the **Create project** modal, select **Choose template** for a template option.\
+1. In the **Create project** modal, select **Choose template** for a template option.\
     You can preview a template by clicking the eye icon on a template card.
-3. Enter the name for your project.
+1. Enter the name for your project.
    Reunite automatically fills the **Project domain** field and checks if the domain name is already in use.
-4. (Optional) Edit the project domain to your preferences.
+1. (Optional) Edit the project domain to your preferences.
    The **Project domain** must be unique within your organization.
-5. Click **Create project**.
+1. Click **Create project**.
 
 Reunite creates your project and takes you to the project's **Editor** page.
 
@@ -40,17 +53,25 @@ You can switch between projects in a few different contexts:
 - **Organizations and projects menu:**
 
   1. In the top-left corner of Reunite, click your organizations's icon.
-  2. From the menu, click one of the project names.
+  1. From the menu, click one of the project names.
 
 - **Organization Overview page:**
 
   1. In your organization's **Overview** page find the tile with your project's name.
-  2. Click the arrow button.
+  1. Click the arrow button.
 
 - **Navigation bar:**
 
   1. In a project's navigation bar, click the project name.
-  2. From the menu, select one of the project names.
+  1. From the menu, select one of the project names.
+
+## View and edit project details
+
+On the **General settings** page you can:
+
+- View and copy the **Project ID**.
+- Edit the **Project name**.
+- Edit the **Project domain**.
 
 ## Delete a project
 
@@ -64,16 +85,16 @@ If you have an external repository connected to Reunite, data on that repository
 {% /admonition %}
 
 1. In Reunite, switch to the project you want to delete.
-2. Select **Settings** > **General** in the navigation menu on the left side of the page.
-3. On the **General Settings** page, click **Delete**.
-4. Click **Delete** to confirm the action.
-5. Enter the project domain; this step ensures that you delete the correct project.
+1. Select **Settings** > **General** in the navigation menu on the left side of the page.
+1. On the **General Settings** page, click **Delete**.
+1. Click **Delete** to confirm the action.
+1. Enter the project domain; this step ensures that you delete the correct project.
    Then click the **Delete** button to confirm deletion.
 
 Reunite deletes the project and returns you to your organization's dashboard.
 
 ## Resources
 
-- **[Configure RBAC](../../config/rbac.md)** - Set up role-based access control for granular project and content access permissions
+- **[Configure RBAC](../../config/access/rbac.md)** - Set up role-based access control for granular project and content access permissions
 - **[Connect a Git provider](./connect-git/connect-git-provider.md)** - Integrate your projects with Git repositories from various providers for version control and collaboration
 - **[Roles and permissions](../../access/roles.md)** - Understand user roles and permission levels available for project access control and team collaboration

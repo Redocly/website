@@ -1,4 +1,16 @@
+---
+products:
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Replay OpenAPI tag
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `replay-openapi` tag renders the Replay console, which allows users to send API calls to a mock server or live endpoints.
 It requires an OpenAPI description.

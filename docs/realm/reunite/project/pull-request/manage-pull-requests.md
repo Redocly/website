@@ -1,4 +1,17 @@
+---
+products:
+  - Redoc
+  - Revel
+  - Reef
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Manage pull requests in Reunite
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The **Pull requests** page in Reunite includes a list of all open and closed pull requests.
 From this page you can search and filter and select a specific pull request.

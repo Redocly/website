@@ -1,4 +1,15 @@
+---
+products:
+  - Revel
+  - Realm
+plans:
+  - Pro
+  - Enterprise
+  - Enterprise+
+---
 # Display the current locale
+
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 You can dynamically display the currently used locale on Markdown and React pages.
 The following steps use the first-level heading as an example, but you can display the locale anywhere on the page.
