@@ -6,7 +6,7 @@ seo:
   title: Global vs independent API versioning strategy | Redocly
   description: Learn the trade-offs between global API versioning and independent endpoint versioning, including coherence, agility, and hybrid approaches for complex systems.
 author: adam-altman
-publishedDate: 2026-02-22
+publishedDate: 2026-04-24
 categories:
   - api-versioning
   - api-lifecycle
