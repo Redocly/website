@@ -46,7 +46,7 @@ apis:
           type: any
           property: description
         assertions:
-          notPattern: /(Redocly)/i
+          notPattern: /(?<![./])Redocly/i
         severity: off
       rule/operation-summary:
         subject:
@@ -92,7 +92,7 @@ apis:
           type: any
           property: description
         assertions:
-          notPattern: /(Redocly)/i
+          notPattern: /(?<![./])Redocly/i
         severity: off
   mcp-server:
     root: ./customization/mcp-server/openapi.yaml
@@ -163,7 +163,7 @@ rules:
       type: any
       property: description
     assertions:
-      notPattern: /(Redocly)/i
+      notPattern: /(?<![./])Redocly/i
   rule/description-punctuation:
     subject:
       type: any
