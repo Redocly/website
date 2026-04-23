@@ -27,8 +27,6 @@
         - Fixed rendering of non-Latin characters by enforcing UTF-8 encoding.
       patch:
         - Fixed security vulnerability `GHSA-39q2-94rc-95cp` by upgrading `dompurify` to version `3.4.0`.
-        - Updated `@redocly/openapi-core` to version `2.29.0`.
-        - Updated `@redocly/openapi-core` to version `2.27.1`.
         - Fixed security vulnerability `CVE-2026-39356` by upgrading `drizzle-orm` to version `0.45.2`.
         - Fixed an issue where the tooltips in API docs and Replay might partially render outside the viewport.
         - Fixed multiple moderate security vulnerabilities in `hono` dependency by upgrading it to version `4.12.14`.
@@ -6050,8 +6048,6 @@
         - Fixed rendering of non-Latin characters by enforcing UTF-8 encoding.
       patch:
         - Fixed security vulnerability `GHSA-39q2-94rc-95cp` by upgrading `dompurify` to version `3.4.0`.
-        - Updated `@redocly/openapi-core` to version `2.29.0`.
-        - Updated `@redocly/openapi-core` to version `2.27.1`.
         - Fixed security vulnerability `CVE-2026-39356` by upgrading `drizzle-orm` to version `0.45.2`.
         - Fixed an issue where the tooltips in API docs and Replay might partially render outside the viewport.
         - Fixed multiple moderate security vulnerabilities in `hono` dependency by upgrading it to version `4.12.14`.
@@ -11171,8 +11167,6 @@
         - Fixed rendering of non-Latin characters by enforcing UTF-8 encoding.
       patch:
         - Fixed security vulnerability `GHSA-39q2-94rc-95cp` by upgrading `dompurify` to version `3.4.0`.
-        - Updated `@redocly/openapi-core` to version `2.29.0`.
-        - Updated `@redocly/openapi-core` to version `2.27.1`.
         - Fixed security vulnerability `CVE-2026-39356` by upgrading `drizzle-orm` to version `0.45.2`.
         - Fixed an issue where the tooltips in API docs and Replay might partially render outside the viewport.
         - Fixed multiple moderate security vulnerabilities in `hono` dependency by upgrading it to version `4.12.14`.
@@ -16283,8 +16277,6 @@
         - Fixed rendering of non-Latin characters by enforcing UTF-8 encoding.
       patch:
         - Fixed security vulnerability `GHSA-39q2-94rc-95cp` by upgrading `dompurify` to version `3.4.0`.
-        - Updated `@redocly/openapi-core` to version `2.29.0`.
-        - Updated `@redocly/openapi-core` to version `2.27.1`.
         - Fixed security vulnerability `CVE-2026-39356` by upgrading `drizzle-orm` to version `0.45.2`.
         - Fixed an issue where the tooltips in API docs and Replay might partially render outside the viewport.
         - Fixed multiple moderate security vulnerabilities in `hono` dependency by upgrading it to version `4.12.14`.
@@ -24287,8 +24279,6 @@
       minor: []
       patch:
         - Fixed security vulnerability `GHSA-39q2-94rc-95cp` by upgrading `dompurify` to version `3.4.0`.
-        - Updated `@redocly/openapi-core` to version `2.29.0`.
-        - Updated `@redocly/openapi-core` to version `2.27.1`.
         - Enter prerelease mode.
     dependencies:
       '@redocly/replay': 0.24.0-next.0
@@ -28928,8 +28918,6 @@
     changes:
       minor: []
       patch:
-        - Updated `@redocly/openapi-core` to version `2.29.0`.
-        - Updated `@redocly/openapi-core` to version `2.27.1`.
         - Enter prerelease mode.
     dependencies: {}
   0.6.0:
@@ -37569,7 +37557,7 @@
       minor: []
       patch:
         - Fixed security vulnerability `CVE-2026-41650` by upgrading `fast-xml-parser` to version `5.7.1`.
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.29.1`.
+        - Updated `@redocly/openapi-core` to version `2.29.1`.
         - Fixed an issue in Replay where the request body with invalid JSON input grew after restarts, leading to decreased performance.
     dependencies:
       '@redocly/theme': 0.65.0-next.1
@@ -37578,8 +37566,6 @@
     changes:
       minor: []
       patch:
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.29.0`.
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.27.1`.
         - Fixed security vulnerability `CVE-2026-39356` by upgrading `drizzle-orm` to version `0.45.2`.
         - Enter prerelease mode.
     dependencies:
@@ -44726,8 +44712,6 @@ replay:
       minor:
         - Added persistent model selection to the Replay AI panel to retain the selected model across sessions.
       patch:
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.29.0`.
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.27.1`.
         - Fixed security vulnerability `CVE-2026-39356` by upgrading `drizzle-orm` to version `0.45.2`.
         - Enter prerelease mode.
         - >-
