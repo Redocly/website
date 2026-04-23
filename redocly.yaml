@@ -319,3 +319,7 @@ banner:
   - content: ✨ **Announcement banners are here!** Display important updates and information at the top of your pages. [Learn more](/docs/realm/config/banner)
     target: '**'
     dismissible: true
+
+# Custom plugin registration
+plugins:
+  - '@redocly/marketing-pages/mcp-tools/plugin.js'

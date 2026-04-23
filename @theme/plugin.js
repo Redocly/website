@@ -58,7 +58,7 @@ export default function themePlugin() {
         templateId: blogTemplateId,
         hasClientRoutes: true,
       });
-      
+
       const metadataContentRecord = await context.cache.load(BLOG_METADATA_PATH, 'yaml');
       const categories = metadataContentRecord.data.categories || [];
 
