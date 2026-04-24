@@ -13,7 +13,7 @@
   "author": "team@redocly.com",
   "license": "UNLICENSED",
   "dependencies": {
-    "@redocly/marketing-pages": "0.1.54",
+    "@redocly/marketing-pages": "^0.1.55",
     "@redocly/realm": "^0.132.0",
     "buffer": "^6.0.3",
     "highlight-words-core": "^1.2.3",
