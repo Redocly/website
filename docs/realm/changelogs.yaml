@@ -44474,8 +44474,8 @@ reunite:
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.29.1`.
     dependencies: {}
-  v2026-04-24.2:
-    timestamp: 1777045572000
+  v2026-04-24.3:
+    timestamp: 1777050195000
     changes:
       minor:
         - >-
