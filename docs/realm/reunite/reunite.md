@@ -25,11 +25,12 @@ This article is about using the cloud platform.
 
 Reunite includes an **Editor** page where you can [add and delete files](./project/use-editor.md#add-files), edit content within files, and [view live previews](./project/use-webview.md) of your changes as you make them.
 
-The editor includes the following panes that can be minimized:
+The editor includes the following areas:
 
 - A file tree pane where you can view all files included in your project, even remote and static files.
-- An editor pane where you can edit content using Markdown and Markdoc syntax.
-- A Webview live preview pane where you can view your formatting updates as you add them.
+    You can collapse this pane to give the editor more space.
+- An editor pane where files open as tabs. You can split tabs into groups and rearrange them to fit your workflow.
+- Utility tabs that open alongside your file tabs in the editor dock, including the Webview live preview for previewing your formatting updates as you add them.
 
 The changes you make in the editor are introduced to your published project using a Git-based workflow.
 Git is a version control system for tracking and managing changes that is integrated into Reunite.

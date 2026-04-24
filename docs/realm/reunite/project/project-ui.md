@@ -62,13 +62,12 @@ Use the organization and projects menu to:
 ## Editor
 
 The **Editor** page is the part of Reunite's project workspace where you add, edit, and manage the content of your project.
-The page has three parts:
+The page has two main areas:
 
 - the file tree pane
-- the editing pane
-- the webview pane
+- the editor pane, which contains both file tabs and utility tabs (Webview, Documentation)
 
-To best suit your experience, you can adjust the size of the panes or collapse the file tree or the webview pane.
+To best suit your experience, you can resize the file tree pane, collapse it, and reorganize the editor pane by [splitting and rearranging tabs](#manage-editor-tabs).
 
 ### File tree pane
 
@@ -136,13 +135,36 @@ In this tab you can:
 - (3) [revert changes to selected files](./use-editor.md#revert-changes)
 - (4) [view commit history relative to the main branch of the project](./use-editor.md#view-commit-history)
 
-## Webview pane
+## Editor pane
 
-Reunite editor's webview pane contains two tabs.
-The **Webview** live preview tab displays the changes to your project in real time.
-The **Docs** tab displays Realm documentation.
+The editor contains the tabs that display the content you are working with.
+Every open file opens as a tab, and utility views such as the Webview live preview or Redocly documentation open as tabs in the same pane.
+You can rearrange, split, and close any of these tabs to build the layout that best fits your workflow.
 
-If you close a tab, you can reopen it by clicking the plus icon on the right side of the tabs.
+### File tabs
+
+File tabs display the content of files from your project.
+When you single-click a file in the file tree, the file opens in a preview tab with its name shown in italics.
+If you single-click another file, the new file replaces the preview tab.
+To keep a file open, double-click its tab or start editing the file.
+This converts the preview tab into a regular tab.
+
+### Utility tabs
+
+You can open two utility tabs in the editor dock:
+
+- **Webview** - displays a live preview of the opened Markdown or API description file.
+  See [Use the Webview](./use-webview.md) for details.
+- **Documentation** - displays Realm documentation with full capabilities of a Redocly project.
+
+To open a utility tab, either:
+
+- Click the **More actions** icon on the right side of the tabs header and select **Open Webview** or **Open Documentation**.
+- Use the keyboard shortcut for the tab you want.
+  See the [keyboard shortcuts reference](./keyboard-shortcuts.md) for the full list.
+- When a tab group is empty, click one of the **Dev tools** shortcuts shown in the empty pane.
+
+If a utility tab is already open, triggering the open action activates the existing tab instead of creating a duplicate.
 
 ### Webview live preview tab
 
@@ -183,6 +205,27 @@ In this tab you can:
 - (3) [change the color mode](https://redocly.com/docs/end-user/adjust-project#change-the-color-mode)
 - (4) open the displayed page in a new window or tab
 - (5) [interact with pages](https://redocly.com/docs/end-user/interact-with-pages)
+
+### Manage editor tabs
+
+Right-click any tab to open the tab context menu and choose one of the following actions:
+
+- **Close** - close the tab.
+- **Close others** - close every other tab in the same group.
+- **Close to the right** - close the tabs to the right of the current tab in the same group.
+- **Close unchanged** - close every file tab in the group that has no uncommitted changes.
+- **Close all** - close every tab in the group.
+- **Copy path** - copy the file path of the tab to the clipboard (available for file tabs only).
+- **Split right**, **Split left**, **Split up**, **Split down** - move the tab into a new group positioned relative to the current group.
+
+You can also drag a tab by its header and drop it on the edges or center of another group to move it, or onto the middle to create a new group.
+
+The **More actions** icon on the right side of each tabs header provides group-level shortcuts to:
+
+- Close all or close unchanged tabs in that group.
+- Set default 2-pane editor layout.
+- Open the Webview or Documentation utility tab.
+- Toggle word wrap for the active editor tab (when a text file is active).
 
 ## Resources
 
