@@ -44489,7 +44489,6 @@ reunite:
       minor: []
       patch:
         - Updated `@redocly/openapi-core` to version `2.30.1`.
-        - Closing the last tab in a Reunite editor default files group now keeps the group in place.
         - Fixed an Editor issue where the Commit tab badge did not update after file edits.
     dependencies: {}
 replay:
