@@ -44483,6 +44483,14 @@ reunite:
           vertically, and resized.
       patch: []
     dependencies: {}
+  v2026-04-28.2:
+    timestamp: 1777377179000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.30.1`.
+        - Fixed an Editor issue where the Commit tab badge did not update after file edits.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
