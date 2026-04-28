@@ -44736,3 +44736,14 @@ replay:
           button, on narrow viewports. The content now wraps within the panel, preventing layout stretching.
     dependencies:
       '@redocly/theme': 0.65.0-next.0
+  0.18.2:
+    timestamp: 1777380232000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.29.1`.
+        - Fixed an issue in Replay where the request body with invalid JSON input grew after restarts, leading to decreased performance.
+        - Improved typing performance in request inputs.
+        - Further improved typing performance in request inputs.
+    dependencies:
+      '@redocly/theme': 0.65.0
