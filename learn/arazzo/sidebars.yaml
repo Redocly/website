@@ -10,4 +10,5 @@
 - page: ./documenting-multiple-apis-using-arazzo.md
 - group: Respect practical example series
   items:
-    - page: ./arazzo-practical-example-series-01.md
+    - page: ./practical-example-series/api-contract-testing-01.md
+    - page: ./practical-example-series/oauth2-authorization-02.md
