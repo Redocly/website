@@ -1,27 +1,33 @@
-This article covers the following key topics:
+This article shows how to use Respect, powered by Arazzo workflows, for API contract testing. You will learn how to describe an API workflow, execute it with Redocly CLI, and use the results to find mismatches between an OpenAPI description and the real API behavior.
+
+You will cover the following topics:
 
 - Practical applications of Arazzo:
-  - Automating repetitive API actions.
-  - Covering APIs with integration tests for CI/CD routines.
+  - Automating repetitive API workflows.
+  - Adding API contract tests to CI/CD routines.
   - Keeping API documentation synchronized with actual API behavior.
-  - Sharing described workflows with team members.
-- Using the open-source tool [@redocly/cli](https://www.npmjs.com/package/@redocly/cli), an early Arazzo adopter, to execute workflows.
+  - Sharing described workflows across teams.
+- Using the open-source [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) `respect` command to execute Arazzo workflows.
 
-## Respect practical example series [01]
+# Respect Practical Example Series [01]
 
-### The Problem
+## API Contract Testing with Respect
 
-Many QA engineers test APIs using the same language in which the APIs are implemented. This approach can require significant effort to maintain, especially in complex systems with multiple products written in different languages.
+### The problem
 
-Another common challenge relates to team collaboration when working with multiple APIs. Documentation often becomes outdated quickly when developers apply changes to APIs but forget to synchronize the documentation. A systematic way to track these discrepancies is needed.
+Many teams test APIs by writing test code in the same language as the API implementation. This can work well for a single service, but it becomes harder to maintain in systems with multiple products, repositories, and programming languages.
+
+Another common challenge is keeping API documentation aligned with actual API behavior. Developers may update an endpoint but forget to update its OpenAPI description, or the documentation may change without the implementation following it. Over time, these small differences make it harder for QA engineers, developers, and technical writers to trust the API contract.
+
+Respect helps address this problem by executing Arazzo workflows against a running API and validating the responses against the connected OpenAPI description. This makes API contract testing more declarative and easier to share across teams.
 
 ### Prerequisites
 
-To follow the examples in this article, the following setup is required:
+To follow the examples in this article, you need:
 
 - Familiarity with [Arazzo](./what-is-arazzo.md).
-- A described API. The examples use a modified version of the Redocly Cafe API.
-  <b>IMPORTANT: the API are going to contain some discrepancies added with the demonstration purposes.</b>
+- An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API.
+  <b>IMPORTANT: the API description intentionally contains discrepancies for demonstration purposes.</b>
 
 ```yaml
 openapi: 3.1.0
@@ -73,130 +79,7 @@ paths:
           $ref: '#/components/responses/BadRequest'
         '500':
           $ref: '#/components/responses/InternalServerError'
-    post:
-      tags:
-        - Products
-      summary: Create menu item
-      description: Create a new menu item.
-      operationId: createMenuItem
-      security:
-        - OAuth2:
-            - menu:write
-      requestBody:
-        required: true
-        content:
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/MenuItem'
-      responses:
-        '201':
-          description: Menu item created successfully.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MenuItem'
-              examples:
-                MenuItemResponse:
-                  value:
-                    id: prd_01khr487f7qm7p44xn427m43vb
-                    object: menuItem
-                    name: coffee
-                    price: 4000
-                    category: beverage
-                    createdAt: '2026-02-18T10:20:38.228Z'
-                    updatedAt: '2026-02-18T10:20:38.228Z'
-                    volume: 600
-                    containsCaffeine: false
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '409':
-          $ref: '#/components/responses/Conflict'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
-  /menu/{menuItemId}:
-    parameters:
-      - $ref: '#/components/parameters/MenuItemId'
-    delete:
-      tags:
-        - Products
-      summary: Delete a menu item
-      description: Delete an existing menu item.
-      operationId: deleteMenuItem
-      security:
-        - OAuth2:
-            - menu:write
-      responses:
-        '204':
-          description: Menu item deleted successfully.
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
-  /oauth2/register:
-    post:
-      tags:
-        - Authorization
-      summary: Create OAuth2 client
-      description: |
-        Register a new OAuth2 client for dynamic client registration.  This endpoint implements the Dynamic Client Registration Protocol (RFC 7591), using camelCase field names instead of the RFC's snake_case convention (e.g., `redirectUris` instead of `redirect_uris`, `grantTypes` instead of `grant_types`). The `name` field is required. Other fields are optional. If not provided:
-        - `redirectUris` defaults to an empty array. Note: When using the `authorization_code` grant type, 
-          `redirectUris` must be provided (per RFC 7591 Section 2).
-        - `scopes` defaults to all available scopes (menu:read, menu:write) - `grantTypes` defaults to both supported grant types (authorization_code, client_credentials)
-        Returns the registered client information per RFC 7591, including:
-        - `clientId` and `clientSecret` (must be stored securely) - `clientIdIssuedAt` and `clientSecretExpiresAt` timestamps - All registered client metadata (name, redirectUris, scopes, grantTypes)
-      operationId: registerOAuth2Client
-      security: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RegisterClientObject'
-      responses:
-        '201':
-          description: OAuth2 client registered successfully.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/OAuth2Client'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
 components:
-  securitySchemes:
-    OAuth2:
-      type: oauth2
-      description: OAuth2 authorization for API access.
-      flows:
-        authorizationCode:
-          authorizationUrl: https://cafe.redocly.com/v1/oauth2/authorize
-          tokenUrl: https://cafe.redocly.com/v1/oauth2/token
-          scopes:
-            menu:read: Read access to menu items and images
-            menu:write: Write access to menu items (create, delete)
-        clientCredentials:
-          tokenUrl: https://cafe.redocly.com/v1/oauth2/token
-          scopes:
-            menu:read: Read access to menu items and images
-            menu:write: Write access to menu items (create, delete)
-    ApiKey:
-      type: apiKey
-      name: X-API-Key
-      in: header
-      description: API key for internal operations.
   parameters:
     After:
       name: after
@@ -273,15 +156,6 @@ components:
         maximum: 100
         default: 10
       example: 10
-    MenuItemId:
-      name: menuItemId
-      in: path
-      description: ID of the menu item to retrieve.
-      required: true
-      schema:
-        type: string
-        pattern: ^prd_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-      example: prd_01h1s5z6vf2mm1mz3hevnn9va7
   schemas:
     Page:
       type: object
@@ -422,24 +296,22 @@ components:
       required:
         - category
     MenuItemList:
-      type: array
-      items:
-        type: object
-        properties:
-          object:
-            type: string
-            const: list
-            description: Entity name.
-          page:
-            $ref: '#/components/schemas/Page'
+      type: object
+      properties:
+        object:
+          type: string
+          const: list
+          description: Entity name.
+        page:
+          $ref: '#/components/schemas/Page'
+        items:
+          type: array
           items:
-            type: array
-            items:
-              $ref: '#/components/schemas/MenuItem'
-        required:
-          - object
-          - page
-          - items
+            $ref: '#/components/schemas/MenuItem'
+      required:
+        - object
+        - page
+        - items
     Error:
       type: object
       properties:
@@ -473,93 +345,6 @@ components:
         - type
         - title
         - status
-    RegisterClientObject:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Client name.
-        redirectUris:
-          type: array
-          items:
-            type: string
-            format: uri
-          description: List of redirect URIs (optional, defaults to empty array).
-        scopes:
-          type: array
-          items:
-            type: string
-            enum:
-              - menu:read
-              - menu:write
-          description: List of scopes.
-        grantTypes:
-          type: array
-          items:
-            type: string
-            enum:
-              - authorization_code
-              - client_credentials
-          description: List of grant types.
-      required:
-        - name
-    OAuth2Client:
-      type: object
-      description: OAuth2 client registration response. Per RFC 7591, includes the client identifier, secret, timestamps, and all registered client metadata.
-      properties:
-        clientId:
-          type: string
-          description: Client identifier issued by the authorization server.
-        clientSecret:
-          type: string
-          description: Client secret issued by the authorization server.
-        clientIdIssuedAt:
-          type: integer
-          format: int64
-          description: Time when the client_id is issued, represented as seconds since epoch (RFC7591).
-        clientSecretExpiresAt:
-          type: integer
-          format: int64
-          description: Time at which the client_secret expires, represented as seconds since epoch. 0 indicates the secret does not expire (RFC 7591).
-        name:
-          type: string
-          description: Client name (registered metadata).
-        redirectUris:
-          type: array
-          items:
-            type: string
-            format: uri
-          description: List of redirect URIs (registered metadata).
-        registrationClientUri:
-          type: string
-          format: uri
-          description: URL of the client configuration endpoint for managing this client registration (RFC 7592).
-        registrationAccessToken:
-          type: string
-          description: Access token to be used at the client configuration endpoint for managing this client registration (RFC 7592).
-        scopes:
-          type: array
-          items:
-            type: string
-            enum:
-              - menu:read
-              - menu:write
-          description: List of scopes (registered metadata).
-        grantTypes:
-          type: array
-          items:
-            type: string
-            enum:
-              - authorization_code
-              - client_credentials
-          description: List of grant types (registered metadata).
-      required:
-        - clientId
-        - clientSecret
-        - clientIdIssuedAt
-        - clientSecretExpiresAt
-        - registrationClientUri
-        - registrationAccessToken
   responses:
     BadRequest:
       description: Bad request - invalid input parameters.
@@ -573,40 +358,17 @@ components:
         application/problem+json:
           schema:
             $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized - authorization required.
-      content:
-        application/problem+json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Forbidden:
-      description: Forbidden - insufficient permissions.
-      content:
-        application/problem+json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Conflict:
-      description: Conflict - entity already exists.
-      content:
-        application/problem+json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/problem+json:
-          schema:
-            $ref: '#/components/schemas/Error'
 ```
 
-### Create Arazzo description
+### Create an Arazzo description
 
-There are three approaches to creating an Arazzo description:
-- Read the [Arazzo specification](https://spec.openapis.org/arazzo/latest.html) and write it from scratch for full control.
-- Use the `npx @redocly/cli@latest generate-arazzo docs-data.yaml` CLI command as a starting point to understand the Arazzo structure and see how to describe all operations.
-- Use AI assistance to generate the Arazzo specification, ensuring to lint the output to catch any errors.
+There are several ways to create an Arazzo description:
 
-Regardless of the approach chosen, validate the Arazzo file using Redocly CLI:
+- Read the [Arazzo specification](https://spec.openapis.org/arazzo/latest.html) and write the file from scratch for full control.
+- Use the `npx @redocly/cli@latest generate-arazzo docs-data.yaml` command as a starting point. This helps you understand the Arazzo structure and see how operations can be described.
+- Use AI assistance to draft the Arazzo description, then lint the output to catch structural or syntax errors.
+
+Whichever approach you choose, validate the Arazzo file with Redocly CLI:
 ```bash
   npx @redocly/cli@latest lint redocly-cafe-api.arazzo.yaml
 ```
@@ -620,7 +382,7 @@ redocly-cafe-api.arazzo.yaml: validated in 6ms
 Woohoo! Your API description is valid. 🎉
 ```
 
-Lets review a simple example of how to get Menu Items list in workflow.
+The following simple workflow retrieves the menu items list.
 
 ```yaml
 arazzo: 1.0.1
@@ -640,13 +402,17 @@ workflows:
       - stepId: get-products
         operationId: $sourceDescriptions.redocly-cafe-api.listMenuItems
         description: This step gets all products.
+        parameters:
+          - in: query
+            name: limit
+            value: 1
         successCriteria:
           - condition: $statusCode == 200
 ```
 
 Key components:
 
-- SourceDescriptions define the connection to the OpenAPI description:
+- `sourceDescriptions` define the connection to the OpenAPI description.
 
 ``` yaml
 sourceDescriptions:
@@ -655,11 +421,11 @@ sourceDescriptions:
     url: redocly-cafe-api.yaml
 ```
 
-- Each Step has an operationId that creates the connection to the OpenAPI specification:
+- Each step uses an `operationId` to connect the workflow step to an operation in the OpenAPI description.
 ```yaml
 operationId: $sourceDescriptions.redocly-cafe-api.listMenuItems
 ```
-This step resolves the `listMenuItems` operation from the `redocly-cafe-api` sourceDescription, which connects to the `redocly-cafe-api.yaml` file:
+This step resolves the `listMenuItems` operation from the `redocly-cafe-api` source description, which points to the `redocly-cafe-api.yaml` file.
 
 ```yaml
 /menu:
@@ -689,9 +455,18 @@ This step resolves the `listMenuItems` operation from the `redocly-cafe-api` sou
         '500':
           $ref: '#/components/responses/InternalServerError'
 ```
-This connection also enables verification of the expected response type.
+This connection is important because Respect can use the OpenAPI description to verify the response status, content type, and schema.
 
-- Steps can include a successCriteria section to define expectations:
+- Steps can pass parameters to the operation. In this example, the `limit` query parameter restricts the response to one menu item.
+
+```yaml
+  parameters:
+    - in: query
+      name: limit
+      value: 1
+```
+
+- Steps can also include a `successCriteria` section to define workflow-specific expectations.
 ```yaml
 successCriteria:
   - condition: $statusCode == 200
@@ -699,113 +474,58 @@ successCriteria:
 
 ### Execute the workflow using Redocly CLI
 
-[@redocly/cli](https://www.npmjs.com/package/@redocly/cli) is an open-source tool that supports Arazzo specification execution with the `respect` command.
+[@redocly/cli](https://www.npmjs.com/package/@redocly/cli) is an open-source tool that can execute Arazzo descriptions with the `respect` command.
 
 ```bash
 npx @redocly/cli@latest respect redocly-cafe-api.arazzo.yaml
 ```
 
-The execution results display as follows:
+The execution result looks like this:
 
 ```bash
-  Running workflow redocly-cafe-api.arazzo.yaml / menu-items-workflow 
+    Running workflow redocly-cafe-api-se-01.arazzo.yaml / menu-items-workflow 
  
   ✗ GET /menu - step get-products 
 
-    Request URL: http://localhost:4096/menu
+    Request URL: http://localhost:4096/menu?limit=1
     Request Headers:
       accept: application/json, application/problem+json 
  
 
     Response status code: 200
-    Response time: 15 ms
+    Response time: 17 ms
     Response Headers:
       access-control-allow-credentials: true
       connection: keep-alive
-      content-length: 1649
+      content-length: 435
       content-type: application/json; charset=utf-8
-      date: Tue, 28 Apr 2026 15:12:05 GMT
-      etag: W/"671-VFaxfVSvRFB274psLk0mHIYHcm8"
+      date: Wed, 29 Apr 2026 12:00:44 GMT
+      etag: W/"1b3-id35eE7Zv3L2+3iA/a3QCfYtLb0"
       keep-alive: timeout=5
       vary: Origin
       x-powered-by: Express
-    Response Size: 1649 bytes
+    Response Size: 435 bytes
     Response Body:
       {
         "object": "list",
         "page": {
-          "startCursor": "ixCALWlkOnByZF8wMWtxYTk5cTZleWtxODQxbTI3YTZjcTc0awM",
-          "endCursor": "GyEA-I3EOBbyKDypNUwL3FzQwalnEnyDIHl0FAOkY1YWgCtJfQ",
-          "hasNextPage": false,
+          "startCursor": "ixCALWlkOnByZF8wMDAwMDAwMDAwc2VlZHRyYW1zMDAwMDAwMAM",
+          "endCursor": "ixCALWlkOnByZF8wMDAwMDAwMDAwc2VlZHRyYW1zMDAwMDAwMAM",
+          "hasNextPage": true,
           "hasPrevPage": false,
-          "limit": 10,
-          "total": 7
+          "limit": 1,
+          "total": 5
         },
         "items": [
-          {
-            "id": "prd_01kqa99q6eykq841m27a6cq74k",
-            "name": "7720e2da-7cff-4404-95b6-5a1a6b31cdf5",
-            "price": 4000,
-            "category": "dessert",
-            "createdAt": "2026-04-28T14:53:38.895Z",
-            "updatedAt": "2026-04-28T14:53:38.895Z",
-            "object": "menuItem",
-            "calories": 8000
-          },
-          {
-            "id": "prd_01kqa996htvqb6hp67502yhtp9",
-            "name": "421d29d9-e5cd-44cf-988e-fbf1e9a0011e",
-            "price": 4000,
-            "category": "dessert",
-            "createdAt": "2026-04-28T14:53:21.851Z",
-            "updatedAt": "2026-04-28T14:53:21.851Z",
-            "object": "menuItem",
-            "calories": 8000
-          },
           {
             "id": "prd_0000000000seedtrams0000000",
             "name": "tiramisu",
             "price": 13000,
             "category": "dessert",
-            "createdAt": "2026-04-28T13:32:01.000Z",
-            "updatedAt": "2026-04-28T13:32:07.060Z",
-            "object": "menuItem"
-          },
-          {
-            "id": "prd_0000000000seedteabv0000000",
-            "name": "tea",
-            "price": 6000,
-            "category": "beverage",
-            "createdAt": "2026-04-28T13:32:01.000Z",
-            "updatedAt": "2026-04-28T13:32:06.656Z",
-            "object": "menuItem"
-          },
-          {
-            "id": "prd_0000000000seedchesc0000000",
-            "name": "cheesecake",
-            "price": 12000,
-            "category": "dessert",
-            "createdAt": "2026-04-28T13:32:01.000Z",
-            "updatedAt": "2026-04-28T13:32:06.249Z",
-            "object": "menuItem"
-          },
-          {
-            "id": "prd_0000000000seedcffee0000000",
-            "name": "coffee",
-            "price": 5000,
-            "category": "beverage",
-            "createdAt": "2026-04-28T13:32:01.000Z",
-            "updatedAt": "2026-04-28T13:32:05.837Z",
-            "object": "menuItem"
-          },
-          {
-            "id": "prd_0000000000seedccrem0000000",
-            "name": "ice-cream",
-            "price": 10000,
-            "category": "dessert",
-            "createdAt": "2026-04-28T13:32:01.000Z",
-            "updatedAt": "2026-04-28T13:32:05.403Z",
-            "object": "menuItem"
+            "createdAt": "2026-04-29T10:00:50.610Z",
+            "updatedAt": "2026-04-29T10:00:50.610Z",
+            "object": "menuItem",
+            "calories": 450
           }
         ]
       } 
@@ -831,17 +551,17 @@ The execution results display as follows:
           | ^^^^^^^^^^^^^^^^^^^
       >  3 |   "page": {
           | ^^^^^^^^^^^^^^^^^^^
-      >  4 |     "startCursor": "ixCALWlkOnByZF8wMWtxYTk5cTZleWtxODQxbTI3YTZjcTc0awM",
+      >  4 |     "startCursor": "ixCALWlkOnByZF8wMDAwMDAwMDAwc2VlZHRyYW1zMDAwMDAwMAM",
           | ^^^^^^^^^^^^^^^^^^^
-      >  5 |     "endCursor": "GyEA-I3EOBbyKDypNUwL3FzQwalnEnyDIHl0FAOkY1YWgCtJfQ",
+      >  5 |     "endCursor": "ixCALWlkOnByZF8wMDAwMDAwMDAwc2VlZHRyYW1zMDAwMDAwMAM",
           | ^^^^^^^^^^^^^^^^^^^
-      >  6 |     "hasNextPage": false,
+      >  6 |     "hasNextPage": true,
           | ^^^^^^^^^^^^^^^^^^^
       >  7 |     "hasPrevPage": false,
           | ^^^^^^^^^^^^^^^^^^^
-      >  8 |     "limit": 10,
+      >  8 |     "limit": 1,
           | ^^^^^^^^^^^^^^^^^^^
-      >  9 |     "total": 7
+      >  9 |     "total": 5
           | ^^^^^^^^^^^^^^^^^^^
       > 10 |   },
           | ^^^^^^^^^^^^^^^^^^^
@@ -849,175 +569,66 @@ The execution results display as follows:
           | ^^^^^^^^^^^^^^^^^^^
       > 12 |     {
           | ^^^^^^^^^^^^^^^^^^^
-      > 13 |       "id": "prd_01kqa99q6eykq841m27a6cq74k",
+      > 13 |       "id": "prd_0000000000seedtrams0000000",
           | ^^^^^^^^^^^^^^^^^^^
-      > 14 |       "name": "7720e2da-7cff-4404-95b6-5a1a6b31cdf5",
+      > 14 |       "name": "tiramisu",
           | ^^^^^^^^^^^^^^^^^^^
-      > 15 |       "price": 4000,
+      > 15 |       "price": 13000,
           | ^^^^^^^^^^^^^^^^^^^
       > 16 |       "category": "dessert",
           | ^^^^^^^^^^^^^^^^^^^
-      > 17 |       "createdAt": "2026-04-28T14:53:38.895Z",
+      > 17 |       "createdAt": "2026-04-29T10:00:50.610Z",
           | ^^^^^^^^^^^^^^^^^^^
-      > 18 |       "updatedAt": "2026-04-28T14:53:38.895Z",
+      > 18 |       "updatedAt": "2026-04-29T10:00:50.610Z",
           | ^^^^^^^^^^^^^^^^^^^
       > 19 |       "object": "menuItem",
           | ^^^^^^^^^^^^^^^^^^^
-      > 20 |       "calories": 8000
+      > 20 |       "calories": 450
           | ^^^^^^^^^^^^^^^^^^^
-      > 21 |     },
+      > 21 |     }
           | ^^^^^^^^^^^^^^^^^^^
-      > 22 |     {
+      > 22 |   ]
           | ^^^^^^^^^^^^^^^^^^^
-      > 23 |       "id": "prd_01kqa996htvqb6hp67502yhtp9",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 24 |       "name": "421d29d9-e5cd-44cf-988e-fbf1e9a0011e",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 25 |       "price": 4000,
-          | ^^^^^^^^^^^^^^^^^^^
-      > 26 |       "category": "dessert",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 27 |       "createdAt": "2026-04-28T14:53:21.851Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 28 |       "updatedAt": "2026-04-28T14:53:21.851Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 29 |       "object": "menuItem",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 30 |       "calories": 8000
-          | ^^^^^^^^^^^^^^^^^^^
-      > 31 |     },
-          | ^^^^^^^^^^^^^^^^^^^
-      > 32 |     {
-          | ^^^^^^^^^^^^^^^^^^^
-      > 33 |       "id": "prd_0000000000seedtrams0000000",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 34 |       "name": "tiramisu",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 35 |       "price": 13000,
-          | ^^^^^^^^^^^^^^^^^^^
-      > 36 |       "category": "dessert",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 37 |       "createdAt": "2026-04-28T13:32:01.000Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 38 |       "updatedAt": "2026-04-28T13:32:07.060Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 39 |       "object": "menuItem"
-          | ^^^^^^^^^^^^^^^^^^^
-      > 40 |     },
-          | ^^^^^^^^^^^^^^^^^^^
-      > 41 |     {
-          | ^^^^^^^^^^^^^^^^^^^
-      > 42 |       "id": "prd_0000000000seedteabv0000000",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 43 |       "name": "tea",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 44 |       "price": 6000,
-          | ^^^^^^^^^^^^^^^^^^^
-      > 45 |       "category": "beverage",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 46 |       "createdAt": "2026-04-28T13:32:01.000Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 47 |       "updatedAt": "2026-04-28T13:32:06.656Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 48 |       "object": "menuItem"
-          | ^^^^^^^^^^^^^^^^^^^
-      > 49 |     },
-          | ^^^^^^^^^^^^^^^^^^^
-      > 50 |     {
-          | ^^^^^^^^^^^^^^^^^^^
-      > 51 |       "id": "prd_0000000000seedchesc0000000",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 52 |       "name": "cheesecake",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 53 |       "price": 12000,
-          | ^^^^^^^^^^^^^^^^^^^
-      > 54 |       "category": "dessert",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 55 |       "createdAt": "2026-04-28T13:32:01.000Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 56 |       "updatedAt": "2026-04-28T13:32:06.249Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 57 |       "object": "menuItem"
-          | ^^^^^^^^^^^^^^^^^^^
-      > 58 |     },
-          | ^^^^^^^^^^^^^^^^^^^
-      > 59 |     {
-          | ^^^^^^^^^^^^^^^^^^^
-      > 60 |       "id": "prd_0000000000seedcffee0000000",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 61 |       "name": "coffee",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 62 |       "price": 5000,
-          | ^^^^^^^^^^^^^^^^^^^
-      > 63 |       "category": "beverage",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 64 |       "createdAt": "2026-04-28T13:32:01.000Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 65 |       "updatedAt": "2026-04-28T13:32:05.837Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 66 |       "object": "menuItem"
-          | ^^^^^^^^^^^^^^^^^^^
-      > 67 |     },
-          | ^^^^^^^^^^^^^^^^^^^
-      > 68 |     {
-          | ^^^^^^^^^^^^^^^^^^^
-      > 69 |       "id": "prd_0000000000seedccrem0000000",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 70 |       "name": "ice-cream",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 71 |       "price": 10000,
-          | ^^^^^^^^^^^^^^^^^^^
-      > 72 |       "category": "dessert",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 73 |       "createdAt": "2026-04-28T13:32:01.000Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 74 |       "updatedAt": "2026-04-28T13:32:05.403Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 75 |       "object": "menuItem"
-          | ^^^^^^^^^^^^^^^^^^^
-      > 76 |     }
-          | ^^^^^^^^^^^^^^^^^^^
-      > 77 |   ]
-          | ^^^^^^^^^^^^^^^^^^^
-      > 78 | }
+      > 23 | }
           | ^^ 👈🏽  type must be array
       
        
-  Summary for redocly-cafe-api.arazzo.yaml
+  Summary for redocly-cafe-api-se-01.arazzo.yaml
   
   Workflows: 1 failed, 1 total
   Steps: 1 failed, 1 total
   Checks: 3 passed, 1 failed, 4 total
-  Time: 55ms 
+  Time: 58ms 
  
  
-┌──────────────────────────────────────────────────────────────────────┬────────────┬─────────┬─────────┬──────────┐
-│ Filename                                                             │ Workflows  │ Passed  │ Failed  │ Warnings │
-├──────────────────────────────────────────────────────────────────────┼────────────┼─────────┼─────────┼──────────┤
-│ x redocly-cafe-api.arazzo.yaml                                       │ 1          │ 0       │ 1       │ -        │
-└──────────────────────────────────────────────────────────────────────┴────────────┴─────────┴─────────┴──────────┘
+┌────────────────────────────────────────────────────────────────────────────┬────────────┬─────────┬─────────┬──────────┐
+│ Filename                                                                   │ Workflows  │ Passed  │ Failed  │ Warnings │
+├────────────────────────────────────────────────────────────────────────────┼────────────┼─────────┼─────────┼──────────┤
+│ x redocly-cafe-api-se-01.arazzo.yaml                                       │ 1          │ 0       │ 1       │ -        │
+└────────────────────────────────────────────────────────────────────────────┴────────────┴─────────┴─────────┴──────────┘
  
  Tests exited with error 
 ```
 
-Besides the `success criteria check` condition defined in the Arazzo file,
+In addition to the `success criteria check` defined in the Arazzo file,
 
 ```yaml
 successCriteria:
   - condition: $statusCode == 200
 ```
-three additional checks were performed automatically.
+Respect performed three additional checks automatically.
 
-Since this step connects to an OpenAPI description, [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) automatically verifies that the API returns the documented response with the expected content-type and status.
+Because the workflow step is connected to an OpenAPI description, [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) verifies that the API returns a documented status code, the expected content type, and a response body that matches the documented schema.
 
-As mentioned earlier, a discrepancy was added to our API description and now we can see that something is wrong, lets try to fix it.
+As mentioned earlier, the API description includes an intentional discrepancy. The Respect output makes that mismatch visible.
 
-The output now shows a failed check with a message:
+The failed schema check includes this message:
 
  `| ^^ 👈🏽  type must be array`
 
-We can now notice that API response have paginated object, but OAS description expecting an array (this descrepency was added intentinaly).
-Lets update MenuItemList schema to match API response:
+The API response is a paginated object, but the OpenAPI description expects an array. This is the intentional discrepancy in the example.
+
+To fix it, update the `MenuItemList` schema so it matches the actual API response:
 
 ```yaml
     MenuItemList:
@@ -1040,19 +651,19 @@ Lets update MenuItemList schema to match API response:
 ```
 
 
-Execute workflow one more time and see that all steps check are passing now.
+Run the workflow again to confirm that all checks now pass.
 
 ```bash
 npx @redocly/cli@latest respect redocly-cafe-api.arazzo.yaml
 ```
 
-This demonstrates how easily unexpected API changes can be detected.
+This demonstrates the core value of contract testing with Respect: when the API and its OpenAPI description drift apart, the workflow highlights the mismatch immediately.
 
-### Practical Applications
+### Practical applications
 
-Once an Arazzo workflow has been created and verified locally, several paths forward are available:
+After you create and verify an Arazzo workflow locally, you can use it in several ways:
 
-- Include the workflow in a CI/CD pipeline to ensure API documentation stays in sync with the actual API:
+- Include the workflow in a CI/CD pipeline to keep API documentation synchronized with actual API behavior:
 
 ```bash
 # Spawn your API instance
@@ -1060,10 +671,11 @@ npm install @redocly/cli@latest -g
 redocly respect products.arazzo.yaml --verbose
 ```
 
-- Set up routine automation for daily development tasks.
-- Describe desired application flows with Arazzo and share files with team members. Non-technical users can use visualization tools like Replay to understand the workflows.
+- Automate routine API workflows for development and QA tasks.
+- Describe important application flows with Arazzo and share them with team members. Non-technical users can also use visualization tools like Replay to understand the workflows.
 
 ### Summary
 
-Arazzo is a powerful standard that enables declarative description of API workflows with various practical applications.
-As tooling development progresses, Arazzo can help maintain API test coverage, keep documentation synchronized, and improve team collaboration in complex projects.
+Arazzo provides a standard way to describe API workflows declaratively. Respect uses those workflows to run API contract tests against real API behavior.
+
+With this approach, teams can maintain API test coverage, detect documentation drift earlier, and share executable API workflows across engineering, QA, and documentation teams.
