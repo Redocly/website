@@ -16,33 +16,41 @@
     - separator: Organization & team settings
     - page: reunite/organization/manage-orgs.md
       label: Organizations
-    - page: reunite/organization/manage-people.md
-      label: People
-    - page: reunite/organization/teams.md
-      label: Teams
-
-    - group: SSO
-      page: reunite/organization/sso/sso.md
+    - group: Access
       items:
-        - page: reunite/organization/sso/add-idp.md
-          label: Add an identity provider
-        - page: reunite/organization/sso/configure-sso.md
-          label: Configure SSO
-        - page: reunite/organization/sso/configure-scim.md
-          label: Configure SCIM
-        - page: reunite/organization/sso/configure-auth0.md
-          label: Auth0
-        - page: reunite/organization/sso/configure-google-sso.md
-          label: Google Workspace
-        - page: reunite/organization/sso/configure-azure-ad.md
-          label: Microsoft Entra ID
-        - page: reunite/organization/sso/configure-okta.md
-          label: Okta
+        - page: reunite/organization/manage-people.md
+          label: People
+        - page: reunite/organization/teams.md
+          label: Teams
+        - group: SSO and login
+          page: reunite/organization/sso/sso.md
+          items:
+            - page: reunite/organization/sso/add-idp.md
+              label: Add an identity provider
+            - page: reunite/organization/sso/configure-sso.md
+              label: Configure SSO
+            - page: reunite/organization/sso/configure-scim.md
+              label: Configure SCIM
+            - page: reunite/organization/sso/configure-auth0.md
+              label: Auth0
+            - page: reunite/organization/sso/configure-google-sso.md
+              label: Google Workspace
+            - page: reunite/organization/sso/configure-azure-ad.md
+              label: Microsoft Entra ID
+            - page: reunite/organization/sso/configure-okta.md
+              label: Okta
+        - page: reunite/organization/api-keys.md
+          label: API keys
+
     - page: reunite/organization/access-compliance-reports.md
       label: Compliance reports
-
-    - page: reunite/organization/api-keys.md
-      label: API keys
+    - group: Self-hosted Git providers
+      page: reunite/project/connect-git/manage-self-hosted.md
+      items:
+        - page: reunite/project/connect-git/self-hosted/github.md
+          label: GitHub Enterprise Server self-hosted
+        - page: reunite/project/connect-git/self-hosted/gitlab.md
+          label: GitLab self-hosted
 
     - separator: Project workspace
     - page: reunite/project/manage-projects.md
@@ -69,44 +77,14 @@
               label: Configure classic scorecard
         - page: reunite/project/ignore-link-checker.md
           label: Ignore link checker
-        - page: reunite/project/branches-and-deployments.md
-          label: Branches and deployments
-
     - group: Pull requests
+      page: reunite/project/pull-request/manage-pull-requests.md
       items:
         - page: reunite/project/pull-request/open-pull-request.md
           label: Open pull requests
         - page: reunite/project/pull-request/review-pull-request.md
           label: Review pull requests
-        - page: reunite/project/pull-request/manage-pull-requests.md
-          label: Manage pull requests
-    - group: Respect Monitoring
-      page: reunite/project/respect-monitoring/index.md
-      items:
-        - page: reunite/project/respect-monitoring/configure-respect-monitoring.md
-        - page: reunite/project/respect-monitoring/manage-respect-monitoring.md
-    - page: reunite/project/analytics.md
-      label: Analytics
-    - page: reunite/project/feedback.md
-      label: Feedback
-    - group: Connect a Git provider
-      page: reunite/project/connect-git/connect-git-provider.md
-      items:
-        - page: reunite/project/connect-git/manage-self-hosted.md
-          label: Manage self-hosted Git providers
-        - page: reunite/project/connect-git/github.md
-          label: GitHub
-        - page: reunite/project/connect-git/self-hosted/github.md
-          label: GitHub Enterprise Server self-hosted
-        - page: reunite/project/connect-git/gitlab.md
-          label: GitLab
-        - page: reunite/project/connect-git/self-hosted/gitlab.md
-          label: GitLab self-hosted
-        - page: reunite/project/connect-git/azure-devops.md
-          label: Azure DevOps
-        - page: reunite/project/connect-git/bitbucket-cloud.md
-          label: Bitbucket Cloud
-    - group: Remote content automation
+    - group: Remote content
       page: reunite/project/remote-content/remote-content.md
       items:
         - page: reunite/project/remote-content/from-github.md
@@ -129,16 +107,36 @@
           label: Edit content folder
         - page: reunite/project/remote-content/verify-remote-content.md
           label: Remote content automation
-    # consider moving or removing the page:
-    # - page: setup/how-to/feedback/extend-feedback.md
-    #   label: Extend feedback form
+    - group: Respect Monitoring
+      page: reunite/project/respect-monitoring/index.md
+      items:
+        - page: reunite/project/respect-monitoring/configure-respect-monitoring.md
+        - page: reunite/project/respect-monitoring/manage-respect-monitoring.md
+    - separator: Reports
+    - page: reunite/project/feedback.md
+      label: Feedback
+    - page: reunite/project/analytics.md
+      label: Analytics
+    - separator: Settings
+    - page: reunite/project/custom-domain.md
+      label: Custom domain
     - page: reunite/project/env-variables.md
       label: Environment variables
     - page: reunite/project/telemetry.md
       label: Telemetry
-    - page: reunite/project/custom-domain.md
-      label: Custom domain
-
+    - group: Git hosting
+      page: reunite/project/connect-git/connect-git-provider.md
+      items:
+        - page: reunite/project/connect-git/github.md
+          label: GitHub
+        - page: reunite/project/connect-git/gitlab.md
+          label: GitLab
+        - page: reunite/project/connect-git/azure-devops.md
+          label: Azure DevOps
+        - page: reunite/project/connect-git/bitbucket-cloud.md
+          label: Bitbucket Cloud
+    - page: reunite/project/branches-and-deployments.md
+      label: Branches and deployments
     - separator: User account
     - page: reunite/user-profile-menu.md
       label: User profile menu
