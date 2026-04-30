@@ -296,22 +296,24 @@ components:
       required:
         - category
     MenuItemList:
-      type: object
-      properties:
-        object:
-          type: string
-          const: list
-          description: Entity name.
-        page:
-          $ref: '#/components/schemas/Page'
-        items:
-          type: array
+      type: array
+      items:
+        type: object
+        properties:
+          object:
+            type: string
+            const: list
+            description: Entity name.
+          page:
+            $ref: '#/components/schemas/Page'
           items:
-            $ref: '#/components/schemas/MenuItem'
-      required:
-        - object
-        - page
-        - items
+            type: array
+            items:
+              $ref: '#/components/schemas/MenuItem'
+        required:
+          - object
+          - page
+          - items
     Error:
       type: object
       properties:
