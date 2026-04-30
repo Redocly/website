@@ -25,7 +25,7 @@ Respect helps address this problem by executing Arazzo workflows against a runni
 
 To follow the examples in this article, you need:
 
-- Familiarity with [Arazzo](./what-is-arazzo.md).
+- Familiarity with [Arazzo](../what-is-arazzo.md).
 - An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API.
   <b>IMPORTANT: the API description intentionally contains discrepancies for demonstration purposes.</b>
 
