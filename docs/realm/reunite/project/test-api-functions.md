@@ -6,30 +6,28 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+banner:
+  - content: "This feature is currently available in early access only."
+    color: info
+    dismissible: false
 ---
 # Test API functions
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-{% admonition type="warning" name="Early access" %}
-This is an experimental, early-access capability.
-It may not be available for your organization yet, and its behavior may change before general availability.
-{% /admonition %}
 
 You can use Replay in Reunite to send requests to your API functions while you work in the editor.
 This helps you verify routing, request data, and responses without leaving your project workspace.
 
 ## Open Replay
 
-The **Replay** tab opens in the [editor pane](./project-ui.md#editor-dock) alongside your file tabs.
-If the tab is already open, click it to select it.
-If it is closed, open it in any of the following ways:
+Replay is available in the preview area of the editor.
+If the Replay tab is already open, select it.
+If it is closed, open a new preview tab and select **Replay**.
 
-- Click the **More actions** icon on the right side of the tabs header and select **Open Replay**.
-- Use the keyboard shortcut:
-  - macOS: <kbd>`⌃ Ctrl`</kbd> + <kbd>`⌥ Opt`</kbd> + <kbd>`Y`</kbd>
-  - Windows: <kbd>`Ctrl`</kbd> + <kbd>`Alt`</kbd> + <kbd>`Y`</kbd>
-- When a tab group is empty, click the **Replay** shortcut shown under **Dev tools**.
+You can also use the keyboard shortcut to open Replay:
+
+- macOS: <kbd>`⌃ Ctrl`</kbd> + <kbd>`⌥ Opt`</kbd> + <kbd>`Y`</kbd>
+- Windows: <kbd>`Ctrl`</kbd> + <kbd>`Alt`</kbd> + <kbd>`Y`</kbd>
 
 ## Test an API function
 

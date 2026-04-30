@@ -77,13 +77,11 @@ By default, when you set RBAC permissions for a page, authorized users are able 
 However, sometimes you may need to hide a section of content on the page from certain teams.
 You can set permissions by teams for specific content on Markdown and React pages.
 
-### Markdown content
+### Markdown pages
 
-You can use a combination of an `if` Markdoc tag with `includes` and `or` functions to conditionally render content on a Markdown page, based on a user's team assignment.
+You can use the `if` Markdoc tag to conditionally render content on a Markdown page, based on a user's teams.
 
-#### Allow users of a specific team to see content
-
-In the following example, the project renders the text between the Markdoc tags only if the authenticated user is assigned to the Admin team:
+For example, in the following example, the project renders the text between the Markdoc tags only if the authenticated user is assigned to the Admin team:
 
 {% markdoc-example %}
 
@@ -95,21 +93,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% /markdoc-example %}
 
-#### Allow users with at least one team from a list to see content
-
-In the following example, the project renders the text between the Markdoc tags only if the authenticated user is assigned to at least one of the following teams: Admin, Developer, or Owner:
-
-{% markdoc-example %}
-
-```markdoc
-{% if or(includes($rbac.teams, "Admin"), includes($rbac.teams, "Developer"), includes($rbac.teams, "Owner")) %}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-{% /if %}
-```
-
-{% /markdoc-example %}
-
-### React content
+### React pages
 
 You can use a convenient React hook that can be accessed in the React pages of the project to access the current user's teams.
 You can then use this hook to conditionally render certain content or perform other actions, as in the following example:

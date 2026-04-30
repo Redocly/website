@@ -44,22 +44,12 @@ After you have created a new branch, you can add or delete files or folders in t
 - To copy files or folders, right-click the file or folder and select **Copy**.
 - To rename files or folders, right-click the file or folder and select **Rename**.
 
-## Open and manage editor tabs
-
-Files open as tabs in the editor pane.
-
-A single click in the file tree opens the file in a preview tab with its name shown in italics, and clicking another file replaces the preview tab.
-Double-click a file in the file tree, double-click the tab, or start editing the file to keep it open as a regular tab.
-
-Right-click any tab to close it, close other tabs, close unchanged tabs, copy its path, or split it into a new group.
-For the complete list of tab actions and the keyboard shortcuts to open the Webview and Documentation tabs, see the [Editor pane reference](./project-ui.md#editor-pane).
-
 ## Edit files
 
 The editor includes an editor pane where you can edit the content in your files.
 To edit content, select the file in the file tree pane and make your edits in the editor pane.
-Your updates display in the **Webview** tab.
-You can also use the toolbar at the top of an editor tab to add the following Markdown syntax automatically:
+Your updates display in the Webview live preview pane.
+You can also use the toolbar at the top of the editor pane to add the following Markdown syntax automatically:
 
 - Headings
 - Bold text
@@ -72,7 +62,7 @@ You can also use the toolbar at the top of an editor tab to add the following Ma
 - Checkbox lists
 
 {% admonition type="success" name="Drag and drop images and links" %}
-Another way you can add images and links is to drag the files from the file tree and drop them into an open editor tab.
+Another way you can add images and links is to drag the files from the file tree to the editor pane and drop them.
 {% /admonition %}
 
 The toolbar also includes the following options to add Markdoc tag syntax automatically:

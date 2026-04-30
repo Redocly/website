@@ -336,8 +336,8 @@ List of CSS variables that are reused in other CSS variables.
 --heading-font-weight: var(--font-weight-semibold);
 --heading-text-color: var(--text-color-primary);
 
---heading-anchor-offset-right: var(--spacing-xs);
---heading-anchor-color: var(--icon-color-primary);
+--heading-anchor-offset-right: 4px;
+--heading-anchor-color: var(--button-content-color-primary);
 --heading-anchor-icon: none;
 
 --h1-font-family: var(--heading-font-family);

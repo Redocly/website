@@ -45,9 +45,9 @@ On the [Editor](./use-editor.md) page you create, manage, and commit content.
 The editor contains the following sections:
 
 - A file tree where you add and manage your website's files, use the search and replace function, and commit changes to the repository.
-- An editor pane where files open as tabs that you can split and rearrange.
-- An editing toolbar for formatting text in open files.
-- A [Webview](./use-webview.md) tab that opens in the editor and displays a live preview of the opened file.
+- An editing pane where you can make changes to file content.
+- An editing toolbar for formatting text in files.
+- A [Webview pane](./use-webview.md) that displays a live preview of the opened file.
 
 ### Pull requests
 

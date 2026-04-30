@@ -42,7 +42,7 @@ You can put this special comment anywhere in the code example.
 
 - placeholder
 - string
-- Placeholder text displayed when the input is empty.
+- The type of input field.
 
 ---
 

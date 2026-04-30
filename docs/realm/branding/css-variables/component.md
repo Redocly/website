@@ -150,6 +150,7 @@
 --banner-button-icon-right-padding: 1px 10px 1px var(--spacing-sm);
 --banner-button-margin: 0 var(--spacing-xs);
 --banner-padding: var(--spacing-xs);
+--banner-link-decoration: var(--link-decoration-hover);
 --banner-min-height: 38px;
 --banner-gap: var(--spacing-xxs);
 
@@ -157,29 +158,21 @@
 --banner-info-text-color: var(--color-static-white);
 --banner-info-icon-color: var(--color-static-white);
 --banner-info-link-color: var(--banner-info-text-color);
---banner-info-link-decoration: underline 1px var(--banner-info-link-color);
---banner-info-link-decoration-hover: underline 2px var(--banner-info-link-color);
 
 --banner-success-bg-color: var(--color-success-base);
 --banner-success-text-color: var(--color-static-white);
 --banner-success-icon-color: var(--color-static-white);
 --banner-success-link-color: var(--banner-success-text-color);
---banner-success-link-decoration: underline 1px var(--banner-success-link-color);
---banner-success-link-decoration-hover: underline 2px var(--banner-success-link-color);
 
 --banner-warning-bg-color: var(--color-warning-base);
 --banner-warning-text-color: var(--color-black);
 --banner-warning-icon-color: var(--color-black);
 --banner-warning-link-color: var(--banner-warning-text-color);
---banner-warning-link-decoration: underline 1px var(--banner-warning-link-color);
---banner-warning-link-decoration-hover: underline 2px var(--banner-warning-link-color);
 
 --banner-error-bg-color: var(--color-error-base);
 --banner-error-text-color: var(--color-static-white);
 --banner-error-icon-color: var(--color-static-white);
 --banner-error-link-color: var(--banner-error-text-color);
---banner-error-link-decoration: underline 1px var(--banner-error-link-color);
---banner-error-link-decoration-hover: underline 2px var(--banner-error-link-color);
 ```
 
 </details>
@@ -1054,17 +1047,15 @@
 <summary>Link</summary>
 
 ```css
---link-color-primary: var(--link-color-primary-palette, var(--link-color-primary-legacy));
---link-decoration: underline 1px var(--color-primary-base, var(--link-color-primary-legacy));
---link-underline-offset: 4px;
---link-font-weight: var(--font-weight-medium);
---link-color-primary-hover: var(--link-color-primary-palette, var(--link-color-primary-hover-legacy));
---link-color-primary-pressed: var(--link-color-primary-palette, var(--link-color-primary-pressed-legacy));
---link-decoration-hover: underline 2px var(--color-primary-base, var(--link-color-primary-hover-legacy));
-
+--link-color-primary: var(--color-blue-6);
+--link-decoration: none;
+--link-font-weight: var(--font-weight-regular);
+--link-color-primary-hover: var(--color-blue-7);
+--link-color-primary-pressed: var(--color-blue-8);
+--link-decoration-hover: underline;
 --link-color-inverse: var(--color-blue-5);
---link-color-visited: var(--link-color-primary-palette, var(--link-color-visited-legacy));
---link-decoration-visited: underline 1px var(--color-primary-base, var(--link-color-visited-legacy));
+--link-color-visited: var(--color-purple-7);
+--link-visited-decoration: none;
 ```
 
 </details>
@@ -2964,28 +2955,3 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 ```
 
 </details>
-
-## Page navigation
-
-<details>
-<summary>Page navigation variables</summary>
-
-```css
---page-navigations-wrapper-gap: var(--spacing-base);
---page-navigation-button-width: var(--container-max-width);
---page-navigation-button-padding: var(--spacing-sm) var(--spacing-base);
---page-navigation-button-title-font-size: var(--font-size-lg);
---page-navigation-button-title-font-weight: var(--font-weight-medium);
---page-navigation-button-title-line-height: var(--line-height-lg);
---page-navigation-button-title-color: var(--text-color-primary);
---page-navigation-button-gap: var(--spacing-xxs);
---page-navigation-button-border-radius: var(--border-radius-xl);
---page-navigation-button-border-color: var(--border-color-secondary);
---page-navigation-button-border: var(--border-width) var(--border-style) var(--page-navigation-button-border-color);
---page-navigation-button-border-color-hover: var(--color-primary-base, var(--color-warm-grey-11));
---page-navigation-button-border-hover: var(--border-width) var(--border-style) var(--page-navigation-button-border-color-hover);
---page-navigation-button-min-width: 220px;
-```
-
-</details>
-

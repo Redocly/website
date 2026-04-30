@@ -76,8 +76,7 @@ If your project contains multiple APIs, you can use the `apis` configuration sec
 
 - extends
 - [string]
-- Extend an existing configuration sets.
-  Read more about [Extends](./openapi/extends.md).
+- Extend an existing configuration sets. Read more about [Extends](./openapi/extends.md).
 
 ---
 

@@ -45,60 +45,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- dev.create.app.dialog.callbackUrls
-- Label for callback URLs when creating a developer app (Apigee)
-- Callback URLs
-
----
-
-- dev.create.app.dialog.callbackUrls.placeholder
-- Placeholder for callback URLs field when creating a developer app
-- https://example.com/callback
-
----
-
-- dev.create.app.dialog.callbackUrls.hint
-- Helper text for entering multiple callback URLs when creating a developer app
-- Separate multiple URLs with a comma
-
----
-
-- dev.app.callbackUrls.title
-- Section title for callback URLs on the developer app detail page
-- Callback URLs
-
----
-
-- dev.edit.callbackUrls.dialog.title
-- Title of the dialog for editing callback URLs on a developer app
-- Change callback URLs
-
----
-
-- dev.edit.callbackUrls.dialog.placeholder
-- Placeholder in the edit callback URLs dialog
-- https://example.com/callback
-
----
-
-- dev.edit.callbackUrls.dialog.hint
-- Helper text in the edit callback URLs dialog
-- Separate multiple URLs with a comma
-
----
-
-- dev.edit.callbackUrls.dialog.save
-- Save button in the edit callback URLs dialog
-- Save changes
-
----
-
-- dev.edit.callbackUrls.dialog.cancel
-- Cancel button in the edit callback URLs dialog
-- Cancel
-
----
-
 - search.navbar.label
 - Search navbar label
 - Search
@@ -591,8 +537,7 @@ This page contains the list of all predefined translation keys used in default U
 
 - page.forbidden.description
 - 403 Forbidden description text
-- You don't have permission to access this page.
-  If you believe this is an error, contact your administrator or return to the homepage.
+- You don't have permission to access this page. If you believe this is an error, contact your administrator or return to the homepage.
 
 ---
 

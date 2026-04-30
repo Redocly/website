@@ -167,18 +167,6 @@ footer:
 When users search from a product page, results are automatically filtered to that product.
 Users can remove the filter to search all content.
 
-### Hide the product picker
-
-To hide the product picker:
-
-- Add the following code to the `@theme/styles.css`:
-
-```css
-[data-component-name="Product/ProductPicker"] {
-  display: none;
-}
-```
-
 ## Resources
 
 - **[Multi-product overview](../navigation/multi-product.md)** - Conceptual guide to multi-product documentation including product switching and organization strategies

@@ -6,6 +6,12 @@
       label: Start with Reunite editor
     - page: get-started/start-local-dev.md
       label: Start with local development
+    - group: Migrate from legacy
+      items:
+        - page: get-started/migrate-api-reference.md
+          label: Migrate API reference
+        - page: get-started/migrate-from-legacy-portal.md
+          label: Migrate from legacy portal
     - page: get-started/upgrade-realm-version.md
       label: Upgrade Realm version
 
@@ -171,9 +177,8 @@
             - page: content/markdoc-functions/concat.md
               label: concat
     - group: Markdoc tags
-      page: content/markdoc-tags/index.md
+      page: content/markdoc-tags/tag-library.md
       items:
-        - page: content/markdoc-tags/tag-library.md
         - separator: Built-in tags
         - page: content/markdoc-tags/partial.md
           label: Partial
@@ -224,7 +229,6 @@
           label: Tabs
 
     - group: API docs
-      page: content/api-docs/index.md
       items:
         - page: content/api-docs/add-openapi-docs.md
           label: OpenAPI
@@ -454,3 +458,8 @@
       label: For pages
     - page: access/links-and-groups-permissions.md
       label: For navigation
+# - $ref: author/sidebars.yaml
+# - $ref: style/sidebars.yaml
+# - $ref: extend/sidebars.yaml
+# - $ref: setup/sidebars.yaml
+# - $ref: config/sidebars.yaml

@@ -13,10 +13,9 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-The **Webview** tab in the Editor displays a preview for each branch.
+The Webview pane in the Editor displays a preview for each branch.
 Any time you make a change in the Editor, the change is reflected in the Webview.
-The **Webview** tab opens alongside your file tabs in the [editor pane](./project-ui.md#editor-pane), so you can move it, resize its group, or close it like any other tab.
-You can disable auto-sync, view different screen sizes, reload the page or restart, and navigate the pages.
+You can disable auto-sync, view different screen sizes, reload the page or restart, navigate the pages, and close the Webview to expand the Editor.
 
 {% img
   src="../images/webview-buttons.png"
@@ -28,20 +27,6 @@ You can disable auto-sync, view different screen sizes, reload the page or resta
     There is a difference between the **Webview** and the **[preview deployment](./use-previews.md)**.
     The Webview displays uncommitted changes while the preview deployment triggers when you make a commit to a branch with an open pull request.
   {% /admonition %}
-
-## Open the Webview tab
-
-If the **Webview** tab is already open in the editor pane, click the tab to focus it.
-If it is closed, open it in any of the following ways:
-
-- Click the **More actions** icon on the right side of the tabs header and select **Open Webview**.
-- Use the keyboard shortcut <kbd>`⌃ Ctrl`</kbd> + <kbd>`⌥ Opt`</kbd> + <kbd>`W`</kbd> on macOS or <kbd>`Ctrl`</kbd> + <kbd>`Alt`</kbd> + <kbd>`W`</kbd> on Windows.
-- When a tab group is empty, click the **Webview** shortcut shown under **Dev tools**.
-
-If the **Webview** tab is already open elsewhere in the pane, these actions activate the existing tab instead of creating a duplicate.
-
-To close the **Webview** tab, click the close icon on its tab header, or right-click the tab and select **Close**.
-To give the editor more space, you can also [collapse the file tree pane](./project-ui.md#file-tree-pane).
 
 ## View different screen sizes
 
@@ -118,7 +103,7 @@ The back and forward arrow icons consider page view history, which starts over w
 
 ## Project status bar
 
-The **Webview** tab and its [full screen version](#open-webview-in-a-new-window-or-tab) include a status bar at the bottom edge of the screen.
+The Webview pane and its [full screen version](#open-webview-in-a-new-window-or-tab) include a status bar at the bottom edge of the screen.
 This status bar displays the number of pages in your project and project build errors.
 
 You can drag the status bar along the bottom edge of the Webview to move it out of the way.
@@ -132,7 +117,7 @@ You can drag the status bar along the bottom edge of the Webview to move it out 
 
 ### View project page count
 
-The project status bar in the **Webview** tab displays the current number of pages in your project.
+The project status bar in the Webview pane displays the current number of pages in your project.
 This number counts towards your page budget.
 
 The page count refreshes as you add or remove content.
@@ -151,6 +136,18 @@ The number of errors and the content of the errors pane updates as you make chan
   alt="Expanded errors pane"
   withLightbox=true
 /%}
+
+## Close or open Webview
+
+You can close the Webview by clicking the panel toggle, which changes direction after you click it.
+
+{% img
+  src="../images/webview-panel-toggle.png"
+  alt="Panel toggle icon"
+  withLightbox=true
+/%}
+
+To open it, click the toggle again.
 
 ## Access build logs in the Webview tab
 

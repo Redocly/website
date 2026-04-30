@@ -49,7 +49,7 @@ tags:
 paths: {}
 
 x-mcp:
-  protocolVersion: '2025-06-18'
+  protocolVersion: '2024-11-05'
   servers:
     - url: https://{projectHost}/mcp
       description: Project Docs MCP endpoint.
@@ -59,8 +59,7 @@ x-mcp:
           description: Project host. Prepend your path prefix if applicable.
   capabilities:
     logging: {}
-    tools:
-      listChanged: true
+    tools: {}
   tools:
     - name: whoami
       description: Get information about the currently authenticated user

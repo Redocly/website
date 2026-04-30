@@ -569,9 +569,8 @@
 <summary>Schema nested</summary>
 
 ```css
---schema-nested-offset: calc(var(--spacing-sm) - 1px);
+--schema-nested-offset: calc(var(--spacing-unit) * 2.5);
 --schema-nested-bg-color: var(--tree-bg-color-active);
---schema-nested-hyperlink-offset: 2px;
 ```
 
 </details>
