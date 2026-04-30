@@ -265,6 +265,19 @@ Content files named `index` (e.g., `index.md`, `index.page.tsx`, or even `index.
 - `concepts/index.md` becomes the page accessed at the `/concepts` URL path.
 - `api/reference/index.yaml` becomes `/api/reference`.
 
+When content is versioned, the URL path includes the version subfolder.
+The default version subfolder is the exception: that segment is omitted from the path.
+
+- `/config/@v1/guide.md` becomes `/config/v1/guide`.
+- `/config/@v2/guide.md` (default version) becomes `/config/guide`.
+- `/config/@v3/guide.md` becomes `/config/v3/guide`.
+
+When the default version changes to `v3`, the paths also change:
+
+- `/config/@v1/guide.md` becomes `/config/v1/guide`.
+- `/config/@v2/guide.md` becomes `/config/v2/guide`.
+- `/config/@v3/guide.md` (default version) becomes `/config/guide`.
+
 Some of your content files in the same location may share a name, but have different extensions, or be an index file in a folder with the same name as files in the parent folder:
 
 ```treeview {% title="Example of files with identical names in the same folder" %}
