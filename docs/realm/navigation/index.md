@@ -212,11 +212,12 @@ footer:
 
 See the [localization configuration](../config/l10n.md) for complete setup details.
 
-## Related configuration
+## Resources
 
 - **[Front matter options](../config/front-matter-config.md)** - Page-specific navigation overrides
 - **[Sidebar file reference](./sidebars.md)** - Complete sidebars.yaml syntax
 - **[Branding and styling](../branding/index.md)** - Visual customization of navigation elements
+- **[Search in Realm](./search.md)** - Learn how Realm processes your content and serves search results
 
 ## Need help
 

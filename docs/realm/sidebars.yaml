@@ -338,6 +338,8 @@
       label: Sidebar reference
     - page: navigation/multi-product.md
       label: Multi-product
+    - page: navigation/search.md
+      label: Search in Realm
 
 - group: Customization
   icon: wrench
