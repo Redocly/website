@@ -169,7 +169,7 @@ Users can remove the filter to search all content.
 
 ### Hide the product picker
 
-To hide the product picker:
+To hide the product picker globally:
 
 - Add the following code to the `@theme/styles.css`:
 
@@ -183,3 +183,4 @@ To hide the product picker:
 
 - **[Multi-product overview](../navigation/multi-product.md)** - Conceptual guide to multi-product documentation including product switching and organization strategies
 - **[Navigation elements](../navigation/index.md)** - Configure navigation elements and structures for multi-product sites with product-specific navigation
+- **[Style products individually](../branding/customize-styles.md#style-products-individually)** - Add custom styling to individual products

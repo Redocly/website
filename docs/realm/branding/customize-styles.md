@@ -144,11 +144,15 @@ To style a specific product, use the product class selector in your `@theme/styl
   --navbar-text-color: #1976d2;
 }
 
-/* Product-specific styling for "Example Two" */
+/* Product-specific styling for "Example Two" that also hides the product picker for this product */
 :root.product-example-two {
   --navbar-bg-color: #f3e5f5;
   --navbar-border-color: #9c27b0;
   --navbar-text-color: #7b1fa2;
+
+  [data-component-name='Product/ProductPicker'] {
+    display: none;
+  }
 }
 
 /* Combine product classes with dark mode */
