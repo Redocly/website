@@ -35,10 +35,10 @@ Before you merge your updates with the main branch, review them to be sure they 
 
 ## Pull request workflows
 
-When your changes are ready to be reviewed, you should [update the pull request's state](./manage-pull-requests.md#update-state) to **Ready for review** and assign reviewers.
+When your changes are ready to be reviewed, [update the pull request's state](./manage-pull-requests.md#update-state) to **Ready for review** and assign reviewers.
 This notifies the team that there is a pull request awaiting their attention.
 
-The reviewers will approve the pull request if they agree that the changes are ready to merge.
+The reviewers approve the pull request if they agree that the changes are ready to merge.
 Once there are approving reviews, the [pull request can be merged](./review-pull-request.md#merge-a-pull-request), bringing your changes into the main branch of the project.
 
 If you no longer want to continue working on a pull request and you do not want it merged with main, you can click the **Close pull request button**.

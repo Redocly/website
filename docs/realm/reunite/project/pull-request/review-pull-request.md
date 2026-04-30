@@ -15,14 +15,14 @@ plans:
 
 Select a pull request from the list on the **Pull requests** page and click the **Review** tab to begin your review.
 
-You cannot review a pull request if you authored it.
+You cannot approve or request changes in pull requests that you authored, but you can leave comments.
 
 ## Review visual and code diff
 
 The **Review** tab opens with the **Visual** view by default, showing rendered pages before and after updates for visual comparison.
 
-Click **Code** on the toggle to view the Markdown diff instead.
-For multi-page updates, select different pages from the sidebar navigation to review each one.
+Click **Code** on the toggle to view the text diff instead.
+For multi-file updates, select different pages from the sidebar navigation.
 
 Use the file tree filter on the left to find specific pages.
 
@@ -56,19 +56,56 @@ To add line-specific comments in code diff view:
 
 1. Enter your feedback.
 1. Select one option:
-   - **Add a single comment**: For a standalone comment.
-   - **Start a review**: For multiple comments in a complete review.
+   - **Add a single comment**: to add a standalone comment.
+   - **Start a review**: to add multiple comments in a complete review.
 
 Use the text field toolbar to format text, add links, or insert images.
 Mention people or teams with the `@` symbol followed by their name.
+
+To add line-specific suggestions in code diff view:
+
+1. Hover over the line numbers.
+1. Click the plus icon.
+1. Click the suggestion icon.
+
+    {% img
+      src="../../images/review-suggestion-icon.png"
+      alt="Screenshot of comment form in Reunite with arrow pointing towards suggestion icon"
+      withLightbox=true
+    /%}
+
+1. Make changes inside the suggestion code block.
+1. Select one option:
+   - **Add a single comment**: to add a standalone comment.
+   - **Start a review**: to add multiple comments in a complete review.
+
+You can then let the author of the pull request respond or commit your suggestion, or commit the suggestion yourself, depending on your ownership and workflow.
+
+## Filter pull request files
+
+With larger pull requests, not all edited files may be in your ownership or area of expertise.
+Additionally, pull requests with many large diffs can become more challenging to navigate.
+You can filter the edited files or mark them as viewed.
+
+To filter the files in the pull request:
+
+- In the sidebar on the left, enter a string that matches a part of a file name, file extension, or a folder.
+
+You can remove the filter by clicking the x icon in the filter text field.
+
+To hide the files you have already reviewed:
+
+- In the top-right corner of a file, tick the **Viewed** checkbox.
+
+You can also mark all files as viewed, by clicking the **Review all** button.
 
 ## Approve or request changes
 
 After reviewing the pull request, click the **Review** button, add your final thoughts, and select one option:
 
-- **Comment:** Provide feedback without explicit approval or rejection.
-- **Approve:** Indicate the pull request is ready to merge.
-- **Request changes:** Specify issues that require resolution before approval.
+- **Comment**: to provide feedback without explicit approval or rejection.
+- **Approve**: to indicate the pull request is ready to merge.
+- **Request changes**: to specify issues that require resolution before approval.
 
 Format your review comment using the toolbar options, then click **Submit review**.
 
@@ -97,7 +134,6 @@ Click this icon to view the comment on the provider’s platform.
 
 {% admonition type="warning" name="Review posting behavior" %}
 If your accounts are connected but you do not have review permissions in the provider, your review appears in Reunite only and is never posted to the provider.
-
 {% /admonition %}
 
 ## Merge a pull request
