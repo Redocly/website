@@ -61,11 +61,10 @@ Environment-specific `.env` files (such as `.env.production`, `.env.preview`, `.
 
 You can also add environment variables individually through the Redocly interface:
 
-1. Once logged in to Redocly, select the project.
-2. Select **Settings** > **Environment variables**.
-3. Select **Add environment variable**.
-4. Enter the Environment variable name and value.
-5. If the variable is a secret, select the secret checkbox to store it in an encrypted format and exclude it from the logs.
+1. In your project's workspace, select **Settings** > **Environment variables**.
+1. Select **Add environment variable**.
+1. Enter the Environment variable name and value.
+1. If the variable is a secret, select the secret checkbox to store it in an encrypted format and exclude it from the logs.
 
 ## Usage
 
@@ -151,17 +150,17 @@ You can manage environment variables through the **Settings** page in your proje
 ### Change an environment variable
 
 1. Once logged in to Redocly, select the project.
-2. Select **Settings** > **Environment variables**.
-3. Hover over the environment variable you want to update.
-4. Select the _Edit_ icon next to the variable you want to change.
-5. In the **Edit environment variable** dialog that opens, make changes to your variable value select to make the variable secret.
-6. Select **Save**.
+1. Select **Settings** > **Environment variables**.
+1. Hover over the environment variable you want to update.
+1. Select the edit icon next to the variable you want to change.
+1. In the **Edit environment variable** dialog that opens, make changes to your variable value select to make the variable secret.
+1. Select **Save**.
 
 ### Remove an environment variable
 
 1. Once logged in to Redocly, select the project.
-2. Select **Settings** > **Environment variables**.
-3. Select the _Delete_ icon next to the variable you want to remove.
+1. Select **Settings** > **Environment variables**.
+1. Select the delete icon next to the variable you want to remove.
    The variable is removed from the list immediately.
 
 ## Restrictions

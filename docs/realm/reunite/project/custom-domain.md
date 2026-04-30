@@ -18,21 +18,21 @@ This allows you to host your docs at URLs like `docs.example.com` or `docs.examp
 
 ## Set up a custom domain
 
-Configure your custom domain on the **General** tab of the project's **Settings** page:
+Configure your custom domain on the project's **Settings** > **Custom domain** page:
 
 1. Log in to your Redocly instance.
-2. Select your project.
-3. Select **Settings > Custom domain**.
-4. Click **Add domain**.
-5. Enter the **Custom Domain** without the protocol.
+1. Select your project.
+1. Select **Settings** > **Custom domain**.
+1. Click **Add domain**.
+1. Enter the **Custom Domain** without the protocol.
    For example, "docs.example.com".
-6. (Optional) Disable the default domain by unchecking the **Use proxy to URL** checkbox.
-7. Click **Save**.
-8. Log in to your DNS management provider and complete the following steps:
+1. (Optional) Disable the default domain by unchecking the **Use proxy to URL** checkbox.
+1. Click **Save**.
+1. Log in to your DNS management provider and complete the following steps:
    - Add a new TXT record with the **name/host** and **value** listed in the Domain verification admonition on the **Custom domain** section of the **Settings** page in your project.
    - Point the domain CNAME record to `ssl.redocly.app`.
      If you have EU data residency, point the CNAME record to `ssl.eu.redocly.app`.
-9.  Click **Verify**.
+1.  Click **Verify**.
     A **Pending** badge displays next to the domain, until it is verified.
     Once the domain is verified, a **Verified** badge displays next to the domain.
 
@@ -54,11 +54,10 @@ URL _with_ `api-v2` prefix: `https://docs.example.com/api-v2/page`
 
 For projects deployed through Reunite, set the page prefix using environment variables in Reunite:
 
-1. Go to the project _Settings_ page.
-2. Select **Environment variables**.
-3. Click **Add environment variable** and add `REDOCLY_PREFIX_PATHS` with your desired prefix value (for example, `api-v2`).
-4. Click the **Deployments** hyperlink in the banner.
-5. Click the **Trigger deployment** button.
+1. Go to the project **Settings** > **Environment variables** page.
+1. Click **Add environment variable** and add `REDOCLY_PREFIX_PATHS` with your desired prefix value (for example, `api-v2`).
+1. Click the **Deployments** hyperlink in the banner.
+1. Click the **Trigger deployment** button.
 
 {% admonition type="warning" name="Deployment considerations" %}
 Setting `REDOCLY_PREFIX_PATHS` only in your project's `.env` file can cause health checks and publish steps to fail during deployment.
