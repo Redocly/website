@@ -96,6 +96,27 @@ Toggle between color modes to see the differences.
 3. **Override variables** - Add your custom values to the `@theme/styles.css` file
 4. **Test in both modes** - Ensure your styling works well in both light and dark modes using [color mode customization](./customize-color-modes.md)
 
+## Restore legacy link styling
+
+If you want links to look like they did previously (no underline by default, underline on hover), add the following overrides in your `@theme/styles.css` file:
+
+```css {% title="@theme/styles.css" %}
+:root {
+  --link-decoration: none;
+  --link-decoration-visited: none;
+}
+```
+
+If you prefer no underlines in any link state, including hover:
+
+```css {% title="@theme/styles.css" %}
+:root {
+  --link-decoration: none;
+  --link-decoration-hover: none;
+  --link-decoration-visited: none;
+}
+```
+
 ## Style products individually
 
 When your project has multiple products configured, a product-specific CSS class is automatically added to the root element (`<html>`) based on the current product.
