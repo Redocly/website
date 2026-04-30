@@ -4,7 +4,7 @@ This article shows how to use Respect, powered by Arazzo workflows, for OAuth2 a
 You will cover the following topics:
 
 - Practical applications of Arazzo:
-  - Creating reusable workflows with inputs and outputs.
+  - Creating reusable workflows with outputs.
   - Authorizing API requests with OAuth2.
 
 # Respect Practical Example Series [02]
