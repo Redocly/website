@@ -39,6 +39,14 @@ To start working on your project, [connect your Git provider](./connect-git/conn
 This way you can maintain your files in your own infrastructure and publish your website using Redocly.
 Alternatively, you can use Redocly-hosted Git.
 
+### Go live with a draft project
+
+New projects start in draft mode.
+While a project stays in draft mode, deployment URLs require login and the production deployment runs in a lower-scale configuration.
+
+To make the project behave like a standard live project, click **Go live** in the editor.
+For more information, see [draft projects](./draft-projects.md).
+
 ### Download your project files
 
 If you use Redocly-hosted Git, you can download your project files at any time using the **Download ZIP** button on the **Git hosting** tab on the project's **Settings** page.
@@ -95,6 +103,7 @@ Reunite deletes the project and returns you to your organization's dashboard.
 
 ## Resources
 
+- **[Draft projects](./draft-projects.md)** - Understand draft mode, protected draft deployments, and what changes when you go live
 - **[Configure RBAC](../../config/access/rbac.md)** - Set up role-based access control for granular project and content access permissions
 - **[Connect a Git provider](./connect-git/connect-git-provider.md)** - Integrate your projects with Git repositories from various providers for version control and collaboration
 - **[Roles and permissions](../../access/roles.md)** - Understand user roles and permission levels available for project access control and team collaboration

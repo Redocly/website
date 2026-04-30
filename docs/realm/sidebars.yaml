@@ -49,6 +49,7 @@
       label: Projects
     - page: reunite/project/project-ui.md
       label: Project user interface
+    - page: reunite/project/draft-projects.md
     - page: reunite/project/use-editor.md
       label: Editor
     - page: reunite/project/keyboard-shortcuts.md
