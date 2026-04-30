@@ -43,8 +43,7 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 - Sets the image with extended metadata (`og:image`, `twitter:image`) used when sharing links to your project on social
   networks.
   You must specify the path to an existing image in your project project.
-  In addition, you can replace the
-  image for Twitter or other social networks separately with `og:image` or `twitter:image` at is specified in the `meta` option.
+  In addition, you can replace the image for Twitter or other social networks separately with `og:image` or `twitter:image` as is specified in the `meta` option.
 
 ---
 
@@ -93,9 +92,9 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 - string
 - Sets the base URL for canonical links.
   When this option is configured, it automatically adds `rel="canonical"` to the head of all HTML pages.
-  This option is required to generate a sitemap, see more information in the [Sitemaps](#sitemaps) section below.
+  This option is required to generate a sitemap, see more information in the [Sitemaps](#sitemaps) section.
 
-  This option should not be used in front matter.
+  Do not use this option in the front matter.
 
 ---
 
@@ -220,16 +219,16 @@ Default values for the `llmstxt` object are:
 - path
 - string
 - Path to the `.md` file with detailed information about the project.
-Must be a relative path to the `redocly.yaml` config.
-Mutually exclusive with `content`.
+  Must be a relative path to the `redocly.yaml` config.
+  Mutually exclusive with `content`.
 
 ---
 
 - content
 - string
 - Detailed information about the project.
-Must be a string.
-Mutually exclusive with `path`.
+  Must be a string.
+  Mutually exclusive with `path`.
 
 
 {% /table %}
@@ -246,7 +245,8 @@ Mutually exclusive with `path`.
 
 - title
 - string
-- **REQUIRED.** Section title.
+- **REQUIRED.**
+  Section title.
   See [llms.txt format documentation](https://llmstxt.org/#format) for details.
 
 ---
@@ -274,7 +274,7 @@ Mutually exclusive with `path`.
 
 ## Sitemaps
 
-A [sitemap](https://en.wikipedia.org/wiki/Site_map) is a resource that lists all the pages in your website to help search engines and other automation tools identify all the pages available.
+A sitemap is a resource that lists all the pages in your website to help search engines and other automation tools identify all the pages available.
 
 ### Generate a sitemap
 
@@ -308,6 +308,14 @@ The sitemap data is formatted to standard search engine expectations, using the 
   </url>
 </urlset>
 ```
+
+### Canonical links
+
+Canonical links are a way for search engines to determine the page with most relevant content.
+When you configure the `siteUrl` option, Realm automatically adds `rel="canonical"` link element to pages during project build.
+
+If you have versioned content in your project, only the pages that are the default versions are marked as canonical.
+When you change the default version of a page: by editing `versions.yaml` or adding a new version subfolder, canonical links update during the next build.
 
 ### Page priority
 
@@ -347,13 +355,14 @@ your-awesome-project/
 ```
 
 {% admonition type="warning" name="Validate your sitemap" %}
-Redocly serves the sitemap but doesn't validate the structure, so you should validate your sitemap before adding the file.
+Redocly serves the sitemap but doesn't validate the structure.
+Validate your sitemap before adding the file.
 {% /admonition %}
 
 ## Control search indexing
 
 Use the `noindex` rule to block search indexing for your entire project or specific pages.
-The `noindex` rule tells search engines that pages shouldn't be indexed or included in searches.
+The `noindex` rule tells search engines that pages mustn't be indexed or included in searches.
 
 {% admonition type="info" %}
 The `noindex` rule only applies to external search engines.
@@ -454,7 +463,7 @@ The verification files will be accessible at:
 
 The following is an example of setting default values for all pages in the configuration file.
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 seo:
   title: Example Project
   description: Learn how to work with Example APIs
