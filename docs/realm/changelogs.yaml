@@ -44614,15 +44614,6 @@ reunite:
       patch:
         - Closing the last tab in a Reunite editor default files group now keeps the group in place.
     dependencies: {}
-  v2026-04-30.1:
-    timestamp: 1777537371000
-    changes:
-      minor:
-        - Added re-request review functionality.
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.30.2`.
-        - Retained feedback filters and sort order when switching between Page feedback and Code reports.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
