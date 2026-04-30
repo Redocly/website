@@ -1,3 +1,6 @@
+# Respect Practical Example Series [02]
+
+## OAuth2 Authorization with Arazzo
 
 This article shows how to use Respect, powered by Arazzo workflows, for OAuth2 authorization. You will learn how to define reusable workflows in separate files, pass values between workflows, and use those values to authorize API requests.
 
@@ -7,9 +10,13 @@ You will cover the following topics:
   - Creating reusable workflows with outputs.
   - Authorizing API requests with OAuth2.
 
-# Respect Practical Example Series [02]
+### What you will build
 
-## OAuth2 Authorization with Arazzo
+You will build three connected Arazzo workflows:
+
+- A reusable workflow that registers an OAuth2 client and exposes the returned `clientId` and `clientSecret`.
+- An authorization workflow that reuses the client registration workflow and retrieves an access token.
+- A final workflow that uses the access token with `x-security` to create a menu item through a protected API operation.
 
 ### The problem
 
@@ -23,6 +30,11 @@ Respect supports this use case with the [`x-security` extension](https://redocly
 
 - Familiarity with the [`x-security` extension](https://redocly.com/docs/respect/extensions/x-security#x-security-extension).
 - An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API.
+
+The example uses an OpenAPI description with public operations, protected menu operations, OAuth2 security schemes, and a dynamic client registration endpoint. The most important parts for this article are `/oauth2/register`, `/oauth2/token`, the protected `POST /menu` operation, and the `OAuth2` security scheme.
+
+<details>
+<summary>OpenAPI description used in this example</summary>
 
 ```yaml
 openapi: 3.1.0
@@ -607,15 +619,19 @@ components:
             $ref: '#/components/schemas/Error'
 ```
 
+</details>
+
 ### Retrieve an access token for OAuth2
 
 The Redocly Cafe API can register a new OAuth2 client with dynamic client registration. This flow follows the [Dynamic Client Registration Protocol (RFC 7591)](https://datatracker.ietf.org/doc/html/rfc7591).
 
-Because client registration is useful in more than one workflow, we will describe it in a separate Arazzo file and reuse it later.
+Because client registration is useful in more than one workflow, describe it in a separate Arazzo file and reuse it later. This keeps the authorization details separate from the workflow that tests the protected menu operation.
 
 #### Register OAuth2 client
 
 The API description used in this article extends the previous example with a `/oauth2/register` endpoint.
+
+`redocly-cafe-api.yaml`
 
 ```yaml
 /oauth2/register:
@@ -641,6 +657,8 @@ The API description used in this article extends the previous example with a `/o
 ```
 
 Create a `register-oauth2-client.arazzo.yaml` file to register an OAuth2 client.
+
+`register-oauth2-client.arazzo.yaml`
 
 ```yaml
 arazzo: 1.0.1
@@ -714,13 +732,7 @@ outputs:
   clientSecret: $response.body#/clientSecret
 ```
 
-- Because these values must be available outside this workflow, the workflow also exposes them as workflow outputs.
-
-```yaml
-outputs:
-  clientId: $response.body#/clientId
-  clientSecret: $response.body#/clientSecret
-```
+- Because these values must be available outside this workflow, the complete workflow also exposes the step outputs as workflow outputs. That allows another Arazzo workflow to call this workflow and read the values by name.
 
 Execute the file with Redocly CLI to inspect the API response and confirm which values are mapped to workflow outputs:
 
@@ -732,7 +744,12 @@ npx @redocly/cli@latest respect register-oauth2-client.arazzo.yaml --verbose
 
 Next, create another Arazzo file called `authorization.arazzo.yaml`.
 
-This workflow gets an access token in two steps. First, it reuses the `register-oauth2-client` workflow to retrieve a `clientId` and `clientSecret`. To do that, add the reusable workflow as another `sourceDescription`.
+This workflow gets an access token in two steps:
+
+- First, it reuses the `register-oauth2-client` workflow to retrieve a `clientId` and `clientSecret`.
+- Then it calls the token endpoint and exposes the returned access token as a workflow output.
+
+To reuse the client registration workflow, add the reusable workflow as another `sourceDescription`.
 
 ```yaml
 - name: register-oauth2
@@ -744,6 +761,8 @@ Then execute that workflow from a step by referencing `workflowId: $sourceDescri
 The second step, `authorize-with-code`, calls the `/oauth2/token` endpoint with a predefined `/callback`. In a production application, the callback is usually implemented by the client application. In this example, the Redocly Cafe API provides the callback endpoint for demonstration purposes.
 
 This step also uses the [`x-operation` extension](https://redocly.com/docs/respect/extensions/x-operation) to make a request to a URL that is not described as an operation in the OpenAPI description.
+
+`authorization.arazzo.yaml`
 
 ```yaml
 arazzo: 1.0.1
@@ -804,6 +823,8 @@ npx @redocly/cli@latest respect authorization.arazzo.yaml --verbose
 
 Inspect the response body of the last step. It should contain the `access_token` that the final workflow will use:
 
+Key result from the command output:
+
 ```bash
     Response Body:
       {
@@ -824,6 +845,12 @@ Now we can combine the previous workflows and call a protected endpoint that cre
 
 The authorization workflow returns values that the final workflow passes to the [`x-security` extension](https://redocly.com/docs/respect/extensions/x-security#x-security-extension). Respect then uses those values to authorize the protected API request.
 
+The important handoff is:
+
+- The `authorize` step calls the reusable authorization workflow.
+- The `create-menu-item` step reads `access_token` and `client_id` from the `authorize` step outputs.
+- The `x-security` extension automatically constructs appropriate authorization headers, queries, or cookies based on your parameters for the protected `createMenuItem` operation.
+
 ```yaml
 x-security:
   - schemeName: OAuth2
@@ -833,6 +860,8 @@ x-security:
 ```
 
 The final workflow looks like this:
+
+`redocly-cafe-api.arazzo.yaml`
 
 ```yaml
 arazzo: 1.0.1
