@@ -21,62 +21,99 @@ Each project has its own Analytics page.
 Data collection begins after you publish your project for the first time.
 Newly-deployed projects may take time to generate sufficient data.
 
-## How does Redocly Analytics collect data?
+## Analytics data collection
 
-Redocly Analytics helps you understand how your documentation is used by tracking:
-- Page views – counted each time a documentation page is requested
-- Search queries – recorded when users perform a search, including searches that return no results
+Analytics in Reunite help you understand how your documentation is used by tracking:
+- page views: counted each time a documentation page is requested
+- search queries: recorded when users perform a search, including searches that return no results
 
 This data is collected server-side, directly from web requests.
-We log:
+Reunite logs:
 - page paths or search terms
 - timestamps of the event
 - requests' IP addresses, used for operational purposes such as deduplicating traffic, filtering bots, and ensuring accurate reporting
 
 All data is collected on behalf of your organization and used only to provide aggregated insights in your Analytics dashboard.
-We do not use analytics data for advertising or tracking users across sites, and we do not attempt to identify individual visitors.
+Redocly does not use analytics data for advertising or tracking users across sites, and does not attempt to identify individual visitors.
 
 The Analytics page contains collected data with charts for visualization.
 The Analytics page is available to users with the admin or maintainer project role.
 By default, organization owners and members are assigned the admin role for projects.
 If a user’s role is changed to a role other than admin or maintainer, they lose access to Analytics.
-Organization owners always retain access.```
+Organization owners always retain access.
 
-The dashboard includes graphs and tables for each category:
-- Page views
-- AI-powered search
-- Search queries
+All elements on the **Analytics** page display the data for the period selected in the date input field top-right corner of the page.
+You can change this period by clicking the date input field.
 
-Change the time period by clicking the date input field in the top-right corner.
-Navigate to detailed views for each category from the dashboard.
-Export data to CSV files from detailed view pages.
+## Pages
 
-## Page views
+The **Pages** section displays a table with the most visited page URLs, and a time series chart of views and unique users.
 
-The Page views section displays a time series chart of views and unique users, plus a table with the most visited page URLs.
-Both elements show data for the selected period.
-Refine the data by selecting between All views and Unique users.
+### Top 5 viewed pages
 
-Select **View more** for detailed page views.
+The **Top 5 viewed pages** table displays the five most visited pages, together with the number of unique users and the number of views for each page.
 
-The detailed view page offers three different views:
-- **Pages:** Lists the most visited pages
-- **Paths:** Lists the most visited URL paths
-- **Domains:** Lists domains that refer the most traffic to your project
+### Views and users
 
-## Search queries
+Click the **View details** button to open **Page views**.
 
-The Search queries section displays the total number of searches in the selected period, a table with search queries sorted by search count, and a time series chart with searches and unique users.
+The **Page views** page displays more granular data and offers three different views:
 
-Select **View more** for detailed search queries.
-Toggle between viewing all, found (with results), or not-found (no results) search queries.
+- **Pages:** lists the most visited pages
+- **Paths:** lists the most visited URL paths
+- **Domains:** lists domains that refer the most traffic to your project
 
-## AI-powered search
+On this page you can:
 
-The AI-powered search section displays the total number of AI-powered searches in the selected period and a bar chart with search counts.
+- change the period for the displayed data
+- export the data from the selected period to a CSV file
+- search in pages, paths or domains
 
-Select **View more** for detailed AI-powered search queries.
-Inspect each query to see the full question, AI-provided answer, and corresponding source resources.
+## Search
+
+The **Search** section displays:
+- time series chart with AI searches and unique users
+- time series chart with manual searches and unique users
+- table with the top search queries
+
+### AI Searches and Users
+
+The **AI Searches and Users** section displays a time series of AI-powered searches in the selected period.
+
+Click the **View details** button to open **AI Search queries**.
+
+The **AI Search queries** page displays granular data on the use of AI-powered search.
+Expand each query to see the full question, AI-provided answer, and corresponding sources.
+
+On this page you can:
+
+- change the period for the displayed data
+- export the data from the selected period to a CSV file
+- view the counts for liked and disliked answers
+- filter the results by feedback
+- search query text
+
+### Top 5 search queries
+
+The **Top 5 search queries** table displays the five most searched terms, together with the number of unique users and the number of searches for each query.
+
+You can use the toggle in the top-right corner of the table to switch the displayed data between:
+
+- **All queries** - displays data for all queries, regardless of the number of results.
+- **Most not found** - displays data for queries that returned no results.
+
+### Searches and users
+
+The **Searches and users** section displays a time series chart with searches and unique users.
+
+Click the **View details** button to open **Search queries**.
+
+On this page you can:
+
+- change the period for the displayed data
+- export the data from the selected period to a CSV file
+- filter the results by  **All queries** or **Most not found**
+- search query text
 
 ## Resources
 
