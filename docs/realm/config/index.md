@@ -122,6 +122,8 @@ This guide provides a comprehensive overview of available configuration options 
   {% configProperty file="redirects.md" /%}
 
   {% configProperty file="seo.md" /%}
+
+  {% configProperty file="stats.md" /%}
 {% /configSection %}
 
 {% configSection title="Developer experience" description="Enhance the experience for developers using your APIs." %}

@@ -170,6 +170,8 @@
       label: search
     - page: ./seo.md
       label: seo
+    - page: ./stats.md
+      label: stats
     - page: ./sidebar.md
       label: sidebar
     - page: ./ssoDirect.md

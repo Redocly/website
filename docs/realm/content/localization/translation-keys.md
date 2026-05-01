@@ -1148,6 +1148,138 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- stats.apis.table.empty
+- Message shown when the project stats APIs table has no rows
+- No API statistics available.
+
+---
+
+- stats.apis.table.header.apiName
+- Column header for the API name on the project stats APIs table
+- API name
+
+---
+
+- stats.apis.table.header.externalDocs
+- Column header for external document count on the project stats APIs table
+- External Docs
+
+---
+
+- stats.apis.table.header.links
+- Column header for link count on the project stats APIs table
+- Links
+
+---
+
+- stats.apis.table.header.operations
+- Column header for operation count on the project stats APIs table
+- Operations
+
+---
+
+- stats.apis.table.header.parameters
+- Column header for parameter count on the project stats APIs table
+- Parameters
+
+---
+
+- stats.apis.table.header.pathItems
+- Column header for path item count on the project stats APIs table
+- Path Items
+
+---
+
+- stats.apis.table.header.references
+- Column header for reference count on the project stats APIs table
+- References
+
+---
+
+- stats.apis.table.header.schemas
+- Column header for schema count on the project stats APIs table
+- Schemas
+
+---
+
+- stats.apis.table.header.tags
+- Column header for tag count on the project stats APIs table
+- Tags
+
+---
+
+- stats.apis.table.loadMore
+- Button label to load additional rows in the project stats APIs table
+- Load more
+
+---
+
+- stats.files.table.empty
+- Message shown when file extension stats are enabled but no data is available
+- No file extension data available.
+
+---
+
+- stats.files.table.header.count
+- Column header for occurrence count in the project stats file extensions table
+- Count
+
+---
+
+- stats.files.table.header.extension
+- Column header for file extension in the project stats file extensions table
+- File Extension
+
+---
+
+- stats.page.breadcrumb.ariaLabel
+- Accessible label for breadcrumbs on the project stats page
+- Breadcrumb
+
+---
+
+- stats.page.breadcrumb.home
+- Home breadcrumb label on the project stats page
+- Home
+
+---
+
+- stats.page.breadcrumb.statistic
+- Current-page breadcrumb label on the project stats page
+- Statistic
+
+---
+
+- stats.page.subtitle
+- Subtitle under the main heading on the project stats page
+- Analyze the API statistics to optimize performance and guide decision-making.
+
+---
+
+- stats.page.tabs.apis
+- Tab label for the APIs section on the project stats page
+- APIs
+
+---
+
+- stats.page.tabs.ariaLabel
+- Accessible label for the APIs / Files tab list on the project stats page
+- Statistics sections
+
+---
+
+- stats.page.tabs.files
+- Tab label for the Files section on the project stats page
+- Files
+
+---
+
+- stats.page.title
+- Main heading on the project stats page (`/redocly/project/stats`)
+- API statistics
+
+---
+
 - loaders.loading
 - Text shown by generic loading indicators
 - Loading...
