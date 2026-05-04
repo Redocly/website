@@ -322,6 +322,14 @@ It includes user details, project configuration, and utilities for accessing req
 
 {% /table %}
 
+#### context.getKv
+
+```ts
+context.getKv(): Promise<KvService>
+```
+
+Returns the [KV storage](./kv-storage.md) service for data persistence.
+KV storage provides key-value database operations for caching, session management, and lightweight data storage.
 ### Context methods
 
 The context object includes the following methods for sending a standard Web Handler [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response):
@@ -550,4 +558,5 @@ export default async function (request: Request, context: ApiFunctionsContext) {
 
 ## Resources
 
-- [Render weather data in a Markdoc tag](./create-api-functions.md) - End-to-end tutorial that builds an API function and a custom Markdoc tag.
+- **[Render weather data in a Markdoc tag](./create-api-functions.md)** - End-to-end tutorial that builds an API function and a custom Markdoc tag.
+- **[KV storage](./kv-storage.md)** - Built-in key-value database for data persistence in API functions
