@@ -44894,6 +44894,13 @@ reunite:
         - Updated `@redocly/openapi-core` to version `2.30.2`.
         - Retained feedback filters and sort order when switching between Page feedback and Code reports.
     dependencies: {}
+  v2026-05-05.5:
+    timestamp: 1777989920000
+    changes:
+      minor: []
+      patch:
+        - Fixed intermittent "Cannot edit in read-only" and dropped keystrokes issue in the Reunite editor.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
