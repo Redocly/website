@@ -71,7 +71,7 @@
       '@redocly/asyncapi-docs': 1.10.0-next.0
       '@redocly/graphql-docs': 1.10.0-next.0
   0.132.2:
-    timestamp: 1778059765206
+    timestamp: 1778060084000
     changes:
       minor: []
       patch:
@@ -6144,7 +6144,7 @@
       '@redocly/asyncapi-docs': 1.10.0-next.0
       '@redocly/graphql-docs': 1.10.0-next.0
   0.132.2:
-    timestamp: 1778059765206
+    timestamp: 1778060084000
     changes:
       minor: []
       patch:
@@ -11315,7 +11315,7 @@
       '@redocly/asyncapi-docs': 1.10.0-next.0
       '@redocly/graphql-docs': 1.10.0-next.0
   0.132.2:
-    timestamp: 1778059765206
+    timestamp: 1778060084000
     changes:
       minor: []
       patch:
@@ -16478,7 +16478,7 @@
       '@redocly/asyncapi-docs': 1.10.0-next.0
       '@redocly/graphql-docs': 1.10.0-next.0
   0.132.2:
-    timestamp: 1778059765206
+    timestamp: 1778060084000
     changes:
       minor: []
       patch:
@@ -30042,7 +30042,7 @@
       '@redocly/redoc-revel': 0.133.0-next.0
       '@redocly/theme': 0.65.0-next.0
   1.15.2:
-    timestamp: 1778059765206
+    timestamp: 1778060084000
     changes:
       minor: []
       patch: []
