@@ -47,7 +47,7 @@ The **Activity** tab of the pull request includes the pull request's title, desc
 You can click on the commit hashes to see the changes introduced with that commit.
 
 {% img
-  src="../../images/commit-hashes.png"
+  src="../../images/reunite-pull-request-commit-hashes.png"
   alt="Screenshot of pull request in Reunite with arrows pointing to commit hash links"
   withLightbox=true
 /%}
@@ -91,7 +91,7 @@ After making your changes to the title, click **Save**.
 To edit the description of a pull request, click the more options dropdown menu and select **Edit**.
 
 {% img
-  src="../../images/edit-description.png"
+  src="../../images/reunite-pull-request-edit-description.png"
   alt="Screenshot of pull request in Reunite with an arrow pointing to the more options dropdown icon"
   withLightbox=true
 /%}
@@ -109,7 +109,7 @@ Draft pull requests can be closed, but not merged until you click **Ready for re
 When you are ready for others to review your changes, click the **Ready for review** button and assign reviewers.
 
 {% img
-  src="../../images/ready-for-review.png"
+  src="../../images/reunite-pull-request-ready-for-review.png"
   alt="Screenshot of pull request in Reunite with an arrow pointing to the Ready for review button"
   withLightbox=true
 /%}
@@ -119,11 +119,13 @@ When you are ready for others to review your changes, click the **Ready for revi
 Before you merge your changes to the main branch, you should have them reviewed by a colleague to check for inconsistencies or errors.
 When you assign reviewers to your pull request they are sent notification emails to inform them they have been requested to review your pull request.
 
-To assign reviewers to a pull request, click the pencil icon next to **Reviewers** on the right side of the page, and select from the list of reviewers, or enter the reviewer's name if the list is long and you can't see the reviewer you want to select.
+To assign reviewers to a pull request, click the adjustments icon next to **Reviewers** on the right side of the page. If you cannot find a reviewer in the list, enter their name in the search field.
+
+If no reviewers have been assigned yet, you can also use the **Add reviewers** button in the pull request summary.
 
 {% img
-  src="../../images/assign-reviewers.png"
-  alt="Screenshot of pull request in Reunite with arrow pointing to the pencil icon next to Reviewers"
+  src="../../images/reunite-pull-request-assign-reviewers.png"
+  alt="Screenshot of pull request in Reunite with arrow pointing to the adjustments icon next to Reviewers"
   withLightbox=true
 /%}
 

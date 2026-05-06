@@ -141,7 +141,12 @@ If your accounts are connected but you do not have review permissions in the pro
 After a **Ready for review** pull request receives approval and passes checks, click **Merge**.
 
 {% admonition type="warning" name="Emergency merge process" %}
-Check **Merge without requirements** only for urgent changes when you're certain they won't cause build issues.
+Click **Merge without requirements** only for urgent changes when you're certain they won't cause build issues.
+
+{% img
+  src="../../images/reunite-pull-request-merge-without-requirements.png" alt="Screenshot of pull request in Reunite with arrow pointing to the Merge without requirements option" withLightbox=true width="" height=""
+/%}
+
 {% /admonition %}
 
 After merging, the updates appear in the main branch and trigger a deployment to publish changes to the production project.
