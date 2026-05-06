@@ -1,4 +1,23 @@
 '@redocly/realm':
+  0.133.0-next.4:
+    timestamp: 1778078522000
+    changes:
+      minor:
+        - Excluded buttons and links from heading content to improve accessibility.
+        - Separated OpenAPI AI search indexing from the standard search indexing flow in Realm.
+      patch:
+        - Fixed unauthenticated callback execution in the MCP docs server.
+        - Fixed an issue where searching in projects without searchable content caused a server error.
+        - Fixed an issue where login and logout redirects caused 404 and URI mismatch errors with projects with path prefix.
+        - Updated `@redocly/openapi-core` to version `2.30.3`.
+        - Hardened Realm CORS proxy validation to block private network targets before proxying requests.
+        - Fixed an issue where MCP auth URLs were displayed when MCP docs had been disabled.
+    dependencies:
+      '@redocly/openapi-docs': 3.21.0-next.4
+      '@redocly/theme': 0.65.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.18.0-next.4
+      '@redocly/asyncapi-docs': 1.10.0-next.4
+      '@redocly/graphql-docs': 1.10.0-next.4
   0.133.0-next.3:
     timestamp: 1777891733000
     changes:
@@ -6074,6 +6093,24 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.133.0-next.4:
+    timestamp: 1778078522000
+    changes:
+      minor:
+        - Excluded buttons and links from heading content to improve accessibility.
+        - Separated OpenAPI AI search indexing from the standard search indexing flow in Realm.
+      patch:
+        - Fixed unauthenticated callback execution in the MCP docs server.
+        - Fixed an issue where searching in projects without searchable content caused a server error.
+        - Fixed an issue where login and logout redirects caused 404 and URI mismatch errors with projects with path prefix.
+        - Updated `@redocly/openapi-core` to version `2.30.3`.
+        - Fixed an issue where MCP auth URLs were displayed when MCP docs had been disabled.
+    dependencies:
+      '@redocly/openapi-docs': 3.21.0-next.4
+      '@redocly/theme': 0.65.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.18.0-next.4
+      '@redocly/asyncapi-docs': 1.10.0-next.4
+      '@redocly/graphql-docs': 1.10.0-next.4
   0.133.0-next.3:
     timestamp: 1777891733000
     changes:
@@ -11247,6 +11284,24 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.133.0-next.4:
+    timestamp: 1778078522000
+    changes:
+      minor:
+        - Excluded buttons and links from heading content to improve accessibility.
+        - Separated OpenAPI AI search indexing from the standard search indexing flow in Realm.
+      patch:
+        - Fixed unauthenticated callback execution in the MCP docs server.
+        - Fixed an issue where searching in projects without searchable content caused a server error.
+        - Fixed an issue where login and logout redirects caused 404 and URI mismatch errors with projects with path prefix.
+        - Updated `@redocly/openapi-core` to version `2.30.3`.
+        - Fixed an issue where MCP auth URLs were displayed when MCP docs had been disabled.
+    dependencies:
+      '@redocly/openapi-docs': 3.21.0-next.4
+      '@redocly/theme': 0.65.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.18.0-next.4
+      '@redocly/asyncapi-docs': 1.10.0-next.4
+      '@redocly/graphql-docs': 1.10.0-next.4
   0.133.0-next.3:
     timestamp: 1777891733000
     changes:
@@ -16408,6 +16463,24 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.133.0-next.4:
+    timestamp: 1778078522000
+    changes:
+      minor:
+        - Excluded buttons and links from heading content to improve accessibility.
+        - Separated OpenAPI AI search indexing from the standard search indexing flow in Realm.
+      patch:
+        - Fixed unauthenticated callback execution in the MCP docs server.
+        - Fixed an issue where searching in projects without searchable content caused a server error.
+        - Fixed an issue where login and logout redirects caused 404 and URI mismatch errors with projects with path prefix.
+        - Updated `@redocly/openapi-core` to version `2.30.3`.
+        - Fixed an issue where MCP auth URLs were displayed when MCP docs had been disabled.
+    dependencies:
+      '@redocly/openapi-docs': 3.21.0-next.4
+      '@redocly/theme': 0.65.0-next.4
+      '@redocly/portal-plugin-mock-server': 0.18.0-next.4
+      '@redocly/asyncapi-docs': 1.10.0-next.4
+      '@redocly/graphql-docs': 1.10.0-next.4
   0.133.0-next.3:
     timestamp: 1777891733000
     changes:
@@ -21633,6 +21706,14 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.65.0-next.4:
+    timestamp: 1778078522000
+    changes:
+      minor:
+        - Excluded buttons and links from heading content to improve accessibility.
+        - Separated OpenAPI AI search indexing from the standard search indexing flow in Realm.
+      patch: []
+    dependencies: {}
   0.65.0-next.3:
     timestamp: 1777891733000
     changes:
@@ -24490,6 +24571,15 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.21.0-next.4:
+    timestamp: 1778078522000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.30.3`.
+        - Fixed an issue where selected request body examples were not properly synchronized between Redoc and the **Try it** overlay.
+    dependencies:
+      '@redocly/replay': 0.24.0-next.4
   3.21.0-next.3:
     timestamp: 1777891733000
     changes:
@@ -28148,6 +28238,14 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.10.0-next.4:
+    timestamp: 1778078522000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.21.0-next.4
+      '@redocly/theme': 0.65.0-next.4
   1.10.0-next.3:
     timestamp: 1777891733000
     changes:
@@ -29185,6 +29283,13 @@
       '@redocly/theme': 0.6.0
 '@redocly/api-docs': {}
 '@redocly/mock-server':
+  0.7.0-next.3:
+    timestamp: 1778078522000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.30.3`.
+    dependencies: {}
   0.7.0-next.2:
     timestamp: 1777541852000
     changes:
@@ -29996,6 +30101,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.16.0-next.4:
+    timestamp: 1778078522000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.133.0-next.4
+      '@redocly/redoc': 0.133.0-next.4
+      '@redocly/redoc-reef': 0.133.0-next.4
+      '@redocly/redoc-revel': 0.133.0-next.4
+      '@redocly/theme': 0.65.0-next.4
   1.16.0-next.3:
     timestamp: 1777891733000
     changes:
@@ -35112,6 +35228,14 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.18.0-next.4:
+    timestamp: 1778078522000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.7.0-next.3
+      '@redocly/openapi-docs': 3.21.0-next.4
   0.18.0-next.3:
     timestamp: 1777891733000
     changes:
@@ -37911,6 +38035,14 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.24.0-next.4:
+    timestamp: 1778078522000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.30.3`.
+    dependencies:
+      '@redocly/theme': 0.65.0-next.4
   0.24.0-next.3:
     timestamp: 1777891733000
     changes:
@@ -39942,6 +40074,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.16.0-next.4:
+    timestamp: 1778078522000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.65.0-next.4
   0.16.0-next.3:
     timestamp: 1777891733000
     changes:
@@ -41650,6 +41789,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.10.0-next.4:
+    timestamp: 1778078522000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.21.0-next.4
+      '@redocly/theme': 0.65.0-next.4
   1.10.0-next.3:
     timestamp: 1777891733000
     changes:
