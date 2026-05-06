@@ -70,6 +70,13 @@
       '@redocly/portal-legacy-ui': 0.16.0-next.0
       '@redocly/asyncapi-docs': 1.10.0-next.0
       '@redocly/graphql-docs': 1.10.0-next.0
+  0.132.2:
+    timestamp: 1778059765206
+    changes:
+      minor: []
+      patch:
+        - Hardened Realm CORS proxy validation to block private network targets before proxying requests.
+    dependencies: {}
   0.132.1:
     timestamp: 1777388609000
     changes:
@@ -6136,6 +6143,13 @@
       '@redocly/portal-legacy-ui': 0.16.0-next.0
       '@redocly/asyncapi-docs': 1.10.0-next.0
       '@redocly/graphql-docs': 1.10.0-next.0
+  0.132.2:
+    timestamp: 1778059765206
+    changes:
+      minor: []
+      patch:
+        - Hardened Realm CORS proxy validation to block private network targets before proxying requests.
+    dependencies: {}
   0.132.1:
     timestamp: 1777388609000
     changes:
@@ -11300,6 +11314,13 @@
       '@redocly/portal-legacy-ui': 0.16.0-next.0
       '@redocly/asyncapi-docs': 1.10.0-next.0
       '@redocly/graphql-docs': 1.10.0-next.0
+  0.132.2:
+    timestamp: 1778059765206
+    changes:
+      minor: []
+      patch:
+        - Hardened Realm CORS proxy validation to block private network targets before proxying requests.
+    dependencies: {}
   0.132.1:
     timestamp: 1777388609000
     changes:
@@ -16456,6 +16477,13 @@
       '@redocly/portal-legacy-ui': 0.16.0-next.0
       '@redocly/asyncapi-docs': 1.10.0-next.0
       '@redocly/graphql-docs': 1.10.0-next.0
+  0.132.2:
+    timestamp: 1778059765206
+    changes:
+      minor: []
+      patch:
+        - Hardened Realm CORS proxy validation to block private network targets before proxying requests.
+    dependencies: {}
   0.132.1:
     timestamp: 1777388609000
     changes:
@@ -30013,6 +30041,16 @@
       '@redocly/redoc-reef': 0.133.0-next.0
       '@redocly/redoc-revel': 0.133.0-next.0
       '@redocly/theme': 0.65.0-next.0
+  1.15.2:
+    timestamp: 1778059765206
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.132.2
+      '@redocly/redoc': 0.132.2
+      '@redocly/redoc-revel': 0.132.2
+      '@redocly/redoc-reef': 0.132.2
   1.15.1:
     timestamp: 1777388609000
     changes:
