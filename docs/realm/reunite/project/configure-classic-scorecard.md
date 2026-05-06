@@ -96,11 +96,11 @@ To configure custom rules in `redocly.yaml`:
     ```yaml {% title="redocly.yaml" %}
     scorecardClassic:
       levels:
-      - name: Baseline
+        - name: Baseline
           rules: # The following rules are built-in rules with their severity set to error
             no-unresolved-refs: error # This rule checks that the $ref mentioned in the description exists
             no-server-example.com: error # This rule checks that example.com is not being used for the server URL
-      - name: Superior
+        - name: Superior
           rules: # The following rules are built-in rules except for rule/operation-summary-min-length, which is a configurable rule
             no-unresolved-refs: error
             no-unused-components: error # This rule checks to make sure all components listed in the description are used

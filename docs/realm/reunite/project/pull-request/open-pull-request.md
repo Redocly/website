@@ -41,8 +41,20 @@ This notifies the team that there is a pull request awaiting their attention.
 The reviewers approve the pull request if they agree that the changes are ready to merge.
 Once there are approving reviews, the [pull request can be merged](./review-pull-request.md#merge-a-pull-request), bringing your changes into the main branch of the project.
 
-If you no longer want to continue working on a pull request and you do not want it merged with main, you can click the **Close pull request button**.
-If you change your mind about that pull request later, you can click the **Reopen pull request** button.
+If you no longer want to continue working on a pull request and you do not want it merged with main, you can open the **Actions** menu and select **Close pull request**.
+
+{% img
+  src="../../images/reunite-pull-request-close.png"
+  alt="Screenshot of pull request in Reunite with arrow pointing to the Close pull request option"
+  withLightbox=true width="" height=""
+/%}
+
+To reopen it later, select **Reopen pull request** from the same menu.
+
+{% img
+  src="../../images/reunite-pull-request-reopen.png" alt="Screenshot of pull request in Reunite with arrow pointing to the Reopen pull request option"
+  withLightbox=true width="" height=""
+/%}
 
 ## Resources
 
