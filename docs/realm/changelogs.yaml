@@ -44939,13 +44939,6 @@ reunite:
       patch:
         - Fixed intermittent "Cannot edit in read-only" and dropped keystrokes issue in the Reunite editor.
     dependencies: {}
-  v2026-05-06.3:
-    timestamp: 1778071989000
-    changes:
-      minor: []
-      patch:
-        - Updated Reunite's pull request summary interface to improve readability of merge status, reviews, and actions on the activity page.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
