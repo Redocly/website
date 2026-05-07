@@ -112,31 +112,37 @@
       items:
         - page: reunite/project/respect-monitoring/configure-respect-monitoring.md
         - page: reunite/project/respect-monitoring/manage-respect-monitoring.md
-    - separator: Reports
-    - page: reunite/project/feedback.md
-      label: Feedback
-    - page: reunite/project/analytics.md
-      label: Analytics
-    - separator: Settings
-    - page: reunite/project/custom-domain.md
-      label: Custom domain
-    - page: reunite/project/env-variables.md
-      label: Environment variables
-    - page: reunite/project/telemetry.md
-      label: Telemetry
-    - group: Git hosting
-      page: reunite/project/connect-git/connect-git-provider.md
+
+    - group: Reports
+      expanded: always
       items:
-        - page: reunite/project/connect-git/github.md
-          label: GitHub
-        - page: reunite/project/connect-git/gitlab.md
-          label: GitLab
-        - page: reunite/project/connect-git/azure-devops.md
-          label: Azure DevOps
-        - page: reunite/project/connect-git/bitbucket-cloud.md
-          label: Bitbucket Cloud
-    - page: reunite/project/branches-and-deployments.md
-      label: Branches and deployments
+        - page: reunite/project/feedback.md
+          label: Feedback
+        - page: reunite/project/analytics.md
+          label: Analytics
+
+    - group: Settings
+      expanded: always
+      items:
+        - page: reunite/project/custom-domain.md
+          label: Custom domain
+        - page: reunite/project/env-variables.md
+          label: Environment variables
+        - page: reunite/project/telemetry.md
+          label: Telemetry
+        - group: Git hosting
+          page: reunite/project/connect-git/connect-git-provider.md
+          items:
+            - page: reunite/project/connect-git/github.md
+              label: GitHub
+            - page: reunite/project/connect-git/gitlab.md
+              label: GitLab
+            - page: reunite/project/connect-git/azure-devops.md
+              label: Azure DevOps
+            - page: reunite/project/connect-git/bitbucket-cloud.md
+              label: Bitbucket Cloud
+        - page: reunite/project/branches-and-deployments.md
+          label: Branches and deployments
     - separator: User account
     - page: reunite/user-profile-menu.md
       label: User profile menu
