@@ -63,6 +63,7 @@ After you define scorecard levels and commit the changes, labels representing th
 
 ## Resources
 
+- **[Ignore link checker](./ignore-link-checker.md)** - Set Realm CI/CD jobs to ignore broken links
 - **[Configure classic scorecard](./configure-classic-scorecard.md)** - Add Redocly built-in or custom rulesets to classic scorecards for comprehensive API quality assessment and tracking
 - **[Classic scorecard configuration reference](../../config/scorecard-classic.md)** - Complete reference for `scorecardClassic` configuration options and customization settings
 - **[Classic catalog configuration reference](../../config/catalog-classic.md)** - Complete reference for  `catatlogClassic` configuration options and customization settings

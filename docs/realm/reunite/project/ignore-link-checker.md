@@ -25,3 +25,9 @@ To publish production deployments with broken links, set the `ignoreLinkChecker`
 reunite:
   ignoreLinkChecker: true
 ```
+
+## Resources
+
+- **[Reunite configuration reference](../../config/reunite.md)** - Configure deployment options to publish builds even when they contain broken links or validation issues
+- **[Deployments](./deployments.md)** - Use Reunite's Deployments page to manage, monitor, and troubleshoot project deployments
+- **[Lint](./lint.md)** - Understand the Lint deployment step, what the scorecard displays, how to access reports, and the scorecard's role in API quality management

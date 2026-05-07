@@ -181,3 +181,7 @@ To run a specific version in Reunite:
 
 6. [Check the version](#check-version).
 7. To run this version in your production build, [open a pull request](../reunite/project/pull-request/open-pull-request.md), then review and [merge it](../reunite/project/pull-request/review-pull-request.md#merge-a-pull-request) with the new `package.json` file.
+
+## Resources
+
+- **[Get started with Realm](./index.md)** - Take your first steps building your project

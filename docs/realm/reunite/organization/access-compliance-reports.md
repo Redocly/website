@@ -22,5 +22,11 @@ Download Redocly's SOC 2, Type 2 and Penetration test reports if you need a copy
 To download the security reports:
 
 1. Select **Compliance** in the navigation menu on the left side of the page.
-2. Click **Download** for the compliance report.
-3. Click the download icon in the top left corner of the report viewer.
+1. Click **Download** for the compliance report.
+1. Click the download icon in the top left corner of the report viewer.
+
+## Resources
+
+- **[Manage organizations](manage-orgs.md)** - Set up the details and manage your Redocly organization
+- **[Reunite features](../reunite.md)** - Explore Reunite's collaborative content management and project workflow capabilities
+- **[Teams and users](./teams.md)** - Organize users into teams with role-based permissions for effective collaboration and access control

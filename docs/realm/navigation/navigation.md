@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Navigation elements
+# Navigation in Realm
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -116,3 +116,10 @@ You can configure the text on the navigation buttons in either the front matter 
 If you add the `external: true` option to a page in your sidebar, that page opens in a separate browser tab and does not have navigation buttons.
 
 See [navigation configuration](../config/navigation.md) for more information on configuring your navigation buttons.
+
+## Resources
+
+- **[Navigation elements](./index.md)** - Overview of all navigation components and patterns for creating comprehensive site navigation structures
+- **[Navbar configuration](../config/navbar.md)** - Configure the navbar navigation with links
+- **[Footer configuration](../config/footer.md)** - Configure the footer navigation with links, copyright information, and organizational elements
+- **[Front matter configuration](../config/front-matter-config.md)** - Use front matter add a sidebar on individual pages for custom page layouts

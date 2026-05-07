@@ -20,3 +20,6 @@ Start your first project either in your browser with Reunite, or using your loca
 
 - [Get started with the Reunite editor](start-reunite-editor.md): Use the built-in editor in Reunite.
 - [Get started locally](start-local-dev.md): Use a code editor on your local device.
+
+Realm and other Redocly products receive regular updates.
+If you're working locally, or have defined a version of Redocly products in your project, consider [updating to the latest version](./upgrade-realm-version.md).

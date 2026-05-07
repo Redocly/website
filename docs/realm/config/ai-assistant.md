@@ -144,3 +144,8 @@ aiAssistant:
     inputType: button
     inputIcon: redocly
 ```
+
+## Resources
+
+- **[`search`](./search.md)** - Learn how to customize search in your project, curate search results, and exclude pages from search
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

@@ -119,3 +119,8 @@ See [Add diagrams](add-diagram.md) for more details on each diagram type.
 
 Because this feature is experimental, expect gaps with advanced AsciiDoc syntax and extensions.
 If an unsupported pattern appears, simplify the markup or use Markdown/Markdoc for that section.
+
+## Resources
+
+- **[Content types](./index.md)** - Explore the different types of content you can use in your project
+- **[Add diagrams](./add-diagram.md)** - Learn how to enhance your project with diagrams

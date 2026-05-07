@@ -287,6 +287,7 @@ Some of your content files in the same location may share a name, but have diffe
 ├── payments.md
 ├── payments.page.tsx
 └── payments.yaml
+```
 
 After building the project, all four files would generate the same route: `/payments`.
 To avoid having the same route leading to different resources, the build process appends a number (`-n`) to each path.

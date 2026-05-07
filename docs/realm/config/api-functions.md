@@ -70,3 +70,4 @@ The corresponding API endpoints are:
 ## Resources
 
 - **[API functions reference](../customization/api-functions/api-functions-reference.md)** - Complete reference for available API functions and their implementation in your documentation projects
+- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

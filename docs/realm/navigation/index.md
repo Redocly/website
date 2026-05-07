@@ -212,14 +212,15 @@ footer:
 
 See the [localization configuration](../config/l10n.md) for complete setup details.
 
-## Related configuration
-
-- **[Front matter options](../config/front-matter-config.md)** - Page-specific navigation overrides
-- **[Sidebar file reference](./sidebars.md)** - Complete sidebars.yaml syntax
-- **[Branding and styling](../branding/index.md)** - Visual customization of navigation elements
-
 ## Need help
 
 - **Getting Started**: Begin with the [navbar configuration](../config/navbar.md) and [sidebar setup](./sidebars.md)
 - **Advanced Features**: Explore [multi-product setup](../config/products.md) and [search configuration](../config/search.md)
 - **Custom Styling**: See [branding options](../branding/index.md) for visual customization
+
+## Resources
+
+- **[Navigation in Realm](./navigation.md)** - Overview of navigation elements in Realm projects
+- **[Front matter options](../config/front-matter-config.md)** - Page-specific navigation overrides
+- **[Sidebar file reference](./sidebars.md)** - Complete sidebars.yaml syntax
+- **[Branding and styling](../branding/index.md)** - Visual customization of navigation elements

@@ -84,3 +84,9 @@ To add RBAC to API keys:
 
 The access logic follows the same principles as standard [RBAC configuration](../../access/rbac.md).
 API keys assigned to the [Teams](./teams.md) have access to the restricted resources.
+
+## Resources
+
+- **[Manage organizations](manage-orgs.md)** - Set up the details and manage your Redocly organization
+- **[Single sign-on (SSO) configuration](../../config/access/sso.md)** - Complete SSO configuration reference with examples for various identity providers
+- **[Teams and users](./teams.md)** - Organize users into teams with role-based permissions for effective collaboration and access control

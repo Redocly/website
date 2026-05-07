@@ -196,10 +196,11 @@ Bob --> Alice: Hi
 Realm always renders diagrams as SVG.
 If you include a `format` attribute for compatibility with Asciidoctor diagram syntax, it is ignored.
 
-See [Use AsciiDoc content](asciidoc.md) for more information about the AsciiDoc plugin.
+See: [Use AsciiDoc content](asciidoc.md) for more information about the AsciiDoc plugin.
 
 ## Resources
 
+- **[Content types](./index.md)** - Explore the different types of content you can use in your project
 - **[Mermaid documentation](https://mermaid.js.org/intro/#diagram-types)** - Complete guide to Mermaid diagram types and syntax
 - **[PlantUML documentation](https://plantuml.com/)** - Reference for UML and other diagram types in PlantUML
 - **[Excalidraw documentation](https://docs.excalidraw.com/)** - Guide to creating hand-drawn style diagrams with Excalidraw
