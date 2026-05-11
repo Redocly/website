@@ -72,6 +72,13 @@ You can also add environment variables individually through the Redocly interfac
 Do not use environment variables with sensitive information like passwords or API keys on the pages because all users of the project can see them.
 {% /admonition %}
 
+### API functions
+
+To use environment variables in [API functions](../../customization/api-functions/api-functions-reference.md):
+
+- In Reunite, add variables to your project's **Settings** > **Environment variables**  before using `process.env.VAR_NAME` in API function code.
+- If you're working locally, you can reference variables from your project's `.env` files in API functions.
+
 ### `redocly.yaml`
 
 To use environment variables in `redocly.yaml`, use the curly brace syntax `{{ process.env.<env_var_name> }}`.

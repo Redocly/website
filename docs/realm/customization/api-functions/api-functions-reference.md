@@ -120,6 +120,9 @@ rbac:
 To access environment variables, use the `process.env.VAR_NAME` syntax.
 This lets you securely work with API keys, secrets, and other values you don’t want exposed in client-facing code.
 
+Before using a variable in code, define it for your project.
+To learn how to use environment variables in API functions, see [Environment variables](../../reunite/project/env-variables.md#api-functions).
+
 A common use case is authenticating with external systems.
 
 The following example shows how to fetch a token from an external API using an API key stored in an environment variable:
