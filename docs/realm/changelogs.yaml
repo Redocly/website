@@ -45349,3 +45349,20 @@ replay:
         - Further improved typing performance in request inputs.
     dependencies:
       '@redocly/theme': 0.65.0
+  0.20.0:
+    timestamp: 1778490623000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.30.3`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.30.1`.
+        - Fixed security vulnerability `CVE-2026-41650` by upgrading `fast-xml-parser` to version `5.7.1`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.30.2`.
+        - >-
+          Fixed an issue in Replay where stale credentials persisted in the active environment across page reloads, and caused intermittent "JWT is
+          expired" errors.
+        - Updated `@redocly/openapi-core` to version `2.29.1`.
+        - Fixed an issue in Replay where the request body with invalid JSON input grew after restarts, leading to decreased performance.
+        - Improved typing performance in the request URL field.
+    dependencies:
+      '@redocly/theme': 0.65.0-next.1
