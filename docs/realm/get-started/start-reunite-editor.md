@@ -339,9 +339,34 @@ The headings' color updates immediately in the **Webview** tab.
 If you don't see your changes, try restarting Webview by clicking the [Reload](../reunite/project/use-webview.md#reload) button.
 You can also commit your update to view it [in the preview build](#in-the-deployment-preview).
 
+## Go live with your project
+
+By default, new projects start in draft mode.
+
+{% img
+  src="./images/go-live.png"
+  alt="Screenshot of draft mode project banner"
+  withLightbox=true
+/%}
+
+While a project is in draft mode, its deployment URLs require logging in to access, so you can safely review your work before sharing it.
+
+The **Go live** action is permanent.
+After you take your project live, you cannot switch it back to draft mode.
+
+When you're ready to make the project behave like a standard live project:
+
+1. Click **Go live** in the editor banner.
+1. Confirm the action to start a new production build and remove draft protection.
+
+To keep your project limited to specific users after you go live, review your access control settings before you click **Go live**.
+
+To learn more about draft mode and the go-live flow, see [draft projects](../reunite/project/draft-projects.md).
+
 ## Resources
 
 - **[Sidebars configuration](../navigation/sidebars.md)** - Configure `sidebars.yaml` with nested items and groups for custom navigation structure
+- **[Draft projects](../reunite/project/draft-projects.md)** - Learn how draft mode protects deployment URLs and how to go live
 - **[CSS variables dictionary](../branding/css-variables/index.md)** - Complete reference for customizing colors, fonts, spacing, and visual styling
 - **[Configure Redocly](../config/index.md)** - All configuration options available in the `redocly.yaml` file for project customization
 - **[User profile menu](../reunite/user-profile-menu.md)** - Manage notification settings, Git provider connections, and Reunite appearance preferences

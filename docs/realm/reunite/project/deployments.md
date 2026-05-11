@@ -16,6 +16,11 @@ plans:
 Reunite's **Deployments** page displays the history of deployments in your project.
 Use this page to view the details of individual deployments, search and filter deployments, view the deployed project, and re-deploy the project manually.
 
+{% admonition type="info" %}
+New projects start in [draft mode](./draft-projects.md).
+While a project is in draft mode, its deployment URLs require logging in to access, so only authenticated users can view the published project.
+{% /admonition %}
+
 ## Deployment details pane
 
 The deployment details pane at the top of the **Deployments** page displays information on the last deployment.
@@ -63,6 +68,7 @@ The search provides results from the following columns:
 - **Created**: matches any part of a user name
 - **Build ID**: matches any part of ą build ID
 + **Build ID**: matches any part of a build ID
+
 ## Deployment details page
 
 The **Deployment details** page displays information for a specific deployment.
@@ -74,7 +80,7 @@ On this page you can:
 - **Promote to production**: make a deployment in the Production environment replace the current live deployment
 - **View runtime logs**
 - use the **More actions** button to:
-  - **Re-deploy** the the selected deployment
+  - **Re-deploy** the selected deployment
   - **Copy preview link**
   - **Promote to production**
 
@@ -82,4 +88,3 @@ On this page you can:
 
 - **[Use previews](./use-previews.md)** - View and share preview deployments for branches with open pull requests
 - **[Branches and deployments](./branches-and-deployments.md)** - Configure branch deployment options, build process and API bundling
-

@@ -18,6 +18,15 @@ Access control is done using [RBAC (role-based access control)](../access/rbac.m
 By default, all authenticated users are assigned to the `authenticated` team, and unauthenticated users are automatically assigned to the `anonymous` team.
 All other configuration is done through team-role mapping.
 
+## Draft mode and RBAC
+
+Draft projects require users to sign in before they can open deployment URLs by default.
+If you configure RBAC, access to draft deployments follows your RBAC rules instead of the default draft-mode protection.
+
+For example, if RBAC grants `read` to the `anonymous` team in your `redocly.yaml`, draft deployments are publicly accessible even while the project remains in draft mode.
+
+For more details on draft mode behavior, see [draft projects](../../reunite/project/draft-projects.md).
+
 ## Options
 
 ### Configuration map
@@ -124,7 +133,6 @@ rbac:
 ```
 
 {% /admonition %}
-
 
 ### Features configuration
 
