@@ -45229,7 +45229,6 @@ reunite:
     changes:
       minor: []
       patch:
-        - Fixed an issue where the login page language didn't match the language selected in the project.
         - Updated `@redocly/openapi-core` to version `2.30.3`.
         - Fixed billing portal checkbox/radio checked contrast in dark mode.
     dependencies: {}
