@@ -45224,6 +45224,15 @@ reunite:
       patch:
         - Updated Reunite's pull request summary interface to improve readability of merge status, reviews, and actions on the activity page.
     dependencies: {}
+  v2026-05-11.1:
+    timestamp: 1778516582000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the login page language didn't match the language selected in the project.
+        - Updated `@redocly/openapi-core` to version `2.30.3`.
+        - Fixed billing portal checkbox/radio checked contrast in dark mode.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
