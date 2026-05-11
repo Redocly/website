@@ -1,4 +1,22 @@
 '@redocly/realm':
+  0.133.0-next.5:
+    timestamp: 1778506718000
+    changes:
+      minor:
+        - Added Client ID Metadata Document (CIMD) support to the MCP OAuth flow.
+        - Added `hreflang` alternate links for translated pages.
+        - Improved language picker accessibility by converting menu options to links.
+        - Fixed an issue where the login page didn't respect language preferences selected by the user.
+      patch:
+        - Fixed 404 error when opening login from locale-prefixed URLs.
+        - Fixed an issue where navigating on a code walkthrough page prevented automatic scrolling to the active step.
+    dependencies:
+      '@redocly/theme': 0.65.0-next.5
+      '@redocly/realm-asyncapi-sdk': 0.11.0-next.3
+      '@redocly/asyncapi-docs': 1.10.0-next.5
+      '@redocly/graphql-docs': 1.10.0-next.5
+      '@redocly/openapi-docs': 3.21.0-next.5
+      '@redocly/portal-plugin-mock-server': 0.18.0-next.5
   0.133.0-next.4:
     timestamp: 1778078522000
     changes:
@@ -6093,6 +6111,21 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.133.0-next.5:
+    timestamp: 1778506718000
+    changes:
+      minor:
+        - Added Client ID Metadata Document (CIMD) support to the MCP OAuth flow.
+        - Added `hreflang` alternate links for translated pages.
+        - Improved language picker accessibility by converting menu options to links.
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.65.0-next.5
+      '@redocly/realm-asyncapi-sdk': 0.11.0-next.3
+      '@redocly/asyncapi-docs': 1.10.0-next.5
+      '@redocly/graphql-docs': 1.10.0-next.5
+      '@redocly/openapi-docs': 3.21.0-next.5
+      '@redocly/portal-plugin-mock-server': 0.18.0-next.5
   0.133.0-next.4:
     timestamp: 1778078522000
     changes:
@@ -11284,6 +11317,24 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.133.0-next.5:
+    timestamp: 1778506718000
+    changes:
+      minor:
+        - Added Client ID Metadata Document (CIMD) support to the MCP OAuth flow.
+        - Added `hreflang` alternate links for translated pages.
+        - Improved language picker accessibility by converting menu options to links.
+        - Fixed an issue where the login page didn't respect language preferences selected by the user.
+      patch:
+        - Fixed 404 error when opening login from locale-prefixed URLs.
+        - Fixed an issue where navigating on a code walkthrough page prevented automatic scrolling to the active step.
+    dependencies:
+      '@redocly/theme': 0.65.0-next.5
+      '@redocly/realm-asyncapi-sdk': 0.11.0-next.3
+      '@redocly/asyncapi-docs': 1.10.0-next.5
+      '@redocly/graphql-docs': 1.10.0-next.5
+      '@redocly/openapi-docs': 3.21.0-next.5
+      '@redocly/portal-plugin-mock-server': 0.18.0-next.5
   0.133.0-next.4:
     timestamp: 1778078522000
     changes:
@@ -16463,6 +16514,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.133.0-next.5:
+    timestamp: 1778506718000
+    changes:
+      minor:
+        - Added Client ID Metadata Document (CIMD) support to the MCP OAuth flow.
+        - Added `hreflang` alternate links for translated pages.
+        - Improved language picker accessibility by converting menu options to links.
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.65.0-next.5
+      '@redocly/realm-asyncapi-sdk': 0.11.0-next.3
+      '@redocly/asyncapi-docs': 1.10.0-next.5
+      '@redocly/graphql-docs': 1.10.0-next.5
+      '@redocly/openapi-docs': 3.21.0-next.5
+      '@redocly/portal-plugin-mock-server': 0.18.0-next.5
   0.133.0-next.4:
     timestamp: 1778078522000
     changes:
@@ -21706,6 +21772,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.65.0-next.5:
+    timestamp: 1778506718000
+    changes:
+      minor:
+        - Added `hreflang` alternate links for translated pages.
+        - Improved language picker accessibility by converting menu options to links.
+      patch:
+        - Fixed 404 error when opening login from locale-prefixed URLs.
+        - Fixed an issue where navigating on a code walkthrough page prevented automatic scrolling to the active step.
+    dependencies: {}
   0.65.0-next.4:
     timestamp: 1778078522000
     changes:
@@ -24571,6 +24647,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.21.0-next.5:
+    timestamp: 1778506718000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.24.0-next.5
   3.21.0-next.4:
     timestamp: 1778078522000
     changes:
@@ -28238,6 +28321,14 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.10.0-next.5:
+    timestamp: 1778506718000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.65.0-next.5
+      '@redocly/openapi-docs': 3.21.0-next.5
   1.10.0-next.4:
     timestamp: 1778078522000
     changes:
@@ -30101,6 +30192,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.16.0-next.5:
+    timestamp: 1778506718000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.133.0-next.5
+      '@redocly/redoc': 0.133.0-next.5
+      '@redocly/redoc-reef': 0.133.0-next.5
+      '@redocly/redoc-revel': 0.133.0-next.5
+      '@redocly/theme': 0.65.0-next.5
   1.16.0-next.4:
     timestamp: 1778078522000
     changes:
@@ -35228,6 +35330,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.18.0-next.5:
+    timestamp: 1778506718000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.21.0-next.5
   0.18.0-next.4:
     timestamp: 1778078522000
     changes:
@@ -38035,6 +38144,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.24.0-next.5:
+    timestamp: 1778506718000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.65.0-next.5
   0.24.0-next.4:
     timestamp: 1778078522000
     changes:
@@ -40074,6 +40190,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.16.0-next.5:
+    timestamp: 1778506718000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.65.0-next.5
   0.16.0-next.4:
     timestamp: 1778078522000
     changes:
@@ -41789,6 +41912,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.10.0-next.5:
+    timestamp: 1778506718000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.65.0-next.5
+      '@redocly/openapi-docs': 3.21.0-next.5
   1.10.0-next.4:
     timestamp: 1778078522000
     changes:
