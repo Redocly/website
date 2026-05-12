@@ -1,37 +1,33 @@
-# Respect Practical Example Series [02]
+# Respect Practical Example Series: OAuth2 Authorization with Arazzo
 
-## OAuth2 Authorization with Arazzo
-
-This article shows how to use Respect, powered by Arazzo workflows, for OAuth2 authorization. You will learn how to define reusable workflows in separate files, pass values between workflows, and use those values to authorize API requests.
+This article shows how to use Respect, powered by Arazzo workflows, for OAuth2 authorization.
+You will learn how to define reusable workflows in separate files, pass values between workflows, and use those values to authorize API requests.
 
 You will cover the following topics:
 
 - Practical applications of Arazzo:
-  - Creating reusable workflows with outputs.
+  - Creating reusable workflows with exposed outputs.
   - Authorizing API requests with OAuth2.
+  - Using `x-security` Respect extension with a protected API operation.
 
-### What you will build
+## The problem
 
-You will build three connected Arazzo workflows:
+In the [previous article](./api-contract-testing-01.md), you learned how to execute a simple API contract test with [Redocly Respect](https://redocly.com/respect-cli).
+Now, let us move to a more realistic workflow: calling protected API endpoints.
 
-- A reusable workflow that registers an OAuth2 client and exposes the returned `clientId` and `clientSecret`.
-- An authorization workflow that reuses the client registration workflow and retrieves an access token.
-- A final workflow that uses the access token with `x-security` to create a menu item through a protected API operation.
-
-### The problem
-
-In the [previous article](./api-contract-testing-01.md), you learned how to execute a simple API contract test with [Redocly Respect](https://redocly.com/respect-cli). Now, let us move to a more realistic workflow: calling protected API endpoints.
-
-Real APIs are rarely open to public access. They usually require an authentication or authorization flow before clients can read or change protected resources. To test those endpoints with Respect, the workflow must first obtain credentials or an access token, then use that authorization data in later steps.
+Real APIs are rarely open to public access.
+They usually require an authentication or authorization flow before clients can read or change protected resources.
+To test those endpoints with Respect, the workflow must first obtain credentials or an access token, then use that authorization data in later steps.
 
 Respect supports this use case with the [`x-security` extension](https://redocly.com/docs/respect/extensions/x-security#x-security-extension), which lets a workflow provide security values for protected operations.
 
-### Prerequisites
+## Prerequisites
 
 - Familiarity with the [`x-security` extension](https://redocly.com/docs/respect/extensions/x-security#x-security-extension).
 - An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API.
 
-The example uses an OpenAPI description with public operations, protected menu operations, OAuth2 security schemes, and a dynamic client registration endpoint. The most important parts for this article are `/oauth2/register`, `/oauth2/token`, the protected `POST /menu` operation, and the `OAuth2` security scheme.
+The example uses an OpenAPI description with public operations, protected menu operations, OAuth2 security schemes, and a dynamic client registration endpoint.
+The most important parts for this article are `/oauth2/register`, `/oauth2/token`, the protected `POST /menu` operation, and the `OAuth2` security scheme.
 
 <details>
 <summary>OpenAPI description used in this example</summary>
@@ -621,13 +617,15 @@ components:
 
 </details>
 
-### Retrieve an access token for OAuth2
+## Retrieve an access token for OAuth2
 
-The Redocly Cafe API can register a new OAuth2 client with dynamic client registration. This flow follows the [Dynamic Client Registration Protocol (RFC 7591)](https://datatracker.ietf.org/doc/html/rfc7591).
+The Redocly Cafe API can register a new OAuth2 client with dynamic client registration.
+This flow follows the [Dynamic Client Registration Protocol (RFC 7591)](https://datatracker.ietf.org/doc/html/rfc7591).
 
-Because client registration is useful in more than one workflow, describe it in a separate Arazzo file and reuse it later. This keeps the authorization details separate from the workflow that tests the protected menu operation.
+Because client registration is useful in more than one workflow, describe it in a separate Arazzo file and reuse it later.
+This keeps the authorization details separate from the workflow that tests the protected menu operation.
 
-#### Register OAuth2 client
+### Register OAuth2 client
 
 The API description used in this article extends the previous example with a `/oauth2/register` endpoint.
 
@@ -681,7 +679,7 @@ workflows:
         description: This step registers a new OAuth2 client.
         requestBody:
           payload:
-            name: 'code'
+            name: code
             redirectUris:
               - https://cafe.cloud.redocly.com/callback
             scopes:
@@ -740,7 +738,7 @@ Execute the file with Redocly CLI to inspect the API response and confirm which 
 npx @redocly/cli@latest respect register-oauth2-client.arazzo.yaml --verbose
 ```
 
-#### Get access token to authorize your future requests
+### Get access token to authorize your future requests
 
 Next, create another Arazzo file called `authorization.arazzo.yaml`.
 
@@ -758,7 +756,8 @@ To reuse the client registration workflow, add the reusable workflow as another 
 ```
 Then execute that workflow from a step by referencing `workflowId: $sourceDescriptions.register-oauth2.workflows.register-oauth2-client-workflow`.
 
-The second step, `authorize-with-code`, calls the `/oauth2/token` endpoint with a predefined `/callback`. In a production application, the callback is usually implemented by the client application. In this example, the Redocly Cafe API provides the callback endpoint for demonstration purposes.
+The second step, `authorize-with-code`, calls the `/oauth2/token` endpoint with a predefined `/callback`.
+In a production application, the callback is usually implemented by the client application. In this example, the Redocly Cafe API provides the callback endpoint for demonstration purposes.
 
 This step also uses the [`x-operation` extension](https://redocly.com/docs/respect/extensions/x-operation) to make a request to a URL that is not described as an operation in the OpenAPI description.
 
@@ -839,11 +838,13 @@ Key result from the command output:
 ```
 
 
-#### Make a POST request to the secured endpoint
+### Make a POST request to the secured endpoint
 
-Now we can combine the previous workflows and call a protected endpoint that creates a menu item. The final workflow has three steps: `authorize`, `create-menu-item`, and `verify-menu-item`.
+Now we can combine the previous workflows and call a protected endpoint that creates a menu item.
+The final workflow has three steps: `authorize`, `create-menu-item`, and `verify-menu-item`.
 
-The authorization workflow returns values that the final workflow passes to the [`x-security` extension](https://redocly.com/docs/respect/extensions/x-security#x-security-extension). Respect then uses those values to authorize the protected API request.
+The authorization workflow returns values that the final workflow passes to the [`x-security` extension](https://redocly.com/docs/respect/extensions/x-security#x-security-extension).
+Respect then uses those values to authorize the protected API request.
 
 The important handoff is:
 
@@ -928,7 +929,7 @@ Run the workflow to confirm that the authorization step, the protected POST requ
 npx @redocly/cli@latest respect redocly-cafe-api.arazzo.yaml --verbose
 ```
 
-### Summary
+## Summary
 
 Respect extensions make it possible to describe authorized API requests as part of an Arazzo workflow.
 
