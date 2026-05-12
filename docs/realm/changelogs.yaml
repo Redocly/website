@@ -45232,6 +45232,13 @@ reunite:
         - Updated `@redocly/openapi-core` to version `2.30.3`.
         - Fixed billing portal checkbox/radio checked contrast in dark mode.
     dependencies: {}
+  v2026-05-12.1:
+    timestamp: 1778573502000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the login page language didn't match the language selected in the project.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
