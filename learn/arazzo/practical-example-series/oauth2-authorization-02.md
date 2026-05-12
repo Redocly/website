@@ -36,9 +36,6 @@ The most important parts for this article are `/oauth2/register`, `/oauth2/token
 openapi: 3.1.0
 info:
   title: Redocly Cafe
-  description: |
-    Demo API for cafe operators (not customers) to manage menus, and revenue.
-    Create API credentials and try it yourself in a realistic OpenAPI workflow.
   version: 1.0.0
   contact:
     email: team@redocly.com
@@ -49,7 +46,6 @@ info:
   termsOfService: https://redocly.com/subscription-agreement
 servers:
   - url: https://cafe.cloud.redocly.com
-    description: Live server.
 tags:
   - name: Authorization
     description: Create a client to demo the API.
@@ -60,17 +56,13 @@ paths:
     get:
       tags:
         - Products
+      x-internal: false
+      x-catalog-relations:
+        - type: ownedBy
+          key: dark-side
       summary: List all menu items
-      description: Retrieve a collection of menu items with optional filtering and pagination.
       operationId: listMenuItems
       security: []
-      parameters:
-        - $ref: '#/components/parameters/After'
-        - $ref: '#/components/parameters/Before'
-        - $ref: '#/components/parameters/Sort'
-        - $ref: '#/components/parameters/Filter'
-        - $ref: '#/components/parameters/Search'
-        - $ref: '#/components/parameters/Limit'
       responses:
         '200':
           description: Successful operation.
@@ -85,8 +77,11 @@ paths:
     post:
       tags:
         - Products
+      x-internal: false
+      x-catalog-relations:
+        - type: ownedBy
+          key: dark-side
       summary: Create menu item
-      description: Create a new menu item.
       operationId: createMenuItem
       security:
         - OAuth2:
@@ -132,8 +127,11 @@ paths:
     delete:
       tags:
         - Products
+      x-internal: false
+      x-catalog-relations:
+        - type: ownedBy
+          key: dark-side
       summary: Delete a menu item
-      description: Delete an existing menu item.
       operationId: deleteMenuItem
       security:
         - OAuth2:
@@ -155,14 +153,11 @@ paths:
     post:
       tags:
         - Authorization
+      x-internal: false
+      x-catalog-relations:
+        - type: ownedBy
+          key: dark-side
       summary: Create OAuth2 client
-      description: |
-        Register a new OAuth2 client for dynamic client registration.  This endpoint implements the Dynamic Client Registration Protocol (RFC 7591), using camelCase field names instead of the RFC's snake_case convention (e.g., `redirectUris` instead of `redirect_uris`, `grantTypes` instead of `grant_types`). The `name` field is required. Other fields are optional. If not provided:
-        - `redirectUris` defaults to an empty array. Note: When using the `authorization_code` grant type, 
-          `redirectUris` must be provided (per RFC 7591 Section 2).
-        - `scopes` defaults to all available scopes (menu:read, menu:write) - `grantTypes` defaults to both supported grant types (authorization_code, client_credentials)
-        Returns the registered client information per RFC 7591, including:
-        - `clientId` and `clientSecret` (must be stored securely) - `clientIdIssuedAt` and `clientSecretExpiresAt` timestamps - All registered client metadata (name, redirectUris, scopes, grantTypes)
       operationId: registerOAuth2Client
       security: []
       requestBody:
@@ -188,7 +183,6 @@ components:
   securitySchemes:
     OAuth2:
       type: oauth2
-      description: OAuth2 authorization for API access.
       flows:
         authorizationCode:
           authorizationUrl: https://cafe.cloud.redocly.com/oauth2/authorize
@@ -205,94 +199,14 @@ components:
       type: apiKey
       name: X-API-Key
       in: header
-      description: API key for internal operations.
   parameters:
-    After:
-      name: after
-      in: query
-      required: false
-      description: Use the `endCursor` as a value for the `after` parameter to get the next page.
-      schema:
-        type: string
-      example: a25fgaksjf23la==
-    Before:
-      name: before
-      in: query
-      required: false
-      description: |
-        Use the `startCursor` as a value for the `before` parameter to get the next page.
-      schema:
-        type: string
-      example: bfg23aksjf23zb1==
-    Sort:
-      name: sort
-      description: |-
-        To sort by id in descending order use `-id`.
-        To sort by id in ascending order use `id`.
-      in: query
-      required: false
-      schema:
-        type: string
-      example: '-name'
-    Filter:
-      name: filter
-      description: |-
-        Filters the collection items using space-separated `field:value` pairs.
-
-        **Format:** `field1:value1 field2:value2`
-
-        **Supported operators:**
-        - `field:value` - Exact match
-        - `field:value1,value2` - Match any of the comma-separated values (OR)
-        - Time ranges: Use `30d` (30 days), `7d` (7 days), `1h` (1 hour), etc.
-
-        **Examples:**
-        - `status:placed` - Filter by single status.
-        - `status:placed,completed` - Filter by multiple statuses.
-        - `createdAt:30d` - Filter menu items created in the last 30 days.
-        - `menuItemId:prd_01h1s5z6vf2mm1mz3hevnn9va7` - Filter by specific menu item ID.
-        - `status:placed createdAt:7d` - Combine multiple filters.
-      in: query
-      required: false
-      schema:
-        type: string
-      example: menuItemId:prd_01h1s5z6vf2mm1mz3hevnn9va7
-    Search:
-      name: search
-      in: query
-      description: |-
-        Performs a case-insensitive text search across relevant fields in the collection.
-
-        **Fields searched depend on the endpoint:**
-        - **Menu items:** `name`, `photoTextDescription`
-
-        Returns items where any of the searchable fields contain the search term as a substring.
-      required: false
-      schema:
-        type: string
-      example: coffee
-    Limit:
-      name: limit
-      description: |
-        Use to return a number of results per page.
-        If there is more data, use in combination with `after` to page through the data.
-      in: query
-      required: false
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 100
-        default: 10
-      example: 10
     MenuItemId:
       name: menuItemId
       in: path
-      description: ID of the menu item to retrieve.
       required: true
       schema:
         type: string
         pattern: ^prd_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-      example: prd_01h1s5z6vf2mm1mz3hevnn9va7
   schemas:
     Page:
       type: object
@@ -301,33 +215,21 @@ components:
           type:
             - string
             - 'null'
-          description: |-
-            Use with the `after` query parameter to load the next page of data.
-            When `null`, there is no data.
-            The cursor is opaque and internal structure is subject to change.
         startCursor:
           type:
             - string
             - 'null'
-          description: |-
-            Use with the `before` query parameter to load the previous page of data.
-            When `null`, there is no data.
-            The cursor is opaque and internal structure is subject to change.
         hasNextPage:
           type: boolean
-          description: Indicates if there is a next page with items.
         hasPrevPage:
           type: boolean
-          description: Indicates if there is a previous page with items.
         limit:
           type: integer
           minimum: 1
           maximum: 100
           default: 10
-          description: Value showing how many items are in the page limit.
         total:
           type: integer
-          description: Count of items across all pages.
           minimum: 0
       required:
         - endCursor
@@ -340,33 +242,26 @@ components:
       type: object
       properties:
         createdAt:
-          description: Created date.
           type: string
           format: date-time
           readOnly: true
         updatedAt:
-          description: Updated date.
           type: string
           format: date-time
           readOnly: true
         id:
-          description: Menu item ID. Unique identifier prefixed with `prd_`.
           type: string
           readOnly: true
           pattern: ^prd_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-          example: prd_01h1s5z6vf2mm1mz3hevnn9va7
         object:
-          description: Entity name.
           type: string
           const: menuItem
           readOnly: true
         name:
-          description: Menu item name.
           type: string
           minLength: 1
           maxLength: 50
         price:
-          description: Price in cents.
           type: integer
           minimum: 0
         photo:
@@ -375,12 +270,10 @@ components:
             - string
             - 'null'
           format: binary
-          description: Photo of the menu item. Must be a PNG image and less than 1MB.
         photoUrl:
           readOnly: true
           type: string
           format: uri
-          description: Photo URL of the menu item.
         photoTextDescription:
           type:
             - string
@@ -397,16 +290,13 @@ components:
         - type: object
           properties:
             category:
-              description: Menu item category.
               type: string
               const: beverage
             volume:
               type: number
-              description: Size of the beverage in milliliters.
               exclusiveMinimum: 0
             containsCaffeine:
               type: boolean
-              description: Indicates if the beverage contains caffeine.
           required:
             - category
             - volume
@@ -417,13 +307,11 @@ components:
         - type: object
           properties:
             category:
-              description: Menu item category.
               type: string
               const: dessert
             calories:
               type: number
               exclusiveMinimum: 0
-              description: Amount of calories.
           required:
             - category
             - calories
@@ -445,7 +333,6 @@ components:
         object:
           type: string
           const: list
-          description: Entity name.
         page:
           $ref: '#/components/schemas/Page'
         items:
@@ -462,27 +349,18 @@ components:
         type:
           type: string
           format: uri-reference
-          description: URI reference that identifies the problem type.
           default: about:blank
         title:
           type: string
-          description: Short summary of the problem type.
         status:
           type: integer
           format: int32
-          description: |
-            HTTP status code generated by the origin server for this occurrence of the problem.
           minimum: 100
           exclusiveMaximum: 600
         instance:
           type: string
           format: uri-reference
-          description: |
-            URI reference that identifies the specific occurrence of the problem, e.g. by adding a fragment identifier or sub-path to the problem type.
-            May be used to locate the root of this problem in the source code.
-          example: /some/uri-reference#specific-occurrence-context
         details:
-          description: Additional error details.
           type: object
           additionalProperties: true
       required:
@@ -494,13 +372,11 @@ components:
       properties:
         name:
           type: string
-          description: Client name.
         redirectUris:
           type: array
           items:
             type: string
             format: uri
-          description: List of redirect URIs (optional, defaults to empty array).
         scopes:
           type: array
           items:
@@ -508,7 +384,6 @@ components:
             enum:
               - menu:read
               - menu:write
-          description: List of scopes.
         grantTypes:
           type: array
           items:
@@ -516,43 +391,33 @@ components:
             enum:
               - authorization_code
               - client_credentials
-          description: List of grant types.
       required:
         - name
     OAuth2Client:
       type: object
-      description: OAuth2 client registration response. Per RFC 7591, includes the client identifier, secret, timestamps, and all registered client metadata.
       properties:
         clientId:
           type: string
-          description: Client identifier issued by the authorization server.
         clientSecret:
           type: string
-          description: Client secret issued by the authorization server.
         clientIdIssuedAt:
           type: integer
           format: int64
-          description: Time when the client_id is issued, represented as seconds since epoch (RFC7591).
         clientSecretExpiresAt:
           type: integer
           format: int64
-          description: Time at which the client_secret expires, represented as seconds since epoch. 0 indicates the secret does not expire (RFC 7591).
         name:
           type: string
-          description: Client name (registered metadata).
         redirectUris:
           type: array
           items:
             type: string
             format: uri
-          description: List of redirect URIs (registered metadata).
         registrationClientUri:
           type: string
           format: uri
-          description: URL of the client configuration endpoint for managing this client registration (RFC 7592).
         registrationAccessToken:
           type: string
-          description: Access token to be used at the client configuration endpoint for managing this client registration (RFC 7592).
         scopes:
           type: array
           items:
@@ -560,7 +425,6 @@ components:
             enum:
               - menu:read
               - menu:write
-          description: List of scopes (registered metadata).
         grantTypes:
           type: array
           items:
@@ -568,7 +432,6 @@ components:
             enum:
               - authorization_code
               - client_credentials
-          description: List of grant types (registered metadata).
       required:
         - clientId
         - clientSecret
@@ -699,20 +562,18 @@ workflows:
       clientSecret: $steps.register-oauth2-client.outputs.clientSecret
 ```
 
-Key elements:
-
-- The step is connected to the OpenAPI description through `operationId`.
+The step is connected to the OpenAPI description through `operationId`.
 
 ```yaml
 operationId: $sourceDescriptions.redocly-cafe-api.registerOAuth2Client
 ```
 
-- Because this is a POST request, the workflow defines a `requestBody`.
+Because this is a POST request, the workflow defines a `requestBody`.
 
 ```yaml
 requestBody:
   payload:
-    name: 'code'
+    name: code
     redirectUris:
       - https://cafe.cloud.redocly.com/callback
     scopes:
@@ -722,7 +583,7 @@ requestBody:
       - 'client_credentials'
 ```
 
-- The step defines outputs for values that later steps or workflows need.
+The step defines outputs for values that later steps or workflows need.
 
 ```yaml
 outputs:
@@ -730,7 +591,7 @@ outputs:
   clientSecret: $response.body#/clientSecret
 ```
 
-- Because these values must be available outside this workflow, the complete workflow also exposes the step outputs as workflow outputs. That allows another Arazzo workflow to call this workflow and read the values by name.
+Because these values must be available outside this workflow, the complete workflow also exposes the step outputs as workflow outputs. That allows another Arazzo workflow to call this workflow and read the values by name.
 
 Execute the file with Redocly CLI to inspect the API response and confirm which values are mapped to workflow outputs:
 
