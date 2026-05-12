@@ -1,8 +1,7 @@
-# Respect Practical Example Series [01]
+# Respect Practical Example Series: API Contract Testing with Respect
 
-## API Contract Testing with Respect
-
-This article shows how to use Respect, powered by Arazzo workflows, for API contract testing. You will learn how to describe an API workflow, execute it with Redocly CLI, and use the results to find mismatches between an OpenAPI description and the real API behavior.
+This article shows how to use Respect, powered by Arazzo workflows, for API contract testing.
+You will learn how to describe an API workflow, execute it with Redocly CLI, and use the results to find mismatches between an OpenAPI description and the real API behavior.
 
 You will cover the following topics:
 
@@ -11,29 +10,29 @@ You will cover the following topics:
   - Adding API contract tests to CI/CD routines.
   - Keeping API documentation synchronized with actual API behavior.
   - Sharing described workflows across teams.
-- Using the open-source [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) `respect` command to execute Arazzo workflows.
+- Using the open-source [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) `respect` command to execute Arazzo workflows and inspect the contract test results, and fix mismatch between the OpenAPI description and the actual API response.
 
-### What you will build
+## The problem
 
-You will create a simple Arazzo workflow that calls the `GET /menu` operation from an OpenAPI description. Then you will run the workflow with Respect, inspect the contract test results, and fix an intentional mismatch between the OpenAPI description and the actual API response.
+Many teams test APIs by writing test code in the same language as the API implementation.
+This can work well for a single service, but it becomes harder to maintain in systems with multiple products, repositories, and programming languages.
 
-### The problem
+Another common challenge is keeping API documentation aligned with actual API behavior.
+Developers may update an endpoint but forget to update its OpenAPI description, or the documentation may change without the implementation following it. Over time, these small differences make it harder for QA engineers, developers, and technical writers to trust the API contract.
 
-Many teams test APIs by writing test code in the same language as the API implementation. This can work well for a single service, but it becomes harder to maintain in systems with multiple products, repositories, and programming languages.
+Respect helps address this problem by executing Arazzo workflows against a running API and validating the responses against the connected OpenAPI description.
+This makes API contract testing more declarative and easier to share across teams.
 
-Another common challenge is keeping API documentation aligned with actual API behavior. Developers may update an endpoint but forget to update its OpenAPI description, or the documentation may change without the implementation following it. Over time, these small differences make it harder for QA engineers, developers, and technical writers to trust the API contract.
-
-Respect helps address this problem by executing Arazzo workflows against a running API and validating the responses against the connected OpenAPI description. This makes API contract testing more declarative and easier to share across teams.
-
-### Prerequisites
+## Prerequisites
 
 To follow the examples in this article, you need:
 
-- Familiarity with [Arazzo](../what-is-arazzo.md).
+- Basic familiarity with [Arazzo](../what-is-arazzo.md).
 - An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API.
   <b>IMPORTANT: the API description intentionally contains discrepancies for demonstration purposes.</b>
 
-The example uses the following OpenAPI description. The important part for this article is the `GET /menu` operation and its `MenuItemList` response schema.
+The example uses the following OpenAPI description.
+The important part for this article is the `GET /menu` operation and its `MenuItemList` response schema.
 
 <details>
 <summary>OpenAPI description used in this example</summary>
@@ -57,8 +56,6 @@ servers:
   - url: https://cafe.cloud.redocly.com
     description: Live server.
 tags:
-  - name: Authorization
-    description: Create a client to demo the API.
   - name: Products
     description: Operations related to products.
 paths:
@@ -70,13 +67,6 @@ paths:
       description: Retrieve a collection of menu items with optional filtering and pagination.
       operationId: listMenuItems
       security: []
-      parameters:
-        - $ref: '#/components/parameters/After'
-        - $ref: '#/components/parameters/Before'
-        - $ref: '#/components/parameters/Sort'
-        - $ref: '#/components/parameters/Filter'
-        - $ref: '#/components/parameters/Search'
-        - $ref: '#/components/parameters/Limit'
       responses:
         '200':
           description: Successful operation.
@@ -89,82 +79,6 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerError'
 components:
-  parameters:
-    After:
-      name: after
-      in: query
-      required: false
-      description: Use the `endCursor` as a value for the `after` parameter to get the next page.
-      schema:
-        type: string
-      example: a25fgaksjf23la==
-    Before:
-      name: before
-      in: query
-      required: false
-      description: |
-        Use the `startCursor` as a value for the `before` parameter to get the next page.
-      schema:
-        type: string
-      example: bfg23aksjf23zb1==
-    Sort:
-      name: sort
-      description: |-
-        To sort by id in descending menuItem use `-id`.
-        To sort by id in ascending menuItem use `id`.
-      in: query
-      required: false
-      schema:
-        type: string
-      example: '-name'
-    Filter:
-      name: filter
-      description: |-
-        Filters the collection items using space-separated `field:value` pairs.
-
-        **Format:** `field1:value1 field2:value2`
-
-        **Supported operators:**
-        - `field:value` - Exact match
-        - `field:value1,value2` - Match any of the comma-separated values (OR)
-        - Time ranges: Use `30d` (30 days), `7d` (7 days), `1h` (1 hour), etc.
-
-        **Examples:**
-        - `status:placed` - Filter by single status.
-        - `status:placed,completed` - Filter by multiple statuses.
-        - `status:placed createdAt:7d` - Combine multiple filters.
-      in: query
-      required: false
-      schema:
-        type: string
-      example: menuItemId:prd_01h1s5z6vf2mm1mz3hevnn9va7
-    Search:
-      name: search
-      in: query
-      description: |-
-        Performs a case-insensitive text search across relevant fields in the collection.
-
-        **Fields searched depend on the endpoint:**
-        - **Menu items:** `name`, `photoTextDescription`
-
-        Returns items where any of the searchable fields contain the search term as a substring.
-      required: false
-      schema:
-        type: string
-      example: coffee
-    Limit:
-      name: limit
-      description: |
-        Use to return a number of results per page.
-        If there is more data, use in combination with `after` to page through the data.
-      in: query
-      required: false
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 100
-        default: 10
-      example: 10
   schemas:
     Page:
       type: object
@@ -373,9 +287,11 @@ components:
 
 </details>
 
-In this description, `GET /menu` points to the `MenuItemList` schema. The schema intentionally says that the response is an array. Later, Respect will compare that contract with the real API response and show why they do not match.
+In this description, `GET /menu` points to the `MenuItemList` schema.
+The schema intentionally says that the response is an array.
+Later, Respect will compare that contract with the real API response and show why they do not match.
 
-### Create an Arazzo description
+## Create an Arazzo description
 
 There are several ways to create an Arazzo description:
 
@@ -428,9 +344,7 @@ workflows:
           - condition: $statusCode == 200
 ```
 
-Key components:
-
-- `sourceDescriptions` define the connection to the OpenAPI description.
+Please note that `sourceDescriptions` defines the connection to the OpenAPI description.
 
 ``` yaml
 sourceDescriptions:
@@ -439,7 +353,7 @@ sourceDescriptions:
     url: redocly-cafe-api.yaml
 ```
 
-- Each step uses an `operationId` to connect the workflow step to an operation in the OpenAPI description.
+Each step uses an `operationId` to connect the workflow step to an operation in the OpenAPI description, like so:
 
 ```yaml
 operationId: $sourceDescriptions.redocly-cafe-api.listMenuItems
@@ -478,7 +392,7 @@ This step resolves the `listMenuItems` operation from the `redocly-cafe-api` sou
 
 This connection is important because Respect can use the OpenAPI description to verify the response status, content type, and schema.
 
-- Steps can pass parameters to the operation. In this example, the `limit` query parameter restricts the response to one menu item.
+Steps can pass parameters to the operation. In this example, the `limit` query parameter restricts the response to one menu item.
 
 ```yaml
   parameters:
@@ -487,14 +401,14 @@ This connection is important because Respect can use the OpenAPI description to 
       value: 1
 ```
 
-- Steps can also include a `successCriteria` section to define workflow-specific expectations.
+Steps can also include a `successCriteria` section to define workflow-specific expectations.
 
 ```yaml
 successCriteria:
   - condition: $statusCode == 200
 ```
 
-### Execute the workflow using Redocly CLI
+## Execute the workflow using Redocly CLI
 
 [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) is an open-source tool that can execute Arazzo descriptions with the `respect` command.
 
@@ -502,7 +416,10 @@ successCriteria:
 npx @redocly/cli@latest respect redocly-cafe-api.arazzo.yaml
 ```
 
-The execution result looks like this. The full output is useful when debugging, but the most important lines are the checks near the end of the step:
+Please notice that the workflow gets executed because we specified the live server in the OpenAPI description, so you don't have to specify that when writing tests.
+
+The execution result looks like this.
+The full output is useful when debugging, but the most important lines are the checks near the end of the step:
 
 - The success criteria check passes because the API returns status code `200`.
 - The status code and content type checks pass because the response matches the documented response metadata.
@@ -655,15 +572,17 @@ Respect performed three additional checks automatically:
 
 Because the workflow step is connected to an OpenAPI description, [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) verifies that the API returns a documented status code, the expected content type, and a response body that matches the documented schema.
 
-### Understand the schema failure
+## Understand the schema failure
 
-As mentioned earlier, the API description includes an intentional discrepancy. The Respect output makes that mismatch visible.
+As mentioned earlier, the API description includes an intentional discrepancy.
+The Respect output makes that mismatch visible.
 
 The failed schema check includes this message:
 
  `| ^^ 👈🏽  type must be array`
 
-The API response is a paginated object, but the OpenAPI description expects an array. This is the intentional discrepancy in the example.
+The API response is a paginated object, but the OpenAPI description expects an array.
+This is the intentional discrepancy in the example.
 
 To fix it, update the `MenuItemList` schema so it matches the actual API response:
 
@@ -696,9 +615,10 @@ Run the workflow again to confirm that all checks now pass.
 npx @redocly/cli@latest respect redocly-cafe-api.arazzo.yaml
 ```
 
-After the schema is updated, the response body matches the documented contract. This demonstrates the core value of contract testing with Respect: when the API and its OpenAPI description drift apart, the workflow highlights the mismatch immediately.
+After the schema is updated, the response body matches the documented contract.
+This demonstrates the core value of contract testing with Respect: when the API and its OpenAPI description drift apart, the workflow highlights the mismatch immediately.
 
-### Practical applications
+## Practical applications
 
 After you create and verify an Arazzo workflow locally, you can use it in several ways:
 
@@ -713,8 +633,9 @@ redocly respect products.arazzo.yaml --verbose
 - Automate routine API workflows for development and QA tasks.
 - Describe important application flows with Arazzo and share them with team members. Non-technical users can also use visualization tools like Replay to understand the workflows.
 
-### Summary
+## Summary
 
-Arazzo provides a standard way to describe API workflows declaratively. Respect uses those workflows to run API contract tests against real API behavior.
+Arazzo provides a standard way to describe API workflows declaratively.
+Respect uses those workflows to run API contract tests against real API behavior.
 
 With this approach, teams can maintain API test coverage, detect documentation drift earlier, and share executable API workflows across engineering, QA, and documentation teams.
