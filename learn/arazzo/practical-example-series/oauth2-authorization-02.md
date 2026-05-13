@@ -56,10 +56,6 @@ paths:
     get:
       tags:
         - Products
-      x-internal: false
-      x-catalog-relations:
-        - type: ownedBy
-          key: dark-side
       summary: List all menu items
       operationId: listMenuItems
       security: []
@@ -77,10 +73,6 @@ paths:
     post:
       tags:
         - Products
-      x-internal: false
-      x-catalog-relations:
-        - type: ownedBy
-          key: dark-side
       summary: Create menu item
       operationId: createMenuItem
       security:
@@ -99,26 +91,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MenuItem'
-              examples:
-                MenuItemResponse:
-                  value:
-                    id: prd_01khr487f7qm7p44xn427m43vb
-                    object: menuItem
-                    name: coffee
-                    price: 4000
-                    category: beverage
-                    createdAt: '2026-02-18T10:20:38.228Z'
-                    updatedAt: '2026-02-18T10:20:38.228Z'
-                    volume: 600
-                    containsCaffeine: false
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
           $ref: '#/components/responses/Unauthorized'
         '403':
           $ref: '#/components/responses/Forbidden'
-        '409':
-          $ref: '#/components/responses/Conflict'
         '500':
           $ref: '#/components/responses/InternalServerError'
   /menu/{menuItemId}:
@@ -127,10 +105,6 @@ paths:
     delete:
       tags:
         - Products
-      x-internal: false
-      x-catalog-relations:
-        - type: ownedBy
-          key: dark-side
       summary: Delete a menu item
       operationId: deleteMenuItem
       security:
@@ -153,10 +127,6 @@ paths:
     post:
       tags:
         - Authorization
-      x-internal: false
-      x-catalog-relations:
-        - type: ownedBy
-          key: dark-side
       summary: Create OAuth2 client
       operationId: registerOAuth2Client
       security: []
@@ -460,12 +430,6 @@ components:
             $ref: '#/components/schemas/Error'
     Forbidden:
       description: Forbidden - insufficient permissions.
-      content:
-        application/problem+json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Conflict:
-      description: Conflict - entity already exists.
       content:
         application/problem+json:
           schema:
