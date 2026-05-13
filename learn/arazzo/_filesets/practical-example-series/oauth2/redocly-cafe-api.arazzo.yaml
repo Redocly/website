@@ -1,0 +1,67 @@
+arazzo: 1.0.1
+info:
+  title: Redocly Cafe API - Products
+  version: 1.0.0
+  description: This is the API for the Redocly Cafe Products.
+# @chunk {"steps": ["final-sources"]}
+sourceDescriptions:
+  - name: redocly-cafe-api
+    type: openapi
+    url: redocly-cafe-api.yaml
+  - name: authorization
+    type: arazzo
+    url: authorization.arazzo.yaml
+# @chunk-end
+
+workflows:
+  - workflowId: menu-items-workflow
+    summary: Menu Items Workflow
+    steps:
+      # @chunk {"steps": ["final-step-authorize"]}
+      - stepId: authorize
+        workflowId: $sourceDescriptions.authorization.workflows.authorize-with-code
+        outputs:
+          access_token: $outputs.access_token_with_code
+          client_id: $outputs.client_id
+      # @chunk-end
+      # @chunk {"steps": ["final-step-create"]}
+      - stepId: create-menu-item
+        operationId: $sourceDescriptions.redocly-cafe-api.createMenuItem
+        description: This step creates a new menu item.
+        # @chunk {"steps": ["final-x-security"]}
+        x-security:
+          - schemeName: OAuth2
+            values:
+              accessToken: $steps.authorize.outputs.access_token
+              clientId: $steps.authorize.outputs.client_id
+        # @chunk-end
+        # @chunk {"steps": ["final-create-body"]}
+        requestBody:
+          contentType: multipart/form-data
+          payload:
+            name: $faker.string.uuid()
+            description: The dessert from Italy
+            price: 4000
+            calories: 8000
+            category: 'dessert'
+            photoTextDescription: 'this is a tiramisu'
+        # @chunk-end
+        successCriteria:
+          - condition: $statusCode == 201
+          - condition: $response.body#/id != null
+        outputs:
+          menuItemId: $response.body#/id
+          name: $response.body#/name
+      # @chunk-end
+      # @chunk {"steps": ["final-step-verify"]}
+      - stepId: verify-menu-item
+        operationId: $sourceDescriptions.redocly-cafe-api.listMenuItems
+        description: This to verify created menu item
+        parameters:
+          - in: query
+            name: filter
+            value: 'name:{$steps.create-menu-item.outputs.name}'
+        successCriteria:
+          - condition: $statusCode == 200
+          - condition: $response.body#/items/0/name == $steps.create-menu-item.outputs.name
+      # @chunk-end

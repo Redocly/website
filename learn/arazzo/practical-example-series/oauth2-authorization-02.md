@@ -1,6 +1,19 @@
+{% code-walkthrough
+  filesets=[
+    {
+      "files": [
+        "../_filesets/practical-example-series/oauth2/redocly-cafe-api.arazzo.yaml",
+        "../_filesets/practical-example-series/oauth2/authorization.arazzo.yaml",
+        "../_filesets/practical-example-series/oauth2/register-oauth2-client.arazzo.yaml",
+        "../_filesets/practical-example-series/oauth2/redocly-cafe-api.yaml"
+      ]
+    }
+  ]
+%}
+
 # Respect Practical Example Series: OAuth2 Authorization with Arazzo
 
-This article shows how to use Respect, powered by Arazzo workflows, for OAuth2 authorization.
+This article shows how to use Respect, powered by Arazzo workflows, to test API endpoints that require OAuth2 authorization.
 You will learn how to define reusable workflows in separate files, pass values between workflows, and use those values to authorize API requests.
 
 You will cover the following topics:
@@ -8,7 +21,7 @@ You will cover the following topics:
 - Practical applications of Arazzo:
   - Creating reusable workflows with exposed outputs.
   - Authorizing API requests with OAuth2.
-  - Using `x-security` Respect extension with a protected API operation.
+  - Using the `x-security` Respect extension with a protected API operation.
 
 ## The problem
 
@@ -26,536 +39,75 @@ Respect supports this use case with the [`x-security` extension](https://redocly
 - Familiarity with the [`x-security` extension](https://redocly.com/docs/respect/extensions/x-security#x-security-extension).
 - An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API.
 
-The example uses an OpenAPI description with public operations, protected menu operations, OAuth2 security schemes, and a dynamic client registration endpoint.
-The most important parts for this article are `/oauth2/register`, `/oauth2/token`, the protected `POST /menu` operation, and the `OAuth2` security scheme.
+## Explore the OpenAPI description
 
-<details>
-<summary>OpenAPI description used in this example</summary>
+Open `redocly-cafe-api.yaml` in the right panel.
+The walkthrough focuses on three pieces: the protected `POST /menu` operation, the OAuth2 security scheme, and the dynamic client registration endpoint.
 
-```yaml
-openapi: 3.1.0
-info:
-  title: Redocly Cafe
-  version: 1.0.0
-  contact:
-    email: team@redocly.com
-    url: https://redocly.com/contact-us/
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
-  termsOfService: https://redocly.com/subscription-agreement
-servers:
-  - url: https://cafe.cloud.redocly.com
-tags:
-  - name: Authorization
-    description: Create a client to demo the API.
-  - name: Products
-    description: Operations related to products.
-paths:
-  /menu:
-    get:
-      tags:
-        - Products
-      summary: List all menu items
-      operationId: listMenuItems
-      security: []
-      responses:
-        '200':
-          description: Successful operation.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MenuItemList'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
-    post:
-      tags:
-        - Products
-      summary: Create menu item
-      operationId: createMenuItem
-      security:
-        - OAuth2:
-            - menu:write
-      requestBody:
-        required: true
-        content:
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/MenuItem'
-      responses:
-        '201':
-          description: Menu item created successfully.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MenuItem'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
-  /menu/{menuItemId}:
-    parameters:
-      - $ref: '#/components/parameters/MenuItemId'
-    delete:
-      tags:
-        - Products
-      summary: Delete a menu item
-      operationId: deleteMenuItem
-      security:
-        - OAuth2:
-            - menu:write
-      responses:
-        '204':
-          description: Menu item deleted successfully.
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
-  /oauth2/register:
-    post:
-      tags:
-        - Authorization
-      summary: Create OAuth2 client
-      operationId: registerOAuth2Client
-      security: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RegisterClientObject'
-      responses:
-        '201':
-          description: OAuth2 client registered successfully.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/OAuth2Client'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
-components:
-  securitySchemes:
-    OAuth2:
-      type: oauth2
-      flows:
-        authorizationCode:
-          authorizationUrl: https://cafe.cloud.redocly.com/oauth2/authorize
-          tokenUrl: https://cafe.cloud.redocly.com/oauth2/token
-          scopes:
-            menu:read: Read access to menu items and images
-            menu:write: Write access to menu items (create, delete)
-        clientCredentials:
-          tokenUrl: https://cafe.cloud.redocly.com/oauth2/token
-          scopes:
-            menu:read: Read access to menu items and images
-            menu:write: Write access to menu items (create, delete)
-    ApiKey:
-      type: apiKey
-      name: X-API-Key
-      in: header
-  parameters:
-    MenuItemId:
-      name: menuItemId
-      in: path
-      required: true
-      schema:
-        type: string
-        pattern: ^prd_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-  schemas:
-    Page:
-      type: object
-      properties:
-        endCursor:
-          type:
-            - string
-            - 'null'
-        startCursor:
-          type:
-            - string
-            - 'null'
-        hasNextPage:
-          type: boolean
-        hasPrevPage:
-          type: boolean
-        limit:
-          type: integer
-          minimum: 1
-          maximum: 100
-          default: 10
-        total:
-          type: integer
-          minimum: 0
-      required:
-        - endCursor
-        - startCursor
-        - hasNextPage
-        - hasPrevPage
-        - limit
-        - total
-    MenuBaseItem:
-      type: object
-      properties:
-        createdAt:
-          type: string
-          format: date-time
-          readOnly: true
-        updatedAt:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          readOnly: true
-          pattern: ^prd_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-        object:
-          type: string
-          const: menuItem
-          readOnly: true
-        name:
-          type: string
-          minLength: 1
-          maxLength: 50
-        price:
-          type: integer
-          minimum: 0
-        photo:
-          writeOnly: true
-          type:
-            - string
-            - 'null'
-          format: binary
-        photoUrl:
-          readOnly: true
-          type: string
-          format: uri
-        photoTextDescription:
-          type:
-            - string
-            - 'null'
-      required:
-        - id
-        - name
-        - price
-        - createdAt
-        - updatedAt
-        - object
-    Beverage:
-      allOf:
-        - type: object
-          properties:
-            category:
-              type: string
-              const: beverage
-            volume:
-              type: number
-              exclusiveMinimum: 0
-            containsCaffeine:
-              type: boolean
-          required:
-            - category
-            - volume
-            - containsCaffeine
-        - $ref: '#/components/schemas/MenuBaseItem'
-    Dessert:
-      allOf:
-        - type: object
-          properties:
-            category:
-              type: string
-              const: dessert
-            calories:
-              type: number
-              exclusiveMinimum: 0
-          required:
-            - category
-            - calories
-        - $ref: '#/components/schemas/MenuBaseItem'
-    MenuItem:
-      discriminator:
-        propertyName: category
-        mapping:
-          beverage: '#/components/schemas/Beverage'
-          dessert: '#/components/schemas/Dessert'
-      oneOf:
-        - $ref: '#/components/schemas/Beverage'
-        - $ref: '#/components/schemas/Dessert'
-      required:
-        - category
-    MenuItemList:
-      type: object
-      properties:
-        object:
-          type: string
-          const: list
-        page:
-          $ref: '#/components/schemas/Page'
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/MenuItem'
-      required:
-        - object
-        - page
-        - items
-    Error:
-      type: object
-      properties:
-        type:
-          type: string
-          format: uri-reference
-          default: about:blank
-        title:
-          type: string
-        status:
-          type: integer
-          format: int32
-          minimum: 100
-          exclusiveMaximum: 600
-        instance:
-          type: string
-          format: uri-reference
-        details:
-          type: object
-          additionalProperties: true
-      required:
-        - type
-        - title
-        - status
-    RegisterClientObject:
-      type: object
-      properties:
-        name:
-          type: string
-        redirectUris:
-          type: array
-          items:
-            type: string
-            format: uri
-        scopes:
-          type: array
-          items:
-            type: string
-            enum:
-              - menu:read
-              - menu:write
-        grantTypes:
-          type: array
-          items:
-            type: string
-            enum:
-              - authorization_code
-              - client_credentials
-      required:
-        - name
-    OAuth2Client:
-      type: object
-      properties:
-        clientId:
-          type: string
-        clientSecret:
-          type: string
-        clientIdIssuedAt:
-          type: integer
-          format: int64
-        clientSecretExpiresAt:
-          type: integer
-          format: int64
-        name:
-          type: string
-        redirectUris:
-          type: array
-          items:
-            type: string
-            format: uri
-        registrationClientUri:
-          type: string
-          format: uri
-        registrationAccessToken:
-          type: string
-        scopes:
-          type: array
-          items:
-            type: string
-            enum:
-              - menu:read
-              - menu:write
-        grantTypes:
-          type: array
-          items:
-            type: string
-            enum:
-              - authorization_code
-              - client_credentials
-      required:
-        - clientId
-        - clientSecret
-        - clientIdIssuedAt
-        - clientSecretExpiresAt
-        - registrationClientUri
-        - registrationAccessToken
-  responses:
-    BadRequest:
-      description: Bad request - invalid input parameters.
-      content:
-        application/problem+json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    InternalServerError:
-      description: Internal server error.
-      content:
-        application/problem+json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized - authorization required.
-      content:
-        application/problem+json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Forbidden:
-      description: Forbidden - insufficient permissions.
-      content:
-        application/problem+json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/problem+json:
-          schema:
-            $ref: '#/components/schemas/Error'
-```
+{% step id="openapi-create-menu" heading="Protected POST /menu operation" %}
+`POST /menu` creates a menu item.
+The operation declares `OAuth2` with the `menu:write` scope under `security`, which means callers must present a valid OAuth2 access token with that scope.
 
-</details>
+The plain `GET /menu` operation, by contrast, leaves `security` empty and is publicly accessible.
+{% /step %}
 
-## Retrieve an access token for OAuth2
+{% step id="openapi-oauth-register" heading="POST /oauth2/register" %}
+The API supports dynamic client registration through `POST /oauth2/register`.
+This endpoint is itself unauthenticated (`security: []`) and returns a new `clientId` and `clientSecret` that we can use to obtain an access token.
 
-The Redocly Cafe API can register a new OAuth2 client with dynamic client registration.
 This flow follows the [Dynamic Client Registration Protocol (RFC 7591)](https://datatracker.ietf.org/doc/html/rfc7591).
+{% /step %}
 
-Because client registration is useful in more than one workflow, describe it in a separate Arazzo file and reuse it later.
-This keeps the authorization details separate from the workflow that tests the protected menu operation.
+{% step id="openapi-oauth2-scheme" heading="OAuth2 security scheme" %}
+The `OAuth2` security scheme defines two flows: `authorizationCode` and `clientCredentials`.
+Both publish a `tokenUrl` and the `menu:read` and `menu:write` scopes.
 
-### Register OAuth2 client
+This walkthrough uses these endpoints (and scopes) to obtain an access token and call the protected `POST /menu` operation.
+{% /step %}
 
-The API description used in this article extends the previous example with a `/oauth2/register` endpoint.
+## Step 1. Register an OAuth2 client
 
-`redocly-cafe-api.yaml`
+Because client registration is useful in more than one workflow, describe it in its own Arazzo file and reuse it later.
+Keeping the authorization details in a dedicated workflow keeps the protected-operation tests focused on the operation under test.
 
-```yaml
-/oauth2/register:
-    post:
-      tags:
-        - Authorization
-      summary: Create OAuth2 client
-      description: |
-        Register a new OAuth2 client for dynamic client registration.  This endpoint implements the Dynamic Client Registration Protocol (RFC 7591), using camelCase field names instead of the RFC's snake_case convention (e.g., `redirectUris` instead of `redirect_uris`, `grantTypes` instead of `grant_types`). The `name` field is required. Other fields are optional. If not provided:
-        - `redirectUris` defaults to an empty array. Note: When using the `authorization_code` grant type, 
-          `redirectUris` must be provided (per RFC 7591 Section 2).
-        - `scopes` defaults to all available scopes (menu:read, menu:write) - `grantTypes` defaults to both supported grant types (authorization_code, client_credentials)
-        Returns the registered client information per RFC 7591, including:
-        - `clientId` and `clientSecret` (must be stored securely) - `clientIdIssuedAt` and `clientSecretExpiresAt` timestamps - All registered client metadata (name, redirectUris, scopes, grantTypes)
-      operationId: registerOAuth2Client
-      security: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RegisterClientObject'
-```
+Switch to `register-oauth2-client.arazzo.yaml` in the right panel.
 
-Create a `register-oauth2-client.arazzo.yaml` file to register an OAuth2 client.
+{% step id="register-source" heading="Reference the OpenAPI description" %}
+The workflow declares a single OpenAPI source.
+Operations in that source are accessible through `$sourceDescriptions.redocly-cafe-api.<operationId>`.
+{% /step %}
 
-`register-oauth2-client.arazzo.yaml`
+{% step id="register-workflow" heading="Define the registration workflow" %}
+The file declares one workflow, `register-oauth2-client-workflow`, that registers a new client and exposes its credentials as workflow-level outputs.
+{% /step %}
 
-```yaml
-arazzo: 1.0.1
-info:
-  title: Redocly Cafe API - Register OAuth2 Client
-  version: 1.0.0
-  description: This is the API for the Redocly Cafe OAuth2 client registration.
-sourceDescriptions:
-  - name: redocly-cafe-api
-    type: openapi
-    url: redocly-cafe-api.yaml
+{% step id="register-step" heading="A single registration step" %}
+The workflow has just one step, `register-oauth2-client`, which calls the registration operation.
+{% /step %}
 
-workflows:
-  - workflowId: register-oauth2-client-workflow
-    summary: Register a new OAuth2 client
-    description: This workflow registers a new OAuth2 client.
-    steps:
-      - stepId: register-oauth2-client
-        operationId: $sourceDescriptions.redocly-cafe-api.registerOAuth2Client
-        description: This step registers a new OAuth2 client.
-        requestBody:
-          payload:
-            name: code
-            redirectUris:
-              - https://cafe.cloud.redocly.com/callback
-            scopes:
-              - 'menu:read'
-              - 'menu:write'
-            grantTypes:
-              - 'client_credentials'
-        successCriteria:
-          - condition: $statusCode == 201
-          - condition: $response.body#/clientId != null
-          - condition: $response.body#/clientSecret != null
-        outputs:
-          clientId: $response.body#/clientId
-          clientSecret: $response.body#/clientSecret
-    outputs:
-      clientId: $steps.register-oauth2-client.outputs.clientId
-      clientSecret: $steps.register-oauth2-client.outputs.clientSecret
-```
+{% step id="register-step-operation" heading="Connect the step to the operation" %}
+The step targets the `registerOAuth2Client` operation from the connected OpenAPI source.
+Because the step is connected to a documented operation, Respect can automatically validate the response status, content type, and body schema.
+{% /step %}
 
-The step is connected to the OpenAPI description through `operationId`.
+{% step id="register-request-body" heading="Supply the request body" %}
+Because this is a `POST` request, the step provides a `requestBody.payload` with the client metadata.
+Here we request only the `client_credentials` grant type and ask for both menu scopes.
+{% /step %}
 
-```yaml
-operationId: $sourceDescriptions.redocly-cafe-api.registerOAuth2Client
-```
+{% step id="register-success-criteria" heading="Assert the response shape" %}
+The step asserts a `201` status code and the presence of `clientId` and `clientSecret` in the response body.
+{% /step %}
 
-Because this is a POST request, the workflow defines a `requestBody`.
+{% step id="register-step-outputs" heading="Capture step outputs" %}
+The step extracts `clientId` and `clientSecret` from the response body and stores them as step outputs.
+Other steps in the same workflow can reference them through `$steps.register-oauth2-client.outputs.<name>`.
+{% /step %}
 
-```yaml
-requestBody:
-  payload:
-    name: code
-    redirectUris:
-      - https://cafe.cloud.redocly.com/callback
-    scopes:
-      - 'menu:read'
-      - 'menu:write'
-    grantTypes:
-      - 'client_credentials'
-```
-
-The step defines outputs for values that later steps or workflows need.
-
-```yaml
-outputs:
-  clientId: $response.body#/clientId
-  clientSecret: $response.body#/clientSecret
-```
-
-Because these values must be available outside this workflow, the complete workflow also exposes the step outputs as workflow outputs. That allows another Arazzo workflow to call this workflow and read the values by name.
+{% step id="register-workflow-outputs" heading="Expose workflow outputs" %}
+To make these values available to **other** Arazzo files that reuse this workflow, the same values are also exposed as workflow-level `outputs`.
+That promotion is the bridge between a reusable workflow and the workflows that consume it.
+{% /step %}
 
 Execute the file with Redocly CLI to inspect the API response and confirm which values are mapped to workflow outputs:
 
@@ -563,81 +115,56 @@ Execute the file with Redocly CLI to inspect the API response and confirm which 
 npx @redocly/cli@latest respect register-oauth2-client.arazzo.yaml --verbose
 ```
 
-### Get access token to authorize your future requests
+## Step 2. Get an access token
 
-Next, create another Arazzo file called `authorization.arazzo.yaml`.
+Switch to `authorization.arazzo.yaml` in the right panel.
+This workflow exchanges the registered client for an access token in two steps:
 
-This workflow gets an access token in two steps:
+1. Reuse `register-oauth2-client-workflow` to get a `clientId` and `clientSecret`.
+2. Call the token endpoint and expose the returned access token as a workflow output.
 
-- First, it reuses the `register-oauth2-client` workflow to retrieve a `clientId` and `clientSecret`.
-- Then it calls the token endpoint and exposes the returned access token as a workflow output.
+{% step id="auth-sources" heading="Multiple source descriptions" %}
+This file declares two sources: the OpenAPI description (`redocly-cafe-api`) and the previous Arazzo file (`register-oauth2`).
 
-To reuse the client registration workflow, add the reusable workflow as another `sourceDescription`.
+Arazzo source descriptions are not limited to OpenAPI - another Arazzo document is a valid source too.
+{% /step %}
 
-```yaml
-- name: register-oauth2
-  type: arazzo
-  url: register-oauth2-client.arazzo.yaml
-```
-Then execute that workflow from a step by referencing `workflowId: $sourceDescriptions.register-oauth2.workflows.register-oauth2-client-workflow`.
+{% step id="auth-source-arazzo" heading="Reusable Arazzo source" %}
+Adding the registration file as a source with `type: arazzo` is what enables reuse.
+A step can now reference the registration workflow by id, just like operations reference OpenAPI `operationId`s.
+{% /step %}
 
-The second step, `authorize-with-code`, calls the `/oauth2/token` endpoint with a predefined `/callback`.
-In a production application, the callback is usually implemented by the client application. In this example, the Redocly Cafe API provides the callback endpoint for demonstration purposes.
+{% step id="auth-step-reuse" heading="Call the reusable workflow" %}
+The first step uses `workflowId` (not `operationId`) to call the registration workflow from the other Arazzo file.
 
-This step also uses the [`x-operation` extension](https://redocly.com/docs/respect/extensions/x-operation) to make a request to a URL that is not described as an operation in the OpenAPI description.
+Its `outputs` mirror the workflow-level outputs we exposed earlier (`clientId`, `clientSecret`), which makes them available locally as `$steps.register-oauth2-client.outputs.*`.
+{% /step %}
 
-`authorization.arazzo.yaml`
+{% step id="auth-step-token" heading="Call the token endpoint" %}
+The second step, `authorize-with-code`, calls `/oauth2/token` using the credentials returned by the previous step.
 
-```yaml
-arazzo: 1.0.1
-info:
-  title: Redocly Cafe API - Authorization
-  version: 1.0.0
-  description: This is the API for the Redocly Cafe OAuth2 client registration.
-sourceDescriptions:
-  - name: redocly-cafe-api
-    type: openapi
-    url: redocly-cafe-api.yaml
-  - name: register-oauth2
-    type: arazzo
-    url: register-oauth2-client.arazzo.yaml
+In a production application, the `/callback` URL is usually implemented by the client application.
+In this example, the Redocly Cafe API provides the callback endpoint for demonstration purposes.
+{% /step %}
 
-workflows:
-  - workflowId: authorize-with-code
-    summary: Authorize a new OAuth2 client
-    steps:
-      - stepId: register-oauth2-client
-        description: This step registers a new OAuth2 client.
-        workflowId: $sourceDescriptions.register-oauth2.workflows.register-oauth2-client-workflow
-        successCriteria:
-          - condition: $statusCode == 201
-          - condition: $response.body#/clientId != null
-        outputs:
-          clientId: $outputs.clientId
-          clientSecret: $outputs.clientSecret
-      - stepId: authorize-with-code
-        x-operation:
-          method: POST
-          url: https://cafe.cloud.redocly.com/oauth2/token
-        parameters:
-          - in: header
-            name: content-type
-            value: application/x-www-form-urlencoded
-        requestBody:
-          payload:
-            grant_type: authorization_code
-            redirect_uri: https://cafe.cloud.redocly.com/callback
-            client_id: $steps.register-oauth2-client.outputs.clientId
-            client_secret: $steps.register-oauth2-client.outputs.clientSecret
-        successCriteria:
-          - condition: $statusCode == 200
-          - condition: $response.body#/access_token != null
-        outputs:
-          access_token: $response.body#/access_token
-    outputs:
-      access_token_with_code: $steps.authorize-with-code.outputs.access_token
-      client_id: $steps.register-oauth2-client.outputs.clientId
-```
+{% step id="auth-x-operation" heading="x-operation extension" %}
+`/oauth2/token` is not described as an `operationId` in the OpenAPI file, so the step uses the [`x-operation` Respect extension](https://redocly.com/docs/respect/extensions/x-operation) to declare the request URL and method inline.
+
+Use `x-operation` whenever you need to call a URL that is not part of the OpenAPI description.
+{% /step %}
+
+{% step id="auth-token-request-body" heading="Token request body" %}
+The token request body follows the OAuth2 spec: `grant_type`, `redirect_uri`, `client_id`, and `client_secret`.
+The credentials are read from the previous step's outputs using `$steps.register-oauth2-client.outputs.*`.
+{% /step %}
+
+{% step id="auth-token-output" heading="Capture the access token" %}
+The step extracts `access_token` from the response body so the next workflow can use it to authorize protected requests.
+{% /step %}
+
+{% step id="auth-workflow-outputs" heading="Expose the authorization outputs" %}
+Just like the registration workflow, the authorization workflow exposes its outputs at the workflow level so any consumer Arazzo file can read `access_token_with_code` and `client_id`.
+{% /step %}
 
 Execute this file:
 
@@ -646,8 +173,6 @@ npx @redocly/cli@latest respect authorization.arazzo.yaml --verbose
 ```
 
 Inspect the response body of the last step. It should contain the `access_token` that the final workflow will use:
-
-Key result from the command output:
 
 ```bash
     Response Body:
@@ -662,93 +187,54 @@ Key result from the command output:
     ✓ success criteria check - $response.body#/access_token != null
 ```
 
+## Step 3. Call the protected endpoint
 
-### Make a POST request to the secured endpoint
-
-Now we can combine the previous workflows and call a protected endpoint that creates a menu item.
-The final workflow has three steps: `authorize`, `create-menu-item`, and `verify-menu-item`.
-
-The authorization workflow returns values that the final workflow passes to the [`x-security` extension](https://redocly.com/docs/respect/extensions/x-security#x-security-extension).
-Respect then uses those values to authorize the protected API request.
+Switch to `redocly-cafe-api.arazzo.yaml` in the right panel.
+This is the workflow you run in CI: it authorizes, creates a menu item, and then verifies the creation.
 
 The important handoff is:
 
 - The `authorize` step calls the reusable authorization workflow.
 - The `create-menu-item` step reads `access_token` and `client_id` from the `authorize` step outputs.
-- The `x-security` extension automatically constructs appropriate authorization headers, queries, or cookies based on your parameters for the protected `createMenuItem` operation.
+- The `x-security` extension automatically constructs the appropriate authorization headers, query parameters, or cookies for the protected `createMenuItem` operation.
 
-```yaml
-x-security:
-  - schemeName: OAuth2
-    values:
-      accessToken: $steps.authorize.outputs.access_token
-      clientId: $steps.authorize.outputs.client_id
-```
+{% step id="final-sources" heading="Combine the OpenAPI and authorization sources" %}
+The final file references two sources: the OpenAPI description for the operations under test, and the authorization Arazzo file for the access token.
+{% /step %}
 
-The final workflow looks like this:
+{% step id="final-step-authorize" heading="Reuse the authorization workflow" %}
+The first step calls `authorize-with-code` from the authorization file and stores the access token and client id locally.
 
-`redocly-cafe-api.arazzo.yaml`
+This is exactly the same reuse pattern used inside `authorization.arazzo.yaml`, but now applied one level higher.
+{% /step %}
 
-```yaml
-arazzo: 1.0.1
-info:
-  title: Redocly Cafe API - Products
-  version: 1.0.0
-  description: This is the API for the Redocly Cafe Products.
-sourceDescriptions:
-  - name: redocly-cafe-api
-    type: openapi
-    url: redocly-cafe-api.yaml
-  - name: authorization
-    type: arazzo
-    url: authorization.arazzo.yaml
+{% step id="final-step-create" heading="Create a menu item" %}
+The `create-menu-item` step calls the protected `createMenuItem` operation.
+It uses `$faker.string.uuid()` to generate a unique `name` so the test is repeatable.
+{% /step %}
 
-workflows:
-  - workflowId: menu-items-workflow
-    summary: Menu Items Workflow
-    steps:
-      - stepId: authorize
-        workflowId: $sourceDescriptions.authorization.workflows.authorize-with-code
-        outputs:
-          access_token: $outputs.access_token_with_code
-          client_id: $outputs.client_id
-      - stepId: create-menu-item
-        operationId: $sourceDescriptions.redocly-cafe-api.createMenuItem
-        description: This step creates a new menu item.
-        x-security:
-          - schemeName: OAuth2
-            values:
-              accessToken: $steps.authorize.outputs.access_token
-              clientId: $steps.authorize.outputs.client_id
-        requestBody:
-          contentType: multipart/form-data
-          payload:
-            name: $faker.string.uuid()
-            description: The dessert from Italy
-            price: 4000
-            calories: 8000
-            category: 'dessert'
-            photoTextDescription: 'this is a tiramisu'
-        successCriteria:
-          - condition: $statusCode == 201
-          - condition: $response.body#/id != null
-        outputs:
-          menuItemId: $response.body#/id
-          name: $response.body#/name
-      - stepId: verify-menu-item
-        operationId: $sourceDescriptions.redocly-cafe-api.listMenuItems
-        description: This to verify created menu item
-        parameters:
-          - in: query
-            name: filter
-            value: 'name:{$steps.create-menu-item.outputs.name}'
-        successCriteria:
-          - condition: $statusCode == 200
-          - condition: $response.body#/items/0/name == $steps.create-menu-item.outputs.name
-```
+{% step id="final-x-security" heading="Provide credentials with x-security" %}
+The [`x-security` extension](https://redocly.com/docs/respect/extensions/x-security#x-security-extension) tells Respect which security scheme to satisfy and how.
 
+Here the workflow passes the `accessToken` and `clientId` it received from the `authorize` step.
+Respect reads the security scheme from the OpenAPI description and adds the right headers automatically - you do not need to construct `Authorization: Bearer ...` yourself.
+{% /step %}
 
-Run the workflow to confirm that the authorization step, the protected POST request, and the verification step all pass.
+{% step id="final-create-operation" heading="The protected operation" %}
+This is the operation the step targets back in `redocly-cafe-api.yaml`.
+Note the `security` block listing `OAuth2` with the `menu:write` scope - that is exactly what the `x-security` block satisfies.
+{% /step %}
+
+{% step id="final-create-body" heading="Send a multipart/form-data body" %}
+`createMenuItem` accepts `multipart/form-data`, so the step declares `contentType` explicitly and supplies the form fields as `payload`.
+{% /step %}
+
+{% step id="final-step-verify" heading="Verify the menu item" %}
+The final step lists menu items and asserts that the item created in the previous step exists.
+This uses outputs from `create-menu-item` directly in a request parameter and in a success criterion.
+{% /step %}
+
+Run the workflow to confirm that the authorization step, the protected POST request, and the verification step all pass:
 
 ```bash
 npx @redocly/cli@latest respect redocly-cafe-api.arazzo.yaml --verbose
@@ -758,4 +244,7 @@ npx @redocly/cli@latest respect redocly-cafe-api.arazzo.yaml --verbose
 
 Respect extensions make it possible to describe authorized API requests as part of an Arazzo workflow.
 
-By splitting the process into smaller workflows with outputs, you can reuse authentication and authorization steps across multiple API contract tests. This keeps complex workflows easier to maintain while still testing realistic protected API behavior.
+By splitting the process into smaller workflows with outputs, you can reuse authentication and authorization steps across multiple API contract tests.
+This keeps complex workflows easier to maintain while still testing realistic protected API behavior.
+
+{% /code-walkthrough %}

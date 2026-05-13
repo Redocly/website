@@ -1,3 +1,16 @@
+{% code-walkthrough
+  filesets=[
+    {
+      "files": [
+        "../_filesets/practical-example-series/contract-testing/redocly-cafe-api.arazzo.yaml",
+        "../_filesets/practical-example-series/contract-testing/redocly-cafe-api.yaml",
+        "../_filesets/practical-example-series/contract-testing/redocly-cafe-api.fixed.arazzo.yaml",
+        "../_filesets/practical-example-series/contract-testing/redocly-cafe-api.fixed.yaml"
+      ]
+    }
+  ]
+%}
+
 # Respect Practical Example Series: API Contract Testing with Respect
 
 This article shows how to use Respect, powered by Arazzo workflows, for API contract testing.
@@ -10,7 +23,7 @@ You will cover the following topics:
   - Adding API contract tests to CI/CD routines.
   - Keeping API documentation synchronized with actual API behavior.
   - Sharing described workflows across teams.
-- Using the open-source [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) `respect` command to execute Arazzo workflows and inspect the contract test results, and fix mismatch between the OpenAPI description and the actual API response.
+- Using the open-source [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) `respect` command to execute Arazzo workflows, inspect contract test results, and fix mismatches between the OpenAPI description and the actual API response.
 
 ## The problem
 
@@ -18,7 +31,8 @@ Many teams test APIs by writing test code in the same language as the API implem
 This can work well for a single service, but it becomes harder to maintain in systems with multiple products, repositories, and programming languages.
 
 Another common challenge is keeping API documentation aligned with actual API behavior.
-Developers may update an endpoint but forget to update its OpenAPI description, or the documentation may change without the implementation following it. Over time, these small differences make it harder for QA engineers, developers, and technical writers to trust the API contract.
+Developers may update an endpoint but forget to update its OpenAPI description, or the documentation may change without the implementation following it.
+Over time, these small differences make it harder for QA engineers, developers, and technical writers to trust the API contract.
 
 Respect helps address this problem by executing Arazzo workflows against a running API and validating the responses against the connected OpenAPI description.
 This makes API contract testing more declarative and easier to share across teams.
@@ -29,234 +43,30 @@ To follow the examples in this article, you need:
 
 - Basic familiarity with [Arazzo](../what-is-arazzo.md).
 - An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API.
-  <b>IMPORTANT: the API description intentionally contains discrepancies for demonstration purposes.</b>
 
-The example uses the following OpenAPI description.
-The important part for this article is the `GET /menu` operation and its `MenuItemList` response schema.
+> **Important:** The API description used here intentionally contains a discrepancy for demonstration purposes.
 
-<details>
-<summary>OpenAPI description used in this example</summary>
+## Explore the OpenAPI description
 
-```yaml
-openapi: 3.1.0
-info:
-  title: Redocly Cafe
-  version: 1.0.0
-  contact:
-    email: team@redocly.com
-    url: https://redocly.com/contact-us/
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
-  termsOfService: https://redocly.com/subscription-agreement
-servers:
-  - url: https://cafe.cloud.redocly.com
-    description: Live server.
-tags:
-  - name: Products
-    description: Operations related to products.
-paths:
-  /menu:
-    get:
-      tags:
-        - Products
-      summary: List all menu items
-      operationId: listMenuItems
-      security: []
-      responses:
-        '200':
-          description: Successful operation.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MenuItemList'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
-components:
-  schemas:
-    Page:
-      type: object
-      properties:
-        endCursor:
-          type:
-            - string
-            - 'null'
-        startCursor:
-          type:
-            - string
-            - 'null'
-        hasNextPage:
-          type: boolean
-        hasPrevPage:
-          type: boolean
-        limit:
-          type: integer
-          minimum: 1
-          maximum: 100
-          default: 10
-        total:
-          type: integer
-          minimum: 0
-      required:
-        - endCursor
-        - startCursor
-        - hasNextPage
-        - hasPrevPage
-        - limit
-        - total
-    MenuBaseItem:
-      type: object
-      properties:
-        createdAt:
-          type: string
-          format: date-time
-          readOnly: true
-        updatedAt:
-          type: string
-          format: date-time
-          readOnly: true
-        id:
-          type: string
-          readOnly: true
-          pattern: ^prd_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-        object:
-          type: string
-          const: menuItem
-          readOnly: true
-        name:
-          type: string
-          minLength: 1
-          maxLength: 50
-        price:
-          type: integer
-          minimum: 0
-        photo:
-          writeOnly: true
-          type:
-            - string
-            - 'null'
-          format: binary
-        photoUrl:
-          readOnly: true
-          type: string
-          format: uri
-        photoTextDescription:
-          type:
-            - string
-            - 'null'
-      required:
-        - id
-        - name
-        - price
-        - createdAt
-        - updatedAt
-        - object
-    Beverage:
-      allOf:
-        - type: object
-          properties:
-            category:
-              type: string
-              const: beverage
-            volume:
-              type: number
-              exclusiveMinimum: 0
-            containsCaffeine:
-              type: boolean
-        - $ref: '#/components/schemas/MenuBaseItem'
-    Dessert:
-      allOf:
-        - type: object
-          properties:
-            category:
-              type: string
-              const: dessert
-            calories:
-              type: number
-              exclusiveMinimum: 0
-        - $ref: '#/components/schemas/MenuBaseItem'
-    MenuItem:
-      discriminator:
-        propertyName: category
-        mapping:
-          beverage: '#/components/schemas/Beverage'
-          dessert: '#/components/schemas/Dessert'
-      oneOf:
-        - $ref: '#/components/schemas/Beverage'
-        - $ref: '#/components/schemas/Dessert'
-      required:
-        - category
-    MenuItemList:
-      type: array
-      items:
-        type: object
-        properties:
-          object:
-            type: string
-            const: list
-          page:
-            $ref: '#/components/schemas/Page'
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/MenuItem'
-        required:
-          - object
-          - page
-          - items
-    Error:
-      type: object
-      properties:
-        type:
-          type: string
-          format: uri-reference
-          default: about:blank
-        title:
-          type: string
-        status:
-          type: integer
-          format: int32
-          minimum: 100
-          exclusiveMaximum: 600
-        instance:
-          type: string
-          format: uri-reference
-        details:
-          type: object
-          additionalProperties: true
-      required:
-        - type
-        - title
-        - status
-  responses:
-    BadRequest:
-      description: Bad request - invalid input parameters.
-      content:
-        application/problem+json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    InternalServerError:
-      description: Internal server error.
-      content:
-        application/problem+json:
-          schema:
-            $ref: '#/components/schemas/Error'
-```
+Open `redocly-cafe-api.yaml` in the right panel to follow along.
+The two important pieces for this walkthrough are the `GET /menu` operation and the `MenuItemList` response schema it references.
 
-</details>
+{% step id="openapi-list-menu-items" heading="GET /menu operation" %}
+The `GET /menu` operation returns a paginated list of menu items.
+The `200` response points to the `MenuItemList` schema, which is where the intentional discrepancy lives.
+{% /step %}
 
-In this description, `GET /menu` points to the `MenuItemList` schema.
-The schema intentionally says that the response is an array.
-Later, Respect will compare that contract with the real API response and show why they do not match.
+{% step id="openapi-broken-schema" heading="MenuItemList (broken)" %}
+The schema declares the response as an **array**, but the real API returns a **paginated object** with `object`, `page`, and `items` fields.
+Later in this walkthrough, Respect will compare this contract with the real API response and surface the mismatch.
+{% /step %}
 
 ## Create an Arazzo description
 
 There are several ways to create an Arazzo description:
 
 - Read the [Arazzo specification](https://spec.openapis.org/arazzo/latest.html) and write the file from scratch for full control.
-- Use the `npx @redocly/cli@latest generate-arazzo docs-data.yaml` command as a starting point. This helps you understand the Arazzo structure and see how operations can be described.
+- Use the `npx @redocly/cli@latest generate-arazzo docs-data.yaml` command as a starting point.
 - Use AI assistance to draft the Arazzo description, then lint the output to catch structural or syntax errors.
 
 Whichever approach you choose, validate the Arazzo file with Redocly CLI:
@@ -274,122 +84,84 @@ redocly-cafe-api.arazzo.yaml: validated in 6ms
 Woohoo! Your API description is valid. 🎉
 ```
 
-The following simple workflow retrieves the menu items list.
+Now switch to `redocly-cafe-api.arazzo.yaml` in the right panel and walk through it section by section.
 
-`redocly-cafe-api.arazzo.yaml`
+{% step id="arazzo-version" heading="Declare the Arazzo version" %}
+Every Arazzo file begins with a version declaration.
+The latest stable version is `1.0.1`.
+{% /step %}
 
-```yaml
-arazzo: 1.0.1
-info:
-  title: Redocly Cafe API - Products
-  version: 1.0.0
-  description: This is the API for the Redocly Cafe Products.
-sourceDescriptions:
-  - name: redocly-cafe-api
-    type: openapi
-    url: redocly-cafe-api.yaml
+{% step id="arazzo-info" heading="Describe the workflow document" %}
+Similar to OpenAPI, the `info` object provides a `title`, `version`, and optional `description` that summarize what the workflow file is about.
+{% /step %}
 
-workflows:
-  - workflowId: menu-items-workflow
-    summary: Menu Items Workflow
-    steps:
-      - stepId: get-products
-        operationId: $sourceDescriptions.redocly-cafe-api.listMenuItems
-        description: This step gets all products.
-        parameters:
-          - in: query
-            name: limit
-            value: 1
-        successCriteria:
-          - condition: $statusCode == 200
+{% step id="arazzo-source-descriptions" heading="Connect an OpenAPI source" %}
+`sourceDescriptions` defines the connection to one or more OpenAPI files.
+
+The example references the local `redocly-cafe-api.yaml` and gives it the name `redocly-cafe-api`.
+This name is used later to refer to operations from that description.
+{% /step %}
+
+{% step id="arazzo-workflows" heading="Define a workflow" %}
+A single Arazzo file can declare multiple `workflows`.
+Each workflow has a unique `workflowId` and a `summary`.
+This example defines `menu-items-workflow`, which retrieves the menu items list.
+{% /step %}
+
+{% step id="arazzo-steps" heading="Add steps" %}
+Each workflow is composed of one or more `steps`.
+A step is the smallest unit of execution: typically a single API call against an operation from the connected source description.
+{% /step %}
+
+{% step id="arazzo-operation-id" heading="Reference an operation" %}
+The step uses `operationId` to connect to an operation in the OpenAPI description, using the pattern:
+
+```text
+$sourceDescriptions.<source-name>.<operationId>
 ```
 
-Please note that `sourceDescriptions` defines the connection to the OpenAPI description.
+In this example, the step resolves to the `listMenuItems` operation from the `redocly-cafe-api` source.
+{% /step %}
 
-``` yaml
-sourceDescriptions:
-  - name: redocly-cafe-api
-    type: openapi
-    url: redocly-cafe-api.yaml
-```
+{% step id="arazzo-step-operation" heading="The resolved operation" %}
+This is the operation the step resolves to in `redocly-cafe-api.yaml`.
 
-Each step uses an `operationId` to connect the workflow step to an operation in the OpenAPI description, like so:
+Because the step is connected to an OpenAPI operation, Respect knows the documented status codes, content types, and response schema for the request and can automatically validate them.
+{% /step %}
 
-```yaml
-operationId: $sourceDescriptions.redocly-cafe-api.listMenuItems
-```
+{% step id="arazzo-parameters" heading="Pass parameters" %}
+Steps can pass parameters to the operation.
+Here, the `limit` query parameter restricts the response to a single menu item, which keeps the example output small and easy to read.
+{% /step %}
 
-This step resolves the `listMenuItems` operation from the `redocly-cafe-api` source description, which points to the `redocly-cafe-api.yaml` file.
+{% step id="arazzo-success-criteria" heading="Define success criteria" %}
+Steps can include a `successCriteria` block to define workflow-specific expectations.
 
-```yaml
-/menu:
-    get:
-      tags:
-        - Products
-      summary: List all menu items
-      description: Retrieve a collection of menu items with optional filtering and pagination.
-      operationId: listMenuItems
-      security: []
-      parameters:
-        - $ref: '#/components/parameters/After'
-        - $ref: '#/components/parameters/Before'
-        - $ref: '#/components/parameters/Sort'
-        - $ref: '#/components/parameters/Filter'
-        - $ref: '#/components/parameters/Search'
-        - $ref: '#/components/parameters/Limit'
-      responses:
-        '200':
-          description: Successful operation.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MenuItemList'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
-```
+This example asserts that the API responds with a `200` status code.
+Respect also runs additional automatic checks based on the connected OpenAPI description (see the next section).
+{% /step %}
 
-This connection is important because Respect can use the OpenAPI description to verify the response status, content type, and schema.
+## Execute the workflow with Redocly CLI
 
-Steps can pass parameters to the operation. In this example, the `limit` query parameter restricts the response to one menu item.
-
-```yaml
-  parameters:
-    - in: query
-      name: limit
-      value: 1
-```
-
-Steps can also include a `successCriteria` section to define workflow-specific expectations.
-
-```yaml
-successCriteria:
-  - condition: $statusCode == 200
-```
-
-## Execute the workflow using Redocly CLI
-
-[@redocly/cli](https://www.npmjs.com/package/@redocly/cli) is an open-source tool that can execute Arazzo descriptions with the `respect` command.
+[@redocly/cli](https://www.npmjs.com/package/@redocly/cli) is an open-source tool that can execute Arazzo descriptions with the `respect` command:
 
 ```bash
 npx @redocly/cli@latest respect redocly-cafe-api.arazzo.yaml
 ```
 
-Please notice that the workflow gets executed because we specified the live server in the OpenAPI description, so you don't have to specify that when writing tests.
+The workflow targets the server defined in the OpenAPI description, so you do not need to provide one on the command line.
 
-The execution result looks like this.
-The full output is useful when debugging, but the most important lines are the checks near the end of the step:
+The full output is useful for debugging, but the most important lines are the checks near the end of the step:
 
 - The success criteria check passes because the API returns status code `200`.
 - The status code and content type checks pass because the response matches the documented response metadata.
-- The schema check fails because the response body shape does not match the documented schema.
+- The schema check **fails** because the response body shape does not match the documented schema.
 
 <details>
 <summary>Respect execution output</summary>
 
 ```bash
-    Running workflow redocly-cafe-api-se-01.arazzo.yaml / menu-items-workflow 
+    Running workflow redocly-cafe-api.arazzo.yaml / menu-items-workflow 
  
   ✗ GET /menu - step get-products 
 
@@ -439,92 +211,19 @@ The full output is useful when debugging, but the most important lines are the c
     ✓ success criteria check - $statusCode == 200
     ✓ status code check - $statusCode in [200, 400, 500]
     ✓ content-type check
-    ✗ schema check
- 
-
-  Failed tests info:
-
-  Workflow name: menu-items-workflow
- 
-    stepId - get-products 
     ✗ schema check 
-      
-      TYPE must be array
-      
-      >  1 | {
-          | ^
-      >  2 |   "object": "list",
-          | ^^^^^^^^^^^^^^^^^^^
-      >  3 |   "page": {
-          | ^^^^^^^^^^^^^^^^^^^
-      >  4 |     "startCursor": "ixCALWlkOnByZF8wMDAwMDAwMDAwc2VlZHRyYW1zMDAwMDAwMAM",
-          | ^^^^^^^^^^^^^^^^^^^
-      >  5 |     "endCursor": "ixCALWlkOnByZF8wMDAwMDAwMDAwc2VlZHRyYW1zMDAwMDAwMAM",
-          | ^^^^^^^^^^^^^^^^^^^
-      >  6 |     "hasNextPage": true,
-          | ^^^^^^^^^^^^^^^^^^^
-      >  7 |     "hasPrevPage": false,
-          | ^^^^^^^^^^^^^^^^^^^
-      >  8 |     "limit": 1,
-          | ^^^^^^^^^^^^^^^^^^^
-      >  9 |     "total": 5
-          | ^^^^^^^^^^^^^^^^^^^
-      > 10 |   },
-          | ^^^^^^^^^^^^^^^^^^^
-      > 11 |   "items": [
-          | ^^^^^^^^^^^^^^^^^^^
-      > 12 |     {
-          | ^^^^^^^^^^^^^^^^^^^
-      > 13 |       "id": "prd_0000000000seedtrams0000000",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 14 |       "name": "tiramisu",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 15 |       "price": 13000,
-          | ^^^^^^^^^^^^^^^^^^^
-      > 16 |       "category": "dessert",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 17 |       "createdAt": "2026-04-29T10:00:50.610Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 18 |       "updatedAt": "2026-04-29T10:00:50.610Z",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 19 |       "object": "menuItem",
-          | ^^^^^^^^^^^^^^^^^^^
-      > 20 |       "calories": 450
-          | ^^^^^^^^^^^^^^^^^^^
-      > 21 |     }
-          | ^^^^^^^^^^^^^^^^^^^
-      > 22 |   ]
-          | ^^^^^^^^^^^^^^^^^^^
-      > 23 | }
-          | ^^ 👈🏽  type must be array
-      
-       
-  Summary for redocly-cafe-api-se-01.arazzo.yaml
+
+  Summary for redocly-cafe-api.arazzo.yaml
   
   Workflows: 1 failed, 1 total
   Steps: 1 failed, 1 total
   Checks: 3 passed, 1 failed, 4 total
   Time: 58ms 
- 
- 
-┌────────────────────────────────────────────────────────────────────────────┬────────────┬─────────┬─────────┬──────────┐
-│ Filename                                                                   │ Workflows  │ Passed  │ Failed  │ Warnings │
-├────────────────────────────────────────────────────────────────────────────┼────────────┼─────────┼─────────┼──────────┤
-│ x redocly-cafe-api-se-01.arazzo.yaml                                       │ 1          │ 0       │ 1       │ -        │
-└────────────────────────────────────────────────────────────────────────────┴────────────┴─────────┴─────────┴──────────┘
- 
- Tests exited with error 
 ```
 
 </details>
 
-In addition to the `success criteria check` defined in the Arazzo file,
-
-```yaml
-successCriteria:
-  - condition: $statusCode == 200
-```
-Respect performed three additional checks automatically:
+In addition to the success criterion declared in the Arazzo file, Respect performed three additional checks automatically:
 
 - `status code check`
 - `content-type check`
@@ -534,49 +233,43 @@ Because the workflow step is connected to an OpenAPI description, [@redocly/cli]
 
 ## Understand the schema failure
 
-As mentioned earlier, the API description includes an intentional discrepancy.
-The Respect output makes that mismatch visible.
+Switch back to `redocly-cafe-api.yaml` in the right panel.
+The failed schema check reports the following message:
 
-The failed schema check includes this message:
-
- `| ^^ 👈🏽  type must be array`
-
-The API response is a paginated object, but the OpenAPI description expects an array.
-This is the intentional discrepancy in the example.
-
-To fix it, update the `MenuItemList` schema so it matches the actual API response:
-
-`redocly-cafe-api.yaml`
-
-```yaml
-    MenuItemList:
-      type: object
-      properties:
-        object:
-          type: string
-          const: list
-          description: Entity name.
-        page:
-          $ref: '#/components/schemas/Page'
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/MenuItem'
-      required:
-        - object
-        - page
-        - items
+```text
+| ^^ 👈🏽  type must be array
 ```
 
+{% step id="schema-failure" heading="Spot the mismatch" %}
+The OpenAPI description declares `MenuItemList` as an **array**, but the actual API response is a paginated **object** with `object`, `page`, and `items` properties.
+This is the intentional discrepancy in the example.
 
-Run the workflow again to confirm that all checks now pass.
+Respect made this drift visible immediately, without anyone having to read both the OpenAPI description and the API output side-by-side.
+{% /step %}
+
+## Fix the schema
+
+The right panel now includes the corrected pair: `redocly-cafe-api.fixed.yaml` (the corrected OpenAPI description) and `redocly-cafe-api.fixed.arazzo.yaml` (an Arazzo file that points to it).
+In a real project, you would apply the fix directly in `redocly-cafe-api.yaml` and keep using the original Arazzo file; the separate `*.fixed.*` copies exist only so this walkthrough can show before-and-after side-by-side.
+
+{% step id="schema-fix" heading="Updated MenuItemList schema" %}
+Open `redocly-cafe-api.fixed.yaml` to see the corrected schema.
+`MenuItemList` is now an `object` with `object`, `page`, and `items` properties, which matches the response the API actually returns.
+{% /step %}
+
+{% step id="schema-fix-arazzo" heading="Arazzo file for the fixed schema" %}
+Open `redocly-cafe-api.fixed.arazzo.yaml` to see the Arazzo file used for this run.
+The only difference from the original is the `sourceDescriptions.url`, which points to `redocly-cafe-api.fixed.yaml` instead of the broken one.
+
+Re-run the workflow against the fixed pair to confirm that all checks now pass:
 
 ```bash
-npx @redocly/cli@latest respect redocly-cafe-api.arazzo.yaml
+npx @redocly/cli@latest respect redocly-cafe-api.fixed.arazzo.yaml
 ```
 
 After the schema is updated, the response body matches the documented contract.
 This demonstrates the core value of contract testing with Respect: when the API and its OpenAPI description drift apart, the workflow highlights the mismatch immediately.
+{% /step %}
 
 ## Practical applications
 
@@ -584,11 +277,11 @@ After you create and verify an Arazzo workflow locally, you can use it in severa
 
 - Include the workflow in a CI/CD pipeline to keep API documentation synchronized with actual API behavior:
 
-```bash
-# Spawn your API instance
-npm install @redocly/cli@latest -g
-redocly respect products.arazzo.yaml --verbose
-```
+  ```bash
+  # Spawn your API instance
+  npm install @redocly/cli@latest -g
+  redocly respect products.arazzo.yaml --verbose
+  ```
 
 - Automate routine API workflows for development and QA tasks.
 - Describe important application flows with Arazzo and share them with team members. Non-technical users can also use visualization tools like Replay to understand the workflows.
@@ -599,3 +292,5 @@ Arazzo provides a standard way to describe API workflows declaratively.
 Respect uses those workflows to run API contract tests against real API behavior.
 
 With this approach, teams can maintain API test coverage, detect documentation drift earlier, and share executable API workflows across engineering, QA, and documentation teams.
+
+{% /code-walkthrough %}
