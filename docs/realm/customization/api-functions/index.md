@@ -24,10 +24,10 @@ Use API functions to:
 - Add custom authentication: inject your app's own API credential system into the project.
 - Integrate a payment gateway: securely process payments by integrating with external payment services, keeping API keys and sensitive data server-side.
 - Interact with databases: connect to databases like PostgreSQL or MongoDB to fetch, update, and serve data within your project.
-- Cache data with built-in storage: use [KV storage](./kv-storage.md) to store, retrieve, and manage data without external database setup.
+<!-- - Cache data with built-in storage: use [KV storage](./kv-storage.md) to store, retrieve, and manage data without external database setup. -->
 
 ## Resources
 
 - [API functions reference](./api-functions-reference.md) for API functions helper methods and properties.
-- [KV storage](./kv-storage.md) for built-in key-value database operations.
+<!-- - [KV storage](./kv-storage.md) for built-in key-value database operations. -->
 - [Render weather data in a Markdoc tag](./create-api-functions.md) - Build an API function and a custom Markdoc tag that displays live weather data.
