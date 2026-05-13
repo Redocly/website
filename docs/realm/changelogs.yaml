@@ -45373,20 +45373,6 @@ reunite:
       patch:
         - Fixed an issue where the login page language didn't match the language selected in the project.
     dependencies: {}
-  v2026-05-13.1:
-    timestamp: 1778687194000
-    changes:
-      minor:
-        - Added a start tab in the Reunite editor with file search, recent files, and tools.
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.30.5`.
-        - >-
-          Updated the Reunite pull request UI with a card-style header featuring quick actions, a redesigned visual review tab, and an updated
-          comments container.
-        - Fixed invite failure when the identity domain was verified but no identity providers were defined.
-        - Fixed `date picker` to prevent selecting days outside the current month and times in the future.
-        - Fixed active and hover colors in the user settings modal sidebar to use grey tones matching the main navigation sidebar.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
