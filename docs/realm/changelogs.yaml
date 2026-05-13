@@ -3755,7 +3755,7 @@
           Improved the OpenAPI definition bundling error message by including the path to the file, making it easier to identify the location of the
           error.
         - Headers are excluded from page data for anonymous users to prevent potential cache deception attacks.
-        - 'Improved AI search dialog: links open in new tabs, the search button is always enabled, and the search field label is updated.'
+        - 'Improved AI search dialog: links opening in new tabs, the search button is always enabled, and the search field label is updated.'
         - Changed the text color in the total page counter to improve readability in light mode.
         - Updated version of the `@redocly/openapi-core` dependency to `1.26.1`.
     dependencies:
@@ -3828,8 +3828,8 @@
       patch:
         - Updated version of the `@redocly/openapi-core` dependency to `1.26.0`.
         - >-
-          Improved error handling in the project: project pages that display an error message are automatically refreshed after the user resolves
-          the error in the editor.
+          Improved error handling in the project: project pages that display an error message are automatically refreshed after the user resolves the
+          error in the editor.
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.3.60
       '@redocly/openapi-docs': 3.5.8
@@ -4648,7 +4648,7 @@
     timestamp: 1722324019000
     changes:
       minor:
-        - '**IMPORTANT**: Markdoc errors fail a production build.\'
+        - '**IMPORTANT**: Markdoc errors fail production builds.\'
       patch:
         - Fixed a bug where custom plugins failed to load correctly when the `-d` option was used.
         - >-
@@ -4715,8 +4715,8 @@
         - Added support for absolute paths in sidebar $ref references.
       patch:
         - >-
-          References to partials `@i18n` folder using absolute links must start with `/@i18n`. Previously, this part was omitted and the path
-          would start from the locale directory name.
+          References to partials `@i18n` folder using absolute links must start with `/@i18n`. Previously, this part was omitted and the path would
+          start from the locale directory name.
     dependencies: {}
   0.90.0:
     timestamp: 1721146310000
@@ -9588,7 +9588,7 @@
         - Added an `img` Markdoc tag that provides users the ability to size and style images in Markdown.
       patch:
         - Headers are excluded from page data for anonymous users to prevent potential cache deception attacks.
-        - 'Improved AI search dialog: links open in new tabs, the search button is always enabled, and the search field label is updated.'
+        - 'Improved AI search dialog: links opening in new tabs, the search button is always enabled, and the search field label is updated.'
         - Changed the text color in the total page counter to improve readability in light mode.
         - Updated version of the `@redocly/openapi-core` dependency to `1.26.1`.
     dependencies:
@@ -9660,8 +9660,8 @@
       patch:
         - Updated version of the `@redocly/openapi-core` dependency to `1.26.0`.
         - >-
-          Improved error handling in the project: project pages that display an error message are automatically refreshed after the user resolves
-          the error in the editor.
+          Improved error handling in the project: project pages that display an error message are automatically refreshed after the user resolves the
+          error in the editor.
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.3.60
       '@redocly/openapi-docs': 3.5.8
@@ -10455,7 +10455,7 @@
     timestamp: 1722324019000
     changes:
       minor:
-        - '**IMPORTANT**: Markdoc errors fail a production build.\'
+        - '**IMPORTANT**: Markdoc errors fail production builds.\'
       patch:
         - Fixed a bug where custom plugins failed to load correctly when the `-d` option was used.
         - >-
@@ -14801,7 +14801,7 @@
         - Added an `img` Markdoc tag that provides users the ability to size and style images in Markdown.
       patch:
         - Headers are excluded from page data for anonymous users to prevent potential cache deception attacks.
-        - 'Improved AI search dialog: links open in new tabs, the search button is always enabled, and the search field label is updated.'
+        - 'Improved AI search dialog: links opening in new tabs, the search button is always enabled, and the search field label is updated.'
         - Changed the text color in the total page counter to improve readability in light mode.
         - Updated version of the `@redocly/openapi-core` dependency to `1.26.1`.
     dependencies:
@@ -14874,8 +14874,8 @@
       patch:
         - Updated version of the `@redocly/openapi-core` dependency to `1.26.0`.
         - >-
-          Improved error handling in the project: project pages that display an error message are automatically refreshed after the user resolves
-          the error in the editor.
+          Improved error handling in the project: project pages that display an error message are automatically refreshed after the user resolves the
+          error in the editor.
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.3.60
       '@redocly/openapi-docs': 3.5.8
@@ -15671,7 +15671,7 @@
     timestamp: 1722324019000
     changes:
       minor:
-        - '**IMPORTANT**: Markdoc errors fail a production build.\'
+        - '**IMPORTANT**: Markdoc errors fail production builds.\'
       patch:
         - Fixed a bug where custom plugins failed to load correctly when the `-d` option was used.
         - >-
@@ -15735,8 +15735,8 @@
         - Added support for absolute paths in sidebar $ref references.
       patch:
         - >-
-          References to partials `@i18n` folder using absolute links must start with `/@i18n`. Previously, this part was omitted and the path
-          would start from the locale directory name.
+          References to partials `@i18n` folder using absolute links must start with `/@i18n`. Previously, this part was omitted and the path would
+          start from the locale directory name.
     dependencies: {}
   0.90.0:
     timestamp: 1721146310000
@@ -20162,8 +20162,8 @@
       patch:
         - Updated version of the `@redocly/openapi-core` dependency to `1.26.0`.
         - >-
-          Improved error handling in the project: project pages that display an error message are automatically refreshed after the user resolves
-          the error in the editor.
+          Improved error handling in the project: project pages that display an error message are automatically refreshed after the user resolves the
+          error in the editor.
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.3.60
       '@redocly/openapi-docs': 3.5.8
@@ -20966,7 +20966,7 @@
     timestamp: 1722324019000
     changes:
       minor:
-        - '**IMPORTANT**: Markdoc errors fail a production build.\'
+        - '**IMPORTANT**: Markdoc errors fail production builds.\'
       patch:
         - Fixed a bug where custom plugins failed to load correctly when the `-d` option was used.
         - >-
@@ -22058,7 +22058,7 @@
       minor:
         - Added an interactive lightbox viewer for Mermaid diagrams with zoom, pan, and keyboard navigation.
         - Added search to the dropdown in the examples panel for OpenAPI docs.
-        - Transitioned AI Search to agent mode, featuring expanded search capabilities and direct integration with the Docs MCP.
+        - Transitioned AI Search to agent mode, now featuring expanded search capabilities and direct integration with the Docs MCP.
         - Made the **403 Forbidden** error page layout ejectable and improved its styling.
         - Added `login-button` Markdoc tag to render a login button on project pages.
         - Added `rbac` support for banners to allow conditional visibility based on user team membership.
@@ -22076,7 +22076,7 @@
     timestamp: 1770708833000
     changes:
       minor:
-        - Transitioned AI Search to agent mode, featuring expanded search capabilities and direct integration with the Docs MCP.
+        - Transitioned AI Search to agent mode, now featuring expanded search capabilities and direct integration with the Docs MCP.
         - Added `rbac` support for banners to allow conditional visibility based on user team membership.
       patch:
         - Fixed an issue where extra space in mobile menu and navbar was displayed together with the banner.
@@ -23070,7 +23070,7 @@
     changes:
       minor:
         - >-
-          Improved navigation using the **Tab** key in the search dialog. Pressing the Tab key for the first time navigates to **Search with
+          Improved navigation using the **Tab** key in the search dialog. Now, pressing the Tab key for the first time navigates to **Search with
           AI**.
         - Added an "Internal server error" page.
         - Added virtualization to the Catalog and Scorecard features. This change improves performance for large API sets.
@@ -23094,7 +23094,7 @@
     changes:
       minor:
         - >-
-          Improved navigation using the **Tab** key in the search dialog. Pressing the Tab key for the first time navigates to **Search with
+          Improved navigation using the **Tab** key in the search dialog. Now, pressing the Tab key for the first time navigates to **Search with
           AI**.
         - Fixed an issue where pressing the **Enter** or **Return** key in the search dialog would start AI search.
       patch: []
@@ -24056,7 +24056,7 @@
     changes:
       minor: []
       patch:
-        - corrects the template syntax for next and previous button labels so they display as they are configured
+        - corrects the template syntax for next and previous button labels so they will now display as they are configured
         - >-
           use navbar height for scrolling in Markdown pages, so when users click on links to specific headings on a page, the heading won't be hidden
           by the navbar
@@ -24074,7 +24074,7 @@
       minor: []
       patch:
         - >-
-          to improve the usability of the color mode switcher icon, it displays the icon of the color mode that will be applied after a user
+          to improve the usability of the color mode switcher icon, it now displays the icon of the color mode that will be applied after a user
           clicks it, not the icon of the color mode that is currently applied.
     dependencies: {}
   0.26.0:
@@ -24187,7 +24187,7 @@
     changes:
       minor: []
       patch:
-        - users see the clear filters button when they type text into the filter input
+        - now users will see the clear filters button when they type text into the filter input
     dependencies: {}
   0.19.8:
     timestamp: 1692108041000
@@ -26243,7 +26243,7 @@
       patch:
         - Resolved an issue where description docs would not display correct titles for items that had an `allOf` keyword nested inside `oneOf`.
         - >-
-          Resolved an issue that severed the connection between second and third level headings to the sidenav links. When users select a sidenav
+          Resolved an issue that severed the connection between second and third level headings to the sidenav links. Now when users select a sidenav
           link for a second or third level heading, the correct section of the document is presented, and correspondingly when users select the second
           or third level heading on the document the sidenav link is highlighted as active.
         - Added context to configure function to programmatically setup request values.
@@ -26281,7 +26281,7 @@
       patch:
         - Updated version of the `@redocly/openapi-core` dependency to `1.34.0`.
         - >-
-          Resolved an issue that severed the connection between second and third level headings to the sidenav links. When users select a sidenav
+          Resolved an issue that severed the connection between second and third level headings to the sidenav links. Now when users select a sidenav
           link for a second or third level heading, the correct section of the document is presented, and correspondingly when users select the second
           or third level heading on the document the sidenav link is highlighted as active.
     dependencies:
@@ -26319,7 +26319,7 @@
         - Added support for partial loading of items included in large OpenAPI descriptions to improve performance.
       patch:
         - Resolved an issue where active operation items were incorrectly rendered on the server side.
-        - Improved the check for the `Complex` badge in `openapi-docs`. The badge appears only when the nesting of `allOf` exceeds 5 levels.
+        - Improved the check for the `Complex` badge in `openapi-docs`. The badge now appears only when the nesting of `allOf` exceeds 5 levels.
         - Updated version of the `@redocly/openapi-core` dependency to `1.31.1`.
         - Resolved an issue where the discriminator did not update the property type.
         - Updated version of the `@markdoc/markdoc` from `0.4.0` to `0.5.1`
@@ -26338,7 +26338,7 @@
     changes:
       minor: []
       patch:
-        - Improved the check for the `Complex` badge in `openapi-docs`. The badge appears only when the nesting of `allOf` exceeds 5 levels.
+        - Improved the check for the `Complex` badge in `openapi-docs`. The badge now appears only when the nesting of `allOf` exceeds 5 levels.
         - Updated version of the `@redocly/openapi-core` dependency to `1.31.1`.
     dependencies:
       '@redocly/replay': 0.10.0-next.3
@@ -26444,7 +26444,7 @@
       minor: []
       patch:
         - >-
-          Fixed an issue where 204 No Content responses displayed an error message. 204 No Content responses display a `No content` message in the
+          Fixed an issue where 204 No Content responses displayed an error message. 204 No Content responses now display a `No content` message in the
           right panel. This text is customizable through translation keys.
         - Updated **oneOf** and **anyOf** tabs in api descriptions to appear as dropdown lists when displayed on narrow screens.
         - Fixed an issue where an empty `languages` array in code samples caused the application to crash.
@@ -26744,7 +26744,7 @@
     changes:
       minor: []
       patch:
-        - '`multipart/form-data` content types can create autogenerated code samples in Java and Python.'
+        - '`multipart/form-data` content types can now create autogenerated code samples in Java and Python.'
     dependencies:
       '@redocly/config': 0.13.0
       '@redocly/replay': 0.7.0
@@ -27246,7 +27246,7 @@
       minor: []
       patch:
         - >-
-          Added support for C# JSON handling without external libraries. As part of that effort, C# JSON parsing with Newtonsoft framework is a
+          Added support for C# JSON handling without external libraries. As part of that effort, C# JSON parsing with Newtonsoft framework is now a
           separate sample. Furthermore, we added a type attribute for HTTP client Authorization headers in C# basic authorization code samples.
     dependencies: {}
   3.0.0-alpha.79:
@@ -28254,7 +28254,7 @@
     changes:
       minor:
         - >-
-          Deprecated the `theme` property of `redocly.yaml` config. All of the configuration properties under `theme` reside in the root of the
+          Deprecated the `theme` property of `redocly.yaml` config. All of the configuration properties under `theme` now reside in the root of the
           config.
       patch: []
     dependencies: {}
@@ -33535,7 +33535,7 @@
       minor: []
       patch:
         - >-
-          The AsyncAPI plugin no longer requires the `@redocly/realm` package to work. The plugin can be used with Redoc, Redoc-Revel, and
+          The AsyncAPI plugin no longer requires the `@redocly/realm` package to work. The plugin can now be used with Redoc, Redoc-Revel, and
           Redoc-Reef products.
     dependencies:
       '@redocly/realm': 0.100.5
@@ -39739,7 +39739,7 @@
     changes:
       minor: []
       patch:
-        - Added 'Authorization Code with PKCE' grant type. You can configure PKCE in OAuth 2.0 and OpenID Connect authorization types.
+        - Added 'Authorization Code with PKCE' grant type. You can now configure PKCE in OAuth 2.0 and OpenID Connect authorization types.
     dependencies:
       '@redocly/theme': 0.48.1
   0.9.0:
@@ -39747,7 +39747,7 @@
     changes:
       minor:
         - >-
-          Added support for API request tabs. You can open API requests in separate tabs, enabling you to set up parameter values individually in
+          Added support for API request tabs. You can now open API requests in separate tabs, enabling you to set up parameter values individually in
           each tab.
       patch: []
     dependencies: {}
@@ -40115,7 +40115,7 @@
     changes:
       minor:
         - >-
-          Users can choose request body types that are defined in the API description file in addition to default request body types. The
+          Users can now choose request body types that are defined in the API description file in addition to default request body types. The
           additional types appear in the **Documented** section of the request body media type dropdown.
       patch: []
     dependencies: {}
@@ -40238,7 +40238,7 @@
       minor: []
       patch:
         - >-
-          Improved the parameter behavior in Query, Headers, and Cookies tabs. An inactive parameter becomes active if its value changes from
+          Improved the parameter behavior in Query, Headers, and Cookies tabs. An inactive parameter now becomes active if its value changes from
           empty to to a different value.
     dependencies: {}
   0.3.0:
@@ -43774,7 +43774,7 @@ reunite:
     timestamp: 1716279957000
     changes:
       minor:
-        - Branches are deleted after merging a pull request for Redocly-hosted Git repository.
+        - Branches are now deleted after merging a pull request for Redocly-hosted Git repository.
         - Added environment variable support in role-based access configuration.
         - Added a functionality that automatically replaces spaces with dashes "-" in branch names.
       patch:
@@ -43789,7 +43789,7 @@ reunite:
       minor:
         - Changed the process of creating the initial content for a new Reunite project to use content from the Museum OpenAPI example repository.
         - >-
-          Fixed an issue where updates with missing remote content files were not handled. When remote content files are not found, the commit
+          Fixed an issue where updates with missing remote content files were not handled. Now when remote content files are not found, the commit
           status is set to Failed.
         - Added a new 'source-repo-initializer' that creates a set of standard content files for a new Reunite project.
       patch:
@@ -43885,15 +43885,15 @@ reunite:
     changes:
       minor:
         - >-
-          Improved the behavior of the Uncommitted Changes tab in editor. The tab no longer opens when users press the keyboard shortcut for
+          Improved the behavior of the Uncommitted Changes tab in editor. Now the tab no longer opens when users press the keyboard shortcut for
           saving (Cmd + S for Mac or Ctrl + S for Windows).
       patch:
         - Fixed a race condition that could occur during concurrent registry uploads, potentially leading to data inconsistency or errors.
-        - Breadcrumbs link to pages using client-side rendering.
+        - Breadcrumbs now link to pages using client-side rendering.
         - Improved the click accessibility of datagrid rows.
         - Added a Copy feedback URL button to feedback list items.
         - Fixed the default label of the collapsible additional metadata element in the Feedback details page.
-        - Feedback details open as a new page instead of a side modal.
+        - Feedback details now open as a new page instead of a side modal.
     dependencies: {}
   v2024-07-24.1:
     timestamp: 1721770966000
@@ -43938,7 +43938,7 @@ reunite:
       minor: []
       patch:
         - Added missing tooltips for the Editor and changed some icons.
-        - Improved file and folder creation in editor. Clicking outside the name input field cancels the command if the field is empty.
+        - Improved file and folder creation in editor. Now clicking outside the name input field cancels the command if the field is empty.
     dependencies: {}
   v2024-08-02.1:
     timestamp: 1722595469000
@@ -44059,25 +44059,25 @@ reunite:
       minor:
         - Added new page for managing custom Git Providers in organization settings.
         - >-
-          Automatically-created pull requests are merged on behalf of the Redocly application or the credentials that were used to connect remote
+          Automatically-created pull requests are now merged on behalf of the Redocly application or the credentials that were used to connect remote
           source.
         - Added a functionality to download Redocly-hosted project files as ZIP archive.
         - >-
           When a user drags-and-drops an image file into a Markdown file, the image is uploaded to an `images` folder relative to the location of the
           Markdown file. If there is no `images` folder in this location, Reunite creates one.
       patch:
-        - In Redocly-hosted repositories, preview deploys start when users create a pull request.
+        - In Redocly-hosted repositories, preview deploys now start when users create a pull request.
         - Fixed a bug that prevented successful configuration of custom domains.
         - Added fallback support for retrieving user email from the 'emails' claim.
         - Fixed an issue where uncommitted changes would disappear after adding remote content.
         - >-
           Fixed an issue where users with the COMMITTER organization-level role were displayed in the pull request **Reviewers** dropdown. The
-          **Reviewers** dropdown only displays users with OWNER and MEMBER roles.
-        - In Redocly-hosted repositories, preview deploys triggered by pull request creation display a link to the pull request.
+          **Reviewers** dropdown now only displays users with OWNER and MEMBER roles.
+        - In Redocly-hosted repositories, preview deploys triggered by pull request creation now display a link to the pull request.
         - >-
           Updated icons and added notifications in the checks tab of pull requests in Reunite for scorecard failures when the `ignoreNonCompliant`
           option is set to `true` to better represent why deploys are not stopped for noncompliant APIs.
-        - The Reunite interface shows the commit message instead of "Triggered from commit (sha1)".
+        - The Reunite interface now shows the commit message instead of "Triggered from commit (sha1)".
         - Unified inputs with the copy command for Organization Settings and Project Settings.
         - Updated side menu icons for checklists.
         - Fixed an invalid URL to the scorecard documentation displayed in the alert in a build's lint step.
@@ -44085,7 +44085,7 @@ reunite:
         - >-
           Improved the onboarding pane by adding the **Open Onboarding** button and making the animations restart when the user hovers over the
           onboarding items.
-        - Clicking the **Copy** button on the **Connect CI/CD** modal changes the button label to **Copied** confirming operation.
+        - Clicking the **Copy** button on the **Connect CI/CD** modal now changes the button label to **Copied** confirming operation.
         - Removed restore buttons for checklists from the help menu for Organization routes.
         - Fixed an issue where Reunite caused redirects to stop working in Safari.
     dependencies: {}
@@ -44094,7 +44094,7 @@ reunite:
     changes:
       minor:
         - >-
-          Added information about overdue invoice to **Organization > Overview** and **Orgaznization > Billing** pages. The **Editor** page is
+          Added information about overdue invoice to **Organization > Overview** and **Orgaznization > Billing** pages. The **Editor** page is now
           accessible to users with active subscriptions.
       patch: []
     dependencies: {}
@@ -45316,7 +45316,7 @@ reunite:
     changes:
       minor:
         - >-
-          Reworked the Reunite editor layout: file and utility tabs share a single workspace that can be rearranged, split horizontally or
+          Reworked the Reunite editor layout: file and utility tabs now share a single workspace that can be rearranged, split horizontally or
           vertically, and resized.
       patch: []
     dependencies: {}
@@ -45333,7 +45333,7 @@ reunite:
     changes:
       minor: []
       patch:
-        - Closing the last tab in a Reunite editor default files group keeps the group in place.
+        - Closing the last tab in a Reunite editor default files group now keeps the group in place.
     dependencies: {}
   v2026-04-30.2:
     timestamp: 1777541065000
@@ -45615,7 +45615,7 @@ replay:
         - Enter prerelease mode.
         - >-
           Fixed an issue in `Replay` where long single-line JSON or XML body content caused horizontal overflow and hid controls, including the Send
-          button, on narrow viewports. The content wraps within the panel, preventing layout stretching.
+          button, on narrow viewports. The content now wraps within the panel, preventing layout stretching.
     dependencies:
       '@redocly/theme': 0.65.0-next.0
   0.18.2:
