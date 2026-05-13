@@ -36,6 +36,10 @@ When you are working in Reunite, you can use the following keyboard shortcuts:
 - <kbd>`⌃ Ctrl`</kbd> + <kbd>`⌥ Opt`</kbd> + <kbd>`D`</kbd>
 - <kbd>`Ctrl`</kbd> + <kbd>`Alt`</kbd> + <kbd>`D`</kbd>
 ---
+- Open start tab
+- <kbd>`⌃ Ctrl`</kbd> + <kbd>`⌥ Opt`</kbd> + <kbd>`N`</kbd>
+- <kbd>`Ctrl`</kbd> + <kbd>`Alt`</kbd> + <kbd>`N`</kbd>
+---
 - Open Webview tab
 - <kbd>`⌃ Ctrl`</kbd> + <kbd>`⌥ Opt`</kbd> + <kbd>`W`</kbd>
 - <kbd>`Ctrl`</kbd> + <kbd>`Alt`</kbd> + <kbd>`W`</kbd>

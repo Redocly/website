@@ -141,6 +141,14 @@ The editor contains the tabs that display the content you are working with.
 Every open file opens as a tab, and utility views such as the Webview live preview or Redocly documentation open as tabs in the same pane.
 You can rearrange, split, and close any of these tabs to build the layout that best fits your workflow.
 
+Each tab group header includes a **+** icon that opens the start tab.
+
+The start tab lets you:
+
+- open recent files
+- search files by name
+- open utility tabs from the **Tools** section
+
 ### File tabs
 
 File tabs display the content of files from your project.
@@ -162,7 +170,7 @@ To open a utility tab, either:
 - Click the **More actions** icon on the right side of the tabs header and select **Open Webview** or **Open Documentation**.
 - Use the keyboard shortcut for the tab you want.
   See the [keyboard shortcuts reference](./keyboard-shortcuts.md) for the full list.
-- When a tab group is empty, click one of the **Dev tools** shortcuts shown in the empty pane.
+- Open a start tab and select a tool from the **Tools** section.
 
 If a utility tab is already open, triggering the open action activates the existing tab instead of creating a duplicate.
 
