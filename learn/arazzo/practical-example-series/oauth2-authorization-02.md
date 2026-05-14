@@ -37,7 +37,7 @@ Respect supports this use case with the [`x-security` extension](https://redocly
 ## Prerequisites
 
 - Familiarity with the [`x-security` extension](https://redocly.com/docs/respect/extensions/x-security#x-security-extension).
-- An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API.
+- An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API description.
 
 ## Explore the OpenAPI description
 
@@ -141,7 +141,7 @@ Its `outputs` mirror the workflow-level outputs we exposed earlier (`clientId`, 
 {% /step %}
 
 {% step id="auth-step-token" heading="Call the token endpoint" %}
-The second step, `authorize-with-code`, calls `/oauth2/token` using the credentials returned by the previous step.
+The second step, `authorize-with-client_credentials`, calls `/oauth2/token` using the credentials returned by the previous step.
 
 In a production application, the `/callback` URL is usually implemented by the client application.
 In this example, the Redocly Cafe API provides the callback endpoint for demonstration purposes.
@@ -154,7 +154,7 @@ Use `x-operation` whenever you need to call a URL that is not part of the OpenAP
 {% /step %}
 
 {% step id="auth-token-request-body" heading="Token request body" %}
-The token request body follows the OAuth2 spec: `grant_type`, `redirect_uri`, `client_id`, and `client_secret`.
+The token request body follows the OAuth2 spec: `grant_type`, `client_id`, and `client_secret`.
 The credentials are read from the previous step's outputs using `$steps.register-oauth2-client.outputs.*`.
 {% /step %}
 
@@ -203,7 +203,7 @@ The final file references two sources: the OpenAPI description for the operation
 {% /step %}
 
 {% step id="final-step-authorize" heading="Reuse the authorization workflow" %}
-The first step calls `authorize-with-code` from the authorization file and stores the access token and client id locally.
+The first step calls `authorize-with-client_credentials` from the authorization file and stores the access token and client id locally.
 
 This is exactly the same reuse pattern used inside `authorization.arazzo.yaml`, but now applied one level higher.
 {% /step %}
@@ -237,7 +237,7 @@ This uses outputs from `create-menu-item` directly in a request parameter and in
 Run the workflow to confirm that the authorization step, the protected POST request, and the verification step all pass:
 
 ```bash
-npx @redocly/cli@latest respect redocly-cafe-api.arazzo.yaml --verbose
+npx @redocly/cli respect redocly-cafe-api.arazzo.yaml --verbose
 ```
 
 ## Summary

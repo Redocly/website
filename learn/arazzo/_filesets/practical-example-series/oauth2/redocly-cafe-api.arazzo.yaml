@@ -19,9 +19,9 @@ workflows:
     steps:
       # @chunk {"steps": ["final-step-authorize"]}
       - stepId: authorize
-        workflowId: $sourceDescriptions.authorization.workflows.authorize-with-code
+        workflowId: $sourceDescriptions.authorization.workflows.authorize-with-client_credentials
         outputs:
-          access_token: $outputs.access_token_with_code
+          access_token: $outputs.access_token_with_client_credentials
           client_id: $outputs.client_id
       # @chunk-end
       # @chunk {"steps": ["final-step-create"]}
@@ -40,7 +40,6 @@ workflows:
           contentType: multipart/form-data
           payload:
             name: $faker.string.uuid()
-            description: The dessert from Italy
             price: 4000
             calories: 8000
             category: 'dessert'

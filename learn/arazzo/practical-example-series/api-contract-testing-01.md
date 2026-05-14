@@ -3,9 +3,7 @@
     {
       "files": [
         "../_filesets/practical-example-series/contract-testing/redocly-cafe-api.arazzo.yaml",
-        "../_filesets/practical-example-series/contract-testing/redocly-cafe-api.yaml",
-        "../_filesets/practical-example-series/contract-testing/redocly-cafe-api.fixed.arazzo.yaml",
-        "../_filesets/practical-example-series/contract-testing/redocly-cafe-api.fixed.yaml"
+        "../_filesets/practical-example-series/contract-testing/redocly-cafe-api.yaml"
       ]
     }
   ]
@@ -42,7 +40,7 @@ This makes API contract testing more declarative and easier to share across team
 To follow the examples in this article, you need:
 
 - Basic familiarity with [Arazzo](../what-is-arazzo.md).
-- An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API.
+- An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API description.
 
 > **Important:** The API description used here intentionally contains a discrepancy for demonstration purposes.
 
@@ -66,7 +64,7 @@ Later in this walkthrough, Respect will compare this contract with the real API 
 There are several ways to create an Arazzo description:
 
 - Read the [Arazzo specification](https://spec.openapis.org/arazzo/latest.html) and write the file from scratch for full control.
-- Use the `npx @redocly/cli@latest generate-arazzo docs-data.yaml` command as a starting point.
+- Use the `npx @redocly/cli generate-arazzo openapi.yaml` command as a starting point.
 - Use AI assistance to draft the Arazzo description, then lint the output to catch structural or syntax errors.
 
 Whichever approach you choose, validate the Arazzo file with Redocly CLI:
@@ -146,10 +144,10 @@ Respect also runs additional automatic checks based on the connected OpenAPI des
 [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) is an open-source tool that can execute Arazzo descriptions with the `respect` command:
 
 ```bash
-npx @redocly/cli@latest respect redocly-cafe-api.arazzo.yaml
+npx @redocly/cli respect redocly-cafe-api.arazzo.yaml
 ```
 
-The workflow targets the server defined in the OpenAPI description, so you do not need to provide one on the command line.
+The workflow targets the server defined in the OpenAPI description, so you do not need to provide one via the command line.
 
 The full output is useful for debugging, but the most important lines are the checks near the end of the step:
 
@@ -249,27 +247,36 @@ Respect made this drift visible immediately, without anyone having to read both 
 
 ## Fix the schema
 
-The right panel now includes the corrected pair: `redocly-cafe-api.fixed.yaml` (the corrected OpenAPI description) and `redocly-cafe-api.fixed.arazzo.yaml` (an Arazzo file that points to it).
-In a real project, you would apply the fix directly in `redocly-cafe-api.yaml` and keep using the original Arazzo file; the separate `*.fixed.*` copies exist only so this walkthrough can show before-and-after side-by-side.
+In `redocly-cafe-api.yaml`, change `MenuItemList` from an `array` to an `object` with `object`, `page`, and `items` properties so the schema matches the response the API actually returns:
 
-{% step id="schema-fix" heading="Updated MenuItemList schema" %}
-Open `redocly-cafe-api.fixed.yaml` to see the corrected schema.
-`MenuItemList` is now an `object` with `object`, `page`, and `items` properties, which matches the response the API actually returns.
-{% /step %}
+```yaml
+MenuItemList:
+  type: object
+  properties:
+    object:
+      type: string
+      const: list
+      description: Entity name.
+    page:
+      $ref: '#/components/schemas/Page'
+    items:
+      type: array
+      items:
+        $ref: '#/components/schemas/MenuItem'
+  required:
+    - object
+    - page
+    - items
+```
 
-{% step id="schema-fix-arazzo" heading="Arazzo file for the fixed schema" %}
-Open `redocly-cafe-api.fixed.arazzo.yaml` to see the Arazzo file used for this run.
-The only difference from the original is the `sourceDescriptions.url`, which points to `redocly-cafe-api.fixed.yaml` instead of the broken one.
-
-Re-run the workflow against the fixed pair to confirm that all checks now pass:
+Re-run the workflow to confirm that all checks now pass:
 
 ```bash
-npx @redocly/cli@latest respect redocly-cafe-api.fixed.arazzo.yaml
+npx @redocly/cli respect redocly-cafe-api.arazzo.yaml
 ```
 
 After the schema is updated, the response body matches the documented contract.
 This demonstrates the core value of contract testing with Respect: when the API and its OpenAPI description drift apart, the workflow highlights the mismatch immediately.
-{% /step %}
 
 ## Practical applications
 

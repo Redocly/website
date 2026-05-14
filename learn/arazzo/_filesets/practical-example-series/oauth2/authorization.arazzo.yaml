@@ -16,22 +16,19 @@ sourceDescriptions:
 # @chunk-end
 
 workflows:
-  - workflowId: authorize-with-code
+  - workflowId: authorize-with-client_credentials
     summary: Authorize a new OAuth2 client
     steps:
       # @chunk {"steps": ["auth-step-reuse"]}
       - stepId: register-oauth2-client
         description: This step registers a new OAuth2 client.
         workflowId: $sourceDescriptions.register-oauth2.workflows.register-oauth2-client-workflow
-        successCriteria:
-          - condition: $statusCode == 201
-          - condition: $response.body#/clientId != null
         outputs:
           clientId: $outputs.clientId
           clientSecret: $outputs.clientSecret
       # @chunk-end
       # @chunk {"steps": ["auth-step-token"]}
-      - stepId: authorize-with-code
+      - stepId: authorize-with-client_credentials
         # @chunk {"steps": ["auth-x-operation"]}
         x-operation:
           method: POST
@@ -45,7 +42,6 @@ workflows:
         requestBody:
           payload:
             grant_type: client_credentials
-            redirect_uri: https://cafe.cloud.redocly.com/callback
             client_id: $steps.register-oauth2-client.outputs.clientId
             client_secret: $steps.register-oauth2-client.outputs.clientSecret
         # @chunk-end
@@ -59,6 +55,6 @@ workflows:
       # @chunk-end
     # @chunk {"steps": ["auth-workflow-outputs"]}
     outputs:
-      access_token_with_code: $steps.authorize-with-code.outputs.access_token
+      access_token_with_client_credentials: $steps.authorize-with-client_credentials.outputs.access_token
       client_id: $steps.register-oauth2-client.outputs.clientId
     # @chunk-end
