@@ -54,5 +54,5 @@ Allow these IP addresses to ensure that Redocly can deploy previews and producti
 - **[Manage self-hosted Git providers](./manage-self-hosted.md)** - Set up and configure self-hosted Git repositories for enterprise environments and custom infrastructure
 - **[Include remote content](../remote-content/index.md)** - Integrate content from external repositories and sources into your Reunite projects for centralized documentation
 - **[Use the Editor](../use-editor.md)** - Explore Reunite's collaborative editing tools for creating and managing content with real-time collaboration features
-- **[Projects overview](../projects.md)** - View feedback, deployment details, and project settings for comprehensive project management in Reunite
+- **[Manage projects](../manage-projects.md)** - Access feedback, deployment details, and project settings for comprehensive project management in Reunite
 - **[Configuration reference](../../../config/index.md)** - Complete redocly.yaml configuration options for customizing project behavior, deployment, and integration settings

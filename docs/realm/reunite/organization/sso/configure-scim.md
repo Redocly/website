@@ -19,11 +19,7 @@ SCIM keeps organization membership in sync with your directory.
 Each SCIM integration is tied to a specific [identity provider you added in Reunite](./add-idp.md) (Corporate or Guest, SAML 2 or OpenID Connect).
 The SCIM base URL is unique to that identity provider.
 
-{% admonition type="warning" name="Beta feature" %}
-The SCIM feature is currently experimental and may be subject to changes.
-It is only available to organizations that request access from Redocly and have the feature enabled for their organization.
-Until then, **Enable SCIM** and **SCIM endpoint** on the identity provider form are hidden.
-{% /admonition %}
+{% partial file="../../../_partials/early-access.md" /%}
 
 ## Before you begin
 

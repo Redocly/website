@@ -48,9 +48,7 @@ When you are finished using an API key, you can revoke the key, making it an inv
 
 ## API keys with RBAC restrictions (beta feature)
 
-{% admonition type="warning" name="Beta feature" %}
-This feature is currently experimental and may be subject to changes.
-{% /admonition %}
+{% partial file="../../_partials/experimental.md" /%}
 
 You can restrict API key access to specific teams using RBAC. When enabled, this feature limits API key access to the following endpoints:
 

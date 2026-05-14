@@ -118,4 +118,3 @@ After you go live:
 - **[Branches and deployments](./branches-and-deployments.md)** - Configure production branches, branch deployments, and preview behavior
 - **[Access control](../../access/index.md)** - Understand authentication, authorization, roles, teams, and how they affect who can view your project and content
 - **[Roles and permissions](../../access/roles.md)** - Learn how organization and project permissions affect access to project actions
-- **[Projects](./projects.md)** - Learn how project pages and settings work in Reunite

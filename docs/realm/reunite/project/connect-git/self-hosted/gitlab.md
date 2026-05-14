@@ -65,5 +65,5 @@ To delete self-hosted Git provider instances:
 
 - **[Include remote content](../../remote-content/index.md)** - Integrate content from external self-hosted GitLab repositories into your Reunite projects for secure enterprise documentation workflows
 - **[Use the Editor](../../use-editor.md)** - Leverage Reunite's collaborative editing tools with self-hosted GitLab integration for secure content creation and team collaboration
-- **[Projects overview](../../projects.md)** - Manage feedback, deployment details, and project settings for self-hosted GitLab-connected documentation projects
+- **[Manage projects](../../manage-projects.md)** - Access feedback, deployment details, and project settings for self-hosted GitLab-connected documentation projects
 - **[Configuration reference](../../../../config/index.md)** - Complete redocly.yaml configuration options for GitLab self-managed integration and enterprise deployment customization

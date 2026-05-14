@@ -62,5 +62,5 @@ To merge the open pull request in Reunite:
 
 - **[Connect a Git provider](../connect-git/connect-git-provider.md)** - Connect entire Bitbucket repositories to your project for comprehensive version control and automated documentation workflows
 - **[Use the Editor](../use-editor.md)** - Leverage Reunite's collaborative editing tools for content creation with Bitbucket remote content integration and team collaboration features
-- **[Projects overview](../projects.md)** - Manage feedback, deployment details, and project settings for Bitbucket remote content-enabled documentation projects
+- **[Manage projects](../manage-projects.md)** - Access feedback, deployment details, and project settings for Bitbucket remote content-enabled documentation projects
 - **[Configuration reference](../../../config/index.md)** - Complete redocly.yaml configuration options for Bitbucket remote content integration and project customization

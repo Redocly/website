@@ -13,7 +13,7 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-In Reunite, [projects](./projects.md) are the place where you create, test, and deploy documentation websites.
+In Reunite, projects are the place where you create, test, and deploy documentation websites.
 
 ## Create a project
 
@@ -59,6 +59,18 @@ You can switch between projects in a few different contexts:
   1. In a project's navigation bar, click the project name.
   1. From the menu, select one of the project names.
 
+## Project workspace pages
+
+Projects have their features grouped into pages you can access in the left panel:
+
+- [Editor](./use-editor.md): create, manage, and commit content.
+- [Pull requests](./pull-request/manage-pull-requests.md): manage pull requests and view pull request history in the project.
+- [Deployments](./deployments.md) view the history of project deployments and re-deploy the project manually.
+- [Remote content](./remote-content/index.md) manage files and folders that are pulled into your project from external sources.
+- Reports:
+  - [Feedback](./feedback.md): view customer feedback and code reports.
+  - [Analytics](./analytics.md): view data on the page views and search queries for your deployed project.
+
 ## Project Settings menu
 
 Use the Settings menu in your project workspace to edit your projects domain, environment variables, set up Git hosting, manage deployment options, or delete the project.
@@ -83,10 +95,10 @@ If you have an external repository connected to Reunite, data on that repository
 {% /admonition %}
 
 1. In Reunite, switch to the project you want to delete.
-2. Select **Settings** > **General** in the menu on the left side of the page.
-3. On the **General Settings** page, click **Delete**.
-4. Click **Delete** to confirm the action.
-5. Enter the project domain; this step ensures that you delete the correct project.
+1. Select **Settings** > **General** in the menu on the left side of the page.
+1. On the **General Settings** page, click **Delete**.
+1. Click **Delete** to confirm the action.
+1. Enter the project domain; this step ensures that you delete the correct project.
    Then click the **Delete** button to confirm deletion.
 
 Reunite deletes the project and returns you to your organization's dashboard.
@@ -106,7 +118,7 @@ If you use Redocly-hosted Git, you can download your project files at any time.
 To download your project files:
 
 1. In your project's workspace, select **Settings** > **Git hosting**.
-2. Click the **Download ZIP** button.
+1. Click the **Download ZIP** button.
 
 The `.zip` file with all files from your project downloads to your machine.
 
@@ -126,4 +138,5 @@ To learn how to change which branches Reunite deploys and how it handles preview
 - **[Draft projects](./draft-projects.md)** - Understand draft mode, protected draft deployments, and what changes when you go live
 - **[Configure RBAC](../../config/access/rbac.md)** - Set up role-based access control for granular project and content access permissions
 - **[Connect a Git provider](./connect-git/connect-git-provider.md)** - Integrate your projects with Git repositories from various providers for version control and collaboration
+- **[Remote content](./remote-content/index.md)** - Integrate and synchronize content from external repositories and sources into your Reunite projects
 - **[Roles and permissions](../../access/roles.md)** - Understand user roles and permission levels available for project access control and team collaboration

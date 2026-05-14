@@ -48,5 +48,5 @@ To enter the connection details:
 
 - **[Include remote content](../remote-content/index.md)** - Integrate content from external GitHub repositories into your Reunite projects for unified documentation management
 - **[Use the Editor](../use-editor.md)** - Explore Reunite's collaborative editing environment for creating and managing content with GitHub integration
-- **[Projects overview](../projects.md)** - Access feedback, deployment details, and project settings for comprehensive GitHub-connected project management
+- **[Manage projects](../manage-projects.md)** - Access feedback, deployment details, and project settings for comprehensive GitHub-connected project management
 - **[Configuration reference](../../../config/index.md)** - Complete redocly.yaml configuration options for GitHub integration, deployment, and project customization

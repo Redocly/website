@@ -48,5 +48,5 @@ To connect a Bitbucket Cloud repository, you must first create a new access toke
 
 - **[Include remote content](../remote-content/index.md)** - Integrate content from external Bitbucket repositories into your Reunite projects for streamlined documentation workflows
 - **[Use the Editor](../use-editor.md)** - Leverage Reunite's collaborative editing tools for content creation with Bitbucket integration and team collaboration features
-- **[Projects overview](../projects.md)** - Manage feedback, deployment details, and project settings for Bitbucket-connected documentation projects
+- **[Manage projects](../manage-projects.md)** - Access feedback, deployment details, and project settings for Bitbucket-connected documentation projects
 - **[Configuration reference](../../../config/index.md)** - Complete redocly.yaml configuration options for Bitbucket integration, automated deployment, and project customization

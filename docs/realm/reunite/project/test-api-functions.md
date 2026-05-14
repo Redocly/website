@@ -11,10 +11,7 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% admonition type="warning" name="Early access" %}
-This is an experimental, early-access capability.
-It may not be available for your organization yet, and its behavior may change before general availability.
-{% /admonition %}
+{% partial file="../../_partials/early-access.md" /%}
 
 You can use Replay in Reunite to send requests to your API functions while you work in the editor.
 This helps you verify routing, request data, and responses without leaving your project workspace.

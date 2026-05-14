@@ -13,16 +13,13 @@ keywords:
     - experimental
 ---
 
-# Use AsciiDoc content (experimental)
+# Use AsciiDoc content
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use the AsciiDoc plugin to render `.adoc` files as regular content pages in Realm.
 
-{% admonition type="warning" name="Experimental feature" %}
-AsciiDoc support is experimental.
-Behavior, supported syntax, and API surface may change in future releases.
-{% /admonition %}
+{% partial file="../_partials/experimental.md" /%}
 
 ## About the plugin
 

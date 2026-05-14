@@ -112,6 +112,5 @@ When you are working in Reunite, you can use the following keyboard shortcuts:
 
 ## Resources
 
-- **[Projects overview](./projects.md)** - Explore other project configuration options and settings available in Reunite
 - **[Manage projects](./manage-projects.md)** - Create, configure, and organize projects in Reunite for effective documentation workflow management
 - **[Use the editor](./use-editor.md)** - Edit content directly in Reunite with collaborative editing tools and real-time collaboration features

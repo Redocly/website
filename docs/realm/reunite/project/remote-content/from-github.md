@@ -60,5 +60,5 @@ To merge the open pull request in Reunite:
 
 - **[Connect a Git provider](../connect-git/connect-git-provider.md)** - Connect entire GitHub repositories to your project for comprehensive version control and automated workflows
 - **[Use the Editor](../use-editor.md)** - Explore Reunite's collaborative editing tools for creating and managing content with GitHub remote content integration
-- **[Projects overview](../projects.md)** - Access feedback, deployment details, and project settings for GitHub remote content-enabled documentation projects
+- **[Manage projects](../manage-projects.md)** - Access feedback, deployment details, and project settings for GitHub remote content-enabled documentation projects
 - **[Configuration reference](../../../config/index.md)** - Complete redocly.yaml configuration options for GitHub remote content integration and project customization

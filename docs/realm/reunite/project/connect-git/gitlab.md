@@ -48,5 +48,5 @@ To connect a GitLab repository, you must first create a new access token in GitL
 
 - **[Include remote content](../remote-content/index.md)** - Integrate content from external GitLab repositories into your Reunite projects for streamlined documentation workflows
 - **[Use the Editor](../use-editor.md)** - Leverage Reunite's collaborative editing tools for content creation with GitLab repository integration and version control
-- **[Projects overview](../projects.md)** - Manage feedback, deployment details, and project settings for GitLab-connected documentation projects
+- **[Manage projects](../manage-projects.md)** - Access feedback, deployment details, and project settings for GitLab-connected documentation projects
 - **[Configuration reference](../../../config/index.md)** - Complete redocly.yaml configuration options for GitLab integration, automated deployment, and project customization

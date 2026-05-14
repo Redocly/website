@@ -1,8 +1,6 @@
 # OpenAPI extension: `x-mcp`
 
-{% admonition type="warning" name="Beta feature" %}
-This feature is currently experimental and may be subject to changes.
-{% /admonition %}
+{% partial file="../../../_partials/experimental.md" /%}
 
 Use `x-mcp` to document MCP (Model Context Protocol) servers for consumers.
 
