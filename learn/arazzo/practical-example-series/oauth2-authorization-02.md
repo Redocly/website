@@ -18,10 +18,11 @@ You will learn how to define reusable workflows in separate files, pass values b
 
 You will cover the following topics:
 
-- Practical applications of Arazzo:
-  - Creating reusable workflows with exposed outputs.
-  - Authorizing API requests with OAuth2.
-  - Using the `x-security` Respect extension with a protected API operation.
+Practical applications of Arazzo:
+
+- Creating reusable workflows with exposed outputs.
+- Authorizing API requests with OAuth2.
+- Using the `x-security` Respect extension with a protected API operation.
 
 ## The problem
 

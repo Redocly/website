@@ -16,11 +16,12 @@ You will learn how to describe an API workflow, execute it with Redocly CLI, and
 
 You will cover the following topics:
 
-- Practical applications of Arazzo:
-  - Automating repetitive API workflows.
-  - Adding API contract tests to CI/CD routines.
-  - Keeping API documentation synchronized with actual API behavior.
-  - Sharing described workflows across teams.
+Practical applications of Arazzo:
+
+- Automating repetitive API workflows.
+- Adding API contract tests to CI/CD routines.
+- Keeping API documentation synchronized with actual API behavior.
+- Sharing described workflows across teams.
 - Using the open-source [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) `respect` command to execute Arazzo workflows, inspect contract test results, and fix mismatches between the OpenAPI description and the actual API response.
 
 ## The problem
