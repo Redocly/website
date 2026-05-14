@@ -1892,6 +1892,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- graphql.implementedBy
+- Label for types that implement a GraphQL interface
+- Implemented by
+
+---
+
 - graphql.nonNull
 - Label for non-null fields in GraphQL content
 - non-null
