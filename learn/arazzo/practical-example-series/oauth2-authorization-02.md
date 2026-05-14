@@ -164,7 +164,7 @@ The step extracts `access_token` from the response body so the next workflow can
 {% /step %}
 
 {% step id="auth-workflow-outputs" heading="Expose the authorization outputs" %}
-Just like the registration workflow, the authorization workflow exposes its outputs at the workflow level so any consumer Arazzo file can read `access_token_with_code` and `client_id`.
+Just like the registration workflow, the authorization workflow exposes its outputs at the workflow level so any consumer Arazzo file can read `access_token_with_client_credentials` and `client_id`.
 {% /step %}
 
 Execute this file:
