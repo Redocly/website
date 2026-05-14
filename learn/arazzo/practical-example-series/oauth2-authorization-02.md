@@ -18,8 +18,6 @@ You will learn how to define reusable workflows in separate files, pass values b
 
 You will cover the following topics:
 
-Practical applications of Arazzo:
-
 - Creating reusable workflows with exposed outputs.
 - Authorizing API requests with OAuth2.
 - Using the `x-security` Respect extension with a protected API operation.
@@ -113,7 +111,7 @@ That promotion is the bridge between a reusable workflow and the workflows that 
 Execute the file with Redocly CLI to inspect the API response and confirm which values are mapped to workflow outputs:
 
 ```bash
-npx @redocly/cli@latest respect register-oauth2-client.arazzo.yaml --verbose
+npx @redocly/cli respect register-oauth2-client.arazzo.yaml --verbose
 ```
 
 ## Step 2. Get an access token
@@ -170,7 +168,7 @@ Just like the registration workflow, the authorization workflow exposes its outp
 Execute this file:
 
 ```bash
-npx @redocly/cli@latest respect authorization.arazzo.yaml --verbose
+npx @redocly/cli respect authorization.arazzo.yaml --verbose
 ```
 
 Inspect the response body of the last step. It should contain the `access_token` that the final workflow will use:

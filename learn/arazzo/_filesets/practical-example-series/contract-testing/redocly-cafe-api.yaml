@@ -163,7 +163,7 @@ components:
         - $ref: '#/components/schemas/Dessert'
       required:
         - category
-    # @chunk {"steps": ["openapi-broken-schema", "schema-failure"]}
+    # @chunk {"steps": ["openapi-broken-schema", "schema-failure", "schema-fix"]}
     MenuItemList:
       type: array
       items:

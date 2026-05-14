@@ -1,12 +1,8 @@
-# @chunk {"steps": ["arazzo-version"]}
 arazzo: 1.0.1
-# @chunk-end
-# @chunk {"steps": ["arazzo-info"]}
 info:
   title: Redocly Cafe API - Products
   version: 1.0.0
   description: This is a test suite for the Redocly Cafe API.
-# @chunk-end
 # @chunk {"steps": ["arazzo-source-descriptions"]}
 sourceDescriptions:
   - name: redocly-cafe-api

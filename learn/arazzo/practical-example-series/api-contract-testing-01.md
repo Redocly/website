@@ -12,17 +12,14 @@
 # Respect Practical Example Series: API Contract Testing with Respect
 
 This article shows how to use Respect, powered by Arazzo workflows, for API contract testing.
-You will learn how to describe an API workflow, execute it with Redocly CLI, and use the results to find mismatches between an OpenAPI description and the real API behavior.
 
 You will cover the following topics:
-
-Practical applications of Arazzo:
 
 - Automating repetitive API workflows.
 - Adding API contract tests to CI/CD routines.
 - Keeping API documentation synchronized with actual API behavior.
 - Sharing described workflows across teams.
-- Using the open-source [@redocly/cli](https://www.npmjs.com/package/@redocly/cli) `respect` command to execute Arazzo workflows, inspect contract test results, and fix mismatches between the OpenAPI description and the actual API response.
+- Using the open-source [Redocly CLI](https://www.npmjs.com/package/@redocly/cli) to execute Arazzo workflows, inspect contract test results, and fix mismatches between the OpenAPI description and the actual API response.
 
 ## The problem
 
@@ -40,7 +37,7 @@ This makes API contract testing more declarative and easier to share across team
 
 To follow the examples in this article, you need:
 
-- Basic familiarity with [Arazzo](../what-is-arazzo.md).
+- Basic familiarity with [Arazzo](https://redocly.com/learn/arazzo/what-is-arazzo).
 - An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API description.
 
 > **Important:** The API description used here intentionally contains a discrepancy for demonstration purposes.
@@ -71,28 +68,12 @@ There are several ways to create an Arazzo description:
 Whichever approach you choose, validate the Arazzo file with Redocly CLI:
 
 ```bash
-npx @redocly/cli@latest lint redocly-cafe-api.arazzo.yaml
+npx @redocly/cli lint redocly-cafe-api.arazzo.yaml
 ```
 
-```bash
-No configurations were provided -- using built in recommended configuration by default.
-
-validating redocly-cafe-api.arazzo.yaml...
-redocly-cafe-api.arazzo.yaml: validated in 6ms
-
-Woohoo! Your API description is valid. 🎉
-```
+The tool will let you know that the description is valid.
 
 Now switch to `redocly-cafe-api.arazzo.yaml` in the right panel and walk through it section by section.
-
-{% step id="arazzo-version" heading="Declare the Arazzo version" %}
-Every Arazzo file begins with a version declaration.
-The latest stable version is `1.0.1`.
-{% /step %}
-
-{% step id="arazzo-info" heading="Describe the workflow document" %}
-Similar to OpenAPI, the `info` object provides a `title`, `version`, and optional `description` that summarize what the workflow file is about.
-{% /step %}
 
 {% step id="arazzo-source-descriptions" heading="Connect an OpenAPI source" %}
 `sourceDescriptions` defines the connection to one or more OpenAPI files.
@@ -248,7 +229,10 @@ Respect made this drift visible immediately, without anyone having to read both 
 
 ## Fix the schema
 
-In `redocly-cafe-api.yaml`, change `MenuItemList` from an `array` to an `object` with `object`, `page`, and `items` properties so the schema matches the response the API actually returns:
+{% step id="schema-fix" heading="Updated MenuItemList schema" %}
+In `redocly-cafe-api.yaml`, change `MenuItemList` from an `array` to an `object` with `object`, `page`, and `items` properties so the schema matches the response the API actually returns.
+
+Compare the highlighted block in the right panel with the corrected version below:
 
 ```yaml
 MenuItemList:
@@ -269,6 +253,7 @@ MenuItemList:
     - page
     - items
 ```
+{% /step %}
 
 Re-run the workflow to confirm that all checks now pass:
 
@@ -286,9 +271,8 @@ After you create and verify an Arazzo workflow locally, you can use it in severa
 - Include the workflow in a CI/CD pipeline to keep API documentation synchronized with actual API behavior:
 
   ```bash
-  # Spawn your API instance
-  npm install @redocly/cli@latest -g
-  redocly respect products.arazzo.yaml --verbose
+  # Spawn your API instance, then run the workflow
+  npx @redocly/cli respect redocly-cafe-api.arazzo.yaml --verbose
   ```
 
 - Automate routine API workflows for development and QA tasks.
