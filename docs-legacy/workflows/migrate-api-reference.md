@@ -8,7 +8,7 @@ Publish Redoc projects to the Redocly Reunite platform (this version of Redoc is
 
 ## Create a new project
 
-A [project](/docs/realm/reunite/project/projects) is one website and everything that goes with it.
+A [project](/docs/realm/reunite/project/manage-projects) is one website and everything that goes with it.
 The project consists of files and folders; your project comes with a Redocly-hosted repository or you can connect your own Git repository.
 
 1. Sign up or log in to your Reunite account.
