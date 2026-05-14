@@ -111,6 +111,28 @@ If you ejected the `navbar` component before version `0.128.0`, [update it](../c
 
   See [RBAC configuration](./access/rbac.md) for details.
 
+---
+
+- startAt
+- string
+- ISO 8601 timestamp (UTC) for when the banner starts displaying.
+  The banner is hidden before this time.
+  If omitted, the banner displays immediately until `endAt` (or indefinitely if `endAt` is also omitted).
+  Banner visibility is evaluated client-side based on the user's clock and re-checked while the page is open.
+
+  Example: `2026-03-15T00:00:00Z`
+
+---
+
+- endAt
+- string
+- ISO 8601 timestamp (UTC) for when the banner stops displaying.
+  The banner is hidden once the current time reaches this value.
+  If omitted, the banner displays indefinitely from `startAt` (or immediately if `startAt` isn't defined).
+  Banner visibility is evaluated client-side based on the user's clock and re-checked while the page is open.
+
+  Example: `2026-04-01T23:59:59Z`
+
 {% /table %}
 
 ## Configuration
@@ -155,6 +177,26 @@ banner:
     rbac:
       anonymous: read
       authenticated: none
+```
+
+### Time-based visibility
+
+Schedule banners to appear and disappear automatically by setting `startAt` and `endAt`.
+Use UTC timestamps; visibility is evaluated client-side by comparing those absolute UTC boundaries to the browser's current time, so clock accuracy affects when the banner appears—not local timezone reinterpretation of the configured values.
+Both fields are optional: omit `endAt` to display the banner indefinitely from `startAt`, or omit `startAt` to display it immediately until `endAt`.
+
+```yaml {% title="redocly.yaml" %}
+banner:
+  - content: "🎉 Spring Sale: 20% off through April 1st!"
+    target: "**"
+    startAt: "2026-03-15T00:00:00Z"
+    endAt: "2026-04-01T23:59:59Z"
+    dismissible: true
+  - content: Scheduled maintenance March 20, 2-4 PM EST
+    target: "**"
+    startAt: "2026-03-20T19:00:00Z"
+    endAt: "2026-03-20T21:00:00Z"
+    color: warning
 ```
 
 Configure a banner in the front matter of a specific page:
