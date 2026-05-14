@@ -142,8 +142,8 @@ Its `outputs` mirror the workflow-level outputs we exposed earlier (`clientId`, 
 {% step id="auth-step-token" heading="Call the token endpoint" %}
 The second step, `authorize-with-client_credentials`, calls `/oauth2/token` using the credentials returned by the previous step.
 
-In a production application, the `/callback` URL is usually implemented by the client application.
-In this example, the Redocly Cafe API provides the callback endpoint for demonstration purposes.
+This walkthrough uses the **client credentials** grant, a machine-to-machine flow where the client authenticates itself directly with `client_id` and `client_secret`.
+There is no user-agent or browser involved, so no `redirect_uri` or `/callback` is needed - the token is returned directly in the response to this single request.
 {% /step %}
 
 {% step id="auth-x-operation" heading="x-operation extension" %}
