@@ -1127,6 +1127,6 @@ That means you get a complete, working implementation of that component; ready t
 ## Resources
 
 - **[Create React pages](/docs/realm/customization/create-react-page)** - Build custom pages using React components for full control over layout, styling, and interactive functionality
-- **[Navigation configuration](/docs/realm/navigation/navigation)** - Configure navigation elements, menus, and page organization for optimal user experience in Realm projects
+- **[Navigation configuration](/docs/realm/navigation/)** - Configure navigation elements, menus, and page organization for optimal user experience in Realm projects
 - **[Color mode customization](/docs/realm/branding/customize-color-modes)** - Configure light and dark mode styling with custom color schemes and mode-specific CSS variables
 - **[Front matter configuration](/docs/realm/config/front-matter-config)** - Complete reference for page-level configuration options available through front matter settings
