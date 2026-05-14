@@ -20,6 +20,7 @@ The following Markdoc tags are included with the official Markdoc package:
 
 - [Partial](./partial.md): Reuse content between project pages.
 - [Table](./table.md): Create rich tables with less syntax.
+- [If and else](./if-else.md): Add condition that must be fulfilled to render content.
 
 ## Redocly tags
 

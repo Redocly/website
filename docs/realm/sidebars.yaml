@@ -178,6 +178,8 @@
       items:
         - page: content/markdoc-tags/tag-library.md
         - separator: Built-in tags
+        - page: content/markdoc-tags/if-else.md
+          label: If and else
         - page: content/markdoc-tags/partial.md
           label: Partial
         - page: content/markdoc-tags/table.md
