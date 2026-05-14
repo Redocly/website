@@ -1,0 +1,55 @@
+arazzo: 1.0.1
+info:
+  title: Redocly Cafe API - Register OAuth2 Client
+  version: 1.0.0
+  description: This is the API for the Redocly Cafe OAuth2 client registration.
+# @chunk {"steps": ["register-source"]}
+sourceDescriptions:
+  - name: redocly-cafe-api
+    type: openapi
+    url: redocly-cafe-api.yaml
+# @chunk-end
+
+# @chunk {"steps": ["register-workflow"]}
+workflows:
+  - workflowId: register-oauth2-client-workflow
+    summary: Register a new OAuth2 client
+    description: This workflow registers a new OAuth2 client.
+    steps:
+      # @chunk {"steps": ["register-step"]}
+      - stepId: register-oauth2-client
+        # @chunk {"steps": ["register-step-operation"]}
+        operationId: $sourceDescriptions.redocly-cafe-api.registerOAuth2Client
+        # @chunk-end
+        description: This step registers a new OAuth2 client.
+        # @chunk {"steps": ["register-request-body"]}
+        requestBody:
+          payload:
+            name: code
+            redirectUris:
+              - https://cafe.cloud.redocly.com/callback
+            scopes:
+              - 'menu:read'
+              - 'menu:write'
+            grantTypes:
+              - 'client_credentials'
+              - 'authorization_code'
+        # @chunk-end
+        # @chunk {"steps": ["register-success-criteria"]}
+        successCriteria:
+          - condition: $statusCode == 201
+          - condition: $response.body#/clientId != null
+          - condition: $response.body#/clientSecret != null
+        # @chunk-end
+        # @chunk {"steps": ["register-step-outputs"]}
+        outputs:
+          clientId: $response.body#/clientId
+          clientSecret: $response.body#/clientSecret
+        # @chunk-end
+      # @chunk-end
+    # @chunk {"steps": ["register-workflow-outputs"]}
+    outputs:
+      clientId: $steps.register-oauth2-client.outputs.clientId
+      clientSecret: $steps.register-oauth2-client.outputs.clientSecret
+    # @chunk-end
+# @chunk-end

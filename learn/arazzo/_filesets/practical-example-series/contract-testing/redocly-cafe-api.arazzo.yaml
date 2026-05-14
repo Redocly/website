@@ -1,0 +1,39 @@
+# @chunk {"steps": ["arazzo-version"]}
+arazzo: 1.0.1
+# @chunk-end
+# @chunk {"steps": ["arazzo-info"]}
+info:
+  title: Redocly Cafe API - Products
+  version: 1.0.0
+  description: This is a test suite for the Redocly Cafe API.
+# @chunk-end
+# @chunk {"steps": ["arazzo-source-descriptions"]}
+sourceDescriptions:
+  - name: redocly-cafe-api
+    type: openapi
+    url: redocly-cafe-api.yaml
+# @chunk-end
+
+# @chunk {"steps": ["arazzo-workflows"]}
+workflows:
+  - workflowId: menu-items-workflow
+    summary: Menu Items Workflow
+    # @chunk {"steps": ["arazzo-steps"]}
+    steps:
+      - stepId: get-products
+        # @chunk {"steps": ["arazzo-operation-id", "arazzo-step-operation"]}
+        operationId: $sourceDescriptions.redocly-cafe-api.listMenuItems
+        # @chunk-end
+        description: This step gets all products.
+        # @chunk {"steps": ["arazzo-parameters"]}
+        parameters:
+          - in: query
+            name: limit
+            value: 1
+        # @chunk-end
+        # @chunk {"steps": ["arazzo-success-criteria"]}
+        successCriteria:
+          - condition: $statusCode == 200
+        # @chunk-end
+    # @chunk-end
+# @chunk-end

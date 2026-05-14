@@ -1,0 +1,60 @@
+arazzo: 1.0.1
+info:
+  title: Redocly Cafe API - Authorization
+  version: 1.0.0
+  description: This is the API for the Redocly Cafe OAuth2 client registration.
+# @chunk {"steps": ["auth-sources"]}
+sourceDescriptions:
+  - name: redocly-cafe-api
+    type: openapi
+    url: redocly-cafe-api.yaml
+  # @chunk {"steps": ["auth-source-arazzo"]}
+  - name: register-oauth2
+    type: arazzo
+    url: register-oauth2-client.arazzo.yaml
+  # @chunk-end
+# @chunk-end
+
+workflows:
+  - workflowId: authorize-with-client_credentials
+    summary: Authorize a new OAuth2 client
+    steps:
+      # @chunk {"steps": ["auth-step-reuse"]}
+      - stepId: register-oauth2-client
+        description: This step registers a new OAuth2 client.
+        workflowId: $sourceDescriptions.register-oauth2.workflows.register-oauth2-client-workflow
+        outputs:
+          clientId: $outputs.clientId
+          clientSecret: $outputs.clientSecret
+      # @chunk-end
+      # @chunk {"steps": ["auth-step-token"]}
+      - stepId: authorize-with-client_credentials
+        # @chunk {"steps": ["auth-x-operation"]}
+        x-operation:
+          method: POST
+          url: https://cafe.cloud.redocly.com/oauth2/token
+        # @chunk-end
+        parameters:
+          - in: header
+            name: content-type
+            value: application/x-www-form-urlencoded
+        # @chunk {"steps": ["auth-token-request-body"]}
+        requestBody:
+          payload:
+            grant_type: client_credentials
+            client_id: $steps.register-oauth2-client.outputs.clientId
+            client_secret: $steps.register-oauth2-client.outputs.clientSecret
+        # @chunk-end
+        successCriteria:
+          - condition: $statusCode == 200
+          - condition: $response.body#/access_token != null
+        # @chunk {"steps": ["auth-token-output"]}
+        outputs:
+          access_token: $response.body#/access_token
+        # @chunk-end
+      # @chunk-end
+    # @chunk {"steps": ["auth-workflow-outputs"]}
+    outputs:
+      access_token_with_client_credentials: $steps.authorize-with-client_credentials.outputs.access_token
+      client_id: $steps.register-oauth2-client.outputs.clientId
+    # @chunk-end
