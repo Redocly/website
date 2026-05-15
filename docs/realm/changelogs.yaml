@@ -45654,6 +45654,13 @@ reunite:
         - Fixed `date picker` to prevent selecting days outside the current month and times in the future.
         - Fixed active and hover colors in the user settings modal sidebar to use grey tones matching the main navigation sidebar.
     dependencies: {}
+  v2026-05-15.2:
+    timestamp: 1778854840000
+    changes:
+      minor:
+        - Moved onboarding access to the sidebar and replaced the drawer with a less intrusive, non-blocking assistive flow.
+      patch: []
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
