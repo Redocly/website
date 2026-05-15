@@ -30,7 +30,7 @@ We're looking for a creative and curious video content creator with a marketing 
 - Ability to maintain a simple content calendar.
 - Have strong written and spoken English.
 - Curiosity about technical products and willingness to deeply understand how features work.
-- Creativity, not afraid to make a mistake, ask qiestions, try and test hipoteses.
+- Creativity, not afraid to make a mistake, ask questions, try and test hypotheses.
 
 #### Nice to have
 - Experience working with OpenAPI.
