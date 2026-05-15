@@ -15,6 +15,9 @@ Integrate with external systems, manipulate data, and enhance your Redocly proje
 
 ## Function signature
 
+Each API function file must have a single **default export** that is a function.
+Files without a default export, or with a default export that is not callable, are not registered as API endpoints.
+
 The function accepts the following parameters:
 - `request`: a standard Web Handler [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request)
 - `context`: a custom Redocly [Context](#context) object
@@ -29,6 +32,11 @@ export default async function (
   // ...
 }
 ```
+
+  {% admonition type="warning" name="Default export required" %}
+  Named-only exports such as `export const handler = ...` are skipped during the build and produce a `500` response with a description of the problem when called in development mode.
+  Use `export default function (request, context) { ... }` or re-export a named function as the default with `export { handler as default }`.
+  {% /admonition %}
 
 ## File-system and method routing
 
