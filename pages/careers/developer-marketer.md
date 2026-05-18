@@ -37,19 +37,19 @@ We're looking for a creative and curious video content creator with a marketing 
 - Experience with documentation tooling.
 - Familiarity with Redocly products (Reunite, Redoc, Revel, Reef, Realm).
 
-## 30-60-90 day plan
+### 30-60-90 day plan
 
-### First 30 days
+#### First 30 days
 - Learn our products and audience.
 - Create your first video pair (demo + how-to).
 - Define your workflow for production and publishing.
 
-### Next 30 days
+#### Next 30 days
 - Produce 4 more video pairs.
 - Add variation (subtitles, b-roll, improved structure).
 - Experiment with clips and shorts for social media.
 
-### Next 30 days
+#### Next 30 days
 - Continue to produce at least one video pair per week.
 - Start measuring impact (views, completion rates, trials).
 - Build a simple content calendar and feedback loop.
