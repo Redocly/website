@@ -1,4 +1,28 @@
 '@redocly/realm':
+  0.134.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor:
+        - Updated styles for the `cards` Markdoc tag.
+        - Added `Implemented by` section to interface types in `graphql-docs` to display implementing types.
+      patch:
+        - Fixed an issue where links inside schema descriptions rendered by the `json-schema` Markdoc tag did not include the project path prefix.
+        - Fixed an issue where the search dialog closed on window resize.
+        - Added configuration options to control time-specific banner visibility.
+        - Fixed an issue where front matter errors would falsely appear resolved after any edits to the file.
+        - Enter prerelease mode.
+        - Fixed an issue where webhooks remained visible when all endpoints were hidden by `x-rbac` access control.
+        - Improved OpenAPI and AsyncAPI page rendering performance for projects with many Markdoc partials.
+        - Improved error handling for API function files that do not export a default function.
+        - Fixed an issue where embedded Replay (`replay-openapi` Markdoc tag) could crash when using the mock server.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.19.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.12.0-next.0
+      '@redocly/portal-legacy-ui': 0.17.0-next.0
+      '@redocly/asyncapi-docs': 1.11.0-next.0
+      '@redocly/graphql-docs': 1.11.0-next.0
+      '@redocly/openapi-docs': 3.22.0-next.0
   0.133.0:
     timestamp: 1778754745000
     changes:
@@ -6175,6 +6199,26 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.134.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor:
+        - Updated styles for the `cards` Markdoc tag.
+      patch:
+        - Fixed an issue where links inside schema descriptions rendered by the `json-schema` Markdoc tag did not include the project path prefix.
+        - Fixed an issue where the search dialog closed on window resize.
+        - Fixed an issue where front matter errors would falsely appear resolved after any edits to the file.
+        - Enter prerelease mode.
+        - Improved error handling for API function files that do not export a default function.
+        - Fixed an issue where embedded Replay (`replay-openapi` Markdoc tag) could crash when using the mock server.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.19.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.12.0-next.0
+      '@redocly/portal-legacy-ui': 0.17.0-next.0
+      '@redocly/asyncapi-docs': 1.11.0-next.0
+      '@redocly/graphql-docs': 1.11.0-next.0
+      '@redocly/openapi-docs': 3.22.0-next.0
   0.133.0:
     timestamp: 1778754745000
     changes:
@@ -11440,6 +11484,26 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.134.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor:
+        - Updated styles for the `cards` Markdoc tag.
+      patch:
+        - Fixed an issue where links inside schema descriptions rendered by the `json-schema` Markdoc tag did not include the project path prefix.
+        - Fixed an issue where the search dialog closed on window resize.
+        - Added configuration options to control time-specific banner visibility.
+        - Fixed an issue where front matter errors would falsely appear resolved after any edits to the file.
+        - Enter prerelease mode.
+        - Fixed an issue where embedded Replay (`replay-openapi` Markdoc tag) could crash when using the mock server.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.19.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.12.0-next.0
+      '@redocly/portal-legacy-ui': 0.17.0-next.0
+      '@redocly/asyncapi-docs': 1.11.0-next.0
+      '@redocly/graphql-docs': 1.11.0-next.0
+      '@redocly/openapi-docs': 3.22.0-next.0
   0.133.0:
     timestamp: 1778754745000
     changes:
@@ -16697,6 +16761,25 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.134.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor:
+        - Updated styles for the `cards` Markdoc tag.
+        - Added `Implemented by` section to interface types in `graphql-docs` to display implementing types.
+      patch:
+        - Fixed an issue where the search dialog closed on window resize.
+        - Enter prerelease mode.
+        - Fixed an issue where webhooks remained visible when all endpoints were hidden by `x-rbac` access control.
+        - Improved OpenAPI and AsyncAPI page rendering performance for projects with many Markdoc partials.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.19.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.12.0-next.0
+      '@redocly/portal-legacy-ui': 0.17.0-next.0
+      '@redocly/asyncapi-docs': 1.11.0-next.0
+      '@redocly/graphql-docs': 1.11.0-next.0
+      '@redocly/openapi-docs': 3.22.0-next.0
   0.133.0:
     timestamp: 1778754745000
     changes:
@@ -22014,6 +22097,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.66.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor:
+        - Updated styles for the `cards` Markdoc tag.
+        - Added `Implemented by` section to interface types in `graphql-docs` to display implementing types.
+      patch:
+        - Fixed an issue where the search dialog closed on window resize.
+        - Enter prerelease mode.
+    dependencies: {}
   0.65.0:
     timestamp: 1778754745000
     changes:
@@ -24908,6 +25001,17 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.22.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+        - Improved OpenAPI and AsyncAPI page rendering performance for projects with many Markdoc partials.
+        - Fixed an issue where embedded Replay (`replay-openapi` Markdoc tag) could crash when using the mock server.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.0
+      '@redocly/replay': 0.25.0-next.0
   3.21.0:
     timestamp: 1778754745000
     changes:
@@ -28611,6 +28715,16 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.11.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor:
+        - Added `Implemented by` section to interface types in `graphql-docs` to display implementing types.
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.0
+      '@redocly/openapi-docs': 3.22.0-next.0
   1.10.0:
     timestamp: 1778754745000
     changes:
@@ -29681,6 +29795,13 @@
       '@redocly/theme': 0.6.0
 '@redocly/api-docs': {}
 '@redocly/mock-server':
+  0.8.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies: {}
   0.7.0:
     timestamp: 1778754745000
     changes:
@@ -30292,6 +30413,13 @@
         - Redocly Mock Server release
     dependencies: {}
 '@redocly/portal-legacy-ui':
+  0.17.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies: {}
   0.16.0:
     timestamp: 1778754745000
     changes:
@@ -30519,6 +30647,18 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.17.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/realm': 0.134.0-next.0
+      '@redocly/redoc-reef': 0.134.0-next.0
+      '@redocly/redoc-revel': 0.134.0-next.0
+      '@redocly/theme': 0.66.0-next.0
+      '@redocly/redoc': 0.134.0-next.0
   1.16.0:
     timestamp: 1778754745000
     changes:
@@ -35679,6 +35819,15 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.19.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/openapi-docs': 3.22.0-next.0
+      '@redocly/mock-server': 0.8.0-next.0
   0.18.0:
     timestamp: 1778754745000
     changes:
@@ -38509,6 +38658,14 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.25.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.0
   0.24.0:
     timestamp: 1778754745000
     changes:
@@ -40574,6 +40731,14 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.17.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.0
   0.16.0:
     timestamp: 1778754745000
     changes:
@@ -42303,6 +42468,16 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.11.0-next.0:
+    timestamp: 1779129961000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+        - Improved OpenAPI and AsyncAPI page rendering performance for projects with many Markdoc partials.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.0
+      '@redocly/openapi-docs': 3.22.0-next.0
   1.10.0:
     timestamp: 1778754745000
     changes:
