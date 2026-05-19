@@ -205,8 +205,8 @@ access:
 ### Root-level configuration (deprecated)
 
 {% admonition type="warning" %}
-**Deprecated:** Root-level `rbac` is still supported for backward compatibility but will show deprecation warnings when used alongside the `access` object.
-Please migrate to the `access` object format.
+**Deprecated:** Root-level `rbac` is still supported for backward compatibility but displays deprecation warnings when the `access` object exists.
+Redocly recommends migrating to the `access` object format.
 {% /admonition %}
 
 ### File access
@@ -305,14 +305,13 @@ To require users to log in before viewing any content:
 
 ```yaml {% title="redocly.yaml" %}
 access:
-  requiresLogin: true
   rbac:
     content:
       '**':
         authenticated: read
 ```
 
-This configuration creates a login page where users authenticate using configured identity providers.
+This configuration directs users to a login page where they can authenticate using configured identity providers.
 
 ### Pattern-based access
 

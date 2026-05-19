@@ -467,6 +467,6 @@
     - page: access/rbac.md
       label: RBAC concepts
     - page: access/page-permissions.md
-      label: For pages
+      label: RBAC for pages
     - page: access/links-and-groups-permissions.md
-      label: For navigation
+      label: RBAC for navigation

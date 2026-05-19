@@ -13,14 +13,22 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Secure your documentation with role-based access control (RBAC) to manage who can view and access different parts of your project.
+Realm offers two ways to secure your documentation: through a login requirement, or with role-based access control (RBAC).
 
-## Overview
+## Make your project private with a login
 
-Redocly's access control system lets you protect sensitive documentation, restrict access to specific user groups, and manage permissions at the page and navigation level.
-Perfect for internal documentation, API keys, or content that should only be visible to specific teams.
+Users with the Pro plan can restrict access to their published project by configuring `requiresLogin` in `redocly.yaml`.
+This configuration option hides your content behind a login screen.
+Only the users who were invited to your organization in Reunite, or added through an external identity provider, can log in and access your content.
 
-## Authentication vs Authorization
+To configure access to your project, see [`requiresLogin`](../config/access/requires-login.md).
+
+## Role-based Access Control
+
+Enterprise and Enterprise+ users can configure Redocly's RBAC system to protect sensitive documentation, restrict access to specific user groups, and manage permissions at the page and navigation level.
+RBAC is perfect for internal documentation, API keys, or content that should only be visible to specific teams.
+
+### Authentication vs Authorization
 
 Understanding the difference between authentication and authorization is crucial for setting up access control:
 
@@ -33,7 +41,14 @@ Understanding the difference between authentication and authorization is crucial
 
 The source of your role and team information depends on whether you're using SSO with an identity provider or Redocly's built-in authentication and team management systems.
 
-## Core concepts
+### Core access control concepts
+
+Access control in Redocly operates on a role-based system where:
+
+1. **Users are assigned roles** in your organization or project
+1. **Content is tagged with access requirements** using configuration or front matter
+1. **The system automatically filters** what each user can see based on their roles
+1. **Navigation adapts dynamically** to show only accessible content
 
 {% cards columns=2 %}
 
@@ -47,7 +62,7 @@ Understand how role-based access control works and how to implement security for
 
 {% /cards %}
 
-## Access control types
+### Access control types
 
 {% cards columns=2 %}
 
@@ -61,23 +76,14 @@ Manage visibility of navigation links and groups to create role-specific navigat
 
 {% /cards %}
 
-## How access control works
-
-Access control in Redocly operates on a role-based system where:
-
-1. **Users are assigned roles** in your organization or project
-2. **Content is tagged with access requirements** using configuration or front matter
-3. **The system automatically filters** what each user can see based on their roles
-4. **Navigation adapts dynamically** to show only accessible content
-
-## Get started
+### Get started with RBAC
 
 1. **Set up roles** - Define the [user roles](./roles.md) needed for your organization and understand the difference between organization and project roles
-2. **Understand RBAC** - Learn the [RBAC concepts](./rbac.md) and security model including how teams, roles, and resources work together
-3. **Protect pages** - Apply [page permissions](./page-permissions.md) to sensitive content using front matter or configuration-based access control
-4. **Control navigation** - Configure [navigation permissions](./links-and-groups-permissions.md) for role-specific menus in navbar, footer, and sidebar
+1. **Understand RBAC** - Learn the [RBAC concepts](./rbac.md) and security model including how teams, roles, and resources work together
+1. **Protect pages** - Apply [page permissions](./page-permissions.md) to sensitive content using front matter or configuration-based access control
+1. **Control navigation** - Configure [navigation permissions](./links-and-groups-permissions.md) for role-specific menus in navbar, footer, and sidebar
 
-## Use cases
+### Access control use cases
 
 **Internal documentation**
 
@@ -101,3 +107,4 @@ Show basic content to all users while revealing advanced features and configurat
 - **[RBAC implementation](./rbac.md)** - Understand how role-based access control works and implement security best practices for your content
 - **[Page-level access control](./page-permissions.md)** - Control access to individual pages and content sections based on user roles and permissions
 - **[Navigation permissions](./links-and-groups-permissions.md)** - Manage visibility of navigation links and groups to create role-specific navigation experiences
+- **[`access` configuration](../config/access/index.md)** - Explore access configuration options

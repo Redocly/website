@@ -15,16 +15,16 @@ description: This configuration option makes all your content private for non-au
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 {% $frontmatter.description %}
-Only authenticated users, who are verified through either Redocly or an identity provider (IdP) you [added in Reunite](../../reunite/organization/sso/add-idp.md) can access your project.
+Only authenticated users, who are verified through either Reunite or an identity provider (IdP) you [added in Reunite](../../reunite/organization/sso/add-idp.md) can access your project.
 
 {% admonition type="info" %}
-The **requiresLogin** option cannot be used in conjunction with the **rbac**.
-These configurations are mutually exclusive.
+The `requiresLogin` option cannot be used in conjunction with `rbac`.
+These options are mutually exclusive.
 {% /admonition %}
 
 ## Examples
 
-### Use the access object (recommended)
+### Through the `access` object
 
 The recommended way to configure `requiresLogin` is within the `access` object:
 
@@ -36,8 +36,8 @@ access:
 ### Root-level configuration (deprecated)
 
 {% admonition type="warning" %}
-**Deprecated:** Root-level `requiresLogin` is still supported for backward compatibility but will show deprecation warnings when used alongside the `access` object.
-Please migrate to the `access` object format.
+**Deprecated:** Root-level `requiresLogin` is still supported for backward compatibility but shows deprecation warnings when the `access` object is present.
+Redocly recommends migrating to the `access` object format.
 {% /admonition %}
 
 ```yaml {% title="redocly.yaml" %}
