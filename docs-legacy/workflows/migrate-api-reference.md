@@ -144,7 +144,7 @@ The following table shows how to update some commonly used configuration options
 
 - `htmlTemplate`
 - Instead of supplying a template, use the configuration options for the navbar, sidebar, and footer sections.
-  The [navigation documentation](/docs/realm/navigation/navigation) is a good starting point to find out more about each element.
+  The [navigation documentation](/docs/realm/navigation) is a good starting point to find out more about each element.
 
 ---
 

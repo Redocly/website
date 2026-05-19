@@ -651,7 +651,7 @@
 
   # Navigation redirects - Files moved to /navigation/
 '/docs/realm/author/how-to/configure-nav':
-  to: '/docs/realm/navigation/navigation'
+  to: '/docs/realm/navigation'
 '/docs/realm/author/how-to/configure-nav/navbar':
   to: '/docs/realm/config/navbar'
 '/docs/realm/author/how-to/configure-nav/sidebar':
@@ -673,7 +673,7 @@
 '/docs/realm/author/how-to/configure-nav/multiple-products':
   to: '/docs/realm/navigation/multi-product'
 '/docs/realm/author/how-to/configure-nav/navigation-buttons':
-  to: '/docs/realm/navigation/navigation'
+  to: '/docs/realm/config/navigation'
 '/docs/realm/author/how-to/configure-nav/footer':
   to: '/docs/realm/config/footer'
 '/docs/realm/author/how-to/configure-nav/toc':
