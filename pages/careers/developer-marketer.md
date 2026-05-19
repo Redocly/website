@@ -41,7 +41,7 @@ We're looking for a creative and curious technical content creator with a market
 #### First 30 days
 - Learn our products and audience.
 - Create your first video pair (demo + how-to).
-- Define your workflow for production and publishing.
+- Define your workflow for publishing.
 
 #### Next 30 days
 - Produce 4 more video pairs.
