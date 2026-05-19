@@ -46,7 +46,7 @@ We're looking for a creative and curious technical content creator with a market
 #### Next 30 days
 - Produce 4 more video pairs.
 - Add variation (subtitles, b-roll, improved structure).
-- Experiment with clips and shorts for social media.
+- Experiment with different content formats and hooks.
 
 #### Next 30 days
 - Continue to produce at least one video pair per week.
