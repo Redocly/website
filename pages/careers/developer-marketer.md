@@ -8,7 +8,7 @@ slug: /careers/developer-marketer
 ---
 
 #### About the role
-We're looking for a creative and curious video content creator with a marketing focus. Youʼll produce short product and feature videos, demos and how-tos that help developers discover, understand, and get the most out of our tools. 
+We're looking for a creative and curious video content creator with a marketing focus. Youʼll produce short product and feature videos, demos, and how-tos that help developers discover, understand, and get the most out of our tools. 
 
 #### Key Responsibilities
 - Collaborate with feature owners and engineering teams to understand each product feature deeply enough to explain it clearly on video.
@@ -27,7 +27,6 @@ We're looking for a creative and curious video content creator with a marketing 
 - Proficiency with professional video editing tools (ScreenFlow, Final Cut, Descript, CapCut or similar).
 - Ability to write short scripts and content outlines.
 - Comfortable tracking content metrics and drawing actionable conclusions.
-- Ability to maintain a simple content calendar.
 - Have strong written and spoken English.
 - Curiosity about technical products and willingness to deeply understand how features work.
 - Creativity, not afraid to make a mistake, ask questions, try and test hypotheses.
