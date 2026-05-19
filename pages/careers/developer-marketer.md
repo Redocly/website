@@ -44,6 +44,8 @@ We're looking for a creative and curious technical content creator with a market
 - Define your workflow for publishing.
 
 #### Next 30 days
+- Start collaborating with teams to identify upcoming features and use cases worth covering.
+- Help define tone, style, and best practices for technical video content.
 - Produce 4 more video pairs.
 - Add variation (subtitles, b-roll, improved structure).
 - Experiment with different content formats and hooks.
