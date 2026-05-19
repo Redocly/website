@@ -52,7 +52,8 @@ We're looking for a creative and curious technical content creator with a market
 - Continue to produce at least one video pair per week.
 - Start measuring impact (views, completion rates, trials).
 - Build a simple content calendar and feedback loop.
-- Plan the next wave of features to highlight.
+- Identify top-performing formats and topics.
+- Propose the next wave of educational, feature, and launch content.
 
 #### About Redocly
 Redocly builds tools that accelerate API ubiquity. Our platform helps teams create world-class developer experiences — from API documentation and catalogs to internal developer hubs and public showcases. We’re a globally distributed team that values clarity, autonomy, and craftsmanship. You’ll work alongside engineers, designers, and writers who love building tools that make technical work simpler and more joyful.
