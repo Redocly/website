@@ -305,6 +305,10 @@ openapi:
 search:
   engine: typesense
 
+# Custom plugin registration
+plugins:
+  - '@redocly/marketing-pages/mcp-tools/plugin.js'
+
 links:
   - href: https://redocly.com/docs/changelog/feed.xml
     rel: alternate
