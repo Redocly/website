@@ -47,6 +47,10 @@ authors:
     name: Roman Marshevskyi
     authorBIO: Director of Engineering, Redocly
     image: marshevskyi.png
+  - id: dmytro-ananskyi
+    name: Dmytro Ananskyi
+    authorBIO: Software Engineer, Redocly
+    image: ananskyi.png
 categories:
   - id: api-catalog
     label: API catalog
