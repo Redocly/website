@@ -145,6 +145,6 @@ With `$self` and clearer semantics, multi-document workflows become more reliabl
 
 For teams using Arazzo for documentation, testing, workflow execution, or generated examples, these changes make the description more expressive without changing the basic idea: capture the knowledge of how a task moves across APIs in a standard, machine-readable format.
 
-To learn more, visit the [what is Arazzo]('https://redocly.com/learn/arazzo/what-is-arazzo') or read the [latest Arazzo specification](https://spec.openapis.org/arazzo/latest.html).
+To learn more, visit the [what is Arazzo](https://redocly.com/learn/arazzo/what-is-arazzo) or read the [latest Arazzo specification](https://spec.openapis.org/arazzo/v1.1.0.html).
 
 Are you using [Respect](../pages/respect-cli/respect-cli.page.tsx), or would AsyncAPI support help your workflows? [Let us know](../pages/contact-us/contact-us.page.tsx) about your experience with Respect and whether you want us to support AsyncAPI.
