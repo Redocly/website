@@ -114,7 +114,9 @@ Arazzo 1.1 also refines expression typing.
 The Expression Type Object can now identify both the expression language and version.
 That matters for teams that need predictable behavior across tooling, especially when different versions of JSONPath or XPath may interpret expressions differently.
 
-## Align with OpenAPI 3.2 query strings
+## Align with OpenAPI 3.2
+
+### ASupport query strings
 
 OpenAPI 3.2 added support for describing an entire query string as a value.
 Arazzo 1.1 aligns with that model by adding `querystring` as an option for the Parameter Object `in` field.
@@ -129,7 +131,7 @@ That means workflows can pass complex query structures as one mapped value inste
 
 This is helpful for search, filtering, and other operations where the query string can be dynamic or composed from several workflow inputs.
 
-## Make cross-document references less fragile
+### Make cross-document references less fragile
 
 Arazzo descriptions can now define a root-level `$self` URI.
 When another Arazzo document references that description by URI, implementations use `$self` as the document identity if it is present.
@@ -155,14 +157,6 @@ They also make it easier for editors, linters, validators, generators, and workf
 ## Why this release matters
 
 Arazzo 1.1 keeps the specification focused on its core purpose: describing how APIs work together to complete a task.
-The difference is that "APIs working together" now covers more of the systems teams actually operate.
-
-With AsyncAPI support, Arazzo can describe workflows that include events and messages.
-With workflow composition, teams can reuse common flows.
-With selectors and expression versions, data mapping becomes more precise.
-With `$self` and clearer semantics, multi-document workflows become more reliable.
-
-For teams using Arazzo for documentation, testing, workflow execution, or generated examples, these changes make the description more expressive without changing the basic idea: capture the knowledge of how a task moves across APIs in a standard, machine-readable format.
 
 To learn more, visit the [what is Arazzo](https://redocly.com/learn/arazzo/what-is-arazzo) or read the [latest Arazzo specification](https://spec.openapis.org/arazzo/v1.1.0.html).
 
