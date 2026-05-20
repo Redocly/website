@@ -230,7 +230,7 @@ Note the `security` block listing `OAuth2` with the `menu:write` scope - that is
 
 {% step id="final-step-verify" heading="Verify the menu item" %}
 The final step lists menu items and asserts that the item created in the previous step exists.
-This uses outputs from `create-menu-item` directly in a request parameter and in a success criterion.
+This step uses outputs from `create-menu-item` directly in a request parameter and in a success criterion.
 {% /step %}
 
 Run the workflow to confirm that the authorization step, the protected POST request, and the verification step all pass:
