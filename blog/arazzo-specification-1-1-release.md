@@ -37,12 +37,11 @@ sourceDescriptions:
     type: asyncapi
 ```
 
-Example send + receive sequence:
+An async step example::
 
 ```yaml
 - stepId: placeOrder
-  description: Send an order message to the async channel
-  operationId: $sourceDescriptions.asyncOrderApi.placeOrder
+  operationId: $sourceDescriptions.CafeNotifications.placeOrder
   action: send
   parameters:
     - name: requestId
@@ -51,15 +50,11 @@ Example send + receive sequence:
   requestBody:
     payload:
       productId: $inputs.productDetails.productId
-      quantity: $inputs.productDetails.quantity
 
 - stepId: confirmOrder
-  description: Wait for an order confirmation message
-  operationId: $sourceDescriptions.asyncOrderApi.confirmOrder
+  operationId: $sourceDescriptions.CafeNotifications.confirmOrder
   action: receive
   correlationId: $inputs.correlationId
-  dependsOn:
-    - placeOrder
   timeout: 6000
   outputs:
     orderId: $message.payload.orderId
