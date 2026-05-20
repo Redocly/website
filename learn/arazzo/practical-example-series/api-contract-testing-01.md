@@ -24,7 +24,7 @@ Learn how to:
 ## The problem
 
 Many teams test APIs by writing test code in the same language as the API implementation.
-This can work well for a single service, but it becomes harder to maintain in systems with multiple products, repositories, and programming languages.
+This approach can work well for a single service, but it becomes harder to maintain in systems with multiple products, repositories, and programming languages.
 
 Another common challenge is keeping API documentation aligned with actual API behavior.
 Developers may update an endpoint but forget to update its OpenAPI description, or the documentation may change without the implementation following it.
@@ -76,7 +76,7 @@ npx @redocly/cli lint redocly-cafe-api.arazzo.yaml
 
 The tool informs you that the description is valid.
 
-Now switch to `redocly-cafe-api.arazzo.yaml` in the right panel and walk through it section by section.
+Switch to `redocly-cafe-api.arazzo.yaml` in the right panel and walk through it section by section.
 
 {% step id="arazzo-source-descriptions" heading="Connect an OpenAPI source" %}
 `sourceDescriptions` defines the connection to one or more OpenAPI files.
@@ -265,7 +265,8 @@ npx @redocly/cli respect redocly-cafe-api.arazzo.yaml
 ```
 
 After the schema is updated, the response body matches the documented contract.
-This demonstrates the core value of contract testing with Respect: when the API and its OpenAPI description drift apart, the workflow highlights the mismatch immediately.
+
+This example demonstrates the core value of contract testing with Respect: when the API and its OpenAPI description drift apart, the workflow highlights the mismatch immediately.
 
 ## Practical applications
 

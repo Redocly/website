@@ -2,7 +2,7 @@ arazzo: 1.0.1
 info:
   title: Redocly Cafe API - Authorization
   version: 1.0.0
-  description: This is the API for the Redocly Cafe OAuth2 client registration.
+  description: This is the API workflow for the Redocly Cafe OAuth2 client registration.
 # @chunk {"steps": ["auth-sources"]}
 sourceDescriptions:
   - name: redocly-cafe-api

@@ -2,7 +2,7 @@ arazzo: 1.0.1
 info:
   title: Redocly Cafe API - Products
   version: 1.0.0
-  description: This is the API for the Redocly Cafe Products.
+  description: This is the API workflow for the Redocly Cafe Products.
 # @chunk {"steps": ["final-sources"]}
 sourceDescriptions:
   - name: redocly-cafe-api
@@ -55,7 +55,7 @@ workflows:
       # @chunk {"steps": ["final-step-verify"]}
       - stepId: verify-menu-item
         operationId: $sourceDescriptions.redocly-cafe-api.listMenuItems
-        description: This to verify created menu item
+        description: Verifies the created menu item
         parameters:
           - in: query
             name: filter

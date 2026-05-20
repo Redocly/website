@@ -20,7 +20,7 @@ workflows:
         # @chunk {"steps": ["arazzo-operation-id", "arazzo-step-operation"]}
         operationId: $sourceDescriptions.redocly-cafe-api.listMenuItems
         # @chunk-end
-        description: This step gets all products.
+        description: This step retrieves all products.
         # @chunk {"steps": ["arazzo-parameters"]}
         parameters:
           - in: query

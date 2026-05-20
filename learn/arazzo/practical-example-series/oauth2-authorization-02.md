@@ -191,9 +191,7 @@ It contains the `access_token` used by the final workflow:
 ## Step 3. Call the protected endpoint
 
 Switch to `redocly-cafe-api.arazzo.yaml` in the right panel.
-This is the workflow you run in CI: it authorizes, creates a menu item, and then verifies the creation.
-
-The important handoff is:
+This is the workflow you run in CI:
 
 - The `authorize` step calls the reusable authorization workflow.
 - The `create-menu-item` step reads `access_token` and `client_id` from the `authorize` step outputs.
@@ -206,7 +204,7 @@ The final file references two sources: the OpenAPI description for the operation
 {% step id="final-step-authorize" heading="Reuse the authorization workflow" %}
 The first step calls `authorize-with-client_credentials` from the authorization file and stores the access token and client id locally.
 
-This is exactly the same reuse pattern used inside `authorization.arazzo.yaml`, but now applied one level higher.
+This reuse pattern is exactly the same as the one inside `authorization.arazzo.yaml`, but now applied one level higher.
 {% /step %}
 
 {% step id="final-step-create" heading="Create a menu item" %}
@@ -246,6 +244,6 @@ npx @redocly/cli respect redocly-cafe-api.arazzo.yaml --verbose
 Respect extensions make it possible to describe authorized API requests as part of an Arazzo workflow.
 
 By splitting the process into smaller workflows with outputs, you can reuse authentication and authorization steps across multiple API contract tests.
-This keeps complex workflows easier to maintain while still testing realistic protected API behavior.
+Reuse keeps complex workflows easier to maintain while still testing realistic protected API behavior.
 
 {% /code-walkthrough %}
