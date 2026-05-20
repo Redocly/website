@@ -11,21 +11,21 @@
   ]
 %}
 
-# Respect Practical Example Series: OAuth2 Authorization with Arazzo
+# OAuth2 Authorization with Arazzo with Redocly Respect
 
-This article shows how to use Respect, powered by Arazzo workflows, to test API endpoints that require OAuth2 authorization.
-You will learn how to define reusable workflows in separate files, pass values between workflows, and use those values to authorize API requests.
+Use Respect powered by Arazzo workflows to test API endpoints that require OAuth2 authorization.
+Learn how to define reusable workflows in separate files, pass values between workflows, and use those values to authorize API requests.
 
-You will cover the following topics:
+You are going to:
 
-- Creating reusable workflows with exposed outputs.
-- Authorizing API requests with OAuth2.
-- Using the `x-security` Respect extension with a protected API operation.
+- Create reusable workflows with exposed outputs.
+- Authorize API requests with OAuth2.
+- Use the `x-security` Respect extension with a protected API operation.
 
 ## The problem
 
-In the [previous article](./api-contract-testing-01.md), you learned how to execute a simple API contract test with [Redocly Respect](https://redocly.com/respect-cli).
-Now, let us move to a more realistic workflow: calling protected API endpoints.
+In the [Test API contracts using Respect](./api-contract-testing-01.md) tutorial, you learned how to execute an API contract test with [Redocly Respect](https://redocly.com/respect-cli).
+Let's create a more realistic workflow: calling protected API endpoints.
 
 Real APIs are rarely open to public access.
 They usually require an authentication or authorization flow before clients can read or change protected resources.
@@ -36,7 +36,8 @@ Respect supports this use case with the [`x-security` extension](https://redocly
 ## Prerequisites
 
 - Familiarity with the [`x-security` extension](https://redocly.com/docs/respect/extensions/x-security#x-security-extension).
-- An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API description.
+- An API described with OpenAPI.
+    The examples use a modified version of the Redocly Cafe API description.
 
 ## Explore the OpenAPI description
 
@@ -77,7 +78,7 @@ Operations in that source are accessible through `$sourceDescriptions.redocly-ca
 {% /step %}
 
 {% step id="register-workflow" heading="Define the registration workflow" %}
-The file declares one workflow, `register-oauth2-client-workflow`, that registers a new client and exposes its credentials as workflow-level outputs.
+The file declares one workflow, `register-oauth2-client-workflow` that registers a new client and exposes its credentials as workflow-level outputs.
 {% /step %}
 
 {% step id="register-step" heading="A single registration step" %}
@@ -105,7 +106,7 @@ Other steps in the same workflow can reference them through `$steps.register-oau
 
 {% step id="register-workflow-outputs" heading="Expose workflow outputs" %}
 To make these values available to **other** Arazzo files that reuse this workflow, the same values are also exposed as workflow-level `outputs`.
-That promotion is the bridge between a reusable workflow and the workflows that consume it.
+This promotion is the bridge between a reusable workflow and the workflows that consume it.
 {% /step %}
 
 Execute the file with Redocly CLI to inspect the API response and confirm which values are mapped to workflow outputs:
@@ -120,7 +121,7 @@ Switch to `authorization.arazzo.yaml` in the right panel.
 This workflow exchanges the registered client for an access token in two steps:
 
 1. Reuse `register-oauth2-client-workflow` to get a `clientId` and `clientSecret`.
-2. Call the token endpoint and expose the returned access token as a workflow output.
+1. Call the token endpoint and expose the returned access token as a workflow output.
 
 {% step id="auth-sources" heading="Multiple source descriptions" %}
 This file declares two sources: the OpenAPI description (`redocly-cafe-api`) and the previous Arazzo file (`register-oauth2`).
@@ -171,7 +172,8 @@ Execute this file:
 npx @redocly/cli respect authorization.arazzo.yaml --verbose
 ```
 
-Inspect the response body of the last step. It should contain the `access_token` that the final workflow will use:
+Inspect the response body of the last step.
+It contains the `access_token` used by the final workflow:
 
 ```bash
     Response Body:

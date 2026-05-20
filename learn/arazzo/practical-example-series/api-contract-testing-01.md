@@ -9,17 +9,17 @@
   ]
 %}
 
-# Respect Practical Example Series: API Contract Testing with Respect
+# Test API contracts using Redocly Respect
 
-This article shows how to use Respect, powered by Arazzo workflows, for API contract testing.
+Use Respect, powered by Arazzo workflows, for API contract testing.
 
-You will cover the following topics:
+Learn how to:
 
-- Automating repetitive API workflows.
-- Adding API contract tests to CI/CD routines.
-- Keeping API documentation synchronized with actual API behavior.
-- Sharing described workflows across teams.
-- Using the open-source [Redocly CLI](https://www.npmjs.com/package/@redocly/cli) to execute Arazzo workflows, inspect contract test results, and fix mismatches between the OpenAPI description and the actual API response.
+- Automate repetitive API workflows.
+- Add API contract tests to CI/CD routines.
+- Keep API documentation synchronized with actual API behavior.
+- Share described workflows across teams.
+- Use the open-source [Redocly CLI](https://www.npmjs.com/package/@redocly/cli) to execute Arazzo workflows, inspect contract test results, and fix mismatches between the OpenAPI description and the actual API response.
 
 ## The problem
 
@@ -31,16 +31,19 @@ Developers may update an endpoint but forget to update its OpenAPI description, 
 Over time, these small differences make it harder for QA engineers, developers, and technical writers to trust the API contract.
 
 Respect helps address this problem by executing Arazzo workflows against a running API and validating the responses against the connected OpenAPI description.
-This makes API contract testing more declarative and easier to share across teams.
+This strategy makes API contract testing more declarative and easier to share across teams.
 
 ## Prerequisites
 
 To follow the examples in this article, you need:
 
-- Basic familiarity with [Arazzo](https://redocly.com/learn/arazzo/what-is-arazzo).
-- An API described with OpenAPI. The examples use a modified version of the Redocly Cafe API description.
+- Basic familiarity with [Arazzo](../what-is-arazzo).
+- An API described with OpenAPI.
+    The examples use a modified version of the Redocly Cafe API description.
 
-> **Important:** The API description used here intentionally contains a discrepancy for demonstration purposes.
+{% admonition type="info" name="Tutorial content" %}
+ The API description used here intentionally contains a discrepancy for demonstration purposes.
+{% /admonition %}
 
 ## Explore the OpenAPI description
 
@@ -71,7 +74,7 @@ Whichever approach you choose, validate the Arazzo file with Redocly CLI:
 npx @redocly/cli lint redocly-cafe-api.arazzo.yaml
 ```
 
-The tool will let you know that the description is valid.
+The tool informs you that the description is valid.
 
 Now switch to `redocly-cafe-api.arazzo.yaml` in the right panel and walk through it section by section.
 
@@ -276,7 +279,8 @@ After you create and verify an Arazzo workflow locally, you can use it in severa
   ```
 
 - Automate routine API workflows for development and QA tasks.
-- Describe important application flows with Arazzo and share them with team members. Non-technical users can also use visualization tools like Replay to understand the workflows.
+- Describe important application flows with Arazzo and share them with team members.
+    Non-technical users can also use visualization tools like Replay to understand the workflows.
 
 ## Summary
 
