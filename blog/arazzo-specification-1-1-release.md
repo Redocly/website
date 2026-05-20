@@ -37,6 +37,34 @@ sourceDescriptions:
     type: asyncapi
 ```
 
+Example send + receive sequence:
+
+```yaml
+- stepId: placeOrder
+  description: Send an order message to the async channel
+  operationId: $sourceDescriptions.asyncOrderApi.placeOrder
+  action: send
+  parameters:
+    - name: requestId
+      in: header
+      value: $inputs.correlationId
+  requestBody:
+    payload:
+      productId: $inputs.productDetails.productId
+      quantity: $inputs.productDetails.quantity
+
+- stepId: confirmOrder
+  description: Wait for an order confirmation message
+  operationId: $sourceDescriptions.asyncOrderApi.confirmOrder
+  action: receive
+  correlationId: $inputs.correlationId
+  dependsOn:
+    - placeOrder
+  timeout: 6000
+  outputs:
+    orderId: $message.payload.orderId
+```
+
 This makes it possible to describe a workflow that starts with an HTTP request, publishes to an event bus, waits for a response message, and then uses that response in a later step.
 
 Two additions make those event-driven workflows easier to reason about:
