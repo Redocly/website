@@ -116,7 +116,7 @@ That matters for teams that need predictable behavior across tooling, especially
 
 ## Align with OpenAPI 3.2
 
-### Add support query strings
+### Add support for query strings
 
 OpenAPI 3.2 added support for describing an entire query string as a value.
 Arazzo 1.1 aligns with that model by adding `querystring` as an option for the Parameter Object `in` field.
