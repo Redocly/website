@@ -92,6 +92,9 @@ parameters:
     value: $inputs.sessionRenewalToken
 ```
 
+In this example, the values under `parameters` are passed as inputs to the `renewCustomerSession` workflow.
+So `sessionRenewalToken` becomes an input value available inside that called workflow.
+
 The result is smaller workflow files and a cleaner separation between the business workflow and the support workflows around it.
 
 ## Select the exact data you need
@@ -149,14 +152,7 @@ For larger API programs, stable identity is important because workflow reuse onl
 
 ## Clearer rules for implementers
 
-Not every important specification change adds a new field.
-Some changes make the existing model easier to implement consistently.
-
-Arazzo 1.1 adds clarification in a few areas that matter for tool builders and workflow authors:
-
-- A complete ABNF grammar for runtime expressions.
-- Defined ordering for resolving Source Description Objects.
-- Explicit truthy and falsy evaluation semantics for success criteria.
+Arazzo 1.1 adds clarification in a few areas that matter for tool builders and workflow authors: clarified grammar for runtime expressions, defined ordering for resolving Source Description Objects, explicitly describe truthy and falsy success criteria evaluation semantics.
 
 These details reduce guesswork.
 They also make it easier for editors, linters, validators, generators, and workflow execution tools to agree on how the same Arazzo description should behave.
@@ -175,4 +171,4 @@ For teams using Arazzo for documentation, testing, workflow execution, or genera
 
 To learn more, visit the [what is Arazzo](https://redocly.com/learn/arazzo/what-is-arazzo) or read the [latest Arazzo specification](https://spec.openapis.org/arazzo/v1.1.0.html).
 
-Are you using [Respect](../pages/respect-cli/respect-cli.page.tsx), or would AsyncAPI support help your workflows? [Let us know](../pages/contact-us/contact-us.page.tsx) about your experience with Respect and whether you want us to support AsyncAPI.
+Are you using [Respect](../pages/respect-cli/respect-cli.page.tsx), or would AsyncAPI support help your workflows? [Let us know](https://github.com/Redocly/redocly-cli/issues) about your experience with Respect and whether you want us to support AsyncAPI.
