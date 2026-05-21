@@ -156,6 +156,6 @@ They also make it easier for editors, linters, validators, generators, and workf
 
 Arazzo 1.1 keeps the specification focused on its core purpose: describing how APIs work together to complete a task.
 
-To learn more, visit the [what is Arazzo](../learn/arazzo/what-is-arazzo) or read the [Arazzo specification 1.1](https://spec.openapis.org/arazzo/v1.1.0.html).
+To learn more, visit the [what is Arazzo](../learn/arazzo/what-is-arazzo.md) or read the [Arazzo specification 1.1](https://spec.openapis.org/arazzo/v1.1.0.html).
 
 Are you using [Respect](../pages/respect-cli/respect-cli.page.tsx), or would AsyncAPI support help your workflows? [Let us know](https://github.com/Redocly/redocly-cli/issues) about your experience with Respect and whether you want us to support AsyncAPI.
