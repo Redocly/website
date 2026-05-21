@@ -116,15 +116,13 @@ The table now displays entries for the selected period.
 
 ## Export feedback data
 
-You can download a CSV of the feedback data by date range to share with others.
+You can export feedback data that matches the current table view, including active filters, search query, and sorting.
+Exports are available in CSV and JSON formats.
 
-To export a CSV of feedback data:
+To export feedback data:
 
 1. In the top-right corner of the page, click **Export**.
-1. Select a period for which you want to export feedback:
-    - Click the date on the left and select a start date from the calendar, then select an end date.
-    - Click one of the available periods.
-1. Click **OK**.
+1. Select **Export as CSV** or **Export as JSON**.
 
 The file is saved to your device.
 
