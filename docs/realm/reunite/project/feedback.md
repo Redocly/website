@@ -33,7 +33,7 @@ The **Page feedback** tab contains a table with the data collected from the feed
 - Select an item in the table, to view detailed feedback information, including the following additional data:
   - A clickable HTTPS link to the **Page** where the feedback form was submitted.
   - The **Location**, or the language-specific highlighted code snippet where the issue was reported.
-  - Input to add/update an **Internal comment**.
+  - Input to add/update an **Internal comment** (requires `project.feedback.update` permission).
   - **Additional metadata** in JSON format including the platform and user agent information.
   - The reasons the user selected after the initial feedback form was submitted.
 
@@ -53,13 +53,25 @@ The **Code reports** tab contains a table with the data collected from the [code
 - Select an item on the table, to view detailed code reports information, including the following additional data:
   - A clickable HTTPS link to the **Page** where the feedback form was submitted.
   - The **Location**, or the language-specific highlighted code snippet where the issue was reported.
-  - Input to add or update an **Internal comment**.
+  - Input to add or update an **Internal comment** (requires `project.feedback.update` permission).
   - **Additional metadata** in JSON format including the platform and user agent information.
+
+## Permissions
+
+Viewing feedback requires the `project.feedback.read` permission.
+
+Updating feedback status or internal comments requires `project.feedback.update`.
+
+Deleting feedback requires `project.feedback.delete` permission.
+Deletion is available through the API only; the Reunite UI does not include a delete action.
+
+Users with read-only access can view feedback and status, but cannot change status or add internal comments.
 
 ## Organize feedback
 
 All feedback form data's initial status is set to **New**.
-You can update each feedback entry's status to:
+
+Users with `project.feedback.update` permission can update each feedback entry's status to:
 - **In Review**
 - **Resolved**
 - **Archived**
@@ -77,9 +89,11 @@ The link to the feedback entry is copied to your clipboard.
 
 ### Update feedback status
 
-To update the status:
+To update the status (requires `project.feedback.update` permission):
 
 - Click the chosen entry's status and from the drop-down list, select a new status.
+
+Users with read-only access see the current status but cannot change it.
 
 ### Filter feedback by status
 
