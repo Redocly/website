@@ -45848,7 +45848,6 @@ reunite:
     changes:
       minor: []
       patch:
-        - 'Updated the **Teams** page to display automated role-based teams: `owners`, `members`, `billing`, and `viewers`.'
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.31.2`.
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.31.0`.
     dependencies: {}
