@@ -135,7 +135,7 @@ Use automation to make agreed standards unavoidable, workshops to reach agreemen
 
 ## The balance
 
-A thin checklist, a reviewed redocly.yaml, and CI that runs the same rules on every service turns your style guide from shelfware into a default developers meet before merge.
+A thin checklist, a reviewed `redocly.yaml`, and CI that runs the same rules on every service turns your style guide from shelfware into a default developers meet before merge.
 
 ## Learn more
 

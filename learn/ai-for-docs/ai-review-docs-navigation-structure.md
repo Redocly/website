@@ -55,7 +55,6 @@ Orphan pages with no parent group show up when teams add files faster than they 
 
 The learn article on reviews uses a flat tree where foundational topics compete with reference material:
 
-```
 docs/
 ├── getting-started/
 ├── api-reference/
@@ -68,7 +67,6 @@ docs/
 
 A tighter shape for the same content groups onboarding, nests errors with reference, and tuck examples under guides:
 
-```
 docs/
 ├── getting-started/
 │   ├── authentication.md
