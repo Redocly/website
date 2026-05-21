@@ -16,7 +16,7 @@ The Arazzo Specification 1.1 moves API workflow descriptions closer to the way m
 API workflows are rarely a single request followed by a single response.
 They often involve several APIs, events, retries, shared data, and rules for deciding whether a workflow should continue.
 
-Arazzo already gave teams a standard way to describe multi-step API workflows.
+Right from the beginning, Arazzo gave teams a standard way to describe multi-step API workflows.
 Version 1.1 expands that model so workflows can cross more boundaries, compose more cleanly, and extract data more precisely.
 
 ## From HTTP-only flows to mixed API workflows
