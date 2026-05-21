@@ -142,6 +142,66 @@ export const cards = [
     items: [
       { title: 'AI for Modern Documentation', link: '/learn/ai-for-docs/ai-modern-api-docs' },
       { title: 'AI for Reviews', link: '/learn/ai-for-docs/ai-reviews' },
+      {
+        title: 'AI for authentication and authorization patterns',
+        link: '/learn/ai-for-docs/ai-auth-authorization-patterns',
+      },
+      {
+        title: 'Use AI to review API design for gaps and inconsistencies',
+        link: '/learn/ai-for-docs/ai-review-api-design-gaps-inconsistencies',
+      },
+      {
+        title: 'Use AI to review API design for backward compatibility risks',
+        link: '/learn/ai-for-docs/ai-api-design-backward-compatibility-risks',
+      },
+      {
+        title: 'Use AI to generate first drafts from your OpenAPI spec',
+        link: '/learn/ai-for-docs/ai-generate-first-drafts-from-openapi',
+      },
+      {
+        title: 'Use AI to enforce tone and style consistency across docs',
+        link: '/learn/ai-for-docs/ai-enforce-tone-style-consistency-across-docs',
+      },
+      {
+        title: 'Use AI to review code examples for completeness and accuracy',
+        link: '/learn/ai-for-docs/ai-review-code-examples-completeness-accuracy',
+      },
+      {
+        title: 'Use AI to automate documentation reviews in your PR workflow',
+        link: '/learn/ai-for-docs/ai-automate-documentation-reviews-pr-workflow',
+      },
+      {
+        title: 'Use AI to review your docs navigation structure',
+        link: '/learn/ai-for-docs/ai-review-docs-navigation-structure',
+      },
+      {
+        title: 'Use AI to enforce your API style guide at scale',
+        link: '/learn/ai-for-docs/ai-enforce-api-style-guide-at-scale',
+      },
+      {
+        title: 'Use AI to find gaps in your documentation coverage',
+        link: '/learn/ai-for-docs/ai-find-gaps-documentation-coverage',
+      },
+      {
+        title: 'Use AI to detect drift between your docs and your live API',
+        link: '/learn/ai-for-docs/ai-detect-drift-docs-live-api',
+      },
+      {
+        title: 'Use AI to find duplicate and underused APIs in your codebase',
+        link: '/learn/ai-for-docs/ai-find-duplicate-underused-apis',
+      },
+      {
+        title: 'Use AI to build a searchable API catalog for your team',
+        link: '/learn/ai-for-docs/ai-build-searchable-api-catalog',
+      },
+      {
+        title: 'Use AI to help developers find and understand your APIs faster',
+        link: '/learn/ai-for-docs/ai-help-developers-find-understand-apis',
+      },
+      {
+        title: 'Use AI to check terminology consistency across your docs',
+        link: '/learn/ai-for-docs/ai-check-terminology-consistency-across-docs',
+      },
       { title: 'AI as a usability tester', link: '/learn/ai-for-docs/ai-usability-testing' },
     ],
   },
