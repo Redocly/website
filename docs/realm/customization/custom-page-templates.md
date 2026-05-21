@@ -54,7 +54,14 @@ export default function BlogPost({ pageProps, children }) {
 }
 ```
 
-## How to apply custom page template
+## How to apply a custom page template
+
+You can assign a template in one of two ways:
+
+1. **Front matter** — set `template` on an individual Markdown page.
+1. **`markdown.template`** — map patterns to template paths in the root `redocly.yaml` file.
+
+### Apply a template to a single page using frontmatter
 
 In your blog file use `template` property of frontmatter to apply custom template.
 
@@ -85,6 +92,55 @@ We searched the world far and wide for marketing experts and determined the fast
 ```
 
 From this example the `Redocly as Remockly` blog post will use custom template located at `@theme/Templates/BlogPost` and other data like `author`, `date`, `timeToRead`, etc. will be passed to that template in `pageProps.frontmatter` property (see example of custom template above).
+
+### Apply templates in redocly.yaml
+
+Use `markdown.template` in the root `redocly.yaml` file to assign templates to one or more Markdown files without editing each page.
+
+Each key can target files in three ways:
+
+
+{% table %}
+
+- Pattern type
+- Example key
+- Matches
+
+---
+
+- File path
+- `'demos/new-api.md'`
+- A single Markdown file
+
+---
+
+- Folder path
+- `'blog/drafts'`
+- All Markdown files in that folder and its subfolders
+
+---
+
+- Glob
+- `'blog/**'`
+- Files that match the glob pattern
+
+{% /table %}
+
+When multiple patterns match a file, the most specific pattern is applied.
+
+```yaml {% title="redocly.yaml" %}
+markdown:
+  template:
+    'blog/**': './@theme/Templates/BlogPost'
+    'blog/drafts': './@theme/Templates/Draft'
+    'demos/new-api.md': './@theme/Templates/SimpleApi'
+```
+
+In this example:
+
+- Every Markdown file under `blog/` uses the `BlogPost` template.
+- Files under `blog/drafts/` use the `Draft` template instead.
+- Only `demos/new-api.md` uses the `SimpleApi` template.
 
 ### Examples
 

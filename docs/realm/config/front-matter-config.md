@@ -50,6 +50,7 @@ These options are available exclusively in front matter:
 - Path to a custom template for the Markdown page.
   Omit file extensions.
   Use relative paths for local templates and absolute paths for templates from node modules.
+  Overrides a template assigned by [`markdown.template`](./markdown.md#template) in `redocly.yaml`.
   See [Override a page template](../customization/custom-page-templates.md) for details.
 
 ---
@@ -169,7 +170,7 @@ This configuration:
 slug:
   - /pricing
   - /subscribe
-template: '@theme/Templates/BlogPost'
+template: './@theme/Templates/BlogPost'
 colorMode:
   hide: true
 ---

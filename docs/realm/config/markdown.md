@@ -39,6 +39,14 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 
 ---
 
+- template
+- object
+- Map file or folder paths or glob patterns to custom page template paths.
+  Use this option to assign templates to Markdown files without adding `template` to each file's front matter.
+  Define `template` only in the root `redocly.yaml` file.
+
+---
+
 - lastUpdatedBlock
 - [Last updated object](#last-updated-object)
 - Configures the "Last updated..." string that renders at the top of pages.
@@ -166,6 +174,10 @@ markdown:
   editPage:
     baseUrl: 'https://github.com/Redocly/redocly-cli/tree/main/docs'
     hide: false
+  template:
+    'blog/**': './@theme/Templates/BlogPost'
+    'blog/drafts': './@theme/Templates/Draft'
+    'demos/new-api.md': './@theme/Templates/SimpleApi'
 ```
 
 When needed, add page-level overrides in the front matter of markdown pages, as in the following example:
@@ -190,6 +202,7 @@ Amazing markdown content...
 
 ## Resources
 
+- **[Override a page template](../customization/custom-page-templates.md)** - Create custom page templates and assign them per file, folder, or glob pattern
 - **[Breadcrumbs configuration](./breadcrumbs.md)** - Configure page breadcrumbs to improve navigation and user orientation within your documentation
 - **[Links configuration](./links.md)** - Configure link behavior and styling for consistent navigation and external link handling
 - **[Front matter configuration](./front-matter-config.md)** - Use front matter to configure Markdown options on individual pages for granular control
