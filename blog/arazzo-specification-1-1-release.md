@@ -1,6 +1,6 @@
 ---
 template: ../@theme/templates/BlogPost
-title: Arazzo Specification 1.1 Release
+title: Arazzo 1.1 Release
 description: Arazzo 1.1 adds AsyncAPI support, workflow composition, selectors, identity-based references, and clearer runtime behavior.
 seo:
   title: Arazzo Specification 1.1 Release
