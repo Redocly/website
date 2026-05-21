@@ -45858,13 +45858,6 @@ reunite:
       patch:
         - 'Updated the **Teams** page to display automated role-based teams: `owners`, `members`, `billing`, and `viewers`.'
     dependencies: {}
-  v2026-05-21.3:
-    timestamp: 1779372343000
-    changes:
-      minor: []
-      patch:
-        - Fixed `.adoc` and `.asciidoc` files not opening in the Reunite editor.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
