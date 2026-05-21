@@ -12,7 +12,7 @@ categories:
   - redocly:product-updates
 ---
 
-The Arazzo Specification 1.1 release moves API workflow descriptions closer to the way modern systems actually behave.
+The Arazzo Specification 1.1 moves API workflow descriptions closer to the way modern systems actually behave.
 API workflows are rarely a single request followed by a single response.
 They often involve several APIs, events, retries, shared data, and rules for deciding whether a workflow should continue.
 
