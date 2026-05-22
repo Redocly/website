@@ -342,10 +342,8 @@
   page: navigation/index.md
   label: Navigation elements
   items:
-    - page: navigation/navigation.md
-      label: Navigation elements overview
     - page: navigation/sidebars.md
-      label: Sidebar reference
+      label: Sidebars
     - page: navigation/multi-product.md
       label: Multi-product
     - page: navigation/search.md
