@@ -1,3 +1,36 @@
 - page: ai-modern-api-docs.md
+  label: How AI fits into modern API documentation
 - page: ai-reviews.md
+  label: Use AI to accelerate and improve reviews
+- page: ai-auth-authorization-patterns.md
+  label: Use AI to check authentication and authorization patterns
+- page: ai-review-api-design-gaps-inconsistencies.md
+  label: Use AI to review API design for gaps and inconsistencies
+- page: ai-api-design-backward-compatibility-risks.md
+  label: Use AI to review API design for backward compatibility risks
+- page: ai-generate-first-drafts-from-openapi.md
+  label: Use AI to generate first drafts from your OpenAPI spec
+- page: ai-enforce-tone-style-consistency-across-docs.md
+  label: Use AI to enforce tone and style consistency across docs
+- page: ai-review-code-examples-completeness-accuracy.md
+  label: Use AI to review code examples for completeness and accuracy
+- page: ai-automate-documentation-reviews-pr-workflow.md
+  label: Use AI to automate documentation reviews in your PR workflow
+- page: ai-review-docs-navigation-structure.md
+  label: Use AI to review your docs navigation structure
+- page: ai-enforce-api-style-guide-at-scale.md
+  label: Use AI to enforce your API style guide at scale
+- page: ai-find-gaps-documentation-coverage.md
+  label: Use AI to find gaps in your documentation coverage
+- page: ai-detect-drift-docs-live-api.md
+  label: Use AI to detect drift between your docs and your live API
+- page: ai-find-duplicate-underused-apis.md
+  label: Use AI to find duplicate and underused APIs in your codebase
+- page: ai-build-searchable-api-catalog.md
+  label: Use AI to build a searchable API catalog for your team
+- page: ai-help-developers-find-understand-apis.md
+  label: Use AI to help developers find and understand your APIs faster
+- page: ai-check-terminology-consistency-across-docs.md
+  label: Use AI to check terminology consistency across your docs
 - page: ai-usability-testing.md
+  label: Use AI as a usability tester

@@ -30,7 +30,7 @@ Instead of:
 > "Use active voice. Passive voice makes documentation harder to read and can obscure who is responsible for actions. Technical documentation should clearly indicate the actor performing each action..."
 
 Use:
-```markdown
+```markdown {% process=false %}
 - [ ] Active voice (e.g., "The API returns..." not "Data is returned...")
 - [ ] Present tense for current features
 - [ ] Use "you" to address the reader
@@ -69,7 +69,7 @@ Before writing any code, share your API design (OpenAPI description, schema draf
 
 Generic reviews aren't helpful. You need to give AI enough context about your domain:
 
-```markdown
+```markdown {% process=false %}
 Context: We're building a library management system. 
 Users are librarians and patrons. 
 Key workflows: checking out books, managing holds, handling fines.
@@ -89,7 +89,7 @@ I've used this successfully to find **entire sections of forgotten domain areas*
 
 ### Example prompt
 
-```markdown
+```markdown {% process=false %}
 You are reviewing an API design for [domain description].
 
 Please identify:
@@ -205,7 +205,7 @@ Then ask: Does the structure and content support easy task completion? What coul
 
 ### Example prompt
 
-```markdown
+```markdown {% process=false %}
 Users need to accomplish these tasks:
 1. Authenticate with the API
 2. Create a new user

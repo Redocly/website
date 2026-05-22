@@ -24,9 +24,9 @@
   <rect x="0" y="0" width="378" height="112" rx="12" fill="url(#bg)"/>
   <rect x="0" y="0" width="378" height="112" rx="12" fill="url(#grid)" opacity="0.06"/>
 
-  <circle cx="70" cy="30" r="44" fill="url(#accent)" opacity="0.28" filter="url(#softGlow)"/>
-  <circle cx="320" cy="92" r="50" fill="url(#accent)" opacity="0.22" filter="url(#softGlow)"/>
-  <circle cx="300" cy="22" r="28" fill="url(#accent)" opacity="0.18" filter="url(#softGlow)"/>
+  <circle cx="70" cy="18" r="44" fill="url(#accent)" opacity="0.28" filter="url(#softGlow)"/>
+  <circle cx="322" cy="96" r="48" fill="url(#accent)" opacity="0.22" filter="url(#softGlow)"/>
+  <circle cx="304" cy="22" r="28" fill="url(#accent)" opacity="0.18" filter="url(#softGlow)"/>
 
   <g transform="translate(24, 22)">
     <rect rx="6" ry="6" width="92" height="18" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)"/>
