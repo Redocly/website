@@ -1,0 +1,392 @@
+openapi: 3.1.0
+info:
+  title: Redocly Cafe
+  version: 1.0.0
+  contact:
+    email: team@redocly.com
+    url: https://redocly.com/contact-us/
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  termsOfService: https://redocly.com/subscription-agreement
+servers:
+  - url: https://cafe.cloud.redocly.com
+tags:
+  - name: Authorization
+    description: Create a client to demo the API.
+  - name: Products
+    description: Operations related to products.
+paths:
+  /menu:
+    get:
+      tags:
+        - Products
+      summary: List all menu items
+      operationId: listMenuItems
+      parameters:
+        - $ref: '#/components/parameters/Filter'
+      security: []
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MenuItemList'
+        '400':
+          description: Bad request - invalid input parameters.
+        '500':
+          description: Internal server error.
+    # @chunk {"steps": ["openapi-create-menu", "final-create-operation"]}
+    post:
+      tags:
+        - Products
+      summary: Create menu item
+      operationId: createMenuItem
+      security:
+        - OAuth2:
+            - menu:write
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MenuItem'
+      responses:
+        '201':
+          description: Menu item created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MenuItem'
+        '400':
+          description: Bad request - invalid input parameters.
+        '401':
+          description: Unauthorized - authorization required.
+        '403':
+          description: Forbidden - insufficient permissions.
+        '500':
+          description: Internal server error.
+    # @chunk-end
+  /menu/{menuItemId}:
+    parameters:
+      - $ref: '#/components/parameters/MenuItemId'
+    delete:
+      tags:
+        - Products
+      summary: Delete a menu item
+      operationId: deleteMenuItem
+      security:
+        - OAuth2:
+            - menu:write
+      responses:
+        '204':
+          description: Menu item deleted successfully.
+        '400':
+          description: Bad request - invalid input parameters.
+        '401':
+          description: Unauthorized - authorization required.
+        '403':
+          description: Forbidden - insufficient permissions.
+        '404':
+          description: Resource not found.
+        '500':
+          description: Internal server error.
+  # @chunk {"steps": ["openapi-oauth-register", "register-step-operation"]}
+  /oauth2/register:
+    post:
+      tags:
+        - Authorization
+      summary: Create OAuth2 client
+      operationId: registerOAuth2Client
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterClientObject'
+      responses:
+        '201':
+          description: OAuth2 client registered successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OAuth2Client'
+        '400':
+          description: Bad request - invalid input parameters.
+        '401':
+          description: Unauthorized - authorization required.
+        '500':
+          description: Internal server error.
+  # @chunk-end
+components:
+  # @chunk {"steps": ["openapi-oauth2-scheme"]}
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://cafe.cloud.redocly.com/oauth2/authorize
+          tokenUrl: https://cafe.cloud.redocly.com/oauth2/token
+          scopes:
+            menu:read: Read access to menu items and images
+            menu:write: Write access to menu items (create, delete)
+        clientCredentials:
+          tokenUrl: https://cafe.cloud.redocly.com/oauth2/token
+          scopes:
+            menu:read: Read access to menu items and images
+            menu:write: Write access to menu items (create, delete)
+    ApiKey:
+      type: apiKey
+      name: X-API-Key
+      in: header
+  # @chunk-end
+  parameters:
+    MenuItemId:
+      name: menuItemId
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: ^prd_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    Filter:
+      name: filter
+      description: Filters the collection items using space-separated `name:value` pairs.
+      in: query
+      required: false
+      schema:
+        type: string
+      example: orderId:ord_01h1s5z6vf2mm1mz3hevnn9va7
+  schemas:
+    Page:
+      type: object
+      properties:
+        endCursor:
+          type:
+            - string
+            - 'null'
+        startCursor:
+          type:
+            - string
+            - 'null'
+        hasNextPage:
+          type: boolean
+        hasPrevPage:
+          type: boolean
+        limit:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 10
+        total:
+          type: integer
+          minimum: 0
+      required:
+        - endCursor
+        - startCursor
+        - hasNextPage
+        - hasPrevPage
+        - limit
+        - total
+    MenuBaseItem:
+      type: object
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+          readOnly: true
+        updatedAt:
+          type: string
+          format: date-time
+          readOnly: true
+        id:
+          type: string
+          readOnly: true
+          pattern: ^prd_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+        object:
+          type: string
+          const: menuItem
+          readOnly: true
+        name:
+          type: string
+          minLength: 1
+          maxLength: 50
+        price:
+          type: integer
+          minimum: 0
+        photo:
+          writeOnly: true
+          type:
+            - string
+            - 'null'
+          format: binary
+        photoUrl:
+          readOnly: true
+          type: string
+          format: uri
+        photoTextDescription:
+          type:
+            - string
+            - 'null'
+      required:
+        - id
+        - name
+        - price
+        - createdAt
+        - updatedAt
+        - object
+    Beverage:
+      allOf:
+        - type: object
+          properties:
+            category:
+              type: string
+              const: beverage
+            volume:
+              type: number
+              exclusiveMinimum: 0
+            containsCaffeine:
+              type: boolean
+          required:
+            - category
+            - volume
+            - containsCaffeine
+        - $ref: '#/components/schemas/MenuBaseItem'
+    Dessert:
+      allOf:
+        - type: object
+          properties:
+            category:
+              type: string
+              const: dessert
+            calories:
+              type: number
+              exclusiveMinimum: 0
+          required:
+            - category
+            - calories
+        - $ref: '#/components/schemas/MenuBaseItem'
+    MenuItem:
+      discriminator:
+        propertyName: category
+        mapping:
+          beverage: '#/components/schemas/Beverage'
+          dessert: '#/components/schemas/Dessert'
+      oneOf:
+        - $ref: '#/components/schemas/Beverage'
+        - $ref: '#/components/schemas/Dessert'
+      required:
+        - category
+    MenuItemList:
+      type: object
+      properties:
+        object:
+          type: string
+          const: list
+        page:
+          $ref: '#/components/schemas/Page'
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/MenuItem'
+      required:
+        - object
+        - page
+        - items
+    Error:
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri-reference
+          default: about:blank
+        title:
+          type: string
+        status:
+          type: integer
+          format: int32
+          minimum: 100
+          exclusiveMaximum: 600
+        instance:
+          type: string
+          format: uri-reference
+        details:
+          type: object
+          additionalProperties: true
+      required:
+        - type
+        - title
+        - status
+    RegisterClientObject:
+      type: object
+      properties:
+        name:
+          type: string
+        redirectUris:
+          type: array
+          items:
+            type: string
+            format: uri
+        scopes:
+          type: array
+          items:
+            type: string
+            enum:
+              - menu:read
+              - menu:write
+        grantTypes:
+          type: array
+          items:
+            type: string
+            enum:
+              - authorization_code
+              - client_credentials
+      required:
+        - name
+    OAuth2Client:
+      type: object
+      properties:
+        clientId:
+          type: string
+        clientSecret:
+          type: string
+        clientIdIssuedAt:
+          type: integer
+          format: int64
+        clientSecretExpiresAt:
+          type: integer
+          format: int64
+        name:
+          type: string
+        redirectUris:
+          type: array
+          items:
+            type: string
+            format: uri
+        registrationClientUri:
+          type: string
+          format: uri
+        registrationAccessToken:
+          type: string
+        scopes:
+          type: array
+          items:
+            type: string
+            enum:
+              - menu:read
+              - menu:write
+        grantTypes:
+          type: array
+          items:
+            type: string
+            enum:
+              - authorization_code
+              - client_credentials
+      required:
+        - clientId
+        - clientSecret
+        - clientIdIssuedAt
+        - clientSecretExpiresAt
+        - registrationClientUri
+        - registrationAccessToken
