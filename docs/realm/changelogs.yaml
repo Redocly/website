@@ -46012,13 +46012,8 @@ reunite:
   v2026-05-22.1:
     timestamp: 1779446357000
     changes:
-      minor:
-        - Split feedback permissions into `read`, `update`, and `delete`.
+      minor: []
       patch:
-        - >-
-          Fixed display names derived from email addresses containing dots (e.g., `firstname.lastname`). Updated `Account Settings` form to accept
-          sanitized names.
-        - Improved export on the `Feedback` page by applying active table filters/sort/search to downloads,
         - Fixed `.adoc` and `.asciidoc` files not opening in the Reunite editor.
     dependencies: {}
 replay:
