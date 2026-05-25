@@ -46027,6 +46027,16 @@ reunite:
           sanitized names.
         - Improved export on the `Feedback` page by applying active table filters/sort/search to downloads,
     dependencies: {}
+  v2026-05-25.2:
+    timestamp: 1779722075000
+    changes:
+      minor:
+        - Hid the sign-up link during account recovery, verification, and identity linking flows.
+      patch:
+        - >-
+          Redesigned the visual review comments panel by replacing the replies modal with an inline thread view, refreshing the comment card layout,
+          and adding a shared resolve button.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
