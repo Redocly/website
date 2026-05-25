@@ -47,6 +47,27 @@ The following Markdoc tags are custom-made by Redocly:
 - [Replay OpenAPI](./replay-openapi.md): Add the Replay consoe to make API calls directly from a documentation page.
 - [Tabs](./tabs.md): Organize content variants into switchable tabs.
 
+## Block tags: use block form, not inline form
+
+For block tags (for example, `admonition`, `tabs`, `cards`), keep opening and closing tags on separate lines with content between them.
+Single-line inline usage can be parsed as inline content and wrapped in `<p>` tags, which may lead to invalid nesting and hydration issues.
+
+To learn more about Markdoc parsing, see the Markdoc [Inline form](https://markdoc.dev/spec#sec-Inline-form) section.
+
+Recommended:
+
+```md {% process=false %}
+{% admonition type="success" name="Tip" %}
+To perform these steps all at once, run the update script as a `sudo` user.
+{% /admonition %}
+```
+
+Avoid:
+
+```md {% process=false %}
+{% admonition type="success" name="Tip" %}To perform these steps all at once, run the update script as a `sudo` user.{% /admonition %}
+```
+
 ## Resources
 
 - **[Markdoc tag library](./tag-library.md)**: Explore Markdoc tags and their rendered examples
