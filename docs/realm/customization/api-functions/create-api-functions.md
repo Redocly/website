@@ -29,7 +29,7 @@ Build a custom Markdoc tag that renders live weather data by calling an API func
 
 This tutorial explains how to create:
 
-- an API function endpoint at `/api/weather`
+- an API function endpoint at `/api/weather` with KV storage caching
 - a React component that fetches from that endpoint
 - a Markdoc tag that authors can use in Markdown files
 
@@ -40,6 +40,10 @@ The filename determines the URL path and, optionally, the HTTP method: `<name>.<
 Omit the method segment to handle all HTTP methods with a single file.
 See [File-system and method routing](./api-functions-reference.md#file-system-and-method-routing) for the full naming reference.
 
+**KV storage** is a built-in key-value store available from API functions via `context.getKv()`.
+Use it to cache external API responses, store session data, or persist lightweight application state.
+Entries can expire automatically with the `ttlInSeconds` option on `kv.set()`.
+
 **Markdoc tags** are custom components registered in the `@theme/markdoc` folder.
 You create a React component in `@theme/markdoc/components/`, export it from `@theme/markdoc/components.tsx`, and register its tag schema in `@theme/markdoc/schema.ts`.
 See [Build a Markdoc tag](../build-markdoc-tags.md) for full details.
@@ -47,6 +51,7 @@ See [Build a Markdoc tag](../build-markdoc-tags.md) for full details.
 In the following solution:
 
 - The **API key stays server-side** in the API function (`process.env.WEATHER_API_KEY`).
+- **KV storage** caches weather responses for 60 minutes so repeated requests skip the external API.
 - The Markdoc component renders live data by calling your own endpoint.
 - You can apply role-based access control to the API function.
   See [API functions reference](./api-functions-reference.md).
@@ -91,14 +96,30 @@ Use the `location` query parameter if the caller provides one.
 Otherwise, fall back to the client IP address from `x-forwarded-for` (or `auto:ip` as a last resort) so the weather API geolocates the visitor automatically.
 {% /step %}
 
+{% step id="api-cache-ttl" heading="Set the cache duration" %}
+Define a constant for how long cached weather data stays valid.
+This example keeps responses for 60 minutes (`60 * 60` seconds).
+{% /step %}
+
+{% step id="api-cache-check" heading="Check the cache" %}
+Call `context.getKv()` to access the built-in key-value store.
+Build a cache key from the resolved location (for example, `['weather', location]`) and read from KV storage with `kv.get()`.
+If a cached entry exists, return it immediately with `source: 'cache'` so callers can tell the response was served from cache.
+{% /step %}
+
 {% step id="api-fetch" heading="Fetch weather data" %}
 Construct the URL for the external weather API and map your variables to the parameters required by the provider (e.g., mapping your `location` variable to their `q` parameter, and setting `aqi` to `no` to exclude Air Quality Index data).
 Call the external weather API with `fetch`, and handle non-OK responses by returning the upstream error details.
 {% /step %}
 
+{% step id="api-cache-store" heading="Store the response in KV storage" %}
+After a successful fetch, save the weather payload with `kv.set()`.
+Pass `{ ttlInSeconds: CACHE_TTL_SECONDS }` so the entry expires automatically after 60 minutes.
+{% /step %}
+
 {% step id="api-response" heading="Return the response" %}
-Return the relevant subset of the weather data as JSON.
-The Markdoc component will consume this shape.
+Return the relevant subset of the weather data as JSON with `source: 'api'` to indicate a fresh upstream fetch.
+The Markdoc component consumes the `location` and `current` fields and ignores `source`.
 {% /step %}
 
 ## Create the Markdoc component
