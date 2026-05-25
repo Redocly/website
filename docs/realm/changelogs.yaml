@@ -46016,6 +46016,20 @@ reunite:
       patch:
         - Fixed `.adoc` and `.asciidoc` files not opening in the Reunite editor.
     dependencies: {}
+  v2026-05-25.1:
+    timestamp: 1779706094000
+    changes:
+      minor:
+        - Split feedback permissions into `read`, `update`, and `delete`.
+      patch:
+        - >-
+          Fixed display names derived from email addresses containing dots (e.g., `firstname.lastname`). Updated `Account Settings` form to accept
+          sanitized names.
+        - >-
+          Redesigned the visual review comments panel by replacing the replies modal with an inline thread view, refreshing the comment card layout,
+          and adding a shared resolve button.
+        - Improved export on the `Feedback` page by applying active table filters/sort/search to downloads,
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
