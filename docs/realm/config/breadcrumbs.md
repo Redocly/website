@@ -109,7 +109,6 @@ breadcrumbs:
 
 ## Resources
 
-- **[Navigation concepts](../navigation/navigation.md)** - Understand different navigation elements in your project including breadcrumbs and their role in user experience
 - **[Configure navigation elements](../navigation/index.md)** - Customize navigation elements including sidebar, navbar, footer, and breadcrumbs for optimal site organization
 - **[Front matter configuration](./front-matter-config.md)** - Configure breadcrumb behavior and appearance on individual pages using front matter for granular control
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

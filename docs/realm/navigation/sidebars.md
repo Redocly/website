@@ -13,13 +13,45 @@ keywords:
     - sidebar
     - sidebars
 ---
-# Sidebars configuration options
+
+# Sidebars
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
+The sidebar is generated automatically based on your project's file structure if no `sidebars.yaml` file exists.
+By default, items in the sidebar menu are sorted using natural ordering: letter characters follow the alphabetical order and multi-digit numbers are treated as a single character.
+`index.md` files by default appear as the first item in any sidebar.
+
+For example, the following files: `index.md`, `concept-1.md`, `concept-11.md`, and `concept-2.md`, result in the following sidebar:
+
+```treeview {% title="Example sidebar order" %}
+├── index.md
+├── concept-1.md
+├── concept-2.md
+└── concept-11.md
+```
+
+API description files automatically add items to the sidebars.
+These items are generated according to the internal structure of the tags and endpoints described in the file and preserve the order of this structure.
+
+You can customize the sidebar by adding a `sidebars.yaml` file to the root of your project.
+A `sidebars.yaml` file must include all files or directories you want to have in a sidebar: new files and directories aren't added automatically.
+
+Link titles in the sidebar are by default the first heading title on the page.
+You can use the [`label`](#link-options) option in a `sidebars.yaml` file to change the link title.
+
+Projects that have [multiple products](./multi-product.md) or the [catalog](../config/catalog-classic.md), generate separate sidebars for each of item.
+
+In complex projects, you can add separate `sidebars.yaml` files for each section of your project.
+Either add the files in project folders, or in the root folder with prefixes (for example: `installation.sidebars.yaml`. `config.sidebars.yaml`), then reference these files in the `sidebars.yaml` at the root of your project.
+
+To hide the sidebar for your entire project, use the [`sidebar` option](../config/sidebar.md) in `redocly.yaml`.
+
+## Sidebars configuration options
+
 Specify the order and link text for side navigation items by creating a `sidebars.yaml` file.
 
-## Link options
+### Link options
 
 {% table %}
 
@@ -124,7 +156,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 \* Sidebar links must use either the `page` or `href` option ("mutually exclusive").
 
-## Group options
+### Group options
 
 {% table %}
 
@@ -151,7 +183,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - directory
 - string
 - Path to a folder.
-  Files in the folder automatically appear in the sidebar and are sorted in the **natural order**.
+  Files in the folder automatically appear in the sidebar and are sorted in the natural order.
 
 ---
 
@@ -218,7 +250,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 {% /table %}
 
-## Additional options
+### Additional options
 
 {% table %}
 
@@ -267,7 +299,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 {% /table %}
 
-## Badge object
+### Badge object
 
 {% table %}
 

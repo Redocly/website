@@ -86,7 +86,7 @@ Usage data does not include any of your API specification content, sensitive pro
 
 Redoc CE tracks the following specific events:
 
-**Initial load event (`redoc_ce.initial`)**
+**Initial load event (`com.redocly.redoc.initialized`)**
 
 Fired when the documentation loads, including:
 - performance metrics (`CLS`, `LCP`, `FCP`, `TTFB`)
@@ -95,12 +95,12 @@ Fired when the documentation loads, including:
 
 **User interaction events**
 
-- **Layout type clicked** (`redoc_ce.layout_type.clicked`): when users switch between `stacked` and `three-panel` layouts
-- **Select language clicked** (`redoc_ce.select_language.clicked`): when users change the code example language
-- **Download definition clicked** (`redoc_ce.download_definition.clicked`): when users download the API specification
-- **Examples switcher clicked** (`redoc_ce.examples_switcher.clicked`): when users switch between different examples
-- **Expand/collapse all clicked** (`redoc_ce.expand_collapse_all.clicked`): when users expand or collapse all sections
-- **Copy code snippet clicked** (`redoc_ce.copy_code_snippet.clicked`): when users copy request/response code snippets
+- **Change layout clicked** (`com.redocly.changeLayout.clicked`): when users switch between `stacked` and `three-panel` layouts
+- **Select language clicked** (`com.redocly.selectLanguage.clicked`): when users change the code example language
+- **Download definition clicked** (`com.redocly.downloadDefinition.clicked`): when users download the API specification
+- **Examples switcher clicked** (`com.redocly.examplesSwitcher.clicked`): when users switch between different examples
+- **Expand/collapse all clicked** (`com.redocly.expandCollapseAll.clicked`): when users expand or collapse all sections
+- **Copy code snippet clicked** (`com.redocly.copyCodeSnippet.clicked`): when users copy request/response code snippets
 
 ### Data collection details
 

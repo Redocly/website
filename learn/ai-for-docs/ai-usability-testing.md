@@ -193,7 +193,7 @@ When you ship a new API version or feature:
 
 ### Example automation
 
-```markdown
+```markdown {% process=false %}
 On every docs PR:
 1. Run AI through 5 critical user tasks
 2. Flag tasks where AI asks clarifying questions (doc gaps)
@@ -319,7 +319,7 @@ Ask AI to complete it using only your documentation. Watch where it struggles.
 ### Document the pattern
 
 Create a template for AI usability tests:
-```markdown
+```markdown {% process=false %}
 Task: [Specific, completable goal]
 Documentation provided: [Links or content]
 Success criteria: [How you know it worked]

@@ -19,7 +19,7 @@ description: Set the visibility of the sidebar in your project.
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 {% $frontmatter.description %}
-The sidebar is the area on the left of your project that contains navigation.
+The sidebar is the area on the left of your project that contains links to pages in your project.
 The options here allow you to hide it if your site design doesn't require a sidebar.
 
 ## Options
@@ -51,8 +51,7 @@ sidebar:
 ## Resources
 
 - **[Sidebar configuration guide](../navigation/sidebars.md)** - Complete guide to configuring sidebar navigation structure and content organization for optimal user experience
-- **[Navigation in Redocly projects](../navigation/navigation.md)** - Learn about navigation concepts and implementation strategies for effective site organization
-- **[Navigation elements overview](../navigation/index.md)** - Complete guidance on all navigation components and their configuration for optimal user experience
+- **[Navigation elements overview](../navigation/index.md)** - Explore navigation components available for your project
 - **[Footer configuration](./footer.md)** - Configure footer settings and appearance to complement sidebar design and overall site navigation
 - **[Navbar configuration](./navbar.md)** - Configure navbar settings and navigation elements to work seamlessly with your sidebar configuration
 

@@ -4,7 +4,7 @@ import yamlThumbnail from './images/yaml-thumbnail.svg';
 import apiTestingThumbnail from './images/api-testing-thumbnail.svg';
 import apiSecurityThumbnail from './images/api-security-thumbnail.svg';
 import arazzoThumbnail from './images/arazzo-thumbnail.svg';
-import aiForDocsThumbnail from './images/ai-for-docs-thumbnail.svg';
+import aiForDocsThumbnail from './images/ai-for-docs-thumbnail-cropped.svg';
 import getStartedThumbnail from './images/get-started-thumbnail.svg';
 
 export const cards = [
@@ -137,11 +137,19 @@ export const cards = [
     description:
       'Learn how to use AI to improve your API documentation.',
     thumbnail: aiForDocsThumbnail,
-    moreItems: 'more topics coming soon',
+    moreItems: '13 more topics',
     landingPage: '/learn/ai-for-docs/ai-modern-api-docs',
     items: [
       { title: 'AI for Modern Documentation', link: '/learn/ai-for-docs/ai-modern-api-docs' },
       { title: 'AI for Reviews', link: '/learn/ai-for-docs/ai-reviews' },
+      {
+        title: 'AI for authentication and authorization patterns',
+        link: '/learn/ai-for-docs/ai-auth-authorization-patterns',
+      },
+      {
+        title: 'AI for API design gaps and inconsistencies',
+        link: '/learn/ai-for-docs/ai-review-api-design-gaps-inconsistencies',
+      },
       { title: 'AI as a usability tester', link: '/learn/ai-for-docs/ai-usability-testing' },
     ],
   },
