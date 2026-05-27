@@ -46036,6 +46036,13 @@ reunite:
           Redesigned the visual review comments panel by replacing the replies modal with an inline thread view, refreshing the comment card layout,
           and adding a shared resolve button.
     dependencies: {}
+  v2026-05-27.1:
+    timestamp: 1779868760000
+    changes:
+      minor:
+        - Hid the sign-up link during account recovery, verification, and identity linking flows.
+      patch: []
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
