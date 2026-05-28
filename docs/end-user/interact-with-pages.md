@@ -41,7 +41,7 @@ The possible page actions are:
   This action is available on publicly accessible pages only.
   Requires a Claude account.
 - **Connect to Cursor** - opens the Cursor application and installs the MCP server in your local environment.
-- **Connect to VS Code** - opens the Cursor application and installs the MCP server in your local environment.
+- **Connect to VS Code** - opens the Visual Studio Code application and installs the MCP server in your local environment.
 
     {% img
       src="./images/page-actions.png"
