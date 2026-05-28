@@ -299,7 +299,11 @@
 '/docs/cli/rules/paths-kebab-case':
   to: '/docs/cli/rules/oas/paths-kebab-case'
 '/docs/cli/rules/request-mine-type':
-  to: '/docs/cli/rules/oas/request-mine-type'
+  to: '/docs/cli/rules/oas/request-mime-type'
+'/docs/cli/rules/oas/request-mine-type':
+  to: '/docs/cli/rules/oas/request-mime-type'
+'/docs/cli/v1/rules/oas/request-mine-type':
+  to: '/docs/cli/v1/rules/oas/request-mime-type'
 '/docs/cli/rules/required-string-property-missing-min-length':
   to: '/docs/cli/rules/oas/required-string-property-missing-min-length'
 '/docs/cli/rules/response-contains-header':
