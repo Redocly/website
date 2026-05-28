@@ -45,7 +45,7 @@ The possible page actions are:
 
     {% img
       src="./images/page-actions.png"
-      alt="Screenshot of a page actions button with a open drop-down"
+      alt="Screenshot of a page actions button with an open drop-down"
       withLightbox=true
     /%}
 
@@ -56,7 +56,7 @@ This function is especially useful with long code fragments.
 
 To copy a code sample:
 
-- In the top-right corner of the code sample, click the copy  icon.
+- In the top-right corner of the code sample, click the copy icon.
 
 You can now paste the code into another application.
 
