@@ -128,7 +128,7 @@ The links are available only on pages that have at least one level of nesting in
 The order of breadcrumb links typically reflects the hierarchy in the sidebar: from the top-level page of the project to the currently displayed page.
 
 {% img
-  src="./images/navigation-buttons.png"
+  src="./images/breadcrumbs.png"
   alt="Screenshot of a project page's breadcrumbs"
   withLightbox=true
 /%}
