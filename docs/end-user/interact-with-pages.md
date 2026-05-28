@@ -81,7 +81,7 @@ Your message is sent to the organization that owns the project.
 
     {% img
       src="./images/report-code-snippet.png"
-      alt="Screenshot of a code block with exclamation mark icon marked""
+      alt="Screenshot of a code block with exclamation mark icon marked"
       withLightbox=true
     /%}
 
