@@ -36,10 +36,18 @@ The possible page actions are:
   You can use this initial prompt to provide context for the conversation.
   This action is available on publicly accessible pages only.
   Requires a ChatGPT account.
-- **Claude**: - opens the Claude website in a new tab with the page's URL in the prompt.
+- **Claude** or **Open in Claude**: - opens the Claude website in a new tab with the page's URL in the prompt.
   You can use this initial prompt to provide context for the conversation.
   This action is available on publicly accessible pages only.
   Requires a Claude account.
+- **Connect to Cursor** - opens the Cursor application and installs the MCP server in your local environment.
+- **Connect to VS Code** - opens the Cursor application and installs the MCP server in your local environment.
+
+    {% img
+      src="./images/page-actions.png"
+      alt="Screenshot of a page actions button with a open drop-down"
+      withLightbox=true
+    /%}
 
 ## Copy code sample
 
@@ -48,9 +56,16 @@ This function is especially useful with long code fragments.
 
 To copy a code sample:
 
-- In the top-right corner of the code sample, click the copy icon.
+- In the top-right corner of the code sample, click the copy  icon.
 
 You can now paste the code into another application.
+
+    {% img
+      src="./images/copy-code-snippet.png"
+      alt="Screenshot of a code block with copy icon marked"
+      withLightbox=true
+    /%}
+
 
 ## Report an issue in a code sample
 
@@ -63,6 +78,13 @@ To to report a problem with a code sample:
 - Click **Send**.
 
 Your message is sent to the organization that owns the project.
+
+    {% img
+      src="./images/report-code-snippet.png"
+      alt="Screenshot of a code block with exclamation mark icon marked""
+      withLightbox=true
+    /%}
+
 
 ## Resources
 
