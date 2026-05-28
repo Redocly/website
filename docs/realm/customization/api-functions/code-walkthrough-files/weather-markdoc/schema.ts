@@ -1,7 +1,7 @@
 // @chunk {"steps": ["tag-schema"]}
-import type { Schema } from '@markdoc/markdoc';
+import type { MarkdocTagSchema } from '@redocly/theme/markdoc/tags/types';
 
-export const tags: Record<string, Schema> = {
+export const tags: Record<string, MarkdocTagSchema> = {
   weather: {
     render: 'CurrentWeather',
     selfClosing: true,

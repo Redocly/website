@@ -22,13 +22,13 @@ However, it makes for the simple "Hello World" of custom tags.
 And it requires almost no React knowledge.
 
 The quiz component, while a bit rough around the edges, is a lot more robust.
-To understand it, you'll need to understand React.
+To understand it, you need to understand React.
 However, if you do, and want to do more complex behavior, this is a good example to help you understand how to do that.
 
 ## Create directories
 
-If they don't exist yet, create the `@theme` directory in your project root.
-Inside of that, create a `markdoc` directory.
+If you don't have it yet, create a `@theme` directory in your project root.
+Inside `@theme`, create a `markdoc` directory.
 
 This is what your directory structure may look after you follow this tutorial.
 
@@ -59,9 +59,9 @@ Create a file `schema.ts` inside of the `markdoc` directory.
 Paste the following contents in the file.
 
 ```ts
-import type { Schema } from '@markdoc/markdoc';
+import type { MarkdocTagSchema } from '@redocly/theme/markdoc/tags/types';
 
-export const tags: Record<string, Schema> = {
+export const tags: Record<string, MarkdocTagSchema> = {
   br: {
     render: 'Break',
     selfClosing: true,
@@ -174,7 +174,7 @@ function ProgressBar({ currentQuestionIndex, totalQuestionsCount }) {
   );
 }
 
-export function Quiz({ questions }) {
+export function Quiz({ title, summary, questions, children }) {
   const [questionIndex, setQuestionIndex] = useState(null);
   const [answerStatus, setAnswerStatus] = useState(null);
   const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
@@ -207,8 +207,12 @@ export function Quiz({ questions }) {
   if (questionIndex == null) {
     return (
       <Wrapper>
-        <h1>Apply what was learned</h1>
-        <Button onClick={onNextClick}>Start</Button>
+        {title ? <h1>{title}</h1> : null}
+        {summary ? <Summary>{summary}</Summary> : null}
+        {children}
+        <Button className="start" onClick={onNextClick}>
+          Start
+        </Button>
       </Wrapper>
     );
   }
@@ -262,6 +266,10 @@ const Wrapper = styled.div`
   text-align: center;
   width: 600px;
   margin: auto;
+`;
+
+const Summary = styled.p`
+  margin: 0 0 1rem;
 `;
 
 const QuizWrapper = styled.div`
@@ -367,22 +375,23 @@ const ProgressBarText = styled.div`
 Next, add the quiz tag schema to `schema.ts`
 
 ```ts
-import type { Schema } from '@markdoc/markdoc';
+import type { MarkdocTagSchema } from '@redocly/theme/markdoc/tags/types';
 
-export const tags: Record<string, Schema> = {
+export const tags: Record<string, MarkdocTagSchema> = {
   br: {
     render: 'Break',
     selfClosing: true,
   },
   quiz: {
     attributes: {
+      title: { type: String },
+      summary: { type: String },
       questions: {
         type: 'Object',
         required: true,
       },
     },
-    render: 'Quiz', // please make sure to export it in components.ts,
-    selfClosing: true,
+    render: 'Quiz', // make sure to export it in components.ts,
   },
 };
 ```
@@ -416,12 +425,119 @@ questions:
 
 Here is my quiz.
 
-{% quiz questions=$frontmatter.questions /%}
+{% quiz title="Apply what you learned" summary="Two questions about custom Markdoc tags" questions=$frontmatter.questions %}
+Review the tutorial before you begin.
+{% /quiz %}
 ```
 
 {% /markdoc-example %}
 
 We'd show you a working quiz here, but we'd rather spend more time on it and make it look and function better first.
+
+## Expose custom tags for LLMs
+
+Realm generates plain Markdown for LLMs — the `quiz` tag may look interactive in the browser but contribute little text.
+Add `renderForLlms` to control what the tag emits for LLMs.
+
+
+### `renderForLlms`
+
+The function receives the Markdoc AST `node` for your tag and a context object.
+It should return a plain Markdown string.
+The tag body is not included unless you call `getBody()` from the context object.
+
+{% admonition type="warning" name="Security considerations" %}
+Content returned by `renderForLlms` is emitted directly for LLMs.
+Only return text you are comfortable making public — do not pull secrets, API keys, tokens, or other sensitive information.
+{% /admonition %}
+
+#### Context
+
+{% table %}
+
+- Field
+- Type
+- Description
+
+---
+
+- `getBody`
+- () => string
+- Returns plain Markdown from the tag body when called.
+
+{% /table %}
+
+### Examples
+
+The examples below add `renderForLlms` to the `quiz` tag from this tutorial.
+
+{% admonition type="info" %}
+If you are updating an existing `schema.ts` file, replace `Schema` with `MarkdocTagSchema`.
+`renderForLlms` is defined on `MarkdocTagSchema`, so keeping `Schema` can cause TypeScript errors.
+{% /admonition %}
+
+```markdoc {% process=false %}
+{% quiz title="Apply what you learned" summary="Two questions about custom Markdoc tags" questions=$frontmatter.questions %}
+Review the tutorial before you begin.
+{% /quiz %}
+```
+
+#### Summary only
+
+Return the `summary` attribute and omit the tag body.
+
+```ts
+import type { Node } from '@markdoc/markdoc';
+import type { MarkdocTagSchema } from '@redocly/theme/markdoc/tags/types';
+
+export const tags: Record<string, MarkdocTagSchema> = {
+  quiz: {
+    attributes: {
+      title: { type: String },
+      summary: { type: String },
+      questions: { type: 'Object', required: true },
+    },
+    render: 'Quiz',
+    renderForLlms: (node: Node) => node.attributes.summary ?? '',
+  },
+};
+```
+
+LLM output:
+
+```md
+Two questions about custom Markdoc tags
+```
+
+#### Full section
+
+Return the `title` and `summary` attribute values, then append the tag body from `getBody()`.
+
+```ts
+import type { Node } from '@markdoc/markdoc';
+import type { MarkdocTagSchema } from '@redocly/theme/markdoc/tags/types';
+
+export const tags: Record<string, MarkdocTagSchema> = {
+  quiz: {
+    attributes: {
+      title: { type: String },
+      summary: { type: String },
+      questions: { type: 'Object', required: true },
+    },
+    render: 'Quiz',
+    renderForLlms: (node: Node, { getBody }) =>
+      [node.attributes.title, node.attributes.summary, getBody()].filter(Boolean).join('\n'),
+  },
+};
+```
+
+LLM output:
+
+```md
+Apply what you learned
+Two questions about custom Markdoc tags
+Review the tutorial before you begin.
+```
 
 ## Extra credit
 

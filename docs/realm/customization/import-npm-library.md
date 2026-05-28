@@ -122,9 +122,9 @@ To use external components within Markdoc, you'll need to register them in your 
 
 ```ts {% title="@theme/markdoc/schema.ts" %}
 // @theme/markdoc/schema.ts
-import type { Schema } from '@markdoc/markdoc';
+import type { MarkdocTagSchema } from '@redocly/theme/markdoc/tags/types';
 
-export const tags: Record<string, Schema> = {
+export const tags: Record<string, MarkdocTagSchema> = {
   // ... existing tags ...
   reactIcon: {
     render: 'ReactIcon',

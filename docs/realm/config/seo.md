@@ -541,3 +541,4 @@ export const frontmatter = {
 - **[Front matter configuration](./front-matter-config.md)** - Configure SEO settings on individual pages using front matter for granular search optimization control
 - **[Response headers](./response-headers.md)** - Configure response headers for advanced search engine indexing control and optimization strategies
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
+- **[Build LLM-friendly Markdoc tags](../customization/build-markdoc-tags.md)** - Learn how to create custom Markdoc tags that emit content to LLMs.

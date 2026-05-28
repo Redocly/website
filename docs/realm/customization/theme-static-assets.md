@@ -140,19 +140,21 @@ Allow authors to pass a _relative path_ to a static asset by setting the attribu
 
 The following example shows a schema that accepts an image attribute from authors:
 
-```javascript {% title="tag-schema.ts" %}
-import type { Schema } from '@markdoc/markdoc';
+```ts {% title="tag-schema.ts" %}
+import type { MarkdocTagSchema } from '@redocly/theme/markdoc/tags/types';
 
-export const customTag: Schema = {
-  schema: {
-    render: 'YourComponent',
-    attributes: {
-      image: {
-        type: String,
-        resolver: 'link',
-      },
-    }
+const schema: MarkdocTagSchema = {
+  render: 'YourComponent',
+  attributes: {
+    image: {
+      type: String,
+      resolver: 'link',
+    },
   },
+};
+
+export const customTag = {
+  schema,
   tagName: 'custom-tag',
 };
 ```
