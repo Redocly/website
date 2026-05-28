@@ -147,7 +147,6 @@
     - separator: User account
     - page: reunite/user-profile-menu.md
       label: User profile menu
-
 - group: Content
   icon: file-lines
   page: content/index.md
@@ -160,7 +159,6 @@
       label: Manage links
     - page: content/versions.md
       label: Versioning
-
     - page: content/add-diagram.md
       label: Diagrams
     - group: Markdoc functions
@@ -449,6 +447,12 @@
           label: Overview
         - page: customization/mcp-server/openapi.yaml
           label: Docs MCP reference
+
+    - group: Reunite API
+      selectFirstItemOnExpand: true
+      items:
+        - page: customization/reunite-api/openapi.yaml
+          label: Overview
 
     - group: Search API
       selectFirstItemOnExpand: true
