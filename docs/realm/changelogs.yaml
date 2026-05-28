@@ -46043,6 +46043,17 @@ reunite:
         - Hid the sign-up link during account recovery, verification, and identity linking flows.
       patch: []
     dependencies: {}
+  v2026-05-28.1:
+    timestamp: 1779968871000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed expired invitation errors showing a generic 400 message. The error page indicates the invitation expired and suggests requesting a new
+          one from an organization admin.
+        - Added filter for anonymous and acknowledged authors in feedback.
+        - Added `Escape` key support so users can close the Onboarding widget drawer from the keyboard.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
