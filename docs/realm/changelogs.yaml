@@ -1,4 +1,22 @@
 '@redocly/realm':
+  0.134.0-next.2:
+    timestamp: 1780062237000
+    changes:
+      minor:
+        - Added `renderForLlms` to custom Markdoc tag schemas to control output for LLMs.
+      patch:
+        - >-
+          Fixed an issue where in rare cases, clicking on a link on a Markdown page, could trigger navigation twice, taking the user to the first link
+          on the target page.
+        - Fixed issue where the link checker incorrectly reported valid authentication links as broken.
+        - Fixed an issue where IP addresses associated with submitted feedback were inaccurate due to proxy or CDN chains.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.2
+      '@redocly/realm-asyncapi-sdk': 0.12.0-next.2
+      '@redocly/openapi-docs': 3.22.0-next.2
+      '@redocly/asyncapi-docs': 1.11.0-next.2
+      '@redocly/graphql-docs': 1.11.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.19.0-next.2
   0.134.0-next.1:
     timestamp: 1779382212000
     changes:
@@ -6216,6 +6234,24 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.134.0-next.2:
+    timestamp: 1780062237000
+    changes:
+      minor:
+        - Added `renderForLlms` to custom Markdoc tag schemas to control output for LLMs.
+      patch:
+        - >-
+          Fixed an issue where in rare cases, clicking on a link on a Markdown page, could trigger navigation twice, taking the user to the first link
+          on the target page.
+        - Fixed issue where the link checker incorrectly reported valid authentication links as broken.
+        - Fixed an issue where IP addresses associated with submitted feedback were inaccurate due to proxy or CDN chains.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.2
+      '@redocly/realm-asyncapi-sdk': 0.12.0-next.2
+      '@redocly/openapi-docs': 3.22.0-next.2
+      '@redocly/asyncapi-docs': 1.11.0-next.2
+      '@redocly/graphql-docs': 1.11.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.19.0-next.2
   0.134.0-next.1:
     timestamp: 1779382212000
     changes:
@@ -11518,6 +11554,24 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.134.0-next.2:
+    timestamp: 1780062237000
+    changes:
+      minor:
+        - Added `renderForLlms` to custom Markdoc tag schemas to control output for LLMs.
+      patch:
+        - >-
+          Fixed an issue where in rare cases, clicking on a link on a Markdown page, could trigger navigation twice, taking the user to the first link
+          on the target page.
+        - Fixed issue where the link checker incorrectly reported valid authentication links as broken.
+        - Fixed an issue where IP addresses associated with submitted feedback were inaccurate due to proxy or CDN chains.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.2
+      '@redocly/realm-asyncapi-sdk': 0.12.0-next.2
+      '@redocly/openapi-docs': 3.22.0-next.2
+      '@redocly/asyncapi-docs': 1.11.0-next.2
+      '@redocly/graphql-docs': 1.11.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.19.0-next.2
   0.134.0-next.1:
     timestamp: 1779382212000
     changes:
@@ -16812,6 +16866,24 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.134.0-next.2:
+    timestamp: 1780062237000
+    changes:
+      minor:
+        - Added `renderForLlms` to custom Markdoc tag schemas to control output for LLMs.
+      patch:
+        - >-
+          Fixed an issue where in rare cases, clicking on a link on a Markdown page, could trigger navigation twice, taking the user to the first link
+          on the target page.
+        - Fixed issue where the link checker incorrectly reported valid authentication links as broken.
+        - Fixed an issue where IP addresses associated with submitted feedback were inaccurate due to proxy or CDN chains.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.2
+      '@redocly/realm-asyncapi-sdk': 0.12.0-next.2
+      '@redocly/openapi-docs': 3.22.0-next.2
+      '@redocly/asyncapi-docs': 1.11.0-next.2
+      '@redocly/graphql-docs': 1.11.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.19.0-next.2
   0.134.0-next.1:
     timestamp: 1779382212000
     changes:
@@ -22164,6 +22236,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.66.0-next.2:
+    timestamp: 1780062237000
+    changes:
+      minor:
+        - Added `renderForLlms` to custom Markdoc tag schemas to control output for LLMs.
+      patch: []
+    dependencies: {}
   0.66.0-next.1:
     timestamp: 1779382212000
     changes:
@@ -25075,6 +25154,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.22.0-next.2:
+    timestamp: 1780062237000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.25.0-next.2
   3.22.0-next.1:
     timestamp: 1779382212000
     changes:
@@ -28806,6 +28892,14 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.11.0-next.2:
+    timestamp: 1780062237000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.66.0-next.2
+      '@redocly/openapi-docs': 3.22.0-next.2
   1.11.0-next.1:
     timestamp: 1779382212000
     changes:
@@ -30754,6 +30848,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.17.0-next.2:
+    timestamp: 1780062237000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.66.0-next.2
+      '@redocly/realm': 0.134.0-next.2
+      '@redocly/redoc': 0.134.0-next.2
+      '@redocly/redoc-reef': 0.134.0-next.2
+      '@redocly/redoc-revel': 0.134.0-next.2
   1.17.0-next.1:
     timestamp: 1779382212000
     changes:
@@ -35937,6 +36042,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.19.0-next.2:
+    timestamp: 1780062237000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.22.0-next.2
   0.19.0-next.1:
     timestamp: 1779382212000
     changes:
@@ -38784,6 +38896,14 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.25.0-next.2:
+    timestamp: 1780062237000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue in Replay where clicking a sidebar tree node label did not expand or collapse it.
+    dependencies:
+      '@redocly/theme': 0.66.0-next.2
   0.25.0-next.1:
     timestamp: 1779382212000
     changes:
@@ -40867,6 +40987,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.17.0-next.2:
+    timestamp: 1780062237000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.66.0-next.2
   0.17.0-next.1:
     timestamp: 1779382212000
     changes:
@@ -42611,6 +42738,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.11.0-next.2:
+    timestamp: 1780062237000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.66.0-next.2
+      '@redocly/openapi-docs': 3.22.0-next.2
   1.11.0-next.1:
     timestamp: 1779382212000
     changes:
