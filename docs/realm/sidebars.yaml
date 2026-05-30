@@ -154,6 +154,8 @@
   items:
     - page: content/project-structure.md
       label: Project structure
+    - page: content/realm-seo.md
+      label: SEO in Realm
     - page: content/markdown.md
       label: Markdown guide
     - page: content/links.md
