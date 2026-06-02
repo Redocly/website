@@ -46563,7 +46563,7 @@ replay:
         - Improved typing performance in the request URL field.
     dependencies:
       '@redocly/theme': 0.65.0-next.1
-  0.21.0:
+  0.20.1:
     timestamp: 1780402032000
     changes:
       minor:
