@@ -46244,6 +46244,14 @@ reunite:
         - Added filter for anonymous and acknowledged authors in feedback.
         - Added `Escape` key support so users can close the Onboarding widget drawer from the keyboard.
     dependencies: {}
+  v2026-06-02.1:
+    timestamp: 1780390054000
+    changes:
+      minor:
+        - Added `Google` sign-up button to the registration page.
+      patch:
+        - Fixed an issue where pull request reviews with more than 10 comments did not display all comments.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
