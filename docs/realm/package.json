@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@redocly/realm": "next",
-    "styled-components": "^5.3.11",
+    "styled-components": "^6.4.2",
     "@markdoc/markdoc": "0.5.1",
     "highlight-words-core": "1.2.2",
     "react": "^19.2.1",
