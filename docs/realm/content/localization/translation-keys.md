@@ -195,6 +195,18 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- search.error.title
+- Error message title displayed when a search request fails
+- Oops! Something went wrong.
+
+---
+
+- search.error.button
+- Button text to retry a failed search request
+- Try again
+
+---
+
 - search.filter.reset
 - Button text to reset all search filters
 - Reset filters
