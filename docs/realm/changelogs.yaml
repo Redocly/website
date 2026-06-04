@@ -46424,6 +46424,13 @@ reunite:
       patch:
         - Fixed an issue where pull request reviews with more than 10 comments did not display all comments.
     dependencies: {}
+  v2026-06-04.2:
+    timestamp: 1780574180000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.31.6`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
@@ -46698,7 +46705,7 @@ replay:
     dependencies:
       '@redocly/theme': 0.65.0-next.1
   0.21.0:
-    timestamp: 1780485326000
+    timestamp: 1780572142000
     changes:
       minor:
         - Improved accuracy and relevance of AI agent results.
