@@ -46424,13 +46424,6 @@ reunite:
       patch:
         - Fixed an issue where pull request reviews with more than 10 comments did not display all comments.
     dependencies: {}
-  v2026-06-04.1:
-    timestamp: 1780568077000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.31.6`.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
