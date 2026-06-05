@@ -331,6 +331,104 @@ In this example:
 - `BearerAuth` uses the Bearer token from `default`
 - `MuseumPlaceholderAuth` uses the specific Basic Auth credentials
 
+## Share values across operations with `envVariables`
+
+`envVariables` lets users enter a value once and have Replay reuse it in every operation that needs it — even when the same value is a header on one endpoint and a path parameter on another.
+Each entry in `envVariables` is matched by name against every input the current operation exposes (path, query, header, cookie, and security inputs), so you don't need any per-operation configuration.
+
+For example:
+
+```typescript
+return {
+  envVariables: {
+    'X-Tenant-Id': 'acme',
+    'billerId': '42',
+  },
+};
+```
+
+With a single config like this, the same `billerId` entry can apply to a path parameter in one operation and a header in another, while `X-Tenant-Id` is picked up wherever it appears.
+Entries the current operation doesn't declare are silently ignored.
+
+### Example: shared variables form backed by `localStorage`
+
+A common pattern is to collect these values from the user in a [React page](./create-react-page.md), persist them in `localStorage`, and read them back in `useConfigureReplay`.
+
+{% admonition type="warning" name="Avoid persisting secrets" %}
+`localStorage` persists indefinitely and is readable by any script on the page, so it's vulnerable to XSS.
+For sensitive credentials, prefer `sessionStorage`, which is cleared when the session ends.
+{% /admonition %}
+
+```tsx {% title="api-variables.page.tsx" %}
+import React, { useEffect, useState } from 'react';
+
+const STORAGE_KEY = 'replay_shared_variables';
+
+function readVariables() {
+  if (typeof window === 'undefined') return {};
+  const raw = localStorage.getItem(STORAGE_KEY);
+  return raw ? JSON.parse(raw) : {};
+}
+
+export default function ApiVariablesPage() {
+  const [variables, setVariables] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    setVariables(readVariables());
+  }, []);
+
+  const updateVariable = (name: string, value: string) => {
+    const next = { ...variables, [name]: value };
+    setVariables(next);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+  };
+
+  return (
+    <div style={{ padding: 40, maxWidth: 480 }}>
+      <h1>API variables</h1>
+      <p>Enter these values once. They are reused by every operation in the catalog.</p>
+
+      <label>X-Tenant-Id
+        <input
+          value={variables['X-Tenant-Id'] ?? ''}
+          onChange={(e) => updateVariable('X-Tenant-Id', e.target.value)}
+        />
+      </label>
+      <label>Biller ID
+        <input
+          value={variables.billerId ?? ''}
+          onChange={(e) => updateVariable('billerId', e.target.value)}
+        />
+      </label>
+    </div>
+  );
+}
+```
+
+Then, in the ejected `use-configure-replay.ts`, swap the body of `getReplayConfiguration` to read from `localStorage` and return the values as `envVariables`:
+
+```typescript {% title="use-configure-replay.ts (excerpt)" %}
+const STORAGE_KEY = 'replay_shared_variables';
+
+async function getReplayConfiguration(
+  context: ContextProps,
+): Promise<ConfigureRequestValues | ConfigureServerRequestValues | null> {
+  if (typeof window === 'undefined') return null;
+  const raw = localStorage.getItem(STORAGE_KEY);
+
+  return { envVariables: raw ? JSON.parse(raw) : {} };
+}
+```
+
+The rest of the hook (state, `refresh`, `useEffect`) stays exactly as in the [examples above](#implement-dynamic-configuration).
+
+## Override behavior
+
+A few things worth knowing:
+
+- An **empty string** is treated as "clear this value" — useful when a value in your app gets reset and you want Replay to forget the old one too. Omit the key entirely if you want the persisted value to stay.
+- A field-specific entry (such as `security.default.token.access_token` or `headers['X-Tenant-Id']`) wins over a same-named entry in `envVariables`.
+
 ## Use cases for dynamic Replay configuration
 
 Dynamic Replay configuration is useful for:

@@ -1049,10 +1049,6 @@ components:
       required:
         - isValid
   securitySchemes:
-    InternalAuth:
-      type: http
-      scheme: basic
-      description: Internal authentication scheme for interaction between services (e.g. Syncer to API).
     UserCookie:
       type: apiKey
       in: cookie
