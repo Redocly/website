@@ -2971,8 +2971,8 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 <summary>Page navigation variables</summary>
 
 ```css
---page-navigations-wrapper-gap: var(--spacing-base);
---page-navigation-button-width: var(--container-max-width);
+--page-navigations-wrapper-gap: var(--spacing-sm);
+--page-navigation-button-width: 50%;
 --page-navigation-button-padding: var(--spacing-sm) var(--spacing-base);
 --page-navigation-button-title-font-size: var(--font-size-lg);
 --page-navigation-button-title-font-weight: var(--font-weight-medium);
