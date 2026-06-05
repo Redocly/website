@@ -81,6 +81,10 @@ To use environment variables in [API functions](../../customization/api-function
 
 ### `redocly.yaml`
 
+{% admonition type="warning" %}
+Environment variables in `redocly.yaml` only support string values.
+{% /admonition %}
+
 To use environment variables in `redocly.yaml`, use the curly brace syntax `{{ process.env.<env_var_name> }}`.
 
 For example:
@@ -98,8 +102,25 @@ navbar:
       label: Config
 ```
 
+You can also provide a default value that is used when the environment variable is not set.
+Add the default after a `|` or `||` separator and wrap it in single or double quotes.
+
+For example:
+
+```yaml {% title="redocly.yaml" %}
+navbar:
+  items:
+    - page: index.md
+      label: '{{ process.env.HOME_LABEL || "Home" }}'
+    - page: config/index.md
+      label: "{{ process.env.CONFIG_LABEL | 'Config' }}"
+```
+
 {% admonition type="warning" %}
-Environment variables in `redocly.yaml` only support string values.
+The default value is applied only when the environment variable is not set.
+If the variable is set to an empty string, the empty string is used.
+When a default value is applied, the variable is not reported as unset.
+Avoid using default values for any security-related variables that are required in production.
 {% /admonition %}
 
 ### React
