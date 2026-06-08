@@ -27,7 +27,9 @@ The types of pages you can limit access to include the following:
 Configuring RBAC in front matter only affects the running project and only for the pages that include it in the front matter.
 To set permissions for a Markdown page in the front matter, add the `rbac` configuration to its front matter and provide team access settings.
 
-For example, in the following front matter configuration example, only members of the `Admin` team can access the page and all other users are redirected to the 404 page:
+For example, in the following front matter configuration example, only members of the `Admin` team can access the page.
+Users who are not signed in are redirected to the login page.
+Signed-in users who lack the required team see a **403 Forbidden** page.
 
 ```yaml
 ---
@@ -55,7 +57,7 @@ export const frontmatter = {
 };
 ```
 
-In the example, only members of the `Admin` team can access the page and all other users are redirected to the 404 page.
+In the example, only members of the `Admin` team can access the page. Users who are not signed in are redirected to the login page; signed-in users who lack the required team see a 403 Forbidden page.
 
 ## API documents
 
