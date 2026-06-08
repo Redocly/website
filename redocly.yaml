@@ -220,6 +220,7 @@ responseHeaders:
         base-uri 'self'; 
         connect-src 
           'self'
+          https://*.redocly.com
           https://webhook.frontapp.com
           https://j.clarity.ms/*
           https://api.github.com
