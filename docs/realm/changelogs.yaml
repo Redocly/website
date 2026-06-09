@@ -1,4 +1,19 @@
 '@redocly/realm':
+  0.135.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+        - Fixed an issue where italic or bold text inside headings was excluded from generated anchor links.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.20.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.13.0-next.0
+      '@redocly/portal-legacy-ui': 0.18.0-next.0
+      '@redocly/asyncapi-docs': 1.12.0-next.0
+      '@redocly/graphql-docs': 1.12.0-next.0
+      '@redocly/openapi-docs': 3.23.0-next.0
+      '@redocly/theme': 0.67.0-next.0
   0.134.0:
     timestamp: 1780999981000
     changes:
@@ -6365,6 +6380,21 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.135.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+        - Fixed an issue where italic or bold text inside headings was excluded from generated anchor links.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.20.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.13.0-next.0
+      '@redocly/portal-legacy-ui': 0.18.0-next.0
+      '@redocly/asyncapi-docs': 1.12.0-next.0
+      '@redocly/graphql-docs': 1.12.0-next.0
+      '@redocly/openapi-docs': 3.23.0-next.0
+      '@redocly/theme': 0.67.0-next.0
   0.134.0:
     timestamp: 1780999981000
     changes:
@@ -11810,6 +11840,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.135.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+        - Fixed an issue where italic or bold text inside headings was excluded from generated anchor links.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.20.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.13.0-next.0
+      '@redocly/portal-legacy-ui': 0.18.0-next.0
+      '@redocly/asyncapi-docs': 1.12.0-next.0
+      '@redocly/graphql-docs': 1.12.0-next.0
+      '@redocly/openapi-docs': 3.23.0-next.0
+      '@redocly/theme': 0.67.0-next.0
   0.134.0:
     timestamp: 1780999981000
     changes:
@@ -17247,6 +17292,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.135.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+        - Fixed an issue where italic or bold text inside headings was excluded from generated anchor links.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.20.0-next.0
+      '@redocly/realm-asyncapi-sdk': 0.13.0-next.0
+      '@redocly/portal-legacy-ui': 0.18.0-next.0
+      '@redocly/asyncapi-docs': 1.12.0-next.0
+      '@redocly/graphql-docs': 1.12.0-next.0
+      '@redocly/openapi-docs': 3.23.0-next.0
+      '@redocly/theme': 0.67.0-next.0
   0.134.0:
     timestamp: 1780999981000
     changes:
@@ -22740,6 +22800,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.67.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies: {}
   0.66.0:
     timestamp: 1780999981000
     changes:
@@ -25694,6 +25761,15 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.23.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/replay': 0.26.0-next.0
+      '@redocly/theme': 0.67.0-next.0
   3.22.0:
     timestamp: 1780999981000
     changes:
@@ -29474,6 +29550,15 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.12.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/openapi-docs': 3.23.0-next.0
+      '@redocly/theme': 0.67.0-next.0
   1.11.0:
     timestamp: 1780999981000
     changes:
@@ -30612,6 +30697,15 @@
       '@redocly/theme': 0.6.0
 '@redocly/api-docs': {}
 '@redocly/mock-server':
+  0.9.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor: []
+      patch:
+        - '`readOnly` properties are no longer required in request bodies.'
+        - Enter prerelease mode.
+        - Fixed an issue where multipart/form-data request properties were not coerced correctly.
+    dependencies: {}
   0.8.0:
     timestamp: 1780999981000
     changes:
@@ -31252,6 +31346,13 @@
         - Redocly Mock Server release
     dependencies: {}
 '@redocly/portal-legacy-ui':
+  0.18.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies: {}
   0.17.0:
     timestamp: 1780999981000
     changes:
@@ -31500,6 +31601,18 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.18.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/redoc-revel': 0.135.0-next.0
+      '@redocly/redoc-reef': 0.135.0-next.0
+      '@redocly/realm': 0.135.0-next.0
+      '@redocly/redoc': 0.135.0-next.0
+      '@redocly/theme': 0.67.0-next.0
   1.17.0:
     timestamp: 1780999981000
     changes:
@@ -36781,6 +36894,15 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.20.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/mock-server': 0.9.0-next.0
+      '@redocly/openapi-docs': 3.23.0-next.0
   0.19.0:
     timestamp: 1780999981000
     changes:
@@ -39672,6 +39794,15 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.26.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor:
+        - Added web search capability to the AI agent.
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/theme': 0.67.0-next.0
   0.25.0:
     timestamp: 1780999981000
     changes:
@@ -41809,6 +41940,14 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.18.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/theme': 0.67.0-next.0
   0.17.0:
     timestamp: 1780999981000
     changes:
@@ -43590,6 +43729,15 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.12.0-next.0:
+    timestamp: 1781011614000
+    changes:
+      minor: []
+      patch:
+        - Enter prerelease mode.
+    dependencies:
+      '@redocly/openapi-docs': 3.23.0-next.0
+      '@redocly/theme': 0.67.0-next.0
   1.11.0:
     timestamp: 1780999981000
     changes:
