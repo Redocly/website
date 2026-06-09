@@ -626,7 +626,7 @@
 
 --schema-property-details-width: 70%;
 --schema-property-details-spacing: var(--spacing-base);
---schema-fist-property-details-spacing: var(--spacing-sm);
+--schema-first-property-details-spacing: var(--spacing-sm);
 ```
 
 </details>
