@@ -1,4 +1,49 @@
 '@redocly/realm':
+  0.134.0:
+    timestamp: 1780995789008
+    changes:
+      minor:
+        - Added configuration options to control time-specific banner visibility.
+        - Added support for the `template` Markdown setting to specify page templates with glob patterns.
+        - Added `renderForLlms` to custom Markdoc tag schemas to control output for LLMs.
+        - Updated styles for the `cards` Markdoc tag.
+        - Added `Implemented by` section to interface types in `graphql-docs`.
+        - Added support for default values in `redocly.yaml` environment variable references.
+      patch:
+        - Fixed an issue where links inside schema descriptions rendered by the `json-schema` Markdoc tag did not include the project path prefix.
+        - >-
+          Fixed an issue where schema fields inside `oneOf`, `anyOf`, or behind a `discriminator` weren't rendering in `llms.txt` API description
+          pages.
+        - Fixed a bug that hid the `details` tag's focus outline during keyboard navigation.
+        - Fixed an issue where the search dialog closed on window resize.
+        - Fixed an issue where front matter errors would falsely appear resolved after edits to Markdown files.
+        - Fixed page navigation buttons stretching excessively on large screens.
+        - Fixed scroll synchronization between the editor and the Webview.
+        - Fixed an issue where logout did not clear federated identity token cookies.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-47675`, `CVE-2026-47676`, `CVE-2026-47673`, `CVE-2026-47674` by upgrading `hono` to version
+          `4.12.23`.
+        - Fixed docs MCP server to flush response headers immediately and send SSE keepalive pings.
+        - Fixed a bug where Google Analytics recorded duplicate page views for routes with and without trailing slashes.
+        - Fixed an issue where webhooks remained visible when all endpoints were hidden by `x-rbac` access control.
+        - Fixed an issue where the link checker incorrectly reported valid authentication links as broken.
+        - Fixed an issue where custom Markdoc components were not working in OpenAPI operation `description` fields.
+        - Updated `styled-components` to version `6.4.2`.
+        - Updated `@redocly/openapi-core` to version `2.31.6`.
+        - Improved OpenAPI and AsyncAPI page rendering performance for projects with many Markdoc partials.
+        - Improved error handling for API function files that do not export default functions.
+        - Fixed an issue where failed search requests caused the search dialog to remain stuck on the loading spinner without displaying an error.
+        - Fixed an issue where embedded Replay (`replay-openapi` Markdoc tag) could crash when using the mock server.
+        - Fixed an issue where sidebar entries were duplicated when multiple sidebar files existed in a versioned directory.
+        - Fixed an issue where IP addresses associated with submitted feedback were inaccurate due to proxy or CDN chains.
+    dependencies:
+      '@redocly/theme': 0.66.0
+      '@redocly/realm-asyncapi-sdk': 0.12.0
+      '@redocly/graphql-docs': 1.11.0
+      '@redocly/portal-legacy-ui': 0.17.0
+      '@redocly/asyncapi-docs': 1.11.0
+      '@redocly/openapi-docs': 3.22.0
+      '@redocly/portal-plugin-mock-server': 0.19.0
   0.134.0-next.8:
     timestamp: 1780931510000
     changes:
@@ -6320,6 +6365,46 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.134.0:
+    timestamp: 1780995789008
+    changes:
+      minor:
+        - Added support for the `template` Markdown setting to specify page templates with glob patterns.
+        - Added `renderForLlms` to custom Markdoc tag schemas to control output for LLMs.
+        - Updated styles for the `cards` Markdoc tag.
+        - Added support for default values in `redocly.yaml` environment variable references.
+      patch:
+        - Fixed an issue where links inside schema descriptions rendered by the `json-schema` Markdoc tag did not include the project path prefix.
+        - >-
+          Fixed an issue where schema fields inside `oneOf`, `anyOf`, or behind a `discriminator` weren't rendering in `llms.txt` API description
+          pages.
+        - Fixed a bug that hid the `details` tag's focus outline during keyboard navigation.
+        - Fixed an issue where the search dialog closed on window resize.
+        - Fixed an issue where front matter errors would falsely appear resolved after edits to Markdown files.
+        - Fixed page navigation buttons stretching excessively on large screens.
+        - Fixed scroll synchronization between the editor and the Webview.
+        - Fixed an issue where logout did not clear federated identity token cookies.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-47675`, `CVE-2026-47676`, `CVE-2026-47673`, `CVE-2026-47674` by upgrading `hono` to version
+          `4.12.23`.
+        - Fixed docs MCP server to flush response headers immediately and send SSE keepalive pings.
+        - Fixed a bug where Google Analytics recorded duplicate page views for routes with and without trailing slashes.
+        - Fixed an issue where the link checker incorrectly reported valid authentication links as broken.
+        - Updated `styled-components` to version `6.4.2`.
+        - Updated `@redocly/openapi-core` to version `2.31.6`.
+        - Improved error handling for API function files that do not export default functions.
+        - Fixed an issue where failed search requests caused the search dialog to remain stuck on the loading spinner without displaying an error.
+        - Fixed an issue where embedded Replay (`replay-openapi` Markdoc tag) could crash when using the mock server.
+        - Fixed an issue where sidebar entries were duplicated when multiple sidebar files existed in a versioned directory.
+        - Fixed an issue where IP addresses associated with submitted feedback were inaccurate due to proxy or CDN chains.
+    dependencies:
+      '@redocly/theme': 0.66.0
+      '@redocly/realm-asyncapi-sdk': 0.12.0
+      '@redocly/graphql-docs': 1.11.0
+      '@redocly/portal-legacy-ui': 0.17.0
+      '@redocly/asyncapi-docs': 1.11.0
+      '@redocly/openapi-docs': 3.22.0
+      '@redocly/portal-plugin-mock-server': 0.19.0
   0.134.0-next.8:
     timestamp: 1780931510000
     changes:
@@ -11725,6 +11810,46 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.134.0:
+    timestamp: 1780995789008
+    changes:
+      minor:
+        - Added configuration options to control time-specific banner visibility.
+        - Added support for the `template` Markdown setting to specify page templates with glob patterns.
+        - Added `renderForLlms` to custom Markdoc tag schemas to control output for LLMs.
+        - Updated styles for the `cards` Markdoc tag.
+        - Added support for default values in `redocly.yaml` environment variable references.
+      patch:
+        - Fixed an issue where links inside schema descriptions rendered by the `json-schema` Markdoc tag did not include the project path prefix.
+        - >-
+          Fixed an issue where schema fields inside `oneOf`, `anyOf`, or behind a `discriminator` weren't rendering in `llms.txt` API description
+          pages.
+        - Fixed a bug that hid the `details` tag's focus outline during keyboard navigation.
+        - Fixed an issue where the search dialog closed on window resize.
+        - Fixed an issue where front matter errors would falsely appear resolved after edits to Markdown files.
+        - Fixed page navigation buttons stretching excessively on large screens.
+        - Fixed scroll synchronization between the editor and the Webview.
+        - Fixed an issue where logout did not clear federated identity token cookies.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-47675`, `CVE-2026-47676`, `CVE-2026-47673`, `CVE-2026-47674` by upgrading `hono` to version
+          `4.12.23`.
+        - Fixed docs MCP server to flush response headers immediately and send SSE keepalive pings.
+        - Fixed a bug where Google Analytics recorded duplicate page views for routes with and without trailing slashes.
+        - Fixed an issue where the link checker incorrectly reported valid authentication links as broken.
+        - Updated `styled-components` to version `6.4.2`.
+        - Updated `@redocly/openapi-core` to version `2.31.6`.
+        - Fixed an issue where failed search requests caused the search dialog to remain stuck on the loading spinner without displaying an error.
+        - Fixed an issue where embedded Replay (`replay-openapi` Markdoc tag) could crash when using the mock server.
+        - Fixed an issue where sidebar entries were duplicated when multiple sidebar files existed in a versioned directory.
+        - Fixed an issue where IP addresses associated with submitted feedback were inaccurate due to proxy or CDN chains.
+    dependencies:
+      '@redocly/theme': 0.66.0
+      '@redocly/realm-asyncapi-sdk': 0.12.0
+      '@redocly/graphql-docs': 1.11.0
+      '@redocly/portal-legacy-ui': 0.17.0
+      '@redocly/asyncapi-docs': 1.11.0
+      '@redocly/openapi-docs': 3.22.0
+      '@redocly/portal-plugin-mock-server': 0.19.0
   0.134.0-next.8:
     timestamp: 1780931510000
     changes:
@@ -17122,6 +17247,44 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.134.0:
+    timestamp: 1780995789008
+    changes:
+      minor:
+        - Added `renderForLlms` to custom Markdoc tag schemas to control output for LLMs.
+        - Updated styles for the `cards` Markdoc tag.
+        - Added `Implemented by` section to interface types in `graphql-docs`.
+        - Added support for default values in `redocly.yaml` environment variable references.
+      patch:
+        - >-
+          Fixed an issue where schema fields inside `oneOf`, `anyOf`, or behind a `discriminator` weren't rendering in `llms.txt` API description
+          pages.
+        - Fixed a bug that hid the `details` tag's focus outline during keyboard navigation.
+        - Fixed an issue where the search dialog closed on window resize.
+        - Fixed scroll synchronization between the editor and the Webview.
+        - Fixed an issue where logout did not clear federated identity token cookies.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-47675`, `CVE-2026-47676`, `CVE-2026-47673`, `CVE-2026-47674` by upgrading `hono` to version
+          `4.12.23`.
+        - Fixed docs MCP server to flush response headers immediately and send SSE keepalive pings.
+        - Fixed a bug where Google Analytics recorded duplicate page views for routes with and without trailing slashes.
+        - Fixed an issue where webhooks remained visible when all endpoints were hidden by `x-rbac` access control.
+        - Fixed an issue where the link checker incorrectly reported valid authentication links as broken.
+        - Fixed an issue where custom Markdoc components were not working in OpenAPI operation `description` fields.
+        - Updated `styled-components` to version `6.4.2`.
+        - Updated `@redocly/openapi-core` to version `2.31.6`.
+        - Improved OpenAPI and AsyncAPI page rendering performance for projects with many Markdoc partials.
+        - Fixed an issue where failed search requests caused the search dialog to remain stuck on the loading spinner without displaying an error.
+        - Fixed an issue where sidebar entries were duplicated when multiple sidebar files existed in a versioned directory.
+        - Fixed an issue where IP addresses associated with submitted feedback were inaccurate due to proxy or CDN chains.
+    dependencies:
+      '@redocly/theme': 0.66.0
+      '@redocly/realm-asyncapi-sdk': 0.12.0
+      '@redocly/graphql-docs': 1.11.0
+      '@redocly/portal-legacy-ui': 0.17.0
+      '@redocly/asyncapi-docs': 1.11.0
+      '@redocly/openapi-docs': 3.22.0
+      '@redocly/portal-plugin-mock-server': 0.19.0
   0.134.0-next.8:
     timestamp: 1780931510000
     changes:
@@ -22577,6 +22740,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.66.0:
+    timestamp: 1780995789008
+    changes:
+      minor:
+        - Added `renderForLlms` to custom Markdoc tag schemas to control output for LLMs.
+        - Updated styles for the `cards` Markdoc tag.
+        - Added `Implemented by` section to interface types in `graphql-docs`.
+      patch:
+        - Fixed a bug that hid the `details` tag's focus outline during keyboard navigation.
+        - Fixed an issue where the search dialog closed on window resize.
+        - Fixed page navigation buttons stretching excessively on large screens.
+        - Updated `styled-components` to version `6.4.2`.
+        - Fixed an issue where failed search requests caused the search dialog to remain stuck on the loading spinner without displaying an error.
+    dependencies: {}
   0.66.0-next.5:
     timestamp: 1780678664000
     changes:
@@ -25517,6 +25694,18 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.22.0:
+    timestamp: 1780995789008
+    changes:
+      minor:
+        - Excluded page actions from OpenAPI Docs heading content to improve accessibility.
+      patch:
+        - Updated `styled-components` to version `6.4.2`.
+        - Updated `@redocly/openapi-core` to version `2.31.6`.
+        - Improved OpenAPI and AsyncAPI page rendering performance for projects with many Markdoc partials.
+        - Fixed an issue where embedded Replay (`replay-openapi` Markdoc tag) could crash when using the mock server.
+    dependencies:
+      '@redocly/replay': 0.25.0
   3.22.0-next.6:
     timestamp: 1780678664000
     changes:
@@ -29285,6 +29474,16 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.11.0:
+    timestamp: 1780995789008
+    changes:
+      minor:
+        - Added `Implemented by` section to interface types in `graphql-docs`.
+      patch:
+        - Updated `styled-components` to version `6.4.2`.
+    dependencies:
+      '@redocly/theme': 0.66.0
+      '@redocly/openapi-docs': 3.22.0
   1.11.0-next.6:
     timestamp: 1780678664000
     changes:
@@ -30413,6 +30612,13 @@
       '@redocly/theme': 0.6.0
 '@redocly/api-docs': {}
 '@redocly/mock-server':
+  0.8.0:
+    timestamp: 1780995789008
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.31.6`.
+    dependencies: {}
   0.8.0-next.2:
     timestamp: 1780575545000
     changes:
@@ -31046,6 +31252,13 @@
         - Redocly Mock Server release
     dependencies: {}
 '@redocly/portal-legacy-ui':
+  0.17.0:
+    timestamp: 1780995789008
+    changes:
+      minor: []
+      patch:
+        - Updated `styled-components` to version `6.4.2`.
+    dependencies: {}
   0.17.0-next.1:
     timestamp: 1780490791000
     changes:
@@ -31287,6 +31500,18 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.17.0:
+    timestamp: 1780995789008
+    changes:
+      minor: []
+      patch:
+        - Updated `styled-components` to version `6.4.2`.
+    dependencies:
+      '@redocly/realm': 0.134.0
+      '@redocly/redoc-reef': 0.134.0
+      '@redocly/redoc-revel': 0.134.0
+      '@redocly/redoc': 0.134.0
+      '@redocly/theme': 0.66.0
   1.17.0-next.8:
     timestamp: 1780931510000
     changes:
@@ -36556,6 +36781,14 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.19.0:
+    timestamp: 1780995789008
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.22.0
+      '@redocly/mock-server': 0.8.0
   0.19.0-next.6:
     timestamp: 1780678664000
     changes:
@@ -39439,6 +39672,19 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.25.0:
+    timestamp: 1780995789008
+    changes:
+      minor:
+        - >-
+          Updated Replay to pre-fill workflow environment inputs and step parameter defaults with values returned from an ejected
+          `useConfigureReplay`.
+      patch:
+        - Fixed an issue in Replay where clicking a sidebar tree node label did not expand or collapse it.
+        - Improved AI agent API exploration capabilities for more consistent search results.
+        - Updated `styled-components` to version `6.4.2`.
+    dependencies:
+      '@redocly/theme': 0.66.0
   0.25.0-next.6:
     timestamp: 1780678664000
     changes:
@@ -41563,6 +41809,14 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.17.0:
+    timestamp: 1780995789008
+    changes:
+      minor: []
+      patch:
+        - Updated `styled-components` to version `6.4.2`.
+    dependencies:
+      '@redocly/theme': 0.66.0
   0.17.0-next.5:
     timestamp: 1780678664000
     changes:
@@ -43336,6 +43590,16 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.11.0:
+    timestamp: 1780995789008
+    changes:
+      minor: []
+      patch:
+        - Updated `styled-components` to version `6.4.2`.
+        - Improved OpenAPI and AsyncAPI page rendering performance for projects with many Markdoc partials.
+    dependencies:
+      '@redocly/theme': 0.66.0
+      '@redocly/openapi-docs': 3.22.0
   1.11.0-next.6:
     timestamp: 1780678664000
     changes:
@@ -47114,8 +47378,8 @@ replay:
         - Improved typing performance in the request URL field.
     dependencies:
       '@redocly/theme': 0.65.0-next.1
-  0.21.0:
-    timestamp: 1780576100000
+  0.20.1:
+    timestamp: 1780402032000
     changes:
       minor:
         - Improved accuracy and relevance of AI agent results.
