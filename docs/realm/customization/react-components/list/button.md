@@ -120,6 +120,30 @@ import { Button } from '@redocly/theme/components/Button/Button';
 
 {% /table %}
 
+## Styling and contrast
+
+Due to a known inheritance issue, the `contrastText` property defined in your theme configuration may not be automatically applied to the button text color.
+
+### Workaround
+
+To ensure the `contrastText` color is applied, add `!important` to the color value in your theme configuration:
+
+```yaml
+theme:
+  colors:
+    primary:
+      main: '#ff0000'
+      contrastText: '#ffffff!important'
+```
+
+Alternatively, you can use custom CSS to target specific buttons using their attributes. For example, to target a button with a `data-cy="try-it"` attribute:
+
+```css
+button[data-cy="try-it"] {
+  color: white;
+}
+```
+
 ## Resources
 
 - **[List of customizable components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects

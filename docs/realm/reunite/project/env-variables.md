@@ -191,6 +191,17 @@ You can manage environment variables through the **Settings** page in your proje
 1. Select the delete icon next to the variable you want to remove.
    The variable is removed from the list immediately.
 
+## Troubleshooting memory issues
+
+If you encounter "Out of Memory" (OOM) errors or if the build process is terminated due to high memory usage, you can increase the memory limit for the Node.js process using the `NODE_OPTIONS` environment variable.
+
+Set `NODE_OPTIONS` to include `--max-old-space-size` followed by the amount of memory in megabytes.
+
+Example:
+`NODE_OPTIONS=--max-old-space-size=4096`
+
+This example sets the memory limit to 4GB. You can add this variable in your project's **Settings > Environment variables** in Reunite or in your CI environment.
+
 ## Restrictions
 
 When defining custom names, avoid commonly reserved environment variables, such as `HOME` and `PATH`, and those related to the Node environment such as `NODE_ENV`.

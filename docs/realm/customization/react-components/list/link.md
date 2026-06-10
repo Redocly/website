@@ -78,6 +78,48 @@ import { Link } from '@redocly/theme/components/Link/Link';
 
 ---
 
+- `download`
+- `boolean`
+- If `true`, the browser will treat the destination as a download.
+
+---
+
+- `reloadDocument`
+- `boolean`
+- If `true`, the browser will use document navigation instead of client-side routing.
+
+---
+
+- `preventScrollReset`
+- `boolean`
+- If `true`, prevents the window from scrolling to the top when the link is clicked.
+
+---
+
+- `relative`
+- enum (`route` | `path`)
+- Defines whether the path is relative to the route hierarchy or the path.
+
+---
+
+- `viewTransition`
+- `boolean`
+- If `true`, enables a View Transition for this navigation.
+
+---
+
+- `state`
+- `any`
+- Persistent state data to be stored in history state.
+
+---
+
+- `replace`
+- `boolean`
+- If `true`, replaces the current entry in the history stack instead of adding a new one.
+
+---
+
 - `[key: string]`
 - `unknown`
 - Allows passing additional arbitrary props.
