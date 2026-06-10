@@ -14,6 +14,8 @@ plans:
 
 The `icon` tag renders a [Font Awesome](https://fontawesome.com/icons) icon.
 Icons can be used inline with text to provide additional visual context.
+You can also use `icon` in navigation elements: [sidebars](../../navigation/sidebars.md), the [navbar](../../config/navbar.md), and the [footer](../../config/footer.md) to provide visual cues.
+
 
 ## Attributes
 
@@ -97,12 +99,9 @@ A solid check-circle: {% icon name="solid check-circle" color="green" /%}
 
 A GitHub brand icon: {% icon name="brands github" /%}
 
-## Usage with other components
+## Resources
 
-Icons are commonly used in navigation elements to provide visual cues.
-For more information on using icons in specific components, refer to the following documentation:
-
-- [Navbar configuration](../../config/navbar.md)
-- [Sidebar configuration](../../navigation/sidebars.md)
-- [Footer configuration](../../config/footer.md)
-
+- **[Navbar configuration](../../config/navbar.md)** - Add icons to navbar elements
+- **[Sidebar configuration](../../navigation/sidebars.md)** - Add icons to sidebar elements
+- **[Footer configuration](../../config/footer.md)** - Add icons to footer links
+- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

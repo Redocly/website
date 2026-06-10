@@ -72,6 +72,6 @@ You can also delete components from `@theme` folder manually.
 
 ## Resources
 
-- **[Component ejection guide](./index.md)** - Learn when and why to eject built-in components for advanced customization and styling control
 - **[Eject components using CLI](./eject-components-using-cli.md)** - Alternative method for ejecting components using the command line interface for automated workflows
-- Learn how to [Eject components](./eject-components-tutorial) in practice.
+- Learn how to [Eject components](./eject-components-tutorial/index.md) in practice.
+- **[Component ejection guide](./index.md)** - Learn when and why to eject built-in components for advanced customization and styling control

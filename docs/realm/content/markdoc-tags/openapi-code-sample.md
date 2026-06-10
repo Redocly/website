@@ -242,3 +242,8 @@ You can use them to tailor the code samples to the specific needs of your users.
 Pair code samples with comprehensive documentation.
 Explain the purpose of each sample, the expected behavior, and any modifications that users might need to make.
 This way you can help your users to successfully build with your API.
+
+## Resources
+
+- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
+- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

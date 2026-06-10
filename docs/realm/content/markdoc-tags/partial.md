@@ -191,3 +191,8 @@ Use absolute links in your partials to ensure they resolve correctly everywhere 
 
 Partials can be nested, but this can create confusion for authors.
 If using nesting, create a folder structure that keeps organization clear.
+
+## Resources
+
+- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
+- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

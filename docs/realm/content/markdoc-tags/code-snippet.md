@@ -425,3 +425,4 @@ Store your example code in a central directory to make them easier to manage, up
 
 - **[Code snippet configuration](../../config/code-snippet.md)** - Complete reference for customizing code snippet appearance, icons, and behavior across your documentation
 - **[Global and page-level configuration](../../config/code-snippet.md#configuration-scope)** - Apply consistent code snippet styling and settings throughout your project
+- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

@@ -80,6 +80,6 @@ To update an ejected component:
 
 ## Resources
 
-- **[Component ejection guide](./index.md)** - Learn when and why to eject built-in components for advanced customization and styling control
 - **[Eject components in Reunite](./eject-components-in-reunite.md)** - Alternative method for ejecting components using the Reunite web interface instead of CLI
-- Discover more about the [Redocly CLI eject command](https://redocly.com/docs/cli/commands/eject).
+- Discover more about the [Redocly CLI eject command](https://redocly.com/docs/cli/commands/eject)
+- **[Component ejection guide](./index.md)** - Learn when and why to eject built-in components for advanced customization and styling control

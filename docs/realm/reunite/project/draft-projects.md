@@ -13,14 +13,14 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Draft projects let you validate a Reunite project in a production environment before you make it behave like a standard live project.
-While a project is in draft mode, Reunite marks it as a draft project, protects deployment URLs behind login, and keeps the production deployment in a lower-scale setup.
+Draft mode lets you validate a Reunite project in a production environment before you publish it for your end users.
+All new projects in Reunite start in draft mode.
 
-Draft mode changes deployment access and production deployment behavior.
 While a project stays in draft mode:
 
+- Reunite marks the project with a **Draft** badge.
 - Deployment URLs require users to log in before they can open them.
-- The production deployment runs as a single instance instead of standard high-availability production scaling.
+- The production deployment runs at a lower scale.
 
 Draft mode protects deployment access while the project remains in draft mode.
 If you still need restricted access after you go live, configure access controls before you remove draft protection.
@@ -41,8 +41,7 @@ Because draft mode protections are embedded into the deployment artifact, these 
 
 ### Access protection
 
-Draft deployment URLs require authentication.
-This protection applies while the project remains in draft mode, so users must sign in before they can open draft deployment URLs.
+Access to draft deployment URLs requires users to log in.
 
 After your project goes live, earlier draft deployments existing in Reunite still retain access protection.
 
@@ -72,8 +71,10 @@ The **Go live** action cannot be undone.
 Once you publish the project, it cannot be returned to draft mode.
 {% /admonition %}
 
+The **Go live** button is available only for users with the OWNER organization role, or members with the `admin` project role.
+
 When draft protection is removed, Reunite stops applying draft-mode login protection to new deployments.
-If the project should stay limited to specific users after you go live, configure [RBAC](../../config/access/rbac.md) and review your project access settings before you continue.
+If the project must stay limited to specific users after you go live, add [a login requirement](../../config/access/requires-login.md), or configure [RBAC](../../config/access/rbac.md) and review your project access settings before you continue.
 
 To publish a draft project:
 
@@ -98,18 +99,10 @@ To publish a draft project:
     withLightbox=true
   /%}
 
-If you do not see the **Go live** button, check your organization's project permissions.
+Reunite starts a new production build for the project and removes draft mode from this and future builds.
+You can then track this build on the [Deployments](./deployments.md) page.
 
-When the **Go live** request succeeds, Reunite starts a new production build for the project and removes draft mode as part of that flow.
-You can then track that build on the [Deployments](./deployments.md) page.
-
-## What happens after you go live
-
-After you go live:
-
-- New deployments are no longer treated as draft deployments.
-- Reunite no longer applies draft mode login protection.
-- The production deployment returns to the standard live deployment behavior for the project.
+The project switches to high-availability production scaling.
 
 ## Resources
 

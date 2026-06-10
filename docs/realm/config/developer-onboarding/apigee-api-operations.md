@@ -95,3 +95,7 @@
 
 \*\*\* Needed for API credentials sync across organizations.
 It's used to add associated products to the imported key.
+
+## Resources
+
+- **[Developer onboarding configuration](./index.md)** - Configure Apigee adapter for your project

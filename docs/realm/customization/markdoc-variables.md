@@ -37,10 +37,10 @@ This reference documents the available variables and their usage.
  - `$headers.{header-name}`
 - HTTP headers (only for authenticated users)
 --- -->
-<!-- Not working (bug reported: https://github.com/Redocly/redocly/issues/15369)
+
 - `$remoteAddr.ipAddress`
 - User's IP address
---- -->
+---
 - `$idpAccessToken`
 - User's access token
 ---
@@ -134,15 +134,15 @@ The structure of `$user` depends on your Identity Provider (IdP). Here's an exam
 }
 ```
 
-<!-- This has a problem with the output
 ### $remoteAddr
 
 ```json
 { 
-  "hostname": "::ffff:10.0.1.146", 
-  "port": 44336 
+"hostname": "example.com",
+"port": 3535,
+"ipAddress": "192.0.2.1"
 }
-``` -->
+```
 
 ### $idpAccessToken
 
@@ -177,3 +177,9 @@ By {% $frontmatter.author %}
 Access [environment variables](../reunite/project/env-variables.md) that have been exposed to the Markdoc renderer.
 
 Usage example: `{% $env.PUBLIC_REDOCLY_BRANCH_NAME %}`
+
+## Resources
+
+- **[Markdoc tags](../content/markdoc-tags/index.md)** - See the full list of supported Markdoc tags
+- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
+- **[Customization](./index.md)** - Discover customizable components and customization options for your project

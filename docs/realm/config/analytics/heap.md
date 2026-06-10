@@ -44,3 +44,7 @@ analytics:
     includeInDevelopment: true
     aooUd: my-app-id
 ```
+
+## Resources
+
+- **[Analytics configuration](./index.md)** - Explore configuration for popular analytics providers

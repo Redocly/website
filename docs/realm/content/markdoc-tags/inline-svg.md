@@ -107,3 +107,8 @@ The example below adds that class to the inline SVG:
 
 You can improve page performance by using a single SVG file and applying styling changes using CSS.
 That way you don't have to load separate files.
+
+## Resources
+
+- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
+- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

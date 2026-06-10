@@ -66,3 +66,7 @@ analytics:
     includeTitleInPageCall: true
     host: https://my-custom-host.com
 ```
+
+## Resources
+
+- **[Analytics configuration](./index.md)** - Explore configuration for popular analytics providers

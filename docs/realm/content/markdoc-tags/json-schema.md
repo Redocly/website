@@ -218,3 +218,8 @@ Validate your schema to ensure the format is correct.
 The tag cannot access the reference that was passed in an attribute.
 Verify that the pre-defined schema exists and then check the `$ref` value.
 The `ref` value must include the filepath and pointer as a single string.
+
+## Resources
+
+- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
+- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

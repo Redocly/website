@@ -182,3 +182,4 @@ The following example shows a Markdoc tag that accepts an `image` attribute:
 
 - **[Custom styling guide](../branding/index.md)** - Learn to customize your documentation appearance using CSS variables, custom stylesheets, and theme-specific styling
 - **[Build custom Markdoc tags](./build-markdoc-tags.md)** - Create custom authoring tools and interactive components that can reference your theme static assets
+- **[Customization](./index.md)** - Discover customizable components and customization options for your project

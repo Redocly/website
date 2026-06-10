@@ -93,4 +93,5 @@ Full name: {% concat($frontmatter.data.firstName, " ", $frontmatter.data.lastNam
 ## Resources
 
 - **[Markdoc functions overview](./index.md)** - Learn about using built-in and custom functions for dynamic content manipulation and processing
+- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
 - **[Build custom Markdoc functions](../../customization/build-custom-function.md)** - Define and integrate your own custom functions for advanced content processing and dynamic features

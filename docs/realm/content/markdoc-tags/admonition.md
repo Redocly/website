@@ -174,3 +174,8 @@ For example, use `warning` for cautionary information and `success` for confirma
 
 Avoid using admonitions as the first element below headers or section headers.
 Giving readers information to consider _before_ content adds to their cognitive load and reduces comprehension.
+
+## Resources
+
+- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
+- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

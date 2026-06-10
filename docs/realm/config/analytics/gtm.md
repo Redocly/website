@@ -95,3 +95,7 @@ analytics:
     selfHostedOrigin: http://my-gtm-server-host.com
     pageViewEventName: routeChange
 ```
+
+## Resources
+
+- **[Analytics configuration](./index.md)** - Explore configuration for popular analytics providers

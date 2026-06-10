@@ -351,15 +351,16 @@ By default, new projects start in draft mode.
 
 While a project is in draft mode, its deployment URLs require logging in to access, so you can safely review your work before sharing it.
 
-The **Go live** action is permanent.
-After you take your project live, you cannot switch it back to draft mode.
+To make your project available for end users, take your project live.
+This action is permanent, you cannot switch the project back to draft mode.
+You must be an OWNER in your organization or have an `admin` project role.
+
+To keep your project limited to specific users after you go live, review your access control settings before continuing.
 
 When you're ready to make the project behave like a standard live project:
 
 1. Click **Go live** in the editor banner.
 1. Confirm the action to start a new production build and remove draft protection.
-
-To keep your project limited to specific users after you go live, review your access control settings before you click **Go live**.
 
 To learn more about draft mode and the go-live flow, see [draft projects](../reunite/project/draft-projects.md).
 

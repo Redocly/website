@@ -155,3 +155,8 @@ Example element:
     language="yaml" from=1 to=10 title="museum-redocly.yaml"
   /%}
 {% /code-group %}
+
+## Resources
+
+- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
+- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags
