@@ -119,13 +119,17 @@ Control the **Previous** and **Next** navigation buttons on project pages.
   Allowed values:
   - `copy`: copy the page content as Markdown to the clipboard.
   - `view`: view the page content as Markdown in a new tab.
+  - `ask-ai`: open the AI assistant with the conversation grounded in this page.
+    Only available when [AI search](./ai-assistant.md) is enabled for the project.
   - `chatgpt`: ask ChatGPT about this page.
     Only available on public pages.
   - `claude`: ask Claude about this page.
     Only available on public pages.
+  - `docs-mcp-cursor`: install the project docs MCP server on Cursor.
+  - `docs-mcp-vscode`: install the project docs MCP server on VS Code.
 
   The first item in the list is the default action.
-  By default, all items are shown in the following order: `copy`, `view`, `chatgpt`, `claude`.
+  By default, all items are shown in the following order: `copy`, `view`, `ask-ai`, `chatgpt`, `claude`, `docs-mcp-cursor`, `docs-mcp-vscode`.
 
 ---
 

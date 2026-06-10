@@ -547,9 +547,3 @@ Our philosophy is in line with Confucius:
 > I hear and I forget, I see and I remember, I do and I understand.
 
 Go do!
-
-## Resources
-
-- **[Markdoc tags](../content/markdoc-tags/index.md)** - See the full list of supported Markdoc tags
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project

@@ -306,6 +306,19 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- search.ai.pageContext.welcomeText
+- Welcome message displayed when the AI search conversation is scoped to the current page
+- Welcome to AI search!
+  Ask me anything about this page.
+
+---
+
+- search.ai.pageContext.remove
+- Accessible label for the button that removes the page context from the AI search conversation
+- Remove page context
+
+---
+
 - search.ai.back
 - Button text to go back from AI search results
 - Back
@@ -489,6 +502,24 @@ This page contains the list of all predefined translation keys used in default U
 - page.actions.viewAsMdDescription
 - View as Markdown action description in page actions
 - Open this page as Markdown
+
+---
+
+- page.actions.askAiButtonText
+- Ask AI button text in page actions
+- Ask AI
+
+---
+
+- page.actions.askAiTitle
+- Ask AI action title in page actions
+- Ask AI about this page
+
+---
+
+- page.actions.askAiDescription
+- Ask AI action description in page actions
+- Ask AI questions about this page
 
 ---
 

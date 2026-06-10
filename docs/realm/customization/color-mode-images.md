@@ -104,4 +104,3 @@ Try changing the color mode.
 - **[Add custom color modes](../branding/customize-color-modes.md#add-new-color-modes)** - Expand beyond the default light and dark modes by creating completely new color modes with custom styling
 - **[Theme static assets](./theme-static-assets.md)** - Learn to properly reference and organize static assets within your theme for reliable image loading
 - **[Customize color modes](../branding/customize-color-modes.md)** - Apply custom styling and CSS variables for different color modes to create cohesive visual experiences
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project

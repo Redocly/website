@@ -293,8 +293,3 @@ Remove one of the attributes to avoid confusion.
 Schemas with primitive types like `{ "type": "string" }` or `{ "type": "integer" }` are not supported.
 The tag is designed for object and array examples.
 Wrap primitive values in an object or use `value` instead.
-
-## Resources
-
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
-- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

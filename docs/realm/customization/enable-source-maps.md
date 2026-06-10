@@ -94,4 +94,3 @@ Remember to disable source maps when you're done debugging to restore performanc
 - **[Build custom Markdoc functions](./build-custom-function.md)** - Create individual pieces of logic for dynamic content control with source map support for easier debugging
 - **[Create React pages](./create-react-page.md)** - Build custom pages with full control over rendered elements and enhanced debugging capabilities through source maps
 - **[Build custom Markdoc tags](./build-markdoc-tags.md)** - Create custom authoring tools for Markdown content with source map support for streamlined development
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project

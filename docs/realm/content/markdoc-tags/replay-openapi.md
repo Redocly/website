@@ -268,8 +268,3 @@ This streamlines their interactions with your API and encourages users to explor
 
 Embrace the Replay console as an educational resource that can empower your users.
 Giving users deeper knowledge about your API's functionality and usage helps foster their confidence.
-
-## Resources
-
-- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation

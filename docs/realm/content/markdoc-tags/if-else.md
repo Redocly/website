@@ -32,7 +32,7 @@ Add `else` when you want fallback content when the `if` condition is not met.
   ```
 {% /markdoc-example %}
 
-In Realm, you can chain multiple `else` branches with conditions.
+You can chain multiple `else` branches with conditions.
 The final `else /%` branch acts as the default fallback.
 
 {% markdoc-example %}
@@ -203,6 +203,5 @@ Confirm that hidden content does not leave confusing gaps.
 
 ## Resources
 
-- **[Build a Markdoc function](../../customization/build-custom-function.md)** - Follow a tutorial for adding custom functions in a Redocly Realm project
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to make your content dynamic with `if` and `else`
-- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags
+- **[Build a Markdoc function](../../customization/build-custom-function)** - Tutorial for adding custom functions in a Redocly Realm project
+- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Conceptual guide to dynamic content control with `if` and `else`

@@ -639,9 +639,3 @@ Incorrect paths will show Markdoc errors in your console.
 
 Using different amounts of content in each card can make the cards in your grid appear to be different sizes.
 Consider rephrasing your content or using the `lineClamp` attribute to maintain a consistent height.
-
-## Resources
-
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
-- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags
-

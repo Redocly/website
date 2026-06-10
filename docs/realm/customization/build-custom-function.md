@@ -271,10 +271,14 @@ The snippet above does the following:
 - Displays a beta disclaimer before launch date.
 - After launching, displays a "new product announcement" for 30 days.
 
-## Resources
+## Resources and next steps
 
-- **[Build Markdoc tags](./build-markdoc-tags.md)** - Learn how to register custom components to use on Markdown pages
-- **[Tags](https://markdoc.dev/docs/tags)** - Learn how Markdoc tags work in the official documentation
-- **[Variables](https://markdoc.dev/docs/variables)** - Find out how to customize documents at runtime in the official Markdoc documentation
-- **[Functions](https://markdoc.dev/docs/functions)** - Learn about functions in the official Markdoc documentation
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project
+In this tutorial, you built a custom Markdoc function into your Redocly project.
+Your authors can use that custom function in their Markdown to dynamically control content.
+Pretty cool!
+
+Use the following resources to build on the knowledge you gained from this tutorial:
+- [Get Started with Realm](https://redocly.com/docs/realm/get-started/)
+- Markdoc docs: [Tags](https://markdoc.dev/docs/tags)
+- Markdoc docs: [Variables](https://markdoc.dev/docs/variables)
+- Markdoc docs: [Functions](https://markdoc.dev/docs/functions)

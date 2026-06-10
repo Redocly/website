@@ -263,4 +263,3 @@ Additional information and syntax: [Tabs tag](./tabs.md)
 ## Resources
 
 - **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation

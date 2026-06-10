@@ -159,7 +159,3 @@ In this example:
   alt="Screenshot of two columns blog post template"
   withLightbox=true
 /%}
-
-## Resources
-
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project

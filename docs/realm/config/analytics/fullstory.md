@@ -44,7 +44,3 @@ analytics:
     includeInDevelopment: true
     orgId: my-org-id
 ```
-
-## Resources
-
-- **[Analytics configuration](./index.md)** - Explore configuration for popular analytics providers

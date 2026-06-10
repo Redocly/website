@@ -52,7 +52,3 @@ analytics:
     pageViewEventName: routeChange
     scriptUrl: http://some-script-url.coms/pa-ra-pam-pam-pam.js
 ```
-
-## Resources
-
-- **[Analytics configuration](./index.md)** - Explore configuration for popular analytics providers

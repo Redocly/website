@@ -317,10 +317,6 @@
 ## Summary of changes
 
 1. **Renamed Options**: Some options have been renamed for clarity or alignment with their functionalities, such as `generatedPayloadSamplesMaxDepth` to `generatedSamplesMaxDepth`.
-1. **Removed Features**: Several options related to UI customizations and response handling have been removed.
-1. **Unchanged Options**: Some options remain unchanged, indicating their continued relevance in the new configuration.
-1. **New Options**: The new interface introduces several options, suggesting new functionalities or approaches.
-
-## Resources
-
-- **[OpenAPI configuration](./index.md)** - Explore the current OpenAPI docs customization options
+2. **Removed Features**: Several options related to UI customizations and response handling have been removed.
+3. **Unchanged Options**: Some options remain unchanged, indicating their continued relevance in the new configuration.
+4. **New Options**: The new interface introduces several options, suggesting new functionalities or approaches.

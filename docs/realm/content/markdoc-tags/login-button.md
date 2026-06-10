@@ -121,9 +121,7 @@ This example uses:
 - the `$rbac.teams` variable that contains the list of teams the current user belongs to
 - an admonition to highlight the message
 
-## Resources
+## Related topics
 
-- **[Role-based access control (RBAC)](../../access/rbac.md)** - Configure access to your project based on roles and team membership
-- **[Markdoc variables](../../customization/markdoc-variables.md)** - Add dynamic data to your Markdoc content
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
-- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags
+- [Role-based access control (RBAC)](../../access/rbac.md)
+- [Markdoc variables](../../customization/markdoc-variables.md)
