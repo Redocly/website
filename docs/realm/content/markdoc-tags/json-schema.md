@@ -77,6 +77,13 @@ Define a schema directly inside the `schema` attribute (aka "inline"), as in the
 
 ---
 
+- title
+- string
+- An optional heading displayed above the rendered schema block.
+  This tag attribute is separate from a `title` property inside the `schema` object, which appears within the schema UI next to the type.
+
+---
+
 - options
 - [Options object](#options-object)
 - Options for modifying how the JSON schema is displayed.
