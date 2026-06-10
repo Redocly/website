@@ -16,6 +16,10 @@ plans:
 You can configure a custom domain for your project and optionally serve your documentation from a subdirectory path.
 This allows you to host your docs at URLs like `docs.example.com` or `docs.example.com/api/`.
 
+{% admonition type="warning" name="Unique domain requirement" %}
+Each project must have a unique custom domain. It is not possible to share a single domain across multiple projects, even if they use different path prefixes (`REDOCLY_PREFIX_PATHS`).
+{% /admonition %}
+
 ## Set up a custom domain
 
 Configure your custom domain on the project's **Settings** > **Custom domain** page:

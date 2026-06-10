@@ -25,6 +25,7 @@ You can add an instance of one or both of the two types of identity providers in
 
 - **Corporate:** used to authenticate internal users into Reunite and projects.
 - **Guest:** used to authenticate external users into projects.
+- **REDOCLY:** this is a built-in option that requires no external IdP configuration. It allows users to log in with their Redocly credentials or social login providers.
 
 For each Reunite type, you can connect to your identity provider using either the SAML 2 or OpenID Connect protocol.
 
@@ -32,7 +33,7 @@ For each Reunite type, you can connect to your identity provider using either th
 
 When configuring the `redocly.yaml` configuration file for individual projects, you can add one or all of the three possible identity provider types:
 
-- `REDOCLY`: This value represents credentials managed by Redocly and allows users to log in with their Redocly password or social login providers, like Google.
+- `REDOCLY`: This value represents credentials managed by Redocly and allows users to log in with their Redocly password or social login providers, like Google. This is a built-in option and does not require an external IdP.
 - `CORPORATE`: This value represents credentials for the IdP you added as a Corporate identity provider in Reunite.
 - `GUEST`: This value represents credentials for the IdP you added as a Guest identity provider in Reunite.
 
@@ -46,7 +47,7 @@ If you do **NOT** configure `sso` in the `redocly.yaml` file for a project, user
 
 - `GUEST`: If you have added a GUEST IdP in Reunite, users must log in to projects using it.
 - `CORPORATE`: If you have added a CORPORATE IdP in Reunite and have not entered a GUEST IdP, users must log in to projects using the CORPORATE IdP.
-- `REDOCLY`: If you have not added either a GUEST or CORPORATE IdP in Reunite, users must log in to projects using their Redocly credentials or social login providers, like Google.
+- `REDOCLY`: If you have not added either a GUEST or CORPORATE IdP in Reunite, users can log in to projects using their Redocly credentials or social login providers, like Google.
 
 ## Verified domains
 

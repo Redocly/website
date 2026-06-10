@@ -299,6 +299,37 @@ Redocly uses enhanced table formatting:
 
 Learn more about [table formatting](./markdoc-tags/table.md) for structured data presentation.
 
+## Migrating from MDX
+
+If you are transitioning from MDX-based systems (like Docusaurus), please note that `.mdx` files and JSX in Markdown are not supported in Realm. Instead, Realm uses Markdoc tags to achieve similar functionality with better performance and security.
+
+### Key differences
+
+- **No JSX:** You cannot import React components or use JSX syntax directly in your Markdown files.
+- **Markdoc tags:** Use `{% tag-name %}` syntax instead of `<ComponentName />`.
+
+### Migration example: Admonitions
+
+**In MDX/Docusaurus:**
+
+```jsx
+import Admonition from '@theme/Admonition';
+
+<Admonition type="info">
+  <p>This is an informative note.</p>
+</Admonition>
+```
+
+**In Realm (Markdoc):**
+
+```markdoc {% process=false %}
+{% admonition type="info" %}
+This is an informative note.
+{% /admonition %}
+```
+
+For more interactive components, refer to our [Markdoc tags library](./markdoc-tags/tag-library.md).
+
 ## Best practices
 
 ### File organization

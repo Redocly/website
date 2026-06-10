@@ -16,7 +16,7 @@ Role-based access control (RBAC) controls the **authorization** (what you can ac
 
 ## Authentication vs Authorization
 
-**Authentication** identifies who you are through your identity provider (SSO).
+**Authentication** identifies who you are through Redocly's built-in login or your identity provider (SSO).
 
 **Authorization** determines what you can access based on:
 - **Organization roles** from identity provider claims/attributes (when using SSO) or manual assignment (when using Redocly login)
@@ -51,7 +51,7 @@ RBAC is declared as configuration.
 Each configuration entry describes a [resource](#resource-identifiers), and a list of [teams](../reunite/organization/teams.md) with [role](./roles.md) assignments.
 You can apply these configurations to [individual pages](./page-permissions.md) or [navigation elements](./links-and-groups-permissions.md).
 
-User authentication is handled through [SSO (single sign-on)](../reunite/organization/sso/sso.md), and authorization is determined by the roles and team memberships provided by your identity provider.
+User authentication is handled through [SSO (single sign-on)](../reunite/organization/sso/sso.md) or Redocly's built-in login, and authorization is determined by the roles and team memberships.
 
 ## Resource identifiers
 

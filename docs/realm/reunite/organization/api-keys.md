@@ -26,6 +26,10 @@ Make sure you have the following:
 
 You can add API keys to your organization if you need to access the Redocly API or the Scout tool.
 
+API keys are persistent unless you manually revoke them.
+For security, Redocly stores API keys as one-way cryptographic hashes.
+This means that an API key is displayed only once during its creation and cannot be retrieved or recovered later.
+
 To add an API key to your organization:
 
 1. Log in to your Redocly instance.

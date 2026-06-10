@@ -30,7 +30,7 @@ Make sure you have the following:
 - a `redocly.yaml` configuration file with one of the following configured:
   -  `rbac` defined for the [`authenticated` default team](../teams.md#default-teams)
   -  [`requiresLogin`](../../../config/access/requires-login.md)
-- [identity provider (IdP) information added in Reunite](./add-idp.md)
+- [identity provider (IdP) information added in Reunite](./add-idp.md) (only required if using an external provider; not required for the built-in `REDOCLY` option)
 
 ## Specify IdPs for a project
 
