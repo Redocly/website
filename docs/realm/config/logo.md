@@ -34,7 +34,7 @@ Alternatively, use `srcSet` to configure separate images for each color mode.
 - image
 - string
 - **Conditionally required**.
-  URL or path to the image file (png or svg) of the logo.
+  URL, path to an image file (PNG or SVG), or a Base64-encoded data URL.
   Mutually exclusive with `srcSet`.
 
 ---
@@ -103,6 +103,17 @@ logo:
   altText: Amazing example logo
   link: "https://example.com"
   favicon: ./images/logos/favicon-example.svg
+```
+
+### Add a logo using a Base64-encoded data URL
+
+The following is an example of `logo` configuration with a Base64-encoded data URL for the logo.
+
+```yaml {% title="redocly.yaml" %}
+logo:
+  image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEX///+/v7+jQ3Y5AAAADklEQVQI12P4AIX8EAgALgAD/aNpbtEAAAAASUVORK5CYII"
+  altText: Amazing example logo
+  link: "https://example.com"
 ```
 
 ## Resources
