@@ -105,6 +105,19 @@ Results also include default versions from other APIs and non-versioned content.
 
 {% /table %}
 
+## Product-level configuration
+
+In projects with [products](./products.md), each product folder can include its own `redocly.yaml` file that overrides the root `aiAssistant` configuration for that product.
+For example, you can hide AI search for the whole project and enable it only for selected products, or customize suggestions per product.
+
+A product-level `aiAssistant` configuration replaces the root configuration entirely for that product, so include all the options you need in the product file.
+
+AI search embeddings are generated only for the content of products where AI search is enabled, so content of products with AI search hidden is not sent for embedding (unless [Docs MCP](./mcp.md) is enabled, which requires the full index).
+
+{% admonition type="info" %}
+Hiding search entirely with `search.hide: true` in the root configuration disables AI search for the whole project, and it cannot be re-enabled per product.
+{% /admonition %}
+
 ## Usage limits
 
 AI Search is available on Enterprise and Enterprise Plus plans with a monthly limit of 3500 searches per organization.
@@ -143,6 +156,18 @@ aiAssistant:
     hide: false
     inputType: button
     inputIcon: redocly
+```
+
+Hide AI search for the project and enable it only for one product:
+
+```yaml {% title="redocly.yaml" %}
+aiAssistant:
+  hide: true
+```
+
+```yaml {% title="products/platform/redocly.yaml" %}
+aiAssistant:
+  hide: false
 ```
 
 ## Resources

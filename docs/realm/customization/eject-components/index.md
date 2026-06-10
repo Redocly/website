@@ -70,6 +70,4 @@ After you have determined you need to alter a component by ejecting it and what 
 ## Resources
 
 - **[Redocly CLI eject command](https://redocly.com/docs/cli/commands/eject)** - Complete command reference and options for ejecting components using the command line interface
-- **[Component ejection tutorial](./eject-components-tutorial/index.md)** - Step-by-step practical guide to ejecting and customizing built-in components with real examples
-- **[Eject components in Reunite](./eject-components-in-reunite.md)** - Learn how to eject components to customize in Reunite
-- **[Eject components using the CLI](./eject-components-using-cli.md)** - Learn how to eject components to customize using the CLI
+- **[Component ejection tutorial](./eject-components-tutorial)** - Step-by-step practical guide to ejecting and customizing built-in components with real examples

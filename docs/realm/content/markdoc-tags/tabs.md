@@ -384,8 +384,3 @@ Ensuring your tabs are _scannable_ creates a better experience for readers.
 
 Keep the number of tabs low for better navigation and comprehension.
 Too many tabs is overwhelming for users and having multiple rows is a bad experience.
-
-## Resources
-
-- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation

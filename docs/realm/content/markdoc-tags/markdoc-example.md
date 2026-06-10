@@ -120,8 +120,3 @@ Keep your examples simple, with minor variations so users don't get too overwhel
 
 **Link to detailed reference documentation**
 Includes links to detailed reference documentation so users can see all of the different options you are not including in your examples that they may want to use.
-
-## Resources
-
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
-- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

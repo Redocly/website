@@ -473,4 +473,3 @@ The `useConfigureReplay` hook returns an object with:
 
 - **[Configure request values](./configure-request-values.md)** - Set static request values for headers, parameters, and security details in your OpenAPI descriptions
 - **[Component ejection guide](./eject-components/index.md)** - Learn to eject and customize built-in components for advanced request value handling and UI modifications
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project

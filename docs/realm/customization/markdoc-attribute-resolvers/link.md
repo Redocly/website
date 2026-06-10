@@ -75,7 +75,3 @@ The `link` resolver provides comprehensive error handling:
 - **File Not Found**: Throws descriptive errors when referenced files don't exist.
 - **Invalid Paths**: Validates path formats and provides helpful error messages.
 - **Build-time Validation**: All errors are caught during the build process.
-
-## Resources
-
-- **[Built-in Markdoc attribute resolvers](./index.md)** - Discover Markdoc attribute resolvers

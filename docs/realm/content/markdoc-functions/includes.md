@@ -81,9 +81,3 @@ includes(array, value)
   {% /if %}
   ```
 {% /markdoc-example %}
-
-## Resources
-
-- **[Build custom Markdoc functions](../../customization/build-custom-function.md)** - Define and integrate your own custom functions for advanced content processing and dynamic features
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
-- **[Markdoc functions overview](./index.md)** - Learn about using built-in and custom functions for dynamic content manipulation and processing

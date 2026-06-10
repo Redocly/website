@@ -83,7 +83,3 @@ analytics:
       logLevel: 'INFO'
       useBeacon: true
 ```
-
-## Resources
-
-- **[Analytics configuration](./index.md)** - Explore configuration for popular analytics providers

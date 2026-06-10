@@ -164,9 +164,7 @@ Use `alignment="end"` for navbar or right-aligned layouts to align the dropdown 
 Customize the `options` array to display only the connection methods relevant to your audience.
 If your users primarily use Cursor, consider showing only that option to reduce cognitive load.
 
-## Resources
+## Related resources
 
 - **[MCP configuration](../../config/mcp.md)** - Configure the MCP server and Connect MCP button visibility
 - **[MCP servers overview](../../customization/mcp-server/index.md)** - Learn about MCP servers and integration with AI tools
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
-- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

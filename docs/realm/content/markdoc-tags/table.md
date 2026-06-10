@@ -370,5 +370,3 @@ Introduce tables with an explanatory sentence that describes the significance of
 ## Resources
 
 - **[Customize table styles](../../branding/customize-tables.md)** - Learn to style tables with CSS variables, custom classes, and mode-specific styling for enhanced visual presentation
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
-- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

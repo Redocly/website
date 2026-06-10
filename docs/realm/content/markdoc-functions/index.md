@@ -35,5 +35,3 @@ Arguments can be literal values (strings, numbers, booleans), variables (like `$
 
 - **[Built-in functions overview](./built-in.md)** - Explore standard Markdoc functions available for content manipulation and dynamic value generation
 - **[Build custom Markdoc functions](../../customization/build-custom-function.md)** - Learn to define and integrate your own custom functions for advanced content processing and dynamic features
-- **[`includes` function](./includes.md)** - Use a Markdoc function that checks if an array contains a specific value.
-- **[`concat` function](./concat.md)** - Use a Markdoc function that joins multiple arguments into a single string.

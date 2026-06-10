@@ -47253,8 +47253,8 @@ reunite:
         - '- Added support for syncing pull request comment and thread resolution status from GitHub to Reunite when marked resolved or unresolved.'
       patch: []
     dependencies: {}
-  v2026-06-10.1:
-    timestamp: 1781074987000
+  v2026-06-09.3:
+    timestamp: 1781022819000
     changes:
       minor:
         - Added web search support to the Replay AI agent.

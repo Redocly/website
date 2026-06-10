@@ -61,7 +61,3 @@ The `rawContent` resolver provides comprehensive error handling:
 
 - **File Not Found**: Throws descriptive errors when referenced files don't exist.
 - **Build-time Validation**: All errors are caught during the build process.
-
-## Resources
-
-- **[Built-in Markdoc attribute resolvers](./index.md)** - Discover Markdoc attribute resolvers

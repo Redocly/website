@@ -58,10 +58,3 @@ If other Markdown or TypeScript pages have links pointing to the excluded page, 
 {% admonition type="info" %}
 The `README.md` file is automatically ignored when located in the project's root directory.
 {% /admonition %}
-
-## Resources
-
-- **[RBAC configuration](../config/access/rbac.md)** - Configure access rules to protect static assets and other content in your project
-- **[Ignore files and folders](../config/ignore.md)** - Exclude specific files and folders from project builds without removing the source files
-- **[Theme static assets](./theme-static-assets.md)** - Add custom static assets to your theme for branding and functionality
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project
