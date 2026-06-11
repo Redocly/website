@@ -47260,6 +47260,15 @@ reunite:
         - Added web search support to the Replay AI agent.
       patch: []
     dependencies: {}
+  v2026-06-11.1:
+    timestamp: 1781167052000
+    changes:
+      minor:
+        - >-
+          Added infinite scroll to the organization overview project list, replacing the `Load more` button. Fixed project card grid sizing to prevent
+          a single card in the last row from stretching.
+      patch: []
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
