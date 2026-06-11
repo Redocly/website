@@ -252,6 +252,18 @@ You can use environment variables to add values that resolve to the example payl
   }
 /%}
 
+## Troubleshooting
+
+### 'operationId not found' error
+The `replay-openapi` tag respects Role-Based Access Control (RBAC). If a user does not have permission to view an operation (for example, via `x-rbac`), the tag will fail to render and may display an 'operationId not found' error. Ensure that the user has the necessary permissions to access the operation.
+
+### Request body rendering
+If the request body fails to render or appears empty in the Replay console, ensure you are using the canonical Markdoc object syntax for the `requestBody` attribute. For example:
+`requestBody={ fieldName: "value" }`
+
+### Multipart/form-data and binary fields
+The Replay console has limitations when handling `multipart/form-data` with binary field uploads. Auto-generated samples do not support file paths for fields defined with the `binary` format. For complex upload scenarios, consider providing manual guidance or examples.
+
 ## Best practices
 
 **Provide clear instructions**

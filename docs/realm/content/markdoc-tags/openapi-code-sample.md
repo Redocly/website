@@ -230,6 +230,14 @@ The following example includes pre-defined parameters and environment variables.
   }
 /%}
 
+## Troubleshooting
+
+### 'operationId not found' error
+The `openapi-code-sample` tag respects Role-Based Access Control (RBAC). If a user does not have permission to view an operation (for example, via `x-rbac`), the tag will fail to render and may display an 'operationId not found' error. Ensure that the user has the necessary permissions to access the operation.
+
+### Multipart/form-data and binary fields
+Auto-generated code samples do not support using file paths for fields defined with the `binary` format in `multipart/form-data` requests. If you need to show samples for these types of requests, we recommend providing manual examples using the `x-codeSamples` specification extension in your OpenAPI description.
+
 ## Best practices
 
 **Customize for flexibility**

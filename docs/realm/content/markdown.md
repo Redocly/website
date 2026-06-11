@@ -171,6 +171,24 @@ graph TD
 
 Learn more about [adding diagrams](./add-diagram.md) with additional examples and chart types.
 
+### Videos
+
+You can embed videos in your Markdown files using standard HTML `<iframe>` tags. While Redocly does not provide a custom Markdoc tag for videos, standard HTML tags are fully supported.
+
+The following example shows how to embed a YouTube video:
+
+```html
+<iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
+```
+
 ## Markdoc tags
 
 Redocly includes powerful Markdoc tags for interactive elements:

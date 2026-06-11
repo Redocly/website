@@ -111,6 +111,11 @@ openapi:
 
 With this configuration, each endpoint has code samples in these five languages generated and displayed in the documentation.
 
+## Limitations
+
+### Binary format fields
+Auto-generated code samples do not support using file paths for fields defined with the `binary` format (typically used in `multipart/form-data` requests). For these cases, you should manually provide code samples using the `x-codeSamples` extension in your OpenAPI description.
+
 ## Resources
 
 - **[OpenAPI configuration](./index.md)** - Complete guide to OpenAPI configuration options for customizing API reference documentation

@@ -80,6 +80,11 @@ With `pointer`:
 
 {% /table %}
 
+## Troubleshooting
+
+### 'operationId not found' error
+The `openapi-response-sample` tag respects Role-Based Access Control (RBAC). If a user does not have permission to view an operation (for example, via `x-rbac`), the tag will fail to render and may display an 'operationId not found' error. Ensure that the user has the necessary permissions to access the operation.
+
 ## Best practices
 
 **Customize for flexibility**
