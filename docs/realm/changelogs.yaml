@@ -1,4 +1,25 @@
 '@redocly/realm':
+  0.135.0-next.1:
+    timestamp: 1781186900000
+    changes:
+      minor:
+        - Added `GraphQL` support to Docs MCP server.
+        - Added `title` attribute to the `json-schema` Markdoc tag to display a heading above the rendered schema.
+      patch:
+        - Fixed an issue where the login button did not return users to their previous page after signing in.
+        - >-
+          Fixed scroll synchronization between the Webview and editor: dragging the Webview scrollbar scrolls the editor, and mouse-wheel scrolling
+          maintains alignment.
+        - Fixed an issue where the Markdoc `tabs` tag crashed if it contained content without a `label` attribute.
+        - >-
+          Improved HTTP caching for HTML responses by setting `Cache-Control: no-cache` on public projects and `Cache-Control: private` on protected
+          projects.
+    dependencies:
+      '@redocly/theme': 0.67.0-next.1
+      '@redocly/openapi-docs': 3.23.0-next.1
+      '@redocly/asyncapi-docs': 1.12.0-next.1
+      '@redocly/graphql-docs': 1.12.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.20.0-next.1
   0.135.0-next.0:
     timestamp: 1781011614000
     changes:
@@ -6380,6 +6401,27 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.135.0-next.1:
+    timestamp: 1781186900000
+    changes:
+      minor:
+        - Added `GraphQL` support to Docs MCP server.
+        - Added `title` attribute to the `json-schema` Markdoc tag to display a heading above the rendered schema.
+      patch:
+        - Fixed an issue where the login button did not return users to their previous page after signing in.
+        - >-
+          Fixed scroll synchronization between the Webview and editor: dragging the Webview scrollbar scrolls the editor, and mouse-wheel scrolling
+          maintains alignment.
+        - Fixed an issue where the Markdoc `tabs` tag crashed if it contained content without a `label` attribute.
+        - >-
+          Improved HTTP caching for HTML responses by setting `Cache-Control: no-cache` on public projects and `Cache-Control: private` on protected
+          projects.
+    dependencies:
+      '@redocly/theme': 0.67.0-next.1
+      '@redocly/openapi-docs': 3.23.0-next.1
+      '@redocly/asyncapi-docs': 1.12.0-next.1
+      '@redocly/graphql-docs': 1.12.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.20.0-next.1
   0.135.0-next.0:
     timestamp: 1781011614000
     changes:
@@ -11840,6 +11882,27 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.135.0-next.1:
+    timestamp: 1781186900000
+    changes:
+      minor:
+        - Added `GraphQL` support to Docs MCP server.
+        - Added `title` attribute to the `json-schema` Markdoc tag to display a heading above the rendered schema.
+      patch:
+        - Fixed an issue where the login button did not return users to their previous page after signing in.
+        - >-
+          Fixed scroll synchronization between the Webview and editor: dragging the Webview scrollbar scrolls the editor, and mouse-wheel scrolling
+          maintains alignment.
+        - Fixed an issue where the Markdoc `tabs` tag crashed if it contained content without a `label` attribute.
+        - >-
+          Improved HTTP caching for HTML responses by setting `Cache-Control: no-cache` on public projects and `Cache-Control: private` on protected
+          projects.
+    dependencies:
+      '@redocly/theme': 0.67.0-next.1
+      '@redocly/openapi-docs': 3.23.0-next.1
+      '@redocly/asyncapi-docs': 1.12.0-next.1
+      '@redocly/graphql-docs': 1.12.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.20.0-next.1
   0.135.0-next.0:
     timestamp: 1781011614000
     changes:
@@ -17292,6 +17355,25 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.135.0-next.1:
+    timestamp: 1781186900000
+    changes:
+      minor:
+        - Added `GraphQL` support to Docs MCP server.
+      patch:
+        - Fixed an issue where the login button did not return users to their previous page after signing in.
+        - >-
+          Fixed scroll synchronization between the Webview and editor: dragging the Webview scrollbar scrolls the editor, and mouse-wheel scrolling
+          maintains alignment.
+        - >-
+          Improved HTTP caching for HTML responses by setting `Cache-Control: no-cache` on public projects and `Cache-Control: private` on protected
+          projects.
+    dependencies:
+      '@redocly/theme': 0.67.0-next.1
+      '@redocly/openapi-docs': 3.23.0-next.1
+      '@redocly/asyncapi-docs': 1.12.0-next.1
+      '@redocly/graphql-docs': 1.12.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.20.0-next.1
   0.135.0-next.0:
     timestamp: 1781011614000
     changes:
@@ -22800,6 +22882,14 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.67.0-next.1:
+    timestamp: 1781186900000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the Markdoc `tabs` tag crashed if it contained content without a `label` attribute.
+        - Fixed styling and layout issues in the `requestBody` tab of Replay.
+    dependencies: {}
   0.67.0-next.0:
     timestamp: 1781011614000
     changes:
@@ -25761,6 +25851,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.23.0-next.1:
+    timestamp: 1781186900000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.26.0-next.1
   3.23.0-next.0:
     timestamp: 1781011614000
     changes:
@@ -29550,6 +29647,14 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.12.0-next.1:
+    timestamp: 1781186900000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.67.0-next.1
+      '@redocly/openapi-docs': 3.23.0-next.1
   1.12.0-next.0:
     timestamp: 1781011614000
     changes:
@@ -31601,6 +31706,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.18.0-next.1:
+    timestamp: 1781186900000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.135.0-next.1
+      '@redocly/redoc': 0.135.0-next.1
+      '@redocly/redoc-reef': 0.135.0-next.1
+      '@redocly/redoc-revel': 0.135.0-next.1
+      '@redocly/theme': 0.67.0-next.1
   1.18.0-next.0:
     timestamp: 1781011614000
     changes:
@@ -36894,6 +37010,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.20.0-next.1:
+    timestamp: 1781186900000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.23.0-next.1
   0.20.0-next.0:
     timestamp: 1781011614000
     changes:
@@ -39794,6 +39917,16 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.26.0-next.1:
+    timestamp: 1781186900000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where some APIs rejected requests that came from Replay and didn't have request bodies.
+        - Fixed an issue where the Markdoc `tabs` tag crashed if it contained content without a `label` attribute.
+        - Fixed styling and layout issues in the `requestBody` tab of Replay.
+    dependencies:
+      '@redocly/theme': 0.67.0-next.1
   0.26.0-next.0:
     timestamp: 1781011614000
     changes:
@@ -41940,6 +42073,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.18.0-next.1:
+    timestamp: 1781186900000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.67.0-next.1
   0.18.0-next.0:
     timestamp: 1781011614000
     changes:
@@ -43729,6 +43869,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.12.0-next.1:
+    timestamp: 1781186900000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.67.0-next.1
+      '@redocly/openapi-docs': 3.23.0-next.1
   1.12.0-next.0:
     timestamp: 1781011614000
     changes:
