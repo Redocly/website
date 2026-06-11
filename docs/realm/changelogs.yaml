@@ -47269,6 +47269,13 @@ reunite:
           a single card in the last row from stretching.
       patch: []
     dependencies: {}
+  v2026-06-11.3:
+    timestamp: 1781182103000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue with loading theme components list.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
