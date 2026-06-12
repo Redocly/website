@@ -47424,6 +47424,16 @@ reunite:
       patch:
         - Fixed an issue with loading theme components list.
     dependencies: {}
+  v2026-06-12.2:
+    timestamp: 1781271018000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.32.1`.
+        - >-
+          Fixed an issue where the active editor file and `redocly.yaml` contents were not sent as context to the Reunite AI Assistant, causing
+          answers to ignore the current file.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
