@@ -33,6 +33,8 @@
   "overrides": {
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "shell-quote@<1.8.4": "1.8.4",
+    "js-cookie@<3.0.7": "3.0.7",
     "@redocly/realm": "0.135.0-next.0"
   }
 }
