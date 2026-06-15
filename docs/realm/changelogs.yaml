@@ -47424,6 +47424,19 @@ reunite:
       patch:
         - Fixed an issue with loading theme components list.
     dependencies: {}
+  v2026-06-15.1:
+    timestamp: 1781525223000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where a transient Rebilly concurrent modification conflict during usage reporting was misclassified as exceeding the pages
+          budget, failing the build. Usage reporting now retries on such conflicts.
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.32.1`.
+        - >-
+          Fixed an issue where the active editor file and `redocly.yaml` contents were not sent as context to the Reunite AI Assistant, causing
+          answers to ignore the current file.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
