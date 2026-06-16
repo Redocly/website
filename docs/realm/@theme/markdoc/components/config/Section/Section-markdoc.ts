@@ -1,4 +1,4 @@
-import type { Schema } from '@markdoc/markdoc';
+import type { Schema } from '@redocly/markdoc';
 
 export const ConfigSectionTag: Schema = {
   render: 'ConfigSection',

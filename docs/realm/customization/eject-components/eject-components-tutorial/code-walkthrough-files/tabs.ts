@@ -1,4 +1,4 @@
-import markdoc from '@markdoc/markdoc';
+import markdoc from '@redocly/markdoc';
 
 import type { MarkdocSchemaWrapper } from '@redocly/theme/markdoc/tags/types';
 

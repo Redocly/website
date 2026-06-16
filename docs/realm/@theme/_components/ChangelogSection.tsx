@@ -1,8 +1,8 @@
 // @ts-ignore eslint-disable-next-line
 import * as React from 'react';
 import styled from 'styled-components';
-import dynamicReact from '@markdoc/markdoc/dist/react';
-import markdoc from '@markdoc/markdoc';
+import dynamicReact from '@redocly/markdoc/dist/react';
+import markdoc from '@redocly/markdoc';
 import { Highlight, HighlightContext } from './Highlight';
 import { Heading } from '@redocly/theme/markdoc/components/Heading/Heading';
 import { SHORT_NAMES } from '../../changelog.page';

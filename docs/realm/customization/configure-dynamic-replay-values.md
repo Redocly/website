@@ -429,93 +429,6 @@ A few things worth knowing:
 - An **empty string** is treated as "clear this value" — useful when a value in your app gets reset and you want Replay to forget the old one too. Omit the key entirely if you want the persisted value to stay.
 - A field-specific entry (such as `security.default.token.access_token` or `headers['X-Tenant-Id']`) wins over a same-named entry in `envVariables`.
 
-## Empty input hints (`inputHints`)
-
-When an input is defined but has no value (for example `${inputs.bearerAuth_token}` in Try it), Replay shows a tooltip.
-Use `inputHints` in the object returned from `getReplayConfiguration` to customize that message for each input name.
-
-You can add titles, descriptions, and optional action buttons to empty-input tooltips.
-
-Input names match environment variable names generated from your OpenAPI security schemes (for example `bearerAuth_token` for a scheme id `bearerAuth`).
-Use the `"default"` key as a fallback when no input-specific hint exists.
-
-### Root-level and server-level hints
-
-`inputHints` can be set at the root level (a shared default that applies to every server) and/or nested under a server entry when you return `ConfigureServerRequestValues`. Unlike the other request values (`headers`, `security`, `envVariables`, and so on), where a server-keyed entry replaces the root value for that server, `inputHints` from both levels are combined — the server level takes priority and the root level fills in the rest. Resolution for a given input follows this precedence:
-
-1. The server-level hint for the active server (by input name, then its `"default"`).
-2. The root-level hint (by input name, then its `"default"`).
-3. Replay's standard "undefined input" message when neither level resolves a hint.
-
-This lets you keep a shared set of root-level hints and override individual inputs per server.
-
-```typescript {% title="use-configure-replay.ts (excerpt)" %}
-return {
-  // Root-level hints apply to every server.
-  inputHints: {
-    bearerAuth_token: { title: 'Sign in to auto-fill', text: 'Added automatically after sign-in.' },
-    default: { title: 'Missing input value', text: 'Set a value in the environment.' },
-  },
-  // Server-level values, with an optional per-server hint override.
-  'https://api.example.com/v2': {
-    security: { default: { token: { access_token: '' } } },
-    inputHints: {
-      bearerAuth_token: { title: 'Production token', text: 'Use your production credentials.' },
-    },
-  },
-};
-```
-
-### `actions` behavior
-
-{% table %}
-- `actions`
-- Tooltip footer
----
-- omitted or `undefined`
-- Custom title and text, then the default **Set value** button
----
-- `[]`
-- Custom title and text only (no buttons)
----
-- `[{ label, action }, ...]`
-- Custom title and text, then your buttons (`action` runs on click)
-{% /table %}
-
-`action` must be a function returned from `getReplayConfiguration` in your theme (not from a JSON API response).
-
-### Example for unauthenticated users
-
-```typescript {% title="use-configure-replay.ts (excerpt)" %}
-if (!context.userClaims?.email) {
-  return {
-    inputHints: {
-      bearerAuth_token: {
-        title: 'Sign in to auto-fill',
-        text: 'This authorization token is added automatically after you sign in.',
-        actions: [
-          {
-            label: 'Sign in',
-            action: () => {
-              window.location.assign('/login');
-            },
-          },
-        ],
-      },
-    },
-    security: {
-      default: {
-        token: {
-          access_token: '',
-        },
-      },
-    },
-  };
-}
-```
-
-When the user is signed in, return `security` / `envVariables` with real values and omit `inputHints`.
-
 ## Use cases for dynamic Replay configuration
 
 Dynamic Replay configuration is useful for:
@@ -525,7 +438,6 @@ Dynamic Replay configuration is useful for:
 - **Environment-specific values**: retrieving configuration based on the current environment
 - **Server variable configuration**: dynamically setting server variables for URLs
 - **External service integration**: fetching configuration from third-party services
-- **Empty input messaging**: explaining why credentials are empty and linking to sign-in or docs via `inputHints`
 
 ## Context parameter
 
@@ -552,8 +464,8 @@ The context parameter includes:
 The `useConfigureReplay` hook returns an object with:
 
 - `config`: the request values configuration, which can be:
-  - `ConfigureRequestValues`: set global request values that apply to all servers (including optional `inputHints`)
-  - `ConfigureServerRequestValues`: set different request values per server URL (each server entry may include `inputHints`)
+  - `ConfigureRequestValues`: set global request values that apply to all servers
+  - `ConfigureServerRequestValues`: set different request values per server URL
   - `null`: when configuration cannot be fetched or an error occurs
 - `refresh`: a function to manually refresh the configuration when called
 

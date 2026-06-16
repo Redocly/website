@@ -10,7 +10,7 @@
   "dependencies": {
     "@redocly/realm": "next",
     "styled-components": "^6.4.2",
-    "@markdoc/markdoc": "0.5.1",
+    "@redocly/markdoc": "0.5.7",
     "highlight-words-core": "1.2.2",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",

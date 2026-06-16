@@ -1,4 +1,4 @@
-import type { Schema } from '@markdoc/markdoc';
+import type { Schema } from '@redocly/markdoc';
 
 export const IconTag: Schema = {
   render: 'ThemeIcon',
