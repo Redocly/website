@@ -47545,6 +47545,13 @@ reunite:
           Fixed an issue where a transient Rebilly concurrent modification conflict during usage reporting was misclassified as exceeding the pages
           budget, failing the build. Usage reporting now retries on such conflicts.
     dependencies: {}
+  v2026-06-16.4:
+    timestamp: 1781614383000
+    changes:
+      minor: []
+      patch:
+        - Fixed git blame annotations wrapping onto a new line with word wrap enabled.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
