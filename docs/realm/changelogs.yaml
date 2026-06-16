@@ -1,4 +1,16 @@
 '@redocly/realm':
+  0.135.0-next.2:
+    timestamp: 1781592346000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.32.1`.
+        - Fixed security vulnerability `GHSA-gv7w-rqvm-qjhr` by upgrading `esbuild` to version `0.28.1`.
+    dependencies:
+      '@redocly/openapi-docs': 3.23.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.20.0-next.2
+      '@redocly/asyncapi-docs': 1.12.0-next.2
+      '@redocly/graphql-docs': 1.12.0-next.2
   0.135.0-next.1:
     timestamp: 1781186900000
     changes:
@@ -6401,6 +6413,18 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.135.0-next.2:
+    timestamp: 1781592346000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.32.1`.
+        - Fixed security vulnerability `GHSA-gv7w-rqvm-qjhr` by upgrading `esbuild` to version `0.28.1`.
+    dependencies:
+      '@redocly/openapi-docs': 3.23.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.20.0-next.2
+      '@redocly/asyncapi-docs': 1.12.0-next.2
+      '@redocly/graphql-docs': 1.12.0-next.2
   0.135.0-next.1:
     timestamp: 1781186900000
     changes:
@@ -11882,6 +11906,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.135.0-next.2:
+    timestamp: 1781592346000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.32.1`.
+        - Fixed security vulnerability `GHSA-gv7w-rqvm-qjhr` by upgrading `esbuild` to version `0.28.1`.
+    dependencies:
+      '@redocly/openapi-docs': 3.23.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.20.0-next.2
+      '@redocly/asyncapi-docs': 1.12.0-next.2
+      '@redocly/graphql-docs': 1.12.0-next.2
   0.135.0-next.1:
     timestamp: 1781186900000
     changes:
@@ -17355,6 +17391,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.135.0-next.2:
+    timestamp: 1781592346000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.32.1`.
+        - Fixed security vulnerability `GHSA-gv7w-rqvm-qjhr` by upgrading `esbuild` to version `0.28.1`.
+    dependencies:
+      '@redocly/openapi-docs': 3.23.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.20.0-next.2
+      '@redocly/asyncapi-docs': 1.12.0-next.2
+      '@redocly/graphql-docs': 1.12.0-next.2
   0.135.0-next.1:
     timestamp: 1781186900000
     changes:
@@ -25851,6 +25899,14 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.23.0-next.2:
+    timestamp: 1781592346000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.32.1`.
+    dependencies:
+      '@redocly/replay': 0.26.0-next.2
   3.23.0-next.1:
     timestamp: 1781186900000
     changes:
@@ -29647,6 +29703,13 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.12.0-next.2:
+    timestamp: 1781592346000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.23.0-next.2
   1.12.0-next.1:
     timestamp: 1781186900000
     changes:
@@ -30802,6 +30865,13 @@
       '@redocly/theme': 0.6.0
 '@redocly/api-docs': {}
 '@redocly/mock-server':
+  0.9.0-next.1:
+    timestamp: 1781592346000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.32.1`.
+    dependencies: {}
   0.9.0-next.0:
     timestamp: 1781011614000
     changes:
@@ -31706,6 +31776,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.18.0-next.2:
+    timestamp: 1781592346000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.135.0-next.2
+      '@redocly/redoc': 0.135.0-next.2
+      '@redocly/redoc-reef': 0.135.0-next.2
+      '@redocly/redoc-revel': 0.135.0-next.2
   1.18.0-next.1:
     timestamp: 1781186900000
     changes:
@@ -37010,6 +37090,14 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.20.0-next.2:
+    timestamp: 1781592346000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.9.0-next.1
+      '@redocly/openapi-docs': 3.23.0-next.2
   0.20.0-next.1:
     timestamp: 1781186900000
     changes:
@@ -39917,6 +40005,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.26.0-next.2:
+    timestamp: 1781592346000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.32.1`.
+    dependencies: {}
   0.26.0-next.1:
     timestamp: 1781186900000
     changes:
@@ -43869,6 +43964,13 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.12.0-next.2:
+    timestamp: 1781592346000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.23.0-next.2
   1.12.0-next.1:
     timestamp: 1781186900000
     changes:
@@ -47433,6 +47535,15 @@ reunite:
         - >-
           Fixed an issue where the active editor file and `redocly.yaml` contents were not sent as context to the Reunite AI Assistant, causing
           answers to ignore the current file.
+    dependencies: {}
+  v2026-06-16.1:
+    timestamp: 1781599123000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where a transient Rebilly concurrent modification conflict during usage reporting was misclassified as exceeding the pages
+          budget, failing the build. Usage reporting now retries on such conflicts.
     dependencies: {}
 replay:
   0.0.2:
