@@ -33,7 +33,7 @@ REDOCLY_CORS_ORIGINS=https://docs.example.com,https://www.example.com
 ```
 
 {% admonition type="warning" name="Required for embedding" %}
-If the embedding page's origin isn't listed in `REDOCLY_CORS_ORIGINS`, the browser blocks the request to `api-url` and the assistant can't respond. 
+If the embedding page's origin isn't listed in `REDOCLY_CORS_ORIGINS`, the browser blocks the request to `api-url` and the assistant can't respond.
 [Manage environment variables](../reunite/project/env-variables.md#manage-environment-variables)
 {% /admonition %}
 
@@ -41,7 +41,7 @@ If the embedding page's origin isn't listed in `REDOCLY_CORS_ORIGINS`, the brows
 
 Load the script from the Redocly CDN:
 
-```
+```html
 https://cdn.redocly.com/ai-assistant/releases/latest/main.js
 ```
 
