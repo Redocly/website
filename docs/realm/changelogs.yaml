@@ -47825,17 +47825,6 @@ reunite:
       patch:
         - Fixed git blame annotations wrapping onto a new line with word wrap enabled.
     dependencies: {}
-  v2026-06-18.2:
-    timestamp: 1781781460000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.33.1`.
-        - >-
-          Fixed `"Custom filter 'workflowId' can only be used with ':' operator"` error in the Respect Monitoring tab when filtering multiple
-          workflows.
-        - Added `caption` attribute to the `img` Markdoc tag in the Reunite editor.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
