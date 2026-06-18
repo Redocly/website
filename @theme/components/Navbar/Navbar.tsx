@@ -244,7 +244,7 @@ const MobileMenuButton = styled(Button)`
 `;
 
 const InstallButton = styled(Button)`
-  :hover {
+  &:hover {
     background: rgba(255, 255, 255, 0.05);
   }
 `;
@@ -252,7 +252,7 @@ const InstallButton = styled(Button)`
 const MoreButton = styled(Button)`
   color: var(--secondary-color);
 
-  :hover {
+  &:hover {
     color: var(--secondary-color);
     background: rgba(255, 255, 255, 0.05);
   }

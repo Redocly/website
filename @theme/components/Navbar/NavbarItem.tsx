@@ -225,7 +225,7 @@ const Items = styled.div`
     font-weight: 500;
     line-height: 20px;
 
-    :hover {
+    &:hover {
       text-decoration: underline;
     }
   }
@@ -391,7 +391,7 @@ export const DropdownListItem = styled.li<{ product?: string, isLast?: boolean }
     }
   }
 
-  :hover {
+  &:hover {
     background: ${({ product, isLast }) =>
       isLast
         ? 'var(--hover-last-navbar-color)'
@@ -405,7 +405,7 @@ const DropdownListItemReunite = styled(DropdownListItem)`
   background-image: url(${require('./images/eclipse.svg')});
   padding: 20px 20px 22px 20px;
 
-  :hover {
+  &:hover {
     background-image: url(${require('./images/eclipse.svg')});
   }
 `;
