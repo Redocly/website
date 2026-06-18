@@ -36,6 +36,15 @@ Reunite logs:
 All data is collected on behalf of your organization and used only to provide aggregated insights in your Analytics dashboard.
 Redocly does not use analytics data for advertising or tracking users across sites, and does not attempt to identify individual visitors.
 
+{% admonition type="warning" name="Telemetry must be enabled" %}
+Analytics data collection relies on telemetry.
+Setting the `REDOCLY_TELEMETRY` environment variable to `off` in your production deployment disables telemetry.
+Page views and search queries are not collected and no data appears on the Analytics page.
+To collect Analytics data, leave telemetry enabled (the default in production).
+
+See [Telemetry](./telemetry.md) for more details.
+{% /admonition %}
+
 The Analytics page contains collected data with charts for visualization.
 The Analytics page is available to users with the admin or maintainer project role.
 By default, organization owners and members are assigned the admin role for projects.
