@@ -95,9 +95,9 @@ Ready to build something amazing?
 {% cards columns=2 cardMinWidth=300 %}
 
   {% card
-    title="Museum API example"
-    to="https://github.com/Redocly/museum-openapi-example"
-    icon="images/home-page/museum-card-icon.svg"
+    title="Cafe API example"
+    to="https://github.com/Redocly/cafe-api"
+    icon="images/home-page/coffee.svg"
   %}
     Use our example to learn about OpenAPI or try out some new tools.
   {% /card %}
