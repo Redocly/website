@@ -35,6 +35,29 @@ To configure your project to include multiple versions, complete the following t
 2. (Optional) Customize the sidebar containing versioned content
 3. (Optional) Customize the version picker
 
+## Best practices
+
+To ensure a smooth user experience when switching between versions, follow these recommendations.
+
+### Prevent 404 errors
+
+We recommend using identical filenames for the same content across all `@version` subfolders.
+
+When a user switches versions using the version picker, the documentation site attempts to load the same relative path in the target version.
+If the filenames differ between versions, the user may encounter a 404 error because the page they were viewing does not exist at the same relative path in the new version.
+
+**Example:**
+Instead of using version-specific names like `museum-v1.yaml` and `museum-v2.yaml`, use `openapi.yaml` in all version folders.
+
+```treeview {% title="Recommended file structure" %}
+├── museum_api/
+│   ├── @1.0/
+│   │   └── openapi.yaml
+│   ├── @2.0/
+│   │   └── openapi.yaml
+└── sidebars.yaml
+```
+
 ## Before you begin
 
 Make sure you have the following before you begin:

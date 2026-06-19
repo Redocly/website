@@ -252,6 +252,15 @@ You can use environment variables to add values that resolve to the example payl
   }
 /%}
 
+## CORS and Proxy
+
+By default, requests from the Replay console are proxied through Redocly to avoid Cross-Origin Resource Sharing (CORS) issues.
+The default proxy URL is `/_api/cors/`.
+
+If your API server does not allow requests from the Redocly proxy, or if you want to use your own proxy, you can configure the `corsProxyUrl` option in your `redocly.yaml` file.
+
+For more information on how to change or disable the proxy, see the [corsProxyUrl configuration page](../../config/openapi/cors-proxy-url.md).
+
 ## Best practices
 
 **Provide clear instructions**

@@ -82,6 +82,16 @@ When users assigned to those groups in your IdP log in to Reunite, they have the
 You can require SSO authentication for all members of your organization by selecting the **Require SSO authentication for all members of the Redocly organization** checkbox on the **SSO and Login** page.
 Selecting this checkbox means that if you have `rbac` configured, users must log in with SSO credentials and if they do not have SSO credentials, they will lose access to the organization.
 
+{% admonition type="warning" name="SSO restriction" %}
+Enabling **Require SSO authentication** blocks Redocly IdP (email/password) access for the entire organization and all its projects.
+
+If you need to support a mix of Corporate SSO and Redocly IdP access (for example, to allow external guests or partners to log in with an email and password), leave this option unchecked.
+Instead, you can:
+
+- Configure SSO providers at the project level using `redocly.yaml`.
+- Use a dedicated [Guest identity provider](#add-a-guest-identity-provider-idp) for external access.
+{% /admonition %}
+
 {% admonition type="info" name="attention" %}
 Requiring SSO authentication does not require users to log in to your project.
 To require login to your project, you must configure `rbac` or `requiresLogin`.

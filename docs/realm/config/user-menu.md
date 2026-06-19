@@ -74,19 +74,7 @@ You must also have `sso` and either `rbac` or `requiresLogin` configured for the
 
 ---
 
-- page
-- string
-- **CONDITIONALLY REQUIRED.** Path to the file which represents the page to link to.
-  Mutually exclusive with the `href` option.
-  If you use the `page` option, and do not include the `label` option, the text for the link on the sidebar will match the level 1 heading of the page.
-
----
-
-- href
-- string
-- **CONDITIONALLY REQUIRED.** URL to link to.
-  Mutually exclusive with the `page` option.
-  If you use the `href` option, and do not include the `label` option, the text for the link on the sidebar will match the `href` option's value.
+{% raw-partial file="../_partials/nav-page-href-property-rows.md" /%}
 
 ---
 
