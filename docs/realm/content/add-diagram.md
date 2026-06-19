@@ -82,6 +82,7 @@ Add an Excalidraw diagram by using a fenced code block with the `excalidraw` lan
 {
   "elements": [
     {
+      "id": "rect-container-1",
       "type": "rectangle",
       "x": 10,
       "y": 10,
@@ -89,7 +90,30 @@ Add an Excalidraw diagram by using a fenced code block with the `excalidraw` lan
       "height": 100,
       "strokeColor": "#000000",
       "backgroundColor": "#a5d8ff",
-      "label": { "text": "Hello Excalidraw" }
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "Wb2WmAHFObZ7zjOcBk5Dz"
+        }
+      ]
+    },
+    {
+      "id": "Wb2WmAHFObZ7zjOcBk5Dz",
+      "type": "text",
+      "containerId": "rect-container-1",
+      "strokeColor": "#1971c2",
+      "text": "Hello Excalidraw!",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "lineHeight": 1.25,
+      "strokeWidth": 2,
+      "x": 20,
+      "y": 47.5,
+      "width": 180,
+      "height": 25,
+      "autoResize": false
     }
   ]
 }
@@ -102,6 +126,7 @@ The diagram that is produced looks like the following:
 {
   "elements": [
     {
+      "id": "rect-container-1",
       "type": "rectangle",
       "x": 10,
       "y": 10,
@@ -109,7 +134,30 @@ The diagram that is produced looks like the following:
       "height": 100,
       "strokeColor": "#000000",
       "backgroundColor": "#a5d8ff",
-      "label": { "text": "Hello Excalidraw" }
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "Wb2WmAHFObZ7zjOcBk5Dz"
+        }
+      ]
+    },
+    {
+      "id": "Wb2WmAHFObZ7zjOcBk5Dz",
+      "type": "text",
+      "containerId": "rect-container-1",
+      "strokeColor": "#1971c2",
+      "text": "Hello Excalidraw!",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "lineHeight": 1.25,
+      "strokeWidth": 2,
+      "x": 20,
+      "y": 47.5,
+      "width": 180,
+      "height": 25,
+      "autoResize": false
     }
   ]
 }
