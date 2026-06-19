@@ -10,14 +10,26 @@ You can jump directly to the main content of a project's page, skipping navigati
 To skip to the page's main content:
 
 1. After navigating to a page, press the <kbd>Tab</kbd> key.
-2. Press the <kbd>Return</kbd> or <kbd>Enter</kbd> key, or click the **Skip to content** button.
+1. Press the <kbd>Return</kbd> or <kbd>Enter</kbd> key, or click the **Skip to content** button.
 
 The page content scrolls so that the first heading is at the top of the page.
+
+{% img
+  src="./images/skip-to-content.png"
+  alt="Screenshot of the Skip to content button"
+  withLightbox=true
+/%}
 
 ## Use the table of contents
 
 The table of contents (TOC) is displayed on the right side of the page and indicates your current position.
 You can click any item on the TOC to jump to that heading.
+
+{% img
+  src="./images/toc.png"
+  alt="Screenshot of a project with the table of contents on the right"
+  withLightbox=true
+/%}
 
 ## Navigate project pages
 
@@ -32,9 +44,30 @@ The navigation bar (navbar) contains links to major parts of the project.
 
   {% tab label="Desktop" %}
     On desktop devices, the navbar is located at the top of the screen.
+
+    {% img
+      src="./images/navbar.png"
+      alt="Screenshot of a project page's navigation bar"
+      withLightbox=true
+    /%}
+
     Some navbar items may contain a drop-down list of links.
     This list expands when you hover your mouse over a navbar item.
+
+    {% img
+      src="./images/navbar-group.png"
+      alt="Screenshot of a project page's navigation bar with expanded list of pages"
+      withLightbox=true
+    /%}
+
     Some projects may have [multiple products](#switch-between-products) that are displayed when you hover over the **Products** item.
+
+    {% img
+      src="./images/navbar-products.png"
+      alt="Screenshot of a project page's navigation bar with expanded list of products"
+      withLightbox=true
+    /%}
+
   {% /tab %}
 
   {% tab label="Mobile" %}
@@ -46,6 +79,13 @@ The navigation bar (navbar) contains links to major parts of the project.
     Navbar items with nested links have a downward-facing arrow next to them.
     To expand the list, select the arrow.
     Projects with [multiple products](#switch-between-products) list them under the **Products** heading.
+
+    {% img
+      src="./images/navbar-mobile.png"
+      alt="Screenshot of an open navigation bar on a mobile device"
+      withLightbox=true
+    /%}
+
   {% /tab %}
 
 {% /tabs %}
@@ -58,12 +98,26 @@ A project can have a single sidebar with links to all pages, or a main sidebar w
 {% tabs %}
   {% tab label="Desktop" %}
     On desktop devices, the sidebar is located on the left of the page.
+
+    {% img
+      src="./images/sidebar.png"
+      alt="Screenshot of a project page's sidebar"
+      withLightbox=true
+    /%}
+
   {% /tab %}
   {% tab label="Mobile" %}
     To access the sidebar on mobile devices:
     - In the top-right corner of the screen, select the **Menu** icon.
 
     The contents of the menu represent the structure of the sidebar.
+
+    {% img
+      src="./images/sidebar-mobile.png"
+      alt="Screenshot of an open sidebar on a mobile device"
+      withLightbox=true
+    /%}
+
   {% /tab %}
 {% /tabs %}
 
@@ -73,11 +127,23 @@ Breadcrumbs are a series of links that are displayed above the main content of a
 The links are available only on pages that have at least one level of nesting in the sidebar.
 The order of breadcrumb links typically reflects the hierarchy in the sidebar: from the top-level page of the project to the currently displayed page.
 
+{% img
+  src="./images/breadcrumbs.png"
+  alt="Screenshot of a project page's breadcrumbs"
+  withLightbox=true
+/%}
+
 ### Navigation buttons
 
 You can also use the navigation buttons located below the main content of the page.
-These buttons typically open the next page or the previous page in the order in the sidebar.
+These buttons typically open the next page or the previous page in the same order as the items in the sidebar.
 Some projects may have a custom order for the navigation buttons to guide users through related content.
+
+{% img
+  src="./images/navigation-buttons.png"
+  alt="Screenshot of a project page's navigation buttons"
+  withLightbox=true
+/%}
 
 ## Switch between products
 
@@ -91,17 +157,31 @@ Products often have individual sidebars or other navigation elements, and their 
     To switch between products on desktop devices:
 
     1. In the navbar, hover your mouse over **Products**.
-    2. Select an item from the drop-down list.
+    1. Select an item from the drop-down list.
 
-    The content of the selected product loads and the label of the **Products** navbar item changes to the name of the selected product.
+    The selected product's content opens on its default page and the label of the **Products** navbar item changes to the name of the selected product.
+
+    {% img
+      src="./images/navbar-products.png"
+      alt="Screenshot of a project page's navigation bar with expanded list of products"
+      withLightbox=true
+    /%}
+
   {% /tab %}
   {% tab label="Mobile" %}
     To switch between products on mobile devices:
 
     1. Select the **Menu** icon in the top-right corner of the screen and then select **Main menu**.
-    2. Under the **Products** heading, select a link.
+    1. Under the **Products** heading, select a link.
 
-    The content of the selected product loads.
+    The selected product's content opens on its default page.
+
+    {% img
+      src="./images/navbar-mobile.png"
+      alt="Screenshot of an open navigation bar on a mobile device"
+      withLightbox=true
+    /%}
+
   {% /tab %}
 {% /tabs %}
 
@@ -117,6 +197,13 @@ When you first access a page, the page's latest or default version is displayed.
     - Above the sidebar, click the **Versions** dropdown and select a version from the drop-down list.
     
     The page's content changes to reflect the selected version.
+
+    {% img
+      src="./images/switch-versions.png"
+      alt="Screenshot of a sidebar with open version drop-down"
+      withLightbox=true
+    /%}
+
   {% /tab %}
   {% tab label="Mobile" %}
     To switch between page versions on a mobile device:
@@ -125,6 +212,13 @@ When you first access a page, the page's latest or default version is displayed.
     2. Under the **Version** heading, select a version from the drop-down list.
     
     The page's content changes to reflect the selected version.
+
+    {% img
+      src="./images/switch-versions-mobile.png"
+      alt="Screenshot of a sidebar with open version drop-down on a mobile device"
+      withLightbox=true
+    /%}
+
   {% /tab %}
 {% /tabs %}
 
