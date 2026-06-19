@@ -368,7 +368,7 @@
         - page: customization/react-components/use-in-react-page.md
           label: Use in React pages
         - page: customization/react-components/wrap-components.md
-          label: Wrap components
+          label: Customize components
         - group: Components list
           page: customization/react-components/list/index.md
           items:
@@ -404,7 +404,7 @@
     - page: customization/build-custom-function.md
       label: Build custom functions
 
-    - separator: Component customization
+    - separator: Component ejection
     - group: Eject components
       page: customization/eject-components/index.md
       items:

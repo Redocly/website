@@ -35,9 +35,9 @@ access:
 
 ### Root-level configuration (deprecated)
 
-{% admonition type="warning" %}
-**Deprecated:** Root-level `requiresLogin` is still supported for backward compatibility but shows deprecation warnings when the `access` object is present.
-Redocly recommends migrating to the `access` object format.
+{% admonition type="warning" name="Deprecated configuration" %}
+Root-level `requiresLogin` configuration displays warnings when the `access` object is present.
+Migrate to the `access` object format.
 {% /admonition %}
 
 ```yaml {% title="redocly.yaml" %}

@@ -11,7 +11,7 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% admonition type="warning" %}
+{% admonition type="warning" name="Deprecated configuration" %}
 The `scorecard` property is deprecated.
 Use `scorecardClassic` instead.
 The `scorecard` property continues to work with a deprecation warning.

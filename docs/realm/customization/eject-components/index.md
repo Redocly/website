@@ -63,9 +63,6 @@ After you have determined you need to alter a component by ejecting it and what 
   Before you can eject components using Redocly CLI, you must download all of your project files, so you can work with them locally.
   Afterward, the ejected component files need to be added to your files in Reunite.
 
-## Related how-tos
-
-- Learn more about [custom styles](../../branding/customize-styles.md) for your project.
 
 ## Resources
 
@@ -73,3 +70,4 @@ After you have determined you need to alter a component by ejecting it and what 
 - **[Component ejection tutorial](./eject-components-tutorial/index.md)** - Step-by-step practical guide to ejecting and customizing built-in components with real examples
 - **[Eject components in Reunite](./eject-components-in-reunite.md)** - Learn how to eject components to customize in Reunite
 - **[Eject components using the CLI](./eject-components-using-cli.md)** - Learn how to eject components to customize using the CLI
+- **[Customize styles](../../branding/customize-styles.md)** - Learn how to apply custom styling to your project

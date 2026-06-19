@@ -67,9 +67,9 @@ Otherwise, if you do not have `rbac` configured, or you have all pages assigned 
 
 ### Root-level configuration (deprecated)
 
-{% admonition type="warning" %}
-**Deprecated:** Root-level `sso` is still supported for backward compatibility but will show deprecation warnings when used alongside the `access` object.
-Please migrate to the `access` object format.
+{% admonition type="warning" name="Deprecated configuration" %}
+Root-level `sso` configuration displays warnings when the `access` object is present.
+Migrate to the `access` object format.
 {% /admonition %}
 
 ```yaml {% title="redocly.yaml" %}

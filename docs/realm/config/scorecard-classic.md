@@ -10,7 +10,7 @@ description: Add and create sets of rules and test your API description files ag
 ---
 # `scorecardClassic`
 
-{% admonition type="warning" %}
+{% admonition type="warning" name="Deprecated configuration" %}
 The `scorecard` property is deprecated.
 Use `scorecardClassic` instead.
 The `scorecard` property continues to work with a deprecation warning.

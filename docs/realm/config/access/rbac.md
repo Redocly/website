@@ -204,9 +204,9 @@ access:
 
 ### Root-level configuration (deprecated)
 
-{% admonition type="warning" %}
-**Deprecated:** Root-level `rbac` is still supported for backward compatibility but displays deprecation warnings when the `access` object exists.
-Redocly recommends migrating to the `access` object format.
+{% admonition type="warning" name="Deprecated configuration" %}
+Root-level `rbac` configuration displays warnings when the `access` object is present.
+Migrate to the `access` object format.
 {% /admonition %}
 
 ### File access

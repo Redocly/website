@@ -16,25 +16,25 @@ plans:
 An API key is a unique identifier used to authenticate a user, developer, or an application to an API.
 You can add API keys to your organization and revoke them when you are finished using them.
 
-## Before you begin
+If you don't set an expiration date when you create a key, the key does not automatically expire and stays valid until manually revoked.
 
-Make sure you have the following:
-
-- an OWNER role in your organization
+Redocly stores API keys as one-way cryptographic hashes in the backend.
+The plaintext value of the key can't be retrieved.
 
 ## Add API keys
 
 You can add API keys to your organization if you need to access the Redocly API or the Scout tool.
 
-To add an API key to your organization:
+To add an API key:
 
 1. Log in to your Redocly instance.
-2. Select **API keys** in the navigation menu on the left side of the page.
-3. Click **New key**.
-4. Enter a name for your key.
-5. (Optional) Enter allowed IP addresses.
-6. Click **Save**.
-7. Click the copy icon to the right of the newly created API key to save it to your clipboard.
+1. Select **API keys** in the navigation menu on the left side of the page.
+1. Click **New key**.
+1. Enter a name for your key.
+1. (Optional) Enter allowed IP addresses.
+1. (Optional) Set an expiration date.
+1. Click **Save**.
+1. Click the copy icon to the right of the newly created API key to save it to your clipboard.
    Save the key somewhere safe, as you can't access it later.
 
 ## Revoke API keys
@@ -42,9 +42,9 @@ To add an API key to your organization:
 When you are finished using an API key, you can revoke the key, making it an invalid authentication method.
 
 1. Log in to your Redocly instance.
-2. Select **API keys** in the navigation menu on the left side of the page.
-3. Click **Revoke** next to the API key you want to revoke.
-4. Click **OK**.
+1. Select **API keys** in the navigation menu on the left side of the page.
+1. Click **Revoke** next to the API key you want to revoke.
+1. Click **OK**.
 
 ## API keys with RBAC restrictions (beta feature)
 
@@ -63,20 +63,20 @@ To add RBAC to API keys:
 1. In your organization dashboard's left panel, click the **API keys** option.
 1. In the row with the chosen API key, click **More options**  and then click **RBAC**.
 
-{% img
-  src="../images/api-key-rbac-menu.png"
-  alt="API key RBAC menu"
-  withLightbox=true
-/%}
+    {% img
+      src="../images/api-key-rbac-menu.png"
+      alt="API key RBAC menu"
+      withLightbox=true
+    /%}
 
 1. In the **Manage API Key RBAC settings** modal, select the **RBAC enabled** toggle button.
 1. In the **Teams** input field, specify which teams have access to this API key.
 
-{% img
-  src="../images/api-key-rbac-settings.png"
-  alt="API key RBAC settings"
-  withLightbox=true
-/%}
+    {% img
+      src="../images/api-key-rbac-settings.png"
+      alt="API key RBAC settings"
+      withLightbox=true
+    /%}
 
 1. Click **Save**.
 

@@ -20,6 +20,8 @@ If not specified, users are redirected to the root path of your project by defau
 
 This is useful when you want users to return to your main website or a specific page after logging out, rather than staying on the documentation site.
 
+The `logoutReturnUrl` property is only available as a child of the `access` object.
+
 ## Options
 
 {% table %}
@@ -55,11 +57,6 @@ The following example redirects users to a custom logout page:
 access:
   logoutReturnUrl: https://yourcompany.com/logout-success
 ```
-
-{% admonition type="info" %}
-**Note:** `logoutReturnUrl` is a new feature and is only available within the `access` object.
-It cannot be configured at the root level.
-{% /admonition %}
 
 ## Use cases
 

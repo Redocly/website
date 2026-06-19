@@ -17,9 +17,9 @@ description: Configure authentication and access-related settings in a single ob
 {% $frontmatter.description %}
 The `access` object groups authentication and access-related configuration options together for better organization and maintainability.
 
-{% admonition type="info" %}
-**New format:** The `access` object is the recommended way to configure authentication and access settings.
-Root-level properties (`requiresLogin`, `residency`, `sso`, `rbac`) are still supported for backward compatibility but will show deprecation warnings when used alongside the `access` object.
+{% admonition type="info"  name="New configuration format" %}
+The `access` object is the recommended way to configure authentication and access settings.
+Root-level properties (`requiresLogin`, `residency`, `sso`, `rbac`) are supported for backward compatibility but display deprecation warnings when used alongside the `access` object.
 {% /admonition %}
 
 ## Options
@@ -119,9 +119,9 @@ access:
         authenticated: read
 ```
 
-## Migration from root-level properties
+## Migrate from root-level properties
 
-If you're currently using root-level properties, you can migrate to the `access` object format:
+If you're currently using `requiresLogin`, `residency`, `sso`, or `rbac` property at the root-level, migrate to the `access` object format:
 
 **Old format (deprecated):**
 ```yaml
@@ -148,14 +148,10 @@ access:
         authenticated: read
 ```
 
-{% admonition type="info" %}
-**Note:** `logoutReturnUrl` is a new feature and is only available in the `access` object format.
-It was not previously available as a root-level property.
-{% /admonition %}
+{% admonition type="warning" name="Warning" %}
+Do not define the same property both at root level and in the `access` object.
+Duplicate properties result in an error.
 
-{% admonition type="warning" %}
-**Important:** Do not define the same property both at root level and in the `access` object.
-If both are defined, the configuration will throw an error.
 Use only the `access` object format for new configurations.
 {% /admonition %}
 
