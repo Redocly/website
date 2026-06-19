@@ -5,7 +5,6 @@ products:
   - Reef
   - Realm
 plans:
-  - Pro
   - Enterprise
   - Enterprise+
 excludeFromSearch: true
@@ -16,11 +15,11 @@ excludeFromSearch: true
 The AI assistant web component embeds the Redocly AI assistant on any web page with a single `<script>` tag and a custom HTML element.
 It's a standard custom element, so you can add it to any site or app, regardless of framework.
 
-{% admonition type="info" name="Alpha feature" %}
-The AI assistant web component is an **alpha** release.
+{% admonition type="info" name="Early access" %}
+The AI assistant web component is an **early access** release.
 The API, attributes, and CDN URL may change in future versions.
 
-For now, the assistant works only with **public docs**.
+For now, the assistant works only with **publicly accessible docs**.
 {% /admonition %}
 
 ## Before you begin
@@ -31,6 +30,14 @@ Set the `REDOCLY_CORS_ORIGINS` environment variable on your project to a comma-s
 ```bash
 REDOCLY_CORS_ORIGINS=https://docs.example.com,https://www.example.com
 ```
+
+Each value in the comma-separated list must exactly match the origin (scheme, host, and port) of a page that embeds the component.
+
+{% admonition type="warning" name="Don't use a wildcard" %}
+Don't set `REDOCLY_CORS_ORIGINS` to `*`.
+A wildcard lets any website embed your assistant and consume your project's AI search quota and tokens.
+List only the origins you trust.
+{% /admonition %}
 
 {% admonition type="warning" name="Required for embedding" %}
 If the embedding page's origin isn't listed in `REDOCLY_CORS_ORIGINS`, the browser blocks the request to `api-url` and the assistant can't respond.
@@ -59,7 +66,7 @@ It registers the `<redocly-ai-assistant>` element and the `window.RedoclyAssista
 Set `api-url` to your project's URL followed by `/_ask-ai`, for example `https://your-project.com/_ask-ai`.
 
 By default, the component renders a floating **Ask AI** button.
-To hide it and control the assistant from your own UI, add the [`hide-trigger`](#properties) attribute and use the [programmatic control API](#control-the-assistant-programmatically).
+To hide it and control the assistant from your own UI, add the [`trigger-hide`](#properties) attribute and use the [programmatic control API](#control-the-assistant-programmatically).
 
 The widget mounts inside a [shadow root](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM), so host-page styles don't affect it and its styles don't leak onto your page.
 
@@ -89,7 +96,7 @@ Set these attributes on the `<redocly-ai-assistant>` element.
 
 ---
 
-- hide-trigger
+- trigger-hide
 - boolean
 - Hides the built-in floating **Ask AI** button so you can open the assistant from your own UI.
   Default: `false`.
@@ -102,10 +109,6 @@ Set these attributes on the `<redocly-ai-assistant>` element.
   Default: `false`.
 
 {% /table %}
-
-{% admonition type="info" name="Boolean attributes" %}
-Boolean attributes follow standard HTML semantics: present means `true`, and `="false"` means `false`.
-{% /admonition %}
 
 ## Control the assistant programmatically
 
