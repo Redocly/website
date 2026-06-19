@@ -61,27 +61,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 ---
 
-- page
-- string
--
-  **CONDITIONALLY REQUIRED.***
-  Path to the file (extension included) that links to a page.
-  If no `label` is provided, the link text matches _the page's level 1 heading_.
-  Use an absolute or relative path.
-  For external links, use `href` instead.
-  Examples: `./index.md`, `/docs/tutorial.md`, `../../glossary.md`, `/info#admonition`, `./test.md#rename`.
-
----
-
-- href
-- string
--
-  **CONDITIONALLY REQUIRED.***
-  URL to link to.
-  Works with absolute and relative URLs.
-  If no `label` is provided, the link text matches _the href value_.
-  The link checker does not follow `href` links.
-  Use a URL, not a page path (✅ `https://redocly.com`; ❌ `./index.md`).
+{% raw-partial file="../_partials/nav-page-href-property-rows.md" /%}
 
 ---
 
@@ -138,8 +118,6 @@ Specify the order and link text for side navigation items by creating a `sidebar
   Each badge has a `name` (required) and optional `color`.
 
 {% /table %}
-
-\* Sidebar links must use either the `page` or `href` option ("mutually exclusive").
 
 ### Group options
 

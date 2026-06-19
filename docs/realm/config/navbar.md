@@ -95,20 +95,15 @@ The navbar is a good location for top-level category or frequently-used links.
 
 - page
 - string
-- **MUTUALLY EXCLUSIVE.** Path to the file which represents the page to link to.
-  Mutually exclusive with the `href` option.
-  If you use the `page` option, and do not include the `label` option,
-  the text for the link on the sidebar will match the level 1 heading of the page.
+- Relative or absolute path to the file (extension included) which represents the page to link to.
+  **Mutually exclusive** with the `href` option.
 
 ---
 
 - href
 - string
-- **MUTUALLY EXCLUSIVE.** URL to link to.
-  Mutually exclusive with the `page` option.
-  If you use the `href` option, and do not include the `label` option,
-  the text for the link on the sidebar will match the `href` option's value.
-
+- URL to link to.
+  **Mutually exclusive** with the `page` option.
 
 {% /table %}
 
@@ -119,24 +114,6 @@ The navbar is a good location for top-level category or frequently-used links.
 - Option
 - Type
 - Description
-
----
-
-- page
-- string
-- **CONDITIONALLY REQUIRED.** Path to the file which represents the page to link to.
-  Mutually exclusive with the `href` option.
-  If you use the `page` option, and do not include the `label` option,
-  the text for the link on the sidebar will match the level 1 heading of the page.
-
----
-
-- href
-- string
-- **CONDITIONALLY REQUIRED.** URL to link to.
-  Mutually exclusive with the `page` option.
-  If you use the `href` option, and do not include the `label` option,
-  the text for the link on the sidebar will match the `href` option's value.
 
 ---
 
@@ -153,6 +130,10 @@ The navbar is a good location for top-level category or frequently-used links.
 ---
 
 {% raw-partial file="../_partials/nav-item-icon-property-row.md" /%}
+
+---
+
+{% raw-partial file="../_partials/nav-page-href-property-rows.md" /%}
 
 ---
 

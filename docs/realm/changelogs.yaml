@@ -47836,6 +47836,16 @@ reunite:
           workflows.
         - Added `caption` attribute to the `img` Markdoc tag in the Reunite editor.
     dependencies: {}
+  v2026-06-19.2:
+    timestamp: 1781863746000
+    changes:
+      minor:
+        - >-
+          Added an analytics source to the autonomous agent to investigate project analytics, including AI search conversations, standard search
+          queries, and page views. Added filtering, sorting, and search to project analytics tables in Reunite. Fixed an issue where clearing the time
+          range caused a malformed filter.
+      patch: []
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000

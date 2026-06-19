@@ -90,22 +90,7 @@ The footer is a section at the bottom of your documentation that contains copyri
 
 ---
 
-- page
-- string
--
-  **CONDITIONALLY REQUIRED.**\*
-  Path to the file (extension included) that represents the page to link to.
-  If no `label` is provided, the link text matches _the page's level 1 heading_.
-
----
-
-- href
-- string
--
-  **CONDITIONALLY REQUIRED.**\*
-  URL to link to.
-  Works with absolute and relative URLs.
-  If no `label` is provided, the link text matches _the value used for href_.
+{% raw-partial file="../_partials/nav-page-href-property-rows.md" /%}
 
 ---
 
