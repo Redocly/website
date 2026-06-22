@@ -48127,3 +48127,36 @@ replay:
       patch: []
     dependencies:
       '@redocly/theme': 0.65.0
+  0.22.0:
+    timestamp: 1782059285000
+    changes:
+      minor:
+        - Added `inputHints` to dynamic Replay configuration to customize empty-input tooltips in **Try It**.
+        - Added web search capability to the AI agent.
+        - >-
+          Updated Replay to pre-fill workflow environment inputs and step parameter defaults with values returned from an ejected
+          `useConfigureReplay`.
+        - >-
+          Added a `Notifications` panel to the Replay App side panel that displays file parse errors and YAML validation issues grouped by source
+          file, with error and warning counts on the tab icon badge.
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.32.1`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.33.1`.
+        - Fixed an issue where some APIs rejected requests that came from Replay and didn't have request bodies.
+        - Enter prerelease mode.
+        - Fixed an issue where the Markdoc `tabs` tag crashed if it contained content without a `label` attribute.
+        - Fixed styling and layout issues in the `requestBody` tab of Replay.
+        - Fixed an issue in Replay where clicking a sidebar tree node label did not expand or collapse it.
+        - Improved AI agent API exploration capabilities for more consistent search results.
+        - Updated `styled-components` to version `6.4.2`.
+        - >-
+          Updated Replay to pre-fill workflow environment inputs and step parameter defaults with values returned from an ejected
+          `useConfigureReplay`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.31.6`.
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.31.0`.
+        - Added a `cloudEventData` field to `TelemetryConfig`.
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.31.2`.
+        - Improved backend logging to simplify issue diagnosis.
+        - Fixed external links opening inside the app webview instead of the system browser.
+    dependencies:
+      '@redocly/theme': 0.66.0
