@@ -102,7 +102,7 @@
       '@redocly/openapi-docs': 3.23.0-next.0
       '@redocly/theme': 0.67.0-next.0
   0.134.1:
-    timestamp: 1782215015000
+    timestamp: 1782217052000
     changes:
       minor: []
       patch:
@@ -6591,7 +6591,7 @@
       '@redocly/openapi-docs': 3.23.0-next.0
       '@redocly/theme': 0.67.0-next.0
   0.134.1:
-    timestamp: 1782215015000
+    timestamp: 1782217052000
     changes:
       minor: []
       patch:
@@ -12159,7 +12159,7 @@
       '@redocly/openapi-docs': 3.23.0-next.0
       '@redocly/theme': 0.67.0-next.0
   0.134.1:
-    timestamp: 1782215015000
+    timestamp: 1782217052000
     changes:
       minor: []
       patch:
@@ -17717,7 +17717,7 @@
       '@redocly/openapi-docs': 3.23.0-next.0
       '@redocly/theme': 0.67.0-next.0
   0.134.1:
-    timestamp: 1782215015000
+    timestamp: 1782217052000
     changes:
       minor: []
       patch:
@@ -26277,7 +26277,7 @@
       '@redocly/replay': 0.26.0-next.0
       '@redocly/theme': 0.67.0-next.0
   3.22.1:
-    timestamp: 1782215015000
+    timestamp: 1782217052000
     changes:
       minor: []
       patch:
@@ -30114,7 +30114,7 @@
       '@redocly/openapi-docs': 3.23.0-next.0
       '@redocly/theme': 0.67.0-next.0
   1.11.1:
-    timestamp: 1782215015000
+    timestamp: 1782217052000
     changes:
       minor: []
       patch: []
@@ -31291,7 +31291,7 @@
         - Fixed an issue where multipart/form-data request properties were not coerced correctly.
     dependencies: {}
   0.8.1:
-    timestamp: 1782215015000
+    timestamp: 1782217052000
     changes:
       minor: []
       patch:
@@ -32259,7 +32259,7 @@
       '@redocly/redoc': 0.135.0-next.0
       '@redocly/theme': 0.67.0-next.0
   1.17.1:
-    timestamp: 1782215015000
+    timestamp: 1782217052000
     changes:
       minor: []
       patch: []
@@ -37598,7 +37598,7 @@
       '@redocly/mock-server': 0.9.0-next.0
       '@redocly/openapi-docs': 3.23.0-next.0
   0.19.1:
-    timestamp: 1782215015000
+    timestamp: 1782217052000
     changes:
       minor: []
       patch: []
@@ -40547,7 +40547,7 @@
     dependencies:
       '@redocly/theme': 0.67.0-next.0
   0.25.1:
-    timestamp: 1782215048000
+    timestamp: 1782217052000
     changes:
       minor: []
       patch:
@@ -44556,7 +44556,7 @@
       '@redocly/openapi-docs': 3.23.0-next.0
       '@redocly/theme': 0.67.0-next.0
   1.11.1:
-    timestamp: 1782215015000
+    timestamp: 1782217052000
     changes:
       minor: []
       patch: []
@@ -48430,8 +48430,8 @@ replay:
         - Improved typing performance in the request URL field.
     dependencies:
       '@redocly/theme': 0.65.0-next.1
-  0.20.1:
-    timestamp: 1780402032000
+  0.21.0:
+    timestamp: 1780576100000
     changes:
       minor:
         - Improved accuracy and relevance of AI agent results.
