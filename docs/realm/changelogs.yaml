@@ -101,6 +101,27 @@
       '@redocly/graphql-docs': 1.12.0-next.0
       '@redocly/openapi-docs': 3.23.0-next.0
       '@redocly/theme': 0.67.0-next.0
+  0.134.1:
+    timestamp: 1782215015000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-54286`, `CVE-2026-54287`, `CVE-2026-54288`, `CVE-2026-54289`, and `CVE-2026-54290` by upgrading
+          `hono` to version `4.12.25`.
+        - Fixed security vulnerability `CVE-2026-53550` by upgrading `js-yaml` to version `4.2.0`.
+        - >-
+          Fixed security vulnerabilities `GHSA-gvmj-g25r-r7wr`, `CVE-2026-49978`, `GHSA-x4vx-rjvf-j5p4`, `GHSA-vxr8-fq34-vvx9`, `CVE-2026-49459`,
+          `CVE-2026-49458`, `GHSA-76mc-f452-cxcm`, and `GHSA-cmwh-pvxp-8882` by upgrading `dompurify` to version `3.4.11`.
+        - Fixed security vulnerability `GHSA-gv7w-rqvm-qjhr` by upgrading `esbuild` to version `0.28.1`.
+        - Fixed security vulnerability `CVE-2026-54285` by upgrading `@opentelemetry/core` to version `2.8.0`.
+    dependencies:
+      '@redocly/openapi-docs': 3.22.1
+      '@redocly/realm-asyncapi-sdk': 0.12.1
+      '@redocly/portal-plugin-mock-server': 0.19.1
+      '@redocly/asyncapi-docs': 1.11.1
+      '@redocly/graphql-docs': 1.11.1
+      '@redocly/theme': 0.66.0
   0.134.0:
     timestamp: 1780999981000
     changes:
@@ -6569,6 +6590,27 @@
       '@redocly/graphql-docs': 1.12.0-next.0
       '@redocly/openapi-docs': 3.23.0-next.0
       '@redocly/theme': 0.67.0-next.0
+  0.134.1:
+    timestamp: 1782215015000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-54286`, `CVE-2026-54287`, `CVE-2026-54288`, `CVE-2026-54289`, and `CVE-2026-54290` by upgrading
+          `hono` to version `4.12.25`.
+        - Fixed security vulnerability `CVE-2026-53550` by upgrading `js-yaml` to version `4.2.0`.
+        - >-
+          Fixed security vulnerabilities `GHSA-gvmj-g25r-r7wr`, `CVE-2026-49978`, `GHSA-x4vx-rjvf-j5p4`, `GHSA-vxr8-fq34-vvx9`, `CVE-2026-49459`,
+          `CVE-2026-49458`, `GHSA-76mc-f452-cxcm`, and `GHSA-cmwh-pvxp-8882` by upgrading `dompurify` to version `3.4.11`.
+        - Fixed security vulnerability `GHSA-gv7w-rqvm-qjhr` by upgrading `esbuild` to version `0.28.1`.
+        - Fixed security vulnerability `CVE-2026-54285` by upgrading `@opentelemetry/core` to version `2.8.0`.
+    dependencies:
+      '@redocly/openapi-docs': 3.22.1
+      '@redocly/realm-asyncapi-sdk': 0.12.1
+      '@redocly/portal-plugin-mock-server': 0.19.1
+      '@redocly/asyncapi-docs': 1.11.1
+      '@redocly/graphql-docs': 1.11.1
+      '@redocly/theme': 0.66.0
   0.134.0:
     timestamp: 1780999981000
     changes:
@@ -12116,6 +12158,27 @@
       '@redocly/graphql-docs': 1.12.0-next.0
       '@redocly/openapi-docs': 3.23.0-next.0
       '@redocly/theme': 0.67.0-next.0
+  0.134.1:
+    timestamp: 1782215015000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-54286`, `CVE-2026-54287`, `CVE-2026-54288`, `CVE-2026-54289`, and `CVE-2026-54290` by upgrading
+          `hono` to version `4.12.25`.
+        - Fixed security vulnerability `CVE-2026-53550` by upgrading `js-yaml` to version `4.2.0`.
+        - >-
+          Fixed security vulnerabilities `GHSA-gvmj-g25r-r7wr`, `CVE-2026-49978`, `GHSA-x4vx-rjvf-j5p4`, `GHSA-vxr8-fq34-vvx9`, `CVE-2026-49459`,
+          `CVE-2026-49458`, `GHSA-76mc-f452-cxcm`, and `GHSA-cmwh-pvxp-8882` by upgrading `dompurify` to version `3.4.11`.
+        - Fixed security vulnerability `GHSA-gv7w-rqvm-qjhr` by upgrading `esbuild` to version `0.28.1`.
+        - Fixed security vulnerability `CVE-2026-54285` by upgrading `@opentelemetry/core` to version `2.8.0`.
+    dependencies:
+      '@redocly/openapi-docs': 3.22.1
+      '@redocly/realm-asyncapi-sdk': 0.12.1
+      '@redocly/portal-plugin-mock-server': 0.19.1
+      '@redocly/asyncapi-docs': 1.11.1
+      '@redocly/graphql-docs': 1.11.1
+      '@redocly/theme': 0.66.0
   0.134.0:
     timestamp: 1780999981000
     changes:
@@ -17653,6 +17716,27 @@
       '@redocly/graphql-docs': 1.12.0-next.0
       '@redocly/openapi-docs': 3.23.0-next.0
       '@redocly/theme': 0.67.0-next.0
+  0.134.1:
+    timestamp: 1782215015000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-54286`, `CVE-2026-54287`, `CVE-2026-54288`, `CVE-2026-54289`, and `CVE-2026-54290` by upgrading
+          `hono` to version `4.12.25`.
+        - Fixed security vulnerability `CVE-2026-53550` by upgrading `js-yaml` to version `4.2.0`.
+        - >-
+          Fixed security vulnerabilities `GHSA-gvmj-g25r-r7wr`, `CVE-2026-49978`, `GHSA-x4vx-rjvf-j5p4`, `GHSA-vxr8-fq34-vvx9`, `CVE-2026-49459`,
+          `CVE-2026-49458`, `GHSA-76mc-f452-cxcm`, and `GHSA-cmwh-pvxp-8882` by upgrading `dompurify` to version `3.4.11`.
+        - Fixed security vulnerability `GHSA-gv7w-rqvm-qjhr` by upgrading `esbuild` to version `0.28.1`.
+        - Fixed security vulnerability `CVE-2026-54285` by upgrading `@opentelemetry/core` to version `2.8.0`.
+    dependencies:
+      '@redocly/openapi-docs': 3.22.1
+      '@redocly/realm-asyncapi-sdk': 0.12.1
+      '@redocly/portal-plugin-mock-server': 0.19.1
+      '@redocly/asyncapi-docs': 1.11.1
+      '@redocly/graphql-docs': 1.11.1
+      '@redocly/theme': 0.66.0
   0.134.0:
     timestamp: 1780999981000
     changes:
@@ -26192,6 +26276,15 @@
     dependencies:
       '@redocly/replay': 0.26.0-next.0
       '@redocly/theme': 0.67.0-next.0
+  3.22.1:
+    timestamp: 1782215015000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `GHSA-gvmj-g25r-r7wr`, `CVE-2026-49978`, `GHSA-x4vx-rjvf-j5p4`, `GHSA-vxr8-fq34-vvx9`, `CVE-2026-49459`,
+          `CVE-2026-49458`, `GHSA-76mc-f452-cxcm`, and `GHSA-cmwh-pvxp-8882` by upgrading `dompurify` to version `3.4.11`.
+    dependencies: {}
   3.22.0:
     timestamp: 1780999981000
     changes:
@@ -30020,6 +30113,14 @@
     dependencies:
       '@redocly/openapi-docs': 3.23.0-next.0
       '@redocly/theme': 0.67.0-next.0
+  1.11.1:
+    timestamp: 1782215015000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.22.1
+      '@redocly/theme': 0.66.0
   1.11.0:
     timestamp: 1780999981000
     changes:
@@ -31189,6 +31290,13 @@
         - Enter prerelease mode.
         - Fixed an issue where multipart/form-data request properties were not coerced correctly.
     dependencies: {}
+  0.8.1:
+    timestamp: 1782215015000
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability `CVE-2026-53550` by upgrading `js-yaml` to version `4.2.0`.
+    dependencies: {}
   0.8.0:
     timestamp: 1780999981000
     changes:
@@ -32150,6 +32258,17 @@
       '@redocly/realm': 0.135.0-next.0
       '@redocly/redoc': 0.135.0-next.0
       '@redocly/theme': 0.67.0-next.0
+  1.17.1:
+    timestamp: 1782215015000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.134.1
+      '@redocly/redoc': 0.134.1
+      '@redocly/redoc-reef': 0.134.1
+      '@redocly/redoc-revel': 0.134.1
+      '@redocly/theme': 0.66.0
   1.17.0:
     timestamp: 1780999981000
     changes:
@@ -37478,6 +37597,14 @@
     dependencies:
       '@redocly/mock-server': 0.9.0-next.0
       '@redocly/openapi-docs': 3.23.0-next.0
+  0.19.1:
+    timestamp: 1782215015000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.8.1
+      '@redocly/openapi-docs': 3.22.1
   0.19.0:
     timestamp: 1780999981000
     changes:
@@ -40419,6 +40546,13 @@
         - Enter prerelease mode.
     dependencies:
       '@redocly/theme': 0.67.0-next.0
+  0.25.1:
+    timestamp: 1782215048000
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability `CVE-2026-53550` by upgrading `js-yaml` to version `4.2.0`.
+    dependencies: {}
   0.25.0:
     timestamp: 1780999981000
     changes:
@@ -44421,6 +44555,14 @@
     dependencies:
       '@redocly/openapi-docs': 3.23.0-next.0
       '@redocly/theme': 0.67.0-next.0
+  1.11.1:
+    timestamp: 1782215015000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.22.1
+      '@redocly/theme': 0.66.0
   1.11.0:
     timestamp: 1780999981000
     changes:
@@ -48288,8 +48430,8 @@ replay:
         - Improved typing performance in the request URL field.
     dependencies:
       '@redocly/theme': 0.65.0-next.1
-  0.21.0:
-    timestamp: 1780576100000
+  0.20.1:
+    timestamp: 1780402032000
     changes:
       minor:
         - Improved accuracy and relevance of AI agent results.
