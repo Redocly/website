@@ -48006,6 +48006,15 @@ reunite:
           range caused a malformed filter.
       patch: []
     dependencies: {}
+  v2026-06-23.3:
+    timestamp: 1782214967000
+    changes:
+      minor:
+        - Added status dots to folders in the editor file tree, indicating when a folder contains an added or modified file.
+      patch:
+        - Fixed security vulnerabilities `CVE-2026-2359`, `CVE-2026-3304` and `CVE-2026-3520` by upgrading `multer` to version `2.2.0`.
+        - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.34.0`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
