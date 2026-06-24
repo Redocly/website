@@ -48157,13 +48157,6 @@ reunite:
         - Fixed security vulnerabilities `CVE-2026-2359`, `CVE-2026-3304` and `CVE-2026-3520` by upgrading `multer` to version `2.2.0`.
         - Updated `@redocly/openapi-core` and `@redocly/cli` to version `2.34.0`.
     dependencies: {}
-  v2026-06-24.1:
-    timestamp: 1782288284000
-    changes:
-      minor: []
-      patch:
-        - Fixed issue with SCIM user reactivation.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
@@ -48478,3 +48471,11 @@ replay:
         - Fixed external links opening inside the app webview instead of the system browser.
     dependencies:
       '@redocly/theme': 0.66.0
+  0.22.2:
+    timestamp: 1782288370000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.34.0`.
+    dependencies:
+      '@redocly/theme': 0.67.0
