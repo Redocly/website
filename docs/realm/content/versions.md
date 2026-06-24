@@ -507,6 +507,38 @@ versions:
   - version: '2.3'
 ```
 
+## Troubleshooting
+
+Use this section to resolve common issues with content versioning.
+
+### YAML syntax errors in `versions.yaml`
+
+If your numeric version names (for example, `1.0`) are not being recognized or cause build failures, ensure they are quoted in your `versions.yaml` file.
+The Redocly configuration expects version identifiers to be strings.
+When you use numbers without quotes, they may be interpreted as numeric types by the YAML parser.
+
+```yaml {% title="Incorrect versions.yaml" %}
+versions:
+  - version: 1.0
+```
+
+```yaml {% title="Correct versions.yaml" %}
+versions:
+  - version: '1.0'
+```
+
+### 404 errors on version switch
+
+If you encounter a 404 error when switching between versions using the version picker, the most common cause is that the page you are currently viewing does not exist in the target version.
+Verify that the file path is consistent across all version subfolders.
+For example, if `overview.md` exists in `@1.0` but is missing in `@2.0`, switching from version 1.0 to 2.0 while on the Overview page will result in a 404.
+
+### Version picker visibility
+
+The version picker is displayed by default for all pages within a versioned directory.
+Even if only one section of your site is versioned, the picker will appear for pages in that section.
+If you want the version picker to be visible on every page of your site (including unversioned ones), enable the [`showForUnversioned`](#add-version-picker-to-all-content) setting in your `redocly.yaml` file.
+
 ## Resources
 
 - **[Sidebar configuration](../navigation/sidebars.md)** - Configure navigation structures and sidebar organization for versioned content with detailed syntax and options reference

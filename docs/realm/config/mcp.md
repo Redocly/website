@@ -17,6 +17,11 @@ description: Make your content accessible to AI tools.
 Redocly automatically generates Model Context Protocol (MCP) servers from your documentation and OpenAPI descriptions.
 MCP servers make your content accessible to AI tools in the MCP ecosystem (such as ChatGPT, Claude, Cursor, Goose).
 
+{% admonition type="info" %}
+The Redocly MCP server is for content retrieval and AI context only.
+It is a **read-only** tool for AI assistants and does not support editing your documentation.
+{% /admonition %}
+
 ## Options
 
 {% table %}

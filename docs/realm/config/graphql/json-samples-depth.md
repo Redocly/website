@@ -12,6 +12,11 @@ plans:
 The `jsonSamplesDepth` option sets the default depth for rendering JSON payload samples for queries and responses.
 Use this option to set the depth to a comfortable default value for the data structure of your API.
 
+{% admonition type="info" %}
+If response examples in your documentation appear to be missing nested data, you may need to increase this setting.
+The default value of `1` might make nested levels in GraphQL response examples appear incomplete for complex schemas.
+{% /admonition %}
+
 ## Options
 
 {% table %}

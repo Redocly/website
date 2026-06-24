@@ -67,6 +67,17 @@ To add multiple GraphQL schemas using `group` keys, update your `sidebars.yaml` 
       label: Sample product 2 API
 ```
 
+## Control sample depth
+
+By default, the depth for rendering JSON payload samples is set to `1`.
+For complex GraphQL schemas, this may result in samples appearing to have missing nested data.
+To ensure your samples fully represent your schema, you can increase the [`jsonSamplesDepth`](../../config/graphql/json-samples-depth.md) setting in your `redocly.yaml` file.
+
+```yaml {% title="redocly.yaml" %}
+graphql:
+  jsonSamplesDepth: 5
+```
+
 ## Resources
 
 - **[API catalog configuration](../../config/catalog-classic.md)** - Organize multiple API descriptions including GraphQL schemas with catalogs for better user experience and navigation

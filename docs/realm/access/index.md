@@ -15,6 +15,14 @@ plans:
 
 Realm offers two ways to secure your documentation: through a login requirement, or with role-based access control (RBAC).
 
+## Simple password protection
+
+Redocly does **not** support simple password protection (where a single, shared password is used to access a page or site).
+Instead, use one of the following methods to secure your content:
+
+- **[`requiresLogin`](../config/access/requires-login.md)** - For simple site-wide protection that requires users to authenticate before viewing any content.
+- **[Role-based Access Control (RBAC)](#role-based-access-control)** - For granular, page-level protection where access is granted based on user roles and permissions.
+
 ## Make your project private with a login
 
 Users with the Pro plan can restrict access to their published project by configuring `requiresLogin` in `redocly.yaml`.
