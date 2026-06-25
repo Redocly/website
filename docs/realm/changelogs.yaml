@@ -48164,6 +48164,18 @@ reunite:
       patch:
         - Fixed issue with SCIM user reactivation.
     dependencies: {}
+  v2026-06-25.2:
+    timestamp: 1782394797000
+    changes:
+      minor:
+        - >-
+          Added provider-native pagination and server-side search to git branch listings. Branch pickers in the project source and remote content
+          flows now load branches page by page with infinite scroll and filter them on the git provider (GitHub, GitLab, Bitbucket Cloud, Azure
+          DevOps) instead of fetching every branch upfront.
+      patch:
+        - Fixed security vulnerability `CVE-2026-40879` by upgrading `@nestjs/microservices` to version `11.1.27`.
+        - Fixed security vulnerability `CVE-2026-35515` by upgrading `@nestjs/core` to version `11.1.27`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
