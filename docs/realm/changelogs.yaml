@@ -48176,14 +48176,6 @@ reunite:
         - Fixed security vulnerability `CVE-2026-40879` by upgrading `@nestjs/microservices` to version `11.1.27`.
         - Fixed security vulnerability `CVE-2026-35515` by upgrading `@nestjs/core` to version `11.1.27`.
     dependencies: {}
-  v2026-06-26.2:
-    timestamp: 1782469489000
-    changes:
-      minor: []
-      patch:
-        - Fixed issue loading large numbers of PR contributors.
-        - Fixed an issue where external Git user logins were capitalized instead of preserving the original casing.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
