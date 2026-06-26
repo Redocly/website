@@ -52,26 +52,26 @@ To view your Redoc CE output locally, you can simulate an HTTP server.
 
 To install an HTTP server with [Python](https://www.python.org/downloads/):
 
-{% cards %}
-  {% card title="Python 3" %}
-      1. `cd` into your project directory.
-      2.  run the following command:
-
-      ```python
-      python3 -m http.server
-      ```
-
-  {% /card %}
-  {% card title="Python 2" %}
+{% tabs %}
+  {% tab label="Python 3" %}
     1. `cd` into your project directory.
-    2.  run the following command:
+    1.  run the following command:
+
+    ```python
+    python3 -m http.server
+    ```
+
+  {% /tab %}
+  {% tab label="Python 2" %}
+    1. `cd` into your project directory.
+    1.  run the following command:
 
     ```python
     python -m SimpleHTTPServer 8000
     ```
-
-  {% /card %}
-{% /cards %}
+    
+  {% /tab %}
+{% /tabs %}
 
 The output provides a local URL where the preview can be accessed.
 
@@ -83,15 +83,15 @@ To install `http-server` with [Node.js](https://nodejs.org/en/download/):
 
 1. In your CLI, in your project directory, run the the following command:
 
-```bash
-npx http-server
-```
+    ```bash
+    npx http-server
+    ```
 
 1. After the installation completes, run:
 
-```bash
-http-server
-```
+    ```bash
+    http-server
+    ```
 
 The output provides the local URL where you can access the preview.
 
