@@ -48181,6 +48181,7 @@ reunite:
     changes:
       minor: []
       patch:
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.35.0`.
         - Fixed issue loading large numbers of PR contributors.
         - Fixed an issue where external Git user logins were capitalized instead of preserving the original casing.
     dependencies: {}
