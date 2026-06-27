@@ -53,6 +53,16 @@ To organize your content into version subfolders:
    Version subfolder names must start with the "@" symbol, but otherwise can be any string, with or without numbers.
    For example, `@latest`, `@1.0.0`, `@rc1` are all valid. \
    You can add as many version subfolders as you need, but nesting them is **not** supported.
+
+   {% admonition type="warning" %}
+   ### Version name truncation
+   Redocly automatically truncates version names ending in `.0`.
+   For example, a version folder named `@22.0` is processed as version `22`.
+
+   This truncation can lead to 404 errors if your sidebar configuration or file system references use the full version string while the platform expects the truncated version.
+   To avoid this issue, we recommend avoiding `.0` in version folder names (e.g., use `@v22` or `@22-1` instead) or ensuring all references use the truncated format.
+   {% /admonition %}
+
 1. Place the files for the different versions in their specified folders.
 
 After building your project, when you access versioned content, the sidebar displays the version picker, enabling you to switch between content versions.

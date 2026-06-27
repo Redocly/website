@@ -85,6 +85,11 @@ To localize content in partials:
     └── redocly.yaml
 ```
 
+## Right-to-Left (RTL) content
+
+If you are localizing content for RTL languages like Arabic, Redocly automatically applies the correct directionality.
+For more information on how to handle mixed-direction layouts and force LTR for specific elements, see [Right-to-Left (RTL) support](../../config/l10n.md#right-to-left-rtl-support).
+
 ## Resources
 
 - **[Localization configuration](../../config/l10n.md)** - Configure language support, default locales, and localization behavior for your multi-language project
