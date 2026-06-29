@@ -205,6 +205,7 @@ You can sync your branch, pulling in the changes from main since you created you
 
 ## Resources
 
+- **[Keyboard shortcuts](./keyboard-shortcuts.md)** - Navigate the editor faster with built-in shortcuts
 - **[Use previews](./use-previews.md)** - Access deployment previews to see how your changes will appear before publishing to production
 - **[Use Webview](./use-webview.md)** - Adjust the live preview of your content updates while editing for real-time visual feedback
 - **[Add remote files](./remote-content/index.md)** - Include and synchronize files from remote locations and external repositories in your project

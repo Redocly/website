@@ -18,7 +18,7 @@ This helps you verify routing, request data, and responses without leaving your 
 
 ## Open Replay
 
-The **Replay** tab opens in the [editor pane](./project-ui.md#editor-dock) alongside your file tabs.
+The **Replay** tab opens in the [utility pane](./project-ui.md#utility-pane) alongside your file tabs.
 If the tab is already open, click it to select it.
 If it is closed, open it in any of the following ways:
 
