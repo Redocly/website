@@ -129,7 +129,6 @@ You can drag the status bar along the bottom edge of the Webview to move it out 
   withLightbox=true
 /%}
 
-
 ### View project page count
 
 The project status bar in the **Webview** tab displays the current number of pages in your project.
