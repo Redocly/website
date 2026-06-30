@@ -299,8 +299,8 @@ This page contains the list of all predefined translation keys used in default U
 ---
 
 - search.ai.welcomeText
-- Welcome message displayed in the AI search interface
-- Welcome to AI search!
+- Welcome message displayed in the AI assistant interface
+- Welcome to AI assistant!
   Feel free to ask me anything.
   How can I help you?
 
