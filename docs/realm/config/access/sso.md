@@ -7,7 +7,7 @@ products:
 plans:
   - Enterprise
   - Enterprise+
-description: Allow the usage of specific identity providers (IdPs) defined in Reunite.
+description: Restrict project login to specific identity provider categories defined in Reunite.
 ---
 # `sso`
 
@@ -30,12 +30,18 @@ To require login to a project, [`rbac`](./rbac.md) or [`requiresLogin`](./requir
 
 - sso
 - [string]
-- List of identity provider types from Reunite.
+- List of identity provider categories from Reunite.
   Possible values: `REDOCLY`, `CORPORATE`, `GUEST`, or `[]`.
+  A category corresponds to the **Login type** assigned to an identity provider in Reunite.
 
-  Default value: `AUTO` - when no `sso` is defined, this special value is used.
-  It redirects users to `GUEST` IdP if it's defined in Reunite.
-  Otherwise, it redirects to `CORPORATE` IdP, if defined in Reunite.
+  To target a specific identity provider by its unique ID, use [`access.idps`](./idps.md) instead of `sso`.
+  `access.sso` and `access.idps` are mutually exclusive and cannot be configured together.
+
+  Default value: `AUTO` - used when neither `sso` nor `idps` is defined.
+  It offers `GUEST` IdPs, if any are defined in Reunite.
+  Otherwise, it offers `CORPORATE` IdPs, if defined in Reunite.
+  When a category contains a single IdP, users are redirected to this IdP.
+  With multiple IdPs, users choose one on the login screen.
   If no IdPs are defined it falls back to the `REDOCLY` IdP, giving users the option to log in using their Redocly credentials or Social Login providers (like `Google`).
 
 {% /table %}
@@ -84,7 +90,7 @@ sso:
 - **[RBAC configuration](./rbac.md)** - Complete options for configuring role-based access control for granular project permissions and user management
 - **[RequiresLogin configuration](./requires-login.md)** - Require login for all users to your project without implementing complex role-based access control
 - **[Google Workspace SAML 2 SSO](../../reunite/organization/sso/configure-google-sso.md)** - Integrate Google Workspace SAML 2 SSO with Reunite for enterprise authentication workflows
-- **[Single Sign-on concepts](../../reunite/organization/sso/sso.md)** - Understand different identity provider types in Reunite and how they apply to project authentication
+- **[Single Sign-on concepts](../../reunite/organization/sso/sso.md)** - Understand different identity provider categories in Reunite and how they apply to project authentication
 - **[Add an identity provider](../../reunite/organization/sso/add-idp.md)** - Follow steps to add identity providers in Reunite for centralized authentication management
-- **[Configure SSO](../../reunite/organization/sso/configure-sso.md)** - Enable multiple identity provider types to give users flexible authentication options for your projects
+- **[Configure SSO](../../reunite/organization/sso/configure-sso.md)** - Enable multiple identity provider categories to give users flexible authentication options for your projects
 - **[Role-based access control (RBAC)](./rbac.md)** - Implement advanced access control scenarios to grant specific users access to specific content and features

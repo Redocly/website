@@ -39,23 +39,25 @@ Make sure you have the following:
 ## Add a Corporate identity provider (IdP)
 
 A Corporate identity provider is used to authenticate internal users into Reunite and projects.
-You can only add one Corporate identity provider for your organization.
+You can add multiple Corporate identity providers for your organization and target a specific one at project login by configuring [`access.idps`](../../../config/access/idps.md).
 
 1. Log in to your Redocly instance.
 2. Select **SSO and login** in the navigation menu on the left side of the page.
-3. In the **Corporate** row under **Identity Provider**, click **+ Add** and select the type of identity provider you want to add - either SAML 2 or OpenID Connect.
+3. Click **Add identity provider** and select the type of identity provider you want to add - either SAML 2 or OpenID Connect.
 4. Complete the form based on the information you have gathered about your SSO identity provider.
+   In the **Login type** dropdown, select **Corporate**.
 5. Click **Save**.
 
 ## Add a Guest identity provider (IdP)
 
 A Guest identity provider is used to authenticate external users into projects.
-You can only add one Guest identity provider for your organization.
+You can add multiple Guest identity providers for your organization and target a specific one at project login by configuring [`access.idps`](../../../config/access/idps.md).
 
 1. Log in to your Redocly instance.
 2. Select **SSO and login** in the navigation menu on the left side of the page.
-3. In the **Guest** row under **Identity Provider**, click **+ Add** and select the type of identity provider you want to add - either SAML 2 or OpenID Connect.
+3. Click **Add identity provider** and select the type of identity provider you want to add - either SAML 2 or OpenID Connect.
 4. Complete the form based on the information you have gathered about your SSO identity provider.
+   In the **Login type** dropdown, select **Guest**.
 5. Click **Save**.
 
 
@@ -94,6 +96,6 @@ See [Configure RBAC](../../../access/index.md) or [requiresLogin](../../../confi
 - **[Configure SSO](./configure-sso.md)** - Specify which identity providers users can access or disable SSO entirely for your project authentication settings
 - **[Configure RBAC](../../../access/index.md)** - Limit user access to specific pages and features in your project and Reunite using role-based access control
 - **[SSO configuration reference](../../../config/access/sso.md)** - Complete technical reference for all available SSO configuration options and implementation details
-- **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider types and their configuration options for both Reunite and redocly.yaml file setup
+- **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider categories and their configuration options for both Reunite and redocly.yaml file setup
 - **[Role-based access control (RBAC) concepts](../../../access/rbac.md)** - Understand the components and architecture of Redocly's role-based access control system
 - **[RBAC configuration reference](../../../config/access/rbac.md)** - Examples and configuration options for implementing RBAC in your redocly.yaml file with detailed setup instructions

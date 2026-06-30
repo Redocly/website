@@ -85,6 +85,8 @@ This guide provides a comprehensive overview of available configuration options 
 
   {% configProperty file="access/index.md" /%}
 
+  {% configProperty file="access/idps.md" /%}
+
   {% configProperty file="access/logout-return-url.md" /%}
 
   {% configProperty file="access/rbac.md" /%}
