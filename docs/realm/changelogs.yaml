@@ -48198,6 +48198,13 @@ reunite:
       patch:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.35.0`.
     dependencies: {}
+  v2026-06-30.1:
+    timestamp: 1782805711000
+    changes:
+      minor: []
+      patch:
+        - Raised `Prisma` transaction timeout to prevent commit expiration errors on paginated list endpoints.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
