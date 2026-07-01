@@ -49,7 +49,8 @@ You send the request as you, from where you work.
 
 ## Try it in your project
 
-If you have API functions, the Replay tab is waiting in your editor. Open a function file, press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Y</kbd> on Windows or <kbd>Ctrl</kbd> + <kbd>Opt</kbd> + <kbd>Y</kbd> on macOS, and send your first request.
+If you have API functions, the Replay tab is waiting in your editor.
+Open a function file, switch to Replay, and send your first request.
 
 For a step-by-step walkthrough, see [Test API functions](https://redocly.com/docs/realm/reunite/project/test-api-functions) in our docs.
 New to API functions?
