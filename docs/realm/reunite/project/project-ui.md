@@ -161,7 +161,7 @@ This converts the preview tab into a regular tab.
 
 ### Utility pane
 
-You can open three utility tabs in the editor dock:
+By default, the utility pane is located on the right side of the screen and has three utility tabs open:
 
 - **Webview**: Displays a live preview of the opened Markdown or API description file.
   See [Use the Webview](./use-webview.md) for details.
@@ -177,6 +177,8 @@ To open a utility tab, either:
 
 If a utility tab is already open, triggering the open action activates the existing tab instead of creating a duplicate.
 
+You can also use the utility pane to open project files in a side-by-side layout.
+
 ### Webview live preview tab
 
 The **Webview** live preview tab renders the currently open Markdown or API description file as it would appear in a published project.
@@ -186,6 +188,8 @@ The **Webview** live preview tab renders the currently open Markdown or API desc
   src="../images/editor-webview-tab.png"
   withLightbox=true
 /%}
+
+In this tab you can:
 
 - (1) [navigate to previously opened pages](./use-webview.md#navigate-pages)
 - (2) [reload webview](./use-webview.md#reload)
@@ -220,17 +224,37 @@ In this tab you can:
 - (4) open the displayed page in a new window or tab
 - (5) [interact with pages](https://redocly.com/docs/end-user/interact-with-pages)
 
+### Replay tab
+
+The **Replay** tab displays the Replay console you can use to [test API functions](./test-api-functions.md) in your project.
+The console is available after the Webview completes building your project.
+
+{% img
+  alt="Screenshot of the Replay tab in Reunite editor"
+  src="../images/editor-replay-tab.png"
+  withLightbox=true
+/%}
+
+In this tab you can:
+
+- (1) select a request method
+- (2) enter request URL
+- (3) copy request URL
+- (4) send the request
+- (5) edit request parameters
+- (6) view the response
+
 ## Manage editor tabs
 
 Right-click any tab to open the tab context menu and choose one of the following actions:
 
-- **Close** - close the tab.
-- **Close others** - close every tab in the same group other than the active tab.
-- **Close to the right** - close the tabs to the right of the current tab in the same group.
-- **Close unchanged** - close every file tab in the group that has no uncommitted changes.
-- **Close all** - close every tab in the group.
-- **Copy path** - copy the file path of the tab to the clipboard (available for file tabs only).
-- **Split right**, **Split left**, **Split up**, **Split down** - move the tab into a new group positioned relative to the current group.
+- **Close** - closes the tab.
+- **Close others** - closes every tab in the same group other than the active tab.
+- **Close to the right** - closes the tabs to the right of the current tab in the same group.
+- **Close unchanged** - closes every file tab in the group that has no uncommitted changes.
+- **Close all** - closes every tab in the group.
+- **Copy path** - copies the file path of the tab to the clipboard (available for file tabs only).
+- **Split right**, **Split left**, **Split up**, **Split down** - moves the tab into a new group positioned relative to the current group.
 
 You can also drag a tab by its header and drop it on the edges or center of another group to move it, or onto the middle to create a new group.
 

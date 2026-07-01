@@ -14,19 +14,20 @@ plans:
 {% partial file="../../_partials/early-access.md" /%}
 
 You can use Replay in Reunite to send requests to your API functions while you work in the editor.
-This helps you verify routing, request data, and responses without leaving your project workspace.
+With Replay you can verify routing, request data, and responses, without leaving your project workspace.
 
 ## Open Replay
 
-The **Replay** tab opens in the [editor pane](./project-ui.md#editor-dock) alongside your file tabs.
+By default, the **Replay** tab opens in the [utility pane](./project-ui.md#utility-pane) alongside **Webview** and **Documentation** tabs.
 If the tab is already open, click it to select it.
 If it is closed, open it in any of the following ways:
 
 - Click the **More actions** icon on the right side of the tabs header and select **Open Replay**.
+- Click the **+** button in any of the tab groups and select **Replay**.
 - Use the keyboard shortcut:
   - macOS: <kbd>`⌃ Ctrl`</kbd> + <kbd>`⌥ Opt`</kbd> + <kbd>`Y`</kbd>
   - Windows: <kbd>`Ctrl`</kbd> + <kbd>`Alt`</kbd> + <kbd>`Y`</kbd>
-- When a tab group is empty, click the **Replay** shortcut shown under **Dev tools**.
+- When a tab group is empty, click the **Replay** shortcut shown under **Tools**.
 
 ## Test an API function
 
