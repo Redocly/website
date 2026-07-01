@@ -6,13 +6,13 @@ products:
   - Realm
 plans:
   - Enterprise+
-excludeFromSearch: true
 ---
 
 # `ssoDirect`
 
 Control identity and access with the `ssoDirect` configuration option.
 Allows more customization than [sso](./access/sso.md).
+It is an advanced alternative for complex scenarios, such as when you need to configure multiple identity providers for a single project.
 
 {% admonition type="warning" name="Enterprise+" %}
 Available with Enterprise+.

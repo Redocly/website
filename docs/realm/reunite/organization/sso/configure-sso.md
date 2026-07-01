@@ -69,6 +69,7 @@ Disabling SSO removes the login page, but does not disable `rbac`.
 - **[Add an identity provider](./add-idp.md)** - Add identity providers in Reunite for unified authentication across projects and Reunite login
 - **[Configure RBAC](../../../access/index.md)** - Implement role-based access control to restrict user access to specific project content and features
 - **[SSO configuration reference](../../../config/access/sso.md)** - Complete reference documentation for all available SSO configuration options and settings
+- **[Direct SSO configuration reference](../../../config/ssoDirect.md)** - Advanced configuration options for multiple identity providers and direct SSO setup
 - **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider types and implementation approaches for your project authentication needs
 - **[Role-based access control (RBAC) concepts](../../../access/rbac.md)** - Understand how RBAC works in projects and Reunite for comprehensive access management
 - **[RBAC configuration reference](../../../config/access/rbac.md)** - Complete reference for configuring RBAC options in your redocly.yaml file with examples and implementation details

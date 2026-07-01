@@ -64,11 +64,18 @@ When you disable SSO for a project, there is no log in page for that project.
 Disabling SSO is only necessary if you have `rbac` configured, but you don't want to require login to your project.
 Disabling SSO removes the login page, but does not disable `rbac`.
 
+## Advanced SSO configuration
+
+For complex scenarios, such as when you need to configure multiple identity providers for a single project or need more control over the SSO configuration, you can use the `ssoDirect` option.
+`ssoDirect` allows you to define multiple IdPs directly in your project configuration.
+Refer to the [`ssoDirect` configuration reference](../../../config/ssoDirect.md) for more details.
+
 ## Resources
 
 - **[Add an identity provider](./add-idp.md)** - Step-by-step guide to add identity providers in Reunite for seamless user authentication across projects
 - **[Configure SSO](./configure-sso.md)** - Set up single sign-on to allow users to authenticate using multiple identity providers for flexible access control
 - **[Okta SAML integration video](https://youtu.be/NMayl8FTZ7c)** - Watch a step-by-step tutorial for integrating Okta with Redocly using SAML for single sign-on
 - **[SSO configuration reference](../../../config/access/sso.md)** - Complete technical reference for all SSO configuration options and settings in your redocly.yaml file
+- **[Direct SSO configuration reference](../../../config/ssoDirect.md)** - Advanced configuration options for multiple identity providers and direct SSO setup
 - **[Multi-tenant SSO: Federated identity management](./sso-multi-tenant.md)** - Implement federated identity management for organizations with multiple tenants and complex authentication requirements
 - **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 directory provisioning for an identity provider (early access on request)
