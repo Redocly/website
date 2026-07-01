@@ -48377,6 +48377,13 @@ reunite:
       patch:
         - Fixed an issue where uploading a large profile picture could cause login failures.
     dependencies: {}
+  v2026-07-01.4:
+    timestamp: 1782919624000
+    changes:
+      minor: []
+      patch:
+        - Fixed processing of Bitbucket Cloud pull request updates authored by apps or bots for connected project sources.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
