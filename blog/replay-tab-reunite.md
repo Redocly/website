@@ -36,6 +36,7 @@ If the file you have open is an API function, Replay already knows which request
 The tab is easy to reach:
 
 - Click the **More actions** icon on the right of the tabs header and select **Open Replay**.
+- Click the **+** button on the tabs header and select **Replay** in the new tab.
 - Use the keyboard shortcut: <kbd>`Ctrl`</kbd> + <kbd>`Alt`</kbd> + <kbd>`Y`</kbd> on Windows, or <kbd>`⌃ Ctrl`</kbd> + <kbd>`⌥ Opt`</kbd> + <kbd>`Y`</kbd> on macOS.
 
 ![Screenshot of the Replay tab being open using the More actions menu in the editor tabs header](./images/replay-tab-open.png)
