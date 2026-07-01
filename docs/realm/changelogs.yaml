@@ -48358,6 +48358,18 @@ reunite:
       patch:
         - Raised `Prisma` transaction timeout to prevent commit expiration errors on paginated list endpoints.
     dependencies: {}
+  v2026-07-01.2:
+    timestamp: 1782914176000
+    changes:
+      minor:
+        - >-
+          Added `access.idps` configuration in `redocly.yaml` to specify which identity providers, defined by unique IDs in Reunite, appear on the
+          login screen.
+      patch:
+        - Fixed crash caused by concurrent pull requests creating duplicate branches and triggering Prisma P2002 unique constraint errors.
+        - Fixed an issue where organization logos in invitation emails appeared small and blurry.
+        - Fixed scout job pickup failure caused by Postgres error `42P18` by casting the `scoutVersion` query parameter to text.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
