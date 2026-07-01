@@ -48366,6 +48366,7 @@ reunite:
           Added `access.idps` configuration in `redocly.yaml` to specify which identity providers, defined by unique IDs in Reunite, appear on the
           login screen.
       patch:
+        - Fixed an issue where uploading a large profile picture could cause login failures.
         - Fixed crash caused by concurrent pull requests creating duplicate branches and triggering Prisma P2002 unique constraint errors.
         - Fixed an issue where organization logos in invitation emails appeared small and blurry.
         - Fixed scout job pickup failure caused by Postgres error `42P18` by casting the `scoutVersion` query parameter to text.
