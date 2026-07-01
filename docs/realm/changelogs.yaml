@@ -48370,6 +48370,13 @@ reunite:
         - Fixed an issue where organization logos in invitation emails appeared small and blurry.
         - Fixed scout job pickup failure caused by Postgres error `42P18` by casting the `scoutVersion` query parameter to text.
     dependencies: {}
+  v2026-07-01.3:
+    timestamp: 1782916469000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where uploading a large profile picture could cause login failures.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
