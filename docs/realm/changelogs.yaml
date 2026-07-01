@@ -29494,6 +29494,15 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.50.0:
+    timestamp: 1782900364000
+    changes:
+      minor:
+        - >-
+          Added `access.idps` configuration in `redocly.yaml` to specify which identity providers, defined by unique IDs in Reunite, appear on the
+          login screen.
+      patch: []
+    dependencies: {}
   0.49.1:
     timestamp: 1782485488000
     changes:
