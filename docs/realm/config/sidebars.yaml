@@ -15,8 +15,6 @@
           label: residency
         - page: ./access/sso.md
           label: sso
-        - page: ./access/idps.md
-          label: idps
     - page: ./ai-assistant.md
       label: aiAssistant
     - group: analytics
@@ -42,8 +40,15 @@
       label: apiFunctions
     - page: ./apis.md
       label: apis
-    - page: ./asyncapi.md
-      label: asyncapi
+    - group: asyncapi
+      page: ./asyncapi/index.md
+      items:
+        - page: ./asyncapi/download-urls.md
+          label: downloadUrls
+        - page: ./asyncapi/json-samples-depth.md
+          label: jsonSamplesDepth
+        - page: ./asyncapi/layout.md
+          label: layout
     - page: ./banner.md
       label: banner
     - page: ./breadcrumbs.md

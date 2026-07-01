@@ -45,14 +45,9 @@ Root-level properties (`requiresLogin`, `residency`, `sso`, `rbac`) are supporte
   - `residency` (string) - Geographical location URL for hosting your project.
     Available on **Enterprise+**.
     See [Residency configuration](./residency.md).
-  - `sso` (string | [string]) - List of identity provider categories from Reunite (`REDOCLY`, `CORPORATE`, `GUEST`).
-    Available for **Enterprise and Enterprise+** plans.
-    Mutually exclusive with `idps`.
+  - `sso` (string | [string]) - List of identity provider types from Reunite.
+    Available on **Enterprise, Enterprise+**.
     See [SSO configuration](./sso.md).
-  - `idps` (string | [string]) - List of identity provider unique IDs from Reunite.
-    Mutually exclusive with `sso`.
-    Available for **Enterprise and Enterprise+** plans.
-    See [IdPs configuration](./idps.md).
   - `rbac` (object) - Role-based access control configuration.
     Available on **Enterprise, Enterprise+**.
     See [RBAC configuration](./rbac.md).
@@ -164,7 +159,6 @@ Use only the `access` object format for new configurations.
 
 - **[RequiresLogin configuration](./requires-login.md)** - Detailed information about requiring login for your project
 - **[SSO configuration](./sso.md)** - Complete guide for configuring single sign-on
-- **[IdPs configuration](./idps.md)** - Target specific identity providers by unique ID
 - **[Residency configuration](./residency.md)** - Information about geographical hosting locations
 - **[RBAC configuration](./rbac.md)** - Alternative access control using role-based permissions
 

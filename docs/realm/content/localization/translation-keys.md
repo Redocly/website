@@ -33,9 +33,159 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- asyncapi.info.contact.url
+- Label for the contact URL in the info section of AsyncAPI description
+- URL
+
+---
+
+- asyncapi.info.contact.name
+- Label for the contact name in the info section of AsyncAPI description
+- E-mail
+
+---
+
+- asyncapi.info.license
+- Label for the license in the info section of AsyncAPI description
+- License
+
+---
+
+- asyncapi.info.termsOfService
+- Label for the terms of service in the info section of AsyncAPI description
+- Terms of Service
+
+---
+
+- asyncapi.key
+- Label for key in AsyncAPI description
+- Key
+
+---
+
+- asyncapi.value
+- Label for value in AsyncAPI description
+- Value
+
+---
+
+- asyncapi.variables
+- Label for variables in AsyncAPI description
+- variables
+
+---
+
+- asyncapi.required
+- Label for required fields in AsyncAPI description
+- required
+
+---
+
+- asyncapi.requiredScopes
+- Label for required scopes in AsyncAPI security schemes
+- Required scopes
+
+---
+
+- asyncapi.viewSecurityDetails
+- Label for the view security details button in AsyncAPI description
+- View security details
+
+---
+
+- asyncapi.badges.deprecated
+- Label for the deprecated badge in AsyncAPI description
+- deprecated
+
+---
+
+- asyncapi.actions.show
+- Label for the show action in AsyncAPI description
+- Show
+
+---
+
+- asyncapi.actions.hide
+- Label for the hide action in AsyncAPI description
+- Hide
+
+---
+
+- asyncapi.actions.more
+- Label for the more action in AsyncAPI description
+- more
+
+---
+
+- asyncapi.payload
+- Label for the payload in AsyncAPI description
+- Payload
+
+---
+
+- asyncapi.parameters
+- Label for the channel parameters section in AsyncAPI description
+- Parameters
+
+---
+
+- asyncapi.messages
+- Label for the channel messages section in AsyncAPI description
+- Messages
+
+---
+
+- asyncapi.contentType
+- Label for the media type selector in AsyncAPI payload examples
+- Content type
+
+---
+
+- asyncapi.moreDetails
+- Label for the "More details" expander on AsyncAPI broker / channel binding panels
+- More details
+
+---
+
+- asyncapi.property
+- Singular noun used to count schema fields in AsyncAPI description (e.g. "Show 1 property")
+- property
+
+---
+
+- asyncapi.properties
+- Plural noun used to count schema fields in AsyncAPI description (e.g. "Show 3 properties")
+- properties
+
+---
+
+- asyncapi.details
+- Fallback noun used on the schema "Show details" expander in AsyncAPI when no property count is available
+- details
+
+---
+
+- asyncapi.reply
+- Label for the operation reply section in AsyncAPI description
+- Reply
+
+---
+
+- asyncapi.servers.title
+- Title for the servers section in AsyncAPI description
+- Servers
+
+---
+
 - userMenu.logout
 - Logout button label
 - Log out
+
+---
+
+- languagePicker.label
+- Aria-label for the language picker dropdown in the page footer / navigation
+- Select language
 
 ---
 
@@ -1256,6 +1406,30 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.property
+- Singular noun used to count schema fields in OpenAPI description (e.g. "Show 1 property")
+- property
+
+---
+
+- openapi.properties
+- Plural noun used to count schema fields in OpenAPI description (e.g. "Show 3 properties")
+- properties
+
+---
+
+- openapi.array
+- Localized "array" word inserted into the "Show N array properties" button on array-of-object schema rows
+- array
+
+---
+
+- openapi.details
+- Fallback noun used on the schema "Show details" expander when no property count is available
+- details
+
+---
+
 - openapi.variable
 - Label for variable in OpenAPI description
 - variable
@@ -1324,7 +1498,7 @@ This page contains the list of all predefined translation keys used in default U
 
 - openapi.badges.deprecated
 - Label for the deprecated badge in OpenAPI description
-- Deprecated
+- deprecated
 
 ---
 
@@ -1559,6 +1733,12 @@ This page contains the list of all predefined translation keys used in default U
 - openapi.noRequestPayload
 - Message when there's no request payload in OpenAPI description
 - No request payload
+
+---
+
+- openapi.noRequestData
+- Message when an operation has no request data (no parameters, body, or security) in an OpenAPI description
+- No request data
 
 ---
 
@@ -1838,6 +2018,42 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- graphql.actions.show
+- Label for the show action in GraphQL description
+- Show
+
+---
+
+- graphql.actions.hide
+- Label for the hide action in GraphQL description
+- Hide
+
+---
+
+- graphql.actions.more
+- Label for the more action in GraphQL description
+- more
+
+---
+
+- graphql.fields
+- Label for the fields section in GraphQL object and interface content
+- Fields
+
+---
+
+- graphql.inputFields
+- Label for the input fields section in GraphQL input type content
+- Input Fields
+
+---
+
+- graphql.values
+- Label for the values section in GraphQL enum content
+- Values
+
+---
+
 - graphql.arguments.label
 - Label for the arguments section in GraphQL content
 - Arguments
@@ -1922,8 +2138,8 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- graphql.deprecated
-- Label for deprecated fields in GraphQL content
+- graphql.badges.deprecated
+- Label for the deprecated badge in GraphQL content
 - deprecated
 
 ---

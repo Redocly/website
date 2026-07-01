@@ -73,7 +73,37 @@ Requires a GraphQL schema.
 - boolean
 - Show GraphQL built-in directives in the navigation and pages.
 
+---
+
+- excludeFromSearch
+- boolean
+- Excludes a GraphQL schema from search results and `llms.txt` when set to `true`.
+  Default: `false`.
+
 {% /table %}
+
+## Examples
+
+### Exclude a GraphQL API from search
+
+To exclude a specific GraphQL API from the search results, locate the API in `redocly.yaml` and under the `graphql` key, set the `excludeFromSearch` option to `true`.
+
+```yaml {% title="redocly.yaml" %}
+apis:
+  library@default:
+    root: 'graphql/schema.graphql'
+    graphql:
+      excludeFromSearch: true
+```
+
+### Exclude all GraphQL APIs from search
+
+To exclude all GraphQL APIs from the search results, under the `graphql` key, set the `excludeFromSearch` option to `true`.
+
+```yaml {% title="redocly.yaml" %}
+graphql:
+  excludeFromSearch: true
+```
 
 ## Resources
 
