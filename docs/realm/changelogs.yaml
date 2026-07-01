@@ -29494,15 +29494,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
-  0.50.0:
-    timestamp: 1782900364000
-    changes:
-      minor:
-        - >-
-          Added `access.idps` configuration in `redocly.yaml` to specify which identity providers, defined by unique IDs in Reunite, appear on the
-          login screen.
-      patch: []
-    dependencies: {}
   0.49.1:
     timestamp: 1782485488000
     changes:
@@ -48357,32 +48348,6 @@ reunite:
       minor: []
       patch:
         - Raised `Prisma` transaction timeout to prevent commit expiration errors on paginated list endpoints.
-    dependencies: {}
-  v2026-07-01.2:
-    timestamp: 1782914176000
-    changes:
-      minor:
-        - >-
-          Added `access.idps` configuration in `redocly.yaml` to specify which identity providers, defined by unique IDs in Reunite, appear on the
-          login screen.
-      patch:
-        - Fixed crash caused by concurrent pull requests creating duplicate branches and triggering Prisma P2002 unique constraint errors.
-        - Fixed an issue where organization logos in invitation emails appeared small and blurry.
-        - Fixed scout job pickup failure caused by Postgres error `42P18` by casting the `scoutVersion` query parameter to text.
-    dependencies: {}
-  v2026-07-01.3:
-    timestamp: 1782916469000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where uploading a large profile picture could cause login failures.
-    dependencies: {}
-  v2026-07-01.5:
-    timestamp: 1782931832000
-    changes:
-      minor: []
-      patch:
-        - Fixed processing of Bitbucket Cloud pull request updates authored by apps or bots for connected project sources.
     dependencies: {}
 replay:
   0.0.2:

@@ -5,18 +5,16 @@
     - group: access
       page: ./access/index.md
       items:
+        - page: ./access/logout-return-url.md
+          label: logoutReturnUrl
         - page: ./access/rbac.md
           label: rbac
         - page: ./access/requires-login.md
           label: requiresLogin
-        - page: ./access/logout-return-url.md
-          label: logoutReturnUrl
         - page: ./access/residency.md
           label: residency
         - page: ./access/sso.md
           label: sso
-        - page: ./access/idps.md
-          label: idps
     - page: ./ai-assistant.md
       label: aiAssistant
     - group: analytics
@@ -54,6 +52,8 @@
       label: codeSnippet
     - page: ./color-mode.md
       label: colorMode
+    - page: ./cors-proxy.md
+      label: corsProxy
     - page: ./developer-onboarding/index.md
       label: developerOnboarding
     - page: ./env.md

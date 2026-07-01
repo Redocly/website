@@ -43,6 +43,7 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 - actions
 - [PageAction object](#pageaction-object)
 - Controls the actions that appear on the page.
+  Requires the [`seo.llmstxt` option](./seo.md#llmstxt-object) to be enabled.
 
 ---
 
@@ -122,11 +123,9 @@ Control the **Previous** and **Next** navigation buttons on project pages.
     Only available on public pages.
   - `claude`: ask Claude about this page.
     Only available on public pages.
-  - `docs-mcp-cursor`: connect to MCP server via Cursor.
-  - `docs-mcp-vscode`: connect to MCP server via VS Code.
 
   The first item in the list is the default action.
-  By default, all items are shown in the following order: `copy`, `view`, `chatgpt`, `claude`, `docs-mcp-cursor`, `docs-mcp-vscode`.
+  By default, all items are shown in the following order: `copy`, `view`, `chatgpt`, `claude`.
 
 ---
 
