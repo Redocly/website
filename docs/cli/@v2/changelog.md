@@ -7,12 +7,6 @@ toc:
 
 <!-- do-not-remove -->
 
-## 2.36.0 (2026-06-30)
-
-### Minor Changes
-
-- Added a Subresource Integrity (SRI) hash to the Redoc standalone script tag in the HTML produced by `build-docs`, ensuring the script's integrity.
-
 ## 2.35.1 (2026-06-25)
 
 ### Patch Changes
@@ -41,7 +35,6 @@ toc:
 
 - Fixed a path traversal in the `split` command that might have written files outside the chosen `--outDir`.
 - Updated @redocly/openapi-core to v2.33.2.
-- Updated @redocly/respect-core to v2.33.2.
 
 ## 2.33.1 (2026-06-16)
 
@@ -59,7 +52,6 @@ toc:
 ### Patch Changes
 
 - Updated @redocly/openapi-core to v2.33.0.
-- Updated @redocly/respect-core to v2.33.0.
 
 ## 2.32.2 (2026-06-11)
 
