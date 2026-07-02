@@ -76,7 +76,7 @@ The navigation bar (navbar) contains links to major parts of the project.
 
       {% img
         src="./images/hamburger-icon.png"
-        withLightbox=true
+        alt="Menu icon on a mobile device"
       /%}
 
     The contents of the menu change to represent the structure in the navbar.
