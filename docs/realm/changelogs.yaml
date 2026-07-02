@@ -48384,13 +48384,6 @@ reunite:
       patch:
         - Fixed processing of Bitbucket Cloud pull request updates authored by apps or bots for connected project sources.
     dependencies: {}
-  v2026-07-02.3:
-    timestamp: 1782997585000
-    changes:
-      minor: []
-      patch:
-        - Cached Vault secrets per project with a 30-second TTL to reduce `RbacGuard` Vault query load.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
