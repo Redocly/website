@@ -9,7 +9,7 @@ You can jump directly to the main content of a project's page, skipping navigati
 
 To skip to the page's main content:
 
-1. After navigating to a page, press the <kbd>`Tab<`/kbd> key.
+1. After navigating to a page, press the <kbd>`Tab`</kbd> key.
 1. Press the <kbd>`Return`</kbd> or <kbd>`Enter`</kbd> key, or click the **Skip to content** button.
 
 The page content scrolls so that the first heading is at the top of the page.
@@ -150,7 +150,7 @@ The order of breadcrumb links typically reflects the hierarchy in the sidebar: f
 You can also use the navigation buttons located below the main content of the page.
 These buttons typically open the next page or the previous page in the same order as the items in the sidebar.
 If a page is the first item on a sidebar, a single navigation button displays on the bottom-right side of the page directing the user to the next item in the sidebar.
-If an page is the last item on a sidebar, a single navigation button displays on the bottom-left side of the page directing the user to the previous item in the sidebar.
+If a page is the last item on a sidebar, a single navigation button displays on the bottom-left side of the page directing the user to the previous item in the sidebar.
 
 Some projects may have a custom order for the navigation buttons to guide users through related content.
 
