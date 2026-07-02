@@ -72,11 +72,10 @@ The navigation bar (navbar) contains links to major parts of the project.
 
   {% tab label="Mobile" %}
     To access the navbar on mobile devices:
-    - Select the slide drawer icon in the top-right corner of the screen and then select **Main menu**.
+    - Select the menu icon in the top-right corner of the screen and then select **Main menu**.
 
       {% img
         src="./images/hamburger-icon.png"
-        alt="Slide drawer navigation menu icon"
         withLightbox=true
       /%}
 
@@ -114,12 +113,11 @@ A project can have a single sidebar with links to all pages, or a main sidebar w
   {% /tab %}
   {% tab label="Mobile" %}
     To access the sidebar on mobile devices:
-    - Select the slide drawer icon in the top-right corner of the screen.
+    - Select the menu icon in the top-right corner of the screen.
 
       {% img
         src="./images/hamburger-icon.png"
-        alt="Slide drawer navigation menu icon"
-        withLightbox=true
+        alt="Menu icon on a mobile device"
       /%}
 
     The contents of the menu represent the structure of the sidebar.
@@ -191,15 +189,14 @@ Products often have individual sidebars or other navigation elements, and their 
   {% tab label="Mobile" %}
     To switch between products on mobile devices:
 
-    1. Select the slide drawer icon in the top-right corner of the screen and then select **Main menu**.
+    1. Select the menu icon in the top-right corner of the screen and then select **Main menu**.
 
         {% img
           src="./images/hamburger-icon.png"
-          alt="Slide drawer navigation menu icon"
-          withLightbox=true
+          alt="Menu icon on a mobile device"
         /%}
 
-    1. Under the **Products** heading, select a link.
+    2. Under the **Products** heading, select a link.
 
     The selected product's content opens on its default page.
 
@@ -235,15 +232,14 @@ When you first access a page, the page's latest or default version is displayed.
   {% tab label="Mobile" %}
     To switch between page versions on a mobile device:
 
-    1. Select the slide drawer icon in the top-right corner of the screen and then select **Main menu**.
+    1. Select the menu icon in the top-right corner of the screen and then select **Main menu**.
 
         {% img
           src="./images/hamburger-icon.png"
-          alt="Slide drawer navigation menu icon"
-          withLightbox=true
+          alt="Menu icon on a mobile device"
         /%}
 
-    1. Under the **Version** heading, select a version from the drop-down list.
+    2. Under the **Version** heading, select a version from the drop-down list.
     
     The page's content changes to reflect the selected version.
 
