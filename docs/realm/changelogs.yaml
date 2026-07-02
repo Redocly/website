@@ -48389,10 +48389,6 @@ reunite:
     changes:
       minor: []
       patch:
-        - Added the ability to stop an in-progress autonomous agent run and start a run on demand from the agent settings page.
-        - >-
-          Fixed intermittent `Unable to start a transaction in the given time` errors under load by removing transactions from authenticated database
-          queries.
         - Cached Vault secrets per project with a 30-second TTL to reduce `RbacGuard` Vault query load.
     dependencies: {}
 replay:
