@@ -13,17 +13,17 @@ To send an API request using curl:
 1. (Optional) To change the server, scroll to the **Servers** section of the API documentation page, click the **Copy** icon next to a server URL, and paste the value into your command.
 1. Update the values in the curl command as needed.
 
-  For example:
+    For example:
 
-  ```curl {% title="curl command to call Update special event operation" %}
-  curl -i -X PATCH \
-      -u : \
-      'https://redocly.com/_mock/docs/openapi/museum-api/special-events/dad4bce8-f5cb-4078-a211-995864315e39' \
-      -H 'Content-Type: application/json' \
-      -d '{
-          "location": "Under the sea."
-      }'
-  ```
+    ```curl {% title="curl command to call Update special event operation" %}
+    curl -i -X PATCH \
+        -u : \
+        'https://redocly.com/_mock/docs/openapi/museum-api/special-events/dad4bce8-f5cb-4078-a211-995864315e39' \
+        -H 'Content-Type: application/json' \
+        -d '{
+            "location": "Under the sea."
+        }'
+    ```
 1. Run the curl command in a CLI tool.
 
 The CLI tool outputs a response from the server.
