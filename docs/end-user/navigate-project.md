@@ -114,7 +114,7 @@ A project can have a single sidebar with links to all pages, or a main sidebar w
   {% /tab %}
   {% tab label="Mobile" %}
     To access the sidebar on mobile devices:
-    - In the top-right corner of the screen, select the **Menu** icon.
+    - Select the slide drawer icon in the top-right corner of the screen.
 
       {% img
         src="./images/hamburger-icon.png"
@@ -191,7 +191,14 @@ Products often have individual sidebars or other navigation elements, and their 
   {% tab label="Mobile" %}
     To switch between products on mobile devices:
 
-    1. Select the **Menu** icon in the top-right corner of the screen and then select **Main menu**.
+    1. Select the slide drawer icon in the top-right corner of the screen and then select **Main menu**.
+
+        {% img
+          src="./images/hamburger-icon.png"
+          alt="Slide drawer navigation menu icon"
+          withLightbox=true
+        /%}
+
     1. Under the **Products** heading, select a link.
 
     The selected product's content opens on its default page.
@@ -228,7 +235,14 @@ When you first access a page, the page's latest or default version is displayed.
   {% tab label="Mobile" %}
     To switch between page versions on a mobile device:
 
-    1. Select the **Menu** icon in the top-right corner of the screen.
+    1. Select the slide drawer icon in the top-right corner of the screen and then select **Main menu**.
+
+        {% img
+          src="./images/hamburger-icon.png"
+          alt="Slide drawer navigation menu icon"
+          withLightbox=true
+        /%}
+
     1. Under the **Version** heading, select a version from the drop-down list.
     
     The page's content changes to reflect the selected version.
