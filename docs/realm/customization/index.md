@@ -27,6 +27,10 @@ Create custom pages with React components for dynamic, interactive content and l
 Create custom page layouts and templates for consistent design patterns.
 {% /card %}
 
+{% card title="Complex layouts" icon="puzzle-piece" to="./complex-layouts.md" %}
+Combine Markdoc components to build SDK-style and three-pane layouts.
+{% /card %}
+
 {% card title="NPM libraries" icon="brands npm" to="./import-npm-library.md" %}
 Import and use external NPM packages to add functionality to your project.
 {% /card %}
@@ -113,9 +117,10 @@ Build serverless functions to extend your project with custom APIs and data proc
 
 1. **Start simple** - Create your first [React page](./create-react-page.md) to understand the basics
 2. **Use built-in components** - Learn to use [built-in components](./react-components/index.md) in your pages
-3. **Create components** - Build [custom Markdoc tags](./build-markdoc-tags.md) for reusable content elements
-4. **Advanced customization** - [Eject components](./eject-components/index.md) for complete control over styling and behavior
-5. **Add functionality** - Build [API functions](./api-functions/create-api-functions.md) for server-side features
+3. **Build complex layouts** - [Combine components](./complex-layouts.md) for SDK-style documentation
+4. **Create components** - Build [custom Markdoc tags](./build-markdoc-tags.md) for reusable content elements
+5. **Advanced customization** - [Eject components](./eject-components/index.md) for complete control over styling and behavior
+6. **Add functionality** - Build [API functions](./api-functions/create-api-functions.md) for server-side features
 
 ## Resources
 

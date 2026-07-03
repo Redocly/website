@@ -18,9 +18,13 @@ Realm provides built-in MCP server capabilities that expose your API Docs to AI 
 
 ## Benefits
 
-- **Real-time API guidance** — users receive accurate, contextual help about API endpoints and operations.
-- **Secure API access** — AI assistants can make authenticated requests to act on behalf of a user.
-- **Dynamic documentation** — AI assistants can extract and explain API reference content based on user needs.
+- **Real-time API guidance** —
+  users receive accurate, contextual help about API endpoints and operations.
+- **Secure documentation access** —
+  AI assistants can use authentication to read protected documentation and OpenAPI content based on user permissions.
+  The server is read-only and does not perform live API operations.
+- **Dynamic documentation** —
+  AI assistants can extract and explain API reference content based on user needs.
 
 ## Docs MCP server
 

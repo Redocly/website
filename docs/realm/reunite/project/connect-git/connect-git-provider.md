@@ -32,25 +32,14 @@ You can connect your Redocly project to the following Git repository hosting pro
 {% admonition type="info" name="Self-hosted Git providers" %}
 If you have a self-hosted instance of GitLab, or are on GitHub Enterprise you may need to allow certain IP addresses to connect to Redocly.
 
-Allow these IP addresses to ensure that Redocly can deploy previews and production updates based on changes you and your contributors make:
+Allow these IP addresses to ensure that Redocly can deploy previews and production updates based on changes you and your contributors make.
+Please contact support for the current list of IP addresses for your region.
 
-**US region:**
-```sh
-3.211.34.228
-44.206.14.241
-54.156.60.142
-```
-
-**EU region:**
-```sh
-3.78.112.49
-52.58.255.31
-3.66.111.193
-```
 {% /admonition %}
 
 ## Resources
 
+- **[Update or renew Bitbucket credentials](./bitbucket-cloud.md#update-or-renew-git-credentials)** - Learn how to replace expired access tokens for Bitbucket Cloud connections
 - **[Manage self-hosted Git providers](./manage-self-hosted.md)** - Set up and configure self-hosted Git repositories for enterprise environments and custom infrastructure
 - **[Include remote content](../remote-content/index.md)** - Integrate content from external repositories and sources into your Reunite projects for centralized documentation
 - **[Use the Editor](../use-editor.md)** - Explore Reunite's collaborative editing tools for creating and managing content with real-time collaboration features

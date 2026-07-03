@@ -54,7 +54,8 @@ With `pointer`:
 - descriptionFile
 - string
 - **REQUIRED.**
-  A path to an OpenAPI description.
+  The path to an OpenAPI description.
+  Must be a static file path and does not support environment variables or dynamic expressions.
 
 ---
 

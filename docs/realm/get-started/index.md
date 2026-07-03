@@ -23,3 +23,7 @@ Start your first project either in your browser with Reunite, or using your loca
 
 Realm and other Redocly products receive regular updates.
 If you're working locally, or have defined a version of Redocly products in your project, consider [updating to the latest version](./upgrade-realm-version.md).
+
+## Advanced layouts
+
+If you want to build complex, SDK-style documentation, see our guide on [building complex layouts with Markdoc](../customization/complex-layouts.md).

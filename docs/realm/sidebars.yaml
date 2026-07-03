@@ -360,6 +360,8 @@
       label: Create React pages
     - page: customization/custom-page-templates.md
       label: Custom page templates
+    - page: customization/complex-layouts.md
+      label: Complex layouts
     - page: customization/import-npm-library.md
       label: Import npm libraries
     - group: Built-in components and icons

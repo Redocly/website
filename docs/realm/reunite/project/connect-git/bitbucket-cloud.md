@@ -44,6 +44,22 @@ To connect a Bitbucket Cloud repository, you must first create a new access toke
    **This step deletes the files currently in the Redocly project and replaces them with the files in Bitbucket Cloud.**
    {% /admonition %}
 
+## Update or renew Git credentials
+
+If your Bitbucket Cloud access token expires or you need to update it, you can provide a new token in Reunite.
+Updating the token ensures that Redocly can continue to sync changes between Reunite and your remote repository.
+
+To update your credentials:
+
+1. Create a new access token in Bitbucket Cloud following the steps in [Create a new repository access token in Bitbucket Cloud](#create-a-new-repository-access-token-in-bitbucket-cloud).
+2. In your Reunite project, go to **Settings > Git hosting**.
+3. Select your connected Bitbucket Cloud provider.
+4. Update the **Access token** with the new value and save your changes.
+
+Updating an existing credential allows you to maintain the connection without re-cloning the repository.
+If you choose to disconnect and reconnect the repository instead of updating the credential, Reunite replaces the current project files with the files from the remote branch.
+In this case, any local-only changes in Reunite that have not been committed and pushed to the remote repository are lost.
+
 ## Resources
 
 - **[Include remote content](../remote-content/index.md)** - Integrate content from external Bitbucket repositories into your Reunite projects for streamlined documentation workflows
