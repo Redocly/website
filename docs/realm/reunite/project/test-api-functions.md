@@ -11,6 +11,8 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
+{% partial file="../../_partials/early-access.md" /%}
+
 You can use Replay in Reunite to send requests to your API functions while you work in the editor.
 With Replay you can verify routing, request data, and responses, without leaving your project workspace.
 

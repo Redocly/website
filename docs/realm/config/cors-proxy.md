@@ -75,4 +75,4 @@ corsProxy:
 ## Resources
 
 - **[Configuration options](./index.md)** - Explore other project configuration options
-- **[OpenAPI `corsProxyUrl`](./openapi/cors-proxy-url.md)** - Configure the CORS proxy URL used by the **Try it** console
+- **[OpenAPI `corsProxyUrl`](./openapi/cors-proxy-url.md)** - Configure the CORS proxy URL used by the Try it console

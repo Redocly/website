@@ -57,22 +57,11 @@ If your API is accessible only through a private network or VPN, configure `cors
 
 ## Examples
 
-### Override the default proxy URL
-
-Add a full URL to an external proxy service:
+Override the default proxy URL in your Redocly configuration file.
 
 ```yaml {% title="redocly.yaml" %}
 openapi:
   corsProxyUrl: https://proxy.example.com/
-```
-
-### Disable CORS proxy
-
-Add an empty string to disable the built-in CORS proxy:
-
-```yaml {% title="redocly.yaml" %}
-openapi:
-  corsProxyUrl: ""
 ```
 
 ## Resources

@@ -449,6 +449,8 @@
       items:
         - page: customization/mcp-server/index.md
           label: Overview
+        - page: customization/mcp-server/custom-tools.md
+          label: Custom tools
         - page: customization/mcp-server/openapi.yaml
           label: Docs MCP reference
 
