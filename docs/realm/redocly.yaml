@@ -69,7 +69,7 @@ apis:
         assertions:
           ref: '/schemas/Page$/'
   auth-api:
-    root: ./auth/openapi/openapi.yaml
+    root: ../intranet/apis/auth/openapi/openapi.yaml
     rules:
       operation-4xx-problem-details-rfc7807: off # kratos/hydra APIs don't follow this rule
       rule/operation-summary:
