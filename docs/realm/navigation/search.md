@@ -70,7 +70,7 @@ Instead of storing individual files as single documents, Realm divides each file
 This method optimizes performance, enabling more granular and efficient searching.
 Markdown pages are segmented at the level of headings and Markdoc tags, where each segment becomes an independent search document.
 For example, if a page contains three headings and a Markdoc table, it is segmented into four search documents.
-If a page has only one heading and many paragraphs and lists, it genrates a single search document.
+If a page has only one heading and many paragraphs and lists, it generates a single search document.
 
 ## Search results and pagination
 
