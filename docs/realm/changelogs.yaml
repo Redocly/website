@@ -48391,6 +48391,16 @@ reunite:
       patch:
         - Cached Vault secrets per project with a 30-second TTL to reduce `RbacGuard` Vault query load.
     dependencies: {}
+  v2026-07-03.1:
+    timestamp: 1783083152000
+    changes:
+      minor: []
+      patch:
+        - Added the ability to stop an in-progress autonomous agent run and start a run on demand from the agent settings page.
+        - >-
+          Fixed intermittent `Unable to start a transaction in the given time` errors under load by removing transactions from authenticated database
+          queries.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
