@@ -189,6 +189,13 @@ Specify the order and link text for side navigation items by creating a `sidebar
 
 ---
 
+- badges
+- [[Badge object](#badge-object)]
+- List of badges to display next to the sidebar item label.
+  Each badge has a `name` (required) and optional `color`.
+
+---
+
 - items
 -
   object
