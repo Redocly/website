@@ -267,6 +267,28 @@ footer:
 
 By grouping the links, users can quickly locate the section and content they are looking for.
 
+### Center footer content
+
+You can center the footer content using custom CSS or CSS variables.
+
+To center the copyright text, use the `--footer-copyright-text-align` CSS variable in your `@theme/styles.css` file:
+
+```css
+:root {
+  --footer-copyright-text-align: center;
+}
+```
+
+To center the footer columns (items), apply `justify-content: center` to the footer container in your `@theme/styles.css` file:
+
+```css
+[data-component-name="Footer/Footer"] .container {
+  justify-content: center;
+}
+```
+
+For more information on adding custom styles, see [Customize styles](../branding/customize-styles.md).
+
 ### Additional properties
 
 Use `additionalProps` to add custom data to footer items:

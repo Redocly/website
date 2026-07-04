@@ -48,6 +48,11 @@ To push changes to Redocly:
 1. Check that the CI/CD steps you set up earlier in this guide ran as expected.
 1. Visit Redocly to review the new deployment.
 
+{% admonition type="warning" name="Unintended production deployments" %}
+If the `--branch` parameter in your push command matches the `--default-branch` parameter, Redocly automatically triggers a production deployment.
+Ensure these values only match when you intend to deploy to production.
+{% /admonition %}
+
 ## Resources
 
 - **[Adding remote content types](./index.md)** - Explore different methods for integrating various external content sources into your Reunite projects

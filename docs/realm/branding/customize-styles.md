@@ -28,7 +28,8 @@ your-awesome-project/
 
 ## Override CSS variables
 
-Add custom styling to your project by overriding CSS variables in your `@theme/styles.css` file. The following example shows a complete custom styling setup:
+Add custom styling to your project by overriding CSS variables in your `@theme/styles.css` file.
+The following example shows a complete custom styling setup:
 
 ```css {% title="@theme/styles.css" %}
 /* Light mode styling (default) */
@@ -95,6 +96,24 @@ Toggle between color modes to see the differences.
 2. **Find the CSS variables** - Use browser developer tools or the [CSS variables reference](./css-variables/index.md) to identify the relevant variables
 3. **Override variables** - Add your custom values to the `@theme/styles.css` file
 4. **Test in both modes** - Ensure your styling works well in both light and dark modes using [color mode customization](./customize-color-modes.md)
+
+### Footer centering example
+
+You can center the footer copyright text using the following CSS variable override:
+
+```css
+:root {
+  --footer-copyright-text-align: center;
+}
+```
+
+To center the footer columns as well:
+
+```css
+[data-component-name="Footer/Footer"] .container {
+  justify-content: center;
+}
+```
 
 ## Restore legacy link styling
 
@@ -232,8 +251,8 @@ You may need to restart the Webview or commit your changes to your branch to see
 Use the examples in this section as starter themes to quickly add styling to your project.
 
 {% admonition type="info" %}
-   Have a request for a styling example?
-   Please use the feedback form at the bottom of the page and tell us.
+Have a request for a styling example?
+Please use the feedback form at the bottom of the page and tell us.
 {% /admonition %}
 
 ### Example theme - "Full corporate"

@@ -164,6 +164,29 @@ In Markdown files, access environment variables using [Markdoc variables syntax]
 
 {% /markdoc-example %}
 
+#### Environment variables in links
+
+You can use environment variables to create dynamic links in your Markdown files.
+Use the Markdoc variable syntax within the standard Markdown link brackets.
+
+{% markdoc-example %}
+
+```markdoc {% process=false %}
+Check out the [latest version](/docs/v{% $env.PUBLIC_VERSION %}/).
+```
+
+{% /markdoc-example %}
+
+{% admonition type="info" name="Evaluation order in links" %}
+Environment variables are substituted before the Markdown link is rendered.
+If you encounter issues where the link does not render as expected, ensure that the variable contains the intended string and that the resulting URL is valid.
+
+For more control over attribute evaluation, you can use Markdoc tag syntax with variables as attributes if supported by the tag:
+```markdoc {% process=false %}
+[Go to Documentation]({% $env.PUBLIC_DOCS_URL %})
+```
+{% /admonition %}
+
 ## Default environment variables
 
 The following environment variables are available by default:

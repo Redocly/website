@@ -184,9 +184,13 @@ The responsibility for configuring and executing the pushes is with you; Redocly
 
 Add a CI/CD remote content source in Reunite and you will be guided through setting up either a [GitHub action](./reunite-push-action.md) or a [CLI push command](https://redocly.com/docs/cli/commands/push) that you can run in your CI/CD pipeline.
 
-When changes are pushed, if the push `--branch` and `--default-branch` values match, Reunite runs the [production changes verification](./verify-remote-content.md#production-changes-verification) steps.
+When changes are pushed, if the push `--branch` and `--default-branch` values match, Reunite runs the [production changes verification](./verify-remote-content.md#production-changes-verification) steps and triggers an automatic production deployment.
 For any other branch, the [preview changes verification process](./verify-remote-content.md#preview-changes-verification) is triggered.
-The "auto-sync" setting does not apply to this type of remote content.
+
+{% admonition type="warning" name="Automatic production deployment" %}
+Pushing to a branch that matches the default branch triggers an automatic production deployment.
+This "auto-merge" behavior is the default for CI/CD pushes to the default branch and cannot be disabled via the "auto-sync" setting.
+{% /admonition %}
 
 Read [how to push remote content to Redocly](./push.md) for detailed instructions.
 

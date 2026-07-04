@@ -57,7 +57,8 @@ export const frontmatter = {
 };
 ```
 
-In the example, only members of the `Admin` team can access the page. Users who are not signed in are redirected to the login page; signed-in users who lack the required team see a 403 Forbidden page.
+In the example, only members of the `Admin` team can access the page.
+Users who are not signed in are redirected to the login page; signed-in users who lack the required team see a 403 Forbidden page.
 
 ## API documents
 
@@ -113,8 +114,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ### React content
 
-You can use a convenient React hook that can be accessed in the React pages of the project to access the current user's teams.
-You can then use this hook to conditionally render certain content or perform other actions, as in the following example:
+React pages receive `pageProps` which contains information about the current user's teams.
+You can use this data to conditionally render certain content or perform other actions, as in the following example:
 
 ```typescript
 export default function ({ pageProps }) {
@@ -125,6 +126,11 @@ export default function ({ pageProps }) {
 ```
 
 In the example, the text the project renders between the div tags depends on if the authenticated user is assigned to the Admin team.
+
+{% admonition type="warning" name="Unsupported hooks" %}
+The `@project/hooks` package and the `useCurrentUserTeams` hook are not supported in React pages.
+Exclusively use `pageProps.variables.rbac.teams` for team-based conditional rendering.
+{% /admonition %}
 
 ## Resources
 

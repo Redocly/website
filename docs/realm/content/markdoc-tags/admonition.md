@@ -50,7 +50,8 @@ Stop! **Read me** before moving on.
 - type
 - string
 - **Required.**
-  Sets the type of admonition to info, warning, success, or danger.
+  Sets the type of admonition.
+  ONLY `info`, `warning`, `success`, and `danger` are valid.
 ---
 
 - name
@@ -59,6 +60,11 @@ Stop! **Read me** before moving on.
   Transforms to ALL CAPS.
 
 {% /table %}
+
+{% admonition type="warning" name="Unsupported types" %}
+Common Markdown admonition types such as `note`, `tip`, `caution`, `important`, and `hint` are NOT supported.
+Using an unsupported type will cause build errors.
+{% /admonition %}
 
 ### Admonition types
 
