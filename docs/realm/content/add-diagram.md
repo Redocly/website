@@ -211,6 +211,43 @@ flowchart LR
 - `width` accepts any CSS width value, such as `480px`, `40rem`, `75%`, or `100%`.
 - When you set `width`, the SVG scales proportionally and its height adjusts automatically.
 
+### Place diagrams side-by-side
+
+To place two or more diagrams side-by-side, use a wrapper element with a custom CSS class.
+This approach provides more flexibility than using tables and ensures diagrams are responsive.
+
+First, define a utility class in your [`@theme/styles.css`](../branding/customize-styles.md#use-css-utility-classes-for-layout) file:
+
+```css
+.side-by-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.side-by-side > * {
+  flex: 1 1 300px;
+}
+```
+
+Then, wrap your diagrams in a `div` with that class:
+
+````text {% process=false %}
+<div class="side-by-side">
+
+```mermaid
+graph TD;
+  A-->B;
+```
+
+```mermaid
+graph TD;
+  C-->D;
+```
+
+</div>
+````
+
 ## AsciiDoc
 
 Diagrams are also supported in AsciiDoc (`.adoc`) files with the [AsciiDoc plugin](./asciidoc.md).
@@ -252,3 +289,4 @@ See: [Use AsciiDoc content](asciidoc.md) for more information about the AsciiDoc
 - **[Mermaid documentation](https://mermaid.js.org/intro/#diagram-types)** - Complete guide to Mermaid diagram types and syntax
 - **[PlantUML documentation](https://plantuml.com/)** - Reference for UML and other diagram types in PlantUML
 - **[Excalidraw documentation](https://docs.excalidraw.com/)** - Guide to creating hand-drawn style diagrams with Excalidraw
+- **[Customize styles](../branding/customize-styles.md)** - Learn how to add custom CSS to your project

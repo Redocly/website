@@ -35,6 +35,7 @@ The following Markdoc tags are custom-made by Redocly:
   - [Toggle](./code-walkthrough/toggle.md): Add toggles to allow users to switch between variants of walkthrough content.
   - [Input](./code-walkthrough/input.md): Add input fields to code walkthroughs.
 - [Connect MCP](./connect-mcp.md): Add a button that allows users to connect to the MCP (Model Context Protocol) server.
+- [Diagram](../add-diagram.md): Reference external diagram files (Mermaid, PlantUML, Excalidraw).
 - [Image](./img.md): Embed images into your project.
 - [Icon](./icon.md): Render [Font Awesome](https://fontawesome.com/icons) icons in your project.
 - [Inline SVG](./inline-svg.md): Render and style SVG images in your project.

@@ -224,6 +224,45 @@ To apply a custom class to a Markdown element:
       2. ordered list item 2
       3. ordered list item 3
 
+## Use CSS utility classes for layout
+
+You can use CSS utility classes to arrange elements on the page, such as placing diagrams side-by-side.
+This is a better alternative than using tables for layout.
+
+Add a utility class like `.side-by-side` to your `@theme/styles.css` file:
+
+```css {% title="@theme/styles.css" %}
+.side-by-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.side-by-side > * {
+  flex: 1 1 300px; /* Adjust the 300px to your preferred minimum width */
+}
+```
+
+Then, use a wrapper element with the class in your Markdown:
+
+```markdoc {% process=false %}
+# Side-by-side diagrams
+
+<div class="side-by-side">
+
+```mermaid
+graph TD;
+  A-->B;
+```
+
+```mermaid
+graph TD;
+  C-->D;
+```
+
+</div>
+```
 
 You may need to restart the Webview or commit your changes to your branch to see the updates.
 

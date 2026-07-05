@@ -357,7 +357,9 @@ Tables are especially useful for displaying complex data in an organized way.
 
 **Do not use tables for layout**
 
-It is best to use CSS for styling if you need to place items side-by-side on the page, not tables.
+Do not use tables to place elements side-by-side on a page.
+Instead, use CSS utility classes like Flexbox.
+For an example of how to arrange diagrams horizontally, see [Place diagrams side-by-side](../add-diagram.md#place-diagrams-side-by-side).
 
 **Use a list if only one column**
 

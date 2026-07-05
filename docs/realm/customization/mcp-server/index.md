@@ -19,7 +19,7 @@ Realm provides built-in MCP server capabilities that expose your API Docs to AI 
 ## Benefits
 
 - **Real-time API guidance** — users receive accurate, contextual help about API endpoints and operations.
-- **Secure API access** — AI assistants can make authenticated requests to act on behalf of a user.
+- **Secure API access** — documentation access control ensures that AI assistants only retrieve content based on the user's specific permissions.
 - **Dynamic documentation** — AI assistants can extract and explain API reference content based on user needs.
 
 ## Docs MCP server
@@ -31,6 +31,15 @@ For the current MCP endpoint details, authentication semantics, server metadata,
 
 After you enable the Docs MCP server in [configuration](../../config/mcp.md), it is available at `/mcp` on your project root URL.
 For example: `https://example.com/mcp`.
+
+### Authentication and timeouts
+
+The MCP server requires authentication to ensure that the AI assistant only accesses content the user is authorized to see.
+Authentication is mandatory even if your documentation site is publicly accessible.
+
+The connection between the MCP client and the server uses an authenticated session that remains active during use.
+To optimize security and resources, the session automatically times out after 30 seconds of inactivity.
+If a timeout occurs, the MCP client automatically restores the connection upon the next request, ensuring a continuous experience for the user.
 
 ### Use the MCP server
 
