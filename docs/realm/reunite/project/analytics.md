@@ -13,6 +13,7 @@ plans:
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Reunite offers built-in analytics for your projects as an alternative to third-party solutions.
+Analytics is an Enterprise-level feature.
 Track page views, identify popular content, and analyze search queries including AI-powered search.
 Use these insights to improve user experience and identify documentation gaps.
 

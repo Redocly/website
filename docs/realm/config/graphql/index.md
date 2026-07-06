@@ -75,6 +75,20 @@ Requires a GraphQL schema.
 
 {% /table %}
 
+## Behaviors and limitations
+
+### Deprecations
+
+Redocly renders deprecation notices for fields and enum values as per the GraphQL specification.
+Note that the GraphQL specification does not support the `@deprecated` directive on object types.
+
+Currently, there is a known limitation where deprecated input fields and objects might not be fully marked as deprecated in the UI.
+
+### Custom scalars
+
+Custom scalars currently render using a generic `Example Custom Scalar` placeholder.
+Examples defined in the GraphQL schema for custom scalars are not yet supported.
+
 ## Resources
 
 - **[GraphQL](https://graphql.org/)** - Official GraphQL specification and documentation for understanding query language fundamentals

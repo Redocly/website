@@ -67,6 +67,19 @@ To add multiple GraphQL schemas using `group` keys, update your `sidebars.yaml` 
       label: Sample product 2 API
 ```
 
+## GraphQL deprecations
+
+Redocly supports rendering deprecation notices in your GraphQL documentation.
+However, keep the following in mind:
+
+- The GraphQL specification only supports the `@deprecated` directive on fields and enum values. It does not support `@deprecated` on object types.
+- Currently, there is a known limitation where deprecated input fields and objects may not yet fully reflect their status in the UI. We are working on improving the rendering of these elements.
+
+## Custom scalars
+
+By default, custom scalars are rendered using a generic placeholder string: `Example Custom Scalar`.
+Currently, Redocly does not support displaying examples provided within the GraphQL schema for custom scalars.
+
 ## Resources
 
 - **[API catalog configuration](../../config/catalog-classic.md)** - Organize multiple API descriptions including GraphQL schemas with catalogs for better user experience and navigation

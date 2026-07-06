@@ -299,6 +299,12 @@ Redocly uses enhanced table formatting:
 
 Learn more about [table formatting](./markdoc-tags/table.md) for structured data presentation.
 
+## Redocly platform vs standalone Redoc
+
+While Redocly (Reunite/Realm) supports standalone Markdown pages as described above, the standalone Redoc open-source engine does not support Markdown-only pages.
+The open-source Redoc library only supports Markdown when it is included within OpenAPI descriptions (such as in `description` or `summary` fields).
+To create a full documentation site from Markdown files, use the Redocly platform.
+
 ## Best practices
 
 ### File organization
