@@ -29494,6 +29494,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.50.1:
+    timestamp: 1783319832000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/config` rules schema to match changes in `@redocly/openapi-core`.
+    dependencies: {}
   0.50.0:
     timestamp: 1782900364000
     changes:
