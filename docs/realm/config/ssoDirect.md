@@ -322,6 +322,14 @@ ssoDirect:
     teamsAttributeName: http://schemas.auth0.com/https://redocly.com/sso/teams
 ```
 
+## Troubleshooting
+
+{% admonition type="warning" name="Profile image size constraints" %}
+Large user profile images in your Identity Provider (IdP) can cause **502 Bad Gateway** or **403 Forbidden** errors during the login process.
+This occurs because the profile image data is included in the OIDC/SAML claims, which can cause the authentication callback to exceed standard header or session cookie size limits.
+If users encounter these errors, consider reducing the profile image size in the IdP or excluding the profile image claim from the authentication scopes.
+{% /admonition %}
+
 ## Resources
 
 - **[RBAC configuration reference](./access/rbac.md)** - Complete configuration options for role-based access control integration with direct SSO authentication

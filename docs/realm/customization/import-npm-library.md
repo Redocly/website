@@ -57,6 +57,9 @@ Create a `.npmrc` file in your project root:
 
 ### Use `bunfig.toml` (recommended)
 
+Redocly recommends using **Bun** for package management in the Reunite environment due to its superior performance, faster installation speeds, and built-in features that simplify development workflows.
+While Bun is recommended, standard Node.js package managers like npm, pnpm, and yarn are still fully supported.
+
 For enhanced flexibility, create a `bunfig.toml` file in your project root:
 
 ```toml
@@ -83,7 +86,7 @@ Store your registry credentials as environment variables:
 
 - For local development, add them to your `.env` file (do not commit secrets to Git):
    ```text
-   NPM_TOKEN=your-private-token-here
+   # Registry credentials
    NPM_USERNAME=your-username
    NPM_PASSWORD=your-password
    ```

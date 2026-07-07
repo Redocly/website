@@ -224,6 +224,10 @@ Standard Node.js project file used by package managers (like `pnpm`, `npm`, `yar
 It is optional but when it exists it must list your Redocly package as a dependency (e.g. `@redocly/realm`).
 It may also include other packages for custom React-based pages or specific features.
 
+Redocly recommends using **Bun** as the package manager and runtime engine, especially within the Reunite environment.
+Bun provides significantly faster installation speeds and improved build performance compared to traditional package managers.
+While Bun is recommended, standard Node.js package managers like npm, pnpm, and yarn are still fully supported.
+
 ### `sidebars.yaml`
 
 You can create one or more `sidebars.yaml` files to define custom navigation structures.

@@ -17,7 +17,11 @@ Single sign-on (SSO) is an authentication method that allows users to log in wit
 You can add SSO identity providers (IdPs) to Reunite to allow users to use them for logging into Reunite as well as individual projects.
 After you [add an IdP to Reunite](./add-idp.md), the IdP can then be [configured in the `redocly.yaml` configuration file for individual projects](./configure-sso.md).
 
-When users log in with an IdP, the default team and organization role assigned in the IdP override the organization role assigned on the **People** page in Reunite.
+{% admonition type="warning" name="SSO synchronization" %}
+When SSO is enabled, the Identity Provider (IdP) acts as the source of truth for organization roles and team memberships.
+Manual assignments made via the Redocly UI (for example, on the **People** page) are temporary.
+The next time a user logs in, their roles and teams are synchronized and overwritten based on the IdP settings, including the **Default Role** or any **Team Mappings** configured.
+{% /admonition %}
 
 ## Identity provider categories in Reunite
 
@@ -63,6 +67,14 @@ You can disable SSO for individual projects.
 When you disable SSO for a project, there is no log in page for that project.
 Disabling SSO is only necessary if you have `rbac` configured, but you don't want to require login to your project.
 Disabling SSO removes the login page, but does not disable `rbac`.
+
+## Troubleshooting
+
+### Profile image size constraints
+
+Large user profile images in your Identity Provider (IdP) can cause **502 Bad Gateway** or **403 Forbidden** errors during the login process.
+This occurs because the profile image data is included in the OIDC/SAML claims, which can cause the authentication callback to exceed standard header or session cookie size limits.
+If users encounter these errors, consider reducing the profile image size in the IdP or excluding the profile image claim from the authentication scopes.
 
 ## Resources
 
