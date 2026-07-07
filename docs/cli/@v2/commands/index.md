@@ -14,6 +14,7 @@ Documentation commands:
 API management commands:
 
 - [`bundle`](bundle.md) Bundle API description.
+- [`diff`](diff.md) Compare two API descriptions and detect breaking changes [experimental feature].
 - [`join`](join.md) Join API descriptions [experimental feature].
 - [`score`](score.md) Score an API for integration simplicity and AI agent readiness.
 - [`split`](split.md) Split API description into a multi-file structure.
@@ -28,8 +29,6 @@ Testing commands:
 
 - [`respect`](respect.md) Execute API tests described in an Arazzo description.
 - [`generate-arazzo`](generate-arazzo.md) Generate an Arazzo description from an OpenAPI description.
-- [`drift`](drift.md) Detect drift between recorded HTTP traffic and an OpenAPI description [experimental feature].
-- [`proxy`](proxy.md) Capture live HTTP traffic through a reverse proxy into a HAR file [experimental feature].
 
 Redocly platform commands:
 
