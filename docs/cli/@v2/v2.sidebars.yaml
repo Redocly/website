@@ -14,8 +14,6 @@
           page: commands/bundle.md
         - label: check-config
           page: commands/check-config.md
-        - label: drift
-          page: commands/drift.md
         - label: eject
           page: commands/eject.md
         - label: generate-arazzo
@@ -28,10 +26,10 @@
           page: commands/login.md
         - label: logout
           page: commands/logout.md
+        - label: map
+          page: commands/map.md
         - label: preview
           page: commands/preview.md
-        - label: proxy
-          page: commands/proxy.md
         - label: push
           page: commands/push.md
         - label: push-status
