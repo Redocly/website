@@ -92,6 +92,17 @@ Users are required to accept your custom terms before they can access the projec
 If you do not specify custom terms, the default message "Acceptance of the terms of service is required to use the service" is displayed.
 {% /admonition %}
 
+## Access analytics and compliance reports
+
+Reunite provides built-in analytics and compliance reports to help you monitor usage and access security documentation for your organization.
+
+{% admonition type="info" name="Enterprise feature" %}
+Certain features, such as Analytics and Compliance reports, are available only on Enterprise plans.
+If your organization is on a Pro plan, these items are not visible in the navigation menu.
+{% /admonition %}
+
+For more information, see [Analytics](../project/analytics.md) and [Access compliance reports](./access-compliance-reports.md).
+
 ## Delete organization
 
 When you delete an organization, the action is permanent, so be sure to back up any pertinent data.
@@ -122,4 +133,6 @@ If you are the sole user with the Owner in an organization, you must assign anot
 - **[Add an identity provider](./sso/add-idp.md)** - Configure identity providers for automated user management and authentication across your organization
 - **[Manage organization-wide API keys](api-keys.md)** - Create and manage API keys that provide programmatic access to your organization's resources
 - **[Teams and users](./teams.md)** - Organize users into teams with role-based permissions for effective collaboration and access control
+- **[Analytics](../project/analytics.md)** - Track page views and search queries for your projects (Enterprise only)
+- **[Access compliance reports](./access-compliance-reports.md)** - View and download Redocly's security and compliance reports (Enterprise+ only)
 - **[Single sign-on (SSO) configuration](../../config/access/sso.md)** - Complete SSO configuration reference with examples for various identity providers
