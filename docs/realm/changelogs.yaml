@@ -48802,6 +48802,19 @@ reunite:
           Fixed intermittent `Unable to start a transaction in the given time` errors under load by removing transactions from authenticated database
           queries.
     dependencies: {}
+  v2026-07-08.2:
+    timestamp: 1783519993000
+    changes:
+      minor: []
+      patch:
+        - Fixed Azure DevOps pull request checks not running for project builds triggered by push events.
+        - Fixed intermittent request failures caused by exhausting the database connection pool under high load.
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.37.0`.
+        - >-
+          Fixed trial creation when a Rebilly customer exists without a subscription. `startTrial` attaches a trial to the existing customer, enabling
+          organizations affected by partial provisioning failures to recover on the next subscription lookup.
+        - Fixed an issue in Replay tab where requests to external URLs failed with generic `Error` message.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
