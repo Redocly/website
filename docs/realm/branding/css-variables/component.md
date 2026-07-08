@@ -995,6 +995,74 @@
 
 </details>
 
+## Image
+
+<details>
+<summary>Image frame</summary>
+
+```css
+--image-frame-padding: var(--spacing-xs);
+--image-frame-border-color: var(--border-color-secondary);
+--image-frame-border-radius: var(--border-radius-xxl);
+--image-frame-bg-color: var(--bg-color-raised);
+--image-frame-image-border-radius: var(--border-radius-lg);
+```
+
+</details>
+<details>
+<summary>Image caption</summary>
+
+```css
+--image-caption-padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-xxs) var(--spacing-lg);
+--image-caption-text-color: var(--text-color-primary);
+--image-caption-font-size: var(--font-size-base);
+--image-caption-line-height: var(--line-height-base);
+--image-caption-font-weight: var(--font-weight-regular);
+```
+
+</details>
+<details>
+<summary>Image gallery</summary>
+
+```css
+--image-gallery-border-radius: var(--border-radius-lg);
+--image-gallery-image-bg-color: var(--bg-color-tonal);
+```
+
+</details>
+<details>
+<summary>Image lightbox</summary>
+
+```css
+--image-lightbox-overlay-bg-color: var(--bg-color-modal-overlay);
+--image-lightbox-content-max-width: 90%;
+--image-lightbox-content-max-height: 90%;
+--image-lightbox-image-max-width: min(
+  90vw,
+  calc(100vw - 2 * var(--image-lightbox-side-gutter))
+);
+--image-lightbox-image-max-height: 90vh;
+--image-lightbox-image-border-radius: var(--border-radius-xl);
+--image-lightbox-image-bg-placeholder: var(--bg-color-tonal);
+--image-lightbox-image-shadow: var(--bg-raised-shadow);
+```
+
+</details>
+<details>
+<summary>Image lightbox close button</summary>
+
+```css
+--image-lightbox-close-size: 40px;
+--image-lightbox-close-icon-size: 18px;
+--image-lightbox-close-offset: var(--spacing-base);
+--image-lightbox-close-border-radius: var(--border-radius-lg);
+--image-lightbox-side-gutter: calc(
+  var(--image-lightbox-close-size) + var(--image-lightbox-close-offset) + var(--spacing-sm)
+);
+```
+
+</details>
+
 ## Language picker
 
 <details>
