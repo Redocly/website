@@ -58,7 +58,6 @@ authors:
   - id: adam-sobaniec
     name: Adam Sobaniec
     authorBIO: Software Engineer, Redocly
-    image: sobaniec.jpg
 categories:
   - id: api-catalog
     label: API catalog
