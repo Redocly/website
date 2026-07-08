@@ -52,11 +52,11 @@ We've shipped a smoother AsyncAPI docs experience, making it easier to document 
 ## 🛠️ Developer experience upgrades
 - API Functions logs now include function names for easier debugging.
 - New hooks in React pages:
-    - `usePageVersions` and `useActivePageVersion` → work with versioned content.
-   - `useUserTeams` → access the teams assigned to the active user.
+  - `usePageVersions` and `useActivePageVersion` → work with versioned content.
+  - `useUserTeams` → access the teams assigned to the active user.
 - GraphQL docs:
-    - Rendering behavior now consistent with OpenAPI docs.
-    - Deprecated queries, mutations, and subscriptions are now displayed.
+  - Rendering behavior now consistent with OpenAPI docs.
+  - Deprecated queries, mutations, and subscriptions are now displayed.
 - Arazzo compatibility: Variables replaced with servers and inputs, plus a new Path tab for editing request parameters.
 - Improved code walkthroughs: Smarter trigger points for step changes.
 - Syntax highlighting in Reunite editor for `.cjs` and `.mjs` files.
@@ -78,19 +78,19 @@ We shipped **Redocly CLI 2.0** — a major release that modernizes the CLI and c
 ### What's new
 
 - Modernized and streamlined
-    - Dropped legacy support for the old API Registry and Reference Docs products → CLI now works exclusively with Reunite.
-    - Simplified configuration: only redocly.yaml is supported, with deprecated options removed.
-    - Migrated to ES Modules for better code organization and modern Node.js support (current LTS or newer).
+  - Dropped legacy support for the old API Registry and Reference Docs products → CLI now works exclusively with Reunite.
+  - Simplified configuration: only redocly.yaml is supported, with deprecated options removed.
+  - Migrated to ES Modules for better code organization and modern Node.js support (current LTS or newer).
 - Security and validation improvements
-    - New x-security extension for Respect → define authentication at the step level and automatically transform secrets into headers or query params.
-    - Sensitive fields (tokens, passwords) are now masked automatically in logs and outputs.
-    - Added validation for JSON Schema format and stricter spec rulesets for OpenAPI, AsyncAPI, Arazzo, and Overlays.
-    - New no-duplicated-tag-names rule plus improvements to schema type mismatch checks.
+  - New x-security extension for Respect → define authentication at the step level and automatically transform secrets into headers or query params.
+  - Sensitive fields (tokens, passwords) are now masked automatically in logs and outputs.
+  - Added validation for JSON Schema format and stricter spec rulesets for OpenAPI, AsyncAPI, Arazzo, and Overlays.
+  - New no-duplicated-tag-names rule plus improvements to schema type mismatch checks.
 - Developer quality-of-life
-    - Environment variable support for CLI arguments.
-    - Extracted nullable-type-sibling rule for finer control over nullable validation.
-    - Updated Respect command with new options for better test control.
-    - Numerous fixes for config validation, server handling, and error reporting.
+  - Environment variable support for CLI arguments.
+  - Extracted nullable-type-sibling rule for finer control over nullable validation.
+  - Updated Respect command with new options for better test control.
+  - Numerous fixes for config validation, server handling, and error reporting.
 
 If you're upgrading from `1.x`, check out [our changelog](../docs/cli/@v2/changelog.md) — most changes are straightforward, but you'll want to update configs to match the streamlined rules and commands.
 
