@@ -67,7 +67,7 @@ To install an HTTP server with [Python](https://www.python.org/downloads/):
     ```python
     python -m SimpleHTTPServer 8000
     ```
-    
+
   {% /tab %}
 {% /tabs %}
 
