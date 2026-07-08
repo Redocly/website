@@ -143,19 +143,19 @@ You might still have resource endpoints for managing products, viewing order his
 
 ## When to use each approach
 
-### Use resource-first when:
+### Use resource-first when
 - You're building an internal API where consumers understand your domain model
 - Your API is essentially a database interface
 - Your resources have well-defined, independent lifecycles
 - You need maximum flexibility in how data is accessed and combined
 
-### Use workflow-first when:
+### Use workflow-first when
 - You're building a public API for external developers
 - You have well-defined use cases and user journeys
 - Performance and efficiency matter (minimizing round trips)
 - You want to hide implementation complexity
 
-### Use both when:
+### Use both when
 - You're building a mature, production API (most of the time!)
 - You want to support both simple operations and complex workflows
 - You have both power users (who want fine-grained control) and beginners (who want simplicity)
