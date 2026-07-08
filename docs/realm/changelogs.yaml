@@ -1,6 +1,6 @@
 '@redocly/realm':
   0.135.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor:
         - Added `GraphQL` support to Docs MCP server.
@@ -6564,7 +6564,7 @@
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
   0.135.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor:
         - Added `GraphQL` support to Docs MCP server.
@@ -12205,7 +12205,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
   0.135.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor:
         - Added `GraphQL` support to Docs MCP server.
@@ -17836,7 +17836,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
   0.135.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor:
         - Added `GraphQL` support to Docs MCP server.
@@ -23519,7 +23519,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
   0.67.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor:
         - Added `inputHints` to dynamic Replay configuration to customize empty-input tooltips in **Try It**.
@@ -26538,7 +26538,7 @@
     dependencies: {}
 '@redocly/openapi-docs':
   3.23.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor:
         - Added `inputHints` to dynamic Replay configuration to customize empty-input tooltips in **Try It**.
@@ -30437,7 +30437,7 @@
     dependencies: {}
 '@redocly/graphql-docs':
   1.12.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor: []
       patch: []
@@ -31655,7 +31655,7 @@
 '@redocly/api-docs': {}
 '@redocly/mock-server':
   0.9.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor: []
       patch:
@@ -32356,7 +32356,7 @@
     dependencies: {}
 '@redocly/portal-legacy-ui':
   0.18.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor: []
       patch: []
@@ -32617,7 +32617,7 @@
     dependencies: {}
 '@redocly/portal-plugin-async-api':
   1.18.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor: []
       patch: []
@@ -38008,7 +38008,7 @@
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
   0.20.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor: []
       patch: []
@@ -40978,7 +40978,7 @@
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
   0.26.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor:
         - Added `inputHints` to dynamic Replay configuration to customize empty-input tooltips in **Try It**.
@@ -43207,7 +43207,7 @@
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
   0.18.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor: []
       patch: []
@@ -45045,7 +45045,7 @@
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
   1.12.0:
-    timestamp: 1783502024208
+    timestamp: 1783506758000
     changes:
       minor: []
       patch: []
@@ -49075,8 +49075,8 @@ replay:
         - Improved typing performance in the request URL field.
     dependencies:
       '@redocly/theme': 0.65.0-next.1
-  0.20.1:
-    timestamp: 1780402032000
+  0.21.0:
+    timestamp: 1780576100000
     changes:
       minor:
         - Improved accuracy and relevance of AI agent results.
