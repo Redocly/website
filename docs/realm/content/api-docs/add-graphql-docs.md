@@ -67,6 +67,30 @@ To add multiple GraphQL schemas using `group` keys, update your `sidebars.yaml` 
       label: Sample product 2 API
 ```
 
+## Version GraphQL APIs
+
+You can maintain multiple concurrent versions of your GraphQL API documentation by using version subfolders.
+Create a folder for your API and add subfolders starting with the `@` symbol for each version.
+
+```treeview {% title="Sample structure for versioned GraphQL API" %}
+├── apis/
+│   └── my-graphql-api/
+│       ├── @v1/
+│       │   └── schema.graphql
+│       └── @v2/
+│           └── schema.graphql
+└── sidebars.yaml
+```
+
+When you access a versioned GraphQL API, a version picker is displayed at the top of the sidebar, allowing users to switch between different schema versions.
+For more information, see [Add versioned content](../versions.md).
+
+## Interface rendering support
+
+Redocly supports rendering GraphQL interfaces and their implementing sub-types.
+When a field returns an interface type, the documentation displays all possible types that implement that interface.
+This ensures comprehensive coverage of your schema's polymorphism.
+
 ## Resources
 
 - **[API catalog configuration](../../config/catalog-classic.md)** - Organize multiple API descriptions including GraphQL schemas with catalogs for better user experience and navigation

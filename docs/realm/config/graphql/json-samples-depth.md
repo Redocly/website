@@ -40,6 +40,12 @@ graphql:
 
 Using this setting, the samples will show up to five levels of nested payload data.
 
+## Troubleshooting missing nested levels
+
+If your sample responses appear to be missing nested levels, it may be because the data structure exceeds the default depth.
+Increase the `jsonSamplesDepth` value to ensure all nested levels are rendered in the samples.
+For example, set it to `10` for deeply nested schemas.
+
 ## Resources
 
 - **[GraphQL](https://graphql.org/)** - Official GraphQL specification and documentation for understanding query language fundamentals

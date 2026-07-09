@@ -17,6 +17,8 @@ description: |-
 Customize the behavior and appearance of integrated GraphQL documentation.
 Requires a GraphQL schema.
 
+Redocly supports rendering GraphQL interfaces and their implementing sub-types, providing a complete view of polymorphic data structures in your schema.
+
 ## Options
 
 {% table %}
@@ -35,7 +37,7 @@ Requires a GraphQL schema.
 
 - [info](./info.md)
 - [Info object](./info.md#options)
-- API metadata including title, description, contact, and license information for the overview page.
+API metadata including title, description, contact, and license information for the overview page.
 
 ---
 
