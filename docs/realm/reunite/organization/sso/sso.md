@@ -64,20 +64,11 @@ When you disable SSO for a project, there is no log in page for that project.
 Disabling SSO is only necessary if you have `rbac` configured, but you don't want to require login to your project.
 Disabling SSO removes the login page, but does not disable `rbac`.
 
-## Logout behavior
-
-When a user logs out of a project, the session ends.
-For OpenID Connect IdPs, users are not automatically logged back in after logout and must re-authenticate at the identity provider the next time they access the project.
-When a session expires without a logout, users are re-authenticated without a prompt.
-
-Logout does not end the session at the identity provider itself, so users stay logged in to other applications that use the same IdP.
-
 ## Resources
 
 - **[Add an identity provider](./add-idp.md)** - Step-by-step guide to add identity providers in Reunite for seamless user authentication across projects
 - **[Configure SSO](./configure-sso.md)** - Set up single sign-on to allow users to authenticate using multiple identity providers for flexible access control
 - **[Okta SAML integration video](https://youtu.be/NMayl8FTZ7c)** - Watch a step-by-step tutorial for integrating Okta with Redocly using SAML for single sign-on
 - **[SSO configuration reference](../../../config/access/sso.md)** - Complete technical reference for all SSO configuration options and settings in your redocly.yaml file
-- **[Logout return URL](../../../config/access/logout-return-url.md)** - Configure the page users are redirected to after they log out of a project
 - **[Multi-tenant SSO: Federated identity management](./sso-multi-tenant.md)** - Implement federated identity management for organizations with multiple tenants and complex authentication requirements
 - **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 directory provisioning for an identity provider (early access on request)

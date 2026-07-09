@@ -1,62 +1,4 @@
 '@redocly/realm':
-  0.135.0:
-    timestamp: 1783506758000
-    changes:
-      minor:
-        - Added `GraphQL` support to Docs MCP server.
-        - Adds validation and logging for mutually exclusive `access.idps` and `access.sso` in `redocly.yaml`.
-        - Added `title` attribute to the `json-schema` Markdoc tag to display a heading above the rendered schema.
-        - Updated the `img` Markdoc tag with `framed`, `caption`, and `images` properties.
-        - Added annotations to the MCP tools.
-        - Added support for the `openapi-code-sample` and `openapi-response-sample` Markdoc tags in `llms.txt`.
-        - Added a setup instructions page which is displayed when users open the Docs MCP server URL `/mcp` in a browser.
-      patch:
-        - Fixed an issue where the Docs MCP server `search` tool returned results from all locales.
-        - Fixed an issue where the login button did not return users to their previous page after signing in.
-        - >-
-          Fixed scroll synchronization between the Webview and editor: dragging the Webview scrollbar scrolls the editor, and mouse-wheel scrolling
-          maintains alignment.
-        - Fixed an issue where setting an empty string in `openapi.corsProxyUrl` did not disable the CORS proxy server.
-        - Fixed an issue where search results prioritized matches in page text over matches in page titles.
-        - Fixed issues in the breadcrumbs dropdown component where the chevron icon did not change and a focus outline was added on click.
-        - Fixed an issue where the selected version persisted across versioned content sets instead of resetting to each set's default version.
-        - Fixed an issue where italic or bold text inside headings was excluded from generated anchor links.
-        - Fixed an issue where Markdown output for `llms.txt` was missing blank lines after Markdoc tags.
-        - Fixed an issue where MCP page actions were hidden on pages for which `llms.txt` files weren't generated.
-        - Updated `@redocly/openapi-core` to version `2.37.0`.
-        - Fixed layout shift in the sidebar that happened when users selected a sidebar item.
-        - Fixed an issue where the Markdoc `tabs` tag crashed if it contained content without a `label` attribute.
-        - Fixed an issue where API functions could stop working and return errors after a function had been edited, added, or renamed during preview.
-        - Fixed an issue where the deprecated badge didn't appear in search dialog results for the Typesense search engine.
-        - Improved HTTP caching for public and private pages.
-        - Fixed an issue where search results were incorrectly scoped to the selected product, version, or filter.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.13.0
-      '@redocly/theme': 0.67.0
-      '@redocly/openapi-docs': 3.23.0
-      '@redocly/portal-plugin-mock-server': 0.20.0
-      '@redocly/asyncapi-docs': 1.12.0
-      '@redocly/graphql-docs': 1.12.0
-      '@redocly/portal-legacy-ui': 0.18.0
-  0.135.0-next.7:
-    timestamp: 1783442552000
-    changes:
-      minor:
-        - Adds validation and logging for the use of mutually exclusive `access.idps` and `access.sso` in `redocly.yaml`.
-        - Added a setup instructions page displayed when users open the Docs MCP server URL `/mcp` in a browser.
-      patch:
-        - Fixed an issue where the Docs MCP server `search` tool returned results across all locales.
-        - Fixed an issue where setting an empty string in openapi.corsProxyUrl did not disable the CORS proxy server.
-        - Fixed an issue where Markdown output for `llms.txt` was missing blank lines after Markdoc tags.
-        - Fixed an issue where MCP page actions were hidden on pages for which `llms.txt` files weren't generated.
-        - Updated `@redocly/openapi-core` to version `2.37.0`.
-        - Fixed an issue where API functions could stop working and return errors after a function had been edited, added, or renamed during preview.
-    dependencies:
-      '@redocly/theme': 0.67.0-next.6
-      '@redocly/openapi-docs': 3.23.0-next.7
-      '@redocly/asyncapi-docs': 1.12.0-next.7
-      '@redocly/graphql-docs': 1.12.0-next.7
-      '@redocly/portal-plugin-mock-server': 0.20.0-next.7
   0.135.0-next.6:
     timestamp: 1782825124000
     changes:
@@ -6563,62 +6505,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.135.0:
-    timestamp: 1783506758000
-    changes:
-      minor:
-        - Added `GraphQL` support to Docs MCP server.
-        - Adds validation and logging for mutually exclusive `access.idps` and `access.sso` in `redocly.yaml`.
-        - Added `title` attribute to the `json-schema` Markdoc tag to display a heading above the rendered schema.
-        - Updated the `img` Markdoc tag with `framed`, `caption`, and `images` properties.
-        - Added annotations to the MCP tools.
-        - Added support for the `openapi-code-sample` and `openapi-response-sample` Markdoc tags in `llms.txt`.
-        - Added a setup instructions page which is displayed when users open the Docs MCP server URL `/mcp` in a browser.
-      patch:
-        - Fixed an issue where the Docs MCP server `search` tool returned results from all locales.
-        - Fixed an issue where the login button did not return users to their previous page after signing in.
-        - >-
-          Fixed scroll synchronization between the Webview and editor: dragging the Webview scrollbar scrolls the editor, and mouse-wheel scrolling
-          maintains alignment.
-        - Fixed an issue where search results prioritized matches in page text over matches in page titles.
-        - Fixed issues in the breadcrumbs dropdown component where the chevron icon did not change and a focus outline was added on click.
-        - Fixed an issue where the selected version persisted across versioned content sets instead of resetting to each set's default version.
-        - Fixed an issue where italic or bold text inside headings was excluded from generated anchor links.
-        - Fixed an issue where Markdown output for `llms.txt` was missing blank lines after Markdoc tags.
-        - Fixed an issue where MCP page actions were hidden on pages for which `llms.txt` files weren't generated.
-        - Updated `@redocly/openapi-core` to version `2.37.0`.
-        - Fixed layout shift in the sidebar that happened when users selected a sidebar item.
-        - Fixed an issue where the Markdoc `tabs` tag crashed if it contained content without a `label` attribute.
-        - Fixed an issue where API functions could stop working and return errors after a function had been edited, added, or renamed during preview.
-        - Fixed an issue where the deprecated badge didn't appear in search dialog results for the Typesense search engine.
-        - Improved HTTP caching for public and private pages.
-        - Fixed an issue where search results were incorrectly scoped to the selected product, version, or filter.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.13.0
-      '@redocly/theme': 0.67.0
-      '@redocly/openapi-docs': 3.23.0
-      '@redocly/portal-plugin-mock-server': 0.20.0
-      '@redocly/asyncapi-docs': 1.12.0
-      '@redocly/graphql-docs': 1.12.0
-      '@redocly/portal-legacy-ui': 0.18.0
-  0.135.0-next.7:
-    timestamp: 1783442552000
-    changes:
-      minor:
-        - Adds validation and logging for the use of mutually exclusive `access.idps` and `access.sso` in `redocly.yaml`.
-        - Added a setup instructions page displayed when users open the Docs MCP server URL `/mcp` in a browser.
-      patch:
-        - Fixed an issue where the Docs MCP server `search` tool returned results across all locales.
-        - Fixed an issue where Markdown output for `llms.txt` was missing blank lines after Markdoc tags.
-        - Fixed an issue where MCP page actions were hidden on pages for which `llms.txt` files weren't generated.
-        - Updated `@redocly/openapi-core` to version `2.37.0`.
-        - Fixed an issue where API functions could stop working and return errors after a function had been edited, added, or renamed during preview.
-    dependencies:
-      '@redocly/theme': 0.67.0-next.6
-      '@redocly/openapi-docs': 3.23.0-next.7
-      '@redocly/asyncapi-docs': 1.12.0-next.7
-      '@redocly/graphql-docs': 1.12.0-next.7
-      '@redocly/portal-plugin-mock-server': 0.20.0-next.7
   0.135.0-next.6:
     timestamp: 1782825124000
     changes:
@@ -12204,60 +12090,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.135.0:
-    timestamp: 1783506758000
-    changes:
-      minor:
-        - Added `GraphQL` support to Docs MCP server.
-        - Adds validation and logging for mutually exclusive `access.idps` and `access.sso` in `redocly.yaml`.
-        - Added `title` attribute to the `json-schema` Markdoc tag to display a heading above the rendered schema.
-        - Updated the `img` Markdoc tag with `framed`, `caption`, and `images` properties.
-        - Added annotations to the MCP tools.
-        - Added support for the `openapi-code-sample` and `openapi-response-sample` Markdoc tags in `llms.txt`.
-        - Added a setup instructions page which is displayed when users open the Docs MCP server URL `/mcp` in a browser.
-      patch:
-        - Fixed an issue where the Docs MCP server `search` tool returned results from all locales.
-        - Fixed an issue where the login button did not return users to their previous page after signing in.
-        - >-
-          Fixed scroll synchronization between the Webview and editor: dragging the Webview scrollbar scrolls the editor, and mouse-wheel scrolling
-          maintains alignment.
-        - Fixed an issue where search results prioritized matches in page text over matches in page titles.
-        - Fixed issues in the breadcrumbs dropdown component where the chevron icon did not change and a focus outline was added on click.
-        - Fixed an issue where the selected version persisted across versioned content sets instead of resetting to each set's default version.
-        - Fixed an issue where italic or bold text inside headings was excluded from generated anchor links.
-        - Fixed an issue where Markdown output for `llms.txt` was missing blank lines after Markdoc tags.
-        - Fixed an issue where MCP page actions were hidden on pages for which `llms.txt` files weren't generated.
-        - Updated `@redocly/openapi-core` to version `2.37.0`.
-        - Fixed layout shift in the sidebar that happened when users selected a sidebar item.
-        - Fixed an issue where the Markdoc `tabs` tag crashed if it contained content without a `label` attribute.
-        - Fixed an issue where the deprecated badge didn't appear in search dialog results for the Typesense search engine.
-        - Improved HTTP caching for public and private pages.
-        - Fixed an issue where search results were incorrectly scoped to the selected product, version, or filter.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.13.0
-      '@redocly/theme': 0.67.0
-      '@redocly/openapi-docs': 3.23.0
-      '@redocly/portal-plugin-mock-server': 0.20.0
-      '@redocly/asyncapi-docs': 1.12.0
-      '@redocly/graphql-docs': 1.12.0
-      '@redocly/portal-legacy-ui': 0.18.0
-  0.135.0-next.7:
-    timestamp: 1783442552000
-    changes:
-      minor:
-        - Adds validation and logging for the use of mutually exclusive `access.idps` and `access.sso` in `redocly.yaml`.
-        - Added a setup instructions page displayed when users open the Docs MCP server URL `/mcp` in a browser.
-      patch:
-        - Fixed an issue where the Docs MCP server `search` tool returned results across all locales.
-        - Fixed an issue where Markdown output for `llms.txt` was missing blank lines after Markdoc tags.
-        - Fixed an issue where MCP page actions were hidden on pages for which `llms.txt` files weren't generated.
-        - Updated `@redocly/openapi-core` to version `2.37.0`.
-    dependencies:
-      '@redocly/theme': 0.67.0-next.6
-      '@redocly/openapi-docs': 3.23.0-next.7
-      '@redocly/asyncapi-docs': 1.12.0-next.7
-      '@redocly/graphql-docs': 1.12.0-next.7
-      '@redocly/portal-plugin-mock-server': 0.20.0-next.7
   0.135.0-next.6:
     timestamp: 1782825124000
     changes:
@@ -17835,58 +17667,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.135.0:
-    timestamp: 1783506758000
-    changes:
-      minor:
-        - Added `GraphQL` support to Docs MCP server.
-        - Updated the `img` Markdoc tag with `framed`, `caption`, and `images` properties.
-        - Added annotations to the MCP tools.
-        - Added support for the `openapi-code-sample` and `openapi-response-sample` Markdoc tags in `llms.txt`.
-        - Added a setup instructions page which is displayed when users open the Docs MCP server URL `/mcp` in a browser.
-      patch:
-        - Fixed an issue where the Docs MCP server `search` tool returned results from all locales.
-        - Fixed an issue where the login button did not return users to their previous page after signing in.
-        - >-
-          Fixed scroll synchronization between the Webview and editor: dragging the Webview scrollbar scrolls the editor, and mouse-wheel scrolling
-          maintains alignment.
-        - Fixed an issue where setting an empty string in `openapi.corsProxyUrl` did not disable the CORS proxy server.
-        - Fixed an issue where search results prioritized matches in page text over matches in page titles.
-        - Fixed issues in the breadcrumbs dropdown component where the chevron icon did not change and a focus outline was added on click.
-        - Fixed an issue where the selected version persisted across versioned content sets instead of resetting to each set's default version.
-        - Fixed an issue where italic or bold text inside headings was excluded from generated anchor links.
-        - Fixed an issue where Markdown output for `llms.txt` was missing blank lines after Markdoc tags.
-        - Fixed an issue where MCP page actions were hidden on pages for which `llms.txt` files weren't generated.
-        - Updated `@redocly/openapi-core` to version `2.37.0`.
-        - Fixed layout shift in the sidebar that happened when users selected a sidebar item.
-        - Fixed an issue where the deprecated badge didn't appear in search dialog results for the Typesense search engine.
-        - Improved HTTP caching for public and private pages.
-        - Fixed an issue where search results were incorrectly scoped to the selected product, version, or filter.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.13.0
-      '@redocly/theme': 0.67.0
-      '@redocly/openapi-docs': 3.23.0
-      '@redocly/portal-plugin-mock-server': 0.20.0
-      '@redocly/asyncapi-docs': 1.12.0
-      '@redocly/graphql-docs': 1.12.0
-      '@redocly/portal-legacy-ui': 0.18.0
-  0.135.0-next.7:
-    timestamp: 1783442552000
-    changes:
-      minor:
-        - Added a setup instructions page displayed when users open the Docs MCP server URL `/mcp` in a browser.
-      patch:
-        - Fixed an issue where the Docs MCP server `search` tool returned results across all locales.
-        - Fixed an issue where setting an empty string in openapi.corsProxyUrl did not disable the CORS proxy server.
-        - Fixed an issue where Markdown output for `llms.txt` was missing blank lines after Markdoc tags.
-        - Fixed an issue where MCP page actions were hidden on pages for which `llms.txt` files weren't generated.
-        - Updated `@redocly/openapi-core` to version `2.37.0`.
-    dependencies:
-      '@redocly/theme': 0.67.0-next.6
-      '@redocly/openapi-docs': 3.23.0-next.7
-      '@redocly/asyncapi-docs': 1.12.0-next.7
-      '@redocly/graphql-docs': 1.12.0-next.7
-      '@redocly/portal-plugin-mock-server': 0.20.0-next.7
   0.135.0-next.6:
     timestamp: 1782825124000
     changes:
@@ -23518,28 +23298,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.67.0:
-    timestamp: 1783506758000
-    changes:
-      minor:
-        - Added `inputHints` to dynamic Replay configuration to customize empty-input tooltips in **Try It**.
-        - Updated the `img` Markdoc tag with `framed`, `caption`, and `images` properties.
-        - Added a setup instructions page which is displayed when users open the Docs MCP server URL `/mcp` in a browser.
-      patch:
-        - Fixed issues in the breadcrumbs dropdown component where the chevron icon did not change and a focus outline was added on click.
-        - Fixed an issue where MCP page actions were hidden on pages for which `llms.txt` files weren't generated.
-        - Fixed layout shift in the sidebar that happened when users selected a sidebar item.
-        - Fixed an issue where the Markdoc `tabs` tag crashed if it contained content without a `label` attribute.
-        - Fixed styling and layout issues in the `requestBody` tab of Replay.
-    dependencies: {}
-  0.67.0-next.6:
-    timestamp: 1783442552000
-    changes:
-      minor:
-        - Added a setup instructions page displayed when users open the Docs MCP server URL `/mcp` in a browser.
-      patch:
-        - Fixed an issue where MCP page actions were hidden on pages for which `llms.txt` files weren't generated.
-    dependencies: {}
   0.67.0-next.5:
     timestamp: 1782825124000
     changes:
@@ -26537,28 +26295,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.23.0:
-    timestamp: 1783506758000
-    changes:
-      minor:
-        - Added `inputHints` to dynamic Replay configuration to customize empty-input tooltips in **Try It**.
-        - Added support for the `openapi-code-sample` and `openapi-response-sample` Markdoc tags in `llms.txt`.
-      patch:
-        - Fixed layout issue causing OpenAPI operation content to be squeezed into narrow columns when navigating between pages.
-        - Fixed an issue where search results prioritized matches in page text over matches in page titles.
-        - Updated `@redocly/openapi-core` to version `2.37.0`.
-        - Fixed incorrect handling of `readOnly` and `writeOnly` properties in complex schemas.
-    dependencies:
-      '@redocly/replay': 0.26.0
-  3.23.0-next.7:
-    timestamp: 1783442552000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.37.0`.
-        - Fixed incorrect handling of `readOnly` and `writeOnly` properties in complex schemas.
-    dependencies:
-      '@redocly/replay': 0.26.0-next.7
   3.23.0-next.6:
     timestamp: 1782825124000
     changes:
@@ -29758,13 +29494,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
-  0.50.1:
-    timestamp: 1783319832000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/config` rules schema to match changes in `@redocly/openapi-core`.
-    dependencies: {}
   0.50.0:
     timestamp: 1782900364000
     changes:
@@ -30436,22 +30165,6 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
-  1.12.0:
-    timestamp: 1783506758000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.67.0
-      '@redocly/openapi-docs': 3.23.0
-  1.12.0-next.7:
-    timestamp: 1783442552000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.67.0-next.6
-      '@redocly/openapi-docs': 3.23.0-next.7
   1.12.0-next.6:
     timestamp: 1782825124000
     changes:
@@ -31654,22 +31367,6 @@
       '@redocly/theme': 0.6.0
 '@redocly/api-docs': {}
 '@redocly/mock-server':
-  0.9.0:
-    timestamp: 1783506758000
-    changes:
-      minor: []
-      patch:
-        - '`readOnly` properties are no longer required in mock server request bodies.'
-        - Fixed an issue where `multipart/form-data` request properties were not coerced correctly.
-        - Updated `@redocly/openapi-core` to version `2.37.0`.
-    dependencies: {}
-  0.9.0-next.5:
-    timestamp: 1783442552000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.37.0`.
-    dependencies: {}
   0.9.0-next.4:
     timestamp: 1782825124000
     changes:
@@ -32355,12 +32052,6 @@
         - Redocly Mock Server release
     dependencies: {}
 '@redocly/portal-legacy-ui':
-  0.18.0:
-    timestamp: 1783506758000
-    changes:
-      minor: []
-      patch: []
-    dependencies: {}
   0.18.0-next.0:
     timestamp: 1781011614000
     changes:
@@ -32616,28 +32307,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.18.0:
-    timestamp: 1783506758000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.135.0
-      '@redocly/redoc': 0.135.0
-      '@redocly/redoc-reef': 0.135.0
-      '@redocly/redoc-revel': 0.135.0
-      '@redocly/theme': 0.67.0
-  1.18.0-next.7:
-    timestamp: 1783442552000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.135.0-next.7
-      '@redocly/redoc': 0.135.0-next.7
-      '@redocly/redoc-reef': 0.135.0-next.7
-      '@redocly/redoc-revel': 0.135.0-next.7
-      '@redocly/theme': 0.67.0-next.6
   1.18.0-next.6:
     timestamp: 1782825124000
     changes:
@@ -38007,22 +37676,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.20.0:
-    timestamp: 1783506758000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/mock-server': 0.9.0
-      '@redocly/openapi-docs': 3.23.0
-  0.20.0-next.7:
-    timestamp: 1783442552000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/mock-server': 0.9.0-next.5
-      '@redocly/openapi-docs': 3.23.0-next.7
   0.20.0-next.6:
     timestamp: 1782825124000
     changes:
@@ -40977,30 +40630,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.26.0:
-    timestamp: 1783506758000
-    changes:
-      minor:
-        - Added `inputHints` to dynamic Replay configuration to customize empty-input tooltips in **Try It**.
-      patch:
-        - Fixed an issue in Replay where example values with line breaks or tabs corrupted the request URL.
-        - Fixed an issue where some APIs rejected requests from Replay that didn't have request bodies.
-        - Fixed an issue where the Markdoc `tabs` tag crashed if it contained content without a `label` attribute.
-        - Fixed an issue in Replay where form data fields were not displayed in the initial view of `multipart/form-data` request bodies.
-        - Fixed Replay requests failing when sent to a trusted credential origin with a CORS proxy.
-        - Fixed styling and layout issues in the `requestBody` tab of Replay.
-    dependencies:
-      '@redocly/theme': 0.67.0
-  0.26.0-next.7:
-    timestamp: 1783442552000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.37.0`.
-        - Fixed an issue where form data fields were not displayed in the initial view of `multipart/form-data` request bodies.
-        - Fixed Replay requests failing when sent to a trusted credential origin with a CORS proxy.
-    dependencies:
-      '@redocly/theme': 0.67.0-next.6
   0.26.0-next.6:
     timestamp: 1782825124000
     changes:
@@ -43206,20 +42835,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.18.0:
-    timestamp: 1783506758000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.67.0
-  0.18.0-next.6:
-    timestamp: 1783442552000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.67.0-next.6
   0.18.0-next.5:
     timestamp: 1782825124000
     changes:
@@ -45044,22 +44659,6 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
-  1.12.0:
-    timestamp: 1783506758000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.67.0
-      '@redocly/openapi-docs': 3.23.0
-  1.12.0-next.7:
-    timestamp: 1783442552000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.67.0-next.6
-      '@redocly/openapi-docs': 3.23.0-next.7
   1.12.0-next.6:
     timestamp: 1782825124000
     changes:
@@ -48791,29 +48390,6 @@ reunite:
       minor: []
       patch:
         - Cached Vault secrets per project with a 30-second TTL to reduce `RbacGuard` Vault query load.
-    dependencies: {}
-  v2026-07-03.1:
-    timestamp: 1783083152000
-    changes:
-      minor: []
-      patch:
-        - Added the ability to stop an in-progress autonomous agent run and start a run on demand from the agent settings page.
-        - >-
-          Fixed intermittent `Unable to start a transaction in the given time` errors under load by removing transactions from authenticated database
-          queries.
-    dependencies: {}
-  v2026-07-08.2:
-    timestamp: 1783519993000
-    changes:
-      minor: []
-      patch:
-        - Fixed Azure DevOps pull request checks not running for project builds triggered by push events.
-        - Fixed intermittent request failures caused by exhausting the database connection pool under high load.
-        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.37.0`.
-        - >-
-          Fixed trial creation when a Rebilly customer exists without a subscription. `startTrial` attaches a trial to the existing customer, enabling
-          organizations affected by partial provisioning failures to recover on the next subscription lookup.
-        - Fixed an issue in Replay tab where requests to external URLs failed with generic `Error` message.
     dependencies: {}
 replay:
   0.0.2:

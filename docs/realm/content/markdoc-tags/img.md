@@ -42,51 +42,21 @@ Customize with attributes like `src`, `alt`, `width`, and `height`.
 
 - src
 - string
-- **CONDITIONALLY REQUIRED.**
-  An `img` tag must contain either an `src`, `srcSet`, or `images` option.
-  Mutually exclusive with `srcSet` and `images`.
-  Relative or absolute path to the image in your project, or URL of the image.
-  Supported file formats: JPEG, PNG, GIF, WebP, SVG, and data URLs.
+- **Conditionally required.**
+  The source URL of the image.
 
 ---
 
 - srcSet
 - string
-- **CONDITIONALLY REQUIRED.**
-  An `img` tag must contain either an `src`, `srcSet`, or `images` option.
-  Mutually exclusive with `src` and `images`.
-  A set of paths to images in your project, or URLs of images to use for different color modes.
-  Supported file formats: JPEG, PNG, GIF, WebP, SVG, and data URLs.
-
----
-
-- images
-- [string]
-- **CONDITIONALLY REQUIRED.**
-  An `img` tag must contain either an `src`, `srcSet`, or `images` option.
-  Mutually exclusive with `src` and `srcSet`.
-  A list of paths to images in your project, or URLs of images, rendered as a thumbnail gallery in a single row.
-  Supported file formats: JPEG, PNG, GIF, WebP, SVG, and data URLs.
-  Supports a maximum of 3 items.
+- **Conditionally required.**
+  A set of source URLs to use for different color modes.
 
 ---
 
 - alt
 - string
 - Descriptive text that provides context for the image to help with accessibility and people with visual impairments or who use assistive technologies to understand the content of images.
-
----
-
-- caption
-- string
-- Adds a caption displayed directly below the image, center-aligned.
-
----
-
-- framed
-- boolean
-- Wraps the image in a bordered container with rounded corners.
-  Default: `false`.
 
 ---
 
@@ -256,19 +226,6 @@ Customize with attributes like `src`, `alt`, `width`, and `height`.
   alt="Image with custom class"
   srcSet="./images/img-markdoc/image-example-light.png light, ./images/img-markdoc/image-example-dark.png dark"
   className="custom-image-class"
-/%}
-```
-{% /markdoc-example %}
-
-### Thumbnail gallery with caption
-
-{% markdoc-example renderDemo=true %}
-
-```md
-{% img
-  alt="Gallery containing three images: one with Markdoc logo, one with OpenAPI logo, one with Arazzo logo"
-  images=["./images/img-markdoc/markdoc.svg", "./images/img-markdoc/openapi.svg", "./images/img-markdoc/arazzo.svg"]
-  caption="Check out our resources in the Learn section!"
 /%}
 ```
 {% /markdoc-example %}

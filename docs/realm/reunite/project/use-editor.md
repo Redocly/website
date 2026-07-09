@@ -47,12 +47,35 @@ After you have created a new branch, you can add or delete files or folders in t
 ## Open and manage editor tabs
 
 Files open as tabs in the editor pane.
+A file can only be open in one tab.
 
-A single click in the file tree opens the file in a preview tab with its name shown in italics, and clicking another file replaces the preview tab.
+### Preview tabs
+
+A single click in the file tree opens the file in a preview tab with its name shown in italics.
+Tabs open in the currently active tab group, on the right side of the group.
+Clicking an unopened file in the file tree replaces the file in the preview tab.
+
 Double-click a file in the file tree, double-click the tab, or start editing the file to keep it open as a regular tab.
 
+### Tab actions
+
 Right-click any tab to close it, close other tabs, close unchanged tabs, copy its path, or split it into a new group.
-For the complete list of tab actions and the keyboard shortcuts to open the Webview and Documentation tabs, see the [Editor pane reference](./project-ui.md#editor-pane).
+For the complete list of tab actions and the keyboard shortcuts to open the **Webview**, **Documentation**, and **Replay** tabs, see the [editor pane reference](./project-ui.md#editor-pane).
+
+### Tab groups
+
+By default, the editor starts with an open editor pane and a utility pane with three tabs: **Webview**, **Documentation**, and **Replay**.
+
+When you have multiple tabs open in a group, you can:
+- Drag and drop a tab to a different area of the editor, splitting the tab group.
+- Right-click a tab and select a command to split the tab group: the tab moves to the selected area.
+
+To close a tab group:
+- Use the More actions menu in the top-right corner of the tab group and select **Close group**.
+- Right-click a tab in the chosen tab group and select **Close group**.
+
+To reset the editor's interface to the default view:
+- Use the **More actions** menu in the top-right corner of the tab group and select **Reset layout**.
 
 ## Edit files
 

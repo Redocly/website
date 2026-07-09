@@ -111,6 +111,10 @@ For example, the `docs/developer-keys.md` file matches both `docs/developer-keys
 Under the `reunite` option, it describes the project role assignments to teams for access to the project.
 In this example, the `Writers` team has a `write` project role and can contribute or write comments on reviews.
 
+## Related how-tos
+
+- Use the step-by-step instructions to [configure RBAC](./index.md) in your project with additional information and examples for projects, pages, and navigation.
+
 ## Resources
 
 - **[Roles and permissions](./roles.md)** - Explore the different user roles and permissions available for controlling access to your organization and projects
