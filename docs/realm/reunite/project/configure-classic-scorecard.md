@@ -32,12 +32,6 @@ It's the ideal option for those who don't want to miss anything.
 
 You can use these rulesets only, or extend them with custom rules according to your needs.
 
-## Before you begin
-
-Make sure you have the following:
-
-- a `redocly.yaml` configuration file in the root of your project
-
 ## Add classic scorecard to your project with Redocly rulesets
 
 To add a classic version of the scorecard to your project using only the built-in rules:

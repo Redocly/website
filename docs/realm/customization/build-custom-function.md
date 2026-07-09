@@ -59,7 +59,6 @@ Below is a quick example of what we'll build.
 
 Make sure you have the following:
 
-- a new project with the latest version of Redocly Realm installed.
 - a text editor or IDE for working with code (for example, VS Code)
 
 ## Test a built-in function

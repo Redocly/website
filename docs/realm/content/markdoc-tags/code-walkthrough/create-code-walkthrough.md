@@ -28,7 +28,6 @@ Highlights are managed using [chunk](./index.md#chunk-annotations) annotations i
 Make sure you have the following:
 
 - example code files you plan to use
-- a `redocly.yaml` file in the root of your project
 
 ## Organize content
 

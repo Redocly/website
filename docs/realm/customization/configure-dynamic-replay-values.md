@@ -20,7 +20,6 @@ The `useConfigureReplay` hook fetches fresh configuration when the Replay is ope
 
 Make sure you have the following:
 
-- a `redocly.yaml` file located in the root directory of your project
 - a basic understanding of TypeScript and React hooks
 - OpenAPI description files with examples
 - an external API endpoint to fetch configuration from
@@ -441,7 +440,9 @@ Use the `"default"` key as a fallback when no input-specific hint exists.
 
 ### Root-level and server-level hints
 
-`inputHints` can be set at the root level (a shared default that applies to every server) and/or nested under a server entry when you return `ConfigureServerRequestValues`. Unlike the other request values (`headers`, `security`, `envVariables`, and so on), where a server-keyed entry replaces the root value for that server, `inputHints` from both levels are combined — the server level takes priority and the root level fills in the rest. Resolution for a given input follows this precedence:
+`inputHints` can be set at the root level (a shared default that applies to every server) and/or nested under a server entry when you return `ConfigureServerRequestValues`.
+Unlike the other request values (`headers`, `security`, `envVariables`, and so on), where a server-keyed entry replaces the root value for that server, `inputHints` from both levels are combined — the server level takes priority and the root level fills in the rest.
+Resolution for a given input follows this precedence:
 
 1. The server-level hint for the active server (by input name, then its `"default"`).
 2. The root-level hint (by input name, then its `"default"`).
