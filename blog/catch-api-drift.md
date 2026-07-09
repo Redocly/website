@@ -17,10 +17,10 @@ Your OpenAPI description says one thing.
 Your API does another.
 Nobody notices, because nothing fails — until an SDK generated from that description breaks in a customer's build, or a partner integration chokes on a field that was "documented" but never returned.
 
-That gap between what you describe and what you ship has a name: drift.
-And it accumulates quietly, one hotfix and one forgotten field at a time.
+The gap between what you describe and what you ship has a name: drift.
+It accumulates quietly, one hotfix and one forgotten field at a time.
 
-Redocly CLI now ships two commands that work together to close that gap: `proxy` records what your API actually does, and `drift` compares it against what your OpenAPI description claims.
+Redocly CLI ships two commands that work together to close this gap: `proxy` records what your API actually does, and `drift` compares it against what your OpenAPI description claims.
 
 ## Record first, judge later
 
@@ -109,7 +109,8 @@ redocly drift ./cafe.har --api ./cafe-openapi.json
 ```
 
 The error is the discrepancy we planted: the API returns a number where the description now promises a string.
-The warning is a bonus we didn't plant at all — the `category` query parameter we sent isn't documented anywhere in the Cafe description.
+The warning is a bonus we didn't plant at all. 
+The `category` query parameter we sent isn't documented anywhere in the Cafe description.
 Two requests of traffic, and drift already surfaced something real.
 
 ## More than schemas
@@ -119,7 +120,7 @@ Findings come from built-in rules that you can select with the `--rules` flag:
 - `undocumented-endpoint` flags traffic that doesn't match any documented operation.
 - `schema-consistency` validates parameters, headers, and request/response bodies against your schemas.
 - `security-baseline` checks that requests actually satisfy the security requirements your description declares, and flags things like credentials sent over plain HTTP.
-- `owasp-api-top10` is an opt-in set of heuristics based on the OWASP API Security Top 10 — enable it with `--rules owasp-api-top10` to scan recorded traffic for common API risks.
+- `owasp-api-top10` scans recorded traffic for common API risks with heuristics based on the OWASP API Security Top 10 — enable it with `--rules owasp-api-top10`.
 
 Reports come out as human-readable text, JSON, CSV, or SARIF, so the same run can feed a terminal, a dashboard, or a code-scanning integration.
 
