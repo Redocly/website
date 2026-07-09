@@ -17,9 +17,8 @@ description: This configuration option makes all your content private for non-au
 This configuration option makes all your content private for non-authenticated users.
 Only authenticated users, who are verified through either Reunite or an identity provider (IdP) you [added in Reunite](../../reunite/organization/sso/add-idp.md) can access your project.
 
-{% admonition type="info" %}
+{% admonition type="info" name="Mutually exclusive options" %}
 The `requiresLogin` option cannot be used in conjunction with `rbac`.
-These options are mutually exclusive.
 {% /admonition %}
 
 ## Examples

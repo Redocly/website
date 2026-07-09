@@ -39,7 +39,7 @@ To test an API function in Reunite:
 
 If the active file is not an API function, Replay prompts you to open one first.
 
-{% admonition type="info" %}
+{% admonition type="info" name="Automatic request loading" %}
 Replay automatically opens the request that matches the API function file you selected in the editor.
 {% /admonition %}
 

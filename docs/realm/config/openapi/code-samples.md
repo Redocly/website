@@ -74,7 +74,7 @@ Configure the code samples generated from your OpenAPI description.
   Sets the language to create code samples for.
   Supported values: `curl`, `C#`, `C#+Newtonsoft`, `Go`, `Java`, `Java8+Apache`, `JavaScript`, `Node.js`, `PHP`, `Python`, `R`, `Ruby`.
 
-  {% admonition type="info" %}
+  {% admonition type="info" name="Additional languages" %}
     If you specify a language that is not in the list above, you must manually provide the code samples in your OpenAPI description using `x-codeSamples`.
 
     Automatic code generation is only available for the supported languages.

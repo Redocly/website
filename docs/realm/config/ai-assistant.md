@@ -114,7 +114,7 @@ The limit resets at the beginning of each month.
 Redocly AI Search runs in **inference-only mode** and does not train or fine-tune AI models on your content.
 For details, see the [AI Search data usage FAQ](../faq/ai-search-privacy.md).
 
-{% admonition type="info" %}
+{% admonition type="info" name="Search indexes" %}
 AI search and Typesense search indexes are only built on the production branch.
 Changes to search configuration or content exclusions, like the `excludeFromSearch` front matter option, may not immediately appear in search results until the next production build.
 {% /admonition %}

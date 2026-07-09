@@ -231,7 +231,7 @@ You may need to restart the Webview or commit your changes to your branch to see
 
 Use the examples in this section as starter themes to quickly add styling to your project.
 
-{% admonition type="info" %}
+{% admonition type="info" name="Request examples" %}
    Have a request for a styling example?
    Please use the feedback form at the bottom of the page and tell us.
 {% /admonition %}

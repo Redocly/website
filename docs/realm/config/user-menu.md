@@ -24,7 +24,7 @@ Users can click the user avatar and a dropdown menu displays with the avatar, th
   withLightbox=true
 /%}
 
-{% admonition type="info" %}
+{% admonition type="info" name="Required configuration" %}
 
 You must also have `sso` and either `rbac` or `requiresLogin` configured for the userMenu to display.
 

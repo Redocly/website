@@ -14,7 +14,7 @@ description: Add custom fonts, stylesheets, and other links to pages.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% admonition type="warning" %}
+{% admonition type="warning" name="Option name change" %}
 Formerly known as the `stylesheets` option.
 {% /admonition %}
 

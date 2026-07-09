@@ -118,10 +118,10 @@ For more details on draft mode behavior, see [draft projects](../../reunite/proj
 
 {% /table %}
 
-{% admonition type="info" %}
+{% admonition type="info" name="Wildcard key" %}
 
-When describing team to project role relations, a special key `*` may be used.
-A project role assigned to that key will be applied to the rest of the teams that are not described for the given glob pattern.
+When describing team to project role relations, you can use a special key `*`.
+A project role assigned to that key is applied to the rest of the teams that are not described for the given glob pattern.
 
 In the following example, only users assigned to the Admin team can view the content on the `secrets.md` file:
 

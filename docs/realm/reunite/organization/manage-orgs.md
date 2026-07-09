@@ -96,7 +96,7 @@ If you do not specify custom terms, the default message "Acceptance of the terms
 
 When you delete an organization, the action is permanent, so be sure to back up any pertinent data.
 
-{% admonition type="danger" %}
+{% admonition type="danger" name="Irreversible action" %}
 Deleting an organization is permanent - all associated projects, including API descriptions, documentation, and customer feedback, is lost.
 Be sure to back up any pertinent data.
 

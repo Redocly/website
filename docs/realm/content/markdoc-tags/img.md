@@ -147,8 +147,8 @@ Customize with attributes like `src`, `alt`, `width`, and `height`.
   - "2px dashed #FF0000" - dashed red border
   - "3px double gray" - double-line gray border
 
-  {% admonition type="info" %}
-   Note: Border styles can also be applied using the style attribute.
+  {% admonition type="info" name="Styling" %}
+  Border styles can also be applied using the style attribute.
   {% /admonition %}
 
 ---

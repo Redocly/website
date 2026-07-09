@@ -295,9 +295,7 @@ Security values update the corresponding security scheme configurations:
 Server variables update the corresponding server variable values in your OpenAPI description.
 These variables are used to resolve server URLs that contain placeholders like `{variableName}`.
 
-{% admonition type="info" %}
 The merging behavior ensures that configured values work within the constraints of your OpenAPI description while allowing dynamic updates.
-{% /admonition %}
 
 ## Example with merging
 

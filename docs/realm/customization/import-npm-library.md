@@ -74,7 +74,7 @@ For enhanced flexibility, create a `bunfig.toml` file in your project root:
 
 ### Secure credential management
 
-{% admonition type="warning" %}
+{% admonition type="warning" name="Protect sensitive information" %}
 Never commit registry credentials directly to your repository.
 Always use environment variables for sensitive information like tokens, usernames, and passwords.
 {% /admonition %}
@@ -113,10 +113,7 @@ export function MyComponent() {
 
 ## Usage with Markdoc
 
-{% admonition type="info" %}
-See [Build markdoc tags](./build-markdoc-tags.md) for more information about how to register
-and use custom Markdoc tags.
-{% /admonition %}
+For more information about how to register and use custom Markdoc tags, see [Build markdoc tags](./build-markdoc-tags.md).
 
 To use external components within Markdoc, you'll need to register them in your schema, as in the following example:
 

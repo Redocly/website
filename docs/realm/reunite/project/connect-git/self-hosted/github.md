@@ -108,7 +108,7 @@ To delete self-hosted Git provider instances:
 3. Enter the provider name; this step ensures that you delete the correct provider.
    Then click the **Delete** button to confirm deletion.
 
-{% admonition type="warning" %}
+{% admonition type="danger" name="Irreversible action" %}
   Deleting a Git self-hosted provider instance removes all associated OAuth and personal access token authorization credentials, and stops synchronization for remote content and projects related to this provider.
 
   Perform this action only if you're certain your organization has no use for this GitHub Enterprise Server self-hosted provider instance.

@@ -31,7 +31,7 @@ The `file` attribute is used to pass a pointer to the source file.
 
 ### Use partials in Redocly
 
-{% admonition type="info" %}
+{% admonition type="info" name="Redocly-specific implementation"%}
   The information in this section applies specifically to using partials in a _Redocly project_.
 {% /admonition %}
 

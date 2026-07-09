@@ -87,7 +87,7 @@ On the **General settings** page you can:
 
 When a project becomes obsolete, or you have a test project you no longer need, you may want to delete that project.
 
-{% admonition type="danger" %}
+{% admonition type="danger" name="Irreversible action" %}
 Deleting a project is permanent - all data on Reunite, including customer feedback, is lost.
 Perform this action only if you're certain your organization no longer has use for it.
 

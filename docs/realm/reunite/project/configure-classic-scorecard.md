@@ -211,9 +211,9 @@ You might want to exclude APIs that are still being developed, or sample APIs yo
 
 If you have APIs you want to exclude from evaluation, list the API description files' locations in the `ignore` object in `redocly.yaml`.
 
-{% admonition type="warning" %}
-When you add an API description file to the `ignore` object, it is not published.
-To avoid broken links, make sure you remove any links to that file from your project.
+{% admonition type="warning" name="Prevent broken links" %}
+API description files added to the `ignore` object are not published.
+To avoid broken links, make sure you remove all links to that file from your project.
 {% /admonition %}
 
 To exclude API description files from scorecard and publishing:
