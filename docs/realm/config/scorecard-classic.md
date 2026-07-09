@@ -18,7 +18,7 @@ The `scorecard` property continues to work with a deprecation warning.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Add and create sets of rules and test your API description files against them.
 With these rules you can maintain quality across your existing APIs and ensure that newly-added or updated APIs match your criteria.
 An API scorecard can include multiple sets of rules, corresponding to different quality levels.
 

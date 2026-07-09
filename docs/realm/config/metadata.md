@@ -14,7 +14,7 @@ description: Configure metadata properties for your project, APIs, and documenta
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Configure metadata properties for your project, APIs, and documentation files.
 Metadata is used for content categorization, search facets, catalog filtering, and scorecard functionality.
 
 ## How it works

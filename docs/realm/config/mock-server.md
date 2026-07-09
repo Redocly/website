@@ -12,7 +12,7 @@ description: Configure a mock server in your Redocly-powered API documentation.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Configure a mock server in your Redocly-powered API documentation.
 The mock server allows users to:
 
 - Send requests to the Operations in your API description from Replay, cURL, or any other API client.
@@ -76,7 +76,7 @@ For example, `/_mock/openapi/redocly-museum/`.
 - description
 - string
 - Set the description of the mock server in the servers dropdown in Redocly Replay.
-  Defaults to `Mock Server`.
+  Defaults to `Mock server`.
 
 {% /table %}
 

@@ -14,7 +14,8 @@ description: |-
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Organize your content into a catalog that users can filter and search.
+You can configure multiple catalogs and set the link text, description, and filters.
 
 {% img
   src="../content/images/catalog.png"

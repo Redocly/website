@@ -8,13 +8,13 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-description: Allow builds to publish even if Reunite detects issues in you project.
+description: Allow builds to publish even if Reunite detects issues in your project.
 ---
 # `reunite`
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Allow builds to publish even if Reunite detects issues in your project.
 Those issues are:
 - Broken links
 - Noncompliant API descriptions

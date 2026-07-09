@@ -13,8 +13,7 @@ description: Restrict project login to specific identity providers (IdPs) select
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
-
+Restrict project login to specific identity providers (IdPs) selected by unique ID.
 Configure which individual identity providers (IdPs) — by their unique ID — are available at project login.
 `idps` selects identity providers by the unique ID and is mutually exclusive with [`sso`](./sso.md).
 When `idps` is configured, only the listed identity providers can be used to log in to the project — the standard Redocly login (email/password and Social Login providers) is not offered.
