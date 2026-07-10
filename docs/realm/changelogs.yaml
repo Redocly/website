@@ -48815,6 +48815,13 @@ reunite:
           organizations affected by partial provisioning failures to recover on the next subscription lookup.
         - Fixed an issue in Replay tab where requests to external URLs failed with generic `Error` message.
     dependencies: {}
+  v2026-07-10.1:
+    timestamp: 1783670717000
+    changes:
+      minor:
+        - Added previews for PDF, video, and audio files in the editor, replacing the "Preview not available" message with built-in viewers.
+      patch: []
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
