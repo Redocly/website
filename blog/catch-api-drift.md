@@ -34,6 +34,12 @@ Because the two commands meet at a plain HAR file, you don't have to use them to
 Traffic exported from browser DevTools, Kong, or Nginx/Apache JSON logs works with `drift` too.
 And if you prefer immediate feedback, `proxy` accepts an `--api` flag and validates traffic live, as it flows.
 
+{% admonition type="warning" name="HAR files record everything" %}
+A HAR file is a full capture: request and response headers, cookies, tokens, and bodies all land in it verbatim.
+Run `proxy` and handle the recorded HAR files in closed sandboxes — a local machine or an isolated e2e environment exercised with synthetic accounts and test credentials — so no real user data or production secrets end up in the recording.
+If you do record traffic that touches real credentials, treat the HAR file like a secret: keep it out of version control, redact it before sharing, and delete it when you're done.
+{% /admonition %}
+
 ## Put it in your test pipeline
 
 Here is the setup we like most: you probably already have e2e or integration tests that exercise your API.
@@ -43,9 +49,13 @@ Instead, start `proxy` before the test run, route the tests through it, and stop
 
 ```bash
 redocly proxy --target http://localhost:9000 --har ./test-traffic.har &
-# run your e2e or integration tests against http://127.0.0.1:4040
+PROXY_PID=$!
+# run your e2e or integration tests against http://localhost:4040
+kill "$PROXY_PID" && wait "$PROXY_PID"
 redocly drift ./test-traffic.har --api ./openapi.yaml
 ```
+
+The `kill` step matters: `proxy` streams captured exchanges to a temporary file and assembles the final HAR only on a clean shutdown, so `drift` finds nothing to read until the proxy has stopped.
 
 The `drift` command exits with a non-zero code when it finds error-level problems, so it slots into CI as a gate.
 Every test run now doubles as a contract check, with zero extra test code to maintain.
@@ -62,7 +72,7 @@ redocly proxy --target https://api.cafe.redocly.com --har ./cafe.har
 ```
 
 ```
-Proxy listening on http://127.0.0.1:4040 → forwarding to https://api.cafe.redocly.com/
+Proxy listening on http://localhost:4040 → forwarding to https://api.cafe.redocly.com/
 Recording traffic to ./cafe.har
 Press Ctrl+C to stop.
 ```
@@ -70,8 +80,8 @@ Press Ctrl+C to stop.
 Send some traffic through it:
 
 ```bash
-curl http://127.0.0.1:4040/menu
-curl "http://127.0.0.1:4040/menu?category=dessert"
+curl http://localhost:4040/menu
+curl "http://localhost:4040/menu?category=dessert"
 ```
 
 Press <kbd>`Ctrl`</kbd> + <kbd>`C`</kbd> and the proxy writes the HAR file:
@@ -120,7 +130,12 @@ Findings come from built-in rules that you can select with the `--rules` flag:
 - `undocumented-endpoint` flags traffic that doesn't match any documented operation.
 - `schema-consistency` validates parameters, headers, and request/response bodies against your schemas.
 - `security-baseline` checks that requests actually satisfy the security requirements your description declares, and flags things like credentials sent over plain HTTP.
-- `owasp-api-top10` scans recorded traffic for common API risks with heuristics based on the OWASP API Security Top 10 — enable it with `--rules owasp-api-top10`.
+  Loopback hosts such as `localhost` and `127.0.0.1` are exempt from the transport check, so sandboxed recordings against a local target stay warning-free.
+- `owasp-api-top10` scans recorded traffic with heuristics based on the OWASP API Security Top 10 — enable it with `--rules owasp-api-top10`. It looks for credential-like query parameters, insecure CORS (wildcard origin with credentials enabled), weak cookie attributes, sensitive-looking fields in response payloads, and large unpaginated responses.
+
+One caveat before you wire `owasp-api-top10` into a CI gate: it inspects each exchange in isolation.
+It has no notion of user identity or ownership across requests, so it cannot detect authorization logic flaws like Broken Object Level Authorization.
+Treat it as an extra pair of eyes on traffic you already have — not as a replacement for security testing.
 
 Reports come out as human-readable text, JSON, CSV, or SARIF, so the same run can feed a terminal, a dashboard, or a code-scanning integration.
 
