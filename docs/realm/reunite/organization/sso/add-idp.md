@@ -87,9 +87,10 @@ If you select **Require SSO authentication for all members** and save without va
 To prevent losing access to Reunite, click the **Test connection** button and make sure you are able to authenticate before saving.
 {% /admonition %}
 
-This setting doesn't affect how users access your deployed project.
-To require login to your project, you must configure `rbac` or `requiresLogin`.
-See [Configure RBAC](../../../access/index.md) or [requiresLogin](../../../config/access/requires-login.md) for configuration instructions.
+Enabling this setting disables the Redocly identity provider (email and password login) for all projects in your organization.
+When this setting is enabled, you cannot invite users to projects via email.
+While project-level requirements like `rbac` or `requiresLogin` still apply, the method of authentication is restricted to your configured SSO identity providers.
+See [Configure RBAC](../../../access/index.md) or [requiresLogin](../../../config/access/requires-login.md) for project-level login configuration.
 
 To require SSO authentication:
 

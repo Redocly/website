@@ -23,6 +23,10 @@ The SCIM base URL is unique to that identity provider.
 
 ## Before you begin
 
+{% admonition type="info" name="Trial accounts" %}
+SCIM provisioning is not available for trial accounts, even for organizations evaluating Enterprise+ features.
+{% /admonition %}
+
 Make sure you have the following:
 
 - a SAML 2 or OpenID Connect identity provider [added in Reunite](./add-idp.md) for the organization you want to provision users into
@@ -102,4 +106,3 @@ Deprovisioning removes the user from your Redocly organization when your IdP set
 - **[Configure SSO](./configure-sso.md)** - Choose which identity providers apply to each project in `redocly.yaml`
 - **[Single sign-on (SSO) concepts](./sso.md)** - Learn how Corporate and Guest identity providers work with Reunite and projects
 - **[SSO configuration reference](../../../config/access/sso.md)** - Technical reference for SSO options in your project configuration
-

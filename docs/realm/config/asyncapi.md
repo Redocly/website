@@ -69,9 +69,6 @@ Customize the behavior and appearance of AsyncAPI documentation.
 ### Change default schema id and hide servers section
 
 ```yaml
-plugins:
-  # Enable plugin in project
-  - '@redocly/portal-plugin-async-api/plugin.js'
 asyncapi:
   schemaId: StreetlightAPI
   hideServers: true
@@ -80,9 +77,6 @@ asyncapi:
 ### Change default schema id and show all the sections except schemas section
 
 ```yaml
-plugins:
-  # Enable plugin in project
-  - '@redocly/portal-plugin-async-api/plugin.js'
 asyncapi:
   schemaId: StreetlightAPI
   hideErrors: false
