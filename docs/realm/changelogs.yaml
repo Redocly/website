@@ -48829,6 +48829,14 @@ reunite:
         - Added previews for PDF, video, and audio files in the editor, replacing the "Preview not available" message with built-in viewers.
       patch: []
     dependencies: {}
+  v2026-07-13.1:
+    timestamp: 1783947168000
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerabilities `CVE-2025-46394` and `CVE-2024-58251` by upgrading `busybox` to version `1.37.0-r30`.
+        - Fixed SSO login downgrading the organization's last Owner and blocked SSO logins for organizations whose plan does not include SSO.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
