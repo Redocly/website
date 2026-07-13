@@ -29758,6 +29758,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.51.0:
+    timestamp: 1783945528000
+    changes:
+      minor:
+        - Removed JSON Schema `default` keywords from config schemas.
+      patch: []
+    dependencies: {}
   0.50.1:
     timestamp: 1783319832000
     changes:
