@@ -16,11 +16,6 @@ plans:
 Reunite's **Deployments** page displays the history of deployments in your project.
 Use this page to view the details of individual deployments, search and filter deployments, view the deployed project, and re-deploy the project manually.
 
-{% admonition type="info" name="Draft mode" %}
-New projects start in [draft mode](./draft-projects.md).
-While a project is in draft mode, its deployment URLs require logging in to access, so only authenticated users can view the published project.
-{% /admonition %}
-
 ## Deployment details pane
 
 The deployment details pane at the top of the **Deployments** page displays information on the last deployment.

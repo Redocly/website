@@ -29,14 +29,6 @@ In Reunite, projects are the place where you create, test, and deploy documentat
 Reunite creates your project and takes you to the project's **Editor** page and you can start working on your documentation.
 If you have a third-party-hosted Git, [connect your repository](#connect-your-project-repository) first.
 
-### Go live with a draft project
-
-New projects start in draft mode.
-While a project stays in draft mode, deployment URLs require login and the production deployment runs in a lower-scale configuration.
-
-To make the project behave like a standard live project, click **Go live** in the editor.
-For more information, see [draft projects](./draft-projects.md).
-
 ## Switch between projects
 
 Reunite enables you to work on multiple projects.
@@ -135,7 +127,6 @@ To learn how to change which branches Reunite deploys and how it handles preview
 
 ## Resources
 
-- **[Draft projects](./draft-projects.md)** - Understand draft mode, protected draft deployments, and what changes when you go live
 - **[Configure RBAC](../../config/access/rbac.md)** - Set up role-based access control for granular project and content access permissions
 - **[Connect a Git provider](./connect-git/connect-git-provider.md)** - Integrate your projects with Git repositories from various providers for version control and collaboration
 - **[Remote content](./remote-content/index.md)** - Integrate and synchronize content from external repositories and sources into your Reunite projects
