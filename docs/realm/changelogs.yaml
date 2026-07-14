@@ -49006,6 +49006,13 @@ reunite:
           `redocly` value.
         - Allowed sending invitations in organizations with the `Require SSO authentication` option enabled.
     dependencies: {}
+  v2026-07-14.3:
+    timestamp: 1784041406000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.39.0`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
