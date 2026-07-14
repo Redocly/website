@@ -48834,8 +48834,12 @@ reunite:
     changes:
       minor: []
       patch:
+        - >-
+          Enabled Redocly login (email/password and Social Login providers) on project login when the `access.idps` configuration includes the
+          `redocly` value.
         - Fixed security vulnerabilities `CVE-2025-46394` and `CVE-2024-58251` by upgrading `busybox` to version `1.37.0-r30`.
         - Fixed SSO login downgrading the organization's last Owner and blocked SSO logins for organizations whose plan does not include SSO.
+        - Allowed sending invitations in organizations with the `Require SSO authentication` option enabled.
     dependencies: {}
 replay:
   0.0.2:
