@@ -117,6 +117,7 @@ mcp:
 ## Resources
 
 - **[MCP servers overview](../customization/mcp-server/index.md)** - Configure MCP servers and integrate with third-party services
+- **[Agent skills](../customization/agent-skills/index.md)** - Publish `SKILL.md` instructions that the MCP server exposes as resources
 - **[Docs MCP reference](../customization/mcp-server/openapi.yaml)** - Review the structured Docs MCP specification, tool schemas, and authentication metadata
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
 - **[Connect MCP Markdoc tag](../content/markdoc-tags/connect-mcp.md)** - Add `Connect MCP` button anywhere in your documentation

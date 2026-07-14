@@ -452,6 +452,12 @@
         - page: customization/mcp-server/openapi.yaml
           label: Docs MCP reference
 
+    - group: Agent skills
+      selectFirstItemOnExpand: true
+      items:
+        - page: customization/agent-skills/index.md
+          label: Overview
+
     - group: Search API
       selectFirstItemOnExpand: true
       items:

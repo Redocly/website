@@ -114,6 +114,8 @@ This guide provides a comprehensive overview of available configuration options 
   {% configProperty file="response-headers.md" /%}
 
   {% configProperty file="scripts.md" /%}
+
+  {% configProperty file="skills.md" /%}
 {% /configSection %}
 
 {% configSection title="Analytics and SEO" description="Improve discoverability and track usage of your documentation." %}
