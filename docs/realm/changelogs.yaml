@@ -49001,7 +49001,6 @@ reunite:
     changes:
       minor: []
       patch:
-        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.39.0`.
         - >-
           Enabled Redocly login (email/password and Social Login providers) on project login when the `access.idps` configuration includes the
           `redocly` value.
