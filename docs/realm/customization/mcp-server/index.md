@@ -27,51 +27,6 @@ Realm provides built-in MCP server capabilities that expose your API Docs to AI 
 Use the Docs MCP server to explore and discover APIs in your project.
 For the current MCP endpoint details, authentication semantics, server metadata, and tool schemas, see the [Docs MCP reference](./openapi.yaml).
 
-## MCP server card
-
-The MCP server card is a standardized JSON document that lets agents discover the Docs MCP server: its tools, transport endpoint, and capabilities.
-The discovery is a single request that follows the Model Context Protocol server-card format.
-It is available at `/.well-known/mcp/server-card.json` when the MCP server is enabled.
-
-```http
-GET https://example.com/.well-known/mcp/server-card.json
-```
-
-The following example response describes a login-protected server that also publishes skills:
-
-```json
-{
-  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
-  "version": "1.0",
-  "protocolVersion": "2025-06-18",
-  "serverInfo": {
-    "name": "Docs MCP server",
-    "title": "Docs MCP server",
-    "version": "2026-07-13"
-  },
-  "description": "Redocly Cafe documentation.",
-  "documentationUrl": "https://example.com/",
-  "transport": {
-    "type": "streamable-http",
-    "endpoint": "/mcp"
-  },
-  "capabilities": {
-    "logging": {},
-    "tools": { "listChanged": true },
-    "resources": { "listChanged": true },
-    "completions": {}
-  },
-  "authentication": {
-    "required": true,
-    "schemes": ["bearer", "oauth2"]
-  },
-  "tools": ["dynamic"]
-}
-```
-
-The card lists the server's tools, declares its `/mcp` transport endpoint, and states its authentication requirements when the server requires login.
-When your project publishes [agent skills](../agent-skills/index.md#skills-as-mcp-resources), the card's capabilities advertise resource support so agents know to list them.
-
 ## Connect an AI agent to the MCP server
 
 After you enable the Docs MCP server in [configuration](../../config/mcp.md), it is available at `/mcp` on your project root URL.
@@ -181,4 +136,3 @@ Ask the AI to perform a query that uses an MCP tool.
 ## Resources
 
 - **[MCP configuration reference](../../config/mcp.md)** - Configure MCP for your project
-- **[Agent skills](../agent-skills/index.md)** - Publish task-focused `SKILL.md` instructions and the discovery endpoints agents read to find them
