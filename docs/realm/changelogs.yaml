@@ -49013,6 +49013,13 @@ reunite:
       patch:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.39.0`.
     dependencies: {}
+  v2026-07-15.1:
+    timestamp: 1784114776000
+    changes:
+      minor:
+        - Added a `Paid seat` filter to the organization People page to show only users occupying paid seats.
+      patch: []
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
