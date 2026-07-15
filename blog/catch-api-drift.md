@@ -15,7 +15,7 @@ categories:
 
 Your OpenAPI description says one thing.
 Your API does another.
-Nobody notices, because nothing fails — until an SDK generated from that description breaks in a customer's build, or a partner integration chokes on a field that was "documented" but never returned.
+Nobody notices, because nothing fails - until an SDK generated from that description breaks in a customer's build, or a partner integration chokes on a field that was "documented" but never returned.
 
 The gap between what you describe and what you ship has a name: drift.
 It accumulates quietly, one hotfix and one forgotten field at a time.
@@ -25,7 +25,7 @@ Redocly CLI ships two commands that work together to close this gap: `proxy` rec
 ## Record first, judge later
 
 The `proxy` command starts a local reverse proxy in front of your API.
-Point any client at it — a browser, a test suite, a curl script — and every request and response that passes through is captured into a standard HAR file.
+Point any client at it - a browser, a test suite, a curl script - and every request and response that passes through is captured into a standard HAR file.
 
 The `drift` command takes that traffic and replays it against your OpenAPI description.
 It matches each exchange to a documented operation and reports the discrepancies: undocumented endpoints, undocumented parameters, missing required fields, response bodies that don't match their schemas.
@@ -36,14 +36,14 @@ And if you prefer immediate feedback, `proxy` accepts an `--api` flag and valida
 
 {% admonition type="warning" name="HAR files record everything" %}
 A HAR file is a full capture: request and response headers, cookies, tokens, and bodies all land in it verbatim.
-Run `proxy` and handle the recorded HAR files in closed sandboxes — a local machine or an isolated e2e environment exercised with synthetic accounts and test credentials — so no real user data or production secrets end up in the recording.
+Run `proxy` and handle the recorded HAR files in closed sandboxes - a local machine or an isolated e2e environment exercised with synthetic accounts and test credentials - so no real user data or production secrets end up in the recording.
 If you do record traffic that touches real credentials, treat the HAR file like a secret: keep it out of version control, redact it before sharing, and delete it when you're done.
 {% /admonition %}
 
 ## Put it in your test pipeline
 
 Here is the setup we like most: you probably already have e2e or integration tests that exercise your API.
-That traffic is a free, realistic sample of how your API actually behaves — you're just letting it evaporate after every run.
+That traffic is a free, realistic sample of how your API actually behaves - you're just letting it evaporate after every run.
 
 Instead, start `proxy` before the test run, route the tests through it, and stop it when they finish:
 
@@ -131,23 +131,23 @@ Findings come from built-in rules that you can select with the `--rules` flag:
 - `schema-consistency` validates parameters, headers, and request/response bodies against your schemas.
 - `security-baseline` checks that requests actually satisfy the security requirements your description declares, and flags things like credentials sent over plain HTTP.
   Loopback hosts such as `localhost` and `127.0.0.1` are exempt from the transport check, so sandboxed recordings against a local target stay warning-free.
-- `owasp-api-top10` scans recorded traffic with heuristics based on the OWASP API Security Top 10 — enable it with `--rules owasp-api-top10`. It looks for credential-like query parameters, insecure CORS (wildcard origin with credentials enabled), weak cookie attributes, sensitive-looking fields in response payloads, and large unpaginated responses.
+- `owasp-api-top10` scans recorded traffic with heuristics based on the OWASP API Security Top 10 - enable it with `--rules owasp-api-top10`. It looks for credential-like query parameters, insecure CORS (wildcard origin with credentials enabled), weak cookie attributes, sensitive-looking fields in response payloads, and large unpaginated responses.
 
 One caveat before you wire `owasp-api-top10` into a CI gate: it inspects each exchange in isolation.
 It has no notion of user identity or ownership across requests, so it cannot detect authorization logic flaws like Broken Object Level Authorization.
-Treat it as an extra pair of eyes on traffic you already have — not as a replacement for security testing.
+Treat it as an extra pair of eyes on traffic you already have - not as a replacement for security testing.
 
 Reports come out as human-readable text, JSON, CSV, or SARIF, so the same run can feed a terminal, a dashboard, or a code-scanning integration.
 
 {% admonition type="warning" name="Experimental" %}
 Both commands are experimental.
-Flags, output formats, and behavior may change — including breaking changes — in upcoming releases while we shape them with your feedback.
+Flags, output formats, and behavior may change - including breaking changes - in upcoming releases while we shape them with your feedback.
 {% /admonition %}
 
 ## Get started
 
 The `proxy` and `drift` commands are available now in the latest [Redocly CLI](https://redocly.com/docs/cli).
-Check out the [drift](https://redocly.com/docs/cli/commands/drift) and [proxy](https://redocly.com/docs/cli/commands/proxy) command references, run them against your own traffic, and tell us what you find — feedback and ideas are welcome on the [Redocly CLI GitHub repository](https://github.com/Redocly/redocly-cli/issues).
+Check out the [drift](https://redocly.com/docs/cli/commands/drift) and [proxy](https://redocly.com/docs/cli/commands/proxy) command references, run them against your own traffic, and tell us what you find - feedback and ideas are welcome on the [Redocly CLI GitHub repository](https://github.com/Redocly/redocly-cli/issues).
 
 Your API and its description should tell the same story.
 Now you can check.
