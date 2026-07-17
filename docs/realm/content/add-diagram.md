@@ -211,6 +211,36 @@ flowchart LR
 - `width` accepts any CSS width value, such as `480px`, `40rem`, `75%`, or `100%`.
 - When you set `width`, the SVG scales proportionally and its height adjusts automatically.
 
+## Side-by-side layouts
+
+To place diagrams next to each other, use the `cards` tag with `columns=2` and `variant="ghost"`.
+This layout is useful for comparing diagrams or presenting related concepts together.
+The `ghost` variant removes the standard card borders and padding, which allows the diagrams to blend into the page.
+
+Add two diagrams side-by-side by wrapping each in a `card` tag:
+
+````markdoc {% process=false %}
+{% cards columns=2 variant="ghost" %}
+  {% card %}
+    ```mermaid
+    graph TD;
+      A --> B;
+      A --> C;
+    ```
+  {% /card %}
+
+  {% card %}
+    ```mermaid
+    graph LR;
+      A --> B;
+      B --> C;
+    ```
+  {% /card %}
+{% /cards %}
+````
+
+Using the `ghost` variant ensures that diagrams appear directly on the page background without the visual weight of standard card borders.
+
 ## AsciiDoc
 
 Diagrams are also supported in AsciiDoc (`.adoc`) files with the [AsciiDoc plugin](./asciidoc.md).
