@@ -49020,6 +49020,26 @@ reunite:
         - Added a `Paid seat` filter to the organization People page to show only users occupying paid seats.
       patch: []
     dependencies: {}
+  v2026-07-17.2:
+    timestamp: 1784273285000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed SSO login failures caused by expired login challenges. The login flow restarts automatically and returns users to their original
+          destination.
+        - Fixed security vulnerability `CVE-2026-12151` affecting service security.
+        - >-
+          Fixed built-in teams such as `redocly.members`, `redocly.owners`, and `redocly.viewers` not being recognized in project RBAC. Access rules
+          referencing these teams now grant access based on organization roles without additional configuration.
+        - >-
+          Added an SSO login helper to the support dashboard that converts portal or MCP OAuth URLs into Redocly login links for support to access
+          SSO-only portals using their Redocly accounts.
+        - Improved consistency and reliability of modals, breadcrumbs, dropdowns, and copy-to-clipboard controls.
+        - >-
+          Fixed misleading date labels on the project analytics "Views and Users" chart. Points that group a whole month or week used to show just one
+          day (like "05/01"). They now show "May 2026" for a month or "May 25" for a week, so the label matches the period it covers.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
