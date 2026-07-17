@@ -14,7 +14,7 @@ description: Set the visibility of the user menu in your project.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Set the visibility of the user menu in your project.
 The user menu is displayed in the far right side of the navbar.
 Users can click the user avatar and a dropdown menu displays with the avatar, the user's email address, links to pages you can configure, and a log out option.
 
@@ -24,7 +24,7 @@ Users can click the user avatar and a dropdown menu displays with the avatar, th
   withLightbox=true
 /%}
 
-{% admonition type="info" %}
+{% admonition type="info" name="Required configuration" %}
 
 You must also have `sso` and either `rbac` or `requiresLogin` configured for the userMenu to display.
 

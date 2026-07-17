@@ -31,7 +31,7 @@ You can access previews on the Deployments page, Editor, or Pull requests page i
 
 If you use an external Git provider for your repository or remote content, after the build is finished, you can access the build status, preview URL, and visual review in the Git provider.
 
-{% admonition type="info" %}
+{% admonition type="info" name="Preview deployments availability" %}
 Preview deployments are available for all unmerged development branches with open PRs in Reunite or a connected Git provider.
 
 While you can view information of deployments or merged pull requests that had their branches deleted, you won't be able to access or generate their previews.

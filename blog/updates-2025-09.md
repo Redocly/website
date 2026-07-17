@@ -40,7 +40,7 @@ We've added basic support for the latest OpenAPI specification:
 
 More to come...
 
-## OpenAPI reuse 
+## OpenAPI reuse
 
 We've added a way to share components such as schemas in a convenient way to encourage reuse:
 - **Schema catalog links**: New `openapi.showSchemaCatalogLinks` configuration option displays links to schemas and requests that can be used as `$ref` values in other OpenAPI files within the same project.

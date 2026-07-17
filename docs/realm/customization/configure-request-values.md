@@ -19,7 +19,6 @@ This feature enables you to set default values for headers, query parameters, pa
 
 Make sure you have the following:
 
-- a `redocly.yaml` file located in the root directory of your project
 - a basic understanding of TypeScript
 - OpenAPI description files with examples
 
@@ -296,9 +295,7 @@ Security values update the corresponding security scheme configurations:
 Server variables update the corresponding server variable values in your OpenAPI description.
 These variables are used to resolve server URLs that contain placeholders like `{variableName}`.
 
-{% admonition type="info" %}
 The merging behavior ensures that configured values work within the constraints of your OpenAPI description while allowing dynamic updates.
-{% /admonition %}
 
 ## Example with merging
 

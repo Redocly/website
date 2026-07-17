@@ -14,7 +14,7 @@ description: Insert custom scripts in the head or body of a page.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Insert custom scripts in the head or body of a page.
 
 ## Options
 

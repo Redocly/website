@@ -12,7 +12,7 @@ You might want to handle different payload structures, alternative response form
 
 How do you know when to use `oneOf` and when schema redesign is needed?
 This article covers:
-- how to use `oneOf` and `anyOf` 
+- how to use `oneOf` and `anyOf`
 - why `oneOf` provides better predictability
 - valid use cases and schema design patterns
 - when `anyOf` might be unavoidable (and its trade-offs)

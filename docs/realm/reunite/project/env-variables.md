@@ -52,7 +52,7 @@ When hosting your project at Redocly, we will automatically set the proper `REDO
 - For production builds, the `REDOCLY_ENV` variable will be set to `"production"`
 - For previews, the `REDOCLY_ENV` variable will be set to `"preview"`
 
-{% admonition type="warning" %}
+{% admonition type="warning" name="Variable priority" %}
 When the same variable is defined both in Reunite (in the project **Settings** > **Environment variables** section) and in your base `.env` file, the value from Reunite is used.
 Environment-specific `.env` files (such as `.env.production`, `.env.preview`, `.env.development`) and branch-specific `.env.branch.<branch-name>` files still take precedence over both.
 {% /admonition %}
@@ -68,7 +68,7 @@ You can also add environment variables individually through the Redocly interfac
 
 ## Usage
 
-{% admonition type="warning" %}
+{% admonition type="warning" name="Protect sensitive information" %}
 Do not use environment variables with sensitive information like passwords or API keys on the pages because all users of the project can see them.
 {% /admonition %}
 
@@ -81,10 +81,7 @@ To use environment variables in [API functions](../../customization/api-function
 
 ### `redocly.yaml`
 
-{% admonition type="warning" %}
 Environment variables in `redocly.yaml` only support string values.
-{% /admonition %}
-
 To use environment variables in `redocly.yaml`, use the curly brace syntax `{{ process.env.<env_var_name> }}`.
 
 For example:
@@ -116,7 +113,7 @@ navbar:
       label: "{{ process.env.CONFIG_LABEL | 'Config' }}"
 ```
 
-{% admonition type="warning" %}
+{% admonition type="warning" name="Default values" %}
 The default value is applied only when the environment variable is not set.
 If the variable is set to an empty string, the empty string is used.
 When a default value is applied, the variable is not reported as unset.
@@ -146,9 +143,9 @@ export default function () {
   );
 ```
 
-{% admonition type="info" %}
+{% admonition type="info" name="Environment variables are always strings" %}
 Environment variables always have `String` type.
-`PUBLIC_IS_PRODUCTION` and `PUBLIC_BUILD_NUMBER` from example above will become `"true"` and `"50"` when used in React components.
+`PUBLIC_IS_PRODUCTION` and `PUBLIC_BUILD_NUMBER` from the preceding example above will become `"true"` and `"50"` when used in React components.
 To get them in desired type, you'll have to do manual conversion.
 {% /admonition %}
 

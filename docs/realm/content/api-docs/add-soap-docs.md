@@ -29,7 +29,6 @@ To be recognized, the specification files must have a `.wsdl` extension.
 
 Make sure you have the following:
 
-- a `redocly.yaml` file in the root of your project
 - a `package.json` file in the root of your project
 - the Redocly package for the product you use (such as `@redocly/realm`) listed as a dependency in the `package.json` file
 

@@ -31,7 +31,7 @@ Teams can be managed in two different ways depending on your authentication setu
 - Team membership is controlled through the [Reunite Teams page](#manage-teams)
 - Full control over team composition, managers, and team names within Reunite
 
-{% admonition type="info" %}
+{% admonition type="info" name="Use team names from RBAC" %}
 
 Team names used in the [team mapping single sign-on settings](./sso/add-idp.md#team-mapping) or added in Reunite **must** match the names listed in the `rbac` configuration in your `redocly.yaml` file for the permissions to be granted.
 
@@ -62,7 +62,7 @@ rbac:
        authenticated: read
 ```
 
-{% admonition type="warning" %}
+{% admonition type="warning" name="Reserved team names" %}
 The `authenticated` and `anonymous` names are reserved team names.
 If you define a team with the same name in the `redocly.yaml` file, it won't work as expected.
 {% /admonition %}
@@ -133,7 +133,7 @@ If you are logged in to Reunite and have an [Owner organization role](../../acce
 - Rename a team
 - Delete a team from your organization
 
-{% admonition type="warning" %}
+{% admonition type="warning" name="Imported teams are read-only" %}
 **Identity provider managed teams cannot be edited** through the Teams page.
 If a team is imported from your identity provider, you must make changes to team membership and composition in your identity provider system (e.g., Active Directory, Okta, etc.).
 {% /admonition %}

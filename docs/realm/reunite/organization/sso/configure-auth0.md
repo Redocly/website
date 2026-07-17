@@ -14,8 +14,8 @@ plans:
 
 Follow this guide to configure an SSO integration between Auth0 OpenID Connect protocol and Reunite.
 
-{% admonition type="warning" %}
-**Important:** Before completing the Reunite setup, ensure you preserve the Owner organization role (see "Preserve the Owner organization role" section) to avoid getting locked out of your organization.
+{% admonition type="warning" name="Avoid lockout" %}
+Before completing the Reunite setup, ensure you [preserve the Owner organization role](#preserve-the-owner-organization-role) to avoid getting locked out of your organization.
 {% /admonition %}
 
 ## Add Auth0 as a corporate identity provider in Reunite
@@ -46,16 +46,16 @@ Follow this guide to configure an SSO integration between Auth0 OpenID Connect p
 
 ## Preserve the Owner organization role
 
-{% admonition type="danger" %}
-**Critical step:** Complete this step before clicking **Save** in Reunite to prevent getting locked out of your organization.
+{% admonition type="danger" name="Critical step" %}
+Complete this step before clicking **Save** in Reunite to prevent getting locked out of your organization.
 {% /admonition %}
 
 To prevent Auth0 from changing users' roles to the default organization role specified in the SSO settings:
 
 1. In Auth0, navigate to **User Management** > **Roles**.
-1. Create a role named `redocly.owners`.
-1. Navigate to **Users** > **Roles** and assign the `redocly.owners` role to users with an Owner role in your organization.
-1. Return to Reunite and click **Save** to complete the identity provider setup.
+2. Create a role named `redocly.owners`.
+3. Navigate to **Users** > **Roles** and assign the `redocly.owners` role to users with an Owner role in your organization.
+4. Return to Reunite and click **Save** to complete the identity provider setup.
 
 ## Setup an Action for your application
 

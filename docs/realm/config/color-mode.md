@@ -14,8 +14,7 @@ description: Configure the behavior of the color mode UI control and add more co
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
-
+Configure the behavior of the color mode UI control and add more color modes.
 The default theme (`@redocly/theme`) includes two color modes: light mode and dark mode.
 Color modes can be set to a default value, or with the user's operating system preference.
 

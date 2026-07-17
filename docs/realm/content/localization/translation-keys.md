@@ -570,6 +570,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- page.actions.connectMcp.moreOptions
+- More options button aria-label in Connect MCP dropdown
+- More options
+
+---
+
 - page.lastUpdated.timeago
 - Page last updated (when referring to a period of time, e.g. 10min)
 - Last updated

@@ -47,7 +47,7 @@ The final `else /%` branch acts as the default fallback.
   ```
 {% /markdoc-example %}
 
-{% admonition type="warning" %}
+{% admonition type="warning" name="Values in Markdoc" %}
 
 Markdoc treats only `undefined`, `null`, and `false` as falsey.
 Values like `0`, empty strings, and empty arrays are treated as truthy.

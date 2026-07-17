@@ -23,16 +23,16 @@ Follow along and simplify your Redocly access with Okta!
 
 ## Preserve the Owner organization role
 
-{% admonition type="danger" %}
-**Critical step:** Complete this step before clicking **Save** in Reunite to prevent getting locked out of your organization.
+{% admonition type="danger" name="Critical step" %}
+Complete this step before clicking **Save** in Reunite to prevent getting locked out of your organization.
 {% /admonition %}
 
 To prevent Okta from changing users' roles to the default organization role specified in the SSO settings:
 
 1. In Okta, navigate to **Directory** > **Groups**.
-1. Create a group named `redocly.owners`.
-1. Navigate to **Directory** > **People** and assign users with an Owner role in your organization to the `redocly.owners` group.
-1. Return to Reunite and click **Save** to complete the identity provider setup.
+2. Create a group named `redocly.owners`.
+3. Navigate to **Directory** > **People** and assign users with an Owner role in your organization to the `redocly.owners` group.
+4. Return to Reunite and click **Save** to complete the identity provider setup.
 
 ## Configure SSO in Redocly Reunite
 

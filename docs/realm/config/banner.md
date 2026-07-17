@@ -28,7 +28,7 @@ Banners support Markdown content, can be configured to appear on specific pages 
 
 Configure banners as an array of banner objects in your `redocly.yaml` file or in page front matter.
 
-{% admonition type="info" %}
+{% admonition type="info" name="Update ejected banner" %}
 If you ejected the `navbar` component before version `0.128.0`, [update it](../customization/eject-components/eject-components-in-reunite.md#update-ejected-component) to have the component's full functionality.
 {% /admonition %}
 

@@ -14,7 +14,7 @@ description: Configure which control UI elements are available for code snippets
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Configure which control UI elements are available for code snippets.
 Code snippets are small sections of code you can include in your Markdown and OpenAPI documents.
 In Markdown code snippets are formatted by wrapping the text in two sets of three backticks, placed at the start and end of the text block.
 

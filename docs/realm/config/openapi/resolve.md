@@ -16,14 +16,10 @@ description: Configure how to resolve URLs referenced from API descriptions.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-## Introduction
-
 The `resolve` configuration provides options for handling URLs in API descriptions.
 If an URL is not publicly accessible, use these configuration settings to add the needed details to gain access.
 
-{% admonition type="info" %}
 One HTTP header is supported for each URL resolved.
-{% /admonition %}
 
 {% admonition type="info" %}
 {% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "resolve"} /%}

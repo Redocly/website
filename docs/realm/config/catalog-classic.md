@@ -14,7 +14,8 @@ description: |-
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Organize your content into a catalog that users can filter and search.
+You can configure multiple catalogs and set the link text, description, and filters.
 
 {% img
   src="../content/images/catalog.png"
@@ -253,9 +254,9 @@ Instead, it navigates to whatever appears first in your sidebar configuration, s
 
 To ensure users reach specific content when clicking catalog items, organize your `sidebars.yaml` files so the most important content appears first, or create dedicated landing pages that introduce each API.
 
-{% admonition type="info" %}
+{% admonition type="info" name="Setup access to catalog" %}
 
-If you want to only show the catalog to users that are members of particular teams, configure
+If you want to display the catalog only to users that are members of particular teams, configure
 the `rbac` object in the `redocly.yaml` configuration file as follows:
 
 ```yaml
