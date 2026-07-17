@@ -109,6 +109,8 @@ After reviewing the pull request, click the **Review** button, add your final th
 
 Format your review comment using the toolbar options, then click **Submit review**.
 
+PR approval requirements (such as the minimum number of required approvals) must be configured in your Git provider's settings (for example, GitHub branch protection rules), as they cannot be managed directly in the `redocly.yaml` file.
+
 After the review is submitted, if your project uses a [connected Git provider](../../project/connect-git/connect-git-provider.md) (GitHub, GitLab, Azure DevOps, or Bitbucket), you will see a **Visual review** check on it.
 
 The check links back to the **Visual review** tab in Reunite and displays a short status (for example, **Pending**, **Approved**, **Changes requested**, or **No changes**).
@@ -147,6 +149,7 @@ Click **Merge without requirements** only for urgent changes when you're certain
   src="../../images/reunite-pull-request-merge-without-requirements.png" alt="Screenshot of pull request in Reunite with arrow pointing to the Merge without requirements option" withLightbox=true width="" height=""
 /%}
 
+The **Merge without requirements** button visibility is not currently customizable and cannot be hidden or disabled via configuration.
 {% /admonition %}
 
 After merging, the updates appear in the main branch and trigger a deployment to publish changes to the production project.

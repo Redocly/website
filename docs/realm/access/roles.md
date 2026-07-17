@@ -191,6 +191,13 @@ Users with the Owner organization role have full access to all projects.
 Access granted to organization Members is based on project-level roles.
 Members without an explicit project role have the `admin` role by default.
 
+This default `admin` role allows organization members to use the **Merge without requirements** button, bypassing intended restrictions.
+To restrict access for organization members, you must configure explicit RBAC rules in `redocly.yaml`, which take precedence over default permissions.
+
+For example, defining `authenticated: read` in your `rbac` configuration restricts all organization members (who usually default to `admin`) to read-only access.
+This also restricts their ability to use the **Merge without requirements** button.
+When using a restrictive global `authenticated` rule, you must explicitly assign higher access levels to specific teams (for example, `Admins: admin`) to maintain their write or admin permissions.
+
 The following is a list of available project roles:
 
 - `none`: grants no access permissions
