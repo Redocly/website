@@ -26,13 +26,14 @@ The `corsProxyUrl` option controls which proxy Replay uses for cross-origin requ
 ---
 
 - corsProxyUrl
-- string
+- string | null
 - Optional.
   By default, Realm uses its internal proxy endpoint (`/_api/cors/`).
   Set this option to override the proxy URL (for example, to use your own external proxy service).
 
-  You can set it to empty string to disable the proxy to send requests directly from user browser to the target API.
+  Set this option to `null` to disable the proxy and send requests directly from the user's browser to the target API.
   This requires the target API to have CORS enabled.
+  Setting it to an empty string (`""`) may cause a fallback to the default Redocly proxy.
 
 
 {% /table %}
@@ -68,11 +69,11 @@ openapi:
 
 ### Disable CORS proxy
 
-Add an empty string to disable the built-in CORS proxy:
+Set the value to `null` to disable the built-in CORS proxy:
 
 ```yaml {% title="redocly.yaml" %}
 openapi:
-  corsProxyUrl: ""
+  corsProxyUrl: null
 ```
 
 ## Resources
