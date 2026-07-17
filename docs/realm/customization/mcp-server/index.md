@@ -16,6 +16,10 @@ With MCP servers, AI assistants can retrieve additional information relevant to 
 
 Realm provides built-in MCP server capabilities that expose your API Docs to AI assistants.
 
+{% admonition type="info" %}
+MCP server support requires Realm version 0.135.0 or later.
+{% /admonition %}
+
 ## Benefits
 
 - **Real-time API guidance** — users receive accurate, contextual help about API endpoints and operations.

@@ -17,6 +17,10 @@ description: Make your content accessible to AI tools.
 Redocly automatically generates Model Context Protocol (MCP) servers from your documentation and OpenAPI descriptions.
 MCP servers make your content accessible to AI tools in the MCP ecosystem (such as ChatGPT, Claude, Cursor, Goose).
 
+{% admonition type="info" %}
+MCP server support requires Realm version 0.135.0 or later.
+{% /admonition %}
+
 ## Options
 
 {% table %}
