@@ -1,5 +1,8 @@
 node_modules
 public/
+# yalc local-dev link to @redocly/marketing-pages (see README "Local development")
+.yalc/
+yalc.lock
 .vscode
 .idea/
 .DS_Store

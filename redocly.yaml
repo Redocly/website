@@ -19,6 +19,7 @@ ignore:
   - 'learn/arazzo/_filesets/**'
   - '**/code-walkthrough-files/**'
   - docs/realm/.templates
+  - '.yalc/**'
 
 
 markdown:
