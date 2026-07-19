@@ -44,6 +44,16 @@ To connect a GitLab repository, you must first create a new access token in GitL
    **This step deletes the files currently in the Redocly project and replaces them with the files in GitLab.**
    {% /admonition %}
 
+## Integration features
+
+Once you connect your repository, Redocly automatically sends build and review status checks to your pull requests.
+From your Git provider's UI, you can:
+
+- See whether a build succeeded or failed.
+- Access preview links to view your changes before merging.
+
+For more details on how review statuses sync, see [Review a pull request in Reunite](../pull-request/review-pull-request.md).
+
 ## Resources
 
 - **[Include remote content](../remote-content/index.md)** - Integrate content from external GitLab repositories into your Reunite projects for streamlined documentation workflows
