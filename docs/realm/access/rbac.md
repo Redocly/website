@@ -68,6 +68,33 @@ A resource identifier may be any of the following:
 For every resource identifier, your RBAC configuration specifies a team and assigns a project role for that team, for example, `Developers: read`.
 Resource identifiers define the scope for the team and role combination.
 
+## Automated teams
+
+Redocly provides reserved, automated team names that are populated based on user authentication status or organization roles.
+You can use these teams in your RBAC configuration to apply rules to broad groups of users without managing team membership manually.
+
+- `anonymous`: Includes all unauthenticated users.
+- `authenticated`: Includes all users who have successfully logged in.
+- `redocly.owners`: Includes all users with the [Owner organization role](./roles.md#organization-roles) for the project.
+
+### Use `redocly.owners`
+
+The `redocly.owners` team is particularly useful for ensuring that project owners maintain full administrative access to a project.
+When global rules (such as `authenticated: read`) are applied, project owners may have their permissions restricted at the project level unless you explicitly grant them an administrative role using `redocly.owners`.
+
+The following example demonstrates how to use the `redocly.owners` team to grant `admin` access:
+
+```yaml
+rbac:
+  reunite:
+    redocly.owners: admin
+    authenticated: read
+  content:
+    '**':
+      redocly.owners: admin
+      authenticated: read
+```
+
 ## Example configuration
 
 The following is an example of a `rbac` configuration in a `redocly.yaml` file:

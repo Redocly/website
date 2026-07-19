@@ -95,8 +95,8 @@ For more details on draft mode behavior, see [draft projects](../../reunite/proj
 - _team name_
 - `none`, `read`, `write`, `triage`, `maintain`, or `admin`
 - Map of teams to project roles.
-  The team names come from a possible list of `anonymous` (meaning all users who are not logged in), `authenticated` (meaning any user who is logged in), and team names that come from the identity provider through the [single-sign-on (SSO) configuration](./sso.md).
-  In addition, the team name `*` represents the rest of the teams not defined in sibling properties including `anonymous` and `authenticated`.
+  The team names come from a possible list of `anonymous` (meaning all users who are not logged in), `authenticated` (meaning any user who is logged in), `redocly.owners` (meaning project owners), and team names that come from the identity provider through the [single-sign-on (SSO) configuration](./sso.md).
+  In addition, the team name `*` represents the rest of the teams not defined in sibling properties including `anonymous`, `authenticated`, and `redocly.owners`.
   Possible values for project roles are: `none`, `read`, `write`, `triage`, `maintain`, or `admin`.
   {% partial file="../../_partials/config/_supported-config.md" variables={"optionName": "rbac"} /%}
 
@@ -237,12 +237,13 @@ access:
 
 ### Project access
 
-In the following example, only the Developer team can create a branch, create a pull request, or create a deployment.
+In the following example, project owners and the Developer team are granted specific access levels.
 
 ```yaml {% title="redocly.yaml" %}
 access:
   rbac:
     reunite:
+      redocly.owners: admin
       Developer: write
 ```
 
@@ -255,6 +256,7 @@ access:
   rbac:
     # Project administration access
     reunite:
+      redocly.owners: admin
       Developers: write
       Writers: read
       Admin: admin
@@ -263,6 +265,7 @@ access:
     content:
     # Default permissions for all files
     '**':
+      redocly.owners: admin
       Developers: maintain
       Writers: write
       authenticated: read
