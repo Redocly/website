@@ -84,7 +84,6 @@ Set these attributes on the `<redocly-ai-assistant>` element.
 - string
 - URL of the `_ask-ai` endpoint the assistant sends questions to.
   Required.
-
 ---
 
 - welcome-message
@@ -98,6 +97,15 @@ Set these attributes on the `<redocly-ai-assistant>` element.
 - boolean
 - Hides the built-in floating **Ask AI** button so you can open the assistant from your own UI.
   Default: `false`.
+
+---
+
+- locale
+- string
+- Locale the assistant uses for documentation search.
+  Must match the locale with which your content is indexed.
+  See [Scope answers to a locale](#scope-answers-to-a-locale).
+  Default: `default_locale`.
 
 ---
 
@@ -128,6 +136,89 @@ window.addEventListener('redocly-assistant:change', (event) => {
 });
 ```
 
+## Configure the assistant with JavaScript
+
+Use `window.RedoclyAssistant.setConfig()` to set or change the config dynamically.
+You can use it instead of the matching HTML attributes or alongside them:
+
+```js
+window.RedoclyAssistant.setConfig({
+  apiUrl: 'https://your-project.com/_ask-ai', // Can be set here instead of the api-url attribute
+  locale: 'fr',
+});
+```
+
+`setConfig()` merges into the config derived from HTML attributes.
+Values passed here take priority over the matching attribute, and any attribute not overridden still applies.
+It's safe to call `setConfig()` before the `<redocly-ai-assistant>` element is added to the page.
+Every current and future instance on the page picks up the merged config.
+
+Because `setConfig()` can supply `api-url` itself, the `api-url` attribute becomes optional when you configure the assistant this way.
+The assistant only stays hidden (with a console warning) if neither the attribute nor `setConfig()` provides it.
+When a later `setConfig()` call supplies `apiUrl`, the assistant appears — already open if the element has the `open` attribute.
+
+`setConfig()` accepts `apiUrl`, `locale`, and `welcomeMessage` — the same settings the `api-url`, `locale`, and `welcome-message` attributes cover.
+Other attributes, such as `trigger-hide`, can't be set this way, but the component re-reads all attributes whenever `setConfig()` runs.
+An attribute you change on the element applies together with the next `setConfig()` call.
+
+## Scope answers to a locale
+
+The assistant sends `locale` with every question, and the search returns only documents indexed with that exact locale value.
+The value to send depends on how your project's content is organized:
+
+{% table %}
+
+- Project content
+- Locale value to send
+
+---
+
+- No localization configured
+- Omit `locale` to search all documents, or keep the default `default_locale` — all documents are indexed with that value.
+
+---
+
+- Default-language content in a localized project
+- The `defaultLocale` value from your project's [`l10n` configuration](../config/l10n.md), for example `en`.
+
+---
+
+- Translated content
+- The locale folder name inside `@l10n`, for example `es-ES` for content in `@l10n/es-ES/`.
+
+{% /table %}
+
+The match is an exact string comparison with no fallback: sending `es` when the content lives in `@l10n/es-ES/` returns no documents, and the assistant answers without documentation context instead of reporting an error.
+When the assistant finds nothing for a language that has translated content, verify the value matches the folder name exactly.
+
+### Add a language switcher
+
+Use a single `setConfig()` call to switch the assistant's language and greeting from the host page:
+
+```html
+<select id="language-select">
+  <option value="en" selected>English</option>
+  <option value="es-ES">Español</option>
+</select>
+
+<script>
+  const welcomeMessages = {
+    en: 'Hi! Ask me anything about our APIs.',
+    'es-ES': '¡Hola! Pregúntame sobre nuestras APIs.',
+  };
+
+  document.getElementById('language-select').addEventListener('change', (event) => {
+    const locale = event.target.value;
+    window.RedoclyAssistant.setConfig({
+      locale,
+      welcomeMessage: welcomeMessages[locale],
+    });
+  });
+</script>
+```
+
+In this example, `en` is the project's `defaultLocale` and Spanish content lives in `@l10n/es-ES/`, so both values match the indexed documents.
+
 ## Customize the appearance
 
 Theme values are CSS custom properties defined on the component's `:host`.
@@ -156,3 +247,5 @@ To replace it, set both variables.
 
 - **[Environment variables](../reunite/project/env-variables.md#manage-environment-variables)** - Learn how to define and manage environment variables for your project, including `REDOCLY_CORS_ORIGINS`
 - **[`aiAssistant`](../config/ai-assistant.md)** - Configure the AI assistant and AI search built into your Redocly project
+- **[`l10n`](../config/l10n.md)** - Configure localization for your project, including the `defaultLocale` the assistant's locale must match
+- **[Localize content](../content/localization/localize-content.md)** - Organize translated content in `@l10n` folders whose names double as the assistant's locale values
