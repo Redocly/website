@@ -118,9 +118,11 @@ If you use Redocly-hosted Git, you can download your project files at any time.
 To download your project files:
 
 1. In your project's workspace, select **Settings** > **Git hosting**.
-1. Click the **Download ZIP** button.
+2. (Optional) Select a branch in the branch selector next to the **Download ZIP** button.
+   The default branch is selected initially; type a branch name to filter the list.
+3. Click the **Download ZIP** button.
 
-The `.zip` file with all files from your project downloads to your machine.
+The `.zip` file with all files from the selected branch downloads to your machine.
 
 ### Connect your project repository
 
