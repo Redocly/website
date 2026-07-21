@@ -55,7 +55,7 @@ flowchart TD
     proxy -.->|"records"| har["test-traffic.har"]
     har --> drift["redocly drift"]
     openapi["openapi.yaml"] --> drift
-    drift -->|"produces"| report["✨ Drift report"]
+    drift -->|"produces"| report["✨ Drift report&nbsp;&nbsp;"]
 ```
 
 In a script, the whole setup fits in a few lines:
