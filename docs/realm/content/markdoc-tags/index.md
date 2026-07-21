@@ -42,6 +42,7 @@ The following Markdoc tags are custom-made by Redocly:
 - [JSON schema](./json-schema.md): Render schemas inside a pre-styled element.
 - [JSON Example](./json-example.md): Render JSON examples directly in your documentation pages.
 - [Markdoc Example](./markdoc-example.md): Add examples of Markdoc syntax alongside the rendered element.
+- [Numbered list](./numbered-list.md): Present step-by-step instructions and timelines as a vertical list with numbered, icon, or dot markers.
 - [OpenAPI code sample](./openapi-code-sample.md): Render sample code snippets directly in your documentation pages.
 - [OpenAPI response sample](./openapi-response-sample.md): Render response examples directly in your documentation.
 - [Replay OpenAPI](./replay-openapi.md): Add the Replay consoe to make API calls directly from a documentation page.
