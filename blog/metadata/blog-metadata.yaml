@@ -55,6 +55,10 @@ authors:
     name: Vitalii Skulskyi
     authorBIO: Software Engineer, Redocly
     image: skulskyi.jpg
+  - id: adam-sobaniec
+    name: Adam Sobaniec
+    authorBIO: Software Engineer, Redocly
+    image: sobaniec.png
 categories:
   - id: api-catalog
     label: API catalog

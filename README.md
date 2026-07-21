@@ -26,6 +26,8 @@ npm start
 - `npm start` - Start the development server using Redocly CLI preview
 - `npm run lint:markdown` - Lint markdown files
 - `npm run lint:markdown:fix` - Fix markdown linting issues
+- `npm run link-marketing-pages` - Link a local build of `@redocly/marketing-pages` via yalc
+- `npm run unlink-marketing-pages` - Remove the yalc link and restore the registry version
 
 ## Project Structure
 
