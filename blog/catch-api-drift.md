@@ -50,12 +50,12 @@ The proxy sits between your tests and the API: requests and responses pass throu
 
 ```mermaid {% align="center" %}
 flowchart TD
-    tests["E2E / integration tests"] -->|"http://localhost:4040"| proxy["redocly proxy"]
-    proxy -->|"http://localhost:9000"| target["Target API"]
+    tests["E2E / integration tests"] -->|"connects to http://localhost:4040"| proxy["redocly proxy"]
+    proxy -->|"proxies to http://localhost:9000"| target["Your API"]
     proxy -.->|"records"| har["test-traffic.har"]
     har --> drift["redocly drift"]
     openapi["openapi.yaml"] --> drift
-    drift --> report["Drift report"]
+    drift -->|"produces"| report["✨ Drift report"]
 ```
 
 In a script, the whole setup fits in a few lines:
