@@ -48,7 +48,7 @@ That traffic is a free, realistic sample of how your API actually behaves - you'
 Instead, start `proxy` before the test run, route the tests through it, and stop it when they finish.
 The proxy sits between your tests and the API: requests and responses pass through it unchanged, and every exchange is captured on the way.
 
-```mermaid
+```mermaid {% align="center" %}
 flowchart TD
     tests["E2E / integration tests"] -->|"http://localhost:4040"| proxy["redocly proxy"]
     proxy -->|"http://localhost:9000"| target["Target API"]
