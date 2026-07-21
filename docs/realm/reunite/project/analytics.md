@@ -78,20 +78,17 @@ On this page you can:
 - export the data from the selected period to a CSV file
 - search in pages, paths or domains
 
-## Search
+## AI Assistant
 
-The **Search** section displays:
-- time series chart with AI searches and unique users
-- time series chart with manual searches and unique users
-- table with the top search queries
+The **AI Assistant** section displays a time series chart with AI Assistant searches and unique users.
 
-### AI Searches and Users
+### AI Assistant Searches and Users
 
-The **AI Searches and Users** section displays a time series of AI-powered searches in the selected period.
+The **AI Assistant Searches and Users** section displays a time series of AI-powered searches in the selected period.
 
-Click the **View details** button to open **AI Search queries**.
+Click the **View details** button to open **AI Assistant queries**.
 
-The **AI Search queries** page displays granular data on the use of AI-powered search.
+The **AI Assistant queries** page displays granular data on the use of AI-powered search.
 Expand each query to see the full question, AI-provided answer, and corresponding sources.
 
 On this page you can:
@@ -101,6 +98,12 @@ On this page you can:
 - view the counts for liked and disliked answers
 - filter the results by feedback
 - search query text
+
+## Search
+
+The **Search** section displays:
+- table with the top search queries
+- time series chart with searches and unique users
 
 ### Top 5 search queries
 
