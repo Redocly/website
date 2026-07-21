@@ -45,7 +45,20 @@ If you do record traffic that touches real credentials, treat the HAR file like 
 Here is the setup we like most: you probably already have e2e or integration tests that exercise your API.
 That traffic is a free, realistic sample of how your API actually behaves - you're just letting it evaporate after every run.
 
-Instead, start `proxy` before the test run, route the tests through it, and stop it when they finish:
+Instead, start `proxy` before the test run, route the tests through it, and stop it when they finish.
+The proxy sits between your tests and the API: requests and responses pass through it unchanged, and every exchange is captured on the way.
+
+```mermaid
+flowchart LR
+    tests["E2E / integration tests"] -->|"http://localhost:4040"| proxy["redocly proxy"]
+    proxy -->|"http://localhost:9000"| target["Target API"]
+    proxy -.->|"records"| har["test-traffic.har"]
+    har --> drift["redocly drift"]
+    openapi["openapi.yaml"] --> drift
+    drift --> report["Drift report"]
+```
+
+In a script, the whole setup fits in a few lines:
 
 ```bash
 redocly proxy --target http://localhost:9000 --har ./test-traffic.har &
@@ -135,7 +148,6 @@ Findings come from built-in rules that you can select with the `--rules` flag:
 
 One caveat before you wire `owasp-api-top10` into a CI gate: it inspects each exchange in isolation.
 It has no notion of user identity or ownership across requests, so it cannot detect authorization logic flaws like Broken Object Level Authorization.
-Treat it as an extra pair of eyes on traffic you already have - not as a replacement for security testing.
 
 Reports come out as human-readable text, JSON, CSV, or SARIF, so the same run can feed a terminal, a dashboard, or a code-scanning integration.
 
