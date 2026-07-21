@@ -49456,3 +49456,12 @@ replay:
         - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.34.0`.
     dependencies:
       '@redocly/theme': 0.67.0
+  0.23.0:
+    timestamp: 1784585932000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where example values with line breaks or tabs corrupted the request URL.
+        - Improved diff display in the AI tool approval panel.
+    dependencies:
+      '@redocly/theme': 0.67.0
