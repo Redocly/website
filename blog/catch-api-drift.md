@@ -49,7 +49,7 @@ Instead, start `proxy` before the test run, route the tests through it, and stop
 The proxy sits between your tests and the API: requests and responses pass through it unchanged, and every exchange is captured on the way.
 
 ```mermaid
-flowchart LR
+flowchart TD
     tests["E2E / integration tests"] -->|"http://localhost:4040"| proxy["redocly proxy"]
     proxy -->|"http://localhost:9000"| target["Target API"]
     proxy -.->|"records"| har["test-traffic.har"]
