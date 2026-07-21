@@ -49134,19 +49134,6 @@ reunite:
           Fixed misleading date labels on the project analytics "Views and Users" chart. Points that group a whole month or week used to show just one
           day (like "05/01"). They now show "May 2026" for a month or "May 25" for a week, so the label matches the period it covers.
     dependencies: {}
-  v2026-07-21.3:
-    timestamp: 1784621238000
-    changes:
-      minor: []
-      patch:
-        - Fixed `creator` filter in pull request list to show user names instead of their IDs.
-        - Preserved the original login destination when the SSO login flow restarts and the stale login challenge can no longer be refreshed.
-        - >-
-          Fixed the search input on the Feedback page losing focus while typing, so you can filter feedback without repeatedly clicking the search
-          box.
-        - Centered `Delete organization` and `Delete project` confirmation modals vertically for improved alignment.
-        - Fixed identity providers' names and slugs rendering vertically on the SSO and login page when space was limited.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
