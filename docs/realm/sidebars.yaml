@@ -430,6 +430,8 @@
       label: Configure request values
     - page: customization/configure-dynamic-replay-values.md
       label: Configure Replay with dynamic API data
+    - page: customization/customize-replay-auth.md
+      label: Customize the Replay auth gate
 
     - separator: API integration
     - group: API functions
