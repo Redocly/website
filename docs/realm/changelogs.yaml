@@ -49268,6 +49268,16 @@ reunite:
         - Centered `Delete organization` and `Delete project` confirmation modals vertically for improved alignment.
         - Fixed identity providers' names and slugs rendering vertically on the SSO and login page when space was limited.
     dependencies: {}
+  v2026-07-22.1:
+    timestamp: 1784700448000
+    changes:
+      minor:
+        - Added the ability to download Redocly-hosted projects for a specific branch.
+      patch:
+        - Added draft pull request support for the Bitbucket Cloud git provider.
+        - Fixed pull request statuses and checks not updating after new commits. Restored filtering on the project custom domains endpoint.
+        - Moved the sidebar collapse toggle to the sidebar’s bottom menu and fixed icon alignment and spacing in the menu.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
