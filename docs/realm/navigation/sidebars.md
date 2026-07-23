@@ -470,6 +470,13 @@ Use `badges` to add visual indicators to sidebar items:
       badges:
         - name: Deprecated
           color: var(--color-warning-base)
+- group: Premium guides
+  badges:
+    - name: Pro
+      color: purple
+  items:
+    - page: guides/pro-tips.md
+    - page: guides/advanced-setup.md
 ```
 
 ## Resources
