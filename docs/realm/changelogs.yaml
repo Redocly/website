@@ -49472,7 +49472,6 @@ reunite:
     changes:
       minor: []
       patch:
-        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.40.0`.
         - Fixed autonomous agent jobs failing to load configured source code repositories.
     dependencies: {}
 replay:
