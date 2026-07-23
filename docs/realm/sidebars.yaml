@@ -221,8 +221,6 @@
           label: JSON example
         - page: content/markdoc-tags/markdoc-example.md
           label: Markdoc example
-        - page: content/markdoc-tags/numbered-list.md
-          label: Numbered list
         - page: content/markdoc-tags/openapi-code-sample.md
           label: OpenAPI code sample
         - page: content/markdoc-tags/openapi-response-sample.md

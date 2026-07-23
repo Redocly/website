@@ -29,6 +29,20 @@ Project access is determined by the permissions of the [teams](./teams.md) users
 See [Configure RBAC](../../access/index.md) for more information.
 By default, users with the Owner or Member organization role can access all projects from the organization **Overview** page, unless restricted by RBAC.
 
+## Seats quota notifications
+
+When your organization approaches its seats limit (90% of available seats used), all organization owners receive a warning email and see a dismissible warning banner in the app.
+
+{% admonition type="warning" name="Exceeding the seats quota blocks project builds" %}
+When the seats quota is exceeded, **project builds are blocked** until usage returns within the limit.
+All organization owners receive an alert email, and everyone in the organization sees an alert banner.
+{% /admonition %}
+
+Each email is sent once per occurrence - there are no repeated reminders and no follow-up email when usage recovers.
+A seat is any organization member with the Owner or Member role, plus any committer active within the last 30 days who isn't linked to one of those accounts.
+Linking a committer's duplicate account to their member account (see [Link duplicate users](#link-duplicate-users) below) merges them into a single seat instead of counting twice.
+To resolve the quota, review members on the **People** page or add seats.
+
 ## Invite people
 
 Invite other users to your Reunite organization.
