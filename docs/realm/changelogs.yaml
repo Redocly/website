@@ -49467,6 +49467,14 @@ reunite:
         - Fixed pull request statuses and checks not updating after new commits. Restored filtering on the project custom domains endpoint.
         - Moved the sidebar collapse toggle to the sidebar’s bottom menu and fixed icon alignment and spacing in the menu.
     dependencies: {}
+  v2026-07-23.2:
+    timestamp: 1784815626000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.40.0`.
+        - Fixed autonomous agent jobs failing to load configured source code repositories.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
