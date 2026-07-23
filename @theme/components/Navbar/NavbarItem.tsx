@@ -71,12 +71,28 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
       'API reference and mock server',
       'Internal service catalog',
       'API monitoring',
+      'Reads pull requests, leaves expert feedback',
     ];
     const groupItemsComponents = groupItems.reduce((acc, curr, index) => {
       if (curr.type.startsWith('separator')) {
         acc.push({ [curr.label as string]: [] });
       } else {
-        if (curr.label === 'Reunite') {
+        if (curr.label === 'AI Reviewer') {
+          acc[acc.length - 1][Object.keys(acc[acc.length - 1])[0]].push(
+            <AiToolLink key={`${curr.label}`} to={curr.link}>
+              <LabelRow>
+                <AiToolTitle>
+                  {curr.icon && <AiToolIcon src={curr.icon} />}
+                  {curr.label}
+                </AiToolTitle>
+                <NewTag>New</NewTag>
+              </LabelRow>
+              {descriptions[index - 1] && (
+                <AiToolDescription>{descriptions[index - 1]}</AiToolDescription>
+              )}
+            </AiToolLink>,
+          );
+        } else if (curr.label === 'Reunite') {
           acc[acc.length - 1][Object.keys(acc[acc.length - 1])[0]].push(
             <ReuniteBlock key={`${curr.label}`} to={curr.link}>
               <ReuniteDescription>Build your docs with</ReuniteDescription>
@@ -118,6 +134,7 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
 
     const products: any = [];
     const openSource: any = [];
+    const aiTools: any = [];
     let reunite: any = {};
 
     groupItemsComponents.map((item) => {
@@ -126,6 +143,8 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
           (value as any).map((value, index) => {
             if (index === 0) {
               reunite = value;
+            } else if (value.key === 'AI Reviewer') {
+              aiTools.push(value);
             } else {
               products.push(value);
             }
@@ -181,7 +200,7 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
                       return (
                         <DropdownListItem
                           key={index}
-                          product={`${link.key.toLowerCase()}`}
+                          product={`${link.key.toLowerCase().replace(/\s+/g, '-')}`}
                           isLast={index === products.length - 1}
                         >
                           {link}
@@ -206,6 +225,15 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
                 )}
               </DropdownList>
             </ProductsBlock>
+            {aiTools.length > 0 && (
+              <AiToolsSection>
+                {aiTools.map((link, index) => (
+                  <DropdownListItem key={index} product="ai-reviewer">
+                    {link}
+                  </DropdownListItem>
+                ))}
+              </AiToolsSection>
+            )}
           </DropdownWrapper>
         </DropdownCasket>
       </NavbarMenuItemDropdown>
@@ -352,6 +380,70 @@ const TextBlock = styled.div`
   }
 `;
 
+const LabelRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+`;
+
+const NewTag = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: var(--tag-basic-bg-color);
+  color: var(--tag-basic-content-color);
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+`;
+
+const AiToolsSection = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--dropdown-list-border-color);
+`;
+
+const AiToolLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  && {
+    color: var(--text-color-primary);
+  }
+`;
+
+const AiToolTitle = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+`;
+
+const AiToolIcon = styled.img`
+  height: 16px;
+  width: 16px;
+`;
+
+const AiToolDescription = styled.p`
+  margin: 0;
+  padding-left: 20px;
+
+  color: var(--text-color-secondary);
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+`;
+
 const Icon = styled.img`
   height: 24px;
   width: 24px;
@@ -395,7 +487,7 @@ export const DropdownListItem = styled.li<{ product?: string, isLast?: boolean }
     background: ${({ product, isLast }) =>
       isLast
         ? 'var(--hover-last-navbar-color)'
-        : `var(--${product}-color-hover)`};
+        : `var(--${product}-color-hover, var(--hover-last-navbar-color))`};
   }
 `;
 

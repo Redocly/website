@@ -29,6 +29,7 @@ export function ProductsMenu({
     'API reference and mock server',
     'Internal service catalog',
     'API monitoring',
+    'Reads pull requests, leaves expert feedback',
   ];
 
   for (let i = 0; i < descriptions.length; i++) {

@@ -70,6 +70,9 @@ navbar:
         - label: Respect Monitoring
           page: ./pages/respect/respect.page.tsx
           icon: ./images/icons/respect.svg
+        - label: AI Reviewer
+          page: ./pages/ai-reviewer/ai-reviewer.page.tsx
+          icon: ./images/icons/ai-reviewer.svg
         - separator: Open Source
         - label: Redoc
           page: ./pages/redoc/redoc.page.tsx

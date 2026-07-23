@@ -436,6 +436,8 @@
     --revel-color-hover: #F1EDFF;
     --realm-color-hover: linear-gradient(90deg, #E4F0FF 0%, #CDF8FD 100%);
     --bg-open-source-tools: #FBFBFC;
+    --tag-basic-bg-color: #EDEDF2;
+    --tag-basic-content-color: #2A2B33;
 
     --navbar-height: 64px;
     --navbar-logo-width: 103px;
@@ -569,6 +571,8 @@
     --color-ontonal: #2A2B33;
     --color-arrow: #9B9CA8;
     --hover-last-navbar-color: #3B3C45;
+    --tag-basic-bg-color: #3B3C45;
+    --tag-basic-content-color: #EDEDF2;
 }
 
 :root.dark nav img {
