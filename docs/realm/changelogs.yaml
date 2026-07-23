@@ -1,73 +1,4 @@
 '@redocly/realm':
-  0.136.0-next.4:
-    timestamp: 1784807414000
-    changes:
-      minor:
-        - Updated the `react-router-dom` peer dependency from `^6.30.3` to `^7.18.1`.
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.2
-      '@redocly/asyncapi-docs': 1.13.0-next.4
-      '@redocly/graphql-docs': 1.13.0-next.4
-      '@redocly/openapi-docs': 3.24.0-next.4
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.4
-  0.136.0-next.3:
-    timestamp: 1784731463000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.3
-      '@redocly/asyncapi-docs': 1.13.0-next.3
-      '@redocly/graphql-docs': 1.13.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.3
-  0.136.0-next.2:
-    timestamp: 1784639524000
-    changes:
-      minor:
-        - >-
-          Added `numbered-list` and `item` Markdoc tags to render step-by-step guides with numbered, icon, or dot markers and deep-linkable item
-          headlines.
-      patch:
-        - Fixed the built-in Docs MCP OAuth flow for public sites so they no longer advertise an authorization server or force a login.
-    dependencies:
-      '@redocly/theme': 0.68.0-next.1
-      '@redocly/asyncapi-docs': 1.13.0-next.2
-      '@redocly/graphql-docs': 1.13.0-next.2
-      '@redocly/openapi-docs': 3.24.0-next.2
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.2
-  0.136.0-next.1:
-    timestamp: 1784534919000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Improved rendering of schema property examples: object and array example values are now displayed as pretty-printed JSON with syntax
-          highlighting and a copy button, instead of a single-line text string.
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.1
-      '@redocly/asyncapi-docs': 1.13.0-next.1
-      '@redocly/graphql-docs': 1.13.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.1
-  0.136.0-next.0:
-    timestamp: 1784033266000
-    changes:
-      minor:
-        - Added support for agent skills placed under the `@skills` folder.
-        - Added support for A2A agent card and MCP server card.
-      patch:
-        - >-
-          Allowed the `redocly` special value in the `access.idps` config option to offer the standard Redocly login (email/password and Social Login
-          providers) alongside specific identity providers.
-        - Fixed SSO logout to require re-authentication with the identity provider, preventing automatic login immediately after logout.
-        - Updated `@redocly/openapi-core` to version `2.39.0`.
-    dependencies:
-      '@redocly/theme': 0.68.0-next.0
-      '@redocly/openapi-docs': 3.24.0-next.0
-      '@redocly/realm-asyncapi-sdk': 0.14.0-next.0
-      '@redocly/asyncapi-docs': 1.13.0-next.0
-      '@redocly/graphql-docs': 1.13.0-next.0
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.0
   0.135.0:
     timestamp: 1783506758000
     changes:
@@ -6632,72 +6563,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.136.0-next.4:
-    timestamp: 1784807414000
-    changes:
-      minor:
-        - Updated the `react-router-dom` peer dependency from `^6.30.3` to `^7.18.1`.
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.2
-      '@redocly/asyncapi-docs': 1.13.0-next.4
-      '@redocly/graphql-docs': 1.13.0-next.4
-      '@redocly/openapi-docs': 3.24.0-next.4
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.4
-  0.136.0-next.3:
-    timestamp: 1784731463000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.3
-      '@redocly/asyncapi-docs': 1.13.0-next.3
-      '@redocly/graphql-docs': 1.13.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.3
-  0.136.0-next.2:
-    timestamp: 1784639524000
-    changes:
-      minor:
-        - >-
-          Added `numbered-list` and `item` Markdoc tags to render step-by-step guides with numbered, icon, or dot markers and deep-linkable item
-          headlines.
-      patch:
-        - Fixed the built-in Docs MCP OAuth flow for public sites so they no longer advertise an authorization server or force a login.
-    dependencies:
-      '@redocly/theme': 0.68.0-next.1
-      '@redocly/asyncapi-docs': 1.13.0-next.2
-      '@redocly/graphql-docs': 1.13.0-next.2
-      '@redocly/openapi-docs': 3.24.0-next.2
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.2
-  0.136.0-next.1:
-    timestamp: 1784534919000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.1
-      '@redocly/asyncapi-docs': 1.13.0-next.1
-      '@redocly/graphql-docs': 1.13.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.1
-  0.136.0-next.0:
-    timestamp: 1784033266000
-    changes:
-      minor:
-        - Added support for agent skills placed under the `@skills` folder.
-        - Added support for A2A agent card and MCP server card.
-      patch:
-        - >-
-          Allowed the `redocly` special value in the `access.idps` config option to offer the standard Redocly login (email/password and Social Login
-          providers) alongside specific identity providers.
-        - Fixed SSO logout to require re-authentication with the identity provider, preventing automatic login immediately after logout.
-        - Updated `@redocly/openapi-core` to version `2.39.0`.
-    dependencies:
-      '@redocly/theme': 0.68.0-next.0
-      '@redocly/openapi-docs': 3.24.0-next.0
-      '@redocly/realm-asyncapi-sdk': 0.14.0-next.0
-      '@redocly/asyncapi-docs': 1.13.0-next.0
-      '@redocly/graphql-docs': 1.13.0-next.0
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.0
   0.135.0:
     timestamp: 1783506758000
     changes:
@@ -12339,72 +12204,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.136.0-next.4:
-    timestamp: 1784807414000
-    changes:
-      minor:
-        - Updated the `react-router-dom` peer dependency from `^6.30.3` to `^7.18.1`.
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.2
-      '@redocly/asyncapi-docs': 1.13.0-next.4
-      '@redocly/graphql-docs': 1.13.0-next.4
-      '@redocly/openapi-docs': 3.24.0-next.4
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.4
-  0.136.0-next.3:
-    timestamp: 1784731463000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.3
-      '@redocly/asyncapi-docs': 1.13.0-next.3
-      '@redocly/graphql-docs': 1.13.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.3
-  0.136.0-next.2:
-    timestamp: 1784639524000
-    changes:
-      minor:
-        - >-
-          Added `numbered-list` and `item` Markdoc tags to render step-by-step guides with numbered, icon, or dot markers and deep-linkable item
-          headlines.
-      patch:
-        - Fixed the built-in Docs MCP OAuth flow for public sites so they no longer advertise an authorization server or force a login.
-    dependencies:
-      '@redocly/theme': 0.68.0-next.1
-      '@redocly/asyncapi-docs': 1.13.0-next.2
-      '@redocly/graphql-docs': 1.13.0-next.2
-      '@redocly/openapi-docs': 3.24.0-next.2
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.2
-  0.136.0-next.1:
-    timestamp: 1784534919000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.1
-      '@redocly/asyncapi-docs': 1.13.0-next.1
-      '@redocly/graphql-docs': 1.13.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.1
-  0.136.0-next.0:
-    timestamp: 1784033266000
-    changes:
-      minor:
-        - Added support for agent skills placed under the `@skills` folder.
-        - Added support for A2A agent card and MCP server card.
-      patch:
-        - >-
-          Allowed the `redocly` special value in the `access.idps` config option to offer the standard Redocly login (email/password and Social Login
-          providers) alongside specific identity providers.
-        - Fixed SSO logout to require re-authentication with the identity provider, preventing automatic login immediately after logout.
-        - Updated `@redocly/openapi-core` to version `2.39.0`.
-    dependencies:
-      '@redocly/theme': 0.68.0-next.0
-      '@redocly/openapi-docs': 3.24.0-next.0
-      '@redocly/realm-asyncapi-sdk': 0.14.0-next.0
-      '@redocly/asyncapi-docs': 1.13.0-next.0
-      '@redocly/graphql-docs': 1.13.0-next.0
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.0
   0.135.0:
     timestamp: 1783506758000
     changes:
@@ -18036,74 +17835,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.136.0-next.4:
-    timestamp: 1784807414000
-    changes:
-      minor:
-        - Updated the `react-router-dom` peer dependency from `^6.30.3` to `^7.18.1`.
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.2
-      '@redocly/asyncapi-docs': 1.13.0-next.4
-      '@redocly/graphql-docs': 1.13.0-next.4
-      '@redocly/openapi-docs': 3.24.0-next.4
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.4
-  0.136.0-next.3:
-    timestamp: 1784731463000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where API docs pages with large, deeply-nested schemas might have stopped responding after users clicked **Expand all**.
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.3
-      '@redocly/asyncapi-docs': 1.13.0-next.3
-      '@redocly/graphql-docs': 1.13.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.3
-  0.136.0-next.2:
-    timestamp: 1784639524000
-    changes:
-      minor: []
-      patch:
-        - Fixed the built-in Docs MCP OAuth flow for public sites so they no longer advertise an authorization server or force a login.
-    dependencies:
-      '@redocly/theme': 0.68.0-next.1
-      '@redocly/asyncapi-docs': 1.13.0-next.2
-      '@redocly/graphql-docs': 1.13.0-next.2
-      '@redocly/openapi-docs': 3.24.0-next.2
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.2
-  0.136.0-next.1:
-    timestamp: 1784534919000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Improved rendering of schema property examples: object and array example values are now displayed as pretty-printed JSON with syntax
-          highlighting and a copy button, instead of a single-line text string.
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.1
-      '@redocly/asyncapi-docs': 1.13.0-next.1
-      '@redocly/graphql-docs': 1.13.0-next.1
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.1
-  0.136.0-next.0:
-    timestamp: 1784033266000
-    changes:
-      minor:
-        - Added support for agent skills placed under the `@skills` folder.
-        - Added support for A2A agent card and MCP server card.
-      patch:
-        - >-
-          Allowed the `redocly` special value in the `access.idps` config option to offer the standard Redocly login (email/password and Social Login
-          providers) alongside specific identity providers.
-        - Fixed incorrect rendering of array items with primitive values.
-        - Fixed SSO logout to require re-authentication with the identity provider, preventing automatic login immediately after logout.
-        - Updated `@redocly/openapi-core` to version `2.39.0`.
-    dependencies:
-      '@redocly/theme': 0.68.0-next.0
-      '@redocly/openapi-docs': 3.24.0-next.0
-      '@redocly/realm-asyncapi-sdk': 0.14.0-next.0
-      '@redocly/asyncapi-docs': 1.13.0-next.0
-      '@redocly/graphql-docs': 1.13.0-next.0
-      '@redocly/portal-plugin-mock-server': 0.21.0-next.0
   0.135.0:
     timestamp: 1783506758000
     changes:
@@ -23787,29 +23518,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.68.0-next.2:
-    timestamp: 1784807414000
-    changes:
-      minor:
-        - Updated the `react-router-dom` peer dependency from `^6.30.3` to `^7.18.1`.
-      patch: []
-    dependencies: {}
-  0.68.0-next.1:
-    timestamp: 1784639524000
-    changes:
-      minor:
-        - >-
-          Added `numbered-list` and `item` Markdoc tags to render step-by-step guides with numbered, icon, or dot markers and deep-linkable item
-          headlines.
-      patch: []
-    dependencies: {}
-  0.68.0-next.0:
-    timestamp: 1784033266000
-    changes:
-      minor: []
-      patch:
-        - Fixed sidebar separator lines appearing below entries when `linePosition` was unset.
-    dependencies: {}
   0.67.0:
     timestamp: 1783506758000
     changes:
@@ -26829,47 +26537,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.24.0-next.4:
-    timestamp: 1784807414000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.27.0-next.3
-  3.24.0-next.3:
-    timestamp: 1784731463000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where API docs pages with large, deeply-nested schemas might have stopped responding after users clicked **Expand all**.
-    dependencies: {}
-  3.24.0-next.2:
-    timestamp: 1784639524000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.27.0-next.2
-  3.24.0-next.1:
-    timestamp: 1784534919000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Improved rendering of schema property examples: object and array example values are now displayed as pretty-printed JSON with syntax
-          highlighting and a copy button, instead of a single-line text string.
-    dependencies:
-      '@redocly/replay': 0.27.0-next.1
-  3.24.0-next.0:
-    timestamp: 1784033266000
-    changes:
-      minor: []
-      patch:
-        - Fixed incorrect rendering of array items with primitive values.
-        - Updated `@redocly/openapi-core` to version `2.39.0`.
-    dependencies:
-      '@redocly/theme': 0.68.0-next.0
-      '@redocly/replay': 0.27.0-next.0
   3.23.0:
     timestamp: 1783506758000
     changes:
@@ -30091,14 +29758,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
-  0.52.0:
-    timestamp: 1784029976000
-    changes:
-      minor:
-        - Added `skills` configuration in `redocly.yaml` to control publishing of agent skills.
-      patch:
-        - Allowed the special value `redocly` in the `idps` config option.
-    dependencies: {}
   0.51.0:
     timestamp: 1783945528000
     changes:
@@ -30784,44 +30443,6 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
-  1.13.0-next.4:
-    timestamp: 1784807414000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.2
-      '@redocly/openapi-docs': 3.24.0-next.4
-  1.13.0-next.3:
-    timestamp: 1784731463000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.3
-  1.13.0-next.2:
-    timestamp: 1784639524000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.1
-      '@redocly/openapi-docs': 3.24.0-next.2
-  1.13.0-next.1:
-    timestamp: 1784534919000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.1
-  1.13.0-next.0:
-    timestamp: 1784033266000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.0
-      '@redocly/openapi-docs': 3.24.0-next.0
   1.12.0:
     timestamp: 1783506758000
     changes:
@@ -32040,13 +31661,6 @@
       '@redocly/theme': 0.6.0
 '@redocly/api-docs': {}
 '@redocly/mock-server':
-  0.10.0-next.0:
-    timestamp: 1784033266000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.39.0`.
-    dependencies: {}
   0.9.0:
     timestamp: 1783506758000
     changes:
@@ -33009,59 +32623,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.19.0-next.4:
-    timestamp: 1784807414000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.2
-      '@redocly/realm': 0.136.0-next.4
-      '@redocly/redoc': 0.136.0-next.4
-      '@redocly/redoc-reef': 0.136.0-next.4
-      '@redocly/redoc-revel': 0.136.0-next.4
-  1.19.0-next.3:
-    timestamp: 1784731463000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/redoc': 0.136.0-next.3
-      '@redocly/redoc-reef': 0.136.0-next.3
-      '@redocly/redoc-revel': 0.136.0-next.3
-      '@redocly/realm': 0.136.0-next.3
-  1.19.0-next.2:
-    timestamp: 1784639524000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.1
-      '@redocly/realm': 0.136.0-next.2
-      '@redocly/redoc-reef': 0.136.0-next.2
-      '@redocly/redoc-revel': 0.136.0-next.2
-      '@redocly/redoc': 0.136.0-next.2
-  1.19.0-next.1:
-    timestamp: 1784534919000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.136.0-next.1
-      '@redocly/redoc': 0.136.0-next.1
-      '@redocly/redoc-reef': 0.136.0-next.1
-      '@redocly/redoc-revel': 0.136.0-next.1
-  1.19.0-next.0:
-    timestamp: 1784033266000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.136.0-next.0
-      '@redocly/redoc': 0.136.0-next.0
-      '@redocly/redoc-reef': 0.136.0-next.0
-      '@redocly/redoc-revel': 0.136.0-next.0
-      '@redocly/theme': 0.68.0-next.0
   1.18.0:
     timestamp: 1783506758000
     changes:
@@ -38453,42 +38014,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.21.0-next.4:
-    timestamp: 1784807414000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.4
-  0.21.0-next.3:
-    timestamp: 1784731463000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.3
-  0.21.0-next.2:
-    timestamp: 1784639524000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.2
-  0.21.0-next.1:
-    timestamp: 1784534919000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.1
-  0.21.0-next.0:
-    timestamp: 1784033266000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.0
-      '@redocly/mock-server': 0.10.0-next.0
   0.20.0:
     timestamp: 1783506758000
     changes:
@@ -41459,35 +40984,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.27.0-next.3:
-    timestamp: 1784807414000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.2
-  0.27.0-next.2:
-    timestamp: 1784639524000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.1
-  0.27.0-next.1:
-    timestamp: 1784534919000
-    changes:
-      minor: []
-      patch:
-        - Fixed display overflow of environment and server variables by truncating long values.
-    dependencies: {}
-  0.27.0-next.0:
-    timestamp: 1784033266000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.39.0`.
-    dependencies:
-      '@redocly/theme': 0.68.0-next.0
   0.26.0:
     timestamp: 1783506758000
     changes:
@@ -43717,27 +43213,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.19.0-next.2:
-    timestamp: 1784807414000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.2
-  0.19.0-next.1:
-    timestamp: 1784639524000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.1
-  0.19.0-next.0:
-    timestamp: 1784033266000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.0
   0.18.0:
     timestamp: 1783506758000
     changes:
@@ -45576,44 +45051,6 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
-  1.13.0-next.4:
-    timestamp: 1784807414000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.2
-      '@redocly/openapi-docs': 3.24.0-next.4
-  1.13.0-next.3:
-    timestamp: 1784731463000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.3
-  1.13.0-next.2:
-    timestamp: 1784639524000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.1
-      '@redocly/openapi-docs': 3.24.0-next.2
-  1.13.0-next.1:
-    timestamp: 1784534919000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.24.0-next.1
-  1.13.0-next.0:
-    timestamp: 1784033266000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.68.0-next.0
-      '@redocly/openapi-docs': 3.24.0-next.0
   1.12.0:
     timestamp: 1783506758000
     changes:
@@ -49392,88 +48829,6 @@ reunite:
         - Added previews for PDF, video, and audio files in the editor, replacing the "Preview not available" message with built-in viewers.
       patch: []
     dependencies: {}
-  v2026-07-14.1:
-    timestamp: 1784025375000
-    changes:
-      minor: []
-      patch:
-        - Fixed security vulnerabilities `CVE-2025-46394` and `CVE-2024-58251` by upgrading `busybox` to version `1.37.0-r30`.
-        - Fixed SSO login downgrading the organization's last Owner and blocked SSO logins for organizations whose plan does not include SSO.
-    dependencies: {}
-  v2026-07-14.2:
-    timestamp: 1784038121000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Enabled Redocly login (email/password and Social Login providers) on project login when the `access.idps` configuration includes the
-          `redocly` value.
-        - Allowed sending invitations in organizations with the `Require SSO authentication` option enabled.
-    dependencies: {}
-  v2026-07-14.3:
-    timestamp: 1784041406000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.39.0`.
-    dependencies: {}
-  v2026-07-17.1:
-    timestamp: 1784270095000
-    changes:
-      minor:
-        - Added a `Paid seat` filter to the organization People page to show only users occupying paid seats.
-      patch: []
-    dependencies: {}
-  v2026-07-17.2:
-    timestamp: 1784273285000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed SSO login failures caused by expired login challenges. The login flow restarts automatically and returns users to their original
-          destination.
-        - Fixed security vulnerability `CVE-2026-12151` affecting service security.
-        - >-
-          Fixed built-in teams such as `redocly.members`, `redocly.owners`, and `redocly.viewers` not being recognized in project RBAC. Access rules
-          referencing these teams now grant access based on organization roles without additional configuration.
-        - >-
-          Added an SSO login helper to the support dashboard that converts portal or MCP OAuth URLs into Redocly login links for support to access
-          SSO-only portals using their Redocly accounts.
-        - Improved consistency and reliability of modals, breadcrumbs, dropdowns, and copy-to-clipboard controls.
-        - >-
-          Fixed misleading date labels on the project analytics "Views and Users" chart. Points that group a whole month or week used to show just one
-          day (like "05/01"). They now show "May 2026" for a month or "May 25" for a week, so the label matches the period it covers.
-    dependencies: {}
-  v2026-07-21.4:
-    timestamp: 1784636821000
-    changes:
-      minor: []
-      patch:
-        - Fixed `creator` filter in pull request list to show user names instead of their IDs.
-        - Preserved the original login destination when the SSO login flow restarts and the stale login challenge can no longer be refreshed.
-        - >-
-          Fixed the search input on the Feedback page losing focus while typing, so you can filter feedback without repeatedly clicking the search
-          box.
-        - Centered `Delete organization` and `Delete project` confirmation modals vertically for improved alignment.
-        - Fixed identity providers' names and slugs rendering vertically on the SSO and login page when space was limited.
-    dependencies: {}
-  v2026-07-23.1:
-    timestamp: 1784801794000
-    changes:
-      minor:
-        - Added the ability to download Redocly-hosted projects for a specific branch.
-      patch:
-        - Added draft pull request support for the Bitbucket Cloud git provider.
-        - Fixed pull request statuses and checks not updating after new commits. Restored filtering on the project custom domains endpoint.
-        - Moved the sidebar collapse toggle to the sidebar’s bottom menu and fixed icon alignment and spacing in the menu.
-    dependencies: {}
-  v2026-07-23.2:
-    timestamp: 1784815626000
-    changes:
-      minor: []
-      patch:
-        - Fixed autonomous agent jobs failing to load configured source code repositories.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
@@ -49794,14 +49149,5 @@ replay:
       minor: []
       patch:
         - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.34.0`.
-    dependencies:
-      '@redocly/theme': 0.67.0
-  0.23.0:
-    timestamp: 1784585932000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where example values with line breaks or tabs corrupted the request URL.
-        - Improved diff display in the AI tool approval panel.
     dependencies:
       '@redocly/theme': 0.67.0

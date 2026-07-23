@@ -2,28 +2,38 @@
 
 {% partial file="../../../_partials/experimental.md" /%}
 
-Use `x-mcp` to document MCP (Model Context Protocol) servers for consumers.
+The `x-mcp` extension has two roles, depending on where it is used:
+
+- At the root of an OpenAPI description, it documents an MCP (Model Context Protocol) server, so consumers can review its tools, resources, and prompts in the rendered API docs.
+- In the `info` object, it controls whether [AI agents can call the API](../../../customization/mcp-server/call-apis-with-ai-agents.md), and on individual operations it hides endpoints from the built-in [Docs MCP server](../../../customization/mcp-server/index.md).
 
 ## Location
 
-The `x-mcp` extension can be added to Root Object.
-The root is the outer most level of the OpenAPI description.
-
-## Options
-
 {% table %}
 
-- Option
-- Type
-- Description
+- Location
+- Role
 
 ---
 
-- x-mcp
-- [MCP object](#mcp-object)
-- MCP server description and configuration.
+- Root object
+- Document an MCP server with the [MCP object](#mcp-object).
+
+---
+
+- Info object
+- Control whether AI agents can call the API with the [Control object](#control-object).
+
+---
+
+- Path item or operation object
+- Hide a specific endpoint from the Docs MCP server documentation tools with the [Docs control object](#docs-control-object).
 
 {% /table %}
+
+## Options
+
+The shape of `x-mcp` depends on its location: the root object takes the [MCP object](#mcp-object), the `info` object takes the [Control object](#control-object), and path items or operations take the [Docs control object](#docs-control-object).
 
 ### MCP object
 
@@ -67,7 +77,7 @@ The root is the outer most level of the OpenAPI description.
 
 - prompts
 - [ [Prompt object](#prompt-object) ]
-- Prompt capabilities configuration with optional `listChanged` boolean property.
+- Array of prompts provided by the MCP server.
 
 {% /table %}
 
@@ -130,19 +140,19 @@ The root is the outer most level of the OpenAPI description.
 
 - description
 - string
-- **REQUIRED.** Description of what the tool does.
+- Description of what the tool does.
 
 ---
 
 - tags
 - [ string ]
-- Tags for the tool.
+- Tags for the tool, used to group tools in the rendered documentation.
 
 ---
 
 - inputSchema
 - object
-- JSON Schema describing the expected input parameters for the tool.
+- **REQUIRED.** JSON Schema describing the expected input parameters for the tool.
 
 ---
 
@@ -155,6 +165,12 @@ The root is the outer most level of the OpenAPI description.
 - security
 - [ object ]
 - Security requirements for the tool, following OpenAPI security scheme format.
+
+---
+
+- x-badges
+- [ [Badge object](./x-badges.md) ]
+- Badges displayed next to the tool in the rendered documentation.
 
 {% /table %}
 
@@ -174,6 +190,12 @@ The root is the outer most level of the OpenAPI description.
 
 ---
 
+- title
+- string
+- Title of the resource.
+
+---
+
 - description
 - string
 - Description of the resource.
@@ -182,16 +204,45 @@ The root is the outer most level of the OpenAPI description.
 
 - uri
 - string
-- URI template for accessing the resource.
+- **REQUIRED.** URI template for accessing the resource.
 
 ---
 
 - mimeType
 - string
-- MIME type of the resource content.
+- **REQUIRED.** MIME type of the resource content.
+
+---
+
+- blob
+- string
+- Base64-encoded binary content of the resource.
+
+---
+
+- text
+- string
+- Text content of the resource.
+
+---
+
+- security
+- [ object ]
+- Security requirements for the resource, following OpenAPI security scheme format.
+
+---
+
+- tags
+- [ string ]
+- Tags for the resource, used to group resources in the rendered documentation.
+
+---
+
+- x-badges
+- [ [Badge object](./x-badges.md) ]
+- Badges displayed next to the resource in the rendered documentation.
 
 {% /table %}
-
 
 ### Prompt object
 
@@ -217,19 +268,38 @@ The root is the outer most level of the OpenAPI description.
 
 - description
 - string
-- Description of the prompt.
+- **REQUIRED.** Description of the prompt.
 
 ---
 
 - arguments
 - [ [Argument object](#argument-object) ]
-- Array of arguments for the prompt.
+- **REQUIRED.** Array of arguments for the prompt.
+
+---
+
+- security
+- [ object ]
+- Security requirements for the prompt, following OpenAPI security scheme format.
+
+---
+
+- tags
+- [ string ]
+- Tags for the prompt, used to group prompts in the rendered documentation.
+
+---
+
+- x-badges
+- [ [Badge object](./x-badges.md) ]
+- Badges displayed next to the prompt in the rendered documentation.
 
 {% /table %}
 
 ### Argument object
 
 {% table %}
+
 - Option
 - Type
 - Description
@@ -244,22 +314,81 @@ The root is the outer most level of the OpenAPI description.
 
 - description
 - string
-- Description of the argument.
+- **REQUIRED.** Description of the argument.
 
 ---
 
 - required
 - boolean
-- Whether the argument is required.
+- **REQUIRED.** Whether the argument is required.
+
+---
+
+- example
+- string
+- Example value for the argument.
+
+{% /table %}
+
+### Control object
+
+Use the Control object in the `info` object of an API description to control whether AI agents can call the API.
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- gateway
+- [Gateway control object](#gateway-control-object)
+- Control whether AI agents can call the API.
+  For APIs restricted by RBAC, the presence of this option opts the API into [API calling](../../../customization/mcp-server/call-apis-with-ai-agents.md).
+
+{% /table %}
+
+### Docs control object
+
+Use the Docs control object on a path item or operation to hide it from the Docs MCP server documentation tools.
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- hide
+- boolean
+- Hide the endpoint from the Docs MCP server documentation tools.
+  Default: `false`.
+
+{% /table %}
+
+### Gateway control object
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- hide
+- boolean
+- When set to `true`, AI agents cannot call the API.
+  The API stays discoverable through the documentation tools.
+  Default: `false`.
 
 {% /table %}
 
 ## Examples
 
-### `x-mcp` example
-
-Metadata keys can be any string.
-The values can be any primitive type, or a list of strings.
+### Describe an MCP server
 
 The following is an example of an `x-mcp` described within an OpenAPI description file:
 
@@ -349,7 +478,7 @@ components:
         - scopes
 ```
 
-The data is presented similar to the following screenshot:
+The data is displayed as shown in the following screenshot:
 
 {% img
   alt="Example MCP docs"
@@ -357,6 +486,47 @@ The data is presented similar to the following screenshot:
   withLightbox=true
 /%}
 
+### Hide an endpoint from the Docs MCP server
+
+Hide a single endpoint while the rest of the API stays discoverable:
+
+```yaml
+paths:
+  /users/{id}:
+    delete:
+      summary: Delete a user
+      x-mcp:
+        docs:
+          hide: true
+```
+
+To hide a whole API from the MCP server, use the [`mcp.docs.ignore` configuration option](../../../config/mcp.md#docs-object).
+
+### Control API calling per API
+
+Opt a protected API into API calling:
+
+```yaml
+info:
+  title: Billing API
+  version: 1.0.0
+  x-mcp:
+    gateway: {}
+```
+
+Opt an API out of API calling while keeping it discoverable:
+
+```yaml
+info:
+  title: Billing API
+  version: 1.0.0
+  x-mcp:
+    gateway:
+      hide: true
+```
+
 ## Resources
 
 - **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation
+- **[Let AI agents call your APIs](../../../customization/mcp-server/call-apis-with-ai-agents.md)** - Turn on API calling and choose which APIs agents can call
+- **[MCP configuration reference](../../../config/mcp.md)** - Project-level MCP options, including server variants and API calling

@@ -4,7 +4,6 @@ products:
   - Reef
   - Realm
 plans:
-  - Pro
   - Enterprise
   - Enterprise+
 ---
@@ -12,12 +11,12 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-The `connect-mcp` tag renders a button that allows users to connect to the MCP (Model Context Protocol) server through various MCP clients.
+The `connect-mcp` tag renders a button that connects a reader's MCP client to the MCP (Model Context Protocol) server.
 When clicked or hovered, it displays a dropdown menu with options to connect via Cursor, VS Code, or copy the MCP configuration.
 
 {% admonition type="info" name="Before you begin"%}
-The Connect MCP button requires a properly configured Docs MCP server to function.
-See the [MCP configuration documentation](../../config/mcp.md) for setup instructions.
+The Connect MCP button uses the project's built-in Docs MCP server, which is enabled by default.
+If the server is hidden with `mcp.hide` or `mcp.docs.hide`, the button has nothing to connect to — refer to the [MCP configuration reference](../../config/mcp.md).
 {% /admonition %}
 
 ## Syntax and usage
@@ -47,7 +46,7 @@ Users can click to connect their editor or copy the configuration.
 - string
 - Sets the vertical placement of the dropdown menu relative to the button.
   Accepts `top` or `bottom`.
-  **Default:** `bottom`.
+  Default: `bottom`.
 
 ---
 
@@ -55,7 +54,7 @@ Users can click to connect their editor or copy the configuration.
 - string
 - Sets the horizontal alignment of the dropdown menu relative to the button.
   Accepts `start` or `end`.
-  **Default:** `start`.
+  Default: `start`.
 
 ---
 
@@ -63,7 +62,7 @@ Users can click to connect their editor or copy the configuration.
 - array
 - Specifies which connection options to display in the dropdown.
   Accepts an array containing any combination of: `cursor`, `vscode`, `copy`.
-  **Default:** `["cursor", "vscode", "copy"]`.
+  Default: `["cursor", "vscode", "copy"]`.
 
 {% /table %}
 
@@ -166,6 +165,7 @@ If your users primarily use Cursor, consider showing only that option to reduce 
 ## Resources
 
 - **[MCP configuration](../../config/mcp.md)** - Configure the MCP server and Connect MCP button visibility
-- **[MCP servers overview](../../customization/mcp-server/index.md)** - Learn about MCP servers and integration with AI tools
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
-- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags
+- **[MCP server overview](../../customization/mcp-server/index.md)** - What the Docs MCP server exposes and how it protects your content
+- **[Connect an AI agent to the MCP server](../../customization/mcp-server/connect-ai-agent.md)** - Connection steps for Cursor, Claude Code, and VS Code
+- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - How Markdoc syntax works in your documentation
+- **[Markdoc tags](./index.md)** - Full list of supported Markdoc tags

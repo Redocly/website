@@ -107,6 +107,10 @@ Configure custom request values for API documentation and interactive features.
 Build serverless functions to extend your project with custom APIs and data processing.
 {% /card %}
 
+{% card title="MCP server" icon="plug" to="./mcp-server/index.md" %}
+Expose your documentation to AI assistants, and let AI agents discover and call your APIs.
+{% /card %}
+
 {% /cards %}
 
 ## Get started with customization

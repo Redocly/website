@@ -12,7 +12,7 @@ The list of extensions supported in OpenAPI by Redoc is as follows:
 - [x-enumDescriptions](./x-enum-descriptions.md) - Readable labels for enum values.
 - [x-hideReplay](./x-hide-replay.md) - Disable the Replay for the specific operation.
 - [x-keywords](../../../config/search.md#apply-curation-to-files) - Promote or exclude description files, operations, or tags in search results for specified keywords.
-- [x-mcp](./x-mcp.md) - Document MCP servers and tools.
+- [x-mcp](./x-mcp.md) - Document MCP servers, hide endpoints from the Docs MCP server, and control which APIs AI agents can call.
 - [x-metadata](./x-metadata.md) - Add custom metadata at the top of the info section.
 - [x-rbac](x-rbac.md) - Control access to OpenAPI objects.
 - [x-traitTag](./x-trait-tag.md) - Indicate tags that label operations rather than grouping them.

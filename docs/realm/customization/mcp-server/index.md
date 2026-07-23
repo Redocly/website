@@ -7,178 +7,98 @@ products:
 plans:
   - Enterprise
   - Enterprise+
+description: Expose your API documentation to AI assistants through the built-in Docs MCP server.
 ---
 
 # Model Context Protocol server
 
-Model Context Protocol (MCP) is a standard that enables applications to provide context to large language models (LLMs).
-With MCP servers, AI assistants can retrieve additional information relevant to a user's query.
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Realm provides built-in MCP server capabilities that expose your API Docs to AI assistants.
-
-## Benefits
-
-- **Real-time API guidance** — users receive accurate, contextual help about API endpoints and operations.
-- **Secure API access** — AI assistants can make authenticated requests to act on behalf of a user.
-- **Dynamic documentation** — AI assistants can extract and explain API reference content based on user needs.
+Model Context Protocol (MCP) is a standard that connects AI assistants to external data and tools.
+Every Redocly project on an eligible plan serves a built-in MCP server — the Docs MCP server — at `/mcp` on the project root URL, with no configuration required.
+AI agents connected to it can search your documentation, discover your APIs, and inspect endpoints, schemas, and security requirements.
+Projects can additionally let connected agents call the documented APIs, so an agent moves from reading about an endpoint to executing a request without leaving your project.
 
 ## Docs MCP server
 
-Use the Docs MCP server to explore and discover APIs in your project.
-For the current MCP endpoint details, authentication semantics, server metadata, and tool schemas, see the [Docs MCP reference](./openapi.yaml).
+The Docs MCP server is enabled by default.
+To turn it off, set `mcp.hide` or `mcp.docs.hide` to `true` in your [project configuration](../../config/mcp.md).
 
-## MCP server card
+The server exposes tools for working with your published documentation:
 
-The MCP server card is a standardized JSON document that lets agents discover the Docs MCP server: its tools, transport endpoint, and capabilities.
-The discovery is a single request that follows the Model Context Protocol server-card format.
-It is available at `/.well-known/mcp/server-card.json` when the MCP server is enabled.
+- API discovery: list APIs, endpoints, security schemes, and full OpenAPI descriptions.
+- GraphQL discovery: list schemas and fetch types, when the project documents GraphQL APIs.
+- Search: full-text search across the documentation content.
+- Identity: a `whoami` tool, when the project requires authentication.
 
-```http
-GET https://example.com/.well-known/mcp/server-card.json
-```
+For endpoint details, authentication semantics, server metadata, and tool schemas, review the [Docs MCP reference](./openapi.yaml).
 
-The following example response describes a login-protected server that also publishes skills:
+## Server variants
 
-```json
-{
-  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
-  "version": "1.0",
-  "protocolVersion": "2025-06-18",
-  "serverInfo": {
-    "name": "Docs MCP server",
-    "title": "Docs MCP server",
-    "version": "2026-07-13"
-  },
-  "description": "Redocly Cafe documentation.",
-  "documentationUrl": "https://example.com/",
-  "transport": {
-    "type": "streamable-http",
-    "endpoint": "/mcp"
-  },
-  "capabilities": {
-    "logging": {},
-    "tools": { "listChanged": true },
-    "resources": { "listChanged": true },
-    "completions": {}
-  },
-  "authentication": {
-    "required": true,
-    "schemes": ["bearer", "oauth2"]
-  },
-  "tools": ["dynamic"]
-}
-```
+The `mcp.variant` configuration option controls how the server exposes its tools:
 
-The card lists the server's tools, declares its `/mcp` transport endpoint, and states its authentication requirements when the server requires login.
-When your project publishes [agent skills](../agent-skills/index.md#skills-as-mcp-resources), the card's capabilities advertise resource support so agents know to list them.
+{% table %}
 
-## Connect an AI agent to the MCP server
+- Variant
+- Tools served
+- Description
 
-After you enable the Docs MCP server in [configuration](../../config/mcp.md), it is available at `/mcp` on your project root URL.
-For example: `https://example.com/mcp`.
+---
 
-### Use the MCP server
+- tools
+- One tool per capability: `list-apis`, `get-endpoints`, `get-endpoint-info`, `get-security-schemes`, `get-full-api-description`, `search`, and, depending on the project, `whoami` and the GraphQL tools.
+- The default.
+  The agent calls each documentation tool directly.
 
-Users can connect their preferred AI tools that support MCP (for example, Cursor, Claude Code and VS Code) to your MCP server.
+---
 
-1. Enable the MCP server in your [configuration](../../config/mcp.md).
-2. Copy your MCP server URL and add it to your tool.
+- codemode
+- Two tools: `execute` and `describe-tools`.
+- The agent writes JavaScript that runs in a sandbox against the same documentation tools, chains calls, and returns only the result.
+  Keeps the agent's context footprint fixed regardless of how many APIs the project documents, and is required for [API calling](#api-calling).
 
-After connecting, the tool can access your OpenAPI documentation.
+{% /table %}
 
-{% tabs %}
-  {% tab label="Cursor" %}
+In code mode, the agent calls `describe-tools` to get exact TypeScript signatures for the sandbox tools, then batches its work into a single `execute` call instead of many round-trips.
 
-#### Connect Cursor to the MCP server
+## API calling
 
-1. In Cursor, open the command palette.
-   - macOS: `Command + Shift + P`
-   - Windows/Linux: `Ctrl + Shift + P`
-1. Type "Open MCP settings" in the command palette.
-1. Select "Add custom MCP".
+By default, agents can only read about your APIs.
+With API calling turned on, the code-mode sandbox also provides a `fetch` function that executes requests against the documented APIs — the agent discovers an endpoint, builds the request from the documentation, and calls it in one step.
 
-Cursor opens the `mcp.json` file.
+API calling is off until the project explicitly opts in with `mcp.gateway.hide: false`, and stays scoped by guardrails your project defines:
 
-#### Configure the MCP server
+- Agents can only reach hosts from the documented `servers` URLs of callable APIs, plus any hosts listed in `mcp.gateway.allowedHosts`.
+- APIs without RBAC restrictions are callable by default, and APIs restricted by RBAC require a per-API opt-in.
+- Requests run in an isolated sandbox with strict time, call, and response-size limits.
 
-1. In `mcp.json`, add your server configuration:
-```json
-{
-  "mcpServers": {
-    "example-mcp": {
-      "url": "https://example.com/mcp"
-    }
-  }
-}
-```
+To set it up, follow [Let AI agents call your APIs](./call-apis-with-ai-agents.md).
 
-Optionally, you can also pass additional headers that will be sent with each request:
+## Access control
 
-```json
-{
-  "mcpServers": {
-    "example-mcp": {
-      "url": "https://example.com/mcp",
-      "headers": {
-        "Authorization": "Basic MTIzOjEyMw=="
-      }
-    }
-  }
-}
-```
+Access to the MCP server follows your project's existing access controls:
 
-1. Save the `mcp.json` file.
+- Public projects accept anonymous MCP connections.
+- Projects with `requiresLogin` or restrictive RBAC require authentication: MCP clients run a standard OAuth 2.0 flow with PKCE, prompting the user to sign in through the browser.
+- RBAC filters every response, so an agent only sees the APIs, endpoints, and content its user is permitted to view.
 
-1. Return to MCP settings and confirm the connection.
-   If authentication is required, select **Needs login** and complete the sign‑in flow.
-   After connecting, Cursor displays the list of available tools.
+## Security model
 
-#### Test the Cursor connection
+Connecting an agent never widens what its user can already do:
 
-In Cursor chat (Agent mode), ask a question that triggers an MCP tool.
+- Sandboxed execution: in code mode, agent-written JavaScript runs in an isolated sandbox with no file system, network, or Node.js API access beyond the provided tools.
+- Host allowlist: the `fetch` function only reaches allow-listed hosts derived from your API descriptions and configuration.
+  Requests to unrelated hosts, and to loopback, private-network, and cloud-metadata addresses, are blocked.
+- Zero credential custody: to call an API that requires authentication, the agent includes the API's credentials with each call; Redocly forwards them to allow-listed hosts and never stores them.
 
-  {% /tab %}
+## Related how-tos
 
-  {% tab label="Claude Code" %}
-
-### Connect Claude Code to the MCP server
-
-1. Run: `claude mcp add ${MCP_SERVER_NAME} ${URL} --transport http` where `${MCP_SERVER_NAME}` is your desired server name and `${URL}` is the MCP server URL.
-1. In the Claude Code CLI, type `/mcp` and complete authentication if prompted.
-1. Claude Code lists the available tools with descriptions and parameters.
-
-#### Test the Claude Code connection
-
-In the Claude Code CLI, ask the AI agent to perform an instruction that uses an MCP tool.
-
-  {% /tab %}
-
-   {% tab label="VS Code" %}
-
-### Connect VS Code to the MCP server
-
-1. In VS Code, open the command palette.
-   - macOS: `Command + Shift + P`
-   - Windows/Linux: `Ctrl + Shift + P`
-1. Type "MCP: Add Server" in the command palette.
-1. Select "HTTP" to connect to a remote MCP server.
-1. Enter the MCP server URL (for example, `https://example.com/mcp`).
-1. Enter a name for the connection.
-
-If the MCP server requires authentication, VS Code prompts you to open a sign‑in page.
-Complete the sign‑in flow with your credentials.
-
-#### Test the VS Code connection
-
-Open Chat with AI in Agent mode and select the Tools icon.
-Confirm that your MCP connection appears with a list of available tools.
-
-Ask the AI to perform a query that uses an MCP tool.
-
-  {% /tab %}
-{% /tabs %}
+- [Connect an AI agent to the MCP server](./connect-ai-agent.md)
+- [Let AI agents call your APIs](./call-apis-with-ai-agents.md)
 
 ## Resources
 
-- **[MCP configuration reference](../../config/mcp.md)** - Configure MCP for your project
-- **[Agent skills](../agent-skills/index.md)** - Publish task-focused `SKILL.md` instructions and the discovery endpoints agents read to find them
+- **[MCP configuration reference](../../config/mcp.md)** - All `mcp` configuration options, including server variants and API calling
+- **[Docs MCP reference](./openapi.yaml)** - Structured reference for the server's tools, schemas, and authentication metadata
+- **[OpenAPI extension: `x-mcp`](../../content/api-docs/openapi-extensions/x-mcp.md)** - Per-API and per-endpoint control over how APIs participate in the MCP server
+- **[Connect MCP Markdoc tag](../../content/markdoc-tags/connect-mcp.md)** - Add a Connect MCP button anywhere in your documentation

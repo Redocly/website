@@ -176,8 +176,6 @@
       label: seo
     - page: ./sidebar.md
       label: sidebar
-    - page: ./skills.md
-      label: skills
     - page: ./ssoDirect.md
       label: ssoDirect
     - page: ./user-menu.md

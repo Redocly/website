@@ -221,8 +221,6 @@
           label: JSON example
         - page: content/markdoc-tags/markdoc-example.md
           label: Markdoc example
-        - page: content/markdoc-tags/numbered-list.md
-          label: Numbered list
         - page: content/markdoc-tags/openapi-code-sample.md
           label: OpenAPI code sample
         - page: content/markdoc-tags/openapi-response-sample.md
@@ -446,19 +444,17 @@
         # - page: customization/api-functions/kv-storage-reference.md
         #   label: KV storage reference
 
-    - group: MCP servers
+    - group: MCP server
       selectFirstItemOnExpand: true
       items:
         - page: customization/mcp-server/index.md
           label: Overview
+        - page: customization/mcp-server/connect-ai-agent.md
+          label: Connect an AI agent
+        - page: customization/mcp-server/call-apis-with-ai-agents.md
+          label: Let AI agents call your APIs
         - page: customization/mcp-server/openapi.yaml
           label: Docs MCP reference
-
-    - group: Agent skills
-      selectFirstItemOnExpand: true
-      items:
-        - page: customization/agent-skills/index.md
-          label: Overview
 
     - group: Search API
       selectFirstItemOnExpand: true

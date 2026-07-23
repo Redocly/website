@@ -14,8 +14,9 @@ description: Make your content accessible to AI tools.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Redocly automatically generates Model Context Protocol (MCP) servers from your documentation and OpenAPI descriptions.
-MCP servers make your content accessible to AI tools in the MCP ecosystem (such as ChatGPT, Claude, Cursor, Goose).
+Redocly automatically generates a Model Context Protocol (MCP) server from your documentation and API descriptions.
+The MCP server makes your content accessible to AI tools in the MCP ecosystem (such as ChatGPT, Claude, Cursor, Goose).
+Use the `mcp` options to hide the server, select how it exposes its tools, and let AI agents call your documented APIs.
 
 ## Options
 
@@ -35,11 +36,25 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 
 ---
 
+- variant
+- string
+- Select how the Docs MCP server exposes its tools.
+  Possible values: `tools` (one tool per capability), `codemode` (two tools: `execute` and `describe-tools`; required for API calling).
+  For the difference, review [Server variants](../customization/mcp-server/index.md#server-variants).
+  Default: `tools`.
+
+---
+
 - docs
 - [Docs object](#docs-object)
 - Docs MCP configuration options.
 
 ---
+
+- gateway
+- [Gateway object](#gateway-object)
+- API calling configuration options.
+  Lets AI agents execute requests against your documented APIs.
 
 {% /table %}
 
@@ -69,7 +84,34 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 
 - ignore
 - [string]
-- List of patterns or identifiers to ignore in the MCP server.
+- List of glob patterns matched against the file paths of API descriptions in your project.
+  Matching APIs are excluded from the MCP server.
+  Default: `[]`.
+
+{% /table %}
+
+### Gateway object
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- hide
+- boolean
+- Control API calling from the MCP server.
+  API calling stays off unless this option is explicitly set to `false`, and requires `variant: codemode`.
+  Default: `true`.
+
+---
+
+- allowedHosts
+- [string]
+- Additional hosts AI agents can call, on top of the hosts from the `servers` URLs of every callable API.
+  Entries are hostnames (no scheme, port, or path); a `*.` prefix matches exactly one subdomain label.
   Default: `[]`.
 
 {% /table %}
@@ -77,6 +119,8 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 ## Examples
 
 ### Basic configuration
+
+Serve the Docs MCP server with a custom display name:
 
 ```yaml
 # Global settings
@@ -90,34 +134,51 @@ mcp:
 
 ### Ignore specific patterns
 
-Ignore specific files and filename patterns in the MCP server:
+Exclude API descriptions from the MCP server by file path pattern:
 
 ```yaml
-# Global settings
 mcp:
-  hide: false
   docs:
-    hide: false
-    # Ignored patterns
     ignore:
-      - openapi-files/**
-      - test-endpoints
+      - internal-apis/**
+      - openapi/drafts/*.yaml
 ```
 
-## Default configuration
+### Let AI agents call your APIs
+
+Switch the server to code mode, turn on API calling, and allow one extra host:
+
+```yaml
+mcp:
+  variant: codemode
+  gateway:
+    hide: false
+    allowedHosts:
+      - sandbox.example.com
+```
+
+For the full setup, including per-API opt-in and opt-out, follow [Let AI agents call your APIs](../customization/mcp-server/call-apis-with-ai-agents.md).
+
+### Default configuration
+
+The following example shows every `mcp` option set to its default value:
 
 ```yaml
 mcp:
   hide: false
+  variant: tools
   docs:
     hide: false
     name: "Docs MCP server"
+    ignore: []
+  gateway:
+    hide: true
+    allowedHosts: []
 ```
 
 ## Resources
 
-- **[MCP servers overview](../customization/mcp-server/index.md)** - Configure MCP servers and integrate with third-party services
-- **[Agent skills](../customization/agent-skills/index.md)** - Publish `SKILL.md` instructions that the MCP server exposes as resources
-- **[Docs MCP reference](../customization/mcp-server/openapi.yaml)** - Review the structured Docs MCP specification, tool schemas, and authentication metadata
-- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
-- **[Connect MCP Markdoc tag](../content/markdoc-tags/connect-mcp.md)** - Add `Connect MCP` button anywhere in your documentation
+- **[MCP server overview](../customization/mcp-server/index.md)** - What the Docs MCP server exposes, the server variants, and the security model
+- **[Let AI agents call your APIs](../customization/mcp-server/call-apis-with-ai-agents.md)** - Turn on API calling and choose which APIs agents can call
+- **[OpenAPI extension: `x-mcp`](../content/api-docs/openapi-extensions/x-mcp.md)** - Per-API and per-endpoint control over how APIs participate in the MCP server
+- **[Connect MCP Markdoc tag](../content/markdoc-tags/connect-mcp.md)** - Add a Connect MCP button anywhere in your documentation

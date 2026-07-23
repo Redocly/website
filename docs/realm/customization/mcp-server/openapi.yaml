@@ -22,10 +22,21 @@ info:
 
     Public projects can expose Docs MCP without authentication.
 
-    If your project requires login (`rbac` or `requiresLogin` configured), Docs MCP Server requires the user to authenticate using the configured method.
-    This requirement ensures that AI Agents can only access APIs and operations the authenticated user has permission to view.
+    If your project requires login (`rbac` or `requiresLogin` configured), the Docs MCP server requires the user to authenticate using the configured method.
+    This requirement ensures that AI agents can only access APIs and operations the authenticated user has permission to view.
 
     The `whoami` tool is only available when authentication handling is enabled for the Docs MCP server.
+
+    ## Server variants
+
+    The tool set the server exposes depends on the project's [`mcp.variant` configuration](../../config/mcp.md):
+
+    - `tools` (default): each documentation tool listed here is served individually.
+    - `codemode`: the server serves exactly two tools — `execute` and `describe-tools` — and the documentation tools are available inside the `execute` sandbox instead.
+
+    When the project turns on [API calling](./call-apis-with-ai-agents.md), the code-mode sandbox additionally provides a guarded `fetch` function for calling the documented APIs.
+
+    The GraphQL tools are available when the project documents GraphQL APIs.
 
 servers:
   - url: https://{projectHost}/mcp
@@ -43,8 +54,14 @@ tags:
     description: Tools for authentication and identity inspection for MCP clients when Docs MCP authentication handling is enabled.
   - name: API Catalog
     description: Tools for discovering published APIs, inspecting endpoints, reviewing security schemes, and retrieving full OpenAPI descriptions.
+  - name: GraphQL
+    description: Tools for exploring published GraphQL schemas. Available when the project documents GraphQL APIs.
   - name: Search
     description: Tools for searching documentation content.
+  - name: Code mode
+    description: >-
+      Tools served instead of the individual documentation tools when the project sets
+      `mcp.variant: codemode`.
 
 paths: {}
 
@@ -106,6 +123,9 @@ x-mcp:
             type: string
             description: API name
             minLength: 1
+          version:
+            type: string
+            description: API version (required when multiple APIs share the same name but differ by version)
         required:
           - name
       outputSchema:
@@ -147,6 +167,9 @@ x-mcp:
               - head
               - trace
             minLength: 1
+          version:
+            type: string
+            description: API version (required when multiple APIs share the same name but differ by version)
         required:
           - name
           - path
@@ -165,6 +188,9 @@ x-mcp:
             type: string
             description: API name
             minLength: 1
+          version:
+            type: string
+            description: API version (required when multiple APIs share the same name but differ by version)
         required:
           - name
       outputSchema:
@@ -181,6 +207,9 @@ x-mcp:
             type: string
             description: API name
             minLength: 1
+          version:
+            type: string
+            description: API version (required when multiple APIs share the same name but differ by version)
         required:
           - name
       outputSchema:
@@ -199,13 +228,190 @@ x-mcp:
             minLength: 1
           product:
             type: string
-            description: Optional product name to filter search results by specific product.
+            description: Optional product name to filter search results by specific product. Present only when the project defines products.
+          locale:
+            type: string
+            description: Optional locale code to filter search results by documentation language (for example, `en`). Present only when the project defines locales.
         required:
           - query
       outputSchema:
         $ref: '#/components/schemas/SearchOutput'
       tags:
         - Search
+    - name: list-graphql-apis
+      description: Lists available GraphQL schemas with their context and purpose
+      inputSchema:
+        type: object
+        additionalProperties: false
+        properties:
+          filter:
+            type: string
+            description: GraphQL schema name (or part of it)
+            minLength: 1
+          page:
+            type: number
+            description: Page number
+            minimum: 1
+            default: 1
+          limit:
+            type: number
+            description: Number of results per page. Default is 300
+            minimum: 1
+            default: 300
+      outputSchema:
+        $ref: '#/components/schemas/ListGraphqlApisOutput'
+      tags:
+        - GraphQL
+    - name: get-graphql-type-list
+      description: >-
+        List all operations and types in a GraphQL schema as a flat, paginated list.
+        Each item is tagged with its kind (query, object, enum, and so on) and carries a one-line
+        description; operations also include their return type and argument signature.
+        Narrow the result with `kind`, `filter`, or `referencesType` to explore a domain cheaply
+        instead of pulling the full schema.
+      inputSchema:
+        type: object
+        additionalProperties: false
+        properties:
+          name:
+            type: string
+            description: GraphQL schema name
+            minLength: 1
+          kind:
+            type: string
+            description: 'Optional: return only a single category of schema members'
+            enum:
+              - queries
+              - mutations
+              - subscriptions
+              - objects
+              - interfaces
+              - unions
+              - enums
+              - inputs
+              - scalars
+              - directives
+          filter:
+            type: string
+            description: 'Optional: only members whose name contains this substring'
+            minLength: 1
+          referencesType:
+            type: string
+            description: >-
+              Optional: only members that reference this type directly or transitively (via return,
+              field, argument, union-member or input-field types).
+            minLength: 1
+          page:
+            type: number
+            description: Page number
+            minimum: 1
+            default: 1
+          limit:
+            type: number
+            description: Number of results per page. Default is 300
+            minimum: 1
+            default: 300
+        required:
+          - name
+      outputSchema:
+        $ref: '#/components/schemas/GetGraphqlTypeListOutput'
+      tags:
+        - GraphQL
+    - name: get-graphql-type
+      description: >-
+        Get the SDL for a single GraphQL type, operation (query/mutation/subscription field), or
+        directive.
+        Set `includeReferencedTypes` to also pull in every type it references transitively — the
+        full structural subgraph in one call.
+      inputSchema:
+        type: object
+        additionalProperties: false
+        properties:
+          name:
+            type: string
+            description: GraphQL schema name
+            minLength: 1
+          type:
+            type: string
+            description: Name of the type, operation, or directive
+            minLength: 1
+          includeReferencedTypes:
+            type: boolean
+            description: Also include the SDL of every type referenced transitively.
+            default: false
+        required:
+          - name
+          - type
+      outputSchema:
+        $ref: '#/components/schemas/GraphqlSdlOutput'
+      tags:
+        - GraphQL
+    - name: get-graphql-schema
+      description: >-
+        Get the complete GraphQL schema as SDL — the whole type graph in one call.
+        Can be very large for big schemas; prefer `get-graphql-type-list` plus targeted
+        `get-graphql-type` calls.
+      inputSchema:
+        type: object
+        additionalProperties: false
+        properties:
+          name:
+            type: string
+            description: GraphQL schema name
+            minLength: 1
+        required:
+          - name
+      outputSchema:
+        $ref: '#/components/schemas/GraphqlSdlOutput'
+      tags:
+        - GraphQL
+    - name: execute
+      description: >-
+        Run JavaScript in a sandbox against the documentation tools on the global `tools` object.
+        The agent batches tool calls into a single script — chain calls, process results in plain
+        JavaScript, and return only what the request needs.
+        When the project turns on API calling, the sandbox also provides a guarded `fetch` function
+        that calls the documented APIs.
+        Served instead of the individual documentation tools when the project sets
+        `mcp.variant: codemode`.
+      inputSchema:
+        type: object
+        additionalProperties: false
+        properties:
+          code:
+            type: string
+            description: JavaScript to run in the sandbox. Return a value to receive it as the result.
+            minLength: 1
+          description:
+            type: string
+            description: A short, human-readable summary of what this code does.
+            minLength: 1
+        required:
+          - code
+          - description
+      outputSchema:
+        $ref: '#/components/schemas/ExecuteOutput'
+      tags:
+        - Code mode
+    - name: describe-tools
+      description: >-
+        Get the exact TypeScript signatures of the sandbox tools available to `execute`.
+        Agents call this before their first `execute` call instead of guessing signatures.
+        Served instead of the individual documentation tools when the project sets
+        `mcp.variant: codemode`.
+      inputSchema:
+        type: object
+        additionalProperties: false
+        properties:
+          tools:
+            type: array
+            description: Sandbox tool names to describe. Omit to describe every available tool.
+            items:
+              type: string
+      outputSchema:
+        $ref: '#/components/schemas/DescribeToolsOutput'
+      tags:
+        - Code mode
 
 components:
   securitySchemes:
@@ -454,3 +660,85 @@ components:
     SearchOutput:
       type: string
       description: Markdown string containing the rendered search results.
+    ListGraphqlApisOutput:
+      type: object
+      description: Paginated list of GraphQL schemas available through the Docs MCP server.
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: GraphQL schema name used by the GraphQL tools.
+              description:
+                type: string
+                description: Schema description or summary.
+            required:
+              - name
+            additionalProperties: false
+        limit:
+          type: number
+        total:
+          type: number
+        page:
+          type: number
+        totalPages:
+          type: number
+      required:
+        - items
+        - limit
+        - total
+        - page
+        - totalPages
+      additionalProperties: false
+    GetGraphqlTypeListOutput:
+      type: object
+      description: Paginated, flat list of a GraphQL schema's operations and types.
+      properties:
+        name:
+          type: string
+          description: GraphQL schema name.
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              kind:
+                type: string
+                description: Member category, such as `queries`, `objects`, or `enums`.
+              name:
+                type: string
+              description:
+                type: string
+              type:
+                type: string
+                description: Operations only — the return type.
+              args:
+                type: string
+                description: Operations only — the argument signature.
+            required:
+              - kind
+              - name
+            additionalProperties: false
+        limit:
+          type: number
+        total:
+          type: number
+        page:
+          type: number
+        totalPages:
+          type: number
+      additionalProperties: false
+    GraphqlSdlOutput:
+      type: string
+      description: GraphQL schema definition language (SDL) as plain text.
+    ExecuteOutput:
+      type: string
+      description: >-
+        JSON-encoded text content: `{"result": …}` with the script's returned value on success, or
+        `{"error": …}` with the failure message.
+    DescribeToolsOutput:
+      type: string
+      description: Markdown string containing the TypeScript declarations of the requested sandbox tools.
