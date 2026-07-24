@@ -16,7 +16,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@redocly/marketing-pages": "0.2.13",
-    "@redocly/realm": "0.136.0-next.0",
+    "@redocly/realm": "0.136.0-next.4",
     "buffer": "^6.0.3",
     "highlight-words-core": "^1.2.3",
     "path": "^0.12.7",
@@ -38,6 +38,6 @@
     "react-dom": "19.2.4",
     "shell-quote@<1.8.4": "1.8.4",
     "js-cookie@<3.0.7": "3.0.7",
-    "@redocly/realm": "0.136.0-next.0"
+    "@redocly/realm": "0.136.0-next.4"
   }
 }
