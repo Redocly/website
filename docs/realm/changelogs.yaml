@@ -49474,6 +49474,13 @@ reunite:
       patch:
         - Fixed autonomous agent jobs failing to load configured source code repositories.
     dependencies: {}
+  v2026-07-24.1:
+    timestamp: 1784893776000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.40.0`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
