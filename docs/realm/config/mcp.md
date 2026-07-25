@@ -74,6 +74,12 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 
 {% /table %}
 
+## Security and RBAC
+
+The MCP server inherits the project-wide Role-Based Access Control (RBAC) settings.
+If [RBAC is enabled](../access/rbac.md) for your project, the MCP server cannot be accessed without authentication.
+This is an 'all-or-nothing' security model; you cannot enable MCP access without a login if the rest of the project requires authentication.
+
 ## Examples
 
 ### Basic configuration

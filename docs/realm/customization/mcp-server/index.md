@@ -149,7 +149,7 @@ In Cursor chat (Agent mode), ask a question that triggers an MCP tool.
 
 #### Test the Claude Code connection
 
-In the Claude Code CLI, ask the AI agent to perform an instruction that uses an MCP tool.
+ In the Claude Code CLI, ask the AI agent to perform an instruction that uses an MCP tool.
 
   {% /tab %}
 
@@ -177,6 +177,13 @@ Ask the AI to perform a query that uses an MCP tool.
 
   {% /tab %}
 {% /tabs %}
+
+## Security and access control
+
+The MCP server follows the project's Role-Based Access Control (RBAC) settings.
+If [RBAC is active](../../access/rbac.md) for your project, the MCP server requires authentication for all access.
+It uses an 'all-or-nothing' security model, meaning MCP cannot bypass project-level access controls.
+When RBAC is enabled, AI tools and agents must authenticate before they can connect to the MCP server and access its resources.
 
 ## Resources
 
