@@ -67,10 +67,20 @@ Disabling SSO removes the login page, but does not disable `rbac`.
 ## Logout behavior
 
 When a user logs out of a project, the session ends.
+The authentication session (cookie) for Redocly projects has a static duration of 2 hours.
 For OpenID Connect IdPs, users are not automatically logged back in after logout and must re-authenticate at the identity provider the next time they access the project.
 When a session expires without a logout, users are re-authenticated without a prompt.
 
 Logout does not end the session at the identity provider itself, so users stay logged in to other applications that use the same IdP.
+
+## Best practices
+
+### Bookmark direct project URLs
+
+To ensure a smooth login experience, always bookmark the direct URL of your project (for example, `https://docs.example.com`) rather than any intermediate redirect URLs or login pages.
+Intermediate URLs in the authentication flow often contain a `login_challenge` parameter.
+These parameters are temporary and expire after a short period.
+If you use a bookmark that contains an expired login challenge, the authentication flow may fail, or you may be redirected to the Redocly app dashboard instead of your project.
 
 ## Resources
 

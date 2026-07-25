@@ -67,6 +67,15 @@ sso: []
 Disabling SSO is only necessary if you have `rbac` configured, but you don't want to require login to your project.
 Disabling SSO removes the login page, but does not disable `rbac`.
 
+## Best practices
+
+### Bookmark direct project URLs
+
+To ensure a smooth login experience, always bookmark the direct URL of your project (for example, `https://docs.example.com`) rather than any intermediate redirect URLs or login pages.
+Intermediate URLs in the authentication flow often contain a `login_challenge` parameter.
+These parameters are temporary and expire after a short period.
+If you use a bookmark that contains an expired login challenge, the authentication flow may fail, or you may be redirected to the Redocly app dashboard instead of your project.
+
 ## Resources
 
 - **[Add an identity provider](./add-idp.md)** - Add identity providers in Reunite for unified authentication across projects and Reunite login
