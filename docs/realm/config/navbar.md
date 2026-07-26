@@ -77,7 +77,7 @@ The navbar is a good location for top-level category or frequently-used links.
 - linkedSidebars
 - [string]
 - List of relative paths to sidebar files.
-  This option adds the navbar item to a sidebar's breadcrumbs.
+  This option adds the navbar group to a sidebar's breadcrumbs.
   Only effective for top-level navbar items.
 
 ---
@@ -147,8 +147,9 @@ The navbar is a good location for top-level category or frequently-used links.
 - linkedSidebars
 - [string]
 - List of relative paths to sidebar files.
-  This option adds navbar item to sidebar's breadcrumbs.
+  This option adds the navbar item to a sidebar's breadcrumbs.
   Only effective for top-level navbar items.
+  This property does not work for items nested within a group.
 
 ---
 
@@ -232,7 +233,10 @@ navbar:
 
 ### Multi-product navigation
 
-For sites with multiple products, organize content using groups and linked sidebars:
+For sites with multiple products, organize content using navbar groups or the [`products`](./products.md) configuration.
+
+If you use navbar groups, note that `linkedSidebars` is only effective for top-level items.
+To associate multiple sidebars with a group, add the `linkedSidebars` property to the group itself:
 
 ```yaml {% title="redocly.yaml" %}
 navbar:
@@ -240,18 +244,22 @@ navbar:
     - page: index.md
       label: Home
     - group: Products
+      linkedSidebars:
+        - product-a/sidebars.yaml
+        - product-b/sidebars.yaml
       items:
         - page: product-a/index.md
           label: Product A
-          linkedSidebars:
-            - product-a/sidebars.yaml
         - page: product-b/index.md
           label: Product B
-          linkedSidebars:
-            - product-b/sidebars.yaml
     - page: support.md
       label: Support
 ```
+
+{% admonition type="info" name="Recommended approach" %}
+For complex projects with multiple documentation sets, use the [`products`](./products.md) configuration instead of navbar groups.
+The `products` configuration provides a dedicated product picker and more robust navigation handling.
+{% /admonition %}
 
 ### Dropdown menu with separators
 
