@@ -44,6 +44,12 @@ To connect a GitLab repository, you must first create a new access token in GitL
    **This step deletes the files currently in the Redocly project and replaces them with the files in GitLab.**
    {% /admonition %}
 
+   {% admonition type="warning" name="Billable seats" %}
+   Connecting a Git repository results in external committers being automatically added to the Reunite organization as billable seats (Owners, Members, or Committers).
+   This may impact seat limits and billing.
+   Refer to [Manage people](../../organization/manage-people.md) for information on how to link or manage these users.
+   {% /admonition %}
+
 ## Resources
 
 - **[Include remote content](../remote-content/index.md)** - Integrate content from external GitLab repositories into your Reunite projects for streamlined documentation workflows

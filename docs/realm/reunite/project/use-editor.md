@@ -40,6 +40,7 @@ After you have created a new branch, you can add or delete files or folders in t
 - To add files or folders, click the **+** icon and select **New file** or **New folder**.
   - You can also drag and drop files from your computer into the file tree pane.
   - Create a directory structure for a file when creating the file by typing the folder name followed by a `/` and then the file name.
+- To download files or folders, right-click the file or folder and select **Download**.
 - To delete files or folders, right-click the file or folder and select **Delete**.
 - To copy files or folders, right-click the file or folder and select **Copy**.
 - To rename files or folders, right-click the file or folder and select **Rename**.

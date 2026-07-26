@@ -22,6 +22,17 @@ Redocly integrates with popular Git providers such as GitHub and GitLab.
 When you open a pull request, or commit and push to these services, Redocly is notified automatically and can be configured to perform an action, like rebuild the project for a preview or production build.
 The files in your remote Git repository and Redocly are synced, so any changes saved in Redocly or your remote repository are reflected in the published project.
 
+{% admonition type="warning" name="Billable seats" %}
+Connecting a Git repository results in external committers being automatically added to the Reunite organization as billable seats (Owners, Members, or Committers).
+This may impact seat limits and billing.
+Refer to [Manage people](../../organization/manage-people.md) for information on how to link or manage these users.
+{% /admonition %}
+
+{% admonition type="warning" name="Safe migration" %}
+To avoid data loss, download your Redocly-hosted files before connecting to a Git provider.
+The connection process overwrites existing hosted files with the files from the Git repository.
+{% /admonition %}
+
 You can connect your Redocly project to the following Git repository hosting providers:
 
 - [GitHub](github.md)
