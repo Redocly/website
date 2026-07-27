@@ -49812,3 +49812,22 @@ replay:
         - Improved diff display in the AI tool approval panel.
     dependencies:
       '@redocly/theme': 0.67.0
+  0.23.1:
+    timestamp: 1785141674000
+    changes:
+      minor:
+        - Added `inputHints` to dynamic Replay configuration to customize empty-input tooltips in **Try It**.
+      patch:
+        - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.39.0`.
+        - Fixed display overflow of environment and server variables in Replay by truncating long values.
+        - Fixed an issue in Replay where example values with line breaks or tabs corrupted the request URL.
+        - Fixed an issue where requests from Replay without request bodies were rejected by some APIs.
+        - Fixed an issue where the Markdoc `tabs` tag crashed if it contained content without a `label` attribute.
+        - Fixed an issue in Replay where form data fields were not displayed in the initial view of `multipart/form-data` request bodies.
+        - Fixed Replay requests failing when sent to a trusted credential origin with a CORS proxy.
+        - Fixed styling and layout issues in the `requestBody` tab of Replay.
+        - Fixed a crash in Replay where an internal error during logging could bring down the whole app.
+        - Fixed security vulnerabilities `CVE-2026-33055` and `CVE-2026-33056` by upgrading the `tar` to version `0.4.46`.
+        - Fixed an issue in Replay where the account menu displayed "undefined" instead of the signed-in user's name.
+    dependencies:
+      '@redocly/theme': 0.67.0
