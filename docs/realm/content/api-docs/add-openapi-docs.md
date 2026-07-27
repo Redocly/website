@@ -36,6 +36,12 @@ If you have a `sidebars.yaml` file in your project, you must add your OpenAPI de
 If you have a `sidebars.yaml` file in your project, you must add any files, including OpenAPI descriptions, you want displayed in your sidebar navigation menu to it.
 For more information on configuring a `sidebars.yaml` file for your project, see [Sidebar configuration](../../navigation/sidebars.md).
 
+{% admonition type="info" name="API-internal navigation" %}
+Adding an OpenAPI file to `sidebars.yaml` only controls where the entry point to that API appears in the site-wide sidebar.
+The internal structure of the API—its groups, tags, and endpoints—is automatically derived from the OpenAPI specification itself and cannot be modified using `sidebars.yaml` options.
+To customize the internal organization of your API, use OpenAPI extensions like [`x-tagGroups`](./openapi-extensions/x-tag-groups.md).
+{% /admonition %}
+
 To add an OpenAPI file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the OpenAPI description to your `sidebars.yaml` file, as in the following example:
 
 ```yaml {% title="sidebars.yaml" %}
