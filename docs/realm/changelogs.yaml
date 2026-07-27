@@ -49481,6 +49481,16 @@ reunite:
       patch:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.40.0`.
     dependencies: {}
+  v2026-07-27.1:
+    timestamp: 1785150199000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Added redirect for viewer users signing in via IdP-initiated SSO login to their organization's first project portal instead of the Reunite
+          app.
+        - Fixed an issue that caused project source download links to be invalid, restoring ZIP download functionality.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
