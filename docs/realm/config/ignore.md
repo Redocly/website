@@ -8,7 +8,7 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-description: Exclude files and folders from the project build without removing the source files from your project.
+description: Exclude files and folders from the project build and link checker without removing the source files from your project.
 ---
 # `ignore`
 
@@ -18,13 +18,16 @@ description: Exclude files and folders from the project build without removing t
 Changes to the **ignore** configuration in develop mode take effect only after restarting the server.
 {% /admonition %}
 
-This configuration option helps to exclude files and folders from the project build without removing the source files from your project.
+This configuration option helps to exclude files and folders from the project build and link checker without removing the source files from your project.
 You can use **glob patterns** to specify which files and folders to ignore, and **negations** to exclude files or directories that would otherwise be ignored by a previous pattern.
+
+Excluding technical folders (such as `.github`) or non-content files using this property is a best practice to reduce noise from the link checker and other build-time validations.
 
 ## Examples
 
 ```yaml {% title="redocly.yaml" %}
 ignore:
+  - '.github/**/*' # Ignores technical folder and its content
   - 'foo/bar.md' # Ignores specific file
   - 'foo' # Ignores specific folder
   - '**/foo/**/*' # Ignores all 'foo' folders
