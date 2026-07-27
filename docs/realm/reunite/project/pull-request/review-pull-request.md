@@ -109,6 +109,11 @@ After reviewing the pull request, click the **Review** button, add your final th
 
 Format your review comment using the toolbar options, then click **Submit review**.
 
+{% admonition type="info" name="Approval requirements" %}
+Approval requirements, such as the minimum number of required approvals before a pull request can be merged, are managed through your Git provider's branch protection rules (for example, GitHub or GitLab).
+These cannot be configured within Redocly configuration files.
+{% /admonition %}
+
 After the review is submitted, if your project uses a [connected Git provider](../../project/connect-git/connect-git-provider.md) (GitHub, GitLab, Azure DevOps, or Bitbucket), you will see a **Visual review** check on it.
 
 The check links back to the **Visual review** tab in Reunite and displays a short status (for example, **Pending**, **Approved**, **Changes requested**, or **No changes**).
@@ -132,16 +137,30 @@ Click this icon to view the comment on the provider’s platform.
       withLightbox=true
     /%}
 
-{% admonition type="warning" name="Review posting behavior" %}
-If your accounts are connected but you do not have review permissions in the provider, your review appears in Reunite only and is never posted to the provider.
+{% admonition type="warning" name="Review synchronization" %}
+If your accounts are connected but you do not have sufficient permissions in the Git provider to post a review, Reunite displays a warning banner indicating that the review was not applied to the provider.
+
+In this case, your review remains visible only within Reunite and does not satisfy any "required review" status checks in the Git provider.
 {% /admonition %}
 
 ## Merge a pull request
 
-After a **Ready for review** pull request receives approval and passes checks, click **Merge**.
+The **Merge** button in Reunite honors your Git provider's branch protection rules and requirements.
+Before you can merge, the pull request must:
+- Receive the required number of approvals as configured in the Git provider.
+- Pass all mandatory status checks or CI/CD pipelines.
+
+If these requirements are not met, the **Merge** button remains unavailable until the conditions are satisfied in the Git provider.
+
+### Merge options
+
+Depending on your permissions and the state of the pull request, you may see different merge options:
+
+- **Merge**: Performs a standard merge that follows all configured branch protection rules.
+- **Merge without requirements**: Allows users with sufficient administrative permissions in the Git provider to bypass branch protection rules.
 
 {% admonition type="warning" name="Emergency merge process" %}
-Click **Merge without requirements** only for urgent changes when you're certain they won't cause build issues.
+Use **Merge without requirements** only for urgent changes when you're certain they won't cause build issues.
 
 {% img
   src="../../images/reunite-pull-request-merge-without-requirements.png" alt="Screenshot of pull request in Reunite with arrow pointing to the Merge without requirements option" withLightbox=true width="" height=""
