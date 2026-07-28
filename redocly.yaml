@@ -81,9 +81,6 @@ navbar:
         - label: Reviewer
           page: ./pages/ai-reviewer/ai-reviewer.page.tsx
           icon: ./images/icons/ai-reviewer.svg
-        - label: Maintainer
-          page: ./pages/ai-reviewer/ai-reviewer.page.tsx
-          icon: ./images/icons/ai-reviewer.svg
 
     - label: Docs
       page: ./docs/index.md
