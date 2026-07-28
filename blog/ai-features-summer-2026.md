@@ -6,7 +6,7 @@ seo:
   title: "Your docs, ready for AI agents: what we shipped and what's next"
   description: Developers ask AI before they open your docs. Here's everything Redocly shipped in two months to make your documentation the source AI tools trust, and the roadmap for what agents will do next.
 author: illia-nykonchuk
-publishedDate: '2026-08-05'
+publishedDate: '2026-07-28'
 categories:
   - redocly:product-updates
 ---
