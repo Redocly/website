@@ -74,6 +74,17 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 
 {% /table %}
 
+## Access control
+
+Role-based access control (RBAC) that protects content in your project also protects that content over the Docs MCP server.
+The Docs MCP server enforces access with the same RBAC engine as the portal, so each authenticated client receives only the API descriptions, schemas, skills, and search results that its teams are permitted to access — the same content it could see in the portal.
+When RBAC restricts anonymous access, the `/mcp` endpoint requires authentication and returns `401` to unauthenticated clients.
+
+{% admonition type="info" %}
+The `hide` and `ignore` options remove content from the build for all clients.
+They are build-time removal, not access control — use RBAC to control who can access content.
+{% /admonition %}
+
 ## Examples
 
 ### Basic configuration
@@ -119,5 +130,6 @@ mcp:
 - **[MCP servers overview](../customization/mcp-server/index.md)** - Configure MCP servers and integrate with third-party services
 - **[Agent skills](../customization/agent-skills/index.md)** - Publish `SKILL.md` instructions that the MCP server exposes as resources
 - **[Docs MCP reference](../customization/mcp-server/openapi.yaml)** - Review the structured Docs MCP specification, tool schemas, and authentication metadata
+- **[Role-based access control](./access/rbac.md)** - Configure team-based permissions that also govern which content clients can access over the Docs MCP server
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
 - **[Connect MCP Markdoc tag](../content/markdoc-tags/connect-mcp.md)** - Add `Connect MCP` button anywhere in your documentation
