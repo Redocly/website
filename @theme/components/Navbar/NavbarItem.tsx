@@ -64,35 +64,20 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
       })
       .includes(true);
 
-    const descriptions = [
-      'Collaborative editor suite',
-      'Combo of Redoc, Revel, and Reef',
-      'External developer showcase',
-      'API reference and mock server',
-      'Internal service catalog',
-      'API monitoring',
-      'Reads pull requests, leaves expert feedback',
-    ];
-    const groupItemsComponents = groupItems.reduce((acc, curr, index) => {
+    const descriptions: Record<string, string> = {
+      Realm: 'Combo of Redoc, Revel, and Reef',
+      Revel: 'External developer showcase',
+      Redoc: 'API reference and mock server',
+      Reef: 'Internal service catalog',
+      'Respect Monitoring': 'API monitoring',
+      Reviewer: 'Reads pull requests, leaves expert feedback'
+    };
+    const newItems = new Set(['Reviewer']);
+    const groupItemsComponents = groupItems.reduce((acc, curr) => {
       if (curr.type.startsWith('separator')) {
         acc.push({ [curr.label as string]: [] });
       } else {
-        if (curr.label === 'AI Reviewer') {
-          acc[acc.length - 1][Object.keys(acc[acc.length - 1])[0]].push(
-            <AiToolLink key={`${curr.label}`} to={curr.link}>
-              <LabelRow>
-                <AiToolTitle>
-                  {curr.icon && <AiToolIcon src={curr.icon} />}
-                  {curr.label}
-                </AiToolTitle>
-                <NewTag>New</NewTag>
-              </LabelRow>
-              {descriptions[index - 1] && (
-                <AiToolDescription>{descriptions[index - 1]}</AiToolDescription>
-              )}
-            </AiToolLink>,
-          );
-        } else if (curr.label === 'Reunite') {
+        if (curr.label === 'Reunite') {
           acc[acc.length - 1][Object.keys(acc[acc.length - 1])[0]].push(
             <ReuniteBlock key={`${curr.label}`} to={curr.link}>
               <ReuniteDescription>Build your docs with</ReuniteDescription>
@@ -118,13 +103,18 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
             </ReuniteBlock>,
           );
         } else {
-          acc[acc.length - 1][Object.keys(acc[acc.length - 1])[0]].push(
+          const currentSection = Object.keys(acc[acc.length - 1])[0];
+          const description =
+            currentSection === 'Open Source' ? undefined : descriptions[curr.label as string];
+          const showNewTag = newItems.has(curr.label as string);
+          acc[acc.length - 1][currentSection].push(
             <StyledLink key={`${curr.label}`} to={curr.link}>
               {curr.icon && <Icon src={curr.icon} />}
               <TextBlock>
                 {curr.label}
-                {descriptions[index - 1] && <span>{descriptions[index - 1]}</span>}
+                {description && <span>{description}</span>}
               </TextBlock>
+              {showNewTag && <NewTag>New</NewTag>}
             </StyledLink>,
           );
         }
@@ -143,15 +133,17 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
           (value as any).map((value, index) => {
             if (index === 0) {
               reunite = value;
-            } else if (value.key === 'AI Reviewer') {
-              aiTools.push(value);
             } else {
               products.push(value);
             }
           });
-        } else {
+        } else if (key === 'Open Source') {
           (value as any).map((value) => {
             openSource.push(value);
+          });
+        } else {
+          (value as any).map((value) => {
+            aiTools.push(value);
           });
         }
       });
@@ -227,11 +219,19 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
             </ProductsBlock>
             {aiTools.length > 0 && (
               <AiToolsSection>
-                {aiTools.map((link, index) => (
-                  <DropdownListItem key={index} product="ai-reviewer">
-                    {link}
-                  </DropdownListItem>
-                ))}
+                <Label>
+                  Redocly Agents:
+                </Label>
+                <AiToolsItems>
+                  {aiTools.map((link, index) => (
+                    <DropdownListItem
+                      key={index}
+                      product={`${link.key.toLowerCase().replace(/\s+/g, '-')}`}
+                    >
+                      {link}
+                    </DropdownListItem>
+                  ))}
+                </AiToolsItems>
               </AiToolsSection>
             )}
           </DropdownWrapper>
@@ -380,14 +380,11 @@ const TextBlock = styled.div`
   }
 `;
 
-const LabelRow = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-`;
-
 const NewTag = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -403,8 +400,8 @@ const NewTag = styled.div`
 `;
 
 const AiToolsSection = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 4px;
 
   margin-top: 8px;
@@ -412,36 +409,10 @@ const AiToolsSection = styled.div`
   border-top: 1px solid var(--dropdown-list-border-color);
 `;
 
-const AiToolLink = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-
-  && {
-    color: var(--text-color-primary);
-  }
-`;
-
-const AiToolTitle = styled.div`
-  display: flex;
-  align-items: center;
+const AiToolsItems = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 4px;
-`;
-
-const AiToolIcon = styled.img`
-  height: 16px;
-  width: 16px;
-`;
-
-const AiToolDescription = styled.p`
-  margin: 0;
-  padding-left: 20px;
-
-  color: var(--text-color-secondary);
-  font-family: Inter;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
 `;
 
 const Icon = styled.img`
@@ -462,7 +433,7 @@ export const DropdownList = styled.ul`
   z-index: 1;
 `;
 
-export const DropdownListItem = styled.li<{ product?: string, isLast?: boolean }>`
+export const DropdownListItem = styled.li<{ product?: string; isLast?: boolean }>`
   display: block;
   width: 100%;
   border: none;
