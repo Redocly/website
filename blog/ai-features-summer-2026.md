@@ -29,7 +29,7 @@ There's nothing to build and nothing to host: point an AI tool at your docs and 
 
 In just two months, the server got substantially more capable:
 
-- **GraphQL support.** The Docs MCP server is no longer OpenAPI-only. Agents can now list your [GraphQL APIs](https://redocly.com/docs/realm/content/api-docs/add-graphql-docs), browse types, and read whole schemas.
+- **GraphQL support.** The MCP tools for exploring your API catalog now cover GraphQL, not only OpenAPI. Agents can list your [GraphQL APIs](https://redocly.com/docs/realm/content/api-docs/add-graphql-docs), browse types, and read whole schemas.
 - **Multi-version APIs.** Projects that document several versions expose all of them, so agents answer against the version your user is actually on.
 - **Search that respects locales.** An English question no longer pulls back the same page in every translation.
 
@@ -67,16 +67,19 @@ Questions that used to mean opening a support ticket and waiting for a reply now
 Ask "why did my build fail?" and you get your build's answer, not a generic troubleshooting page.
 And when a human really is needed, the **Contact support** option appears the moment the assistant decides so.
 
+The assistant is also how we dogfood what's coming next: its abilities are built as custom MCP tools, and the assistant itself runs as the embeddable widget.
+You'll meet both in the roadmap below.
+
 ## Where this is heading
 
 Everything above makes your docs something agents can _read_.
 The next wave makes them something agents can _act through_:
 
-- **Gateway MCP.** Agents stop just reading about your API and start calling it, with your documentation as the interface. Your docs become the fastest way for any AI tool to integrate with your product.
+- **Gateway MCP.** Agents stop just reading about your API and start calling it, with your documentation as the interface. Fully opt-in: nothing is exposed unless you enable it. Your docs become the fastest way for any AI tool to integrate with your product.
 - **Code mode.** Instead of a long chain of tool calls, an agent writes a short script that runs in a sandbox and chains the calls itself. Same answers, a fraction of the tokens.
 - **Custom MCP tools.** Add your own tools to your project's MCP server, so agents can do what's specific to your product, not only what's built in.
 - **Maintainer.** An agent that watches the signals your docs already produce (search queries, feedback, page analytics, support questions), finds the real gaps, validates them and opens pull requests with fixes. Docs that improve while you sleep.
-- **Embeddable AI Assistant.** The assistant that answers from your docs, on any website, with a single script tag.
+- **Embeddable AI Assistant.** The assistant that answers from your docs, on your web app, with a single script tag.
 
 ## Try it in the next five minutes
 
