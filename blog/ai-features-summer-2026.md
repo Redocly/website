@@ -22,7 +22,7 @@ That puts a hard question to every API team: when an AI answers about your API, 
 We've spent the last two months making sure it's reading.
 Here's what shipped, and where it's heading.
 
-## Your docs already speak MCP
+## Your docs are an MCP server
 
 Projects ship with a built-in [Docs MCP server](https://redocly.com/docs/realm/customization/mcp-server) at `/mcp`.
 There's nothing to build and nothing to host: point an AI tool at your docs and it can search pages, list APIs, and read endpoint details directly from the source of truth, with your RBAC rules enforced on every call.
