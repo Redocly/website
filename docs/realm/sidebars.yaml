@@ -278,6 +278,8 @@
               label: x-servers
             - page: content/api-docs/openapi-extensions/x-assertion-type.md
               label: x-assertionType
+            - page: content/api-docs/openapi-extensions/x-seo.md
+              label: x-seo
         - page: content/api-docs/add-asyncapi-docs.md
           label: AsyncAPI
         - group: AsyncAPI extensions
@@ -295,6 +297,8 @@
               label: x-rbac
             - page: content/api-docs/asyncapi-extensions/x-metadata.md
               label: x-metadata
+            - page: content/api-docs/asyncapi-extensions/x-seo.md
+              label: x-seo
         - page: content/api-docs/add-graphql-docs.md
           label: GraphQL
         - page: content/api-docs/add-soap-docs.md
