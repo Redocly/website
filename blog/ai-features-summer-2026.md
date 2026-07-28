@@ -78,6 +78,7 @@ The next wave makes them something agents can _act through_:
 - **Gateway MCP.** Agents stop just reading about your API and start calling it, with your documentation as the interface. Fully opt-in: nothing is exposed unless you enable it. Your docs become the fastest way for any AI tool to integrate with your product.
 - **Code mode.** Instead of a long chain of tool calls, an agent writes a short script that runs in a sandbox and chains the calls itself. Same answers, a fraction of the tokens.
 - **Custom MCP tools.** Add your own tools to your project's MCP server, so agents can do what's specific to your product, not only what's built in.
+- **The latest MCP protocol.** The protocol is evolving quickly, and we're updating our MCP server to its latest revision, so your docs support new agent capabilities as soon as clients adopt them.
 - **Maintainer.** An agent that watches the signals your docs already produce (search queries, feedback, page analytics, support questions), finds the real gaps, validates them and opens pull requests with fixes. Docs that improve while you sleep.
 - **Embeddable AI Assistant.** The assistant that answers from your docs, on your web app, with a single script tag.
 
