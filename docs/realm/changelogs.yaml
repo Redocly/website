@@ -30186,6 +30186,14 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.53.0:
+    timestamp: 1785338666000
+    changes:
+      minor:
+        - Added support for the `mcp` key in `rbac.features` to enable team-based access control.
+      patch:
+        - Fixed an issue where multiple adjacent separators in the sidebar rendered only the last one.
+    dependencies: {}
   0.52.0:
     timestamp: 1784029976000
     changes:
