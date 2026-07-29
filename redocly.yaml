@@ -79,8 +79,8 @@ navbar:
           href: /respect-cli
         - separator: Agents
         - label: Reviewer
-          page: ./pages/ai-reviewer/ai-reviewer.page.tsx
-          icon: ./images/icons/ai-reviewer.svg
+          page: ./pages/reviewer/reviewer.page.tsx
+          icon: ./images/icons/reviewer.svg
 
     - label: Docs
       page: ./docs/index.md

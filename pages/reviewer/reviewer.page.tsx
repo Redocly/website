@@ -2,9 +2,9 @@ import Page from '@redocly/marketing-pages/pages/ai-reviewer/ai-reviewer.page.js
 
 export const frontmatter = {
   seo: {
-    title: 'AI Reviewer',
+    title: 'Reviewer',
   },
-  slug: '/ai-reviewer',
+  slug: '/reviewer',
 };
 
 export default Page;
