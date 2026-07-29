@@ -77,7 +77,7 @@ navbar:
           page: ./pages/redocly-cli/redocly-cli.page.tsx
         - label: Respect
           href: /respect-cli
-        - separator: Redocly Agents
+        - separator: Agents
         - label: Reviewer
           page: ./pages/ai-reviewer/ai-reviewer.page.tsx
           icon: ./images/icons/ai-reviewer.svg
