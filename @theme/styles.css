@@ -5,7 +5,6 @@
     font-style: normal;
     font-weight: 400;
     src: url('./font/soehne-buch.woff2') format('woff2');
-    font-display: swap;
 }
 
 @font-face {
@@ -13,7 +12,6 @@
     font-style: italic;
     font-weight: 400;
     src: url('./font/soehne-buch-kursiv.woff2') format('woff2');
-    font-display: swap;
 }
 
 @font-face {
@@ -21,7 +19,6 @@
     font-style: normal;
     font-weight: 500;
     src: url('./font/soehne-kraftig.woff2') format('woff2');
-    font-display: swap;
 }
 
 @font-face {
@@ -29,7 +26,6 @@
     font-style: italic;
     font-weight: 500;
     src: url('./font/soehne-kraftig-kursiv.woff2') format('woff2');
-    font-display: swap;
 }
 
 @font-face {
@@ -37,7 +33,6 @@
     font-style: normal;
     font-weight: 600;
     src: url('./font/soehne-halbfett.woff2') format('woff2');
-    font-display: swap;
 }
 
 @font-face {
@@ -45,7 +40,6 @@
     font-style: italic;
     font-weight: 600;
     src: url('./font/soehne-halbfett-kursiv.woff2') format('woff2');
-    font-display: swap;
 }
 
 @font-face {
@@ -53,7 +47,6 @@
     font-style: normal;
     font-weight: 700;
     src: url('./font/soehne-dreiviertelfett.woff2') format('woff2');
-    font-display: swap;
 }
 
 @font-face {
@@ -61,151 +54,132 @@
     font-style: italic;
     font-weight: 700;
     src: url('./font/soehne-dreiviertelfett-kursiv.woff2') format('woff2');
-    font-display: swap;
 }
 
 @font-face {
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 300;
-    src: url('./font/RedHatDisplay-Light.ttf');
-    font-display: swap;
+    src: url('./font/RedHatDisplay-Light.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 400;
-    src: url('./font/RedHatDisplay-Regular.ttf');
-    font-display: swap;
+    src: url('./font/RedHatDisplay-Regular.woff2') format('woff2');  
 }
 
 @font-face {
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 500;
-    src: url('./font/RedHatDisplay-Medium.ttf');
-    font-display: swap;
+    src: url('./font/RedHatDisplay-Medium.woff2') format('woff2');    
 }
 
 @font-face {
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 600;
-    src: url('./font/RedHatDisplay-SemiBold.ttf');
-    font-display: swap;
+    src: url('./font/RedHatDisplay-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 700;
-    src: url('./font/RedHatDisplay-Bold.ttf');
-    font-display: swap;
+    src: url('./font/RedHatDisplay-Bold.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 800;
-    src: url('./font/RedHatDisplay-ExtraBold.ttf');
-    font-display: swap;
+    src: url('./font/RedHatDisplay-ExtraBold.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
-    src: url('./font/Inter-Light.ttf');
-    font-display: swap;
+    src: url('./font/Inter-Light.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    src: url('./font/Inter-Regular.ttf');
-    font-display: swap;
+    src: url('./font/Inter-Regular.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    src: url('./font/Inter-Medium.ttf');
-    font-display: swap;
+    src: url('./font/Inter-Medium.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    src: url('./font/Inter-SemiBold.ttf');
-    font-display: swap;
+    src: url('./font/Inter-SemiBold.woff2') format('woff2'); 
 }
 
 @font-face {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    src: url('./font/Inter-Bold.ttf');
-    font-display: swap;
+    src: url('./font/Inter-Bold.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
-    src: url('./font/Inter-ExtraBold.ttf');
-    font-display: swap;
+    src: url('./font/Inter-ExtraBold.woff2') format('woff2');    
 }
 
 @font-face {
     font-family: 'Gemunu Libre';
     font-style: normal;
     font-weight: 300;
-    src: url('./font/GemunuLibre-Light.ttf');
-    font-display: swap;
+    src: url('./font/GemunuLibre-Light.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Gemunu Libre';
     font-style: normal;
     font-weight: 400;
-    src: url('./font/GemunuLibre-Regular.ttf');
-    font-display: swap;
+    src: url('./font/GemunuLibre-Regular.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Gemunu Libre';
     font-style: normal;
     font-weight: 500;
-    src: url('./font/GemunuLibre-Medium.ttf');
-    font-display: swap;
+    src: url('./font/GemunuLibre-Medium.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Gemunu Libre';
     font-style: normal;
     font-weight: 600;
-    src: url('./font/GemunuLibre-SemiBold.ttf');
-    font-display: swap;
+    src: url('./font/GemunuLibre-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Gemunu Libre';
     font-style: normal;
     font-weight: 700;
-    src: url('./font/GemunuLibre-Bold.ttf');
-    font-display: swap;
+    src: url('./font/GemunuLibre-Bold.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Gemunu Libre';
     font-style: normal;
     font-weight: 800;
-    src: url('./font/GemunuLibre-ExtraBold.ttf');
-    font-display: swap;
+    src: url('./font/GemunuLibre-ExtraBold.woff2') format('woff2');
 }
 
 @font-face {
@@ -213,159 +187,6 @@
     src: url('./font/SFMono-Semibold.otf');
     font-weight: 600;
     font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 300;
-    src: url('./font/RedHatDisplay-Light.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./font/RedHatDisplay-Regular.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 500;
-    src: url('./font/RedHatDisplay-Medium.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 600;
-    src: url('./font/RedHatDisplay-SemiBold.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 700;
-    src: url('./font/RedHatDisplay-Bold.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 800;
-    src: url('./font/RedHatDisplay-ExtraBold.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    src: url('./font/Inter-Light.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./font/Inter-Regular.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    src: url('./font/Inter-Medium.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    src: url('./font/Inter-SemiBold.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    src: url('./font/Inter-Bold.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    src: url('./font/Inter-ExtraBold.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Gemunu Libre';
-    font-style: normal;
-    font-weight: 300;
-    src: url('./font/GemunuLibre-Light.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Gemunu Libre';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./font/GemunuLibre-Regular.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Gemunu Libre';
-    font-style: normal;
-    font-weight: 500;
-    src: url('./font/GemunuLibre-Medium.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Gemunu Libre';
-    font-style: normal;
-    font-weight: 600;
-    src: url('./font/GemunuLibre-SemiBold.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Gemunu Libre';
-    font-style: normal;
-    font-weight: 700;
-    src: url('./font/GemunuLibre-Bold.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Gemunu Libre';
-    font-style: normal;
-    font-weight: 800;
-    src: url('./font/GemunuLibre-ExtraBold.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'SF Mono';
-    src: url('./font/SFMono-Semibold.otf');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
 }
 
 :root {
