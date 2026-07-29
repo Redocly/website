@@ -148,6 +148,12 @@ rbac:
 - Map[string, string](#team-to-role-map)
 - Map of teams to roles to define the team and role for AI search feature access.
 
+---
+
+- mcp
+- Map[string, string](#team-to-role-map)
+- Map of teams to roles to define the team and role for MCP server access.
+
 {% /table %}
 
 ### Team folder
@@ -372,6 +378,20 @@ access:
         authenticated: read
 ```
 
+Access to the MCP server is controlled the same way through the `mcp` feature.
+In the following example, only members of the Developers team can access the MCP server, while all other users are denied access.
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    features:
+      mcp:
+        Developers: read
+```
+
+When a team-based role is set for the `mcp` feature, only teams with a role other than `none` can access the MCP server.
+Users must sign in unless the `anonymous` team is granted such a role, either directly or through the `*` wildcard, which covers all teams that are not listed explicitly, including `anonymous`.
+
 ### Disallow access to one specific page
 
 In the following example, members of the Developers team can access Markdown files in the `/security` folder, with the exception of `top-secret.md` that has the `none` value for Developers in the front matter of the file.
@@ -402,3 +422,4 @@ rbac:
 - **[SSO configuration](./sso.md)** - Configure single sign-on to identify users and integrate with RBAC for comprehensive authentication and authorization
 - **[SSO Direct configuration](../ssoDirect.md)** - Configure direct SSO integration for streamlined user identification and RBAC implementation
 - **[Requires login configuration](./requires-login.md)** - Set up login requirements to enforce authentication before accessing RBAC-protected content
+- **[MCP server](../../customization/mcp-server/index.md#restrict-access-to-the-mcp-server)** - Restrict MCP server access to specific teams with the `mcp` feature role
