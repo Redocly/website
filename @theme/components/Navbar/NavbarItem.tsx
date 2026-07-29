@@ -220,7 +220,7 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
             {aiTools.length > 0 && (
               <AiToolsSection>
                 <Label>
-                  Redocly Agents:
+                  Agents:
                 </Label>
                 <AiToolsItems>
                   {aiTools.map((link, index) => (
