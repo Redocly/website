@@ -7,6 +7,41 @@ toc:
 
 <!-- do-not-remove -->
 
+## 2.41.2 (2026-07-29)
+
+### Patch Changes
+
+- Updated js-yaml from `5.2.1` to `5.2.2` to resolve a vulnerability in YAML parsing.
+- Added support for the Arazzo spec-compliant workflow reference form `$sourceDescriptions.<name>.<workflowId>` in `dependsOn`, step `workflowId`, and success/failure action `workflowId`.
+
+  Unresolvable workflow references fail only the affected workflow with a clear error message, and no longer abort the whole run or pass unnoticed.
+
+- Updated @redocly/openapi-core to v2.41.2.
+- Updated @redocly/respect-core to v2.41.2.
+
+## 2.41.1 (2026-07-28)
+
+### Patch Changes
+
+- Fixed an issue where the `drift` command's `schema-consistency` rule reported false-positive findings for `oneOf` schemas with a `discriminator`.
+  Payloads are validated only against the branch selected by the discriminator value instead of every `oneOf` branch.
+  Schemas whose discriminator does not meet Ajv's structural requirements keep the previous behavior.
+- Extended the `drift` command's built-in undocumented-header ignore list with `x-amz-`, `x-amzn-` and `x-github-` prefixes, and the `x-hub-signature` / `x-hub-signature-256` webhook signature headers.
+
+## 2.41.0 (2026-07-27)
+
+### Minor Changes
+
+- Added a new built-in rule `security-scopes-defined` that requires every scope used in a security requirement to be defined in the corresponding OAuth2 security scheme.
+  The rule supports OpenAPI 2.0/3.x and AsyncAPI 2.6/3.0, suggests the closest defined scope for typos, and has an opt-in `requireScopes` option that requires OAuth2 security requirements to list at least one scope.
+
+### Patch Changes
+
+- Fixed an issue in `respect` where the execution of parent workflow's steps didn't halt after a step that referenced another workflow had failed.
+- Fixed an issue where the `cursor` AI provider of the `generate-spec` command sent only the instructions to the model and the operation to refine never reached it.
+- Updated @redocly/openapi-core to v2.41.0.
+- Updated @redocly/respect-core to v2.41.0.
+
 ## 2.40.0 (2026-07-21)
 
 ### Minor Changes

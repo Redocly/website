@@ -77,6 +77,10 @@ navbar:
           page: ./pages/redocly-cli/redocly-cli.page.tsx
         - label: Respect
           href: /respect-cli
+        - separator: Agents
+        - label: Reviewer
+          page: ./pages/reviewer/reviewer.page.tsx
+          icon: ./images/icons/reviewer.svg
 
     - label: Docs
       page: ./docs/index.md
@@ -233,7 +237,8 @@ responseHeaders:
           https://v.clarity.ms/collect
           https://cdn.jsdelivr.net
           https://forms-na2.hscollectedforms.net
-          https://forms-na2.hsforms.com;
+          https://forms-na2.hsforms.com
+          https://app.loops.so/api/newsletter-form/;
         form-action 
           'self' 
           https://forms.hsforms.com
