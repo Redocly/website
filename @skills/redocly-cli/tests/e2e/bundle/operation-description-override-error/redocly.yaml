@@ -1,8 +1,0 @@
-apis:
-  main:
-    root: ./openapi.yaml
-
-decorators:
-  operation-description-override:
-    operationIds:
-      updatePet: ./non-existing.md

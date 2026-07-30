@@ -1,7 +1,0 @@
-type: object
-properties:
-  base:
-    type: string
-discriminator:
-  propertyName: test
-  defaultMapping: ./Foo.yaml

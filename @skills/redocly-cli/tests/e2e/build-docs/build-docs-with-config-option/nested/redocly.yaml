@@ -1,4 +1,0 @@
-extends:
-  - minimal
-openapi:
-  htmlTemplate: ../index.hbs

@@ -1,7 +1,0 @@
-apis:
-  main:
-    root: ./openapi.yaml
-
-rules:
-  struct: error
-  no-unused-components: error

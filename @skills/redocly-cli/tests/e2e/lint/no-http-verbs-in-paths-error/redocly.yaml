@@ -1,7 +1,0 @@
-apis:
-  main:
-    root: ./openapi.yaml
-
-rules:
-  no-http-verbs-in-paths:
-    severity: error

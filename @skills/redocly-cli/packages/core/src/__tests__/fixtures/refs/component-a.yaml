@@ -1,6 +1,0 @@
-components:
-  parameters:
-    User:
-      name: test
-      in: path
-      description: test-A

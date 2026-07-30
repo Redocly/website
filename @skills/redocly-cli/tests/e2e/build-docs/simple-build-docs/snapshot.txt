@@ -1,4 +1,0 @@
-
-Prerendering docs
-
-🎉 bundled successfully in: redoc-static.html (333 KiB) [⏱ <test>ms].

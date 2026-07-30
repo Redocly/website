@@ -1,6 +1,0 @@
-apis:
-  main:
-    root: ./openapi.yaml
-
-rules:
-  no-enum-type-mismatch: error

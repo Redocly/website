@@ -1,6 +1,0 @@
-type: object
-properties:
-  discriminatedProp:
-    type: string
-  bar:
-    type: boolean

@@ -1,8 +1,0 @@
-extends:
-  - ruleset.yaml
-
-apis:
-  main:
-    root: ./openapi.yaml
-    rules:
-      rule/test-license: warn # should not be highlighted

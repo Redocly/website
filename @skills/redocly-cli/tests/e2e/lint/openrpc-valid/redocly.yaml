@@ -1,6 +1,0 @@
-apis:
-  main:
-    root: ./openrpc.json
-
-extends:
-  - recommended

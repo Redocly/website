@@ -1,5 +1,0 @@
-plugins:
-  - custom-plugin.js
-rules:
-  operation-operationId: warn
-  custom/operation-extra: error

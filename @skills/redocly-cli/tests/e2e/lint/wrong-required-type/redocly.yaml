@@ -1,7 +1,0 @@
-apis:
-  main:
-    root: ./openapi.yaml
-
-rules:
-  struct: error
-  required-string-property-missing-min-length: error

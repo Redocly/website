@@ -1,8 +1,0 @@
-apis:
-  main:
-    root: ./main.yaml
-
-decorators:
-  tag-description-override:
-    tagNames:
-      pet: ./non-existing.md

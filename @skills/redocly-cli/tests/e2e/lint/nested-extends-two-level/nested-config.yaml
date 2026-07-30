@@ -1,2 +1,0 @@
-extends:
-  - ./nested-config-2.yaml

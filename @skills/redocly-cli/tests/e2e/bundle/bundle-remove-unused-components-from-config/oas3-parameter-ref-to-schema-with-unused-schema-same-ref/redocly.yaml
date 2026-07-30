@@ -1,6 +1,0 @@
-apis:
-  test-api:
-    root: openapi.yaml
-
-decorators:
-  remove-unused-components: on

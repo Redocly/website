@@ -1,8 +1,0 @@
-total:
-  description: Total data number
-  type: number
-  example: 1000
-pages:
-  description: Total pages
-  type: number
-  example: 5

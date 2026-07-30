@@ -1,4 +1,0 @@
-description: List of upcoming special events.
-type: array
-items:
-  $ref: ./SpecialEventResponse.yaml

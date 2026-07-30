@@ -1,5 +1,0 @@
-plugins:
-  - plugins/type-extention.cjs
-
-arazzo1Rules:
-  struct: error

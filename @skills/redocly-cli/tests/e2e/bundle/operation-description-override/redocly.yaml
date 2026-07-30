@@ -1,9 +1,0 @@
-apis:
-  main:
-    root: ./openapi.yaml
-
-decorators:
-  operation-description-override:
-    operationIds:
-      updatePet: ./update-pet-operation-description.md
-      createUser: ./create-user-operation-description.md

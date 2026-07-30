@@ -1,7 +1,0 @@
-apis:
-  main:
-    root: ./main.yaml
-
-decorators:
-  info-description-override:
-    filePath: ./non-existing.md

@@ -1,3 +1,0 @@
-#!/bin/sh
-# Stub of the Cursor CLI: same fragment-serving behavior as the claude stub.
-exec "$(dirname "$0")/claude"

@@ -1,7 +1,0 @@
-apis:
-  main:
-    root: ./openapi.yaml
-
-rules:
-  no-path-trailing-slash: off
-  paths-kebab-case: error

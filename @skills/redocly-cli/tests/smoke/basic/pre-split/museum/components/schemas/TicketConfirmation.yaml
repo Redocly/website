@@ -1,3 +1,0 @@
-description: Unique confirmation code used to verify ticket purchase.
-type: string
-example: ticket-event-a98c8f-7eb12

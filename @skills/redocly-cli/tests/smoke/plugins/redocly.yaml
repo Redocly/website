@@ -1,5 +1,0 @@
-extends:
-  - recommended
-plugins:
-  - '@redocly/portal-plugin-async-api'
-  - local-plugin.js

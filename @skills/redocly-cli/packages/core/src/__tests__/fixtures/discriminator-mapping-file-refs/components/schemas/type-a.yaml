@@ -1,6 +1,0 @@
-type: object
-properties:
-  kind:
-    type: string
-    enum:
-      - a

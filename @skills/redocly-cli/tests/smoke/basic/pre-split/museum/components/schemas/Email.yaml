@@ -1,4 +1,0 @@
-description: Email address for ticket purchaser.
-type: string
-format: email
-example: museum-lover@example.com
