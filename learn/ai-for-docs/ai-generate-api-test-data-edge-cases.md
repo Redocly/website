@@ -1,65 +1,93 @@
 ---
 seo:
  title: Use AI to generate API test data and edge cases
- description: How to prompt AI for realistic test data and edge cases from an OpenAPI description, then confirm which suggestions are real with a mock server and Respect before they reach a test suite.
+ description: How to prompt AI for realistic payloads and boundary-condition edge cases from your OpenAPI description, then turn the results into Arazzo workflows Respect checks against a live API.
 ---
 
 # Use AI to generate API test data and edge cases
 
-Most test suites run on a handful of payloads someone typed in a hurry: a valid email, a normal order size, a token that has not expired yet. Those cases pass every time, so the suite looks healthy right up until a real customer sends a name with an unusual character or an amount with too many decimal places, and the API fails in a way nobody tested for.
+Writing test data by hand is slow, and most people default to the same handful of "happy path" values: a valid email, a normal string, a positive number. Real traffic is messier. Fields arrive empty, numbers overflow, and enums receive values nobody documented, so tests that only cover the obvious case miss exactly the inputs that break production.
 
-Writing enough test data by hand to catch that takes longer than most teams have, so the harder cases tend to get skipped instead of written. AI can close part of that distance fast, drafting dozens of payloads and edge cases from an OpenAPI description in the time it takes a person to write one by hand.
+A large language model reads your OpenAPI description and drafts a wide set of payloads fast, including the boundary conditions a schema implies but does not spell out. It cannot confirm your API handles them. This article covers how to prompt for realistic test data and edge cases, then turn the results into runnable [Arazzo](https://redocly.com/learn/arazzo/what-is-arazzo) workflows that [Respect](https://redocly.com/docs/respect) checks against a real endpoint.
 
-This article shows how to prompt AI for that data, then confirm which suggestions are worth keeping before they reach a real test.
+## Why hand-written test data misses edge cases
 
-## Why hand-written test data misses the cases that matter
+Most manual test suites grow one ticket at a time: someone hits a bug, writes a test for it, and moves on. That pattern covers known failures well and new ones poorly, because nobody sits down to enumerate every boundary a schema allows.
 
-A schema states the type of a field: string, integer, required, optional. It does not say which values break a particular implementation, so a developer writing test data by hand tends to reach for whatever satisfies validation and move on to the next endpoint. That produces a suite full of "happy path" data and very little that resembles a name field at two hundred characters or a currency field carrying five decimal places.
+[API Contract Testing 101](https://redocly.com/learn/testing/contract-testing-101) names "data variability and edge cases" as a specific testing challenge: designing suites that cover a wide range of inputs without the test count exploding. The recommended fix is not exhaustive manual coverage. It pairs deterministic contract validation with data-generation tools, so teams can define targeted edge-case tests instead of hand-writing hundreds of near-duplicate payloads.
 
-Redocly's guidance on building an API sandbox makes the same point about test environments: [reliable edge case coverage means deliberately injecting unusual values into test data](https://redocly.com/blog/api-sandbox-requirements), not hoping a developer happens to think of them during a sprint. A sandbox also needs well-defined test inputs, such as test cards for approved, declined, and timeout outcomes, because [each of those scenarios has to be defined on purpose](https://redocly.com/blog/sandbox-environments-reality-check) rather than discovered by accident later.
+An OpenAPI description already states the boundaries a model can mine: `maxLength` on a string, `minimum` and `maximum` on a number, an `enum` list, and which fields are `required`. A `string` field with `maxLength: 50` implies a test at 50 characters and one at 51. A `required` array with one missing entry implies a validation-error test your suite may not have. AI is well suited to reading that list and drafting many candidate cases quickly, since it treats schema constraints as a checklist rather than something to notice by accident.
 
-## Ask AI for data, not just examples
+## Prompt AI for realistic payloads and boundary conditions
 
-Most teams already ask AI to draft a request example for a new endpoint. Generating test data asks for more: not one example but a set, deliberately including the values likely to expose a problem.
+Give the model the OpenAPI operation, not a description of it. Paste the full `requestBody` schema and any existing `examples`, and state which category of edge case you want first: boundary values, missing or extra fields, wrong types, or invalid enum members. A narrow request produces a usable table; a vague one produces generic filler.
 
-### Turn a schema into realistic payloads
+```markdown {% process=false %}
+You are generating test data for an API operation from its OpenAPI schema.
 
-Paste an OpenAPI operation into an AI assistant and ask for ten to twenty sample payloads that satisfy the schema, varying field lengths, character sets, and numeric precision across the set. Because the model can see every constraint in the schema at once, it drafts variety a person would otherwise have to invent field by field, which is exactly the busywork that keeps hand-written test data thin.
+Schema:
+[paste requestBody schema for one operation]
 
-### Push AI toward the edge, not just the happy path
+Existing examples:
+[paste any documented examples]
 
-Once the baseline set exists, ask a second, more pointed question: given this schema, what values would a person send that satisfy validation but might still break the implementation, such as a currency field with five decimal places, a name field at its maximum length, or an optional field a client stops sending partway through a session. This mirrors what a design review already looks for: a related piece on reviewing API designs with AI calls out ["forgotten edge cases"](https://redocly.com/learn/ai-for-docs/ai-reviews) as one of the most common problems AI surfaces when it reads a schema closely, and the same prompt that finds a missing edge case in a design review will draft a payload for it here.
+Generate:
+1. Three valid payloads that differ meaningfully (not just renamed values).
+2. Five edge-case payloads: one per boundary (min length, max length,
+   min/max numeric value, empty optional array, missing required field).
+3. Two payloads with a wrong type for a field that has a strict type.
+4. For each payload, state the expected HTTP status and one sentence on why.
 
-## Confirm every suggestion before it reaches a test
+Do not invent fields the schema does not define.
+```
 
-An AI-suggested edge case is a hypothesis, not a fact. The model has no way to know whether your particular implementation handles a five-decimal amount correctly, so it will draft that payload with the same confidence whether your API accepts it without complaint or throws an unhandled error. Confirming the difference is a job for something deterministic, not another round of prompting.
+Requiring an expected status forces the model to reason about validation instead of only producing shapes. Reviewing a table of ten labeled payloads is also faster than reading raw JSON, since a reviewer can spot a wrong "expected status" without re-deriving the schema.
 
-### Route generated data through the mock server first
+[Use AI to review API design for gaps and inconsistencies](https://redocly.com/learn/ai-for-docs/ai-review-api-design-gaps-inconsistencies) covers the same technique earlier, naming "forgotten edge cases" before anyone writes a handler. Generating test data applies that skill after the schema exists, to prove the implementation matches it.
 
-Before a generated payload reaches a real endpoint, send it through a mock server that responds from the examples already in your OpenAPI description. Configuring the mock server to recognize [specific values as "magic inputs"](https://redocly.com/blog/api-sandbox-requirements), reserved amounts or IDs that always trigger a particular response, lets you confirm an AI-suggested edge case produces the response you expect without touching a live system or real customer data.
+## Turn AI suggestions into Arazzo workflows Respect can run
 
-### Let Respect run the edge cases on a schedule
+A table of payloads in chat does not test anything. To make AI's output count, it needs to run against a live server, and that is what [Arazzo](https://redocly.com/learn/arazzo/what-is-arazzo) and Respect are for.
 
-Once a case is worth keeping, it belongs in an ["Arazzo"](https://redocly.com/learn/arazzo/testing-arazzo-workflows) workflow instead of a one-off script, because a workflow you write once keeps checking the case every time the API changes. Redocly CLI's [`generate-arazzo`](https://redocly.com/docs/cli/commands/generate-arazzo) command turns an OpenAPI description into a starter workflow, which you then extend with the specific edge cases AI proposed and you confirmed. From there, Respect runs that workflow against a mock or live server on a schedule, checking status codes, content types, and response schemas, and it alerts by Slack or email the moment a case that used to pass starts failing.
+Start from a real file instead of a blank workflow. Redocly CLI's [`generate-arazzo`](https://redocly.com/docs/cli/commands/generate-arazzo) command reads an OpenAPI description and scaffolds one workflow step per operation:
 
-## A workflow: generate, confirm, wire in, monitor
+```sh
+npx @redocly/cli generate-arazzo openapi.yaml
+```
 
-A version of this that holds up in practice looks like:
+The output, `auto-generated.arazzo.yaml` by default, links each step to an operation and checks only the first documented status code, so it needs extending. [Generate and run API tests with Respect](https://redocly.com/docs/respect/guides/run-generated-tests) shows how: add authentication headers, then edit a step to send an edge-case payload AI drafted, and add a `successCriteria` line for the status the model predicted.
 
-1. Paste the OpenAPI operation into AI and ask for a baseline set of valid payloads, varied across field length and precision.
-2. Ask a second, pointed question: which of these values satisfy validation but might still break the implementation.
-3. Send the baseline and the edge cases through the mock server, using magic inputs where you need a specific response confirmed.
-4. Extend a `generate-arazzo` starter workflow with the edge cases that held up.
-5. Run that workflow through Respect on a schedule, and let drift alerts tell you when a case that used to pass stops passing.
+Run the workflow with Respect once it names real edge cases:
 
-Contract testing guidance points the same direction from the deterministic side: focus automated validation on the contract itself, and [use data generation for the edge cases and scenarios](https://redocly.com/learn/testing/contract-testing-101) that a schema alone cannot enumerate. Choosing between testing approaches follows a similar split: reach for [Respect's workflow testing to catch breaking changes between services, and reserve code-based functional tests for business logic and edge cases](https://redocly.com/learn/testing/tools-for-api-testing-in-2025) that depend on more context than a spec provides.
+```sh
+npx @redocly/cli respect auto-generated.arazzo.yaml --verbose
+```
 
-## Keep AI as the idea generator, not the judge
+Respect sends each request to the live API and checks the response against the linked OpenAPI description, so a payload AI expected to fail validation either fails, or the run reports a contract mismatch you can act on. [Respect use cases](https://redocly.com/docs/respect/use-cases) cover running the same workflow locally, in pull-request CI, and on a schedule, so an edge case worth testing once stays tested on every later change.
 
-AI is good at proposing many plausible edge cases quickly, because it can hold an entire schema's constraints in view at once and vary them systematically. It has no way to know how your implementation behaves, though, so it states a wrong guess about a response with the same confidence as a correct one. That is the same limit AI runs into everywhere else in documentation work: it drafts and suggests well, but [it is not a validator](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs), and something deterministic still has to confirm what it proposes.
+## Serve generated data through the mock server before you touch a live API
 
-Treating AI as the source of candidate test data, and a mock server or a scheduled Respect run as the judge of which candidates matter, keeps the fast part fast without asking a language model to vouch for behavior it has no way to observe. The edge cases that survive that check are the ones worth keeping in a suite for the long run.
+Not every edge case needs a live server on day one. The mock server built into Redocly's API reference [serves responses from an OpenAPI description's `examples`](https://redocly.com/docs/realm/content/api-docs/configure-mock-server) with no backend running, which is a low-risk place to sanity-check a payload AI generated before you point it at staging.
+
+The `strictExamples` setting controls how literal that check is. With it on, the mock server returns documented examples exactly as written, so you can confirm a payload maps to the response you expect. With it off, the server echoes request values back, closer to how a real API might treat fields it does not validate strictly. Checking an AI-drafted payload against both modes shows whether your documented examples cover the edge case, or whether the schema allows an input no example demonstrates.
+
+## What AI cannot verify alone
+
+A model reasons about your schema, not your server. It can flag that a string field has no `maxLength` and suggest testing an extremely long value, but it cannot know whether your database column truncates that string, rejects it, or throws an unhandled error, because it never sends the request.
+
+The same limit applies to expected statuses. AI predicts a `422` for a missing required field by convention, but only Respect running against your API confirms your service returns that code instead of a generic `500`. Treat every AI-suggested edge case as a hypothesis, and a green Respect run as the only evidence it held.
+
+## Best practices
+
+1. Paste the schema itself, not a paraphrase, so AI edge cases map to real constraints instead of assumptions about them.
+2. Ask for an expected status with every generated payload, so review time goes to checking reasoning instead of re-deriving it.
+3. Scaffold with `generate-arazzo` first, then add AI-suggested edge cases as new steps rather than rewriting the generated file from scratch.
+4. Run edge-case workflows in PR CI once, then schedule the same file so a fix that regresses later gets caught the same way.
+
+## Summary
+
+AI drafts test data fast because it can enumerate every boundary a schema implies faster than a person reviewing the same file line by line. That speed only pays off once the payloads run against a live endpoint, which is why the workflow pairs AI-suggested edge cases with Arazzo files Respect executes rather than trusting generated JSON on sight.
 
 ## How Redocly can help
 
-Generating a wide set of edge cases is only useful once something confirms which ones are real, and that is what [Respect](https://redocly.com/respect) does: it runs your Arazzo workflows against a mock or live server on a schedule, checking status codes, content types, and response schemas, and it alerts you the moment a previously passing case starts failing. Pair Respect with [Redocly CLI](https://redocly.com/redocly-cli)'s `generate-arazzo` command to turn an OpenAPI description into a starter workflow, then extend it with the edge cases AI proposed and your mock server confirmed, so every AI-suggested case that matters ends up monitored instead of forgotten in a chat transcript.
+Turning AI-suggested edge cases into evidence takes a runner that executes real requests against a real API, which is exactly what [Respect](https://redocly.com/docs/respect) does. Scaffold a starter workflow from your OpenAPI description with Redocly CLI's [`generate-arazzo`](https://redocly.com/docs/cli/commands/generate-arazzo) command, add the boundary-condition and invalid-input steps AI helped you name, and let Respect run that workflow locally, in CI, or on a schedule so every edge case you generate keeps getting checked against your live API, not just against a model's prediction.
