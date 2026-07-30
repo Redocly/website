@@ -1,63 +1,85 @@
 ---
 seo:
  title: Use AI to test API calls live while you write your docs
- description: Pair AI drafting with Redocly's live "Try it" testing so writers catch broken API examples before they publish, not after.
+ description: Send a real request the moment you write about it, then ask AI to check the live response against your draft instead of guessing whether the example still holds.
 ---
 
 # Use AI to test API calls live while you write your docs
 
-A code sample can look perfect and still be wrong. The endpoint path is right, the headers are right, and the response body matches the schema, but the call fails the moment a reader tries it, because a required field changed last sprint and nobody updated the example.
+A writer describes an endpoint, copies a token, switches to an API client, pastes a URL, and sends a request just to confirm the response still looks like what the draft says. Then it's back to the editor to fix the paragraph, and back to the client to check the next claim. Repeat that for every endpoint in a guide, and the round trip starts to eat the whole afternoon.
 
-Most writers find out when a support ticket arrives. By then the example has been live for weeks, teaching readers the wrong thing the whole time.
+Testing the call while you're still writing about it removes most of that friction. You get a live response next to the sentence you're checking, which means an AI reviewer has something concrete to compare against instead of trusting the draft on its own.
 
-This article shows how to close that distance while you're still drafting: use AI to spot likely trouble spots and suggest fixes, then confirm every claim against a live "Try it" call before you publish.
+This article covers why a live response beats a remembered one, how to send that request without leaving your editor using Reunite's "Replay" tab or a "mock server", and how to hand AI a request-and-response pair it can grade.
 
-## Why an example that reads well can still be wrong
+## Why a live response catches problems earlier
 
-Most API documentation describes what a request should look like, not what happens when someone sends it. A writer copies a request body from an old ticket, adjusts the field names to match the current OpenAPI description, and moves on. The example reads well and passes a casual review, so it ships.
+Docs drift from behavior in small ways: a status code that used to be `200` now returns `201`, a field got renamed, or an optional parameter quietly became required. None of that shows up if you're reviewing the draft against memory or against an old screenshot.
 
-The trouble shows up later. Auth scopes get added, a parameter becomes optional, a response field gets renamed, and the static example doesn't know any of that happened. It keeps describing a version of the API that no longer runs, so a reader who copies it gets an error they can't explain from the page in front of them.
+A live call settles the question in seconds, because the response either matches the draft or it doesn't. That's also why AI review works better here than on text alone. Ask a model to compare a paragraph to your memory of an API and it can only check internal consistency. Give it the response body next to the paragraph, and it can check the paragraph against what the API returned.
 
-## Test the call while you write it, not after you publish
+## Test requests without leaving your editor
 
-Redocly gives you a way to close that distance before publishing instead of after it. Run the `preview` command from Redocly CLI while you edit an OpenAPI description, and a local server updates the rendered documentation every time you save. That catches broken formatting and missing fields, but it doesn't tell you whether the request works.
+The [Replay tab in Reunite](https://redocly.com/blog/replay-tab-reunite) sends real requests to your API functions and shows the response in the same editor pane, so you never lose your place in the draft. Open the API function file, open Replay, and it loads the request that matches the file you're looking at automatically. Add the path, query, header, or body values you want to try, send it, and read the response right there.
 
-That's what the "Try it" console does. Inside the preview, every operation includes a live console called [Replay](https://redocly.com/docs/end-user/test-apis-replay), where you fill in real parameters and send the request instead of just reading about it. Replay returns the real status code, response body, and headers, so a claim in your prose, such as "this returns a 201 with the new resource ID," either holds up or it doesn't.
+Because Replay runs inside Reunite, it authenticates with the session you're already signed into, so there's no token to copy into a separate client. A Logs panel at the bottom of the tab shows anything your function writes to the console while the request runs, which helps when the response looks right but something upstream didn't fire the way you expected.
 
-### Point Replay at a live server or the mock server
+The workflow this replaces: write a claim, switch tools, paste a URL, send a request, switch back, and repeat for every claim in the section. With Replay open beside the file, the request-and-check step happens in the same window as the sentence you're writing.
 
-Replay can send that request to a live server, to a built-in [mock server](https://redocly.com/docs/realm/content/api-docs/configure-mock-server), or to another environment you configure, and you switch between them from a dropdown in the console. The mock server helps early, before a staging environment exists or when you'd rather not spend a real API quota on documentation testing, because it generates a response from the examples already in your OpenAPI description.
+## Give AI the response, not just the spec
 
-Once a staging or production environment exists, point the same request at it. When the mock response and the live response disagree, you've found either a documentation problem or a code problem, and you found it before a reader did.
+Once you have a real response, paste it beside the paragraph and the relevant slice of your OpenAPI description, then ask a model to grade the match instead of guessing whether the words are still accurate.
 
-## Where AI fits into the loop
+```markdown {% process=false %}
+You are checking a documentation paragraph against a live API response.
 
-None of this replaces AI. It gives AI something concrete to react to.
+Paragraph:
+[paste the sentence or section under review]
 
-Ask an AI assistant to read a new or changed OpenAPI operation and draft the request example, the expected response, and a few edge cases worth testing, such as a missing optional field, an invalid enum value, or an expired token. Treat that draft as a starting point, not a verdict. This is close to how "MCP" already works for developers: a Model Context Protocol server connects an assistant to your documentation and API definitions directly inside the editor, so it can [explore endpoints and test calls](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs) without switching to a browser tab. It's also the same "give AI a task and watch where it fails" logic behind [using AI as a usability tester](https://redocly.com/learn/ai-for-docs/ai-usability-testing), narrowed down to a single call instead of a full workflow.
+OpenAPI operation (from the spec):
+[paste the relevant path, parameters, and response schema]
 
-Run the AI's draft through Replay next. If the assistant assumed a field was required and the live response comes back fine without it, the assistant guessed wrong and the live call wins. If the live call fails in a way the docs don't mention, that's a real problem worth documenting, not something to wave away as a hallucination.
+Live response just received:
+Status: [status code]
+Headers: [relevant headers]
+Body: [response body]
 
-## A workflow: draft, test with AI, confirm live, fix
+Rules:
+- Flag any claim in the paragraph that the response contradicts.
+- Flag any field, status code, or header the paragraph promises but the response doesn't show.
+- Do not rewrite the paragraph unless asked; list issues with a spec or response reference for each.
+```
 
-A workflow that holds up in practice looks like this:
+Ask for a reference on every flagged issue, so you can jump back to the exact line in the spec or the response instead of re-reading both from the top. If the model has no live response to check against, it will default to restating the spec, which tells you nothing new about whether the docs still match reality.
 
-1. Draft or update the OpenAPI operation and its example.
-2. Ask AI to check the example against the schema and suggest edge cases: a missing field, a bad type, an expired token.
-3. Run `redocly preview` and open the operation in the rendered docs.
-4. Send the original example and each AI-suggested edge case through Replay, against the mock server first and the live environment once one exists.
-5. Fix whatever Replay disproves, whether that means changing the example or rewriting the prose, and move on.
+## Use the mock server when a live backend isn't ready
 
-Before: "Include the `customer_id` field to look up an order." Nothing about that sentence looks wrong on its own. After sending the request through Replay, though, the call succeeds without `customer_id`, because the field became optional last release. The fix: "Include the `customer_id` field to narrow results, or omit it to search across all customers." That exchange, built on the same [before-and-after checklist habit](https://redocly.com/learn/ai-for-docs/ai-reviews) Redocly uses for its own review pass, took less time than writing this paragraph.
+Not every claim has a live backend behind it yet, especially in an OpenAPI description still under review. Redocly's built-in mock server returns sample responses straight from the OpenAPI description, so you can send a request through the same [Replay console](https://redocly.com/docs/end-user/test-apis-replay) end readers use and get a realistic answer without standing up a backend.
 
-## Keep AI advisory, let the live response decide
+The `strictExamples` setting, part of how you [configure the mock server](https://redocly.com/docs/realm/content/api-docs/configure-mock-server), controls how interactive that response feels. With it off, the mock server can substitute your request values into the response so a field you sent comes back changed. With it on, you always get the documented example untouched, which is closer to what a live server would return once the behavior is locked.
 
-AI reads a spec well and guesses where readers will get stuck, but it has no way to know whether your server behaves the way the spec says it will, and it states a wrong guess as confidently as a correct one. Treat every AI-drafted example and edge case as a hypothesis, then let Replay or a live call confirm or rule it out.
+If you want the check to live inside the published page itself, the [replay-openapi tag](https://redocly.com/docs/realm/content/markdoc-tags/replay-openapi) embeds a Replay console directly in a documentation page, pointed at either the mock server or a live endpoint. Readers get the same try-it-and-see experience you used while drafting.
 
-This also protects against a subtler risk: AI trained on general API patterns may suggest a response format that has nothing to do with your API. A live call catches that right away, while a reviewer skimming for tone might not notice at all.
+## Keep a preview running while you edit the spec
 
-The pattern holds beyond API examples. Wherever you can point AI at something checkable, a live request, a build log, a rendered preview, its answers get more useful and its mistakes get cheaper to catch. A prose-only review can't offer that same check, because there's nothing underneath the words to test them against.
+Testing a single call tells you the response is right. Testing the rendered page tells you the docs built from that spec still make sense. If you work outside Reunite, run the [preview-docs command](https://redocly.com/docs/cli/v1/commands/preview-docs) from [Redocly CLI](https://redocly.com/docs/cli/) against your OpenAPI description while you write, and the preview rebuilds automatically every time you save. Inside Reunite, the [Webview tab](https://redocly.com/docs/realm/reunite/project/use-webview) does the same job without leaving the project.
+
+Keeping the preview and Replay open side by side means a spec edit shows up in the rendered page and a call to that same operation returns a response in the same few seconds, which closes the loop between what you wrote, what the docs render, and what the API does.
+
+## What AI cannot verify
+
+A model can compare a paragraph to a response you paste in, but it can't send that request itself unless you wire up separate credentials, which most writing workflows skip for good reason. It won't notice a response that's technically correct but slow enough to frustrate a real integrator, and it can't confirm behavior your OpenAPI description never described in the first place, such as an undocumented rate limit.
+
+Treat AI review as a fast check on the pairing you hand it: paragraph against response. The request still has to come from somewhere real, whether that's a live server, an API function, or the mock server standing in for one.
+
+## Best practices
+
+1. Send the request before you finalize the paragraph describing it, not after.
+2. Paste the response body into your AI review prompt instead of summarizing it from memory.
+3. Use the mock server with `strictExamples` on when the live backend isn't ready, so responses still match your documented examples exactly.
+4. Keep `redocly preview-docs` running so a spec change shows up in the rendered page while you're still looking at it.
+5. Re-check any endpoint you touch again before publishing. A response can change between your first pass and your final read.
 
 ## How Redocly can help
 
-The "Try it" console and mock server, both part of [Redoc](https://redocly.com/redoc), turn every code example on the page into something a writer can run before publishing instead of something that merely reads well. Pair that with [Redocly CLI](https://redocly.com/redocly-cli)'s local `preview` command, and you can test a request the moment you change the OpenAPI description behind it, catching a stale example or a mismatched claim while the change is still fresh instead of after a reader files a ticket.
+Reunite's Replay tab lets you [test API functions](https://redocly.com/docs/realm/reunite/project/test-api-functions) from inside the editor, so the live response an AI reviewer needs is one tab away from the paragraph you're writing about it. It authenticates with your existing session, loads the request that matches the file you have open, and shows logs alongside the response, which means checking a claim against reality no longer means leaving the page you're drafting.
