@@ -1,43 +1,57 @@
 ---
 seo:
- title: Use AI to track your docs' visibility in AI search
- description: How to track whether ChatGPT, Perplexity, Google AI Overviews, and your own site's AI search are citing your API docs, using signals you can measure today.
+ title: Track your docs' visibility in AI search
+ description: Learn how to use AI tools and Redocly's built-in analytics to see whether your API docs get found, cited, and answered correctly by AI search and assistants.
 ---
 
 # Use AI to track your docs' visibility in AI search
 
-A doc set can look healthy in a normal web dashboard while nobody on the team can say whether ChatGPT, Perplexity, or Google's AI Overview ever open the page, since none of those tools file a request the way a browser does. Referral traffic from search stays flat or drops, and there is no obvious way to tell whether the drop means fewer readers or just fewer clicks on an answer the assistant already gave.
+Developers used to open your API reference, scan the sidebar, and read until they found the answer. Many now ask an AI assistant instead, whether that's ChatGPT, Claude, or the "AI search" button built into your own docs site. You can't watch that conversation happen the way you'd watch a support ticket come in, so a whole layer of your audience is currently invisible to you.
 
-This article walks through three signals a docs team can measure today: the AI search log already running on your own site, a repeatable "spot-check" against outside assistants, and the traits in how a page is built that make it more likely to get quoted in the first place.
+That invisibility is the real problem behind "visibility in AI search." It isn't only about ranking in a results page anymore. It's about whether an AI tool can find your docs at all, then whether it answers correctly once it does.
 
-## Why AI search visibility resists a single dashboard
+This article covers how to test your docs the way an AI assistant reads them, how to structure content so AI can retrieve the right section, and how to track what's actually happening once your docs go live using AI search analytics.
 
-No tool reports "cited by ChatGPT this many times last month," so some teams reach for the closest thing that looks like a fix: an `llms.txt` file, a plain-text index meant to work like a sitemap for AI. Redocly tested that assumption directly by turning on automatic `llms.txt` generation and running it across models and prompts, and the [results were underwhelming](https://redocly.com/blog/llms-txt-overhyped): no model spontaneously read or respected the file on its own, and server logs showed it was requested almost never. Page structure still matters, but one file cannot substitute for a real measurement practice, so a workable approach has to combine what you can log with what you can test by hand.
+## Why "visibility" changed when readers started asking AI first
 
-## Track what happens on your own docs site first
+Traditional search visibility meant a page ranking well and a reader clicking through to read it. AI search collapses that path: a model reads several pages, synthesizes an answer, and the reader may never visit your site at all. According to a [Stack Overflow developer survey cited in a Redocly analysis of documentation for large language models](https://redocly.com/blog/optimizations-to-make-to-your-docs-for-llms), 84% of developers now use, or plan to use, AI tools in their workflows, and 46% say they don't trust the accuracy of what those tools return, up from 31% the year before. That distance between adoption and trust is where documentation quality shows up directly.
 
-The one visibility signal you fully own sits inside your own docs platform rather than the open web. Reunite's [built-in analytics](https://redocly.com/docs/realm/reunite/project/analytics) track page views and manual search alongside a separate feed of AI search activity, showing the question a reader typed, the answer the AI generated, and which pages supplied that answer. Because the tool logs the sources behind every response, you can see directly which pages get retrieved often and which stay dark even though the content exists.
+Most teams built their docs for a linear reader who has time to explore. [Use AI to help developers find and understand your APIs faster](https://redocly.com/learn/ai-for-docs/ai-help-developers-find-understand-apis) describes the same change from the reader's side: integrators arrive with a single blocker and want one answer, not a table of contents. [Revel](https://redocly.com/revel), the external developer portal surface, is often where that first AI-assisted question gets asked, so the pages published there are the ones worth testing first.
 
-That data became more useful once Redocly shipped per-page assistant handoffs in the [summer 2025 updates](https://redocly.com/blog/updates-2025-07): every page now carries an "open in ChatGPT" or "open in Claude" action next to the Markdown copy button, so a reader who wants a second opinion from an outside model can send your page there in one click. Watch whether readers use those actions at all, because a page nobody sends to an assistant is unlikely to earn a citation on its own.
+## Test your docs the way developers do: ask AI directly
 
-## Run repeatable spot-checks against outside assistants
+You can measure some of this before you touch any analytics. Pick a general-purpose AI assistant and ask it questions the way a real developer would, using only what's public.
 
-Your own site's logs cannot tell you whether ChatGPT or Perplexity cites you when a developer asks a question out on the open web, so that part has to be tested by hand on a schedule. Borrow the method Redocly uses to [test documentation's usability](https://redocly.com/learn/ai-for-docs/ai-usability-testing): pick a fixed set of 10 to 15 real questions developers ask about your API, run them against the assistants your audience uses most, and record whether your docs get cited, quoted, or ignored. Write down the exact source URL the assistant names in its answer, since that tells you which page won the retrieval, not just whether your domain showed up somewhere in the response.
+### Build a small panel of real questions
 
-Run the same list every month so a rough trend, even one you keep in a shared spreadsheet, becomes visible over time. Rerun it right after any major navigation or content change too, so you can tell whether that specific edit moved the number instead of guessing.
+Write down 8 to 10 questions that map to tasks, not topics: "how do I authenticate," "what does a 429 response mean," "show me a working request for creating a webhook." Ask each one against a fresh conversation so the model can't lean on earlier context. Note whether the answer is correct, whether it cites a real page, and whether the code it returns would actually run.
 
-## Watch for the page signals that predict citation
+### Watch for the failure patterns
 
-Once you know which pages already get cited, look at what those pages have in common. Docs that get quoted tend to [answer one task per page](https://redocly.com/learn/ai-for-docs/ai-help-developers-find-understand-apis), state prerequisites before reference detail, and put a minimal working request in the first code block rather than the third. A single long reference page with the answer buried three sections down rarely wins, because a model has to isolate the exact fragment worth quoting, and an undifferentiated page makes that hard for a retrieval system in the same way it makes life hard for a person skimming on a phone.
+A few patterns repeat across most API docs. The model mixes two authentication methods into one confused answer, because your terminology drifts between "API key," "access token," and "auth credential" for the same thing. It returns a code sample that reads like pseudocode instead of a runnable command, because the source page never used a fenced code block. Or it apologizes and admits it doesn't know, which is at least honest, and it usually means the underlying page never mentions the term the reader searched for.
 
-Keep error codes on the same page as the operation that produces them, and write headings in the plain words a developer types, such as "get an access token" instead of "authentication overview." Redocly's own framing of [how AI fits into modern API documentation](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs) treats retrieval-augmented answers as only as good as the fragment they retrieve, which means page structure decides whether the right fragment exists to be found at all.
+## Structure docs so AI can find the right answer
 
-## What to do when a page never gets cited
+Once you know where the panel of questions breaks down, the fix is mostly about organizing content rather than rewriting your voice. AI systems read documentation in chunks, so a page that mixes rate limits into an authentication section confuses the model even though a human reader would skim past the mismatch without noticing. Keeping a predictable heading hierarchy, one term per concept, and properly fenced code blocks is what [Redocly's guide to optimizing docs for LLMs](https://redocly.com/blog/optimizations-to-make-to-your-docs-for-llms) recommends after testing this pattern across many documentation sets.
 
-When a page keeps failing both the spot-check and the on-site search, resist the urge to rewrite the whole thing first. Check instead whether it answers the literal question, because a page can be accurate and still lose if it buries the answer under context nobody asked for yet. Move the working example above the explanation, split a page that tries to cover three tasks into three separate pages, and rerun the spot-check before changing anything else, so you know whether that one edit was enough on its own.
+At Redocly, we automatically generate an [`llms.txt`](https://redocly.com/llms.txt) file for every project: a lightweight Markdown index that lists the highest-value entry points so AI tools can find them without crawling an entire site. You can control what goes into that index through the [`seo.llmstxt` configuration](https://redocly.com/docs/realm/config/seo), including which sections to include or exclude. That index doesn't replace good page structure, but it tells a crawler which guides matter most, the same way a sitemap tells a search engine which pages to prioritize.
 
-Treat a page that is still missing after two rounds of edits as an information problem rather than a search problem. Read the reader's exact words back to yourself and ask which paragraph on the page you would quote if you were the one answering.
+## Track AI search activity on your own docs
+
+Testing with an outside AI assistant tells you how your docs read to a general-purpose model. It doesn't tell you what your own readers are actually asking once your docs are live, which is where tracking becomes useful rather than anecdotal.
+
+### What the analytics show
+
+[Reunite's Analytics page](https://redocly.com/docs/realm/reunite/project/analytics) tracks AI-powered search activity directly on your project, without adding a third-party tracking script. It shows a time series of AI searches and unique users over a selected period, a table of the top search queries, and a separate view for queries that returned no results. You can open any individual AI search query and see the full question a reader asked, the answer the assistant gave, the sources it cited, and whether the reader marked that answer helpful or not.
+
+### Turn no-result queries into a backlog
+
+The "most not found" view is the clearest sign that your docs don't yet cover a real question: a reader asked something specific, and nothing in your docs matched closely enough for the assistant to answer it. Export that list on a regular cadence, group similar phrasings together, and treat repeated no-result queries as a documentation backlog rather than noise. When a query does return a cited answer, check whether the source page actually supports what the assistant said. A wrong answer with a real citation is a content problem, not a retrieval problem, and it needs a different fix than a missing page does.
+
+## Close the loop: from tracking to fixing
+
+Visibility tracking only pays off when it changes what you write next. After a testing pass with an outside assistant and a review of your own analytics, you'll typically end up with three lists: pages that need clearer headings and terminology, missing topics that need new content entirely, and answers that were wrong even though the source page existed. Route the first two into your regular docs backlog, and treat the third as a priority fix, since a confidently wrong AI answer damages developer trust faster than a missing page does. Repeat the outside-assistant test after a major reorganization, since AI search behavior can change once your heading structure and terminology settle down.
 
 ## How Redocly can help
 
-Tracking AI search visibility works best when you are not relying on guesswork for the one signal you control directly: what happens when someone searches your own docs. Reunite's [built-in analytics](https://redocly.com/docs/realm/reunite/project/analytics) log every AI search query on your site alongside the generated answer and the pages it cited, next to ordinary page views and manual search, without adding a single third-party tracking script. Pair that log with the monthly spot-check against outside assistants described above, and you get a repeatable way to see whether your docs are the ones your developers' tools reach for first.
+At Redocly, we built [Reunite's built-in AI search analytics](https://redocly.com/docs/realm/reunite/project/analytics) to give you the tracking half of this problem without wiring up a separate tool: a time series of AI searches, the queries that returned nothing, and the sources cited in every AI-generated answer, complete with reader feedback on whether that answer actually helped. Pair that visibility with the fixes you find by testing your docs against an outside assistant, and you get a working loop between what readers ask, what your docs say, and what you change next.
