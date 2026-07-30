@@ -1,101 +1,135 @@
 ---
 seo:
  title: Use AI to write custom OpenAPI lint rules
- description: How to use AI to draft custom Redocly CLI lint rules in JavaScript for checks configurable rules can't express, then test and ship them safely.
+ description: How to prompt a model to draft Redocly CLI configurable rules and custom rule plugins from a plain description of a standard, then test the result before you trust it.
 ---
 
 # Use AI to write custom OpenAPI lint rules
 
-Most API standards fit neatly into a Redocly CLI [configurable rule](https://redocly.com/docs/cli/rules/configurable-rules): a subject, an assertion, a severity, done. But some checks need real logic. Maybe a response schema has to match the same properties as its matching request schema, or a description field has to pass a Markdown linter before it counts as complete. Configurable rules can't express that kind of comparison, so the next step is a custom rule written in JavaScript.
+A team agrees that every error response needs a machine-readable code, or that internal endpoints should never reach the public spec, and then the standard sits in a ticket because nobody writes the lint rule. It stays unenforced until an incident forces the issue.
 
-This is also where AI earns its keep. A model that has seen the [custom plugin](https://redocly.com/docs/cli/custom-plugins) structure and the "visitor pattern" that drives it can draft a working rule from a plain-language description faster than most people can write one from scratch. This article covers how to brief that model, what the generated code needs before you trust it, and where a hand-coded rule fits next to the rules you already run.
+A model can turn that standard into a working rule faster than most people expect. Describe the standard in plain language, and AI can draft a "[configurable rule](https://redocly.com/docs/cli/rules/configurable-rules)" or a "[custom rule plugin](https://redocly.com/docs/cli/custom-plugins/custom-rules)" for Redocly CLI in the form your OpenAPI files already use. This article covers how to prompt for each type, when to reach for which one, and how to test a generated rule before it can block a merge.
 
-## Try configurable rules first
+## Two ways to extend Redocly CLI linting
 
-Before reaching for JavaScript, check whether a [configurable rule](https://redocly.com/docs/cli/rules/configurable-rules) already covers the case, because it is easier to read and maintain than a plugin. [Built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) and configurable assertions cover casing, required fields, enums, patterns, and several relationship checks between neighboring OpenAPI nodes. [Use AI to enforce your API style guide at scale](https://redocly.com/learn/ai-for-docs/ai-enforce-api-style-guide-at-scale) walks through drafting that YAML with AI, so it's worth reading first if you haven't set up any configurable rules yet.
+Redocly CLI ships two ways to add a rule beyond the built-in and [recommended rulesets](https://redocly.com/docs/cli/rules/recommended). A configurable rule is pure YAML: name a subject, such as an operation or a schema property, then attach assertions like casing, pattern, or required, and the linter checks every matching node. No code, just a block under `rules` in your Redocly configuration.
 
-Custom plugins exist for what's left over: checks that reach across the document in ways a single assertion can't, pull in an outside library, or apply logic that doesn't map to a `subject` and `assertion` pair. That's a small slice of most rulesets, so treat a hand-coded rule as the exception, not the default.
+A custom rule plugin is a small JavaScript function that returns a "visitor object," walking the document and calling `context.report()` wherever it finds a problem. Reach for this approach when the check needs logic an assertion cannot express, such as comparing two fields or counting occurrences. Most standards fit the first approach, so save the second for standards that genuinely need it.
 
-## Turn the rule idea into a plain-language brief
+## Start from a plain description of the standard
 
-Before you prompt a model for code, write the rule the same way you'd write a configurable rule: name it, state the node it applies to, and describe the failure condition in one or two sentences. [Use AI to accelerate and improve reviews](https://redocly.com/learn/ai-for-docs/ai-reviews) makes this point about style checklists, and the same logic holds for lint rules. A clear one-line brief produces a cleaner first draft than a vague request, and it gives you something concrete to check the generated code against afterward.
-
-```markdown {% process=false %}
-Rule idea: every "Operation" that returns a paginated list must include a "next" and
-"previous" field in its 200 response schema, matching by property name.
-```
-
-## Prompt AI for the visitor code
-
-Give the model the [rules in plugins](https://redocly.com/docs/cli/custom-plugins/custom-rules) shape directly, rather than asking it to guess the interface. Each custom rule is a function that returns visitor methods keyed by OpenAPI node type, and Redocly CLI calls those methods while it walks the document. The `ctx.report()` method is how a rule flags a problem at a specific location.
+Write the standard the way you would explain it to a new hire, before you think about YAML. Name the node it applies to, what must be true, and why. A vague version ("responses should be documented well") gives a model too little to anchor on, while a specific version gives it a target:
 
 ```markdown {% process=false %}
-You are writing a Redocly CLI custom plugin rule in JavaScript.
-
-Rule idea:
-[paste the one-line brief]
-
-Requirements:
-1. Export a function that returns an object with a visitor method for the
-   relevant OpenAPI node type (see Operation, Response, Schema).
-2. Call ctx.report() with a clear message when the condition fails, and pass
-   the node's location when available.
-3. Keep the rule to one file, one exported function, no external dependencies
-   unless I ask for them.
-4. Add a one-line comment above the export explaining what the rule checks.
-
-Return only the JavaScript for the rule file.
+Standard: Every error response (4xx or 5xx) must include a "code" field
+in its schema so client code can branch on it without parsing message text.
 ```
 
-Review what comes back the way you'd review any generated code, not the way you'd skim a lint warning: check that the visitor method targets the node type you meant. A rule that should key on `Response` sometimes gets written against `MediaTypesMap` instead, which changes what the rule sees and when it fires.
+If you already keep standards in a checklist, pull one line at a time rather than pasting the whole document. One rule per prompt keeps the output easy to check and keeps your redocly.yaml readable, since each entry maps back to a single line.
 
-## Wire the rule into your project
+## Prompt AI to draft a configurable rule
 
-A generated rule file does nothing until a plugin exports it and `redocly.yaml` enables it. Put the rule in its own file, for example `plugins/rules/paginated-list-fields.js`, and export it from a small plugin module:
+Give the model the standard, one violating OpenAPI excerpt, and the fields a configurable rule expects: subject, assertions, optional `where`, message, and severity. Ask it to explain which assertion keys it chose, so you can check the mapping instead of trusting it blind.
 
-```js {% process=false %}
-import PaginatedListFields from './rules/paginated-list-fields.js';
+```markdown {% process=false %}
+Draft a Redocly CLI configurable rule from this standard:
+[paste the one-line standard]
 
-export default function myRulesPlugin() {
+Example excerpt that violates it:
+[paste yaml]
+
+Return a rule name prefixed with rule/, the subject (node type and
+property), the assertions needed (use only keys from Redocly's
+configurable rules: casing, contains, defined, disallowed, enum,
+minLength, maxLength, mutuallyRequired, pattern, ref, required),
+a where clause if only some nodes should be checked, a short message,
+and a severity of error or warn. If the standard cannot be expressed
+with these assertions, say so instead of forcing an approximate rule.
+```
+
+That last instruction matters. A model under pressure to produce YAML will sometimes force a rough approximation rather than admit an assertion cannot express the standard, and flagging that case saves you from shipping a rule that only partly checks what you meant.
+
+## Before and after: a standard becomes a rule
+
+Standard: every error response schema needs a machine-readable `code` field.
+
+A model working from that line and a violating excerpt might propose this:
+
+```yaml {% process=false %}
+rule/error-response-has-code:
+  subject:
+    type: Schema
+    property: required
+  where:
+    - subject:
+        type: Response
+        matchParentKeys: /^[45]/
+      assertions:
+        defined: true
+  message: Error response schemas must list "code" as a required field so clients can branch on it
+  severity: error
+  assertions:
+    contains:
+      - code
+```
+
+Running [lint](https://redocly.com/docs/cli/commands/lint) against a spec now surfaces the same line every time a 4xx or 5xx response is missing the field, instead of waiting for a reviewer to notice it in a diff. Treat the draft like any generated code: read the `where` clause carefully, since it decides which responses actually get checked.
+
+## When the standard needs a custom rule plugin
+
+Some standards do not reduce to a single subject and assertion. "Every endpoint tagged `internal` must not declare public servers" compares two parts of the same operation at once, which a configurable rule cannot do, so ask for a plugin instead.
+
+```markdown {% process=false %}
+Draft a Redocly CLI custom rule plugin for this standard, including why
+it needs cross-field logic: [paste the standard]. Return a function that
+returns a visitor object for the relevant OpenAPI node type, using
+ctx.report() with a clear message and ctx.location for the location.
+Keep the function to one concern and explain which node type it visits.
+```
+
+A generated plugin might look like this for the internal-endpoint example:
+
+```javascript {% process=false %}
+export default function NoInternalInPublicServers() {
   return {
-    id: 'my-rules',
-    rules: {
-      oas3: {
-        'paginated-list-fields': PaginatedListFields,
+    Operation: {
+      enter(operation, ctx) {
+        const tags = operation.tags || [];
+        if (tags.includes('internal') && operation.servers?.length) {
+          ctx.report({
+            message: 'Internal operations should not declare public servers',
+            location: ctx.location.child('servers'),
+          });
+        }
       },
     },
   };
 }
 ```
 
-Then register the plugin file and turn the rule on:
+Read a generated plugin like a pull request from someone new to the codebase: check the node type it visits, whether the condition matches your tagging convention, and whether the message tells the next person how to fix the problem.
 
-```yaml {% process=false %}
-plugins:
-  - plugins/my-rules.js
+## Test the rule before you trust it
 
-rules:
-  my-rules/paginated-list-fields: error
-```
+Every generated rule needs a run against real files before it enters a shared configuration. Add the draft to a local `redocly.yaml`, then run [lint](https://redocly.com/docs/cli/commands/lint) against specs you already know the answer for: one that should pass and one that should fail.
 
-Run `redocly lint openapi.yaml` locally, then wire the same [lint command](https://redocly.com/docs/cli/commands/lint) into CI so every pull request gets the check a local run would catch.
+Watch for two failure modes. A configurable rule's `where` clause can be narrower or wider than intended, so it silently skips nodes you meant to check. A custom rule plugin can throw on document contents the model did not consider, such as a field that is sometimes an object and sometimes an array, so run it against your messiest real spec, not just a simple example.
 
-## Give the model context when the check needs it
+Start new rules at `warn` if the standard is new to the team, then promote to `error` once a run across your real APIs shows the violation count trending toward zero. That gives authors time to fix existing violations instead of blocking every open pull request at once.
 
-Some checks can't be answered by looking at one node alone. If a rule needs to compare a property against its sibling, the visitor needs a "nested visitor," which gives access to parent context as the model walks the tree, so tell the model this up front, or a generated rule that skips the nesting will silently miss the comparison it was supposed to make. Also flag when a node might get processed more than once: top-level visitor functions run once per node even if a `$ref` points at it from several places, which matters when the rule's logic depends on counting occurrences. Check the [visitor pattern](https://redocly.com/docs/cli/custom-plugins/visitor) reference afterward if the generated code seems to assume otherwise.
+## Best practices
 
-## A grounded example: linting Markdown inside OpenAPI
+1. Check the [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) and recommended ruleset first, so the model only drafts what does not already exist.
+2. Draft one rule per prompt, from one plain-language standard, and ask the model to flag when the standard needs a plugin instead of an approximate assertion.
+3. Run every draft against a known pass file and a known fail file before it enters a shared `redocly.yaml`.
+4. Start new rules at `warn`, then promote to `error` once real runs show adoption. The [guide to configuring a ruleset](https://redocly.com/docs/cli/guides/configure-rules) covers per-rule overrides as your standards mature.
 
-At Redocly, we [built a custom plugin](https://redocly.com/blog/lint-markdown) so that Markdown inside OpenAPI `description` fields gets the same linting as any other Markdown file, because a good Markdown linter has no way to reach into a YAML or JSON document on its own. The plugin visits every description field, pulls out its Markdown content, runs it through a Markdown linting library, and reports any failures through the same `ctx.report()` path a hand-written rule would use. That example is worth studying even if your first custom rule has nothing to do with Markdown, since it shows the pattern at a useful scale: pull a value out of the document, hand it to an existing library, and translate that library's output into lint problems.
+## Where AI stops and the linter takes over
 
-## Test before you trust it
+A model can propose an assertion or a visitor function, but it cannot know whether a `where` clause matches your real data until you run it, and it cannot judge whether a standard is worth enforcing at all. Keep the plain-language description as the thing humans agree to first, and the generated YAML or JavaScript as what follows from it.
 
-Treat a generated rule like a small, untested pull request, because that's what it is. Run it against a spec you know passes today and confirm no new warning appears, then run it against a spec with the violation built in and confirm it fires with a message that points at the problem. AI-drafted rules tend to fail in predictable ways: they target the wrong node type, they check whether a field exists rather than checking its value, or they report a message that doesn't match what the code actually checked. Catch those before the rule reaches every pull request, not after, then set severity to `warn` for a week if existing specs might violate it, and promote to `error` once the warning count settles near zero.
-
-## Where AI stops helping
-
-AI is good at drafting visitor code from a description, and reasonably good at explaining why an existing rule isn't firing when you expect it to. It's not good at knowing which edge cases matter for your API, because that judgment depends on context the model doesn't have, such as which fields are legacy or which "violation" is intentional by design. Keep a human reviewing every generated rule before it ships with `error` severity, and simplify a rule back to a configurable assertion when one would have done the job. Fewer custom files means fewer things that break when Redocly CLI's plugin interface changes.
+Once a rule is in your configuration, Redocly CLI applies it the same way on every file, every time. A standard that only lives in a ticket protects nothing; a rule that runs in CI protects it by default.
 
 ## How Redocly can help
 
-[Redocly CLI custom plugins](https://redocly.com/docs/cli/custom-plugins) run hand-written JavaScript rules next to your built-in and configurable ones from the same `redocly.yaml`, with the same per-rule severity controls, so a check that started as an AI-drafted visitor function enforces exactly the way the rest of your ruleset does, in every editor run and every CI job.
+Redocly CLI runs configurable rules and custom rule plugins the same way, whether a person or a model drafted them, so a rule sketched from a plain-language standard still gets validated against your OpenAPI spec every time you lint. [Explore Redocly CLI](https://redocly.com/docs/cli/) to see how built-in, configurable, and custom rules combine into one ruleset for local runs and CI.
