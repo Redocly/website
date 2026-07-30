@@ -1,65 +1,75 @@
 ---
 seo:
  title: Use AI to write release notes that pass an automated review
- description: How to draft changelog entries and release notes with AI so they clear an automated review checklist before a human ever opens the pull request.
+ description: Draft release notes with AI against the same checklist your automated reviewer already runs, so entries pass on the first read instead of bouncing back.
 ---
 
 # Use AI to write release notes that pass an automated review
 
-Most writers know the feeling: you push a changelog entry, open the pull request, and a bot bounces it back before a teammate ever sees it. The entry was not wrong, just vague, and now you are rewriting it on a second pass instead of a first one.
+Most release notes get written twice. A developer closes out a ticket with "Fixed bug in API," a reviewer bounces it back for specifics, and the same line gets rewritten under deadline pressure right before a release ships. That back and forth wastes review cycles that a better first draft could have avoided.
 
-An "automated review" catches that vagueness on the diff itself, before a human spends any attention on it. This article shows how to draft the entry with AI so it reads as specific and on-style the first time, using the same checklist the bot is going to apply anyway.
+Doc teams increasingly review "changelog entries" with AI before a human ever opens the pull request, against a short "checklist" that names what a passing entry looks like. Fewer teams flip that same checklist around and hand it to AI at draft time instead of catch time. Here is how to write release notes that already match what your reviewer bot checks for, so fewer entries bounce back at all.
 
-## Why "fixed a bug" fails before a human ever sees it
+## Why release notes bounce back from review
 
-Automated changelog review exists because vague entries are common and expensive to fix later. [At Redocly, every changelog entry gets reviewed by AI](https://redocly.com/learn/ai-for-docs/ai-reviews) against a style checklist and the surrounding pull request context before merge, and the pattern it catches most often is the same one docs teams see everywhere: a true but useless sentence.
+Release notes fail review for a small number of predictable reasons. The summary names a symptom without a cause, so a reader cannot tell whether the fix affects them. The entry mixes tenses, describing a shipped change as something that "will" happen. Or the note skips the detail a support team needs most: which endpoint, which flow, which edge case.
 
-"Fixed bug in API" is accurate, and it tells a release notes reader nothing. The bot flags it because it cannot connect the fix to any symptom a user would recognize, so the entry fails the specificity check even though nothing in it is false. Once you know that is the test, you can write to it directly instead of hoping the first draft happens to clear it.
+A less obvious cause is scale. One writer can hold a house style in their head, but a release with contributions from a dozen engineers will not read consistently unless something outside any one person's memory enforces the pattern. That is usually where a bot enters the picture, checking every entry the same way regardless of who wrote it.
 
-Most authors treat the bot as a gate to get past, when it is closer to a checklist they can run against their own draft before they submit it. Writing toward the checklist instead of away from it makes entries clear review on the first pass more often, because the vague-sentence problem gets caught while the sentence is still easy to fix.
+None of these problems are hard to fix once someone names them, which is exactly what a good checklist does. [Use AI to accelerate and improve reviews](https://redocly.com/learn/ai-for-docs/ai-reviews) makes the case that a one-page checklist gets better and more consistent results from an AI reviewer than a long style guide written in full sentences, because each line is a single, checkable claim. The same checklist that catches a vague entry after the fact can just as easily guide the writer before the fact, and that reversal is what this article covers.
 
-## Give AI the reviewer's checklist, not a style guide
+## Draft against the checklist your reviewer already runs
 
-Redocly's own testing found that short checklists outperform long style guides when you brief AI to review prose, and the same finding applies when you brief AI to help you draft. A fifty-page manual is hard for a model to apply consistently, while a short list of concrete rules gets checked reliably every time.
+If a pull request pipeline already scores changelog entries against a style checklist, that checklist should not live only on the review side of the process. Paste it into the same prompt a writer uses to draft the entry, alongside the commit message, the linked ticket, and any relevant lines from the diff.
 
-Before you draft, hand AI the same checklist your reviewer runs, not a paragraph explaining your team's philosophy on tone:
+This works because AI applies a checklist the same way whether it runs before or after a human sees the text. [Use AI to enforce tone and style consistency across docs](https://redocly.com/learn/ai-for-docs/ai-enforce-tone-style-consistency-across-docs) makes a related point about versioning that checklist in Git next to the docs, so tone policy changes are reviewable like code. Once the checklist is versioned, drafting and reviewing both point at the same file, and the two steps stop disagreeing with each other.
+
+### A short changelog checklist
+
+- Names the affected endpoint, flow, or component
+- States the symptom a user would notice, not just the internal cause
+- Uses present tense for something already shipped
+- Spells out any action the reader needs to take
+- Skips internal ticket numbers unless a reader can act on them
+
+## Turn a vague change into a note that passes on the first read
+
+A short before and after shows what the checklist catches.
+
+> Before: Fixed pagination bug.
+>
+> After: Fixed an issue where the `next` cursor repeated the same results page when a filter and a sort parameter were combined, so paginated responses now advance correctly under that combination.
+
+The first version passes no one's checklist because it names neither the affected parameters nor the symptom a caller would see. The second version gives a reader enough to decide, in one sentence, whether the fix touches their integration. Asking AI to draft toward that second version from the start, rather than editing toward it after a rejection, is the entire savings this approach offers.
+
+## Ask AI to write to your release note template
+
+A practical prompt gives AI three inputs: the diff or commit summary, the changelog checklist, and a short template for the note itself, such as what changed, why it matters, and what the reader should do next. Ask for the result in that exact order, and ask the model to flag any checklist item it could not satisfy from the information provided, rather than guessing.
 
 ```markdown
-- [ ] Name the subsystem or feature affected, not just "the API"
-- [ ] Name the symptom a user would notice, not just "a bug"
-- [ ] Use past tense for shipped changes
-- [ ] Code elements in backticks: `POST /users`
-- [ ] No vague verbs alone ("improved," "fixed," "updated") without an object
+Here is a commit diff and its linked ticket.
+Draft a changelog entry using this checklist:
+[paste checklist]
+
+Use this order: what changed, why it matters, what to do next.
+If any checklist item lacks enough information in the diff, say so instead of guessing.
+
+Diff and ticket:
+[paste here]
 ```
 
-Paste that list alongside your rough draft and ask AI to flag any line that would fail a checklist item, the same way you would brief a human reviewer. This works because you are giving the model the exact criteria it will be judged against later, which is the same move behind how Redocly approaches [tone and style consistency across the rest of its docs](https://redocly.com/learn/ai-for-docs/ai-enforce-tone-style-consistency-across-docs).
+That last instruction matters more than it looks. A model that guesses at a missing detail produces a note that reads well but fails review for accuracy instead of vagueness, which is a harder problem to catch than the original blank was.
 
-## Draft, then ask AI to rewrite for specificity
+Feed the same prompt the checklist file path rather than a pasted copy when the checklist lives in the repository, so a change to the checklist reaches every future draft without anyone updating a prompt template by hand. That small habit is what keeps the draft-time checklist and the review-time checklist from quietly drifting apart after a few months of edits.
 
-Write the rough entry first, since forcing specificity into a first draft slows you down more than it helps. Get the change down in plain language, then ask AI to rewrite it against the checklist once the facts are on the page.
+## Where automated review and human judgment still decide
 
-> Before: "Fixed bug in API"
+Drafting against a checklist shrinks the review loop. It does not remove the review itself, and it should not try to. [Use AI to automate documentation reviews in your PR workflow](https://redocly.com/learn/ai-for-docs/ai-automate-documentation-reviews-pr-workflow) describes a three-layer model that still applies here: an AI checklist lane on the written entry, a [Redocly CLI](https://redocly.com/docs/cli) lint lane on anything the spec can verify deterministically, such as through the [lint command](https://redocly.com/docs/cli/commands/lint), and a human lane for judgment calls a checklist cannot encode.
 
-> After: "Fixed authentication timeout in OAuth2 flow when refresh tokens exceed the sixty-minute expiration window"
+A release note can satisfy every line on a style checklist and still be wrong about what shipped, so a human still needs to confirm the entry against the shipped change before merge. That confirmation is where teams often [review a pull request in Reunite](https://redocly.com/docs/realm/reunite/project/pull-request/review-pull-request), reading the note beside the diff it describes rather than in isolation. Wiring lint into the same pull request, as the [Redocly and GitHub Actions](https://redocly.com/blog/consistent-apis-redocly-github-actions) post walks through, keeps the deterministic checks running on the same commit the AI draft and the human review both see.
 
-The rewrite works because it answers the two questions a reader actually has: what broke, and how would I have noticed. Ask AI for that same transformation on your own entries by giving it the ticket, the pull request diff, or even a one-line description of what changed, and telling it which checklist item your first draft is failing.
-
-This mirrors how Redocly [combines an AI checklist pass on the diff with a human step later](https://redocly.com/learn/ai-for-docs/ai-automate-documentation-reviews-pr-workflow): prose and specificity get handled first, so nobody spends a review cycle asking "what does this mean" days after the fact.
-
-## Run your own check before you open the pull request
-
-Once your entry passes your own read of the checklist, run the parts of your review that are not about prose. If your release note references an endpoint or a field name, check it against the API description instead of trusting memory, since spec drift is exactly what a deterministic tool catches better than a person skimming a diff.
-
-Redocly CLI's [lint command](https://redocly.com/docs/cli/commands/lint) reports problems in an OpenAPI, AsyncAPI, or Arazzo description, so a quick lint pass will catch a renamed field or a dropped parameter before your changelog entry references something that no longer exists. That check happens outside the pull request, on your machine, in seconds.
-
-When you do open the pull request, the same checklist logic runs again automatically, and if you drafted against it, it should confirm the entry instead of pushing back. From there, a teammate can [review a pull request in Reunite](https://redocly.com/docs/realm/reunite/project/pull-request/review-pull-request) with a visual diff and a status check already showing which automated passes have succeeded, so their attention goes to whether the release note matters, not whether it is well written.
-
-## What automated review still hands to a human
-
-An automated reviewer is good at catching vague language and enforcing a checklist, but it cannot tell you whether a change is worth calling out at all, or whether marketing wants a softer description for a security fix. It has no view of your roadmap, and it will not know that a fix you consider minor is the one users have been asking about for months.
-
-[Redocly's approach to AI in documentation work](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs) follows the same line everywhere: AI accelerates drafting and review, deterministic checks verify what can be checked, and a person makes the final call on anything that depends on context nobody pasted into the prompt. Writing toward the checklist gets you a release note that passes review; it does not replace the judgment of deciding what belongs in the release notes at all.
+[How AI fits into modern API documentation](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs) frames this split simply: AI writes, and the deterministic tooling around it verifies. Draft-time AI narrows the distance between a first attempt and a passing entry, but the checklist, the lint rule, and the reviewer each still do a job the others cannot.
 
 ## How Redocly can help
 
-Writing release notes that pass automated review works best inside a workflow that already treats the pull request as the place where drafting, checking, and approval happen together. [Reunite](https://redocly.com/reunite) gives you that Git-based workflow: authors draft and commit release note entries on a branch, an automated checklist pass and Redocly CLI lint run before anyone opens the diff, and reviewers see a visual before-and-after in the same pull request once the automated passes have already succeeded. Instead of bouncing entries back and forth, your team gets one PR review cycle, with drafting help up front and CI checks doing the parts a person should not have to.
+Once a changelog checklist exists, [Reunite](https://redocly.com/reunite) is where the release note, the diff it describes, and a reviewer's sign-off meet in one Git-based pull request, so approvers see the rendered change alongside the text rather than guessing from raw Markdown. Pair that review step with [Redocly CLI](https://redocly.com/docs/cli) lint on the same pull request to catch anything the checklist cannot, such as a spec change the note failed to mention, so drafting with AI, reviewing with AI, and verifying with deterministic rules all point at the same commit before it merges.
