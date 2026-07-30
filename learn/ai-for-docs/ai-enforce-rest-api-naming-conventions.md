@@ -1,60 +1,47 @@
 ---
 seo:
- title: Use AI to enforce REST API naming conventions
- description: How to turn a naming checklist into Redocly CLI lint rules with AI, then catch inconsistent operationId, path, and property names before you ship.
+ title: Use AI to enforce REST API naming conventions before you ship
+ description: How to use AI to catch inconsistent operationId, path, and field naming before code ships, then lock the fix in with Redocly CLI configurable rules in CI.
 ---
 
 # Use AI to enforce REST API naming conventions before you ship
 
-A naming standard written down in a wiki rarely stops the next team from shipping `userId` next to `user_id` in the same API. Most "naming drift" is not malicious. It happens because two teams work from the same guide months apart and each one has to decide something the guide never addressed. By the time a reviewer notices, clients already depend on the inconsistent field.
+A single service can keep its naming tidy through memory alone. Once a handful of teams ship endpoints against the same OpenAPI surface, that memory runs out: one service calls it `userId`, another calls it `user_id`, and a third mixes `camelCase` paths with `kebab-case` ones. Nobody planned the drift, but nobody stopped it either.
 
-This article shows how to condense a naming standard into a short checklist, use AI to catch drift while a spec is still a draft, and turn the recurring findings into Redocly CLI lint rules that run on every pull request.
+Asking a model to review a spec before code ships catches a good share of these mismatches early, when a rename costs a diff instead of a client migration. This article shows how to prompt AI to flag naming drift in `operationId` values, paths, and fields, then turn the agreed pattern into a [configurable rule](https://redocly.com/docs/cli/rules/configurable-rules) so Redocly CLI catches every future violation without anyone rereading a wiki page.
 
-## Why naming drifts without enforcement
+## Why naming drifts across a growing API surface
 
-A style guide answers why a convention exists and when to break it. A lint rule answers whether one file violates a stated rule right now. Naming drift shows up where those two fall out of step: a guide that says "use camelCase for properties" does not stop a rushed pull request from adding `user_name` because nobody reread the guide before shipping.
+Naming conventions rarely fail because a team disagrees with the rule. They fail because the rule lives in a document nobody opens before writing a new endpoint. A new hire copies the closest example they can find, and if that example already broke the pattern, the mistake compounds.
 
-The drift compounds because naming choices leak into client code. Once an SDK generates a method around `getUserID`, renaming it later breaks every caller. That is why naming review works best before merge, when a wrong choice costs a comment instead of a deprecation cycle.
+The [API standards and governance](https://redocly.com/docs/cli/api-standards) guide frames this as a consistency problem: should resource names use `kebab-case` or `camelCase` in URLs, and does every operation follow the same rule once you have an answer. Redocly CLI and the hosted platform share one lint configuration, so the same question gets the same answer everywhere you check it.
 
-## Turn your naming rules into a short checklist
+Naming drift also carries a cost beyond human readers now. When one API calls a field `userId` and another calls it `user_id`, an AI agent consuming both has to spend reasoning effort translating between them, which the [API catalogs for agentic software](https://redocly.com/blog/api-catalogs-agentic-software) post calls out directly. Consistent naming is no longer only a style preference; it is part of what makes an API usable by both people and the tools that read on their behalf.
 
-Long prose guides are hard for a model, and a reviewer, to apply consistently. [Use AI to accelerate and improve reviews](https://redocly.com/learn/ai-for-docs/ai-reviews) makes this point for documentation review, and the same logic holds for API naming: a one-page checklist beats a fifty-page style manual because every line maps to a single yes-or-no check.
+## Ask AI to review naming before code ships
 
-Rewrite prose like "identifiers should be clear, consistent, and follow standard casing" into inspectable lines:
+[Use AI to review API design for gaps and inconsistencies](https://redocly.com/learn/ai-for-docs/ai-review-api-design-gaps-inconsistencies) covers the wider pre-implementation review pattern. Naming is one of the five checks in that prompt skeleton, so you can scope a pass specifically to it once a design is close to final.
 
-```markdown {% process=false %}
-- [ ] operationId uses camelCase
-- [ ] Path parameters use camelCase, wrapped in braces: {userId}
-- [ ] Query parameters use camelCase
-- [ ] Resource names in paths are plural nouns: /users, not /user
-- [ ] Boolean properties read as a question: isActive, not active
-```
-
-If your organization has never agreed on a standard, the [API guidelines builder](https://redocly.com/api-governance) and the post on how to [build your own API guidelines](https://redocly.com/blog/build-your-own-api-guidelines) both suggest answering only the naming questions that come up in real reviews first, then expanding the checklist as new patterns appear.
-
-## Ask AI to catch naming problems before you write a rule
-
-Once the checklist exists, paste it alongside a draft OpenAPI file and ask a model to flag every line the spec violates. [Use AI to review API design for gaps and inconsistencies](https://redocly.com/learn/ai-for-docs/ai-review-api-design-gaps-inconsistencies) covers this same review pattern for the broader API design; naming is one of the themes that shows up most often, alongside inconsistent URL style between `/resource/{id}` and query-parameter variants for the same concept.
+Give the model your domain context, a representative OpenAPI excerpt, and a narrow question:
 
 ```markdown {% process=false %}
-Checklist:
-[paste naming checklist]
+Review this OpenAPI excerpt for naming inconsistencies only.
 
-Review this OpenAPI excerpt against every checklist line and list:
-1. Each field, parameter, or operationId that violates a line
-2. The line it violates
-3. A suggested rename that keeps existing casing where the checklist allows it
+For each operationId, path, and field name, flag:
+1. Casing that does not match the rest of the file (camelCase vs snake_case vs kebab-case)
+2. The same concept named two different ways across endpoints
+3. Verbs that do not follow a consistent pattern (getX vs fetchX vs retrieveX)
 
-[paste OpenAPI excerpt]
+[paste paths, schemas, or notes]
 ```
 
-Run this review before the spec goes to a human reviewer, not instead of one. The model is good at spotting the mismatch between `usrNm` and `transaction_type` in the same schema, but it will not tell you whether `usrNm` should exist at all.
+The [operationId is API design](https://redocly.com/blog/operationid-is-api-design) post is a good reference to share alongside the excerpt. It recommends a `verb-noun` pattern, for example `getEvents`, and reaching for a more specific verb such as `archiveProduct` once plain create, read, update, and delete no longer describe the action. The model does not need to invent a convention from scratch; it needs your existing pattern and a clear signal about where the current spec breaks it.
 
-## Turn AI's findings into Redocly CLI lint rules
+## Turn naming rules into Redocly CLI rules
 
-A naming problem that shows up twice in review is worth encoding once. Redocly CLI's [configurable rules](https://redocly.com/docs/cli/rules/configurable-rules) let you define a subject, an assertion, and a severity, so the same violation gets caught automatically on every future file instead of waiting for the next AI-assisted pass.
+A naming decision that only lives in a review comment gets forgotten by the next pull request. Once a rule is stable, ask the model to draft it as a Redocly [configurable rule](https://redocly.com/docs/cli/rules/configurable-rules), which supports a `casing` assertion for `camelCase`, `kebab-case`, `snake_case`, `PascalCase`, `MACRO_CASE`, `COBOL-CASE`, and `flatcase`.
 
-Prose rule: operation IDs must use camelCase so generated SDK method names read naturally.
+Written rule: operation IDs must use camelCase so generated SDK method names read naturally.
 
 ```yaml {% process=false %}
 rules:
@@ -64,15 +51,15 @@ rules:
       property: operationId
     assertions:
       casing: camelCase
-    message: operationId must use camelCase per the naming checklist
+    message: operationId must use camelCase, for example getEvents or archiveProduct
     severity: error
 ```
 
-Before you write a new rule, check whether Redocly CLI's [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) or [recommended ruleset](https://redocly.com/docs/cli/rules/recommended) already cover it. Extending an existing rule and adjusting its severity is easier to maintain than a custom rule that duplicates the same casing check.
+Some naming rules do not need a custom assertion at all. Redocly's [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) already cover common cases: [paths-kebab-case](https://redocly.com/docs/cli/rules/oas/paths-kebab-case) requires kebab-case in URL paths instead of camelCase or snake_case, and [operation-operationId-url-safe](https://redocly.com/docs/cli/rules/oas/operation-operationId-url-safe) requires every `operationId` to be URL-safe. Check the built-in list before you ask a model to reinvent a rule that already ships in the [recommended ruleset](https://redocly.com/docs/cli/rules/recommended).
 
-## Run the naming ruleset before every merge
+## Run the ruleset in CI so drift cannot merge
 
-Put the naming rules in a shared `redocly.yaml`, either at the repo root or in a dedicated standards package other services import. The [guide to configuring a ruleset](https://redocly.com/docs/cli/guides/configure-rules) shows how `extends` layers the recommended ruleset, then your naming rules, then any per-API override for a legacy service that cannot change this quarter.
+A rule that only runs on someone's laptop protects nothing. Point a shared `redocly.yaml` at `recommended` plus your naming rules, then run the [lint command](https://redocly.com/docs/cli/commands/lint) on every pull request that touches an OpenAPI file.
 
 ```yaml {% process=false %}
 extends:
@@ -80,17 +67,28 @@ extends:
   - ./org-naming-standards.yaml
 
 rules:
-  rule/operationId-camelCase: error
+  paths-kebab-case: error
+  operation-operationId-url-safe: error
 ```
 
-Wire the [lint command](https://redocly.com/docs/cli/commands/lint) into CI so every pull request sees the same naming checks a developer runs locally, which is the core promise behind [API standards and governance](https://redocly.com/docs/cli/api-standards): one ruleset, enforced the same way everywhere it runs. When AI review keeps flagging the same naming pattern but lint reports nothing on it, that repeat finding is the signal to promote the checklist line into a new rule.
+The [guide to configuring a ruleset](https://redocly.com/docs/cli/guides/configure-rules) shows how `extends` layers a shared standards file on top of `recommended`, so many services can import the same naming rules from one place instead of copying YAML between repositories. When one legacy API cannot meet the new pattern yet, override its severity in that API's own block rather than weakening the rule everywhere.
+
+Because lint runs the same way locally and in CI, a developer sees the same violation before push that a reviewer would see in the pull request. That repetition, not the initial review, is what actually stops naming drift from shipping.
 
 ## When AI and lint disagree on a name
 
-Disagreement between the AI review and the lint output usually falls into one of three cases. The model calls a name unclear even though it passes every casing rule, which means the concern is subjective and belongs in review, not in a pattern assertion that risks false positives. Lint fails on a legacy API you cannot rename this quarter, so you lower that rule to `warn` for that one API instead of deleting it everywhere. Or the model proposes a pattern that is stricter than your checklist intends, and a person narrows the rule before it ships.
+Disagreement between a model's suggestion and your shipped rule usually falls into one of three buckets. Sometimes a model flags a name as unclear even though it passes every casing and pattern check, which makes it a judgment call for a human reviewer rather than a lint failure. Other times a legacy API fails a new rule because renaming it now would break existing clients, so the right move is lowering that one API's severity to warn and tracking the rename separately instead of deleting the rule everywhere. A generated pattern assertion can also be stricter than intended and reject a name your guide actually allows, and when that happens, narrow the rule rather than accept every AI suggestion as final.
 
-Human judgment stays final for the trade-offs the checklist does not settle. Lint enforces what you already agreed on, and AI helps you notice when the agreement needs to grow.
+[Use AI to enforce your API style guide at scale](https://redocly.com/learn/ai-for-docs/ai-enforce-api-style-guide-at-scale) covers this same trade-off for style guides in general: lint owns what your team has already agreed to encode, and humans keep the final call on anything the guide still settles through judgment rather than a pattern match.
+
+## Best practices
+
+1. Start new naming rules at `severity: warn` for existing services, then promote to `error` once violation counts trend toward zero.
+2. Version your naming standards file in Git and reference the same commit when you prompt a model to draft or update a rule.
+3. Ask the model to separate deterministic findings (casing, uniqueness, pattern) from subjective ones like clarity, so only the first group becomes a rule.
+4. Re-run the naming review whenever the convention changes, the same way you would update a test after a requirement changes.
+5. Pair naming checks with the broader review pattern in [Use AI to accelerate and improve reviews](https://redocly.com/learn/ai-for-docs/ai-reviews) so naming does not become the only thing a design review covers.
 
 ## How Redocly can help
 
-Naming conventions hold up only when the check runs the same way on every file, whether or not a reviewer happens to open it. [Redocly CLI](https://redocly.com/docs/cli/) turns a naming checklist into rule-based linting with configurable severity, whether you start from a built-in casing rule or write your own, so a name pattern you agree on once keeps getting enforced on every OpenAPI file you ship after that.
+A wiki page about naming conventions cannot stop the next pull request from breaking the pattern, but a lint rule can. [Explore Redocly CLI](https://redocly.com/docs/cli/) to turn the naming decisions your team has already made into rule-based checks with configurable severity, so a convention written once runs the same way on every OpenAPI file, on every pull request, instead of depending on someone remembering to reread the guide.
