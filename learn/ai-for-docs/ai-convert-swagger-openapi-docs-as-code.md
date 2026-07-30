@@ -1,57 +1,67 @@
 ---
 seo:
  title: Use AI to convert Swagger to OpenAPI and docs-as-code
- description: How to use AI to draft a Swagger 2.0 to OpenAPI 3.x conversion, then validate and review the result through a docs-as-code workflow.
+ description: How to prompt AI to migrate a Swagger 2.0 file to OpenAPI 3.x, what to check by hand, and how Redocly CLI and a docs-as-code workflow keep the result trustworthy.
 ---
 
 # Use AI to convert Swagger to OpenAPI and docs-as-code
 
-Somewhere in most API teams' repositories sits a Swagger 2.0 file nobody wants to touch. The endpoints still work, the file still lints against the old schema, and rewriting it by hand for OpenAPI 3.x feels like a week of tedious edits with no visible payoff.
+Most API teams have at least one Swagger 2.0 file still running in production, usually because nobody wanted to schedule the rewrite. The file works, so it sits there while every newer service ships with OpenAPI 3.x, and the distance between the two versions grows every quarter.
 
-That tedium is exactly what AI is good at: reading an old structure and drafting the new one, field by field. The risk is trusting the draft too much, because a conversion that looks right can still be wrong in a way nobody notices until a consumer's integration breaks.
+An AI assistant can draft that rewrite in minutes once you give it the old file and a clear set of rules. This article covers what changes between the two versions, how to prompt AI to do the conversion without inventing fields, and how to check the result inside a docs-as-code workflow before anyone merges it.
 
-This article shows how to draft the conversion with AI, confirm it with Redocly CLI, and move the result through a docs-as-code workflow instead of treating it as a one-off edit.
+## Why teams still have Swagger 2.0 files lying around
 
-## Why teams still carry Swagger 2.0 specs
+Rewriting a spec by hand competes with every other item on a roadmap, so it loses. Swagger 2.0 still validates, still renders, and still feeds whatever tooling was built around it years ago, which means the migration only happens when something forces it: a new tool that expects OpenAPI 3.x, a client library that dropped Swagger support, or an audit that flags the mismatch.
 
-Most Swagger 2.0 files earn their place through sheer inertia. The endpoints still return the right data, the file still passes a Swagger 2.0 validator, and nobody wants to spend a sprint rewriting syntax for an API that already works. That math changes once the tooling around the API starts assuming OpenAPI 3.x by default: a mock server that expects a `requestBody` object, a style guide built for `components/schemas`, or a partner who asks for an OpenAPI 3.1 file and gets a shrug instead.
+That delay compounds. The [OpenAPI Specification](https://redocly.com/learn/openapi/openapi-visual-reference) is the direct descendant of Swagger, since SmartBear donated the Swagger specification to the Linux Foundation in 2015 and it was renamed from there. Every OpenAPI 3.x feature released since then, from better schema reuse to webhook support, stays out of reach until the underlying file gets rewritten.
 
-The obstacle is rarely size. A file with a hundred operations described in Swagger 2.0 takes about the same effort to convert as a file with ten, once a team knows the pattern, but converting by hand raises the odds of breaking something a consumer depends on without anyone noticing until later. That risk is why AI helps here: it can apply the same rename-and-move pattern consistently across many operations without losing attention around operation eighty.
+## What changes between Swagger 2.0 and OpenAPI 3.x
 
-## What changes when you move from Swagger 2.0 to OpenAPI 3.x
+The rewrite is mechanical in places and genuinely new in others, so it helps to separate the two before you prompt anything. The root object property renames from `swagger` to `openapi`, and the value has to be a quoted string like `3.0.3` rather than a bare number. Request bodies move out of the parameters list and into their own `requestBody` object, and the old `definitions` section becomes `components/schemas`.
 
-The differences between the two formats follow a short, predictable list, and knowing it up front makes an AI-drafted conversion easier to check. [Swagger 2.0's `host`, `basePath`, and `schemes` fields collapse into a single OpenAPI 3.x `servers` array](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md), which is more compact and lets you list a staging and a production URL in the same file. The root `definitions` object becomes `components/schemas`, so every `$ref` in the file has to point at the new path instead of the old one, and security definitions move the same way, from a root-level object into `components/securitySchemes`.
+Beyond renaming, OpenAPI 3.x added attributes that Swagger 2.0 users used to fake with vendor extensions or contract by convention. A property can now carry `writeOnly: true` for values like passwords that only travel one direction, and `nullable: true` replaces the ad-hoc conventions teams used to mark a field as optionally empty, according to [Redocly's account of migrating three specs from Swagger 2 to OpenAPI 3](https://redocly.com/blog/openapi-3). An AI assistant that knows this list in advance produces a more complete first draft than one asked to "just convert this."
 
-Request bodies work differently too. Swagger 2.0 described a JSON payload as a parameter with `in: body`, limited to one per operation, while [OpenAPI 3.x replaces that with a dedicated `requestBody` object](https://swagger.io/docs/specification/v3_0/describing-request-body/describing-request-body/) that maps each content type, JSON, form data, multipart, to its own schema. That is closer to how the API behaves in practice, since a single endpoint often accepts more than one content type. None of this changes what the API does; it changes how precisely the file says so.
+## How to prompt AI to do the conversion
 
-## Use AI to draft the conversion, then check its assumptions
+Treat the prompt like a spec review, not a translation request. Paste the full Swagger 2.0 file, then state the target version, the fields you expect to see, and what the model should do when it is unsure rather than letting it guess.
 
-Feeding an AI assistant the whole Swagger 2.0 file and asking for an OpenAPI 3.x version gets you most of the mechanical rewrite in one pass: the field renames, the restructured `servers` block, the moved schemas. Treat that output as a draft, not a finished file, because a model that sounds confident about a rename can be just as confident about a rename it got wrong.
+### A context block that limits guessing
 
-> Before: a Swagger 2.0 operation with `consumes: [application/json]` at the top of the file and a body parameter referencing `#/definitions/Order`.
+```markdown {% process=false %}
+You are converting a Swagger 2.0 file to OpenAPI 3.0.
 
-> After: an OpenAPI 3.x operation with a `requestBody` whose `content.application/json.schema` points to `#/components/schemas/Order`, and no top-level `consumes` field at all.
+Rules:
+- Rename the root `swagger` key to `openapi` and set it to a quoted version string.
+- Move body parameters into `requestBody` with the correct content type.
+- Move `definitions` into `components/schemas` and update every `$ref`.
+- Add `nullable` or `writeOnly` only where the original description or example already implies it; otherwise leave the field unchanged.
+- List every field you were unsure about at the end, instead of just guessing.
 
-That transformation is usually correct, but ask AI to flag anywhere it had to guess, such as which content type a body parameter without an explicit `consumes` value was meant to use. That is exactly the kind of unstated assumption that reads fine and ships wrong.
+[Paste the Swagger 2.0 file here]
+```
 
-## Validate the converted file with Redocly CLI before anyone builds on it
+That last rule matters most. A model under pressure to produce a finished-looking file will fill in missing pieces with plausible defaults, and plausible is not the same as correct when the field controls billing or authentication.
 
-A draft, however good, is not the same as a valid OpenAPI file, so run it through something deterministic before anyone downstream relies on it. [Redocly CLI](https://redocly.com/redocly-cli) supports OpenAPI 3.2, 3.1, and 3.0 alongside legacy Swagger 2.0, so you can lint the original file for a baseline and then lint the converted file against the same or a stricter ruleset to confirm nothing about the API's behavior changed along the way. The [lint command](https://redocly.com/docs/cli/commands/lint) reports missing fields, broken `$ref` paths, and other mistakes an AI conversion is prone to leave behind, such as a schema renamed in one place and not another.
+## What to verify before you trust the output
 
-Once the file passes lint, the [bundle command](https://redocly.com/docs/cli/commands/bundle) combines any multi-file structure into one output, which is useful if the conversion also reorganized how the description is split across files. If the team's linting or bundling still runs on the deprecated `swagger-cli` package, this is also the moment to move that tooling forward; Redocly publishes a [migration guide for existing swagger-cli users](https://redocly.com/docs/cli/guides/migrate-from-swagger-cli) that maps the old commands to their Redocly CLI equivalents.
+AI is good at the mechanical parts of this rewrite: renaming keys, restructuring request bodies, and updating `$ref` paths so nothing breaks. It is not reliable at knowing which fields your team really treats as nullable, optional, or write-only, because that context usually lives in a database schema or a conversation, not in the old file.
 
-## Put the migration through a docs-as-code workflow
+That is exactly the split a deterministic tool is built to close. [Redocly CLI](https://redocly.com/docs/cli) already treats Swagger 2.0 as a supported input, which is why its own [guide for teams moving off swagger-cli](https://redocly.com/docs/cli/guides/migrate-from-swagger-cli) walks through linting and bundling either version with the same commands. Running `redocly lint` against the converted file catches malformed references, missing required fields, and type mismatches before a human even opens the diff. From there, you can [configure a lint ruleset](https://redocly.com/docs/cli/guides/configure-rules) once and reuse it on every future conversion, so the same checks apply whether the file came from AI or from a person.
 
-A converted spec file is not finished once it passes lint; it still needs a reviewer who can see what changed and why, which is what a "docs-as-code" workflow is for. Treating the OpenAPI file [the way you treat code](https://redocly.com/blog/docs-as-code), Markdown and YAML in git, with changes reviewed as a diff, means the conversion goes through a pull request instead of landing as an overwrite nobody reviewed. [A clear branching strategy](https://redocly.com/blog/git-branching-for-docs) keeps a migration this size contained to its own branch while the rest of the docs keep shipping normally.
+## Put the conversion inside a docs-as-code workflow
 
-That pull request is also where a person catches what AI and the linter cannot: whether a renamed field still means the same thing to the team that consumes it. [Reunite](https://redocly.com/reunite) gives reviewers a visual, git-based way to [review that pull request](https://redocly.com/docs/realm/reunite/project/pull-request/review-pull-request) side by side with the rendered docs, so a reviewer sees the practical effect of the conversion instead of a wall of YAML diff.
+A converted spec is still a draft until it goes through the same review path as any other change to your API. [Docs-as-code](https://redocly.com/blog/docs-as-code) treats documentation the way you treat application code, so the converted file goes into a branch, a pull request, and a diff that a reviewer can read line by line, rather than landing straight on the main branch.
 
-## What AI and automated tools still leave to you
+That structure pays off twice here. First, Git history means you can see exactly which lines the AI changed and which ones a human touched afterward, so nobody has to guess how a disputed field ended up the way it did. Second, a platform like [Reunite](https://redocly.com/reunite) gives that pull request a home, with a Git-based editor and review flow so the spec conversion moves through the same commit, diff, and merge steps your team already trusts for code. A lint pass that only ever runs on someone's laptop is a lint pass that eventually gets skipped, which is the whole argument for running it inside the pull request instead.
 
-AI is fast at rewriting structure, and Redocly CLI is reliable at confirming the result is well-formed, but neither one knows whether a semantic detail still matches what the API does in practice. A `nullable` field, an example value copied from an old ticket, or a description written for a field that no longer exists after the conversion: nothing mechanical catches those, because they are not syntax errors.
+## Best practices
 
-That is the same limit AI runs into everywhere else in a docs workflow: [it accelerates the draft and the review, while deterministic checks and a person confirm what matters most](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs). The pattern here, AI drafts the rewrite, a linter narrows down what to check, a person makes the final call, follows [the same logic Redocly applies to its own review pass](https://redocly.com/learn/ai-for-docs/ai-reviews). None of that changes the underlying work of migrating a spec; it just means the last mile of judgment stays with someone who understands what the API is for.
+1. Paste the full Swagger 2.0 file into the prompt, not a summary, so the model can trace every `$ref` it needs to move.
+2. Tell the model to flag uncertain fields instead of guessing, and review that flagged list before anything else.
+3. Lint the converted file with the same ruleset you already use for OpenAPI 3.x, so a Swagger-era file gets no special treatment.
+4. Open the conversion as a pull request, even if you are the only reviewer, so the diff exists if a question comes up later.
 
 ## How Redocly can help
 
-Converting Swagger 2.0 to OpenAPI 3.x is exactly the kind of task where handing AI a spec and getting back an improved version pays off, provided something deterministic checks the result before anyone trusts it. [Redocly CLI](https://redocly.com/redocly-cli) is built to support that whole range, from linting the legacy Swagger 2.0 file for a baseline, to validating the OpenAPI 3.x draft AI produced, to bundling the result into a single description your docs-as-code pipeline can publish. Run it locally while you convert, then [run the same lint in CI](https://redocly.com/blog/getting-started-api-governance) on every pull request, so a mis-mapped `$ref` or a dropped security scheme gets caught before it reaches a reader.
+Once AI has drafted the Swagger-to-OpenAPI conversion, [Redocly CLI](https://redocly.com/docs/cli) gives you a deterministic way to check it: the same linting and bundling commands that already treat Swagger 2.0 as a supported input will flag malformed references and missing fields in the converted file before anyone merges it. From there, [Reunite](https://redocly.com/reunite) gives that review a docs-as-code home, so the conversion moves through a Git-based pull request and diff instead of landing on the main branch unreviewed.
