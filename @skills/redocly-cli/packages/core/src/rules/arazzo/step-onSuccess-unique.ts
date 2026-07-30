@@ -1,0 +1,33 @@
+import type { Arazzo1Rule } from '../../visitors.js';
+import type { UserContext } from '../../walk.js';
+
+export const StepOnSuccessUnique: Arazzo1Rule = () => {
+  return {
+    OnSuccessActionList: {
+      enter(onSuccessActionList, { report, location }: UserContext) {
+        if (!onSuccessActionList) return;
+        const seenSuccessActions = new Set();
+
+        for (const onSuccessAction of onSuccessActionList) {
+          if (seenSuccessActions.has(onSuccessAction?.name)) {
+            report({
+              message: 'The action `name` must be unique amongst listed `onSuccess` actions.',
+              location: location.child([onSuccessActionList.indexOf(onSuccessAction)]),
+              reference: 'https://redocly.com/docs/cli/rules/arazzo/step-onsuccess-unique',
+            });
+          }
+
+          if (seenSuccessActions.has(onSuccessAction?.reference)) {
+            report({
+              message: 'The action `reference` must be unique amongst listed `onSuccess` actions.',
+              location: location.child([onSuccessActionList.indexOf(onSuccessAction)]),
+              reference: 'https://redocly.com/docs/cli/rules/arazzo/step-onsuccess-unique',
+            });
+          }
+
+          seenSuccessActions.add(onSuccessAction?.name ?? onSuccessAction?.reference);
+        }
+      },
+    },
+  };
+};

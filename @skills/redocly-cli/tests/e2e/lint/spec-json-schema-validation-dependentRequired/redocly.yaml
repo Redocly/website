@@ -1,0 +1,7 @@
+apis:
+  main:
+    root: ./openapi.yaml
+
+rules:
+  struct: error
+  no-invalid-media-type-examples: error

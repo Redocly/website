@@ -1,0 +1,9 @@
+*
+!package.json
+!tsconfig.build.json
+!tsconfig.json
+!package-lock.json
+!README.md
+!LICENSE.md
+!packages/*
+!scripts/local-pack.sh

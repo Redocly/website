@@ -1,0 +1,54 @@
+import type { RuleSeverity } from '@redocly/openapi-core';
+
+import type { LoginArgv, LogoutArgv } from './commands/auth.js';
+import type { BuildDocsArgv } from './commands/build-docs/types.js';
+import type { BundleArgv } from './commands/bundle.js';
+import type { DriftArgv } from './commands/drift/index.js';
+import type { EjectArgv } from './commands/eject.js';
+import type { GenerateArazzoCommandArgv } from './commands/generate-arazzo.js';
+import type { JoinArgv } from './commands/join/types.js';
+import type { LintArgv } from './commands/lint.js';
+import type { PreviewProjectArgv } from './commands/preview-project/types.js';
+import type { ProxyArgv } from './commands/proxy/index.js';
+import type { RespectArgv } from './commands/respect/index.js';
+import type { SplitArgv } from './commands/split/types.js';
+import type { StatsArgv } from './commands/stats/index.js';
+import type { TranslationsArgv } from './commands/translations.js';
+import type { PushStatusArgv } from './reunite/commands/push-status.js';
+import type { PushArgv } from './reunite/commands/push.js';
+
+export type Totals = {
+  errors: number;
+  warnings: number;
+  ignored: number;
+};
+export type Entrypoint = {
+  path: string;
+  alias?: string;
+  output?: string;
+};
+export const outputExtensions = ['json', 'yaml', 'yml'] as const;
+export type OutputExtension = (typeof outputExtensions)[number];
+export type CommandArgv =
+  | StatsArgv
+  | SplitArgv
+  | JoinArgv
+  | LintArgv
+  | BundleArgv
+  | LoginArgv
+  | LogoutArgv
+  | BuildDocsArgv
+  | PushArgv
+  | PushStatusArgv
+  | PreviewProjectArgv
+  | TranslationsArgv
+  | EjectArgv
+  | RespectArgv
+  | DriftArgv
+  | ProxyArgv
+  | GenerateArazzoCommandArgv;
+
+export type VerifyConfigOptions = {
+  config?: string;
+  'lint-config'?: RuleSeverity;
+};

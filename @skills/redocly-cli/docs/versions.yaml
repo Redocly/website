@@ -1,0 +1,6 @@
+default: 'v2'
+versions:
+  - version: v1
+    name: 1.x (archive)
+  - version: v2
+    name: 2.x (current)

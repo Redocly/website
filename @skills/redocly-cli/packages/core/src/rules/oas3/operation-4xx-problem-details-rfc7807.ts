@@ -1,0 +1,55 @@
+import type { Oas3Rule } from '../../visitors.js';
+import type { UserContext } from '../../walk.js';
+import { validateDefinedAndNonEmpty } from '../utils.js';
+
+/**
+ * Validation according to rfc7807 - https://datatracker.ietf.org/doc/html/rfc7807
+ */
+export const Operation4xxProblemDetailsRfc7807: Oas3Rule = () => {
+  return {
+    Response: {
+      skip(_, key: string | number) {
+        return !/4[Xx0-9]{2}/.test(`${key}`);
+      },
+      enter(response, { report, location }: UserContext) {
+        if (!response.content || !response.content['application/problem+json'])
+          report({
+            message: 'Response `4xx` must have content-type `application/problem+json`.',
+            location: location.key(),
+            reference:
+              'https://redocly.com/docs/cli/rules/oas/operation-4xx-problem-details-rfc7807',
+          });
+      },
+      MediaType: {
+        skip(_, key: string | number) {
+          return key !== 'application/problem+json';
+        },
+        enter(media, ctx: UserContext) {
+          validateDefinedAndNonEmpty({
+            fieldName: 'schema',
+            value: media,
+            ctx,
+            reference:
+              'https://redocly.com/docs/cli/rules/oas/operation-4xx-problem-details-rfc7807',
+          });
+        },
+        SchemaProperties(schema, ctx: UserContext) {
+          validateDefinedAndNonEmpty({
+            fieldName: 'type',
+            value: schema,
+            ctx,
+            reference:
+              'https://redocly.com/docs/cli/rules/oas/operation-4xx-problem-details-rfc7807',
+          });
+          validateDefinedAndNonEmpty({
+            fieldName: 'title',
+            value: schema,
+            ctx,
+            reference:
+              'https://redocly.com/docs/cli/rules/oas/operation-4xx-problem-details-rfc7807',
+          });
+        },
+      },
+    },
+  };
+};

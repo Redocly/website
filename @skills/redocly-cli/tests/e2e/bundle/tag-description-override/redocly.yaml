@@ -1,0 +1,9 @@
+apis:
+  main:
+    root: ./main.yaml
+
+decorators:
+  tag-description-override:
+    tagNames:
+      pet: ./pet-tag-description.md
+      store: ./store-tag-description.md

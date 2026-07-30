@@ -1,0 +1,99 @@
+import { outdent } from 'outdent';
+
+import { parseYamlToDocument, replaceSourceWithRef } from '../../../../__tests__/utils.js';
+import { createConfig } from '../../../config/index.js';
+import { lintDocument } from '../../../lint.js';
+import { BaseResolver } from '../../../resolve.js';
+
+describe('Common path-http-verbs-order', () => {
+  it('should report on invalid order', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /some:
+            put:
+              summary: put
+            post:
+              summary: post
+            get:
+              summary: post
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'path-http-verbs-order': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "location": [
+            {
+              "pointer": "#/paths/~1some/post",
+              "reportOnKey": true,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Operation http verbs must be ordered.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/path-http-verbs-order",
+          "ruleId": "path-http-verbs-order",
+          "severity": "error",
+          "suggest": [],
+        },
+        {
+          "location": [
+            {
+              "pointer": "#/paths/~1some/get",
+              "reportOnKey": true,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Operation http verbs must be ordered.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/path-http-verbs-order",
+          "ruleId": "path-http-verbs-order",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should not report valid order', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+      openapi: 3.0.0
+      paths:
+        /some:
+          get:
+            summary: get
+          head:
+            summary: head
+          post:
+            summary: post
+          put:
+            summary: put
+          patch:
+            summary: patch
+          delete:
+            summary: delete
+          options:
+            summary: options
+          trace:
+            summary: trace
+        `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'path-http-verbs-order': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`[]`);
+  });
+});

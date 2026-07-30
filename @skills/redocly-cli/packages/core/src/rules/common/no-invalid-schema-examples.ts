@@ -1,0 +1,56 @@
+import type { Oas3_1Schema, Oas3Schema } from '../../typings/openapi.js';
+import { isDefined } from '../../utils/is-defined.js';
+import type { Oas2Rule, Oas3Rule } from '../../visitors.js';
+import type { UserContext } from '../../walk.js';
+import { AjvValidator } from '../ajv.js';
+import { validateExample } from '../utils.js';
+
+export const NoInvalidSchemaExamples: Oas3Rule | Oas2Rule = (opts) => {
+  const validator = new AjvValidator();
+  return {
+    Schema: {
+      leave(schema: Oas3_1Schema | Oas3Schema, ctx: UserContext) {
+        const examples = (schema as Oas3_1Schema).examples;
+
+        if (Array.isArray(examples)) {
+          for (const example of examples) {
+            validateExample({
+              example,
+              schema,
+              options: {
+                location: ctx.location.child(['examples', examples.indexOf(example)]),
+                ctx,
+                validator,
+                allowAdditionalProperties: !!opts.allowAdditionalProperties,
+              },
+              reference: 'https://redocly.com/docs/cli/rules/oas/no-invalid-schema-examples',
+            });
+          }
+        }
+
+        if (isDefined(schema.example)) {
+          // Handle nullable example for OAS3
+          if (
+            (schema as Oas3Schema).nullable === true &&
+            schema.example === null &&
+            schema.type !== undefined
+          ) {
+            return;
+          }
+
+          validateExample({
+            example: schema.example,
+            schema,
+            options: {
+              location: ctx.location.child('example'),
+              ctx,
+              validator,
+              allowAdditionalProperties: !!opts.allowAdditionalProperties,
+            },
+            reference: 'https://redocly.com/docs/cli/rules/oas/no-invalid-schema-examples',
+          });
+        }
+      },
+    },
+  };
+};

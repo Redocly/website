@@ -1,0 +1,116 @@
+import { CONFIG_NODE_TYPE_NAMES } from '@redocly/config';
+
+import { replaceRef } from '../ref-utils.js';
+import { NormalizedConfigTypes } from '../types/redocly-yaml.js';
+import type { OasRef } from '../typings/openapi.js';
+import { isPlainObject } from '../utils/is-plain-object.js';
+import { normalizeVisitors } from '../visitors.js';
+import type { ResolveResult, UserContext } from '../walk.js';
+import { bundleExtends } from './bundle-extends.js';
+import { preResolvePluginPath, type PluginResolveInfo } from './config-resolvers.js';
+import { CONFIG_BUNDLER_VISITOR_ID, PLUGINS_COLLECTOR_VISITOR_ID } from './constants.js';
+import type { Plugin } from './types.js';
+
+export type PluginsCollectorVisitorData = {
+  plugins: (PluginResolveInfo | Plugin)[];
+  rootConfigDir: string;
+};
+
+function collectorHandleNode(node: unknown, ctx: UserContext) {
+  if (isPlainObject(node) && Array.isArray(node.plugins)) {
+    const { plugins, rootConfigDir } = ctx.getVisitorData() as PluginsCollectorVisitorData;
+    plugins.push(
+      ...node.plugins.map((p: string | Plugin) => {
+        return preResolvePluginPath(
+          p,
+          ctx.location.source.absoluteRef.replace(/^file:\/\//, ''), // remove file URL prefix for OpenAPI language server
+          rootConfigDir
+        );
+      })
+    );
+  }
+}
+
+export const pluginsCollectorVisitor = normalizeVisitors(
+  [
+    {
+      severity: 'error',
+      ruleId: PLUGINS_COLLECTOR_VISITOR_ID,
+      visitor: {
+        ref: {},
+        ConfigGovernance: {
+          leave(node: unknown, ctx: UserContext) {
+            collectorHandleNode(node, ctx);
+          },
+        },
+        ConfigApisProperties: {
+          leave(node: unknown, ctx: UserContext) {
+            collectorHandleNode(node, ctx);
+          },
+        },
+        [CONFIG_NODE_TYPE_NAMES.ScorecardClassicLevel]: {
+          leave(node: unknown, ctx: UserContext) {
+            collectorHandleNode(node, ctx);
+          },
+        },
+        ConfigRoot: {
+          leave(node: unknown, ctx: UserContext) {
+            collectorHandleNode(node, ctx);
+          },
+        },
+      },
+    },
+  ],
+  NormalizedConfigTypes
+);
+
+export type ConfigBundlerVisitorData = {
+  plugins: Plugin[];
+};
+
+function bundlerHandleNode(node: unknown, ctx: UserContext) {
+  if (isPlainObject(node) && node.extends) {
+    const { plugins } = ctx.getVisitorData() as ConfigBundlerVisitorData;
+    const bundled = bundleExtends({ node, ctx, plugins });
+    Object.assign(node, bundled);
+    delete node.extends;
+  }
+}
+
+export const configBundlerVisitor = normalizeVisitors(
+  [
+    {
+      severity: 'error',
+      ruleId: CONFIG_BUNDLER_VISITOR_ID,
+      visitor: {
+        ref: {
+          leave(node: OasRef, ctx: UserContext, resolved: ResolveResult<any>) {
+            replaceRef(node, resolved, ctx);
+          },
+        },
+        ConfigGovernance: {
+          leave(node: unknown, ctx: UserContext) {
+            bundlerHandleNode(node, ctx);
+          },
+        },
+        ConfigApisProperties: {
+          leave(node: unknown, ctx: UserContext) {
+            // ignore extends from root config if defined in the current node
+            bundlerHandleNode(node, ctx);
+          },
+        },
+        [CONFIG_NODE_TYPE_NAMES.ScorecardClassicLevel]: {
+          leave(node: unknown, ctx: UserContext) {
+            bundlerHandleNode(node, ctx);
+          },
+        },
+        ConfigRoot: {
+          leave(node: unknown, ctx: UserContext) {
+            bundlerHandleNode(node, ctx);
+          },
+        },
+      },
+    },
+  ],
+  NormalizedConfigTypes
+);

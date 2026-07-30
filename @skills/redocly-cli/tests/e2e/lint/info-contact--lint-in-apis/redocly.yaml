@@ -1,0 +1,5 @@
+apis:
+  main@latest:
+    root: ./openapi.yaml
+    rules:
+      info-contact: warn

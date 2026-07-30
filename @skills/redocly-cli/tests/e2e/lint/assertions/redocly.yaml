@@ -1,0 +1,229 @@
+apis:
+  main:
+    root: ./openapi.yaml
+
+rules:
+  rule/tag-description:
+    subject:
+      type: Tag
+      property: description
+    message: Tag description must be at least 13 characters and end with a full stop.
+    severity: error
+    assertions:
+      minLength: 13
+      pattern: /\.$/
+  # property example
+  rule/path-item-get-defined:
+    subject:
+      type: PathItem
+      property: get
+    message: Every path item must have a GET operation.
+    assertions:
+      defined: true
+  rule/path-item-get-required:
+    subject:
+      type: PathItem
+    message: Every path item must have a GET operation.
+    assertions:
+      required:
+        - get
+  # contains example
+  rule/operation-tags-contains:
+    subject:
+      type: Operation
+      property: tags
+    message: Every operation must include documentation tags for each documented area
+    severity: error
+    assertions:
+      contains:
+        - test
+        - about
+  rule/tag-name-and-desc:
+    subject:
+      type: Tag
+      property:
+        - name
+        - description
+    message: Every tag must have a name and description.
+    assertions:
+      defined: true
+
+  # context example
+  rule/media-type-map-not-pdf:
+    subject:
+      type: MediaTypesMap
+    assertions:
+      disallowed: ['application/pdf']
+    message: Media type should not be pdf
+    where:
+      - subject:
+          type: Operation
+          filterOutParentKeys:
+            - put
+        assertions:
+          defined: true
+      - subject:
+          type: Response
+          filterInParentKeys: ['201', '200']
+          property: description
+        assertions:
+          defined: true
+
+  # enum example
+  rule/media-type-map-enum:
+    subject:
+      type: MediaTypesMap
+    message: Only application/json and application/pdf can be used
+    severity: error
+    assertions:
+      enum:
+        - application/json
+        - application/pdf
+
+  rule/operation-summary-suggest:
+    subject:
+      type: Operation
+      property: summary
+    message: Summary must be one of the predefined values
+    suggest:
+      - change to 'My resource'
+      - change to 'My collection'
+    severity: error
+    assertions:
+      enum:
+        - My resource
+        - My collection
+
+  # pattern example
+  rule/operation-summary-pattern:
+    subject:
+      type: Operation
+      property: summary
+    message: Summary should match a regex
+    severity: error
+    assertions:
+      pattern: /resource/
+  # casing
+  rule/operation-id-casing:
+    subject:
+      type: Operation
+      property: operationId
+    message: NamedExamples key must be in camelCase
+    severity: error
+    assertions:
+      casing: camelCase
+  # mutuallyExclusive example
+  rule/operation-mutually-exclusive:
+    subject:
+      type: Operation
+    message: 'Operation must not define both properties together: description and externalDocs'
+    severity: error
+    assertions:
+      mutuallyExclusive:
+        - description
+        - externalDocs
+  # mutuallyRequired example
+  rule/schema-properties-mutually-required:
+    subject:
+      type: SchemaProperties
+    assertions:
+      mutuallyRequired:
+        - created_at
+        - updated_at
+    message: The created_at and updated_at properties are mutually required
+    severity: error
+
+    where:
+      - subject:
+          type: Response
+        assertions:
+          defined: true
+
+  # mutuallyRequired example with context
+  rule/response-map-required-with-context:
+    subject:
+      type: Responses
+    assertions:
+      mutuallyRequired:
+        - '200'
+        - '201'
+    where:
+      - subject:
+          type: Operation
+          filterInParentKeys:
+            - put
+        assertions:
+          defined: true
+    message: Must mutually define 200 and 201 responses for PUT requests.
+    severity: error
+
+  # requireAny example
+  rule/operation-require-any-description-or-external:
+    subject:
+      type: Operation
+    message: 'Operation must have one of properties defined: description or externalDocs'
+    severity: error
+    assertions:
+      requireAny:
+        - description
+        - externalDocs
+
+  # disallowed example
+  rule/operation-disallowed:
+    subject:
+      type: Operation
+    message: x-code-samples and x-internal must not be defined
+    severity: error
+    assertions:
+      disallowed:
+        - x-code-samples
+        - x-internal
+
+  # defined example
+  rule/operation-defined:
+    subject:
+      type: Operation
+      property: x-codeSamples
+    message: x-codeSamples must be defined
+    severity: error
+    assertions:
+      defined: true
+
+  # nonEmpty example
+  rule/operation-non-empty:
+    subject:
+      type: Operation
+      property: summary
+    message: Operation summary should not be empty
+    severity: error
+    assertions:
+      nonEmpty: true
+
+  # minLength example
+  rule/operation-min-length:
+    subject:
+      type: Operation
+      property: summary
+    message: Operation summary must have minimum of 2 chars length
+    severity: error
+    assertions:
+      minLength: 2
+
+  # maxLength example
+  rule/operation-max-length:
+    subject:
+      type: Operation
+      property: summary
+    message: Operation summary must have a maximum of 2 characters
+    severity: error
+    assertions:
+      maxLength: 20
+
+  # ref example
+  rule/ref:
+    subject:
+      type: PathItem
+    message: No refs on Path Items
+    severity: error
+    assertions:
+      ref: false

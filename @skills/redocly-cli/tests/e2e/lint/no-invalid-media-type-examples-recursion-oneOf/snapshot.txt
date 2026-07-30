@@ -1,0 +1,6 @@
+
+validating openapi.json using lint rules for api 'main'...
+openapi.json: validated in <test>ms
+
+Woohoo! Your API description is valid. 🎉
+

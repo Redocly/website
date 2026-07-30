@@ -1,0 +1,239 @@
+export const firstDocument = {
+  openapi: '3.0.0',
+  servers: [{ url: 'http://localhost:8080' }],
+  info: {
+    description: 'example test',
+    version: '1.0.0',
+    title: 'First API',
+    termsOfService: 'http://swagger.io/terms/',
+    license: {
+      name: 'Apache 2.0',
+      url: 'http://www.apache.org/licenses/LICENSE-2.0.html',
+    },
+  },
+  paths: {
+    '/GETUser/{userId}': {
+      summary: 'get user by id',
+      description: 'user info',
+      servers: [{ url: '/user' }, { url: '/pet', description: 'pet server' }],
+
+      get: {
+        tags: ['pet'],
+        summary: 'Find pet by ID',
+        description: 'Returns a single pet',
+        operationId: 'getPetById',
+        servers: [{ url: '/pet' }],
+      },
+      parameters: [{ name: 'param1', in: 'header', schema: { description: 'string' } }],
+    },
+  },
+  components: {},
+};
+
+export const secondDocument = {
+  openapi: '3.0.0',
+  servers: [{ url: 'http://localhost:8080' }],
+  info: {
+    description: 'example test',
+    version: '1.0.0',
+    title: 'Second API',
+    termsOfService: 'http://swagger.io/terms/',
+    license: {
+      name: 'Apache 2.0',
+      url: 'http://www.apache.org/licenses/LICENSE-2.0.html',
+    },
+  },
+  post: {
+    '/GETUser/{userId}': {
+      summary: 'get user',
+      description: 'user information',
+      servers: [{ url: '/user' }, { url: '/pet', description: '' }],
+
+      get: {
+        tags: ['pet'],
+        summary: 'Find pet by ID',
+        description: 'Returns a single pet',
+        operationId: 'getPetById',
+        servers: [{ url: '/pet' }],
+      },
+      parameters: [{ name: 'param1', in: 'header', schema: { description: 'string' } }],
+    },
+  },
+  components: {},
+};
+
+export const thirdDocument = {
+  openapi: '3.0.0',
+  info: {
+    title: 'Third API',
+    version: '1.0',
+  },
+  servers: [
+    {
+      url: 'https://api.server.test/v1',
+    },
+  ],
+  paths: {},
+  components: {
+    schemas: {
+      SchemaWithNull: {
+        type: 'string',
+        default: null,
+        nullable: true,
+      },
+      SchemaWithRef: {
+        type: 'object',
+        properties: {
+          schemaType: {
+            type: 'string',
+            enum: ['foo'],
+          },
+          foo: {
+            $ref: '#/components/schemas/SchemaWithNull',
+          },
+        },
+      },
+      SchemaWithDiscriminator: {
+        discriminator: {
+          propertyName: 'schemaType',
+          mapping: {
+            foo: '#/components/schemas/SchemaWithRef',
+            bar: '#/components/schemas/SchemaWithNull',
+          },
+        },
+        oneOf: [
+          {
+            $ref: '#/components/schemas/SchemaWithRef',
+          },
+          {
+            type: 'object',
+            properties: {
+              schemaType: {
+                type: 'string',
+                enum: ['bar'],
+              },
+              bar: {
+                type: 'string',
+              },
+            },
+          },
+        ],
+      },
+    },
+  },
+};
+
+export const serverAndPaths = {
+  openapi: '3.0.0',
+  info: {
+    title: 'First API',
+    version: '1.0.0',
+  },
+  servers: [
+    {
+      url: 'https://foo.com/api/v1/first',
+    },
+  ],
+  paths: {
+    '/foo': {
+      get: {
+        summary: 'Get Foo',
+      },
+    },
+  },
+};
+
+export const anotherServerAndPaths = {
+  openapi: '3.0.0',
+  info: {
+    title: 'Second API',
+    version: '1.0.0',
+  },
+  servers: [
+    {
+      url: 'https://foo.com/api/v1/second',
+    },
+  ],
+  paths: {
+    '/bar': {
+      get: {
+        summary: 'Get Bar',
+      },
+    },
+  },
+};
+
+export const pathWithObjectExtension = {
+  openapi: '3.0.0',
+  info: {
+    title: 'First API',
+    version: '1.0.0',
+  },
+  servers: [
+    {
+      url: 'https://foo.com/api/v1/first',
+    },
+  ],
+  paths: {
+    '/foo': {
+      'x-metadata': { owner: 'team-a' },
+      get: {
+        summary: 'Get Foo',
+      },
+    },
+  },
+};
+
+export const anotherPathWithSameObjectExtension = {
+  openapi: '3.0.0',
+  info: {
+    title: 'Second API',
+    version: '1.0.0',
+  },
+  servers: [
+    {
+      url: 'https://foo.com/api/v1/second',
+    },
+  ],
+  paths: {
+    '/foo': {
+      'x-metadata': { owner: 'team-a' },
+    },
+  },
+};
+
+export const anotherPathWithDifferentObjectExtension = {
+  openapi: '3.0.0',
+  info: {
+    title: 'Second API',
+    version: '1.0.0',
+  },
+  servers: [
+    {
+      url: 'https://foo.com/api/v1/second',
+    },
+  ],
+  paths: {
+    '/foo': {
+      'x-metadata': { owner: 'team-b' },
+    },
+  },
+};
+
+export const anotherPathWithDifferentKeyObjectExtension = {
+  openapi: '3.0.0',
+  info: {
+    title: 'Second API',
+    version: '1.0.0',
+  },
+  servers: [
+    {
+      url: 'https://foo.com/api/v1/second',
+    },
+  ],
+  paths: {
+    '/foo': {
+      'x-metadata': { team: 'x' },
+    },
+  },
+};

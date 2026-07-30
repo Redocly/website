@@ -1,0 +1,1228 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { outdent } from 'outdent';
+
+import { parseYamlToDocument, replaceSourceWithRef } from '../../../../__tests__/utils.js';
+import { createConfig } from '../../../config/index.js';
+import { lintDocument } from '../../../lint.js';
+import { BaseResolver } from '../../../resolve.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+vi.setConfig({ testTimeout: 10000 });
+
+describe('no-invalid-media-type-examples', () => {
+  it('should report on invalid example', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            get:
+              responses:
+                200:
+                  content:
+                    application/json:
+                      example:
+                        a: 13
+                        b: "string"
+                      schema:
+                        type: object
+                        properties:
+                          a:
+                            type: string
+                          b:
+                            type: number
+
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/get/responses/200/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/paths/~1pet/get/responses/200/content/application~1json/example/a",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: \`a\` property type must be string.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/get/responses/200/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/paths/~1pet/get/responses/200/content/application~1json/example/b",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: \`b\` property type must be number.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should report readOnly property in requestBody example', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            post:
+              requestBody:
+                content:
+                  application/json:
+                    examples:
+                      invalid:
+                        value:
+                          readOnlyProp: "propValue"
+                      valid:
+                        value:
+                          writeOnlyProp: "propValue"
+                    schema:
+                      type: object
+                      properties:
+                        readOnlyProp:
+                          type: string
+                          readOnly: true
+                        writeOnlyProp:
+                          type: string
+                          writeOnly: true
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/post/requestBody/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/paths/~1pet/post/requestBody/content/application~1json/examples/invalid/value/readOnlyProp",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: \`readOnlyProp\` property must NOT be present in request context.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should report readOnly property in parameter content example', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            get:
+              parameters:
+                - name: filter
+                  in: query
+                  content:
+                    application/json:
+                      examples:
+                        invalid:
+                          value:
+                            readOnlyProp: "propValue"
+                        valid:
+                          value:
+                            writeOnlyProp: "propValue"
+                      schema:
+                        type: object
+                        properties:
+                          readOnlyProp:
+                            type: string
+                            readOnly: true
+                          writeOnlyProp:
+                            type: string
+                            writeOnly: true
+              responses:
+                '204':
+                  description: No content
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/get/parameters/0/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/paths/~1pet/get/parameters/0/content/application~1json/examples/invalid/value/readOnlyProp",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: \`readOnlyProp\` property must NOT be present in request context.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should report writeOnly property in response examples', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            get:
+              responses:
+                '200':
+                  content:
+                    application/json:
+                      schema:
+                        type: object
+                        properties:
+                          readOnlyProp:
+                            type: string
+                            readOnly: true
+                          writeOnlyProp:
+                            type: string
+                            writeOnly: true
+                      examples:
+                        valid:
+                          value:
+                            readOnlyProp: "propValue"
+                        invalid:
+                          value:
+                            writeOnlyProp: "should be forbidden in response"
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/get/responses/200/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/paths/~1pet/get/responses/200/content/application~1json/examples/invalid/value/writeOnlyProp",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: \`writeOnlyProp\` property must NOT be present in response context.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should report on invalid example with allowAdditionalProperties', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            get:
+              responses:
+                200:
+                  content:
+                    application/json:
+                      example:
+                        a: "string"
+                        b: 13
+                        c: unknown
+                      schema:
+                        type: object
+                        properties:
+                          a:
+                            type: string
+                          b:
+                            type: number
+
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({
+        rules: {
+          'no-invalid-media-type-examples': {
+            severity: 'error',
+            allowAdditionalProperties: false,
+          },
+        },
+      }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/get/responses/200/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/paths/~1pet/get/responses/200/content/application~1json/example/c",
+              "reportOnKey": true,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: must NOT have unevaluated properties \`c\`.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should report on invalid example with a falsy value', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.1.0
+        paths:
+          /test:
+            get:
+              responses:
+                '200':
+                  content:
+                    application/json:
+                      schema:
+                        type: string
+                      example: false
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({
+        rules: {
+          'no-invalid-media-type-examples': {
+            severity: 'error',
+            allowAdditionalProperties: false,
+          },
+        },
+      }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "from": {
+            "pointer": "#/paths/~1test/get/responses/200/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/paths/~1test/get/responses/200/content/application~1json/example",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: type must be string.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should not report on valid example with allowAdditionalProperties', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            get:
+              responses:
+                200:
+                  content:
+                    application/json:
+                      example:
+                        a: "string"
+                        b: 13
+                      schema:
+                        type: object
+                        properties:
+                          a:
+                            type: string
+                          b:
+                            type: number
+
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({
+        rules: {
+          'no-invalid-media-type-examples': {
+            severity: 'error',
+            allowAdditionalProperties: false,
+          },
+        },
+      }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`[]`);
+  });
+
+  it('should not report on valid example with allowAdditionalProperties and allOf and $ref', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        components:
+          schemas:
+            C:
+              properties:
+                c:
+                  type: string
+        paths:
+          /pet:
+            get:
+              responses:
+                200:
+                  content:
+                    application/json:
+                      example:
+                        a: "string"
+                        b: 13
+                        c: "string"
+                      schema:
+                        type: object
+                        allOf:
+                          - $ref: '#/components/schemas/C'
+                        properties:
+                          a:
+                            type: string
+                          b:
+                            type: number
+
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({
+        rules: {
+          'no-invalid-media-type-examples': {
+            severity: 'error',
+            allowAdditionalProperties: false,
+          },
+        },
+      }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`[]`);
+  });
+
+  it('should not on invalid examples', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        components:
+          examples:
+            test:
+              value:
+                a: 23
+                b: 25
+        paths:
+          /pet:
+            get:
+              responses:
+                200:
+                  content:
+                    application/json:
+                      examples:
+                        test:
+                          $ref: '#/components/examples/test'
+                        test2:
+                          value:
+                            a: test
+                            b: 35
+                      schema:
+                        type: object
+                        properties:
+                          a:
+                            type: string
+                          b:
+                            type: number
+
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({
+        rules: {
+          'no-invalid-media-type-examples': {
+            severity: 'error',
+            allowAdditionalProperties: false,
+          },
+        },
+      }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/get/responses/200/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/components/examples/test/value/a",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: \`a\` property type must be string.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should not report if no examples', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            get:
+              responses:
+                200:
+                  content:
+                    application/json:
+                      example:
+                        a: test
+                        b: 35
+
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`[]`);
+  });
+
+  it('should not report if no schema', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            get:
+              responses:
+                200:
+                  content:
+                    application/json:
+                      schema:
+                        type: object
+                        properties:
+                          a:
+                            type: string
+                          b:
+                            type: number
+
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`[]`);
+  });
+
+  it('should work with cross-file $ref', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        components:
+          schemas:
+            C:
+              $ref: './fixtures/common.yaml#/components/schemas/A'
+        paths:
+          /pet:
+            get:
+              responses:
+                200:
+                  content:
+                    application/json:
+                      example: {
+                        "a": "test",
+                        "b": "test"
+                        }
+                      schema:
+                        $ref: '#/components/schemas/C'
+
+      `,
+      __dirname + '/foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`[]`);
+  });
+
+  it('should not throw for ajv throw', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            get:
+              responses:
+                200:
+                  content:
+                    application/json:
+                      example: {}
+                      schema:
+                        nullable: true
+
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/get/responses/200/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/paths/~1pet/get/responses/200/content/application~1json/schema",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example validation errored: "nullable" cannot be used without "type".",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should not report if allOf used with discriminator', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            get:
+              responses:
+                '200':
+                  content:
+                    application/json:
+                      schema:
+                        discriminator:
+                          propertyName: powerSource
+                          mapping: {}
+                        allOf: []
+                      examples:
+                        first:
+                          value: {}
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`[]`);
+  });
+
+  it('should not report if only externalValue is set', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            get:
+              responses:
+                '200':
+                  content:
+                    application/json:
+                      schema:
+                        type: object
+                        properties:
+                          a:
+                            type: string
+                          b:
+                            type: number
+                      examples:
+                        first:
+                          externalValue: ./fixtures/external-value.yaml
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`[]`);
+  });
+
+  it('should not report if value is valid and externalValue is also set', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            get:
+              responses:
+                '200':
+                  content:
+                    application/json:
+                      schema:
+                        type: object
+                        properties:
+                          a:
+                            type: string
+                          b:
+                            type: number
+                      examples:
+                        first:
+                          externalValue: https://localhost/example.json
+                          value:
+                            a: "A"
+                            b: 0
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`[]`);
+  });
+
+  it('should report invalid value when externalValue is also set', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            get:
+              responses:
+                '200':
+                  content:
+                    application/json:
+                      schema:
+                        type: object
+                        properties:
+                          a:
+                            type: string
+                          b:
+                            type: number
+                      examples:
+                        first:
+                          externalValue: https://localhost/example.json
+                          value:
+                            a: 0
+                            b: "0"
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/get/responses/200/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/paths/~1pet/get/responses/200/content/application~1json/examples/first/value/a",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: \`a\` property type must be string.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/get/responses/200/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/paths/~1pet/get/responses/200/content/application~1json/examples/first/value/b",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: \`b\` property type must be number.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should first report on unresolved ref rather than fail on validation', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.1.0
+        paths:
+          /groups:
+            get:
+              responses:
+                '200':
+                  content:
+                    application/json:
+                      schema:
+                        type: string
+                      examples:
+                        example1:
+                          $ref: '#/components/examples/NotExisting'
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({
+        rules: {
+          'no-invalid-media-type-examples': 'warn',
+          'no-unresolved-refs': 'error',
+        },
+      }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "location": [
+            {
+              "pointer": "#/paths/~1groups/get/responses/200/content/application~1json/examples/example1",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Can't resolve $ref",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-unresolved-refs",
+          "ruleId": "no-unresolved-refs",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should report additional properties by default for example', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.0.0
+        paths:
+          /pet:
+            get:
+              responses:
+                200:
+                  content:
+                    application/json:
+                      example:
+                        color: "red"
+                        model: "sedan"
+                        extraProperty: "allowed by default"
+                      schema:
+                        type: object
+                        properties:
+                          color:
+                            type: string
+                          model:
+                            type: string
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({
+        rules: {
+          'no-invalid-media-type-examples': 'error',
+        },
+      }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/get/responses/200/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/paths/~1pet/get/responses/200/content/application~1json/example/extraProperty",
+              "reportOnKey": true,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: must NOT have unevaluated properties \`extraProperty\`.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should not crash when examples in not an object', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.2.0
+        paths:
+          /:
+            get:
+              responses:
+                200:
+                  content:
+                    application/json:
+                      schema:
+                        type: string
+                      examples: Wrong multiple example
+                    application+nested/json:
+                      schema:
+                        type: string
+                      examples: 
+                        test: Wrong nested example
+
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({
+        rules: { 'no-invalid-media-type-examples': 'error' },
+      }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`[]`);
+  });
+
+  it('should report on invalid dataValue in examples (OAS 3.2)', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.2.0
+        paths:
+          /pet:
+            get:
+              responses:
+                '200':
+                  content:
+                    application/json:
+                      schema:
+                        type: object
+                        properties:
+                          a:
+                            type: string
+                          b:
+                            type: number
+                      examples:
+                        first:
+                          dataValue:
+                            a: 0
+                            b: "0"
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/get/responses/200/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/paths/~1pet/get/responses/200/content/application~1json/examples/first/dataValue/a",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: \`a\` property type must be string.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/get/responses/200/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/paths/~1pet/get/responses/200/content/application~1json/examples/first/dataValue/b",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: \`b\` property type must be number.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should not report on valid dataValue (OAS 3.2)', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.2.0
+        paths:
+          /pet:
+            get:
+              responses:
+                '200':
+                  content:
+                    application/json:
+                      schema:
+                        type: object
+                        properties:
+                          a:
+                            type: string
+                          b:
+                            type: number
+                      examples:
+                        first:
+                          dataValue:
+                            a: "string"
+                            b: 13
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`[]`);
+  });
+
+  it('should validate dataValue referenced via $ref (OAS 3.2)', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.2.0
+        components:
+          examples:
+            bad:
+              dataValue:
+                a: 23
+        paths:
+          /pet:
+            get:
+              responses:
+                '200':
+                  content:
+                    application/json:
+                      schema:
+                        type: object
+                        properties:
+                          a:
+                            type: string
+                      examples:
+                        first:
+                          $ref: '#/components/examples/bad'
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`
+      [
+        {
+          "from": {
+            "pointer": "#/paths/~1pet/get/responses/200/content/application~1json",
+            "source": "foobar.yaml",
+          },
+          "location": [
+            {
+              "pointer": "#/components/examples/bad/dataValue/a",
+              "reportOnKey": false,
+              "source": "foobar.yaml",
+            },
+          ],
+          "message": "Example value must conform to the schema: \`a\` property type must be string.",
+          "reference": "https://redocly.com/docs/cli/rules/oas/no-invalid-media-type-examples",
+          "ruleId": "no-invalid-media-type-examples",
+          "severity": "error",
+          "suggest": [],
+        },
+      ]
+    `);
+  });
+
+  it('should not report a valid binary dataValue (OAS 3.2)', async () => {
+    const document = parseYamlToDocument(
+      outdent`
+        openapi: 3.2.0
+        paths:
+          /pet:
+            get:
+              responses:
+                '200':
+                  content:
+                    image/png:
+                      schema:
+                        type: string
+                        contentEncoding: base64
+                        contentMediaType: image/png
+                      examples:
+                        first:
+                          dataValue: "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+M8AAAMBAQDJ/pLvAAAAAElFTkSuQmCC"
+      `,
+      'foobar.yaml'
+    );
+
+    const results = await lintDocument({
+      externalRefResolver: new BaseResolver(),
+      document,
+      config: await createConfig({ rules: { 'no-invalid-media-type-examples': 'error' } }),
+    });
+
+    expect(replaceSourceWithRef(results)).toMatchInlineSnapshot(`[]`);
+  });
+});

@@ -1,0 +1,17 @@
+apis:
+  main:
+    root: ./openapi.yaml
+
+rules:
+  rule/operation-summary-value:
+    subject:
+      type: Operation
+      property: summary
+    message: Operation summary value should be among of predefined values
+    suggest:
+      - test summary
+      - test example
+    assertions:
+      enum:
+        - test summary
+        - test example

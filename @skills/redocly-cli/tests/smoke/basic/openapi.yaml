@@ -1,0 +1,21 @@
+openapi: 3.1.0
+servers:
+  - url: http://redocly-example.com
+info:
+  title: Sample API
+  version: 1.0.0
+paths:
+  /hello:
+    get:
+      operationId: getMessage
+      security: []
+      summary: Get a greeting message
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./message-schema.yaml
+        400:
+          $ref: https://raw.githubusercontent.com/Redocly/redocly-cli/refs/heads/main/resources/museum.yaml#/components/responses/BadRequest

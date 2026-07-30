@@ -1,0 +1,298 @@
+import type { Context as AjvContext } from '@redocly/ajv/dist/2020.js';
+import { default as levenshtein } from 'js-levenshtein';
+
+import { isRef, Location } from '../ref-utils.js';
+import type {
+  Oas3Example,
+  Oas3Schema,
+  Oas3Tag,
+  Oas3_2Tag,
+  Oas3_1Schema,
+  Referenced,
+} from '../typings/openapi.js';
+import type { Oas2Tag } from '../typings/swagger.js';
+import { isDefined } from '../utils/is-defined.js';
+import { isPlainObject } from '../utils/is-plain-object.js';
+import type { NonUndefined, UserContext } from '../walk.js';
+import type { AjvValidator } from './ajv.js';
+
+export const resolveSchema = <T extends NonUndefined>(
+  schemaOrRef: Referenced<T> | undefined,
+  ctx: UserContext,
+  resolveFrom?: string
+): {
+  schema: T | undefined;
+  location: string | undefined;
+} => {
+  if (isRef(schemaOrRef)) {
+    const resolved = ctx.resolve<T>(schemaOrRef, resolveFrom);
+    return resolved
+      ? { schema: resolved.node, location: resolved.location?.source.absoluteRef }
+      : { schema: undefined, location: resolveFrom };
+  }
+
+  return { schema: schemaOrRef, location: resolveFrom };
+};
+
+export function oasTypeOf(value: unknown) {
+  if (Array.isArray(value)) {
+    return 'array';
+  } else if (value === null) {
+    return 'null';
+  } else if (Number.isInteger(value)) {
+    return 'integer';
+  } else {
+    return typeof value;
+  }
+}
+
+/**
+ * Checks if value matches specified JSON schema type
+ *
+ * @param {*} value - value to check
+ * @param {JSONSchemaType} type - JSON Schema type
+ * @returns boolean
+ */
+export function matchesJsonSchemaType(value: unknown, type: string, nullable: boolean): boolean {
+  if (nullable && value === null) {
+    return true;
+  }
+
+  switch (type) {
+    case 'array':
+      return Array.isArray(value);
+    case 'object':
+      return isPlainObject(value);
+    case 'null':
+      return value === null;
+    case 'integer':
+      return Number.isInteger(value);
+    default:
+      return typeof value === type;
+  }
+}
+
+export function missingRequiredField(type: string, field: string): string {
+  return `${type} object should contain \`${field}\` field.`;
+}
+
+export function missingRequiredOneOfFields(type: string, fields: string[]): string {
+  return `${type} object should contain one of the fields: ${fields
+    .map((field) => `\`${field}\``)
+    .join(', ')}.`;
+}
+
+export function fieldNonEmpty(type: string, field: string): string {
+  return `${type} object \`${field}\` must be non-empty string.`;
+}
+
+export function validateDefinedAndNonEmpty({
+  fieldName,
+  value,
+  ctx,
+  reference,
+}: {
+  fieldName: string;
+  value: any;
+  ctx: UserContext;
+  reference?: string;
+}) {
+  if (!isPlainObject(value)) {
+    return;
+  }
+
+  if (value[fieldName] === undefined) {
+    ctx.report({
+      message: missingRequiredField(ctx.type.name, fieldName),
+      location: ctx.location.child([fieldName]).key(),
+      reference,
+    });
+  } else if (!value[fieldName]) {
+    ctx.report({
+      message: fieldNonEmpty(ctx.type.name, fieldName),
+      location: ctx.location.child([fieldName]).key(),
+      reference,
+    });
+  }
+}
+
+export function validateOneOfDefinedAndNonEmpty({
+  fieldNames,
+  value,
+  ctx,
+  reference,
+}: {
+  fieldNames: string[];
+  value: any;
+  ctx: UserContext;
+  reference?: string;
+}) {
+  if (!isPlainObject(value)) {
+    return;
+  }
+  if (!fieldNames.some((fieldName) => value.hasOwnProperty(fieldName))) {
+    ctx.report({
+      message: missingRequiredOneOfFields(ctx.type.name, fieldNames),
+      location: ctx.location.key(),
+      reference,
+    });
+  }
+  for (const fieldName of fieldNames) {
+    if (value.hasOwnProperty(fieldName) && !value[fieldName]) {
+      ctx.report({
+        message: fieldNonEmpty(ctx.type.name, fieldName),
+        location: ctx.location.child([fieldName]).key(),
+        reference,
+      });
+    }
+  }
+}
+
+export function getSuggest(given: string, variants: string[]): string[] {
+  if (given === null) return variants;
+
+  if (typeof given !== 'string' || !variants.length) return [];
+
+  const distances: Array<{ variant: string; distance: number }> = [];
+
+  for (let i = 0; i < variants.length; i++) {
+    const distance = levenshtein(given, variants[i]);
+    if (distance < 4) {
+      distances.push({ distance, variant: variants[i] });
+    }
+  }
+
+  distances.sort((a, b) => a.distance - b.distance);
+
+  // if (bestMatch.distance <= 4) return bestMatch.string;
+  return distances.map((d) => d.variant);
+}
+
+export function getExampleValueToValidate(
+  example: unknown
+): { value: unknown; field: 'dataValue' | 'value' } | undefined {
+  if (!isPlainObject<Oas3Example>(example)) return undefined;
+  if (isDefined(example.dataValue)) return { value: example.dataValue, field: 'dataValue' };
+  if (isDefined(example.value)) return { value: example.value, field: 'value' };
+  return undefined;
+}
+
+export function validateExample({
+  example,
+  schema,
+  options,
+  reference,
+}: {
+  example: any;
+  schema: Referenced<Oas3Schema | Oas3_1Schema>;
+  options: {
+    location: Location;
+    ctx: UserContext;
+    validator: AjvValidator;
+    allowAdditionalProperties: boolean;
+    ajvContext?: AjvContext;
+  };
+  reference?: string;
+}) {
+  const { location, ctx, validator, allowAdditionalProperties, ajvContext } = options;
+  const { resolve, location: parentLocation, report, specVersion } = ctx;
+  try {
+    const { valid, errors } = validator.validate(example, schema, {
+      schemaLoc: parentLocation.child('schema'),
+      instancePath: location.pointer,
+      resolve,
+      allowAdditionalProperties,
+      ajvContext,
+      specVersion,
+    });
+    if (!valid) {
+      for (const error of errors) {
+        report({
+          message: `Example value must conform to the schema: ${error.message}.`,
+          location: {
+            ...new Location(location.source, error.instancePath),
+            reportOnKey:
+              error.keyword === 'unevaluatedProperties' || error.keyword === 'additionalProperties',
+          },
+          from: parentLocation,
+          suggest: error.suggest,
+          reference,
+        });
+      }
+    }
+  } catch (e) {
+    if (e.message === 'discriminator: requires oneOf or anyOf composite keyword') {
+      return;
+    }
+
+    report({
+      message: `Example validation errored: ${e.message}.`,
+      location: parentLocation.child('schema'),
+      from: parentLocation,
+      reference,
+    });
+  }
+}
+
+const MAX_ENUM_VALUES_IN_MESSAGE = 10;
+
+export function validateSchemaEnumType(
+  schemaEnum: string[],
+  propertyValue: string,
+  propName: string,
+  refLocation: Location | undefined,
+  { report, location }: UserContext,
+  documentationLink?: string
+) {
+  if (!schemaEnum) {
+    return;
+  }
+  if (!schemaEnum.includes(propertyValue)) {
+    const message =
+      schemaEnum.length > MAX_ENUM_VALUES_IN_MESSAGE
+        ? `\`${propName}\` "${propertyValue}" is not a valid value.${
+            documentationLink ? ` See the supported values: ${documentationLink}.` : ''
+          }`
+        : `\`${propName}\` can be one of the following only: ${schemaEnum
+            .map((type) => `"${type}"`)
+            .join(', ')}.`;
+    report({
+      location,
+      message,
+      from: refLocation,
+      suggest: getSuggest(propertyValue, schemaEnum),
+    });
+  }
+}
+
+export function validateResponseCodes({
+  responseCodes,
+  codeRange,
+  report,
+  reference,
+}: {
+  responseCodes: string[];
+  codeRange: string;
+  report: UserContext['report'];
+  reference?: string;
+}) {
+  const responseCodeRegexp = new RegExp(`^${codeRange[0]}[0-9Xx]{2}$`);
+
+  const containsNeededCode = responseCodes.some(
+    (code) =>
+      (codeRange === '2XX' && code === 'default') || // It's OK to replace 2xx codes with the default
+      responseCodeRegexp.test(code)
+  );
+
+  if (!containsNeededCode) {
+    report({
+      message: `Operation must have at least one \`${codeRange}\` response.`,
+      location: { reportOnKey: true },
+      reference,
+    });
+  }
+}
+
+export function getTagName(tag: Oas2Tag | Oas3Tag | Oas3_2Tag, ignoreCase: boolean): string {
+  return ignoreCase ? tag.name.toLowerCase() : tag.name;
+}

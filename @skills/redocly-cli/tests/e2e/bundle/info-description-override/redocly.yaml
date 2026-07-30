@@ -1,0 +1,7 @@
+apis:
+  main:
+    root: ./main.yaml
+
+decorators:
+  info-description-override:
+    filePath: ./test.md

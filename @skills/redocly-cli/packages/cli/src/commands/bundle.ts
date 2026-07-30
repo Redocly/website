@@ -1,0 +1,175 @@
+import {
+  formatProblems,
+  getTotals,
+  bundle,
+  logger,
+  type Oas2Definition,
+  type Oas3Definition,
+  type RuleSeverity,
+  type ComponentNamesStrategy,
+  type Async2Definition,
+  type Async3Definition,
+} from '@redocly/openapi-core';
+import { blue, gray, green, yellow } from 'colorette';
+import { writeFileSync } from 'fs';
+import { performance } from 'perf_hooks';
+
+import { type OutputExtension, type Totals, type VerifyConfigOptions } from '../types.js';
+import { AbortFlowError } from '../utils/error.js';
+import {
+  dumpBundle,
+  getExecutionTime,
+  getFallbackApisOrExit,
+  getOutputFileName,
+  handleError,
+  printUnusedWarnings,
+  saveBundle,
+  sortTopLevelKeys,
+  formatPath,
+} from '../utils/miscellaneous.js';
+import { type CommandArgs } from '../wrapper.js';
+
+export type BundleArgv = {
+  apis?: string[];
+  extends?: string[];
+  output?: string;
+  ext?: OutputExtension;
+  dereferenced?: boolean;
+  force?: boolean;
+  metafile?: string;
+  'remove-unused-components'?: boolean;
+  'keep-url-references'?: boolean;
+  'component-renaming-conflicts-severity'?: RuleSeverity;
+  'component-names-strategy'?: ComponentNamesStrategy;
+  'skip-decorator'?: string[];
+  'skip-preprocessor'?: string[];
+} & VerifyConfigOptions;
+
+export async function handleBundle({
+  argv,
+  config,
+  version,
+  collectSpecData,
+}: CommandArgs<BundleArgv>) {
+  const apis = await getFallbackApisOrExit(argv.apis, config);
+  const totals: Totals = { errors: 0, warnings: 0, ignored: 0 };
+
+  for (const { path, alias, output } of apis) {
+    try {
+      const startedAt = performance.now();
+      const aliasConfig = config.forAlias(alias);
+      aliasConfig.skipPreprocessors(argv['skip-preprocessor']);
+      aliasConfig.skipDecorators(argv['skip-decorator']);
+
+      if (alias === undefined) {
+        logger.info(gray(`bundling ${formatPath(path)}...\n`));
+      } else {
+        logger.info(
+          gray(`bundling ${formatPath(path)} using configuration for api '${alias}'...\n`)
+        );
+      }
+
+      const {
+        bundle: result,
+        problems,
+        ...meta
+      } = await bundle({
+        ref: path,
+        config: aliasConfig,
+        dereference: argv.dereferenced,
+        removeUnusedComponents: argv['remove-unused-components'],
+        keepUrlRefs: argv['keep-url-references'],
+        componentRenamingConflicts: argv['component-renaming-conflicts-severity'],
+        componentNamesStrategy: argv['component-names-strategy'],
+        collectSpecData,
+      });
+
+      const fileTotals = getTotals(problems);
+      const { outputFile, ext } = getOutputFileName({
+        entrypoint: path,
+        output,
+        argvOutput: argv.output,
+        ext: argv.ext,
+        entries: argv?.apis?.length || 0,
+      });
+
+      if (fileTotals.errors === 0 || argv.force) {
+        if (!outputFile) {
+          const bundled = dumpBundle(
+            sortTopLevelKeys(
+              result.parsed as Oas3Definition | Oas2Definition | Async2Definition | Async3Definition
+            ),
+            argv.ext || 'yaml',
+            argv.dereferenced
+          );
+          logger.output(bundled);
+        } else {
+          const bundled = dumpBundle(
+            sortTopLevelKeys(
+              result.parsed as Oas3Definition | Oas2Definition | Async2Definition | Async3Definition
+            ),
+            ext,
+            argv.dereferenced
+          );
+          saveBundle(outputFile, bundled);
+        }
+      }
+
+      totals.errors += fileTotals.errors;
+      totals.warnings += fileTotals.warnings;
+      totals.ignored += fileTotals.ignored;
+
+      formatProblems(problems, {
+        format: 'codeframe',
+        totals: fileTotals,
+        version,
+        command: 'bundle',
+      });
+
+      if (argv.metafile) {
+        if (apis.length > 1) {
+          logger.warn(`[WARNING] "--metafile" cannot be used with multiple apis. Skipping...`);
+        }
+        {
+          writeFileSync(argv.metafile, JSON.stringify(meta), 'utf-8');
+        }
+      }
+
+      const elapsed = getExecutionTime(startedAt);
+      if (fileTotals.errors > 0) {
+        if (argv.force) {
+          logger.info(
+            `❓ Created a bundle for ${blue(formatPath(path))} at ${blue(
+              outputFile || 'stdout'
+            )} with errors ${green(elapsed)}.\n${yellow('Errors ignored because of --force')}.\n`
+          );
+        } else {
+          logger.error(
+            `❌ Errors encountered while bundling ${blue(
+              formatPath(path)
+            )}: bundle not created (use --force to ignore errors).\n`
+          );
+        }
+      } else {
+        logger.info(
+          `📦 Created a bundle for ${blue(formatPath(path))} at ${blue(
+            outputFile || 'stdout'
+          )} ${green(elapsed)}.\n`
+        );
+      }
+
+      const removedCount = meta.visitorsData?.['remove-unused-components']?.removedCount;
+      if (removedCount) {
+        logger.info(gray(`🧹 Removed ${removedCount} unused components.\n`));
+      }
+    } catch (e) {
+      handleError(e, path);
+    }
+  }
+
+  printUnusedWarnings(config);
+
+  if (!(totals.errors === 0 || argv.force)) {
+    throw new AbortFlowError('Bundle failed.');
+  }
+}

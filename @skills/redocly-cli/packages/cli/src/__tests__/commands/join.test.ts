@@ -1,0 +1,609 @@
+import {
+  bundleDocument,
+  detectSpec,
+  getTotals,
+  loadConfig,
+  logger,
+  type Document,
+  BaseResolver,
+} from '@redocly/openapi-core';
+import { yellow } from 'colorette';
+
+import { handleJoin } from '../../commands/join/index.js';
+import { replace$Refs } from '../../commands/join/utils/replace-$-refs.js';
+import { exitWithError } from '../../utils/error.js';
+import {
+  getAndValidateFileExtension,
+  getFallbackApisOrExit,
+  sortTopLevelKeys,
+  writeToFileByExtension,
+} from '../../utils/miscellaneous.js';
+import { configFixture } from '../fixtures/config.js';
+import {
+  firstDocument,
+  secondDocument,
+  thirdDocument,
+  serverAndPaths,
+  anotherServerAndPaths,
+  pathWithObjectExtension,
+  anotherPathWithSameObjectExtension,
+  anotherPathWithDifferentObjectExtension,
+  anotherPathWithDifferentKeyObjectExtension,
+} from '../fixtures/join/documents.js';
+
+describe('handleJoin', () => {
+  let writeToFileByExtensionSpy: any;
+
+  beforeEach(() => {
+    vi.mock('../../utils/miscellaneous.js');
+    vi.mock('../../utils/error.js');
+    vi.mocked(getAndValidateFileExtension).mockImplementation(
+      (fileName) => fileName.split('.').pop() as any
+    );
+    vi.mocked(getFallbackApisOrExit).mockImplementation(
+      async (entrypoints) => entrypoints?.map((path: string) => ({ path })) ?? []
+    );
+    vi.mocked(sortTopLevelKeys).mockImplementation((document) => document);
+    writeToFileByExtensionSpy = vi
+      .mocked(writeToFileByExtension)
+      .mockImplementation(() => undefined);
+
+    vi.mock('colorette');
+    vi.mocked(yellow).mockImplementation((text) => text as string);
+
+    vi.mock('@redocly/openapi-core', async () => {
+      const actual =
+        await vi.importActual<typeof import('@redocly/openapi-core')>('@redocly/openapi-core');
+      return {
+        ...actual,
+        bundleDocument: vi.fn(),
+        detectSpec: vi.fn(),
+        getTotals: vi.fn(),
+        loadConfig: vi.fn(),
+      };
+    });
+
+    vi.mocked(bundleDocument).mockResolvedValue({ problems: [] } as any);
+    vi.mocked(getTotals).mockReturnValue({ errors: 0, warnings: 0, ignored: 0 });
+    vi.mocked(loadConfig).mockResolvedValue(configFixture);
+    vi.spyOn(BaseResolver.prototype, 'resolveDocument')
+      .mockImplementationOnce(() =>
+        Promise.resolve({ source: { absoluteRef: 'ref' }, parsed: firstDocument } as Document)
+      )
+      .mockImplementationOnce(() =>
+        Promise.resolve({ source: { absoluteRef: 'ref' }, parsed: secondDocument } as Document)
+      )
+      .mockImplementationOnce(() =>
+        Promise.resolve({ source: { absoluteRef: 'ref' }, parsed: thirdDocument } as Document)
+      );
+  });
+
+  afterEach(() => {
+    vi.resetAllMocks();
+  });
+
+  it('should call exitWithError because only one entrypoint', async () => {
+    await handleJoin({ argv: { apis: ['first.yaml'] }, config: {} as any, version: 'cli-version' });
+    expect(exitWithError).toHaveBeenCalledWith(`At least 2 APIs should be provided.`);
+  });
+
+  it('should call exitWithError if glob expands to less than 2 APIs', async () => {
+    vi.mocked(getFallbackApisOrExit).mockResolvedValueOnce([{ path: 'first.yaml' }]);
+
+    await handleJoin({
+      argv: { apis: ['*.yaml'] },
+      config: {} as any,
+      version: 'cli-version',
+    });
+
+    expect(exitWithError).toHaveBeenCalledWith(`At least 2 APIs should be provided.`);
+  });
+
+  it('should proceed if glob expands to 2 or more APIs', async () => {
+    vi.mocked(detectSpec).mockReturnValue('oas3_1');
+    vi.mocked(getFallbackApisOrExit).mockResolvedValueOnce([
+      { path: 'first.yaml' },
+      { path: 'second.yaml' },
+    ]);
+
+    await handleJoin({
+      argv: { apis: ['*.yaml'] },
+      config: configFixture,
+      version: 'cli-version',
+    });
+
+    expect(exitWithError).not.toHaveBeenCalled();
+  });
+
+  it('should call exitWithError because passed all 3 options for tags', async () => {
+    await handleJoin({
+      argv: {
+        apis: ['first.yaml', 'second.yaml'],
+        'prefix-tags-with-info-prop': 'something',
+        'without-x-tag-groups': true,
+        'prefix-tags-with-filename': true,
+      },
+      config: {} as any,
+      version: 'cli-version',
+    });
+
+    expect(exitWithError).toHaveBeenCalledWith(
+      `You use prefix-tags-with-filename, prefix-tags-with-info-prop, without-x-tag-groups together.\nPlease choose only one!`
+    );
+  });
+
+  it('should call exitWithError because passed all 2 options for tags', async () => {
+    await handleJoin({
+      argv: {
+        apis: ['first.yaml', 'second.yaml'],
+        'without-x-tag-groups': true,
+        'prefix-tags-with-filename': true,
+      },
+      config: {} as any,
+      version: 'cli-version',
+    });
+
+    expect(exitWithError).toHaveBeenCalledWith(
+      `You use prefix-tags-with-filename, without-x-tag-groups together.\nPlease choose only one!`
+    );
+  });
+
+  it('should call exitWithError because Only OpenAPI 3.0 and OpenAPI 3.1 are supported', async () => {
+    vi.mocked(detectSpec).mockReturnValueOnce('oas2');
+    await handleJoin({
+      argv: {
+        apis: ['first.yaml', 'second.yaml'],
+      },
+      config: configFixture,
+      version: 'cli-version',
+    });
+    expect(exitWithError).toHaveBeenCalledWith(
+      'Only OpenAPI 3.0, 3.1, and 3.2 are supported: undefined.'
+    );
+  });
+
+  it('should call exitWithError if mixing OpenAPI 3.0 and 3.1', async () => {
+    vi.mocked(detectSpec)
+      .mockImplementationOnce(() => 'oas3_0')
+      .mockImplementationOnce(() => 'oas3_1')
+      .mockImplementationOnce(() => 'oas3_0')
+      .mockImplementationOnce(() => 'oas3_1');
+    await handleJoin({
+      argv: {
+        apis: ['first.yaml', 'second.yaml'],
+      },
+      config: configFixture,
+      version: 'cli-version',
+    });
+
+    expect(exitWithError).toHaveBeenCalledWith(
+      'All APIs must use the same OpenAPI version: undefined.'
+    );
+  });
+
+  it('should call writeToFileByExtension function', async () => {
+    vi.mocked(detectSpec).mockReturnValue('oas3_0');
+    await handleJoin({
+      argv: {
+        apis: ['first.yaml', 'second.yaml'],
+      },
+      config: configFixture,
+      version: 'cli-version',
+    });
+
+    expect(writeToFileByExtension).toHaveBeenCalledWith(
+      expect.any(Object),
+      'openapi.yaml',
+      expect.any(Boolean)
+    );
+  });
+
+  it('should call writeToFileByExtension function for OpenAPI 3.1', async () => {
+    vi.mocked(detectSpec).mockReturnValue('oas3_1');
+    await handleJoin({
+      argv: {
+        apis: ['first.yaml', 'second.yaml'],
+      },
+      config: configFixture,
+      version: 'cli-version',
+    });
+
+    expect(writeToFileByExtension).toHaveBeenCalledWith(
+      expect.any(Object),
+      'openapi.yaml',
+      expect.any(Boolean)
+    );
+  });
+
+  it('should call writeToFileByExtension function with custom output file', async () => {
+    vi.mocked(detectSpec).mockReturnValue('oas3_0');
+    await handleJoin({
+      argv: {
+        apis: ['first.yaml', 'second.yaml'],
+        output: 'output.yml',
+      },
+      config: configFixture,
+      version: 'cli-version',
+    });
+
+    expect(writeToFileByExtension).toHaveBeenCalledWith(
+      expect.any(Object),
+      'output.yml',
+      expect.any(Boolean)
+    );
+  });
+
+  it('should call writeToFileByExtension function with json file extension', async () => {
+    vi.mocked(detectSpec).mockReturnValue('oas3_0');
+    await handleJoin({
+      argv: {
+        apis: ['first.json', 'second.yaml'],
+      },
+      config: configFixture,
+      version: 'cli-version',
+    });
+
+    expect(writeToFileByExtension).toHaveBeenCalledWith(
+      expect.any(Object),
+      'openapi.json',
+      expect.any(Boolean)
+    );
+  });
+
+  it('should call skipDecorators and skipPreprocessors', async () => {
+    vi.mocked(detectSpec).mockReturnValue('oas3_0');
+    await handleJoin({
+      argv: {
+        apis: ['first.yaml', 'second.yaml'],
+      },
+      config: configFixture,
+      version: 'cli-version',
+    });
+
+    const config = await loadConfig();
+    expect(config.skipDecorators).toHaveBeenCalled();
+    expect(config.skipPreprocessors).toHaveBeenCalled();
+  });
+
+  it('should handle join with prefix-components-with-info-prop and null values', async () => {
+    vi.mocked(detectSpec).mockReturnValue('oas3_0');
+
+    await handleJoin({
+      argv: {
+        apis: ['first.yaml', 'second.yaml', 'third.yaml'],
+        'prefix-components-with-info-prop': 'title',
+        output: 'join-result.yaml',
+      },
+      config: configFixture,
+      version: 'cli-version',
+    });
+
+    expect(writeToFileByExtension).toHaveBeenCalledWith(
+      {
+        openapi: '3.0.0',
+        info: {
+          description: 'example test',
+          version: '1.0.0',
+          title: 'First API',
+          termsOfService: 'http://swagger.io/terms/',
+          license: {
+            name: 'Apache 2.0',
+            url: 'http://www.apache.org/licenses/LICENSE-2.0.html',
+          },
+        },
+        servers: [
+          {
+            url: 'http://localhost:8080',
+          },
+        ],
+        tags: [
+          {
+            name: 'pet',
+            'x-displayName': 'pet',
+          },
+        ],
+        paths: {
+          '/GETUser/{userId}': {
+            summary: 'get user by id',
+            description: 'user info',
+            servers: [
+              {
+                url: '/user',
+              },
+              {
+                url: '/pet',
+                description: 'pet server',
+              },
+            ],
+            get: {
+              tags: ['pet'],
+              summary: 'Find pet by ID',
+              description: 'Returns a single pet',
+              operationId: 'getPetById',
+              servers: [
+                {
+                  url: '/pet',
+                },
+              ],
+            },
+            parameters: [
+              {
+                name: 'param1',
+                in: 'header',
+                schema: {
+                  description: 'string',
+                },
+              },
+            ],
+          },
+        },
+        components: {
+          schemas: {
+            Third_API_SchemaWithNull: {
+              type: 'string',
+              default: null,
+              nullable: true,
+            },
+            Third_API_SchemaWithRef: {
+              type: 'object',
+              properties: {
+                schemaType: {
+                  type: 'string',
+                  enum: ['foo'],
+                },
+                foo: {
+                  $ref: '#/components/schemas/Third_API_SchemaWithNull',
+                },
+              },
+            },
+            Third_API_SchemaWithDiscriminator: {
+              discriminator: {
+                propertyName: 'schemaType',
+                mapping: {
+                  foo: '#/components/schemas/Third_API_SchemaWithRef',
+                  bar: '#/components/schemas/Third_API_SchemaWithNull',
+                },
+              },
+              oneOf: [
+                {
+                  $ref: '#/components/schemas/Third_API_SchemaWithRef',
+                },
+                {
+                  type: 'object',
+                  properties: {
+                    schemaType: {
+                      type: 'string',
+                      enum: ['bar'],
+                    },
+                    bar: {
+                      type: 'string',
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+        'x-tagGroups': [
+          {
+            name: 'First API',
+            tags: ['pet'],
+          },
+        ],
+      },
+      'join-result.yaml',
+      true
+    );
+  });
+
+  describe('servers', () => {
+    it('should keep servers at root level if they are the same', async () => {
+      vi.mocked(detectSpec).mockReturnValue('oas3_0');
+      const docWithServers = {
+        ...serverAndPaths,
+        servers: [{ url: 'https://common.server.com' }],
+        info: { title: 'A' },
+      };
+      const anotherDocWithSameServers = {
+        ...anotherServerAndPaths,
+        servers: [{ url: 'https://common.server.com' }],
+        info: { title: 'B' },
+      };
+
+      vi.spyOn(BaseResolver.prototype, 'resolveDocument')
+        .mockReset()
+        .mockImplementationOnce(() =>
+          Promise.resolve({
+            source: { absoluteRef: 'ref-a' },
+            parsed: docWithServers,
+          } as Document)
+        )
+        .mockImplementationOnce(() =>
+          Promise.resolve({
+            source: { absoluteRef: 'ref-b' },
+            parsed: anotherDocWithSameServers,
+          } as Document)
+        );
+
+      await handleJoin({
+        argv: {
+          apis: ['a.yaml', 'b.yaml'],
+        },
+        config: configFixture,
+        version: 'cli-version',
+      });
+
+      const joinedDef = writeToFileByExtensionSpy.mock.calls[0][0];
+      expect(joinedDef.servers).toEqual([{ url: 'https://common.server.com' }]);
+      expect(joinedDef.paths['/foo'].servers).toBeUndefined();
+      expect(joinedDef.paths['/bar'].servers).toBeUndefined();
+    });
+
+    it('should move servers to path level if they are different', async () => {
+      vi.mocked(detectSpec).mockReturnValue('oas3_0');
+      vi.spyOn(BaseResolver.prototype, 'resolveDocument')
+        .mockReset()
+        .mockImplementationOnce(() =>
+          Promise.resolve({
+            source: { absoluteRef: 'ref-a' },
+            parsed: serverAndPaths,
+          } as Document)
+        )
+        .mockImplementationOnce(() =>
+          Promise.resolve({
+            source: { absoluteRef: 'ref-b' },
+            parsed: anotherServerAndPaths,
+          } as Document)
+        );
+
+      await handleJoin({
+        argv: {
+          apis: ['a.yaml', 'b.yaml'],
+        },
+        config: configFixture,
+        version: 'cli-version',
+      });
+
+      const joinedDef = writeToFileByExtensionSpy.mock.calls[0][0];
+      expect(joinedDef.servers).toBeUndefined();
+      expect(joinedDef.paths['/foo'].servers).toEqual([{ url: 'https://foo.com/api/v1/first' }]);
+      expect(joinedDef.paths['/bar'].servers).toEqual([{ url: 'https://foo.com/api/v1/second' }]);
+    });
+  });
+
+  describe('path extensions', () => {
+    it('should merge non-string x-* path extension when values are the same', async () => {
+      vi.mocked(detectSpec).mockReturnValue('oas3_0');
+      const warnSpy = vi.spyOn(logger, 'warn');
+      vi.spyOn(BaseResolver.prototype, 'resolveDocument')
+        .mockReset()
+        .mockImplementationOnce(() =>
+          Promise.resolve({
+            source: { absoluteRef: 'ref-a' },
+            parsed: pathWithObjectExtension,
+          } as Document)
+        )
+        .mockImplementationOnce(() =>
+          Promise.resolve({
+            source: { absoluteRef: 'ref-b' },
+            parsed: anotherPathWithSameObjectExtension,
+          } as Document)
+        );
+
+      await handleJoin({
+        argv: {
+          apis: ['a.yaml', 'b.yaml'],
+        },
+        config: configFixture,
+        version: 'cli-version',
+      });
+
+      const joinedDef = writeToFileByExtensionSpy.mock.calls[0][0];
+      expect(joinedDef.paths['/foo']['x-metadata']).toEqual({ owner: 'team-a' });
+      expect(warnSpy).not.toHaveBeenCalledWith(
+        expect.stringContaining('different x-metadata values')
+      );
+    });
+
+    it('should warn when non-string x-* path extension values differ', async () => {
+      vi.mocked(detectSpec).mockReturnValue('oas3_0');
+      const warnSpy = vi.spyOn(logger, 'warn');
+      vi.spyOn(BaseResolver.prototype, 'resolveDocument')
+        .mockReset()
+        .mockImplementationOnce(() =>
+          Promise.resolve({
+            source: { absoluteRef: 'ref-a' },
+            parsed: pathWithObjectExtension,
+          } as Document)
+        )
+        .mockImplementationOnce(() =>
+          Promise.resolve({
+            source: { absoluteRef: 'ref-b' },
+            parsed: anotherPathWithDifferentObjectExtension,
+          } as Document)
+        );
+
+      await handleJoin({
+        argv: {
+          apis: ['a.yaml', 'b.yaml'],
+        },
+        config: configFixture,
+        version: 'cli-version',
+      });
+
+      const joinedDef = writeToFileByExtensionSpy.mock.calls[0][0];
+      expect(joinedDef.paths['/foo']['x-metadata']).toEqual({ owner: 'team-a' });
+      expect(warnSpy).toHaveBeenCalledWith('warning: different x-metadata values in /foo\n');
+    });
+
+    it('should warn when non-string x-* path extension objects have different keys', async () => {
+      vi.mocked(detectSpec).mockReturnValue('oas3_0');
+      const warnSpy = vi.spyOn(logger, 'warn');
+      vi.spyOn(BaseResolver.prototype, 'resolveDocument')
+        .mockReset()
+        .mockImplementationOnce(() =>
+          Promise.resolve({
+            source: { absoluteRef: 'ref-a' },
+            parsed: pathWithObjectExtension,
+          } as Document)
+        )
+        .mockImplementationOnce(() =>
+          Promise.resolve({
+            source: { absoluteRef: 'ref-b' },
+            parsed: anotherPathWithDifferentKeyObjectExtension,
+          } as Document)
+        );
+
+      await handleJoin({
+        argv: {
+          apis: ['a.yaml', 'b.yaml'],
+        },
+        config: configFixture,
+        version: 'cli-version',
+      });
+
+      const joinedDef = writeToFileByExtensionSpy.mock.calls[0][0];
+      expect(joinedDef.paths['/foo']['x-metadata']).toEqual({ owner: 'team-a' });
+      expect(warnSpy).toHaveBeenCalledWith('warning: different x-metadata values in /foo\n');
+    });
+  });
+
+  describe('replace$Refs', () => {
+    it('should prefix discriminator mapping refs when schema name contains prefix substring', () => {
+      const doc = {
+        components: {
+          schemas: {
+            CreateSomethingRequest: {
+              type: 'object',
+              properties: {
+                kind: { type: 'string' },
+              },
+            },
+            Wrapper: {
+              discriminator: {
+                propertyName: 'kind',
+                mapping: {
+                  create: '#/components/schemas/CreateSomethingRequest',
+                  alreadyPrefixed: '#/components/schemas/Something_CreateSomethingRequest',
+                },
+              },
+              oneOf: [
+                { $ref: '#/components/schemas/CreateSomethingRequest' },
+                { $ref: '#/components/schemas/Something_CreateSomethingRequest' },
+              ],
+            },
+          },
+        },
+      };
+
+      replace$Refs(doc, 'Something');
+
+      expect(doc.components.schemas.Wrapper.discriminator.mapping.create).toBe(
+        '#/components/schemas/Something_CreateSomethingRequest'
+      );
+      expect(doc.components.schemas.Wrapper.discriminator.mapping.alreadyPrefixed).toBe(
+        '#/components/schemas/Something_CreateSomethingRequest'
+      );
+    });
+  });
+});

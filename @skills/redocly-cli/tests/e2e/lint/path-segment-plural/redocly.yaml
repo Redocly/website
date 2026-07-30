@@ -1,0 +1,11 @@
+apis:
+  main:
+    root: ./openapi.yaml
+
+rules:
+  path-segment-plural:
+    severity: error
+    ignoreLastPathSegment: true
+    exceptions:
+      - v1
+      - pet

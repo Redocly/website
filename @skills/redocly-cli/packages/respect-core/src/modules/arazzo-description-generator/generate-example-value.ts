@@ -1,0 +1,16 @@
+import { isPlainObject, type LoggerInterface } from '@redocly/openapi-core';
+
+import type { Parameter } from '../../types.js';
+import { extractFirstExample } from '../description-parser/index.js';
+import { generateTestDataFromJsonSchema } from './generate-test-data-from-json-schema.js';
+
+export function generateExampleValue(parameter: Parameter, logger: LoggerInterface) {
+  if (parameter?.example) {
+    return parameter.example;
+  } else if (isPlainObject(parameter?.examples)) {
+    return extractFirstExample(parameter.examples);
+  } else if (parameter?.schema) {
+    return generateTestDataFromJsonSchema(parameter.schema, logger);
+  }
+  return undefined;
+}

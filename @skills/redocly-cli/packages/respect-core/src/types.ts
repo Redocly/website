@@ -1,0 +1,359 @@
+import type {
+  Config,
+  CollectFn,
+  RuleSeverity,
+  LoggerInterface,
+  BaseResolver,
+  Oas3Example,
+} from '@redocly/openapi-core';
+import type { FromSchema } from 'json-schema-to-ts';
+
+import type {
+  parameter,
+  operationMethod,
+  sourceDescriptionSchema,
+  infoObject,
+  requestBody,
+  replacement,
+  criteriaObject,
+  step,
+  workflow,
+  reusableObject,
+  onSuccessObject,
+  onFailureObject,
+  extendedOperation,
+  extendedSecurity,
+} from './arazzo-schema.js';
+import type { OperationDetails } from './modules/description-parser/index.js';
+import type { Faker } from './modules/faker.js';
+import type { RespectOptions } from './run.js';
+import type { ApiFetcher } from './utils/api-fetcher.js';
+
+export type OperationMethod = FromSchema<typeof operationMethod>;
+export type ResponseContext = {
+  statusCode: number;
+  body: any;
+  header: Record<string, string>;
+  contentType?: string;
+  time?: number;
+} & Record<string, any>;
+export type SourceDescription = FromSchema<typeof sourceDescriptionSchema>;
+type ArazzoParameter = FromSchema<typeof parameter>;
+export type InfoObject = FromSchema<typeof infoObject>;
+export type RequestBody = FromSchema<typeof requestBody>;
+export type Replacement = FromSchema<typeof replacement>;
+export type CriterionObject = FromSchema<typeof criteriaObject>;
+export type ReusableObject = FromSchema<typeof reusableObject>;
+export type OnSuccessObject = FromSchema<typeof onSuccessObject>;
+export type OnFailureObject = FromSchema<typeof onFailureObject>;
+export type ExtendedOperation = FromSchema<typeof extendedOperation>;
+export type ExtendedSecurity = FromSchema<typeof extendedSecurity>;
+type ArazzoStep = FromSchema<typeof step>;
+type ArazzoWorkflow = FromSchema<typeof workflow> & {
+  steps: Step[];
+};
+
+export type AdditionalParameterProperties = {
+  style?: string;
+  target?: string;
+  required?: boolean;
+  schema?: Record<string, any>;
+  example?: unknown;
+  examples?: Record<string, Oas3Example>;
+  allowReserved?: boolean;
+};
+type ExtendedParameter<T> = T & AdditionalParameterProperties;
+export type Parameter = ExtendedParameter<ArazzoParameter>;
+export type ResolvedParameter = Parameter & {
+  in?: 'header' | 'query' | 'path' | 'cookie';
+  name: string;
+};
+export type VerboseLog = {
+  method: OperationMethod;
+  path: string;
+  host: string;
+  body?: any;
+  headerParams?: Record<string, string>;
+  statusCode?: number;
+  responseTime?: number;
+  responseSize?: number;
+};
+type AdditionalStepProps = {
+  verboseLog?: VerboseLog;
+  response: ResponseContext;
+  request?: RequestContext;
+  checks: Check[];
+  retriesLeft?: number;
+};
+
+export type Step = ArazzoStep & AdditionalStepProps;
+export type Workflow = Omit<ArazzoWorkflow, 'steps'> & { steps: Step[]; time?: number };
+export type RunOptions = Omit<RespectOptions, 'files'> & {
+  file: string;
+  testDescription?: TestDescription;
+  input?: string | string[];
+  server?: string | string[];
+  severity?: string | string[];
+  noSecretsMasking?: boolean;
+};
+
+export type CommandArgs<T> = {
+  argv: T;
+  config: Config;
+  version: string;
+  collectSpecData?: CollectFn;
+};
+
+export interface RequestContext {
+  body: any;
+  header: Record<string, string | number | boolean>;
+  path?: Record<string, string | number | boolean>;
+  method?: string;
+  url?: string;
+  query?: Record<string, string | number | boolean>;
+}
+
+export type ParsedParameters = {
+  queryParams: Record<string, string>;
+  pathParams: Record<string, string | number>;
+  headerParams: Record<string, string>;
+};
+export type AppOptions = {
+  filePath: string;
+  workflow?: string | string[];
+  skip?: string | string[];
+  verbose?: boolean;
+  metadata?: Record<string, any>;
+  input?: string | string[];
+  server?: string | string[];
+  severity?: string | string[];
+  maxSteps: number;
+  maxFetchTimeout: number;
+  executionTimeout?: number;
+  config: Config;
+  requestFileLoader: { getFileBody: (filePath: string) => Promise<Blob> };
+  fetch: typeof fetch;
+  envVariables?: Record<string, string>;
+  version?: string;
+  logger: LoggerInterface;
+  externalRefResolver?: BaseResolver;
+  skipLint?: boolean;
+  noSecretsMasking?: boolean;
+};
+export type RegexpSuccessCriteria = {
+  condition: string;
+  context: string;
+  type: 'regex';
+};
+export type JsonPathVerison = 'draft-goessner-dispatch-jsonpath-00';
+
+export type JsonPathSuccessCriterionObject = {
+  type: 'jsonpath';
+  version: JsonPathVerison;
+};
+
+export type JsonPathSuccessCriteria = {
+  condition: string;
+  context: string;
+  type: 'jsonpath' | JsonPathSuccessCriterionObject;
+};
+export type Ref = {
+  $ref: string;
+};
+export type PublicWorkflow = {
+  outputs?: Record<string, any>;
+  inputs?: Record<string, any>;
+  steps: Record<string, PublicWorkflowStep>;
+};
+export type PublicStep = {
+  outputs?: Record<string, any>;
+};
+
+export type PublicWorkflowStep = {
+  outputs?: Record<string, any>;
+  request?: RequestContext;
+  response?: ResponseContext;
+};
+
+export interface InputSchema {
+  type: string;
+  properties?: {
+    [key: string]: any;
+  };
+  format?: string;
+}
+
+export type StepInnerContext = {
+  $response: ResponseContext | undefined;
+  $request: RequestContext | undefined;
+  $outputs: Record<string, any>;
+};
+export type WorkflowInnerContext = {
+  $steps: Record<string, PublicWorkflowStep>;
+  $outputs: Record<string, any>;
+};
+export type RuntimeExpressionContext = {
+  $workflows: Record<string, PublicWorkflow>;
+  $sourceDescriptions: Record<string, any>;
+  $faker: Faker;
+  $steps: Record<string, PublicStep>;
+  $response?: Partial<ResponseContext>;
+  $request?: Partial<RequestContext>;
+  $outputs?: Record<string, any>;
+  $inputs?: Record<string, any>;
+  $components?: Record<string, any>;
+  $url?: string;
+  $method?: string;
+  $statusCode?: number;
+};
+
+export type RunWorkflowInput = {
+  workflowInput: Workflow | string | undefined;
+  ctx: TestContext;
+  fromStepId?: string;
+  parentStepId?: string;
+  skipLineSeparator?: boolean;
+  invocationContext?: string;
+  executedStepsCount: ExecutedStepsCount;
+  retriesLeft?: number;
+};
+
+export type ArrazoItemExecutionResult = StepExecutionResult | WorkflowExecutionResult;
+
+export type ExecutionStatus = 'success' | 'error' | 'warn';
+export interface StepExecutionResult {
+  type: 'step';
+  stepId: string;
+  workflowId: string;
+  totalTimeMs: number;
+
+  retriesLeft?: number; // number of retries
+  status: ExecutionStatus;
+
+  invocationContext?: string;
+
+  request?: {
+    method: string;
+    url: string;
+    headers: Record<string, string | number | boolean>;
+    body: any;
+  };
+  response?: {
+    statusCode: number;
+    body: any;
+    headers: Record<string, string | number | boolean>;
+    time: number;
+    size: number | undefined;
+  };
+  checks: (Check & { status: ExecutionStatus })[];
+}
+
+export type RunFileResult = {
+  hasProblems: boolean;
+  hasWarnings: boolean;
+  file: string;
+  executedWorkflows: WorkflowExecutionResult[];
+  options: RunOptions;
+  ctx: TestContext;
+  totalTimeMs: number;
+  totalRequests: number;
+  globalTimeoutError: boolean;
+  secretValues?: string[];
+};
+
+export interface WorkflowExecutionResult {
+  type: 'workflow';
+  workflowId: string;
+  stepId?: string; // for child workflows
+  sourceDescriptionName?: string;
+
+  startTime: number;
+  endTime: number;
+  totalTimeMs: number;
+
+  executedSteps: (Step | WorkflowExecutionResult)[];
+  invocationContext?: string;
+  ctx: TestContext;
+  globalTimeoutError: boolean;
+}
+
+export type WorkflowExecutionResultJson = Omit<WorkflowExecutionResult, 'executedSteps' | 'ctx'> & {
+  executedSteps: (StepExecutionResult | WorkflowExecutionResultJson)[];
+  status: ExecutionStatus;
+  totalRequests: number;
+  globalTimeoutError: boolean;
+};
+
+export type TestContext = RuntimeExpressionContext & {
+  executedSteps: (Step | WorkflowExecutionResult)[];
+  arazzo: string;
+  info: InfoObject & Record<string, any>;
+  sourceDescriptions?: SourceDescription[];
+  workflows: Workflow[];
+  options: AppOptions;
+  testDescription: TestDescription;
+  components?: Record<string, any>;
+  secretsSet: Set<string>;
+  noSecretsMasking: boolean;
+  severity: Record<string, RuleSeverity>;
+  apiClient: ApiFetcher;
+};
+
+export type TestDescription = Partial<
+  Pick<
+    TestContext & WorkflowInnerContext & StepInnerContext,
+    'workflows' | 'arazzo' | 'info' | 'sourceDescriptions' | '$outputs' | 'components'
+  >
+>;
+
+export type Check = {
+  severity: RuleSeverity;
+  passed: boolean;
+  name: string;
+  message?: string;
+  condition?: string;
+};
+
+export interface ResultsOfTests {
+  passed: number;
+  failed: number;
+  total: number;
+  warnings: number;
+  skipped: number;
+}
+
+export type CalculatedResults = {
+  workflows: ResultsOfTests;
+  steps: ResultsOfTests;
+  checks: ResultsOfTests;
+  totalRequests: number;
+};
+export type StepCallContext = {
+  $response?: ResponseContext;
+  $request?: RequestContext;
+  $inputs?: Record<string, any>;
+};
+
+export type JsonLogs = {
+  files: Record<
+    string,
+    {
+      totalRequests: number;
+      executedWorkflows: WorkflowExecutionResultJson[];
+      totalTimeMs: number;
+      globalTimeoutError: boolean;
+      secretValues?: string[];
+    }
+  >;
+  status: string;
+  totalTime: number;
+  globalTimeoutError: boolean;
+};
+
+export type DescriptionChecks = {
+  checks: Check[];
+  descriptionOperation: OperationDetails;
+  $response: ResponseContext;
+};
+
+export type ExecutedStepsCount = { value: number };

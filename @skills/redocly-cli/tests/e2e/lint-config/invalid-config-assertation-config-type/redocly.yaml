@@ -1,0 +1,13 @@
+rules:
+  rule/path-item-mutually-required:
+    where:
+      - subject:
+          type: Invalid-type
+          property: property
+        assertions:
+          defined: true
+    subject:
+      type: Operation
+      property: property
+    assertions:
+      defined: true

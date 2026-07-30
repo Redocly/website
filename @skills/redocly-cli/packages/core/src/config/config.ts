@@ -1,0 +1,471 @@
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+
+import { stringifyYaml } from '../js-yaml/index.js';
+import {
+  type Oas2RuleSet,
+  type Oas3RuleSet,
+  type Async2RuleSet,
+  type Async3RuleSet,
+  type Arazzo1RuleSet,
+  type Overlay1RuleSet,
+  type OpenRpc1RuleSet,
+  type GraphqlRuleSet,
+  type SpecVersion,
+  type SpecMajorVersion,
+  specVersions,
+} from '../oas-types.js';
+import { isAbsoluteUrl } from '../ref-utils.js';
+import type { Document, ResolvedRefMap } from '../resolve.js';
+import type { NodeType } from '../types/index.js';
+import { isPlainObject } from '../utils/is-plain-object.js';
+import { omit } from '../utils/omit.js';
+import { slash } from '../utils/slash.js';
+import type { NormalizedProblem } from '../walk.js';
+import { IGNORE_BANNER, IGNORE_FILE } from './constants.js';
+import { getResolveConfig } from './get-resolve-config.js';
+import { groupAssertionRules } from './group-assertion-rules.js';
+import type {
+  DecoratorConfig,
+  Plugin,
+  PreprocessorConfig,
+  ResolveConfig,
+  ResolvedConfig,
+  RuleConfig,
+  RuleSettings,
+  IgnoreConfig,
+} from './types.js';
+
+export class Config {
+  resolvedConfig: ResolvedConfig;
+  configPath?: string;
+  document?: Document;
+  resolvedRefMap?: ResolvedRefMap;
+  resolve: ResolveConfig;
+  _alias?: string;
+
+  plugins: Plugin[];
+  ignore: IgnoreConfig = {};
+  doNotResolveExamples: boolean;
+  rules: Record<SpecVersion, Record<string, RuleConfig>>;
+  preprocessors: Record<SpecVersion, Record<string, PreprocessorConfig>>;
+  decorators: Record<SpecVersion, Record<string, DecoratorConfig>>;
+
+  private _usedRules: Set<string> = new Set();
+  private _usedVersions: Set<SpecVersion> = new Set();
+
+  constructor(
+    resolvedConfig: ResolvedConfig,
+    opts: {
+      configPath?: string;
+      document?: Document;
+      resolvedRefMap?: ResolvedRefMap;
+      alias?: string;
+      plugins?: Plugin[];
+      ignore?: IgnoreConfig;
+    } = {}
+  ) {
+    this.resolvedConfig = resolvedConfig;
+    this.configPath = opts.configPath;
+    this.document = opts.document;
+    this.resolvedRefMap = opts.resolvedRefMap;
+    this.resolve = getResolveConfig(this.resolvedConfig.resolve);
+    this._alias = opts.alias;
+
+    this.plugins = opts.plugins || [];
+    this.doNotResolveExamples = !!resolvedConfig.resolve?.doNotResolveExamples;
+
+    const group = (rules: Record<string, RuleConfig>) => {
+      return groupAssertionRules({ rules }, this.plugins);
+    };
+
+    this.rules = {
+      oas2: group({ ...resolvedConfig.rules, ...resolvedConfig.oas2Rules }),
+      oas3_0: group({ ...resolvedConfig.rules, ...resolvedConfig.oas3_0Rules }),
+      oas3_1: group({ ...resolvedConfig.rules, ...resolvedConfig.oas3_1Rules }),
+      oas3_2: group({ ...resolvedConfig.rules, ...resolvedConfig.oas3_2Rules }),
+      async2: group({ ...resolvedConfig.rules, ...resolvedConfig.async2Rules }),
+      async3: group({ ...resolvedConfig.rules, ...resolvedConfig.async3Rules }),
+      arazzo1: group({ ...resolvedConfig.rules, ...resolvedConfig.arazzo1Rules }),
+      arazzo1_1: group({ ...resolvedConfig.rules, ...resolvedConfig.arazzo1_1Rules }),
+      overlay1: group({ ...resolvedConfig.rules, ...resolvedConfig.overlay1Rules }),
+      openrpc1: group({ ...resolvedConfig.rules, ...resolvedConfig.openrpc1Rules }),
+      graphql: group({
+        // removing common ref-resolution rules from the GraphQL ruleset:
+        ...omit(resolvedConfig.rules ?? {}, ['no-unresolved-refs']),
+        ...resolvedConfig.graphqlRules,
+      }),
+    };
+
+    this.preprocessors = {
+      oas2: { ...resolvedConfig.preprocessors, ...resolvedConfig.oas2Preprocessors },
+      oas3_0: {
+        ...resolvedConfig.preprocessors,
+        ...resolvedConfig.oas3_0Preprocessors,
+      },
+      oas3_1: {
+        ...resolvedConfig.preprocessors,
+        ...resolvedConfig.oas3_1Preprocessors,
+      },
+      oas3_2: {
+        ...resolvedConfig.preprocessors,
+        ...resolvedConfig.oas3_2Preprocessors,
+      },
+      async2: {
+        ...resolvedConfig.preprocessors,
+        ...resolvedConfig.async2Preprocessors,
+      },
+      async3: {
+        ...resolvedConfig.preprocessors,
+        ...resolvedConfig.async3Preprocessors,
+      },
+      arazzo1: {
+        ...resolvedConfig.preprocessors,
+        ...resolvedConfig.arazzo1Preprocessors,
+      },
+      arazzo1_1: {
+        ...resolvedConfig.preprocessors,
+        ...resolvedConfig.arazzo1_1Preprocessors,
+      },
+      overlay1: {
+        ...resolvedConfig.preprocessors,
+        ...resolvedConfig.overlay1Preprocessors,
+      },
+      openrpc1: {
+        ...resolvedConfig.preprocessors,
+        ...resolvedConfig.openrpc1Preprocessors,
+      },
+      graphql: {},
+    };
+
+    this.decorators = {
+      oas2: { ...resolvedConfig.decorators, ...resolvedConfig.oas2Decorators },
+      oas3_0: { ...resolvedConfig.decorators, ...resolvedConfig.oas3_0Decorators },
+      oas3_1: { ...resolvedConfig.decorators, ...resolvedConfig.oas3_1Decorators },
+      oas3_2: { ...resolvedConfig.decorators, ...resolvedConfig.oas3_2Decorators },
+      async2: { ...resolvedConfig.decorators, ...resolvedConfig.async2Decorators },
+      async3: { ...resolvedConfig.decorators, ...resolvedConfig.async3Decorators },
+      arazzo1: { ...resolvedConfig.decorators, ...resolvedConfig.arazzo1Decorators },
+      arazzo1_1: { ...resolvedConfig.decorators, ...resolvedConfig.arazzo1_1Decorators },
+      overlay1: {
+        ...resolvedConfig.decorators,
+        ...resolvedConfig.overlay1Decorators,
+      },
+      openrpc1: {
+        ...resolvedConfig.decorators,
+        ...resolvedConfig.openrpc1Decorators,
+      },
+      graphql: {},
+    };
+
+    this.ignore = opts.ignore ?? {};
+  }
+
+  forAlias(alias?: string) {
+    if (alias === undefined || !isPlainObject(this.resolvedConfig?.apis?.[alias])) {
+      return this;
+    }
+
+    const { apis, ...rest } = this.resolvedConfig;
+    const { root: _root, output: _output, ...aliasConfig } = apis[alias];
+    return new Config(
+      { ...rest, ...aliasConfig },
+      {
+        configPath: this.configPath,
+        document: this.document,
+        resolvedRefMap: this.resolvedRefMap,
+        alias,
+        plugins: this.plugins,
+        ignore: this.ignore,
+      }
+    );
+  }
+
+  clearIgnoreForRef(ref: string) {
+    const dir = this.configPath ? path.dirname(this.configPath) : process.cwd();
+    const absRef = isAbsoluteUrl(ref) ? ref : path.resolve(dir, ref);
+    delete this.ignore[absRef];
+  }
+
+  saveIgnore() {
+    const dir = this.configPath ? path.dirname(this.configPath) : process.cwd();
+    const ignoreFile = path.join(dir, IGNORE_FILE);
+    const mapped: Record<string, any> = {};
+    for (const absFileName of Object.keys(this.ignore)) {
+      const mappedDefinitionName = isAbsoluteUrl(absFileName)
+        ? absFileName
+        : slash(path.relative(dir, absFileName));
+      const ignoredRules = (mapped[mappedDefinitionName] = this.ignore[absFileName]);
+
+      for (const ruleId of Object.keys(ignoredRules)) {
+        ignoredRules[ruleId] = Array.from(ignoredRules[ruleId]) as any;
+      }
+    }
+    fs.writeFileSync(ignoreFile, IGNORE_BANNER + stringifyYaml(mapped));
+  }
+
+  addIgnore(problem: NormalizedProblem) {
+    const ignore = this.ignore;
+    const loc = problem.location[0];
+    if (loc.pointer === undefined) return;
+
+    const fileIgnore = (ignore[loc.source.absoluteRef] = ignore[loc.source.absoluteRef] || {});
+    const ruleIgnore = (fileIgnore[problem.ruleId] = fileIgnore[problem.ruleId] || new Set());
+
+    ruleIgnore.add(loc.pointer);
+  }
+
+  addProblemToIgnore(problem: NormalizedProblem) {
+    const loc = problem.location[0];
+    if (loc.pointer === undefined) return problem;
+
+    const fileIgnore = this.ignore[loc.source.absoluteRef] || {};
+    const ruleIgnore = fileIgnore[problem.ruleId];
+    const ignored = ruleIgnore && ruleIgnore.has(loc.pointer);
+    return ignored
+      ? {
+          ...problem,
+          ignored,
+        }
+      : problem;
+  }
+
+  extendTypes(types: Record<string, NodeType>, version: SpecVersion) {
+    let extendedTypes = types;
+    for (const plugin of this.plugins) {
+      if (plugin.typeExtension !== undefined) {
+        switch (version) {
+          case 'oas3_0':
+          case 'oas3_1':
+          case 'oas3_2':
+            if (!plugin.typeExtension.oas3) continue;
+            extendedTypes = plugin.typeExtension.oas3(extendedTypes, version);
+            break;
+          case 'oas2':
+            if (!plugin.typeExtension.oas2) continue;
+            extendedTypes = plugin.typeExtension.oas2(extendedTypes, version);
+            break;
+          case 'async2':
+            if (!plugin.typeExtension.async2) continue;
+            extendedTypes = plugin.typeExtension.async2(extendedTypes, version);
+            break;
+          case 'async3':
+            if (!plugin.typeExtension.async3) continue;
+            extendedTypes = plugin.typeExtension.async3(extendedTypes, version);
+            break;
+          case 'arazzo1':
+          case 'arazzo1_1':
+            if (!plugin.typeExtension.arazzo1) continue;
+            extendedTypes = plugin.typeExtension.arazzo1(extendedTypes, version);
+            break;
+          case 'overlay1':
+            if (!plugin.typeExtension.overlay1) continue;
+            extendedTypes = plugin.typeExtension.overlay1(extendedTypes, version);
+            break;
+          case 'openrpc1':
+            if (!plugin.typeExtension.openrpc1) continue;
+            extendedTypes = plugin.typeExtension.openrpc1(extendedTypes, version);
+            break;
+          case 'graphql':
+            // Skip GraphQL types extension as there is no NodeType tree for it.
+            break;
+          default:
+            throw new Error('Not implemented');
+        }
+      }
+    }
+    return extendedTypes;
+  }
+
+  getRuleSettings(ruleId: string, oasVersion: SpecVersion): RuleSettings {
+    this._usedRules.add(ruleId);
+    this._usedVersions.add(oasVersion);
+    const settings = this.rules[oasVersion][ruleId] || 'off';
+    if (typeof settings === 'string') {
+      return {
+        severity: settings,
+      };
+    } else {
+      return { severity: 'error', ...settings };
+    }
+  }
+
+  getPreprocessorSettings(ruleId: string, oasVersion: SpecVersion): RuleSettings {
+    this._usedRules.add(ruleId);
+    this._usedVersions.add(oasVersion);
+
+    const settings = this.preprocessors[oasVersion][ruleId] || 'off';
+    if (typeof settings === 'string') {
+      return {
+        severity: settings === 'on' ? 'error' : settings,
+      };
+    } else {
+      return { severity: 'error', ...settings };
+    }
+  }
+
+  getDecoratorSettings(ruleId: string, oasVersion: SpecVersion): RuleSettings {
+    this._usedRules.add(ruleId);
+    this._usedVersions.add(oasVersion);
+    const settings = this.decorators[oasVersion][ruleId] || 'off';
+    if (typeof settings === 'string') {
+      return {
+        severity: settings === 'on' ? 'error' : settings,
+      };
+    } else {
+      return { severity: 'error', ...settings };
+    }
+  }
+
+  getUnusedRules() {
+    const rules = [];
+    const decorators = [];
+    const preprocessors = [];
+
+    for (const usedVersion of Array.from(this._usedVersions)) {
+      rules.push(
+        ...Object.keys(this.rules[usedVersion]).filter((name) => !this._usedRules.has(name))
+      );
+      decorators.push(
+        ...Object.keys(this.decorators[usedVersion]).filter((name) => !this._usedRules.has(name))
+      );
+      preprocessors.push(
+        ...Object.keys(this.preprocessors[usedVersion]).filter((name) => !this._usedRules.has(name))
+      );
+    }
+
+    return {
+      rules,
+      preprocessors,
+      decorators,
+    };
+  }
+
+  // TODO: add rules for redocly.yaml / entities?
+  getRulesForSpecVersion(version: SpecMajorVersion) {
+    switch (version) {
+      case 'oas3': {
+        const oas3Rules: Oas3RuleSet[] = [];
+        this.plugins.forEach((p) => p.preprocessors?.oas3 && oas3Rules.push(p.preprocessors.oas3));
+        this.plugins.forEach((p) => p.rules?.oas3 && oas3Rules.push(p.rules.oas3));
+        this.plugins.forEach((p) => p.decorators?.oas3 && oas3Rules.push(p.decorators.oas3));
+        return oas3Rules;
+      }
+      case 'oas2': {
+        const oas2Rules: Oas2RuleSet[] = [];
+        this.plugins.forEach((p) => p.preprocessors?.oas2 && oas2Rules.push(p.preprocessors.oas2));
+        this.plugins.forEach((p) => p.rules?.oas2 && oas2Rules.push(p.rules.oas2));
+        this.plugins.forEach((p) => p.decorators?.oas2 && oas2Rules.push(p.decorators.oas2));
+        return oas2Rules;
+      }
+      case 'async2': {
+        const asyncApi2Rules: Async2RuleSet[] = [];
+        this.plugins.forEach(
+          (p) => p.preprocessors?.async2 && asyncApi2Rules.push(p.preprocessors.async2)
+        );
+        this.plugins.forEach((p) => p.rules?.async2 && asyncApi2Rules.push(p.rules.async2));
+        this.plugins.forEach(
+          (p) => p.decorators?.async2 && asyncApi2Rules.push(p.decorators.async2)
+        );
+        return asyncApi2Rules;
+      }
+      case 'async3': {
+        const asyncApi3Rules: Async3RuleSet[] = [];
+        this.plugins.forEach(
+          (p) => p.preprocessors?.async3 && asyncApi3Rules.push(p.preprocessors.async3)
+        );
+        this.plugins.forEach((p) => p.rules?.async3 && asyncApi3Rules.push(p.rules.async3));
+        this.plugins.forEach(
+          (p) => p.decorators?.async3 && asyncApi3Rules.push(p.decorators.async3)
+        );
+        return asyncApi3Rules;
+      }
+      case 'arazzo1': {
+        const arazzo1Rules: Arazzo1RuleSet[] = [];
+        this.plugins.forEach(
+          (p) => p.preprocessors?.arazzo1 && arazzo1Rules.push(p.preprocessors.arazzo1)
+        );
+        this.plugins.forEach((p) => p.rules?.arazzo1 && arazzo1Rules.push(p.rules.arazzo1));
+        this.plugins.forEach(
+          (p) => p.decorators?.arazzo1 && arazzo1Rules.push(p.decorators.arazzo1)
+        );
+        return arazzo1Rules;
+      }
+      case 'arazzo1_1': {
+        const arazzo1_1Rules: Arazzo1RuleSet[] = [];
+        this.plugins.forEach(
+          (p) => p.preprocessors?.arazzo1_1 && arazzo1_1Rules.push(p.preprocessors.arazzo1_1)
+        );
+        this.plugins.forEach((p) => p.rules?.arazzo1_1 && arazzo1_1Rules.push(p.rules.arazzo1_1));
+        this.plugins.forEach(
+          (p) => p.decorators?.arazzo1_1 && arazzo1_1Rules.push(p.decorators.arazzo1_1)
+        );
+        return arazzo1_1Rules;
+      }
+      case 'overlay1': {
+        const overlay1Rules: Overlay1RuleSet[] = [];
+        this.plugins.forEach(
+          (p) => p.preprocessors?.overlay1 && overlay1Rules.push(p.preprocessors.overlay1)
+        );
+        this.plugins.forEach((p) => p.rules?.overlay1 && overlay1Rules.push(p.rules.overlay1));
+        this.plugins.forEach(
+          (p) => p.decorators?.overlay1 && overlay1Rules.push(p.decorators.overlay1)
+        );
+        return overlay1Rules;
+      }
+      case 'openrpc1': {
+        const openrpc1Rules: OpenRpc1RuleSet[] = [];
+        this.plugins.forEach(
+          (p) => p.preprocessors?.openrpc1 && openrpc1Rules.push(p.preprocessors.openrpc1)
+        );
+        this.plugins.forEach((p) => p.rules?.openrpc1 && openrpc1Rules.push(p.rules.openrpc1));
+        this.plugins.forEach(
+          (p) => p.decorators?.openrpc1 && openrpc1Rules.push(p.decorators.openrpc1)
+        );
+        return openrpc1Rules;
+      }
+      case 'graphql': {
+        const graphqlRules: GraphqlRuleSet[] = [];
+        this.plugins.forEach((p) => p.rules?.graphql && graphqlRules.push(p.rules.graphql));
+        return graphqlRules;
+      }
+    }
+  }
+
+  skipRules(rules?: string[]) {
+    for (const ruleId of rules || []) {
+      for (const version of specVersions) {
+        if (this.rules[version][ruleId]) {
+          this.rules[version][ruleId] = 'off';
+        } else if (Array.isArray(this.rules[version].assertions)) {
+          // skip assertions
+          for (const configurableRule of this.rules[version].assertions) {
+            if (configurableRule.assertionId === ruleId) {
+              configurableRule.severity = 'off';
+            }
+          }
+        }
+      }
+    }
+  }
+
+  skipPreprocessors(preprocessors?: string[]) {
+    for (const preprocessorId of preprocessors || []) {
+      for (const version of specVersions) {
+        if (this.preprocessors[version][preprocessorId]) {
+          this.preprocessors[version][preprocessorId] = 'off';
+        }
+      }
+    }
+  }
+
+  skipDecorators(decorators?: string[]) {
+    for (const decoratorId of decorators || []) {
+      for (const version of specVersions) {
+        if (this.decorators[version][decoratorId]) {
+          this.decorators[version][decoratorId] = 'off';
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+apis:
+  main:
+    root: ./openapi.yaml
+
+rules:
+  struct: error
+
+extends: [recommended]
