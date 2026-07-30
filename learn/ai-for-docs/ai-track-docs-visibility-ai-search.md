@@ -1,84 +1,43 @@
 ---
 seo:
  title: Use AI to track your docs' visibility in AI search
- description: Run a weekly Phronesis-style assistant panel so you can score AI search visibility, catch misses, and turn every fail into a docs PR.
+ description: How to track whether ChatGPT, Perplexity, Google AI Overviews, and your own site's AI search are citing your API docs, using signals you can measure today.
 ---
 
 # Use AI to track your docs' visibility in AI search
 
-When a developer asks an assistant how to authenticate or set up webhooks, the answer may invent a header, skip a required step, or never mention your site. Screenshots of one lucky chat do not tell you whether that is a rare miss or a weekly pattern.
+A doc set can look healthy in a normal web dashboard while nobody on the team can say whether ChatGPT, Perplexity, or Google's AI Overview ever open the page, since none of those tools file a request the way a browser does. Referral traffic from search stays flat or drops, and there is no obvious way to tell whether the drop means fewer readers or just fewer clicks on an answer the assistant already gave.
 
-Docs teams need a program with the same discipline as dogfooding: a frozen set of tasks, the same rules for what the assistant may see, a pass or fail mark, and a docs change for every fail. This article adapts Redocly's [Phronesis](https://redocly.com/blog/phronesis) habit to assistants so you can track whether your published docs still show up in AI search answers that matter.
+This article walks through three signals a docs team can measure today: the AI search log already running on your own site, a repeatable "spot-check" against outside assistants, and the traits in how a page is built that make it more likely to get quoted in the first place.
 
-## Borrow Phronesis for assistants
+## Why AI search visibility resists a single dashboard
 
-At Redocly, Phronesis pairs work through a real customer workflow each week, write a debrief, and share findings company-wide. That practice built product empathy and coincided with a large jump in free-trial conversions, as described in the [Phronesis](https://redocly.com/blog/phronesis) write-up.
+No tool reports "cited by ChatGPT this many times last month," so some teams reach for the closest thing that looks like a fix: an `llms.txt` file, a plain-text index meant to work like a sitemap for AI. Redocly tested that assumption directly by turning on automatic `llms.txt` generation and running it across models and prompts, and the [results were underwhelming](https://redocly.com/blog/llms-txt-overhyped): no model spontaneously read or respected the file on its own, and server logs showed it was requested almost never. Page structure still matters, but one file cannot substitute for a real measurement practice, so a workable approach has to combine what you can log with what you can test by hand.
 
-You can run a lighter version for documentation visibility. Instead of employees clicking through the product UI, assistants attempt the same developer tasks using only public docs. When they fail, you learn which pages are invisible, incomplete, or easy to misread in AI search. The method overlaps [Use AI to test your documentation's usability](https://redocly.com/learn/ai-for-docs/ai-usability-testing), with one added requirement: keep a week-over-week score so visibility trends are visible in planning, not only in Slack threads.
+## Track what happens on your own docs site first
 
-## Freeze a task panel from real demand
+The one visibility signal you fully own sits inside your own docs platform rather than the open web. Reunite's [built-in analytics](https://redocly.com/docs/realm/reunite/project/analytics) track page views and manual search alongside a separate feed of AI search activity, showing the question a reader typed, the answer the AI generated, and which pages supplied that answer. Because the tool logs the sources behind every response, you can see directly which pages get retrieved often and which stay dark even though the content exists.
 
-Invented prompts invent strategy. Pull ten to twenty tasks from onboarding checklists, top support tickets, and the docs pages that already earn organic clicks. Write each task the way a stranger would ask it, without pasting your URL, and name the page that should carry the answer if the assistant does its job.
+That data became more useful once Redocly shipped per-page assistant handoffs in the [summer 2025 updates](https://redocly.com/blog/updates-2025-07): every page now carries an "open in ChatGPT" or "open in Claude" action next to the Markdown copy button, so a reader who wants a second opinion from an outside model can send your page there in one click. Watch whether readers use those actions at all, because a page nobody sends to an assistant is unlikely to earn a citation on its own.
 
-Keep the panel stable for at least four weekly runs before you swap tasks. Example rows:
+## Run repeatable spot-checks against outside assistants
 
-```text {% process=false %}
-AUTH-01: Obtain an OAuth access token for the sandbox and call GET /me
-WH-02: Create a webhook for order.created and verify the signature
-ERR-03: Recover from a 429 with the documented backoff rules
-```
+Your own site's logs cannot tell you whether ChatGPT or Perplexity cites you when a developer asks a question out on the open web, so that part has to be tested by hand on a schedule. Borrow the method Redocly uses to [test documentation's usability](https://redocly.com/learn/ai-for-docs/ai-usability-testing): pick a fixed set of 10 to 15 real questions developers ask about your API, run them against the assistants your audience uses most, and record whether your docs get cited, quoted, or ignored. Write down the exact source URL the assistant names in its answer, since that tells you which page won the retrieval, not just whether your domain showed up somewhere in the response.
 
-Cap the list so a human can review every fail in under an hour. A short panel you finish beats a long panel you skip.
+Run the same list every month so a rough trend, even one you keep in a shared spreadsheet, becomes visible over time. Rerun it right after any major navigation or content change too, so you can tell whether that specific edit moved the number instead of guessing.
 
-## Give assistants only public docs
+## Watch for the page signals that predict citation
 
-For a fair visibility test, the assistant should not receive private runbooks or Slack lore. Two access modes work:
+Once you know which pages already get cited, look at what those pages have in common. Docs that get quoted tend to [answer one task per page](https://redocly.com/learn/ai-for-docs/ai-help-developers-find-understand-apis), state prerequisites before reference detail, and put a minimal working request in the first code block rather than the third. A single long reference page with the answer buried three sections down rarely wins, because a model has to isolate the exact fragment worth quoting, and an undifferentiated page makes that hard for a retrieval system in the same way it makes life hard for a person skimming on a phone.
 
-1. Paste the relevant public Markdown or HTML into the session (or point the model at a short allowlisted set of URLs).
-2. Connect an MCP server that serves published docs, with strict tool permissions so the agent cannot reach internal systems.
+Keep error codes on the same page as the operation that produces them, and write headings in the plain words a developer types, such as "get an access token" instead of "authentication overview." Redocly's own framing of [how AI fits into modern API documentation](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs) treats retrieval-augmented answers as only as good as the fragment they retrieve, which means page structure decides whether the right fragment exists to be found at all.
 
-Treat MCP as experimental access plumbing. Redocly's MCP guidance stresses permission boundaries and careful scoping, so start with read-only docs tools and keep sensitive operations out of the server. Publishing an [llms.txt](https://redocly.com/blog/llms-txt-overhyped) file does not replace this loop: manifests help discovery hygiene, but weekly task scores tell you whether assistants still complete work from your pages.
+## What to do when a page never gets cited
 
-## Score pass, fail, and clarifying questions
+When a page keeps failing both the spot-check and the on-site search, resist the urge to rewrite the whole thing first. Check instead whether it answers the literal question, because a page can be accurate and still lose if it buries the answer under context nobody asked for yet. Move the working example above the explanation, split a page that tries to cover three tasks into three separate pages, and rerun the spot-check before changing anything else, so you know whether that one edit was enough on its own.
 
-For each task and assistant, record:
-
-1. Pass or fail against a written success criterion (token obtained, signature verified, backoff applied).
-2. Whether your domain or expected URL appeared in citations.
-3. Clarifying questions the assistant asked (often missing prerequisites or ambiguous steps).
-
-A citation with a wrong procedure is still a fail. A correct procedure with no citation still means discoverability is weak even when teachability is strong. Keep ChatGPT, Perplexity, and other assistants in separate columns so one surface's win does not hide another's miss.
-
-Store the raw answer next to the score. Without evidence, the weekly review becomes opinion theater.
-
-Report a simple weekly rollup: tasks attempted, pass rate per assistant, top three clarifying questions, and links to open docs PRs. That one page is enough for a docs lead to defend investment without inventing a vanity "AI visibility" percentage.
-
-## Turn every fail into a docs PR
-
-A fail that does not open a pull request will return next week. For each miss, write a one-line defect and a Before/After tied to the task.
-
-Before: webhook guide lists events but never names the signature header or verification steps.
-
-After: the page opens with a short answer capsule, then numbered verification steps, then a sample payload, then a link to the OpenAPI operation that defines the fields.
-
-Validate the OpenAPI side with [Redocly CLI](https://redocly.com/redocly-cli) when the fix depends on the contract, publish, and re-run the same task the following week. This matches the publish-once idea in [How AI fits into modern API documentation](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs): humans and assistants should share one trustworthy surface. Align portal browse paths with [Use AI to help developers find and understand your APIs faster](https://redocly.com/learn/ai-for-docs/ai-help-developers-find-understand-apis), because both journeys rest on the same pages.
-
-## Best practices
-
-Make the weekly run a calendar event with an owner, the same way Phronesis protects time on the team calendar.
-
-Version the task panel in git next to the docs so prompts change with the product.
-
-Require evidence packs before anyone claims a visibility win in sprint planning.
-
-When two assistants disagree on the same task, ask whether your page states the answer in extractable steps before you blame ranking luck.
-
-Rotate one new task in each month from fresh support tickets, and retire one task that has passed for four straight weeks, so the panel stays tied to current product pain without resetting the trend line.
-
-## Summary
-
-AI search visibility becomes measurable when you treat it like Phronesis for assistants: a frozen task panel, public-docs-only access, pass or fail scoring, and a docs PR for every miss. Start with ten tasks, one weekly hour of review, and three Before/After fixes, then grow the panel only as fast as you can remediate.
+Treat a page that is still missing after two rounds of edits as an information problem rather than a search problem. Read the reader's exact words back to yourself and ask which paragraph on the page you would quote if you were the one answering.
 
 ## How Redocly can help
 
-[Revel](https://www.redocly.com/revel) is the external developer portal where partners meet structured quickstarts, search, and assistant-ready pages. When your weekly panel fails on authentication or webhooks, fix those pages in the same surface humans and assistants already use, so the next run can prove the edit landed.
+Tracking AI search visibility works best when you are not relying on guesswork for the one signal you control directly: what happens when someone searches your own docs. Reunite's [built-in analytics](https://redocly.com/docs/realm/reunite/project/analytics) log every AI search query on your site alongside the generated answer and the pages it cited, next to ordinary page views and manual search, without adding a single third-party tracking script. Pair that log with the monthly spot-check against outside assistants described above, and you get a repeatable way to see whether your docs are the ones your developers' tools reach for first.
