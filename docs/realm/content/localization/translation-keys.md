@@ -558,6 +558,30 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- page.actions.connectMcp.claudeCode
+- Connect to Claude Code option title in Connect MCP dropdown
+- Connect to Claude Code
+
+---
+
+- page.actions.connectMcp.claudeCodeDescription
+- Connect to Claude Code option description in Connect MCP dropdown
+- Copy the Claude Code CLI command
+
+---
+
+- page.actions.connectMcp.codex
+- Connect to Codex CLI option title in Connect MCP dropdown
+- Connect to Codex CLI
+
+---
+
+- page.actions.connectMcp.codexDescription
+- Connect to Codex CLI option description in Connect MCP dropdown
+- Copy the Codex CLI command
+
+---
+
 - page.actions.connectMcp.copyConfig
 - Copy MCP configuration option title in Connect MCP dropdown
 - Copy MCP Configuration
@@ -602,14 +626,92 @@ This page contains the list of all predefined translation keys used in default U
 ---
 
 - page.mcpNotAllowed.title
-- 405 Method Not Allowed page header text
-- Method not allowed
+- MCP connection page header text (shown when the MCP endpoint is opened in a browser)
+- Connect to the MCP server
 
 ---
 
 - page.mcpNotAllowed.description
-- 405 Method Not Allowed page description text
-- To use this MCP server, register it in your MCP Client (for example: VS Code, Cursor, or Claude Code).
+- MCP connection page description text
+- To use this MCP server, register it in your MCP client (for example: VS Code, Cursor, or Claude Code).
+
+---
+
+- page.mcpNotAllowed.tabs.claude
+- Claude tab label on the MCP connection page
+- Claude
+
+---
+
+- page.mcpNotAllowed.tabs.chatgpt
+- ChatGPT tab label on the MCP connection page
+- ChatGPT
+
+---
+
+- page.mcpNotAllowed.tabs.json
+- JSON tab label on the MCP connection page
+- JSON
+
+---
+
+- page.mcpNotAllowed.snippets.terminal.hint
+- Hint above CLI commands on the MCP connection page
+- Run this command in your terminal:
+
+---
+
+- page.mcpNotAllowed.snippets.claudeCode.headline
+- Claude Code entry headline on the MCP connection page
+- Claude Code
+
+---
+
+- page.mcpNotAllowed.snippets.claudeDesktop.headline
+- Claude Desktop entry headline on the MCP connection page
+- Claude Desktop
+
+---
+
+- page.mcpNotAllowed.snippets.claudeDesktop.instruction
+- Claude Desktop setup instruction on the MCP connection page
+- In Claude Desktop, open Settings → Connectors, select "Add custom connector", and paste this URL:
+
+---
+
+- page.mcpNotAllowed.snippets.codexCli.headline
+- Codex CLI entry headline on the MCP connection page
+- Codex CLI
+
+---
+
+- page.mcpNotAllowed.snippets.chatgptApp.headline
+- ChatGPT desktop app entry headline on the MCP connection page
+- ChatGPT desktop app
+
+---
+
+- page.mcpNotAllowed.snippets.chatgptApp.instruction
+- ChatGPT desktop app setup instruction on the MCP connection page
+- In the ChatGPT desktop app, go to Settings → Plugins → MCPs and add a server with the "Streamable HTTP" type and this URL (restart the app afterwards):
+
+---
+
+- page.mcpNotAllowed.snippets.prompt.headline
+- Assistant prompt entry headline on the MCP connection page
+- Prompt
+
+---
+
+- page.mcpNotAllowed.snippets.prompt.hint
+- Hint above the assistant install prompt on the MCP connection page
+- Or paste this prompt into the chat to have it add the server for you:
+
+---
+
+- page.mcpNotAllowed.snippets.json.hint
+- Hint above the JSON configuration on the MCP connection page
+- Add this server entry to your MCP client configuration file (for example, mcp.json):
 
 ---
 

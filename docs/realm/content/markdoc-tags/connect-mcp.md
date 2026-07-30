@@ -13,7 +13,7 @@ plans:
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `connect-mcp` tag renders a button that allows users to connect to the MCP (Model Context Protocol) server through various MCP clients.
-When clicked or hovered, it displays a dropdown menu with options to connect via Cursor, VS Code, or copy the MCP configuration.
+When clicked or hovered, it displays a dropdown menu with options to connect via Cursor or VS Code, copy the Claude Code or Codex CLI command, or copy the MCP configuration.
 
 {% admonition type="info" name="Before you begin"%}
 The Connect MCP button requires a properly configured Docs MCP server to function.
@@ -62,8 +62,8 @@ Users can click to connect their editor or copy the configuration.
 - options
 - array
 - Specifies which connection options to display in the dropdown.
-  Accepts an array containing any combination of: `cursor`, `vscode`, `copy`.
-  **Default:** `["cursor", "vscode", "copy"]`.
+  Accepts an array containing any combination of: `cursor`, `vscode`, `claude-code`, `codex`, `copy`.
+  **Default:** `["cursor", "vscode", "claude-code", "codex", "copy"]`.
 
 {% /table %}
 
