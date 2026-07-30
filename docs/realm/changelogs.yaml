@@ -30285,6 +30285,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.53.1:
+    timestamp: 1785414474000
+    changes:
+      minor: []
+      patch:
+        - Added `excludeFromSearch` option to AsyncAPI and GraphQL configurations to control whether these documents are included in search results.
+    dependencies: {}
   0.53.0:
     timestamp: 1785338666000
     changes:
