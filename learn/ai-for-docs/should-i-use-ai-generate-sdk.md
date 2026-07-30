@@ -1,96 +1,53 @@
 ---
 seo:
  title: Should I use AI to generate my SDK?
- description: Why asking AI to write your SDK from scratch invents endpoints and drifts from your OpenAPI spec, and how to pair AI review with deterministic client generation instead.
+ description: Why asking an LLM to write your SDK from scratch is riskier than it looks, and how deterministic, OpenAPI-driven generation keeps client libraries accurate.
 ---
 
 # Should I use AI to generate my SDK?
 
-A team pastes its OpenAPI file into a chat window and asks for a complete client library: authentication, retries, every endpoint wrapped in a typed method. The first draft looks impressive, so it is tempting to ship it after a quick read.
+Someone on the team suggests pointing an LLM at the API and asking it to write a client library, so the docs team can skip the slow generator setup and ship SDKs in a few languages by Friday. It sounds efficient, and for a rough prototype it might even work. Once real customers start importing that library into production code, the question changes from "can AI write this" to "will this compile the same way next week." This article covers what a model can and cannot be trusted with in SDK generation, and where a repeatable, OpenAPI-driven pipeline still has to do the generating itself.
 
-That temptation is the question worth slowing down for. This article covers where a freehand AI SDK breaks in practice, what AI still does well in this workflow, and how to pair AI with a generator that builds the client from your OpenAPI description instead of from a guess.
+## What "AI generates my SDK" usually means in practice
 
-## What "AI generates your SDK" usually means
+In most cases, someone pastes an OpenAPI description into a chat window and asks for a Python or JavaScript client. The model returns working-looking code: a class per resource, methods per operation, maybe even docstrings. For a handful of endpoints, that output can look identical to what a real generator would produce, which is exactly what makes the approach tempting.
 
-Most teams that ask this question mean one of two things. Either they want a large language model to write client code directly from a prompt and a pasted spec, or they want it to help decide which endpoints deserve a hand-written wrapper. Those are different jobs with different failure modes.
+The trouble shows up at scale. A "hallucination," in this context, means the model invents a parameter, a status code, or a field name that never appeared in the spec, and it does this with the same confident tone it uses for accurate output. You cannot tell which lines are grounded and which are guesses just by reading them, so every method needs a manual check against the source spec before you ship it.
 
-The first job asks a model to hold an entire API surface in its context and reproduce it faithfully in another language. The second job asks it to reason about a handful of methods a human already chose. The rest of this article treats "generate my SDK" as the first, riskier job, since that is the one teams usually mean when they ask.
+## Where a model helps and where it invents
 
-## Where freehand AI SDK generation breaks down
+A model is genuinely useful for the parts of an SDK that are really writing dressed up as code: a friendly wrapper method name, a docstring that explains when to call an endpoint, a usage example in a README. Those pieces benefit from the model's fluency, and a human who knows the product can catch a wrong word quickly because the stakes are low.
 
-A model writing a client from scratch has no way to check its own work against your API. It can only pattern-match against similar SDKs it has seen, which means the failures below tend to survive a casual review.
+Generating the request-building logic itself is a different job. The method signatures, the required-versus-optional fields, the enum values, and the auth headers all need to match the spec exactly, because a client that compiles but sends the wrong field silently breaks integrations instead of failing loudly. That is precise, repeatable work, which is exactly what "deterministic" tools are built for (tools that return the same output every time for the same input) and what a language model, by design, is not.
 
-### Invented endpoints and fields
+## Why deterministic generation from OpenAPI wins for the client itself
 
-When a spec is thin or the prompt asks for "a complete client," a model fills in the missing pieces with plausible-looking guesses: a `deleteUser` method next to a `createUser` one that never existed, or a `status` field renamed to something that reads better in English. The code compiles and looks finished, so nobody notices until a call returns a 404 in production.
+Feed a code generator the same OpenAPI file twice and you get the same client twice, byte for byte. Feed a large language model the same prompt twice and you can get two different implementations of the same endpoint, because sampling and context length both introduce variance the model does not expose to you.
 
-### Auth and pagination surprises
+Redocly's own [documentation platform](https://redocly.com/docs/redoc) already treats generation this way for a related problem: request code samples. Instead of asking a model to invent a curl or Python snippet per endpoint, the platform can [generate code samples automatically](https://redocly.com/docs/api-reference-docs/guides/generate-code-samples) straight from the OpenAPI description, so the sample always matches the current parameters and auth scheme. When a hand-written sample is genuinely better than the generated one, the [`x-codeSamples` extension](https://redocly.com/docs/realm/content/api-docs/openapi-extensions/x-code-samples) lets a team add it to the spec itself, including snippets that call a real SDK, which keeps even the manual exceptions traceable to one source of truth.
 
-Multi-scheme APIs are where freehand generation struggles most. A model asked to add authentication often implements only the first scheme it recognizes, then drops the others without warning, so a partner using API keys gets a client built for OAuth. Pagination fares worse: unless the spec spells out cursor or offset behavior in detail, the model has to invent a loop, and that loop rarely matches how your API paginates.
+A full client library generator works on the same principle, just with more surface area: types, request builders, and serialization all derive from the spec, not from a model's best guess at what your API probably does.
 
-### Drift after the first release
+## A workable split: AI on the edges, OpenAPI at the center
 
-Even a client that ships correctly on day one starts drifting the moment the API changes. A hand-maintained, AI-written SDK has no link back to the spec, so a renamed parameter or a new required field only surfaces when a developer's request fails, not when the change merges. Teams that regenerate by re-pasting the spec into a fresh chat get a new set of invented details each time, since the model has no memory of what it decided last time.
+The realistic answer to "should I use AI to generate my SDK" is a split, not a yes or no: use AI around the generation step, and let a deterministic tool own the step itself.
 
-## What AI is genuinely good at in this workflow
+### Keep the spec trustworthy first
 
-None of this means AI has no place near your SDK. A model is useful for explaining what a generated method does in plain language, for suggesting friendlier method names once a human confirms they map to real operations, and for writing the prose around a client: a quickstart, a migration guide, or comments that explain why a retry default exists. It is also a fast way to review a diff between two versions of a generated client and summarize what changed for downstream consumers.
+Any generator, Redocly's own code samples or a dedicated OpenAPI-to-SDK tool, is only as good as the file it reads. [Redocly CLI](https://redocly.com/docs/cli/) applies [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) that catch missing required fields, inconsistent naming, and other spec problems before they turn into a broken method in someone's generated client. Because every team's compatibility policy differs slightly, [configuring a ruleset](https://redocly.com/docs/cli/guides/configure-rules) on top of a recommended baseline lets you encode the exact rules your SDKs depend on, so lint fails the build instead of a customer filing a ticket. [Decorators](https://redocly.com/docs/cli/decorators) handle the enrichment work, filtering internal-only operations or tuning descriptions for publication, as a reviewable, versioned step rather than a one-off model edit to the YAML.
 
-The common thread is that AI works best once something else has already established what is true about your API. Give it a generated client, a changelog, or a validated spec to react to, and it produces useful text. Ask it to invent the client itself, and you inherit its guesses.
+### Let AI draft the parts a generator can't
 
-## A spec-first way to combine AI with deterministic generation
+Once the spec is trustworthy, AI is a reasonable first pass for everything a generator does not touch: quickstart guides, migration notes between SDK versions, and explanations of why a particular workflow needs two calls instead of one. A model can also review a generated diff and describe what changed in plain language, which speeds up the release notes without letting it anywhere near the generation logic itself.
 
-The alternative to a freehand SDK is to keep the OpenAPI description as the only source of truth and generate the client from it. [Explore Redocly CLI](https://redocly.com/docs/cli/) treats an OpenAPI file this way already: the [lint command](https://redocly.com/docs/cli/commands/lint) and its [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) catch missing operation metadata, invalid references, and inconsistent patterns before anything downstream reads the file, and the [guide to configuring a ruleset](https://redocly.com/docs/cli/guides/configure-rules) lets a team encode its own conventions on top of the defaults. [API standards and governance](https://redocly.com/docs/cli/api-standards) keeps that spec the version everyone, human or model, works from.
+Backward compatibility deserves particular care here, because a breaking change in a spec becomes a breaking change in compiled client code, not just a line in a changelog. An LLM comparing two spec versions can narrate what looks different, but that review "is not a contract test," so pair it with the same CLI rules that gate every other change, and keep a human in the loop for anything the model flags as uncertain.
 
-Once the spec passes lint, `generate-client` turns it into a typed TypeScript client built from the same file, not from a chat transcript. The command validates the description first and fails on unresolved references or malformed content, and the generated code comes from the TypeScript compiler itself rather than string templates, so the output is correct by construction instead of merely plausible. That difference, generated from the file instead of guessed from a description of it, is what a freehand prompt can never offer.
+## What this approach cannot replace
 
-### Prompt template for the parts AI should touch
+None of this replaces a real generator, hand-maintained wrapper code where the domain genuinely needs it, or a human reviewing the first release of any new SDK line by line. AI also cannot guarantee that a generated client behaves the same way against your live API as it does against the spec, which is a runtime question rather than a spec-authoring one. Scheduled checks with [Respect](https://redocly.com/docs/respect/) that compare live API behavior to the OpenAPI description catch that mismatch, since a spec can be perfectly linted and still describe a server that has changed underneath it.
 
-Once a client exists, ask AI to explain or improve it rather than invent it:
-
-```markdown {% process=false %}
-You are documenting a generated TypeScript API client.
-
-Rules:
-- Do not add, rename, or remove any method, parameter, or field.
-- Explain what each method does in plain language for a developer
-  integrating for the first time.
-- Flag any method name that seems unclear, but do not rename it yourself.
-
-Deliverables:
-1. A short usage example per method group (auth, retries, pagination).
-2. A list of any method names you found confusing, with a suggested
-   alternative for a human to approve.
-```
-
-That framing keeps the model in the reviewer's seat, where it does its best work, and out of the author's seat, where it invents.
-
-## Before and after: a hand-written call versus a spec-generated one
-
-A model asked to write a client for an events API, working only from a short prompt, produced this:
-
-```ts
-await client.createEvent({ title: "Pool party", when: "2026-06-01" });
-```
-
-The field names read naturally in English, but they do not exist in the spec: the operation expects `name` and `startDate`, and it requires a bearer token the model never added. The version `generate-client` produced from the same OpenAPI description matches the spec exactly:
-
-```ts
-await client.createEvent(
-  { name: "Pool party", startDate: "2026-06-01" },
-  { headers: { Authorization: `Bearer ${accessToken}` } },
-);
-```
-
-Every field name and requirement in the second call traces back to the file a reviewer already approved, not to a plausible guess.
-
-## Best practices
-
-1. Decide up front whether you want a written SDK or help explaining one; they call for different prompts and different amounts of trust.
-2. Run lint on the OpenAPI description before generating anything from it, so a client is never built from a spec with unresolved references.
-3. Prefer a generator over a prompt for the client itself, and reserve AI for the prose, comments, and reviews around it.
-4. Regenerate the client whenever the spec changes instead of asking a model to patch the old one from memory.
+Use AI to speed up the writing and reviewing around your SDK. Use a deterministic generator, backed by a linted spec, to write the SDK.
 
 ## How Redocly can help
 
-Redocly CLI's [`generate-client`](https://redocly.com/docs/cli/commands/generate-client) command is the deterministic answer to this article's question: it validates an OpenAPI description first, then builds a typed TypeScript client from that same file using the TypeScript compiler itself, so the SDK a team ships is a build artifact of the spec instead of a model's best guess. Pair it with Redocly CLI lint on the way in, and AI keeps its place explaining and reviewing the client rather than authoring it from scratch.
+If your team is weighing AI-generated versus deterministically generated client code, the real prerequisite is the same either way: an OpenAPI description that says exactly what your API does. [Redocly CLI](https://redocly.com/docs/cli/) lints that description with rule-based checks and configurable severity, so the types, required fields, and naming any generator relies on stay consistent release after release. That is the same foundation Redocly uses to auto-generate request code samples straight from the spec, and it is the foundation any SDK generator, AI-assisted or not, needs before you can trust what it produces.
