@@ -1,79 +1,90 @@
 ---
 seo:
  title: Use AI to draft documentation PRs from your support tickets
- description: How to turn a recurring support ticket into an AI-drafted pull request, then use Redocly CLI lint and Reunite review to decide what merges.
+ description: How to turn recurring support ticket patterns into an AI-drafted documentation pull request, then route it through Reunite review and Redocly CLI lint before merge.
 ---
 
 # Use AI to draft documentation PRs from your support tickets
 
-A support ticket that repeats what two other customers already said is not really a mystery. It is a documentation fix waiting to be written, sitting in a queue instead of a pull request.
+Support queues fill up with the same handful of documentation complaints every month, and most of them never turn into a pull request. A ticket gets tagged, answered, and closed, while the page that caused the confusion stays exactly as it was.
 
-Most teams read a ticket like this, nod, and move to the next one, because turning a complaint into an edited page still means someone has to open the docs repository, find the right file, and write the change by hand. That is the step recurring issues get stuck on: everyone agrees on the problem, and nobody has time to draft the fix.
+AI is well suited to that missing step. Feed it a cluster of related tickets, and it can draft the documentation change those tickets describe, so a reviewer gets a concrete pull request instead of another backlog line.
 
-This article covers how to turn a ticket thread into a prompt AI can use, how to ask for a draft pull request instead of a summary, and how Redocly CLI lint and review in Reunite keep a person deciding what merges.
+This article covers building that pipeline: spotting a ticket pattern worth acting on, drafting the fix, and routing the result through the same review process your other documentation changes already use.
 
-## Tickets already tell you what is missing
+## Why support tickets are an underused documentation signal
 
-A ticket is closer to a bug report than a survey response. It names the exact page or endpoint the customer was reading, the words they searched for before giving up, and the workaround a support agent had to explain by hand. That is more specific than most quarterly content audits produce, and it arrives continuously instead of on a schedule.
+Support tickets describe documentation problems in the reader's own words, which is more specific than most internal audits manage. A ticket that says "I can't tell if refresh tokens expire before or after the access token" names the exact confusion, on the exact page, in language a technical writer can act on directly.
 
-The pattern worth acting on is repetition, not any single ticket. One customer confused about an error code might just need a faster reply. Three tickets over a month citing the same section, phrased in similar language, is a sign the page itself is missing something the reader needed before they had to ask. That is the signal to turn into a documentation pull request instead of another one-off reply.
+Most docs teams read tickets reactively: answer the question, close the ticket, move on. Few cluster tickets by the page or endpoint they reference, so the same confusing paragraph can generate ten near-identical questions before anyone notices the pattern. Clustering by page or workflow step over a rolling window, the last 90 days works well, turns scattered complaints into a short list of pages worth revising first.
 
-## Turn a ticket thread into a usable prompt
+That list is the raw material for this workflow. Once you have a "ticket cluster," a set of tickets that trace back to one page or step, you have enough context for AI to draft a fix instead of only summarizing the complaint.
 
-A prompt built only from a ticket subject line produces a generic answer. Give AI the full thread instead: the customer's original question, the agent's reply that resolved it, and a copy of the page the customer was reading when they got stuck. Redact account details and secrets before you paste anything.
+## Turn a ticket cluster into a documentation brief
 
-The same checklist habit Redocly uses for changelog review, described in [Use AI to accelerate and improve reviews](https://redocly.com/learn/ai-for-docs/ai-reviews), applies here: keep the rules the AI checks against short and versioned, not a paragraph of prose guidance.
+Before drafting anything, translate the cluster into a brief the model can work from. Pull the ticket text, the page or section the tickets reference, and any agent notes about what finally resolved the confusion. Strip customer names and account details before pasting anything into a prompt.
 
-### Context block template
+A workable brief includes four pieces: the page or section in question, three to five ticket excerpts trimmed to the confusing part, the correct answer as support currently gives it, and any limit on scope, for example "only touch the authentication page, not the whole quickstart."
+
+This step matters because a draft is only as good as what you paste in. A model reading ten tickets about token expiration with no confirmed answer attached will guess at the mechanics, which is exactly the invented detail this workflow needs to avoid. Give it the answer support agents already validated, and ask it to explain that answer clearly instead of rediscovering it.
+
+## How to prompt AI to draft the PR
+
+With the brief assembled, ask the model to draft the page edit itself, not a summary of the problem. A prompt that names the target section, the correct answer, and the tickets it should resolve produces a usable first draft:
 
 ```markdown {% process=false %}
-You are drafting a documentation pull request from a support ticket.
+You are drafting a documentation fix for [page or section].
 
-Ticket summary: [one sentence, paraphrased, no customer identifiers]
-Support agent's working answer: [paste the reply that resolved it]
-Current page: [paste the section the customer was reading]
+Tickets this should resolve (paraphrased, no customer details):
+1. [ticket excerpt]
+2. [ticket excerpt]
+3. [ticket excerpt]
+
+Correct answer, confirmed by support: [answer]
 
 Rules:
-- Only add information the agent's answer or the current page already supports.
-- If the fix requires a product change, say so instead of documenting a
-  workaround as though it were intended behavior.
-- Write the new or edited section in the same voice as the surrounding page.
+- Edit only the section these tickets point to.
+- Do not invent details beyond the correct answer provided.
+- Match the existing heading style and terminology on the page.
+- Flag, instead of guessing, if the tickets contradict the current page text.
 
-Deliverable: the edited Markdown section, plus a one-line changelog entry
-describing the fix.
+Output: the revised section in Markdown, plus a one-line changelog entry describing the fix.
 ```
 
-## Ask for a draft pull request, not a paragraph
+Ask for the changelog line in the same pass. That habit mirrors [Use AI to accelerate and improve reviews](https://redocly.com/learn/ai-for-docs/ai-reviews), where a vague entry becomes a specific one that names the behavior it fixed, the same jump this workflow needs from a ticket-driven fix.
 
-Most AI documentation prompts stop at a suggestion: a paragraph you still have to copy, format, and commit yourself. Ask for more. When your workflow lets you pass the output straight into a new branch, the deliverable becomes a diff against the existing page, not prose describing what the page should say.
+Keep each prompt scoped to one cluster. A single prompt covering five unrelated pages produces a diff too large to review quickly, which defeats the point of drafting a pull request instead of filing another ticket.
 
-From there, [open a pull request in Reunite](https://redocly.com/docs/realm/reunite/project/pull-request/open-pull-request) the same way you would for any other change: a title that names the ticket or the topic, and a description that links the original support thread so reviewers know why the change exists. The draft pull request is a starting point, not a finished edit, so a human reviews a diff instead of deciding whether to write the fix from scratch.
+## What the draft gets right and what still needs a human
 
-## Run Redocly CLI lint before you ask for a human review
+AI handles the mechanical parts of this well: matching terminology, keeping heading levels consistent, and turning a paraphrased answer into full sentences a reader can follow. It also flags when a ticket cluster contradicts what the page currently says, often the real problem.
 
-Some tickets point at missing prose; others point at the OpenAPI file itself: a missing description, an unclear enum, or a required field the docs never mentioned. When the fix touches the spec, run it through [Redocly CLI](https://redocly.com/docs/cli/) before anyone reviews the pull request. The [lint command](https://redocly.com/docs/cli/commands/lint) checks the spec against your ruleset, so a rewritten description still has to pass the same rules as every other change.
+A person still has to confirm the answer is current. Support agents give the correct answer for today's product behavior, but if the API changed since the last ticket came in, the draft will faithfully document something no longer true. Someone with product context needs to check that before merge, not after.
 
-This is the same three-layer split that [Use AI to automate documentation reviews in your PR workflow](https://redocly.com/learn/ai-for-docs/ai-automate-documentation-reviews-pr-workflow) describes for reviewing pull requests: AI drafts or checks prose, lint enforces the spec, and a person makes the judgment call. Drafting a pull request from a ticket just moves that split earlier, to the moment the fix gets written instead of the moment it gets reviewed.
+The model also cannot judge tone for a sensitive topic, such as a workaround for a known limitation, without guidance on how directly to name that limitation. Give it that guidance in the brief, or expect to rewrite the paragraph that touches it.
 
-## Open the review in Reunite
+## Route the draft through your existing PR review
 
-A reviewer who opens a raw diff still has to picture how the change will read once it is published. [Review a pull request in Reunite](https://redocly.com/docs/realm/reunite/project/pull-request/review-pull-request) instead, and the before-and-after preview shows the rendered result next to the current page, so the reviewer judges the reader experience directly.
+Once the draft looks reasonable, open it as a real pull request instead of pasting it into a chat thread. Reunite connects documentation work to Git branches, commits, and pull requests, so a ticket-driven draft goes through the same path as any other content change. [Open a pull request in Reunite](https://redocly.com/docs/realm/reunite/project/pull-request/open-pull-request), and reviewers can compare the rendered before and after on the [Reunite documentation](https://redocly.com/docs/realm/reunite/reunite) review tab, not only the raw diff.
 
-Carry the ticket's context into that review. Redocly's own [premium support](https://redocly.com/premium-support) plans label tickets Critical, High, Medium, or Low; if your support process does the same, a reviewer can use that label to decide how fast the fix should move, instead of treating every ticket-triggered pull request as equally urgent.
+Run Redocly CLI lint on the same branch when the fix touches anything the linter checks, such as terminology encoded as a rule or a broken example. [Redocly CLI built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) catch formatting and consistency problems a reviewer would otherwise spot by eye, and a ruleset built from your [API standards and governance](https://redocly.com/docs/cli/api-standards) policy keeps that check consistent across every pull request, not only the ones someone remembers to look at closely.
 
-## What this workflow cannot decide
-
-AI can draft the change, but it cannot decide whether one ticket represents a pattern worth documenting or a customer's one-time mistake, and it cannot confirm the behavior it just described is still accurate. Someone who owns the product or the support relationship has to make that call, the same way a human reviewer, not a checklist, decides whether a page belongs in front of customers at all.
-
-It also cannot tell you when the right fix is a product change instead of a documentation change. If the same workaround keeps showing up in tickets, documenting it clearly is a reasonable short-term answer, but flag it to the product team so a well-written explanation does not become the permanent stand-in for a fix that should not be needed at all.
+[Review a pull request in Reunite](https://redocly.com/docs/realm/reunite/project/pull-request/review-pull-request) also closes a loop the ticket never could on its own: reviewers see which support conversations drove the change, so whoever approves the merge understands why the page needed to change, not only that it did. Link the ticket cluster in the pull request description; it doubles as a paper trail for the next content audit.
 
 ## Best practices
 
-1. Redact ticket identifiers before you paste anything into a prompt.
-2. Require the AI deliverable to be a diff or a full section, not a summary you still have to rewrite yourself.
-3. Route spec-touching fixes through Redocly CLI lint even when the ticket reads like a wording complaint.
-4. Link the originating ticket in the pull request description so reviewers see why the change exists.
+1. Cluster tickets by page or workflow step over a rolling window before drafting anything; one ticket rarely justifies a pull request on its own.
+2. Paste the support-confirmed answer into the prompt, and never let the model infer it from the tickets alone.
+3. Scope each prompt and each pull request to one cluster so reviewers can approve quickly.
+4. Ask for the changelog line in the same pass as the content fix, so the two never drift apart.
+5. Route every draft through the review path your documentation changes already use, so nothing ships without a human check on current accuracy.
+
+## What this approach cannot replace
+
+This workflow will not replace the support conversation that first surfaced the confusion, and it should not run unattended on tickets involving security, billing, or legal language. It turns a recognized pattern into a draft fast, but it does not decide which patterns are worth fixing, and it cannot confirm the product still behaves the way a ticket described months ago.
+
+Use it to shorten the distance between recognizing a recurring question and closing it for good, while keeping a person accountable for what the draft assumed.
 
 ## How Redocly can help
 
-Turning ticket patterns into merged documentation fixes works best when drafting and review share one pipeline instead of living in separate tools. [Reunite](https://redocly.com/reunite) gives every ticket-triggered draft a Git-backed pull request with visual before-and-after review, so a fix that started as a support ticket goes through the same path as any other change. Pair it with [Redocly CLI](https://redocly.com/docs/cli/) so any draft that touches your OpenAPI file still has to pass the same lint rules as every other edit before a person signs off.
+Turning ticket clusters into pull requests only pays off when the review step is fast and trustworthy. [Reunite](https://redocly.com/reunite) gives that draft a Git-backed home: open the pull request, invite reviewers, and let them compare the rendered before and after instead of a raw text diff. Pair it with [Redocly CLI](https://redocly.com/docs/cli/) so the same pull request runs lint rules built from your API standards and governance policy, catching formatting or terminology slips before a reviewer spends time on them. Together, Reunite and Redocly CLI turn a ticket-driven draft into a pull request your team can actually trust to merge.
