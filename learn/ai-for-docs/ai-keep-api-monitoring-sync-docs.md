@@ -1,87 +1,92 @@
 ---
 seo:
  title: Use AI to keep API monitoring in sync with your docs
- description: Use AI to compare your docs against your Respect Arazzo workflows, catch mismatches in either direction, and update both together.
+ description: Learn how to use AI to update Respect Monitoring's Arazzo workflows whenever your OpenAPI spec or docs change, so monitoring never tests a stale contract.
 ---
 
 # Use AI to keep API monitoring in sync with your docs
 
-Most teams set up API monitoring once, when a workflow first ships, and then move on to the next thing. The docs keep changing after that: a new endpoint gets documented, an example gets updated, a deprecated field drops out of the prose. The monitoring file that watches the live API rarely gets touched at the same time.
+Most teams set up API monitoring once, watch it pass for a few weeks, and move on. Then the docs change: a field gets renamed, a new required parameter ships, an endpoint gets deprecated. The monitoring workflow does not know any of that happened, so it keeps testing the version of the contract that shipped last quarter.
 
-That mismatch is not the same problem as an API drifting from its spec. It is the monitoring itself falling behind docs that moved on without it. This article shows how to use AI to compare the two artifacts, find what each one is missing, and turn the difference into an update instead of a "blind spot" nobody notices.
+This is drift in the other direction. Most guidance on API drift starts with the live API diverging from the docs. Just as often, the docs and spec move first, and the monitoring setup gets left behind.
 
-## Monitoring drifts from docs in its own direction
+This article covers why monitoring falls out of sync with docs, how to prompt AI with a spec diff instead of a whole file, and where [Respect](https://redocly.com/respect) still has to verify the result against a real server.
 
-[Use AI to detect drift between your docs and your live API](https://redocly.com/learn/ai-for-docs/ai-detect-drift-docs-live-api) covers the failure most teams worry about: production changes and the docs become wrong without anyone updating them. This article covers the opposite direction, where the docs are the ones that moved and the monitoring file is the one left behind.
+## The other direction of drift
 
-An Arazzo workflow file gets written once, when someone stands up a Respect check for a critical path. Docs keep evolving on their own schedule, so a writer adds a new documented workflow, a field gets renamed in an example, or a deprecated parameter disappears from the guide. None of those changes touch the Arazzo file automatically, which means the monitoring dashboard can stay green while it keeps checking a version of the API the docs no longer describe.
+When people talk about API drift, they usually mean production changed and the docs did not catch up. [Use AI to detect drift between your docs and your live API](https://redocly.com/learn/ai-for-docs/ai-detect-drift-docs-live-api) covers that direction well: Respect runs scheduled checks, something fails, and AI helps a writer turn the failure into a doc fix.
 
-The mismatch shows up two ways. A newly documented workflow can go live with zero monitoring coverage because nobody remembered to add a Respect check for it. Or an existing Respect workflow can keep asserting on a field name or response format the docs stopped mentioning months ago, so a passing check no longer proves what the reader thinks it proves.
+This article starts from the opposite end. A technical writer or API owner updates the OpenAPI description because a field changed type or an endpoint moved. The monitoring workflow that tests that same contract lives in a separate file, written earlier, and nobody updates it in the same pull request. So the monitoring keeps passing against an outdated picture of the API, which means a real problem could ship without triggering a single alert.
 
-```mermaid
-graph LR
-  D[Docs and OpenAPI] --> C[AI comparison]
-  A[Existing Arazzo workflows] --> C
-  C --> M[Mismatch list]
-  M --> U[Updated Arazzo workflow]
-  U --> R[Respect scheduled run]
+## Why monitoring falls behind the docs it is supposed to check
+
+Monitoring configuration and API documentation usually live in separate files, so a spec change does not automatically touch the workflow that tests it. [Respect Monitoring](https://redocly.com/docs/realm/setup/respect-monitoring) runs [Arazzo](https://redocly.com/docs/cli/) workflows against your OpenAPI Description, checking status codes, response schemas, content types, and the success criteria you define. Those steps name specific fields and values, so when the spec changes, the workflow needs the same edit or it starts testing the wrong thing.
+
+Three patterns show up often:
+
+| Pattern | What happens |
+|---|---|
+| Renamed or removed field | Success criteria still checks the old field name, so the check stops asserting anything useful |
+| New required parameter | The monitoring request never sends it, so Respect fails for the wrong reason or a request your real clients could not send gets accepted |
+| Deprecated endpoint | The workflow keeps calling a path nobody documents, wasting a check that could cover something that matters |
+
+None of these show up as a failure right away, which is why they are easy to miss. The workflow keeps returning green, so the team assumes coverage is current when it is really testing a snapshot from months ago.
+
+## Give AI the diff, not the whole spec
+
+Pasting an entire OpenAPI file into a prompt and asking whether the monitoring still matches produces vague answers, because the model has to guess which parts changed. A scoped diff works better: paste only what moved, and ask for the matching edit to the Arazzo workflow.
+
+### A prompt template for updating Arazzo steps
+
+```markdown
+You are updating an Arazzo workflow so it matches a changed OpenAPI Description.
+
+Context:
+- The OpenAPI diff (old and new versions of the changed paths or schemas).
+- The current Arazzo workflow steps that reference those paths.
+
+Rules:
+- Only change steps tied to the pasted diff. Leave every other step untouched.
+- If a field was renamed, update success criteria and parameter references to match.
+- If a field was removed, remove it from requests and assertions, and flag the removal.
+- If a new required parameter was added, add it with a realistic placeholder value.
+- Do not invent workflow steps, fields, or endpoints outside the pasted diff.
+
+Deliverable: the updated Arazzo steps, plus a short summary of what changed and why.
 ```
 
-## Use AI to compare your docs against what monitoring covers today
+The same "give it a checklist, not a wall of text" idea shows up in [Use AI to enforce tone and style consistency across docs](https://redocly.com/learn/ai-for-docs/ai-enforce-tone-style-consistency-across-docs): a scoped input gets a scoped answer, while a long document invites the model to guess.
 
-The comparison is a reading task, not an execution task, which makes it a good fit for AI. Give it the documented steps for a workflow alongside the Arazzo file that is supposed to monitor it, and ask it to name where the two disagree.
+## Where Respect Monitoring keeps AI honest
 
-```markdown {% process=false %}
-You are comparing documentation for an API workflow against the Arazzo
-file that monitors it in Respect.
+AI can draft the workflow edit, but it cannot confirm the edit is correct against a real server. That is what [Respect](https://redocly.com/respect) is for. [Use cases for Respect](https://redocly.com/docs/respect/use-cases) include running the same workflow as a pull request check before merge, then on a schedule against staging or production once it ships.
 
-Inputs:
-1. Documented workflow steps and examples (from the doc page)
-2. Arazzo workflow YAML (steps, parameters, assertions)
+Respect Monitoring runs four checks every time a workflow fires: status code, success criteria, content type, and response schema. Set the run frequency with the `interval` option on the `trigger` object in `redocly.yaml`, and results show up as a chart, with Slack or email alerts so a failing run reaches a person instead of a dashboard nobody opens.
 
-Tasks:
-- List documented steps that have no matching Arazzo step
-- List Arazzo assertions that reference fields, parameters, or paths
-  no longer present in the docs
-- Flag documented response fields that no Arazzo step checks
-- Do not invent steps; cite the doc heading or YAML key for each finding
+AI proposes the edit, and Respect Monitoring proves it, because a plausible-looking Arazzo update is not the same as a correct one. The pull request check catches errors before they reach production, the same way the [drift command](https://redocly.com/docs/cli/commands/drift) catches mismatches between recorded traffic and an OpenAPI Description on the reactive side of this problem.
 
-Docs:
-[paste]
+## A workflow for keeping monitoring current
 
-Arazzo workflow:
-[paste]
-```
+Treat monitoring updates as part of the same change that updates the docs, not a separate task for later:
 
-Run this whenever a workflow feels old, not only after an incident. [Use AI to find gaps in your documentation coverage](https://redocly.com/learn/ai-for-docs/ai-find-gaps-documentation-coverage) treats missing content and missing workflows as two problems needing two different checks; this comparison adds a third check on top, one that catches the space between what is documented and what a schedule is currently watching.
+1. When an OpenAPI Description changes, pull the diff for the paths and schemas that moved.
+2. Paste that diff, plus the current Arazzo steps, into the prompt template above.
+3. Review the model's change summary like a pull request from a person.
+4. Merge the spec change and the Arazzo update together, so Respect Monitoring's check runs against the new workflow before merge.
+5. Watch the first scheduled runs after merge; a workflow that passes once in review can still fail against live data the model never saw.
 
-## Turn a monitoring blind spot into an updated Arazzo workflow
+### Best practices
 
-Say a docs update adds a bulk export flow: create an export job, poll its status, then download the finished file. The team documents all three steps with examples, but the Arazzo file monitoring that API still covers only the older single-item endpoints, because someone wrote it before bulk export existed. The comparison prompt above would flag the whole flow as documented with no matching Arazzo step, since nothing in the workflow file references it yet.
+- Ask for a change summary every time, even for small edits, so review takes seconds instead of a full re-read.
+- Keep [Redocly CLI](https://redocly.com/docs/cli/) linting active on the spec; [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) catch mistakes a monitoring run would only surface later.
+- Route alerts to the channel API owners already watch, not a separate one that gets muted after the first noisy week.
 
-From there, paste the doc examples back to AI and ask it to draft the missing [Arazzo](https://redocly.com/learn/arazzo/what-is-arazzo) steps: request formats, expected status codes, and the polling pattern the docs describe. [Documenting multiple APIs using Arazzo](https://redocly.com/learn/arazzo/documenting-multiple-apis-using-arazzo) explains how to model a flow like this across steps that no single OpenAPI operation captures alone. Review the draft against the real API before it ships, because AI can propose a plausible workflow without confirming that your polling endpoint returns the fields it assumed.
+## What AI cannot decide for you
 
-Once a human confirms the steps, add the workflow to your [Respect](https://redocly.com/docs/respect/use-cases) schedule so the new documented flow gets the same ongoing coverage as everything else. The fix is not a one-time patch, since it closes the distance between what the docs promise and what gets checked on a recurring basis, and that distance can reopen the next time either side changes.
+A model cannot tell you whether a removed field was intentional or a mistake, and it cannot decide whether the resulting hole in coverage is acceptable risk. Those calls need someone who knows the roadmap and the customers depending on the endpoint. [Use AI to review API design for backward compatibility risks](https://redocly.com/learn/ai-for-docs/ai-api-design-backward-compatibility-risks) covers a related judgment call: what counts as a breaking change before monitoring even enters the picture.
 
-## Make the sync check part of the doc-change workflow
-
-Waiting for someone to notice a mismatch by accident means it can sit for months. Fold the comparison into the same pull request where docs change, so the question gets asked every time instead of occasionally.
-
-1. A docs pull request adds or changes a workflow's documented steps.
-2. The comparison prompt runs against the updated docs and the current Arazzo files for that API.
-3. AI returns a short list of mismatches: new steps with no coverage, or assertions that reference something the docs no longer say.
-4. The API owner or writer drafts the Arazzo update, using the doc examples as the source of truth for request and response fields.
-5. [Redocly CLI's lint command](https://redocly.com/docs/cli/commands/lint) validates the updated Arazzo file the same way it validates OpenAPI, catching formatting errors before the workflow ever runs against a live server.
-6. A Respect run confirms the new or updated workflow passes before the pull request merges.
-
-This mirrors the alert-to-fix loop that already exists for live-API drift, just triggered by a docs change instead of a Respect failure. Either direction, the goal stays the same: docs and monitoring move together instead of one waiting to notice the other fell behind.
-
-## What AI cannot verify on its own
-
-AI can read a doc page and an Arazzo file side by side and tell you where they disagree, but it cannot run the workflow against your environment. It has no way to confirm that the export endpoint it drafted a polling step for returns a `status` field; it only knows that the docs said it should.
-
-Respect stays the source of truth here. A comparison prompt can narrow the search and draft a starting point, but only a scheduled Respect run against a live API proves the new workflow behaves the way both the docs and the Arazzo file now claim. Treat AI's output as a reviewed draft, not a verified check, until Respect has run it at least once.
+AI also cannot guarantee full coverage. [Use AI to find gaps in your documentation coverage](https://redocly.com/learn/ai-for-docs/ai-find-gaps-documentation-coverage) makes the case for three lenses: lint for missing fields, AI for missing steps in a multi-page workflow, and Respect for problems that only show up once code ships. Keeping monitoring in sync with the docs is one piece of that third lens, not a replacement for the other two.
 
 ## How Redocly can help
 
-Keeping monitoring in sync with docs works best when both live in the same scheduled system instead of two disconnected files. [Respect](https://redocly.com/respect) runs your Arazzo workflows on a schedule against real endpoints and alerts by Slack or email the moment a check and your documented behavior fall out of step, whether the API changed or the workflow file did. Use AI to compare docs against existing workflows and draft the missing steps, then let Respect confirm the update holds before you trust the dashboard again.
+Once your docs and monitoring workflows are current, [Respect](https://redocly.com/respect) is what proves it stays that way. Respect Monitoring runs your Arazzo workflows on a schedule against real endpoints, checking status codes, schemas, and content types against the OpenAPI Description you publish, and it sends real-time alerts by Slack or email when a run fails. Ship your spec update and monitoring update together, and Respect gives you ongoing confirmation that the two still match, instead of a support ticket.
