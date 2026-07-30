@@ -1,59 +1,58 @@
 ---
 seo:
  title: Use AI to serve your docs to coding agents with an MCP server
- description: How Redocly's built-in Docs MCP server turns your API documentation into a live tool coding agents can query directly, and where that beats a static llms.txt index.
+ description: What an MCP server exposes to coding agents, how to decide which docs pages belong on it, and why Redocly treats MCP as promising but still experimental.
 ---
 
 # Use AI to serve your docs to coding agents with an MCP server
 
-A developer opens Cursor, points it at your API, and asks how to authenticate. Where does the answer come from? Most teams assume it comes from the docs, then quietly hope the agent read the right page instead of inventing a plausible-sounding endpoint that doesn't exist.
+A coding agent working inside an editor hits the same wall a new hire does: it needs one specific fact, right now, and stopping to ask a person breaks its flow. A "Model Context Protocol" (MCP) server answers that need directly, because it gives the agent a live, queryable connection to your published docs instead of a static snapshot memorized during training. Point that server at the right pages, and the agent pulls a current authentication example on demand rather than guessing from an outdated blog post.
 
-Static pages, a copy-pasted spec, or a general index file don't give an agent much to act on, so it does what any model does when it runs short on grounding: it guesses. This article covers what a "Model Context Protocol," or "MCP," server does with your documentation, how to turn on Redocly's built-in version, and why [Redocly's own testing found it beats a static index file](https://redocly.com/blog/llms-txt-overhyped) for this exact job.
+This article covers what a docs-serving MCP server exposes, how to decide which pages belong on it, and where Redocly's own caution about MCP still applies. You will come away with a short checklist for a first, narrow deployment and the questions worth asking before you widen it.
 
-## Why a docs page isn't built for a coding agent
+## What an MCP server gives a coding agent
 
-A coding agent doesn't read a page the way a person does. It calls a tool and expects a structured answer back, which means a page designed for scrolling and skimming has to be scraped and reinterpreted before the agent can use it at all. That extra step is where mistakes creep in, because the agent is reconstructing structure that the page never explicitly gave it.
+MCP follows a client-server pattern. An "MCP client," usually built into the coding agent or IDE, sends requests over a standard JSON interface, and an "MCP server" answers by exposing tools, documents, or APIs in a machine-readable form. For a docs use case, that server typically offers a narrow set of read tools: search the docs, fetch a page, list endpoints, or look up an error code.
 
-Most teams already noticed this problem and reached for `llms.txt`, a Markdown index meant to point AI tools at the right pages, part of the broader case Redocly makes for [rethinking modern API documentation with AI in mind](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs). It's a reasonable idea, but reasonable and effective aren't the same thing, and the difference matters once agents start writing code instead of summarizing text.
+That narrow scope is a sensible place to start, because over half of MCP tools in use today just expose documentation or basic static data. That statistic makes a docs-only server one of the more proven categories of MCP use rather than an experimental edge case. The agent's client calls those tools mid-task, gets back real content from your published docs, and folds the answer into whatever it is building instead of inventing an endpoint name that does not exist.
 
-## What the Docs MCP server exposes
+## Choosing which pages to expose
 
-Redocly closes the distance between a page built for people and a tool an agent can call with the [Docs MCP server](https://redocly.com/docs/realm/customization/mcp-server), generated automatically from the OpenAPI descriptions and Markdown that already make up your documentation, so an agent gets a live tool instead of a page to interpret. Once enabled through the [`mcp` configuration block](https://redocly.com/docs/realm/config/mcp), the server is available at the `/mcp` endpoint on your project's root URL, and tools like Cursor, Claude Code, and VS Code connect to that single address.
+Not every page belongs on the server, since a page written for skimming will not survive being handed to a tool that cannot skim. [Use AI to help developers find and understand your APIs faster](https://redocly.com/learn/ai-for-docs/ai-help-developers-find-understand-apis) makes the case for task-shaped pages, where each page answers one question on its own, and that same structure is what makes a page worth exposing to an agent. A page that already tells a human "here is how to get an access token" in one screen will serve an agent just as well, while a page that assumes the reader already read three prior chapters will confuse both.
 
-Discovery works the same way for any compatible agent: a request to `/.well-known/mcp/server-card.json` returns a standardized "server card" that lists the server's tools, its transport endpoint, and what authentication it requires. An agent reads that card once and knows exactly what it can call next, rather than guessing from a rendered page what operations exist.
+### Start with pages that already answer one task
 
-## Turn on the server and connect an agent
+Begin with the 10 to 15 pages your team already trusts: authentication, the quickstart, rate limits, and the error reference. Leave out anything built for browsing, like a long changelog or a marketing overview, because an agent has no way to skim and will quote whatever paragraph the search tool hands it. An "llms.txt" file, [a machine-readable index redocly.com publishes](https://redocly.com/llms.txt) at the site root, is a useful pattern here, since it lists only the stable entry points you want tools to find first rather than every page you have ever shipped. For more on shaping individual pages so a model quotes the right snippet, see [optimizations to make to your docs for LLMs](https://redocly.com/blog/optimizations-to-make-to-your-docs-for-llms).
 
-Enabling the server is a configuration change, not a new integration to build. In `redocly.yaml`:
+## Keeping the source deterministic
 
-```yaml
-mcp:
-  hide: false
-  docs:
-    hide: false
-    name: "Docs MCP server"
-```
+An MCP server should read from the same published docs that humans read, not a separate copy that quietly drifts out of sync. That guarantee only holds if the underlying OpenAPI description stays accurate, which is a job for deterministic tooling rather than AI judgment. Redocly CLI lints and validates the spec so the pages your server serves match what the API does, an idea covered in more depth in [how AI fits into modern API documentation](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs).
 
-From there, a reader can connect their own editor without leaving the page. The [`connect-mcp` Markdoc tag](https://redocly.com/docs/realm/content/markdoc-tags/connect-mcp) renders a button that opens a dropdown for Cursor, VS Code, or a copied configuration snippet, so setup is a click instead of a support ticket. Teams with more specific needs can also declare protocol version, tools, resources, and prompts directly in the OpenAPI description with the [`x-mcp` extension](https://redocly.com/docs/realm/content/api-docs/openapi-extensions/x-mcp), which keeps that detail versioned alongside the spec it describes instead of living in a separate config file.
+At Redocly, we run an internal AI assistant alongside MCP servers that answer engineering questions about our own APIs, components, and async events, and they act as a first line of support before a question reaches a subject-matter expert. That first line only holds up because the docs behind it are validated before they publish, not after an agent has already repeated them to an engineer as fact.
 
-## Before and after: how an agent answers a question
+## Take the security caution seriously
 
-Before: an agent reads a marketing-style API overview page, sees no explicit list of required fields, and tells a developer that a `customer_id` field is required on every order lookup. It isn't, not anymore, and the agent has no way to know that from prose written for a different reader.
+MCP is genuinely useful, but it is also young, and [our own review of MCP](https://redocly.com/blog/mcp) is candid about where it still falls short. One documented incident involved a misconfigured MCP server that exposed internal tools to broader access than intended. That was not prompt injection; it was a plain permissions-scope mistake in how the tools were described and invoked, which matters because the protocol itself does not enforce access control, so that responsibility sits with whoever builds the server.
 
-After: the same agent, connected to the MCP server, calls a tool that returns the current operation schema directly from the OpenAPI description. The field shows up as optional, because that's what the spec says today, and the agent's answer matches the API instead of an old assumption baked into a paragraph somewhere.
+For a docs server, keep the scope narrow on purpose. Expose read-only tools against public or already-approved content, skip anything that touches internal systems or write actions, and review those boundaries the same way you would review a new public API. Redocly's advice holds here too: read the full spec, review security boundaries carefully, and ask whether a simpler direct integration would serve just as well before you reach for MCP by default.
 
-## Why this beats a static index file
+## A narrow first deployment
 
-Redocly built `llms.txt` support early and then tested it against real use, and the results were candid: no model in that testing spontaneously read or acted on the file on its own, and when someone did paste it in manually, pasting the Markdown docs themselves worked just as well or better. An index file only helps once a person already knows to reach for it, which is a narrow win for something marketed as infrastructure.
+A first deployment can stay small on purpose:
 
-Docs MCP servers tested differently, because they give an agent something to call instead of something to read. Redocly's own summary of that comparison put it plainly: the static index was smoke, and the MCP server was fire. That distinction is why this article treats MCP as the mechanism worth building around, and treats `llms.txt` as a smaller, optional addition rather than the main event.
+- Point the server at pages you already publish through your developer portal, not an internal draft.
+- Limit tools to search and fetch, so the agent can find and read a page but never modify anything.
+- Maintain a short, curated index, similar to llms.txt, so the server surfaces your best pages first.
+- Log the queries agents make, then fix the pages that keep coming up empty or unclear.
 
-## Serve the right catalog to the right agent
+Each of these choices trades a little reach for a lot of control, and that trade is worth making until you have evidence the narrow version is limiting agents in practice.
 
-Not every agent asking about your API belongs to the same audience, so the docs feeding it should match, an idea Redocly has already applied to [how developers find and understand APIs faster](https://redocly.com/learn/ai-for-docs/ai-help-developers-find-understand-apis) more broadly. A coding agent working on behalf of a partner or customer developer is an external visitor, and it should reach the same rendered docs, quickstarts, and MCP server that a human developer would land on. An internal agent, one helping an engineer on your own team decide whether to reuse an existing service, needs ownership, status, and duplication context that has no place on a public page.
+## Where an MCP server cannot help
 
-[Redocly's own writing on API catalogs and agentic software development](https://redocly.com/blog/api-catalogs-agentic-software) makes the internal case directly: a governed catalog can act as the MCP server for an internal platform, letting an agent search available tools at request time instead of hardcoding a fixed list into its system prompt. Redocly's [broader explainer on MCP](https://redocly.com/blog/mcp) is candid about a limit worth repeating here: the protocol itself doesn't enforce access control, so a server that exposes more than intended is a configuration mistake waiting to happen, not a hypothetical. Decide what an agent can reach with the same care you'd use for a human account, and revisit that scope as the catalog grows.
+An MCP server delivers your docs faster, but it does not fix docs that were already unclear. If your error reference leaves out a status code, the agent will guess at the missing piece exactly the way a confused human would, only faster and with more confidence. A reader gets no signal that the answer came from a missing entry in your docs rather than a real fact, because the agent states the guess just as confidently as it states anything else. Running the same task-based checks described in [use AI to test your documentation's usability](https://redocly.com/learn/ai-for-docs/ai-usability-testing) against the pages you expose through MCP is a practical way to catch that problem before an agent surfaces it in front of a customer.
+
+The tradeoff running through all of this is reach against control: a wider MCP server puts more of your docs in front of more agents, but every page you add is a page whose accuracy and scope you now have to keep defending. Start narrow, prove the value, then widen deliberately instead of all at once.
 
 ## How Redocly can help
 
-Once you know which audience an agent represents, Redocly gives you a product built for that audience instead of one server trying to serve everyone the same way. [Revel](https://redocly.com/revel), Redocly's external developer portal, is where a coding agent working for a partner or customer developer should land: turn on the Docs MCP server there, and the same portal that renders quickstarts and reference pages for a human also answers an agent's tool calls without a second integration. For internal agents, [Reef](https://redocly.com/reef) is the catalog built to answer "does this API already exist," so an engineering team's coding agents can query real ownership and status data instead of guessing from a name in a repo. Serving docs to coding agents starts with the same choice you already made for humans: know your audience, then choose the product that already puts the right documentation in front of them.
+Once you decide which pages an MCP server should expose, the underlying developer portal still has to hold up its end. [Revel](https://redocly.com/revel), Redocly's external developer portal, gives you a published, structured surface built for task-shaped search, so an MCP server pointed at Revel pages returns the same accurate authentication steps and quickstarts your human readers already rely on. For internal-only agents, [Reef](https://redocly.com/reef) plays the same role as a catalog, tracking ownership and scorecards so an agent querying it knows which API is current before it recommends one to a developer.
