@@ -1,98 +1,110 @@
 ---
 seo:
  title: Use AI to keep your API service catalog current
- description: Use AI to catch stale owners, tags, and lifecycle fields in your API catalog, then let Scout and Reef keep ingestion continuous so the catalog matches production.
+ description: Use AI to flag stale, orphaned, and zombie catalog entries, then pair it with Scout ingestion and Reef publishing so your API catalog stays trustworthy.
 ---
 
 # Use AI to keep your API service catalog current
 
-A catalog entry rarely breaks all at once. An owner changes teams and the contact field stays pointed at someone who left months ago. A service moves from "experimental" to "stable" and the lifecycle tag never catches up. Each mismatch looks small on its own, but a developer who hits one dead end starts to distrust the whole catalog.
+Most catalogs start out accurate. A team ships a first pass, tags every service, and finds an owner for each row. Then months pass: two teams merge, a service gets deprecated but keeps its `active` tag, and a new microservice never makes it into the inventory because nobody remembered to add it.
 
-[Use AI to build a searchable API catalog for your team](https://redocly.com/learn/ai-for-docs/ai-build-searchable-api-catalog) covers the first enrichment pass: turning a flat service list into a catalog with real descriptions, tags, and owners. This piece covers what comes after that first pass, when the specs keep changing and the catalog has to keep up without a person re-checking every row by hand.
+None of this shows up as one dramatic failure. It shows up as a developer who calls a retired endpoint because the catalog still lists it, or an AI agent that picks the wrong version because both look equally current to a model that only reads what the catalog says.
 
-## Why a catalog goes stale between releases
+This article covers why catalogs decay after launch and how to use AI, alongside automated ingestion, to keep the catalog close enough to reality that people, and agents, can trust it again.
 
-Catalogs decay for ordinary reasons, not dramatic ones. A team ships a new version and forgets to retire the old lifecycle tag, so both versions still read as "stable" months later. Another team reorganizes, and the owner field keeps naming a group that no longer exists, which means the next person who needs help messages a dead channel. Because these changes happen in the codebase and the catalog lives somewhere else, nothing forces the two to update together.
+## Why catalogs decay after launch
 
-The cost shows up unevenly. A human developer who finds a wrong owner can shrug, ask a colleague, and move on. An AI agent working from the same catalog cannot improvise that way: it will call whatever the catalog tells it is current, so a stale entry becomes a failed workflow step instead of a minor annoyance. [API catalogs for agentic software](https://redocly.com/blog/api-catalogs-agentic-software) makes this point directly, since an agent that plans a multi-step task around a catalog definition has no fallback when that definition turns out to be outdated.
+Catalogs decay for predictable reasons: when a team reorganizes, the owner field on several services quietly points at someone who moved to a different group, and when two squads ship similar wrappers around the same datastore, nobody marks one as the canonical version. A service that gets deprecated in code often keeps its `active` tag in the catalog, because updating the catalog was never part of the deprecation checklist. [Why API catalogs are critical for agentic software development](https://redocly.com/blog/api-catalogs-agentic-software) argues that treating a catalog as static documentation turns it into a liability once AI agents rely on it: an agent will call whatever the catalog says is available, including a "zombie API" that a human developer would have known to avoid.
 
-## What "current" means for a catalog entry
+The stakes are real even before agents enter the picture: that same post models return on investment for a well-maintained catalog at roughly 24:1 to 52:1, and cites Australia Post cutting its developer portal bounce rate from 30 percent to under 2 percent after automating catalog updates. Neither number depends on AI, but both depend on the catalog staying accurate enough that people trust it on the first visit.
 
-Before you can check freshness, you need a short list of fields worth checking. A useful baseline: the summary still matches what the API does, the owner or team channel is a real, reachable contact, the lifecycle tag (experimental, stable, deprecated) matches reality, and any successor link points to the API that replaced it. [Catalog metadata configuration](https://redocly.com/docs/realm/config/metadata) is where you define which of these fields your catalog tracks, so pick the small set that matters most before asking AI to audit against it.
+## Signals that a catalog entry has drifted from reality
 
-Treat that list as a contract, not a wish list. If a field is not in the schema, AI has nothing to check it against, and you are back to guessing.
+A handful of concrete tells separate a current catalog from a decaying one. Watch for:
 
-## Use AI to catch drift before developers do
+- The last deploy date on a service is newer than the last time its catalog entry changed.
+- The listed owner has moved teams, and nobody transferred the field.
+- A tag still reads `active` for an endpoint that already returns a deprecation notice or redirects to a newer version.
+- Two entries describe the same resource under different names, the kind of overlap covered in [Use AI to find duplicate and underused APIs in your codebase](https://redocly.com/learn/ai-for-docs/ai-find-duplicate-underused-apis).
+- Nothing has queried an entry in months, but nothing marks it as a candidate for retirement either.
 
-Once the fields are defined, AI is well suited to running a "freshness audit": comparing catalog entries against current specs and recent commits at a scale no reviewer would attempt by hand. Give it the catalog row alongside the OpenAPI file it describes and a short window of recent changes, and ask it to flag mismatches instead of rewriting anything.
+Any single tell is a small fix. Several at once mean the catalog has stopped reflecting the services it claims to describe, so the fix needs a process, not a one-time edit.
+
+## Automate ingestion before you automate review
+
+AI can help with a currency review, but it cannot substitute for fresh inputs. If the source list of services is already stale, a model will confidently review the wrong world. [Scout](https://redocly.com/docs/realm/scout) collects API definitions directly from repositories, so a review starts from files that changed last week rather than an export someone pulled at the start of the quarter. [What is Scout?](https://redocly.com/docs/realm/scout/what-is-scout) covers how that collection runs on a schedule instead of by request.
+
+Manual updates cannot keep pace with how fast most teams deploy, so the delay between a code change and a catalog reflecting it has to stay close to zero. Once ingestion is automated, AI has something worth reviewing: real deploy and traffic signals, not a spreadsheet someone half remembers.
+
+## Use AI to flag staleness, not to decide it
+
+Give a model the Scout inventory plus whatever deploy, traffic, or ownership signals your systems track, and ask it to flag candidates rather than make the call. A model is good at spotting patterns across hundreds of rows at once, but it should not decide on its own that a service is safe to deprecate, because that decision needs context only an owner has.
+
+### Prompt skeleton for a currency review
 
 ```markdown {% process=false %}
-You are auditing an API catalog entry for freshness.
+You are reviewing an API catalog for currency, not correctness.
 
 Rules:
-- Do not invent an owner, lifecycle stage, or successor; flag "unknown" instead.
-- Compare only against the OpenAPI file and change log provided.
-- Note the specific field that looks stale and why.
+- Do not mark anything as deprecated. Flag it for a human decision.
+- Cite the specific signal for every flag (deploy date, traffic count, owner status).
+- If a signal is missing, say so instead of guessing.
 
-Catalog entry:
-[paste current title, summary, owner, tags, lifecycle]
+For each catalog row below, return: entry_id, flag_reason, confidence.
 
-OpenAPI file and recent changes:
-[paste]
-
-Return: field, current value, suspected issue, confidence.
+[paste table of entry_id, last_catalog_update, last_deploy_date, owner, recent_traffic]
 ```
 
-Review the output the way you would review any other AI draft. A flagged field is a lead worth checking, not a change ready to commit on its own.
+Review the output the way you would review any generated content: in a pull request, next to the catalog row it touches, so the flag and the fix travel together.
 
-## Before and after: a lifecycle field nobody updated
+## Before and after: a catalog entry nobody had touched in a year
 
 Before:
 
 ```yaml {% process=false %}
-title: Payments API v1
-lifecycle: stable
-successor: null
+title: legacy-payments-svc
+owner: jsmith (left team in 2025)
+status: active
+last_reviewed: null
 ```
 
 After:
 
 ```yaml {% process=false %}
-title: Payments API v1
-lifecycle: deprecated
+title: Legacy payments API (v1)
+owner: payments-platform-team
+status: deprecated
 successor: payments-api-v2
+last_reviewed: 2026-07-14
 ```
 
-The AI pass can propose that change once it sees a v2 spec with overlapping paths and a newer deploy date. A person still confirms the migration is complete before the tag goes live, since a premature "deprecated" label can send developers toward a version that is not ready for their traffic yet.
+The after version still needs a human to confirm the successor mapping before anyone points a new integration at it. AI can draft the flag and the fields, but it cannot verify that the replacement covers every behavior the old service handled.
 
-## Automate ingestion so the catalog updates with the code
+## Build a recurring currency check, not a one-time cleanup
 
-A single cleanup pass fixes today's drift and says nothing about next month's. [What is Scout?](https://redocly.com/docs/realm/scout/what-is-scout) describes how Scout pulls API definitions straight from your repositories on an ongoing basis, so the catalog reflects what is deployed right now instead of what someone remembered to export. Point AI's freshness audit at Scout's collected inventory, not at a snapshot from last quarter, and the two checks reinforce each other: [Scout](https://redocly.com/docs/realm/scout) keeps the raw inventory current, and AI keeps the metadata layered on top of it honest.
+A cleanup project fixes the catalog once. A recurring check keeps it that way, so run the AI-assisted review on a schedule tied to your Scout ingestion instead of waiting until search returns a dead endpoint. Assign a rotating owner who clears flags weekly, the same way a team rotates on-call.
 
-```mermaid
-graph LR
-  A[Repos] --> B[Scout ingest]
-  B --> C[AI freshness audit]
-  C --> D[Owner confirms]
-  D --> E[Reef catalog update]
-```
+### Checklist before you trust the catalog again
 
-[Australia Post](https://redocly.com/customers/australia-post) automated its catalog and portal publishing this way and cut its bounce rate from 30 percent to under 2 percent, because visitors stopped landing on pages that described services that no longer matched what shipped. That is what near-zero latency between a deploy and a catalog update buys you.
+- Every flagged entry names a specific signal, not a vague sense that it looks old.
+- Deprecated services point to a documented successor.
+- Owner fields resolve to a current team, not an individual who may have moved on.
+- Entries with zero recent consumers are marked for review rather than silently removed.
 
-## Gate changes with governance checks
-
-Freshness audits work best when paired with a rule that blocks bad data before it reaches the catalog, rather than a report that only flags it afterward. [API catalog configuration](https://redocly.com/docs/realm/config/catalog-classic) lets you require fields like owner and lifecycle before an entry publishes, so a missing value fails the same way a missing required parameter fails [Redocly CLI lint](https://redocly.com/docs/cli/commands/lint) on an OpenAPI file. Once that gate exists, AI's job moves from finding missing fields after the fact to reviewing edge cases the gate cannot decide on its own, like whether two similarly named services are duplicates.
-
-The payoff compounds. Modeled return on comprehensive API catalogs runs [roughly 24:1 to 52:1](https://redocly.com/blog/hidden-cost-of-an-enterprise-api) once you count avoided rebuilds and faster onboarding, and most of that value depends on the catalog staying accurate long after the first cleanup earns the initial win.
+Deterministic checks can carry part of this load once you have a cadence in place. [Use AI to detect drift between your docs and your live API](https://redocly.com/learn/ai-for-docs/ai-detect-drift-docs-live-api) covers Respect's scheduled Arazzo workflows, which catch behavioral drift on individual endpoints, and [Catch API drift with the new proxy and drift commands](https://redocly.com/blog/catch-api-drift) covers a newer way Redocly CLI compares recorded traffic against a spec. Both complement a catalog-level review instead of replacing it.
 
 ## Best practices
 
-Run the freshness audit on a schedule tied to releases, not only when someone complains about a dead link. Keep the field list short enough that owners can confirm changes in minutes, not hours. Log every AI-flagged field with a link to the spec or commit that triggered the flag, so a reviewer can check the reasoning instead of taking the flag on faith. Pair freshness work with [Use AI to find duplicate and underused APIs in your codebase](https://redocly.com/learn/ai-for-docs/ai-find-duplicate-underused-apis), since a stale entry and a duplicate entry often trace back to the same missing ownership.
+Log every AI flag with its signal in the pull request that fixes it, so an audit can reproduce the decision later.
 
-## What AI cannot verify
+Configure how deprecated entries surface through [API catalog configuration](https://redocly.com/docs/realm/config/catalog-classic), so search stops recommending a retired service on its own.
 
-AI can compare a catalog entry against a spec and a change log, but it cannot confirm that a migration is finished, that an owner still wants the role assigned to them, or that a "deprecated" tag will not break a partner integration nobody documented. Those calls need a person with context the catalog does not capture. Treat every AI-flagged field as a question for that person, not as an automatic fix.
+Treat every AI flag as evidence, not a verdict. Owners still confirm before any status changes.
+
+## What AI cannot verify alone
+
+AI cannot see a service's live traffic unless you paste it into the prompt, and it cannot confirm that a successor API truly replaces the one it is retiring. It may also misjudge a slow-moving but still-critical internal tool as stale. Scout ingestion and a human owner remain the source of truth; AI only narrows the list of rows worth a second look.
 
 ## How Redocly can help
 
-Keeping a catalog current takes more than one enrichment pass. [Reef](https://redocly.com/reef) gives every API a searchable catalog entry backed by real metadata, so the result stays one centralized source of truth instead of drifting back into a spreadsheet nobody trusts. Pair Reef's catalog with the AI freshness audit in this article, and the catalog keeps matching production, not only the day someone last reviewed it.
+A catalog that nobody trusts stops getting used, no matter how complete it once was. [Reef](https://redocly.com/reef) hosts the searchable catalog where enriched metadata, ownership, and deprecation status live in one place, so an AI-assisted currency review has somewhere real to publish its results instead of a spreadsheet that goes stale again next quarter. Pair a Scout ingestion schedule with a recurring review, and Reef becomes the centralized single source of truth your team, and your agents, can actually rely on.
