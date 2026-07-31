@@ -213,6 +213,7 @@ Ensure there are no manual checks, required reviews, or other steps that could b
 Remote content sources are listed under "Remote content" page in the project dashboard, with the status for each shown.
 
 **In preview**: The remote content has been added to the project's non-default branch.
+The initial pull request is created as a draft and must be marked as ready for review before it can be merged.
 All subsequent remote content updates are applied in place to the same branch and pull request (as long as [Auto-sync](#auto-sync-and-auto-merge) is enabled) until the pull request with the remote content files is reviewed and merged.
 
 **Enabled**: When the remote content files are merged to the main branch, the status is "Enabled".
