@@ -110,7 +110,7 @@
       '@redocly/graphql-docs': 1.13.0-next.0
       '@redocly/portal-plugin-mock-server': 0.21.0-next.0
   0.135.1:
-    timestamp: 1785488843000
+    timestamp: 1785490770000
     changes:
       minor: []
       patch:
@@ -6791,7 +6791,7 @@
       '@redocly/graphql-docs': 1.13.0-next.0
       '@redocly/portal-plugin-mock-server': 0.21.0-next.0
   0.135.1:
-    timestamp: 1785488843000
+    timestamp: 1785490770000
     changes:
       minor: []
       patch:
@@ -12549,7 +12549,7 @@
       '@redocly/graphql-docs': 1.13.0-next.0
       '@redocly/portal-plugin-mock-server': 0.21.0-next.0
   0.135.1:
-    timestamp: 1785488843000
+    timestamp: 1785490770000
     changes:
       minor: []
       patch:
@@ -18299,7 +18299,7 @@
       '@redocly/graphql-docs': 1.13.0-next.0
       '@redocly/portal-plugin-mock-server': 0.21.0-next.0
   0.135.1:
-    timestamp: 1785488843000
+    timestamp: 1785490770000
     changes:
       minor: []
       patch:
@@ -27117,7 +27117,7 @@
       '@redocly/theme': 0.68.0-next.0
       '@redocly/replay': 0.27.0-next.0
   3.23.1:
-    timestamp: 1785488843000
+    timestamp: 1785490770000
     changes:
       minor: []
       patch:
@@ -31109,7 +31109,7 @@
       '@redocly/theme': 0.68.0-next.0
       '@redocly/openapi-docs': 3.24.0-next.0
   1.12.1:
-    timestamp: 1785488843000
+    timestamp: 1785490770000
     changes:
       minor: []
       patch: []
@@ -32352,7 +32352,7 @@
         - Updated `@redocly/openapi-core` to version `2.39.0`.
     dependencies: {}
   0.9.1:
-    timestamp: 1785488843000
+    timestamp: 1785490770000
     changes:
       minor: []
       patch:
@@ -33396,7 +33396,7 @@
       '@redocly/redoc-revel': 0.136.0-next.0
       '@redocly/theme': 0.68.0-next.0
   1.18.1:
-    timestamp: 1785488843000
+    timestamp: 1785490770000
     changes:
       minor: []
       patch: []
@@ -38848,7 +38848,7 @@
       '@redocly/openapi-docs': 3.24.0-next.0
       '@redocly/mock-server': 0.10.0-next.0
   0.20.1:
-    timestamp: 1785488843000
+    timestamp: 1785490770000
     changes:
       minor: []
       patch: []
@@ -41872,7 +41872,7 @@
     dependencies:
       '@redocly/theme': 0.68.0-next.0
   0.26.1:
-    timestamp: 1785488843000
+    timestamp: 1785490770000
     changes:
       minor: []
       patch:
@@ -46035,7 +46035,7 @@
       '@redocly/theme': 0.68.0-next.0
       '@redocly/openapi-docs': 3.24.0-next.0
   1.12.1:
-    timestamp: 1785488843000
+    timestamp: 1785490770000
     changes:
       minor: []
       patch: []
@@ -50203,8 +50203,8 @@ replay:
         - Improved typing performance in the request URL field.
     dependencies:
       '@redocly/theme': 0.65.0-next.1
-  0.20.1:
-    timestamp: 1780402032000
+  0.21.0:
+    timestamp: 1780576100000
     changes:
       minor:
         - Improved accuracy and relevance of AI agent results.
@@ -50253,7 +50253,7 @@ replay:
     dependencies:
       '@redocly/theme': 0.67.0
   0.23.0:
-    timestamp: 1784279828000
+    timestamp: 1784585932000
     changes:
       minor: []
       patch:
