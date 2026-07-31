@@ -49816,6 +49816,7 @@ reunite:
     changes:
       minor: []
       patch:
+        - Fixed dot-prefixed files and folders (except the `.git` folder) being hidden in the repository path picker when adding remote content.
         - Added a default project setting to SAML identity providers that controls where viewers land after an IdP-initiated login.
         - Fixed navigation synchronization between the editor and the Webview.
         - Hid the What's new sidebar item when no announcements are available for the organization.
