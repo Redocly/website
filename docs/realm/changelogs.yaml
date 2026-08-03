@@ -137,7 +137,7 @@
       '@redocly/graphql-docs': 1.13.0-next.0
       '@redocly/portal-plugin-mock-server': 0.21.0-next.0
   0.135.2:
-    timestamp: 1785747789000
+    timestamp: 1785751782000
     changes:
       minor: []
       patch:
@@ -6851,7 +6851,7 @@
       '@redocly/graphql-docs': 1.13.0-next.0
       '@redocly/portal-plugin-mock-server': 0.21.0-next.0
   0.135.2:
-    timestamp: 1785747789000
+    timestamp: 1785751782000
     changes:
       minor: []
       patch:
@@ -12642,7 +12642,7 @@
       '@redocly/graphql-docs': 1.13.0-next.0
       '@redocly/portal-plugin-mock-server': 0.21.0-next.0
   0.135.2:
-    timestamp: 1785747789000
+    timestamp: 1785751782000
     changes:
       minor: []
       patch:
@@ -18427,7 +18427,7 @@
       '@redocly/graphql-docs': 1.13.0-next.0
       '@redocly/portal-plugin-mock-server': 0.21.0-next.0
   0.135.2:
-    timestamp: 1785747789000
+    timestamp: 1785751782000
     changes:
       minor: []
       patch:
@@ -33594,7 +33594,7 @@
       '@redocly/redoc-revel': 0.136.0-next.0
       '@redocly/theme': 0.68.0-next.0
   1.18.2:
-    timestamp: 1785747789000
+    timestamp: 1785751782000
     changes:
       minor: []
       patch: []
@@ -50442,8 +50442,8 @@ replay:
         - Improved typing performance in the request URL field.
     dependencies:
       '@redocly/theme': 0.65.0-next.1
-  0.20.1:
-    timestamp: 1780402032000
+  0.21.0:
+    timestamp: 1780576100000
     changes:
       minor:
         - Improved accuracy and relevance of AI agent results.
@@ -50491,6 +50491,15 @@ replay:
         - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.34.0`.
     dependencies:
       '@redocly/theme': 0.67.0
+  0.23.0:
+    timestamp: 1784585932000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where example values with line breaks or tabs corrupted the request URL.
+        - Improved diff display in the AI tool approval panel.
+    dependencies:
+      '@redocly/theme': 0.67.0
   0.23.1:
     timestamp: 1785141674000
     changes:
@@ -50508,7 +50517,5 @@ replay:
         - Fixed a crash in Replay where an internal error during logging could bring down the whole app.
         - Fixed security vulnerabilities `CVE-2026-33055` and `CVE-2026-33056` by upgrading the `tar` to version `0.4.46`.
         - Fixed an issue in Replay where the account menu displayed "undefined" instead of the signed-in user's name.
-        - Fixed an issue where example values with line breaks or tabs corrupted the request URL.
-        - Improved diff display in the AI tool approval panel.
     dependencies:
       '@redocly/theme': 0.67.0
