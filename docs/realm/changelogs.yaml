@@ -50169,6 +50169,13 @@ reunite:
           Fixed an issue where signing in to an organization that requires SSO with a different login method could unexpectedly log you out and return
           you to the login page instead of showing the organization sign-in screen.
     dependencies: {}
+  v2026-08-03.1:
+    timestamp: 1785753113000
+    changes:
+      minor: []
+      patch:
+        - Fixed dot-prefixed files and folders (except the `.git` folder) being hidden in the repository path picker when adding remote content.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
