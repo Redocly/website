@@ -50176,23 +50176,6 @@ reunite:
       patch:
         - Fixed dot-prefixed files and folders (except the `.git` folder) being hidden in the repository path picker when adding remote content.
     dependencies: {}
-  v2026-08-03.2:
-    timestamp: 1785764753000
-    changes:
-      minor:
-        - >-
-          Added automatic pull request comments to warn contributors when their changes affect files managed by remote content, preventing accidental
-          overwrites during updates.
-      patch:
-        - The initial pull requests created after adding remote content are created as drafts.
-        - Fixed GitLab OAuth connection failures after token expiration.
-        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.43.1`.
-        - >-
-          Fixed the remote content connection dialog to display specific server errors, such as missing Git access token permissions, instead of a
-          generic "Forbidden" message.
-        - Fixed notification for review failures to correctly indicate Git provider connection issues and to stop appearing after successful sync.
-        - Fixed the misaligned close button on the announcement modal.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
