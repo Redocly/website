@@ -422,4 +422,4 @@ rbac:
 - **[SSO configuration](./sso.md)** - Configure single sign-on to identify users and integrate with RBAC for comprehensive authentication and authorization
 - **[SSO Direct configuration](../ssoDirect.md)** - Configure direct SSO integration for streamlined user identification and RBAC implementation
 - **[Requires login configuration](./requires-login.md)** - Set up login requirements to enforce authentication before accessing RBAC-protected content
-- **[MCP server](../../customization/mcp-server/index.md#restrict-access-to-the-mcp-server)** - Restrict MCP server access to specific teams with the `mcp` feature role
+- **[Docs MCP server](../../customization/mcp-server/index.md#content-and-access)** - Understand how feature and content RBAC apply to the Docs MCP server

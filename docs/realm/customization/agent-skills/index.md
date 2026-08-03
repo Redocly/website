@@ -238,6 +238,6 @@ An agent connected over MCP can read each skill as a `text/markdown` resource wi
 ## Resources
 
 - **[`skills` configuration](../../config/skills.md)** - Hide skills or exclude files from discovery
-- **[`mcp` configuration](../../config/mcp.md)** - Enable and configure the Docs MCP server
-- **[Model Context Protocol server](../mcp-server/index.md)** - Connect an AI tool to the MCP server that exposes your skills as resources
+- **[`mcp` configuration](../../config/mcp.md)** - Configure the Docs MCP server
+- **[Docs MCP server](../mcp-server/index.md)** - Connect an AI client to the server that exposes your skills as resources
 - **[RBAC concepts](../../access/rbac.md)** - Control which teams and users can access each skill

@@ -7,15 +7,15 @@ products:
 plans:
   - Enterprise
   - Enterprise+
-description: Make your content accessible to AI tools.
+description: Configure the Docs MCP server and exclude API descriptions from its catalog.
 ---
 
 # `mcp`
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Redocly automatically generates Model Context Protocol (MCP) servers from your documentation and OpenAPI descriptions.
-MCP servers make your content accessible to AI tools in the MCP ecosystem (such as ChatGPT, Claude, Cursor, Goose).
+Use `mcp` to hide the Docs MCP server, change the name displayed to MCP clients, or exclude API descriptions from its catalog.
+The configuration controls an available Docs MCP server; it does not enable a separate MCP service or API-request product.
 
 ## Options
 
@@ -29,17 +29,14 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 
 - hide
 - boolean
-- Hide the MCP server globally.
-  When set to `true`, all MCP functionality is disabled.
+- Hides all MCP functionality for the project when set to `true`.
   Default: `false`.
 
 ---
 
 - docs
 - [Docs object](#docs-object)
-- Docs MCP configuration options.
-
----
+- Configures the Docs MCP server.
 
 {% /table %}
 
@@ -55,83 +52,87 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 
 - hide
 - boolean
-- Hide the Docs MCP server.
+- Hides the Docs MCP server when set to `true`.
   Default: `false`.
 
 ---
 
 - name
 - string
-- Set the name displayed to MCP clients during the initial connection.
+- Sets the server name displayed to MCP clients when they connect.
   Default: `"Docs MCP server"`.
 
 ---
 
 - ignore
 - [string]
-- List of patterns or identifiers to ignore in the MCP server.
+- Excludes API descriptions whose project-relative paths match the specified glob patterns.
+  Excluded descriptions are unavailable to every MCP user.
   Default: `[]`.
 
 {% /table %}
 
-## Access control
-
-Role-based access control (RBAC) that protects content in your project also protects that content over the Docs MCP server.
-The Docs MCP server enforces access with the same RBAC engine as the portal, so each authenticated client receives only the API descriptions, schemas, skills, and search results that its teams are permitted to access — the same content it could see in the portal.
-When RBAC restricts anonymous access, the `/mcp` endpoint requires authentication and returns `401` to unauthenticated clients.
-To restrict the server itself rather than individual content, set a team-based role for the `mcp` feature, as described in [Restrict access to the MCP server](../customization/mcp-server/index.md#restrict-access-to-the-mcp-server).
-
-{% admonition type="info" %}
-The `hide` and `ignore` options remove content from the build for all clients.
-They are build-time removal, not access control — use RBAC to control who can access content.
-{% /admonition %}
-
 ## Examples
 
-### Basic configuration
+### Change the server name
 
-```yaml
-# Global settings
+```yaml {% title="redocly.yaml" %}
 mcp:
-  hide: false
-  # Docs MCP settings
   docs:
-    hide: false
-    name: My Custom Docs MCP Server
+    name: Acme developer docs
 ```
 
-### Ignore specific patterns
+### Exclude API descriptions
 
-Ignore specific files and filename patterns in the MCP server:
+Exclude API descriptions by their project-relative paths:
 
-```yaml
-# Global settings
+```yaml {% title="redocly.yaml" %}
 mcp:
-  hide: false
   docs:
-    hide: false
-    # Ignored patterns
     ignore:
-      - openapi-files/**
-      - test-endpoints
+      - apis/internal/**
+      - apis/legacy/openapi.yaml
 ```
+
+Use forward slashes in patterns, including on Windows.
+
+### Hide the Docs MCP server
+
+```yaml {% title="redocly.yaml" %}
+mcp:
+  docs:
+    hide: true
+```
+
+Set the top-level `mcp.hide` option instead when you need to disable all MCP functionality for the project.
 
 ## Default configuration
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 mcp:
   hide: false
   docs:
     hide: false
-    name: "Docs MCP server"
+    name: Docs MCP server
+    ignore: []
 ```
+
+## Access control
+
+The `hide` and `ignore` options remove the server or matching descriptions for every client.
+They do not provide user-specific access control.
+
+Use RBAC to control which users can access the `/mcp` endpoint and its content:
+
+- Configure `access.rbac.features.mcp` to restrict the entire endpoint.
+- Configure content RBAC to restrict individual pages and API descriptions.
+
+The Docs MCP server applies the same content permissions as the published project.
+See [RBAC feature configuration](./access/rbac.md#features-configuration) for details.
 
 ## Resources
 
-- **[MCP servers overview](../customization/mcp-server/index.md)** - Configure MCP servers and integrate with third-party services
-- **[Agent skills](../customization/agent-skills/index.md)** - Publish `SKILL.md` instructions that the MCP server exposes as resources
-- **[Docs MCP reference](../customization/mcp-server/openapi.yaml)** - Review the structured Docs MCP specification, tool schemas, and authentication metadata
-- **[Restrict access to the MCP server](../customization/mcp-server/index.md#restrict-access-to-the-mcp-server)** - Limit the `/mcp` endpoint to specific teams and review the responses clients receive when access is denied
-- **[Role-based access control](./access/rbac.md#features-configuration)** - Configure team-based permissions that also govern which content clients can access over the Docs MCP server
-- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
-- **[Connect MCP Markdoc tag](../content/markdoc-tags/connect-mcp.md)** - Add `Connect MCP` button anywhere in your documentation
+- **[Docs MCP server](../customization/mcp-server/index.md)** - Understand the capabilities and access model
+- **[Connect an AI client](../customization/mcp-server/connect-ai-client.md)** - Add the server to a supported MCP client
+- **[Allow AI clients to call APIs](../customization/mcp-server/allow-api-requests.md)** - Configure per-description API request eligibility
+- **[`x-mcp` OpenAPI extension](../content/api-docs/openapi-extensions/x-mcp.md)** - Configure MCP metadata in an OpenAPI description

@@ -7,199 +7,85 @@ products:
 plans:
   - Enterprise
   - Enterprise+
+description: Connect AI clients to your documentation and published APIs with the Docs MCP server.
 ---
 
-# Model Context Protocol server
+# Docs MCP server
 
-Model Context Protocol (MCP) is a standard that enables applications to provide context to large language models (LLMs).
-With MCP servers, AI assistants can retrieve additional information relevant to a user's query.
+The Docs Model Context Protocol (MCP) server connects AI clients to the documentation and API descriptions in your project.
+Users can ask an AI client to find documentation, inspect API operations, or call APIs that you make available for requests.
 
-Realm provides built-in MCP server capabilities that expose your API Docs to AI assistants.
+The server is available at `/mcp` on your project URL.
+For example, a project at `https://docs.example.com` has a Docs MCP server at `https://docs.example.com/mcp`.
+If the project uses a path prefix, the prefix is also part of the MCP server URL.
 
-## Benefits
+{% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-- **Real-time API guidance** — users receive accurate, contextual help about API endpoints and operations.
-- **Secure API access** — AI assistants can make authenticated requests to act on behalf of a user.
-- **Dynamic documentation** — AI assistants can extract and explain API reference content based on user needs.
+## Docs MCP capabilities
 
-## Docs MCP server
+The Docs MCP server provides two related capabilities through the same endpoint:
 
-Use the Docs MCP server to explore and discover APIs in your project.
-For the current MCP endpoint details, authentication semantics, server metadata, and tool schemas, see the [Docs MCP reference](./openapi.yaml).
+- **Documentation discovery**: Search Markdown content and inspect the OpenAPI and GraphQL descriptions available to the user.
+- **API requests**: Send requests to hosts declared by eligible OpenAPI descriptions.
 
-## MCP server card
+AI clients discover the tools and resources available from the server when they connect.
+The exact tool interface may vary, but the documentation and API access rules remain the same.
 
-The MCP server card is a standardized JSON document that lets agents discover the Docs MCP server: its tools, transport endpoint, and capabilities.
-The discovery is a single request that follows the Model Context Protocol server-card format.
-It is available at `/.well-known/mcp/server-card.json` when the MCP server is enabled.
+## Content and access
 
-```http
-GET https://example.com/.well-known/mcp/server-card.json
-```
+The Docs MCP server uses the same project access rules as your published site.
+An authenticated user can discover only the content their teams are permitted to access.
+Anonymous clients receive only content available to the `anonymous` team.
 
-The following example response describes a login-protected server that also publishes skills:
+You can also restrict access to the entire `/mcp` endpoint with the `access.rbac.features.mcp` configuration.
+If anonymous access is not permitted, supported MCP clients prompt the user to sign in to the project.
 
-```json
-{
-  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
-  "version": "1.0",
-  "protocolVersion": "2025-06-18",
-  "serverInfo": {
-    "name": "Docs MCP server",
-    "title": "Docs MCP server",
-    "version": "2026-07-13"
-  },
-  "description": "Redocly Cafe documentation.",
-  "documentationUrl": "https://example.com/",
-  "transport": {
-    "type": "streamable-http",
-    "endpoint": "/mcp"
-  },
-  "capabilities": {
-    "logging": {},
-    "tools": { "listChanged": true },
-    "resources": { "listChanged": true },
-    "completions": {}
-  },
-  "authentication": {
-    "required": true,
-    "schemes": ["bearer", "oauth2"]
-  },
-  "tools": ["dynamic"]
-}
-```
+Removing content with `mcp.docs.ignore` is different from restricting it with RBAC:
 
-The card lists the server's tools, declares its `/mcp` transport endpoint, and states its authentication requirements when the server requires login.
-When your project publishes [agent skills](../agent-skills/index.md#skills-as-mcp-resources), the card's capabilities advertise resource support so agents know to list them.
+- `mcp.docs.ignore` excludes matching API descriptions from the Docs MCP server for every user.
+- RBAC keeps the content in the server and determines which users can access it.
 
-## Restrict access to the MCP server
+See the [MCP configuration reference](../../config/mcp.md) and [RBAC feature configuration](../../config/access/rbac.md#features-configuration) for the available controls.
 
-Control which teams can access the MCP server with the `rbac.features.mcp` option, the same way `rbac.features.aiSearch` controls access to AI search.
+## API request access
 
-In the following example, only members of the Developers team can access the MCP server:
+API requests are controlled per OpenAPI description.
+The visibility of the description establishes the default:
 
-```yaml {% title="redocly.yaml" %}
-access:
-  rbac:
-    features:
-      mcp:
-        Developers: read
-```
+- API descriptions available to anonymous users are eligible for requests by default.
+- RBAC-protected API descriptions must explicitly allow requests.
+- Any API description can explicitly prevent requests.
 
-When a team-based role is set for the `mcp` feature, only teams with a role other than `none` can access the MCP server.
-Users must sign in unless the `anonymous` team is granted such a role, either directly or through the `*` wildcard, which covers all teams that are not listed explicitly, including `anonymous`.
-When the `anonymous` team has no access, requests without a valid token receive a `401` response, and authenticated users who don't belong to an allowed team receive a `403` response.
+Eligible descriptions must declare usable root-level OpenAPI `servers`.
+Those server entries define the hosts an AI client can call.
+The restriction applies to hosts, not individual paths or operations, so project owners should review each server host before allowing requests.
 
-For more details, see the [RBAC configuration reference](../../config/access/rbac.md#features-configuration).
+For configuration steps and the complete access model, see [Allow AI clients to call APIs](./allow-api-requests.md).
 
-## Connect an AI agent to the MCP server
+## MCP server discovery
 
-After you enable the Docs MCP server in [configuration](../../config/mcp.md), it is available at `/mcp` on your project root URL.
-For example: `https://example.com/mcp`.
+Redocly publishes a server card at `/.well-known/mcp/server-card.json` when the Docs MCP server is available.
+The card identifies the `/mcp` endpoint and describes its transport, authentication requirements, and capabilities for clients that support server-card discovery.
 
-### Use the MCP server
+API reference pages can also display a connection action when their OpenAPI descriptions advertise the Docs MCP server with `x-mcp` metadata.
 
-Users can connect their preferred AI tools that support MCP (for example, Cursor, Claude Code and VS Code) to your MCP server.
+## Get started
 
-1. Enable the MCP server in your [configuration](../../config/mcp.md).
-2. Copy your MCP server URL and add it to your tool.
+{% cards columns=2 %}
 
-After connecting, the tool can access your OpenAPI documentation.
+{% card title="Connect an AI client" icon="link" to="./connect-ai-client.md" %}
+Add the Docs MCP server to Cursor, Claude Code, or Visual Studio Code and verify the connection.
+{% /card %}
 
-{% tabs %}
-  {% tab label="Cursor" %}
+{% card title="Allow API requests" icon="server" to="./allow-api-requests.md" %}
+Choose which OpenAPI descriptions can make requests and review the host-level security boundary.
+{% /card %}
 
-#### Connect Cursor to the MCP server
-
-1. In Cursor, open the command palette.
-   - macOS: `Command + Shift + P`
-   - Windows/Linux: `Ctrl + Shift + P`
-1. Type "Open MCP settings" in the command palette.
-1. Select "Add custom MCP".
-
-Cursor opens the `mcp.json` file.
-
-#### Configure the MCP server
-
-1. In `mcp.json`, add your server configuration:
-```json
-{
-  "mcpServers": {
-    "example-mcp": {
-      "url": "https://example.com/mcp"
-    }
-  }
-}
-```
-
-Optionally, you can also pass additional headers that will be sent with each request:
-
-```json
-{
-  "mcpServers": {
-    "example-mcp": {
-      "url": "https://example.com/mcp",
-      "headers": {
-        "Authorization": "Basic MTIzOjEyMw=="
-      }
-    }
-  }
-}
-```
-
-1. Save the `mcp.json` file.
-
-1. Return to MCP settings and confirm the connection.
-   If authentication is required, select **Needs login** and complete the sign‑in flow.
-   After connecting, Cursor displays the list of available tools.
-
-#### Test the Cursor connection
-
-In Cursor chat (Agent mode), ask a question that triggers an MCP tool.
-
-  {% /tab %}
-
-  {% tab label="Claude Code" %}
-
-### Connect Claude Code to the MCP server
-
-1. Run: `claude mcp add ${MCP_SERVER_NAME} ${URL} --transport http` where `${MCP_SERVER_NAME}` is your desired server name and `${URL}` is the MCP server URL.
-1. In the Claude Code CLI, type `/mcp` and complete authentication if prompted.
-1. Claude Code lists the available tools with descriptions and parameters.
-
-#### Test the Claude Code connection
-
-In the Claude Code CLI, ask the AI agent to perform an instruction that uses an MCP tool.
-
-  {% /tab %}
-
-   {% tab label="VS Code" %}
-
-### Connect VS Code to the MCP server
-
-1. In VS Code, open the command palette.
-   - macOS: `Command + Shift + P`
-   - Windows/Linux: `Ctrl + Shift + P`
-1. Type "MCP: Add Server" in the command palette.
-1. Select "HTTP" to connect to a remote MCP server.
-1. Enter the MCP server URL (for example, `https://example.com/mcp`).
-1. Enter a name for the connection.
-
-If the MCP server requires authentication, VS Code prompts you to open a sign‑in page.
-Complete the sign‑in flow with your credentials.
-
-#### Test the VS Code connection
-
-Open Chat with AI in Agent mode and select the Tools icon.
-Confirm that your MCP connection appears with a list of available tools.
-
-Ask the AI to perform a query that uses an MCP tool.
-
-  {% /tab %}
-{% /tabs %}
+{% /cards %}
 
 ## Resources
 
-- **[MCP configuration reference](../../config/mcp.md)** - Configure MCP for your project
-- **[RBAC configuration reference](../../config/access/rbac.md)** - Restrict MCP server access to specific teams
-- **[Agent skills](../agent-skills/index.md)** - Publish task-focused `SKILL.md` instructions and the discovery endpoints agents read to find them
+- **[MCP configuration reference](../../config/mcp.md)** - Configure the Docs MCP server name, exclusions, and visibility
+- **[Role-based access control](../../config/access/rbac.md)** - Control access to project content and the MCP feature
+- **[`x-mcp` OpenAPI extension](../../content/api-docs/openapi-extensions/x-mcp.md)** - Describe MCP servers and configure API request eligibility
+- **[Agent skills](../agent-skills/index.md)** - Publish task-focused instructions as MCP resources

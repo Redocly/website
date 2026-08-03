@@ -4,7 +4,6 @@ products:
   - Reef
   - Realm
 plans:
-  - Pro
   - Enterprise
   - Enterprise+
 ---
@@ -16,8 +15,8 @@ The `connect-mcp` tag renders a button that allows users to connect to the MCP (
 When clicked or hovered, it displays a dropdown menu with options to connect via Cursor, VS Code, or copy the MCP configuration.
 
 {% admonition type="info" name="Before you begin"%}
-The Connect MCP button requires a properly configured Docs MCP server to function.
-See the [MCP configuration documentation](../../config/mcp.md) for setup instructions.
+The Connect MCP button requires the Docs MCP server to be available for the project.
+See [Connect an AI client](../../customization/mcp-server/connect-ai-client.md) for the server URL and connection flow.
 {% /admonition %}
 
 ## Syntax and usage
@@ -166,6 +165,6 @@ If your users primarily use Cursor, consider showing only that option to reduce 
 ## Resources
 
 - **[MCP configuration](../../config/mcp.md)** - Configure the MCP server and Connect MCP button visibility
-- **[MCP servers overview](../../customization/mcp-server/index.md)** - Learn about MCP servers and integration with AI tools
+- **[Docs MCP server](../../customization/mcp-server/index.md)** - Understand Docs MCP capabilities and access control
 - **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
 - **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

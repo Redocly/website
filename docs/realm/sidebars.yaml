@@ -448,13 +448,13 @@
         # - page: customization/api-functions/kv-storage-reference.md
         #   label: KV storage reference
 
-    - group: MCP servers
-      selectFirstItemOnExpand: true
+    - group: Docs MCP server
+      page: customization/mcp-server/index.md
       items:
-        - page: customization/mcp-server/index.md
-          label: Overview
-        - page: customization/mcp-server/openapi.yaml
-          label: Docs MCP reference
+        - page: customization/mcp-server/connect-ai-client.md
+          label: Connect an AI client
+        - page: customization/mcp-server/allow-api-requests.md
+          label: Allow API requests
 
     - group: Agent skills
       selectFirstItemOnExpand: true

@@ -2,30 +2,40 @@
 
 {% partial file="../../../_partials/experimental.md" /%}
 
-Use `x-mcp` to document MCP (Model Context Protocol) servers for consumers.
+Use `x-mcp` to describe an MCP server in an OpenAPI document or control whether the Docs MCP server can make requests to an API.
+The extension has different schemas at the OpenAPI Root Object and Info Object.
 
-## Location
-
-The `x-mcp` extension can be added to Root Object.
-The root is the outer most level of the OpenAPI description.
-
-## Options
+## Locations
 
 {% table %}
 
-- Option
-- Type
-- Description
+- Location
+- Schema
+- Purpose
 
 ---
 
-- x-mcp
-- [MCP object](#mcp-object)
-- MCP server description and configuration.
+- Root Object
+- [MCP description object](#mcp-description-object)
+- Describes one or more MCP server endpoints for display in the API reference.
+
+---
+
+- Info Object
+- [Docs MCP control object](#docs-mcp-control-object)
+- Controls API request eligibility for the OpenAPI description.
 
 {% /table %}
 
-### MCP object
+The two schemas are independent.
+A root-level `x-mcp` describes an MCP server for API consumers; an Info Object `x-mcp` configures how Redocly's Docs MCP server treats the API description.
+
+When an eligible API description does not define root-level `x-mcp.servers`, Redocly can add metadata for the project's Docs MCP server to the rendered API reference.
+Author-defined root-level servers take precedence and are not replaced.
+
+## MCP description object
+
+Add `x-mcp` to the OpenAPI Root Object to display MCP server metadata and connection actions in the API reference.
 
 {% table %}
 
@@ -37,37 +47,37 @@ The root is the outer most level of the OpenAPI description.
 
 - protocolVersion
 - string
-- **REQUIRED.** The MCP protocol version supported by the server.
+- **REQUIRED.** Identifies the MCP protocol version supported by the server.
 
 ---
 
 - servers
-- [ [Server Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#serverObject) ]
-- A list of server objects used to add one or more target endpoints for the MCP server.
+- [[Server object](https://spec.openapis.org/oas/v3.1.0#server-object)]
+- Lists the MCP server endpoints.
 
 ---
 
 - capabilities
 - [Capabilities object](#capabilities-object)
-- Server capabilities including supported features like logging, prompts, resources, and tools.
+- Describes the capabilities supported by the MCP server.
 
 ---
 
 - tools
-- [ [Tool object](#tool-object) ]
-- Array of tools provided by the MCP server.
+- [[Tool object](#tool-object)]
+- Lists tools provided by the MCP server.
 
 ---
 
 - resources
-- [ [Resource object](#resource-object) ]
-- Array of resources provided by the MCP server.
+- [[Resource object](#resource-object)]
+- Lists resources provided by the MCP server.
 
 ---
 
 - prompts
-- [ [Prompt object](#prompt-object) ]
-- Prompt capabilities configuration with optional `listChanged` boolean property.
+- [[Prompt object](#prompt-object)]
+- Lists prompts provided by the MCP server.
 
 {% /table %}
 
@@ -83,26 +93,29 @@ The root is the outer most level of the OpenAPI description.
 
 - logging
 - object
-- Logging capabilities configuration.
-  Empty object indicates basic logging support.
+- Indicates logging support.
+  Use an empty object when no additional properties are needed.
 
 ---
 
 - prompts
 - object
-- Prompt capabilities configuration with optional `listChanged` boolean property.
+- Describes prompt support.
+  The optional `listChanged` property indicates whether the server emits notifications when the prompt list changes.
 
 ---
 
 - resources
 - object
-- Resource capabilities configuration with optional `subscribe` and `listChanged` boolean properties.
+- Describes resource support.
+  The optional `subscribe` and `listChanged` properties describe subscription and list-change support.
 
 ---
 
 - tools
 - object
-- Tool capabilities configuration with optional `listChanged` boolean property.
+- Describes tool support.
+  The optional `listChanged` property indicates whether the server emits notifications when the tool list changes.
 
 {% /table %}
 
@@ -118,43 +131,43 @@ The root is the outer most level of the OpenAPI description.
 
 - name
 - string
-- **REQUIRED.** The name of the tool.
+- **REQUIRED.** Identifies the tool.
 
 ---
 
 - title
 - string
-- Title of the tool.
+- Provides a human-readable title for the tool.
 
 ---
 
 - description
 - string
-- **REQUIRED.** Description of what the tool does.
+- Describes what the tool does.
 
 ---
 
 - tags
-- [ string ]
-- Tags for the tool.
+- [string]
+- Groups or categorizes the tool.
 
 ---
 
 - inputSchema
 - object
-- JSON Schema describing the expected input parameters for the tool.
+- Defines the tool input with JSON Schema.
 
 ---
 
 - outputSchema
 - object | string
-- JSON Schema describing the tool's output, or a reference to a schema component.
+- Defines the tool output with JSON Schema or a schema reference.
 
 ---
 
 - security
-- [ object ]
-- Security requirements for the tool, following OpenAPI security scheme format.
+- [object]
+- Defines security requirements using the OpenAPI Security Requirement Object format.
 
 {% /table %}
 
@@ -170,28 +183,27 @@ The root is the outer most level of the OpenAPI description.
 
 - name
 - string
-- **REQUIRED.** The name of the resource.
+- **REQUIRED.** Identifies the resource.
 
 ---
 
 - description
 - string
-- Description of the resource.
+- Describes the resource.
 
 ---
 
 - uri
 - string
-- URI template for accessing the resource.
+- Provides the URI or URI template used to access the resource.
 
 ---
 
 - mimeType
 - string
-- MIME type of the resource content.
+- Identifies the MIME type of the resource content.
 
 {% /table %}
-
 
 ### Prompt object
 
@@ -205,31 +217,32 @@ The root is the outer most level of the OpenAPI description.
 
 - name
 - string
-- **REQUIRED.** The name of the prompt.
+- **REQUIRED.** Identifies the prompt.
 
 ---
 
 - title
 - string
-- Title of the prompt.
+- Provides a human-readable title for the prompt.
 
 ---
 
 - description
 - string
-- Description of the prompt.
+- Describes the prompt.
 
 ---
 
 - arguments
-- [ [Argument object](#argument-object) ]
-- Array of arguments for the prompt.
+- [[Argument object](#argument-object)]
+- Lists arguments accepted by the prompt.
 
 {% /table %}
 
 ### Argument object
 
 {% table %}
+
 - Option
 - Type
 - Description
@@ -238,125 +251,159 @@ The root is the outer most level of the OpenAPI description.
 
 - name
 - string
-- **REQUIRED.** The name of the argument.
+- **REQUIRED.** Identifies the argument.
 
 ---
 
 - description
 - string
-- Description of the argument.
+- Describes the argument.
 
 ---
 
 - required
 - boolean
-- Whether the argument is required.
+- Indicates whether the argument is required.
+  Default: `false`.
 
 {% /table %}
 
+## Docs MCP control object
+
+Add `x-mcp` to the OpenAPI Info Object to control whether the Docs MCP server can make requests to hosts declared by the description.
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- gateway
+- [API request object](#api-request-object)
+- Explicitly allows or prevents API requests for this description.
+  An empty object allows requests for an RBAC-protected description.
+
+{% /table %}
+
+### API request object
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- hide
+- boolean
+- Prevents API requests for the description when set to `true`.
+  An empty object or `hide: false` allows requests for an RBAC-protected description.
+
+{% /table %}
+
+Descriptions available to the `anonymous` team allow API requests by default.
+Descriptions protected by content RBAC require the `gateway` object before requests are allowed.
+For the complete eligibility and host rules, see [Allow AI clients to call APIs](../../../customization/mcp-server/allow-api-requests.md).
+
 ## Examples
 
-### `x-mcp` example
+### Describe an MCP server
 
-Metadata keys can be any string.
-The values can be any primitive type, or a list of strings.
+The following root-level extension describes an MCP server and its tools for API-reference consumers:
 
-The following is an example of an `x-mcp` described within an OpenAPI description file:
-
-```yaml {% title="api-clients-mcp.yaml" %}
-openapi: 3.2.0
+```yaml {% title="openapi.yaml" %}
+openapi: 3.1.0
 info:
-  version: 1.0.0
   title: API Clients MCP
-  license:
-    name: MIT
-servers:
-  - url: http://localhost:8080/mcp
-
-paths: {} # no paths
+  version: 1.0.0
+paths: {}
 
 x-mcp:
   protocolVersion: '2025-06-18'
+  servers:
+    - url: https://mcp.example.com/mcp
+      description: Production MCP server
   capabilities:
-    logging: {}
-    prompts:
-      listChanged: true
-    resources:
-      subscribe: true
     tools:
       listChanged: true
   tools:
-    # this is the output of the list/tools call to the MCP
-    - name: clients/get
-      description: Get a list of clients with all scopes in a service domain.
-      inputSchema:
-        type: object
-        properties:
-          clientId:
-            type: string
-            description: The ID of the client to get.
-      outputSchema:
-        $ref: '#/components/schemas/Client'
-      # we added the OAuth2 security scheme
-      security:
-        - OAuth2:
-            scopes:
-              read: Read access
     - name: clients/list
-      description: Get a list of clients with all scopes in a service domain.
+      description: List API clients.
       inputSchema:
         type: object
         properties:
-          paginationToken:
-            type: string
-            description: The pagination token to get the next page of clients.
+          page:
+            type: integer
+            minimum: 1
       outputSchema:
         type: object
         properties:
           clients:
             type: array
             items:
-              $ref: '#/components/schemas/Client'
-          paginationToken:
-            type: string
-            description: The pagination token to get the next page of clients.
+              type: object
   resources: []
-
-components:
-  securitySchemes:
-    OAuth2:
-      type: oauth2
-      flows:
-        clientCredentials:
-          tokenUrl: http://localhost:8080/mcp/token
-          scopes:
-            read: Read access
-            write: Write access
-  schemas:
-    Client:
-      type: object
-      properties:
-        clientId:
-          type: number
-          description: The ID of the client.
-        scopes:
-          type: array
-          items:
-            type: string
-          description: The scopes of the client.
-      required:
-        - clientId
-        - scopes
+  prompts: []
 ```
 
 The data is presented similar to the following screenshot:
 
 {% img
-  alt="Example MCP docs"
+  alt="API reference with MCP server metadata and tools"
   src="./images/mcp-docs-example.png"
   withLightbox=true
 /%}
 
+### Allow API requests for a protected description
+
+The following Info Object extension opts an RBAC-protected description into API requests:
+
+```yaml {% title="openapi.yaml" %}
+openapi: 3.1.0
+info:
+  title: Orders API
+  version: 1.0.0
+  x-mcp:
+    gateway: {}
+servers:
+  - url: https://api.example.com
+paths:
+  /orders:
+    get:
+      summary: List orders
+      responses:
+        '200':
+          description: Successful response
+```
+
+### Prevent API requests
+
+The following Info Object extension prevents API requests for a description:
+
+```yaml {% title="openapi.yaml" %}
+openapi: 3.1.0
+info:
+  title: Orders API
+  version: 1.0.0
+  x-mcp:
+    gateway:
+      hide: true
+servers:
+  - url: https://api.example.com
+paths:
+  /orders:
+    get:
+      summary: List orders
+      responses:
+        '200':
+          description: Successful response
+```
+
 ## Resources
 
-- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation
+- **[Supported OpenAPI extensions](./index.md)** - Browse the OpenAPI extensions supported by Redocly
+- **[Docs MCP server](../../../customization/mcp-server/index.md)** - Understand Docs MCP capabilities and access control
+- **[Allow AI clients to call APIs](../../../customization/mcp-server/allow-api-requests.md)** - Configure eligibility and allowed server hosts

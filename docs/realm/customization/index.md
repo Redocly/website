@@ -107,6 +107,10 @@ Configure custom request values for API documentation and interactive features.
 Build serverless functions to extend your project with custom APIs and data processing.
 {% /card %}
 
+{% card title="Docs MCP server" icon="server" to="./mcp-server/index.md" %}
+Connect AI clients to your documentation and selected API server hosts.
+{% /card %}
+
 {% /cards %}
 
 ## Get started with customization
@@ -123,4 +127,3 @@ Build serverless functions to extend your project with custom APIs and data proc
 - **[Built-in components library](./react-components/list/index.md)** - Browse and learn to use Redocly's built-in React components in your custom pages and templates
 - **[Component ejection tutorial](./eject-components/eject-components-tutorial/index.md)** - Step-by-step hands-on guide to ejecting and customizing built-in components
 - **[Attribute resolvers guide](./markdoc-attribute-resolvers/index.md)** - Advanced Markdoc customization using attribute resolvers for tag processing and transformation
-

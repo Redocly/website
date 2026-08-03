@@ -15,8 +15,11 @@ info:
     **Base URL:** The Docs MCP server is available at `/mcp` on your project host. If your project is deployed under a path prefix, prepend that prefix to `/mcp`.
 
     {% admonition type="info" %}
-    For setup and configuration guidance, see [Model Context Protocol server](./index.md) and [MCP configuration reference](../../config/mcp.md).
+    For setup and configuration guidance, see [Docs MCP server](./index.md) and [MCP configuration reference](../../config/mcp.md).
     {% /admonition %}
+
+    The live MCP tool interface is discovered dynamically and can vary by project capability.
+    This description documents the underlying Docs MCP capabilities; connected clients should use protocol discovery as the source of truth for available tool names and schemas.
 
     ## Authentication
 
