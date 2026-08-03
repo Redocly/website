@@ -188,7 +188,7 @@ x-mcp:
       tags:
         - API Catalog
     - name: search
-      description: Search across the documentation to fetch relevant content for a given query
+      description: Search across the documentation to fetch relevant content for a given query. Returns the most relevant results first; raise `limit` or pass the returned cursor to explore deeper when the first results are not enough.
       inputSchema:
         type: object
         additionalProperties: false
@@ -200,6 +200,20 @@ x-mcp:
           product:
             type: string
             description: Optional product name to filter search results by specific product.
+          limit:
+            type: integer
+            description: Number of results to return.
+            minimum: 1
+            maximum: 20
+            default: 5
+          category:
+            type: string
+            description: Restrict results to one of the project's page categories, matched case-insensitively — `all` (default) applies no filter. The published tool schema lists the project's actual categories (for example `api reference`, `documentation`, or custom ones) as allowed values, and each result reports its page's category.
+            maxLength: 100
+            default: all
+          cursor:
+            type: string
+            description: Opaque pagination cursor from a previous search result. Pass it with the same query and category to fetch the next page.
         required:
           - query
       outputSchema:
