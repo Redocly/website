@@ -207,7 +207,8 @@ The following example file structure is for a Redocly project that includes thre
 
 {% /tabs %}
 
-*(Note: This is an illustrative example. Your specific structure might vary based on configuration and content organization.)*
+*(Note: This is an illustrative example.
+Your specific structure might vary based on configuration and content organization.)*
 
 ## Core configuration
 

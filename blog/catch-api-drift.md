@@ -6,7 +6,7 @@ seo:
   title: Catch API drift with the new proxy and drift commands
   description: Record real HTTP traffic with the proxy command, then let the drift command tell you where your API and your OpenAPI description disagree.
 author: adam-sobaniec
-publishedDate: "2026-07-08"
+publishedDate: "2026-07-21"
 categories:
   - redocly:redocly-cli
   - redocly:product-updates

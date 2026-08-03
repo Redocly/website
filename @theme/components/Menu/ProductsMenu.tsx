@@ -35,9 +35,8 @@ export function ProductsMenu({
     items[i + 1].sublabel = descriptions[i];
   }
 
-  const products = getProducts(items);
-  const openSourceTools = getOpenSourceTools(items);
-  
+  const products = getSectionItems(items, 'Products');
+  const openSourceTools = getSectionItems(items, 'Open Source');
   return (
     <MenuWrapper className={className} data-component-name="Menu/ProductsMenu">
       <div>
@@ -67,7 +66,7 @@ export function ProductsMenu({
             </>
           );
         })}
-        {openSourceTools && (
+        {openSourceTools.length > 0 && (
           <OpenSourceToolsWrapper>
             <OpenSourceSeparator>
               <img src={require('../Navbar/images/open-source-icon.svg')} />
@@ -106,32 +105,19 @@ export function ProductsMenu({
   );
 }
 
-const getProducts = (arr) => {
-  const separatorsIndices = arr
-    .map((obj, index) => (obj.type === 'separator' ? index : null))
-    .filter((index) => index !== null);
+const getSectionItems = (arr: ItemState[], separatorLabel: string) => {
+  const start = arr.findIndex(
+    (item) => item.type === 'separator' && item.label === separatorLabel,
+  );
 
-  if (separatorsIndices.length < 2) {
-    return [];
-  }
-  const start = separatorsIndices[0];
-  const end = separatorsIndices[separatorsIndices.length - 1];
-
-  return arr.slice(start + 1, end);
-};
-
-const getOpenSourceTools = (arr) => {
-  const separatorsIndices = arr
-    .map((obj, index) => (obj.type === 'separator' ? index : null))
-    .filter((index) => index !== null);
-
-  if (separatorsIndices.length < 2) {
+  if (start === -1) {
     return [];
   }
 
-  const end = separatorsIndices[separatorsIndices.length - 1];
+  const rest = arr.slice(start + 1);
+  const nextSeparatorIndex = rest.findIndex((item) => item.type === 'separator');
 
-  return arr.slice(end + 1, arr.length);
+  return nextSeparatorIndex === -1 ? rest : rest.slice(0, nextSeparatorIndex);
 };
 
 const OpenSourceItem = styled(MenuItem)<{isLast?: boolean}>`
