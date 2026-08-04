@@ -22,6 +22,9 @@ Use the `aiAssistant` configuration to:
 - set the built-in prompt text
 - add an **Ask AI** button
 
+The `aiAssistant` configuration covers presentation options only.
+Integrations — the embed origin allowlist, support escalation providers, and external MCP servers — are configured in Reunite, on the **AI Assistant** tab of the Reunite Agent analytics page, so credentials never live in `redocly.yaml`.
+
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "aiAssistant"} /%}
 
 ## Supported content

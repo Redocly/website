@@ -15,32 +15,28 @@ excludeFromSearch: true
 The AI assistant web component embeds the Redocly AI assistant on any web page with a single `<script>` tag and a custom HTML element.
 It's a standard custom element, so you can add it to any site or app, regardless of framework.
 
-{% admonition type="info" name="Early access" %}
-The AI assistant web component is an **early access** release.
-The API, attributes, and CDN URL may change in future versions.
-
-For now, the assistant works only with **publicly accessible docs**.
+{% admonition type="info" name="Public docs only" %}
+The assistant works only with **publicly accessible docs**.
+Support for docs behind SSO or role-based access is planned.
 {% /admonition %}
 
 ## Before you begin
 
-The assistant sends questions from the host page to your project's `_ask-ai` endpoint, usually across origins.
-Set the `REDOCLY_CORS_ORIGINS` environment variable on your project to a comma-separated list of origins allowed to call the assistant:
+The assistant sends questions from the host page to your project's `_ai-assistant` endpoint, usually across origins.
+Configure the embed in Reunite: open the **Reunite Agent analytics** page, select the **AI Assistant** tab, choose your project, then enable embedding and list every origin allowed to embed the assistant — for example `https://docs.example.com` and `https://www.example.com`.
 
-```bash
-REDOCLY_CORS_ORIGINS=https://docs.example.com,https://www.example.com
-```
+Each origin must exactly match the scheme, host, and port of a page that embeds the component.
+If the embedding page's origin isn't on the allowlist, the request is rejected and the assistant can't respond.
 
-Each value in the comma-separated list must exactly match the origin (scheme, host, and port) of a page that embeds the component.
+The same tab configures:
 
-{% admonition type="warning" name="Don't use wildcards" %}
-Never set `REDOCLY_CORS_ORIGINS` to `*`.
-A wildcard lets any website embed your assistant and consume your project's AI search quota and tokens.
-List only the origins you trust.
+- **Support escalation** — the helpdesk the assistant files tickets in (Front, Intercom, Zendesk, ClearFeed, a signed webhook, or email) when a visitor asks for a human.
+- **MCP servers** — your own MCP servers (over HTTPS) whose tools the assistant can call to answer account- or system-specific questions.
+
+{% admonition type="info" name="Legacy environment variable" %}
+Projects that configured `REDOCLY_CORS_ORIGINS` during early access keep working; origins from the environment variable and from the AI Assistant settings are combined.
+New embeds should use the AI Assistant settings.
 {% /admonition %}
-
-If the embedding page's origin isn't listed in `REDOCLY_CORS_ORIGINS`, the browser blocks the request to `api-url` and the assistant can't respond.
-To learn how to work with environment variables, see: [Manage environment variables](../reunite/project/env-variables.md#manage-environment-variables)
 
 ## Add the web component
 
@@ -56,12 +52,14 @@ It registers the `<redocly-ai-assistant>` element and the `window.RedoclyAssista
 <script src="https://cdn.redocly.com/ai-assistant/releases/latest/main.js"></script>
 
 <redocly-ai-assistant
-  api-url="https://your-project.com/_ask-ai"
+  api-url="https://your-project.com/_ai-assistant"
   welcome-message="Hi! I'm the Acme docs bot. Ask me anything."
 ></redocly-ai-assistant>
 ```
 
-Set `api-url` to your project's URL followed by `/_ask-ai`, for example `https://your-project.com/_ask-ai`.
+Set `api-url` to your project's URL followed by `/_ai-assistant`, for example `https://your-project.com/_ai-assistant`.
+With this endpoint the conversation state lives on the server: multi-turn context survives page navigations, answers can reference results from earlier turns, and conversations appear in the project's AI Assistant analytics.
+The legacy `/_ask-ai` endpoint keeps working for existing embeds.
 
 By default, the component renders a floating **Ask AI** button.
 To hide it and control the assistant from your own UI, add the [`trigger-hide`](#properties) attribute and use the [programmatic control API](#control-the-assistant-programmatically).
@@ -82,7 +80,7 @@ Set these attributes on the `<redocly-ai-assistant>` element.
 
 - api-url
 - string
-- URL of the `_ask-ai` endpoint the assistant sends questions to.
+- URL of the `_ai-assistant` endpoint the assistant sends questions to.
   Required.
 ---
 
@@ -143,7 +141,7 @@ You can use it instead of the matching HTML attributes or alongside them:
 
 ```js
 window.RedoclyAssistant.setConfig({
-  apiUrl: 'https://your-project.com/_ask-ai', // Can be set here instead of the api-url attribute
+  apiUrl: 'https://your-project.com/_ai-assistant', // Can be set here instead of the api-url attribute
   locale: 'fr',
 });
 ```
