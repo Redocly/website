@@ -112,7 +112,11 @@ export default async function (request: Request, context: ApiFunctionsContext): 
   const body = raw as Record<string, unknown>;
   const agent = sanitizeString(body.agent, MAX_AGENT_NAME);
   const pageUrlString = sanitizeString(body.url, MAX_PATH);
-  const targetFeature = sanitizeString(body.target_feature, MAX_TARGET_FEATURE);
+  // `target_feature` is the legacy name from the first version of the llms.txt
+  // instruction. Agents that read a page before the rename still send it.
+  const targetFeature =
+    sanitizeString(body.targetFeature, MAX_TARGET_FEATURE) ??
+    sanitizeString(body.target_feature, MAX_TARGET_FEATURE);
   const summary = sanitizeString(body.summary, MAX_COMMENT_LENGTH);
   const details = sanitizeString(body.details, MAX_COMMENT_LENGTH);
 
@@ -124,7 +128,7 @@ export default async function (request: Request, context: ApiFunctionsContext): 
     errors.push('`url` is required');
   }
   if (!targetFeature) {
-    errors.push('`target_feature` is required');
+    errors.push('`targetFeature` is required');
   }
   if (!summary) {
     errors.push('`summary` is required');
