@@ -108,14 +108,23 @@ plugins:
 
 ## Add the WSDL file to your project
 
-If you only have one or two WSDL files, and you do not have a `sidebars.yaml` file in your project, to add SOAP API documentation to your project, place the WSDL files in your project, either at the root or in a folder.
-Afterward, the SOAP reference documentation is automatically added to your sidebar when you run your project.
+To add SOAP API documentation to your project, place the WSDL files in your project, either at the root or in a folder.
+When you run your project, each WSDL file is served as reference documentation with its own automatically generated sidebar.
 
-If you have a `sidebars.yaml` file in your project, you must add your WSDL file to your `sidebars.yaml` file for it to be included in your sidebar navigation menu.
+{% admonition type="info" name="The file path sets the reference URL" %}
+The API reference's URL path matches the location of its WSDL file in your project, with the file extension removed.
+For example, `apis/service.wsdl` is served at `/apis/service`.
 
-## Use the sidebars.yaml file
+To change the URL, rename or move the WSDL file to the path you want it served from.
+For more information, see [file-based routing](../project-structure.md#file-based-routing).
+{% /admonition %}
 
-If you have a `sidebars.yaml` file in your project, you must add any files, including WSDL files, you want displayed in your sidebar to it.
+To place the reference inside a custom sidebar alongside your other content, with control over its order and grouping, add your WSDL file to a `sidebars.yaml` file.
+You can also link to the reference from anywhere, such as the [navbar](../../config/navbar.md), an in-page link, a card, or an [API catalog](../../config/catalog-classic.md).
+
+## Add API reference to your site navigation
+
+A `sidebars.yaml` file includes only the items you add to it, so add any files you want displayed in that sidebar, including WSDL files.
 For more information on configuring a `sidebars.yaml` file for your project, see [Sidebar configuration](../../navigation/sidebars.md).
 
 To add a WSDL file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the WSDL file to your `sidebars.yaml` file, as in the following example:
@@ -124,8 +133,6 @@ To add a WSDL file to your project with a `sidebars.yaml` file, add the `page` a
 - page: apis/sample-api.wsdl
   label: Sample API
 ```
-
-If you have multiple API descriptions, you can group them to better organize your sidebar navigation menu.
 
 ### Use the `group` key for multiple descriptions
 
@@ -148,3 +155,4 @@ To add multiple WSDL files using `group` keys, update your `sidebars.yaml` file 
 
 - **[API catalog configuration](../../config/catalog-classic.md)** - Organize multiple API descriptions including SOAP services with catalogs for better user experience and navigation
 - **[Sidebar navigation setup](../../navigation/sidebars.md)** - Configure navigation structures to help users discover and access your SOAP API documentation content
+- **[Navbar configuration](../../config/navbar.md)** - Add top-level links to your API references and other pages

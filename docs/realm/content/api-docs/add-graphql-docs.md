@@ -17,7 +17,8 @@ The resulting documentation shows both the high-level elements such as queries a
 Give your users the tools they need to make the most of your GraphQL APIs with comprehensive reference documentation.
 Either add individual schema files to your project alongside your other content, or use a [classic catalog](../../config/catalog-classic.md) to showcase your GraphQL APIs alongside OpenAPI and AsyncAPI APIs.
 
-If you are using a `sidebars.yaml` file to organize your sidebar navigation menu, you must add your GraphQL API descriptions to it for them to display on your sidebar navigation menu.
+Each GraphQL schema is served at its own URL with its own automatically generated reference sidebar, whether or not you use a `sidebars.yaml` file.
+Use a `sidebars.yaml` file only when you want to place the reference alongside your other content with control over its order and grouping.
 
 ## Before you begin
 
@@ -25,19 +26,28 @@ Make sure you have the following:
 
 - GraphQL schema files that use the SDL format (`.graphql` or `.gql`)
 
-## Include GraphQL schema in your project
+## Add a GraphQL schema to your project
 
-If you only have one or two GraphQL schema files, and you do not have a `sidebars.yaml` file in your project, to add a GraphQL schema to your project, place the file or files in your project either at the root or in a folder.
-Afterward, the GraphQL reference documentation is automatically added to your sidebar when you run your project.
+To add a GraphQL schema to your project, place the file or files in your project either at the root or in a folder.
+When you run your project, each schema is served as reference documentation with its own automatically generated sidebar, built from the queries, mutations, and types in the schema.
 For example, add a GraphQL schema file as `apis/sample-schema.graphql`, and then check the path `/apis/sample-schema/` in your project to see the documentation.
 
-If you have a `sidebars.yaml` file in your project, you must add your GraphQL schema to your `sidebars.yaml` file for it to be included in your sidebar navigation menu.
+{% admonition type="info" name="The file path sets the reference URL" %}
+The API reference's URL path matches the location of its GraphQL schema file in your project, with the file extension removed.
+For example, `apis/schema.graphql` is served at `/apis/schema`.
+
+To change the URL, rename or move the GraphQL schema file to the path you want it served from.
+For more information, see [file-based routing](../project-structure.md#file-based-routing).
+{% /admonition %}
+
+To place the reference inside a custom sidebar alongside your other content, with control over its order and grouping, add your GraphQL schema to a `sidebars.yaml` file.
+You can also link to the reference from anywhere, such as the [navbar](../../config/navbar.md), an in-page link, a card, or an [API catalog](../../config/catalog-classic.md).
 
 To customize the API overview with title, description, and contact information, see [GraphQL info configuration](../../config/graphql/info.md).
 
-## Add schema to sidebar
+## Add API reference to your site navigation
 
-If you have a `sidebars.yaml` file in your project, you must add any files, including GraphQL schema files, you want displayed in your sidebar to it.
+A `sidebars.yaml` file includes only the items you add to it, so add any files you want displayed in that sidebar, including GraphQL schema files.
 For more information on configuring a `sidebars.yaml` file for your project, see [Sidebar configuration](../../navigation/sidebars.md).
 
 To add a GraphQL schema file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the GraphQL schema file to your `sidebars.yaml` file, as in the following example:
@@ -47,8 +57,6 @@ To add a GraphQL schema file to your project with a `sidebars.yaml` file, add th
 - page: sample-schema.graphql
   label: Sample Schema
 ```
-
-If you have multiple API descriptions, you can group them to better organize your sidebar navigation menu.
 
 ### Use the `group` key for multiple schemas
 
@@ -72,3 +80,4 @@ To add multiple GraphQL schemas using `group` keys, update your `sidebars.yaml` 
 - **[API catalog configuration](../../config/catalog-classic.md)** - Organize multiple API descriptions including GraphQL schemas with catalogs for better user experience and navigation
 - **[Sidebar navigation setup](../../navigation/sidebars.md)** - Configure navigation structures to help users discover and access your GraphQL API documentation content
 - **[GraphQL configuration reference](../../config/graphql/index.md)** - Complete customization options for GraphQL schema rendering and documentation behavior
+- **[Navbar configuration](../../config/navbar.md)** - Add top-level links to your API references and other pages

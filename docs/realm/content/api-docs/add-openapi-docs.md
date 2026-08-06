@@ -11,50 +11,52 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Transform your OpenAPI description YAML or JSON file into interactive documentation by adding it to your project.
-You can add one or multiple OpenAPI descriptions to your project.
-
-Either add individual description files to your project alongside your other content, or use a [classic catalog](../../config/catalog-classic.md) to showcase your REST APIs alongside GraphQL and AsyncAPI APIs.
-
-If you are using a `sidebars.yaml` file to organize your sidebar navigation menu, you must add your OpenAPI descriptions to it for them to display on your sidebar navigation menu.
+Transform an OpenAPI description in YAML or JSON into interactive reference documentation by adding it to your project.
+You can add one or more descriptions.
 
 ## Before you begin
 
-Make sure you have the following:
+Make sure you have an OpenAPI description file in YAML or JSON format.
+All versions of OpenAPI are supported.
 
-- an OpenAPI description file or files in YAML or JSON format (all versions of OpenAPI are supported)
+## Add an OpenAPI description to your project
 
-## Include OpenAPI files in your project
+Place the OpenAPI description file anywhere in your project, either at the root or in a folder.
+When you run your project, the file is detected automatically and served as reference documentation with its own sidebar, which is generated from the tags and operations in the description.
+No extra configuration is required.
 
-If you only have one or two OpenAPI description files, and you do not have a `sidebars.yaml` file in your project, to add an OpenAPI description to your project, place the file or files in your project either at the root or in a folder.
-Afterward, the OpenAPI reference documentation is automatically added to your sidebar when you run your project.
+For example, add `apis/sample-api.yaml`, then open `/apis/sample-api` to see the generated reference.
 
-If you have a `sidebars.yaml` file in your project, you must add your OpenAPI description to your `sidebars.yaml` file for it to be included in your sidebar navigation menu.
+{% admonition type="info" name="The file path sets the reference URL" %}
+The API reference's URL path matches the location of its OpenAPI description file in your project, with the file extension removed.
+For example, `apis/museum.yaml` is served at `/apis/museum`.
 
-## Use the sidebars.yaml file
+To change the URL, rename or move the OpenAPI description file to the path you want it served from.
+For more information, see [file-based routing](../project-structure.md#file-based-routing).
+{% /admonition %}
 
-If you have a `sidebars.yaml` file in your project, you must add any files, including OpenAPI descriptions, you want displayed in your sidebar navigation menu to it.
-For more information on configuring a `sidebars.yaml` file for your project, see [Sidebar configuration](../../navigation/sidebars.md).
+## Add API reference to your site navigation
 
-To add an OpenAPI file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the OpenAPI description to your `sidebars.yaml` file, as in the following example:
+The reference is served at its own URL and has its own automatically generated sidebar, so it's reachable as soon as you add it, with no navigation configuration required.
 
-```yaml {% title="sidebars.yaml" %}
-- page: apis/sample-api.yaml
-  label: Sample API
+To help people find it, link to it from wherever you want.
+For example, add it to the [navbar](../../config/navbar.md) with a `page` that points at the OpenAPI file:
+
+```yaml {% title="redocly.yaml" %}
+navbar:
+  items:
+    - page: apis/sample-api.yaml
+      label: Sample API
 ```
 
-If you have multiple API descriptions, you can group them to better organize your sidebar navigation menu.
+You can also link to it from an in-page text link, a card, or an [API catalog](../../config/catalog-classic.md).
 
-### Use the `group` key for multiple descriptions
-
-If you have multiple OpenAPI descriptions, you can use a `group` key for each description so that the different endpoints are only revealed when selected.
-
-To add multiple OpenAPI descriptions using `group` keys, update your `sidebars.yaml` file, as in the following example:
+To place the reference inside a custom sidebar alongside your other content, with control over its order and grouping, add it to a [`sidebars.yaml`](../../navigation/sidebars.md) file:
 
 ```yaml {% title="sidebars.yaml" %}
 - group: Sample product 1 API
   items:
-    - page: apis/sample-api-1.yaml
+    - page: apis/sample-product-1.yaml
       label: Sample product 1 API
 - group: Sample product 2 API
   items:
@@ -62,10 +64,13 @@ To add multiple OpenAPI descriptions using `group` keys, update your `sidebars.y
       label: Sample product 2 API
 ```
 
+For all available options, see [Sidebar configuration](../../navigation/sidebars.md).
+
 ## Resources
 
-- **[API catalog configuration](../../config/catalog-classic.md)** - Organize multiple API descriptions with catalogs for better user experience and navigation between different APIs
-- **[Sidebar navigation setup](../../navigation/sidebars.md)** - Configure navigation structures to help users discover and access your API documentation content
-- **[Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay)** - Learn about the interactive API testing features and capabilities used in API reference documentation
-- **[OpenAPI extensions](./openapi-extensions/index.md)** - Use custom extensions in your API descriptions to create richer, more detailed documentation with enhanced features
-- **[OpenAPI configuration reference](../../config/openapi/index.md)** - Complete configuration options for customizing OpenAPI description rendering, styling, and behavior in your reference documentation
+- **[Sidebar configuration](../../navigation/sidebars.md)** - Organize and customize the sidebar navigation for your API references and other content
+- **[Navbar configuration](../../config/navbar.md)** - Add top-level links to your API references and other pages
+- **[API catalog configuration](../../config/catalog-classic.md)** - Showcase multiple REST, GraphQL, and AsyncAPI descriptions together in a catalog
+- **[Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay)** - Learn about the interactive API testing features used in reference documentation
+- **[OpenAPI extensions](./openapi-extensions/index.md)** - Use custom extensions to create richer, more detailed reference documentation
+- **[OpenAPI configuration reference](../../config/openapi/index.md)** - Customize how OpenAPI descriptions are rendered, styled, and behave
