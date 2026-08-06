@@ -1,4 +1,20 @@
 '@redocly/realm':
+  0.136.0-next.10:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.44.2`.
+        - Fixed rate limit enforcement for the experimental gateway to work correctly across server instances.
+        - Fixed an issue in API docs where links to schema definitions inside operations were displayed as regular text instead of links.
+    dependencies:
+      '@redocly/api-docs': 0.1.0-next.2
+      '@redocly/openapi-docs': 3.24.0-next.9
+      '@redocly/realm-asyncapi-sdk': 0.14.0-next.3
+      '@redocly/theme': 0.68.0-next.6
+      '@redocly/portal-plugin-mock-server': 0.21.0-next.9
+      '@redocly/asyncapi-docs': 1.13.0-next.9
+      '@redocly/graphql-docs': 1.13.0-next.9
   0.136.0-next.9:
     timestamp: 1785930987000
     changes:
@@ -6741,6 +6757,21 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.136.0-next.10:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.44.2`.
+        - Fixed rate limit enforcement for the experimental gateway to work correctly across server instances.
+    dependencies:
+      '@redocly/api-docs': 0.1.0-next.2
+      '@redocly/openapi-docs': 3.24.0-next.9
+      '@redocly/realm-asyncapi-sdk': 0.14.0-next.3
+      '@redocly/theme': 0.68.0-next.6
+      '@redocly/portal-plugin-mock-server': 0.21.0-next.9
+      '@redocly/asyncapi-docs': 1.13.0-next.9
+      '@redocly/graphql-docs': 1.13.0-next.9
   0.136.0-next.9:
     timestamp: 1785930987000
     changes:
@@ -12552,6 +12583,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.136.0-next.10:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.44.2`.
+        - Fixed rate limit enforcement for the experimental gateway to work correctly across server instances.
+    dependencies:
+      '@redocly/api-docs': 0.1.0-next.2
+      '@redocly/openapi-docs': 3.24.0-next.9
+      '@redocly/realm-asyncapi-sdk': 0.14.0-next.3
+      '@redocly/theme': 0.68.0-next.6
+      '@redocly/portal-plugin-mock-server': 0.21.0-next.9
+      '@redocly/asyncapi-docs': 1.13.0-next.9
+      '@redocly/graphql-docs': 1.13.0-next.9
   0.136.0-next.9:
     timestamp: 1785930987000
     changes:
@@ -18353,6 +18399,22 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.136.0-next.10:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.44.2`.
+        - Fixed rate limit enforcement for the experimental gateway to work correctly across server instances.
+        - Fixed an issue in API docs where links to schema definitions inside operations were displayed as regular text instead of links.
+    dependencies:
+      '@redocly/api-docs': 0.1.0-next.2
+      '@redocly/openapi-docs': 3.24.0-next.9
+      '@redocly/realm-asyncapi-sdk': 0.14.0-next.3
+      '@redocly/theme': 0.68.0-next.6
+      '@redocly/portal-plugin-mock-server': 0.21.0-next.9
+      '@redocly/asyncapi-docs': 1.13.0-next.9
+      '@redocly/graphql-docs': 1.13.0-next.9
   0.136.0-next.9:
     timestamp: 1785930987000
     changes:
@@ -24210,6 +24272,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.68.0-next.6:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue in API docs where links to schema definitions inside operations were displayed as regular text instead of links.
+    dependencies: {}
   0.68.0-next.5:
     timestamp: 1785492846000
     changes:
@@ -27280,6 +27349,14 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.24.0-next.9:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.44.2`.
+    dependencies:
+      '@redocly/replay': 0.27.0-next.8
   3.24.0-next.8:
     timestamp: 1785930987000
     changes:
@@ -31294,6 +31371,14 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.13.0-next.9:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.24.0-next.9
+      '@redocly/theme': 0.68.0-next.6
   1.13.0-next.8:
     timestamp: 1785930987000
     changes:
@@ -32588,6 +32673,16 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/api-docs':
+  0.1.0-next.2:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.44.2`.
+        - Fixed an issue in API docs where links to schema definitions inside operations were displayed as regular text instead of links.
+    dependencies:
+      '@redocly/replay': 0.27.0-next.8
+      '@redocly/theme': 0.68.0-next.6
   0.1.0-next.1:
     timestamp: 1785930987000
     changes:
@@ -32611,6 +32706,13 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.10.0-next.3:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.44.2`.
+    dependencies: {}
   0.10.0-next.2:
     timestamp: 1785492846000
     changes:
@@ -33605,6 +33707,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.19.0-next.10:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.136.0-next.10
+      '@redocly/redoc': 0.136.0-next.10
+      '@redocly/redoc-reef': 0.136.0-next.10
+      '@redocly/redoc-revel': 0.136.0-next.10
+      '@redocly/theme': 0.68.0-next.6
   1.19.0-next.9:
     timestamp: 1785930987000
     changes:
@@ -39124,6 +39237,14 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.21.0-next.9:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.10.0-next.3
+      '@redocly/openapi-docs': 3.24.0-next.9
   0.21.0-next.8:
     timestamp: 1785930987000
     changes:
@@ -42168,6 +42289,14 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.27.0-next.8:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where requests sent in one Replay tab aborted the in-flight request in another tab.
+    dependencies:
+      '@redocly/theme': 0.68.0-next.6
   0.27.0-next.7:
     timestamp: 1785930987000
     changes:
@@ -44467,6 +44596,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.19.0-next.6:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.68.0-next.6
   0.19.0-next.5:
     timestamp: 1785492846000
     changes:
@@ -46347,6 +46483,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.13.0-next.9:
+    timestamp: 1786010763000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.24.0-next.9
+      '@redocly/theme': 0.68.0-next.6
   1.13.0-next.8:
     timestamp: 1785930987000
     changes:
