@@ -50481,6 +50481,20 @@ reunite:
         - Fixed notification for review failures to correctly indicate Git provider connection issues and to stop appearing after successful sync.
         - Fixed the misaligned close button on the announcement modal.
     dependencies: {}
+  v2026-08-06.3:
+    timestamp: 1786025086000
+    changes:
+      minor:
+        - 'Added seats quota notifications: organization owners receive emails when seat usage reaches 90%, and when the quota is exceeded.'
+      patch:
+        - >-
+          Restricted audit log export endpoints to callers with the `org.auditLogs.read` permission. Organization owners have this permission by
+          default. Ensure your API keys and OAuth2 clients include the `org.auditLogs.read` scope to access audit log export jobs and downloads. Audit
+          log exports remain available on Enterprise plans.
+        - Moved the AI assistant to its own `AI Assistant` section, separate from site search statistics.
+        - Fixed the announcement modal to focus on the close button when opened.
+        - Fixed the pull request page to show the correct status when the Git provider connection fails.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
