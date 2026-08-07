@@ -18,9 +18,9 @@ Realm provides built-in MCP server capabilities that expose your API Docs to AI 
 
 ## Benefits
 
-- **Real-time API guidance** — users receive accurate, contextual help about API endpoints and operations.
-- **Secure API access** — AI assistants can make authenticated requests to act on behalf of a user.
-- **Dynamic documentation** — AI assistants can extract and explain API reference content based on user needs.
+- Real-time API guidance: users receive accurate, contextual help about API endpoints and operations.
+- Secure API access: documentation access control ensures that AI assistants only retrieve content based on the user's specific permissions.
+- Dynamic documentation: AI assistants can extract and explain API reference content based on user needs.
 
 ## Docs MCP server
 
@@ -97,12 +97,21 @@ For more details, see the [RBAC configuration reference](../../config/access/rba
 After you enable the Docs MCP server in [configuration](../../config/mcp.md), it is available at `/mcp` on your project root URL.
 For example: `https://example.com/mcp`.
 
+### Authentication and timeouts
+
+The MCP server requires authentication to ensure that the AI assistant only accesses content the user is authorized to see.
+Authentication is mandatory even if your documentation site is publicly accessible.
+
+The connection between the MCP client and the server uses an authenticated session that remains active during use.
+To optimize security and resources, the session automatically times out after 30 seconds of inactivity.
+If a timeout occurs, the MCP client automatically restores the connection upon the next request, ensuring a continuous experience for the user.
+
 ### Use the MCP server
 
 Users can connect their preferred AI tools that support MCP (for example, Cursor, Claude Code and VS Code) to your MCP server.
 
 1. Enable the MCP server in your [configuration](../../config/mcp.md).
-2. Copy your MCP server URL and add it to your tool.
+1. Copy your MCP server URL and add it to your tool.
 
 After connecting, the tool can access your OpenAPI documentation.
 
@@ -122,36 +131,37 @@ Cursor opens the `mcp.json` file.
 #### Configure the MCP server
 
 1. In `mcp.json`, add your server configuration:
-```json
-{
-  "mcpServers": {
-    "example-mcp": {
-      "url": "https://example.com/mcp"
-    }
-  }
-}
-```
 
-Optionally, you can also pass additional headers that will be sent with each request:
-
-```json
-{
-  "mcpServers": {
-    "example-mcp": {
-      "url": "https://example.com/mcp",
-      "headers": {
-        "Authorization": "Basic MTIzOjEyMw=="
+    ```json
+    {
+      "mcpServers": {
+        "example-mcp": {
+          "url": "https://example.com/mcp"
+        }
       }
     }
-  }
-}
-```
+    ```
+
+    Optionally, you can also pass additional headers that will be sent with each request:
+
+    ```json
+    {
+      "mcpServers": {
+        "example-mcp": {
+          "url": "https://example.com/mcp",
+          "headers": {
+            "Authorization": "Basic MTIzOjEyMw=="
+          }
+        }
+      }
+    }
+    ```
 
 1. Save the `mcp.json` file.
-
 1. Return to MCP settings and confirm the connection.
    If authentication is required, select **Needs login** and complete the sign‑in flow.
-   After connecting, Cursor displays the list of available tools.
+
+After connecting, Cursor displays the list of available tools.
 
 #### Test the Cursor connection
 

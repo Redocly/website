@@ -83,6 +83,20 @@ Additional information and syntax: [Code walkthrough tag](./code-walkthrough/ind
 
 ---
 
+## Diagram
+
+Use the Diagram tag to reference external diagram files (Mermaid, PlantUML, or Excalidraw) and render them in your content.
+
+Additional information and syntax: [Add diagrams](../add-diagram.md)
+
+**Example diagram element:**
+
+```markdoc {% process=false %}
+{% diagram file="./architecture.mermaid" type="mermaid" /%}
+```
+
+---
+
 ## Image tag
 
 Use the Image tag to embed images into your content with various customization options.
