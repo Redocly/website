@@ -74,7 +74,7 @@ curl -o cheesecake.png http://127.0.0.1:4040/menu-item-images/prd_0000000000seed
 
 Press <kbd>`Ctrl`</kbd> + <kbd>`C`</kbd> to stop the proxy and write the HAR file:
 
-```
+```sh
 Captured 6 exchange(s) to ./cafe.har
 ```
 
