@@ -50656,6 +50656,16 @@ reunite:
         - Fixed the announcement modal to focus on the close button when opened.
         - Fixed the pull request page to show the correct status when the Git provider connection fails.
     dependencies: {}
+  v2026-08-07.1:
+    timestamp: 1786102274000
+    changes:
+      minor:
+        - Added an AI search conversation view to the Analytics page, showing each question and answer from a search session in order.
+      patch:
+        - Fixed Azure DevOps OAuth connection failures after token expiration.
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.45.0`.
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.44.2`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
