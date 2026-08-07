@@ -249,7 +249,7 @@ Responses tell the same story as the walkthrough: the deterministic baseline is 
 
 Request bodies are a different story:
 
-|                                     | Deterministic | `--with-ai` |
+| Metric                              | Deterministic | `--with-ai` |
 | ----------------------------------- | ------------- | ----------- |
 | Request properties recovered        | 55.9%         | 61.8%       |
 | Correct types                       | 78.9%         | **100%**    |
