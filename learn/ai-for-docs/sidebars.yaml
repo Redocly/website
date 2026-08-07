@@ -30,6 +30,8 @@
   label: Use AI to build a searchable API catalog for your team
 - page: ai-help-developers-find-understand-apis.md
   label: Use AI to help developers find and understand your APIs faster
+- page: ai-improve-support-ticket-deflection-docs.md
+  label: Use AI to improve support-ticket deflection with your docs
 - page: ai-check-terminology-consistency-across-docs.md
   label: Use AI to check terminology consistency across your docs
 - page: ai-usability-testing.md
