@@ -36,12 +36,6 @@ The **Deployments preview** setting determines whether Reunite generates preview
 - **Any pull request**: enables previews for pull requests against your selected branches, allowing you to review changes before merging
 - **None**: disables preview builds entirely to conserve resources
 
-{% admonition type="info" name="Draft projects" %}
-Draft projects handle production deployments differently than standard live projects.
-While a project is in draft mode, its production deployment uses draft scaling and enforced login.
-To learn more, see [draft projects](./draft-projects.md).
-{% /admonition %}
-
 ### Preview deployments from forked repositories
 
 By default, Reunite does not generate preview deployments for pull requests from forked repositories.
