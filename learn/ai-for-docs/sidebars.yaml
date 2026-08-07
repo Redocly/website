@@ -24,6 +24,8 @@
   label: Use AI to find gaps in your documentation coverage
 - page: ai-detect-drift-docs-live-api.md
   label: Use AI to detect drift between your docs and your live API
+- page: ai-keep-api-monitoring-sync-docs.md
+  label: Use AI to keep API monitoring in sync with your docs
 - page: ai-find-duplicate-underused-apis.md
   label: Use AI to find duplicate and underused APIs in your codebase
 - page: ai-build-searchable-api-catalog.md
