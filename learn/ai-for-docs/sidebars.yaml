@@ -20,6 +20,8 @@
   label: Use AI to review your docs navigation structure
 - page: ai-enforce-api-style-guide-at-scale.md
   label: Use AI to enforce your API style guide at scale
+- page: ai-enforce-rest-api-naming-conventions.md
+  label: Use AI to enforce REST API naming conventions before you ship
 - page: ai-find-gaps-documentation-coverage.md
   label: Use AI to find gaps in your documentation coverage
 - page: ai-detect-drift-docs-live-api.md
