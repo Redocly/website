@@ -247,7 +247,7 @@ Highlight a specific line using `[!code highlight]`:
 ````markdoc {% process=false %}
 ```js
 function test() {
-  console.log('Hello World!'); // [!code highlight] [!code highlight]
+  console.log('Hello World!'); // [\!code highlight]
 }
 ```
 ````
@@ -264,7 +264,7 @@ Highlight multiple consecutive lines:
 
 ````markdoc {% process=false %}
 ```js 
-// [!code highlight:3] [!code highlight:3]
+// [\!code highlight:3]
 function test() {
   const hello = 'Hello';
   const world = 'World';
@@ -310,7 +310,7 @@ Highlight specific words or symbols:
 
 ````markdoc {% process=false %}
 ```js
-// [!code word:Hello] [!code word:Hello]
+// [\!code word:Hello]
 function test() {
   const hello = 'Hello';
   const world = 'World';
@@ -335,7 +335,7 @@ Focus on specific lines by dimming others with a code comment:
 ````markdoc {% process=false %}
 ```js
 function test() {
-  const hello = 'Hello'; // [!code focus] [!code focus]
+  const hello = 'Hello'; // [\!code focus]
   const world = 'World';
   console.log(hello + " " + world);
 }
@@ -370,8 +370,8 @@ Mark lines with error and warning levels:
 ```js
 function test() {
   console.log('No errors or warnings');
-  console.error('Error'); // [!code error] [!code error]
-  console.warn('Warning'); // [!code warning] [!code warning]
+  console.error('Error'); // [\!code error]
+  console.warn('Warning'); // [\!code warning]
 }
 ```
 ````
@@ -393,8 +393,8 @@ Show added and removed lines:
 function test() {
   const hello = 'Hello';
   const world = 'World';
-  console.log(hello + " " + world); // [!code --] [!code --]
-  console.log(`${hello} ${world}`); // [!code ++] [!code ++]
+  console.log(hello + " " + world); // [\!code --]
+  console.log(`${hello} ${world}`); // [\!code ++]
 }
 ```
 ````
