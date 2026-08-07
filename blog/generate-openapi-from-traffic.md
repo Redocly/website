@@ -49,7 +49,7 @@ The `proxy` command starts a local reverse proxy that captures everything passin
 redocly proxy --target https://api.cafe.redocly.com --har ./cafe.har
 ```
 
-```
+```sh
 Proxy listening on http://127.0.0.1:4040 → forwarding to https://api.cafe.redocly.com/
 Recording traffic to ./cafe.har
 Press Ctrl+C to stop.
