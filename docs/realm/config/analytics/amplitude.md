@@ -32,7 +32,7 @@ Integrate Amplitude Analytics into Redocly project to track page views and outbo
 - includeInDevelopment
 - boolean
 - Set this option to `true` to enable Amplitude Analytics in development mode and preview builds.
-  Default is `false`.
+  Default: `false`.
 
 ---
 
@@ -51,14 +51,14 @@ Integrate Amplitude Analytics into Redocly project to track page views and outbo
 - pageViewEventName
 - String
 - Set this option to change the event name for page views.
-  Default is `pageView`.
+  Default: `pageView`.
 
 ---
 
 - outboundClickEventName
 - String
 - Set this option to change the event name for outbound link clicks.
-  Default is `outboundLinkClick`.
+  Default: `outboundLinkClick`.
 
 ---
 

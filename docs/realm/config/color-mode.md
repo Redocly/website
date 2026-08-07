@@ -33,21 +33,25 @@ Color modes can be set to a default value, or with the user's operating system p
 - hide
 - boolean
 - Specifies if the color mode selector is hidden.
-  Default `false`.
+  Default: `false`.
 
 ---
 
 - ignoreDetection
 - boolean
 - Specifies if the system color mode detection is ignored.
-  Default `false`.
+  Default: `false`.
 
 ---
 
 - modes
 - [string]
 - List of possible color mode values.
-  Default to `light` and `dark`.
+  Default:
+  ```yaml
+    - light
+    - dark
+  ```
 
 {% /table %}
 
@@ -91,9 +95,9 @@ Learn how to add a mode by reading the [Add new color modes](../branding/customi
 colorMode:
   ignoreDetection: true
   modes:
-    - 'dark-contrast'
-    - 'dark'
-    - 'light'
+    - dark-contrast
+    - dark
+    - light
 ```
 
 The first `mode` from the `modes` list applies by default if `ignoreDetection` is `true`.

@@ -26,7 +26,7 @@ Integrate Google Analytics 4 into Redocly project using the Google tag (gtag.js)
 - includeInDevelopment
 - boolean
 - Set this option to `true` to enable Google Analytics in development mode and preview builds.
-  Default is `false`.
+  Default: `false`.
 
 ---
 
@@ -77,8 +77,8 @@ Integrate Google Analytics 4 into Redocly project using the Google tag (gtag.js)
 - cookieExpires
 - number
 - Cookie expiration time in seconds.
-  The default value is `63072000` (two years).
   Only allowed in root `redocly.yaml`.
+  Default: `63072000` (two years).
 
 ---
 

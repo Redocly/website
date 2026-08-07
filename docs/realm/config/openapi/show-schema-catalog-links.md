@@ -31,7 +31,7 @@ These links are always displayed for OpenAPI requests and are shown for schemas 
 - boolean
 - Displays links to schemas and requests on an OpenAPI page.
   These links can be used as `$ref` value in other OpenAPI files within the same project.
-  Default value: `false`.
+  Default: `false`.
 
 {% /table %}
 

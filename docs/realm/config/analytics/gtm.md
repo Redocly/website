@@ -26,7 +26,7 @@ Integrate Google Tag Manager into Redocly project.
 - includeInDevelopment
 - boolean
 - Set this option to `true` to enable GTM Analytics in development mode and preview builds.
-  Default is `false`.
+  Default: `false`.
 
 ---
 
@@ -75,7 +75,7 @@ Integrate Google Tag Manager into Redocly project.
 - pageViewEventName
 - String
 - Set this option to change the event name for page views.
-  Default is `pageView`.
+  Default: `pageView`.
 
 {% /table %}
 

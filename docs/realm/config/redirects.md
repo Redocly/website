@@ -72,7 +72,7 @@ When redirects are configured in both locations, the `redocly.yaml` configuratio
 - type
 - integer
 - HTTP status code for the redirect.
-  Default value: `301`.
+  Default: `301`.
 
 {% /table %}
 
@@ -133,7 +133,8 @@ redirects:
 
 ### Redirect many paths to one page
 
-Redirects support use of wildcards to match the last parts of a path. For example, if you restructured content from many pages in a directory into a single page:
+Redirects support use of wildcards to match the last parts of a path.
+For example, if you restructured content from many pages in a directory into a single page:
 
 ```yaml
 redirects:

@@ -35,7 +35,7 @@ The options here allow you to hide it if your site design doesn't require a side
 - hide
 - boolean
 - Specifies if the sidebar should be hidden.
-  Default value: `false`.
+  Default: `false`.
 
 {% /table %}
 

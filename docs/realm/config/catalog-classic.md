@@ -176,7 +176,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 - missingCategoryName
 - string
 - If an API does not have `x-metadata` and the corresponding filter `property` defined, then the API belongs to this missing category.
-  Default value: `Other`.
+  Default: `Other`.
 
 ---
 

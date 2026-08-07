@@ -36,21 +36,21 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 - ignoreLinkChecker
 - boolean
 - Publish a production project, even if Reunite detects broken links.
-  Default value: `false`.
+  Default: `false`.
 
 ---
 
 - ignoreLint
 - boolean | object
 - Publish a production project, even if Reunite detects an API description in the project that scores below the minimum standard set either by the `scorecardClassic` or `api` options in the `redocly.yaml` file.
-  Default value: `false`.
+  Default: `false`.
 
 ---
 
 - ignoreMarkdocErrors
 - boolean
 - Publish a production project, even if Reunite detects Markdoc syntax errors.
-  Default value: `false`.
+  Default: `false`.
 
 ---
 
@@ -58,7 +58,7 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 - boolean
 - Publish a production project, even if Reunite detects Respect Monitoring issues.
   If `true`, sets the build's Respect Monitoring status to `warning` instead of `failed`.
-  Default value: `false`.
+  Default: `false`.
 
 ---
 
@@ -140,7 +140,8 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 - string
 - Specifies the interval between each run of the job in minutes (m), hours (h) or days (d).
   Only required when `event` is set to `schedule`.
-  If not defined, the default value is `1h`. Available values: `1m, 2m, 5m, 10m, 15m, 30m, 1h, 3h, 6h, 12h, 1d, 7d`
+  Available values: `1m, 2m, 5m, 10m, 15m, 30m, 1h, 3h, 6h, 12h, 1d, 7d`.
+  Default: `1h`.
 
 {% /table %}
 

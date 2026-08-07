@@ -156,7 +156,7 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 - hide
 - boolean
 - Specifies if an `llms.txt` file and clean Markdown versions of pages included in the `llms.txt` file are generated.
-  Defaults to `false`.
+  Default: `false`.
 
 ---
 
@@ -195,7 +195,7 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 
 {% /table %}
 
-Default values for the `llmstxt` object are:
+The default values for the `llmstxt` object are:
 
 ```yaml
   llmstxt:

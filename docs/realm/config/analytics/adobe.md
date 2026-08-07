@@ -32,14 +32,14 @@ Integrate Adobe Analytics into Redocly project to track page views
 - includeInDevelopment
 - Boolean
 - Set this option to `true` to enable Adobe Analytics in development mode and preview builds.
-  Default is `false`.
+  Default: `false`.
 
 ---
 
 - pageViewEventName
 - String
 - Set this option to change the event name for page views.
-  Default is `pageView`.
+  Default: `pageView`.
 
 {% /table %}
 

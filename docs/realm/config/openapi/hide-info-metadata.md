@@ -37,7 +37,7 @@ To omit the metadata section from the API reference documentation, set the `hide
 - hideInfoMetadata
 - boolean
 - Optionally hide the **OpenAPI info metadata** section of the API reference page.
-  Default value is `false`.
+  Default: `false`.
 
 
 {% /table %}
