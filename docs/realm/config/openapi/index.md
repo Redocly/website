@@ -17,6 +17,8 @@ description: |-
 Customize the behavior and appearance of OpenAPI documentation.
 Requires an OpenAPI description file.
 
+Redocly supports OpenAPI Specification versions 2.0, 3.0, and 3.1.
+
 ## Options
 
 {% table %}
