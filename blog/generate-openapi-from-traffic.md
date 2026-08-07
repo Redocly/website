@@ -230,7 +230,7 @@ Two things are worth measuring separately:
 
 For response schemas:
 
-|                                        | Deterministic | `--with-ai` |
+| Metric                                 | Deterministic | `--with-ai` |
 | -------------------------------------- | ------------- | ----------- |
 | Response properties recovered          | 97.5%         | 98.3%       |
 | Correct types                          | 100%          | 100%        |
