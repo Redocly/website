@@ -84,7 +84,7 @@ Now ask for a description:
 redocly generate-spec ./cafe.har --title "Cafe API" -o cafe-openapi.yaml
 ```
 
-```
+```sh
 Inferred a baseline OpenAPI description from traffic: 2 operation(s).
 Written to: cafe-openapi.yaml
 Done in 0s.
