@@ -87,9 +87,9 @@ If you select **Require SSO authentication for all members** and save without va
 To prevent losing access to Reunite, click the **Test connection** button and make sure you are able to authenticate before saving.
 {% /admonition %}
 
-This setting doesn't affect how users access your deployed project.
-To require login to your project, you must configure `rbac` or `requiresLogin`.
-See [Configure RBAC](../../../access/index.md) or [requiresLogin](../../../config/access/requires-login.md) for configuration instructions.
+After you enable this setting, logging into Reunite (organization dashboard) using email and password is disabled.
+Project-level authentication is unaffected.
+See [Configure RBAC](../../../access/index.md) or [requiresLogin](../../../config/access/requires-login.md) for project-level login configuration.
 
 To require SSO authentication:
 
