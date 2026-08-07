@@ -26,7 +26,7 @@ Use this option if you have a large number of optional fields that can make requ
 - onlyRequiredInSamples
 - boolean
 - Show only the required fields in request samples.
-  Default: `false`.
+  Default value: `false`.
 
 {% /table %}
 

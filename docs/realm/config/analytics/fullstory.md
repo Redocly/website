@@ -32,7 +32,7 @@ Integrate Fullstory Analytics into Redocly project to track page views.
 - includeInDevelopment
 - boolean
 - Set this option to `true` to enable Fullstory Analytics in development mode and preview builds.
-  Default: `false`.
+  Default is `false`.
 
 {% /table %}
 

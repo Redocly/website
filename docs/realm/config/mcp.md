@@ -123,7 +123,7 @@ mcp:
   hide: false
   docs:
     hide: false
-    name: Docs MCP server
+    name: "Docs MCP server"
 ```
 
 ## Resources

@@ -41,7 +41,7 @@ Use the `skills` configuration to hide skills or exclude specific files from dis
 - Glob patterns matched against each skill's project-relative path.
   A skill whose path matches any pattern is excluded from discovery — the skills index, the agent card, and the MCP resources.
   A direct request for its `SKILL.md` returns `404`.
-  Default: `[]`.
+  Default: `[]`
 
 {% /table %}
 

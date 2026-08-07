@@ -28,15 +28,14 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 - frontMatterKeysToResolve
 - [string]
 - A list where each entry is a front matter key to resolve at build time.
-  Default: `['image', 'links']`.
+  By default, values for `image` and `links` are resolved.
 
 ---
 
 - partialsFolders
 - [string]
 - A list of directory paths to folders used for storing partials.
-  All folders other than `_partials` must be listed in `partialsFolders` to work with partials.
-  Default: `['**/_partials/**']`.
+  The `_partials` folder works by default, but all other folders must be listed in `partialsFolder` in order to work with partials.
 
 ---
 
@@ -84,7 +83,7 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 - string
 - Specifies the format of the last updated time displayed.
   Possible values: `iso`, `short`, `long`, or `timeago`.
-  Default: `timeago`.
+  Default value: `timeago`.
 
 ---
 
@@ -92,14 +91,14 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 - string
 - Locale of the date.
   Works with [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) country codes.
-  Default: `en-US`.
+  Default value: `en-US`.
 
 ---
 
 - hide
 - boolean
 - Control the visibility of the last updated time.
-  Default: `false`.
+  Default value: `false`.
 
 {% /table %}
 
@@ -116,22 +115,21 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 - header
 - string
 - Configure the heading of the table of contents.
-  Default: `On this page`.
+  Default value: `On this page`.
 
 ---
 
 - depth
 - integer
 - Set the maximum depth of the heading displayed in the table of contents.
-  Minimum: `1`.
-  Default: `3`.
+  Default value: `3` Minimum value: `1`.
 
 ---
 
 - hide
 - boolean
 - Control the visibility of the table of contents.
-  Default: `false`.
+  Default value: `false`.
 
 {% /table %}
 
@@ -155,7 +153,7 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 - hide
 - boolean
 - Control the visibility of the edit page button.
-  Default: `true`.
+  Default value: `true`.
 
 {% /table %}
 

@@ -103,7 +103,7 @@ Users can use copy button to put code snippet raw content into the clipboard.
 - hide
 - boolean
 - Specifies if the copy button should be hidden.
-  Default: `false`.
+  Default value: `false`.
 
 ---
 
@@ -125,21 +125,21 @@ When users click the report button or text, they are provided a comment feedback
 - hide
 - boolean
 - Specifies if the report button should be hidden.
-  Default: `true`.
+  Default value: `true`.
 
 ---
 
 - label
 - string
 - Label inside the report dialog form.
-  Default: `What is wrong with the code?`.
+  Default value: `What is wrong with the code?`.
 
 ---
 
 - tooltipText
 - string
 - Text of the tooltip of the report button.
-  Default: `Report a problem`.
+  Default value: `Report a problem`.
 
 {% /table %}
 
@@ -158,7 +158,7 @@ Use the expand button to show all the nested properties inside a JSON object tha
 - hide
 - boolean
 - Specifies if the expand button should be hidden.
-  Default: `false`.
+  Default value: `false`.
 
 {% /table %}
 
@@ -177,7 +177,7 @@ Users can use collapse button to hide all the nested properties inside a JSON ob
 - hide
 - boolean
 - Specifies if the collapse button should be hidden.
-  Default: `false`.
+  Default value: `false`.
 
 {% /table %}
 
@@ -199,8 +199,7 @@ codeSnippet:
 
 ### Page-level configuration
 
-Configure code snippets for individual pages in the front matter.
-Front matter configurations take precedence over global settings:
+Configure code snippets for individual pages in the front matter. Front matter configurations take precedence over global settings:
 
 ```yaml
 ---

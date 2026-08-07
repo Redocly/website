@@ -44,7 +44,7 @@ If you ejected the `navbar` component before version `0.128.0`, [update it](../c
 - string
 - **REQUIRED.**
   The banner content text.
-  Supports Markdown syntax for formatting, links, tags, and emphasis.
+  Supports Markdown syntax for formatting, links, tags and emphasis.
   Partials and variables are not supported.
 
   Example: `This is **a great announcement.** [Button](https://redocly.com)`
@@ -56,6 +56,7 @@ If you ejected the `navbar` component before version `0.128.0`, [update it](../c
 - Configure whether users can dismiss the banner.
   When `true`, a close button appears on the banner.
   Dismissed banners are stored in browser's `localStorage` and won't appear again for that user.
+
   Default: `false`
 
 ---
@@ -72,14 +73,12 @@ If you ejected the `navbar` component before version `0.128.0`, [update it](../c
   {% /admonition %}
 
   **Pattern examples:**
-  
   - `blog/**` - matches all pages under the `blog/` path
   - `docs/api/**` - matches all pages under `docs/api/`
   - `**` - matches all pages (catch-all)
   - `getting-started.md` - matches a specific page
 
   **Matching rules:**
-
   - more specific patterns take priority over less specific ones
   - exact matches take priority over wildcard patterns
   - when multiple banners match a page, only the most specific one is displayed

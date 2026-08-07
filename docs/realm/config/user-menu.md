@@ -93,7 +93,7 @@ You must also have `sso` and either `rbac` or `requiresLogin` configured for the
 - external
 - boolean
 - Open link in new browser tab.
-  Default: `false`.
+  Default is `false`.
 
 {% /table %}
 

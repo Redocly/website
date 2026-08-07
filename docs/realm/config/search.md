@@ -240,7 +240,7 @@ Use [AI Assistant](./ai-assistant.md) option instead.
 - hide
 - boolean
 - Hides the AI search button when set to `true`.
-  Default: `true`.
+  Default: `true`
 
 ---
 

@@ -31,7 +31,7 @@ For example, you might want to hide the `Try it` button in your public API docum
 - hideReplay
 - boolean
 - Hide the `Replay` component that allows users to interactively send requests to an API.
-  Default: `false`.
+  Defaults to `false`.
 
 {% /table %}
 
