@@ -50713,6 +50713,14 @@ reunite:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.45.0`.
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.44.2`.
     dependencies: {}
+  v2026-08-10.1:
+    timestamp: 1786351088000
+    changes:
+      minor: []
+      patch:
+        - Fixed AI code review flagging current dates as future dates.
+        - Fixed an issue where the Reunites **Organizations and projects** menu displayed an empty list when the sidebar was collapsed.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
