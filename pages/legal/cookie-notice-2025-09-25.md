@@ -1,7 +1,7 @@
 ---
 seo:
   title: Cookie Notice
-slug: /cookie-notice
+slug: /cookie-notice-2025-09-25
 markdown:
     toc:
         hide: true
@@ -10,7 +10,7 @@ disableLastModified: true
 
 
 # Cookie Notice
-**Last updated: August 9, 2026**
+**Last updated: September 25, 2025**
 
 This Cookie Notice explains how Redocly Inc. and its group companies ("Redocly", "we", "us", and "ours") use cookies and similar technologies to recognize you when you visit, interact with or use any of our websites (such as redocly.com), online advertisements, or marketing communications (collectively for the purposes of this Notice, the "Websites"). It explains what these technologies are and why we use them, as well as your rights to control our use of them.
 
@@ -90,7 +90,7 @@ The specific types of first and third party cookies served through our Websites 
 ---
 
 - **Marketing tracking cookies:** These cookies help us track the source of leads and understand how users found our website.
-- **Redocly** - rls cookie (180 days)
+- **Redocly** - rls cookie (45 days)
 - To refuse these cookies, please follow the instructions below under the heading "How can I control cookies?"
 
 {% /table %}
