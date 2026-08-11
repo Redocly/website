@@ -237,8 +237,8 @@ responseHeaders:
           https://v.clarity.ms/collect
           https://cdn.jsdelivr.net
           https://forms-na2.hscollectedforms.net
-          https://app.loops.so/api/newsletter-form/;
           https://forms-na2.hsforms.com;
+          https://app.loops.so/api/newsletter-form/;
         form-action 
           'self' 
           https://forms.hsforms.com
