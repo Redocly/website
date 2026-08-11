@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { linearGradient } from 'polished';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 
 import type { ResolvedNavItem } from '@redocly/config';
 
