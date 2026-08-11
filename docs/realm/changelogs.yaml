@@ -50853,6 +50853,19 @@ reunite:
         - Fixed AI code review flagging current dates as future dates.
         - Fixed an issue where the Reunites **Organizations and projects** menu displayed an empty list when the sidebar was collapsed.
     dependencies: {}
+  v2026-08-11.3:
+    timestamp: 1786462625000
+    changes:
+      minor: []
+      patch:
+        - Added auditing to AI Assistant conversations.
+        - Fixed commit statuses remaining in a running state on GitLab pull requests when the GitLab API became unresponsive.
+        - >-
+          Fixed an issue where deleted or archived GitLab projects appeared in project and namespace lists, causing slow namespace loading. On
+          self-managed GitLab versions before 18.0, deleted projects may still appear in the project list.
+        - Fixed curation keywords to be fully case-insensitive.
+        - Fixed Typesense search curation to prioritize `excludes` over `includes` for the same keyword.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
