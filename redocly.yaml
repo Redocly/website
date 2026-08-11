@@ -72,7 +72,7 @@ navbar:
           icon: ./images/icons/respect.svg
         - separator: Open Source
         - label: Redoc
-          page: ./pages/redoc/redoc.page.tsx
+          page: ./pages/redoc-ce/redoc-ce.page.tsx
         - label: Redocly CLI
           page: ./pages/redocly-cli/redocly-cli.page.tsx
         - label: Respect
