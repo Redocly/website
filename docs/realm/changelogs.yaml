@@ -50853,8 +50853,8 @@ reunite:
         - Fixed AI code review flagging current dates as future dates.
         - Fixed an issue where the Reunites **Organizations and projects** menu displayed an empty list when the sidebar was collapsed.
     dependencies: {}
-  v2026-08-11.3:
-    timestamp: 1786462625000
+  v2026-08-11.4:
+    timestamp: 1786463684000
     changes:
       minor: []
       patch:
