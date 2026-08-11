@@ -72,7 +72,7 @@ navbar:
           icon: ./images/icons/respect.svg
         - separator: Open Source
         - label: Redoc
-          page: ./pages/redoc/redoc.page.tsx
+          page: ./pages/redoc-ce/redoc-ce.page.tsx
         - label: Redocly CLI
           page: ./pages/redocly-cli/redocly-cli.page.tsx
         - label: Respect
@@ -237,8 +237,8 @@ responseHeaders:
           https://v.clarity.ms/collect
           https://cdn.jsdelivr.net
           https://forms-na2.hscollectedforms.net
-          https://forms-na2.hsforms.com
           https://app.loops.so/api/newsletter-form/;
+          https://forms-na2.hsforms.com;
         form-action 
           'self' 
           https://forms.hsforms.com
