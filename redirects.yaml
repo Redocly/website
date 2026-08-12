@@ -783,5 +783,5 @@
   to: '/docs-legacy/developer-portal/use-legacy-ui-components'
 
 # AI governance
-'/faq/ai-search-privacy':
-  to: '/faq/ai-governance'
+'/docs/realm/faq/ai-search-privacy':
+  to: '/docs/realm/faq/ai-governance'
