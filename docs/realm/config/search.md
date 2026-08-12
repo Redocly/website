@@ -258,9 +258,9 @@ Use [AI Assistant](./ai-assistant.md) option instead.
 
 {% /table %}
 
-**Data usage and privacy:** Curious how AI Search uses your data?
-Redocly AI Search runs in **inference-only mode** and does not train or fine-tune AI models on your content.
-For details, see the [AI Search data usage FAQ](../faq/ai-search-privacy.md).
+**Data usage and privacy:** Curious how the AI assistant uses your data?
+The Redocly AI assistant runs in **inference-only mode** and does not train or fine-tune AI models on your content.
+For details, see the [AI governance and security FAQ](../faq/ai-governance.md).
 
 {% admonition type="info" name="Make content private"%}
 
