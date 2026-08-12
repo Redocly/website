@@ -323,4 +323,8 @@ responseHeaders:
     - name: X-Robots-Tag
       value: noindex
 
+redirects:
+  '/faq/ai-search-privacy/':
+    to: '/faq/ai-governance/'
+
 telemetry: off
