@@ -51126,6 +51126,13 @@ reunite:
         - Fixed curation keywords to be fully case-insensitive.
         - Fixed Typesense search curation to prioritize `excludes` over `includes` for the same keyword.
     dependencies: {}
+  v2026-08-12.4:
+    timestamp: 1786554540000
+    changes:
+      minor:
+        - Added the ability to invite several people to an organization at once by entering a list of email addresses in the invite dialog.
+      patch: []
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
