@@ -1,4 +1,21 @@
 '@redocly/realm':
+  0.136.0-next.14:
+    timestamp: 1786493979000
+    changes:
+      minor: []
+      patch:
+        - Added auditing to the experimental gateway MCP.
+        - Fixed endpoint details returned by the Docs MCP server to correctly display documentation for individual endpoints.
+        - Fixed security vulnerabilities `CVE-2026-67214` and `CVE-2026-67213` by upgrading `nanoid` to version `5.1.16`.
+        - Fixed security vulnerability `GHSA-5p4m-2wfm-xmqj` by upgrading `js-yaml` to version `4.3.1`.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.14.0-next.4
+      '@redocly/api-docs': 0.1.0-next.6
+      '@redocly/openapi-docs': 3.24.0-next.12
+      '@redocly/theme': 0.68.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.21.0-next.12
+      '@redocly/asyncapi-docs': 1.13.0-next.12
+      '@redocly/graphql-docs': 1.13.0-next.12
   0.136.0-next.13:
     timestamp: 1786366686000
     changes:
@@ -6798,6 +6815,22 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.136.0-next.14:
+    timestamp: 1786493979000
+    changes:
+      minor: []
+      patch:
+        - Added auditing to the experimental gateway MCP.
+        - Fixed security vulnerabilities `CVE-2026-67214` and `CVE-2026-67213` by upgrading `nanoid` to version `5.1.16`.
+        - Fixed security vulnerability `GHSA-5p4m-2wfm-xmqj` by upgrading `js-yaml` to version `4.3.1`.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.14.0-next.4
+      '@redocly/api-docs': 0.1.0-next.6
+      '@redocly/openapi-docs': 3.24.0-next.12
+      '@redocly/theme': 0.68.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.21.0-next.12
+      '@redocly/asyncapi-docs': 1.13.0-next.12
+      '@redocly/graphql-docs': 1.13.0-next.12
   0.136.0-next.13:
     timestamp: 1786366686000
     changes:
@@ -12664,6 +12697,22 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.136.0-next.14:
+    timestamp: 1786493979000
+    changes:
+      minor: []
+      patch:
+        - Added auditing to the experimental gateway MCP.
+        - Fixed security vulnerabilities `CVE-2026-67214` and `CVE-2026-67213` by upgrading `nanoid` to version `5.1.16`.
+        - Fixed security vulnerability `GHSA-5p4m-2wfm-xmqj` by upgrading `js-yaml` to version `4.3.1`.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.14.0-next.4
+      '@redocly/api-docs': 0.1.0-next.6
+      '@redocly/openapi-docs': 3.24.0-next.12
+      '@redocly/theme': 0.68.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.21.0-next.12
+      '@redocly/asyncapi-docs': 1.13.0-next.12
+      '@redocly/graphql-docs': 1.13.0-next.12
   0.136.0-next.13:
     timestamp: 1786366686000
     changes:
@@ -18520,6 +18569,23 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.136.0-next.14:
+    timestamp: 1786493979000
+    changes:
+      minor: []
+      patch:
+        - Added auditing to the experimental gateway MCP.
+        - Fixed endpoint details returned by the Docs MCP server to correctly display documentation for individual endpoints.
+        - Fixed security vulnerabilities `CVE-2026-67214` and `CVE-2026-67213` by upgrading `nanoid` to version `5.1.16`.
+        - Fixed security vulnerability `GHSA-5p4m-2wfm-xmqj` by upgrading `js-yaml` to version `4.3.1`.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.14.0-next.4
+      '@redocly/api-docs': 0.1.0-next.6
+      '@redocly/openapi-docs': 3.24.0-next.12
+      '@redocly/theme': 0.68.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.21.0-next.12
+      '@redocly/asyncapi-docs': 1.13.0-next.12
+      '@redocly/graphql-docs': 1.13.0-next.12
   0.136.0-next.13:
     timestamp: 1786366686000
     changes:
@@ -27527,6 +27593,14 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.24.0-next.12:
+    timestamp: 1786493979000
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability `GHSA-5p4m-2wfm-xmqj` by upgrading `js-yaml` to version `4.3.1`.
+    dependencies:
+      '@redocly/replay': 0.27.0-next.11
   3.24.0-next.11:
     timestamp: 1786366686000
     changes:
@@ -31565,6 +31639,14 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.13.0-next.12:
+    timestamp: 1786493979000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.24.0-next.12
+      '@redocly/theme': 0.68.0-next.8
   1.13.0-next.11:
     timestamp: 1786366686000
     changes:
@@ -32884,6 +32966,15 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/api-docs':
+  0.1.0-next.6:
+    timestamp: 1786493979000
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability `GHSA-5p4m-2wfm-xmqj` by upgrading `js-yaml` to version `4.3.1`.
+    dependencies:
+      '@redocly/replay': 0.27.0-next.11
+      '@redocly/theme': 0.68.0-next.8
   0.1.0-next.5:
     timestamp: 1786366686000
     changes:
@@ -32941,6 +33032,13 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.10.0-next.5:
+    timestamp: 1786493979000
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability `GHSA-5p4m-2wfm-xmqj` by upgrading `js-yaml` to version `4.3.1`.
+    dependencies: {}
   0.10.0-next.4:
     timestamp: 1786032228000
     changes:
@@ -33956,6 +34054,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.19.0-next.14:
+    timestamp: 1786493979000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.136.0-next.14
+      '@redocly/redoc': 0.136.0-next.14
+      '@redocly/redoc-revel': 0.136.0-next.14
+      '@redocly/redoc-reef': 0.136.0-next.14
+      '@redocly/theme': 0.68.0-next.8
   1.19.0-next.13:
     timestamp: 1786366686000
     changes:
@@ -39518,6 +39627,14 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.21.0-next.12:
+    timestamp: 1786493979000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.10.0-next.5
+      '@redocly/openapi-docs': 3.24.0-next.12
   0.21.0-next.11:
     timestamp: 1786366686000
     changes:
@@ -42585,6 +42702,14 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.27.0-next.11:
+    timestamp: 1786493979000
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability `GHSA-5p4m-2wfm-xmqj` by upgrading `js-yaml` to version `4.3.1`.
+    dependencies:
+      '@redocly/theme': 0.68.0-next.8
   0.27.0-next.10:
     timestamp: 1786366686000
     changes:
@@ -46809,6 +46934,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.13.0-next.12:
+    timestamp: 1786493979000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.24.0-next.12
+      '@redocly/theme': 0.68.0-next.8
   1.13.0-next.11:
     timestamp: 1786366686000
     changes:
