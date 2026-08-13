@@ -80,7 +80,7 @@ x-mcp:
         properties:
           filter:
             type: string
-            description: API name (or part of it)
+            description: Matches part of an API name, or of a description when no name matches
             minLength: 1
           page:
             type: number
@@ -104,7 +104,7 @@ x-mcp:
         properties:
           name:
             type: string
-            description: API name
+            description: API name, or a unique part of it
             minLength: 1
           version:
             type: string
@@ -126,7 +126,7 @@ x-mcp:
         properties:
           name:
             type: string
-            description: API name
+            description: API name, or a unique part of it
             minLength: 1
           path:
             type: string
@@ -175,7 +175,7 @@ x-mcp:
         properties:
           name:
             type: string
-            description: API name
+            description: API name, or a unique part of it
             minLength: 1
           version:
             type: string
@@ -197,7 +197,7 @@ x-mcp:
         properties:
           name:
             type: string
-            description: API name
+            description: API name, or a unique part of it
             minLength: 1
           version:
             type: string
