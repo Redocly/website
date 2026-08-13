@@ -75,7 +75,7 @@ You'll meet both in the roadmap below.
 
 Everything above assumes your docs are correct. Reviewer is how they stay correct.
 
-[Reviewer](https://redocly.com/reviewer) comments line by line as soon as a pull request opens, before the first human review. It checks:
+[Reviewer](https://redocly.com/reviewer) is in early access. It comments line by line as soon as a pull request opens, before the first human review. It checks:
 
 - **API descriptions.** OpenAPI and AsyncAPI, breaking changes included.
 - **Documentation.** Markdown for clarity and accuracy, cross-checked against the OpenAPI description the page refers to.
