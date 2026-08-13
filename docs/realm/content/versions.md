@@ -8,6 +8,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
+keywords:
+  includes:
+    - version
+    - versions
+    - versioning
 ---
 # Add versioned content
 

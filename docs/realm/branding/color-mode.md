@@ -1,7 +1,7 @@
 # Color mode
 
-Color mode is an interactive feature that allows users to change the visual theme of the documentation to tailor their reading experience.
-But there's more to color mode than user convenience; it can have implications on health, accessibility, productivity, and more.
+End users can use the color mode feature to change the visual theme of the documentation to tailor their reading experience.
+The color mode of your project can have implications on health, accessibility, productivity, and more.
 
 ## Types of color mode
 

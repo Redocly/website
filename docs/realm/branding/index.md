@@ -143,6 +143,6 @@ You can always start simple and add more advanced customization as your needs gr
 
 ## Resources
 
-- [CSS variables reference](./css-variables/index.md) - Complete dictionary of available CSS variables for styling
-- [Configuration reference](../config/index.md) - All available configuration options for easy customization
-- [Component ejection guide](../customization/eject-components/index.md) - Technical guide to ejecting and customizing components
+- **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of available CSS variables for styling
+- **[Configuration reference](../config/index.md)** - All available configuration options for easy customization
+- **[Component ejection guide](../customization/eject-components/index.md)** - Technical guide to ejecting and customizing components

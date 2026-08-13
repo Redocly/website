@@ -44,7 +44,7 @@ Replace package names in sample commands and JSON dependencies with the Redocly 
 
 {% /admonition %}
 
-## Check version
+## Check product version
 
 Before you can decide if you want to update your version, you need to know what version your project is currently using.
 You can ascertain the version your project is using with the developer tools in your browser.
@@ -71,7 +71,7 @@ To verify the version your project is using:
 
 After you have determined what version your project is running, you can find the latest version to help you decide if you want to upgrade.
 
-## Find the latest version
+## Find the latest product version
 
 If you know what version you are running, but you are not sure if it is the latest version, you can see a list of all available versions or get only the latest version either from the [changelog](../changelog.page.tsx) or by using npm commands.
 
@@ -89,12 +89,12 @@ For example, to find the latest Reef version, use the following command: `npm vi
 See a list of product names and their corresponding packages in the [Before you begin](#before-you-begin) section.
 {% /admonition %}
 
-## Run a specific version
+## Run a specific product version
 
 You may need to run a specific version, instead of the latest version.
 You can control what version your project runs, using a `package.json` file.
 
-### Run a specific version locally
+### Run a specific product version locally
 
 If you want to run a specific version, you need to add a `package.json` file to your project if you don't already have one.
 You also need to install `@redocly/cli` globally and your Redocly product to your project directory.
@@ -128,9 +128,9 @@ To run a specific version working locally:
 
    `redocly preview`
 
-5. Using your developer tools, verify the version in the console as described in [Check version](#check-version).
+5. Using your developer tools, verify the version in the console as described in [Check product version](#check-product-version).
 
-### Run a specific version in Reunite
+### Run a specific product version in Reunite
 
 If you are working in the Reunite editor, your project by default uses the most recent version, and automatically updates whenever new versions are released and you trigger a new build.
 However, if you would like to use a specific version and not update automatically, you can add a `package.json` file to your project with the version listed.
@@ -179,7 +179,7 @@ To run a specific version in Reunite:
     withLightbox=true
    /%}
 
-6. [Check the version](#check-version).
+6. [Check the version](#check-product-version).
 7. To run this version in your production build, [open a pull request](../reunite/project/pull-request/open-pull-request.md), then review and [merge it](../reunite/project/pull-request/review-pull-request.md#merge-a-pull-request) with the new `package.json` file.
 
 ## Resources

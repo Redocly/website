@@ -160,7 +160,7 @@
     - page: content/links.md
       label: Manage links
     - page: content/versions.md
-      label: Versioning
+      label: Version content
 
     - page: content/add-diagram.md
       label: Diagrams

@@ -26,7 +26,8 @@ See [Create a PAT](https://learn.microsoft.com/en-us/azure/devops/organizations/
 You must select an Organization for this PAT.
 Do not select **All accessible organizations**.
 
-Also, the PAT you use must have API scopes defined. You can choose the **Full access** option, or select **Custom defined** and enable the following specific scopes:
+Also, the PAT you use must have API scopes defined.
+You can choose the **Full access** option, or select **Custom defined** and enable the following specific scopes:
 
 - Code: `Read, write, & manage` and `Status`
 
@@ -50,31 +51,158 @@ See [Scopes](https://learn.microsoft.com/en-us/azure/devops/organizations/accoun
 <details>
   <summary>Detailed list of all resources that Reunite uses from Azure API and their required scopes:</summary>
 
-| Resource                                                                                                                                                              | Auth Type | Scopes                              | Description                                                   |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------- | ------------------------------------------------------------- |
-| [Repositories - List](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/repositories/list?view=azure-devops-rest-7.1&tabs=HTTP)                             | PAT       | `vso.code`                          | To get repositories list                                      |
-| [Repositories - Get Repository](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/repositories/get-repository?view=azure-devops-rest-7.1&tabs=HTTP)         | PAT       | `vso.code`                          | To get repository metadata                                    |
-| [Stats - List](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/stats/list?view=azure-devops-rest-7.1&tabs=HTTP)                                           | PAT       | `vso.code`                          | To get branch list                                            |
-| [Refs - Update Refs](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/refs/update-refs?view=azure-devops-rest-7.1&tabs=HTTP)                               | PAT       | `vso.code`                          | To delete branches                                            |
-| [Items - List](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/items/list?view=azure-devops-rest-7.1&tabs=HTTP)                                           | PAT       | `vso.code`                          | To get folders list and PR templates list                     |
-| [Items - Get](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/items/get?view=azure-devops-rest-7.1&tabs=HTTP)                                             | PAT       | `vso.code`                          | To get PR template content                                    |
-| [Commits - Get](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/commits/get?view=azure-devops-rest-7.1&tabs=HTTP)                                         | PAT       | `vso.code`                          | To get commit details                                         |
-| [Merge Bases - List](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/merge-bases/list?view=azure-devops-rest-7.1)                                         | PAT       | `vso.code`                          | To find the merge bases of two commits                        |
-| [Diffs - Get](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/diffs/get?view=azure-devops-rest-7.1&tabs=HTTP)                                             | PAT       | `vso.code`                          | To get diff between commits                                   |
-| [Statuses - List](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/statuses/list?view=azure-devops-rest-7.1&tabs=HTTP)                                     | PAT       | `vso.code`, `vso.code_status`       | To get existing commit statuses                               |
-| [Statuses - Create](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/statuses/create?view=azure-devops-rest-7.1&tabs=HTTP)                                 | PAT       | `vso.code_write`, `vso.code_status` | To set commit statuses (for deployments and scorecards)       |
-| [Pull Requests - Get Pull Requests](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-requests/get-pull-requests?view=azure-devops-rest-7.1&tabs=HTTP) | PAT       | `vso.code`                          | To get pull requests list                                     |
-| [Pull Requests - Get Pull Request](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-requests/get-pull-request?view=azure-devops-rest-7.1)             | OAuth2    | `vso.code`                          | To get details about a specific pull request                  |
-| [Pull Requests - Create](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-requests/create?view=azure-devops-rest-7.1&tabs=HTTP)                       | OAuth2    | `vso.code`                          | To create a new pull request                                  |
-| [Pull Requests - Update](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-requests/update?view=azure-devops-rest-7.1)                                 | OAuth2    | `vso.code`                          | To manage existing pull requests (merge, close, reopen, etc.) |
-| [Pull Request Statuses - Create](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-request-statuses/create?view=azure-devops-rest-7.1&tabs=HTTP)       | PAT       | `vso.code_write`, `vso.code_status` | To set pull request statuses                                  |
-| [Policy Configurations - Get](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/policy-configurations/get?view=azure-devops-rest-7.1)                       | OAuth2    | `vso.code`                          | To get configurations for merge strategies                    |
-| [Subscriptions - List](https://learn.microsoft.com/en-us/rest/api/azure/devops/hooks/subscriptions/list?view=azure-devops-rest-7.1&tabs=HTTP)                         | PAT       | `vso.code`                          | To get a list of existing project subscriptions (webhooks)    |
-| [Subscriptions - Create](https://learn.microsoft.com/en-us/rest/api/azure/devops/hooks/subscriptions/create?view=azure-devops-rest-7.1&tabs=HTTP)                     | PAT       | `vso.code`                          | To create a new project subscription (webhook)                |
-| [Profiles - Get](https://learn.microsoft.com/en-us/rest/api/azure/devops/profile/profiles/get?view=azure-devops-rest-7.1&tabs=HTTP)                                   | OAuth2    | `vso.profile`                       | To get user display name                                      |
+{% table %}
 
-> Note:
+- Resource
+- Auth Type
+- Scopes
+- Description
+
+---
+
+- [Repositories - List](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/repositories/list?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code`
+- To get repositories list
+
+---
+
+- [Repositories - Get Repository](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/repositories/get-repository?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code`
+- To get repository metadata
+
+---
+
+- [Stats - List](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/stats/list?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code`
+- To get branch list
+
+---
+
+- [Refs - Update Refs](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/refs/update-refs?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code`
+- To delete branches
+
+---
+
+- [Items - List](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/items/list?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code`
+- To get folders list and PR templates list
+
+---
+
+- [Items - Get](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/items/get?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code`
+- To get PR template content
+
+---
+
+- [Commits - Get](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/commits/get?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code`
+- To get commit details
+
+---
+
+- [Merge Bases - List](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/merge-bases/list?view=azure-devops-rest-7.1)
+- PAT
+- `vso.code`
+- To find the merge bases of two commits
+
+---
+
+- [Diffs - Get](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/diffs/get?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code`
+- To get diff between commits
+
+---
+
+- [Statuses - List](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/statuses/list?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code`, `vso.code_status`
+- To get existing commit statuses
+
+---
+
+- [Statuses - Create](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/statuses/create?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code_write`, `vso.code_status`
+- To set commit statuses (for deployments and scorecards)
+
+---
+
+- [Pull Requests - Get Pull Requests](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-requests/get-pull-requests?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code`
+- To get pull requests list
+
+---
+
+- [Pull Requests - Get Pull Request](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-requests/get-pull-request?view=azure-devops-rest-7.1)
+- OAuth2
+- `vso.code`
+- To get details about a specific pull request
+
+---
+
+- [Pull Requests - Create](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-requests/create?view=azure-devops-rest-7.1&tabs=HTTP)
+- OAuth2
+- `vso.code`
+- To create a new pull request
+
+---
+
+- [Pull Requests - Update](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-requests/update?view=azure-devops-rest-7.1)
+- OAuth2
+- `vso.code`
+- To manage existing pull requests (merge, close, reopen, etc.)
+
+---
+
+- [Pull Request Statuses - Create](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-request-statuses/create?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code_write`, `vso.code_status`
+- To set pull request statuses
+
+---
+
+- [Policy Configurations - Get](https://learn.microsoft.com/en-us/rest/api/azure/devops/git/policy-configurations/get?view=azure-devops-rest-7.1)
+- OAuth2
+- `vso.code`
+- To get configurations for merge strategies
+
+---
+
+- [Subscriptions - List](https://learn.microsoft.com/en-us/rest/api/azure/devops/hooks/subscriptions/list?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code`
+- To get a list of existing project subscriptions (webhooks)
+
+---
+
+- [Subscriptions - Create](https://learn.microsoft.com/en-us/rest/api/azure/devops/hooks/subscriptions/create?view=azure-devops-rest-7.1&tabs=HTTP)
+- PAT
+- `vso.code`
+- To create a new project subscription (webhook)
+
+---
+
+- [Profiles - Get](https://learn.microsoft.com/en-us/rest/api/azure/devops/profile/profiles/get?view=azure-devops-rest-7.1&tabs=HTTP)
+- OAuth2
+- `vso.profile`
+- To get user display name
+
+{% /table %}
+
+{% admonition type="info" name="Authorization verification" %}
 - Push and pull Git actions are performed using PAT.
 - Redocly uses `https://dev.azure.com/{organization}/_apis/connectionData` endpoint to verify if the user is authorized.
+{% /admonition %}
 
 </details>
