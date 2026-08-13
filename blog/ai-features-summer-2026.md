@@ -49,7 +49,7 @@ The whole thing is [configurable in one place](https://redocly.com/docs/realm/co
 
 The next generation of agents won't wait for a human to paste in a URL. They'll discover services on their own, and a Redocly project now introduces itself:
 
-- An **MCP server card** and an **A2A agent card** describe what your project offers, in the standard formats agents already look for.
+- An **[MCP server card](https://redocly.com/docs/realm/customization/mcp-server#mcp-server-card)** and an **[A2A agent card](https://redocly.com/docs/realm/customization/agent-skills#agent-card)** describe what your project offers, in the standard formats agents already look for.
 - **[Agent skills](https://redocly.com/docs/realm/customization/agent-skills)** go a step further: drop task-focused skill files into an `@skills` folder, and agents follow the steps you wrote instead of guessing from reference docs.
 
 ## Content that LLMs actually understand
