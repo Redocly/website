@@ -13,19 +13,10 @@ description: Use team-based access controls to assign permissions required to fi
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
+Use team-based access controls to assign permissions required to files and project access.
 Access control is done using [RBAC (role-based access control)](../access/rbac.md).
-{% $frontmatter.description %}
 By default, all authenticated users are assigned to the `authenticated` team, and unauthenticated users are automatically assigned to the `anonymous` team.
 All other configuration is done through team-role mapping.
-
-## Draft mode and RBAC
-
-Draft projects require users to sign in before they can open deployment URLs by default.
-If you configure RBAC, access to draft deployments follows your RBAC rules instead of the default draft-mode protection.
-
-For example, if RBAC grants `read` to the `anonymous` team in your `redocly.yaml`, draft deployments are publicly accessible even while the project remains in draft mode.
-
-For more details on draft mode behavior, see [draft projects](../../reunite/project/draft-projects.md).
 
 ## Options
 
@@ -118,10 +109,10 @@ For more details on draft mode behavior, see [draft projects](../../reunite/proj
 
 {% /table %}
 
-{% admonition type="info" %}
+{% admonition type="info" name="Wildcard key" %}
 
-When describing team to project role relations, a special key `*` may be used.
-A project role assigned to that key will be applied to the rest of the teams that are not described for the given glob pattern.
+When describing team to project role relations, you can use a special key `*`.
+A project role assigned to that key is applied to the rest of the teams that are not described for the given glob pattern.
 
 In the following example, only users assigned to the Admin team can view the content on the `secrets.md` file:
 
@@ -147,6 +138,12 @@ rbac:
 - aiSearch
 - Map[string, string](#team-to-role-map)
 - Map of teams to roles to define the team and role for AI search feature access.
+
+---
+
+- mcp
+- Map[string, string](#team-to-role-map)
+- Map of teams to roles to define the team and role for MCP server access.
 
 {% /table %}
 
@@ -372,6 +369,20 @@ access:
         authenticated: read
 ```
 
+Access to the MCP server is controlled the same way through the `mcp` feature.
+In the following example, only members of the Developers team can access the MCP server, while all other users are denied access.
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    features:
+      mcp:
+        Developers: read
+```
+
+When a team-based role is set for the `mcp` feature, only teams with a role other than `none` can access the MCP server.
+Users must sign in unless the `anonymous` team is granted such a role, either directly or through the `*` wildcard, which covers all teams that are not listed explicitly, including `anonymous`.
+
 ### Disallow access to one specific page
 
 In the following example, members of the Developers team can access Markdown files in the `/security` folder, with the exception of `top-secret.md` that has the `none` value for Developers in the front matter of the file.
@@ -402,3 +413,4 @@ rbac:
 - **[SSO configuration](./sso.md)** - Configure single sign-on to identify users and integrate with RBAC for comprehensive authentication and authorization
 - **[SSO Direct configuration](../ssoDirect.md)** - Configure direct SSO integration for streamlined user identification and RBAC implementation
 - **[Requires login configuration](./requires-login.md)** - Set up login requirements to enforce authentication before accessing RBAC-protected content
+- **[MCP server](../../customization/mcp-server/index.md#restrict-access-to-the-mcp-server)** - Restrict MCP server access to specific teams with the `mcp` feature role

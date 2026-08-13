@@ -69,7 +69,7 @@ plans:
     It stores the `activeTab` state in `localStorage` after an update was triggered, and all other tabs are subscribed to the storage events to update their state.
     Also, for initial mount, it gets the `activeTab` from `localStorage` to preserve the tabs state even after a page is reloaded.
 
-    {% admonition type="info" %}
+    {% admonition type="info" name="Prerequisites" %}
       This tutorial does not provide step-by-step instructions for every customization.
       Each case is unique and requires a different approach.
       React, Markdoc and TypeScript knowledge is required to customize it.

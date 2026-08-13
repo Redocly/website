@@ -27,7 +27,7 @@ It can also be configured as a string with the special value `all` that expands 
 - number | string
 - Sets the default expand level for JSON payload samples.
   Use `all` to expand all levels.
-  Default value is `2`.
+  Default: `2`.
 
 
 {% /table %}

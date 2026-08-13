@@ -570,6 +570,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- page.actions.connectMcp.moreOptions
+- More options button aria-label in Connect MCP dropdown
+- More options
+
+---
+
 - page.lastUpdated.timeago
 - Page last updated (when referring to a period of time, e.g. 10min)
 - Last updated
@@ -592,6 +598,18 @@ This page contains the list of all predefined translation keys used in default U
 - 404 Not Found page description text
 - The page you were trying to reach doesn't exist or may have been moved.
   You can go back to the previous page, return to the homepage, or use the search bar to find what you're looking for.
+
+---
+
+- page.mcpNotAllowed.title
+- 405 Method Not Allowed page header text
+- Method not allowed
+
+---
+
+- page.mcpNotAllowed.description
+- 405 Method Not Allowed page description text
+- To use this MCP server, register it in your MCP Client (for example: VS Code, Cursor, or Claude Code).
 
 ---
 

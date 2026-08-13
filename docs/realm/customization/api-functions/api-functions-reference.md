@@ -472,9 +472,8 @@ These limitations ensure consistent performance and protect the system from reso
 
 ## API functions examples
 
-  {% admonition type="info" %}
-    You can return either a native `Response` object or use `context` helper methods — both approaches work the same.
-  {% /admonition %}
+You can return either a native `Response` object or use `context` helper methods — both approaches work the same.
+
 
 ### Simple function without arguments
 

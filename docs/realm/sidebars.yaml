@@ -57,7 +57,6 @@
       label: Projects
     - page: reunite/project/project-ui.md
       label: Project user interface
-    - page: reunite/project/draft-projects.md
     - page: reunite/project/use-editor.md
       label: Editor
     - page: reunite/project/keyboard-shortcuts.md
@@ -221,6 +220,8 @@
           label: JSON example
         - page: content/markdoc-tags/markdoc-example.md
           label: Markdoc example
+        - page: content/markdoc-tags/numbered-list.md
+          label: Numbered list
         - page: content/markdoc-tags/openapi-code-sample.md
           label: OpenAPI code sample
         - page: content/markdoc-tags/openapi-response-sample.md
@@ -428,6 +429,8 @@
       label: Configure request values
     - page: customization/configure-dynamic-replay-values.md
       label: Configure Replay with dynamic API data
+    - page: customization/customize-replay-gate.md
+      label: Customize Replay auth gate
 
     - separator: API integration
     - group: API functions
@@ -451,6 +454,12 @@
           label: Overview
         - page: customization/mcp-server/openapi.yaml
           label: Docs MCP reference
+
+    - group: Agent skills
+      selectFirstItemOnExpand: true
+      items:
+        - page: customization/agent-skills/index.md
+          label: Overview
 
     - group: Search API
       selectFirstItemOnExpand: true

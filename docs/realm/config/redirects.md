@@ -12,7 +12,7 @@ description: Configure redirects to resources within your project.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Configure redirects to resources within your project.
 Use redirects to change which resource a URL points to, maintaining working links when you move, rename, or restructure content.
 
 Redocly supports two ways of configuring redirects:
@@ -72,7 +72,7 @@ When redirects are configured in both locations, the `redocly.yaml` configuratio
 - type
 - integer
 - HTTP status code for the redirect.
-  Default value: `301`.
+  Default: `301`.
 
 {% /table %}
 
@@ -133,7 +133,8 @@ redirects:
 
 ### Redirect many paths to one page
 
-Redirects support use of wildcards to match the last parts of a path. For example, if you restructured content from many pages in a directory into a single page:
+Redirects support use of wildcards to match the last parts of a path.
+For example, if you restructured content from many pages in a directory into a single page:
 
 ```yaml
 redirects:

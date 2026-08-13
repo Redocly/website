@@ -15,15 +15,15 @@ Make sure you have [Docker](https://docs.docker.com/get-docker/) installed.
 
 1. Pull the image with the following command:
 
-```bash
-docker pull redocly/redoc
-```
+    ```bash
+    docker pull redocly/redoc
+    ```
 
 1. Run the image:
 
-```bash
-docker run -p 8080:80 redocly/redoc
-```
+    ```bash
+    docker run -p 8080:80 redocly/redoc
+    ```
 
 The preview starts on port 8080, based on the port used in the command.
 You can access the preview at `http://localhost:8080`.

@@ -7,6 +7,216 @@ toc:
 
 <!-- do-not-remove -->
 
+## 2.46.1 (2026-08-11)
+
+### Patch Changes
+
+- Updated `@redocly/ajv` to `^8.18.3`.
+- Updated @redocly/openapi-core to v2.46.1.
+- Updated @redocly/respect-core to v2.46.1.
+
+## 2.46.0 (2026-08-07)
+
+### Minor Changes
+
+- Added the `spec-ref-siblings` rule that reports properties placed next to a `$ref` which the specification does not allow.
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.46.0.
+
+## 2.45.1 (2026-08-06)
+
+### Patch Changes
+
+- Fixed the `struct` rule to report unexpected fields on AsyncAPI 3 messages and message traits.
+- Reduced CLI startup time on Node 22.8 and later reusing Node's on-disk compile cache.
+  Set `NODE_DISABLE_COMPILE_CACHE=1` to turn it off.
+- Fixed an issue where remote `$ref`s with query parameters in the URL were not resolved.
+- Updated @redocly/openapi-core to v2.45.1.
+
+## 2.45.0 (2026-08-06)
+
+### Minor Changes
+
+- Fixed the `bundle` command losing schema keywords (such as `title`, `properties`, or `required`) written next to a `$ref` when the referenced schemas started with their own `$ref`.
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.45.0.
+
+## 2.44.2 (2026-08-05)
+
+### Patch Changes
+
+- Changed the severity of the `security-defined` rule for AsyncAPI 2.x and 3.x in the `recommended` ruleset from `error` to `warn`.
+  AsyncAPI descriptions with undefined or unresolved security no longer fail linting by default.
+- Updated @redocly/openapi-core to v2.44.2.
+
+## 2.44.1 (2026-08-04)
+
+### Patch Changes
+
+- Updated `undici` to the `6.28.0` version.
+- Fixed an issue where the `operation-4xx-problem-details-rfc7807` rule incorrectly reported the `type` and `title` properties inherited through `allOf` as missing.
+- Updated @redocly/openapi-core to v2.44.1.
+
+## 2.44.0 (2026-08-04)
+
+### Minor Changes
+
+- Added the `no-duplicated-enum-values` rule that requires all values in an `enum` to be unique.
+  The rule is enabled at the `warn` level in the `recommended` ruleset.
+
+  **Note**: linting output may include new warnings for API descriptions that contain duplicated enum values.
+
+- Added the `no-unsafe-markdown` rule that disallows potentially executable content in `description` fields.
+  The rule is enabled at the `warn` level in the `recommended` ruleset.
+
+  **Note**: linting output may include new warnings for `description` fields that contain potentially executable content.
+
+### Patch Changes
+
+- Updated @redocly/client-generator to v0.3.0.
+- Updated @redocly/openapi-core to v2.44.0.
+
+## 2.43.3 (2026-08-03)
+
+### Patch Changes
+
+- Updated @redocly/respect-core to v2.43.3.
+
+## 2.43.2 (2026-07-31)
+
+### Patch Changes
+
+- Updated @redocly/client-generator to v0.2.0.
+- Updated @redocly/openapi-core to v2.43.2.
+
+## 2.43.1 (2026-07-30)
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.43.1.
+
+## 2.43.0 (2026-07-30)
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.43.0.
+
+## 2.42.0 (2026-07-30)
+
+### Minor Changes
+
+- Added an experimental `generate-client` command that generates a typed, zero-dependency TypeScript client from an OpenAPI description — auth, retries, middleware, typed SSE streaming, pagination, and multipart included — plus optional companion generators for Zod validation, TanStack Query and SWR hooks, MSW mocks, and date transformers.
+  See the [`generate-client` command reference](https://redocly.com/docs/cli/commands/generate-client) and the [Use the generated client](https://redocly.com/docs/cli/guides/use-generated-client) guide.
+
+### Patch Changes
+
+- Updated @redocly/client-generator to v0.1.0.
+- Updated @redocly/openapi-core to v2.42.0.
+
+## 2.41.2 (2026-07-29)
+
+### Patch Changes
+
+- Updated js-yaml from `5.2.1` to `5.2.2` to resolve a vulnerability in YAML parsing.
+- Added support for the Arazzo spec-compliant workflow reference form `$sourceDescriptions.<name>.<workflowId>` in `dependsOn`, step `workflowId`, and success/failure action `workflowId`.
+
+  Unresolvable workflow references fail only the affected workflow with a clear error message, and no longer abort the whole run or pass unnoticed.
+
+- Updated @redocly/openapi-core to v2.41.2.
+- Updated @redocly/respect-core to v2.41.2.
+
+## 2.41.1 (2026-07-28)
+
+### Patch Changes
+
+- Fixed an issue where the `drift` command's `schema-consistency` rule reported false-positive findings for `oneOf` schemas with a `discriminator`.
+  Payloads are validated only against the branch selected by the discriminator value instead of every `oneOf` branch.
+  Schemas whose discriminator does not meet Ajv's structural requirements keep the previous behavior.
+- Extended the `drift` command's built-in undocumented-header ignore list with `x-amz-`, `x-amzn-` and `x-github-` prefixes, and the `x-hub-signature` / `x-hub-signature-256` webhook signature headers.
+
+## 2.41.0 (2026-07-27)
+
+### Minor Changes
+
+- Added a new built-in rule `security-scopes-defined` that requires every scope used in a security requirement to be defined in the corresponding OAuth2 security scheme.
+  The rule supports OpenAPI 2.0/3.x and AsyncAPI 2.6/3.0, suggests the closest defined scope for typos, and has an opt-in `requireScopes` option that requires OAuth2 security requirements to list at least one scope.
+
+### Patch Changes
+
+- Fixed an issue in `respect` where the execution of parent workflow's steps didn't halt after a step that referenced another workflow had failed.
+- Fixed an issue where the `cursor` AI provider of the `generate-spec` command sent only the instructions to the model and the operation to refine never reached it.
+- Updated @redocly/openapi-core to v2.41.0.
+- Updated @redocly/respect-core to v2.41.0.
+
+## 2.40.0 (2026-07-21)
+
+### Minor Changes
+
+- Added an `--ignore-headers` option to the experimental `drift` and `proxy` commands.
+  It takes a comma-separated list of header names to skip in undocumented-header checks, and a trailing `*` matches by prefix (for example `x-consumer-*`).
+  Use it to silence headers a gateway or proxy adds that are not part of the API contract.
+- Added an experimental `generate-spec` command that infers an OpenAPI description from recorded HTTP traffic.
+
+### Patch Changes
+
+- Fixed the `drift` command's `schema-consistency` rule reporting false-positive "Undocumented query parameter" findings for `deepObject`-style query parameters.
+  Traffic keys like `namespace[id]=...&namespace[name]=...` are now matched to the documented `namespace` parameter, and the reconstructed object is validated against the parameter schema.
+- Fixed an issue where the `drift` command's `schema-consistency` rule reported false-positive request findings for exchanges the server rejected with a `4xx` client error.
+  For example: missing required parameter, missing required body, request-body schema mismatch.
+  A `4xx` response means the server never accepted the request.
+  Validating it against the operation's success-path contract flagged the server's own correct rejection as drift.
+  Response-side validation still runs, so a documented error response whose shape differs from reality is still reported.
+- Fixed an issue where the `join` command silently dropped path-level `x-*` extensions with non-string values.
+- Updated js-yaml from `4.2.0` to `5.2.1`.
+  Fixed an issue where strings that look like numbers with underscores (for example `'12_34'`) had quotation marks removed by the `bundle` command.
+  These strings stay quoted in the output.
+
+  **Note**: YAML parsing is stricter: a multi-line flow collection whose closing bracket is not indented deeper than its parent key is now a parse error.
+  Parse errors are reported at the offending token instead of the end of the document.
+
+- Fixed an issue where the `drift` command's `security-baseline` rule reported false-positive "credential exposure over insecure HTTP transport" warnings for traffic captured against loopback hosts, for example: `localhost`, `*.localhost`, `127.0.0.0/8`, `[::1]`.
+  Sandboxed recordings no longer produce transport warnings.
+- Fixed an issue where the `bundle` command rewrote internal `$ref`s pointing to other `$ref`s.
+  The issue caused AsyncAPI 3 operation `messages` references to point to `components` instead of channel messages.
+- Updated @redocly/openapi-core to v2.40.0.
+
+## 2.39.0 (2026-07-13)
+
+### Minor Changes
+
+- Added support for AsyncAPI 3.1.0 descriptions.
+- Fixed the `struct` rule to validate the contents of AsyncAPI protocol-specific bindings.
+  Added typed definitions for the `sns`, `sqs`, `ibmmq`, `googlepubsub`, `pulsar` and `ros2` bindings.
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.39.0.
+
+## 2.38.0 (2026-07-08)
+
+### Minor Changes
+
+- Added an experimental `drift` command that compares recorded HTTP traffic (HAR, Kong, Nginx/Apache JSON, NDJSON) against an OpenAPI description and reports undocumented endpoints, schema mismatches, and security findings.
+- Added an experimental `proxy` command that captures live HTTP traffic through a reverse proxy into a HAR file and optionally validates it against an OpenAPI description in real time.
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.38.0.
+
+## 2.37.0 (2026-07-03)
+
+### Minor Changes
+
+- Added experimental support for linting GraphQL SDL schema files (`.graphql` / `.gql`).
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.37.0.
+
 ## 2.36.0 (2026-06-30)
 
 ### Minor Changes
@@ -615,7 +825,7 @@ toc:
 
 ### Patch Changes
 
-- Fixed an issue where credentials reated by Redocly CLI `login` command were deleted by Redocly VS Code extension when opening VS Code.
+- Fixed an issue where credentials created by Redocly CLI `login` command were deleted by Redocly VS Code extension when opening VS Code.
 - Updated @redocly/openapi-core to v2.12.2.
 
 ## 2.12.1 (2025-11-28)

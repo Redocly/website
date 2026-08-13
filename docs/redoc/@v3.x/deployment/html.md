@@ -9,31 +9,31 @@ To render API documentation in an HTML page:
 
 1. Paste the following template into an HTML file.
 
-  ```html
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <title>Redoc CE</title>
-      <!-- needed for adaptive design -->
-      <meta charset="utf-8"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+    ```html
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Redoc CE</title>
+        <!-- needed for adaptive design -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!--
-      Redoc CE doesn't change outer page styles
-      -->
-      <style>
-        body {
-          margin: 0;
-          padding: 0;
-        }
-      </style>
-    </head>
-    <body>
-      <redoc spec-url='https://redocly.github.io/redoc/museum.yaml'></redoc>
-      <script type="module" src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
-    </body>
-  </html>
-  ```
+        <!--
+        Redoc CE doesn't change outer page styles
+        -->
+        <style>
+          body {
+            margin: 0;
+            padding: 0;
+          }
+        </style>
+      </head>
+      <body>
+        <redoc spec-url='https://redocly.github.io/redoc/museum.yaml'></redoc>
+        <script type="module" src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
+      </body>
+    </html>
+    ```
 
 1. Replace the value of `spec-url` with either:
    - a relative path to a local OpenAPI description file, for example: `spec-url=my-api.yaml`
@@ -536,7 +536,6 @@ Self-hosting may be useful when you need to host in a closed environment or have
 
 {% tabs %}
   {% tab label="Use CDN" %}
-
     To reference Redoc CE hosted on a CDN:
 
     - In the `<script>` tag, add an `src` attribute with the URL to the Redoc CE script.
@@ -544,24 +543,21 @@ Self-hosting may be useful when you need to host in a closed environment or have
       ```html
       <script src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
       ```
-
   {% /tab %}
-
   {% tab label="Self-host dependencies" %}
-
     To host the dependencies yourself:
 
     1. Install `redoc` using `npm` or `yarn`.
 
-      ```sh
-      npm install redoc@next
-      ```
+        ```sh
+        npm install redoc@next
+        ```
 
     1. Reference the Redoc CE script with a node modules link.
 
-      ```html
-      <script src="node_modules/redoc/bundles/redoc.standalone.js"> </script>
-      ```
+        ```html
+        <script src="node_modules/redoc/bundles/redoc.standalone.js"> </script>
+        ```
 
   {% /tab %}
 {% /tabs %}

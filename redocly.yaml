@@ -19,6 +19,7 @@ ignore:
   - 'learn/arazzo/_filesets/**'
   - '**/code-walkthrough-files/**'
   - docs/realm/.templates
+  - '.yalc/**'
 
 
 markdown:
@@ -71,11 +72,15 @@ navbar:
           icon: ./images/icons/respect.svg
         - separator: Open Source
         - label: Redoc
-          page: ./pages/redoc/redoc.page.tsx
+          page: ./pages/redoc-ce/redoc-ce.page.tsx
         - label: Redocly CLI
           page: ./pages/redocly-cli/redocly-cli.page.tsx
         - label: Respect
           href: /respect-cli
+        - separator: Agents
+        - label: Reviewer
+          page: ./pages/reviewer/reviewer.page.tsx
+          icon: ./images/icons/reviewer.svg
 
     - label: Docs
       page: ./docs/index.md
@@ -232,7 +237,8 @@ responseHeaders:
           https://v.clarity.ms/collect
           https://cdn.jsdelivr.net
           https://forms-na2.hscollectedforms.net
-          https://forms-na2.hsforms.com;
+          https://forms-na2.hsforms.com
+          https://app.loops.so/api/newsletter-form/;
         form-action 
           'self' 
           https://forms.hsforms.com
@@ -321,6 +327,6 @@ links:
     title: Redocly Blog RSS Feed
 
 banner:
-  - content: ✨ **Announcement banners are here!** Display important updates and information at the top of your pages. [Learn more](/docs/realm/config/banner)
+  - content: ✨ **Reviewer is here!** Expert review on every docs PR. [Get early access](/pages/reviewer/reviewer.page.tsx)
     target: '**'
     dismissible: true

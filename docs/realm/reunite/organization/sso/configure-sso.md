@@ -25,12 +25,15 @@ To require login to a project, [`rbac`](../../../config/access/rbac.md) or [`req
 
 ## Before you begin
 
-Make sure you have the following:
+Make sure you have:
 
-- a `redocly.yaml` configuration file with one of the following configured:
-  -  `rbac` defined for the [`authenticated` default team](../teams.md#default-teams)
-  -  [`requiresLogin`](../../../config/access/requires-login.md)
 - [identity provider (IdP) information added in Reunite](./add-idp.md)
+
+and either:
+
+-  `rbac` defined for the [`authenticated` default team](../teams.md#default-teams)
+-  [`requiresLogin`](../../../config/access/requires-login.md)
+
 
 ## Specify IdPs for a project
 

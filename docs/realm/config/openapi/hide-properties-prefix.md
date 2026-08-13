@@ -24,7 +24,7 @@ In complex data structures or object schemas where properties are nested within 
 - hidePropertiesPrefix
 - boolean
 - Shows or hides parent name for the nested properties inside schema.
-  Defaults to `false`.
+  Default: `false`.
 
 {% /table %}
 

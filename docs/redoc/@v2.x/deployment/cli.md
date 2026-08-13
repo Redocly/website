@@ -15,9 +15,9 @@ To build an HTML file using Redocly CLI:
 
 - Enter the following command, replacing `apis/openapi.yaml` with your API description file's name and path:
 
-```bash
-npx @redocly/cli build-docs apis/openapi.yaml
-```
+    ```bash
+    npx @redocly/cli build-docs apis/openapi.yaml
+    ```
 
 After the command finishes running, you can share the HTML file or host it on a platform of your choice.
 

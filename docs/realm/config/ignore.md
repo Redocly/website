@@ -14,7 +14,7 @@ description: Exclude files and folders from the project build without removing t
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% admonition type="warning" %}
+{% admonition type="warning" name="Re-run the preview command" %}
 Changes to the **ignore** configuration in develop mode take effect only after restarting the server.
 {% /admonition %}
 
@@ -23,7 +23,7 @@ You can use **glob patterns** to specify which files and folders to ignore, and 
 
 ## Examples
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 ignore:
   - 'foo/bar.md' # Ignores specific file
   - 'foo' # Ignores specific folder

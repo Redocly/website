@@ -83,11 +83,11 @@ export default async function (
 ) {
   // ...
 }
-``` 
+```
 
 Read more about [API functions](/docs/realm/customization/api-functions/api-functions-reference.md)
 
-This feature is available to Reef and Realm subscribers.
+This feature is available to Reef and Realm subscribers
 ---
 
 ## Quality of life improvements 🚀

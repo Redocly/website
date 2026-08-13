@@ -20,7 +20,8 @@ Add one or multiple Event-Driven API (EDA) descriptions to your project.
 
 Add individual description files to your project alongside your other content, or use an [API catalog](../../config/catalog-classic.md) to showcase your EDAs alongside REST APIs and GraphQL.
 
-If you use a `sidebars.yaml` file to organize your sidebar navigation, add your AsyncAPI descriptions to it for them to display in your navigation menu.
+Each AsyncAPI description is served at its own URL with its own automatically generated reference sidebar, whether or not you use a `sidebars.yaml` file.
+Use a `sidebars.yaml` file only when you want to place the reference alongside your other content with control over its order and grouping.
 
 ## Protocol support
 
@@ -35,16 +36,25 @@ Make sure you have the following:
 
 - AsyncAPI description files in YAML or JSON format (3.0.0 version of AsyncAPI is supported)
 
-## Include AsyncAPI files in your project
+## Add an AsyncAPI description to your project
 
-If you have one or two AsyncAPI description files and no `sidebars.yaml` file in your project, place the files in your project at the root or in a folder.
-The AsyncAPI reference documentation is automatically added to your sidebar when you run your project.
+To add an AsyncAPI description to your project, place the file or files in your project at the root or in a folder.
+When you run your project, each description is served as reference documentation with its own automatically generated sidebar.
 
-If you have a `sidebars.yaml` file in your project, add your AsyncAPI description to your `sidebars.yaml` file for it to appear in your sidebar navigation.
+{% admonition type="info" name="The file path sets the reference URL" %}
+The API reference's URL path matches the location of its AsyncAPI description file in your project, with the file extension removed.
+For example, `apis/asyncapi.yaml` is served at `/apis/asyncapi`.
 
-## Use the sidebars.yaml file
+To change the URL, rename or move the AsyncAPI description file to the path you want it served from.
+For more information, see [file-based routing](../project-structure.md#file-based-routing).
+{% /admonition %}
 
-If you have a `sidebars.yaml` file in your project, add any files you want displayed in your sidebar navigation to it, including AsyncAPI descriptions.
+To place the reference inside a custom sidebar alongside your other content, with control over its order and grouping, add your AsyncAPI description to a `sidebars.yaml` file.
+You can also link to the reference from anywhere, such as the [navbar](../../config/navbar.md), an in-page link, a card, or an [API catalog](../../config/catalog-classic.md).
+
+## Add API reference to your site navigation
+
+A `sidebars.yaml` file includes only the items you add to it, so add any files you want displayed in that sidebar, including AsyncAPI descriptions.
 For more information on configuring a `sidebars.yaml` file for your project, see [Sidebar configuration](../../navigation/sidebars.md).
 
 To add an AsyncAPI file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the AsyncAPI description to your `sidebars.yaml` file:
@@ -53,8 +63,6 @@ To add an AsyncAPI file to your project with a `sidebars.yaml` file, add the `pa
 - page: apis/sample-api.yaml
   label: Sample API
 ```
-
-If you have multiple API descriptions, group them to better organize your sidebar navigation.
 
 ### Use the `group` key for multiple descriptions
 
@@ -106,3 +114,4 @@ Your AsyncAPI documentation is rendered using the built-in tool.
 - **[API catalog configuration](../../config/catalog-classic.md)** - Organize multiple API descriptions including AsyncAPI specifications with catalogs for better user experience and navigation
 - **[Sidebar navigation setup](../../navigation/sidebars.md)** - Configure navigation structures to help users discover and access your AsyncAPI documentation content
 - **[AsyncAPI extensions](./asyncapi-extensions/index.md)** - Use custom extensions in your AsyncAPI descriptions to create richer, more detailed documentation with enhanced features
+- **[Navbar configuration](../../config/navbar.md)** - Add top-level links to your API references and other pages

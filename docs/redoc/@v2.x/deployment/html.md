@@ -9,36 +9,37 @@ To render API documentation in an HTML page:
 
 1. Paste the following template into an HTML file.
 
-  ```html
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <title>Redoc CE</title>
-      <!-- needed for adaptive design -->
-      <meta charset="utf-8"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+    ```html
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Redoc CE</title>
+        <!-- needed for adaptive design -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
 
-      <!--
-      Redoc CE doesn't change outer page styles
-      -->
-      <style>
-        body {
-          margin: 0;
-          padding: 0;
-        }
-      </style>
-    </head>
-    <body>
-      <redoc spec-url='http://petstore.swagger.io/v2/swagger.json'></redoc>
-      <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
-    </body>
-  </html>
-  ```
+        <!--
+        Redoc CE doesn't change outer page styles
+        -->
+        <style>
+          body {
+            margin: 0;
+            padding: 0;
+          }
+        </style>
+      </head>
+      <body>
+        <redoc spec-url='http://petstore.swagger.io/v2/swagger.json'></redoc>
+        <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+      </body>
+    </html>
+    ```
 
 1. Replace the value of `spec-url` with either:
    - a relative path to a local OpenAPI description file, for example: `spec-url=my-api.yaml`
    - a full URL, for example: `http://petstore.swagger.io/v2/swagger.json`
+  
   If you use a relative path, Redoc CE requires an HTTP server to run API documentation locally.
 
 To test the HTML file, open it in your browser.
@@ -152,15 +153,15 @@ Self-hosting may be useful when you need to host in a closed environment or have
 
     1. Install `redoc` using `npm` or `yarn`.
 
-    ```sh
-    npm install redoc
-    ```
+        ```sh
+        npm install redoc
+        ```
 
     1. Reference the Redoc CE script with a node modules link.
 
-    ```html
-    <script src="node_modules/redoc/bundles/redoc.standalone.js"> </script>
-    ```
+        ```html
+        <script src="node_modules/redoc/bundles/redoc.standalone.js"> </script>
+        ```
 
   {% /tab %}
 {% /tabs %}

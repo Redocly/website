@@ -156,7 +156,7 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 - hide
 - boolean
 - Specifies if an `llms.txt` file and clean Markdown versions of pages included in the `llms.txt` file are generated.
-  Defaults to `false`.
+  Default: `false`.
 
 ---
 
@@ -195,7 +195,7 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 
 {% /table %}
 
-Default values for the `llmstxt` object are:
+The default values for the `llmstxt` object are:
 
 ```yaml
   llmstxt:
@@ -364,7 +364,7 @@ Validate your sitemap before adding the file.
 Use the `noindex` rule to block search indexing for your entire project or specific pages.
 The `noindex` rule tells search engines that pages mustn't be indexed or included in searches.
 
-{% admonition type="info" %}
+{% admonition type="info" name="noindex does not hide content" %}
 The `noindex` rule only applies to external search engines.
 It does not block pages from in-site search (controlled by [excludeFromSearch](./front-matter-config.md)) or user access (controlled by [RBAC](../access/page-permissions.md)).
 {% /admonition %}

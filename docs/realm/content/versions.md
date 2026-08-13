@@ -39,8 +39,7 @@ To configure your project to include multiple versions, complete the following t
 
 Make sure you have the following before you begin:
 
-- a `redocly.yaml` configuration file
-- versioned content
+- two or more versions of content files
 
 ## Create version subfolders
 

@@ -48,13 +48,14 @@ You can click the **View Pull Request** button next to your new branch name to v
 
 ## Merge the open pull request in Reunite
 
-After you enter the connection details in Redocly, a pull request to merge your updates with the default branch opens.
+After you enter the connection details in Redocly, a pull request to merge your updates with the default branch opens as a draft.
 When you merge the pull request your changes are added to your main branch and a production deployment is triggered.
 
 To merge the open pull request in Reunite:
 
 1. Select the **View Pull Request** button next to your branch name.
 1. Review your updates in the **Review** tab.
+1. Select the **Ready for review** button to take the pull request out of draft.
 1. After the tests have run and your pull request has been approved, click the **Merge** button to merge your updates with the default branch.
 
 ## Resources

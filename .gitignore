@@ -1,5 +1,7 @@
 node_modules
 public/
+.yalc/
+yalc.lock
 .vscode
 .idea/
 .DS_Store

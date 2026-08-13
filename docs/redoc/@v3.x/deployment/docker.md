@@ -15,15 +15,15 @@ Make sure you have [Docker](https://docs.docker.com/get-docker/) installed.
 
 1. Pull the image with the following command:
 
-```bash
-docker pull redocly/redoc
-```
+    ```bash
+    docker pull redocly/redoc
+    ```
 
 1. Run the image:
 
-```bash
-docker run -p 8080:80 redocly/redoc
-```
+    ```bash
+    docker run -p 8080:80 redocly/redoc
+    ```
 
 The preview starts on port 8080, based on the port used in the command.
 You can access the preview at `http://localhost:8080`.
@@ -34,7 +34,7 @@ To exit the preview, press <kbd>control</kbd>+<kbd>C</kbd>.
 
 A version of the Redocly Museum API is displayed by default.
 
-You can change the description file used in the project, either a local file, or an URL.
+You can change the description file used in the project: either a local file, or an URL.
 
 ### URL
 
@@ -56,13 +56,13 @@ To run a local file:
     - `$(pwd)/museum.yaml` is a local machine path to the OpenAPI description file
     - `/usr/share/nginx/html/museum.yaml` is the volume in Docker
 
-2. Provide a file path in `SPEC_URL`:
+1. Provide a file path in `SPEC_URL`:
 
-```bash
-docker run -it --rm -p 8080:80 \
-  -v $(pwd)/museum.yaml:/usr/share/nginx/html/museum.yaml \
-  -e SPEC_URL=museum.yaml redocly/redoc
-```
+    ```bash
+    docker run -it --rm -p 8080:80 \
+      -v $(pwd)/museum.yaml:/usr/share/nginx/html/museum.yaml \
+      -e SPEC_URL=museum.yaml redocly/redoc
+    ```
 
 The `$(pwd)` is the path where you run Docker.
 In this example above Docker runs from the folder the OpenAPI file (`museum.yaml`) located.

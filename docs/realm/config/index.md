@@ -81,8 +81,6 @@ This guide provides a comprehensive overview of available configuration options 
 {% /configSection %}
 
 {% configSection title="Security and access management" description="Configure user authentication and access controls for your documentation." %}
-  {% configProperty file="cors-proxy.md" /%}
-
   {% configProperty file="access/index.md" /%}
 
   {% configProperty file="access/idps.md" /%}
@@ -96,6 +94,8 @@ This guide provides a comprehensive overview of available configuration options 
   {% configProperty file="access/residency.md" /%}
 
   {% configProperty file="access/sso.md" /%}
+
+  {% configProperty file="cors-proxy.md" /%}
 {% /configSection %}
 
 {% configSection title="Customization" description="Extend functionality with custom code and additional features." %}
@@ -114,6 +114,8 @@ This guide provides a comprehensive overview of available configuration options 
   {% configProperty file="response-headers.md" /%}
 
   {% configProperty file="scripts.md" /%}
+
+  {% configProperty file="skills.md" /%}
 {% /configSection %}
 
 {% configSection title="Analytics and SEO" description="Improve discoverability and track usage of your documentation." %}

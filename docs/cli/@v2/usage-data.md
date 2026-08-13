@@ -19,10 +19,12 @@ When a command is run, the following data is collected:
 - Node.js and NPM versions
 - whether the `redocly.yaml` configuration file exists
 - API specification type and version
+- names of lint rules that reported errors, warnings, or ignored problems
 - Arazzo x-security authentication types
-- Platform (Linux, macOS, Windows)
-- Anonymous ID (a randomly generated identifier that doesn't contain personal information)
-- Command execution time
+- platform (Linux, macOS, Windows)
+- anonymous ID (a randomly generated identifier that doesn't contain personal information)
+- command execution time
+- whether the CLI runs from a released build or development build
 
 Values such as file names, organization IDs, and URLs are removed, replaced by just "URL" or "file", etc.
 

@@ -17,8 +17,8 @@ When deciding which approach to take, consider which of the following factors ar
 Make sure you have the following:
 
 - either the custom font file or link to your custom font
+- a basic understanding of CSS
 - a `@theme` folder with a `styles.css` file
-- a `redocly.yaml` file in the root of your project
 
 ## Add a link to the `<head>` HTML element
 

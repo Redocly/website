@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 
 import type { ResolvedNavItem, ResolvedNavLinkItem, ResolvedNavGroupItem } from '@redocly/config';
 
@@ -64,15 +64,16 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
       })
       .includes(true);
 
-    const descriptions = [
-      'Collaborative editor suite',
-      'Combo of Redoc, Revel, and Reef',
-      'External developer showcase',
-      'API reference and mock server',
-      'Internal service catalog',
-      'API monitoring',
-    ];
-    const groupItemsComponents = groupItems.reduce((acc, curr, index) => {
+    const descriptions: Record<string, string> = {
+      Realm: 'Combo of Redoc, Revel, and Reef',
+      Revel: 'External developer showcase',
+      Redoc: 'API reference and mock server',
+      Reef: 'Internal service catalog',
+      'Respect Monitoring': 'API monitoring',
+      Reviewer: 'Reads pull requests, leaves expert feedback'
+    };
+    const newItems = new Set(['Reviewer']);
+    const groupItemsComponents = groupItems.reduce((acc, curr) => {
       if (curr.type.startsWith('separator')) {
         acc.push({ [curr.label as string]: [] });
       } else {
@@ -102,13 +103,18 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
             </ReuniteBlock>,
           );
         } else {
-          acc[acc.length - 1][Object.keys(acc[acc.length - 1])[0]].push(
+          const currentSection = Object.keys(acc[acc.length - 1])[0];
+          const description =
+            currentSection === 'Open Source' ? undefined : descriptions[curr.label as string];
+          const showNewTag = newItems.has(curr.label as string);
+          acc[acc.length - 1][currentSection].push(
             <StyledLink key={`${curr.label}`} to={curr.link}>
               {curr.icon && <Icon src={curr.icon} />}
               <TextBlock>
                 {curr.label}
-                {descriptions[index - 1] && <span>{descriptions[index - 1]}</span>}
+                {description && <span>{description}</span>}
               </TextBlock>
+              {showNewTag && <NewTag>New</NewTag>}
             </StyledLink>,
           );
         }
@@ -118,6 +124,7 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
 
     const products: any = [];
     const openSource: any = [];
+    const aiTools: any = [];
     let reunite: any = {};
 
     groupItemsComponents.map((item) => {
@@ -130,9 +137,13 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
               products.push(value);
             }
           });
-        } else {
+        } else if (key === 'Open Source') {
           (value as any).map((value) => {
             openSource.push(value);
+          });
+        } else {
+          (value as any).map((value) => {
+            aiTools.push(value);
           });
         }
       });
@@ -181,7 +192,7 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
                       return (
                         <DropdownListItem
                           key={index}
-                          product={`${link.key.toLowerCase()}`}
+                          product={`${link.key.toLowerCase().replace(/\s+/g, '-')}`}
                           isLast={index === products.length - 1}
                         >
                           {link}
@@ -206,6 +217,23 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
                 )}
               </DropdownList>
             </ProductsBlock>
+            {aiTools.length > 0 && (
+              <AiToolsSection>
+                <Label>
+                  Agents:
+                </Label>
+                <AiToolsItems>
+                  {aiTools.map((link, index) => (
+                    <DropdownListItem
+                      key={index}
+                      product={`${link.key.toLowerCase().replace(/\s+/g, '-')}`}
+                    >
+                      {link}
+                    </DropdownListItem>
+                  ))}
+                </AiToolsItems>
+              </AiToolsSection>
+            )}
           </DropdownWrapper>
         </DropdownCasket>
       </NavbarMenuItemDropdown>
@@ -352,6 +380,41 @@ const TextBlock = styled.div`
   }
 `;
 
+const NewTag = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: var(--tag-basic-bg-color);
+  color: var(--tag-basic-content-color);
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+`;
+
+const AiToolsSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--dropdown-list-border-color);
+`;
+
+const AiToolsItems = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+`;
+
 const Icon = styled.img`
   height: 24px;
   width: 24px;
@@ -370,7 +433,7 @@ export const DropdownList = styled.ul`
   z-index: 1;
 `;
 
-export const DropdownListItem = styled.li<{ product?: string, isLast?: boolean }>`
+export const DropdownListItem = styled.li<{ product?: string; isLast?: boolean }>`
   display: block;
   width: 100%;
   border: none;
@@ -395,7 +458,7 @@ export const DropdownListItem = styled.li<{ product?: string, isLast?: boolean }
     background: ${({ product, isLast }) =>
       isLast
         ? 'var(--hover-last-navbar-color)'
-        : `var(--${product}-color-hover)`};
+        : `var(--${product}-color-hover, var(--hover-last-navbar-color))`};
   }
 `;
 

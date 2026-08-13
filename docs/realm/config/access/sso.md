@@ -13,7 +13,7 @@ description: Restrict project login to specific identity provider categories def
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Restrict project login to specific identity provider categories defined in Reunite.
 This configuration determines which IdPs are available for logging in to a project.
 Configuring SSO by itself does not require users to log in to access a project.
 To require login to a project, [`rbac`](./rbac.md) or [`requiresLogin`](./requires-login.md) must also be configured.

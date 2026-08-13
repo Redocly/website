@@ -14,10 +14,16 @@
           page: commands/bundle.md
         - label: check-config
           page: commands/check-config.md
+        - label: drift
+          page: commands/drift.md
         - label: eject
           page: commands/eject.md
         - label: generate-arazzo
           page: commands/generate-arazzo.md
+        - label: generate-client
+          page: commands/generate-client.md
+        - label: generate-spec
+          page: commands/generate-spec.md
         - label: join
           page: commands/join.md
         - label: lint
@@ -28,6 +34,8 @@
           page: commands/logout.md
         - label: preview
           page: commands/preview.md
+        - label: proxy
+          page: commands/proxy.md
         - label: push
           page: commands/push.md
         - label: push-status
@@ -54,6 +62,10 @@
         - page: guides/configure-rules.md
         - page: guides/lint-and-bundle.md
           label: Lint and bundle
+        - label: Use the generated client
+          page: guides/use-generated-client.md
+        - label: Customize client generation
+          page: guides/customize-client-generation.md
         - label: Hide internal APIs
           page: guides/hide-apis.md
         - label: Replace the servers URL
@@ -62,6 +74,7 @@
           page: guides/response-contains-property.md
         - page: guides/lint-asyncapi.md
         - page: guides/lint-arazzo.md
+        - page: guides/lint-graphql.md
         - label: Change the OAuth2 token URL
           page: guides/change-token-url.md
         - label: Hide OpenAPI specification extensions
@@ -90,10 +103,13 @@
             - separator: Common
             - page: rules/common/struct.md
             - page: rules/common/no-unresolved-refs.md
+            - page: rules/common/no-duplicated-enum-values.md
             - page: rules/common/no-enum-type-mismatch.md
             - page: rules/common/no-schema-type-mismatch.md
             - page: rules/common/no-required-schema-properties-undefined.md
             - page: rules/common/no-mixed-number-range-constraints.md
+            - page: rules/common/no-unsafe-markdown.md
+            - page: rules/common/security-scopes-defined.md
             - separator: OpenAPI
             - page: rules/oas/array-parameter-serialization.md
             - page: rules/oas/boolean-parameter-prefixes.md
@@ -114,6 +130,7 @@
             - page: rules/oas/spec-discriminator-defaultMapping.md
             - page: rules/oas/spec-no-invalid-encoding-combinations.md
             - page: rules/oas/spec-querystring-parameters.md
+            - page: rules/oas/spec-ref-siblings.md
             - page: rules/oas/no-path-trailing-slash.md
             - page: rules/oas/no-server-example-com.md
             - page: rules/oas/no-server-trailing-slash.md
@@ -153,6 +170,7 @@
             - separator: AsyncAPI
             - page: rules/async/channels-kebab-case.md
             - page: rules/async/no-channel-trailing-slash.md
+            - page: rules/async/security-defined.md
             - separator: Open-RPC
             - page: rules/openrpc/spec-no-duplicated-method-params.md
             - page: rules/openrpc/spec-no-required-params-after-optional.md
@@ -199,6 +217,7 @@
         - group: Reference
           items:
             - page: configuration/reference/apis.md
+            - page: configuration/reference/client.md
             - page: configuration/reference/decorators.md
             - page: configuration/reference/extends.md
             - page: configuration/reference/plugins.md

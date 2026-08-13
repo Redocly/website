@@ -26,7 +26,7 @@ Use this option to define how much information is in this context; the user can 
 - number
 - Indicates the maximum depth of the data described in the "Return type" section.
   This setting allows users to expand the fields to view further arguments and other details.
-  Default value is `4`.
+  Default: `4`.
 
 
 {% /table %}

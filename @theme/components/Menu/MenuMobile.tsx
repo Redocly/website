@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import styled from 'styled-components';
 
 import { breakpoints } from '@redocly/theme/core/utils';

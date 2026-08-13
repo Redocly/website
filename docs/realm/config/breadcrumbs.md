@@ -48,7 +48,7 @@ Breadcrumbs do not appear when:
 - hide
 - boolean
 - Disables breadcrumb links in the project when set to `true`.\
-  Default value: `false`
+  Default: `false`.
 
 ---
 

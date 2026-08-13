@@ -15,7 +15,7 @@ plans:
 The `tabs` tag places content into a series of tabs, providing a structure for you to organize multiple pieces of content within a confined space.
 Users switch between tabs to access different sections of information within the same interface.
 
-{% admonition type="info" %}
+{% admonition type="info" name="Accessibility"%}
   Redocly's tab implementation is fully accessible for screen readers and keyboard navigation.
 {% /admonition %}
 
@@ -125,9 +125,7 @@ A tab only works as a child of a tabs section.
 Tabs are powerful and flexible, but easy to misuse.
 Only use them when there is a clear benefit to organizing content in this manner.
 
-{% admonition type="info" %}
-  Please read the [best practices](#best-practices) section before using tabs in your documentation.
-{% /admonition %}
+Read the [best practices](#best-practices) section before using tabs in your documentation.
 
 ### Organize content
 

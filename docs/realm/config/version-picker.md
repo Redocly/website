@@ -14,7 +14,7 @@ description: Configure the visibility of the version picker in your project.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Configure the visibility of the version picker in your project.
 If you have multiple versions of content, you can organize that content into versioned folders.
 Versioned folders' names must start with `@`.
 Their content is displayed with a version picker UI element that enables users to switch between versions.

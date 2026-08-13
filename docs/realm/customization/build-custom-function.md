@@ -59,7 +59,6 @@ Below is a quick example of what we'll build.
 
 Make sure you have the following:
 
-- a new project with the latest version of Redocly Realm installed.
 - a text editor or IDE for working with code (for example, VS Code)
 
 ## Test a built-in function
@@ -102,7 +101,7 @@ Later, we'll update the tag so we can test our custom function as we build it.
 6. Save the file and check your preview.
    The conditional content is no longer visible.
 
-    {% admonition type="info" name="Info" %}
+    {% admonition type="info" name="From built-in to custom" %}
       This initial example uses `equals`, a [built-in function](https://markdoc.dev/docs/functions#built-in-functions) included with Markdoc.
       We're going to add a _custom_ function that we build ourselves.
     {% /admonition %}
@@ -159,8 +158,7 @@ Once we verify it's working, we'll proceed to implementing the actual logic we w
 6. Review the terminal where your project is running.
    You should see console output from our new function.
 
-    {% admonition type="success" %}
-      Congratulations!
+    {% admonition type="success" name="Congratulations!"%}
       You just built a custom Markdoc function and used it to dynamically control your content in Markdown.
     {% /admonition %}
 

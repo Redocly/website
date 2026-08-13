@@ -32,12 +32,13 @@ To add content from a remote file:
 
 ## Merge the open pull request in Redocly
 
-After you enter the connection details in Redocly, a pull request to merge your updates with the default branch opens.
+After you enter the connection details in Redocly, a pull request to merge your updates with the default branch opens as a draft.
 
 1. Refresh your browser to see a **View Pull Request** button next to your new branch name.
 2. Select **View Pull Request**.
 3. Review your updates in the **Review** tab.
-4. After the tests have run and your pull request has been approved, click the **Merge** button to merge your updates with the default branch.
+4. Select the **Ready for review** button to take the pull request out of draft.
+5. After the tests have run and your pull request has been approved, click the **Merge** button to merge your updates with the default branch.
 
 ## Resources
 

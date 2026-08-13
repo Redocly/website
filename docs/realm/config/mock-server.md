@@ -12,7 +12,7 @@ description: Configure a mock server in your Redocly-powered API documentation.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Configure a mock server in your Redocly-powered API documentation.
 The mock server allows users to:
 
 - Send requests to the Operations in your API description from Replay, cURL, or any other API client.
@@ -35,7 +35,7 @@ For example, `/_mock/openapi/redocly-museum/`.
 - off
 - boolean
 - Turn off ("disable") the mock server.
-  Defaults to `false`.
+  Default: `false`.
 
 ---
 
@@ -46,7 +46,7 @@ For example, `/_mock/openapi/redocly-museum/`.
 
   If `false`, the mock server substitutes fields in the response payload with values provided in the request.
 
-  Defaults to `false`.
+  Default: `false`.
 
 ---
 
@@ -56,27 +56,25 @@ For example, `/_mock/openapi/redocly-museum/`.
   Controls the response behavior of the mock server when a [forced example](../content/api-docs/configure-mock-server.md#understand-strict-examples) is not found.
 
   If `true`, the mock server returns an error.
+  
   If `false`, the mock server falls back to any other example defined for that operation.
 
-  Defaults to `false`.
+  Default: `false`.
 
 ---
 
 - position
 - string
--
-  Controls the position of the mock server in the servers dropdown in Redocly Replay.
-
-  Possible values:`first`, `last`, `replace`, `off`.
-
-  Defaults to `first`.
+- Controls the position of the mock server in the servers dropdown in Redocly Replay.
+  Possible values: `first`, `last`, `replace`, `off`.
+  Default: `first`.
 
 ---
 
 - description
 - string
 - Set the description of the mock server in the servers dropdown in Redocly Replay.
-  Defaults to `Mock Server`.
+  Default: `Mock server`.
 
 {% /table %}
 
@@ -84,9 +82,9 @@ For example, `/_mock/openapi/redocly-museum/`.
 
 This example configures the mock server in the following ways:
 
-- Example response payloads don't substitute values from the request
-- Only the mock server is available on Replay's server list
-- The mock server is labeled as "Development server"
+- Example response payloads don't substitute values from the request.
+- Only the mock server is available on Replay's server list.
+- The mock server is labeled as "Development server".
 
 ```yaml
 mockServer:

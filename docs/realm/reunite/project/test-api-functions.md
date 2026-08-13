@@ -11,8 +11,6 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% partial file="../../_partials/early-access.md" /%}
-
 You can use Replay in Reunite to send requests to your API functions while you work in the editor.
 With Replay you can verify routing, request data, and responses, without leaving your project workspace.
 
@@ -41,7 +39,7 @@ To test an API function in Reunite:
 
 If the active file is not an API function, Replay prompts you to open one first.
 
-{% admonition type="info" %}
+{% admonition type="info" name="Automatic request loading" %}
 Replay automatically opens the request that matches the API function file you selected in the editor.
 {% /admonition %}
 

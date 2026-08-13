@@ -782,3 +782,6 @@
 'docs/realm/get-started/use-legacy-ui-components':
   to: '/docs-legacy/developer-portal/use-legacy-ui-components'
 
+# AI governance
+'/docs/realm/faq/ai-search-privacy':
+  to: '/docs/realm/faq/ai-governance'

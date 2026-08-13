@@ -56,7 +56,7 @@ Developer workflows are getting smarter and more flexible:
 
 Several quality-of-life improvements for developers:
 - **Dynamic component loading**: New dynamic function in `@redocly/theme` enables lazy loading for better performance.
-- **Authentication improvements**: 
+- **Authentication improvements**:
   - `tokenUrl` values now serve as defaults in Try It security flows
   - Added support for accessing original identity provider tokens
 - **Flexible configuration**: Made the `codeSamples->languages` parameter optional for easier setup.

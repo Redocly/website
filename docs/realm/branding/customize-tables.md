@@ -9,7 +9,7 @@ Redocly supports tables written in both Markdown and Markdoc syntax.
 
 Make sure you have the following:
 
-- basic CSS knowledge
+- a basic understanding of CSS
 - a `@theme/styles.css` file in your project
 
 ## Table styling basics
@@ -102,7 +102,7 @@ This example sets the width and background color of the "Favorite veggie" column
 ```
 
 | Person | Favorite vegetable |
-|-------|-----|
+| ------- | ----- |
 | Taylor | Brussel sprouts |
 | Annabelle | Asparagus |
 | Oliver | Bell peppers |
@@ -133,7 +133,7 @@ Create more advanced styles by combining `data-label` with other CSS selectors:
 ```
 
 | Person | Favorite animal |
-|-------|-----|
+| ------- | ----- |
 | Oliver | Penguins |
 | Daisy | Rabbits |
 | Taylor | Snow leopard |

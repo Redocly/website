@@ -29,14 +29,6 @@ In Reunite, projects are the place where you create, test, and deploy documentat
 Reunite creates your project and takes you to the project's **Editor** page and you can start working on your documentation.
 If you have a third-party-hosted Git, [connect your repository](#connect-your-project-repository) first.
 
-### Go live with a draft project
-
-New projects start in draft mode.
-While a project stays in draft mode, deployment URLs require login and the production deployment runs in a lower-scale configuration.
-
-To make the project behave like a standard live project, click **Go live** in the editor.
-For more information, see [draft projects](./draft-projects.md).
-
 ## Switch between projects
 
 Reunite enables you to work on multiple projects.
@@ -87,7 +79,7 @@ On the **General settings** page you can:
 
 When a project becomes obsolete, or you have a test project you no longer need, you may want to delete that project.
 
-{% admonition type="danger" %}
+{% admonition type="danger" name="Irreversible action" %}
 Deleting a project is permanent - all data on Reunite, including customer feedback, is lost.
 Perform this action only if you're certain your organization no longer has use for it.
 
@@ -118,9 +110,11 @@ If you use Redocly-hosted Git, you can download your project files at any time.
 To download your project files:
 
 1. In your project's workspace, select **Settings** > **Git hosting**.
-1. Click the **Download ZIP** button.
+2. (Optional) Select a branch in the branch selector next to the **Download ZIP** button.
+   The default branch is selected initially; type a branch name to filter the list.
+3. Click the **Download ZIP** button.
 
-The `.zip` file with all files from your project downloads to your machine.
+The `.zip` file with all files from the selected branch downloads to your machine.
 
 ### Connect your project repository
 
@@ -135,7 +129,6 @@ To learn how to change which branches Reunite deploys and how it handles preview
 
 ## Resources
 
-- **[Draft projects](./draft-projects.md)** - Understand draft mode, protected draft deployments, and what changes when you go live
 - **[Configure RBAC](../../config/access/rbac.md)** - Set up role-based access control for granular project and content access permissions
 - **[Connect a Git provider](./connect-git/connect-git-provider.md)** - Integrate your projects with Git repositories from various providers for version control and collaboration
 - **[Remote content](./remote-content/index.md)** - Integrate and synchronize content from external repositories and sources into your Reunite projects

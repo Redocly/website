@@ -15,6 +15,7 @@ Redocly CLI supports the following linting approaches with AsyncAPI documents:
 
 - AsyncAPI document validation, including full binding validation for [supported protocols](#supported-protocols).
 - Supported versions:
+  - [AsyncAPI 3.1](https://www.asyncapi.com/docs/reference/specification/v3.1.0)
   - [AsyncAPI 3.0](https://www.asyncapi.com/docs/reference/specification/v3.0.0)
   - [AsyncAPI 2.6](https://v2.asyncapi.com/docs/reference/specification/v2.6.0)
   - earlier versions in the 2.x family may also validate successfully
@@ -50,6 +51,7 @@ The currently supported rules are:
 
 - `info-contact`: the `Info` section must contain a valid `Contact` field.
 - `operation-operationId`: every operation must have a valid `operationId`.
+- `security-defined`: every scheme referenced from an operation or server `security` array must be defined in `components.securitySchemes` (AsyncAPI 2.x and 3.0).
 - `channels-kebab-case`: channel address should be `kebab-case` (lowercase with hyphens).
 - `no-channel-trailing-slash`: channel names must not have trailing slashes in their address.
 - `tag-description`: all tags require a description.
@@ -111,6 +113,10 @@ AsyncAPI supports an ever-expanding list of protocols, here's the list of what's
 - `stomp`
 - `redis`
 - `mercure`
+- `ibmmq`
+- `googlepubsub`
+- `pulsar`
+- `ros2` (AsyncAPI 3.x only)
 
 If you're using other protocols, you can still use Redocly CLI to lint an AsyncAPI description, but the details of those protocol bindings aren't validated and no problems are reported in those areas.
 The bindings listed above should all work as expected, however please [open an issue](https://github.com/Redocly/redocly-cli/issues) if you see something that doesn't look right.

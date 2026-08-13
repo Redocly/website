@@ -15,8 +15,7 @@ plans:
 The `connect-mcp` tag renders a button that allows users to connect to the MCP (Model Context Protocol) server through various MCP clients.
 When clicked or hovered, it displays a dropdown menu with options to connect via Cursor, VS Code, or copy the MCP configuration.
 
-
-{% admonition type="info" %}
+{% admonition type="info" name="Before you begin"%}
 The Connect MCP button requires a properly configured Docs MCP server to function.
 See the [MCP configuration documentation](../../config/mcp.md) for setup instructions.
 {% /admonition %}

@@ -14,7 +14,7 @@ description: Configure authentication and access-related settings in a single ob
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Configure authentication and access-related settings in a single object.
 The `access` object groups authentication and access-related configuration options together for better organization and maintainability.
 
 {% admonition type="info"  name="New configuration format" %}

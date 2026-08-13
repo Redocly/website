@@ -200,17 +200,19 @@ The `requestBody` attribute allows you to define example payloads directly in th
   ```
 {% /markdoc-example %}
 
+<!-- recheck-disable semantic-line-breaks -->
 {% replay-openapi
   descriptionFile="../../openapi-files/redocly-museum.yaml"
   operationId="createSpecialEvent"
   requestBody={
     name: "Find the museum curator's hat",
     location: "Somewhere in the museum... we hope.",
-    eventDescription: "The curator misplaced his hat. Please help us find it!",
+    eventDescription: "The curator misplaced their hat. Please help us find it!",
     dates: ["2024-05-07"],
     price: 0,
   }
 /%}
+<!-- recheck-enable semantic-line-breaks -->
 
 ### With pre-defined environment variables
 

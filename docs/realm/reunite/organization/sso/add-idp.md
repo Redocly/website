@@ -38,27 +38,25 @@ Make sure you have the following:
 
 ## Add a Corporate identity provider (IdP)
 
-A Corporate identity provider is used to authenticate internal users into Reunite and projects.
+Corporate identity providers authenticate internal users into Reunite and projects.
 You can add multiple Corporate identity providers for your organization and target a specific one at project login by configuring [`access.idps`](../../../config/access/idps.md).
 
-1. Log in to your Redocly instance.
-2. Select **SSO and login** in the navigation menu on the left side of the page.
-3. Click **Add identity provider** and select the type of identity provider you want to add - either SAML 2 or OpenID Connect.
-4. Complete the form based on the information you have gathered about your SSO identity provider.
+1. In your Organization's workspace, in the navigation menu, select **Access** > **SSO and login**.
+1. Click the **Add** button and from the dropdown list select either **SAML 2** or **OpenID Connect**.
+1. Complete the form based on the information you have gathered about your SSO identity provider.
    In the **Login type** dropdown, select **Corporate**.
-5. Click **Save**.
+1. Click **Save**.
 
 ## Add a Guest identity provider (IdP)
 
-A Guest identity provider is used to authenticate external users into projects.
+Guest identity providers authenticate external users into projects.
 You can add multiple Guest identity providers for your organization and target a specific one at project login by configuring [`access.idps`](../../../config/access/idps.md).
 
-1. Log in to your Redocly instance.
-2. Select **SSO and login** in the navigation menu on the left side of the page.
-3. Click **Add identity provider** and select the type of identity provider you want to add - either SAML 2 or OpenID Connect.
-4. Complete the form based on the information you have gathered about your SSO identity provider.
+1. In your Organization's workspace, in the navigation menu, select **Access** > **SSO and login**.
+1. Click the **Add** button and from the dropdown list select either **SAML 2** or **OpenID Connect**.
+1. Complete the form based on the information you have gathered about your SSO identity provider.
    In the **Login type** dropdown, select **Guest**.
-5. Click **Save**.
+1. Click **Save**.
 
 
 ## Team mapping
@@ -69,9 +67,9 @@ To map IdP groups to Redocly default teams or project RBAC teams:
 
 1. Select the **Configure team attribute mapping** or **Configure team claim mapping** checkbox.
 1. Enter the IdP group name in the Value text box on the left side.
-2. Enter the [Redocly default team tied to an organization role](../teams.md#team-mapping) or [project RBAC team name](../../../access/index.md#assign-roles-to-specified-teams) into the **Team** text box on the right side.
-3. Click the **Add mapping** button to add additional mappings as needed.
-4. Click **Save**.
+1. Enter the [Redocly default team tied to an organization role](../../../access/roles.md#reserved-organization-role-names) or [project's RBAC team name](../../../config/access/rbac.md#team-to-role-map) into the **Team** text box on the right side.
+1. Click the **Add mapping** button to add additional mappings as needed.
+1. Click **Save**.
 
 When users assigned to those groups in your IdP log in to Reunite, they have the project or organization role access assigned to those teams.
 
@@ -81,14 +79,27 @@ When users assigned to those groups in your IdP log in to Reunite, they have the
 
 ## Require SSO authentication
 
-You can require SSO authentication for all members of your organization by selecting the **Require SSO authentication for all members of the Redocly organization** checkbox on the **SSO and Login** page.
-Selecting this checkbox means that if you have `rbac` configured, users must log in with SSO credentials and if they do not have SSO credentials, they will lose access to the organization.
+You can require all members of your Redocly organization to log in to Reunite with SSO credentials.
+Before you proceed, verify that users are able to log in using your IdPs.
 
-{% admonition type="info" name="attention" %}
-Requiring SSO authentication does not require users to log in to your project.
-To require login to your project, you must configure `rbac` or `requiresLogin`.
-See [Configure RBAC](../../../access/index.md) or [requiresLogin](../../../config/access/requires-login.md) for more information.
+{% admonition type="danger" name="Risk of admin lockout" %}
+If you select **Require SSO authentication for all members** and save without validating your IdP connection, you risk getting locked out of Reunite.
+To prevent losing access to Reunite, click the **Test connection** button and make sure you are able to authenticate before saving.
 {% /admonition %}
+
+This setting doesn't affect how users access your deployed project.
+To require login to your project, you must configure `rbac` or `requiresLogin`.
+See [Configure RBAC](../../../access/index.md) or [requiresLogin](../../../config/access/requires-login.md) for configuration instructions.
+
+To require SSO authentication:
+
+1. Select the **Require SSO authentication for all members** checkbox.
+1. Click the **Test connection** button.
+1. In the window that opens, authenticate in your IdP.
+1. If you were able to authenticate successfully, click **Save**.
+
+After you save, organization members must authenticate with an IdP to access Reunite.
+If they do not have SSO credentials, they lose access to the organization.
 
 ## Resources
 

@@ -12,7 +12,7 @@ description: Hide Redocly attribution information from the browser console.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Hide Redocly attribution information from the browser console.
 
 ## Examples
 

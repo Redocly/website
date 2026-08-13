@@ -89,7 +89,7 @@ The navbar is a good location for top-level category or frequently-used links.
 - external
 - boolean
 - Open link in new browser tab.
-  Default is `false`.
+  Default: `false`.
 
 ---
 
@@ -140,7 +140,7 @@ The navbar is a good location for top-level category or frequently-used links.
 - external
 - boolean
 - Open link in new browser tab.
-  Default value: `false`.
+  Default: `false`.
 
 ---
 

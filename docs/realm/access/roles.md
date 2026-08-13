@@ -126,6 +126,20 @@ Organization roles control access to your Redocly organization and are provided 
 
 ---
 
+- Can view project's **Respect Monitoring** page
+- {% icon name="solid check" size="2em" color="green" /%}
+- {% icon name="solid check" size="2em" color="green" /%}
+-
+-
+
+---
+
+- Can create and edit project's **Respect Monitoring** workflows
+- {% icon name="solid check" size="2em" color="green" /%}
+-
+-
+-
+
 {% /table %}
 
 ### Reserved organization role names
@@ -386,16 +400,6 @@ When users become members of a team, they are granted access based on the roles 
 -
 -
 -
--
-
----
-
-- Can view the **Respect Monitoring** page
-- {% icon name="solid check" size="2em" color="green" /%}
-- {% icon name="solid check" size="2em" color="green" /%}
-- {% icon name="solid check" size="2em" color="green" /%}
-- {% icon name="solid check" size="2em" color="green" /%}
-- {% icon name="solid check" size="2em" color="green" /%}
 -
 
 ---

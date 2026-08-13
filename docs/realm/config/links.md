@@ -14,11 +14,11 @@ description: Add custom fonts, stylesheets, and other links to pages.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% admonition type="warning" %}
+{% admonition type="warning" name="Option name change" %}
 Formerly known as the `stylesheets` option.
 {% /admonition %}
 
-{% $frontmatter.description %}
+Add custom fonts, stylesheets, and other links to pages.
 These links are added to the `<head>` HTML element of each page of your published project.
 The `@theme/styles.css` file is imported automatically.
 
@@ -102,7 +102,7 @@ The `@theme/styles.css` file is imported automatically.
 - string
 - Adds the `referrerpolicy` attribute with corresponding value to the script tag.
   Possible values: `no-referrer`, `no-referrer-when-downgrade`, `origin`, `origin-when-cross-origin`, `same-origin`, `strict-origin`, `strict-origin-when-cross-origin`, `unsafe-url`, `''`.
-  Default value: `strict-origin-when-cross-origin` (with fallback to `''`).
+  Default: `strict-origin-when-cross-origin` (with fallback to `''`).
 
 ---
 

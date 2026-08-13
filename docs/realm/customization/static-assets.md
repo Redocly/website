@@ -55,7 +55,7 @@ You can exclude specific pages from project builds by adding the relative path o
 To prevent broken links or potential build failures, make sure to remove any entries for the ignored page from your `sidebars.yaml` file.
 If other Markdown or TypeScript pages have links pointing to the excluded page, those links should be modified or removed prior to building the project.
 
-{% admonition type="info" %}
+{% admonition type="info" name="Readme files in the root"%}
 The `README.md` file is automatically ignored when located in the project's root directory.
 {% /admonition %}
 

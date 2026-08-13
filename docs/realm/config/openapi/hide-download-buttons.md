@@ -14,7 +14,7 @@ We recommend making the files available but in some situations, you may want to 
 
 The `hideDownloadButtons` option controls whether the **Download OpenAPI description** section on the info page of the API documentation is hidden.
 
-{% admonition type="warning" %}
+{% admonition type="warning" name="Not a privacy option" %}
   The `hideDownloadButtons` setting doesn't make your API description private.
   It only stops the download buttons being visible.
 {% /admonition %}
@@ -33,7 +33,7 @@ The `hideDownloadButtons` option controls whether the **Download OpenAPI descrip
 - boolean
 -
   Show or hide the **Download OpenAPI description** section of your API reference info page, which contains download buttons.
-  Defaults to `false`.
+  Default: `false`.
 
 {% /table %}
 

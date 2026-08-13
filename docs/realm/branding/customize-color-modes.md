@@ -8,7 +8,7 @@ When users switch between color modes, the documentation's appearance dynamicall
 Make sure you have the following:
 
 - at least a few Markdown pages in your project
-- at least beginner-level CSS knowledge
+- a basic understanding of CSS and Typescript
 
 ## Configure color mode styles
 
@@ -137,7 +137,7 @@ This creates new options in the color mode switcher and requires component eject
 
 Make sure you have:
 - a Redocly project set up and running locally
-- moderate knowledge of React and CSS
+- understanding of React and CSS
 - familiarity with [component ejection](../customization/eject-components/index.md)
 
 ### Eject ColorModeIcon component
@@ -171,7 +171,11 @@ function Icon({ mode, className }: ColorModeIconProps) {
 }
 ```
 
-**Important**: Pass the `className` prop through to the `<svg>` element for proper styling.
+{% admonition type="warning" name="className prop required" %}
+
+Pass the `className` prop through to the `<svg>` element for proper styling.
+
+{% /admonition %}
 
 ### Define custom color mode styles
 
@@ -217,6 +221,10 @@ See the [colorMode configuration](../config/color-mode.md) for all available opt
 Use the `useColorSwitcher` React hook to access the current color mode and switch modes from your custom components.
 This is useful for adapting component behavior or visuals based on the active color mode, or for adding custom color mode controls.
 
+The hook reads the current document color mode and updates the `<html>` element classes when switching modes.
+The list of supported modes comes from configuration.
+If no modes are configured, the default is `light` and `dark`.
+
 ### Usage
 
 ```tsx
@@ -252,12 +260,6 @@ switchColorMode('dark'); // sets dark mode if supported
 - **activeColorMode**: `string` — The current color mode (for example, `light` or `dark`).
 - **switchColorMode**: `(mode?: string) => void` — Call with no argument to cycle through configured modes.
   Call with a `string` to set a specific supported mode.
-
-### Notes
-
-- The hook reads the current document color mode and updates the `<html>` element classes when switching modes.
-- The list of supported modes comes from configuration.
-  If no modes are configured, the default is `light` and `dark`.
 
 ## Resources
 

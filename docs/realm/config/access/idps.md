@@ -13,11 +13,11 @@ description: Restrict project login to specific identity providers (IdPs) select
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
-
+Restrict project login to specific identity providers (IdPs) selected by unique ID.
 Configure which individual identity providers (IdPs) — by their unique ID — are available at project login.
 `idps` selects identity providers by the unique ID and is mutually exclusive with [`sso`](./sso.md).
-When `idps` is configured, only the listed identity providers can be used to log in to the project — the standard Redocly login (email/password and Social Login providers) is not offered.
+When `idps` is configured, you can only use the listed identity providers to log in to the project.
+To also offer the standard Redocly login (email/password and Social Login providers), add `redocly` to the list.
 
 Use `idps` when:
 
@@ -40,7 +40,8 @@ Each identity provider's unique ID is displayed next to its name on the Reunite 
 - string | [string]
 - List of identity provider unique IDs from Reunite.
   Each entry must be in kebab-case (lowercase letters, numbers, hyphens).
-  Values: `redocly`, `corporate`, and `guest` are reserved and cause validation errors.
+  The `redocly` special value enables the standard Redocly login (email/password and Social Login providers).
+  Values: `corporate` and `guest` are reserved and cause validation errors.
   Identity providers not listed in `idps` are hidden at project login and cannot be used to authenticate.
 
 {% /table %}
@@ -57,6 +58,17 @@ access:
 
 Only the IdP with unique ID `acme-corp-saml` is offered.
 Other IdPs (including ones in `CORPORATE` or `GUEST` categories) are hidden, and the standard Redocly login is not available.
+
+### Combine a specific IdP with Redocly login
+
+```yaml {% title="redocly.yaml" %}
+access:
+  idps:
+    - acme-corp-saml
+    - redocly
+```
+
+The IdP with unique ID `acme-corp-saml` is offered together with the standard Redocly login (email/password and Social Login providers).
 
 ## Resources
 

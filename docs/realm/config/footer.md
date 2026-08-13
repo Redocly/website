@@ -31,7 +31,7 @@ The footer is a section at the bottom of your documentation that contains copyri
 - boolean
 -
   Specifies whether the footer is hidden.
-  Defaults to `false`.
+  Default: `false`.
 
     {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "footer.hide"} /%}
 
@@ -111,7 +111,7 @@ The footer is a section at the bottom of your documentation that contains copyri
 - boolean
 -
   Configures the item to open in a new tab and adds an external link symbol next to entry.
-  Defaults to `false`.
+  Default: `false`.
 ---
 
 {% raw-partial file="../_partials/nav-item-icon-property-row.md" /%}

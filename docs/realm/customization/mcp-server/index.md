@@ -27,6 +27,71 @@ Realm provides built-in MCP server capabilities that expose your API Docs to AI 
 Use the Docs MCP server to explore and discover APIs in your project.
 For the current MCP endpoint details, authentication semantics, server metadata, and tool schemas, see the [Docs MCP reference](./openapi.yaml).
 
+## MCP server card
+
+The MCP server card is a standardized JSON document that lets agents discover the Docs MCP server: its tools, transport endpoint, and capabilities.
+The discovery is a single request that follows the Model Context Protocol server-card format.
+It is available at `/.well-known/mcp/server-card.json` when the MCP server is enabled.
+
+```http
+GET https://example.com/.well-known/mcp/server-card.json
+```
+
+The following example response describes a login-protected server that also publishes skills:
+
+```json
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-06-18",
+  "serverInfo": {
+    "name": "Docs MCP server",
+    "title": "Docs MCP server",
+    "version": "2026-07-13"
+  },
+  "description": "Redocly Cafe documentation.",
+  "documentationUrl": "https://example.com/",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "/mcp"
+  },
+  "capabilities": {
+    "logging": {},
+    "tools": { "listChanged": true },
+    "resources": { "listChanged": true },
+    "completions": {}
+  },
+  "authentication": {
+    "required": true,
+    "schemes": ["bearer", "oauth2"]
+  },
+  "tools": ["dynamic"]
+}
+```
+
+The card lists the server's tools, declares its `/mcp` transport endpoint, and states its authentication requirements when the server requires login.
+When your project publishes [agent skills](../agent-skills/index.md#skills-as-mcp-resources), the card's capabilities advertise resource support so agents know to list them.
+
+## Restrict access to the MCP server
+
+Control which teams can access the MCP server with the `rbac.features.mcp` option, the same way `rbac.features.aiSearch` controls access to AI search.
+
+In the following example, only members of the Developers team can access the MCP server:
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    features:
+      mcp:
+        Developers: read
+```
+
+When a team-based role is set for the `mcp` feature, only teams with a role other than `none` can access the MCP server.
+Users must sign in unless the `anonymous` team is granted such a role, either directly or through the `*` wildcard, which covers all teams that are not listed explicitly, including `anonymous`.
+When the `anonymous` team has no access, requests without a valid token receive a `401` response, and authenticated users who don't belong to an allowed team receive a `403` response.
+
+For more details, see the [RBAC configuration reference](../../config/access/rbac.md#features-configuration).
+
 ## Connect an AI agent to the MCP server
 
 After you enable the Docs MCP server in [configuration](../../config/mcp.md), it is available at `/mcp` on your project root URL.
@@ -136,3 +201,5 @@ Ask the AI to perform a query that uses an MCP tool.
 ## Resources
 
 - **[MCP configuration reference](../../config/mcp.md)** - Configure MCP for your project
+- **[RBAC configuration reference](../../config/access/rbac.md)** - Restrict MCP server access to specific teams
+- **[Agent skills](../agent-skills/index.md)** - Publish task-focused `SKILL.md` instructions and the discovery endpoints agents read to find them

@@ -124,10 +124,10 @@ search:
 - ai
 - [[AI search options](#ai-search-options)]
 - AI search options.
+
     {% admonition type="warning" name="Deprecated configuration" %}
       The `ai` property is deprecated.
       Use [AI Assistant](./ai-assistant.md) option instead.
-
     {% /admonition %}
 
 {% /table %}
@@ -240,7 +240,7 @@ Use [AI Assistant](./ai-assistant.md) option instead.
 - hide
 - boolean
 - Hides the AI search button when set to `true`.
-  Default: `true`
+  Default: `true`.
 
 ---
 
@@ -258,13 +258,13 @@ Use [AI Assistant](./ai-assistant.md) option instead.
 
 {% /table %}
 
-**Data usage and privacy:** Curious how AI Search uses your data?
-Redocly AI Search runs in **inference-only mode** and does not train or fine-tune AI models on your content.
-For details, see the [AI Search data usage FAQ](../faq/ai-search-privacy.md).
+**Data usage and privacy:** Curious how the AI assistant uses your data?
+The Redocly AI assistant runs in **inference-only mode** and does not train or fine-tune AI models on your content.
+For details, see the [AI governance and security FAQ](../faq/ai-governance.md).
 
-{% admonition type="info" %}
+{% admonition type="info" name="Make content private"%}
 
-The `excludeFromSearch` option excludes content from search (both AI search and keyword search), `llms.txt` and sitemap.
+The `excludeFromSearch` option excludes content from search (both AI search and keyword search), `llms.txt`, and sitemap.
 See [excludeFromSearch documentation](./front-matter-config.md#front-matter-only-options) for details.
 
 {% /admonition %}

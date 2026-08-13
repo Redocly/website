@@ -14,17 +14,19 @@ description: Configure metadata properties for your project, APIs, and documenta
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Configure metadata properties for your project, APIs, and documentation files.
 Metadata is used for content categorization, search facets, catalog filtering, and scorecard functionality.
 
 ## How it works
 
 The `metadata` option accepts an object with key-value pairs:
-- Keys can be any string identifier
-- Values can be any scalar value (string, number, boolean)
-- Some metadata keys have special functionality (e.g., `redocly_category` for search facets)
+
+- Keys can be any string identifier.
+- Values can be any scalar value (string, number, boolean).
+- Some metadata keys have special functionality (for example, `redocly_category` for search facets).
 
 Metadata can be defined in several ways, with the following priority (highest to lowest):
+
 1. `x-metadata` extension in OpenAPI files
 2. Front matter in Markdown files
 3. `metadata` in the `redocly.yaml` configuration

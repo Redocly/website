@@ -14,7 +14,6 @@ plans:
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Draft mode lets you validate a Reunite project in a production environment before you publish it for your end users.
-All new projects in Reunite start in draft mode.
 
 While a project stays in draft mode:
 

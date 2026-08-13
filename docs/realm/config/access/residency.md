@@ -12,7 +12,7 @@ description: Select a geographical location to host your project.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-{% $frontmatter.description %}
+Select a geographical location to host your project.
 Choose where your application resides when you set it up, then use this configuration setting for local tools to know where to connect to.
 
 This option is needed if your projects have residency outside our main US-based location.
