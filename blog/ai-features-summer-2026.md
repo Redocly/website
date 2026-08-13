@@ -6,7 +6,7 @@ seo:
   title: "Your docs, ready for AI agents: what we shipped and what's next"
   description: Developers ask AI before they open your docs. Here's everything Redocly shipped in two months to make your documentation the source AI tools trust, and the roadmap for what agents will do next.
 author: illia-nykonchuk
-publishedDate: '2026-07-28'
+publishedDate: '2026-08-13'
 categories:
   - redocly:product-updates
 ---
@@ -29,6 +29,7 @@ There's nothing to build and nothing to host: point an AI tool at your docs and 
 
 In just two months, the server got substantially more capable:
 
+- **The newest MCP protocol.** Docs MCP supports [2026-07-28 protocol version](https://modelcontextprotocol.io/specification/2026-07-28), the largest change since MCP started: a stateless core, header-based routing, cacheable tool lists, and stronger authorization. The newest AI clients and their capabilities work with your docs from day one.
 - **GraphQL support.** The MCP tools for exploring your API catalog now cover GraphQL, not only OpenAPI. Agents can list your [GraphQL APIs](https://redocly.com/docs/realm/content/api-docs/add-graphql-docs), browse types, and read whole schemas.
 - **Multi-version APIs.** Projects that document several versions expose all of them, so agents answer against the version your user is actually on.
 - **Search that respects locales.** An English question no longer pulls back the same page in every translation.
@@ -70,16 +71,29 @@ And when a human really is needed, the **Contact support** option appears the mo
 The assistant is also how we dogfood what's coming next: its abilities are built as custom MCP tools, and the assistant itself runs as the embeddable widget.
 You'll meet both in the roadmap below.
 
+## Reviewer: the first review on every pull request
+
+Everything above assumes your docs are correct. Reviewer is how they stay correct.
+
+[Reviewer](https://redocly.com/reviewer) comments line by line as soon as a pull request opens, before the first human review. It checks:
+
+- **API descriptions.** OpenAPI and AsyncAPI, breaking changes included.
+- **Documentation.** Markdown for clarity and accuracy, cross-checked against the OpenAPI description the page refers to.
+- **API security.** Risks framed by the OWASP API Security.
+- **Cross-document consistency.** Pages that drifted apart and now contradict each other.
+- **Redocly config.** Your configuration, before it reaches a deploy.
+
+A linter checks one file against a rule set. Reviewer reads the API description and the documentation together, so it finds the places where the two disagree.
+
 ## Where this is heading
 
-Everything above makes your docs something agents can _read_.
+The MCP server and `llms.txt` make your docs something agents can _read_.
 The next wave makes them something agents can _act through_:
 
 - **Gateway MCP.** Agents stop just reading about your API and start calling it, with your documentation as the interface. Fully opt-in: nothing is exposed unless you enable it. Your docs become the fastest way for any AI tool to integrate with your product.
-- **Code mode.** Instead of a long chain of tool calls, an agent writes a short script that runs in a sandbox and chains the calls itself. Same answers, a fraction of the tokens.
+- **Code mode in Docs MCP.** Instead of a long chain of tool calls, an agent writes a short script that runs in a sandbox and chains the calls itself. We measured both modes on a large set of documentation tasks. Code mode matched or beat the tool chain on answer quality in every task, and used 86% fewer input tokens on average, at half the cost. On the heaviest task, an audit across the whole project, it used 60 times fewer tokens.
 - **Custom MCP tools.** Add your own tools to your project's MCP server, so agents can do what's specific to your product, not only what's built in.
-- **The latest MCP protocol.** The protocol is evolving quickly, and we're updating our MCP server to its latest revision, so your docs support new agent capabilities as soon as clients adopt them.
-- **Maintainer.** An agent that watches the signals your docs already produce (search queries, feedback, page analytics, support questions), finds the real gaps, validates them and opens pull requests with fixes. Docs that improve while you sleep.
+- **Writer.** An agent that watches the signals your docs already produce (search queries, feedback, page analytics, support questions), finds the real gaps, validates them and opens pull requests with fixes. Docs that improve while you sleep.
 - **Embeddable AI Assistant.** The assistant that answers from your docs, on your web app, with a single script tag.
 
 ## Try it in the next five minutes
@@ -91,4 +105,5 @@ Useful links:
 
 - [Docs MCP server documentation](https://redocly.com/docs/realm/customization/mcp-server)
 - [Agent skills documentation](https://redocly.com/docs/realm/customization/agent-skills)
+- [Reviewer](https://redocly.com/reviewer)
 - [Redocly changelog](https://redocly.com/docs/realm/changelog)
