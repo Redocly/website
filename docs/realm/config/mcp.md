@@ -69,7 +69,7 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 
 - ignore
 - [string]
-- List of patterns or identifiers to ignore in the MCP server.
+- List of glob patterns, matched against file paths, for content to exclude from the MCP server.
   Default: `[]`.
 
 {% /table %}
@@ -102,7 +102,7 @@ mcp:
 
 ### Ignore specific patterns
 
-Ignore specific files and filename patterns in the MCP server:
+Ignore files and file path patterns in the MCP server:
 
 ```yaml
 # Global settings
@@ -113,7 +113,7 @@ mcp:
     # Ignored patterns
     ignore:
       - openapi-files/**
-      - test-endpoints
+      - '**/test-endpoints*'
 ```
 
 ## Default configuration
