@@ -607,3 +607,8 @@ tr td:first-child code {
 .mermaid .label {
     line-height: 1.6 !important;
 }
+
+[data-component-name="Banner/Banner"] p img {
+    vertical-align: middle;
+    margin-top: -3px;
+}

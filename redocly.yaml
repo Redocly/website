@@ -327,7 +327,6 @@ links:
     title: Redocly Blog RSS Feed
 
 banner:
-  - content: | 
-     New arrivals: ✨ **Reviewer** - [expert review on all docs](https://redocly.com/reviewer) and 📖 **Redoc 3.0** - [our rebuilt API reference](https://redocly.com/redoc-ce)
+  - content: ✨ **Reviewer** - expert feedback on every docs PR. [Get early access](https://redocly.com/reviewer) **·**  {% img src="./images/icons/redoc-ce.svg" alt="Redoc" width=16 height=16 /%} Redoc 3.0 is coming. [Take a look](https://redocly.com/redoc-ce)
     target: '**'
     dismissible: true
