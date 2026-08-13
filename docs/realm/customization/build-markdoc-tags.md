@@ -480,6 +480,23 @@ Only return text you are comfortable making public — do not pull secrets, API 
 
 {% /table %}
 
+### Update LLM output in preview
+
+Realm generates the `llms.txt` file and the Markdown version of every page when the preview server starts.
+Afterwards, edits to `renderForLlms` functions aren't automatically reflected in the output.
+Users can re-generate the output of `renderForLlms` by:
+
+- clicking **More options** > **Full restart** in the Webview tab
+- clicking **LLM output** in the status bar in Webview or in local preview
+
+The **LLM output** action appears after you change a `renderForLlms` function.
+The action updates the `llms.txt` file, the Markdown version of each page, and the search documents.
+Requesting a page's Markdown, such as `/quiz.md`, then returns output from your latest tag code.
+
+The action is only available after changes to `renderForLlms` functions themselves.
+If a function calls a helper defined elsewhere, changing only that helper doesn't display the action.
+Restart the preview server to apply such changes.
+
 ### Examples
 
 The examples below add `renderForLlms` to the `quiz` tag from this tutorial.
