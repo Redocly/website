@@ -37,49 +37,49 @@ import { Button } from '@redocly/theme/components/Button/Button';
 ---
 
 - `disabled`
-- `boolean`
+- boolean
 - Disables the button if `true`.
 
 ---
 
 - `blinking`
-- `boolean`
+- boolean
 - Adds a blinking effect (useful for drawing attention).
 
 ---
 
 - `fullWidth`
-- `boolean`
+- boolean
 - Makes the button stretch to 100% of its container's width.
 
 ---
 
 - `variant`
-- enum (`primary` | `secondary` | `outlined` | `text` | `link` | `ghost` | `string`)
+- enum (primary | secondary | outlined | text | link | ghost | string)
 - Defines the button's visual style.
 
 ---
 
 - `tone`
-- enum (`default` | `danger`)
+- enum (default | danger)
 - Indicates the tone, e.g., for warnings or critical actions.
 
 ---
 
 - `size`
-- enum (`small` | `medium` | `large` | `string`)
+- enum (small | medium | large | string)
 - Controls the button size.
 
 ---
 
 - `extraClass`
-- `string`
+- string
 - Adds extra custom CSS classes.
 
 ---
 
 - `to`
-- `string`
+- string
 - If provided, renders the button as a link to the specified URL.
 
 ---
@@ -91,19 +91,19 @@ import { Button } from '@redocly/theme/components/Button/Button';
 ---
 
 - `iconPosition`
-- enum (`left` | `right`)
+- enum (left | right)
 - Sets the icon position relative to the text.
 
 ---
 
 - `title`
-- `string`
+- string
 - Sets the title (tooltip text) of the button.
 
 ---
 
 - `tabIndex`
-- `number`
+- number
 - Controls the button's focus order.
 
 ---
@@ -115,7 +115,7 @@ import { Button } from '@redocly/theme/components/Button/Button';
 ---
 
 - `type`
-- enum (`button` | `submit` | `reset`)
+- enum (button | submit | reset)
 - Specifies the button type (HTML form behavior).
 
 {% /table %}

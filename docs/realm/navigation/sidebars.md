@@ -43,7 +43,9 @@ You can use the [`label`](#link-options) option in a `sidebars.yaml` file to cha
 Projects that have [multiple products](./multi-product.md) or the [catalog](../config/catalog-classic.md), generate separate sidebars for each of item.
 
 In complex projects, you can add separate `sidebars.yaml` files for each section of your project.
-Either add the files in project folders, or in the root folder with prefixes (for example: `installation.sidebars.yaml`. `config.sidebars.yaml`), then reference these files in the `sidebars.yaml` at the root of your project.
+Either add the files in project folders, or in the root folder with prefixes.
+For example: `installation.sidebars.yaml`, `config.sidebars.yaml`.
+Then reference these files in the `sidebars.yaml` at the root of your project.
 
 To hide the sidebar for your entire project, use the [`sidebar` option](../config/sidebar.md) in `redocly.yaml`.
 
@@ -81,7 +83,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - external
 - boolean
 - Opens item in a new tab and adds an external link symbol.
-  Defaults to `false`.
+  Default: `false`.
   Does not apply to paths to version subfolders.
 
 ---
@@ -89,7 +91,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - disconnect
 - boolean
 - Includes links in the sidebar without assigning the sidebar to that page.
-  Defaults to `false`.
+  Default: `false`.
 
 ---
 
@@ -161,7 +163,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - string
 -
   Values:
-  `drilldown` -- Shows only the selected group's items and hides other sidebar elements.
+  `drilldown` - Displays only the selected group's items and hides other sidebar elements.
 
 ---
 
@@ -169,12 +171,12 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - string
 -
   Values:
-  `true` -- Items are expanded when page loads.
+  `true` - Items are expanded when page loads.
   Users can collapse the group.
-  `false` -- **Default**.
-  Items are collapsed when page loads.
+  `false` - Items are collapsed when page loads.
   Users can expand.
-  `always` -- Items are expanded when page loads and cannot be collapsed.
+  `always` - Items are expanded when page loads and cannot be collapsed.
+  Default: `false`.
 
 ---
 
@@ -267,14 +269,14 @@ Specify the order and link text for side navigation items by creating a `sidebar
   **Supported status colors:**
   `success`, `processing`, `error`, `warning`, `default`, `approved`, `declined`, `pending`, `active`, `draft`, `deprecated`, `product`.
 
-  Defaults to `grey`.
+  Default: `grey`.
 ---
 
 - position
 - string
 - The position of the badge relative to the label text.
   Possible values: `before`, `after`.
-  Defaults to `after`.
+  Default: `after`.
 
 ---
 

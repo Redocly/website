@@ -39,16 +39,16 @@ For more information about lazy loading strategies, see the guide to [Lazy Loadi
 ---
 
 - `ssr`
-- `boolean`
+- boolean
 - Enable server-side rendering.
-  Default: `true`
+  Default: `true`.
 
 ---
 
 - `loading`
 - `React.ComponentType<Record<string, unknown>>`
 - Custom loading component to display while the dynamic component loads.
-  Default: `null`
+  Default: `null`.
 
 {% /table %}
 
