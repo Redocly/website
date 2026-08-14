@@ -1,4 +1,27 @@
 '@redocly/realm':
+  0.137.0-next.0:
+    timestamp: 1786715464000
+    changes:
+      minor: []
+      patch:
+        - Added recovery hints displayed when Docs MCP lookup fails.
+        - Fixed an issue where Docs MCP API lookups rejected names that are unique parts of API titles.
+        - Fixed an issue where the MCP server served `http://` links behind proxies.
+        - >-
+          Fixed MCP OAuth discovery: the authorization server metadata `issuer` matches the portal origin (RFC 8414), 401 challenges include `scope`
+          and `authorization_uri`, and rejected bearer tokens return `error="invalid_token"`.
+        - Fixed an issue where legacy `#operation` deep links to operation sub-sections (such as callbacks or responses) did not scroll correctly.
+        - Fixed an issue where the Docs MCP `get-endpoint-info` tool returned operations for paths hidden with `x-mcp`.
+        - Fixed an issue in API docs where Markdown in MCP tool, resource, and prompt descriptions rendered as raw text.
+        - Fixed `mcp.docs.ignore` to correctly exclude ignored content from Docs MCP search results.
+        - Fixed an issue where the **Try it** button in OpenAPI docs was displayed after a delay.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.0
+      '@redocly/theme': 0.69.0-next.0
+      '@redocly/openapi-docs': 3.25.0-next.0
+      '@redocly/asyncapi-docs': 1.14.0-next.0
+      '@redocly/graphql-docs': 1.14.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.0
   0.136.0:
     timestamp: 1786621709000
     changes:
@@ -6892,6 +6915,26 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.137.0-next.0:
+    timestamp: 1786715464000
+    changes:
+      minor: []
+      patch:
+        - Added recovery hints displayed when Docs MCP lookup fails.
+        - Fixed an issue where Docs MCP API lookups rejected names that are unique parts of API titles.
+        - Fixed an issue where the MCP server served `http://` links behind proxies.
+        - >-
+          Fixed MCP OAuth discovery: the authorization server metadata `issuer` matches the portal origin (RFC 8414), 401 challenges include `scope`
+          and `authorization_uri`, and rejected bearer tokens return `error="invalid_token"`.
+        - Fixed an issue where the Docs MCP `get-endpoint-info` tool returned operations for paths hidden with `x-mcp`.
+        - Fixed `mcp.docs.ignore` to correctly exclude ignored content from Docs MCP search results.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.0
+      '@redocly/theme': 0.69.0-next.0
+      '@redocly/openapi-docs': 3.25.0-next.0
+      '@redocly/asyncapi-docs': 1.14.0-next.0
+      '@redocly/graphql-docs': 1.14.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.0
   0.136.0:
     timestamp: 1786621709000
     changes:
@@ -12838,6 +12881,26 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.137.0-next.0:
+    timestamp: 1786715464000
+    changes:
+      minor: []
+      patch:
+        - Added recovery hints displayed when Docs MCP lookup fails.
+        - Fixed an issue where Docs MCP API lookups rejected names that are unique parts of API titles.
+        - Fixed an issue where the MCP server served `http://` links behind proxies.
+        - >-
+          Fixed MCP OAuth discovery: the authorization server metadata `issuer` matches the portal origin (RFC 8414), 401 challenges include `scope`
+          and `authorization_uri`, and rejected bearer tokens return `error="invalid_token"`.
+        - Fixed an issue where the Docs MCP `get-endpoint-info` tool returned operations for paths hidden with `x-mcp`.
+        - Fixed `mcp.docs.ignore` to correctly exclude ignored content from Docs MCP search results.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.0
+      '@redocly/theme': 0.69.0-next.0
+      '@redocly/openapi-docs': 3.25.0-next.0
+      '@redocly/asyncapi-docs': 1.14.0-next.0
+      '@redocly/graphql-docs': 1.14.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.0
   0.136.0:
     timestamp: 1786621709000
     changes:
@@ -18774,6 +18837,29 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.137.0-next.0:
+    timestamp: 1786715464000
+    changes:
+      minor: []
+      patch:
+        - Added recovery hints displayed when Docs MCP lookup fails.
+        - Fixed an issue where Docs MCP API lookups rejected names that are unique parts of API titles.
+        - Fixed an issue where the MCP server served `http://` links behind proxies.
+        - >-
+          Fixed MCP OAuth discovery: the authorization server metadata `issuer` matches the portal origin (RFC 8414), 401 challenges include `scope`
+          and `authorization_uri`, and rejected bearer tokens return `error="invalid_token"`.
+        - Fixed an issue where legacy `#operation` deep links to operation sub-sections (such as callbacks or responses) did not scroll correctly.
+        - Fixed an issue where the Docs MCP `get-endpoint-info` tool returned operations for paths hidden with `x-mcp`.
+        - Fixed an issue in API docs where Markdown in MCP tool, resource, and prompt descriptions rendered as raw text.
+        - Fixed `mcp.docs.ignore` to correctly exclude ignored content from Docs MCP search results.
+        - Fixed an issue where the **Try it** button in OpenAPI docs was displayed after a delay.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.0
+      '@redocly/theme': 0.69.0-next.0
+      '@redocly/openapi-docs': 3.25.0-next.0
+      '@redocly/asyncapi-docs': 1.14.0-next.0
+      '@redocly/graphql-docs': 1.14.0-next.0
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.0
   0.136.0:
     timestamp: 1786621709000
     changes:
@@ -24778,6 +24864,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.69.0-next.0:
+    timestamp: 1786715464000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the **Try it** button in OpenAPI docs was displayed after a delay.
+    dependencies: {}
   0.68.0:
     timestamp: 1786621709000
     changes:
@@ -27900,6 +27993,14 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.25.0-next.0:
+    timestamp: 1786715464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.28.0-next.0
+      '@redocly/theme': 0.69.0-next.0
   3.24.0:
     timestamp: 1786621709000
     changes:
@@ -31968,6 +32069,14 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.14.0-next.0:
+    timestamp: 1786715464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.69.0-next.0
+      '@redocly/openapi-docs': 3.25.0-next.0
   1.13.0:
     timestamp: 1786621709000
     changes:
@@ -33311,6 +33420,17 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/api-docs':
+  0.2.0-next.0:
+    timestamp: 1786715464000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where legacy `#operation` deep links to operation sub-sections (such as callbacks or responses) did not scroll correctly.
+        - Fixed an issue in API docs where Markdown in MCP tool, resource, and prompt descriptions rendered as raw text.
+        - Fixed an issue where the **Try it** button in OpenAPI docs was displayed after a delay.
+    dependencies:
+      '@redocly/replay': 0.28.0-next.0
+      '@redocly/theme': 0.69.0-next.0
   0.1.0:
     timestamp: 1786621709000
     changes:
@@ -34440,6 +34560,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.20.0-next.0:
+    timestamp: 1786715464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.137.0-next.0
+      '@redocly/redoc': 0.137.0-next.0
+      '@redocly/redoc-reef': 0.137.0-next.0
+      '@redocly/redoc-revel': 0.137.0-next.0
+      '@redocly/theme': 0.69.0-next.0
   1.19.0:
     timestamp: 1786621709000
     changes:
@@ -40035,6 +40166,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.22.0-next.0:
+    timestamp: 1786715464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.25.0-next.0
   0.21.0:
     timestamp: 1786621709000
     changes:
@@ -43125,6 +43263,21 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.28.0-next.0:
+    timestamp: 1786715464000
+    changes:
+      minor:
+        - >-
+          Added support for a custom `ReplayGate` to create environments using undefined names, enabling requests to reach the same host targeted by
+          the current page environment.
+        - Added a shortcut in Replay that converts selected text in a request URL into a path parameter when pressing <kbd>`{`</kbd>.
+      patch:
+        - Fixed an issue in Replay where the input popover truncated selected values.
+        - >-
+          Fixed an issue in Replay where pressing the Return or Enter key in the request URL field could break the URL onto a new line or clear the
+          response panel during a running request.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.0
   0.27.0:
     timestamp: 1786621709000
     changes:
@@ -45480,6 +45633,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.20.0-next.0:
+    timestamp: 1786715464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.69.0-next.0
   0.19.0:
     timestamp: 1786621709000
     changes:
@@ -47396,6 +47556,14 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.14.0-next.0:
+    timestamp: 1786715464000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.69.0-next.0
+      '@redocly/openapi-docs': 3.25.0-next.0
   1.13.0:
     timestamp: 1786621709000
     changes:
