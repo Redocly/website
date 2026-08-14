@@ -79,7 +79,7 @@ Everything above assumes your docs are correct. Reviewer is how they stay correc
 
 - **API descriptions.** OpenAPI and AsyncAPI, breaking changes included.
 - **Documentation.** Markdown for clarity and accuracy, cross-checked against the OpenAPI description the page refers to.
-- **API security.** Risks framed by the OWASP API Security.
+- **API security.** Risks framed by the OWASP API Security Top 10.
 - **Cross-document consistency.** Pages that drifted apart and now contradict each other.
 - **Redocly config.** Your configuration, before it reaches a deploy.
 
