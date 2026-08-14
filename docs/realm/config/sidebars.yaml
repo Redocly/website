@@ -167,6 +167,8 @@
       label: redirects
     - page: ./remove-attribution.md
       label: removeAttribution
+    - page: ./replay.md
+      label: replay
     - page: ./response-headers.md
       label: responseHeaders
     - page: ./reunite.md
