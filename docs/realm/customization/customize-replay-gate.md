@@ -47,6 +47,7 @@ This command creates a local copy of `ReplayGate.tsx` in your project's `@theme/
 - **REQUIRED.** Injects key-value pairs into the named environment.
   Call this after a successful auth to set the token.
   A plain string sets the value; pass `{ value, isSecret }` to also control whether Replay masks it.
+  If no environment has this name, Replay creates a new environment.
 ---
 - `setSelectedEnvironment`
 - `(envName: string) => void`
@@ -113,6 +114,37 @@ setEnvironmentValues(selectedEnvironment, { bearerAuth_token: token });
 ```
 
 Replay resolves this value at request time and injects it into the `Authorization` header automatically.
+
+## Create an environment
+
+Create new environments when your gate issues credentials that don't belong to any environment declared in your OpenAPI description.
+For example, a per-user sandbox obtained at sign-in.
+Replay creates that environment instead of ignoring the call.
+
+To create a new environment:
+
+1. Call `setEnvironmentValues` with a name that doesn't match any environment in your OpenAPI description.
+1. Creating an environment doesn't select it.
+   Call `setSelectedEnvironment` to make it active:
+
+   ```tsx
+   setEnvironmentValues('Authorized', { bearerAuth_token: { value: token, isSecret: true } });
+   setSelectedEnvironment('Authorized');
+   ```
+
+The new environment takes its server from the environment selected by the page.
+Requests reach the same host the page targets.
+The first server in your OpenAPI description is the fallback.
+
+Only the names your gate passes to `setEnvironmentValues` create environments.
+Environment values from the project configuration can't do that, so a name that doesn't match an existing environment is silently dropped.
+
+Environments created this way are exempt from the `allowedEnvironments` setting, because the gate requested them explicitly.
+Users can't rename or delete these environments from the environments panel, as your gate recreates them on the next page load.
+
+In projects that set `allowedEnvironments`, values users type into created environments are not restored on page reload.
+Your gate re-injects its own values.
+The credentials it manages are unaffected.
 
 ## Custom input names and masking
 
@@ -181,6 +213,8 @@ const STORAGE_KEY      = 'replay_access_token';
 // Input name: OpenAPI security scheme id + suffix.
 // For a scheme id 'bearerAuth' with type http/bearer, the suffix is '_token'.
 const TOKEN_INPUT_NAME = 'bearerAuth_token';
+// Used when the page selects no environment. Replay creates an environment for an unknown name.
+const FALLBACK_ENV_NAME = 'Authorized';
 
 // Pre-check: avoids a network call for clearly-expired JWTs.
 function isJwtExpired(token: string): boolean {
@@ -300,17 +334,13 @@ export function ReplayGate({
       const token: string = event.data.access_token;
       localStorage.setItem(storageKey, token);
 
-      // No target environment yet — stay gated rather than silently granting access
-      // without ever injecting the token into Replay.
-      if (!selectedEnvironment) {
-        setPhase('gate');
-        return;
-      }
+      // When the page selects no environment, name one anyway: Replay creates it on demand.
+      const targetEnvironment = selectedEnvironment || FALLBACK_ENV_NAME;
 
-      setEnvironmentValues(selectedEnvironment, {
+      setEnvironmentValues(targetEnvironment, {
         [TOKEN_INPUT_NAME]: { value: token, isSecret: true },
       });
-      setSelectedEnvironment(selectedEnvironment);
+      setSelectedEnvironment(targetEnvironment);
       setPhase('ready');
     };
   }, [setEnvironmentValues, setSelectedEnvironment, selectedEnvironment, storageKey]);
@@ -320,17 +350,13 @@ export function ReplayGate({
     (async () => {
       const stored = localStorage.getItem(storageKey);
       if (stored && (await isTokenValid(stored))) {
-        // No target environment yet — stay gated rather than silently granting access
-        // without ever injecting the token into Replay.
-        if (!selectedEnvironment) {
-          setPhase('gate');
-          return;
-        }
+        // When the page selects no environment, name one anyway: Replay creates it on demand.
+        const targetEnvironment = selectedEnvironment || FALLBACK_ENV_NAME;
 
-        setEnvironmentValues(selectedEnvironment, {
+        setEnvironmentValues(targetEnvironment, {
           [TOKEN_INPUT_NAME]: { value: stored, isSecret: true },
         });
-        setSelectedEnvironment(selectedEnvironment);
+        setSelectedEnvironment(targetEnvironment);
         setPhase('ready');
       } else {
         localStorage.removeItem(storageKey);
@@ -502,6 +528,7 @@ npx @redocly/cli eject component 'ReplayTopBarActions/ReplayTopBarActions.tsx'
 - `(envName: string, values: Record<string, string | { value: string, isSecret?: boolean }>) => void`
 - Injects key-value pairs into the named environment. Call with an empty string to clear a value on sign-out.
   A plain string sets the value; pass `{ value, isSecret }` to also control whether Replay masks it.
+  Unlike the `ReplayGate` prop of the same name, this one only updates environments that already exist; it does not create them.
   See [Custom input names and masking](#custom-input-names-and-masking).
 ---
 - `setSelectedEnvironment`
