@@ -612,3 +612,17 @@ tr td:first-child code {
     vertical-align: middle;
     margin-top: -3px;
 }
+
+[data-component-name="Banner/Banner"] .banner-narrow {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    [data-component-name="Banner/Banner"] .banner-wide {
+        display: none;
+    }
+
+    [data-component-name="Banner/Banner"] .banner-narrow {
+        display: inline;
+    }
+}
