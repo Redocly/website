@@ -20,6 +20,7 @@ The list of extensions supported in AsyncAPI by Redoc is as follows:
 - [x-enumDescriptions](./x-enum-descriptions.md) - Readable labels for enum values.
 - [x-metadata](./x-metadata.md) - Add custom metadata at the top of the info section.
 - [x-rbac](x-rbac.md) - Control access to AsyncAPI objects.
+- [x-seo](./x-seo.md) - Set SEO meta tags (title, description, keywords, image) for an operation or channel page.
 - [x-tagGroups](./x-tag-groups.md) - Higher-level grouping for tags, used in the sidebar.
 
 ## Resources

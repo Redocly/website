@@ -15,7 +15,7 @@ This guide provides a comprehensive overview of available configuration options 
 {% configSection title="API Management" description="Define your APIs and control how API descriptions are processed and validated." %}
   {% configProperty file="apis.md" /%}
 
-  {% configProperty file="asyncapi.md" /%}
+  {% configProperty file="asyncapi/index.md" /%}
 
   {% configProperty file="catalog-classic.md" /%}
 

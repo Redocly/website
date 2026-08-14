@@ -15,6 +15,7 @@ The list of extensions supported in OpenAPI by Redoc is as follows:
 - [x-mcp](./x-mcp.md) - Document MCP servers and tools.
 - [x-metadata](./x-metadata.md) - Add custom metadata at the top of the info section.
 - [x-rbac](x-rbac.md) - Control access to OpenAPI objects.
+- [x-seo](./x-seo.md) - Set SEO meta tags (title, description, keywords, image) for an operation page.
 - [x-traitTag](./x-trait-tag.md) - Indicate tags that label operations rather than grouping them.
 - [x-tagGroups](./x-tag-groups.md) - Higher-level grouping for tags, used in the sidebar.
 - [x-tags](./x-tags.md) - Add individual schemas to navigation sections alongside operations.
