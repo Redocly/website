@@ -9,9 +9,8 @@ plans:
 ---
 # `sortRequiredPropsFirst`
 
-By default, fields are rendered in the order they appear in the API description.
-
-The `sortRequiredPropsFirst` option changes the order to display required fields first in each schema section.
+By default, fields display in the order they appear in the API description.
+The `sortRequiredPropsFirst` option moves required fields to the top of each schema section.
 
 ## Options
 
@@ -25,14 +24,14 @@ The `sortRequiredPropsFirst` option changes the order to display required fields
 
 - sortRequiredPropsFirst
 - boolean
-- Sort the required schema properties before the optional ones.
+- Sort required schema properties before optional ones.
   Default: `false`.
 
 {% /table %}
 
 ## Examples
 
-The following example configures Redoc to show required properties first:
+The following example shows required properties first:
 
 ```yaml {% title="redocly.yaml" %}
 openapi:
@@ -41,7 +40,7 @@ openapi:
 
 ## Resources
 
-- **[OpenAPI configuration](./index.md)** - Complete guide to OpenAPI configuration options for customizing API reference documentation
-- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - Official OpenAPI Specification documentation for understanding API description standards
-- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - Visual guide to OpenAPI specification structure and property ordering principles
-- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization
+- **[OpenAPI configuration](./index.md)** - All the options you can set under `openapi`.
+- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - The official standard for API descriptions.
+- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - A visual map of every part of an OpenAPI description.
+- **[Configuration options](../index.md)** - All the other options for your project.
