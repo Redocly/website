@@ -45,7 +45,7 @@ The following Markdoc tags are custom-made by Redocly:
 - [Numbered list](./numbered-list.md): Present step-by-step instructions and timelines as a vertical list with numbered, icon, or dot markers.
 - [OpenAPI code sample](./openapi-code-sample.md): Render sample code snippets directly in your documentation pages.
 - [OpenAPI response sample](./openapi-response-sample.md): Render response examples directly in your documentation.
-- [Replay OpenAPI](./replay-openapi.md): Add the Replay consoe to make API calls directly from a documentation page.
+- [Replay OpenAPI](./replay-openapi.md): Add the Replay console to make API calls directly from a documentation page.
 - [Tabs](./tabs.md): Organize content variants into switchable tabs.
 
 ## Block tags: use block form, not inline form

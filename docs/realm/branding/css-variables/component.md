@@ -103,8 +103,8 @@
 --admonition-default-border-color: var(--color-primary-border, var(--admonition-default-border-color-legacy));
 --admonition-default-border-style: var(--admonition-border-style);
 --admonition-default-border-width: var(--admonition-border-width);
---admonition-default-border: var(--admonition-primary-border-width) var(--admonition-default-border-style)
-  var(--admonition-pridefaultmary-border-color);
+--admonition-default-border: var(--admonition-default-border-width) var(--admonition-default-border-style)
+  var(--admonition-default-border-color);
 ```
 
 </details>

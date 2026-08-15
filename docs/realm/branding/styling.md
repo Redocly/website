@@ -68,7 +68,7 @@ They're used together inside the selector.
 #### Inheritance
 
 Some (but not all) property values set on parent elements are inherited by their child elements.
-That means styling rules are inherited by an element's descendent.
+That means styling rules are inherited by an element's descendants.
 
 <details>
   <summary>See example: Inheritance</summary>
