@@ -86,7 +86,7 @@ paths:
 
 ## Resources
 
-- **[Search engine optimization](../../realm-seo.md)** - Configure site-wide SEO, meta tags, and social sharing for your Redocly project.
-- **[x-metadata](./x-metadata.md)** - Add a custom metadata table to the top of the API overview (info-level metadata).
-- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation.
-- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation.
+- **[Search engine optimization](../../realm-seo.md)** - Configure site-wide SEO, meta tags, and social sharing for your Redocly project
+- **[x-metadata](./x-metadata.md)** - Add a custom metadata table to the top of the API overview (info-level metadata)
+- **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
+- **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation

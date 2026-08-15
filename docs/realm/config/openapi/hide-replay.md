@@ -45,8 +45,8 @@ openapi:
 
 ## Resources
 
-- **[Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay)** - How users test APIs from the reference docs.
-- **[OpenAPI configuration](./index.md)** - All the options you can set under `openapi`.
-- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - The official standard for API descriptions.
-- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - A visual map of every part of an OpenAPI description.
-- **[Configuration options](../index.md)** - All the other options for your project.
+- **[Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay)** - How users test APIs from the reference docs
+- **[OpenAPI configuration](./index.md)** - All the options you can set under `openapi`
+- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - The official standard for API descriptions
+- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - A visual map of every part of an OpenAPI description
+- **[Configuration options](../index.md)** - All the other options for your project

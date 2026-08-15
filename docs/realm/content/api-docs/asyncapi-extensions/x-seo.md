@@ -104,6 +104,6 @@ channels:
 
 ## Resources
 
-- **[Search engine optimization](../../realm-seo.md)** - Configure site-wide SEO, meta tags, and social sharing for your Redocly project.
-- **[x-metadata](./x-metadata.md)** - Add a custom metadata table to the top of the API overview (info-level metadata).
-- **[Supported AsyncAPI extensions](./index.md)** - Complete list of all AsyncAPI extensions supported by Redocly for enhanced API documentation.
+- **[Search engine optimization](../../realm-seo.md)** - Configure site-wide SEO, meta tags, and social sharing for your Redocly project
+- **[x-metadata](./x-metadata.md)** - Add a custom metadata table to the top of the API overview (info-level metadata)
+- **[Supported AsyncAPI extensions](./index.md)** - Complete list of all AsyncAPI extensions supported by Redocly for enhanced API documentation

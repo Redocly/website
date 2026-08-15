@@ -40,8 +40,8 @@ Then you can use its content elsewhere in the configuration file.
 
 ## Resources
 
-- **[APIs configuration](./apis.md)** - Set options per API in `redocly.yaml`.
-- **[Rules configuration](./rules.md)** - Define the lint rules your plugins work with.
-- **[Decorators](./openapi/decorators.md)** - Transform your OpenAPI documents.
-- **[Redocly CLI cookbook](https://redocly.com/blog/redocly-cli-cookbook/)** - Practical examples of plugins from real projects.
-- **[Configuration options](./index.md)** - All the other options for your project.
+- **[APIs configuration](./apis.md)** - Set options per API in `redocly.yaml`
+- **[Rules configuration](./rules.md)** - Define the lint rules your plugins work with
+- **[Decorators](./openapi/decorators.md)** - Transform your OpenAPI documents
+- **[Redocly CLI cookbook](https://redocly.com/blog/redocly-cli-cookbook/)** - Practical examples of plugins from real projects
+- **[Configuration options](./index.md)** - All the other options for your project

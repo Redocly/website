@@ -28,6 +28,6 @@ Use API functions to:
 
 ## Resources
 
-- [API functions reference](./api-functions-reference.md) for API functions helper methods and properties.
+- [API functions reference](./api-functions-reference.md) for API functions helper methods and properties
 <!-- - [KV storage](./kv-storage.md) for built-in key-value database operations. -->
-- [Render weather data in a Markdoc tag](./create-api-functions.md) - Build an API function and a custom Markdoc tag that displays live weather data.
+- [Render weather data in a Markdoc tag](./create-api-functions.md) - Build an API function and a custom Markdoc tag that displays live weather data

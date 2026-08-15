@@ -568,5 +568,5 @@ export default async function (request: Request, context: ApiFunctionsContext) {
 
 ## Resources
 
-- **[Render weather data in a Markdoc tag](./create-api-functions.md)** - End-to-end tutorial that builds an API function and a custom Markdoc tag.
+- **[Render weather data in a Markdoc tag](./create-api-functions.md)** - End-to-end tutorial that builds an API function and a custom Markdoc tag
 <!-- - **[KV storage](./kv-storage.md)** - Built-in key-value database for data persistence in API functions -->

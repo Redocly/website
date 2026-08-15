@@ -25,4 +25,4 @@ Redoc supports these extensions in AsyncAPI descriptions:
 
 ## Resources
 
-- **[Add AsyncAPI description to your project](../add-asyncapi-docs.md)** - How to add AsyncAPI docs to your Redocly project.
+- **[Add AsyncAPI description to your project](../add-asyncapi-docs.md)** - How to add AsyncAPI docs to your Redocly project
