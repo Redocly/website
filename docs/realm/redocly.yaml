@@ -322,6 +322,10 @@ responseHeaders:
   '**':
     - name: X-Robots-Tag
       value: noindex
+    - name: Cross-Origin-Resource-Policy
+      value: cross-origin
+    - name: Cross-Origin-Embedder-Policy
+      value: credentialless
 
 redirects:
   '/faq/ai-search-privacy/':
