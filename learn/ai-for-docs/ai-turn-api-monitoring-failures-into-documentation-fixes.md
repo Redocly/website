@@ -8,128 +8,97 @@ seo:
 
 ## Key takeaways
 
-- Treat each Respect failure as a three-way classification: production, workflow, or docs.
-- Give AI the failure output, the OpenAPI operation, and the docs paragraph; require a verdict with quoted evidence.
-- When docs are wrong, patch the spec first if the portal is generated, then the example or guide, as a Reunite PR.
-- Do not archive the alert until the next scheduled run passes.
+- A Respect Monitoring alert tells you that something diverged from the OpenAPI description, but it does not explain why, and it does not say whether the fix belongs in the API, the Arazzo workflow, or the documentation.
+- A useful triage prompt needs three inputs: the full failure output, the matching OpenAPI or Arazzo snippet, and the current documentation section under review.
+- AI triage sorts a failure into one of three buckets: a production regression, a weak success criterion in the workflow, or documentation that never matched reality.
+- Once triage points at the docs, draft the fix and route it through a Git-based pull request workflow so it gets the same review as any other content change.
+- Pairing scheduled Arazzo runs with a recurring AI-assisted review cadence keeps the failure-to-fix loop routine instead of a one-off cleanup.
 
-Scheduled monitors are only half of the loop. The other half is what happens after Slack lights up. Most teams already know how to [subscribe the workflow to Slack or email](https://redocly.com/docs/realm/reunite/project/respect-monitoring/manage-respect-monitoring). Fewer have a default for the next thirty minutes: is production wrong, is the Arazzo file wrong, or did the docs fall behind a behavior that is now correct?
+Most docs orgs have felt this moment: a Respect Monitoring alert lands in Slack or email, the workflow name looks familiar, and the failure message reads like a foreign language. Something diverged from what the OpenAPI description promised, but the alert itself does not explain why, and it does not say whether the fix belongs in the API, in the Arazzo workflow that tests it, or in the documentation that describes it to people. This article picks up where [detecting drift between your docs and your live API](https://redocly.com/learn/ai-for-docs/ai-detect-drift-docs-live-api) leaves off, at the point where the alert has already fired and someone has to decide what to do about it.
 
-This article assumes [scheduled truth checks against live endpoints](https://redocly.com/learn/ai-for-docs/ai-detect-drift-docs-live-api) are already running. The sibling piece is about detecting drift. This one is a runbook: capture the failure, classify it, and when the mismatch belongs in documentation, open a small PR instead of leaving a mute-able alert.
+## The gap between an alert and a fix
 
-## An alert is a classification problem
+An unmonitored API tends to drift over time. Endpoints change behavior, a team ships a patch under pressure, and nobody circles back to the docs until a support ticket points out that the example in the reference no longer works. Respect Monitoring exists to shrink that gap: it surfaces [unexpected status codes and schema mismatches that break integrations silently](https://redocly.com/blog/respect), often well before a customer notices. Catching drift and understanding it, though, are two different problems.
 
-A Respect failure is a fact about one workflow against one environment. It is not yet a documentation task. Treating every red row as "update the guide" will paper over outages. Treating every red row as "page the API owners" will burn writers on assertion bugs.
+Teams that have run contract tests against live APIs know the story where [dashboards stayed green while a dropped field broke the mobile app](https://redocly.com/blog/api-contract-testing-arazzo) anyway, because the assertion covered the wrong thing. The reverse also happens: [the description said one thing and the API did another](https://redocly.com/blog/catch-api-drift), and the workflow correctly flagged it, but nobody was sure whether the API had regressed or the documentation had simply gone stale first. Both stories point at the same lesson. A failing check is a signal, not a diagnosis, and turning that signal into a merged fix still takes judgment.
 
-The useful first move is classification into three buckets: production, workflow, or docs. AI is fast at a first pass when you paste artifacts. Humans still own the merge, especially when the verdict is "leave the docs, fix the service."
+## What a Respect Monitoring failure contains
 
-Do not start from a screenshot of a dashboard tile. Start from the check that failed and the operation it was bound to.
+Before reaching for AI, it helps to look closely at what a failure gives you. Respect Monitoring [checks your API responses against what the OpenAPI description says](https://redocly.com/docs/respect), running the Arazzo workflow you configured and comparing each step's result against its declared success criteria. When a step fails, the output usually includes the workflow name, the specific step, the expected value drawn from the spec, and the value returned by the live API.
 
-## Capture enough of the failure to reproduce it
+That output is useful, but it rarely tells the whole story on its own. A single failure might represent a genuine regression in production, a workflow assertion that was too strict or too loose to begin with, or documentation that quietly fell out of sync with an API that has since moved on. Reviewing some of the [common patterns for what a monitoring failure is telling you](https://redocly.com/docs/respect/use-cases) before you triage helps set expectations for how often each of these three outcomes shows up. Respect Monitoring also supports [real-time alerts via Slack or email](https://redocly.com/respect), so the failure typically reaches a team channel well before anyone has opened the workflow file directly.
 
-Before anyone prompts a model, collect a packet that another engineer could replay:
+## Prompting AI with the right three inputs
 
-- Workflow id and step name
-- [Which automatic check failed](https://redocly.com/docs/realm/reunite/project/respect-monitoring): status code, content type, schema, or success criteria
-- Expected versus observed (status, `Content-Type`, or the schema path that broke)
-- Linked OpenAPI `operationId` or method plus path
-- The public docs paragraph or example that describes that step
-- Environment (staging versus production) and approximate time
+Handing an AI assistant the raw failure message alone is a bit like asking a colleague to fix a bug from a one-line error log. It can guess, but guessing is not the goal here. The more reliable pattern is to gather three specific things before prompting.
 
-If the hosted run is thin, [reproduce the failing workflow locally](https://redocly.com/learn/arazzo/testing-arazzo-workflows) with Respect CLI against the same server and save verbose output. [Send the same requests your monitor sends](https://redocly.com/docs/respect) so you are not debugging a different client.
+### The three inputs checklist
 
-When the failure is "this field exists in traffic but not in the spec," and the Arazzo step never asserted it, you may also have [recorded traffic that does not match the description](https://redocly.com/blog/catch-api-drift). That is still a classification problem. It is a different evidence pack (HAR plus `drift` output), not a reason to skip the three buckets.
+- The full failure output from Respect Monitoring, including the workflow name, step name, expected value, and actual value.
+- The matching OpenAPI or Arazzo snippet: the exact schema, parameter, or success criterion the step was checking.
+- The current documentation section that describes the same endpoint or workflow, copied as it exists today.
 
-Redact tokens and customer payloads. Keep method, path, status, and the JSON pointer that failed.
-
-## Three buckets: production, workflow, or docs
-
-### Production is the mismatch
-
-Production is wrong when the live response violates a description you still intend to keep. Status 500 on a documented 201, a missing required property, or a new error body that leaks internals: fix the service. Keep the monitor. Optionally tighten [the step's success criteria](https://redocly.com/learn/arazzo/success-criteria-and-failure-handling) so the same bug cannot return as a silent 200.
-
-### The workflow file is the mismatch
-
-The workflow is wrong when production matches the intended contract, but Arazzo asks for something else: an outdated status, a step order that no longer matches the product, a success criterion copied from a tutorial, or a server URL pointed at the wrong environment. Fix the Arazzo file (and inputs), not the customer-facing guide.
-
-### The docs are the mismatch
-
-Docs are wrong when production is the behavior you want, the workflow assertions match that behavior, and the portal, recipe, or code sample still describes the old world. Typical tells: a sample that omits a now-required header, a tutorial that still shows a removed field, or reference text that lists status codes the spec no longer documents.
-
-If the portal is generated from OpenAPI, update the spec first, then the Markdown guide. Generated reference will overwrite a hand-edit on the next build. Guides and task-based examples still need a human pass, because a schema fix does not rewrite a "before you begin" paragraph.
-
-When two buckets could apply, prefer production. Shipping a docs patch that blesses an outage is the failure mode this runbook exists to prevent.
-
-## A triage prompt that refuses to guess
-
-Paste the packet. Require a verdict, quotes, and a smallest-diff draft. Reject a rewrite of the whole page.
+With those three in hand, a prompt along these lines gives the assistant something concrete to reason about:
 
 ```text
-Classify this API monitoring failure. Buckets: production, workflow
-(Arazzo), or docs. If unsure, say so and list what is missing.
+Here is a Respect Monitoring failure:
+[paste failure output]
 
-Attached:
-- Respect / CLI output (redacted)
-- OpenAPI snippet for the operation
-- Docs section that claims to describe this step
+Here is the OpenAPI/Arazzo snippet the step is checking:
+[paste snippet]
 
-Rules:
-- Quote the exact expected vs observed lines you used.
-- Do not invent paths, fields, or status codes.
-- If docs are the mismatch, propose the smallest patch (spec YAML
-  and/or Markdown) limited to this operation or example.
-- If production is the mismatch, do not draft a docs change that
-  makes the failure look intended.
+Here is the current documentation section describing this behavior:
+[paste docs section]
+
+Compare these three. Does the failure suggest the API changed and
+the docs need to catch up, the workflow's success criterion is
+wrong for what the API actually guarantees, or the documentation
+was already inaccurate before this run? Explain your reasoning
+before recommending a fix.
 ```
 
-Read the answer like a code review. If the model cannot quote the failure, it does not have enough context. If it "fixes" docs by deleting the example, that is not a smallest diff. If it updates a guide but the OpenAPI still describes the old response, the portal will fight the PR on the next generate.
+Asking for reasoning before a recommendation matters more than it might seem, since it gives a technical writer or platform engineer something to check against, rather than a fix to accept on faith.
 
-AI drafts the classification and the patch. Lint, contract tests, and a reviewer still have to agree.
+## Letting AI triage before writing anything
 
-## Turn a docs verdict into a Reunite PR
+With those three inputs gathered into a single prompt, AI can usually sort a failure into one of three buckets, and it helps to resist writing anything until that sorting is settled.
 
-Keep the change scoped to the failing operation or the one example that lied. A monitoring-driven docs PR that also "cleans up" unrelated pages is how review stalls and the alert stays red.
+The first bucket is a production regression, where the API itself changed behavior in a way nobody intended, so the fix belongs in the code rather than the docs. The second is a weak success criterion, where the Arazzo workflow's definition of [what counts as a failed step in the workflow](https://redocly.com/learn/arazzo/success-criteria-and-failure-handling) was too strict, too loose, or checking the wrong field entirely, so the workflow needs adjusting instead of the docs or the API. The third is stale documentation, where the API and the workflow both behave as designed, but the written description simply never caught up.
 
-Open the change in the same git workflow you use for other documentation. [Review the before and after in git](https://redocly.com/reunite) with the visual diff, then run [the same three-layer review you already run on doc PRs](https://redocly.com/learn/ai-for-docs/ai-automate-documentation-reviews-pr-workflow): an AI checklist on the prose, Redocly CLI lint on the spec, and a human for whether this page should say what production now does.
+> Before: "Response includes a `discount_code` field for all eligible orders."
+> After (based on the failure and the current spec): "Response includes a `discount_code` field for orders placed after account verification. Unverified accounts receive `null`."
 
-If the spec changed, say so in the PR body and link the Respect failure (workflow id, step, timestamp). Writers who were not on the alert should be able to see why this paragraph moved.
+That kind of before/after pairing is often the clearest evidence that a failure belonged in the third bucket all along, since the documentation was describing a simpler API than the one the spec and the live behavior now agree on.
 
-Do not merge a docs-only fix for a production bucket. If the verdict flipped during review, close the docs PR and hand the failure to the service owners with the same packet.
+## Turning the triage into a docs pull request
 
-## Close the loop so the alert can go quiet
+Once triage points at the documentation, the next step is turning that judgment into something reviewable rather than a note in a chat thread. Draft the updated section using the same OpenAPI snippet the AI compared against, then route it through the Git-based workflow already in place for docs changes, [opening a pull request for the doc fix](https://redocly.com/docs/realm/reunite/project/pull-request/open-pull-request) so a second set of eyes can confirm the wording matches the spec before it merges. Keeping the change small and scoped to the one section the failure actually touched makes that review faster and lowers the chance of introducing a new inconsistency elsewhere on the page.
 
-Merge is not the end of the runbook. Wait for [the next scheduled interval](https://redocly.com/docs/realm/reunite/project/respect-monitoring/configure-respect-monitoring), or re-run the workflow in CI against the environment that failed. Archive or mute only after that run is green.
+## Closing the loop on a schedule
 
-If production was the bucket, keep the monitor and consider a stricter success criterion on the field that broke. If the workflow was the bucket, the next green run is the proof the assertion matches intent. If docs were the bucket, the next green run proves you did not "fix" documentation by weakening the check.
-
-The habit is short: capture, classify, patch the thing that is wrong, then confirm the monitor. AI makes the first draft of the verdict and the docs diff. Respect keeps the check in place so the same lie cannot sit in the portal until the next support spike.
+Triage that AI has handled well once tends to be worth repeating on a schedule, rather than only when an alert happens to fire. Respect Monitoring already supports [scheduled monitoring workflows inside your project workspace](https://redocly.com/docs/realm/reunite/project/respect-monitoring), and [configuring which workflows run on a schedule](https://redocly.com/docs/realm/reunite/project/respect-monitoring/configure-respect-monitoring) makes it possible to pair that cadence with a recurring review, where someone walks through the last batch of failures, runs each one through the same three-input prompt, and opens whatever doc pull requests the triage surfaces. Some teams also find it worth revisiting how they [manage monitoring once it's
+running](https://redocly.com/docs/realm/reunite/project/respect-monitoring/manage-respect-monitoring), since workflows that made sense a quarter ago may need new assertions as the API keeps changing. The goal is not to catch every instance of drift instantly, but to make the failure-to-fix loop routine enough that documentation stops falling behind unnoticed.
 
 ## FAQs
 
-### What should we paste into AI when Slack only shows "workflow failed"?
+**Does a Respect Monitoring alert tell me what to fix?**
+Not on its own. It tells you that a step's result diverged from what the OpenAPI description promised, but deciding whether the fix belongs in the API, the Arazzo workflow, or the documentation still takes triage.
 
-Paste the workflow id, step, [which automatic check failed](https://redocly.com/docs/realm/reunite/project/respect-monitoring), expected versus observed, the OpenAPI snippet, and the docs paragraph. If the alert is thin, [reproduce the failing workflow locally](https://redocly.com/learn/arazzo/testing-arazzo-workflows) and attach verbose output.
+**What should I paste into an AI assistant to triage a failure?**
+Three things: the full failure output, the matching OpenAPI or Arazzo snippet the step was checking, and the current documentation section describing the same behavior. Together they give the assistant enough context to reason about the cause rather than guess at it.
 
-### How do we tell a bad assertion from a production bug?
+**What are the possible outcomes of AI triage?**
+A failure usually sorts into one of three buckets: a production regression that needs a code fix, a weak or miscalibrated success criterion in the Arazzo workflow, or documentation that never matched reality and simply needs updating.
 
-If production still matches the description you intend to keep, the workflow file is the mismatch. If the live response violates that description, production is the mismatch. Tighten [the step's success criteria](https://redocly.com/learn/arazzo/success-criteria-and-failure-handling) only after you decide the description is still right.
+**How does a documentation fix get merged?**
+Once triage points at the docs, draft the update using the same spec snippet the AI compared against, then open a pull request for the doc fix so it goes through the same Git-based review path as any other content change.
 
-### Should we update the OpenAPI file or the Markdown guide first?
+**How often should this triage loop run?**
+Rather than treating it as a one-off cleanup, pair scheduled monitoring workflows with a recurring review cadence, so each new batch of failures gets the same three-input prompt and any resulting doc pull requests get opened routinely.
 
-When the portal is generated from OpenAPI, update the spec first, then the guide. A hand-edit to generated reference will be overwritten on the next build.
-
-### How small should the documentation PR be?
-
-Limit it to the failing operation or the one example that lied. Run [the same three-layer review you already run on doc PRs](https://redocly.com/learn/ai-for-docs/ai-automate-documentation-reviews-pr-workflow), and [review the before and after in git](https://redocly.com/reunite).
-
-### When is it wrong to "fix" docs and leave production unchanged?
-
-When the live response violates a contract you still intend to publish. A docs patch that blesses an outage is the failure mode this runbook exists to prevent.
-
-### How does this relate to detecting drift with Respect?
-
-Detecting drift is [scheduled truth checks against live endpoints](https://redocly.com/learn/ai-for-docs/ai-detect-drift-docs-live-api). This article starts after those checks fire, and turns a classified docs mismatch into a merged PR.
+**How do I get notified when a workflow fails in the first place?**
+Respect Monitoring supports real-time alerts via Slack or email, so a failing step reaches a team channel as soon as it happens, well before anyone opens the workflow file directly.
 
 ## How Redocly can help
 
-Respect sends [alerts when a critical workflow stops matching the spec](https://redocly.com/respect), which is the input this runbook needs. From there, classify the failure and land the docs-shaped outcome as a small git change, with the monitor still running until the next interval is green.
+Respect Monitoring is built to produce exactly the kind of failure output this triage loop depends on, including [real-time alerts via Slack or email](https://redocly.com/respect) the moment a workflow step diverges from the OpenAPI description. Paired with Reunite's Git-based review workflow, that becomes a full path from drift and failure alerts feeding into a Git-based docs PR workflow, so a triaged failure turns into a reviewed pull request instead of a note nobody follows up on.
