@@ -201,7 +201,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - items
 -
   object
-  ([Link](#link-options))
+  ([Link options](#link-options))
 - **REQUIRED.**
   A list of items, configured using [link options](#link-options).
 
