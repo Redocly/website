@@ -143,7 +143,8 @@ The information about API logo
 
 - backgroundColor
 - string
-- Background color for the image. MUST be an RGB color in [hexadecimal format](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet)
+- Background color for the image.
+  MUST be an RGB color in [hexadecimal format](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet)
 
 ---
 
@@ -348,7 +349,8 @@ Extends the OpenAPI [Parameter Object](https://redocly.com/docs/openapi-visual-r
 
 - x-examples
 - [Example Object](https://redocly.com/docs/openapi-visual-reference/example/)
-- Object that contains examples for the request. Applies when `in` is `body` and mime-type is `application/json`
+- Object that contains examples for the request.
+  Applies when `in` is `body` and mime-type is `application/json`
 
 {% /table %}
 

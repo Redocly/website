@@ -342,8 +342,10 @@ Change styles for the API documentation page.
 
 - `spacing`
   - `unit`: 5 # main spacing unit used in autocomputed theme values later
-  - `sectionHorizontal`: 40 # Horizontal section padding. COMPUTED: spacing.unit * 8
-  - `sectionVertical`: 40 # Horizontal section padding. COMPUTED: spacing.unit * 8
+  - `sectionHorizontal`: 40 # Horizontal section padding.
+    COMPUTED: spacing.unit * 8
+  - `sectionVertical`: 40 # Horizontal section padding.
+    COMPUTED: spacing.unit * 8
 - `breakpoints` # breakpoints for switching three/two and mobile view layouts
   - `small`: '50rem'
   - `medium`: '85rem'
