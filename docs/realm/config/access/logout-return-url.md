@@ -34,7 +34,8 @@ The `logoutReturnUrl` property is only available as a child of the `access` obje
 
 - logoutReturnUrl
 - string
-- URL that users are redirected to after logging out. Must start with `http://` or `https://`.
+- URL that users are redirected to after logging out.
+  Must start with `http://` or `https://`.
 
 {% /table %}
 

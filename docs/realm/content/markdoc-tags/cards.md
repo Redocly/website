@@ -140,7 +140,8 @@ Once exceeded, text cuts off at the first white space and "..." is appended.
 - string
 - Alignment of card content.
   Can be `start`, `center`, or `end`.
-  Defaults to `start`. Card orientation changes with layout:
+  Defaults to `start`.
+  Card orientation changes with layout:
 
   - For horizontal layouts, `start` means left.
   - For vertical layouts, `start` means top.

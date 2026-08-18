@@ -95,7 +95,8 @@ manager.
 - REDOCLY_ORG_ID - Redocly organization ID.
 - REDOCLY_PROJECT_ID - Redocly project ID.
 - PORTAL_APIS_FOLDER - the path where Scout pushes discovered API definitions.
-- REDOCLY_APIS - A JSON array of API configurations. Each configuration has the following fields:
+- REDOCLY_APIS - A JSON array of API configurations.
+  Each configuration has the following fields:
   - `name` - API name.
   - `url` - API URL.
   - `apiKey` - API key.
@@ -107,7 +108,8 @@ manager.
   - `autoMerge` - If set to `true`, Scout merges PRs when updates are pushed to the main branch.
   - `destFolderPath` - The path to the location where Scout pushes discovered API definitions.
   - `mountBranchName` - The branch name to mount the API definitions to.
-    > NOTE: Extract sensitive data from a secrets manager. The sensitive data can be referred to within the definition of other values:
+    > NOTE: Extract sensitive data from a secrets manager.
+    > The sensitive data can be referred to within the definition of other values:
     >
     > ```shell
     > REDOCLY_APIS='[{
@@ -126,15 +128,18 @@ manager.
     > ```
 - LOG_FORMAT - one of [`pretty`, `json`] (default `json`).
 - LOG_LEVEL - one of [`trace`, `debug`, `info`, `warn`, `error`, `fatal`] (default `info`).
-- GITHUB_PROVIDERS - JSON array of GitHub app configurations. Each configuration has the following fields:
+- GITHUB_PROVIDERS - JSON array of GitHub app configurations.
+  Each configuration has the following fields:
   - `url` - GitHub server url.
     Omit in case of GitHub cloud.
   - `appId` - GitHub application ID.
     `https://{github-server-url}/organizations/{org}/settings/apps` -> Redocly Scout -> `App ID`.
-  - `appUserId` - GitHub application user that leaves Scout-related comments. `https://{github-server-url}/users/{app slug name}[bot]`
+  - `appUserId` - GitHub application user that leaves Scout-related comments.
+    `https://{github-server-url}/users/{app slug name}[bot]`
   - `privateKey` - GitHub application private key created during application configuration.
   - `webhookSecret` - GitHub webhook secret, created during application configuration.
-    > NOTE: Sensitive data should be extracted from secrets manager. It can be referred to within the definition of other values:
+    > NOTE: Sensitive data should be extracted from secrets manager.
+    > It can be referred to within the definition of other values:
     >
     > ```shell
     > GITHUB_PROVIDERS='[{
@@ -148,7 +153,8 @@ manager.
     > -----END RSA PRIVATE KEY-----'
     > MY_WH_SECRET='my-secret'
     > ```
-- `GITLAB_PROVIDERS` - JSON array of GitLab instance configurations. Each configuration has the following fields:
+- `GITLAB_PROVIDERS` - JSON array of GitLab instance configurations.
+  Each configuration has the following fields:
   - `url` - GitLab instance url.
     Omit if you use GitLab.com (GitLab Cloud).
   - `userId` - GitLab user ID; instructions for how to obtain it are available in [GitLab section](https://redocly.com/docs/realm/scout/guides/install/#gitlab).

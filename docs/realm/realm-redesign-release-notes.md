@@ -63,7 +63,8 @@ A set of ejectable components is provided, and will be expanded in future releas
 
 ## Migration notes
 
-Along with the UI improvements, the release contains a number of breaking changes around styling and customization. If you are upgrading from an earlier version of the tool, these are some issues to be aware of:
+Along with the UI improvements, the release contains a number of breaking changes around styling and customization.
+If you are upgrading from an earlier version of the tool, these are some issues to be aware of:
 
 - Ejectable components are simplified by extracting low-level logic to Redocly-controlled code.
   This extraction of low-level logic streamlines customization and simplifies future upgrade processes.

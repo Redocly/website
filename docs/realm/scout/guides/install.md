@@ -135,7 +135,8 @@ Scout is a source available tool and you could run it from source which could be
 ---
 
 - `REDOCLY_APIS`
-- A JSON array of API configurations. Each configuration has the following fields:
+- A JSON array of API configurations.
+  Each configuration has the following fields:
 
   - `name` - API name.
   - `url` - API URL.
@@ -149,7 +150,8 @@ Scout is a source available tool and you could run it from source which could be
   - `destFolderPath` - The path to the location where Scout pushes discovered API definitions.
   - `mountBranchName` - The branch name to mount the API definitions to.
 
-    You can keep your secrets as separate values. The secrets can be referred to within the definition of other values:
+    You can keep your secrets as separate values.
+    The secrets can be referred to within the definition of other values:
 
   ```shell
   REDOCLY_APIS='[{
@@ -181,17 +183,20 @@ Scout is a source available tool and you could run it from source which could be
 ---
 
 - `GITHUB_PROVIDERS`
-- JSON array of GitHub app configurations. Each configuration has the following fields:
+- JSON array of GitHub app configurations.
+  Each configuration has the following fields:
 
   - `url` - GitHub server url.
     Omit in case of GitHub cloud.
   - `appId` - GitHub application ID.
     `https://{github-server-url}/organizations/{org}/settings/apps` -> Redocly Scout -> `App ID`.
-  - `appUserId` - GitHub application user that leaves Scout-related comments. `https://{github-server-url}/users/{app slug name}[bot]`
+  - `appUserId` - GitHub application user that leaves Scout-related comments.
+    `https://{github-server-url}/users/{app slug name}[bot]`
   - `privateKey` - GitHub application private key created during application configuration.
   - `webhookSecret` - GitHub webhook secret, created during application configuration.
 
-  You can keep your secrets as separate values. They can be referred to within the definition of other values:
+  You can keep your secrets as separate values.
+  They can be referred to within the definition of other values:
 
   ```shell
   GITHUB_PROVIDERS='[{
@@ -209,7 +214,8 @@ Scout is a source available tool and you could run it from source which could be
 ---
 
 - `GITLAB_PROVIDERS`
-- JSON array of GitLab instance configurations. Each configuration has the following fields:
+- JSON array of GitLab instance configurations.
+  Each configuration has the following fields:
 
   - `url` - GitLab instance url.
     Omit if you use GitLab.com (GitLab Cloud).
@@ -218,7 +224,8 @@ Scout is a source available tool and you could run it from source which could be
   - `privateToken` - GitLab private token generated on the user's account.
   - `webhookSecret` - The secret used when creating a webhook on GitLab.
 
-  You can keep your secrets as separate values. They can be referred to within the definition of other values:
+  You can keep your secrets as separate values.
+  They can be referred to within the definition of other values:
 
   ```shell
   GITLAB_PROVIDERS='[{

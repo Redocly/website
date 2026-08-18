@@ -41,7 +41,8 @@ The `x-seo` extension can be added to an Operation Object or a Channel Object.
 
 - keywords
 - string
-- Sets the `<meta name="keywords">` tag. Provide a comma-separated list of keywords.
+- Sets the `<meta name="keywords">` tag.
+  Provide a comma-separated list of keywords.
 
 ---
 

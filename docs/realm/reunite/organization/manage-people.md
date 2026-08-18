@@ -82,7 +82,8 @@ To invite viewers to your organization:
 
 ### Manage pending invites
 
-Cancel or resend invitations to your Reunite organization. You can also view invitation details such as:
+Cancel or resend invitations to your Reunite organization.
+You can also view invitation details such as:
 - When the invite was created
 - When the invite expires
 - Copy the invitation link for active (non-expired) invites

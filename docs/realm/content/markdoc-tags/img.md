@@ -98,7 +98,8 @@ Customize with attributes like `src`, `alt`, `width`, and `height`.
 
 - width
 - string | number
-- Sets the width of the image. Accepts:
+- Sets the width of the image.
+  Accepts:
   - Numbers (treated as pixels, for example, width=300 → "300px")
   - String values with units (for example, "100%", "300px", "20rem", "50vw")
 
@@ -106,7 +107,8 @@ Customize with attributes like `src`, `alt`, `width`, and `height`.
 
 - height
 - string | number
-- Sets the height of the image. Accepts:
+- Sets the height of the image.
+  Accepts:
   - Numbers (treated as pixels, for example, height=300 → "300px")
   - String values with units (for example, "100%", "300px", "20rem", "50vw")
 
@@ -142,7 +144,8 @@ Customize with attributes like `src`, `alt`, `width`, and `height`.
 
 - border
 - string
-- Sets the border style of the image. Accepts standard CSS border values, such as:
+- Sets the border style of the image.
+  Accepts standard CSS border values, such as:
   - "1px solid black" - thin black border
   - "2px dashed #FF0000" - dashed red border
   - "3px double gray" - double-line gray border

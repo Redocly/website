@@ -38,7 +38,8 @@ When configuring the `redocly.yaml` configuration file for individual projects, 
 
 The values listed are the identity providers (IdPs), if added in Reunite, users can use to log in to the project.
 To combine identity provider categories, configure `sso` in the `redocly.yaml` file of the project.
-To target specific identity providers by their unique ID, configure [`idps`](../../../config/access/idps.md) instead. `sso` and `idps` are mutually exclusive.
+To target specific identity providers by their unique ID, configure [`idps`](../../../config/access/idps.md) instead.
+`sso` and `idps` are mutually exclusive.
 
 ## Default priority order
 

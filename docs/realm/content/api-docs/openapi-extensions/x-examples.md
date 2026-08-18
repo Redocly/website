@@ -26,7 +26,8 @@ Use the `x-example` in any location where `example` can be used in OpenAPI v3.
 
 - x-examples
 - [Example Object](https://spec.openapis.org/oas/v3.1.0#example-object)
-- Object that contains examples for the request. Applies when `in` is `body` and MIME type is `application/json`
+- Object that contains examples for the request.
+  Applies when `in` is `body` and MIME type is `application/json`
 
 {% /table %}
 
@@ -44,7 +45,8 @@ x-example:
   text/plain: 'OK'
 ```
 
-`x-examples` - maps the MIME type to a whole example object with a custom name. It's possible to include multiple objects for the same type:
+`x-examples` - maps the MIME type to a whole example object with a custom name.
+It's possible to include multiple objects for the same type:
 
 ```yaml
 x-examples:

@@ -23,7 +23,8 @@ Knowing the common conventions helps you navigate, contribute to, and customize 
 
 ## Common directories and files
 
-A typical Redocly project includes the following folders and files. Only one content file is strictly required — the rest are optional but help organize and extend your project:
+A typical Redocly project includes the following folders and files.
+Only one content file is strictly required — the rest are optional but help organize and extend your project:
 
 - content files and folders: the files that generate pages (see [Content Files](#content-files) below).
   This is the only *required* element - you need at least one file of content.

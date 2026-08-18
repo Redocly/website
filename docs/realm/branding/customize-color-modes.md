@@ -19,7 +19,8 @@ Create that file if you don't have one already.
 
 A good approach to customizing color mode styling is to override the [CSS variables](./css-variables/index.md) used throughout your project.
 
-Add color mode customization to your project's `@theme/styles.css` file using CSS variables. The following example shows a complete color mode configuration:
+Add color mode customization to your project's `@theme/styles.css` file using CSS variables.
+The following example shows a complete color mode configuration:
 
 ```css {% title="@theme/styles.css" %}
 /* Default color variables (used as fallbacks) */
@@ -61,7 +62,8 @@ In this example, the colors and backgrounds change when users switch between lig
 Element-specific CSS variables are often built upon another set of [core CSS variables](./color-mode.md#css-variables-as-building-blocks).
 Consider the level of granularity you need before adding CSS variable overrides.
 
-Let's use the example from the section above to illustrate the point. The example added the following styling rules:
+Let's use the example from the section above to illustrate the point.
+The example added the following styling rules:
 
 - The `:root` selector set the `--bg-overlay` variable.
 - The `:root.dark` selector set the `--sidebar-active-background-color` variable.
@@ -179,7 +181,8 @@ Pass the `className` prop through to the `<svg>` element for proper styling.
 
 ### Define custom color mode styles
 
-Add styling rules for your new color mode in `@theme/styles.css`. The class name must match the color mode name:
+Add styling rules for your new color mode in `@theme/styles.css`.
+The class name must match the color mode name:
 
 ```css {% title="@theme/styles.css" %}
 :root.high-contrast {

@@ -2,7 +2,8 @@
 
 
 Tags are used in Redoc to group operations together to help users to navigate the API reference.
-Mark the tags that serve a purpose other than navigation as "traits". These tags:
+Mark the tags that serve a purpose other than navigation as "traits".
+These tags:
 
 - are displayed at the end of the documentation, including in the navigation
 - show up with their description text

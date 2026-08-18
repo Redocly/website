@@ -60,13 +60,15 @@ When Reunite processes your project during a build, it performs several steps in
 
 1. **Configuration discovery**: Reunite reads your `redocly.yaml` configuration file to understand your project settings, including linting rules, decorators, and output parameters.
 1. **API discovery**: Reunite scans your repository to find all API description files (OpenAPI, AsyncAPI, etc.) that need to be processed.
-1. **Linting and validation**: Each API is validated against the configured rules in your `redocly.yaml`. This includes:
+1. **Linting and validation**: Each API is validated against the configured rules in your `redocly.yaml`.
+   This includes:
    - built-in rules from rulesets like `minimal`, `recommended`, or `recommended-strict`
    - custom rules you've defined
    - scorecard rules, if configured
 1. **Decorator application**: Reunite applies any configured [decorators](https://redocly.com/docs/cli/decorators) to transform your API descriptions.
    Decorators can modify content, add information, or restructure your APIs before bundling.
-1. **Bundle generation**: Reunite runs bundle commands on all discovered APIs, creating optimized, self-contained API description files. The bundling process:
+1. **Bundle generation**: Reunite runs bundle commands on all discovered APIs, creating optimized, self-contained API description files.
+   The bundling process:
    - resolves all `$ref` references
    - applies the `output` parameter settings from your configuration
    - generates the final API descriptions used for documentation and other downstream processes

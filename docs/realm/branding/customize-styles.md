@@ -28,7 +28,8 @@ your-awesome-project/
 
 ## Override CSS variables
 
-Add custom styling to your project by overriding CSS variables in your `@theme/styles.css` file. The following example shows a complete custom styling setup:
+Add custom styling to your project by overriding CSS variables in your `@theme/styles.css` file.
+The following example shows a complete custom styling setup:
 
 ```css {% title="@theme/styles.css" %}
 /* Light mode styling (default) */

@@ -35,7 +35,8 @@ Use the `x-seo` extension in an Operation Object.
 
 - keywords
 - string
-- Sets the `<meta name="keywords">` tag. Provide a comma-separated list of keywords.
+- Sets the `<meta name="keywords">` tag.
+  Provide a comma-separated list of keywords.
 
 ---
 

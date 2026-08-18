@@ -118,7 +118,8 @@ With `pointer`:
 ### Environment variables
 
 The environment variables available in the code sample correspond with your security schemes.
-The name of the security scheme must be used in the variable. Here's a list of available variables:
+The name of the security scheme must be used in the variable.
+Here's a list of available variables:
 
 - Basic auth = `SchemeName_username` and `SchemeName_password`
 - JWT token or OAuth token = `SchemeName_token`

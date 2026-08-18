@@ -5,7 +5,8 @@ This page provides an in-depth explanation of how styling works in a Redocly pro
 
 ## Customize your documentation
 
-The behavior and appearance of your documentation is controlled by a customizable theme. There are two types of customizations:
+The behavior and appearance of your documentation is controlled by a customizable theme.
+There are two types of customizations:
 
 1. **Functional** - The [Redocly configuration file](../config/index.md) can be used to enable, disable, or customize features in your documentation.
 2. **Aesthetic** - The visual appearance of your documentation, such as the colors, fonts, and spacing, can be customized using CSS styling rules.

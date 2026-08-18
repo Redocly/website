@@ -29,7 +29,8 @@ The editor includes the following areas:
 
 - A file tree pane where you can view all files included in your project, even remote and static files.
     You can collapse this pane to give the editor more space.
-- An editor pane where files open as tabs. You can split tabs into groups and rearrange them to fit your workflow.
+- An editor pane where files open as tabs.
+  You can split tabs into groups and rearrange them to fit your workflow.
 - Utility tabs that open alongside your file tabs in the editor dock, including the Webview live preview for previewing your formatting updates as you add them.
 
 The changes you make in the editor are introduced to your published project using a Git-based workflow.
@@ -87,7 +88,8 @@ In Reunite, you can access the following two types of deployments:
 
 - A **Production deployment** is triggered each time you merge a pull request to the default branch (usually main)
   or commit directly to the default branch.
-- A **Preview deployment** is triggered when you make a commit to a development branch and open a pull request (PR). Or if you have a PR opened,
+- A **Preview deployment** is triggered when you make a commit to a development branch and open a pull request (PR).
+  Or if you have a PR opened,
   the preview deployment is triggered when you make another commit to the development branch.
 
 When a deployment is successful, you can view the deployment build by clicking on the **Production** or **Preview** button

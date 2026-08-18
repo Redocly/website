@@ -56,7 +56,8 @@ Query structure:
 ```
 
 - If you want to search for a value that contains a space, `,` or `..` operators, you need to wrap the value in quotes.
-  You can escape quotes inside of quotes with a backslash `\`. Both single and double quotes are supported:
+  You can escape quotes inside of quotes with a backslash `\`.
+  Both single and double quotes are supported:
 
 ```
 ?filter=description:"The story called \"The Sky and the Sea.\""

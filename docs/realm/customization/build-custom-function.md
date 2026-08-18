@@ -233,7 +233,8 @@ Let's test our `isAfterDate` function in a couple more complex scenarios.
 
 ### Example - Limited time offer
 
-Pretend you're running limited time sale over the weekend. You want a banner to display, but only on two specific days:
+Pretend you're running limited time sale over the weekend.
+You want a banner to display, but only on two specific days:
 
 {% markdoc-example %}
   ```js

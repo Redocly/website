@@ -59,17 +59,21 @@ The API keys list shows the permission model for each key in the **Permission mo
 ---
 
 - Granular permissions
-- Grant the key a specific set of organization and project permissions that you select individually. Use this model when you want to scope a key to only the operations it needs.
+- Grant the key a specific set of organization and project permissions that you select individually.
+  Use this model when you want to scope a key to only the operations it needs.
 
 ---
 
 - RBAC
-- Assign the key to one or more [teams](./teams.md). The key inherits the roles and permissions of those teams, following the same [role-based access control](../../access/rbac.md) logic that applies to users.
+- Assign the key to one or more [teams](./teams.md).
+  The key inherits the roles and permissions of those teams, following the same [role-based access control](../../access/rbac.md) logic that applies to users.
 
 ---
 
 - Legacy full access
-- A read-only model shown for older keys that were created with unrestricted access. You can't create new keys with this model. To save changes to a legacy key, convert it to **Granular permissions** or **RBAC**.
+- A read-only model shown for older keys that were created with unrestricted access.
+  You can't create new keys with this model.
+  To save changes to a legacy key, convert it to **Granular permissions** or **RBAC**.
 
 {% /table %}
 

@@ -119,7 +119,8 @@ When you are ready for others to review your changes, click the **Ready for revi
 Before you merge your changes to the main branch, you should have them reviewed by a colleague to check for inconsistencies or errors.
 When you assign reviewers to your pull request they are sent notification emails to inform them they have been requested to review your pull request.
 
-To assign reviewers to a pull request, click the adjustments icon next to **Reviewers** on the right side of the page. If you cannot find a reviewer in the list, enter their name in the search field.
+To assign reviewers to a pull request, click the adjustments icon next to **Reviewers** on the right side of the page.
+If you cannot find a reviewer in the list, enter their name in the search field.
 
 If no reviewers have been assigned yet, you can also use the **Add reviewers** button in the pull request summary.
 

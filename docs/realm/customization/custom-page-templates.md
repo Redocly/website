@@ -20,7 +20,8 @@ In the default template you have main content in the left column and Table of Co
 
 But there may be types of pages where you would want to display some additional metadata.
 
-Let's consider a blog post page as an example. On that page except the text of the blog itself you may want to display:
+Let's consider a blog post page as an example.
+On that page except the text of the blog itself you may want to display:
 
 - information about the author
 - length of the article

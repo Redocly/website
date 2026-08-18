@@ -347,7 +347,8 @@ This page contains the list of all predefined translation keys used in default U
 
 - search.error.title
 - Error message title displayed when a search request fails
-- Oops! Something went wrong.
+- Oops!
+  Something went wrong.
 
 ---
 

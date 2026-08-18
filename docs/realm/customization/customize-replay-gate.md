@@ -526,7 +526,8 @@ npx @redocly/cli eject component 'ReplayTopBarActions/ReplayTopBarActions.tsx'
 ---
 - `setEnvironmentValues`
 - `(envName: string, values: Record<string, string | { value: string, isSecret?: boolean }>) => void`
-- Injects key-value pairs into the named environment. Call with an empty string to clear a value on sign-out.
+- Injects key-value pairs into the named environment.
+  Call with an empty string to clear a value on sign-out.
   A plain string sets the value; pass `{ value, isSecret }` to also control whether Replay masks it.
   Unlike the `ReplayGate` prop of the same name, this one only updates environments that already exist; it does not create them.
   See [Custom input names and masking](#custom-input-names-and-masking).

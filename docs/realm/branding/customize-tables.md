@@ -318,7 +318,7 @@ Here's how to apply these classes to specific rows:
   ---
     - Change the color of a heading
     - 2
-    *
+    -
   ---
     - Revert changes {% .medclick %}
     - 8
@@ -326,7 +326,7 @@ Here's how to apply these classes to specific rows:
   ---
     - Add admonition
     - 3
-    *
+    -
   {% /table %}
   ```
 {% /markdoc-example %}
@@ -342,7 +342,7 @@ Here's how to apply these classes to specific rows:
 ---
 - Change the color of a heading
 - 2
-*
+-
 ---
 - Revert changes {% .medclick %}
 - 8
@@ -350,7 +350,7 @@ Here's how to apply these classes to specific rows:
 ---
 - Add admonition
 - 3
-*
+-
 {% /table %}
 
 This example shows how to highlight high-click tasks in yellow and medium-click tasks in light yellow, with appropriate dark mode alternatives.

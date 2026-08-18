@@ -57,7 +57,8 @@ export const frontmatter = {
 };
 ```
 
-In the example, only members of the `Admin` team can access the page. Users who are not signed in are redirected to the login page; signed-in users who lack the required team see a 403 Forbidden page.
+In the example, only members of the `Admin` team can access the page.
+Users who are not signed in are redirected to the login page; signed-in users who lack the required team see a 403 Forbidden page.
 
 ## API documents
 

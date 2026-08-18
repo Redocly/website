@@ -425,7 +425,8 @@ The rest of the hook (state, `refresh`, `useEffect`) stays exactly as in the [ex
 
 A few things worth knowing:
 
-- An **empty string** is treated as "clear this value" — useful when a value in your app gets reset and you want Replay to forget the old one too. Omit the key entirely if you want the persisted value to stay.
+- An **empty string** is treated as "clear this value" — useful when a value in your app gets reset and you want Replay to forget the old one too.
+  Omit the key entirely if you want the persisted value to stay.
 - A field-specific entry (such as `security.default.token.access_token` or `headers['X-Tenant-Id']`) wins over a same-named entry in `envVariables`.
 
 ## Empty input hints (`inputHints`)
