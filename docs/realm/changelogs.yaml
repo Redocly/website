@@ -51779,6 +51779,18 @@ reunite:
         - Added the ability to invite several people to an organization at once by entering a list of email addresses in the invite dialog.
       patch: []
     dependencies: {}
+  v2026-08-18.1:
+    timestamp: 1787035800000
+    changes:
+      minor:
+        - Added AI code review follow-up replies that identify remaining issues when flagged problems are only partially fixed.
+        - Added a notification prompting users to refresh the UI after a version update in Reunite.
+        - Added `Find in file` option to the editor file tree context menu.
+      patch:
+        - >-
+          Fixed file-level access in the Reunite editor to restrict editing to files within a member's permission scope for projects using the
+          `access.rbac` setting.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
