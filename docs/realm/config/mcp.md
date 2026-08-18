@@ -86,6 +86,14 @@ The `hide` and `ignore` options remove content from the build for all clients.
 They are build-time removal, not access control — use RBAC to control who can access content.
 {% /admonition %}
 
+### Token audience validation
+
+The Docs MCP server compares the `aud` (audience) claim of each bearer token to your organization ID.
+A token whose `aud` names a different organization is recorded in the logs and in telemetry, and the request still goes through.
+
+Set the `REDOCLY_MCP_ENFORCE_TOKEN_AUDIENCE` environment variable to `true` to reject those requests with a `401` response instead.
+Two cases skip the comparison in both modes: tokens that carry no `aud` claim, because portal session tokens and some identity provider setups don't set one, and projects that run without an organization ID, such as self-hosted deployments.
+
 ## Examples
 
 ### Basic configuration
