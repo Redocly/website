@@ -186,6 +186,8 @@
         - page: content/markdoc-tags/table.md
           label: Table
         - separator: Redocly tags
+        - page: content/markdoc-tags/accordion.md
+          label: Accordion
         - page: content/markdoc-tags/admonition.md
           label: Admonition
         - page: content/markdoc-tags/cards.md
