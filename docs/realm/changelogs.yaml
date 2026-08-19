@@ -52114,14 +52114,6 @@ reunite:
           Fixed file-level access in the Reunite editor to restrict editing to files within a member's permission scope for projects using the
           `access.rbac` setting.
     dependencies: {}
-  v2026-08-19.1:
-    timestamp: 1787145795000
-    changes:
-      minor:
-        - Added `nextPage` and `previousPage` cursor fields to the pagination `page` object in all Reunite list endpoints.
-      patch:
-        - Improved project creation speed in Reunite by eliminating delays during repository setup.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
