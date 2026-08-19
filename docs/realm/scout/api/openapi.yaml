@@ -14,7 +14,7 @@ servers:
   - url: https://{host}/api
     variables:
       host:
-        default: app.cba.au.redocly.com
+        default: app.cloud.redocly.com
         description: Server host.
     description: Production main server.
 security:
