@@ -14,6 +14,35 @@ plans:
 
 This page contains a comprehensive list of Markdoc tags with links to deeper resources where you can see how to use them.
 
+## Accordion and accordion group
+
+Use the Accordion tag to hide secondary content inside a collapsible section with a short title.
+Users expand only the sections they need.
+
+Additional information and syntax: [Accordion and accordion group tags](./accordion.md)
+
+**Example accordion element:**
+
+{% accordion title="Ideas to consider" %}
+Try adding a new special event to the Museum API, or timebox the content creation to 2 hours.
+{% /accordion %}
+
+Use the Accordion group tag to combine several accordions into one bordered list with dividers between the items.
+Group accordions that belong together, such as the questions in a FAQ section.
+
+**Example accordion group element:**
+
+{% accordion-group %}
+  {% accordion title="How do I buy a ticket?" %}
+  Use the `POST /tickets` endpoint or visit the museum front desk.
+  {% /accordion %}
+  {% accordion title="Can I get a refund?" %}
+  Tickets are refundable up to 24 hours before the visit date.
+  {% /accordion %}
+{% /accordion-group %}
+
+---
+
 ## Admonition
 
 Use the Admonition tag to highlight important information.
