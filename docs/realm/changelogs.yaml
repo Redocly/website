@@ -52129,6 +52129,13 @@ reunite:
         - Fixed pull request creation failing when the title was too long. Pull request actions now report the reason the git provider gives.
         - Fixed incorrect empty `502` responses for requests with incompatible credentials.
     dependencies: {}
+  v2026-08-20.3:
+    timestamp: 1787235879000
+    changes:
+      minor: []
+      patch:
+        - Fixed the collapsed height of logs in the webview error screen.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
