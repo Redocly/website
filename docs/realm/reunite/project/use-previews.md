@@ -15,7 +15,8 @@ plans:
 
 The previews feature shows the updates to a branch, as they would look when applied to the production deployment.
 It's like having a staging server for every branch.
-You can also share preview links with others, so they can provide you with feedback, not just on the Markdown, but on the formatting as well.
+You can also share preview links with others, so they can provide you with feedback.
+The feedback can cover not just the Markdown, but the formatting as well.
 
 ## Trigger a preview deployment
 
@@ -29,12 +30,14 @@ A preview deployment triggers automatically when the following events occur:
 
 You can access previews on the Deployments page, Editor, or Pull requests page in Reunite, after the preview build has passed all checks.
 
-If you use an external Git provider for your repository or remote content, after the build is finished, you can access the build status, preview URL, and visual review in the Git provider.
+You can use an external Git provider for your repository or remote content.
+In that case, after the build is finished, you can access the build status, preview URL, and visual review in the Git provider.
 
 {% admonition type="info" name="Preview deployments availability" %}
 Preview deployments are available for all unmerged development branches with open PRs in Reunite or a connected Git provider.
 
-While you can view information of deployments or merged pull requests that had their branches deleted, you won't be able to access or generate their previews.
+You can view information of deployments or merged pull requests that had their branches deleted.
+However, you won't be able to access or generate their previews.
 {% /admonition %}
 
 ### From the Deployments page

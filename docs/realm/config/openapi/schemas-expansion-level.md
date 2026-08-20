@@ -10,7 +10,8 @@ plans:
 # `schemasExpansionLevel`
 
 The `schemasExpansionLevel` option controls the expansion level of schemas in OpenAPI reference documentation.
-Set it to `all` to expand all schemas regardless of their level, or set it to a number to expand schemas up to the specified level.
+Set it to `all` to expand all schemas regardless of their level.
+Set it to a number to expand schemas up to the specified level.
 Required properties are expanded by default to a depth of `4` levels.
 
 ## Options

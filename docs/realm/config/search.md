@@ -330,7 +330,8 @@ Only `redocly_category` facet field is used as a group facet.
 ## Curate search results
 
 Influence the ranking of specific pages in search results for particular search terms.
-Use `keywords` option in the front matter of a page or `x-keywords` in an OpenAPI description file to boost the page to the top of search results or exclude the page from appearing for certain keywords.
+Use the `keywords` option in the front matter of a page or `x-keywords` in an OpenAPI description file.
+These options boost the page to the top of search results or exclude the page from appearing for certain keywords.
 
 {% admonition type="info" %}
 Curation is only available for the Typesense search engine, which requires an Enterprise or Enterprise+ plan.
@@ -339,7 +340,8 @@ Curation is only available for the Typesense search engine, which requires an En
 Behavior of pages with keywords:
 
 - For each keyword in `includes`, the page is promoted to the top position in search results.
-- If you use the same keyword in multiple pages, the pages appear at the top of search results in the order they were indexed by the search engine.
+- You can use the same keyword in multiple pages.
+  The pages appear at the top of search results in the order they were indexed by the search engine.
 - Keywords are not case-sensitive.
 - The word order in keywords is preserved: searching for "pay apple" won't trigger a keyword "apple pay".
 - The first matching keyword triggers curation and stops additional keywords from being processed for that search.

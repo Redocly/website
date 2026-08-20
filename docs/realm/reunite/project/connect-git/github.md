@@ -13,7 +13,8 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-If your project files are stored in a repository on GitHub, you can connect that repository, so you can access, edit, and publish those files in Reunite.
+Your project files can be stored in a repository on GitHub.
+Connect that repository so you can access, edit, and publish those files in Reunite.
 To connect a GitHub repository, you must first install the Redocly app in GitHub, then enter the connection details in Reunite.
 
 ## Install the Redocly app in GitHub
@@ -22,14 +23,16 @@ To connect a GitHub repository, you must first install the Redocly app in GitHub
 
 ## Enter the connection details in Reunite
 
-After you install the Redocly GitHub App on your organization in GitHub, you must enter the repository connection details in Reunite to complete the process of adding a GitHub repository to your project.
+After you install the Redocly GitHub App on your organization in GitHub, enter the repository connection details in Reunite.
+This completes the process of adding a GitHub repository to your project.
 
 To enter the connection details:
 
 1. From your project, select **Settings > Git hosting > GitHub > Next**.
 2. Authorize your Redocly organization to verify your GitHub identity.
 3. Select your GitHub **Organization > Repository > Branch**.
-4. (Optional) Select the **Monorepo folder**, if your project files are part of a monorepo, and you want to include only a specific folder from the repository.
+4. (Optional) Select the **Monorepo folder**.
+   Use it if your project files are part of a monorepo and you want to include only a specific folder from the repository.
    {% admonition type="info" name="Monorepo folder" %}
    If you select to only include a specific folder from a monorepo:
 

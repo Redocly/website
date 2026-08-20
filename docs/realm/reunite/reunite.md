@@ -23,7 +23,8 @@ This article is about using the cloud platform.
 
 ## Editor
 
-Reunite includes an **Editor** page where you can [add and delete files](./project/use-editor.md#add-files), edit content within files, and [view live previews](./project/use-webview.md) of your changes as you make them.
+Reunite includes an **Editor** page where you can [add and delete files](./project/use-editor.md#add-files) and edit content within files.
+You can also [view live previews](./project/use-webview.md) of your changes as you make them.
 
 The editor includes the following areas:
 
@@ -31,7 +32,8 @@ The editor includes the following areas:
     You can collapse this pane to give the editor more space.
 - An editor pane where files open as tabs.
   You can split tabs into groups and rearrange them to fit your workflow.
-- Utility tabs that open alongside your file tabs in the editor dock, including the Webview live preview for previewing your formatting updates as you add them.
+- Utility tabs that open alongside your file tabs in the editor dock.
+  They include the Webview live preview for previewing your formatting updates as you add them.
 
 The changes you make in the editor are introduced to your published project using a Git-based workflow.
 Git is a version control system for tracking and managing changes that is integrated into Reunite.
@@ -39,7 +41,8 @@ Git is a version control system for tracking and managing changes that is integr
 ## Version control
 
 Reunite uses Git for version control, either with a [connected remote provider](./project/connect-git/connect-git-provider.md) or a Redocly provided repository.
-The inclusion of Git for version control means that the changes you make in the Reunite editor are introduced to your published project using a Git-based workflow.
+Reunite includes Git for version control.
+The changes you make in the Reunite editor are introduced to your published project using a Git-based workflow.
 
 <details>
 <summary>What is a Git-based workflow?</summary>
@@ -92,11 +95,11 @@ In Reunite, you can access the following two types of deployments:
   Or if you have a PR opened,
   the preview deployment is triggered when you make another commit to the development branch.
 
-When a deployment is successful, you can view the deployment build by clicking on the **Production** or **Preview** button
-in the top right corner of the page.
+When a deployment is successful, you can view the deployment build.
+Click the **Production** or **Preview** button in the top right corner of the page.
 When a deployment isn't finished, you are redirected to the deployment details page.
-Also, you can open a menu that displays all available deployments, shortcuts to those deployments,
-a direct link to the deployment, and a copy link button for the deployment.
+Also, you can open a menu that displays all available deployments.
+The menu also has shortcuts to those deployments, a direct link to the deployment, and a copy link button.
 
 To see more information about deployments, you can visit the **Deployments** page.
 

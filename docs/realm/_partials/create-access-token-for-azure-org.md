@@ -1,7 +1,8 @@
 ### Permissions
 
 Before creating Personal Access Token (PAT) for your user, make sure that they have a correct access right to the desired Azure projects.
-Redocly recommends putting your user in the `Project Administrators` security group for your Azure DevOps project, since this security group has all the needed permissions by default.
+Redocly recommends putting your user in the `Project Administrators` security group for your Azure DevOps project.
+This security group has all the needed permissions by default.
 
 _(For example, only the `Project Administrators` security group has the `View subscriptions` and the `Edit subscriptions` permissions enabled [by default](https://learn.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops#q-what-permissions-do-i-need-to-set-up-a-subscription).
 Redocly needs these permissions to be able to setup service hooks (webhooks) for the Azure project.)_

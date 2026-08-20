@@ -46,7 +46,8 @@ After your project goes live, earlier draft deployments existing in Reunite stil
 
 {% admonition type="warning" name="RBAC settings take priority" %}
 If you configure your own [RBAC](../../config/access/rbac.md) settings in `redocly.yaml`, they take priority over the default draft mode login protection.
-For example, if you explicitly grant `read` access to the `anonymous` team in your RBAC configuration, your draft deployments can be publicly accessible even while the project is in draft mode.
+For example, you can explicitly grant `read` access to the `anonymous` team in your RBAC configuration.
+Your draft deployments can then be publicly accessible even while the project is in draft mode.
 {% /admonition %}
 
 ### Production deployment behavior
@@ -73,7 +74,8 @@ Once you publish the project, it cannot be returned to draft mode.
 The **Go live** button is available only for users with the OWNER organization role, or members with the `admin` project role.
 
 When draft protection is removed, Reunite stops applying draft-mode login protection to new deployments.
-If the project must stay limited to specific users after you go live, add [a login requirement](../../config/access/requires-login.md), or configure [RBAC](../../config/access/rbac.md) and review your project access settings before you continue.
+The project might have to stay limited to specific users after you go live.
+In that case, add [a login requirement](../../config/access/requires-login.md), or configure [RBAC](../../config/access/rbac.md) and review your project access settings before you continue.
 
 To publish a draft project:
 

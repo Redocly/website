@@ -16,7 +16,8 @@ title: Custom page templates
 
 Custom page templates is a feature that allows you to create more complex templates for your `.md` pages.
 
-In the default template you have main content in the left column and Table of Content (TOC) on the right (if it's not disabled by theme config).
+In the default template, you have main content in the left column and Table of Content (TOC) on the right.
+The TOC can be disabled by theme config.
 
 But there may be types of pages where you would want to display some additional metadata.
 
@@ -92,7 +93,8 @@ We searched the world far and wide for marketing experts and determined the fast
 ...
 ```
 
-From this example the `Redocly as Remockly` blog post will use custom template located at `@theme/Templates/BlogPost` and other data like `author`, `date`, `timeToRead`, etc. will be passed to that template in `pageProps.frontmatter` property (see example of custom template above).
+In this example, the `Redocly as Remockly` blog post will use the custom template located at `@theme/Templates/BlogPost`.
+Other data like `author`, `date`, and `timeToRead` will be passed to that template in the `pageProps.frontmatter` property (see the example of a custom template above).
 
 ### Apply templates in redocly.yaml
 

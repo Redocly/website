@@ -44,7 +44,8 @@ to create a `package.json` file if you don't have one already.
 
 ## Configure private registries
 
-If you need to install libraries from private NPM registries (such as Artifactory, AWS CodeArtifact, or GitHub Packages), you can configure registry access using either `.npmrc` or `bunfig.toml` files.
+You might need to install libraries from private NPM registries (such as Artifactory, AWS CodeArtifact, or GitHub Packages).
+Configure registry access using either `.npmrc` or `bunfig.toml` files.
 
 ### Use `.npmrc`
 

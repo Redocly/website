@@ -19,7 +19,8 @@ Changes to the **ignore** configuration in develop mode take effect only after r
 {% /admonition %}
 
 This configuration option helps to exclude files and folders from the project build without removing the source files from your project.
-You can use **glob patterns** to specify which files and folders to ignore, and **negations** to exclude files or directories that would otherwise be ignored by a previous pattern.
+You can use **glob patterns** to specify which files and folders to ignore.
+Use **negations** to exclude files or directories that would otherwise be ignored by a previous pattern.
 
 ## Examples
 

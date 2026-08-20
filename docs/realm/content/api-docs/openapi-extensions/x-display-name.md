@@ -4,7 +4,8 @@
 Tags are used in Redoc to group API endpoints into logical sets for navigation purposes.
 Use `x-displayName` to give your tag a better presentation in the navigation bar on the left.
 
-Adjusting the display name is useful where the tags are either too long to be readable in the left-hand bar, or where the tag isn't a human-readable string.
+Adjusting the display name is useful where the tags are too long to be readable in the left-hand bar.
+It also helps where the tag isn't a human-readable string.
 Making the improved tag details part of the OpenAPI description means that the information can be used everywhere that the OpenAPI file is used.
 
 ## Location

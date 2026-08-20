@@ -65,7 +65,8 @@ Projects have their features grouped into pages you can access in the left panel
 
 ## Project Settings menu
 
-Use the Settings menu in your project workspace to edit your projects domain, environment variables, set up Git hosting, manage deployment options, or delete the project.
+Use the Settings menu in your project workspace to edit your project's domain and environment variables.
+You can also set up Git hosting, manage deployment options, or delete the project.
 
 ### View and edit project details
 
@@ -97,7 +98,8 @@ Reunite deletes the project and returns you to your organization's dashboard.
 
 ### Set up a custom domain
 
-To learn how to set up your custom domain and optional proxy, project prefix, or how to serve your project from a subdomain, see [Custom domain](./custom-domain.md).
+See [Custom domain](./custom-domain.md) to learn how to set up your custom domain and optional proxy or project prefix.
+It also covers how to serve your project from a subdomain.
 
 ### Manage environment variables
 

@@ -45,12 +45,14 @@ Make sure you have the following:
 ## Authenticate SCIM requests
 
 Your identity provider must send an `Authorization` header that carries your organization API key.
-Use the `Bearer` format followed by a space and the full API key string (the same value you copy when you create a key in **API keys**).
+Use the `Bearer` format followed by a space and the full API key string.
+Use the same value you copy when you create a key in **API keys**.
 
 Create or rotate keys under **API keys** in your organization settings.
 From more information about API keys in your Redocly products, see [Manage API keys](../api-keys.md).
 
-If you rotate or revoke the organization API key used for SCIM, put the new key value into your identity provider’s SCIM provisioning settings (the same place you configured the bearer token).
+You might rotate or revoke the organization API key used for SCIM.
+Put the new key value into your identity provider’s SCIM provisioning settings (the same place you configured the bearer token).
 The IdP's SCIM requests fail and automatic provisioning stops until you provide a valid key.
 
 ## Supported SCIM attributes
@@ -93,7 +95,8 @@ Exact field names and steps depend on your IdP.
 After you save your Reunite settings and your IdP configuration, run your provider’s test or sync flow if available to confirm connectivity.
 
 {% admonition type="warning" name="User account removal" %}
-Deprovisioning removes the user from your Redocly organization when your IdP sets **active** to **false** or unassigns them from the provisioned application, depending on how your IdP implements SCIM.
+Deprovisioning removes the user from your Redocly organization.
+It happens when your IdP sets **active** to **false** or unassigns them from the provisioned application, depending on how your IdP implements SCIM.
 {% /admonition %}
 
 ## Resources

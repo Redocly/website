@@ -77,9 +77,13 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 ## Access control
 
 Role-based access control (RBAC) that protects content in your project also protects that content over the Docs MCP server.
-The Docs MCP server enforces access with the same RBAC engine as the portal, so each authenticated client receives only the API descriptions, schemas, skills, and search results that its teams are permitted to access — the same content it could see in the portal.
+The Docs MCP server enforces access with the same RBAC engine as the portal.
+Each authenticated client receives only the API descriptions, schemas, skills, and search results that its teams are permitted to access.
+That is the same content the client could see in the portal.
+
 When RBAC restricts anonymous access, the `/mcp` endpoint requires authentication and returns `401` to unauthenticated clients.
-To restrict the server itself rather than individual content, set a team-based role for the `mcp` feature, as described in [Restrict access to the MCP server](../customization/mcp-server/index.md#restrict-access-to-the-mcp-server).
+To restrict the server itself rather than individual content, set a team-based role for the `mcp` feature.
+The steps are described in [Restrict access to the MCP server](../customization/mcp-server/index.md#restrict-access-to-the-mcp-server).
 
 {% admonition type="info" %}
 The `hide` and `ignore` options remove content from the build for all clients.
@@ -92,7 +96,9 @@ The Docs MCP server compares the `aud` (audience) claim of each bearer token to 
 A token whose `aud` names a different organization is recorded in the logs and in telemetry, and the request still goes through.
 
 Set the `REDOCLY_MCP_ENFORCE_TOKEN_AUDIENCE` environment variable to `true` to reject those requests with a `401` response instead.
-Two cases skip the comparison in both modes: tokens that carry no `aud` claim, because portal session tokens and some identity provider setups don't set one, and projects that run without an organization ID, such as self-hosted deployments.
+Two cases skip the comparison in both modes.
+Tokens that carry no `aud` claim skip it, because portal session tokens and some identity provider setups don't set one.
+Projects that run without an organization ID, such as self-hosted deployments, also skip it.
 
 ## Examples
 

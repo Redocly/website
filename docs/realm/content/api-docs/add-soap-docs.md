@@ -17,7 +17,8 @@ keywords:
 
 Transform your WSDL files into reference documentation by integrating them into your project.
 Give your users the tools they need to make the most of your SOAP APIs with comprehensive reference documentation.
-Either add individual schema files to your project alongside your other content, or use a [classic catalog](../../config/catalog-classic.md) to showcase your SOAP APIs alongside OpenAPI and AsyncAPI APIs.
+Either add individual schema files to your project alongside your other content, or use a [classic catalog](../../config/catalog-classic.md).
+The catalog showcases your SOAP APIs alongside OpenAPI and AsyncAPI APIs.
 
 ## About the SOAP API plugin
 
@@ -33,7 +34,8 @@ Make sure you have the following:
 - the Redocly package for the product you use (such as `@redocly/realm`) listed as a dependency in the `package.json` file
 
 {% admonition type="warning" name="Local dependencies required" %}
-Redocly projects can be previewed locally without installing dependencies, but to add the SOAP plugin, you must have both Realm and the SOAP plugin installed as local dependencies.
+Redocly projects can be previewed locally without installing dependencies.
+However, to add the SOAP plugin, you must have both Realm and the SOAP plugin installed as local dependencies.
 
 If you see the error `Theme "@redocly/portal-plugin-soap-api" not found`, then check that you have the `@redocly/realm` package listed in your `package.json` file.
 {% /admonition %}
@@ -48,7 +50,8 @@ If you are working in Reunite, you must add the plugin as a dependency in your `
 
 When you work in Reunite, you do not need to have a `package.json` file to build your project.
 However, if you need to install a plugin that is not included in the standard project, you do need a `package.json` file.
-If you are working in Reunite, to generate SOAP reference documentation from a WSDL file, you must add a `package.json` file with the Redocly SOAP API plugin listed as a dependency.
+You might work in Reunite and generate SOAP reference documentation from a WSDL file.
+In that case, you must add a `package.json` file with the Redocly SOAP API plugin listed as a dependency.
 
 Use the following example `package.json` file that includes the Redocly SOAP API plugin as a dependency, updating `*` with the [latest version](https://www.npmjs.com/package/@redocly/portal-plugin-soap-api):
 
@@ -66,7 +69,8 @@ Use the following example `package.json` file that includes the Redocly SOAP API
 
 ### Install using a package manager
 
-Redocly projects can be previewed locally without installing dependencies, but to add the Redocly SOAP plugin, you must have both Realm and the SOAP plugin installed as local dependencies.
+Redocly projects can be previewed locally without installing dependencies.
+However, to add the Redocly SOAP plugin, you must have both Realm and the SOAP plugin installed as local dependencies.
 
 To install the Redocly SOAP plugin, use one of the following commands, depending on the package manager you are using:
 
@@ -119,7 +123,8 @@ To change the URL, rename or move the WSDL file to the path you want it served f
 For more information, see [file-based routing](../project-structure.md#file-based-routing).
 {% /admonition %}
 
-To place the reference inside a custom sidebar alongside your other content, with control over its order and grouping, add your WSDL file to a `sidebars.yaml` file.
+You can place the reference inside a custom sidebar alongside your other content, with control over its order and grouping.
+To do that, add your WSDL file to a `sidebars.yaml` file.
 You can also link to the reference from anywhere, such as the [navbar](../../config/navbar.md), an in-page link, a card, or an [API catalog](../../config/catalog-classic.md).
 
 ## Add API reference to your site navigation
@@ -127,7 +132,8 @@ You can also link to the reference from anywhere, such as the [navbar](../../con
 A `sidebars.yaml` file includes only the items you add to it, so add any files you want displayed in that sidebar, including WSDL files.
 For more information on configuring a `sidebars.yaml` file for your project, see [Sidebar configuration](../../navigation/sidebars.md).
 
-To add a WSDL file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the WSDL file to your `sidebars.yaml` file, as in the following example:
+You can add a WSDL file to your project with a `sidebars.yaml` file.
+Add the `page` and `label` keys with the corresponding values for the WSDL file to your `sidebars.yaml` file, as in the following example:
 
 ```yaml {% title="sidebars.yaml" %}
 - page: apis/sample-api.wsdl

@@ -9,7 +9,8 @@ plans:
 ---
 # `jsonSamplesDepth`
 
-The `jsonSamplesDepth` option sets the default depth for rendering JSON samples in the protocol binding panels (such as channel, operation, and message bindings) of your AsyncAPI documentation.
+The `jsonSamplesDepth` option sets the default depth for rendering JSON samples in your AsyncAPI documentation.
+It applies to the protocol binding panels, such as channel, operation, and message bindings.
 Use this option to set the depth to a comfortable default value for the data structure of your API.
 
 ## Options

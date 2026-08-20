@@ -22,4 +22,5 @@ You have the option to opt-out of telemetry by simply setting the `REDOCLY_TELEM
 
 ## Sensitive data
 
-The data that is sent as part of Redocly telemetry goes through an additional step that ensures that secrets and other sensitive data are not included.
+The data that is sent as part of Redocly telemetry goes through an additional step.
+This step ensures that secrets and other sensitive data are not included.

@@ -224,7 +224,8 @@ rules:
   spec-strict-refs: error # This rule enforces $refs to reference elements in the component section
 ```
 
-The following sample ruleset configuration is for the Silver level and applies the [Redocly minimal ruleset](https://redocly.com/docs/cli/rules/minimal), adds a few additional [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules), and a few additional [configurable rules](https://redocly.com/docs/cli/configuration/rules):
+The following sample ruleset configuration is for the Silver level.
+It applies the [Redocly minimal ruleset](https://redocly.com/docs/cli/rules/minimal), adds a few additional [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules), and a few additional [configurable rules](https://redocly.com/docs/cli/configuration/rules):
 
 ```yaml {% title="api-ruleset-silver.yaml" %}
 extends:

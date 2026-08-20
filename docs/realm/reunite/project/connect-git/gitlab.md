@@ -13,7 +13,8 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-If your project files are stored in a remote repository on GitLab, you can connect that repository, so you can access, edit, and publish those files in Reunite.
+Your project files can be stored in a remote repository on GitLab.
+Connect that repository so you can access, edit, and publish those files in Reunite.
 
 To connect a GitLab repository, you must first create a new access token in GitLab, then enter the connection details in Reunite.
 
@@ -29,7 +30,8 @@ To connect a GitLab repository, you must first create a new access token in GitL
 3. Enter a **Credential name** for the new GitLab credential.
 4. Enter the **Access token** you saved from the [Create new access token in GitLab](#create-a-new-access-token-in-gitlab) step and select **Next**.
 5. Select the **Namespace > Project > Branch**.
-6. (Optional) Select the **Monorepo folder**, if your project files are part of a monorepo, and you want to include only a specific folder from the repository.
+6. (Optional) Select the **Monorepo folder**.
+   Use it if your project files are part of a monorepo and you want to include only a specific folder from the repository.
    {% admonition type="info" name="Monorepo folder" %}
    If you select to only include a specific folder from a monorepo:
 

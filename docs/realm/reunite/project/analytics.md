@@ -60,7 +60,8 @@ The **Pages** section displays a table with the most visited page URLs, and a ti
 
 ### Top 5 viewed pages
 
-The **Top 5 viewed pages** table displays the five most visited pages, together with the number of unique users and the number of views for each page.
+The **Top 5 viewed pages** table displays the five most visited pages.
+It also shows the number of unique users and the number of views for each page.
 
 ### Views and users
 
@@ -109,7 +110,8 @@ The **Search** section displays:
 
 ### Top 5 search queries
 
-The **Top 5 search queries** table displays the five most searched terms, together with the number of unique users and the number of searches for each query.
+The **Top 5 search queries** table displays the five most searched terms.
+It also shows the number of unique users and the number of searches for each query.
 
 You can use the toggle in the top-right corner of the table to switch the displayed data between:
 

@@ -31,8 +31,10 @@ After you install the Redocly GitHub App on your organization in GitHub, and cre
 
 To enter the connection details in Reunite:
 
-1. In the file tree, select the folder (or click on the empty space to select the root directory) where you want to add the remote content.
-1. Select **+ > New remote folder > Add Git repository** to add a remote content folder, or **+ > New remote file > Add Git repository** to add a remote content file.
+1. In the file tree, select the folder where you want to add the remote content.
+   You can also click on the empty space to select the root directory.
+1. Select **+ > New remote folder > Add Git repository** to add a remote content folder.
+   To add a remote content file, select **+ > New remote file > Add Git repository**.
 1. Enter a name for the new remote content (folder or file) and press the Enter or Return key.
 1. Select **GitHub > Next**.
 1. Authorize your Redocly organization to verify your GitHub identity.

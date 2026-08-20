@@ -149,7 +149,9 @@ You decide which data sources it can use.
 The features process the content you publish and the questions users type.
 Conversations from signed-in users record the user's email address in your analytics.
 Conversations from users who are not signed in are recorded as "Anonymous".
-For Redocly Agent and Scaffold with AI, a redaction step removes email addresses, IP addresses, bearer tokens, and API-key-like strings from prompts before they reach the model provider.
+
+For Redocly Agent and Scaffold with AI, a redaction step runs on prompts before they reach the model provider.
+It removes email addresses, IP addresses, bearer tokens, and API-key-like strings.
 This redaction step does not apply to the AI assistant: questions go to the model provider as the user typed them.
 The provider processes them for inference only and does not use them for training.
 

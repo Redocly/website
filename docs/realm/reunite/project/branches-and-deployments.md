@@ -56,7 +56,8 @@ Only enable this setting if you trust the contributors to your repository or hav
 
 ## Build process and API bundling
 
-When Reunite processes your project during a build, it performs several steps in a specific order to ensure your APIs are properly validated, transformed, and optimized:
+When Reunite processes your project during a build, it performs several steps in a specific order.
+This ensures your APIs are properly validated, transformed, and optimized:
 
 1. **Configuration discovery**: Reunite reads your `redocly.yaml` configuration file to understand your project settings, including linting rules, decorators, and output parameters.
 1. **API discovery**: Reunite scans your repository to find all API description files (OpenAPI, AsyncAPI, etc.) that need to be processed.
@@ -73,7 +74,8 @@ When Reunite processes your project during a build, it performs several steps in
    - applies the `output` parameter settings from your configuration
    - generates the final API descriptions used for documentation and other downstream processes
 
-This systematic approach ensures that all your APIs are consistently processed according to your project's standards and requirements, regardless of which branch or deployment environment they're being built for.
+This systematic approach ensures that all your APIs are consistently processed according to your project's standards and requirements.
+It holds regardless of which branch or deployment environment they're being built for.
 
 ## Resources
 

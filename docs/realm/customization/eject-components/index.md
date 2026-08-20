@@ -56,7 +56,8 @@ To determine the component to eject using Google Chrome developer tools do the f
 
 ## Eject component
 
-After you have determined you need to alter a component by ejecting it and what component you want to alter, eject your component in one of the following ways:
+First determine that you need to alter a component by ejecting it and which component you want to alter.
+Then eject your component in one of the following ways:
 
 - [Using the Reunite web editor (recommended)](./eject-components-in-reunite.md): Use the UI in Reunite to select the component and eject the files into your project.
 - [Using Redocly CLI](./eject-components-using-cli.md): Use Redocly CLI to select the component and eject the files.

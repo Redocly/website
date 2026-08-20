@@ -13,7 +13,8 @@ plans:
 
 From the **Compliance** page in Reunite, view Redocly's SOC 2, Type 2 and Penetration test reports and results on the Consensus Assessments Initiative Questionnaire (CAIQ).
 
-The CAIQ is a survey provided by the Cloud Security Alliance (CSA) for cloud consumers and auditors to assess the security capabilities of a cloud service provider.
+The CAIQ is a survey provided by the Cloud Security Alliance (CSA).
+Cloud consumers and auditors use it to assess the security capabilities of a cloud service provider.
 
 ## Download compliance reports
 

@@ -49,7 +49,8 @@ Make changes to the remote content source rather than in this directory in the p
 The mount folder or mount point is where the remote content is placed relative to the root of your repository.
 When you use the **New remote folder** command, you create a folder that serves as the mount point for the remote content.
 
-For example, adding a remote folder to `docs` and naming it `openapi`, creates a remote folder the contents of which are pulled into your Reunite project from a remote location.
+For example, you can add a remote folder to `docs` and name it `openapi`.
+The folder's contents are pulled into your Reunite project from a remote location.
 
 ```treeview
 ├── docs/
@@ -69,10 +70,12 @@ Restrictions on remote content folders:
 - Each mount point can only contain one remote content source.
 
 {% admonition type="warning" name="Nested remote content" %}
-If you add a remote content folder inside of another remote content folder, Redocly overwrites the nested remote content each time the parent remote content folder is updated.
+You can add a remote content folder inside of another remote content folder.
+Redocly then overwrites the nested remote content each time the parent remote content folder is updated.
 The nested remote content folder is re-created when it receives its own update.
 
-If a nested remote content folder has the same name as a folder on the same level, it overwrites the contents of that folder each time it receives updates.
+A nested remote content folder can have the same name as a folder on the same level.
+It then overwrites the contents of that folder each time it receives updates.
 {% /admonition %}
 
 ## Content sources
@@ -160,9 +163,11 @@ This option is useful for syncing individual API description files or configurat
 
 #### Pull requests and remote branches
 
-When you open a pull/merge request against the branch that is a remote content source, Reunite fetches the proposed changes and performs the [_preview_ changes verification process](./verify-remote-content.md#preview-changes-verification) with the branch.
+When you open a pull/merge request against the branch that is a remote content source, Reunite fetches the proposed changes.
+It performs the [_preview_ changes verification process](./verify-remote-content.md#preview-changes-verification) with the branch.
 
-When a pull/merge request is merged to the branch that is a remote content source, Reunite performs the [_production_ changes verification](./verify-remote-content.md#production-changes-verification) with the new changes on that branch.
+A pull/merge request can be merged to the branch that is a remote content source.
+Reunite then performs the [_production_ changes verification](./verify-remote-content.md#production-changes-verification) with the new changes on that branch.
 
 ### Use a URL for a remote file
 
@@ -182,7 +187,8 @@ Read the [how-to guide for adding remote content by URL](./url.md) for detailed 
 CI/CD (Continuous Integration / Continuous Deployment) is a remote content configuration where you push content from another source to your Redocly project.
 The responsibility for configuring and executing the pushes is with you; Redocly receives and processes the push events that are sent.
 
-Add a CI/CD remote content source in Reunite and you will be guided through setting up either a [GitHub action](./reunite-push-action.md) or a [CLI push command](https://redocly.com/docs/cli/commands/push) that you can run in your CI/CD pipeline.
+Add a CI/CD remote content source in Reunite.
+You will be guided through setting up either a [GitHub action](./reunite-push-action.md) or a [CLI push command](https://redocly.com/docs/cli/commands/push) that you can run in your CI/CD pipeline.
 
 When changes are pushed, if the push `--branch` and `--default-branch` values match, Reunite runs the [production changes verification](./verify-remote-content.md#production-changes-verification) steps.
 For any other branch, the [preview changes verification process](./verify-remote-content.md#preview-changes-verification) is triggered.
@@ -196,7 +202,8 @@ Configure how the remote content is adopted into the Redocly project:
 
 - **Auto-sync:** Configures the system behavior when changes are made to remote content:
 
-  - For remote content in **Git** repositories, enabling Auto-sync creates pull requests automatically in Redocly when pull requests or branch changes are detected on the remote content repository.
+  - For remote content in **Git** repositories, enabling Auto-sync creates pull requests automatically in Redocly.
+    They are created when pull requests or branch changes are detected on the remote content repository.
     For changes to the default source branch for remote content, the Auto-merge rules then apply.
   - For remote content on a **URL**, a pull request is created with the updated content, and auto-merge rules apply.
   - For **pushed content**, the auto-sync setting is not used.
@@ -214,7 +221,8 @@ Remote content sources are listed under "Remote content" page in the project das
 
 **In preview**: The remote content has been added to the project's non-default branch.
 The initial pull request is created as a draft and must be marked as ready for review before it can be merged.
-All subsequent remote content updates are applied in place to the same branch and pull request (as long as [Auto-sync](#auto-sync-and-auto-merge) is enabled) until the pull request with the remote content files is reviewed and merged.
+All subsequent remote content updates are applied in place to the same branch and pull request (as long as [Auto-sync](#auto-sync-and-auto-merge) is enabled).
+Updates continue until the pull request with the remote content files is reviewed and merged.
 
 **Enabled**: When the remote content files are merged to the main branch, the status is "Enabled".
 If Auto-merge is enabled, it takes effect at this point.

@@ -13,11 +13,13 @@ plans:
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use a GitHub Action for pushing remote content to the Redocly Reunite project.
-Users with their projects hosted in their own GitHub accounts, but without the Redocly GitHub application installed can use this action in the repository that holds the remote content to push their changes to the Reunite platform.
+Your projects can be hosted in your own GitHub accounts without the Redocly GitHub application installed.
+In that case, use this action in the repository that holds the remote content to push your changes to the Reunite platform.
 This action has some advantages over using the push command because it also sets corresponding commit statuses for project deployments and scorecards.
 
 {% admonition type="info" name="First steps" %}
-The best way to get started with the GitHub action is to copy the code snippet presented to you when you add a remote content source to your project.
+The best way to get started with the GitHub action is to copy the code snippet.
+The snippet is presented to you when you add a remote content source to your project.
 {% /admonition %}
 
 When you add a new Remote from CI/CD, you'll be presented with a starter template for the action that you can use.
@@ -116,8 +118,8 @@ This action requires:
 
 ## Examples
 
-The following example shows a GitHub workflow that pushes a `src/redocly-museum.yaml` file from the remote content repo
-to the `src/docs/museum` folder inside an `example-project` in Reunite.
+The following example shows a GitHub workflow that pushes a `src/redocly-museum.yaml` file.
+The file goes from the remote content repo to the `src/docs/museum` folder inside an `example-project` in Reunite.
 
 The action will run for pushes to any branch.
 But Redocly API will detect pushes to main branch and non main branch and triggers corresponding preview or production deployments.

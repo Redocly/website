@@ -11,7 +11,8 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Use `x-seo` to control the SEO meta tags rendered in the HTML `<head>` of an individual operation or channel page: the page title, description, keywords, and the image used when the page link is shared.
+Use `x-seo` to control the SEO meta tags rendered in the HTML `<head>` of an individual operation or channel page.
+The tags include the page title, description, keywords, and the image used when the page link is shared.
 
 ## Location
 
@@ -75,7 +76,8 @@ operations:
 ```
 
 Each field is resolved independently, so you can override only the fields you need.
-In the following example, `title` and `description` both fall back to the operation `summary`, since it has no `title` or `description` of its own, while `keywords` and `image` come from the extension:
+In the following example, `title` and `description` both fall back to the operation `summary`, since it has no `title` or `description` of its own.
+The `keywords` and `image` values come from the extension:
 
 ```yaml
 operations:

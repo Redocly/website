@@ -65,7 +65,8 @@ After adding the `partialsFolders` configuration, the default `_partials` folder
 
 The `raw-partial` tag serves a similar purpose to the `partial` tag but with an important difference in processing order.
 
-While the standard `partial` tag renders the partial content after processing the main document, the `raw-partial` tag includes the partial content first, before any other processing occurs.
+The standard `partial` tag renders the partial content after processing the main document.
+The `raw-partial` tag includes the partial content first, before any other processing occurs.
 
 Use like `{% raw-partial file="..."}`.
 
@@ -77,7 +78,8 @@ Use the `raw-partial` tag in these scenarios:
 - When composing parts of a table (such as adding rows)
 - When the partial needs to be processed as part of the main document's context
 
-The `raw-partial` tag allows the included content to be treated as if it were written directly in the main document, making it suitable for cases where the processing order matters.
+The `raw-partial` tag allows the included content to be treated as if it were written directly in the main document.
+This makes it suitable for cases where the processing order matters.
 
 #### Limitations of partials
 

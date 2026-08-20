@@ -109,7 +109,8 @@ Use the `markdoc-example` tag to document how to use Markdoc tags in Markdown fi
 
 ## Best practices
 
-If you are writing your own Markdoc tags, you need a good way to share the syntax or no one will be able to use them.
+You might write your own Markdoc tags.
+Then you need a good way to share the syntax, or no one will be able to use them.
 
 **Contextual introduction**
 Always include a brief explanation before the syntax example explaining the purpose and how any attributes you included may affect the output.
@@ -119,7 +120,8 @@ This information can help users to understand how to modify the example to fit t
 Keep your examples simple, with minor variations so users don't get too overwhelmed with the different ways to modify a Markdoc tag.
 
 **Link to detailed reference documentation**
-Includes links to detailed reference documentation so users can see all of the different options you are not including in your examples that they may want to use.
+Include links to detailed reference documentation.
+Users can then see all the options your examples do not include.
 
 ## Resources
 

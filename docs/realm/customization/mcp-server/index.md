@@ -87,8 +87,10 @@ access:
 ```
 
 When a team-based role is set for the `mcp` feature, only teams with a role other than `none` can access the MCP server.
-Users must sign in unless the `anonymous` team is granted such a role, either directly or through the `*` wildcard, which covers all teams that are not listed explicitly, including `anonymous`.
-When the `anonymous` team has no access, requests without a valid token receive a `401` response, and authenticated users who don't belong to an allowed team receive a `403` response.
+Users must sign in unless the `anonymous` team is granted such a role, either directly or through the `*` wildcard.
+The wildcard covers all teams that are not listed explicitly, including `anonymous`.
+When the `anonymous` team has no access, requests without a valid token receive a `401` response.
+Authenticated users who don't belong to an allowed team receive a `403` response.
 
 For more details, see the [RBAC configuration reference](../../config/access/rbac.md#features-configuration).
 

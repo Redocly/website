@@ -28,7 +28,7 @@ This includes users who have access to this object.
 - Map of team names to [project roles](../../../access/roles.md#project-roles).
   Team names come from the identity provider or teams associated with the Redocly login.
   Additionally, there are automated team names `anonymous` (meaning all users who are not logged in), `authenticated` (meaning any user who is logged in).
-  Learn more about mapping group names that come from the identity provider through the [single-sign-on (SSO) configuration to either Redocly default teams or project RBAC teams](../../../reunite/organization/sso/add-idp.md#team-mapping).
+  Learn more about [mapping identity provider group names to Redocly default teams or project RBAC teams](../../../reunite/organization/sso/add-idp.md#team-mapping) through the single-sign-on (SSO) configuration.
   In addition, the team name `*` represents the rest of the teams not defined in sibling properties including `anonymous` and `authenticated`.
   Possible values of roles: `none`, `read`, `write`, `triage`, `maintain`, or `admin`.
 

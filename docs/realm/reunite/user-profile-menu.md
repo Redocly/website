@@ -13,7 +13,8 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-In the user profile menu you can view your information, adjust notifications you receive, switch the color mode, and add, remove or switch between connected Git provider accounts.
+In the user profile menu you can view your information, adjust notifications you receive, and switch the color mode.
+You can also add, remove or switch between connected Git provider accounts.
 
 To open the user profile menu, click your name at the bottom of Reunite's navigation pane on the left side of the page.
 Your profile settings apply only to the currently selected organization.

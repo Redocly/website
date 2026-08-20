@@ -15,7 +15,8 @@ plans:
 
 Connect your self-hosted source control to offer continuous validation and delivery of your APIs, reference documentation, and developer projects.
 Define self-hosted Git providers on the organization level in Reunite.
-After you add self-hosted Git providers to an organization, those providers become available for all users in the organization, making it possible to connect your repositories, or add remote content to Redocly projects.
+After you add self-hosted Git providers to an organization, those providers become available for all users in the organization.
+Users can then connect repositories, or add remote content to Redocly projects.
 You can add one or more Git self-hosted providers, depending on your infrastructure.
 Currently Reunite supports 2 types of self-hosted providers: GitLab self-managed and GitHub Enterprise Server.
 

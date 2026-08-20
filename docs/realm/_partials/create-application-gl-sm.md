@@ -1,6 +1,8 @@
-Redocly supports OAuth 2.0 to identify your GitLab self-managed users, so they can authenticate and perform operations such as opening or merging your GitLab merge requests from Redocly.
+Redocly supports OAuth 2.0 to identify your GitLab self-managed users.
+Users can then authenticate and perform operations such as opening or merging your GitLab merge requests from Redocly.
 
-To connect your GitLab self-managed instance to Reunite, you must create an OAuth 2 application on your instance and copy the **Application ID** and **Secret** for use in a later step in the process.
+To connect your GitLab self-managed instance to Reunite, you must create an OAuth 2 application on your instance.
+Copy the **Application ID** and **Secret** for use in a later step in the process.
 
 The OAuth 2 application must have `api` scope and use one of the following Redirect URIs depending on your location:
 

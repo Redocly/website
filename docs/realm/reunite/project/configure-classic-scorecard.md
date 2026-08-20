@@ -62,7 +62,8 @@ Building rules in Reunite is similar to [building API standard rulesets in Redoc
 
 ### Configure rulesets in `redocly.yaml` for classic scorecard
 
-If you have a small amount of custom rules and you want to include them all in the `redocly.yaml` file you can add your rules directly.
+You might have a small amount of custom rules and want to include them all in the `redocly.yaml` file.
+In that case, add your rules directly.
 
 To configure custom rules in `redocly.yaml`:
 
@@ -116,7 +117,8 @@ When you merge and the production deployment completes, the scorecard labels and
 ### Configure rulesets for classic scorecard in separate files
 
 If you have many rulesets or your rulesets are complex, you can put them into separate YAML files.
-Putting your rulesets in different files means you can have one file per scorecard level, making it easier to maintain rule sets and your `redocly.yaml` file.
+Putting your rulesets in different files means you can have one file per scorecard level.
+This makes it easier to maintain rule sets and your `redocly.yaml` file.
 
 To configure rulesets for classic scorecard in separate files:
 
@@ -180,7 +182,8 @@ When you merge and the production deployment completes, the scorecard labels and
 
 ## Publish project with non-compliant APIs
 
-By default, if one or more of your API description files does not comply with the rules in the lowest level ruleset, your project's build will be success, but the deployment will be blocked to published to production.
+By default, one or more of your API description files can fail the rules in the lowest level ruleset.
+In that case, your project's build succeeds, but the deployment to production is blocked.
 In certain situations, you might want to bypass this behavior.
 
 To publish projects with non-compliant APIs:
@@ -202,7 +205,8 @@ To publish projects with non-compliant APIs:
 
 1. Commit and merge your changes.
 
-After the production build finishes, the APIs that do not meet the lowest level criteria are marked with a "Non-compliant" label in Reunite and on your published project.
+After the production build finishes, the APIs that do not meet the lowest level criteria are marked.
+They get a "Non-compliant" label in Reunite and on your published project.
 
 ## Exclude APIs from the classic scorecard
 

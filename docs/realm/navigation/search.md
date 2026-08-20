@@ -82,7 +82,8 @@ With FlexSearch, users see all results at once, categorized into groups.
 ## Results ranking and priority
 
 Typesense's search algorithm implements a weighted scoring approach where document titles receive higher priority in relevance calculations compared to other content elements.
-This ensures that title matches are ranked more prominently in search results, improving the accuracy of document discovery based on primary subject matter rather than incidental content matches.
+This ensures that title matches are ranked more prominently in search results.
+It improves the accuracy of document discovery based on primary subject matter rather than incidental content matches.
 
 ## Resources
 

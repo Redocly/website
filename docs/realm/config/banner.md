@@ -183,7 +183,8 @@ banner:
 ### Time-based visibility
 
 Schedule banners to appear and disappear automatically by setting `startAt` and `endAt`.
-Use UTC timestamps; visibility is evaluated client-side by comparing those absolute UTC boundaries to the browser's current time, so clock accuracy affects when the banner appears—not local timezone reinterpretation of the configured values.
+Use UTC timestamps; visibility is evaluated client-side by comparing those absolute UTC boundaries to the browser's current time.
+Clock accuracy affects when the banner appears — the configured values are never reinterpreted in the local timezone.
 Both fields are optional: omit `endAt` to display the banner indefinitely from `startAt`, or omit `startAt` to display it immediately until `endAt`.
 
 ```yaml {% title="redocly.yaml" %}

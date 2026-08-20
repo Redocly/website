@@ -13,7 +13,8 @@ plans:
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 You can programmatically configure request values for your OpenAPI descriptions by ejecting and modifying the `configure.ts` file.
-This feature enables you to set default values for headers, query parameters, path parameters, cookies, security details, and server variables that merge with existing examples in your OpenAPI description.
+This feature enables you to set default values for headers, query parameters, path parameters, cookies, security details, and server variables.
+The values merge with existing examples in your OpenAPI description.
 
 ## Before you begin
 
@@ -435,7 +436,8 @@ When using server-specific request values, the appropriate configuration will be
 
 ## Configure environment variables for code samples
 
-You can use the `envVariables` field to provide values for environment variables used in custom code samples that are included in your OpenAPI description with the `x-codeSamples` extension.
+You can use the `envVariables` field to provide values for environment variables used in custom code samples.
+Those samples are included in your OpenAPI description with the `x-codeSamples` extension.
 
 When you define environment variables in your request values, they will replace placeholders in code samples that follow the format `{{VARIABLE_NAME}}`.
 

@@ -34,7 +34,8 @@ export default async function (
 ```
 
   {% admonition type="warning" name="Default export required" %}
-  Named-only exports such as `export const handler = ...` are skipped during the build and produce a `500` response with a description of the problem when called in development mode.
+  Named-only exports such as `export const handler = ...` are skipped during the build.
+  When called in development mode, they produce a `500` response with a description of the problem.
   Use `export default function (request, context) { ... }` or re-export a named function as the default with `export { handler as default }`.
   {% /admonition %}
 

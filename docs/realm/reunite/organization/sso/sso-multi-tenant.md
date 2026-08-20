@@ -18,8 +18,10 @@ This approach leverages the capabilities of the identity provider to direct each
 
 ## Federated SSO for multi-tenancy
 
-For organizations with multiple tenants, the ideal setup allows each one to connect their corporate IdP, while leaving the details of IdP selection and routing to the IdP itself.
-This federated SSO model simplifies authentication by offloading the work of identifying which IdP a user should use—letting popular IdPs like Okta, Microsoft Entra, Keycloak, and Ory manage the complexity.
+For organizations with multiple tenants, the ideal setup allows each one to connect their corporate IdP.
+The details of IdP selection and routing stay with the IdP itself.
+This federated SSO model simplifies authentication by offloading the work of identifying which IdP a user should use.
+Popular IdPs like Okta, Microsoft Entra, Keycloak, and Ory manage the complexity.
 
 ## Heuristics to redirect users to the right IdP
 
@@ -33,10 +35,12 @@ Here’s how it works in practice:
     withLightbox=true
   /%}
 - **Redirect by IdP**:
-  Using the email domain or other identifying attributes, the IdP applies its rules to route the user to the correct login page for their corporate IdP.
+  Using the email domain or other identifying attributes, the IdP applies its rules.
+  It routes the user to the correct login page for their corporate IdP.
   If no external IdP is associated with the entered email, users are directed to a native Redocly password entry screen.
 
-By relying on the IdP to handle this routing logic, Redocly can offer a seamless and efficient login experience without needing to manage individual tenant configurations.
+The IdP handles this routing logic.
+Redocly can then offer a seamless and efficient login experience without needing to manage individual tenant configurations.
 
 ## Popular identity providers approach to multi-tenant SSO routing
 
@@ -61,7 +65,8 @@ Here are some alternative routing methods:
 
 IP-based routing uses the user’s IP address to identify and direct them to the correct IdP.
 This approach is particularly useful in environments with distinct IP ranges for different organizations.
-However, it requires that IP ranges are static and predictable, which isn’t always feasible—especially in remote or hybrid work scenarios where users access from varied locations.
+However, it requires that IP ranges are static and predictable, which isn’t always feasible.
+Remote or hybrid work scenarios especially break this, since users access from varied locations.
 
 ### Domain and path-based routing
 
@@ -75,15 +80,18 @@ Here’s how it works:
   Each subdomain in Redocly is treated as a separate project (although multiple projects can share a single source repository).
   Each project also incurs server and maintenance costs, which may not scale well for organizations with numerous tenants.
 Additionally, subdomain-based routing can inadvertently expose your customer base.
-For example, competitive analysis tools like SimilarWeb monitor ISP traffic, which could reveal active subdomains to third parties, offering insight into your client list and traffic patterns.
+For example, competitive analysis tools like SimilarWeb monitor ISP traffic, which could reveal active subdomains to third parties.
+That offers insight into your client list and traffic patterns.
 
 ### Choose the best routing approach
 
 Each of these methods has its pros and cons, and the choice depends on the unique requirements of the tenant’s environment.
-While email domain-based routing offers flexibility and is broadly compatible with most SaaS login flows, URL-based routing is an excellent alternative when direct navigation by route or subdomain is feasible.
+Email domain-based routing offers flexibility and is broadly compatible with most SaaS login flows.
+URL-based routing is an excellent alternative when direct navigation by route or subdomain is feasible.
 IP-based routing, though effective in specific scenarios, may not be suitable in today’s more distributed work environments.
 
-By understanding and exploring these options, Redocly can support diverse routing needs, providing each tenant with a seamless SSO experience while respecting their preferred authentication configurations.
+By understanding and exploring these options, Redocly can support diverse routing needs.
+Each tenant gets a seamless SSO experience, and Redocly respects their preferred authentication configurations.
 
 ## Resources
 

@@ -13,7 +13,8 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-When you [connect a GitHub Enterprise Server](./github.md) to Reunite, a GitHub App is created and its credentials (App ID, Client ID, Client secret, and Private key) are securely stored within Reunite.
+When you [connect a GitHub Enterprise Server](./github.md) to Reunite, a GitHub App is created.
+Its credentials (App ID, Client ID, Client secret, and Private key) are securely stored within Reunite.
 Reunite uses these stored credentials exclusively to make API calls to your GitHub Enterprise Server instance.
 No credentials are shared with external services or used for any purpose other than communicating with the specified GitHub Enterprise Server.
 
@@ -40,7 +41,8 @@ sequenceDiagram
 The flow works as follows:
 
 1. User interacts with Reunite.
-    A user performs an action in Reunite that requires access to the GitHub Enterprise Server, such as connecting a repository, syncing content, or viewing pull requests.
+    A user performs an action in Reunite that requires access to the GitHub Enterprise Server.
+    Examples: connecting a repository, syncing content, or viewing pull requests.
 1. Reunite authenticates with the GitHub Enterprise Server.
     Reunite uses the saved GitHub App credentials to authenticate and make API calls to the GitHub Enterprise Server.
     These API calls handle operations like reading repository content, creating commits, updating commit statuses, and managing pull request information.

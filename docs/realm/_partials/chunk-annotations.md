@@ -71,10 +71,12 @@ The exact comment syntax varies between languages, but the chunk syntax remains 
 ### Chunk attributes
 
 Each chunk requires either a [step `id`](../content/markdoc-tags/code-walkthrough/step.md), or a `when` or `unless` condition with a [filter](../content/markdoc-tags/code-walkthrough/index.md#filter-object), [toggle](../content/markdoc-tags/code-walkthrough/toggle.md) or [input id](../content/markdoc-tags/code-walkthrough/input.md).
-The code that is wrapped within a set of chunk annotations is highlighted when the corresponding content in the `step` tags is selected or when the `input` or `toggle` tag condition is met in a code walkthrough.
+In a code walkthrough, the code wrapped within a set of chunk annotations is highlighted when the corresponding content in the `step` tags is selected.
+The code is also highlighted when the `input` or `toggle` tag condition is met.
 
 {% admonition type="warning" %}
-If you have the same step `id` in two chunks in separate files, selecting the content in the `step` tags for the step `id`, highlights the first file from the list.
+You can have the same step `id` in two chunks in separate files.
+In that case, selecting the content in the `step` tags for that `id` highlights the first file from the list.
 {% /admonition %}
 
 {% table %}
@@ -131,10 +133,12 @@ Using indentation can help organize your chunks and ensure they're all closed.
 
 ### Conditional chunks
 
-Similar to the step tag, you can define `when` and `unless` conditions that control the visibility of code snippets wrapped in chunks in the code panel.
+Similar to the step tag, you can define `when` and `unless` conditions.
+These conditions control the visibility of code snippets wrapped in chunks in the code panel.
 Conditions are evaluated against the code walkthrough filters, toggles, and inputs.
 
-The following example includes content that is revealed when "npm" is selected in a "client" filter and different content is displayed when "pip" is selected in the same filter:
+The following example includes content that is revealed when "npm" is selected in a "client" filter.
+Different content is displayed when "pip" is selected in the same filter:
 
 {% tabs %}
 {% tab label="Markdown file" %}

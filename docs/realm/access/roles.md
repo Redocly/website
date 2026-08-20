@@ -146,7 +146,8 @@ Organization roles control access to your Redocly organization and are provided 
 
 Redocly recognizes these special role names from your identity provider:
 
-- **`redocly.owners`** (`owner`): has permission to everything, including the ability to invite people, change access controls, and review feedback; has admin access to all organization projects by default
+- **`redocly.owners`** (`owner`): has permission to everything, including the ability to invite people, change access controls, and review feedback.
+  Owners have admin access to all organization projects by default.
 - **`redocly.members`** (`member`): can access project workspace
 - **`redocly.billing`** (`billing`): can manage billing of the organization
 - **`redocly.viewers`** (`viewer`): has read-only permission to published projects
@@ -171,7 +172,8 @@ Organization roles are assigned differently depending on your authentication met
   Users with the committer role cannot access Reunite.
 
 {% admonition type="warning" name="Duplicate users" %}
-Users who commit content to your project either through an integrated Git connection or remote content source are automatically assigned a committer role and are displayed on your **People** page.
+Users can commit content to your project through an integrated Git connection or remote content source.
+These users are automatically assigned a committer role and are displayed on your **People** page.
 A single user can be displayed as two different users if they have an alternative email address for logging into the different systems.
 
 [Link duplicate users](../reunite/organization/manage-people.md#link-duplicate-users) with the committer role to their Reunite user account to merge these entries.
@@ -195,10 +197,14 @@ The following is a list of available project roles:
 
 - `none`: grants no access permissions
 - `read`: grants read-only access to files or pages; Pro and Enterprise only
-- `triage`: grants read access to files or pages; also grants the ability to see logs and other information; for contributors who need to proactively manage issues, discussions, and pull requests but do not need write access; Enterprise only
-- `write`: grants read and write access to files or pages; also the ability to comment on reviews; for contributors who actively push updates to your project; Enterprise only
-- `maintain`: grants most access permissions except settings, user management, and permissions; for contributors who need to manage the repository but do not need access to sensitive data or destructive actions; Enterprise only
-- `admin`: grants all access permissions; for people who need full access to the project, including sensitive data and destructive actions like managing security or deleting a repository
+- `triage`: grants read access to files or pages, plus the ability to see logs and other information.
+  For contributors who manage issues, discussions, and pull requests but do not need write access; Enterprise only.
+- `write`: grants read and write access to files or pages, plus the ability to comment on reviews.
+  For contributors who actively push updates to your project; Enterprise only.
+- `maintain`: grants most access permissions except settings, user management, and permissions.
+  For contributors who manage the repository but do not need access to sensitive data or destructive actions; Enterprise only.
+- `admin`: grants all access permissions.
+  For people who need full access to the project, including sensitive data and destructive actions like managing security or deleting a repository.
 
 When users become members of a team, they are granted access based on the roles assigned to the team.
 

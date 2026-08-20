@@ -35,7 +35,8 @@ Create your own content or use the following Markdown in your `index.md` file:
 Preview your content.
 
 {% admonition type="info" name="Use source control" %}
-Using a particular source control is outside of the scope of this guide, but it's recommended to add your files to a Git repository or equivalent, and commit your changes after each step as you go along.
+Using a particular source control is outside of the scope of this guide.
+Still, it's recommended to add your files to a Git repository or equivalent, and commit your changes after each step as you go along.
 {% /admonition %}
 
 
@@ -68,7 +69,8 @@ Add your own content or use the following examples:
 {% partial file="../_partials/get-started/about-sample-content.md" /%}
 
 When you add more pages, a sidebar is automatically generated to list them all.
-If you want more control over the navigation, such as specifying the order, changing the link text, or grouping pages, then you'll want to configure the sidebar yourself.
+You might want more control over the navigation, such as specifying the order, changing the link text, or grouping pages.
+In that case, configure the sidebar yourself.
 
 To configure the sidebar for your project, create a file named `sidebars.yaml` and add the following content:
 
@@ -153,12 +155,14 @@ View the [full configuration options list](../config/index.md) to see what else 
 ## Add API reference documentation
 
 API reference documentation is a major feature of the Redocly products, so add an OpenAPI description and try the feature yourself.
-If you already have an API description then you can use that, or you can download the [Museum API example](https://github.com/Redocly/museum-openapi-example/blob/main/openapi.yaml) to use as a test API.
+If you already have an API description, you can use that.
+Otherwise, download the [Museum API example](https://github.com/Redocly/museum-openapi-example/blob/main/openapi.yaml) to use as a test API.
 
 Create an `apis/` directory in your project and add the OpenAPI file(s) there.
 
 To include the API in the sidebar, add the root file to `sidebars.yaml`.
-The API reference adds sidebar entries for the user to navigate the various sections, so try adding the API description as the page for a group sidebar entry, like the following example:
+The API reference adds sidebar entries for the user to navigate the various sections.
+Try adding the API description as the page for a group sidebar entry, like the following example:
 
 ```yaml {% title="sidebars.yaml" %}
 - group: Museum API

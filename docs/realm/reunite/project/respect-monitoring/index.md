@@ -27,7 +27,8 @@ You can preview a workflow's response in the pull request checks before you merg
 
 {% img alt="Screenshot of pull request checks with Respect Monitoring check" srcSet="./images/respect-monitoring-pr-checks.png light, ./images/respect-monitoring-pr-checks-dark.png dark" withLightbox=true /%}
 
-After you save your Arazzo Descriptions to your project, configure Respect Monitoring in your `redocly.yaml` file, and deploy a production build, Reunite's Respect Monitoring page displays the results of each Arazzo workflow in a chart.
+Save your Arazzo Descriptions to your project, configure Respect Monitoring in your `redocly.yaml` file, and deploy a production build.
+Reunite's Respect Monitoring page then displays the results of each Arazzo workflow in a chart.
 
 {% img alt="Respect Monitoring chart" srcSet="./images/respect-monitoring-chart.png light, ./images/respect-monitoring-chart-dark.png dark" withLightbox=true /%}
 

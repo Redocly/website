@@ -844,7 +844,8 @@ This page contains the list of all predefined translation keys used in default U
 
 - page.mcpNotAllowed.snippets.chatgptApp.instruction
 - ChatGPT desktop app setup instruction on the MCP connection page
-- In the ChatGPT desktop app, go to Settings → Plugins → MCPs and add a server with the "Streamable HTTP" type and this URL (restart the app afterwards):
+- In the ChatGPT desktop app, go to Settings → Plugins → MCPs.
+  Add a server with the "Streamable HTTP" type and this URL (restart the app afterwards):
 
 ---
 

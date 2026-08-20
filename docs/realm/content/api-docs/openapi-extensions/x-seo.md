@@ -1,6 +1,7 @@
 # OpenAPI extension: `x-seo`
 
-Use `x-seo` to control the SEO meta tags rendered in the HTML `<head>` of an individual operation page: the page title, description, keywords, and the image used when the page link is shared.
+Use `x-seo` to control the SEO meta tags rendered in the HTML `<head>` of an individual operation page.
+The tags include the page title, description, keywords, and the image used when the page link is shared.
 
 {% admonition type="info" %}
 `x-seo` replaces the legacy Redoc `x-meta` extension (and its nested `seo` object).
@@ -70,7 +71,8 @@ paths:
 ```
 
 Each field is resolved independently, so you can override only the fields you need.
-In the following example, `title` falls back to the operation `summary` and `description` falls back to the operation `description`, while `keywords` and `image` come from the extension:
+In the following example, `title` falls back to the operation `summary` and `description` falls back to the operation `description`.
+The `keywords` and `image` values come from the extension:
 
 ```yaml
 paths:

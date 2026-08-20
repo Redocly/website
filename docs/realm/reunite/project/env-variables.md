@@ -53,7 +53,8 @@ When hosting your project at Redocly, we will automatically set the proper `REDO
 - For previews, the `REDOCLY_ENV` variable will be set to `"preview"`
 
 {% admonition type="warning" name="Variable priority" %}
-When the same variable is defined both in Reunite (in the project **Settings** > **Environment variables** section) and in your base `.env` file, the value from Reunite is used.
+The same variable can be defined both in Reunite (in the project **Settings** > **Environment variables** section) and in your base `.env` file.
+In that case, the value from Reunite is used.
 Environment-specific `.env` files (such as `.env.production`, `.env.preview`, `.env.development`) and branch-specific `.env.branch.<branch-name>` files still take precedence over both.
 {% /admonition %}
 

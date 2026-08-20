@@ -159,7 +159,8 @@ export const customTag = {
 };
 ```
 
-Setting the `resolver` property in the tag schema allows authors to provide a _relative path_ to a static asset as an attribute while the underlying component receives a _resolved path_ to the file.
+Setting the `resolver` property in the tag schema allows authors to provide a _relative path_ to a static asset as an attribute.
+The underlying component receives a _resolved path_ to the file.
 
 The following example shows a Markdoc tag that accepts an `image` attribute:
 

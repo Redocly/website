@@ -15,20 +15,23 @@ plans:
 Using [remote content](./remote-content.md), you can use content from an external source in your Redocly project.
 Typically, users fetch content from a public URL, or integrate their Git repository with Redocly.
 
-However in the situation where Redocly cannot be configured to access the remote content source, you can push content updates to your Redocly project when another content source changes.
+However, sometimes Redocly cannot be configured to access the remote content source.
+In that situation, you can push content updates to your Redocly project when another content source changes.
 
 ## Add a remote to push content to
 
 To set up a remote content folder for pushing:
 
-1. In the file tree, select the folder (or click on the empty space to select the root directory) to which you want to add the remote content folder.
+1. In the file tree, select the folder to which you want to add the remote content folder.
+   You can also click on the empty space to select the root directory.
 1. Select **+ > New remote folder > Add from CI/CD**.
 1. Enter name for the new remote content folder and press Enter or Return key.
 1. Pick the platform that you will be pushing from to get the relevant fields displayed.
 1. Add a list of files to be included when pushing.
 1. Complete the other fields for the platform you are using.
 1. Copy the provided code snippet.
-   For users of our GitHub application, a GitHub Actions workflow is provided; for other platforms or GitHub users not using the application, a CLI command is presented that you can run in your CI/CD process.
+   For users of our GitHub application, a GitHub Actions workflow is provided.
+   For other platforms or GitHub users not using the application, a CLI command is presented that you can run in your CI/CD process.
    In both cases, all the variables you need are pre-filled.
 
 ## Get your API key

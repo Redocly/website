@@ -41,7 +41,8 @@ Set the URLs used to download the OpenAPI description or other documentation rel
 - string
 -
   Custom title to use for displaying in _Download OpenAPI specification section_ for the specific URL.
-  This title can help users quickly identify what the content is about or what it represents before they access the download URL provided in the object.
+  This title can help users quickly identify what the content is about or represents.
+  Users see it before they access the download URL provided in the object.
 
 ---
 

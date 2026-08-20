@@ -10,7 +10,8 @@ plans:
 # `fieldExpandLevel`
 
 The `fieldExpandLevel` option allows you to specify the maximum depth of the data available in the `Return type` section.
-Use this option to define how much information is in this context; the user can click on the fields to view further arguments and other details.
+Use this option to define how much information is in this context.
+The user can click on the fields to view further arguments and other details.
 
 ## Options
 
@@ -40,7 +41,8 @@ graphql:
   fieldExpandLevel: 3
 ```
 
-If you have fields with more than three levels of data structure within them, users will need to visit the data types documentation for that type rather than having it all displayed in the "Return type" section.
+You might have fields with more than three levels of data structure within them.
+In that case, users visit the data types documentation for that type instead of seeing it all in the "Return type" section.
 
 ## Resources
 

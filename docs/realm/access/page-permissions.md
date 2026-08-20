@@ -14,7 +14,8 @@ plans:
 
 By default, all pages of your project are public and do not require authorization to be accessed.
 However, you can configure RBAC to limit access based on team assignment.
-You can also override globally assigned project permission requirements in the `redocly.yaml` file on a per-page basis for the entire page and for only certain sections of content on the page.
+You can also override globally assigned project permission requirements in the `redocly.yaml` file on a per-page basis.
+Overrides can apply to the entire page or to only certain sections of content on the page.
 
 The types of pages you can limit access to include the following:
 
@@ -44,7 +45,8 @@ If all pages in a group are hidden, the sidebar group is also hidden.
 
 ## React pages
 
-To set permissions for specific React pages (`*.page.tsx`), you need to export a special constant, `frontmatter`, and add the `rbac` configuration to it, as illustrated in the following example:
+To set permissions for specific React pages (`*.page.tsx`), export a special constant named `frontmatter` and add the `rbac` configuration to it.
+The following example illustrates this approach:
 
 ```javascript
 export const frontmatter = {
@@ -82,7 +84,8 @@ You can set permissions by teams for specific content on Markdown and React page
 
 ### Markdown content
 
-You can use a combination of an `if` Markdoc tag with `includes` and `or` functions to conditionally render content on a Markdown page, based on a user's team assignment.
+You can combine an `if` Markdoc tag with the `includes` and `or` functions.
+This combination conditionally renders content on a Markdown page, based on a user's team assignment.
 
 #### Allow users of a specific team to see content
 
@@ -100,7 +103,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 #### Allow users with at least one team from a list to see content
 
-In the following example, the project renders the text between the Markdoc tags only if the authenticated user is assigned to at least one of the following teams: Admin, Developer, or Owner:
+In the following example, the project renders the text between the Markdoc tags only for users on certain teams.
+The authenticated user must be assigned to at least one of the following teams: Admin, Developer, or Owner:
 
 {% markdoc-example %}
 

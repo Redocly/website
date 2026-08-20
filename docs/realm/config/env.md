@@ -15,8 +15,8 @@ description: Customize the redocly.yaml configuration for each environment.
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `env` option allows you to customize the `redocly.yaml` configuration based on the current environment.
-You can override the configuration by adding the necessary nested options directly or by creating an environment
-configuration file in the **root** directory and referencing it in the `env` option.
+You can override the configuration by adding the necessary nested options directly.
+You can also create an environment configuration file in the **root** directory and reference it in the `env` option.
 
 ## Options
 
@@ -60,7 +60,8 @@ configuration file in the **root** directory and referencing it in the `env` opt
 
   See [Default environment variables](../reunite/project/env-variables.md#default-environment-variables).
 
-  If the current environment (`development`, `preview`, or `production`) and a branch configuration both match, the configuration is applied in the following order: general -> branch -> environment (environment configuration takes precedence).
+  The current environment (`development`, `preview`, or `production`) and a branch configuration can both match.
+  In that case, the configuration is applied in the following order: general -> branch -> environment (environment configuration takes precedence).
 
 ---
 

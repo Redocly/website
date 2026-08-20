@@ -61,7 +61,8 @@ A pinned URL never changes after publication.
 
 ## Let users escalate to support
 
-When [support ticket escalation](../reunite/project/ai-assistant.md) is configured for your project, the assistant shows a **Contact support** button when it decides a human is needed, when the conversation reaches a configured length, or when a request fails.
+When [support ticket escalation](../reunite/project/ai-assistant.md) is configured for your project, the assistant can show a **Contact support** button.
+The button appears when the assistant decides a human is needed, when the conversation reaches a configured length, or when a request fails.
 The submitted ticket is delivered to your support email together with the conversation transcript and the URL of the embedding page.
 
 Escalation requires no setup on the embedding page: the decision to offer support comes from your project's settings.
@@ -137,7 +138,8 @@ The value to send depends on how your project's content is organized:
 
 {% /table %}
 
-The match is an exact string comparison with no fallback: sending `es` when the content lives in `@l10n/es-ES/` returns no documents, and the assistant answers without documentation context instead of reporting an error.
+The match is an exact string comparison with no fallback: sending `es` when the content lives in `@l10n/es-ES/` returns no documents.
+The assistant then answers without documentation context instead of reporting an error.
 When the assistant finds nothing for a language that has translated content, verify the value matches the folder name exactly.
 
 ### Add a language switcher

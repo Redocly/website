@@ -1,7 +1,8 @@
 # OpenAPI extension: `x-additionalPropertiesName`
 
 OpenAPI allows description of "additionalProperties" that may be included in a schema.
-Their names are unknown, but the field types can be added to the API description so that producers and consumers understand whether additional fields are permitted and any additional rules that apply.
+Their names are unknown, but the field types can be added to the API description.
+Producers and consumers then understand whether additional fields are permitted and any additional rules that apply.
 
 Since the field names are not specified, they are displayed with a generic name in the API reference documentation.
 Use `x-additionalProperties` to display a more meaningful name in this scenario.
@@ -29,7 +30,8 @@ Use `x-additionalPropertiesName` as a property of `additionaProperties` in an Op
 
 ## Examples
 
-The following example shows a schema that accepts any fields as long as the values are numbers between 0-100, for a set of sensors reporting fill levels:
+The following example shows a schema for a set of sensors reporting fill levels.
+The schema accepts any fields as long as the values are numbers between 0-100:
 
 ```yaml
 components:
