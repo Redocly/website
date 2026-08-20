@@ -52117,8 +52117,6 @@ reunite:
   v2026-08-20.1:
     timestamp: 1787213114000
     changes:
-      minor:
-        - Added `nextPage` and `previousPage` cursor fields to the pagination `page` object in all Reunite list endpoints.
       patch:
         - Improved project creation speed in Reunite by eliminating delays during repository setup.
     dependencies: {}
