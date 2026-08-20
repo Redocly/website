@@ -7,13 +7,12 @@ import { NumberedList } from '@redocly/theme/markdoc/components/NumberedList/Num
 const CDN_SCRIPT_URL = 'https://cdn.redocly.com/ai-assistant/releases/latest/main.js';
 
 /**
- * The preview asks the page's own origin, so the published site, a preview deployment, and a
- * local server each reach their own endpoint without a CORS allowance. The path starts at the
- * origin root because the root project answers `_ask-ai`; the path-prefixed variants under
- * `/docs` do not exist. The parent resolves it and passes an absolute URL, because inside the
- * frame `window.location.href` is `about:srcdoc`, which `new URL()` rejects as a base.
+ * The published documentation is served from `https://redocly.com`, whose root project answers
+ * `_ask-ai`. The path-prefixed variants under `/docs` do not exist, so the preview asks the root
+ * endpoint by absolute URL. Production allows its own origin only, so a preview deployment or a
+ * local server gets a CORS failure here; pass `apiUrl` to aim the preview at that environment.
  */
-const ASK_AI_PATH = '/_ask-ai';
+const DEFAULT_API_URL = 'https://redocly.com/_ask-ai';
 
 const VARIANTS = ['widget', 'modal', 'panel'] as const;
 const THEMES = ['light', 'dark', 'system'] as const;
@@ -154,46 +153,21 @@ function buildSnippet(config: PlaygroundConfig): string {
 }
 
 /**
- * Two of the widget's own rules measure the iframe instead of the browser window. Its
- * `max-width: 768px` panel rules would give a stage narrower than 768px the full-width mobile
- * panel; the override points the mobile width variables back at the desktop one, on the panel
- * element itself, because a `width` attribute lands there as an inline
- * `--ai-assistant-widget-panel-width` that a host-level rule cannot see. The conversation input's
- * anti-zoom rule (16px minimum under 672px, for iOS Safari) also measures the iframe; the
- * override restores the desktop font size.
- */
-const PREVIEW_LAYOUT_STYLE = `
-@media screen and (max-width: 672px) {
-  input, textarea { font-size: var(--search-ai-conversation-input-font-size, 14px) !important; }
-}
-[data-testid='ai-assistant-panel'] {
-  --ai-assistant-widget-panel-width-mobile: var(--ai-assistant-widget-panel-width, 380px);
-  --ai-assistant-widget-panel-width-mobile-full: var(--ai-assistant-widget-panel-width, 380px);
-}`;
-
-const PREVIEW_LAYOUT_ATTRIBUTE = 'data-preview-layout';
-
-/** Idempotent: the parent applies every config change, and the style belongs to the frame. */
-function injectPreviewLayoutStyle(shadowRoot: ShadowRoot): void {
-  if (shadowRoot.querySelector(`style[${PREVIEW_LAYOUT_ATTRIBUTE}]`)) {
-    return;
-  }
-  const style = shadowRoot.ownerDocument.createElement('style');
-  style.setAttribute(PREVIEW_LAYOUT_ATTRIBUTE, '');
-  style.textContent = PREVIEW_LAYOUT_STYLE;
-  shadowRoot.append(style);
-}
-
-/**
  * The preview runs in an iframe so the widget's fixed-position launcher, backdrop, and drawer
- * anchor to the stage instead of the documentation page. The stage paints its own light and dark
- * grounds, which keeps `theme="system"` honest: it follows the reader's `prefers-color-scheme`.
+ * anchor to the stage instead of the documentation page.
  *
- * The document carries no script and no `api-url`. A `srcdoc` frame inherits the host page's
- * Content Security Policy, and redocly.com allows no inline script, so the parent sets the
- * attribute and injects the layout style over the frame's DOM instead.
+ * Three consequences of that isolation are handled by a style injected into the widget's open
+ * shadow root. The stage paints its own light and dark grounds, which keeps `theme="system"`
+ * honest: it follows the reader's `prefers-color-scheme`. The widget's own `max-width: 768px`
+ * rules measure the iframe, not the browser window, so a stage narrower than 768px would
+ * otherwise get the full-width mobile panel; the injected rule points the mobile width variables
+ * back at the desktop one, on the panel element itself, because a `width` attribute lands there
+ * as an inline `--ai-assistant-widget-panel-width` that a host-level rule cannot see. And the
+ * conversation input's anti-zoom rule (16px minimum under 672px, for iOS Safari) also measures
+ * the iframe; the injected rule restores the desktop font size.
  */
-const PREVIEW_DOCUMENT = `<!DOCTYPE html>
+function buildPreviewDocument(askAiUrl: string): string {
+  return `<!DOCTYPE html>
 <html data-stage-theme="light">
 <head>
 <meta charset="utf-8">
@@ -222,9 +196,37 @@ const PREVIEW_DOCUMENT = `<!DOCTYPE html>
 <script src="${CDN_SCRIPT_URL}"></script>
 </head>
 <body>
-<redocly-ai-assistant open></redocly-ai-assistant>
+<redocly-ai-assistant api-url="${escapeAttribute(askAiUrl)}" open></redocly-ai-assistant>
+<script>
+  (() => {
+    const assistant = document.querySelector('redocly-ai-assistant');
+    const restoreDesktopLayout = () => {
+      if (!assistant.shadowRoot) {
+        return false;
+      }
+      const style = document.createElement('style');
+      style.textContent = [
+        '@media screen and (max-width: 672px) { input, textarea { font-size: var(--search-ai-conversation-input-font-size, 14px) !important; } }',
+        "[data-testid='ai-assistant-panel'] {",
+        '  --ai-assistant-widget-panel-width-mobile: var(--ai-assistant-widget-panel-width, 380px);',
+        '  --ai-assistant-widget-panel-width-mobile-full: var(--ai-assistant-widget-panel-width, 380px);',
+        '}',
+      ].join('\\n');
+      assistant.shadowRoot.append(style);
+      return true;
+    };
+    if (!restoreDesktopLayout()) {
+      const timer = setInterval(() => {
+        if (restoreDesktopLayout()) {
+          clearInterval(timer);
+        }
+      }, 50);
+    }
+  })();
+</script>
 </body>
 </html>`;
+}
 
 function SlidersIcon(): React.ReactElement {
   return (
@@ -389,11 +391,13 @@ function TextAreaRow({
 }
 
 export type AiAssistantPlaygroundProps = {
-  /** `_ask-ai` endpoint the preview asks. Defaults to the page's own origin. */
+  /** `_ask-ai` endpoint the preview asks. Defaults to the published documentation's own endpoint. */
   apiUrl?: string;
 };
 
-export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): React.ReactElement {
+export function AiAssistantPlayground({
+  apiUrl = DEFAULT_API_URL,
+}: AiAssistantPlaygroundProps): React.ReactElement {
   const [config, setConfig] = React.useState<PlaygroundConfig>(DEFAULT_CONFIG);
   const [customizeOpen, setCustomizeOpen] = React.useState(true);
   const [tab, setTab] = React.useState<Tab>('Layout');
@@ -402,25 +406,21 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
   const popoverRef = React.useRef<HTMLDivElement>(null);
   const customizeButtonRef = React.useRef<HTMLButtonElement>(null);
 
+  const previewDocument = React.useMemo(() => buildPreviewDocument(apiUrl), [apiUrl]);
+
   // Attribute changes go straight to the live element. `setConfig({})` makes every instance
   // re-read its attributes, so the preview updates without reloading the frame. The frame's CDN
   // script can still be loading when a change lands (or the frame just reloaded), so the effect
-  // retries until the widget has upgraded instead of dropping the change.
+  // retries until the widget API answers instead of dropping the change.
   React.useEffect(() => {
-    const askAiUrl = apiUrl ?? new URL(ASK_AI_PATH, window.location.origin).href;
-
     const apply = (): boolean => {
       const frame = iframeRef.current;
       const previewWindow = frame?.contentWindow as PreviewWindow | null;
       const previewDoc = frame?.contentDocument;
       const element = previewDoc?.querySelector('redocly-ai-assistant');
-      const shadowRoot = element?.shadowRoot;
-      if (!previewWindow?.RedoclyAssistant || !previewDoc || !element || !shadowRoot) {
+      if (!previewWindow?.RedoclyAssistant || !previewDoc || !element) {
         return false;
       }
-
-      injectPreviewLayoutStyle(shadowRoot);
-      element.setAttribute('api-url', askAiUrl);
 
       const attributes = new Map(toAttributes(config));
       for (const name of MANAGED_ATTRIBUTES) {
@@ -449,7 +449,7 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
       }
     }, 100);
     return () => window.clearInterval(timer);
-  }, [apiUrl, config, frameEpoch]);
+  }, [config, frameEpoch]);
 
   React.useEffect(() => {
     if (!customizeOpen) {
@@ -705,7 +705,7 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
         <StageCanvas>
           <PreviewFrame
             ref={iframeRef}
-            srcDoc={PREVIEW_DOCUMENT}
+            srcDoc={previewDocument}
             title="AI assistant preview"
             onLoad={() => setFrameEpoch((epoch) => epoch + 1)}
           />

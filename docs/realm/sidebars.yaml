@@ -1,82 +1,222 @@
 - group: Get started
-  page: get-started/index.md
   icon: rocket-launch
+  page: get-started/index.md
   items:
+    - page: reunite/reunite.md
+      label: About Reunite
     - page: get-started/start-reunite-editor.md
-      label: Start with Reunite editor
+      label: Start with the web editor
     - page: get-started/start-local-dev.md
       label: Start with local development
     - page: get-started/upgrade-realm-version.md
-      label: Upgrade Realm version
+      label: Upgrade product version
 
-- group: Reunite
-  icon: './images/icons/reunite-gray.svg'
-  page: reunite/reunite.md
+- group: Create content
+  icon: file-lines
+  page: content/index.md
   items:
-    - separator: Organization & team settings
-    - page: reunite/organization/manage-orgs.md
-      label: Organizations
-    - group: Access
+    - page: content/markdown.md
+      label: Markdown guide
+    - page: content/project-structure.md
+      label: Project structure
+    - group: Markdoc components
+      page: content/markdoc-tags/index.md
       items:
-        - page: reunite/organization/manage-people.md
-          label: People
-        - page: reunite/organization/teams.md
-          label: Teams
-        - group: SSO and login
-          page: reunite/organization/sso/sso.md
+        - page: content/markdoc-tags/tag-library.md
+          label: All components
+        - page: content/markdoc-tags/accordion.md
+          label: Accordion
+        - page: content/markdoc-tags/admonition.md
+          label: Admonition
+        - page: content/markdoc-tags/cards.md
+          label: Cards
+        - page: content/markdoc-tags/code-group.md
+          label: Code group
+        - page: content/markdoc-tags/code-snippet.md
+          label: Code snippet
+        - group: Code walkthrough
+          page: content/markdoc-tags/code-walkthrough/index.md
           items:
-            - page: reunite/organization/sso/add-idp.md
-              label: Add an identity provider
-            - page: reunite/organization/sso/configure-sso.md
-              label: Configure SSO
-            - page: reunite/organization/sso/configure-scim.md
-              label: Configure SCIM
-            - page: reunite/organization/sso/configure-auth0.md
-              label: Auth0
-            - page: reunite/organization/sso/configure-google-sso.md
-              label: Google Workspace
-            - page: reunite/organization/sso/configure-azure-ad.md
-              label: Microsoft Entra ID
-            - page: reunite/organization/sso/configure-okta.md
-              label: Okta
-        - page: reunite/organization/api-keys.md
-          label: API keys
-
-    - page: reunite/organization/access-compliance-reports.md
-      label: Compliance reports
-    - group: Self-hosted Git providers
-      page: reunite/project/connect-git/manage-self-hosted.md
+            - page: content/markdoc-tags/code-walkthrough/create-code-walkthrough.md
+              label: Create a walkthrough
+            - page: content/markdoc-tags/code-walkthrough/input.md
+              label: Input
+            - page: content/markdoc-tags/code-walkthrough/step.md
+              label: Step
+            - page: content/markdoc-tags/code-walkthrough/toggle.md
+              label: Toggle
+        - page: content/markdoc-tags/connect-mcp.md
+          label: Connect MCP
+        - page: content/markdoc-tags/icon.md
+          label: Icon
+        - page: content/markdoc-tags/img.md
+          label: Image
+        - page: content/markdoc-tags/inline-svg.md
+          label: Inline SVG
+        - page: content/markdoc-tags/json-example.md
+          label: JSON example
+        - page: content/markdoc-tags/json-schema.md
+          label: JSON schema
+        - page: content/markdoc-tags/login-button.md
+          label: Login button
+        - page: content/markdoc-tags/markdoc-example.md
+          label: Markdoc example
+        - page: content/markdoc-tags/numbered-list.md
+          label: Numbered list
+        - page: content/markdoc-tags/openapi-code-sample.md
+          label: OpenAPI code sample
+        - page: content/markdoc-tags/openapi-response-sample.md
+          label: OpenAPI response sample
+        - page: content/markdoc-tags/replay-openapi.md
+          label: Replay OpenAPI
+        - page: content/markdoc-tags/table.md
+          label: Table
+        - page: content/markdoc-tags/tabs.md
+          label: Tabs
+    - group: Markdoc functions
+      page: content/markdoc-functions/index.md
       items:
-        - page: reunite/project/connect-git/self-hosted/github.md
-          label: GitHub Enterprise Server self-hosted
-        - page: reunite/project/connect-git/self-hosted/gitlab.md
-          label: GitLab self-hosted
+        - page: content/markdoc-functions/built-in.md
+          label: All functions
+        - page: content/markdoc-functions/concat.md
+          label: concat
+        - page: content/markdoc-functions/includes.md
+          label: includes
+    - group: Logic and templating
+      items:
+        - page: content/markdoc-tags/if-else.md
+          label: If and else
+        - page: content/markdoc-tags/partial.md
+          label: Partial
+        - page: customization/markdoc-variables.md
+          label: Markdoc variables
+    - page: content/links.md
+      label: Manage links
+    - page: customization/static-assets.md
+      label: Static assets
+    - page: content/add-diagram.md
+      label: Diagrams
+    - page: content/versions.md
+      label: Version content
+    - group: Localization
+      selectFirstItemOnExpand: true
+      items:
+        - page: content/localization/localize-content.md
+          label: Localize content
+        - page: content/localization/localize-labels.md
+          label: Localize labels
+        - page: content/localization/translation-keys.md
+          label: Translation keys
+        - page: content/localization/display-current-locale.md
+          label: Display current locale
+    - page: content/asciidoc.md
+      label: AsciiDoc
+      badges:
+        - name: beta
+          color: orange
+          icon: flask-gear
 
-    - separator: Project workspace
-    - page: reunite/project/manage-projects.md
-      label: Projects
-    - page: reunite/project/project-ui.md
-      label: Project user interface
-    - page: reunite/project/use-editor.md
-      label: Editor
-    - page: reunite/project/keyboard-shortcuts.md
-      label: Keyboard shortcuts
-    - page: reunite/project/use-webview.md
-      label: Webview
-    - page: reunite/project/test-api-functions.md
-      label: Test API functions
+- group: Document APIs
+  icon: code
+  page: content/api-docs/index.md
+  items:
+    - page: content/api-docs/add-openapi-docs.md
+      label: OpenAPI
+    - page: content/api-docs/add-asyncapi-docs.md
+      label: AsyncAPI
+    - page: content/api-docs/add-graphql-docs.md
+      label: GraphQL
+    - page: content/api-docs/add-soap-docs.md
+      label: SOAP
+    - page: content/api-docs/configure-mock-server.md
+      label: Mock server
+    - group: Try-it console
+      items:
+        - page: customization/configure-request-values.md
+          label: Configure request values
+        - page: customization/configure-dynamic-replay-values.md
+          label: Configure dynamic API data
+        - page: customization/customize-replay-gate.md
+          label: Customize the auth gate
+    - group: OpenAPI extensions
+      page: content/api-docs/openapi-extensions/index.md
+      items:
+        - page: content/api-docs/openapi-extensions/x-additional-properties-name.md
+          label: x-additionalPropertiesName
+        - page: content/api-docs/openapi-extensions/x-assertion-type.md
+          label: x-assertionType
+        - page: content/api-docs/openapi-extensions/x-badges.md
+          label: x-badges
+        - page: content/api-docs/openapi-extensions/x-code-samples.md
+          label: x-codeSamples
+        - page: content/api-docs/openapi-extensions/x-display-name.md
+          label: x-displayName
+        - page: content/api-docs/openapi-extensions/x-enum-descriptions.md
+          label: x-enumDescriptions
+        - page: content/api-docs/openapi-extensions/x-examples.md
+          label: x-examples
+        - page: content/api-docs/openapi-extensions/x-hide-replay.md
+          label: x-hideReplay
+        - page: content/api-docs/openapi-extensions/x-mcp.md
+          label: x-mcp
+        - page: content/api-docs/openapi-extensions/x-metadata.md
+          label: x-metadata
+        - page: content/api-docs/openapi-extensions/x-nullable.md
+          label: x-nullable
+        - page: content/api-docs/openapi-extensions/x-rbac.md
+          label: x-rbac
+        - page: content/api-docs/openapi-extensions/x-seo.md
+          label: x-seo
+        - page: content/api-docs/openapi-extensions/x-servers.md
+          label: x-servers
+        - page: content/api-docs/openapi-extensions/x-summary.md
+          label: x-summary
+        - page: content/api-docs/openapi-extensions/x-tag-groups.md
+          label: x-tagGroups
+        - page: content/api-docs/openapi-extensions/x-tags.md
+          label: x-tags
+        - page: content/api-docs/openapi-extensions/x-trait-tag.md
+          label: x-traitTag
+        - page: content/api-docs/openapi-extensions/x-use-pkce.md
+          label: x-usePkce
+        - page: content/api-docs/openapi-extensions/x-webhooks.md
+          label: x-webhooks
+    - group: AsyncAPI extensions
+      page: content/api-docs/asyncapi-extensions/index.md
+      items:
+        - page: content/api-docs/asyncapi-extensions/x-additional-properties-name.md
+          label: x-additionalPropertiesName
+        - page: content/api-docs/asyncapi-extensions/x-badges.md
+          label: x-badges
+        - page: content/api-docs/asyncapi-extensions/x-enum-descriptions.md
+          label: x-enumDescriptions
+        - page: content/api-docs/asyncapi-extensions/x-metadata.md
+          label: x-metadata
+        - page: content/api-docs/asyncapi-extensions/x-rbac.md
+          label: x-rbac
+        - page: content/api-docs/asyncapi-extensions/x-seo.md
+          label: x-seo
+        - page: content/api-docs/asyncapi-extensions/x-tag-groups.md
+          label: x-tagGroups
+
+- group: Publish and collaborate
+  icon: cloud-arrow-up
+  items:
+    - group: Editor
+      page: reunite/project/use-editor.md
+      items:
+        - page: reunite/project/project-ui.md
+          label: Project interface
+        - page: reunite/project/use-webview.md
+          label: Webview
+        - page: reunite/project/test-api-functions.md
+          label: Test API functions
+        - page: reunite/project/keyboard-shortcuts.md
+          label: Keyboard shortcuts
+    - page: reunite/project/draft-projects.md
+      label: Draft projects
     - page: reunite/project/use-previews.md
       label: Previews
-    - group: Deployments
-      page: reunite/project/deployments.md
-      items:
-        - group: Lint
-          page: reunite/project/lint.md
-          items:
-            - page: reunite/project/configure-classic-scorecard.md
-              label: Configure classic scorecard
-        - page: reunite/project/ignore-link-checker.md
-          label: Ignore link checker
     - group: Pull requests
       page: reunite/project/pull-request/manage-pull-requests.md
       items:
@@ -84,6 +224,15 @@
           label: Open pull requests
         - page: reunite/project/pull-request/review-pull-request.md
           label: Review pull requests
+    - group: Deployments
+      page: reunite/project/deployments.md
+      items:
+        - page: reunite/project/lint.md
+          label: API linting
+        - page: reunite/project/configure-classic-scorecard.md
+          label: Configure classic scorecard
+        - page: reunite/project/ignore-link-checker.md
+          label: Ignore link checker
     - group: Remote content
       page: reunite/project/remote-content/remote-content.md
       items:
@@ -95,393 +244,231 @@
           label: From Azure DevOps
         - page: reunite/project/remote-content/from-bitbucket-cloud.md
           label: From Bitbucket Cloud
-        - page: reunite/project/remote-content/url.md
-          label: From URL
         - page: reunite/project/remote-content/push.md
           label: From CI/CD
         - page: reunite/project/remote-content/reunite-push-action.md
           label: From GitHub Actions
+        - page: reunite/project/remote-content/url.md
+          label: From URL
         - page: reunite/project/remote-content/manually-sync-remote-content.md
           label: Manually sync
         - page: reunite/project/remote-content/edit-remote-content-folder.md
           label: Edit content folder
         - page: reunite/project/remote-content/verify-remote-content.md
           label: Remote content automation
-    - group: Respect Monitoring
-      page: reunite/project/respect-monitoring/index.md
+    - group: Git hosting
+      page: reunite/project/connect-git/connect-git-provider.md
       items:
-        - page: reunite/project/respect-monitoring/configure-respect-monitoring.md
-        - page: reunite/project/respect-monitoring/manage-respect-monitoring.md
-
-    - group: Reports
-      expanded: always
+        - page: reunite/project/connect-git/github.md
+          label: GitHub
+        - page: reunite/project/connect-git/gitlab.md
+          label: GitLab
+        - page: reunite/project/connect-git/azure-devops.md
+          label: Azure DevOps
+        - page: reunite/project/connect-git/bitbucket-cloud.md
+          label: Bitbucket Cloud
+    - group: Monitoring and reports
       items:
+        - group: Respect Monitoring
+          page: reunite/project/respect-monitoring/index.md
+          items:
+            - page: reunite/project/respect-monitoring/configure-respect-monitoring.md
+              label: Configure monitoring
+            - page: reunite/project/respect-monitoring/manage-respect-monitoring.md
+              label: Notifications and SLAs
         - page: reunite/project/feedback.md
           label: Feedback
         - page: reunite/project/analytics.md
           label: Analytics
-
-    - group: Settings
-      expanded: always
+    - group: Project settings
       items:
+        - page: reunite/project/branches-and-deployments.md
+          label: Branches and deployments
         - page: reunite/project/custom-domain.md
           label: Custom domain
         - page: reunite/project/env-variables.md
           label: Environment variables
         - page: reunite/project/telemetry.md
           label: Telemetry
-        - group: Git hosting
-          page: reunite/project/connect-git/connect-git-provider.md
-          items:
-            - page: reunite/project/connect-git/github.md
-              label: GitHub
-            - page: reunite/project/connect-git/gitlab.md
-              label: GitLab
-            - page: reunite/project/connect-git/azure-devops.md
-              label: Azure DevOps
-            - page: reunite/project/connect-git/bitbucket-cloud.md
-              label: Bitbucket Cloud
-        - page: reunite/project/branches-and-deployments.md
-          label: Branches and deployments
-    - separator: User account
-    - page: reunite/user-profile-menu.md
-      label: User profile menu
+  page: reunite/project/manage-projects.md
 
-- group: Content
-  icon: file-lines
-  page: content/index.md
-  items:
-    - page: content/project-structure.md
-      label: Project structure
-    - page: content/realm-seo.md
-      label: SEO in Realm
-    - page: content/markdown.md
-      label: Markdown guide
-    - page: content/links.md
-      label: Manage links
-    - page: content/versions.md
-      label: Version content
-
-    - page: content/add-diagram.md
-      label: Diagrams
-    - group: Markdoc functions
-      page: content/markdoc-functions/index.md
-      items:
-        - page: content/markdoc-functions/built-in.md
-          group: Built-in functions overview
-          items:
-            - page: content/markdoc-functions/includes.md
-              label: includes
-            - page: content/markdoc-functions/concat.md
-              label: concat
-    - group: Markdoc tags
-      page: content/markdoc-tags/index.md
-      items:
-        - page: content/markdoc-tags/tag-library.md
-        - separator: Built-in tags
-        - page: content/markdoc-tags/if-else.md
-          label: If and else
-        - page: content/markdoc-tags/partial.md
-          label: Partial
-        - page: content/markdoc-tags/table.md
-          label: Table
-        - separator: Redocly tags
-        - page: content/markdoc-tags/accordion.md
-          label: Accordion
-        - page: content/markdoc-tags/admonition.md
-          label: Admonition
-        - page: content/markdoc-tags/cards.md
-          label: Cards
-        - page: content/markdoc-tags/code-snippet.md
-          label: Code snippet
-        - page: content/markdoc-tags/code-group.md
-          label: Code group
-        - group: Code walkthrough
-          page: content/markdoc-tags/code-walkthrough/index.md
-          items:
-            - page: content/markdoc-tags/code-walkthrough/step.md
-              label: Step
-            - page: content/markdoc-tags/code-walkthrough/toggle.md
-              label: Toggle
-            - page: content/markdoc-tags/code-walkthrough/input.md
-              label: Input
-            - page: content/markdoc-tags/code-walkthrough/create-code-walkthrough.md
-        - page: content/markdoc-tags/connect-mcp.md
-          label: Connect MCP
-        - page: content/markdoc-tags/img.md
-          label: Image
-        - page: content/markdoc-tags/icon.md
-          label: Icon
-        - page: content/markdoc-tags/inline-svg.md
-          label: Inline SVG
-        - page: content/markdoc-tags/login-button.md
-          label: Login button
-        - page: content/markdoc-tags/json-schema.md
-          label: JSON schema
-        - page: content/markdoc-tags/json-example.md
-          label: JSON example
-        - page: content/markdoc-tags/markdoc-example.md
-          label: Markdoc example
-        - page: content/markdoc-tags/numbered-list.md
-          label: Numbered list
-        - page: content/markdoc-tags/openapi-code-sample.md
-          label: OpenAPI code sample
-        - page: content/markdoc-tags/openapi-response-sample.md
-          label: OpenAPI response sample
-        - page: content/markdoc-tags/replay-openapi.md
-          label: Replay OpenAPI
-        - page: content/markdoc-tags/tabs.md
-          label: Tabs
-
-    - group: API docs
-      page: content/api-docs/index.md
-      items:
-        - page: content/api-docs/add-openapi-docs.md
-          label: OpenAPI
-        - group: OpenAPI extensions
-          page: content/api-docs/openapi-extensions/index.md
-          items:
-            - page: content/api-docs/openapi-extensions/x-tag-groups.md
-              label: x-tagGroups
-            - page: content/api-docs/openapi-extensions/x-badges.md
-              label: x-badges
-            - page: content/api-docs/openapi-extensions/x-display-name.md
-              label: x-displayName
-            - page: content/api-docs/openapi-extensions/x-webhooks.md
-              label: x-webhooks
-            - page: content/api-docs/openapi-extensions/x-use-pkce.md
-              label: x-usePkce
-            - page: content/api-docs/openapi-extensions/x-trait-tag.md
-              label: x-traitTag
-            - page: content/api-docs/openapi-extensions/x-code-samples.md
-              label: x-codeSamples
-            - page: content/api-docs/openapi-extensions/x-enum-descriptions.md
-              label: x-enumDescriptions
-            - page: content/api-docs/openapi-extensions/x-additional-properties-name.md
-              label: x-additionalPropertiesName
-            - page: content/api-docs/openapi-extensions/x-mcp.md
-              label: x-mcp
-            - page: content/api-docs/openapi-extensions/x-metadata.md
-              label: x-metadata
-            - page: content/api-docs/openapi-extensions/x-hide-replay.md
-              label: x-hideReplay
-            - page: content/api-docs/openapi-extensions/x-summary.md
-              label: x-summary
-            - page: content/api-docs/openapi-extensions/x-tags.md
-              label: x-tags
-            - page: content/api-docs/openapi-extensions/x-rbac.md
-              label: x-rbac
-            - page: content/api-docs/openapi-extensions/x-examples.md
-              label: x-examples
-            - page: content/api-docs/openapi-extensions/x-nullable.md
-              label: x-nullable
-            - page: content/api-docs/openapi-extensions/x-servers.md
-              label: x-servers
-            - page: content/api-docs/openapi-extensions/x-assertion-type.md
-              label: x-assertionType
-            - page: content/api-docs/openapi-extensions/x-seo.md
-              label: x-seo
-        - page: content/api-docs/add-asyncapi-docs.md
-          label: AsyncAPI
-        - group: AsyncAPI extensions
-          page: content/api-docs/asyncapi-extensions/index.md
-          items:
-            - page: content/api-docs/asyncapi-extensions/x-tag-groups.md
-              label: x-tagGroups
-            - page: content/api-docs/asyncapi-extensions/x-badges.md
-              label: x-badges
-            - page: content/api-docs/asyncapi-extensions/x-enum-descriptions.md
-              label: x-enumDescriptions
-            - page: content/api-docs/asyncapi-extensions/x-additional-properties-name.md
-              label: x-additionalPropertiesName
-            - page: content/api-docs/asyncapi-extensions/x-rbac.md
-              label: x-rbac
-            - page: content/api-docs/asyncapi-extensions/x-metadata.md
-              label: x-metadata
-            - page: content/api-docs/asyncapi-extensions/x-seo.md
-              label: x-seo
-        - page: content/api-docs/add-graphql-docs.md
-          label: GraphQL
-        - page: content/api-docs/add-soap-docs.md
-          label: SOAP
-        - page: content/api-docs/configure-mock-server.md
-          label: Mock server
-
-    - group: Localization
-      selectFirstItemOnExpand: true
-      items:
-        - page: content/localization/localize-content.md
-          label: Localize content
-        - page: content/localization/localize-labels.md
-          label: Localize labels
-        - page: content/localization/display-current-locale.md
-          label: Display current locale
-        - page: content/localization/translation-keys.md
-          label: Translation keys
-    - page: content/asciidoc.md
-      label: AsciiDoc
-      badges:
-        - name: beta
-          color: orange
-          icon: flask-gear
-- group: Branding
-  icon: palette
-  page: branding/index.md
-  label: Branding
-  items:
-    - page: branding/customize-styles.md
-      label: Custom styles
-    - page: branding/customize-fonts.md
-      label: Custom fonts
-    - page: branding/customize-color-modes.md
-      label: Color mode styling
-    - page: branding/customize-tables.md
-      label: Table styling
-    - group: CSS variables reference
-      page: branding/css-variables/index.md
-      items:
-        - page: branding/css-variables/common.md
-          label: Common
-        - page: branding/css-variables/component.md
-          label: Component
-        - page: branding/css-variables/api-docs.md
-          label: API docs
-- group: Navigation
-  icon: chart-tree-map
-  page: navigation/index.md
-  label: Navigation elements
-  items:
-    - page: navigation/sidebars.md
-      label: Sidebars
-    - page: navigation/multi-product.md
-      label: Multi-product
-    - page: navigation/search.md
-      label: Search in Realm
-
-- group: Customization
-  icon: wrench
-  page: customization/index.md
-  items:
-    - separator: Development & integration
-    - page: customization/create-react-page.md
-      label: Create React pages
-    - page: customization/custom-page-templates.md
-      label: Custom page templates
-    - page: customization/import-npm-library.md
-      label: Import npm libraries
-    - group: Built-in components and icons
-      page: customization/react-components/index.md
-      items:
-        - page: customization/react-components/use-in-react-page.md
-          label: Use in React pages
-        - page: customization/react-components/wrap-components.md
-          label: Customize components
-        - group: Components list
-          page: customization/react-components/list/index.md
-          items:
-            - page: customization/react-components/list/admonition.md
-              label: Admonition
-            - page: customization/react-components/list/button.md
-              label: Button
-            - page: customization/react-components/list/link.md
-              label: Link
-            - page: customization/react-components/list/icons.md
-              label: Redocly Icons
-            - page: customization/react-components/list/fontawesome-icons.md
-              label: Font Awesome Icons
-            - page: customization/react-components/list/tag.md
-              label: Tag
-            - page: customization/react-components/list/dynamic.md
-              label: Dynamic
-    - page: customization/enable-source-maps.md
-      label: Enable source maps
-
-    - separator: Advanced components
-    - page: customization/build-markdoc-tags.md
-      label: Build Markdoc tags
-    - page: customization/markdoc-variables.md
-      label: Markdoc variables
-    - group: Markdoc attribute resolvers
-      page: customization/markdoc-attribute-resolvers/index.md
-      items:
-        - page: customization/markdoc-attribute-resolvers/link.md
-          label: link
-        - page: customization/markdoc-attribute-resolvers/raw-content.md
-          label: rawContent
-    - page: customization/build-custom-function.md
-      label: Build custom functions
-
-    - separator: Component ejection
-    - group: Eject components
-      page: customization/eject-components/index.md
-      items:
-        - page: customization/eject-components/eject-components-in-reunite.md
-          label: Eject in Reunite
-        - page: customization/eject-components/eject-components-using-cli.md
-          label: Eject using CLI
-        - page: customization/eject-components/eject-components-tutorial/index.md
-          label: Tutorial
-    - page: customization/eject-root-layout.md
-      label: Eject root layout
-
-    - separator: Configuration
-    - page: customization/static-assets.md
-      label: Static assets
-    - page: customization/theme-static-assets.md
-      label: Theme static assets
-    - page: customization/color-mode-images.md
-      label: Color mode images
-    - page: customization/configure-request-values.md
-      label: Configure request values
-    - page: customization/configure-dynamic-replay-values.md
-      label: Configure Replay with dynamic API data
-    - page: customization/customize-replay-gate.md
-      label: Customize Replay auth gate
-
-    - separator: API integration
-    - group: API functions
-      selectFirstItemOnExpand: true
-      items:
-        - page: customization/api-functions/index.md
-          label: Use cases
-        - page: customization/api-functions/api-functions-reference.md
-          label: Reference
-        - page: customization/api-functions/create-api-functions.md
-          label: Tutorial
-        # - page: customization/api-functions/kv-storage.md
-        #   label: KV storage
-        # - page: customization/api-functions/kv-storage-reference.md
-        #   label: KV storage reference
-
-    - group: MCP servers
-      selectFirstItemOnExpand: true
-      items:
-        - page: customization/mcp-server/index.md
-          label: Overview
-        - page: customization/mcp-server/openapi.yaml
-          label: Docs MCP reference
-
-    - group: Agent skills
-      selectFirstItemOnExpand: true
-      items:
-        - page: customization/agent-skills/index.md
-          label: Overview
-
-    - group: Search API
-      selectFirstItemOnExpand: true
-      items:
-        - page: customization/search-api/openapi.yaml
-          label: Overview
-
-- group: Access
+- group: Control reader access
   icon: lock
   page: access/index.md
   items:
-    - page: access/roles.md
-      label: Roles
+    - page: reunite/organization/sso/configure-sso.md
+      label: Configure project SSO
     - page: access/rbac.md
       label: RBAC concepts
     - page: access/page-permissions.md
       label: RBAC for pages
     - page: access/links-and-groups-permissions.md
-      label: RBAC for navigation
+      label: RBAC for navigationƒ
+
+- group: Customize your docs
+  icon: sliders
+  items:
+    - group: Navigation
+      page: navigation/index.md
+      items:
+        - page: navigation/sidebars.md
+          label: Sidebars
+        - page: navigation/multi-product.md
+          label: Multi-product
+    - group: Branding and styles
+      page: branding/index.md
+      items:
+        - page: branding/customize-styles.md
+          label: Custom styles
+        - page: branding/customize-fonts.md
+          label: Custom fonts
+        - page: branding/customize-color-modes.md
+          label: Color modes
+        - group: CSS variables
+          page: branding/css-variables/index.md
+          items:
+            - page: branding/css-variables/common.md
+              label: Common
+            - page: branding/css-variables/component.md
+              label: Component
+            - page: branding/css-variables/api-docs.md
+              label: API docs
+        - page: branding/customize-tables.md
+          label: Table styling
+        - page: content/localization/customize-styles-for-locale.md
+          label: Styles per locale
+    - group: Search and SEO
+      items:
+        - page: navigation/search.md
+          label: Search
+        - page: content/realm-seo.md
+          label: SEO
+        - group: Search API
+          items:
+            - page: customization/search-api/openapi.yaml
+              label: Reference
+
+- group: Make content AI ready
+  icon: robot
+  items:
+    - page: customization/mcp-server/index.md
+      label: MCP servers
+    - page: customization/agent-skills/index.md
+      label: Agent skills
+    - group: MCP API
+      items:
+        - page: customization/mcp-server/openapi.yaml
+          label: Reference
+
+- group: Extend with code
+  icon: wrench
+  page: customization/index.md
+  items:
+    - group: Build React pages
+      items:
+        - page: customization/create-react-page.md
+          label: Create React pages
+        - page: customization/react-components/use-in-react-page.md
+          label: Use components in React pages
+        - page: customization/custom-page-templates.md
+          label: Override page templates
+        - page: customization/react-components/wrap-components.md
+          label: Customize built-in components
+        - page: customization/color-mode-images.md
+          label: Color mode images
+        - page: customization/import-npm-library.md
+          label: Import npm libraries
+    - group: React components
+      page: customization/react-components/index.md
+      items:
+        - page: customization/react-components/list/index.md
+          label: All React components
+        - page: customization/react-components/list/admonition.md
+          label: Admonition
+        - page: customization/react-components/list/button.md
+          label: Button
+        - page: customization/react-components/list/dynamic.md
+          label: Dynamic
+        - page: customization/react-components/list/fontawesome-icons.md
+          label: Font Awesome icons
+        - page: customization/react-components/list/link.md
+          label: Link
+        - page: customization/react-components/list/icons.md
+          label: Redocly icons
+        - page: customization/react-components/list/tag.md
+          label: Tag
+    - group: Build tags and functions
+      items:
+        - page: customization/build-markdoc-tags.md
+          label: Build Markdoc tags
+        - page: customization/build-custom-function.md
+          label: Build Markdoc functions
+        - group: Attribute resolvers
+          page: customization/markdoc-attribute-resolvers/index.md
+          items:
+            - page: customization/markdoc-attribute-resolvers/link.md
+              label: link
+            - page: customization/markdoc-attribute-resolvers/raw-content.md
+              label: rawContent
+    - group: API functions
+      page: customization/api-functions/index.md
+      items:
+        - page: customization/api-functions/create-api-functions.md
+          label: Tutorial
+        - page: customization/api-functions/api-functions-reference.md
+          label: Reference
+    - group: Component ejection
+      items:
+        - page: customization/eject-components/index.md
+          label: Eject components
+        - page: customization/eject-components/eject-components-in-reunite.md
+          label: Eject in Reunite
+        - page: customization/eject-components/eject-components-using-cli.md
+          label: Eject using CLI
+        - page: customization/eject-components/eject-components-tutorial/index.md
+          label: Ejection tutorial
+        - page: customization/eject-root-layout.md
+          label: Add React providers
+    - page: customization/theme-static-assets.md
+      label: Theme static assets
+    - page: customization/enable-source-maps.md
+      label: Enable source maps
+
+- group: Manage organization
+  icon: users
+  page: reunite/organization/manage-orgs.md
+  items:
+    - page: reunite/organization/manage-people.md
+      label: People
+    - page: reunite/organization/teams.md
+      label: Teams
+    - page: access/roles.md
+      label: Roles and permissions
+    - page: reunite/organization/api-keys.md
+      label: API keys
+    - group: SSO and login
+      page: reunite/organization/sso/sso.md
+      items:
+        - page: reunite/organization/sso/add-idp.md
+          label: Add an identity provider
+        - page: reunite/organization/sso/configure-azure-ad.md
+          label: Microsoft Entra ID
+        - page: reunite/organization/sso/configure-okta.md
+          label: Okta
+        - page: reunite/organization/sso/configure-google-sso.md
+          label: Google Workspace
+        - page: reunite/organization/sso/configure-auth0.md
+          label: Auth0
+        - page: reunite/organization/sso/configure-scim.md
+          label: Configure SCIM
+    - page: reunite/organization/access-compliance-reports.md
+      label: Compliance reports
+    - group: Self-hosted Git providers
+      page: reunite/project/connect-git/manage-self-hosted.md
+      items:
+        - page: reunite/project/connect-git/self-hosted/github.md
+          label: GitHub Enterprise Server
+        - page: reunite/project/connect-git/self-hosted/gitlab.md
+          label: GitLab Self-Managed
+    - page: reunite/user-profile-menu.md
+      label: User profile menu
