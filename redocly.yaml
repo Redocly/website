@@ -205,6 +205,7 @@ responseHeaders:
           https://js.hs-analytics.net
           https://js.hs-banner.com
           https://cdn.jsdelivr.net
+          https://cdn.redocly.com
           'sha256-M28mypAFwwpIwIF9e1/A6867PQiwVvOrdqFSTFSa8/U=' 
           'sha256-Ed6Lei7deBSXT1iYYw0V36YZXaA4v7OsRknNjmNl/9c='
           'sha256-uDN+KkW4ljf+D4DbsWP5KpxyfG/7h+LNmZxMzbz/+1E='
@@ -220,7 +221,8 @@ responseHeaders:
           'sha256-+Ozb/ItuZAdaQgJd2RebN2rKWj1XkBuXVaV6/lT4Juo='
           'sha256-9qgU5FDrauEgF+e1iJWvsh46OwsIkNOLjkXggr/02jk='
           'sha256-v7ddZtWCUr5oF3kgrlEot4fG861CKDXUt0aTaNaIk6Q='
-          'sha256-+t5Z3fJi7uJxARWEzFEVaSRgtaAn0r97XkxpJNbQiK0=';
+          'sha256-+t5Z3fJi7uJxARWEzFEVaSRgtaAn0r97XkxpJNbQiK0='
+          'sha256-gOx3nRh8znDQR7T1VkI+fFXDgsNzf5enQqdi7NP11Vk=';
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 
