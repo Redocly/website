@@ -25,7 +25,8 @@ Integrate Amplitude Analytics into Redocly project to track page views and outbo
 
 - apiKey
 - string
-- **REQUIRED.** Amplitude project API key
+- **REQUIRED.**
+  Amplitude project API key
 
 ---
 

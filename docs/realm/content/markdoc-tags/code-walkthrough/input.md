@@ -28,7 +28,8 @@ You can put this special comment anywhere in the code example.
 
 - id
 - string
-- **REQUIRED.** Unique identifier for the input.
+- **REQUIRED.**
+  Unique identifier for the input.
   Must be unique among all toggles, inputs, and filters.
   Used to reference the input value in code examples.
 

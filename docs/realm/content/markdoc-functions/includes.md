@@ -37,14 +37,16 @@ includes(array, value)
 
 - array
 - array
-- **Required.** The array to check.
+- **REQUIRED.**
+  The array to check.
   Often a variable like `$frontmatter.tags` or an array defined directly.
 
 ---
 
 - value
 - scalar (string, number, boolean, null)
-- **Required.** The value to search for within the array.
+- **REQUIRED.**
+  The value to search for within the array.
 
 {% /table %}
 

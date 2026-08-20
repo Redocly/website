@@ -70,7 +70,8 @@ Breadcrumbs do not appear when:
 
 - page
 - string
-- **REQUIRED.** Path to the file which represents the page to link to.
+- **REQUIRED.**
+  Path to the file which represents the page to link to.
   If you do not include the `label` property, the text for the link will match the level 1 heading of the page.
 
 ---

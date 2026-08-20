@@ -68,7 +68,8 @@ Redocly reads these SCIM User attributes:
 - **externalId** (IdP user id): Required for create and update.
   Links the directory user to SSO for this identity provider.
 - **name.givenName** and **name.familyName** (first and last name): Optional.
-- **active** (organization membership): **true** provisions the user into your Redocly organization. **false** removes them from the organization (deprovisioning).
+- **active** (organization membership): **true** provisions the user into your Redocly organization.
+  **false** removes them from the organization (deprovisioning).
 
 Other SCIM User attributes (for example **displayName**, **title**, **locale**, **timezone**, **profileUrl**, **name.middleName**) are not saved to the Redocly user profile.
 Your IdP may still send them.

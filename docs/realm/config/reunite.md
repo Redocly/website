@@ -80,20 +80,23 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 - path
 - string
-- **REQUIRED.** Specifies the path to an Arazzo Description in your project.
+- **REQUIRED.**
+  Specifies the path to an Arazzo Description in your project.
 
 ---
 
 - agent
 - string
-- **REQUIRED.** Specifies the agent that runs the job.
+- **REQUIRED.**
+  Specifies the agent that runs the job.
   Only accepts `respect` as the value.
 
 ---
 
 - trigger
 - [[Trigger object](#trigger-object)]
-- **REQUIRED.** Configure events that start the job.
+- **REQUIRED.**
+  Configure events that start the job.
 
 ---
 
@@ -129,7 +132,8 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 - event
 - string
-- **REQUIRED.** Specifies the type of event that triggers the job.
+- **REQUIRED.**
+  Specifies the type of event that triggers the job.
   Accepts either `schedule` or `build` as the value.
   - `schedule`: Runs the job at regular intervals.
   - `build`: Runs the job whenever the project is built.

@@ -31,7 +31,8 @@ import { Link } from '@redocly/theme/components/Link/Link';
 
 - `to`
 - string
-- **REQUIRED.** URL or path to navigate to.
+- **REQUIRED.**
+  URL or path to navigate to.
 
 ---
 

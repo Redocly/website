@@ -209,7 +209,8 @@ Boolean attributes (`open`, `trigger-hide`, `resizable`) are true when present a
 
 - api-url
 - string
-- **REQUIRED.** URL of the `_ask-ai` endpoint the assistant sends questions to.
+- **REQUIRED.**
+  URL of the `_ask-ai` endpoint the assistant sends questions to.
   Can also be supplied with [`setConfig()`](#update-configuration-at-runtime) instead of the attribute.
 
 ---

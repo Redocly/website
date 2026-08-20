@@ -144,7 +144,8 @@ search:
 
 - page
 - string
-- **REQUIRED.** Path to the file representing the linked page.
+- **REQUIRED.**
+  Path to the file representing the linked page.
 
 ---
 
@@ -195,21 +196,24 @@ search:
 
 - name
 - string
-- **REQUIRED.** Name of the facet.
+- **REQUIRED.**
+  Name of the facet.
   Acts as a label for the filtering control in the search dialog.
 
 ---
 
 - field
 - string
-- **REQUIRED.** Facet ID.
+- **REQUIRED.**
+  Facet ID.
   Use this ID as a key in `metadata` section when adding facets to a page.
 
 ---
 
 - type
 - string
-- **REQUIRED.** Control displayed in the search dialog.
+- **REQUIRED.**
+  Control displayed in the search dialog.
   Values: `multi-select` (select multiple filter values), `select` (select a single filter value), `tags` (applies only to HTTP method facet).
 
 ---

@@ -44,14 +44,16 @@ This command creates a local copy of `ReplayGate.tsx` in your project's `@theme/
 ---
 - `setEnvironmentValues`
 - `(envName: string, values: Record<string, string | { value: string, isSecret?: boolean }>) => void`
-- **REQUIRED.** Injects key-value pairs into the named environment.
+- **REQUIRED.**
+  Injects key-value pairs into the named environment.
   Call this after a successful auth to set the token.
   A plain string sets the value; pass `{ value, isSecret }` to also control whether Replay masks it.
   If no environment has this name, Replay creates a new environment.
 ---
 - `setSelectedEnvironment`
 - `(envName: string) => void`
-- **REQUIRED.** Switches Replay's active environment.
+- **REQUIRED.**
+  Switches Replay's active environment.
   Use this when you want to automatically select the environment that received the token.
 ---
 - `selectedEnvironment`

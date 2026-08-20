@@ -56,7 +56,8 @@ The navbar is a good location for top-level category or frequently-used links.
 
 - group
 - string
-- **REQUIRED.** Name of the group.
+- **REQUIRED.**
+  Name of the group.
 
 ---
 

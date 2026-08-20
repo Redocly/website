@@ -32,7 +32,8 @@ Integrate Rudderstack Analytics into Redocly project.
 
 - writeKey
 - string
-- **REQUIRED.** Rudderstack write key
+- **REQUIRED.**
+  Rudderstack write key
 
 ---
 

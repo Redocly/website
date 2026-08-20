@@ -122,7 +122,8 @@ Add text to your HTML file.
 
 - filesets
 - [[Filesets object](#filesets-object)]
-- **REQUIRED.** A list of filesets used in the code walkthrough.
+- **REQUIRED.**
+  A list of filesets used in the code walkthrough.
   Each `filesets` entry must have a list of `files`.
 
 ---
@@ -184,7 +185,8 @@ Configure a filesets object to include files in your code walkthrough.
 
 - files
 - [string]
-- **REQUIRED.** A list of file paths to include in the walkthrough.
+- **REQUIRED.**
+  A list of file paths to include in the walkthrough.
 
 ---
 
@@ -309,7 +311,8 @@ This list renders as the items users can select to filter the walkthrough conten
 
 - value
 - string
-- **REQUIRED.** Value of the item.
+- **REQUIRED.**
+  Value of the item.
 
 ---
 

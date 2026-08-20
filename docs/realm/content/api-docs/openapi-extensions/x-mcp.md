@@ -37,7 +37,8 @@ The root is the outer most level of the OpenAPI description.
 
 - protocolVersion
 - string
-- **REQUIRED.** The MCP protocol version supported by the server.
+- **REQUIRED.**
+  The MCP protocol version supported by the server.
 
 ---
 
@@ -118,7 +119,8 @@ The root is the outer most level of the OpenAPI description.
 
 - name
 - string
-- **REQUIRED.** The name of the tool.
+- **REQUIRED.**
+  The name of the tool.
 
 ---
 
@@ -130,7 +132,8 @@ The root is the outer most level of the OpenAPI description.
 
 - description
 - string
-- **REQUIRED.** Description of what the tool does.
+- **REQUIRED.**
+  Description of what the tool does.
 
 ---
 
@@ -170,7 +173,8 @@ The root is the outer most level of the OpenAPI description.
 
 - name
 - string
-- **REQUIRED.** The name of the resource.
+- **REQUIRED.**
+  The name of the resource.
 
 ---
 
@@ -205,7 +209,8 @@ The root is the outer most level of the OpenAPI description.
 
 - name
 - string
-- **REQUIRED.** The name of the prompt.
+- **REQUIRED.**
+  The name of the prompt.
 
 ---
 
@@ -238,7 +243,8 @@ The root is the outer most level of the OpenAPI description.
 
 - name
 - string
-- **REQUIRED.** The name of the argument.
+- **REQUIRED.**
+  The name of the argument.
 
 ---
 
