@@ -52117,8 +52117,17 @@ reunite:
   v2026-08-20.1:
     timestamp: 1787213114000
     changes:
+      minor: []
       patch:
         - Improved project creation speed in Reunite by eliminating delays during repository setup.
+    dependencies: {}
+  v2026-08-20.2:
+    timestamp: 1787229084000
+    changes:
+      minor: []
+      patch:
+        - Fixed pull request creation failing when the title was too long. Pull request actions now report the reason the git provider gives.
+        - Fixed incorrect empty `502` responses for requests with incompatible credentials.
     dependencies: {}
 replay:
   0.0.2:
