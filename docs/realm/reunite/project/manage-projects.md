@@ -23,7 +23,7 @@ In Reunite, projects are the place where you create, test, and deploy documentat
 1. Enter the name for your project.
     Reunite automatically fills the **Project domain** field and checks if the domain name is already in use.
 1. (Optional) Edit the project domain to your preferences.
-    The **Project domain** must be unique within your organization.
+    The **Project domain** must be unique across Reunite.
 1. Click **Create project**.
 
 Reunite creates your project and takes you to the project's **Editor** page and you can start working on your documentation.
@@ -79,9 +79,16 @@ On the **General settings** page you can:
 
 When a project becomes obsolete, or you have a test project you no longer need, you may want to delete that project.
 
-{% admonition type="danger" name="Irreversible action" %}
-Deleting a project is permanent - all data on Reunite, including customer feedback, is lost.
-Perform this action only if you're certain your organization no longer has use for it.
+Deleting a project moves it to **Deleted projects** for 30 days instead of destroying it immediately.
+While a project is in **Deleted projects**, its site is offline and its builds and automations are disabled.
+Its project domain stays reserved until the project is restored or permanently deleted.
+Another organization cannot create a project with the same domain while yours is in **Deleted projects**.
+Organization owners receive an email notification whenever a project is deleted.
+From **Deleted projects**, an organization owner can [restore the project](#restore-a-deleted-project) or delete it permanently.
+
+{% admonition type="danger" name="Permanent deletion after 30 days" %}
+After 30 days in **Deleted projects**, Reunite deletes the project permanently, including all data on Reunite, such as customer feedback.
+This action can't be undone.
 
 If you have an external repository connected to Reunite, data on that repository is not affected.
 {% /admonition %}
@@ -93,7 +100,19 @@ If you have an external repository connected to Reunite, data on that repository
 1. Enter the project domain; this step ensures that you delete the correct project.
    Then click the **Delete** button to confirm deletion.
 
-Reunite deletes the project and returns you to your organization's dashboard.
+Reunite moves the project to **Deleted projects** and returns you to your organization's dashboard.
+
+### Restore a deleted project
+
+Organization owners can restore a deleted project at any point during its 30-day retention period.
+
+1. In Reunite, switch to the organization that owns the deleted project.
+1. On the organization's **Overview** page, next to the **Projects** heading, click **Deleted projects**.
+1. Find the project you want to restore, then click **Restore**.
+
+Reunite restores the project with its original slug.
+
+To delete a project permanently before its 30-day retention period ends, click **Delete forever** next to the project on the **Deleted projects** page, then confirm the action.
 
 ### Set up a custom domain
 
