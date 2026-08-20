@@ -15,7 +15,7 @@ The project's API description files are available in both YAML and JSON formats.
 To download an API description file:
 
 1. Navigate to an API's metadata page.
-2. In the **Download API description** section next to your preferred format, click the **Download** icon.
+1. In the **Download API description** section next to your preferred format, click the **Download** icon.
 
 The file is downloaded to your machine.
 
