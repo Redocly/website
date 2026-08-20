@@ -30,7 +30,8 @@ Currently doesn't support templates.
 #### Use x-tagGroups with Redoc CE
 
 `x-tagGroups` is used to group tags in the side menu.
-Before you use `x-tagGroups`, make sure you **add all tags to a group**, since a tag that is not in a group, **is not displayed** at all!
+Before you use `x-tagGroups`, make sure you **add all tags to a group**.
+A tag that is not in a group **is not displayed** at all!
 
 <a name="tagGroupObject"></a>
 

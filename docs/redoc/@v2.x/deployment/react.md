@@ -63,7 +63,8 @@ For more information on configuration options, refer to the [Configuration optio
 
 ## Optional - Specify `onLoaded` callback
 
-You can also specify the `onLoaded` callback, which is called each time Redoc CE is fully rendered or when an error occurs (with an error as the first argument).
+You can also specify the `onLoaded` callback.
+It is called each time Redoc CE is fully rendered or when an error occurs (with an error as the first argument).
 
 ```js
 <RedocStandalone

@@ -49,7 +49,8 @@ Create an HTML page, or edit an existing one, and add the following:
 Open the HTML file in your browser, and your API documentation is shown on the page.
 
 Add your own `spec-url` to the `<redoc>` tag.
-The JavaScript library can also be installed locally using `npm` and served from your own server, in that case `spec-url` attribute can also be a local file.
+The JavaScript library can also be installed locally using `npm` and served from your own server.
+In that case, the `spec-url` attribute can also be a local file.
 See the [HTML deployment documentation](./deployment/html.md) for more details.
 
 ### More usage options
