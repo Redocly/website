@@ -52120,8 +52120,6 @@ reunite:
       minor:
         - Added `nextPage` and `previousPage` cursor fields to the pagination `page` object in all Reunite list endpoints.
       patch:
-        - Fixed pull request creation failing when the title was too long. Pull request actions now report the reason the git provider gives.
-        - Fixed incorrect empty `502` responses for requests with incompatible credentials.
         - Improved project creation speed in Reunite by eliminating delays during repository setup.
     dependencies: {}
 replay:
