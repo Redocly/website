@@ -270,7 +270,7 @@ See [excludeFromSearch documentation](./front-matter-config.md#front-matter-only
 {% /admonition %}
 
 AI search and Typesense search indexes are only built on the production branch.
-Changes to search configuration or content exclusions, like the `excludeFromSearch` front matter option, may not immediately appear in search results until the next production build.
+Changes to search configuration or content exclusions, like the `excludeFromSearch` front matter option, appear in search results after the next production build.
 
 ## Apply facets to files
 

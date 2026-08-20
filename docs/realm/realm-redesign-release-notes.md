@@ -24,12 +24,12 @@ Check the [migration notes](#migration-notes) for breaking changes if upgrading 
   This design has been updated for the new release to improve user experience.
 - Presentation of complex schemas is improved to make it easier to navigate both simple and complex APIs.
   Look for the color-coded indentation features, configurable dot notation options, and better user experience for APIs that have polymorphic objects.
-- Code samples are updated and enabled by default; configure the languages that suit your audience or disable this feature completely.
+- Code samples are updated and enabled by default; configure the languages that suit your audience or disable this feature.
 - Pagination improvements include resource-efficient single page continuous scroll (to make developers happy) and instant access to individual routes (for better SEO and discoverability).
 
 ### Replay: Interactive API experiences for modern APIs
 
-- The "try it" console is overhauled completely as it is replaced by a Replay component, our new API explorer.
+- The "try it" console is overhauled as it is replaced by a Replay component, our new API explorer.
 - Replay has features such as environments and request history, along with a UX familiar to many developers.
 
 ### Markdoc: Power tools for authors
@@ -63,7 +63,7 @@ A set of ejectable components is provided, and will be expanded in future releas
 
 ## Migration notes
 
-Along with the UI improvements, the release contains a number of breaking changes around styling and customization.
+Along with the UI improvements, the release contains several breaking changes around styling and customization.
 If you are upgrading from an earlier version of the tool, these are some issues to be aware of:
 
 - Ejectable components are simplified by extracting low-level logic to Redocly-controlled code.
@@ -71,7 +71,7 @@ If you are upgrading from an earlier version of the tool, these are some issues 
 - The list of ejectable components is reduced to an updated and well-maintained set of the actively used components.
 - A variety of CSS variable names have changed to improve consistency and maintainability.
 - Several Markdoc tag parameter signatures have changed to simplify usage.
-- A number of configuration options have changed names or properties according to the new design.
+- Several configuration options have changed names or properties according to the new design.
 - The `openapi` options have changed and all of the available options are [documented](./config/openapi/index.md).
 
 Check the current documentation for information about the current features in each of these areas.

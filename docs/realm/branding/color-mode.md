@@ -46,5 +46,5 @@ You can add your own, color-mode-specific styling rules by overriding the CSS va
 
 - **[Custom styles guide](./customize-styles.md)** - Learn to customize your documentation's appearance using CSS variables and custom stylesheets
 - **[Color mode customization](./customize-color-modes.md)** - Create custom styling for light and dark modes with mode-specific color schemes and CSS rules
-- **[Custom color modes](./customize-color-modes.md#add-new-color-modes)** - Expand beyond the default light and dark modes by adding completely new color modes with custom icons and styling
+- **[Custom color modes](./customize-color-modes.md#add-new-color-modes)** - Expand beyond the default light and dark modes by adding new color modes with custom icons and styling
 - **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of CSS variables used by the color mode system for advanced customization

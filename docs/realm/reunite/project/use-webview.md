@@ -83,7 +83,7 @@ Click the **More actions** icon to either do a full restart of Webview or disabl
 
 ### Full restart
 
-To completely restart the server, click the **More actions** icon and select **Full Restart**.
+To fully restart the server, click the **More actions** icon and select **Full Restart**.
 
 When you update the `package.json` file in the Editor, the Webview re-installs dependencies and restarts automatically.
 

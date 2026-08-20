@@ -280,7 +280,7 @@ Use the examples in this section as starter themes to quickly add styling to you
 
 ### Example theme - "Full corporate"
 
-The "Full corporate" styling uses a business font, has teal accents, and is very deliberate about spacing.
+The "Full corporate" styling uses a business font, has teal accents, and is deliberate about spacing.
 
 ```css {% title="@theme/styles.css" %}
 :root {

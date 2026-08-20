@@ -135,7 +135,7 @@ Now that you have updated the `index.md` page and seen a deployment preview, let
 To return to the editor, click **Editor** in the navigation pane on the left side of the page.
 If you only see icons, you may need to click the "greater than" symbol to expand the navigation pane.
 
-Since a single Markdown page isn't very exciting, we should add a few more.
+Since a single Markdown page isn't exciting, we should add a few more.
 Using the following steps, create the following two new files:
 
 - `style-guide.md`
