@@ -34,8 +34,7 @@ For more information about lazy loading strategies, see the guide to [Lazy Loadi
 
 - `factory`
 - `() => Promise<T | Record<string, unknown>>`
-- **REQUIRED.**
-  A function that returns a promise resolving to a React component or module containing a component.
+- **REQUIRED.** A function that returns a promise resolving to a React component or module containing a component.
 
 ---
 

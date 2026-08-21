@@ -58,7 +58,7 @@ This makes draft mode useful for controlled review and internal validation befor
 
 Before you click **Go live**, review the following:
 
-- Who can view the project after you remove draft protection.
+- Who is able to view the project after you remove draft protection.
 - Whether you need to review or configure [access control](../../access/index.md) for the project.
 - If your production branch and deployment settings are ready for a live deployment.
 - If your content, API descriptions, and custom domain settings are ready to reach external users.

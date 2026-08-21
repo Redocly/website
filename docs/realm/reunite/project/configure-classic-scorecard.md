@@ -22,7 +22,7 @@ Reunite includes the following three built-in rulesets:
 
 - [`minimal`](https://redocly.com/docs/cli/rules/minimal):
 The minimal ruleset is a good starting point for an existing API that doesn't currently conform to any standard.
-It has fewer rules that cause an error, with others either downgraded to a warning or turned off.
+It has fewer rules that cause an error, with others either downgraded to a warning or turned off completely.
 - [`recommended`](https://redocly.com/docs/cli/rules/recommended):
 The recommended ruleset is our unabashedly opinionated recommendation of what we think a good API looks like.
 It's a great place to start, before adapting to your own context.
@@ -58,7 +58,7 @@ When you merge and the production deployment completes, the scorecard labels and
 ## Configure custom scorecard rulesets
 
 Instead of using Redocly's built-in rulesets, you can define your own scorecard levels and build rulesets with your criteria.
-Building rules in Reunite is similar to [building API standard rulesets in Redocly CLI](https://redocly.com/docs/cli/api-standards).
+Building rules in Reunite is very similar to [building API standard rulesets in Redocly CLI](https://redocly.com/docs/cli/api-standards).
 
 ### Configure rulesets in `redocly.yaml` for classic scorecard
 

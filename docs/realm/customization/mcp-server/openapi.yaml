@@ -27,21 +27,6 @@ info:
 
     The `whoami` tool is only available when authentication handling is enabled for the Docs MCP server.
 
-    ### Token validation
-
-    Every request carries its own token, and the server validates that token on each request.
-    The server checks the signature against the identity provider that issued the token, checks the expiry, and compares the `aud` (audience) claim to your organization ID.
-
-    A token whose `aud` names a different organization is recorded and, when audience enforcement is on for your project, rejected with a `401` response.
-    Enforcement is off by default, and [MCP configuration reference](../../config/mcp.md#token-audience-validation) names the environment variable that turns it on.
-
-    Two cases skip the audience comparison.
-    Tokens that carry no `aud` claim are accepted, because portal session tokens and tokens from some identity provider setups don't set one.
-    Projects that run without an organization ID, such as self-hosted deployments, have nothing to compare against.
-
-    A token isn't sufficient to determine what content is served.
-    RBAC decides which content and API descriptions the request can reach.
-
 servers:
   - url: https://{projectHost}/mcp
     description: Project Docs MCP endpoint.

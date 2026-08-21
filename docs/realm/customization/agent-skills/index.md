@@ -53,15 +53,13 @@ Write it for agents: state when to use the skill, then give ordered steps and li
 
 - name
 - string
-- **REQUIRED.**
-  Display name for the skill.
+- **REQUIRED.** Display name for the skill.
 
 ---
 
 - description
 - string
-- **REQUIRED.**
-  One or two sentences describing what the skill does and when an agent needs to use it.
+- **REQUIRED.** One or two sentences describing what the skill does and when an agent needs to use it.
   Agents use `description` to decide whether to load the skill.
 
 ---

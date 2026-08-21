@@ -25,8 +25,7 @@ Integrate Heap Analytics into Redocly project.
 
 - appId
 - string
-- **REQUIRED.**
-  Heap analytics App ID
+- **REQUIRED.** Heap analytics App ID
 
 ---
 

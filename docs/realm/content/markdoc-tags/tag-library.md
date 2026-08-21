@@ -14,35 +14,6 @@ plans:
 
 This page contains a comprehensive list of Markdoc tags with links to deeper resources where you can see how to use them.
 
-## Accordion and accordion group
-
-Use the Accordion tag to hide secondary content inside a collapsible section with a short title.
-Users expand only the sections they need.
-
-Additional information and syntax: [Accordion and accordion group tags](./accordion.md)
-
-**Example accordion element:**
-
-{% accordion title="Ideas to consider" %}
-Try adding a new special event to the Museum API, or timebox the content creation to 2 hours.
-{% /accordion %}
-
-Use the Accordion group tag to combine several accordions into one bordered list with dividers between the items.
-Group accordions that belong together, such as the questions in a FAQ section.
-
-**Example accordion group element:**
-
-{% accordion-group %}
-  {% accordion title="How do I buy a ticket?" %}
-  Use the `POST /tickets` endpoint or visit the museum front desk.
-  {% /accordion %}
-  {% accordion title="Can I get a refund?" %}
-  Tickets are refundable up to 24 hours before the visit date.
-  {% /accordion %}
-{% /accordion-group %}
-
----
-
 ## Admonition
 
 Use the Admonition tag to highlight important information.
@@ -109,20 +80,6 @@ Additional information and syntax: [Code walkthrough tag](./code-walkthrough/ind
 **Example code walkthrough element:**
 
 {% img withLightbox=true alt="A screenshot of the project using a single file and the smallest required configuration" src="./images/minimal-codewalkthrough.png" /%}
-
----
-
-## Diagram
-
-Use the Diagram tag to reference external diagram files (Mermaid, PlantUML, or Excalidraw) and render them in your content.
-
-Additional information and syntax: [Add diagrams](../add-diagram.md)
-
-**Example diagram element:**
-
-```markdoc {% process=false %}
-{% diagram file="./architecture.mermaid" type="mermaid" /%}
-```
 
 ---
 

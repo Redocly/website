@@ -211,8 +211,6 @@ flowchart LR
 - `width` accepts any CSS width value, such as `480px`, `40rem`, `75%`, or `100%`.
 - When you set `width`, the SVG scales proportionally and its height adjusts automatically.
 
-To place multiple diagrams horizontally (side-by-side) you can use [CSS utility classes](../branding/customize-styles.md#use-css-utility-classes-for-layout).
-
 ## AsciiDoc
 
 Diagrams are also supported in AsciiDoc (`.adoc`) files with the [AsciiDoc plugin](./asciidoc.md).
@@ -254,4 +252,3 @@ See: [Use AsciiDoc content](asciidoc.md) for more information about the AsciiDoc
 - **[Mermaid documentation](https://mermaid.js.org/intro/#diagram-types)** - Complete guide to Mermaid diagram types and syntax
 - **[PlantUML documentation](https://plantuml.com/)** - Reference for UML and other diagram types in PlantUML
 - **[Excalidraw documentation](https://docs.excalidraw.com/)** - Guide to creating hand-drawn style diagrams with Excalidraw
-- **[Customize styles](../branding/customize-styles.md)** - Learn how to add custom CSS to your project

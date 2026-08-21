@@ -25,8 +25,7 @@ Integrate Segment Analytics into Redocly project.
 
 - writeKey
 - string
-- **REQUIRED.**
-  Amplitude write key
+- **REQUIRED.** Amplitude write key
 
 ---
 

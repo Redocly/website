@@ -29,8 +29,7 @@ You can also use `icon` in navigation elements: [sidebars](../../navigation/side
 
 - name
 - string
-- **REQUIRED.**
-  A [Font Awesome](https://fontawesome.com/icons) icon name.
+- **REQUIRED.** A [Font Awesome](https://fontawesome.com/icons) icon name.
     Realm has the following icon packs built in: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
     The icons automatically adjust their colors when users change the color mode.
 

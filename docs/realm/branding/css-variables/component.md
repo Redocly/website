@@ -21,7 +21,7 @@
 --admonition-padding: var(--spacing-sm) var(--spacing-base);
 --admonition-icon-margin: calc(var(--spacing-unit) / 2) 0;
 --admonition-icon-size: 18px;
---admonition-border-radius: var(--border-radius-lg);
+--admonition-border-radius: var(--border-radius-xl);
 --admonition-border-style: var(--border-style);
 --admonition-border-width: 1px;
 ```
@@ -117,7 +117,7 @@
 ```css
 --badge-text-color: var(--text-color-inverse);
 --badge-bg-color: var(--color-purple-6);
---badge-border-radius: var(--border-radius);
+--badge-border-radius: var(--border-radius-md);
 ```
 
 </details>
@@ -127,7 +127,7 @@
 ```css
 --badge-deprecated-text-color: var(--color-warm-grey-1);
 --badge-deprecated-bg-color: var(--color-warning-base);
---badge-deprecated-border-radius: var(--border-radius);
+--badge-deprecated-border-radius: var(--border-radius-md);
 ```
 
 </details>
@@ -141,7 +141,7 @@
 --banner-button-size: 22px;
 --banner-button-padding: 3px;
 --banner-button-font-size: var(--font-size-base);
---banner-button-border-radius: var(--border-radius);
+--banner-button-border-radius: var(--border-radius-lg);
 --banner-button-padding-inline: 1px var(--spacing-sm);
 --banner-button-line-height: var(--line-height-base);
 --banner-button-icon-size: 14px;
@@ -196,7 +196,7 @@
 --breadcrumbs-font-size: var(--font-size-base);
 --breadcrumbs-icon-size: var(--font-size-base);
 --breadcrumbs-font-weight-active: var(--font-weight-medium);
---breadcrumbs-border-radius: var(--border-radius);
+--breadcrumbs-border-radius: var(--border-radius-md);
 --breadcrumbs-gap: var(--spacing-xxs);
 --breadcrumbs-padding: 2px var(--spacing-xs);
 --breadcrumbs-margin-bottom: var(--spacing-lg);
@@ -281,7 +281,7 @@
 --button-font-weight: var(--font-weight-regular);
 --button-font-size: var(--font-size-base);
 --button-line-height: var(--line-height-base);
---button-border-radius: var(--border-radius-md);
+--button-border-radius: var(--border-radius-lg);
 --button-padding: 5px var(--spacing-sm);
 --button-text-wrap: nowrap;
 --button-gap: var(--spacing-xs);
@@ -309,7 +309,7 @@
 
 ```css
 .button-size-small {
-  --button-border-radius: var(--border-radius);
+  --button-border-radius: var(--border-radius-md);
   --button-padding: 1px var(--spacing-sm);
 
   --button-icon-size: 14px;
@@ -328,7 +328,7 @@
 .button-size-large {
   --button-font-size: var(--font-size-lg);
   --button-line-height: var(--line-height-lg);
-  --border-radius: var(--border-radius-lg);
+  --button-border-radius: var(--border-radius-xl);
   --button-padding: var(--spacing-xs) var(--spacing-md);
 
   --button-icon-size: 18px;
@@ -546,7 +546,7 @@
 --catalog-classic-card-border-width: var(--border-width);
 --catalog-classic-card-border-style: var(--border-style);
 --catalog-classic-card-border-color-hover: var(--border-color-primary);
---catalog-classic-card-border-radius: var(--border-radius-xxl);
+--catalog-classic-card-border-radius: var(--border-radius-xl);
 --catalog-classic-cards-group-margin: 0 0 var(--spacing-base) 0;
 --catalog-classic-cards-group-gap: var(--spacing-xl);
 --catalog-classic-card-title-color: var(--text-color-primary);
@@ -728,7 +728,7 @@
 --dropdown-menu-item-padding-vertical: 5px;
 --dropdown-menu-item-separator-padding-top: var(--spacing-xs);
 --dropdown-menu-item-separator-padding-bottom: var(--spacing-xxs);
---dropdown-menu-item-border-radius: var(--border-radius);
+--dropdown-menu-item-border-radius: var(--border-radius-lg);
 --dropdown-menu-item-bg-color: transparent;
 --dropdown-menu-item-bg-color-active: var(--bg-color-hover);
 --dropdown-menu-item-bg-color-hover: var(--bg-color-hover);
@@ -835,7 +835,7 @@
 --filter-select-max-width: 100%;
 --filter-select-color: var(--text-color-primary);
 --filter-select-border-color: var(--border-color-primary);
---filter-select-border-radius: calc(var(--spacing-unit) * 1.5);
+--filter-select-border-radius: var(--input-border-radius);
 --filter-select-padding: 0;
 --filter-select-border-color-hover: var(--text-color-primary);
 --filter-select-option-margin: 0;
@@ -880,7 +880,7 @@
 --filter-date-picker-icon-width: var(--spacing-sm);
 --filter-date-picker-icon-stroke-hover: var(--text-color-primary);
 --filter-date-picker-wrapper-border-color: var(--border-color-primary);
---filter-date-picker-wrapper-radius: calc(var(--spacing-unit) * 1.5);
+--filter-date-picker-wrapper-radius: var(--border-radius-md);
 --filter-date-picker-wrapper-padding: calc(var(--spacing-xxs) / 2) var(--spacing-xs);
 ```
 
@@ -1005,7 +1005,7 @@
 --image-frame-border-color: var(--border-color-secondary);
 --image-frame-border-radius: var(--border-radius-xxl);
 --image-frame-bg-color: var(--bg-color-raised);
---image-frame-image-border-radius: var(--border-radius-lg);
+--image-frame-image-border-radius: var(--border-radius-xl);
 ```
 
 </details>
@@ -1025,7 +1025,7 @@
 <summary>Image gallery</summary>
 
 ```css
---image-gallery-border-radius: var(--border-radius-lg);
+--image-gallery-border-radius: var(--border-radius-xxl);
 --image-gallery-image-bg-color: var(--bg-color-tonal);
 ```
 
@@ -1055,7 +1055,7 @@
 --image-lightbox-close-size: 40px;
 --image-lightbox-close-icon-size: 18px;
 --image-lightbox-close-offset: var(--spacing-base);
---image-lightbox-close-border-radius: var(--border-radius-lg);
+--image-lightbox-close-border-radius: var(--border-radius-xl);
 --image-lightbox-side-gutter: calc(
   var(--image-lightbox-close-size) + var(--image-lightbox-close-offset) + var(--spacing-sm)
 );
@@ -1200,7 +1200,7 @@
 --md-table-line-height: var(--line-height-md);
 --md-table-margin-vertical: 20px;
 --md-table-bg-color: transparent;
---md-table-border-radius: var(--border-radius);
+--md-table-border-radius: var(--border-radius-xl);
 
 --md-table-border-width: 1px;
 --md-table-header-bg-color: var(--layer-color);
@@ -1576,7 +1576,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-input-gap: var(--spacing-sm);
 --search-input-height: 40px;
 --search-input-border: none;
---search-input-border-radius: var(--border-radius);
+--search-input-border-radius: var(--border-radius-xl);
 
 --search-group-title-padding: var(--spacing-sm);
 --search-group-title-bg-color: var(--bg-color-tonal);
@@ -1594,6 +1594,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-item-bg-color: transparent;
 --search-item-bg-color-hover: var(--layer-color-ontonal-hover);
 --search-item-border-color-focused: var(--color-blue-4);
+--search-item-border-radius: var(--border-radius-lg);
 --search-item-padding: var(--spacing-sm) var(--spacing-lg);
 --search-item-gap: var(--spacing-xxs);
 --search-item-product-icon-size: 16px;
@@ -1612,6 +1613,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-recent-item-title-padding: var(--spacing-md) var(--spacing-lg) var(--spacing-xxs) var(--spacing-lg);
 --search-recent-item-bg-color-active: var(--layer-color);
 --search-recent-item-border-color-focused: var(--color-blue-4);
+--search-recent-item-border-radius: var(--search-item-border-radius);
 
 --search-suggested-item-font-size: var(--font-size-base);
 --search-suggested-item-font-weight: var(--font-weight-regular);
@@ -1627,6 +1629,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-suggested-item-title-padding: var(--spacing-md) var(--spacing-lg) var(--spacing-xxs) var(--spacing-lg);
 --search-suggested-item-bg-color-active: var(--layer-color);
 --search-suggested-item-border-color-focused: var(--color-blue-4);
+--search-suggested-item-border-radius: var(--search-item-border-radius);
 
 --search-shortcuts-gap: var(--spacing-xs);
 
@@ -1674,7 +1677,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-trigger-border-style: var(--border-style);
 --search-trigger-border-color: var(--input-border-color);
 --search-trigger-border-color-hover: var(--input-border-color-hover);
---search-trigger-border-radius: var(--border-radius-md);
+--search-trigger-border-radius: var(--border-radius-lg);
 --search-trigger-padding-vertical: var(--input-padding-vertical);
 --search-trigger-padding-horizontal: var(--input-padding-horizontal);
 --search-trigger-padding: var(--search-trigger-padding-vertical) var(--search-trigger-padding-horizontal);
@@ -1838,7 +1841,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-ai-conversation-input-bg-color-disabled: var(--color-warm-grey-1);
 --search-ai-conversation-input-padding: var(--spacing-sm) var(--spacing-md);
 --search-ai-conversation-input-border: 1px solid var(--border-color-secondary);
---search-ai-conversation-input-border-radius: var(--border-radius-lg);
+--search-ai-conversation-input-border-radius: var(--border-radius-xl);
 --search-ai-conversation-input-font-size: var(--font-size-base);
 --search-ai-conversation-input-placeholder-color: var(--search-input-placeholder-color);
 --search-ai-conversation-input-border-color-focus: var(--color-blue-6);
@@ -1851,7 +1854,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-ai-conversation-input-send-button-bg-color-disabled: var(--button-bg-color-disabled);
 --search-ai-conversation-input-send-button-border-color-disabled: var(--button-border-color-disabled);
 --search-ai-conversation-input-send-button-icon-color: var(--color-static-white);
---search-ai-conversation-input-send-button-border-radius: var(--border-radius);
+--search-ai-conversation-input-send-button-border-radius: var(--border-radius-md);
 --search-ai-conversation-input-send-button-border-disabled: 1px solid var(--button-border-color-disabled);
 ```
 
@@ -1891,14 +1894,14 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --select-font-weight: var(--font-weight-regular);
 --select-line-height: var(--line-height-base);
 --select-text-color: var(--text-color-secondary);
---select-border-radius: var(--border-radius);
+--select-border-radius: var(--border-radius-lg);
 
 --select-input-padding-vertical: 6px;
 --select-input-padding-horizontal: 6px;
 --select-input-padding: var(--select-input-padding-vertical) var(--select-input-padding-horizontal);
 --select-input-gap: var(--spacing-xs);
 --select-input-value-gap: var(--spacing-unit);
---select-input-border-radius: var(--border-radius);
+--select-input-border-radius: var(--border-radius-lg);
 --select-input-font-size: var(--font-size-base);
 --select-input-font-weight: var(--font-weight-regular);
 --select-input-line-height: var(--line-height-base);
@@ -1917,7 +1920,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --select-list-item-padding: var(--select-list-item-padding-vertical) var(--select-list-item-padding-horizontal);
 
 --select-list-item-gap: var(--spacing-xs);
---select-list-item-border-radius: var(--border-radius);
+--select-list-item-border-radius: var(--border-radius-md);
 --select-list-item-bg-color-active: transparent;
 --select-list-item-bg-color-hover: var(--menu-item-bg-color-hover);
 --select-list-item-font-weight-active: var(--font-weight-medium);
@@ -2019,7 +2022,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --menu-item-label-margin: var(--menu-item-label-margin-vertical) var(--menu-item-label-margin-horizontal);
 --menu-item-label-padding: var(--menu-item-padding-vertical) var(--menu-item-padding-horizontal);
 --menu-item-label-gap: var(--spacing-xxs);
---menu-item-label-border-radius: 6px;
+--menu-item-label-border-radius: var(--border-radius-lg);
 --menu-item-label-chevron-size: 12px;
 --menu-item-label-chevron-offset: calc(var(--menu-item-label-gap) + var(--menu-item-label-chevron-size));
 
@@ -2130,8 +2133,8 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --switch-bg-color-disabled: var(--color-warm-grey-3);
 --switch-knob-bg-color: var(--color-white);
 --switch-knob-bg-color-selected: var(--color-white);
---switch-border-radius: var(--border-radius);
---switch-knob-border-radius: calc(var(--border-radius) / 2);
+--switch-border-radius: var(--border-radius-xl);
+--switch-knob-border-radius: var(--border-radius-lg);
 --switch-width: 32px;
 --switch-height: 18px;
 --switch-padding: calc(var(--spacing-xxs) / 2);
@@ -2205,9 +2208,9 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 
 --tag-border-width: 1px;
 --tag-border-style: solid;
---tag-border-radius: var(--border-radius-xl);
+--tag-border-radius: var(--border-radius-md);
 --tag-box-shadow: none;
---tag-border-radius-focused: var(--border-radius);
+--tag-border-radius-focused: var(--tag-border-radius);
 
 --tag-status-dot-color-default: var(--color-persian-green-7);
 --tag-badge-size: var(--spacing-xs);
@@ -2819,7 +2822,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 
 ```css
 --counter-tag-padding: 0px var(--spacing-xxs);
---counter-tag-border-radius: var(--border-radius);
+--counter-tag-border-radius: var(--tag-border-radius);
 --counter-tag-min-width: var(--spacing-md);
 ```
 
@@ -2837,7 +2840,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --toast-max-width: 360px;
 --toast-bg-color: var(--layer-color);
 --toast-border: var(--border-width) var(--border-style) var(--border-color-secondary);
---toast-border-radius: var(--border-radius-md);
+--toast-border-radius: var(--border-radius-lg);
 --toast-font-family: var(--font-family-base);
 ```
 
@@ -2971,7 +2974,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --user-menu-dropdown-max-width: var(--dropdown-menu-max-width);
 --user-menu-dropdown-max-height: none;
 --user-menu-dropdown-padding: var(--dropdown-menu-padding);
---user-menu-dropdown-border-radius: var(--dropdown-menu-border-radius);
+--user-menu-dropdown-border-radius: var(--border-radius-xl);
 --user-menu-dropdown-box-shadow: var(--dropdown-menu-box-shadow);
 --user-menu-dropdown-border-color: var(--dropdown-menu-border-color);
 --user-menu-dropdown-bg-color: var(--dropdown-menu-bg-color);

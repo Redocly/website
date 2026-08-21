@@ -25,8 +25,7 @@ Integrate Adobe Analytics into Redocly project to track page views
 
 - scriptUrl
 - String
-- **REQUIRED.**
-  URL of the Adobe Analytics script (can be found in the Adobe Analytics admin dashboard).
+- **REQUIRED.** URL of the Adobe Analytics script (can be found in the Adobe Analytics admin dashboard).
 
 ---
 

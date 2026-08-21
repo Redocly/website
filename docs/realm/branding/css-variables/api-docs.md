@@ -106,7 +106,7 @@
 --panel-gap-horizontal: var(--spacing-xl);
 --panel-gap-vertical: var(--spacing-base);
 
---panel-border-radius: var(--border-radius);
+--panel-border-radius: var(--border-radius-xl);
 --panel-border: 1px solid var(--border-color-secondary);
 
 --panel-line-height: var(--line-height-base);

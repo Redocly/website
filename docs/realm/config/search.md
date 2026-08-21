@@ -144,8 +144,7 @@ search:
 
 - page
 - string
-- **REQUIRED.**
-  Path to the file representing the linked page.
+- **REQUIRED.** Path to the file representing the linked page.
 
 ---
 
@@ -196,24 +195,21 @@ search:
 
 - name
 - string
-- **REQUIRED.**
-  Name of the facet.
+- **REQUIRED.** Name of the facet.
   Acts as a label for the filtering control in the search dialog.
 
 ---
 
 - field
 - string
-- **REQUIRED.**
-  Facet ID.
+- **REQUIRED.** Facet ID.
   Use this ID as a key in `metadata` section when adding facets to a page.
 
 ---
 
 - type
 - string
-- **REQUIRED.**
-  Control displayed in the search dialog.
+- **REQUIRED.** Control displayed in the search dialog.
   Values: `multi-select` (select multiple filter values), `select` (select a single filter value), `tags` (applies only to HTTP method facet).
 
 ---
@@ -274,7 +270,7 @@ See [excludeFromSearch documentation](./front-matter-config.md#front-matter-only
 {% /admonition %}
 
 AI search and Typesense search indexes are only built on the production branch.
-Changes to search configuration or content exclusions, like the `excludeFromSearch` front matter option, appear in search results after the next production build.
+Changes to search configuration or content exclusions, like the `excludeFromSearch` front matter option, may not immediately appear in search results until the next production build.
 
 ## Apply facets to files
 

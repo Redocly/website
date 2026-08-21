@@ -16,7 +16,7 @@ This topic explains how to register custom components that can be invoked by you
 
 Follow the tutorial to create two sample components: a simple line break component and a quiz component for some extra credit.
 
-The line break is a simple component that adds a linebreak (`<br>`).
+The line break is a very simple component, that adds a linebreak (`<br>`).
 In reality, you can achieve the linebreak in Markdoc by ending a line with a `\`.
 However, it makes for the simple "Hello World" of custom tags.
 And it requires almost no React knowledge.
@@ -444,7 +444,7 @@ Add `renderForLlms` to control what the tag emits for LLMs.
 
 The function receives the Markdoc AST `node` for your tag and a context object.
 It should return a plain Markdown string.
-The tag body is included only when you call `getBody()` from the context object.
+The tag body is not included unless you call `getBody()` from the context object.
 
 {% admonition type="warning" name="Security considerations" %}
 Content returned by `renderForLlms` is emitted directly for LLMs.

@@ -32,8 +32,7 @@ import { CDNIcon } from '@redocly/theme/icons/CDNIcon/CDNIcon';
 
 - name
 - string
-- **REQUIRED.**
-  The FontAwesome icon name.
+- **REQUIRED.** The FontAwesome icon name.
 Supports all Font Awesome icons from the built-in packs: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
 
 ---

@@ -25,7 +25,7 @@ These options are available exclusively in front matter:
   Default: `false`.
 
   Search indexes are only built on the production branch.
-  Changes to `excludeFromSearch` appear in search results after the next production build.
+  Changes to `excludeFromSearch` may not immediately appear in search results until the next production build.
 
   To exclude OpenAPI description files from search, see: [`openapi` configuration](./openapi/index.md).
 

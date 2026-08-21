@@ -101,22 +101,12 @@ This example sets the width and background color of the "Favorite veggie" column
 }
 ```
 
-{% table %}
-- Person
-- Favorite vegetable
----
-- Taylor
-- Brussel sprouts
----
-- Annabelle
-- Asparagus
----
-- Oliver
-- Bell peppers
----
-- Daisy
-- Carrots
-{% /table %}
+| Person | Favorite vegetable |
+| ------- | ----- |
+| Taylor | Brussel sprouts |
+| Annabelle | Asparagus |
+| Oliver | Bell peppers |
+| Daisy | Carrots |
 
 ### Combine CSS selectors
 
@@ -142,22 +132,12 @@ Create more advanced styles by combining `data-label` with other CSS selectors:
 }
 ```
 
-{% table %}
-- Person
-- Favorite animal
----
-- Oliver
-- Penguins
----
-- Daisy
-- Rabbits
----
-- Taylor
-- Snow leopard
----
-- Annabelle
-- Ostrich
-{% /table %}
+| Person | Favorite animal |
+| ------- | ----- |
+| Oliver | Penguins |
+| Daisy | Rabbits |
+| Taylor | Snow leopard |
+| Annabelle | Ostrich |
 
 ## Style Markdoc tables
 

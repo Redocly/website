@@ -32,8 +32,7 @@ Integrate Google Analytics 4 into Redocly project using the Google tag (gtag.js)
 
 - trackingId
 - string
-- **REQUIRED.**
-  Google Analytics tracking ID.
+- **REQUIRED.** Google Analytics tracking ID.
 
 ---
 

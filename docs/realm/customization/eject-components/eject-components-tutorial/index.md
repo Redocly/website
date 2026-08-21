@@ -21,9 +21,9 @@ plans:
     }
   ]
 %}
-# Eject components tutorial
+  ## Eject components tutorial
 
-## Update tabs component behavior
+  ### Update tabs component behavior
 
   Let's imagine you are writing a tutorial describing how to write code to work with your product.
   You decided to use Redocly's [tabs](https://redocly.com/learn/markdoc/tags/tabs) Markdoc tag to show code examples in different languages.
@@ -40,7 +40,7 @@ plans:
     align="center"
   /%}
 
-## Eject the tabs component in Reunite
+  ### Eject the tabs component in Reunite
 
   For this tutorial we are going to eject the component using the [Reunite editor](../eject-components-in-reunite.md).
   To eject the component using the Reunite editor:
@@ -59,7 +59,7 @@ plans:
 
   After ejecting, the component is added to the `@theme` folder at the path `@theme/markdoc/components/Tabs/Tabs.tsx` where we can modify it.
 
-## Implement `useTabs` hook
+  ### Implement `useTabs` hook
 
   {% step id="implement-useTabs-hook" %}
     Create a new `useTabs.ts` file adjacent to the `Tabs.tsx` file and copy the code from the example.
@@ -76,7 +76,7 @@ plans:
     {% /admonition %}
   {% /step %}
 
-## Replace the `useTabs` hook inside the Tabs component
+  ### Replace the `useTabs` hook inside the Tabs component
 
   {% step id="replace-useTabs-hook-import" heading="Replace useTabs hook import" %}
     Replace the original `useTabs` hook import with the custom hook.
@@ -94,11 +94,11 @@ plans:
     And finally, pass the `syncId` prop to the `useTabs` hook.
   {% /step %}
 
-## Extend the tabs Markdoc schema
+  ### Extend the tabs Markdoc schema
 
   We also need to update the tabs interface to be able to pass the `syncId` prop to the `tabs` Markdoc component, which passes the `syncId` to our modified `Tabs` React component.
 
-### Eject the tags Markdoc schema
+  #### Eject the tags Markdoc schema
 
   1. Select **Editor** on the left side navigation.
   1. Click the **Theme components** in the **Files** section.
@@ -114,7 +114,7 @@ plans:
     Create a new `schema.ts` inside the `@theme/markdoc` folder and copy the code from the example.
   {% /step %}
 
-## Create a tutorial page
+  ### Create a tutorial page
 
   {% step id="tutorial-code-snippet" heading="Create tutorial page" %}
     To test our changes, let's create a `tutorial.md` page in the root of the project and copy the code from the example.
@@ -142,7 +142,7 @@ plans:
   Test it out.
   Do the tabs sync?
 
-## 🎉 Congratulations
+  ### 🎉 Congratulations
 
   You have successfully ejected the `Tabs` component and added custom functionality to it.
   Don't forget, with great power comes great responsibility, now you are responsible for maintaining the component 😉.

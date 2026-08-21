@@ -31,7 +31,7 @@ Only one content file is strictly required — the rest are optional but help or
 - `redocly.yaml`: the primary configuration file used to customize features, navigation, theming, and more.
   While optional for a basic start, it's essential for most customizations.
 - `package.json`: the project manifest for managing Node.js dependencies.
-  It is required only if you want to specify a particular version of Redocly packages or install any third-party dependencies.
+  It is not required unless you want to specify a particular version of Redocly packages or install any third-party dependencies.
 - `_partials/`: a directory for reusable Markdoc partials
 - `@l10n/`: a directory for locale folders
 - `@api`: a directory for API functions
@@ -346,7 +346,7 @@ You can override or add various elements:
   Refer to the [Eject components](../customization/eject-components/index.md) for more information.
 - **Styles**: Add global custom CSS rules or modify [theme variables](../branding/css-variables/index.md) in the `@theme/styles.css` file.
   This file serves as the main entry point for your custom global styles.
-- **Custom markdoc components**: Create [new Markdoc tags and functions](../customization/build-custom-function.md), within the `@theme/markdoc` directory to enhance your Markdoc.
+- **Custom markdoc components**: Create completely [new Markdoc tags and functions](../customization/build-custom-function.md), within the `@theme/markdoc` directory to enhance your Markdoc.
 
 ### Static files (`static/`)
 

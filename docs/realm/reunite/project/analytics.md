@@ -91,8 +91,6 @@ Click the **View details** button to open **AI Assistant conversations**.
 The **AI Assistant conversations** page displays granular data on the use of AI-powered search.
 Expand each conversation to see the full question, AI-provided answer, and corresponding sources.
 
-The page opens with a row of summary tiles for the selected period: **Conversations**, **Messages**, **Likes**, and **Dislikes**.
-
 On this page you can:
 
 - change the period for the displayed data

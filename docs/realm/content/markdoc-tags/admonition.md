@@ -25,8 +25,7 @@ Choose between the pre-built styles using `type`.
 Optionally add a header with `name`.
 
 {% admonition type="warning" name="Important warning" %}
-Stop!
-**Read me** before moving on.
+Stop! **Read me** before moving on.
 {% /admonition %}
 {% markdoc-example %}
 

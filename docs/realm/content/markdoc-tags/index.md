@@ -26,7 +26,6 @@ The following Markdoc tags are included with the official Markdoc package:
 
 The following Markdoc tags are custom-made by Redocly:
 
-- [Accordion and accordion group](./accordion.md): Hide secondary content inside collapsible sections, and combine several of them into a single bordered list.
 - [Admonition](./admonition.md): Add color-coded banners to highlight important information.
 - [Cards](./cards.md): Organize links in a "card" or "tile" layout.
 - [Code snippet](./code-snippet.md): Pull fragments code files directly into your documentation pages.
@@ -36,7 +35,6 @@ The following Markdoc tags are custom-made by Redocly:
   - [Toggle](./code-walkthrough/toggle.md): Add toggles to allow users to switch between variants of walkthrough content.
   - [Input](./code-walkthrough/input.md): Add input fields to code walkthroughs.
 - [Connect MCP](./connect-mcp.md): Add a button that allows users to connect to the MCP (Model Context Protocol) server.
-- [Diagram](../add-diagram.md): Reference external diagram files (Mermaid, PlantUML, Excalidraw).
 - [Image](./img.md): Embed images into your project.
 - [Icon](./icon.md): Render [Font Awesome](https://fontawesome.com/icons) icons in your project.
 - [Inline SVG](./inline-svg.md): Render and style SVG images in your project.
