@@ -1,21 +1,4 @@
 '@redocly/realm':
-  0.137.0-next.3:
-    timestamp: 1787307825000
-    changes:
-      minor:
-        - >-
-          Added `linkIcon`, `cta`, `iconColor`, `badge`, `badgeColor`, and `badgeIcon` attributes to the `card` Markdoc tag to enhance customization
-          options.
-      patch:
-        - Fixed an issue where clicking an item in the table of contents caused the selection indicator to jump and highlight an incorrect item.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.3
-      '@redocly/realm-asyncapi-sdk': 0.15.0-next.2
-      '@redocly/api-docs': 0.2.0-next.3
-      '@redocly/asyncapi-docs': 1.14.0-next.3
-      '@redocly/graphql-docs': 1.14.0-next.3
-      '@redocly/openapi-docs': 3.25.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.3
   0.137.0-next.2:
     timestamp: 1787139166000
     changes:
@@ -6994,23 +6977,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.137.0-next.3:
-    timestamp: 1787307825000
-    changes:
-      minor:
-        - >-
-          Added `linkIcon`, `cta`, `iconColor`, `badge`, `badgeColor`, and `badgeIcon` attributes to the `card` Markdoc tag to enhance customization
-          options.
-      patch:
-        - Fixed an issue where clicking an item in the table of contents caused the selection indicator to jump and highlight an incorrect item.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.3
-      '@redocly/realm-asyncapi-sdk': 0.15.0-next.2
-      '@redocly/api-docs': 0.2.0-next.3
-      '@redocly/asyncapi-docs': 1.14.0-next.3
-      '@redocly/graphql-docs': 1.14.0-next.3
-      '@redocly/openapi-docs': 3.25.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.3
   0.137.0-next.2:
     timestamp: 1787139166000
     changes:
@@ -13029,23 +12995,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.137.0-next.3:
-    timestamp: 1787307825000
-    changes:
-      minor:
-        - >-
-          Added `linkIcon`, `cta`, `iconColor`, `badge`, `badgeColor`, and `badgeIcon` attributes to the `card` Markdoc tag to enhance customization
-          options.
-      patch:
-        - Fixed an issue where clicking an item in the table of contents caused the selection indicator to jump and highlight an incorrect item.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.3
-      '@redocly/realm-asyncapi-sdk': 0.15.0-next.2
-      '@redocly/api-docs': 0.2.0-next.3
-      '@redocly/asyncapi-docs': 1.14.0-next.3
-      '@redocly/graphql-docs': 1.14.0-next.3
-      '@redocly/openapi-docs': 3.25.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.3
   0.137.0-next.2:
     timestamp: 1787139166000
     changes:
@@ -19054,20 +19003,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.137.0-next.3:
-    timestamp: 1787307825000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where clicking an item in the table of contents caused the selection indicator to jump and highlight an incorrect item.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.3
-      '@redocly/realm-asyncapi-sdk': 0.15.0-next.2
-      '@redocly/api-docs': 0.2.0-next.3
-      '@redocly/asyncapi-docs': 1.14.0-next.3
-      '@redocly/graphql-docs': 1.14.0-next.3
-      '@redocly/openapi-docs': 3.25.0-next.3
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.3
   0.137.0-next.2:
     timestamp: 1787139166000
     changes:
@@ -25156,16 +25091,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.69.0-next.3:
-    timestamp: 1787307825000
-    changes:
-      minor:
-        - >-
-          Added `linkIcon`, `cta`, `iconColor`, `badge`, `badgeColor`, and `badgeIcon` attributes to the `card` Markdoc tag to enhance customization
-          options.
-      patch:
-        - Fixed an issue where clicking an item in the table of contents caused the selection indicator to jump and highlight an incorrect item.
-    dependencies: {}
   0.69.0-next.2:
     timestamp: 1787139166000
     changes:
@@ -28319,13 +28244,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.25.0-next.3:
-    timestamp: 1787307825000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/replay': 0.28.0-next.3
   3.25.0-next.2:
     timestamp: 1787139166000
     changes:
@@ -32423,14 +32341,6 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
-  1.14.0-next.3:
-    timestamp: 1787307825000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.69.0-next.3
-      '@redocly/openapi-docs': 3.25.0-next.3
   1.14.0-next.2:
     timestamp: 1787139166000
     changes:
@@ -33806,14 +33716,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/api-docs':
-  0.2.0-next.3:
-    timestamp: 1787307825000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.69.0-next.3
-      '@redocly/replay': 0.28.0-next.3
   0.2.0-next.2:
     timestamp: 1787139166000
     changes:
@@ -34988,17 +34890,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.20.0-next.3:
-    timestamp: 1787307825000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.137.0-next.3
-      '@redocly/redoc-revel': 0.137.0-next.3
-      '@redocly/redoc-reef': 0.137.0-next.3
-      '@redocly/theme': 0.69.0-next.3
-      '@redocly/redoc': 0.137.0-next.3
   1.20.0-next.2:
     timestamp: 1787139166000
     changes:
@@ -40638,13 +40529,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.22.0-next.3:
-    timestamp: 1787307825000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.25.0-next.3
   0.22.0-next.2:
     timestamp: 1787139166000
     changes:
@@ -43763,13 +43647,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.28.0-next.3:
-    timestamp: 1787307825000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.69.0-next.3
   0.28.0-next.2:
     timestamp: 1787139166000
     changes:
@@ -46161,13 +46038,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.20.0-next.3:
-    timestamp: 1787307825000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.69.0-next.3
   0.20.0-next.2:
     timestamp: 1787139166000
     changes:
@@ -48112,14 +47982,6 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
-  1.14.0-next.3:
-    timestamp: 1787307825000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.69.0-next.3
-      '@redocly/openapi-docs': 3.25.0-next.3
   1.14.0-next.2:
     timestamp: 1787139166000
     changes:
@@ -52270,13 +52132,6 @@ reunite:
   v2026-08-21.1:
     timestamp: 1787303519000
     changes:
-      minor: []
-      patch:
-        - Fixed the collapsed height of logs in the webview error screen.
-    dependencies: {}
-  v2026-08-21.2:
-    timestamp: 1787314187000
-    changes:
       minor:
         - Added identity verification for the embedded AI assistant to provide access-controlled responses for signed-in users.
         - Blocked sign-up with disposable email domains in Reunite by rejecting these addresses in the registration form and API validation.
@@ -52288,6 +52143,7 @@ reunite:
           Fixed an issue that prevented custom domain verification from succeeding when a DNS or CDN provider added an intermediate CNAME hop before
           `ssl.redocly.app`. Verification now follows the full CNAME chain instead of only checking the first record. Note that domains served through
           a proxying CDN (such as Cloudflare's proxied/orange-cloud mode) hide the origin and must use DNS-only mode to be verified.
+        - Fixed the collapsed height of logs in the webview error screen.
     dependencies: {}
 replay:
   0.0.2:
