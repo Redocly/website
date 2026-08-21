@@ -30,6 +30,8 @@
   label: Use AI to build a searchable API catalog for your team
 - page: ai-help-developers-find-understand-apis.md
   label: Use AI to help developers find and understand your APIs faster
+- page: ai-serve-docs-coding-agents-mcp.md
+  label: Use AI to serve your docs to coding agents with an MCP server
 - page: ai-check-terminology-consistency-across-docs.md
   label: Use AI to check terminology consistency across your docs
 - page: ai-usability-testing.md
