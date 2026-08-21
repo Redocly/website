@@ -70,6 +70,63 @@ A card only works as a child of `cards`.
 
 ---
 
+- linkIcon
+- string
+- Icon displayed at the end of the card title.
+  Can be `chevron` or `arrow`.
+  The icon displays only on a cards that also have the `to` attribute.
+  Without this attribute, the title has no icon.
+
+---
+
+- cta
+- string
+- Call-to-action text displayed under the card content, followed by a chevron icon.
+  The text displays only on cards that also have the `to` attribute.
+  Clicking anywhere on the card opens that link.
+  The text and the icon change color on mouse hover.
+
+---
+
+- badge
+- string
+- Text of a badge that displays in the card title, after the link icon.
+
+---
+
+- badgeColor
+- string
+- Color of the badge.
+  Supports predefined color names for consistent styling.
+
+  **Supported color names:**
+  `red`, `green`, `blue`, `grey`, `turquoise`, `magenta`, `purple`, `carrot`, `raspberry`, `orange`, `grass`, `persian-green`, `sky`, `blueberry`.
+
+  To use a color of your own, see [Custom colors](#custom-colors).
+  Default: `grey`.
+
+---
+
+- badgeIcon
+- string
+- Icon to display inside the badge.
+- Either:
+  - A [Font Awesome](https://fontawesome.com/icons) icon name.
+    Realm has the following icon packs built in: Classic Regular, Classic Solid, Duotone Solid, and Classic Brands.
+    The icons automatically adjust their colors when users change the color mode.
+
+    To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
+    To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+
+    **Examples:** `book`, `duotone book`, `brands github`
+
+    Using other prefixes, including the `fa-` prefix, causes the icon to not render.
+    - Relative path to an icon image file.
+
+      **Example:** `./images/config-icon.svg`
+
+---
+
 - variant
 - string
 - Visual style of the card.
@@ -118,6 +175,18 @@ A card only works as a child of `cards`.
   - `filled` adds a padded outline with rounded corners to the icon
 
   Defaults to `ghost`.
+
+---
+
+- iconColor
+- string
+- Color of the icon.
+  Supports predefined color names for consistent styling.
+
+  **Supported color names:**
+  `red`, `green`, `blue`, `grey`, `turquoise`, `magenta`, `purple`, `carrot`, `raspberry`, `orange`, `grass`, `persian-green`, `sky`, `blueberry`.
+
+  To use a color of your own, see [Custom colors](#custom-colors).
 
 ---
 
@@ -282,6 +351,131 @@ Each card variant has unique hover styles for cards as links.
 
 </details>
 
+### Link icons
+
+Set the `linkIcon` attribute on a link card to add an icon at the end of the card title.
+The icon needs the `to` attribute, and a card without `to` ignores it.
+
+{% cards columns=2 cardMinWidth=180 %}
+
+  {% card title="Chevron" to="#link-icons" linkIcon="chevron" %}
+    Uses the `chevron` icon. 
+  {% /card %}
+
+  {% card title="Arrow" to="#link-icons" linkIcon="arrow" %}
+    Uses the `arrow` icon.
+  {% /card %}
+
+{% /cards %}
+
+<details>
+  <summary>See link icon example syntax</summary>
+
+    {% markdoc-example %}
+    ``` {% process=false %}
+    {% cards columns=2 cardMinWidth=180 %}
+    
+          {% card title="Chevron" to="#link-icons" linkIcon="chevron" %}
+            Uses the `chevron` icon.
+          {% /card %}
+    
+          {% card title="Arrow" to="#link-icons" linkIcon="arrow" %}
+            Uses the `arrow` icon.
+          {% /card %}
+    
+        {% /cards %}
+        ```
+    {% /markdoc-example %}
+
+</details>
+
+### Cards with a call to action
+
+Use the `cta` attribute to add call-to-action text under the card content.
+A chevron icon follows the text, and both change color when a reader hovers over the card.
+The call to action needs the `to` attribute, so that a click anywhere on the card opens that link.
+The `align` attribute positions the call to action together with the rest of the card content.
+
+{% cards columns=2 cardMinWidth=180 %}
+
+  {% card title="Quickstart" to="#cards-with-a-call-to-action" cta="Start building" %}
+    Publish your first project in five minutes.
+  {% /card %}
+
+  {% card title="API reference" to="#cards-with-a-call-to-action" cta="Browse the endpoints" variant="outlined" %}
+    Every endpoint, parameter, and response schema.
+  {% /card %}
+
+{% /cards %}
+
+<details>
+  <summary>See call to action example syntax</summary>
+
+    {% markdoc-example %}
+    ``` {% process=false %}
+    {% cards columns=2 cardMinWidth=180 %}
+    
+          {% card title="Quickstart" to="#cards-with-a-call-to-action" cta="Start building" %}
+            Publish your first project in five minutes.
+          {% /card %}
+    
+          {% card title="API reference" to="#cards-with-a-call-to-action" cta="Browse the endpoints" variant="outlined" %}
+            Every endpoint, parameter, and response schema.
+          {% /card %}
+    
+        {% /cards %}
+        ```
+    {% /markdoc-example %}
+
+</details>
+
+### Cards with a badge
+
+Use the `badge` attribute to label a card.
+The badge displays in the card title, after the link icon.
+`badgeColor` picks a color from the badge palette, and `badgeIcon` puts an icon inside the badge.
+
+{% cards columns=3 cardMinWidth=200 %}
+
+  {% card title="Webhooks" badge="Beta" badgeColor="blue" %}
+    A color name.
+  {% /card %}
+
+  {% card title="Legacy tokens" badge="Deprecated" badgeColor="carrot" badgeIcon="triangle-exclamation" %}
+    A color name and an icon.
+  {% /card %}
+
+  {% card title="Scorecards" badge="New" badgeColor="green" %}
+    A color name.
+  {% /card %}
+
+{% /cards %}
+
+<details>
+  <summary>See badge example syntax</summary>
+
+    {% markdoc-example %}
+    ``` {% process=false %}
+    {% cards columns=3 cardMinWidth=200 %}
+    
+          {% card title="Webhooks" badge="Beta" badgeColor="blue" %}
+            A color name.
+          {% /card %}
+    
+          {% card title="Legacy tokens" badge="Deprecated" badgeColor="carrot" badgeIcon="triangle-exclamation" %}
+            A color name and an icon.
+          {% /card %}
+    
+          {% card title="Scorecards" badge="New" badgeColor="green" %}
+            A color name.
+          {% /card %}
+    
+        {% /cards %}
+        ```
+    {% /markdoc-example %}
+
+</details>
+
 ### Icon cards
 
 Use the `icon` attribute to add an icon to a card and choose its styles with `iconVariant`.
@@ -332,6 +526,62 @@ Use the `icon` attribute to add an icon to a card and choose its styles with `ic
     {% /cards %}
     ```
   {% /markdoc-example %}
+
+</details>
+
+#### Icon colors
+
+Use the `iconColor` attribute to color the icon with a name from the palette.
+
+{% cards columns=4 cardMinWidth=180 %}
+
+  {% card title="Red icon" icon="./images/cards-markdoc/ghost-icon.svg" iconColor="red" variant="outlined" %}
+    Uses `iconColor="red"`.
+  {% /card %}
+
+  {% card title="Sky icon" icon="./images/cards-markdoc/ghost-icon.svg" iconColor="sky" variant="outlined" %}
+    Uses `iconColor="sky"`.
+  {% /card %}
+
+  {% card title="Grass icon" icon="./images/cards-markdoc/ghost-icon.svg" iconColor="grass" variant="outlined" %}
+    Uses `iconColor="grass"`.
+  {% /card %}
+
+  {% card title="Theme icon" icon="./images/cards-markdoc/ghost-icon.svg" variant="outlined" %}
+    No `iconColor`, so the icon keeps the theme color.
+  {% /card %}
+
+{% /cards %}
+
+An icon from a file takes the color only where the file sets no color of its own.
+An icon that hardcodes a `fill` keeps the colors of the file.
+
+<details>
+  <summary>See icon color example syntax</summary>
+
+    {% markdoc-example %}
+    ``` {% process=false %}
+    {% cards columns=4 cardMinWidth=180 %}
+    
+          {% card title="Red icon" icon="images/ghost-icon.svg" iconColor="red" variant="outlined" %}
+            Uses `iconColor="red"`.
+          {% /card %}
+    
+          {% card title="Sky icon" icon="images/ghost-icon.svg" iconColor="sky" variant="outlined" %}
+            Uses `iconColor="sky"`.
+          {% /card %}
+    
+          {% card title="Grass icon" icon="images/ghost-icon.svg" iconColor="grass" variant="outlined" %}
+            Uses `iconColor="grass"`.
+          {% /card %}
+    
+          {% card title="Theme icon" icon="images/ghost-icon.svg" variant="outlined" %}
+            No `iconColor`, so the icon keeps the theme color.
+          {% /card %}
+    
+        {% /cards %}
+        ```
+    {% /markdoc-example %}
 
 </details>
 
@@ -448,6 +698,39 @@ Use the `layout` and `align` attributes to control the positioning of elements i
   {% /markdoc-example %}
 
 </details>
+
+### Custom colors
+
+The palette covers the built-in names.
+To use a color of your own, name it and define it in your [theme stylesheet](../../branding/customize-styles.md), then use that name in both attributes.
+
+Define a `.tag-{name}` class for the badge, and a `.card-icon-color-{name}` class for the icon:
+
+```css {% title="@theme/styles.css" %}
+.tag-mycolor {
+  --tag-bg-color: #DCE8FF;
+  --tag-color: #1A3A6B;
+}
+
+.card-icon-color-mycolor {
+  --card-icon-color: #1A3A6B;
+}
+```
+
+The badge takes a pair of colors, because it needs a background and a text color that stays readable on it.
+The icon takes one color.
+
+Use the name the same way as a built-in one:
+
+{% markdoc-example %}
+  ```markdoc {% process=false %}
+  {% card title="Webhooks" icon="images/ghost-icon.svg" iconColor="mycolor" badge="Beta" badgeColor="mycolor" %}
+    Uses a custom color.
+  {% /card %}
+  ```
+{% /markdoc-example %}
+
+To set different colors for dark mode, define the same classes again under `:root.dark`.
 
 ### Image cards
 
