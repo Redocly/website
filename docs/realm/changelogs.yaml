@@ -52289,6 +52289,13 @@ reunite:
           `ssl.redocly.app`. Verification now follows the full CNAME chain instead of only checking the first record. Note that domains served through
           a proxying CDN (such as Cloudflare's proxied/orange-cloud mode) hide the origin and must use DNS-only mode to be verified.
     dependencies: {}
+  v2026-08-21.3:
+    timestamp: 1787321411000
+    changes:
+      minor:
+        - Made `organizationId` and `projectId` optional in Reunite resource responses where both IDs are already included in the endpoint path.
+      patch: []
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
