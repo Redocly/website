@@ -708,8 +708,6 @@ components:
         - createdAt
         - updatedAt
         - createdBy
-        - organizationId
-        - projectId
     Page:
       type: object
       properties:
@@ -890,8 +888,6 @@ components:
         - id
         - status
         - type
-        - organizationId
-        - projectId
         - providerType
         - namespaceId
         - repositoryId
