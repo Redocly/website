@@ -52278,7 +52278,6 @@ reunite:
     timestamp: 1787314187000
     changes:
       minor:
-        - Made `organizationId` and `projectId` optional in Reunite resource responses where both IDs are already included in the endpoint path.
         - Added identity verification for the embedded AI assistant to provide access-controlled responses for signed-in users.
         - Blocked sign-up with disposable email domains in Reunite by rejecting these addresses in the registration form and API validation.
       patch:
