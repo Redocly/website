@@ -52129,6 +52129,22 @@ reunite:
         - Fixed pull request creation failing when the title was too long. Pull request actions now report the reason the git provider gives.
         - Fixed incorrect empty `502` responses for requests with incompatible credentials.
     dependencies: {}
+  v2026-08-21.1:
+    timestamp: 1787303519000
+    changes:
+      minor:
+        - Added identity verification for the embedded AI assistant to provide access-controlled responses for signed-in users.
+        - Blocked sign-up with disposable email domains in Reunite by rejecting these addresses in the registration form and API validation.
+      patch:
+        - >-
+          Removed the beta insiders program. Sign-up and SSO login are no longer gated behind the beta-insiders allowlist, and organization creation
+          no longer shows the Insiders confirmation step.
+        - >-
+          Fixed an issue that prevented custom domain verification from succeeding when a DNS or CDN provider added an intermediate CNAME hop before
+          `ssl.redocly.app`. Verification now follows the full CNAME chain instead of only checking the first record. Note that domains served through
+          a proxying CDN (such as Cloudflare's proxied/orange-cloud mode) hide the origin and must use DNS-only mode to be verified.
+        - Fixed the collapsed height of logs in the webview error screen.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
