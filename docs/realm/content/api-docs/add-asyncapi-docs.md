@@ -28,7 +28,8 @@ Use a `sidebars.yaml` file only when you want to place the reference alongside y
 Realm supports Apache Kafka protocol bindings and renders labels for RabbitMQ's Advanced Message Queuing Protocol (AMQP).
 When Realm detects an AsyncAPI file containing Kafka bindings, it generates project pages with components specific to that protocol.
 
-If your description file contains bindings from other protocols, the pages in your project may display some information as JSON code snippets instead of tables or forms.
+Your description file can contain bindings from other protocols.
+In that case, the pages in your project may display some information as JSON code snippets instead of tables or forms.
 
 ## Before you begin
 
@@ -49,7 +50,8 @@ To change the URL, rename or move the AsyncAPI description file to the path you 
 For more information, see [file-based routing](../project-structure.md#file-based-routing).
 {% /admonition %}
 
-To place the reference inside a custom sidebar alongside your other content, with control over its order and grouping, add your AsyncAPI description to a `sidebars.yaml` file.
+You can place the reference inside a custom sidebar alongside your other content, with control over its order and grouping.
+To do that, add your AsyncAPI description to a `sidebars.yaml` file.
 You can also link to the reference from anywhere, such as the [navbar](../../config/navbar.md), an in-page link, a card, or an [API catalog](../../config/catalog-classic.md).
 
 ## Add API reference to your site navigation
@@ -57,7 +59,8 @@ You can also link to the reference from anywhere, such as the [navbar](../../con
 A `sidebars.yaml` file includes only the items you add to it, so add any files you want displayed in that sidebar, including AsyncAPI descriptions.
 For more information on configuring a `sidebars.yaml` file for your project, see [Sidebar configuration](../../navigation/sidebars.md).
 
-To add an AsyncAPI file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the AsyncAPI description to your `sidebars.yaml` file:
+You can add an AsyncAPI file to your project with a `sidebars.yaml` file.
+Add the `page` and `label` keys with the corresponding values for the AsyncAPI description to your `sidebars.yaml` file:
 
 ```yaml {% title="sidebars.yaml" %}
 - page: apis/sample-api.yaml

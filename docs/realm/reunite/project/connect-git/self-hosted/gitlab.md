@@ -31,7 +31,8 @@ To add a self-hosted GitLab provider in Reunite for your organization:
 4. Click **Save**.
 
   The self-hosted GitLab provider displays on the list of Git providers.
-  Users in your organization can select this provider to [add a repository as a project source](../connect-git-provider.md) to Reunite, or to [add content from a remote repository](../../remote-content/index.md).
+  Users in your organization can select this provider to [add a repository as a project source](../connect-git-provider.md) to Reunite.
+  They can also [add content from a remote repository](../../remote-content/index.md).
 
 ## Edit self-hosted GitLab provider properties
 
@@ -56,7 +57,8 @@ To delete self-hosted Git provider instances:
    Then click the **Delete** button to confirm deletion.
 
 {% admonition type="danger" name="Irreversible action" %}
-  Deleting a GitLab self-hosted provider instance removes all associated OAuth and personal access token authorization credentials, and stops synchronization for remote content and projects related to this provider.
+  Deleting a GitLab self-hosted provider instance removes all associated OAuth and personal access token authorization credentials.
+  It also stops synchronization for remote content and projects related to this provider.
 
   Perform this action only if you're certain your organization has no use for this GitLab self-hosted provider instance.
 {% /admonition %}

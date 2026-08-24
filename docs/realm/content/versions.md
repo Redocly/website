@@ -32,7 +32,8 @@ The sidebar reflects the changes in files and filenames when you switch between 
   withLightbox=true
 /%}
 
-You can use this feature to: keep past versions of API descriptions for backwards compatibility, document experimental versions of software, or maintain release notes separate for each version.
+You can use this feature to keep past versions of API descriptions for backwards compatibility.
+You can also document experimental versions of software, or maintain release notes separate for each version.
 
 To configure your project to include multiple versions, complete the following tasks:
 
@@ -93,11 +94,13 @@ The following example includes versions `1.0`, `2.0`, and `3.0` of the `museum_a
 └── sidebars.yaml
 ```
 
-The `museum_api` versions will appear in the version picker in the same order as the version subfolders in the file tree: `1.0`, then `2.0`, and finally `3.0`.
+The `museum_api` versions will appear in the version picker in the same order as the version subfolders in the file tree.
+The order is `1.0`, then `2.0`, and finally `3.0`.
 The version opened by default will be the the last version, in this case: `3.0`.
 
 Since in `customer_api` the `legacy` version appears second, it would also be the default version.
-To make the `latest` version appear at the bottom of the list and be the default version, a `versions.yaml` file with the [desired configuration](#customize-the-version-picker) was added to the `customer_api` folder.
+The `latest` version should appear at the bottom of the list and be the default version.
+To do that, a `versions.yaml` file with the [desired configuration](#customize-the-version-picker) was added to the `customer_api` folder.
 
 Another example shows the `public beta` version of `payments_api`:
 
@@ -117,16 +120,19 @@ You can use a similar structure to prepare your project for upcoming versions of
 ## Customize the sidebar containing versioned content
 
 After creating the structure for your versioned content, you can create a custom sidebar configuration for this structure.
-Depending on your preferences and the contents of your project, you can place `sidebars.yaml` in the root directory of your project, or in the same folder as versioned content folders.
+Where you place `sidebars.yaml` depends on your preferences and the contents of your project.
+Place it in the root directory of your project, or in the same folder as versioned content folders.
 For example, if you have more than one collection of versioned content, you might want to create a separate sidebar for each collection.
 
 For more information about customizing sidebars, see: [Sidebar configuration](../navigation/sidebars.md).
 
-When you switch between versions, the sidebar updates according to the content of version subfolders, including sidebar item labels and the number of files in a version subfolder.
+When you switch between versions, the sidebar updates according to the content of version subfolders.
+Updates include sidebar item labels and the number of files in a version subfolder.
 
 ### Customize a sidebar for versioned content using the `directory` option
 
-If you want to create a sidebar for versioned folders without further customizations, you can add the entire parent folder of versioned content to a `sidebars.yaml` file.
+You can create a sidebar for versioned folders without further customizations.
+Add the entire parent folder of versioned content to a `sidebars.yaml` file.
 Using this method, any files you add or modify later, automatically update sidebar links when you build the project.
 The `directory` option sorts the links in the natural order.
 
@@ -152,7 +158,9 @@ The titles or the first headings of the files are used for the sidebar labels.
 
 ### Add a single sidebar for all version folders
 
-If you want to control the sidebar with a single file that determines the order of the links and the labels, create a `sidebars.yaml` file in the folder containing your version subfolders and add links to the individual files inside the version subfolders.
+You can control the sidebar with a single file that determines the order of the links and the labels.
+Create a `sidebars.yaml` file in the folder containing your version subfolders.
+Add links to the individual files inside the version subfolders.
 
 To add a single sidebar for all version folders:
 
@@ -168,7 +176,8 @@ To add a single sidebar for all version folders:
     │        └── @legacy/
     └── sidebars.yaml
     ```
-1. Add a `page` option with the value of a file path for each content file in each version subfolder in your `sidebars.yaml` file, as in the following example:
+1. Add a `page` option with the value of a file path for each content file in each version subfolder.
+   Add the options in your `sidebars.yaml` file, as in the following example:
     ```yaml {% title="sidebars.yaml" %}
     - page: index.md
       label: Main page
@@ -217,7 +226,8 @@ To set custom default versions, see [Customize the version picker](#customize-th
 
 ### Add a dedicated sidebar for each version folder
 
-To prevent the sidebar at the root of your project from becoming overly long, you can maintain separate `sidebars.yaml` files for your versioned content in their respective folders.
+The sidebar at the root of your project can become overly long.
+To prevent that, maintain separate `sidebars.yaml` files for your versioned content in their respective folders.
 This approach can be especially useful when your content has a large number of versions.
 
 To add a dedicated `sidebars.yaml` for each version folder:
@@ -252,7 +262,8 @@ To add a dedicated `sidebars.yaml` for each version folder:
     ├── index.md
     └── sidebars.yaml
     ```
-1. Add a `page` option with a value of the file path for each content file in each version subfolder in each `sidebars.yaml` file, as in the following example:
+1. Add a `page` option with a value of the file path for each content file in each version subfolder.
+   Add the options in each `sidebars.yaml` file, as in the following example:
     ```yaml {% title="museum.sidebars.yaml" %}
     - page: /@1.0/index.md
       label: Museum API
@@ -431,7 +442,8 @@ function VersionedPage() {
 
 ## Versions configuration options
 
-If you want to specify the default version and which versions to include in your project, create a `versions.yaml` file on the same level as your version folders.
+You can specify the default version and which versions to include in your project.
+Create a `versions.yaml` file on the same level as your version folders.
 
 ### Options
 

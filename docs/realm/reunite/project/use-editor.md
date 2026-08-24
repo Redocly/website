@@ -22,7 +22,8 @@ Since Redocly projects are saved using Git, any updates are saved by committing 
 
 ### Switch branches
 
-If you need to change to a different branch from the branch you are working in, you can change the branch using the branch switcher at the top of the editor page.
+You might need to change to a different branch from the branch you are working in.
+Use the branch switcher at the top of the editor page.
 
 {% img
   src="../../_partials/images/current-branch.png"
@@ -161,7 +162,8 @@ Hover over any commit to see details including:
 
 ## Revert changes
 
-If you want to discard the changes you made, before you commit them to the branch, you can revert the changes to put the files back into the state from the last commit.
+You might want to discard the changes you made, before you commit them to the branch.
+Revert the changes to put the files back into the state from the last commit.
 You can revert changes to all files since the last commit, or select the files to revert.
 
 To revert changes:
@@ -206,7 +208,8 @@ By default, searches include all folders, but you can specify a folder using the
   withLightbox=true
 /%}
 
-You can also specify whether search should match the case and whole word of your search query, and use regular expressions in your search query by clicking the icons in the search field.
+You can also specify whether search should match the case and whole word of your search query.
+Click the icons in the search field to set these options or use regular expressions.
 
 {% img
   src="../images/search-options.png"
@@ -216,9 +219,11 @@ You can also specify whether search should match the case and whole word of your
 
 ## Sync with main
 
-If you are working on a development branch, you may need to sync your branch with the main branch if changes have been added to main while you were working in the development branch.
+You might work on a development branch while changes are added to main.
+In that case, you may need to sync your branch with the main branch.
 
-You can sync your branch, pulling in the changes from main since you created your development branch, by clicking the **Sync** button at the bottom of the editor pane.
+You can sync your branch by clicking the **Sync** button at the bottom of the editor pane.
+Syncing pulls in the changes from main since you created your development branch.
 
 {% img
   src="../images/sync-button.png"

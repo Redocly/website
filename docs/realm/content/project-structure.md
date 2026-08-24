@@ -280,7 +280,8 @@ When the default version changes to `v3`, the paths also change:
 - `/config/@v2/guide.md` becomes `/config/v2/guide`.
 - `/config/@v3/guide.md` (default version) becomes `/config/guide`.
 
-Some of your content files in the same location may share a name, but have different extensions, or be an index file in a folder with the same name as files in the parent folder:
+Some of your content files in the same location may share a name but have different extensions.
+A file can also be an index file in a folder with the same name as files in the parent folder:
 
 ```treeview {% title="Example of files with identical names in the same folder" %}
 ...
@@ -350,7 +351,8 @@ You can override or add various elements:
 
 ### Static files (`static/`)
 
-While assets referenced directly within your content files (like images in Markdown using relative paths `./images/diagram.png`) are typically processed and bundled by Realm, there's often a need for files that should be copied directly to the root of the final build output without any changes.
+Assets referenced directly within your content files (like images in Markdown using relative paths `./images/diagram.png`) are typically processed and bundled by Realm.
+However, you often need files that are copied directly to the root of the final build output without any changes.
 
 The `static/` directory serves this purpose.
 Any files placed inside the `static/` folder will be copied verbatim to the root of your built site.

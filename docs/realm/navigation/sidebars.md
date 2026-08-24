@@ -19,7 +19,8 @@ keywords:
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The sidebar is generated automatically based on your project's file structure if no `sidebars.yaml` file exists.
-By default, items in the sidebar menu are sorted using natural ordering: letter characters follow the alphabetical order and multi-digit numbers are treated as a single character.
+By default, items in the sidebar menu are sorted using natural ordering.
+Letter characters follow the alphabetical order and multi-digit numbers are treated as a single character.
 `index.md` files by default appear as the first item in any sidebar.
 
 For example, the following files: `index.md`, `concept-1.md`, `concept-11.md`, and `concept-2.md`, result in the following sidebar:

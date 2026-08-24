@@ -25,7 +25,8 @@ To configure access to your project, see [`requiresLogin`](../config/access/requ
 
 ## Role-based Access Control
 
-Enterprise and Enterprise+ users can configure Redocly's RBAC system to protect sensitive documentation, restrict access to specific user groups, and manage permissions at the page and navigation level.
+Enterprise and Enterprise+ users can configure Redocly's RBAC system.
+Use it to protect sensitive documentation, restrict access to specific user groups, and manage permissions at the page and navigation level.
 RBAC is perfect for internal documentation, API keys, or content that should only be visible to specific teams.
 
 ### Authentication vs Authorization
@@ -39,7 +40,8 @@ Understanding the difference between authentication and authorization is crucial
 - **Manual role assignment** for organization-wide roles (when using Redocly's login system)
 - **Team assignments** for project-specific access (teams can be managed through identity provider or Redocly)
 
-The source of your role and team information depends on whether you're using SSO with an identity provider or Redocly's built-in authentication and team management systems.
+The source of your role and team information depends on your setup.
+You can use SSO with an identity provider or Redocly's built-in authentication and team management systems.
 
 ### Core access control concepts
 

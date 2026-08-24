@@ -1,7 +1,8 @@
 # Custom Styling
 
 You can customize the styling and theme of your documentation using CSS.
-This page provides an in-depth explanation of how styling works in a Redocly project and how CSS variables can be used to create flexible, maintainable styling rules for your documentation.
+This page provides an in-depth explanation of how styling works in a Redocly project.
+It also explains how CSS variables can be used to create flexible, maintainable styling rules for your documentation.
 
 ## Customize your documentation
 
@@ -335,7 +336,8 @@ Here's how that variable is nested:
 ```
 
 Overriding variables closer to the root value are theme-level changes.
-The styling change will trickle down to any nested variables.For example, changing the value for either `--bg-raised` or `--code-block-background-color` will also change the styling of any variables built on top of them.
+The styling change will trickle down to any nested variables.
+For example, changing the value for either `--bg-raised` or `--code-block-background-color` will also change the styling of any variables built on top of them.
 
 Overriding variables at the bottom of the nesting hierarchy will impact something more specific.
 For example, overriding `--detailed-error-message-background` will only change the styling for the error message background.

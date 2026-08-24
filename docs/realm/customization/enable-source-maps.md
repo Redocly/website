@@ -17,7 +17,8 @@ This guide shows you how to enable source maps in your Redocly project.
 
 ## Understand source maps
 
-[Source maps](https://web.dev/articles/source-maps) are debugging tools that create a bridge between source code and the processed code that runs in production, which is often minified or bundled.
+[Source maps](https://web.dev/articles/source-maps) are debugging tools that create a bridge between source code and the processed code that runs in production.
+Production code is often minified or bundled.
 This allows you to inspect and debug the _original_ source code using browser developer tools, even when working with transformed files.
 
 In Redocly projects, source maps are particularly useful when developing custom React pages, Markdoc tags, or Markdoc functions.

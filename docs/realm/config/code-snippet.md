@@ -16,7 +16,8 @@ description: Configure which control UI elements are available for code snippets
 
 Configure which control UI elements are available for code snippets.
 Code snippets are small sections of code you can include in your Markdown and OpenAPI documents.
-In Markdown code snippets are formatted by wrapping the text in two sets of three backticks, placed at the start and end of the text block.
+In Markdown, code snippets are formatted by wrapping the text in two sets of three backticks.
+Place the backticks at the start and end of the text block.
 
 For example, the following is a code snippet with yaml:
 
@@ -145,7 +146,8 @@ When users click the report button or text, they are provided a comment feedback
 
 ### Expand object
 
-Use the expand button to show all the nested properties inside a JSON object that is included as a sample request or response in an OpenAPI definition.
+Use the expand button to show all the nested properties inside a JSON object.
+This applies to sample requests or responses in an OpenAPI definition.
 
 {% table %}
 
@@ -164,7 +166,8 @@ Use the expand button to show all the nested properties inside a JSON object tha
 
 ### Collapse object
 
-Users can use collapse button to hide all the nested properties inside a JSON object that is included as a sample request or response in an OpenAPI definition.
+Users can use the collapse button to hide all the nested properties inside a JSON object.
+This applies to sample requests or responses in an OpenAPI definition.
 
 {% table %}
 

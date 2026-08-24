@@ -12,7 +12,8 @@ description: Setup Search Engine Optimization(SEO) for your project.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Use the `seo` options to control the contents of your project's HTML `<head>` element, `llms.txt` file generation, and search engine optimization features like sitemaps and indexing control.
+Use the `seo` options to control the contents of your project's HTML `<head>` element and `llms.txt` file generation.
+The options also control search engine optimization features like sitemaps and indexing control.
 You can override `seo` options, except `llmstxt`, in the [front matter](./front-matter-config.md) of Markdown and React pages.
 
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "seo"} /%}
@@ -274,7 +275,8 @@ The default values for the `llmstxt` object are:
 
 ## Sitemaps
 
-A sitemap is a resource that lists all the pages in your website to help search engines and other automation tools identify all the pages available.
+A sitemap is a resource that lists all the pages in your website.
+It helps search engines and other automation tools identify all the pages available.
 
 ### Generate a sitemap
 

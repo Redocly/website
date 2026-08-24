@@ -34,7 +34,8 @@ The `rules` block can be used at the root of a configuration file, or inside an 
 - [Rule object](#rule-object)
 - **REQUIRED**.
   Add as many rule entries as you like.
-  These keys must be built-in rules (for example `security-defined`), configurable rules that you declare here (for example `rule/my-custom-rule`), or a rule from a plugin (for example `my-plugin/add-awesome`).
+  These keys must be built-in rules (for example `security-defined`) or configurable rules that you declare here (for example `rule/my-custom-rule`).
+  A rule from a plugin (for example `my-plugin/add-awesome`) also works.
 
 {% /table %}
 
@@ -104,7 +105,8 @@ rules:
       - can
 ```
 
-All the rules are configured to produce errors if their criteria are not met, the first two use the shorthand syntax to configure the severity of the rule since no other options are needed for those rules.
+All the rules are configured to produce errors if their criteria are not met.
+The first two use the shorthand syntax to configure the severity, since no other options are needed for those rules.
 The `boolean-parameter-prefixes` rule also accepts a list of allowed prefixes, and those are also configured in the example.
 
 ### Configure your own rules

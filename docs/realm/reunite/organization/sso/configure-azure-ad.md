@@ -104,8 +104,8 @@ Go back to the Redocly SSO configuration screen that was opened earlier, and fil
 - **Issuer ID**: Use `Microsoft Entra Identifier` from the SAML SSO setup screen.
 - **X509 Certificate**: Download the **Base64 Certificate** from the Microsoft Entra Single sign-on screen and paste the contents into this field.
 
-Microsoft Entra doesn't send group names in the SAML response, so you may need to configure the team claim mapping
-in order to use human-readable team names for RBAC.
+Microsoft Entra doesn't send group names in the SAML response.
+You may need to configure the team claim mapping in order to use human-readable team names for RBAC.
 
 To do this, you need to Select **Configure team claim mapping** checkbox and add the mapping from the group ID to the team name.
 

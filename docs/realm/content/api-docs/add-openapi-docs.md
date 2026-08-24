@@ -22,7 +22,8 @@ All versions of OpenAPI are supported.
 ## Add an OpenAPI description to your project
 
 Place the OpenAPI description file anywhere in your project, either at the root or in a folder.
-When you run your project, the file is detected automatically and served as reference documentation with its own sidebar, which is generated from the tags and operations in the description.
+When you run your project, the file is detected automatically and served as reference documentation with its own sidebar.
+The sidebar is generated from the tags and operations in the description.
 No extra configuration is required.
 
 For example, add `apis/sample-api.yaml`, then open `/apis/sample-api` to see the generated reference.
@@ -37,7 +38,8 @@ For more information, see [file-based routing](../project-structure.md#file-base
 
 ## Add API reference to your site navigation
 
-The reference is served at its own URL and has its own automatically generated sidebar, so it's reachable as soon as you add it, with no navigation configuration required.
+The reference is served at its own URL and has its own automatically generated sidebar.
+It's reachable as soon as you add it, with no navigation configuration required.
 
 To help people find it, link to it from wherever you want.
 For example, add it to the [navbar](../../config/navbar.md) with a `page` that points at the OpenAPI file:

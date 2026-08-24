@@ -51,7 +51,8 @@ You can ascertain the version your project is using with the developer tools in 
 
 To verify the version your project is using:
 
-1. From the Reunite editor, open the preview or production build of your project in your browser, using the **View** drop-down in the top left corner of the page.
+1. From the Reunite editor, open the preview or production build of your project in your browser.
+   Use the **View** drop-down in the top left corner of the page.
 
    {% img
     src="../content/images/view-project-dropdown.png"
@@ -73,7 +74,9 @@ After you have determined what version your project is running, you can find the
 
 ## Find the latest product version
 
-If you know what version you are running, but you are not sure if it is the latest version, you can see a list of all available versions or get only the latest version either from the [changelog](../changelog.page.tsx) or by using npm commands.
+You might know what version you are running, but not whether it is the latest version.
+You can see a list of all available versions or get only the latest one.
+Use the [changelog](../changelog.page.tsx) or npm commands.
 
 To find the latest Realm version, use the following npm command:
 
@@ -85,7 +88,7 @@ To find a list of all available Realm versions, use the following npm command:
 
 {% admonition type="info" name="Other products" %}
 If you are using a different product than Realm, such as Reef, Revel, Redoc, or a combination, substitute that product name in the command.
-For example, to find the latest Reef version, use the following command: `npm view @redocly/reef`
+For example, to find the latest Reef version, use the following command: `npm view @redocly/reef`.
 See a list of product names and their corresponding packages in the [Before you begin](#before-you-begin) section.
 {% /admonition %}
 
@@ -101,7 +104,8 @@ You also need to install `@redocly/cli` globally and your Redocly product to you
 
 To run a specific version working locally:
 
-1. Add the following `package.json` file to the root of your project, replacing `realm` with the Redocly product you are using and the `*` for the version you want to run:
+1. Add the following `package.json` file to the root of your project.
+   Replace `realm` with the Redocly product you are using and the `*` for the version you want to run:
 
    ```json   {% title="package.json" %}
    {
@@ -132,8 +136,10 @@ To run a specific version working locally:
 
 ### Run a specific product version in Reunite
 
-If you are working in the Reunite editor, your project by default uses the most recent version, and automatically updates whenever new versions are released and you trigger a new build.
-However, if you would like to use a specific version and not update automatically, you can add a `package.json` file to your project with the version listed.
+If you are working in the Reunite editor, your project by default uses the most recent version.
+It automatically updates whenever new versions are released and you trigger a new build.
+However, you might want to use a specific version and not update automatically.
+In that case, add a `package.json` file to your project with the version listed.
 
 To run a specific version in Reunite:
 
@@ -147,7 +153,8 @@ To run a specific version in Reunite:
    </details>
 
 2. On the new development branch, add a new file named `package.json` by clicking the **+** icon and selecting **New file**.
-3. Paste the following configuration into the `package.json` file, replacing `realm` with the Redocly product you are using and the `*` for the version you want to run::
+3. Paste the following configuration into the `package.json` file.
+   Replace `realm` with the Redocly product you are using and the `*` for the version you want to run:
 
    ```json   {% title="package.json" %}
    {

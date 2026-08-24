@@ -27,7 +27,8 @@ All files placed into the `static` folder are served directly from the project r
 This allows you to dynamically reference them with absolute links.
 For example, if you had a file `./static/image.png`, you would link to it with `https://your-project.example.com/image.png`.
 
-Another example use case related to SEO is if you would like to store `robots.txt` in site root to make it available for different site crawlers, like `https://your-project.example.com/robots.txt`.
+Another example use case related to SEO is storing `robots.txt` in the site root.
+This makes it available for different site crawlers, like `https://your-project.example.com/robots.txt`.
 
 ## Protect static assets
 
@@ -50,7 +51,8 @@ rbac:
 ## Ignore static folders and files
 
 In some cases, you may want to exclude specific pages from project builds without removing the source files from your project.
-You can exclude specific pages from project builds by adding the relative path or glob pattern of the file or entire folder to the `ignore` configuration option in your `redocly.yaml` file.
+You can exclude specific pages from project builds.
+Add the relative path or glob pattern of the file or entire folder to the `ignore` configuration option in your `redocly.yaml` file.
 
 To prevent broken links or potential build failures, make sure to remove any entries for the ignored page from your `sidebars.yaml` file.
 If other Markdown or TypeScript pages have links pointing to the excluded page, those links should be modified or removed prior to building the project.

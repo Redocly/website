@@ -10,7 +10,8 @@ When deciding which approach to take, consider which of the following factors ar
 - **Performance:** Using a link in the tag is more performant because browsers can initiate font downloads sooner.
   In projects with large stylesheets, importing a font can delay rendering.
 
-- **Workflow:** If authors need more control over how the fonts are applied or how they're organized in the stylesheets then using imports might make sense for their project.
+- **Workflow:** Authors might need more control over how the fonts are applied or how they're organized in the stylesheets.
+  In that case, using imports might make sense for their project.
 
 ## Before you begin
 
@@ -28,10 +29,8 @@ This maintains good page performance because the download doesn't block the page
 <details>
   <summary>Learn more about the <code>&lt;head&gt;</code> tag</summary>
 
-  The `<head>` tag contains metadata, links to
-  scripts and stylesheets, and other information that is
-  important for the HTML document's structure, but isn't
-  directly displayed on the webpage.
+  The `<head>` tag contains metadata, links to scripts and stylesheets, and other information that is important for the HTML document's structure.
+  This information isn't directly displayed on the webpage.
   The `<head>` tag always loads before the `<body>` tag.
 
   The following is an example `<head>` HTML element that includes some metadata as well as a link to a stylesheet:
@@ -73,7 +72,8 @@ Afterward, view your changes locally or in Reunite.
 
 ## Import the font in your CSS file
 
-If you need to consolidate multiple font files or want more control over how your font files are loaded through CSS rules, you can import custom fonts in your CSS file.
+You might need to consolidate multiple font files or want more control over how your font files are loaded through CSS rules.
+In those cases, you can import custom fonts in your CSS file.
 
 To import a font in your CSS file:
 

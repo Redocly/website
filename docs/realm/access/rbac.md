@@ -99,13 +99,15 @@ rbac:
 In this example in the `content` option `**`, `docs/developer-keys.md`, `docs/*.md`, `**/*.tsx` are resource identifiers.
 For every resource identifier, the configuration specifies a team and assigns a project role for that team, for example, `Developers: read`.
 The `**` key describes the project role assignments to teams for resources that are not specified in this configuration.
-For example, a user that belongs to the `authenticated` team will have `read` permission for the `index.md` file, which is not included in the three resource identifiers listed.
+For example, a user that belongs to the `authenticated` team will have `read` permission for the `index.md` file.
+That file is not included in the three resource identifiers listed.
 
 Assigning the `*` symbol means that a given project role is assigned to the rest of the teams that are not specified for the resource.
 In the example, the `Developers` team has the `write` project role for everything under `public/`.
 All other teams have `read` permission for those files.
 
-If a resource matches with more than one pattern described in the RBAC configuration, only the rules for the best match are applied to that resource.
+A resource can match more than one pattern described in the RBAC configuration.
+In that case, only the rules for the best match are applied to that resource.
 For example, the `docs/developer-keys.md` file matches both `docs/developer-keys.md` and `docs/*.md` entries in the RBAC configuration, but only rules from the first instance are applied.
 
 Under the `reunite` option, it describes the project role assignments to teams for access to the project.

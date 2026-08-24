@@ -12,7 +12,8 @@ plans:
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The `ReplayGate` component wraps the entire Replay UI and controls whether users can reach it.
-By ejecting and replacing it, you can require users to authenticate before Replay opens — for example, completing an OAuth 2.0 flow, entering an API key, or signing in with your own identity provider.
+By ejecting and replacing it, you can require users to authenticate before Replay opens.
+Examples include completing an OAuth 2.0 flow, entering an API key, or signing in with your own identity provider.
 
 When a user authenticates, call `setEnvironmentValues` to set the token as an environment variable.
 Replay picks up the value automatically and prefills it in every operation that declares a matching security scheme.
@@ -65,7 +66,8 @@ This command creates a local copy of `ReplayGate.tsx` in your project's `@theme/
 - string
 - The current OpenAPI description's id, when your project defines one.
   Use it to vary behavior per API in a multi-API catalog.
-  For example, scoping a stored token's key so different APIs don't share (or overwrite) each other's credentials, or using a different auth mechanism entirely for APIs that need one.
+  For example, scope a stored token's key so different APIs don't share (or overwrite) each other's credentials.
+  You can also use a different auth mechanism entirely for APIs that need one.
 ---
 - `children`
 - `React.ReactNode`
@@ -81,7 +83,8 @@ Replay generates one environment per API server defined in your OpenAPI descript
 The environment name is the server's `name`, `description`, or URL — whichever is set first.
 
 Each environment has a set of inputs derived from the operation's security schemes.
-The input names follow the pattern `{schemeId}{suffix}`, where `schemeId` is the security scheme identifier from your OpenAPI description and the suffix depends on the scheme type:
+The input names follow the pattern `{schemeId}{suffix}`.
+`schemeId` is the security scheme identifier from your OpenAPI description, and the suffix depends on the scheme type:
 
 {% table %}
 - Scheme type
@@ -155,7 +158,8 @@ If the key matches an existing input (a security scheme, path parameter, or dyna
 If it doesn't match anything, Replay creates a new input with that name in the target environment.
 This behavior is useful for injecting values your OpenAPI description doesn't model as security, such as an internal tracing header.
 
-By default, a value is not masked in the Replay UI: a plain string keeps an existing input's current masking, and a newly created input starts out unmasked.
+By default, a value is not masked in the Replay UI.
+A plain string keeps an existing input's current masking, and a newly created input starts out unmasked.
 Pass an object instead of a string to control this explicitly:
 
 ```tsx
@@ -186,10 +190,12 @@ export function ReplayGate({ children }: ReplayGateProps) {
 ## Example: OAuth 2.0 popup flow
 
 The following example implements a full OAuth 2.0 authorization code flow using a popup window.
-It validates any stored token on mount, opens the authorization URL automatically if the token is missing or expired, and injects the token into Replay's active environment after a successful sign-in.
+It validates any stored token on mount and opens the authorization URL automatically if the token is missing or expired.
+After a successful sign-in, it injects the token into Replay's active environment.
 
 While that initial check runs, it shows a loading spinner instead of the sign-in button.
-Without a distinct loading state, returning users with a valid token would see the sign-in button flash on screen for however long the validation request takes.
+Without a distinct loading state, returning users with a valid token would see a flash.
+The sign-in button would show for however long the validation request takes.
 
 Replace the constants at the top (`CLIENT_ID`, `OAUTH_BASE_URL`, `REDIRECT_URI`, and `TOKEN_INPUT_NAME`) with values from your own identity provider.
 
@@ -418,7 +424,8 @@ export function ReplayGate({
 
 {% tab label="Callback page" %}
 The popup redirects to your redirect URI after the user signs in.
-An [API function](./api-functions/api-functions-reference.md) exchanges the authorization code for an access token, then returns an HTML page that delivers the token back to the opener via `BroadcastChannel` and closes the popup.
+An [API function](./api-functions/api-functions-reference.md) exchanges the authorization code for an access token.
+It then returns an HTML page that delivers the token back to the opener via `BroadcastChannel` and closes the popup.
 
 The filename's `.get` suffix maps this file to `GET /api/login`, matching the `REDIRECT_URI` used above.
 

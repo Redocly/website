@@ -14,7 +14,8 @@ plans:
 
 The `card` and `cards` tags work together to create visually appealing, structured content elements ("cards") in your documentation.
 
-The `card` tag allows you to create an individual card element that contains your markup, while the `cards` tag organizes multiple cards into a responsive grid layout.
+The `card` tag allows you to create an individual card element that contains your markup.
+The `cards` tag organizes multiple cards into a responsive grid layout.
 
 ## Syntax and usage
 
@@ -99,7 +100,7 @@ A card only works as a child of `cards`.
     The icons automatically adjust their colors when users change the color mode.
 
     To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
-    To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+    To add an icon from another built-in pack, prefix the icon name with `solid` (Classic Solid), `duotone` (Duotone Solid), or `brands` (Classic Brands).
 
     **Examples:** `book`, `duotone book`, `brands github`
 

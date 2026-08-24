@@ -42,7 +42,8 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 - ignoreLint
 - boolean | object
-- Publish a production project, even if Reunite detects an API description in the project that scores below the minimum standard set either by the `scorecardClassic` or `api` options in the `redocly.yaml` file.
+- Publish a production project, even if Reunite detects an API description in the project that scores below the minimum standard.
+  The standard is set either by the `scorecardClassic` or `api` options in the `redocly.yaml` file.
   Default: `false`.
 
 ---
@@ -64,7 +65,8 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 - jobs
 - [[Jobs object](#jobs-object)]
-- Defines jobs based on Arazzo Descriptions in your project that can be used to monitor the performance of your APIs by referencing OpenAPI Descriptions in your project.
+- Defines jobs based on Arazzo Descriptions in your project.
+  The jobs monitor the performance of your APIs by referencing OpenAPI Descriptions in your project.
 
 {% /table %}
 
@@ -199,7 +201,8 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 ### Ignore errors examples
 
-The following example configuration allows you to publish production project deployments even if Reunite detects broken links, an API description in the project that scores below the minimum standard, Markdoc errors, and Respect Monitoring issues:
+The following example configuration allows you to publish production project deployments past every check.
+Deployments publish even if Reunite detects broken links, an API description that scores below the minimum standard, Markdoc errors, and Respect Monitoring issues:
 
 ```yaml {% title="redocly.yaml" %}
 reunite:

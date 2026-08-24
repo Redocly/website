@@ -22,10 +22,10 @@ Below are some best practices and things to consider when linking in the project
 ## Add links to localized content
 
 Files from the default language that are not in other languages are copied into those languages when the project is built.
-If you include a link in a file for the default language,
-when the file is copied to other languages, the link is automatically modified to reference content from that language.
-If you include a link in a file for a non-default language, and you want to reference a file that is only in the default language,
-reference the file as if it is in that language.
+You can include a link in a file for the default language.
+When the file is copied to other languages, the link is automatically modified to reference content from that language.
+You can include a link in a file for a non-default language that references a file existing only in the default language.
+In that case, reference the file as if it is in that language.
 
 To illustrate how to reference localized content, the following examples use a project with the following file structure:
 
@@ -66,7 +66,8 @@ your-project/
 
 ## Add links to versioned content
 
-When you add links to versioned content from other files, including `sidebars.yaml` or `redocly.yaml`, the path to these files depends on the structure of your project.
+You can add links to versioned content from other files, including `sidebars.yaml` or `redocly.yaml`.
+The path to these files depends on the structure of your project.
 
 To illustrate how to add links to versioned content, the following examples use a project with the following file structure:
 

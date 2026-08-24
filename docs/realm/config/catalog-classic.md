@@ -252,12 +252,13 @@ When users click an item in the catalog, the routing behavior depends on your si
 This means clicking an OpenAPI document in the catalog may not navigate directly to the API reference documentation.
 Instead, it navigates to whatever appears first in your sidebar configuration, such as a home page or getting started guide.
 
-To ensure users reach specific content when clicking catalog items, organize your `sidebars.yaml` files so the most important content appears first, or create dedicated landing pages that introduce each API.
+To ensure users reach specific content when clicking catalog items, organize your `sidebars.yaml` files so the most important content appears first.
+You can also create dedicated landing pages that introduce each API.
 
 {% admonition type="info" name="Setup access to catalog" %}
 
-If you want to display the catalog only to users that are members of particular teams, configure
-the `rbac` object in the `redocly.yaml` configuration file as follows:
+You can display the catalog only to users that are members of particular teams.
+Configure the `rbac` object in the `redocly.yaml` configuration file as follows:
 
 ```yaml
 rbac:

@@ -15,8 +15,9 @@ plans:
 The `numbered-list` tag renders a vertical, sequential list of items connected by a rail, providing a structure for step-by-step instructions, timelines, and processes.
 Each item can hold rich Markdown content, including code blocks, admonitions, and tables.
 
-If an item starts with a heading, the heading becomes the item headline:
-it receives a deep-linkable anchor, appears in the "On this page" table of contents, and users can copy a direct link to the item by clicking its marker.
+If an item starts with a heading, the heading becomes the item headline.
+It receives a deep-linkable anchor and appears in the "On this page" table of contents.
+Users can copy a direct link to the item by clicking its marker.
 
 ## Syntax and usage
 
@@ -98,7 +99,7 @@ Markers auto-number from 1 in document order.
     The icons automatically adjust their colors when users change the color mode.
 
     To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
-    To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+    To add an icon from another built-in pack, prefix the icon name with `solid` (Classic Solid), `duotone` (Duotone Solid), or `brands` (Classic Brands).
 
     **Examples:** `book`, `duotone book`, `brands github`
 

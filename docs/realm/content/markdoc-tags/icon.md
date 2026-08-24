@@ -35,7 +35,7 @@ You can also use `icon` in navigation elements: [sidebars](../../navigation/side
     The icons automatically adjust their colors when users change the color mode.
 
     To add an icon from the Classic Regular pack, you can provide the icon name only or prefix the name with `regular`.
-    To add an icon from other built-in packs, prefix the icon name with: `solid` (for Classic Solid), `duotone` (for Duotone Solid), or `brands` (for Classic Brands).
+    To add an icon from another built-in pack, prefix the icon name with `solid` (Classic Solid), `duotone` (Duotone Solid), or `brands` (Classic Brands).
 
     **Examples:** `book`, `duotone book`, `brands github`
 

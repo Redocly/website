@@ -256,12 +256,14 @@ Right-click any tab to open the tab context menu and choose one of the following
 - **Copy path** - copies the file path of the tab to the clipboard (available for file tabs only).
 - **Split right**, **Split left**, **Split up**, **Split down** - moves the tab into a new group positioned relative to the current group.
 
-You can also drag a tab by its header and drop it on the edges or center of another group to move it, or onto the middle to create a new group.
+You can also drag a tab by its header and drop it on the edges or center of another group to move it.
+Drop it onto the middle to create a new group.
 
 The **More actions** icon on the right side of each tabs header provides group-level shortcuts to:
 
 - Close all or close unchanged tabs in that group.
-- Reset the editor to the default layout with an empty tab group in the center of the screen, and a utility tab group on the right.
+- Reset the editor to the default layout.
+  The default has an empty tab group in the center of the screen, and a utility tab group on the right.
 - Open the Webview, Documentation, or Replay utility tab.
 - Toggle word wrap for the active editor tab.
 

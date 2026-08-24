@@ -179,7 +179,8 @@ To style a specific product, use the product class selector in your `@theme/styl
 
 ## Apply custom classes or IDs
 
-You can apply custom CSS classes or IDs included in your `styles.css` file to many Markdown or Markdoc block level elements such as table cells, list items, quotes, and headers using Markdoc annotation syntax.
+You can apply custom CSS classes or IDs included in your `styles.css` file using Markdoc annotation syntax.
+Apply them to many Markdown or Markdoc block level elements such as table cells, list items, quotes, and headers.
 
 To apply a custom class to a Markdown element:
 

@@ -68,7 +68,8 @@ Each event provides information about a specific event as well as some basic inf
 
 - panelToggle
 - string
-- A function that records when a user expands or collapses any panel in the Reference docs UI (for example, request, responses, request samples, or response samples).
+- A function that records when a user expands or collapses any panel in the Reference docs UI.
+  Example panels: request, responses, request samples, or response samples.
   Includes details about the panel type (panelType) and its state (expanded or collapsed).
 
 ---

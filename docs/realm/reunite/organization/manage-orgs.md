@@ -109,9 +109,11 @@ If you have an external repository connected to Reunite, data in that repository
 
 ## Leave organization
 
-You can leave an organization if, for instance, you created it for someone else and no longer need access or you need to create another organization and have reached the limit on how many you can create.
+You can leave an organization if, for instance, you created it for someone else and no longer need access.
+You can also leave if you need to create another organization and have reached the limit on how many you can create.
 When you leave an organization, the action is permanent, so be sure to back up any pertinent data.
-If you are the sole user with the Owner in an organization, you must assign another user the Owner role before you can leave the organization.
+You might be the sole user with the Owner role in an organization.
+In that case, you must assign another user the Owner role before you can leave.
 
 1. After logging in, select **General** in the navigation menu on the left side of the page.
 2. Click the **Leave** button for **Leave organization**.

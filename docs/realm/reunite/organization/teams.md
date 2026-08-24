@@ -33,7 +33,8 @@ Teams can be managed in two different ways depending on your authentication setu
 
 {% admonition type="info" name="Use team names from RBAC" %}
 
-Team names used in the [team mapping single sign-on settings](./sso/add-idp.md#team-mapping) or added in Reunite **must** match the names listed in the `rbac` configuration in your `redocly.yaml` file for the permissions to be granted.
+Team names used in the [team mapping single sign-on settings](./sso/add-idp.md#team-mapping) or added in Reunite **must** match the `rbac` configuration names in your `redocly.yaml` file.
+Otherwise, the permissions are not granted.
 
 {% /admonition %}
 
@@ -104,7 +105,8 @@ rbac:
       authenticated: read
 ```
 
-As a result, users in both the `Developers` and `authenticated` teams have `write` role permissions for the other resources, but only `read` role permissions for the `docs/**/*.md` resources.
+As a result, users in both the `Developers` and `authenticated` teams have `write` role permissions for the other resources.
+They have only `read` role permissions for the `docs/**/*.md` resources.
 
 ## Team managers
 
@@ -123,7 +125,8 @@ Team managers can:
 
 ## Manage teams
 
-If you are logged in to Reunite and have an [Owner organization role](../../access/roles.md#organization-roles), you can view and manage **Reunite-managed teams** from the **Teams** page in the following ways:
+Log in to Reunite with an [Owner organization role](../../access/roles.md#organization-roles).
+You can then view and manage **Reunite-managed teams** from the **Teams** page in the following ways:
 
 - Create a new team
 - Add members to a team
@@ -135,7 +138,8 @@ If you are logged in to Reunite and have an [Owner organization role](../../acce
 
 {% admonition type="warning" name="Imported teams are read-only" %}
 **Identity provider managed teams cannot be edited** through the Teams page.
-If a team is imported from your identity provider, you must make changes to team membership and composition in your identity provider system (e.g., Active Directory, Okta, etc.).
+A team can be imported from your identity provider.
+In that case, make changes to team membership and composition in your identity provider system (e.g., Active Directory, Okta, etc.).
 {% /admonition %}
 
 Only users with an Owner organization role and members assigned as team managers can access the **Teams** page.

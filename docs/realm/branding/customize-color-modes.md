@@ -76,7 +76,8 @@ Then you can override an element-specific CSS variable only when needed.
 
 ### Annotate Markdown elements
 
-Adding annotations to your Markdown elements can be used to add selectors, making them a good solution for adding color-mode-specific styling to elements that are otherwise difficult to select.
+Adding annotations to your Markdown elements gives them selectors.
+Annotations are a good solution for adding color-mode-specific styling to elements that are otherwise difficult to select.
 
 To use annotation to apply styling for different color modes:
 

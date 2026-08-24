@@ -25,7 +25,8 @@ Make sure you have the following:
 
 ## Add custom styles for a locale
 
-To add styles that would only apply to a specific locale, you can use the `:root` element selector combined with a `lang` attribute selector in the `@theme/styles.css` file.
+You can add styles that only apply to a specific locale.
+Use the `:root` element selector combined with a `lang` attribute selector in the `@theme/styles.css` file.
 The `lang` attribute value should match the locale code from `redocly.yaml`.
 
 For example, to add styles that would only apply to the Spanish locale, you can use the following:

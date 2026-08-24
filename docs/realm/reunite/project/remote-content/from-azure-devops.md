@@ -12,7 +12,8 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-If your content is stored in a repository on Azure DevOps Services, you can connect that repository, so you can access and publish those files in Reunite.
+Your content can be stored in a repository on Azure DevOps Services.
+Connect that repository so you can access and publish those files in Reunite.
 
 To connect an Azure DevOps repository, you must first create a new personal access token (PAT) token in Azure DevOps.
 Afterward, you must create a new branch, enter the connection details, and merge the open pull request in Reunite.
@@ -27,12 +28,15 @@ Afterward, you must create a new branch, enter the connection details, and merge
 
 ## Enter the connection details in Reunite
 
-After you have created a new branch in Reunite, you can add remote content to your project in Reunite using the connection details you have collected from Azure DevOps.
+After you have created a new branch in Reunite, you can add remote content to your project.
+Use the connection details you have collected from Azure DevOps.
 
 To enter the connection details in Reunite:
 
-1. In the file tree, select the folder (or click on the empty space to select the root directory) where you want to add the remote content.
-1. Select **+ > New remote folder > Add Git repository** to add a remote content folder, or **+ > New remote file > Add Git repository** to add a remote content file.
+1. In the file tree, select the folder where you want to add the remote content.
+   You can also click on the empty space to select the root directory.
+1. Select **+ > New remote folder > Add Git repository** to add a remote content folder.
+   To add a remote content file, select **+ > New remote file > Add Git repository**.
 1. Enter a name for the new remote content (folder or file) and press the Enter or Return key.
 1. Select **Azure DevOps Services**.
 1. Enter a **Credential name** that identifies this Azure DevOps Services connection.

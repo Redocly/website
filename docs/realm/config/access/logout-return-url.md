@@ -18,7 +18,8 @@ Configure a URL where users are redirected after they log out.
 After a user logs out of your project and their session cookies are cleared, they will be redirected to the URL specified in `logoutReturnUrl`.
 If not specified, users are redirected to the root path of your project by default.
 
-This is useful when you want users to return to your main website or a specific page after logging out, rather than staying on the documentation site.
+This option is useful when you want users to return to your main website or a specific page after logging out.
+Without it, users stay on the documentation site.
 
 The `logoutReturnUrl` property is only available as a child of the `access` object.
 

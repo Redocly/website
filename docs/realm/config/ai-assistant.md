@@ -13,7 +13,8 @@ description: Customize the AI assistant functionality in your project.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-By default, users can access the AI assistant by using the floating **Ask AI** button in the bottom-right corner or through the **Search** modal in the top navigation bar.
+By default, users can access the AI assistant with the floating **Ask AI** button in the bottom-right corner.
+Users can also open it through the **Search** modal in the top navigation bar.
 
 Use the `aiAssistant` configuration to:
 

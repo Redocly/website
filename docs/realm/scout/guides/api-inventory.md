@@ -3,7 +3,8 @@
 API discovery finds new APIs.
 API inventory keeps a record of the API along with corresponding classification.
 
-Scout is a near-stateless agent that interfaces with Git source control and Redocly to discovery new APIs, classify them, and add them to an API catalog.
+Scout is a near-stateless agent that interfaces with Git source control and Redocly.
+It discovers new APIs, classifies them, and adds them to an API catalog.
 
 ## Onboard a new API
 
@@ -37,6 +38,7 @@ The process of adding a new API is seamless to a developer.
 
 If the developer entered incorrect metadata, then the developer receives automated feedback in the pull request to inform them of the metadata problem.
 
-If the developer is part of a new team or providing any classification that is not already part of the acceptable schema, Scout reports the pull request as having a metadata problem.
+The developer can be part of a new team or provide a classification that is not already part of the acceptable schema.
+In that case, Scout reports the pull request as having a metadata problem.
 
 In this case, it may require an API governance administrator to adjust the metadata schema to allow additional values such as a new team.

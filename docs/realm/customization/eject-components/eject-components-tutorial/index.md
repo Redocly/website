@@ -27,7 +27,8 @@ plans:
 
   Let's imagine you are writing a tutorial describing how to write code to work with your product.
   You decided to use Redocly's [tabs](https://redocly.com/learn/markdoc/tags/tabs) Markdoc tag to show code examples in different languages.
-  As you are working, you decide it would be nice if a user could select their preferred programming language once triggering the update of all other tabs on the page to the selected programming language.
+  As you are working, you decide it would be nice if a user could select their preferred programming language once.
+  That selection would update all other tabs on the page to the selected programming language.
 
   But you notice, the Redocly [tabs](https://redocly.com/learn/markdoc/tags/tabs) Markdoc tag, does not have the ability to configure syncing between tabs.
   So you decide to eject the component to update the behavior to allow configuring syncing between tabs.
@@ -66,7 +67,8 @@ plans:
     You can also download all examples and drag and drop them to the `@theme/markdoc/components/Tabs` folder.
 
     This custom hook reuses the original `useTabs` hook and adds syncing functionality between tabs with the same `syncId`.
-    It stores the `activeTab` state in `localStorage` after an update was triggered, and all other tabs are subscribed to the storage events to update their state.
+    It stores the `activeTab` state in `localStorage` after an update was triggered.
+    All other tabs are subscribed to the storage events to update their state.
     Also, for initial mount, it gets the `activeTab` from `localStorage` to preserve the tabs state even after a page is reloaded.
 
     {% admonition type="info" name="Prerequisites" %}
@@ -96,7 +98,8 @@ plans:
 
 ## Extend the tabs Markdoc schema
 
-  We also need to update the tabs interface to be able to pass the `syncId` prop to the `tabs` Markdoc component, which passes the `syncId` to our modified `Tabs` React component.
+  We also need to update the tabs interface to be able to pass the `syncId` prop to the `tabs` Markdoc component.
+  That component passes the `syncId` to our modified `Tabs` React component.
 
 ### Eject the tags Markdoc schema
 

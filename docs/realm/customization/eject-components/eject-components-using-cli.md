@@ -23,7 +23,8 @@ The `eject component` command supports the following options:
   - **Filepath:** `npx @redocly/cli eject component 'Filter/Filter.tsx'`
   - **Filepath with glob pattern:** `npx @redocly/cli eject component 'Footer/**'`
 
-- The `-f` or `--force` option skips the "overwrite existing" confirmation when ejecting a component that is already ejected in the destination, as in the following example:
+- The `-f` or `--force` option skips the "overwrite existing" confirmation.
+  Use it when ejecting a component that is already ejected in the destination, as in the following example:
 
   - `npx @redocly/cli eject component 'Filter/Filter.tsx' --force`
 

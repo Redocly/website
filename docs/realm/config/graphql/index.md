@@ -86,7 +86,8 @@ Requires a GraphQL schema.
 
 ### Exclude a GraphQL API from search
 
-To exclude a specific GraphQL API from the search results, locate the API in `redocly.yaml` and under the `graphql` key, set the `excludeFromSearch` option to `true`.
+To exclude a specific GraphQL API from the search results, locate the API in `redocly.yaml`.
+Under the `graphql` key, set the `excludeFromSearch` option to `true`.
 
 ```yaml {% title="redocly.yaml" %}
 apis:

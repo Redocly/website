@@ -43,7 +43,8 @@ The following screenshot shows a code walkthrough with filters, an input, a togg
 Code walkthroughs are created using the following Markdoc tags:
 
 - [**Code Walkthrough:**](#syntax-and-usage) This tag is the main tag that encompasses the other tags creating the code walkthrough interface.
-- [**Step:**](./step.md) This tag organizes individual steps of your walkthrough enabling you to bind them to `chunks` in code snippets, highlighting those sections in the code as the users selects the steps.
+- [**Step:**](./step.md) This tag organizes individual steps of your walkthrough, enabling you to bind them to `chunks` in code snippets.
+  Those sections highlight in the code as the user selects the steps.
 - [**Toggle:**](./toggle.md) This tag adds toggles allowing users to control the visibility of the displayed content and code snippets.
 - [**Input:**](./input.md) This tag adds input fields to the code walkthrough allowing users to customize code samples to meet their use case.
 
@@ -87,7 +88,9 @@ The code walkthrough tag requires a `filesets` attribute that specifies which co
 ```
 {% /markdoc-example %}
 
-To highlight sections of code in the sample code files in the right side panel when users select text in the left side panel, wrap content in the left side panel in a `step` tag with corresponding id attributes used in the code sample chunk annotations, as in the following example:
+You can highlight sections of code in the sample code files in the right side panel when users select text in the left side panel.
+Wrap content in the left side panel in a `step` tag.
+Use id attributes that correspond to the code sample chunk annotations, as in the following example:
 
 {% tabs %}
 {% tab label="Markdown file" %}

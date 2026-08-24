@@ -68,7 +68,8 @@ To configure Respect Monitoring for your project:
          ```
 2. (Optional) Add an `inputs` object with a map of key-value pairs from the Arazzo Description.
 3. (Optional) Add a `servers` object with a `sourceDescriptionName` option to override a target URL described in an OpenAPI Description.
-4. (Optional) Add a `severity` object with a check type (`statusCodeCheck` | `successCriteriaCheck` | `schemaCheck` | `contentTypeCheck`) to severity level (`error` | `warn` | `off`) mapping, to override the severity level of the check.
+4. (Optional) Add a `severity` object to override the severity level of the check.
+   The object maps a check type (`statusCodeCheck` | `successCriteriaCheck` | `schemaCheck` | `contentTypeCheck`) to a severity level (`error` | `warn` | `off`).
    The default severity level is `error`.
 5. (Optional) Add SLO (Service Level Objectives) monitoring with `slo` object to set performance thresholds in milliseconds:
    ```yaml {% title="redocly.yaml" %}
@@ -111,7 +112,8 @@ reunite:
 
 ### View Respect Monitoring result chart
 
-When you merge your pull request with your Respect Monitoring configuration and deploy a production build, Reunite's **Respect Monitoring** page displays the results of each workflow in a chart.
+Merge your pull request with your Respect Monitoring configuration and deploy a production build.
+Reunite's **Respect Monitoring** page then displays the results of each workflow in a chart.
 
 To view your Respect Monitoring results on a production build, navigate to **Respect Monitoring** and click the workflow.
 You can filter the results by dates and status.

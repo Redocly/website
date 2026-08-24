@@ -16,7 +16,8 @@ The `openapi-response-sample` tag renders response examples directly in your doc
 
 ## Syntax and usage
 
-To use the tag, pass the filepath of your OpenAPI description using the `descriptionFile` attribute and a reference to the specific operation using either `operationId` or `pointer`.
+To use the tag, pass the filepath of your OpenAPI description using the `descriptionFile` attribute.
+Reference the specific operation using either `operationId` or `pointer`.
 You can also use additional attributes to configure the response example element rendered in the document.
 
 With `operationId`:

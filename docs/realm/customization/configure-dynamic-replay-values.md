@@ -14,7 +14,8 @@ plans:
 
 You can dynamically configure request values for Replay by ejecting and customizing the `use-configure-replay.ts` file.
 This lets you fetch configuration from external APIs at runtime, updating based on the current operation.
-The `useConfigureReplay` hook fetches fresh configuration when the Replay is opened or when the 'Reset request' button is clicked, ensuring you always get the latest configuration.
+The `useConfigureReplay` hook fetches fresh configuration when the Replay is opened or when the 'Reset request' button is clicked.
+This way, you always get the latest configuration.
 
 ## Before you begin
 
@@ -37,7 +38,8 @@ This command creates a local copy of `use-configure-replay.ts` in your project's
 ## Implement dynamic configuration
 
 The `use-configure-replay.ts` file exports a `useConfigureReplay` hook that fetches request values dynamically.
-The hook receives a context parameter with operation details and returns an object containing the configuration and a refresh function that can be used to manually reload the configuration.
+The hook receives a context parameter with operation details.
+It returns an object containing the configuration and a refresh function that can be used to manually reload the configuration.
 
 Here are examples of how to implement dynamic Replay configuration:
 
@@ -332,8 +334,10 @@ In this example:
 
 ## Share values across operations with `envVariables`
 
-`envVariables` lets users enter a value once and have Replay reuse it in every operation that needs it — even when the same value is a header on one endpoint and a path parameter on another.
-Each entry in `envVariables` is matched by name against every input the current operation exposes (path, query, header, cookie, and security inputs), so you don't need any per-operation configuration.
+`envVariables` lets users enter a value once and have Replay reuse it in every operation that needs it.
+That holds even when the same value is a header on one endpoint and a path parameter on another.
+Each entry in `envVariables` is matched by name against every input the current operation exposes (path, query, header, cookie, and security inputs).
+You don't need any per-operation configuration.
 
 For example:
 
@@ -346,7 +350,8 @@ return {
 };
 ```
 
-With a single config like this, the same `billerId` entry can apply to a path parameter in one operation and a header in another, while `X-Tenant-Id` is picked up wherever it appears.
+With a single config like this, the same `billerId` entry can apply to a path parameter in one operation and a header in another.
+`X-Tenant-Id` is picked up wherever it appears.
 Entries the current operation doesn't declare are silently ignored.
 
 ### Example: shared variables form backed by `localStorage`
@@ -425,7 +430,8 @@ The rest of the hook (state, `refresh`, `useEffect`) stays exactly as in the [ex
 
 A few things worth knowing:
 
-- An **empty string** is treated as "clear this value" — useful when a value in your app gets reset and you want Replay to forget the old one too.
+- An **empty string** is treated as "clear this value".
+  It is useful when a value in your app gets reset and you want Replay to forget the old one too.
   Omit the key entirely if you want the persisted value to stay.
 - A field-specific entry (such as `security.default.token.access_token` or `headers['X-Tenant-Id']`) wins over a same-named entry in `envVariables`.
 
@@ -441,8 +447,10 @@ Use the `"default"` key as a fallback when no input-specific hint exists.
 
 ### Root-level and server-level hints
 
-`inputHints` can be set at the root level (a shared default that applies to every server) and/or nested under a server entry when you return `ConfigureServerRequestValues`.
-Unlike the other request values (`headers`, `security`, `envVariables`, and so on), where a server-keyed entry replaces the root value for that server, `inputHints` from both levels are combined — the server level takes priority and the root level fills in the rest.
+`inputHints` can be set at the root level (a shared default that applies to every server).
+It can also be nested under a server entry when you return `ConfigureServerRequestValues`.
+For the other request values (`headers`, `security`, `envVariables`, and so on), a server-keyed entry replaces the root value for that server.
+`inputHints` from both levels are combined instead — the server level takes priority and the root level fills in the rest.
 Resolution for a given input follows this precedence:
 
 1. The server-level hint for the active server (by input name, then its `"default"`).

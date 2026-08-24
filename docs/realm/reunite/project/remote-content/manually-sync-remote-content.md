@@ -26,15 +26,15 @@ To keep your content up-to-date with changes made in the remote, you can sync th
 
 To manually sync remote content folders:
 
-1. From the file tree of the editor, right-click the folder with remote content (remote content folders have a cloud icon), then click **Sync**. \
-   OR \
-   From the Remote content page, click the additional options menu on the far right side of the table on the remote content folder row, then click **Sync**. \
-  {% img
-    src="../../images/reunite-remote-content-options.png"
-    alt="Open options menu on Reunite's Remote content page"
-    withLightbox=true
-  /%} \
-    A window opens with the branch chosen during the remote folder setup, and the following information on the last commit to that branch:
+1. Sync the folder in one of the following ways:
+   - From the file tree of the editor, right-click the folder with remote content (remote content folders have a cloud icon), then click **Sync**.
+   - From the Remote content page, click the additional options menu on the remote content folder row, then click **Sync**.
+   {% img
+     src="../../images/reunite-remote-content-options.png"
+     alt="Open options menu on Reunite's Remote content page"
+     withLightbox=true
+   /%}
+   A window opens with the branch chosen during the remote folder setup, and the following information on the last commit to that branch:
       - the commit message
       - the user who made commit
       - the Git hash linked to a commit on the remote source
