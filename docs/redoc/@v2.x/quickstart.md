@@ -5,7 +5,8 @@ seo:
 
 # Redoc CE quickstart guide
 
-To render your OpenAPI description using Redoc CE, use the following HTML code sample and replace the `spec-url` attribute with the URL or local file address to your description.
+To render your OpenAPI description using Redoc CE, use the following HTML code sample.
+Replace the `spec-url` attribute with the URL or local file address to your description.
 
 ```html
 <!DOCTYPE html>

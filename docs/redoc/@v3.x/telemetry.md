@@ -5,7 +5,8 @@ seo:
 
 # Telemetry in Redoc CE
 
-Redoc CE collects anonymous telemetry data to help understand how people are using the documentation tool and to see what sort of issues they are experiencing.
+Redoc CE collects anonymous telemetry data to help understand how people are using the documentation tool.
+It also shows what sort of issues they are experiencing.
 
 ## Configure telemetry settings
 
