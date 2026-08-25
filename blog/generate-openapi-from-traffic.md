@@ -61,22 +61,18 @@ Record against a test environment with synthetic data.
 This matters in every mode, not only with AI: observed values end up in the generated description as enums and examples, so a description inferred from real user data is not safe to share either.
 {% /admonition %}
 
-Send a few requests through it - browse the menu, filter it, download some menu item photos:
+Send a few requests through it, the way a real client would: browse the menu, filter it, then take menu item IDs from the response and download some photos:
 
 ```bash
 curl http://127.0.0.1:4040/menu
 curl "http://127.0.0.1:4040/menu?category=dessert"
 curl "http://127.0.0.1:4040/menu?category=beverage"
-curl -o tiramisu.png http://127.0.0.1:4040/menu-item-images/prd_0000000000seedtrams0000000
-curl -o tea.png http://127.0.0.1:4040/menu-item-images/prd_0000000000seedteabv0000000
-curl -o cheesecake.png http://127.0.0.1:4040/menu-item-images/prd_0000000000seedchesc0000000
+for id in $(curl -s http://127.0.0.1:4040/menu | jq -r '.items[:3][].id'); do
+  curl -o "$id.png" "http://127.0.0.1:4040/menu-item-images/$id"
+done
 ```
 
-Press <kbd>`Ctrl`</kbd> + <kbd>`C`</kbd> to stop the proxy and write the HAR file:
-
-```sh
-Captured 6 exchange(s) to ./cafe.har
-```
+Press <kbd>`Ctrl`</kbd> + <kbd>`C`</kbd> to stop the proxy - it reports how many exchanges it captured and writes the HAR file.
 
 Now ask for a description:
 
@@ -90,7 +86,7 @@ Written to: cafe-openapi.yaml
 Done in 0s.
 ```
 
-The result is a valid OpenAPI 3.2 description - about a hundred lines, from six requests.
+The result is a valid OpenAPI 3.2 description - about a hundred lines, from a handful of requests.
 The outline: a server URL inferred from the capture, and one path per discovered endpoint:
 
 ```yaml
@@ -109,7 +105,7 @@ paths:
 
 Rather than paste the whole file, let's look at what the inference did.
 
-Start with the paths: the three photo URLs became one templated path, because the `prd_…` identifiers were recognized as IDs and turned into a required path parameter:
+Start with the paths: the photo URLs became one templated path, because the `prd_…` identifiers were recognized as IDs and turned into a required path parameter:
 
 ```yaml
 /menu-item-images/{menu-item-imageId}:
@@ -184,7 +180,7 @@ required:
 
 The result is still only a hypothesis - the description knows only what the traffic showed.
 `price` is an integer because every observed price happened to be a whole number.
-`id` and `name` became enums of the five menu items in the capture.
+`id` and `name` became enums of the handful of menu items in the capture.
 That is over-fitting, not a rule of the API - and the same mechanism publishes real values as enums if you record real traffic.
 The photo response has no schema because its body is a PNG, not JSON.
 Endpoints that nobody called are missing, there are no human-readable descriptions, and names like `{menu-item-imageId}` are generated mechanically - rename them when you review.
@@ -233,7 +229,7 @@ Each one runs the locally installed CLI in non-interactive mode, so the subscrip
 `--ai-provider` is optional and defaults to `claude`; pick a model with `--ai-model` or let the provider use its default.
 
 Operations are refined in parallel.
-`--ai-concurrency` (default 4) is the main way to make it faster: rerunning the full 14-operation Cafe capture from the experiment below took under a minute with `--ai-concurrency 6`.
+`--ai-concurrency` (default 4) is the main way to make it faster: rerunning the full Cafe capture from the experiment below took under a minute with `--ai-concurrency 6`.
 
 {% admonition type="warning" name="Traffic leaves your machine" %}
 `--with-ai` sends samples of the recorded traffic - URLs, query strings, request and response bodies - to the selected AI provider.
@@ -246,7 +242,7 @@ These are safety layers, not a guarantee - record in a sandbox, and make sure th
 Fair question, and the Cafe API can answer it precisely: its real, handwritten [OpenAPI description](https://cafe.redocly.com/openapi/cafe) exists - we only pretended it doesn't.
 So whatever `generate-spec` reconstructs from traffic can be scored against what the API team actually wrote.
 
-We recorded a fuller session than the six-request capture above - 30 requests covering every endpoint: the OAuth2 client registration flow, menu items created in both categories, orders placed, updated, and deleted, photo downloads, and the errors a real session produces along the way (a `400`, a few `404`s, even a `409`).
+We recorded a fuller session than the small capture above - one that covers every endpoint: the OAuth2 client registration flow, menu items created in both categories, orders placed, updated, and deleted, photo downloads, and the errors a real session produces along the way (a `400`, a few `404`s, even a `409`).
 Then we generated a description twice from that one capture - once deterministically, once with `--with-ai` - and scored both against the handwritten description.
 
 Two things are worth measuring separately:
