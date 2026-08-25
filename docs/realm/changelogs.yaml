@@ -52296,6 +52296,13 @@ reunite:
         - Made `organizationId` and `projectId` optional in Reunite resource responses where both IDs are already included in the endpoint path.
       patch: []
     dependencies: {}
+  v2026-08-25.4:
+    timestamp: 1787663980000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.47.0`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
