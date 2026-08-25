@@ -28,9 +28,8 @@ Then it uses AI only where AI really helps - one operation at a time, grounded i
 ## From traffic to description
 
 The command accepts HAR files, Kong logs, Nginx/Apache JSON logs, and NDJSON - a single file or a whole folder of them.
-Traffic parsing is shared with the [`drift` command](./catch-api-drift.md), so any log that works with `drift` works here too.
 
-From the recorded exchanges it builds a baseline deterministically - no AI involved yet, same traffic in, same description out:
+From the recorded exchanges it builds a baseline deterministically:
 
 - Identifier-like path segments (numeric IDs, UUIDs, prefixed tokens like `prd_…`) become named path parameters, so a hundred URLs become one templated path.
 - Request and response schemas are merged across all observations; a property becomes optional as soon as one sample omits it.
