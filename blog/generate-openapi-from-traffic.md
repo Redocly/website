@@ -13,17 +13,13 @@ categories:
   - api-specifications:openapi
 ---
 
-Plenty of production APIs have no OpenAPI description at all.
-The endpoints live in code, the knowledge lives in people's heads, and the closest thing to documentation is a wiki page nobody fully trusts.
+There are plenty of production APIs that have no OpenAPI description at all. It's definitely worth changing it.
+Especially In the AI era - OpenAPI is a contract that AI agents can analyze and learn how to use given API.
 
-Human developers cope with that - they read the source, ask a colleague, poke around with curl.
-AI agents can't.
-They learn what your API can do from a machine-readable description of it, and without one its capabilities are invisible to them.
+One can write OAD by hand or ask AI to generate it basing on source code implementation. Both options may not be very effective. In case of large API (and
+therefore large codebase), AI may quickly get lost and produce incorrect results.
 
-So the blank page is worth removing, and it is usually the only thing in the way: writing a description by hand for dozens of existing endpoints is exactly the kind of backfill work that never makes it into a sprint.
-The new `generate-spec` command in Redocly CLI removes it.
-Your API already produces the raw material every time someone uses it: traffic.
-`generate-spec` reads recorded HTTP traffic and infers an OpenAPI 3.2 description from it.
+We've a solution for it - `redocly generate-spec` command.
 
 ## From traffic to description
 
