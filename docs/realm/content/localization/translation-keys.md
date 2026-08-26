@@ -177,6 +177,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- userMenu.login
+- Login button label
+- Log in
+
+---
+
 - userMenu.logout
 - Logout button label
 - Log out
