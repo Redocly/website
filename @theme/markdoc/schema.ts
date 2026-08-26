@@ -10,6 +10,8 @@ import {
   tags as betaDocsTags,
   functions as betaDocsFunctions,
 } from '../../docs/realm/@theme/markdoc/schema';
+import { DemoTag } from './components/Demo/Demo-markdoc';
+
 
 const docsOverview: Schema = {
   attributes: {
@@ -62,6 +64,7 @@ export const tags = {
   licensesPackageVersion,
   wideTileCards,
   quiz,
+  demo: DemoTag,
   ...betaDocsTags,
 };
 
