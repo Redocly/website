@@ -44,7 +44,7 @@ For more information, see [file-based routing](../project-structure.md#file-base
 
 You can place the reference inside a custom sidebar alongside your other content, with control over its order and grouping.
 To do that, add your GraphQL schema to a `sidebars.yaml` file.
-You can also link to the reference from anywhere, such as the [navbar](../../config/navbar.md), an in-page link, a card, or an [API catalog](../../config/catalog-classic.md).
+You can also link to the reference from anywhere, such as the [navbar](../../config/navbar/index.md), an in-page link, a card, or an [API catalog](../../config/catalog-classic.md).
 
 To customize the API overview with title, description, and contact information, see [GraphQL info configuration](../../config/graphql/info.md).
 
@@ -85,4 +85,4 @@ To add multiple GraphQL schemas using `group` keys, update your `sidebars.yaml` 
 - **[API catalog configuration](../../config/catalog-classic.md)** - Organize multiple API descriptions including GraphQL schemas with catalogs for better user experience and navigation
 - **[Sidebar navigation setup](../../navigation/sidebars.md)** - Configure navigation structures to help users discover and access your GraphQL API documentation content
 - **[GraphQL configuration reference](../../config/graphql/index.md)** - Complete customization options for GraphQL schema rendering and documentation behavior
-- **[Navbar configuration](../../config/navbar.md)** - Add top-level links to your API references and other pages
+- **[Navbar configuration](../../config/navbar/index.md)** - Add top-level links to your API references and other pages

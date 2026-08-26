@@ -21,7 +21,7 @@ From simple link organization to advanced multi-product sites, you can configure
 ## Available navigation elements
 
 ### Core navigation
-- **[Navbar](../config/navbar.md)** - Top navigation bar with links, groups, and dropdowns
+- **[Navbar](../config/navbar/index.md)** - Top navigation bar with links, groups, and dropdowns
 - **[Sidebar](../config/sidebar.md)** - Left navigation panel (configure content with [sidebars.yaml](./sidebars.md))
 - **[Footer](../config/footer.md)** - Bottom page footer with links and copyright information
 - **[Search](../config/search.md)** - Site-wide search functionality with faceting capabilities
@@ -215,7 +215,7 @@ See the [localization configuration](../config/l10n.md) for complete setup detai
 
 ## Need help
 
-- **Getting Started**: Begin with the [navbar configuration](../config/navbar.md) and [sidebar setup](./sidebars.md)
+- **Getting Started**: Begin with the [navbar configuration](../config/navbar/index.md) and [sidebar setup](./sidebars.md)
 - **Advanced Features**: Explore [multi-product setup](../config/products.md) and [search configuration](../config/search.md)
 - **Custom Styling**: See [branding options](../branding/index.md) for visual customization
 

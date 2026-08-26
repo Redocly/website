@@ -60,7 +60,7 @@ Some UI elements in your project support customizable configurations and can con
 To be able to localize the text components of these elements, you must first create translation keys in their configuration files.
 
 The user-defined UI elements that use translation keys are:
-- [navbar](../../config/navbar.md)
+- [navbar](../../config/navbar/index.md)
 - [breadcrumbs](../../config/breadcrumbs.md)
 - [search bar](../../config/search.md)
 - [footer](../../config/footer.md)

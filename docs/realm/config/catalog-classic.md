@@ -93,7 +93,7 @@ You can configure multiple catalogs and set the link text, description, and filt
 - **REQUIRED.**
   What you want the path segment of the URL for the catalog to be.
   Must have a leading and trailing slash.
-  Must match the `page` or `href` value for the item on the [navbar](./navbar.md#item-object).
+  Must match the `page` or `href` value for the item on the [navbar](./navbar/index.md#item-object).
   Example: `/catalog/`
 
 ---
@@ -380,4 +380,4 @@ catalogClassic:
 - **[API Governance](https://redocly.com/docs/cli/api-standards)** - Learn about API standards and governance practices for maintaining quality and consistency
 - **[Configure classic scorecard](../reunite/project/configure-classic-scorecard.md)** - Set up scorecards to check APIs against standards and maintain quality metrics
 - **[Metadata categorization](./metadata.md#catalog-categorization)** - Use metadata to filter and organize APIs in the classic catalog for better content discovery
-- **[Configure navbar](./navbar.md)** - Follow steps to include your catalog link in the navigation bar for easy access
+- **[Configure navbar](./navbar/index.md)** - Follow steps to include your catalog link in the navigation bar for easy access

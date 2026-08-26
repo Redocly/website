@@ -42,7 +42,7 @@ The reference is served at its own URL and has its own automatically generated s
 It's reachable as soon as you add it, with no navigation configuration required.
 
 To help people find it, link to it from wherever you want.
-For example, add it to the [navbar](../../config/navbar.md) with a `page` that points at the OpenAPI file:
+For example, add it to the [navbar](../../config/navbar/index.md) with a `page` that points at the OpenAPI file:
 
 ```yaml {% title="redocly.yaml" %}
 navbar:
@@ -71,7 +71,7 @@ For all available options, see [Sidebar configuration](../../navigation/sidebars
 ## Resources
 
 - **[Sidebar configuration](../../navigation/sidebars.md)** - Organize and customize the sidebar navigation for your API references and other content
-- **[Navbar configuration](../../config/navbar.md)** - Add top-level links to your API references and other pages
+- **[Navbar configuration](../../config/navbar/index.md)** - Add top-level links to your API references and other pages
 - **[API catalog configuration](../../config/catalog-classic.md)** - Showcase multiple REST, GraphQL, and AsyncAPI descriptions together in a catalog
 - **[Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay)** - Learn about the interactive API testing features used in reference documentation
 - **[OpenAPI extensions](./openapi-extensions/index.md)** - Use custom extensions to create richer, more detailed reference documentation

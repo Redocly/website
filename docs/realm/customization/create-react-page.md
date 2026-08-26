@@ -91,7 +91,7 @@ Set the React page's [front matter](../config/front-matter-config.md) by exporti
 
 Front matter is used to set page metadata or configure page behavior, as in the following list of examples:
 
-- Hide [navbar](../config/navbar.md) and [footer](../config/footer.md) elements:
+- Hide [navbar](../config/navbar/index.md) and [footer](../config/footer.md) elements:
 
     ```javascript
     export const frontmatter = {
@@ -143,7 +143,7 @@ Front matter is used to set page metadata or configure page behavior, as in the 
 
 ## Add React page to navigation
 
-Add the page to your site's navigation elements, such as the [sidebar](../navigation/sidebars.md), [navbar](../config/navbar.md), or [footer](../config/footer.md), using the page's relative filepath.
+Add the page to your site's navigation elements, such as the [sidebar](../navigation/sidebars.md), [navbar](../config/navbar/index.md), or [footer](../config/footer.md), using the page's relative filepath.
 
 The following example shows a sidebar configuration that includes React pages:
 

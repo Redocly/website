@@ -41,7 +41,8 @@ This guide provides a comprehensive overview of available configuration options 
 
   {% configProperty file="footer.md" /%}
 
-  {% configProperty file="navbar.md" /%}
+  {% configProperty file="navbar/index.md" /%}
+  {% configProperty file="navbar/secondary.md" /%}
 
   {% configProperty file="navigation.md" /%}
 

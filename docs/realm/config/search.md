@@ -581,7 +581,7 @@ search:
 
 - **[MetadataGlobs configuration](./metadata-globs.md)** - Configure metadata extraction patterns for enhanced search functionality and content organization
 - **[Localization configuration](./l10n.md)** - Configure search functionality for multiple languages and international content support
-- **[Configure navbar](./navbar.md)** - Configure navigation bar settings including search integration and search button customization
+- **[Configure navbar](./navbar/index.md)** - Configure navigation bar settings including search integration and search button customization
 - **[Navigation elements](../navigation/index.md)** - Configure navigation elements in your project for comprehensive site structure and search integration
 - **[Predefined translation keys](../content/localization/translation-keys.md)** - Use predefined translation keys for search interface localization and internationalization
 - **[Front matter configuration](./front-matter-config.md)** - Configure search dialog behavior on individual pages using front matter, including `excludeFromSearch` option to exclude specific pages from search results

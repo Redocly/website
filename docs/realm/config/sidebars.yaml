@@ -106,8 +106,11 @@
       label: metadataGlobs
     - page: ./mock-server.md
       label: mockServer
-    - page: ./navbar.md
-      label: navbar
+    - group: navbar
+      page: ./navbar/index.md
+      items:
+        - page: ./navbar/secondary.md
+          label: secondary
     - page: ./navigation.md
       label: navigation
     - group: openapi

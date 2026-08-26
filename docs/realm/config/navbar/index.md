@@ -9,15 +9,21 @@ plans:
   - Enterprise
   - Enterprise+
 description: Configure a navbar for your project.
+navbar:
+  secondary:
+    items:
+      - page: ./index.md
+        label: Main navbar
+      - page: ./secondary.md
+        label: Secondary navbar
 ---
 # `navbar`
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Configure a navbar for your project.
-The navbar appears across the top of the published project.
-You can configure the links and groups of links that appear on the navbar of your site, or hide the navbar altogether.
-The navbar is a good location for top-level category or frequently-used links.
+The navbar appears across the top of every page in your project.
+Use it for top-level sections and frequently used links.
+You can configure the links and groups of links it shows, add a [secondary navbar](./secondary.md) with section links under it, or hide it altogether.
 
 ## Options
 
@@ -30,17 +36,24 @@ The navbar is a good location for top-level category or frequently-used links.
 ---
 
 - items
-- [Item](#item-object) | [Group](#group-object)
-- List of items in the Navbar.
+- [[Item](#item-object) | [Group](#group-object)]
+- List of links and groups shown in the navbar.
+
+---
+
+- secondary
+- [Secondary navbar](./secondary.md)
+- Row of section links under the navbar.
+  Shown when the active navbar item has no `secondary` of its own.
 
 ---
 
 - hide
 - boolean
-- Specifies if the navbar should be hidden.
+- Hides the navbar.
   Default: `false`.
 
-  {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "navbar.hide"} /%}
+  {% partial file="../../_partials/config/_supported-config.md" variables={"optionName": "navbar.hide"} /%}
 
 {% /table %}
 
@@ -63,15 +76,15 @@ The navbar is a good location for top-level category or frequently-used links.
 
 - groupTranslationKey
 - string
-- Specifies the group name key used for [localization](./l10n.md).
+- Translation key for the group name, used for [localization](../l10n.md).
 
 ---
 
 - items
 - [Item](#item-object)
 - **REQUIRED.**
-  List of items.
-  The navbar for the default theme may only have one level of depth to groups.
+  List of items in the group.
+  Groups have one level: an item inside a group cannot be another group.
 
 ---
 
@@ -83,7 +96,7 @@ The navbar is a good location for top-level category or frequently-used links.
 
 ---
 
-{% raw-partial file="../_partials/nav-item-icon-property-row.md" /%}
+{% raw-partial file="../../_partials/nav-item-icon-property-row.md" /%}
 
 ---
 
@@ -96,7 +109,7 @@ The navbar is a good location for top-level category or frequently-used links.
 
 - page
 - string
-- Relative or absolute path to the file (extension included) which represents the page to link to.
+- Relative or absolute path to the page file, extension included.
   **Mutually exclusive** with the `href` option.
 
 ---
@@ -105,6 +118,20 @@ The navbar is a good location for top-level category or frequently-used links.
 - string
 - URL to link to.
   **Mutually exclusive** with the `page` option.
+
+---
+
+- activeFor
+- [string]
+- Page path globs that keep this group active.
+  `*` matches one path segment and `**` matches any depth.
+  A trailing `/**` also matches the directory itself, so `apis/**` covers `apis`.
+
+---
+
+- secondary
+- [Secondary navbar](./secondary.md)
+- Row of section links shown while this group is active.
 
 {% /table %}
 
@@ -120,21 +147,21 @@ The navbar is a good location for top-level category or frequently-used links.
 
 - label
 - string
-- Link text displayed for the item.
+- Link text for the item.
 
 ---
 
 - labelTranslationKey
 - string
-- Link text key for the item used for internationalization.
+- Translation key for the label, used for [localization](../l10n.md).
 
 ---
 
-{% raw-partial file="../_partials/nav-item-icon-property-row.md" /%}
+{% raw-partial file="../../_partials/nav-item-icon-property-row.md" /%}
 
 ---
 
-{% raw-partial file="../_partials/nav-page-href-property-rows.md" /%}
+{% raw-partial file="../../_partials/nav-page-href-property-rows.md" /%}
 
 ---
 
@@ -148,29 +175,46 @@ The navbar is a good location for top-level category or frequently-used links.
 - linkedSidebars
 - [string]
 - List of relative paths to sidebar files.
-  This option adds navbar item to sidebar's breadcrumbs.
+  This option adds the navbar item to a sidebar's breadcrumbs.
   Only effective for top-level navbar items.
 
 ---
 
 - additionalProps
 - object
-- Additional properties for the navbar item.
-  Pass arbitrary data that can be accessed in custom theme components.
-  To learn how to customize theme components, see: [Eject components](../customization/eject-components/index.md).
+- Arbitrary data for custom theme components to read.
+  To customize theme components, see [Eject components](../../customization/eject-components/index.md).
+
+---
+
+- activeFor
+- [string]
+- Page path globs that keep this item active.
+  `*` matches one path segment and `**` matches any depth.
+  A trailing `/**` also matches the directory itself, so `apis/**` covers `apis`.
+
+---
+
+- secondary
+- [Secondary navbar](./secondary.md)
+- Row of section links shown while this item is active.
 
 {% /table %}
 
-
 ### Icon object
 
-{% partial file="../_partials/nav-icon-object-table.md" /%}
+{% partial file="../../_partials/nav-icon-object-table.md" /%}
+
+## Active item
+
+A navbar item is active when its link matches the current page, or when one of its `activeFor` globs matches the page path.
+A group is active when one of its items is active.
 
 ## Examples
 
 ### Simple navigation
 
-The following is an example configuration for a simple flat navbar.
+A flat navbar with four links:
 
 ```yaml {% title="redocly.yaml" %}
 navbar:
@@ -186,17 +230,15 @@ navbar:
       external: true
 ```
 
-The following is a screenshot of that navbar.
-
 {% img
-  src="./images/1-level-navbar.png"
+  src="../images/1-level-navbar.png"
   alt="1 level Navbar"
   withLightbox=true
 /%}
 
 ### Complete navigation setup
 
-The following example shows a comprehensive navbar configuration for a documentation site with multiple sections, localization support, and external links:
+A navbar with groups, translation keys, and an external link:
 
 ```yaml {% title="redocly.yaml" %}
 navbar:
@@ -233,7 +275,7 @@ navbar:
 
 ### Multi-product navigation
 
-For sites with multiple products, organize content using groups and linked sidebars:
+For a site with several products, group them and link each product to its own sidebar:
 
 ```yaml {% title="redocly.yaml" %}
 navbar:
@@ -256,7 +298,7 @@ navbar:
 
 ### Dropdown menu with separators
 
-The following is an example of a dropdown menu with visual separators for better organization:
+A dropdown with a separator between two sets of links:
 
 ```yaml {% title="redocly.yaml" %}
 navbar:
@@ -278,25 +320,23 @@ navbar:
       page: enterprise.md
 ```
 
-The following is the screenshot of the navbar.
-
 {% img
-  src="./images/dropdown-menu.png"
+  src="../images/dropdown-menu.png"
   alt="Dropdown menu"
   withLightbox=true
 /%}
 
 ### Hide navbar
 
-To hide the navbar globally or on specific pages:
+Hide the navbar on all pages:
 
 ```yaml {% title="redocly.yaml" %}
-# Hide navbar on all pages
 navbar:
   hide: true
 ```
 
-Or in page front matter:
+Or hide it on one page with front matter:
+
 ```yaml
 ---
 navbar:
@@ -317,13 +357,14 @@ navbar:
         description: Main landing page
 ```
 
-Custom theme components can access these properties to display additional information or implement custom behavior.
+Custom theme components read these properties to show extra information or change behavior.
 
 ## Resources
 
-- **[Navigation elements](../navigation/index.md)** - Overview of all navigation components and patterns for creating comprehensive site navigation structures
-- **[Footer configuration](./footer.md)** - Configure the footer navigation with links, copyright information, and organizational elements
-- **[Logo configuration](./logo.md)** - Configure the logo that appears in the navbar with brand customization and display options
-- **[Localization](./l10n.md)** - Configure navbar labels and text for multiple languages to support international audiences
-- **[Front matter configuration](./front-matter-config.md)** - Use front matter to show or hide the navbar on individual pages for custom page layouts
-- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
+- **[Secondary navbar](./secondary.md)** - Add a row of section links under the navbar, for the whole project or per navbar item
+- **[Navigation elements](../../navigation/index.md)** - Overview of all navigation components
+- **[Footer configuration](../footer.md)** - Configure the footer links and copyright text
+- **[Logo configuration](../logo.md)** - Configure the logo shown in the navbar
+- **[Localization](../l10n.md)** - Translate navbar labels
+- **[Front matter configuration](../front-matter-config.md)** - Show or hide the navbar on individual pages
+- **[Configuration options](../index.md)** - Explore other project configuration options

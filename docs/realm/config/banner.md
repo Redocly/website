@@ -218,7 +218,7 @@ This is an example page.
 ## Resources
 
 - **[Navigation elements](../navigation/index.md)** - Overview of navigation components and patterns
-- **[Navbar configuration](./navbar.md)** - Configure the top navigation bar
+- **[Navbar configuration](./navbar/index.md)** - Configure the top navigation bar
 - **[Footer configuration](./footer.md)** - Configure the footer section
 - **[Custom styles](../branding/customize-styles.md)** - Customize banner appearance with CSS
 - **[Configuration options](./index.md)** - Explore other project configuration options

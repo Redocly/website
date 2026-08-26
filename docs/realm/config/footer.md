@@ -288,7 +288,7 @@ Custom theme components can access these properties to display additional inform
 ## Resources
 
 - **[Navigation elements](../navigation/index.md)** - Overview of all navigation components and patterns for comprehensive site navigation design
-- **[Navbar configuration](./navbar.md)** - Configure the top navigation bar to complement your footer design and provide consistent site navigation
+- **[Navbar configuration](./navbar/index.md)** - Configure the top navigation bar to complement your footer design and provide consistent site navigation
 - **[Sidebar configuration](../navigation/sidebars.md)** - Configure the left navigation panel for comprehensive documentation navigation structure
 - **[Custom CSS styles](../branding/customize-styles.md)** - Add custom styling that can be applied to your footer for brand consistency and visual appeal
 - **[Front matter configuration](./front-matter-config.md)** - Use front matter to show or hide the footer on individual pages for flexible content presentation

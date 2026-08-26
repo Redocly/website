@@ -14,7 +14,7 @@ plans:
 
 The `icon` tag renders a [Font Awesome](https://fontawesome.com/icons) icon.
 Icons can be used inline with text to provide additional visual context.
-You can also use `icon` in navigation elements: [sidebars](../../navigation/sidebars.md), the [navbar](../../config/navbar.md), and the [footer](../../config/footer.md) to provide visual cues.
+You can also use `icon` in navigation elements: [sidebars](../../navigation/sidebars.md), the [navbar](../../config/navbar/index.md), and the [footer](../../config/footer.md) to provide visual cues.
 
 
 ## Attributes
@@ -102,7 +102,7 @@ A GitHub brand icon: {% icon name="brands github" /%}
 
 ## Resources
 
-- **[Navbar configuration](../../config/navbar.md)** - Add icons to navbar elements
+- **[Navbar configuration](../../config/navbar/index.md)** - Add icons to navbar elements
 - **[Sidebar configuration](../../navigation/sidebars.md)** - Add icons to sidebar elements
 - **[Footer configuration](../../config/footer.md)** - Add icons to footer links
 - **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags
