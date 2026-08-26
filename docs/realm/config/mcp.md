@@ -144,7 +144,6 @@ mcp:
 
 - **[MCP servers overview](../customization/mcp-server/index.md)** - Configure MCP servers and integrate with third-party services
 - **[Agent skills](../customization/agent-skills/index.md)** - Publish `SKILL.md` instructions that the MCP server exposes as resources
-- **[Docs MCP reference](../customization/mcp-server/openapi.yaml)** - Review the structured Docs MCP specification, tool schemas, and authentication metadata
 - **[Restrict access to the MCP server](../customization/mcp-server/index.md#restrict-access-to-the-mcp-server)** - Limit the `/mcp` endpoint to specific teams and review the responses clients receive when access is denied
 - **[Role-based access control](./access/rbac.md#features-configuration)** - Configure team-based permissions that also govern which content clients can access over the Docs MCP server
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

@@ -55,6 +55,7 @@ security:
 
 tags:
   - name: Authentication
+    x-displayName: Identity
     description: Tools for authentication and identity inspection for MCP clients when Docs MCP authentication handling is enabled.
   - name: API Catalog
     description: Tools for discovering published APIs, inspecting endpoints, reviewing security schemes, and retrieving full OpenAPI descriptions.
