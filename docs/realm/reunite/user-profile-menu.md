@@ -21,6 +21,10 @@ Your profile settings apply only to the currently selected organization.
 
 ## Set email notification preferences
 
+You can configure Reunite to send you email notifications when specific events happen in the project.
+Reunite only sends notifications about events triggered by other users.
+For example, you don't receive emails about pull requests you open, but you get them when another user opens one.
+
 To choose which email notifications you receive from Reunite:
 
 1. Open the user profile menu.
@@ -86,7 +90,7 @@ Log out from Reunite when you finish your work or when you want to switch to ano
 To log out:
 
 1. Open the user profile menu.
-2. In the bottom-left corner, click **Logout**.
+1. In the bottom-left corner, click **Logout**.
 
 Your session ends and you are redirected to the Login screen.
 
