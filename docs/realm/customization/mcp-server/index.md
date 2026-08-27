@@ -122,8 +122,8 @@ After connecting, the tool can access your OpenAPI documentation.
 {% numbered-list %}
   {% numbered-item %}
   In Cursor, open the command palette.
-- macOS: `Command + Shift + P`
-- Windows/Linux: `Ctrl + Shift + P`
+  - macOS: `Command + Shift + P`
+  - Windows/Linux: `Ctrl + Shift + P`
   {% /numbered-item %}
   {% numbered-item %}
   Type "Open MCP settings" in the command palette.
@@ -248,8 +248,8 @@ In a Claude Desktop chat, ask a question that uses an MCP tool.
 {% numbered-list %}
   {% numbered-item %}
   In VS Code, open the command palette.
-- macOS: `Command + Shift + P`
-- Windows/Linux: `Ctrl + Shift + P`
+  - macOS: `Command + Shift + P`
+  - Windows/Linux: `Ctrl + Shift + P`
   {% /numbered-item %}
   {% numbered-item %}
   Type "MCP: Add Server" in the command palette.
