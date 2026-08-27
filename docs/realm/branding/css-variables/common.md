@@ -402,15 +402,22 @@ List of CSS variables that are reused in other CSS variables.
 <details>
 <summary>Border</summary>
 
+Every named border radius except `--border-radius-none` and `--border-radius-full` is calculated from `--border-radius`,
+so overriding that one value rescales the whole set.
+Use `--border-radius-none` for square corners and `--border-radius-full` for pill shapes and circles, such as switches and scrollbar thumbs.
+
 ```css
 --border-width: 1px;
 --border-style: solid;
 
+--border-radius-none: 0;
 --border-radius: 4px;
 --border-radius-md: calc(var(--border-radius) * 1.5);
 --border-radius-lg: calc(var(--border-radius) * 2);
 --border-radius-xl: calc(var(--border-radius) * 3);
 --border-radius-xxl: calc(var(--border-radius) * 4);
+--border-radius-xxxl: calc(var(--border-radius) * 6);
+--border-radius-full: 999px;
 
 --border-color-primary: var(--color-warm-grey-3);
 --border-color-secondary: var(--color-warm-grey-2);
