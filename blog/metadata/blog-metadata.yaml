@@ -78,12 +78,6 @@ categories:
       - id: dependency-maps
         label: Dependency maps
 
-  - id: api-descriptions
-    label: API descriptions
-    subcategories:
-      - id: openapi
-        label: OpenAPI
-
   - id: api-documentation
     label: API documentation
     subcategories:

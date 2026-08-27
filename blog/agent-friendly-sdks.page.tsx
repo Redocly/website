@@ -3,10 +3,12 @@ import styled from 'styled-components';
 
 import { useThemeHooks } from '@redocly/theme/core/hooks';
 import { Markdown } from '@redocly/theme/components/Markdown/Markdown';
+import { CodeBlock } from '@redocly/theme/components/CodeBlock/CodeBlock';
 
 import type { Post } from '@redocly/marketing-pages/components/Blog/types.js';
 import PostInfo from '@redocly/marketing-pages/components/Blog/PostInfo.js';
 import { MediaBox } from '@redocly/marketing-pages/components/PositionItems/MediaBox.js';
+import { TextGradient } from '@redocly/marketing-pages/components/TextGradient/TextGradient.js';
 import { Box } from '@redocly/marketing-pages/ui/Box.js';
 
 import { RecentPosts } from '../@theme/components/Blog/RecentPosts';
@@ -24,7 +26,7 @@ export const frontmatter = {
   },
   author: 'roman-marshevskyi',
   publishedDate: '2026-08-27',
-  categories: ['redocly:redocly-cli', 'api-descriptions:openapi', 'api-lifecycle:sdks'],
+  categories: ['redocly:redocly-cli', 'api-specifications:openapi', 'api-lifecycle:sdks'],
 };
 
 export default function AgentFriendlySdksPost() {
@@ -101,17 +103,24 @@ export default function AgentFriendlySdksPost() {
                 <StepHint>
                   The one you already have: OpenAPI 3.0, 3.1, 3.2, or Swagger 2.0.
                 </StepHint>
-                <Pre>
-                  <TokC># openapi.yaml</TokC>
-                  {'\npaths:\n  /menu-items:\n    get:\n      operationId: '}
-                  <TokS>listMenuItems</TokS>
-                  {'\n  /orders/{orderId}:\n    get:\n      operationId: '}
-                  <TokS>getOrderById</TokS>
-                  {'\ncomponents:\n  securitySchemes:\n    BearerAuth:\n      type: '}
-                  <TokS>http</TokS>
-                  {'\n      scheme: '}
-                  <TokS>bearer</TokS>
-                </Pre>
+                <CodeBlock
+                  lang="yaml"
+                  header={{ title: 'openapi.yaml', controls: { copy: {} } }}
+                  source={[
+                    'paths:',
+                    '  /menu-items:',
+                    '    get:',
+                    '      operationId: listMenuItems',
+                    '  /orders/{orderId}:',
+                    '    get:',
+                    '      operationId: getOrderById',
+                    'components:',
+                    '  securitySchemes:',
+                    '    BearerAuth:',
+                    '      type: http',
+                    '      scheme: bearer',
+                  ].join('\n')}
+                />
               </div>
             </Step>
 
@@ -123,10 +132,11 @@ export default function AgentFriendlySdksPost() {
                   No account, no config required. Flags or a <code>redocly.yaml</code>{' '}
                   <code>client</code> block, your choice.
                 </StepHint>
-                <Pre>
-                  <TokC>$</TokC> npx @redocly/cli@latest generate-client openapi.yaml{' '}
-                  <TokFlag>--output</TokFlag> src/client.ts
-                </Pre>
+                <CodeBlock
+                  lang="bash"
+                  header={{ controls: { copy: {} } }}
+                  source="npx @redocly/cli@latest generate-client openapi.yaml --output src/client.ts"
+                />
               </div>
             </Step>
 
@@ -137,28 +147,18 @@ export default function AgentFriendlySdksPost() {
                 <StepHint>
                   Every operation is a typed function; every name comes from the description.
                 </StepHint>
-                <Pre>
-                  <TokK>import</TokK>
-                  {' { configure, listMenuItems, getOrderById } '}
-                  <TokK>from</TokK> <TokS>'./client.js'</TokS>
-                  {';\n\n'}
-                  <TokF>configure</TokF>
-                  {'({ auth: { bearer: token } }); '}
-                  <TokC>// sent only where an operation requires it</TokC>
-                  {'\n\n'}
-                  <TokK>const</TokK>
-                  {' menu  = '}
-                  <TokK>await</TokK> <TokF>listMenuItems</TokF>
-                  {'({ query: { limit: '}
-                  <TokF>10</TokF>
-                  {' } });\n'}
-                  <TokK>const</TokK>
-                  {' order = '}
-                  <TokK>await</TokK> <TokF>getOrderById</TokF>
-                  {'({ path: { orderId: '}
-                  <TokS>'ord_01khr…'</TokS>
-                  {' } });'}
-                </Pre>
+                <CodeBlock
+                  lang="typescript"
+                  header={{ controls: { copy: {} } }}
+                  source={[
+                    "import { configure, listMenuItems, getOrderById } from './client.js';",
+                    '',
+                    'configure({ auth: { bearer: token } }); // sent only where an operation requires it',
+                    '',
+                    'const menu  = await listMenuItems({ query: { limit: 10 } });',
+                    "const order = await getOrderById({ path: { orderId: 'ord_01khr…' } });",
+                  ].join('\n')}
+                />
               </div>
             </Step>
           </Steps>
@@ -369,9 +369,11 @@ export default function AgentFriendlySdksPost() {
             stop reaching you. Eject gives you the ownership without the fork:
           </p>
 
-          <Pre>
-            <TokC>$</TokC> npx @redocly/cli@latest eject-generator python
-          </Pre>
+          <CodeBlock
+            lang="bash"
+            header={{ controls: { copy: {} } }}
+            source="npx @redocly/cli@latest eject-generator python"
+          />
 
           <p>
             That copies the built-in generator into your repository as{' '}
@@ -443,21 +445,18 @@ export default function AgentFriendlySdksPost() {
               </CtaDescription>
             </CtaTitleColumn>
             <CtaActionColumn>
-              <Pre>
-                <TokC>$</TokC> npx @redocly/cli@latest generate-client openapi.yaml{' '}
-                <TokFlag>--output</TokFlag> src/client.ts
-              </Pre>
+              <CodeBlock
+                lang="bash"
+                header={{ controls: { copy: {} } }}
+                source="npx @redocly/cli@latest generate-client openapi.yaml --output src/client.ts"
+              />
               <CtaNote>
                 Then import a function and call your API. The whole client is in the file you just
                 generated.
               </CtaNote>
               <CtaLinks>
-                <a href="https://redocly.com/docs/cli/commands/generate-client">
-                  Command reference
-                </a>
-                <a href="https://redocly.com/docs/cli/guides/customize-client-generation">
-                  Write a custom generator
-                </a>
+                <a href="/docs/cli/commands/generate-client">Command reference</a>
+                <a href="/docs/cli/guides/customize-client-generation">Write a custom generator</a>
                 <a href="https://github.com/Redocly/redocly-cli/tree/main/tests/e2e/generate-client/examples">
                   Runnable examples
                 </a>
@@ -687,37 +686,9 @@ const BlogMediaBox = styled.div`
 
 const Lead = styled.p`
   font-size: 19px;
-  line-height: 1.6;
-`;
-
-// The theme's Markdown wrapper styles 'pre' (background, text color, padding),
-// so token colors here are picked for contrast on its light code-block background.
-const Pre = styled.pre`
-  border-radius: 8px;
-  font-size: 13.5px;
-  tab-size: 2;
-  white-space: pre;
-`;
-
-const TokC = styled.span`
-  color: #59636e;
-`;
-
-const TokK = styled.span`
-  color: #cf222e;
-`;
-
-const TokS = styled.span`
-  color: #116329;
-`;
-
-const TokF = styled.span`
-  color: #8250df;
-`;
-
-const TokFlag = styled.span`
-  color: #953800;
-  font-weight: 600;
+  line-height: 1.65;
+  color: var(--color-text-dimmed);
+  margin-bottom: 2em;
 `;
 
 const Steps = styled.div`
@@ -772,11 +743,13 @@ const StepHint = styled.div`
   margin: -4px 0 8px;
 `;
 
-const StepsTagline = styled.p`
+const StepsTagline = styled(TextGradient)`
+  display: block;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 22px;
+  line-height: 1.4;
   text-align: center;
-  margin: 22px 0 0;
+  margin: 48px 0 16px;
 `;
 
 const TableScroll = styled.div`
