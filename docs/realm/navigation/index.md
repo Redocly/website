@@ -8,7 +8,9 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-toc: hide
+markdown:
+  toc:
+    hide: true
 ---
 
 # Navigation elements

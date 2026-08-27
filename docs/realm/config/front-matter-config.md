@@ -32,8 +32,12 @@ These options are available exclusively in front matter:
 ---
 
 - sidebar
-- string
-- Path to the `sidebars.yaml` file to display as the sidebar for this page.
+- object
+- Sidebar to display for this page.
+  Set `path` to the `sidebars.yaml` file, for example `sidebar:` then `path: sidebars.yaml`.
+
+  Realm deprecates the older form that sets the path as a string directly.
+  That form still works, and Realm logs a deprecation warning that names the file.
 
 ---
 
@@ -59,6 +63,14 @@ These options are available exclusively in front matter:
 - [`page` and `label` options](./navigation.md#options-that-apply-to-front-matter-only)
 - Customize the links and button labels of `nextButton` and `previousButton`.
   These options are available for front matter config only.
+
+---
+
+- keywords
+- object
+- Curate search results for the page with `includes` and `excludes` lists.
+  See [Curate search results](./search.md#curate-search-results).
+  Requires the Typesense search engine.
 
 {% /table %}
 
@@ -119,6 +131,12 @@ When defined in front matter, they override the global configuration:
 
 ---
 
+- [metadata](./metadata.md)
+- object
+- Attach metadata to the page for catalogs, filtering, and search.
+
+---
+
 - [navigation](./navigation.md)
 - object
 - Customize the behavior and appearance of the **Next page** and **Previous page** navigation buttons.
@@ -135,6 +153,12 @@ When defined in front matter, they override the global configuration:
 - [Map[string, string]](./access/rbac.md#team-to-role-map)
 - Map of teams to roles.
   Set access permissions for the page.
+
+---
+
+- [redirects](./redirects.md)
+- object
+- Map paths that should redirect to this page, each with an optional `type` (default `301`).
 
 ---
 
