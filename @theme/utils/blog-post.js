@@ -10,11 +10,19 @@ export const buildAndSortBlogPosts = async (postRoutes, context, outdir) => {
   const metadata = await transformMetadata(metadataContentRecord.data, context.fs.cwd, outdir);
 
   for (const route of postRoutes) {
-    const {
-      data: { content, frontmatter },
-    } = await context.cache.load(route.fsPath, 'markdown-frontmatter');
+    // React blog posts export `frontmatter`; markdown posts use YAML frontmatter
+    const isReactPage = /\.page\.tsx?$/.test(route.fsPath);
+    const { data } = await context.cache.load(
+      route.fsPath,
+      isReactPage ? 'react-frontmatter' : 'markdown-frontmatter',
+    );
+    const frontmatter = isReactPage ? data : data?.frontmatter;
 
-    if (frontmatter?.ignore === true || (await context.isPathIgnored(route.fsPath))) {
+    if (
+      (isReactPage && !frontmatter) ||
+      frontmatter?.ignore === true ||
+      (await context.isPathIgnored(route.fsPath))
+    ) {
       continue;
     }
 
@@ -26,15 +34,15 @@ export const buildAndSortBlogPosts = async (postRoutes, context, outdir) => {
         .map((categoryId) => {
           const categoryData = metadata.categories.get(categoryId);
           if (!categoryData) return null;
-          
+
           if (categoryData.category && categoryData.subcategory) {
-            return categoryData; 
+            return categoryData;
           } else {
-            return { 
+            return {
               category: {
-                id: categoryData.id, 
-                label: categoryData.label 
-              }
+                id: categoryData.id,
+                label: categoryData.label,
+              },
             };
           }
         })
@@ -72,12 +80,12 @@ async function transformMetadata(metadata, cwd, outdir) {
         categories.set(fullId, {
           category: {
             id: category.id,
-            label: category.label
+            label: category.label,
           },
           subcategory: {
             id: subcategory.id,
-            label: subcategory.label
-          }
+            label: subcategory.label,
+          },
         });
       }
     }
