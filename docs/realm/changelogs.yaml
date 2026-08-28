@@ -52753,17 +52753,6 @@ reunite:
       patch:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.47.0`.
     dependencies: {}
-  v2026-08-28.1:
-    timestamp: 1787895963000
-    changes:
-      minor:
-        - >-
-          Surfaced pending organization invites inside Reunite: they appear on the organization creation page, in a dismissible banner in the app
-          layout, and in an Invitations tab in user settings. Invitation acceptance still happens via the link in the invitation email.
-      patch:
-        - Added email notifications when a project is published to production for the first time.
-        - Fixed email notifications for build failure and deploy success when triggered by external users.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
