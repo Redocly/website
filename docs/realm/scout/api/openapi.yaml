@@ -14,7 +14,7 @@ servers:
   - url: https://{host}/api
     variables:
       host:
-        default: app.cba.au.redocly.com
+        default: app.cloud.redocly.com
         description: Server host.
     description: Production main server.
 security:
@@ -1055,7 +1055,7 @@ components:
       scheme: bearer
       description: |-
         API key is required to access the API.
-        You can get your API key from the [BlueHarvest dashboard](https://app.blueharvest.cloud).
+        You can get your API key from [Reunite](https://app.cloud.redocly.com).
   parameters:
     OrgId:
       name: orgId
