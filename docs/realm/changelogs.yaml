@@ -52768,7 +52768,6 @@ reunite:
     timestamp: 1787926855000
     changes:
       minor:
-        - Added access-level badges on project cards in the Reunite Projects page.
         - Added access badges to project cards on the Reunite Projects page indicating `Public` or `Limited` visibility.
       patch:
         - Fixed loading placeholders that remained visible on project cards without production builds on the Reunite Projects page.
