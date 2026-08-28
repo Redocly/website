@@ -14,7 +14,8 @@ plans:
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The **People** page is where you can manage users.
-If you are logged in to Reunite and have an [Owner organization role](../../access/roles.md#organization-roles), you can view and manage users from the **People** page in the following ways:
+Log in to Reunite with an [Owner organization role](../../access/roles.md#organization-roles).
+You can then view and manage users from the **People** page in the following ways:
 
 - Invite users to your organization.
 - Assign or change their organization roles.
@@ -28,6 +29,22 @@ The **People** page does not include options for determining who has access to p
 Project access is determined by the permissions of the [teams](./teams.md) users are members of.
 See [Configure RBAC](../../access/index.md) for more information.
 By default, users with the Owner or Member organization role can access all projects from the organization **Overview** page, unless restricted by RBAC.
+
+## Seats quota notifications
+
+Your organization can approach its seats limit (90% of available seats used).
+All organization owners then receive a warning email and see a dismissible warning banner in the app.
+
+{% admonition type="warning" name="Exceeding the seats quota blocks project builds" %}
+When the seats quota is exceeded, **project builds are blocked** until usage returns within the limit.
+All organization owners receive an alert email, and everyone in the organization sees an alert banner.
+{% /admonition %}
+
+Each email is sent once per occurrence - there are no repeated reminders and no follow-up email when usage recovers.
+A seat is any organization member with the Owner or Member role.
+A committer active within the last 30 days who isn't linked to one of those accounts also uses a seat.
+Linking a committer's duplicate account to their member account (see [Link duplicate users](#link-duplicate-users) below) merges them into a single seat instead of counting twice.
+To resolve the quota, review members on the **People** page or add seats.
 
 ## Invite people
 
@@ -68,7 +85,8 @@ To invite viewers to your organization:
 
 ### Manage pending invites
 
-Cancel or resend invitations to your Reunite organization. You can also view invitation details such as:
+Cancel or resend invitations to your Reunite organization.
+You can also view invitation details such as:
 - When the invite was created
 - When the invite expires
 - Copy the invitation link for active (non-expired) invites
@@ -88,7 +106,8 @@ To resend an invitation to people to your organization:
 
 {% admonition type="info" name="Invite expiration" %}
 Invite links automatically expire after **7 days**.
-You can see when an invite link expires by hovering over the creation time column to display a tooltip with the exact expiration date and time.
+You can see when an invite link expires.
+Hover over the creation time column to display a tooltip with the exact expiration date and time.
 Expired invites are marked with a warning icon (⚠️) next to the creation time, and their invite links can no longer be copied or shared.
 You can resend expired invites to generate a new invite link.
 {% /admonition %}
@@ -96,7 +115,8 @@ You can resend expired invites to generate a new invite link.
 ## Change organization role
 
 Change the organization roles of other users in your Reunite organization.
-You may need to update another user's organization role to Owner, for instance, if you need to leave the organization and you are the only Owner.
+You may need to update another user's organization role to Owner.
+For instance, do this if you need to leave the organization and you are the only Owner.
 For more information on the organization roles see [Roles and permissions](../../access/roles.md).
 
 To change the organization role of a person in your organization:
@@ -107,13 +127,15 @@ To change the organization role of a person in your organization:
 {% admonition type="warning" name="SSO overrides roles assigned on People page" %}
 Organization roles assigned when [adding an identity provider](./sso/add-idp.md) override roles assigned in Reunite on the **People** page.
 So if you change a user's role on the **People** page in Reunite, this role is only applied for the current session.
-As soon as the user logs out and logs back in to Reunite, their role assigned by SSO is reassigned, overriding the role assigned on the **People** page.
+As soon as the user logs out and logs back in to Reunite, their role assigned by SSO is reassigned.
+It overrides the role assigned on the **People** page.
 {% /admonition %}
 
 ## Add people to teams
 
 Add other users to teams in your Reunite organization.
-Teams is a way to organize users and if you are using [RBAC](../../access/rbac.md), you can grant permissions to the team that applies to all users included in the team.
+Teams is a way to organize users.
+If you are using [RBAC](../../access/rbac.md), you can grant permissions to the team that apply to all users included in the team.
 
 {% admonition type="warning" name="Add team first" %}
 You must add your team **before** you can complete these steps.
@@ -139,12 +161,15 @@ To delete a person from your organization:
 
 ## Link duplicate users
 
-Users who commit content to your project either through an integrated Git connection or remote content source are automatically assigned a committer role and are displayed on your **People** page.
-This automatic assignment may cause a single user to display as two different users on the **People** page if the user has an alternative email address for logging into the different systems.
+Users can commit content to your project through an integrated Git connection or remote content source.
+These users are automatically assigned a committer role and are displayed on your **People** page.
+This automatic assignment may cause a single user to display as two different users on the **People** page.
+This happens if the user has an alternative email address for logging into the different systems.
 You can link duplicate users with the committer role to member or owner user account so you don't have duplicate entries for a single user.
 
 {% admonition type="warning" name="Viewer role cannot be linked" %}
-You can't link users with the committer role to users with the viewer role, because the committer role is a paid seat and the viewer role is not.
+You can't link users with the committer role to users with the viewer role.
+The committer role is a paid seat and the viewer role is not.
 {% /admonition %}
 
 To link duplicate users:

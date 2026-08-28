@@ -5,7 +5,8 @@ seo:
 
 # Telemetry in Redoc CE
 
-Redoc CE collects anonymous telemetry data to help understand how people are using the documentation tool and to see what sort of issues they are experiencing.
+Redoc CE collects anonymous telemetry data to help understand how people are using the documentation tool.
+It also shows what sort of issues they are experiencing.
 
 ## Configure telemetry settings
 
@@ -118,7 +119,7 @@ Telemetry data is associated with a secure random telemetry ID and does not incl
 - All telemetry data is transmitted over HTTPS.
 - No API specification content or sensitive project details are collected.
 - No personally identifiable information is stored.
-- Telemetry can be completely disabled using the configuration options above.
+- Telemetry can be disabled using the configuration options above.
 - Data is used solely for improving Redoc CE and understanding usage patterns.
 
 ## Concerns and questions

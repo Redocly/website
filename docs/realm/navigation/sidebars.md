@@ -19,7 +19,8 @@ keywords:
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The sidebar is generated automatically based on your project's file structure if no `sidebars.yaml` file exists.
-By default, items in the sidebar menu are sorted using natural ordering: letter characters follow the alphabetical order and multi-digit numbers are treated as a single character.
+By default, items in the sidebar menu are sorted using natural ordering.
+Letter characters follow the alphabetical order and multi-digit numbers are treated as a single character.
 `index.md` files by default appear as the first item in any sidebar.
 
 For example, the following files: `index.md`, `concept-1.md`, `concept-11.md`, and `concept-2.md`, result in the following sidebar:
@@ -43,7 +44,9 @@ You can use the [`label`](#link-options) option in a `sidebars.yaml` file to cha
 Projects that have [multiple products](./multi-product.md) or the [catalog](../config/catalog-classic.md), generate separate sidebars for each of item.
 
 In complex projects, you can add separate `sidebars.yaml` files for each section of your project.
-Either add the files in project folders, or in the root folder with prefixes (for example: `installation.sidebars.yaml`. `config.sidebars.yaml`), then reference these files in the `sidebars.yaml` at the root of your project.
+Either add the files in project folders, or in the root folder with prefixes.
+For example: `installation.sidebars.yaml`, `config.sidebars.yaml`.
+Then reference these files in the `sidebars.yaml` at the root of your project.
 
 To hide the sidebar for your entire project, use the [`sidebar` option](../config/sidebar.md) in `redocly.yaml`.
 
@@ -81,7 +84,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - external
 - boolean
 - Opens item in a new tab and adds an external link symbol.
-  Defaults to `false`.
+  Default: `false`.
   Does not apply to paths to version subfolders.
 
 ---
@@ -89,7 +92,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - disconnect
 - boolean
 - Includes links in the sidebar without assigning the sidebar to that page.
-  Defaults to `false`.
+  Default: `false`.
 
 ---
 
@@ -161,7 +164,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - string
 -
   Values:
-  `drilldown` -- Shows only the selected group's items and hides other sidebar elements.
+  `drilldown` - Displays only the selected group's items and hides other sidebar elements.
 
 ---
 
@@ -169,12 +172,12 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - string
 -
   Values:
-  `true` -- Items are expanded when page loads.
+  `true` - Items are expanded when page loads.
   Users can collapse the group.
-  `false` -- **Default**.
-  Items are collapsed when page loads.
+  `false` - Items are collapsed when page loads.
   Users can expand.
-  `always` -- Items are expanded when page loads and cannot be collapsed.
+  `always` - Items are expanded when page loads and cannot be collapsed.
+  Default: `false`.
 
 ---
 
@@ -199,7 +202,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - items
 -
   object
-  ([Link](#link-options))
+  ([Link options](#link-options))
 - **REQUIRED.**
   A list of items, configured using [link options](#link-options).
 
@@ -267,14 +270,14 @@ Specify the order and link text for side navigation items by creating a `sidebar
   **Supported status colors:**
   `success`, `processing`, `error`, `warning`, `default`, `approved`, `declined`, `pending`, `active`, `draft`, `deprecated`, `product`.
 
-  Defaults to `grey`.
+  Default: `grey`.
 ---
 
 - position
 - string
 - The position of the badge relative to the label text.
   Possible values: `before`, `after`.
-  Defaults to `after`.
+  Default: `after`.
 
 ---
 

@@ -29,7 +29,8 @@ Configure your custom domain on the project's **Settings** > **Custom domain** p
 1. (Optional) Disable the default domain by unchecking the **Use proxy to URL** checkbox.
 1. Click **Save**.
 1. Log in to your DNS management provider and complete the following steps:
-   - Add a new TXT record with the **name/host** and **value** listed in the Domain verification admonition on the **Custom domain** section of the **Settings** page in your project.
+   - Add a new TXT record with the **name/host** and **value** listed in the Domain verification admonition.
+     The admonition is on the **Custom domain** section of the **Settings** page in your project.
    - Point the domain CNAME record to `ssl.redocly.app`.
      If you have EU data residency, point the CNAME record to `ssl.eu.redocly.app`.
 1.  Click **Verify**.

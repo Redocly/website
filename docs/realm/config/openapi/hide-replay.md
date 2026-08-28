@@ -10,9 +10,8 @@ plans:
 # `hideReplay`
 
 
-The `hideReplay` configuration option allows you to control the visibility of the `Try it` buttons associated with API requests.
-
-For example, you might want to hide the `Try it` button in your public API documentation, and make it visible only on your internal website.
+The `hideReplay` option controls whether the `Try it` buttons appear on API requests.
+For example, you can hide the button in your public API docs and keep it visible on your internal site.
 
 {% admonition type="info" %}
 {% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "hideReplay"} /%}
@@ -30,14 +29,14 @@ For example, you might want to hide the `Try it` button in your public API docum
 
 - hideReplay
 - boolean
-- Hide the `Replay` component that allows users to interactively send requests to an API.
-  Defaults to `false`.
+- Hide the `Replay` component that lets users send requests to an API from the docs.
+  Default: `false`.
 
 {% /table %}
 
 ## Examples
 
-The following example hides the `Replay` component from the API reference documentation.
+The following example hides the `Replay` component:
 
 ```yaml {% title="redocly.yaml" %}
 openapi:
@@ -46,8 +45,8 @@ openapi:
 
 ## Resources
 
-- **[Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay)** - Learn about the interactive API testing features and capabilities used in API reference documentation
-- **[OpenAPI configuration](./index.md)** - Complete guide to OpenAPI configuration options for customizing API reference documentation
-- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - Official OpenAPI Specification documentation for understanding API description standards
-- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - Visual guide to OpenAPI specification structure and Replay button customization
-- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization
+- **[Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay)** - How users test APIs from the reference docs
+- **[OpenAPI configuration](./index.md)** - All the options you can set under `openapi`
+- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - The official standard for API descriptions
+- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - A visual map of every part of an OpenAPI description
+- **[Configuration options](../index.md)** - All the other options for your project

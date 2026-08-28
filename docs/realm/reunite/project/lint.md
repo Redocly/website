@@ -59,7 +59,8 @@ If you have an open pull request, you can access the same report by opening the 
 
 ## Scorecard labels
 
-After you define scorecard levels and commit the changes, labels representing the scorecard levels display next to the names of your API descriptions in Reunite and on your published project.
+After you define scorecard levels and commit the changes, labels representing the scorecard levels display.
+They appear next to the names of your API descriptions in Reunite and on your published project.
 
 ## Resources
 

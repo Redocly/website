@@ -96,7 +96,8 @@ Result:
 
 ### $user
 
-The structure of `$user` depends on your Identity Provider (IdP). Here's an example:
+The structure of `$user` depends on your Identity Provider (IdP).
+Here's an example:
 
 ```json
 {

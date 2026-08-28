@@ -15,8 +15,8 @@
   "author": "team@redocly.com",
   "license": "UNLICENSED",
   "dependencies": {
-    "@redocly/marketing-pages": "0.2.18",
-    "@redocly/realm": "0.136.0-next.6",
+    "@redocly/marketing-pages": "^0.2.30",
+    "@redocly/realm": "0.137.0-next.5",
     "buffer": "^6.0.3",
     "highlight-words-core": "^1.2.3",
     "path": "^0.12.7",
@@ -38,6 +38,12 @@
     "react-dom": "19.2.4",
     "shell-quote@<1.8.4": "1.8.4",
     "js-cookie@<3.0.7": "3.0.7",
-    "@redocly/realm": "0.136.0-next.6"
+    "markdown-it@<14.2.0": "14.3.0",
+    "dompurify@<3.4.13": "3.4.13",
+    "@redocly/realm": "0.137.0-next.5",
+    "@redocly/theme": "0.69.0-next.5",
+    "markdownlint-cli2": {
+      "js-yaml": "^4.3.1"
+    }
   }
 }

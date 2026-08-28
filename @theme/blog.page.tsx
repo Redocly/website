@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Route, Routes as DomRoutes, useParams } from 'react-router-dom';
+import { Route, Routes as DomRoutes, useParams } from 'react-router';
 import { PageLayout } from '@redocly/theme/layouts/PageLayout';
 import { useThemeHooks } from '@redocly/theme/core/hooks';
 

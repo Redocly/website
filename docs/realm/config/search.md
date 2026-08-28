@@ -144,7 +144,8 @@ search:
 
 - page
 - string
-- **REQUIRED.** Path to the file representing the linked page.
+- **REQUIRED.**
+  Path to the file representing the linked page.
 
 ---
 
@@ -195,21 +196,24 @@ search:
 
 - name
 - string
-- **REQUIRED.** Name of the facet.
+- **REQUIRED.**
+  Name of the facet.
   Acts as a label for the filtering control in the search dialog.
 
 ---
 
 - field
 - string
-- **REQUIRED.** Facet ID.
+- **REQUIRED.**
+  Facet ID.
   Use this ID as a key in `metadata` section when adding facets to a page.
 
 ---
 
 - type
 - string
-- **REQUIRED.** Control displayed in the search dialog.
+- **REQUIRED.**
+  Control displayed in the search dialog.
   Values: `multi-select` (select multiple filter values), `select` (select a single filter value), `tags` (applies only to HTTP method facet).
 
 ---
@@ -240,7 +244,7 @@ Use [AI Assistant](./ai-assistant.md) option instead.
 - hide
 - boolean
 - Hides the AI search button when set to `true`.
-  Default: `true`
+  Default: `true`.
 
 ---
 
@@ -258,9 +262,9 @@ Use [AI Assistant](./ai-assistant.md) option instead.
 
 {% /table %}
 
-**Data usage and privacy:** Curious how AI Search uses your data?
-Redocly AI Search runs in **inference-only mode** and does not train or fine-tune AI models on your content.
-For details, see the [AI Search data usage FAQ](../faq/ai-search-privacy.md).
+**Data usage and privacy:** Curious how the AI assistant uses your data?
+The Redocly AI assistant runs in **inference-only mode** and does not train or fine-tune AI models on your content.
+For details, see the [AI governance and security FAQ](../faq/ai-governance.md).
 
 {% admonition type="info" name="Make content private"%}
 
@@ -270,7 +274,7 @@ See [excludeFromSearch documentation](./front-matter-config.md#front-matter-only
 {% /admonition %}
 
 AI search and Typesense search indexes are only built on the production branch.
-Changes to search configuration or content exclusions, like the `excludeFromSearch` front matter option, may not immediately appear in search results until the next production build.
+Changes to search configuration or content exclusions, like the `excludeFromSearch` front matter option, appear in search results after the next production build.
 
 ## Apply facets to files
 
@@ -326,7 +330,8 @@ Only `redocly_category` facet field is used as a group facet.
 ## Curate search results
 
 Influence the ranking of specific pages in search results for particular search terms.
-Use `keywords` option in the front matter of a page or `x-keywords` in an OpenAPI description file to boost the page to the top of search results or exclude the page from appearing for certain keywords.
+Use the `keywords` option in the front matter of a page or `x-keywords` in an OpenAPI description file.
+These options boost the page to the top of search results or exclude the page from appearing for certain keywords.
 
 {% admonition type="info" %}
 Curation is only available for the Typesense search engine, which requires an Enterprise or Enterprise+ plan.
@@ -335,7 +340,8 @@ Curation is only available for the Typesense search engine, which requires an En
 Behavior of pages with keywords:
 
 - For each keyword in `includes`, the page is promoted to the top position in search results.
-- If you use the same keyword in multiple pages, the pages appear at the top of search results in the order they were indexed by the search engine.
+- You can use the same keyword in multiple pages.
+  The pages appear at the top of search results in the order they were indexed by the search engine.
 - Keywords are not case-sensitive.
 - The word order in keywords is preserved: searching for "pay apple" won't trigger a keyword "apple pay".
 - The first matching keyword triggers curation and stops additional keywords from being processed for that search.

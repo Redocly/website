@@ -72,7 +72,7 @@ navbar:
           icon: ./images/icons/respect.svg
         - separator: Open Source
         - label: Redoc
-          page: ./pages/redoc/redoc.page.tsx
+          page: ./pages/redoc-ce/redoc-ce.page.tsx
         - label: Redocly CLI
           page: ./pages/redocly-cli/redocly-cli.page.tsx
         - label: Respect
@@ -205,6 +205,7 @@ responseHeaders:
           https://js.hs-analytics.net
           https://js.hs-banner.com
           https://cdn.jsdelivr.net
+          https://cdn.redocly.com
           'sha256-M28mypAFwwpIwIF9e1/A6867PQiwVvOrdqFSTFSa8/U=' 
           'sha256-Ed6Lei7deBSXT1iYYw0V36YZXaA4v7OsRknNjmNl/9c='
           'sha256-uDN+KkW4ljf+D4DbsWP5KpxyfG/7h+LNmZxMzbz/+1E='
@@ -220,7 +221,8 @@ responseHeaders:
           'sha256-+Ozb/ItuZAdaQgJd2RebN2rKWj1XkBuXVaV6/lT4Juo='
           'sha256-9qgU5FDrauEgF+e1iJWvsh46OwsIkNOLjkXggr/02jk='
           'sha256-v7ddZtWCUr5oF3kgrlEot4fG861CKDXUt0aTaNaIk6Q='
-          'sha256-+t5Z3fJi7uJxARWEzFEVaSRgtaAn0r97XkxpJNbQiK0=';
+          'sha256-+t5Z3fJi7uJxARWEzFEVaSRgtaAn0r97XkxpJNbQiK0='
+          'sha256-gOx3nRh8znDQR7T1VkI+fFXDgsNzf5enQqdi7NP11Vk=';
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 
@@ -327,6 +329,6 @@ links:
     title: Redocly Blog RSS Feed
 
 banner:
-  - content: ✨ **Reviewer is here!** Expert review on every docs PR. [Get early access](/pages/reviewer/reviewer.page.tsx)
+  - content: <span class="banner-wide">✨ **Reviewer** - expert feedback on every docs PR. [Get early access](/pages/reviewer/reviewer.page.tsx) **·**  {% img src="./images/icons/redoc-ce.svg" alt="Redoc" width=16 height=16 /%} Redoc 3.0 is coming. [Take a look](/pages/redoc-ce/redoc-ce.page.tsx)</span><span class="banner-narrow">✨ [**Reviewer**](/pages/reviewer/reviewer.page.tsx) early access **·** {% img src="./images/icons/redoc-ce.svg" alt="Redoc" width=16 height=16 /%} [**Redoc 3.0**](/pages/redoc-ce/redoc-ce.page.tsx) coming soon.</span>
     target: '**'
     dismissible: true

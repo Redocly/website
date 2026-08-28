@@ -13,7 +13,8 @@ plans:
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 The [remote content](./remote-content.md) feature allows adding content from a variety of external sources.
-If you have files in a Git repository, you can include them in your project as a remote content folder or as a single remote file.
+You can include files from a Git repository in your project.
+Add them as a remote content folder or as a single remote file.
 Remote content folders and files are synced one way.
 Updates pushed to your online Git repository are reflected in the Redocly project, which you can then deploy and publish through Redocly.
 

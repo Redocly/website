@@ -143,7 +143,7 @@ rules:
   tag-description: warn
 ```
 
-### Minimal ruleset: AsyncAPI 3.0
+### Minimal ruleset: AsyncAPI 3.0, AsyncAPI 3.1, AsyncAPI 2.6
 
 ```yaml
 rules:
@@ -151,18 +151,7 @@ rules:
   no-required-schema-properties-undefined: warn
   no-schema-type-mismatch: warn
   operation-operationId: warn
-  struct: error
-  tag-description: warn
-```
-
-### Minimal ruleset: AsyncAPI 2.6
-
-```yaml
-rules:
-  no-enum-type-mismatch: warn
-  no-required-schema-properties-undefined: warn
-  no-schema-type-mismatch: warn
-  operation-operationId: warn
+  security-defined: warn
   struct: error
   tag-description: warn
 ```
@@ -193,10 +182,12 @@ rules:
   info-license: warn
   info-license-strict: warn
   no-ambiguous-paths: warn
+  no-duplicated-enum-values: warn
   no-duplicated-tag-names: warn
   no-empty-servers: error
   no-enum-type-mismatch: error
   no-identical-paths: error
+  no-illogical-composition-keywords: warn
   no-invalid-media-type-examples: warn
   no-invalid-parameter-examples: warn
   no-invalid-schema-examples: warn
@@ -208,6 +199,7 @@ rules:
   no-server-trailing-slash: error
   no-server-variables-empty-enum: error
   no-unresolved-refs: error
+  no-unsafe-markdown: warn
   no-unused-components: warn
   no-undefined-server-variable: error
   operation-2xx-response: warn
@@ -228,6 +220,7 @@ rules:
   spec-example-values: error
   spec-no-invalid-encoding-combinations: error
   spec-no-invalid-tag-parents: error
+  spec-ref-siblings: warn
   struct: error
   tag-description: warn
 ```
@@ -239,11 +232,13 @@ rules:
   info-license: warn
   info-license-strict: warn
   no-ambiguous-paths: warn
+  no-duplicated-enum-values: warn
   no-duplicated-tag-names: warn
   no-empty-servers: error
   no-enum-type-mismatch: error
   no-example-value-and-externalValue: error
   no-identical-paths: error
+  no-illogical-composition-keywords: warn
   no-invalid-media-type-examples: warn
   no-invalid-parameter-examples: warn
   no-invalid-schema-examples: warn
@@ -255,6 +250,7 @@ rules:
   no-server-trailing-slash: error
   no-server-variables-empty-enum: error
   no-unresolved-refs: error
+  no-unsafe-markdown: warn
   no-unused-components: warn
   no-undefined-server-variable: error
   operation-2xx-response: warn
@@ -271,6 +267,7 @@ rules:
   security-defined: error
   security-scopes-defined: warn
   spec-components-invalid-map-name: error
+  spec-ref-siblings: warn
   struct: error
   tag-description: warn
 ```
@@ -282,11 +279,13 @@ rules:
   info-license: warn
   info-license-strict: warn
   no-ambiguous-paths: warn
+  no-duplicated-enum-values: warn
   no-duplicated-tag-names: warn
   no-empty-servers: error
   no-enum-type-mismatch: error
   no-example-value-and-externalValue: error
   no-identical-paths: error
+  no-illogical-composition-keywords: warn
   no-invalid-media-type-examples: warn
   no-invalid-parameter-examples: warn
   no-invalid-schema-examples: warn
@@ -297,6 +296,7 @@ rules:
   no-server-trailing-slash: error
   no-server-variables-empty-enum: error
   no-unresolved-refs: error
+  no-unsafe-markdown: warn
   no-unused-components: warn
   no-undefined-server-variable: error
   nullable-type-sibling: error
@@ -314,6 +314,7 @@ rules:
   security-defined: error
   security-scopes-defined: warn
   spec-components-invalid-map-name: error
+  spec-ref-siblings: warn
   struct: error
   tag-description: warn
 ```
@@ -325,6 +326,7 @@ rules:
   info-license: warn
   info-license-strict: warn
   no-ambiguous-paths: warn
+  no-duplicated-enum-values: warn
   no-duplicated-tag-names: warn
   no-enum-type-mismatch: error
   no-identical-paths: error
@@ -334,6 +336,7 @@ rules:
   no-required-schema-properties-undefined: warn
   no-schema-type-mismatch: error
   no-unresolved-refs: error
+  no-unsafe-markdown: warn
   operation-2xx-response: warn
   operation-4xx-response: warn
   operation-operationId: warn
@@ -347,38 +350,27 @@ rules:
   path-params-defined: error
   security-defined: error
   security-scopes-defined: warn
+  spec-ref-siblings: warn
   struct: error
   tag-description: warn
 ```
 
-### Recommended ruleset: AsyncAPI 3.0
+### Recommended ruleset: AsyncAPI 3.0, AsyncAPI 3.1, AsyncAPI 2.6
 
 ```yaml
 rules:
   info-license-strict: warn
+  no-duplicated-enum-values: warn
   no-duplicated-tag-names: warn
   no-enum-type-mismatch: error
   no-mixed-number-range-constraints: warn
   no-required-schema-properties-undefined: warn
   no-schema-type-mismatch: error
+  no-unsafe-markdown: warn
   operation-operationId: warn
+  security-defined: error
   security-scopes-defined: warn
-  struct: error
-  tag-description: warn
-```
-
-### Recommended ruleset: AsyncAPI 2.6
-
-```yaml
-rules:
-  info-license-strict: warn
-  no-duplicated-tag-names: warn
-  no-enum-type-mismatch: error
-  no-mixed-number-range-constraints: warn
-  no-required-schema-properties-undefined: warn
-  no-schema-type-mismatch: error
-  operation-operationId: warn
-  security-scopes-defined: warn
+  spec-ref-siblings: warn
   struct: error
   tag-description: warn
 ```
@@ -388,10 +380,12 @@ rules:
 ```yaml
 rules:
   criteria-unique: warn
+  no-duplicated-enum-values: warn
   no-enum-type-mismatch: error
   no-mixed-number-range-constraints: warn
   no-required-schema-properties-undefined: warn
   no-schema-type-mismatch: error
+  no-unsafe-markdown: warn
   outputs-defined: warn
   parameters-unique: error
   requestBody-replacements-unique: warn

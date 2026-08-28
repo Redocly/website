@@ -12,7 +12,8 @@ description: Setup Search Engine Optimization(SEO) for your project.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Use the `seo` options to control the contents of your project's HTML `<head>` element, `llms.txt` file generation, and search engine optimization features like sitemaps and indexing control.
+Use the `seo` options to control the contents of your project's HTML `<head>` element and `llms.txt` file generation.
+The options also control search engine optimization features like sitemaps and indexing control.
 You can override `seo` options, except `llmstxt`, in the [front matter](./front-matter-config.md) of Markdown and React pages.
 
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "seo"} /%}
@@ -156,7 +157,7 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 - hide
 - boolean
 - Specifies if an `llms.txt` file and clean Markdown versions of pages included in the `llms.txt` file are generated.
-  Defaults to `false`.
+  Default: `false`.
 
 ---
 
@@ -195,7 +196,7 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 
 {% /table %}
 
-Default values for the `llmstxt` object are:
+The default values for the `llmstxt` object are:
 
 ```yaml
   llmstxt:
@@ -274,7 +275,8 @@ Default values for the `llmstxt` object are:
 
 ## Sitemaps
 
-A sitemap is a resource that lists all the pages in your website to help search engines and other automation tools identify all the pages available.
+A sitemap is a resource that lists all the pages in your website.
+It helps search engines and other automation tools identify all the pages available.
 
 ### Generate a sitemap
 
@@ -541,4 +543,4 @@ export const frontmatter = {
 - **[Front matter configuration](./front-matter-config.md)** - Configure SEO settings on individual pages using front matter for granular search optimization control
 - **[Response headers](./response-headers.md)** - Configure response headers for advanced search engine indexing control and optimization strategies
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
-- **[Build LLM-friendly Markdoc tags](../customization/build-markdoc-tags.md)** - Learn how to create custom Markdoc tags that emit content to LLMs.
+- **[Build LLM-friendly Markdoc tags](../customization/build-markdoc-tags.md)** - Learn how to create custom Markdoc tags that emit content to LLMs

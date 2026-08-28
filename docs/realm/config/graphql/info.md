@@ -185,7 +185,8 @@ schema {
 }
 ```
 
-If the docstring starts with `#` (followed by a space) on the first line, that line is extracted as the title and the rest as the description.
+The docstring can start with `#` (followed by a space) on the first line.
+That line is extracted as the title and the rest as the description.
 Otherwise, the entire docstring is used as the description.
 
 ## Per-API customization

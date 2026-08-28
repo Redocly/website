@@ -29,14 +29,6 @@ In Reunite, projects are the place where you create, test, and deploy documentat
 Reunite creates your project and takes you to the project's **Editor** page and you can start working on your documentation.
 If you have a third-party-hosted Git, [connect your repository](#connect-your-project-repository) first.
 
-### Go live with a draft project
-
-New projects start in draft mode.
-While a project stays in draft mode, deployment URLs require login and the production deployment runs in a lower-scale configuration.
-
-To make the project behave like a standard live project, click **Go live** in the editor.
-For more information, see [draft projects](./draft-projects.md).
-
 ## Switch between projects
 
 Reunite enables you to work on multiple projects.
@@ -73,7 +65,8 @@ Projects have their features grouped into pages you can access in the left panel
 
 ## Project Settings menu
 
-Use the Settings menu in your project workspace to edit your projects domain, environment variables, set up Git hosting, manage deployment options, or delete the project.
+Use the Settings menu in your project workspace to edit your project's domain and environment variables.
+You can also set up Git hosting, manage deployment options, or delete the project.
 
 ### View and edit project details
 
@@ -105,7 +98,8 @@ Reunite deletes the project and returns you to your organization's dashboard.
 
 ### Set up a custom domain
 
-To learn how to set up your custom domain and optional proxy, project prefix, or how to serve your project from a subdomain, see [Custom domain](./custom-domain.md).
+See [Custom domain](./custom-domain.md) to learn how to set up your custom domain and optional proxy or project prefix.
+It also covers how to serve your project from a subdomain.
 
 ### Manage environment variables
 
@@ -137,7 +131,6 @@ To learn how to change which branches Reunite deploys and how it handles preview
 
 ## Resources
 
-- **[Draft projects](./draft-projects.md)** - Understand draft mode, protected draft deployments, and what changes when you go live
 - **[Configure RBAC](../../config/access/rbac.md)** - Set up role-based access control for granular project and content access permissions
 - **[Connect a Git provider](./connect-git/connect-git-provider.md)** - Integrate your projects with Git repositories from various providers for version control and collaboration
 - **[Remote content](./remote-content/index.md)** - Integrate and synchronize content from external repositories and sources into your Reunite projects

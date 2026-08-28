@@ -24,8 +24,10 @@ Make sure you have the following:
 
 To add a translated Markdown file or API description file to your project, place the files in their respective locale folders inside the `@l10n` folder.
 
-The relative path from the locale folder to the translated file must be the same as the relative path from the root of the project to the file in the default language.
-For example, if you originally had a file with path `./index.md`, the file translated to Spanish must be located in `./@l10n/es-ES/index.md`, as in the following example:
+The relative path from the locale folder to the translated file must match.
+It must equal the relative path from the root of the project to the file in the default language.
+For example, you might originally have a file with path `./index.md`.
+The file translated to Spanish must be located in `./@l10n/es-ES/index.md`, as in the following example:
 
 ```treeview {% title="Example file structure for localized content" %}
     your-awesome-project/

@@ -9,7 +9,8 @@ plans:
 ---
 # `hideInfoMetadata`
 
-If you include metadata for your APIs, either using the `info.x-metadata` extension or the `metadata` configuration option, that information is displayed in the API reference documentation.
+You can add metadata to an API with the `info.x-metadata` extension or the `metadata` configuration option.
+The API reference displays that metadata by default.
 
 {% admonition type="info" %}
 {% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "hideInfoMetadata"} /%}
@@ -21,7 +22,7 @@ If you include metadata for your APIs, either using the `info.x-metadata` extens
   withLightbox=true
 /%}
 
-To omit the metadata section from the API reference documentation, set the `hideInfoMetadata` option.
+To omit the metadata section, set the `hideInfoMetadata` option.
 
 
 ## Options
@@ -36,15 +37,15 @@ To omit the metadata section from the API reference documentation, set the `hide
 
 - hideInfoMetadata
 - boolean
-- Optionally hide the **OpenAPI info metadata** section of the API reference page.
-  Default value is `false`.
+- Hide the **OpenAPI info metadata** section of the API reference page.
+  Default: `false`.
 
 
 {% /table %}
 
 ## Examples
 
-The following example hides the `metadata` content from the API documentation.
+The following example hides the `metadata` content:
 
 ```yaml {% title="redocly.yaml" %}
 openapi:
@@ -72,7 +73,7 @@ info:
 
 ## Resources
 
-- **[OpenAPI configuration](./index.md)** - Complete guide to OpenAPI configuration options for customizing API reference documentation
-- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - Official OpenAPI Specification documentation for understanding API description standards
-- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - Visual guide to OpenAPI specification structure and info metadata customization
-- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization
+- **[OpenAPI configuration](./index.md)** - All the options you can set under `openapi`
+- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - The official standard for API descriptions
+- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - A visual map of every part of an OpenAPI description
+- **[Configuration options](../index.md)** - All the other options for your project

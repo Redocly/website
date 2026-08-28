@@ -26,7 +26,7 @@ This tutorial assumes basic familiarity with JavaScript.
   Authors use these tags with [Markdoc functions](https://markdoc.dev/docs/functions) to dynamically render content when certain conditions are met.
   Here's an example that uses functions:
   {% markdoc-example %}
-    ```
+    ```markdoc
     {% if equals($userClaims.role, "Customer") %}
       This content only displays if $userClaims.role is equal to "Customer".
     {% /if %}
@@ -203,7 +203,7 @@ Once we verify it's working, we'll proceed to implementing the actual logic we w
       Content should be **visible**.
 
         {% markdoc-example %}
-          ```
+          ```markdoc
           {% if isAfterDate("2023-12-31") %}
             It's 2024 - Happy New Year!  
           {% /if %}
@@ -215,7 +215,7 @@ Once we verify it's working, we'll proceed to implementing the actual logic we w
       Content should be **hidden**.
 
         {% markdoc-example %}
-          ```
+          ```markdoc
           {% if isAfterDate("2030-12-31") %}
             If you can read this...
             I'm much older.
@@ -233,7 +233,8 @@ Let's test our `isAfterDate` function in a couple more complex scenarios.
 
 ### Example - Limited time offer
 
-Pretend you're running limited time sale over the weekend. You want a banner to display, but only on two specific days:
+Pretend you're running limited time sale over the weekend.
+You want a banner to display, but only on two specific days:
 
 {% markdoc-example %}
   ```js

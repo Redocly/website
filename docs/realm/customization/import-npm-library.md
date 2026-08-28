@@ -39,12 +39,13 @@ If you are working in Reunite, you can install the library by adding it to the `
 }
 ```
 
-Follow the steps in [Run a specific version in Reunite](../get-started/upgrade-realm-version.md#run-a-specific-version-in-reunite)
+Follow the steps in [Run a specific product version in Reunite](../get-started/upgrade-realm-version.md#run-a-specific-product-version-in-reunite)
 to create a `package.json` file if you don't have one already.
 
 ## Configure private registries
 
-If you need to install libraries from private NPM registries (such as Artifactory, AWS CodeArtifact, or GitHub Packages), you can configure registry access using either `.npmrc` or `bunfig.toml` files.
+You might need to install libraries from private NPM registries (such as Artifactory, AWS CodeArtifact, or GitHub Packages).
+Configure registry access using either `.npmrc` or `bunfig.toml` files.
 
 ### Use `.npmrc`
 

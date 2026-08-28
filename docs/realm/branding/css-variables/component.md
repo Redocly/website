@@ -21,7 +21,7 @@
 --admonition-padding: var(--spacing-sm) var(--spacing-base);
 --admonition-icon-margin: calc(var(--spacing-unit) / 2) 0;
 --admonition-icon-size: 18px;
---admonition-border-radius: var(--border-radius-lg);
+--admonition-border-radius: var(--border-radius-xl);
 --admonition-border-style: var(--border-style);
 --admonition-border-width: 1px;
 ```
@@ -103,8 +103,8 @@
 --admonition-default-border-color: var(--color-primary-border, var(--admonition-default-border-color-legacy));
 --admonition-default-border-style: var(--admonition-border-style);
 --admonition-default-border-width: var(--admonition-border-width);
---admonition-default-border: var(--admonition-primary-border-width) var(--admonition-default-border-style)
-  var(--admonition-pridefaultmary-border-color);
+--admonition-default-border: var(--admonition-default-border-width) var(--admonition-default-border-style)
+  var(--admonition-default-border-color);
 ```
 
 </details>
@@ -117,7 +117,7 @@
 ```css
 --badge-text-color: var(--text-color-inverse);
 --badge-bg-color: var(--color-purple-6);
---badge-border-radius: var(--border-radius);
+--badge-border-radius: var(--border-radius-md);
 ```
 
 </details>
@@ -127,7 +127,17 @@
 ```css
 --badge-deprecated-text-color: var(--color-warm-grey-1);
 --badge-deprecated-bg-color: var(--color-warning-base);
---badge-deprecated-border-radius: var(--border-radius);
+--badge-deprecated-border-radius: var(--border-radius-md);
+```
+
+</details>
+<details>
+<summary>Webhook badge</summary>
+
+```css
+--badge-webhook-text-color: var(--color-warm-grey-1);
+--badge-webhook-bg-color: var(--color-purple-7);
+--badge-webhook-border-radius: var(--border-radius-md);
 ```
 
 </details>
@@ -141,7 +151,7 @@
 --banner-button-size: 22px;
 --banner-button-padding: 3px;
 --banner-button-font-size: var(--font-size-base);
---banner-button-border-radius: var(--border-radius);
+--banner-button-border-radius: var(--border-radius-md);
 --banner-button-padding-inline: 1px var(--spacing-sm);
 --banner-button-line-height: var(--line-height-base);
 --banner-button-icon-size: 14px;
@@ -196,7 +206,7 @@
 --breadcrumbs-font-size: var(--font-size-base);
 --breadcrumbs-icon-size: var(--font-size-base);
 --breadcrumbs-font-weight-active: var(--font-weight-medium);
---breadcrumbs-border-radius: var(--border-radius);
+--breadcrumbs-border-radius: var(--border-radius-md);
 --breadcrumbs-gap: var(--spacing-xxs);
 --breadcrumbs-padding: 2px var(--spacing-xs);
 --breadcrumbs-margin-bottom: var(--spacing-lg);
@@ -281,7 +291,7 @@
 --button-font-weight: var(--font-weight-regular);
 --button-font-size: var(--font-size-base);
 --button-line-height: var(--line-height-base);
---button-border-radius: var(--border-radius-md);
+--button-border-radius: var(--border-radius-lg);
 --button-padding: 5px var(--spacing-sm);
 --button-text-wrap: nowrap;
 --button-gap: var(--spacing-xs);
@@ -309,7 +319,7 @@
 
 ```css
 .button-size-small {
-  --button-border-radius: var(--border-radius);
+  --button-border-radius: var(--border-radius-md);
   --button-padding: 1px var(--spacing-sm);
 
   --button-icon-size: 14px;
@@ -328,7 +338,7 @@
 .button-size-large {
   --button-font-size: var(--font-size-lg);
   --button-line-height: var(--line-height-lg);
-  --border-radius: var(--border-radius-lg);
+  --button-border-radius: var(--border-radius-xl);
   --button-padding: var(--spacing-xs) var(--spacing-md);
 
   --button-icon-size: 18px;
@@ -519,7 +529,7 @@
 --catalog-classic-actions-min-height: 40px;
 --catalog-classic-actions-bg-color: var(--bg-color-tonal);
 
---catalog-classic-page-badge-border-radius: var(--border-radius);
+--catalog-classic-page-badge-border-radius: var(--border-radius-md);
 --catalog-classic-page-badge-padding: 0 var(--spacing-xs);
 --catalog-classic-page-badge-font-size: var(--font-size-base);
 --catalog-classic-page-badge-line-height: var(--line-height-base);
@@ -546,7 +556,7 @@
 --catalog-classic-card-border-width: var(--border-width);
 --catalog-classic-card-border-style: var(--border-style);
 --catalog-classic-card-border-color-hover: var(--border-color-primary);
---catalog-classic-card-border-radius: var(--border-radius-xxl);
+--catalog-classic-card-border-radius: var(--border-radius-xl);
 --catalog-classic-cards-group-margin: 0 0 var(--spacing-base) 0;
 --catalog-classic-cards-group-gap: var(--spacing-xl);
 --catalog-classic-card-title-color: var(--text-color-primary);
@@ -629,7 +639,7 @@
 --code-block-controls-border: 1px solid var(--border-color-secondary);
 --code-block-icon-controls-bg-color: var(--code-block-controls-bg-color);
 --code-block-text-controls-bg-color: var(--code-block-controls-bg-color);
---code-block-controls-padding: var(--spacing-unit) var(--spacing-unit) var(--spacing-unit) var(--spacing-base);
+--code-block-controls-padding: var(--spacing-xxs);
 --code-block-controls-height: 20px;
 --code-block-controls-width: 20px;
 ```
@@ -718,7 +728,7 @@
 --dropdown-menu-max-width: 424px;
 --dropdown-menu-max-height: 300px;
 --dropdown-menu-padding: var(--spacing-xxs);
---dropdown-menu-border-radius: var(--border-radius-lg);
+--dropdown-menu-border-radius: var(--border-radius-xl);
 --dropdown-menu-box-shadow: var(--bg-raised-shadow);
 --dropdown-menu-border-color: var(--border-color-secondary);
 --dropdown-menu-bg-color: var(--bg-color-raised);
@@ -728,7 +738,7 @@
 --dropdown-menu-item-padding-vertical: 5px;
 --dropdown-menu-item-separator-padding-top: var(--spacing-xs);
 --dropdown-menu-item-separator-padding-bottom: var(--spacing-xxs);
---dropdown-menu-item-border-radius: var(--border-radius);
+--dropdown-menu-item-border-radius: var(--border-radius-lg);
 --dropdown-menu-item-bg-color: transparent;
 --dropdown-menu-item-bg-color-active: var(--bg-color-hover);
 --dropdown-menu-item-bg-color-hover: var(--bg-color-hover);
@@ -761,14 +771,12 @@
 --feedback-line-height: var(--line-height-base);
 --feedback-font-family: var(--font-family-base);
 --feedback-text-color: var(--text-color-primary);
---feedback-background-color: transparent;
+--feedback-bg-color: transparent;
 --feedback-star-color: var(--color-carrot-6);
 --feedback-width: fit-content;
 --feedback-border-radius: var(--border-radius-lg);
 --feedback-report-dialog-max-width: 500px;
 --feedback-report-dialog-max-height: 300px;
---feedback-vote-button-width: 28px;
---feedback-vote-button-height: 28px;
 
 --feedback-header-text-color: var(--text-color-primary);
 --feedback-header-font-size: var(--font-size-lg);
@@ -835,7 +843,7 @@
 --filter-select-max-width: 100%;
 --filter-select-color: var(--text-color-primary);
 --filter-select-border-color: var(--border-color-primary);
---filter-select-border-radius: calc(var(--spacing-unit) * 1.5);
+--filter-select-border-radius: var(--input-border-radius);
 --filter-select-padding: 0;
 --filter-select-border-color-hover: var(--text-color-primary);
 --filter-select-option-margin: 0;
@@ -880,7 +888,7 @@
 --filter-date-picker-icon-width: var(--spacing-sm);
 --filter-date-picker-icon-stroke-hover: var(--text-color-primary);
 --filter-date-picker-wrapper-border-color: var(--border-color-primary);
---filter-date-picker-wrapper-radius: calc(var(--spacing-unit) * 1.5);
+--filter-date-picker-wrapper-radius: var(--border-radius-md);
 --filter-date-picker-wrapper-padding: calc(var(--spacing-xxs) / 2) var(--spacing-xs);
 ```
 
@@ -1005,7 +1013,7 @@
 --image-frame-border-color: var(--border-color-secondary);
 --image-frame-border-radius: var(--border-radius-xxl);
 --image-frame-bg-color: var(--bg-color-raised);
---image-frame-image-border-radius: var(--border-radius-lg);
+--image-frame-image-border-radius: var(--border-radius-xl);
 ```
 
 </details>
@@ -1025,7 +1033,7 @@
 <summary>Image gallery</summary>
 
 ```css
---image-gallery-border-radius: var(--border-radius-lg);
+--image-gallery-border-radius: var(--border-radius-xl);
 --image-gallery-image-bg-color: var(--bg-color-tonal);
 ```
 
@@ -1055,7 +1063,7 @@
 --image-lightbox-close-size: 40px;
 --image-lightbox-close-icon-size: 18px;
 --image-lightbox-close-offset: var(--spacing-base);
---image-lightbox-close-border-radius: var(--border-radius-lg);
+--image-lightbox-close-border-radius: var(--border-radius-xl);
 --image-lightbox-side-gutter: calc(
   var(--image-lightbox-close-size) + var(--image-lightbox-close-offset) + var(--spacing-sm)
 );
@@ -1200,7 +1208,7 @@
 --md-table-line-height: var(--line-height-md);
 --md-table-margin-vertical: 20px;
 --md-table-bg-color: transparent;
---md-table-border-radius: var(--border-radius);
+--md-table-border-radius: var(--border-radius-xl);
 
 --md-table-border-width: 1px;
 --md-table-header-bg-color: var(--layer-color);
@@ -1270,7 +1278,7 @@
 --md-tabs-container-padding: 0;
 --md-tabs-container-border: none;
 
---md-tabs-border: solid var(--border-color-primary);
+--md-tabs-border: solid var(--border-color-secondary);
 --md-tabs-border-width: 0 0 1px 0;
 --md-tabs-padding: 0;
 
@@ -1284,39 +1292,74 @@
 --md-tabs-content-padding: var(--spacing-base) 0;
 --md-tabs-content-border: none;
 
+--md-tabs-gap: var(--spacing-xs);
+
 --md-tabs-tab-text-color: var(--text-color-primary);
---md-tabs-tab-font-size: var(--font-size-lg);
 --md-tabs-tab-font-family: var(--md-content-font-family);
 --md-tabs-tab-font-style: normal;
---md-tabs-tab-font-weight: var(--font-weight-bold);
 --md-tabs-tab-bg-color: none;
 --md-tabs-tab-margin: 0 0 -1px 0;
---md-tabs-tab-padding: var(--spacing-sm) var(--spacing-base);
---md-tabs-tab-border: none;
---md-tabs-tab-border-width: 0;
---md-tabs-tab-border-radius: 0;
+--md-tabs-tab-wrapper-padding: var(--spacing-unit) 0;
+
+--md-tabs-medium-tab-padding: var(--spacing-unit) var(--spacing-sm);
+--md-tabs-medium-tab-border-width: 0 0 1px 0;
+--md-tabs-medium-tab-border-radius: 0;
+--md-tabs-medium-tab-font-weight: var(--font-weight-regular);
+--md-tabs-medium-tab-line-height: var(--line-height-lg);
+--md-tabs-medium-tab-font-size: var(--font-size-lg);
+
+--md-tabs-small-tab-border-width: var(--md-tabs-medium-tab-border-width);
+--md-tabs-small-tab-padding: 1px var(--spacing-xs);
+--md-tabs-small-tab-font-size: var(--font-size-base);
+--md-tabs-small-tab-font-weight: var(--font-weight-regular);
+--md-tabs-small-tab-line-height: var(--line-height-base);
+--md-tabs-small-tab-border-radius: var(--border-radius-md);
 
 --md-tabs-active-tab-text-color: var(--color-primary-text, var(--md-tabs-active-tab-text-color-legacy));
---md-tabs-active-tab-font-size: var(--md-tabs-tab-font-size);
 --md-tabs-active-tab-font-family: var(--md-tabs-tab-font-family);
 --md-tabs-active-tab-font-style: normal;
---md-tabs-active-tab-font-weight: var(--md-tabs-tab-font-weight);
 --md-tabs-active-tab-bg-color: var(--color-primary-bg, var(--md-tabs-active-tab-bg-color-legacy));
---md-tabs-active-tab-padding: var(--md-tabs-tab-padding);
 --md-tabs-active-tab-border-color: var(--color-primary-active, var(--md-tabs-active-tab-border-color-legacy));
---md-tabs-active-tab-border-width: 0 0 2px 0;
---md-tabs-active-tab-border-radius: var(--md-tabs-tab-border-radius);
+
+--md-tabs-medium-active-tab-font-size: var(--md-tabs-medium-tab-font-size);
+--md-tabs-medium-active-tab-font-weight: var(--md-tabs-medium-tab-font-weight);
+--md-tabs-medium-active-tab-line-height: var(--md-tabs-medium-tab-line-height);
+--md-tabs-medium-active-tab-padding: var(--md-tabs-medium-tab-padding);
+--md-tabs-medium-active-tab-border-width: var(--md-tabs-medium-tab-border-width);
+--md-tabs-medium-active-tab-border-radius: var(--border-radius-lg);
+
+--md-tabs-small-active-tab-font-size: var(--md-tabs-small-tab-font-size);
+--md-tabs-small-active-tab-font-weight: var(--md-tabs-small-tab-font-weight);
+--md-tabs-small-active-tab-line-height: var(--md-tabs-small-tab-line-height);
+--md-tabs-small-active-tab-padding: var(--md-tabs-small-tab-padding);
+--md-tabs-small-active-tab-border-width: var(--md-tabs-medium-tab-border-width);
+--md-tabs-small-active-tab-border-radius: var(--border-radius-md);
 
 --md-tabs-hover-tab-text-color: var(--md-tabs-tab-text-color);
---md-tabs-hover-tab-font-size: var(--md-tabs-tab-font-size);
 --md-tabs-hover-tab-font-family: var(--md-tabs-tab-font-family);
 --md-tabs-hover-tab-font-style: normal;
---md-tabs-hover-tab-font-weight: var(--md-tabs-tab-font-weight);
---md-tabs-hover-tab-bg-color: var(--md-tabs-tab-bg-color);
---md-tabs-hover-tab-padding: var(--md-tabs-tab-padding);
---md-tabs-hover-tab-border-color: var(--border-color-secondary);
---md-tabs-hover-tab-border-width: 0 0 1.5px 0;
---md-tabs-hover-tab-border-radius: var(--md-tabs-tab-border-radius);
+--md-tabs-hover-tab-bg-color: var(--color-hover-base);
+--md-tabs-hover-tab-border-color: transparent;
+
+--md-tabs-medium-hover-tab-font-size: var(--md-tabs-medium-tab-font-size);
+--md-tabs-medium-hover-tab-font-weight: var(--md-tabs-medium-tab-font-weight);
+--md-tabs-medium-hover-tab-line-height: var(--md-tabs-medium-tab-line-height);
+--md-tabs-medium-hover-tab-padding: var(--md-tabs-medium-tab-padding);
+--md-tabs-medium-hover-tab-border-width: var(--md-tabs-medium-tab-border-width);
+--md-tabs-medium-hover-tab-border-radius: var(--md-tabs-medium-active-tab-border-radius);
+
+--md-tabs-small-hover-tab-font-size: var(--md-tabs-small-tab-font-size);
+--md-tabs-small-hover-tab-font-weight: var(--md-tabs-small-tab-font-weight);
+--md-tabs-small-hover-tab-line-height: var(--md-tabs-small-tab-line-height);
+--md-tabs-small-hover-tab-padding: var(--md-tabs-small-tab-padding);
+--md-tabs-small-hover-tab-border-width: var(--md-tabs-medium-tab-border-width);
+--md-tabs-small-hover-tab-border-radius: var(--border-radius-md);
+
+--md-tabs-tab-text-disabled-color: var(--text-color-disabled);
+
+--md-tabs-tab-focused-padding: var(--spacing-unit);
+
+--md-tabs-icon-size: 16px;
 ```
 
 </details>
@@ -1359,7 +1402,7 @@
 
 --navbar-item-line-height: var(--line-height-base);
 --navbar-item-bg-color-active: var(--bg-color-active);
---navbar-item-border-radius: var(--border-radius);
+--navbar-item-border-radius: var(--border-radius-lg);
 --navbar-item-bottom-border: none;
 
 --navbar-item-text-color-hover: var(--text-color-primary);
@@ -1552,7 +1595,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-modal-min-height: 530px;
 --search-modal-bg-color: var(--modal-bg-color);
 --search-modal-box-shadow: var(--modal-box-shadow);
---search-modal-border-radius: var(--border-radius-lg);
+--search-modal-border-radius: var(--border-radius-xxl);
 --search-modal-border: 1px solid var(--border-color-secondary);
 
 --search-modal-header-bg-color: var(--bg-color-tonal);
@@ -1576,7 +1619,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-input-gap: var(--spacing-sm);
 --search-input-height: 40px;
 --search-input-border: none;
---search-input-border-radius: var(--border-radius);
+--search-input-border-radius: var(--border-radius-xl);
 
 --search-group-title-padding: var(--spacing-sm);
 --search-group-title-bg-color: var(--bg-color-tonal);
@@ -1594,6 +1637,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-item-bg-color: transparent;
 --search-item-bg-color-hover: var(--layer-color-ontonal-hover);
 --search-item-border-color-focused: var(--color-blue-4);
+--search-item-border-radius: var(--border-radius-lg);
 --search-item-padding: var(--spacing-sm) var(--spacing-lg);
 --search-item-gap: var(--spacing-xxs);
 --search-item-product-icon-size: 16px;
@@ -1612,6 +1656,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-recent-item-title-padding: var(--spacing-md) var(--spacing-lg) var(--spacing-xxs) var(--spacing-lg);
 --search-recent-item-bg-color-active: var(--layer-color);
 --search-recent-item-border-color-focused: var(--color-blue-4);
+--search-recent-item-border-radius: var(--search-item-border-radius);
 
 --search-suggested-item-font-size: var(--font-size-base);
 --search-suggested-item-font-weight: var(--font-weight-regular);
@@ -1627,6 +1672,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-suggested-item-title-padding: var(--spacing-md) var(--spacing-lg) var(--spacing-xxs) var(--spacing-lg);
 --search-suggested-item-bg-color-active: var(--layer-color);
 --search-suggested-item-border-color-focused: var(--color-blue-4);
+--search-suggested-item-border-radius: var(--search-item-border-radius);
 
 --search-shortcuts-gap: var(--spacing-xs);
 
@@ -1674,7 +1720,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-trigger-border-style: var(--border-style);
 --search-trigger-border-color: var(--input-border-color);
 --search-trigger-border-color-hover: var(--input-border-color-hover);
---search-trigger-border-radius: var(--border-radius-md);
+--search-trigger-border-radius: var(--border-radius-lg);
 --search-trigger-padding-vertical: var(--input-padding-vertical);
 --search-trigger-padding-horizontal: var(--input-padding-horizontal);
 --search-trigger-padding: var(--search-trigger-padding-vertical) var(--search-trigger-padding-horizontal);
@@ -1838,7 +1884,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-ai-conversation-input-bg-color-disabled: var(--color-warm-grey-1);
 --search-ai-conversation-input-padding: var(--spacing-sm) var(--spacing-md);
 --search-ai-conversation-input-border: 1px solid var(--border-color-secondary);
---search-ai-conversation-input-border-radius: var(--border-radius-lg);
+--search-ai-conversation-input-border-radius: var(--border-radius-xl);
 --search-ai-conversation-input-font-size: var(--font-size-base);
 --search-ai-conversation-input-placeholder-color: var(--search-input-placeholder-color);
 --search-ai-conversation-input-border-color-focus: var(--color-blue-6);
@@ -1851,7 +1897,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-ai-conversation-input-send-button-bg-color-disabled: var(--button-bg-color-disabled);
 --search-ai-conversation-input-send-button-border-color-disabled: var(--button-border-color-disabled);
 --search-ai-conversation-input-send-button-icon-color: var(--color-static-white);
---search-ai-conversation-input-send-button-border-radius: var(--border-radius);
+--search-ai-conversation-input-send-button-border-radius: var(--border-radius-md);
 --search-ai-conversation-input-send-button-border-disabled: 1px solid var(--button-border-color-disabled);
 ```
 
@@ -1891,14 +1937,14 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --select-font-weight: var(--font-weight-regular);
 --select-line-height: var(--line-height-base);
 --select-text-color: var(--text-color-secondary);
---select-border-radius: var(--border-radius);
+--select-border-radius: var(--border-radius-lg);
 
 --select-input-padding-vertical: 6px;
 --select-input-padding-horizontal: 6px;
 --select-input-padding: var(--select-input-padding-vertical) var(--select-input-padding-horizontal);
 --select-input-gap: var(--spacing-xs);
 --select-input-value-gap: var(--spacing-unit);
---select-input-border-radius: var(--border-radius);
+--select-input-border-radius: var(--border-radius-lg);
 --select-input-font-size: var(--font-size-base);
 --select-input-font-weight: var(--font-weight-regular);
 --select-input-line-height: var(--line-height-base);
@@ -1917,7 +1963,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --select-list-item-padding: var(--select-list-item-padding-vertical) var(--select-list-item-padding-horizontal);
 
 --select-list-item-gap: var(--spacing-xs);
---select-list-item-border-radius: var(--border-radius);
+--select-list-item-border-radius: var(--border-radius-md);
 --select-list-item-bg-color-active: transparent;
 --select-list-item-bg-color-hover: var(--menu-item-bg-color-hover);
 --select-list-item-font-weight-active: var(--font-weight-medium);
@@ -1958,16 +2004,6 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --sidebar-controls-collapsed-gap: var(--spacing-xs);
 --sidebar-controls-collapsed-padding-vertical: var(--spacing-xs);
 --sidebar-controls-collapsed-padding-horizontal: var(--spacing-xxs);
-```
-
-</details>
-
-<details>
-<summary>Sidebar back button</summary>
-
-```css
---sidebar-back-button-icon-color: var(--sidebar-item-text-color);
---sidebar-back-button-icon: none;
 ```
 
 </details>
@@ -2019,7 +2055,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --menu-item-label-margin: var(--menu-item-label-margin-vertical) var(--menu-item-label-margin-horizontal);
 --menu-item-label-padding: var(--menu-item-padding-vertical) var(--menu-item-padding-horizontal);
 --menu-item-label-gap: var(--spacing-xxs);
---menu-item-label-border-radius: 6px;
+--menu-item-label-border-radius: var(--border-radius-lg);
 --menu-item-label-chevron-size: 12px;
 --menu-item-label-chevron-offset: calc(var(--menu-item-label-gap) + var(--menu-item-label-chevron-size));
 
@@ -2130,8 +2166,8 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --switch-bg-color-disabled: var(--color-warm-grey-3);
 --switch-knob-bg-color: var(--color-white);
 --switch-knob-bg-color-selected: var(--color-white);
---switch-border-radius: var(--border-radius);
---switch-knob-border-radius: calc(var(--border-radius) / 2);
+--switch-border-radius: var(--border-radius-full);
+--switch-knob-border-radius: var(--border-radius-full);
 --switch-width: 32px;
 --switch-height: 18px;
 --switch-padding: calc(var(--spacing-xxs) / 2);
@@ -2205,9 +2241,9 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 
 --tag-border-width: 1px;
 --tag-border-style: solid;
---tag-border-radius: var(--border-radius-xl);
+--tag-border-radius: var(--border-radius-md);
 --tag-box-shadow: none;
---tag-border-radius-focused: var(--border-radius);
+--tag-border-radius-focused: var(--tag-border-radius);
 
 --tag-status-dot-color-default: var(--color-persian-green-7);
 --tag-badge-size: var(--spacing-xs);
@@ -2737,38 +2773,9 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --http-tag-padding: 2px 0 0 0;
 --http-tag-border: none;
 --http-tag-bg-color: none;
-
---tag-operation-color-delete: #e70b46;
---tag-operation-bg-color-delete: #fee2e9;
---tag-operation-bg-color-delete-hover: #fdd3dd;
-
---tag-operation-color-get: #25b869;
---tag-operation-bg-color-get: #e5faef;
---tag-operation-bg-color-get-hover: #d4f7e5;
-
---tag-operation-color-post: #1e65f5;
---tag-operation-bg-color-post: #e2ebfe;
---tag-operation-bg-color-post-hover: #ceddfd;
-
---tag-operation-color-put: #f5901d;
---tag-operation-bg-color-put: #fef1e2;
---tag-operation-bg-color-put-hover: #fde2c4;
-
---tag-operation-color-patch: #f5c31d;
---tag-operation-bg-color-patch: #fdf6dd;
---tag-operation-bg-color-patch-hover: #fcf0c5;
-
---tag-operation-color-head: #6355ca;
---tag-operation-bg-color-head: #ecebfa;
---tag-operation-bg-color-head-hover: #e0def7;
-
---tag-operation-color-options: #1a1c21;
---tag-operation-bg-color-options: #ededf2;
-
---tag-operation-color-deprecated: var(--text-color-disabled);
 ```
 
-> classes `'tag-http','tag-get','tag-post','tag-put','tag-patch','tag-delete','tag-head'`
+> classes `'tag-http','tag-get','tag-post','tag-put','tag-patch','tag-delete','tag-head','tag-http-deprecated','tag-http-additional-operation'`
 
 ```css
 .tag-http {
@@ -2777,39 +2784,49 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 }
 
 .tag-get {
-  --tag-color: var(--tag-operation-color-get);
-  --tag-bg-color: var(--tag-operation-bg-color-get);
-  --tag-bg-color-hover: var(--tag-operation-bg-color-get-hover);
+  --tag-color: #25b869;
+  --tag-bg-color: #e5faef;
+  --tag-bg-color-hover: #D4F7E5;
 }
 
 .tag-post {
-  --tag-color: var(--tag-operation-color-post);
-  --tag-bg-color: var(--tag-operation-bg-color-post);
-  --tag-bg-color-hover: var(--tag-operation-bg-color-post-hover);
+  --tag-color: #1e65f5;
+  --tag-bg-color: #e2ebfe;
+  --tag-bg-color-hover: #CEDDFD;
 }
 
 .tag-put {
-  --tag-color: var(--tag-operation-color-put);
-  --tag-bg-color: var(--tag-operation-bg-color-put);
-  --tag-bg-color-hover: var(--tag-operation-bg-color-put-hover);
+  --tag-color: #f5901d;
+  --tag-bg-color: #fef1e2;
+  --tag-bg-color-hover: #FDE2C4;
 }
 
 .tag-patch {
-  --tag-color: var(--tag-operation-color-patch);
-  --tag-bg-color: var(--tag-operation-bg-color-patch);
-  --tag-bg-color-hover: var(--tag-operation-bg-color-patch-hover);
+  --tag-color: #f5c31d;
+  --tag-bg-color: #fdf6dd;
+  --tag-bg-color-hover: #FCF0C5;
 }
 
 .tag-delete {
-  --tag-color: var(--tag-operation-color-delete);
-  --tag-bg-color: var(--tag-operation-bg-color-delete);
-  --tag-bg-color-hover: var(--tag-operation-bg-color-delete-hover);
+  --tag-color: #e70b46;
+  --tag-bg-color: #fee2e9;
+  --tag-bg-color-hover: #fdd3dd;
 }
 
 .tag-head {
-  --tag-color: var(--tag-operation-color-head);
-  --tag-bg-color: var(--tag-operation-bg-color-head);
-  --tag-bg-color-hover: var(--tag-operation-bg-color-head-hover);
+  --tag-color: #6355CA;
+  --tag-bg-color: #ECEBFA;
+  --tag-bg-color-hover: #E0DEF7;
+}
+
+.tag-http-deprecated {
+  --tag-color: var(--text-color-disabled);
+}
+
+.tag-http-additional-operation {
+  --tag-color: #F97316;
+  --tag-bg-color: #faede3;
+  --tag-bg-color-hover: #fae2cf;
 }
 ```
 
@@ -2819,7 +2836,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 
 ```css
 --counter-tag-padding: 0px var(--spacing-xxs);
---counter-tag-border-radius: var(--border-radius);
+--counter-tag-border-radius: var(--tag-border-radius);
 --counter-tag-min-width: var(--spacing-md);
 ```
 
@@ -2837,7 +2854,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --toast-max-width: 360px;
 --toast-bg-color: var(--layer-color);
 --toast-border: var(--border-width) var(--border-style) var(--border-color-secondary);
---toast-border-radius: var(--border-radius-md);
+--toast-border-radius: var(--border-radius-lg);
 --toast-font-family: var(--font-family-base);
 ```
 
@@ -2903,12 +2920,16 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 <summary>Tooltip</summary>
 
 ```css
---tooltip-text-color: var(--text-color-secondary);
---tooltip-bg-color: var(--bg-color-raised);
---tooltip-padding-vertical: var(--spacing-xs);
---tooltip-padding-horizontal: var(--spacing-sm);
+--tooltip-text-color: var(--color-static-white);
+--tooltip-bg-color: var(--color-warm-grey-10);
+--tooltip-arrow-color: var(--tooltip-border-color);
+--tooltip-border-width: 2px;
+--tooltip-border-style: solid;
+--tooltip-border-color: var(--color-warm-grey-8);
+--tooltip-padding-vertical: var(--spacing-xxs);
+--tooltip-padding-horizontal: var(--spacing-xs);
 --tooltip-padding: var(--tooltip-padding-vertical) var(--tooltip-padding-horizontal);
---tooltip-max-width: 250px;
+--tooltip-max-width: 400px;
 ```
 
 </details>
@@ -2917,8 +2938,27 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 
 ```css
 .tooltip-copy-button {
-  --tooltip-text-color: var(--text-color-secondary);
-  --tooltip-bg-color: var(--bg-color-raised);
+  --tooltip-text-color: var(--color-static-white);
+  --tooltip-bg-color: var(--color-warm-grey-10);
+  --tooltip-arrow-color: var(--tooltip-border-color);
+}
+```
+
+</details>
+<details>
+<summary>Tooltip catalog</summary>
+
+```css
+.tooltip-catalog {
+  --tooltip-text-color: var(--text-color-primary);
+  --tooltip-bg-color: var(--layer-color);
+  --tooltip-arrow-color: var(--border-color-secondary);
+  --tooltip-border-width: 2px;
+  --tooltip-border-color: var(--border-color-secondary);
+  --tooltip-padding-vertical: var(--spacing-xs);
+  --tooltip-padding-horizontal: var(--spacing-sm);
+  --tooltip-padding: var(--tooltip-padding-vertical) var(--tooltip-padding-horizontal);
+  --tooltip-max-width: 300px;
 }
 ```
 

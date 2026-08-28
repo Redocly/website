@@ -79,7 +79,8 @@ const Wrapper = styled.div`
 `;
 ```
 
-Your IDE may show a `Cannot find module...` linting error for `react` and `styled-components`. You have two options:
+Your IDE may show a `Cannot find module...` linting error for `react` and `styled-components`.
+You have two options:
 
 - Ignore them; the modules resolve when `npx @redocly/cli preview` runs.
 - Remove the errors by installing a local version of your Redocly product -- `@redocly/realm` or `@redocly/revel`.

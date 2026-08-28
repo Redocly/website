@@ -14,13 +14,16 @@ plans:
 Redocly projects include user interface (UI) elements with text labels.
 These labels can either be the default generated labels or configured labels added by users when defining elements such as the sidebars or the footer.
 
-To localize UI labels, first you need to add keys to the user-defined UI elements, then copy them to a `translations.yaml` file and add the translations to each key.
+To localize UI labels, first add keys to the user-defined UI elements.
+Then copy the keys to a `translations.yaml` file and add the translations to each key.
 A `translations.yaml` file contains translation keys and localized labels for a specific language.
 These key-value pairs are used to translate different types of content, including the following:
 
-- **User-defined UI elements:** Define and translate project labels by updating the `sidebars.yaml` or `redocly.yaml` files with the translation keys and including a `translations.yaml` file in each locale folder with the language specific key-value pairs.
+- **User-defined UI elements:** Define and translate project labels by updating the `sidebars.yaml` or `redocly.yaml` files with the translation keys.
+  Include a `translations.yaml` file in each locale folder with the language specific key-value pairs.
 - **Base UI component labels:** Translate base UI component labels by including a `translations.yaml` file in each locale folder with the language specific key-value pairs.
-- **Content on React pages:** Define and translate content on React pages by creating the translation keys on the React page and including a `translations.yaml` file in each locale folder with the language specific key-value pairs.
+- **Content on React pages:** Define and translate content on React pages by creating the translation keys on the React page.
+  Include a `translations.yaml` file in each locale folder with the language specific key-value pairs.
 
 Base UI component labels include predefined keys; however, you must create keys for all other types of content.
 
@@ -194,7 +197,8 @@ To change the built-in UI labels:
 3. Add your customized values for the translation keys.
 4. Commit your changes.
 
-The following is an example `translations.yaml` file that if included in the root of your project, changes the label of the login button to "Sign in":
+The following is an example `translations.yaml` file.
+If included in the root of your project, it changes the label of the login button to "Sign in":
 
 ```yaml
 userMenu.login: Sign in

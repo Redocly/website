@@ -28,7 +28,8 @@ your-awesome-project/
 
 ## Override CSS variables
 
-Add custom styling to your project by overriding CSS variables in your `@theme/styles.css` file. The following example shows a complete custom styling setup:
+Add custom styling to your project by overriding CSS variables in your `@theme/styles.css` file.
+The following example shows a complete custom styling setup:
 
 ```css {% title="@theme/styles.css" %}
 /* Light mode styling (default) */
@@ -178,7 +179,8 @@ To style a specific product, use the product class selector in your `@theme/styl
 
 ## Apply custom classes or IDs
 
-You can apply custom CSS classes or IDs included in your `styles.css` file to many Markdown or Markdoc block level elements such as table cells, list items, quotes, and headers using Markdoc annotation syntax.
+You can apply custom CSS classes or IDs included in your `styles.css` file using Markdoc annotation syntax.
+Apply them to many Markdown or Markdoc block level elements such as table cells, list items, quotes, and headers.
 
 To apply a custom class to a Markdown element:
 
@@ -224,6 +226,47 @@ To apply a custom class to a Markdown element:
       2. ordered list item 2
       3. ordered list item 3
 
+## Use CSS utility classes for layout
+
+You can use CSS utility classes to arrange elements on the page, such as placing diagrams side-by-side.
+This approach provides more flexibility than using tables and ensures diagrams are responsive.
+
+To place diagrams side-by-side:
+
+1. Add a utility class like `.side-by-side` to your `@theme/styles.css` file:
+
+    ```css {% title="@theme/styles.css" %}
+    .side-by-side {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .side-by-side > * {
+      flex: 1 1 300px; /* Adjust the 300px to your preferred minimum width */
+    }
+    ```
+
+2. Use a wrapper element with the class in your Markdown:
+
+    ````markdoc {% process=false %}
+    # Side-by-side diagrams
+
+    <div class="side-by-side">
+
+    ```mermaid
+    graph TD;
+      A-->B;
+    ```
+
+    ```mermaid
+    graph TD;
+      C-->D;
+    ```
+
+    </div>
+    ````
 
 You may need to restart the Webview or commit your changes to your branch to see the updates.
 
@@ -238,7 +281,7 @@ Use the examples in this section as starter themes to quickly add styling to you
 
 ### Example theme - "Full corporate"
 
-The "Full corporate" styling uses a business font, has teal accents, and is very deliberate about spacing.
+The "Full corporate" styling uses a business font, has teal accents, and is deliberate about spacing.
 
 ```css {% title="@theme/styles.css" %}
 :root {

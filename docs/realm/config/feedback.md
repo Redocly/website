@@ -101,21 +101,22 @@ Free-form text field for detailed written feedback.
 - label
 - string
 - Text displayed with the feedback form.
-  Default depends on the feedback form type.
+  The default text depends on the feedback form type.
 
-  Default for `sentiment`, `rating`, `mood`, and `scale` types: "Was this helpful?"
+  Default for `sentiment`, `rating`, `mood`, and `scale` types: `Was this helpful?`.
 
-  Default for `comment` type: "Share your feedback with us."
+  Default for `comment` type: `Please share your feedback with us.`.
 
 ---
 
 - submitText
 - string
 - Text displayed when users submit the feedback form.
+  The default text depends on the feedback form type.
+  
+  Default for `sentiment`, `rating`, `mood` and `scale` types: `Thank you for your feedback!`.
 
-  Default for `sentiment`, `rating`, `mood` and `scale` types: "Thank you for your feedback!"
-
-  Default for `comment` type: "Thank you for helping improve our documentation!"
+  Default for `comment` type: `Thank you for helping improve our documentation!`.
 
 ---
 
@@ -137,7 +138,7 @@ Free-form text field for detailed written feedback.
 - string
 - Label for the left-hand side of the scale explaining what lower numbers mean.
   Applicable only for the `scale` feedback form type.
-  Default: "Not helpful at all"
+  Default: `Not helpful at all`.
 
 ---
 
@@ -145,7 +146,7 @@ Free-form text field for detailed written feedback.
 - string
 - Label for the right-hand side of the scale explaining what higher numbers mean.
   Applicable only for the `scale` feedback form type.
-  Default: "Extremely helpful"
+  Default: `Extremely helpful`.
 
 ---
 
@@ -181,7 +182,7 @@ Free-form text field for detailed written feedback.
 - string
 - Text displayed with the comment feedback form field.
   Applicable only for the `rating` and `scale` feedback form type.
-  Default: "Share your feedback with us."
+  Default: `Please share your feedback with us.`.
 
 ---
 
@@ -189,7 +190,7 @@ Free-form text field for detailed written feedback.
 - string
 - Text displayed with the comment form when users select the like icon.
   Applicable only for the `sentiment` feedback form type.
-  Default: "What was most helpful?"
+  Default: `What was most helpful?`.
 
 ---
 
@@ -197,7 +198,7 @@ Free-form text field for detailed written feedback.
 - string
 - Text displayed with the comment form when users select the dislike icon.
   Applicable only for the `sentiment` feedback form type.
-  Default: "What can we improve?"
+  Default: `What can we improve?`.
 
 ---
 
@@ -205,7 +206,7 @@ Free-form text field for detailed written feedback.
 - string
 - Text displayed with the mood form when users select the satisfied icon.
   Applicable only for the `mood` feedback form type.
-  Default: "What was most helpful?"
+  Default: `What was most helpful?`.
 
 ---
 
@@ -213,7 +214,7 @@ Free-form text field for detailed written feedback.
 - string
 - Text displayed with the mood form when users select the neutral icon.
   Applicable only for the `mood` feedback form type.
-  Default: "What can we improve?"
+  Default: `What can we improve?`.
 
 ---
 
@@ -221,7 +222,7 @@ Free-form text field for detailed written feedback.
 - string
 - Text displayed with the mood form when users select the dissatisfied icon.
   Applicable only for the `mood` feedback form type.
-  Default: "What can we improve?"
+  Default: `What can we improve?`.
 
 {% /table %}
 
@@ -246,23 +247,23 @@ Free-form text field for detailed written feedback.
 - string
 - Text displayed with the reasons feedback form.
   For `sentiment` and `mood`, this label applies to every reaction-specific configuration as the default.
-  Default: "Which statement describes your thoughts about this page?"
+  Default: `Which statement describes your thoughts about this page?`.
 
 ---
 
 - component
 - string
 - Sets the component type to multiple-choice checkboxes or single-choice radio buttons.
+  For `sentiment` and `mood`, this component applies to every reaction-specific configuration as the default.
   Possible values: `checkbox`, `radio`.
   Default: `checkbox`.
-  For `sentiment` and `mood`, this component applies to every reaction-specific configuration as the default.
 
 ---
 
 - items
 - [string]
 - List of choices in the feedback form.
-  For example, "Content was accurate" or "Content was confusing".
+  For example, `Content was accurate` or `Content was confusing`.
   For `sentiment` and `mood`, these items are included in every reaction-specific configuration as defaults.
 
 ---
@@ -323,14 +324,14 @@ Free-form text field for detailed written feedback.
 - label
 - string
 - Text displayed with the optional email input.
-  Default: "Your email (optional, for follow-up)".
+  Default: `Your email (optional, for follow-up)`.
 
 ---
 
 - placeholder
 - string
 - Placeholder text for the optional email input.
-  Default: "yourname@example.com".
+  Default: `yourname@example.com`.
 
 {% /table %}
 
@@ -358,7 +359,7 @@ Free-form text field for detailed written feedback.
 - Text displayed with the reasons form for a specific feedback value.
   Overrides the main [Reasons object](#reasons-object) `label` option.
   Uses the [Reasons object](#reasons-object) `label` option if not specified.
-  Default: "Which statement describes your thoughts about this page?"
+  Default: `Which statement describes your thoughts about this page?`.
 
 ---
 
@@ -376,7 +377,7 @@ Free-form text field for detailed written feedback.
 - [string]
 - List of choices in the feedback form for a specific feedback value.
   Merged with the [Reasons settings](#reasons-object) `items` option.
-  For example, "Content was accurate" or "Content was confusing".
+  For example, `Content was accurate` or `Content was confusing`.
 
 {% /table %}
 

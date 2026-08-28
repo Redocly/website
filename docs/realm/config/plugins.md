@@ -16,17 +16,18 @@ description: Configure custom plugins to extend lint and decorator behavior.
 ## Introduction
 
 Configure custom plugins to extend lint and decorator behavior.
-Use plugins when you need to add rules beyond the [built-in](https://redocly.com/docs/cli/rules/built-in-rules) and [configurable](https://redocly.com/docs/cli/rules/configurable-rules), or decorators beyond the [built-in decorators](https://redocly.com/docs/cli/decorators).
-For implementation guidance, see [custom plugins](https://redocly.com/docs/cli/custom-plugins).
+Use a plugin when the [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules), [configurable rules](https://redocly.com/docs/cli/rules/configurable-rules), and [built-in decorators](https://redocly.com/docs/cli/decorators) do not cover your needs.
+To learn how to write one, see [custom plugins](https://redocly.com/docs/cli/custom-plugins).
 
 ## Options
 
-The `plugins` configuration is a list of paths to plugin files, relative to the config file.
-You can include as many plugins as you need.
+The `plugins` option is a list of paths to plugin files.
+Paths are relative to the config file.
+Add as many plugins as you need.
 
 ## Examples
 
-A basic example of including two plugins from a directory named `plugins/` is shown in the example below:
+The following example includes two plugins from a directory named `plugins/`:
 
 ```yaml
 plugins:
@@ -34,12 +35,13 @@ plugins:
   - plugins/another-plugin.js
 ```
 
-Remember that you need to include plugins in the `plugins` section before you can use the content of the plugin elsewhere in the configuration file.
+List a plugin in the `plugins` section first.
+Then you can use its content elsewhere in the configuration file.
 
 ## Resources
 
-- **[APIs configuration](./apis.md)** - Set per-API configuration options in redocly.yaml for customized plugin behavior across different API specifications
-- **[Rules configuration](./rules.md)** - Define linting rules that work with plugins for comprehensive API validation and quality enforcement
-- **[Decorators](./openapi/decorators.md)** - Apply transformations to your OpenAPI documents for enhanced functionality when used with plugins
-- **[Redocly CLI cookbook](https://redocly.com/blog/redocly-cli-cookbook/)** - Find many practical examples of plugins and their implementation in real-world scenarios
-- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
+- **[APIs configuration](./apis.md)** - Set options per API in `redocly.yaml`
+- **[Rules configuration](./rules.md)** - Define the lint rules your plugins work with
+- **[Decorators](./openapi/decorators.md)** - Transform your OpenAPI documents
+- **[Redocly CLI cookbook](https://redocly.com/blog/redocly-cli-cookbook/)** - Practical examples of plugins from real projects
+- **[Configuration options](./index.md)** - All the other options for your project

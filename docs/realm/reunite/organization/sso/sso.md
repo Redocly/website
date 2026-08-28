@@ -17,7 +17,8 @@ Single sign-on (SSO) is an authentication method that allows users to log in wit
 You can add SSO identity providers (IdPs) to Reunite to allow users to use them for logging into Reunite as well as individual projects.
 After you [add an IdP to Reunite](./add-idp.md), the IdP can then be [configured in the `redocly.yaml` configuration file for individual projects](./configure-sso.md).
 
-When users log in with an IdP, the default team and organization role assigned in the IdP override the organization role assigned on the **People** page in Reunite.
+Users can log in with an IdP.
+The default team and organization role assigned in the IdP then override the organization role assigned on the **People** page in Reunite.
 
 ## Identity provider categories in Reunite
 
@@ -38,12 +39,14 @@ When configuring the `redocly.yaml` configuration file for individual projects, 
 
 The values listed are the identity providers (IdPs), if added in Reunite, users can use to log in to the project.
 To combine identity provider categories, configure `sso` in the `redocly.yaml` file of the project.
-To target specific identity providers by their unique ID, configure [`idps`](../../../config/access/idps.md) instead. `sso` and `idps` are mutually exclusive.
+To target specific identity providers by their unique ID, configure [`idps`](../../../config/access/idps.md) instead.
+`sso` and `idps` are mutually exclusive.
 
 ## Default priority order
 
 Identity provider configuration in `redocly.yaml` is not required for users to be able to use IdPs to log in.
-If you did **NOT** configure `sso` or `idps` in your project, users can log in to the project using IdPs you have added in Reunite with the following default priority order:
+You might not configure `sso` or `idps` in your project.
+In that case, users can log in using IdPs you have added in Reunite, with the following default priority order:
 
 - `GUEST`: If you added GUEST IdPs in Reunite, users must log in to the project using GUEST IdPs.
 - `CORPORATE`: If you added CORPORATE IdPs in Reunite and no GUEST IdPs, users must log in to the project using CORPORATE IdPs.
@@ -67,7 +70,8 @@ Disabling SSO removes the login page, but does not disable `rbac`.
 ## Logout behavior
 
 When a user logs out of a project, the session ends.
-For OpenID Connect IdPs, users are not automatically logged back in after logout and must re-authenticate at the identity provider the next time they access the project.
+For OpenID Connect IdPs, users are not automatically logged back in after logout.
+Users must re-authenticate at the identity provider the next time they access the project.
 When a session expires without a logout, users are re-authenticated without a prompt.
 
 Logout does not end the session at the identity provider itself, so users stay logged in to other applications that use the same IdP.

@@ -1,10 +1,12 @@
 # OpenAPI extension: `x-codeSamples`
 
 
-Code samples are snippets of code shown alongside API operations in reference documentation, giving users a quick way to start to interact with an API from their own code.
+Code samples are snippets of code shown alongside API operations in reference documentation.
+They give users a quick way to start to interact with an API from their own code.
 The `x-codeSamples` addition to OpenAPI allows you to add or override any existing code samples for a particular language or endpoint.
 
-Use the `x-codeSamples` option to make code samples part of the API description, or to replace the generated examples with code that is specific to your use case, such as using a custom library or SDK.
+Use the `x-codeSamples` option to make code samples part of the API description.
+You can also replace the generated examples with code that is specific to your use case, such as using a custom library or SDK.
 
 {% admonition type="info" name="Language options" %}
 Control the list of language options by adjusting the [openapi.code-samples](../../../config/openapi/code-samples.md) configuration setting.

@@ -60,7 +60,8 @@ The **Pages** section displays a table with the most visited page URLs, and a ti
 
 ### Top 5 viewed pages
 
-The **Top 5 viewed pages** table displays the five most visited pages, together with the number of unique users and the number of views for each page.
+The **Top 5 viewed pages** table displays the five most visited pages.
+It also shows the number of unique users and the number of views for each page.
 
 ### Views and users
 
@@ -78,21 +79,20 @@ On this page you can:
 - export the data from the selected period to a CSV file
 - search in pages, paths or domains
 
-## Search
+## AI Assistant
 
-The **Search** section displays:
-- time series chart with AI searches and unique users
-- time series chart with manual searches and unique users
-- table with the top search queries
+The **AI Assistant** section displays a time series chart with AI Assistant conversations and unique users.
 
-### AI Searches and Users
+### AI Assistant conversations and Users
 
-The **AI Searches and Users** section displays a time series of AI-powered searches in the selected period.
+The **AI Assistant conversations and Users** section displays a time series of AI-powered conversations in the selected period.
 
-Click the **View details** button to open **AI Search queries**.
+Click the **View details** button to open **AI Assistant conversations**.
 
-The **AI Search queries** page displays granular data on the use of AI-powered search.
-Expand each query to see the full question, AI-provided answer, and corresponding sources.
+The **AI Assistant conversations** page displays granular data on the use of AI-powered search.
+Expand each conversation to see the full question, AI-provided answer, and corresponding sources.
+
+The page opens with a row of summary tiles for the selected period: **Conversations**, **Messages**, **Likes**, and **Dislikes**.
 
 On this page you can:
 
@@ -102,9 +102,16 @@ On this page you can:
 - filter the results by feedback
 - search query text
 
+## Search
+
+The **Search** section displays:
+- table with the top search queries
+- time series chart with searches and unique users
+
 ### Top 5 search queries
 
-The **Top 5 search queries** table displays the five most searched terms, together with the number of unique users and the number of searches for each query.
+The **Top 5 search queries** table displays the five most searched terms.
+It also shows the number of unique users and the number of searches for each query.
 
 You can use the toggle in the top-right corner of the table to switch the displayed data between:
 

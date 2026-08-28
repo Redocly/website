@@ -212,7 +212,8 @@ Organized schemas are easier to find and manage, which improves maintainability 
 
 **Changes to schema not reflected in UI**
 
-If you're running the development server locally, you'll need to restart the project after making changes to a schema in an OpenAPI description or external file.
+You might run the development server locally.
+In that case, restart the project after making changes to a schema in an OpenAPI description or external file.
 
 **Schema not rendering**
 

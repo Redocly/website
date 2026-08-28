@@ -9,8 +9,10 @@ plans:
 ---
 # `hideDownloadButtons`
 
-Publishing an API description is as valuable to your users as publishing documentation, and by default your users can download the OpenAPI file from the API reference docs.
-We recommend making the files available but in some situations, you may want to hide the buttons to discourage downloading, for example of a legacy API.
+Publishing an API description is as valuable to your users as publishing documentation.
+By default, your users can download the OpenAPI file from the API reference docs.
+We recommend making the files available.
+In some situations, you may want to hide the buttons to discourage downloading, for example of a legacy API.
 
 The `hideDownloadButtons` option controls whether the **Download OpenAPI description** section on the info page of the API documentation is hidden.
 
@@ -33,7 +35,7 @@ The `hideDownloadButtons` option controls whether the **Download OpenAPI descrip
 - boolean
 -
   Show or hide the **Download OpenAPI description** section of your API reference info page, which contains download buttons.
-  Defaults to `false`.
+  Default: `false`.
 
 {% /table %}
 

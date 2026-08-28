@@ -33,7 +33,7 @@ This option configuration creates a product picker in the navbar and offers the 
 
 - products
 - Map[string, [Product](#product-object)]
-- **REQUIRED**
+- **REQUIRED.**
   Map of strings allows for the definition of multiple products.
   Strings represent product only in configuration file - they do not appear in published product.
   Example: `acme-us`.
@@ -52,7 +52,7 @@ This option configuration creates a product picker in the navbar and offers the 
 
 - name
 - string
-- **REQUIRED**
+- **REQUIRED.**
   Name of the product that appears in product picker.
   Example: `Acme`.
 
@@ -67,7 +67,7 @@ This option configuration creates a product picker in the navbar and offers the 
 
 - folder
 - string
-- **REQUIRED**
+- **REQUIRED.**
   Path to the product content folder.
   Cannot be a subfolder in another product's folder.
 
@@ -135,7 +135,8 @@ project/
 
 ### Product-specific configuration
 
-Each product folder can include its own `redocly.yaml` file to customize that product's documentation. Product-specific configurations override the root configuration for:
+Each product folder can include its own `redocly.yaml` file to customize that product's documentation.
+Product-specific configurations override the root configuration for:
 
 - breadcrumbs
 - codeSnippet

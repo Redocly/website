@@ -30,14 +30,14 @@ import { Admonition } from '@redocly/theme/components/Admonition/Admonition';
 ---
 
 - `type`
-- enum (`warning` | `success` | `danger` | `info`)
+- enum (warning | success | danger | info)
 - Sets the type of admonition.
-  By default `info`.
+  Default: `info`.
 
 ---
 
 - `name`
-- `string`
+- string
 - Heading for admonition.
 
 ---
@@ -49,7 +49,7 @@ import { Admonition } from '@redocly/theme/components/Admonition/Admonition';
 ---
 
 - `className`
-- `string`
+- string
 - Adds custom CSS classes to the component for styling purposes.
 
 {% /table %}

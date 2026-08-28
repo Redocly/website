@@ -9,8 +9,8 @@ You can jump directly to the main content of a project's page, skipping navigati
 
 To skip to the page's main content:
 
-1. After navigating to a page, press the <kbd>Tab</kbd> key.
-1. Press the <kbd>Return</kbd> or <kbd>Enter</kbd> key, or click the **Skip to content** button.
+1. After navigating to a page, press the <kbd>`Tab`</kbd> key.
+1. Press the <kbd>`Return`</kbd> or <kbd>`Enter`</kbd> key, or click the **Skip to content** button.
 
 The page content scrolls so that the first heading is at the top of the page.
 
@@ -72,7 +72,12 @@ The navigation bar (navbar) contains links to major parts of the project.
 
   {% tab label="Mobile" %}
     To access the navbar on mobile devices:
-    - Select the **Menu** icon in the top-right corner of the screen and then select **Main menu**.
+    - Select the menu icon in the top-right corner of the screen and then select **Main menu**.
+
+      {% img
+        src="./images/hamburger-icon.png"
+        alt="Menu icon on a mobile device"
+      /%}
 
     The contents of the menu change to represent the structure in the navbar.
 
@@ -108,7 +113,12 @@ A project can have a single sidebar with links to all pages, or a main sidebar w
   {% /tab %}
   {% tab label="Mobile" %}
     To access the sidebar on mobile devices:
-    - In the top-right corner of the screen, select the **Menu** icon.
+    - Select the menu icon in the top-right corner of the screen.
+
+      {% img
+        src="./images/hamburger-icon.png"
+        alt="Menu icon on a mobile device"
+      /%}
 
     The contents of the menu represent the structure of the sidebar.
 
@@ -137,6 +147,9 @@ The order of breadcrumb links typically reflects the hierarchy in the sidebar: f
 
 You can also use the navigation buttons located below the main content of the page.
 These buttons typically open the next page or the previous page in the same order as the items in the sidebar.
+If a page is the first item on a sidebar, a single navigation button displays on the bottom-right side of the page directing the user to the next item in the sidebar.
+If a page is the last item on a sidebar, a single navigation button displays on the bottom-left side of the page directing the user to the previous item in the sidebar.
+
 Some projects may have a custom order for the navigation buttons to guide users through related content.
 
 {% img
@@ -144,6 +157,11 @@ Some projects may have a custom order for the navigation buttons to guide users 
   alt="Screenshot of a project page's navigation buttons"
   withLightbox=true
 /%}
+
+### Footer
+
+The footer is located at the bottom of the page on all device sizes.
+Footers typically contain copyright information, contact information, and links to pages about the organization that owns the project and to other legal information.
 
 ## Switch between products
 
@@ -171,8 +189,14 @@ Products often have individual sidebars or other navigation elements, and their 
   {% tab label="Mobile" %}
     To switch between products on mobile devices:
 
-    1. Select the **Menu** icon in the top-right corner of the screen and then select **Main menu**.
-    1. Under the **Products** heading, select a link.
+    1. Select the menu icon in the top-right corner of the screen and then select **Main menu**.
+
+        {% img
+          src="./images/hamburger-icon.png"
+          alt="Menu icon on a mobile device"
+        /%}
+
+    2. Under the **Products** heading, select a link.
 
     The selected product's content opens on its default page.
 
@@ -208,7 +232,13 @@ When you first access a page, the page's latest or default version is displayed.
   {% tab label="Mobile" %}
     To switch between page versions on a mobile device:
 
-    1. Select the **Menu** icon in the top-right corner of the screen.
+    1. Select the menu icon in the top-right corner of the screen and then select **Main menu**.
+
+        {% img
+          src="./images/hamburger-icon.png"
+          alt="Menu icon on a mobile device"
+        /%}
+
     2. Under the **Version** heading, select a version from the drop-down list.
     
     The page's content changes to reflect the selected version.

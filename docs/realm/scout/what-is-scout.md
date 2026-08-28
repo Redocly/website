@@ -18,5 +18,6 @@ Scout runs as an agent either from Redocly's cloud or inside of your infrastruct
 
 ## Why Scout?
 
-The key goal of Scout is to make APIs easier to discover, classify their APIs, in order to help organizations embrace platform-thinking in their API initiatives.
+The key goal of Scout is to make APIs easier to discover and classify.
+This helps organizations embrace platform-thinking in their API initiatives.
 Scout reduces time-to-launch an API catalog dramatically by automating data ingestion while enforcing data integrity.

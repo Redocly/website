@@ -25,7 +25,8 @@ Make sure you have the following:
 
 If you already have an existing GitHub App or want to create it on your own, you can select the **Add existing app** option.
 
-To connect your GitHub Enterprise Server instance to Reunite, you must create a GitHub App on your instance and copy the **App ID**, **Client ID**, **App name**, **Client secret** and **Private key** for use in a later step in the process.
+To connect your GitHub Enterprise Server instance to Reunite, you must create a GitHub App on your instance.
+Copy the **App ID**, **Client ID**, **App name**, **Client secret** and **Private key** for use in a later step in the process.
 
 The GitHub App must have Repository permissions:
 
@@ -84,7 +85,8 @@ To add a self-hosted GitHub Enterprise Server provider in Reunite for your organ
 4. Click **Save**.
 
     The self-hosted GitHub Enterprise Server provider displays on the list of Git providers.
-    Users in your organization can select this provider to [add a repository as a project source](../connect-git-provider.md) to Reunite, or to [add content from a remote repository](../../remote-content/index.md).
+    Users in your organization can select this provider to [add a repository as a project source](../connect-git-provider.md) to Reunite.
+    They can also [add content from a remote repository](../../remote-content/index.md).
 
 ## Edit GitHub Enterprise Server provider properties
 
@@ -109,7 +111,8 @@ To delete self-hosted Git provider instances:
    Then click the **Delete** button to confirm deletion.
 
 {% admonition type="danger" name="Irreversible action" %}
-  Deleting a Git self-hosted provider instance removes all associated OAuth and personal access token authorization credentials, and stops synchronization for remote content and projects related to this provider.
+  Deleting a Git self-hosted provider instance removes all associated OAuth and personal access token authorization credentials.
+  It also stops synchronization for remote content and projects related to this provider.
 
   Perform this action only if you're certain your organization has no use for this GitHub Enterprise Server self-hosted provider instance.
 {% /admonition %}

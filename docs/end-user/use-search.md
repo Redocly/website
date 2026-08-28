@@ -80,7 +80,7 @@ Each AI response includes action buttons that allow you to rate the quality and 
 To provide feedback on an AI response:
 
 1. After receiving an AI response, locate the feedback buttons at the bottom of the response.
-2. Choose one of the following actions:
+1. Choose one of the following actions:
    - Click the thumbs up icon to indicate the response was helpful.
    - Click the thumbs down icon to indicate the response was not helpful.
 
@@ -89,12 +89,12 @@ To provide feedback on an AI response:
 When you indicate that a response was not helpful, you can optionally provide more specific feedback:
 
 1. After clicking the thumbs down icon, a feedback form appears.
-2. Select one of the predefined reasons:
+1. Select one of the predefined reasons:
    - **Didn't answer my question**
    - **Couldn't find what I was looking for**
    - **Wrong topic**
    - **Partially helpful, but missing details**
-3. Alternatively, click **More...** to provide custom feedback with specific details.
+1. Alternatively, click **More...** to provide custom feedback with specific details.
 
 ## Resources
 

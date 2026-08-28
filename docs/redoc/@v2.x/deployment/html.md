@@ -85,7 +85,8 @@ Check out the [list of options for theme configuration](../config.md#theme-setti
 
 ### The Redoc CE object
 
-As an alternative to the HTML tag, you can also initialise Redoc CE in a web page using the Redoc CE object and invoking it from JavaScript.
+As an alternative to the HTML tag, you can also initialise Redoc CE in a web page.
+Use the Redoc CE object and invoke it from JavaScript.
 Use this method to create dynamic content in a page.
 It is also a way to attach the Redoc CE element to an existing container.
 
@@ -130,7 +131,8 @@ This example also sets the configuration for `expandResponses` so all 200 and 40
 
 ### Self-host dependencies
 
-You can reference the Redoc CE script, either using a link to the files hosted on a CDN or installing Redoc CE in your `node-modules` folder.
+You can reference the Redoc CE script in two ways.
+Use a link to the files hosted on a CDN, or install Redoc CE in your `node-modules` folder.
 Self-hosting may be useful when you need to host in a closed environment or have requirements around external dependencies.
 
 

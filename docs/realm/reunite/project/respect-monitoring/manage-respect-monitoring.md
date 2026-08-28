@@ -8,7 +8,8 @@ plans:
 ---
 # Manage Respect Monitoring
 
-You can subscribe to notifications by Arazzo workflow, to receive a message when an API included in the Arazzo workflow does not pass the criteria checks.
+You can subscribe to notifications by Arazzo workflow.
+You receive a message when an API included in the Arazzo workflow does not pass the criteria checks.
 You can configure SLA (Service Level Agreement) monitoring to track service availability and get notified when uptime falls below your target threshold.
 You can also archive old workflows, so they do not clutter the Respect Monitoring page, allowing you to focus on active workflows.
 

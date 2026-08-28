@@ -9,9 +9,8 @@ plans:
 ---
 # `hideSchemaTitles`
 
-By default, users can see schema field **title** properties.
-
-The `hideSchemaTitles` option allows the schema field **title** to be hidden.
+A schema field can set a **title** property, and Redoc displays it next to the field type.
+The `hideSchemaTitles` option hides those titles.
 
 ```yaml {% title="redocly.yaml" %}
   schema:
@@ -35,8 +34,8 @@ The `hideSchemaTitles` option allows the schema field **title** to be hidden.
 
 - hideSchemaTitles
 - boolean
-- Hides the schema title next to the type.
-  Defaults to `false`.
+- Hide the schema title next to the type.
+  Default: `false`.
 
 {% /table %}
 
@@ -51,7 +50,7 @@ openapi:
 
 ## Resources
 
-- **[OpenAPI configuration](./index.md)** - Complete guide to OpenAPI configuration options for customizing API reference documentation
-- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - Official OpenAPI Specification documentation for understanding API description standards
-- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - Visual guide to OpenAPI specification structure and schema title customization
-- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization
+- **[OpenAPI configuration](./index.md)** - All the options you can set under `openapi`
+- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - The official standard for API descriptions
+- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - A visual map of every part of an OpenAPI description
+- **[Configuration options](../index.md)** - All the other options for your project

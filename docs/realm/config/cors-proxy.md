@@ -15,10 +15,12 @@ description: Restrict the built-in CORS proxy to specific remote hosts and paths
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Redocly projects include a built-in CORS proxy at `/_api/cors/` that lets browser-based features (such as the **Try it** console) reach APIs on different origins without running into CORS restrictions.
+Redocly projects include a built-in CORS proxy at `/_api/cors/`.
+It lets browser-based features (such as the **Try it** console) reach APIs on different origins without running into CORS restrictions.
 
 By default, the proxy forwards requests to any remote URL.
-Use `corsProxy` to only forward URLs to an explicit allowlist of URL prefixes so that only known API hosts can be reached through your project's domain.
+Use `corsProxy` to only forward URLs to an explicit allowlist of URL prefixes.
+This way, only known API hosts can be reached through your project's domain.
 
 ## Options
 

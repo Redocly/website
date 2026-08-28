@@ -28,7 +28,7 @@ When enabled, it scans content files with the `.adoc` extension, creates pages, 
 
 - page search index
 - AI search documents
-- `llm.txt` generation
+- `llms.txt` generation
 
 ## Install the plugin
 

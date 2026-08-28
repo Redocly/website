@@ -43,7 +43,8 @@ Requires basic to intermediate CSS knowledge.
 - **Color mode customization** - [Customize color modes](./customize-color-modes.md) with custom color schemes and mode-specific styling
 - **Table styling** - [Customize table appearance](./customize-tables.md) with custom borders, colors, and layouts
 
-**When to use:** When you need more control over appearance than configuration allows, want to match specific brand guidelines, or need custom styling for specific components.
+**When to use:** When you need more control over appearance than configuration allows.
+Also when you want to match specific brand guidelines or need custom styling for specific components.
 
 ### Complete styling setup example
 
@@ -130,7 +131,8 @@ Create React pages for marketing-focused landing pages with custom layouts, anim
 **Custom content components**
 Build Markdoc tags for interactive elements like product demos, calculators, or brand-specific content blocks.
 
-**When to use:** When you need functionality that can't be achieved with CSS alone, require custom interactive elements, or need to integrate with external brand systems.
+**When to use:** When you need functionality that can't be achieved with CSS alone.
+Also when you require custom interactive elements or need to integrate with external brand systems.
 
 ## Get started
 
@@ -143,6 +145,6 @@ You can always start simple and add more advanced customization as your needs gr
 
 ## Resources
 
-- [CSS variables reference](./css-variables/index.md) - Complete dictionary of available CSS variables for styling
-- [Configuration reference](../config/index.md) - All available configuration options for easy customization
-- [Component ejection guide](../customization/eject-components/index.md) - Technical guide to ejecting and customizing components
+- **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of available CSS variables for styling
+- **[Configuration reference](../config/index.md)** - All available configuration options for easy customization
+- **[Component ejection guide](../customization/eject-components/index.md)** - Technical guide to ejecting and customizing components

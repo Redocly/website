@@ -92,7 +92,8 @@ Otherwise, fall back to the client IP address from `x-forwarded-for` (or `auto:i
 {% /step %}
 
 {% step id="api-fetch" heading="Fetch weather data" %}
-Construct the URL for the external weather API and map your variables to the parameters required by the provider (e.g., mapping your `location` variable to their `q` parameter, and setting `aqi` to `no` to exclude Air Quality Index data).
+Construct the URL for the external weather API and map your variables to the parameters required by the provider.
+For example, map your `location` variable to their `q` parameter, and set `aqi` to `no` to exclude Air Quality Index data.
 Call the external weather API with `fetch`, and handle non-OK responses by returning the upstream error details.
 {% /step %}
 

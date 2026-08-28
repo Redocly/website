@@ -42,7 +42,8 @@ To require login to a project, [`rbac`](./rbac.md) or [`requiresLogin`](./requir
   Otherwise, it offers `CORPORATE` IdPs, if defined in Reunite.
   When a category contains a single IdP, users are redirected to this IdP.
   With multiple IdPs, users choose one on the login screen.
-  If no IdPs are defined it falls back to the `REDOCLY` IdP, giving users the option to log in using their Redocly credentials or Social Login providers (like `Google`).
+  If no IdPs are defined, it falls back to the `REDOCLY` IdP.
+  Users then have the option to log in using their Redocly credentials or Social Login providers (like `Google`).
 
 {% /table %}
 
@@ -68,7 +69,8 @@ access:
   sso: []
 ```
 
-After applying this configuration, if you have `rbac` configured for the same project, and there are pages assigned to the `authenticated` default team, those pages are not accessible to anyone.
+You might apply this configuration to a project that also has `rbac` configured.
+In that case, pages assigned to the `authenticated` default team are not accessible to anyone.
 Otherwise, if you do not have `rbac` configured, or you have all pages assigned to the `anonymous` default team, all pages are accessible.
 
 ### Root-level configuration (deprecated)

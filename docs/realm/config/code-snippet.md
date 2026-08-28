@@ -16,7 +16,8 @@ description: Configure which control UI elements are available for code snippets
 
 Configure which control UI elements are available for code snippets.
 Code snippets are small sections of code you can include in your Markdown and OpenAPI documents.
-In Markdown code snippets are formatted by wrapping the text in two sets of three backticks, placed at the start and end of the text block.
+In Markdown, code snippets are formatted by wrapping the text in two sets of three backticks.
+Place the backticks at the start and end of the text block.
 
 For example, the following is a code snippet with yaml:
 
@@ -103,7 +104,7 @@ Users can use copy button to put code snippet raw content into the clipboard.
 - hide
 - boolean
 - Specifies if the copy button should be hidden.
-  Default value: `false`.
+  Default: `false`.
 
 ---
 
@@ -125,27 +126,28 @@ When users click the report button or text, they are provided a comment feedback
 - hide
 - boolean
 - Specifies if the report button should be hidden.
-  Default value: `true`.
+  Default: `true`.
 
 ---
 
 - label
 - string
 - Label inside the report dialog form.
-  Default value: `What is wrong with the code?`.
+  Default: `What is wrong with the code?`.
 
 ---
 
 - tooltipText
 - string
 - Text of the tooltip of the report button.
-  Default value: `Report a problem`.
+  Default: `Report a problem`.
 
 {% /table %}
 
 ### Expand object
 
-Use the expand button to show all the nested properties inside a JSON object that is included as a sample request or response in an OpenAPI definition.
+Use the expand button to show all the nested properties inside a JSON object.
+This applies to sample requests or responses in an OpenAPI definition.
 
 {% table %}
 
@@ -158,13 +160,14 @@ Use the expand button to show all the nested properties inside a JSON object tha
 - hide
 - boolean
 - Specifies if the expand button should be hidden.
-  Default value: `false`.
+  Default: `false`.
 
 {% /table %}
 
 ### Collapse object
 
-Users can use collapse button to hide all the nested properties inside a JSON object that is included as a sample request or response in an OpenAPI definition.
+Users can use the collapse button to hide all the nested properties inside a JSON object.
+This applies to sample requests or responses in an OpenAPI definition.
 
 {% table %}
 
@@ -177,7 +180,7 @@ Users can use collapse button to hide all the nested properties inside a JSON ob
 - hide
 - boolean
 - Specifies if the collapse button should be hidden.
-  Default value: `false`.
+  Default: `false`.
 
 {% /table %}
 
@@ -199,7 +202,8 @@ codeSnippet:
 
 ### Page-level configuration
 
-Configure code snippets for individual pages in the front matter. Front matter configurations take precedence over global settings:
+Configure code snippets for individual pages in the front matter.
+Front matter configurations take precedence over global settings:
 
 ```yaml
 ---

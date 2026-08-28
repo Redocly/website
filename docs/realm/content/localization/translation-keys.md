@@ -33,9 +33,165 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- asyncapi.info.contact.url
+- Label for the contact URL in the info section of AsyncAPI description
+- URL
+
+---
+
+- asyncapi.info.contact.name
+- Label for the contact name in the info section of AsyncAPI description
+- E-mail
+
+---
+
+- asyncapi.info.license
+- Label for the license in the info section of AsyncAPI description
+- License
+
+---
+
+- asyncapi.info.termsOfService
+- Label for the terms of service in the info section of AsyncAPI description
+- Terms of Service
+
+---
+
+- asyncapi.key
+- Label for key in AsyncAPI description
+- Key
+
+---
+
+- asyncapi.value
+- Label for value in AsyncAPI description
+- Value
+
+---
+
+- asyncapi.variables
+- Label for variables in AsyncAPI description
+- variables
+
+---
+
+- asyncapi.required
+- Label for required fields in AsyncAPI description
+- required
+
+---
+
+- asyncapi.requiredScopes
+- Label for required scopes in AsyncAPI security schemes
+- Required scopes
+
+---
+
+- asyncapi.viewSecurityDetails
+- Label for the view security details button in AsyncAPI description
+- View security details
+
+---
+
+- asyncapi.badges.deprecated
+- Label for the deprecated badge in AsyncAPI description
+- deprecated
+
+---
+
+- asyncapi.actions.show
+- Label for the show action in AsyncAPI description
+- Show
+
+---
+
+- asyncapi.actions.hide
+- Label for the hide action in AsyncAPI description
+- Hide
+
+---
+
+- asyncapi.actions.more
+- Label for the more action in AsyncAPI description
+- more
+
+---
+
+- asyncapi.payload
+- Label for the payload in AsyncAPI description
+- Payload
+
+---
+
+- asyncapi.parameters
+- Label for the channel parameters section in AsyncAPI description
+- Parameters
+
+---
+
+- asyncapi.messages
+- Label for the channel messages section in AsyncAPI description
+- Messages
+
+---
+
+- asyncapi.contentType
+- Label for the media type selector in AsyncAPI payload examples
+- Content type
+
+---
+
+- asyncapi.moreDetails
+- Label for the "More details" expander on AsyncAPI broker / channel binding panels
+- More details
+
+---
+
+- asyncapi.property
+- Singular noun used to count schema fields in AsyncAPI description (e.g. "Show 1 property")
+- property
+
+---
+
+- asyncapi.properties
+- Plural noun used to count schema fields in AsyncAPI description (e.g. "Show 3 properties")
+- properties
+
+---
+
+- asyncapi.details
+- Fallback noun used on the schema "Show details" expander in AsyncAPI when no property count is available
+- details
+
+---
+
+- asyncapi.reply
+- Label for the operation reply section in AsyncAPI description
+- Reply
+
+---
+
+- asyncapi.servers.title
+- Title for the servers section in AsyncAPI description
+- Servers
+
+---
+
+- userMenu.login
+- Login button label
+- Log in
+
+---
+
 - userMenu.logout
 - Logout button label
 - Log out
+
+---
+
+- languagePicker.label
+- Aria-label for the language picker dropdown in the page footer / navigation
+- Select language
 
 ---
 
@@ -197,7 +353,8 @@ This page contains the list of all predefined translation keys used in default U
 
 - search.error.title
 - Error message title displayed when a search request fails
-- Oops! Something went wrong.
+- Oops!
+  Something went wrong.
 
 ---
 
@@ -558,6 +715,30 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- page.actions.connectMcp.claudeCode
+- Connect to Claude Code option title in Connect MCP dropdown
+- Connect to Claude Code
+
+---
+
+- page.actions.connectMcp.claudeCodeDescription
+- Connect to Claude Code option description in Connect MCP dropdown
+- Copy the Claude Code CLI command
+
+---
+
+- page.actions.connectMcp.codex
+- Connect to Codex CLI option title in Connect MCP dropdown
+- Connect to Codex CLI
+
+---
+
+- page.actions.connectMcp.codexDescription
+- Connect to Codex CLI option description in Connect MCP dropdown
+- Copy the Codex CLI command
+
+---
+
 - page.actions.connectMcp.copyConfig
 - Copy MCP configuration option title in Connect MCP dropdown
 - Copy MCP Configuration
@@ -602,14 +783,111 @@ This page contains the list of all predefined translation keys used in default U
 ---
 
 - page.mcpNotAllowed.title
-- 405 Method Not Allowed page header text
-- Method not allowed
+- MCP connection page header text (shown when the MCP endpoint is opened in a browser)
+- Connect to the MCP server
 
 ---
 
 - page.mcpNotAllowed.description
-- 405 Method Not Allowed page description text
-- To use this MCP server, register it in your MCP Client (for example: VS Code, Cursor, or Claude Code).
+- MCP connection page description text
+- To use this MCP server, register it in your MCP client (for example: VS Code, Cursor, or Claude Code).
+
+---
+
+- page.mcpNotAllowed.publicNote
+- Note on the public MCP endpoint connection page (`/mcp-public`)
+- This endpoint serves publicly available content only and requires no login.
+
+---
+
+- page.mcpNotAllowed.mainEndpointHint
+- Link back to the main MCP endpoint, shown on the public endpoint connection page; the `<link>` markers wrap the linked phrase and must stay in the translation
+- To access content available to your account, use the \<link\>main MCP endpoint\</link\>.
+
+---
+
+- page.mcpNotAllowed.publicEndpointHint
+- Link to the public MCP endpoint, shown on the main MCP connection page when the public endpoint is enabled; the `<link>` markers wrap the linked phrase and must stay in the translation
+- To connect anonymously without an account, use the \<link\>public endpoint\</link\>.
+
+---
+
+- page.mcpNotAllowed.tabs.claude
+- Claude tab label on the MCP connection page
+- Claude
+
+---
+
+- page.mcpNotAllowed.tabs.chatgpt
+- ChatGPT tab label on the MCP connection page
+- ChatGPT
+
+---
+
+- page.mcpNotAllowed.tabs.json
+- JSON tab label on the MCP connection page
+- JSON
+
+---
+
+- page.mcpNotAllowed.snippets.terminal.hint
+- Hint above CLI commands on the MCP connection page
+- Run this command in your terminal:
+
+---
+
+- page.mcpNotAllowed.snippets.claudeCode.headline
+- Claude Code entry headline on the MCP connection page
+- Claude Code
+
+---
+
+- page.mcpNotAllowed.snippets.claudeDesktop.headline
+- Claude Desktop entry headline on the MCP connection page
+- Claude Desktop
+
+---
+
+- page.mcpNotAllowed.snippets.claudeDesktop.instruction
+- Claude Desktop setup instruction on the MCP connection page
+- In Claude Desktop, open Settings → Developer → Edit Config, add this to the configuration file, and restart Claude Desktop:
+
+---
+
+- page.mcpNotAllowed.snippets.codexCli.headline
+- Codex CLI entry headline on the MCP connection page
+- Codex CLI
+
+---
+
+- page.mcpNotAllowed.snippets.chatgptApp.headline
+- ChatGPT desktop app entry headline on the MCP connection page
+- ChatGPT desktop app
+
+---
+
+- page.mcpNotAllowed.snippets.chatgptApp.instruction
+- ChatGPT desktop app setup instruction on the MCP connection page
+- In the ChatGPT desktop app, go to Settings → Plugins → MCPs.
+  Add a server with the "Streamable HTTP" type and this URL (restart the app afterwards):
+
+---
+
+- page.mcpNotAllowed.snippets.prompt.headline
+- Assistant prompt entry headline on the MCP connection page
+- Prompt
+
+---
+
+- page.mcpNotAllowed.snippets.prompt.hint
+- Hint above the assistant install prompt on the MCP connection page
+- Or paste this prompt into the chat to have it add the server for you:
+
+---
+
+- page.mcpNotAllowed.snippets.json.hint
+- Hint above the JSON configuration on the MCP connection page
+- Add this server entry to your MCP client configuration file:
 
 ---
 
@@ -671,6 +949,18 @@ This page contains the list of all predefined translation keys used in default U
 - codeSnippet.report.label
 - Code snippet report a problem title
 - What is wrong with this code?
+
+---
+
+- jsonViewer.showMore
+- Toggle button that reveals a truncated long string value in a JSON sample
+- Show more
+
+---
+
+- jsonViewer.showLess
+- Toggle button that collapses an expanded long string value in a JSON sample
+- Show less
 
 ---
 
@@ -1274,6 +1564,30 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.property
+- Singular noun used to count schema fields in OpenAPI description (e.g. "Show 1 property")
+- property
+
+---
+
+- openapi.properties
+- Plural noun used to count schema fields in OpenAPI description (e.g. "Show 3 properties")
+- properties
+
+---
+
+- openapi.array
+- Localized "array" word inserted into the "Show N array properties" button on array-of-object schema rows
+- array
+
+---
+
+- openapi.details
+- Fallback noun used on the schema "Show details" expander when no property count is available
+- details
+
+---
+
 - openapi.variable
 - Label for variable in OpenAPI description
 - variable
@@ -1342,7 +1656,7 @@ This page contains the list of all predefined translation keys used in default U
 
 - openapi.badges.deprecated
 - Label for the deprecated badge in OpenAPI description
-- Deprecated
+- deprecated
 
 ---
 
@@ -1577,6 +1891,12 @@ This page contains the list of all predefined translation keys used in default U
 - openapi.noRequestPayload
 - Message when there's no request payload in OpenAPI description
 - No request payload
+
+---
+
+- openapi.noRequestData
+- Message when an operation has no request data (no parameters, body, or security) in an OpenAPI description
+- No request data
 
 ---
 
@@ -1856,6 +2176,42 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- graphql.actions.show
+- Label for the show action in GraphQL description
+- Show
+
+---
+
+- graphql.actions.hide
+- Label for the hide action in GraphQL description
+- Hide
+
+---
+
+- graphql.actions.more
+- Label for the more action in GraphQL description
+- more
+
+---
+
+- graphql.fields
+- Label for the fields section in GraphQL object and interface content
+- Fields
+
+---
+
+- graphql.inputFields
+- Label for the input fields section in GraphQL input type content
+- Input Fields
+
+---
+
+- graphql.values
+- Label for the values section in GraphQL enum content
+- Values
+
+---
+
 - graphql.arguments.label
 - Label for the arguments section in GraphQL content
 - Arguments
@@ -1940,8 +2296,8 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- graphql.deprecated
-- Label for deprecated fields in GraphQL content
+- graphql.badges.deprecated
+- Label for the deprecated badge in GraphQL content
 - deprecated
 
 ---
@@ -2063,6 +2419,12 @@ This page contains the list of all predefined translation keys used in default U
 - graphql.responseSample
 - Label for the response sample in GraphQL right section
 - Response sample
+
+---
+
+- graphql.requestSample
+- Label for the request sample in GraphQL right section
+- Request sample
 
 ---
 
@@ -2306,7 +2668,8 @@ This page contains the list of all predefined translation keys used in default U
 Translations use template syntax with placeholders like `{{value}}` to enable dynamic content generation.
 This templating mechanism allows the application to inject variable data at runtime, producing contextually appropriate text without requiring separate translation entries for each possible value.
 
-For example, the `time.past.seconds` translation key uses `{{value}}` to represent the number of seconds. Instead of creating separate translation keys for each possible number of seconds in a minute, the application automatically inserts the correct number at runtime:
+For example, the `time.past.seconds` translation key uses `{{value}}` to represent the number of seconds.
+Instead of creating separate translation keys for each possible number of seconds in a minute, the application automatically inserts the correct number at runtime:
 
 ```md
 "{{value}} seconds ago" → "5 seconds ago", "42 seconds ago", etc.

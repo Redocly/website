@@ -30,7 +30,7 @@ Customize the behavior and appearance of AsyncAPI documentation.
 - schemaId
 - string
 - Schema ID.
-  Defaults to `asyncapi`.
+  Default: `asyncapi`.
 
 ---
 

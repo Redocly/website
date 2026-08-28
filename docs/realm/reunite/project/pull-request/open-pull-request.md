@@ -23,7 +23,9 @@ Make sure you have the following:
 
 ## Open a draft pull request
 
-Pull requests run checks to be sure you are not adding syntax issues or broken links to the production build, create a preview build, and give other users an opportunity to comment on the changes before they are merged with the main branch.
+Pull requests run checks to be sure you are not adding syntax issues or broken links to the production build.
+They also create a preview build.
+Other users get an opportunity to comment on the changes before they are merged with the main branch.
 
 To open a draft pull request:
 
@@ -41,7 +43,8 @@ This notifies the team that there is a pull request awaiting their attention.
 The reviewers approve the pull request if they agree that the changes are ready to merge.
 Once there are approving reviews, the [pull request can be merged](./review-pull-request.md#merge-a-pull-request), bringing your changes into the main branch of the project.
 
-If you no longer want to continue working on a pull request and you do not want it merged with main, you can open the **Actions** menu and select **Close pull request**.
+You might no longer want to continue working on a pull request or have it merged with main.
+In that case, open the **Actions** menu and select **Close pull request**.
 
 {% img
   src="../../images/reunite-pull-request-close.png"

@@ -22,7 +22,8 @@ Since Redocly projects are saved using Git, any updates are saved by committing 
 
 ### Switch branches
 
-If you need to change to a different branch from the branch you are working in, you can change the branch using the branch switcher at the top of the editor page.
+You might need to change to a different branch from the branch you are working in.
+Use the branch switcher at the top of the editor page.
 
 {% img
   src="../../_partials/images/current-branch.png"
@@ -47,12 +48,35 @@ After you have created a new branch, you can add or delete files or folders in t
 ## Open and manage editor tabs
 
 Files open as tabs in the editor pane.
+A file can only be open in one tab.
 
-A single click in the file tree opens the file in a preview tab with its name shown in italics, and clicking another file replaces the preview tab.
+### Preview tabs
+
+A single click in the file tree opens the file in a preview tab with its name shown in italics.
+Tabs open in the currently active tab group, on the right side of the group.
+Clicking an unopened file in the file tree replaces the file in the preview tab.
+
 Double-click a file in the file tree, double-click the tab, or start editing the file to keep it open as a regular tab.
 
+### Tab actions
+
 Right-click any tab to close it, close other tabs, close unchanged tabs, copy its path, or split it into a new group.
-For the complete list of tab actions and the keyboard shortcuts to open the Webview and Documentation tabs, see the [Editor pane reference](./project-ui.md#editor-pane).
+For the complete list of tab actions and the keyboard shortcuts to open the **Webview**, **Documentation**, and **Replay** tabs, see the [editor pane reference](./project-ui.md#editor-pane).
+
+### Tab groups
+
+By default, the editor starts with an open file tab and a utility pane with three tabs: **Webview**, **Documentation**, and **Replay**.
+
+When you have multiple tabs open in a group, you can:
+- Drag and drop a tab to a different area of the editor, splitting the tab group.
+- Right-click a tab and select a command to split the tab group: the tab moves to the selected area.
+
+To close a tab group:
+- Use the **More actions** menu in the top-right corner of the tab group and select **Close group**.
+- Right-click a tab in the chosen tab group and select **Close group**.
+
+To reset the editor's interface to the default view:
+- Use the **More actions** menu in the top-right corner of the tab group and select **Reset layout**.
 
 ## Edit files
 
@@ -138,7 +162,8 @@ Hover over any commit to see details including:
 
 ## Revert changes
 
-If you want to discard the changes you made, before you commit them to the branch, you can revert the changes to put the files back into the state from the last commit.
+You might want to discard the changes you made, before you commit them to the branch.
+Revert the changes to put the files back into the state from the last commit.
 You can revert changes to all files since the last commit, or select the files to revert.
 
 To revert changes:
@@ -183,7 +208,8 @@ By default, searches include all folders, but you can specify a folder using the
   withLightbox=true
 /%}
 
-You can also specify whether search should match the case and whole word of your search query, and use regular expressions in your search query by clicking the icons in the search field.
+You can also specify whether search should match the case and whole word of your search query.
+Click the icons in the search field to set these options or use regular expressions.
 
 {% img
   src="../images/search-options.png"
@@ -193,9 +219,11 @@ You can also specify whether search should match the case and whole word of your
 
 ## Sync with main
 
-If you are working on a development branch, you may need to sync your branch with the main branch if changes have been added to main while you were working in the development branch.
+You might work on a development branch while changes are added to main.
+In that case, you may need to sync your branch with the main branch.
 
-You can sync your branch, pulling in the changes from main since you created your development branch, by clicking the **Sync** button at the bottom of the editor pane.
+You can sync your branch by clicking the **Sync** button at the bottom of the editor pane.
+Syncing pulls in the changes from main since you created your development branch.
 
 {% img
   src="../images/sync-button.png"

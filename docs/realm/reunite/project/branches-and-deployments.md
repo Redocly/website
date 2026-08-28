@@ -36,12 +36,6 @@ The **Deployments preview** setting determines whether Reunite generates preview
 - **Any pull request**: enables previews for pull requests against your selected branches, allowing you to review changes before merging
 - **None**: disables preview builds entirely to conserve resources
 
-{% admonition type="info" name="Draft projects" %}
-Draft projects handle production deployments differently than standard live projects.
-While a project is in draft mode, its production deployment uses draft scaling and enforced login.
-To learn more, see [draft projects](./draft-projects.md).
-{% /admonition %}
-
 ### Preview deployments from forked repositories
 
 By default, Reunite does not generate preview deployments for pull requests from forked repositories.
@@ -62,22 +56,26 @@ Only enable this setting if you trust the contributors to your repository or hav
 
 ## Build process and API bundling
 
-When Reunite processes your project during a build, it performs several steps in a specific order to ensure your APIs are properly validated, transformed, and optimized:
+When Reunite processes your project during a build, it performs several steps in a specific order.
+This ensures your APIs are properly validated, transformed, and optimized:
 
 1. **Configuration discovery**: Reunite reads your `redocly.yaml` configuration file to understand your project settings, including linting rules, decorators, and output parameters.
 1. **API discovery**: Reunite scans your repository to find all API description files (OpenAPI, AsyncAPI, etc.) that need to be processed.
-1. **Linting and validation**: Each API is validated against the configured rules in your `redocly.yaml`. This includes:
+1. **Linting and validation**: Each API is validated against the configured rules in your `redocly.yaml`.
+   This includes:
    - built-in rules from rulesets like `minimal`, `recommended`, or `recommended-strict`
    - custom rules you've defined
    - scorecard rules, if configured
 1. **Decorator application**: Reunite applies any configured [decorators](https://redocly.com/docs/cli/decorators) to transform your API descriptions.
    Decorators can modify content, add information, or restructure your APIs before bundling.
-1. **Bundle generation**: Reunite runs bundle commands on all discovered APIs, creating optimized, self-contained API description files. The bundling process:
+1. **Bundle generation**: Reunite runs bundle commands on all discovered APIs, creating optimized, self-contained API description files.
+   The bundling process:
    - resolves all `$ref` references
    - applies the `output` parameter settings from your configuration
    - generates the final API descriptions used for documentation and other downstream processes
 
-This systematic approach ensures that all your APIs are consistently processed according to your project's standards and requirements, regardless of which branch or deployment environment they're being built for.
+This systematic approach ensures that all your APIs are consistently processed according to your project's standards and requirements.
+It holds regardless of which branch or deployment environment they're being built for.
 
 ## Resources
 

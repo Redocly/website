@@ -3,7 +3,8 @@ Once you have your own copy of the project in a repository that you own, you can
 To connect your repository in Reunite:
 
 1. Log in to your Reunite account and [Create a new project](../../reunite/project/manage-projects.md#create-a-project).
-   The project is where you deploy your project from (note that only Redocly hosting is supported; these projects are not licensed to deploy from other platforms).
+   The project is where you deploy your project from.
+   Note that only Redocly hosting is supported; these projects are not licensed to deploy from other platforms.
 
 2. [Connect the Git provider](../../reunite/project/connect-git/connect-git-provider.md) where your repository is hosted.
 

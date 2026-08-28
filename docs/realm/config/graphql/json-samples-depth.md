@@ -25,7 +25,7 @@ Use this option to set the depth to a comfortable default value for the data str
 - jsonSamplesDepth
 - number
 - Sets the default depth for rendering JSON payload samples.
-  The default value is `1`.
+  Default: `1`.
 
 {% /table %}
 

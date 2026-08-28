@@ -282,7 +282,8 @@ The following options are deprecated from Redoc CE v2.x onwards.
 
 - schemaExpansionLevel
 - Specifies whether to automatically expand schemas in Reference docs.
-  Set it to `all` to expand all schemas regardless of their level, or set it to a number to expand schemas up to the specified level.
+  Set it to `all` to expand all schemas regardless of their level.
+  Set it to a number to expand schemas up to the specified level.
   For example, `schemaExpansionLevel: 3` expands schemas up to three levels deep.
   The default value is `0`, meaning no schemas are expanded automatically.
 
@@ -342,8 +343,10 @@ Change styles for the API documentation page.
 
 - `spacing`
   - `unit`: 5 # main spacing unit used in autocomputed theme values later
-  - `sectionHorizontal`: 40 # Horizontal section padding. COMPUTED: spacing.unit * 8
-  - `sectionVertical`: 40 # Horizontal section padding. COMPUTED: spacing.unit * 8
+  - `sectionHorizontal`: 40 # Horizontal section padding.
+    COMPUTED: spacing.unit * 8
+  - `sectionVertical`: 40 # Horizontal section padding.
+    COMPUTED: spacing.unit * 8
 - `breakpoints` # breakpoints for switching three/two and mobile view layouts
   - `small`: '50rem'
   - `medium`: '85rem'

@@ -62,7 +62,8 @@ When redirects are configured in both locations, the `redocly.yaml` configuratio
   Absolute path to the destination.
   It may be an exact path; for example: `/new-url/`.
   Alternatively, it may be a URL to an external resource; for example: `https://redocly.com`.
-  If the source uses a wildcard, the destination may also use a wildcard at the end of the path to indicate that the matched part of the path should be used; for example `/new-url/*`, `https://redocly.com/*`.
+  If the source uses a wildcard, the destination may also use a wildcard at the end of the path.
+  The destination wildcard indicates that the matched part of the path should be used; for example `/new-url/*`, `https://redocly.com/*`.
   This option is not available for redirects defined in front matter.
 
   If you are redirecting to pages named `index.*`, omit `index/` from the path.
@@ -72,7 +73,7 @@ When redirects are configured in both locations, the `redocly.yaml` configuratio
 - type
 - integer
 - HTTP status code for the redirect.
-  Default value: `301`.
+  Default: `301`.
 
 {% /table %}
 
@@ -133,7 +134,8 @@ redirects:
 
 ### Redirect many paths to one page
 
-Redirects support use of wildcards to match the last parts of a path. For example, if you restructured content from many pages in a directory into a single page:
+Redirects support use of wildcards to match the last parts of a path.
+For example, if you restructured content from many pages in a directory into a single page:
 
 ```yaml
 redirects:
@@ -145,7 +147,8 @@ Use this approach when you consolidate content, or want to redirect many URLs to
 
 ### Redirect a group of paths to the same structure
 
-If you move a whole directory of content from one place to another, describe the first part of the path for the source and destination, and end both with a wildcard:
+You can move a whole directory of content from one place to another.
+Describe the first part of the path for the source and destination, and end both with a wildcard:
 
 ```yaml
 redirects:

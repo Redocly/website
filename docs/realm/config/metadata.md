@@ -20,11 +20,13 @@ Metadata is used for content categorization, search facets, catalog filtering, a
 ## How it works
 
 The `metadata` option accepts an object with key-value pairs:
-- Keys can be any string identifier
-- Values can be any scalar value (string, number, boolean)
-- Some metadata keys have special functionality (e.g., `redocly_category` for search facets)
+
+- Keys can be any string identifier.
+- Values can be any scalar value (string, number, boolean).
+- Some metadata keys have special functionality (for example, `redocly_category` for search facets).
 
 Metadata can be defined in several ways, with the following priority (highest to lowest):
+
 1. `x-metadata` extension in OpenAPI files
 2. Front matter in Markdown files
 3. `metadata` in the `redocly.yaml` configuration
@@ -141,9 +143,11 @@ The Dewey Decimal System assigns numerical codes based on subject matter and wor
 Amazon, as an online retailer, uses a hierarchical categorization system that sorts books into categories and subcategories based on genre, subject matter, and other criteria.
 This system allows users to easily browse and discover books by filtering through categories of interest or using search functions.
 
-While the Dewey Decimal System serves physical libraries well, Amazon's categorization system is better suited for digital environments where users can search and navigate through vast collections.
+The Dewey Decimal System serves physical libraries well.
+Amazon's categorization system is better suited for digital environments where users can search and navigate through vast collections.
 
-Similarly, Redocly has a flexible categorization system that allows definition of metadata in APIs (using `x-metadata`), in Markdown front matter, or in the `metadata` object of the configuration file.
+Similarly, Redocly has a flexible categorization system.
+You can define metadata in APIs (using `x-metadata`), in Markdown front matter, or in the `metadata` object of the configuration file.
 
 ### Category governance
 

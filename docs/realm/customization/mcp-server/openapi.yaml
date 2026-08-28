@@ -14,6 +14,8 @@ info:
 
     **Base URL:** The Docs MCP server is available at `/mcp` on your project host. If your project is deployed under a path prefix, prepend that prefix to `/mcp`.
 
+    **Public endpoint:** Projects that enable [`mcp.docs.publicEndpoint`](../../config/mcp.md) also serve `/mcp-public`. That endpoint requires no login and serves only the content that RBAC grants to the `anonymous` team.
+
     {% admonition type="info" %}
     For setup and configuration guidance, see [Model Context Protocol server](./index.md) and [MCP configuration reference](../../config/mcp.md).
     {% /admonition %}
@@ -27,6 +29,24 @@ info:
 
     The `whoami` tool is only available when authentication handling is enabled for the Docs MCP server.
 
+    The `/mcp-public` endpoint never challenges for authentication.
+    It ignores any credentials the client sends and serves only the content available to the `anonymous` team.
+
+    ### Token validation
+
+    Every request carries its own token, and the server validates that token on each request.
+    The server checks the signature against the identity provider that issued the token, checks the expiry, and compares the `aud` (audience) claim to your organization ID.
+
+    A token whose `aud` names a different organization is recorded and, when audience enforcement is on for your project, rejected with a `401` response.
+    Enforcement is off by default, and [MCP configuration reference](../../config/mcp.md#token-audience-validation) names the environment variable that turns it on.
+
+    Two cases skip the audience comparison.
+    Tokens that carry no `aud` claim are accepted, because portal session tokens and tokens from some identity provider setups don't set one.
+    Projects that run without an organization ID, such as self-hosted deployments, have nothing to compare against.
+
+    A token isn't sufficient to determine what content is served.
+    RBAC decides which content and API descriptions the request can reach.
+
 servers:
   - url: https://{projectHost}/mcp
     description: Project Docs MCP endpoint.
@@ -34,12 +54,22 @@ servers:
       projectHost:
         default: redocly.com
         description: Project host. Prepend your path prefix if applicable.
+  - url: https://{projectHost}/mcp-public
+    description: |
+      Public Docs MCP endpoint, served only when `mcp.docs.publicEndpoint` is enabled.
+      It requires no authentication and serves only content available to the `anonymous` team.
+    variables:
+      projectHost:
+        default: redocly.com
+        description: Project host. Prepend your path prefix if applicable.
 
 security:
   - OAuth2: []
+  - {}
 
 tags:
   - name: Authentication
+    x-displayName: Identity
     description: Tools for authentication and identity inspection for MCP clients when Docs MCP authentication handling is enabled.
   - name: API Catalog
     description: Tools for discovering published APIs, inspecting endpoints, reviewing security schemes, and retrieving full OpenAPI descriptions.
@@ -53,6 +83,14 @@ x-mcp:
   servers:
     - url: https://{projectHost}/mcp
       description: Project Docs MCP endpoint.
+      variables:
+        projectHost:
+          default: redocly.com
+          description: Project host. Prepend your path prefix if applicable.
+    - url: https://{projectHost}/mcp-public
+      description: |
+        Public Docs MCP endpoint, served only when `mcp.docs.publicEndpoint` is enabled.
+        It requires no authentication and serves only content available to the `anonymous` team.
       variables:
         projectHost:
           default: redocly.com
@@ -80,7 +118,7 @@ x-mcp:
         properties:
           filter:
             type: string
-            description: API name (or part of it)
+            description: Matches part of an API name, or of a description when no name matches
             minLength: 1
           page:
             type: number
@@ -104,8 +142,14 @@ x-mcp:
         properties:
           name:
             type: string
-            description: API name
+            description: API name, or a unique part of it
             minLength: 1
+          version:
+            type: string
+            description: API version
+          filePath:
+            type: string
+            description: API definition file path
         required:
           - name
       outputSchema:
@@ -120,7 +164,7 @@ x-mcp:
         properties:
           name:
             type: string
-            description: API name
+            description: API name, or a unique part of it
             minLength: 1
           path:
             type: string
@@ -147,6 +191,12 @@ x-mcp:
               - head
               - trace
             minLength: 1
+          version:
+            type: string
+            description: API version
+          filePath:
+            type: string
+            description: API definition file path
         required:
           - name
           - path
@@ -163,8 +213,14 @@ x-mcp:
         properties:
           name:
             type: string
-            description: API name
+            description: API name, or a unique part of it
             minLength: 1
+          version:
+            type: string
+            description: API version
+          filePath:
+            type: string
+            description: API definition file path
         required:
           - name
       outputSchema:
@@ -179,8 +235,14 @@ x-mcp:
         properties:
           name:
             type: string
-            description: API name
+            description: API name, or a unique part of it
             minLength: 1
+          version:
+            type: string
+            description: API version
+          filePath:
+            type: string
+            description: API definition file path
         required:
           - name
       outputSchema:
@@ -265,8 +327,12 @@ components:
           description: Servers defined by the published OpenAPI description.
           items:
             $ref: '#/components/schemas/OpenApiServer'
+        filePath:
+          type: string
+          description: API definition file path.
       required:
         - name
+        - filePath
       additionalProperties: false
     ApiEndpointSummary:
       type: object

@@ -31,7 +31,8 @@ Custom headers are added to the response header object if requested resource mat
 
 - _{glob pattern}_
 - [[Header object](#header-object)]
-- **REQUIRED.** A glob pattern used to match requested resource.
+- **REQUIRED.**
+  A glob pattern used to match requested resource.
   It can match any assets, routes, or both.
 
 {% /table %}

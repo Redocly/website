@@ -26,7 +26,8 @@ You can also [review a pull request](./review-pull-request.md), if you are not t
 
 ## View a pull request
 
-To view a pull request you can either click the **View pull request** button next to the branch name in the editor, or navigate to the **Pull requests** page and select it from the open pull requests list, which displays by default.
+To view a pull request, you can click the **View pull request** button next to the branch name in the editor.
+You can also navigate to the **Pull requests** page and select it from the open pull requests list, which displays by default.
 
 {% img
   src="../../../get-started/images/view-pull-request.png"
@@ -43,7 +44,8 @@ To view closed pull requests, click the **Closed** side of the toggle.
 /%}
 
 Selecting a pull request opens the **Activity** tab for that pull request.
-The **Activity** tab of the pull request includes the pull request's title, description, and all the commits with commit messages, hashes, and who made them and when.
+The **Activity** tab of the pull request includes the pull request's title and description.
+It also lists all the commits with commit messages, hashes, and who made them and when.
 You can click on the commit hashes to see the changes introduced with that commit.
 
 {% img
@@ -57,7 +59,8 @@ You need to edit the title and description, update the state, and assign reviewe
 
 ## Search and filter
 
-When you have a long list of pull requests, you can search for a specific pull request by entering letters and words that occur in its title.
+You might have a long list of pull requests.
+Search for a specific pull request by entering letters and words that occur in its title.
 
 You can also filter the pull requests list by the following attributes:
 
@@ -83,7 +86,8 @@ Filters apply to both the open and closed pull request lists.
 
 ### Edit title and description
 
-After you have selected a pull request, you can edit the title and description to better reflect the changes to help reviewers know what you have done.
+After you have selected a pull request, you can edit the title and description to better reflect the changes.
+This helps reviewers know what you have done.
 
 To edit a pull request title, click the pencil icon next to the current pull request title.
 After making your changes to the title, click **Save**.
@@ -97,13 +101,15 @@ To edit the description of a pull request, click the more options dropdown menu 
 /%}
 
 You can use the toolbar at the top of the text field to format your description text, add links, or images.
-You can also copy a link to a pull request that you can share with a reviewer by selecting **Copy link** from the more options drop down menu.
+You can also copy a link to a pull request that you can share with a reviewer.
+Select **Copy link** from the more options drop down menu.
 
 After making your changes to the description, click **Update comment**.
 
 ## Update state
 
-After a pull request is opened, you can continue to make commits to the branch, which are then added to the open pull request until you are sure you are ready for others to review your changes.
+After a pull request is opened, you can continue to make commits to the branch.
+The commits are added to the open pull request until you are sure you are ready for others to review your changes.
 By default, pull requests are opened in a draft state.
 Draft pull requests can be closed, but not merged until you click **Ready for review**.
 When you are ready for others to review your changes, click the **Ready for review** button and assign reviewers.
@@ -119,7 +125,8 @@ When you are ready for others to review your changes, click the **Ready for revi
 Before you merge your changes to the main branch, you should have them reviewed by a colleague to check for inconsistencies or errors.
 When you assign reviewers to your pull request they are sent notification emails to inform them they have been requested to review your pull request.
 
-To assign reviewers to a pull request, click the adjustments icon next to **Reviewers** on the right side of the page. If you cannot find a reviewer in the list, enter their name in the search field.
+To assign reviewers to a pull request, click the adjustments icon next to **Reviewers** on the right side of the page.
+If you cannot find a reviewer in the list, enter their name in the search field.
 
 If no reviewers have been assigned yet, you can also use the **Add reviewers** button in the pull request summary.
 
@@ -129,7 +136,8 @@ If no reviewers have been assigned yet, you can also use the **Add reviewers** b
   withLightbox=true
 /%}
 
-If the reviewer is not currently a member of the organization, you can select **Invite member** if you have the [permissions to invite users](../../../access/roles.md#organization-roles) to your organization.
+The reviewer might not currently be a member of the organization.
+In that case, select **Invite member** if you have the [permissions to invite users](../../../access/roles.md#organization-roles) to your organization.
 
 ## Resources
 

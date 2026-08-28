@@ -30,7 +30,8 @@ Make sure you have the following:
 <details>
   <summary>Learn more about branches</summary>
 
-  Reunite uses Git for version control, which means changes are made on development branches and are introduced to the main branch of the project through pull requests.
+  Reunite uses Git for version control.
+  Changes are made on development branches and are introduced to the main branch of the project through pull requests.
 
   _Branches_ are copies where you can make changes to the project without affecting the production project until you are ready.
   If you want changes from a branch to be added to the production project, you merge a pull request.
@@ -54,7 +55,8 @@ Add your own content or use the following sample Markdown:
 
 </details>
 
-The content can be a Markdown file with all the supported features of Markdoc, a React file, or an API description (such as an OpenAPI, GraphQL, or AsyncAPI description).
+The content can be a Markdown file with all the supported features of Markdoc, or a React file.
+It can also be an API description (such as an OpenAPI, GraphQL, or AsyncAPI description).
 
 Learn more about [Markdown in Redocly](../content/markdown.md) for all formatting options, or see [Use the editor](../reunite/project/use-editor.md) for details about the editor toolbar and features.
 
@@ -91,7 +93,8 @@ The deployment preview includes all changes you have committed to your branch.
 <details>
   <summary>Learn more about pull requests</summary>
 
-  Reunite uses _Git_ for _version control_, which means changes are made on _development branches_ and are introduced to the _main branch_ of the project through _pull requests_.
+  Reunite uses _Git_ for _version control_.
+  Changes are made on _development branches_ and are introduced to the _main branch_ of the project through _pull requests_.
 
   Before you can open a pull request, you must make a commit to your development branch.
   A _commit_ is a way of storing your changes to the branch in Git.
@@ -119,8 +122,8 @@ To see a preview build of your project:<a id="commit-steps"></a>
 
    </details>
 3. Click the **Preview** button in the top right corner of the page.
-   You might need to wait until the deployment completes before you can access the preview deployment,
-   otherwise you will be redirected to the deployment details page.
+   You might need to wait until the deployment completes before you can access the preview deployment.
+   Otherwise you will be redirected to the deployment details page.
    {% img
     src="./images/view-preview-branch.png"
     alt="Screenshot of preview drop-down with Preview branch selected"
@@ -131,11 +134,12 @@ A deployment preview of the project with your changes opens in a separate browse
 
 ## Add more pages
 
-Now that you have updated the `index.md` page and seen a deployment preview, let's return to the editor to make some more changes to your project.
+You have now updated the `index.md` page and seen a deployment preview.
+Let's return to the editor to make some more changes to your project.
 To return to the editor, click **Editor** in the navigation pane on the left side of the page.
 If you only see icons, you may need to click the "greater than" symbol to expand the navigation pane.
 
-Since a single Markdown page isn't very exciting, we should add a few more.
+Since a single Markdown page isn't exciting, we should add a few more.
 Using the following steps, create the following two new files:
 
 - `style-guide.md`
@@ -167,7 +171,8 @@ Add your own content to the Markdown files or use the following example content:
 
 
 {% admonition type="success" name="Tip" %}
-You can turn on word wrap in the editor by selecting the **More actions** menu in the top right corner of the editing pane and selecting **Word wrap**.
+You can turn on word wrap in the editor.
+Select the **More actions** menu in the top right corner of the editing pane and select **Word wrap**.
 {% img
   src="./images/word-wrap.png"
   alt="Screenshot showing word wrap option in the editor in Reunite"
@@ -178,10 +183,12 @@ You can turn on word wrap in the editor by selecting the **More actions** menu i
 ## Customize the sidebar navigation
 
 When you add more files to your project, a link to those files is automatically added to the generated sidebar navigation menu.
-This generated sidebar is based on the file structure of your project and requires an `index.md` file at the root of your project, in other words, not in a folder.
+This generated sidebar is based on the file structure of your project.
+It requires an `index.md` file at the root of your project, in other words, not in a folder.
 
 {% admonition type="info" name="Where is the sidebar?" %}
-The sidebar navigation menu usually displays on the left side of the page in the Webview; however, when the **Webview** tab is a small width, it is hidden under a slide drawer menu icon that displays in the top right of the tab.
+The sidebar navigation menu usually displays on the left side of the page in the Webview.
+However, when the **Webview** tab is a small width, the menu hides under a slide drawer menu icon in the top right of the tab.
 
 {% img
   src="./images/slide-drawer-icon.png"
@@ -213,7 +220,8 @@ Now that you have added a `sidebars.yaml` file to your project, you can configur
 
 ### Configure the `sidebars.yaml` file
 
-After you have added a `sidebars.yaml` file to your project, you need to add to it the pages and links you want included in your sidebar navigation using YAML syntax.
+After you have added a `sidebars.yaml` file to your project, add to it the pages and links you want included.
+Use YAML syntax for the sidebar navigation entries.
 
 Add the following sample configuration to your `sidebars.yaml` file:
 
@@ -227,7 +235,8 @@ Add the following sample configuration to your `sidebars.yaml` file:
     - page: ./openapi.yaml
 ```
 
-The sample configuration adds the index page, with the link text "Home", your new Markdown pages, using the first heading as the link text, and the Museum API reference documentation, generated from the OpenAPI file.
+The sample configuration adds the index page with the link text "Home" and your new Markdown pages, using the first heading as the link text.
+It also adds the Museum API reference documentation, generated from the OpenAPI file.
 
 {% admonition type="info" %}
 
@@ -235,7 +244,8 @@ After adding a `sidebars.yaml` file to a project, any pages you want listed in y
 
 {% /admonition %}
 
-Now that you have more pages and a sidebar to customize the navigation for those pages, let's update the look and feel of your project to better reflect your brand.
+You now have more pages and a sidebar to customize the navigation for those pages.
+Let's update the look and feel of your project to better reflect your brand.
 
 ## Add a logo
 
@@ -268,7 +278,8 @@ For the following steps, you can use your own image or download the following sa
   /%}
 </details>
 
-To add an image file to your project, drag the logo image file from where it is located on your computer and drop it into your `index.md` file.
+You can add an image file to your project by dragging and dropping.
+Drag the logo image file from your computer and drop it into your `index.md` file.
 Afterward, a correctly formatted image Markdown tag is added to your `index.md` file.
 Also, the image is automatically saved to an automatically generated `images` folder at the root of your project.
 
@@ -339,35 +350,9 @@ The headings' color updates immediately in the **Webview** tab.
 If you don't see your changes, try restarting Webview by clicking the [Reload](../reunite/project/use-webview.md#reload) button.
 You can also commit your update to view it [in the preview build](#in-the-deployment-preview).
 
-## Go live with your project
-
-By default, new projects start in draft mode.
-
-{% img
-  src="./images/go-live.png"
-  alt="Screenshot of draft mode project banner"
-  withLightbox=true
-/%}
-
-While a project is in draft mode, its deployment URLs require logging in to access, so you can safely review your work before sharing it.
-
-To make your project available for end users, take your project live.
-This action is permanent, you cannot switch the project back to draft mode.
-You must be an OWNER in your organization or have an `admin` project role.
-
-To keep your project limited to specific users after you go live, review your access control settings before continuing.
-
-When you're ready to make the project behave like a standard live project:
-
-1. Click **Go live** in the editor banner.
-1. Confirm the action to start a new production build and remove draft protection.
-
-To learn more about draft mode and the go-live flow, see [draft projects](../reunite/project/draft-projects.md).
-
 ## Resources
 
 - **[Sidebars configuration](../navigation/sidebars.md)** - Configure `sidebars.yaml` with nested items and groups for custom navigation structure
-- **[Draft projects](../reunite/project/draft-projects.md)** - Learn how draft mode protects deployment URLs and how to go live
 - **[CSS variables dictionary](../branding/css-variables/index.md)** - Complete reference for customizing colors, fonts, spacing, and visual styling
 - **[Configure Redocly](../config/index.md)** - All configuration options available in the `redocly.yaml` file for project customization
 - **[User profile menu](../reunite/user-profile-menu.md)** - Manage notification settings, Git provider connections, and Reunite appearance preferences

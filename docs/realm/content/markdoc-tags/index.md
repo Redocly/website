@@ -26,6 +26,7 @@ The following Markdoc tags are included with the official Markdoc package:
 
 The following Markdoc tags are custom-made by Redocly:
 
+- [Accordion and accordion group](./accordion.md): Hide secondary content inside collapsible sections, and combine several of them into a single bordered list.
 - [Admonition](./admonition.md): Add color-coded banners to highlight important information.
 - [Cards](./cards.md): Organize links in a "card" or "tile" layout.
 - [Code snippet](./code-snippet.md): Pull fragments code files directly into your documentation pages.
@@ -35,6 +36,7 @@ The following Markdoc tags are custom-made by Redocly:
   - [Toggle](./code-walkthrough/toggle.md): Add toggles to allow users to switch between variants of walkthrough content.
   - [Input](./code-walkthrough/input.md): Add input fields to code walkthroughs.
 - [Connect MCP](./connect-mcp.md): Add a button that allows users to connect to the MCP (Model Context Protocol) server.
+- [Diagram](../add-diagram.md): Reference external diagram files (Mermaid, PlantUML, Excalidraw).
 - [Image](./img.md): Embed images into your project.
 - [Icon](./icon.md): Render [Font Awesome](https://fontawesome.com/icons) icons in your project.
 - [Inline SVG](./inline-svg.md): Render and style SVG images in your project.
@@ -45,7 +47,7 @@ The following Markdoc tags are custom-made by Redocly:
 - [Numbered list](./numbered-list.md): Present step-by-step instructions and timelines as a vertical list with numbered, icon, or dot markers.
 - [OpenAPI code sample](./openapi-code-sample.md): Render sample code snippets directly in your documentation pages.
 - [OpenAPI response sample](./openapi-response-sample.md): Render response examples directly in your documentation.
-- [Replay OpenAPI](./replay-openapi.md): Add the Replay consoe to make API calls directly from a documentation page.
+- [Replay OpenAPI](./replay-openapi.md): Add the Replay console to make API calls directly from a documentation page.
 - [Tabs](./tabs.md): Organize content variants into switchable tabs.
 
 ## Block tags: use block form, not inline form

@@ -17,7 +17,8 @@ keywords:
 
 Transform your WSDL files into reference documentation by integrating them into your project.
 Give your users the tools they need to make the most of your SOAP APIs with comprehensive reference documentation.
-Either add individual schema files to your project alongside your other content, or use a [classic catalog](../../config/catalog-classic.md) to showcase your SOAP APIs alongside OpenAPI and AsyncAPI APIs.
+Either add individual schema files to your project alongside your other content, or use a [classic catalog](../../config/catalog-classic.md).
+The catalog showcases your SOAP APIs alongside OpenAPI and AsyncAPI APIs.
 
 ## About the SOAP API plugin
 
@@ -33,7 +34,8 @@ Make sure you have the following:
 - the Redocly package for the product you use (such as `@redocly/realm`) listed as a dependency in the `package.json` file
 
 {% admonition type="warning" name="Local dependencies required" %}
-Redocly projects can be previewed locally without installing dependencies, but to add the SOAP plugin, you must have both Realm and the SOAP plugin installed as local dependencies.
+Redocly projects can be previewed locally without installing dependencies.
+However, to add the SOAP plugin, you must have both Realm and the SOAP plugin installed as local dependencies.
 
 If you see the error `Theme "@redocly/portal-plugin-soap-api" not found`, then check that you have the `@redocly/realm` package listed in your `package.json` file.
 {% /admonition %}
@@ -48,7 +50,8 @@ If you are working in Reunite, you must add the plugin as a dependency in your `
 
 When you work in Reunite, you do not need to have a `package.json` file to build your project.
 However, if you need to install a plugin that is not included in the standard project, you do need a `package.json` file.
-If you are working in Reunite, to generate SOAP reference documentation from a WSDL file, you must add a `package.json` file with the Redocly SOAP API plugin listed as a dependency.
+You might work in Reunite and generate SOAP reference documentation from a WSDL file.
+In that case, you must add a `package.json` file with the Redocly SOAP API plugin listed as a dependency.
 
 Use the following example `package.json` file that includes the Redocly SOAP API plugin as a dependency, updating `*` with the [latest version](https://www.npmjs.com/package/@redocly/portal-plugin-soap-api):
 
@@ -66,7 +69,8 @@ Use the following example `package.json` file that includes the Redocly SOAP API
 
 ### Install using a package manager
 
-Redocly projects can be previewed locally without installing dependencies, but to add the Redocly SOAP plugin, you must have both Realm and the SOAP plugin installed as local dependencies.
+Redocly projects can be previewed locally without installing dependencies.
+However, to add the Redocly SOAP plugin, you must have both Realm and the SOAP plugin installed as local dependencies.
 
 To install the Redocly SOAP plugin, use one of the following commands, depending on the package manager you are using:
 
@@ -108,24 +112,33 @@ plugins:
 
 ## Add the WSDL file to your project
 
-If you only have one or two WSDL files, and you do not have a `sidebars.yaml` file in your project, to add SOAP API documentation to your project, place the WSDL files in your project, either at the root or in a folder.
-Afterward, the SOAP reference documentation is automatically added to your sidebar when you run your project.
+To add SOAP API documentation to your project, place the WSDL files in your project, either at the root or in a folder.
+When you run your project, each WSDL file is served as reference documentation with its own automatically generated sidebar.
 
-If you have a `sidebars.yaml` file in your project, you must add your WSDL file to your `sidebars.yaml` file for it to be included in your sidebar navigation menu.
+{% admonition type="info" name="The file path sets the reference URL" %}
+The API reference's URL path matches the location of its WSDL file in your project, with the file extension removed.
+For example, `apis/service.wsdl` is served at `/apis/service`.
 
-## Use the sidebars.yaml file
+To change the URL, rename or move the WSDL file to the path you want it served from.
+For more information, see [file-based routing](../project-structure.md#file-based-routing).
+{% /admonition %}
 
-If you have a `sidebars.yaml` file in your project, you must add any files, including WSDL files, you want displayed in your sidebar to it.
+You can place the reference inside a custom sidebar alongside your other content, with control over its order and grouping.
+To do that, add your WSDL file to a `sidebars.yaml` file.
+You can also link to the reference from anywhere, such as the [navbar](../../config/navbar.md), an in-page link, a card, or an [API catalog](../../config/catalog-classic.md).
+
+## Add API reference to your site navigation
+
+A `sidebars.yaml` file includes only the items you add to it, so add any files you want displayed in that sidebar, including WSDL files.
 For more information on configuring a `sidebars.yaml` file for your project, see [Sidebar configuration](../../navigation/sidebars.md).
 
-To add a WSDL file to your project with a `sidebars.yaml` file, add the `page` and `label` keys with the corresponding values for the WSDL file to your `sidebars.yaml` file, as in the following example:
+You can add a WSDL file to your project with a `sidebars.yaml` file.
+Add the `page` and `label` keys with the corresponding values for the WSDL file to your `sidebars.yaml` file, as in the following example:
 
 ```yaml {% title="sidebars.yaml" %}
 - page: apis/sample-api.wsdl
   label: Sample API
 ```
-
-If you have multiple API descriptions, you can group them to better organize your sidebar navigation menu.
 
 ### Use the `group` key for multiple descriptions
 
@@ -148,3 +161,4 @@ To add multiple WSDL files using `group` keys, update your `sidebars.yaml` file 
 
 - **[API catalog configuration](../../config/catalog-classic.md)** - Organize multiple API descriptions including SOAP services with catalogs for better user experience and navigation
 - **[Sidebar navigation setup](../../navigation/sidebars.md)** - Configure navigation structures to help users discover and access your SOAP API documentation content
+- **[Navbar configuration](../../config/navbar.md)** - Add top-level links to your API references and other pages

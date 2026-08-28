@@ -19,7 +19,7 @@ description: Define transformation steps applied to your API description when it
 ## Introduction
 
 The `decorators` configuration section defines the transformation steps that are applied to your API description when it is bundled.
-On this page you can find configuration for [built-in decorators](https://redocly.com/docs/cli/decorators) and [decorators from custom plugins](https://redocly.com/docs/cli/custom-plugins/custom-decorators)
+On this page you can find configuration for [built-in decorators](https://redocly.com/docs/cli/decorators) and [decorators from custom plugins](https://redocly.com/docs/cli/custom-plugins/custom-decorators).
 You can use the `decorators` block at the root of a configuration file, or inside an [API-specific section](../apis.md).
 
 ## Options
@@ -37,7 +37,8 @@ You can use the `decorators` block at the root of a configuration file, or insid
 - **REQUIRED**.
   You can add as many decorators as you wish.
   The keys must be either built-in decorators (for example `info-description-override`), or a decorator from a plugin (for example `tags-plugin/no-unused-tags`).
-  Set the value to `on` or `off` to enable or disable a decorator, or use a [Decorator object](#decorator-object) to configure additional options for a specific decorator.
+  Set the value to `on` or `off` to enable or disable a decorator.
+  You can also use a [Decorator object](#decorator-object) to configure additional options for a specific decorator.
 
 {% /table %}
 

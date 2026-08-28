@@ -12,7 +12,8 @@ plans:
 
 # Agent skills
 
-Agent skills let AI agents complete tasks in your product — like placing an order or searching your catalog — by following steps you write, not by guessing from your reference docs.
+Agent skills let AI agents complete tasks in your product — like placing an order or searching your catalog.
+Agents follow steps you write, instead of guessing from your reference docs.
 
 Each skill is a short, task-focused Markdown file named `SKILL.md` that follows the [agentskills.io](https://agentskills.io) format.
 You author skills alongside your docs, and Realm publishes them at [standard discovery endpoints](#agent-discovery) so agents can find and load them.
@@ -53,13 +54,15 @@ Write it for agents: state when to use the skill, then give ordered steps and li
 
 - name
 - string
-- **REQUIRED.** Display name for the skill.
+- **REQUIRED.**
+  Display name for the skill.
 
 ---
 
 - description
 - string
-- **REQUIRED.** One or two sentences describing what the skill does and when an agent needs to use it.
+- **REQUIRED.**
+  One or two sentences describing what the skill does and when an agent needs to use it.
   Agents use `description` to decide whether to load the skill.
 
 ---
@@ -125,7 +128,8 @@ The slug depends on where the skill is defined:
 - The root `SKILL.md` slug is your project slug.
 
 Slugs must be unique.
-If two `@skills` folders produce the same slug, or a folder collides with the root skill, Realm keeps one skill and logs a build warning for the rest.
+Two `@skills` folders can produce the same slug, or a folder can collide with the root skill.
+In that case, Realm keeps one skill and logs a build warning for the rest.
 The root skill always wins a collision.
 
 ## Agent discovery
@@ -163,7 +167,8 @@ The following example response lists a single published skill:
 }
 ```
 
-Each entry links to the skill's `SKILL.md` and includes a `digest` — a `sha256` hash of the file's contents — so an agent can detect when a skill changes.
+Each entry links to the skill's `SKILL.md` and includes a `digest` — a `sha256` hash of the file's contents.
+The digest lets an agent detect when a skill changes.
 
 ### Skill files
 

@@ -19,7 +19,8 @@ This approach is useful for including a single, publicly-available file as part 
 
 To add content from a remote file:
 
-1. In the file tree, select the folder (or click on the empty space to select the root directory) to which you want to add the remote content folder.
+1. In the file tree, select the folder to which you want to add the remote content folder.
+   You can also click on the empty space to select the root directory.
 1. Select **+ > New remote file > Add URL link**.
 1. Enter a name for the new remote content folder and press **Enter** or **Return** key.
 1. Enter the URL of a publicly-available file to include in the project.

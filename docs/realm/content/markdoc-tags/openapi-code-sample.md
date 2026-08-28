@@ -16,7 +16,8 @@ The `openapi-code-sample` tag renders sample code snippets directly in your docu
 
 ## Syntax and usage
 
-To use the tag, pass the filepath of your OpenAPI description using the `descriptionFile` attribute and a reference to the specific operation using either `operationId` or `pointer`.
+To use the tag, pass the filepath of your OpenAPI description using the `descriptionFile` attribute.
+Reference the specific operation using either `operationId` or `pointer`.
 You can also use additional attributes to configure the code sample element rendered in the document.
 
 With `operationId`:
@@ -118,7 +119,8 @@ With `pointer`:
 ### Environment variables
 
 The environment variables available in the code sample correspond with your security schemes.
-The name of the security scheme must be used in the variable. Here's a list of available variables:
+The name of the security scheme must be used in the variable.
+Here's a list of available variables:
 
 - Basic auth = `SchemeName_username` and `SchemeName_password`
 - JWT token or OAuth token = `SchemeName_token`

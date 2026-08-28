@@ -18,15 +18,6 @@ Access control is done using [RBAC (role-based access control)](../access/rbac.m
 By default, all authenticated users are assigned to the `authenticated` team, and unauthenticated users are automatically assigned to the `anonymous` team.
 All other configuration is done through team-role mapping.
 
-## Draft mode and RBAC
-
-Draft projects require users to sign in before they can open deployment URLs by default.
-If you configure RBAC, access to draft deployments follows your RBAC rules instead of the default draft-mode protection.
-
-For example, if RBAC grants `read` to the `anonymous` team in your `redocly.yaml`, draft deployments are publicly accessible even while the project remains in draft mode.
-
-For more details on draft mode behavior, see [draft projects](../../reunite/project/draft-projects.md).
-
 ## Options
 
 ### Configuration map
@@ -95,7 +86,8 @@ For more details on draft mode behavior, see [draft projects](../../reunite/proj
 - _team name_
 - `none`, `read`, `write`, `triage`, `maintain`, or `admin`
 - Map of teams to project roles.
-  The team names come from a possible list of `anonymous` (meaning all users who are not logged in), `authenticated` (meaning any user who is logged in), and team names that come from the identity provider through the [single-sign-on (SSO) configuration](./sso.md).
+  The team names include `anonymous` (meaning all users who are not logged in) and `authenticated` (meaning any user who is logged in).
+  Team names can also come from the identity provider through the [single-sign-on (SSO) configuration](./sso.md).
   In addition, the team name `*` represents the rest of the teams not defined in sibling properties including `anonymous` and `authenticated`.
   Possible values for project roles are: `none`, `read`, `write`, `triage`, `maintain`, or `admin`.
   {% partial file="../../_partials/config/_supported-config.md" variables={"optionName": "rbac"} /%}
@@ -114,7 +106,8 @@ For more details on draft mode behavior, see [draft projects](../../reunite/proj
 
 - _{glob pattern}\*_
 - [Map[string, string]](#team-to-role-map)
-- Use the glob pattern to define linked to a map of teams and role for specific page access, or using the unique key `**` to describe all pages.
+- Use a glob pattern linked to a map of teams and roles to define specific page access.
+  Use the unique key `**` to describe all pages.
 
 {% /table %}
 
@@ -390,11 +383,13 @@ access:
 ```
 
 When a team-based role is set for the `mcp` feature, only teams with a role other than `none` can access the MCP server.
-Users must sign in unless the `anonymous` team is granted such a role, either directly or through the `*` wildcard, which covers all teams that are not listed explicitly, including `anonymous`.
+Users must sign in unless the `anonymous` team is granted such a role, either directly or through the `*` wildcard.
+The wildcard covers all teams that are not listed explicitly, including `anonymous`.
 
 ### Disallow access to one specific page
 
-In the following example, members of the Developers team can access Markdown files in the `/security` folder, with the exception of `top-secret.md` that has the `none` value for Developers in the front matter of the file.
+In the following example, members of the Developers team can access Markdown files in the `/security` folder, except `top-secret.md`.
+That file has the `none` value for Developers in its front matter.
 
 ```yaml {% title="redocly.yaml" %}
 access:

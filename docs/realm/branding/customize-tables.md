@@ -101,12 +101,22 @@ This example sets the width and background color of the "Favorite veggie" column
 }
 ```
 
-| Person | Favorite vegetable |
-| ------- | ----- |
-| Taylor | Brussel sprouts |
-| Annabelle | Asparagus |
-| Oliver | Bell peppers |
-| Daisy | Carrots |
+{% table %}
+- Person
+- Favorite vegetable
+---
+- Taylor
+- Brussel sprouts
+---
+- Annabelle
+- Asparagus
+---
+- Oliver
+- Bell peppers
+---
+- Daisy
+- Carrots
+{% /table %}
 
 ### Combine CSS selectors
 
@@ -132,12 +142,22 @@ Create more advanced styles by combining `data-label` with other CSS selectors:
 }
 ```
 
-| Person | Favorite animal |
-| ------- | ----- |
-| Oliver | Penguins |
-| Daisy | Rabbits |
-| Taylor | Snow leopard |
-| Annabelle | Ostrich |
+{% table %}
+- Person
+- Favorite animal
+---
+- Oliver
+- Penguins
+---
+- Daisy
+- Rabbits
+---
+- Taylor
+- Snow leopard
+---
+- Annabelle
+- Ostrich
+{% /table %}
 
 ## Style Markdoc tables
 
@@ -318,7 +338,7 @@ Here's how to apply these classes to specific rows:
   ---
     - Change the color of a heading
     - 2
-    *
+    -
   ---
     - Revert changes {% .medclick %}
     - 8
@@ -326,7 +346,7 @@ Here's how to apply these classes to specific rows:
   ---
     - Add admonition
     - 3
-    *
+    -
   {% /table %}
   ```
 {% /markdoc-example %}
@@ -342,7 +362,7 @@ Here's how to apply these classes to specific rows:
 ---
 - Change the color of a heading
 - 2
-*
+-
 ---
 - Revert changes {% .medclick %}
 - 8
@@ -350,7 +370,7 @@ Here's how to apply these classes to specific rows:
 ---
 - Add admonition
 - 3
-*
+-
 {% /table %}
 
 This example shows how to highlight high-click tasks in yellow and medium-click tasks in light yellow, with appropriate dark mode alternatives.

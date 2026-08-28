@@ -29,7 +29,7 @@ By default, API functions are hosted at the `@api` folder and the path is served
 - folders
 - [string]
 - List of paths where the API functions are stored.\
-  Default value: `/@api`
+  Default: `/@api`.
 
 
 {% /table %}

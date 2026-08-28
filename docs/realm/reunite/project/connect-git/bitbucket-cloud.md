@@ -13,7 +13,8 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-If your project files are stored in a remote repository on Bitbucket Cloud, you can connect that repository, so you can access, edit, and publish those files in Reunite.
+Your project files can be stored in a remote repository on Bitbucket Cloud.
+Connect that repository so you can access, edit, and publish those files in Reunite.
 
 To connect a Bitbucket Cloud repository, you must first create a new access token in Bitbucket Cloud, then enter the connection details in Reunite.
 
@@ -29,7 +30,8 @@ To connect a Bitbucket Cloud repository, you must first create a new access toke
 4. Enter the **Workspace name** of the Bitbucket Cloud Workspace and select **Next**.
 5. Enter the **Access token** you saved from the [Create a new repository access token in Bitbucket Cloud](#create-a-new-repository-access-token-in-bitbucket-cloud) step and select **Next**.
 6. Select the **Namespace > Project > Branch**.
-7. (Optional) Select the **Monorepo folder**, if your project files are part of a monorepo, and you want to include only a specific folder from the repository.
+7. (Optional) Select the **Monorepo folder**.
+   Use it if your project files are part of a monorepo and you want to include only a specific folder from the repository.
    {% admonition type="info" name="Monorepo folder" %}
    If you select to only include a specific folder from a monorepo:
 

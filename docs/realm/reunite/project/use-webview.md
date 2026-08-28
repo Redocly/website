@@ -15,7 +15,8 @@ plans:
 
 The **Webview** tab in the Editor displays a preview for each branch.
 Any time you make a change in the Editor, the change is reflected in the Webview.
-The **Webview** tab opens alongside your file tabs in the [editor pane](./project-ui.md#editor-pane), so you can move it, resize its group, or close it like any other tab.
+The **Webview** tab opens alongside your file tabs in the [editor pane](./project-ui.md#editor-pane).
+You can move it, resize its group, or close it like any other tab.
 You can disable auto-sync, view different screen sizes, reload the page or restart, and navigate the pages.
 
 {% img
@@ -83,7 +84,7 @@ Click the **More actions** icon to either do a full restart of Webview or disabl
 
 ### Full restart
 
-To completely restart the server, click the **More actions** icon and select **Full Restart**.
+To fully restart the server, click the **More actions** icon and select **Full Restart**.
 
 When you update the `package.json` file in the Editor, the Webview re-installs dependencies and restarts automatically.
 

@@ -14,7 +14,8 @@ plans:
 
 After you have [added an identity provider (IdP)](add-idp.md) in Reunite, the IdP can then be configured in the `redocly.yaml` configuration file for individual projects.
 Adding an IdP to the configuration file for a project is not required for users to be able to use it to log in.
-If you do not configure `sso` in the `redocly.yaml` file for a project, users can log in to the project using IdPs you have added in Reunite in the default priority order.
+You might not configure `sso` in the `redocly.yaml` file for a project.
+In that case, users can log in to the project using IdPs you have added in Reunite in the default priority order.
 You can configure `sso` in the `redocly.yaml` file of a project, to specify identity providers for that project.
 See the [Single sign-on (SSO) concept doc](./sso.md#default-priority-order) for more information on the default priority order.
 
@@ -37,7 +38,8 @@ and either:
 
 ## Specify IdPs for a project
 
-If you want to specify which identity providers (IdPs) users can log in to your project with, you can configure `sso` in the `redocly.yaml` configuration file.
+You can specify which identity providers (IdPs) users can log in to your project with.
+Configure `sso` in the `redocly.yaml` configuration file.
 
 For example, the following `sso` configuration limits users to the CORPORATE IdP, if it has been added in Reunite:
 

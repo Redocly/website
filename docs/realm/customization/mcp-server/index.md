@@ -87,8 +87,10 @@ access:
 ```
 
 When a team-based role is set for the `mcp` feature, only teams with a role other than `none` can access the MCP server.
-Users must sign in unless the `anonymous` team is granted such a role, either directly or through the `*` wildcard, which covers all teams that are not listed explicitly, including `anonymous`.
-When the `anonymous` team has no access, requests without a valid token receive a `401` response, and authenticated users who don't belong to an allowed team receive a `403` response.
+Users must sign in unless the `anonymous` team is granted such a role, either directly or through the `*` wildcard.
+The wildcard covers all teams that are not listed explicitly, including `anonymous`.
+When the `anonymous` team has no access, requests without a valid token receive a `401` response.
+Authenticated users who don't belong to an allowed team receive a `403` response.
 
 For more details, see the [RBAC configuration reference](../../config/access/rbac.md#features-configuration).
 
@@ -101,8 +103,14 @@ For example: `https://example.com/mcp`.
 
 Users can connect their preferred AI tools that support MCP (for example, Cursor, Claude Code and VS Code) to your MCP server.
 
-1. Enable the MCP server in your [configuration](../../config/mcp.md).
-2. Copy your MCP server URL and add it to your tool.
+{% numbered-list %}
+  {% numbered-item %}
+  Enable the MCP server in your [configuration](../../config/mcp.md).
+  {% /numbered-item %}
+  {% numbered-item %}
+  Copy your MCP server URL and add it to your tool.
+  {% /numbered-item %}
+{% /numbered-list %}
 
 After connecting, the tool can access your OpenAPI documentation.
 
@@ -111,47 +119,62 @@ After connecting, the tool can access your OpenAPI documentation.
 
 #### Connect Cursor to the MCP server
 
-1. In Cursor, open the command palette.
-   - macOS: `Command + Shift + P`
-   - Windows/Linux: `Ctrl + Shift + P`
-1. Type "Open MCP settings" in the command palette.
-1. Select "Add custom MCP".
+{% numbered-list %}
+  {% numbered-item %}
+  In Cursor, open the command palette.
+  - macOS: `Command + Shift + P`
+  - Windows/Linux: `Ctrl + Shift + P`
+  {% /numbered-item %}
+  {% numbered-item %}
+  Type "Open MCP settings" in the command palette.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Select "Add custom MCP".
+  {% /numbered-item %}
+{% /numbered-list %}
 
 Cursor opens the `mcp.json` file.
 
 #### Configure the MCP server
 
-1. In `mcp.json`, add your server configuration:
-```json
-{
-  "mcpServers": {
-    "example-mcp": {
-      "url": "https://example.com/mcp"
-    }
-  }
-}
-```
+{% numbered-list %}
+  {% numbered-item %}
+  In `mcp.json`, add your server configuration:
 
-Optionally, you can also pass additional headers that will be sent with each request:
-
-```json
-{
-  "mcpServers": {
-    "example-mcp": {
-      "url": "https://example.com/mcp",
-      "headers": {
-        "Authorization": "Basic MTIzOjEyMw=="
+  ```json
+  {
+    "mcpServers": {
+      "example-mcp": {
+        "url": "https://example.com/mcp"
       }
     }
   }
-}
-```
+  ```
 
-1. Save the `mcp.json` file.
+  Optionally, you can also pass additional headers that will be sent with each request:
 
-1. Return to MCP settings and confirm the connection.
-   If authentication is required, select **Needs login** and complete the sign‑in flow.
-   After connecting, Cursor displays the list of available tools.
+  ```json
+  {
+    "mcpServers": {
+      "example-mcp": {
+        "url": "https://example.com/mcp",
+        "headers": {
+          "Authorization": "Basic MTIzOjEyMw=="
+        }
+      }
+    }
+  }
+  ```
+  {% /numbered-item %}
+  {% numbered-item %}
+  Save the `mcp.json` file.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Return to MCP settings and confirm the connection.
+  If authentication is required, select **Needs login** and complete the sign‑in flow.
+  After connecting, Cursor displays the list of available tools.
+  {% /numbered-item %}
+{% /numbered-list %}
 
 #### Test the Cursor connection
 
@@ -163,9 +186,17 @@ In Cursor chat (Agent mode), ask a question that triggers an MCP tool.
 
 ### Connect Claude Code to the MCP server
 
-1. Run: `claude mcp add ${MCP_SERVER_NAME} ${URL} --transport http` where `${MCP_SERVER_NAME}` is your desired server name and `${URL}` is the MCP server URL.
-1. In the Claude Code CLI, type `/mcp` and complete authentication if prompted.
-1. Claude Code lists the available tools with descriptions and parameters.
+{% numbered-list %}
+  {% numbered-item %}
+  Run: `claude mcp add --transport http ${MCP_SERVER_NAME} ${URL}` where `${MCP_SERVER_NAME}` is your desired server name and `${URL}` is the MCP server URL.
+  {% /numbered-item %}
+  {% numbered-item %}
+  In the Claude Code CLI, type `/mcp` and complete authentication if prompted.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Claude Code lists the available tools with descriptions and parameters.
+  {% /numbered-item %}
+{% /numbered-list %}
 
 #### Test the Claude Code connection
 
@@ -173,17 +204,66 @@ In the Claude Code CLI, ask the AI agent to perform an instruction that uses an 
 
   {% /tab %}
 
+  {% tab label="Claude Desktop" %}
+
+### Connect Claude Desktop to the MCP server
+
+The Claude Desktop configuration file only launches stdio commands, so the entry connects to the remote server through the `mcp-remote` bridge.
+
+{% numbered-list %}
+  {% numbered-item %}
+  In Claude Desktop, open **Settings → Developer → Edit Config**.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Add this entry to the configuration file:
+
+  ```json
+  {
+    "mcpServers": {
+      "example-mcp": {
+        "command": "npx",
+        "args": ["-y", "mcp-remote", "https://example.com/mcp"]
+      }
+    }
+  }
+  ```
+  {% /numbered-item %}
+  {% numbered-item %}
+  Restart Claude Desktop.
+  {% /numbered-item %}
+{% /numbered-list %}
+
+If the MCP server requires authentication, `mcp-remote` opens a sign‑in page in your browser on the first connection.
+
+#### Test the Claude Desktop connection
+
+In a Claude Desktop chat, ask a question that uses an MCP tool.
+
+  {% /tab %}
+
    {% tab label="VS Code" %}
 
 ### Connect VS Code to the MCP server
 
-1. In VS Code, open the command palette.
-   - macOS: `Command + Shift + P`
-   - Windows/Linux: `Ctrl + Shift + P`
-1. Type "MCP: Add Server" in the command palette.
-1. Select "HTTP" to connect to a remote MCP server.
-1. Enter the MCP server URL (for example, `https://example.com/mcp`).
-1. Enter a name for the connection.
+{% numbered-list %}
+  {% numbered-item %}
+  In VS Code, open the command palette.
+  - macOS: `Command + Shift + P`
+  - Windows/Linux: `Ctrl + Shift + P`
+  {% /numbered-item %}
+  {% numbered-item %}
+  Type "MCP: Add Server" in the command palette.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Select "HTTP" to connect to a remote MCP server.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Enter the MCP server URL (for example, `https://example.com/mcp`).
+  {% /numbered-item %}
+  {% numbered-item %}
+  Enter a name for the connection.
+  {% /numbered-item %}
+{% /numbered-list %}
 
 If the MCP server requires authentication, VS Code prompts you to open a sign‑in page.
 Complete the sign‑in flow with your credentials.
@@ -196,7 +276,83 @@ Confirm that your MCP connection appears with a list of available tools.
 Ask the AI to perform a query that uses an MCP tool.
 
   {% /tab %}
+
+  {% tab label="Codex CLI" %}
+
+### Connect Codex CLI to the MCP server
+
+{% numbered-list %}
+  {% numbered-item %}
+  Run: `codex mcp add ${MCP_SERVER_NAME} --url ${URL}` where `${MCP_SERVER_NAME}` is your desired server name and `${URL}` is the MCP server URL.
+  {% /numbered-item %}
+  {% numbered-item %}
+  If the MCP server requires authentication, run `codex mcp login ${MCP_SERVER_NAME}` and complete the sign‑in flow.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Run `codex mcp list` and confirm the server appears.
+  {% /numbered-item %}
+{% /numbered-list %}
+
+#### Test the Codex CLI connection
+
+In the Codex CLI, ask the AI agent to perform an instruction that uses an MCP tool.
+
+  {% /tab %}
+
+  {% tab label="ChatGPT desktop app" %}
+
+### Connect the ChatGPT desktop app to the MCP server
+
+{% numbered-list %}
+  {% numbered-item %}
+  In the ChatGPT desktop app, go to **Settings → Plugins → MCPs**.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Add a server with the "Streamable HTTP" type and your MCP server URL (for example, `https://example.com/mcp`).
+  {% /numbered-item %}
+  {% numbered-item %}
+  Restart the app.
+  {% /numbered-item %}
+{% /numbered-list %}
+
+#### Test the ChatGPT connection
+
+In a ChatGPT chat, ask a question that uses an MCP tool.
+
+  {% /tab %}
 {% /tabs %}
+
+## Public endpoint for anonymous users
+
+When RBAC restricts content, the `/mcp` endpoint requires authentication and anonymous users cannot browse the content that RBAC marks public.
+To keep public content reachable for AI tools without a login, enable the public endpoint:
+
+```yaml
+mcp:
+  docs:
+    publicEndpoint: true
+```
+
+The MCP server then also serves `/mcp-public` on your project root URL.
+Requests to it are never challenged for authentication, any provided credentials are ignored, and the served APIs and search results include only content available to the `anonymous` team.
+The `/mcp` endpoint keeps working as before for authenticated users.
+
+{% admonition type="warning" %}
+Everything your RBAC rules grant to the `anonymous` team becomes reachable over `/mcp-public` without a login.
+Review these rules before you enable the endpoint.
+{% /admonition %}
+
+If you [restrict the MCP server itself](#restrict-access-to-the-mcp-server) with the `rbac.features.mcp` configuration, it must grant access to the `anonymous` team, or the `/mcp-public` endpoint is not registered and the build logs a note.
+
+The public endpoint is only served when `/mcp` requires authentication and the `anonymous` team can reach some content.
+When the project has no protected content, `/mcp` already serves anonymous users, so `/mcp-public` is not registered and the build logs a note instead.
+A project that uses [`requiresLogin`](../../config/access/requires-login.md) without `rbac` rules has no public content, so `/mcp-public` is not registered either.
+
+Users discover the public endpoint in three ways:
+
+- A browser visit to `/mcp-public` displays the same setup page as `/mcp`, with connection snippets that point at the public endpoint and a note that it serves public content only.
+- The two setup pages link to each other: the `/mcp` page links to the public endpoint, and the `/mcp-public` page links back to the main endpoint.
+- When an unauthenticated MCP client connects to the restricted `/mcp` endpoint, the `401` response body mentions the `/mcp-public` URL.
 
 ## Resources
 

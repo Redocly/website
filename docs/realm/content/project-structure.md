@@ -23,14 +23,15 @@ Knowing the common conventions helps you navigate, contribute to, and customize 
 
 ## Common directories and files
 
-A typical Redocly project includes the following folders and files. Only one content file is strictly required — the rest are optional but help organize and extend your project:
+A typical Redocly project includes the following folders and files.
+Only one content file is strictly required — the rest are optional but help organize and extend your project:
 
 - content files and folders: the files that generate pages (see [Content Files](#content-files) below).
   This is the only *required* element - you need at least one file of content.
 - `redocly.yaml`: the primary configuration file used to customize features, navigation, theming, and more.
   While optional for a basic start, it's essential for most customizations.
 - `package.json`: the project manifest for managing Node.js dependencies.
-  It is not required unless you want to specify a particular version of Redocly packages or install any third-party dependencies.
+  It is required only if you want to specify a particular version of Redocly packages or install any third-party dependencies.
 - `_partials/`: a directory for reusable Markdoc partials
 - `@l10n/`: a directory for locale folders
 - `@api`: a directory for API functions
@@ -279,7 +280,8 @@ When the default version changes to `v3`, the paths also change:
 - `/config/@v2/guide.md` becomes `/config/v2/guide`.
 - `/config/@v3/guide.md` (default version) becomes `/config/guide`.
 
-Some of your content files in the same location may share a name, but have different extensions, or be an index file in a folder with the same name as files in the parent folder:
+Some of your content files in the same location may share a name but have different extensions.
+A file can also be an index file in a folder with the same name as files in the parent folder:
 
 ```treeview {% title="Example of files with identical names in the same folder" %}
 ...
@@ -345,11 +347,12 @@ You can override or add various elements:
   Refer to the [Eject components](../customization/eject-components/index.md) for more information.
 - **Styles**: Add global custom CSS rules or modify [theme variables](../branding/css-variables/index.md) in the `@theme/styles.css` file.
   This file serves as the main entry point for your custom global styles.
-- **Custom markdoc components**: Create completely [new Markdoc tags and functions](../customization/build-custom-function.md), within the `@theme/markdoc` directory to enhance your Markdoc.
+- **Custom markdoc components**: Create [new Markdoc tags and functions](../customization/build-custom-function.md), within the `@theme/markdoc` directory to enhance your Markdoc.
 
 ### Static files (`static/`)
 
-While assets referenced directly within your content files (like images in Markdown using relative paths `./images/diagram.png`) are typically processed and bundled by Realm, there's often a need for files that should be copied directly to the root of the final build output without any changes.
+Assets referenced directly within your content files (like images in Markdown using relative paths `./images/diagram.png`) are typically processed and bundled by Realm.
+However, you often need files that are copied directly to the root of the final build output without any changes.
 
 The `static/` directory serves this purpose.
 Any files placed inside the `static/` folder will be copied verbatim to the root of your built site.

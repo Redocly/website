@@ -30,26 +30,27 @@ import { Link } from '@redocly/theme/components/Link/Link';
 ---
 
 - `to`
-- `string`
-- **REQUIRED** URL or path to navigate to.
+- string
+- **REQUIRED.**
+  URL or path to navigate to.
 
 ---
 
 - `target`
-- enum (`_self` | `_blank`)
+- enum (\_self | \_blank)
 - Specifies where to open the linked document.
-  Defaults to `_self`.
+  Default: `_self`.
 
 ---
 
 - `external`
-- `boolean`
+- boolean
 - If `true`, indicates that the link points to an external resource.
 
 ---
 
 - `className`
-- `string`
+- string
 - Custom CSS class name(s) for styling.
 
 ---
@@ -67,7 +68,7 @@ import { Link } from '@redocly/theme/components/Link/Link';
 ---
 
 - `languageInsensitive`
-- `boolean`
+- boolean
 - If `true`, disables automatic language prefixing for localized routes.
 
 ---
@@ -79,7 +80,7 @@ import { Link } from '@redocly/theme/components/Link/Link';
 ---
 
 - `[key: string]`
-- `unknown`
+- unknown
 - Allows passing additional arbitrary props.
 
 {% /table %}

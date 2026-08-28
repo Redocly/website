@@ -73,7 +73,8 @@ Customize with attributes like `src`, `alt`, `width`, and `height`.
 
 - alt
 - string
-- Descriptive text that provides context for the image to help with accessibility and people with visual impairments or who use assistive technologies to understand the content of images.
+- Descriptive text that provides context for the image to help with accessibility.
+  It helps people with visual impairments or who use assistive technologies to understand the content of images.
 
 ---
 
@@ -98,7 +99,8 @@ Customize with attributes like `src`, `alt`, `width`, and `height`.
 
 - width
 - string | number
-- Sets the width of the image. Accepts:
+- Sets the width of the image.
+  Accepts:
   - Numbers (treated as pixels, for example, width=300 → "300px")
   - String values with units (for example, "100%", "300px", "20rem", "50vw")
 
@@ -106,7 +108,8 @@ Customize with attributes like `src`, `alt`, `width`, and `height`.
 
 - height
 - string | number
-- Sets the height of the image. Accepts:
+- Sets the height of the image.
+  Accepts:
   - Numbers (treated as pixels, for example, height=300 → "300px")
   - String values with units (for example, "100%", "300px", "20rem", "50vw")
 
@@ -115,7 +118,8 @@ Customize with attributes like `src`, `alt`, `width`, and `height`.
 - withLightbox
 - boolean
 - Opens the image in a lightbox when the image is clicked.
-  The lightbox image is opened in its original size or is scaled down to fit the screen if its original size is larger than then screen size.
+  The lightbox image is opened in its original size.
+  It is scaled down to fit the screen if its original size is larger than the screen size.
   Default: `false`.
 
 ---
@@ -142,7 +146,8 @@ Customize with attributes like `src`, `alt`, `width`, and `height`.
 
 - border
 - string
-- Sets the border style of the image. Accepts standard CSS border values, such as:
+- Sets the border style of the image.
+  Accepts standard CSS border values, such as:
   - "1px solid black" - thin black border
   - "2px dashed #FF0000" - dashed red border
   - "3px double gray" - double-line gray border
@@ -278,7 +283,8 @@ Customize with attributes like `src`, `alt`, `width`, and `height`.
 **Write meaningful alt text**
 
 Always include descriptive alt text that conveys the purpose and content of the image.
-Descriptive alt text improves accessibility and helps users understand the image's context when it fails to load or if users have visual impairments or use assistive technologies to understand the content of images.
+Descriptive alt text improves accessibility and helps users understand the image's context when it fails to load.
+It also helps users who have visual impairments or use assistive technologies to understand the content of images.
 
 **Use images purposefully**
 
