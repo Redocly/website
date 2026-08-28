@@ -245,7 +245,7 @@ Redocly treats several file types as primary content sources, automatically gene
 Supported content file types include:
 
 - **Markdown (`.md`)**: The most common format for documentation pages.
-  Redocly uses [**Markdoc**](https://markdoc.io/), an extensible Markdown format, allowing for custom components, partials, and advanced content features.
+  Redocly uses [**Markdoc**](https://markdoc.io/), an extensible Markdown format, allowing for custom tags, partials, and advanced content features.
 - **React pages (`.page.tsx`)**: React components used for pages requiring complex layouts, dynamic data fetching, or custom interactive elements.
   These allow full control over layout, interactivity, and data fetching.
 - **API descriptions (`.yaml`, `.json`, `.graphql`)**: API specification files (OpenAPI, AsyncAPI, GraphQL schemas).
@@ -347,7 +347,7 @@ You can override or add various elements:
   Refer to the [Eject components](../customization/eject-components/index.md) for more information.
 - **Styles**: Add global custom CSS rules or modify [theme variables](../branding/css-variables/index.md) in the `@theme/styles.css` file.
   This file serves as the main entry point for your custom global styles.
-- **Custom markdoc components**: Create [new Markdoc tags and functions](../customization/build-custom-function.md), within the `@theme/markdoc` directory to enhance your Markdoc.
+- **Custom Markdoc tags and functions**: Create [new Markdoc tags](../customization/build-markdoc-tags.md) and [functions](../customization/build-custom-function.md) within the `@theme/markdoc` directory to enhance your Markdoc.
 
 ### Static files (`static/`)
 
