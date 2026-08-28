@@ -322,6 +322,38 @@ In a ChatGPT chat, ask a question that uses an MCP tool.
   {% /tab %}
 {% /tabs %}
 
+## Public endpoint for anonymous users
+
+When RBAC restricts content, the `/mcp` endpoint requires authentication and anonymous users cannot browse the content that RBAC marks public.
+To keep public content reachable for AI tools without a login, enable the public endpoint:
+
+```yaml
+mcp:
+  docs:
+    publicEndpoint: true
+```
+
+The MCP server then also serves `/mcp-public` on your project root URL.
+Requests to it are never challenged for authentication, any provided credentials are ignored, and the served APIs and search results include only content available to the `anonymous` team.
+The `/mcp` endpoint keeps working as before for authenticated users.
+
+{% admonition type="warning" %}
+Everything your RBAC rules grant to the `anonymous` team becomes reachable over `/mcp-public` without a login.
+Review these rules before you enable the endpoint.
+{% /admonition %}
+
+If you [restrict the MCP server itself](#restrict-access-to-the-mcp-server) with the `rbac.features.mcp` configuration, it must grant access to the `anonymous` team, or the `/mcp-public` endpoint is not registered and the build logs a note.
+
+The public endpoint is only served when `/mcp` requires authentication and the `anonymous` team can reach some content.
+When the project has no protected content, `/mcp` already serves anonymous users, so `/mcp-public` is not registered and the build logs a note instead.
+A project that uses [`requiresLogin`](../../config/access/requires-login.md) without `rbac` rules has no public content, so `/mcp-public` is not registered either.
+
+Users discover the public endpoint in three ways:
+
+- A browser visit to `/mcp-public` displays the same setup page as `/mcp`, with connection snippets that point at the public endpoint and a note that it serves public content only.
+- The two setup pages link to each other: the `/mcp` page links to the public endpoint, and the `/mcp-public` page links back to the main endpoint.
+- When an unauthenticated MCP client connects to the restricted `/mcp` endpoint, the `401` response body mentions the `/mcp-public` URL.
+
 ## Resources
 
 - **[MCP configuration reference](../../config/mcp.md)** - Configure MCP for your project
