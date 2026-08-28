@@ -6,7 +6,7 @@ seo:
   title: Generate OpenAPI from real traffic (with AI)
   description: The new generate-spec command infers an OpenAPI description from recorded HTTP traffic - with AI refinement.
 author: adam-sobaniec
-publishedDate: "2026-08-05"
+publishedDate: "2026-08-31"
 categories:
   - redocly:redocly-cli
   - redocly:product-updates
@@ -103,7 +103,7 @@ paths:
     # …
 ```
 
-Rather than paste the whole file, let's look at what the inference did.
+Let's look at what the inference did.
 
 Start with the paths: the photo URLs became one templated path, because the `prd_…` identifiers were recognized as IDs and turned into a required path parameter:
 
@@ -180,24 +180,21 @@ required:
 
 The result is still only a hypothesis - the description knows only what the traffic showed.
 `price` is an integer because every observed price happened to be a whole number.
-`id` and `name` became enums of the handful of menu items in the capture.
-That is over-fitting, not a rule of the API - and the same mechanism publishes real values as enums if you record real traffic.
-The photo response has no schema because its body is a PNG, not JSON.
+`name` became enum of the handful of menu items in the capture.
 Endpoints that nobody called are missing, there are no human-readable descriptions, and names like `{menu-item-imageId}` are generated mechanically - rename them when you review.
-More traffic makes the hypothesis stronger, and your e2e test suite is a free source of it: route the tests through `proxy` once, and the whole run becomes input.
+More traffic makes the hypothesis stronger. You can record traffic in your e2e tests using Redocly CLI `proxy` command and then feed it to `generate-spec`
+command.
 
 ## Refine it with AI
 
 The baseline is structurally correct, but it can't explain anything.
-It can tell you `price` is an integer; it can't tell you the price is in cents.
-It can't write a human-readable description, can't add a `minimum: 0` that no traffic sample proves, and can't tell whether two body shapes are noise or two variants of one union.
-That is the layer AI adds. Turn it on with `--with-ai`:
+That can be improved with AI. Let's explore with `--with-ai` parameter:
 
 ```bash
 redocly generate-spec ./cafe.har --title "Cafe API" --with-ai --ai-provider claude -o cafe-openapi.yaml
 ```
 
-What comes back is everything the deterministic step cannot produce:
+As a result everything the deterministic step couldn't produce lands in generated spec:
 
 - **Documentation** - a summary and description on every operation, and descriptions on nearly every property and parameter.
 - **Semantic types and constraints** - `minimum: 0` on prices and quantities, identifier patterns like `^ord_[0-9a-z]+$`, and formats inferred from what a field means rather than from repeated values.
@@ -212,15 +209,10 @@ Give a model a whole codebase - or a whole traffic dump - and it loses track, th
 
 - **One operation per prompt.**
   Each prompt contains a single operation from the baseline, the component schemas it references, and a small sample of its recorded exchanges - a few real requests, picked so that every observed payload variant is included.
-  Prompt size stays bounded no matter how large the API or the capture is; the 500th operation gets the same focused attention as the first.
 - **Determinism and AI work together, not against each other.**
   The AI does not rebuild anything from scratch - it refines the baseline.
-  It is also told that the detected enums and formats come from the *full* traffic, so it may correct them when a sample contradicts them, but it may never drop them just because its small sample does not show them.
 - **Nothing is trusted blindly.**
-  A refined operation is accepted only if it keeps the operation's path and method, keeps every response status code observed in the traffic, does not redefine components owned by other operations, and passes validation with the `spec` ruleset.
-  On top of that, only the requested operation is merged back, so the AI cannot invent, drop, or rename endpoints even if it tries.
-  A rejected refinement keeps its deterministic baseline.
-  If refinement fails completely, the command falls back to the baseline description - you never get less than the deterministic run would have given you.
+  Each AI response is validated against baseline. If operations differ too much, response is treated rejected.
 
 ### Runs on the AI you already have
 
@@ -229,7 +221,7 @@ Each one runs the locally installed CLI in non-interactive mode, so the subscrip
 `--ai-provider` is optional and defaults to `claude`; pick a model with `--ai-model` or let the provider use its default.
 
 Operations are refined in parallel.
-`--ai-concurrency` (default 4) is the main way to make it faster: rerunning the full Cafe capture from the experiment below took under a minute with `--ai-concurrency 6`.
+`--ai-concurrency` (default 4) is the main way to make it faster.
 
 {% admonition type="warning" name="Traffic leaves your machine" %}
 `--with-ai` sends samples of the recorded traffic - URLs, query strings, request and response bodies - to the selected AI provider.
@@ -239,18 +231,12 @@ These are safety layers, not a guarantee - record in a sandbox, and make sure th
 
 ## How much does `--with-ai` actually add?
 
-Fair question, and the Cafe API can answer it precisely: its real, handwritten [OpenAPI description](https://cafe.redocly.com/openapi/cafe) exists - we only pretended it doesn't.
-So whatever `generate-spec` reconstructs from traffic can be scored against what the API team actually wrote.
+With Cafe API we can answer it precisely: its real, handwritten [OpenAPI description](https://cafe.redocly.com/openapi/cafe) exists - we only pretended it doesn't.
 
 We recorded a fuller session than the small capture above - one that covers every endpoint: the OAuth2 client registration flow, menu items created in both categories, orders placed, updated, and deleted, photo downloads, and the errors a real session produces along the way (a `400`, a few `404`s, even a `409`).
 Then we generated a description twice from that one capture - once deterministically, once with `--with-ai` - and scored both against the handwritten description.
 
-Two things are worth measuring separately:
-
-- **Precision** - when the generated description makes a claim about a property that the handwritten description also documents (its type, its format, its enum values, whether it is required), how often is the claim correct?
-  This is the "can I trust what it says" number.
-- **Recall** - of everything the handwritten description documents, how much did the generated one recover?
-  This is the "how much work is left" number.
+Let's look at the results:
 
 For response schemas:
 
@@ -258,10 +244,7 @@ For response schemas:
 | -------------------------------------- | ------------- | ----------- |
 | Response properties recovered          | 97.5%         | 98.3%       |
 | Correct types                          | 100%          | 100%        |
-| Correct formats                        | 100%          | 100%        |
-| Correct enum values                    | 100%          | 100%        |
 | Correct `required`                     | 69.2%         | 72.2%       |
-| **Precision, all claims**              | **87.8%**     | **89.2%**   |
 | Formats documented, recovered          | 53.1%         | 62.5%       |
 | Enums documented, recovered            | 66.7%         | 66.7%       |
 | `required` documented, recovered       | 91.3%         | 94.2%       |
@@ -271,19 +254,18 @@ For response schemas:
 
 ¹ Depends heavily on the model and `--ai-concurrency` - the largest models at the default concurrency are the slowest, while a rerun of the same capture with `--ai-concurrency 6` finished in under a minute.
 
-Responses tell the same story as the walkthrough.
-The deterministic baseline is already *correct*: it never contradicted the handwritten description on a single type, format, or enum value.
 What `--with-ai` adds is what determinism cannot produce at all: descriptions on nearly every property, constraints, examples, and formats inferred from context rather than repetition.
 
-Request bodies are a different story:
+For request bodies we could see more improvements with AI:
+
 
 | Metric                              | Deterministic | `--with-ai` |
 | ----------------------------------- | ------------- | ----------- |
 | Request properties recovered        | 55.9%         | 61.8%       |
 | Correct types                       | 78.9%         | **100%**    |
 | Correct `required`                  | 81.8%         | **100%**    |
-| **Precision, all claims**           | **80.0%**     | **100%**    |
 | Properties carrying a description   | 0%            | 85.7%       |
+
 
 ## What actually changed
 
@@ -378,25 +360,10 @@ The AI noticed from the samples that beverages and desserts carry different fiel
 The handwritten description models menu items exactly the same way - `oneOf` beverage or dessert, discriminated by `category`.
 Traffic plus AI arrived at the same design the API team chose by hand; the baseline could only offer one merged object with everything optional.
 
-The rest of the changes, briefly:
-
-- Descriptions went from zero to 97.5% of response properties, plus a summary and description on every refined operation.
-- 21 numeric and length constraints appeared, along with realistic `example` values.
-- Identifier patterns were inferred on path parameters, such as `pattern: ^ord_[0-9a-z]+$` on the order ID.
-- The over-fitting the walkthrough warned about was cleaned up: the baseline turned the two observed order IDs into an `enum`, and the AI demoted it to a plain string with a description and a realistic `example` - while real enums like `category` and order `status` stayed.
-- `required` was cleaned up where the traffic over-claimed it - optional client-registration fields that every sample happened to include.
-
-The guardrails did real work during this run, too: one operation's refinement failed on a transient provider error and kept its deterministic baseline, so the output stayed valid and complete.
-
 One caveat applies to every API: path parameters.
 Every Cafe path parameter was recognized, because its identifiers are prefixed tokens (`prd_…`, `ord_…`) that the deterministic inference detects.
 On APIs whose path segments are ordinary words - organization names, repository names, branches - those segments stay hardcoded, and AI refinement cannot fix them, because a refined operation must keep its path.
 Reviewing paths by hand is the one step you cannot skip.
-
-{% admonition type="info" name="About these numbers" %}
-They come from one capture of one small API, scored by a script we wrote for this article, so treat them as an illustration rather than a benchmark.
-The handwritten description isn't perfect ground truth either: the traffic hit a `409` on `DELETE /menu/{menuItemId}` and a live `/health` endpoint that the handwritten description doesn't document - real API behavior that counts against the generated description as "not in the spec".
-{% /admonition %}
 
 {% admonition type="warning" name="Experimental" %}
 The `generate-spec` command is experimental.
@@ -406,9 +373,5 @@ Flags, output, and behavior may change - including breaking changes - in upcomin
 ## Get started
 
 The `generate-spec` command is available now in the latest [Redocly CLI](https://redocly.com/docs/cli) - see the [command reference](https://redocly.com/docs/cli/commands/generate-spec) for all options.
-Run it on your traffic, review what comes out, lint it with your own ruleset, and tell us what you think on the [Redocly CLI GitHub repository](https://github.com/Redocly/redocly-cli/issues).
-The description you get back is the contract everything else builds on: API docs, generated SDKs, and the AI agents that need it to call your API at all.
 
-And once you have a description, don't let it go stale.
-Point the [`drift` command](./catch-api-drift.md) at next week's traffic and it tells you as soon as the API changes.
-Generate, then guard.
+Once you have your spec generated don't let it go stale. Use [`drift` command](./catch-api-drift.md) to ensure it stays up-to-date.
