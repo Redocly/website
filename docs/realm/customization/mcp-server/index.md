@@ -27,6 +27,87 @@ Realm provides built-in MCP server capabilities that expose your API Docs to AI 
 Use the Docs MCP server to explore and discover APIs in your project.
 For the current MCP endpoint details, authentication semantics, server metadata, and tool schemas, see the [Docs MCP reference](./openapi.yaml).
 
+Connected AI clients see three tools:
+
+- `execute` runs a short script that the AI client writes.
+  The script can search documentation, read API descriptions, and [call the APIs you allow](#call-apis-through-the-mcp-server).
+- `describe-tools` tells the AI client what the script can do and which APIs it can call.
+- `manageApiCredentials` returns a secure link where the user adds, replaces, or removes the credentials that the server sends to an API.
+
+Anonymous clients also see `createAnonymousSession`.
+It returns a session ID that keeps stored credentials with the same anonymous session.
+
+## Call APIs through the MCP server
+
+AI clients can also call the APIs you document.
+The `execute` script sends the request, and the MCP server forwards it to the API.
+Your OpenAPI descriptions decide which APIs the server can call and which hosts it can reach.
+
+### Which APIs can be called
+
+An API description that anonymous users can read is callable by default.
+An API description that RBAC protects is not callable until you allow it.
+To allow it, add an empty `gateway` object to `x-mcp` in the Info Object:
+
+```yaml {% title="openapi.yaml" %}
+info:
+  title: Orders API
+  version: 1.0.0
+  x-mcp:
+    gateway: {}
+```
+
+To stop calls to any API, set `gateway.hide: true` instead.
+RBAC still applies: a user can only call an API that they can read.
+See the [`x-mcp` extension](../../content/api-docs/openapi-extensions/x-mcp.md#gateway-object) for the option reference.
+
+### Which hosts can be reached
+
+The server calls only the hosts in the root-level `servers` array of the API description.
+Use full `http` or `https` URLs with a public hostname, for example `https://api.example.com`.
+A server variable with an `enum` allows each listed value.
+The server never reaches `localhost`, private networks, or a hostname without a dot.
+
+{% admonition type="warning" %}
+An allowed host is reachable in full, not only the paths in the description.
+Do not list a host that has endpoints AI clients must not reach.
+{% /admonition %}
+
+### How users add API credentials
+
+The server never sends the user's MCP token to an API.
+When an API needs a credential, the user adds their own:
+
+{% numbered-list %}
+  {% numbered-item %}
+  The API answers `401`.
+  The MCP server gives the AI client a link to a credentials page on your project.
+  {% /numbered-item %}
+  {% numbered-item %}
+  The user opens the link in a browser and pastes the credential.
+  The link works one time and expires after 15 minutes.
+  {% /numbered-item %}
+  {% numbered-item %}
+  The client sends the request again, and the server adds the credential.
+  {% /numbered-item %}
+{% /numbered-list %}
+
+The credential never enters the chat, and the AI model never sees it.
+The form follows the security schemes of the API: bearer tokens, API keys in a header or cookie, and OAuth2 client credentials.
+If an operation accepts several schemes, the client asks the user which one they have.
+
+Users can replace or remove a credential at any time with the `manageApiCredentials` tool.
+The server stores credentials encrypted, for each user only.
+They expire after 30 days, or after 24 hours for anonymous users.
+
+### Limits
+
+- Each call has a 30-second timeout and a 1 MiB response limit.
+- One `execute` script can make up to 25 calls.
+- One client IP address can make 60 calls per minute and 2000 calls per day.
+- The server does not follow redirects.
+- The server logs each call without credential values or response bodies.
+
 ## MCP server card
 
 The MCP server card is a standardized JSON document that lets agents discover the Docs MCP server: its tools, transport endpoint, and capabilities.
@@ -357,5 +438,7 @@ Users discover the public endpoint in three ways:
 ## Resources
 
 - **[MCP configuration reference](../../config/mcp.md)** - Configure MCP for your project
+- **[`x-mcp` OpenAPI extension](../../content/api-docs/openapi-extensions/x-mcp.md)** - Describe MCP servers and control API request eligibility
+- **[AI governance FAQ](../../faq/ai-governance.md#mcp-server-security)** - Security answers about API requests for compliance reviews
 - **[RBAC configuration reference](../../config/access/rbac.md)** - Restrict MCP server access to specific teams
 - **[Agent skills](../agent-skills/index.md)** - Publish task-focused `SKILL.md` instructions and the discovery endpoints agents read to find them

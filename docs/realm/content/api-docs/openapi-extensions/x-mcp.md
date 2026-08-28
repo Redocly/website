@@ -2,12 +2,15 @@
 
 {% partial file="../../../_partials/experimental.md" /%}
 
-Use `x-mcp` to document MCP (Model Context Protocol) servers for consumers.
+Use `x-mcp` to document MCP (Model Context Protocol) servers for consumers, or to control whether the MCP server can call an API.
 
 ## Location
 
 The `x-mcp` extension can be added to Root Object.
 The root is the outer most level of the OpenAPI description.
+
+The extension can also be added to the Info Object with the `gateway` option.
+There it controls API requests from the [MCP server](../../../customization/mcp-server/index.md#call-apis-through-the-mcp-server).
 
 ## Options
 
@@ -22,6 +25,14 @@ The root is the outer most level of the OpenAPI description.
 - x-mcp
 - [MCP object](#mcp-object)
 - MCP server description and configuration.
+  Root Object only.
+
+---
+
+- x-mcp
+- [Gateway object](#gateway-object)
+- Controls whether the MCP server can make requests to the hosts the description declares.
+  Info Object only.
 
 {% /table %}
 
@@ -260,7 +271,76 @@ The root is the outer most level of the OpenAPI description.
 
 {% /table %}
 
+### Gateway object
+
+Add `x-mcp` with a `gateway` object to the Info Object.
+Descriptions available to the `anonymous` team allow API requests by default.
+Descriptions protected by content RBAC require the `gateway` object before requests are allowed.
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- gateway
+- object
+- Allows API requests for an RBAC-protected description.
+  An empty object is enough.
+
+---
+
+- gateway.hide
+- boolean
+- Prevents API requests for the description when set to `true`.
+  Default: `false`.
+
+{% /table %}
+
 ## Examples
+
+### Allow API requests for a protected description
+
+```yaml {% title="openapi.yaml" %}
+openapi: 3.1.0
+info:
+  title: Orders API
+  version: 1.0.0
+  x-mcp:
+    gateway: {}
+servers:
+  - url: https://api.example.com
+paths:
+  /orders:
+    get:
+      summary: List orders
+      responses:
+        '200':
+          description: Successful response
+```
+
+### Prevent API requests
+
+```yaml {% title="openapi.yaml" %}
+openapi: 3.1.0
+info:
+  title: Orders API
+  version: 1.0.0
+  x-mcp:
+    gateway:
+      hide: true
+servers:
+  - url: https://api.example.com
+paths:
+  /orders:
+    get:
+      summary: List orders
+      responses:
+        '200':
+          description: Successful response
+```
 
 ### `x-mcp` example
 

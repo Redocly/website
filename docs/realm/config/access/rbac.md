@@ -14,9 +14,9 @@ description: Use team-based access controls to assign permissions required to fi
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 Use team-based access controls to assign permissions required to files and project access.
-Access control is done using [RBAC (role-based access control)](../access/rbac.md).
-By default, all authenticated users are assigned to the `authenticated` team, and unauthenticated users are automatically assigned to the `anonymous` team.
-All other configuration is done through team-role mapping.
+[RBAC (role-based access control)](../access/rbac.md) controls access.
+By default, Redocly puts all authenticated users in the `authenticated` team and all unauthenticated users in the `anonymous` team.
+You configure everything else through team-role mapping.
 
 ## Options
 
@@ -41,7 +41,7 @@ All other configuration is done through team-role mapping.
 - [[Content configuration](#content-configuration)]
 - Describes file access for the given team.
   Use this option when needs to manage file access to a specific team.
-  This option is used for page access as well.
+  This option also controls page access.
 
 ---
 
@@ -54,9 +54,9 @@ All other configuration is done through team-role mapping.
 
 - teamFolders
 - [[Team folder](#team-folder)]
-- Use with pattern-based access to describe the folders that can be accessed in this way.
+- Use with pattern-based access to list the folders that pattern-based access can open.
   Only folders listed here can have access granted through pattern-based access.
-  This option is used in combination with the `teamNamePatterns` option.
+  Use this option together with the `teamNamePatterns` option.
 
 ---
 
@@ -69,7 +69,7 @@ All other configuration is done through team-role mapping.
 - teamNamePatterns
 - [[Team name pattern](#team-name-pattern)]
 - Team name pattern for giving pattern-based access to the folders in `teamFolders`.
-  This option is used in combination with the `teamFolders` option.
+  Use this option together with the `teamFolders` option.
 
 {% /table %}
 
@@ -86,7 +86,7 @@ All other configuration is done through team-role mapping.
 - _team name_
 - `none`, `read`, `write`, `triage`, `maintain`, or `admin`
 - Map of teams to project roles.
-  The team names include `anonymous` (meaning all users who are not logged in) and `authenticated` (meaning any user who is logged in).
+  The team names include `anonymous` (all users without a login) and `authenticated` (all users with a login).
   Team names can also come from the identity provider through the [single-sign-on (SSO) configuration](./sso.md).
   In addition, the team name `*` represents the rest of the teams not defined in sibling properties including `anonymous` and `authenticated`.
   Possible values for project roles are: `none`, `read`, `write`, `triage`, `maintain`, or `admin`.
@@ -114,7 +114,7 @@ All other configuration is done through team-role mapping.
 {% admonition type="info" name="Wildcard key" %}
 
 When describing team to project role relations, you can use a special key `*`.
-A project role assigned to that key is applied to the rest of the teams that are not described for the given glob pattern.
+The project role of that key applies to all teams that the glob pattern does not list.
 
 In the following example, only users assigned to the Admin team can view the content on the `secrets.md` file:
 
@@ -162,7 +162,7 @@ rbac:
 - teamPathSegment
 - string
 - Team folder pattern.
-  The `{teamPathSegment}` segment is used as the path segment.
+  The `{teamPathSegment}` placeholder becomes the path segment.
   Example: `/some/path/_{teamPathSegment}_`
 
 {% /table %}
@@ -181,9 +181,8 @@ rbac:
 - `string`
 - The format that the team name follows.
   The prefix is optional but can be useful if you have many teams.
-  The `{teamPathSegment}` is used as the path segment where the role access is applied,
-  and the `{projectRole}` part sets the access level.
-  The `{teamPathSegment}` segments are transformed to lower case.
+  The `{teamPathSegment}` part names the path segment that receives the role, and the `{projectRole}` part sets the access level.
+  Redocly converts the `{teamPathSegment}` segments to lower case.
 
 {% /table %}
 
@@ -210,10 +209,8 @@ Migrate to the `access` object format.
 
 ### File access
 
-In the following example, default team permissions are assigned
-to all pages that do not match any other glob patterns.
-Different permissions are assigned to the `developer-keys.md` page,
-the pages in the `/secret/chapter` folder, and any TypeScript (`.tsx`) pages:
+The following example gives default team permissions to all pages that do not match another glob pattern.
+It gives different permissions to the `developer-keys.md` page, the pages in the `/secret/chapter` folder, and all TypeScript (`.tsx`) pages:
 
 ```yaml {% title="redocly.yaml" %}
 access:
@@ -284,7 +281,7 @@ access:
 
 ### Use environment variables
 
-Environment variables can be used for role assignments, useful for different deployment environments:
+You can use environment variables for role assignments, which helps with different deployment environments:
 
 ```yaml {% title="redocly.yaml" %}
 access:
@@ -315,7 +312,7 @@ This configuration directs users to a login page where they can authenticate usi
 ### Pattern-based access
 
 Define the folders and the patterns that the team names match.
-The following is an example configuration; the curly braces `{` and `}` and the placeholder names are shown as they should be used in a configuration file.
+The following example shows the curly braces `{` and `}` and the placeholder names exactly as you write them in a configuration file.
 
 ```yaml
   teamFolders:
@@ -371,8 +368,8 @@ access:
         authenticated: read
 ```
 
-Access to the MCP server is controlled the same way through the `mcp` feature.
-In the following example, only members of the Developers team can access the MCP server, while all other users are denied access.
+The `mcp` feature controls access to the MCP server in the same way.
+In the following example, only members of the Developers team can access the MCP server, and all other users cannot.
 
 ```yaml {% title="redocly.yaml" %}
 access:
@@ -382,8 +379,8 @@ access:
         Developers: read
 ```
 
-When a team-based role is set for the `mcp` feature, only teams with a role other than `none` can access the MCP server.
-Users must sign in unless the `anonymous` team is granted such a role, either directly or through the `*` wildcard.
+When you set a team-based role for the `mcp` feature, only teams with a role other than `none` can access the MCP server.
+Users must sign in unless the `anonymous` team has such a role, either directly or through the `*` wildcard.
 The wildcard covers all teams that are not listed explicitly, including `anonymous`.
 
 ### Disallow access to one specific page
