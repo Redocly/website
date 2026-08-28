@@ -190,7 +190,10 @@ Same engine and the same options across all four, each expressed the way that pl
  {% /tab %}
  {% tab label="Docker" %}
  ```sh
- docker run -p 8080:80 -e SPEC_URL=https://api.example.com/openapi.json redocly/redoc
+ docker run -p 8080:80 \
+   -e SPEC_URL=https://api.example.com/openapi.json \
+   -e REDOC_OPTIONS='only-required-in-samples="true" hide-schema-titles="true"' \
+   redocly/redoc
  ```
 
  {% /tab %}
@@ -202,8 +205,9 @@ In 2.x, open-source Redoc and the renderer behind our commercial products were s
 
 In 3.x there is one codebase. The CE package is generated from the same engine we ship to paying customers, by a build step that mechanically strips the commercial pieces - not a port, not a fork someone remembers to sync. A fix that lands for customers is in CE by construction, because it is the same code. It cannot fall behind again.
 
-What gets stripped: Try It, the interactive request console, and a handful of options.
-Redoc 2.x never had Try It either, so nothing moved behind a paywall.
+A few pieces stay commercial: Try It, the interactive request console, and a handful of
+options that support it. Redoc 2.x didn't include Try It either, so nothing that was open
+source before has changed hands.
 
 ## Caught up with modern JavaScript
 
