@@ -52764,6 +52764,15 @@ reunite:
         - Added email notifications when a project is published to production for the first time.
         - Fixed email notifications for build failure and deploy success when triggered by external users.
     dependencies: {}
+  v2026-08-28.3:
+    timestamp: 1787926855000
+    changes:
+      minor:
+        - Added access-level badges on project cards in the Reunite Projects page.
+        - Added access badges to project cards on the Reunite Projects page indicating `Public` or `Limited` visibility.
+      patch:
+        - Fixed loading placeholders that remained visible on project cards without production builds on the Reunite Projects page.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
