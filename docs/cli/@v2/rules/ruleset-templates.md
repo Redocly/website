@@ -187,7 +187,6 @@ rules:
   no-empty-servers: error
   no-enum-type-mismatch: error
   no-identical-paths: error
-  no-illogical-composition-keywords: warn
   no-invalid-media-type-examples: warn
   no-invalid-parameter-examples: warn
   no-invalid-schema-examples: warn
@@ -238,7 +237,6 @@ rules:
   no-enum-type-mismatch: error
   no-example-value-and-externalValue: error
   no-identical-paths: error
-  no-illogical-composition-keywords: warn
   no-invalid-media-type-examples: warn
   no-invalid-parameter-examples: warn
   no-invalid-schema-examples: warn
@@ -285,7 +283,6 @@ rules:
   no-enum-type-mismatch: error
   no-example-value-and-externalValue: error
   no-identical-paths: error
-  no-illogical-composition-keywords: warn
   no-invalid-media-type-examples: warn
   no-invalid-parameter-examples: warn
   no-invalid-schema-examples: warn

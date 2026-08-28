@@ -7,34 +7,6 @@ toc:
 
 <!-- do-not-remove -->
 
-## 2.49.0 (2026-08-27)
-
-### Minor Changes
-
-- Added the `no-illogical-composition-keywords` rule.
-
-  **Note**: the rule is set to `warn` in the `recommended` ruleset and to `error` in `recommended-strict`. Existing API descriptions may report new problems.
-
-### Patch Changes
-
-- Fixed an issue where telemetry silently failed to send when `npm` was not available.
-- Updated @redocly/openapi-core to v2.49.0.
-
-## 2.48.0 (2026-08-25)
-
-### Minor Changes
-
-- Added agent-friendly client generation: `python`, `go`, `php`, and `cli` generators beside the TypeScript client, each self-documenting with `--docs`, configurable per generator, and available as source in your own repository through `eject-generator`.
-
-### Patch Changes
-
-- Fixed an issue where the `bundle` command didn't resolve `$ref`s inside an AsyncAPI 3 Multi Format Schema Object.
-- Fixed an issue where `respect --har-output` recorded an empty `postData` for every request.
-  Request bodies are written to the HAR.
-  Captures replayed through `drift` can have their request bodies validated instead of silently passing.
-- Updated @redocly/client-generator to v0.4.0.
-- Updated @redocly/openapi-core to v2.48.0.
-
 ## 2.47.0 (2026-08-21)
 
 ### Minor Changes
