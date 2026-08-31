@@ -447,7 +447,7 @@ export default function AgentFriendlySdksPost() {
             <CtaActionColumn>
               <CodeBlock
                 lang="bash"
-                header={{ controls: { copy: {} } }}
+                header={{ controls: { copy: {}, report: { hidden: true } } }}
                 source="npx @redocly/cli@latest generate-client openapi.yaml --output src/client.ts"
               />
               <CtaNote>
