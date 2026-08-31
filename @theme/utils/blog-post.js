@@ -10,21 +10,11 @@ export const buildAndSortBlogPosts = async (postRoutes, context, outdir) => {
   const metadata = await transformMetadata(metadataContentRecord.data, context.fs.cwd, outdir);
 
   for (const route of postRoutes) {
-    // Markdown routes are stamped with metadata.type === 'markdown' by the Realm
-    // markdown plugin; other blog post routes are React pages, which export
-    // `frontmatter` instead of using YAML frontmatter.
-    const isMarkdownPost = route.metadata?.type === 'markdown';
-    const { data } = await context.cache.load(
-      route.fsPath,
-      isMarkdownPost ? 'markdown-frontmatter' : 'react-frontmatter',
-    );
-    const frontmatter = isMarkdownPost ? data?.frontmatter : data;
+    const {
+      data: { content, frontmatter },
+    } = await context.cache.load(route.fsPath, 'markdown-frontmatter');
 
-    if (
-      !frontmatter ||
-      frontmatter.ignore === true ||
-      (await context.isPathIgnored(route.fsPath))
-    ) {
+    if (frontmatter?.ignore === true || (await context.isPathIgnored(route.fsPath))) {
       continue;
     }
 
@@ -36,15 +26,15 @@ export const buildAndSortBlogPosts = async (postRoutes, context, outdir) => {
         .map((categoryId) => {
           const categoryData = metadata.categories.get(categoryId);
           if (!categoryData) return null;
-
+          
           if (categoryData.category && categoryData.subcategory) {
-            return categoryData;
+            return categoryData; 
           } else {
-            return {
+            return { 
               category: {
-                id: categoryData.id,
-                label: categoryData.label,
-              },
+                id: categoryData.id, 
+                label: categoryData.label 
+              }
             };
           }
         })
@@ -82,12 +72,12 @@ async function transformMetadata(metadata, cwd, outdir) {
         categories.set(fullId, {
           category: {
             id: category.id,
-            label: category.label,
+            label: category.label
           },
           subcategory: {
             id: subcategory.id,
-            label: subcategory.label,
-          },
+            label: subcategory.label
+          }
         });
       }
     }

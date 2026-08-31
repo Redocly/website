@@ -7,7 +7,6 @@ const ABOUT_SLUG = '/about/';
 const BLOG_METADATA_PATH = 'blog/metadata/blog-metadata.yaml';
 
 const LATEST_POSTS_SHARED_DATA_ID = 'blog-latest-posts';
-const RECENT_POSTS_SHARED_DATA_ID = 'blog-recent-posts';
 const ALL_POSTS_SHARED_DATA_ID = 'blog-posts';
 
 function __dirname(url) {
@@ -27,11 +26,11 @@ export default function themePlugin() {
       // Register preview route for the editor iframe
       const previewTemplateId = actions.createTemplate(
         'preview-template',
-        fromCurrentDir(import.meta.url, './preview.route.tsx'),
+        fromCurrentDir(import.meta.url, './preview.route.tsx')
       );
       const blogTemplateId = actions.createTemplate(
-        'blog-template',
-        fromCurrentDir(import.meta.url, './blog.page.tsx'),
+        'blog-template', 
+        fromCurrentDir(import.meta.url, './blog.page.tsx')
       );
       actions.addRoute({
         excludeFromSidebar: true,
@@ -59,7 +58,7 @@ export default function themePlugin() {
         templateId: blogTemplateId,
         hasClientRoutes: true,
       });
-
+      
       const metadataContentRecord = await context.cache.load(BLOG_METADATA_PATH, 'yaml');
       const categories = metadataContentRecord.data.categories || [];
 
@@ -85,11 +84,10 @@ export default function themePlugin() {
       // Existing blog data processing
       const postRoutes = actions
         .getAllRoutes()
-        .filter(
-          (route) =>
-            route.slug.startsWith(BLOG_SLUG) &&
-            route.slug !== BLOG_SLUG &&
-            !route.slug.startsWith('/blog/category/'),
+        .filter((route) => 
+          route.slug.startsWith(BLOG_SLUG) && 
+          route.slug !== BLOG_SLUG && 
+          !route.slug.startsWith('/blog/category/')
         );
 
       const categoryRoutes = actions
@@ -100,14 +98,8 @@ export default function themePlugin() {
 
       const latestPosts = postsData.posts.slice(0, 3);
 
-      // Top 4 posts, so a post page can exclude itself and still show 3 recent posts
-      const recentPosts = postsData.posts
-        .slice(0, 4)
-        .map(({ slug, title, description }) => ({ slug, title, description }));
-
       // Create shared data for blog pages
       await actions.createSharedData(LATEST_POSTS_SHARED_DATA_ID, latestPosts);
-      await actions.createSharedData(RECENT_POSTS_SHARED_DATA_ID, recentPosts);
       await actions.createSharedData(ALL_POSTS_SHARED_DATA_ID, postsData);
 
       // Add latest posts shared data to all blog posts and update metadata
@@ -118,17 +110,11 @@ export default function themePlugin() {
           LATEST_POSTS_SHARED_DATA_ID,
         );
 
-        actions.addRouteSharedData(
-          post.slug,
-          RECENT_POSTS_SHARED_DATA_ID,
-          RECENT_POSTS_SHARED_DATA_ID,
-        );
-
         const postRoute = actions.getRouteBySlug(post.slug);
 
         postRoute.metadata = { ...postRoute.metadata, ...post };
       }
-
+    
       // Add all posts shared data to category routes
       for (const categoryRoute of categoryRoutes) {
         actions.addRouteSharedData(
