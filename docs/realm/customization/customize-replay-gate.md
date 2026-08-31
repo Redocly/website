@@ -69,6 +69,13 @@ This command creates a local copy of `ReplayGate.tsx` in your project's `@theme/
   For example, scope a stored token's key so different APIs don't share (or overwrite) each other's credentials.
   You can also use a different auth mechanism entirely for APIs that need one.
 ---
+- `onClose`
+- `() => void`
+- **REQUIRED.**
+  Closes the Replay overlay.
+  Call it when a user dismisses the gate.
+  A dismissed gate that renders `children` instead leaves Replay reachable without authentication.
+---
 - `children`
 - `React.ReactNode`
 - **REQUIRED.**
@@ -197,6 +204,9 @@ While that initial check runs, it shows a loading spinner instead of the sign-in
 Without a distinct loading state, returning users with a valid token would see a flash.
 The sign-in button would show for however long the validation request takes.
 
+The panel is dismissible: a close button and a click on the backdrop call `onClose`, which closes the Replay overlay.
+Dismissing never falls through to Replay, so a successful sign-in stays the only way past the gate.
+
 Replace the constants at the top (`CLIENT_ID`, `OAUTH_BASE_URL`, `REDIRECT_URI`, and `TOKEN_INPUT_NAME`) with values from your own identity provider.
 
 {% admonition type="warning" name="localStorage and security" %}
@@ -210,6 +220,7 @@ For sensitive tokens, prefer `sessionStorage`, which is cleared when the browser
 ```tsx {% title="@theme/components/ReplayGate/ReplayGate.tsx" %}
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { CloseIcon } from '@redocly/theme/icons/CloseIcon/CloseIcon';
 import type { ReplayGateProps } from '@redocly/theme/components/ReplayGate/ReplayGate';
 
 // Replace with your OAuth 2.0 provider's details.
@@ -290,6 +301,29 @@ const Panel = styled.div`
   animation: ${slideIn} 0.3s ease-out;
 `;
 
+// Matches Replay's own overlay close button, which sits on the backdrop next to the panel.
+const CloseButton = styled.button`
+  position: relative;
+  right: var(--spacing-sm);
+  top: var(--spacing-sm);
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: var(--border-radius-md);
+  background-color: var(--button-bg-color-secondary);
+  cursor: pointer;
+`;
+
+const CloseButtonIcon = styled(CloseIcon)`
+  width: 14px;
+  height: 14px;
+`;
+
 // Always mounted at the same tree position across 'checking'/'authorizing'/'ready' so
 // React never unmounts+remounts `children` — only its display toggles. Not rendered at
 // all during 'gate'.
@@ -304,6 +338,7 @@ export function ReplayGate({
   setSelectedEnvironment,
   selectedEnvironment,
   apiId,
+  onClose,
   children,
 }: ReplayGateProps) {
   // Starts at 'checking', not 'gate' — otherwise the sign-in button flashes on
@@ -385,7 +420,16 @@ export function ReplayGate({
       )}
 
       {phase !== 'ready' && (
-        <OverlayWrapper>
+        <OverlayWrapper
+          onClick={(event) => {
+            // A click on the backdrop itself closes Replay; clicks inside the panel don't.
+            if (event.target === event.currentTarget) onClose();
+          }}
+        >
+          <CloseButton aria-label="Close" onClick={onClose}>
+            <CloseButtonIcon />
+          </CloseButton>
+
           <Panel>
             {phase === 'checking' && <Spinner />}
 
@@ -465,12 +509,18 @@ export default async function (request: Request) {
   }
 }
 
+// Serializes a value for the inline script. `state` comes from the query string, so escape
+// `<`: a value containing `</script>` would otherwise close the script block and inject markup.
+function jsValue(value: unknown) {
+  return JSON.stringify(value).replace(/</g, '\\u003c');
+}
+
 // Delivers the token back to the popup's opener, then closes the popup.
 function htmlResponse(error: string | null, accessToken: string | null, state: string | null) {
   const script = error
-    ? `document.getElementById('msg').textContent = ${JSON.stringify('Sign-in failed: ' + error)};`
+    ? `document.getElementById('msg').textContent = ${jsValue('Sign-in failed: ' + error)};`
     : `var channel = new BroadcastChannel('replay-auth');
-       channel.postMessage({ type: 'REPLAY_AUTH_DONE', access_token: ${JSON.stringify(accessToken)}, state: ${JSON.stringify(state)} });
+       channel.postMessage({ type: 'REPLAY_AUTH_DONE', access_token: ${jsValue(accessToken)}, state: ${jsValue(state)} });
        channel.close();
        window.close();`;
 
