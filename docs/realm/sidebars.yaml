@@ -332,6 +332,8 @@
   items:
     - page: customization/mcp-server/index.md
       label: MCP servers
+    - page: customization/mcp-server/custom-tools.md
+      label: Custom MCP tools
     - page: customization/agent-skills/index.md
       label: Agent skills
     - page: config/navigation.md#pageaction-object

@@ -485,31 +485,6 @@
 ```
 
 </details>
-<details>
-<summary>Button group divider</summary>
-
-```css
---button-group-divider-color: transparent;
---button-group-divider-opacity: 1;
---button-group-divider-color-disabled: var(--color-warm-grey-2);
-
-.button-group-primary {
-  --button-group-divider-color: var(--button-content-color-inverse);
-  --button-group-divider-opacity: 0.32;
-}
-
-.button-group-secondary {
-  --button-group-divider-color: var(--button-content-color);
-  --button-group-divider-opacity: 0.12;
-}
-
-.button-group-outlined {
-  --button-group-divider-color: var(--button-border-color);
-  --button-group-divider-opacity: 1;
-}
-```
-
-</details>
 
 ## Catalog classic
 
@@ -781,23 +756,6 @@
 --dropdown-menu-item-color-dangerous: var(--color-error-base);
 
 --dropdown-menu-item-border-color-focused: var(--button-border-color-focused);
-
---dropdown-menu-item-content-gap: var(--spacing-sm);
---dropdown-menu-item-content-padding: var(--spacing-xxs) 0;
---dropdown-menu-item-content-icon-size: 32px;
---dropdown-menu-item-content-icon-color: var(--icon-color-secondary);
---dropdown-menu-item-content-icon-border: 1px solid var(--border-color-secondary);
---dropdown-menu-item-content-icon-border-radius: var(--border-radius);
---dropdown-menu-item-content-text-gap: var(--spacing-xxs);
---dropdown-menu-item-content-title-icon-gap: var(--spacing-xxs);
---dropdown-menu-item-content-title-font-weight: var(--font-weight-regular);
---dropdown-menu-item-content-title-font-size: var(--font-size-base);
---dropdown-menu-item-content-title-line-height: var(--line-height-base);
---dropdown-menu-item-content-title-color: var(--text-color-secondary);
---dropdown-menu-item-content-description-font-weight: var(--font-weight-regular);
---dropdown-menu-item-content-description-font-size: var(--font-size-sm);
---dropdown-menu-item-content-description-line-height: var(--line-height-sm);
---dropdown-menu-item-content-description-color: var(--text-color-description);
 ```
 
 </details>
