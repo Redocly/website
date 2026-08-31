@@ -161,7 +161,7 @@ export function ReactIcon({ name, size = 24, color = 'currentColor' }) {
 }
 ```
 
-You can use the icon component in your Markdoc files, as in the following example:
+You can use the icon tag in your Markdoc files, as in the following example:
 
 ```markdoc {% process=false %}
 {% reactIcon name="heart" color="red" /%}
@@ -171,6 +171,6 @@ You can use the icon component in your Markdoc files, as in the following exampl
 ## Resources
 
 - **[Environment variables](../reunite/project/env-variables.md)** - Configure secure credentials for private registry access using environment variables
-- **[Build custom Markdoc tags](./build-markdoc-tags.md)** - Create reusable Markdoc components using imported NPM libraries for enhanced functionality
-- **[Built-in icon components](../content/markdoc-tags/icon.md)** - Use Redocly's built-in icon system and learn patterns for extending it with external icon libraries
+- **[Build custom Markdoc tags](./build-markdoc-tags.md)** - Create reusable Markdoc tags using imported NPM libraries for enhanced functionality
+- **[Built-in icon tag](../content/markdoc-tags/icon.md)** - Use Redocly's built-in icon system and learn patterns for extending it with external icon libraries
 - **[Customization](./index.md)** - Discover customizable components and customization options for your project

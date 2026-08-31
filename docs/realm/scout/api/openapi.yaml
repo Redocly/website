@@ -14,7 +14,7 @@ servers:
   - url: https://{host}/api
     variables:
       host:
-        default: app.cba.au.redocly.com
+        default: app.cloud.redocly.com
         description: Server host.
     description: Production main server.
 security:
@@ -711,28 +711,22 @@ components:
     Page:
       type: object
       properties:
-        endCursor:
+        nextPage:
           type:
             - string
             - 'null'
           description: |-
             Use with the `after` query parameter to load the next page of data.
-            When `null`, there is no data.
+            When `null`, there is no next page.
             The cursor is opaque and internal structure is subject to change.
-        startCursor:
+        previousPage:
           type:
             - string
             - 'null'
           description: |-
             Use with the `before` query parameter to load the previous page of data.
-            When `null`, there is no data.
+            When `null`, there is no previous page.
             The cursor is opaque and internal structure is subject to change.
-        hasNextPage:
-          type: boolean
-          description: Indicates if there is a next page with items.
-        hasPrevPage:
-          type: boolean
-          description: Indicates if there is a previous page with items.
         limit:
           type: integer
           minimum: 1
@@ -744,10 +738,8 @@ components:
           description: Count of items across all pages.
           minimum: 0
       required:
-        - endCursor
-        - startCursor
-        - hasNextPage
-        - hasPrevPage
+        - nextPage
+        - previousPage
         - limit
         - total
     GitCommitCheck:
@@ -1055,7 +1047,7 @@ components:
       scheme: bearer
       description: |-
         API key is required to access the API.
-        You can get your API key from the [BlueHarvest dashboard](https://app.blueharvest.cloud).
+        You can get your API key from [Reunite](https://app.cloud.redocly.com).
   parameters:
     OrgId:
       name: orgId
@@ -1096,7 +1088,7 @@ components:
       required: false
       schema:
         type: string
-        description: Use the `endCursor` as a value for the `after` parameter to get the next page.
+        description: Use the `nextPage` cursor as a value for the `after` parameter to get the next page.
         example: a25fgaksjf23la==
     Before:
       name: before
@@ -1104,7 +1096,7 @@ components:
       required: false
       schema:
         type: string
-        description: Use the `startCursor` as a value for the `before` parameter to get the next page.
+        description: Use the `previousPage` cursor as a value for the `before` parameter to get the previous page.
         example: bfg23aksjf23zb1==
     Sort:
       name: sort

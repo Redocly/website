@@ -17,11 +17,11 @@
       label: Markdown guide
     - page: content/project-structure.md
       label: Project structure
-    - group: Markdoc components
+    - group: Markdoc tags
       page: content/markdoc-tags/index.md
       items:
         - page: content/markdoc-tags/tag-library.md
-          label: All components
+          label: All tags
         - page: content/markdoc-tags/accordion.md
           label: Accordion
         - page: content/markdoc-tags/admonition.md

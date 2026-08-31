@@ -484,17 +484,18 @@ In this example, the colors and backgrounds change when users switch between lig
 
 ## Advanced options
 
-### The Redoc object
+### The `init` function
 
-As an alternative to the HTML tag, you can also initialize Redoc CE in a web page.
-Use the Redoc object and invoke it from JavaScript.
+As an alternative to the HTML tag, you can also initialize Redoc CE in a web page from JavaScript.
 Use this method to create dynamic content in a page.
 It is also a way to attach the Redoc element to an existing container.
 
-The Redoc object offers an `init` function:
+The standalone bundle is an ES module that exports an `init` function:
 
 ```js
-Redoc.init(specOrSpecUrl, options, element, callback)
+import { init } from 'https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js';
+
+init(specOrSpecUrl, options, element)
 ```
 
 Where:
@@ -502,14 +503,13 @@ Where:
 - `specOrSpecUrl`: either a JSON object with the OpenAPI description, or a file name or URL to the
   description in JSON or YAML format
 - `options`: OpenAPI [configuration options](https://redocly.com/docs/realm/config/openapi)
-- `element`: DOM element Redoc is inserted into
-- `callback`(optional): callback to be called after Redoc has been fully rendered, also called on errors with `error` as the first argument
+- `element`(optional): DOM element Redoc CE renders into; defaults to the first `<redoc>` tag on the page
 
-To use the Redoc object:
+To use the `init` function:
 
-- Call `Redoc.init()` from the JavaScript on a web page to add the element to a named container.
+- Import it from the standalone bundle in a module script and call it with a named container.
 
-The following example is an HTML page with a `<div>` tag, and the script to add the Redoc object to it.
+The following example is an HTML page with a `<div>` tag, and the module script that renders Redoc CE into it.
 This example also sets the configuration for `showExtensions` so it displays all specification extensions.
 
 ```html
@@ -517,12 +517,13 @@ This example also sets the configuration for `showExtensions` so it displays all
 <html>
   <head />
   <body>
-    <H1>Redoc CE in action</H1>
-    <script src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
+    <h1>Redoc CE in action</h1>
     <div id="redoc-container"></div>
 
-    <script>
-      Redoc.init('https://redocly.github.io/redoc/museum.yaml', {
+    <script type="module">
+      import { init } from 'https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js';
+
+      init('https://redocly.github.io/redoc/museum.yaml', {
         "showExtensions": true
       }, document.getElementById('redoc-container'))
     </script>
@@ -543,7 +544,7 @@ Self-hosting may be useful when you need to host in a closed environment or have
     - In the `<script>` tag, add an `src` attribute with the URL to the Redoc CE script.
 
       ```html
-      <script src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
+      <script type="module" src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
       ```
   {% /tab %}
   {% tab label="Self-host dependencies" %}
@@ -558,7 +559,7 @@ Self-hosting may be useful when you need to host in a closed environment or have
     1. Reference the Redoc CE script with a node modules link.
 
         ```html
-        <script src="node_modules/redoc/bundles/redoc.standalone.js"> </script>
+        <script type="module" src="node_modules/redoc/bundle/redoc.standalone.js"> </script>
         ```
 
   {% /tab %}

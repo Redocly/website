@@ -613,6 +613,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- page.actions.moreActions
+- More actions toggle aria-label in page actions
+- More actions
+
+---
+
 - page.actions.copyButtonText
 - Copy for LLM button text in page actions
 - Copy
