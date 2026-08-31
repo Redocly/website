@@ -613,6 +613,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- page.actions.moreActions
+- More actions toggle aria-label in page actions
+- More actions
+
+---
+
 - page.actions.copyButtonText
 - Copy for LLM button text in page actions
 - Copy
@@ -791,6 +797,24 @@ This page contains the list of all predefined translation keys used in default U
 - page.mcpNotAllowed.description
 - MCP connection page description text
 - To use this MCP server, register it in your MCP client (for example: VS Code, Cursor, or Claude Code).
+
+---
+
+- page.mcpNotAllowed.publicNote
+- Note on the public MCP endpoint connection page (`/mcp-public`)
+- This endpoint serves publicly available content only and requires no login.
+
+---
+
+- page.mcpNotAllowed.mainEndpointHint
+- Link back to the main MCP endpoint, shown on the public endpoint connection page; the `<link>` markers wrap the linked phrase and must stay in the translation
+- To access content available to your account, use the \<link\>main MCP endpoint\</link\>.
+
+---
+
+- page.mcpNotAllowed.publicEndpointHint
+- Link to the public MCP endpoint, shown on the main MCP connection page when the public endpoint is enabled; the `<link>` markers wrap the linked phrase and must stay in the translation
+- To connect anonymously without an account, use the \<link\>public endpoint\</link\>.
 
 ---
 

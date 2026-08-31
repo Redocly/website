@@ -106,7 +106,7 @@
 --panel-gap-horizontal: var(--spacing-xl);
 --panel-gap-vertical: var(--spacing-base);
 
---panel-border-radius: var(--border-radius);
+--panel-border-radius: var(--border-radius-xl);
 --panel-border: 1px solid var(--border-color-secondary);
 
 --panel-line-height: var(--line-height-base);
@@ -552,16 +552,6 @@
 --schema-recursive-text-color: var(--color-warm-grey-1);
 --schema-recursive-bg-color: var(--color-persian-green-6);
 --schema-recursive-border-color: var(--schema-recursive-bg-color);
-```
-
-</details>
-<details>
-<summary>Schema non-null label</summary>
-
-```css
---schema-non-null-text-color: var(--schema-inline-code-text-color);
---schema-non-null-bg-color: var(--schema-inline-bg-color);
---schema-non-null-border-color: var(--schema-inline-border-color);
 ```
 
 </details>

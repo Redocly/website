@@ -20,16 +20,22 @@
   label: Use AI to review your docs navigation structure
 - page: ai-enforce-api-style-guide-at-scale.md
   label: Use AI to enforce your API style guide at scale
+- page: ai-write-custom-openapi-lint-rules.md
+  label: Use AI to write custom OpenAPI lint rules
 - page: ai-find-gaps-documentation-coverage.md
   label: Use AI to find gaps in your documentation coverage
 - page: ai-detect-drift-docs-live-api.md
   label: Use AI to detect drift between your docs and your live API
+- page: ai-decide-which-api-endpoints-to-monitor-first.md
+  label: Use AI to decide which API endpoints to monitor first
 - page: ai-find-duplicate-underused-apis.md
   label: Use AI to find duplicate and underused APIs in your codebase
 - page: ai-build-searchable-api-catalog.md
   label: Use AI to build a searchable API catalog for your team
 - page: ai-help-developers-find-understand-apis.md
   label: Use AI to help developers find and understand your APIs faster
+- page: ai-optimize-api-docs-llms-ai-search.md
+  label: Use AI to optimize your API docs for LLMs and AI search
 - page: ai-check-terminology-consistency-across-docs.md
   label: Use AI to check terminology consistency across your docs
 - page: ai-usability-testing.md
