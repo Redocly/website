@@ -27,4 +27,3 @@ jobs:
             !docs/realm/.templates/*
             !docs/realm/customization/add-color-mode.md
             !docs/realm/customization/eject-components/eject-components-tutorial/index.md
-            !docs/realm/customization/mcp-server/index.md
