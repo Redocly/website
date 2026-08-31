@@ -31974,6 +31974,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.54.0:
+    timestamp: 1788201056000
+    changes:
+      minor:
+        - Added the `mcp.docs.publicEndpoint` configuration option that enables a public MCP endpoint for anonymous users.
+      patch: []
+    dependencies: {}
   0.53.1:
     timestamp: 1785414474000
     changes:
