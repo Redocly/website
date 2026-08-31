@@ -10,17 +10,19 @@ export const buildAndSortBlogPosts = async (postRoutes, context, outdir) => {
   const metadata = await transformMetadata(metadataContentRecord.data, context.fs.cwd, outdir);
 
   for (const route of postRoutes) {
-    // React blog posts export `frontmatter`; markdown posts use YAML frontmatter
-    const isReactPage = /\.page\.tsx?$/.test(route.fsPath);
+    // Markdown routes are stamped with metadata.type === 'markdown' by the Realm
+    // markdown plugin; other blog post routes are React pages, which export
+    // `frontmatter` instead of using YAML frontmatter.
+    const isMarkdownPost = route.metadata?.type === 'markdown';
     const { data } = await context.cache.load(
       route.fsPath,
-      isReactPage ? 'react-frontmatter' : 'markdown-frontmatter',
+      isMarkdownPost ? 'markdown-frontmatter' : 'react-frontmatter',
     );
-    const frontmatter = isReactPage ? data : data?.frontmatter;
+    const frontmatter = isMarkdownPost ? data?.frontmatter : data;
 
     if (
-      (isReactPage && !frontmatter) ||
-      frontmatter?.ignore === true ||
+      !frontmatter ||
+      frontmatter.ignore === true ||
       (await context.isPathIgnored(route.fsPath))
     ) {
       continue;
