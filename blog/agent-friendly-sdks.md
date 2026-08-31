@@ -6,7 +6,7 @@ seo:
   title: Open-source, agent-friendly SDKs and tooling from OpenAPI description
   description: "Meet redocly generate-client: one OpenAPI description becomes typed SDKs in TypeScript, Python, Go, and PHP — plus validation schemas, query hooks, test mocks, a CLI, and docs. Open source, zero runtime dependencies, and built for AI agents."
 author: roman-marshevskyi
-publishedDate: '2026-08-27'
+publishedDate: '2026-08-31'
 categories:
   - redocly:redocly-cli
   - api-specifications:openapi
