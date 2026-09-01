@@ -32111,6 +32111,14 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.55.0:
+    timestamp: 1788266168000
+    changes:
+      minor:
+        - Added types for defining custom MCP tools in `@mcp` folders.
+      patch:
+        - Removed the unused `hideSidebar` and `graphql.sidebar.hide` options from the Redoc configuration schema.
+    dependencies: {}
   0.54.0:
     timestamp: 1788201056000
     changes:
@@ -52977,6 +52985,13 @@ reunite:
         - Added access badges to project cards on the Reunite Projects page indicating `Public` or `Limited` visibility.
       patch:
         - Fixed loading placeholders that remained visible on project cards without production builds on the Reunite Projects page.
+    dependencies: {}
+  v2026-09-01.1:
+    timestamp: 1788266037000
+    changes:
+      minor:
+        - Added access-level badges on project cards in the Reunite Projects page.
+      patch: []
     dependencies: {}
 replay:
   0.0.2:
