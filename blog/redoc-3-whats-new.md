@@ -137,6 +137,17 @@ Most of the old options existed to work around the limits of the `theme` object,
 
 Dark mode is now built in, so you don't have to create a theme yourself.
 
+{% tabs %}
+ {% tab label="Light" %}
+ ![Redoc CE 3 rendering the Cafe API in light mode: navigation sidebar, operation detail, and request payload panel](./images/redoc-3-theme-light.png)
+
+ {% /tab %}
+ {% tab label="Dark" %}
+ ![Redoc CE 3 rendering the same Cafe API page in dark mode](./images/redoc-3-theme-dark.png)
+
+ {% /tab %}
+{% /tabs %}
+
 {% admonition type="warning" name="Breaking change" %}
 There is no compatibility shim for the `theme` object. If you pass one today, plan to migrate it to CSS custom properties.
 {% /admonition %}
