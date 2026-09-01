@@ -52993,17 +52993,6 @@ reunite:
         - Added access-level badges on project cards in the Reunite Projects page.
       patch: []
     dependencies: {}
-  v2026-09-01.3:
-    timestamp: 1788273136000
-    changes:
-      minor:
-        - Added support for connecting your own Git provider as the project source when creating a project.
-      patch:
-        - Fixed an issue where the AI assistant ignored usage instructions from the documentation server.
-        - Improved project creation speed by preloading templates.
-        - Fixed production builds skipping Respect Monitoring jobs triggered by `build` events, restoring API monitoring on the deployment page.
-        - Fixed editor showing `Disconnected` status and warning about lost changes during reconnection to reduce user confusion.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
