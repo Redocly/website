@@ -24,7 +24,8 @@ Generated code is the cheapest, safest code an agent can ship, so we built a gen
 Meet `generate-client`: a new command in the [Redocly CLI](https://github.com/Redocly/redocly-cli), powered by a new package, [`@redocly/client-generator`](https://github.com/Redocly/redocly-cli/tree/main/packages/client-generator), that turns one OpenAPI description into typed SDKs in **TypeScript, Python, Go, and PHP**, plus validation schemas, TanStack Query and SWR hooks, test mocks, a ready-to-run **command-line interface**, and reference docs for all of it.
 Both the command and the package are open source (MIT), and everything they generate is yours outright.
 
-The SDKs are fully featured with **zero runtime dependencies**: auth, retries, middleware, pagination iterators, typed Server-Sent Events, query-string serialization, and multipart uploads, all built on web-standard `fetch`, `AbortController`, and `URLSearchParams`, emitted as code that imports nothing.
+The SDKs are fully featured: auth, retries, middleware, pagination iterators, typed Server-Sent Events, query-string serialization, and multipart uploads, with no dependencies beyond each language's own HTTP layer.
+The TypeScript client is built on web-standard `fetch`, `AbortController`, and `URLSearchParams` — **zero runtime dependencies**, emitted as code that imports nothing.
 The API code your agent used to hallucinate becomes one deterministic command, and the compiler becomes its fact-checker: operation ids, parameters, and response fields are literal types, so a wrong call fails `tsc` with the exact operation named.
 
 ## Up and running in three steps
@@ -72,15 +73,15 @@ npx @redocly/cli@latest generate-client openapi.yaml --output src/client.ts
 
 ### 3. Call your API
 
-Every operation is a typed function; every name comes from the description.
+Every operation is a typed method on the generated client; every name comes from the description.
 
 ```typescript
-import { configure, listMenuItems, getOrderById } from './client.js';
+import { client } from './client.js';
 
-configure({ auth: { bearer: token } }); // sent only where an operation requires it
+client.auth.bearer(token); // stored on this client; sent only with operations whose security requires it
 
-const menu  = await listMenuItems({ query: { limit: 10 } });
-const order = await getOrderById({ path: { orderId: 'ord_01khr…' } });
+const menu  = await client.listMenuItems({ query: { limit: 10 } });
+const order = await client.getOrderById({ path: { orderId: 'ord_01khr…' } });
 ```
 
 That's the whole client.
