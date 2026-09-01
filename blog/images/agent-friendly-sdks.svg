@@ -30,10 +30,10 @@
 
   <rect x="400" y="275" width="300" height="90" rx="12" fill="#16171c"/>
   <g font-family="Menlo, Consolas, monospace" font-size="13">
-    <text x="424" y="315" fill="#8a8f9f">$</text>
-    <text x="440" y="315" fill="#e8eaf2">npx @redocly/cli</text>
-    <text x="572" y="315" fill="#7cc4ff">generate-client</text>
-    <text x="440" y="341" fill="#8a8f9f">→ typed · zero deps · yours</text>
+    <text x="417" y="315" fill="#8a8f9f">$</text>
+    <text x="433" y="315" fill="#e8eaf2">npx @redocly/cli</text>
+    <text x="566" y="315" fill="#7cc4ff">generate-client</text>
+    <text x="433" y="341" fill="#8a8f9f">→ typed · zero deps · yours</text>
   </g>
 
   <line x1="700" y1="297" x2="782" y2="239" stroke="#0044d4" stroke-width="1.5" marker-end="url(#arrow)"/>

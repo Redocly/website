@@ -13,8 +13,6 @@ categories:
   - api-lifecycle:sdks
 ---
 
-# Open-source, agent-friendly SDKs and tooling from OpenAPI description
-
 As agents become part of engineering teams, more of your API calls are written by one.
 Agents hallucinate endpoints, invent response fields, and hand-write API code you then review line by line.
 Generated code is the cheapest, safest code an agent can ship, so we built a generator that treats the agent as a first-class user.
