@@ -1,4 +1,34 @@
 '@redocly/realm':
+  0.137.0-next.6:
+    timestamp: 1788250507000
+    changes:
+      minor:
+        - Added an opt-in `/mcp-public` endpoint to serve public content without authentication on RBAC-restricted projects.
+        - Added an `onClose` prop to the custom `ReplayGate` component to close the Try it overlay when users dismiss the sign-in panel.
+      patch:
+        - Fixed an issue where several Redocly extensions were incorrectly rendered as custom vendor extensions when `showExtensions` is enabled.
+        - >-
+          Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button, which was wider than the gap between the icon and the
+          label.
+        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
+        - >-
+          Fixed an issue where SSO login in projects without an `l10n` configuration caused identity providers with strict `ui_locales` validation to
+          reject the login request.
+        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
+        - Fixed an issue where `describe-tools` tool in the MCP server didn't provide a human-readable name.
+        - Updated default border radius for components.
+        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
+        - >-
+          Added translations for the `Connect to MCP server` and page action dropdown toggle labels, using the `page.actions.connectMcp.moreOptions`
+          and `page.actions.moreActions` keys.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.6
+      '@redocly/theme': 0.69.0-next.6
+      '@redocly/realm-asyncapi-sdk': 0.15.0-next.3
+      '@redocly/openapi-docs': 3.25.0-next.6
+      '@redocly/asyncapi-docs': 1.14.0-next.6
+      '@redocly/graphql-docs': 1.14.0-next.6
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.6
   0.137.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -7055,6 +7085,31 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.137.0-next.6:
+    timestamp: 1788250507000
+    changes:
+      minor:
+        - Added an opt-in `/mcp-public` endpoint to serve public content without authentication on RBAC-restricted projects.
+      patch:
+        - >-
+          Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button, which was wider than the gap between the icon and the
+          label.
+        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
+        - >-
+          Fixed an issue where SSO login in projects without an `l10n` configuration caused identity providers with strict `ui_locales` validation to
+          reject the login request.
+        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
+        - Fixed an issue where `describe-tools` tool in the MCP server didn't provide a human-readable name.
+        - Updated default border radius for components.
+        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.6
+      '@redocly/theme': 0.69.0-next.6
+      '@redocly/realm-asyncapi-sdk': 0.15.0-next.3
+      '@redocly/openapi-docs': 3.25.0-next.6
+      '@redocly/asyncapi-docs': 1.14.0-next.6
+      '@redocly/graphql-docs': 1.14.0-next.6
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.6
   0.137.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -13137,6 +13192,34 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.137.0-next.6:
+    timestamp: 1788250507000
+    changes:
+      minor:
+        - Added an opt-in `/mcp-public` endpoint to serve public content without authentication on RBAC-restricted projects.
+      patch:
+        - >-
+          Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button, which was wider than the gap between the icon and the
+          label.
+        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
+        - >-
+          Fixed an issue where SSO login in projects without an `l10n` configuration caused identity providers with strict `ui_locales` validation to
+          reject the login request.
+        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
+        - Fixed an issue where `describe-tools` tool in the MCP server didn't provide a human-readable name.
+        - Updated default border radius for components.
+        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
+        - >-
+          Added translations for the `Connect to MCP server` and page action dropdown toggle labels, using the `page.actions.connectMcp.moreOptions`
+          and `page.actions.moreActions` keys.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.6
+      '@redocly/theme': 0.69.0-next.6
+      '@redocly/realm-asyncapi-sdk': 0.15.0-next.3
+      '@redocly/openapi-docs': 3.25.0-next.6
+      '@redocly/asyncapi-docs': 1.14.0-next.6
+      '@redocly/graphql-docs': 1.14.0-next.6
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.6
   0.137.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -19209,6 +19292,33 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.137.0-next.6:
+    timestamp: 1788250507000
+    changes:
+      minor:
+        - Added an opt-in `/mcp-public` endpoint to serve public content without authentication on RBAC-restricted projects.
+        - Added an `onClose` prop to the custom `ReplayGate` component to close the Try it overlay when users dismiss the sign-in panel.
+      patch:
+        - Fixed an issue where several Redocly extensions were incorrectly rendered as custom vendor extensions when `showExtensions` is enabled.
+        - >-
+          Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button, which was wider than the gap between the icon and the
+          label.
+        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
+        - >-
+          Fixed an issue where SSO login in projects without an `l10n` configuration caused identity providers with strict `ui_locales` validation to
+          reject the login request.
+        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
+        - Fixed an issue where `describe-tools` tool in the MCP server didn't provide a human-readable name.
+        - Updated default border radius for components.
+        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.6
+      '@redocly/theme': 0.69.0-next.6
+      '@redocly/realm-asyncapi-sdk': 0.15.0-next.3
+      '@redocly/openapi-docs': 3.25.0-next.6
+      '@redocly/asyncapi-docs': 1.14.0-next.6
+      '@redocly/graphql-docs': 1.14.0-next.6
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.6
   0.137.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -25372,6 +25482,24 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.69.0-next.6:
+    timestamp: 1788250507000
+    changes:
+      minor:
+        - Added cross-links between the `/mcp` and `/mcp-public` setup pages and noted that the public page serves anonymous-accessible content only.
+        - Added an `onClose` prop to the custom `ReplayGate` component to close the Try it overlay when users dismiss the sign-in panel.
+      patch:
+        - >-
+          Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button, which was wider than the gap between the icon and the
+          label.
+        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
+        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
+        - Updated default border radius for components.
+        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
+        - >-
+          Added translations for the `Connect to MCP server` and page action dropdown toggle labels, using the `page.actions.connectMcp.moreOptions`
+          and `page.actions.moreActions` keys.
+    dependencies: {}
   0.69.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -28556,6 +28684,15 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.25.0-next.6:
+    timestamp: 1788250507000
+    changes:
+      minor:
+        - Added an `onClose` prop to the custom `ReplayGate` component to close the Try it overlay when users dismiss the sign-in panel.
+      patch:
+        - Updated default border radius for components.
+    dependencies:
+      '@redocly/replay': 0.28.0-next.6
   3.25.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -32689,6 +32826,15 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  1.14.0-next.6:
+    timestamp: 1788250507000
+    changes:
+      minor: []
+      patch:
+        - Updated default border radius for components.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.6
+      '@redocly/openapi-docs': 3.25.0-next.6
   1.14.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -34096,6 +34242,16 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/api-docs':
+  0.2.0-next.6:
+    timestamp: 1788250507000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where several Redocly extensions were incorrectly rendered as custom vendor extensions when `showExtensions` is enabled.
+        - Updated default border radius for components.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.6
+      '@redocly/replay': 0.28.0-next.6
   0.2.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -35324,6 +35480,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.20.0-next.6:
+    timestamp: 1788250507000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.137.0-next.6
+      '@redocly/redoc': 0.137.0-next.6
+      '@redocly/redoc-reef': 0.137.0-next.6
+      '@redocly/redoc-revel': 0.137.0-next.6
+      '@redocly/theme': 0.69.0-next.6
   1.20.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -41007,6 +41174,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.22.0-next.6:
+    timestamp: 1788250507000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.25.0-next.6
   0.22.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -44154,6 +44328,15 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.28.0-next.6:
+    timestamp: 1788250507000
+    changes:
+      minor:
+        - Added an `onClose` prop to the custom `ReplayGate` component to close the Try it overlay when users dismiss the sign-in panel.
+      patch:
+        - Updated default border radius for components.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.6
   0.28.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -46573,6 +46756,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.20.0-next.6:
+    timestamp: 1788250507000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.69.0-next.6
   0.20.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -48545,6 +48735,15 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
+  1.14.0-next.6:
+    timestamp: 1788250507000
+    changes:
+      minor: []
+      patch:
+        - Updated default border radius for components.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.6
+      '@redocly/openapi-docs': 3.25.0-next.6
   1.14.0-next.5:
     timestamp: 1787829203000
     changes:
