@@ -20,14 +20,12 @@ image: redoc-3-announcement-card.png
 For more than a decade, [Redoc CE](https://redocly.com/redoc-ce) has turned OpenAPI
 specifications into something people can actually read. Point it at a YAML or JSON file, get documentation. That simplicity is a big part of why it's so widely used: around **1.5 million downloads a week**
 on [npm](https://www.npmjs.com/package/redoc) and **25k+ stars**
-on [GitHub](https://github.com/Redocly/redoc). It runs as a React component, as static
-HTML built in CI, from a container, and in a great many plain `index.html` files with a
-`<redoc>` tag in them.
+on [GitHub](https://github.com/Redocly/redoc). It runs as a React component, as static HTML built by the CLI, from a container, or as a single `<redoc>` tag in a page you already have.
 
 Redoc CE 3 is the biggest change to the project since 2.0, and it isn't released yet. This post is the preview: what's coming, why we restarted the release to
 get there, and what to plan for before it lands. The next release candidate is `rc.1`, stable 3.0 follows it, and a separate post will announce the release itself.
 
-Nothing here is locked in yet, which is exactly why we're publishing now: your feedback can still shape the release.
+We're publishing this preview to gather your feedback, which can still shape the final release.
 
 The short version:
 
@@ -70,8 +68,8 @@ The short version:
 - React 19, Node 22
 {% /table %}
 
-{% admonition type="warning" name="Not released yet" %}
-`rc.0` on npm is the old OpenAPI-only engine, so try [the demo](https://redocly.github.io/redoc/3.x?url=cafe.yaml) instead and tell us what breaks.
+{% admonition type="warning" name="Don't install from npm yet" %}
+The published `rc.0` is a different engine: an earlier, OpenAPI-only build we set aside in January (more below). Everything in this post is in `rc.1`, which hasn't shipped. Use [the demo](https://redocly.github.io/redoc/3.x?url=cafe.yaml) to try it.
 {% /admonition %}
 
 ## The limits of Redoc 2
@@ -101,7 +99,13 @@ Everything below builds on that change.
 
 [OpenAPI](https://www.openapis.org/), [AsyncAPI](https://www.asyncapi.com/), and [GraphQL](https://graphql.org/) are different formats, but documentation for them needs the same things: what an entity is, what it accepts, what it returns, and how you authenticate. Everything below the adapter is shared: layout, navigation, schema rendering, deep links, search, and theming. That's why AsyncAPI and GraphQL support arrive together instead of as separate plugins years apart, and why adapters initialize on demand: point Redoc at a GraphQL schema and the OpenAPI and AsyncAPI adapters are never evaluated.
 
-To be clear about [MCP](https://modelcontextprotocol.io/): Redoc CE documents an MCP server, but doesn't run one. (If you want a hosted MCP server for your docs, Redocly projects [ship with one built in](https://redocly.com/docs/realm/customization/mcp-server).) When your OpenAPI specification includes an `x-mcp` section, the tools, resources, and prompts become first-class entities with their own pages, input schemas, and generated examples. These are grouped by tag alongside your REST operations.
+To be clear about [MCP](https://modelcontextprotocol.io/): Redoc CE documents an MCP server, but doesn't run one. When your OpenAPI specification includes an `x-mcp` section, the tools, resources, and prompts become first-class entities with their own pages, input schemas, and generated examples. These are grouped by tag alongside your REST operations.
+
+{% admonition type="info" name="Redocly projects can serve a live MCP server" %}
+Redoc CE renders the `x-mcp` section of your specification.
+Serving an MCP server that agents can call is a different job, and Redocly projects do it from your documentation.
+[Read the Docs MCP server documentation](https://redocly.com/docs/realm/customization/mcp-server).
+{% /admonition %}
 
 Supporting other formats like OpenRPC or gRPC later means writing a new adapter, not another rewrite.
 
@@ -243,7 +247,9 @@ Here is the whole list of what goes in it:
 - **Core Web Vitals**: CLS, LCP, FCP, TTFB.
 - **Which features get used**: layout switches, language selection, example switching, expand/collapse, snippet copying, downloads.
 
-We use this data to find what's broken and decide what to build next. On a project this widely deployed, most breakage never reaches us as a GitHub issue.
+We use this to find what's broken and to decide what to build next. Redoc is deployed in far more places than ever file an issue, so telemetry is often the only way a bug reaches us at all.
+
+It travels as standard OpenTelemetry traces, so you can open your browser's network tab and see exactly what leaves the page.
 
 If you'd prefer not to send data, you can turn it off with one flag: `disable-telemetry` in HTML, `disableTelemetry` in React and the CLI, or through `REDOC_OPTIONS` in Docker. Turning it off doesn't change anything else about how Redoc works.
 
