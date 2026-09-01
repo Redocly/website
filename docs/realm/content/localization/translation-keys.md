@@ -1552,21 +1552,9 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- openapi.items
-- Label for items in OpenAPI description
-- Items
-
----
-
 - openapi.default
 - Label for default values in OpenAPI description
 - Default
-
----
-
-- openapi.complex
-- Label for complex objects/schemas in OpenAPI description
-- Complex
 
 ---
 
@@ -1654,21 +1642,9 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- openapi.description
-- Label for the description in OpenAPI description
-- Description
-
----
-
 - openapi.badges.deprecated
 - Label for the deprecated badge in OpenAPI description
 - deprecated
-
----
-
-- openapi.badges.required
-- Label for the required badge in OpenAPI description
-- required
 
 ---
 
@@ -2122,6 +2098,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.mcp.argumentsExample
+- Label for the prompt arguments example in MCP prompt details
+- Arguments example
+
+---
+
 - graphql.queries
 - Label for queries group in GraphQL sidebar
 - Queries
@@ -2338,8 +2320,8 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- graphql.metadata
-- Label for metadata section in GraphQL
+- graphql.info.metadata.title
+- Label for the metadata section in GraphQL description
 - Metadata
 
 ---
@@ -2392,12 +2374,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- graphql.action.show
-- Text for show action in GraphQL
-- Show
-
----
-
 - graphql.variables
 - Label for the variables section in GraphQL right section
 - Variables
@@ -2440,12 +2416,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- graphql.sample
-- Label for the sample section in GraphQL right section
-- Sample
-
----
-
 - graphql.referenced
 - Label for the referenced section in GraphQL right section
 - Referenced in
@@ -2455,12 +2425,6 @@ This page contains the list of all predefined translation keys used in default U
 - graphql.content.fragment
 - Label for a fragment in GraphQL content
 - Fragment
-
----
-
-- button.copy.tooltipText
-- Tooltip for copy button
-- Copy to clipboard
 
 ---
 
