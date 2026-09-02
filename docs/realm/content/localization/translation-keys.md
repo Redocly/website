@@ -2572,9 +2572,21 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- navbar.label
+- Accessible label of the main navbar
+- Main navigation
+
+---
+
 - navbar.products
 - Label for products link/section in the navbar
 - Products
+
+---
+
+- navbar.secondary.label
+- Accessible label of the secondary navbar
+- Secondary navigation
 
 ---
 
