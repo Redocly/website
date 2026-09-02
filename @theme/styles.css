@@ -633,16 +633,14 @@ tr td:first-child code {
 }
 
 
-/* Blog hero: let the image fill its container instead of sitting inside a
-   370px box with a 320px cap, which leaves 50px of #deeeff banding above and
-   below. Container hugs the image at any viewport width. */
-div:has(> img[src*="redoc-3-announcement-card"]) {
+
+div[class*="PostInfo__"]:has(> img[src*="redoc-3-announcement-card"]) {
     height: auto;
     min-height: 0;
     background-color: transparent;
 }
 
-div:has(> img[src*="redoc-3-announcement-card"]) > img {
+div[class*="PostInfo__"]:has(> img[src*="redoc-3-announcement-card"]) > img {
     max-height: none;
     width: 100%;
     height: auto;

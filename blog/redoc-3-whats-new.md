@@ -178,10 +178,10 @@ History routing needs the usual single-page-app rewrite on your server, or deep 
 
 Deep links also got more precise. Redoc 2 could link to an operation; Redoc 3 can link to a specific field inside a specific response code, even through the discriminator variant that contains it. Any of these links can be shared and will open in the right place.
 
-### Four ways to run it
+### Five ways to run it
 
-HTML drop-in, React component, [Redocly CLI](https://redocly.com/docs/cli), and Docker.
-Same engine and the same options across all four, each expressed the way that platform expects: an attribute, a prop, a CLI flag, or `REDOC_OPTIONS`:
+HTML drop-in, React component, [Redocly CLI](https://redocly.com/docs/cli), Docker, or Redocly's cloud-hosted service.
+The four self-hosted options run the same engine with the same options, each expressed the way that platform expects: an attribute, a prop, a CLI flag, or `REDOC_OPTIONS`:
 
 {% tabs %}
  {% tab label="HTML" %}
@@ -212,6 +212,13 @@ Same engine and the same options across all four, each expressed the way that pl
    -e REDOC_OPTIONS='only-required-in-samples="true" hide-schema-titles="true"' \
    redocly/redoc
  ```
+
+ {% /tab %}
+ {% tab label="Redocly (cloud-hosted)" %}
+ Don't run it at all.
+ Redocly's cloud-hosted service runs the same engine, with the platform features Redoc CE doesn't cover: versioning, access control, mock servers, and the Try It console.
+
+ [See what Redocly adds](https://redocly.com/redoc).
 
  {% /tab %}
 {% /tabs %}
