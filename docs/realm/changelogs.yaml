@@ -53139,6 +53139,14 @@ reunite:
         - Fixed production builds skipping Respect Monitoring jobs triggered by `build` events, restoring API monitoring on the deployment page.
         - Fixed editor showing `Disconnected` status and warning about lost changes during reconnection to reduce user confusion.
     dependencies: {}
+  v2026-09-02.2:
+    timestamp: 1788361337000
+    changes:
+      minor: []
+      patch:
+        - Fixed GitHub rate-limit errors and timeouts for remotes and project sources connected through the GitHub App.
+        - Fixed a crash on the add-project page triggered by a missing project context in the Git remote form.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
