@@ -16,7 +16,7 @@ categories:
 Every Arazzo file starts the same way: someone opens an OpenAPI description and asks, "so what does a real session with this API look like?"
 
 Redocly CLI has answered part of that question for a while.
-The [`generate-arazzo`](../docs/cli/@v2/commands/generate-arazzo) command reads an OpenAPI description and produces an Arazzo file you can lint, extend, and execute with [Respect](../pages/respect-cli/respect-cli.page.tsx).
+The [`generate-arazzo`](../docs/cli/commands/generate-arazzo) command reads an OpenAPI description and produces an Arazzo file you can lint, extend, and execute with [Respect](../pages/respect-cli/respect-cli.page.tsx).
 The new `--with-ai` option changes what that file contains: instead of a mechanical skeleton, you get workflows that read like how the API is actually used - and it runs on the AI assistant you already have, with no API keys to configure.
 
 ## What you get without AI
@@ -159,6 +159,6 @@ npx @redocly/cli@latest generate-arazzo 'https://cafe.redocly.com/_bundle/openap
 
 After writing the file, the command prints the ready-to-run `respect` command for it — including an `--input` placeholder for every workflow input it declared — so the path from OpenAPI description to executed workflow is: generate, replace the placeholder values, run.
 
-To learn more, see the [`generate-arazzo` documentation](../docs/cli/@v2/commands/generate-arazzo) or read about [what Arazzo is](../learn/arazzo/what-is-arazzo.md).
+To learn more, see the [`generate-arazzo` documentation](../docs/cli/commands/generate-arazzo) or read about [what Arazzo is](../learn/arazzo/what-is-arazzo.md).
 
 Have you tried generating workflows with AI, and did the scenarios match how your API is really used? [Let us know](https://github.com/Redocly/redocly-cli/issues) — the option is new, and real-world feedback shapes where it goes next.
