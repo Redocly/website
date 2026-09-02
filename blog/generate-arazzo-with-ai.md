@@ -17,12 +17,14 @@ Every Arazzo file starts the same way: someone opens an OpenAPI description and 
 
 Redocly CLI has answered part of that question for a while.
 The [`generate-arazzo`](../docs/cli/commands/generate-arazzo) command reads an OpenAPI description and produces an Arazzo file you can lint, extend, and execute with [Respect](../pages/respect-cli/respect-cli.page.tsx).
-The new `--with-ai` option changes what that file contains: instead of a mechanical skeleton, you get workflows that read like how the API is actually used - and it runs on the AI assistant you already have, with no API keys to configure.
+The new `--with-ai` option changes what that file contains: instead of a mechanical skeleton, you get workflows that read like how the API is actually used.
+What's more, it runs on the AI assistant you already have, with no API keys to configure.
 
 ## What you get without AI
 
 Plain `generate-arazzo` is deterministic and instant.
-Running it against the [Redocly Cafe API](https://cafe.redocly.com/openapi/cafe) — our OAuth2-protected sample — creates one workflow per operation, each with a single step and a success criterion taken from the first documented response:
+Running it against the [Redocly Cafe API](https://cafe.redocly.com/openapi/cafe) — our OAuth2-protected sample — creates one workflow per operation.
+Each operation has a single step and a success criterion taken from the first documented response:
 
 ```yaml
 workflows:
@@ -48,8 +50,9 @@ workflows:
 ```
 
 This is a useful scaffold, and it stays available as the default.
-But it has a known gap: the operations don't know about each other.
-Nothing passes the created menu item's id to the steps that read or delete it, and turning the file into a runnable test still means resolving every dependency by hand.
+However, it has a known gap: the operations don't know about each other.
+Nothing passes the created menu item's ID to the steps that read or delete it.
+Turning the file into a runnable test still means resolving every dependency by hand.
 
 ## What changes with `--with-ai`
 
@@ -59,7 +62,7 @@ Add one flag:
 npx @redocly/cli@latest generate-arazzo openapi.yaml --with-ai
 ```
 
-The same operations now come back as a scenario — the menu item's full lifecycle, starting with the API's own OAuth2 client registration:
+The same operations now come back as a scenario: the menu item's full lifecycle, starting with the API's own OAuth2 client registration:
 
 ```yaml
 workflows:
@@ -117,19 +120,25 @@ workflows:
 The differences are exactly the parts you used to write by hand:
 
 - Related operations are grouped into a lifecycle instead of isolated single-step workflows.
-- Steps pass data to each other: the created menu item's id becomes an output and feeds the delete step's path parameter.
-- The authentication flow is part of the scenario: the workflow registers an OAuth2 client first — requesting every grant type the scheme declares — and keeps the `x-security` setup on every protected step.
+- Steps pass data to each other.
+  The created menu item's ID becomes an output and feeds the delete step's path parameter.
+- The authentication flow is part of the scenario: the workflow registers an OAuth2 client first.
+  Requesting every grant type the scheme declares — and keeps the `x-security` setup on every protected step.
 - Realistic example payloads come from the description's schemas instead of empty stubs.
 
 ## Your AI, your machine, no API keys
 
 `--with-ai` runs a locally installed AI assistant in non-interactive mode: Claude Code (`claude`), Codex CLI (`codex`), or Cursor CLI (`cursor`).
-If you already use one of them, there is nothing to configure — no API key is passed to or stored by Redocly CLI, and nothing is sent to Redocly.
+If you already use one of them, there is nothing to configure.
+No API key is passed to or stored by Redocly CLI, and nothing is sent to Redocly.
 
-Keep one thing in mind: the option sends your resolved OpenAPI description to the selected AI provider, so make sure it contains no secrets you are not allowed to share.
+Keep one thing in mind: the option sends your resolved OpenAPI description to the selected AI provider.
+Make sure it contains no secrets you are not allowed to share.
 
 The answer is never trusted blindly.
-Every generated step must reference an operation that really exists in your description, the result must pass validation with the built-in ruleset, and if anything is rejected — or the provider is unavailable — the command keeps the deterministic skeleton, so you always get a valid file.
+Every generated step must reference an operation that really exists in your description.
+The result must pass validation with the built-in ruleset, and if anything is rejected — or the provider is unavailable — the command keeps the deterministic skeleton.
+You always get a valid file.
 The generated file starts with a comment marking the workflows as AI-inferred, and the result varies between runs: review it before use.
 
 ## Tune it with the companion options
@@ -137,10 +146,11 @@ The generated file starts with a comment marking the workflows as AI-inferred, a
 - `--ai-provider` — `claude` (default), `codex`, or `cursor`.
 - `--ai-model` — pass a specific model to the provider; otherwise its default applies.
 - `--max-workflows` — a ceiling, not a target (default `10`): small APIs collapse into a few scenarios, large APIs get the most likely ones.
-- `--ai-concurrency` — how many workflows are designed in parallel on large descriptions (default `4`).
+- `--ai-concurrency` — how many workflows are designed in parallel on large descriptions (default: `4`).
 
 Large APIs are handled automatically.
-When a description is too big to fit a single prompt, the command switches to a two-phase mode: the AI first picks scenarios from a compact index of every operation, then designs each workflow from only its own operations.
+When a description is too big to fit a single prompt, the command switches to a two-phase mode.
+The AI first picks scenarios from a compact index of every operation, then designs each workflow from only its own operations.
 GitHub's REST API description — 12.9&nbsp;MB, more than 1,200 operations — produces three lifecycle workflows in about half a minute this way.
 
 ## Try it
@@ -157,7 +167,8 @@ Then compare it with the plain run:
 npx @redocly/cli@latest generate-arazzo 'https://cafe.redocly.com/_bundle/openapi/cafe.yaml' -o baseline.arazzo.yaml
 ```
 
-After writing the file, the command prints the ready-to-run `respect` command for it — including an `--input` placeholder for every workflow input it declared — so the path from OpenAPI description to executed workflow is: generate, replace the placeholder values, run.
+After writing the file, the command prints the ready-to-run `respect` command for it — including an `--input` placeholder for every workflow input it declared.
+The path from OpenAPI description to executed workflow is: generate, replace the placeholder values, run.
 
 To learn more, see the [`generate-arazzo` documentation](../docs/cli/commands/generate-arazzo) or read about [what Arazzo is](../learn/arazzo/what-is-arazzo.md).
 
