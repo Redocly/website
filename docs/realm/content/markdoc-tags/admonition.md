@@ -51,7 +51,7 @@ Stop!
 - type
 - string
 - **Required.**
-  Sets the type of admonition to info, warning, success, or danger.
+  Sets the type of admonition to info, warning, success, danger, or idea.
 ---
 
 - name
@@ -74,6 +74,9 @@ Type `success` creates a **Success** admonition.
 {% /admonition %}
 {% admonition type="danger" .smaller-admonition-margins %}
 Type `danger` creates a **Danger** admonition.
+{% /admonition %}
+{% admonition type="idea" .smaller-admonition-margins %}
+Type `idea` creates an **Idea** admonition.
 {% /admonition %}
 
 ## Examples

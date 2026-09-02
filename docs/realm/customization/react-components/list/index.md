@@ -16,7 +16,7 @@ The following is the list of React components you can customize to influence the
 ## Admonition
 
 The Admonition component creates banners to highlight important information on your documentation pages.
-It supports multiple types (info, warning, success, danger) and can include headers and custom content.
+It supports multiple types (info, warning, success, danger, idea) and can include headers and custom content.
 Perfect for displaying alerts, important notes, or special callouts.
 
 For more information, see [admonition component reference](./admonition.md).
