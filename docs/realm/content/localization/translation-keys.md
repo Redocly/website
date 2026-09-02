@@ -377,124 +377,124 @@ This page contains the list of all predefined translation keys used in default U
 ---
 
 - search.ai.backToSearch
-- Button text to return to standard search from AI search
+- Button text to return to standard search from the AI assistant
 - Back to Search
 
 ---
 
 - search.ai.button
-- Button text to initiate AI search
+- Button text to open the AI assistant
 - Search with AI
 
 ---
 
 - search.ai.disclaimer
-- Disclaimer text for AI search functionality
-- AI search might provide incomplete or incorrect results.
+- Disclaimer text for AI assistant functionality
+- AI assistant might provide incomplete or incorrect results.
   Verify important information.
 
 ---
 
 - search.ai.followUpQuestion
-- Placeholder or label for AI search follow-up questions
+- Placeholder or label for AI assistant follow-up questions
 - Ask a follow-up question?
 
 ---
 
 - search.ai.generatingResponse
-- Text displayed while AI search is generating a response
+- Text displayed while the AI assistant is generating a response
 - Generating response...
 
 ---
 
 - search.ai.label
-- General label for the AI search feature
+- General label for the AI assistant feature
 - Ask AI assistant
 
 ---
 
 - search.ai.newConversation
-- Button text to start a new AI search conversation
+- Button text to start a new AI assistant conversation
 - New conversation
 
 ---
 
 - search.ai.placeholder
-- Placeholder text for the AI search input
+- Placeholder text for the AI assistant input
 - Ask a question...
 
 ---
 
 - search.ai.resourcesFound
-- General label indicating resources were found by AI search
+- General label indicating resources were found by the AI assistant
 - resources found
 
 ---
 
 - search.ai.resourcesFound.basedOn
-- Text indicating the basis for AI search results
+- Text indicating the basis for AI assistant results
 - Based on
 
 ---
 
 - search.ai.resourcesFound.resources
-- Label for resources found by AI search
+- Label for resources found by the AI assistant
 - resources
 
 ---
 
 - search.ai.suggestionsTitle
-- Title for AI search suggestions section
+- Title for AI assistant suggestions section
 - Suggestions
 
 ---
 
 - search.ai.thinkingText
-- Text displayed while AI search is processing
+- Text displayed while the AI assistant is processing
 - Thinking...
 
 ---
 
 - search.ai.welcomeText
-- Welcome message displayed in the AI search interface
-- Welcome to AI search!
+- Welcome message displayed in the AI assistant interface
+- Welcome to AI assistant!
   Feel free to ask me anything.
   How can I help you?
 
 ---
 
 - search.ai.back
-- Button text to go back from AI search results
+- Button text to go back from AI assistant results
 - Back
 
 ---
 
 - search.ai.assistant
-- Title text displayed in the AI search dialog header
+- Title text displayed in the AI assistant dialog header
 - Assistant
 
 ---
 
 - search.ai.feedback.title
-- Title for AI search feedback dialog
+- Title for AI assistant feedback dialog
 - What didn't you like about this response?
 
 ---
 
 - search.ai.feedback.detailsPlaceholder
-- Placeholder text for AI search feedback details input
+- Placeholder text for AI assistant feedback details input
 - Add specific details
 
 ---
 
 - search.ai.feedback.thanks
-- Thank you message after submitting AI search feedback
+- Thank you message after submitting AI assistant feedback
 - Thanks for your feedback!
 
 ---
 
 - search.ai.feedback.more
-- Option text to provide additional feedback details in AI search feedback form
+- Option text to provide additional feedback details in AI assistant feedback form
 - More...
 
 ---
