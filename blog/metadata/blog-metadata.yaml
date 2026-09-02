@@ -111,6 +111,8 @@ categories:
     subcategories:
       - id: design
         label: Design
+      - id: sdks
+        label: SDKs
       - id: mocking
         label: Mocking
       - id: release-management
