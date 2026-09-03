@@ -192,6 +192,7 @@ Project roles are assigned to teams for each specific project in the `redocly.ya
 Users with the Owner organization role have full access to all projects.
 Access granted to organization Members is based on project-level roles.
 Members without an explicit project role have the `admin` role by default.
+Members of a [project role team](../reunite/organization/teams.md#project-role-teams) named `<project-slug>.<project-role>` get the project role from the team name.
 
 The following is a list of available project roles:
 
