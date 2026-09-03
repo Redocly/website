@@ -18,6 +18,10 @@ Connect that repository so you can access, edit, and publish those files in Reun
 
 To connect a GitLab repository, you must first create a new access token in GitLab, then enter the connection details in Reunite.
 
+{% partial file="../../../_partials/connect-git-two-contexts.md" /%}
+
+The access token is required in both contexts.
+
 ## Create a new access token in GitLab
 
 {% partial file="../../../_partials/create-access-token-gl.md" /%}

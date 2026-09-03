@@ -19,6 +19,10 @@ Connect that repository so you can access, edit, and publish those files in Reun
 To connect an Azure DevOps repository, first create a new Personal Access Token for your Azure organization.
 Then enter the connection details in Reunite.
 
+{% partial file="../../../_partials/connect-git-two-contexts.md" /%}
+
+The Personal Access Token is required in both contexts.
+
 ## Create a new access token in Azure DevOps
 
 {% partial file="../../../_partials/create-access-token-for-azure-org.md" /%}

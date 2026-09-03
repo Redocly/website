@@ -18,16 +18,37 @@ In Reunite, projects are the place where you create, test, and deploy documentat
 ## Create a project
 
 1. In Reunite's top-left corner, click your organization's icon, then on the bottom of the list of projects, click **Create new project**.
-1. In the **Create project** modal, select **Choose template** for a template option.
-    You can preview a template by clicking the eye icon on a template card.
-1. Enter the name for your project.
+1. In the **Create project** modal, enter the name for your project.
     Reunite automatically fills the **Project domain** field and checks if the domain name is already in use.
 1. (Optional) Edit the project domain to your preferences.
     The **Project domain** must be unique within your organization.
+1. Under **Git repository**, select where your project content lives:
+    - **Redocly-hosted repository**: Reunite sets up and hosts the repository for you.
+    - **Connect existing repository**: Reunite builds the project from a repository you already have on GitHub, GitLab, Bitbucket, or Azure DevOps.
+1. Click **Next** and complete the steps for the option you selected.
+
+You can change the connected Git repository later in the project's **Settings > Git hosting** page.
+
+### Create a project from a template
+
+If you selected **Redocly-hosted repository**, Reunite offers a set of templates as the starting content:
+
+1. Select a template.
 1. Click **Create project**.
 
 Reunite creates your project and takes you to the project's **Editor** page and you can start working on your documentation.
-If you have a third-party-hosted Git, [connect your repository](#connect-your-project-repository) first.
+
+### Create a project from an existing repository
+
+If you selected **Connect existing repository**, Reunite builds the project from the content that is already in your repository.
+Nothing is pushed to the repository, and no template is used.
+
+1. Select your Git provider and authorize Reunite to access it.
+1. Select the organization, the repository, and the branch.
+    For a monorepo, you can also select a folder.
+1. Click **Create project**.
+
+Reunite creates your project, builds it from your repository, and takes you to the project's **Editor** page.
 
 ## Switch between projects
 
@@ -124,6 +145,7 @@ Redocly-hosted Git is available by default for your project.
 
 However, if you already have an existing Git repository, [connect your Git provider](./connect-git/connect-git-provider.md).
 This way you can maintain your files in your own infrastructure and publish your project using Reunite.
+You can connect a repository when you [create a project](#create-a-project-from-an-existing-repository), or at any time later in the project's **Settings > Git hosting** page.
 
 ### Set up deployment strategy
 

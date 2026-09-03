@@ -16,6 +16,7 @@ plans:
 Connect your Redocly project to a Git provider to keep the two in sync.
 Changes you save in Redocly appear in your repository, and changes you push to your repository appear in your published project.
 You can connect a whole repository or one folder in it.
+You can connect a repository when you [create a project](../manage-projects.md#create-a-project-from-an-existing-repository), or later in the project's **Settings > Git hosting** page.
 
 The connection also drives builds.
 When you open a pull request, or commit and push, your Git provider notifies Redocly.
