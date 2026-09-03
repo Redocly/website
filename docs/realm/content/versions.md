@@ -14,7 +14,7 @@ keywords:
     - versions
     - versioning
 ---
-# Add versioned content
+# Version content
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Customize styles for a locale
+# Customize locale styles
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

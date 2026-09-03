@@ -9,7 +9,7 @@ plans:
   - Enterprise+
 ---
 
-# Model Context Protocol server
+# Model Context Protocol servers
 
 Model Context Protocol (MCP) is a standard that enables applications to provide context to large language models (LLMs).
 With MCP servers, AI assistants can retrieve additional information relevant to a user's query.

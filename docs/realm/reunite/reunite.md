@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Reunite
+# About Reunite
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

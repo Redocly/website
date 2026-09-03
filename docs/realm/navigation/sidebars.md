@@ -14,7 +14,7 @@ keywords:
     - sidebars
 ---
 
-# Sidebars
+# Configure sidebars
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

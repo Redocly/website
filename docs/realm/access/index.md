@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Access control
+# Control site access
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

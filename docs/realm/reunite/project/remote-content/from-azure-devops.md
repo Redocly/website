@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Add remote files from Azure DevOps
+# Add remote content from Azure DevOps
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

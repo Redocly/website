@@ -33,7 +33,7 @@ npx @redocly/cli eject component ext/configure.ts
 
 This command creates a local copy of `configure.ts` in your project's `@theme` folder.
 
-## Configure request values
+## Configure global request values
 
 The `configure.ts` file exports a `configure` function that receives a context parameter and returns request values.
 The context parameter provides information about the current operation, user, and servers from the OpenAPI description, which you can use to dynamically configure request values.

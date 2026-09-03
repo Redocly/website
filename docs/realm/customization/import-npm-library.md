@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Import an external NPM library
+# Import npm libraries
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -44,7 +44,7 @@ to create a `package.json` file if you don't have one already.
 
 ## Configure private registries
 
-You might need to install libraries from private NPM registries (such as Artifactory, AWS CodeArtifact, or GitHub Packages).
+You might need to install libraries from private npm registries (such as Artifactory, AWS CodeArtifact, or GitHub Packages).
 Configure registry access using either `.npmrc` or `bunfig.toml` files.
 
 ### Use `.npmrc`
@@ -171,6 +171,6 @@ You can use the icon tag in your Markdoc files, as in the following example:
 ## Resources
 
 - **[Environment variables](../reunite/project/env-variables.md)** - Configure secure credentials for private registry access using environment variables
-- **[Build custom Markdoc tags](./build-markdoc-tags.md)** - Create reusable Markdoc tags using imported NPM libraries for enhanced functionality
+- **[Build custom Markdoc tags](./build-markdoc-tags.md)** - Create reusable Markdoc tags using imported npm libraries for enhanced functionality
 - **[Built-in icon tag](../content/markdoc-tags/icon.md)** - Use Redocly's built-in icon system and learn patterns for extending it with external icon libraries
 - **[Customization](./index.md)** - Discover customizable components and customization options for your project

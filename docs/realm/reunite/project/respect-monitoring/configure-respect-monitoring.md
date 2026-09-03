@@ -6,7 +6,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Configure Respect Monitoring
+# Configure monitoring
 
 You can configure Reunite to monitor the performance of your APIs using [Arazzo Descriptions](https://spec.openapis.org/arazzo/latest.html).
 The output of each workflow is displayed as a chart on the Respect Monitoring page in Reunite, providing metrics for your APIs performance.

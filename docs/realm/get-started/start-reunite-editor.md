@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Get started with the Reunite editor
+# Start with the web editor
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

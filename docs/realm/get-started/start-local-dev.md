@@ -10,7 +10,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Get started locally
+# Start with local development
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

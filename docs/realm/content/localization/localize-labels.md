@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Localize UI labels using translation keys
+# Localize UI labels
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

@@ -7,12 +7,11 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-title: Custom page templates
+title: Customize page templates
 ---
+# Customize page templates
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-# Override a page template
 
 Custom page templates is a feature that allows you to create more complex templates for your `.md` pages.
 
@@ -101,7 +100,6 @@ Other data like `author`, `date`, and `timeToRead` will be passed to that templa
 Use `markdown.template` in the root `redocly.yaml` file to assign templates to one or more Markdown files without editing each page.
 
 Each key can target files in three ways:
-
 
 {% table %}
 

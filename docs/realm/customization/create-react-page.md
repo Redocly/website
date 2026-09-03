@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Create page in React
+# Create React pages
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

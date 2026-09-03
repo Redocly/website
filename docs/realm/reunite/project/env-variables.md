@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Environment variables
+# Use environment variables
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

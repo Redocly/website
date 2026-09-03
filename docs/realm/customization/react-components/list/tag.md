@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Tag
+# Tag React component
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

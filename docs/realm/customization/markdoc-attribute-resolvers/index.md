@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Built-in Markdoc attribute resolvers
+# Markdoc attribute resolvers
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

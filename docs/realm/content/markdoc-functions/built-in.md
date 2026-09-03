@@ -11,7 +11,7 @@ seo:
   description: Overview of standard built-in Markdoc functions and custom functions provided by Redocly.
 ---
 
-# Built-in Markdoc functions
+# All Markdoc functions
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

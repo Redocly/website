@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Add remote files from Bitbucket Cloud
+# Add remote content from Bitbucket Cloud
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

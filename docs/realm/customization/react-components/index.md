@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-## Theme component customization
+# Theme component customization
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

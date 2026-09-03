@@ -11,7 +11,7 @@ keywords:
     - package.json
 ---
 
-# Add SOAP documentation from a WSDL file
+# Add SOAP documentation from WSDL files
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

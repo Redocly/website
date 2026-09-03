@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Markdoc tag library
+# All Markdoc tags
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

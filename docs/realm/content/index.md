@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Content
+# Create content
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Teams
+# Manage teams
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

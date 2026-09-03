@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Redocly Reunite CI/CD push GitHub Action
+# Push remote content using GitHub Actions
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -52,7 +52,7 @@ When you add a new Remote from CI/CD, you'll be presented with a starter templat
 - string
 - **REQUIRED**.
   Path to folder where you files should be pushed.
-  For example `src/docs/api`.
+  For example: `src/docs/api`.
 
 ---
 
@@ -60,7 +60,7 @@ When you add a new Remote from CI/CD, you'll be presented with a starter templat
 - string
 - **REQUIRED**.
   Files/folders list within your repo, separated by spaces.
-  For example `openapi-files src/redocly-museum.yaml`.
+  For example: `openapi-files src/redocly-museum.yaml`.
 
 ---
 
@@ -90,7 +90,7 @@ When you add a new Remote from CI/CD, you'll be presented with a starter templat
 - integer
 - Max execution time in seconds.
   If the deployment is not successful within this time, the action will fail.
-  Default value: '1200' (20 minutes)
+  Default: '1200' (20 minutes).
 
 {% /table %}
 

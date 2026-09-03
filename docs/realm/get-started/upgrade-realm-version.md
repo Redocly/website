@@ -14,7 +14,7 @@ keywords:
     - package.json
 ---
 
-# Upgrade product version
+# Upgrade your product version
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

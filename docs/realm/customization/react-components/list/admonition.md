@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Admonition
+# Admonition React component
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

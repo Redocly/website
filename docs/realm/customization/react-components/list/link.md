@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Link
+# Link React component
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

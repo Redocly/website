@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Add color-mode-specific images
+# Add color-mode images
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

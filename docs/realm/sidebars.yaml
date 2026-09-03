@@ -5,7 +5,7 @@
     - page: reunite/reunite.md
       label: About Reunite
     - page: get-started/start-reunite-editor.md
-      label: Start with the web editor
+      label: Start with web editor
     - page: get-started/start-local-dev.md
       label: Start with local development
 
@@ -36,7 +36,7 @@
           page: content/markdoc-tags/code-walkthrough/index.md
           items:
             - page: content/markdoc-tags/code-walkthrough/create-code-walkthrough.md
-              label: Create a walkthrough
+              label: Create code walkthrough
             - page: content/markdoc-tags/code-walkthrough/input.md
               label: Input
             - page: content/markdoc-tags/code-walkthrough/step.md
@@ -93,7 +93,7 @@
     - page: customization/static-assets.md
       label: Static assets
     - page: content/add-diagram.md
-      label: Diagrams
+      label: Add diagrams
     - page: content/versions.md
       label: Version content
     - group: Localization
@@ -102,7 +102,7 @@
         - page: content/localization/localize-content.md
           label: Localize content
         - page: content/localization/localize-labels.md
-          label: Localize labels
+          label: Localize UI labels
         - page: content/localization/translation-keys.md
           label: Translation keys
         - page: content/localization/display-current-locale.md
@@ -135,7 +135,7 @@
         - page: customization/configure-dynamic-replay-values.md
           label: Configure dynamic API data
         - page: customization/customize-replay-gate.md
-          label: Customize the auth gate
+          label: Customize auth gate
     - group: OpenAPI extensions
       page: content/api-docs/openapi-extensions/index.md
       items:
@@ -199,7 +199,7 @@
 
 - group: Publish, sync, and collaborate
   icon: cloud-arrow-up
-  page: reunite/project/manage-projects.md
+  page: publish/index.md
   items:
     - group: Editor
       page: reunite/project/use-editor.md
@@ -255,11 +255,13 @@
           label: Edit content folder
         - page: reunite/project/remote-content/verify-remote-content.md
           label: Remote content automation
-    - group: Deployments
-      page: reunite/project/branches-and-deployments.md
+    - group: Project deployment
+      page: publish/project-deployment/index.md
       items:
+        - page: reunite/project/branches-and-deployments.md
+          label: Branches and deployments
         - page: reunite/project/deployments.md
-          label: Deployment history
+          label: Deployments
         - page: reunite/project/lint.md
           label: API linting
         - page: reunite/project/configure-classic-scorecard.md
@@ -273,19 +275,21 @@
           label: Configure monitoring
         - page: reunite/project/respect-monitoring/manage-respect-monitoring.md
           label: Notifications and SLAs
+    - page: reunite/project/manage-projects.md
+      label: Manage projects
     - page: get-started/upgrade-realm-version.md
       label: Upgrade product version
     - page: reunite/project/custom-domain.md
-      label: Custom domain
+      label: Set custom domain
     - page: reunite/project/env-variables.md
-      label: Environment variables
+      label: Use environment variables
 
 - group: Build navigation
   icon: chart-tree-map
   page: navigation/index.md
   items:
     - page: navigation/sidebars.md
-      label: Sidebars
+      label: Configure sidebars
     - page: navigation/multi-product.md
       label: Multi-product
 
@@ -294,13 +298,13 @@
   page: branding/index.md
   items:
     - page: branding/customize-styles.md
-      label: Custom styles
+      label: Customize styles
     - page: branding/customize-fonts.md
-      label: Custom fonts
+      label: Add custom fonts
     - page: branding/customize-color-modes.md
       label: Color modes
     - page: branding/customize-tables.md
-      label: Table styling
+      label: Customize tables
     - page: content/localization/customize-styles-for-locale.md
       label: Styles per locale
     - group: CSS variables
@@ -318,7 +322,7 @@
   page: search-and-seo/index.md
   items:
     - page: navigation/search.md
-      label: Search
+      label: Configure search
     - page: content/realm-seo.md
       label: SEO
     - group: Search API
@@ -347,7 +351,7 @@
     - page: access/roles.md
       label: Roles and permissions
     - page: access/rbac.md
-      label: RBAC concepts
+      label: RBAC
     - page: access/page-permissions.md
       label: RBAC for pages
     - page: access/links-and-groups-permissions.md
@@ -388,7 +392,7 @@
         - page: reunite/organization/sso/configure-scim.md
           label: Configure SCIM
     - page: reunite/organization/access-compliance-reports.md
-      label: Compliance reports
+      label: Access compliance reports
     - group: Self-hosted Git providers
       page: reunite/project/connect-git/manage-self-hosted.md
       items:
@@ -404,17 +408,18 @@
   page: customization/index.md
   items:
     - group: Build React pages
+      selectFirstItemOnExpand: true
       items:
         - page: customization/create-react-page.md
           label: Create React pages
         - page: customization/react-components/use-in-react-page.md
           label: Use components in React pages
         - page: customization/custom-page-templates.md
-          label: Override page templates
+          label: Customize page templates
         - page: customization/react-components/wrap-components.md
-          label: Customize built-in components
+          label: Customize theme components
         - page: customization/color-mode-images.md
-          label: Color mode images
+          label: Add color-mode images
         - page: customization/import-npm-library.md
           label: Import npm libraries
     - group: React components

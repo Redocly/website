@@ -36,7 +36,7 @@ Follow the steps to configure Google Workspace SAML SSO integration with Reunite
 1. In **Single sign on URL**, enter: `https://auth.cloud.redocly.com/org/`*{your-organization-slug}*`/`.
 1. In **Issuer ID**, enter the unique identifier of the identity provider.
 1. In **x509 public certificate**, paste the certificate from the identity provider.
-1.  Click **Save**.
+1. Click **Save**.
 
 ## Configure attributes in Google Workspace to send to Reunite
 

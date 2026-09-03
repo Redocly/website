@@ -6,7 +6,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Manage Respect Monitoring
+# Notifications and SLAs
 
 You can subscribe to notifications by Arazzo workflow.
 You receive a message when an API included in the Arazzo workflow does not pass the criteria checks.

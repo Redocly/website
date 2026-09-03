@@ -9,7 +9,7 @@ plans:
   - Enterprise+
 ---
 
-# Single sign-on (SSO)
+# Single sign-on and login
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

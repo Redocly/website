@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# API documentation
+# Document APIs
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

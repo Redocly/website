@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Role-based access control (RBAC)
+# Role-based access control
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Add remote files from GitHub
+# Add remote content from GitHub
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
