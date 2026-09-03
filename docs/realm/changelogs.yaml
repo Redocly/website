@@ -32194,15 +32194,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
-  0.56.0:
-    timestamp: 1788448870000
-    changes:
-      minor:
-        - >-
-          Added the `recheck` block to the `redocly.yaml` schema, so projects can configure Recheck next to their API rules and `check-config`
-          validates the block.
-      patch: []
-    dependencies: {}
   0.55.0:
     timestamp: 1788266168000
     changes:
@@ -53147,14 +53138,6 @@ reunite:
         - Improved project creation speed by preloading templates.
         - Fixed production builds skipping Respect Monitoring jobs triggered by `build` events, restoring API monitoring on the deployment page.
         - Fixed editor showing `Disconnected` status and warning about lost changes during reconnection to reduce user confusion.
-    dependencies: {}
-  v2026-09-02.3:
-    timestamp: 1788376818000
-    changes:
-      minor: []
-      patch:
-        - Fixed GitHub rate-limit errors and timeouts for remotes and project sources connected through the GitHub App.
-        - Fixed a crash on the add-project page triggered by a missing project context in the Git remote form.
     dependencies: {}
 replay:
   0.0.2:

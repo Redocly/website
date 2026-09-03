@@ -87,6 +87,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- asyncapi.authentication
+- Label for the authentication section on an AsyncAPI channel page
+- Authentication
+
+---
+
 - asyncapi.viewSecurityDetails
 - Label for the view security details button in AsyncAPI description
 - View security details
