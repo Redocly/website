@@ -53156,6 +53156,29 @@ reunite:
         - Fixed GitHub rate-limit errors and timeouts for remotes and project sources connected through the GitHub App.
         - Fixed a crash on the add-project page triggered by a missing project context in the Git remote form.
     dependencies: {}
+  v2026-09-03.3:
+    timestamp: 1788458537000
+    changes:
+      minor: []
+      patch:
+        - Fixed slow AI assistant responses that could take minutes and time out on large projects.
+        - >-
+          Fixed dropped push or pull request webhooks for remote content preview branches when GitHub could not compute the comparison for very large
+          commit ranges. Reunite now detects changes and syncs the remote content.
+        - Fixed missing email notifications for replies to pull request comments, ensuring all participants and mentioned users receive notifications.
+        - >-
+          Fixed Reunite pull request notifications to include people who commented on or reviewed the pull request, so they receive updates on later
+          activity.
+        - >-
+          Fixed pull request creation in Reunite failing right after a push to the branch, which also lost the pull request notification for remote
+          content updates.
+        - >-
+          Fixed Reunite reconnecting a closed pull request that did not belong to a branch it just created, and reconnecting a different pull request
+          on each attempt.
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.49.1`.
+        - Fixed hard-to-read onboarding progress colors in light and dark themes and removed an empty onboarding item from the sidebar.
+        - Fixed an error message appearing instead of the login page when a session expired and the authentication service was unavailable.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
