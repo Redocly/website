@@ -733,6 +733,18 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- page.actions.connectMcp.claudeDesktop
+- Connect to Claude Desktop option title in Connect MCP dropdown
+- Connect to Claude Desktop
+
+---
+
+- page.actions.connectMcp.claudeDesktopDescription
+- Connect to Claude Desktop option description in Connect MCP dropdown
+- Download the MCP bundle (.mcpb) for Claude Desktop
+
+---
+
 - page.actions.connectMcp.codex
 - Connect to Codex CLI option title in Connect MCP dropdown
 - Connect to Codex CLI
@@ -854,9 +866,21 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- page.mcpNotAllowed.snippets.claudeDesktop.instruction
-- Claude Desktop setup instruction on the MCP connection page
-- In Claude Desktop, open Settings → Developer → Edit Config, add this to the configuration file, and restart Claude Desktop:
+- page.mcpNotAllowed.snippets.claudeDesktop.bundleInstruction
+- Hint above the MCP bundle download button on the MCP connection page
+- Download the MCP bundle and open it in Claude Desktop to install the server:
+
+---
+
+- page.mcpNotAllowed.snippets.claudeDesktop.downloadBundle
+- Label of the MCP bundle download button on the MCP connection page
+- Download for Claude Desktop (.mcpb)
+
+---
+
+- page.mcpNotAllowed.snippets.claudeDesktop.manualInstruction
+- Manual Claude Desktop setup instruction on the MCP connection page
+- Alternatively, open Settings → Developer → Edit Config in Claude Desktop, add this to the configuration file, and restart Claude Desktop:
 
 ---
 

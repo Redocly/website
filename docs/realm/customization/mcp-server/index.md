@@ -72,6 +72,26 @@ The following example response describes a login-protected server that also publ
 The card lists the server's tools, declares its `/mcp` transport endpoint, and states its authentication requirements when the server requires login.
 When your project publishes [agent skills](../agent-skills/index.md#skills-as-mcp-resources), the card's capabilities advertise resource support so agents know to list them.
 
+## MCP bundle
+
+An MCP bundle is a `.mcpb` file, a zip archive with a `manifest.json` that MCP clients such as Claude Desktop install with one click, without editing a configuration file.
+The format is defined by the [MCP Bundles](https://github.com/modelcontextprotocol/mcpb) project.
+
+When the Docs MCP server is enabled, the portal serves a bundle for it at `/mcp/bundle.mcpb` on your project root URL.
+For example: `https://example.com/mcp/bundle.mcpb`.
+Projects that enable [`mcp.docs.publicEndpoint`](../../config/mcp.md) also serve `/mcp-public/bundle.mcpb` for the public endpoint.
+
+The bundle contains the manifest and a small Node.js program that connects the desktop client to the remote Docs MCP server.
+The program runs on the Node.js runtime that ships with the client, so users don't install anything else.
+The manifest takes its display name from [`mcp.docs.name`](../../config/mcp.md), its description from [`seo.description`](../../config/seo.md), and its links from [`seo.siteUrl`](../../config/seo.md).
+It also lists the tools the server exposes.
+
+If the MCP server requires login, the bundle opens the portal sign-in page in the browser on the first connection and stores the resulting tokens in the user's home directory under `.redocly/mcp-bundles`.
+Tokens refresh automatically.
+The bundle also offers an optional **Access token** setting: a bearer token accepted by the portal that skips the browser sign-in, for example in automated setups.
+
+Users download the bundle from the **Connect to Claude Desktop** option of the [Connect MCP button](../../content/markdoc-tags/connect-mcp.md) or from the `/mcp` setup page.
+
 ## Restrict access to the MCP server
 
 Control which teams can access the MCP server with the `rbac.features.mcp` option, the same way `rbac.features.aiSearch` controls access to AI search.
@@ -102,6 +122,7 @@ For example: `https://example.com/mcp`.
 ### Use the MCP server
 
 Users can connect their preferred AI tools that support MCP (for example, Cursor, Claude Code and VS Code) to your MCP server.
+Claude Desktop users can install the [MCP bundle](#mcp-bundle) instead of editing a configuration file.
 
 {% numbered-list %}
   {% numbered-item %}
@@ -207,6 +228,24 @@ In the Claude Code CLI, ask the AI agent to perform an instruction that uses an 
   {% tab label="Claude Desktop" %}
 
 ### Connect Claude Desktop to the MCP server
+
+#### Install the MCP bundle in Claude Desktop
+
+{% numbered-list %}
+  {% numbered-item %}
+  Download the bundle from `https://example.com/mcp/bundle.mcpb`, or select **Connect to Claude Desktop** in the **Connect MCP** button on the `/mcp` page.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Open the downloaded `.mcpb` file with Claude Desktop, or drag it onto **Settings → Extensions**.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Select **Install**.
+  {% /numbered-item %}
+{% /numbered-list %}
+
+If the MCP server requires authentication, the bundle opens a sign‑in page in your browser on the first connection.
+
+#### Add the server to the configuration file
 
 The Claude Desktop configuration file only launches stdio commands, so the entry connects to the remote server through the `mcp-remote` bridge.
 
@@ -350,7 +389,7 @@ A project that uses [`requiresLogin`](../../config/access/requires-login.md) wit
 
 Users discover the public endpoint in three ways:
 
-- A browser visit to `/mcp-public` displays the same setup page as `/mcp`, with connection snippets that point at the public endpoint and a note that it serves public content only.
+- A browser visit to `/mcp-public` displays the same setup page as `/mcp`, with connection snippets and an [MCP bundle](#mcp-bundle) download that point at the public endpoint, and a note that it serves public content only.
 - The two setup pages link to each other: the `/mcp` page links to the public endpoint, and the `/mcp-public` page links back to the main endpoint.
 - When an unauthenticated MCP client connects to the restricted `/mcp` endpoint, the `401` response body mentions the `/mcp-public` URL.
 
