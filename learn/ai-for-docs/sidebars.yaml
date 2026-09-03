@@ -10,6 +10,8 @@
   label: Use AI to review API design for backward compatibility risks
 - page: ai-generate-first-drafts-from-openapi.md
   label: Use AI to generate first drafts from your OpenAPI spec
+- page: should-i-use-ai-generate-sdk.md
+  label: Should I use AI to generate my SDK?
 - page: ai-enforce-tone-style-consistency-across-docs.md
   label: Use AI to enforce tone and style consistency across docs
 - page: ai-review-code-examples-completeness-accuracy.md
