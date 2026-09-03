@@ -6,7 +6,7 @@ seo:
   title: Generate realistic Arazzo workflows with AI
   description: The generate-arazzo command now has a --with-ai option that turns a one-workflow-per-operation skeleton into realistic multi-step workflows, using your own local AI assistant.
 author: dmytro-ananskyi
-publishedDate: "2026-09-02"
+publishedDate: "2026-09-03"
 categories:
   - redocly:product-updates
   - redocly:redocly-cli
@@ -62,31 +62,38 @@ Add one flag:
 npx @redocly/cli@latest generate-arazzo openapi.yaml --with-ai
 ```
 
-The same operations now come back as a scenario: the menu item's full lifecycle, starting with the API's own OAuth2 client registration:
+The same operations now come back as a scenario: the menu item's lifecycle, starting with the API's own OAuth2 client registration.
+A shortened excerpt from a real run:
 
 ```yaml
 workflows:
-  - workflowId: menu-item-lifecycle
-    summary: Register a client and manage a menu item end to end
+  - workflowId: manage-menu-items
+    summary: Create, view, and remove menu items
     inputs:
       $ref: '#/components/inputs/OAuth2'
     steps:
       - stepId: register-oauth2-client
         operationId: $sourceDescriptions.cafe.registerOAuth2Client
         requestBody:
+          contentType: application/json
           payload:
-            name: menu-lifecycle-client
+            name: pos-terminal
+            redirectUris:
+              - https://api.cafe.redocly.com/callback
             scopes:
               - menu:read
               - menu:write
+              - orders:read
+              - orders:write
+              - revenue:read
             grantTypes:
               - authorization_code
               - client_credentials
         successCriteria:
           - condition: $statusCode == 201
         outputs:
-          clientId: $response.body#/clientId
-          clientSecret: $response.body#/clientSecret
+          client-id: $response.body#/clientId
+          client-secret: $response.body#/clientSecret
       - stepId: create-menu-item
         operationId: $sourceDescriptions.cafe.createMenuItem
         x-security:
@@ -99,10 +106,14 @@ workflows:
             name: Cappuccino
             price: 4500
             category: beverage
+            volume: 250
+            containsCaffeine: true
+            photoTextDescription: A hot cappuccino in a white ceramic cup.
         successCriteria:
           - condition: $statusCode == 201
         outputs:
-          menuItemId: $response.body#/id
+          menu-item-id: $response.body#/id
+      # ...two read steps (menu item photo, menu list) omitted
       - stepId: delete-menu-item
         operationId: $sourceDescriptions.cafe.deleteMenuItem
         x-security:
@@ -112,7 +123,7 @@ workflows:
         parameters:
           - name: menuItemId
             in: path
-            value: $steps.create-menu-item.outputs.menuItemId
+            value: $steps.create-menu-item.outputs.menu-item-id
         successCriteria:
           - condition: $statusCode == 204
 ```
@@ -122,9 +133,10 @@ The differences are exactly the parts you used to write by hand:
 - Related operations are grouped into a lifecycle instead of isolated single-step workflows.
 - Steps pass data to each other.
   The created menu item's ID becomes an output and feeds the delete step's path parameter.
-- The authentication flow is part of the scenario: the workflow registers an OAuth2 client first.
-  Requesting every grant type the scheme declares — and keeps the `x-security` setup on every protected step.
-- Realistic example payloads come from the description's schemas instead of empty stubs.
+- The authentication flow is part of the scenario: the workflow registers an OAuth2 client first,
+  requesting every grant type the scheme declares, and keeps the `x-security` setup on every protected step.
+- Payloads satisfy the schemas instead of being empty stubs: the beverage includes its required `volume` and `containsCaffeine` fields,
+  and the client registration supplies the `redirectUris` that the `authorization_code` grant requires.
 
 ## Your AI, your machine, no API keys
 
