@@ -145,7 +145,7 @@ Review these rules before you enable the endpoint.
 
 Authenticated users keep connecting to `/mcp`.
 Anonymous users and unauthenticated integrations connect to `/mcp-public` and receive only the content that is available to the `anonymous` team.
-A browser visit to `/mcp-public` displays the setup page with connection snippets for the public endpoint.
+A browser visit to `/mcp-public` displays the setup page with connection snippets and an MCP bundle download for the public endpoint.
 The two setup pages link to each other.
 The `401` response from the restricted `/mcp` endpoint mentions the public URL.
 
@@ -184,3 +184,4 @@ mcp:
 - **[Role-based access control](./access/rbac.md#features-configuration)** - Configure team-based permissions that also govern which content clients can access over the Docs MCP server
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
 - **[Connect MCP Markdoc tag](../content/markdoc-tags/connect-mcp.md)** - Add `Connect MCP` button anywhere in your documentation
+- **[MCP bundle](../customization/mcp-server/index.md#mcp-bundle)** - Let Claude Desktop users install the Docs MCP server from the `.mcpb` file the portal serves
