@@ -94,13 +94,17 @@ The following example includes versions `1.0`, `2.0`, and `3.0` of the `museum_a
 └── sidebars.yaml
 ```
 
-The `museum_api` versions will appear in the version picker in the same order as the version subfolders in the file tree.
-The order is `1.0`, then `2.0`, and finally `3.0`.
-The version opened by default will be the the last version, in this case: `3.0`.
+The `museum_api` folder has no `versions.yaml` file, so its versions appear in the version picker sorted from newest to oldest.
+The order is `3.0`, then `2.0`, and finally `1.0`.
+The version that opens by default is the first version in that order, in this case `3.0`.
 
-Since in `customer_api` the `legacy` version appears second, it would also be the default version.
-The `latest` version should appear at the bottom of the list and be the default version.
-To do that, a `versions.yaml` file with the [desired configuration](#customize-the-version-picker) was added to the `customer_api` folder.
+Sorting is numeric-aware, so `2.10` is ordered before `2.9` instead of after it.
+Versions that are not numeric, such as `latest` or `legacy`, are sorted in reverse alphabetical order.
+
+The `customer_api` folder uses named versions, so the same sorting puts `legacy` first, and `legacy` opens by default.
+To display `latest` at the top of the list and open it by default instead, a `versions.yaml` file was added to that folder.
+It has the [desired configuration](#customize-the-version-picker) and sets both the order of the versions and the default version.
+The sorting described above no longer applies to `customer_api`.
 
 Another example shows the `public beta` version of `payments_api`:
 
@@ -221,7 +225,7 @@ To add a single sidebar for all version folders:
 This configuration modifies the sidebar by adding two groups, Museum API and Customer API.
 Within each group are multiple versions of files.
 When you first access your project, the sidebar displays only the links to files from the versions: `3.0` and `legacy` respectively.
-These versions are the default versions, as they are the lowest on the alphanumeric ascending order.
+These versions are the default versions, as they are the first in the version order.
 To set custom default versions, see [Customize the version picker](#customize-the-version-picker).
 
 ### Add a dedicated sidebar for each version folder
@@ -288,8 +292,9 @@ In the built project, the sidebar combines the referenced `sidebars.yaml` files 
 
 ## Customize the version picker
 
-By default, the order of versions in the version picker is the same as the folder structure in the project, in the alphanumeric ascending order.
-The version that opens when you navigate to versioned file, is by default the version last in the order. \
+In a folder without a `versions.yaml` file, versions in the version picker are sorted from newest to oldest.
+The sort is numeric-aware, so it orders `2.10` before `2.9`.
+The version that opens when you navigate to a versioned file is the first version in the order, which is the newest one. \
 You can customize which versions appear in the version picker, the order of the versions, and the version that opens by default.
 
 For more information on version picker configuration, see the [Versions configuration options](#versions-configuration-options) below.
@@ -460,7 +465,7 @@ Create a `versions.yaml` file on the same level as your version folders.
 - The version displayed first when the page is loaded.
   Must match the name of the version folder, excluding the `@` prefix.
   If not defined, it is the last `version` in the `versions` object.
-  Without a `versions.yaml` file, the default version is the highest version in the alphanumeric ascending order.
+  Without a `versions.yaml` file, the default version is the newest version, according to the numeric-aware sort order.
 
 ---
 
@@ -515,7 +520,7 @@ versions:
 The following example contains three versions: `1.0`, `2.0`, and `2.3`.
 Since the names contain only numbers, the names were placed inside single quotations to match the required `string` type for these values.
 The version picker displays **1.0**, **2.0**, and **2.3**.
-The default version is not defined in this file, so the project displays files from the version subfolder with the highest value.
+The default version is not defined in this file, so the project displays files from the last version subfolder listed.
 In this case, it is `@2.3`.
 
 ```yaml {% title="versions.yaml" %}
