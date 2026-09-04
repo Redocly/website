@@ -14,7 +14,7 @@ servers:
   - url: https://{host}/api
     variables:
       host:
-        default: app.cloud.redocly.com
+        default: app.cba.au.redocly.com
         description: Server host.
     description: Production main server.
 security:
@@ -62,6 +62,48 @@ paths:
                 $ref: '#/components/schemas/Remote'
         '400':
           $ref: '#/components/responses/BadRequestError'
+  /orgs/{orgId}/projects/{projectId}/remotes/{remoteId}/push:
+    parameters:
+      - $ref: '#/components/parameters/OrgId'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/RemoteId'
+    post:
+      tags:
+        - Remotes
+      operationId: pushToRemote
+      summary: Push files to remote
+      security:
+        - ApiKey: []
+      description: |-
+        Push discovered files as a remote content.
+        Files should be sent as a multipart/form-data.
+        Commit details like commit message and author can be sent as a JSON object in the `commit` field.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RemotePush'
+      responses:
+        '200':
+          description: Content pushed.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/PullRequest'
+                  - type: object
+                    required:
+                      - branchName
+                      - hasChanges
+                    properties:
+                      branchName:
+                        type: string
+                      hasChanges:
+                        type: boolean
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
   /orgs/{orgId}/projects/{projectId}/scout/todos:
     post:
       tags:
@@ -427,25 +469,270 @@ components:
         - title
         - status
         - object
+    RemotePush:
+      type: object
+      required:
+        - commit
+        - jobId
+      properties:
+        commit:
+          type: object
+          description: Commit details.
+          required:
+            - message
+            - author
+          properties:
+            namespace:
+              type: string
+              description: Git repo namespace (organization login for GitHub).
+              example: Redocly
+            repository:
+              type: string
+              description: Git repo name.
+              example: redoc
+            message:
+              type: string
+              description: Commit message.
+              example: 'chore: Add new API'
+            author:
+              type: object
+              required:
+                - email
+                - name
+              properties:
+                name:
+                  description: Commit author name.
+                  example: John Doe
+                email:
+                  type: string
+                  description: Commit author email.
+                  format: email
+                  example: johndoe@example.com
+                image:
+                  type: string
+                  description: |-
+                    Commit author image URL.
+                    If not provided, the default image is used.
+                    If the image may not accessible, [data url](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) can be used.
+        jobId:
+          type: string
+          format: ulid
+          description: ID of the `PROCESS_GIT_REPO` job, if any.
+          example: job_01f1q3q1q1q1q1q1q1q1q1q1q1
+        replace:
+          type: boolean
+          description: |-
+            Whether to replace the existing files.
+            If provided, all files from the remote are removed and the new files are added.
+            If not provided, the existing files are kept and the new files are added, overwriting the existing files where they overlap.
+          example: true
+          default: false
+        files:
+          type: object
+          description: Map of files to upload.
+          additionalProperties:
+            description: Files to push.
+            type: string
+            format: binary
+    PullRequest:
+      type: object
+      properties:
+        id:
+          type: string
+          format: ulid
+          example: pr_01h1s5z6vf2mm1mz3hevnn9va7
+          description: Pull request Id.
+          readOnly: true
+        number:
+          description: Pull request number.
+          type: integer
+          example: 1
+          readOnly: true
+        branchName:
+          description: Branch name.
+          type: string
+          example: main
+          maxLength: 512
+        title:
+          description: PR title.
+          type: string
+          maxLength: 512
+        description:
+          description: PR description.
+          type: string
+        status:
+          description: PR status.
+          type: string
+          default: OPEN
+          enum:
+            - OPEN
+            - CLOSED
+            - MERGED
+        isDraft:
+          description: Indicates whether or not the pull request is a draft.
+          type: boolean
+        reviewers:
+          description: List of reviewers.
+          type: array
+          readOnly: true
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: ulid
+                example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+                description: User id.
+                readOnly: true
+              firstName:
+                description: User first name.
+                type: string
+                readOnly: true
+              lastName:
+                description: User last name.
+                type: string
+                readOnly: true
+            required:
+              - id
+              - firstName
+              - lastName
+          default: []
+        createdBy:
+          description: User who create PR.
+          type: object
+          readOnly: true
+          properties:
+            id:
+              type: string
+              format: ulid
+              example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+              description: User id.
+              readOnly: true
+            firstName:
+              description: User first name.
+              type: string
+              readOnly: true
+            lastName:
+              description: User last name.
+              type: string
+              readOnly: true
+          required:
+            - id
+            - firstName
+            - lastName
+        closedById:
+          type: string
+          format: ulid
+          example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+          description: User id who close PR.
+          readOnly: true
+        mergedById:
+          type: string
+          format: ulid
+          example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+          description: User id who merged PR.
+          readOnly: true
+        organizationId:
+          description: Organization ID.
+          type: string
+          readOnly: true
+        organization:
+          description: Organization.
+          properties:
+            name:
+              description: Organization name.
+              type: string
+        projectId:
+          description: Project ID.
+          type: string
+          readOnly: true
+        project:
+          description: Project.
+          type: object
+          properties:
+            name:
+              description: Project name.
+              type: string
+        reviews:
+          description: list of reviews.
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: ulid
+                example: rev_01h1s5z6vf2mm1mz3hevnn9va7
+              status:
+                type: string
+                enum:
+                  - APPROVED
+                  - REQUESTED_CHANGES
+                  - COMMENTED
+              userId:
+                type: string
+                format: ulid
+                example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+              user:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: ulid
+                    example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+                    description: User id.
+                  firstName:
+                    description: User first name.
+                    type: string
+                  lastName:
+                    description: User last name.
+                    type: string
+        createdAt:
+          description: Created date.
+          type: string
+          readOnly: true
+          format: date-time
+        updatedAt:
+          description: Updated date.
+          type: string
+          readOnly: true
+          format: date-time
+      required:
+        - id
+        - number
+        - branchName
+        - commitHash
+        - title
+        - status
+        - reviewers
+        - createdAt
+        - updatedAt
+        - createdBy
     Page:
       type: object
       properties:
-        nextPage:
+        endCursor:
           type:
             - string
             - 'null'
           description: |-
             Use with the `after` query parameter to load the next page of data.
-            When `null`, there is no next page.
+            When `null`, there is no data.
             The cursor is opaque and internal structure is subject to change.
-        previousPage:
+        startCursor:
           type:
             - string
             - 'null'
           description: |-
             Use with the `before` query parameter to load the previous page of data.
-            When `null`, there is no previous page.
+            When `null`, there is no data.
             The cursor is opaque and internal structure is subject to change.
+        hasNextPage:
+          type: boolean
+          description: Indicates if there is a next page with items.
+        hasPrevPage:
+          type: boolean
+          description: Indicates if there is a previous page with items.
         limit:
           type: integer
           minimum: 1
@@ -457,8 +744,10 @@ components:
           description: Count of items across all pages.
           minimum: 0
       required:
-        - nextPage
-        - previousPage
+        - endCursor
+        - startCursor
+        - hasNextPage
+        - hasPrevPage
         - limit
         - total
     GitCommitCheck:
@@ -766,7 +1055,7 @@ components:
       scheme: bearer
       description: |-
         API key is required to access the API.
-        You can get your API key from [Reunite](https://app.cloud.redocly.com).
+        You can get your API key from the [BlueHarvest dashboard](https://app.blueharvest.cloud).
   parameters:
     OrgId:
       name: orgId
@@ -784,6 +1073,15 @@ components:
       schema:
         type: string
         example: my-project
+    RemoteId:
+      name: remoteId
+      description: ID of the remote.
+      required: true
+      in: path
+      schema:
+        type: string
+        format: ulid
+        example: rem_01h1s5z6vf2mm1mz3hevnn9va7
     X-Redocly-Scout-Version:
       name: x-redocly-scout-version
       description: Scout version.
@@ -798,7 +1096,7 @@ components:
       required: false
       schema:
         type: string
-        description: Use the `nextPage` cursor as a value for the `after` parameter to get the next page.
+        description: Use the `endCursor` as a value for the `after` parameter to get the next page.
         example: a25fgaksjf23la==
     Before:
       name: before
@@ -806,7 +1104,7 @@ components:
       required: false
       schema:
         type: string
-        description: Use the `previousPage` cursor as a value for the `before` parameter to get the previous page.
+        description: Use the `startCursor` as a value for the `before` parameter to get the next page.
         example: bfg23aksjf23zb1==
     Sort:
       name: sort

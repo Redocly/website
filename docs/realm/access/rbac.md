@@ -113,6 +113,18 @@ For example, the `docs/developer-keys.md` file matches both `docs/developer-keys
 Under the `reunite` option, it describes the project role assignments to teams for access to the project.
 In this example, the `Writers` team has a `write` project role and can contribute or write comments on reviews.
 
+## Rule precedence and defaults
+
+Explicit RBAC rules defined in `redocly.yaml` take precedence over the default project roles assigned to organization members.
+By default, organization Members have the `admin` project role.
+If you specify an explicit rule for the `authenticated` team, that rule applies to all organization Members unless a more specific team rule overrides it.
+
+The `authenticated` team is a global team that includes all logged-in users regardless of their organization role.
+Defining `authenticated: read` restricts all organization members to read-only, bypassing their default `admin` role.
+Owners are unaffected and keep full access to all projects.
+A restrictive global authenticated rule overrides team-level access by default.
+To keep admin or write access for specific teams, explicitly define their roles (for example, Admins: admin).
+
 ## Resources
 
 - **[Roles and permissions](./roles.md)** - Explore the different user roles and permissions available for controlling access to your organization and projects

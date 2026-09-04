@@ -215,15 +215,6 @@ Redocly's penetration tests cover the production system as a whole, not selected
 AI features and their APIs are part of that system, so they are in scope.
 Download the latest attestation from the [Compliance page](../reunite/organization/access-compliance-reports.md) in Reunite.
 
-### Are AI features covered by the ISO certifications?
-
-Yes.
-Redocly holds ISO 27001, ISO 27017, and ISO 27018 certifications.
-These cover information security management, cloud-specific security controls, and protection of personally identifiable information (PII) in the cloud, respectively.
-The certifications apply to the whole platform as one system.
-AI features are in scope in the same way as for the SOC 2 Type 2 report.
-Download the certificates from the [Compliance page](../reunite/organization/access-compliance-reports.md) in Reunite.
-
 ### Which other compliance resources are available?
 
 The Compliance page in Reunite also provides Redocly's answers to the Consensus Assessments Initiative Questionnaire (CAIQ).
@@ -469,5 +460,5 @@ Short answers to frequent AI governance questionnaire items:
 - **[`mcp` configuration](../config/mcp.md)** - Configure or disable the MCP server for your project
 - **[MCP server overview](../customization/mcp-server/index.md)** - Connect AI tools to the MCP server and restrict access to it
 - **[Project analytics](../reunite/project/analytics.md)** - Review AI assistant conversations, feedback, and usage data
-- **[Compliance reports](../reunite/organization/access-compliance-reports.md)** - Download the SOC 2 Type 2 report, penetration test report, CAIQ answers, and ISO 27001, ISO 27017, and ISO 27018 certificates
+- **[Access compliance reports](../reunite/organization/access-compliance-reports.md)** - Download the SOC 2 Type 2 report, penetration test report, and CAIQ answers
 - **[Security vulnerability fixes](./security-fixes.md)** - How Redocly detects and releases security fixes

@@ -60,7 +60,7 @@ A tab only works as a child of a tabs section.
 
 - id
 - string
-- A unique identifier assigned to the tag.
+- A unique identifier assigned to the component.
   This value is used as the query parameter key for deep linking.
 
 ---
