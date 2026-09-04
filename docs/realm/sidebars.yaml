@@ -65,6 +65,8 @@
           label: OpenAPI code sample
         - page: content/markdoc-tags/openapi-response-sample.md
           label: OpenAPI response sample
+        - page: content/markdoc-tags/project-stats.md
+          label: Project stats
         - page: content/markdoc-tags/replay-openapi.md
           label: Replay OpenAPI
         - page: content/markdoc-tags/table.md

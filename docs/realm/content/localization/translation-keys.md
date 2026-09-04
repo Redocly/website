@@ -377,124 +377,124 @@ This page contains the list of all predefined translation keys used in default U
 ---
 
 - search.ai.backToSearch
-- Button text to return to standard search from the AI assistant
+- Button text to return to standard search from AI search
 - Back to Search
 
 ---
 
 - search.ai.button
-- Button text to open the AI assistant
+- Button text to initiate AI search
 - Search with AI
 
 ---
 
 - search.ai.disclaimer
-- Disclaimer text for AI assistant functionality
-- AI assistant might provide incomplete or incorrect results.
+- Disclaimer text for AI search functionality
+- AI search might provide incomplete or incorrect results.
   Verify important information.
 
 ---
 
 - search.ai.followUpQuestion
-- Placeholder or label for AI assistant follow-up questions
+- Placeholder or label for AI search follow-up questions
 - Ask a follow-up question?
 
 ---
 
 - search.ai.generatingResponse
-- Text displayed while the AI assistant is generating a response
+- Text displayed while AI search is generating a response
 - Generating response...
 
 ---
 
 - search.ai.label
-- General label for the AI assistant feature
+- General label for the AI search feature
 - Ask AI assistant
 
 ---
 
 - search.ai.newConversation
-- Button text to start a new AI assistant conversation
+- Button text to start a new AI search conversation
 - New conversation
 
 ---
 
 - search.ai.placeholder
-- Placeholder text for the AI assistant input
+- Placeholder text for the AI search input
 - Ask a question...
 
 ---
 
 - search.ai.resourcesFound
-- General label indicating resources were found by the AI assistant
+- General label indicating resources were found by AI search
 - resources found
 
 ---
 
 - search.ai.resourcesFound.basedOn
-- Text indicating the basis for AI assistant results
+- Text indicating the basis for AI search results
 - Based on
 
 ---
 
 - search.ai.resourcesFound.resources
-- Label for resources found by the AI assistant
+- Label for resources found by AI search
 - resources
 
 ---
 
 - search.ai.suggestionsTitle
-- Title for AI assistant suggestions section
+- Title for AI search suggestions section
 - Suggestions
 
 ---
 
 - search.ai.thinkingText
-- Text displayed while the AI assistant is processing
+- Text displayed while AI search is processing
 - Thinking...
 
 ---
 
 - search.ai.welcomeText
-- Welcome message displayed in the AI assistant interface
-- Welcome to AI assistant!
+- Welcome message displayed in the AI search interface
+- Welcome to AI search!
   Feel free to ask me anything.
   How can I help you?
 
 ---
 
 - search.ai.back
-- Button text to go back from AI assistant results
+- Button text to go back from AI search results
 - Back
 
 ---
 
 - search.ai.assistant
-- Title text displayed in the AI assistant dialog header
+- Title text displayed in the AI search dialog header
 - Assistant
 
 ---
 
 - search.ai.feedback.title
-- Title for AI assistant feedback dialog
+- Title for AI search feedback dialog
 - What didn't you like about this response?
 
 ---
 
 - search.ai.feedback.detailsPlaceholder
-- Placeholder text for AI assistant feedback details input
+- Placeholder text for AI search feedback details input
 - Add specific details
 
 ---
 
 - search.ai.feedback.thanks
-- Thank you message after submitting AI assistant feedback
+- Thank you message after submitting AI search feedback
 - Thanks for your feedback!
 
 ---
 
 - search.ai.feedback.more
-- Option text to provide additional feedback details in AI assistant feedback form
+- Option text to provide additional feedback details in AI search feedback form
 - More...
 
 ---
@@ -785,30 +785,6 @@ This page contains the list of all predefined translation keys used in default U
 - 404 Not Found page description text
 - The page you were trying to reach doesn't exist or may have been moved.
   You can go back to the previous page, return to the homepage, or use the search bar to find what you're looking for.
-
----
-
-- page.apiNotFound.title
-- API docs 404 Not Found page header text
-- No page at this address
-
----
-
-- page.apiNotFound.description
-- API docs 404 Not Found page description text (the missing page path follows it)
-- There's no page at
-
----
-
-- page.apiNotFound.hint
-- API docs 404 Not Found page hint text
-- It may have been moved or deleted.
-
----
-
-- page.apiNotFound.backButton
-- API docs 404 Not Found page button text (links back to the API docs root)
-- Back to docs
 
 ---
 
@@ -1576,9 +1552,21 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.items
+- Label for items in OpenAPI description
+- Items
+
+---
+
 - openapi.default
 - Label for default values in OpenAPI description
 - Default
+
+---
+
+- openapi.complex
+- Label for complex objects/schemas in OpenAPI description
+- Complex
 
 ---
 
@@ -1666,9 +1654,21 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.description
+- Label for the description in OpenAPI description
+- Description
+
+---
+
 - openapi.badges.deprecated
 - Label for the deprecated badge in OpenAPI description
 - deprecated
+
+---
+
+- openapi.badges.required
+- Label for the required badge in OpenAPI description
+- required
 
 ---
 
@@ -2122,12 +2122,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- openapi.mcp.argumentsExample
-- Label for the prompt arguments example in MCP prompt details
-- Arguments example
-
----
-
 - graphql.queries
 - Label for queries group in GraphQL sidebar
 - Queries
@@ -2344,8 +2338,8 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- graphql.info.metadata.title
-- Label for the metadata section in GraphQL description
+- graphql.metadata
+- Label for metadata section in GraphQL
 - Metadata
 
 ---
@@ -2398,6 +2392,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- graphql.action.show
+- Text for show action in GraphQL
+- Show
+
+---
+
 - graphql.variables
 - Label for the variables section in GraphQL right section
 - Variables
@@ -2440,6 +2440,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- graphql.sample
+- Label for the sample section in GraphQL right section
+- Sample
+
+---
+
 - graphql.referenced
 - Label for the referenced section in GraphQL right section
 - Referenced in
@@ -2449,6 +2455,12 @@ This page contains the list of all predefined translation keys used in default U
 - graphql.content.fragment
 - Label for a fragment in GraphQL content
 - Fragment
+
+---
+
+- button.copy.tooltipText
+- Tooltip for copy button
+- Copy to clipboard
 
 ---
 
