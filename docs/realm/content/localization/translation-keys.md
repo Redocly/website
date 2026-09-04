@@ -788,6 +788,30 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- page.apiNotFound.title
+- API docs 404 Not Found page header text
+- No page at this address
+
+---
+
+- page.apiNotFound.description
+- API docs 404 Not Found page description text (the missing page path follows it)
+- There's no page at
+
+---
+
+- page.apiNotFound.hint
+- API docs 404 Not Found page hint text
+- It may have been moved or deleted.
+
+---
+
+- page.apiNotFound.backButton
+- API docs 404 Not Found page button text (links back to the API docs root)
+- Back to docs
+
+---
+
 - page.mcpNotAllowed.title
 - MCP connection page header text (shown when the MCP endpoint is opened in a browser)
 - Connect to the MCP server
