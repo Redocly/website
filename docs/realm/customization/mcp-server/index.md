@@ -208,32 +208,21 @@ In the Claude Code CLI, ask the AI agent to perform an instruction that uses an 
 
 ### Connect Claude Desktop to the MCP server
 
-The Claude Desktop configuration file only launches stdio commands, so the entry connects to the remote server through the `mcp-remote` bridge.
+Claude Desktop connects to remote MCP servers through custom connectors, so no configuration file or local bridge is needed.
 
 {% numbered-list %}
   {% numbered-item %}
-  In Claude Desktop, open **Settings → Developer → Edit Config**.
+  In Claude Desktop, open **Customize → Connectors**.
   {% /numbered-item %}
   {% numbered-item %}
-  Add this entry to the configuration file:
-
-  ```json
-  {
-    "mcpServers": {
-      "example-mcp": {
-        "command": "npx",
-        "args": ["-y", "mcp-remote", "https://example.com/mcp"]
-      }
-    }
-  }
-  ```
+  Select **Add custom connector** and paste the MCP server URL, for example `https://example.com/mcp`.
   {% /numbered-item %}
   {% numbered-item %}
-  Restart Claude Desktop.
+  Select **Add**.
   {% /numbered-item %}
 {% /numbered-list %}
 
-If the MCP server requires authentication, `mcp-remote` opens a sign‑in page in your browser on the first connection.
+If the MCP server requires authentication, Claude Desktop opens the sign‑in page in your browser when you add the connector.
 
 #### Test the Claude Desktop connection
 

@@ -854,9 +854,9 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- page.mcpNotAllowed.snippets.claudeDesktop.instruction
+- page.mcpNotAllowed.snippets.claudeDesktop.connectorInstruction
 - Claude Desktop setup instruction on the MCP connection page
-- In Claude Desktop, open Settings → Developer → Edit Config, add this to the configuration file, and restart Claude Desktop:
+- In Claude Desktop, open Customize → Connectors, select Add custom connector, and paste this URL:
 
 ---
 
