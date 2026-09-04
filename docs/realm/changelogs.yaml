@@ -1,54 +1,4 @@
 '@redocly/realm':
-  0.137.0-next.8:
-    timestamp: 1788344354000
-    changes:
-      minor: []
-      patch:
-        - Fixed MCP connections for clients on the `2026-07-28` protocol revision.
-        - Reworded the AI assistant's welcome message, disclaimer, and error messages for consistent naming.
-        - Fixed an issue in API docs where deep links did not open the linked field.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.7
-      '@redocly/api-docs': 0.2.0-next.8
-  0.137.0-next.7:
-    timestamp: 1788278295000
-    changes:
-      minor: []
-      patch:
-        - Fixed MCP code mode tool results and descriptions to match declared signatures.
-        - Fixed spacing and the selected language tab indicator in API docs overview panels.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.7
-  0.137.0-next.6:
-    timestamp: 1788250507000
-    changes:
-      minor:
-        - Added an opt-in `/mcp-public` endpoint to serve public content without authentication on RBAC-restricted projects.
-        - Added an `onClose` prop to the custom `ReplayGate` component to close the Try it overlay when users dismiss the sign-in panel.
-      patch:
-        - Fixed an issue where several Redocly extensions were incorrectly rendered as custom vendor extensions when `showExtensions` is enabled.
-        - >-
-          Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button, which was wider than the gap between the icon and the
-          label.
-        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
-        - >-
-          Fixed an issue where SSO login in projects without an `l10n` configuration caused identity providers with strict `ui_locales` validation to
-          reject the login request.
-        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
-        - Fixed an issue where `describe-tools` tool in the MCP server didn't provide a human-readable name.
-        - Updated default border radius for components.
-        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
-        - >-
-          Added translations for the `Connect to MCP server` and page action dropdown toggle labels, using the `page.actions.connectMcp.moreOptions`
-          and `page.actions.moreActions` keys.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.6
-      '@redocly/theme': 0.69.0-next.6
-      '@redocly/realm-asyncapi-sdk': 0.15.0-next.3
-      '@redocly/openapi-docs': 3.25.0-next.6
-      '@redocly/asyncapi-docs': 1.14.0-next.6
-      '@redocly/graphql-docs': 1.14.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.6
   0.137.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -7105,49 +7055,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.137.0-next.8:
-    timestamp: 1788344354000
-    changes:
-      minor: []
-      patch:
-        - Fixed MCP connections for clients on the `2026-07-28` protocol revision.
-        - Reworded the AI assistant's welcome message, disclaimer, and error messages for consistent naming.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.7
-      '@redocly/api-docs': 0.2.0-next.8
-  0.137.0-next.7:
-    timestamp: 1788278295000
-    changes:
-      minor: []
-      patch:
-        - Fixed MCP code mode tool results and descriptions to match declared signatures.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.7
-  0.137.0-next.6:
-    timestamp: 1788250507000
-    changes:
-      minor:
-        - Added an opt-in `/mcp-public` endpoint to serve public content without authentication on RBAC-restricted projects.
-      patch:
-        - >-
-          Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button, which was wider than the gap between the icon and the
-          label.
-        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
-        - >-
-          Fixed an issue where SSO login in projects without an `l10n` configuration caused identity providers with strict `ui_locales` validation to
-          reject the login request.
-        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
-        - Fixed an issue where `describe-tools` tool in the MCP server didn't provide a human-readable name.
-        - Updated default border radius for components.
-        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.6
-      '@redocly/theme': 0.69.0-next.6
-      '@redocly/realm-asyncapi-sdk': 0.15.0-next.3
-      '@redocly/openapi-docs': 3.25.0-next.6
-      '@redocly/asyncapi-docs': 1.14.0-next.6
-      '@redocly/graphql-docs': 1.14.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.6
   0.137.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -13230,52 +13137,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.137.0-next.8:
-    timestamp: 1788344354000
-    changes:
-      minor: []
-      patch:
-        - Fixed MCP connections for clients on the `2026-07-28` protocol revision.
-        - Reworded the AI assistant's welcome message, disclaimer, and error messages for consistent naming.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.7
-      '@redocly/api-docs': 0.2.0-next.8
-  0.137.0-next.7:
-    timestamp: 1788278295000
-    changes:
-      minor: []
-      patch:
-        - Fixed MCP code mode tool results and descriptions to match declared signatures.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.7
-  0.137.0-next.6:
-    timestamp: 1788250507000
-    changes:
-      minor:
-        - Added an opt-in `/mcp-public` endpoint to serve public content without authentication on RBAC-restricted projects.
-      patch:
-        - >-
-          Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button, which was wider than the gap between the icon and the
-          label.
-        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
-        - >-
-          Fixed an issue where SSO login in projects without an `l10n` configuration caused identity providers with strict `ui_locales` validation to
-          reject the login request.
-        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
-        - Fixed an issue where `describe-tools` tool in the MCP server didn't provide a human-readable name.
-        - Updated default border radius for components.
-        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
-        - >-
-          Added translations for the `Connect to MCP server` and page action dropdown toggle labels, using the `page.actions.connectMcp.moreOptions`
-          and `page.actions.moreActions` keys.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.6
-      '@redocly/theme': 0.69.0-next.6
-      '@redocly/realm-asyncapi-sdk': 0.15.0-next.3
-      '@redocly/openapi-docs': 3.25.0-next.6
-      '@redocly/asyncapi-docs': 1.14.0-next.6
-      '@redocly/graphql-docs': 1.14.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.6
   0.137.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -19348,53 +19209,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.137.0-next.8:
-    timestamp: 1788344354000
-    changes:
-      minor: []
-      patch:
-        - Fixed MCP connections for clients on the `2026-07-28` protocol revision.
-        - Reworded the AI assistant's welcome message, disclaimer, and error messages for consistent naming.
-        - Fixed an issue in API docs where deep links did not open the linked field.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.7
-      '@redocly/api-docs': 0.2.0-next.8
-  0.137.0-next.7:
-    timestamp: 1788278295000
-    changes:
-      minor: []
-      patch:
-        - Fixed MCP code mode tool results and descriptions to match declared signatures.
-        - Fixed spacing and the selected language tab indicator in API docs overview panels.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.7
-  0.137.0-next.6:
-    timestamp: 1788250507000
-    changes:
-      minor:
-        - Added an opt-in `/mcp-public` endpoint to serve public content without authentication on RBAC-restricted projects.
-        - Added an `onClose` prop to the custom `ReplayGate` component to close the Try it overlay when users dismiss the sign-in panel.
-      patch:
-        - Fixed an issue where several Redocly extensions were incorrectly rendered as custom vendor extensions when `showExtensions` is enabled.
-        - >-
-          Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button, which was wider than the gap between the icon and the
-          label.
-        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
-        - >-
-          Fixed an issue where SSO login in projects without an `l10n` configuration caused identity providers with strict `ui_locales` validation to
-          reject the login request.
-        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
-        - Fixed an issue where `describe-tools` tool in the MCP server didn't provide a human-readable name.
-        - Updated default border radius for components.
-        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.6
-      '@redocly/theme': 0.69.0-next.6
-      '@redocly/realm-asyncapi-sdk': 0.15.0-next.3
-      '@redocly/openapi-docs': 3.25.0-next.6
-      '@redocly/asyncapi-docs': 1.14.0-next.6
-      '@redocly/graphql-docs': 1.14.0-next.6
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.6
   0.137.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -25558,31 +25372,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.69.0-next.7:
-    timestamp: 1788344354000
-    changes:
-      minor: []
-      patch:
-        - Reworded the AI assistant's welcome message, disclaimer, and error messages for consistent naming.
-    dependencies: {}
-  0.69.0-next.6:
-    timestamp: 1788250507000
-    changes:
-      minor:
-        - Added cross-links between the `/mcp` and `/mcp-public` setup pages and noted that the public page serves anonymous-accessible content only.
-        - Added an `onClose` prop to the custom `ReplayGate` component to close the Try it overlay when users dismiss the sign-in panel.
-      patch:
-        - >-
-          Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button, which was wider than the gap between the icon and the
-          label.
-        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
-        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
-        - Updated default border radius for components.
-        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
-        - >-
-          Added translations for the `Connect to MCP server` and page action dropdown toggle labels, using the `page.actions.connectMcp.moreOptions`
-          and `page.actions.moreActions` keys.
-    dependencies: {}
   0.69.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -28767,15 +28556,6 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
-  3.25.0-next.6:
-    timestamp: 1788250507000
-    changes:
-      minor:
-        - Added an `onClose` prop to the custom `ReplayGate` component to close the Try it overlay when users dismiss the sign-in panel.
-      patch:
-        - Updated default border radius for components.
-    dependencies:
-      '@redocly/replay': 0.28.0-next.6
   3.25.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -32194,30 +31974,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
-  0.56.0:
-    timestamp: 1788448870000
-    changes:
-      minor:
-        - >-
-          Added the `recheck` block to the `redocly.yaml` schema, so projects can configure Recheck next to their API rules and `check-config`
-          validates the block.
-      patch: []
-    dependencies: {}
-  0.55.0:
-    timestamp: 1788266168000
-    changes:
-      minor:
-        - Added types for defining custom MCP tools in `@mcp` folders.
-      patch:
-        - Removed the unused `hideSidebar` and `graphql.sidebar.hide` options from the Redoc configuration schema.
-    dependencies: {}
-  0.54.0:
-    timestamp: 1788201056000
-    changes:
-      minor:
-        - Added the `mcp.docs.publicEndpoint` configuration option that enables a public MCP endpoint for anonymous users.
-      patch: []
-    dependencies: {}
   0.53.1:
     timestamp: 1785414474000
     changes:
@@ -32926,15 +32682,6 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
-  1.14.0-next.6:
-    timestamp: 1788250507000
-    changes:
-      minor: []
-      patch:
-        - Updated default border radius for components.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.6
-      '@redocly/openapi-docs': 3.25.0-next.6
   1.14.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -34342,32 +34089,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/api-docs':
-  0.2.0-next.8:
-    timestamp: 1788344354000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue in API docs where deep links did not open the linked field.
-    dependencies:
-      '@redocly/replay': 0.28.0-next.7
-      '@redocly/theme': 0.69.0-next.7
-  0.2.0-next.7:
-    timestamp: 1788278295000
-    changes:
-      minor: []
-      patch:
-        - Fixed spacing and the selected language tab indicator in API docs overview panels.
-    dependencies: {}
-  0.2.0-next.6:
-    timestamp: 1788250507000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where several Redocly extensions were incorrectly rendered as custom vendor extensions when `showExtensions` is enabled.
-        - Updated default border radius for components.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.6
-      '@redocly/replay': 0.28.0-next.6
   0.2.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -35596,38 +35317,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.20.0-next.8:
-    timestamp: 1788344354000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.137.0-next.8
-      '@redocly/redoc': 0.137.0-next.8
-      '@redocly/redoc-reef': 0.137.0-next.8
-      '@redocly/redoc-revel': 0.137.0-next.8
-      '@redocly/theme': 0.69.0-next.7
-  1.20.0-next.7:
-    timestamp: 1788278295000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.137.0-next.7
-      '@redocly/redoc': 0.137.0-next.7
-      '@redocly/redoc-reef': 0.137.0-next.7
-      '@redocly/redoc-revel': 0.137.0-next.7
-  1.20.0-next.6:
-    timestamp: 1788250507000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.137.0-next.6
-      '@redocly/redoc': 0.137.0-next.6
-      '@redocly/redoc-reef': 0.137.0-next.6
-      '@redocly/redoc-revel': 0.137.0-next.6
-      '@redocly/theme': 0.69.0-next.6
   1.20.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -41311,13 +41000,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.22.0-next.6:
-    timestamp: 1788250507000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/openapi-docs': 3.25.0-next.6
   0.22.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -44465,23 +44147,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.28.0-next.7:
-    timestamp: 1788344354000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue in Replay where a duplicate server variable appeared as an extra row in the **Environments** dialog's **Inputs** table.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.7
-  0.28.0-next.6:
-    timestamp: 1788250507000
-    changes:
-      minor:
-        - Added an `onClose` prop to the custom `ReplayGate` component to close the Try it overlay when users dismiss the sign-in panel.
-      patch:
-        - Updated default border radius for components.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.6
   0.28.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -46901,20 +46566,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.20.0-next.7:
-    timestamp: 1788344354000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.69.0-next.7
-  0.20.0-next.6:
-    timestamp: 1788250507000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.69.0-next.6
   0.20.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -48887,15 +48538,6 @@
     dependencies:
       '@redocly/theme': 0.32.2
 '@redocly/asyncapi-docs':
-  1.14.0-next.6:
-    timestamp: 1788250507000
-    changes:
-      minor: []
-      patch:
-        - Updated default border radius for components.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.6
-      '@redocly/openapi-docs': 3.25.0-next.6
   1.14.0-next.5:
     timestamp: 1787829203000
     changes:
@@ -53129,32 +52771,6 @@ reunite:
         - Added access badges to project cards on the Reunite Projects page indicating `Public` or `Limited` visibility.
       patch:
         - Fixed loading placeholders that remained visible on project cards without production builds on the Reunite Projects page.
-    dependencies: {}
-  v2026-09-01.1:
-    timestamp: 1788266037000
-    changes:
-      minor:
-        - Added access-level badges on project cards in the Reunite Projects page.
-      patch: []
-    dependencies: {}
-  v2026-09-01.4:
-    timestamp: 1788277814000
-    changes:
-      minor:
-        - Added support for connecting your own Git provider as the project source when creating a project.
-      patch:
-        - Fixed an issue where the AI assistant ignored usage instructions from the documentation server.
-        - Improved project creation speed by preloading templates.
-        - Fixed production builds skipping Respect Monitoring jobs triggered by `build` events, restoring API monitoring on the deployment page.
-        - Fixed editor showing `Disconnected` status and warning about lost changes during reconnection to reduce user confusion.
-    dependencies: {}
-  v2026-09-02.3:
-    timestamp: 1788376818000
-    changes:
-      minor: []
-      patch:
-        - Fixed GitHub rate-limit errors and timeouts for remotes and project sources connected through the GitHub App.
-        - Fixed a crash on the add-project page triggered by a missing project context in the Git remote form.
     dependencies: {}
 replay:
   0.0.2:
