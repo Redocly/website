@@ -7,7 +7,7 @@ seo:
   description: "One engine for OpenAPI 3.2, AsyncAPI, GraphQL, and MCP, plus CSS theming and dark mode. A preview before Redoc CE 3 ships."
   image: ./images/redoc-3-announcement-card.png
 author: alex-varchuk
-publishedDate: "2026-08-27"
+publishedDate: "2026-09-04"
 categories:
   - redocly:redoc
   - api-specifications:openapi
