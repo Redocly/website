@@ -21,30 +21,28 @@ Use the `table` tag to add tables with rich content to your documentation.
 
 Example syntax:
 
-{% markdoc-example  %}
-  ```markdown {% process=false %}
-  {% table %}
+```markdoc {% process=false %}
+{% table %}
 
-  - Option
-  - Type
-  - Description
+- Option
+- Type
+- Description
 
-  ---
+---
 
-  - hide
-  - boolean
-  - Disables breadcrumb links in the project when set to `true`.\
-    Default value: `false`
+- hide
+- boolean
+- Disables breadcrumb links in the project when set to `true`.
+  Default: `false`.
 
-  ---
+---
 
-  - prefixItems
-  - [[Breadcrumb object](#)]
-  - A list of breadcrumb links to always be displayed first.
+- prefixItems
+- [[Breadcrumb object](#)]
+- A list of breadcrumb links to always be displayed first.
 
-  {% /table %}
-  ```
-{% /markdoc-example %}
+{% /table %}
+```
 
 ## Attributes
 
@@ -56,23 +54,31 @@ Example syntax:
 
 ---
 
-- width
-- string
-- Sets the width of the table row.
-
----
-
 - align
 - string
 - Sets the text alignment to either `center`, `left`, or `right`.
-  Default value: `left`
+  Default: `left`.
 
 ---
 
 - colspan
 - number
-- Sets the column and row span.
+- Sets the total number of columns the cell spans, including itself, extending to the right.
 
+---
+
+- rowspan
+- number
+- Sets the total number of rows the cell spans, including itself, extending downward.
+
+---
+
+- width
+- string
+- Sets the width of the table column.
+  Allowed values: percentage or pixels.
+  Values without `"%"` are treated as pixels.
+  For example: `"40%"`, `"200px"`, `"350"`.
 
 {% /table %}
 
@@ -80,86 +86,11 @@ Example syntax:
 
 The following examples illustrate using rich text in Markdoc tables:
 
-### Example table with bullets
-
-{% table %}
-
-- Type
-- Description {% width="40%" %}
-- Example
-
----
-
-- Sentiment
-
-- - Includes a question or statement with a thumbs-up and thumbs-down icon.
-  - This is the default feedback form and displays without configuration.
-  - Users can express either a positive or negative reaction to the page.
-
-- {% img
-    src="../images/sentiment-01.png"
-    alt="Screenshot of the sentiment feedback form"
-    withLightbox=true
-  /%}
-
----
-
-- Mood
-
-- - Includes a question or statement with a smiling-face, neutral-face, and frowning-face icon.
-  - Users can express a positive, negative, or neutral review of the page.
-
-- {% img
-    src="../images/mood-01.png"
-    alt="Screenshot of the mood feedback form"
-    withLightbox=true
-  /%}
-
----
-
-- Rating
-
-- - Includes a question or statement with five star icons.
-  - Users can rate a page from one to five stars.
-
-- {% img
-    src="../images/rating-01.png"
-    alt="Screenshot of the rating feedback form"
-    withLightbox=true
-  /%}
-
----
-
-- Scale
-
-- - Includes a question or statement, left-hand side and right-hand side text labels, and buttons for numbers 1 - 10.
-  - Users can rate a page from one to ten.
-
-- {% img
-    src="../images/scale-01.png"
-    alt="Screenshot of the scale feedback form"
-    withLightbox=true
-  /%}
-
----
-
-- Comment
-
-- - Includes a text label and text input.
-  - Users can use the text field to express their thoughts about the page in a free-form way.
-
-- {% img
-    src="../images/comment-01.png"
-    alt="Screenshot of the comment feedback form"
-    withLightbox=true
-  /%}
-
-{% /table %}
-
-**Example table with bullets syntax:**
+### Example table with bullets and set column width
 
 {% markdoc-example %}
-  ```markdown {% process=false %}
+
+  ```markdoc {% process=false %}
   {% table %}
 
   - Type
@@ -234,6 +165,7 @@ The following examples illustrate using rich text in Markdoc tables:
 
   {% /table %}
   ```
+
 {% /markdoc-example %}
 
 ### Example table with code samples
@@ -251,7 +183,8 @@ The following examples illustrate using rich text in Markdoc tables:
 - **REQUIRED.**
   Array of language objects, one per language.
   The samples are displayed in the order that they are listed.
-  Default array value is:
+  Default:
+
   ```javascript
   [
     { lang: curl },
@@ -273,15 +206,17 @@ The following examples illustrate using rich text in Markdoc tables:
 - skipOptionalParameters
 - boolean
 - Excludes optional parameters (cookies, headers, query params) from the generated code samples.
-  Defaults to `false`.
+  Default: `false`.
 
 {% /table %}
 
-**Example table with code sample syntax:**
+**Example table with code samples syntax:**
 
 {% markdoc-example %}
-  ````markdown {% process=false %}
+
+  ````markdoc {% process=false %}
   {% table %}
+
 
   - Option
   - Type
@@ -294,7 +229,8 @@ The following examples illustrate using rich text in Markdoc tables:
   - **REQUIRED.**
     Array of language objects, one per language.
     The samples are displayed in the order that they are listed.
-    Default array value is:
+    Default:
+
     ```javascript
     [
       { lang: curl },
@@ -310,46 +246,155 @@ The following examples illustrate using rich text in Markdoc tables:
       { lang: Payload }
     ]
     ```
+
   ---
 
   - skipOptionalParameters
   - boolean
   - Excludes optional parameters (cookies, headers, query params) from the generated code samples.
-    Defaults to `false`.
+    Default: `false`.
 
   {% /table %}
-  ````
-{% /markdoc-example %}
 
+  ````
+
+{% /markdoc-example %}
 
 ### Example table without headings
 
+A table without headings works best when the content is self-explanatory, such as a glossary of terms and their definitions.
+
 {% table %}
-- Heading 1
-- Heading 2
+
 ---
-- Row 1 Cell 1
-- Row 1 Cell 2
+
+- API key
+- A unique token used to authenticate requests to the API.
+
 ---
-- Row 2 Cell 1
-- Row 2 Cell 2
+
+- Webhook
+- An HTTP callback that Redocly sends to your server when a specific event occurs.
+
 {% /table %}
 
 **Example table without headings syntax:**
 
 {% markdoc-example %}
-  ```markdown {% process=false %}
+
+```markdoc {% process=false %}
   {% table %}
+
   ---
-  - Row 1 Cell 1
-  - Row 1 Cell 2
+
+  - API key
+  - A unique token used to authenticate requests to the API.
+
   ---
-  - Row 2 Cell 1
-  - Row 2 cell 2
+
+  - Webhook
+  - An HTTP callback that Redocly sends to your server when a specific event occurs.
+
   {% /table %}
-  ```
+```
+
 {% /markdoc-example %}
 
+### Example table with column and row span
+
+{% table %}
+
+- Category
+- Parameter
+- Type
+- Description
+
+---
+
+- Pagination {% rowspan=2 %}
+- page
+- integer
+- The page number to retrieve.
+  Default: `1`.
+
+---
+
+- limit
+- integer
+- The maximum number of items to return per page.
+  Default: `20`.
+
+---
+
+- Deprecated parameters {% colspan=4 align="center" %}
+
+---
+
+- Legacy {% rowspan=2 %}
+- offset
+- integer
+- The number of items to skip before starting to collect results.
+  Superseded by `page`.
+
+---
+
+- cursor
+- string
+- An opaque pointer to the next page of results.
+  Superseded by `limit`.
+
+{% /table %}
+
+**Example table with column and row span syntax:**
+
+{% markdoc-example %}
+
+  ```markdoc {% process=false %}
+  {% table %}
+
+  - Category
+  - Parameter
+  - Type
+  - Description
+
+  ---
+
+  - Pagination {% rowspan=2 %}
+  - page
+  - integer
+  - The page number to retrieve.
+    Default: `1`.
+
+  ---
+
+  - limit
+  - integer
+  - The maximum number of items to return per page.
+    Default: `20`.
+
+  ---
+
+  - Deprecated parameters {% colspan=4 align="center" %}
+
+  ---
+
+  - Legacy {% rowspan=2 %}
+  - offset
+  - integer
+  - The number of items to skip before starting to collect results.
+    Superseded by `page`.
+
+  ---
+
+  - cursor
+  - string
+  - An opaque pointer to the next page of results.
+    Superseded by `limit`.
+
+  {% /table %}
+  ```
+
+{% /markdoc-example %}
 
 ## Best practices
 
@@ -371,6 +416,6 @@ Introduce tables with an explanatory sentence that describes the significance of
 
 ## Resources
 
-- **[Customize table styles](../../branding/customize-tables.md)** - Learn to style tables with CSS variables, custom classes, and mode-specific styling for enhanced visual presentation
-- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
-- **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags
+- **[Customize table styles](../../branding/customize-tables.md)** - Style tables with CSS variables, custom classes, and mode-specific styling for enhanced visual presentation
+- **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Use Markdoc in your documentation
+- **[Markdoc tags](./index.md)** - The full list of supported Markdoc tags

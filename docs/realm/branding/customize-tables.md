@@ -29,6 +29,7 @@ Markdown and Markdoc tables convert to HTML when displayed.
 Understanding HTML table structure helps you write more precise CSS selectors for targeted styling.
 
 <details>
+
   <summary>See HTML table syntax</summary>
 
   ```html {% title="Example HTML table" %}
@@ -36,7 +37,7 @@ Understanding HTML table structure helps you write more precise CSS selectors fo
       <thead>
         <tr>
           <th>Heading 1</th>
-          <th>Heading 1</th>
+          <th>Heading 2</th>
         </tr>
       </thead>
       <tbody>
@@ -45,12 +46,13 @@ Understanding HTML table structure helps you write more precise CSS selectors fo
           <td>Cell 2</td>
         </tr>
         <tr>
+          <td>Cell 3</td>
           <td>Cell 4</td>
-          <td>Cell 5</td>
         </tr>
       </tbody>
     </table>
   ```
+
 </details>
 
 ## Add global table styles
@@ -95,27 +97,37 @@ Use this attribute to style specific columns or tables.
 This example sets the width and background color of the "Favorite veggie" column:
 
 ```css {% title="@theme/styles.css" %}
-:root th[data-label="Favorite vegetable"] {
+:root th[data-label="Favorite veggie"] {
   width: 80%;
   background-color: lightyellow;
 }
 ```
 
 {% table %}
+
 - Person
-- Favorite vegetable
+- Favorite veggie
+
 ---
+
 - Taylor
 - Brussel sprouts
+
 ---
+
 - Annabelle
 - Asparagus
+
 ---
+
 - Oliver
 - Bell peppers
+
 ---
+
 - Daisy
 - Carrots
+
 {% /table %}
 
 ### Combine CSS selectors
@@ -143,20 +155,30 @@ Create more advanced styles by combining `data-label` with other CSS selectors:
 ```
 
 {% table %}
+
 - Person
 - Favorite animal
+
 ---
+
 - Oliver
 - Penguins
+
 ---
+
 - Daisy
 - Rabbits
+
 ---
+
 - Taylor
 - Snow leopard
+
 ---
+
 - Annabelle
 - Ostrich
+
 {% /table %}
 
 ## Style Markdoc tables
@@ -166,32 +188,14 @@ Attributes provide quick layout control while classes offer complete styling fle
 
 ### Use built-in attributes
 
-Shape your table layout with three built-in attributes - no CSS required:
-- `width` - Controls column width
-- `align` - Sets text alignment
-- `colspan` - Spans cells across columns
+Shape your table layout with these built-in attributes - no CSS required:
 
-Example of a table customized with attributes:
+- `width` - controls column width
+- `align` - sets text horizontal alignment
+- `colspan` - spans cells across columns
+- `rowspan` - spans cells across rows
 
-{% markdoc-example %}
-  ```none {% process=false %}
-  {% table %}
-    - Person
-    - Favorite food {% width="80%" %}
-  ---
-    - Pizza {% colspan=2 align="center" %}
-  ---
-    - Annabelle
-    - Bacon
-  ---
-    - Oliver
-    - Popsicle
-  ---
-    - Daisy {% align="right" %}
-    - Dog treats
-  {% /table %}
-  ```
-{% /markdoc-example %}
+**Example table with attributes:**
 
 {% table %}
 
@@ -219,6 +223,40 @@ Example of a table customized with attributes:
 
 {% /table %}
 
+**Example table customized with attributes syntax:**
+
+{% markdoc-example %}
+
+  ```markdoc {% process=false %}
+  {% table %}
+
+    - Person
+    - Favorite food {% width="80%" %}
+
+  ---
+
+    - Pizza {% colspan=2 align="center" %}
+
+  ---
+
+    - Annabelle
+    - Bacon
+
+  ---
+
+    - Oliver
+    - Popsicle
+
+  ---
+
+    - Daisy {% align="right" %}
+    - Dog treats
+
+  {% /table %}
+  ```
+
+{% /markdoc-example %}
+
 ### Create custom classes
 
 For advanced styling, create CSS classes and add them to your Markdoc table tag:
@@ -244,35 +282,47 @@ For advanced styling, create CSS classes and add them to your Markdoc table tag:
 ```
 
 {% markdoc-example %}
-  ```markdown {% process=false %}
+
+  ```markdoc {% process=false %}
   {% table .striped-table-rows .md %}
+
     - Person
     - Favorite activity
+
   ---
+
     - Taylor
     - Snowboarding
+
   ---
+
     - Annabelle
     - Roblox
+
   ---
+
     - Oliver
     - Swings
+
   ---
+
     - Daisy
     - Dog park
+
   {% /table %}
   ```
+
 {% /markdoc-example %}
 
 {% admonition type="warning" name="Warn" %}
   Include the `.md` class on the tag to inherit default theme styling.
 {% /admonition %}
 
-
 {% table .striped-table-rows .md %}
 
 - Person
 - Favorite activity
+
 ---
 
 - Taylor
@@ -325,60 +375,50 @@ Add a CSS class directly to a row in your Markdoc table, then target that class 
 
 Here's how to apply these classes to specific rows:
 
-{% markdoc-example %}
-  ```markdown {% process=false %}
+{% markdoc-example renderDemo=true codeLabel="Syntax" resultLabel="Rendered table" %}
+
+  ```markdoc {% process=false %}
   {% table .md %}
+
     - Task
     - Clicks required
     - Notes
+
   ---
+
     - Change your logo {% .highclick %}
     - 10
     - Only found details on Getting started page
+
   ---
+
     - Change the color of a heading
     - 2
     -
+
   ---
+
     - Revert changes {% .medclick %}
     - 8
     - Could be highlighted more in the sidebar
+
   ---
+
     - Add admonition
     - 3
     -
+
   {% /table %}
   ```
-{% /markdoc-example %}
 
-{% table .md %}
-- Task
-- Clicks required
-- Notes
----
-- Change your logo {% .highclick %}
-- 10
-- Only found details on Getting started page
----
-- Change the color of a heading
-- 2
--
----
-- Revert changes {% .medclick %}
-- 8
-- Could be highlighted more in the sidebar
----
-- Add admonition
-- 3
--
-{% /table %}
+{% /markdoc-example %}
 
 This example shows how to highlight high-click tasks in yellow and medium-click tasks in light yellow, with appropriate dark mode alternatives.
 
 ## Resources
 
-- **[Custom styles guide](./customize-styles.md)** - Learn to customize your project's appearance using CSS variables and custom stylesheets for comprehensive styling control
+- **[Custom styles guide](./customize-styles.md)** - Customize your project's appearance using CSS variables and custom stylesheets for comprehensive styling control
 - **[Color mode customization](./customize-color-modes.md)** - Apply different table styling for light and dark modes with mode-specific color schemes and CSS rules
-- **[Branding overview](./index.md)** - Explore all available branding and customization approaches from basic configuration to advanced component styling
-- **[Color mode concepts](./color-mode.md)** - Understand how the color mode feature works and its CSS variable-based implementation for table styling
+- **[Branding overview](./index.md)** - Available branding and customization approaches from basic configuration to advanced component styling
+- **[Color mode concepts](./color-mode.md)** - Color mode feature and its CSS variable-based implementation for table styling
 - **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of table-specific CSS variables and global styling variables for advanced customization
