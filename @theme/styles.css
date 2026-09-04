@@ -626,3 +626,22 @@ tr td:first-child code {
         display: inline;
     }
 }
+
+/* Rounded corners on the Redoc 3 blog post screenshots. */
+[data-component-name="Markdown/Markdown"] img[src*="redoc-3-theme"] {
+    border-radius: 12px;
+}
+
+
+
+div[class*="PostInfo__"]:has(> img[src*="redoc-3-announcement-card"]) {
+    height: auto;
+    min-height: 0;
+    background-color: transparent;
+}
+
+div[class*="PostInfo__"]:has(> img[src*="redoc-3-announcement-card"]) > img {
+    max-height: none;
+    width: 100%;
+    height: auto;
+}
