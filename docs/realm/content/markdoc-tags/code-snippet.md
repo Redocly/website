@@ -32,7 +32,8 @@ Example element:
 Example syntax:
 
 {% markdoc-example %}
-  ```{% process=false %}
+
+  ```markdoc {% process=false %}
   {% code-snippet
     file="./code-examples/museum-config.yaml"
     language="yaml"
@@ -41,6 +42,7 @@ Example syntax:
     title="museum-redocly.yaml"
   /%}
   ```
+
 {% /markdoc-example %}
 
 ## Attributes
@@ -63,7 +65,7 @@ Example syntax:
 - number | string
 - Use to specify the **starting point** of your code snippet and _include_ it in the rendered element.
   Works with either a line number or a specific string contained in the starting line.
-  Cannot be used with `after`.
+  Mutually exclusive with `after`.
 
 ---
 
@@ -71,21 +73,21 @@ Example syntax:
 - number | string
 - Use to specify the **ending point** of your code snippet and _include_ it in the rendered element.
   Works with either a line number or a specific string contained in the starting line.
-  Cannot be used with `before`.
+  Mutually exclusive with `before`.
 
 ---
 
 - after
 - number | string
 - Similar to `from` but _excludes the starting point_ from the rendered element.
-  Cannot be used with `from`.
+  Mutually exclusive with `from`.
 
 ---
 
 - before
 - number | string
 - Similar to `to` but _excludes the ending point_ from the rendered element.
-  Cannot be used with `to`.
+  Mutually exclusive with `to`.
 
 ---
 
@@ -93,14 +95,14 @@ Example syntax:
 - string
 - Use to add explanatory information at the start of the code snippet.
   Prepend with `//` to style as a comment.
-  We recommend including a new line (`\n`) at the end of the prefix.
+  Redocly recommends including a new line (`\n`) at the end of the prefix.
 
 ---
 
 - language
 - string
 - Sets the syntax highlighting rules for the code sample used.
-  Syntax highlighting is available for all languages listed on the [supported languages page](https://prismjs.com/#supported-languages).
+  Syntax highlighting is available for all [supported languages](#supported-languages).
 
 ---
 
@@ -111,12 +113,88 @@ Example syntax:
 
 ---
 
-- `wrap`
+- wrap
 - boolean
 - Wraps long lines in the code snippet to avoid or reduce horizontal scroll.
-  Default value is `false`.
+  Default: `false`.
 
 {% /table %}
+
+## Supported languages
+
+The following table lists all supported languages and their aliases.
+
+{% table %}
+
+---
+
+- `bash`, `shell`, `curl`
+- `c`, `c++`, `cpp`
+- `coffee`, `coffeescript`
+
+---
+
+- `csharp`, `c#`, `cs`, `c#+newtonsoft`
+- `css`
+- `go`
+
+---
+
+- `graphql`, `gql`
+- `html`
+- `http`
+
+---
+
+- `java`, `java8+apache`
+- `javascript`, `js`, `cjs`, `mjs`, `node.js`
+- `json`
+
+---
+
+- `json-seq`, `application/json-seq`
+- `jsonl`
+- `kotlin`, `kt`, `kts`
+
+---
+
+- `lua`
+- `markdoc`
+- `markdown`, `md`
+
+---
+
+- `multipart-mixed`, `multipart/mixed`
+- `objective-c`, `objectivec`, `objc`
+- `perl`
+
+---
+
+- `php`
+- `python`, `py`
+- `ruby`, `rb`
+
+---
+
+- `scala`
+- `sql`
+- `swift`
+
+---
+
+- `tsx`, `jsx`
+- `typescript`, `ts`, `cts`, `mts`
+- `vim`, `viml`
+
+---
+
+- `xml`
+- `yaml`, `yml`
+
+{% /table %}
+
+Use `text` for plain, unformatted text.
+Unsupported language names also fall back to `text`.
 
 ## Examples
 
@@ -136,7 +214,8 @@ Example element:
 Example syntax:
 
 {% markdoc-example %}
-  ```{% process=false %}
+
+  ```markdoc {% process=false %}
   {% code-snippet
     file="./code-examples/museum-config.yaml"
     language="yaml"
@@ -146,6 +225,7 @@ Example syntax:
     prefix="// Please reserve navbar entries for important use cases \n"
   /%}
   ```
+
 {% /markdoc-example %}
 
 ### Use strings as selectors
@@ -163,7 +243,8 @@ Example element:
 Example syntax:
 
 {% markdoc-example %}
-  ```{% process=false %}
+
+  ```markdoc {% process=false %}
   {% code-snippet
     file="./code-examples/museum-config.yaml"
     language="yaml"
@@ -172,6 +253,7 @@ Example syntax:
     title="museum-redocly.yaml"
   /%}
   ```
+
 {% /markdoc-example %}
 
 ### Compare selection attributes
@@ -183,13 +265,15 @@ The examples below use the same source file with different selection attributes.
 **To / from example syntax**
 
 {% markdoc-example %}
-  ```{% process=false %}
+
+  ```markdoc {% process=false %}
   {% code-snippet
     file="./code-examples/useTabs.ts"
     from=12
     to=14
   /%}
   ```
+
 {% /markdoc-example %}
 
 **To / from example element**
@@ -211,13 +295,15 @@ The examples below use the same source file with different selection attributes.
 **After / before example element**
 
 {% markdoc-example %}
-  ```{% process=false %}
+
+  ```markdoc {% process=false %}
   {% code-snippet
     file="./code-examples/useTabs.ts"
     after=12
     before=14
   /%}
   ```
+
 {% /markdoc-example %}
 
 ### Add file names to code snippets

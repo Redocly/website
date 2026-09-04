@@ -7,26 +7,18 @@ products:
 plans:
   - Enterprise+
 ---
-# Compliance reports
+# Access compliance reports
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-From the **Compliance** page in Reunite, view and download Redocly's compliance and security reports.
-The available reports are SOC 2 Type 2, Penetration test, and CAIQ.
-Certifications include ISO 27001, ISO 27017, and ISO 27018.
+From the **Compliance** page in Reunite, view Redocly's SOC 2, Type 2 and Penetration test reports and results on the Consensus Assessments Initiative Questionnaire (CAIQ).
 
-The CAIQ (Consensus Assessments Initiative Questionnaire) is a survey provided by the Cloud Security Alliance (CSA).
+The CAIQ is a survey provided by the Cloud Security Alliance (CSA).
 Cloud consumers and auditors use it to assess the security capabilities of a cloud service provider.
-
-The ISO certifications cover the following areas:
-
-- ISO 27001: information security management
-- ISO 27017: cloud-specific security controls
-- ISO 27018: protection of personally identifiable information (PII) in the cloud
 
 ## Download compliance reports
 
-Download Redocly's security and compliance reports if you need a copy for your security or legal team.
+Download Redocly's SOC 2, Type 2 and Penetration test reports if you need a copy for your security team.
 
 To download the security reports:
 

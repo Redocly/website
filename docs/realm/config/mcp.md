@@ -72,20 +72,6 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 - List of glob patterns, matched against file paths, for content to exclude from the MCP server.
   Default: `[]`.
 
----
-
-- publicEndpoint
-- boolean
-- Serve an additional MCP endpoint at `/mcp-public` that requires no authentication.
-  The endpoint ignores any provided credentials and exposes only content available to the `anonymous` team.
-  It never grants access to protected content.
-  Useful when RBAC restricts some content but public content must stay reachable for AI tools without a login.
-  Before you enable it, review which content your RBAC rules grant to the `anonymous` team: that content becomes reachable without a login.
-  When the project has no protected content, `/mcp` already serves anonymous users and the `/mcp-public` endpoint is not registered.
-  The [`rbac.features.mcp`](./access/rbac.md#features-configuration) configuration also applies to this endpoint: it must grant access to the `anonymous` team, or the `/mcp-public` endpoint is not registered.
-  With [`requiresLogin`](./access/requires-login.md) and no `rbac` rules, no content is public, so the `/mcp-public` endpoint is not registered.
-  Default: `false`.
-
 {% /table %}
 
 ## Access control
@@ -128,27 +114,6 @@ mcp:
     name: My Custom Docs MCP Server
 ```
 
-### Public endpoint for anonymous users
-
-Serve public content to unauthenticated MCP clients on a project with restricted content:
-
-```yaml
-mcp:
-  docs:
-    publicEndpoint: true
-```
-
-{% admonition type="warning" %}
-Everything your RBAC rules grant to the `anonymous` team becomes reachable over `/mcp-public` without a login.
-Review these rules before you enable the endpoint.
-{% /admonition %}
-
-Authenticated users keep connecting to `/mcp`.
-Anonymous users and unauthenticated integrations connect to `/mcp-public` and receive only the content that is available to the `anonymous` team.
-A browser visit to `/mcp-public` displays the setup page with connection snippets for the public endpoint.
-The two setup pages link to each other.
-The `401` response from the restricted `/mcp` endpoint mentions the public URL.
-
 ### Ignore specific patterns
 
 Ignore files and file path patterns in the MCP server:
@@ -173,7 +138,6 @@ mcp:
   docs:
     hide: false
     name: Docs MCP server
-    publicEndpoint: false
 ```
 
 ## Resources

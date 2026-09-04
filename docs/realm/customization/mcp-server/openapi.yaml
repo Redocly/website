@@ -14,8 +14,6 @@ info:
 
     **Base URL:** The Docs MCP server is available at `/mcp` on your project host. If your project is deployed under a path prefix, prepend that prefix to `/mcp`.
 
-    **Public endpoint:** Projects that enable [`mcp.docs.publicEndpoint`](../../config/mcp.md) also serve `/mcp-public`. That endpoint requires no login and serves only the content that RBAC grants to the `anonymous` team.
-
     {% admonition type="info" %}
     For setup and configuration guidance, see [Model Context Protocol server](./index.md) and [MCP configuration reference](../../config/mcp.md).
     {% /admonition %}
@@ -28,9 +26,6 @@ info:
     This requirement ensures that AI Agents can only access APIs and operations the authenticated user has permission to view.
 
     The `whoami` tool is only available when authentication handling is enabled for the Docs MCP server.
-
-    The `/mcp-public` endpoint never challenges for authentication.
-    It ignores any credentials the client sends and serves only the content available to the `anonymous` team.
 
     ### Token validation
 
@@ -54,18 +49,9 @@ servers:
       projectHost:
         default: redocly.com
         description: Project host. Prepend your path prefix if applicable.
-  - url: https://{projectHost}/mcp-public
-    description: |
-      Public Docs MCP endpoint, served only when `mcp.docs.publicEndpoint` is enabled.
-      It requires no authentication and serves only content available to the `anonymous` team.
-    variables:
-      projectHost:
-        default: redocly.com
-        description: Project host. Prepend your path prefix if applicable.
 
 security:
   - OAuth2: []
-  - {}
 
 tags:
   - name: Authentication
@@ -83,14 +69,6 @@ x-mcp:
   servers:
     - url: https://{projectHost}/mcp
       description: Project Docs MCP endpoint.
-      variables:
-        projectHost:
-          default: redocly.com
-          description: Project host. Prepend your path prefix if applicable.
-    - url: https://{projectHost}/mcp-public
-      description: |
-        Public Docs MCP endpoint, served only when `mcp.docs.publicEndpoint` is enabled.
-        It requires no authentication and serves only content available to the `anonymous` team.
       variables:
         projectHost:
           default: redocly.com
