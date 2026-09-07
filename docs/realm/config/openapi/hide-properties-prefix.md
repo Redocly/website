@@ -9,8 +9,7 @@ plans:
 ---
 # `hidePropertiesPrefix`
 
-In a schema, nested properties display with their parent names as a prefix, for example `parent.child`.
-The `hidePropertiesPrefix` option removes that prefix, so each nested property shows its own name only.
+In complex data structures or object schemas where properties are nested within parent objects the `hidePropertiesPrefix` option enables the hiding of parent names for nested properties within the documentation.
 
 ## Options
 
@@ -24,14 +23,14 @@ The `hidePropertiesPrefix` option removes that prefix, so each nested property s
 
 - hidePropertiesPrefix
 - boolean
-- Hide the parent name prefix on nested schema properties.
-  Default: `false`.
+- Shows or hides parent name for the nested properties inside schema.
+  Defaults to `false`.
 
 {% /table %}
 
 ## Examples
 
-The following example hides the parent names:
+The following example hides the parent object names for nested properties.
 
 ```yaml {% title="redocly.yaml" %}
 openapi:
@@ -40,7 +39,7 @@ openapi:
 
 ## Resources
 
-- **[OpenAPI configuration](./index.md)** - All the options you can set under `openapi`
-- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - The official standard for API descriptions
-- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - A visual map of every part of an OpenAPI description
-- **[Configuration options](../index.md)** - All the other options for your project
+- **[OpenAPI configuration](./index.md)** - Complete guide to OpenAPI configuration options for customizing API reference documentation
+- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - Official OpenAPI Specification documentation for understanding API description standards
+- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - Visual guide to OpenAPI specification structure and property prefix customization
+- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization

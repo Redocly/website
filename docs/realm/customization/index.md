@@ -46,7 +46,7 @@ Enable source maps for easier debugging of custom components and functions.
 {% cards columns=2 %}
 
 {% card title="Custom Markdoc tags" icon="tags" to="./build-markdoc-tags.md" %}
-Build reusable Markdoc tags to extend your content authoring capabilities.
+Build reusable Markdoc components to extend your content authoring capabilities.
 {% /card %}
 
 {% card title="Markdoc variables" icon="square-root-variable" to="./markdoc-variables.md" %}

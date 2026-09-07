@@ -42,15 +42,8 @@
       label: apiFunctions
     - page: ./apis.md
       label: apis
-    - group: asyncapi
-      page: ./asyncapi/index.md
-      items:
-        - page: ./asyncapi/download-urls.md
-          label: downloadUrls
-        - page: ./asyncapi/json-samples-depth.md
-          label: jsonSamplesDepth
-        - page: ./asyncapi/layout.md
-          label: layout
+    - page: ./asyncapi.md
+      label: asyncapi
     - page: ./banner.md
       label: banner
     - page: ./breadcrumbs.md

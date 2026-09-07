@@ -22,8 +22,7 @@ You can also use search or expand each folder to see which components could be e
 
 ## Eject a component
 
-First determine that you need to eject a component and which component to eject.
-Then you can eject components in the Reunite editor.
+Once you have determined you need to eject a component and you have determined which component to eject, you can eject components in the Reunite editor.
 
 To eject a component in the Reunite editor:
 
@@ -51,8 +50,7 @@ To update an ejected component:
 
 ## Delete ejected component
 
-You might change your mind and no longer want an ejected component in your project.
-Delete the component and it is replaced with the default component.
+If you change your mind and no longer want an ejected component in your project, you can delete the component and it is replaced with the default component.
 
 To revert the ejected component and use the default one, complete the following steps:
 

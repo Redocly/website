@@ -12,8 +12,7 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-You might have a page in your project that only certain teams can access.
-You can also limit access to any links to that page in navigation menus.
+If you have a page in your project that you only want certain teams to be able to access, you can also limit access to any links to that page in navigation menus.
 Navigation menus include links as items that can be part of groups.
 Group RBAC configurations apply to all items listed in the group, whereas individual link RBAC configurations only apply to that specific item.
 To set permissions for links or groups in navigation menus, you must add the `rbac` configuration option for them to either:

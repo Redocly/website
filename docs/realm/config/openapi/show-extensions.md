@@ -29,7 +29,7 @@ Custom extensions are rendered only in the request details section and in indivi
 - showExtensions
 - [string] | boolean
 - Specify which specification extensions ('x-' fields) to display, or use `true` to show them all.
-  Default: `false`.
+  Default value: `false`.
 
 {% /table %}
 

@@ -11,7 +11,7 @@ plans:
 
 The `maxDisplayedEnumValues` displays only the specified number of enum values.
 The remaining values are hidden in an expandable area.
-By default, 10 values are displayed which is ideal for usability.
+By default 10 values are displayed which is ideal for usability.
 
 ## Options
 
@@ -26,7 +26,7 @@ By default, 10 values are displayed which is ideal for usability.
 - maxDisplayedEnumValues
 - number
 - Sets the number of enum values to display.
-  Default: `10`.
+  Default value: `10`.
 
 {% /table %}
 

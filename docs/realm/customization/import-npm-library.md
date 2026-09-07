@@ -39,13 +39,12 @@ If you are working in Reunite, you can install the library by adding it to the `
 }
 ```
 
-Follow the steps in [Run a specific product version in Reunite](../get-started/upgrade-realm-version.md#run-a-specific-product-version-in-reunite)
+Follow the steps in [Run a specific version in Reunite](../get-started/upgrade-realm-version.md#run-a-specific-version-in-reunite)
 to create a `package.json` file if you don't have one already.
 
 ## Configure private registries
 
-You might need to install libraries from private NPM registries (such as Artifactory, AWS CodeArtifact, or GitHub Packages).
-Configure registry access using either `.npmrc` or `bunfig.toml` files.
+If you need to install libraries from private NPM registries (such as Artifactory, AWS CodeArtifact, or GitHub Packages), you can configure registry access using either `.npmrc` or `bunfig.toml` files.
 
 ### Use `.npmrc`
 
@@ -161,7 +160,7 @@ export function ReactIcon({ name, size = 24, color = 'currentColor' }) {
 }
 ```
 
-You can use the icon tag in your Markdoc files, as in the following example:
+You can use the icon component in your Markdoc files, as in the following example:
 
 ```markdoc {% process=false %}
 {% reactIcon name="heart" color="red" /%}
@@ -171,6 +170,6 @@ You can use the icon tag in your Markdoc files, as in the following example:
 ## Resources
 
 - **[Environment variables](../reunite/project/env-variables.md)** - Configure secure credentials for private registry access using environment variables
-- **[Build custom Markdoc tags](./build-markdoc-tags.md)** - Create reusable Markdoc tags using imported NPM libraries for enhanced functionality
-- **[Built-in icon tag](../content/markdoc-tags/icon.md)** - Use Redocly's built-in icon system and learn patterns for extending it with external icon libraries
+- **[Build custom Markdoc tags](./build-markdoc-tags.md)** - Create reusable Markdoc components using imported NPM libraries for enhanced functionality
+- **[Built-in icon components](../content/markdoc-tags/icon.md)** - Use Redocly's built-in icon system and learn patterns for extending it with external icon libraries
 - **[Customization](./index.md)** - Discover customizable components and customization options for your project

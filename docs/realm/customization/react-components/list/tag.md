@@ -36,7 +36,7 @@ import { Tag } from '@redocly/theme/components/Tag/Tag';
 ---
 
 - `color`
-- `StatusColor` \| `Color` \| string
+- `StatusColor` \| `Color` \| `string`
 - Color scheme or custom color value.
   Accepts predefined color values or any valid CSS color string.
 
@@ -55,53 +55,53 @@ import { Tag } from '@redocly/theme/components/Tag/Tag';
 ---
 
 - `variant`
-- enum ('outline' \| 'filled')
+- enum (`'outline'` \| `'filled'`)
 - Visual style variant.
-  Default: `'filled'`.
+  Defaults to `'filled'`.
 
 ---
 
 - `size`
-- string
+- `string`
 - Size variant for the tag.
   Available values: `'small'`, `'medium'`, `'large'`.
-  Default: standard size.
+  Defaults to standard size.
   See [CSS variables documentation](../../../branding/css-variables/component.md#tags) for theming details.
 
 ---
 
 - `closable`
-- boolean
+- `boolean`
 - Whether to show a close button.
-  Default: `false`.
+  Defaults to `false`.
 
 ---
 
 - `active`
-- boolean
+- `boolean`
 - Whether the tag is in active state.
-  Default: `false`.
+  Defaults to `false`.
 
 ---
 
 - `borderless`
-- boolean
+- `boolean`
 - Whether to hide the border.
-  Default: `false`.
+  Defaults to `false`.
 
 ---
 
 - `withStatusDot`
-- boolean
+- `boolean`
 - Whether to show a status dot.
-  Default: `false`.
+  Defaults to `false`.
 
 ---
 
 - `statusDotColor`
-- string
+- `string`
 - Color of the status dot.
-  Default: `'var(--tag-status-dot-color-default)'`.
+  Defaults to `'var(--tag-status-dot-color-default)'`.
 
 ---
 
@@ -112,14 +112,14 @@ import { Tag } from '@redocly/theme/components/Tag/Tag';
 ---
 
 - `maxLength`
-- number
+- `number`
 - Maximum character length before truncation.
   Text longer than this value will be truncated with ellipsis.
 
 ---
 
 - `textTransform`
-- enum ('uppercase' \| 'lowercase' \| 'capitalize' \| 'none')
+- enum (`'uppercase'` \| `'lowercase'` \| `'capitalize'` \| `'none'`)
 - Text transformation style.
 
 ---
@@ -144,21 +144,21 @@ import { Tag } from '@redocly/theme/components/Tag/Tag';
 ---
 
 - `selectable`
-- boolean
+- `boolean`
 - Makes selectable (interactive).
   Enables hover and focus styles for better user interaction.
-  Default: `false`.
+  Defaults to `false`.
 
 ---
 
 - `tabIndex`
-- number
+- `number`
 - Tab order for keyboard navigation.
 
 ---
 
 - `className`
-- string
+- `string`
 - Additional CSS classes to apply to the tag.
 
 ---

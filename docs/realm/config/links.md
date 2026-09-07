@@ -102,7 +102,7 @@ The `@theme/styles.css` file is imported automatically.
 - string
 - Adds the `referrerpolicy` attribute with corresponding value to the script tag.
   Possible values: `no-referrer`, `no-referrer-when-downgrade`, `origin`, `origin-when-cross-origin`, `same-origin`, `strict-origin`, `strict-origin-when-cross-origin`, `unsafe-url`, `''`.
-  Default: `strict-origin-when-cross-origin` (with fallback to `''`).
+  Default value: `strict-origin-when-cross-origin` (with fallback to `''`).
 
 ---
 

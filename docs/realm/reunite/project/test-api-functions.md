@@ -47,8 +47,7 @@ Replay automatically opens the request that matches the API function file you se
 
 If you do not have an API function yet, see [Create API functions](../../customization/api-functions/create-api-functions.md).
 
-Replay might not open the request you expect.
-Check that your file is set up as an API function and follows your project routing rules.
+If Replay does not open the request you expect, check that your file is set up as an API function and follows your project routing rules.
 
 To learn more about file naming, routing rules, custom API function folders, and request handling, see the [API functions reference](../../customization/api-functions/api-functions-reference.md).
 

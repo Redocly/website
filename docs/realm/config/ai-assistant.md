@@ -13,12 +13,11 @@ description: Customize the AI assistant functionality in your project.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-By default, users can access the AI assistant with the floating **Ask AI** button in the bottom-right corner.
-Users can also open it through the **Search** modal in the top navigation bar.
+By default, users can access the AI assistant by using the floating **Ask AI** button in the bottom-right corner or through the **Search** modal in the top navigation bar.
 
 Use the `aiAssistant` configuration to:
 
-- hide the AI assistant
+- hide the AI search function
 - add suggested pages to the search modal
 - set the built-in prompt text
 - add an **Ask AI** button
@@ -27,13 +26,13 @@ Use the `aiAssistant` configuration to:
 
 ## Supported content
 
-The AI assistant indexes and searches across all content in your project:
+AI Search indexes and searches across all content in your project:
 
 - **API descriptions** - OpenAPI, GraphQL, AsyncAPI, and SOAP description files
 - **Documentation pages** - Markdown files
 - **API versions** - All versions of APIs are indexed and filtered based on the active version
 
-When you have multiple versions of an API, the AI assistant shows results from the active version by default.
+When you have multiple versions of an API, AI Search shows results from the active version by default.
 Results also include default versions from other APIs and non-versioned content.
 
 ## Options
@@ -48,22 +47,22 @@ Results also include default versions from other APIs and non-versioned content.
 
 - hide
 - boolean
-- Hides the AI assistant when set to `true`.
-  Default: `false`.
+- Hides the AI search button when set to `true`.
+  Default: `true`.
 
 ---
 
 - prompt
 - string
-- Built-in instructions for the AI assistant.
-  Applied to all AI assistant answers in the project and not visible to users.
+- Built-in instructions for AI search.
+  Applied to all AI searches in the project and not visible to users.
   Use to set greeting, tone, or other answer conditions.
 
 ---
 
 - suggestions
 - [string]
-- List of suggestions displayed in the AI assistant interface.
+- List of suggestions displayed in the AI search interface.
 
 ---
 
@@ -108,23 +107,21 @@ Results also include default versions from other APIs and non-versioned content.
 
 ## Usage limits
 
-The AI assistant is available on Enterprise and Enterprise Plus plans with a monthly limit of 3500 questions per organization.
+AI Search is available on Enterprise and Enterprise Plus plans with a monthly limit of 3500 searches per organization.
 The limit resets at the beginning of each month.
-Above the limit, users receive regular search results instead of AI answers.
-These limits can change.
 
-**Data usage and privacy:** Curious how the AI assistant uses your data?
-The Redocly AI assistant runs in **inference-only mode** and does not train or fine-tune AI models on your content.
-For details, see the [AI governance and security FAQ](../faq/ai-governance.md).
+**Data usage and privacy:** Curious how AI Search uses your data?
+Redocly AI Search runs in **inference-only mode** and does not train or fine-tune AI models on your content.
+For details, see the [AI Search data usage FAQ](../faq/ai-search-privacy.md).
 
 {% admonition type="info" name="Search indexes" %}
-AI assistant and Typesense search indexes are only built on the production branch.
-Changes to search configuration or content exclusions, like the `excludeFromSearch` front matter option, appear in search results after the next production build.
+AI search and Typesense search indexes are only built on the production branch.
+Changes to search configuration or content exclusions, like the `excludeFromSearch` front matter option, may not immediately appear in search results until the next production build.
 {% /admonition %}
 
 ## Examples
 
-Display the AI assistant button with a custom prompt:
+Display the AI search button with a custom prompt:
 
 ```yaml
 aiAssistant:
@@ -132,7 +129,7 @@ aiAssistant:
   prompt: Speak only in rhymes
 ```
 
-Set AI assistant suggestions:
+Set AI search suggestions:
 
 ```yaml {% title="redocly.yaml" %}
 aiAssistant:
@@ -150,6 +147,5 @@ aiAssistant:
 
 ## Resources
 
-- **[AI governance and security FAQ](../faq/ai-governance.md)** - How the AI assistant works, what data it uses, and which controls protect it
 - **[`search`](./search.md)** - Learn how to customize search in your project, curate search results, and exclude pages from search
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

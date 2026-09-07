@@ -200,8 +200,7 @@ const ChangelogContent = ({ record }: { record: ChangelogEntry }) => {
 };
 
 function simpleRenderMarkdown(str: string) {
-  const withoutKbdTags = str.replace(/<\/?kbd>/g, '');
-  const replacedLinks = withoutKbdTags.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, link) => {
+  const replacedLinks = str.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, link) => {
     return `[${text}](${link
       .replace(/^\.?\//, '')
       .replace(/\.(md|page.tsx)$/, '')

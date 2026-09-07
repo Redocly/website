@@ -66,6 +66,12 @@ To place the reference inside a custom sidebar alongside your other content, wit
       label: Sample product 2 API
 ```
 
+{% admonition type="info" name="API-internal navigation" %}
+Adding an OpenAPI file to `sidebars.yaml` only controls where the entry point to that API appears in the site-wide sidebar.
+The internal structure of the API—its groups, tags, and endpoints—is automatically derived from the OpenAPI specification itself and cannot be modified using `sidebars.yaml` options.
+To customize the internal organization of your API, use OpenAPI extensions like [`x-tagGroups`](./openapi-extensions/x-tag-groups.md).
+{% /admonition %}
+
 For all available options, see [Sidebar configuration](../../navigation/sidebars.md).
 
 ## Resources

@@ -33,165 +33,9 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- asyncapi.info.contact.url
-- Label for the contact URL in the info section of AsyncAPI description
-- URL
-
----
-
-- asyncapi.info.contact.name
-- Label for the contact name in the info section of AsyncAPI description
-- E-mail
-
----
-
-- asyncapi.info.license
-- Label for the license in the info section of AsyncAPI description
-- License
-
----
-
-- asyncapi.info.termsOfService
-- Label for the terms of service in the info section of AsyncAPI description
-- Terms of Service
-
----
-
-- asyncapi.key
-- Label for key in AsyncAPI description
-- Key
-
----
-
-- asyncapi.value
-- Label for value in AsyncAPI description
-- Value
-
----
-
-- asyncapi.variables
-- Label for variables in AsyncAPI description
-- variables
-
----
-
-- asyncapi.required
-- Label for required fields in AsyncAPI description
-- required
-
----
-
-- asyncapi.requiredScopes
-- Label for required scopes in AsyncAPI security schemes
-- Required scopes
-
----
-
-- asyncapi.viewSecurityDetails
-- Label for the view security details button in AsyncAPI description
-- View security details
-
----
-
-- asyncapi.badges.deprecated
-- Label for the deprecated badge in AsyncAPI description
-- deprecated
-
----
-
-- asyncapi.actions.show
-- Label for the show action in AsyncAPI description
-- Show
-
----
-
-- asyncapi.actions.hide
-- Label for the hide action in AsyncAPI description
-- Hide
-
----
-
-- asyncapi.actions.more
-- Label for the more action in AsyncAPI description
-- more
-
----
-
-- asyncapi.payload
-- Label for the payload in AsyncAPI description
-- Payload
-
----
-
-- asyncapi.parameters
-- Label for the channel parameters section in AsyncAPI description
-- Parameters
-
----
-
-- asyncapi.messages
-- Label for the channel messages section in AsyncAPI description
-- Messages
-
----
-
-- asyncapi.contentType
-- Label for the media type selector in AsyncAPI payload examples
-- Content type
-
----
-
-- asyncapi.moreDetails
-- Label for the "More details" expander on AsyncAPI broker / channel binding panels
-- More details
-
----
-
-- asyncapi.property
-- Singular noun used to count schema fields in AsyncAPI description (e.g. "Show 1 property")
-- property
-
----
-
-- asyncapi.properties
-- Plural noun used to count schema fields in AsyncAPI description (e.g. "Show 3 properties")
-- properties
-
----
-
-- asyncapi.details
-- Fallback noun used on the schema "Show details" expander in AsyncAPI when no property count is available
-- details
-
----
-
-- asyncapi.reply
-- Label for the operation reply section in AsyncAPI description
-- Reply
-
----
-
-- asyncapi.servers.title
-- Title for the servers section in AsyncAPI description
-- Servers
-
----
-
-- userMenu.login
-- Login button label
-- Log in
-
----
-
 - userMenu.logout
 - Logout button label
 - Log out
-
----
-
-- languagePicker.label
-- Aria-label for the language picker dropdown in the page footer / navigation
-- Select language
 
 ---
 
@@ -353,8 +197,7 @@ This page contains the list of all predefined translation keys used in default U
 
 - search.error.title
 - Error message title displayed when a search request fails
-- Oops!
-  Something went wrong.
+- Oops! Something went wrong.
 
 ---
 
@@ -377,124 +220,124 @@ This page contains the list of all predefined translation keys used in default U
 ---
 
 - search.ai.backToSearch
-- Button text to return to standard search from the AI assistant
+- Button text to return to standard search from AI search
 - Back to Search
 
 ---
 
 - search.ai.button
-- Button text to open the AI assistant
+- Button text to initiate AI search
 - Search with AI
 
 ---
 
 - search.ai.disclaimer
-- Disclaimer text for AI assistant functionality
-- AI assistant might provide incomplete or incorrect results.
+- Disclaimer text for AI search functionality
+- AI search might provide incomplete or incorrect results.
   Verify important information.
 
 ---
 
 - search.ai.followUpQuestion
-- Placeholder or label for AI assistant follow-up questions
+- Placeholder or label for AI search follow-up questions
 - Ask a follow-up question?
 
 ---
 
 - search.ai.generatingResponse
-- Text displayed while the AI assistant is generating a response
+- Text displayed while AI search is generating a response
 - Generating response...
 
 ---
 
 - search.ai.label
-- General label for the AI assistant feature
+- General label for the AI search feature
 - Ask AI assistant
 
 ---
 
 - search.ai.newConversation
-- Button text to start a new AI assistant conversation
+- Button text to start a new AI search conversation
 - New conversation
 
 ---
 
 - search.ai.placeholder
-- Placeholder text for the AI assistant input
+- Placeholder text for the AI search input
 - Ask a question...
 
 ---
 
 - search.ai.resourcesFound
-- General label indicating resources were found by the AI assistant
+- General label indicating resources were found by AI search
 - resources found
 
 ---
 
 - search.ai.resourcesFound.basedOn
-- Text indicating the basis for AI assistant results
+- Text indicating the basis for AI search results
 - Based on
 
 ---
 
 - search.ai.resourcesFound.resources
-- Label for resources found by the AI assistant
+- Label for resources found by AI search
 - resources
 
 ---
 
 - search.ai.suggestionsTitle
-- Title for AI assistant suggestions section
+- Title for AI search suggestions section
 - Suggestions
 
 ---
 
 - search.ai.thinkingText
-- Text displayed while the AI assistant is processing
+- Text displayed while AI search is processing
 - Thinking...
 
 ---
 
 - search.ai.welcomeText
-- Welcome message displayed in the AI assistant interface
-- Welcome to AI assistant!
+- Welcome message displayed in the AI search interface
+- Welcome to AI search!
   Feel free to ask me anything.
   How can I help you?
 
 ---
 
 - search.ai.back
-- Button text to go back from AI assistant results
+- Button text to go back from AI search results
 - Back
 
 ---
 
 - search.ai.assistant
-- Title text displayed in the AI assistant dialog header
+- Title text displayed in the AI search dialog header
 - Assistant
 
 ---
 
 - search.ai.feedback.title
-- Title for AI assistant feedback dialog
+- Title for AI search feedback dialog
 - What didn't you like about this response?
 
 ---
 
 - search.ai.feedback.detailsPlaceholder
-- Placeholder text for AI assistant feedback details input
+- Placeholder text for AI search feedback details input
 - Add specific details
 
 ---
 
 - search.ai.feedback.thanks
-- Thank you message after submitting AI assistant feedback
+- Thank you message after submitting AI search feedback
 - Thanks for your feedback!
 
 ---
 
 - search.ai.feedback.more
-- Option text to provide additional feedback details in AI assistant feedback form
+- Option text to provide additional feedback details in AI search feedback form
 - More...
 
 ---
@@ -613,12 +456,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- page.actions.moreActions
-- More actions toggle aria-label in page actions
-- More actions
-
----
-
 - page.actions.copyButtonText
 - Copy for LLM button text in page actions
 - Copy
@@ -721,30 +558,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- page.actions.connectMcp.claudeCode
-- Connect to Claude Code option title in Connect MCP dropdown
-- Connect to Claude Code
-
----
-
-- page.actions.connectMcp.claudeCodeDescription
-- Connect to Claude Code option description in Connect MCP dropdown
-- Copy the Claude Code CLI command
-
----
-
-- page.actions.connectMcp.codex
-- Connect to Codex CLI option title in Connect MCP dropdown
-- Connect to Codex CLI
-
----
-
-- page.actions.connectMcp.codexDescription
-- Connect to Codex CLI option description in Connect MCP dropdown
-- Copy the Codex CLI command
-
----
-
 - page.actions.connectMcp.copyConfig
 - Copy MCP configuration option title in Connect MCP dropdown
 - Copy MCP Configuration
@@ -788,136 +601,15 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- page.apiNotFound.title
-- API docs 404 Not Found page header text
-- No page at this address
-
----
-
-- page.apiNotFound.description
-- API docs 404 Not Found page description text (the missing page path follows it)
-- There's no page at
-
----
-
-- page.apiNotFound.hint
-- API docs 404 Not Found page hint text
-- It may have been moved or deleted.
-
----
-
-- page.apiNotFound.backButton
-- API docs 404 Not Found page button text (links back to the API docs root)
-- Back to docs
-
----
-
 - page.mcpNotAllowed.title
-- MCP connection page header text (shown when the MCP endpoint is opened in a browser)
-- Connect to the MCP server
+- 405 Method Not Allowed page header text
+- Method not allowed
 
 ---
 
 - page.mcpNotAllowed.description
-- MCP connection page description text
-- To use this MCP server, register it in your MCP client (for example: VS Code, Cursor, or Claude Code).
-
----
-
-- page.mcpNotAllowed.publicNote
-- Note on the public MCP endpoint connection page (`/mcp-public`)
-- This endpoint serves publicly available content only and requires no login.
-
----
-
-- page.mcpNotAllowed.mainEndpointHint
-- Link back to the main MCP endpoint, shown on the public endpoint connection page; the `<link>` markers wrap the linked phrase and must stay in the translation
-- To access content available to your account, use the \<link\>main MCP endpoint\</link\>.
-
----
-
-- page.mcpNotAllowed.publicEndpointHint
-- Link to the public MCP endpoint, shown on the main MCP connection page when the public endpoint is enabled; the `<link>` markers wrap the linked phrase and must stay in the translation
-- To connect anonymously without an account, use the \<link\>public endpoint\</link\>.
-
----
-
-- page.mcpNotAllowed.tabs.claude
-- Claude tab label on the MCP connection page
-- Claude
-
----
-
-- page.mcpNotAllowed.tabs.chatgpt
-- ChatGPT tab label on the MCP connection page
-- ChatGPT
-
----
-
-- page.mcpNotAllowed.tabs.json
-- JSON tab label on the MCP connection page
-- JSON
-
----
-
-- page.mcpNotAllowed.snippets.terminal.hint
-- Hint above CLI commands on the MCP connection page
-- Run this command in your terminal:
-
----
-
-- page.mcpNotAllowed.snippets.claudeCode.headline
-- Claude Code entry headline on the MCP connection page
-- Claude Code
-
----
-
-- page.mcpNotAllowed.snippets.claudeDesktop.headline
-- Claude Desktop entry headline on the MCP connection page
-- Claude Desktop
-
----
-
-- page.mcpNotAllowed.snippets.claudeDesktop.instruction
-- Claude Desktop setup instruction on the MCP connection page
-- In Claude Desktop, open Settings → Developer → Edit Config, add this to the configuration file, and restart Claude Desktop:
-
----
-
-- page.mcpNotAllowed.snippets.codexCli.headline
-- Codex CLI entry headline on the MCP connection page
-- Codex CLI
-
----
-
-- page.mcpNotAllowed.snippets.chatgptApp.headline
-- ChatGPT desktop app entry headline on the MCP connection page
-- ChatGPT desktop app
-
----
-
-- page.mcpNotAllowed.snippets.chatgptApp.instruction
-- ChatGPT desktop app setup instruction on the MCP connection page
-- In the ChatGPT desktop app, go to Settings → Plugins → MCPs.
-  Add a server with the "Streamable HTTP" type and this URL (restart the app afterwards):
-
----
-
-- page.mcpNotAllowed.snippets.prompt.headline
-- Assistant prompt entry headline on the MCP connection page
-- Prompt
-
----
-
-- page.mcpNotAllowed.snippets.prompt.hint
-- Hint above the assistant install prompt on the MCP connection page
-- Or paste this prompt into the chat to have it add the server for you:
-
----
-
-- page.mcpNotAllowed.snippets.json.hint
-- Hint above the JSON configuration on the MCP connection page
-- Add this server entry to your MCP client configuration file:
+- 405 Method Not Allowed page description text
+- To use this MCP server, register it in your MCP Client (for example: VS Code, Cursor, or Claude Code).
 
 ---
 
@@ -979,18 +671,6 @@ This page contains the list of all predefined translation keys used in default U
 - codeSnippet.report.label
 - Code snippet report a problem title
 - What is wrong with this code?
-
----
-
-- jsonViewer.showMore
-- Toggle button that reveals a truncated long string value in a JSON sample
-- Show more
-
----
-
-- jsonViewer.showLess
-- Toggle button that collapses an expanded long string value in a JSON sample
-- Show less
 
 ---
 
@@ -1576,33 +1256,21 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.items
+- Label for items in OpenAPI description
+- Items
+
+---
+
 - openapi.default
 - Label for default values in OpenAPI description
 - Default
 
 ---
 
-- openapi.property
-- Singular noun used to count schema fields in OpenAPI description (e.g. "Show 1 property")
-- property
-
----
-
-- openapi.properties
-- Plural noun used to count schema fields in OpenAPI description (e.g. "Show 3 properties")
-- properties
-
----
-
-- openapi.array
-- Localized "array" word inserted into the "Show N array properties" button on array-of-object schema rows
-- array
-
----
-
-- openapi.details
-- Fallback noun used on the schema "Show details" expander when no property count is available
-- details
+- openapi.complex
+- Label for complex objects/schemas in OpenAPI description
+- Complex
 
 ---
 
@@ -1666,9 +1334,21 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.description
+- Label for the description in OpenAPI description
+- Description
+
+---
+
 - openapi.badges.deprecated
 - Label for the deprecated badge in OpenAPI description
-- deprecated
+- Deprecated
+
+---
+
+- openapi.badges.required
+- Label for the required badge in OpenAPI description
+- required
 
 ---
 
@@ -1900,12 +1580,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- openapi.noRequestData
-- Message when an operation has no request data (no parameters, body, or security) in an OpenAPI description
-- No request data
-
----
-
 - openapi.hidePattern
 - Label for hiding a pattern in OpenAPI description
 - Hide pattern
@@ -2122,12 +1796,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- openapi.mcp.argumentsExample
-- Label for the prompt arguments example in MCP prompt details
-- Arguments example
-
----
-
 - graphql.queries
 - Label for queries group in GraphQL sidebar
 - Queries
@@ -2185,42 +1853,6 @@ This page contains the list of all predefined translation keys used in default U
 - graphql.scalars
 - Label for the scalars group in GraphQL sidebar
 - Scalars
-
----
-
-- graphql.actions.show
-- Label for the show action in GraphQL description
-- Show
-
----
-
-- graphql.actions.hide
-- Label for the hide action in GraphQL description
-- Hide
-
----
-
-- graphql.actions.more
-- Label for the more action in GraphQL description
-- more
-
----
-
-- graphql.fields
-- Label for the fields section in GraphQL object and interface content
-- Fields
-
----
-
-- graphql.inputFields
-- Label for the input fields section in GraphQL input type content
-- Input Fields
-
----
-
-- graphql.values
-- Label for the values section in GraphQL enum content
-- Values
 
 ---
 
@@ -2308,8 +1940,8 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- graphql.badges.deprecated
-- Label for the deprecated badge in GraphQL content
+- graphql.deprecated
+- Label for deprecated fields in GraphQL content
 - deprecated
 
 ---
@@ -2344,8 +1976,8 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- graphql.info.metadata.title
-- Label for the metadata section in GraphQL description
+- graphql.metadata
+- Label for metadata section in GraphQL
 - Metadata
 
 ---
@@ -2398,6 +2030,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- graphql.action.show
+- Text for show action in GraphQL
+- Show
+
+---
+
 - graphql.variables
 - Label for the variables section in GraphQL right section
 - Variables
@@ -2428,15 +2066,15 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- graphql.requestSample
-- Label for the request sample in GraphQL right section
-- Request sample
-
----
-
 - graphql.locations
 - Label for the locations section in GraphQL right section
 - Locations
+
+---
+
+- graphql.sample
+- Label for the sample section in GraphQL right section
+- Sample
 
 ---
 
@@ -2449,6 +2087,12 @@ This page contains the list of all predefined translation keys used in default U
 - graphql.content.fragment
 - Label for a fragment in GraphQL content
 - Fragment
+
+---
+
+- button.copy.tooltipText
+- Tooltip for copy button
+- Copy to clipboard
 
 ---
 
@@ -2662,8 +2306,7 @@ This page contains the list of all predefined translation keys used in default U
 Translations use template syntax with placeholders like `{{value}}` to enable dynamic content generation.
 This templating mechanism allows the application to inject variable data at runtime, producing contextually appropriate text without requiring separate translation entries for each possible value.
 
-For example, the `time.past.seconds` translation key uses `{{value}}` to represent the number of seconds.
-Instead of creating separate translation keys for each possible number of seconds in a minute, the application automatically inserts the correct number at runtime:
+For example, the `time.past.seconds` translation key uses `{{value}}` to represent the number of seconds. Instead of creating separate translation keys for each possible number of seconds in a minute, the application automatically inserts the correct number at runtime:
 
 ```md
 "{{value}} seconds ago" → "5 seconds ago", "42 seconds ago", etc.

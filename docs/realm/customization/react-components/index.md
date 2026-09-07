@@ -11,7 +11,7 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-You can customize theme components instead of ejecting them.
+You can customize theme components instead of ejecting them completely.
 
 Customizing components can be useful in several scenarios:
 

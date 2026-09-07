@@ -3,7 +3,6 @@ import { ConfigIntroductionTag } from './components/config/Introduction/Introduc
 import { ConfigPropertyTag } from './components/config/Property/Property-markdoc';
 import { ConfigSectionTag } from './components/config/Section/Section-markdoc';
 import { ConfigOptionRequirementsTag } from './components/config/OptionRequirements/OptionRequirements-markdoc';
-import { AiAssistantPlaygroundTag } from './components/AiAssistantPlayground/AiAssistantPlayground-markdoc';
 
 export const tags = {
   themeIcon: IconTag,
@@ -11,7 +10,6 @@ export const tags = {
   configSection: ConfigSectionTag,
   configProperty: ConfigPropertyTag,
   configOptionRequirements: ConfigOptionRequirementsTag,
-  aiAssistantPlayground: AiAssistantPlaygroundTag,
 };
 
 export const functions = {

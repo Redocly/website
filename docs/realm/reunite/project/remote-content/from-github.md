@@ -31,10 +31,8 @@ After you install the Redocly GitHub App on your organization in GitHub, and cre
 
 To enter the connection details in Reunite:
 
-1. In the file tree, select the folder where you want to add the remote content.
-   You can also click on the empty space to select the root directory.
-1. Select **+ > New remote folder > Add Git repository** to add a remote content folder.
-   To add a remote content file, select **+ > New remote file > Add Git repository**.
+1. In the file tree, select the folder (or click on the empty space to select the root directory) where you want to add the remote content.
+1. Select **+ > New remote folder > Add Git repository** to add a remote content folder, or **+ > New remote file > Add Git repository** to add a remote content file.
 1. Enter a name for the new remote content (folder or file) and press the Enter or Return key.
 1. Select **GitHub > Next**.
 1. Authorize your Redocly organization to verify your GitHub identity.
@@ -49,14 +47,13 @@ You can click the **View Pull Request** button next to your new branch name to v
 
 ## Merge the open pull request in Reunite
 
-After you enter the connection details in Reunite, a pull request to merge your updates with the default branch opens as a draft.
+After you enter the connection details in Reunite, a pull request to merge your updates with the default branch opens.
 When you merge the pull request your changes are added to your main branch and a production deployment is triggered.
 
 To merge the open pull request in Reunite:
 
 1. Select the **View Pull Request** button next to your branch name.
 1. Review your updates in the **Review** tab.
-1. Select the **Ready for review** button to take the pull request out of draft.
 1. After the tests have run and your pull request has been approved, click the **Merge** button to merge your updates with the default branch.
 
 ## Resources

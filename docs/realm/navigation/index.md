@@ -8,9 +8,7 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-markdown:
-  toc:
-    hide: true
+toc: hide
 ---
 
 # Navigation elements
@@ -180,8 +178,7 @@ catalogClassic:
 ## Configuration tips
 
 ### Responsive navigation
-All navigation elements are responsive by default.
-For mobile-optimized experiences:
+All navigation elements are responsive by default. For mobile-optimized experiences:
 - Keep navbar items concise (5-7 top-level items max)
 - Use groups sparingly in navbar dropdowns
 - Consider shorter labels for mobile: `label: API Ref` instead of `label: API Reference`

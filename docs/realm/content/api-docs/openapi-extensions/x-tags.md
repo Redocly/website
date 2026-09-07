@@ -42,8 +42,7 @@ components:
       ...
 ```
 
-You can use existing tags to show schemas alongside operations in your documentation.
-You can also add a new tag to the top-level `tags` array in your API description and use that new tag.
+You can use existing tags to show schemas alongside operations in your documentation, or add a new tag to the top-level `tags` array in your API description and use that new tag.
 
 ## Resources
 

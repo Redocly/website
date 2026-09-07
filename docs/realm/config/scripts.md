@@ -59,14 +59,14 @@ Insert custom scripts in the head or body of a page.
 - boolean
 - Inlines the script content into the page.
   Improves performance for small scripts.
-  Default: `false`.
+  Default value: `false`.
 
 ---
 
 - async
 - boolean
 - Specifies to add the `async` attribute to the script tag.
-  Default: `false`.
+  Default value: `false`.
 
 ---
 
@@ -79,7 +79,7 @@ Insert custom scripts in the head or body of a page.
 - defer
 - boolean
 - Specifies to add the `defer` attribute to the script tag.
-  Default: `false`.
+  Default value: `false`.
 
 ---
 
@@ -87,7 +87,7 @@ Insert custom scripts in the head or body of a page.
 - string
 - Adds the `fetchpriority` attribute with corresponding value to the script tag.
   Possible values: `high`, `low`, or `auto`.
-  Default: `auto`.
+  Default value: `auto`.
 
 ---
 
@@ -100,14 +100,14 @@ Insert custom scripts in the head or body of a page.
 - module
 - boolean
 - Specifies to add the `module` attribute to the script tag.
-  Default: `false`.
+  Default value: `false`.
 
 ---
 
 - nomodule
 - boolean
 - Specifies to add the `nomodule` attribute to the script tag.
-  Default: `false`.
+  Default value: `false`.
 
 ---
 
@@ -121,7 +121,7 @@ Insert custom scripts in the head or body of a page.
 - string
 - Adds the `referrerpolicy` attribute with corresponding value to the script tag.
   Possible values: `no-referrer`, `no-referrer-when-downgrade`, `origin`, `origin-when-cross-origin`, `same-origin`, `strict-origin`, `strict-origin-when-cross-origin`, `unsafe-url`, `''`.
-  Default: `strict-origin-when-cross-origin` (with fallback to `''`).
+  Default value: `strict-origin-when-cross-origin` (with fallback to `''`).
 
 ---
 

@@ -125,7 +125,7 @@ An IDP object can be one of the following types:
 - boolean
 - Use [PKCE](https://oauth.net/2/pkce/) for the authorization code flow.
   If `true`, the `clientSecret` is not required.
-  Default: `false`.
+  Default value: `false`.
 
 ---
 
@@ -141,22 +141,22 @@ An IDP object can be one of the following types:
 - teamsClaimName
 - string
 - Claim name to use for role-based access control.
-  Default: `https://redocly.com/sso/teams`.
+  Default value: https://redocly.com/sso/teams
 
 ---
 
 - teamsClaimMap
 - object
-- Map of team claim values to team names.
+- Map of team claim values to team names. to team names.
   Useful when the IdP team attribute values are not the same as the team names.
-  Default: `{}`.
+  Default value: {}
 
 ---
 
 - defaultTeams
 - [string]
 - List of teams to assign to all users by default for this identity provider.
-  Default: `[]`.
+  Default value: []
 
 ---
 
@@ -182,7 +182,7 @@ An IDP object can be one of the following types:
 - audience
 - [string]
 - An array of allowed OIDC audience values.
-  Matched against `aud` claim in OIDC ID token.
+  Will be matched against `aud` claim in OIDC ID token.
   If not specified or is an empty array, all of the audiences are allowed.
 
 {% /table %}
@@ -240,7 +240,7 @@ The OIDC metadata object as documented in [OIDC specification](https://openid.ne
 - teamsAttributeName
 - string
 - Attribute name to use for role-based access control.
-  Default: `https://redocly.com/sso/teams`.
+  Default value: https://redocly.com/sso/teams
 
 ---
 
@@ -248,14 +248,14 @@ The OIDC metadata object as documented in [OIDC specification](https://openid.ne
 - object
 - Map of team attribute values to team names.
   Useful when the IdP team attribute values are not the same as the team names.
-  Default: `{}`.
+  Default value: {}
 
 ---
 
 - defaultTeams
 - [string]
 - List of teams to assign to all users by default for this identity provider.
-  Default: `[]`.
+  Default value: []
 
 {% /table %}
 

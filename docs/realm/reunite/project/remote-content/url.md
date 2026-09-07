@@ -19,8 +19,7 @@ This approach is useful for including a single, publicly-available file as part 
 
 To add content from a remote file:
 
-1. In the file tree, select the folder to which you want to add the remote content folder.
-   You can also click on the empty space to select the root directory.
+1. In the file tree, select the folder (or click on the empty space to select the root directory) to which you want to add the remote content folder.
 1. Select **+ > New remote file > Add URL link**.
 1. Enter a name for the new remote content folder and press **Enter** or **Return** key.
 1. Enter the URL of a publicly-available file to include in the project.
@@ -33,13 +32,12 @@ To add content from a remote file:
 
 ## Merge the open pull request in Redocly
 
-After you enter the connection details in Redocly, a pull request to merge your updates with the default branch opens as a draft.
+After you enter the connection details in Redocly, a pull request to merge your updates with the default branch opens.
 
 1. Refresh your browser to see a **View Pull Request** button next to your new branch name.
 2. Select **View Pull Request**.
 3. Review your updates in the **Review** tab.
-4. Select the **Ready for review** button to take the pull request out of draft.
-5. After the tests have run and your pull request has been approved, click the **Merge** button to merge your updates with the default branch.
+4. After the tests have run and your pull request has been approved, click the **Merge** button to merge your updates with the default branch.
 
 ## Resources
 

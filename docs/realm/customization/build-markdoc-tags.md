@@ -16,7 +16,7 @@ This topic explains how to register custom components that can be invoked by you
 
 Follow the tutorial to create two sample components: a simple line break component and a quiz component for some extra credit.
 
-The line break is a simple component that adds a linebreak (`<br>`).
+The line break is a very simple component, that adds a linebreak (`<br>`).
 In reality, you can achieve the linebreak in Markdoc by ending a line with a `\`.
 However, it makes for the simple "Hello World" of custom tags.
 And it requires almost no React knowledge.
@@ -444,7 +444,7 @@ Add `renderForLlms` to control what the tag emits for LLMs.
 
 The function receives the Markdoc AST `node` for your tag and a context object.
 It should return a plain Markdown string.
-The tag body is included only when you call `getBody()` from the context object.
+The tag body is not included unless you call `getBody()` from the context object.
 
 {% admonition type="warning" name="Security considerations" %}
 Content returned by `renderForLlms` is emitted directly for LLMs.
@@ -464,19 +464,6 @@ Only return text you are comfortable making public — do not pull secrets, API 
 - `getBody`
 - () => string
 - Returns plain Markdown from the tag body when called.
-
----
-
-- `locale`
-- string
-- Code of the locale the page is rendered for, such as `en-US`.
-  Taken from the page URL, so each localized copy of a page renders with its own locale.
-
----
-
-- `translate`
-- (key, fallback) => string
-- Returns the value of a translation key from the current locale's `translations.yaml` file, or `fallback` when the key has no translation.
 
 {% /table %}
 
@@ -550,53 +537,6 @@ LLM output:
 Apply what you learned
 Two questions about custom Markdoc tags
 Review the tutorial before you begin.
-```
-
-#### Localized output
-
-If your project supports multiple languages, use `locale` and `translate` to return content in the reader's language.
-The LLM Markdown for a page is generated per locale.
-`renderForLlms` runs once for each localized copy of the page with that copy's `locale`.
-
-`translate` looks up a key in the current locale's `translations.yaml` file and returns its value, or the `fallback` argument when the key isn't translated.
-To set up translation keys, see [Localize UI labels using translation keys](../content/localization/localize-labels.md).
-
-The `quiz` tag below labels its output with a translated word and the current locale:
-
-```ts
-import type { Node } from '@markdoc/markdoc';
-import type { MarkdocTagSchema } from '@redocly/theme/markdoc/tags/types';
-
-export const tags: Record<string, MarkdocTagSchema> = {
-  quiz: {
-    attributes: {
-      title: { type: String },
-      summary: { type: String },
-      questions: { type: 'Object', required: true },
-    },
-    render: 'Quiz',
-    renderForLlms: (node: Node, { locale, translate }) =>
-      `${translate('quiz.label', 'Quiz')} (${locale}): ${node.attributes.summary ?? ''}`,
-  },
-};
-```
-
-Add the `quiz.label` key to the `translations.yaml` file for each locale you support:
-
-```yaml {% title="@l10n/es-ES/translations.yaml" %}
-quiz.label: "Cuestionario"
-```
-
-The default locale has no translation for the key, so it falls back to `Quiz` (request `/quiz.md`):
-
-```md
-Quiz (en-US): Two questions about custom Markdoc tags
-```
-
-The Spanish locale returns the translated label (request `/es-ES/quiz.md`):
-
-```md
-Cuestionario (es-ES): Two questions about custom Markdoc tags
 ```
 
 ## Extra credit

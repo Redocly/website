@@ -10,8 +10,7 @@ plans:
 
 # `showSchemaCatalogLinks`
 
-Display links with a reference to a specific schema in an OpenAPI file.
-The reference can be used as a `$ref` value in other OpenAPI files within the same project.
+Display links with a reference to a specific schema in an OpenAPI file which can be used as `$ref` value in other OpenAPI files within the same project.
 These links are always displayed for OpenAPI requests and are shown for schemas when the [`schemaDefinitionsTagName`](./schema-definitions-tag-name.md) option is configured.
 
 {% admonition type="info" %}
@@ -32,7 +31,7 @@ These links are always displayed for OpenAPI requests and are shown for schemas 
 - boolean
 - Displays links to schemas and requests on an OpenAPI page.
   These links can be used as `$ref` value in other OpenAPI files within the same project.
-  Default: `false`.
+  Default value: `false`.
 
 {% /table %}
 

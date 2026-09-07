@@ -36,22 +36,21 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 - ignoreLinkChecker
 - boolean
 - Publish a production project, even if Reunite detects broken links.
-  Default: `false`.
+  Default value: `false`.
 
 ---
 
 - ignoreLint
 - boolean | object
-- Publish a production project, even if Reunite detects an API description in the project that scores below the minimum standard.
-  The standard is set either by the `scorecardClassic` or `api` options in the `redocly.yaml` file.
-  Default: `false`.
+- Publish a production project, even if Reunite detects an API description in the project that scores below the minimum standard set either by the `scorecardClassic` or `api` options in the `redocly.yaml` file.
+  Default value: `false`.
 
 ---
 
 - ignoreMarkdocErrors
 - boolean
 - Publish a production project, even if Reunite detects Markdoc syntax errors.
-  Default: `false`.
+  Default value: `false`.
 
 ---
 
@@ -59,14 +58,13 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 - boolean
 - Publish a production project, even if Reunite detects Respect Monitoring issues.
   If `true`, sets the build's Respect Monitoring status to `warning` instead of `failed`.
-  Default: `false`.
+  Default value: `false`.
 
 ---
 
 - jobs
 - [[Jobs object](#jobs-object)]
-- Defines jobs based on Arazzo Descriptions in your project.
-  The jobs monitor the performance of your APIs by referencing OpenAPI Descriptions in your project.
+- Defines jobs based on Arazzo Descriptions in your project that can be used to monitor the performance of your APIs by referencing OpenAPI Descriptions in your project.
 
 {% /table %}
 
@@ -82,23 +80,20 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 - path
 - string
-- **REQUIRED.**
-  Specifies the path to an Arazzo Description in your project.
+- **REQUIRED.** Specifies the path to an Arazzo Description in your project.
 
 ---
 
 - agent
 - string
-- **REQUIRED.**
-  Specifies the agent that runs the job.
+- **REQUIRED.** Specifies the agent that runs the job.
   Only accepts `respect` as the value.
 
 ---
 
 - trigger
 - [[Trigger object](#trigger-object)]
-- **REQUIRED.**
-  Configure events that start the job.
+- **REQUIRED.** Configure events that start the job.
 
 ---
 
@@ -134,8 +129,7 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 - event
 - string
-- **REQUIRED.**
-  Specifies the type of event that triggers the job.
+- **REQUIRED.** Specifies the type of event that triggers the job.
   Accepts either `schedule` or `build` as the value.
   - `schedule`: Runs the job at regular intervals.
   - `build`: Runs the job whenever the project is built.
@@ -146,8 +140,7 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 - string
 - Specifies the interval between each run of the job in minutes (m), hours (h) or days (d).
   Only required when `event` is set to `schedule`.
-  Available values: `1m, 2m, 5m, 10m, 15m, 30m, 1h, 3h, 6h, 12h, 1d, 7d`.
-  Default: `1h`.
+  If not defined, the default value is `1h`. Available values: `1m, 2m, 5m, 10m, 15m, 30m, 1h, 3h, 6h, 12h, 1d, 7d`
 
 {% /table %}
 
@@ -201,8 +194,7 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 ### Ignore errors examples
 
-The following example configuration allows you to publish production project deployments past every check.
-Deployments publish even if Reunite detects broken links, an API description that scores below the minimum standard, Markdoc errors, and Respect Monitoring issues:
+The following example configuration allows you to publish production project deployments even if Reunite detects broken links, an API description in the project that scores below the minimum standard, Markdoc errors, and Respect Monitoring issues:
 
 ```yaml {% title="redocly.yaml" %}
 reunite:

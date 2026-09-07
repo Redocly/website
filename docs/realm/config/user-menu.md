@@ -16,8 +16,7 @@ description: Set the visibility of the user menu in your project.
 
 Set the visibility of the user menu in your project.
 The user menu is displayed in the far right side of the navbar.
-Users can click the user avatar to display a dropdown menu.
-The menu contains the avatar, the user's email address, links to pages you can configure, and a log out option.
+Users can click the user avatar and a dropdown menu displays with the avatar, the user's email address, links to pages you can configure, and a log out option.
 
 {% img
   src="./images/user-menu.png"
@@ -94,7 +93,7 @@ You must also have `sso` and either `rbac` or `requiresLogin` configured for the
 - external
 - boolean
 - Open link in new browser tab.
-  Default: `false`.
+  Default is `false`.
 
 {% /table %}
 

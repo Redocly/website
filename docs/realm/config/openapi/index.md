@@ -36,7 +36,7 @@ Requires an OpenAPI description file.
 - [corsProxyUrl](./cors-proxy-url.md)
 - string
 - Overrides the CORS proxy URL used by Replay.
-  Default: `/_api/cors/` (built-in CORS proxy URL).
+  Default: built-in CORS proxy URL: `/_api/cors/`.
 
 ---
 
@@ -114,7 +114,7 @@ Requires an OpenAPI description file.
 - string
 - Specifies layout options for OpenAPI documentation.
   Possible values: `three-panel` | `stacked`.
-  Default: `three-panel`.
+  Default value: `three-panel`.
 
 ---
 
@@ -160,7 +160,7 @@ Requires an OpenAPI description file.
 - boolean
 - Displays links to schemas and requests on an OpenAPI page.
   These links can be used as `$ref` value in other OpenAPI files within the same project.
-  Default: `false`.
+  Default value: `false`.
 
 ---
 

@@ -13,15 +13,16 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Connect your Redocly project to a Git provider to keep the two in sync.
-Changes you save in Redocly appear in your repository, and changes you push to your repository appear in your published project.
-You can connect a whole repository or one folder in it.
+Connecting a Git provider establishes a connection between your Redocly project and a Git repository hosting provider.
+Git is a widely used distributed version control system that allows multiple developers to collaborate on a project by managing changes to source code and other files.
+Git providers offer online Git hosting services, so teams can collaborate from around the world.
+If you already have your project files stored in a repository hosted by a Git provider, you can connect either the entire repository or a folder in that repository.
 
-The connection also drives builds.
-When you open a pull request, or commit and push, your Git provider notifies Redocly.
-Redocly then acts on the change, such as building a preview or deploying to production.
+Redocly integrates with popular Git providers such as GitHub and GitLab.
+When you open a pull request, or commit and push to these services, Redocly is notified automatically and can be configured to perform an action, like rebuild the project for a preview or production build.
+The files in your remote Git repository and Redocly are synced, so any changes saved in Redocly or your remote repository are reflected in the published project.
 
-You can connect these Git providers:
+You can connect your Redocly project to the following Git repository hosting providers:
 
 - [GitHub](github.md)
 - [GitLab and GitLab self-managed](gitlab.md)
@@ -29,8 +30,9 @@ You can connect these Git providers:
 - [Bitbucket Cloud](bitbucket-cloud.md)
 
 {% admonition type="info" name="Self-hosted Git providers" %}
-If you use self-managed GitLab or GitHub Enterprise, allow these IP addresses.
-Redocly connects from them to deploy previews and production updates:
+If you have a self-hosted instance of GitLab, or are on GitHub Enterprise you may need to allow certain IP addresses to connect to Redocly.
+
+Allow these IP addresses to ensure that Redocly can deploy previews and production updates based on changes you and your contributors make:
 
 **US region:**
 ```sh
@@ -49,8 +51,8 @@ Redocly connects from them to deploy previews and production updates:
 
 ## Resources
 
-- **[Manage self-hosted Git providers](./manage-self-hosted.md)** - Register a self-managed GitLab or GitHub Enterprise instance so Redocly can reach it
-- **[Include remote content](../remote-content/index.md)** - Pull files from other repositories into your project
-- **[Use the Editor](../use-editor.md)** - Edit and review project content in Reunite
-- **[Manage projects](../manage-projects.md)** - Find feedback, deployment details, and project settings
-- **[Configuration reference](../../../config/index.md)** - All the options you can set in redocly.yaml
+- **[Manage self-hosted Git providers](./manage-self-hosted.md)** - Set up and configure self-hosted Git repositories for enterprise environments and custom infrastructure
+- **[Include remote content](../remote-content/index.md)** - Integrate content from external repositories and sources into your Reunite projects for centralized documentation
+- **[Use the Editor](../use-editor.md)** - Explore Reunite's collaborative editing tools for creating and managing content with real-time collaboration features
+- **[Manage projects](../manage-projects.md)** - Access feedback, deployment details, and project settings for comprehensive project management in Reunite
+- **[Configuration reference](../../../config/index.md)** - Complete redocly.yaml configuration options for customizing project behavior, deployment, and integration settings

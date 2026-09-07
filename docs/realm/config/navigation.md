@@ -61,14 +61,14 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 - hide
 - boolean
 - Specifies if the navigation link button is hidden.
-  Default: `false`.
+  Default `false`.
 
 ---
 
 - text
 - string
 - Text that appears above the navigation buttons.
-  Default: `Next page` or `Previous page` respectively.
+  Default value: `Next page` or `Previous page` respectively.
 
 {% /table %}
 
@@ -85,7 +85,7 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 - label
 - string
 - Text that appears on the button.
-  Default: the text of the first heading of the target page.
+  The default value is the text of the first heading of the target page.
 
 ---
 
@@ -108,7 +108,7 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 - hide
 - boolean
 - Specifies if the page actions are hidden.
-  Default: `false`.
+  Default `false`.
 
 ---
 
@@ -126,7 +126,7 @@ Control the **Previous** and **Next** navigation buttons on project pages.
   - `docs-mcp-vscode`: connect to MCP server via VS Code.
 
   The first item in the list is the default action.
-  Default: `copy`, `view`, `chatgpt`, `claude`, `docs-mcp-cursor`, `docs-mcp-vscode` in this order.
+  By default, all items are shown in the following order: `copy`, `view`, `chatgpt`, `claude`, `docs-mcp-cursor`, `docs-mcp-vscode`.
 
 ---
 
@@ -177,6 +177,7 @@ navigation:
     label: About basics
 ---
 ```
+
 
 ### Disable page actions
 

@@ -9,8 +9,7 @@ plans:
 ---
 # `sanitize`
 
-The `sanitize` option cleans HTML and Markdown in the OpenAPI description.
-Use it when the description comes from a source you do not trust.
+The `sanitize` option enables HTML/Markdown sanitization for the OpenAPI description.
 
 ## Options
 
@@ -24,16 +23,15 @@ Use it when the description comes from a source you do not trust.
 
 - sanitize
 - boolean
-- Remove unsafe HTML and Markdown to prevent [cross-site scripting (XSS) attacks](https://owasp.org/www-community/attacks/xss/).
-  Default: `false`.
+- Sanitize HTML/Markdown to prevent [cross-site scripting (XSS) attacks](https://owasp.org/www-community/attacks/xss/).
+  Default value is `false`.
 
 
 {% /table %}
 
 ## Examples
 
-When set to `true`, Redoc treats the API description as untrusted.
-It removes any markup that could run a script.
+If set to `true`, the API description is considered untrusted and all HTML/Markdown is sanitized to prevent XSS.
 
 ```yaml {% title="redocly.yaml" %}
 openapi:
@@ -42,7 +40,7 @@ openapi:
 
 ## Resources
 
-- **[OpenAPI configuration](./index.md)** - All the options you can set under `openapi`
-- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - The official standard for API descriptions
-- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - A visual map of every part of an OpenAPI description
-- **[Configuration options](../index.md)** - All the other options for your project
+- **[OpenAPI configuration](./index.md)** - Complete guide to OpenAPI configuration options for customizing API reference documentation
+- **[OpenAPI Specification](https://spec.openapis.org/oas/latest.html)** - Official OpenAPI Specification documentation for understanding API description standards
+- **[OpenAPI visual reference](https://redocly.com/learn/openapi/openapi-visual-reference)** - Visual guide to OpenAPI specification structure and HTML sanitization practices
+- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation customization

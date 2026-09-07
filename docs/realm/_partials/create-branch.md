@@ -1,7 +1,6 @@
 Before you make any changes to your project, create a new branch.
 This new branch is a place where you can make changes without affecting the published site until you are ready.
-Iterate on your changes based on reviews by your team.
-After the updates have been approved, you can merge your changes into the published site.
+After you have iterated on your changes based on reviews by your team and the updates have been approved, you can merge your changes into the published site.
 
 To create a new branch:
 

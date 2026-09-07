@@ -79,8 +79,7 @@ To add line-specific suggestions in code diff view:
    - **Add a single comment**: to add a standalone comment.
    - **Start a review**: to add multiple comments in a complete review.
 
-You can then let the author of the pull request respond or commit your suggestion.
-You can also commit the suggestion yourself, depending on your ownership and workflow.
+You can then let the author of the pull request respond or commit your suggestion, or commit the suggestion yourself, depending on your ownership and workflow.
 
 ## Filter pull request files
 
@@ -110,8 +109,7 @@ After reviewing the pull request, click the **Review** button, add your final th
 
 Format your review comment using the toolbar options, then click **Submit review**.
 
-Your project can use a [connected Git provider](../../project/connect-git/connect-git-provider.md) (GitHub, GitLab, Azure DevOps, or Bitbucket).
-In that case, after the review is submitted, you will see a **Visual review** check on it.
+After the review is submitted, if your project uses a [connected Git provider](../../project/connect-git/connect-git-provider.md) (GitHub, GitLab, Azure DevOps, or Bitbucket), you will see a **Visual review** check on it.
 
 The check links back to the **Visual review** tab in Reunite and displays a short status (for example, **Pending**, **Approved**, **Changes requested**, or **No changes**).
 
@@ -135,8 +133,7 @@ Click this icon to view the comment on the provider’s platform.
     /%}
 
 {% admonition type="warning" name="Review posting behavior" %}
-Your accounts can be connected while you do not have review permissions in the provider.
-In that case, your review appears in Reunite only and is never posted to the provider.
+If your accounts are connected but you do not have review permissions in the provider, your review appears in Reunite only and is never posted to the provider.
 {% /admonition %}
 
 ## Merge a pull request
