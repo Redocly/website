@@ -53179,6 +53179,14 @@ reunite:
         - Fixed hard-to-read onboarding progress colors in light and dark themes and removed an empty onboarding item from the sidebar.
         - Fixed an error message appearing instead of the login page when a session expired and the authentication service was unavailable.
     dependencies: {}
+  v2026-09-08.1:
+    timestamp: 1788858246000
+    changes:
+      minor:
+        - Added a filter on the Reunite `Teams` page to display all teams, Reunite-managed teams, or SSO-synced teams.
+      patch:
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.51.2`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
