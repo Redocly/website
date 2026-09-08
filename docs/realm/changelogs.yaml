@@ -1,4 +1,25 @@
 '@redocly/realm':
+  0.137.0-next.9:
+    timestamp: 1788862787000
+    changes:
+      minor:
+        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
+      patch:
+        - >-
+          Fixed an issue where environment variable placeholders (`{{ process.env.VAR }}`) in `redocly.yaml` resolved to their build-time values
+          instead of the server's runtime environment.
+        - Fixed an issue in API docs where the request code sample lost its form fields and displayed an empty body.
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Updated `@redocly/openapi-core` to version `2.51.2`.
+        - Updated `@redocly/openapi-core` to version `2.49.1`.
+        - Fixed an issue where project SSO login failed when the IdP sent many group claims.
+        - Fixed an issue in Replay where the request body editor didn't display property descriptions for content with Markdown formatting.
+        - Improved the 404 page for API Docs.
+        - Fixed an issue where preview did not update `llms.txt` and page Markdown related to LLMs.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.9
+      '@redocly/theme': 0.69.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.7
   0.137.0-next.8:
     timestamp: 1788344354000
     changes:
@@ -7105,6 +7126,24 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.137.0-next.9:
+    timestamp: 1788862787000
+    changes:
+      minor:
+        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
+      patch:
+        - >-
+          Fixed an issue where environment variable placeholders (`{{ process.env.VAR }}`) in `redocly.yaml` resolved to their build-time values
+          instead of the server's runtime environment.
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Updated `@redocly/openapi-core` to version `2.51.2`.
+        - Updated `@redocly/openapi-core` to version `2.49.1`.
+        - Fixed an issue where project SSO login failed when the IdP sent many group claims.
+        - Fixed an issue where preview did not update `llms.txt` and page Markdown related to LLMs.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.9
+      '@redocly/theme': 0.69.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.7
   0.137.0-next.8:
     timestamp: 1788344354000
     changes:
@@ -13230,6 +13269,24 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.137.0-next.9:
+    timestamp: 1788862787000
+    changes:
+      minor:
+        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
+      patch:
+        - >-
+          Fixed an issue where environment variable placeholders (`{{ process.env.VAR }}`) in `redocly.yaml` resolved to their build-time values
+          instead of the server's runtime environment.
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Updated `@redocly/openapi-core` to version `2.51.2`.
+        - Updated `@redocly/openapi-core` to version `2.49.1`.
+        - Fixed an issue where project SSO login failed when the IdP sent many group claims.
+        - Fixed an issue where preview did not update `llms.txt` and page Markdown related to LLMs.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.9
+      '@redocly/theme': 0.69.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.7
   0.137.0-next.8:
     timestamp: 1788344354000
     changes:
@@ -19348,6 +19405,27 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.137.0-next.9:
+    timestamp: 1788862787000
+    changes:
+      minor:
+        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
+      patch:
+        - >-
+          Fixed an issue where environment variable placeholders (`{{ process.env.VAR }}`) in `redocly.yaml` resolved to their build-time values
+          instead of the server's runtime environment.
+        - Fixed an issue in API docs where the request code sample lost its form fields and displayed an empty body.
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Updated `@redocly/openapi-core` to version `2.51.2`.
+        - Updated `@redocly/openapi-core` to version `2.49.1`.
+        - Fixed an issue where project SSO login failed when the IdP sent many group claims.
+        - Fixed an issue in Replay where the request body editor didn't display property descriptions for content with Markdown formatting.
+        - Improved the 404 page for API Docs.
+        - Fixed an issue where preview did not update `llms.txt` and page Markdown related to LLMs.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.9
+      '@redocly/theme': 0.69.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.7
   0.137.0-next.8:
     timestamp: 1788344354000
     changes:
@@ -25558,6 +25636,15 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.69.0-next.8:
+    timestamp: 1788862787000
+    changes:
+      minor:
+        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
+      patch:
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Improved the 404 page for API Docs.
+    dependencies: {}
   0.69.0-next.7:
     timestamp: 1788344354000
     changes:
@@ -34342,6 +34429,21 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/api-docs':
+  0.2.0-next.9:
+    timestamp: 1788862787000
+    changes:
+      minor:
+        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
+      patch:
+        - Fixed an issue in API docs where the request code sample lost its form fields and displayed an empty body.
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Updated `@redocly/openapi-core` to version `2.51.2`.
+        - Updated `@redocly/openapi-core` to version `2.49.1`.
+        - Fixed an issue in Replay where the request body editor didn't display property descriptions for content with Markdown formatting.
+        - Improved the 404 page for API Docs.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.8
+      '@redocly/replay': 0.28.0-next.8
   0.2.0-next.8:
     timestamp: 1788344354000
     changes:
@@ -34550,6 +34652,15 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.11.0-next.1:
+    timestamp: 1788862787000
+    changes:
+      minor: []
+      patch:
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Updated `@redocly/openapi-core` to version `2.51.2`.
+        - Updated `@redocly/openapi-core` to version `2.49.1`.
+    dependencies: {}
   0.11.0-next.0:
     timestamp: 1787685775000
     changes:
@@ -35596,6 +35707,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.20.0-next.9:
+    timestamp: 1788862787000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.137.0-next.9
+      '@redocly/redoc': 0.137.0-next.9
+      '@redocly/redoc-revel': 0.137.0-next.9
+      '@redocly/redoc-reef': 0.137.0-next.9
+      '@redocly/theme': 0.69.0-next.8
   1.20.0-next.8:
     timestamp: 1788344354000
     changes:
@@ -41311,6 +41433,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.22.0-next.7:
+    timestamp: 1788862787000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.11.0-next.1
   0.22.0-next.6:
     timestamp: 1788250507000
     changes:
@@ -44465,6 +44594,16 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.28.0-next.8:
+    timestamp: 1788862787000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in Replay where a response without a body, such as `204 No Content`, displayed an empty code editor on the **Body** tab
+          instead of a message that states the response has no content.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.8
   0.28.0-next.7:
     timestamp: 1788344354000
     changes:
@@ -46901,6 +47040,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.20.0-next.8:
+    timestamp: 1788862787000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.69.0-next.8
   0.20.0-next.7:
     timestamp: 1788344354000
     changes:
