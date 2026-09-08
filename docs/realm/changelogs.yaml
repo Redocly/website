@@ -53332,6 +53332,14 @@ reunite:
       patch:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.51.2`.
     dependencies: {}
+  v2026-09-08.2:
+    timestamp: 1788878055000
+    changes:
+      minor:
+        - Added a request ID to Reunite server error pages so users can copy it and share it with support when reporting a problem.
+        - Added a filter on the Reunite `Teams` page to display all teams, Reunite-managed teams, or SSO-synced teams.
+      patch: []
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
