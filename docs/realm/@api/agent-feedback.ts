@@ -2,11 +2,14 @@ import type { ApiFunctionsContext } from '@redocly/config';
 
 const MAX_PATH = 1000;
 const MAX_COMMENT_LENGTH = 5000;
+const MAX_QUERY_SUMMARY = 500;
+const MAX_QUERY_DETAILS = 1500;
 const MAX_AGENT_NAME = 200;
 const MAX_TARGET_FEATURE = 500;
 const MAX_REQUEST_BODY_BYTES = 64 * 1024;
 
 const MESSAGE_INVALID_FEEDBACK = 'Invalid feedback - review the errors and try again';
+const MESSAGE_METHOD_NOT_ALLOWED = 'Method not allowed';
 
 function parseContentLength(contentLength: string | null): number | undefined {
   if (!contentLength) {
@@ -69,15 +72,35 @@ function getTrustedSiteOrigin(siteUrl: string | undefined): string | undefined {
   }
 }
 
-export default async function (request: Request, context: ApiFunctionsContext): Promise<Response> {
-  const baseOrigin = getTrustedSiteOrigin(context.baseUrl);
-  const trustedSiteOrigin = getTrustedSiteOrigin(context.config.seo?.siteUrl) ?? baseOrigin;
+type AgentFeedbackFields = {
+  agent: string | undefined;
+  pageUrlString: string | undefined;
+  targetFeature: string | undefined;
+  summary: string | undefined;
+  details: string | undefined;
+};
 
-  // return 202 as in `Feedback received` - not something the agent can fix
-  if (!trustedSiteOrigin) {
-    return context.status(202).json({ message: 'Feedback received, but not forwarded' });
-  }
+// Both readers accept `target_feature`, the legacy name from the first version of the
+// llms.txt instruction. Agents that read a page before the rename still send it.
+function readQueryFields(url: URL): AgentFeedbackFields {
+  const params = url.searchParams;
 
+  return {
+    agent: sanitizeString(params.get('agent'), MAX_AGENT_NAME),
+    pageUrlString: sanitizeString(params.get('url'), MAX_PATH),
+    targetFeature:
+      sanitizeString(params.get('targetFeature'), MAX_TARGET_FEATURE) ??
+      sanitizeString(params.get('target_feature'), MAX_TARGET_FEATURE),
+    summary: sanitizeString(params.get('summary'), MAX_QUERY_SUMMARY),
+    details: sanitizeString(params.get('details'), MAX_QUERY_DETAILS),
+  };
+}
+
+// Returns a Response instead of fields when the body is too large or not a JSON object.
+async function readJsonBodyFields(
+  request: Request,
+  context: ApiFunctionsContext,
+): Promise<AgentFeedbackFields | Response> {
   const contentLength = parseContentLength(request.headers.get('content-length'));
   if (contentLength !== undefined && contentLength > MAX_REQUEST_BODY_BYTES) {
     return context.status(413).json({
@@ -110,15 +133,45 @@ export default async function (request: Request, context: ApiFunctionsContext): 
   }
 
   const body = raw as Record<string, unknown>;
-  const agent = sanitizeString(body.agent, MAX_AGENT_NAME);
-  const pageUrlString = sanitizeString(body.url, MAX_PATH);
-  // `target_feature` is the legacy name from the first version of the llms.txt
-  // instruction. Agents that read a page before the rename still send it.
-  const targetFeature =
-    sanitizeString(body.targetFeature, MAX_TARGET_FEATURE) ??
-    sanitizeString(body.target_feature, MAX_TARGET_FEATURE);
-  const summary = sanitizeString(body.summary, MAX_COMMENT_LENGTH);
-  const details = sanitizeString(body.details, MAX_COMMENT_LENGTH);
+
+  return {
+    agent: sanitizeString(body.agent, MAX_AGENT_NAME),
+    pageUrlString: sanitizeString(body.url, MAX_PATH),
+    targetFeature:
+      sanitizeString(body.targetFeature, MAX_TARGET_FEATURE) ??
+      sanitizeString(body.target_feature, MAX_TARGET_FEATURE),
+    summary: sanitizeString(body.summary, MAX_COMMENT_LENGTH),
+    details: sanitizeString(body.details, MAX_COMMENT_LENGTH),
+  };
+}
+
+export default async function (request: Request, context: ApiFunctionsContext): Promise<Response> {
+  const baseOrigin = getTrustedSiteOrigin(context.baseUrl);
+  const trustedSiteOrigin = getTrustedSiteOrigin(context.config.seo?.siteUrl) ?? baseOrigin;
+
+  // return 202 as in `Feedback received` - not something the agent can fix
+  if (!trustedSiteOrigin) {
+    return context.status(202).json({ message: 'Feedback received, but not forwarded' });
+  }
+
+  let fields: AgentFeedbackFields;
+
+  if (request.method === 'GET') {
+    fields = readQueryFields(new URL(request.url));
+  } else if (request.method === 'POST') {
+    const parsed = await readJsonBodyFields(request, context);
+    if (parsed instanceof Response) {
+      return parsed;
+    }
+    fields = parsed;
+  } else {
+    return context.status(405).json({
+      errors: ['Send feedback with GET query parameters or a POST JSON body'],
+      message: MESSAGE_METHOD_NOT_ALLOWED,
+    });
+  }
+
+  const { agent, pageUrlString, targetFeature, summary, details } = fields;
 
   const errors: string[] = [];
   if (!agent) {
@@ -191,7 +244,19 @@ export default async function (request: Request, context: ApiFunctionsContext): 
     }
 
     // Other errors don't need to be handled here - it is of no concern to the agent
-  } catch {}
+    if (response.ok) {
+      console.log(`agent-feedback: forwarded ${request.method} submission from agent ${agent}`);
+    } else {
+      console.error(
+        `agent-feedback: failed to forward ${request.method} submission from agent ${agent}, feedback API returned ${status}`,
+      );
+    }
+  } catch (error) {
+    console.error(
+      `agent-feedback: failed to forward ${request.method} submission from agent ${agent}:`,
+      error,
+    );
+  }
 
   return context.status(202).json({ message: 'Thanks for your feedback' });
 }
