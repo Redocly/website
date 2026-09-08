@@ -53336,7 +53336,6 @@ reunite:
     timestamp: 1788878055000
     changes:
       minor:
-        - Added a request ID to Reunite server error pages so users can copy it and share it with support when reporting a problem.
         - Added a filter on the Reunite `Teams` page to display all teams, Reunite-managed teams, or SSO-synced teams.
       patch: []
     dependencies: {}
