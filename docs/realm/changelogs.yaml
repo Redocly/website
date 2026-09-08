@@ -53339,6 +53339,17 @@ reunite:
         - Added a filter on the Reunite `Teams` page to display all teams, Reunite-managed teams, or SSO-synced teams.
       patch: []
     dependencies: {}
+  v2026-09-08.3:
+    timestamp: 1788904064000
+    changes:
+      minor:
+        - Added a request ID to Reunite server error pages so users can copy it and share it with support when reporting a problem.
+      patch:
+        - Hardened AI search access rules configured under `access.rbac` (`features.aiSearch` and the assistant `hide` flags).
+        - Fixed Reunite login to show a clear error message for unverified email addresses and removed sensitive details from login failure responses.
+        - Fixed missing commit events in the pull request timeline for branches with long histories.
+        - Fixed duplicated commit events in the Reunite pull request timeline.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
