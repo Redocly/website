@@ -53346,6 +53346,16 @@ reunite:
         - Added a request ID to Reunite server error pages so users can copy it and share it with support when reporting a problem.
       patch: []
     dependencies: {}
+  v2026-09-09.1:
+    timestamp: 1788951459000
+    changes:
+      minor: []
+      patch:
+        - Hardened AI search access rules configured under `access.rbac` (`features.aiSearch` and the assistant `hide` flags).
+        - Fixed Reunite login to show a clear error message for unverified email addresses and removed sensitive details from login failure responses.
+        - Fixed missing commit events in the pull request timeline for branches with long histories.
+        - Fixed duplicated commit events in the Reunite pull request timeline.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
