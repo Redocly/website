@@ -647,7 +647,7 @@
 --code-block-bg-color: var(--layer-color);
 --code-block-padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-sm);
 --code-block-margin: 0;
---code-block-max-height: calc(100vh - 260px); // Where 260 is combined value of navbar, code block heading, controls height and paddings
+--code-block-max-height: calc(100vh - 300px); // Where 300 is combined value of navbar, code block heading, controls height and paddings
 --code-block-word-break: initial;
 ```
 
@@ -1415,6 +1415,7 @@
 --navbar-bg-color: var(--bg-color);
 --navbar-border-color: var(--border-color-secondary);
 --navbar-border: 1px solid var(--navbar-border-color);
+--navbar-row-border-bottom-color: var(--navbar-border-color);
 
 --navbar-text-color: var(--text-color-secondary);
 --navbar-height: 64px;
@@ -1422,6 +1423,9 @@
 --navbar-padding: 0 var(--spacing-xl);
 --navbar-font-family: var(--font-family-base);
 --navbar-container-max-width: 100%;
+
+--navbar-stack-height: var(--navbar-height);
+--navbar-offset: calc(var(--navbar-stack-height) + var(--banner-height));
 
 --navbar-menu-items-gap: var(--spacing-sm);
 --navbar-menu-justify-content: flex-start;
@@ -1452,9 +1456,11 @@
 --navbar-item-bg-color-hover: var(--bg-color);
 --navbar-item-bottom-border-hover: none;
 
---navbar-item-icon-width: 1.5em;
---navbar-item-icon-height: 1.5em;
+--navbar-item-icon-width: 1.25em;
+--navbar-item-icon-height: 1.25em;
 --navbar-item-icon-margin-right: 0.5em;
+--navbar-item-external-icon-margin-left: 5px;
+--navbar-item-label-font-weight-active: inherit;
 ```
 
 </details>
@@ -1477,6 +1483,47 @@
 --navbar-separator-text-color: var(--text-color-description);
 --navbar-separator-font-size: var(--font-size-sm);
 --navbar-separator-line-height: var(--line-height-sm);
+```
+
+</details>
+<details>
+<summary>Navbar secondary row</summary>
+
+```css
+--navbar-secondary-height: 48px;
+--navbar-secondary-bg-color: transparent;
+--navbar-secondary-border-color: var(--border-color-secondary);
+--navbar-secondary-border-width: 1px;
+--navbar-secondary-bottom-border: var(--navbar-secondary-border-width) solid
+  var(--navbar-secondary-border-color);
+--navbar-secondary-padding: 0 var(--spacing-xl);
+--navbar-secondary-items-gap: var(--spacing-base);
+```
+
+</details>
+<details>
+<summary>Navbar secondary item</summary>
+
+```css
+--navbar-secondary-item-padding-vertical: var(--spacing-xxs);
+--navbar-secondary-item-padding-horizontal: 0;
+--navbar-secondary-item-padding: var(--navbar-secondary-item-padding-vertical)
+  var(--navbar-secondary-item-padding-horizontal);
+--navbar-secondary-item-gap: var(--spacing-xs);
+--navbar-secondary-item-font-size: var(--font-size-base);
+--navbar-secondary-item-line-height: var(--line-height-base);
+--navbar-secondary-item-font-weight: var(--font-weight-regular);
+--navbar-secondary-item-font-weight-active: var(--font-weight-medium);
+--navbar-secondary-item-text-color: var(--navbar-text-color);
+--navbar-secondary-item-text-color-hover: var(--text-color-primary);
+--navbar-secondary-item-text-color-active: var(--text-color-primary);
+--navbar-secondary-item-bottom-border: 1px solid transparent;
+--navbar-secondary-item-bottom-border-hover: 1px solid var(--border-color-primary);
+--navbar-secondary-item-bottom-border-active: 1px solid var(--border-color-inverse);
+--navbar-secondary-item-border-color-focused: var(--button-border-color-focused);
+--navbar-secondary-item-border-radius: var(--navbar-item-border-radius);
+--navbar-secondary-item-icon-size: 1.25em;
+--navbar-secondary-item-transition: 150ms ease-in-out;
 ```
 
 </details>
@@ -2148,11 +2195,11 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 <summary>Sidebar mobile menu</summary>
 
 ```css
---menu-mobile-height: calc(100vh - var(--navbar-height));
+--menu-mobile-height: calc(100dvh - var(--navbar-offset));
 --menu-mobile-width: 100%;
 --menu-mobile-z-index: var(--z-index-raised);
 --menu-mobile-left: 0;
---menu-mobile-top: var(--navbar-height);
+--menu-mobile-top: var(--navbar-offset);
 --menu-mobile-transition: 0.5s;
 --menu-mobile-bg: var(--bg-color);
 --menu-mobile-margin: var(--menu-mobile-items-margin-top) var(--menu-mobile-margin-horizontal) 0

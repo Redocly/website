@@ -121,7 +121,7 @@ When defined in front matter, they override the global configuration:
 
 - [footer](./footer.md)
 - object
-- Toggle footer display with the `hide` option (the only footer property available in front matter).
+- Hide the footer or override its `items` for the page.
 
 ---
 
@@ -145,7 +145,7 @@ When defined in front matter, they override the global configuration:
 
 - [navbar](./navbar.md)
 - object
-- Toggle navbar display with the `hide` option (the only navbar property available in front matter).
+- Hide the navbar or override its `items` and `secondary` row for the page.
 
 ---
 

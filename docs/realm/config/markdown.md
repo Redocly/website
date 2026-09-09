@@ -27,8 +27,8 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 
 - frontMatterKeysToResolve
 - [string]
-- A list where each entry is a front matter key to resolve at build time.
-  Default: `['image', 'links']`.
+- Front matter keys whose `page` references resolve to links at build time.
+  Realm always resolves `image`, `links`, `navbar`, `footer`, and `breadcrumbs`; keys you list here are added to that set.
 
 ---
 
@@ -165,7 +165,7 @@ Define project-level defaults using the `redocly.yaml` configuration file in you
 
 ```yaml {% title="redocly.yaml" %}
 markdown:
-  frontMatterKeysToResolve: ['screen-recordings', 'image', 'links']
+  frontMatterKeysToResolve: ['screen-recordings']
   partialsFolders: ['_guide-partials']
   lastUpdatedBlock:
     format: long
