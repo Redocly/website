@@ -54,11 +54,23 @@ In that case, users can log in using IdPs you have added in Reunite, with the fo
 
 ## Verified domains
 
-{% partial file="../../../_partials/verified-domains.md" /%}
+Verified domains connect users to an organization by email domain.
+These domains apply only to corporate identity providers, and only when logging in to Reunite, not to projects.
+Add a verified domain on the **SSO and login** page in Reunite.
+
+Users with a verified domain email are directed to corporate identity providers.
+They can still use Redocly credentials or social logins, unless you also require SSO authentication.
+Requiring SSO restricts them to corporate identity providers only.
 
 ## Team mapping
 
-{% partial file="../../../_partials/team-mapping.md" /%}
+Team mapping is an option when you add Corporate or Guest IdPs.
+It labels your IdP groups in Reunite.
+The option is called "team claim mapping" for OpenID Connect, and "team attribute mapping" for SAML 2.
+
+You can also use team mapping to assign IdP groups to [project RBAC teams](../../../config/access/rbac.md#team-to-role-map) or [organization roles](../../../access/roles.md#reserved-organization-role-names) other than the defaults.
+
+When users log in with an IdP, its groups override the RBAC teams assigned in Reunite.
 
 ## Disable SSO
 
