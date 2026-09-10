@@ -1,4 +1,19 @@
 '@redocly/realm':
+  0.137.0-next.10:
+    timestamp: 1789029160000
+    changes:
+      minor:
+        - Improved search to index every field, heading, and message.
+      patch:
+        - Fixed an issue where API docs pages opened scrolled down, hiding the breadcrumbs and any custom navigation placed above the API description.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
+          version `0.7.5`.
+        - Fixed missing tooltips in the Try it console parameter rows in OpenAPI docs.
+        - Fixed an issue in Replay where truncated tab names and request titles did not display their full versions on mouse hover or keyboard focus.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.10
+      '@redocly/theme': 0.69.0-next.9
   0.137.0-next.9:
     timestamp: 1788862787000
     changes:
@@ -7126,6 +7141,18 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.137.0-next.10:
+    timestamp: 1789029160000
+    changes:
+      minor:
+        - Improved search to index every field, heading, and message.
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
+          version `0.7.5`.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.10
+      '@redocly/theme': 0.69.0-next.9
   0.137.0-next.9:
     timestamp: 1788862787000
     changes:
@@ -13269,6 +13296,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.137.0-next.10:
+    timestamp: 1789029160000
+    changes:
+      minor:
+        - Improved search to index every field, heading, and message.
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
+          version `0.7.5`.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.10
+      '@redocly/theme': 0.69.0-next.9
   0.137.0-next.9:
     timestamp: 1788862787000
     changes:
@@ -19405,6 +19444,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.137.0-next.10:
+    timestamp: 1789029160000
+    changes:
+      minor:
+        - Improved search to index every field, heading, and message.
+      patch:
+        - Fixed an issue where API docs pages opened scrolled down, hiding the breadcrumbs and any custom navigation placed above the API description.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
+          version `0.7.5`.
+        - Fixed missing tooltips in the Try it console parameter rows in OpenAPI docs.
+        - Fixed an issue in Replay where truncated tab names and request titles did not display their full versions on mouse hover or keyboard focus.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.10
+      '@redocly/theme': 0.69.0-next.9
   0.137.0-next.9:
     timestamp: 1788862787000
     changes:
@@ -25636,6 +25690,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.69.0-next.9:
+    timestamp: 1789029160000
+    changes:
+      minor: []
+      patch:
+        - Improved search to index every field, heading, and message.
+    dependencies: {}
   0.69.0-next.8:
     timestamp: 1788862787000
     changes:
@@ -34429,6 +34490,20 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/api-docs':
+  0.2.0-next.10:
+    timestamp: 1789029160000
+    changes:
+      minor:
+        - Improved search to index every field, heading, and message.
+      patch:
+        - Fixed an issue where API docs pages opened scrolled down, hiding the breadcrumbs and any custom navigation placed above the API description.
+        - >-
+          Fixed an issue in `Try it` where parameters without an `example` appeared empty and were excluded from requests. Parameters now use schema
+          values such as `const`, `examples`, `enum`, or `default`. The **Send** button remains disabled if a required path parameter is empty.
+        - Fixed missing tooltips in the Try it console parameter rows in OpenAPI docs.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.9
+      '@redocly/replay': 0.28.0-next.9
   0.2.0-next.9:
     timestamp: 1788862787000
     changes:
@@ -35707,6 +35782,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.20.0-next.10:
+    timestamp: 1789029160000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.137.0-next.10
+      '@redocly/redoc': 0.137.0-next.10
+      '@redocly/redoc-reef': 0.137.0-next.10
+      '@redocly/redoc-revel': 0.137.0-next.10
+      '@redocly/theme': 0.69.0-next.9
   1.20.0-next.9:
     timestamp: 1788862787000
     changes:
@@ -44594,6 +44680,18 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.28.0-next.9:
+    timestamp: 1789029160000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in `Try it` where parameters without an `example` appeared empty and were excluded from requests. Parameters now use schema
+          values such as `const`, `examples`, `enum`, or `default`. The **Send** button remains disabled if a required path parameter is empty.
+        - Fixed an issue in Replay where the **Send** button became wider while a request was in flight, which shifted the request URL row.
+        - Fixed an issue in Replay where truncated tab names and request titles did not display their full versions on mouse hover or keyboard focus.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.9
   0.28.0-next.8:
     timestamp: 1788862787000
     changes:
@@ -47040,6 +47138,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.20.0-next.9:
+    timestamp: 1789029160000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.69.0-next.9
   0.20.0-next.8:
     timestamp: 1788862787000
     changes:
