@@ -77,7 +77,7 @@ The spawned process inherits your environment, so a server that reads its API ke
 ## Refresh without losing your edits
 
 The command updates the description in place: your `info`, `paths`, and `components` stay untouched, and only `servers` and `x-mcp` change.
-On every refresh the tool, prompt, and resource lists are replaced with what the server reports — renamed or removed entries don't linger — but the fields the MCP protocol doesn't carry are yours, and they're preserved by entry name: `tags` and `security` on each entry, and `example` on prompt arguments.
+On every refresh the tool, prompt, and resource lists are replaced with what the server reports — renamed or removed entries don't linger — but the annotations the MCP protocol doesn't carry are yours, and they're preserved by entry name: `tags` and `security` on tools, prompts, and resources, and `example` on prompt arguments.
 
 Suppose the [Redocly Cafe API](https://cafe.redocly.com/openapi/cafe) shipped an MCP server for order management.
 Its OpenAPI description already defines an `OAuth2` security scheme and an `Orders` tag, so you annotate the introspected tool to match:

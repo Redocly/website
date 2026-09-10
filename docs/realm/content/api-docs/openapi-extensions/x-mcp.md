@@ -184,6 +184,12 @@ The root is the outer most level of the OpenAPI description.
 
 ---
 
+- tags
+- [ string ]
+- Tags for the resource.
+
+---
+
 - uri
 - string
 - URI template for accessing the resource.
@@ -193,6 +199,12 @@ The root is the outer most level of the OpenAPI description.
 - mimeType
 - string
 - MIME type of the resource content.
+
+---
+
+- security
+- [ object ]
+- Security requirements for the resource, following OpenAPI security scheme format.
 
 {% /table %}
 
@@ -226,9 +238,21 @@ The root is the outer most level of the OpenAPI description.
 
 ---
 
+- tags
+- [ string ]
+- Tags for the prompt.
+
+---
+
 - arguments
 - [ [Argument object](#argument-object) ]
 - Array of arguments for the prompt.
+
+---
+
+- security
+- [ object ]
+- Security requirements for the prompt, following OpenAPI security scheme format.
 
 {% /table %}
 
@@ -257,6 +281,12 @@ The root is the outer most level of the OpenAPI description.
 - required
 - boolean
 - Whether the argument is required.
+
+---
+
+- example
+- any
+- Example value for the argument.
 
 {% /table %}
 
