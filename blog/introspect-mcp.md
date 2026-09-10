@@ -14,10 +14,10 @@ categories:
 ---
 
 If your API ships an MCP (Model Context Protocol) server, that server is an API surface of its own: tools with input schemas, prompts with arguments, resources with URIs.
-AI agents discover all of it at runtime - but the humans evaluating your API usually can't, because that surface lives only in the server code.
+AI agents discover all of it at runtime, but the humans evaluating your API usually can't, because that surface lives only in the server code.
 
 The [`x-mcp` OpenAPI extension](../docs/realm/content/api-docs/openapi-extensions/x-mcp.md) gives it a home: the MCP server's capabilities, documented inside the same OpenAPI description as the rest of your API.
-The new experimental [`introspect-mcp`](../docs/cli/commands/introspect-mcp) command in Redocly CLI fills that extension in for you - by asking the server itself.
+The new experimental [`introspect-mcp`](../docs/cli/commands/introspect-mcp) command in Redocly CLI fills that extension in for you, by asking the server itself.
 
 ## Ask the server, not the source code
 
