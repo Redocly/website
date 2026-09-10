@@ -53461,14 +53461,6 @@ reunite:
         - Fixed missing commit events in the pull request timeline for branches with long histories.
         - Fixed duplicated commit events in the Reunite pull request timeline.
     dependencies: {}
-  v2026-09-10.1:
-    timestamp: 1789038132000
-    changes:
-      minor:
-        - Added the option for invited users to resend their organization invitation email from within Reunite.
-      patch:
-        - Fixed search errors that occurred when Typesense search was enabled for a project for the first time.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
