@@ -1,10 +1,10 @@
 ---
 template: ../@theme/templates/BlogPost
 title: Document your MCP server with introspect-mcp
-description: The new introspect-mcp command asks a running MCP server what it can do and records its tools, prompts, and resources in the x-mcp extension of your OpenAPI description — with a --check mode that fails CI when the docs drift.
+description: The new introspect-mcp command asks a running MCP server what it can do and records its tools, prompts, and resources in the x-mcp extension of your OpenAPI description. The command also has a --check mode that fails CI when the docs drift.
 seo:
   title: Document your MCP server with introspect-mcp
-  description: The new introspect-mcp command asks a running MCP server what it can do and records its tools, prompts, and resources in the x-mcp extension of your OpenAPI description — with a --check mode that fails CI when the docs drift.
+  description: The new introspect-mcp command asks a running MCP server what it can do and records its tools, prompts, and resources in the x-mcp extension of your OpenAPI description. The command also has a --check mode that fails CI when the docs drift.
 author: dmytro-ananskyi
 publishedDate: "2026-09-10"
 categories:
@@ -28,7 +28,8 @@ npx @redocly/cli@latest introspect-mcp https://learn.microsoft.com/api/mcp -o op
 ```
 
 That's the public MCP server of Microsoft Learn, Microsoft's documentation and training platform, so you can run this exact command right now.
-The CLI connects over Streamable HTTP (falling back to the legacy HTTP+SSE transport for older servers), negotiates the protocol version, lists every tool, prompt, and resource — following pagination — and writes the result.
+The CLI connects over Streamable HTTP, falling back to the legacy HTTP+SSE transport for older servers.
+It negotiates the protocol version, lists every tool, prompt, and resource — following pagination — and writes the result.
 If `openapi.yaml` doesn't exist yet, it's scaffolded from the server's own name, version, and instructions.
 
 A trimmed excerpt from a real run:
@@ -64,7 +65,7 @@ npx @redocly/cli@latest introspect-mcp https://example.com/mcp -H "Authorization
 
 ## Local servers work too
 
-Most published MCP servers aren't HTTP endpoints — they're packages you launch with `npx`.
+Most published MCP servers aren't HTTP endpoints, they're packages you launch with `npx`.
 The `--command` option starts one as a local process and introspects it over stdio:
 
 ```bash
@@ -77,7 +78,9 @@ The spawned process inherits your environment, so a server that reads its API ke
 ## Refresh without losing your edits
 
 The command updates the description in place: your `info`, `paths`, and `components` stay untouched, and only `servers` and `x-mcp` change.
-On every refresh the tool, prompt, and resource lists are replaced with what the server reports — renamed or removed entries don't linger — but the annotations the MCP protocol doesn't carry are yours, and they're preserved by entry name: `tags` and `security` on tools, prompts, and resources, and `example` on prompt arguments.
+On every refresh the tool, prompt, and resource lists are replaced with what the server reports.
+Renamed or removed entries don't linger, but the annotations the MCP protocol doesn't carry are yours.
+They're preserved by entry name: `tags` and `security` on tools, prompts, and resources, and `example` on prompt arguments.
 
 Suppose the [Redocly Cafe API](https://cafe.redocly.com/openapi/cafe) shipped an MCP server for order management.
 Its OpenAPI description already defines an `OAuth2` security scheme and an `Orders` tag, so you annotate the introspected tool to match:
@@ -126,7 +129,8 @@ Add that one line to your pipeline and the build fails the moment your published
 ## From YAML to rendered docs
 
 Once `x-mcp` is in the description, it's regular OpenAPI: lint it, bundle it, version it in Git.
-And [Redocly Realm](../docs/realm/index.md) renders the extension as MCP documentation right next to your API reference, so the tools, prompts, and resources you just introspected become reader-facing docs — no extra authoring step.
+And [Redocly Realm](../docs/realm/index.md) renders the extension as MCP documentation right next to your API reference.
+The tools, prompts, and resources you just introspected become reader-facing docs — no extra authoring step.
 
 To learn more, see the [`introspect-mcp` documentation](../docs/cli/commands/introspect-mcp) and the [`x-mcp` extension reference](../docs/realm/content/api-docs/openapi-extensions/x-mcp.md).
 
