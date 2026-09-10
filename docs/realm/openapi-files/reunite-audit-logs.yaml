@@ -1,0 +1,349 @@
+openapi: 3.1.0
+info:
+  title: Reunite audit log exports
+  version: '1.0.0'
+  description: |-
+    The audit log export operations of the Reunite API.
+    Use them to export the record of who did what in a Redocly organization.
+  termsOfService: https://redocly.com/subscription-agreement
+  contact:
+    name: API Support
+    email: team@redocly.com
+    url: https://redocly.com/
+  license:
+    name: Redocly
+    url: https://redocly.com/subscription-agreement
+servers:
+  - url: https://{host}/api
+    description: Reunite API
+    variables:
+      host:
+        default: app.cloud.redocly.com
+        description: Host of your Redocly instance.
+security:
+  - ApiKey: []
+tags:
+  - name: Audit log exports
+    description: Export organization audit logs for compliance, analysis, or archival.
+paths:
+  /orgs/{orgId}/audit-log-export-jobs:
+    post:
+      tags:
+        - Audit log exports
+      operationId: createAuditLogExportJob
+      summary: Create an audit log export job
+      description: |-
+        Starts an asynchronous export job for the organization audit log.
+        The response returns the job `id`.
+        Use the job `id` to check the status and to download the file.
+      parameters:
+        - $ref: '#/components/parameters/OrgId'
+        - name: filter
+          in: query
+          required: false
+          description: |-
+            Restricts the export to specific event types.
+            Use the `type:<event type>` syntax, and separate multiple event types with commas.
+            Unsupported values return `400`.
+            When omitted, the export includes events of all types.
+          schema:
+            type: string
+          example: type:com.redocly.user.loggedIn,com.redocly.user.loginFailed
+        - name: start
+          in: query
+          required: false
+          description: |-
+            Start of the time range in `YYYY-MM-DD` format.
+            When `end` is omitted, the export covers `start` through `start` plus 31 days.
+          schema:
+            type: string
+            format: date
+          example: '2026-08-01'
+        - name: end
+          in: query
+          required: false
+          description: |-
+            End of the time range in `YYYY-MM-DD` format.
+            When `start` is omitted, the export covers `end` minus 31 days through `end`.
+            The range between `start` and `end` must not exceed 31 days.
+          schema:
+            type: string
+            format: date
+          example: '2026-08-31'
+        - name: format
+          in: query
+          required: false
+          description: File format of the generated export.
+          schema:
+            type: string
+            enum:
+              - json
+              - csv
+            default: json
+          example: json
+      responses:
+        '201':
+          description: Export job created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuditLogExportJobCreated'
+              example:
+                id: exp_01hh1t9sa6gwfv5naz04gr7ehm
+                createdAt: '2026-09-01T12:00:00.000Z'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /orgs/{orgId}/audit-log-export-jobs/{exportJobId}:
+    get:
+      tags:
+        - Audit log exports
+      operationId: getAuditLogExportJob
+      summary: Get an audit log export job
+      description: |-
+        Returns the status of an export job.
+        Repeat the request until `status` is `COMPLETED`, then download the file.
+      parameters:
+        - $ref: '#/components/parameters/OrgId'
+        - $ref: '#/components/parameters/ExportJobId'
+      responses:
+        '200':
+          description: Export job.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuditLogExportJob'
+              example:
+                id: exp_01hh1t9sa6gwfv5naz04gr7ehm
+                status: COMPLETED
+                createdAt: '2026-09-01T12:00:00.000Z'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /orgs/{orgId}/audit-log-export-results/{exportJobId}:
+    get:
+      tags:
+        - Audit log exports
+      operationId: getAuditLogExportResult
+      summary: Get an audit log export file
+      description: |-
+        Downloads the file that the export job generated.
+        The file is available after the job completes.
+        While the job status is `IN_PROGRESS` or `FAILED`, the operation returns `404`.
+      parameters:
+        - $ref: '#/components/parameters/OrgId'
+        - $ref: '#/components/parameters/ExportJobId'
+      responses:
+        '200':
+          description: |-
+            Export file.
+            The media type matches the `format` of the export job.
+          headers:
+            Content-Disposition:
+              description: Attachment hint with the suggested file name.
+              schema:
+                type: string
+              example: attachment; filename="exp_01hh1t9sa6gwfv5naz04gr7ehm.json"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuditLogExportEvent'
+              example:
+                - id: evt_2fxb8r4kq7m3ndp9z6ja501
+                  object: event
+                  type: com.redocly.pullRequest.created
+                  time: '2026-08-31T15:27:30.815Z'
+                  subject: pr_7wnk3jm9xp2d4rv8qh5a01
+                  actor:
+                    id: usr_01h2r5f6qy8kr42p8yfw52spq6
+                    object: user
+                    uri: https://app.cloud.redocly.com/api/users/usr_01h2r5f6qy8kr42p8yfw52spq6
+                  clientIp: 198.51.100.42
+                  projectId: prj_01hh1t9sa6gwfv5naz04gr7ehm
+                  projectSlug: developer-portal
+            text/csv:
+              schema:
+                type: string
+              example: |
+                id,object,type,time,subject,actor,clientIp,projectId,projectSlug
+                evt_2fxb8r4kq7m3ndp9z6ja501,event,com.redocly.pullRequest.created,2026-08-31T15:27:30.815Z,pr_7wnk3jm9xp2d4rv8qh5a01,"{""id"":""usr_01h2r5f6qy8kr42p8yfw52spq6"",""object"":""user"",""uri"":""https://app.cloud.redocly.com/api/users/usr_01h2r5f6qy8kr42p8yfw52spq6""}",198.51.100.42,prj_01hh1t9sa6gwfv5naz04gr7ehm,developer-portal
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  securitySchemes:
+    ApiKey:
+      type: http
+      scheme: bearer
+      description: |-
+        Send an organization API key as a bearer token.
+        The key needs the `org.auditLogs.read` permission.
+  parameters:
+    OrgId:
+      name: orgId
+      in: path
+      required: true
+      description: Identifier of the organization.
+      schema:
+        type: string
+      example: org_01hh1t9sa6gwfv5naz04gr7ehm
+    ExportJobId:
+      name: exportJobId
+      in: path
+      required: true
+      description: Identifier of the export job.
+      schema:
+        type: string
+      example: exp_01hh1t9sa6gwfv5naz04gr7ehm
+  schemas:
+    AuditLogExportStatus:
+      type: string
+      description: Current status of the export job.
+      enum:
+        - IN_PROGRESS
+        - COMPLETED
+        - FAILED
+    AuditLogExportJobCreated:
+      type: object
+      description: Export job that was created.
+      required:
+        - id
+        - createdAt
+      properties:
+        id:
+          type: string
+          description: Identifier of the export job.
+          example: exp_01hh1t9sa6gwfv5naz04gr7ehm
+        createdAt:
+          type: string
+          format: date-time
+          description: Time when the export job was created.
+    AuditLogExportJob:
+      type: object
+      description: Status and metadata of an export job.
+      required:
+        - id
+        - status
+        - createdAt
+      properties:
+        id:
+          type: string
+          description: Identifier of the export job.
+          example: exp_01hh1t9sa6gwfv5naz04gr7ehm
+        status:
+          $ref: '#/components/schemas/AuditLogExportStatus'
+        createdAt:
+          type: string
+          format: date-time
+          description: Time when the export job was created.
+    AuditLogExportEvent:
+      type: object
+      description: One record in an audit log export.
+      required:
+        - id
+        - type
+      properties:
+        id:
+          type: string
+          description: Identifier of the event.
+          example: evt_2fxb8r4kq7m3ndp9z6ja501
+        object:
+          type: string
+          description: Entity name.
+          enum:
+            - event
+        type:
+          type: string
+          description: Type of the recorded action.
+          example: com.redocly.pullRequest.created
+        time:
+          type: string
+          format: date-time
+          description: Time when the action happened.
+        subject:
+          type: string
+          description: Identifier of the resource that the action applied to.
+          example: pr_7wnk3jm9xp2d4rv8qh5a01
+        projectId:
+          type: string
+          description: Identifier of the project, for project-scoped actions.
+          example: prj_01hh1t9sa6gwfv5naz04gr7ehm
+        projectSlug:
+          type: string
+          description: Slug of the project, for project-scoped actions.
+          example: developer-portal
+        clientIp:
+          type: string
+          description: IP address of the client that triggered the action.
+          example: 198.51.100.42
+        actor:
+          description: Actor that triggered the action.
+          oneOf:
+            - type: 'null'
+            - type: object
+              required:
+                - id
+                - object
+                - uri
+              properties:
+                id:
+                  type: string
+                  example: usr_01h2r5f6qy8kr42p8yfw52spq6
+                object:
+                  type: string
+                  enum:
+                    - user
+                    - webhook
+                    - cronJob
+                uri:
+                  type: string
+                  format: uri
+                  example: https://app.cloud.redocly.com/api/users/usr_01h2r5f6qy8kr42p8yfw52spq6
+    Problem:
+      type: object
+      description: Error response.
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+  responses:
+    BadRequest:
+      description: The request is not valid.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    Unauthorized:
+      description: The request is not authenticated.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    Forbidden:
+      description: The credentials lack the required permission or plan.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    NotFound:
+      description: The requested resource does not exist.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
