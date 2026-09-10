@@ -37,6 +37,8 @@ A trimmed excerpt from a real run:
 ```yaml
 x-mcp:
   protocolVersion: '2025-11-25'
+  servers:
+    - url: https://www.rebilly.com/mcp
   capabilities:
     logging: {}
     tools:
@@ -87,7 +89,7 @@ The spawned process inherits your environment, so a server that reads its API ke
 
 ## Refresh without losing your edits
 
-The command updates the description in place: your `info`, `paths`, and `components` stay untouched, and only `servers` and `x-mcp` change.
+The command updates the description in place: your `info`, `paths`, `servers`, and `components` stay untouched, and only the `x-mcp` section changes.
 On every refresh the tool, prompt, and resource lists are replaced with what the server reports.
 Renamed or removed entries don't linger, but the annotations the MCP protocol doesn't carry are yours.
 They're preserved by entry name: `tags` and `security` on tools, prompts, and resources, and `example` on prompt arguments.
