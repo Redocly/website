@@ -53469,6 +53469,18 @@ reunite:
       patch:
         - Fixed search errors that occurred when Typesense search was enabled for a project for the first time.
     dependencies: {}
+  v2026-09-10.3:
+    timestamp: 1789053339000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where builds complete successfully but incorrectly report internal system errors.
+        - Fixed an issue where changing a pull request's target branch did not start a preview deployment.
+        - Improved build times for projects with many commit statuses by reducing redundant status updates.
+        - >-
+          Fixed the placement of the Reunite hint shown after the setup checklist is closed. The hint appears next to the checklist button in the
+          sidebar instead of the top-right corner of the screen.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
