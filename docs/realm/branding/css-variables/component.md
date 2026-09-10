@@ -1723,6 +1723,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --search-message-line-height: var(--line-height-lg);
 --search-message-text-color: var(--text-color-secondary);
 --search-message-gap: var(--spacing-md);
+--search-message-padding: var(--spacing-md);
 ```
 
 </details>
