@@ -24,10 +24,10 @@ The new experimental [`introspect-mcp`](../docs/cli/commands/introspect-mcp) com
 Point the command at a running MCP server and tell it which file to write:
 
 ```bash
-npx @redocly/cli@latest introspect-mcp https://learn.microsoft.com/api/mcp -o openapi.yaml
+npx @redocly/cli@latest introspect-mcp https://www.rebilly.com/mcp -o openapi.yaml
 ```
 
-That's the public MCP server of Microsoft Learn, Microsoft's documentation and training platform, so you can run this exact command right now.
+That's the public MCP server of [Rebilly](https://www.rebilly.com)'s API documentation, served by their Redocly-powered docs site, so you can run this exact command right now.
 The CLI connects over Streamable HTTP, falling back to the legacy HTTP+SSE transport for older servers.
 It negotiates the protocol version, lists every tool, prompt, and resource — following pagination — and writes the result.
 If `openapi.yaml` doesn't exist yet, it's scaffolded from the server's own name, version, and instructions.
@@ -36,25 +36,35 @@ A trimmed excerpt from a real run:
 
 ```yaml
 x-mcp:
-  protocolVersion: '2025-06-18'
+  protocolVersion: '2025-11-25'
   capabilities:
-    # ...the logging, prompts, and resources capabilities
+    logging: {}
     tools:
       listChanged: true
   tools:
-    - name: microsoft_docs_search
-      title: Microsoft Docs Search
+    - name: execute
+      title: Execute code
       # ...the tool's long description
       inputSchema:
         type: object
         properties:
-          query:
-            description: >-
-              a query or topic about Microsoft/Azure products, services,
-              platforms, developer tools, frameworks, or APIs
+          code:
             type: string
-            default: null
-      # ...the tool's outputSchema, and the other two tools
+            description: >-
+              JavaScript to run in the sandbox. Return a value to receive it as
+              the result.
+            minLength: 1
+          # ...the description and sessionHandle properties
+        required:
+          - code
+          - description
+        additionalProperties: false
+      annotations:
+        title: Execute code
+        readOnlyHint: false
+        destructiveHint: true
+        openWorldHint: true
+    # ...the other three tools
 ```
 
 For servers that require authentication, pass headers the same way you would with `curl`:
@@ -112,14 +122,14 @@ An MCP server evolves, and a documented snapshot goes stale quietly.
 The `--check` flag turns the command into a CI guardrail: it compares the file with what an introspection run would produce, writes nothing, and exits with code `1` when they disagree.
 
 ```bash
-npx @redocly/cli@latest introspect-mcp https://learn.microsoft.com/api/mcp -o openapi.yaml --check
+npx @redocly/cli@latest introspect-mcp https://www.rebilly.com/mcp -o openapi.yaml --check
 ```
 
 A real report, after the server renamed a tool:
 
 ```text
 openapi.yaml is out of date with the MCP server:
-  - tools - added: microsoft_docs_search; removed: microsoft_docs_search_v1
+  - tools - added: describe-tools; removed: describe-tools-v1
 
 Run the command without --check to update it.
 ```
