@@ -104,6 +104,10 @@ function processData() {
 ```
 ````
 
+Set `{% process=false %}` on a fenced code block to keep `{% %}` syntax inside it as literal text instead of parsing it as Markdoc.
+This is how the example preserves the inner code block's `{% title="app.js" highlight="{2,4-6}" %}` annotation.
+Use this attribute to showcase the syntax of Markdoc tags in authoring guides.
+
 Learn more about [code snippet configuration](../config/code-snippet.md).
 For all highlighting and annotation options see examples at [Markdoc code snippet tag](./markdoc-tags/code-snippet.md), and explore [Markdoc code groups](./markdoc-tags/code-group.md) for multi-language examples.
 
