@@ -6,7 +6,7 @@ seo:
   title: Document your MCP server with introspect-mcp
   description: The new introspect-mcp command asks a running MCP server what it can do and records its tools, prompts, and resources in the x-mcp extension of your OpenAPI description. The command also has a --check mode that fails CI when the docs drift.
 author: dmytro-ananskyi
-publishedDate: "2026-09-10"
+publishedDate: "2026-09-11"
 categories:
   - redocly:product-updates
   - redocly:redocly-cli
@@ -16,7 +16,7 @@ categories:
 If you ship an MCP (Model Context Protocol) server, that server is an API surface of its own: tools with input schemas, prompts with arguments, resources with URIs.
 AI agents discover all of it at runtime, but the humans evaluating your API usually can't, because that surface lives only in the server code.
 
-The [`x-mcp` OpenAPI extension](../docs/realm/content/api-docs/openapi-extensions/x-mcp.md) gives it a home: the MCP server's capabilities, documented inside the same OpenAPI description as the rest of your API.
+The [`x-mcp` OpenAPI extension](../docs/realm/content/api-docs/openapi-extensions/x-mcp.md) records the MCP server's capabilities in the same OpenAPI description as the rest of your API.
 The new experimental [`introspect-mcp`](../docs/cli/commands/introspect-mcp) command in Redocly CLI fills that extension in for you, by asking the server itself.
 
 ## Ask the server, not the source code
@@ -27,7 +27,7 @@ Point the command at a running MCP server and tell it which file to write:
 npx @redocly/cli@latest introspect-mcp https://www.rebilly.com/mcp -o openapi.yaml
 ```
 
-That's the public MCP server of [Rebilly](https://www.rebilly.com)'s API documentation, served by their Redocly-powered docs site, so you can run this exact command right now.
+That's the public MCP server of [Rebilly](https://www.rebilly.com)'s API documentation, so you can run this exact command right now.
 The CLI connects over Streamable HTTP, falling back to the legacy HTTP+SSE transport for older servers.
 It negotiates the protocol version, lists every tool, prompt, and resource — following pagination — and writes the result.
 If `openapi.yaml` doesn't exist yet, it's scaffolded from the server's own name, version, and instructions.
@@ -84,15 +84,14 @@ The `--command` option starts one as a local process and introspects it over std
 npx @redocly/cli@latest introspect-mcp --command "npx -y @modelcontextprotocol/server-everything" -o openapi.yaml
 ```
 
-Running that against the MCP reference server records 13 tools, 4 prompts, and 7 resources in one go.
+Running that against the MCP reference server records 13 tools, 4 prompts, and 7 resources.
 The spawned process inherits your environment, so a server that reads its API key from an environment variable behaves exactly as it does in your shell.
 
 ## Refresh without losing your edits
 
 The command updates the description in place: your `info`, `paths`, `servers`, and `components` stay untouched, and only the `x-mcp` section changes.
-On every refresh the tool, prompt, and resource lists are replaced with what the server reports.
-Renamed or removed entries don't linger, but the annotations the MCP protocol doesn't carry are yours.
-They're preserved by entry name: `tags` and `security` on tools, prompts, and resources, and `example` on prompt arguments.
+On every refresh the tool, prompt, and resource lists are replaced with what the server reports, so renamed and removed entries are cleaned up.
+The annotations the MCP protocol doesn't carry are preserved by entry name: `tags` and `security` on tools, prompts, and resources, and `example` on prompt arguments.
 
 Suppose the [Redocly Cafe API](https://cafe.redocly.com/openapi/cafe) shipped an MCP server for order management.
 Its OpenAPI description already defines an `OAuth2` security scheme and an `Orders` tag, so you annotate the introspected tool to match:
@@ -116,18 +115,18 @@ x-mcp:
             - orders:write
 ```
 
-When the server's schemas or descriptions change, rerun the command: the wire-level data refreshes, and `tags` and `security` stay where you put them.
+When the server's schemas or descriptions change, rerun the command: the introspected data is updated, and your `tags` and `security` are kept.
 
 ## Fail the build when the docs drift
 
-An MCP server evolves, and a documented snapshot goes stale quietly.
-The `--check` flag turns the command into a CI guardrail: it compares the file with what an introspection run would produce, writes nothing, and exits with code `1` when they disagree.
+MCP servers change, and the documented snapshot gets outdated.
+The `--check` flag makes the command usable as a CI check: it compares the file with what an introspection run would produce, writes nothing, and exits with code `1` when they differ.
 
 ```bash
 npx @redocly/cli@latest introspect-mcp https://www.rebilly.com/mcp -o openapi.yaml --check
 ```
 
-A real report, after the server renamed a tool:
+For example, after the server renames a tool, the command reports:
 
 ```text
 openapi.yaml is out of date with the MCP server:
@@ -136,7 +135,7 @@ openapi.yaml is out of date with the MCP server:
 Run the command without --check to update it.
 ```
 
-Add that one line to your pipeline and the build fails the moment your published API description and your MCP server tell different stories.
+Add this command to your CI pipeline to fail the build when the published description no longer matches the MCP server.
 
 ## From YAML to rendered docs
 
@@ -146,4 +145,4 @@ The tools, prompts, and resources you just introspected become reader-facing doc
 
 To learn more, see the [`introspect-mcp` documentation](../docs/cli/commands/introspect-mcp) and the [`x-mcp` extension reference](../docs/realm/content/api-docs/openapi-extensions/x-mcp.md).
 
-Have you pointed it at your MCP server yet? The command is new and experimental — [tell us what it got right and what it missed](https://github.com/Redocly/redocly-cli/issues), and help shape where it goes next.
+Have you tried it against your own MCP server? [Let us know](https://github.com/Redocly/redocly-cli/issues) — the command is new and experimental, and real-world feedback shapes where it goes next.
