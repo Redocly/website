@@ -53619,6 +53619,15 @@ reunite:
           Fixed the placement of the Reunite hint shown after the setup checklist is closed. The hint appears next to the checklist button in the
           sidebar instead of the top-right corner of the screen.
     dependencies: {}
+  v2026-09-11.2:
+    timestamp: 1789156569000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Removed the `Creator` column from the Reunite API keys page and the `createdById` field from API key responses. Audit log exports still
+          indicate who created, updated, or revoked each key.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
