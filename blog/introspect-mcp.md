@@ -68,7 +68,7 @@ npx @redocly/cli@latest introspect-mcp https://example.com/mcp -H "Authorization
 
 ## Local servers work too
 
-Most published MCP servers aren't HTTP endpoints, they're packages you launch with `npx`.
+Most published MCP servers packages you launch with `npx` instead of HTTP endpoints.
 The `--command` option starts one as a local process and introspects it over stdio:
 
 ```bash
