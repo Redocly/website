@@ -16,6 +16,8 @@
   label: Use AI to review code examples for completeness and accuracy
 - page: ai-automate-documentation-reviews-pr-workflow.md
   label: Use AI to automate documentation reviews in your PR workflow
+- page: ai-draft-docs-prs-from-support-tickets.md
+  label: Use AI to draft documentation PRs from your support tickets
 - page: ai-review-docs-navigation-structure.md
   label: Use AI to review your docs navigation structure
 - page: ai-enforce-api-style-guide-at-scale.md
