@@ -7,6 +7,31 @@ toc:
 
 <!-- do-not-remove -->
 
+## 2.52.0 (2026-09-10)
+
+### Minor Changes
+
+- Added agent skills for AI coding assistants: `redocly-cli` for everyday CLI usage, `redocly-lint-rules` for writing configurable rules and custom plugins.
+  Install them with `npx skills add https://redocly.com`.
+- Added an experimental `inspect-node-types` command to navigate the Redocly's node type tree of an API description.
+  `inspect-node-types` helps pick the correct `subject` types for a configurable rule or the correct visitor for a custom plugin.
+- Added a `strategy` option to the `component-name-unique` rule, matching the `--component-names-strategy` option of the `bundle` command.
+- Added an experimental `introspect-mcp` command that analyzes a running MCP server and records its tools, prompts, resources, and capabilities.
+  `introspect-mcp` records its findings in the `x-mcp` extension of an OpenAPI description.
+
+### Patch Changes
+
+- Updated @redocly/openapi-core to v2.52.0.
+
+## 2.51.2 (2026-09-04)
+
+### Patch Changes
+
+- Updated `fast-uri` to the `3.1.7` version to resolve `CVE-2026-75931`, `CVE-2026-75975`, `CVE-2026-75899`, and `CVE-2026-76172`.
+- Fixed `drift` and `coverage` failing to match a path template whose segment mixes literal text with parameters, such as `/instances/{worldId}:{instanceId}`.
+- Fixed an issue where Redocly config resolution failed when plugins used ESM syntax.
+- Updated @redocly/openapi-core to v2.51.2.
+
 ## 2.51.1 (2026-09-02)
 
 ### Patch Changes

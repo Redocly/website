@@ -18,6 +18,10 @@ Connect that repository so you can access, edit, and publish those files in Reun
 
 To connect a Bitbucket Cloud repository, you must first create a new access token in Bitbucket Cloud, then enter the connection details in Reunite.
 
+{% partial file="../../../_partials/connect-git-two-contexts.md" /%}
+
+The access token is required in both contexts.
+
 ## Create a new repository access token in Bitbucket Cloud
 
 {% partial file="../../../_partials/create-access-token-bitbucket-cloud.md" /%}

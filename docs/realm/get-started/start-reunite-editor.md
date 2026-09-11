@@ -23,7 +23,7 @@ Make sure you have the following:
 - a [Redocly account with an organization](https://auth.cloud.redocly.com/registration)
 - a project that uses the **Starter** template in your Reunite organization
 
-  See: [Create a project](../reunite/project/manage-projects.md#create-a-project) for instructions on creating a project.
+  See: [Create a project from a template](../reunite/project/manage-projects.md#create-a-project-from-a-template) for instructions on creating a project.
 
 ## Create a branch
 

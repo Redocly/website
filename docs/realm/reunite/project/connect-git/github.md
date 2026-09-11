@@ -17,6 +17,10 @@ Your project files can be stored in a repository on GitHub.
 Connect that repository so you can access, edit, and publish those files in Reunite.
 To connect a GitHub repository, you must first install the Redocly app in GitHub, then enter the connection details in Reunite.
 
+{% partial file="../../../_partials/connect-git-two-contexts.md" /%}
+
+The Redocly app installation is required in both contexts.
+
 ## Install the Redocly app in GitHub
 
 {% partial file="../../../_partials/install-redocly-app-gh.md" /%}

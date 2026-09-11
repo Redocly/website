@@ -1,4 +1,60 @@
 '@redocly/realm':
+  0.137.0-next.11:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - Fixed an empty Download panel that appeared on the OpenAPI and AsyncAPI overview page when `downloadUrls` was set to an empty list.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+        - >-
+          Fixed an issue in the **Try it** console where closing an inactive tab moved the selection to a different tab instead of keeping the tab the
+          user was working in.
+        - >-
+          Fixed an issue in Replay's mobile layout where the first character typed in a request input moved focus to the close button, causing the
+          rest of the input to be lost.
+        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.11
+      '@redocly/theme': 0.69.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.8
+  0.137.0-next.10:
+    timestamp: 1789029160000
+    changes:
+      minor:
+        - Improved search to index every field, heading, and message.
+      patch:
+        - Fixed an issue where API docs pages opened scrolled down, hiding the breadcrumbs and any custom navigation placed above the API description.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
+          version `0.7.5`.
+        - Fixed missing tooltips in the Try it console parameter rows in OpenAPI docs.
+        - Fixed an issue in Replay where truncated tab names and request titles did not display their full versions on mouse hover or keyboard focus.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.10
+      '@redocly/theme': 0.69.0-next.9
+  0.137.0-next.9:
+    timestamp: 1788862787000
+    changes:
+      minor:
+        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
+      patch:
+        - >-
+          Fixed an issue where environment variable placeholders (`{{ process.env.VAR }}`) in `redocly.yaml` resolved to their build-time values
+          instead of the server's runtime environment.
+        - Fixed an issue in API docs where the request code sample lost its form fields and displayed an empty body.
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Updated `@redocly/openapi-core` to version `2.51.2`.
+        - Updated `@redocly/openapi-core` to version `2.49.1`.
+        - Fixed an issue where project SSO login failed when the IdP sent many group claims.
+        - Fixed an issue in Replay where the request body editor didn't display property descriptions for content with Markdown formatting.
+        - Improved the 404 page for API Docs.
+        - Fixed an issue where preview did not update `llms.txt` and page Markdown related to LLMs.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.9
+      '@redocly/theme': 0.69.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.7
   0.137.0-next.8:
     timestamp: 1788344354000
     changes:
@@ -7105,6 +7161,49 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.137.0-next.11:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.11
+      '@redocly/theme': 0.69.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.8
+  0.137.0-next.10:
+    timestamp: 1789029160000
+    changes:
+      minor:
+        - Improved search to index every field, heading, and message.
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
+          version `0.7.5`.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.10
+      '@redocly/theme': 0.69.0-next.9
+  0.137.0-next.9:
+    timestamp: 1788862787000
+    changes:
+      minor:
+        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
+      patch:
+        - >-
+          Fixed an issue where environment variable placeholders (`{{ process.env.VAR }}`) in `redocly.yaml` resolved to their build-time values
+          instead of the server's runtime environment.
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Updated `@redocly/openapi-core` to version `2.51.2`.
+        - Updated `@redocly/openapi-core` to version `2.49.1`.
+        - Fixed an issue where project SSO login failed when the IdP sent many group claims.
+        - Fixed an issue where preview did not update `llms.txt` and page Markdown related to LLMs.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.9
+      '@redocly/theme': 0.69.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.7
   0.137.0-next.8:
     timestamp: 1788344354000
     changes:
@@ -13230,6 +13329,49 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.137.0-next.11:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.11
+      '@redocly/theme': 0.69.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.8
+  0.137.0-next.10:
+    timestamp: 1789029160000
+    changes:
+      minor:
+        - Improved search to index every field, heading, and message.
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
+          version `0.7.5`.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.10
+      '@redocly/theme': 0.69.0-next.9
+  0.137.0-next.9:
+    timestamp: 1788862787000
+    changes:
+      minor:
+        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
+      patch:
+        - >-
+          Fixed an issue where environment variable placeholders (`{{ process.env.VAR }}`) in `redocly.yaml` resolved to their build-time values
+          instead of the server's runtime environment.
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Updated `@redocly/openapi-core` to version `2.51.2`.
+        - Updated `@redocly/openapi-core` to version `2.49.1`.
+        - Fixed an issue where project SSO login failed when the IdP sent many group claims.
+        - Fixed an issue where preview did not update `llms.txt` and page Markdown related to LLMs.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.9
+      '@redocly/theme': 0.69.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.7
   0.137.0-next.8:
     timestamp: 1788344354000
     changes:
@@ -19348,6 +19490,62 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.137.0-next.11:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - Fixed an empty Download panel that appeared on the OpenAPI and AsyncAPI overview page when `downloadUrls` was set to an empty list.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+        - >-
+          Fixed an issue in the **Try it** console where closing an inactive tab moved the selection to a different tab instead of keeping the tab the
+          user was working in.
+        - >-
+          Fixed an issue in Replay's mobile layout where the first character typed in a request input moved focus to the close button, causing the
+          rest of the input to be lost.
+        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.11
+      '@redocly/theme': 0.69.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.8
+  0.137.0-next.10:
+    timestamp: 1789029160000
+    changes:
+      minor:
+        - Improved search to index every field, heading, and message.
+      patch:
+        - Fixed an issue where API docs pages opened scrolled down, hiding the breadcrumbs and any custom navigation placed above the API description.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
+          version `0.7.5`.
+        - Fixed missing tooltips in the Try it console parameter rows in OpenAPI docs.
+        - Fixed an issue in Replay where truncated tab names and request titles did not display their full versions on mouse hover or keyboard focus.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.10
+      '@redocly/theme': 0.69.0-next.9
+  0.137.0-next.9:
+    timestamp: 1788862787000
+    changes:
+      minor:
+        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
+      patch:
+        - >-
+          Fixed an issue where environment variable placeholders (`{{ process.env.VAR }}`) in `redocly.yaml` resolved to their build-time values
+          instead of the server's runtime environment.
+        - Fixed an issue in API docs where the request code sample lost its form fields and displayed an empty body.
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Updated `@redocly/openapi-core` to version `2.51.2`.
+        - Updated `@redocly/openapi-core` to version `2.49.1`.
+        - Fixed an issue where project SSO login failed when the IdP sent many group claims.
+        - Fixed an issue in Replay where the request body editor didn't display property descriptions for content with Markdown formatting.
+        - Improved the 404 page for API Docs.
+        - Fixed an issue where preview did not update `llms.txt` and page Markdown related to LLMs.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.9
+      '@redocly/theme': 0.69.0-next.8
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.7
   0.137.0-next.8:
     timestamp: 1788344354000
     changes:
@@ -25558,6 +25756,29 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.69.0-next.10:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
+    dependencies: {}
+  0.69.0-next.9:
+    timestamp: 1789029160000
+    changes:
+      minor: []
+      patch:
+        - Improved search to index every field, heading, and message.
+    dependencies: {}
+  0.69.0-next.8:
+    timestamp: 1788862787000
+    changes:
+      minor:
+        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
+      patch:
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Improved the 404 page for API Docs.
+    dependencies: {}
   0.69.0-next.7:
     timestamp: 1788344354000
     changes:
@@ -32194,6 +32415,15 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.56.0:
+    timestamp: 1788448870000
+    changes:
+      minor:
+        - >-
+          Added the `recheck` block to the `redocly.yaml` schema, so projects can configure Recheck next to their API rules and `check-config`
+          validates the block.
+      patch: []
+    dependencies: {}
   0.55.0:
     timestamp: 1788266168000
     changes:
@@ -34333,6 +34563,47 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/api-docs':
+  0.2.0-next.11:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - Fixed an empty Download panel that appeared on the OpenAPI and AsyncAPI overview page when `downloadUrls` was set to an empty list.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+    dependencies:
+      '@redocly/replay': 0.28.0-next.10
+      '@redocly/theme': 0.69.0-next.10
+  0.2.0-next.10:
+    timestamp: 1789029160000
+    changes:
+      minor:
+        - Improved search to index every field, heading, and message.
+      patch:
+        - Fixed an issue where API docs pages opened scrolled down, hiding the breadcrumbs and any custom navigation placed above the API description.
+        - >-
+          Fixed an issue in `Try it` where parameters without an `example` appeared empty and were excluded from requests. Parameters now use schema
+          values such as `const`, `examples`, `enum`, or `default`. The **Send** button remains disabled if a required path parameter is empty.
+        - Fixed missing tooltips in the Try it console parameter rows in OpenAPI docs.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.9
+      '@redocly/replay': 0.28.0-next.9
+  0.2.0-next.9:
+    timestamp: 1788862787000
+    changes:
+      minor:
+        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
+      patch:
+        - Fixed an issue in API docs where the request code sample lost its form fields and displayed an empty body.
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Updated `@redocly/openapi-core` to version `2.51.2`.
+        - Updated `@redocly/openapi-core` to version `2.49.1`.
+        - Fixed an issue in Replay where the request body editor didn't display property descriptions for content with Markdown formatting.
+        - Improved the 404 page for API Docs.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.8
+      '@redocly/replay': 0.28.0-next.8
   0.2.0-next.8:
     timestamp: 1788344354000
     changes:
@@ -34541,6 +34812,24 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.11.0-next.2:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+    dependencies: {}
+  0.11.0-next.1:
+    timestamp: 1788862787000
+    changes:
+      minor: []
+      patch:
+        - Updated `openapi-sampler` to version 1.7.5.
+        - Updated `@redocly/openapi-core` to version `2.51.2`.
+        - Updated `@redocly/openapi-core` to version `2.49.1`.
+    dependencies: {}
   0.11.0-next.0:
     timestamp: 1787685775000
     changes:
@@ -35587,6 +35876,39 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.20.0-next.11:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.137.0-next.11
+      '@redocly/redoc': 0.137.0-next.11
+      '@redocly/redoc-reef': 0.137.0-next.11
+      '@redocly/redoc-revel': 0.137.0-next.11
+      '@redocly/theme': 0.69.0-next.10
+  1.20.0-next.10:
+    timestamp: 1789029160000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.137.0-next.10
+      '@redocly/redoc': 0.137.0-next.10
+      '@redocly/redoc-reef': 0.137.0-next.10
+      '@redocly/redoc-revel': 0.137.0-next.10
+      '@redocly/theme': 0.69.0-next.9
+  1.20.0-next.9:
+    timestamp: 1788862787000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.137.0-next.9
+      '@redocly/redoc': 0.137.0-next.9
+      '@redocly/redoc-revel': 0.137.0-next.9
+      '@redocly/redoc-reef': 0.137.0-next.9
+      '@redocly/theme': 0.69.0-next.8
   1.20.0-next.8:
     timestamp: 1788344354000
     changes:
@@ -41302,6 +41624,20 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.22.0-next.8:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.11.0-next.2
+  0.22.0-next.7:
+    timestamp: 1788862787000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.11.0-next.1
   0.22.0-next.6:
     timestamp: 1788250507000
     changes:
@@ -44456,6 +44792,47 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.28.0-next.10:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+        - >-
+          Fixed an issue in the **Try it** console where closing an inactive tab moved the selection to a different tab instead of keeping the tab the
+          user was working in.
+        - >-
+          Fixed an issue in Replay's mobile layout where the first character typed in a request input moved focus to the close button, causing the
+          rest of the input to be lost.
+        - >-
+          Fixed an issue in **Try it** where typing in the empty parameter row of a request opened in a new tab discarded the character, moved focus
+          out of the field, and added the parameter to the previously opened request.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.10
+  0.28.0-next.9:
+    timestamp: 1789029160000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in `Try it` where parameters without an `example` appeared empty and were excluded from requests. Parameters now use schema
+          values such as `const`, `examples`, `enum`, or `default`. The **Send** button remains disabled if a required path parameter is empty.
+        - Fixed an issue in Replay where the **Send** button became wider while a request was in flight, which shifted the request URL row.
+        - Fixed an issue in Replay where truncated tab names and request titles did not display their full versions on mouse hover or keyboard focus.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.9
+  0.28.0-next.8:
+    timestamp: 1788862787000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in Replay where a response without a body, such as `204 No Content`, displayed an empty code editor on the **Body** tab
+          instead of a message that states the response has no content.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.8
   0.28.0-next.7:
     timestamp: 1788344354000
     changes:
@@ -46892,6 +47269,27 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.20.0-next.10:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.69.0-next.10
+  0.20.0-next.9:
+    timestamp: 1789029160000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.69.0-next.9
+  0.20.0-next.8:
+    timestamp: 1788862787000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.69.0-next.8
   0.20.0-next.7:
     timestamp: 1788344354000
     changes:
@@ -53146,6 +53544,68 @@ reunite:
       patch:
         - Fixed GitHub rate-limit errors and timeouts for remotes and project sources connected through the GitHub App.
         - Fixed a crash on the add-project page triggered by a missing project context in the Git remote form.
+    dependencies: {}
+  v2026-09-04.1:
+    timestamp: 1788532229000
+    changes:
+      minor: []
+      patch:
+        - Fixed slow AI assistant responses that could take minutes and time out on large projects.
+        - >-
+          Fixed dropped push or pull request webhooks for remote content preview branches when GitHub could not compute the comparison for very large
+          commit ranges. Reunite now detects changes and syncs the remote content.
+        - Fixed missing email notifications for replies to pull request comments, ensuring all participants and mentioned users receive notifications.
+        - >-
+          Fixed Reunite pull request notifications to include people who commented on or reviewed the pull request, so they receive updates on later
+          activity.
+        - >-
+          Fixed pull request creation in Reunite failing right after a push to the branch, which also lost the pull request notification for remote
+          content updates.
+        - >-
+          Fixed Reunite reconnecting a closed pull request that did not belong to a branch it just created, and reconnecting a different pull request
+          on each attempt.
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.49.1`.
+        - Fixed hard-to-read onboarding progress colors in light and dark themes and removed an empty onboarding item from the sidebar.
+        - Fixed an error message appearing instead of the login page when a session expired and the authentication service was unavailable.
+    dependencies: {}
+  v2026-09-08.1:
+    timestamp: 1788858246000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.51.2`.
+    dependencies: {}
+  v2026-09-08.2:
+    timestamp: 1788878055000
+    changes:
+      minor:
+        - Added a filter on the Reunite `Teams` page to display all teams, Reunite-managed teams, or SSO-synced teams.
+      patch: []
+    dependencies: {}
+  v2026-09-08.3:
+    timestamp: 1788904064000
+    changes:
+      minor:
+        - Added a request ID to Reunite server error pages so users can copy it and share it with support when reporting a problem.
+      patch: []
+    dependencies: {}
+  v2026-09-09.1:
+    timestamp: 1788951459000
+    changes:
+      minor: []
+      patch:
+        - Hardened AI search access rules configured under `access.rbac` (`features.aiSearch` and the assistant `hide` flags).
+        - Fixed Reunite login to show a clear error message for unverified email addresses and removed sensitive details from login failure responses.
+        - Fixed missing commit events in the pull request timeline for branches with long histories.
+        - Fixed duplicated commit events in the Reunite pull request timeline.
+    dependencies: {}
+  v2026-09-10.2:
+    timestamp: 1789043558000
+    changes:
+      minor:
+        - Added the option for invited users to resend their organization invitation email from within Reunite.
+      patch:
+        - Fixed search errors that occurred when Typesense search was enabled for a project for the first time.
     dependencies: {}
 replay:
   0.0.2:

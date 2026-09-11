@@ -145,6 +145,14 @@ In that case, make changes to team membership and composition in your identity p
 Only users with an Owner organization role and members assigned as team managers can access the **Teams** page.
 Team managers can only view and manage their assigned teams.
 
+Use the filter next to the search box to display:
+
+- **All teams**
+- **Managed in Reunite**
+- **Synced from SSO**
+
+Identity provider managed teams have an **SSO** badge with the name of the identity provider.
+
 The **Teams** page does not include options for determining who has access to projects.
 Project access is determined by the permissions of the teams users are members of.
 Team permissions are configured in the `redocly.yaml` file for each individual project.

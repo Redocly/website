@@ -63,6 +63,10 @@ authors:
     name: Illia Nykonchuk
     authorBIO: Software Engineer, Redocly
     image: nykonchuk.png
+  - id: alex-varchuk
+    name: Oleksandr Varchuk
+    authorBIO: Staff Engineer, Redocly
+    image: alex.png
 categories:
   - id: api-catalog
     label: API catalog
