@@ -126,6 +126,8 @@ This guide provides a comprehensive overview of available configuration options 
   {% configProperty file="redirects.md" /%}
 
   {% configProperty file="seo.md" /%}
+
+  {% configProperty file="stats.md" /%}
 {% /configSection %}
 
 {% configSection title="Developer experience" description="Enhance the experience for developers using your APIs." %}
@@ -205,11 +207,6 @@ Redocly has a few important configuration philosophies:
 - universal config (all configuration in one place)
 - zero config (you don't need to do any configuration because we have sane defaults)
 - config-as-code (all configuration should be writable in a simple source-control friendly format)
-
-Boolean options should be `false` by default, and each name must say what `true` does.
-Set one only when you want to turn that behavior on.
-A few options are `true` by default.
-Check the reference pages for the option you need.
 
 Some options have multiple levels of nesting.
 Pay attention to the indentation and nesting when modifying the file.

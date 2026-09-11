@@ -187,6 +187,8 @@
       label: skills
     - page: ./ssoDirect.md
       label: ssoDirect
+    - page: ./stats.md
+      label: stats
     - page: ./user-menu.md
       label: userMenu
     - page: ./version-picker.md
