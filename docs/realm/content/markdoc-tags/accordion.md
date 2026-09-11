@@ -40,7 +40,7 @@ Try adding a new special event to the Museum API, or timebox the content creatio
 ### Group accordions
 
 Wrap several accordions in an `accordion-group` tag to display them as one list with dividers between the items.
-The group takes no attributes.
+Users can expand any number of the accordions at once, unless you set the `singleExpanded` attribute.
 
 {% accordion-group %}
   {% accordion title="How do I buy a ticket?" %}
@@ -67,6 +67,25 @@ The group takes no attributes.
 {% /markdoc-example %}
 
 ## Attributes
+
+### Accordion group
+
+{% table %}
+
+- Attribute
+- Type
+- Description
+
+---
+
+- singleExpanded
+- boolean
+- When `true`, expanding one accordion collapses the other accordions in the group.
+  **Default:** `false`.
+
+{% /table %}
+
+### Accordion
 
 {% table %}
 
@@ -110,6 +129,36 @@ The museum is open from 9:00 to 18:00 every day except Monday.
 ```
 
 {% /markdoc-example %}
+
+### Display one accordion at a time
+
+Use the `singleExpanded` attribute to keep a long list of questions short.
+Expanding one answer collapses the one a user read before it.
+
+{% markdoc-example %}
+
+```md {% process=false %}
+{% accordion-group singleExpanded=true %}
+  {% accordion title="How do I buy a ticket?" %}
+  Use the `POST /tickets` endpoint or visit the museum front desk.
+  {% /accordion %}
+  {% accordion title="Can I get a refund?" %}
+  Tickets are refundable up to 24 hours before the visit date.
+  {% /accordion %}
+  {% accordion title="Do I need a ticket for a child?" %}
+  Visitors under 6 enter free, and need no ticket.
+  {% /accordion %}
+{% /accordion-group %}
+```
+
+{% /markdoc-example %}
+
+{% admonition type="info" %}
+If more than one accordion in the group sets `expanded=true`, only the first one stays expanded.
+
+This behavior uses the browser's own support for grouped accordions.
+Older browsers ignore `singleExpanded` and expand every accordion independently.
+{% /admonition %}
 
 ### Add a code snippet
 
