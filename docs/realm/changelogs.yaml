@@ -1,4 +1,24 @@
 '@redocly/realm':
+  0.137.0-next.11:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - Fixed an empty Download panel that appeared on the OpenAPI and AsyncAPI overview page when `downloadUrls` was set to an empty list.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+        - >-
+          Fixed an issue in the **Try it** console where closing an inactive tab moved the selection to a different tab instead of keeping the tab the
+          user was working in.
+        - >-
+          Fixed an issue in Replay's mobile layout where the first character typed in a request input moved focus to the close button, causing the
+          rest of the input to be lost.
+        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.11
+      '@redocly/theme': 0.69.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.8
   0.137.0-next.10:
     timestamp: 1789029160000
     changes:
@@ -7141,6 +7161,19 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.137.0-next.11:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.11
+      '@redocly/theme': 0.69.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.8
   0.137.0-next.10:
     timestamp: 1789029160000
     changes:
@@ -13296,6 +13329,19 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.137.0-next.11:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.11
+      '@redocly/theme': 0.69.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.8
   0.137.0-next.10:
     timestamp: 1789029160000
     changes:
@@ -19444,6 +19490,26 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.137.0-next.11:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - Fixed an empty Download panel that appeared on the OpenAPI and AsyncAPI overview page when `downloadUrls` was set to an empty list.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+        - >-
+          Fixed an issue in the **Try it** console where closing an inactive tab moved the selection to a different tab instead of keeping the tab the
+          user was working in.
+        - >-
+          Fixed an issue in Replay's mobile layout where the first character typed in a request input moved focus to the close button, causing the
+          rest of the input to be lost.
+        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
+    dependencies:
+      '@redocly/api-docs': 0.2.0-next.11
+      '@redocly/theme': 0.69.0-next.10
+      '@redocly/portal-plugin-mock-server': 0.22.0-next.8
   0.137.0-next.10:
     timestamp: 1789029160000
     changes:
@@ -25690,6 +25756,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.69.0-next.10:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
+    dependencies: {}
   0.69.0-next.9:
     timestamp: 1789029160000
     changes:
@@ -34490,6 +34563,18 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/api-docs':
+  0.2.0-next.11:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - Fixed an empty Download panel that appeared on the OpenAPI and AsyncAPI overview page when `downloadUrls` was set to an empty list.
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+    dependencies:
+      '@redocly/replay': 0.28.0-next.10
+      '@redocly/theme': 0.69.0-next.10
   0.2.0-next.10:
     timestamp: 1789029160000
     changes:
@@ -34727,6 +34812,15 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.11.0-next.2:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+    dependencies: {}
   0.11.0-next.1:
     timestamp: 1788862787000
     changes:
@@ -35782,6 +35876,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.20.0-next.11:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.137.0-next.11
+      '@redocly/redoc': 0.137.0-next.11
+      '@redocly/redoc-reef': 0.137.0-next.11
+      '@redocly/redoc-revel': 0.137.0-next.11
+      '@redocly/theme': 0.69.0-next.10
   1.20.0-next.10:
     timestamp: 1789029160000
     changes:
@@ -41519,6 +41624,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.22.0-next.8:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.11.0-next.2
   0.22.0-next.7:
     timestamp: 1788862787000
     changes:
@@ -44680,6 +44792,25 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.28.0-next.10:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
+          `4.3.2` and `hono` to version `4.13.7`.
+        - >-
+          Fixed an issue in the **Try it** console where closing an inactive tab moved the selection to a different tab instead of keeping the tab the
+          user was working in.
+        - >-
+          Fixed an issue in Replay's mobile layout where the first character typed in a request input moved focus to the close button, causing the
+          rest of the input to be lost.
+        - >-
+          Fixed an issue in **Try it** where typing in the empty parameter row of a request opened in a new tab discarded the character, moved focus
+          out of the field, and added the parameter to the previously opened request.
+    dependencies:
+      '@redocly/theme': 0.69.0-next.10
   0.28.0-next.9:
     timestamp: 1789029160000
     changes:
@@ -47138,6 +47269,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.20.0-next.10:
+    timestamp: 1789119224000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.69.0-next.10
   0.20.0-next.9:
     timestamp: 1789029160000
     changes:
