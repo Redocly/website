@@ -93,18 +93,18 @@
 </details>
 
 <details>
-<summary>Admonition type default</summary>
+<summary>Admonition type idea</summary>
 
 ```css
---admonition-default-bg-color: var(--color-primary-bg, var(--admonition-default-bg-color-legacy));
---admonition-default-text-color: var(--admonition-heading-text-color);
---admonition-default-heading-text-color: var(--admonition-heading-text-color);
---admonition-default-icon-color: var(--color-primary-base, var(--admonition-primary-icon-color-legacy));
---admonition-default-border-color: var(--color-primary-border, var(--admonition-default-border-color-legacy));
---admonition-default-border-style: var(--admonition-border-style);
---admonition-default-border-width: var(--admonition-border-width);
---admonition-default-border: var(--admonition-default-border-width) var(--admonition-default-border-style)
-  var(--admonition-default-border-color);
+--admonition-idea-bg-color: var(--color-primary-bg, var(--admonition-default-bg-color-legacy));
+--admonition-idea-text-color: var(--admonition-heading-text-color);
+--admonition-idea-heading-text-color: var(--admonition-heading-text-color);
+--admonition-idea-icon-color: var(--color-primary-base, var(--admonition-default-icon-color-legacy));
+--admonition-idea-border-color: var(--color-primary-border, var(--admonition-default-border-color-legacy));
+--admonition-idea-border-style: var(--admonition-border-style);
+--admonition-idea-border-width: var(--admonition-border-width);
+--admonition-idea-border: var(--admonition-idea-border-width) var(--admonition-idea-border-style)
+  var(--admonition-idea-border-color);
 ```
 
 </details>
