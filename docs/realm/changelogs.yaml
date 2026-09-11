@@ -53612,6 +53612,9 @@ reunite:
     changes:
       minor: []
       patch:
+        - >-
+          Removed the `Creator` column from the Reunite API keys page and the `createdById` field from API key responses. Audit log exports still
+          indicate who created, updated, or revoked each key.
         - Fixed an issue where builds complete successfully but incorrectly report internal system errors.
         - Fixed an issue where changing a pull request's target branch did not start a preview deployment.
         - Improved build times for projects with many commit statuses by reducing redundant status updates.
