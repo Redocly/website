@@ -8,7 +8,7 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-description: Allow builds to publish even if Reunite detects issues in your project.
+description: Allow builds to publish even if Reunite detects issues in your project, and request reviews from default reviewers.
 ---
 # `reunite`
 
@@ -22,6 +22,7 @@ Those issues are:
 - Respect Monitoring failures
 
 Configure `jobs` to run the Respect command on Arazzo Descriptions.
+Configure `reviewers` to request reviews from the owners of changed files.
 
 ## Options
 
@@ -67,6 +68,15 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 - [[Jobs object](#jobs-object)]
 - Defines jobs based on Arazzo Descriptions in your project.
   The jobs monitor the performance of your APIs by referencing OpenAPI Descriptions in your project.
+
+---
+
+- reviewers
+- Map[string, [string]]
+- Automatically requests reviews on pull requests from the users and teams that own the changed files.
+  Reviewers are added when a pull request is opened, reopened, marked ready for review, or receives new commits.
+  Reviewers are never removed automatically.
+  See [Reviewers map](#reviewers-map) for pattern rules.
 
 {% /table %}
 
@@ -197,6 +207,29 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 
 {% /table %}
 
+## Reviewers map
+
+A map of file patterns to lists of owners.
+Each owner is either a user's email address or a team name from your organization.
+Only users with access to the project are added as reviewers.
+The pull request author is never added.
+
+Patterns follow the same rules as GitHub's CODEOWNERS file:
+
+- A pattern without a `/` (for example `*.md`) matches at any depth.
+- A leading `/` (for example `/openapi/*.yaml`) anchors the pattern to the project root.
+- A trailing `/` (for example `docs/`) matches every file under that directory.
+- `*` matches within one path segment.
+- `**` as a whole path segment matches zero or more directories, so `docs/**/*.md` also matches `docs/a.md`.
+- A `**` inside a segment, such as `a**b`, behaves like `*`.
+
+When several patterns match the same file, the most specific pattern wins.
+Specificity is the number of literal (non-wildcard) characters in the pattern (a trailing `/` counts as `/**`), with the longer pattern winning ties.
+A file-name pattern such as `*.spec.ts` can outrank a shorter directory pattern such as `src/`; make the directory pattern longer or more specific to give it priority.
+Owners from all changed files are combined.
+Reviewer rules are read from the configuration of the project's latest production build on the default branch, so a pull request that changes the rules does not apply them to itself.
+Environment-specific overrides in `env` are not applied to reviewer rules.
+
 ## Examples
 
 ### Ignore errors examples
@@ -223,6 +256,18 @@ reunite:
 ```
 
 The errors are still reported, but they do not prevent publishing.
+
+### Default reviewers example
+
+The following example requests a review from the `docs-team` for any change under `docs/`, from the `api-team` and `alice@example.com` for OpenAPI files, and overrides the `docs/` rule for `docs/api/`:
+
+```yaml {% title="redocly.yaml" %}
+reunite:
+  reviewers:
+    'docs/': [docs-team]
+    'docs/api/': [api-team]
+    '/openapi/*.yaml': [api-team, alice@example.com]
+```
 
 ### Jobs configuration examples
 
