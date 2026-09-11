@@ -197,6 +197,9 @@ export function LogosIcons({
   if (normalized === Products.REDOC.toLowerCase() || normalized === 'redoc') {
     return <RedocLogo size={size} title={title || 'Redoc'} />;
   }
+  if (normalized === Products.REDOC_CE.toLowerCase() || normalized === 'redoc-ce') {
+    return <RedocLogo size={size} title={title || 'Redoc CE'} />;
+  }
   if (normalized === Products.REVEL.toLowerCase() || normalized === 'revel') {
     return <RevelLogo size={size} title={title || 'Revel'} />;
   }

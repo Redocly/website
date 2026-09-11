@@ -1,6 +1,7 @@
 ---
 products:
   - Redoc
+  - Redoc CE
   - Realm
 plans:
   - Pro
@@ -186,7 +187,7 @@ schema {
 ```
 
 The docstring can start with `#` (followed by a space) on the first line.
-That line is extracted as the title and the rest as the description.
+This line is extracted as the title and the rest as the description.
 Otherwise, the entire docstring is used as the description.
 
 ## Per-API customization

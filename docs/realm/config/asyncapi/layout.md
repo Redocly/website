@@ -1,6 +1,7 @@
 ---
 products:
   - Redoc
+  - Redoc CE
   - Realm
 plans:
   - Pro
@@ -37,14 +38,14 @@ The `layout` option is a string that sets the layout of the API documentation pa
 
 ## Examples
 
-The following example configures the layout for the API documentation page to be set to `stacked`:
+The following example configures the `stacked` layout for the API documentation page:
 
 ```yaml {% title="redocly.yaml" %}
 asyncapi:
   layout: 'stacked'
 ```
 
-The following example configures the layout for the API documentation page to be set to `three-panel`:
+The following example configures the `three-panel` layout for the API documentation page:
 
 ```yaml {% title="redocly.yaml" %}
 asyncapi:

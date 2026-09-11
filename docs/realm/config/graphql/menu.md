@@ -1,6 +1,7 @@
 ---
 products:
   - Redoc
+  - Redoc CE
   - Realm
 plans:
   - Pro
@@ -31,7 +32,7 @@ Use this option to make a large or complex GraphQL description easier for users 
 
 - otherItemsGroupName
 - string
-- Any items that don't match another group will be added under this group.
+- Items that don't match other groups are added to this group.
 
 ---
 

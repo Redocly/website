@@ -1,6 +1,7 @@
 ---
 products:
   - Redoc
+  - Redoc CE
   - Realm
 plans:
   - Pro
