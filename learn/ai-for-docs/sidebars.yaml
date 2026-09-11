@@ -32,6 +32,8 @@
   label: Use AI to find duplicate and underused APIs in your codebase
 - page: ai-build-searchable-api-catalog.md
   label: Use AI to build a searchable API catalog for your team
+- page: ai-keep-api-service-catalog-current.md
+  label: Use AI to keep your API service catalog current
 - page: ai-help-developers-find-understand-apis.md
   label: Use AI to help developers find and understand your APIs faster
 - page: ai-optimize-api-docs-llms-ai-search.md
