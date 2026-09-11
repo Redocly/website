@@ -192,6 +192,7 @@ Project roles are assigned to teams for each specific project in the `redocly.ya
 Users with the Owner organization role have full access to all projects.
 Access granted to organization Members is based on project-level roles.
 Members without an explicit project role have the `admin` role by default.
+Members of a [project role team](../reunite/organization/teams.md#project-role-teams) named `<project-slug>.<project-role>` get the project role from the team name.
 
 This default `admin` role allows organization members to use the **Merge without requirements** button, bypassing intended restrictions.
 To restrict access for organization members, you must configure explicit RBAC rules in `redocly.yaml`, which take precedence over default permissions.

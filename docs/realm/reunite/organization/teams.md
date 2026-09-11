@@ -83,6 +83,31 @@ Team mapping connects groups in your IdP to RBAC teams in Reunite.
 When users log in with an IdP, the groups assigned in the IdP override the RBAC teams assigned in Reunite.
 See the SSO concept documentation for more information on [team mapping](./sso/sso.md#team-mapping).
 
+### Project role teams
+
+A team with a name that follows the pattern `<project-slug>.<project-role>` gives its members the project role from the team name.
+You do not need to add the team to the `rbac` configuration in the `redocly.yaml` file.
+For example, for a project with the slug `redocly-intranet`, you can create the following teams:
+
+- `redocly-intranet.admin`
+- `redocly-intranet.maintain`
+- `redocly-intranet.triage`
+- `redocly-intranet.write`
+- `redocly-intranet.read`
+
+Organizations without the RBAC feature can use only the `<project-slug>.admin` team.
+
+Create the team in Reunite and add users to it, or use [team mapping](./sso/add-idp.md#team-mapping) to connect a group in your identity provider to a team with this name.
+Team assignments from SSO override manual team assignments in Reunite.
+
+Project role teams work together with the `rbac` configuration:
+
+- Members who are not in a project role team get the [default project role](../../access/roles.md#project-roles) of the organization or the role from the `rbac.reunite` configuration.
+- If the `rbac.reunite` configuration gives a project role team a different role, the role from the configuration is used.
+- Project role teams do not grant access to the project content in the published portal. Use the `rbac.content` configuration for content access.
+
+When you change the slug of a project, rename the project role teams to match the new slug.
+
 ## Multiple teams
 
 If users belong to multiple teams, they have the combination of the roles assigned to their teams.
