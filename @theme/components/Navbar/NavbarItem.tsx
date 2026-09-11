@@ -70,9 +70,10 @@ export function NavbarItem({ navItem, className }: NavbarItemProps): JSX.Element
       Redoc: 'API reference and mock server',
       Reef: 'Internal service catalog',
       'Respect Monitoring': 'API monitoring',
-      Reviewer: 'Reads pull requests, leaves expert feedback'
+      Reviewer: 'Reads pull requests, leaves expert feedback',
+      Writer: 'Watches user signals, opens docs pull requests'
     };
-    const newItems = new Set(['Reviewer']);
+    const newItems = new Set(['Reviewer', 'Writer']);
     const groupItemsComponents = groupItems.reduce((acc, curr) => {
       if (curr.type.startsWith('separator')) {
         acc.push({ [curr.label as string]: [] });
