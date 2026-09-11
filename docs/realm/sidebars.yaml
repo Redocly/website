@@ -466,8 +466,10 @@
           label: Eject using CLI
         - page: customization/eject-components/eject-components-tutorial/index.md
           label: Ejection tutorial
-        - page: customization/eject-root-layout.md
+        - page: customization/add-react-providers.md
           label: Add React providers
+        - page: customization/eject-root-layout.md
+          label: Root layout
     - page: customization/theme-static-assets.md
       label: Theme static assets
     - page: customization/enable-source-maps.md

@@ -71,8 +71,12 @@ Create custom Markdoc functions for dynamic content generation and processing.
 Customize built-in components by ejecting and modifying them to fit your needs.
 {% /card %}
 
+{% card title="React providers" icon="layer-group" to="./add-react-providers.md" %}
+Add React providers, such as a component library theme, to every page without ejecting the root layout component.
+{% /card %}
+
 {% card title="Root layout" icon="square-root" to="./eject-root-layout.md" %}
-Customize the root application layout for complete control over your project structure.
+Add an element to every page, or change the element that wraps the page.
 {% /card %}
 
 {% /cards %}
