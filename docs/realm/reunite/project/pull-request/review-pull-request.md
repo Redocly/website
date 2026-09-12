@@ -115,7 +115,9 @@ Your project can use a [connected Git provider](../../project/connect-git/connec
 In that case, after the review is submitted, you will see a **Visual review** check on it.
 
 The check links back to the **Visual review** tab in Reunite and displays a short status (for example, **Pending**, **Approved**, **Changes requested**, or **No changes**).
-**Visual review** check updates automatically when you add comments or change a review in Reunite.
+
+**Visual review** check updates automatically when you push a commit or submit a review or comment in Reunite.
+To stop posting the check, open **Settings > Git hosting** and switch off **Visual review check**.
 
 If you connect your Git provider and Reunite accounts before submitting your review, it will post a review to your Git repository.
 
