@@ -6,7 +6,7 @@ seo:
   title: Generate OpenAPI from real traffic (with AI)
   description: The new generate-spec command infers an OpenAPI description from recorded HTTP traffic - with AI refinement.
 author: adam-sobaniec
-publishedDate: "2026-08-31"
+publishedDate: "2026-09-14"
 categories:
   - redocly:redocly-cli
   - redocly:product-updates
@@ -212,7 +212,7 @@ Give a model a whole codebase - or a whole traffic dump - and it loses track, th
 - **Determinism and AI work together, not against each other.**
   The AI does not rebuild anything from scratch - it refines the baseline.
 - **Nothing is trusted blindly.**
-  Each AI response is validated against baseline. If operations differ too much, response is treated rejected.
+  Each AI response is validated against baseline. If operations differ too much, the response is treated as rejected.
 
 ### Runs on the AI you already have
 
