@@ -14,7 +14,7 @@ description: Setup Search Engine Optimization(SEO) for your project.
 
 Use the `seo` options to control the contents of your project's HTML `<head>` element and `llms.txt` file generation.
 The options also control search engine optimization features like sitemaps and indexing control.
-You can override `seo` options, except `llmstxt`, in the [front matter](./front-matter-config.md) of Markdown and React pages.
+You can override `seo` options, except `llmstxt` and `siteUrl`, in the [front matter](./front-matter-config.md) of Markdown and React pages.
 
 {% partial file="../_partials/config/_supported-config.md" variables={"optionName": "seo"} /%}
 
@@ -91,9 +91,13 @@ You can override `seo` options, except `llmstxt`, in the [front matter](./front-
 
 - siteUrl
 - string
-- Sets the base URL for canonical links.
+- Sets the base URL for canonical links, sitemap entries, and the links in the `llms.txt` file.
   When this option is configured, it automatically adds `rel="canonical"` to the head of all HTML pages.
   This option is required to generate a sitemap, see more information in the [Sitemaps](#sitemaps) section.
+  Give the site origin, such as `https://docs.example.com`.
+  Redocly ignores a path in this value.
+  If your site uses a path prefix, Redocly inserts the prefix between the origin and the page path.
+  For example, a site with the `/access` path prefix gets `https://docs.example.com/access/your-page`.
 
   Do not use this option in the front matter.
 
