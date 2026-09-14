@@ -63,6 +63,10 @@ authors:
     name: Illia Nykonchuk
     authorBIO: Software Engineer, Redocly
     image: nykonchuk.png
+  - id: vasyl-havronskyi
+    name: Vasyl Havronskyi
+    authorBIO: Software Engineer, Redocly
+    image: havronskyi.svg
   - id: alex-varchuk
     name: Oleksandr Varchuk
     authorBIO: Staff Engineer, Redocly

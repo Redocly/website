@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="792pt" height="403.2pt" viewBox="0 0 792 403.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>Code mode input-token and estimated model-cost reductions</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>Code mode input-token and estimated model-cost reductions</dc:title>
+    <dc:date>2026-09-14T09:38:21.342216</dc:date>
+    <dc:description>Relative reductions compared with direct tool calling across 28 documentation tasks. Full data in accompanying CSV.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 403.2 
+L 792 403.2 
+L 792 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 178.2 314.496 
+L 447.044037 314.496 
+L 447.044037 116.928 
+L 178.2 116.928 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 178.2 314.496 
+L 178.2 116.928 
+" clip-path="url(#pf2e887ed6b)" style="fill: none; stroke: #eceef1; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="fill: #454b55; font: 11px 'DejaVu Sans'; text-anchor: middle" x="178.2" y="334.854281" transform="rotate(-0 178.2 334.854281)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 249.891743 314.496 
+L 249.891743 116.928 
+" clip-path="url(#pf2e887ed6b)" style="fill: none; stroke: #eceef1; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="fill: #454b55; font: 11px 'DejaVu Sans'; text-anchor: middle" x="249.891743" y="334.854281" transform="rotate(-0 249.891743 334.854281)">20%</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 321.583486 314.496 
+L 321.583486 116.928 
+" clip-path="url(#pf2e887ed6b)" style="fill: none; stroke: #eceef1; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="fill: #454b55; font: 11px 'DejaVu Sans'; text-anchor: middle" x="321.583486" y="334.854281" transform="rotate(-0 321.583486 334.854281)">40%</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 393.275229 314.496 
+L 393.275229 116.928 
+" clip-path="url(#pf2e887ed6b)" style="fill: none; stroke: #eceef1; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="fill: #454b55; font: 11px 'DejaVu Sans'; text-anchor: middle" x="393.275229" y="334.854281" transform="rotate(-0 393.275229 334.854281)">60%</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_9"/>
+     <g id="text_5">
+      <text style="fill: #454b55; font: 12px 'DejaVu Sans'; text-anchor: end" x="166.2" y="146.053181" transform="rotate(-0 166.2 146.053181)">Gemini 3 Flash</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_10"/>
+     <g id="text_6">
+      <text style="fill: #454b55; font: 12px 'DejaVu Sans'; text-anchor: end" x="166.2" y="220.271062" transform="rotate(-0 166.2 220.271062)">Claude Haiku 4.5</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11"/>
+     <g id="text_7">
+      <text style="fill: #454b55; font: 12px 'DejaVu Sans'; text-anchor: end" x="166.2" y="294.488944" transform="rotate(-0 166.2 294.488944)">Gemini 2.5 Flash</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 178.2 125.908364 
+L 373.370832 125.908364 
+L 373.370832 157.079874 
+L 178.2 157.079874 
+z
+" clip-path="url(#pf2e887ed6b)" style="fill: #6552c7"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 178.2 200.126245 
+L 240.75273 200.126245 
+L 240.75273 231.297755 
+L 178.2 231.297755 
+z
+" clip-path="url(#pf2e887ed6b)" style="fill: #6552c7"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 178.2 274.344126 
+L 408.011059 274.344126 
+L 408.011059 305.515636 
+L 178.2 305.515636 
+z
+" clip-path="url(#pf2e887ed6b)" style="fill: #6552c7"/>
+   </g>
+   <g id="text_8">
+    <text style="fill: #6552c7; font: 700 14px 'DejaVu Sans'; text-anchor: start" x="378.747713" y="145.357244" transform="rotate(-0 378.747713 145.357244)">54%</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #6552c7; font: 700 14px 'DejaVu Sans'; text-anchor: start" x="246.129611" y="219.575125" transform="rotate(-0 246.129611 219.575125)">17%</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #6552c7; font: 700 14px 'DejaVu Sans'; text-anchor: start" x="413.38794" y="293.793006" transform="rotate(-0 413.38794 293.793006)">64%</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #20242c; font: 700 13px 'DejaVu Sans'; text-anchor: start" x="178.2" y="93.928" transform="rotate(-0 178.2 93.928)">Fewer input tokens</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_6">
+    <path d="M 495.435963 314.496 
+L 764.28 314.496 
+L 764.28 116.928 
+L 495.435963 116.928 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_5">
+     <g id="line2d_12">
+      <path d="M 495.435963 314.496 
+L 495.435963 116.928 
+" clip-path="url(#p83740f6472)" style="fill: none; stroke: #eceef1; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_13"/>
+     <g id="text_12">
+      <text style="fill: #454b55; font: 11px 'DejaVu Sans'; text-anchor: middle" x="495.435963" y="334.854281" transform="rotate(-0 495.435963 334.854281)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_14">
+      <path d="M 567.127706 314.496 
+L 567.127706 116.928 
+" clip-path="url(#p83740f6472)" style="fill: none; stroke: #eceef1; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_15"/>
+     <g id="text_13">
+      <text style="fill: #454b55; font: 11px 'DejaVu Sans'; text-anchor: middle" x="567.127706" y="334.854281" transform="rotate(-0 567.127706 334.854281)">20%</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_16">
+      <path d="M 638.81945 314.496 
+L 638.81945 116.928 
+" clip-path="url(#p83740f6472)" style="fill: none; stroke: #eceef1; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_17"/>
+     <g id="text_14">
+      <text style="fill: #454b55; font: 11px 'DejaVu Sans'; text-anchor: middle" x="638.81945" y="334.854281" transform="rotate(-0 638.81945 334.854281)">40%</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_18">
+      <path d="M 710.511193 314.496 
+L 710.511193 116.928 
+" clip-path="url(#p83740f6472)" style="fill: none; stroke: #eceef1; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_19"/>
+     <g id="text_15">
+      <text style="fill: #454b55; font: 11px 'DejaVu Sans'; text-anchor: middle" x="710.511193" y="334.854281" transform="rotate(-0 710.511193 334.854281)">60%</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_4">
+     <g id="line2d_20"/>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_21"/>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_22"/>
+    </g>
+   </g>
+   <g id="patch_7">
+    <path d="M 495.435963 125.908364 
+L 621.294412 125.908364 
+L 621.294412 157.079874 
+L 495.435963 157.079874 
+z
+" clip-path="url(#p83740f6472)" style="fill: #148479"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 495.435963 200.126245 
+L 530.980219 200.126245 
+L 530.980219 231.297755 
+L 495.435963 231.297755 
+z
+" clip-path="url(#p83740f6472)" style="fill: #148479"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 495.435963 274.344126 
+L 564.281941 274.344126 
+L 564.281941 305.515636 
+L 495.435963 305.515636 
+z
+" clip-path="url(#p83740f6472)" style="fill: #148479"/>
+   </g>
+   <g id="text_16">
+    <text style="fill: #148479; font: 700 14px 'DejaVu Sans'; text-anchor: start" x="626.671293" y="145.357244" transform="rotate(-0 626.671293 145.357244)">35%</text>
+   </g>
+   <g id="text_17">
+    <text style="fill: #148479; font: 700 14px 'DejaVu Sans'; text-anchor: start" x="536.357099" y="219.575125" transform="rotate(-0 536.357099 219.575125)">10%</text>
+   </g>
+   <g id="text_18">
+    <text style="fill: #148479; font: 700 14px 'DejaVu Sans'; text-anchor: start" x="569.658822" y="293.793006" transform="rotate(-0 569.658822 293.793006)">19%</text>
+   </g>
+   <g id="text_19">
+    <text style="fill: #20242c; font: 700 13px 'DejaVu Sans'; text-anchor: start" x="495.435963" y="93.928" transform="rotate(-0 495.435963 93.928)">Lower estimated model cost</text>
+   </g>
+  </g>
+  <g id="text_20">
+   <text style="fill: #20242c; font: 700 19px 'DejaVu Sans'; text-anchor: start" x="39.6" y="24.192" transform="rotate(-0 39.6 24.192)">Code mode reduces token use and model costs</text>
+  </g>
+  <g id="text_21">
+   <text style="fill: #555b65; font: 12px 'DejaVu Sans'; text-anchor: start" x="39.6" y="48.384" transform="rotate(-0 39.6 48.384)">Compared with direct tool calling across 28 documentation tasks</text>
+  </g>
+  <g id="text_22">
+   <text style="fill: #666c75; font: 9px 'DejaVu Sans'; text-anchor: start" x="39.6" y="358.848" transform="rotate(-0 39.6 358.848)">Task means summed; reductions rounded. Costs use evaluation pricing and exclude hosting and sandbox costs.</text>
+  </g>
+  <g id="text_23">
+   <text style="fill: #666c75; font: 9px 'DejaVu Sans'; text-anchor: start" x="39.6" y="376.992" transform="rotate(-0 39.6 376.992)">Average answer scores stayed similar for Gemini 3 Flash and Haiku 4.5; Gemini 2.5 Flash scored lower in code mode.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf2e887ed6b">
+   <rect x="178.2" y="116.928" width="268.844037" height="197.568"/>
+  </clipPath>
+  <clipPath id="p83740f6472">
+   <rect x="495.435963" y="116.928" width="268.844037" height="197.568"/>
+  </clipPath>
+ </defs>
+</svg>
