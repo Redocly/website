@@ -53628,6 +53628,15 @@ reunite:
           Removed the `Creator` column from the Reunite API keys page and the `createdById` field from API key responses. Audit log exports still
           indicate who created, updated, or revoked each key.
     dependencies: {}
+  v2026-09-14.1:
+    timestamp: 1789394640000
+    changes:
+      minor: []
+      patch:
+        - Fixed processing of pull request webhooks for deleted pull requests to prevent unnecessary retries.
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.53.0`.
+        - Fixed authentication pages applying the selected color mode from User settings > Appearance.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
