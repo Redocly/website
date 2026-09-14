@@ -19,11 +19,11 @@ In the AI era it is also an integration problem, because an OpenAPI description 
 
 There are two usual fixes: write the description by hand, or ask an AI assistant to derive it from the source code.
 Writing by hand is slow.
-The source-code route fails exactly when you need it most: on a large codebase the model loses track, guesses how handlers behave, and produces a description that looks right but quietly disagrees with the API - and you can't tell where.
+The source-code approach fails on large codebases: the model loses context, hallucinates API behavior, and generates convincing but subtly inaccurate descriptions that are impossible to verify.
 
-The new `redocly generate-spec` command starts from evidence instead: recorded HTTP traffic, which shows what the API actually does.
-It first infers a baseline description deterministically.
-Then it uses AI only where AI really helps - one operation at a time, grounded in real recorded exchanges, with every answer verified before it is accepted.
+Instead of guessing from source code, the new `redocly generate-spec` command uses actual recorded HTTP traffic to build an accurate, initial API specification.
+First, it automatically creates a base description from the traffic.
+Then, it uses AI selectively - processing one endpoint at a time, grounding every change in real data, and verifying all output.
 
 ## From traffic to description
 
@@ -86,8 +86,8 @@ Written to: cafe-openapi.yaml
 Done in 0s.
 ```
 
-The result is a valid OpenAPI 3.2 description - about a hundred lines, from a handful of requests.
-The outline: a server URL inferred from the capture, and one path per discovered endpoint:
+It outputs a valid OpenAPI 3.2 spec (~100 lines long) from just those few captured requests.
+The file sets the server URL and outlines a path for each endpoint found:
 
 ```yaml
 openapi: 3.2.0
@@ -143,7 +143,7 @@ properties:
 ```
 
 `category` became an enum because every observed value was one of the two, and `createdAt` and `photoUrl` matched well-known patterns in every sample.
-The `category` query parameter on the same operation stayed a plain string - two observations are not enough evidence, so the inference stays conservative instead of guessing:
+The `category` query parameter on the same operation stayed a plain string - two observations are not enough evidence, so the inference stays conservative:
 
 ```yaml
 parameters:
@@ -194,14 +194,14 @@ That can be improved with AI. Let's explore with `--with-ai` parameter:
 redocly generate-spec ./cafe.har --title "Cafe API" --with-ai --ai-provider claude -o cafe-openapi.yaml
 ```
 
-As a result everything the deterministic step couldn't produce lands in generated spec:
+As a result, the AI fills in everything the deterministic engine couldn't:
 
-- **Documentation** - a summary and description on every operation, and descriptions on nearly every property and parameter.
-- **Semantic types and constraints** - `minimum: 0` on prices and quantities, identifier patterns like `^ord_[0-9a-z]+$`, and formats inferred from what a field means rather than from repeated values.
-- **Real API design** - alternative payloads modeled as `oneOf` unions with a discriminator, and shared structure extracted into `allOf` base components.
-- **Over-fitting cleanup** - values that were wrongly locked into enums become plain typed fields with a realistic `example`, while genuine enums stay.
+- **Documentation** - summaries and descriptions for every operation, parameter, and property.
+- **Semantic types and constraints** - business logic like `minimum: 0` on prices, ID pattern matches, and data formats inferred from field meaning rather than repeated values.
+- **Real API design** - variant payloads modeled as `oneOf` unions with discriminators, and shared structures extracted into `allOf` components.
+- **Over-fitting cleanup** - overly restrictive enums converted into plain typed fields with realistic examples, preserving only true enums.
 
-### Built to keep the AI honest
+### Built to keep the AI on track
 
 "Ask AI for an OpenAPI description" usually fails for one reason: context.
 Give a model a whole codebase - or a whole traffic dump - and it loses track, then fills the gaps with plausible guesses.
@@ -217,16 +217,22 @@ Give a model a whole codebase - or a whole traffic dump - and it loses track, th
 ### Runs on the AI you already have
 
 Three providers are supported - `claude` (Claude Code), `codex` (Codex CLI), and `cursor` (Cursor CLI).
-Each one runs the locally installed CLI in non-interactive mode, so the subscription you already use and pay for does the work - no new API key, no separate billing, no vendor decision to make.
+Each one runs the locally installed CLI in non-interactive mode, so the subscription you already use and pay for does the work.
 `--ai-provider` is optional and defaults to `claude`; pick a model with `--ai-model` or let the provider use its default.
 
 Operations are refined in parallel.
 `--ai-concurrency` (default 4) is the main way to make it faster.
 
 {% admonition type="warning" name="Traffic leaves your machine" %}
-`--with-ai` sends samples of the recorded traffic - URLs, query strings, request and response bodies - to the selected AI provider.
-Three design choices limit what is exposed: headers are never included in prompts, so recorded `Authorization` headers and cookies stay on your machine; the provider CLI runs in a fresh empty directory, so none of your local files or AI-assistant rules enter the prompt; and the prompt tells the model to never copy secret-looking values into generated examples.
-These are safety layers, not a guarantee - record in a sandbox, and make sure the traffic contains no secrets or personal data you are not allowed to share with that provider.
+`--with-ai` sends captured traffic samples - URLs, query strings, and payloads to your AI provider.
+
+Three built-in safeguards minimize data exposure:
+- headers are omitted to keep auth tokens and cookies strictly local;
+- environments are isolated by running the CLI in an empty directory, preventing local files or custom rules from leaking into the prompt;
+- secrets are scrubbed via model instructions that block credential-like values from ending up in examples.
+
+These guardrails reduce risk, but they aren't foolproof.
+Run captures in a sandbox and verify traffic is clean before sending data to an external provider.
 {% /admonition %}
 
 ## How much does `--with-ai` actually add?
