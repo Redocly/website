@@ -20,6 +20,7 @@ For a real one, see [Redocly's llms.txt](https://redocly.com/llms.txt).
 
 - **[Agent skills](../customization/agent-skills/index.md)** - Package task instructions that agents load on demand
 - **[llms.txt configuration](../config/seo.md#llmstxt-object)** - Set the file's title, description, and sections, or turn it off
+- **[Visibility tag](../content/markdoc-tags/visibility.md)** - Target content at humans or agents, and control what reaches the Markdown copy
 - **[MCP servers](../customization/mcp-server/index.md)** - Serve your documentation and APIs over the Model Context Protocol
 - **[x-mcp extension](../content/api-docs/openapi-extensions/x-mcp.md)** - Control how API operations appear to MCP clients
 - **[Page actions](../config/navigation.md#pageaction-object)** - Copy or view any page as Markdown, ask ChatGPT or Claude about it, or connect an editor to your MCP server

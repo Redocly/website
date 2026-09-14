@@ -49,6 +49,7 @@ The following Markdoc tags are custom-made by Redocly:
 - [OpenAPI response sample](./openapi-response-sample.md): Render response examples directly in your documentation.
 - [Replay OpenAPI](./replay-openapi.md): Add the Replay console to make API calls directly from a documentation page.
 - [Tabs](./tabs.md): Organize content variants into switchable tabs.
+- [Visibility](./visibility.md): Route content to humans or agents, controlling what renders on the page versus what's included in its Markdown copy.
 
 ## Block tags: use block form, not inline form
 

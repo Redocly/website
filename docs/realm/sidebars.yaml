@@ -71,6 +71,8 @@
           label: Table
         - page: content/markdoc-tags/tabs.md
           label: Tabs
+        - page: content/markdoc-tags/visibility.md
+          label: Visibility
     - group: Markdoc functions
       page: content/markdoc-functions/index.md
       items:
