@@ -8,51 +8,73 @@ seo:
 Redoc CE collects anonymous telemetry data to help understand how people are using the documentation tool.
 It also shows what sort of issues they are experiencing.
 
+Telemetry is on by default in Redoc CE.
+Only production bundles send data: the CDN, npm, Docker, and CLI builds do, while a local development server built from source does not.
+
 ## Configure telemetry settings
 
-You can enable or disable telemetry collection entirely.
-Telemetry can be disabled using the `disableTelemetry` option, which varies depending on how you deploy Redoc CE.
+You can disable telemetry collection entirely.
+The setting is passed in a way that depends on how you deploy Redoc CE.
 
-### HTML deployment
+### HTML element
 
-When using Redoc as an HTML element, add the `disable-telemetry="true"` attribute:
+When using Redoc CE as an HTML element, add the `disable-telemetry="true"` attribute:
 
 ```html
-<redoc spec-url="https://redocly.github.io/redoc/museum.yaml" disable-telemetry="true"></redoc>
-<script type="module" src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"></script>
+<redoc spec-url="https://redocly.github.io/redoc/cafe.yaml" disable-telemetry="true"></redoc>
+<script type="module" src="https://cdn.redoc.ly/redoc/v3.x/bundle/redoc.standalone.js"></script>
+```
+
+The value must be the literal `true`.
+A bare `disable-telemetry` attribute without a value does not disable telemetry.
+
+### JavaScript `init` function
+
+When calling `init`, pass `disableTelemetry: true` in the options:
+
+```js
+import { init } from 'https://cdn.redoc.ly/redoc/v3.x/bundle/redoc.standalone.js';
+
+init('https://redocly.github.io/redoc/cafe.yaml', { disableTelemetry: true });
 ```
 
 ### React component
 
-When using Redoc as a React component, pass the `disableTelemetry` prop:
+When using the React component, set `disableTelemetry` in the `options` prop:
 
 ```jsx
 import { RedocStandalone } from 'redoc';
 
 <RedocStandalone
-  specUrl="https://redocly.github.io/redoc/museum.yaml"
-  disableTelemetry={true}
+  specUrl="https://redocly.github.io/redoc/cafe.yaml"
+  options={{ disableTelemetry: true }}
 />
 ```
 
-### CLI and configuration file
+### Redocly CLI
 
-When using Redocly CLI, you can disable telemetry by passing the `--disableTelemetry` flag:
+When building documentation with Redocly CLI, pass the `--disableTelemetry` flag:
 
 ```sh
-redocly build-docs openapi.yaml --disableTelemetry
+npx @redocly/cli build-docs openapi.yaml --disableTelemetry
 ```
 
-Or add the `disableTelemetry` option to your `redocly.yaml` configuration file:
+Or add `disableTelemetry` to your `redocly.yaml` configuration file, under the key of the specification type you build:
 
-```yaml
+```yaml {% title="redocly.yaml" %}
 openapi:
+  disableTelemetry: true
+asyncapi:
+  disableTelemetry: true
+graphql:
   disableTelemetry: true
 ```
 
-### Docker deployment
+Telemetry in the built page is on by default, and either setting turns it off.
 
-When using Docker, disable telemetry by passing the `disable-telemetry="true"` attribute through the `REDOC_OPTIONS` environment variable:
+### Docker image
+
+When using Docker, pass the `disable-telemetry="true"` attribute through the `REDOC_OPTIONS` environment variable:
 
 ```bash
 docker run -p 8080:80 \
@@ -76,48 +98,65 @@ We currently use:
 
 To improve Redoc CE and understand how it is being used, Redoc CE optionally collects usage data including:
 
-- **Performance metrics**: core Web Vitals data including Cumulative Layout Shift (`CLS`), Largest Contentful Paint (`LCP`), First Contentful Paint (`FCP`), and Time to First Byte (`TTFB`)
-- **API specification characteristics**: custom extensions used, request body types, authorization methods detected, and operation count
-- **User interactions**: layout type changes, language selection, definition downloads, example switching, expand/collapse actions, and code snippet copying
-- **Configuration data**: router type (`hash` or `history`), layout type (`stacked` or `three-panel`), and usage method (`HTML`, `CLI`, `React`, or `Docker`)
+- **Performance metrics**: Core Web Vitals data including Cumulative Layout Shift (CLS), Largest Contentful Paint (LCP), First Contentful Paint (FCP), and Time to First Byte (TTFB)
+- **Configuration data**: the layout (`stacked` or `three-panel`), the description format (`openapi`, `asyncapi`, or `graphql`), and the usage method (`html`, `cli`, `init`, or `docker`)
+- **User interactions**: layout changes, language selection, definition downloads, example and server switching, expand/collapse actions, code snippet copying, search usage, and security details views
+- **Errors**: rendering errors caught by Redoc CE, with the error message and stack trace
 
-Usage data does not include any of your API specification content, sensitive project details, or personal information.
+Usage data does not include your API description content, sensitive project details, or personal information.
 
 ### Event types
 
-Redoc CE tracks the following specific events:
+Every event is a CloudEvent whose type follows the pattern `com.redocly.<event>.<verb>`.
+Redoc CE sends the following events:
 
-**Initial load event (`com.redocly.redoc.initialized`)**
+#### Page events
 
-Fired when the documentation loads, including:
-- performance metrics (`CLS`, `LCP`, `FCP`, `TTFB`)
-- API specification analysis (custom extensions, request bodies, authorization type)
-- configuration details (usage type, router type, operation count, layout type)
+- **Initialized** (`com.redocly.redoc.initialized`): when the documentation first renders, with the layout and the usage method
+- **Page viewed** (`com.redocly.page.viewed`): when the documentation mounts, with the page URL and layout
+- **Performance metrics collected** (`com.redocly.performanceMetrics.collected`): once the four Core Web Vitals values are available
+- **Error occurred** (`com.redocly.error.occurred`): when a rendering error is caught
 
-**User interaction events**
+#### Interaction events
 
 - **Change layout clicked** (`com.redocly.changeLayout.clicked`): when users switch between `stacked` and `three-panel` layouts
-- **Select language clicked** (`com.redocly.selectLanguage.clicked`): when users change the code example language
-- **Download definition clicked** (`com.redocly.downloadDefinition.clicked`): when users download the API specification
-- **Examples switcher clicked** (`com.redocly.examplesSwitcher.clicked`): when users switch between different examples
+- **Select language clicked** (`com.redocly.selectLanguage.clicked`): when users change the code sample language
+- **Download definition clicked** (`com.redocly.downloadDefinition.clicked`): when users download the API description
+- **Examples switcher clicked** (`com.redocly.examplesSwitcher.clicked`): when users switch between examples
+- **Switch servers clicked** (`com.redocly.switchServers.clicked`): when users change the target server
 - **Expand/collapse all clicked** (`com.redocly.expandCollapseAll.clicked`): when users expand or collapse all sections
-- **Copy code snippet clicked** (`com.redocly.copyCodeSnippet.clicked`): when users copy request/response code snippets
+- **Copy code snippet clicked** (`com.redocly.copyCodeSnippet.clicked`): when users copy request or response code snippets
+- **View security details clicked and closed** (`com.redocly.viewSecurityDetails.clicked`, `com.redocly.viewSecurityDetails.closed`): when users open and close the security details, including the time spent in the dialog
+- **Search opened** (`com.redocly.search.opened`): when users open the search dialog, with the method used (click or shortcut)
+- **Search result clicked** (`com.redocly.searchResult.clicked`): when users select a search result, with the number of results
+- **Search input reset clicked** (`com.redocly.searchInputReset.clicked`): when users clear the search input
+
+#### AsyncAPI and GraphQL events
+
+- **Switch example clicked** (`com.redocly.switchExample.clicked`): when users switch between message examples
+- **Switch message clicked** (`com.redocly.switchMessage.clicked`): when users switch between alternative messages of an operation
+- **Server modal opened** (`com.redocly.serverModal.opened`): when users open the broker details
+- **Message clicked** (`com.redocly.message.clicked`): when users follow a message link
+- **Referenced in clicked** (`com.redocly.referencedIn.clicked`): when users follow a type, field, or channel reference link
+- **Required scopes modal opened** (`com.redocly.requiredScopesModal.opened`): when users open the required scopes details of a GraphQL field
 
 ### Data collection details
 
 All telemetry events include:
+
 - **Event ID**: unique identifier for each event
 - **Timestamp**: when the event occurred
 - **Session ID**: anonymous session identifier
-- **Client information**: browser locale and accepted languages
-- **Source context**: anonymous source information
+- **Description format**: `openapi`, `asyncapi`, or `graphql`
+- **Client information**: the standard headers of the HTTPS request, such as the browser's user agent and accepted languages
+- **Source context**: the page URL for page events, and a stable identifier of the control for interaction events
 
 Telemetry data is associated with a secure random telemetry ID and does not include personally identifiable information.
 
 ## Privacy and security
 
 - All telemetry data is transmitted over HTTPS.
-- No API specification content or sensitive project details are collected.
+- No API description content or sensitive project details are collected.
 - No personally identifiable information is stored.
 - Telemetry can be disabled using the configuration options above.
 - Data is used solely for improving Redoc CE and understanding usage patterns.
@@ -128,4 +167,5 @@ If you have concerns about telemetry, feel free to [open an issue on GitHub](htt
 
 ## Resources
 
-- **[Configure Redoc](./config.md)** - Explore Redoc CE's configuration options
+- **[Configure Redoc CE](./config.md)** - Redoc CE's configuration options
+- **[Use Redoc CE in HTML](./deployment/html.md)** - The attribute rules that apply to `disable-telemetry`
