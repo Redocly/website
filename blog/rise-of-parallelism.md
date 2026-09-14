@@ -1,20 +1,20 @@
 ---
 template: ../@theme/templates/BlogPost
-title: Multitasking is dead. Parallelism is rising.
+title: Multitasking is dead. Long live parallelism.
 description: We spent twenty years learning that multitasking does not work. Agents did not bring it back. They brought parallelism, and most of us confuse the two.
 seo:
-  title: Multitasking is dead. Parallelism is rising.
+  title: Multitasking is dead. Long live parallelism.
   description: Starting a second agent while the first one runs is not multitasking. It is parallelism. Here is the difference, why the old fear does not apply, and where the skill moved.
   image: ./images/rise-of-parallelism.png
 author: adam-altman
-publishedDate: "2026-09-16"
+publishedDate: "2026-09-14"
 categories:
   - technical-documentation:ai-assisted-docs
   - redocly:product-updates
 image: rise-of-parallelism.png
 ---
 <!-- markdownlint-disable-next-line MD026 -->
-# Multitasking is dead. Parallelism is rising.
+# Multitasking is dead. Long live parallelism.
 
 When I finished college in the late 90s, multitasking was a skill.
 People put it on their resumes.
