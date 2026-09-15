@@ -51,7 +51,7 @@ Stop!
 - type
 - string
 - **Required.**
-  Sets the type of admonition to info, warning, success, danger, or idea.
+  Sets the type of admonition to info, warning, success, or danger.
 ---
 
 - name
@@ -74,9 +74,6 @@ Type `success` creates a **Success** admonition.
 {% /admonition %}
 {% admonition type="danger" .smaller-admonition-margins %}
 Type `danger` creates a **Danger** admonition.
-{% /admonition %}
-{% admonition type="idea" .smaller-admonition-margins %}
-Type `idea` creates an **Idea** admonition.
 {% /admonition %}
 
 ## Examples
@@ -130,24 +127,6 @@ You might need them to communicate something before a user makes an irreversible
   {% admonition type="danger" name="Careful" %}
     Don't abuse admonitions or readers may ignore them.
     You might need them to communicate something before a user makes an irreversible decision.
-  {% /admonition %}
-```
-
-{% /markdoc-example %}
-
-### Suggest an optional improvement
-
-{% admonition type="idea" name="Try this" %}
-Add a `name` to your admonitions to summarize the message.
-Readers scan headers before they read the body text.
-{% /admonition %}
-
-{% markdoc-example %}
-
-```md {% process=false %}
-  {% admonition type="idea" name="Try this" %}
-    Add a `name` to your admonitions to summarize the message.
-    Readers scan headers before they read the body text.
   {% /admonition %}
 ```
 
