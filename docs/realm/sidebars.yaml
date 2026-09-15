@@ -387,6 +387,8 @@
           label: Auth0
         - page: reunite/organization/sso/configure-scim.md
           label: Configure SCIM
+    - page: reunite/organization/audit-logs.md
+      label: Audit logs
     - page: reunite/organization/access-compliance-reports.md
       label: Compliance reports
     - group: Self-hosted Git providers

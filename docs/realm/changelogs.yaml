@@ -1,170 +1,4 @@
 '@redocly/realm':
-  0.137.0:
-    timestamp: 1789465547000
-    changes:
-      minor:
-        - Added the `singleExpanded` attribute to the `accordion-group` Markdoc tag to keep only one accordion open at a time.
-        - Improved search to index every field, heading, and message.
-        - >-
-          Added `linkIcon`, `cta`, `iconColor`, `badge`, `badgeColor`, and `badgeIcon` attributes to the `card` Markdoc tag to enhance customization
-          options.
-        - Added recovery hints displayed when Docs MCP lookup failed.
-        - Added `accordion` and `accordion-group` Markdoc tags to organize content into collapsible sections.
-        - Added a `Connect to the MCP server` page at `/mcp` with tabbed setup instructions for Claude, ChatGPT/Codex, and raw JSON configuration.
-        - Improved MCP server code mode to reduce AI agent script failures and provide clearer error messages.
-        - Improved the credentials page to show all accepted API credentials.
-        - Added validation to the MCP credentials form.
-        - Added an opt-in `/mcp-public` endpoint to serve public content without authentication on RBAC-restricted projects.
-        - Added Docs MCP server audience validation for bearer tokens.
-        - Added an `onClose` prop to the custom `ReplayGate` component.
-        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
-        - 'Improved sidebar accessibility: separators are no longer announced as links by screen readers and no longer receive keyboard focus.'
-        - Updated default border radius for components.
-        - Added translations for the `Connect to MCP server` and page action dropdown toggle labels.
-        - 'Improved the version picker to sort versions from newest to oldest using numeric-aware sorting, that is: `2.10` before `2.9`.'
-      patch:
-        - Fixed an empty **Download** panel that appeared on the OpenAPI and AsyncAPI overview page when `downloadUrls` was set to an empty list.
-        - Fixed an issue where API docs pages opened scrolled down, hiding the breadcrumbs and any custom navigation placed above the API description.
-        - >-
-          Fixed an issue in API docs where a schema that inherited its `discriminator` from an `allOf` parent displayed only the discriminator
-          property, without its variants or other properties.
-        - Fixed an issue where several Redocly extensions were incorrectly rendered as custom vendor extensions when `showExtensions` was enabled.
-        - Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button.
-        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
-        - Fixed an issue where raw HTML in operation descriptions leaked into search results and was rendered as literal text.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-        - >-
-          Fixed an issue where environment variable placeholders (`{{ process.env.VAR }}`) in `redocly.yaml` resolved to their build-time values
-          instead of the server's runtime environment.
-        - Fixed the styling of dividers on Markdown pages.
-        - Fixed an issue in API docs where the request code sample lost its form fields and displayed an empty body.
-        - Fixed an issue in OpenAPI docs where schemas were positioned before operations in the sidebar.
-        - Updated `openapi-sampler` to version `1.7.5`.
-        - Fixed an issue where a variant whose schema was unavailable, such as a schema restricted by RBAC, displayed as an empty option.
-        - Fixed OAuth2 client credentials exchange in the MCP gateway credentials form.
-        - >-
-          Fixed an issue where SSO login in projects without an `l10n` configuration caused identity providers with strict `ui_locales` validation to
-          reject the login request.
-        - Fixed an issue in OpenAPI docs where selecting an example in the response panel did not update the request code sample.
-        - Fixed an issue where Docs MCP API lookups rejected names that are unique parts of API titles.
-        - >-
-          Fixed an issue where angle brackets: `<`, `>` weren't rendered inside inline code within Markdown link text, such as ``[`command
-          <name>`](./page.md)``.
-        - Fixed MCP code mode tool results and descriptions to match declared signatures.
-        - Fixed MCP server code mode crashes for runs that produce no output.
-        - Improved the MCP gateway to ask which credentials the user holds instead of picking the default.
-        - Fixed an issue where the MCP server sent outdated credentials.
-        - Updated the MCP API-credentials page to match Redocly styling.
-        - Fixed an issue where the MCP server served `http://` links behind proxies.
-        - Fixed MCP connections for clients on the `2026-07-28` protocol revision.
-        - >-
-          Fixed MCP OAuth discovery: the authorization server metadata `issuer` matches the portal origin (RFC 8414), 401 challenges include `scope`
-          and `authorization_uri`.
-        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
-        - Fixed the `documentationUrl` in the MCP server card to include the path prefix.
-        - Fixed an issue where `describe-tools` tool in the MCP server didn't provide a human-readable name.
-        - Fixed an issue where project SSO login failed when the IdP sent many group claims.
-        - Fixed an issue where the Docs MCP `get-endpoint-info` tool returned operations for paths hidden with `x-mcp`.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
-          version `0.7.5`.
-        - Fixed spacing and the selected language tab indicator in API docs overview panels.
-        - >-
-          Fixed an issue in OpenAPI docs where object-valued path item extensions, such as `x-okta-lifecycle`, rendered as extra HTTP operations in
-          the navigation.
-        - Fixed an issue where pages rendered blank for visitors with ad blockers.
-        - Fixed an issue where example descriptions weren't rendered in the request and response samples panels.
-        - Fixed `mcp.docs.ignore` to correctly exclude ignored content from Docs MCP search results.
-        - Fixed an issue where code samples omitted the discriminator value of the selected variant.
-        - >-
-          Fixed an issue in Replay where Basic authentication credentials with non-ASCII characters produced a corrupted Authorization header or
-          prevented the request from being sent.
-        - Fixed an issue in Replay and the Try it console where operations with many editable fields got slower on each reopening.
-        - >-
-          Fixed an issue in the **Try it** console where closing an inactive tab moved the selection to a different tab instead of keeping the active
-          tab.
-        - Fixed an issue in Replay where the request body editor didn't display property descriptions for content with Markdown formatting.
-        - Fixed an issue in Replay's mobile layout where the first character typed in a request input moved focus to the close button.
-        - Added missing tooltips to the Try it console parameter rows in OpenAPI docs.
-        - Fixed an issue in Replay where truncated tab names and request titles did not display their full versions on mouse hover or keyboard focus.
-        - Reworded the AI assistant's welcome message, disclaimer, and error messages for consistent naming.
-        - Improved the 404 page for API Docs.
-        - Fixed an issue where clicking an item in the table of contents caused the selection indicator to jump and highlight an incorrect item.
-        - Fixed an issue in API docs where deep links did not open the linked field.
-        - Fixed broken `llms.txt` links to use the configured `seo.siteUrl` instead of the Redocly-hosted domain.
-        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
-        - Fixed an issue in API docs where the menu link for a section of a tag description contained a duplicated path segment.
-        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
-        - Fixed an issue where a search query that contained duplicated characters returned an error.
-        - Updated `@redocly/openapi-core` to version `2.53.0`.
-        - Fixed an issue where a mapping key that pointed to the same schema as `defaultMapping` disappeared from the variant list.
-        - Updated the language selection indicator's position in the API docs Languages panel to display inside the language selection box.
-        - Fixed an issue in OpenAPI docs where the server URL was missing from the request panel for APIs with a single server.
-        - >-
-          Fixed an issue in API docs where the code samples panel displayed no `Discriminator` selector for schemas that inherited their
-          `discriminator` from an `allOf` parent.
-        - Fixed an issue where preview did not update `llms.txt` and page Markdown related to LLMs.
-    dependencies:
-      '@redocly/theme': 0.69.0
-      '@redocly/api-docs': 0.2.0
-      '@redocly/realm-asyncapi-sdk': 0.15.0
-      '@redocly/portal-plugin-mock-server': 0.22.0
-  0.137.0-next.12:
-    timestamp: 1789453562000
-    changes:
-      minor:
-        - Added the `singleExpanded` attribute to the `accordion-group` Markdoc tag to keep only one accordion open at a time.
-        - Improved MCP server code mode to reduce AI agent script failures and provide clearer error messages.
-      patch:
-        - Fixed the `documentationUrl` in the MCP server card to include the path prefix.
-        - >-
-          Fixed an issue in Replay where Basic authentication credentials with non-ASCII characters produced a corrupted Authorization header or
-          prevented the request from being sent.
-        - Fixed an issue in Replay and the Try it console where operations with many editable fields got slower on each reopening.
-        - Fixed broken `llms.txt` links to use the configured `seo.siteUrl` instead of the Redocly-hosted domain.
-        - Updated `@redocly/openapi-core` to version `2.53.0`.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.11
-      '@redocly/realm-asyncapi-sdk': 0.15.0-next.4
-      '@redocly/api-docs': 0.2.0-next.12
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.9
-  0.137.0-next.11:
-    timestamp: 1789119224000
-    changes:
-      minor: []
-      patch:
-        - Fixed an empty Download panel that appeared on the OpenAPI and AsyncAPI overview page when `downloadUrls` was set to an empty list.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-        - >-
-          Fixed an issue in the **Try it** console where closing an inactive tab moved the selection to a different tab instead of keeping the tab the
-          user was working in.
-        - >-
-          Fixed an issue in Replay's mobile layout where the first character typed in a request input moved focus to the close button, causing the
-          rest of the input to be lost.
-        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.11
-      '@redocly/theme': 0.69.0-next.10
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.8
-  0.137.0-next.10:
-    timestamp: 1789029160000
-    changes:
-      minor:
-        - Improved search to index every field, heading, and message.
-      patch:
-        - Fixed an issue where API docs pages opened scrolled down, hiding the breadcrumbs and any custom navigation placed above the API description.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
-          version `0.7.5`.
-        - Fixed missing tooltips in the Try it console parameter rows in OpenAPI docs.
-        - Fixed an issue in Replay where truncated tab names and request titles did not display their full versions on mouse hover or keyboard focus.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.10
-      '@redocly/theme': 0.69.0-next.9
   0.137.0-next.9:
     timestamp: 1788862787000
     changes:
@@ -247,8 +81,8 @@
         - Fixed an issue where a variant whose schema was unavailable, such as a schema restricted by RBAC, displayed as an empty option.
         - Fixed an issue in OpenAPI docs where selecting an example in the response panel did not update the request code sample.
         - >-
-          Fixed an issue where angle brackets: `<`, `>` weren't rendered inside inline code within Markdown link text, such as ``[`command
-          <name>`](./page.md)``.
+          Fixed an issue where angle brackets: `<`, `>` weren't rendered inside inline code within Markdown link text, such as `` [`command
+          <name>`](./page.md) ``.
         - Fixed an issue where example descriptions weren't rendered in the request and response samples panels.
         - Fixed an issue where code samples omitted the discriminator value of the selected variant.
         - 'Improved sidebar accessibility: separators are no longer announced as links by screen readers and no longer receive keyboard focus.'
@@ -7292,116 +7126,6 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
-  0.137.0:
-    timestamp: 1789465547000
-    changes:
-      minor:
-        - Added the `singleExpanded` attribute to the `accordion-group` Markdoc tag to keep only one accordion open at a time.
-        - Improved search to index every field, heading, and message.
-        - >-
-          Added `linkIcon`, `cta`, `iconColor`, `badge`, `badgeColor`, and `badgeIcon` attributes to the `card` Markdoc tag to enhance customization
-          options.
-        - Added recovery hints displayed when Docs MCP lookup failed.
-        - Added `accordion` and `accordion-group` Markdoc tags to organize content into collapsible sections.
-        - Added a `Connect to the MCP server` page at `/mcp` with tabbed setup instructions for Claude, ChatGPT/Codex, and raw JSON configuration.
-        - Improved MCP server code mode to reduce AI agent script failures and provide clearer error messages.
-        - Improved the credentials page to show all accepted API credentials.
-        - Added validation to the MCP credentials form.
-        - Added an opt-in `/mcp-public` endpoint to serve public content without authentication on RBAC-restricted projects.
-        - Added Docs MCP server audience validation for bearer tokens.
-        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
-        - 'Improved sidebar accessibility: separators are no longer announced as links by screen readers and no longer receive keyboard focus.'
-        - Updated default border radius for components.
-        - 'Improved the version picker to sort versions from newest to oldest using numeric-aware sorting, that is: `2.10` before `2.9`.'
-      patch:
-        - Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button.
-        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-        - >-
-          Fixed an issue where environment variable placeholders (`{{ process.env.VAR }}`) in `redocly.yaml` resolved to their build-time values
-          instead of the server's runtime environment.
-        - Fixed the styling of dividers on Markdown pages.
-        - Updated `openapi-sampler` to version `1.7.5`.
-        - Fixed OAuth2 client credentials exchange in the MCP gateway credentials form.
-        - >-
-          Fixed an issue where SSO login in projects without an `l10n` configuration caused identity providers with strict `ui_locales` validation to
-          reject the login request.
-        - Fixed an issue where Docs MCP API lookups rejected names that are unique parts of API titles.
-        - >-
-          Fixed an issue where angle brackets: `<`, `>` weren't rendered inside inline code within Markdown link text, such as ``[`command
-          <name>`](./page.md)``.
-        - Fixed MCP code mode tool results and descriptions to match declared signatures.
-        - Fixed MCP server code mode crashes for runs that produce no output.
-        - Improved the MCP gateway to ask which credentials the user holds instead of picking the default.
-        - Fixed an issue where the MCP server sent outdated credentials.
-        - Updated the MCP API-credentials page to match Redocly styling.
-        - Fixed an issue where the MCP server served `http://` links behind proxies.
-        - Fixed MCP connections for clients on the `2026-07-28` protocol revision.
-        - >-
-          Fixed MCP OAuth discovery: the authorization server metadata `issuer` matches the portal origin (RFC 8414), 401 challenges include `scope`
-          and `authorization_uri`.
-        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
-        - Fixed the `documentationUrl` in the MCP server card to include the path prefix.
-        - Fixed an issue where `describe-tools` tool in the MCP server didn't provide a human-readable name.
-        - Fixed an issue where project SSO login failed when the IdP sent many group claims.
-        - Fixed an issue where the Docs MCP `get-endpoint-info` tool returned operations for paths hidden with `x-mcp`.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
-          version `0.7.5`.
-        - Fixed `mcp.docs.ignore` to correctly exclude ignored content from Docs MCP search results.
-        - Reworded the AI assistant's welcome message, disclaimer, and error messages for consistent naming.
-        - Fixed an issue where clicking an item in the table of contents caused the selection indicator to jump and highlight an incorrect item.
-        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
-        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
-        - Fixed an issue where a search query that contained duplicated characters returned an error.
-        - Updated `@redocly/openapi-core` to version `2.53.0`.
-        - Fixed an issue where preview did not update `llms.txt` and page Markdown related to LLMs.
-    dependencies:
-      '@redocly/theme': 0.69.0
-      '@redocly/api-docs': 0.2.0
-      '@redocly/realm-asyncapi-sdk': 0.15.0
-      '@redocly/portal-plugin-mock-server': 0.22.0
-  0.137.0-next.12:
-    timestamp: 1789453562000
-    changes:
-      minor:
-        - Added the `singleExpanded` attribute to the `accordion-group` Markdoc tag to keep only one accordion open at a time.
-        - Improved MCP server code mode to reduce AI agent script failures and provide clearer error messages.
-      patch:
-        - Fixed the `documentationUrl` in the MCP server card to include the path prefix.
-        - Updated `@redocly/openapi-core` to version `2.53.0`.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.11
-      '@redocly/realm-asyncapi-sdk': 0.15.0-next.4
-      '@redocly/api-docs': 0.2.0-next.12
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.9
-  0.137.0-next.11:
-    timestamp: 1789119224000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.11
-      '@redocly/theme': 0.69.0-next.10
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.8
-  0.137.0-next.10:
-    timestamp: 1789029160000
-    changes:
-      minor:
-        - Improved search to index every field, heading, and message.
-      patch:
-        - >-
-          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
-          version `0.7.5`.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.10
-      '@redocly/theme': 0.69.0-next.9
   0.137.0-next.9:
     timestamp: 1788862787000
     changes:
@@ -7469,8 +7193,8 @@
       minor: []
       patch:
         - >-
-          Fixed an issue where angle brackets: `<`, `>` weren't rendered inside inline code within Markdown link text, such as ``[`command
-          <name>`](./page.md)``.
+          Fixed an issue where angle brackets: `<`, `>` weren't rendered inside inline code within Markdown link text, such as `` [`command
+          <name>`](./page.md) ``.
         - 'Improved sidebar accessibility: separators are no longer announced as links by screen readers and no longer receive keyboard focus.'
         - Fixed an issue where a search query that contained double characters returned an error.
     dependencies:
@@ -13545,120 +13269,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
-  0.137.0:
-    timestamp: 1789465547000
-    changes:
-      minor:
-        - Added the `singleExpanded` attribute to the `accordion-group` Markdoc tag to keep only one accordion open at a time.
-        - Improved search to index every field, heading, and message.
-        - >-
-          Added `linkIcon`, `cta`, `iconColor`, `badge`, `badgeColor`, and `badgeIcon` attributes to the `card` Markdoc tag to enhance customization
-          options.
-        - Added recovery hints displayed when Docs MCP lookup failed.
-        - Added `accordion` and `accordion-group` Markdoc tags to organize content into collapsible sections.
-        - Added a `Connect to the MCP server` page at `/mcp` with tabbed setup instructions for Claude, ChatGPT/Codex, and raw JSON configuration.
-        - Improved MCP server code mode to reduce AI agent script failures and provide clearer error messages.
-        - Improved the credentials page to show all accepted API credentials.
-        - Added validation to the MCP credentials form.
-        - Added an opt-in `/mcp-public` endpoint to serve public content without authentication on RBAC-restricted projects.
-        - Added Docs MCP server audience validation for bearer tokens.
-        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
-        - 'Improved sidebar accessibility: separators are no longer announced as links by screen readers and no longer receive keyboard focus.'
-        - Updated default border radius for components.
-        - Added translations for the `Connect to MCP server` and page action dropdown toggle labels.
-        - 'Improved the version picker to sort versions from newest to oldest using numeric-aware sorting, that is: `2.10` before `2.9`.'
-      patch:
-        - Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button.
-        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-        - >-
-          Fixed an issue where environment variable placeholders (`{{ process.env.VAR }}`) in `redocly.yaml` resolved to their build-time values
-          instead of the server's runtime environment.
-        - Fixed the styling of dividers on Markdown pages.
-        - Updated `openapi-sampler` to version `1.7.5`.
-        - Fixed OAuth2 client credentials exchange in the MCP gateway credentials form.
-        - >-
-          Fixed an issue where SSO login in projects without an `l10n` configuration caused identity providers with strict `ui_locales` validation to
-          reject the login request.
-        - Fixed an issue where Docs MCP API lookups rejected names that are unique parts of API titles.
-        - >-
-          Fixed an issue where angle brackets: `<`, `>` weren't rendered inside inline code within Markdown link text, such as ``[`command
-          <name>`](./page.md)``.
-        - Fixed MCP code mode tool results and descriptions to match declared signatures.
-        - Fixed MCP server code mode crashes for runs that produce no output.
-        - Improved the MCP gateway to ask which credentials the user holds instead of picking the default.
-        - Fixed an issue where the MCP server sent outdated credentials.
-        - Updated the MCP API-credentials page to match Redocly styling.
-        - Fixed an issue where the MCP server served `http://` links behind proxies.
-        - Fixed MCP connections for clients on the `2026-07-28` protocol revision.
-        - >-
-          Fixed MCP OAuth discovery: the authorization server metadata `issuer` matches the portal origin (RFC 8414), 401 challenges include `scope`
-          and `authorization_uri`.
-        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
-        - Fixed the `documentationUrl` in the MCP server card to include the path prefix.
-        - Fixed an issue where `describe-tools` tool in the MCP server didn't provide a human-readable name.
-        - Fixed an issue where project SSO login failed when the IdP sent many group claims.
-        - Fixed an issue where the Docs MCP `get-endpoint-info` tool returned operations for paths hidden with `x-mcp`.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
-          version `0.7.5`.
-        - Fixed an issue where pages rendered blank for visitors with ad blockers.
-        - Fixed `mcp.docs.ignore` to correctly exclude ignored content from Docs MCP search results.
-        - Reworded the AI assistant's welcome message, disclaimer, and error messages for consistent naming.
-        - Fixed an issue where clicking an item in the table of contents caused the selection indicator to jump and highlight an incorrect item.
-        - Fixed broken `llms.txt` links to use the configured `seo.siteUrl` instead of the Redocly-hosted domain.
-        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
-        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
-        - Fixed an issue where a search query that contained duplicated characters returned an error.
-        - Updated `@redocly/openapi-core` to version `2.53.0`.
-        - Fixed an issue where preview did not update `llms.txt` and page Markdown related to LLMs.
-    dependencies:
-      '@redocly/theme': 0.69.0
-      '@redocly/api-docs': 0.2.0
-      '@redocly/realm-asyncapi-sdk': 0.15.0
-      '@redocly/portal-plugin-mock-server': 0.22.0
-  0.137.0-next.12:
-    timestamp: 1789453562000
-    changes:
-      minor:
-        - Added the `singleExpanded` attribute to the `accordion-group` Markdoc tag to keep only one accordion open at a time.
-        - Improved MCP server code mode to reduce AI agent script failures and provide clearer error messages.
-      patch:
-        - Fixed the `documentationUrl` in the MCP server card to include the path prefix.
-        - Fixed broken `llms.txt` links to use the configured `seo.siteUrl` instead of the Redocly-hosted domain.
-        - Updated `@redocly/openapi-core` to version `2.53.0`.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.11
-      '@redocly/realm-asyncapi-sdk': 0.15.0-next.4
-      '@redocly/api-docs': 0.2.0-next.12
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.9
-  0.137.0-next.11:
-    timestamp: 1789119224000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.11
-      '@redocly/theme': 0.69.0-next.10
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.8
-  0.137.0-next.10:
-    timestamp: 1789029160000
-    changes:
-      minor:
-        - Improved search to index every field, heading, and message.
-      patch:
-        - >-
-          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
-          version `0.7.5`.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.10
-      '@redocly/theme': 0.69.0-next.9
   0.137.0-next.9:
     timestamp: 1788862787000
     changes:
@@ -13729,8 +13339,8 @@
       minor: []
       patch:
         - >-
-          Fixed an issue where angle brackets: `<`, `>` weren't rendered inside inline code within Markdown link text, such as ``[`command
-          <name>`](./page.md)``.
+          Fixed an issue where angle brackets: `<`, `>` weren't rendered inside inline code within Markdown link text, such as `` [`command
+          <name>`](./page.md) ``.
         - 'Improved sidebar accessibility: separators are no longer announced as links by screen readers and no longer receive keyboard focus.'
         - Fixed an issue where a search query that contained double characters returned an error.
     dependencies:
@@ -19795,162 +19405,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
-  0.137.0:
-    timestamp: 1789465547000
-    changes:
-      minor:
-        - Improved search to index every field, heading, and message.
-        - Added recovery hints displayed when Docs MCP lookup failed.
-        - Added a `Connect to the MCP server` page at `/mcp` with tabbed setup instructions for Claude, ChatGPT/Codex, and raw JSON configuration.
-        - Improved MCP server code mode to reduce AI agent script failures and provide clearer error messages.
-        - Improved the credentials page to show all accepted API credentials.
-        - Added validation to the MCP credentials form.
-        - Added an opt-in `/mcp-public` endpoint to serve public content without authentication on RBAC-restricted projects.
-        - Added Docs MCP server audience validation for bearer tokens.
-        - Added an `onClose` prop to the custom `ReplayGate` component.
-        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
-        - 'Improved sidebar accessibility: separators are no longer announced as links by screen readers and no longer receive keyboard focus.'
-        - Updated default border radius for components.
-        - 'Improved the version picker to sort versions from newest to oldest using numeric-aware sorting, that is: `2.10` before `2.9`.'
-      patch:
-        - Fixed an empty **Download** panel that appeared on the OpenAPI and AsyncAPI overview page when `downloadUrls` was set to an empty list.
-        - Fixed an issue where API docs pages opened scrolled down, hiding the breadcrumbs and any custom navigation placed above the API description.
-        - >-
-          Fixed an issue in API docs where a schema that inherited its `discriminator` from an `allOf` parent displayed only the discriminator
-          property, without its variants or other properties.
-        - Fixed an issue where several Redocly extensions were incorrectly rendered as custom vendor extensions when `showExtensions` was enabled.
-        - Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button.
-        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
-        - Fixed an issue where raw HTML in operation descriptions leaked into search results and was rendered as literal text.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-        - >-
-          Fixed an issue where environment variable placeholders (`{{ process.env.VAR }}`) in `redocly.yaml` resolved to their build-time values
-          instead of the server's runtime environment.
-        - Fixed the styling of dividers on Markdown pages.
-        - Fixed an issue in API docs where the request code sample lost its form fields and displayed an empty body.
-        - Fixed an issue in OpenAPI docs where schemas were positioned before operations in the sidebar.
-        - Updated `openapi-sampler` to version `1.7.5`.
-        - Fixed an issue where a variant whose schema was unavailable, such as a schema restricted by RBAC, displayed as an empty option.
-        - Fixed OAuth2 client credentials exchange in the MCP gateway credentials form.
-        - >-
-          Fixed an issue where SSO login in projects without an `l10n` configuration caused identity providers with strict `ui_locales` validation to
-          reject the login request.
-        - Fixed an issue in OpenAPI docs where selecting an example in the response panel did not update the request code sample.
-        - Fixed an issue where Docs MCP API lookups rejected names that are unique parts of API titles.
-        - >-
-          Fixed an issue where angle brackets: `<`, `>` weren't rendered inside inline code within Markdown link text, such as ``[`command
-          <name>`](./page.md)``.
-        - Fixed MCP code mode tool results and descriptions to match declared signatures.
-        - Fixed MCP server code mode crashes for runs that produce no output.
-        - Improved the MCP gateway to ask which credentials the user holds instead of picking the default.
-        - Fixed an issue where the MCP server sent outdated credentials.
-        - Updated the MCP API-credentials page to match Redocly styling.
-        - Fixed an issue where the MCP server served `http://` links behind proxies.
-        - Fixed MCP connections for clients on the `2026-07-28` protocol revision.
-        - >-
-          Fixed MCP OAuth discovery: the authorization server metadata `issuer` matches the portal origin (RFC 8414), 401 challenges include `scope`
-          and `authorization_uri`.
-        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
-        - Fixed the `documentationUrl` in the MCP server card to include the path prefix.
-        - Fixed an issue where `describe-tools` tool in the MCP server didn't provide a human-readable name.
-        - Fixed an issue where project SSO login failed when the IdP sent many group claims.
-        - Fixed an issue where the Docs MCP `get-endpoint-info` tool returned operations for paths hidden with `x-mcp`.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
-          version `0.7.5`.
-        - Fixed spacing and the selected language tab indicator in API docs overview panels.
-        - >-
-          Fixed an issue in OpenAPI docs where object-valued path item extensions, such as `x-okta-lifecycle`, rendered as extra HTTP operations in
-          the navigation.
-        - Fixed an issue where example descriptions weren't rendered in the request and response samples panels.
-        - Fixed `mcp.docs.ignore` to correctly exclude ignored content from Docs MCP search results.
-        - Fixed an issue where code samples omitted the discriminator value of the selected variant.
-        - >-
-          Fixed an issue in Replay where Basic authentication credentials with non-ASCII characters produced a corrupted Authorization header or
-          prevented the request from being sent.
-        - Fixed an issue in Replay and the Try it console where operations with many editable fields got slower on each reopening.
-        - >-
-          Fixed an issue in the **Try it** console where closing an inactive tab moved the selection to a different tab instead of keeping the active
-          tab.
-        - Fixed an issue in Replay where the request body editor didn't display property descriptions for content with Markdown formatting.
-        - Fixed an issue in Replay's mobile layout where the first character typed in a request input moved focus to the close button.
-        - Added missing tooltips to the Try it console parameter rows in OpenAPI docs.
-        - Fixed an issue in Replay where truncated tab names and request titles did not display their full versions on mouse hover or keyboard focus.
-        - Reworded the AI assistant's welcome message, disclaimer, and error messages for consistent naming.
-        - Improved the 404 page for API Docs.
-        - Fixed an issue where clicking an item in the table of contents caused the selection indicator to jump and highlight an incorrect item.
-        - Fixed an issue in API docs where deep links did not open the linked field.
-        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
-        - Fixed an issue in API docs where the menu link for a section of a tag description contained a duplicated path segment.
-        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
-        - Fixed an issue where a search query that contained duplicated characters returned an error.
-        - Updated `@redocly/openapi-core` to version `2.53.0`.
-        - Fixed an issue where a mapping key that pointed to the same schema as `defaultMapping` disappeared from the variant list.
-        - Updated the language selection indicator's position in the API docs Languages panel to display inside the language selection box.
-        - Fixed an issue in OpenAPI docs where the server URL was missing from the request panel for APIs with a single server.
-        - >-
-          Fixed an issue in API docs where the code samples panel displayed no `Discriminator` selector for schemas that inherited their
-          `discriminator` from an `allOf` parent.
-        - Fixed an issue where preview did not update `llms.txt` and page Markdown related to LLMs.
-    dependencies:
-      '@redocly/theme': 0.69.0
-      '@redocly/api-docs': 0.2.0
-      '@redocly/realm-asyncapi-sdk': 0.15.0
-      '@redocly/portal-plugin-mock-server': 0.22.0
-  0.137.0-next.12:
-    timestamp: 1789453562000
-    changes:
-      minor:
-        - Improved MCP server code mode to reduce AI agent script failures and provide clearer error messages.
-      patch:
-        - Fixed the `documentationUrl` in the MCP server card to include the path prefix.
-        - >-
-          Fixed an issue in Replay where Basic authentication credentials with non-ASCII characters produced a corrupted Authorization header or
-          prevented the request from being sent.
-        - Fixed an issue in Replay and the Try it console where operations with many editable fields got slower on each reopening.
-        - Updated `@redocly/openapi-core` to version `2.53.0`.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.11
-      '@redocly/realm-asyncapi-sdk': 0.15.0-next.4
-      '@redocly/api-docs': 0.2.0-next.12
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.9
-  0.137.0-next.11:
-    timestamp: 1789119224000
-    changes:
-      minor: []
-      patch:
-        - Fixed an empty Download panel that appeared on the OpenAPI and AsyncAPI overview page when `downloadUrls` was set to an empty list.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-        - >-
-          Fixed an issue in the **Try it** console where closing an inactive tab moved the selection to a different tab instead of keeping the tab the
-          user was working in.
-        - >-
-          Fixed an issue in Replay's mobile layout where the first character typed in a request input moved focus to the close button, causing the
-          rest of the input to be lost.
-        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.11
-      '@redocly/theme': 0.69.0-next.10
-      '@redocly/portal-plugin-mock-server': 0.22.0-next.8
-  0.137.0-next.10:
-    timestamp: 1789029160000
-    changes:
-      minor:
-        - Improved search to index every field, heading, and message.
-      patch:
-        - Fixed an issue where API docs pages opened scrolled down, hiding the breadcrumbs and any custom navigation placed above the API description.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-83610` and `CVE-2026-45820` by upgrading `@xmldom/xmldom` to version `0.9.12` and `fflate` to
-          version `0.7.5`.
-        - Fixed missing tooltips in the Try it console parameter rows in OpenAPI docs.
-        - Fixed an issue in Replay where truncated tab names and request titles did not display their full versions on mouse hover or keyboard focus.
-    dependencies:
-      '@redocly/api-docs': 0.2.0-next.10
-      '@redocly/theme': 0.69.0-next.9
   0.137.0-next.9:
     timestamp: 1788862787000
     changes:
@@ -20030,8 +19484,8 @@
         - Fixed an issue where a variant whose schema was unavailable, such as a schema restricted by RBAC, displayed as an empty option.
         - Fixed an issue in OpenAPI docs where selecting an example in the response panel did not update the request code sample.
         - >-
-          Fixed an issue where angle brackets: `<`, `>` weren't rendered inside inline code within Markdown link text, such as ``[`command
-          <name>`](./page.md)``.
+          Fixed an issue where angle brackets: `<`, `>` weren't rendered inside inline code within Markdown link text, such as `` [`command
+          <name>`](./page.md) ``.
         - Fixed an issue where example descriptions weren't rendered in the request and response samples panels.
         - Fixed an issue where code samples omitted the discriminator value of the selected variant.
         - 'Improved sidebar accessibility: separators are no longer announced as links by screen readers and no longer receive keyboard focus.'
@@ -26182,58 +25636,6 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
-  0.69.0:
-    timestamp: 1789465547000
-    changes:
-      minor:
-        - Added the `singleExpanded` attribute to the `accordion-group` Markdoc tag to keep only one accordion open at a time.
-        - Improved search to index every field, heading, and message.
-        - >-
-          Added `linkIcon`, `cta`, `iconColor`, `badge`, `badgeColor`, and `badgeIcon` attributes to the `card` Markdoc tag to enhance customization
-          options.
-        - Added `accordion` and `accordion-group` Markdoc tags to organize content into collapsible sections.
-        - Added a `Connect to the MCP server` page at `/mcp` with tabbed setup instructions for Claude, ChatGPT/Codex, and raw JSON configuration.
-        - Added cross-links between the `/mcp` and `/mcp-public` setup pages and noted that the public page serves anonymous-accessible content only.
-        - Added an `onClose` prop to the custom `ReplayGate` component.
-        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
-        - 'Improved sidebar accessibility: separators are no longer announced as links by screen readers and no longer receive keyboard focus.'
-        - Updated default border radius for components.
-        - Added translations for the `Connect to MCP server` and page action dropdown toggle labels.
-      patch:
-        - Fixed the gap between the label and the dropdown arrow in the `Connect to MCP` button.
-        - Fixed an issue where the **Copied!** tooltip on copy buttons disappeared too early when the button was clicked repeatedly.
-        - Fixed the styling of dividers on Markdown pages.
-        - Updated `openapi-sampler` to version `1.7.5`.
-        - Removed the `405` status code text from the MCP endpoint pages (`/mcp` and `/mcp-public`).
-        - Fixed an issue where pages rendered blank for visitors with ad blockers.
-        - Reworded the AI assistant's welcome message, disclaimer, and error messages for consistent naming.
-        - Improved the 404 page for API Docs.
-        - Fixed an issue where clicking an item in the table of contents caused the selection indicator to jump and highlight an incorrect item.
-        - Fixed small visual issues with the `Connect to MCP server` button and aligned its styling with the page action button.
-        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
-    dependencies: {}
-  0.69.0-next.11:
-    timestamp: 1789453562000
-    changes:
-      minor:
-        - Added the `singleExpanded` attribute to the `accordion-group` Markdoc tag to keep only one accordion open at a time.
-        - Added telemetry to track MCP connection methods and snippet usage.
-      patch: []
-    dependencies: {}
-  0.69.0-next.10:
-    timestamp: 1789119224000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where Markdown tables would render a collapsed gray header row when all heading cells were empty.
-    dependencies: {}
-  0.69.0-next.9:
-    timestamp: 1789029160000
-    changes:
-      minor: []
-      patch:
-        - Improved search to index every field, heading, and message.
-    dependencies: {}
   0.69.0-next.8:
     timestamp: 1788862787000
     changes:
@@ -35027,87 +34429,6 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/api-docs':
-  0.2.0:
-    timestamp: 1789465547000
-    changes:
-      minor:
-        - Improved search to index every field, heading, and message.
-        - Added an `onClose` prop to the custom `ReplayGate` component.
-        - Added `idea` as a supported `type` for the `admonition` Markdoc tag.
-        - Updated default border radius for components.
-      patch:
-        - Fixed an empty **Download** panel that appeared on the OpenAPI and AsyncAPI overview page when `downloadUrls` was set to an empty list.
-        - Fixed an issue where API docs pages opened scrolled down, hiding the breadcrumbs and any custom navigation placed above the API description.
-        - >-
-          Fixed an issue in API docs where a schema that inherited its `discriminator` from an `allOf` parent displayed only the discriminator
-          property, without its variants or other properties.
-        - Fixed an issue where several Redocly extensions were incorrectly rendered as custom vendor extensions when `showExtensions` was enabled.
-        - Fixed an issue where raw HTML in operation descriptions leaked into search results and was rendered as literal text.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-        - Fixed an issue in API docs where the request code sample lost its form fields and displayed an empty body.
-        - Fixed an issue in OpenAPI docs where schemas were positioned before operations in the sidebar.
-        - Updated `openapi-sampler` to version `1.7.5`.
-        - Fixed an issue where a variant whose schema was unavailable, such as a schema restricted by RBAC, displayed as an empty option.
-        - Fixed an issue in OpenAPI docs where selecting an example in the response panel did not update the request code sample.
-        - Fixed an issue in `Try it` where parameters without an `example` appeared empty and were excluded from requests.
-        - Fixed spacing and the selected language tab indicator in API docs overview panels.
-        - >-
-          Fixed an issue in OpenAPI docs where object-valued path item extensions, such as `x-okta-lifecycle`, rendered as extra HTTP operations in
-          the navigation.
-        - Fixed an issue where example descriptions weren't rendered in the request and response samples panels.
-        - Fixed an issue where code samples omitted the discriminator value of the selected variant.
-        - Fixed an issue in Replay where the request body editor didn't display property descriptions for content with Markdown formatting.
-        - Added missing tooltips to the Try it console parameter rows in OpenAPI docs.
-        - Improved the 404 page for API Docs.
-        - Fixed an issue in API docs where deep links did not open the linked field.
-        - Fixed an issue in API docs where the menu link for a section of a tag description contained a duplicated path segment.
-        - Updated `@redocly/openapi-core` to version `2.53.0`.
-        - Fixed an issue where a mapping key that pointed to the same schema as `defaultMapping` disappeared from the variant list.
-        - Updated the language selection indicator's position in the API docs Languages panel to display inside the language selection box.
-        - Fixed an issue in OpenAPI docs where the server URL was missing from the request panel for APIs with a single server.
-        - >-
-          Fixed an issue in API docs where the code samples panel displayed no `Discriminator` selector for schemas that inherited their
-          `discriminator` from an `allOf` parent.
-    dependencies:
-      '@redocly/theme': 0.69.0
-      '@redocly/replay': 0.28.0
-  0.2.0-next.12:
-    timestamp: 1789453562000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.53.0`.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.11
-      '@redocly/replay': 0.28.0-next.11
-  0.2.0-next.11:
-    timestamp: 1789119224000
-    changes:
-      minor: []
-      patch:
-        - Fixed an empty Download panel that appeared on the OpenAPI and AsyncAPI overview page when `downloadUrls` was set to an empty list.
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-    dependencies:
-      '@redocly/replay': 0.28.0-next.10
-      '@redocly/theme': 0.69.0-next.10
-  0.2.0-next.10:
-    timestamp: 1789029160000
-    changes:
-      minor:
-        - Improved search to index every field, heading, and message.
-      patch:
-        - Fixed an issue where API docs pages opened scrolled down, hiding the breadcrumbs and any custom navigation placed above the API description.
-        - >-
-          Fixed an issue in `Try it` where parameters without an `example` appeared empty and were excluded from requests. Parameters now use schema
-          values such as `const`, `examples`, `enum`, or `default`. The **Send** button remains disabled if a required path parameter is empty.
-        - Fixed missing tooltips in the Try it console parameter rows in OpenAPI docs.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.9
-      '@redocly/replay': 0.28.0-next.9
   0.2.0-next.9:
     timestamp: 1788862787000
     changes:
@@ -35331,33 +34652,6 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
-  0.11.0:
-    timestamp: 1789465547000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-        - Updated `openapi-sampler` to version `1.7.5`.
-        - Updated `@redocly/openapi-core` to version `2.53.0`.
-    dependencies: {}
-  0.11.0-next.3:
-    timestamp: 1789453562000
-    changes:
-      minor: []
-      patch:
-        - Updated `@redocly/openapi-core` to version `2.53.0`.
-    dependencies: {}
-  0.11.0-next.2:
-    timestamp: 1789119224000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-    dependencies: {}
   0.11.0-next.1:
     timestamp: 1788862787000
     changes:
@@ -36413,50 +35707,6 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
-  1.20.0:
-    timestamp: 1789465547000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.69.0
-      '@redocly/realm': 0.137.0
-      '@redocly/redoc-revel': 0.137.0
-      '@redocly/redoc-reef': 0.137.0
-      '@redocly/redoc': 0.137.0
-  1.20.0-next.12:
-    timestamp: 1789453562000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.69.0-next.11
-      '@redocly/realm': 0.137.0-next.12
-      '@redocly/redoc-revel': 0.137.0-next.12
-      '@redocly/redoc-reef': 0.137.0-next.12
-      '@redocly/redoc': 0.137.0-next.12
-  1.20.0-next.11:
-    timestamp: 1789119224000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.137.0-next.11
-      '@redocly/redoc': 0.137.0-next.11
-      '@redocly/redoc-reef': 0.137.0-next.11
-      '@redocly/redoc-revel': 0.137.0-next.11
-      '@redocly/theme': 0.69.0-next.10
-  1.20.0-next.10:
-    timestamp: 1789029160000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.137.0-next.10
-      '@redocly/redoc': 0.137.0-next.10
-      '@redocly/redoc-reef': 0.137.0-next.10
-      '@redocly/redoc-revel': 0.137.0-next.10
-      '@redocly/theme': 0.69.0-next.9
   1.20.0-next.9:
     timestamp: 1788862787000
     changes:
@@ -42183,27 +41433,6 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
-  0.22.0:
-    timestamp: 1789465547000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/mock-server': 0.11.0
-  0.22.0-next.9:
-    timestamp: 1789453562000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/mock-server': 0.11.0-next.3
-  0.22.0-next.8:
-    timestamp: 1789119224000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/mock-server': 0.11.0-next.2
   0.22.0-next.7:
     timestamp: 1788862787000
     changes:
@@ -45365,82 +44594,6 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
-  0.28.0:
-    timestamp: 1789465547000
-    changes:
-      minor:
-        - Added an ability to create new environments in Replay using a `ReplayGate`.
-        - Added an `onClose` prop to the custom `ReplayGate` component.
-        - Updated default border radius for components.
-        - Added a shortcut in Replay that converts selected text in a request URL into a path parameter when pressing `{`.
-      patch:
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-        - Fixed an issue in `Try it` where parameters without an `example` appeared empty and were excluded from requests.
-        - Fixed an issue in Replay where the input popover truncated selected values.
-        - >-
-          Fixed an issue in Replay where Basic authentication credentials with non-ASCII characters produced a corrupted Authorization header or
-          prevented the request from being sent.
-        - Fixed an issue in Replay and the Try it console where operations with many editable fields got slower on each reopening.
-        - >-
-          Fixed an issue in the **Try it** console where closing an inactive tab moved the selection to a different tab instead of keeping the active
-          tab.
-        - Fixed an issue in Replay's mobile layout where the first character typed in a request input moved focus to the close button.
-        - Fixed an issue in Replay where a response without a body, such as `204 No Content`, displayed an empty code editor on the **Body** tab.
-        - >-
-          Fixed an issue in **Try it** where typing in the empty parameter row of a request opened in a new tab: discarded the character, moved focus
-          out of the field, and added the parameter to the previously opened request.
-        - Fixed an issue in Replay where the **Send** button became wider while a request was in flight, which shifted the request URL row.
-        - Fixed an issue in Replay where a duplicate server variable appeared as an extra row in the **Environments** dialog's **Inputs** table.
-        - >-
-          Fixed an issue in Replay where pressing the Return or Enter key in the request URL field could break the URL onto a new line or clear the
-          response panel during a running request.
-        - Fixed an issue in Replay where truncated tab names and request titles did not display their full versions on mouse hover or keyboard focus.
-    dependencies:
-      '@redocly/theme': 0.69.0
-  0.28.0-next.11:
-    timestamp: 1789453562000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue in Replay where Basic authentication credentials with non-ASCII characters produced a corrupted Authorization header or
-          prevented the request from being sent.
-        - Fixed an issue in Replay and the Try it console where operations with many editable fields got slower on each reopening.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.11
-  0.28.0-next.10:
-    timestamp: 1789119224000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed security vulnerabilities `CVE-2026-84375`, `CVE-2026-84363`, `CVE-2026-84364` and `CVE-2026-39408` by upgrading `js-yaml` to version
-          `4.3.2` and `hono` to version `4.13.7`.
-        - >-
-          Fixed an issue in the **Try it** console where closing an inactive tab moved the selection to a different tab instead of keeping the tab the
-          user was working in.
-        - >-
-          Fixed an issue in Replay's mobile layout where the first character typed in a request input moved focus to the close button, causing the
-          rest of the input to be lost.
-        - >-
-          Fixed an issue in **Try it** where typing in the empty parameter row of a request opened in a new tab discarded the character, moved focus
-          out of the field, and added the parameter to the previously opened request.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.10
-  0.28.0-next.9:
-    timestamp: 1789029160000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue in `Try it` where parameters without an `example` appeared empty and were excluded from requests. Parameters now use schema
-          values such as `const`, `examples`, `enum`, or `default`. The **Send** button remains disabled if a required path parameter is empty.
-        - Fixed an issue in Replay where the **Send** button became wider while a request was in flight, which shifted the request URL row.
-        - Fixed an issue in Replay where truncated tab names and request titles did not display their full versions on mouse hover or keyboard focus.
-    dependencies:
-      '@redocly/theme': 0.69.0-next.9
   0.28.0-next.8:
     timestamp: 1788862787000
     changes:
@@ -47887,34 +47040,6 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
-  0.20.0:
-    timestamp: 1789465547000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.69.0
-  0.20.0-next.11:
-    timestamp: 1789453562000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.69.0-next.11
-  0.20.0-next.10:
-    timestamp: 1789119224000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.69.0-next.10
-  0.20.0-next.9:
-    timestamp: 1789029160000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.69.0-next.9
   0.20.0-next.8:
     timestamp: 1788862787000
     changes:
@@ -54231,47 +53356,6 @@ reunite:
         - Fixed missing commit events in the pull request timeline for branches with long histories.
         - Fixed duplicated commit events in the Reunite pull request timeline.
     dependencies: {}
-  v2026-09-10.2:
-    timestamp: 1789043558000
-    changes:
-      minor:
-        - Added the option for invited users to resend their organization invitation email from within Reunite.
-      patch:
-        - Fixed search errors that occurred when Typesense search was enabled for a project for the first time.
-    dependencies: {}
-  v2026-09-11.1:
-    timestamp: 1789137120000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where builds complete successfully but incorrectly report internal system errors.
-        - Fixed an issue where changing a pull request's target branch did not start a preview deployment.
-        - Improved build times for projects with many commit statuses by reducing redundant status updates.
-        - >-
-          Fixed the placement of the Reunite hint shown after the setup checklist is closed. The hint appears next to the checklist button in the
-          sidebar instead of the top-right corner of the screen.
-    dependencies: {}
-  v2026-09-11.2:
-    timestamp: 1789156569000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Removed the `Creator` column from the Reunite API keys page and the `createdById` field from API key responses. Audit log exports still
-          indicate who created, updated, or revoked each key.
-    dependencies: {}
-  v2026-09-15.1:
-    timestamp: 1789468867000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed the go-live checklist incorrectly showing a connected repository when the organization contained only mounted remote content or
-          deleted projects.
-        - Fixed processing of pull request webhooks for deleted pull requests to prevent unnecessary retries.
-        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.53.0`.
-        - Fixed authentication pages applying the selected color mode from User settings > Appearance.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
@@ -54545,8 +53629,8 @@ replay:
         - Improved typing performance in the request URL field.
     dependencies:
       '@redocly/theme': 0.65.0-next.1
-  0.20.1:
-    timestamp: 1780402032000
+  0.21.0:
+    timestamp: 1780576100000
     changes:
       minor:
         - Improved accuracy and relevance of AI agent results.
@@ -54594,6 +53678,15 @@ replay:
         - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.34.0`.
     dependencies:
       '@redocly/theme': 0.67.0
+  0.23.0:
+    timestamp: 1784585932000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where example values with line breaks or tabs corrupted the request URL.
+        - Improved diff display in the AI tool approval panel.
+    dependencies:
+      '@redocly/theme': 0.67.0
   0.23.1:
     timestamp: 1785141674000
     changes:
@@ -54611,7 +53704,5 @@ replay:
         - Fixed a crash in Replay where an internal error during logging could bring down the whole app.
         - Fixed security vulnerabilities `CVE-2026-33055` and `CVE-2026-33056` by upgrading the `tar` to version `0.4.46`.
         - Fixed an issue in Replay where the account menu displayed "undefined" instead of the signed-in user's name.
-        - Fixed an issue where example values with line breaks or tabs corrupted the request URL.
-        - Improved diff display in the AI tool approval panel.
     dependencies:
       '@redocly/theme': 0.67.0
