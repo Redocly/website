@@ -1,6 +1,6 @@
 '@redocly/realm':
   0.137.0:
-    timestamp: 1789465547000
+    timestamp: 1789472140000
     changes:
       minor:
         - Added the `singleExpanded` attribute to the `accordion-group` Markdoc tag to keep only one accordion open at a time.
@@ -7293,7 +7293,7 @@
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
   0.137.0:
-    timestamp: 1789465547000
+    timestamp: 1789472140000
     changes:
       minor:
         - Added the `singleExpanded` attribute to the `accordion-group` Markdoc tag to keep only one accordion open at a time.
@@ -13546,7 +13546,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
   0.137.0:
-    timestamp: 1789465547000
+    timestamp: 1789472140000
     changes:
       minor:
         - Added the `singleExpanded` attribute to the `accordion-group` Markdoc tag to keep only one accordion open at a time.
@@ -19796,7 +19796,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
   0.137.0:
-    timestamp: 1789465547000
+    timestamp: 1789472140000
     changes:
       minor:
         - Improved search to index every field, heading, and message.
@@ -26183,7 +26183,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
   0.69.0:
-    timestamp: 1789465547000
+    timestamp: 1789472140000
     changes:
       minor:
         - Added the `singleExpanded` attribute to the `accordion-group` Markdoc tag to keep only one accordion open at a time.
@@ -35028,7 +35028,7 @@
       '@redocly/theme': 0.6.0
 '@redocly/api-docs':
   0.2.0:
-    timestamp: 1789465547000
+    timestamp: 1789472140000
     changes:
       minor:
         - Improved search to index every field, heading, and message.
@@ -35332,7 +35332,7 @@
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
   0.11.0:
-    timestamp: 1789465547000
+    timestamp: 1789472140000
     changes:
       minor: []
       patch:
@@ -36414,7 +36414,7 @@
     dependencies: {}
 '@redocly/portal-plugin-async-api':
   1.20.0:
-    timestamp: 1789465547000
+    timestamp: 1789472140000
     changes:
       minor: []
       patch: []
@@ -42184,7 +42184,7 @@
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
   0.22.0:
-    timestamp: 1789465547000
+    timestamp: 1789472140000
     changes:
       minor: []
       patch: []
@@ -45366,7 +45366,7 @@
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
   0.28.0:
-    timestamp: 1789465547000
+    timestamp: 1789472140000
     changes:
       minor:
         - Added an ability to create new environments in Replay using a `ReplayGate`.
@@ -47888,7 +47888,7 @@
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
   0.20.0:
-    timestamp: 1789465547000
+    timestamp: 1789472140000
     changes:
       minor: []
       patch: []
@@ -54265,9 +54265,6 @@ reunite:
     changes:
       minor: []
       patch:
-        - >-
-          Fixed the go-live checklist incorrectly showing a connected repository when the organization contained only mounted remote content or
-          deleted projects.
         - Fixed processing of pull request webhooks for deleted pull requests to prevent unnecessary retries.
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.53.0`.
         - Fixed authentication pages applying the selected color mode from User settings > Appearance.
@@ -54545,8 +54542,8 @@ replay:
         - Improved typing performance in the request URL field.
     dependencies:
       '@redocly/theme': 0.65.0-next.1
-  0.20.1:
-    timestamp: 1780402032000
+  0.21.0:
+    timestamp: 1780576100000
     changes:
       minor:
         - Improved accuracy and relevance of AI agent results.
@@ -54594,6 +54591,15 @@ replay:
         - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.34.0`.
     dependencies:
       '@redocly/theme': 0.67.0
+  0.23.0:
+    timestamp: 1784585932000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where example values with line breaks or tabs corrupted the request URL.
+        - Improved diff display in the AI tool approval panel.
+    dependencies:
+      '@redocly/theme': 0.67.0
   0.23.1:
     timestamp: 1785141674000
     changes:
@@ -54611,7 +54617,5 @@ replay:
         - Fixed a crash in Replay where an internal error during logging could bring down the whole app.
         - Fixed security vulnerabilities `CVE-2026-33055` and `CVE-2026-33056` by upgrading the `tar` to version `0.4.46`.
         - Fixed an issue in Replay where the account menu displayed "undefined" instead of the signed-in user's name.
-        - Fixed an issue where example values with line breaks or tabs corrupted the request URL.
-        - Improved diff display in the AI tool approval panel.
     dependencies:
       '@redocly/theme': 0.67.0
