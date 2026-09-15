@@ -40,3 +40,5 @@
   label: Use AI to check terminology consistency across your docs
 - page: ai-usability-testing.md
   label: Use AI as a usability tester
+- page: ai-track-docs-visibility-ai-search.md
+  label: Use AI to track your docs' visibility in AI search
