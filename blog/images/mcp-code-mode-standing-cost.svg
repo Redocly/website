@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-labelledby="title desc">
+  <title id="title">Tokens the model reads before your first question</title>
+  <desc id="desc">Code mode with two tools costs about 1,200 tokens of tool definitions. Ten general documentation tools cost about 2,700. One tool per operation on a 598-operation API costs 66,000 tokens on Gemini and 288,000 on Claude, past a 200,000-token context window.</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #1f2937; }
+      .h { font-size: 20px; font-weight: 600; }
+      .lbl { font-size: 15px; font-weight: 600; }
+      .sub { font-size: 13px; fill: #6b7280; }
+      .val { font-size: 15px; }
+    </style>
+  </defs>
+
+  <text x="20" y="34" class="h">Tokens the model reads before your first question</text>
+  <text x="20" y="56" class="sub">Tool definitions only, for the same 598-operation API</text>
+
+  <!-- scale: 600 px = 288,000 tokens; bar origin x = 340 -->
+
+  <!-- row 1: code mode -->
+  <text x="320" y="102" text-anchor="end" class="lbl">Code mode</text>
+  <text x="320" y="120" text-anchor="end" class="sub">2 tools</text>
+  <rect x="340" y="92" width="4" height="28" rx="2" fill="#148479"/>
+  <text x="354" y="112" class="val">about 1,200</text>
+
+  <!-- row 2: general documentation tools -->
+  <text x="320" y="162" text-anchor="end" class="lbl">General documentation tools</text>
+  <text x="320" y="180" text-anchor="end" class="sub">10 tools</text>
+  <rect x="340" y="152" width="6" height="28" rx="2" fill="#6552c7"/>
+  <text x="356" y="172" class="val">about 2,700</text>
+
+  <!-- row 3: one tool per operation -->
+  <text x="320" y="222" text-anchor="end" class="lbl">One tool per operation</text>
+  <text x="320" y="240" text-anchor="end" class="sub">659 tools</text>
+  <rect x="340" y="212" width="600" height="28" rx="2" fill="#c9c2ee"/>
+  <rect x="340" y="212" width="137" height="28" rx="2" fill="#6552c7"/>
+  <text x="487" y="232" class="val">66,000 on Gemini</text>
+  <text x="936" y="232" text-anchor="end" class="val" style="fill:#3b2f8f; font-weight:600">288,000 on Claude</text>
+
+  <!-- 200k context window marker -->
+  <line x1="757" y1="78" x2="757" y2="252" stroke="#b91c1c" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="757" y="272" text-anchor="middle" class="sub" style="fill:#b91c1c">200,000-token context window: does not load</text>
+</svg>

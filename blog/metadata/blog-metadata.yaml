@@ -67,6 +67,10 @@ authors:
     name: Oleksandr Varchuk
     authorBIO: Staff Engineer, Redocly
     image: alex.png
+  - id: vasyl-havronskyi
+    name: Vasyl Havronskyi
+    authorBIO: Software Engineer, Redocly
+    image: havronskyi.svg
 categories:
   - id: api-catalog
     label: API catalog

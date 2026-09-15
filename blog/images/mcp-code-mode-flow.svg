@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="960" height="460" role="img" aria-labelledby="title desc">
+  <title id="title">Tool calling compared with code mode</title>
+  <desc id="desc">With tool calling, every result an agent fetches lands in the model's context. With code mode, the results stay in a sandbox on the server, and only the script's return value reaches the model.</desc>
+  <defs>
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4b5563"/>
+    </marker>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#148479"/>
+    </marker>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #1f2937; }
+      .h { font-size: 20px; font-weight: 600; }
+      .box { font-size: 16px; font-weight: 600; fill: #ffffff; }
+      .sub { font-size: 13px; fill: #6b7280; }
+      .lbl { font-size: 14px; }
+      .cap { font-size: 15px; font-weight: 600; }
+      .line { stroke: #4b5563; stroke-width: 2; fill: none; }
+      .tline { stroke: #148479; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Left panel: tool calling -->
+  <rect x="20" y="20" width="440" height="420" rx="12" fill="#f6f6fa"/>
+  <text x="240" y="56" text-anchor="middle" class="h">Tool calling</text>
+
+  <rect x="140" y="84" width="200" height="56" rx="8" fill="#6552c7"/>
+  <text x="240" y="108" text-anchor="middle" class="box">Model</text>
+  <text x="240" y="128" text-anchor="middle" class="sub" style="fill:#e5e0ff">reads everything it fetched</text>
+
+  <rect x="140" y="364" width="200" height="56" rx="8" fill="#148479"/>
+  <text x="240" y="388" text-anchor="middle" class="box">Docs MCP server</text>
+  <text x="240" y="408" text-anchor="middle" class="sub" style="fill:#d9f2ec">documentation functions</text>
+
+  <!-- thin down arrows: repeated tool calls -->
+  <line x1="170" y1="140" x2="170" y2="360" class="line" marker-end="url(#arrow-dark)"/>
+  <text x="160" y="240" text-anchor="end" class="lbl">tool call</text>
+  <text x="160" y="258" text-anchor="end" class="sub">one after another</text>
+
+  <!-- fat up arrow: results into the model -->
+  <polygon points="250,364 250,190 216,190 282,142 348,190 314,190 314,364" fill="#d9d9e3" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="282" y="262" text-anchor="middle" class="lbl">2 MB of results</text>
+  <text x="282" y="282" text-anchor="middle" class="sub">into the context window,</text>
+  <text x="282" y="298" text-anchor="middle" class="sub">on every call</text>
+
+  <!-- Right panel: code mode -->
+  <rect x="500" y="20" width="440" height="420" rx="12" fill="#f6f6fa"/>
+  <text x="720" y="56" text-anchor="middle" class="h">Code mode</text>
+
+  <rect x="620" y="84" width="200" height="56" rx="8" fill="#6552c7"/>
+  <text x="720" y="108" text-anchor="middle" class="box">Model</text>
+  <text x="720" y="128" text-anchor="middle" class="sub" style="fill:#e5e0ff">reads only the answer</text>
+
+  <!-- sandbox -->
+  <rect x="540" y="214" width="360" height="206" rx="10" fill="#ffffff" stroke="#148479" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="720" y="242" text-anchor="middle" class="cap" style="fill:#148479">Sandbox on the Docs MCP server</text>
+
+  <rect x="566" y="262" width="150" height="56" rx="8" fill="#148479"/>
+  <text x="641" y="286" text-anchor="middle" class="box" style="font-size:14px">script</text>
+  <text x="641" y="306" text-anchor="middle" class="sub" style="fill:#d9f2ec">loop, filter, return</text>
+
+  <rect x="566" y="338" width="308" height="62" rx="8" fill="#d9d9e3"/>
+  <text x="720" y="364" text-anchor="middle" class="lbl">2 MB of results</text>
+  <text x="720" y="384" text-anchor="middle" class="sub">stay here</text>
+
+  <rect x="734" y="262" width="140" height="56" rx="8" fill="#ffffff" stroke="#148479" stroke-width="1.5"/>
+  <text x="804" y="286" text-anchor="middle" class="lbl" style="font-weight:600">documentation</text>
+  <text x="804" y="306" text-anchor="middle" class="lbl" style="font-weight:600">functions</text>
+
+  <line x1="716" y1="290" x2="730" y2="290" class="tline" marker-end="url(#arrow-teal)"/>
+  <line x1="804" y1="318" x2="804" y2="334" class="tline" marker-end="url(#arrow-teal)"/>
+  <line x1="641" y1="334" x2="641" y2="322" class="tline" marker-end="url(#arrow-teal)"/>
+
+  <!-- thin arrows between model and sandbox -->
+  <line x1="680" y1="140" x2="680" y2="210" class="line" marker-end="url(#arrow-dark)"/>
+  <text x="670" y="180" text-anchor="end" class="lbl">execute(script)</text>
+
+  <line x1="760" y1="214" x2="760" y2="144" class="line" marker-end="url(#arrow-dark)"/>
+  <text x="770" y="172" class="lbl">9 rows</text>
+  <text x="770" y="190" class="sub">the return value</text>
+</svg>
