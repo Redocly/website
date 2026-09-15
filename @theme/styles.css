@@ -645,3 +645,33 @@ div[class*="PostInfo__"]:has(> img[src*="redoc-3-announcement-card"]) > img {
     width: 100%;
     height: auto;
 }
+
+/* ---------------------------------------------------------------------------
+ * Docs mini-game (see @theme/components/DocsGame/README.md)
+ * Re-skin the game by overriding these tokens; components fall back to Redocly theme vars.
+ * ------------------------------------------------------------------------- */
+:root {
+  /* Redocly brand: primary blue for actions/connections, accent orange only for "attention" bits */
+  --docs-game-accent: var(--color-primary-base, var(--color-primary-main, #0044d4));
+  --docs-game-accent-2: var(--color-accent-main, #fe6d41);
+  --docs-game-character: var(--color-accent-main, #fe6d41);
+  --docs-game-radius: var(--border-radius-lg, 12px);
+  --docs-game-radius-sm: var(--border-radius-md, 8px);
+  --docs-game-font-heading: 'Red Hat Display', var(--font-family-base);
+  --docs-game-font: var(--font-family-base);
+}
+
+:root.dark {
+  --docs-game-surface: var(--layer-color, #1e1e24);
+  --docs-game-board-bg: #2A2B33;
+  --docs-game-board-border: #4A4B55;
+  --docs-game-blue-soft: #1F2C4D;
+  --docs-game-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --docs-game-golf-green: #3f8f43;
+  --docs-game-golf-green-dark: #2e6b31;
+}
+
+/* Section highlight while the character is standing at it */
+[data-game-step-active] {
+  scroll-margin-top: 120px;
+}

@@ -27,6 +27,8 @@ markdown:
     - 'docs-legacy/_snippets'
     - 'docs/_partials'
     - 'docs/realm/_partials'
+  template:
+    'docs/realm/**': './@theme/templates/DocsWithGame'
 scripts:
   head:
     - src: '@theme/color-mode-hack.js'

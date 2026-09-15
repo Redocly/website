@@ -7,4 +7,5 @@ export { Quiz } from '@redocly/marketing-pages/components/Quiz/Quiz.js';
 export { TagBadge } from './components/TagBadge/TagBadge';
 export { SplitView, LeftView, RightView } from './components/SplitView/SplitView';
 export { GroupElements } from './components/GroupElements/GroupElements';
+export { GameStep, GameSay, GameQuestion, GameOption, GameMedia, GamePair } from '../components/DocsGame/tags';
 export * from '../../docs/realm/@theme/markdoc/components';
