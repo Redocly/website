@@ -14,6 +14,8 @@
   label: Use AI to enforce tone and style consistency across docs
 - page: ai-review-code-examples-completeness-accuracy.md
   label: Use AI to review code examples for completeness and accuracy
+- page: ai-test-api-calls-live-while-writing-docs.md
+  label: Use AI to test API calls live while you write your docs
 - page: ai-automate-documentation-reviews-pr-workflow.md
   label: Use AI to automate documentation reviews in your PR workflow
 - page: ai-review-docs-navigation-structure.md
