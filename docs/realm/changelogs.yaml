@@ -54269,6 +54269,15 @@ reunite:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.53.0`.
         - Fixed authentication pages applying the selected color mode from User settings > Appearance.
     dependencies: {}
+  v2026-09-15.2:
+    timestamp: 1789477013000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed the go-live checklist incorrectly showing a connected repository when the organization contained only mounted remote content or
+          deleted projects.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
