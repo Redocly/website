@@ -41,3 +41,7 @@ All security patches include a changeset entry in the [changelog](../changelog.p
 ## Report a vulnerability
 
 If you discover a security vulnerability in a Redocly product, please contact us at [security@redocly.com](mailto:security@redocly.com).
+
+## Resources
+
+- **[Third-party licenses](./third-party-licenses.page.tsx)** - Open-source packages included in Realm and their licenses
