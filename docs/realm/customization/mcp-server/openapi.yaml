@@ -404,6 +404,19 @@ components:
         - page
         - totalPages
       additionalProperties: false
+    ApiDescriptionRef:
+      type: object
+      description: Reference to an API definition the lookup also matched.
+      properties:
+        version:
+          type: string
+          description: API version.
+        filePath:
+          type: string
+          description: API definition file path. Pass it as `filePath` to load this definition.
+      required:
+        - filePath
+      additionalProperties: false
     GetEndpointsOutput:
       type: object
       description: Endpoint list for a single published API.
@@ -414,6 +427,14 @@ components:
         version:
           type: string
           description: API version.
+        filePath:
+          type: string
+          description: Path of the API definition file that this result describes.
+        otherMatches:
+          type: array
+          description: Other definitions the lookup matched. Present only when several share the requested name.
+          items:
+            $ref: '#/components/schemas/ApiDescriptionRef'
         servers:
           type: array
           description: Servers defined by the published OpenAPI description.
@@ -426,6 +447,7 @@ components:
       required:
         - api
         - version
+        - filePath
         - servers
         - endpoints
       additionalProperties: false
@@ -439,6 +461,14 @@ components:
         version:
           type: string
           description: API version.
+        filePath:
+          type: string
+          description: Path of the API definition file that this result describes.
+        otherMatches:
+          type: array
+          description: Other definitions the lookup matched. Present only when several share the requested name.
+          items:
+            $ref: '#/components/schemas/ApiDescriptionRef'
         servers:
           type: array
           description: Servers defined by the published OpenAPI description.
@@ -472,6 +502,7 @@ components:
       required:
         - api
         - version
+        - filePath
         - servers
         - endpoint
         - globalSecurity
@@ -487,6 +518,14 @@ components:
         version:
           type: string
           description: API version.
+        filePath:
+          type: string
+          description: Path of the API definition file that this result describes.
+        otherMatches:
+          type: array
+          description: Other definitions the lookup matched. Present only when several share the requested name.
+          items:
+            $ref: '#/components/schemas/ApiDescriptionRef'
         securitySchemes:
           type: object
           description: Security schemes map from the OpenAPI components section.
@@ -497,6 +536,8 @@ components:
           items:
             type: object
             additionalProperties: true
+      required:
+        - filePath
       additionalProperties: false
     GetFullApiDescriptionOutput:
       type: object
@@ -508,6 +549,14 @@ components:
         version:
           type: string
           description: API version.
+        filePath:
+          type: string
+          description: Path of the API definition file that this result describes.
+        otherMatches:
+          type: array
+          description: Other definitions the lookup matched. Present only when several share the requested name.
+          items:
+            $ref: '#/components/schemas/ApiDescriptionRef'
         definition:
           type: object
           description: Full OpenAPI definition returned by the Docs MCP server.
@@ -515,6 +564,7 @@ components:
       required:
         - api
         - version
+        - filePath
         - definition
       additionalProperties: false
     SearchOutput:
