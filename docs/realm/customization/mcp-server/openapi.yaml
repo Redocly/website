@@ -450,6 +450,9 @@ components:
             Endpoint details derived from the resolved OpenAPI operation. Besides `path` and
             `method`, the object may include parameters, request body, responses, security,
             examples, and other operation-level fields from the source OpenAPI description.
+            A component the operation uses once is resolved in place. A component it uses
+            several times, or through a cycle, stays a `$ref` and is resolved once under
+            `components`.
           properties:
             path:
               type: string
@@ -468,6 +471,14 @@ components:
         securitySchemes:
           type: object
           description: Security schemes map from the OpenAPI components section.
+          additionalProperties: true
+        components:
+          type: object
+          description: >
+            The components the endpoint references more than once, resolved once each and
+            keyed the way the source OpenAPI description keys them, so that a `$ref` in
+            `endpoint` resolves against this object. Absent when the endpoint references
+            every component once.
           additionalProperties: true
       required:
         - api
