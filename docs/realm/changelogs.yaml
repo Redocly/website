@@ -54278,6 +54278,13 @@ reunite:
           Fixed the go-live checklist incorrectly showing a connected repository when the organization contained only mounted remote content or
           deleted projects.
     dependencies: {}
+  v2026-09-15.3:
+    timestamp: 1789484267000
+    changes:
+      minor:
+        - Added a `Visual review check` setting on the **Settings > Git hosting** page.
+      patch: []
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
