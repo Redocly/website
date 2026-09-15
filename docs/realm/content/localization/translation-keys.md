@@ -763,6 +763,13 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- fallback.disclaimer
+- Notice on a page that shows the default language because the translation is missing
+  (needs the `fallbackDisclaimer` option)
+- This page is not yet translated. It is shown in {{language}}.
+
+---
+
 - page.lastUpdated.timeago
 - Page last updated (when referring to a period of time, e.g. 10min)
 - Last updated
