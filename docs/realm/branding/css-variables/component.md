@@ -1272,8 +1272,9 @@
 <summary>Markdown horizontal rule</summary>
 
 ```css
+--md-hr-bg-color: transparent;
 --md-hr-border-color: var(--border-color-secondary);
---md-hr-border: 0.5px solid var(--md-hr-border-color);
+--md-hr-height: unset;
 --md-hr-margin-vertical: 20px;
 ```
 

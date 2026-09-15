@@ -880,7 +880,7 @@ This page contains the list of all predefined translation keys used in default U
 
 - page.mcpNotAllowed.snippets.claudeDesktop.instruction
 - Claude Desktop setup instruction on the MCP connection page
-- Open **Customize** → **Connectors** → **Add custom connector** and paste this server URL:
+- In Claude Desktop, open Settings → Developer → Edit Config, add this to the configuration file, and restart Claude Desktop:
 
 ---
 

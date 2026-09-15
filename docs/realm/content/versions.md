@@ -22,7 +22,7 @@ You can set up your project to maintain multiple concurrent versions of document
 It is possible to apply versioning to single files or sets of files in the same location.
 You can do this by creating version subfolders for each version of content you want to include.
 
-When you access content inside a version subfolder, the sidebar displays a version picker at the top.
+When you access content inside a version subfolder, a version picker is displayed at the top of the sidebar.
 The version picker enables users to select which version of content to display.
 The sidebar reflects the changes in files and filenames when you switch between versions.
 
@@ -64,23 +64,23 @@ After building your project, when you access versioned content, the sidebar disp
 
 ### Examples of versioned content structures
 
-The following example includes versions `1.0`, `2.0`, and `3.0` of the `cafe_api`, and the `legacy` and `latest` versions of the `customer_api`:
+The following example includes versions `1.0`, `2.0`, and `3.0` of the `museum_api`, and the `legacy` and `latest` versions of the `customer_api`:
 
 ```treeview {% title="Sample file structure for multiple folders with versioned content" %}
-├── cafe_api/
+├── museum_api/
 │   ├── @1.0/
 │   │   ├── index.md
-│   │   ├── cafe.yaml
+│   │   ├── museum.yaml
 │   │   └── overview.md
 │   ├── @2.0/
 │   │   ├── index.md
-│   │   └── cafe.yaml
+│   │   └── museum.yaml
 │   └── @3.0/
 │       ├── images/
 │       │   └── diagram.png
 │       ├── index.md
 │       ├── readme.md
-│       └── cafe.yaml
+│       └── museum.yaml
 ├── customer_api/
 │   ├── @latest/
 │   │   ├── index.md
@@ -94,19 +94,13 @@ The following example includes versions `1.0`, `2.0`, and `3.0` of the `cafe_api
 └── sidebars.yaml
 ```
 
-The `cafe_api` folder has no `versions.yaml` file, so its versions appear in the version picker sorted from newest to oldest.
-The order is `3.0`, then `2.0`, and finally `1.0`.
-The version that opens by default is the first version in that order, in this case `3.0`.
+The `museum_api` versions will appear in the version picker in the same order as the version subfolders in the file tree.
+The order is `1.0`, then `2.0`, and finally `3.0`.
+The version opened by default will be the the last version, in this case: `3.0`.
 
-The sort is numeric-aware, so it orders `2.10` before `2.9` instead of after it.
-It orders versions that are not numeric, such as `latest` or `legacy`, in reverse alphabetical order.
-The sort does not follow semver precedence, so `1.0.0-rc.1` appears above `1.0.0` in the version picker.
-If your version folders use prerelease identifiers, add a `versions.yaml` file to pin the order.
-
-The `customer_api` folder uses named versions, so the same sorting would put `legacy` first and open `legacy` by default.
-That folder has a `versions.yaml` file instead, which sets both the order of the versions and the default version.
-Its [configuration](#customize-the-version-picker) keeps `legacy` at the top of the list, and opens `latest` by default.
-The sorting described above no longer applies to `customer_api`.
+Since in `customer_api` the `legacy` version appears second, it would also be the default version.
+The `latest` version should appear at the bottom of the list and be the default version.
+To do that, a `versions.yaml` file with the [desired configuration](#customize-the-version-picker) was added to the `customer_api` folder.
 
 Another example shows the `public beta` version of `payments_api`:
 
@@ -155,12 +149,12 @@ To customize a sidebar using the `directory` option:
    ```yaml {% title="sidebars.yaml" %}
     - page: index.md
       label: Main page
-    - directory: /cafe_api
+    - directory: /museum_api
     - directory: /customer_api
     ```
 
-This configuration modifies the sidebar to include links to all content files in the `cafe_api` folder followed by files in `customer_api`.
-The sidebar uses the titles or the first headings of the files as labels.
+This configuration modifies the sidebar to include links to all content files in the `museum_api` folder followed by files in `customer_api`.
+The titles or the first headings of the files are used for the sidebar labels.
 
 ### Add a single sidebar for all version folders
 
@@ -173,7 +167,7 @@ To add a single sidebar for all version folders:
 1. In your project create a `sidebars.yaml` file in a folder a that contains your versioned content, as in the following example:
     ```treeview  {% title="Sample file structure for multiple folders with versioned content and a single sidebars file" %}
     ├── my-awesome-docs/
-    │   ├── cafe_api/
+    │   ├── museum_api/
     │   │   ├── @1.0/
     │   │   ├── @2.0/
     │   │   └── @3.0/
@@ -187,14 +181,14 @@ To add a single sidebar for all version folders:
     ```yaml {% title="sidebars.yaml" %}
     - page: index.md
       label: Main page
-    - page: /cafe_api/@1.0/index.md
-    - page: /cafe_api/@1.0/cafe.yaml
-    - page: /cafe_api/@1.0/overview.md
-    - page: /cafe_api/@2.0/index.md
-    - page: /cafe_api/@2.0/cafe.yaml
-    - page: /cafe_api/@3.0/index.md
-    - page: /cafe_api/@3.0/cafe.yaml
-    - page: /cafe_api/@3.0/readme.md
+    - page: /museum_api/@1.0/index.md
+    - page: /museum_api/@1.0/museum.yaml
+    - page: /museum_api/@1.0/overview.md
+    - page: /museum_api/@2.0/index.md
+    - page: /museum_api/@2.0/museum.yaml
+    - page: /museum_api/@3.0/index.md
+    - page: /museum_api/@3.0/museum.yaml
+    - page: /museum_api/@3.0/readme.md
     - page: /customer_api/@legacy/index.md
     - page: /customer_api/@legacy/payments.yaml
     - page: /customer_api/@legacy/readme.md
@@ -205,16 +199,16 @@ To add a single sidebar for all version folders:
     ```yaml {% title="sidebars.yaml" %}
     - page: index.md
       label: Main page
-    - group: Cafe API
+    - group: Museum API
       items:
-        - page: /cafe_api/@1.0/index.md
-        - page: /cafe_api/@1.0/cafe.yaml
-        - page: /cafe_api/@1.0/overview.md
-        - page: /cafe_api/@2.0/index.md
-        - page: /cafe_api/@2.0/cafe.yaml
-        - page: /cafe_api/@3.0/index.md
-        - page: /cafe_api/@3.0/cafe.yaml
-        - page: /cafe_api/@3.0/readme.md
+        - page: /museum_api/@1.0/index.md
+        - page: /museum_api/@1.0/museum.yaml
+        - page: /museum_api/@1.0/overview.md
+        - page: /museum_api/@2.0/index.md
+        - page: /museum_api/@2.0/museum.yaml
+        - page: /museum_api/@3.0/index.md
+        - page: /museum_api/@3.0/museum.yaml
+        - page: /museum_api/@3.0/readme.md
     - group: Customer API
       items:
         - page: /customer_api/@legacy/index.md
@@ -224,10 +218,10 @@ To add a single sidebar for all version folders:
         - page: /customer_api/@latest/payments.yaml 
     ```
 
-This configuration modifies the sidebar by adding two groups, Cafe API and Customer API.
+This configuration modifies the sidebar by adding two groups, Museum API and Customer API.
 Within each group are multiple versions of files.
 When you first access your project, the sidebar displays only the links to files from the versions: `3.0` and `legacy` respectively.
-These versions are the default versions, as they are the first in the version order.
+These versions are the default versions, as they are the lowest on the alphanumeric ascending order.
 To set custom default versions, see [Customize the version picker](#customize-the-version-picker).
 
 ### Add a dedicated sidebar for each version folder
@@ -240,21 +234,21 @@ To add a dedicated `sidebars.yaml` for each version folder:
 
 1. Add a `sidebars.yaml` file to each folder containing versioned content in your project, as in the following example:
     ```treeview {% title="Sample file structure for multiple folders with versioned content" %}
-    ├── cafe_api/
+    ├── museum_api/
     │   ├── @1.0/
     │   │   ├── index.md
-    │   │   ├── cafe.yaml
+    │   │   ├── museum.yaml
     │   │   └── overview.md
     │   ├── @2.0/
     │   │   ├── index.md
-    │   │   └── cafe.yaml
+    │   │   └── museum.yaml
     │   ├── @3.0/
     │   │   ├── images/
     │   │   │   └── diagram.png
     │   │   ├── index.md
     │   │   ├── readme.md
-    │   │   └── cafe.yaml
-    │   └── cafe.sidebars.yaml
+    │   │   └── museum.yaml
+    │   └── museum.sidebars.yaml
     ├── customer_api/
     │   ├── @latest/
     │   │   ├── index.md
@@ -270,36 +264,35 @@ To add a dedicated `sidebars.yaml` for each version folder:
     ```
 1. Add a `page` option with a value of the file path for each content file in each version subfolder.
    Add the options in each `sidebars.yaml` file, as in the following example:
-    ```yaml {% title="cafe.sidebars.yaml" %}
+    ```yaml {% title="museum.sidebars.yaml" %}
     - page: /@1.0/index.md
-      label: Cafe API
-    - page: /@1.0/cafe.yaml
+      label: Museum API
+    - page: /@1.0/museum.yaml
     - page: /@1.0/overview.md
     - page: /@2.0/index.md
-      label: Cafe API
-    - page: /@2.0/cafe.yaml
+      label: Museum API
+    - page: /@2.0/museum.yaml
     - page: /@3.0/index.md
-      label: Cafe API
-    - page: /@3.0/cafe.yaml
+      label: Museum API
+    - page: /@3.0/museum.yaml
     - page: /@3.0/readme.md
     ```
 1. In the `sidebars.yaml` file at the root of your project, add references to the sidebar files for versioned content, as in the following example:
     ```yaml {% title="sidebars.yaml" %}
     - page: index.md
       label: Main page
-    - $ref: /cafe_api/cafe.sidebars.yaml
-    - $ref: /customer_api/customer.sidebars.yaml
+    - $ref: /museum_api/sidebars.yaml
+    - $ref: /customer_api/sidebars.yaml 
     ```
 In the built project, the sidebar combines the referenced `sidebars.yaml` files and displays links to the default version of the content.
 
 ## Customize the version picker
 
-In a folder without a `versions.yaml` file, the version picker sorts versions from newest to oldest.
-The sort is numeric-aware, so it orders `2.10` before `2.9`.
-When you navigate to a versioned file, the version that opens is the first version in the order (the newest one).
-
+By default, the order of versions in the version picker is the same as the folder structure in the project, in the alphanumeric ascending order.
+The version that opens when you navigate to versioned file, is by default the version last in the order. \
 You can customize which versions appear in the version picker, the order of the versions, and the version that opens by default.
-To learn more about version picker configuration, see [Versions configuration options](#versions-configuration-options) section on this page.
+
+For more information on version picker configuration, see the [Versions configuration options](#versions-configuration-options) below.
 
 To specify the default version and choose which versions to display, create a `versions.yaml` file on the same level as your version subfolders:
 
@@ -321,7 +314,7 @@ versions:
 - **`name`** - Display name shown in the version picker.
   If not provided, uses the folder name
 
-If you don't provide a `name`, the version picker displays the version folder name (without `@`) instead.
+If you don't provide a `name`, the version folder name (without `@`) is used instead.
 As an example, let's assume this file structure:
 
 ```treeview {% title="An example of file structure for multiple versions" %}
@@ -329,14 +322,14 @@ my_awesome_docs/
 └── customer_api/
     ├── @latest/
     │   ├── index.md
-    │   └── payments.yaml
+    │   └── museum.yaml
     ├── @legacy/
     |   ├── index.md
-    |   ├── payments.yaml
+    |   ├── museum.yaml
     |   └── readme.md
     ├── @demo/
     │   ├── index.md
-    │   └── payments.yaml
+    │   └── museum.yaml
     └── versions.yaml
 ```
 
@@ -464,17 +457,17 @@ Create a `versions.yaml` file on the same level as your version folders.
 
 - default
 - string
-- The version that opens first when the page loads.
+- The version displayed first when the page is loaded.
   Must match the name of the version folder, excluding the `@` prefix.
   If not defined, it is the last `version` in the `versions` object.
-  Without a `versions.yaml` file, the default version is the newest version, according to the numeric-aware sort order.
+  Without a `versions.yaml` file, the default version is the highest version in the alphanumeric ascending order.
 
 ---
 
 - versions
 - Array of [Version object](#version-object)
 - This option specifies the version subfolders to include, their display names, and the order.
-  If not used, the version picker includes all version subfolders in the same location.
+  If not used, all version subfolders in the same location are included in the version picker.
 
 {% /table %}
 
@@ -520,9 +513,9 @@ versions:
 ```
 
 The following example contains three versions: `1.0`, `2.0`, and `2.3`.
-Since the names contain only numbers, the example wraps them in single quotation marks to match the required `string` type for these values.
+Since the names contain only numbers, the names were placed inside single quotations to match the required `string` type for these values.
 The version picker displays **1.0**, **2.0**, and **2.3**.
-The default version is not defined in this file, so the project displays files from the last version subfolder listed.
+The default version is not defined in this file, so the project displays files from the version subfolder with the highest value.
 In this case, it is `@2.3`.
 
 ```yaml {% title="versions.yaml" %}

@@ -115,21 +115,7 @@ Your project can use a [connected Git provider](../../project/connect-git/connec
 In that case, after the review is submitted, you will see a **Visual review** check on it.
 
 The check links back to the **Visual review** tab in Reunite and displays a short status (for example, **Pending**, **Approved**, **Changes requested**, or **No changes**).
-**Visual review** check updates automatically when you push a commit, submit a review or comment in Reunite.
-
-{% img
-  src="../../images/reunite-pull-request-visual-review-check.png"
-  alt="Screenshot of pull request checks in GitHub with an arrow pointing to the pending Visual review check"
-  withLightbox=true
-/%}
-
-Projects have the **Visual review** check enabled by default.
-To disable it:
-
-- In your project, navigate to **Settings > Git hosting** and switch off **Visual review check**.
-
-When the check is disabled, a pull request that waits for a review gets the **Skipped** status instead of **Pending**.
-Approvals and change requests are still reported.
+**Visual review** check updates automatically when you add comments or change a review in Reunite.
 
 If you connect your Git provider and Reunite accounts before submitting your review, it will post a review to your Git repository.
 
