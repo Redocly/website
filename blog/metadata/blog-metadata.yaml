@@ -70,7 +70,7 @@ authors:
   - id: vasyl-havronskyi
     name: Vasyl Havronskyi
     authorBIO: Software Engineer, Redocly
-    image: havronskyi.svg
+    image: havronskyi.png
 categories:
   - id: api-catalog
     label: API catalog
