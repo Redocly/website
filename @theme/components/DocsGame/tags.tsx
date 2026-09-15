@@ -5,17 +5,27 @@
  * that tells the game engine where each step lives in the document.
  * In "game" mode the active step renders the `StepBubble` in place (in the document flow),
  * right under the section it belongs to, so no coordinate math is required.
+ *
+ * Registered site-wide in `@theme/markdoc/components.tsx`, so this module loads on every
+ * page. Keep its static imports to React and the store; the bubble and everything it pulls
+ * in (the kinds, styled-components, the artwork) load lazily.
  */
 import * as React from 'react';
-import { gameActions, useGameState, type GameOption as GameOptionType, type GameMedia } from './store';
-import { StepBubble, FinishCard } from './StepBubble';
+import {
+  gameActions,
+  selectCurrentIndex,
+  useGameState,
+  type GameOption as GameOptionType,
+  type GameMedia,
+} from './store';
+
+const StepBubble = React.lazy(() => import('./StepBubble').then((m) => ({ default: m.StepBubble })));
+const FinishCard = React.lazy(() => import('./StepBubble').then((m) => ({ default: m.FinishCard })));
 
 /* --------------------------------- contexts -------------------------------- */
 
 const StepContext = React.createContext<string | null>(null);
 const QuestionContext = React.createContext<((option: GameOptionType) => () => void) | null>(null);
-
-let autoIdCounter = 0;
 
 /* --------------------------------- GameStep -------------------------------- */
 
@@ -49,7 +59,9 @@ export function GameStep({
   allowedMistakes,
   children,
 }: GameStepProps) {
-  const [stepId] = React.useState(() => id || `step-${++autoIdCounter}`);
+  // Stable across server render and hydration, unlike a module-level counter.
+  const generatedId = React.useId();
+  const stepId = id || generatedId;
   const markerRef = React.useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = React.useState(false);
   const state = useGameState();
@@ -63,6 +75,9 @@ export function GameStep({
       highlight,
       badge,
       sign,
+      leftLabel,
+      rightLabel,
+      allowedMistakes,
       element: markerRef.current,
       say: [],
       media: [],
@@ -72,11 +87,12 @@ export function GameStep({
     });
     setMounted(true);
     return unregister;
-  }, [stepId, title, type, mood, highlight, badge, sign]);
+  }, [stepId, title, type, mood, highlight, badge, sign, leftLabel, rightLabel, allowedMistakes]);
 
   const index = state.steps.findIndex((s) => s.id === stepId);
-  const isActive = state.mode === 'game' && !state.finished && index === state.currentIndex;
-  const isDone = state.mode === 'game' && index > -1 && index < state.currentIndex;
+  const currentIndex = selectCurrentIndex(state);
+  const isActive = state.mode === 'game' && !state.finished && index === currentIndex;
+  const isDone = state.mode === 'game' && index > -1 && index < currentIndex;
   const isFinishHere = state.mode === 'game' && state.finished && index === state.steps.length - 1;
 
   return (
@@ -88,15 +104,15 @@ export function GameStep({
         data-game-step-done={isDone || undefined}
         data-game-mood={mood}
         data-game-highlight={highlight || undefined}
-        data-game-left-label={leftLabel}
-        data-game-right-label={rightLabel}
-        data-game-allowed-mistakes={allowedMistakes}
-        style={{ scrollMarginTop: '120px' }}
       >
         {/* Children only register content; they render nothing. Mount them after the step exists. */}
         {mounted && children}
-        {isActive && <StepBubble stepId={stepId} index={index} />}
-        {isFinishHere && <FinishCard />}
+        {(isActive || isFinishHere) && (
+          <React.Suspense fallback={null}>
+            {isActive && <StepBubble stepId={stepId} index={index} />}
+            {isFinishHere && <FinishCard />}
+          </React.Suspense>
+        )}
       </div>
     </StepContext.Provider>
   );
@@ -106,15 +122,16 @@ export function GameStep({
 
 export function GameSay({ children }: { children?: React.ReactNode }) {
   const stepId = React.useContext(StepContext);
+  const sayId = React.useId();
 
   React.useEffect(() => {
     if (!stepId) return;
-    const node = <React.Fragment key={`say-${Math.random()}`}>{children}</React.Fragment>;
+    const node = <React.Fragment key={sayId}>{children}</React.Fragment>;
     gameActions.updateStep(stepId, (s) => ({ ...s, say: [...s.say, node] }));
     return () => gameActions.updateStep(stepId, (s) => ({ ...s, say: s.say.filter((n) => n !== node) }));
     // children are static Markdoc content — registering once is intended
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stepId]);
+  }, [stepId, sayId]);
 
   return null;
 }
@@ -161,7 +178,7 @@ type GameOptionProps = { correct?: boolean; feedback?: string; children?: React.
 
 export function GameOption({ correct = false, feedback, children }: GameOptionProps) {
   const register = React.useContext(QuestionContext);
-  const [optionId] = React.useState(() => `opt-${Math.random().toString(36).slice(2, 8)}`);
+  const optionId = React.useId();
 
   React.useEffect(() => {
     if (!register) return;
@@ -188,7 +205,7 @@ const VIDEO_EXT = /\.(mp4|webm|ogg|mov)(\?.*)?$/i;
 /** Image / gif / video shown inside the bubble. Videos autoplay muted & looped by default. */
 export function GameMedia({ src, alt, caption, poster, autoplay, loop }: GameMediaProps) {
   const stepId = React.useContext(StepContext);
-  const [mediaId] = React.useState(() => `media-${Math.random().toString(36).slice(2, 8)}`);
+  const mediaId = React.useId();
 
   React.useEffect(() => {
     if (!stepId || !src) return;
@@ -206,7 +223,7 @@ export function GameMedia({ src, alt, caption, poster, autoplay, loop }: GameMed
     gameActions.updateStep(stepId, (s) => ({ ...s, media: [...s.media.filter((m) => m.id !== mediaId), item] }));
     return () => gameActions.updateStep(stepId, (s) => ({ ...s, media: s.media.filter((m) => m.id !== mediaId) }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stepId, src]);
+  }, [stepId, mediaId, src]);
 
   return null;
 }
@@ -221,7 +238,7 @@ type GamePairProps = { left?: string; right?: string; children?: React.ReactNode
  */
 export function GamePair({ left, right }: GamePairProps) {
   const stepId = React.useContext(StepContext);
-  const [pairId] = React.useState(() => `pair-${Math.random().toString(36).slice(2, 8)}`);
+  const pairId = React.useId();
 
   React.useEffect(() => {
     if (!stepId) return;
@@ -231,7 +248,7 @@ export function GamePair({ left, right }: GamePairProps) {
     }));
     return () => gameActions.updateStep(stepId, (s) => ({ ...s, pairs: s.pairs.filter((p) => p.id !== pairId) }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stepId, left, right]);
+  }, [stepId, pairId, left, right]);
 
   return null;
 }

@@ -1,11 +1,12 @@
 import * as React from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { gameActions, isStepAnswered, selectScore, useGameState, type GameResult } from './store';
+import { gameActions, isStepAnswered, selectScore, useGameState, warnOnce, type GameResult } from './store';
 import { createPortal } from 'react-dom';
 import { useGameConfig } from './config';
 import { getStepKind } from './kinds';
 import { MediaList } from './Media';
 import { t, focusRing } from './theme';
+import { StepCardContext } from './stepFocus';
 
 const appear = keyframes`
   from { opacity: 0; transform: translateY(8px) scale(0.98); }
@@ -90,6 +91,14 @@ export const Card = styled.section<{ $highlight?: boolean }>`
 
   @media (prefers-reduced-motion: reduce) {
     animation: none;
+  }
+  /* The card is focused programmatically; only show a ring for real tabbing. */
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline: 2px solid ${t.accent};
+    outline-offset: 2px;
   }
   & p:last-child {
     margin-bottom: 0;
@@ -177,11 +186,34 @@ export function StepBubble({ stepId, index }: Props) {
   const cardRef = React.useRef<HTMLElement>(null);
 
   React.useEffect(() => {
-    const el = cardRef.current?.parentElement ?? cardRef.current;
+    const card = cardRef.current;
+    const el = card?.parentElement ?? card;
     if (!el) return;
     const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+    // Announces the new region, and scopes the step's keyboard handling (see ./stepFocus).
+    card?.focus({ preventScroll: true });
   }, [stepId]);
+
+  // Options register in child effects, which have all run by the time this one does.
+  const options = step?.options;
+  const declaredType = step?.type;
+  const pairCount = step?.pairs.length ?? 0;
+  React.useEffect(() => {
+    if (!options) return;
+    if (options.length > 0) {
+      const correct = options.filter((o) => o.correct).length;
+      if (correct !== 1) {
+        warnOnce(
+          `correct:${stepId}`,
+          `gameStep "${stepId}" has ${correct} options marked correct=true — exactly one is expected.`,
+        );
+      }
+    }
+    if (declaredType === 'match' && pairCount === 0) {
+      warnOnce(`pairs:${stepId}`, `gameStep "${stepId}" is type="match" but has no gamePair tags.`);
+    }
+  }, [stepId, options, declaredType, pairCount]);
 
   const answer = React.useCallback((optionId: string) => gameActions.answer(stepId, optionId), [stepId]);
   const setResult = React.useCallback((r: GameResult) => gameActions.setResult(stepId, r), [stepId]);
@@ -199,7 +231,9 @@ export function StepBubble({ stepId, index }: Props) {
   const chosen = step.options.find((o) => o.id === state.answers[stepId]);
   const result = state.results[stepId];
   const answered = isStepAnswered(state, step);
-  const requiresAnswer = kind.requiresAnswer ?? (hasOptions || hasPairs);
+  // Only block "Next" when there is something to answer, or a `match` step with a
+  // typo'd `gamePair` can never be finished.
+  const requiresAnswer = (kind.requiresAnswer ?? true) && (hasOptions || hasPairs);
   const canContinue = !requiresAnswer || answered;
   const isLast = index === state.steps.length - 1;
 
@@ -210,7 +244,8 @@ export function StepBubble({ stepId, index }: Props) {
       data-kind={kindId}
       data-highlight={step.highlight || undefined}
       $highlight={step.highlight}
-      aria-live="polite"
+      tabIndex={-1}
+      aria-label={step.title ?? `Step ${index + 1}`}
     >
       {step.highlight && !flashDone && typeof document !== 'undefined' &&
         createPortal(<AttentionFlash onAnimationEnd={() => setFlashDone(true)} />, document.body)}
@@ -225,17 +260,19 @@ export function StepBubble({ stepId, index }: Props) {
       {step.say.length > 0 && <Say>{step.say}</Say>}
       <MediaList items={step.media} />
 
-      <Kind
-        step={step}
-        chosen={chosen}
-        answered={answered}
-        answer={answer}
-        setResult={setResult}
-        result={result}
-        next={next}
-        keyboard={config.keyboard}
-        hints={config.keyboardHints}
-      />
+      <StepCardContext.Provider value={cardRef}>
+        <Kind
+          step={step}
+          chosen={chosen}
+          answered={answered}
+          answer={answer}
+          setResult={setResult}
+          result={result}
+          next={next}
+          keyboard={config.keyboard}
+          hints={config.keyboardHints}
+        />
+      </StepCardContext.Provider>
 
       <Footer>
         <GhostButton type="button" onClick={() => gameActions.prev()} disabled={index === 0}>
@@ -271,11 +308,12 @@ export function FinishCard() {
   const ref = React.useRef<HTMLElement>(null);
 
   React.useEffect(() => {
-    ref.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    ref.current?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
   }, []);
 
   return (
-    <FinishWrap ref={ref} data-component-name="DocsGame/FinishCard" aria-live="polite">
+    <FinishWrap ref={ref} data-component-name="DocsGame/FinishCard" role="status">
       <Title>{labels.finishedTitle}</Title>
       {total > 0 && (
         <>

@@ -2,13 +2,28 @@ import * as React from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import { useLocation } from 'react-router';
-import { gameActions, selectScore, useGameState } from './store';
-import { Character, CHARACTER_ASPECT, type CharacterState } from './Character';
+import { gameActions, selectCurrentIndex, selectScore, useGameState } from './store';
+import { CHARACTER_ASPECT, type CharacterState } from './characterMeta';
 import { GhostButton, PrimaryButton } from './StepBubble';
 import { useGameConfig } from './config';
 import { t } from './theme';
 
+/** Artwork is fetched only once the reader is playing; the banner uses `GameMark`. */
+const Character = React.lazy(() => import('./Character').then((m) => ({ default: m.Character })));
+
 /* ---------------------------------- banner --------------------------------- */
+
+/** Flat stand-in for the character: inline SVG, no artwork request. */
+function GameMark() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" focusable="false" style={{ flex: 'none' }}>
+      <circle cx="16" cy="16" r="15" fill="none" stroke={t.accent} strokeWidth="2" opacity="0.5" />
+      <circle cx="11" cy="13" r="2" fill={t.accent} />
+      <circle cx="21" cy="13" r="2" fill={t.accent} />
+      <path d="M10 19c1.8 2.4 4 3.6 6 3.6s4.2-1.2 6-3.6" fill="none" stroke={t.accent} strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
 
 const Banner = styled.div`
   display: flex;
@@ -58,7 +73,7 @@ export function GameBanner() {
     return (
       <Banner data-component-name="DocsGame/Banner">
         <BannerLead>
-          <Character state="talk" size={56} />
+          <GameMark />
           <p>
             <strong>{config.title}</strong> — {config.playingText}
             {config.persistProgress && <small>Your progress is saved in this browser.</small>}
@@ -74,7 +89,7 @@ export function GameBanner() {
   return (
     <Banner data-component-name="DocsGame/Banner">
       <BannerLead>
-        <Character state="idle" size={56} />
+        <GameMark />
         <p>
           <strong>{config.title}</strong>
           <small>
@@ -222,7 +237,7 @@ function useCharacterPosition(active: boolean, targetKey: string, CHARACTER_SIZE
 
 function useCharacterState(RUN_DURATION_MS: number): CharacterState {
   const state = useGameState();
-  const step = state.steps[state.currentIndex];
+  const step = state.steps[selectCurrentIndex(state)];
   const [running, setRunning] = React.useState(false);
   const targetKey = state.finished ? 'finish' : step?.id ?? '';
 
@@ -257,10 +272,11 @@ export function GameOverlay() {
   const config = useGameConfig();
   const CHARACTER_SIZE = config.characterSize;
   const active = state.mode === 'game' && state.steps.length > 0;
-  const targetKey = state.finished ? 'finish' : state.steps[state.currentIndex]?.id ?? '';
+  const currentIndex = selectCurrentIndex(state);
+  const targetKey = state.finished ? 'finish' : state.steps[currentIndex]?.id ?? '';
   const pos = useCharacterPosition(active, targetKey, CHARACTER_SIZE);
   const characterState = useCharacterState(config.runDurationMs);
-  const currentStep = state.steps[state.currentIndex];
+  const currentStep = state.steps[currentIndex];
   const { correct, total } = selectScore(state);
   const [portalTarget, setPortalTarget] = React.useState<HTMLElement | null>(null);
 
@@ -282,18 +298,20 @@ export function GameOverlay() {
         {currentStep?.highlight && characterState !== 'run' && !state.finished && (
           <Sign role="status">{currentStep.sign ?? 'Everyone skips this. Don’t.'}</Sign>
         )}
-        <Character state={characterState} size={CHARACTER_SIZE} />
+        <React.Suspense fallback={null}>
+          <Character state={characterState} size={CHARACTER_SIZE} />
+        </React.Suspense>
       </CharacterLayer>
 
       <Hud data-component-name="DocsGame/Hud" role="toolbar" aria-label="Mini-game progress">
-        <Progress aria-label={`Step ${state.currentIndex + 1} of ${state.steps.length}`}>
+        <Progress aria-label={`Step ${currentIndex + 1} of ${state.steps.length}`}>
           {state.steps.map((s, i) => (
             <Dot
               key={s.id}
               type="button"
               title={s.title ?? `Step ${i + 1}`}
               aria-label={s.title ?? `Step ${i + 1}`}
-              $state={i < state.currentIndex || state.finished ? 'done' : i === state.currentIndex ? 'active' : 'todo'}
+              $state={i < currentIndex || state.finished ? 'done' : i === currentIndex ? 'active' : 'todo'}
               onClick={() => gameActions.goTo(i)}
             />
           ))}

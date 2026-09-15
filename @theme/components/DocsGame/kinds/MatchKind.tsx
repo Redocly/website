@@ -4,9 +4,12 @@ import type { StepKindProps } from './types';
 import { Hint, FeedbackBox } from './Hint';
 import { t, focusRing } from '../theme';
 import { useGameConfig } from '../config';
+import { useStepKeydown } from '../stepFocus';
 
 /**
- * Match: connect items on the left (e.g. IdP groups) with items on the right (e.g. Redocly teams).
+ * Match: connect items on the left with the items on the right they belong to.
+ * Column headings and mistake tolerance come from the `gameStep` tag
+ * (`leftLabel`, `rightLabel`, `allowedMistakes`); the closing lines from the game config.
  * Keyboard: ↑ ↓ (or ← →) move inside the active column, Enter picks — first a left item, then its match.
  * The step is "correct" when everything is connected with no more than `allowedMistakes` misses.
  */
@@ -198,14 +201,22 @@ function shuffled<T>(items: T[], seed: string): T[] {
 export function MatchKind({ step, result, setResult, next, keyboard, hints }: StepKindProps) {
   const { labels } = useGameConfig();
   const pairs = step.pairs;
-  const allowedMistakes = Number((step.element?.dataset.gameAllowedMistakes ?? '0') || 0);
-  const leftLabel = step.element?.dataset.gameLeftLabel ?? 'IdP groups';
-  const rightLabel = step.element?.dataset.gameRightLabel ?? 'Redocly teams';
+  const allowedMistakes = step.allowedMistakes ?? 0;
+  const leftLabel = step.leftLabel ?? '';
+  const rightLabel = step.rightLabel ?? '';
 
   const right = React.useMemo(() => shuffled(pairs, step.id), [pairs, step.id]);
   const done = Boolean(result);
 
-  const [matched, setMatched] = React.useState<Set<string>>(() => new Set(done ? pairs.map((p) => p.id) : []));
+  const [matched, setMatched] = React.useState<Set<string>>(() => new Set());
+
+  // Pairs register in child effects, a tick after this first renders, so a completed
+  // step can't fill this set from the initial state.
+  React.useEffect(() => {
+    if (!done) return;
+    setMatched(new Set(pairs.map((p) => p.id)));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [done, pairs.length]);
   const [picked, setPicked] = React.useState<string | null>(null); // left pair id
   const [column, setColumn] = React.useState<0 | 1>(0);
   const [focus, setFocus] = React.useState(0);
@@ -253,48 +264,40 @@ export function MatchKind({ step, result, setResult, next, keyboard, hints }: St
   };
 
   // keyboard
-  React.useEffect(() => {
-    if (!keyboard) return;
-    const handler = (e: KeyboardEvent) => {
-      const target = e.target as HTMLElement | null;
-      if (target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) return;
-      if (e.metaKey || e.ctrlKey || e.altKey) return;
-      const list = column === 0 ? leftOpen : rightOpen;
-      switch (e.key) {
-        case 'ArrowUp':
-        case 'ArrowLeft':
-          if (done) return;
+  useStepKeydown(keyboard, (e) => {
+    const list = column === 0 ? leftOpen : rightOpen;
+    switch (e.key) {
+      case 'ArrowUp':
+      case 'ArrowLeft':
+        if (done || list.length === 0) return;
+        e.preventDefault();
+        setFocus((f) => (f - 1 + list.length) % list.length);
+        break;
+      case 'ArrowDown':
+      case 'ArrowRight':
+        if (done || list.length === 0) return;
+        e.preventDefault();
+        setFocus((f) => (f + 1) % list.length);
+        break;
+      case 'Escape':
+        if (picked) {
           e.preventDefault();
-          setFocus((f) => (f - 1 + list.length) % Math.max(list.length, 1));
-          break;
-        case 'ArrowDown':
-        case 'ArrowRight':
-          if (done) return;
-          e.preventDefault();
-          setFocus((f) => (f + 1) % Math.max(list.length, 1));
-          break;
-        case 'Escape':
-          if (picked) {
-            e.preventDefault();
-            setPicked(null);
-            setColumn(0);
-          }
-          break;
-        case 'Enter':
-        case ' ': {
-          e.preventDefault();
-          if (done) return next();
-          const item = list[focus];
-          if (!item) return;
-          if (column === 0) pickLeft(item.id);
-          else pickRight(item.id);
-          break;
+          setPicked(null);
+          setColumn(0);
         }
-        default:
+        break;
+      case 'Enter':
+      case ' ': {
+        e.preventDefault();
+        if (done) return next();
+        const item = list[focus];
+        if (!item) return;
+        if (column === 0) pickLeft(item.id);
+        else pickRight(item.id);
+        break;
       }
-    };
-    window.addEventListener('keydown', handler);
-    return () => window.removeEventListener('keydown', handler);
+      default:
+    }
   });
 
   /* ----- connector geometry: measured from the DOM so wires follow the real rows ----- */
@@ -344,7 +347,11 @@ export function MatchKind({ step, result, setResult, next, keyboard, hints }: St
     <>
       {step.question && <Question>{step.question}</Question>}
 
-      <Board ref={boardRef} role="group" aria-label={`Match ${leftLabel} to ${rightLabel}`}>
+      <Board
+        ref={boardRef}
+        role="group"
+        aria-label={leftLabel && rightLabel ? `Match ${leftLabel} to ${rightLabel}` : 'Match the items'}
+      >
         <Wires aria-hidden="true">
           {wires.map((w) => (
             <WirePath key={w.key} d={w.d} pathLength={1} $preview={w.preview} />
@@ -420,9 +427,7 @@ export function MatchKind({ step, result, setResult, next, keyboard, hints }: St
                 : labels.correct
               : `All connected — but with ${result.detail}. ${labels.wrong}`}
           </strong>{' '}
-          {result.correct
-            ? 'Every IdP group now lands on the right Redocly team.'
-            : 'Re-read the mapping rules above: default teams give organization roles, RBAC teams give project roles.'}
+          {result.correct ? labels.matchDone : labels.matchMissed}
         </FeedbackBox>
       )}
 

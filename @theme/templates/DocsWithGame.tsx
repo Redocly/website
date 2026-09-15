@@ -1,7 +1,7 @@
 import * as React from 'react';
 import MarkdownTemplate from '@redocly/theme/core/templates/Markdown';
-import { GameBanner, GameOverlay, GameConfigContext, mergeGameConfig, gameActions } from '../components/DocsGame';
-import type { GameConfig } from '../components/DocsGame';
+import { GameConfigContext, mergeGameConfig, type GameConfig } from '../components/DocsGame/config';
+import { gameActions } from '../components/DocsGame/store';
 
 /**
  * Default docs template + the optional mini-game layer.
@@ -9,10 +9,20 @@ import type { GameConfig } from '../components/DocsGame';
  * Applied to `docs/realm/**` via `markdown.template` in redocly.yaml.
  * Pages that don't use any `gameStep` tag render exactly like the default template.
  *
+ * The template for every page under `docs/realm/**`, so keep its static imports to the
+ * config and the store; the launcher (and behind it the artwork) loads lazily.
+ *
  * Per-page customization goes in front matter:
  *   game: false                 -> opt out
  *   game: { title, cta, ... }   -> override any field of `GameConfig`
  */
+const GameBanner = React.lazy(() =>
+  import('../components/DocsGame/GameLauncher').then((m) => ({ default: m.GameBanner })),
+);
+const GameOverlay = React.lazy(() =>
+  import('../components/DocsGame/GameLauncher').then((m) => ({ default: m.GameOverlay })),
+);
+
 export default function DocsWithGame(props: {
   pageProps: any;
   children: React.ReactNode;
@@ -30,8 +40,9 @@ export default function DocsWithGame(props: {
   );
 
   React.useEffect(() => {
+    if (!enabled) return;
     gameActions.setPersistence(config.persistProgress);
-  }, [config.persistProgress]);
+  }, [enabled, config.persistProgress]);
 
   if (!enabled) {
     return <MarkdownTemplate pageProps={pageProps}>{children}</MarkdownTemplate>;
@@ -40,10 +51,14 @@ export default function DocsWithGame(props: {
   return (
     <GameConfigContext.Provider value={config}>
       <MarkdownTemplate pageProps={pageProps}>
-        <GameBanner />
+        <React.Suspense fallback={null}>
+          <GameBanner />
+        </React.Suspense>
         {children}
       </MarkdownTemplate>
-      <GameOverlay />
+      <React.Suspense fallback={null}>
+        <GameOverlay />
+      </React.Suspense>
     </GameConfigContext.Provider>
   );
 }

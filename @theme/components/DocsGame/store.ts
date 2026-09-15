@@ -63,6 +63,11 @@ export type GameStep = {
   options: GameOption[];
   /** Pairs for the `match` kind */
   pairs: GamePair[];
+  /** `match` kind: column headings */
+  leftLabel?: string;
+  rightLabel?: string;
+  /** `match` kind: how many wrong connections still count as a correct step */
+  allowedMistakes?: number;
 };
 
 export type GameState = {
@@ -94,6 +99,16 @@ const initialState: GameState = {
 let state: GameState = initialState;
 const listeners = new Set<Listener>();
 
+const warned = new Set<string>();
+
+/** Reports an authoring mistake once per key, so re-renders don't spam the console. */
+export function warnOnce(key: string, message: string) {
+  if (warned.has(key)) return;
+  warned.add(key);
+  // eslint-disable-next-line no-console
+  console.warn(`[DocsGame] ${message}`);
+}
+
 function emit() {
   listeners.forEach((l) => l());
 }
@@ -120,6 +135,10 @@ function safeStorage(): Storage | null {
   } catch {
     return null;
   }
+}
+
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
 function currentSlug(): string {
@@ -153,12 +172,17 @@ function restoreProgress() {
   try {
     const raw = storage.getItem(progressKey(currentSlug()));
     if (!raw) return;
-    const saved = JSON.parse(raw) as Partial<GameState>;
+    const saved: unknown = JSON.parse(raw);
+    if (!isPlainObject(saved)) return;
+    // Stored data is untrusted. The index is clamped on read (`selectCurrentIndex`),
+    // not here, because steps register after this runs.
     setState({
-      currentIndex: saved.currentIndex ?? 0,
-      answers: saved.answers ?? {},
-      results: saved.results ?? {},
-      finished: saved.finished ?? false,
+      currentIndex: typeof saved.currentIndex === 'number' && Number.isFinite(saved.currentIndex)
+        ? Math.max(Math.trunc(saved.currentIndex), 0)
+        : 0,
+      answers: isPlainObject(saved.answers) ? (saved.answers as Record<string, string>) : {},
+      results: isPlainObject(saved.results) ? (saved.results as Record<string, GameResult>) : {},
+      finished: saved.finished === true,
     });
   } catch {
     /* ignore malformed data */
@@ -175,9 +199,16 @@ export const gameActions = {
 
   /** Called by `gameStep` on mount. Returns an unregister function. */
   registerStep(step: GameStep): () => void {
-    setState((prev) => ({
-      steps: sortSteps([...prev.steps.filter((s) => s.id !== step.id), step]),
-    }));
+    setState((prev) => {
+      if (prev.steps.some((s) => s.id === step.id)) {
+        warnOnce(
+          `dup:${step.id}`,
+          `Two gameStep tags share id "${step.id}". Ids must be unique per page — ` +
+            'the second one replaces the first and progress for both is merged.',
+        );
+      }
+      return { steps: sortSteps([...prev.steps.filter((s) => s.id !== step.id), step]) };
+    });
     return () => {
       setState((prev) => ({ steps: prev.steps.filter((s) => s.id !== step.id) }));
     };
@@ -222,16 +253,17 @@ export const gameActions = {
   },
 
   next() {
-    if (state.currentIndex >= state.steps.length - 1) {
+    const from = selectCurrentIndex(state);
+    if (from >= state.steps.length - 1) {
       setState({ finished: true });
     } else {
-      setState({ currentIndex: state.currentIndex + 1 });
+      setState({ currentIndex: from + 1 });
     }
     persistProgress();
   },
 
   prev() {
-    setState({ currentIndex: Math.max(state.currentIndex - 1, 0), finished: false });
+    setState({ currentIndex: Math.max(selectCurrentIndex(state) - 1, 0), finished: false });
     persistProgress();
   },
 
@@ -315,6 +347,16 @@ export function selectScore(s: GameState): { correct: number; total: number } {
   return { correct, total: scored.length };
 }
 
+/**
+ * The step index to render. `currentIndex` can point past the end when restored progress
+ * predates a step being removed. Clamping on read keeps progress intact while steps are
+ * still registering one by one.
+ */
+export function selectCurrentIndex(s: GameState): number {
+  if (s.steps.length === 0) return s.currentIndex;
+  return Math.min(Math.max(s.currentIndex, 0), s.steps.length - 1);
+}
+
 export function selectCurrentStep(s: GameState): GameStep | undefined {
-  return s.steps[s.currentIndex];
+  return s.steps[selectCurrentIndex(s)];
 }

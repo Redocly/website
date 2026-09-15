@@ -11,6 +11,11 @@ game:
   title: SSO quest
   cta: Play the SSO quest
   intro: Let our guide walk you through this page, with quick questions and a round of golf.
+  labels:
+    matchDone: Every IdP group now lands on the right Redocly team.
+    matchMissed: >-
+      Re-read the mapping rules above: default teams give organization roles,
+      RBAC teams give project roles.
 ---
 # Add an identity provider (IdP)
 

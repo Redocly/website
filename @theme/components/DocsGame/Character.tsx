@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled, { css, keyframes } from 'styled-components';
+import { CHARACTER_ASPECT, type CharacterState } from './characterMeta';
 
 import idle1 from '../../../images/game/web/idle-1.svg';
 import idle2 from '../../../images/game/web/idle-2.svg';
@@ -8,10 +9,10 @@ import run2 from '../../../images/game/web/run-2.svg';
 import run3 from '../../../images/game/web/run-3.svg';
 
 /**
- * Character states. Motion (running, jumping, wobbling) is applied by CSS on the wrapper,
+ * Motion (running, jumping, wobbling) is applied by CSS on the wrapper;
  * the artwork itself is a sequence of SVG frames per state.
  */
-export type CharacterState = 'idle' | 'run' | 'talk' | 'point' | 'happy' | 'confused';
+export { CHARACTER_ASPECT, type CharacterState } from './characterMeta';
 
 type Frame = { src: string; ms: number };
 
@@ -45,12 +46,9 @@ export const CHARACTER_FRAMES: Partial<Record<CharacterState, Frame[]>> = {
   ],
 };
 
-/** Aspect ratio of the artwork (width / height) */
-export const CHARACTER_ASPECT = 432 / 578;
-
 /* -------------------------------- sequencer -------------------------------- */
 
-function useFrameSequence(state: CharacterState): string {
+function useFrameSequence(state: CharacterState): { frames: Frame[]; src: string } {
   const frames = CHARACTER_FRAMES[state] ?? CHARACTER_FRAMES.idle ?? [];
   const [i, setI] = React.useState(0);
 
@@ -68,7 +66,7 @@ function useFrameSequence(state: CharacterState): string {
     return () => window.clearTimeout(timer);
   }, [state, frames]);
 
-  return frames[i]?.src ?? frames[0]?.src ?? '';
+  return { frames, src: frames[i]?.src ?? frames[0]?.src ?? '' };
 }
 
 /* --------------------------------- motion ---------------------------------- */
@@ -121,8 +119,9 @@ const Wrapper = styled.div<{ $state: CharacterState; $h: number }>`
 
   position: relative;
 
-  /* All frames are stacked and toggled with visibility, so swapping never re-decodes an image
-     (swapping src showed the theme's image background for a frame while the new SVG loaded). */
+  /* Only the current state's frames are rendered, stacked and toggled with visibility:
+     swapping within a state never re-decodes an image (swapping src showed the theme's
+     image background for a frame while the new SVG loaded). */
   & img {
     position: absolute;
     inset: 0;
@@ -142,25 +141,17 @@ const Wrapper = styled.div<{ $state: CharacterState; $h: number }>`
   }
 `;
 
-/** Every distinct frame file, rendered once and kept in the DOM. */
-const ALL_FRAME_SRCS: string[] = Array.from(
-  new Set(
-    Object.values(CHARACTER_FRAMES)
-      .flat()
-      .filter((f): f is Frame => Boolean(f))
-      .map((f) => f.src),
-  ),
-);
-
 /**
  * `size` is the character height in px (the artwork is portrait).
  * `flip` mirrors it horizontally (e.g. when standing to the right of a card).
  */
 export function Character({ state, size = 96, flip = false }: { state: CharacterState; size?: number; flip?: boolean }) {
-  const src = useFrameSequence(state);
+  const { frames, src } = useFrameSequence(state);
+  const srcs = React.useMemo(() => Array.from(new Set(frames.map((f) => f.src))), [frames]);
+
   return (
     <Wrapper $state={state} $h={size} data-character-state={state} style={flip ? { scale: '-1 1' } : undefined}>
-      {ALL_FRAME_SRCS.map((frameSrc) => (
+      {srcs.map((frameSrc) => (
         <img
           key={frameSrc}
           src={frameSrc}
@@ -168,7 +159,7 @@ export function Character({ state, size = 96, flip = false }: { state: Character
           alt=""
           aria-hidden="true"
           draggable={false}
-          decoding="sync"
+          decoding="async"
         />
       ))}
     </Wrapper>

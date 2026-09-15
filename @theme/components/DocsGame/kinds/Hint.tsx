@@ -20,7 +20,11 @@ export const Hint = styled.p`
   }
 `;
 
-export const FeedbackBox = styled.p<{ $correct: boolean }>`
+/**
+ * Answer feedback. This is the live region for a step — not the whole card, which would
+ * announce every frame of an animation to a screen reader.
+ */
+export const FeedbackBox = styled.p.attrs({ role: 'status' })<{ $correct: boolean }>`
   margin: 12px 0 0;
   padding: 10px 12px;
   border-radius: ${t.radiusSm};

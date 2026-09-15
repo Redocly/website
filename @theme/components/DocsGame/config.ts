@@ -36,6 +36,10 @@ export type GameConfig = {
     finishedTitle: string;
     perfect: string;
     good: string;
+    /** `match` kind: closing line when every pair is connected */
+    matchDone: string;
+    /** `match` kind: closing line when it was finished with too many misses */
+    matchMissed: string;
   };
   /** Show "use ← → / Enter" hints under interactive steps */
   keyboardHints: boolean;
@@ -68,6 +72,8 @@ export const defaultGameConfig: GameConfig = {
     finishedTitle: 'You made it through!',
     perfect: 'Perfect run — you know this page inside out.',
     good: 'Good job. Revisit the highlighted answers above to close the gaps.',
+    matchDone: 'Everything is connected the way it should be.',
+    matchMissed: 'Re-read the section above and check the pairs you missed.',
   },
   keyboardHints: true,
   keyboard: true,
