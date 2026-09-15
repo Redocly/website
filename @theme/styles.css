@@ -183,6 +183,20 @@
 }
 
 @font-face {
+    font-family: 'DM Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./font/DMMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'DM Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./font/DMMono-Medium.woff2') format('woff2');
+}
+
+@font-face {
     font-family: 'SF Mono';
     src: url('./font/SFMono-Semibold.otf');
     font-weight: 600;
