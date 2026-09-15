@@ -7,30 +7,6 @@ toc:
 
 <!-- do-not-remove -->
 
-## 2.53.1 (2026-09-15)
-
-### Patch Changes
-
-- Added a deprecation warning to the `build-docs` command about the upcoming switch to Redoc 3.
-
-## 2.53.0 (2026-09-14)
-
-### Minor Changes
-
-- Added a `disallowDefault` option to the `operation-2xx-response` rule, which requires an explicit 2xx response when enabled.
-  There is no change in current behavior.
-
-### Patch Changes
-
-- Updated @redocly/openapi-core to v2.53.0.
-
-## 2.52.1 (2026-09-11)
-
-### Patch Changes
-
-- Updated `redoc` to the `2.5.4` version to fix accessibility problems in the HTML produced by `build-docs`.
-  Added the `lang` attribute to the default `build-docs` template.
-
 ## 2.52.0 (2026-09-10)
 
 ### Minor Changes

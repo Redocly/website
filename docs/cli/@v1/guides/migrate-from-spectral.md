@@ -1,8 +1,6 @@
 # Migrate to Redocly from Spectral
 
-[Spectral](https://stoplight.io/open-source/spectral) offers similar linting capabilities to Redocly CLI and the rest of the Redocly tools.
-Redocly CLI and the rest of the Redocly toolchain cover the same linting ground as [Spectral](https://stoplight.io/open-source/spectral), and go further.
-This guide compares both tools so you can decide whether switching makes sense for your team.
+[Spectral](https://stoplight.io/open-source/spectral) offers similar linting capabilities to Redocly CLI and the rest of the Redocly tools. This guide lays out the differences so you can switch tools if you want to.
 
 The first step is to [install Redocly CLI](../installation.md).
 
@@ -128,12 +126,9 @@ Included here is an attempt to map the simliar-but-not-identical naming of rules
 
 ### Configurable and extensible rules
 
-If the built-in rules don't meet your requirements, don't worry!
-With Redocly you can use [configurable rules](../rules/configurable-rules.md) to build any rule to suit your needs.
-Declare which elements of the OpenAPI description should comply with the rule, and then define the criteria that it should be checked against.
+If the built-in rules don't meet your requirements, don't worry! Redocly allows you to build any rule to meet your needs, using [configurable rules](../rules/configurable-rules.md). Declare which elements of the OpenAPI description should comply with the rule, and then define the criteria that it should be checked against.
 
-Build up the rulesets that work for your organization's API standards.
-These can be:
+Build up the rulesets that work for your organization's API standards. These can be:
 
 - using existing Redocly rulesets
 - defining your own rulesets from built-in, configurable and/or custom rules
@@ -141,8 +136,7 @@ These can be:
 - adding per-API additions or exceptions as required
 - using an ignore file to overlook existing/historic incompatibilities while still enforcing rules for changed elements
 
-For some advanced use cases, the configurable rules can't cover all possibilities.
-If that happens, Redocly supports [adding rules in custom plugins](../custom-plugins/custom-rules.md) so that you can use JavaScript to express any specialist rules you need.
+For some advanced use cases, the configurable rules can't cover all possibilities. If that happens, Redocly supports [adding rules in custom plugins](../custom-plugins/custom-rules.md) so that you can use JavaScript to express any specialist rules you need.
 
 ## Explore tool functionality
 
