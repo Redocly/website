@@ -81,6 +81,9 @@ navbar:
         - label: Reviewer
           page: ./pages/reviewer/reviewer.page.tsx
           icon: ./images/icons/reviewer.svg
+        - label: Writer
+          page: ./pages/writer-agent/writer-agent.page.tsx
+          icon: ./images/icons/writer.svg
 
     - label: Docs
       page: ./docs/index.md
