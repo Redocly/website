@@ -169,8 +169,8 @@ A simple lookup can cost about the same in either mode.
 The biggest savings come when a question needs more retrieval and filtering.
 
 Production usage also shows smaller responses.
-Across a month of real-word usage, code mode sent about a third as much data back into the agent's context as tool calling did.
-The number of round trips dropped, while the quality of answers improved or, at worst, remained the same.
+Across a month of real-world usage, code mode sent about a third as much data back into the agent's context as tool calling did.
+The number of round trips dropped, while the quality of the answers either improved or maintained its baseline.
 
 ## How we measured it
 
