@@ -7,19 +7,6 @@ toc:
 
 <!-- do-not-remove -->
 
-## 2.53.2 (2026-09-15)
-
-### Patch Changes
-
-- Added `start` and `end` line and column positions to each problem location in the `--format=json` lint output.
-- Updated @redocly/openapi-core to v2.53.2.
-
-## 2.53.1 (2026-09-15)
-
-### Patch Changes
-
-- Added a deprecation warning to the `build-docs` command about the upcoming switch to Redoc 3.
-
 ## 2.53.0 (2026-09-14)
 
 ### Minor Changes

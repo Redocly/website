@@ -189,7 +189,6 @@ redocly lint --format=json
 ```
 
 It can be useful to get the output in JSON format to be processed by other tools.
-Each location includes the JSON pointer and the `start` and `end` line and column of the reported node.
 Using this command gets the following example output:
 
 <pre>
@@ -214,15 +213,7 @@ Using this command gets the following example output:
             "ref": "museum-with-errors.yaml"
           },
           "pointer": "#/paths/~1museum-hours/get/operationIds",
-          "reportOnKey": true,
-          "start": {
-            "line": 17,
-            "col": 7
-          },
-          "end": {
-            "line": 17,
-            "col": 19
-          }
+          "reportOnKey": true
         }
       ]
     },
@@ -237,15 +228,7 @@ Using this command gets the following example output:
             "ref": "museum-with-errors.yaml"
           },
           "pointer": "#/paths/~1museum-hours/get/responses/200/require",
-          "reportOnKey": true,
-          "start": {
-            "line": 22,
-            "col": 13
-          },
-          "end": {
-            "line": 22,
-            "col": 20
-          }
+          "reportOnKey": true
         }
       ]
     },
@@ -259,15 +242,7 @@ Using this command gets the following example output:
             "ref": "museum-with-errors.yaml"
           },
           "pointer": "#/paths/~1museum-hours/get/operationId",
-          "reportOnKey": true,
-          "start": {
-            "line": 17,
-            "col": 7
-          },
-          "end": {
-            "line": 17,
-            "col": 19
-          }
+          "reportOnKey": true
         }
       ],
       "suggest": []
