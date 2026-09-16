@@ -763,6 +763,26 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- fallback.disclaimer.title
+- Title of the notice on a page that shows the default language because the translation is missing
+  (requires the `fallbackDisclaimer` option)
+- This page has not yet been translated
+
+---
+
+- fallback.disclaimer.text
+- Text of the notice on a page that shows the default language because the translation is missing
+- You are viewing the original {{language}} version, because a translation is not yet available for this page.
+
+---
+
+- fallback.disclaimer.close
+- Accessible label (`aria-label`) of the button that closes the notice.
+  Screen readers announce it; the page does not show it
+- Close
+
+---
+
 - page.lastUpdated.timeago
 - Page last updated (when referring to a period of time, e.g. 10min)
 - Last updated
