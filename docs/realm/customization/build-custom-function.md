@@ -10,8 +10,7 @@ plans:
 seo:
   description: Empower your technical writers with more powerful tools to control content by adding custom Markdoc functions to your Redocly project.
 ---
-
-# Build a Markdoc function
+# Build Markdoc functions
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

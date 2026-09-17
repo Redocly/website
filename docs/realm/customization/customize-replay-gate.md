@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Customize the Replay auth gate
+# Customize the auth gate in Replay
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

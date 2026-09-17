@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Search in Realm
+# Configure search
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

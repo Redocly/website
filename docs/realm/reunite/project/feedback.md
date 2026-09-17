@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# View and export feedback data
+# Feedback
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Ignore link checker
+# Ignore the link checker
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

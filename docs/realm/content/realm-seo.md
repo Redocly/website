@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# SEO in Realm
+# SEO in your project
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

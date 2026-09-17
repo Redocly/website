@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Manage organizations
+# Manage your organization
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Configure SSO
+# Configure project SSO
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

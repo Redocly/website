@@ -13,7 +13,7 @@ keywords:
     - experimental
 ---
 
-# Use AsciiDoc content
+# Add AsciiDoc content
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
