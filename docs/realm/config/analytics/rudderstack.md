@@ -39,8 +39,8 @@ Integrate Rudderstack Analytics into Redocly project.
 
 - trackPage
 - boolean
-- Set this to `false` to disable page visits tracking.
-  Default: `true`.
+- Set this option to `true` to track page visits.
+  Default: `false`.
 
 ---
 
