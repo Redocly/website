@@ -38,6 +38,7 @@ To add comments in the visual or code diff view:
       src="../../images/comment-icon.png"
       alt="Screenshot of top right side of review tab in Reunite with arrow pointing to the comments icon"
       withLightbox=true
+      framed=true
     /%}
 
 1. Enter your feedback.
@@ -52,6 +53,7 @@ To add line-specific comments in code diff view:
       src="../../images/plus-icon.png"
       alt="Screenshot of code diff view in Reunite with arrow pointing towards plus icon"
       withLightbox=true
+      framed=true
     /%}
 
 1. Enter your feedback.
@@ -72,6 +74,7 @@ To add line-specific suggestions in code diff view:
       src="../../images/review-suggestion-icon.png"
       alt="Screenshot of comment form in Reunite with arrow pointing towards suggestion icon"
       withLightbox=true
+      framed=true
     /%}
 
 1. Make changes inside the suggestion code block.
@@ -121,6 +124,7 @@ The check links back to the **Visual review** tab in Reunite and displays a shor
   src="../../images/reunite-pull-request-visual-review-check.png"
   alt="Screenshot of pull request checks in GitHub with an arrow pointing to the pending Visual review check"
   withLightbox=true
+  framed=true
 /%}
 
 Projects have the **Visual review** check enabled by default.
@@ -137,6 +141,7 @@ If you connect your Git provider and Reunite accounts before submitting your rev
       src="../../images/reunite-pull-request-external-connect.png"
       alt="Screenshot showing the Git provider connection banner in Reunite"
       withLightbox=true
+      framed=true
     /%}
 
 Comments synced to an external provider have a cloud icon next to them.
@@ -146,6 +151,7 @@ Click this icon to view the comment on the provider’s platform.
       src="../../images/reunite-pull-request-review-external-comments.png"
       alt="Screenshot showing synchronized and unsynchronized comments in a pull request review"
       withLightbox=true
+      framed=true
     /%}
 
 {% admonition type="warning" name="Review posting behavior" %}
@@ -162,6 +168,7 @@ Click **Merge without requirements** only for urgent changes when you're certain
 
 {% img
   src="../../images/reunite-pull-request-merge-without-requirements.png" alt="Screenshot of pull request in Reunite with arrow pointing to the Merge without requirements option" withLightbox=true width="" height=""
+  framed=true
 /%}
 
 The **Merge without requirements** button visibility is not customizable.

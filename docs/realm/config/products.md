@@ -19,6 +19,7 @@ This option configuration creates a product picker in the navbar and offers the 
   src="./images/product-picker.png"
   alt="Screenshot with product picker in navbar"
   withLightbox=true
+  framed=true
 /%}
 
 ## Options

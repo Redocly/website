@@ -36,7 +36,7 @@ Code walkthroughs include the following optional UI elements:
 
 The following screenshot shows a code walkthrough with filters, an input, a toggle with a description slot, and a preview slot:
 
-{% img alt="Screenshot of an example code walkthrough explaining Redocly's config file with callouts for filters and preview slots" src="../images/code-walkthrough-panels.png" withLightbox=true /%}
+{% img alt="Screenshot of an example code walkthrough explaining Redocly's config file with callouts for filters and preview slots" src="../images/code-walkthrough-panels.png" withLightbox=true framed=true /%}
 
 ## Markdoc tags
 

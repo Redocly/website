@@ -222,6 +222,7 @@ To find translation keys using browser developer tools:
       src="../images/dev-tools-translation-key.png"
       alt="A screenshot of development tools Elements tab with the location of data-translation-key highlighted"
       withLightbox=true
+      framed=true
     /%}
 
 Now you can add the key to the `translations.yaml` file and use it to localize or customize your project.

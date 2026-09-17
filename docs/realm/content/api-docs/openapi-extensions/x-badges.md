@@ -112,6 +112,7 @@ paths:
   src="../../images/x-badges.png"
   alt="Image of sample OpenAPI definition with badges displayed"
   withLightbox=true
+  framed=true
 /%}
 
 ### Parameter with badges

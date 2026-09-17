@@ -38,6 +38,7 @@ The ejected component is added to the `@theme` folder, where you can modify it.
   src="../images/find-and-eject-component.png"
   height=400
   withLightbox=true
+  framed=true
 /%}
 
 ## Update ejected component
@@ -70,6 +71,7 @@ You can also delete components from `@theme` folder manually.
   src="../images/delete-ejected-component.png"
   height=400
   withLightbox=true
+  framed=true
 /%}
 
 ## Resources

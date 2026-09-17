@@ -23,6 +23,7 @@ You can disable auto-sync, view different screen sizes, reload the page or resta
   src="../images/webview-buttons.png"
   alt="Webview buttons"
   withLightbox=true
+  framed=true
 /%}
 
   {% admonition type="info" name="Webview vs. previews" %}
@@ -52,6 +53,7 @@ If you want to see how a page renders on different screen sizes, click the **Tog
   src="../images/webview-mobile.png"
   alt="Toggle device view icon"
   withLightbox=true
+  framed=true
 /%}
 
 You can select from the following preset sizes:
@@ -70,6 +72,7 @@ To see a full screen version of Webview in a new tab or a new window, click the 
   src="../images/webview-open-in-new-window.png"
   alt="Open in a new window icon"
   withLightbox=true
+  framed=true
 /%}
 
 ## Webview: additional commands
@@ -80,6 +83,7 @@ Click the **More actions** icon to either do a full restart of Webview or disabl
   src="../images/webview-more-actions.png"
   alt="More actions icon"
   withLightbox=true
+  framed=true
 /%}
 
 ### Full restart
@@ -103,6 +107,7 @@ To reload the page you are on in the Editor, click the **Reload** icon.
   src="../images/webview-reload.png"
   alt="Reload icon"
   withLightbox=true
+  framed=true
 /%}
 
 ## Navigate pages
@@ -113,6 +118,7 @@ You can use the back and forward arrow icons to navigate pages in the Editor.
   src="../images/webview-back-and-forward.png"
   alt="Back and forward icons"
   withLightbox=true
+  framed=true
 /%}
 
 The back and forward arrow icons consider page view history, which starts over when the Webview is reloaded or restarted.
@@ -128,6 +134,7 @@ You can drag the status bar along the bottom edge of the Webview to move it out 
   src="../images/webview-status-bar.png"
   alt="Expanded errors pane"
   withLightbox=true
+  framed=true
 /%}
 
 ### View project page count
@@ -150,6 +157,7 @@ The number of errors and the content of the errors pane updates as you make chan
   src="../images/webview-errors.png"
   alt="Expanded errors pane"
   withLightbox=true
+  framed=true
 /%}
 
 ## Access build logs in the Webview tab
@@ -161,6 +169,7 @@ The **Logs** panel automatically scrolls to show the most recent logs.
   src="../images/webview-logs-panel.png"
   alt="Logs Panel"
   withLightbox=true
+  framed=true
 /%}
 
 In the **Logs** panel you can:
@@ -170,6 +179,7 @@ In the **Logs** panel you can:
   src="../images/webview-logs-expand-panel.png"
   alt="Logs expand button"
   withLightbox=true
+  framed=true
 /%}
 
 - **Clear logs**: remove all current logs
@@ -177,6 +187,7 @@ In the **Logs** panel you can:
   src="../images/webview-logs-clear-button.png"
   alt="Logs Clear button"
   withLightbox=true
+  framed=true
 /%}
 
 - **Copy logs**: copy all logs to clipboard
@@ -184,6 +195,7 @@ In the **Logs** panel you can:
   src="../images/webview-logs-copy-button.png"
   alt="Copy logs button"
   withLightbox=true
+  framed=true
 /%}
 
 ## Resources

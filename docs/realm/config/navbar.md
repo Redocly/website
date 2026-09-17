@@ -192,6 +192,7 @@ The following is a screenshot of that navbar.
   src="./images/1-level-navbar.png"
   alt="1 level Navbar"
   withLightbox=true
+  framed=true
 /%}
 
 ### Complete navigation setup
@@ -284,6 +285,7 @@ The following is the screenshot of the navbar.
   src="./images/dropdown-menu.png"
   alt="Dropdown menu"
   withLightbox=true
+  framed=true
 /%}
 
 ### Hide navbar

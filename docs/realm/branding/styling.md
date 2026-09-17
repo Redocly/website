@@ -303,6 +303,7 @@ You can also explore how the variable may be nested.
       src="./images/inspect-element-dev-tools.png"
       alt="Screenshot of the right click menu in a browser page with documentation."
       withLightbox=true
+      framed=true
     /%}
 
 2. View styles - In the **Elements** panel, you'll see the styles applied to the selected element.
@@ -310,6 +311,7 @@ You can also explore how the variable may be nested.
       src="./images/styles-pane-dev-tools.png"
       alt="Screenshot of the browser dev tools with the style panel showing."
       withLightbox=true
+      framed=true
     /%}
 
 3. Identify variables - Find the CSS variable to override to apply your styling.

@@ -108,7 +108,7 @@ Additional information and syntax: [Code walkthrough tag](./code-walkthrough/ind
 
 **Example code walkthrough element:**
 
-{% img withLightbox=true alt="A screenshot of the project using a single file and the smallest required configuration" src="./images/minimal-codewalkthrough.png" /%}
+{% img withLightbox=true alt="A screenshot of the project using a single file and the smallest required configuration" src="./images/minimal-codewalkthrough.png" framed=true /%}
 
 ---
 
@@ -137,6 +137,7 @@ Additional information and syntax: [Image tag](./img.md)
 {% img
   alt="Basic example image"
   srcSet="./images/img-markdoc/image-example-light.png light, ./images/img-markdoc/image-example-dark.png dark"
+  framed=true
 /%}
 
 ---

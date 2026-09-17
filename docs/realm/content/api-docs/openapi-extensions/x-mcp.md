@@ -361,6 +361,7 @@ The data is presented similar to the following screenshot:
   alt="Example MCP docs"
   src="./images/mcp-docs-example.png"
   withLightbox=true
+  framed=true
 /%}
 
 ## Resources

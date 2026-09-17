@@ -56,6 +56,7 @@ export default function () {
   src="./images/directly-on-page.png"
   alt="Screenshot of admonition used directly in a page"
   withLightbox=true
+  framed=true
 /%}
 
 ## Use components inside a custom wrapper
@@ -133,6 +134,7 @@ export default function () {
   src="./images/custom-component.png"
   alt="Screenshot of admonition used as a custom component"
   withLightbox=true
+  framed=true
 /%}
 
 ## Resources

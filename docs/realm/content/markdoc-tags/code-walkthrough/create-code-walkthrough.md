@@ -84,7 +84,7 @@ Add the `code-walkthrough` tag referencing one of your example code files, as in
 {% /code-walkthrough %}
 ```
 
-{% img withLightbox=true alt="A screenshot of the project using a single file and the smallest required configuration" src="../images/minimal-codewalkthrough.png" /%}
+{% img withLightbox=true alt="A screenshot of the project using a single file and the smallest required configuration" src="../images/minimal-codewalkthrough.png" framed=true /%}
 
 Restart the development preview and look at the page to verify the code walkthrough rendered successfully.
 You should see a side-by-side panel render on the page showing the code example.
@@ -134,7 +134,7 @@ The following example includes multiple example files, a filter, and download-on
   Code walkthrough content goes here.
 {% /code-walkthrough %}
 ```
-{% img withLightbox=true alt="A screenshot of the project using multiple example files, a group label, and a download-only file" src="../images/advanced-codewalkthrough.png" /%}
+{% img withLightbox=true alt="A screenshot of the project using multiple example files, a group label, and a download-only file" src="../images/advanced-codewalkthrough.png" framed=true /%}
 
 Verify the following behaviors in your walkthrough before writing content:
 

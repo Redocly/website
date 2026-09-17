@@ -50,6 +50,7 @@ In that case, open the **Actions** menu and select **Close pull request**.
   src="../../images/reunite-pull-request-close.png"
   alt="Screenshot of pull request in Reunite with arrow pointing to the Close pull request option"
   withLightbox=true width="" height=""
+  framed=true
 /%}
 
 To reopen it later, select **Reopen pull request** from the same menu.
@@ -57,6 +58,7 @@ To reopen it later, select **Reopen pull request** from the same menu.
 {% img
   src="../../images/reunite-pull-request-reopen.png" alt="Screenshot of pull request in Reunite with arrow pointing to the Reopen pull request option"
   withLightbox=true width="" height=""
+  framed=true
 /%}
 
 ## Resources

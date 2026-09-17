@@ -153,6 +153,7 @@ In this example:
   src="./images/one-column-blog-post-template.png"
   alt="Screenshot of one column blog post template"
   withLightbox=true
+  framed=true
 /%}
 
 **Two columns template with metadata on the right**
@@ -161,6 +162,7 @@ In this example:
   src="./images/two-columns-blog-post-template.png"
   alt="Screenshot of two columns blog post template"
   withLightbox=true
+  framed=true
 /%}
 
 ## Resources

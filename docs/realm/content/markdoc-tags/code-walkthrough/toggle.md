@@ -72,7 +72,7 @@ Use the description slot to define content that renders below the toggle regardl
 {% /toggle %}
 ```
 
-{% img withLightbox=true alt="Example of a toggle rendered on a project page" src="../images/codewalkthrough-toggle.png" /%}
+{% img withLightbox=true alt="Example of a toggle rendered on a project page" src="../images/codewalkthrough-toggle.png" framed=true /%}
 
 ## Chunk annotations
 

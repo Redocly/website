@@ -33,6 +33,7 @@ Here’s how it works in practice:
     src="../../images/log-in-form.png"
     alt="Screenshot of Redocly login screen where users enter their email address"
     withLightbox=true
+    framed=true
   /%}
 - **Redirect by IdP**:
   Using the email domain or other identifying attributes, the IdP applies its rules.

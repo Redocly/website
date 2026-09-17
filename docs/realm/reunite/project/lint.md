@@ -39,6 +39,7 @@ Under **Summary**, click **Lint** to display the report.
   src="../images/reunite-deploy-scorecard.png"
   alt="Classic scorecard information in Deployments"
   withLightbox=true
+  framed=true
 /%}
 
 You can expand each row of the table, switch between the scorecard levels and drill down the table to display warnings and errors.
@@ -47,6 +48,7 @@ You can expand each row of the table, switch between the scorecard levels and dr
   src="../images/reunite-deploy-scorecard-expanded.png"
   alt="Expanded classic scorecard report in Deployments"
   withLightbox=true
+  framed=true
 /%}
 
 If you have an open pull request, you can access the same report by opening the pull request, selecting the **Checks** tab, and clicking **Lint**.
@@ -55,6 +57,7 @@ If you have an open pull request, you can access the same report by opening the 
   src="../images/reunite-pull-request-scorecard.png"
   alt="Classic scorecard report in a pull request"
   withLightbox=true
+  framed=true
 /%}
 
 ## Scorecard labels

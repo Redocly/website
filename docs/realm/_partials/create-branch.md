@@ -11,6 +11,7 @@ To create a new branch:
     src="./images/current-branch.png"
     alt="Screenshot where current branch is on project page"
     withLightbox=true
+    framed=true
    /%}
 
 2. Enter the name for your new branch, for example `new-dev-branch`, and select **Create branch**.

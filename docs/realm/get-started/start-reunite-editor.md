@@ -80,6 +80,7 @@ The **Webview** tab shows formatting updates to ensure they render correctly bef
   src="./images/webview-preview.png"
   alt="Screenshot of the Webview tab in the editor"
   withLightbox=true
+  framed=true
 /%}
 
 Change the view to meet your needs, such as seeing how the landing page renders on mobile screens.
@@ -128,6 +129,7 @@ To see a preview build of your project:<a id="commit-steps"></a>
     src="./images/view-preview-branch.png"
     alt="Screenshot of preview drop-down with Preview branch selected"
     withLightbox=true
+    framed=true
    /%}
 
 A deployment preview of the project with your changes opens in a separate browser window.
@@ -153,6 +155,7 @@ To create a new Markdown file:
     src="./images/add-new-file.png"
     alt="Screenshot of the plus icon selected and displaying the dropdown menu"
     withLightbox=true
+    framed=true
    /%}
 
 2. Select **New file**.
@@ -177,6 +180,7 @@ Select the **More actions** menu in the top right corner of the editing pane and
   src="./images/word-wrap.png"
   alt="Screenshot showing word wrap option in the editor in Reunite"
   withLightbox=true
+  framed=true
 /%}
 {% /admonition %}
 
@@ -194,6 +198,7 @@ However, when the **Webview** tab is a small width, the menu hides under a slide
   src="./images/slide-drawer-icon.png"
   alt="Screenshot that shows the slide drawer icon in the top right corner of the Webview tab"
   withLightbox=true
+  framed=true
 /%}
 {% /admonition %}
 
@@ -212,6 +217,7 @@ To add a `sidebars.yaml` file to your project:
     src="./images/add-new-file.png"
     alt="Screenshot of the plus icon selected and displaying the dropdown menu"
     withLightbox=true
+    framed=true
    /%}
 2. Select **New file**.
 3. Enter the `sidebars.yaml` as the file name into the text field and press `return` or `enter` on your keyboard.
@@ -275,6 +281,7 @@ For the following steps, you can use your own image or download the following sa
     src="./images/logo.png"
     alt="Redocly logo"
     withLightbox=true
+    framed=true
   /%}
 </details>
 
@@ -317,6 +324,7 @@ Create a `@theme/styles.css` file to override the default styling.
     src="./images/add-new-folder.png"
     alt="Screenshot of the plus icon selected and displaying the dropdown menu"
     withLightbox=true
+    framed=true
    /%}
 2. Select **New folder**.
 3. Enter `@theme` and press `return`.
@@ -344,6 +352,7 @@ The editor includes a color picker when you hover over color values.
   src="./images/color-picker.png"
   alt="Screenshot of the color picker tool in the Reunite editor"
   withLightbox=true
+  framed=true
 /%}
 
 The headings' color updates immediately in the **Webview** tab.

@@ -38,6 +38,7 @@ The following is an example of a request and response code snippet in OpenAPI re
   src="./images/openapi-code-snippet.png"
   alt="Screenshot of a request and response in OpenAPI reference documentation"
   withLightbox=true
+  framed=true
 /%}
 
 OpenAPI reference documentation code snippets include report, copy, and expand and collapse icons in the top right corner.

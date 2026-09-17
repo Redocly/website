@@ -4,6 +4,7 @@
       src="./images/create-pull-request-controls.png"
       alt="Screenshot of the Commit tab with arrows pointing to Create pull request icon and button"
       withLightbox=true
+      framed=true
     /%}
 1. (Optional) In the page that opens:
     - Edit the **Title** to your preference, By default, Reunite uses the first commit message.
@@ -14,4 +15,5 @@
       src="./images/pull-request-form.png"
       alt="Screenshot of the Create pull request page"
       withLightbox=true
+      framed=true
     /%}
