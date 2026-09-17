@@ -69,7 +69,7 @@ Free-form text field for detailed written feedback.
 
 - hide
 - boolean
-- Hides the feedback form.
+- Hides the feedback form and removes the `submit-feedback` tool from the [MCP server](../customization/mcp-server/index.md).
   Default: `false`
 
 ---

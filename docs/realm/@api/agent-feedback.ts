@@ -222,6 +222,7 @@ export default async function (request: Request, context: ApiFunctionsContext): 
     comment,
     agent,
     targetFeature,
+    origin: 'api' as const,
   };
 
   // we don't need to validate the response from the feedback API

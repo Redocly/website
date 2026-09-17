@@ -75,6 +75,8 @@ tags:
     description: Tools for discovering published APIs, inspecting endpoints, reviewing security schemes, and retrieving full OpenAPI descriptions.
   - name: Search
     description: Tools for searching documentation content.
+  - name: Feedback
+    description: Tools that report documentation problems to the project team.
 
 paths: {}
 
@@ -261,6 +263,37 @@ x-mcp:
         $ref: '#/components/schemas/SearchOutput'
       tags:
         - Search
+    - name: submit-feedback
+      description: Report a documentation page that is wrong or incomplete.
+      inputSchema:
+        type: object
+        additionalProperties: false
+        properties:
+          path:
+            type: string
+            description: Path or URL of the documentation page the feedback is about (e.g. /guides/auth).
+            minLength: 1
+            maxLength: 1000
+          summary:
+            type: string
+            description: One sentence that names what is wrong with the page.
+            minLength: 1
+            maxLength: 500
+          details:
+            type: string
+            description: Expected versus actual behavior, missing steps, or the snippet that failed.
+            maxLength: 4000
+          targetFeature:
+            type: string
+            description: The API or feature the page documents.
+            maxLength: 500
+        required:
+          - path
+          - summary
+      outputSchema:
+        $ref: '#/components/schemas/SubmitFeedbackOutput'
+      tags:
+        - Feedback
 
 components:
   securitySchemes:
@@ -567,3 +600,20 @@ components:
     SearchOutput:
       type: string
       description: Markdown string containing the rendered search results.
+    SubmitFeedbackOutput:
+      type: object
+      description: Confirmation returned by the `submit-feedback` tool.
+      properties:
+        status:
+          type: string
+          enum: [received]
+        page:
+          type: string
+          description: Absolute URL of the page the feedback refers to.
+        message:
+          type: string
+      required:
+        - status
+        - page
+        - message
+      additionalProperties: false
