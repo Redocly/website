@@ -155,7 +155,7 @@ The `markdown` settings are used to customize the behavior and appearance of pag
 - hide
 - boolean
 - Control the visibility of the edit page button.
-  Default: `false`.
+  Default: `true`.
 
 {% /table %}
 

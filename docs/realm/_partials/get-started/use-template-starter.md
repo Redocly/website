@@ -2,7 +2,7 @@ Once you have your own copy of the project in a repository that you own, you can
 
 To connect your repository in Reunite:
 
-1. Log in to your Reunite account and [create a new project from your existing repository](../../reunite/project/manage-projects.md#create-a-project-from-an-existing-repository).
+1. Log in to your Reunite account and [create a new project from your existing repository](../../reunite/project/create-project/index.md#create-a-project-from-an-existing-repository).
    Under **Git repository**, select **Connect existing repository**, then select the Git provider and the repository with your copy of the template.
    Note that only Redocly hosting is supported; these projects are not licensed to deploy from other platforms.
 

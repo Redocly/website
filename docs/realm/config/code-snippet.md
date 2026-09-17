@@ -126,7 +126,7 @@ When users click the report button or text, they are provided a comment feedback
 - hide
 - boolean
 - Specifies if the report button should be hidden.
-  Default: `false`.
+  Default: `true`.
 
 ---
 

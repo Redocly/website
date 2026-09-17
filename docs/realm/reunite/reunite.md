@@ -34,6 +34,7 @@ The editor includes the following areas:
   You can split tabs into groups and rearrange them to fit your workflow.
 - Utility tabs that open alongside your file tabs in the editor dock.
   They include the Webview live preview for previewing your formatting updates as you add them.
+- An **AI Generation** panel that shows the progress and result of generation in projects [created with AI](./project/create-project/with-ai.md).
 
 The changes you make in the editor are introduced to your published project using a Git-based workflow.
 Git is a version control system for tracking and managing changes that is integrated into Reunite.

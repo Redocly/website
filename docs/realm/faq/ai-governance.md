@@ -60,10 +60,9 @@ AI Search is now named the **AI assistant**.
 
 ---
 
-- Scaffold with AI
+- [Scaffold with AI](../reunite/project/create-project/with-ai.md)
 - Creates an initial project from your description, selected features, and uploaded files and links.
-- Early access.
-  Redocly enables it for each organization.
+- Pro, Enterprise, and Enterprise+.
 
 {% /table %}
 

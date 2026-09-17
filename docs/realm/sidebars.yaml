@@ -201,6 +201,13 @@
   icon: cloud-arrow-up
   page: reunite/project/manage-projects.md
   items:
+    - group: Create a project
+      page: reunite/project/create-project/index.md
+      items:
+        - page: reunite/project/create-project/with-ai.md
+          label: With AI
+        - page: reunite/project/create-project/track-ai-generation.md
+          label: Track AI generation
     - group: Editor
       page: reunite/project/use-editor.md
       items:

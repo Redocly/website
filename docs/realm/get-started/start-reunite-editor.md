@@ -21,9 +21,9 @@ This guide shows you how to create your first project, add content, customize na
 Make sure you have the following:
 
 - a [Redocly account with an organization](https://auth.cloud.redocly.com/registration)
-- a project that uses the **Starter** template in your Reunite organization
+- a project in your Reunite organization, created from the **Starter** template or [with AI](../reunite/project/create-project/with-ai.md)
 
-  See: [Create a project from a template](../reunite/project/manage-projects.md#create-a-project-from-a-template) for instructions on creating a project.
+  See: [Create a project from a template](../reunite/project/create-project/index.md#create-a-project-from-a-template) for instructions on creating a project.
 
 ## Create a branch
 

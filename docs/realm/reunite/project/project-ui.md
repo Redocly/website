@@ -59,7 +59,7 @@ Use the organization and projects menu to:
 - (2) switch between organizations
 - (3) return to the organization's **Projects** page
 - (4) [switch between projects](./manage-projects.md#switch-between-projects)
-- (5) [create a new project](./manage-projects.md#create-a-project)
+- (5) [create a new project](./create-project/index.md)
 
 ## Editor
 
