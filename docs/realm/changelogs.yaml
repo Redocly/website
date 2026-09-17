@@ -54289,7 +54289,6 @@ reunite:
     timestamp: 1789656290000
     changes:
       minor:
-        - Added target branch change event to the pull request timeline.
         - >-
           Added a summary of changed pages to the pull request comment in Reunite, listing added, modified, and removed pages after each preview
           deploy.
@@ -54300,6 +54299,13 @@ reunite:
           helping prevent duplicate organizations.
       patch:
         - Fixed AI assistant API to stop model calls when the client connection closes.
+    dependencies: {}
+  v2026-09-17.5:
+    timestamp: 1789657548000
+    changes:
+      minor:
+        - Added target branch change event to the pull request timeline.
+      patch: []
     dependencies: {}
 replay:
   0.0.2:
