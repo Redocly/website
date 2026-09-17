@@ -54285,21 +54285,6 @@ reunite:
         - Added a `Visual review check` setting on the **Settings > Git hosting** page.
       patch: []
     dependencies: {}
-  v2026-09-17.3:
-    timestamp: 1789651862000
-    changes:
-      minor:
-        - >-
-          Added a summary of changed pages to the pull request comment in Reunite, listing added, modified, and removed pages after each preview
-          deploy.
-        - Added an origin to feedback items to enable filtering by form, API, and MCP server submissions on the Reunite Feedback page.
-        - Added restore and delete branch events to the pull request timeline.
-        - >-
-          Added a warning in the create-organization flow when the entered name matches an organization the user already belongs to or is invited to,
-          helping prevent duplicate organizations.
-      patch:
-        - Fixed AI assistant API to stop model calls when the client connection closes.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
