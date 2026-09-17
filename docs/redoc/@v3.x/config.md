@@ -63,6 +63,13 @@ Additionally, the following options are available from the previous versions of 
   Does not apply to CLI-rendered docs.
   Default: `false`.
 
+---
+
+- hideSidebar
+- boolean
+- When `true`, hides the left sidebar.
+  Default: `false`.
+
 {% /table %}
 
 Example:
@@ -74,6 +81,7 @@ downloadUrls:
   - title: Download OpenApiDescription json
     url: 'https://example.com/museum.json'
 schemaDefinitionsTagName: Schemas
+hideSidebar: true
 jsonSamplesExpandLevel: 1
 generatedSamplesMaxDepth: 3
 hideDownloadButtons: false

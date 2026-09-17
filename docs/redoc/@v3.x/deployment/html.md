@@ -484,18 +484,16 @@ In this example, the colors and backgrounds change when users switch between lig
 
 ## Advanced options
 
-### The `init` function
+### The Redoc object
 
-As an alternative to the HTML tag, you can also initialize Redoc CE in a web page from JavaScript.
+As an alternative to the HTML tag, you can also initialize Redoc CE in a web page using the Redoc object and invoking it from JavaScript.
 Use this method to create dynamic content in a page.
 It is also a way to attach the Redoc element to an existing container.
 
-The standalone bundle is an ES module that exports an `init` function:
+The Redoc object offers an `init` function:
 
 ```js
-import { init } from 'https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js';
-
-init(specOrSpecUrl, options, element)
+Redoc.init(specOrSpecUrl, options, element, callback)
 ```
 
 Where:
@@ -503,13 +501,14 @@ Where:
 - `specOrSpecUrl`: either a JSON object with the OpenAPI description, or a file name or URL to the
   description in JSON or YAML format
 - `options`: OpenAPI [configuration options](https://redocly.com/docs/realm/config/openapi)
-- `element`(optional): DOM element Redoc CE renders into; defaults to the first `<redoc>` tag on the page
+- `element`: DOM element Redoc is inserted into
+- `callback`(optional): callback to be called after Redoc has been fully rendered, also called on errors with `error` as the first argument
 
-To use the `init` function:
+To use the Redoc object:
 
-- Import it from the standalone bundle in a module script and call it with a named container.
+- Call `Redoc.init()` from the JavaScript on a web page to add the element to a named container.
 
-The following example is an HTML page with a `<div>` tag, and the module script that renders Redoc CE into it.
+The following example is an HTML page with a `<div>` tag, and the script to add the Redoc object to it.
 This example also sets the configuration for `showExtensions` so it displays all specification extensions.
 
 ```html
@@ -517,13 +516,12 @@ This example also sets the configuration for `showExtensions` so it displays all
 <html>
   <head />
   <body>
-    <h1>Redoc CE in action</h1>
+    <H1>Redoc CE in action</H1>
+    <script src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
     <div id="redoc-container"></div>
 
-    <script type="module">
-      import { init } from 'https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js';
-
-      init('https://redocly.github.io/redoc/museum.yaml', {
+    <script>
+      Redoc.init('https://redocly.github.io/redoc/museum.yaml', {
         "showExtensions": true
       }, document.getElementById('redoc-container'))
     </script>
@@ -533,8 +531,7 @@ This example also sets the configuration for `showExtensions` so it displays all
 
 ### Self-host dependencies
 
-You can reference the Redoc CE script in two ways.
-Use a link to the files hosted on a CDN, or install Redoc CE in your `node-modules` folder.
+You can reference the Redoc CE script, either using a link to the files hosted on a CDN or installing Redoc CE in your `node-modules` folder.
 Self-hosting may be useful when you need to host in a closed environment or have requirements around external dependencies.
 
 {% tabs %}
@@ -544,7 +541,7 @@ Self-hosting may be useful when you need to host in a closed environment or have
     - In the `<script>` tag, add an `src` attribute with the URL to the Redoc CE script.
 
       ```html
-      <script type="module" src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
+      <script src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"> </script>
       ```
   {% /tab %}
   {% tab label="Self-host dependencies" %}
@@ -559,7 +556,7 @@ Self-hosting may be useful when you need to host in a closed environment or have
     1. Reference the Redoc CE script with a node modules link.
 
         ```html
-        <script type="module" src="node_modules/redoc/bundle/redoc.standalone.js"> </script>
+        <script src="node_modules/redoc/bundles/redoc.standalone.js"> </script>
         ```
 
   {% /tab %}
