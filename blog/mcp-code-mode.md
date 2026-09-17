@@ -53,12 +53,12 @@ Redocly brings that approach to your documentation.
 
 Our MCP server exposes two tools for this:
 
-- **`describe-tools`** gives the agent the function signatures it needs, including inputs and result types.
+- **`describe-tools`** returns the signatures of the documentation functions, including inputs and result types.
 - **`execute`** runs the agent's JavaScript in a sandbox on the server.
 
-Documentation functions are available inside the script through `tools`.
-Their results stay inside the sandbox unless the script returns them.
-The LLM can request a small answer from a large source.
+The documentation functions live inside that sandbox on a `tools` object.
+The script calls them directly, for example `tools.getFullApiDescription()`.
+Only what the script returns reaches the LLM, no matter how much documentation it read.
 
 ## Code mode in action
 
