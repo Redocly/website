@@ -334,7 +334,6 @@ The following screenshots show the styling rules applied:
     src="./images/full-corporate-light.jpeg"
     alt="Screenshot of Redocly project with the full corporate styling example applied in light mode."
     withLightbox=true
-    framed=true
    /%}
   {% /tab %}
   {% tab label="Dark mode"%}
@@ -342,7 +341,6 @@ The following screenshots show the styling rules applied:
     src="./images/full-corporate-dark.jpeg"
     alt="Screenshot of Redocly project with the full corporate styling example applied in dark mode."
     withLightbox=true
-    framed=true
    /%}
   {% /tab %}
 {% /tabs %}
@@ -397,7 +395,6 @@ The following screenshots show the styling rules applied:
     src="./images/trendy-startup-light.jpeg"
     alt="Screenshot of Redocly project with the trendy startup styling example applied in light mode."
     withLightbox=true
-    framed=true
    /%}
   {% /tab %}
   {% tab label="Dark mode"%}
@@ -405,7 +402,6 @@ The following screenshots show the styling rules applied:
     src="./images/trendy-startup-dark.jpeg"
     alt="Screenshot of Redocly project with the trendy startup styling example applied in dark mode."
     withLightbox=true
-    framed=true
    /%}
   {% /tab %}
 {% /tabs %}
@@ -478,7 +474,6 @@ The following screenshots show the styling rules applied:
     src="./images/personal-wellness-light.jpeg"
     alt="Screenshot of Redocly project with the personal wellness styling example applied in light mode."
     withLightbox=true
-    framed=true
    /%}
   {% /tab %}
   {% tab label="Dark mode"%}
@@ -486,7 +481,6 @@ The following screenshots show the styling rules applied:
     src="./images/personal-wellness-dark.jpeg"
     alt="Screenshot of Redocly project with the personal wellness styling example applied in dark mode."
     withLightbox=true
-    framed=true
    /%}
   {% /tab %}
 {% /tabs %}

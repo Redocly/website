@@ -33,7 +33,6 @@ To manually sync remote content folders:
      src="../../images/reunite-remote-content-options.png"
      alt="Open options menu on Reunite's Remote content page"
      withLightbox=true
-     framed=true
    /%}
    A window opens with the branch chosen during the remote folder setup, and the following information on the last commit to that branch:
       - the commit message

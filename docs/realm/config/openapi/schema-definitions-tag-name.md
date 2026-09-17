@@ -46,7 +46,6 @@ Using the Museum API as an example, all the schemas are shown in the section cal
   src="../images/schema-definitions-tag-name.png"
   alt="Screenshot of API documentation with schemaDefinitionsTagName defined as \"Schemas\""
   withLightbox=true
-  framed=true
 /%}
 
 ## Resources

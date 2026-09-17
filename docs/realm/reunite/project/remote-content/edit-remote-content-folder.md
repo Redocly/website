@@ -49,7 +49,6 @@ To edit remote content settings:
     src="../../images/reunite-remote-content-options.png"
     alt="Open options menu on Reunite's Remote content page"
     withLightbox=true
-    framed=true
   /%}
 
 1. Modify the settings as needed.

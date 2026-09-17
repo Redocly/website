@@ -59,6 +59,10 @@ The `latest` script URL updates automatically within a minute of each release.
 To control when you take updates, pin a release instead: replace `latest` with a version tag, for example `releases/v0.1.0/main.js`.
 A pinned URL never changes after publication.
 
+To check which version a page runs, open the browser console and read `window.RedoclyAssistant.version`.
+The assistant sends that version with each question.
+It also reports whether the script came from `latest` or from a pinned URL.
+
 ## Let users escalate to support
 
 When [support ticket escalation](../reunite/project/ai-assistant.md) is configured for your project, the assistant can show a **Contact support** button.
@@ -450,6 +454,12 @@ Each method acts on every `<redocly-ai-assistant>` instance on the page.
 
 - isOpen
 - Property that reads `true` while at least one assistant on the page is open.
+
+---
+
+- version
+- Property that reads the version of the loaded script, for example `0.2.3`.
+  Quote it in a support request so the report names a release.
 
 {% /table %}
 
