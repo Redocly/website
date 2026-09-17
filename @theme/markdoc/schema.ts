@@ -6,6 +6,7 @@ import {
   RightViewSchema,
 } from './components/SplitView/SplitViewSchemas';
 import { GroupElementsSchema } from './components/GroupElements/GroupElementsSchema';
+import { docsGameTags } from '../components/DocsGame/markdoc-schema';
 import {
   tags as betaDocsTags,
   functions as betaDocsFunctions,
@@ -62,6 +63,7 @@ export const tags = {
   licensesPackageVersion,
   wideTileCards,
   quiz,
+  ...docsGameTags,
   ...betaDocsTags,
 };
 
