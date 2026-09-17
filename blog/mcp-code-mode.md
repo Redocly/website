@@ -7,7 +7,7 @@ seo:
   description: Code mode brings JavaScript to Redocly's MCP server. Agents combine calls, filter results, and answer API questions with up to 80% lower LLM cost.
   image: ./images/mcp-code-mode.png
 author: vasyl-havronskyi
-publishedDate: "2026-09-18"
+publishedDate: "2026-09-17"
 categories:
   - redocly:product-updates
   - technical-documentation:ai-assisted-docs
