@@ -135,23 +135,21 @@ x-mcp:
       tags:
         - API Catalog
     - name: get-endpoints
-      description: Get all endpoints for a specific API
+      description: Get all endpoints for a specific API.
       inputSchema:
         type: object
         additionalProperties: false
         properties:
           name:
             type: string
-            description: API name, or a unique part of it
+            description: API name, or a unique part of it. Omit when `filePath` is given.
             minLength: 1
           version:
             type: string
-            description: API version
+            description: API version. When omitted and several versions exist, the highest one is used.
           filePath:
             type: string
-            description: API definition file path
-        required:
-          - name
+            description: Path to the API description file.
       outputSchema:
         $ref: '#/components/schemas/GetEndpointsOutput'
       tags:
@@ -164,7 +162,7 @@ x-mcp:
         properties:
           name:
             type: string
-            description: API name, or a unique part of it
+            description: API name, or a unique part of it. Omit when `filePath` is given.
             minLength: 1
           path:
             type: string
@@ -193,12 +191,11 @@ x-mcp:
             minLength: 1
           version:
             type: string
-            description: API version
+            description: API version. When omitted and several versions exist, the highest one is used.
           filePath:
             type: string
-            description: API definition file path
+            description: Path to the API description file.
         required:
-          - name
           - path
           - method
       outputSchema:
@@ -213,44 +210,40 @@ x-mcp:
         properties:
           name:
             type: string
-            description: API name, or a unique part of it
+            description: API name, or a unique part of it. Omit when `filePath` is given.
             minLength: 1
           version:
             type: string
-            description: API version
+            description: API version. When omitted and several versions exist, the highest one is used.
           filePath:
             type: string
-            description: API definition file path
-        required:
-          - name
+            description: Path to the API description file.
       outputSchema:
         $ref: '#/components/schemas/GetSecuritySchemesOutput'
       tags:
         - API Catalog
     - name: get-full-api-description
-      description: Get the complete OpenAPI description
+      description: Get the complete OpenAPI description.
       inputSchema:
         type: object
         additionalProperties: false
         properties:
           name:
             type: string
-            description: API name, or a unique part of it
+            description: API name, or a unique part of it. Omit when `filePath` is given.
             minLength: 1
           version:
             type: string
-            description: API version
+            description: API version. When omitted and several versions exist, the highest one is used.
           filePath:
             type: string
-            description: API definition file path
-        required:
-          - name
+            description: Path to the API description file.
       outputSchema:
         $ref: '#/components/schemas/GetFullApiDescriptionOutput'
       tags:
         - API Catalog
     - name: search
-      description: Search across the documentation to fetch relevant content for a given query
+      description: Search across the documentation to fetch relevant content for a given query.
       inputSchema:
         type: object
         additionalProperties: false
@@ -329,7 +322,7 @@ components:
             $ref: '#/components/schemas/OpenApiServer'
         filePath:
           type: string
-          description: API definition file path.
+          description: Path to the API description file.
       required:
         - name
         - filePath
@@ -404,6 +397,19 @@ components:
         - page
         - totalPages
       additionalProperties: false
+    ApiDescriptionRef:
+      type: object
+      description: Reference to an API description file the lookup also matched.
+      properties:
+        version:
+          type: string
+          description: API version.
+        filePath:
+          type: string
+          description: API description file path. Pass it as `filePath` to load this definition.
+      required:
+        - filePath
+      additionalProperties: false
     GetEndpointsOutput:
       type: object
       description: Endpoint list for a single published API.
@@ -414,6 +420,14 @@ components:
         version:
           type: string
           description: API version.
+        filePath:
+          type: string
+          description: API description file path for this result.
+        otherMatches:
+          type: array
+          description: Other description files the lookup matched. Present only when several share the requested name.
+          items:
+            $ref: '#/components/schemas/ApiDescriptionRef'
         servers:
           type: array
           description: Servers defined by the published OpenAPI description.
@@ -426,6 +440,7 @@ components:
       required:
         - api
         - version
+        - filePath
         - servers
         - endpoints
       additionalProperties: false
@@ -439,6 +454,14 @@ components:
         version:
           type: string
           description: API version.
+        filePath:
+          type: string
+          description: API description file path for this result.
+        otherMatches:
+          type: array
+          description: Other description files the lookup matched. Present only when several share the requested name.
+          items:
+            $ref: '#/components/schemas/ApiDescriptionRef'
         servers:
           type: array
           description: Servers defined by the published OpenAPI description.
@@ -472,6 +495,7 @@ components:
       required:
         - api
         - version
+        - filePath
         - servers
         - endpoint
         - globalSecurity
@@ -487,6 +511,14 @@ components:
         version:
           type: string
           description: API version.
+        filePath:
+          type: string
+          description: API description file path for this result.
+        otherMatches:
+          type: array
+          description: Other description files the lookup matched. Present only when several share the requested name.
+          items:
+            $ref: '#/components/schemas/ApiDescriptionRef'
         securitySchemes:
           type: object
           description: Security schemes map from the OpenAPI components section.
@@ -497,6 +529,12 @@ components:
           items:
             type: object
             additionalProperties: true
+      required:
+        - name
+        - version
+        - filePath
+        - securitySchemes
+        - security
       additionalProperties: false
     GetFullApiDescriptionOutput:
       type: object
@@ -508,13 +546,22 @@ components:
         version:
           type: string
           description: API version.
+        filePath:
+          type: string
+          description: API description file path for this result.
+        otherMatches:
+          type: array
+          description: Other description files the lookup matched. Present only when several share the requested name.
+          items:
+            $ref: '#/components/schemas/ApiDescriptionRef'
         definition:
           type: object
-          description: Full OpenAPI definition returned by the Docs MCP server.
+          description: Full OpenAPI description file returned by the Docs MCP server.
           additionalProperties: true
       required:
         - api
         - version
+        - filePath
         - definition
       additionalProperties: false
     SearchOutput:
