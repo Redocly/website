@@ -63,6 +63,17 @@ Insert custom scripts in the head or body of a page.
 
 ---
 
+- consent
+- string
+- Loads the script only while the consent state allows the category.
+  In `opt-in` mode the visitor must accept first.
+  In `opt-out` mode the category starts on and stays on until the visitor refuses.
+  Needs the [`consent`](./consent.md) option with a mode other than `none`.
+  Needs the Enterprise+ plan.
+  Possible values: `analytics`, `marketing`.
+
+---
+
 - async
 - boolean
 - Specifies to add the `async` attribute to the script tag.

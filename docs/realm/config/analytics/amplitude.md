@@ -13,6 +13,10 @@ plans:
 
 Integrate Amplitude Analytics into Redocly project to track page views and outbound link clicks
 
+With the [`consent`](../consent.md) option on, this integration loads only while the consent state allows the analytics category.
+In `opt-in` mode the visitor must accept first.
+In `opt-out` mode the category starts on and stays on until the visitor refuses.
+
 ## Configuration
 
 {% table %}
