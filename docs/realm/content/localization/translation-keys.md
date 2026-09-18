@@ -2655,6 +2655,72 @@ This page contains the list of all predefined translation keys used in default U
 - Accessible label for diagram viewer dialog
 - Diagram viewer
 
+---
+
+- stats.breadcrumb
+- Breadcrumb label for the project statistics page
+- Statistics
+
+---
+
+- stats.title
+- Title of the project statistics page
+- API statistics
+
+---
+
+- stats.description
+- Description under the title of the project statistics page
+- Analyse the API statistics to optimise performance and guide decision-making.
+
+---
+
+- stats.apis.title
+- Label of the APIs tab on the project statistics page
+- APIs
+
+---
+
+- stats.apis.name
+- Column header for the API name in the APIs table
+- API name
+
+---
+
+- stats.apis.empty
+- Message shown in the APIs tab when the project has no OpenAPI descriptions
+- This project has no OpenAPI descriptions.
+
+---
+
+- stats.files.title
+- Label of the Files tab on the project statistics page
+- Files
+
+---
+
+- stats.files.extension
+- Column header for the file extension in the files table
+- File extension
+
+---
+
+- stats.files.count
+- Column header for the file count in the files table
+- Count
+
+---
+
+- stats.files.disabled
+- Message shown in the Files tab when file counting is not enabled in `redocly.yaml`
+- Set `stats.fileExtensions` to `true` in `redocly.yaml` to count project files.
+
+---
+
+- stats.loadMore
+- Button that loads more rows in a statistics table
+- Load more
+
 {% /table %}
 
 ## Dynamic values in translations
