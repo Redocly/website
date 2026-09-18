@@ -206,6 +206,8 @@
       items:
         - page: reunite/project/project-ui.md
           label: Project interface
+        - page: reunite/project/draft-projects.md
+          label: Draft projects
         - page: reunite/project/use-webview.md
           label: Webview
         - page: reunite/project/test-api-functions.md
@@ -279,6 +281,8 @@
       label: Custom domain
     - page: reunite/project/env-variables.md
       label: Environment variables
+    - page: reunite/project/telemetry.md
+      label: Telemetry
 
 - group: Build navigation
   icon: chart-tree-map
