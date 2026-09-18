@@ -2,15 +2,21 @@
   label: Redoc CE
 - page: quickstart.md
   label: Quickstart
+- page: supported-specifications.md
+  label: Supported specifications
 - group: Deployment
   items:
     - page: deployment/intro.md
     - page: deployment/html.md
     - page: deployment/react.md
     - page: deployment/docker.md
+    - page: deployment/cli.md
+    - page: deployment/frameworks.md
 - group: Configure Redoc CE
   items:
     - page: config.md
     - page: config-migration.md
+- page: redoc-vendor-extensions.md
+  label: Specification extensions
 - page: telemetry.md
   label: Telemetry
