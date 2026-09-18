@@ -1278,13 +1278,13 @@ This page contains the list of all predefined translation keys used in default U
 
 - catalog.history.button.label
 - Label for catalog entity version history button
-- Version history
+- Version
 
 ---
 
 - catalog.history.sidebar.title
 - Title for catalog entity version history sidebar
-- Version history
+- Version
 
 ---
 
@@ -1306,9 +1306,9 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- catalog.history.version.default
-- Label for default version in catalog entity history
-- Default
+- catalog.history.version.latest
+- Marker appended to the default version in catalog entity history
+- latest
 
 ---
 
