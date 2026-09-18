@@ -523,6 +523,85 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- aiAssistant.triggerLabel
+- Accessible name of the AI assistant trigger button
+- AI Assistant button
+
+---
+
+- aiAssistant.headerTitle
+- Title in the AI assistant panel header
+- AI Assistant
+
+---
+
+- aiAssistant.closeWidget
+- Accessible name of the button that closes the AI assistant panel
+- Close widget
+
+---
+
+- aiAssistant.contactSupport
+- Button text that opens the support request form
+- Contact support
+
+---
+
+- aiAssistant.support.intro
+- Text above the support request form
+- To reach the support team, fill in the form below:
+
+---
+
+- aiAssistant.support.name
+- Label of the name field in the support request form
+- Name (optional)
+
+---
+
+- aiAssistant.support.email
+- Label of the email field in the support request form
+- Email
+
+---
+
+- aiAssistant.support.message
+- Label of the message field in the support request form
+- Message (optional)
+
+---
+
+- aiAssistant.support.cancel
+- Button text that closes the support request form
+- Cancel
+
+---
+
+- aiAssistant.support.send
+- Button text that submits the support request form
+- Send
+
+---
+
+- aiAssistant.support.sending
+- Button text while the support request is sending
+- Sending…
+
+---
+
+- aiAssistant.support.error
+- Message shown when the support request fails
+- Failed to send your request.
+  Try again.
+
+---
+
+- aiAssistant.support.created
+- Message shown after the support request reaches the support team
+- The support team has your request and will reply by email.
+
+---
+
 - toc.header
 - Table of content header
 - On this page
