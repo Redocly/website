@@ -14,6 +14,7 @@ List of sub-processors for our SaaS-hosted service:
 |Google|US|LLM provider for AI search feature and AI-assistant feature|
 |ClickHouse, Inc.|US|Analytics data|
 |Auth0|US|Identity provider for login and registration (for Redocly Workflows only)|
+|TypeSafe AI|US|AI model provider for calibrated decisions|
 
 List of sub-processors for our support services:
 
