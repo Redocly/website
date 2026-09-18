@@ -633,14 +633,143 @@ export function ReplayTopBarActions({
 
 Passing an empty string (`''`) for a token input clears the value in Replay's environment store — the same as a user manually deleting the field.
 
+## Eject ReplaySecuritySchemeActions
+
+`ReplaySecuritySchemeActions` renders inside each security scheme card in Replay's **Security** tab.
+The default implementation renders nothing.
+
+Eject it to hand users a credential in the card that asks for one.
+For example, a sign-in button for your identity provider.
+It can also be a link to the page that issues API keys, or a note naming the credential the scheme takes.
+
+Unlike `ReplayGate`, this component does not gate access.
+Users reach every operation as usual, and the card offers a way to fill the credential it needs.
+
+Replay renders the component only for schemes that take a single credential.
+Basic and digest authentication take a username and a password, so their cards render no slot.
+
+```bash
+npx @redocly/cli eject component 'ReplaySecuritySchemeActions/ReplaySecuritySchemeActions.tsx'
+```
+
+### Props reference
+
+{% table %}
+- Prop
+- Type
+- Description
+---
+- `schemeId`
+- `string | null`
+- The security scheme id from your OpenAPI description.
+  `null` when a user picks an authorization type by hand.
+  Example: `OAuth2`, `ApiKey`, `null`.
+---
+- `securityType`
+- `'oauth2' | 'openIdConnect' | 'apiKey' | 'http-bearer'`
+- What the card asks for, named after the OpenAPI fields rather than the labels Replay shows.
+  Match on it to offer a credential only for the schemes it fits.
+  Import `ReplaySecurityType` and annotate what you match against, so a misspelled type fails to compile.
+  A scheme named `ApiKey` can still be `http-bearer`, so match on the type rather than the id.
+  Example: `oauth2`, `http-bearer`.
+---
+- `environment`
+- string
+- The name of the currently active environment, which is the server a request goes to.
+  Use it to decide whether this server needs a credential, and which provider issues it.
+  Example: `Production server`, `Mock server`.
+---
+- `operationId`
+- string
+- The `operationId` of the operation the card belongs to.
+  Use it to offer a credential for some operations only.
+  Undefined when the description names no `operationId`, and in the **Workflows** tab, which has no operation.
+  Example: `listPushes`.
+---
+- `value`
+- string
+- What the scheme's credential field resolves to, or an empty string.
+  An environment input that holds a value the field does not reference does not count.
+  Compare it with the credential you issued to tell your own token from one a user pasted.
+  Example: `''` for an empty field, the access token once one lands in it.
+---
+- `setValue`
+- `(value: string) => void`
+- Fills the scheme's credential.
+  A documented scheme gets an environment input and a `{$inputs.<name>}` reference.
+  A scheme picked by hand takes the literal value.
+  Pass an empty string to clear the credential.
+  See [How environment values work](#how-environment-values-work).
+  Example: `setValue(accessToken)` after a sign-in, `setValue('')` on a sign-out.
+---
+- `apiId`
+- string
+- The current OpenAPI description's id, when your project defines one.
+  Pass the same value your `ReplayGate` uses to keep behavior consistent per API.
+  Example: `payments-api`.
+{% /table %}
+
+### Example: sign-in offer
+
+The following example offers a sign-in button on OAuth 2.0 cards, and a sign-out button once the card holds a token.
+It makes the offer for one API only, so the other APIs in a catalog keep their default cards.
+It reuses the `@api/login.get.ts` callback page from the `ReplayGate` example above, which posts the token back over `BroadcastChannel`.
+
+```tsx {% title="@theme/components/ReplaySecuritySchemeActions/ReplaySecuritySchemeActions.tsx" %}
+import React from 'react';
+import type {
+  ReplaySecurityType,
+  ReplaySecuritySchemeActionsProps,
+} from '@redocly/theme/components/ReplaySecuritySchemeActions/ReplaySecuritySchemeActions';
+
+const AUTH_URL = 'https://auth.example.com/oauth2/auth?client_id=YOUR_CLIENT_ID&response_type=code';
+const PAYMENTS_API_ID = 'payments-api';
+// An access token fits these two scheme types and no others.
+const TOKEN_TYPES = new Set<ReplaySecurityType>(['oauth2', 'openIdConnect']);
+
+export function ReplaySecuritySchemeActions({
+  securityType,
+  value,
+  setValue,
+  apiId,
+}: ReplaySecuritySchemeActionsProps) {
+  const handleSignIn = () => {
+    const state = crypto.randomUUID();
+    const channel = new BroadcastChannel('replay-auth');
+
+    channel.onmessage = (event: MessageEvent) => {
+      if (event.data?.type !== 'REPLAY_AUTH_DONE' || event.data.state !== state) return;
+      channel.close();
+      setValue(event.data.access_token);
+    };
+
+    window.open(`${AUTH_URL}&state=${state}`, 'replay-auth', 'width=520,height=680');
+  };
+
+  if (apiId !== PAYMENTS_API_ID || !TOKEN_TYPES.has(securityType)) {
+    return null;
+  }
+
+  return value ? (
+    <button onClick={() => setValue('')}>Sign out</button>
+  ) : (
+    <button onClick={handleSignIn}>Sign in</button>
+  );
+}
+```
+
+Returning `null` leaves the card exactly as Replay renders it by default.
+A catalog with several APIs reaches this component for every one of them, so match on `apiId` when the credential belongs to a single API.
+
 ## Use cases
 
-Ejecting `ReplayGate` and `ReplayTopBarActions` is useful for:
+Ejecting `ReplayGate`, `ReplayTopBarActions`, and `ReplaySecuritySchemeActions` is useful for:
 
 - **SSO enforcement**: require users to sign in with your company's identity provider before using Replay
 - **Token pre-fill**: silently inject a stored token so users don't need to paste credentials manually
 - **Multi-environment auth**: select different environments or token scopes based on the signed-in user's role
 - **Session management**: add a sign-out button or session expiration indicator inside Replay
+- **Credential handoff**: offer sign-in on the security scheme card itself, so users fill a credential without leaving the operation
 
 ## Resources
 
