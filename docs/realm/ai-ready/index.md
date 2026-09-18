@@ -2,7 +2,8 @@
 
 Your readers no longer arrive only through a browser.
 They ask AI assistants questions, and their agents query your documentation directly.
-Realm serves both: it answers questions inside your site, and it exposes your content to external AI tools in formats they consume.
+Realm serves both.
+It answers questions inside your site, and it hands your content to external AI tools in formats they read.
 
 ## Answer questions inside your site
 
@@ -10,6 +11,7 @@ Readers ask a question and get an answer grounded in your documentation.
 
 - **[AI assistant configuration](../config/ai-assistant.md)** - Enable and configure the AI assistant on your site
 - **[AI assistant web component](../ai-assistant-web-component/ai-assistant-web-component.md)** - Embed the assistant in your own applications outside the docs site
+- **[Identity tokens](../ai-assistant-web-component/identity-tokens.md)** - Answer from RBAC-protected content for signed-in users
 
 ## Serve your docs to agents
 

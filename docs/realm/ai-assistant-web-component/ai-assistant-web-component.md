@@ -7,33 +7,42 @@ products:
 plans:
   - Enterprise
   - Enterprise+
-excludeFromSearch: true
 ---
 
 # AI assistant web component
 
-The AI assistant web component embeds the Redocly AI assistant on any web page: your app, your marketing site, or your support portal.
-It's a standard custom element, added with a single `<script>` tag, so it works with any framework.
+The AI assistant web component puts the Redocly AI assistant on any web page.
+Use it on your app, your marketing site, or your support portal.
+It's a standard custom element, added with one `<script>` tag, so it works with any framework.
+
 The widget renders inside a [shadow root](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM).
-Host-page styles don't affect it and its styles don't leak onto your page.
+Host-page styles don't affect it, and its styles don't leak onto your page.
 
-{% admonition type="info" name="Early access" %}
-The AI assistant web component is an **early access** release.
-The API, attributes, and CDN URL may change in future versions.
-
-For now, the assistant works only with **publicly accessible docs**.
-{% /admonition %}
+The assistant answers from your project's public content by default.
+To let it answer from RBAC-protected content as well, add [identity tokens](./identity-tokens.md).
 
 ## Before you begin
 
-The assistant sends questions from the host page to your project's `_ask-ai` endpoint, usually across origins.
-Set the `REDOCLY_CORS_ORIGINS` environment variable on your project to a comma-separated list of origins allowed to call the assistant:
+Make sure you have:
+
+- the [AI assistant](../config/ai-assistant.md) enabled in your project
+- the maintainer or admin role for the project
+- the origins of every page that embeds the assistant
+
+The assistant sends questions from the host page to your project's own `_ask-ai` endpoint.
+That call usually crosses origins.
+Point `api-url` at the endpoint on your project's domain, for example `https://docs.example.com/_ask-ai`.
+
+Set the `REDOCLY_CORS_ORIGINS` variable on your project.
+List every origin allowed to call the assistant, separated by commas:
 
 ```bash
 REDOCLY_CORS_ORIGINS=https://docs.example.com,https://www.example.com
 ```
 
-Each value in the comma-separated list must exactly match the origin (scheme, host, and port) of a page that embeds the component.
+Each value must match a host page's origin exactly: scheme, host, and port.
+If an origin is missing, the browser blocks the request to `api-url`, and the assistant can't answer.
+To set the variable, see [Manage environment variables](../reunite/project/env-variables.md#manage-environment-variables).
 
 {% admonition type="warning" name="Don't use wildcards" %}
 Never set `REDOCLY_CORS_ORIGINS` to `*`.
@@ -41,36 +50,30 @@ A wildcard lets any website embed your assistant and consume your project's quot
 List only the origins you trust.
 {% /admonition %}
 
-If the embedding page's origin isn't listed in `REDOCLY_CORS_ORIGINS`, the browser blocks the request to `api-url` and the assistant can't respond.
-To learn how to work with environment variables, see [Manage environment variables](../reunite/project/env-variables.md#manage-environment-variables).
+## Embed the assistant
 
-## Install and configure
-
-Configure the assistant in the playground.
-The install snippet updates as you change each option, and the preview is a live assistant that answers questions about Redocly docs.
+Configure the assistant in the playground below.
+The snippet updates as you change each option.
+The preview answers real questions about Redocly docs.
 
 {% aiAssistantPlayground /%}
 
 The script registers the `<redocly-ai-assistant>` element and the `window.RedoclyAssistant` API, and renders a floating **Ask AI** button by default.
 After you add the snippet to your page, reload it, select the button, and send a test question.
-If the assistant doesn't answer, check that the page's origin is listed in [`REDOCLY_CORS_ORIGINS`](#before-you-begin).
+If the assistant doesn't answer, check that [`REDOCLY_CORS_ORIGINS`](#before-you-begin) lists the page's origin.
+
+For every option the element accepts, see the [attribute reference](./reference.md#attributes).
+
+### Pin a version
 
 The `latest` script URL updates automatically within a minute of each release.
 To control when you take updates, pin a release instead: replace `latest` with a version tag, for example `releases/v0.1.0/main.js`.
 A pinned URL never changes after publication.
 
-## Let users escalate to support
+## Control the assistant from your page
 
-When [support ticket escalation](../reunite/project/ai-assistant.md) is configured for your project, the assistant can show a **Contact support** button.
-The button appears when the assistant decides a human is needed, when the conversation reaches a configured length, or when a request fails.
-The submitted ticket is delivered to your support email together with the conversation transcript and the URL of the embedding page.
-
-Escalation requires no setup on the embedding page: the decision to offer support comes from your project's settings.
-
-## Control the assistant programmatically
-
-To open the assistant from your own UI, hide the floating **Ask AI** button with the `trigger-hide` attribute and use the `window.RedoclyAssistant` object.
-The script adds it on load, and it controls every assistant on the page:
+To open the assistant from your own UI, hide the floating **Ask AI** button with the `trigger-hide` attribute.
+Then drive it with `window.RedoclyAssistant`, which the script adds on load:
 
 ```js
 window.RedoclyAssistant.open();    // Open all assistants on the page
@@ -84,12 +87,13 @@ window.RedoclyAssistant.isOpen;    // true when at least one assistant is open
 `ask()` opens the assistant before sending the question.
 Pass `{ open: false }` as the second argument to send it without opening.
 
-Users can also start over with the **New conversation** button in the panel header; it emits the same `reset` [event](#event-reference).
+Users can also start over with the **New conversation** button in the panel header.
+It emits the same `reset` [event](./reference.md#events).
 
 ## Update configuration at runtime
 
-Use `window.RedoclyAssistant.setConfig()` to set or change the config dynamically.
-You can use it instead of the matching HTML attributes or alongside them:
+Use `setConfig()` to change settings at any time.
+It works instead of the matching HTML attributes, or alongside them:
 
 ```js
 window.RedoclyAssistant.setConfig({
@@ -102,19 +106,43 @@ window.RedoclyAssistant.setConfig({
 
 `setConfig()` follows a few rules:
 
-- Values merge over the HTML attributes: a key you pass wins, and every attribute you don't pass still applies.
+- Values merge over the HTML attributes.
+  A key you pass wins; every attribute you don't pass still applies.
 - Every current and future assistant on the page picks up the change.
-- You can call it before the `<redocly-ai-assistant>` element is added to the page.
+- You can call it before the page adds the `<redocly-ai-assistant>` element.
 - Pass `null` to clear all overrides, so the attributes apply again.
 - With `apiUrl` set here, the `api-url` attribute is optional.
   Without either, the assistant stays hidden and logs a console warning; it appears as soon as a later call supplies `apiUrl`.
 
-For the full attribute-to-key mapping, see [`setConfig()` keys](#setconfig-keys).
+For the full attribute-to-key mapping, see [`setConfig()` keys](./reference.md#setconfig-keys).
+
+## Answer from RBAC-protected content
+
+By default, the assistant answers as an anonymous visitor.
+It uses only the content a signed-out reader can open.
+
+To widen that scope for the users signed in to your own app, set up [identity tokens](./identity-tokens.md).
+Your backend mints a short-lived JWT naming the user's [RBAC teams](../access/rbac.md).
+Your page passes it to the widget, and Redocly verifies it before answering.
+
+## Escalate to your support team
+
+Turn on [support ticket escalation](../reunite/project/ai-assistant.md), and the assistant can show a **Contact support** button.
+It appears when the assistant decides a human should take over.
+It also appears after a set number of messages, or when a request fails.
+Your support email then gets the ticket, the transcript, and the URL of the host page.
+
+Escalation needs no setup on the host page.
+Your project's settings decide when to offer support.
 
 ## Scope answers to a locale
 
-The assistant sends `locale` with every question, and the search returns only documents indexed with that exact locale value.
-The value to send depends on how your project's content is organized:
+The `locale` value does two jobs: it scopes the search, and it picks the [interface language](#localize-the-interface).
+The two use different matching rules, so read both before you settle on a value.
+
+The assistant sends `locale` with every question.
+Search then returns only documents indexed with that exact value.
+What to send depends on how you organize your content:
 
 {% table %}
 
@@ -124,7 +152,7 @@ The value to send depends on how your project's content is organized:
 ---
 
 - No localization configured
-- Omit `locale` to search all documents, or keep the default `default_locale`; all documents are indexed with that value.
+- Omit `locale` to search all documents, or keep the default `default_locale`; all documents carry that value.
 
 ---
 
@@ -138,13 +166,54 @@ The value to send depends on how your project's content is organized:
 
 {% /table %}
 
-The match is an exact string comparison with no fallback: sending `es` when the content lives in `@l10n/es-ES/` returns no documents.
-The assistant then answers without documentation context instead of reporting an error.
-When the assistant finds nothing for a language that has translated content, verify the value matches the folder name exactly.
+The match is exact, with no fallback.
+Send `es` when the content lives in `@l10n/es-ES/`, and search returns nothing.
+The assistant then answers with no docs context, rather than report an error.
+So when a translated language turns up nothing, check the value against the folder name.
+
+## Localize the interface
+
+The widget ships interface translations for 14 locales, and `locale` picks one.
+The panel header, the buttons, the input placeholder, and the support form all follow it.
+
+Translations ship for `ar`, `de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `ko`, `pl`, `pt`, `pt-BR`, `uk`, and `zh`.
+
+Matching here is more forgiving than the search matching above:
+
+- A regional value falls back to its language, so `ja-JP` uses `ja` and `zh-Hans` uses `zh`.
+- A regional table wins where one exists: `pt-BR` gets Brazilian Portuguese, and `pt` gets European Portuguese.
+- Anything else stays English, including the default `default_locale` and a locale the widget doesn't ship.
+
+Arabic sets `dir="rtl"` on the element, so the browser mirrors the layout.
+So do `fa`, `he`, and `ur`, which set the direction but ship no strings.
+Supply theirs with `translations`.
+
+Only the interface translates.
+Answers come back in whatever language the model replies in, and the conversation keeps what the user typed.
+
+### Replace individual strings
+
+Pass `translations` to `setConfig()` to override any interface string.
+It layers over the bundled table, so a key you leave out keeps its translation:
+
+```js
+window.RedoclyAssistant.setConfig({
+  locale: 'ja',
+  translations: {
+    'aiAssistant.contactSupport': 'サポートチームに連絡',
+  },
+});
+```
+
+`translations` has no HTML attribute; set it with `setConfig()`.
+For the keys you can pass, see [Translation keys](../content/localization/translation-keys.md).
+
+The label attributes outrank both layers.
+An element with `header-title="Acme Support"` keeps that header in every locale.
 
 ### Add a language switcher
 
-Use a single `setConfig()` call to switch the assistant's language and greeting from the host page:
+One `setConfig()` call switches the search scope, the interface, and your own greeting:
 
 ```html
 <select id="language-select">
@@ -168,11 +237,13 @@ Use a single `setConfig()` call to switch the assistant's language and greeting 
 </script>
 ```
 
-In this example, `en` is the project's `defaultLocale` and Spanish content lives in `@l10n/es-ES/`, so both values match the indexed documents.
+Here, `en` is the project's `defaultLocale`, and Spanish content lives in `@l10n/es-ES/`.
+Both values match the indexed documents, and `es-ES` falls back to the `es` interface strings.
+Only `welcomeMessage` needs a value per language, because it is your content rather than widget chrome.
 
 ## Customize the appearance
 
-The widget's colors, sizes, fonts, and spacing are CSS custom properties defined on the component's `:host`.
+The widget's colors, sizes, fonts, and spacing are CSS custom properties on the component's `:host`.
 Override them by targeting the element in your CSS:
 
 ```css
@@ -182,7 +253,8 @@ redocly-ai-assistant {
 }
 ```
 
-Host-page selectors can't reach inside the shadow root, so the header icon uses dedicated variables:
+Host-page selectors can't reach into the shadow root.
+The header icon has its own variables:
 
 ```css
 redocly-ai-assistant {
@@ -193,379 +265,6 @@ redocly-ai-assistant {
 
 To hide the icon, set `--ai-assistant-header-icon-display: none`.
 To replace it, set both variables.
-
-## Attribute reference
-
-Set these attributes on the `<redocly-ai-assistant>` element.
-Boolean attributes (`open`, `trigger-hide`, `resizable`) are true when present and false when set to `"false"`.
-
-### Behavior
-
-{% table %}
-
-- Attribute
-- Type
-- Description
-
----
-
-- api-url
-- string
-- **REQUIRED.**
-  URL of the `_ask-ai` endpoint the assistant sends questions to.
-  Can also be supplied with [`setConfig()`](#update-configuration-at-runtime) instead of the attribute.
-
----
-
-- open
-- boolean
-- If `true`, the assistant is open when the page loads for the first time.
-  Default: `false`.
-
----
-
-- trigger-hide
-- boolean
-- Hides the built-in floating **Ask AI** button so you can open the assistant from your own UI.
-  Default: `false`.
-
-{% /table %}
-
-### Text and branding
-
-{% table %}
-
-- Attribute
-- Type
-- Description
-
----
-
-- welcome-message
-- string
-- First message the assistant shows when opened.
-  When omitted, no greeting is displayed.
-
----
-
-- suggestions
-- [string]
-- Starter questions shown as a clickable list while the conversation is empty.
-  Pass a JSON array of strings, for example `suggestions='["How do I authenticate?"]'`.
-  Selecting a suggestion sends it as a question.
-
----
-
-- suggestions-heading
-- string
-- Heading displayed above the starter questions.
-  Default: `Suggestions`.
-
----
-
-- header-title
-- string
-- Panel header text.
-  Default: `AI Assistant`.
-
----
-
-- logo
-- string
-- Header icon.
-  A path, URL, or data URI renders as an image; any other value (an emoji, a letter) renders as text.
-  When omitted, the Redocly mark is displayed.
-
----
-
-- trigger-text
-- string
-- Label of the floating button.
-  Default: `Ask AI`.
-
----
-
-- placeholder
-- string
-- Input placeholder shown while the conversation is empty.
-
----
-
-- disclaimer
-- string
-- Small-print text displayed under the input, for example "AI responses may contain mistakes."
-  Rendered only when provided.
-
-{% /table %}
-
-### Appearance and position
-
-{% table %}
-
-- Attribute
-- Type
-- Description
-
----
-
-- theme
-- string
-- Color scheme of the assistant.
-  Possible values: `light`, `dark`, `system` (follows the user's `prefers-color-scheme`).
-  Default: `light`.
-
----
-
-- variant
-- string
-- Presentation of the assistant panel.
-  Possible values: `widget` (popover anchored to the floating button), `modal` (centered dialog), `panel` (side drawer).
-  Default: `widget`.
-
----
-
-- side
-- string
-- Screen edge for the floating button; the popover and drawer anchor near it.
-  Possible values: `bottom`, `top`, `left`, `right`, `inline-start`, `inline-end`.
-  Default: `bottom`.
-
----
-
-- align
-- string
-- Alignment along the chosen edge.
-  Possible values: `start`, `center`, `end`.
-  Default: `end`.
-
----
-
-- width
-- string
-- Initial panel width as a CSS length, for example `480px` or `40vw`.
-  Applies to every variant.
-
----
-
-- height
-- string
-- Initial panel height as a CSS length.
-  The full-height `panel` variant ignores it.
-
----
-
-- resizable
-- boolean
-- Lets users resize the panel by dragging its edge.
-  Default: `false`.
-
-{% /table %}
-
-### Answer scope
-
-{% table %}
-
-- Attribute
-- Type
-- Description
-
----
-
-- locale
-- string
-- Locale the assistant uses for documentation search.
-  Must match the locale with which your content is indexed.
-  See [Scope answers to a locale](#scope-answers-to-a-locale).
-  Default: `default_locale`.
-
----
-
-- product
-- string
-- Limits documentation search to one product in a multi-product project.
-  Use the product's `name` from your project's [`products` configuration](../config/products.md), for example `Museum`.
-
----
-
-- version-folder
-- string
-- Scopes documentation search to one API version: the version folder name.
-  Set together with `version-label`; the pair is ignored when either is missing.
-  Other APIs still contribute their default versions, and non-versioned content is always included.
-
----
-
-- version-label
-- string
-- Scopes documentation search to one API version: the version label.
-  Set together with `version-folder`.
-
-{% /table %}
-
-## JavaScript API reference
-
-### Methods
-
-The `window.RedoclyAssistant` object exposes these methods and properties.
-Each method acts on every `<redocly-ai-assistant>` instance on the page.
-
-{% table %}
-
-- Method
-- Description
-
----
-
-- open()
-- Opens the assistant.
-
----
-
-- close()
-- Closes the assistant.
-
----
-
-- toggle()
-- Toggles the assistant.
-
----
-
-- ask(question, options)
-- Sends a question.
-  Opens the assistant first unless `options` is `{ open: false }`.
-
----
-
-- reset()
-- Clears the conversation, the same as the **New conversation** button.
-
----
-
-- setConfig(config)
-- Sets or merges configuration at runtime.
-  See [Update configuration at runtime](#update-configuration-at-runtime).
-
----
-
-- isOpen
-- Property that reads `true` while at least one assistant on the page is open.
-
-{% /table %}
-
-### setConfig() keys
-
-`setConfig()` accepts the camelCase form of each attribute:
-
-{% table %}
-
-- Attribute
-- setConfig() key
-
----
-
-- theme, variant, side, align, width, height, product, locale, logo, suggestions, placeholder, disclaimer
-- Same name as the attribute.
-
----
-
-- api-url
-- apiUrl
-
----
-
-- welcome-message
-- welcomeMessage
-
----
-
-- suggestions-heading
-- suggestionsHeading
-
----
-
-- header-title
-- headerTitle
-
----
-
-- trigger-text
-- triggerText
-
----
-
-- version-folder, version-label
-- version, as an object: `{ folder: '...', label: '...' }`
-
-{% /table %}
-
-`open`, `trigger-hide`, and `resizable` have no `setConfig()` key; set them as attributes.
-
-## Event reference
-
-The component dispatches events on `window` so the host page can react to what happens inside the assistant.
-Every event's `detail` includes `element`, the `<redocly-ai-assistant>` element that emitted it.
-
-{% table %}
-
-- Event
-- Description
-
----
-
-- redocly-assistant:open
-- The assistant opened.
-
----
-
-- redocly-assistant:close
-- The assistant closed.
-
----
-
-- redocly-assistant:ask
-- A question was sent.
-  `detail.question` contains the question text.
-
----
-
-- redocly-assistant:response
-- The assistant finished answering.
-  `detail` contains `question`, `answer`, `resources`, `conversationId`, and `messageId`.
-
----
-
-- redocly-assistant:error
-- A request to the assistant failed.
-  `detail.error` contains the error message.
-
----
-
-- redocly-assistant:reset
-- The conversation was cleared.
-
----
-
-- redocly-assistant:feedback
-- The user rated an answer.
-  `detail` contains `messageId`, `feedback` (`like` or `dislike`), and, for a dislike with an explanation, `reason`.
-
----
-
-- redocly-assistant:change
-- The assistant opened or closed.
-  `detail` contains `isOpen` and `element`.
-
-{% /table %}
-
-For example, to track answer ratings with your own analytics:
-
-```js
-window.addEventListener('redocly-assistant:feedback', (event) => {
-  const { feedback, messageId, reason } = event.detail;
-  analytics.track('assistant_feedback', { feedback, messageId, reason });
-});
-```
 
 ## Content Security Policy
 
@@ -616,9 +315,12 @@ The widget needs no `font-src` (it uses the system font stack) and no `frame-src
 
 ## Resources
 
-- **[Configure AI assistant support escalation](../reunite/project/ai-assistant.md)** - Let end users escalate a conversation to your support team from the embedded assistant
-- **[Analytics](../reunite/project/analytics.md)** - Track assistant conversations and feedback for your project
-- **[Environment variables](../reunite/project/env-variables.md#manage-environment-variables)** - Learn how to define and manage environment variables for your project, including `REDOCLY_CORS_ORIGINS`
+- **[Reference](./reference.md)** - Every attribute, method, and event
+- **[Identity tokens](./identity-tokens.md)** - Answer from RBAC-protected content for signed-in users
+- **[Support escalation](../reunite/project/ai-assistant.md)** - Let users send a conversation to your support team
+- **[Analytics](../reunite/project/analytics.md)** - Track assistant conversations and feedback
+- **[Environment variables](../reunite/project/env-variables.md#manage-environment-variables)** - Set project variables such as `REDOCLY_CORS_ORIGINS`
 - **[`aiAssistant`](../config/ai-assistant.md)** - Configure the AI assistant built into your project
-- **[`l10n`](../config/l10n.md)** - Configure localization for your project, including the `defaultLocale` the assistant's locale must match
-- **[Localize content](../content/localization/localize-content.md)** - Organize translated content in `@l10n` folders whose names double as the assistant's locale values
+- **[`l10n`](../config/l10n.md)** - Set `defaultLocale`, which the assistant's locale must match
+- **[Localize content](../content/localization/localize-content.md)** - Name the `@l10n` folders that supply the assistant's locale values
+- **[Translation keys](../content/localization/translation-keys.md)** - Every key the `translations` override accepts

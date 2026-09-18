@@ -330,6 +330,15 @@
   icon: robot
   page: ai-ready/index.md
   items:
+    - group: AI assistant web component
+      page: ai-assistant-web-component/ai-assistant-web-component.md
+      items:
+        - page: ai-assistant-web-component/identity-tokens.md
+          label: Identity tokens
+        - page: reunite/project/ai-assistant.md
+          label: Support escalation
+        - page: ai-assistant-web-component/reference.md
+          label: Reference
     - page: customization/mcp-server/index.md
       label: MCP servers
     - page: customization/agent-skills/index.md
