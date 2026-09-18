@@ -75,8 +75,6 @@ tags:
     description: Tools for discovering published APIs, inspecting endpoints, reviewing security schemes, and retrieving full OpenAPI descriptions.
   - name: Search
     description: Tools for searching documentation content.
-  - name: Feedback
-    description: Tools that report documentation problems to the project team.
 
 paths: {}
 
@@ -137,21 +135,23 @@ x-mcp:
       tags:
         - API Catalog
     - name: get-endpoints
-      description: Get all endpoints for a specific API.
+      description: Get all endpoints for a specific API
       inputSchema:
         type: object
         additionalProperties: false
         properties:
           name:
             type: string
-            description: API name, or a unique part of it. Omit when `filePath` is given.
+            description: API name, or a unique part of it
             minLength: 1
           version:
             type: string
-            description: API version. When omitted and several versions exist, the highest one is used.
+            description: API version
           filePath:
             type: string
-            description: Path to the API description file.
+            description: API definition file path
+        required:
+          - name
       outputSchema:
         $ref: '#/components/schemas/GetEndpointsOutput'
       tags:
@@ -164,7 +164,7 @@ x-mcp:
         properties:
           name:
             type: string
-            description: API name, or a unique part of it. Omit when `filePath` is given.
+            description: API name, or a unique part of it
             minLength: 1
           path:
             type: string
@@ -193,11 +193,12 @@ x-mcp:
             minLength: 1
           version:
             type: string
-            description: API version. When omitted and several versions exist, the highest one is used.
+            description: API version
           filePath:
             type: string
-            description: Path to the API description file.
+            description: API definition file path
         required:
+          - name
           - path
           - method
       outputSchema:
@@ -212,40 +213,44 @@ x-mcp:
         properties:
           name:
             type: string
-            description: API name, or a unique part of it. Omit when `filePath` is given.
+            description: API name, or a unique part of it
             minLength: 1
           version:
             type: string
-            description: API version. When omitted and several versions exist, the highest one is used.
+            description: API version
           filePath:
             type: string
-            description: Path to the API description file.
+            description: API definition file path
+        required:
+          - name
       outputSchema:
         $ref: '#/components/schemas/GetSecuritySchemesOutput'
       tags:
         - API Catalog
     - name: get-full-api-description
-      description: Get the complete OpenAPI description.
+      description: Get the complete OpenAPI description
       inputSchema:
         type: object
         additionalProperties: false
         properties:
           name:
             type: string
-            description: API name, or a unique part of it. Omit when `filePath` is given.
+            description: API name, or a unique part of it
             minLength: 1
           version:
             type: string
-            description: API version. When omitted and several versions exist, the highest one is used.
+            description: API version
           filePath:
             type: string
-            description: Path to the API description file.
+            description: API definition file path
+        required:
+          - name
       outputSchema:
         $ref: '#/components/schemas/GetFullApiDescriptionOutput'
       tags:
         - API Catalog
     - name: search
-      description: Search across the documentation to fetch relevant content for a given query.
+      description: Search across the documentation to fetch relevant content for a given query
       inputSchema:
         type: object
         additionalProperties: false
@@ -263,37 +268,6 @@ x-mcp:
         $ref: '#/components/schemas/SearchOutput'
       tags:
         - Search
-    - name: submit-feedback
-      description: Report a documentation page that is wrong or incomplete.
-      inputSchema:
-        type: object
-        additionalProperties: false
-        properties:
-          path:
-            type: string
-            description: Path or URL of the documentation page the feedback is about (e.g. /guides/auth).
-            minLength: 1
-            maxLength: 1000
-          summary:
-            type: string
-            description: One sentence that names what is wrong with the page.
-            minLength: 1
-            maxLength: 500
-          details:
-            type: string
-            description: Expected versus actual behavior, missing steps, or the snippet that failed.
-            maxLength: 4000
-          targetFeature:
-            type: string
-            description: The API or feature the page documents.
-            maxLength: 500
-        required:
-          - path
-          - summary
-      outputSchema:
-        $ref: '#/components/schemas/SubmitFeedbackOutput'
-      tags:
-        - Feedback
 
 components:
   securitySchemes:
@@ -355,7 +329,7 @@ components:
             $ref: '#/components/schemas/OpenApiServer'
         filePath:
           type: string
-          description: Path to the API description file.
+          description: API definition file path.
       required:
         - name
         - filePath
@@ -430,19 +404,6 @@ components:
         - page
         - totalPages
       additionalProperties: false
-    ApiDescriptionRef:
-      type: object
-      description: Reference to an API description file the lookup also matched.
-      properties:
-        version:
-          type: string
-          description: API version.
-        filePath:
-          type: string
-          description: API description file path. Pass it as `filePath` to load this definition.
-      required:
-        - filePath
-      additionalProperties: false
     GetEndpointsOutput:
       type: object
       description: Endpoint list for a single published API.
@@ -453,14 +414,6 @@ components:
         version:
           type: string
           description: API version.
-        filePath:
-          type: string
-          description: API description file path for this result.
-        otherMatches:
-          type: array
-          description: Other description files the lookup matched. Present only when several share the requested name.
-          items:
-            $ref: '#/components/schemas/ApiDescriptionRef'
         servers:
           type: array
           description: Servers defined by the published OpenAPI description.
@@ -473,7 +426,6 @@ components:
       required:
         - api
         - version
-        - filePath
         - servers
         - endpoints
       additionalProperties: false
@@ -487,14 +439,6 @@ components:
         version:
           type: string
           description: API version.
-        filePath:
-          type: string
-          description: API description file path for this result.
-        otherMatches:
-          type: array
-          description: Other description files the lookup matched. Present only when several share the requested name.
-          items:
-            $ref: '#/components/schemas/ApiDescriptionRef'
         servers:
           type: array
           description: Servers defined by the published OpenAPI description.
@@ -528,7 +472,6 @@ components:
       required:
         - api
         - version
-        - filePath
         - servers
         - endpoint
         - globalSecurity
@@ -544,14 +487,6 @@ components:
         version:
           type: string
           description: API version.
-        filePath:
-          type: string
-          description: API description file path for this result.
-        otherMatches:
-          type: array
-          description: Other description files the lookup matched. Present only when several share the requested name.
-          items:
-            $ref: '#/components/schemas/ApiDescriptionRef'
         securitySchemes:
           type: object
           description: Security schemes map from the OpenAPI components section.
@@ -562,12 +497,6 @@ components:
           items:
             type: object
             additionalProperties: true
-      required:
-        - name
-        - version
-        - filePath
-        - securitySchemes
-        - security
       additionalProperties: false
     GetFullApiDescriptionOutput:
       type: object
@@ -579,41 +508,15 @@ components:
         version:
           type: string
           description: API version.
-        filePath:
-          type: string
-          description: API description file path for this result.
-        otherMatches:
-          type: array
-          description: Other description files the lookup matched. Present only when several share the requested name.
-          items:
-            $ref: '#/components/schemas/ApiDescriptionRef'
         definition:
           type: object
-          description: Full OpenAPI description file returned by the Docs MCP server.
+          description: Full OpenAPI definition returned by the Docs MCP server.
           additionalProperties: true
       required:
         - api
         - version
-        - filePath
         - definition
       additionalProperties: false
     SearchOutput:
       type: string
       description: Markdown string containing the rendered search results.
-    SubmitFeedbackOutput:
-      type: object
-      description: Confirmation returned by the `submit-feedback` tool.
-      properties:
-        status:
-          type: string
-          enum: [received]
-        page:
-          type: string
-          description: Absolute URL of the page the feedback refers to.
-        message:
-          type: string
-      required:
-        - status
-        - page
-        - message
-      additionalProperties: false

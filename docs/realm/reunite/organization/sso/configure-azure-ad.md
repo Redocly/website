@@ -32,7 +32,6 @@ The following screenshot shows the SSO configuration screen.
   src="../../images/configure-saml-redocly-1.png"
   alt="SSO configuration"
   withLightbox=true
-  framed=true
 /%}
 
 Keep this page open for reference, the values here are used in the next steps.
@@ -95,7 +94,6 @@ Get ready to use group information from Microsoft Entra with Redocly RBAC by con
     src="../../images/ad-group-claim.png"
     alt="AD group claim"
     withLightbox=true
-    framed=true
    /%}
 
 ## Finish SSO configuration in Redocly
@@ -115,7 +113,6 @@ To do this, you need to Select **Configure team claim mapping** checkbox and add
   src="../../images/claim-mapping.png"
   alt="Claim mapping"
   withLightbox=true
-  framed=true
 /%}
 
 Select **Save** to finish the configuration.

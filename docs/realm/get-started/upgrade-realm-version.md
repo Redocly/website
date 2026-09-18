@@ -58,7 +58,6 @@ To verify the version your project is using:
     src="../content/images/view-project-dropdown.png"
     alt="Screenshot of top right corner of Reunite editor with View drop-down"
     withLightbox=true
-    framed=true
    /%}
 
 2. Right-click anywhere on a page and select **Inspect** or **Inspect Element**.
@@ -69,7 +68,6 @@ To verify the version your project is using:
     src="../content/images/console-version.png"
     alt="Screenshot of the console in Chrome showing the Redocly Realm version"
     withLightbox=true
-    framed=true
    /%}
 
 After you have determined what version your project is running, you can find the latest version to help you decide if you want to upgrade.
@@ -186,7 +184,6 @@ To run a specific version in Reunite:
     src="../content/images/view-project-dropdown.png"
     alt="Screenshot of top right corner of Reunite editor with View drop-down"
     withLightbox=true
-    framed=true
    /%}
 
 6. [Check the version](#check-product-version).

@@ -39,7 +39,6 @@ plans:
     height=200
     withLightbox=true
     align="center"
-    framed=true
   /%}
 
 ## Eject the tabs component in Reunite
@@ -57,7 +56,6 @@ plans:
     src="./images/eject-tabs-component.png"
     height=400
     withLightbox=true
-    framed=true
   /%}
 
   After ejecting, the component is added to the `@theme` folder at the path `@theme/markdoc/components/Tabs/Tabs.tsx` where we can modify it.

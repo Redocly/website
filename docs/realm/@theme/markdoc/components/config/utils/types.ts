@@ -1,6 +1,7 @@
 export enum Products {
   REALM = 'Realm',
   REDOC = 'Redoc',
+  REDOC_CE = 'Redoc CE',
   REVEL = 'Revel',
   REEF = 'Reef',
   CLI = 'Redocly CLI',

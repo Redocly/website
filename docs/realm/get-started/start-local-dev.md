@@ -113,7 +113,6 @@ Make changes incrementally and preview each update.
     src="./images/logo.png"
     alt="Redocly logo"
     withLightbox=true
-    framed=true
    /%}
 
    Use the following configuration to set the logo for your site:
@@ -177,7 +176,6 @@ API reference documentation is a vital part of API experience, and our Redoc ren
   src="images/getting-started-redoc.png"
   alt="Screenshot of Redoc rendering the Museum API"
   withLightbox=true
-  framed=true
 /%}
 
 Many aspects of the API documentation are configurable, visit the [openapi configuration page](../config/openapi/index.md) for more information and ideas.
@@ -221,14 +219,12 @@ Your site looks a bit different to the default, as you can see in the following 
   src="./images/get-started-nostyle.png"
   alt="Get started demo site without styles"
   withLightbox=true
-  framed=true
 /%}
 
 {% img
   src="./images/get-started-style.png"
   alt="Get started demo site with styles"
   withLightbox=true
-  framed=true
 /%}
 
 Explore the [CSS variables reference](../branding/css-variables/index.md) or inspect your site with web developer tools in your browser to identify the variables to change.

@@ -22,7 +22,6 @@ Use the `breadcrumbs` option to control the links displayed at the top of the pa
   src="./images/breadcrumbs.png"
   alt="Screenshot of page in project with breadcrumbs"
   withLightbox=true
-  framed=true
 /%}
 
 Breadcrumbs are enabled by default, but can be disabled to remove them from your published project.

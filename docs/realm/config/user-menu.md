@@ -23,7 +23,6 @@ The menu contains the avatar, the user's email address, links to pages you can c
   src="./images/user-menu.png"
   alt="Screenshot of the user menu with the dropdown displayed"
   withLightbox=true
-  framed=true
 /%}
 
 {% admonition type="info" name="Required configuration" %}

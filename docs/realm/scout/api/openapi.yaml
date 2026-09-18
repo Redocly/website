@@ -452,10 +452,15 @@ components:
           maximum: 100
           default: 10
           description: Value showing how many items are in the page limit.
+        total:
+          type: integer
+          description: Count of items across all pages.
+          minimum: 0
       required:
         - nextPage
         - previousPage
         - limit
+        - total
     GitCommitCheck:
       type: object
       properties:
