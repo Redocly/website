@@ -88,6 +88,10 @@ Users can also start over with the **New conversation** button in the panel head
 
 ## Update configuration at runtime
 
+Changing an HTML attribute after the assistant loads applies immediately, so framework bindings such as Vue's `:theme` or Angular's `[attr.theme]` keep working past the first render.
+The `open` attribute is the exception: it seeds the initial state only.
+Use `open()` and `close()` to control the panel afterwards.
+
 Use `window.RedoclyAssistant.setConfig()` to set or change the config dynamically.
 You can use it instead of the matching HTML attributes or alongside them:
 
