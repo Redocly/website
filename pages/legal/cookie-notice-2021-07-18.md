@@ -1,7 +1,7 @@
 ---
 seo:
   title: Cookie Notice
-slug: /cookie-notice
+slug: /cookie-notice-2021-07-18
 markdown:
     toc:
         hide: true
