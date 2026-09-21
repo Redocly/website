@@ -1,7 +1,7 @@
 ---
 seo:
   title: Privacy Notice
-slug: /privacy-notice
+slug: /legal/privacy-notice-2021-07-18
 disableLastModified: true
 markdown:
     toc:
