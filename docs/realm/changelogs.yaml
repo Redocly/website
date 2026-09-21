@@ -54477,15 +54477,6 @@ reunite:
         - Added target branch change event to the pull request timeline.
       patch: []
     dependencies: {}
-  v2026-09-21.5:
-    timestamp: 1789999119000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue where connecting a Reunite project to GitHub, GitLab, Bitbucket, or Azure DevOps redirected to a 404 page instead of the
-          provider authorization window.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
