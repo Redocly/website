@@ -493,19 +493,28 @@
 --button-group-divider-opacity: 1;
 --button-group-divider-color-disabled: var(--color-warm-grey-2);
 
-.button-group-primary {
-  --button-group-divider-color: var(--button-content-color-inverse);
+.button-group-primary .button {
+  --button-group-divider-color: var(--button-color);
   --button-group-divider-opacity: 0.32;
 }
 
-.button-group-secondary {
-  --button-group-divider-color: var(--button-content-color);
+.button-group-secondary .button {
+  --button-group-divider-color: var(--button-color);
   --button-group-divider-opacity: 0.12;
 }
 
-.button-group-outlined {
+.button-group-outlined .button {
   --button-group-divider-color: var(--button-border-color);
   --button-group-divider-opacity: 1;
+}
+
+.button-group-primary .button.button-tone-danger,
+.button-group-secondary .button.button-tone-danger {
+  --button-group-divider-color: var(--button-content-color-danger);
+}
+
+.button-group-outlined .button.button-tone-danger {
+  --button-group-divider-color: var(--button-border-color-danger);
 }
 ```
 
