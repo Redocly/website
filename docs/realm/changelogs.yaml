@@ -29576,6 +29576,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/config':
+  0.57.0:
+    timestamp: 1790081274000
+    changes:
+      minor:
+        - Added form control hints to improve the display of `redocly.yaml` options in Reunite.
+      patch: []
+    dependencies: {}
   0.56.0:
     timestamp: 1788448870000
     changes:
