@@ -3,6 +3,16 @@ import Page from '@redocly/marketing-pages/pages/editor-preview/editor-preview.p
 import { RedocStandalone } from '@redocly/api-docs/lib/RedocStandalone.js';
 import { safeSlugify } from '@redocly/api-docs/lib/utils/string.js';
 
+type RedocStandaloneProps = React.ComponentProps<typeof RedocStandalone>;
+
+// The editor preview page passes `definition`, which @redocly/api-docs 0.3 renamed to `spec`
+function RedocStandaloneWithDefinition({
+  definition,
+  ...props
+}: RedocStandaloneProps & { definition?: RedocStandaloneProps['spec'] }) {
+  return <RedocStandalone spec={definition} {...props} />;
+}
+
 export default function PreviewRoute() {
   const [isAllowed, setIsAllowed] = React.useState(false);
 
@@ -26,7 +36,7 @@ export default function PreviewRoute() {
 
   return (
     <Page
-      RedoclyOpenAPIDocs={RedocStandalone}
+      RedoclyOpenAPIDocs={RedocStandaloneWithDefinition}
       safeSlugify={safeSlugify}
     />
   );
