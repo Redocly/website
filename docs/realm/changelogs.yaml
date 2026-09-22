@@ -51824,6 +51824,83 @@
     dependencies:
       '@redocly/theme': 0.53.0-next.3
       '@redocly/openapi-docs': 3.9.0-next.3
+'@redocly/ai-assistant':
+  0.2.4:
+    timestamp: 1790081274000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the AI assistant truncated an answer, or displayed replacement characters in it.
+        - Fixed an issue where the AI assistant reported a partly streamed answer as complete when the answer stream failed.
+        - Fixed unreadable contact support form in the AI assistant’s dark theme by improving field and button colors.
+        - Fixed the AI assistant to block unsafe markup, including scripts and page imitation, in answers.
+    dependencies: {}
+  0.2.3:
+    timestamp: 1789726923000
+    changes:
+      minor: []
+      patch:
+        - Fixed keyboard and screen reader accessibility issues in the AI assistant web component.
+    dependencies: {}
+  0.2.2:
+    timestamp: 1789548423000
+    changes:
+      minor: []
+      patch:
+        - Fixed divider styling in markdown.
+    dependencies: {}
+  0.2.1:
+    timestamp: 1787838984000
+    changes:
+      minor: []
+      patch:
+        - Updated default border radius for components.
+    dependencies: {}
+  0.2.0:
+    timestamp: 1787763194000
+    changes:
+      minor:
+        - Added identity token support to the AI assistant web component, so it can answer with RBAC-protected content for signed-in users.
+      patch: []
+    dependencies: {}
+  0.1.0:
+    timestamp: 1786957428000
+    changes:
+      minor:
+        - >-
+          Added answer ratings to the AI assistant web component. Readers rate an answer with thumbs up or down, optionally with a reason for a thumbs
+          down, and ratings are visible in the project's analytics.
+        - >-
+          Added `ask()` and `reset()` methods to `window.RedoclyAssistant`, and lifecycle events on `window` for open, close, ask, response, error,
+          reset, and feedback. `setConfig(null)` clears an earlier override so that element attributes apply again.
+        - >-
+          Added `header-title`, `logo`, `trigger-text`, `placeholder`, and `disclaimer` attributes to the AI assistant web component to better match
+          the wording and branding of the host page.
+        - >-
+          Added `suggestions` and `suggestions-heading` attributes to the AI assistant web component to display starter questions as clickable options
+          when the conversation is empty.
+        - >-
+          Added support ticket escalation to the AI assistant web component. When escalation is enabled, the assistant shows a Contact support button
+          that submits a ticket with the conversation transcript to the project's support email.
+        - >-
+          Added `theme`, `variant`, `side`, `align`, `width`, `height`, and `resizable` attributes to the AI assistant web component to customize its
+          appearance and layout, including options for popover, modal, or side drawer display and color schemes.
+      patch: []
+    dependencies: {}
+  0.0.3:
+    timestamp: 1784546910000
+    changes:
+      minor: []
+      patch:
+        - Added the `setConfig` function to dynamically set or change AI assistant configuration.
+    dependencies: {}
+  0.0.2:
+    timestamp: 1781873914000
+    changes:
+      minor: []
+      patch:
+        - Release Redocly AI assistant as web component.
+    dependencies: {}
 reunite:
   v2023-11-15.1:
     timestamp: 1700042189000

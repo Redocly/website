@@ -36,6 +36,7 @@ export const SHORT_NAMES = {
   '@redocly/revel': 'Revel',
   '@redocly/redoc': 'Redoc',
   reunite: 'Reunite',
+  '@redocly/ai-assistant': 'AI assistant web component',
   // TODO: uncomment before first replay release
   // replay: 'Replay',
 };
@@ -43,6 +44,15 @@ export const SHORT_NAMES = {
 export type ShortNameValues = (typeof SHORT_NAMES)[keyof typeof SHORT_NAMES];
 
 const DEFAULT_FILTERS = ['Realm', 'Reunite'];
+
+function getHashTarget(): string {
+  const target = window.location.hash.slice(1);
+  try {
+    return decodeURIComponent(target);
+  } catch {
+    return target;
+  }
+}
 const DEFAULT_ITEMS_TO_RENDER = 20;
 
 interface NextChangelogItem {
@@ -232,7 +242,7 @@ export default function Changelog() {
     const hash = window.location.hash;
     if (!hash || !hash.startsWith('#')) return;
 
-    const [productPart] = hash.slice(1).split('@');
+    const [productPart] = getHashTarget().split('@');
     if (!productPart) return;
 
     const knownShortNames = Object.values(SHORT_NAMES) as ShortNameValues[];
@@ -251,7 +261,7 @@ export default function Changelog() {
       return;
     }
 
-    const targetId = hash.slice(1);
+    const targetId = getHashTarget();
     const hasScrolled = scrollToHashTarget(targetId);
     if (hasScrolled) return;
 
@@ -264,6 +274,7 @@ export default function Changelog() {
     }
 
     if (filteredChangelogs.length > itemsToRender) {
+      // oxlint-disable-next-line react-you-might-not-need-an-effect/no-chain-state-updates -- renders more entries until the linked one exists in the DOM
       setItemsToRender((prev) => prev + DEFAULT_ITEMS_TO_RENDER);
     } else {
       hasHandledHashRef.current = true;

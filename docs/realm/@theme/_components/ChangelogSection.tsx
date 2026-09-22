@@ -5,6 +5,7 @@ import dynamicReact from '@markdoc/markdoc/dist/react';
 import markdoc from '@markdoc/markdoc';
 import { Highlight, HighlightContext } from './Highlight';
 import { Heading } from '@redocly/theme/markdoc/components/Heading/Heading';
+import { AiStarsGradientIcon } from '@redocly/theme/icons/AiStarsGradientIcon/AiStarsGradientIcon';
 import { SHORT_NAMES } from '../../changelog.page';
 import { RealmIcon } from '../_icons/Realm';
 import { ReefIcon } from '../_icons/Reef';
@@ -21,6 +22,7 @@ const PRODUCT_ICONS = {
   '@redocly/redoc': RedocIcon,
   reunite: ReuniteIcon,
   replay: ReplayIcon,
+  '@redocly/ai-assistant': AiStarsGradientIcon,
 };
 
 type ChangelogSectionProps = {
