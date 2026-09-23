@@ -525,6 +525,10 @@ components:
           type: object
           description: Security schemes map from the OpenAPI components section.
           additionalProperties: true
+        components:
+          type: object
+          description: Components that the endpoint references, keyed as the source OpenAPI description keys them. A `$ref` in `endpoint` resolves against the root of the result.
+          additionalProperties: true
       required:
         - api
         - version
