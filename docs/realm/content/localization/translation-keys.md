@@ -303,6 +303,18 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- search.searchItem.enum
+- Label for the matched enum values shown on a search result row
+- Enum
+
+---
+
+- search.searchItem.example
+- Label for the matched example value shown on a search result row
+- Example
+
+---
+
 - search.showMore
 - Link displayed in each group of search results to get more results
 - Show more
