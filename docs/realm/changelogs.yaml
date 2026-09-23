@@ -54873,8 +54873,8 @@ replay:
         - Improved typing performance in the request URL field.
     dependencies:
       '@redocly/theme': 0.65.0-next.1
-  0.21.0:
-    timestamp: 1780576100000
+  0.20.1:
+    timestamp: 1780402032000
     changes:
       minor:
         - Improved accuracy and relevance of AI agent results.
@@ -54922,8 +54922,8 @@ replay:
         - Updated `@redocly/openapi-core` and `@redocly/respect-core` to version `2.34.0`.
     dependencies:
       '@redocly/theme': 0.67.0
-  0.23.0:
-    timestamp: 1784585932000
+  0.22.3:
+    timestamp: 1784530629000
     changes:
       minor: []
       patch:
