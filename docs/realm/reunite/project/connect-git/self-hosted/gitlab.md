@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Create an application in your GitLab self-managed
+# Connect GitLab self-managed
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

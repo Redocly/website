@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Manually sync remote content
+# Sync remote content folders manually
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -20,7 +20,7 @@ Make sure you have the following:
 
 - an existing remote content folder
 
-## Manually sync remote content folders
+## Sync remote folders
 
 To keep your content up-to-date with changes made in the remote, you can sync the folder.
 

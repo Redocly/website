@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Configure Replay with dynamic API data
+# Configure dynamic API data for Replay
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Customization
+# Extend with code
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -27,8 +27,8 @@ Create custom pages with React components for dynamic, interactive content and l
 Create custom page layouts and templates for consistent design patterns.
 {% /card %}
 
-{% card title="NPM libraries" icon="brands npm" to="./import-npm-library.md" %}
-Import and use external NPM packages to add functionality to your project.
+{% card title="npm libraries" icon="brands npm" to="./import-npm-library.md" %}
+Import and use external npm packages to add functionality to your project.
 {% /card %}
 
 {% card title="Built-in components" icon="puzzle-piece" to="./react-components/index.md" %}

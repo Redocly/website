@@ -8,7 +8,7 @@ plans:
   - Enterprise+
 ---
 
-# Eject components using the CLI
+# Eject components using Redocly CLI
 
 The `eject component` command unlocks powerful component customization, allowing you to tailor components to specific project needs.
 Ejecting a component creates a local copy of its source code in your project, where you can modify the component's styles, structure, or behavior.

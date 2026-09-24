@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Font Awesome Icons
+# Font Awesome Icons React component
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

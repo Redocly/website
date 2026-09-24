@@ -13,7 +13,7 @@ markdown:
     hide: true
 ---
 
-# Navigation elements
+# Build navigation
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# List of customizable components
+# Built-in React components
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

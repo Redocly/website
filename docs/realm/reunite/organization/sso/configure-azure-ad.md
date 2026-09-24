@@ -62,16 +62,16 @@ Add the information needed for Microsoft Entra to connect to Redocly.
 {% tab label="US residency" %}
 
 - Identifier (Entity ID): `<COPY VALUE FROM REDOCLY SAML SETUP PAGE>`
-- Reply URL (ACS URL): https://auth.cloud.redocly.com/sso/saml/callback
+- Reply URL (ACS URL): `https://auth.cloud.redocly.com/sso/saml/callback`
 - Sign on URL: `https://auth.cloud.redocly.com/org/<organization-id>`
 
-You can copy your organization ID from the URL: `https://app.cloud.redocly.com/org/<organization-id>`/`
+You can copy your organization ID from the URL: `https://app.cloud.redocly.com/org/<organization-id>`
 {% /tab %}
 
 {% tab label="EU residency" %}
 
 - Identifier (Entity ID): `<COPY VALUE FROM REDOCLY SAML SETUP PAGE>`
-- Reply URL (ACS URL): https://auth.cloud.eu.redocly.com/sso/saml/callback
+- Reply URL (ACS URL): `https://auth.cloud.eu.redocly.com/sso/saml/callback`
 - Sign on URL: `https://auth.cloud.eu.redocly.com/org/<organization-id>`
 
 You can copy your organization ID from the URL: `https://app.cloud.eu.redocly.com/org/<organization-id>`

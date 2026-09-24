@@ -23,7 +23,7 @@ plans:
     }
   ]
 %}
-# Render weather data from API function in a Markdoc tag
+# API functions tutorial: render weather data in a Markdoc tag
 
 Build a custom Markdoc tag that renders live weather data by calling an API function.
 

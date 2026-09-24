@@ -4,7 +4,7 @@ keywords:
     - theme
 ---
 
-# Branding and customization
+# Style your site
 
 Redocly provides multiple approaches to customize your documentation's appearance and functionality.
 Choose the approach that best fits your technical requirements and team capabilities.
