@@ -1,4 +1,26 @@
 '@redocly/realm':
+  0.138.0-next.2:
+    timestamp: 1790250956000
+    changes:
+      minor:
+        - Added output schema to the MCP `execute` tool and complete tool annotations to the MCP server tools.
+      patch:
+        - Fixed a `ResizeObserver loop` error in Safari and Firefox when navigating API reference pages from the sidebar.
+        - Fixed the AI assistant providing answers without using the project API tools on projects with protected content.
+        - Fixed an issue where a versioned API description could disappear or show the wrong version during local development.
+        - Fixed an issue where samples in OpenAPI docs displayed the wrong variant for a `oneOf` nested inside another `oneOf`.
+        - >-
+          Fixed an issue where clicking an anchor link on a heading inside a partial included in an API description caused a 404 error instead of
+          navigating to the heading.
+        - Hardened RBAC enforcement for page content.
+        - Fixed an issue where setting `openapi.corsProxyUrl` to an empty string did not disable the CORS proxy in the **Try it** console.
+        - Fixed an issue where the AI assistant send button had no accessible name for screen readers.
+        - Fixed server-side rendering of localized projects where UI labels appeared in the wrong language alongside hydration warnings.
+        - Fixed an issue where the version picker listed versions of a page that RBAC hid from the user.
+        - Fixed an issue where the version picker disappeared on pages that had no items in the sidebar.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.2
+      '@redocly/theme': 0.70.0-next.2
   0.138.0-next.1:
     timestamp: 1790146936000
     changes:
@@ -7543,6 +7565,21 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.138.0-next.2:
+    timestamp: 1790250956000
+    changes:
+      minor:
+        - Added output schema to the MCP `execute` tool and complete tool annotations to the MCP server tools.
+      patch:
+        - Fixed the AI assistant providing answers without using the project API tools on projects with protected content.
+        - Fixed an issue where a versioned API description could disappear or show the wrong version during local development.
+        - Hardened RBAC enforcement for page content.
+        - Fixed an issue where the AI assistant send button had no accessible name for screen readers.
+        - Fixed an issue where the version picker listed versions of a page that RBAC hid from the user.
+        - Fixed an issue where the version picker disappeared on pages that had no items in the sidebar.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.2
+      '@redocly/theme': 0.70.0-next.2
   0.138.0-next.1:
     timestamp: 1790146936000
     changes:
@@ -13980,6 +14017,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.138.0-next.2:
+    timestamp: 1790250956000
+    changes:
+      minor:
+        - Added output schema to the MCP `execute` tool and complete tool annotations to the MCP server tools.
+      patch:
+        - Fixed the AI assistant providing answers without using the project API tools on projects with protected content.
+        - Hardened RBAC enforcement for page content.
+        - Fixed an issue where the AI assistant send button had no accessible name for screen readers.
+        - Fixed server-side rendering of localized projects where UI labels appeared in the wrong language alongside hydration warnings.
+        - Fixed an issue where the version picker listed versions of a page that RBAC hid from the user.
+        - Fixed an issue where the version picker disappeared on pages that had no items in the sidebar.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.2
+      '@redocly/theme': 0.70.0-next.2
   0.138.0-next.1:
     timestamp: 1790146936000
     changes:
@@ -20412,6 +20464,26 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.138.0-next.2:
+    timestamp: 1790250956000
+    changes:
+      minor:
+        - Added output schema to the MCP `execute` tool and complete tool annotations to the MCP server tools.
+      patch:
+        - Fixed a `ResizeObserver loop` error in Safari and Firefox when navigating API reference pages from the sidebar.
+        - Fixed the AI assistant providing answers without using the project API tools on projects with protected content.
+        - Fixed an issue where samples in OpenAPI docs displayed the wrong variant for a `oneOf` nested inside another `oneOf`.
+        - >-
+          Fixed an issue where clicking an anchor link on a heading inside a partial included in an API description caused a 404 error instead of
+          navigating to the heading.
+        - Hardened RBAC enforcement for page content.
+        - Fixed an issue where setting `openapi.corsProxyUrl` to an empty string did not disable the CORS proxy in the **Try it** console.
+        - Fixed an issue where the AI assistant send button had no accessible name for screen readers.
+        - Fixed an issue where the version picker listed versions of a page that RBAC hid from the user.
+        - Fixed an issue where the version picker disappeared on pages that had no items in the sidebar.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.2
+      '@redocly/theme': 0.70.0-next.2
   0.138.0-next.1:
     timestamp: 1790146936000
     changes:
@@ -27017,6 +27089,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.70.0-next.2:
+    timestamp: 1790250956000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the AI assistant send button had no accessible name for screen readers.
+    dependencies: {}
   0.70.0-next.1:
     timestamp: 1790146936000
     changes:
@@ -31127,6 +31206,20 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.3.0-next.2:
+    timestamp: 1790250956000
+    changes:
+      minor: []
+      patch:
+        - Fixed a `ResizeObserver loop` error in Safari and Firefox when navigating API reference pages from the sidebar.
+        - Fixed an issue where samples in OpenAPI docs displayed the wrong variant for a `oneOf` nested inside another `oneOf`.
+        - >-
+          Fixed an issue where clicking an anchor link on a heading inside a partial included in an API description caused a 404 error instead of
+          navigating to the heading.
+        - Fixed an issue where setting `openapi.corsProxyUrl` to an empty string did not disable the CORS proxy in the **Try it** console.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.2
+      '@redocly/replay': 0.29.0-next.2
   0.3.0-next.1:
     timestamp: 1790146936000
     changes:
@@ -32572,6 +32665,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.21.0-next.2:
+    timestamp: 1790250956000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.138.0-next.2
+      '@redocly/redoc': 0.138.0-next.2
+      '@redocly/redoc-revel': 0.138.0-next.2
+      '@redocly/redoc-reef': 0.138.0-next.2
+      '@redocly/theme': 0.70.0-next.2
   1.21.0-next.1:
     timestamp: 1790146936000
     changes:
@@ -41546,6 +41650,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.29.0-next.2:
+    timestamp: 1790250956000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0-next.2
   0.29.0-next.1:
     timestamp: 1790146936000
     changes:
@@ -44126,6 +44237,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.21.0-next.2:
+    timestamp: 1790250956000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0-next.2
   0.21.0-next.1:
     timestamp: 1790146936000
     changes:
