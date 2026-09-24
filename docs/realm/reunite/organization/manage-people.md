@@ -139,7 +139,7 @@ If you are using [RBAC](../../access/rbac.md), you can grant permissions to the 
 
 {% admonition type="warning" name="Add team first" %}
 You must add your team **before** you can complete these steps.
-See [Teams](./teams.md#create-a-new-team) for more information.
+See [Manage teams](./teams.md#create-a-new-team) for more information.
 {% /admonition %}
 
 To add a person to a team:

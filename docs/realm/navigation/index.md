@@ -13,7 +13,7 @@ markdown:
     hide: true
 ---
 
-# Navigation elements
+# Build navigation
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -226,4 +226,4 @@ See the [localization configuration](../config/l10n.md) for complete setup detai
 - **[Front matter options](../config/front-matter-config.md)** - Page-specific navigation overrides
 - **[Sidebar file reference](./sidebars.md)** - Complete sidebars.yaml syntax
 - **[Branding and styling](../branding/index.md)** - Visual customization of navigation elements
-- **[Search in Realm](./search.md)** - Learn how Realm processes your content and serves search results
+- **[Configure search](./search.md)** - Learn how Realm processes your content and serves search results

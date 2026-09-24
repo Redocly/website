@@ -33,7 +33,7 @@ npx @redocly/cli eject component ext/configure.ts
 
 This command creates a local copy of `configure.ts` in your project's `@theme` folder.
 
-## Configure request values
+## Configure global request values
 
 The `configure.ts` file exports a `configure` function that receives a context parameter and returns request values.
 The context parameter provides information about the current operation, user, and servers from the OpenAPI description, which you can use to dynamically configure request values.
@@ -502,5 +502,5 @@ This allows you to provide different environment variable values based on the se
 
 - **[x-codeSamples extension](../content/api-docs/openapi-extensions/x-code-samples.md)** - Add custom code samples to your OpenAPI description that work with configured request values for enhanced API documentation
 - **[Component ejection guide](./eject-components/index.md)** - Learn to eject and customize built-in components for advanced request value handling and UI modifications
-- **[Configure Replay with dynamic API data](./configure-dynamic-replay-values.md)** - Dynamically configure request values by fetching data from external APIs when Replay is opened
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project
+- **[Configure dynamic API data for Replay](./configure-dynamic-replay-values.md)** - Dynamically configure request values by fetching data from external APIs when Replay is opened
+- **[Extend with code](./index.md)** - Discover customizable components and customization options for your project

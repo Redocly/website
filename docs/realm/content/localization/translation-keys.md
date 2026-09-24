@@ -303,18 +303,6 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- search.searchItem.enum
-- Label for the matched enum values shown on a search result row
-- Enum
-
----
-
-- search.searchItem.example
-- Label for the matched example value shown on a search result row
-- Example
-
----
-
 - search.showMore
 - Link displayed in each group of search results to get more results
 - Show more
@@ -452,12 +440,6 @@ This page contains the list of all predefined translation keys used in default U
 - search.ai.resourcesFound.resources
 - Label for resources found by the AI assistant
 - resources
-
----
-
-- search.ai.send
-- Accessible name of the button that submits a question to the AI assistant
-- Send question
 
 ---
 
@@ -1296,13 +1278,13 @@ This page contains the list of all predefined translation keys used in default U
 
 - catalog.history.button.label
 - Label for catalog entity version history button
-- Version
+- Version history
 
 ---
 
 - catalog.history.sidebar.title
 - Title for catalog entity version history sidebar
-- Version
+- Version history
 
 ---
 
@@ -1324,9 +1306,9 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- catalog.history.version.latest
-- Marker appended to the default version in catalog entity history
-- latest
+- catalog.history.version.default
+- Label for default version in catalog entity history
+- Default
 
 ---
 

@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Add remote files from GitLab
+# Add remote content from GitLab
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

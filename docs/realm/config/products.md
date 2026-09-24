@@ -19,7 +19,6 @@ This option configuration creates a product picker in the navbar and offers the 
   src="./images/product-picker.png"
   alt="Screenshot with product picker in navbar"
   withLightbox=true
-  framed=true
 /%}
 
 ## Options
@@ -184,5 +183,5 @@ To hide the product picker globally:
 ## Resources
 
 - **[Multi-product overview](../navigation/multi-product.md)** - Conceptual guide to multi-product documentation including product switching and organization strategies
-- **[Navigation elements](../navigation/index.md)** - Configure navigation elements and structures for multi-product sites with product-specific navigation
+- **[Build navigation](../navigation/index.md)** - Configure navigation elements and structures for multi-product sites with product-specific navigation
 - **[Style products individually](../branding/customize-styles.md#style-products-individually)** - Add custom styling to individual products

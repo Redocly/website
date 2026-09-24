@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Configure Replay with dynamic API data
+# Configure dynamic API data for Replay
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -571,4 +571,4 @@ The `useConfigureReplay` hook returns an object with:
 
 - **[Configure request values](./configure-request-values.md)** - Set static request values for headers, parameters, and security details in your OpenAPI descriptions
 - **[Component ejection guide](./eject-components/index.md)** - Learn to eject and customize built-in components for advanced request value handling and UI modifications
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project
+- **[Extend with code](./index.md)** - Discover customizable components and customization options for your project

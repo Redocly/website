@@ -33,7 +33,6 @@ You can see which builds are in draft mode on the **Deployments** page.
   alt="Draft mode banner above a deployments table listing production and preview builds marked as Draft"
   src="../images/draft-deployments-list.png"
   withLightbox=true
-  framed=true
 /%}
 
 Each deployment created while the project is in draft mode is labeled with a **Draft** badge.
@@ -61,7 +60,7 @@ This makes draft mode useful for controlled review and internal validation befor
 Before you click **Go live**, review the following:
 
 - Who can view the project after you remove draft protection.
-- Whether you need to review or configure [access control](../../access/index.md) for the project.
+- Whether you need to review or configure [site access](../../access/index.md) for the project.
 - If your production branch and deployment settings are ready for a live deployment.
 - If your content, API descriptions, and custom domain settings are ready to reach external users.
 
@@ -85,7 +84,6 @@ To publish a draft project:
     alt="Projects list with live and draft project cards; the draft project shows a Draft badge"
     src="../images/draft-projects-list.png"
     withLightbox=true
-    framed=true
   /%}
 
 1. In the editor banner, click **Go live**.
@@ -93,7 +91,6 @@ To publish a draft project:
     alt="Project Editor with a draft mode banner across the top and a Go live button on the right"
     src="../images/draft-project-inline-status.png"
     withLightbox=true
-    framed=true
   /%}
 
 1. Confirm the action in the modal.
@@ -101,7 +98,6 @@ To publish a draft project:
     alt="Go live confirmation dialog with project information, branch and commit to publish, and Cancel and Go live actions"
     src="../images/draft-project-go-live-confirmation.png"
     withLightbox=true
-    framed=true
   /%}
 
 Reunite starts a new production build for the project and removes draft mode from this and future builds.
@@ -114,5 +110,5 @@ The project switches to high-availability production scaling.
 - **[Deployments](./deployments.md)** - Track the new build after you click **Go live**
 - **[Manage projects](./manage-projects.md)** - Create, configure, and organize projects in Reunite
 - **[Branches and deployments](./branches-and-deployments.md)** - Configure production branches, branch deployments, and preview behavior
-- **[Access control](../../access/index.md)** - Understand authentication, authorization, roles, teams, and how they affect who can view your project and content
+- **[Control site access](../../access/index.md)** - Understand authentication, authorization, roles, teams, and how they affect who can view your project and content
 - **[Roles and permissions](../../access/roles.md)** - Learn how organization and project permissions affect access to project actions

@@ -39,7 +39,6 @@ Under **Summary**, click **Lint** to display the report.
   src="../images/reunite-deploy-scorecard.png"
   alt="Classic scorecard information in Deployments"
   withLightbox=true
-  framed=true
 /%}
 
 You can expand each row of the table, switch between the scorecard levels and drill down the table to display warnings and errors.
@@ -48,7 +47,6 @@ You can expand each row of the table, switch between the scorecard levels and dr
   src="../images/reunite-deploy-scorecard-expanded.png"
   alt="Expanded classic scorecard report in Deployments"
   withLightbox=true
-  framed=true
 /%}
 
 If you have an open pull request, you can access the same report by opening the pull request, selecting the **Checks** tab, and clicking **Lint**.
@@ -57,7 +55,6 @@ If you have an open pull request, you can access the same report by opening the 
   src="../images/reunite-pull-request-scorecard.png"
   alt="Classic scorecard report in a pull request"
   withLightbox=true
-  framed=true
 /%}
 
 ## Scorecard labels
@@ -67,7 +64,7 @@ They appear next to the names of your API descriptions in Reunite and on your pu
 
 ## Resources
 
-- **[Ignore link checker](./ignore-link-checker.md)** - Set Realm CI/CD jobs to ignore broken links
+- **[Ignore the link checker](./ignore-link-checker.md)** - Set Realm CI/CD jobs to ignore broken links
 - **[Configure classic scorecard](./configure-classic-scorecard.md)** - Add Redocly built-in or custom rulesets to classic scorecards for comprehensive API quality assessment and tracking
 - **[Classic scorecard configuration reference](../../config/scorecard-classic.md)** - Complete reference for `scorecardClassic` configuration options and customization settings
 - **[Classic catalog configuration reference](../../config/catalog-classic.md)** - Complete reference for  `catatlogClassic` configuration options and customization settings

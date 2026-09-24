@@ -123,7 +123,7 @@ This example uses:
 
 ## Resources
 
-- **[Role-based access control (RBAC)](../../access/rbac.md)** - Configure access to your project based on roles and team membership
+- **[Role-based access control](../../access/rbac.md)** - Configure access to your project based on roles and team membership
 - **[Markdoc variables](../../customization/markdoc-variables.md)** - Add dynamic data to your Markdoc content
 - **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
 - **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

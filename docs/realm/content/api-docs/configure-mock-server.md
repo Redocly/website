@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Configure mock server
+# Configure the mock server
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

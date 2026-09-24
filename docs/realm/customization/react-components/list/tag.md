@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Tag
+# Tag React component
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -171,4 +171,4 @@ import { Tag } from '@redocly/theme/components/Tag/Tag';
 
 ## Resources
 
-- **[List of customizable components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects
+- **[Built-in React components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects

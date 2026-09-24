@@ -9,11 +9,11 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Teams
+# Manage teams
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Teams are groups of users that form an important part of configuring [role-based access control (RBAC)](../../access/rbac.md) for your projects.
+Teams are groups of users that form an important part of configuring [role-based access control](../../access/rbac.md) for your projects.
 You can assign users to more than one team and manage team composition to control project access.
 
 ## Team management modes
@@ -242,7 +242,7 @@ Delete a team from the **Teams** page using the following steps:
 
 ## Resources
 
-- **[Role-based access control (RBAC)](../../access/rbac.md)** - Understand the components and concepts behind Redocly's role-based access control system
+- **[Role-based access control](../../access/rbac.md)** - Understand the components and concepts behind Redocly's role-based access control system
 - **[Roles and permissions](../../access/roles.md)** - Complete reference for user roles and the specific access permissions that can be granted to team members
 - **[RBAC configuration guide](../../access/index.md)** - Configure role-based access control with examples for projects, pages, and navigation settings
 - **[People management](manage-people.md)** - Add and manage users within your organization for effective team collaboration

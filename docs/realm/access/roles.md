@@ -12,7 +12,7 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Roles and permissions are used to configure [role-based access control (RBAC)](./rbac.md) for your projects.
+Roles and permissions are used to configure [role-based access control](./rbac.md) for your projects.
 
 A permission is a key that grants access to some piece of functionality.
 A role is a unique set of permissions.

@@ -24,7 +24,6 @@ Some UI elements are available only for users with specific organization and pro
   alt="Screenshot of a project workspace page in Reunite"
   src="../images/reunite-project-workspace.png"
   withLightbox=true
-  framed=true
 /%}
 
 All project workspace pages have:
@@ -37,7 +36,6 @@ All project workspace pages have:
   alt="Screenshot of the navigation pane in Reunite"
   src="../images/reunite-navigation-pane.png"
   withLightbox=true
-  framed=true
 /%}
 
 Use the navigation pane to:
@@ -53,7 +51,6 @@ Use the navigation pane to:
   alt="Screenshot of Reunite's organization and projects menu"
   src="../images/reunite-organization-projects-menu.png"
   withLightbox=true
-  framed=true
 /%}reunite=-
 
 Use the organization and projects menu to:
@@ -91,7 +88,6 @@ Use this tab to add, modify, or delete files, as well as eject your project's th
   alt="Screenshot of the Files tab in Reunite editor"
   src="../images/editor-files-tab.png"
   withLightbox=true
-  framed=true
 /%}
 
 In this tab you can:
@@ -110,7 +106,6 @@ Use the search tab to [lookup text or files in your project](./use-editor.md#sea
   alt="Screenshot of the Search tab in Reunite editor"
   src="../images/editor-search-tab.png"
   withLightbox=true
-  framed=true
 /%}
 
 In this tab you can:
@@ -133,7 +128,6 @@ Use this tab to commit changes, open pull requests, revert uncommitted changes t
   alt="Screenshot of the Commit tab in Reunite editor with History panel expanded"
   src="../images/editor-commit-tab.png"
   withLightbox=true
-  framed=true
 /%}
 
 In this tab you can:
@@ -193,7 +187,6 @@ The **Webview** live preview tab renders the currently open Markdown or API desc
   alt="Screenshot of the Webview tab in Reunite editor"
   src="../images/editor-webview-tab.png"
   withLightbox=true
-  framed=true
 /%}
 
 In this tab you can:
@@ -221,7 +214,6 @@ The **Documentation** tab displays Realm documentation with full capabilities of
   alt="Screenshot of the Documentation tab in Reunite editor"
   src="../images/editor-docs-tab.png"
   withLightbox=true
-  framed=true
 /%}
 
 In this tab you can:
@@ -241,7 +233,6 @@ The console is available after the Webview completes building your project.
   alt="Screenshot of the Replay tab in Reunite editor"
   src="../images/editor-replay-tab.png"
   withLightbox=true
-  framed=true
 /%}
 
 In this tab you can:
@@ -278,7 +269,7 @@ The **More actions** icon on the right side of each tabs header provides group-l
 
 ## Resources
 
-- **[Reunite](../reunite.md)** - Learn about Reunite's features
+- **[About Reunite](../reunite.md)** - Learn about Reunite's features
 - **[Reunite user profile menu](../user-profile-menu.md)** - Step-by-step instructions setting up notifications, color mode, and a Git provider account
 - **[Use the Webview](./use-webview.md)** - View live previews of your content changes while editing for immediate visual feedback
 - **[Use the editor](./use-editor.md)** - Learn to edit content in Reunite's integrated editor with syntax highlighting and collaborative features

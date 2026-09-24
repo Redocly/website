@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-## Theme component customization
+# Theme component customization
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -21,9 +21,9 @@ Customizing components can be useful in several scenarios:
 
 Find a list of available components with their properties in the [components list](./list/index.md) and a full list of supported icons in the [icons list](./list/icons.md).
 
-For detailed instructions, see [Components usage tutorial](./use-in-react-page.md) or [Customize theme components](./wrap-components.md).
+For detailed instructions, see [Use components in React pages](./use-in-react-page.md) or [Customize theme components](./wrap-components.md).
 
 ## Resources
 
 - **[Eject components](../eject-components/index.md)** - Learn how to fully eject a component
-- **[Create page in React](../create-react-page.md)** - Learn how to build a fully custom React page
+- **[Create React pages](../create-react-page.md)** - Learn how to build a fully custom React page

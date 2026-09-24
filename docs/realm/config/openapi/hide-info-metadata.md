@@ -20,7 +20,6 @@ The API reference displays that metadata by default.
   src="../images/metadata-show.png"
   alt="Screenshot of API documentation where hideInfoMetadata option is set to false"
   withLightbox=true
-  framed=true
 /%}
 
 To omit the metadata section, set the `hideInfoMetadata` option.
@@ -70,7 +69,6 @@ info:
   src="../images/metadata-hide.png"
   alt="Screenshot of API documentation where hideInfoMetadata is set to true"
   withLightbox=true
-  framed=true
 /%}
 
 ## Resources

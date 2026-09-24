@@ -78,4 +78,4 @@ The `link` resolver provides comprehensive error handling:
 
 ## Resources
 
-- **[Built-in Markdoc attribute resolvers](./index.md)** - Discover Markdoc attribute resolvers
+- **[Markdoc attribute resolvers](./index.md)** - Discover Markdoc attribute resolvers

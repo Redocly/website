@@ -187,8 +187,8 @@ When you are finished using an API key, you can revoke the key, making it an inv
 
 ## Resources
 
-- **[Manage organizations](manage-orgs.md)** - Set up the details and manage your Redocly organization
-- **[Role-based access control (RBAC)](../../access/rbac.md)** - Control authorization based on roles and team membership
+- **[Manage your organization](manage-orgs.md)** - Set up the details and manage your Redocly organization
+- **[Role-based access control](../../access/rbac.md)** - Control authorization based on roles and team membership
 - **[Roles and permissions](../../access/roles.md)** - Explore the user roles and permissions available for controlling access to your organization and projects
 - **[Single sign-on (SSO) configuration](../../config/access/sso.md)** - Complete SSO configuration reference with examples for various identity providers
 - **[Teams and users](./teams.md)** - Organize users into teams with role-based permissions for effective collaboration and access control

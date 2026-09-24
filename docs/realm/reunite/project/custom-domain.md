@@ -114,6 +114,6 @@ export default function ExampleComponent() {
 
 ## Resources
 
-- **[Environment variables](./env-variables.md)** - Configure additional project settings using environment variables for dynamic content and customization
+- **[Use environment variables](./env-variables.md)** - Configure additional project settings using environment variables for dynamic content and customization
 - **[Add links](../../content/links.md)** - Understand how link prefixes are automatically handled when adding links to Markdown content
 - **[Add OpenAPI description](../../content/api-docs/add-openapi-docs.md)** - Add API documentation that automatically uses your custom domain's page prefix for generated reference pages

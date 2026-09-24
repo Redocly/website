@@ -183,4 +183,4 @@ Usage example: `{% $env.PUBLIC_REDOCLY_BRANCH_NAME %}`
 
 - **[Markdoc tags](../content/markdoc-tags/index.md)** - See the full list of supported Markdoc tags
 - **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project
+- **[Extend with code](./index.md)** - Discover customizable components and customization options for your project

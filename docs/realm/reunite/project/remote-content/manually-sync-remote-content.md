@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Manually sync remote content
+# Sync remote content folders manually
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -20,7 +20,7 @@ Make sure you have the following:
 
 - an existing remote content folder
 
-## Manually sync remote content folders
+## Sync remote folders
 
 To keep your content up-to-date with changes made in the remote, you can sync the folder.
 
@@ -33,7 +33,6 @@ To manually sync remote content folders:
      src="../../images/reunite-remote-content-options.png"
      alt="Open options menu on Reunite's Remote content page"
      withLightbox=true
-     framed=true
    /%}
    A window opens with the branch chosen during the remote folder setup, and the following information on the last commit to that branch:
       - the commit message

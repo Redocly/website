@@ -618,7 +618,7 @@ The widget needs no `font-src` (it uses the system font stack) and no `frame-src
 
 - **[Configure AI assistant support escalation](../reunite/project/ai-assistant.md)** - Let end users escalate a conversation to your support team from the embedded assistant
 - **[Analytics](../reunite/project/analytics.md)** - Track assistant conversations and feedback for your project
-- **[Environment variables](../reunite/project/env-variables.md#manage-environment-variables)** - Learn how to define and manage environment variables for your project, including `REDOCLY_CORS_ORIGINS`
+- **[Use environment variables](../reunite/project/env-variables.md#manage-environment-variables)** - Learn how to define and manage environment variables for your project, including `REDOCLY_CORS_ORIGINS`
 - **[`aiAssistant`](../config/ai-assistant.md)** - Configure the AI assistant built into your project
 - **[`l10n`](../config/l10n.md)** - Configure localization for your project, including the `defaultLocale` the assistant's locale must match
 - **[Localize content](../content/localization/localize-content.md)** - Organize translated content in `@l10n` folders whose names double as the assistant's locale values

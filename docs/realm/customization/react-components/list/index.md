@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# List of customizable components
+# Built-in React components
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -98,4 +98,4 @@ For more information, see [dynamic import utility reference](./dynamic.md).
 ## Resources
 
 - **[Customize theme components](../wrap-components.md)** - Learn to wrap and customize built-in components to create reusable, branded versions for your project
-- **[Components usage tutorial](../use-in-react-page.md)** - Learn to use your customized components in React pages with practical examples and implementation patterns
+- **[Use components in React pages](../use-in-react-page.md)** - Learn to use your customized components in React pages with practical examples and implementation patterns

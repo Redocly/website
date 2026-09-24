@@ -71,6 +71,6 @@ To learn more about debugging API functions, see [API functions reference](../..
 - **[API functions](../../customization/api-functions/index.md)** - Learn when to use API functions in your project
 - **[API functions reference](../../customization/api-functions/api-functions-reference.md)** - Review routing rules, context helpers, authorization, and limitations
 - **[Create API functions](../../customization/api-functions/create-api-functions.md)** - Follow a step-by-step tutorial for building API functions
-- **[Environment variables](./env-variables.md)** - Store secrets and other configuration values used by your API functions
+- **[Use environment variables](./env-variables.md)** - Store secrets and other configuration values used by your API functions
 - **[Use the editor](./use-editor.md)** - Work with files, branches, and commits in Reunite
 - **[Keyboard shortcuts](./keyboard-shortcuts.md)** - Navigate the editor faster with built-in shortcuts

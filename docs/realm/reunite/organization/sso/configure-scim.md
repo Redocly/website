@@ -12,7 +12,7 @@ plans:
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 System for Cross-domain Identity Management (SCIM) 2.0 lets your identity provider provision and deprovision users in your Redocly organization automatically.
-SCIM works alongside [single sign-on (SSO)](./sso.md).
+SCIM works alongside [Single sign-on and login](./sso.md).
 Users still sign in through your IdP.
 SCIM keeps organization membership in sync with your directory.
 
@@ -103,7 +103,7 @@ It happens when your IdP sets **active** to **false** or unassigns them from the
 
 - **[Add an identity provider](./add-idp.md)** - Add or edit SAML 2 and OpenID Connect identity providers in Reunite
 - **[Manage API keys](../api-keys.md)** - Create and revoke organization API keys used for SCIM authentication
-- **[Configure SSO](./configure-sso.md)** - Choose which identity providers apply to each project in `redocly.yaml`
+- **[Configure project SSO](./configure-sso.md)** - Choose which identity providers apply to each project in `redocly.yaml`
 - **[Single sign-on (SSO) concepts](./sso.md)** - Learn how Corporate and Guest identity providers work with Reunite and projects
 - **[SSO configuration reference](../../../config/access/sso.md)** - Technical reference for SSO options in your project configuration
 

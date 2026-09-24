@@ -3,7 +3,7 @@ keywords:
   includes:
     - redocly.yaml
 ---
-# Configure Redocly
+# Configuration options
 
 The `redocly.yaml` file is the single place to configure everything Redocly.
 This configuration file allows you to customize your API documentation, developer projects, and other Redocly services according to your needs.

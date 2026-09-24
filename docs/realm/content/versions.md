@@ -14,7 +14,7 @@ keywords:
     - versions
     - versioning
 ---
-# Add versioned content
+# Version content
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -30,7 +30,6 @@ The sidebar reflects the changes in files and filenames when you switch between 
   src="./images/version-picker.png"
   alt="Screenshot of a version picker interface with Version 1 highlighted"
   withLightbox=true
-  framed=true
 /%}
 
 You can use this feature to keep past versions of API descriptions for backwards compatibility.

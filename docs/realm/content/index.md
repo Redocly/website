@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Content
+# Create content
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -94,7 +94,7 @@ Use built-in functions for dynamic content generation and manipulation.
 
 ## Resources
 
-- **[Markdoc tag library](./markdoc-tags/tag-library.md)** - Complete reference of available interactive components like cards, tabs, admonitions, and code groups
+- **[Built-in Markdoc tags](./markdoc-tags/tag-library.md)** - Complete reference of available interactive components like cards, tabs, admonitions, and code groups
 - **[API documentation features](./api-docs/add-openapi-docs.md)** - Add OpenAPI, AsyncAPI, GraphQL, and SOAP API documentation with interactive features and extensions
 - **[Localization guide](./localization/localize-content.md)** - Translate your content into multiple languages with built-in localization features and UI label management
 - **[Content versioning](./versions.md#versions-configuration-options)** - Create and manage multiple versions of your documentation with automatic navigation and version switching

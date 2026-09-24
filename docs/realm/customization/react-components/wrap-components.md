@@ -50,7 +50,7 @@ Now, every time the `Admonition` component is used — whether on pages or in ot
 
 ## Resources
 
-- **[Components usage tutorial](./use-in-react-page.md)** - Learn to use your customized components in React pages with practical examples and implementation patterns
-- **[List of customizable components](./list/index.md)** - Browse all available built-in React components that you can wrap, customize, and extend
+- **[Use components in React pages](./use-in-react-page.md)** - Learn to use your customized components in React pages with practical examples and implementation patterns
+- **[Built-in React components](./list/index.md)** - Browse all available built-in React components that you can wrap, customize, and extend
 - **[Customizable icons list](./list/icons.md)** - Explore available icon components that you can customize and extend with your own styling and functionality
 - **[Theme component customization](./index.md)** - Learn about the use cases of component customization

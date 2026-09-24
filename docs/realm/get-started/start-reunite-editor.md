@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Get started with the Reunite editor
+# Start with the web editor
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -58,7 +58,7 @@ Add your own content or use the following sample Markdown:
 The content can be a Markdown file with all the supported features of Markdoc, or a React file.
 It can also be an API description (such as an OpenAPI, GraphQL, or AsyncAPI description).
 
-Learn more about [Markdown in Redocly](../content/markdown.md) for all formatting options, or see [Use the editor](../reunite/project/use-editor.md) for details about the editor toolbar and features.
+Learn more about [Markdown](../content/markdown.md) for all formatting options, or see [Use the editor](../reunite/project/use-editor.md) for details about the editor toolbar and features.
 
 Now that you have added some content to your landing page, you can preview your project.
 
@@ -80,7 +80,6 @@ The **Webview** tab shows formatting updates to ensure they render correctly bef
   src="./images/webview-preview.png"
   alt="Screenshot of the Webview tab in the editor"
   withLightbox=true
-  framed=true
 /%}
 
 Change the view to meet your needs, such as seeing how the landing page renders on mobile screens.
@@ -129,7 +128,6 @@ To see a preview build of your project:<a id="commit-steps"></a>
     src="./images/view-preview-branch.png"
     alt="Screenshot of preview drop-down with Preview branch selected"
     withLightbox=true
-    framed=true
    /%}
 
 A deployment preview of the project with your changes opens in a separate browser window.
@@ -155,7 +153,6 @@ To create a new Markdown file:
     src="./images/add-new-file.png"
     alt="Screenshot of the plus icon selected and displaying the dropdown menu"
     withLightbox=true
-    framed=true
    /%}
 
 2. Select **New file**.
@@ -180,7 +177,6 @@ Select the **More actions** menu in the top right corner of the editing pane and
   src="./images/word-wrap.png"
   alt="Screenshot showing word wrap option in the editor in Reunite"
   withLightbox=true
-  framed=true
 /%}
 {% /admonition %}
 
@@ -198,7 +194,6 @@ However, when the **Webview** tab is a small width, the menu hides under a slide
   src="./images/slide-drawer-icon.png"
   alt="Screenshot that shows the slide drawer icon in the top right corner of the Webview tab"
   withLightbox=true
-  framed=true
 /%}
 {% /admonition %}
 
@@ -217,7 +212,6 @@ To add a `sidebars.yaml` file to your project:
     src="./images/add-new-file.png"
     alt="Screenshot of the plus icon selected and displaying the dropdown menu"
     withLightbox=true
-    framed=true
    /%}
 2. Select **New file**.
 3. Enter the `sidebars.yaml` as the file name into the text field and press `return` or `enter` on your keyboard.
@@ -281,7 +275,6 @@ For the following steps, you can use your own image or download the following sa
     src="./images/logo.png"
     alt="Redocly logo"
     withLightbox=true
-    framed=true
   /%}
 </details>
 
@@ -324,7 +317,6 @@ Create a `@theme/styles.css` file to override the default styling.
     src="./images/add-new-folder.png"
     alt="Screenshot of the plus icon selected and displaying the dropdown menu"
     withLightbox=true
-    framed=true
    /%}
 2. Select **New folder**.
 3. Enter `@theme` and press `return`.
@@ -352,7 +344,6 @@ The editor includes a color picker when you hover over color values.
   src="./images/color-picker.png"
   alt="Screenshot of the color picker tool in the Reunite editor"
   withLightbox=true
-  framed=true
 /%}
 
 The headings' color updates immediately in the **Webview** tab.
@@ -363,6 +354,6 @@ You can also commit your update to view it [in the preview build](#in-the-deploy
 
 - **[Sidebars configuration](../navigation/sidebars.md)** - Configure `sidebars.yaml` with nested items and groups for custom navigation structure
 - **[CSS variables dictionary](../branding/css-variables/index.md)** - Complete reference for customizing colors, fonts, spacing, and visual styling
-- **[Configure Redocly](../config/index.md)** - All configuration options available in the `redocly.yaml` file for project customization
+- **[Configuration options](../config/index.md)** - All configuration options available in the `redocly.yaml` file for project customization
 - **[User profile menu](../reunite/user-profile-menu.md)** - Manage notification settings, Git provider connections, and Reunite appearance preferences
 - **[Markdown overview for technical writers](https://redocly.com/learn/markdoc)** - Learn Markdoc syntax for adding interactive elements to your documentation

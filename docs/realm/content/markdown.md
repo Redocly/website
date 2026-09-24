@@ -12,7 +12,7 @@ keywords:
   includes:
     - markdown
 ---
-# Markdown in Redocly
+# Markdown guide
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

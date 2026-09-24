@@ -111,7 +111,6 @@ channels:
   src="./images/asyncapi-x-badges.png"
   alt="Image of sample AsyncAPI definition with badges displayed"
   withLightbox=true
-  framed=true
 /%}
 
 ### Schema property with badges

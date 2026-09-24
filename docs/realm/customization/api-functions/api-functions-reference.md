@@ -130,7 +130,7 @@ To access environment variables, use the `process.env.VAR_NAME` syntax.
 This lets you securely work with API keys, secrets, and other values you don’t want exposed in client-facing code.
 
 Before using a variable in code, define it for your project.
-To learn how to use environment variables in API functions, see [Environment variables](../../reunite/project/env-variables.md#api-functions).
+To learn how to use environment variables in API functions, see [Use environment variables](../../reunite/project/env-variables.md#api-functions).
 
 A common use case is authenticating with external systems.
 
@@ -570,5 +570,4 @@ export default async function (request: Request, context: ApiFunctionsContext) {
 ## Resources
 
 - **[Render weather data in a Markdoc tag](./create-api-functions.md)** - End-to-end tutorial that builds an API function and a custom Markdoc tag
-- **[Test API functions](../../reunite/project/test-api-functions.md)** - Send requests to your API functions with Replay in the Reunite editor
 <!-- - **[KV storage](./kv-storage.md)** - Built-in key-value database for data persistence in API functions -->

@@ -203,6 +203,6 @@ If users must read the content to complete a task, keep it visible on the page.
 
 ## Resources
 
-- **[Markdoc tag library](./tag-library.md)** - Complete list of Markdoc tags you can use in your documentation
+- **[Built-in Markdoc tags](./tag-library.md)** - Complete list of Markdoc tags you can use in your documentation
 - **[Tabs tag](./tabs.md)** - Alternative way to organize related content in a confined space
 - **[Admonition tag](./admonition.md)** - Highlight important information in a pre-styled banner instead of hiding it

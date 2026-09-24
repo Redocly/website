@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Build a Markdoc tag
+# Build Markdoc tags
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -559,7 +559,7 @@ The LLM Markdown for a page is generated per locale.
 `renderForLlms` runs once for each localized copy of the page with that copy's `locale`.
 
 `translate` looks up a key in the current locale's `translations.yaml` file and returns its value, or the `fallback` argument when the key isn't translated.
-To set up translation keys, see [Localize UI labels using translation keys](../content/localization/localize-labels.md).
+To set up translation keys, see [Localize UI labels](../content/localization/localize-labels.md).
 
 The `quiz` tag below labels its output with a translated word and the current locale:
 
@@ -612,4 +612,4 @@ Go do!
 
 - **[Markdoc tags](../content/markdoc-tags/index.md)** - See the full list of supported Markdoc tags
 - **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project
+- **[Extend with code](./index.md)** - Discover customizable components and customization options for your project

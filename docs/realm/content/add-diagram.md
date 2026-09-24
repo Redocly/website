@@ -246,7 +246,7 @@ Bob --> Alice: Hi
 Realm always renders diagrams as SVG.
 If you include a `format` attribute for compatibility with Asciidoctor diagram syntax, it is ignored.
 
-See: [Use AsciiDoc content](asciidoc.md) for more information about the AsciiDoc plugin.
+See: [Add AsciiDoc content](asciidoc.md) for more information about the AsciiDoc plugin.
 
 ## Resources
 

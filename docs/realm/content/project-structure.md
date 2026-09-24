@@ -326,7 +326,7 @@ You can change the name of this directory in the [`apiFunctions` config](../conf
 Redocly supports versioned content by using a special folder structure.
 
 Folders prefixed with `@` (e.g., `@v1`, `@v2`) are treated as separate content versions.
-For information how to set up versioned content in your project, see [Add versioned content](./versions.md).
+For information how to set up versioned content in your project, see [Version content](./versions.md).
 
 ## Multi-product
 

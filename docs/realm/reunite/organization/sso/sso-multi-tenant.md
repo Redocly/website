@@ -33,7 +33,6 @@ Here’s how it works in practice:
     src="../../images/log-in-form.png"
     alt="Screenshot of Redocly login screen where users enter their email address"
     withLightbox=true
-    framed=true
   /%}
 - **Redirect by IdP**:
   Using the email domain or other identifying attributes, the IdP applies its rules.
@@ -97,6 +96,6 @@ Each tenant gets a seamless SSO experience, and Redocly respects their preferred
 ## Resources
 
 - **[Add an identity provider](./add-idp.md)** - Add identity providers in Reunite for seamless authentication across projects and Reunite login
-- **[Configure SSO](./configure-sso.md)** - Configure multiple identity providers to enable flexible user authentication options across your projects
+- **[Configure project SSO](./configure-sso.md)** - Configure multiple identity providers to enable flexible user authentication options across your projects
 - **[SSO configuration reference](../../../config/access/sso.md)** - Complete technical reference for all SSO configuration options and implementation details
 - **[SSO in Redocly](./sso.md)** - Comprehensive overview of single sign-on concepts and identity provider integration options

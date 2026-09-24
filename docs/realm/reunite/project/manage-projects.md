@@ -124,7 +124,7 @@ It also covers how to serve your project from a subdomain.
 
 ### Manage environment variables
 
-To learn how to add and utilize environment variables in your project, see [Environment variables](./env-variables.md).
+To learn how to add and utilize environment variables in your project, see [Use environment variables](./env-variables.md).
 
 ### Download your project files
 

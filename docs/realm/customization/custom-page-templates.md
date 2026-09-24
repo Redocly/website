@@ -7,12 +7,10 @@ plans:
   - Pro
   - Enterprise
   - Enterprise+
-title: Custom page templates
 ---
+# Customize page templates
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
-
-# Override a page template
 
 Custom page templates is a feature that allows you to create more complex templates for your `.md` pages.
 
@@ -102,7 +100,6 @@ Use `markdown.template` in the root `redocly.yaml` file to assign templates to o
 
 Each key can target files in three ways:
 
-
 {% table %}
 
 - Pattern type
@@ -153,7 +150,6 @@ In this example:
   src="./images/one-column-blog-post-template.png"
   alt="Screenshot of one column blog post template"
   withLightbox=true
-  framed=true
 /%}
 
 **Two columns template with metadata on the right**
@@ -162,9 +158,8 @@ In this example:
   src="./images/two-columns-blog-post-template.png"
   alt="Screenshot of two columns blog post template"
   withLightbox=true
-  framed=true
 /%}
 
 ## Resources
 
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project
+- **[Extend with code](./index.md)** - Discover customizable components and customization options for your project

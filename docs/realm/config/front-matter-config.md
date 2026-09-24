@@ -55,7 +55,7 @@ These options are available exclusively in front matter:
   Omit file extensions.
   Use relative paths for local templates and absolute paths for templates from node modules.
   Overrides a template assigned by [`markdown.template`](./markdown.md#options) in `redocly.yaml`.
-  See [Override a page template](../customization/custom-page-templates.md) for details.
+  See [Customize page templates](../customization/custom-page-templates.md) for details.
 
 ---
 
@@ -234,6 +234,6 @@ Use `redocly.yaml` for most configuration settings and use front matter only for
 
 ## Resources
 
-- **[Override a page template](../customization/custom-page-templates.md)** - Create custom page templates to override default layouts and implement unique page designs
-- **[Configure Redocly](./index.md)** - Complete configuration reference for the redocly.yaml file and project settings
+- **[Customize page templates](../customization/custom-page-templates.md)** - Create custom page templates to override default layouts and implement unique page designs
+- **[Configuration options](./index.md)** - Complete configuration reference for the redocly.yaml file and project settings
 - **[Block search indexing](./seo.md#control-search-indexing)** - Use the noindex rule in front matter to control search engine indexing on specific pages

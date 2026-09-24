@@ -7,16 +7,15 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Components usage tutorial
+# Use components in React pages
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
 There are several ways to use theme components.
 Below are some of the most common approaches.
 
-
-You can find the list of components you can customize [List of customizable components](./list/index.md) and icons [List of customizable icons](./list/icons.md).
-
+You can find the list of components you can customize in: [Built-in React components](./list/index.md).
+For icons, see the [List of customizable icons](./list/icons.md).
 
 We use the `Admonition` component as an example to illustrate different integration methods.
 
@@ -28,7 +27,7 @@ You can import a component directly and use it inside a page.
 2. Import the component.
 3. Use it on your React page.
 
-### Example
+### Example of component used directly
 
 ```tsx {% title="test.page.tsx" %}
 import * as React from 'react';
@@ -50,13 +49,12 @@ export default function () {
 }
 ```
 
-### Rendered output
+**Rendered output**
 
 {% img
   src="./images/directly-on-page.png"
   alt="Screenshot of admonition used directly in a page"
   withLightbox=true
-  framed=true
 /%}
 
 ## Use components inside a custom wrapper
@@ -64,7 +62,7 @@ export default function () {
 You can also build your own custom components that internally use theme components.
 This is useful when you want to encapsulate specific logic or structure.
 
-### Project structure example
+Project structure example:
 
 ```treeview
 │  
@@ -73,7 +71,7 @@ This is useful when you want to encapsulate specific logic or structure.
 └── test.page.tsx
 ```
 
-### Example
+### Example of component in a wrapper
 
 {% tabs %}
 
@@ -128,17 +126,16 @@ export default function () {
 {% /tab %}
 {% /tabs %}
 
-### Rendered output
+**Rendered output**
 
 {% img
   src="./images/custom-component.png"
   alt="Screenshot of admonition used as a custom component"
   withLightbox=true
-  framed=true
 /%}
 
 ## Resources
 
 - **[Customize theme components](./wrap-components.md)** - Learn to wrap and customize built-in components to create reusable, branded versions for your project
-- **[List of customizable components](./list/index.md)** - Browse all available built-in React components that you can customize and extend in your projects
+- **[Built-in React components](./list/index.md)** - Browse all available built-in React components that you can customize and extend in your projects
 - **[Customizable icons list](./list/icons.md)** - Explore available icon components that you can customize and extend with your own styling and functionality

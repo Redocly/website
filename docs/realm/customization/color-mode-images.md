@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Add color-mode-specific images
+# Add color-mode images
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -97,11 +97,11 @@ In this example, the image changes when users toggle between color modes.
 You can see the working implementation below.
 Try changing the color mode.
 
-{% img srcSet="./images/sun.png light, ./images/moon.png dark" alt="sun and moon" width="200" height="" framed=true /%}
+{% img srcSet="./images/sun.png light, ./images/moon.png dark" alt="sun and moon" width="200" height="" /%}
 
 ## Resources
 
 - **[Add custom color modes](../branding/customize-color-modes.md#add-new-color-modes)** - Expand beyond the default light and dark modes by creating new color modes with custom styling
 - **[Theme static assets](./theme-static-assets.md)** - Learn to properly reference and organize static assets within your theme for reliable image loading
 - **[Customize color modes](../branding/customize-color-modes.md)** - Apply custom styling and CSS variables for different color modes to create cohesive visual experiences
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project
+- **[Extend with code](./index.md)** - Discover customizable components and customization options for your project

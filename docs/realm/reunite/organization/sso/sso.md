@@ -9,7 +9,7 @@ plans:
   - Enterprise+
 ---
 
-# Single sign-on (SSO)
+# Single sign-on and login
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -79,7 +79,7 @@ Logout does not end the session at the identity provider itself, so users stay l
 ## Resources
 
 - **[Add an identity provider](./add-idp.md)** - Step-by-step guide to add identity providers in Reunite for seamless user authentication across projects
-- **[Configure SSO](./configure-sso.md)** - Set up single sign-on to allow users to authenticate using multiple identity providers for flexible access control
+- **[Configure project SSO](./configure-sso.md)** - Set up single sign-on to allow users to authenticate using multiple identity providers for flexible access control
 - **[Okta SAML integration video](https://youtu.be/NMayl8FTZ7c)** - Watch a step-by-step tutorial for integrating Okta with Redocly using SAML for single sign-on
 - **[SSO configuration reference](../../../config/access/sso.md)** - Complete technical reference for all SSO configuration options and settings in your redocly.yaml file
 - **[Logout return URL](../../../config/access/logout-return-url.md)** - Configure the page users are redirected to after they log out of a project

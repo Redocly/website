@@ -8,7 +8,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Markdoc tag library
+# Built-in Markdoc tags
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -108,7 +108,7 @@ Additional information and syntax: [Code walkthrough tag](./code-walkthrough/ind
 
 **Example code walkthrough element:**
 
-{% img withLightbox=true alt="A screenshot of the project using a single file and the smallest required configuration" src="./images/minimal-codewalkthrough.png" framed=true /%}
+{% img withLightbox=true alt="A screenshot of the project using a single file and the smallest required configuration" src="./images/minimal-codewalkthrough.png" /%}
 
 ---
 
@@ -137,7 +137,6 @@ Additional information and syntax: [Image tag](./img.md)
 {% img
   alt="Basic example image"
   srcSet="./images/img-markdoc/image-example-light.png light, ./images/img-markdoc/image-example-dark.png dark"
-  framed=true
 /%}
 
 ---

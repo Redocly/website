@@ -39,15 +39,15 @@ Integrate Segment Analytics into Redocly project.
 
 - trackPage
 - boolean
-- Set this option to `true` to track page visits.
-  Default: `false`.
+- Set this to `false` to disable page visits tracking.
+  Default: `true`.
 
 ---
 
 - includeTitleInPageCall
 - boolean
-- Set this option to `true` to include the page title in page view events.
-  Default: `false`.
+- Set this to `false` to exclude page title from page view event.
+  Default: `true`.
 
 ---
 

@@ -36,7 +36,7 @@ Follow the steps to configure Google Workspace SAML SSO integration with Reunite
 1. In **Single sign on URL**, enter: `https://auth.cloud.redocly.com/org/`*{your-organization-slug}*`/`.
 1. In **Issuer ID**, enter the unique identifier of the identity provider.
 1. In **x509 public certificate**, paste the certificate from the identity provider.
-1.  Click **Save**.
+1. Click **Save**.
 
 ## Configure attributes in Google Workspace to send to Reunite
 
@@ -48,5 +48,5 @@ Follow the steps to configure Google Workspace SAML SSO integration with Reunite
 
 - **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider types in Reunite and their implementation for project authentication
 - **[Add an identity provider](./add-idp.md)** - Complete guide for adding identity providers in Reunite for streamlined authentication management
-- **[Configure SSO](./configure-sso.md)** - Set up multiple identity provider types to provide users with flexible authentication options for your projects
-- **[Role-based access control (RBAC)](../../../access/rbac.md)** - Implement advanced access control scenarios to grant specific users access to specific content and features
+- **[Configure project SSO](./configure-sso.md)** - Set up multiple identity provider types to provide users with flexible authentication options for your projects
+- **[Role-based access control](../../../access/rbac.md)** - Implement advanced access control scenarios to grant specific users access to specific content and features

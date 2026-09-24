@@ -23,7 +23,6 @@ The menu contains the avatar, the user's email address, links to pages you can c
   src="./images/user-menu.png"
   alt="Screenshot of the user menu with the dropdown displayed"
   withLightbox=true
-  framed=true
 /%}
 
 {% admonition type="info" name="Required configuration" %}
@@ -113,7 +112,7 @@ userMenu:
 ## Resources
 
 - **[Configure RBAC](../access/index.md)** - Configure role-based access control to manage user permissions and access levels for user menu functionality
-- **[Configure SSO](../reunite/organization/sso/configure-sso.md)** - Set up single sign-on integration to enable seamless user authentication and menu personalization
+- **[Configure project SSO](../reunite/organization/sso/configure-sso.md)** - Set up single sign-on integration to enable seamless user authentication and menu personalization
 - **[RBAC concepts](../access/rbac.md)** - Understand how role-based access control works in Redocly products for comprehensive user menu and permission management
 - **[Navbar configuration](./navbar.md)** - Add additional links to the navbar and configure navbar appearance to complement the user menu
 - **[SSO configuration](./access/sso.md)** - Configure SSO authentication required for user menu display and functionality

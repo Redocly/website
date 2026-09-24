@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Customize styles for a locale
+# Customize locale styles
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -19,7 +19,7 @@ This can be useful if you want to customize how certain UI elements look or chan
 Make sure you have the following:
 
 - a Redocly project with a `l10n` folder containing your translated content organized into locales.
-  See [l10n configuration](../../config/l10n.md) and [Add translated content](./localize-content.md) for more information.
+  See [l10n configuration](../../config/l10n.md) and [Localize content](./localize-content.md) for more information.
 - a `@theme/styles.css` file in your project.
   See [custom styles](../../branding/customize-styles.md) for more information.
 

@@ -98,7 +98,7 @@ To view your Respect Monitoring results on a preview build:
 1. Click the **Details** link next to **Respect Monitoring**.
 1. Click the workflow.
 
-{% img alt="Screenshot of pull request checks with Respect Monitoring check" src="./images/respect-monitoring-pr-checks.png" withLightbox=true framed=true /%}
+{% img alt="Screenshot of pull request checks with Respect Monitoring check" src="./images/respect-monitoring-pr-checks.png" withLightbox=true /%}
 
 ### Ignore Respect Monitoring results
 
@@ -118,7 +118,7 @@ Reunite's **Respect Monitoring** page then displays the results of each workflow
 To view your Respect Monitoring results on a production build, navigate to **Respect Monitoring** and click the workflow.
 You can filter the results by dates and status.
 
-{% img alt="Respect Monitoring chart" srcSet="./images/respect-monitoring-chart.png light, ./images/respect-monitoring-chart-dark.png dark" withLightbox=true framed=true /%}
+{% img alt="Respect Monitoring chart" srcSet="./images/respect-monitoring-chart.png light, ./images/respect-monitoring-chart-dark.png dark" withLightbox=true /%}
 
 ## Examples
 
@@ -228,4 +228,4 @@ reunite:
 ## Resources
 
 - **[Reunite configuration reference](../../../config/reunite.md)** - Complete configuration options for Respect Monitoring including workflow scheduling, notification settings, and performance thresholds
-- **[Manage Respect Monitoring](./manage-respect-monitoring.md)** - Configure SLA monitoring, subscribe to notifications, and manage workflows including archiving old workflows
+- **[Manage Respect Monitoring notifications and SLAs](./manage-respect-monitoring.md)** - Configure SLA monitoring, subscribe to notifications, and manage workflows including archiving old workflows

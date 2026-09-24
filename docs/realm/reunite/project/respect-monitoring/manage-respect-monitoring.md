@@ -6,7 +6,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Manage Respect Monitoring
+# Manage Respect Monitoring notifications and SLAs
 
 You can subscribe to notifications by Arazzo workflow.
 You receive a message when an API included in the Arazzo workflow does not pass the criteria checks.
@@ -92,7 +92,7 @@ To configure SLA monitoring for a workflow:
 1. Click **Notifications** in the top right side corner.
 1. Select the **SLA** tab in the modal.
 
-{% img alt="Screenshot of Respect Monitoring notifications modal with SLA tab selected" src="./images/respect-monitoring-sla-tab.png" withLightbox=true framed=true /%}
+{% img alt="Screenshot of Respect Monitoring notifications modal with SLA tab selected" src="./images/respect-monitoring-sla-tab.png" withLightbox=true /%}
 
 1. Configure SLA target:
    - **Target uptime**: the minimum service availability percentage you expect to maintain (0-100%).
@@ -101,7 +101,7 @@ To configure SLA monitoring for a workflow:
    - **Target period**: the number of days (1-30) over which the SLA is calculated.
      Default is 7 days.
 
-{% img alt="Screenshot of SLA configuration showing target uptime and target period settings" src="./images/respect-monitoring-sla-configuration.png" withLightbox=true framed=true /%}
+{% img alt="Screenshot of SLA configuration showing target uptime and target period settings" src="./images/respect-monitoring-sla-configuration.png" withLightbox=true /%}
 
 1. Configure notification channels:
    - **Send to Slack**: Enable to receive SLA breach and recovery notifications in Slack.
@@ -111,7 +111,7 @@ To configure SLA monitoring for a workflow:
      Add up to 5 email recipients who should receive notifications.
      Click **Add recipient** and enter an email address for each recipient.
 
-{% img alt="Screenshot of SLA notifications configuration showing Slack and Email options" src="./images/respect-monitoring-sla-notifications.png" withLightbox=true framed=true /%}
+{% img alt="Screenshot of SLA notifications configuration showing Slack and Email options" src="./images/respect-monitoring-sla-notifications.png" withLightbox=true /%}
 
 1. (Optional) Enable **Alert when back up** to receive notifications when your service recovers and meets SLA targets again after a breach.
 1. Review the alert summary that shows when alerts will trigger based on your configuration.

@@ -50,6 +50,6 @@ Users can remove product filtering of the search by clicking the **x** on the pr
 ## Resources
 
 - **[Products configuration](../config/products.md)** - Complete setup instructions and examples for configuring multi-product documentation with product switching and organization
-- **[Add versioned content](../content/versions.md)** - Learn to set up versioned content in your project for managing multiple documentation versions alongside products
+- **[Version content](../content/versions.md)** - Learn to set up versioned content in your project for managing multiple documentation versions alongside products
 - **[Version configuration options](../content/versions.md#versions-configuration-options)** - Reference documentation for versions.yaml file options including setting default versions to display
 - **[Products configuration reference](../config/products.md)** - Complete configuration format and options for the products setting in your redocly.yaml file

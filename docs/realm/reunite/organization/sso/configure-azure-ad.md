@@ -32,7 +32,6 @@ The following screenshot shows the SSO configuration screen.
   src="../../images/configure-saml-redocly-1.png"
   alt="SSO configuration"
   withLightbox=true
-  framed=true
 /%}
 
 Keep this page open for reference, the values here are used in the next steps.
@@ -62,16 +61,16 @@ Add the information needed for Microsoft Entra to connect to Redocly.
 {% tab label="US residency" %}
 
 - Identifier (Entity ID): `<COPY VALUE FROM REDOCLY SAML SETUP PAGE>`
-- Reply URL (ACS URL): https://auth.cloud.redocly.com/sso/saml/callback
+- Reply URL (ACS URL): `https://auth.cloud.redocly.com/sso/saml/callback`
 - Sign on URL: `https://auth.cloud.redocly.com/org/<organization-id>`
 
-You can copy your organization ID from the URL: `https://app.cloud.redocly.com/org/<organization-id>`/`
+You can copy your organization ID from the URL: `https://app.cloud.redocly.com/org/<organization-id>`
 {% /tab %}
 
 {% tab label="EU residency" %}
 
 - Identifier (Entity ID): `<COPY VALUE FROM REDOCLY SAML SETUP PAGE>`
-- Reply URL (ACS URL): https://auth.cloud.eu.redocly.com/sso/saml/callback
+- Reply URL (ACS URL): `https://auth.cloud.eu.redocly.com/sso/saml/callback`
 - Sign on URL: `https://auth.cloud.eu.redocly.com/org/<organization-id>`
 
 You can copy your organization ID from the URL: `https://app.cloud.eu.redocly.com/org/<organization-id>`
@@ -95,7 +94,6 @@ Get ready to use group information from Microsoft Entra with Redocly RBAC by con
     src="../../images/ad-group-claim.png"
     alt="AD group claim"
     withLightbox=true
-    framed=true
    /%}
 
 ## Finish SSO configuration in Redocly
@@ -115,7 +113,6 @@ To do this, you need to Select **Configure team claim mapping** checkbox and add
   src="../../images/claim-mapping.png"
   alt="Claim mapping"
   withLightbox=true
-  framed=true
 /%}
 
 Select **Save** to finish the configuration.

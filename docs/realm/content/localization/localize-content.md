@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Add translated content
+# Localize content
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 

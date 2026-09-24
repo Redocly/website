@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Reunite
+# About Reunite
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -107,7 +107,6 @@ To see more information about deployments, you can visit the **Deployments** pag
   src="./images/deployments-preview.png"
   alt="Deployments preview"
   withLightbox=true
-  framed=true
 /%}
 
 ## Remote content

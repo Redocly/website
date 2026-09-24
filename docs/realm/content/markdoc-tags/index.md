@@ -73,5 +73,5 @@ Avoid:
 
 ## Resources
 
-- **[Markdoc tag library](./tag-library.md)**: Explore Markdoc tags and their rendered examples
+- **[Built-in Markdoc tags](./tag-library.md)**: Explore Markdoc tags and their rendered examples
 - **[Create code walkthrough](./code-walkthrough/create-code-walkthrough.md)**: Follow the tutorial to add code walkthroughs to your project

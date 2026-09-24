@@ -29,7 +29,6 @@ Use the branch switcher at the top of the editor page.
   src="../../_partials/images/current-branch.png"
   alt="Screenshot of the branch switcher"
   withLightbox=true
-  framed=true
 /%}
 
 To switch branches, click the branch switcher and select the branch.
@@ -159,7 +158,6 @@ Hover over any commit to see details including:
   src="../images/editor-commits-history.png"
   alt="Screenshot of the Commit icon"
   withLightbox=true
-  framed=true
 /%}
 
 ## Revert changes
@@ -178,7 +176,6 @@ To revert changes:
   src="../images/revert-single-file.png"
   alt="Screenshot of modified files with revert icon highlighted"
   withLightbox=true
-  framed=true
 /%}
 
 ## Search in files
@@ -190,7 +187,6 @@ To set search to files instead of content inside of files, click the Find a file
   src="../images/search-files.png"
   alt="Screenshot of search files selector in UI"
   withLightbox=true
-  framed=true
 /%}
 
 By default, search does not include a replace option.
@@ -200,7 +196,6 @@ You can add the replace option by selecting the replace toggle.
   src="../images/replace-toggle.png"
   alt="Screenshot of replace toggle"
   withLightbox=true
-  framed=true
 /%}
 
 Selecting the replace toggle again removes the option.
@@ -211,7 +206,6 @@ By default, searches include all folders, but you can specify a folder using the
   src="../images/folder-selector.png"
   alt="Screenshot of the folder selector"
   withLightbox=true
-  framed=true
 /%}
 
 You can also specify whether search should match the case and whole word of your search query.
@@ -221,7 +215,6 @@ Click the icons in the search field to set these options or use regular expressi
   src="../images/search-options.png"
   alt="Screenshot of search options"
   withLightbox=true
-  framed=true
 /%}
 
 ## Sync with main
@@ -236,7 +229,6 @@ Syncing pulls in the changes from main since you created your development branch
   src="../images/sync-button.png"
   alt="Screenshot of the Sync button at the bottom of the editor pane"
   withLightbox=true
-  framed=true
 /%}
 
 ## Resources

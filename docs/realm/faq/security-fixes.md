@@ -36,7 +36,7 @@ All security patches include a changeset entry in the [changelog](../changelog.p
 - **Reunite users** — if your project does not pin a version in `package.json`, it picks up the latest version automatically on each build.
     If you do pin a version, update it in `package.json` and trigger a new build.
 - **Local development users** — update the version in your `package.json` and reinstall dependencies.
-    See [Upgrade product version](../get-started/upgrade-realm-version.md) for detailed instructions.
+    See [Upgrade your product version](../get-started/upgrade-realm-version.md) for detailed instructions.
 
 ## Report a vulnerability
 

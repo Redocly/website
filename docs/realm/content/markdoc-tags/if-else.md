@@ -203,6 +203,6 @@ Confirm that hidden content does not leave confusing gaps.
 
 ## Resources
 
-- **[Build a Markdoc function](../../customization/build-custom-function.md)** - Follow a tutorial for adding custom functions in a Redocly Realm project
+- **[Build Markdoc functions](../../customization/build-custom-function.md)** - Follow a tutorial for adding custom functions in a Redocly Realm project
 - **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to make your content dynamic with `if` and `else`
 - **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

@@ -23,7 +23,7 @@ plans:
     }
   ]
 %}
-# Render weather data from API function in a Markdoc tag
+# API functions tutorial: render weather data in a Markdoc tag
 
 Build a custom Markdoc tag that renders live weather data by calling an API function.
 
@@ -42,7 +42,7 @@ See [File-system and method routing](./api-functions-reference.md#file-system-an
 
 **Markdoc tags** are custom components registered in the `@theme/markdoc` folder.
 You create a React component in `@theme/markdoc/components/`, export it from `@theme/markdoc/components.tsx`, and register its tag schema in `@theme/markdoc/schema.ts`.
-See [Build a Markdoc tag](../build-markdoc-tags.md) for full details.
+See [Build Markdoc tags](../build-markdoc-tags.md) for full details.
 
 In the following solution:
 
@@ -160,7 +160,7 @@ Or specify a city explicitly:
 
 ## Resources
 
-- **[Build a Markdoc tag](../build-markdoc-tags.md)** - Create custom Markdoc tags with React components
+- **[Build Markdoc tags](../build-markdoc-tags.md)** - Create custom Markdoc tags with React components
 - **[API functions reference](./api-functions-reference.md)** - Function signature, routing, context helpers, and access control
 
 {% /code-walkthrough %}

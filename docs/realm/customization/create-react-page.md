@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Create page in React
+# Create React pages
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -204,4 +204,4 @@ The following example pages are available in the gallery:
 - **[Custom page templates](./custom-page-templates.md)** - Use React pages as reusable templates for Markdown content with consistent layouts and functionality
 - **[Custom styling guide](../branding/index.md)** - Customize the appearance of React pages using CSS variables, custom stylesheets, and component-specific styling
 - **[Page permissions](../access/page-permissions.md)** - Implement role-based access control to restrict React page visibility based on user roles and team membership
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project
+- **[Extend with code](./index.md)** - Discover customizable components and customization options for your project

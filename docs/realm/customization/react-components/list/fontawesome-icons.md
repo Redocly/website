@@ -7,7 +7,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Font Awesome Icons
+# Font Awesome Icons React component
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -109,6 +109,6 @@ export function MyComponent() {
 
 ## Resources
 
-- **[List of customizable components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects
+- **[Built-in React components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects
 - **[Built-in icon components](./icons.md)** - Use Redocly's built-in SVG icon system for consistent design
 - **[FontAwesome Icons website](https://fontawesome.com/icons)** - Browse the complete Font Awesome icon library

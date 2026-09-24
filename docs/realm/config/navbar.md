@@ -192,7 +192,6 @@ The following is a screenshot of that navbar.
   src="./images/1-level-navbar.png"
   alt="1 level Navbar"
   withLightbox=true
-  framed=true
 /%}
 
 ### Complete navigation setup
@@ -285,7 +284,6 @@ The following is the screenshot of the navbar.
   src="./images/dropdown-menu.png"
   alt="Dropdown menu"
   withLightbox=true
-  framed=true
 /%}
 
 ### Hide navbar
@@ -323,7 +321,7 @@ Custom theme components can access these properties to display additional inform
 
 ## Resources
 
-- **[Navigation elements](../navigation/index.md)** - Overview of all navigation components and patterns for creating comprehensive site navigation structures
+- **[Build navigation](../navigation/index.md)** - Overview of all navigation components and patterns for creating comprehensive site navigation structures
 - **[Footer configuration](./footer.md)** - Configure the footer navigation with links, copyright information, and organizational elements
 - **[Logo configuration](./logo.md)** - Configure the logo that appears in the navbar with brand customization and display options
 - **[Localization](./l10n.md)** - Configure navbar labels and text for multiple languages to support international audiences

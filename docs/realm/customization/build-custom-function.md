@@ -10,8 +10,7 @@ plans:
 seo:
   description: Empower your technical writers with more powerful tools to control content by adding custom Markdoc functions to your Redocly project.
 ---
-
-# Build a Markdoc function
+# Build Markdoc functions
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -276,4 +275,4 @@ The snippet above does the following:
 - **[Tags](https://markdoc.dev/docs/tags)** - Learn how Markdoc tags work in the official documentation
 - **[Variables](https://markdoc.dev/docs/variables)** - Find out how to customize documents at runtime in the official Markdoc documentation
 - **[Functions](https://markdoc.dev/docs/functions)** - Learn about functions in the official Markdoc documentation
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project
+- **[Extend with code](./index.md)** - Discover customizable components and customization options for your project

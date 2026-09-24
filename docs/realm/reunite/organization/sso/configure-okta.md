@@ -158,5 +158,5 @@ To test project-level access control using Okta groups:
 
 - **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider types and how they apply to project authentication and access control
 - **[Add an identity provider](./add-idp.md)** - Add identity providers in Reunite for centralized authentication management across your projects
-- **[Configure SSO](./configure-sso.md)** - Enable multiple identity provider types for flexible project authentication options
-- **[Role-based access control (RBAC)](../../../access/rbac.md)** - Grant specific users access to specific content using role-based permissions and access controls
+- **[Configure project SSO](./configure-sso.md)** - Enable multiple identity provider types for flexible project authentication options
+- **[Role-based access control](../../../access/rbac.md)** - Grant specific users access to specific content using role-based permissions and access controls

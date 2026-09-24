@@ -8,11 +8,11 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Add an identity provider (IdP)
+# Add identity providers
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Add SSO identity providers in Reunite, so users can use them for logging into Reunite as well as individual projects.
+Add SSO identity providers (IdPs) in Reunite, so users can use them for logging into Reunite as well as individual projects.
 After you have added an IdP in Reunite, the identity provider can then be configured in the `redocly.yaml` configuration file for individual projects.
 
 ## Before you begin
@@ -36,7 +36,7 @@ Make sure you have the following:
     - Client Secret
 - `owner` role in your organization
 
-## Add a Corporate identity provider (IdP)
+## Add a Corporate identity provider
 
 Corporate identity providers authenticate internal users into Reunite and projects.
 You can add multiple Corporate identity providers for your organization and target a specific one at project login by configuring [`access.idps`](../../../config/access/idps.md).
@@ -47,7 +47,7 @@ You can add multiple Corporate identity providers for your organization and targ
    In the **Login type** dropdown, select **Corporate**.
 1. Click **Save**.
 
-## Add a Guest identity provider (IdP)
+## Add a Guest identity provider
 
 Guest identity providers authenticate external users into projects.
 You can add multiple Guest identity providers for your organization and target a specific one at project login by configuring [`access.idps`](../../../config/access/idps.md).
@@ -57,7 +57,6 @@ You can add multiple Guest identity providers for your organization and target a
 1. Complete the form based on the information you have gathered about your SSO identity provider.
    In the **Login type** dropdown, select **Guest**.
 1. Click **Save**.
-
 
 ## Team mapping
 
@@ -104,7 +103,7 @@ If they do not have SSO credentials, they lose access to the organization.
 ## Resources
 
 - **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 provisioning and deprovisioning for an identity provider (early access on request)
-- **[Configure SSO](./configure-sso.md)** - Specify which identity providers users can access or disable SSO entirely for your project authentication settings
+- **[Configure project SSO](./configure-sso.md)** - Specify which identity providers users can access or disable SSO entirely for your project authentication settings
 - **[Configure RBAC](../../../access/index.md)** - Limit user access to specific pages and features in your project and Reunite using role-based access control
 - **[SSO configuration reference](../../../config/access/sso.md)** - Complete technical reference for all available SSO configuration options and implementation details
 - **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider categories and their configuration options for both Reunite and redocly.yaml file setup
