@@ -69,6 +69,13 @@ Example syntax:
 
 ---
 
+- valign
+- string
+- Sets the vertical alignment of the cell content to either `top`, `middle`, or `bottom`.
+  Default value: `top`
+
+---
+
 - colspan
 - number
 - Sets the column and row span.

@@ -1270,6 +1270,7 @@
 --md-table-cell-text-color: var(--text-color-secondary);
 --md-table-cell-padding: var(--spacing-xs) var(--spacing-sm);
 --md-table-footer-cell-padding: var(--spacing-xxs) var(--spacing-sm);
+--md-table-cell-vertical-align: top;
 
 --md-table-head-bg-color: var(--md-table-bg-color);
 --md-table-head-text-color: var(--text-color-primary);

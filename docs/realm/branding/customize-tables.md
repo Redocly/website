@@ -69,6 +69,7 @@ This example adds global table styles with color mode variants:
     ```{% title="@theme/styles.css" %}
     :root {
       --md-table-cell-padding: 8px;
+      --md-table-cell-vertical-align: middle;
       --md-table-border-color: black;
       --md-table-header-bg-color: #EDEDF2;
 
@@ -166,9 +167,10 @@ Attributes provide quick layout control while classes offer complete styling fle
 
 ### Use built-in attributes
 
-Shape your table layout with three built-in attributes - no CSS required:
+Shape your table layout with built-in attributes - no CSS required:
 - `width` - Controls column width
-- `align` - Sets text alignment
+- `align` - Sets horizontal text alignment
+- `valign` - Sets vertical text alignment (`top`, `middle`, or `bottom`)
 - `colspan` - Spans cells across columns
 
 Example of a table customized with attributes:
@@ -187,8 +189,9 @@ Example of a table customized with attributes:
     - Oliver
     - Popsicle
   ---
-    - Daisy {% align="right" %}
-    - Dog treats
+    - Daisy {% align="right" valign="middle" %}
+    - - Dog treats
+      - Belly rubs
   {% /table %}
   ```
 {% /markdoc-example %}
@@ -214,8 +217,9 @@ Example of a table customized with attributes:
 
 ---
 
-- Daisy {% align="right" %}
-- Dog treats
+- Daisy {% align="right" valign="middle" %}
+- - Dog treats
+  - Belly rubs
 
 {% /table %}
 
