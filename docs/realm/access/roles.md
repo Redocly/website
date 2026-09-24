@@ -140,6 +140,14 @@ Organization roles control access to your Redocly organization and are provided 
 -
 -
 
+---
+
+- Can export audit logs
+- {% icon name="solid check" size="2em" color="green" /%}
+-
+-
+-
+
 {% /table %}
 
 ### Reserved organization role names
