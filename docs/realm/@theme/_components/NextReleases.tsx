@@ -107,9 +107,9 @@ const NextReleasesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background: var(--bg-color-tonal);
+  background: var(--layer-color);
   border-radius: 12px;
-  border: 1px solid var(--border-color-primary);
+  border: 1px solid var(--border-color-secondary);
   padding: var(--spacing-base);
 `;
 

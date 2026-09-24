@@ -264,7 +264,7 @@ const BaseTag = styled.div`
   align-items: center;
   height: 26px;
   border: 1px solid var(--border-color-primary);
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 1px 8px;
   font-size: var(--font-size-base);
   line-height: 22px;
