@@ -455,6 +455,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- search.ai.send
+- Accessible name of the button that submits a question to the AI assistant
+- Send question
+
+---
+
 - search.ai.suggestionsTitle
 - Title for AI assistant suggestions section
 - Suggestions
