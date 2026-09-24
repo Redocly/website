@@ -5,8 +5,8 @@ seo:
 
 # Redoc CE quickstart guide
 
-To render your OpenAPI description using Redoc CE, use the following HTML code sample.
-Replace the `spec-url` attribute with the URL or local file address to your description file.
+To render your API description using Redoc CE, use the following HTML code sample.
+Replace the `spec-url` attribute with the URL or path to your description file.
 
 ```html
 <!DOCTYPE html>
@@ -29,26 +29,32 @@ Replace the `spec-url` attribute with the URL or local file address to your desc
   </head>
   <body>
     <!--
-    Redoc element with link to your OpenAPI description
+    Redoc element with link to your API description
     -->
-    <redoc spec-url="https://redocly.github.io/redoc/museum.yaml"></redoc>
+    <redoc spec-url="https://redocly.github.io/redoc/cafe.yaml"></redoc>
     <!--
     Link to Redoc script on CDN for rendering standalone element
     -->
-    <script type="module" src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"></script>
+    <script type="module" src="https://cdn.redoc.ly/redoc/v3.x/bundles/redoc.standalone.js"></script>
   </body>
 </html>
 ```
 
-{% admonition type="info" name="Redoc CE requires an HTTP server to run locally" %}
-To load local OpenAPI descriptions you must run a web server.
-This requirement results from the [same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) and
-other security reasons.
+The `spec-url` value can be an OpenAPI, AsyncAPI, or GraphQL description, and Redoc CE detects the specification type from the file.
+To try the other specifications, point `spec-url` at `https://redocly.github.io/redoc/3.x/cafe-asyncapi.yaml` or `https://redocly.github.io/redoc/3.x/cafe.graphql`.
+See [Supported specifications](./supported-specifications.md) for the detection rules.
 
-See [Local HTTP server](./deployment/intro.md#local-http-server) for detailed installation instructions.
-{% /admonition %}
+A relative `spec-url` is resolved against the site root, not against the HTML page.
+When the description sits next to a page in a subfolder, use a root-relative path such as `/docs/openapi.yaml`, or a full URL.
+
+Save the file and open it in your browser.
+No web server is needed: the script loads from the CDN, the description loads from a URL, and navigation uses `#/` hash routes, so the page works directly from disk.
+
+A description file on your disk does not load from a `file://` page, so serve the folder with a static file server, for example `npx http-server` or `python3 -m http.server`, or reference the file by URL.
 
 ## Resources
 
-- **[Redoc CE deployment guide](./deployment/intro.md)** - Follow step-by-step instructions for setting up your Redoc CE project
-- **[Configure Redoc CE](./config.md)** - Explore Redoc CE's configuration options
+- **[Supported specifications](./supported-specifications.md)** - Supported OpenAPI, AsyncAPI, and GraphQL versions and how Redoc CE detects the specification type
+- **[Redoc CE deployment guide](./deployment/intro.md)** - Step-by-step instructions for setting up your Redoc CE project
+- **[Use Redoc CE in HTML](./deployment/html.md)** - Pass configuration attributes, initialize from JavaScript, and customize the theme
+- **[Configure Redoc CE](./config.md)** - Redoc CE's configuration options
