@@ -430,7 +430,7 @@ const Wrapper = styled.div`
   .tag-product-reef,
   .tag-product-revel,
   .tag-product-redoc {
-    border-radius: 6px;
+    border-radius: 4px;
     color: white;
     border: 0;
     gap: 0;
@@ -460,7 +460,7 @@ const Wrapper = styled.div`
   .tag-version {
     background-color: transparent;
     border: 1px solid var(--text-color-primary);
-    border-radius: 6px;
+    border-radius: 4px;
     gap: 0;
     text-transform: inherit;
   }
@@ -475,19 +475,10 @@ const ControlsWrap = styled.div`
   flex-wrap: wrap;
 
   [data-component-name='Search/SearchInput'] {
-    --search-input-icon-color: var(--input-content-placeholder-color);
-    --search-input-gap: 8px;
-
     max-width: 250px;
     border: 1px solid var(--border-color-primary);
-    border-radius: 8px;
+    border-radius: 4px;
     height: 34px;
-
-    [data-component-name='icons/SearchIcon/SearchIcon'] {
-      flex-shrink: 0;
-      width: 16px;
-      height: 16px;
-    }
 
     input {
       background: transparent;

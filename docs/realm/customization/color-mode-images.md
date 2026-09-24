@@ -97,7 +97,7 @@ In this example, the image changes when users toggle between color modes.
 You can see the working implementation below.
 Try changing the color mode.
 
-{% img srcSet="./images/sun.png light, ./images/moon.png dark" alt="sun and moon" width="200" height="" framed=true /%}
+{% img srcSet="./images/sun.png light, ./images/moon.png dark" alt="sun and moon" width="200" height="" /%}
 
 ## Resources
 

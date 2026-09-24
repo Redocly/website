@@ -1,6 +1,7 @@
 ---
 products:
   - Redoc
+  - Redoc CE
   - Realm
 plans:
   - Pro
@@ -47,7 +48,6 @@ openapi:
   src="../images/stacked-layout.png"
   alt="Screnshot of API documentation in stacked layout"
   withLightbox=true
-  framed=true
 /%}
 
 ```yaml {% title="redocly.yaml" %}
@@ -59,7 +59,6 @@ openapi:
   src="../images/three-panel-layout.png"
   alt="Screenshot of API documentation in a three panel layout"
   withLightbox=true
-  framed=true
 /%}
 
 ## Resources

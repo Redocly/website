@@ -129,10 +129,6 @@ For example:
 - Product name "Example One" becomes the class `product-example-one`.
 - Product name "API Documentation" becomes the class `product-api-documentation`.
 
-Ad-blocker filter lists hide the class names `product-ad`, `product-ads`, and `product-inlist-ad` on every website.
-To keep such pages visible, Realm appends an underscore to these class names.
-For example, a product named "Ads" gets the class `product-ads_` instead of `product-ads`.
-
 To style a specific product, use the product class selector in your `@theme/styles.css` file:
 
 ```css {% title="@theme/styles.css" %}
@@ -334,7 +330,6 @@ The following screenshots show the styling rules applied:
     src="./images/full-corporate-light.jpeg"
     alt="Screenshot of Redocly project with the full corporate styling example applied in light mode."
     withLightbox=true
-    framed=true
    /%}
   {% /tab %}
   {% tab label="Dark mode"%}
@@ -342,7 +337,6 @@ The following screenshots show the styling rules applied:
     src="./images/full-corporate-dark.jpeg"
     alt="Screenshot of Redocly project with the full corporate styling example applied in dark mode."
     withLightbox=true
-    framed=true
    /%}
   {% /tab %}
 {% /tabs %}
@@ -397,7 +391,6 @@ The following screenshots show the styling rules applied:
     src="./images/trendy-startup-light.jpeg"
     alt="Screenshot of Redocly project with the trendy startup styling example applied in light mode."
     withLightbox=true
-    framed=true
    /%}
   {% /tab %}
   {% tab label="Dark mode"%}
@@ -405,7 +398,6 @@ The following screenshots show the styling rules applied:
     src="./images/trendy-startup-dark.jpeg"
     alt="Screenshot of Redocly project with the trendy startup styling example applied in dark mode."
     withLightbox=true
-    framed=true
    /%}
   {% /tab %}
 {% /tabs %}
@@ -478,7 +470,6 @@ The following screenshots show the styling rules applied:
     src="./images/personal-wellness-light.jpeg"
     alt="Screenshot of Redocly project with the personal wellness styling example applied in light mode."
     withLightbox=true
-    framed=true
    /%}
   {% /tab %}
   {% tab label="Dark mode"%}
@@ -486,7 +477,6 @@ The following screenshots show the styling rules applied:
     src="./images/personal-wellness-dark.jpeg"
     alt="Screenshot of Redocly project with the personal wellness styling example applied in dark mode."
     withLightbox=true
-    framed=true
    /%}
   {% /tab %}
 {% /tabs %}

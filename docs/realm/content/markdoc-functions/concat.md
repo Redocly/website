@@ -73,7 +73,7 @@ Full name: {% concat($frontmatter.data.firstName, " ", $frontmatter.data.lastNam
 
 **Result:**
 
-{% img src=concat("https://picsum.photos/id/", $frontmatter.data.imageId, "/300/200") framed=true /%}
+{% img src=concat("https://picsum.photos/id/", $frontmatter.data.imageId, "/300/200") /%}
 
 ### Create dynamic card title
 

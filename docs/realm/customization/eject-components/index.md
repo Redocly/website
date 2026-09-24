@@ -43,7 +43,6 @@ To determine the component to eject using Google Chrome developer tools do the f
       src="../images/inspect-component.png"
       height=300
       withLightbox=true
-      framed=true
     /%}
 
 1. Identify component name - find `data-component-name` attribute and see its value.
@@ -53,7 +52,6 @@ To determine the component to eject using Google Chrome developer tools do the f
       src="../images/find-data-component-name.png"
       height=400
       withLightbox=true
-      framed=true
     /%}
 
 ## Eject component

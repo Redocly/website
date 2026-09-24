@@ -33,7 +33,6 @@ You can see which builds are in draft mode on the **Deployments** page.
   alt="Draft mode banner above a deployments table listing production and preview builds marked as Draft"
   src="../images/draft-deployments-list.png"
   withLightbox=true
-  framed=true
 /%}
 
 Each deployment created while the project is in draft mode is labeled with a **Draft** badge.
@@ -85,7 +84,6 @@ To publish a draft project:
     alt="Projects list with live and draft project cards; the draft project shows a Draft badge"
     src="../images/draft-projects-list.png"
     withLightbox=true
-    framed=true
   /%}
 
 1. In the editor banner, click **Go live**.
@@ -93,7 +91,6 @@ To publish a draft project:
     alt="Project Editor with a draft mode banner across the top and a Go live button on the right"
     src="../images/draft-project-inline-status.png"
     withLightbox=true
-    framed=true
   /%}
 
 1. Confirm the action in the modal.
@@ -101,7 +98,6 @@ To publish a draft project:
     alt="Go live confirmation dialog with project information, branch and commit to publish, and Cancel and Go live actions"
     src="../images/draft-project-go-live-confirmation.png"
     withLightbox=true
-    framed=true
   /%}
 
 Reunite starts a new production build for the project and removes draft mode from this and future builds.

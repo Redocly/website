@@ -33,7 +33,6 @@ You can also navigate to the **Pull requests** page and select it from the open 
   src="../../../get-started/images/view-pull-request.png"
   alt="Screenshot of Reunite with arrow pointing to View pull request button"
   withLightbox=true
-  framed=true
 /%}
 
 To view closed pull requests, click the **Closed** side of the toggle.
@@ -42,7 +41,6 @@ To view closed pull requests, click the **Closed** side of the toggle.
   src="../../images/closed-toggle.png"
   alt="Screenshot of Reunite with arrow pointing to Closed toggle"
   withLightbox=true
-  framed=true
 /%}
 
 Selecting a pull request opens the **Activity** tab for that pull request.
@@ -54,7 +52,6 @@ You can click on the commit hashes to see the changes introduced with that commi
   src="../../images/reunite-pull-request-commit-hashes.png"
   alt="Screenshot of pull request in Reunite with arrows pointing to commit hash links"
   withLightbox=true
-  framed=true
 /%}
 
 After you create a pull request in Reunite, it is still in draft form.
@@ -101,7 +98,6 @@ To edit the description of a pull request, click the more options dropdown menu 
   src="../../images/reunite-pull-request-edit-description.png"
   alt="Screenshot of pull request in Reunite with an arrow pointing to the more options dropdown icon"
   withLightbox=true
-  framed=true
 /%}
 
 You can use the toolbar at the top of the text field to format your description text, add links, or images.
@@ -122,7 +118,6 @@ When you are ready for others to review your changes, click the **Ready for revi
   src="../../images/reunite-pull-request-ready-for-review.png"
   alt="Screenshot of pull request in Reunite with an arrow pointing to the Ready for review button"
   withLightbox=true
-  framed=true
 /%}
 
 ## Assign reviewers
@@ -139,7 +134,6 @@ If no reviewers have been assigned yet, you can also use the **Add reviewers** b
   src="../../images/reunite-pull-request-assign-reviewers.png"
   alt="Screenshot of pull request in Reunite with arrow pointing to the adjustments icon next to Reviewers"
   withLightbox=true
-  framed=true
 /%}
 
 The reviewer might not currently be a member of the organization.

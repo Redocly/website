@@ -27,12 +27,6 @@ Realm provides built-in MCP server capabilities that expose your API Docs to AI 
 Use the Docs MCP server to explore and discover APIs in your project.
 For the current MCP endpoint details, authentication semantics, server metadata, and tool schemas, see the [Docs MCP reference](./openapi.yaml).
 
-The MCP server also includes a `submit-feedback` tool.
-An AI agent calls it when a page it relied on is incorrect, outdated, confusing, or incomplete.
-The report appears on the Reunite **Feedback** page with the `MCP` origin, the page, the agent name, and the feature involved.
-An agent can only report a page it has access to.
-Set [`feedback.hide`](../../config/feedback.md) to `true` to remove the tool together with the feedback form.
-
 ## MCP server card
 
 The MCP server card is a standardized JSON document that lets agents discover the Docs MCP server: its tools, transport endpoint, and capabilities.
@@ -214,19 +208,32 @@ In the Claude Code CLI, ask the AI agent to perform an instruction that uses an 
 
 ### Connect Claude Desktop to the MCP server
 
+The Claude Desktop configuration file only launches stdio commands, so the entry connects to the remote server through the `mcp-remote` bridge.
+
 {% numbered-list %}
   {% numbered-item %}
-  In Claude Desktop, open **Customize** → **Connectors** and select **Add custom connector**.
+  In Claude Desktop, open **Settings → Developer → Edit Config**.
   {% /numbered-item %}
   {% numbered-item %}
-  Paste the MCP server URL, for example `https://example.com/mcp`.
+  Add this entry to the configuration file:
+
+  ```json
+  {
+    "mcpServers": {
+      "example-mcp": {
+        "command": "npx",
+        "args": ["-y", "mcp-remote", "https://example.com/mcp"]
+      }
+    }
+  }
+  ```
   {% /numbered-item %}
   {% numbered-item %}
-  Click **Add**.
+  Restart Claude Desktop.
   {% /numbered-item %}
 {% /numbered-list %}
 
-If the MCP server requires authentication, Claude Desktop prompts you to sign in when you connect.
+If the MCP server requires authentication, `mcp-remote` opens a sign‑in page in your browser on the first connection.
 
 #### Test the Claude Desktop connection
 

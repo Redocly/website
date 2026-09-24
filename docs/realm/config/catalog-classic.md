@@ -21,7 +21,6 @@ You can configure multiple catalogs and set the link text, description, and filt
   src="../content/images/catalog.png"
   alt="Screenshot of a catalog"
   withLightbox=true
-  framed=true
 /%}
 
 ## Options

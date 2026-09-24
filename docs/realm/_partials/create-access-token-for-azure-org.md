@@ -11,7 +11,6 @@ Redocly needs these permissions to be able to setup service hooks (webhooks) for
   src="./images/azure-devops-user-sg.png"
   alt="Screenshot with Azure user security group for project"
   withLightbox=true
-  framed=true
 /%}
 
 Alternatively, you can put your user in the `Project Contributors` security group and add the `View subscriptions` and the `Edit subscriptions` permissions manually.
@@ -39,7 +38,6 @@ The following screenshot from Azure DevOps shows the required custom defined sco
   src="./images/creating-new-pat.png"
   alt="Screenshot with Azure scopes"
   withLightbox=true
-  framed=true
 /%}
 
 Reunite requires:

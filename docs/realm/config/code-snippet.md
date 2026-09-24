@@ -38,7 +38,6 @@ The following is an example of a request and response code snippet in OpenAPI re
   src="./images/openapi-code-snippet.png"
   alt="Screenshot of a request and response in OpenAPI reference documentation"
   withLightbox=true
-  framed=true
 /%}
 
 OpenAPI reference documentation code snippets include report, copy, and expand and collapse icons in the top right corner.
@@ -127,7 +126,7 @@ When users click the report button or text, they are provided a comment feedback
 - hide
 - boolean
 - Specifies if the report button should be hidden.
-  Default: `false`.
+  Default: `true`.
 
 ---
 

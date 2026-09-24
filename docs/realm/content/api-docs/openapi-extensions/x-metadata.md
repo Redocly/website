@@ -55,7 +55,6 @@ The data is presented as shown in the following screenshot:
   src="../../images/x-metadata.png"
   alt="title \"Metadata\" and a table showing the metadata"
   withLightbox=true
-  framed=true
 /%}
 
 ### `x-metadata` as filters in classic catalog
