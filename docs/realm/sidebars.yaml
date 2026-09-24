@@ -334,6 +334,8 @@
       label: MCP servers
     - page: customization/agent-skills/index.md
       label: Agent skills
+    - page: customization/webmcp/index.md
+      label: WebMCP tools
     - page: config/navigation.md#pageaction-object
       label: Page actions
       disconnect: true
