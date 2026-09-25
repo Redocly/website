@@ -61,8 +61,6 @@
       label: codeSnippet
     - page: ./color-mode.md
       label: colorMode
-    - page: ./consent.md
-      label: consent
     - page: ./cors-proxy.md
       label: corsProxy
     - page: ./developer-onboarding/index.md

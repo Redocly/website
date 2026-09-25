@@ -28,7 +28,7 @@ You can add API keys to your organization if you need to access the Redocly API 
 To add an API key:
 
 1. Log in to your Redocly instance.
-1. Select **API keys** in the navigation menu on the left side of the page.
+1. Select **Access** > **API keys** in the navigation menu on the left side of the page.
 1. Click **New key**.
 1. Enter a **Name** for your key.
 1. Choose a **Permission model** for the key and set the permissions it grants.
@@ -181,7 +181,7 @@ API keys assigned to a team have access to the resources that the team's roles a
 When you are finished using an API key, you can revoke the key, making it an invalid authentication method.
 
 1. Log in to your Redocly instance.
-1. Select **API keys** in the navigation menu on the left side of the page.
+1. Select **Access** > **API keys** in the navigation menu on the left side of the page.
 1. Click **More options** next to the API key you want to revoke, then click **Revoke**.
 1. Confirm that you want to revoke the key.
 

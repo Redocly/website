@@ -48,7 +48,7 @@ Your identity provider must send an `Authorization` header that carries your org
 Use the `Bearer` format followed by a space and the full API key string.
 Use the same value you copy when you create a key in **API keys**.
 
-Create or rotate keys under **API keys** in your organization settings.
+Create or rotate keys under **Access** > **API keys**.
 From more information about API keys in your Redocly products, see [Manage API keys](../api-keys.md).
 
 You might rotate or revoke the organization API key used for SCIM.

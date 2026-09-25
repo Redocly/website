@@ -13,10 +13,6 @@ plans:
 
 Integrate Google Tag Manager into Redocly project.
 
-With the [`consent`](../consent.md) option on, this integration loads only while the consent state allows the analytics category.
-In `opt-in` mode the visitor must accept first.
-In `opt-out` mode the category starts on and stays on until the visitor refuses.
-
 ## Configuration
 
 {% table %}
@@ -54,8 +50,7 @@ In `opt-out` mode the category starts on and stays on until the visitor refuses.
 
 - defaultDataLayer
 - object
-- An arbitrary data layer object.
-  Redocly sets it before GTM loads.
+- Arbitrary datalayer object to be set before GTM is loaded
 
 ---
 
