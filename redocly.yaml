@@ -22,7 +22,6 @@ ignore:
   - '.yalc/**'
   - 'apis/**'
 
-
 markdown:
   partialsFolders:
     - 'docs-legacy/_snippets'
