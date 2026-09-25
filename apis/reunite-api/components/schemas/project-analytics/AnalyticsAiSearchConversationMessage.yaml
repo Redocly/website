@@ -82,6 +82,10 @@ properties:
       built-in search.
     type: string
     example: 'https://docs.example.com'
+  escalated:
+    description: Whether the conversation of this message ended in a created support ticket.
+    type: boolean
+    example: false
 required:
   - object
   - id
