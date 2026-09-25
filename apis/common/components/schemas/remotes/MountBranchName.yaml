@@ -1,3 +1,0 @@
-type: string
-description: Name of the branch to mount.
-example: main

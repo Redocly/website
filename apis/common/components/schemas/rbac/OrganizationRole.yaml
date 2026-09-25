@@ -1,4 +1,0 @@
-type: string
-description: Organization role.
-enum: [VIEWER, COMMITTER, BILLING, MEMBER, OWNER]
-example: VIEWER

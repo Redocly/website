@@ -1,7 +1,0 @@
-name: commentId
-description: Review Comment ID.
-required: true
-in: path
-schema:
-  type: string
-example: com_01h1s5z6vf2mm1mz3hevnn9va7

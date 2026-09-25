@@ -1,6 +1,0 @@
-type: string
-description: Git remote update type.
-enum: 
-  - CREATE
-  - MANUAL_SYNC
-  - WEBHOOK

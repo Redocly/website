@@ -1,7 +1,0 @@
-name: commitSha
-description: Commit SHA.
-required: true
-in: path
-schema:
-  type: string
-example: ae1d9fb46aa2b07ee9836d49862ec4e2c46fbbba

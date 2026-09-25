@@ -1,5 +1,0 @@
-description: Check status.
-type: string
-enum: ['SUCCESS', 'FAILED', 'WARNING', 'NOT_STARTED', 'SKIPPED', 'IN_PROGRESS']
-example: SUCCESS
-readOnly: true

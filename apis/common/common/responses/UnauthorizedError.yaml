@@ -1,5 +1,0 @@
-description: User is not authorized to access this resource.
-content:
-  application/problem+json:
-    schema:
-      $ref: ../errors/Problem.yaml

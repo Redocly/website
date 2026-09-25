@@ -1,9 +1,0 @@
-name: workflowId
-description: Respect Monitoring workflow ID.
-required: true
-in: path
-schema:
-  type: string
-  pattern: ^amw_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-  description: Unique identifier prefixed with `amw_`.
-example: amw_01h1s5z6vf2mm1mz3hevnn9va7

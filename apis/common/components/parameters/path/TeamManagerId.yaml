@@ -1,9 +1,0 @@
-name: teamManagerId
-description: Team manager ID.
-required: true
-in: path
-schema:
-  type: string
-  pattern: ^tmg_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-  description: Unique identifier prefixed with `tmg_`.
-example: tmg_01h1s5z6vf2mm1mz3hevnn9va7

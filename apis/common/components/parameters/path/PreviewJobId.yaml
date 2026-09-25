@@ -1,7 +1,0 @@
-name: previewJobId
-description: Preview Job ID.
-required: true
-in: path
-schema:
-  type: string
-example: preview-acme.com

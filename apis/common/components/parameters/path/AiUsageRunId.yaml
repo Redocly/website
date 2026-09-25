@@ -1,9 +1,0 @@
-name: usageId
-description: AI usage run ID.
-required: true
-in: path
-schema:
-  type: string
-  pattern: ^aiur_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-  description: Unique identifier prefixed with `aiur_`.
-example: aiur_01h1s5z6vf2mm1mz3hevnn9va7

@@ -1,7 +1,0 @@
-description: >-
-  ID of the user acting on the resource. Unique identifier prefixed with `usr_`, or the Reunite
-  bot system user `usr_reunite_bot` sent by internal-auth callers such as the AI worker.
-  Required for InternalAuth calls; session calls derive it from the session.
-type: string
-pattern: ^usr_([0-9abcdefghjkmnpqrstvwxyz]{26}|reunite_bot)$
-example: usr_01h1s5z6vf2mm1mz3hevnn9va7

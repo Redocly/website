@@ -1,7 +1,0 @@
-name: branchName
-in: query
-description: Branch name.
-required: true
-schema:
-  type: string
-example: test-branch

@@ -1,7 +1,0 @@
-type: object
-properties:
-  previousTargetBranchName:
-    type: string
-    description: Target branch name before the change.
-required:
-  - previousTargetBranchName

@@ -1,6 +1,0 @@
-type: object
-properties:
-  cloneUrl:
-    type: string
-    format: uri
-    example: https://oauth:gh_0ABC12345@github.com/owner/repoName.git

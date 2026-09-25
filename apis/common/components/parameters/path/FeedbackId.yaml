@@ -1,9 +1,0 @@
-name: feedbackId
-description: Feedback ID.
-required: true
-in: path
-schema:
-  type: string
-  pattern: ^fb_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-  description: Unique identifier prefixed with `fb_`.
-example: fb_01h1s5z6vf2mm1mz3hevnn9va7

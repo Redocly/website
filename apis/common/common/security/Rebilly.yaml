@@ -1,4 +1,0 @@
-type: apiKey
-description: API key is required to talk with Rebilly.
-in: header
-name: x-webhook-secret

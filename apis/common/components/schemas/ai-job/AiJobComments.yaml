@@ -1,9 +1,0 @@
-type: object
-description: All pull request comments of one AI job.
-properties:
-  comments:
-    type: array
-    items:
-      $ref: ./AiJobComment.yaml
-required:
-  - comments

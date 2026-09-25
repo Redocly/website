@@ -1,7 +1,0 @@
-name: x-redocly-scout-version
-description: Scout version.
-required: false
-in: header
-schema:
-  type: string
-example: '1.0.0'

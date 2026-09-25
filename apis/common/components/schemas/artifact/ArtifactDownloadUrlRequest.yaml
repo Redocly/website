@@ -1,9 +1,0 @@
-type: object
-required:
-  - key
-properties:
-  key:
-    type: string
-    minLength: 1
-    example: ai-scaffold/org_123/session-uuid/openapi.yaml
-    description: S3 object key of the artifact to download (returned from createArtifactUploadUrl).

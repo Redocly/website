@@ -1,7 +1,0 @@
-name: orgSlug
-description: Organization slug.
-required: true
-in: path
-schema:
-  type: string
-example: acme-inc

@@ -1,9 +1,0 @@
-name: domainId
-description: Identity domain ID.
-required: true
-in: path
-schema:
-  type: string
-  pattern: ^idd_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-  description: Unique identifier prefixed with `idd_`.
-example: idd_01h1s5z6vf2mm1mz3hevnn9va7

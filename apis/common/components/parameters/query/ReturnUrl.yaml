@@ -1,6 +1,0 @@
-name: returnUrl
-in: query
-required: false
-schema:
-  type: string
-example: /my-profile/

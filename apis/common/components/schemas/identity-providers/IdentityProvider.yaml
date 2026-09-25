@@ -1,8 +1,0 @@
-oneOf:
-  - $ref: ./OpenIDIdentityProvider.yaml
-  - $ref: ./SAML2IdentityProvider.yaml
-discriminator:
-  propertyName: type
-  mapping:
-    SAML2: ./SAML2IdentityProvider.yaml
-    OPENID: ./OpenIDIdentityProvider.yaml

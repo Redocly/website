@@ -1,4 +1,0 @@
-type: string
-format: date-time
-description: Commit creation date.
-example: '2021-09-20T09:06:12.300+03:00'

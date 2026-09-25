@@ -1,9 +1,0 @@
-type: string
-description: Status of project deployment.
-enum:
-  - NOT_STARTED
-  - SKIPPED
-  - IN_PROGRESS
-  - SUCCESS
-  - FAILED
-example: IN_PROGRESS

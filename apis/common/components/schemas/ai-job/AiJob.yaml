@@ -1,8 +1,0 @@
-oneOf:
-  - $ref: ./AiJobScaffold.yaml
-  - $ref: ./AiJobWriterAgent.yaml
-discriminator:
-  propertyName: type
-  mapping:
-    PROJECT_SCAFFOLD: ./AiJobScaffold.yaml
-    WRITER_AGENT: ./AiJobWriterAgent.yaml

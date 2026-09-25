@@ -1,3 +1,0 @@
-type: boolean
-default: true
-description: Auto sync changes to remote.

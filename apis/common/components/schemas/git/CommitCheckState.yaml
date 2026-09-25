@@ -1,8 +1,0 @@
-type: string
-description: Normalized state of a commit check.
-enum:
-  - PENDING
-  - IN_PROGRESS
-  - SUCCESS
-  - FAILED
-example: FAILED

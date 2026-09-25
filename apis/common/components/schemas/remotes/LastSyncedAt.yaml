@@ -1,9 +1,0 @@
-type:
-  - string
-  - 'null'
-format: date-time
-description: |-
-  Last time remote processed the default branch update. 
-  `null` when the remote has never been synced. 
-  For URL remotes it is updated on interval specified for the remote.
-example: 2021-08-25T10:00:00.000Z

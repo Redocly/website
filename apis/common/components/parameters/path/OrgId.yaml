@@ -1,9 +1,0 @@
-name: orgId
-description: Organization ID.
-required: true
-in: path
-schema:
-  type: string
-  pattern: ^org_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-  description: Unique identifier prefixed with `org_`.
-example: org_01h1s5z6vf2mm1mz3hevnn9va7

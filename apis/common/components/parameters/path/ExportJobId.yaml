@@ -1,9 +1,0 @@
-name: exportJobId
-description: Export Job Id.
-required: true
-in: path
-schema:
-  type: string
-  pattern: ^exp_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-  description: Unique identifier prefixed with `exp_`.
-example: exp_01h1s5z6vf2mm1mz3hevnn9va7

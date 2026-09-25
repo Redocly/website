@@ -1,7 +1,0 @@
-name: loginHint
-in: query
-required: false
-description: Pre-fills the identity provider login form, typically with the user's email address.
-schema:
-  type: string
-example: user@example.com

@@ -1,3 +1,0 @@
-type: boolean
-default: false
-description: Auto merge changes from remote.

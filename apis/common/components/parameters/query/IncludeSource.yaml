@@ -1,8 +1,0 @@
-name: isIncludeSource
-in: query
-description: Indicates whether to include the source details in the response.
-required: false
-schema:
-  type: boolean
-  default: false
-example: true

@@ -1,7 +1,0 @@
-name: cookie
-description: Cookie.
-required: false
-in: header
-schema:
-  type: string
-example: name=John;age=30

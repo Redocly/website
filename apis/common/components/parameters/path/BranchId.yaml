@@ -1,7 +1,0 @@
-name: branchId
-description: Branch id.
-required: true
-in: path
-schema:
-  type: string
-example: br_01h1s5s6vf1mm0mz3hevnn3va7

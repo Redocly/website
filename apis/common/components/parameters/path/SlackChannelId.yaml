@@ -1,8 +1,0 @@
-name: slackChannelId
-description: Slack channel ID.
-required: true
-in: path
-schema:
-  type: string
-  description: Unique identifier.
-example: C061EG9T2

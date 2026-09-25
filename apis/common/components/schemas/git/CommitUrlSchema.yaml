@@ -1,4 +1,0 @@
-type: string
-format: uri
-description: Commit URL.
-example: "https://gitlab.example.com/janedoe/gitlab-foss/-/commit/6104942438c14ec7bd21c6cd5bd995272b3faff6"

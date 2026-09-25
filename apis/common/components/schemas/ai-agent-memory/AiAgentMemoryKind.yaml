@@ -1,6 +1,0 @@
-type: string
-enum:
-  - OPENED_PULL_REQUEST
-  - REJECTED_CANDIDATE
-  - SKIPPED_CANDIDATE
-description: Memory document kind.

@@ -1,5 +1,0 @@
-description: Status.
-type: string
-enum: [NOT_STARTED, QUEUED, IN_PROGRESS, FAILED, SUCCESS, TIMED_OUT]
-example: SUCCESS
-readOnly: true

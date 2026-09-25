@@ -1,8 +1,0 @@
-type: object
-properties:
-  name:
-    description: Team name.
-    type: string
-    example: Test Team
-required:
-  - name

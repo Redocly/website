@@ -1,9 +1,0 @@
-name: inviteId
-description: Invite ID.
-required: true
-in: path
-schema:
-  type: string
-  pattern: ^inv_[0-9abcdefghjkmnpqrstvwxyz]{26}$
-  description: Unique identifier prefixed with `inv_`.
-example: inv_01h1s5z6vf2mm1mz3hevnn9va7

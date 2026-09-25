@@ -1,8 +1,0 @@
-type: object
-properties:
-  path:
-    description: Path to the folder.
-    type: string
-    example: src/components
-required:
-  - path

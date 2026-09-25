@@ -1,9 +1,0 @@
-type: object
-required:
-  - features
-properties:
-  features:
-    type: array
-    description: Suggested features inferred from the project description.
-    items:
-      $ref: AiRecommendation.yaml

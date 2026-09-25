@@ -1,7 +1,0 @@
-name: domain
-in: query
-description: Custom domain name.
-required: true
-schema:
-  type: string
-example: docs.example.com

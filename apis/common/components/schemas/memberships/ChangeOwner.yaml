@@ -1,8 +1,0 @@
-type: object
-properties:
-  newOwnerEmail:
-    description: Email of the new organization owner.
-    type: string
-    example: example@example.com
-required:
-  - newOwnerEmail

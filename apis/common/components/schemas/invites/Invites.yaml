@@ -1,6 +1,0 @@
-type: array
-description: Collection of invite resources. Batch size is capped at 100.
-minItems: 1
-maxItems: 100
-items:
-  $ref: ./Invite.yaml

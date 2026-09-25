@@ -1,7 +1,0 @@
-name: branchName
-description: Branch name.
-required: true
-in: path
-schema:
-  type: string
-example: test-branch
