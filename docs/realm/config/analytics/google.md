@@ -13,6 +13,10 @@ plans:
 
 Integrate Google Analytics 4 into Redocly project using the Google tag (gtag.js).
 
+With the [`consent`](../consent.md) option on, this integration loads only while the consent state allows the analytics category.
+In `opt-in` mode the visitor must accept first.
+In `opt-out` mode the category starts on and stays on until the visitor refuses.
+
 ## Configuration
 
 {% table %}
@@ -58,7 +62,7 @@ Integrate Google Analytics 4 into Redocly project using the Google tag (gtag.js)
 
 - anonymizeIp
 - boolean
-- When present, the IP address of the sender will be masked.
+- When present, Google Analytics masks the sender's IP address.
   Only allowed in root `redocly.yaml`.
 
 ---
@@ -85,7 +89,7 @@ Integrate Google Analytics 4 into Redocly project using the Google tag (gtag.js)
 
 - respectDNT
 - boolean
-- When set to `true`, Google Analytics will not be loaded at all for visitors that have "Do Not Track" enabled in their browser.
+- When set to `true`, Google Analytics does not load for visitors who enable "Do Not Track" in their browser.
   Only allowed in root `redocly.yaml`.
 
 {% /table %}

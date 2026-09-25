@@ -1528,6 +1528,134 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- consent.title
+- Title in the consent banner
+- We value your privacy
+
+---
+
+- consent.message
+- Message in the consent banner
+- By selecting "Accept all cookies", you agree to the use of cookies to improve site navigation, understand how our site is used, and support our marketing efforts.
+  Select "Customize" to choose which types of cookies you allow.
+
+---
+
+- consent.privacyPolicy
+- Label of the privacy policy link in the banner and the dialog
+- Privacy policy
+
+---
+
+- consent.customize
+- Label of the banner button that opens the settings dialog
+- Customize
+
+---
+
+- consent.rejectAll
+- Label of the button that rejects every optional category
+- Reject all
+
+---
+
+- consent.acceptAll
+- Label of the dialog button that accepts every optional category
+- Accept all
+
+---
+
+- consent.acceptAllCookies
+- Label of the banner button that accepts every optional category
+- Accept all cookies
+
+---
+
+- consent.savePreferences
+- Label of the dialog button that saves the toggled categories
+- Save preferences
+
+---
+
+- consent.dialog.title
+- Title of the consent settings dialog
+- Cookie preferences
+
+---
+
+- consent.dialog.description
+- Text under the dialog title
+- Choose which cookies this site may use.
+  You can change your choice at any time.
+
+---
+
+- consent.dialog.close
+- Accessible label of the dialog close button
+- Close
+
+---
+
+- consent.alwaysOn
+- Accessible label of the necessary category toggle, which the visitor cannot change
+- Always on
+
+---
+
+- consent.alwaysOff
+- Accessible label of the marketing category toggle when the browser sends Global Privacy Control
+- Always off
+
+---
+
+- consent.gpcNotice
+- Note under the marketing category when the browser sends Global Privacy Control
+- Your browser asked us not to share your data, so this stays off.
+
+---
+
+- consent.category.necessary.title
+- Title of the necessary category
+- Necessary
+
+---
+
+- consent.category.necessary.description
+- Description of the necessary category
+- Needed for the site to work: your consent choice, your color mode, and anonymous usage data.
+
+---
+
+- consent.category.analytics.title
+- Title of the analytics category
+- Analytics
+
+---
+
+- consent.category.analytics.description
+- Description of the analytics category
+- Helps us understand which pages are useful.
+
+---
+
+- consent.category.marketing.title
+- Title of the marketing category
+- Marketing
+
+---
+
+- consent.category.marketing.description
+- Description of the marketing category
+- Lets us measure which campaigns bring visitors to this site.
+
+---
+
+- consent.settingsLink
+- Label of the settings link that opens the dialog
+- Cookie preferences
+
+---
+
 - openapi.download.description.title
 - Title for the `download description` section in OpenAPI description
 - Download the OpenAPI description file
