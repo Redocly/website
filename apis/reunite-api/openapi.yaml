@@ -6,6 +6,8 @@ servers:
         default: app.cloud.redocly.com
         description: Server host.
     description: Production main server.
+  # - url: https://app.cloud.eu.redocly.com/api
+  #   description: Production EU server.
 info:
   description:
     $ref: description.md
