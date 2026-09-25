@@ -1,0 +1,79 @@
+type: object
+properties:
+  id:
+    description: Invite ID. Unique identifier prefixed with `inv_`.
+    type: string
+    pattern: ^inv_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: inv_01h1s5z6vf2mm1mz3hevnn9va7
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [invite]
+    readOnly: true
+  uri:
+    description: Canonical URI for the invite resource.
+    type: string
+    format: uri
+    readOnly: true
+    example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/invites/inv_01h1s5z6vf2mm1mz3hevnn9va7
+  role:
+    description: Organization role.
+    $ref: ../rbac/OrganizationRole.yaml
+  teamIds:
+    description: Team IDs that user is invited to.
+    type: array
+    maxItems: 100
+    items:
+      description: Team ID that user is invited to. Unique identifier prefixed with `team_`.
+      type: string
+      pattern: ^team_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+      example: team_01h1s5z6vf2mm1mz3hevnn9va7
+  email:
+    description: Email of invited user.
+    type: string
+    format: email
+    maxLength: 254
+    example: john.smith@example.com
+  expiredAt:
+    description: Expiration date.
+    type: string
+    format: date-time
+    readOnly: true
+  invitedById:
+    description: User ID who created and sent invite. Unique identifier prefixed with `usr_`.
+    type: string
+    pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+    readOnly: true
+  acceptedAt:
+    description: Accepted date.
+    type: [string, 'null']
+    format: date-time
+    readOnly: true
+  createdAt:
+    description: Created date.
+    type: string
+    format: date-time
+    readOnly: true
+  customMessage:
+    description: Custom message to user.
+    type: string
+    maxLength: 300
+    example: "Hello, please join our organization."
+  projectId:
+    description: Project ID. Unique identifier prefixed with `prj_`.
+    type: string
+    pattern: ^prj_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: prj_01h1s5z6vf2mm1mz3hevnn9va7
+required:
+  - id
+  - uri
+  - role
+  - teamIds
+  - email
+  - invitedById
+  - createdAt
+  - object
+  - expiredAt
+  - acceptedAt

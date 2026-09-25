@@ -1,0 +1,82 @@
+get:
+  tags:
+    - Support
+  security:
+    - Support: []
+  summary: List all system incidents
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: listSystemIncidents
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              object:
+                type: string
+                enum: [list]
+              page:
+                $ref: ../../components/schemas/Page.yaml
+              data:
+                type: array
+                items:
+                  $ref: ../../components/schemas/support/SystemIncident.yaml
+              items:
+                type: array
+                items:
+                  $ref: ../../components/schemas/support/SystemIncident.yaml
+                deprecated: true
+            required:
+              - object
+              - page
+              - items
+              - data
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+
+post:
+  tags:
+    - Support
+  security:
+    - Support: []
+  summary: Create system incident
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: createSystemIncident
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/support/CreateSystemIncident.yaml
+  responses:
+    '201':
+      description: Created.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              item:
+                $ref: ../../components/schemas/support/SystemIncident.yaml
+            required:
+              - item
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

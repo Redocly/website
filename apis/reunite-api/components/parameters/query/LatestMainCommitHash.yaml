@@ -1,0 +1,7 @@
+name: latestMainCommitHash
+description: Latest main commit hash before merge.
+required: false
+in: query
+schema:
+  type: string
+example: 68900d4b97f1c4542be92d366abb6677f4c2d90f

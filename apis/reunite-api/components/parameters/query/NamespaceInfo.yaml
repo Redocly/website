@@ -1,0 +1,20 @@
+name: namespace
+in: query
+description: Namespace information.
+required: false
+explode: true
+style: deepObject
+schema:
+  $ref: ../../schemas/git/Namespace.yaml
+examples:
+  gitHubProviderNamespace:
+    summary: Example of GitHub provider namespace.
+    value:
+      id: blue-harvest-git-repos
+      name: blue-harvest-git-repos
+      installationId: '37070315'
+  otherProviderNamespaces:
+    summary: Example of other provider namespace.
+    value:
+      id: blue-harvest-git-repos
+      name: blue-harvest-git-repos

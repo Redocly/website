@@ -1,0 +1,21 @@
+type: object
+properties:
+  object:
+    type: string
+    enum: [list]
+  page:
+    $ref: '../../schemas/Page.yaml'
+  data:
+    type: array
+    items:
+      $ref: './SubscriptionStatus.yaml'
+  items:
+    type: array
+    items:
+      $ref: './SubscriptionStatus.yaml'
+    deprecated: true
+required:
+  - object
+  - page
+  - items
+  - data

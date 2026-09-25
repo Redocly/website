@@ -1,0 +1,53 @@
+type: object
+required:
+  - path
+properties:
+  path:
+    type: string
+    minLength: 1
+    maxLength: 1000
+    pattern: '\S'
+    description: >-
+      Absolute URL of the page where feedback is submitted (for example from the browser location).
+      Trimmed before it is stored, so a whitespace-only value is rejected.
+      A value that is not a valid URL is accepted, but the feedback is marked as spam.
+    example: https://example.com/docs/guide
+  location:
+    type: string
+    maxLength: 5000
+    description: |-
+      Identifies the location of the component.
+      This could be a code sample.
+  lang:
+    type: string
+    maxLength: 20
+    description: |-
+      Identifies the language of the component's location.
+      This could be the language of a code sample, such as js, php, or txt.
+  email:
+    type: string
+    format: email
+    maxLength: 254
+    description: >-
+      Email address of the user who submitted the feedback.
+      Overridden by the email from the authentication context when the user is signed in.
+  agent:
+    type: string
+    maxLength: 200
+    description: Name of the AI agent that submitted the feedback. Omit for user-submitted feedback.
+    example: Cursor
+  targetFeature:
+    type: string
+    maxLength: 500
+    description: Documentation feature the feedback refers to (for agent submissions).
+    example: Respect Monitoring API
+  origin:
+    $ref: ./Feedback.yaml#/properties/origin
+  metadata:
+    type: object
+    description: >-
+      Extra tracking fields. The server overwrites `userAgent`, `ipAddress`, `platform`, and
+      `email`. `id`, `firstName`, `lastName`, and `auth_time` pass through if present but are not
+      verified; do not use for access or identity. Any other key is stored with its value redacted
+      to a placeholder. String values are limited to 1000 characters.
+    additionalProperties: true

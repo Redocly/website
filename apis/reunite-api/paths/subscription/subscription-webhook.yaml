@@ -1,0 +1,30 @@
+get:
+  security:
+    - Rebilly: []
+  tags:
+    - Subscription
+  summary: Accept Rebilly webhook
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: subscriptionWebhook
+  responses:
+    '200':
+      description: Successful operation. The subscription is valid.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              isValid:
+                type: boolean
+                example: true
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

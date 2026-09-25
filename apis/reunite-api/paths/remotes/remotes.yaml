@@ -1,0 +1,97 @@
+parameters:
+  - $ref: ../../components/parameters/path/OrgId.yaml
+  - $ref: ../../components/parameters/path/ProjectId.yaml
+post:
+  operationId: upsertRemote
+  summary: Upsert remote
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  security:
+    - ApiKey: []
+    - UserCookie: []
+  description: |-
+    Upsert remote.
+    If remote with the same `mountPath` and `type` already exists the remote object is returned.
+    If the `type` doesn't match the existing remote, a 409 error is returned.
+    Otherwise, a new remote is created.
+  tags:
+    - Remotes
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/remotes/Remote.yaml
+  responses:
+    '201':
+      description: Remote created.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/remotes/Remote.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+get:
+  operationId: listRemotes
+  summary: List all remotes
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  security:
+    - InternalAuth: []
+    - UserCookie: []
+  description: List remotes.
+  tags:
+    - Remotes
+  parameters:
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Before.yaml
+    - $ref: ../../common/components/parameters/query/Sort.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+    - $ref: ../../common/components/parameters/query/Search.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              object:
+                type: string
+                enum: [list]
+              page:
+                $ref: ../../components/schemas/Page.yaml
+              data:
+                type: array
+                minItems: 0
+                items:
+                  $ref: ../../components/schemas/remotes/Remote.yaml
+              items:
+                type: array
+                minItems: 0
+                items:
+                  $ref: ../../components/schemas/remotes/Remote.yaml
+                deprecated: true
+            required:
+              - object
+              - page
+              - items
+              - data
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

@@ -1,0 +1,29 @@
+delete:
+  tags:
+    - Blocked emails
+  security:
+    - Support: []
+  summary: Delete a blocked email
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: deleteBlockedEmail
+  parameters:
+    - in: path
+      name: blockedEmailId
+      required: true
+      example: be_01HXYZABCDEF1234567890
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Deleted.
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

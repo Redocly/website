@@ -1,0 +1,25 @@
+type: object
+properties:
+  object:
+    type: string
+    enum: [list]
+  page:
+    $ref: ../Page.yaml
+  data:
+    type: array
+    minItems: 1
+    maxItems: 1
+    items:
+      $ref: ./AiJobScaffoldAvailability.yaml
+  items:
+    type: array
+    minItems: 1
+    maxItems: 1
+    items:
+      $ref: ./AiJobScaffoldAvailability.yaml
+    deprecated: true
+required:
+  - object
+  - page
+  - items
+  - data

@@ -1,0 +1,24 @@
+type: object
+description: Paginated list of pull requests in a remote content's upstream provider repository.
+properties:
+  object:
+    type: string
+    enum: [list]
+  page:
+    $ref: ../Page.yaml
+  data:
+    type: array
+    minItems: 0
+    items:
+      $ref: ./RemotePullRequest.yaml
+  items:
+    type: array
+    minItems: 0
+    items:
+      $ref: ./RemotePullRequest.yaml
+    deprecated: true
+required:
+  - object
+  - page
+  - items
+  - data

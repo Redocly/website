@@ -1,0 +1,14 @@
+type: object
+required:
+  - reviewId
+  - content
+properties:
+  reviewId:
+    description: Review ID. Unique identifier prefixed with `rev_`.
+    type: string
+    pattern: ^rev_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: rev_01h1s5z6vf2mm1mz3hevnn9va7
+  content:
+    description: Emoji reaction to add to the review's underlying git-provider comment. The reaction is a pass-through to the git provider and is not persisted on the review.
+    type: string
+    enum: [EYES]

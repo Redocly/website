@@ -1,0 +1,45 @@
+get:
+  operationId: listFeatureValues
+  summary: List all feature values
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  tags:
+    - Product analytics
+  security:
+    - Support: []
+  description: |-
+    Paginated list of projects and their feature configurations for a single feature.
+
+    The `filter` query parameter **must** include an equality clause on `featureName`.
+  parameters:
+    - name: filter
+      description: |-
+        Filters the collection items. This field requires a special format.
+
+        For more information, see
+        [Using filter with collections](#section/pagination).
+      in: query
+      required: true
+      schema:
+        type: string
+      example: featureName:apis AND subscriptionFilter:paying
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Search.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/product-analytics/RedoclyYamlFeatureValuesList.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml 

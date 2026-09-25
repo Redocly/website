@@ -1,0 +1,25 @@
+type: object
+description: >-
+  PR comment trigger options for the AI writer agent job.
+  When the job starts, the worker asks the Main API for the comments of this pull request.
+  The API gives the job every comment that no other job processes.
+required:
+  - trigger
+  - pullRequestId
+  - metadata
+properties:
+  trigger:
+    type: string
+    enum:
+      - PR_COMMENT
+  pullRequestId:
+    description: Pull request ID. Unique identifier prefixed with `pr_`.
+    type: string
+    pattern: ^pr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: pr_01h1s5z6vf2mm1mz3hevnn9va7
+  triggeredByUserId:
+    type: string
+    pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    description: Reunite user ID of the commenter whose comment created this job. Absent when the system created the job.
+  metadata:
+    $ref: ./AiWriterAgentJobMetadata.yaml

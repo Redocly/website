@@ -1,0 +1,28 @@
+get:
+  security: []
+  tags:
+    - Queues
+  summary: List all dead-letter queues
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: listDeadLetterQueues
+  responses:
+    '200':
+      description: OK. Returns an array of dead-letter queue names.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string
+            example: [mailer.send-invite-email.dl, analytics.track-event.dl]
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

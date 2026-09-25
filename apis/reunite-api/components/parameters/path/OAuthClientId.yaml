@@ -1,0 +1,8 @@
+name: oAuthClientId
+description: OAuth2 client ID.
+required: true
+in: path
+schema:
+  type: string
+  description: Unique identifier prefixed with `oauth_`.
+example: oauth_01h1s5z6vf2mm1mz3hevnn9va7

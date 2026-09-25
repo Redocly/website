@@ -1,0 +1,35 @@
+type: object
+properties:
+  pullRequestId:
+    description: Pull request ID. Unique identifier prefixed with `pr_`.
+    type: string
+    pattern: ^pr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: pr_01h1s5z6vf2mm1mz3hevnn9va7
+    readOnly: true
+  conflicts:
+    type: array
+    items:
+      type: object
+      required:
+        - reason
+      properties:
+        reason:
+          description: Type of conflict.
+          type: string
+          example: delete
+          readOnly: true
+        file:
+          description: Path to file.
+          type: string
+          example: ./path/to/file
+        meta:
+          description: Additional detail for the specific type of conflict.
+          type: object
+          properties:
+            deleteRef:
+              description: Ref involved in a delete/modify merge conflict.
+              type: string
+              example: refs/heads/branch-name
+required:
+  - pullRequestId
+  - conflicts

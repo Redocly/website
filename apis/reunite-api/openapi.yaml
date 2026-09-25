@@ -1,0 +1,964 @@
+openapi: 3.1.0
+servers:
+  - url: https://{host}/api
+    variables:
+      host:
+        default: app.cloud.redocly.com
+        description: Server host.
+    description: Production main server.
+info:
+  description:
+    $ref: description.md
+  version: "1.0.1"
+  title: Redocly Main
+  termsOfService: https://redocly.com/subscription-agreement
+  contact:
+    name: API Support
+    email: team@redocly.com
+    url: https://github.com/Redocly/redocly
+  license:
+    name: Redocly
+    url: https://redocly.com/subscription-agreement
+  x-mcp:
+    gateway: {}
+security:
+  - UserCookie: []
+tags:
+  - name: health
+    description: Endpoint for checking service health.
+  - name: Homepage
+    description: Root endpoint for redirecting users.
+  - name: AI Recommendations
+    description: AI-powered recommendations for project scaffolding.
+  - name: API keys
+    description: Operations related to api keys.
+  - name: Billing
+    description: Operations related to billing.
+  - name: Blocked emails
+    description: Emails and domain patterns blocked from registration.
+  - name: Respect Monitoring
+    description: Operations related to Respect Monitoring.
+  - name: OAuth2 clients
+    description: Operations related to OAuth2 Authorization Code clients.
+  - name: Audit log exports
+    description: Export organization audit logs for compliance, analysis, or archival.
+  - name: Branches
+    description: Operations related to branches.
+  - name: Onboarding
+    description: Operations related to onboarding.
+  - name: Credentials
+    description: Operations related to credentials.
+  - name: Code completions
+    description: Operations related to code completions.
+  - name: AI Writer Agent
+    description: Operations related to AI Writer Agent.
+  - name: AI agent memory
+    description: Shared semantic memory for AI agents.
+  - name: AI Assistant
+    description: Operations related to the embedded AI assistant.
+  - name: Feedback
+    description: Operations related to feedback.
+  - name: Git
+    description: Git integrations.
+  - name: Invites
+    description: Operations related to invites.
+  - name: Link checks
+    description: Operations related to project build link checks.
+  - name: Memberships
+    description: Operations related to memberships.
+  - name: Organizations
+    description: Operations related to organizations.
+  - name: Organization slugs
+    description: Operations related to organization slugs.
+  - name: Pages usage
+    description: Operations related to pages usage.
+  - name: Project builds
+    description: Operations related to project builds.
+  - name: Project deployments
+    description: Operations related to project deployments.
+  - name: Project deploys
+    description: Operations related to project deploys and wake up.
+  - name: Project services
+    description: Operations related to project service status checks.
+  - name: Projects
+    description: Operations related to projects.
+  - name: Project analytics
+    description: Operations related to project analytics.
+  - name: Product analytics
+    description: Operations related to product analytics.
+  - name: Project sources
+    description: Operations related to project sources.
+  - name: Project slugs
+    description: Operations related to project slugs.
+  - name: Project templates
+    description: Operations related to project templates.
+  - name: Project custom domains
+    description: Operations related to custom domains.
+  - name: Project pages stats
+    description: Operations related to project pages stats.
+  - name: Pull requests
+    description: Operations related to pull requests.
+  - name: Pull request templates
+    description: Operations related to pull request templates.
+  - name: Pushes
+    description: Operations related to pushes.
+  - name: RBAC
+    description: Operations related to RBAC.
+  - name: Slack
+    description: Operations related to slack.
+  - name: User invites
+    description: Operations related to User invites.
+  - name: Remotes
+    description: Operations related to remotes.
+  - name: Scout
+    description: Operations related to Scout.
+  - name: Session
+    description: Operations related to sessions.
+  - name: Seats
+    description: Operations related to seats.
+  - name: Subscription
+    description: Operations related to subscription.
+  - name: Syncer
+    description: Operations related to syncer.
+  - name: Teams
+    description: Operations related to teams.
+  - name: Users
+    description: Operations related to users.
+  - name: Identity Providers
+    description: Operations related to identity providers.
+  - name: Identity Domains
+    description: Operations related to identity domains.
+  - name: Identities
+    description: Operations related to identities.
+  - name: Environment Variables
+    description: Operations related to environment variables.
+  - name: Queues
+    description: Operations related to queues.
+  - name: WYSIWYG
+    description: Operations related to WYSIWYG.
+  - name: Entitlements
+    description: Operations related to entitlements.
+  - name: Device Login
+    description: Operations related to device login.
+  - name: AI conversations
+    description: Operations related to AI conversations.
+  - name: Semantic search
+    description: Operations related to semantic search across project documentation.
+  - name: Announcements
+    description: Operations related to announcements and messages of the day.
+  - name: NomadEvents
+    description: Operations realated to Nomad Events.
+  - name: NomadJobs
+    description: Operations related to Nomad Jobs.
+  - name: Scorecards
+    description: Operations realated to Scorecards.
+  - name: Support
+    description: Operations related to support.
+  - name: Project runtime logs
+    description: Operations related to project runtime logs.
+  - name: AI jobs
+    description: Operations related to AI job status.
+  - name: AI usage
+    description: Internal operations for AI usage accounting.
+  - name: AI gateway
+    description: Internal operations for AI gateway request log persistence.
+  - name: LLM usage limits
+    description: Internal operations for evaluating per-tenant LLM usage limits.
+  - name: Uptime monitoring
+    description: Internal operations for Prometheus uptime target discovery.
+paths:
+  # sorted by tags
+  # ---------------------------
+  # Health
+  /health:
+    $ref: ./paths/health/health.yaml
+  /health/self:
+    $ref: ./paths/health/health-self.yaml
+
+  # ---------------------------
+  # Homepage
+  /:
+    $ref: ./paths/homepage/homepage.yaml
+
+  # ---------------------------
+  # API keys
+  /orgs/{orgId}/api-keys:
+    $ref: ./paths/api-keys/api-keys.yaml
+  /orgs/{orgId}/api-keys/{apiKeyId}:
+    $ref: ./paths/api-keys/api-key.yaml
+  /api-keys-verify:
+    $ref: ./paths/api-keys/verify.yaml
+
+  # ---------------------------
+  # OAuth2 clients
+  /oauth-clients-support:
+    $ref: ./paths/oauth-clients/oauth-clients-support-list.yaml
+  /oauth-clients-support/{oAuthClientId}:
+    $ref: ./paths/oauth-clients/oauth-client-support.yaml
+  /orgs/{orgId}/oauth-clients:
+    $ref: ./paths/oauth-clients/oauth-clients.yaml
+  /orgs/{orgId}/oauth-clients/{oAuthClientId}:
+    $ref: ./paths/oauth-clients/oauth-client.yaml
+
+  # ---------------------------
+  # Announcements
+  /orgs/{orgId}/announcements:
+    $ref: ./paths/announcements/announcements.yaml
+  /orgs/{orgId}/announcement-views:
+    $ref: ./paths/announcements/announcement-views.yaml
+  /announcement-views/{announcementId}:
+    $ref: ./paths/announcements/announcement-view.yaml
+  /announcement-media:
+    $ref: ./paths/announcements/announcement-media.yaml
+
+  # ---------------------------
+  # Billing
+  /billing/{orderId}:
+    $ref: ./paths/billing/billing-order.yaml
+
+  # ---------------------------
+  # Respect Monitoring
+  /respect-monitoring-jobs-utils:
+    $ref: ./paths/api-monitoring/api-monitoring-jobs-utils.yaml
+  # TODO: rename to /orgs/{orgId}/respect-monitoring-workflow-usages - should respond with a paginated collection
+  # or /orgs/{orgId}/respect-monitoring-workflow-usages/{workflowUsageId} - should respond with a single workflow usage resource
+  /orgs/{orgId}/respect-monitoring-workflow-usage:
+    $ref: ./paths/api-monitoring/api-monitoring-workflow-usage.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-jobs:
+    $ref: ./paths/api-monitoring/api-monitoring-jobs.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-preview-jobs:
+    $ref: ./paths/api-monitoring/api-monitoring-preview-jobs.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-workflows:
+    $ref: ./paths/api-monitoring/api-monitoring-workflows.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-workflows/{workflowId}:
+    $ref: ./paths/api-monitoring/api-monitoring-workflow.yaml
+  /respect-monitoring-workflow-runs-maintenance:
+    $ref: ./paths/api-monitoring/api-monitoring-workflow-runs-maintenance.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-workflow-runs:
+    $ref: ./paths/api-monitoring/api-monitoring-workflow-runs.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-workflow-runs-chart-analytics:
+    $ref: ./paths/api-monitoring/api-monitoring-workflow-runs-chart-analytics.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-workflow-runs-downtime-chart-analytics:
+    $ref: ./paths/api-monitoring/api-monitoring-workflow-runs-downtime-chart-analytics.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-workflow-runs/{workflowRunId}:
+    $ref: ./paths/api-monitoring/api-monitoring-workflow-run.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-workflow-stats:
+    $ref: ./paths/api-monitoring/api-monitoring-workflow-stats.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-notifications-slack-configs:
+    $ref: paths/api-monitoring/api-monitoring-notifications-slack-configs.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-notifications-slack-configs/{notificationsSlackConfigId}:
+    $ref: paths/api-monitoring/api-monitoring-notifications-slack-config.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-notifications-email-configs:
+    $ref: paths/api-monitoring/api-monitoring-notifications-email-configs.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-notifications-email-configs/{notificationsEmailConfigId}:
+    $ref: paths/api-monitoring/api-monitoring-notifications-email-config.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-notifications-sla-configs:
+    $ref: paths/api-monitoring/api-monitoring-notifications-sla-configs.yaml
+  /orgs/{orgId}/projects/{projectId}/respect-monitoring-notifications-sla-configs/{notificationsSlaConfigId}:
+    $ref: paths/api-monitoring/api-monitoring-notifications-sla-config.yaml
+
+  # ---------------------------
+  # Audit log exports
+  /orgs/{orgId}/audit-log-export-jobs:
+    $ref: ./paths/audit-log-exports/audit-log-export-jobs.yaml
+  /orgs/{orgId}/audit-log-export-jobs/{exportJobId}:
+    $ref: ./paths/audit-log-exports/audit-log-export-job.yaml
+  /orgs/{orgId}/audit-log-export-results/{exportJobId}:
+    $ref: ./paths/audit-log-exports/audit-log-export-result.yaml
+
+  # ---------------------------
+  # Credentials
+  /orgs/{orgId}/credentials:
+    $ref: ./paths/credentials/credentials.yaml
+  /orgs/{orgId}/credentials/{credentialId}:
+    $ref: ./paths/credentials/credential.yaml
+  /orgs/{orgId}/credential-statuses/{credentialId}:
+    $ref: ./paths/credentials/credential-status.yaml
+
+  # --------------------------
+  # Code completions
+  /orgs/{orgId}/projects/{projectId}/code-completions:
+    $ref: ./paths/code-completions/code-completions.yaml
+
+  # ---------------------------
+  # Project custom domains
+  /custom-domain-check:
+    $ref: ./paths/project-custom-domains/project-custom-domain-check.yaml
+
+  # ---------------------------
+  # Project pages stats
+  /project-pages-stats:
+    $ref: ./paths/project-pages-stats/global-project-pages-stats.yaml
+  /orgs/{orgId}/projects/{projectId}/project-pages-stats:
+    $ref: ./paths/project-pages-stats/project-pages-stats.yaml
+
+  # ---------------------------
+  # Feedback
+  /orgs/{orgId}/projects/{projectId}/feedback:
+    $ref: ./paths/feedback/feedback-list.yaml
+  /orgs/{orgId}/projects/{projectId}/feedback/{feedbackId}:
+    $ref: ./paths/feedback/feedback.yaml
+  /orgs/{orgId}/projects/{projectId}/feedback-export:
+    $ref: ./paths/feedback/feedback-export.yaml
+
+  # ---------------------------
+  # Git
+  /orgs/{orgId}/git-providers:
+    $ref: ./paths/git-providers/git-providers.yaml
+  /orgs/{orgId}/git/{credentialId}/namespaces:
+    $ref: ./paths/git/namespaces.yaml
+  /orgs/{orgId}/git/{credentialId}/repositories:
+    $ref: ./paths/git/repositories.yaml
+  /orgs/{orgId}/git/{credentialId}/branches:
+    $ref: ./paths/git/branches.yaml
+  /orgs/{orgId}/git/{credentialId}/folders:
+    $ref: ./paths/git/folders.yaml
+  /orgs/{orgId}/git/{credentialId}/paths:
+    $ref: ./paths/git/paths.yaml
+  /orgs/{orgId}/git/{credentialId}/webhook:
+    $ref: ./paths/git/webhook-refreshes.yaml
+  /webhooks/git/{provider}: # TODO: discuss path for this endpoint
+    $ref: ./paths/git/webhooks.yaml
+
+  # ---------------------------
+  # Invites
+  /orgs/{orgId}/invites:
+    $ref: ./paths/invites/invites.yaml
+  /orgs/{orgId}/invites/{inviteId}:
+    $ref: ./paths/invites/invite.yaml
+  /invites-support:
+    $ref: ./paths/invites/invites-support.yaml
+  /invites-support/{inviteId}/link:
+    $ref: ./paths/invites/invites-support-link.yaml
+  /invites-support/{inviteId}/refresh:
+    $ref: ./paths/invites/invites-support-refresh.yaml
+
+  # ---------------------------
+  # User invites
+  /user-invites:
+    $ref: ./paths/user-invites/user-invites.yaml
+  /user-invites/{inviteCode}:
+    $ref: ./paths/user-invites/user-invite.yaml
+  /user-invites/{inviteId}/resend:
+    $ref: ./paths/user-invites/user-invite-resend.yaml
+  /public-user-invites/{inviteCode}:
+    $ref: ./paths/public-user-invites/public-user-invite.yaml
+
+  # ---------------------------
+  # Members
+  /orgs/{orgId}/memberships:
+    $ref: ./paths/memberships/memberships.yaml
+  /orgs/{orgId}/memberships/{membershipId}:
+    $ref: ./paths/memberships/membership.yaml
+  /orgs/{orgId}/members:
+    $ref: ./paths/memberships/members.yaml
+  /orgs/{orgId}/memberships/me:
+    $ref: ./paths/memberships/my-membership.yaml
+  /orgs/{orgId}/owners:
+    $ref: ./paths/memberships/owners.yaml
+  /orgs/{orgId}/change-owner:
+    $ref: ./paths/memberships/change-owner.yaml
+
+  # ---------------------------
+  # Seats
+  /orgs/{orgId}/seats:
+    $ref: ./paths/seats/seats.yaml
+
+  # ---------------------------
+  # Organization slugs
+  /org-slugs/{orgSlug}:
+    $ref: ./paths/organization-slugs/organization-slug.yaml
+
+  # ---------------------------
+  # Organizations
+  /orgs:
+    $ref: ./paths/organizations/organizations.yaml
+  /orgs/{orgId}:
+    $ref: ./paths/organizations/organization.yaml
+  /orgs/{orgId}/billing-token: # TODO: rename to /billing-tokens/{orgId}
+    $ref: ./paths/organizations/billing-token.yaml
+  /orgs/{orgId}/artifacts:
+    $ref: ./paths/organizations/artifacts.yaml
+  /orgs/{orgId}/artifact-download-urls:
+    $ref: ./paths/organizations/artifact-download-urls.yaml
+  /orgs/{orgId}/ai-recommendations:
+    $ref: ./paths/ai-recommendations/ai-recommendations.yaml
+  /orgs/{orgId}/ai-jobs-availabilities:
+    $ref: ./paths/ai-jobs/ai-job-availability.yaml
+  /orgs-support:
+    $ref: ./paths/organizations/organizations-support.yaml
+  /orgs-support/{orgId}:
+    $ref: ./paths/organizations/organization-support.yaml
+
+  # ---------------------------
+  # Project slugs
+  /project-slugs:
+    $ref: ./paths/project-slugs/project-slugs.yaml
+  /project-slugs/{projectSlug}:
+    $ref: ./paths/project-slugs/project-slug.yaml
+
+  # ---------------------------
+  # Projects
+  /projects:
+    $ref: ./paths/projects/global-projects.yaml
+  /orgs/{orgId}/projects:
+    $ref: ./paths/projects/projects.yaml
+  /orgs/{orgId}/projects/{projectId}:
+    $ref: ./paths/projects/project.yaml
+  /orgs/{orgId}/projects/{projectId}/config:
+    $ref: paths/projects/project-config.yaml
+  /orgs/{orgId}/projects/{projectId}/mentionables:
+    $ref: ./paths/projects/project-mentionables.yaml
+  /orgs/{orgId}/projects/{projectId}/edge-route:
+    $ref: ./paths/projects/project-edge-route.yaml
+  /project-templates:
+    $ref: ./paths/project-templates/project-templates.yaml
+
+  # ---------------------------
+  # Project custom domains
+  /orgs/{orgId}/projects/{projectId}/custom-domains:
+    $ref: ./paths/project-custom-domains/project-custom-domains.yaml
+  /orgs/{orgId}/projects/{projectId}/custom-domains/{customDomainId}:
+    $ref: ./paths/project-custom-domains/project-custom-domain.yaml
+  /orgs/{orgId}/projects/{projectId}/custom-domains/{customDomainId}/verifications:
+    $ref: ./paths/project-custom-domains/project-custom-domain-verifications.yaml
+
+  # ---------------------------
+  # Project sources
+  # TODO: rename to /orgs/{orgId}/projects/{projectId}/sources - should respond with a paginated collection
+  # or /orgs/{orgId}/projects/{projectId}/sources/{sourceId} - should respond with a single source resource
+  /orgs/{orgId}/projects/{projectId}/sources:
+    $ref: ./paths/project-sources/project-source.yaml
+  # TODO: rename to /orgs/{orgId}/projects/{projectId}/sources/{sourceId}/clone-urls - should respond with a paginated collection
+  /orgs/{orgId}/projects/{projectId}/clone-url: 
+    $ref: ./paths/project-sources/project-clone-url.yaml
+  /orgs/{orgId}/projects/{projectId}/source-archives:
+    $ref: ./paths/project-sources/project-download.yaml
+  /orgs/{orgId}/projects/{projectId}/source-commits:
+    $ref: ./paths/project-sources/project-source-commits.yaml
+  /orgs/{orgId}/projects/{projectId}/source-commits/{commitId}:
+    $ref: ./paths/project-sources/project-source-commit.yaml
+
+  # ---------------------------
+  # Project builds
+  /project-builds:
+    $ref: ./paths/project-builds/global-project-builds.yaml
+  /orgs/{orgId}/projects/{projectId}/builds:
+    $ref: ./paths/project-builds/project-builds.yaml
+  # TODO: rename to /orgs/{orgId}/projects/{projectId}/published-builds - should respond with a paginated collection
+  # use /orgs/{orgId}/projects/{projectId}/builds with ?filter=isProduction:true
+  /orgs/{orgId}/projects/{projectId}/published-build:
+    $ref: ./paths/project-builds/project-build-published.yaml
+  /orgs/{orgId}/projects/{projectId}/preview-branches:
+    $ref: ./paths/project-builds/preview-branches.yaml
+  /orgs/{orgId}/projects/{projectId}/builds/{buildId}:
+    $ref: ./paths/project-builds/project-build.yaml
+  /orgs/{orgId}/projects/{projectId}/builds/{buildId}/publish:
+    $ref: ./paths/project-builds/project-build-publish.yaml
+  /orgs/{orgId}/projects/{projectId}/builds/{buildId}/logs/batch:
+    $ref: ./paths/project-builds/project-build-logs-batch.yaml
+  /orgs/{orgId}/projects/{projectId}/builds/{buildId}/restart:
+    $ref: ./paths/project-builds/project-build-restart.yaml
+  /orgs/{orgId}/projects/{projectId}/builds/{buildId}/pages:
+    $ref: ./paths/project-builds/project-build-pages.yaml
+  
+  # ---------------------------
+  # Project logs
+  /orgs/{orgId}/projects/{projectId}/runtime-logs:
+    $ref: ./paths/project-runtime-logs/project-runtime-logs.yaml
+  /orgs/{orgId}/projects/{projectId}/runtime-logs/export:
+    $ref: ./paths/project-runtime-logs/project-runtime-logs-export.yaml
+
+  # ---------------------------
+  # Scorecards
+  /orgs/{orgId}/projects/{projectId}/scorecards:
+    $ref: ./paths/scorecards/scorecards.yaml
+  /orgs/{orgId}/projects/{projectId}/scorecards/{scorecardId}:
+    $ref: ./paths/scorecards/scorecard.yaml
+  /orgs/{orgId}/projects/{projectId}/scorecards/{scorecardId}/details/{contentPath}:
+    $ref: ./paths/scorecards/scorecard-details.yaml
+
+  # ---------------------------
+  # Project deployments
+  /deploys/wake-ups:
+    $ref: ./paths/project-deployments/project-deployment-wake-ups.yaml
+
+  # ---------------------------
+  # Project services
+  /project-services/{serviceId}:
+    $ref: ./paths/project-services/project-service.yaml
+
+  # ---------------------------
+  # Uptime monitoring
+  /uptime-targets:
+    $ref: ./paths/uptime-monitoring/uptime-targets.yaml
+
+  # ---------------------------
+  # Link checks
+  /orgs/{orgId}/projects/{projectId}/link-checks:
+    $ref: ./paths/link-checks/link-checks.yaml
+
+  # ---------------------------
+  # Pull requests
+  /orgs/{orgId}/projects/{projectId}/pull-requests:
+    $ref: ./paths/pull-requests/pull-requests.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-requests/{pullRequestId}:
+    $ref: ./paths/pull-requests/pull-request.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-requests/{pullRequestId}/diff:
+    $ref: ./paths/pull-requests/pull-request-diff.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-request-templates:
+    $ref: paths/pull-request-templates/pull-request-templates.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-request-templates/{templatePath}:
+    $ref: paths/pull-request-templates/pull-request-template.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-requests/{pullRequestId}/checks:
+    $ref: paths/pull-requests/pull-request-checks.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-request-merge-conflicts/{pullRequestId}:
+    $ref: ./paths/pull-requests/pull-request-merge-conflicts.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-request-reviews:
+    $ref: ./paths/pull-requests/pull-request-reviews.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-request-reviews/{reviewId}:
+    $ref: ./paths/pull-requests/pull-request-review.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-request-review-reactions:
+    $ref: ./paths/pull-requests/pull-request-review-reactions.yaml
+  /orgs/{orgId}/projects/{projectId}/review-comments:
+    $ref: ./paths/pull-requests/pull-request-review-comments.yaml
+  /orgs/{orgId}/projects/{projectId}/ai-review-issues:
+    $ref: ./paths/ai-review-issues/ai-review-issues.yaml
+  /orgs/{orgId}/projects/{projectId}/ai-reviews:
+    $ref: ./paths/ai-reviews/ai-reviews.yaml
+  /orgs/{orgId}/projects/{projectId}/review-comments/{commentId}:
+    $ref: ./paths/pull-requests/pull-request-review-comment.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-requests/{pullRequestId}/can-merge:
+    $ref: ./paths/pull-requests/pull-request-can-merge.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-request-sync/{pullRequestId}:
+    $ref: ./paths/pull-requests/pull-request-sync-with-branch.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-requests/{pullRequestId}/files/{filePath}/commit-suggestions:
+    $ref: ./paths/pull-requests/pull-request-commit-suggestions.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-request-reviewers:
+    $ref: ./paths/pull-request-reviewers/pull-request-reviewers.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-request-review-requests:
+    $ref: ./paths/pull-request-review-requests/pull-request-review-requests.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-request-timeline-events:
+    $ref: ./paths/pull-requests/pull-request-timeline-events.yaml
+  /orgs/{orgId}/projects/{projectId}/pull-request-contributors:
+    $ref: ./paths/pull-requests/pull-request-contributors.yaml
+
+  # ---------------------------
+  # Branches
+  /orgs/{orgId}/projects/{projectId}/branches:
+    $ref: ./paths/branches/branches.yaml
+  /orgs/{orgId}/projects/{projectId}/branches/{branchId}:
+    $ref: ./paths/branches/branch.yaml
+
+  # ---------------------------
+  # Branch syncs
+  /orgs/{orgId}/projects/{projectId}/branch-syncs:
+    $ref: ./paths/branch-syncs/branch-syncs.yaml
+
+  # ---------------------------
+  # Pushes
+  /orgs/{orgId}/projects/{projectId}/pushes:
+    $ref: ./paths/pushes/pushes.yaml
+  /orgs/{orgId}/projects/{projectId}/pushes/{pushId}:
+    $ref: ./paths/pushes/push.yaml
+  /orgs/{orgId}/projects/{projectId}/push-preparations:
+    $ref: ./paths/pushes/push-preparations.yaml
+  # ---------------------------
+  # RBAC
+  /orgs/{orgId}/project-roles:
+    $ref: ./paths/rbac/project-roles.yaml
+
+  # ---------------------------
+  # Slack
+  /orgs/{orgId}/projects/{projectId}/slack-app-installations:
+    $ref: paths/slack/slack-app-installations.yaml
+  /orgs/{orgId}/projects/{projectId}/slack-app-installations/{slackAppInstallationId}:
+    $ref: paths/slack/slack-app-installation.yaml
+  /orgs/{orgId}/projects/{projectId}/slack-app-installations/{slackAppInstallationId}/channels:
+    $ref: paths/slack/slack-channels.yaml
+  /orgs/{orgId}/projects/{projectId}/slack-app-installations/{slackAppInstallationId}/channels/{slackChannelId}:
+    $ref: paths/slack/slack-channel.yaml
+
+  # ---------------------------
+  # ---------------------------
+  # Remotes
+  /support-remotes:
+    $ref: ./paths/remotes/support-remotes.yaml
+  /orgs/{orgId}/projects/{projectId}/remotes:
+    $ref: ./paths/remotes/remotes.yaml
+  /orgs/{orgId}/projects/{projectId}/remotes/{remoteId}:
+    $ref: ./paths/remotes/remote.yaml
+  /orgs/{orgId}/projects/{projectId}/remotes/{remoteId}/url:
+    $ref: ./paths/remotes/remote-url.yaml
+  /orgs/{orgId}/projects/{projectId}/remotes/{remoteId}/pull-requests:
+    $ref: ./paths/remotes/remote-pull-requests.yaml
+  /orgs/{orgId}/projects/{projectId}/remotes/{remoteId}/repository:
+    $ref: ./paths/remotes/remote-repository.yaml
+  /orgs/{orgId}/projects/{projectId}/remotes/{remoteId}/branches:
+    $ref: ./paths/remotes/remote-branches.yaml
+  /orgs/{orgId}/projects/{projectId}/remotes/{remoteId}/commits/{commitSha}:
+    $ref: ./paths/remotes/remote-commit-details.yaml
+  /orgs/{orgId}/projects/{projectId}/remote-commits:
+    $ref: ./paths/remotes/remote-commits.yaml
+  /orgs/{orgId}/projects/{projectId}/remote-commits/{commitId}:
+    $ref: ./paths/remotes/remote-commit.yaml
+  /orgs/{orgId}/projects/{projectId}/url-remote-updates:
+    $ref: ./paths/remotes/url-remote-updates.yaml
+  /orgs/{orgId}/projects/{projectId}/url-remote-updates/{urlRemoteUpdateId}:
+    $ref: ./paths/remotes/url-remote-update.yaml
+  /orgs/{orgId}/projects/{projectId}/git-remote-updates:
+    $ref: ./paths/remotes/git-remote-updates.yaml
+  /orgs/{orgId}/projects/{projectId}/git-remote-updates/{gitRemoteUpdateId}:
+    $ref: ./paths/remotes/git-remote-update.yaml
+
+  # ---------------------------
+  # Scout
+  /orgs/{orgId}/projects/{projectId}/scout/todos:
+    $ref: ./paths/scout/todos.yaml
+  /orgs/{orgId}/projects/{projectId}/scout/tasks:
+    $ref: ./paths/scout/tasks.yaml
+  /orgs/{orgId}/projects/{projectId}/scout/tasks/{jobId}:
+    $ref: ./paths/scout/task.yaml
+  /orgs/{orgId}/projects/{projectId}/scout/status:
+    $ref: ./paths/scout/status.yaml
+  /orgs/{orgId}/projects/{projectId}/scout/metadata/validate:
+    $ref: ./paths/scout/metadata-validate.yaml
+
+  # ---------------------------
+  # Subscriptions Orgs
+  /orgs/{orgId}/subscription:
+    $ref: ./paths/subscription/subscriptions.yaml
+  /orgs/{orgId}/subscription-status:
+    $ref: ./paths/subscription/subscriptions-statuses.yaml
+
+  # ---------------------------
+  # Org Features
+  /orgs/{orgId}/features/{feature}:
+    $ref: paths/features/feature.yaml
+
+  # ---------------------------
+  # Pages usage
+  /orgs/{orgId}/pages-usage:
+    $ref: ./paths/pages-usage/pages-usage.yaml
+
+  # ---------------------------
+  # Session
+  /session:
+    $ref: ./paths/session/session.yaml
+  /session/authorize:
+    $ref: ./paths/session/session-authorize.yaml
+  /session/revoke:
+    $ref: ./paths/session/session-revoke.yaml
+  /session/refresh:
+    $ref: ./paths/session/session-refresh.yaml
+
+  # ---------------------------
+  # Subscription
+  /subscription/webhook:
+    $ref: ./paths/subscription/subscription-webhook.yaml
+  /orgs/{orgId}/subscription-sync:
+    $ref: ./paths/subscription/subscription-sync.yaml
+  # ---------------------------
+  # Teams
+  /orgs/{orgId}/teams:
+    $ref: ./paths/teams/teams.yaml
+  /orgs/{orgId}/teams/{teamId}:
+    $ref: ./paths/teams/team.yaml
+  /orgs/{orgId}/team-members:
+    $ref: ./paths/team-members/team-members.yaml
+  /orgs/{orgId}/team-members/{teamMemberId}:
+    $ref: ./paths/team-members/team-member.yaml
+  /orgs/{orgId}/team-managers:
+    $ref: ./paths/team-managers/team-managers.yaml
+  /orgs/{orgId}/team-managers/{teamManagerId}:
+    $ref: ./paths/team-managers/team-manager.yaml
+
+  # ---------------------------
+  # Support
+  /orgs/{orgId}/support-users:
+    $ref: ./paths/support/support-users.yaml
+  /subscriptions-stats-paying:
+    $ref: paths/support/subscriptions-stats-paying.yaml
+  /subscriptions-stats:
+    $ref: ./paths/support/subscriptions-stats.yaml
+  /subscriptions-stats-leads:
+    $ref: ./paths/support/subscriptions-stats-leads.yaml
+  /subscriptions-stats-paying-leads:
+    $ref: paths/support/subscriptions-stats-paying-leads.yaml
+  /support-tickets:
+    $ref: paths/support/support-tickets.yaml
+  /system-incidents:
+    $ref: ./paths/support/system-incidents.yaml
+  /system-incidents/{systemIncidentId}:
+    $ref: ./paths/support/system-incident.yaml
+  /system-incidents-active:
+    $ref: ./paths/support/system-incidents-active.yaml
+  /support-announcements:
+    $ref: ./paths/support/support-announcements.yaml
+  /support-announcement-media:
+    $ref: ./paths/support/support-announcement-media.yaml
+  /support-announcements/{announcementId}:
+    $ref: ./paths/support/support-announcement.yaml
+  /support-ai-assistant-messages:
+    $ref: ./paths/support/support-ai-assistant-messages.yaml
+  /support-ai-assistant-messages-export:
+    $ref: ./paths/support/support-ai-assistant-messages-export.yaml
+  /support-ai-assistant-conversations:
+    $ref: ./paths/support/support-ai-assistant-conversations.yaml
+  /support-ai-assistant-conversations/{conversationId}:
+    $ref: ./paths/support/support-ai-assistant-conversation.yaml
+  /support-ai-assistant-stats:
+    $ref: ./paths/support/support-ai-assistant-stats.yaml
+  /support-sso-login-link:
+    $ref: ./paths/support/support-sso-login-link.yaml
+  /support-respect-monitoring-workflows-limits/{orgId}:
+    $ref: ./paths/support/support-respect-monitoring-workflows-limits.yaml
+
+  # ---------------------------
+  # Project analytics
+  /orgs/{orgId}/projects/{projectId}/analytics-aggregated:
+    $ref: ./paths/project-analytics/analytics-aggregated-value-list.yaml
+  /orgs/{orgId}/projects/{projectId}/analytics-timeseries:
+    $ref: ./paths/project-analytics/analytics-timeseries-data-point-list.yaml
+  /orgs/{orgId}/projects/{projectId}/analytics-ai-search-data:
+    $ref: ./paths/project-analytics/analytics-ai-search-data-list.yaml
+  /orgs/{orgId}/projects/{projectId}/analytics-ai-search-conversation-data:
+    $ref: ./paths/project-analytics/analytics-ai-search-conversation-data-list.yaml
+  /orgs/{orgId}/projects/{projectId}/analytics-search-data:
+    $ref: ./paths/project-analytics/analytics-search-data-list.yaml
+  /orgs/{orgId}/projects/{projectId}/analytics-page-views-data:
+    $ref: ./paths/project-analytics/analytics-page-views-data-list.yaml
+  /orgs/{orgId}/projects/{projectId}/analytics-ai-assistant-stats:
+    $ref: ./paths/project-analytics/analytics-ai-assistant-stats.yaml
+  /orgs/{orgId}/projects/{projectId}/analytics-config:
+    $ref: ./paths/project-analytics/analytics-config.yaml
+  /orgs/{orgId}/projects/{projectId}/analytics-export:
+    $ref: ./paths/project-analytics/analytics-export.yaml
+
+  # ---------------------------
+  # Product analytics
+  /redocly-yaml-features:
+    $ref: ./paths/product-analytics/redocly-yaml-features.yaml
+  /redocly-yaml-feature-values:
+    $ref: ./paths/product-analytics/redocly-yaml-feature-values.yaml
+  /orgs/{orgId}/tracked-projects:
+    $ref: ./paths/product-analytics/tracked-projects.yaml
+  /orgs/{orgId}/projects/{projectId}/redocly-yaml-features-configs:
+    $ref: ./paths/product-analytics/redocly-yaml-features-configs.yaml
+
+  # SSO
+  /orgs/{orgId}/identity-domains:
+    $ref: ./paths/identity-domains/identity-domains.yaml
+  /orgs/{orgId}/identity-domains/{domainId}:
+    $ref: ./paths/identity-domains/identity-domain.yaml
+  /orgs/{orgId}/identity-domains/{domainId}/verify:
+    $ref: ./paths/identity-domains/identity-domain-verify.yaml
+  /orgs/{orgId}/identity-domains/{domainId}/reject:
+    $ref: ./paths/identity-domains/identity-domain-reject.yaml
+  /orgs/{orgId}/identity-providers:
+    $ref: ./paths/identity-providers/identity-providers.yaml
+  /orgs/{orgId}/identity-providers/{providerId}:
+    $ref: ./paths/identity-providers/identity-provider.yaml
+
+  # ---------------------------
+  # Identity Domains
+  /identity-domains:
+    $ref: ./paths/identity-domains/identity-domains-list.yaml
+
+  # ---------------------------
+  # Identities
+  /unverified-identities-cleanup:
+    $ref: ./paths/identities/unverified-cleanup.yaml
+
+  # ---------------------------
+  # Users
+  /users/me:
+    $ref: ./paths/users/current-user.yaml
+  /users/{userId}:
+    $ref: ./paths/users/user.yaml
+  /user-avatars/{avatarId}:
+    $ref: ./paths/users/user-avatar.yaml
+  /feature-surveys:
+    $ref: ./paths/feature-surveys/feature-surveys.yaml
+  /feature-surveys/{featureSurveyId}:
+    $ref: ./paths/feature-surveys/feature-survey.yaml
+  /users-support:
+    $ref: ./paths/users/users-support.yaml
+  /users-support/{userId}:
+    $ref: ./paths/users/user-support.yaml
+  /users-support/{userId}/support-memberships:
+    $ref: ./paths/users/user-support-memberships.yaml
+  /orgs/{orgId}/users/{userId}:
+    $ref: ./paths/users/organization-user.yaml
+
+  # ---------------------------
+  # Environment Variables
+  /orgs/{orgId}/projects/{projectId}/env-variables:
+    $ref: ./paths/env-variables/env-variables.yaml
+  /orgs/{orgId}/projects/{projectId}/env-variables/{envVariableId}:
+    $ref: ./paths/env-variables/env-variable.yaml
+  /orgs/{orgId}/projects/{projectId}/internal-env-variables:
+    $ref: ./paths/env-variables/internal-env-variables.yaml
+
+  # Blocked emails
+  /blocked-emails:
+    $ref: ./paths/blocked-emails/blocked-emails.yaml
+  /blocked-emails/{blockedEmailId}:
+    $ref: ./paths/blocked-emails/blocked-email.yaml
+
+  # Queues
+  /queues:
+    $ref: ./paths/queues/list-dead-letter-queues.yaml
+  /queues/{queueName}:
+    $ref: ./paths/queues/queue.yaml
+  /queues/{queueName}/redeliver:
+    $ref: ./paths/queues/redeliver-messages.yaml
+
+  # ---------------------------
+  # WYSIWYG
+  /wysiwyg/wake-ups:
+    $ref: ./paths/wysiwyg/wysiwyg-wake-ups.yaml
+  /orgs/{orgId}/projects/{projectId}/wysiwyg/branch/{branchName}:
+    $ref: ./paths/wysiwyg/wysiwyg.yaml
+  /orgs/{orgId}/projects/{projectId}/wysiwyg/branch/{branchName}/stop:
+    $ref: ./paths/wysiwyg/wysiwyg-stop.yaml
+  /orgs/{orgId}/projects/{projectId}/wysiwyg/branch/{branchName}/restart:
+    $ref: ./paths/wysiwyg/wysiwyg-restart.yaml
+  /orgs/{orgId}/projects/{projectId}/wysiwyg/branch/{branchName}/warm-up:
+    $ref: ./paths/wysiwyg/wysiwyg-warm-up.yaml
+
+  # ---------------------------
+  # Syncer
+  /orgs/{orgId}/apps/syncer/wake-up:
+    $ref: ./paths/syncer/syncer-wake-up.yaml
+  /orgs/{orgId}/apps/syncer/status:
+    $ref: ./paths/syncer/syncer-status.yaml
+
+  # ---------------------------
+  # Entitlements
+  /entitlements/.well-known/jwks:
+    $ref: ./paths/entitlements/entitlements.yaml
+
+  # ---------------------------
+  # Device Login
+  /device-authorize:
+    $ref: ./paths/device-login/authorize.yaml
+  /device-token:
+    $ref: ./paths/device-login/token.yaml
+  /device-rotate-token:
+    $ref: ./paths/device-login/rotate-token.yaml
+
+  # ---------------------------
+  # AI Conversations
+  /orgs/{orgId}/projects/{projectId}/ai-conversations:
+    $ref: ./paths/ai-conversations/ai-conversations.yaml
+
+  # ---------------------------
+  # Semantic Search
+  /orgs/{orgId}/projects/{projectId}/semantic-search:
+    $ref: ./paths/semantic-search/semantic-search.yaml
+
+  /orgs/{orgId}/projects/{projectId}/ai-agentic-conversations:
+    $ref: ./paths/ai-conversations/ai-agentic-conversations.yaml
+
+  # ---------------------------
+  # Nomad Events
+  /nomad-events:
+    $ref: ./paths/nomad-events/nomad-events.yaml
+
+  # ---------------------------
+  # Nomad Jobs
+  /nomad-jobs/{jobId}/deployments:
+    $ref: ./paths/nomad-jobs/nomad-job-deployments.yaml
+
+  # ---------------------------
+  # Onboarding
+  /orgs/{orgId}/projects/{projectId}/onboarding:
+    $ref: ./paths/onboarding/onboarding.yaml
+
+  # ---------------------------
+  # AI jobs
+  /orgs/{orgId}/projects/{projectId}/ai-jobs:
+    $ref: ./paths/ai-jobs/ai-jobs.yaml
+  /orgs/{orgId}/projects/{projectId}/ai-jobs/{jobId}:
+    $ref: ./paths/ai-jobs/ai-job.yaml
+  /orgs/{orgId}/projects/{projectId}/ai-job-tasks:
+    $ref: ./paths/ai-jobs/ai-job-tasks.yaml
+  /orgs/{orgId}/projects/{projectId}/ai-job-tasks/{taskId}:
+    $ref: ./paths/ai-jobs/ai-job-task.yaml
+  /orgs/{orgId}/projects/{projectId}/ai-usage-runs:
+    $ref: ./paths/ai-usage/ai-usage-runs.yaml
+  /orgs/{orgId}/projects/{projectId}/ai-usage-runs/{usageId}:
+    $ref: ./paths/ai-usage/ai-usage-run.yaml
+  /orgs/{orgId}/projects/{projectId}/ai-usage-snapshots:
+    $ref: ./paths/ai-usage/ai-usage-snapshots.yaml
+
+  # ---------------------------
+  # AI gateway (internal)
+  /orgs/{orgId}/ai-gateway-request-logs:
+    $ref: ./paths/ai-gateway/ai-gateway-request-logs.yaml
+  /orgs/{orgId}/llm-usage-limits:
+    $ref: ./paths/llm-usage-limits/llm-usage-limits.yaml
+
+  # ---------------------------
+  # AI Project Scaffold
+  /orgs/{orgId}/projects/{projectId}/ai-project-scaffold-job-actions:
+    $ref: ./paths/ai-jobs/ai-project-scaffold-job-actions.yaml
+
+  # ---------------------------
+  # AI Writer Agent Config
+  /ai-writer-agents:
+    $ref: ./paths/ai-writer-agent/ai-writer-agents.yaml
+
+  /orgs/{orgId}/projects/{projectId}/ai-writer-agent:
+    $ref: ./paths/ai-writer-agent/ai-writer-agent.yaml
+
+  /orgs/{orgId}/projects/{projectId}/ai-writer-agent-notifications-slack-configs:
+    $ref: ./paths/ai-writer-agent/ai-writer-agent-notifications-slack-configs.yaml
+
+  /orgs/{orgId}/projects/{projectId}/ai-writer-agent-jobs:
+    $ref: ./paths/ai-writer-agent/ai-writer-agent-jobs.yaml
+  /orgs/{orgId}/projects/{projectId}/ai-writer-agent-jobs/{jobId}/artifacts:
+    $ref: ./paths/ai-writer-agent/ai-writer-agent-job-artifacts.yaml
+  /orgs/{orgId}/projects/{projectId}/ai-writer-agent-jobs/{jobId}/comments:
+    $ref: ./paths/ai-writer-agent/ai-writer-agent-job-comments.yaml
+
+  /orgs/{orgId}/projects/{projectId}/source-code-repositories:
+    $ref: ./paths/ai-writer-agent/source-code-repositories.yaml
+  /orgs/{orgId}/projects/{projectId}/source-code-repositories/{sourceCodeRepositoryId}:
+    $ref: ./paths/ai-writer-agent/source-code-repository.yaml
+  /orgs/{orgId}/projects/{projectId}/source-code-repositories/{sourceCodeRepositoryId}/clone-url:
+    $ref: ./paths/ai-writer-agent/source-code-repository-clone-url.yaml
+
+  # ---------------------------
+  # AI agent memory
+  /orgs/{orgId}/projects/{projectId}/ai-agent-memory:
+    $ref: ./paths/ai-agent-memory/ai-agent-memory.yaml
+  /orgs/{orgId}/projects/{projectId}/ai-agent-memory-search-results:
+    $ref: ./paths/ai-agent-memory/ai-agent-memory-search-results.yaml
+
+  # ---------------------------
+  # AI Assistant
+  /orgs/{orgId}/projects/{projectId}/ai-assistant-escalations:
+    $ref: ./paths/ai-assistant-escalations/ai-assistant-escalations.yaml
+  /orgs/{orgId}/projects/{projectId}/ai-assistant-feedback:
+    $ref: ./paths/ai-assistant-feedback/ai-assistant-feedback.yaml
+
+components:
+  schemas:
+    ConflictApiError: # this is not used anywhere, just in generated sdk code
+      $ref: ./components/schemas/errors/ConflictApiError.yaml
+  securitySchemes:
+    #   For public endpoints simply use security: [].
+    InternalAuth:
+      $ref: ./common/security/Internal.yaml
+    UserCookie:
+      $ref: ./common/security/UserCookie.yaml
+    ApiKey:
+      $ref: ./common/security/ApiKey.yaml
+    OAuth2:
+      $ref: ./common/security/OAuth2.yaml
+    Rebilly:
+      $ref: ./common/security/Rebilly.yaml
+    Support:
+      $ref: ./common/security/Support.yaml

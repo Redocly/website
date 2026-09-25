@@ -1,0 +1,30 @@
+type: object
+required:
+  - object
+  - entries
+  - totals
+  - totalsBreakdown
+  - approximatedCost
+properties:
+  object:
+    type: string
+    enum:
+      - aiUsageSnapshot
+    readOnly: true
+  entries:
+    type: array
+    writeOnly: true
+    items:
+      $ref: ./AiUsageEntry.yaml
+  totals:
+    $ref: ./AiUsageTotals.yaml
+    readOnly: true
+  totalsBreakdown:
+    type: object
+    readOnly: true
+    additionalProperties:
+      $ref: ./AiUsageTotals.yaml
+  approximatedCost:
+    type: number
+    readOnly: true
+    description: Estimated USD cost rounded by service precision.

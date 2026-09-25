@@ -1,0 +1,133 @@
+patch:
+  tags:
+    - Support
+  x-internal: true
+  security:
+    - UserCookie: []
+  operationId: updateAnnouncement
+  summary: Partially update an announcement
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  parameters:
+    - $ref: ../../components/parameters/path/AnnouncementId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            title:
+              type: string
+              description: Title of the announcement. Recommended maximum 70 characters to fit on one line in the modal.
+              example: "What's New: Enhanced Respect Monitoring"
+            content:
+              type: string
+              description: Markdown content of the announcement.
+              example: "We've added new features to Respect Monitoring. Check out our [blog post](https://redocly.com/blog) for more details."
+            mediaUrl:
+              type:
+                - string
+                - 'null'
+              format: uri
+              description: URL to the media file (image or GIF) displayed in the announcement. Set to null to remove media.
+              example: "https://s3.us-east-1.amazonaws.com/stage-bh-announcements-cdn/announcements/01h1s5z6vf2mm1mz3hevnn9va7.gif"
+            buttons:
+              type:
+                - object
+                - 'null'
+              description: Button configuration for the announcement. Set to null to remove all buttons.
+              properties:
+                primary:
+                  type: object
+                  properties:
+                    text:
+                      type: string
+                      example: "Explore Respect Monitoring"
+                    url:
+                      type: string
+                      format: uri
+                      example: "https://redocly.com/docs/monitoring"
+                    action:
+                      type: string
+                      example: "explore_monitoring"
+                secondary:
+                  type: object
+                  properties:
+                    text:
+                      type: string
+                      example: "View documentation"
+                    url:
+                      type: string
+                      format: uri
+                      example: "https://redocly.com/docs"
+                    action:
+                      type: string
+                      example: "view_docs"
+            products:
+              type: array
+              description: Optional list of product badges shown in the announcement.
+              items:
+                type: string
+                enum:
+                  - reunite
+                  - realm
+                  - redoc
+                  - reef
+                  - revel
+            scheduledStartAt:
+              type:
+                - string
+                - 'null'
+              format: date-time
+              description: Date and time when the announcement should start being displayed. Set to null to remove scheduling.
+            scheduledEndAt:
+              type:
+                - string
+                - 'null'
+              format: date-time
+              description: Date and time when the announcement should stop being displayed. Set to null to remove end date.
+  responses:
+    '200':
+      description: Announcement updated.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/announcement/Announcement.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+delete:
+  tags:
+    - Support
+  x-internal: true
+  security:
+    - UserCookie: []
+  operationId: deleteAnnouncement
+  summary: Delete an announcement
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  parameters:
+    - $ref: ../../components/parameters/path/AnnouncementId.yaml
+  responses:
+    '204':
+      $ref: ../../common/responses/NoContent.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+
+

@@ -1,0 +1,16 @@
+type: object
+title: PatchOAuthClientForSupportRequest
+properties:
+  verificationStatus:
+    description: OAuth2 client verification status managed by support.
+    $ref: ./OAuthClientVerificationStatus.yaml
+  rejectReason:
+    description: Reason shown to the organization when verification is rejected. Required when verificationStatus is REJECTED.
+    type: string
+    minLength: 1
+    maxLength: 500
+    example: Application description does not match its stated purpose.
+  skipConsent:
+    description: Whether this OAuth2 client should skip the OAuth consent screen.
+    type: boolean
+    example: true

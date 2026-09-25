@@ -1,0 +1,9 @@
+name: pageSize
+in: query
+description: Page Size.
+required: false
+schema:
+  type: integer
+  minimum: 2
+  default: 10
+example: 10

@@ -1,0 +1,159 @@
+type: object
+title: Extended Subscription
+properties:
+  id:
+    description: Subscription ID. Unique identifier prefixed with `sub_`.
+    type: string
+    pattern: ^sub_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: sub_01hh1t9sa6gwfv5naz04gr7ehm
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [subscription]
+    readOnly: true
+  organizationId:
+    description: Organization ID. Unique identifier prefixed with `org_`.
+    type: string
+    pattern: ^org_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: org_01hh1t9sa6gwfv5naz04gr7ehm
+    readOnly: true
+  uri:
+    description: URI of the subscription resource.
+    type: string
+    format: uri
+    readOnly: true
+  subscriptionItems:
+    description: Items with product information for the subscription.
+    type: array
+    items:
+      type: object
+      properties:
+        productId:
+          description: Product ID.
+          type: string
+          example: respect-monitoring
+        quantity:
+          description: Number of product units in the subscription.
+          type: integer
+          example: 5
+        quantityFilled:
+          description: Number of filled product units.
+          type: integer
+          example: 1
+        usageStatus:
+          description: Usage status of the product.
+          type: object
+          properties:
+            isHardLimitReached:
+              description: Whether the hard limit is reached for the product.
+              type: boolean
+            isTrialLimitReached:
+              description: Whether the trial limit is reached for the product.
+              type: boolean
+  orderType:
+    type: string
+    description: Specifies the type of order. An order may be a subscription or a one-time purchase
+    example: subscription-order
+  customerId:
+    type: string
+    description: Customer ID
+    example: cus_01hh1t9sa6gwfv5naz04gr7ehm
+  status:
+    type: string
+    description: Status of the subscription service. A subscription starts in the pending status, and becomes active when the service period begins
+    example: active
+  isTrial:
+    type: boolean
+    description: Specifies if the subscription is currently in a trial period
+    example: false
+  trialEndTime:
+    type: string
+    description: The time the trial should end
+    example: 2021-01-01T00:00:00Z
+  recurringInterval:
+    type: string
+    description: Recurring interval to override plan settings
+    example: monthly
+  autopay:
+    type: boolean
+    description: Specifies if payment attempts are made automatically
+    example: true
+  startTime:
+    type: string
+    description: Date and time when the subscription starts
+    example: 2021-01-01T00:00:00Z
+  renewalTime:
+    type: string
+    description: Date and time when the subscription renews
+    example: 2021-01-01T00:00:00Z
+  paymentInstrumentId:
+    type: string
+    description: ID of the payment instrument to use for autopay
+    example: inst_01hh1t9sa6gwfv5naz04gr7ehm
+  billingStatus:
+    type: string
+    description: Billing status of the most recent invoice
+    example: draft
+  amount:
+    type: number
+    description: Subscription cost
+    example: 100
+  currency:
+    type: string
+    description: Currency of the order
+    example: USD
+  initialInvoiceId:
+    type: string
+    description: ID of the initial invoice
+    example: in_01hh1t9sa6gwfv5naz04gr7ehm
+  recentInvoiceId:
+    type: string
+    description: ID of the most recently issued invoice
+    example: in_01hh1t9sa6gwfv5naz04gr7ehm
+  planId:
+    type: string
+    description: Plan ID with product prefix removed (e.g., 'projects-enterprise-monthly' becomes 'enterprise-monthly')
+    example: enterprise-monthly
+  lineItems:
+    type: string
+    description: Line items for the subscription
+  lineItemSubtotal:
+    type: string
+    description: Line item subtotal for the subscription
+  items:
+    type: string
+    description: Items with product information for the subscription
+  canceledBy:
+    type: string
+    description: Specifies who initiated the cancellation
+    example: merchant
+  cancelCategory:
+    type: string
+    description: Category of the cancellation
+    example: billing-failure
+  createdTime:
+    type: string
+    description: Created time
+    example: 2021-01-01T00:00:00Z
+  updatedTime:
+    type: string
+    description: Updated time
+    example: 2021-01-01T00:00:00Z
+  trialConversionTime:
+    type: string
+    description: Date and time when the subscription had a trial conversion.
+    example: 2021-01-01T00:00:00Z
+required:
+  - id
+  - object
+  - uri
+  - subscriptionItems
+  - orderType
+  - status
+  - customerId
+  - isTrial
+  - trialEndTime
+  - autopay
+  - startTime
+  - planId

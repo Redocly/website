@@ -1,0 +1,21 @@
+type: object
+properties:
+  object:
+    type: string
+    enum: [list]
+  page:
+    $ref: ../Page.yaml
+  data:
+    type: array
+    items:
+      $ref: ./ProjectMentionable.yaml
+  items:
+    type: array
+    items:
+      $ref: ./ProjectMentionable.yaml
+    deprecated: true
+required:
+  - object
+  - page
+  - items
+  - data

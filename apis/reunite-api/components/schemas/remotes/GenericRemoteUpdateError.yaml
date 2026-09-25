@@ -1,0 +1,12 @@
+type: object
+properties:
+  message:
+    type: string
+    description: Error message describing the failure during applying remote update.
+  timestamp:
+    type: string
+    format: date-time
+    description: Timestamp of the error.
+required:
+  - message
+  - timestamp

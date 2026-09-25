@@ -1,0 +1,7 @@
+name: role
+in: query
+description: Organization role.
+required: false
+schema:
+  $ref: ../../schemas/rbac/OrganizationRole.yaml
+example: VIEWER

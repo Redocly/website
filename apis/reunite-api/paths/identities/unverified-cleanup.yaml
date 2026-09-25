@@ -1,0 +1,35 @@
+post:
+  tags:
+    - Identities
+  operationId: runUnverifiedIdentitiesCleanup
+  summary: Delete unverified identities older than the retention period
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  description: |
+    Triggered by the scheduled Temporal workflow that runs every Sunday at
+    midnight UTC. Removes Kratos identities that signed up with email/password
+    but never verified their email address and have a creation date earlier
+    than the retention cutoff (default 30 days, configured in code via the
+    `OLDER_THAN_DAYS` constant in `UnverifiedIdentitiesCleanupService`).
+
+    > [!WARNING]
+    > This endpoint performs an **irreversible** destructive action: identities
+    > selected by the filter are permanently deleted from Kratos.
+
+    Access is restricted to internal callers (Temporal worker on schedule, or
+    operators with `InternalAuth` credentials for ad-hoc triggers). Concurrent
+    invocations are not throttled at the API layer — by design, callers are
+    limited to the Temporal worker and trusted operators.
+  security:
+    - InternalAuth: []
+  responses:
+    '204':
+      $ref: ../../common/responses/NoContent.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

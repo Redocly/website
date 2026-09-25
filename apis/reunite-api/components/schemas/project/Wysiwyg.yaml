@@ -1,0 +1,36 @@
+type: object
+properties:
+  id:
+    description: WYSIWYG ID. Unique identifier prefixed with `wys_`.
+    type: string
+    pattern: ^wys_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: wys_01h1s5z6vf2mm1mz3hevnn9va7
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [wysiwyg]
+    example: wysiwyg
+    readOnly: true
+  uri:
+    description: URI reference to this WYSIWYG.
+    type: string
+    format: uri
+    readOnly: true
+    example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/projects/prj_01hh1t9sa6gwfv5naz04gr7ehm/wysiwyg/branch/main
+  url:
+    description: URL where the user can access the WYSIWYG.
+    type: string
+    example: http://project--main.wysiwyg.redocly.com
+  branchName:
+    description: Branch name.
+    type: string
+    example: main
+    maxLength: 512
+
+required:
+  - id
+  - object
+  - uri
+  - url
+  - branchName

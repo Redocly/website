@@ -1,0 +1,60 @@
+get:
+  tags:
+    - Users
+  security:
+    - UserCookie: []
+  operationId: getCurrentUser
+  summary: Retrieve the current user
+  description: Returns the user associated with the current session.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/users/CurrentUser.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+patch:
+  tags:
+    - Users
+  security:
+    - UserCookie: []
+  operationId: updateCurrentUser
+  summary: Partially update the current user
+  description: Updates the user associated with the current session.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/users/PatchUserRequest.yaml
+    required: true
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/users/CurrentUser.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

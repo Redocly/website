@@ -1,0 +1,31 @@
+type: array
+maxItems: 100
+items:
+  type: object
+  properties:
+    filePath:
+      description: File path to Arazzo specification.
+      type: string
+      example: arazzo/my-api.yaml
+    branchName:
+      description: Name of the project branch which job is defined for.
+      type: string
+      example: main
+    buildId:  
+      description: Build ID.
+      type: string
+      example: pb_01h1s5z6vf2mm1mz3hevnn9va7
+      pattern: ^pb_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    sloWarn:
+      description: Service Level Objective warning threshold for the job.
+      type: number
+      example: 200
+    sloError:
+      description: Service Level Objective error threshold for the job.
+      type: number
+      example: 500
+  required:
+    - filePath
+    - branchName
+    - buildId
+

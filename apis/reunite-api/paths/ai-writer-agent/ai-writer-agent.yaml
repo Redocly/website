@@ -1,0 +1,67 @@
+get:
+  tags:
+    - AI Writer Agent
+  summary: List all writer agent configuration
+  description: Get the writer agent configuration for a project.
+  operationId: listWriterAgentConfig
+  x-internal: true
+  x-catalogRelations: []
+  security:
+    - UserCookie: []
+    - InternalAuth: []
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Before.yaml
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+    - $ref: ../../common/components/parameters/query/Sort.yaml
+    - $ref: ../../common/components/parameters/query/Search.yaml
+  responses:
+    '200':
+      description: Configuration fetched successfully.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/ai-writer-agent/WriterAgentList.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+post:
+  tags:
+    - AI Writer Agent
+  summary: Upsert writer agent configuration
+  description: Creates or updates the writer agent configuration for a project.
+  operationId: upsertWriterAgentConfig
+  x-internal: true
+  x-catalogRelations: []
+  security:
+    - UserCookie: []
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/ai-writer-agent/WriterAgent.yaml
+  responses:
+    '200':
+      description: Configuration created or updated successfully.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/ai-writer-agent/WriterAgent.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

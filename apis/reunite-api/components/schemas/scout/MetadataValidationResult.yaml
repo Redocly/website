@@ -1,0 +1,52 @@
+type: object
+properties:
+  isValid:
+    type: boolean
+    example: false
+  errors:
+    type: array
+    items:
+      type: object
+      properties:
+        keyword:
+          type: string
+          description: Validation keyword.
+        instancePath:
+          type: string
+          description: JSON Pointer to the location in the data instance.
+          example: /prop/1/subProp
+        schemaPath:
+          type: string
+          description: JSON Pointer to the location of the failing keyword in the schema.
+        params:
+          type: object
+          description: Additional information about error.
+          example: { missingProperty: owner }
+        propertyName:
+          type: string
+          description: Set for errors in `propertyNames` keyword schema.
+        message:
+          type: string
+          description: Error message.
+        schema:
+          description: Value of the failing keyword in the schema.
+        parentSchema:
+          type: object
+          description: Schema containing the keyword.
+        data:
+          description: Data validated by the keyword.
+      required:
+        - keyword
+        - instancePath
+        - schemaPath
+        - params
+      example:
+        instancePath: ''
+        schemaPath: '#/required'
+        keyword: required
+        params:
+          missingProperty: owner
+        message: must have required property 'owner'
+    description: Array of metadata validation errors.
+required:
+  - isValid

@@ -1,0 +1,108 @@
+type: object
+properties:
+  id:
+    description: Review Comment ID. Unique identifier prefixed with `com_`.
+    type: string
+    pattern: ^com_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: com_01h1s5z6vf2mm1mz3hevnn9va7
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [reviewComment]
+    readOnly: true
+  uri:
+    description: Canonical URI for the review comment resource.
+    type: string
+    format: uri
+    readOnly: true
+    example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/projects/prj_01hh1t9sa6gwfv5naz04gr7ehm/review-comments/com_01h1s5z6vf2mm1mz3hevnn9va7
+  userId:
+    $ref: ../ActorUserId.yaml
+  pullRequestId:
+    description: Pull request ID. Unique identifier prefixed with `pr_`.
+    type: string
+    pattern: ^pr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: pr_01h1s5z6vf2mm1mz3hevnn9va7
+  reviewId:
+    description: Review ID. Unique identifier prefixed with `rev_`.
+    type: string
+    pattern: ^rev_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: rev_01h1s5z6vf2mm1mz3hevnn9va7
+  replyToId:
+    description: Review comment ID. Unique identifier prefixed with `com_`.
+    type: string
+    pattern: ^com_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: com_01h1s5z6vf2mm1mz3hevnn9va7
+  comment:
+    description: Comment to review.
+    type: string
+  line:
+    description: Line number with identifier.
+    type: string
+  linesCount:
+    description: Number of line related to comment.
+    type: integer
+  filePath:
+    description: File  path.
+    type: string
+  oldPath:
+    description: Old file path in case of renamed file.
+    type: string
+  externalId:
+    description: Comment id in external provider.
+    type: string
+  createdAt:
+    description: Created date.
+    type: string
+    readOnly: true
+    format: date-time
+  updatedAt:
+    description: Updated date.
+    type: string
+    readOnly: true
+    format: date-time
+  isOutdated:
+    description: the comment is not relevant.
+    type: boolean
+    default: false
+    readOnly: true
+  commitHash:
+    description: Commit hash.
+    type: string
+  lastMainCommitHash:
+    description: Acts as a fallback for merge-base with target branch if API fails to resolve it.
+    type: string
+  type:
+    description: Type of comment.
+    type: string
+    enum: [FILE, VISUAL]
+  branchName: # is it needed?
+    description: Branch name.
+    type: string
+    writeOnly: true
+  reviewStatus: # is it needed??
+    type: string
+    enum: [APPROVED, REQUESTED_CHANGES, COMMENTED, DRAFT]
+    description: Status for new review.
+  isResolved:
+    type: boolean
+    description: Comment resolved status.
+  resolvedAt:
+    description: Resolved date.
+    type: [string, 'null']
+    readOnly: true
+    format: date-time
+  resolvedById:
+    description: ID of user who resolved Review Comment. Unique identifier prefixed with `usr_`.
+    type: [string, 'null']
+required:
+  - id
+  - object
+  - uri
+  - pullRequestId
+  - comment
+  - createdAt
+  - updatedAt
+  - isOutdated
+  - type

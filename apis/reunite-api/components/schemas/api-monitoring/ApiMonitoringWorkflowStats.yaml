@@ -1,0 +1,128 @@
+type: object
+properties:
+  id:
+    description: Respect Monitoring workflow stats ID. Unique identifier prefixed with `amws_`.
+    type: string
+    pattern: ^amws_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: amws_01h2zvgfdqex5na189kdg39d6s
+    readOnly: true
+  workflowId:
+    description: Respect Monitoring workflow ID.
+    type: string
+    pattern: ^amw_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: amw_01h2zvgfdqex5na189kdg39d6s
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [respectMonitoringWorkflowStats]
+    example: respectMonitoringWorkflowStats
+    readOnly: true
+  name:
+    description: Name of the workflow.
+    type: string
+    example: 'My Workflow'
+    readOnly: true
+  arazzoWorkflowId:
+    description: Respect Monitoring Arazzo workflow ID.
+    type: string
+    example: 'workflow-1'
+  filePath:
+    description: Path to the API specification file.
+    type: string
+    example: '/api/v1/pets.yaml'
+  description:
+    description: Description of the workflow.
+    type: string
+    example: 'Workflow for testing pets API'
+    readOnly: true
+  createdAt:
+    description: Created date.
+    type: string
+    format: date-time
+    example: '2023-06-15T15:41:42.696Z'
+    readOnly: true
+  uptime:
+    description: Percentage of successful runs.
+    type: number
+    format: float
+    example: 99.9
+    readOnly: true
+  downtime:
+    description: Total downtime in seconds.
+    type: integer
+    format: int64
+    example: 3600
+    readOnly: true
+  medianDuration:
+    description: Median duration of all runs.
+    type: number
+    format: float
+    example: 1.1
+    readOnly: true
+  p95Duration:
+    description: 95th percentile duration of all runs.
+    type: number
+    format: float
+    example: 2.5
+    readOnly: true
+  status:
+    description: Workflow status.
+    type: string
+    example: 'ACTIVE'
+    readOnly: true
+    enum:
+      - ACTIVE
+      - PAUSED
+      - ARCHIVED
+  lastRunStatus:
+    description: Status of the most recent workflow run.
+    type: string
+    enum:
+      [PENDING, IN_PROGRESS, SUCCESS, WARNING, FAILED, SLO_WARNING, SLO_ERROR]
+    example: SUCCESS
+    readOnly: true
+  lastRunAt:
+    description: Timestamp of the last run.
+    type: string
+    format: date-time
+    example: '2023-06-15T15:41:42.696Z'
+    readOnly: true
+  lastRunDuration:
+    description: Duration of the last run.
+    type: number
+    format: float
+    example: 1.5
+    readOnly: true
+  lastRunFailureAt:
+    description: Timestamp of the last failed run.
+    type: string
+    format: date-time
+    example: '2023-06-15T15:41:42.696Z'
+    readOnly: true
+  totalRequestCount:
+    description: Total number of requests made during all runs.
+    type: number
+    example: 100
+    readOnly: true
+  uri:
+    type: string
+    format: uri
+    description: Canonical URI for the workflow stats resource.
+    readOnly: true
+    example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/projects/prj_01hh1t9sa6gwfv5naz04gr7ehm/respect-monitoring-workflow-stats/amws_01h2zvgfdqex5na189kdg39d6s
+# downtime/medianDuration/p95Duration are returned only for single-workflow queries (filter by
+# workflowId); the multi-workflow list omits them (aggregating downtime/percentiles over every
+# workflow is too expensive). lastRunStatus/lastRunAt/lastRunDuration are absent when a workflow has
+# no runs in the window, and lastRunFailureAt when it has no failures. So none of these are required.
+required:
+  - id
+  - object
+  - name
+  - workflowId
+  - filePath
+  - description
+  - createdAt
+  - uptime
+  - status
+  - uri

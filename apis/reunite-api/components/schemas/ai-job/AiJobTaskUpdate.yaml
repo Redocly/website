@@ -1,0 +1,45 @@
+type: object
+description: Writable fields accepted when partially updating an AI job task.
+properties:
+  status:
+    type: string
+    enum:
+      - QUEUED
+      - RUNNING
+      - COMPLETED
+      - FAILED
+      - SKIPPED
+      - CANCELLED
+    example: RUNNING
+    description: Current status of the task.
+  startedAt:
+    type:
+      - string
+      - 'null'
+    format: date-time
+    example: '2026-04-17T10:16:00.000Z'
+    description: Date the task starts executing.
+  completedAt:
+    type:
+      - string
+      - 'null'
+    format: date-time
+    example: '2026-04-17T10:18:42.000Z'
+    description: Date the task finishes executing.
+  error:
+    type:
+      - string
+      - 'null'
+    maxLength: 1000
+    example: 'planner failed: model returned an error'
+    description: >-
+      Error message when the task has failed. The worker sanitizes it before
+      reporting: URL query strings and fragments are stripped, internal hosts and paths are reduced, and
+      secret-shaped values are redacted.
+  result:
+    description: Free-form data produced by the task.
+    type:
+      - object
+      - 'null'
+  activities:
+    $ref: ./AiJobTaskActivities.yaml

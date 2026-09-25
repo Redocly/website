@@ -1,0 +1,42 @@
+allOf:
+  - $ref: ./ProjectBuild.yaml
+  - type: object
+    required:
+      - url
+    properties:
+      deploymentStatus:
+        type: string
+        description: Build deployment status. Present if the build has ever been deployed.
+        enum:
+          - NOT_STARTED
+          - IN_PROGRESS
+          - SUCCESS
+          - FAILED
+          - SKIPPED
+        example: IN_PROGRESS
+      publishingStatus:
+        type: string
+        description: Status of currently published build. Only a build that is currently published has this field.
+        enum:
+          - NOT_STARTED
+          - IN_PROGRESS
+          - SUCCESS
+          - FAILED
+        example: IN_PROGRESS
+      url:
+        description: Build url.
+        type: string
+        readOnly: true
+        example: 'https://example.com/build-resource'
+      hostedUrl:
+        description: Build hosted url.
+        type: string
+        readOnly: true
+        example: 'https://example.com/build-resource'
+      pullRequestNumber:
+        description: Pull request number associated with this build.
+        type:
+          - integer
+          - 'null'
+        readOnly: true
+        example: 123

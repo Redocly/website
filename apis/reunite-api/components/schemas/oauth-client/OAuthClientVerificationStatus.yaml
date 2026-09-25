@@ -1,0 +1,6 @@
+type: string
+enum:
+  - UNVERIFIED
+  - VERIFIED
+  - REJECTED
+example: UNVERIFIED

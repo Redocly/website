@@ -1,0 +1,43 @@
+patch:
+  tags:
+    - AI jobs
+  security:
+    - InternalAuth: []
+  summary: Partially update an AI job task
+  description: Partially updates an AI job task, including status, timestamps, and activities. Used by ai-worker to report phase progress.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: patchAiJobTask
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - name: taskId
+      in: path
+      required: true
+      description: AI job task ID.
+      schema:
+        type: string
+      example: aijt_01h1s5z6vf2mm1mz3hevnn9va7
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/ai-job/AiJobTaskUpdate.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/ai-job/AiJobTask.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

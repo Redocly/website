@@ -1,0 +1,22 @@
+description: >
+  Invite batch request is invalid. Schema validation failures return issues in
+  `errors`. Per-email business rejections return one `InviteEmailError` entry per
+  address. Batch-level failures (for example invite limit) use `detail` only and
+  omit `errors`.
+content:
+  application/problem+json:
+    schema:
+      allOf:
+        - $ref: ../errors/Problem.yaml
+        - type: object
+          properties:
+            errors:
+              type: array
+              description: >
+                Request schema validation issues or per-email rejections. Omitted
+                for batch-level failures that are not represented as structured
+                entries in `errors`.
+              items:
+                oneOf:
+                  - $ref: ../../components/schemas/invites/InviteEmailError.yaml
+                  - $ref: ../errors/ValidationIssue.yaml

@@ -1,0 +1,28 @@
+delete:
+  tags:
+    - Support
+  security:
+    - Support: []
+  operationId: deleteSupportMembershipsForUser
+  summary: Delete all support memberships for user
+  description: |
+    Support team endpoint to remove all support memberships for a user. Deletes all Membership records where the user has isSupport=true. The user no longer has support access to any organization.
+
+    Processing continues for all organizations even if removal fails for some. If one or more removals fail, the response is 500 with a Problem body (see InternalServerError). The `detail` property contains the detailed message listing each failed organization ID and the specific reason (e.g. "User is the last owner of the organization, need to promote someone else to Owner"). The `title` property is a short summary (e.g. "Failed to remove support user from some organizations.").
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  parameters:
+    - $ref: ../../components/parameters/path/UserId.yaml
+  responses:
+    '204':
+      description: All support memberships successfully removed.
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

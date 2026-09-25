@@ -1,0 +1,29 @@
+get:
+  tags:
+    - Users
+  security:
+    - InternalAuth: []
+  operationId: getUser
+  summary: Retrieve a user
+  description: Retrieve a user by ID. Accessible with internal authentication only.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  parameters:
+    - $ref: ../../components/parameters/path/UserId.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/users/User.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

@@ -1,0 +1,26 @@
+type: object
+properties:
+  object:
+    description: Entity name.
+    type: string
+    enum: [respectMonitoringNotificationsSlaConfigList]
+    example: respectMonitoringNotificationsSlaConfigList
+    readOnly: true
+  data:
+    description: List of Respect Monitoring notifications sla configs.
+    type: array
+    items:
+      $ref: ApiMonitoringNotificationsSlaConfig.yaml
+  items:
+    description: List of Respect Monitoring notifications sla configs.
+    type: array
+    items:
+      $ref: ApiMonitoringNotificationsSlaConfig.yaml
+    deprecated: true
+  page:
+    $ref: ../Page.yaml
+required:
+  - object
+  - items
+  - page
+  - data

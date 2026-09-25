@@ -1,0 +1,9 @@
+type: array
+items:
+  allOf:
+    - $ref: ./CreatedIdentityProvider.yaml
+    - type: object
+      properties:
+        connectionUrl:
+          description: Url used to test SSO connection.
+          type: string

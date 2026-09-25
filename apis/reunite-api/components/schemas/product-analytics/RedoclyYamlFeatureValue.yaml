@@ -1,0 +1,31 @@
+type: object
+properties:
+  object:
+    type: string
+    enum: [productAnalyticsFeatureValue]
+  organizationSlug:
+    type: string
+    description: Organization slug.  
+  projectId:
+    type: string
+    description: Project ID.
+  featureContent:
+    type: object
+    description: Feature configuration value used by a project from the latest build.
+    additionalProperties: true
+    readOnly: true
+  featureRawContent:
+    type: object
+    description: Raw feature configuration value used by a project from the latest build.
+    additionalProperties: true
+  featureFirstRawContent:
+    type: object
+    description: Raw feature configuration value used by a project from the first build.
+    additionalProperties: true
+required:
+  - object
+  - organizationSlug
+  - projectId
+  - featureContent
+  - featureRawContent
+  - featureFirstRawContent

@@ -1,0 +1,17 @@
+type: object
+properties:
+  name:
+    type: string
+    description: Check name.
+    example: Scorecard - Compliance API
+  status:
+    $ref: GitCommitCheckStatus.yaml
+  description:
+    type: string
+    description: Git commit status description.
+  targetUrl:
+    type: string
+    description: Git commit status target URL.
+required:
+  - name
+  - status

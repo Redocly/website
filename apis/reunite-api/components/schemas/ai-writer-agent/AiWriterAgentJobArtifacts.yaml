@@ -1,0 +1,114 @@
+type: object
+description: Artifacts persisted by a writer agent job.
+required:
+  - jobId
+  - manifest
+  - files
+properties:
+  jobId:
+    type: string
+    format: ulid
+    pattern: ^aij_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: aij_01h1s5z6vf2mm1mz3hevnn9va7
+    description: Unique identifier for the AI job.
+  manifest:
+    type: object
+    description: Run metadata for the persisted artifacts.
+    required:
+      - schemaVersion
+      - trigger
+      - jobStatus
+      - persistedAt
+      - funnel
+    properties:
+      schemaVersion:
+        type: integer
+        example: 1
+        description: Schema version of the manifest.
+      trigger:
+        type: string
+        enum:
+          - MANUAL
+          - FEEDBACK
+          - SCHEDULED
+          - CODE_CHANGE
+          - PR_COMMENT
+        example: SCHEDULED
+        description: Trigger that started the writer agent run.
+      jobStatus:
+        type: string
+        enum:
+          - QUEUED
+          - RUNNING
+          - COMPLETED
+          - FAILED
+          - CANCELLED
+        example: COMPLETED
+        description: Status of the AI job at the time of persistence.
+      persistedAt:
+        type: string
+        format: date-time
+        example: '2026-04-17T10:25:30.000Z'
+        description: Date the artifacts are persisted.
+      funnel:
+        type: object
+        description: Pipeline funnel metrics captured from the run.
+        properties:
+          candidateCount:
+            type: integer
+            minimum: 0
+            example: 5
+            description: Number of documentation-improvement candidates discovered during collection.
+          approvedCount:
+            type: integer
+            minimum: 0
+            example: 2
+            description: Number of candidates approved during triage.
+          rejectedCount:
+            type: integer
+            minimum: 0
+            example: 3
+            description: Number of candidates rejected during triage.
+          queuedCount:
+            type: integer
+            minimum: 0
+            example: 2
+            description: Number of approved candidates queued for the runner.
+          pullRequestId:
+            deprecated: true
+            description: Pull request ID. Unique identifier prefixed with `pr_`.
+            type: string
+            pattern: ^pr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+            example: pr_01h1s5z6vf2mm1mz3hevnn9va7
+          pullRequestIds:
+            type: array
+            maxItems: 3
+            description: Pull requests created for this job, one per group of related runner specs. Bounded by the per-run queue capacity (MAX_QUEUED_SPECS_PER_RUN).
+            items:
+              type: string
+              pattern: ^pr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+              example: pr_01h1s5z6vf2mm1mz3hevnn9va7
+              description: Pull request ID. Unique identifier prefixed with `pr_`.
+  files:
+    type: array
+    description: List of persisted artifact files.
+    items:
+      type: object
+      required:
+        - path
+        - size
+        - downloadLink
+      properties:
+        path:
+          type: string
+          example: candidates.json
+          description: Path of the artifact file relative to the run context directory.
+        size:
+          type: integer
+          minimum: 0
+          description: File size in bytes.
+          example: 1234
+        downloadLink:
+          type: string
+          format: uri
+          description: Signed GET URL for the artifact file.

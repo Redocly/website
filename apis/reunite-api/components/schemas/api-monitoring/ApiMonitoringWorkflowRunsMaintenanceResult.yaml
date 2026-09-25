@@ -1,0 +1,10 @@
+type: object
+description: Result of a Respect Monitoring partition maintenance run.
+properties:
+  object:
+    description: Entity name.
+    type: string
+    enum: [respectMonitoringWorkflowRunsMaintenance]
+    readOnly: true
+required:
+  - object

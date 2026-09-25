@@ -1,0 +1,27 @@
+type: object
+required:
+  - prompt
+properties:
+  prompt:
+    type: string
+    minLength: 1
+    maxLength: 2000
+    description: Project description provided by the user.
+  userSelectedFeatures:
+    type: array
+    default: []
+    items:
+      type: string
+      minLength: 1
+    description: >-
+      Feature names the user has manually selected via the
+      dropdown. Used as intent signal; excluded from suggestions.
+  rejectedFeatures:
+    type: array
+    default: []
+    items:
+      type: string
+      minLength: 1
+    description: >-
+      Feature names the AI previously suggested but the user
+      explicitly removed. Excluded from suggestions.

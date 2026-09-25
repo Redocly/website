@@ -1,0 +1,30 @@
+type: object
+properties:
+  commitSha:
+    type: string
+    example: ceca734d8b919e80298012e5b967af8d40dc1d20
+    description: Commit hash that status belongs to.
+  description:
+    type: string
+    example: Required
+    description: Commit status details.
+  context:
+    type: string
+    example: Visual review
+    description: Commit status context.
+  state:
+    description: Commit status state.
+    type: string
+    enum:
+      - PENDING
+      - IN_PROGRESS
+      - SUCCESS
+      - FAILED
+  targetUrl:
+    description: Commit staus details URL.
+    type: string
+    format: url
+required:
+  - commitSha
+  - context
+  - state

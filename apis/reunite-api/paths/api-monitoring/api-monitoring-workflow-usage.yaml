@@ -1,0 +1,54 @@
+get:
+  tags:
+    - Respect Monitoring
+  security:
+    - InternalAuth: []
+    - UserCookie: []
+  operationId: getMonthlyWorkflowUsage
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  summary: Get monthly workflow usage
+  description: Returns the monthly usage of a workflow for an organization.
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  responses:
+    '200':
+      description: Successfully retrieved workflow usage.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/api-monitoring/ApiMonitoringWorkflowUsage.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+
+post:
+  tags:
+    - Respect Monitoring
+  security:
+    - InternalAuth: []
+  operationId: reportUsage
+  summary: Upsert Respect Monitoring usage
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  description: Reports the usage of Respect Monitoring for an organization.
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  responses:
+    '200':
+      description: OK.
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

@@ -1,0 +1,36 @@
+type: object
+description: Reader's rating of an AI assistant message.
+required:
+  - messageId
+  - conversationId
+  - feedback
+properties:
+  messageId:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: >-
+      Identifier of the assistant message the feedback rates. The conversations
+      endpoint streams it to the widget as the message id, which is how feedback
+      is correlated with the message that produced it.
+    example: msg-1705234567890
+  conversationId:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: >-
+      Identifier of the assistant conversation the rated message belongs to. The assistant
+      generates it and sends the same value as `searchSessionId` on the conversations
+      endpoint.
+    example: aiconv_01KAE541A8TCFVT7SKJ4E6Y6SK
+  feedback:
+    type: string
+    enum: [like, dislike]
+    description: Reader's rating of the assistant message.
+    example: like
+  reason:
+    type: string
+    minLength: 1
+    maxLength: 1000
+    description: Optional free-text explanation the reader added to the rating.
+    example: The answer skipped the OAuth setup step.

@@ -1,0 +1,14 @@
+oneOf:
+  - $ref: ./AiWriterAgentManualJobOptions.yaml
+  - $ref: ./AiWriterAgentFeedbackJobOptions.yaml
+  - $ref: ./AiWriterAgentScheduledJobOptions.yaml
+  - $ref: ./AiWriterAgentCodeChangeJobOptions.yaml
+  - $ref: ./AiWriterAgentPrCommentJobOptions.yaml
+discriminator:
+  propertyName: trigger
+  mapping:
+    MANUAL: ./AiWriterAgentManualJobOptions.yaml
+    FEEDBACK: ./AiWriterAgentFeedbackJobOptions.yaml
+    CODE_CHANGE: ./AiWriterAgentCodeChangeJobOptions.yaml
+    SCHEDULED: ./AiWriterAgentScheduledJobOptions.yaml
+    PR_COMMENT: ./AiWriterAgentPrCommentJobOptions.yaml

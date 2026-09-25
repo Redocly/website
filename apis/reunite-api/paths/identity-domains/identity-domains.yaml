@@ -1,0 +1,64 @@
+post:
+  tags:
+    - Identity Domains
+  security:
+    - UserCookie: []
+  summary: Publish identity domain
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: requestIdentityDomain
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/identity-domains/RequestIdentityDomain.yaml
+  responses:
+    '201':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/identity-domains/IdentityDomain.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+get:
+  tags:
+    - Identity Domains
+  security:
+    - UserCookie: []
+  summary: List all identity domains
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: listIdentityDomainsByOrgId
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/identity-domains/IdentityDomains.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

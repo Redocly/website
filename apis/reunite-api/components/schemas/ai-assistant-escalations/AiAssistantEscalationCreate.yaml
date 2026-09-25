@@ -1,0 +1,72 @@
+type: object
+description: >-
+  Support ticket submitted from the AI assistant. `message` and `transcript` are individually
+  optional, but at least one must be present: a ticket with neither gives the support team
+  nothing to act on and is rejected with a 400.
+required:
+  - email
+  - conversationId
+anyOf:
+  - required: [message]
+  - properties:
+      transcript:
+        minItems: 1
+    required: [transcript]
+properties:
+  name:
+    type: string
+    minLength: 1
+    maxLength: 200
+    description: Name of the person requesting support.
+    example: Ada Lovelace
+  email:
+    type: string
+    format: email
+    maxLength: 254
+    description: Email address of the person requesting support.
+    example: ada@example.com
+  message:
+    type: string
+    minLength: 1
+    maxLength: 5000
+    description: Support request message.
+    example: I could not find how to rotate my API keys.
+  conversationId:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: >-
+      Identifier of the assistant conversation the escalation came from. The assistant
+      generates it and sends the same value as `searchSessionId` on the conversations
+      endpoint, which is how a ticket is correlated with the conversation that produced it.
+    example: aiconv_01KAE541A8TCFVT7SKJ4E6Y6SK
+  transcript:
+    type: array
+    maxItems: 30
+    description: >-
+      Conversation transcript included in the support ticket. Message contents may total at
+      most 30000 characters across the array, so the per-message cap cannot be multiplied out
+      into an oversized request.
+    items:
+      type: object
+      required:
+        - role
+        - content
+      properties:
+        role:
+          type: string
+          enum: [user, assistant]
+        content:
+          type: string
+          minLength: 1
+          maxLength: 5000
+        sentAt:
+          type: string
+          format: date-time
+          description: Message timestamp, as reported by the widget.
+  pageUrl:
+    type: string
+    format: uri
+    maxLength: 2000
+    description: Page from which the escalation is submitted.
+    example: https://docs.example.com/guides/authentication

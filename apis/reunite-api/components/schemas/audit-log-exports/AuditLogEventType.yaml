@@ -1,0 +1,62 @@
+type: string
+description: |-
+  CloudEvent `type` value emitted for an audit-loggable action. Only events
+  whose `type` is in this list are returned by the audit log export endpoints.
+enum:
+  - com.redocly.user.created
+  - com.redocly.user.updated
+  - com.redocly.user.firstLoggedIn
+  - com.redocly.user.loggedIn
+  - com.redocly.user.loginFailed
+  - com.redocly.apiKey.created
+  - com.redocly.apiKey.updated
+  - com.redocly.apiKey.revoked
+  - com.redocly.invite.created
+  - com.redocly.invite.resent
+  - com.redocly.userInvite.accepted
+  - com.redocly.membership.created
+  - com.redocly.membership.updated
+  - com.redocly.membership.removed
+  - com.redocly.team.created
+  - com.redocly.team.deleted
+  - com.redocly.teamMember.added
+  - com.redocly.teamMember.removed
+  - com.redocly.teamManager.added
+  - com.redocly.teamManager.removed
+  - com.redocly.organization.created
+  - com.redocly.organization.updated
+  - com.redocly.organization.slugUpdated
+  - com.redocly.organization.removed
+  - com.redocly.project.created
+  - com.redocly.project.updated
+  - com.redocly.project.slugUpdated
+  - com.redocly.project.urlUpdated
+  - com.redocly.project.removed
+  - com.redocly.projectConfig.updated
+  - com.redocly.projectCustomDomain.verified
+  - com.redocly.projectCustomDomain.removed
+  - com.redocly.branch.created
+  - com.redocly.branch.updated
+  - com.redocly.branch.removed
+  - com.redocly.remote.created
+  - com.redocly.remote.deleted
+  - com.redocly.notificationSettings.updated
+  - com.redocly.notifications.disabled
+  - com.redocly.subscription.updated
+  - com.redocly.subscription.churned
+  - com.redocly.subscription.reactivated
+  - com.redocly.subscription.trial-ended
+  - com.redocly.pullRequest.created
+  - com.redocly.pullRequest.closed
+  - com.redocly.pullRequest.reopened
+  - com.redocly.pullRequest.merged
+  - com.redocly.pullRequest.approved
+  - com.redocly.pullRequest.requestedChanges
+  - com.redocly.pullRequest.reviewRequested
+  - com.redocly.pullRequest.readyForReview
+  - com.redocly.pullRequest.markedAsDraft
+  - com.redocly.pullRequest.commented
+  - com.redocly.pullRequest.commitPushed
+  - com.redocly.pullRequest.forcePushed
+  - com.redocly.pullRequest.visualReviewUpdated
+example: com.redocly.pullRequest.created

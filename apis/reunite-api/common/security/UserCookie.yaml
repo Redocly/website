@@ -1,0 +1,4 @@
+type: apiKey
+in: cookie
+name: accessToken
+description: Default authentication scheme for interaction between browser and API.

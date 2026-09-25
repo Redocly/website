@@ -1,0 +1,37 @@
+patch:
+  tags:
+    - Users
+  security:
+    - UserCookie: []
+  operationId: updateUserFeatureSurvey
+  summary: Partially update a feature survey
+  description: Partially update the feature survey for the signed-in user.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  parameters:
+    - $ref: ../../components/parameters/path/FeatureSurveyId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/feature-surveys/UpdateUserFeatureSurvey.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/feature-surveys/FeatureSurvey.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

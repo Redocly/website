@@ -1,0 +1,88 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uri
+    description: Unique identifier for the onboarding resource (API endpoint URL). Same as uri for computed resources.
+    example: https://app.cloud.redocly.com/api/orgs/org_01h1s5z6vf2mm1mz3hevnn9va7/projects/prj_01h1s5z6vf2mm1mz3hevnn9va7/onboarding
+    readOnly: true
+  uri:
+    type: string
+    format: uri
+    description: Canonical URI for the onboarding resource. For computed resources, this is the API endpoint URL.
+    example: https://app.cloud.redocly.com/api/orgs/org_01h1s5z6vf2mm1mz3hevnn9va7/projects/prj_01h1s5z6vf2mm1mz3hevnn9va7/onboarding
+    readOnly: true
+  getStarted:
+    type: object
+    properties:
+      isBranchCreated:
+        type: boolean
+        description: Whether the user has made a branch.
+      hasCommittedChanges:
+        type: boolean
+        description: Whether the user has committed changes.
+      isPullRequestOpened:
+        type: boolean
+        description: Whether the user has opened a pull request.
+      isPullRequestMerged:
+        type: boolean
+        description: Whether the user has merged a pull request.
+      isProjectDraft:
+        type: boolean
+        description: Whether the project is in draft mode.
+      totalSteps:
+        type: integer
+        description: Total number of steps in the get started checklist.
+      completedSteps:
+        type: integer
+        description: Number of completed steps in the get started checklist.
+    required:
+      - isBranchCreated
+      - hasCommittedChanges
+      - isPullRequestOpened
+      - isPullRequestMerged
+      - isProjectDraft
+      - totalSteps
+      - completedSteps
+    description: Get started checklist information.
+  goLive:
+    type: object
+    properties:
+      isOwnRepositoryConnected:
+        type: boolean
+        description: Whether the user has connected their own repository.
+      isRbacConfigured:
+        type: boolean
+        description: Whether RBAC is configured for the organization.
+      isExternalRemoteConnected:
+        type:
+          - boolean
+          - 'null'
+        description: Whether an external remote is connected. Null if the organization does not have access to remote content feature.
+      projectHasCustomDomain:
+        type: boolean
+        description: Whether the project has a custom domain configured.
+      totalSteps:
+        type: integer
+        description: Total number of steps in the go live checklist.
+      completedSteps:
+        type: integer
+        description: Number of completed steps in the go live checklist.
+    required:
+      - isOwnRepositoryConnected
+      - isRbacConfigured
+      - isExternalRemoteConnected
+      - projectHasCustomDomain
+      - totalSteps
+      - completedSteps
+    description: Go live checklist information.
+  object:
+    type: string
+    const: onboarding
+    description: Object type identifier.
+    readOnly: true
+required:
+  - id
+  - getStarted
+  - goLive
+  - object

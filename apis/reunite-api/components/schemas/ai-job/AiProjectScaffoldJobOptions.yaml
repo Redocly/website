@@ -1,0 +1,52 @@
+type: object
+description: Options provided for the AI scaffold job.
+properties:
+  description:
+    type:
+      - string
+      - 'null'
+    example: Create a documentation portal for our Payments API with a feedback widget.
+    description: Scaffold prompt text.
+  jobTitle:
+    type:
+      - string
+      - 'null'
+    example: Payments API portal
+    description: Display title for the scaffold job.
+  fileUrls:
+    type: array
+    items:
+      type: string
+      example: ai-scaffold/org_123/session-uuid/openapi.yaml
+    description: S3 keys of uploaded reference files.
+  logoUrl:
+    type:
+      - string
+      - 'null'
+    example: ai-scaffold/org_123/session-uuid/logo.png
+    description: S3 key of the uploaded logo.
+  linkUrls:
+    type: array
+    items:
+      type: string
+      example: https://docs.example.com
+    description: Reference link URLs provided with the scaffold prompt.
+  metadata:
+    type: object
+    description: Metadata from project creation.
+    properties:
+      projectFeatureKeys:
+        type: array
+        items:
+          type: string
+          example: catalog
+        description: Feature keys selected during project creation.
+      disallowedFeatureKeys:
+        type: array
+        items:
+          type: string
+          example: access-control
+        description: |-
+          Feature keys the organization's plan does not entitle it to. Computed server-side
+          before dispatch; any value provided by the client is ignored and overwritten.
+        readOnly: true

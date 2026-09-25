@@ -1,0 +1,75 @@
+type: object
+properties:
+  type:
+    type: string
+    const: CICD
+allOf:
+  - $ref: ../../../remotes/CicdRemote.yaml
+  - type: object
+    properties:
+      previewBranchesConfig:
+        type:
+          - object
+          - 'null'
+        description: Configuration for preview branches.
+      status:
+        type: string
+        enum:
+          - PENDING
+          - IN_PROGRESS
+        description: Current status of the remote.
+      lastFinishedUrlUpdateId:
+        type:
+          - string
+          - 'null'
+        description: ID of the last finished URL update.
+      lastFinishedGitUpdateId:
+        type:
+          - string
+          - 'null'
+        description: ID of the last finished Git update.
+      attempts:
+        type: integer
+        description: Number of attempts to sync the remote.
+        example: 1
+      branchDeployStrategy:
+        type: string
+        enum:
+          - NONE
+          - SELECTED
+          - ALL
+        default: NONE
+        description: Strategy for deploying branches.
+      selectedDeployBranches:
+        type: array
+        items:
+          type: string
+        description: List of branches selected for deployment when using SELECTED strategy.
+        default: []
+      prDeploysEnabled:
+        type: boolean
+        description: Whether pull request deploys are enabled.
+        default: true
+      forksPrDeploysEnabled:
+        type: boolean
+        description: Whether pull request deploys from forks are enabled.
+        default: false
+      visualReviewCheckDisabled:
+        type: boolean
+        description: Whether the Visual review check is disabled. A disabled check is reported as skipped instead of pending.
+        default: false
+      fileName:
+        type:
+          - string
+          - 'null'
+        description: File name of the remote content.
+      contentRevisionDate:
+        type:
+          - string
+          - 'null'
+        format: date-time
+        description: Date and time of the content revision.
+      errors:
+        $ref: ../../../remotes/GenericRemoteError.yaml
+required:
+  - type

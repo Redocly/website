@@ -1,0 +1,23 @@
+type: object
+properties:
+  object:
+    type: string
+    enum: [list]
+  page:
+    $ref: ../Page.yaml
+  data:
+    type: array
+    minItems: 0
+    items:
+      $ref: ./FeaturesConfig.yaml
+  items:
+    type: array
+    minItems: 0
+    items:
+      $ref: ./FeaturesConfig.yaml
+    deprecated: true
+required:
+  - object
+  - page
+  - items
+  - data

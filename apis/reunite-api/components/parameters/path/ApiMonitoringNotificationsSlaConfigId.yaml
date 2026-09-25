@@ -1,0 +1,8 @@
+name: notificationsSlaConfigId
+in: path
+required: true
+description: Respect Monitoring notifications sla config id.
+schema:
+  type: string
+  pattern: ^amnsco_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+example: amnsco_01h2zvgfdqex5na189kdg39d6s

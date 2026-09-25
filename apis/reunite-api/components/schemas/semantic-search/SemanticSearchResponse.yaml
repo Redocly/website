@@ -1,0 +1,21 @@
+type: object
+properties:
+  documents:
+    description: List of relevant documents found by semantic search.
+    type: array
+    items:
+      type: object
+      properties:
+        title:
+          description: Title of the document.
+          type: string
+        url:
+          description: URL path to the document.
+          type: string
+        content:
+          description: Content of the document.
+          type: string
+      required:
+        - title
+        - url
+        - content

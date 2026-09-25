@@ -1,0 +1,13 @@
+title: OrganizationSupport
+allOf:
+  - $ref: ./Organization.yaml
+  - type: object
+    properties:
+      skipOAuthConsent:
+        description: Whether this organization is trusted to skip the OAuth consent screen for all its OAuth2 clients. Managed by support only.
+        type: boolean
+        default: false
+        example: false
+        readOnly: true
+    required:
+      - skipOAuthConsent

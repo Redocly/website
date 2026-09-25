@@ -1,0 +1,9 @@
+type: string
+description: >-
+  Status of one pull request comment in an AI job. ASSIGNED means the job took the comment.
+  PROCESSED means the job made a change for it. SKIPPED means the job made no change for it.
+enum:
+  - ASSIGNED
+  - PROCESSED
+  - SKIPPED
+example: PROCESSED

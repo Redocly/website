@@ -1,0 +1,72 @@
+type: object
+required:
+  - id
+  - object
+  - uri
+  - writerAgentId
+  - providerType
+  - namespaceId
+  - repositoryId
+  - branchName
+  - contentPath
+  - credentialId
+  - isMonorepo
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    type: string
+    readOnly: true
+    description: Unique identifier of the source code repository.
+    example: scr_01h1s5z6vf2mm1mz3hevnn9va7
+  object:
+    type: string
+    readOnly: true
+    const: sourceCodeRepository
+  uri:
+    type: string
+    format: uri
+    readOnly: true
+    description: Canonical URI for the source code repository resource.
+    example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/projects/prj_01hh1t9sa6gwfv5naz04gr7ehm/source-code-repositories/scr_01h1s5z6vf2mm1mz3hevnn9va7
+  writerAgentId:
+    type: string
+    description: ID of the writer agent configuration this repository is attached to.
+    example: aua_01h1s5z6vf2mm1mz3hevnn9va7
+  providerType:
+    $ref: ../git/GitProviderType.yaml
+  namespaceId:
+    type: string
+    description: Namespace identifier in VCS provider.
+    example: redocly
+  repositoryId:
+    type: string
+    description: Repository identifier in VCS provider.
+    example: redocly-cli
+  branchName:
+    type: string
+    description: Repository branch used as source context.
+    example: main
+  contentPath:
+    type: string
+    description: Path inside the repository used as source context.
+    example: /
+  isMonorepo:
+    type: boolean
+    readOnly: true
+    description: Indicates whether the repository is treated as a monorepo based on its content path.
+    example: false
+  credentialId:
+    type: string
+    description: Credential ID used to access this repository.
+    example: cred_01h1s5z6vf2mm1mz3hevnn9va7
+  createdAt:
+    type: string
+    format: date-time
+    readOnly: true
+    description: Date and time of source code repository creation.
+  updatedAt:
+    type: string
+    format: date-time
+    readOnly: true
+    description: Date and time of source code repository update.

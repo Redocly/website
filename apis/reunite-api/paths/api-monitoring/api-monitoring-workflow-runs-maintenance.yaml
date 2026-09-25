@@ -1,0 +1,30 @@
+post:
+  tags:
+    - Respect Monitoring
+  security:
+    - InternalAuth: []
+  summary: Update Respect Monitoring partitions
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: runPartitionMaintenance
+  description: >-
+    Runs pg_partman maintenance for the partitioned
+    `api_monitoring.runs_partitioned` table (premakes future partitions and
+    applies retention). Idempotent; intended to be driven by a scheduled
+    Temporal workflow. Runs as the API DB role, which can reach the
+    `api_monitoring.run_partition_maintenance()` SECURITY DEFINER wrapper.
+  responses:
+    '200':
+      description: Partition maintenance completed.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/api-monitoring/ApiMonitoringWorkflowRunsMaintenanceResult.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

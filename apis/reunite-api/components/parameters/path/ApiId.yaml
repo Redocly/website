@@ -1,0 +1,9 @@
+name: apiId
+description: API ID.
+in: path
+required: true
+schema:
+  type: string
+  pattern: ^api_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  description: Unique identifier prefixed with `api_`.
+example: api_01h1s5z6vf2mm1mz3hevnn9va7

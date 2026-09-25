@@ -1,0 +1,11 @@
+type: object
+properties:
+  content:
+    type: string
+    description: Generated code completion text.
+  responseText:
+    type: string
+    description: Text message providing the answer to the user's query.
+required:
+  - content
+  - responseText
