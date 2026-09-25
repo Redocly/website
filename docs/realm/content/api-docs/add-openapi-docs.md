@@ -38,6 +38,9 @@ For more information, see [file-based routing](../project-structure.md#file-base
 
 ## Add API reference to your site navigation
 
+API description files create their own sidebars according to the structure in the file.
+To learn more, see [API description files in sidebars](../../navigation/sidebars.md).
+
 The reference is served at its own URL and has its own automatically generated sidebar.
 It's reachable as soon as you add it, with no navigation configuration required.
 

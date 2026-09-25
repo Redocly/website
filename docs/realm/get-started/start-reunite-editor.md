@@ -141,7 +141,7 @@ Let's return to the editor to make some more changes to your project.
 To return to the editor, click **Editor** in the navigation pane on the left side of the page.
 If you only see icons, you may need to click the "greater than" symbol to expand the navigation pane.
 
-Since a single Markdown page isn't exciting, we should add a few more.
+Since a single Markdown page isn't exciting, you can add a few more.
 Using the following steps, create the following two new files:
 
 - `style-guide.md`
@@ -183,6 +183,28 @@ Select the **More actions** menu in the top right corner of the editing pane and
   framed=true
 /%}
 {% /admonition %}
+
+## Add an API description
+
+Redocly projects often include API reference documentation generated from an API description file, such as OpenAPI.
+In this step, you can add an OpenAPI file named `openapi.yaml` to the root of the project.
+
+You can add an API description file to your project in the following ways:
+
+- **New file**: Click the **+** icon in the top right corner of the file tree and select **New file**.
+  Enter `openapi.yaml` as the file name and press `return` or `enter` on your keyboard.
+  You can then paste your OpenAPI content into the editor.
+
+  {% img
+    src="./images/add-new-file.png"
+    alt="Screenshot of the plus icon selected and displaying the dropdown menu"
+    withLightbox=true
+    framed=true
+  /%}
+
+- **Drag and drop**: Drag an existing OpenAPI file from your computer and drop it directly into the file tree pane to upload it.
+
+Adding this file allows you to include your API documentation in the navigation.
 
 ## Customize the sidebar navigation
 
@@ -262,7 +284,7 @@ To update the logo, you need to add a logo image file to your project, and add a
 
 Images should be stored in `images` folders close to the content where they are referenced.
 Use multiple `images` folders throughout your project.
-For this task, we need an `images` folder at the root of the project.
+For this task, you need an `images` folder at the root of the project.
 
 For the following steps, you can use your own image or download the following sample logo image:
 
@@ -327,7 +349,7 @@ Create a `@theme/styles.css` file to override the default styling.
     framed=true
    /%}
 2. Select **New folder**.
-3. Enter `@theme` and press `return`.
+3. Enter `@theme` and press `return` or `enter` on your keyboard.
 
 ### Create a `styles.css` file
 

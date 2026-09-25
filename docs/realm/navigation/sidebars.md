@@ -35,6 +35,12 @@ For example, the following files: `index.md`, `concept-1.md`, `concept-11.md`, a
 API description files automatically add items to the sidebars.
 These items are generated according to the internal structure of the tags and endpoints described in the file and preserve the order of this structure.
 
+## API description files in sidebars
+
+Adding an OpenAPI file to `sidebars.yaml` only controls where the entry point to that API appears in the site-wide sidebar.
+The internal structure of the API—its groups, tags, and endpoints—is automatically derived from the OpenAPI specification itself and cannot be modified using `sidebars.yaml` options.
+To customize the internal organization of your API, use OpenAPI extensions like [`x-tagGroups`](../content/api-docs/openapi-extensions/x-tag-groups.md).
+
 You can customize the sidebar by adding a `sidebars.yaml` file to the root of your project.
 A `sidebars.yaml` file must include all files or directories you want to have in a sidebar: new files and directories aren't added automatically.
 
