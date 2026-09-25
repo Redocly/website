@@ -106,13 +106,13 @@ They are build-time removal, not access control — use RBAC to control who can 
 
 ### Token audience validation
 
-The Docs MCP server compares the `aud` (audience) claim of each bearer token to your organization ID.
-A token whose `aud` names a different organization is recorded in the logs and in telemetry, and the request still goes through.
+The Docs MCP server checks the audience of each bearer token that an identity provider issued.
+The `aud` claim or the `https://redocly.com/auth/aud` claim must contain one of the `audience` values of that identity provider.
+If the identity provider has no `audience` values, the claims must contain its `clientId`.
+A token that fails the check is recorded in the logs and in telemetry, and the request still goes through.
 
 Set the `REDOCLY_MCP_ENFORCE_TOKEN_AUDIENCE` environment variable to `true` to reject those requests with a `401` response instead.
-Two cases skip the comparison in both modes.
-Tokens that carry no `aud` claim skip it, because portal session tokens and some identity provider setups don't set one.
-Projects that run without an organization ID, such as self-hosted deployments, also skip it.
+Session tokens that the portal signs skip the check in both modes, because the signing key of the project already binds them to the project.
 
 ## Examples
 

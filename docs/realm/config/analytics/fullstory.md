@@ -13,10 +13,6 @@ plans:
 
 Integrate Fullstory Analytics into Redocly project to track page views.
 
-With the [`consent`](../consent.md) option on, this integration loads only while the consent state allows the analytics category.
-In `opt-in` mode the visitor must accept first.
-In `opt-out` mode the category starts on and stays on until the visitor refuses.
-
 ## Options
 
 {% table %}

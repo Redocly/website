@@ -13,10 +13,6 @@ plans:
 
 Integrate Adobe Analytics into Redocly project to track page views
 
-With the [`consent`](../consent.md) option on, this integration loads only while the consent state allows the analytics category.
-In `opt-in` mode the visitor must accept first.
-In `opt-out` mode the category starts on and stays on until the visitor refuses.
-
 ## Configuration
 
 {% table %}
@@ -30,8 +26,7 @@ In `opt-out` mode the category starts on and stays on until the visitor refuses.
 - scriptUrl
 - String
 - **REQUIRED.**
-  URL of the Adobe Analytics script.
-  Find it in the Adobe Analytics admin dashboard.
+  URL of the Adobe Analytics script (can be found in the Adobe Analytics admin dashboard).
 
 ---
 
