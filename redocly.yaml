@@ -1,3 +1,6 @@
+plugins:
+  - './plugins/tags.cjs'
+
 seo:
   title: Redocly
   description: OpenAPI-generated documentation tool with 24k+ stars on Github - make APIs your company's superpower.
