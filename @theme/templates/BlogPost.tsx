@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { useThemeHooks } from '@redocly/theme/core/hooks';
+import { PageActionsContext } from '@redocly/theme/core/contexts';
 import { Markdown } from '@redocly/theme/components/Markdown/Markdown';
 import PostInfo from '@redocly/marketing-pages/components/Blog/PostInfo.js';
 import { MediaBox } from '@redocly/marketing-pages/components/PositionItems/MediaBox.js';
@@ -43,7 +44,9 @@ export default function BlogPost() {
           avatar={author?.image}
           image={post.image}
         />
-        <Markdown>{body}</Markdown>
+        <PageActionsContext.Provider value={true}>
+          <Markdown>{body}</Markdown>
+        </PageActionsContext.Provider>
       </ContentWrapper>
       <MediaBox>
         <Box my="80px">
