@@ -1,0 +1,41 @@
+put:
+  tags:
+    - AI agent memory
+  security:
+    - InternalAuth: []
+  summary: Upsert an AI agent memory document
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  description: |
+    Creates or updates a semantic memory document for the AI writer agent,
+    keyed by agent, kind, and refId within the project. Content is re-embedded
+    only when it changed.
+  operationId: upsertAiAgentMemoryDocument
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/ai-agent-memory/AiAgentMemoryDocument.yaml
+  responses:
+    '200':
+      description: Created or updated memory document.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/ai-agent-memory/AiAgentMemoryDocument.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

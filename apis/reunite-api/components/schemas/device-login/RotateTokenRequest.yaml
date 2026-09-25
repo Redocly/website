@@ -1,0 +1,21 @@
+type: object
+properties:
+  client_id:
+    type: string
+    description: Client ID that initializes device login.
+    example: client123
+  client_name:
+    type: string
+    description: Client name for well known device login clients.
+    example: redocly-cli
+  refresh_token:
+    description: Refresh token for getting new access token.
+    type: string
+
+required:
+  - refresh_token
+
+oneOf:
+  - required: [client_id]
+  - required: [client_name]
+

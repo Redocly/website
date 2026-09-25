@@ -1,0 +1,15 @@
+type: object
+properties:
+  object:
+    type: string
+    enum: [list]
+  page:
+    $ref: ../Page.yaml
+  data:
+    type: array
+    items:
+      $ref: ./ProjectMentionable.yaml
+required:
+  - object
+  - page
+  - data

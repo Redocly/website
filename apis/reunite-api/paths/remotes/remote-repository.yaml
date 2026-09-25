@@ -1,0 +1,53 @@
+get:
+  tags:
+    - Remotes
+  security:
+    - UserCookie: []
+    # TODO: Move this endpoint to git module with remoteId as query parameter
+  summary: Get Git remote content repository
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  description: Get repository details of the remote content with type GIT.
+  operationId: getGitRemoteRepository
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../components/parameters/path/RemoteId.yaml
+  responses:
+    '200':
+      description: Git Remote Content repository.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              repoName:
+                description: Repository name.
+                type: string
+                example: Redocly
+              repoUrl:
+                description: Repositor web url.
+                type: string
+                example: https://github.com/example/example
+              canAccessRepo:
+                type: boolean
+                example: true
+                description: Does remote has access to the repo.
+            required: 
+              -  repoName
+              -  repoUrl
+              -  canAccessRepo
+            example:
+              repoName: "repo-organization/repo-name"
+              repoUrl: "https://github.com/repo-organization/repo-name"
+              canAccessRepo: true
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

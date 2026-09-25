@@ -1,0 +1,53 @@
+type: object
+properties:
+  prompt:
+    type: string
+    description: Prompt used to generate code completion.
+  context:
+    type: string
+    description: Context used to generate code completion.
+  filepath:
+    type: string
+    description: Path to file for code completion.
+  fileContent:
+    type: string
+    description: Content of file for code completion.
+  range:
+    type: object
+    properties:
+      start:
+        type: object
+        properties:
+          line:
+            type: integer
+          column:
+            type: integer
+        required:
+          - line
+          - column
+      end:
+        type: object
+        properties:
+          line:
+            type: integer
+          column:
+            type: integer
+        required:
+          - line
+          - column
+    required:
+      - start
+      - end
+  kind:
+    type: string
+    description: Kind of command (Whether it's a quick fix or default code completion).
+    enum:
+      - quick-fix
+      - code-completion
+  model:
+    type: string
+    description: Model to use for code completion.
+required:
+  - prompt
+  - filepath
+  - kind

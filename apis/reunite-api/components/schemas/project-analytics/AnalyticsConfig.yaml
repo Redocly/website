@@ -1,0 +1,13 @@
+type: object
+properties:
+  products:
+    type: array
+    items:
+      type: string
+    description: List of product names.
+    example: ['API Platform', 'API Gateway']
+  isRealmVersionValid:
+    type: boolean
+    description: Whether the project's production portal runs Realm 0.130.2 or higher, based on build metadata.
+required:
+  - products

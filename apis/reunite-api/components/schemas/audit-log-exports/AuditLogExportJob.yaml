@@ -1,0 +1,20 @@
+type: object
+description: Audit log export job status and metadata.
+properties:
+  id:
+    readOnly: true
+    type: string
+    pattern: ^exp_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    description: Unique identifier for the export job, prefixed with `exp_`.
+    example: exp_01hh1t9sa6gwfv5naz04gr7ehm
+  status:
+    $ref: ./AuditLogExportStatus.yaml
+  createdAt:
+    type: string
+    format: date-time
+    readOnly: true
+    description: Export job creation time (ISO 8601).
+required:
+  - id
+  - status
+  - createdAt

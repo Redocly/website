@@ -1,0 +1,60 @@
+type: object
+description: User resource for message queue events. This schema excludes the `imageUrl` field to prevent large base64-encoded binary data from being sent through RabbitMQ, which can cause message publishing failures.
+properties:
+  id:
+    description: User ID. Unique identifier prefixed with `usr_`.
+    type: string
+    pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+    readOnly: true
+  name:
+    description: User display name.
+    type: string
+    example: john.smith
+  object:
+    description: Entity name.
+    type: string
+    enum: [user]
+    readOnly: true
+  email:
+    description: User email address.
+    type: string
+    format: email
+    example: john.smith@example.com
+  firstName:
+    description: User first name.
+    type: [string, 'null']
+    example: John
+  lastName:
+    description: User last name.
+    type: [string, 'null']
+    example: Smith
+  external:
+    description: External user flag.
+    type: boolean
+    example: true
+    default: false
+  lastLoginAt:
+    description: Datetime of last log in operation.
+    type: [string, 'null']
+    format: date-time
+    example: '2023-05-30T08:30:17.592Z'
+  notificationSettings:
+    $ref: ../notifications/NotificationSettings.yaml
+  metadata:
+    $ref: ./UserMetadata.yaml
+  uri:
+    description: Resource URI.
+    type: string
+    format: uri
+    readOnly: true
+    example: https://app.cloud.redocly.com/api/users/usr_01hh1t9sa6gwfv5naz04gr7ehm
+required:
+  - id
+  - name
+  - uri
+  - email
+  - firstName
+  - lastName
+  - object
+

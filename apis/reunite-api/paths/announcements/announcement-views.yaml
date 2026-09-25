@@ -1,0 +1,23 @@
+put:
+  tags:
+    - Announcements
+  security:
+    - UserCookie: []
+  summary: Update latest announcements as viewed
+  description: Marks the latest announcements from the What's new popover as viewed for the current authenticated user.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: markLatestAnnouncementsAsViewed
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  responses:
+    '204':
+      $ref: ../../common/responses/NoContent.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

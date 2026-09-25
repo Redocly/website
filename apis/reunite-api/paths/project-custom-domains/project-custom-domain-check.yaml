@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Project custom domains
+  security:
+    - InternalAuth: []
+  summary: Check custom domain registration
+  description: Check if custom domain is registered.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: borsch
+  operationId: checkProjectCustomDomain
+  parameters:
+    - $ref: ../../components/parameters/query/CustomDomainNameRequired.yaml
+  responses:
+    '204':
+      $ref: ../../common/responses/NoContent.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

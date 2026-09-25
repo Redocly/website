@@ -1,0 +1,164 @@
+allOf:
+  - $ref: ./GitWebhookBase.yaml
+  - type: object
+    properties:
+      type:
+        type: string
+        enum:
+          - CREATE_PULL_REQUEST
+          - UPDATE_PULL_REQUEST
+        example: CREATE_PULL_REQUEST
+      object:
+        description: Entity name
+        type: string
+        const: gitWebhookPullRequest
+        readOnly: true
+      externalName:
+        type:
+          - string
+          - "null"
+        description: External name of the user who triggered the event.
+        example: John Doe
+      externalLogin:
+        type:
+          - string
+          - "null"
+        description: Provider login (username) of the user who triggered the event (if available).
+        example: smjane
+      externalEmail:
+        type:
+          - string
+          - "null"
+        description: External email of the user who triggered the event.
+        example: john@example.com
+      externalActorId:
+        type: string
+        description: External id of the user who triggered the event.
+        example: "123456789"
+      userId:
+        description: User ID. Unique identifier prefixed with `usr_`.
+        type: string
+        pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+        example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+      repositoryDetails:
+        $ref: ../git/RepositoryDetails.yaml 
+      branch:
+        type: string
+        description: Branch name.
+        example: feature/add-new-endpoint
+      host:
+        type: string
+        description: Git provider host.
+        example: github.com
+      receivedAt:
+        type: string
+        format: date-time
+        description: Timestamp when the PR was received.
+        example: "2025-11-12T10:00:00Z"
+      pullRequest:
+        type: object
+        description: Pull request details.
+        properties:
+          number:
+            type: number
+            description: Sequential pull request number within the repository.
+            example: 42
+          title:
+            type: string
+            description: Human-readable summary of the pull request.
+            example: Add authentication middleware
+          description:
+            type:
+              - string
+              - "null"
+            description: Optional detailed explanation of the pull request changes.
+            example: This PR adds JWT authentication and updates the login flow.
+          branchName:
+            type: string
+            description: The source branch from which the pull request was created.
+            example: feature/add-auth
+          targetBranchName:
+            type: string
+            description: The branch into which the pull request is intended to be merged.
+            example: main
+          status:
+            type: string
+            enum: [OPEN, CLOSED, MERGED]
+            description: Current lifecycle state of the pull request.
+            example: "OPEN"
+          isDraft:
+            type: boolean
+            description: Indicates whether the pull request is marked as a draft.
+            example: false
+          createdAt:
+            type: string
+            format: date-time
+            description: Timestamp describing when the pull request was created.
+            example: "2023-01-01T10:23:45Z"
+          baseCommitHash:
+            type: string
+            description: Commit hash of the base branch at the time of PR creation.
+            example: abc123def456gh78900000000000000000000000
+          headCommitHash:
+            type: string
+            description: Latest commit hash from the source branch (PR head).
+            example: ffeeddccbbaa99887766554433221100abcdef12
+          mergeCommitHash:
+            type: string
+            description: Commit hash created after merging the pull request. `null` if not merged.
+            example: 4c7e3b7b0e2b11827a94d31a424bdf47d339e709
+          url:
+            type: string
+            format: uri
+            description: Public URL of the pull request on the provider (GitHub, GitLab, etc.).
+            example: "https://github.com/org/repo/pull/42"
+          prId:
+            type: string
+            description: Provider-specific pull request identifier. `null` if source does not supply one.
+            example: null
+        required:
+          - number
+          - title
+          - branchName
+          - targetBranchName
+          - status
+          - createdAt
+          - headCommitHash
+
+      isCrossRepo:
+        type: boolean
+      forkSourceDetails:
+        type: object
+        description: Details about the original repository and branch when the pull request originates from a fork.
+        properties:
+          branchName:
+            type:
+              - string
+              - "null"
+            description: Name of the branch in the source (forked) repository from which the pull request was opened. `null` if the PR is not from a fork.
+            example: "feature/new-ui"
+          namespaceId:
+            type:
+              - string
+              - "null"
+            description: Namespace (organization or user) identifier of the forked repository. `null` if the PR is not from a fork.
+            example: "azure-testing-org"
+          repositoryId:
+            type:
+              - string
+              - "null"
+            description: Unique identifier of the forked repository. `null` if the PR is not from a fork.
+            example: "testing-repo"
+        required:
+          - branchName
+          - namespaceId
+          - repositoryId
+    required:
+      - type
+      - object
+      - repositoryDetails
+      - branch
+      - host
+      - receivedAt
+      - pullRequest
+      - isCrossRepo

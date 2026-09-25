@@ -1,0 +1,52 @@
+title: NomadEvent
+type: object
+properties:
+  id:
+    description: Nomad event id.
+    type: string
+    example: nom_01jaf1r09a9d4bwyh2f29rpy6d
+    readOnly: true
+  eventKey:
+    description: Nomad event key.
+    type: string
+    example: a7a3cb99-90df-0409-aa23-50bf79f4947c
+    readOnly: true
+  eventTopic:
+    description: Nomad event topic.
+    type: string
+    example: Deployment
+    readOnly: true
+  eventType:
+    description: Type of Nomad event.
+    type: string
+    example: PlanResult
+    readOnly: true
+  eventIndex:
+    description: Sequential index of the event.
+    type: integer
+    example: 1524
+    readOnly: true
+  createdAt:
+    type: string
+    format: date-time
+    example: 2024-10-18T05:31:28.425Z
+    readOnly: true
+  updatedAt:
+    type: string
+    format: date-time
+    example: 2024-10-18T05:31:28.425Z
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [nomadEvent]
+    readOnly: true
+required:
+  - id
+  - eventKey
+  - eventTopic
+  - eventType
+  - eventIndex
+  - createdAt
+  - updatedAt
+  - object

@@ -1,0 +1,43 @@
+put:
+  tags:
+    - Projects
+  security:
+    - InternalAuth: []
+  summary: Update project config
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: updateProjectConfig
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            config:
+              description: Universal config in JSON stringified format.
+              type: string
+              example: '{"rbac":{"defaults":{"*":"read"}}}'
+            buildId:
+              description: Project build ID that triggered the config update, if any.
+              type: string
+              example: bld_01h1s5z6vf2mm1mz3hevnn9va7
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/project/Project.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

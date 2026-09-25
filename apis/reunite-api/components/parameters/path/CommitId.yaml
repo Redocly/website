@@ -1,0 +1,9 @@
+name: commitId
+description: Commit ID.
+required: true
+in: path
+schema:
+  type: string
+  pattern: ^com_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  example: com_01h1s5s6vf1mm0mz3hevnn3va7
+example: com_01h1s5s6vf1mm0mz3hevnn3va7

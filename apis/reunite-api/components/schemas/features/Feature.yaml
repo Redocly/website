@@ -1,0 +1,21 @@
+type: object
+title: Feature
+properties:
+  id:
+    type: string
+    description: Unique identifier of the feature.
+    readOnly: true
+    example: advancedSearch
+  isActive:
+    type: boolean
+    description: Whether the feature is active or not.
+    example: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [feature]
+    readOnly: true
+required:
+  - id
+  - isActive
+  - object

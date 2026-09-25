@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Organization slugs
+  security:
+    - UserCookie: []
+  summary: Retrieve an organization slug
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: getOrganizationSlug
+  parameters:
+    - $ref: ../../components/parameters/path/OrgSlug.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/organization-slugs/OrganizationSlug.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

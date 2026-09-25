@@ -1,0 +1,11 @@
+type: array
+items:
+  oneOf:
+    - $ref: ./ApiMonitoringJobBulkResponseSuccessItem.yaml
+    - $ref: ./ApiMonitoringJobBulkResponseErrorItem.yaml
+  discriminator: 
+    propertyName: status
+    mapping: 
+      ok: ./ApiMonitoringJobBulkResponseSuccessItem.yaml
+      error: ./ApiMonitoringJobBulkResponseErrorItem.yaml
+    

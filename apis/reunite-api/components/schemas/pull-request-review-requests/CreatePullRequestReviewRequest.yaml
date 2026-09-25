@@ -1,0 +1,13 @@
+type: object
+properties:
+  pullRequestId:
+    description: Pull request ID. Unique identifier prefixed with `pr_`.
+    type: string
+    pattern: ^pr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  userId:
+    description: User ID of the re-requested reviewer. Unique identifier prefixed with `usr_`.
+    type: string
+    pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+required:
+  - pullRequestId
+  - userId

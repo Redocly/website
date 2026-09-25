@@ -1,0 +1,38 @@
+type: object
+title: ProjectAiAssistantIdentityVerification
+description: >-
+  Identity verification for the embedded AI assistant. The widget sends a JWT minted by the
+  project's own backend; verified tokens carry the visitor's RBAC teams, so the assistant can use
+  RBAC-protected content. Invalid or expired tokens degrade the answer to anonymous access
+  instead of failing the request.
+required:
+  - jwksUrl
+  - audience
+properties:
+  jwksUrl:
+    description: >-
+      HTTPS URL of the JWKS that verifies RS256, ES256, or EdDSA tokens. Must be publicly
+      reachable; the API rejects URLs that resolve to private or internal addresses. A statically
+      hosted `jwks.json` file works; no identity provider is required.
+    type: string
+    format: uri
+    pattern: '^https://'
+    minLength: 1
+    maxLength: 2048
+    example: https://example.com/.well-known/jwks.json
+  audience:
+    description: >-
+      Expected `aud` claim, matched exactly. Use a value dedicated to this integration, so no
+      other JWT the same keys sign can be replayed here.
+    type: string
+    minLength: 1
+    maxLength: 255
+    example: redocly-ai-assistant
+  teamsClaimName:
+    description: >-
+      JWT claim that carries the visitor's RBAC team names as an array of strings, for example
+      `"teams": ["partners"]`.
+    type: [string, 'null']
+    default: teams
+    maxLength: 128
+    example: teams

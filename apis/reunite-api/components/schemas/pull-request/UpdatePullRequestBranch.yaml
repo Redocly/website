@@ -1,0 +1,7 @@
+type: object
+properties:
+  newBranchName:
+    description: Branch name.
+    type: string
+    example: master
+    maxLength: 512

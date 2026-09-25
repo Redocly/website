@@ -1,0 +1,31 @@
+get:
+  security:
+    - UserCookie: []
+  tags:
+    - Subscription
+  summary: List all organization subscriptions statuses
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: listSubscriptionsStatuses
+  parameters:
+    - $ref: '../../components/parameters/path/OrgId.yaml'
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+  responses:
+    '200':
+      description: Ok.
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/subscriptions/SubscriptionStatusList.yaml'
+    '400':
+      $ref: '../../common/responses/BadRequestError.yaml'
+    '401':
+      $ref: '../../common/responses/UnauthorizedError.yaml'
+    '403':
+      $ref: '../../common/responses/ForbiddenError.yaml'
+    '402':
+      $ref: '../../common/responses/PaymentRequiredError.yaml'
+    '500':
+      $ref: '../../common/responses/InternalServerError.yaml'

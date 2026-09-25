@@ -1,0 +1,101 @@
+get:
+  tags:
+    - Project runtime logs
+  security:
+    - UserCookie: []
+  summary: Export project runtime logs
+  description: |-
+    Download project runtime logs as CSV or JSON file.
+    Response Content-Type is `text/csv` when `format=csv` and `application/json` when `format=json`.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: borsch
+  operationId: exportProjectRuntimeLogs
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - name: format
+      in: query
+      required: true
+      description: Export file format.
+      schema:
+        type: string
+        enum:
+          - csv
+          - json
+        default: json
+      example: json
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Before.yaml
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+    - $ref: ../../common/components/parameters/query/Sort.yaml
+    - $ref: ../../common/components/parameters/query/Search.yaml
+    - name: buildId
+      in: query
+      description: Build ID used to filter logs.
+      required: false
+      example: 'pb_01h1s5z6vf2mm1mz3hevnn9va7'
+      schema:
+        type: string
+        pattern: ^pb_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    - name: branchId
+      in: query
+      description: Branch ID used to filter logs. Defaults to the main branch if not provided.
+      required: false
+      example: 'br_01k0v4b2q318xrbmdbs3a9zkrr'
+      schema:
+        type: string
+        pattern: '^br_[0-9a-z]{26}$'
+    - name: since
+      in: query
+      description: Time range filter for logs. Specifies how far back to retrieve logs.
+      required: false
+      example: '1-hour'
+      schema:
+        type: string
+        enum:
+          - 'default'
+          - '30-minutes'
+          - '1-hour'
+          - '1-day'
+          - '1-week'
+          - '1-month'
+          - 'custom'
+    - name: start
+      in: query
+      description: Start of the time range in ISO 8601 format.
+      required: false
+      example: '2024-01-01T00:00:00.000Z'
+      schema:
+        type: string
+        format: date-time
+    - name: end
+      in: query
+      description: End of the time range in ISO 8601 format.
+      required: false
+      example: '2024-01-02T00:00:00.000Z'
+      schema:
+        type: string
+        format: date-time
+  responses:
+    '200':
+      description: Export file. Media type depends on the `format` query parameter.
+      content:
+        text/csv:
+          schema:
+            type: string
+            format: binary
+        application/json:
+          schema:
+            type: string
+            format: binary
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

@@ -1,0 +1,114 @@
+title: Git pull request comment fields
+description: >-
+  Provider-agnostic details of a pull request comment, shared by the inbound Git
+  webhook payload and the project source event derived from it. `required` lives
+  here rather than in the composing schemas, because a sibling `allOf` subschema
+  cannot mark a property defined here as required.
+type: object
+required:
+  - pullRequestNumber
+  - commentExternalId
+  - body
+  - externalUserId
+  - repositoryDetails
+  - branch
+  - host
+  - receivedAt
+properties:
+  pullRequestNumber:
+    type: integer
+    description: Sequential pull request number within the repository.
+    example: 42
+  commentExternalId:
+    type: string
+    description: >-
+      Canonical ExternalId of the provider comment, built by the webhook adapter. The ingest
+      stores it as ReviewComment.externalId. For SUBMIT_PR_REVIEW events this field carries the
+      ExternalId of the submitted review instead, and the ingest stores it as Review.externalId.
+    example: github|acme|docs|42|COMMENT||3766433879
+  inReplyToExternalId:
+    type: string
+    description: ExternalId of the parent comment when this comment is a reply in a review thread.
+    example: github|acme|docs|42|COMMENT||3766433001
+  reviewExternalId:
+    type: string
+    description: >-
+      External id of the provider review that contains this comment. It has the same format as
+      the Review.externalId that outbound review submission stores. The ingest uses it to group
+      all comments of one submitted review under a single Review row.
+    example: github|acme|docs|42|COMMENT||4865865545
+  body:
+    type: string
+    description: Comment body text.
+    example: Consider extracting this into a helper.
+  filePath:
+    type:
+      - string
+      - 'null'
+    description: File path the comment is anchored to (diff comments only).
+    example: src/index.ts
+  line:
+    type:
+      - string
+      - 'null'
+    description: Line number the comment is anchored to (diff comments only).
+    example: '42'
+  externalUserId:
+    type: string
+    description: Provider user id of the comment author, stringified.
+    example: '9919'
+  externalName:
+    type:
+      - string
+      - 'null'
+    description: External name of the user who created the comment (if available).
+    example: John Doe
+  externalLogin:
+    type:
+      - string
+      - 'null'
+    description: Provider login (username) of the user who triggered the event (if available).
+    example: smjane
+  externalEmail:
+    type:
+      - string
+      - 'null'
+    description: External email of the user who created the comment (if available).
+    example: john@example.com
+  repositoryDetails:
+    $ref: ./RepositoryDetails.yaml
+  branch:
+    type: string
+    description: Branch name of the pull request.
+    example: feature/add-auth
+  host:
+    type: string
+    description: Git provider host.
+    example: github.com
+  receivedAt:
+    type: string
+    format: date-time
+    description: Time when the webhook event was received.
+    example: '2025-11-12T10:00:00Z'
+  linesCount:
+    type: integer
+    description: >-
+      Number of lines that a multi-line comment covers. The `line` property holds the last line of
+      the range. A single-line comment has no value here.
+    example: 3
+  commitHash:
+    type: string
+    description: Commit that the comment refers to.
+    example: 3348331d5f6e2b0c9c0f8a1e5c1a7b2d4e6f8a90
+  isOutdated:
+    type: boolean
+    description: >-
+      True if the comment no longer matches the current diff. The provider then reports the
+      position of the comment in the old diff.
+  createdAt:
+    type: string
+    format: date-time
+    description: >-
+      Time when the user wrote the comment or submitted the review on the provider. The persisted
+      row uses it as createdAt. This keeps the correct order for late or redelivered webhooks.
+    example: '2025-11-12T09:58:00Z'

@@ -1,0 +1,17 @@
+type: object
+description: Details of the created audit log export job.
+properties:
+  id:
+    readOnly: true
+    type: string
+    pattern: ^exp_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    description: Unique identifier for the export job, prefixed with `exp_`.
+    example: exp_01hh1t9sa6gwfv5naz04gr7ehm
+  createdAt:
+    type: string
+    format: date-time
+    readOnly: true
+    description: Export job creation time (ISO 8601).
+required:
+  - id
+  - createdAt

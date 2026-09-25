@@ -1,0 +1,11 @@
+type: string
+description: Product type.
+enum:
+  - REDOC
+  - REEF
+  - REVEL
+  - REDOC_REVEL
+  - REDOC_REEF
+  - REVEL_REEF
+  - REALM
+example: REDOC

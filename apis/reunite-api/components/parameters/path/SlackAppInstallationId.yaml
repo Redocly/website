@@ -1,0 +1,9 @@
+name: slackAppInstallationId
+description: Slack app installation ID.
+required: true
+in: path
+schema:
+  type: string
+  pattern: ^amnai_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  description: Unique identifier prefixed with `amnai_`.
+example: amnai_01h1s5z6vf2mm1mz3hevnn9va7

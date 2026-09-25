@@ -1,0 +1,26 @@
+parameters:
+  - $ref: ../../components/parameters/path/OrgId.yaml
+  - $ref: ../../components/parameters/path/ProjectId.yaml
+  - $ref: ../../components/parameters/path/SourceCodeRepositoryId.yaml
+
+delete:
+  tags:
+    - AI Writer Agent
+  summary: Delete a source code repository
+  description: Removes a source code repository connection from writer agent context in a project.
+  operationId: deleteSourceCodeRepository
+  x-internal: true
+  x-catalogRelations: []
+  security:
+    - UserCookie: []
+  responses:
+    '204':
+      $ref: ../../common/responses/NoContent.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

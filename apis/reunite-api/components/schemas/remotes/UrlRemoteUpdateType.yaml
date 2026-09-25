@@ -1,0 +1,5 @@
+type: string
+description: URL remote update type.
+enum: 
+  - CREATE
+  - SYNC

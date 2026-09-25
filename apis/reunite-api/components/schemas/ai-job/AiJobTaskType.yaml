@@ -1,0 +1,20 @@
+type: string
+description: Type of AI task (a phase of an AI job run).
+enum:
+  - context-builder
+  - links-checker
+  - openapi-generator
+  - planner
+  - coding
+  - config
+  - content
+  - navigation
+  - api-linter
+  - build-fixer
+  - collect
+  - triage
+  - runner
+  - pr-comment-classify
+  - pr-comment-triage
+  - pr-comment-fix
+example: planner

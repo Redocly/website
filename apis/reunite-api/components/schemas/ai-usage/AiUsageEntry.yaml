@@ -1,0 +1,35 @@
+type: object
+required:
+  - model
+  - inputTokens
+  - outputTokens
+  - reasoningTokens
+  - cacheReadTokens
+  - standardTokens
+  - totalTokens
+  - steps
+properties:
+  model:
+    type: string
+    description: Model identifier used for token accounting.
+  inputTokens:
+    type: integer
+    minimum: 0
+  outputTokens:
+    type: integer
+    minimum: 0
+  reasoningTokens:
+    type: integer
+    minimum: 0
+  cacheReadTokens:
+    type: integer
+    minimum: 0
+  standardTokens:
+    type: integer
+    minimum: 0
+  totalTokens:
+    type: integer
+    minimum: 0
+  steps:
+    type: integer
+    minimum: 0

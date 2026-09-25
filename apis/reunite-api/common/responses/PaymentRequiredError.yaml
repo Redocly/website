@@ -1,0 +1,5 @@
+description: Payment Required.
+content:
+  application/problem+json:
+    schema:
+      $ref: ../errors/Problem.yaml

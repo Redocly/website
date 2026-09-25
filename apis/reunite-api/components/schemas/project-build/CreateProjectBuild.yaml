@@ -1,0 +1,30 @@
+type: object
+properties:
+  branchName:
+    description: Branch name.
+    type: string
+    example: test-branch
+  commitHash:
+    description: Commit hash.
+    type: string
+    example: c123bcc
+  createdByType:
+    description: Create by webhook or manually.
+    type: string
+    default: WEBHOOK
+    enum: [WEBHOOK, USER]
+  description:
+    description: Description of the build.
+    type: string
+  createdByMetadata:
+    description: Created by metadata.
+    type: object
+  metadata:
+    description: Build metadata.
+    type: object
+  pullRequestId:
+    description: Pull request id.
+    type: string
+required:
+  - branchName
+  - commitHash

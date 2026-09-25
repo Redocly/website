@@ -1,0 +1,9 @@
+type: object
+properties:
+  access_token:
+    type: string
+    description: Access token of a user that authenticated device.
+    example: accessToken123
+
+required:
+  - access_token

@@ -1,0 +1,70 @@
+type: object
+properties:
+  object:
+    description: Entity name.
+    type: string
+    enum: [supportAiAssistantConversationSummary]
+    readOnly: true
+  id:
+    description: Identifier of the conversation (search session).
+    type: string
+    pattern: ^[0-9a-zA-Z_-]{1,64}$
+    readOnly: true
+    example: 'aiconv_01KAE541A8TCFVT7SKJ4E6Y6SK'
+  createdAt:
+    description: Time of the first message in the conversation.
+    type: string
+    format: date-time
+    readOnly: true
+    example: '2026-06-01T12:00:00Z'
+  lastMessageAt:
+    description: Time of the last message in the conversation.
+    type: string
+    format: date-time
+    example: '2026-06-01T12:10:00Z'
+  firstQuestion:
+    description: First question asked in the conversation.
+    type: string
+    example: 'How do I configure the sidebar?'
+  messages:
+    description: Number of messages in the conversation.
+    type: integer
+    example: 4
+  organizationId:
+    description: Identifier of the organization that the conversation belongs to.
+    type: string
+    example: 'org_01j0wt03vft6qrqdcqgsc62ez8'
+  organizationSlug:
+    description: Slug of the organization that the conversation belongs to.
+    type: string
+    example: 'acme'
+  projectId:
+    description: Identifier of the project that the conversation belongs to.
+    type: string
+    example: 'prj_123'
+  projectSlug:
+    description: Slug of the project that the conversation belongs to.
+    type: string
+    example: 'docs'
+  escalated:
+    description: Indicates whether the conversation ended in a created support ticket.
+    type: boolean
+    example: false
+  likes:
+    description: Number of liked answers in the conversation.
+    type: integer
+    example: 1
+  dislikes:
+    description: Number of disliked answers in the conversation.
+    type: integer
+    example: 0
+required:
+  - object
+  - id
+  - createdAt
+  - lastMessageAt
+  - firstQuestion
+  - messages
+  - likes
+  - dislikes
+  - escalated

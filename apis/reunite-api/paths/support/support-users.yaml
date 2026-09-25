@@ -1,0 +1,94 @@
+post:
+  tags:
+    - Support
+  x-internal: true
+  security:
+    - UserCookie: []
+  operationId: addSupportToOrganization
+  summary: Add support user to organization
+  x-catalogRelations:
+    - type: ownedBy
+      key: hot-dogs
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            role:
+              $ref: ../../components/schemas/rbac/OrganizationRole.yaml
+            teams:
+              description: List of user teams.
+              type: array
+              items:
+                type: string
+              example: [Developers, Support Team]
+    required: true
+  responses:
+    '204':
+      $ref: ../../common/responses/NoContent.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+patch:
+  tags:
+    - Support
+  x-internal: true
+  security:
+    - UserCookie: []
+  operationId: updateSupportRoleInOrganization 
+  summary: Update support user role in organization
+  x-catalogRelations:
+    - type: ownedBy
+      key: hot-dogs
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            role:
+              $ref: ../../components/schemas/rbac/OrganizationRole.yaml
+    required: true
+  responses:
+    '204':
+      $ref: ../../common/responses/NoContent.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+delete:
+  tags:
+    - Support
+  x-internal: true
+  security:
+    - UserCookie: []
+  operationId: deleteSupportFromOrganization
+  summary: Delete a support user from organization
+  x-catalogRelations:
+    - type: ownedBy
+      key: hot-dogs
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  responses:
+    '204':
+      $ref: ../../common/responses/NoContent.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

@@ -1,0 +1,26 @@
+delete:
+  tags:
+    - Project custom domains
+  security:
+    - UserCookie: [ ]
+  summary: Delete a custom domain
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: borsch
+  operationId: deleteProjectCustomDomain
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../components/parameters/path/CustomDomainId.yaml
+  responses:
+    '204':
+      $ref: ../../common/responses/NoContent.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

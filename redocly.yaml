@@ -20,7 +20,7 @@ ignore:
   - '**/code-walkthrough-files/**'
   - docs/realm/.templates
   - '.yalc/**'
-
+  - 'apis/**'
 
 markdown:
   partialsFolders:

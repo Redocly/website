@@ -1,0 +1,33 @@
+description: |
+  Partial update for a signed-in user's feature survey row. Omitted properties are unchanged.
+
+  Prefer `incrementImpressionCount` for atomic increments (avoids lost updates when counting impressions).
+  Only send `impressionCount` when setting an absolute value. Do not send both in one request; the API
+  rejects the body with a validation error if they appear together.
+type: object
+properties:
+  shownAt:
+    description: When the user saw the survey prompt.
+    type: [string, 'null']
+    format: date-time
+    example: 2026-01-01T00:00:00.000Z
+  completedAt:
+    description: When the user submitted feedback.
+    type: [string, 'null']
+    format: date-time
+    example: 2026-01-01T00:00:00.000Z
+  dismissedAt:
+    description: When the user dismissed the survey in-app (not tab close).
+    type: [string, 'null']
+    format: date-time
+    example: 2026-01-01T00:00:00.000Z
+  impressionCount:
+    description: Absolute impression count to store for this survey row.
+    type: integer
+    minimum: 0
+    example: 2
+  incrementImpressionCount:
+    description: Adds this value to the stored impression count on the server (relative bump).
+    type: integer
+    minimum: 1
+    example: 1

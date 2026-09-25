@@ -1,0 +1,78 @@
+type: object
+properties:
+  id:
+    description: Team ID. Unique identifier prefixed with `team_`.
+    type: string
+    pattern: ^team_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: team_01hh1t9sa6gwfv5naz04gr7ehm
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [team]
+    readOnly: true
+  name:
+    description: Team name.
+    type: string
+    example: Test Team
+  slug:
+    description: URL friendly team name.
+    type: string
+    readOnly: true
+    example: test-team
+  uri:
+    description: Canonical URI for the team resource.
+    type: string
+    format: uri
+    readOnly: true
+    example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/teams/team_01hh1t9sa6gwfv5naz04gr7ehm
+  createdAt:
+    description: Created at.
+    type: string
+    format: date-time
+    readOnly: true
+    example: 2020-01-01T00:00:00.000Z
+  updatedAt:
+    description: Updated at.
+    type: string
+    format: date-time
+    readOnly: true
+    example: 2020-01-01T00:00:00.000Z
+  membersCount:
+    description: Number of team members.
+    type: integer
+    readOnly: true
+    example: 5
+  managersCount:
+    description: Number of team managers.
+    type: integer
+    readOnly: true
+    example: 1
+  identityProviders:
+    description: List of identity providers linked to the team.
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          description: Identity provider ID. Unique identifier prefixed with `idp_`.
+          type: string
+          pattern: ^idp_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: idp_01h1s5z6vf2mm1mz3hevnn9va7
+          readOnly: true
+        name:
+          description: Identity provider name.
+          type: string
+          example: Test Identity Provider
+          readOnly: true
+      required:
+        - id
+        - name
+    readOnly: true
+required:
+  - id
+  - object
+  - name
+  - uri
+  - createdAt
+  - updatedAt

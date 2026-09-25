@@ -1,0 +1,4 @@
+type: string
+description: Remote ID. Unique identifier prefixed with `rem_`.
+pattern: ^rem_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+example: rem_01h1s5z6vf2mm1mz3hevnn9va7  

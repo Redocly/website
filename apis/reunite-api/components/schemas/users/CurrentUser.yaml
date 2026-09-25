@@ -1,0 +1,10 @@
+allOf:
+  - $ref: ./User.yaml
+  - type: object
+    properties:
+      organizationCreationLimitReached:
+        description: |
+          When `true`, the user created the maximum number of organizations that the
+          organization-creation limit permits. Absent when no limit applies.
+        type: boolean
+        readOnly: true

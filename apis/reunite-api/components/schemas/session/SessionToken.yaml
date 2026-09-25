@@ -1,0 +1,7 @@
+type: object
+properties:
+  refreshToken:
+    description: Refresh token collected when authorize.
+    type: string
+required:
+  - refreshToken

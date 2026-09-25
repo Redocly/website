@@ -1,0 +1,103 @@
+parameters:
+  - $ref: ../../components/parameters/path/OrgId.yaml
+  - $ref: ../../components/parameters/path/ProjectId.yaml
+  - $ref: ../../components/parameters/path/RemoteId.yaml
+get:
+  security:
+    - InternalAuth: []
+    - UserCookie: []
+  operationId: getRemote
+  summary: Retrieve a remote
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  description: Get remotes.
+  tags:
+    - Remotes
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/remotes/Remote.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+patch:
+  tags:
+    - Remotes
+  security:
+    - InternalAuth: []
+  summary: Partially update a remote
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  description: Update remote by id.
+  operationId: updateRemoteById
+  requestBody:
+    content:
+      application/json:
+        schema:
+          # Partial update: the endpoint accepts only these fields (see
+          # UpdateRemoteContentDto). It is not the full Remote schema — a PATCH
+          # body carries just the fields being changed.
+          type: object
+          properties:
+            attempts:
+              type: integer
+              description: Number of sync attempts recorded for the remote.
+            lastSyncedAt:
+              type: string
+              format: date-time
+              description: Timestamp of the last successful sync.
+  responses:
+    '200':
+      description: Remote Content updated.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/remotes/Remote.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+delete:
+  security:
+    - ApiKey: []
+    - UserCookie: []
+  operationId: deleteRemote
+  summary: Delete a remote
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  description: Delete remote.
+  tags:
+    - Remotes
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/remotes/Remote.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

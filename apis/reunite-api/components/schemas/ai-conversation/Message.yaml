@@ -1,0 +1,56 @@
+type: object
+properties:
+  text:
+    description: Message from the user asking the AI assistant for help or information.     
+    type: string
+    example: What is the Redocly?
+  product:
+    description: Project pages product to which the user's message pertains.
+    type: string
+    example: Scout
+  locale:
+    description: Project pages locale for which the AI assistant should provide relevant context, based on localized pages.
+    type: string
+    example: es_ES
+  version:
+    description: Version of the project pages to which the user's message pertains.
+    type: object
+    properties:
+      folder:
+        description: Folder of the version.
+        type: string
+      label:
+        description: Label of the version.
+        type: string
+  filter:
+    description: Filter to apply to the project pages to which the user's message pertains.
+    type: array
+    items:
+      type: object
+      properties:
+        field:
+          description: Field of the filter.
+          type: string
+        values:
+          description: Values of the filter.
+          type: array
+          items:
+            type: string
+  history:
+    description: History of messages between the user and the AI assistant.
+    type: array
+    items:
+      type: object
+      properties:
+        role:
+          description: Role of the message sender.
+          type: string
+          enum:
+            - user
+            - assistant
+        content:
+          description: Content of the message.
+          type: string
+          example: What is the Redocly?
+required:
+  - text
