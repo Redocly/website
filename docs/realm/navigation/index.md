@@ -25,6 +25,7 @@ From simple link organization to advanced multi-product sites, you can configure
 ### Core navigation
 - **[Navbar](../config/navbar.md)** - Top navigation bar with links, groups, and dropdowns
 - **[Sidebar](../config/sidebar.md)** - Left navigation panel (configure content with [sidebars.yaml](./sidebars.md))
+- **[Section tabs](./section-tabs.md)** - Second row of navigation that splits a sidebar into sections, each with its own tab
 - **[Footer](../config/footer.md)** - Bottom page footer with links and copyright information
 - **[Search](../config/search.md)** - Site-wide search functionality with faceting capabilities
 

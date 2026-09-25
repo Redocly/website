@@ -290,6 +290,8 @@
   items:
     - page: navigation/sidebars.md
       label: Configure sidebars
+    - page: navigation/section-tabs.md
+      label: Configure section tabs
     - page: navigation/multi-product.md
       label: Multi-product
 

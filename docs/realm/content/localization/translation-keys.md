@@ -559,6 +559,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- sectionTabs.label
+- Accessible label for the section tabs row
+- Section tabs
+
+---
+
 - sidebar.menu.backToLabel
 - Label of back button displayed in sidebar drilldown menu
 - Back
@@ -2739,6 +2745,12 @@ This page contains the list of all predefined translation keys used in default U
 - mobileMenu.version
 - Label for version picker in the mobile menu
 - Version
+
+---
+
+- navbar.label
+- Accessible label for the navbar
+- Main navigation
 
 ---
 

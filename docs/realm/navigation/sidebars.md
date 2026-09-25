@@ -38,6 +38,8 @@ These items are generated according to the internal structure of the tags and en
 You can customize the sidebar by adding a `sidebars.yaml` file to the root of your project.
 A `sidebars.yaml` file must include all files or directories you want to have in a sidebar: new files and directories aren't added automatically.
 
+To split a large site into sections with their own sidebars, see [Section tabs](./section-tabs.md).
+
 Link titles in the sidebar are by default the first heading title on the page.
 You can use the [`label`](#link-options) option in a `sidebars.yaml` file to change the link title.
 
@@ -477,6 +479,7 @@ Use `badges` to add visual indicators to sidebar items:
 
 ## Resources
 
+- **[Section tabs](./section-tabs.md)** - Add a second row of navigation that splits a sidebar into sections
 - **[Navigation elements](./index.md)** - Overview of all navigation components and patterns for creating comprehensive site navigation structures
 - **[Navbar configuration](../config/navbar.md)** - Configure the navbar navigation with links
 - **[Footer configuration](../config/footer.md)** - Configure the footer navigation with links, copyright information, and organizational elements
