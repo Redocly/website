@@ -1,4 +1,34 @@
 '@redocly/realm':
+  0.138.0-next.3:
+    timestamp: 1790356272000
+    changes:
+      minor:
+        - >-
+          Added the `consent` option to display a cookie consent banner or privacy choices link that loads analytics and gated scripts only after
+          visitor approval. Set `mode` to `auto` to select opt-in or opt-out based on visitor time zone, or to `onetrust`, `cookiebot`, `trustarc`, or
+          `tcf` to delegate consent management to those providers. This option requires the Enterprise+ plan.
+        - Improved the **Expand all** and **Collapse all** controls in JSON samples.
+        - Added WebMCP support, which enables AI agents in the reader's browser to search, read, and navigate your documentation.
+      patch:
+        - >-
+          Fixed an issue where JSON samples displayed the **Expand all** and **Collapse all** buttons even when there was nothing to expand or
+          collapse.
+        - Fixed an issue that could cause the project to crash when rendering API docs with cyclic OpenAPI schemas.
+        - Fixed an issue in API docs where links in the **Operations** panel of a group page included the configured path prefix twice.
+        - >-
+          Fixed an issue in API docs where the **Show** button on a collapsed group jumped the page to the group heading instead of expanding the
+          operations in place.
+        - Added vertical alignment support for cells in the Markdoc `table` tag.
+        - >-
+          Fixed an issue in the **Try it** console where operations opened from the list displayed empty or incorrect request bodies and missing
+          parameter types.
+        - >-
+          Fixed an issue in the **Try it** console where referenced path item operations did not open in request tabs or appear in the operations
+          list.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.3
+      '@redocly/api-docs': 0.3.0-next.3
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.1
   0.138.0-next.2:
     timestamp: 1790250956000
     changes:
@@ -7565,6 +7595,25 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.138.0-next.3:
+    timestamp: 1790356272000
+    changes:
+      minor:
+        - >-
+          Added the `consent` option to display a cookie consent banner or privacy choices link that loads analytics and gated scripts only after
+          visitor approval. Set `mode` to `auto` to select opt-in or opt-out based on visitor time zone, or to `onetrust`, `cookiebot`, `trustarc`, or
+          `tcf` to delegate consent management to those providers. This option requires the Enterprise+ plan.
+        - Improved the **Expand all** and **Collapse all** controls in JSON samples.
+        - Added WebMCP support, which enables AI agents in the reader's browser to search, read, and navigate your documentation.
+      patch:
+        - >-
+          Fixed an issue where JSON samples displayed the **Expand all** and **Collapse all** buttons even when there was nothing to expand or
+          collapse.
+        - Added vertical alignment support for cells in the Markdoc `table` tag.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.3
+      '@redocly/api-docs': 0.3.0-next.3
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.1
   0.138.0-next.2:
     timestamp: 1790250956000
     changes:
@@ -14017,6 +14066,25 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.138.0-next.3:
+    timestamp: 1790356272000
+    changes:
+      minor:
+        - >-
+          Added the `consent` option to display a cookie consent banner or privacy choices link that loads analytics and gated scripts only after
+          visitor approval. Set `mode` to `auto` to select opt-in or opt-out based on visitor time zone, or to `onetrust`, `cookiebot`, `trustarc`, or
+          `tcf` to delegate consent management to those providers. This option requires the Enterprise+ plan.
+        - Improved the **Expand all** and **Collapse all** controls in JSON samples.
+        - Added WebMCP support, which enables AI agents in the reader's browser to search, read, and navigate your documentation.
+      patch:
+        - >-
+          Fixed an issue where JSON samples displayed the **Expand all** and **Collapse all** buttons even when there was nothing to expand or
+          collapse.
+        - Added vertical alignment support for cells in the Markdoc `table` tag.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.3
+      '@redocly/api-docs': 0.3.0-next.3
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.1
   0.138.0-next.2:
     timestamp: 1790250956000
     changes:
@@ -20464,6 +20532,36 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.138.0-next.3:
+    timestamp: 1790356272000
+    changes:
+      minor:
+        - >-
+          Added the `consent` option to display a cookie consent banner or privacy choices link that loads analytics and gated scripts only after
+          visitor approval. Set `mode` to `auto` to select opt-in or opt-out based on visitor time zone, or to `onetrust`, `cookiebot`, `trustarc`, or
+          `tcf` to delegate consent management to those providers. This option requires the Enterprise+ plan.
+        - Improved the **Expand all** and **Collapse all** controls in JSON samples.
+        - Added WebMCP support, which enables AI agents in the reader's browser to search, read, and navigate your documentation.
+      patch:
+        - >-
+          Fixed an issue where JSON samples displayed the **Expand all** and **Collapse all** buttons even when there was nothing to expand or
+          collapse.
+        - Fixed an issue that could cause the project to crash when rendering API docs with cyclic OpenAPI schemas.
+        - Fixed an issue in API docs where links in the **Operations** panel of a group page included the configured path prefix twice.
+        - >-
+          Fixed an issue in API docs where the **Show** button on a collapsed group jumped the page to the group heading instead of expanding the
+          operations in place.
+        - Added vertical alignment support for cells in the Markdoc `table` tag.
+        - >-
+          Fixed an issue in the **Try it** console where operations opened from the list displayed empty or incorrect request bodies and missing
+          parameter types.
+        - >-
+          Fixed an issue in the **Try it** console where referenced path item operations did not open in request tabs or appear in the operations
+          list.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.3
+      '@redocly/api-docs': 0.3.0-next.3
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.1
   0.138.0-next.2:
     timestamp: 1790250956000
     changes:
@@ -27089,6 +27187,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.70.0-next.3:
+    timestamp: 1790356272000
+    changes:
+      minor:
+        - >-
+          Added the `consent` option to display a cookie consent banner or privacy choices link that loads analytics and gated scripts only after
+          visitor approval. Set `mode` to `auto` to select opt-in or opt-out based on visitor time zone, or to `onetrust`, `cookiebot`, `trustarc`, or
+          `tcf` to delegate consent management to those providers. This option requires the Enterprise+ plan.
+        - Improved the **Expand all** and **Collapse all** controls in JSON samples.
+      patch:
+        - >-
+          Fixed an issue where JSON samples displayed the **Expand all** and **Collapse all** buttons even when there was nothing to expand or
+          collapse.
+        - Added vertical alignment support for cells in the Markdoc `table` tag.
+    dependencies: {}
   0.70.0-next.2:
     timestamp: 1790250956000
     changes:
@@ -31213,6 +31326,29 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.3.0-next.3:
+    timestamp: 1790356272000
+    changes:
+      minor:
+        - Added WebMCP support, which enables AI agents in the reader's browser to search, read, and navigate your documentation.
+      patch:
+        - >-
+          Fixed an issue where JSON samples displayed the **Expand all** and **Collapse all** buttons even when there was nothing to expand or
+          collapse.
+        - Fixed an issue that could cause the project to crash when rendering API docs with cyclic OpenAPI schemas.
+        - Fixed an issue in API docs where links in the **Operations** panel of a group page included the configured path prefix twice.
+        - >-
+          Fixed an issue in API docs where the **Show** button on a collapsed group jumped the page to the group heading instead of expanding the
+          operations in place.
+        - >-
+          Fixed an issue in the **Try it** console where operations opened from the list displayed empty or incorrect request bodies and missing
+          parameter types.
+        - >-
+          Fixed an issue in the **Try it** console where referenced path item operations did not open in request tabs or appear in the operations
+          list.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.3
+      '@redocly/replay': 0.29.0-next.3
   0.3.0-next.2:
     timestamp: 1790250956000
     changes:
@@ -32672,6 +32808,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.21.0-next.3:
+    timestamp: 1790356272000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0-next.3
+      '@redocly/realm': 0.138.0-next.3
+      '@redocly/redoc': 0.138.0-next.3
+      '@redocly/redoc-reef': 0.138.0-next.3
+      '@redocly/redoc-revel': 0.138.0-next.3
   1.21.0-next.2:
     timestamp: 1790250956000
     changes:
@@ -41657,6 +41804,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.29.0-next.3:
+    timestamp: 1790356272000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0-next.3
   0.29.0-next.2:
     timestamp: 1790250956000
     changes:
@@ -44244,6 +44398,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.21.0-next.3:
+    timestamp: 1790356272000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0-next.3
   0.21.0-next.2:
     timestamp: 1790250956000
     changes:
