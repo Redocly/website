@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { Route, Routes as DomRoutes, useParams } from 'react-router';
 import { PageLayout } from '@redocly/theme/layouts/PageLayout';
 import { useThemeHooks } from '@redocly/theme/core/hooks';
 
@@ -18,14 +17,18 @@ import { H2 } from '@redocly/theme/components/Typography/H2';
 import styled from 'styled-components';
 import { BlogRssSubscription } from './components/Blog/BlogRssSubscription';
 
+// The blog index and every `/blog/category/*` route render this file; the
+// route slug picks the view, so no nested router is needed.
 export default function BlogRoutes() {
+  // @ts-ignore
+  const { usePageData } = useThemeHooks();
+  const page = usePageData();
+  const slug: string = page?.slug ?? page?.path ?? '/blog';
+  const match = slug.replace(/\/+$/, '').match(/^\/blog\/category\/([^/]+)(?:\/([^/]+))?$/);
+
   return (
     <PageLayout>
-      <DomRoutes>
-        <Route path="/" element={<BlogMain />} />
-        <Route path="/category/:category" element={<CategoryPage />} />
-        <Route path="/category/:category/:subcategory/" element={<CategoryPage />} />
-      </DomRoutes>
+      {match ? <CategoryPage category={match[1]} subcategory={match[2]} /> : <BlogMain />}
     </PageLayout>
   );
 }
@@ -154,8 +157,7 @@ const CardActions = styled.div`
 `;
 
 // Category page component
-function CategoryPage() {
-  const { category, subcategory } = useParams();
+function CategoryPage({ category, subcategory }: { category: string; subcategory?: string }) {
   // @ts-ignore
   const { usePageSharedData } = useThemeHooks();
   const { posts, metadata } = usePageSharedData<any>('blog-posts');

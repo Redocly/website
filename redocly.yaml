@@ -222,7 +222,9 @@ responseHeaders:
           'sha256-9qgU5FDrauEgF+e1iJWvsh46OwsIkNOLjkXggr/02jk='
           'sha256-v7ddZtWCUr5oF3kgrlEot4fG861CKDXUt0aTaNaIk6Q='
           'sha256-+t5Z3fJi7uJxARWEzFEVaSRgtaAn0r97XkxpJNbQiK0='
-          'sha256-gOx3nRh8znDQR7T1VkI+fFXDgsNzf5enQqdi7NP11Vk=';
+          'sha256-gOx3nRh8znDQR7T1VkI+fFXDgsNzf5enQqdi7NP11Vk='
+          'sha256-zytJQbY9Qb7BSt1XrdvDrm7lXcfLKCQHqVdo21OBqU8='
+          'sha256-rrBDGZAK022PSEwvDpgLejcqwXGrVQwykrTva3+lQsQ=';
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 
@@ -277,6 +279,8 @@ responseHeaders:
       value: "
         script-src 
           'self' 
+          'sha256-zytJQbY9Qb7BSt1XrdvDrm7lXcfLKCQHqVdo21OBqU8='
+          'sha256-rrBDGZAK022PSEwvDpgLejcqwXGrVQwykrTva3+lQsQ='
           'unsafe-eval'
           https://cdn.jsdelivr.net
           https://www.googletagmanager.com
@@ -316,7 +320,7 @@ search:
 
 # Custom plugin registration
 plugins:
-  - '@redocly/marketing-pages/mcp-tools/plugin.js'
+  - '@redocly/marketing-pages/mcp-tools/realm-plus-plugin.js'
 
 links:
   - href: https://redocly.com/docs/changelog/feed.xml

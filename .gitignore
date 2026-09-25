@@ -6,3 +6,4 @@ yalc.lock
 .idea/
 .DS_Store
 .env
+.realm/

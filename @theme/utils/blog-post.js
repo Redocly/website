@@ -1,99 +1,129 @@
-import { copyStaticFile } from '@redocly/realm/dist/server/utils/fs.js';
+// Pure helpers for the blog plugin: post lists from frontmatter plus the metadata
+// yaml, author and category resolution, and the RSS feed.
 
-const BLOG_IMAGES_DIR = 'blog/images/';
-const BLOG_METADATA_PATH = 'blog/metadata/blog-metadata.yaml';
+export const BLOG_IMAGES_DIR = '/blog/images/';
+const RSS_ITEMS_LIMIT = 50;
 
-export const buildAndSortBlogPosts = async (postRoutes, context, outdir) => {
-  const posts = [];
-
-  const metadataContentRecord = await context.cache.load(BLOG_METADATA_PATH, 'yaml');
-  const metadata = await transformMetadata(metadataContentRecord.data, context.fs.cwd, outdir);
-
-  for (const route of postRoutes) {
-    const {
-      data: { content, frontmatter },
-    } = await context.cache.load(route.fsPath, 'markdown-frontmatter');
-
-    if (frontmatter?.ignore === true || (await context.isPathIgnored(route.fsPath))) {
-      continue;
-    }
-
-    posts.push({
-      ...frontmatter,
-      slug: route.slug,
-      author: metadata.authors.get(frontmatter.author),
-      categories: (frontmatter.categories || [])
-        .map((categoryId) => {
-          const categoryData = metadata.categories.get(categoryId);
-          if (!categoryData) return null;
-          
-          if (categoryData.category && categoryData.subcategory) {
-            return categoryData; 
-          } else {
-            return { 
-              category: {
-                id: categoryData.id, 
-                label: categoryData.label 
-              }
-            };
-          }
-        })
-        .filter(Boolean),
-      image:
-        frontmatter.image &&
-        (await copyStaticFile(context.fs.cwd, BLOG_IMAGES_DIR + frontmatter.image, outdir)),
-      //   content,
-    });
-  }
-
-  return { posts: posts.sort(sortByDatePredicate), metadata: metadataContentRecord.data };
-};
-
-async function transformMetadata(metadata, cwd, outdir) {
+/**
+ * Authors by id and categories by id (`category` and `category:subcategory`), as the
+ * templates expect them.
+ */
+export function indexBlogMetadata(metadata) {
   const authors = new Map();
   const categories = new Map();
 
-  for (const author of metadata.authors) {
-    authors.set(author.id, {
-      ...author,
-      image: await copyStaticFile(cwd, BLOG_IMAGES_DIR + author.image, outdir),
-    });
+  for (const author of metadata?.authors ?? []) {
+    authors.set(author.id, author);
   }
 
-  // Mapping category and subcategory
-  for (const category of metadata.categories) {
-    // Store main category as-is (for posts with just main categories)
-    categories.set(category.id, category);
-
-    // Store subcategories with both category and subcategory objects
-    if (category.subcategories) {
-      for (const subcategory of category.subcategories) {
-        const fullId = `${category.id}:${subcategory.id}`;
-        categories.set(fullId, {
-          category: {
-            id: category.id,
-            label: category.label
-          },
-          subcategory: {
-            id: subcategory.id,
-            label: subcategory.label
-          }
-        });
-      }
+  for (const category of metadata?.categories ?? []) {
+    const parent = { id: category.id, label: category.label };
+    categories.set(category.id, { category: parent });
+    for (const subcategory of category.subcategories ?? []) {
+      categories.set(`${category.id}:${subcategory.id}`, {
+        category: parent,
+        subcategory: { id: subcategory.id, label: subcategory.label },
+      });
     }
   }
 
   return { authors, categories };
 }
 
-function sortByDatePredicate(a, b) {
-  const aDate = new Date(a.publishedDate);
-  const bDate = new Date(b.publishedDate);
+/** Newest first. */
+export function sortByPublishedDate(posts) {
+  return [...posts].sort(
+    (a, b) => new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime(),
+  );
+}
 
-  if (aDate.getTime() > bDate.getTime()) {
-    return -1;
-  } else if (aDate.getTime() < bDate.getTime()) {
-    return 1;
-  }
-  return 0;
+/**
+ * A post for the templates: every frontmatter field plus `slug`, the resolved
+ * `author` (with its image URL), resolved `categories` pairs and the `image` URL.
+ */
+export async function resolveBlogPost(post, index, resolveImage) {
+  const { frontmatter, slug } = post;
+  const author = frontmatter.author ? index.authors.get(frontmatter.author) : undefined;
+
+  return {
+    ...frontmatter,
+    slug,
+    author: author
+      ? {
+          ...author,
+          image: author.image ? await resolveImage(BLOG_IMAGES_DIR + author.image) : undefined,
+        }
+      : undefined,
+    categories: (frontmatter.categories ?? [])
+      .map((id) => index.categories.get(id))
+      .filter(Boolean),
+    image: frontmatter.image ? await resolveImage(BLOG_IMAGES_DIR + frontmatter.image) : undefined,
+  };
+}
+
+export function escapeXml(unsafe) {
+  return String(unsafe)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+function escapeXmlForCategories(unsafe) {
+  return String(unsafe)
+    .replace(/&(?!(amp|lt|gt|quot|apos);)/g, '&amp;')
+    .replace(/</g, '&lt;');
+}
+
+export function formatRssDate(timestamp) {
+  return new Date(timestamp).toUTCString();
+}
+
+function formatCategory(category) {
+  return (
+    category.category.label + (category.subcategory ? ` > ${category.subcategory.label}` : '')
+  );
+}
+
+function renderRssItem(post, origin) {
+  const link = `${origin}${post.slug}`;
+  const categoriesXml = (post.categories ?? [])
+    .map((category) => `<category>${escapeXmlForCategories(formatCategory(category))}</category>`)
+    .join('');
+  const description = `<p>${(post.description || '').replace(/]]>/g, ']]&gt;')}</p>`;
+
+  return `
+    <item>
+      <title>${escapeXml(post.title)}</title>
+      <link>${escapeXml(link)}</link>
+      <guid isPermaLink="true">${escapeXml(link)}</guid>
+      <pubDate>${formatRssDate(post.publishedDate)}</pubDate>
+      ${categoriesXml}
+      <description><![CDATA[${description}]]></description>
+      <author>${escapeXml(post.author?.name || 'Redocly Team')}</author>
+    </item>
+  `;
+}
+
+/** RSS 2.0 for the newest posts; `origin` is the site URL without a trailing slash. */
+export function renderBlogFeed({ posts, origin, blogSlug = '/blog/', limit = RSS_ITEMS_LIMIT }) {
+  const items = sortByPublishedDate(posts.filter((post) => Boolean(post.publishedDate)))
+    .slice(0, limit)
+    .map((post) => renderRssItem(post, origin))
+    .join('');
+  const feedUrl = `${origin}${blogSlug}feed.xml`;
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redocly Blog</title>
+    <link>${escapeXml(origin + blogSlug)}</link>
+    <description>Latest posts from the Redocly blog.</description>
+    <language>en-us</language>
+    <lastBuildDate>${formatRssDate(Date.now())}</lastBuildDate>
+    <atom:link href="${escapeXml(feedUrl)}" rel="self" type="application/rss+xml"/>
+    ${items}
+  </channel>
+</rss>`;
 }

@@ -15,13 +15,14 @@
   "author": "team@redocly.com",
   "license": "UNLICENSED",
   "dependencies": {
-    "@redocly/marketing-pages": "^0.2.38",
+    "@redocly/marketing-pages": "^0.3.0",
     "@redocly/realm": "0.138.0-next.1",
     "buffer": "^6.0.3",
     "events": "^3.3.0",
     "highlight-words-core": "^1.2.3",
     "path": "^0.12.7",
     "polished": "^4.3.1",
+    "realm-plus": "0.0.0-20260923090309",
     "url": "^0.11.4"
   },
   "devDependencies": {
