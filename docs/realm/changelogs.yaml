@@ -55633,13 +55633,6 @@ reunite:
         - Fixed AI search incorrectly granting access to all visitors when specific RBAC project configurations were used.
         - Fixed the AI assistant losing access to project API tools when authentication is required.
     dependencies: {}
-  v2026-09-25.3:
-    timestamp: 1790330985000
-    changes:
-      minor:
-        - Added the requester's email as the reply-to address on AI assistant support escalation emails.
-      patch: []
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
