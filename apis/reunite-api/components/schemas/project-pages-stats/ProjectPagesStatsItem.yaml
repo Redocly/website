@@ -1,0 +1,50 @@
+type: object
+properties:
+  id:
+    description: Project pages stats ID. Unique identifier prefixed with `pps_`.
+    type: string
+    pattern: ^pps_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: pps_01h2zvgfdqex5na189kdg39d6s
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [projectPagesStats]
+    example: projectPagesStats
+    readOnly: true
+  remoteEntityPages:
+    description: Number of remote entity pages.
+    type: number
+    example: 100
+    default: 0
+  duplicatedEntityPages:
+    description: Number of duplicated entity pages.
+    type: number
+    example: 100
+    default: 0
+  isReported:
+    description: Whether the project pages stats has been reported.
+    type: boolean
+    example: false
+    default: false
+  createdAt:
+    description: Created date.
+    type: string
+    format: date-time
+    example: '2023-06-15T15:41:42.696Z'
+    readOnly: true
+  updatedAt:
+    description: Updated date.
+    type: string
+    format: date-time
+    example: '2023-06-15T15:41:42.696Z'
+    readOnly: true
+  uri:
+    description: URI of the project pages stats resource.
+    type: string
+    format: uri
+    readOnly: true
+required:
+  - object
+  - createdAt
+  - updatedAt

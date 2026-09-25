@@ -1,0 +1,20 @@
+type: object
+properties:
+  message:
+    type: string
+    description: Commit message.
+  sha:
+    $ref: ../../../components/schemas/git/CommitShaSchema.yaml
+  url: 
+    $ref: ../../../components/schemas/git/CommitUrlSchema.yaml
+  author:
+    $ref: ../../../components/schemas/git/CommitAuthorSchema.yaml
+  committer:
+    $ref: ../../../components/schemas/git/CommitAuthorSchema.yaml
+  createdAt:
+    $ref: ../../../components/schemas/git/CommitCreatedAtSchema.yaml
+required:
+  - message
+  - sha
+  - url
+  - author

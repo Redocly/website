@@ -1,0 +1,29 @@
+post:
+  x-internal: true
+  tags:
+    - Device Login
+  security: []
+  summary: Get new access token with refresh token
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: rotateToken
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/device-login/RotateTokenRequest.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/device-login/TokenResponse.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

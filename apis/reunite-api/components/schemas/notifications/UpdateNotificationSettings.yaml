@@ -1,0 +1,21 @@
+title: UpdateNotificationSettings
+description: Notification settings fields a user update accepts. Send `null` to clear the settings.
+type: ['null', object]
+properties:
+  ignoredEvents:
+    description: Ignore notifications about events from the list.
+    type: array
+    items:
+      $ref: ./NotificationEvent.yaml
+  isMentioned:
+    description: Triggers notification when the user is mentioned.
+    type: boolean
+    example: true
+  isContributor:
+    description: Triggers notification when commit to a branch with a PR opened.
+    type: boolean
+    example: true
+  isReviewer:
+    description: Triggers notification when user is an assigned reviewer.
+    type: boolean
+    example: true

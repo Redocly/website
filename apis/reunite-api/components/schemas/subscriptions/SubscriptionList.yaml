@@ -1,0 +1,15 @@
+type: object
+properties:
+  object:
+    type: string
+    enum: [list]
+  page:
+    $ref: '../../schemas/Page.yaml'
+  data:
+    type: array
+    items:
+      $ref: SubscriptionListItem.yaml
+required:
+  - object
+  - page
+  - data

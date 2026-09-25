@@ -1,0 +1,38 @@
+post:
+  tags:
+    - Scout
+  security:
+    - ApiKey: []
+  summary: Get metadata validation result
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  description: Validate api metadata against "metadataSchema" in project's config file.
+  operationId: validateMetadata
+  parameters:
+    - $ref: ../../components/parameters/header/X-Redocly-Scout-Version.yaml
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/scout/Metadata.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/scout/MetadataValidationResult.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

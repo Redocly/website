@@ -1,0 +1,15 @@
+type: object
+properties:
+  headCommitHash:
+    type: string
+    description: Original commit hash before the force push.
+  previousHeadCommitHash:
+    type: string
+    description: New commit hash after the force push.
+  branchName:
+    type: string
+    description: Name of the force pushed branch.
+required:
+  - headCommitHash
+  - previousHeadCommitHash
+  - branchName

@@ -1,0 +1,16 @@
+type: object
+properties:
+  id:
+    type: string
+    example: urn:redocly:webhook:git:branch:gitlab.com:12345:67890:main:9fceb02d0ae598e95dc970b74767b5e7f9c4b3f1
+    readOnly: true
+  uri:
+    type: string
+    format: uri
+    example: https://api.github.com/example-user/sample-repo/tree/feature%2Fnew-login-flow
+  providerType:
+        $ref: ../git/GitProviderType.yaml
+required:
+  - id
+  - providerType
+  - uri

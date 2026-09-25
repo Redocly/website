@@ -1,0 +1,9 @@
+name: pushId
+description: Push ID.
+required: true
+in: path
+schema:
+  type: string
+  pattern: ^push_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  description: Unique identifier prefixed with `push_`.
+example: push_01hhh91dhc2kg9naf476y7qmas

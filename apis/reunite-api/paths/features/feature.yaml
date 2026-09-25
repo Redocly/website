@@ -1,0 +1,28 @@
+get:
+  security:
+    - UserCookie: []
+    - InternalAuth: []
+  summary: Retrieve an organization feature by name
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  tags:
+    - Organizations
+  operationId: getFeature
+  parameters: 
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/FeatureName.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/features/Feature.yaml
+    '401':
+      $ref: '../../common/responses/UnauthorizedError.yaml'
+    '403':
+      $ref: '../../common/responses/ForbiddenError.yaml'
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

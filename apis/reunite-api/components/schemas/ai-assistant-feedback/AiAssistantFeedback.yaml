@@ -1,0 +1,27 @@
+type: object
+required:
+  - id
+  - object
+  - uri
+  - createdAt
+properties:
+  id:
+    type: string
+    readOnly: true
+    description: Unique identifier of the feedback submission.
+    example: aifb_01kae541a8tcfvt7skj4e6y6sk
+  object:
+    type: string
+    readOnly: true
+    const: aiAssistantFeedback
+  uri:
+    type: string
+    format: uri
+    readOnly: true
+    description: Resource URI. Feedback is write-only, so this addresses the collection.
+    example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/projects/prj_01hh1t9sa6gwfv5naz04gr7ehm/ai-assistant-feedback
+  createdAt:
+    type: string
+    readOnly: true
+    description: Date and time of feedback creation.
+    format: date-time

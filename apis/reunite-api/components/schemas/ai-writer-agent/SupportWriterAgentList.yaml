@@ -1,0 +1,17 @@
+type: object
+description: Paginated list of AI writer agent configurations for support operations.
+properties:
+  object:
+    type: string
+    enum: [list]
+  page:
+    $ref: ../Page.yaml
+  data:
+    type: array
+    minItems: 0
+    items:
+      $ref: ./SupportWriterAgent.yaml
+required:
+  - object
+  - page
+  - data

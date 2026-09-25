@@ -1,0 +1,26 @@
+title: SupportSubscription
+description: |-
+  Subscription for support operations, which span organizations.
+  Only subscriptions synced from the billing provider are listed.
+  Usage data of `subscriptionItems` is not computed for this view.
+allOf:
+  - $ref: ./SubscriptionListItem.yaml
+  - type: object
+    properties:
+      organizationId:
+        description: Organization ID. Unique identifier prefixed with `org_`.
+        type: string
+        pattern: ^org_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+        example: org_01hh1t9sa6gwfv5naz04gr7ehm
+        readOnly: true
+      churnTime:
+        description: |-
+          Time when the subscription is deactivated. For a canceled subscription this is a
+          future time while the service still runs.
+        type: [string, 'null']
+        format: date-time
+        example: 2026-08-01T00:00:00Z
+        readOnly: true
+    required:
+      - organizationId
+      - churnTime

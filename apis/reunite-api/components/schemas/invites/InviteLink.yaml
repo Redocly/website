@@ -1,0 +1,15 @@
+type: object
+properties:
+  url:
+    description: Invite acceptance link, identical to the one sent by email.
+    type: string
+    format: uri
+    example: https://app.cloud.redocly.com/invite/3f3b3b3b-3b3b-3b3b-3b3b-3b3b3b3b3b3b
+  code:
+    description: Invite code embedded in the link.
+    type: string
+    format: uuid
+    example: 3f3b3b3b-3b3b-3b3b-3b3b-3b3b3b3b3b3b
+required:
+  - url
+  - code

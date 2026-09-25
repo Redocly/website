@@ -1,0 +1,11 @@
+type: array
+items:
+  oneOf:
+    - $ref: ./ApiMonitoringWorkflowBulkResponseSuccessItem.yaml
+    - $ref: ./ApiMonitoringWorkflowBulkResponseErrorItem.yaml
+  discriminator: 
+    propertyName: status
+    mapping: 
+      ok: ./ApiMonitoringWorkflowBulkResponseSuccessItem.yaml
+      error: ./ApiMonitoringWorkflowBulkResponseErrorItem.yaml
+    

@@ -1,0 +1,9 @@
+name: scorecardId
+description: Scorecard ID.
+required: true
+in: path
+schema:
+  type: string
+  pattern: ^pbs_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  description: Unique identifier prefixed with `pbs_`.
+example: pbs_01hh1t9sa6gwfv5naz04gr7ehm

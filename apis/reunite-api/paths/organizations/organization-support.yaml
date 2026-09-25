@@ -1,0 +1,74 @@
+delete:
+  tags:
+    - Organizations
+  security:
+    - Support: []
+  summary: Delete an organization as support
+  description: |-
+    Support-only full deletion of an organization: all projects, the
+    subscription, the organization record, and its infrastructure jobs.
+    Deletion requires a synced subscription that is marked trial-only, which
+    proves the organization never paid. The platform's own organization and
+    any other case are refused.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: deleteOrganizationForSupport
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  responses:
+    '204':
+      description: Deleted.
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+
+patch:
+  tags:
+    - Organizations
+  security:
+    - Support: []
+  summary: Partially update an organization's consent-skip setting
+  description: |-
+    Support-only update of whether the organization is trusted to skip the
+    OAuth consent screen. Every current OAuth2 client in the organization is
+    updated to match, except clients rejected by support, which never skip
+    consent. New clients created afterward default to matching too.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: updateOrganizationForSupport
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/organization/PatchOrganizationForSupportRequest.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/organization/OrganizationSupport.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

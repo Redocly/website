@@ -1,0 +1,10 @@
+name: announcementId
+description: Announcement ID. Unique identifier prefixed with `ann_`.
+required: true
+in: path
+schema:
+  type: string
+  pattern: ^ann_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  description: Unique identifier prefixed with `ann_`.
+example: ann_01h1s5z6vf2mm1mz3hevnn9va7
+

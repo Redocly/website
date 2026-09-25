@@ -1,0 +1,5 @@
+description: Project custom domain configuration.
+type: ['null', object]
+oneOf:
+  - type: 'null'
+  - $ref: ../../../project-custom-domain/ProjectCustomDomain.yaml

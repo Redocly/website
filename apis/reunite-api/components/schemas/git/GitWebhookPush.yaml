@@ -1,0 +1,83 @@
+allOf:
+  - $ref: ./GitWebhookBase.yaml
+  - type: object
+    properties:
+      type:
+        type: string
+        const: PUSH
+        example: PUSH
+      object:
+        description: Entity name
+        type: string
+        const: gitWebhookPush
+        readOnly: true
+      externalName:
+        type:
+          - string
+          - "null"
+        example: "John Doe"
+      externalLogin:
+        type:
+          - string
+          - "null"
+        description: Provider login (username) of the user who triggered the event (if available).
+        example: smjane
+      externalEmail:
+        type:
+          - string
+          - "null"
+        example: "john@example.com"
+      externalActorId:
+        type: string
+        description: External id of the user who triggered the event.
+        example: "123456789"
+      userId:
+        type: string
+        example: 'usr_01hh1t9sa6gwfv5naz04gr7ehm'
+      repositoryDetails:
+        $ref: ../git/RepositoryDetails.yaml    
+      branch:
+        type: string
+        description: Branch name to which the commits were pushed.
+        example: "main"
+      host:
+        type: string
+        description: Git provider host.
+        example: github.com
+      receivedAt:
+        type: string
+        format: date-time
+        description: Timestamp when the webhook was pushed.
+        example: "2025-11-12T10:00:00Z"
+      before:
+        type: 
+          - string 
+          - "null"
+        description: Commit SHA before the push. `null` if the branch was newly created.
+        example: "4c7e3b7b0e2b11827a94d31a424bdf47d339e709"
+      after:
+        type: string
+        description: Commit SHA after the push.
+        example: "abc123def4567890abcdef1234567890abcdef12"
+      forcePushed:
+        type: 
+          - boolean
+          - "null"
+        description: Indicates whether the push was a force push.
+        example: false
+      isCrossRepo:
+        type: 
+          - boolean 
+          - "null"
+        description: Indicates whether the push was part of a cross-repository operation (e.g., fork merge).
+        example: false
+    required:
+      - type
+      - object
+      - repositoryDetails
+      - branch
+      - host
+      - receivedAt
+      - after
+      - before
+      - forcePushed

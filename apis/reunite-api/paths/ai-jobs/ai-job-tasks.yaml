@@ -1,0 +1,82 @@
+get:
+  tags:
+    - AI jobs
+  security:
+    - InternalAuth: []
+    - UserCookie: []
+  summary: List all AI job tasks
+  description: |-
+    Returns a paginated list of AI job tasks for a project. To restrict the
+    response to tasks belonging to a single AI job, use the standard `filter`
+    query parameter, for example `?filter=aiJobId:aij_01h1s5z6vf2mm1mz3hevnn9va7`.
+    Without a filter, tasks across every AI job for the project are returned.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: listAiJobTasks
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Before.yaml
+    - $ref: ../../common/components/parameters/query/Sort.yaml
+      description: |-
+        Use `-property` to sort in descending order (for example, `-startedAt`)
+        and `property` to sort in ascending order (for example, `startedAt`).
+        The default sort is `-id`.
+        This list can be sorted by the following properties:
+        - `id`
+        - `startedAt`
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/ai-job/AiJobTaskList.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+
+post:
+  tags:
+    - AI jobs
+  security:
+    - InternalAuth: []
+  summary: Create AI job task
+  description: Creates a new task within an AI job. Used by ai-worker to track phase progress.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: createAiJobTask
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/ai-job/AiJobTask.yaml
+  responses:
+    '201':
+      description: Created. Returns the new AI job task.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/ai-job/AiJobTask.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

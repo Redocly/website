@@ -1,0 +1,8 @@
+description: Organization role details.
+type: object
+properties:
+  name:
+    $ref: ./OrganizationRole.yaml
+  description:
+    type: string
+    description: Organization role description.

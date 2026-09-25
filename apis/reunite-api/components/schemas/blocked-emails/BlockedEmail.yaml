@@ -1,0 +1,21 @@
+type: object
+properties:
+  id:
+    type: string
+  email:
+    type: string
+    description: |-
+      Blocked email address, or a `*@domain` pattern that also covers every
+      subdomain of that domain.
+  reason:
+    oneOf:
+      - type: string
+      - type: 'null'
+  createdAt:
+    type: string
+    format: date-time
+required:
+  - id
+  - email
+  - reason
+  - createdAt

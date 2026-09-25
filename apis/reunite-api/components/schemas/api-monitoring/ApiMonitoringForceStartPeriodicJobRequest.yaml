@@ -1,0 +1,9 @@
+type: object
+properties:
+  filePath:
+    description: File path to Arazzo specification for which to force start the periodic job.
+    type: string
+    minLength: 1
+    example: arazzo/my-api.yaml
+required:
+  - filePath 

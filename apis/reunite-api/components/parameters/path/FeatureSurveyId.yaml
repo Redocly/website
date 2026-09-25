@@ -1,0 +1,8 @@
+name: featureSurveyId
+description: Unique identifier for the feature survey prefixed with `fs_`.
+required: true
+in: path
+schema:
+  type: string
+  pattern: ^fs_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+example: fs_01h1s5z6vf2mm1mz3hevnn9va7

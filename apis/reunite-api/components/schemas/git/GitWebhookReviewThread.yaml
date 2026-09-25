@@ -1,0 +1,70 @@
+allOf:
+  - $ref: ./GitWebhookBase.yaml
+  - type: object
+    properties:
+      type:
+        type: string
+        enum:
+          - RESOLVE_REVIEW_THREAD
+          - UNRESOLVE_REVIEW_THREAD
+        description: Type of the review thread event in the Git provider.
+        example: RESOLVE_REVIEW_THREAD
+      object:
+        description: Entity name.
+        type: string
+        const: gitWebhookReviewThread
+        readOnly: true
+      externalName:
+        type:
+          - string
+          - "null"
+        description: Name of the user who resolved or unresolved the thread.
+        example: John Doe
+      externalLogin:
+        type:
+          - string
+          - "null"
+        description: Provider login (username) of the user who triggered the event (if available).
+        example: smjane
+      externalEmail:
+        type:
+          - string
+          - "null"
+        description: Email of the user who resolved or unresolved the thread.
+        example: john@example.com
+      externalActorId:
+        type: string
+        description: External id of the user who triggered the event.
+        example: "123456789"
+      repositoryDetails:
+        $ref: ../git/RepositoryDetails.yaml
+      branch:
+        type: string
+        description: Branch name of the pull request.
+        example: feature/add-auth
+      host:
+        type: string
+        description: Git provider host.
+        example: github.com
+      receivedAt:
+        type: string
+        format: date-time
+        description: Timestamp when the webhook payload was received.
+        example: "2025-11-12T10:00:00Z"
+      threadId:
+        type: string
+        description: Provider-native review thread identifier (e.g. GitHub PullRequestReviewThread node_id).
+        example: PRRT_kwDONOPv284Aprcc
+      pullRequestNumber:
+        type: number
+        description: Sequential pull request number within the repository.
+        example: 42
+    required:
+      - type
+      - object
+      - repositoryDetails
+      - branch
+      - host
+      - receivedAt
+      - threadId
+      - pullRequestNumber

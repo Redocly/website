@@ -1,0 +1,26 @@
+type: object
+description: Slim representation of the currently logged in user returned by the session endpoint.
+properties:
+  id:
+    description: User ID. Unique identifier prefixed with `usr_`.
+    type: string
+    pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+    readOnly: true
+  email:
+    description: User email address.
+    type: string
+    format: email
+    example: john.smith@example.com
+    readOnly: true
+  providerId:
+    description: ID of the identity provider that authenticates the session. Absent for users who log in with a built-in identity.
+    type: string
+    readOnly: true
+  teams:
+    $ref: ../users/UserTeams.yaml
+    readOnly: true
+required:
+  - id
+  - email
+  - teams

@@ -1,0 +1,84 @@
+type: object
+properties: 
+  id:
+    description: Commit ID. Unique identifier prefixed with `com_`.
+    type: string
+    pattern: ^com_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: com_01h1s5s6vf1mm0mz3hevnn3va7
+    readOnly: true
+  remoteId:
+    $ref: ./RemoteIdSchema.yaml
+  pushId:
+    description: |-
+      Push ID. Unique identifier prefixed with `push_`. 
+      Provided only for commits passed during [CICD push command](https://redocly.com/docs/realm/reference/redocly-cli/commands/push) execution.
+    type: string
+    pattern: ^push_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: push_01h2captefvs9bpg3v6twqqj9n
+    readOnly: true
+  userId:
+    description: User ID created commit. Unique identifier prefixed with `usr_`.
+    type: string
+    pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+    readOnly: true
+  authorName:
+    type: string
+    description: Author name.
+    example: John Doe
+  authorEmail:
+    type: string
+    description: Author email.
+    example: john.doe@example.com
+    format: email
+  authorAvatarUrl:
+    type: string
+    format: uri
+    description: Author avatar URL.
+    example: "https://gitlab.example.com/uploads/-/system/user/avatar/1/avatar.png"
+  message:
+    type: string
+    description: Commit message.
+  sha:
+    $ref: ../../../components/schemas/git/CommitShaSchema.yaml
+  url:
+    $ref: ../../../components/schemas/git/CommitUrlSchema.yaml
+  branchName:
+    type: string
+    description: Branch name.
+    example: 'dev'
+  namespaceId:
+    description: Git repo namespace ID (organization for GitHub).
+    type: string
+  repositoryId:
+    description: Git repo ID.
+    type: string
+  createdAt:
+    type: string
+    format: date-time
+    readOnly: true
+  updatedAt:
+    type: string
+    format: date-time
+    readOnly: true
+  object:
+    type: string
+    const: remoteCommit
+    readOnly: true
+  uri:
+    type: string
+    format: uri
+    description: Canonical URI for the remote commit resource.
+    readOnly: true
+    example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/projects/prj_01hh1t9sa6gwfv5naz04gr7ehm/remote-commits/com_01h1s5s6vf1mm0mz3hevnn3va7
+required: 
+  - id
+  - remoteId
+  - message
+  - branchName
+  - sha
+  - authorEmail
+  - createdAt
+  - updatedAt
+  - object
+  - uri

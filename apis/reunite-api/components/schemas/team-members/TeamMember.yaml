@@ -1,0 +1,74 @@
+type: object
+properties:
+  id:
+    description: Team member ID. Unique identifier prefixed with `tmm_`.
+    type: string
+    pattern: ^tmm_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: tmm_01jrgf18kp4e65d2eemewrbvq9
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [teamMember]
+    readOnly: true
+  uri:
+    description: Canonical URI for the team member resource.
+    type: string
+    format: uri
+    readOnly: true
+    example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/team-members/tmm_01jrgf18kp4e65d2eemewrbvq9
+  teamId:
+    description: Team ID. Unique identifier prefixed with `team_`.
+    type: string
+    pattern: ^team_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: team_01hh1t9sa6gwfv5naz04gr7ehm
+  userId:
+    description: User ID. Unique identifier prefixed with `usr_`.
+    type: string
+    pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: usr_01jrgf18kp4e65d2eemewrbvq9
+  firstName:
+    description: User first name.
+    type: [string, 'null']
+    readOnly: true
+    example: John
+  lastName:
+    description: User last name.
+    type: [string, 'null']
+    readOnly: true
+    example: Doe
+  email:
+    description: User email.
+    type: string
+    readOnly: true
+    example: john.doe@example.com
+  isGuest:
+    description: Whether the user is a guest in the organization.
+    type: boolean
+    readOnly: true
+    example: false
+  role:
+    $ref: ../rbac/OrganizationRole.yaml
+    readOnly: true
+  createdAt:
+    description: Created at.
+    type: string
+    format: date-time
+    readOnly: true
+    example: 2020-01-01T00:00:00.000Z
+  updatedAt:
+    description: Updated at.
+    type: string
+    format: date-time
+    readOnly: true
+    example: 2020-01-01T00:00:00.000Z
+required:
+  - id
+  - object
+  - uri
+  - teamId
+  - userId
+  - email
+  - isGuest
+  - createdAt
+  - updatedAt

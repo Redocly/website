@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Invites
+  security:
+    - Support: []
+  summary: Get invite link for support
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: getInviteLinkForSupport
+  parameters:
+    - $ref: ../../components/parameters/path/InviteId.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/invites/InviteLink.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

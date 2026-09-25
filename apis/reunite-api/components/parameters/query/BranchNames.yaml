@@ -1,0 +1,18 @@
+name: branchNames
+in: query
+description: Branch names filter.
+required: false
+style: form
+explode: true
+schema:
+  type: array
+  items:
+    type: string
+    example: main
+examples:
+  oneBranch:
+    summary: Example of a single branch.
+    value: [main]
+  multipleBranches:
+    value: [main, new-branch] 
+    summary: Example of multiple branches.

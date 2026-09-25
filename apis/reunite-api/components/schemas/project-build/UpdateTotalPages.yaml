@@ -1,0 +1,11 @@
+type: object
+minProperties: 1
+properties:
+  totalPages:
+    description: Total pages by build.
+    type: number
+    format: int32
+  duplicatedPages:
+    description: Duplicated project pages count.
+    type: number
+    format: int32

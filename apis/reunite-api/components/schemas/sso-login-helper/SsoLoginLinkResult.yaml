@@ -1,0 +1,32 @@
+type: object
+required:
+  - object
+  - needsManualInput
+properties:
+  object:
+    type: string
+    enum: [ssoLoginLink]
+    readOnly: true
+  needsManualInput:
+    description: True when the portal could not be reached (e.g. WAF/IP allowlist) and the authorize URL must be pasted manually.
+    type: boolean
+  reason:
+    description: Human-readable explanation when needsManualInput is true.
+    type: string
+  authorizeUrl:
+    description: Rewritten authorize URL with the support login type appended to login_type.
+    type: string
+    format: uri
+  originalLoginType:
+    description: login_type detected in the redirect chain.
+    type: string
+  rewrittenLoginType:
+    description: login_type after appending the support login value.
+    type: string
+  orgId:
+    description: Organization id extracted from login_hint, if present.
+    type: [string, 'null']
+  source:
+    description: Which flow produced this result, echoing the request kind.
+    type: string
+    enum: [portal, mcp]

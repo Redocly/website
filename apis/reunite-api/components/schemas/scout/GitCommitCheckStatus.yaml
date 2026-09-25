@@ -1,0 +1,6 @@
+type: string
+enum:
+  - IN_PROGRESS
+  - SUCCESS
+  - FAILED
+description: Git commit status.

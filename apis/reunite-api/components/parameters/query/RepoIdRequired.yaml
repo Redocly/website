@@ -1,0 +1,8 @@
+name: repoId
+in: query
+description: Repository ID.
+required: true
+schema:
+  type: string
+  format: uuid
+example: 1ba0db23-e043-471c-bb17-da64401edf60

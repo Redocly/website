@@ -1,0 +1,6 @@
+type: array
+description: Collection of invites to create. Batch size is capped at 100.
+minItems: 1
+maxItems: 100
+items:
+  $ref: ./CreateInvite.yaml

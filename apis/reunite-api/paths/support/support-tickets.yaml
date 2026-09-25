@@ -1,0 +1,40 @@
+post:
+  tags:
+    - Support
+  operationId: createSupportTicket
+  summary: Create a support ticket
+  security: []
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              description: Name of the user creating the support ticket.
+            email:
+              type: string
+              format: email
+              description: Email of the user creating the support ticket.
+            body:
+              type: string
+              description: Body of the support ticket.
+            title:
+              type: string
+              description: Title of the support ticket.
+          required:
+            - name
+            - email
+            - body
+  responses:
+    '201':
+      description: Created.
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

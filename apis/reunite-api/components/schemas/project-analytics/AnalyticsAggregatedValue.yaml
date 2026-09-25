@@ -1,0 +1,31 @@
+type: object
+properties:
+  attribute:
+    description: Attribute value.
+    type: string
+    example: 'How to use Ai search'
+    readOnly: true
+  additionalAttribute:
+    description: Additional attribute value.
+    type: number
+    example: 123
+    readOnly: true
+  count:
+    description: Number of data per attribute.
+    type: integer
+    example: 3
+    readOnly: true
+  uniqueCount:
+    description: Number of unique data per attribute.
+    type: integer
+    example: 3
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [projectAnalyticsAggregatedValue]
+    readOnly: true
+required:
+  - attribute
+  - count
+  - uniqueCount

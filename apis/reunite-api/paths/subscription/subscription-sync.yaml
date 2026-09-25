@@ -1,0 +1,53 @@
+post:
+  tags:
+    - Subscription
+  operationId: syncSubscription
+  summary: Sync subscription data
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  description: Support-only endpoint that recomputes and reports subscription usage (seats and projects) for the organization.
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  security:
+    - Support: []
+  responses:
+    '200':
+      description: Sync completed successfully.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              object:
+                type: string
+                enum: [list]
+              page:
+                $ref: ../../components/schemas/Page.yaml
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    seatsQuantity:
+                      type: integer
+                      description: Number of seats in use.
+                    projectsQuantity:
+                      type: integer
+                      description: Number of projects in use.
+                  required:
+                    - projectsQuantity
+                    - seatsQuantity
+            required:
+              - object
+              - page
+              - data
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

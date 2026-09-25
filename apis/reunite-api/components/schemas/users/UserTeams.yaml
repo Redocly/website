@@ -1,0 +1,12 @@
+description: |
+  Map of organization ID (key) to an array of team names the user belongs to in
+  that organization (value). Property names are organization IDs and values are
+  arrays of team names.
+type: object
+additionalProperties:
+  type: array
+  description: Team names the user belongs to in the organization.
+  items:
+    type: string
+example:
+  org_01hh1t9sa6gwfv5naz04gr7ehm: [Developers, Support, authenticated]

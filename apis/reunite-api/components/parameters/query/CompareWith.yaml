@@ -1,0 +1,7 @@
+name: compareWith
+description: Branch to compare with.
+required: false
+in: query
+schema:
+  type: string
+example: test-branch

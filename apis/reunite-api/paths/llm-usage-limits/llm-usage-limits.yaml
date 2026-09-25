@@ -1,0 +1,63 @@
+get:
+  tags:
+    - LLM usage limits
+  security:
+    - InternalAuth: []
+  summary: List all LLM usage limits
+  description: |-
+    Lists usage limits for the organization, each annotated with the amount
+    consumed in its active cycle.
+
+    Dimension scoping:
+
+    - Without `projectId` and without a `feature` filter clause, the
+      response includes every enabled limit for the organization.
+    - When either dimension is supplied, both dimensions are scoped: a
+      supplied dimension matches limits where the column is `NULL` or
+      equals the value; an omitted dimension matches limits where the
+      column is `NULL`.
+
+    The `filter` query parameter accepts `feature` and `operationId`
+    clauses:
+
+    - `feature` narrows the result to limits applicable to that feature.
+    - `operationId` annotates each CREDITS limit with
+      `currentOperationCounted` and adds `currentOperationSpendUsd` to the
+      response. It does not change which limits the response includes.
+
+    Clauses can be combined, e.g. `filter=feature:SCAFFOLD operationId:aij_…`.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  operationId: listLlmUsageLimits
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - name: projectId
+      in: query
+      required: false
+      description: Narrow to rows applicable to this project (NULL or equal).
+      schema:
+        type: string
+      example: prj_01kr1ege4dgvp1jyh8f63gvgma
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Before.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/llm-usage-limits/LlmUsageLimitList.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

@@ -1,0 +1,71 @@
+type: object
+title: Subscription
+properties:
+  id:
+    description: Subscription ID. Unique identifier prefixed with `sub_`.
+    type: string
+    pattern: ^sub_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: sub_01hh1t9sa6gwfv5naz04gr7ehm
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [subscription]
+    readOnly: true
+  uri:
+    description: URI of the subscription resource.
+    type: string
+    format: uri
+    readOnly: true
+  status:
+    description: Subscription status (for example `active`, `trial-ended`, `canceled`, `unknown`).
+    type: string
+    example: active
+    readOnly: true
+  isTrial:
+    description: Whether the subscription is currently in a trial period.
+    type: boolean
+    readOnly: true
+  isTrialOnly:
+    description: Whether the organization has only ever had a trial subscription (never converted to paid).
+    type: boolean
+    readOnly: true
+  trialEndTime:
+    description: When the trial ends (or ended).
+    type: string
+    format: date-time
+    readOnly: true
+  subscriptionItems:
+    description: Items with product information for the subscription.
+    type: array
+    readOnly: true
+    items:
+      type: object
+      properties:
+        productId:
+          description: Product ID.
+          type: string
+          example: respect-monitoring
+        quantity:
+          description: Purchased quantity for the product (for example seats or projects bought).
+          type: integer
+        quantityFilled:
+          description: Used quantity for the product (for example seats used or pages rendered).
+          type: integer
+        usageStatus:
+          description: Usage status of the product.
+          type: object
+          properties:
+            isHardLimitReached:
+              description: Whether the hard limit is reached for the product.
+              type: boolean
+            isTrialLimitReached:
+              description: Whether the trial limit is reached for the product.
+              type: boolean
+required:
+  - id
+  - object
+  - uri
+  - status
+  - isTrial
+  - subscriptionItems
