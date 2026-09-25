@@ -1,9 +1,22 @@
+plugins:
+  - './plugins/tags.cjs'
+
 seo:
   title: Redocly
   description: OpenAPI-generated documentation tool with 24k+ stars on Github - make APIs your company's superpower.
   siteUrl: https://redocly.com
   image: ./images/redocly-card.png
   lang: en-US
+
+apis:
+  main:
+    root: ./apis/reunite-api/openapi.yaml
+    output: ./docs/realm/customization/reunite-api/openapi.yaml
+    decorators:
+      filter-out:
+        property: x-internal
+        value: true
+      tags/no-unused-tags: on
 
 apiFunctions:
   folders:
