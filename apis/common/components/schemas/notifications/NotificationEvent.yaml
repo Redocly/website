@@ -1,0 +1,33 @@
+title: NotificationEvent
+description: Event a notification can be sent about.
+type: string
+enum:
+  - pullRequest.created
+  - pullRequest.merged
+  - pullRequest.closed
+  - pullRequest.readyForReview
+  - pullRequest.commitPushed
+  - pullRequest.approved
+  - pullRequest.requestedChanges
+  - pullRequest.commented
+  - pullRequest.reviewRequested
+  - pullRequest.reviewed
+  - projectBuild.failed
+  - projectBuild.published
+  - remoteContent.autoMergeFailed
+  - feedback.created
+x-enumDescriptions:
+  pullRequest.created: Triggers notification when pull request is created.
+  pullRequest.merged: Triggers notification when pull request is merged.
+  pullRequest.closed: Triggers notification when pull request is closed.
+  pullRequest.readyForReview: Triggers notification when pull request is opened.
+  pullRequest.commitPushed: Triggers notification when pull request source is updated.
+  pullRequest.approved: Triggers notification when pull request is approved.
+  pullRequest.requestedChanges: Triggers notification when pull request reviewer request changes.
+  pullRequest.commented: Triggers notification when pull request is commented.
+  pullRequest.reviewRequested: Triggers notification when a user is requested as a reviewer.
+  pullRequest.reviewed: Triggers notification when a pull request is reviewed (approved, commented, or changes requested).
+  projectBuild.failed: Triggers notification when project build failed.
+  projectBuild.published: Triggers notification when project is deployed.
+  remoteContent.autoMergeFailed: Triggers notification when auto merge failed.
+  feedback.created: Triggers notification when feedback is submitted.

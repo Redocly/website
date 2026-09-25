@@ -1,0 +1,7 @@
+name: templatePath
+description: Pull request template path.
+required: true
+in: path
+schema:
+  type: string
+example: '.github/pull_request_template.md'

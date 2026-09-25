@@ -1,0 +1,7 @@
+type: object
+title: PatchOrganizationForSupportRequest
+properties:
+  skipOAuthConsent:
+    description: Whether this organization is trusted to skip the OAuth consent screen for all its OAuth2 clients.
+    type: boolean
+    example: true

@@ -1,0 +1,15 @@
+type: object
+contentEncoding: gzip
+minProperties: 1
+properties:
+  scorecard:
+    description: Build scorecard data.
+    type: string
+  buildId:
+    description: Build ID. Unique identifier prefixed with `pb_`.
+    type: string
+    pattern: ^pb_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: pb_01hq3hgers0gp1vd1w498dhdc4
+required: 
+  - scorecard
+  - buildId

@@ -1,0 +1,31 @@
+get:
+  tags:
+    - Identity Domains
+  security:
+    - Support: []
+  summary: List all identity domains
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: listIdentityDomains
+  parameters:
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Before.yaml
+    - $ref: ../../common/components/parameters/query/Sort.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+    - $ref: ../../common/components/parameters/query/Search.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/identity-domains/SupportIdentityDomainList.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

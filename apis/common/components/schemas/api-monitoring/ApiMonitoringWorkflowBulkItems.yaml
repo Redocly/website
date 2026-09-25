@@ -1,0 +1,36 @@
+type: object
+properties:
+  filePath:
+    description: File path to Arazzo specification.
+    type: string
+    example: arazzo/my-api.yaml
+  workflows:
+    type: array
+    maxItems: 100
+    items:
+      type: object
+      properties:
+        workflowId:
+          description: Workflow ID in Arazzo specification.
+          type: string
+          example: myWorkflow
+        name:
+          description: Name of the workflow.
+          type: string
+          example: My workflow
+        description:
+          description: Description of the workflow.
+          type: string
+          example: This is my awesome workflow
+      required:
+        - workflowId
+        - name
+  buildId:
+    description: Build ID. Unique identifier prefixed with `pb_`.
+    type: string
+    pattern: ^pb_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: pb_01hq3hgers0gp1vd1w498dhdc4
+required:
+  - filePath
+  - workflows
+

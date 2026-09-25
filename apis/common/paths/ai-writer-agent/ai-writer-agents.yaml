@@ -1,0 +1,33 @@
+get:
+  tags:
+    - AI Writer Agent
+  summary: List all writer agent configurations
+  description: >-
+    Lists every writer agent configuration globally, across all
+    organizations and projects. Used by the Temporal scheduler worker to fan out
+    scheduled writer agent jobs.
+  operationId: listAllWriterAgentConfigs
+  x-internal: true
+  x-catalogRelations: []
+  security:
+    - InternalAuth: []
+  parameters:
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Before.yaml
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+    - $ref: ../../common/components/parameters/query/Sort.yaml
+    - $ref: ../../common/components/parameters/query/Search.yaml
+  responses:
+    '200':
+      description: Configurations fetched successfully.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/ai-writer-agent/SupportWriterAgentList.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

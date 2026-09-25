@@ -1,0 +1,12 @@
+type: object
+description: Bulk submission of AI gateway request log entries.
+required:
+  - records
+properties:
+  records:
+    type: array
+    minItems: 1
+    maxItems: 100
+    items:
+      $ref: AiGatewayRequestLog.yaml
+    description: Records to persist. Submissions are idempotent on `requestId`.

@@ -1,0 +1,11 @@
+type: object
+properties:
+  object:
+    type: string
+    enum: [productAnalyticsTrackedProject]
+  id:
+    type: string
+    description: Project ID.
+required:
+  - id
+  - object

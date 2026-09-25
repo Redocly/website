@@ -1,0 +1,67 @@
+parameters:
+  - $ref: ../../components/parameters/path/OrgId.yaml
+  - $ref: ../../components/parameters/path/ProjectId.yaml
+get:
+  security:
+    - InternalAuth: []
+  description: List GIT remote updates.
+  summary: List all GIT remote updates
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  operationId: listGitRemoteUpdates
+  parameters:
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Before.yaml
+    - $ref: ../../common/components/parameters/query/Sort.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+    - $ref: ../../common/components/parameters/query/Search.yaml 
+  tags:
+    - Remotes
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/remotes/GitRemoteUpdateList.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+post:
+  security:
+    - UserCookie: []
+  description: Create GIT remote update.
+  summary: Create GIT remote update
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  operationId: createGitRemoteUpdate
+  tags:
+    - Remotes
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/remotes/GitRemoteUpdate.yaml
+  responses:
+    '201':
+      description: Created.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/remotes/GitRemoteUpdate.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

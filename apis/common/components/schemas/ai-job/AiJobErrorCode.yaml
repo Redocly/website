@@ -1,0 +1,11 @@
+# Keep the enum in sync with AI_JOB_ERROR_CODES in packages/shared/src/ai/constants/jobs.ts.
+type: string
+description: Machine-readable classification of an AI job failure.
+enum:
+  - usageLimitExceeded
+  - maxExecutionDurationReached
+  - buildFailed
+  - modelError
+  - invalidInput
+  - internalError
+example: modelError

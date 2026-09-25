@@ -1,0 +1,20 @@
+description: >-
+  AI writer agent configuration used for support operations, which span organizations and
+  projects.
+allOf:
+  - $ref: ./WriterAgent.yaml
+  - type: object
+    properties:
+      organizationId:
+        type: string
+        readOnly: true
+        description: ID of the organization this configuration belongs to.
+        example: org_01HVKD9WYZ2N9F7XWZB1N2Z9W8
+      projectId:
+        type: string
+        readOnly: true
+        description: ID of the project this configuration belongs to.
+        example: prj_01HVKD9WYZ2N9F7XWZB1N2Z9W8
+    required:
+      - organizationId
+      - projectId

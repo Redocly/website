@@ -1,0 +1,100 @@
+get:
+  tags:
+    - Project sources
+  security:
+    - InternalAuth: []
+    - UserCookie: []
+    - ApiKey: []
+  summary: Get project source
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  operationId: getProjectSource
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/project-sources/ProjectSource.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+put:
+  tags:
+    - Project sources
+  security:
+    - UserCookie: []
+  summary: Update project source
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  operationId: changeProjectSource
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/project-sources/ChangeProjectSource.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/project-sources/ProjectSource.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+
+patch:
+  tags:
+    - Project sources
+  security:
+    - UserCookie: []
+  summary: Update project source
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  operationId: updateProjectSource
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/project-sources/UpdateProjectSource.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/project-sources/ProjectSource.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

@@ -1,0 +1,77 @@
+get:
+  tags:
+    - Blocked emails
+  security:
+    - Support: []
+  summary: List all blocked emails
+  description: Lists email addresses and `*@domain` patterns that are blocked from registration.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: listBlockedEmails
+  parameters:
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Before.yaml
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+    - $ref: ../../common/components/parameters/query/Sort.yaml
+    - $ref: ../../common/components/parameters/query/Search.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/blocked-emails/BlockedEmailList.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+
+post:
+  tags:
+    - Blocked emails
+  security:
+    - Support: []
+  summary: Add a blocked email
+  description: |-
+    Adds a full email address, or a `*@domain` pattern that blocks the domain
+    and every subdomain of it, to the registration blocklist.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: createBlockedEmail
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/blocked-emails/CreateBlockedEmail.yaml
+  responses:
+    '201':
+      description: Created.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              item:
+                $ref: ../../components/schemas/blocked-emails/BlockedEmail.yaml
+            required:
+              - item
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '409':
+      $ref: ../../common/responses/ConflictError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

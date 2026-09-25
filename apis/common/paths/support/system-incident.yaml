@@ -1,0 +1,76 @@
+patch:
+  tags:
+    - Support
+  security:
+    - Support: []
+  summary: Partially update a system incident
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: updateSystemIncident
+  parameters:
+    - in: path
+      name: systemIncidentId
+      required: true
+      example: si_01HXYZABCDEF1234567890
+      schema:
+        type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/support/UpdateSystemIncident.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              item:
+                $ref: ../../components/schemas/support/SystemIncident.yaml
+            required:
+              - item
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+
+delete:
+  tags:
+    - Support
+  security:
+    - Support: []
+  summary: Delete a system incident
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: deleteSystemIncident
+  parameters:
+    - in: path
+      name: systemIncidentId
+      required: true
+      example: si_01HXYZABCDEF1234567890
+      schema:
+        type: string
+  responses:
+    '204':
+      description: No Content.
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

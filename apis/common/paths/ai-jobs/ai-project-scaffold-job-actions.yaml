@@ -1,0 +1,47 @@
+post:
+  tags:
+    - AI jobs
+  security:
+    - UserCookie: []
+  summary: Create an AI project scaffold job action
+  description: |-
+    Creates a user-initiated action targeting the latest scaffold AI job for a
+    project. Returns the affected AI job.
+
+    Supported actions:
+    - `RETRY`: re-run the latest failed or canceled scaffold using its previous options.
+    - `DISMISS`: dismiss the latest failed or canceled scaffold job.
+    - `RESET_TO_STARTER`: dismiss the latest failed or canceled scaffold job and reset
+      the project source back to the starter template.
+    - `CANCEL`: stop the latest queued or running scaffold job.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: createAiProjectScaffoldJobAction
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/ai-job/AiJobScaffoldAction.yaml
+  responses:
+    '200':
+      description: OK. Returns the AI job affected by the action.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/ai-job/AiJob.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

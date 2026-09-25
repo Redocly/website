@@ -1,0 +1,7 @@
+name: downloadId
+description: Generated download link record ID.
+in: query
+required: true
+schema:
+  type: string
+example: 01H2CF5ZXFKAQKFQKWP6RRSCGB

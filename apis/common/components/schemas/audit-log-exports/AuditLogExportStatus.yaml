@@ -1,0 +1,6 @@
+type: string
+description: Current status of the export job.
+enum:
+  - IN_PROGRESS
+  - COMPLETED
+  - FAILED

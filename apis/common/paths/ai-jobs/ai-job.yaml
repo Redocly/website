@@ -1,0 +1,89 @@
+get:
+  tags:
+    - AI jobs
+  security:
+    - InternalAuth: []
+    - UserCookie: []
+  summary: Retrieve an AI job
+  description: |-
+    Returns the status of a specific AI job.
+    Task-level progress is available from the `listAiJobTasks` operation
+    (`GET /orgs/{orgId}/projects/{projectId}/ai-job-tasks?filter=aiJobId:{jobId}`).
+    Authentication:
+    - InternalAuth: service-to-service access (ai-worker and internal systems).
+    - UserCookie: authenticated user access for UI polling.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  operationId: getAiJob
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../components/parameters/path/AiJobId.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/ai-job/AiJob.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+
+patch:
+  tags:
+    - AI jobs
+  security:
+    - InternalAuth: []
+    - UserCookie: []
+  summary: Partially update an AI job
+  description: |-
+    Partially updates execution state fields (for example `status`, `error`)
+    of an AI job.
+    
+    Authentication:
+    - InternalAuth: service-to-service access (ai-worker and internal systems)
+      to report job progress back to the main API. Internal callers may update any writable field.
+    - UserCookie: authenticated user access to cancel a running job. Session users
+      may only set `status` to `CANCELLING`; any other update is rejected.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: patchAiJob
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../components/parameters/path/AiJobId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/ai-job/AiJobUpdate.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/ai-job/AiJob.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '409':
+      $ref: ../../common/responses/ConflictError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

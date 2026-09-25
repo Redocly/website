@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Project custom domains
+  security:
+    - UserCookie: []
+  summary: Create project custom domain verification
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: borsch
+  operationId: createProjectCustomDomainVerification
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../components/parameters/path/CustomDomainId.yaml
+  responses:
+    '204':
+      description: Project custom domain verification passed.
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

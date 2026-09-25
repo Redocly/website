@@ -1,0 +1,4 @@
+type: string
+description: Project role.
+enum: [NONE, READ, TRIAGE, WRITE, MAINTAIN, ADMIN]
+example: NONE

@@ -1,0 +1,24 @@
+get:
+  tags:
+    - User invites
+  security: []
+  summary: Retrieve a public user invite
+  description: Returns public details for a user invite by its code, without exposing the invited email address. Does not require authentication.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: getPublicUserInvite
+  parameters:
+    - $ref: ../../components/parameters/path/InviteCode.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/user-invites/PublicUserInvite.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

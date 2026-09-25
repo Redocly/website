@@ -1,0 +1,9 @@
+name: membershipId
+description: Membership ID.
+required: true
+in: path
+schema:
+  type: string
+  pattern: ^mbr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  description: Unique identifier prefixed with `mbr_`.
+example: mbr_01h1s5z6vf2mm1mz3hevnn9va7

@@ -1,0 +1,23 @@
+delete:
+  tags:
+    - Queues
+  security: []
+  summary: Delete messages from a dead-letter queue
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: purgeQueue
+  parameters:
+    - $ref: ../../components/parameters/path/QueueName.yaml
+  responses:
+    '204':
+      description: Dead-letter queue purged.
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

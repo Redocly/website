@@ -1,0 +1,19 @@
+allOf:
+  - $ref: ./AiJobBase.yaml
+  - type: object
+    required:
+      - type
+      - options
+    properties:
+      type:
+        type: string
+        enum:
+          - PROJECT_SCAFFOLD
+        readOnly: true
+        description: Type of the AI job.
+      options:
+        readOnly: true
+        description: Scaffold job options.
+        oneOf:
+          - $ref: ./AiProjectScaffoldJobOptions.yaml
+          - type: 'null'

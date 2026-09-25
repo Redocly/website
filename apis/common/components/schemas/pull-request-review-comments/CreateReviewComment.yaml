@@ -1,0 +1,59 @@
+type: object
+properties:
+  pullRequestId:
+    description: Pull request ID. Unique identifier prefixed with `pr_`.
+    type: string
+    pattern: ^pr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: pr_01h1s5z6vf2mm1mz3hevnn9va7
+  reviewId:
+    description: Review ID. Unique identifier prefixed with `rev_`.
+    type: string
+    pattern: ^rev_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: rev_01h1s5z6vf2mm1mz3hevnn9va7
+  reviewStatus:
+    description: Status for a new review.
+    type: string
+    enum: [APPROVED, REQUESTED_CHANGES, COMMENTED, DRAFT]
+  replyToId:
+    description: Review comment ID of the parent comment. Unique identifier prefixed with `com_`.
+    type: string
+    pattern: ^com_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: com_01h1s5z6vf2mm1mz3hevnn9va7
+  comment:
+    description: Comment text.
+    type: string
+  line:
+    description: Line number with identifier.
+    type: string
+  linesCount:
+    description: Number of lines related to the comment.
+    type: integer
+  filePath:
+    description: File path.
+    type: string
+  oldPath:
+    description: Old file path in case of renamed file.
+    type: string
+  commitHash:
+    description: Commit hash.
+    type: string
+  lastMainCommitHash:
+    description: Acts as a fallback for merge-base with target branch if API fails to resolve it.
+    type: string
+  branchName:
+    description: Branch name.
+    type: string
+    writeOnly: true
+  type:
+    description: Type of comment.
+    type: string
+    enum: [FILE, VISUAL]
+    default: FILE
+  isResolved:
+    description: Comment resolved status.
+    type: boolean
+  userId:
+    $ref: ../ActorUserId.yaml
+required:
+  - pullRequestId
+  - comment

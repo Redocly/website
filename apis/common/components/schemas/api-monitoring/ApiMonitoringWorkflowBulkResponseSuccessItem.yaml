@@ -1,0 +1,25 @@
+type: object
+properties:
+  status: 
+    description: Status of single operation.
+    type: string
+    const: 'ok'
+    example: 'ok'
+    readOnly: true
+  action:
+    description: Performed action of single operation.
+    example: create
+    type: string
+    enum:
+      - create
+      - update
+      - delete
+      - archive
+    readOnly: true
+  resource:
+    $ref: ./ApiMonitoringWorkflow.yaml
+required:
+  - status
+  - action
+  - resource
+    

@@ -1,0 +1,111 @@
+type: object
+properties:
+  id:
+    description: History event ID. Unique identifier prefixed with `tle_`.
+    type: string
+    pattern: ^tle_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: tle_01h1s5z6vf2mm1mz3hevnn9va7
+    readOnly: true
+  createdById:
+    description: User  actor. Unique identifier prefixed with `usr_`.
+    type: string
+    pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+    readOnly: true
+  pullRequestId:
+    description: Pull request ID. Unique identifier prefixed with `pr_`.
+    type: string
+    pattern: ^pr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: pr_01h1s5z6vf2mm1mz3hevnn9va7
+    readOnly: true
+  reviewId:
+    description: Review ID. Unique identifier prefixed with `rev_`.
+    type: string
+    pattern: ^rev_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: rev_01h1s5z6vf2mm1mz3hevnn9va7
+    readOnly: true
+  targetBranchName:
+    description: Target branch name for merging.
+    type: string
+  commitHash:
+    description: Commit hash.
+    type: string
+    example: '6ec6eb39d972b73a5827792e9e292060c826a267'
+    maxLength: 512
+  reviewStatus:
+    description: Changed status of review.
+    type: string
+    enum: [APPROVED, REQUESTED_CHANGES, COMMENTED, DRAFT]
+  text:
+    description: Timeline event text.
+    type: string
+  action:
+    description: Action of pull request.
+    type: string
+    enum:
+      [
+        OPENED,
+        MERGED,
+        CLOSED,
+        REOPENED,
+        DRAFT,
+        REQUESTED_REVIEW,
+        READY_FOR_REVIEW,
+        COMMITTED,
+        COMMENTED,
+        REQUESTED_CHANGES,
+        APPROVED,
+        STARTED_REVIEW,
+        CHANGED_TARGET_BRANCH,
+        FORCE_PUSHED,
+        BRANCH_RESTORED,
+        BRANCH_DELETED
+      ]
+  requestedReviewersIds:
+    description: List of requested reviewers IDs. Unique identifier prefixed with `usr_`.
+    type: array
+    items:
+      type: string
+      pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  removedReviewersIds:
+    description: List of removed reviewers IDs. Unique identifier prefixed with `usr_`.
+    type: array
+    items:
+      type: string
+      pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  createdAt:
+    description: Created date.
+    type: string
+    readOnly: true
+    format: date-time
+  updatedAt:
+    description: Updated date.
+    type: string
+    readOnly: true
+    format: date-time
+  object:
+    description: Entity name.
+    type: string
+    enum: [ pullRequestTimelineEvent ]
+    readOnly: true
+  uri:
+    description: URI reference to this timeline event.
+    type: string
+    format: uri
+    readOnly: true
+    example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/projects/prj_01hh1t9sa6gwfv5naz04gr7ehm/pull-request-timeline-events/tle_01h1s5z6vf2mm1mz3hevnn9va7
+  metadata:
+    description: Metadata of the timeline event.
+    type: object
+    oneOf:
+      - $ref: ./ForcePushedTimelineMetadata.yaml
+      - $ref: ./TargetBranchChangedTimelineMetadata.yaml
+required:
+  - id
+  - uri
+  - pullRequestId
+  - action
+  - createdAt
+  - updatedAt
+  - createdById
+  - object

@@ -1,0 +1,55 @@
+get:
+  summary: Wake up syncer
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: blips-and-chitz
+  tags:
+    - Syncer
+  security:
+    - InternalAuth: []
+    - UserCookie: []
+  operationId: syncerWakeUp
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - in: query
+      name: redirectTo
+      schema:
+        type: string
+      required: false
+      description: Users have been redirected to this URL.
+      example: https://example.com/health
+  responses:
+    '200':
+      description: Syncer is waking up.
+      content: 
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                enum:
+                  - success
+                example: success
+              message:
+                type: string
+                example: Syncer is waking up.
+    '302':
+      description: Redirect to loading screen.
+      headers:
+        Location:
+          description: Users are directed to a prolonged loading screen on the health page in case redirectTo is provided.
+          schema:
+            type: string
+          example: https://project.com/health/
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

@@ -1,0 +1,36 @@
+get:
+  summary: Wake up WYSIWYG
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: blips-and-chitz
+  tags:
+    - WYSIWYG
+  operationId: wysiwygWakeUps
+  parameters:
+    - $ref: ../../components/parameters/header/Cookie.yaml
+    - in: query
+      name: search
+      schema:
+        type: string
+      required: true
+      example: wys_01h1s5z6vf2mm1mz3hevnn9va7
+      description: Project WYSIWYG job Id to wake up.
+  security:
+    - InternalAuth: []
+    - UserCookie: []
+  responses:
+    '200':
+      description: Job is starting.
+    '409':
+      $ref: ../../common/responses/ConflictError.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

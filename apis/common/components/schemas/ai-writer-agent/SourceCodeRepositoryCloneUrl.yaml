@@ -1,0 +1,8 @@
+type: object
+required:
+  - cloneUrl
+properties:
+  cloneUrl:
+    type: string
+    description: Authenticated clone URL for the source code repository.
+    example: https://oauth2:token@github.com/redocly/redocly.git

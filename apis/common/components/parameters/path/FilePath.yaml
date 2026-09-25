@@ -1,0 +1,7 @@
+name: filePath
+description: File path.
+required: true
+in: path
+schema:
+  type: string
+example: file.txt

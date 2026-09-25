@@ -1,0 +1,56 @@
+type: object
+description: Details the git provider reports for a check on a commit.
+required:
+  - commitSha
+  - context
+  - state
+  - annotations
+properties:
+  commitSha:
+    type: string
+    description: Commit the check ran against.
+    example: ceca734d8b919e80298012e5b967af8d40dc1d20
+  context:
+    type: string
+    description: Check run name or commit status context.
+    example: markdownlint
+  state:
+    $ref: ./CommitCheckState.yaml
+  targetUrl:
+    type: string
+    format: url
+    description: Link to the check details on the provider.
+  summary:
+    type: string
+    description: Summary text reported by the check.
+    example: 2 problems found
+  annotations:
+    type: array
+    description: Problems the check reported against files of the commit.
+    items:
+      type: object
+      required:
+        - path
+        - startLine
+        - level
+        - message
+      properties:
+        path:
+          type: string
+          description: Repository-relative path the annotation points at.
+          example: docs/getting-started.md
+        startLine:
+          type: integer
+          minimum: 1
+        endLine:
+          type: integer
+          minimum: 1
+        level:
+          type: string
+          enum:
+            - notice
+            - warning
+            - failure
+        message:
+          type: string
+          example: MD013 Line length

@@ -1,0 +1,66 @@
+patch:
+  tags:
+    - User invites
+  security:
+    - UserCookie: []
+  summary: Partially update a user invite
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: updateUserInvite
+  parameters:
+    - $ref: ../../components/parameters/path/InviteCode.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/user-invites/UserInvite.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/user-invites/UserInvite.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+get:
+  tags:
+    - User invites
+  security:
+    - UserCookie: []
+  summary: Retrieve a user invite
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: getUserInvite
+  parameters:
+    - $ref: ../../components/parameters/path/InviteCode.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/user-invites/UserInvite.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

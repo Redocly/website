@@ -1,0 +1,15 @@
+name: provider
+in: path
+required: true
+description: Git provider.
+schema:
+  type: string
+  enum:
+    - github_cloud
+    - github_server
+    - gitlab_cloud
+    - gitlab_self_managed
+    - bitbucket_cloud
+    - bitbucket_datacenter
+    - azure
+example: github_cloud

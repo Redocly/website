@@ -1,0 +1,12 @@
+type: object
+properties:
+  object:
+    type: string
+    enum: [productAnalyticsFeatureName]
+  name:
+    type: string
+    description: Feature name.
+    readOnly: true
+required:
+  - object
+  - name

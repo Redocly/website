@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Session
+  security: []
+  summary: Delete an active user session
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: revoke
+  parameters:
+    - $ref: ../../components/parameters/query/ReturnUrl.yaml
+  responses:
+    '200':
+      description: ok.
+    '302':
+      description: Redirects to login page.
+      headers:
+        Location:
+          description: Login page url.
+          schema:
+            type: string
+          example: https://auth.example.com/login?challenge=...
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

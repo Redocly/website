@@ -1,0 +1,13 @@
+type: object
+required:
+  - name
+  - reason
+properties:
+  name:
+    type: string
+    description: Name of the suggested feature.
+  reason:
+    type: string
+    description: >-
+      Short explanation of why this feature is relevant
+      to the project description.

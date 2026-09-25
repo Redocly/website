@@ -1,0 +1,30 @@
+type: object
+description: Git provider configuration.
+properties:
+  id:
+    type: string
+  type:
+    $ref: ./GitProviderType.yaml
+  name:
+    type: string
+    example: Redocly GiLab
+  publicConfig:
+    type: object
+    properties:
+      url:
+        type: string
+        example: https://gitlab.redocly.dev
+      clientId:
+        type: string
+        example: 05489443ec38b38f2327cdde9d5f51f284ae1d726130b300ecda0a259010c759
+      appName:
+        type: string
+        example: redocly
+  isCustom:
+    type: boolean
+    description: Indicates whether this provider is a custom provider added to the organization.
+required:
+  - id
+  - type
+  - name
+  - isCustom

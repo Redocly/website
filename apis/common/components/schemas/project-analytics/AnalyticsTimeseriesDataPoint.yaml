@@ -1,0 +1,31 @@
+type: object
+properties:
+  time:
+    description: Timestamp with Time Zone.
+    type: string
+    example: '2022-10-30T00:00:00.000Z'
+    readOnly: true
+  count:
+    description: Number of data per time.
+    type: integer
+    example: 3
+    readOnly: true
+  uniqueCount:
+    description: Number of unique data per time.
+    type: integer
+    example: 3
+    readOnly: true
+  timeGrouping:
+    description: Type of date.
+    type: string
+    enum: [day,week,month]
+    readOnly: true 
+  object:
+    description: Entity name.
+    type: string
+    enum: [projectAnalyticsTimeseriesDataPoint]
+    readOnly: true
+required:
+  - time
+  - count
+  - timeGrouping

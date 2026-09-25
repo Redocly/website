@@ -1,0 +1,24 @@
+type: object
+properties:
+  branchName:
+    description: Branch name.
+    example: main
+    type:
+      - string
+      - "null"
+  namespaceId:
+    description: Git repository namespace ID (organization for GitHub).
+    example: azure-test-org
+    type:
+      - string
+      - "null"
+  repositoryId:
+    description: Repository unique identifier.
+    example: test-repo
+    type:
+      - string
+      - "null"
+required:
+  - branchName
+  - namespaceId
+  - repositoryId

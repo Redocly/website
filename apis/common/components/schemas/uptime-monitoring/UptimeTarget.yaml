@@ -1,0 +1,67 @@
+type: object
+description: >
+  Prometheus `http_sd` target group for one monitored project URL.
+  See https://prometheus.io/docs/prometheus/latest/http_sd/.
+required:
+  - targets
+  - labels
+properties:
+  targets:
+    type: array
+    description: Absolute URLs Prometheus should probe for this project.
+    items:
+      type: string
+      format: uri
+      example: https://acme.portal.redocly.com
+  labels:
+    type: object
+    description: Labels attached to every metric scraped from these targets.
+    required:
+      - project_id
+      - org_id
+      - slug
+      - tier
+      - is_draft
+      - is_custom_domain
+      - env
+    properties:
+      project_id:
+        type: string
+        description: Identifier of the monitored project.
+        example: prj_01hkctbzd3118b0x366bphnhk7
+      org_id:
+        type: string
+        description: Identifier of the organization that owns the project.
+        example: org_01hkctbzd3118b0x366bphnhk7
+      slug:
+        type: string
+        description: Project slug.
+        example: acme
+      tier:
+        type: string
+        description: Subscription tier of the owning organization.
+        enum:
+          - paid
+          - trial
+        example: paid
+      is_draft:
+        type: string
+        description: Stringified boolean indicating whether the project is a draft.
+        enum:
+          - "true"
+          - "false"
+        example: "false"
+      is_custom_domain:
+        type: string
+        description: >
+          Stringified boolean indicating whether this target's URL is the
+          project's verified custom domain (`true`) or its default portal
+          URL (`false`).
+        enum:
+          - "true"
+          - "false"
+        example: "false"
+      env:
+        type: string
+        description: Deployment environment of the target. Currently always `prod`.
+        example: prod

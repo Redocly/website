@@ -1,0 +1,7 @@
+type: string
+description: |-
+  Product feature attribution for gateway calls. Free-form string at the
+  schema level so new features don't need a migration; consumers should
+  treat it as opaque. Well-known values today: `SCAFFOLD`, `AI_SEARCH`, `AI_REVIEW`,
+  `AUTONOMOUS_AGENT`, `MCP_SEARCH`.
+example: SCAFFOLD

@@ -1,0 +1,39 @@
+patch:
+  tags:
+    - Support
+  security:
+    - Support: []
+  summary: Partially update a Respect Monitoring workflows limit
+  description: |-
+    Sets the organization-specific Respect Monitoring workflows limit.
+    The limit is enforced for trial subscriptions only and is manageable by support users only.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: updateRespectMonitoringWorkflowsLimit
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/api-monitoring/PatchRespectMonitoringWorkflowsLimitRequest.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/organization/Organization.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

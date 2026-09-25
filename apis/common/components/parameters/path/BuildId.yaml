@@ -1,0 +1,9 @@
+name: buildId
+description: Build ID.
+required: true
+in: path
+schema:
+  type: string
+  pattern: ^pb_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  description: Unique identifier prefixed with `pb_`.
+example: pb_01h1s5z6vf2mm1mz3hevnn9va7

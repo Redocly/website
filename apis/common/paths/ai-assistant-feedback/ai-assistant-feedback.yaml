@@ -1,0 +1,33 @@
+post:
+  tags:
+    - AI Assistant
+  summary: Create AI assistant feedback
+  description: >-
+    Records a reader's rating of an AI assistant message. Ratings feed the
+    project's AI assistant analytics.
+  operationId: createAiAssistantFeedback
+  x-internal: true
+  x-catalogRelations: []
+  security: []
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/ai-assistant-feedback/AiAssistantFeedbackCreate.yaml
+  responses:
+    '201':
+      description: Feedback recorded.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/ai-assistant-feedback/AiAssistantFeedback.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

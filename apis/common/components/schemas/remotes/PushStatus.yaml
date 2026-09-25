@@ -1,0 +1,7 @@
+type: string
+description: Push status state.
+enum:
+  - NOT_STARTED
+  - NO_CHANGES
+  - CONTENT_OUTDATED
+  - PROCESSED
