@@ -11,7 +11,6 @@ post:
   security:
     - UserCookie: []
     - ApiKey: []
-    - OAuth2: ['project.remotes.update']
   description: |-
     Push discovered files as a remote content.
     Files should be sent as a multipart/form-data.
@@ -51,7 +50,6 @@ get:
   security:
     - UserCookie: []
     - ApiKey: []
-    - OAuth2: ['project.remotes.read']
   summary: List all pushes
   description: |-
     List all pushes.

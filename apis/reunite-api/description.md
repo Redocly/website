@@ -20,7 +20,7 @@ Organizations for which an endpoint is not enabled should contact support.
 
 ## Authentication
 
-The API supports **API keys** and **OAuth 2.0**.
+The API supports **API keys** and **session-based authentication**.
 Authentication requirements are defined per operation in the OpenAPI specification.
 
 **Session-based authentication** establishes a session and stores the session identifier in the client browser.
@@ -39,15 +39,6 @@ Keys must meet the following requirements:
 - Rotated on a regular basis
 - Revoked when no longer required
 - Limited to the minimum set of endpoints and environments necessary for the integration
-
-**OAuth 2.0** supports delegated access and managed client credentials:
-
-- Per-integration credentials
-- Token rotation
-- Separation between organizations and integrations
-
-Endpoints protected by OAuth return errors that conform to OAuth semantics.
-OAuth 2.0 clients are created as described in [Manage OAuth 2.0 clients](https://redocly.com/docs/realm/reunite/organization/oauth2-clients).
 
 Depending on the operation, endpoints may accept the following:
 
@@ -155,7 +146,6 @@ Frequently returned HTTP status codes:
 Additional behavior:
 
 - Certain endpoints may return `402` when access depends on subscription plan or billing state.
-- OAuth-related flows may return RFC-style response bodies such as `{"error":"invalid_client"}`.
 
 Troubleshooting:
 
@@ -172,7 +162,7 @@ Support requests should include:
 Rate limiting preserves service stability and equitable usage.
 
 Limits are defined in the OpenAPI specification via the `x-rateLimit` extension.
-These organization quotas apply to requests authenticated with an **API key** or **OAuth 2.0** access token that resolves to your organization.
+These organization quotas apply to requests authenticated with an **API key** that belongs to your organization.
 Example properties:
 
 - `events` - the number of events allowed within the window
@@ -180,7 +170,7 @@ Example properties:
 
 Enforcement:
 
-- For API keys and OAuth clients, limits apply **per organization**: all credentials for the same organization share a single counter for a given limit.
+- For API keys, limits apply **per organization**: all API keys for the same organization share a single counter for a given limit.
 - Unauthenticated traffic to public endpoints does **not** consume these organization counters; it is limited separately (for example by per-client protections at the edge).
   This avoids anonymous callers exhausting an organization's quota.
 - Browser **session** authentication is subject to separate rate-limit rules from the organization `x-rateLimit` quotas above.

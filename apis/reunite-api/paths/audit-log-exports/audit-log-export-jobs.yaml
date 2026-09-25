@@ -4,8 +4,6 @@ post:
   security:
     - ApiKey: []
     - UserCookie: []
-    - OAuth2:
-        - org.auditLogs.read
   operationId: createAuditLogExportJob
   summary: Start an audit log export job
   description: |-

@@ -2,7 +2,6 @@ get:
   security:
     - ApiKey: []
     - UserCookie: []
-    - OAuth2: ['project.remotes.read']
   tags:
     - Pushes
   operationId: getPush

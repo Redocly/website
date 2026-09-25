@@ -5,7 +5,6 @@ get:
     - InternalAuth: []
     - UserCookie: []
     - ApiKey: []
-    - OAuth2: ['project.feedback.read']
   summary: Retrieve a feedback item
   description: |-
     Retrieve a feedback item.
@@ -44,7 +43,6 @@ patch:
   security:
     - UserCookie: []
     - ApiKey: []
-    - OAuth2: ['project.feedback.update']
   summary: Partially update a feedback item
   description: |-
     Partially update a feedback item.
@@ -91,7 +89,6 @@ delete:
   security:
     - UserCookie: []
     - ApiKey: []
-    - OAuth2: ['project.feedback.delete']
   summary: Delete a feedback item
   description: |-
     Delete a feedback item.

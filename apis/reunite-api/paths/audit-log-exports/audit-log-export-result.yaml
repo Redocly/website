@@ -4,8 +4,6 @@ get:
   security:
     - ApiKey: []
     - UserCookie: []
-    - OAuth2:
-        - org.auditLogs.read
   operationId: getAuditLogExportResult
   summary: Retrieve an audit log export file
   description: |-

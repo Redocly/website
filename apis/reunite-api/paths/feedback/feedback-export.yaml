@@ -18,7 +18,6 @@ get:
   security:
     - UserCookie: []
     - ApiKey: []
-    - OAuth2: ['project.feedback.read']
   parameters:
     - $ref: ../../components/parameters/path/OrgId.yaml
     - $ref: ../../components/parameters/path/ProjectId.yaml

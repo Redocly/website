@@ -1,18 +1,14 @@
 openapi: 3.1.0
 servers:
-  - url: https://{host}/api
-    variables:
-      host:
-        default: app.cloud.redocly.com
-        description: Server host.
+  - url: https://app.cloud.redocly.com/api
     description: Production main server.
-  # - url: https://app.cloud.eu.redocly.com/api
-  #   description: Production EU server.
+  - url: https://app.cloud.eu.redocly.com/api
+    description: Production EU server.
 info:
   description:
-    $ref: description.md
+    $ref: ./description.md
   version: "1.0.1"
-  title: Redocly Main
+  title: Reunite
   termsOfService: https://redocly.com/subscription-agreement
   contact:
     name: API Support
@@ -962,8 +958,6 @@ components:
       $ref: ./common/security/UserCookie.yaml
     ApiKey:
       $ref: ./common/security/ApiKey.yaml
-    OAuth2:
-      $ref: ./common/security/OAuth2.yaml
     Rebilly:
       $ref: ./common/security/Rebilly.yaml
     Support:

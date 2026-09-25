@@ -72,9 +72,6 @@ properties:
   mcpGateway:
     description: Enable the guarded gateway fetch inside the MCP code-mode sandbox.
     type: boolean
-  cookieConsent:
-    description: Enable the Realm cookie consent option.
-    type: boolean
   mcpMode:
     description: Docs MCP server tool surface.
     type: string
