@@ -1,0 +1,9 @@
+type: object
+properties:
+  apiKey:
+    description: API key value.
+    type: string
+    example: sk_FkmCB7H80ZBHX1oHmCjK8at4isAJInOqE5bS_8NHMzOqbMu2psubGAOz-BvSYscTU_s
+    readOnly: true
+required:
+  - apiKey

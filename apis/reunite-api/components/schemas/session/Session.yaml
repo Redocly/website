@@ -1,0 +1,21 @@
+type: object
+properties:
+  user:
+    description: Currently logged in user.
+    $ref: ./SessionUser.yaml
+  organizations:
+    type: object
+    description: Organizations of the currently logged in user.
+    additionalProperties:
+      $ref: ../UserOrganization.yaml
+  frontChatHash:
+    type: string
+    description: Front Chat hash generated from user ID.
+  sessionId:
+    type: string
+    readOnly: true
+    description: Stable identifier of the current authentication session.
+    example: ses_d9f46321-5f05-4931-a5fa-d3199bbeba52
+required:
+  - user
+  - organizations

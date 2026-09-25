@@ -1,0 +1,13 @@
+type: object
+properties:
+  log:
+    description: Log string.
+    type: string
+    example: Installing dependencies
+  date:
+    description: Log date.
+    type: string
+    example: 2023-05-24 10:06:57.044 +0300
+required:
+  - log
+  - date

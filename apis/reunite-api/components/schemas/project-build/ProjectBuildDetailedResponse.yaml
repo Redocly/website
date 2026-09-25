@@ -1,0 +1,39 @@
+allOf:
+  - $ref: ./ProjectBuildResponse.yaml
+  - type: object
+    properties:
+      logs:
+        type: array
+        items:
+          type: object
+          required:
+            - log
+            - id
+            - date
+          properties:
+            id:
+              type: string
+              description: Unique identifier of the log.
+              example: '1'
+              readOnly: true
+            log:
+              type: string
+              description: Log text.
+              example: Installing dependencies
+              readOnly: true
+            date:
+              description: Log date.
+              type: string
+              readOnly: true
+            sortOrder:
+              description: Sort order of the log.
+              type: number
+              readOnly: true
+              example: 0
+
+  - type: object
+    required:
+      - deploymentStatus
+    properties:
+      deploymentStatus:
+        $ref: ./DeploymentStatus.yaml

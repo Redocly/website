@@ -1,0 +1,7 @@
+name: domain
+description: Identity domain.
+required: true
+in: path
+schema:
+  type: string
+example: acme.com

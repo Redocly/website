@@ -1,0 +1,9 @@
+name: notificationsEmailConfigId
+description: Respect Monitoring notifications email config ID.
+required: false
+in: path
+schema:
+  type: string
+  pattern: ^amneco_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  description: Unique identifier prefixed with `amnaco_`.
+example: amneco_01h1s5z6vf2mm1mz3hevnn9va7

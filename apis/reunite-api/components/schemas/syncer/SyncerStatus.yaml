@@ -1,0 +1,15 @@
+type: object
+readOnly: true
+description: Syncer status.
+properties:
+  state:
+    description: Syncer job state.
+    type: object
+    properties:
+      status:
+        description: Syncer job status.
+        type: string
+    required:
+      - status
+required:
+  - state

@@ -1,0 +1,72 @@
+allOf:
+  - $ref: ./GitWebhookBase.yaml
+  - type: object
+    properties:
+      type:
+        type: string
+        enum:
+          - DELETE_BRANCH
+          - CREATE_BRANCH
+          - CREATE_TAG
+        description: Type of the webhook event. Indicates the kind of operation performed.
+        example: DELETE_BRANCH
+      object:
+        description: Entity name
+        type: string
+        enum:
+          - gitWebhookBranch
+          - gitWebhookTag
+        readOnly: true
+      externalName:
+        type:
+          - string
+          - "null"
+        description: Name of the user who performed the operation.
+        example: "John Doe"
+      externalLogin:
+        type:
+          - string
+          - "null"
+        description: Provider login (username) of the user who triggered the event (if available).
+        example: smjane
+      externalEmail:
+        type:
+          - string
+          - "null"
+        description: Email of the user who performed the operation.
+        example: "john@example.com"
+      externalActorId:
+        type: string
+        description: External id of the user who triggered the event.
+        example: "123456789"
+      userId:
+        type: string
+        description: Unique identifier of the user in the system.
+        example: "usr_01hh1t9sa6gwfv5naz04gr7ehm"
+      repositoryDetails:
+        $ref: ../git/RepositoryDetails.yaml 
+      branch:
+        type: string
+        description: Branch name to which the commits were pushed.
+        example: "main"
+      host:
+        type: string
+        description: Git provider host.
+        example: github.com
+      receivedAt:
+        type: string
+        format: date-time
+        description: Timestamp when the webhook payload was received.
+        example: "2025-11-12T10:00:00Z"
+      commitSha:
+        type: string
+        description: SHA of the commit associated with the event.
+        example: "abc123def4567890abcdef1234567890abcdef12"
+    required:
+      - type
+      - object
+      - repositoryDetails
+      - branch
+      - host
+      - receivedAt
+      - commitSha

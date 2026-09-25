@@ -1,0 +1,16 @@
+type: object
+properties:
+  name:
+    type: string
+    example: pull_request_template.md
+    description: Template name.
+  path:
+    type: string
+    example: .github/pull_request_template.md
+    description: Template path.
+  default:
+    type: boolean
+    example: false
+required:
+  - name
+  - path

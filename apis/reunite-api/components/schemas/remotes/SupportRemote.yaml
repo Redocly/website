@@ -1,0 +1,40 @@
+type: object
+description: Git remote item used for support operations.
+properties:
+  id:
+    description: Remote ID.
+    type: string
+    pattern: ^rem_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: rem_01h1s5z6vf2mm1mz3hevnn9va7
+  providerType:
+    $ref: ../git/GitProviderType.yaml
+  organizationId:
+    description: Organization ID.
+    type: string
+    pattern: ^org_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: org_01hh1t9sa6gwfv5naz04gr7ehm
+  namespaceId:
+    description: Git repository namespace ID.
+    type:
+      - string
+      - 'null'
+  repositoryId:
+    description: Git repository ID.
+    type: string
+  credentialId:
+    description: Credential ID.
+    type: string
+    example: cred_01hc2rvwxf7jyj1er504khx8e7
+  createdAt:
+    description: Remote creation date and time.
+    type: string
+    format: date-time
+    example: '2023-06-07T00:00:00Z'
+required:
+  - id
+  - providerType
+  - organizationId
+  - namespaceId
+  - repositoryId
+  - credentialId
+  - createdAt

@@ -1,0 +1,42 @@
+get:
+  tags:
+    - Respect Monitoring
+  security:
+    - UserCookie: []
+  operationId: listWorkflowStats
+  summary: List all workflow statistics
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  description: Returns a paginated list of workflow statistics including uptime, last duration, and average duration.
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Before.yaml
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+    - $ref: ../../common/components/parameters/query/Sort.yaml
+      description: |-
+        This list can be sorted by the following properties:
+        - `id`
+        - `name`
+        - `status`
+        - `uptime`
+    - $ref: ../../common/components/parameters/query/Search.yaml
+  responses:
+    '200':
+      description: Successfully retrieved workflow statistics.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/api-monitoring/ApiMonitoringWorkflowStatsList.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

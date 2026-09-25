@@ -1,0 +1,9 @@
+type: object
+required:
+  - url
+properties:
+  url:
+    type: string
+    description: >-
+      Presigned S3 GET URL that downloads the artifact as an attachment.
+      Valid for 15 minutes.

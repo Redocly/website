@@ -1,0 +1,35 @@
+get:
+  tags:
+    - Users
+  security:
+    - UserCookie: []
+  operationId: listUserFeatureSurveys
+  summary: List all feature surveys
+  description:
+    Returns a paginated list of feature surveys for the signed-in user. Use `filter` to narrow
+    results (for example `filter=surveyType:RESPECT_MONITORING` or `filter=variant:SETUP`).
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  parameters:
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Before.yaml
+    - $ref: ../../common/components/parameters/query/Sort.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/feature-surveys/FeatureSurveyList.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

@@ -1,0 +1,10 @@
+type: string
+description: Remote content update status.
+enum: 
+  - PENDING
+  - PROCESSING
+  - SUCCESSFUL
+  - NO_CHANGES
+  - FAILED
+  - TIMED_OUT
+  - SKIPPED

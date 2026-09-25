@@ -1,0 +1,9 @@
+name: gitRemoteUpdateId
+description: GIT remote update ID.
+required: true
+in: path
+schema:
+  type: string
+  pattern: ^grupd_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  description: Unique identifier prefixed with `grupd_`.
+example: grupd_01h1s5z6vf2mm1mz3hevnn9va7

@@ -1,0 +1,41 @@
+get:
+  operationId: listAnalyticsAiSearchConversationData
+  summary: List all messages of an AI search conversation
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: hot-dogs
+  tags:
+    - Project analytics
+  security:
+    - UserCookie: []
+    - InternalAuth: []
+  description: |-
+    List of all messages of a single AI search conversation session, merged from
+    Realm UI query events and Reunite API completed/failed events, ordered by timestamp.
+    Select the session with the required `filter=conversationId:<id>` query parameter;
+    messages are always scoped to the project in the path.
+
+    The response is not paginated: this operation accepts no pagination parameters and
+    always returns the first 100 messages of the session, so no follow-up page can be
+    requested. A non-null `page.nextPage` only signals that the session holds more
+    messages than the returned window.
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../components/parameters/query/AiSearchConversationFilter.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/project-analytics/AnalyticsAiSearchConversationMessageList.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

@@ -1,0 +1,31 @@
+type: object
+properties:
+  content:
+    type: string
+    minLength: 1
+    maxLength: 400
+    pattern: '^[^\r\n]+$'
+  severity:
+    type: string
+    enum:
+      - info
+      - warning
+      - error
+  status:
+    type: string
+    enum:
+      - draft
+      - active
+      - resolved
+  dismissible:
+    type: boolean
+  startsAt:
+    oneOf:
+      - type: string
+        format: date-time
+      - type: 'null'
+  endsAt:
+    oneOf:
+      - type: string
+        format: date-time
+      - type: 'null'

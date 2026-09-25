@@ -1,0 +1,38 @@
+get:
+  tags:
+    - Announcements
+  security:
+    - UserCookie: []
+  summary: Get announcement media preview
+  description: Streams announcement media by storage key for authenticated users.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: getAnnouncementMediaPreview
+  parameters:
+    - in: query
+      name: key
+      required: true
+      example: announcements/01h1s5z6vf2mm1mz3hevnn9va7.gif
+      schema:
+        type: string
+      description: Storage key of the announcement media file.
+  responses:
+    '200':
+      description: Media stream.
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

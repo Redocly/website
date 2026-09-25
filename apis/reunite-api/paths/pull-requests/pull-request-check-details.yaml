@@ -1,0 +1,37 @@
+get:
+  tags:
+    - Pull requests
+  security:
+    - UserCookie: []
+    - InternalAuth: []
+  operationId: getPullRequestCheckDetails
+  summary: Retrieve a pull request's check details
+  description: Returns the checks of the pull request head commit with the summary and annotations the git provider reports for each of them. Separate from the checks list because the details cost extra provider requests per check. Supports the `state` filter field with one commit check state, for example `filter=state:FAILED`.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: blips-and-chitz
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../components/parameters/path/PullRequestId.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/git/CheckDetails.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

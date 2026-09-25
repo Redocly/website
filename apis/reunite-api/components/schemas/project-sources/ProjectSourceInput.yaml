@@ -1,0 +1,54 @@
+type: object
+title: ProjectSourceInput
+description: |
+  Git repository to connect as the project source. Omit it to get a Redocly-hosted repository instead.
+properties:
+  providerType:
+    $ref: ../git/GitProviderType.yaml
+  namespaceId:
+    description: |
+      Namespace `id` as returned by the List all namespaces operation (`listNamespaces`).
+      The namespace is the top-level entity of the Git provider: the owner for GitHub,
+      the namespace for GitLab, the workspace for Bitbucket Cloud, the project for
+      Bitbucket Data Center, and the organization for Azure DevOps.
+      Must not contain `..`. JSON `null` for GitLab with a project access token.
+    type:
+      - string
+      - 'null'
+    pattern: ^(?!.*\.\.).*$
+    example: acme-inc
+  repositoryId:
+    description: |
+      Repository `id` as returned by the List all repositories operation (`listRepositories`).
+      The format depends on the Git provider: a repository slug or a numeric ID.
+      Must not contain `..`.
+    type: string
+    pattern: ^(?!.*\.\.).*$
+    examples:
+      - acme-docs
+      - '18796637'
+  credentialId:
+    description: Credential ID. Unique identifier prefixed with `cred_`.
+    type: string
+    pattern: ^cred_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: cred_01hc2rvwxf7jyj1er504khx8e7
+  branchName:
+    description: Branch the project builds from. Must not contain `..`.
+    type: string
+    pattern: ^(?!.*\.\.).*$
+    example: main
+  contentPath:
+    description: |
+      Path to the project content inside the repository, at most 512 characters.
+      Must not contain `..` segments.
+    type: string
+    maxLength: 512
+    pattern: ^(?!.*\.\.).*$
+    default: /
+    example: /docs
+required:
+  - providerType
+  - namespaceId
+  - repositoryId
+  - credentialId
+  - branchName

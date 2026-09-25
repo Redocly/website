@@ -1,0 +1,201 @@
+type: object
+title: Feedback
+additionalProperties: false
+properties:
+  id:
+    description: Feedback ID. Unique identifier prefixed with `fb_`.
+    type: string
+    pattern: ^fb_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: fb_01h1s5z6vf2mm1mz3hevnn9va7
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [feedback]
+    readOnly: true
+  uri:
+    description: Canonical URI for the feedback resource.
+    type: string
+    format: uri
+    readOnly: true
+    example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/projects/prj_01hh1t9sa6gwfv5naz04gr7ehm/feedback/fb_01h1s5z6vf2mm1mz3hevnn9va7
+  email:
+    type:
+      - string
+      - 'null'
+    format: email
+    maxLength: 254
+    description: Email address of user who submitted the feedback or null.
+  path:
+    type: string
+    minLength: 1
+    maxLength: 1000
+    description: >-
+      Absolute URL of the page where feedback is submitted (for example from the browser location).
+      A value that is not a valid URL is accepted, but the feedback is marked as spam.
+    example: https://example.com/docs/guide
+  location:
+    type:
+      - string
+      - 'null'
+    maxLength: 5000
+    description: |-
+      Identifies the location of the component.
+      This could be a code sample.
+  lang:
+    type: string
+    maxLength: 20
+    description: |-
+      Identifies the language of the component's location.
+      This could be the language of a code sample, such as js, php, or txt.
+  feedbackComponent:
+    type: string
+    description: Name that identifies UI component.
+    enum:
+      - SENTIMENT
+      - RATING
+      - COMMENT
+      - MOOD
+      - PROBLEM
+      - SCALE
+  score:
+    description: Numeric value that maps to the feedback component, such as thumbs down (-1) or thumbs up (1), or a 1-5 star rating scale.
+    type:
+      - integer
+      - 'null'
+    minimum: -1
+    maximum: 10
+  maxScore:
+    description: Maximum score for the feedback component.
+    type:
+      - integer
+      - 'null'
+    minimum: 0
+    maximum: 10
+  reasons:
+    type: array
+    description: List of preset reasons for feedback (at most 10 on create).
+    items:
+      type: string
+      maxLength: 5000
+      description: Reason for feedback.
+  comment:
+    type: string
+    maxLength: 5000
+    description: Free-form text feedback.
+  agent:
+    type:
+      - string
+      - 'null'
+    maxLength: 200
+    description: Name of the AI agent that submitted the feedback, or null for user-submitted feedback.
+    example: Cursor
+  targetFeature:
+    type:
+      - string
+      - 'null'
+    maxLength: 500
+    description: Documentation feature the feedback refers to (for agent submissions), or null for user-submitted feedback.
+    example: Respect Monitoring API
+  origin:
+    type: string
+    description: >-
+      Origin of the feedback. `FORM` is the feedback form on the page, `API` is a direct API call
+      (for example an agent that follows `llms.txt` instructions), and `MCP` is the MCP server
+      `submit-feedback` tool. When omitted on create, defaults to `API` if `agent` is set and to
+      `FORM` otherwise.
+    enum: [FORM, API, MCP]
+    example: MCP
+  metadata:
+    type: object
+    description: >-
+      Extra tracking fields. The server sets `userAgent`, `ipAddress`, `platform`, and `email`
+      (read-only). `id`, `firstName`, `lastName`, and `auth_time` pass through if present but are
+      not verified; do not use for access or identity. Any other key is stored with its value
+      redacted to a placeholder.
+    properties:
+      userAgent:
+        type: string
+        description: User agent string of the browser that submitted the feedback. Populated by the server from the `User-Agent` header.
+        example: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+        readOnly: true
+      ipAddress:
+        type: string
+        description: IP address of the user who submitted the feedback. Populated by the server.
+        example: 127.0.0.1
+        readOnly: true
+      platform:
+        type: string
+        description: Platform from which the feedback originates. Populated by the server from the `Sec-Ch-Ua-Platform` header.
+        example: Windows NT 10.0; Win64; x64
+        readOnly: true
+      email:
+        type: string
+        format: email
+        description: Email address from the user's authentication context. Populated by the server from OIDC claims.
+        example: john.doe@acme.com
+        readOnly: true
+      id:
+        type: string
+        description: Unverified; whatever the client sent. Not a trusted user id.
+      firstName:
+        type: string
+        description: Unverified; client-supplied if present.
+      lastName:
+        type: string
+        description: Unverified; client-supplied if present.
+      auth_time:
+        oneOf:
+          - type: integer
+          - type: string
+        description: Unverified; client-supplied. Not a server-asserted session or token time.
+    additionalProperties: true
+  createdAt:
+    type: string
+    format: date-time
+    readOnly: true
+  status:
+    type: string
+    description: Feedback status.
+    enum: [NEW, IN_REVIEW, RESOLVED, ARCHIVED, SPAM]
+    example: ARCHIVED
+    readOnly: true
+  organizationId:
+    description: Organization ID. Unique identifier prefixed with `org_`.
+    type: string
+    pattern: ^org_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: org_01hh1t9sa6gwfv5naz04gr7ehm
+    readOnly: true
+  projectId:
+    description: Project ID. Unique identifier prefixed with `prj_`.
+    type: string
+    pattern: ^prj_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: prj_01hh1t9sa6gwfv5naz04gr7ehm
+    readOnly: true
+  internalComment:
+    type:
+      - string
+      - 'null'
+    description: Internal comment for the feedback.
+    example: This feedback is related to the issue 235.
+    readOnly: true
+  internalCommentUpdatedAt:
+    type: string
+    format: date-time
+    description: Date and time when the internal comment is updated.
+    readOnly: true
+  internalCommentUpdatedById:
+    type: string
+    description: ID of the user who updated the internal comment.
+    readOnly: true
+required:
+  - id
+  - uri
+  - path
+  - feedbackComponent
+  - createdAt
+  - object
+  - organizationId
+  - projectId
+  - status
+  - origin

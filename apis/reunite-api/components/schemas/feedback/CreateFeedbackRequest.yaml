@@ -1,0 +1,16 @@
+oneOf:
+  - $ref: ./CreateSentimentFeedbackRequest.yaml
+  - $ref: ./CreateMoodFeedbackRequest.yaml
+  - $ref: ./CreateRatingFeedbackRequest.yaml
+  - $ref: ./CreateScaleFeedbackRequest.yaml
+  - $ref: ./CreateCommentFeedbackRequest.yaml
+  - $ref: ./CreateProblemFeedbackRequest.yaml
+discriminator:
+  propertyName: feedbackComponent
+  mapping:
+    SENTIMENT: ./CreateSentimentFeedbackRequest.yaml
+    MOOD: ./CreateMoodFeedbackRequest.yaml
+    RATING: ./CreateRatingFeedbackRequest.yaml
+    SCALE: ./CreateScaleFeedbackRequest.yaml
+    COMMENT: ./CreateCommentFeedbackRequest.yaml
+    PROBLEM: ./CreateProblemFeedbackRequest.yaml

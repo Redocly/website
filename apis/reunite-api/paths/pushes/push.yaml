@@ -1,0 +1,41 @@
+get:
+  security:
+    - ApiKey: []
+    - UserCookie: []
+    - OAuth2: ['project.remotes.read']
+  tags:
+    - Pushes
+  operationId: getPush
+  summary: Retrieve a push
+  description: |-
+    Retrieve a push.
+
+    Requires `project.remotes.read` permission.
+  x-internal: false
+  x-rateLimit:
+    events: 100000
+    window: 1m
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../components/parameters/path/PushId.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/pushes/Push.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

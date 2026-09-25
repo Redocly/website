@@ -1,0 +1,66 @@
+type: object
+required:
+  - pushId
+  - skipUpload
+  - branchName
+  - commit
+  - mountPaths
+  - replace
+  - files
+  - completion
+properties:
+  pushId:
+    type: string
+    description: ID of the created push record.
+  skipUpload:
+    type: boolean
+    description: When true, the content is outdated and the syncer must not upload it.
+  branchName:
+    type: string
+    description: Branch the syncer commits the content to.
+  commit:
+    type: object
+    required:
+      - message
+      - author
+    properties:
+      message:
+        type: string
+        description: Commit message with the push metadata appended.
+      author:
+        type: object
+        required:
+          - name
+          - email
+        properties:
+          name:
+            type: string
+          email:
+            type: string
+  mountPaths:
+    type: array
+    items:
+      type: string
+  replace:
+    type: boolean
+  filesContentEncoding:
+    type: string
+    enum: [br]
+    description: Content encoding of the uploaded files, when the client compressed them.
+  files:
+    type: array
+    description: Target repository path for each uploaded multipart field.
+    items:
+      type: object
+      required:
+        - fieldname
+        - path
+      properties:
+        fieldname:
+          type: string
+        path:
+          type: string
+  completion:
+    type: object
+    additionalProperties: true
+    description: Opaque payload the syncer returns to the main API unchanged.

@@ -1,0 +1,31 @@
+description: Project role details.
+type: object
+properties:
+  id:
+    description: Project role ID. Stable identifier prefixed with `prl_`.
+    type: string
+    pattern: ^prl_[a-z]+$
+    example: prl_read
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [projectRole]
+    readOnly: true
+  uri:
+    description: Canonical URI for the project role resource.
+    type: string
+    format: uri
+    readOnly: true
+    example: https://api.example.com/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/project-roles/READ
+  name:
+    $ref: ./ProjectRoleName.yaml
+  description:
+    type: string
+    description: Project role description.
+required:
+  - id
+  - object
+  - uri
+  - name
+  - description

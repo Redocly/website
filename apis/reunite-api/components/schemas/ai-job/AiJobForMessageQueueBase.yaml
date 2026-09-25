@@ -1,0 +1,43 @@
+type: object
+title: AI job for Message Queue (base)
+description: >-
+  Common fields for AI job message queue payloads. Excludes fields owned by
+  the main API (`status`, `tasks`, `updatedAt`) since those are inferred from
+  the event type or the message timestamp.
+required:
+  - object
+  - id
+  - createdAt
+  - uri
+properties:
+  object:
+    type: string
+    enum:
+      - aiJob
+    example: aiJob
+    readOnly: true
+  id:
+    type: string
+    format: ulid
+    pattern: ^aij_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: aij_01h1s5z6vf2mm1mz3hevnn9va7
+    readOnly: true
+    description: Unique identifier for the AI job.
+  error:
+    type:
+      - string
+      - 'null'
+    example: Timeout while waiting for plan files
+    description: Error message when the job has failed.
+  createdAt:
+    type: string
+    format: date-time
+    example: '2026-04-17T10:15:00.000Z'
+    readOnly: true
+    description: Date the AI job is created.
+  uri:
+    description: Canonical URI for the AI worker job resource.
+    type: string
+    format: uri
+    readOnly: true
+    example: urn:redocly:reunite:aiWorkerJob:aij_01h1s5z6vf2mm1mz3hevnn9va7

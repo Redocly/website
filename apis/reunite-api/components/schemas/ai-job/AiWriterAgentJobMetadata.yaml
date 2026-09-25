@@ -1,0 +1,8 @@
+type: object
+description: Metadata included with writer agent job options.
+required:
+  - writerAgentId
+properties:
+  writerAgentId:
+    type: string
+    minLength: 1

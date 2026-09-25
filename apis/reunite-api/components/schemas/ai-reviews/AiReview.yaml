@@ -1,0 +1,50 @@
+type: object
+properties:
+  id:
+    description: AI review run ID. Unique identifier prefixed with `arv_`.
+    type: string
+    pattern: ^arv_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    readOnly: true
+    example: arv_01jqr8x2k4m7n9p3vwz5bcdefg
+  object:
+    description: Entity name.
+    type: string
+    enum: [aiReview]
+    readOnly: true
+    example: aiReview
+  uri:
+    description: Resource URI.
+    type: string
+    format: uri
+    readOnly: true
+    example: https://app.cloud.redocly.com/api/orgs/org_01jqphm3z8k2n5r7vwx4bcdefg/projects/prj_01jqs9w4m2k7n3p5vxz8bcdefg/ai-reviews/arv_01jqr8x2k4m7n9p3vwz5bcdefg
+  pullRequestId:
+    description: Pull request ID. Unique identifier prefixed with `pr_`.
+    type: string
+    pattern: ^pr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    readOnly: true
+    example: pr_01jqt7v5n3k9m2p4wxz6bcdefg
+  status:
+    description: Lifecycle status of the AI review run.
+    type: string
+    enum: [NOT_STARTED, IN_PROGRESS, SUCCESS, FAILED]
+    readOnly: true
+    example: SUCCESS
+  createdAt:
+    type: string
+    format: date-time
+    readOnly: true
+    example: '2026-06-03T08:15:30Z'
+  updatedAt:
+    type: string
+    format: date-time
+    readOnly: true
+    example: '2026-06-03T08:17:42Z'
+required:
+  - id
+  - object
+  - uri
+  - pullRequestId
+  - status
+  - createdAt
+  - updatedAt

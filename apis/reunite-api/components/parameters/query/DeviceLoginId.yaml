@@ -1,0 +1,7 @@
+name: deviceLoginId
+in: query
+required: false
+description: Device login ID if request comes from device login flow.
+schema:
+  type: string
+example: dvc_01J35G32T1TGJAGSVG7NE21CCT

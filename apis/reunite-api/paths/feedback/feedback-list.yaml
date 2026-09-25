@@ -1,0 +1,125 @@
+post:
+  tags:
+    - Feedback
+  summary: Create a new feedback item
+  description: |-
+    Publish feedback for a page or more granular item of content on the page.
+    The feedback can be anonymous or contain user related data, such as email.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: createFeedback
+  security: []
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/feedback/CreateFeedbackRequest.yaml
+  responses:
+    '201':
+      description: New feedback created.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/feedback/Feedback.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+get:
+  tags:
+    - Feedback
+  summary: List all feedback
+  description: |-
+    List all feedback.
+    
+    Requires `project.feedback.read` permission.
+  x-internal: false
+  x-rateLimit:
+    events: 1000
+    window: 1m
+  x-catalogRelations:
+    - type: ownedBy
+      key: to-the-moon
+  operationId: listFeedback
+  security:
+    - InternalAuth: []
+    - UserCookie: []
+    - ApiKey: []
+    - OAuth2: ['project.feedback.read']
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Before.yaml
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+    - $ref: ../../common/components/parameters/query/Sort.yaml
+      description: |-
+        Feedback list can be sorted by the following properties:
+          - `id`
+          - `createdAt`
+          - `path`
+          - `email`
+          - `score`
+          - `agent`
+          - `targetFeature`
+
+        To sort in descending order, prefix the field with `-` (for example `-createdAt`).
+        To sort in ascending order, use the field name without a prefix (for example `createdAt`).
+
+        By default, feedback list is sorted by `id` in descending order, which corresponds to the newest feedback first.
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+      description: |-
+        Filter feedback by:
+          - `createdAt`
+          - `email`
+          - `path`
+          - `location`
+          - `comment`
+          - `internalComment`
+          - `agent`
+          - `targetFeature`
+          - `status` (one of `NEW`, `IN_REVIEW`, `RESOLVED`, `ARCHIVED`, `SPAM`)
+          - `feedbackComponent` (one of `SENTIMENT`, `RATING`, `COMMENT`, `MOOD`, `PROBLEM`, `SCALE`)
+          - `origin` (one of `FORM`, `API`, `MCP`)
+
+        This field requires a special format.
+
+        For more information, see
+        [Using filter with collections](#section/pagination).
+    - $ref: ../../common/components/parameters/query/Search.yaml
+      description: |-
+        Search feedback by query string. 
+
+        Feedback is searched by:
+          - `email`
+          - `path`
+          - `location`
+          - `comment`
+          - `internalComment`
+          - `agent`
+          - `targetFeature`
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/feedback/FeedbackList.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

@@ -1,0 +1,42 @@
+patch:
+  tags:
+    - OAuth2 clients
+  security:
+    - Support: []
+  summary: Partially update an OAuth2 client's verification and consent-skip settings
+  description: |-
+    Support-only partial update of an OAuth2 client's verification status and
+    consent-skip setting. Setting `verificationStatus` to `REJECTED` requires
+    a `rejectReason`, and clears an enabled `skipConsent`, since a rejected
+    client should never skip consent. Setting `verificationStatus` to
+    `UNVERIFIED` (revert) is only allowed from a `VERIFIED` status.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  operationId: updateOAuthClientForSupport
+  parameters:
+    - $ref: ../../components/parameters/path/OAuthClientId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/oauth-client/PatchOAuthClientForSupportRequest.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/oauth-client/OAuthClientSupport.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

@@ -1,0 +1,128 @@
+type: object
+properties:
+  object:
+    description: Entity name.
+    type: string
+    enum: [supportAiAssistantStats]
+    readOnly: true
+  totals:
+    description: Aggregated totals for the selected period.
+    type: object
+    properties:
+      messages:
+        description: Total number of AI assistant messages.
+        type: integer
+        example: 1240
+      conversations:
+        description: Total number of distinct conversations.
+        type: integer
+        example: 530
+      likes:
+        description: Total number of liked answers.
+        type: integer
+        example: 230
+      dislikes:
+        description: Total number of disliked answers.
+        type: integer
+        example: 47
+      noFeedback:
+        description: Number of messages with no feedback.
+        type: integer
+        example: 963
+      escalations:
+        description: Number of conversations that ended in a created support ticket.
+        type: integer
+        example: 18
+      ticketPreventionRate:
+        description: |-
+          Percentage of conversations that the assistant deflected (no support ticket created).
+          Null when there are no conversations in the period.
+        type:
+          - number
+          - 'null'
+        example: 96.6
+    required:
+      - messages
+      - conversations
+      - likes
+      - dislikes
+      - noFeedback
+      - escalations
+      - ticketPreventionRate
+  series:
+    description: Per-day breakdown for the selected period.
+    type: array
+    minItems: 0
+    items:
+      type: object
+      properties:
+        date:
+          description: Day of the data point.
+          type: string
+          example: '2026-06-01'
+        messages:
+          type: integer
+          example: 42
+        conversations:
+          type: integer
+          example: 18
+        likes:
+          type: integer
+          example: 8
+        dislikes:
+          type: integer
+          example: 2
+      required:
+        - date
+        - messages
+        - conversations
+        - likes
+        - dislikes
+  byOrganization:
+    description: Per-organization breakdown for the selected period, busiest first.
+    type: array
+    minItems: 0
+    items:
+      type: object
+      properties:
+        organizationId:
+          type: string
+          example: 'org_01j0wt03vft6qrqdcqgsc62ez8'
+        organizationSlug:
+          type: string
+          example: 'acme'
+        conversations:
+          type: integer
+          example: 120
+        messages:
+          type: integer
+          example: 340
+        likes:
+          type: integer
+          example: 60
+        dislikes:
+          type: integer
+          example: 12
+        escalations:
+          type: integer
+          example: 8
+        ticketPreventionRate:
+          description: Percentage of the organization's conversations the assistant deflected.
+          type:
+            - number
+            - 'null'
+          example: 93.3
+      required:
+        - organizationId
+        - organizationSlug
+        - conversations
+        - messages
+        - likes
+        - dislikes
+        - escalations
+        - ticketPreventionRate
+required:
+  - object
+  - totals
+  - series
+  - byOrganization

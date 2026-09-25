@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Git
+  summary: Process webhook
+  description: Process push, PR and branch deletion events from remote repository.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  operationId: processWebhook
+  security: []
+  parameters:
+    - $ref: ../../components/parameters/path/GitProviderParam.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          description: Payload from Git provider.
+          type: object
+  responses:
+    '200':
+      description: Processed successfully.
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

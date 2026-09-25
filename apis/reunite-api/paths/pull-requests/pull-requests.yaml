@@ -1,0 +1,104 @@
+get:
+  tags:
+    - Pull requests
+  security:
+    - UserCookie: []
+    - InternalAuth: []
+  operationId: listPullRequests
+  summary: List all pull requests
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: blips-and-chitz
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../common/components/parameters/query/After.yaml
+    - $ref: ../../common/components/parameters/query/Before.yaml
+    - $ref: ../../common/components/parameters/query/Sort.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+    - $ref: ../../common/components/parameters/query/Limit.yaml
+    # todo use cursor pagination
+    - $ref: ../../components/parameters/query/PageParam.yaml
+    - $ref: ../../components/parameters/query/PageSize.yaml
+    # todo use filter field for all of filter fields
+    - $ref: ../../common/components/parameters/query/Search.yaml
+      description: Filter results by searching for a specific value in pull request title.
+    - name: status
+      description: Filter results by status of pull request.
+      required: false
+      in: query
+      schema:
+        type: string
+        default: OPEN
+        enum: [OPEN, CLOSED, MERGED]
+      example: OPEN
+    - name: reviewStatus
+      description: Filter results by review status of pull request.
+      required: false
+      in: query
+      schema:
+        description: Review status.
+        type: string
+        enum: [APPROVED, REQUESTED_CHANGES, COMMENTED]
+      example: APPROVED
+    - name: createdById
+      in: query
+      description: Filter result by user who created pull request.
+      schema:
+        description: User ID who created pull request. Unique identifier prefixed with `usr_`.
+        type: string
+        pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+      example: usr_01h1s5z6vf2mm1mz3hevnn9va7
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/pull-request/PullRequestList.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+post:
+  tags:
+    - Pull requests
+  security:
+    - UserCookie: []
+    - InternalAuth: []
+  operationId: createPullRequest
+  summary: Create new Pull Request
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: blips-and-chitz
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../components/parameters/header/Cookie.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/pull-request/CreatePullRequest.yaml
+  responses:
+    '201':
+      description: New pull request created.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/pull-request/PullRequest.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

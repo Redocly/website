@@ -1,0 +1,117 @@
+type: object
+properties:
+  id:
+    description: OAuth2 client ID. Unique identifier prefixed with `oauth_`.
+    type: string
+    pattern: ^oauth_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: oauth_01h2zvgfdqex5na189kdg39d6s
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [oauthClient]
+    readOnly: true
+  uri:
+    description: Canonical URI for the OAuth2 client resource.
+    type: string
+    format: uri
+    readOnly: true
+    example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/oauth-clients/oauth_01h2zvgfdqex5na189kdg39d6s
+  clientId:
+    description: Hydra OAuth2 client identifier. Used for token requests.
+    type: string
+    example: 9a9b9c8d-7e6f-5a4b-3c2d-1e0f9a8b7c6d
+    readOnly: true
+  name:
+    description: OAuth2 client name.
+    type: string
+    example: My App
+  description:
+    description: Optional description shown on the OAuth consent screen.
+    type:
+      - string
+      - 'null'
+    maxLength: 500
+    example: Connect your account to sync API documentation.
+  logo:
+    description: Optional logo shown on the OAuth consent screen. Base64-encoded data URI. Maximum size is 1MB.
+    type:
+      - string
+      - 'null'
+    maxLength: 1048576
+    example: data:image/png;base64,...
+  applicationUrl:
+    description: Public URL of the application shown on the OAuth consent screen.
+    type: string
+    format: uri
+    example: https://myapp.com
+  ipAddresses:
+    description: Allowed IP addresses for requests authenticated with this OAuth2 client.
+    type: array
+    items:
+      type: string
+      example: 192.168.1.1
+  organizationPermissions:
+    description: Granted organization-level permissions.
+    type: array
+    items:
+      type: string
+      example: org.apiKeys.read
+    default: []
+  projectsPermissions:
+    description: Granted project-level permissions.
+    type: array
+    items:
+      type: string
+      example: project.feedback.read
+    default: []
+  redirectUris:
+    description: Redirect URIs for Authorization Code flow.
+    type: array
+    items:
+      type: string
+      format: uri
+      example: https://myapp.com/callback
+    minItems: 1
+  isVerified:
+    description: Whether the OAuth2 client has been verified by support.
+    type: boolean
+    default: false
+    readOnly: true
+  verificationStatus:
+    description: OAuth2 client verification status managed by support.
+    $ref: ./OAuthClientVerificationStatus.yaml
+    readOnly: true
+  rejectReason:
+    description: Reason shown to the organization when verification is rejected.
+    type:
+      - string
+      - 'null'
+    maxLength: 500
+    readOnly: true
+  createdAt:
+    description: Created date.
+    type: string
+    format: date-time
+    example: 2023-06-15T15:41:42.696Z
+    readOnly: true
+  updatedAt:
+    description: Updated date.
+    type: string
+    format: date-time
+    example: 2023-06-15T15:41:42.696Z
+    readOnly: true
+required:
+  - id
+  - object
+  - uri
+  - clientId
+  - name
+  - applicationUrl
+  - organizationPermissions
+  - projectsPermissions
+  - redirectUris
+  - isVerified
+  - verificationStatus
+  - createdAt
+  - updatedAt

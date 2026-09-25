@@ -1,0 +1,12 @@
+description: Comment slots for SUMMARY comment's content.
+type: object
+properties:
+  ai-review-status:
+    description: AI review status slot comment.
+    type: string
+  ai-review-summary:
+    description: AI review summary slot comment.
+    type: string
+  ai-review-issues-report:
+    description: AI review issues report slot comment.
+    type: string

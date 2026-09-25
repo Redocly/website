@@ -1,0 +1,37 @@
+post:
+  security: []
+  tags:
+    - API keys
+  summary: Check Api Key
+  operationId: verifyApiKey
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/api-key/ApiKeyVerify.yaml
+  responses:
+    '204':
+      description: API key is valid.
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '503':
+      description: API key verification is temporarily unavailable.
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../../common/errors/Problem.yaml
+      headers:
+        Retry-After:
+          description: Number of seconds the client should wait before retrying the request.
+          example: 30
+          schema:
+            type: integer
+            minimum: 1
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
+

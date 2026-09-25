@@ -1,0 +1,7 @@
+name: clientId
+in: query
+required: false
+description: OAuth2 Client ID.
+schema:
+  type: string
+example: 92717e72-3d18-40bd-b0d9-cd71ca554255

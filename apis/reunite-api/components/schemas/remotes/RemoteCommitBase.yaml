@@ -1,0 +1,22 @@
+type: object
+description: Commit details.
+required:
+  - message
+  - author
+  - branchName
+properties:
+  message:
+    type: string
+    description: Commit message.
+    example: 'chore: Add new API'
+  branchName:
+    type: string
+    description: Branch name.
+    example: main
+  author:
+    $ref: RemoteCommitAuthor.yaml
+  createdAt:
+    type: string
+    format: date-time
+    description: Commit creation date.
+    example: '2020-01-01T00:00:00.000Z'

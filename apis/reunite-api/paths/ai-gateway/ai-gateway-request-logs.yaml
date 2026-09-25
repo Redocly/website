@@ -1,0 +1,35 @@
+post:
+  tags:
+    - AI gateway
+  security:
+    - InternalAuth: []
+  summary: Create AI gateway request logs
+  description: |-
+    Persists a batch of AI gateway request log entries originating from a
+    gateway consumer. Submissions are idempotent on `requestId`.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  operationId: createAiGatewayRequestLogs
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/ai-gateway/AiGatewayRequestLogList.yaml
+  responses:
+    '201':
+      description: Created.
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

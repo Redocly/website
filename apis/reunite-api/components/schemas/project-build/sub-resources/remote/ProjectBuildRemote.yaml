@@ -1,0 +1,10 @@
+oneOf:
+  - $ref: ./ProjectBuildGitRemote.yaml
+  - $ref: ./ProjectBuildUrlRemote.yaml
+  - $ref: ./ProjectBuildCicdRemote.yaml
+discriminator:
+  propertyName: type
+  mapping:
+    GIT: ./ProjectBuildGitRemote.yaml
+    URL: ./ProjectBuildUrlRemote.yaml
+    CICD: ./ProjectBuildCicdRemote.yaml

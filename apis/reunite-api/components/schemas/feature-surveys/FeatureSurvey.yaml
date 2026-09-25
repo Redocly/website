@@ -1,0 +1,74 @@
+description: In-product feature satisfaction survey.
+type: object
+properties:
+  id:
+    type: string
+    description: Feature survey ID. Unique identifier prefixed with `fs_`.
+    pattern: ^fs_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: fs_01hh1t9sa6gwfv5naz04gr7ehm
+    readOnly: true
+  userId:
+    type: string
+    description: User ID.
+    pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+    readOnly: true
+  object:
+    type: string
+    const: featureSurvey
+    example: featureSurvey
+    readOnly: true
+  surveyType:
+    description: Kind of feature survey.
+    type: string
+    enum:
+      - RESPECT_MONITORING
+      - AI_PROJECT_GENERATION
+    example: RESPECT_MONITORING
+    readOnly: true
+  variant:
+    description:
+      Survey intent within the feature. DEFAULT is used for surveys that don't need intent distinction;
+      SETUP vs MODIFY distinguish first-time configuration from edits.
+    type: string
+    enum:
+      - DEFAULT
+      - SETUP
+      - MODIFY
+    example: DEFAULT
+    readOnly: true
+  shownAt:
+    description: Date and time when the user saw the survey prompt.
+    type: [string, 'null']
+    format: date-time
+    example: 2026-01-01T00:00:00.000Z
+  completedAt:
+    description: Date and time when the user submitted feedback. Null if the user only saw the prompt or dismissed it without submitting.
+    type: [string, 'null']
+    format: date-time
+    example: 2026-01-01T00:00:00.000Z
+  dismissedAt:
+    description: Date and time when the user explicitly dismissed the survey in-app (not the same as closing the tab).
+    type: [string, 'null']
+    format: date-time
+    example: 2026-01-01T00:00:00.000Z
+  impressionCount:
+    description: How many times the survey prompt has been displayed to the user for this survey row.
+    type: integer
+    minimum: 0
+    example: 1
+  createdAt:
+    type: string
+    format: date-time
+    example: 2026-01-01T00:00:00.000Z
+    readOnly: true
+required:
+  - id
+  - object
+  - surveyType
+  - variant
+  - createdAt
+  - shownAt
+  - completedAt
+  - dismissedAt
+  - impressionCount

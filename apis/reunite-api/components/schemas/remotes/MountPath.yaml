@@ -1,0 +1,3 @@
+type: string
+description: Path to the folder in the local repository where remote content is mounted. Paths outside of the project's `contentPath` are not allowed.
+example: apis/test/@v1

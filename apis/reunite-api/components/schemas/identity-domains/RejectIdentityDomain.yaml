@@ -1,0 +1,6 @@
+type: object
+properties:
+  rejectReason:
+    type:
+      - 'null'
+      - string

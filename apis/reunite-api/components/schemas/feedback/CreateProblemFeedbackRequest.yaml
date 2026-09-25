@@ -1,0 +1,24 @@
+allOf:
+  - $ref: ./CreateFeedbackRequestBase.yaml
+  - type: object
+    required:
+      - feedbackComponent
+      - location
+    properties:
+      feedbackComponent:
+        type: string
+        enum:
+          - PROBLEM
+        description: Name that identifies UI component.
+      location:
+        type: string
+        minLength: 1
+        maxLength: 5000
+        pattern: '\S'
+        description: >-
+          Code sample the problem is reported for.
+          Trimmed, so a whitespace-only value is rejected.
+      comment:
+        type: string
+        maxLength: 5000
+        description: Description of the problem.

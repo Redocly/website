@@ -1,0 +1,248 @@
+type: object
+properties:
+  id:
+    description: Project build id.
+    type: string
+    example: a3ef6d34-131f-4d65-b6e4-27f5c211bad5
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [projectBuild]
+    readOnly: true
+  userId:
+    description: User id.
+    type:
+      - string
+      - 'null'
+    example: 4ec9921b-19cf-4ec0-a231-f7f05e7bd426
+    readOnly: true
+  description:
+    description: Description of the build.
+    type:
+      - string
+      - 'null'
+    example: Test description
+    readOnly: true
+  createdByType:
+    description: Created by type.
+    type: string
+    enum: [USER, WEBHOOK]
+    example: USER
+    readOnly: true
+  parentBuildId:
+    description: Build id it is redeployed from.
+    type:
+      - string
+      - 'null'
+    example: null
+    readOnly: true
+  createdByMetadata:
+    description: Metadata related to the user or webhook that triggered the build.
+    type:
+      - object
+      - 'null'
+    readOnly: true
+  artifact:
+    description: Artifact key.
+    type:
+      - string
+      - 'null'
+    example: builds/test_build.tgz
+  pathPrefix:
+    description: >-
+      Path prefix applied to the portal's routes, captured at build time from the
+      project's path prefix environment variable. Reflects the value used for this
+      build and is unaffected by later changes to the variable. `null` when the
+      portal is served from the root.
+    type:
+      - string
+      - 'null'
+    example: docs
+    readOnly: true
+  branchName:
+    description: Branch name.
+    type: string
+    example: test-branch
+    readOnly: true
+  number:
+    description: Build number.
+    type: number
+    example: 1
+    readOnly: true
+  commitHash:
+    description: Commit hash.
+    type: string
+    example: c123bcc
+    readOnly: true
+  status:
+    $ref: ./ProjectBuildStatus.yaml
+  linkCheckStatus:
+    $ref: ./ProjectBuildCheckStatus.yaml
+  scorecardStatus:
+    $ref: ./ProjectBuildCheckStatus.yaml
+  apiMonitoringStatus:
+    $ref: ./ProjectBuildCheckStatus.yaml
+  isRemoved:
+    description: Is build removed.
+    type: boolean
+    example: false
+    readOnly: true
+  isProduction:
+    description: Is production build.
+    type: boolean
+    example: false
+    readOnly: true
+  metadata:
+    type:
+      - object
+      - 'null'
+    additionalProperties: true
+    readOnly: true
+  createdAt:
+    description: Created date.
+    type: string
+    readOnly: true
+  updatedAt:
+    description: Updated date.
+    type: string
+    readOnly: true
+  startedAt:
+    description: Started at date.
+    type:
+      - string
+      - 'null'
+    readOnly: true
+  finishedAt:
+    description: Finished at date.
+    type:
+      - string
+      - 'null'
+    readOnly: true
+    example: null
+  createdBy:
+    description: User who creates build.
+    oneOf:
+      - $ref: ../users/DisplayedUser.yaml
+      - type: 'null'
+    readOnly: true
+  project:
+    $ref: ./sub-resources/project/ProjectBuildProject.yaml
+  previewDeploymentStatus:
+    oneOf:
+      - type: string
+        enum: [NOT_STARTED, IN_PROGRESS, FAILED, SUCCESS]
+      - type: 'null'
+    description: Deployment status for non-production (isProduction = false) build.
+    example: SUCCESS
+    readOnly: true
+  reuniteConfig:
+    description: Reunite config.
+    type:
+      - object
+      - 'null'
+    readOnly: true
+  slug:
+    description: Project build slug.
+    type: string
+    example: test-build
+    readOnly: true
+  productType:
+    description: Product type.
+    type: string
+    enum: [REDOC, REVEL, REEF, REDOC_REVEL, REDOC_REEF, REVEL_REEF, REALM]
+    example: REALM
+    readOnly: true
+  deploymentId:
+    description: Deployment id.
+    type:
+      - string
+      - 'null'
+    example: a372c1f2-7d81-b93e-4c26-f1e947aa38b9
+    readOnly: true
+  isDeploymentSkipped:
+    description: Is deployment skipped.
+    type: boolean
+    example: false
+    readOnly: true
+  nomadDeploymentStatus:
+    description: Nomad deployment status.
+    type:
+      - string
+      - 'null'
+    example: successful
+    readOnly: true
+  previewJobId:
+    description: Preview job id.
+    type:
+      - string
+      - 'null'
+    example: preview-my-project--feature
+    readOnly: true
+  totalPages:
+    description: Total pages.
+    type:
+      - number
+      - 'null'
+    example: 100
+    readOnly: true
+  pushId:
+    description: Push id.
+    type:
+      - string
+      - 'null'
+    example: push_02xkd472ml83q01923nvkzp75a
+    readOnly: true
+  pullRequestNumber:
+    description: Pull request number.
+    type:
+      - number
+      - 'null'
+    example: 10
+    readOnly: true
+  url:
+    description: Build url.
+    type: string
+    example: http://redocly.portal.localhost
+    readOnly: true
+  hostedUrl:
+    description: Build hosted url.
+    type: string
+    example: http://redocly.portal.localhost
+    readOnly: true
+  uri:
+    description: URI reference to this project build.
+    type: string
+    format: uri
+    readOnly: true
+    example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/projects/prj_01hh1t9sa6gwfv5naz04gr7ehm/builds/pb_01hh1t9sa6gwfv5naz04gr7ehm
+required:
+  - id
+  - userId
+  - createdByType
+  - createdByMetadata
+  - parentBuildId
+  - description
+  - artifact
+  - pathPrefix
+  - branchName
+  - number
+  - commitHash
+  - status
+  - linkCheckStatus
+  - scorecardStatus
+  - apiMonitoringStatus
+  - isRemoved
+  - metadata
+  - createdAt
+  - updatedAt
+  - startedAt
+  - finishedAt
+  - previewDeploymentStatus
+  - object
+  - uri
+  - reuniteConfig
+  - slug
+  - productType
+  - isDeploymentSkipped
+  - url

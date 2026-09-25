@@ -1,0 +1,17 @@
+type: object
+title: PatchProjectRequest
+properties:
+  name:
+    description: Project name.
+    type: string
+    example: Test Project
+  slug:
+    description: Project slug.
+    type: string
+    example: project_red-owl-352
+  isDraft:
+    description: Whether the project is in draft state.
+    type: boolean
+    example: false
+  aiAssistant:
+    $ref: ./ProjectAiAssistantSettings.yaml

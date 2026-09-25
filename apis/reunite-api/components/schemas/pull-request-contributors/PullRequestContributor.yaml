@@ -1,0 +1,47 @@
+type: object
+properties:
+  id:
+    description: User ID. Unique identifier prefixed with `usr_`.
+    type: string
+    pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+    example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+    readOnly: true
+  object:
+    description: Entity name.
+    type: string
+    enum: [pullRequestContributor]
+    readOnly: true
+  uri:
+    description: Canonical URN for the pull request contributor resource.
+    type: string
+    format: uri
+    readOnly: true
+    example: urn:redocly:reunite:user:usr_01hh1t9sa6gwfv5naz04gr7ehm
+  name:
+    description: User display name.
+    type: string
+    example: john.smith
+    readOnly: true
+  firstName:
+    description: User first name.
+    type: [string, 'null']
+    example: John
+    readOnly: true
+  lastName:
+    description: User last name.
+    type: [string, 'null']
+    example: Smith
+    readOnly: true
+  imageUrl:
+    description: Image url.
+    type: [string, 'null']
+    format: uri
+    example: https://example.com/image.png
+    readOnly: true
+required:
+  - id
+  - object
+  - uri
+  - name
+  - firstName
+  - lastName

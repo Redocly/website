@@ -1,0 +1,9 @@
+type: string
+enum:
+  - usd
+  - credits
+description: |-
+  Unit the limit's `amount` is denominated in. `usd` aggregates `cost_usd`
+  per gateway call; `credits` counts DISTINCT `operation_id`s in the cycle
+  (so N calls sharing one operation count as 1 credit).
+example: usd

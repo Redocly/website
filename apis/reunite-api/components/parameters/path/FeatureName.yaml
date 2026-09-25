@@ -1,0 +1,7 @@
+name: feature
+in: path
+description: Feature name.
+schema:
+  type: string
+required: true
+example: advancedSearch

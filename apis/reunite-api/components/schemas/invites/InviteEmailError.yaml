@@ -1,0 +1,18 @@
+type: object
+title: InviteEmailError
+description: Per-email rejection when a batch invite cannot be created.
+required:
+  - email
+  - reason
+properties:
+  email:
+    type: string
+    format: email
+    maxLength: 254
+    description: Normalized email address that fails validation.
+  reason:
+    type: string
+    enum:
+      - ALREADY_INVITED
+      - SELF_INVITE
+    description: Machine-readable reason the invite request rejects for this address.

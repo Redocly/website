@@ -1,0 +1,9 @@
+name: jobId
+description: AI job ID.
+required: true
+in: path
+schema:
+  type: string
+  pattern: ^aij_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+  description: Unique identifier prefixed with `aij_`.
+example: aij_01h1s5z6vf2mm1mz3hevnn9va7

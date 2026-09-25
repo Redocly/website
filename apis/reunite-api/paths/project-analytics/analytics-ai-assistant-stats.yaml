@@ -1,0 +1,44 @@
+get:
+  operationId: listProjectAnalyticsAiAssistantStats
+  summary: List all AI assistant analytics stats
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  tags:
+    - Project analytics
+  security:
+    - UserCookie: []
+    - InternalAuth: []
+  description: |-
+    Aggregated AI assistant totals for the project: conversations, messages,
+    feedback, escalations, and the distinct embedding origins.
+
+    The `filter` parameter accepts the same fields as the AI search list:
+    `time`, `product`, `sourceOrigin`, `feedback`, and `escalated`. The `time`
+    field selects the window; the response covers the whole project history when
+    you omit it.
+
+    The origins list ignores the `sourceOrigin`, `feedback`, and `escalated`
+    fields, so it always holds every origin in the window.
+
+    The response holds a single item, so this endpoint takes no cursor.
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+    - $ref: ../../common/components/parameters/query/Filter.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/project-analytics/AnalyticsAiAssistantStatsList.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

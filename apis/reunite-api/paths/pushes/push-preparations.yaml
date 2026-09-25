@@ -1,0 +1,41 @@
+post:
+  operationId: preparePush
+  summary: Create push preparation
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: plug-and-play
+  security:
+    - InternalAuth: []
+  description: |-
+    Validates an incoming CI/CD push, creates the push record, and returns the
+    commit details the syncer needs to upload the content. Called by the syncer
+    while it handles a push the main API piped through to it.
+  tags:
+    - Pushes
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+    - $ref: ../../components/parameters/path/ProjectId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/pushes/PushPreparationRequest.yaml
+  responses:
+    '201':
+      description: Push prepared.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/pushes/PushPreparation.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '404':
+      $ref: ../../common/responses/NotFoundError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml
