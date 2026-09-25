@@ -36,6 +36,20 @@ properties:
           type: array
           items:
             type: string
+  widgetVersion:
+    description: Version that the AI assistant web component reports for itself. Client-reported, and the API does not verify it.
+    type: string
+    maxLength: 32
+    pattern: '^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$'
+    example: 0.2.3
+  widgetChannel:
+    description: CDN release folder that serves the AI assistant web component, as the component reports it. `other` means a self-hosted or re-bundled copy. Client-reported, and the API does not verify it.
+    type: string
+    enum:
+      - latest
+      - pinned
+      - other
+    example: latest
   history:
     description: History of messages between the user and the AI assistant.
     type: array
