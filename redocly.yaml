@@ -5,6 +5,16 @@ seo:
   image: ./images/redocly-card.png
   lang: en-US
 
+apis:
+  main:
+    root: ./apis/reunite-api/openapi.yaml
+    output: ./docs/realm/customization/reunite-api/openapi.yaml
+    decorators:
+      filter-out:
+        property: x-internal
+        value: true
+      tags/no-unused-tags: on
+
 apiFunctions:
   folders:
     - /@api
