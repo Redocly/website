@@ -22,7 +22,7 @@
     "highlight-words-core": "^1.2.3",
     "path": "^0.12.7",
     "polished": "^4.3.1",
-    "realm-plus": "0.0.0-20260923090309",
+    "realm-plus": "0.0.0-20260925130358",
     "url": "^0.11.4"
   },
   "devDependencies": {
