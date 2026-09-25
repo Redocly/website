@@ -65,5 +65,7 @@ post:
       $ref: ../../common/responses/UnauthorizedError.yaml
     '403':
       $ref: ../../common/responses/ForbiddenError.yaml
+    '409':
+      $ref: ../../common/responses/ConflictError.yaml
     '500':
       $ref: ../../common/responses/InternalServerError.yaml
