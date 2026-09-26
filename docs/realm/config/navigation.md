@@ -60,14 +60,14 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 
 - hide
 - boolean
-- Specifies if the navigation link button is hidden.
+- Hides the navigation link button.
   Default: `false`.
 
 ---
 
 - text
 - string
-- Text that appears above the navigation buttons.
+- Specifies the text that appears above the navigation buttons.
   Default: `Next page` or `Previous page` respectively.
 
 {% /table %}
@@ -84,7 +84,7 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 
 - label
 - string
-- Text that appears on the button.
+- Specifies the text that appears on the button.
   Default: the text of the first heading of the target page.
 
 ---
@@ -107,21 +107,23 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 
 - hide
 - boolean
-- Specifies if the page actions are hidden.
+- Hides the page actions.
   Default: `false`.
 
 ---
 
 - items
 - [string]
-- A list of items that appear on the page and their order.
+- Lists the items that appear on the page and defines their order.
+  The portal hides items that you omit from the list.
+
   Allowed values:
   - `copy`: copy the page content as Markdown to the clipboard.
   - `view`: view the page content as Markdown in a new tab.
   - `chatgpt`: ask ChatGPT about this page.
-    Only available on public pages.
+    Supported only on public pages.
   - `claude`: ask Claude about this page.
-    Only available on public pages.
+    Supported only on public pages.
   - `docs-mcp-cursor`: connect to MCP server via Cursor.
   - `docs-mcp-vscode`: connect to MCP server via VS Code.
 
@@ -131,6 +133,64 @@ Control the **Previous** and **Next** navigation buttons on project pages.
 ---
 
 {% /table %}
+
+#### Customize page action labels
+
+You can customize the labels and descriptions for these actions using translation keys in your `translations.yaml` file.
+
+The following table lists the common translation keys associated with page actions:
+
+{% table %}
+
+- Action
+- Translation key
+- Description
+
+---
+
+- `copy`
+- `page.actions.copyTitle`
+- Sets the label for the copy action.
+
+---
+
+- `copy`
+- `page.actions.copyDescription`
+- Sets the description for the copy action.
+
+---
+
+- `view`
+- `page.actions.viewAsMdTitle`
+- Sets the label for the view as Markdown action.
+
+---
+
+- `chatgpt`
+- `page.actions.chatGptTitle`
+- Sets the label for the ChatGPT action.
+
+---
+
+- `claude`
+- `page.actions.claudeTitle`
+- Sets the label for the Claude action.
+
+---
+
+- `docs-mcp-cursor`
+- `page.actions.connectMcp.cursor`
+- Sets the label for the Cursor MCP action.
+
+---
+
+- `docs-mcp-vscode`
+- `page.actions.connectMcp.vscode`
+- Sets the label for the VS Code MCP action.
+
+{% /table %}
+
+For a full list of available keys, see [Predefined translation keys](../content/localization/translation-keys.md).
 
 ## Examples
 
@@ -190,13 +250,12 @@ navigation:
 
 ### Customize page actions
 
-The following example changes the default order of page actions and disables the `claude` action.
+The following example includes only the `copy` and `view` actions, which hides the AI-related (ChatGPT, Claude) and MCP actions.
 
 ```yaml
 navigation:
   actions:
     items:
-      - chatgpt
       - copy
       - view
 ```
