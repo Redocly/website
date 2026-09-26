@@ -75,6 +75,8 @@ Role-based access control (RBAC) applies to:
 ## Next steps
 
 - [Get started with Reunite](./get-started/start-reunite-editor.md)
+- [Add an OpenAPI description](./content/api-docs/add-openapi-docs.md)
+- [Configure the sidebar](./navigation/sidebars.md)
 - [Structure your project](./content/project-structure.md)
 - [Customize your branding](./branding/index.md)
 - [Set up integrations](./reunite/project/connect-git/connect-git-provider.md)
