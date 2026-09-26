@@ -66,6 +66,8 @@ tags:
     description: Operations related to invites.
   - name: Link checks
     description: Operations related to project build link checks.
+  - name: Feature flags
+    description: Operations related to feature flag values resolved for the current user.
   - name: Memberships
     description: Operations related to memberships.
   - name: Organizations
@@ -356,6 +358,10 @@ paths:
     $ref: ./paths/memberships/members.yaml
   /orgs/{orgId}/memberships/me:
     $ref: ./paths/memberships/my-membership.yaml
+  /feature-flags/me:
+    $ref: ./paths/feature-flags/base-feature-flags-me.yaml
+  /orgs/{orgId}/feature-flags/me:
+    $ref: ./paths/feature-flags/feature-flags-me.yaml
   /orgs/{orgId}/owners:
     $ref: ./paths/memberships/owners.yaml
   /orgs/{orgId}/change-owner:

@@ -1,0 +1,27 @@
+get:
+  tags:
+    - Feature flags
+  security: []
+  operationId: listBaseFeatureFlags
+  summary: List base feature flag values without an organization
+  description: |
+    Returns a map of base feature flag names to their resolved default values. This endpoint
+    does not require a session or an organization. When a session is present, the user
+    attributes are used for targeting. Only flags whose resolved value is truthy are included;
+    off, unset, and unknown flags are omitted. The response contains resolved values only — no
+    targeting rules, conditions, or attribute metadata are exposed.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/feature-flags/FeatureFlagValues.yaml
+    '400':
+      $ref: ../../common/responses/BadRequestError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

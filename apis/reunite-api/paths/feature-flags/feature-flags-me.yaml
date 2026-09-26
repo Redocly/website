@@ -1,0 +1,31 @@
+get:
+  tags:
+    - Feature flags
+  security:
+    - UserCookie: []
+  operationId: listMyFeatureFlags
+  summary: List all feature flag values for the current user
+  description: |
+    Returns a map of feature flag names to their resolved values for the current user in
+    the current organization. Only flags whose resolved value is truthy are included; off,
+    unset, and unknown flags are omitted. The response contains resolved values only — no
+    targeting rules, conditions, or attribute metadata are exposed.
+  x-internal: true
+  x-catalogRelations:
+    - type: ownedBy
+      key: cyberpunks
+  parameters:
+    - $ref: ../../components/parameters/path/OrgId.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/feature-flags/FeatureFlagValues.yaml
+    '401':
+      $ref: ../../common/responses/UnauthorizedError.yaml
+    '403':
+      $ref: ../../common/responses/ForbiddenError.yaml
+    '500':
+      $ref: ../../common/responses/InternalServerError.yaml

@@ -1,0 +1,18 @@
+type: object
+title: FeatureFlagValues
+description: |
+  Map of resolved feature flag values for the current user in the current organization.
+  Only flags whose resolved value is truthy are present. Off, unset, and unknown flags
+  are omitted from the response. Values are the resolved end results — no targeting rules,
+  conditions, or attribute metadata are exposed.
+additionalProperties:
+  oneOf:
+    - type: boolean
+    - type: string
+    - type: number
+    - type: object
+example:
+  ai-search: true
+  experimental.newSearchUI: true
+  ai-worker-limits:
+    maxConcurrent: 4
