@@ -40,8 +40,29 @@ The process has the following stages:
 
 1. A branch (for example `rem/git/rem_012345`) is created in the Redocly project's repository.
 2. Changes from the remote source are applied on top of the new branch (`rem/git/rem_012345`).
-4. A branch build for `rem/git/rem_012345` branch is created to verify that changes do not break the project.
-5. After successful build verification, Reunite automatically merges the branch into the production branch (if Auto-merge is enabled) and starts a production build.
+3. Reunite builds the `rem/git/rem_012345` branch to verify that the changes do not break the project.
+4. If the build passes the [checks before auto-merge](#checks-before-auto-merge) and Auto-merge is on, Reunite merges the branch into the production branch.
+   Then Reunite starts a production build.
+
+### Checks before auto-merge
+
+Reunite merges the branch only when the branch build passes these checks:
+
+- The build succeeds.
+- No API description in the project scores below the minimum standard.
+- The link checker finds no broken links in the remote content folder.
+  It also finds no broken links from other folders into the remote content folder.
+
+A broken link in a different folder does not stop the auto-merge.
+Remote content from other teams still merges when one folder has broken links.
+The **Link checker** commit status of the remote content counts the same links.
+
+The link checker saves the details of up to 100 broken links.
+If the build has more than 100 broken links, the check counts every broken link in the project.
+
+The production build that follows checks the links in the whole project.
+A broken link in any folder stops the production deployment.
+To publish past these checks, use the [`ignoreLinkChecker` and `ignoreLint` options](../../../config/reunite.md).
 
 ## Automatically-created pull requests
 

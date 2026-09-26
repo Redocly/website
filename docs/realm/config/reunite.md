@@ -36,6 +36,9 @@ Configure `jobs` to run the Respect command on Arazzo Descriptions.
 - ignoreLinkChecker
 - boolean
 - Publish a production project, even if Reunite detects broken links.
+  Also auto-merge remote content, even if its folder has broken links.
+  When `false`, the auto-merge of remote content checks only the links in and into its folder.
+  See [checks before auto-merge](../reunite/project/remote-content/verify-remote-content.md#checks-before-auto-merge).
   Default: `false`.
 
 ---

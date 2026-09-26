@@ -208,7 +208,7 @@ Configure how the remote content is adopted into the Redocly project:
   - For remote content on a **URL**, a pull request is created with the updated content, and auto-merge rules apply.
   - For **pushed content**, the auto-sync setting is not used.
 
-- **Auto-merge:** Automatically merges the pull request to the default branch if all tests pass.
+- **Auto-merge:** Automatically merges the pull request to the default branch if all [checks pass](./verify-remote-content.md#checks-before-auto-merge).
 
 {% admonition type="info" name="Branch protection rules and auto-merge" %}
 For Auto-merge to work, the destination repository must not have branch protection rules that cannot be met.
